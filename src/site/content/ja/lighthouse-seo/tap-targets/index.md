@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse のタップターゲット監査に失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、小さすぎるか互いに近すぎるタップターゲットのあるページにフラグを立てます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、小さすぎるか互いに近すぎるタップターゲットのあるページにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="不適切なサイズのタップターゲットを示す Lighthouse 監査", width="800", height="206" %}</figure>
 

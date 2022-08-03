@@ -79,7 +79,7 @@ preview of the HTML after JavaScript has split the text by letter.
        width="800", height="517"
   %}
   <figcaption>
-    User is OK with motion; text split into multiple <span> elements
+    User is OK with motion; text split into multiple &lt;span&gt; elements
   </figcaption>
 </figure>
 

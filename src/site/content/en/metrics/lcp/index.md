@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-07-18
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -268,7 +268,7 @@ available in the following tools:
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
@@ -277,7 +277,7 @@ available in the following tools:
 ### Lab tools
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Measure LCP in JavaScript
@@ -374,7 +374,7 @@ performance techniques that can also improve LCP, see:
 * [Apply instant loading with the PRPL
   pattern](/apply-instant-loading-with-prpl)
 * [Optimizing the Critical Rendering
-  Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+  Path](/critical-rendering-path/)
 * [Optimize your CSS](/fast#optimize-your-css)
 * [Optimize your Images](/fast#optimize-your-images)
 * [Optimize web Fonts](/fast#optimize-web-fonts)

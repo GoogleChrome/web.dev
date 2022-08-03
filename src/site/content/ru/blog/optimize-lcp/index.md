@@ -418,13 +418,13 @@ if (navigator.connection && navigator.connection.effectiveType) {
   </figcaption>
 </figure>
 
-{% Aside %} Чтобы глубже погрузиться в различные архитектуры серверного рендеринга, ознакомьтесь со статьей [«Рендеринг в Интернете»](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
+{% Aside %} Чтобы глубже погрузиться в различные архитектуры серверного рендеринга, ознакомьтесь со статьей [«Рендеринг в Интернете»](/rendering-on-the-web/). {% endAside %}
 
 ## Инструменты разработчика
 
 Для измерения и отладки LCP доступен ряд инструментов:
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) включает поддержку измерения LCP в лабораторных условиях.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) включает поддержку измерения LCP в лабораторных условиях.
 
 {% Img
   src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg",
@@ -442,6 +442,6 @@ if (navigator.connection && navigator.connection.effectiveType) {
   height="509"
 %}
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) предоставляет реальные значения LCP, агрегированные на уровне источника.
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) предоставляет реальные значения LCP, агрегированные на уровне источника.
 
 *Выражаем благодарность Филиппу Уолтону, Кэти Хемпениус, Кейси Баскесу и Илье Григорику за их обзоры.*

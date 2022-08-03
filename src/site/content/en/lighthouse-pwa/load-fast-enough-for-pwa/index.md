@@ -21,7 +21,7 @@ to be considered a Progressive Web App. See the
 
 ## How the Lighthouse page load speed audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't load fast enough on mobile:
 
 <figure>
@@ -50,8 +50,8 @@ If the time to interactive is more than 10&nbsp;seconds, the audit fails.
 
 - [Source code for **Page load is not fast enough on mobile networks** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js)
 - [Baseline Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
-- [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [Critical Rendering Path](/critical-rendering-path/)
 - [Get Started With Analyzing Runtime Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [Record load performance](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
-- [Optimizing Content Efficiency](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
+- [Optimizing Content Efficiency](/performance-optimizing-content-efficiency/)
 - [Rendering Performance](/rendering-performance/)

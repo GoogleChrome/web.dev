@@ -28,7 +28,7 @@ feedback:
   - api
 ---
 
-{% Aside %} Os aplicativos da web devem ser capazes de fazer tudo que os aplicativos iOS/Android/desktop conseguem. O [projeto Capabilities](https://developers.google.com/web/updates/capabilities) , do qual Periodic Background Sync é apenas uma parte, visa fazer exatamente isso. Para aprender sobre outros recursos e acompanhar seu progresso, siga [Desbloqueando novos recursos para a web](https://developers.google.com/web/updates/capabilities) . {% endAside %}
+{% Aside %} Os aplicativos da web devem ser capazes de fazer tudo que os aplicativos iOS/Android/desktop conseguem. O [projeto Capabilities](https://developer.chrome.com/blog/capabilities/) , do qual Periodic Background Sync é apenas uma parte, visa fazer exatamente isso. Para aprender sobre outros recursos e acompanhar seu progresso, siga [Desbloqueando novos recursos para a web](https://developer.chrome.com/blog/capabilities/) . {% endAside %}
 
 Você já esteve em alguma das seguintes situações?
 

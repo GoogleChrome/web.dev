@@ -111,4 +111,4 @@ Congratulations, you app is now installable!
 Here are some additional things that you can do:
 
 +  [Detect if your app is launched from the home screen](/customize-install/#detect-mode)
-+  [Show the operating system's app install prompt instead](https://developers.google.com/web/fundamentals/app-install-banners/native)
++  [Show the operating system's app install prompt instead](https://developer.chrome.com/blog/app-install-banners-native/)

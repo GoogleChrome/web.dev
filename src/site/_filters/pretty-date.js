@@ -19,9 +19,18 @@ const {DateTime} = require('luxon');
 /**
  * Convert a JavaScript Date object into a human readable string.
  * @param {Date} date The date to convert.
+ * @param {string|Intl.DateTimeFormat|undefined} format Desired date format.
  * @return {string|undefined} A human readable date string.
  */
-module.exports = (date) => {
+module.exports = (date, format = 'DATE_MED') => {
+  const dateShorter = {
+    year: '2-digit',
+    month: 'numeric',
+    day: 'numeric',
+  };
+  const dateTimeFormat =
+    format === 'DATE_SHORTER' ? dateShorter : DateTime[format];
+
   if (!date) {
     /* eslint-disable-next-line */
     console.warn('Date passed to prettyDate filter was undefined or null.');
@@ -29,6 +38,6 @@ module.exports = (date) => {
   }
 
   return DateTime.fromISO(date.toISOString(), {zone: 'utc'}).toLocaleString(
-    DateTime.DATE_MED,
+    dateTimeFormat,
   );
 };

@@ -15,7 +15,7 @@ understand your content and how it relates to other pages.
 
 ## How the Lighthouse link text audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags links
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags links
 without descriptive text:
 
 <figure>

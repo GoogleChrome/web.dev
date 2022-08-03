@@ -19,9 +19,9 @@ web_lighthouse:
 
 查看以下资源以深入了解渲染流水线：
 
-- [深入了解现代 Web 浏览器（第 3 部分）](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
-- [简化绘制的复杂度、减小绘制区域](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
-- [坚持仅合成器的属性和管理层计数](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+- [深入了解现代 Web 浏览器（第 3 部分）](https://developer.chrome.com/blog/inside-browser-part3/)
+- [简化绘制的复杂度、减小绘制区域](/simplify-paint-complexity-and-reduce-paint-areas/)
+- [坚持仅合成器的属性和管理层计数](/stick-to-compositor-only-properties-and-manage-layer-count/)
 
 ## Lighthouse 如何检测非合成动画
 
@@ -29,12 +29,12 @@ web_lighthouse:
 
 ## 如何确保合成动画
 
-请参阅[坚持仅合成器的属性和管理层计数](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)和[高性能动画](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)。
+请参阅[坚持仅合成器的属性和管理层计数](/stick-to-compositor-only-properties-and-manage-layer-count/)和[高性能动画](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)。
 
 ## 资源
 
 - [*避免非合成动画*审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
-- [坚持仅合成器的属性和管理层计数](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+- [坚持仅合成器的属性和管理层计数](/stick-to-compositor-only-properties-and-manage-layer-count/)
 - [高性能动画](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
-- [简化绘制的复杂度、减小绘制区域](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
-- [深入了解现代 Web 浏览器（第 3 部分）](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
+- [简化绘制的复杂度、减小绘制区域](/simplify-paint-complexity-and-reduce-paint-areas/)
+- [深入了解现代 Web 浏览器（第 3 部分）](https://developer.chrome.com/blog/inside-browser-part3/)

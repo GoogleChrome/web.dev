@@ -10,7 +10,7 @@ description: |
 authors:
   - chrisboakes
 date: 2021-06-14
-# updated:
+updated: 2022-07-18
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/wqtXsd9ZcxILt6oaA7rk.jpeg
 thumbnail: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/yDxN8dVjj4JCYvsoWTVg.jpg
 alt: The telegraph logo
@@ -90,7 +90,7 @@ contributed to the overall score.
 
 <figure>
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zfpYNnnpwtcG7YAmf7E5.jpg", alt="The front page of Telegraph with an ad in the header highlughted with a blue overlay.", width="800", height="465" %}
-    <figcaption>Identifying a layout shift caused by the advert loading client-side above the header using the Experience section of Chrome DevTools.<figcaption>
+    <figcaption>Identifying a layout shift caused by the advert loading client-side above the header using the Experience section of Chrome DevTools.</figcaption>
 </figure>
 
 [WebPageTest](https://www.webpagetest.org/) helpfully highlights where the
@@ -242,7 +242,7 @@ grew from 57% to 72%**.
 </figure>
 
 In addition, we were able to make use of the [Chrome UX Report
-API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)
+API](https://developer.chrome.com/docs/crux/api/)
 and create some internal dashboards split into templates.
 <figure>
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/aYW2QPaFucKThXxZfFAD.png", alt="Internal dashboard showing average good score of 76.2, needs improvement of 9.3, and poor score of 14.6.", width="800", height="402" %}

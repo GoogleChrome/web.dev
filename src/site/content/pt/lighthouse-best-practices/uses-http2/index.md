@@ -12,7 +12,7 @@ O HTTP/2 serve os recursos de sua página com mais rapidez e menos movimentaçã
 
 ## Como a auditoria Lighthouse HTTP/2 falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) lista todos os recursos que não são servidos por HTTP/2:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) lista todos os recursos que não são servidos por HTTP/2:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="A auditoria do Lighthouse audit mostra recursos não atendidos por HTTP/2 ", width="800", height="191" %}</figure>
 
@@ -29,5 +29,5 @@ Para saber como habilitar HTTP/2 nos seus servidores, veja [Configurando HTTP/2]
 ## Recursos
 
 - [Código-fonte para a auditoria **Não usa HTTP/2 para todos os seus recursos**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
-- [Introdução ao HTTP/2](https://developers.google.com/web/fundamentals/performance/http2/)
+- [Introdução ao HTTP/2](/performance-http2/)
 - [Perguntas frequentes sobre HTTP/2](https://http2.github.io/faq/)

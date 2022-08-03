@@ -16,7 +16,7 @@ updated: 2020-06-10
 
 ## Lighthouse 页面加载速度审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出在移动设备上加载速度不够快的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记出在移动设备上加载速度不够快的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse 审计显示在移动设备上加载速度不够快的页面", width="800", height="98"%}</figure>
 
@@ -39,8 +39,8 @@ Lighthouse 会计算慢速 4G 网络连接上的 TTI。如果交互时间超过 
 
 - [**移动网络上的页面加载速度不够快**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js)
 - [基线渐进式 Web 应用程序清单](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
-- [关键渲染路径](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [关键渲染路径](/critical-rendering-path/)
 - [分析运行时性能入门](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [记录负载性能](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
-- [优化内容效率](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
+- [优化内容效率](/performance-optimizing-content-efficiency/)
 - [渲染性能](/rendering-performance/)

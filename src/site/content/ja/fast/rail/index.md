@@ -179,7 +179,7 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)は、Chrome DevTools、 [web.dev / measure](/measure/) 、Chrome拡張機能、Node.jsモジュール、およびWebPageTest内で利用できます。 URLを指定すると、3G接続が遅いミッドレンジデバイスをシミュレートし、ページで一連の監査を実行してから、読み込みパフォーマンスに関するレポートと改善方法の提案を行います。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)は、Chrome DevTools、 [web.dev / measure](/measure/) 、Chrome拡張機能、Node.jsモジュール、およびWebPageTest内で利用できます。 URLを指定すると、3G接続が遅いミッドレンジデバイスをシミュレートし、ページで一連の監査を実行してから、読み込みパフォーマンスに関するレポートと改善方法の提案を行います。
 
 以下の監査は特に関連性が高いと言えます。
 

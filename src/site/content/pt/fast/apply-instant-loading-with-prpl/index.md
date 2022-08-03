@@ -47,7 +47,7 @@ Para mais informações sobre o pré-carregamento de recursos críticos, veja o 
 
 ## Renderize a rota inicial o mais rápido possível
 
-O Lighthouse avisa se há recursos que atrasam o [**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (primeira renderização), o momento em que seu site renderiza pixels na tela:
+O Lighthouse avisa se há recursos que atrasam o [**First Paint**](/user-centric-performance-metrics/#important-metrics-to-measure) (primeira renderização), o momento em que seu site renderiza pixels na tela:
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Auditoria Lighthouse: Elimine recursos bloqueantes", width="800", height="111" %}
 

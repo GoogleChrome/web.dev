@@ -24,7 +24,7 @@ A principal estratégia para servir imagens de tamanhos adequados é chamada de 
 
 [Os CDNs de imagem](/image-cdns/) são outra boa estratégia para servir imagens de tamanho apropriado. Você pode pensar em CDNs de imagem como APIs de serviços web para transformar imagens.
 
-Outra estratégia é usar formatos de imagem vetoriais, como SVG. Com uma quantidade finita de código, uma imagem SVG pode ser redimensionada para qualquer tamanho. Veja [Substitua ícones complexos por SVG](https://developers.google.com/web/fundamentals/design-and-ux/responsive/images#replace_complex_icons_with_svg) para saber mais.
+Outra estratégia é usar formatos de imagem vetoriais, como SVG. Com uma quantidade finita de código, uma imagem SVG pode ser redimensionada para qualquer tamanho. Veja [Substitua ícones complexos por SVG](/responsive-images/#replace-complex-icons-with-svg) para saber mais.
 
 Ferramentas como [gulp-responsive](https://www.npmjs.com/package/gulp-responsive) ou [responsive-images-generator](https://www.npmjs.com/package/responsive-images-generator) podem ajudar a automatizar o processo de conversão de uma imagem em múltiplos formatos. Existem também CDNs de imagem que permitem gerar múltiplas versões, seja ao fazer upload de uma imagem ou ao solicitá-la em sua página.
 

@@ -104,7 +104,7 @@ Para evitar mostrar una aplicación inservible a los usuarios, implemente la apl
 
 Una aplicación web progresiva es una experiencia web de alta calidad. Trusted Web Activity es una nueva forma de abrir esas experiencias de alta calidad desde una aplicación de Android cuando cumplen con los criterios mínimos de calidad.
 
-Si está comenzando con Progressive Web Apps, lea [nuestra guía sobre cómo crear una excelente PWA](/progressive-web-apps/). Para los desarrolladores que ya tienen una PWA, use [Lighthouse](https://developers.google.com/web/tools/lighthouse) para verificar si cumple con los criterios de calidad.
+Si está comenzando con Progressive Web Apps, lea [nuestra guía sobre cómo crear una excelente PWA](/progressive-web-apps/). Para los desarrolladores que ya tienen una PWA, use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) para verificar si cumple con los criterios de calidad.
 
 Luego, use [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) o [PWABuilder](https://pwabuilder.com/) para generar la aplicación de Android, [cargue la aplicación en un canal de prueba cerrado en Play Store](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en-GB) y combínela con la PWA usando la herramienta [Peter's Asset Link Tool](https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool).
 

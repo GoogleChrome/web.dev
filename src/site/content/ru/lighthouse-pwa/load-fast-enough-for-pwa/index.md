@@ -16,7 +16,7 @@ updated: 2020-06-10
 
 ## Аудит скорости загрузки страницы Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, которые на мобильном подключении загружаются недостаточно быстро.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, которые на мобильном подключении загружаются недостаточно быстро.
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Аудит Lighthouse показывает, что страница на мобильном подключении загружается недостаточно быстро", width="800", height="98" %}</figure>
 
@@ -39,8 +39,8 @@ Lighthouse вычисляет, каким будет TTI при медленно
 
 - [Исходный код для аудита **Страница загружается недостаточно быстро в мобильных сетях** (Page load is not fast enough on mobile networks)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js).
 - [Основные требования для современного веб-приложения](https://developers.google.com/web/progressive-web-apps/checklist#baseline).
-- [Процесс визуализации](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).
+- [Процесс визуализации](/critical-rendering-path/).
 - [С чего начать анализ производительности времени выполнения](https://developer.chrome.com/docs/devtools/evaluate-performance/).
 - [Запись данных о производительности во время загрузки](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load).
-- [Оптимизация контента](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/).
+- [Оптимизация контента](/performance-optimizing-content-efficiency/).
 - [Производительность визуализации](/rendering-performance/).

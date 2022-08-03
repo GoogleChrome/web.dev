@@ -12,7 +12,7 @@ updated: 2019-09-19
 
 ## Lighthouse 初始屏幕审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记没有自定义初始屏幕的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记没有自定义初始屏幕的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Lighthouse 审计显示站点未配置自定义初始屏幕", width="800", height="98" %}</figure>
 

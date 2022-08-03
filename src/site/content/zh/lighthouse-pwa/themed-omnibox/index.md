@@ -16,7 +16,7 @@ updated: 2020-06-17
 
 ## Lighthouse 主题颜色审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出没有为地址栏设置主题的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记出没有为地址栏设置主题的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse 审计显示地址栏的颜色与页面颜色不匹配", width="800", height="98" %}</figure>
 

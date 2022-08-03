@@ -22,7 +22,7 @@ El uso de enlaces canónicos tiene muchas ventajas:
 
 ## Cómo falla la auditoría de enlaces canónicos de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca cualquier página con un enlace canónico no válido:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca cualquier página con un enlace canónico no válido:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt = "Auditoría de Lighthouse mostrando documento con enlace canónico no válido", width="800", height="76" %}</figure>
 
@@ -67,7 +67,7 @@ Para obtener una lista de los pros y los contras de cada enfoque, consulte la p�
 ### Reglas generales
 
 - Asegúrese de que la URL canónica sea válida.
-- Utilice URL canónicas [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https) seguras en lugar de HTTP siempre que sea posible.
+- Utilice URL canónicas [HTTPS](/why-https-matters/) seguras en lugar de HTTP siempre que sea posible.
 - Si usa [enlaces `hreflang`](/hreflang) para ofrecer diferentes versiones de una página según el idioma o el país del usuario, asegúrese de que la URL canónica apunte a la página adecuada para ese idioma o país respectivo.
 - No apunte la URL canónica a un dominio diferente. Yahoo y Bing no lo permiten.
 - No apunte las páginas de nivel inferior a la página raíz del sitio a menos que su contenido sea el mismo.

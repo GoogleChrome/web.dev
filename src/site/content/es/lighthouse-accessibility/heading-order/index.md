@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Cómo falla la auditoría de niveles de encabezados de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas cuyos encabezados saltan uno o más niveles:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas cuyos encabezados saltan uno o más niveles:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Auditoría de Lighthouse que muestra encabezados que omiten niveles", width="800", height="206" %}</figure>
 

@@ -10,6 +10,7 @@ description: |
   tools that can help you collect lab or field data to assess page performance.
 web_lighthouse: N/A
 date: 2019-05-01
+updated: 2022-07-18
 tags:
   - performance
 ---
@@ -31,11 +32,11 @@ Real-world performance is highly variable due to differences in users' devices, 
 
 ### Lab data
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) takes a URL and runs a series of audits against the page, generating a report on how well the page did. There are multiple ways to run Lighthouse, including an option to easily audit a page from within Chrome DevTools.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) takes a URL and runs a series of audits against the page, generating a report on how well the page did. There are multiple ways to run Lighthouse, including an option to easily audit a page from within Chrome DevTools.
 
 ### Field data
 
-[Chrome User Experience Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report/) provides metrics showing how real-world Chrome users experience popular destinations on the web.
+[Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/) provides metrics showing how real-world Chrome users experience popular destinations on the web.
 
 ### Other tools
 

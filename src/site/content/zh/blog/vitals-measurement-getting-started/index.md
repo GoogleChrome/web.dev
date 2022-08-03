@@ -3,7 +3,7 @@ title: 开始测量 Web 指标
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: 月度图表叠加标有 LCP、FID 和 CLS 的秒表。
 description: 了解如何在真实世界和实验室环境中测量您的网站 Web 指标。
@@ -21,7 +21,7 @@ tags:
 
 ### 入门
 
-如果您还未设置 RUM，那么以下工具将快速为您提供网站实际性能的相关数据。这些工具都基于相同的底层数据集（[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)），但用例略有不同：
+如果您还未设置 RUM，那么以下工具将快速为您提供网站实际性能的相关数据。这些工具都基于相同的底层数据集（[Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)），但用例略有不同：
 
 - **PageSpeed Insights 网页速度测量工具 (PSI)**：[PageSpeed Insights](https://pagespeed.web.dev/)报告过去 28 天的页面级和域级聚合性能。此外，该工具还会提供如何改进性能的相关建议。如果您正在寻求一种单一操作来着手测量和改进您网站的 Web 指标，我们建议您使用 PSI 来审计您的网站。 PSI 可在[网页](https://pagespeed.web.dev/)上使用，也可作为[API](https://developers.google.com/speed/docs/insights/v5/get-started)使用。
 - **搜索控制台**：[搜索控制台](https://search.google.com/search-console/welcome)为每个页面报告性能数据。因此，该工具非常适合用来识别需要改进的特定页面。与 PageSpeed Insights 不同，搜索控制台的报告包括历史性能数据。只能针对您拥有并已验证所有权的网站使用搜索控制台。

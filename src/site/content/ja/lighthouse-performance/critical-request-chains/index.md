@@ -10,7 +10,7 @@ web_lighthouse:
 
 [クリティカル要求チェーン](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)は、ページのレンダリングにとって重要な一連の依存ネットワークリクエストです。チェーンの長さが長く、ダウンロードサイズが大きいほど、ページの読み込みパフォーマンスへの影響が大きくなります。
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、高優先度で読み込まれたクリティカル要求を報告します。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)は、高優先度で読み込まれたクリティカル要求を報告します。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Lighthouseのクリティカル要求深度の最小化監査のスクリーンショット", width="800", height="452" %}</figure>
 

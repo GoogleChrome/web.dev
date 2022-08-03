@@ -31,7 +31,7 @@ module.exports = {
   subscribe: 'https://web.dev/newsletter',
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
-  thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
+  thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
   isBannerEnabled: false,
   banner: '',
   paginationCount: PAGINATION_COUNT,

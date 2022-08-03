@@ -172,7 +172,7 @@ The Search team also needed to avoid using a service worker on low-end mobile
 devices where the service worker boot time could exceed the navigation request.
 Since there's no hard-and-fast rule for what constitutes a "low-end" device,
 they came up with the heuristic of
-[checking the total RAM](https://developers.google.com/web/updates/2017/12/device-memory)
+[checking the total RAM](https://developer.chrome.com/blog/device-memory/)
 installed on the device. Anything less than 2 gigabytes of memory fell into
 their low-end device category, where service worker startup time would be unacceptable.
 
@@ -450,7 +450,7 @@ based on the experience using service workers in the Google I/O web app.
 While many in the web development community associate service workers with [Progressive Web Apps](/progressive-web-apps/),
 building a "Google Search PWA" was not an initial goal of the team. The Google
 Search web app doesn't currently provide metadata via a
-[web app manifest](https://developers.google.com/web/fundamentals/web-app-manifest/),
+[web app manifest](/add-manifest/),
 nor does it encourage users to go through the
 [Add to Home Screen flow](https://developers.google.com/web/fundamentals/app-install-banners/).
 The Search team is currently satisfied with users coming to their web app via

@@ -12,7 +12,7 @@ web_lighthouse:
 
 ## Причины плохих результатов проверки отображения шрифтов в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает URL-адреса любых шрифтов, которые могут мигать невидимым текстом:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает URL-адреса любых шрифтов, которые могут мигать невидимым текстом:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="Скриншот проверки Lighthouse «Убедитесь, что текст остается видимым во время загрузки веб-шрифтов»", width="800", height="430" %}</figure>
 

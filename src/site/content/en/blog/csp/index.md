@@ -393,7 +393,7 @@ setTimeout(function () {
     is a good example of this.
 
 However, a better choice would be a templating language that offers
-precompilation ([Handlebars does](http://handlebarsjs.com/precompilation.html),
+precompilation ([Handlebars does](https://handlebarsjs.com/installation/precompilation.html),
 for instance). Precompiling your templates can make the user experience even
 faster than the fastest runtime implementation, and it's safer too.  If eval and
 its text-to-JavaScript brethren are essential to your application, you can

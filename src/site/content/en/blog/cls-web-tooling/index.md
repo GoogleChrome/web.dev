@@ -6,6 +6,7 @@ subhead: >
   a change to CLS has been rolled out across a number of Chrome's web tooling surfaces including
   Lighthouse, PageSpeed Insights, and Chrome UX Report.
 date: 2021-06-02
+updated: 2022-07-18
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/ENrTmCSZl69N9gmf0twL.jpeg
 alt: The Lighthouse Scoring Calculator
 description: >
@@ -15,6 +16,8 @@ description: >
 tags:
   - blog
   - web-vitals
+  - lighthouse
+  - chrome-ux-report
 authors:
   - addyosmani
   - egsweeny
@@ -99,13 +102,13 @@ as well as which tools still provide the ability to benchmark against the origin
         <td>Available in the <code>lighthouseResult</code> as <code>totalCumulativeLayoutShift</code>. Not available in the field <code>loadingExperience</code> data</td>
       </tr>
       <tr>
-        <td><a href="https://web.dev/chrome-ux-report-bigquery/">
+        <td><a href="/chrome-ux-report-bigquery/">
         Chrome UX Report (CrUX) - BigQuery</a></td>
         <td>202105 dataset, published 8 June 2021</td>
         <td>Available as <code>experimental.uncapped_cumulative_layout_shift</code> through 202111</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report/api/reference">
+        <td><a href="https://developer.chrome.com/docs/crux/api/">
         Chrome UX Report (CrUX) - API</a></td>
         <td>1 June 2021</td>
         <td>After 1 June 2021, available as
@@ -137,9 +140,7 @@ You'll find it as
 in the CrUX API and as
 `experimental.uncapped_cumulative_layout_shift` in CrUX BigQuery.
 
-After June 1st,
-[the following CrUX API request](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord?apix_params=%7B%22resource%22%3A%7B%22origin%22%3A%22https%3A%2F%2Fweb.dev%22%2C%22metrics%22%3A%5B%22experimental_uncapped_cumulative_layout_shift%22%5D%7D%7D)
-will return the "old CLS" metric:
+After June 1st, CrUX API requests will return the "old CLS" metric:
 
 ```js
 {
@@ -151,7 +152,7 @@ will return the "old CLS" metric:
 ```
 
 After June 8, the following
-[CrUX BigQuery](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started)
+[CrUX BigQuery](https://developer.chrome.com/docs/crux/bigquery/)
 will compare old and new CLS:
 
 ```sql

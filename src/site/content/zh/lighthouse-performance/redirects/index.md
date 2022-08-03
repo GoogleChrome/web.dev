@@ -19,7 +19,7 @@ Location: /path/to/new/location
 
 ## Lighthouse 多个重定向审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记具有多个重定向的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记具有多个重定向的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 
@@ -27,7 +27,7 @@ Location: /path/to/new/location
 
 ## 如何消除重定向
 
-将指向标记的资源的链接指向资源的当前位置。在[关键渲染路径](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)所需的资源中避免重定向尤为重要。
+将指向标记的资源的链接指向资源的当前位置。在[关键渲染路径](/critical-rendering-path/)所需的资源中避免重定向尤为重要。
 
 如果您使用重定向将移动用户转移到页面的移动版本，请考虑重新设计网站以使用[响应式设计](/responsive-web-design-basics/)。
 

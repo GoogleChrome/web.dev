@@ -1,13 +1,13 @@
 ---
 title: Rendering on the Web
-subhead: Where should we implement logic and rendering in our applications? Should we use Server Side Rendering? What about Rehydration? Let's find some answers! 
+subhead: Where should we implement logic and rendering in our applications? Should we use Server Side Rendering? What about Rehydration? Let's find some answers!
 authors:
   - developit
   - addyosmani
-date: 2019-08-27
-updated: 2019-02-06
+date: 2019-02-06
+updated: 2019-08-27
 description: |
-  Where should we implement logic and rendering in our applications? Should we use Server Side Rendering? What about Rehydration? Let's find some answers! 
+  Where should we implement logic and rendering in our applications? Should we use Server Side Rendering? What about Rehydration? Let's find some answers!
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
 ---
@@ -319,7 +319,7 @@ JavaScript](/discoverable/how-search-works), but there are often
 [limitations](https://developers.google.com/search/docs/guides/rendering) worth being aware of in how they
 render. Client-side rendering can work but often not without additional testing
 and leg-work. More recently [dynamic
-rendering](/search/docs/guides/dynamic-rendering) has also become an option
+rendering](https://developers.google.com/search/docs/advanced/javascript/dynamic-rendering) has also become an option
 worth considering if your architecture is heavily driven by client-side
 JavaScript.
 

@@ -20,7 +20,7 @@ required to make your app installable.
 
 ## How the Lighthouse web app manifest audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't have a [web app manifest](/add-manifest/)
 that meets minimum requirements for installability:
 
@@ -37,7 +37,7 @@ it will fail the audit:
 - A [`start_url`](https://developer.mozilla.org/docs/Web/Manifest/start_url) property
 - A [`display`](https://developer.mozilla.org/docs/Web/Manifest/display)
   property set to `fullscreen`, `standalone`, or `minimal-ui`
-- A [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native)
+- A [`prefer_related_applications`](https://developer.chrome.com/blog/app-install-banners-native/)
   property set to a value other than `true`.
 
 {% Aside 'caution' %}

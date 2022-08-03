@@ -30,7 +30,7 @@ tags:
 
 ## Почему проверка времени выполнения JavaScript в Lighthouse завершается неудачей
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) показывает предупреждение, если выполнение JavaScript занимает более 2 секунд. Если  выполнение занимает более 3,5 секунд, проверка завершается неудачей:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) показывает предупреждение, если выполнение JavaScript занимает более 2 секунд. Если  выполнение занимает более 3,5 секунд, проверка завершается неудачей:
 
 <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="Скриншот проверки «Сократите время выполнения JavaScript» в Lighthouse", width="800", height="321" %}</figure>
 

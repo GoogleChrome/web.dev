@@ -137,7 +137,7 @@ Some examples:
 - Using content that is too large or resource-intensive to decode quickly on the
   target device.
 - [Using too many
-  layers](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+  layers](/stick-to-compositor-only-properties-and-manage-layer-count/)
   requiring too much GPU memory.
 - Defining overly complex CSS styles or web animations.
 - Using design anti-patterns that disable fast rendering optimizations.
@@ -372,70 +372,50 @@ animation frame, ordered from best to worst case:
 <div>
   <table>
     <tr>
-      <td style="width:12em"><strong style="background:#BCD5AC;padding:0.25em;">
-        No Update Desired</strong>
-      </td>
+      <td><strong>No Update Desired</strong></td>
       <td>Idle time, repeat of the previous frame.</td>
     </tr>
     <tr>
-      <td><strong style="background:#BCD5AC;padding:0.25em;">
-        Fully presented</strong>
-      </td>
+      <td><strong>Fully presented</strong></td>
       <td>The main thread update was either committed within deadline, or no
       main thread update was desired.</td>
     </tr>
     <tr>
-      <td><strong style="background:#BCD5AC;padding:0.25em;">
-        Partially presented</strong>
-      </td>
+      <td><strong>Partially presented</strong></td>
       <td>Compositor only; the delayed main thread update had no visual
       change.</td>
     </tr>
     <tr>
-      <td><strong style="background:#DCE9D5;padding:0.25em;">
-        Partially presented</strong>
-      </td>
+      <td><strong>Partially presented</strong></td>
       <td>Compositor only; the main thread had a visual update, but that
       update did not include an animation that affects smoothness.</td>
     </tr>
     <tr>
-      <td><strong style="background:#E9ECC2;padding:0.25em;">
-        Partially presented</strong>
-      </td>
+      <td><strong>Partially presented</strong></td>
       <td>Compositor only; the main thread had a visual update that affects
       smoothness, but a previously stale frame arrived and was used instead.</td>
     </tr>
     <tr>
-      <td><strong style="background:#FDF2D0;padding:0.25em;">
-        Partially presented</strong>
-      </td>
+      <td><strong>Partially presented</strong></td>
       <td>Compositor only; without the desired main update, and the
       compositor update has an animation that affects smoothness.</td>
     </tr>
     <tr>
-      <td><strong style="background:#EECDCD;padding:0.25em;">
-        Partially presented</strong>
-      </td>
+      <td><strong>Partially presented</strong></td>
       <td>Compositor only but the compositor update does not have an
       animation that affects smoothness.</td>
     </tr>
     <tr>
-      <td><strong style="background:#EECDCD;padding:0.25em;">
-        Dropped frame</strong>
-      </td>
+      <td><strong>Dropped frame</strong></td>
       <td>No update. There was no compositor update desired, and main was
       delayed.</td>
     </tr>
     <tr>
-      <td><strong style="background:#DE9D9B;padding:0.25em;">
-        Dropped frame</strong>
-      </td>
+      <td><strong>Dropped frame</strong></td>
       <td>A compositor update was desired, but it was delayed.</td>
     </tr>
     <tr>
-      <td><strong style="background:#DE9D9B;padding:0.25em;">
-        Stale frame</strong>
-      </td>
+      <td><strong>Stale frame</strong></td>
       <td>An update was desired, it was produced by the renderer, but the
       GPU still did not present it before the vsync deadline.</td>
     </tr>

@@ -16,7 +16,7 @@ No momento em que este artigo foi escrito, o tema da barra de endereço do naveg
 
 ## Como a auditoria de cor do tema do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas que não aplicam um tema à barra de endereço:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca páginas que não aplicam um tema à barra de endereço:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Auditoria Lighthouse mostrando barra de endereço que não tem o tema das cores da página", width="800", height="98" %}</figure>
 

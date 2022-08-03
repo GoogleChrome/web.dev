@@ -22,7 +22,7 @@ rather than the intended control.
 
 ## How Lighthouse identifies missing parent roles
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags ARIA child roles that aren't contained by the required parent:
 
 <figure>

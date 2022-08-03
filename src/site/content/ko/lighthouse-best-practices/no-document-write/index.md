@@ -27,7 +27,7 @@ data from the network to be reparsed.
 
 ## Lighthouse `document.write()` 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 Chrome에서 차단하지 않은 `document.write()` 호출에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 Chrome에서 차단하지 않은 `document.write()` 호출에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="document.write 사용을 보여주는 Lighthouse 감사", width="800", height="213" %}</figure>
 
@@ -46,6 +46,6 @@ Lighthouse는 사용 방식에 상관없이 성능에 부정적인 영향을 미
 ## 참고자료
 
 - [**`document.write()`를 사용합니다** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
-- [`document.write()`에 대한 개입](https://developers.google.com/web/updates/2016/08/removing-document-write)
+- [`document.write()`에 대한 개입](https://developer.chrome.com/blog/removing-document-write/)
 - [파서 차단과 비동기 자바스크립트 비교](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)
 - [추측 파싱](https://developer.mozilla.org/docs/Glossary/speculative_parsing)

@@ -21,7 +21,7 @@ updated: 2019-08-28
 
 ## Почему аудит пункта назначения из разных источников Lighthouse завершается неудачей
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает небезопасные ссылки на пункты назначения из разных источников:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает небезопасные ссылки на пункты назначения из разных источников:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Аудит Lighthouse, показывающий небезопасные ссылки на пункты назначения из разных источников", width="800", height="213" %}</figure>
 

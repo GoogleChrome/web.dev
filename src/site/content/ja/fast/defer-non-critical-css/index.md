@@ -12,7 +12,7 @@ tags:
 
 CSS ファイルは[レンダリングをブロックするリソース](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)です。つまり、ブラウザがページをレンダリングする前に、CSS ファイルを読み込み、処理する必要があります。不要に大きなスタイルを使うウェブページは、その分レンダリングの時間が長くなります。
 
-[本ガイドでは、Critical Rendering Path (クリティカルレンダリングパス) を最適化し、FCP (First Contentful Paint) を改善する目的で重大でない CSS を延期する方法について学びます。](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+[本ガイドでは、Critical Rendering Path (クリティカルレンダリングパス) を最適化し、FCP (First Contentful Paint) を改善する目的で重大でない CSS を延期する方法について学びます。](/critical-rendering-path/)
 
 ## 準最適な方法で CSS を読み込む
 

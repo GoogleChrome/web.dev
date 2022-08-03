@@ -59,7 +59,7 @@ For more information about preloading critical resources, refer to the
 
 ## Render the initial route as soon as possible
 
-Lighthouse provides a warning if there are resources that delay [**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint),
+Lighthouse provides a warning if there are resources that delay [**First Paint**](/user-centric-performance-metrics/#important-metrics-to-measure),
 the moment when your site renders pixels to the screen:
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: Eliminate render-blocking resources audit", width="800", height="111" %}

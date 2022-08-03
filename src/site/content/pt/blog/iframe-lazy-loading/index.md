@@ -5,6 +5,7 @@ subhead: O carregamento lazy integrado no navegador para iframes já chegou
 authors:
   - addyosmani
 date: 2020-07-24
+updated: 2022-07-12
 hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: Contorno de telefone com carregamento de imagem e recursos
 description: Este artigo trata o atributo loading e como ele pode ser usado para controlar o carregamento de iframes.
@@ -49,9 +50,6 @@ O atributo `loading` permite que um navegador adie o carregamento de iframes e i
 
 - `lazy` : é um bom candidato para carregamento lazy.
 - `eager` : não é um bom candidato para carregamento lazy. Carregue imediatamente.
-- `auto` : o navegador irá determinar se deve ou não carregar de forma lazy.
-
-{% Aside %} O valor `auto` não faz ainda parte do padrão, mas atualmente é o default no Chrome. O Chrome pretende trazer uma proposta desse valor para a mesa de padrões. {% endAside %}
 
 O uso do atributo `loading` em iframes funciona da seguinte maneira:
 
@@ -146,14 +144,6 @@ Os *plug-ins sociais* do Facebook permitem que os desenvolvedores incorporem con
 <figure>   {% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Botão Facebook Like", width="800", height="71" %}</figure>
 
 Graças ao engenheiro Stoyan Stefanov, [todos os plug-ins sociais do Facebook agora suportam carregamento lazy padrão de iframes](https://developers.facebook.com/docs/plugins/like-button#settings). Os desenvolvedores que optarem pelo carregamento lazy por meio da configuração `data-lazy` dos plug-ins agora poderão evitar que ele carregue até que o usuário role nas proximidades. Isto permite que os recursos incorporados funcionem totalmente para os usuários que precisarem deles, ao mesmo tempo que oferece economia de dados para aqueles que não rolarem uma página até o fim. Esperamos que esta seja a primeira de muitas incorporações a explorar o carregamento lazy de iframe padrão em produção.
-
-### Espere um pouco, os navegadores não podem simplesmente carregar automaticamente iframes offscreen de modo lazy?
-
-Eles certamente podem. No Chrome 77, o Chrome adicionou suporte para carregar imagens e iframes offscreen usando carregamento lazy automaticamente quando um usuário optar pelo [Modo Lite](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) (modo de economia de dados) no Chrome para Android.
-
-O Modo Lite é frequentemente usado em regiões do mundo onde a qualidade da conexão de rede e os planos de dados não são os melhores. Cada byte é importante, portanto, os iframes com carregamento lazy têm o potencial de fazer uma diferença significativa para esses usuários.
-
-As origens podem detectar qual porcentagem de seu tráfego vem de usuários do Modo Lite, verificando a propriedade `navigator.connection.saveData`, que faz parte da [API `NetworkInformation`](https://developer.mozilla.org/docs/Web/API/NetworkInformation).
 
 ### Posso carregar iframes de forma lazy em múltiplos navegadores? Sim
 

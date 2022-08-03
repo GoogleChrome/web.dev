@@ -199,6 +199,9 @@ redirects:
   - source: /progressive-web-apps/#installable
     destination: /progressive-web-apps/#make-it-installable
 
+  - source: /push-notifications/
+    destination: /push-notifications-overview/
+
   # Redirect for spec name changes
 
   - source: /sms-receiver-api-announcement
@@ -291,18 +294,36 @@ redirects:
     destination: /media-eme
 
   # Redirects to https://developer.chrome.com/.
-  - source: /browser-flags/
+  - source: /browser-flags
     destination: https://developer.chrome.com/blog/browser-flags/
-  - source: /origin-trials/
-    destination: https://developer.chrome.com/blog/origin-trials/
-  - source: /third-party-origin-trials/
+  - source: /third-party-origin-trials
     destination: https://developer.chrome.com/blog/third-party-origin-trials/
-  - source: /fugu-status/
+  - source: /fugu-status
     destination: https://developer.chrome.com/blog/fugu-status/
-  - source: /conversion-measurement/
+  - source: /conversion-measurement
     destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
-  - source: /using-conversion-measurement/
+  - source: /using-conversion-measurement
     destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
+  - source: /origin-trials
+    destination: https://developer.chrome.com/docs/web-platform/origin-trials/
+  - source: /launch-handler
+    destination: https://developer.chrome.com/docs/web-platform/launch-handler/
+  - source: /gpu
+    destination: https://developer.chrome.com/docs/web-platform/webgpu/
+  - source: /storage-foundation
+    destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
+  - source: /app-history-api
+    destination: https://developer.chrome.com/docs/web-platform/navigation-api/
+  - source: /fetch-upload-streaming
+    destination: https://developer.chrome.com/articles/fetch-streaming-requests/
+  - source: /compute-pressure
+    destination: https://developer.chrome.com/docs/web-platform/compute-pressure/
+  - source: /declarative-link-capturing
+    destination: https://developer.chrome.com/docs/web-platform/declarative-link-capturing/
+  - source: /handwriting-recognition
+    destination: https://developer.chrome.com/docs/web-platform/handwriting-recognition/
+  - source: /virtualkeyboard
+    destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
 
   # Redirect for Aurora
   - source: /aurora
@@ -319,3 +340,11 @@ redirects:
   # Redirects old vitals tooling workflow doc to the updated doc
   - source: /vitals-tools-workflow
     destination: /vitals-tools
+
+  # Redirects Extending Workbox post to the Using Plugins doc on d.c.c.
+  - source: /extending-workbox
+    destination: https://developer.chrome.com/docs/workbox/using-plugins/
+
+  # Redirects lazysizes post to the browser-level lazy loading post
+  - source: /use-lazysizes-to-lazyload-images
+    destination: /browser-level-image-lazy-loading/

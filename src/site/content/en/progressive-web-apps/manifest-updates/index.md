@@ -72,7 +72,7 @@ preference is always respected.
 
 ### Testing manifest updates {: #cr-desktop-test }
 
-The `about://internals/web-app` page (available in Chrome 85 or later),
+The `chrome://web-app-internals` page (available in Chrome 85 or later),
 includes detailed information about all of the PWAs installed on the device,
 and can help you understand when the manifest was last updated, how often
 it's updated, and more.

@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: A hand touching a smartphone screen
 description: |
@@ -252,14 +253,14 @@ loads](/serve-modern-code-to-modern-browsers/) guide goes into more detail about
 
 A number of tools are available to measure and debug FID:
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) does not include
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) does not include
   support for FID since it is a field metric. However, [Total Blocking
   Time](/tbt/) (TBT) can be used as a proxy. Optimizations that improve TBT should
   also improve FID in the field.
 
   {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
   provides real-world FID values aggregated at the origin-level
 
 _With thanks to Philip Walton, Kayce Basques, Ilya Grigorik, and Annie Sullivan for their reviews._

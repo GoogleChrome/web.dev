@@ -14,7 +14,7 @@ El texto del vínculo es la palabra o frase en la que se puede hacer clic en un 
 
 ## Cómo falla la auditoría de texto del enlace de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca los enlaces sin textos descriptivos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca los enlaces sin textos descriptivos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Auditoría de Lighthouse que muestra los enlaces que no tienen texto descriptivo", width="800", height="191" %}</figure>
 

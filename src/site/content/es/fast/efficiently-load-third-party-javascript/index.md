@@ -137,7 +137,7 @@ Los scripts de terceros auto-hospedados es una opción que te da más control so
 
 - Reducir los tiempos de búsqueda de DNS y de ida y vuelta.
 - Mejora las cabeceras de [almacenamiento en caché HTTP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
-- Aprovechar [HTTP/2 server push](https://developers.google.com/web/fundamentals/performance/http2/).
+- Aprovechar [HTTP/2 server push](/performance-http2/).
 
 Por ejemplo, Casper se las arregló para [reducir en 1,7 segundos](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec) el tiempo de carga al autohospedar un script de Prueba A/B.
 

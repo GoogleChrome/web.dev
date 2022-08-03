@@ -16,7 +16,7 @@ tags:
 
 CSS-файлы [блокируют отрисовку](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), поскольку эти ресурсы должны загружаться и обрабатываться до того, как браузер отобразит страницу. Поэтому объемные файлы стилей значительно замедляют отрисовку страницы.
 
-В этом руководстве рассказывается, как оптимизировать [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) (путь критичной отрисовки) и ускорить [First Contentful Paint (FCP)](/fcp/) (первая отрисовка контента), откладывая некритичные CSS.
+В этом руководстве рассказывается, как оптимизировать [Critical Rendering Path](/critical-rendering-path/) (путь критичной отрисовки) и ускорить [First Contentful Paint (FCP)](/fcp/) (первая отрисовка контента), откладывая некритичные CSS.
 
 ## Неоптимальная загрузка CSS
 

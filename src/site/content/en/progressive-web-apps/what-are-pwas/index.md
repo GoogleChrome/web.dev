@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2020-06-09
 description: |
   An introduction to Progressive Web Apps (PWAs) and the three pillars that
   separate them from other web apps.
@@ -15,27 +15,27 @@ tags:
 
 The web is an incredible platform. Its mix of ubiquity across devices and
 operating systems, its user-centered security model, and the fact that neither
-its specification nor its implementation is controlled by a single company makes
+its specification nor its implementation are controlled by a single company makes
 the web a unique platform to develop software on. Combined with its inherent
 linkability, it's possible to search it and share what you've found with
 anyone, anywhere. Whenever you go to a website, it's up-to-date, and your
 experience with that site can be as ephemeral or as permanent as you'd like. Web
 applications can reach _anyone, anywhere, on any device_ with a single codebase.
 
-Platform-specific applications, are known for being incredibly rich and reliable. They're
+Platform-specific applications are known for being incredibly rich and reliable. They're
 ever-present, on home screens, docks, and taskbars. They work regardless of
 network connection. They launch in their own standalone experience. They can
 read and write files from the local file system, access hardware connected via
-USB, serial or bluetooth, and even interact with data stored on your device,
-like contacts and calendar events. In these applications, you can do things
-like take pictures, see playing songs listed on the home screen, or control song
+USB, serial port, or bluetooth, and even interact with data stored on your device,
+such as contacts and calendar events. In these applications, you can do things
+such as take pictures, see playing songs listed on the home screen, or control song
 playback while in another app. Platform-specific applications feel like _part_ of the
 device they run on.
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DKtUFjXLJbiiruKA9P1.svg", alt="A graph illustrating the relative capabilites and reach of platform-specific apps, with high capabilities, web apps, with high reach, and progressive web apps, which have both high capabilities and high reach.", width="370", height="367" %}
   <figcaption>
-    Capabilities vs. reach of platform-specific apps, web app, and progressive web apps.
+    Capabilities vs. reach of platform-specific apps, web apps, and progressive web apps.
   </figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ _anyone, anywhere, on any device_ with a single codebase.
 
 ## The three app pillars
 
-Progressive Web Apps are web applications that have been designed so they are
+Progressive Web Apps are web applications that have been designed to be
 capable, reliable, and installable. These three pillars transform them into an
 experience that feels like a platform-specific application.
 
@@ -57,10 +57,10 @@ experience that feels like a platform-specific application.
 
 The web is quite capable in its own right today. For example, you can build a hyper-local
 video chat app using WebRTC, geolocation, and push notifications. You can make
-that app installable and take those conversations virtual with WebGL and WebVR.
+that app installable and take its conversations virtual with WebGL and WebVR.
 With the introduction of WebAssembly, developers can tap into other ecosystems,
-like C, C++, and Rust, and bring decades of work and capabilities to the web
-too. [Squoosh.app](https://squoosh.app/), for instance, leverages this for its
+such as C, C++, and Rust, and bring decades of work and capabilities to the web.
+[Squoosh.app](https://squoosh.app/), for instance, uses this for its
 advanced image compression.
 
 Until recently, only platform-specific apps could really lay claim to these capabilities.
@@ -68,7 +68,7 @@ While some capabilities are still out of the web's reach, new and upcoming APIs
 are looking to change that, expanding what the web can do with features like
 file system access, media controls, app badging, and full clipboard support. All
 of these capabilities are built with the web's secure, user-centric permission
-model, ensuring that going to a website is never a scary proposition for users.
+model, ensuring that going to a website is never scary for users.
 
 Between modern APIs, WebAssembly, and new and upcoming APIs, web applications
 are more capable than ever, and those capabilities are only growing.
@@ -83,17 +83,17 @@ load times go from 1 second to ten seconds, the probability of a user bouncing
 [increases by 123%](https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/).
 Performance doesn't stop after the `onload` event. Users should never wonder whether their
 interaction—for example, clicking a button—was registered or not. Scrolling and
-animation should feel smooth. Performance affects your entire experience, from
-how users perceive your application to how it actually performs.
+animation should feel smooth. Performance affects the entire user experience, from
+how they perceive your application to how it actually performs.
 
 Finally, reliable applications need to be usable regardless of network
 connection. Users expect apps to start up on slow or flaky network connections
 or even when offline. They expect the most recent content they've interacted
-with, like media tracks or tickets and itineraries, to be available and usable
+with, such as media tracks or tickets and itineraries, to be available and usable
 even if getting a request to your server is hard. When a request isn't possible,
 they expect to be told there's trouble instead of silently failing or crashing.
 
-Users love apps that respond to interaction in the blink of an eye, and an
+Users deserve apps that respond to interaction in the blink of an eye, and an
 experience they can depend on.
 
 ### Installable
@@ -103,7 +103,7 @@ tab. They're launchable from on the user's home screen, dock, taskbar, or shelf.
 It's possible to search for them on a device and jump between them with the app
 switcher, making them feel like part of the device they're installed on.
 
-New capabilities open up after a web app is installed. Keyboard shortcuts usually
+New capabilities open up after a web app is installed. Keyboard shortcuts, usually
 reserved when running in the browser, become available. Progressive Web
 Apps can register to accept content from other applications, or to be the
 default application to handle different types of files.

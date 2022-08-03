@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: |2
 
   무엇이 좋은 또는 훌륭한 프로그레시브 웹 앱을 만드는가?
@@ -37,7 +37,7 @@ tags:
 
 사용자가 앱을 *사용*하도록 하려면 속도가 중요합니다. 실제로 페이지 로드 시간이 1초에서 10초로 늘어나면 사용자가 이탈할 확률은 123% 증가합니다. 성능은 `load` 이벤트에서 그치지 않습니다. 사용자는 버튼 클릭과 같은 상호 작용이 입력되었는지 여부를 궁금해해서는 안 됩니다. 스크롤과 애니메이션이 부드럽게 느껴져야 합니다. 성능은 사용자가 애플리케이션을 인식하는 방식에서 실질적인 성능에 이르기까지 전체 경험에 영향을 줍니다.
 
-모든 응용 프로그램의 요구 사항은 다르지만 Lighthouse의 성능 감사는 [RAIL 사용자 중심 성능 모델을](/rail/) 기반으로 하며 이러한 감사에서 높은 점수를 받으면 사용자가 즐거운 경험을 할 가능성이 높아집니다. [PageSpeed Insights](https://pagespeed.web.dev/) 또는 [Chrome 사용자 경험 보고서](https://developers.google.com/web/tools/chrome-user-experience-report/)를 사용하여 웹 앱에 대한 실제 성능 데이터를 얻을 수도 있습니다.
+모든 응용 프로그램의 요구 사항은 다르지만 Lighthouse의 성능 감사는 [RAIL 사용자 중심 성능 모델을](/rail/) 기반으로 하며 이러한 감사에서 높은 점수를 받으면 사용자가 즐거운 경험을 할 가능성이 높아집니다. [PageSpeed Insights](https://pagespeed.web.dev/) 또는 [Chrome 사용자 경험 보고서](https://developer.chrome.com/docs/crux/)를 사용하여 웹 앱에 대한 실제 성능 데이터를 얻을 수도 있습니다.
 
 #### 방법
 
@@ -163,7 +163,7 @@ Jeremy Keith의 [탄력적인 웹 디자인](https://resilientwebdesign.com/)은
 
 #### 방법
 
-사용자가 오프라인에서 작동할 것으로 기대하는 기능을 결정한 후에는 콘텐츠를 사용할 수 있고 오프라인 컨텍스트에 적용할 수 있도록 해야 합니다. 또한 브라우저 내 NoSQL 스토리지 시스템인 [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb)를 사용하여 데이터를 저장 및 검색하고 사용자가 오프라인 상태에서 작업을 수행하고 사용자가 다시 안정적인 연결을 가질 때까지 서버 통신을 연기할 수 있도록 [백그라운드 동기화](https://developer.chrome.com/blog/background-sync/)를 사용할 수 있습니다. 서비스 워커를 사용하여 오프라인 사용을 위한 이미지, 비디오 파일 및 오디오 파일과 같은 다른 종류의 콘텐츠를 저장하고 사용자 인증을 유지하기 위해 [안전하고 수명이 긴 세션](https://developers.google.com/web/updates/2016/06/2-cookie-handoff)을 구현하는 데 사용할 수도 있습니다. 사용자 경험 관점에서 로드하는 동안 사용자에게 속도와 콘텐츠에 대한 인식을 제공한 다음 필요에 따라 캐시된 콘텐츠 또는 오프라인 표시기로 대체할 수 있는 [스켈레톤 화면](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)을 사용할 수 있습니다.
+사용자가 오프라인에서 작동할 것으로 기대하는 기능을 결정한 후에는 콘텐츠를 사용할 수 있고 오프라인 컨텍스트에 적용할 수 있도록 해야 합니다. 또한 브라우저 내 NoSQL 스토리지 시스템인 [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb)를 사용하여 데이터를 저장 및 검색하고 사용자가 오프라인 상태에서 작업을 수행하고 사용자가 다시 안정적인 연결을 가질 때까지 서버 통신을 연기할 수 있도록 [백그라운드 동기화](https://developer.chrome.com/blog/background-sync/)를 사용할 수 있습니다. 서비스 워커를 사용하여 오프라인 사용을 위한 이미지, 비디오 파일 및 오디오 파일과 같은 다른 종류의 콘텐츠를 저장하고 사용자 인증을 유지하기 위해 [안전하고 수명이 긴 세션](https://developer.chrome.com/blog/2-cookie-handoff/)을 구현하는 데 사용할 수도 있습니다. 사용자 경험 관점에서 로드하는 동안 사용자에게 속도와 콘텐츠에 대한 인식을 제공한 다음 필요에 따라 캐시된 콘텐츠 또는 오프라인 표시기로 대체할 수 있는 [스켈레톤 화면](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)을 사용할 수 있습니다.
 
 {% endDetails %}
 

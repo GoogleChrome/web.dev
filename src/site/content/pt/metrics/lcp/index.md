@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-07-18
 description: Este artigo apresenta a métrica Largest Contentful Paint (LCP) e explica como medi-la
 tags:
   - performance
@@ -120,7 +120,7 @@ A LCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 ### Ferramentas de campo
 
-- [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Relatório de Experiência do Usuário Chrome](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Console de Busca (relatório Core Web Vitals)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -128,7 +128,7 @@ A LCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 ### Ferramentas de laboratório
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Medição da LCP em JavaScript
@@ -189,7 +189,7 @@ A LCP é afetada principalmente por quatro fatores:
 Para saber como melhorar a LCP, veja [Otimize a LCP](/optimize-lcp/). Para obter orientações adicionais sobre técnicas de desempenho individual que também podem melhorar a LCP, consulte:
 
 - [Aplique carregamento instantâneo com o padrão PRPL](/apply-instant-loading-with-prpl)
-- [Otimizando o Caminho de Renderização Crítico](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [Otimizando o Caminho de Renderização Crítico](/critical-rendering-path/)
 - [Otimize seu CSS](/fast#optimize-your-css)
 - [Otimize suas imagens](/fast#optimize-your-images)
 - [Otimize fontes da web](/fast#optimize-web-fonts)

@@ -6,12 +6,14 @@ authors:
 hero: image/admin/k3hWnnwqTvg7w7URsbIK.png
 description: Data Studio 是一款功能强大的数据可视化工具，可让您使用大数据源构建仪表板，如 Chrome UX Report。您可以在本文中了解如何创建自定义 CrUX Dashboard 来跟踪源中用户的体验。
 date: 2020-06-22
+updated: 2022-07-18
 tags:
   - performance
   - blog
+  - chrome-ux-report
 ---
 
-[Data Studio](https://marketingplatform.google.com/about/data-studio/) 是一款功能强大的数据可视化工具，可让您使用大数据源构建仪表板，如 [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX)。您可以在本文中了解如何创建自定义 CrUX Dashboard 来跟踪源中用户的体验。
+[Data Studio](https://marketingplatform.google.com/about/data-studio/) 是一款功能强大的数据可视化工具，可让您使用大数据源构建仪表板，如 [Chrome UX Report](https://developer.chrome.com/docs/crux/) (CrUX)。您可以在本文中了解如何创建自定义 CrUX Dashboard 来跟踪源中用户的体验。
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598" %}
 
@@ -28,7 +30,7 @@ CrUX 仪表板使用 Data Studio 的 [Community Connectors](https://developers.g
 {% Compare 'better', 'Origin (Supported)' %}
 
 ```text
-https://developers.google.com
+https://web.dev
 ```
 
 {% endCompare %}
@@ -36,7 +38,7 @@ https://developers.google.com
 {% Compare 'worse', 'URL (Not supported)' %}
 
 ```text
-https://developers.google.com/web/tools/chrome-user-experience-report/
+https://web.dev/chrome-ux-report-data-studio-dashboard/
 ```
 
 {% endCompare %}
@@ -79,7 +81,7 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 ### 指标性能
 
-在 Core Web Vitals 页面之后，您将找到 CrUX 数据集中所有[指标](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)的独立页面。
+在 Core Web Vitals 页面之后，您将找到 CrUX 数据集中所有[指标](https://developer.chrome.com/docs/crux/methodology/#metrics)的独立页面。
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard LCP 页面", width="800", height="598" %}
 
@@ -103,7 +105,7 @@ PageSpeed Insights 等工具中对应的 P75 值并非基于公共 BigQuery 数�
 
 ### 用户人口统计
 
-用户人口统计页面包含两个[维度](https://developers.google.com/web/tools/chrome-user-experience-report/#dimensions)：设备和有效连接类型 (ECT)。这些页面列出了每个人口统计中用户在整个源中的页面浏览量分布。
+用户人口统计页面包含两个[维度](https://developer.chrome.com/docs/crux/methodology/#dimensions)：设备和有效连接类型 (ECT)。这些页面列出了每个人口统计中用户在整个源中的页面浏览量分布。
 
 设备分布页面显示了手机、台式机和平板电脑用户随时间的细分数据。许多源往往几乎没有平板电脑数据，因此您经常会看到图表边缘出现 "0%" 的情况。
 

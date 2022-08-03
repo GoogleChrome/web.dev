@@ -10,7 +10,7 @@ web_lighthouse:
 
 [Цепочка критических запросов](https://developers.google.com/web/fundamentals/performance/critical-rendering-path) — это последовательность зависимых друг от друга сетевых запросов, необходимых для рендеринга страницы. Чем длиннее цепочка и чем и больше размер скачиваемых данных, тем сильнее будет влияние на производительность при загрузке страницы.
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) оповещает о критических запросах, загружаемых с высоким приоритетом:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) оповещает о критических запросах, загружаемых с высоким приоритетом:
 
 <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Скриншот проверки Minimize critical request depth («Минимизируйте глубину критических запросов») в Lighthouse", width="800", height="452" %}</figure>
 

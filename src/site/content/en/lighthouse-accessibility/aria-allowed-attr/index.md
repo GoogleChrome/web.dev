@@ -19,7 +19,7 @@ break the role, but it should still be fixed.
 
 ## How Lighthouse identifies ARIA mismatches
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags mismatches between ARIA roles and `aria-*` attributes:
 
 <figure>

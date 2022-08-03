@@ -44,7 +44,7 @@ Alternatively, join the
 updates. You may ask questions there as well.
 
 If you want to check older updates to Chrome, head over to
-["Changes in the Payment Request API" article at Web Fundamentals](https://developers.google.com/web/updates/2017/01/payment-request-updates).
+["Changes in the Payment Request API" article at Web Fundamentals](https://developer.chrome.com/blog/payment-request-updates/).
 {% endAside %}
 
 ## New method: `hasEnrolledInstrument()`

@@ -4,7 +4,7 @@ title: Время ожидания до первого взаимодейств�
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: В этой статье описывается метрика FID (Время ожидания до первого взаимодействия с контентом) и объясняются принципы ее измерения
 tags:
   - performance
@@ -120,7 +120,7 @@ FIDэто показатель, который измеряет скорость
 
 ### Инструменты для измерения в полевых условиях
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (отчет Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)

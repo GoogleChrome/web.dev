@@ -138,7 +138,7 @@ for later use.
 ```html
 <script>
   const handleSuccess = function(stream) {
-    <strong>const context = new AudioContext();
+    const context = new AudioContext();
     const source = context.createMediaStreamSource(stream);
     const processor = context.createScriptProcessor(1024, 1, 1);
 
@@ -148,7 +148,7 @@ for later use.
     processor.onaudioprocess = function(e) {
       // Do something with the data, e.g. convert it to WAV
       console.log(e.inputBuffer);
-    };</strong>
+    };
   };
 
   navigator.mediaDevices.getUserMedia({ audio: true, video: false })
@@ -184,7 +184,7 @@ destination.
   const handleSuccess = function(stream) {
     const options = {mimeType: 'audio/webm'};
     const recordedChunks = [];
-    <strong>const mediaRecorder = new MediaRecorder(stream, options);
+    const mediaRecorder = new MediaRecorder(stream, options);
 
     mediaRecorder.addEventListener('dataavailable', function(e) {
       if (e.data.size > 0) recordedChunks.push(e.data);
@@ -199,7 +199,7 @@ destination.
       mediaRecorder.stop();
     });
 
-    mediaRecorder.start();</strong>
+    mediaRecorder.start();
   };
 
   navigator.mediaDevices.getUserMedia({ audio: true, video: false })

@@ -214,7 +214,7 @@ Google의 비밀번호 관리자를 사용하면 [기존 비밀번호가 도용�
 
 ## 다중 인증 제공 고려 {: #multi-factor-authentication}
 
-다중 인증은 사용자가 여러 가지 방법으로 인증을 제공하도록 하는 것을 의미합니다. 예를 들어 사용자에게 비밀번호를 설정하도록 요구할 뿐만 아니라 이메일이나 SMS 문자 메시지로 전송된 일회용 비밀번호를 사용하거나 앱 기반 일회용 코드, 보안 키 또는 지문 센서. [SMS OTP 모범 사례](/sms-otp-form) 및 [WebAuthn으로 강력한 인증 활성화](https://developers.google.com/web/updates/2018/05/webauthn)에서는 다중 인증을 구현하는 방법을 설명합니다.
+다중 인증은 사용자가 여러 가지 방법으로 인증을 제공하도록 하는 것을 의미합니다. 예를 들어 사용자에게 비밀번호를 설정하도록 요구할 뿐만 아니라 이메일이나 SMS 문자 메시지로 전송된 일회용 비밀번호를 사용하거나 앱 기반 일회용 코드, 보안 키 또는 지문 센서. [SMS OTP 모범 사례](/sms-otp-form) 및 [WebAuthn으로 강력한 인증 활성화](https://developer.chrome.com/blog/webauthn/)에서는 다중 인증을 구현하는 방법을 설명합니다.
 
 사이트에서 개인 정보나 민감한 정보를 처리하는 경우 반드시 다중 인증을 제공(또는 시행)해야 합니다.
 
@@ -246,7 +246,7 @@ Google의 비밀번호 관리자를 사용하면 [기존 비밀번호가 도용�
 
 - [로그인 양식 모범 사례](/sign-in-form-best-practices)
 - [지불 및 주소 양식 모범 사례](/payment-and-address-form-best-practices)
-- [놀라운 양식 만들기](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [놀라운 양식 만들기](/learn/forms/)
 - [모바일 양식 디자인 모범 사례](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [더 많은 기능을 갖춘 양식 컨트롤](/more-capable-form-controls)
 - [액세스 가능한 양식 만들기](https://webaim.org/techniques/forms/)

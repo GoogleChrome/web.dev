@@ -9,7 +9,7 @@ authors:
 description: >
   Over the last three years, Chrome has been working to empower web applications that want to push the boundaries of what's possible in the browser. One such web application has been Photoshop. The idea of running software as complex as Photoshop directly in the browser would have been hard to imagine just a few years ago. However, by using various new web technologies, Adobe has now brought a public beta of Photoshop to the web.
 date: 2021-10-26
-updated: 2022-04-29
+updated: 2022-05-12
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/pYiISdhsJe3oEL871Dqp.png
 alt: A part of Photoshop's user interface.
 tags:
@@ -18,6 +18,10 @@ tags:
 ---
 
 Over the last three years, Chrome has been working to empower web applications that want to push the boundaries of what's possible in the browser. One such web application has been Photoshop. The idea of running software as complex as Photoshop directly in the browser would have been hard to imagine just a few years ago. However, by using various new web technologies, Adobe has now brought a public beta of Photoshop to the web.
+
+{% YouTube "CF5zZZy0R9U" %}
+(If you prefer watching over reading, this article is also available as a
+[video](https://www.youtube.com/watch?v=CF5zZZy0R9U).)
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/kfFAUTzDHzvE3hXISyQO.png", alt="The Photoshop web app running in a browser with an image showing an elephant on the canvas and the 'selection tools' menu item open. ", width="800", height="500" %}
 

@@ -18,7 +18,7 @@ updated: 2019-09-19
 
 ## Lighthouse 웹 앱 매니페스트 감사가 실패하는 방법
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 설치 가능성에 대한 최소 요구 사항을 충족하는 [웹 앱 매니페스트](/add-manifest/)가 없는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 설치 가능성에 대한 최소 요구 사항을 충족하는 [웹 앱 매니페스트](/add-manifest/)가 없는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="사용자가 홈 화면에서 웹 앱을 설치할 수 없음을 보여주는 Lighthouse 감사", width="800", height="98" %}</figure>
 
@@ -28,7 +28,7 @@ updated: 2019-09-19
 - 192x192픽셀 및 512x512픽셀 아이콘을 포함하는 [`icons`](https://developer.mozilla.org/docs/Web/Manifest/icons)
 - [`start_url`](https://developer.mozilla.org/docs/Web/Manifest/start_url) 속성
 - `fullscreen` , `standalone` 또는 `minimal-ui`로 설정된 [`display`](https://developer.mozilla.org/docs/Web/Manifest/display)
-- `true` 이외의 값으로 설정되는 [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native) 속성.
+- `true` 이외의 값으로 설정되는 [`prefer_related_applications`](https://developer.chrome.com/blog/app-install-banners-native/) 속성.
 
 {% Aside 'caution' %} 앱을 설치하려면 웹 앱 매니페스트가 *필요*하지만 *충분*하지 않습니다. 설치 가능성에 대한 모든 요구 사항을 충족하는 방법을 알아보려면 [설치 가능 게시물에 필요한 사항 알아보기](/discover-installable)를 참조하십시오. {% endAside %}
 

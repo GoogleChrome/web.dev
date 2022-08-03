@@ -19,9 +19,9 @@ HTML, CSS 및 JavaScript를 픽셀로 변환하기 위한 브라우저의 알고
 
 렌더링 파이프라인에 대해 자세히 알아보려면 다음 리소스를 확인하세요.
 
-- [최신 웹 브라우저 내부 살펴보기(3부)](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
-- [페인트 복잡성을 단순화하고 페인트 영역 줄이기](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
-- [합성 전용 속성 유지 및 레이어 수 관리](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+- [최신 웹 브라우저 내부 살펴보기(3부)](https://developer.chrome.com/blog/inside-browser-part3/)
+- [페인트 복잡성을 단순화하고 페인트 영역 줄이기](/simplify-paint-complexity-and-reduce-paint-areas/)
+- [합성 전용 속성 유지 및 레이어 수 관리](/stick-to-compositor-only-properties-and-manage-layer-count/)
 
 ## Lighthouse가 합성되지 않은 애니메이션을 감지하는 방법
 
@@ -29,12 +29,12 @@ HTML, CSS 및 JavaScript를 픽셀로 변환하기 위한 브라우저의 알고
 
 ## 애니메이션이 합성되었는지 확인하는 방법
 
-[합성 전용 속성 유지 및 레이어 수 관리](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count) 및 [고성능 애니메이션](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)을 참조하세요.
+[합성 전용 속성 유지 및 레이어 수 관리](/stick-to-compositor-only-properties-and-manage-layer-count/) 및 [고성능 애니메이션](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)을 참조하세요.
 
 ## 리소스
 
 - [*합성되지 않은 애니메이션 방지* 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
-- [합성 전용 속성 유지 및  레이어 수 관리](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+- [합성 전용 속성 유지 및  레이어 수 관리](/stick-to-compositor-only-properties-and-manage-layer-count/)
 - [고성능 애니메이션](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
-- [페인트 복잡성을 단순화하고 페인트 영역 줄이기](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
-- [최신 웹 브라우저 내부 살펴보기(3부)](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
+- [페인트 복잡성을 단순화하고 페인트 영역 줄이기](/simplify-paint-complexity-and-reduce-paint-areas/)
+- [최신 웹 브라우저 내부 살펴보기(3부)](https://developer.chrome.com/blog/inside-browser-part3/)

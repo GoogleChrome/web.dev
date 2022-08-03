@@ -4,6 +4,7 @@ subhead: Learn how to control element sizing, maintain proper spacing, and imple
 authors:
   - una
 date: 2020-10-14
+updated: 2022-07-25
 hero: image/admin/aVL3BEXD3AF9fFzPGKMf.jpg
 alt: Set of tools on a desk.
 description: Min, max, and clamp provide some powerful CSS capabilities that enable more responsive styling with fewer liens of code. This post goes over how to control element sizing, maintain proper spacing, and implement fluid typography using these well-supported CSS math functions.
@@ -33,18 +34,19 @@ maintaining proper spacing, `min()`, `max()`, and `clamp()` can help.
   <cite><a href="https://www.w3.org/TR/css-values-4/#calc-notation">CSS Values And Units Level 4</a></cite>
 </blockquote>
 
-Safari was the first to [ship](https://bugs.webkit.org/show_bug.cgi?id=167000)
-the complete set of functions in April 2019, with Chromium following later that
-year in version 79. This year, with Firefox
-[75](https://bugzilla.mozilla.org/show_bug.cgi?id=1519519) shipping, we now have
-browser parity for `min()`, `max()`, and `clamp()` in all evergreen browsers.
+## Browser support
 
-<figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246" %}
-  <figcaption>
-    <a href="https://caniuse.com/css-math-functions">Caniuse</a> support table.
-  </figcaption>
-</figure>
+### `min()`
+
+{% BrowserCompat 'css.types.min' %}
+
+### `max()`
+
+{% BrowserCompat 'css.types.max' %}
+
+### `clamp()`
+
+{% BrowserCompat 'css.types.clamp' %}
 
 ## Usage
 

@@ -147,7 +147,7 @@ Self-hosting third-party scripts is an option that gives you more control over a
 
 * Reduce DNS lookup and round-trip times.
 * Improve [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) headers.
-* Take advantage of [HTTP/2 server push](https://developers.google.com/web/fundamentals/performance/http2/).
+* Take advantage of [HTTP/2 server push](/performance-http2/).
 
 For example, Casper managed to [shave 1.7 seconds](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec) off load time by self-hosting an A/B testing script.
 

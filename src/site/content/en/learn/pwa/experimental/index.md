@@ -57,7 +57,7 @@ Origin trials allow you to try out new features and give feedback to the web sta
 * [Limited across all users globally](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/explainer.md#monitoring-and-limiting-usage) to ensure they don't become a de facto standard, so it's recommended you activate the feature in your codebase following each browser's trial guidelines for a subset of your users.
 * Limited to the browser vendor which starts the origin trial, so a Chrome origin trial will not work in Safari, Firefox, or Edge, for instance.
 
-If these requirements are OK for you, you can register an origin to participate in a trial. You can find instructions to sign up for an origin tril in Chrome [here](https://developer.chrome.com/blog/origin-trials/) and for Microsoft Edge follow [this link](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/OriginTrialsGuide/explainer.md)
+If these requirements are OK for you, you can register an origin to participate in a trial. You can find instructions to sign up for an origin trial in Chrome [here](https://developer.chrome.com/blog/origin-trials/) and for Microsoft Edge follow [this link](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/OriginTrialsGuide/explainer.md)
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/d5ueJjfbepXwq72v2UjU.png", alt="A list of available origin trials for Google Chrome.", width="800", height="510" %}
 
@@ -82,7 +82,7 @@ Firefox offers [experimental features](https://developer.mozilla.org/docs/Mozill
 
 ##  Resources
 
-- [The capabilities project](https://developers.google.com/web/updates/capabilities)
+- [The capabilities project](https://developer.chrome.com/blog/capabilities/)
 - [New capabilities status](https://developer.chrome.com/blog/fugu-status/)
 - [Fugu Public Tracker](https://goo.gle/fugu-api-tracker)
 - [Getting started with Chrome origin trials](https://developer.chrome.com/blog/origin-trials/)

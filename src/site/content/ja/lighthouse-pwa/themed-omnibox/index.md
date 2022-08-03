@@ -18,7 +18,7 @@ updated: 2020-06-17
 
 ## Lighthouse によるテーマの色の監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、アドレスバーにテーマを適用しないページにフラグを立てます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)は、アドレスバーにテーマを適用しないページにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse 監査はページの色をテーマにしていないアドレスバーを表示します", width="800", height="98" %}</figure>
 

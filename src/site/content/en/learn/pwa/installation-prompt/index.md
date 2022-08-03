@@ -70,7 +70,7 @@ The event will not fire if:
 
 {% Aside 'gotchas' %}
 Chrome and Edge on iOS and iPadOS do not support PWA installation, so the `beforeinstallprompt` event can't fire. In this case, the only option is to open the PWA using Safari, where it is installable from the [share, add to the home screen menu](/learn/pwa/installation/#installation-criteria).
-{% endAside %}.
+{% endAside %}
 
 ### The best place to prompt
 
@@ -115,7 +115,7 @@ If the browser doesn't support the `beforeinstallprompt` or the event does not f
 
 You should only render these instructions in browser mode; other display options, such as `standalone` or `fullscreen` mean the user has already installed the app.
 
-To render the element only in browser mode, use the`display-mode` media query:
+To render the element only in browser mode, use the `display-mode` media query:
 
 ```css
 #installInstructions {
@@ -137,13 +137,14 @@ Try it yourself with the [Make it installable](/codelab-make-installable/) codel
 ## Libraries
 
 Check out these libraries for help with rendering a custom install prompt:
+
 - [PWA Builder <pwa-install>](https://github.com/pwa-builder/pwa-install)
 - [PWA Installer Prompt for React](https://github.com/shnaveen25/react-pwa-installer-prompt)
 - [React PWA Install](https://www.npmjs.com/package/react-pwa-install)
 - [Vue PWA Install](https://github.com/Bartozzz/vue-pwa-install)
 - [Add to Home Screen](https://github.com/docluv/add-to-homescreen)
 
-##  Resources
+## Resources
 
 - [Patterns for Promoting PWA installation](/promote-install/)
 - [How to provide your own in-app install experience](/customize-install/)

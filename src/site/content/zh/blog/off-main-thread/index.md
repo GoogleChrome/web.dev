@@ -179,6 +179,6 @@ Web Worker 尚未成为主流，因此大多数模块化工具 — 比如 [WebPa
 此外，OMT 还有下列好处：
 
 - 它将 JavaScript 执行成本转移到一个单独的线程。
-- 它移动*解析*成本，这意味着 UI 可能会启动得更快。这可能会减少 [First Contentful Paint](/fcp/) 甚至 [Time to Interactive](/tti/) ，从而提高您的 [Lighthouse](https://developers.google.com/web/tools/lighthouse) 分数。
+- 它移动*解析*成本，这意味着 UI 可能会启动得更快。这可能会减少 [First Contentful Paint](/fcp/) 甚至 [Time to Interactive](/tti/) ，从而提高您的 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 分数。
 
 Web Worker 无需担忧。Comlink 等工具正在减轻其工作，并使它们成为各种 Web 应用的可行选择。

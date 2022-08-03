@@ -42,7 +42,7 @@ Today, thanks to broad collaboration between browser vendors, the
 next-generation of the Web Components spec - v1 - is gaining wide support.
 Chrome supports the two major specs that make up Web Components - [Shadow
 DOM](/shadowdom-v1/) and [Custom
-Elements](https://developers.google.com/web/fundamentals/getting-started/primers/customelements)
+Elements](/custom-elements-v1/)
 - as of [Chrome 53](https://www.chromestatus.com/feature/4667415417847808) and
 [Chrome 54](https://www.chromestatus.com/feature/4696261944934400) respectively.
 Safari shipped support for [Shadow DOM v1 in Safari
@@ -68,7 +68,7 @@ window.customElements.define('my-element', MyElement);
 ```
 
 The new v1 specs are extremely powerful - we’ve put together tutorials on using
-[Custom Elements v1](https://developers.google.com/web/fundamentals/getting-started/primers/customelements)
+[Custom Elements v1](/custom-elements-v1/)
 and [Shadow DOM v1](/shadowdom-v1/) to help
 you get started.
 
@@ -100,4 +100,3 @@ Component API’s directly. Then [publish your
 element](https://www.webcomponents.org/publish) on webcomponents.org.
 
 Happy componentizing!
-

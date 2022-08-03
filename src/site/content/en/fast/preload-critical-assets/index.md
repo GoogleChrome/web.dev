@@ -4,13 +4,14 @@ title: Preload critical assets to improve loading speed
 authors:
   - houssein
   - mihajlija
+  - jlwagner
 description: |
   As soon as you open any web page, the browser requests an HTML document from a
   server, parses the contents of the HTML file, and submits separate requests
   for any other external references. The critical request chain represents the
   order of resources that are prioritized and fetched by the browser.
 date: 2018-11-05
-updated: 2020-05-27
+updated: 2020-08-01
 codelabs:
   - codelab-preload-critical-assets
   - codelab-preload-web-fonts
@@ -136,6 +137,36 @@ import(_/* webpackPreload: true */_ "CriticalChunk")
 ```
 
 If you are using an older version of webpack, use a third-party plugin such as [preload-webpack-plugin](https://github.com/GoogleChromeLabs/preload-webpack-plugin).
+
+## Effects of preloading on Core Web Vitals
+
+Preloading is a powerful performance optimization that has an effect on loading speed. Such optimizations can lead to changes in your site's [Core Web Vitals](/vitals/), and it's important to be aware them.
+
+### Largest Contentful Paint (LCP)
+
+Preloading has a powerful effect on [Largest Contentful Paint (LCP)](/lcp/) when it comes to fonts and images, as both images and text nodes can be [LCP candidates](/lcp/#what-elements-are-considered). Hero images and large runs of text that are rendered using web fonts can benefit significantly from a well-placed preload hint, and should be used when there are opportunities to deliver these important bits of content to the user faster.
+
+However, you want to be careful when it comes to preloading&mdash;and other optimizations! In particular, avoid preloading too many resources. If too many resources are prioritized, effectively none of them are. The effects of excessive preload hints will be especially detrimental to those on slower networks where bandwidth contention will be more evident.
+
+Instead, focus on a few high-value resources that you know will benefit from a well-placed preload. When preloading fonts, ensure that you're serving fonts in WOFF 2.0 format to reduce resource load time as much as possible. Since WOFF 2.0 has [excellent browser support](https://caniuse.com/woff2), using older formats such as WOFF 1.0 or TrueType (TTF) will delay your LCP if the LCP candidate is a text node.
+
+When it comes to LCP and JavaScript, you'll want to ensure that you're sending complete markup from the server in order for the [browser's preload scanner](/preload-scanner/) to work properly. If you're serving up an experience that relies entirely on JavaScript to render markup and can't send server-rendered HTML, it would be advantageous to step in where the browser preload scanner can't and preload resources that would only otherwise be discoverable when the JavaScript finishes loading and executing.
+
+### Cumulative Layout Shift (CLS)
+
+[Cumulative Layout Shift (CLS)](/cls/) is an especially important metric where web fonts are concerned, and CLS has significant interplay with web fonts that use the [`font-display` CSS property](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display) to manage how fonts are loaded. To minimize web font-related layout shifts, consider the following strategies:
+
+1. **Preload fonts while using the default `block` value for `font-display`.** This is a delicate balance. Blocking the display of fonts without a fallback can be considered a user experience problem. On one hand, loading fonts with `font-display: block;` eliminates web font-related layout shifts. On the other hand, you still want to get those web fonts loaded as soon as possible if they're crucial to the user experience. Combining a preload with `font-display: block;` may be an acceptable compromise.
+2. **Preload fonts while using the `fallback` value for `font-display`.** `fallback` is a compromise between `swap` and `block`, in that it has an extremely short blocking period.
+3. **Use the `optional` value for `font-display` without a preload.** If a web font isn't crucial to the user experience, but it is still used to render a significant amount of page text, consider using the `optional` value. In adverse conditions, `optional` will display page text in a fallback font while it loads the font in the background for the next navigation. The net result in these conditions is improved CLS, as system fonts will render immediately, while subsequent page loads will load the font immediately without layout shifts.
+
+CLS is a difficult metric to optimize for when it comes to web fonts. As always, experiment in the [lab](/lab-and-field-data-differences/#lab-data), but trust your [field data](/lab-and-field-data-differences/#field-data) to determine if your font loading strategies are improving CLS or making it worse.
+
+### Responsiveness metrics
+
+[First Input Delay (FID)](/fid/) and [Interaction to Next Paint](/inp/) are two metrics that gauge responsiveness to user input. Since the lion's share of interactivity on the web is driven by JavaScript, preloading JavaScript that powers important interactions may help to keep your FID and INP metrics as low as they can possibly be. However, be aware that FID is a load responsiveness metric and INP observes interactions throughout the entire page lifecycle&mdash;including during startup. Preloading too much JavaScript during startup can carry unintended negative consequences if too many resources are contending for bandwidth.
+
+You'll also want to be careful about how you go about [code splitting](/reduce-javascript-payloads-with-code-splitting/). Code splitting is an excellent optimization for reducing the amount of JavaScript loaded during startup, but interactions can be delayed if they rely on JavaScript loaded right at the start of the interaction. To compensate for this, you'll need to examine the user's intent, and inject a preload for the necessary chunk(s) of JavaScript before the interaction takes place. One example could be preloading JavaScript required for validating a form's contents when any of the fields in the form are focused.
 
 ## Conclusion
 

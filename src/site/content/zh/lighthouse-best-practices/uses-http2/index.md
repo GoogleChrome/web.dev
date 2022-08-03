@@ -12,7 +12,7 @@ HTTP/2 可以更快地为网页传输资源，并且通过网络传输的数据�
 
 ## Lighthouse HTTP/2 审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 列出了所有未通过 HTTP/2 提供服务的资源：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 列出了所有未通过 HTTP/2 提供服务的资源：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Lighthouse 审计显示未通过 HTTP/2 提供的资源", width="800", height="191" %}</figure>
 
@@ -29,5 +29,5 @@ Lighthouse 会收集页面请求的所有资源，并检查每个资源的 HTTP 
 ## 资源
 
 - [**不要为其所有资源使用 HTTP/2**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
-- [HTTP/2 简介](https://developers.google.com/web/fundamentals/performance/http2/)
+- [HTTP/2 简介](/performance-http2/)
 - [HTTP/2 常见问题](https://http2.github.io/faq/)

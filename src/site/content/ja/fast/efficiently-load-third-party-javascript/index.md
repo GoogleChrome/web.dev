@@ -135,7 +135,7 @@ tags:
 
 - DNSルックアップとラウンドトリップ時間を短縮する。
 - [HTTPキャッシュ](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)ヘッダーを改善する。
-- [HTTP / 2サーバープッシュを利用](https://developers.google.com/web/fundamentals/performance/http2/)する。
+- [HTTP / 2サーバープッシュを利用](/performance-http2/)する。
 
 たとえば、Casperは、A/Bテストスクリプトをセルフホスティングすることで、読み込み時間を[1.7秒短縮](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec)することができました。
 

@@ -58,7 +58,7 @@ tags:
     ```
 3. Как только заголовок начнет передаваться дальше, конечная точка, которую вы зарегистрировали, станет собирать отчеты о нежелательных функциях.
 
-Пример реализации приведен здесь: [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+Пример реализации приведен здесь: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 

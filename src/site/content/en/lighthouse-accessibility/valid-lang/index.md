@@ -19,7 +19,7 @@ to ensure that the section in the new language is pronounced correctly.
 
 ## How the Lighthouse invalid `lang` attribute audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags elements that have a `lang` attribute with an invalid value:
 
 <figure>

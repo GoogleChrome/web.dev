@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: |2
 
   O que torna um Progressive Web App bom ou ótimo?
@@ -37,7 +37,7 @@ O desempenho tem um papel significativo no sucesso de qualquer experiência onli
 
 A velocidade é crítica para fazer os usuários *usarem* seu aplicativo. Na verdade, à medida que o tempo de carregamento da página vai de um a dez segundos, a probabilidade de um usuário sair aumenta em 123%. O evento `load` não é o único aspecto importante para um bom desempenho. Os usuários nunca devem se perguntar se a interação (por exemplo, clicar em um botão) foi registrada ou não. A rolagem e a animação devem ser fluidas. O desempenho afeta toda a sua experiência, desde como os usuários percebem seu aplicativo até como ele realmente funciona.
 
-Embora todos os aplicativos tenham necessidades diferentes, as auditorias de desempenho no Lighthouse são baseadas no [modelo de desempenho centrado no usuário RAIL](/rail/), e uma pontuação alta nessas auditorias aumentará a chance de que seus usuários tenham uma experiência agradável. Você também pode usar o [PageSpeed Insights](https://pagespeed.web.dev/) ou o [Relatório de experiência do usuário do Chrome](https://developers.google.com/web/tools/chrome-user-experience-report/) para obter dados de desempenho do mundo real para seu aplicativo da web.
+Embora todos os aplicativos tenham necessidades diferentes, as auditorias de desempenho no Lighthouse são baseadas no [modelo de desempenho centrado no usuário RAIL](/rail/), e uma pontuação alta nessas auditorias aumentará a chance de que seus usuários tenham uma experiência agradável. Você também pode usar o [PageSpeed Insights](https://pagespeed.web.dev/) ou o [Relatório de experiência do usuário do Chrome](https://developer.chrome.com/docs/crux/) para obter dados de desempenho do mundo real para seu aplicativo da web.
 
 #### Como
 
@@ -163,7 +163,7 @@ Além de fornecer uma página offline personalizada, os usuários esperam que os
 
 #### Como
 
-Após determinar quais recursos seus usuários esperam que funcionem offline, você precisará tornar seu conteúdo disponível e adaptável a contextos offline. Além disso, você pode usar [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb), um sistema de armazenamento NoSQL no navegador, para armazenar e recuperar dados, e a [sincronização em segundo plano](https://developer.chrome.com/blog/background-sync/) para permitir que os usuários realizem ações enquanto estiverem offline e para adiar as comunicações do servidor até que o usuário volte a ter uma conexão estável. Você também pode usar trabalhos de serviço para armazenar outros tipos de conteúdo, como imagens, arquivos de vídeo e arquivos de áudio para uso offline, bem como usá-los para implementar [sessões seguras e de longa duração](https://developers.google.com/web/updates/2016/06/2-cookie-handoff) para manter os usuários autenticados. Da perspectiva de experiência do usuário, você pode usar [telas esqueleto](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a), que dão aos usuários uma percepção de velocidade e conteúdo durante o carregamento, que pode então voltar para o conteúdo em cache ou um indicador offline, conforme necessário.
+Após determinar quais recursos seus usuários esperam que funcionem offline, você precisará tornar seu conteúdo disponível e adaptável a contextos offline. Além disso, você pode usar [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb), um sistema de armazenamento NoSQL no navegador, para armazenar e recuperar dados, e a [sincronização em segundo plano](https://developer.chrome.com/blog/background-sync/) para permitir que os usuários realizem ações enquanto estiverem offline e para adiar as comunicações do servidor até que o usuário volte a ter uma conexão estável. Você também pode usar trabalhos de serviço para armazenar outros tipos de conteúdo, como imagens, arquivos de vídeo e arquivos de áudio para uso offline, bem como usá-los para implementar [sessões seguras e de longa duração](https://developer.chrome.com/blog/2-cookie-handoff/) para manter os usuários autenticados. Da perspectiva de experiência do usuário, você pode usar [telas esqueleto](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a), que dão aos usuários uma percepção de velocidade e conteúdo durante o carregamento, que pode então voltar para o conteúdo em cache ou um indicador offline, conforme necessário.
 
 {% endDetails %}
 

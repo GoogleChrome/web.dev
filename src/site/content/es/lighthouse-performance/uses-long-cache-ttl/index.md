@@ -14,7 +14,7 @@ Cuando un navegador solicita un recurso, el servidor que lo proporciona puede in
 
 ## Cómo puede fallar la auditoría de las políticas en el caché de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) etiqueta todos los recursos estáticos que no se almacenan en el caché:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) etiqueta todos los recursos estáticos que no se almacenan en el caché:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="Una captura de pantalla sobre los activos estáticos de Lighthouse Serve y una auditoría eficiente de las políticas relacionadas con el caché", width="800", height="490" %}</figure>
 

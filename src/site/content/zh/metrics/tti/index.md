@@ -45,7 +45,7 @@ TTI 指标最好[在实验室中](/user-centric-performance-metrics/#in-the-lab)
 
 ### 实验室工具
 
-- [灯塔](https://developers.google.com/web/tools/lighthouse/)
+- [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest 网页性能测试工具](https://www.webpagetest.org/)
 
 {% Aside %}虽然 TTI 可以在实际情况下进行测量，但我们不建议这样做，因为用户交互会影响您网页的 TTI，从而导致您的报告中出现大量差异。如需了解页面在实际情况中的交互性，您应该测量[First Input Delay 首次输入延迟 (FID)](/fid/) 。{% endAside %}

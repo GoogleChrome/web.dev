@@ -16,7 +16,7 @@ possibly creating an unpleasant user experience.
 
 ## How the Lighthouse image aspect ratio audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags any
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags any
 image with a rendered dimension more than a few pixels different from the expected dimension
 when rendered at its natural ratio:
 

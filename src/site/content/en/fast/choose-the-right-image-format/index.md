@@ -3,10 +3,11 @@ layout: post
 title: Choose the right image format
 authors:
   - ilyagrigorik
+  - jlwagner
 description: |
   Selecting the right image format is the first step in delivering optimized images on your website. This post helps you to make the right choice.
 date: 2018-08-30
-updated: 2020-06-18
+updated: 2022-07-31
 tags:
   - performance
   - images
@@ -62,7 +63,7 @@ However, vector formats fall short when the scene is complicated (for example, a
 the amount of SVG markup to describe all the shapes can be prohibitively high
 and the output may still not look "photorealistic".
 When that's the case, that's when you should be using a raster image format
-such as PNG, JPEG, or WebP.
+such as PNG, JPEG, WebP, or AVIF.
 
 Raster images do not have the same nice properties of being resolution or zoom independent
 &mdash;when you scale up a raster image you'll see jagged and blurry graphics.
@@ -150,34 +151,39 @@ As a result, the choice of the "right format" for a particular image is a combin
 </thead>
 <tbody>
 <tr>
-  <td data-th="format"><a href="http://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a></td>
+  <td data-th="format"><a rel="noopener" href="http://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a></td>
   <td data-th="transparency">Yes</td>
   <td data-th="animation">No</td>
   <td data-th="browser">All</td>
 </tr>
 <tr>
-  <td data-th="format"><a href="http://en.wikipedia.org/wiki/JPEG">JPEG</a></td>
+  <td data-th="format"><a rel="noopener" href="http://en.wikipedia.org/wiki/JPEG">JPEG</a></td>
   <td data-th="transparency">No</td>
   <td data-th="animation">No</td>
   <td data-th="browser">All</td>
 </tr>
 <tr>
-  <td data-th="format"><a href="http://en.wikipedia.org/wiki/WebP">WebP</a></td>
+  <td data-th="format"><a rel="noopener" href="http://en.wikipedia.org/wiki/WebP">WebP</a></td>
   <td data-th="transparency">Yes</td>
   <td data-th="animation">Yes</td>
   <td data-th="browser">All modern browsers. See <a href="https://caniuse.com/#feat=webp">Can I use?</a></td>
+</tr>
+<tr>
+  <td data-th="format"><a rel="noopener" href="http://en.wikipedia.org/wiki/AVIF">AVIF</a></td>
+  <td data-th="transparency">Yes</td>
+  <td data-th="animation">Yes</td>
+  <td data-th="browser">No. See <a href="https://caniuse.com/avif">Can I use?</a></td>
 </tr>
 </tbody>
 </table>
 </div>
 
 There are two universally supported raster image formats: PNG and JPEG.
-In addition to these formats, modern browsers support the newer format WebP,
-which offers better overall compression and more features. So, which format should you use?
+In addition to these formats, modern browsers support the newer format WebP, while only some support the newer AVIF format. Both of the newer formats offer better overall compression and more features. So, which format should you use?
 
-The WebP format will generally provide better compression than older formats,
+WebP and AVIF will generally provide better compression than older formats,
 and should be used where possible.
-You can use WebP along with another image format as a fallback.
+You can use WebP or AVIF images along with a JPEG or PNG image as a fallback.
 See [Use WebP images](/serve-images-webp/) for more details.
 
 In terms of older image formats, consider the following:
@@ -186,17 +192,25 @@ In terms of older image formats, consider the following:
     * What about GIF? GIF limits the color palette to at most 256 colors,
       and creates significantly larger file sizes than `<video>` elements. See
       [Replace animated GIFs with video](/replace-gifs-with-videos/).
-1. **Do you need to preserve fine detail with highest resolution? Use PNG.**
+1. **Do you need to preserve fine detail with highest resolution? Use PNG or lossless WebP.**
     * PNG does not apply any lossy compression algorithms beyond the choice of the size of the color palette.
     As a result, it will produce the highest quality image,
     but at a cost of significantly higher filesize than other formats. Use judiciously.
+    * WebP has a lossless encoding mode that may be more efficient than PNG.
     * If the image asset contains imagery composed of geometric shapes, consider converting it to a vector (SVG) format!
     * If the image asset contains text, stop and reconsider. Text in images is not selectable, searchable, or "zoomable".
     If you need to convey a custom look (for branding or other reasons), use a web font instead.
-1. **Are you optimizing a photo, screenshot, or a similar image asset? Use JPEG.**
+1. **Are you optimizing a photo, screenshot, or a similar image asset? Use JPEG, lossy WebP, or lossy AVIF.**
     * JPEG uses a combination of lossy and lossless optimization to reduce filesize of the image asset. Try several JPEG quality levels to find the best quality versus filesize tradeoff for your asset.
+    * Lossy WebP or lossy AVIF may be acceptable JPEG alternatives, but be aware that WebP's lossy mode in particular discards some chroma information in order to achieve smaller images. This means that select colors may not be the same as an equivalent JPEG.
 
 Finally, note that if you are using a WebView to render content in your platform-specific application,
 then you have full control of the client and can use WebP exclusively!
 Facebook and many others use WebP to deliver all of their images within their applications&mdash;
 the savings are definitely worth it.
+
+## Impact on Largest Contentful Paint (LCP)
+
+Images may be [LCP candidates](/lcp/#what-elements-are-considered). That means the size of an image affects its [load time](/optimize-lcp/#3.-reduce-resource-load-time). When an image is an LCP candidate, efficiently encoding that image is crucial to improving LCP.
+
+You should strive to apply the advice given in this article so that the perceptual performance of a page is as fast as it can possibly be for all users. LCP is part of perceptual performance, as it measures how fast the largest (and therefore most perceivable) element on the page displays.

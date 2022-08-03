@@ -497,7 +497,7 @@ Address line 2 (optional)
 - [Sign-up form best practices (サインアップフォームのベストプラクティス)](/sign-in-form-best-practices)
 - [Sign-in form best practices (サインアップフォームのベストプラクティス)](/sign-up-form-best-practices)
 - WebOTP APIを使用してウェブ上の電話番号を確認する
-- [Create Amazing Forms (すばらしいフォームを作成する)](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Create Amazing Forms (すばらしいフォームを作成する)](/learn/forms/)
 - [Best Practices For Mobile Form Design (モバイルフォームデザインのベストプラクティス)](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [More capable form controls (より細かく機能するフォームコントロール)](/more-capable-form-controls)
 - [Creating Accessible Forms (使いやすいフォームの作成)](https://webaim.org/techniques/forms/)

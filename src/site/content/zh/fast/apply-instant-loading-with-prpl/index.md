@@ -47,7 +47,7 @@ PRPL 是四个英文单词的首字母缩写，它描述了一种可以提高网
 
 ## 尽快渲染初始路线
 
-如果存在延迟[**首次绘制**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)（First Paint，即网站将像素呈现到屏幕的那一刻）的资源，Lighthouse 会发出警告：
+如果存在延迟[**首次绘制**](/user-centric-performance-metrics/#important-metrics-to-measure)（First Paint，即网站将像素呈现到屏幕的那一刻）的资源，Lighthouse 会发出警告：
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: 消除渲染阻塞资源审计", width="800", height="111" %}
 

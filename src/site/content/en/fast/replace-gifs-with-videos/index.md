@@ -3,13 +3,14 @@ layout: post
 title: Replace animated GIFs with video for faster page loads
 authors:
   - houssein
+  - jlwagner
 description: |
   Have you ever seen an animated GIF on a service like Imgur or Gfycat,
   inspected it in your dev tools, only to find out that GIF was really a video?
   There's a good reason for that. Animated GIFs can be downright huge! By
   converting large GIFs to videos, you can save big on users' bandwidth.
 date: 2018-11-05
-updated: 2019-08-29
+updated: 2022-07-18
 codelabs:
   - codelab-replace-gifs-with-video
 tags:
@@ -122,3 +123,9 @@ Browsers don't speculate about which `<source>` is optimal, so the order of
 browser supports WebM, browsers will skip the WebM `<source>` and use the MPEG-4
 instead. If you prefer a WebM `<source>` be used first, specify it first!
 {% endAside %}
+
+## Effect on Largest Contentful Paint (LCP)
+
+It should be noted that while `<img>` elements are candidates for LCP, `<video>` elements without a [`poster` image](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) are not [LCP candidates](/lcp/#what-elements-are-considered). The solution in the case of emulating animated GIFs is _not_ to add `poster` attribute to your `<video>` elements, because that image will go unused.
+
+What does this mean for your website? The recommendation is to stick with using a `<video>` instead of an animated GIF, but with the understanding that such media will not be a candidate for LCP, and the next largest candidate will be used instead. As GIFs and `<video>`s are typically larger and so slower to download, moving to a different LCP candidate will likely even improve the site's LCP.

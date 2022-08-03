@@ -19,7 +19,7 @@ providing a branded, engaging experience.
 
 ## How the Lighthouse splash screen audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't have a custom splash screen:
 
 <figure>

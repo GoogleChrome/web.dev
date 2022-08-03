@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2022-04-27
+updated: 2022-05-10
 tags:
   - blog
   - capabilities
@@ -130,7 +130,7 @@ try {
 ### The copy event
 
 In the case where a user initiates a clipboard copy
-and does _not_ call `preventDefault(), the
+and does _not_ call `preventDefault()`, the
 [`copy` event](https://developer.mozilla.org/docs/Web/API/Document/copy_event)
 includes a `clipboardData` property with the items already in the right format.
 If you want to implement your own logic, you need to call `preventDefault()` to
@@ -415,8 +415,10 @@ event—part of asking permission responsibly—no permissions prompt is shown.
 
 ## Demos
 
-You can play with the Async Clipboard API in the demos below or
-[directly on Glitch](https://async-clipboard-api.glitch.me/).
+You can play with the Async Clipboard API in the demos below. On Glitch you
+can remix [the text demo](https://glitch.com/edit/#!/async-clipboard-text)
+or [the image demo](https://glitch.com/edit/#!/async-clipboard-api) to
+experiment with them.
 
 The first example demonstrates moving text on and off the clipboard.
 

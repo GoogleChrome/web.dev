@@ -21,7 +21,7 @@ For more information about why all sites should be protected with HTTPS, see
 
 ## How the Lighthouse HTTPS audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that aren't on HTTPS:
 
 <figure>
@@ -39,7 +39,7 @@ If the event isn't heard within 10&nbsp;seconds, the audit fails.
 Consider hosting your site on a CDN. Most CDNs are secure by default.
 
 To learn how to enable HTTPS on your servers, see Google's
-[Enabling HTTPS on Your Servers](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https).
+[Enabling HTTPS on Your Servers](/enabling-https-on-your-servers/).
 If you're running your own server and need a cheap and easy way to generate
 certificates, [Let's Encrypt](https://letsencrypt.org/) is a good option.
 
@@ -53,8 +53,8 @@ Chrome DevTools Security panel to learn how to debug these situations:
 ## Resources
 
 - [Source code for **Does not use HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/is-on-https.js)
-- [Why You Should Always Use HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
-- [Enabling HTTPS on Your Servers](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https)
+- [Why You Should Always Use HTTPS](/why-https-matters/)
+- [Enabling HTTPS on Your Servers](/enabling-https-on-your-servers/)
 - [Understand Security Issues With Chrome DevTools](https://developer.chrome.com/docs/devtools/security/)
 - [What Is Mixed Content?](/what-is-mixed-content/)
 - [Let's Encrypt](https://letsencrypt.org/)

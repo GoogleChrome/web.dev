@@ -18,7 +18,7 @@ updated: 2019-09-19
 
 ## Почему не удается пройти аудит манифеста веб-приложения в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, у которых нет [манифеста веб-приложения](/add-manifest/), отвечающего минимальным требованиям для возможности установки приложения:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, у которых нет [манифеста веб-приложения](/add-manifest/), отвечающего минимальным требованиям для возможности установки приложения:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Результаты аудита Lighthouse, в которых сказано, что пользователю не удастся установить веб-приложение на начальный экран", width="800", height="98" %}</figure>
 
@@ -28,7 +28,7 @@ updated: 2019-09-19
 - Свойство [`icons`](https://developer.mozilla.org/docs/Web/Manifest/icons), содержащее значок размером 192 x 192 пикселей и значок размером 512 x 512 пикселей.
 - Свойство [`start_url`](https://developer.mozilla.org/docs/Web/Manifest/start_url)
 - Свойство [`display`](https://developer.mozilla.org/docs/Web/Manifest/display) со значением `fullscreen`, `standalone` или `minimal-ui`
-- Свойство [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native) со значением, отличным от `true`.
+- Свойство [`prefer_related_applications`](https://developer.chrome.com/blog/app-install-banners-native/) со значением, отличным от `true`.
 
 {% Aside 'caution' %} Манифест веб-приложения *необходим*, чтобы можно было устанавливать приложение, но его *недостаточно*. Сведения о том, как выполнить все требования, чтобы приложение поддерживало установку, см. в публикации [о том, что нужно, чтобы приложение поддерживало установку](/discover-installable). {% endAside %}
 

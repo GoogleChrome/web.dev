@@ -179,7 +179,7 @@ RAIL 측정을 자동화하는 데 도움이 되는 몇 가지 도구가 있습�
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)는 Chrome DevTools와 [web.dev/measure](/measure/)에서 사용하고, Chrome 확장 프로그램과 Node.js 모듈로 사용하거나 WebPageTest 내에서 사용할 수 있습니다. URL을 지정하면 느린 3G 연결을 사용하는 중급 장치를 시뮬레이션하고 페이지에서 일련의 감사를 실행한 다음 로드 성능에 대한 보고서와 개선 방법에 대한 제안을 제공합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 Chrome DevTools와 [web.dev/measure](/measure/)에서 사용하고, Chrome 확장 프로그램과 Node.js 모듈로 사용하거나 WebPageTest 내에서 사용할 수 있습니다. URL을 지정하면 느린 3G 연결을 사용하는 중급 장치를 시뮬레이션하고 페이지에서 일련의 감사를 실행한 다음 로드 성능에 대한 보고서와 개선 방법에 대한 제안을 제공합니다.
 
 다음 감사가 특히 관련이 있습니다.
 

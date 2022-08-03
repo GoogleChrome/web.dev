@@ -17,7 +17,7 @@ El uso del `aria-hidden="true"` en un elemento oculta el elemento y todos sus el
 
 ## Cómo identifica Lighthouse los elementos enfocables parcialmente ocultos
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a> señala los elementos enfocables que tienen padres con el atributo `aria-hidden="true"`
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a> señala los elementos enfocables que tienen padres con el atributo `aria-hidden="true"`
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqhdHogcBrLR4W0uiECZ.png", alt="Auditoría de Lighthouse que muestra elementos enfocables que tienen padres con el atributo aria-hidden", width="800", height="206" %}</figure>
 

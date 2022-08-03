@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: WebTransport is an API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-08
-updated: 2022-01-21
+updated: 2022-07-18
 hero: image/admin/Wh6q6ughWxUYcu4iOutU.jpg
 hero_position: center
 alt: |
@@ -90,7 +90,10 @@ However, if you already have a working WebRTC client/server setup that you're ha
 
 ## Try it out
 
-The best way to experiment with WebTransport is to start up a compatible HTTP/3 server locally. (Unfortunately, a public reference server compatible with the latest specification is not currently available.) You can then use this page with a [basic JavaScript client](https://googlechrome.github.io/samples/webtransport/client.html) to try out client/server communications.
+The best way to experiment with WebTransport is to start up a compatible HTTP/3 server.
+You can then use this page with a [basic JavaScript client](https://googlechrome.github.io/samples/webtransport/client.html) to try out client/server communications.
+
+Additionally, a community-maintained echo server is available at [webtransport.day](https://webtransport.day/).
 
 ## Using the API
 
@@ -287,6 +290,13 @@ position can be found in this
 Safari does not currently have support for WebTransport.
 
 As with all features that do not have universal browser support, coding defensively via [feature detection](https://developer.mozilla.org/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection) is a best practice.
+
+## Polyfill
+
+A polyfill (or rather ponyfill that provides functionality as a standalone module you can use) called
+[`webtransport-ponyfill-websocket`](https://github.com/fails-components/webtransport-ponyfill-websocket)
+that implements some of the features of WebTransport is available. Carefully read the constraints in
+the project's `README` to determine if this solution can work for your use case.
 
 ## Privacy and security considerations
 

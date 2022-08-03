@@ -152,7 +152,7 @@ img {
 - 광고 태그 라이브러리가 로드되고 광고 컨테이너의 크기가 조정되는 경우
 - 광고가 컨테이너를 채우며 최종 광고의 크기가 달라 크기를 조정하는 경우
 
-다행히도 사이트에서는 광고 이동을 줄이기 위한 모범 사례를 따를 수 있습니다. 사이트는 다음을 통해 이러한 레이아웃 이동을 경감시킬 수 있습닏.
+다행히도 사이트에서는 광고 이동을 줄이기 위한 모범 사례를 따를 수 있습니다. 사이트는 다음을 통해 이러한 레이아웃 이동을 경감시킬 수 있습니다.
 
 - 광고 슬롯을 위한 고정 공간을 확보합니다.
     - 즉, 광고 태그 라이브러리가 로드되기 전에 요소의 스타일을 지정합니다.
@@ -264,7 +264,7 @@ CSS 속성 값을 변경하면 브라우저가 이러한 변경 사항에 반응
 
 다행히도 누적 레이아웃 이동(CLS)을 측정하고 디버그하는 데 사용할 수 있는 다양한 도구가 있습니다.
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) 이상에서는 실험실 환경에서 CLS 측정할 수 있도록 지원합니다. 이 버전에서는 가장 많은 레이아웃 이동을 일으키는 노드도 강조 표시해줍니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) 이상에서는 실험실 환경에서 CLS 측정할 수 있도록 지원합니다. 이 버전에서는 가장 많은 레이아웃 이동을 일으키는 노드도 강조 표시해줍니다.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0은 메트릭 섹션에서 CLS 측정을 위한 지원도 포함합니다.", width="800", height="309" %}
 

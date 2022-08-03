@@ -86,8 +86,11 @@ export class NavigationDrawer extends BaseStateElement {
     this.addEventListener('click', closeNavigationDrawer);
   }
 
-  onStateChanged({isNavigationDrawerOpen, currentUrl}) {
+  onStateChanged({isSearchExpanded, isNavigationDrawerOpen, currentUrl}) {
     this.open = isNavigationDrawerOpen;
+
+    // See https://github.com/GoogleChrome/web.dev/issues/8131
+    this.inert = isSearchExpanded;
 
     if (currentUrl) {
       // Ensure that the "active" attribute is applied to any matching header

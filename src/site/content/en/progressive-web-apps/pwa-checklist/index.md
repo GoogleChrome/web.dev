@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: |
   What makes a good, or great Progressive Web App?
 tags:
@@ -57,7 +57,7 @@ Lighthouse are based on the
 and scoring high on those audits will make it more likely that your users have
 an enjoyable experience. You can also use
 [PageSpeed Insights](https://pagespeed.web.dev/)
-or the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/)
+or the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 to get real-world performance data for your web app.
 
 #### How
@@ -287,7 +287,7 @@ to allow users to take actions while offline and defer server communications
 until the user has a stable connection again. You can also use service
 workers to store other kinds of content, such as images, video files, and
 audio files for offline use, as well as use them to implement
-[safe, long-lived sessions](https://developers.google.com/web/updates/2016/06/2-cookie-handoff)
+[safe, long-lived sessions](https://developer.chrome.com/blog/2-cookie-handoff/)
 to keep users authenticated. From a user experience perspective, you can use
 [skeleton screens](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)
 that give users a perception of speed and content while loading that can

@@ -12,7 +12,7 @@ updated: 2019-09-19
 
 ## Lighthouse 스플래시 스크린 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 커스텀 스플래시 스크린이 없는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 커스텀 스플래시 스크린이 없는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Lighthouse 감사 표시 사이트가 커스텀 스플래시 스크린에 대해 구성되지 않았습니다.", width="800", height="98" %}</figure>
 

@@ -14,6 +14,7 @@ date: 2021-12-04
 tags:
   - blog
   - css
+  - community
 ---
 
 _This post is part of [Designcember](https://designcember.com/). A celebration of web design, brought to you by web.dev._

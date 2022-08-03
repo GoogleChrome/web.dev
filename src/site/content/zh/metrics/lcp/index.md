@@ -4,7 +4,7 @@ title: Largest Contentful Paint 最大内容绘制 (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-07-18
 description: 本篇文章介绍了最大内容绘制 (LCP) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -120,7 +120,7 @@ LCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 实测工具
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
@@ -128,7 +128,7 @@ LCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 ### 实验室工具
 
 - [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
-- [灯塔](https://developers.google.com/web/tools/lighthouse/)
+- [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 
 ### 在 JavaScript 中测量 LCP
@@ -189,7 +189,7 @@ LCP 主要受四个因素影响：
 如需深入了解如何改进 LCP，请参阅[优化 LCP](/optimize-lcp/)。有关其他能够改进 LCP 的单个性能技巧的进一步指导，请参阅：
 
 - [使用 PRPL 模式做到即时加载](/apply-instant-loading-with-prpl)
-- [优化关键渲染路径](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [优化关键渲染路径](/critical-rendering-path/)
 - [优化您的 CSS](/fast#optimize-your-css)
 - [优化您的图像](/fast#optimize-your-images)
 - [优化网页字体](/fast#optimize-web-fonts)

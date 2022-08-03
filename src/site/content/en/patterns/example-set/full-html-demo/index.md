@@ -5,6 +5,8 @@ description: Use this pattern if you'd like to show different HTML in the source
 date: 2021-08-10
 draft: true
 noindex: true
+static:
+  - assets/special-script.js
 ---
 
 The HTML for the demo page can differ from the code samples displayed

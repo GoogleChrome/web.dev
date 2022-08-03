@@ -421,7 +421,7 @@ UI と UX を適切に設計すれば、サインインフォームからの離�
 
 ## 学習を続けしましょう {: #resources}
 
-- [Create Amazing Forms (すばらしいフォームを作成する)](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Create Amazing Forms (すばらしいフォームを作成する)](/learn/forms/)
 - [Best Practices For Mobile Form Design (モバイルフォームデザインのベストプラクティス)](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [More capable form controls (より細かく機能するフォームコントロール)](/more-capable-form-controls)
 - [Creating Accessible Forms (使いやすいフォームの作成)](https://webaim.org/techniques/forms/)

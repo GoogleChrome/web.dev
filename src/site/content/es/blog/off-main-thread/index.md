@@ -179,6 +179,6 @@ Para asegurarnos de que nuestras aplicaciones sean lo más confiables y accesibl
 Además, la OMT tiene beneficios secundarios:
 
 - Mueve los costos de ejecución de JavaScript a un hilo separado.
-- Mueve los costos de *análisis*, lo que significa que la interfaz de usuario podría iniciarse más rápido. Eso podría reducir [First Contentful Paint](/fcp/) (primera pintura de contenido) o incluso [Time to Interactive](/tti/) (tiempo de interacción), lo que a su vez puede aumentar su puntaje [Lighthouse.](https://developers.google.com/web/tools/lighthouse)
+- Mueve los costos de *análisis*, lo que significa que la interfaz de usuario podría iniciarse más rápido. Eso podría reducir [First Contentful Paint](/fcp/) (primera pintura de contenido) o incluso [Time to Interactive](/tti/) (tiempo de interacción), lo que a su vez puede aumentar su puntaje [Lighthouse.](https://developer.chrome.com/docs/lighthouse/overview/)
 
 Los trabajadores web no tienen por qué dar miedo. Herramientas como Comlink eliminan el trabajo de los trabajadores y los convierten en una opción viable para una amplia gama de aplicaciones web.

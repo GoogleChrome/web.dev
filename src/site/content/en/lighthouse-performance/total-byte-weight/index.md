@@ -24,7 +24,7 @@ You can adjust the results to factor in purchasing power.
 
 ## How the Lighthouse network payload audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 shows the total size in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) of all resources requested by your page.
 The largest requests are presented first:
 

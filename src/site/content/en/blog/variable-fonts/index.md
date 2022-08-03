@@ -327,19 +327,19 @@ static web fonts, but with two new enhancements:
 ```css
 @font-face {
 	font-family: 'Roboto Flex';
-	src: url('RobotoFlex-VF.woff2') format('woff2 supports variations'),
-       url('RobotoFlex-VF.woff2') format('woff2-variations');
+	src: url('RobotoFlex-VF.woff2') format('woff2') tech('variations'),
+	     url('RobotoFlex-VF.woff2') format('woff2-variations');
 	font-weight: 100 1000;
 	font-stretch: 25% 151%;
 }
 ```
 
 **1. Source Formats:** We don't want the browser to download the font if it
-doesn't support variable fonts, so we add a `format` description: once in the
+doesn't support variable fonts, so we add `format` and `tech` descriptions: once in the
 [future
-format](https://www.w3.org/TR/css-fonts-4/#font-face-src-requirement-types)
-(`woff2 supports variations`), once in the current but soon to be deprecated
-format (`woff2-variations`). If the browser supports variable fonts and supports
+syntax](https://www.w3.org/TR/css-fonts-4/#font-face-src-parsing)
+(`format('woff2') tech('variations')`), once in the deprecated but supported among browsers
+syntax (`format('woff2-variations')`). If the browser supports variable fonts and supports
 the upcoming syntax, it will use the first declaration. If it supports variable
 fonts and the current syntax, it will use the second declaration. They both
 point to the same font file.

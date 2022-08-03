@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2022-03-21
+updated: 2022-07-19
 tags:
   - blog
   - capabilities
@@ -17,12 +17,16 @@ feedback:
   - api
 ---
 
-{% Aside %} The Multi-Screen Window Placement API is part of the
-[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is currently in development. This post will be updated as
-the implementation progresses. {% endAside %}
+{% Aside 'success' %} The Multi-Screen Window Placement API was part of the
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is now launched. {% endAside %}
 
 The Multi-Screen Window Placement API allows you to enumerate the displays connected to your machine
 and to place windows on specific screens.
+
+{% Aside %} The Multi-Screen Window Placement API is distinct from the proposed
+[Viewport Segments Property](https://github.com/WICG/visual-viewport/blob/gh-pages/segments-explainer/SEGMENTS-EXPLAINER.md),
+which is concerned with the representation of the regions of the window that reside on separate
+(adjacent) displays, for example, on foldable devices. {% endAside %}
 
 ### Suggested use cases {: #use-cases }
 
@@ -191,7 +195,7 @@ await window.getScreenDetails();
     isExtended: true
     isInternal: true
     isPrimary: true
-    label: "Internal Display 1"
+    label: "Built-in Retina Display"
     left: 0
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
@@ -211,7 +215,7 @@ await window.getScreenDetails();
     isExtended: true
     isInternal: false
     isPrimary: false
-    label: "External Display 1"
+    label: "Sidecar Display (AirPlay)"
     left: 1680
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
@@ -232,6 +236,11 @@ and whether it is an `isPrimary` one. Note that the built-in screen
 
 The `currentScreen` field is a live object corresponding to the current `window.screen`. The object
 is updated on cross-screen window placements or device changes.
+
+{% Aside %}
+Chromium's latest API implementation returns screen labels provided by the underlying platform, like
+`"Built-in Retina Display"`, instead of less descriptive placeholders, like `"Internal Display 1"`.
+{% endAside %}
 
 ### The `screenschange` event
 
@@ -368,7 +377,8 @@ new information about the screens connected to a device, increasing the fingerpr
 users, especially those with multiple screens consistently connected to their devices. As one
 mitigation of this privacy concern, the exposed screen properties are limited to the minimum needed
 for common placement use cases. User permission is required for sites to get multi-screen
-information and place windows on other screens.
+information and place windows on other screens. While Chromium returns detailed screen labels,
+browsers are free to return less descriptive (or even empty labels).
 
 ### User control
 

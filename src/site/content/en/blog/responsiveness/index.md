@@ -5,6 +5,7 @@ description: An update on our plans for measuring responsiveness on the web.
 authors:
   - hbsong
 date: 2021-11-03
+updated: 2022-05-11
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/GNWyQZ5l1uy1b7s5ursN.jpeg
 alt: Water droplet rippling outward
 tags:
@@ -14,7 +15,7 @@ tags:
 ---
 
 {% Aside 'important' %}
-We have chosen option 2 of [high quantile approximation](/responsiveness/#high-quantile-approximation) as the candidate for the new responsiveness metric, with [maximum event duration](/responsiveness/#measure-interaction-latency) as the definition for interaction latency. This metric will be available as `experimental.responsiveness` starting in the February 2022 [CrUX BigQuery](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started) dataset, released on March 8, 2022.
+This article was written during a period of time in which a new responsiveness metric was being developed to measure end-to-end latency on web pages. That new metric has been released, and is named [Interaction to Next Paint (INP)](/inp/).
 {% endAside %}
 
 Earlier this year, the Chrome Speed Metrics Team shared [some of the
