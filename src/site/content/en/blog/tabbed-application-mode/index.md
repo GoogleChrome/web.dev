@@ -187,8 +187,7 @@ You can try tabbed application mode on ChromeOS devices running Chrome&nbsp;83 a
    context menu.
 1. Open the app and interact with the tab strip.
 
-The video below shows the current iteration of the feature in action. There is no need to make any
-changes to the web app manifest for this to work.
+The video below shows the current iteration of the feature in action.
 
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/JwN0btyXFGiT9oPFh2qJ.webm", autoplay="true", loop="true", muted="true" %}
 
