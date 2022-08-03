@@ -29,7 +29,7 @@ perspectives on how to solve them.
 
 Turns out GUI Challenges fit nicely into patterns:
 
-{% CodePattern 'gui-challenges/animation/interactive-words' %}
+{% CodePattern 'animation/interactive-words' %}
 
 Now they can be embedded into posts (like above), aggregated for easy browsing
 and inspiration, and also have added new categories for other contributors to
