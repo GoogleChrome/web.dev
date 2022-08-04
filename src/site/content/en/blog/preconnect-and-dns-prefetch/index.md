@@ -152,9 +152,9 @@ Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Sa
 
 The goal of `dns-prefetch` and `preconnect` is to lessen the amount of time it takes to connect to another origin. The ultimate result is that the time to discover a resource loaded from another origin should be reduced, even if only somewhat.
 
-Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, the least you can do to load a cross-origin resource faster is to use `preconnect`&mdash;but a well-placed [`preload`](/preload-critical-assets/) would most likely be better, as an [LCP candidate](/lcp/#what-elements-are-considered) is a crucial part of the user experience. That said, a `preconnect` can only help, even if not as much as a `preload`.
+Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, the least you can do to load a cross-origin resource faster is to use `preconnect`&mdash;but a well-placed [`preload`](/preload-critical-assets/) with a [`fetchpriority` value of `"high"`](/priority-hints/#:~:text=Note%20that%20preload%20is%20still%20required%20for%20the%20early%20discovery%20of%20LCP%20images%20included%20as%20CSS%20backgrounds%20and%20can%20be%20combined%20with%20priority%20hints%20by%20including%20the%20fetchpriority%3D%27high%27%20on%20the%20preload%2C%20otherwise%20it%20will%20still%20start%20with%20the%20default%20"Low"%20priority%20for%20images) would most likely be better for resources that aren't immediately discoverable, since [LCP candidates](/lcp/#what-elements-are-considered) are crucial parts of the user experience. A `preconnect` is sensible enough, but only if a `preload` isn't a fit.
 
-All that said, `preconnect` is less expensive than `preload` in terms of bandwidth usage. While multiple `preload` hints can cause bandwidth contention, the same is less true for `preconnect`. Use it to reduce resource discovery time, which can have a positive effect on LCP. 
+Additionally, `preconnect` is less expensive than `preload` in terms of bandwidth usage, but still not without its risks. As is the case with excessive `preload` hints, excessive `preconnect` hints still consume bandwidth where TLS certificates are concerned. Be careful not to preconnect to too many origins, as this may cause bandwidth contention.
 
 ## Conclusion
 
