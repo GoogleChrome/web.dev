@@ -110,7 +110,7 @@ Since INP is experimental, the guidance around thresholds may change over time a
 
 The primary driver of interactivity is often JavaScript, though browsers do provide interactivity through controls _not_ powered by JavaScript, such as checkboxes, radio buttons, and controls powered by CSS.
 
-As far as INP goes, **only the following _synchronous_ interaction types are observed:**
+As far as INP goes, **only the following interaction types are observed:**
 
 - Clicking with a mouse.
 - Tapping on a device with a touchscreen.
