@@ -6,7 +6,7 @@ authors:
 date: 2021-03-03
 # updated: 2021-03-03
 description: |
-  미니 앱과는 다른 H5 앱과 QuickApp에 대해서 알아봐요.
+  미니앱과는 다른 H5 앱과 QuickApp에 대해서 알아봐요.
 tags:
   - mini-apps
 ---
@@ -16,14 +16,14 @@ tags:
   만약 이 페이지에 막 이르렀다면, [처음](/mini-app-super-apps/)부터 읽어보는 것을 추천해요.
 {% endAside %}
 
-## 미니 앱이 아닌 것들
+## 미니앱이 아닌 것들
 
-미니 앱에 대한 개발자 경험에 대해 더 이야기하기 전에, 미니 앱이 아닌 2가지 기술에 대해서 이야기할게요.
+미니앱에 대한 개발자 경험에 대해 더 이야기하기 전에, 미니앱이 아닌 2가지 기술에 대해서 이야기할게요.
 바로 H5 앱과 QuickApp이에요.
 
 ## H5
 
-H5 앱은, 또는 H5 페이지는, 미니 앱의 전신이에요.
+H5 앱은, 또는 H5 페이지는, 미니앱의 전신이에요.
 주로 H5는 채팅으로 쉽게 공유할 수 있는 잘 디자인된 웹앱이나 웹페이지를 의미해요.
 H5는 반응형 디자인과 빠른 CSS 애니메이션, 멀티미디어 콘텐츠 등의 HTML5와 그 관련 기술을 의미해요.
 중국어 위키피디아는 아예 H5를 HTML5로 [리다이렉트](https://zh.wikipedia.org/wiki/H5)해요.
@@ -46,14 +46,14 @@ H5의 대표적 예시는 WeChat의 [H5 boilerplate](https://panteng.github.io/w
 - [Hisense Open Platform](http://dev.hismarttv.com/)
 - [China Mobile Terminal Corporation](https://www.chinamobileltd.com/tc/global/home.php)
 
-QuickApp의 기반 기술은 일반적인 미니 앱과 비슷하지만 ([구성 요소와 호환성](/mini-app-about/#-2) 참고) 발견 방법은 달라요.
+QuickApp의 기반 기술은 일반적인 미니앱과 비슷하지만 ([구성 요소와 호환성](/mini-app-about/#-2) 참고) 발견 방법은 달라요.
 QuickApp은 스토어에 등재되고 회원사의 어떤 기기들에는 선탑재되며 딥링크를 통해 공유할 수 있는 서비스들이에요. ([Quick App showcase](https://www.quickapp.cn/quickAppShow) 참고)
-QuickApp은 슈퍼 앱 안에서 구동되는 것이 아니고, 기기와 강하게 연동된 하나의 온전한 애플리케이션으로 동작해요.
+QuickApp은 슈퍼앱 안에서 구동되는 것이 아니고, 기기와 강하게 연동된 하나의 온전한 애플리케이션으로 동작해요.
 운영 체제에서 제공되는 JavaScript 브릿지를 통해서 전체화면 애플리케이션으로 렌더링되는거예요.
 
 
 {% Aside 'success' %}
-  다음으로 [미니 앱의 개발자 경험](/mini-app-devtools/)에 대해서 알아보세요.
+  다음으로 [미니앱의 개발자 경험](/mini-app-devtools/)에 대해서 알아보세요.
 {% endAside %}
 
 ## Acknowledgements
