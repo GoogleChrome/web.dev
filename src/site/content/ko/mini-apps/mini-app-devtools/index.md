@@ -171,7 +171,6 @@ WeChat 개발자 도구에서 `<image>`라고 나온 엘리먼트가 사실은 `
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/on9Ty46RyteTI6QTc2vk.png", alt="Inspecting a WeChat mini app running on a real device with Chrome DevTools. Where WeChat DevTools reported I am looking at an `image` tag, Chrome DevTools reveals I am actually dealing with a `wx-image` custom element.", width="800", height="385" %}
   <figcaption>
-
     <code>&lt;image&gt;</code> 요소를 WeChat 개발자 도구로 분석해보면 사실은 <code>&lt;wx-image&gt;</code> 요소라는 것을 알 수 있어요.
   </figcaption>
 </figure>
