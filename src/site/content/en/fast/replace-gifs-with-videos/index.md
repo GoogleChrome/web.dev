@@ -47,7 +47,7 @@ To use FFmpeg to convert the GIF, `my-animation.gif` to an MP4 video, run the
 following command in your console:
 
 ```bash
-ffmpeg -i my-animation.gif -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420p my-animation.mp4
+ffmpeg -i my-animation.gif -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420p -color_primaries bt709 -color_trc iec61966_2_1 -colorspace smpte170m my-animation.mp4
 ```
 
 This tells FFmpeg to take `my-animation.gif` as the **input**, signified by the
@@ -58,7 +58,7 @@ by 240px. If the input GIF has odd dimensions you can include a crop filter to
 avoid FFmpeg throwing a 'height/width not divisible by 2' error:
 
 ```bash
-ffmpeg -i my-animation.gif -vf "crop=trunc(iw/2)*2:trunc(ih/2)*2" -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420p my-animation.mp4
+ffmpeg -i my-animation.gif -vf "crop=trunc(iw/2)*2:trunc(ih/2)*2" -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420p -color_primaries bt709 -color_trc iec61966_2_1 -colorspace smpte170m my-animation.mp4
 ```
 
 ## Create WebM videos
