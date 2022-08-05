@@ -138,6 +138,7 @@
 
   .site-header[class*='expanded'] web-navigation-drawer {
     opacity: 0;
+    pointer-events: none !important;
   }
 
   .site-header__nav {
