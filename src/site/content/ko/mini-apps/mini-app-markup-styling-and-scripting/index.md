@@ -12,8 +12,8 @@ tags:
 ---
 
 {% Aside %}
-  이 포스트는 글타래의 일부이며, 이전 글들에서 언급한 내용 위에 새로운 내용을 다루는 글이에요.
-  만약 이 페이지에 막 이르렀다면, [처음](/mini-app-super-apps/)부터 읽어보는 것을 추천해요.
+이 포스트는 글타래의 일부이며, 이전 글들에서 언급한 내용 위에 새로운 내용을 다루는 글이에요.
+만약 이 페이지에 막 이르렀다면, [처음](/mini-app-super-apps/)부터 읽어보는 것을 추천해요.
 {% endAside %}
 
 ## 마크업 언어
@@ -38,7 +38,7 @@ Vue.js처럼, 미니앱의 기반 프로그래밍 콘셉트는 [model-view-viewm
 // page.js
 Page({
   data: {
-    message: "Hello World!",
+    message: 'Hello World!',
   },
 });
 ```
@@ -49,7 +49,9 @@ Page({
 
 ```html
 <!-- wxml -->
-<view wx:for="{% raw %}{{array}}{% endraw %}">{% raw %}{{item}}{% endraw %}</view>
+<view wx:for="{% raw %}{{array}}{% endraw %}"
+  >{% raw %}{{item}}{% endraw %}</view
+>
 ```
 
 ```js
@@ -76,7 +78,7 @@ Page({
 // page.js
 Page({
   data: {
-    view: "three",
+    view: 'three',
   },
 });
 ```
@@ -89,7 +91,8 @@ Page({
 <!-- wxml -->
 <template name="person">
   <view>
-    First Name: {% raw %}{{firstName}}{% endraw %}, Last Name: {% raw %}{{lastName}}{% endraw %}
+    First Name: {% raw %}{{firstName}}{% endraw %}, Last Name: {% raw
+    %}{{lastName}}{% endraw %}
   </view>
 </template>
 ```
@@ -104,9 +107,9 @@ Page({
 // page.js
 Page({
   data: {
-    personA: { firstName: "Alice", lastName: "Foo" },
-    personB: { firstName: "Bob", lastName: "Bar" },
-    personC: { firstName: "Charly", lastName: "Baz" },
+    personA: {firstName: 'Alice', lastName: 'Foo'},
+    personB: {firstName: 'Bob', lastName: 'Bar'},
+    personC: {firstName: 'Charly', lastName: 'Baz'},
   },
 });
 ```
@@ -162,7 +165,7 @@ JavaScript 코드는 `eval()` 등으로 실행될 수 없고 어떤 함수도 `n
 하지만 이 이야기는 거의 모듈 시스템에 대해서만 해당되는 이야기예요.
 그 말은, 미니앱은 아직 표준 [ES Modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules)을 지원하지 않아요.
 
-[이전에](/mini-app-markup-styling-and-scripting/#markup-languages) 언급한 것처럼 미니앱의 프로그래밍 콘셉트는 
+[이전에](/mini-app-markup-styling-and-scripting/#markup-languages) 언급한 것처럼 미니앱의 프로그래밍 콘셉트는
 [model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) (MVVM)이에요.
 논리 계층(Logic Layer)과 화면 계층(View Layer)는 서로 다른 쓰레드에서 동작해요.
 덕분에 계산에 오래 걸리는 작업 중에서 사용자 화면은 멈추지 않아요.
@@ -173,16 +176,12 @@ WeChat의 스크립팅 언어는
 [SJS](https://opendocs.alipay.com/mini/framework/sjs), ByteDance 또한
 [SJS](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/framework/sjs-syntax-reference/sjs-introduction/)이라고 해요.
 
-
 Baidu는 자신의 언어를 [JS](https://smartprogram.baidu.com/docs/develop/framework/devjs/)라고 해요.
 이 스크립트들은 실행되기 위해서는 특수한 태그가 포함되어야 해요. 예를 들어 WeChat의 경우는 `<wxs>`가 포함되어야 해요.
 이에 대비해서 QuickApp은 표준 `<script>` 태그와 ES6 [JS](https://doc.quickapp.cn/framework/script.html) 문법을 사용해요.
 
 ```html
-<wxs module="m1">
-  var msg = "hello world";
-  module.exports.message = msg;
-</wxs>
+<wxs module="m1"> var msg = "hello world"; module.exports.message = msg; </wxs>
 
 <view>{% raw %}{{m1.message}}{% endraw %}</view>
 ```
@@ -199,7 +198,7 @@ module.exports = {
   FOO: foo,
   bar: bar,
 };
-module.exports.msg = "some msg";
+module.exports.msg = 'some msg';
 ```
 
 ```html
@@ -211,10 +210,10 @@ module.exports.msg = "some msg";
 
 ```js
 // /pages/logic.wxs
-var tools = require("./tools.wxs");
+var tools = require('./tools.wxs');
 
 console.log(tools.FOO);
-console.log(tools.bar("logic.wxs"));
+console.log(tools.bar('logic.wxs'));
 console.log(tools.msg);
 ```
 
@@ -230,7 +229,6 @@ JavaScript 브릿지는 미니앱들을 강력한 기기 기능들을 사용할 
 그리고 [Quick App](https://doc.quickapp.cn/features/) 등
 서로 다른 API들을 확인해보세요.
 
-
 기능 감지 또한 아주 직관적이에요. 모든 플랫폼에서 말 그대로 `canIUse()` 함수를 지원하기 때문이에요.
 아마도 웹사이트 [caniuse.com](https://caniuse.com/)에서 영감을 받은 것 같아요.
 예를 들어, ByteDance의 [`tt.canIUse()`](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/foundation/tt-can-i-use)
@@ -238,13 +236,13 @@ JavaScript 브릿지는 미니앱들을 강력한 기기 기능들을 사용할 
 
 ```js
 // Testing if the `<swiper>` component is supported.
-tt.canIUse("swiper");
+tt.canIUse('swiper');
 // Testing if a particular field is supported.
-tt.canIUse("request.success.data");
+tt.canIUse('request.success.data');
 ```
 
 {% Aside 'success' %}
-  다음 글에서는 [미니 앱 컴포넌트](/mini-app-components/)에 대해서 알아볼거예요.
+다음 글에서는 [미니 앱 컴포넌트](/mini-app-components/)에 대해서 알아볼거예요.
 {% endAside %}
 
 ## Acknowledgements

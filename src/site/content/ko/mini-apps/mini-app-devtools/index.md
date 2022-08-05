@@ -12,8 +12,8 @@ tags:
 ---
 
 {% Aside %}
-  이 포스트는 글타래의 일부이며, 이전 글들에서 언급한 내용 위에 새로운 내용을 다루는 글이에요.
-  만약 이 페이지에 막 이르렀다면, [처음](/mini-app-super-apps/)부터 읽어보는 것을 추천해요.
+이 포스트는 글타래의 일부이며, 이전 글들에서 언급한 내용 위에 새로운 내용을 다루는 글이에요.
+만약 이 페이지에 막 이르렀다면, [처음](/mini-app-super-apps/)부터 읽어보는 것을 추천해요.
 {% endAside %}
 
 ## 개발자 경험
@@ -133,7 +133,6 @@ ByteDance가 이를 구현한 방식은, QR 코드 자체의 URL([예시](https:
 더 강력한 기능은 클라우드 기반의 미리보기 원격 디버깅이에요.
 IDE에서 생성된 QR 코드를 스캔하고 나면 미니앱이 실 기기에서 구동되고, 컴퓨터에서는 Chrome 개발자도구가 열려 원격으로 디버깅을 할 수 있어요.
 
-
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N5Crv3ryZ3bCNFMv7Lir.png", alt="A mobile phone running a mini app with parts of the UI highlighted by the ByteDance DevTools debugger running on a laptop inspecting it.", width="800", height="600" %}
   <figcaption>
@@ -177,7 +176,7 @@ WeChat 개발자 도구에서 `<image>`라고 나온 엘리먼트가 사실은 `
 
 ### CSS 디버깅
 
-또 다른 차이점은, CSS의 여러 방언에 새로운 길이 단위인 `rpx`(반응형 픽셀; Responsive Pixel)가 존재한다는 점이에요. 
+또 다른 차이점은, CSS의 여러 방언에 새로운 길이 단위인 `rpx`(반응형 픽셀; Responsive Pixel)가 존재한다는 점이에요.
 WeChat 개발자 도구는 기기에 영향을 받지 않는 CSS 길이 단위를 이용해 서로 다른 기기에서 개발을 해도 직관적인 개발 경험을 줘요.
 
 <figure>
@@ -193,7 +192,6 @@ WeChat 개발자 도구는 기기에 영향을 받지 않는 CSS 길이 단위�
 주 관심 분야는 Total, Performance, Experience, 그리고 Best Practice예요.
 IDE 내 모습은 조금씩 다를 수 있어요.
 아래 스크린샷에서는 코드 에디터를 잠시 가려서 분석 도구가 크게 보일 수 있도록 했어요.
-
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q8Rze6pR9mpDXw9VCaEs.png", alt="Running a performance audit with the built-in audit tool. The scores show Total, Performance, Experience, and Best Practice, each 100 out of 100 points.", width="800", height="485" %}
@@ -214,7 +212,7 @@ IDE 내 모습은 조금씩 다를 수 있어요.
 </figure>
 
 {% Aside 'success' %}
-  [다음 글](/mini-app-markup-styling-and-scripting/)에서 미니앱의 마크업, 스타일링, 그리고 스크립팅에 대해서 알아봐요.
+[다음 글](/mini-app-markup-styling-and-scripting/)에서 미니앱의 마크업, 스타일링, 그리고 스크립팅에 대해서 알아봐요.
 {% endAside %}
 
 ## Acknowledgements

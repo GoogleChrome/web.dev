@@ -22,7 +22,7 @@ tags:
 ## 슈퍼앱은 무엇인가요?
 
 슈퍼앱은 **미니앱**이라고 불리는 다른 앱들을 구동할 수 있어요.
-유명한 슈퍼앱들에는 Tencent의 [WeChat](https://weixin.qq.com/), Ant Group(중국 Alibaba의 자회사)의 [Alipay](https://www.alipay.com/), 검색 엔진 [Baidu](https://baidu.com/)의 앱, 
+유명한 슈퍼앱들에는 Tencent의 [WeChat](https://weixin.qq.com/), Ant Group(중국 Alibaba의 자회사)의 [Alipay](https://www.alipay.com/), 검색 엔진 [Baidu](https://baidu.com/)의 앱,
 ByteDance의 [Douyin](https://www.douyin.com/) (TikTok)이 있어요.
 첫 3개의 회사는 주로 **B**(aidu) **A**(libaba) **T**(encent) 에서 따와 BAT라고 불려요.
 슈퍼앱들은 중국 시장을 매섭게 장악했고, 그 때문에 이 앱의 여러 예시들은 중국의 예시예요.
@@ -48,7 +48,6 @@ Douyin 또한 자신의 소셜커머스 플랫폼을 엔터테인먼트와 쇼�
 대부분 전화번호를 통해 계정을 생성해야하기에 일회용 전화번호를 사용하는 것도 고려해보세요.
 많은 슈퍼앱들은 외국인들에겐 **해외 계정**만 생성할 수 있도록 하기에, 국내 계정의 몇몇 기능들을 사용하지 못할 수도 있어요.
 
-
 - **WeChat:** [iOS](https://apps.apple.com/us/app/wechat/id414478124),
   [Android](https://weixin.qq.com/cgi-bin/readtemplate?uin=&stype=&promote=&fr=&lang=zh_CN&ADTAG=&check=false&t=weixin_download_method&sys=android&loc=weixin,android,web,0),
   [macOS](https://mac.weixin.qq.com/), [Windows](https://pc.weixin.qq.com/)
@@ -72,7 +71,7 @@ Douyin 또한 자신의 소셜커머스 플랫폼을 엔터테인먼트와 쇼�
 </figure>
 
 {% Aside 'success' %}
-  [다음 글](/mini-app-about/)에서 미니앱에 대해 더 배워보세요.
+[다음 글](/mini-app-about/)에서 미니앱에 대해 더 배워보세요.
 {% endAside %}
 
 ## Acknowledgements

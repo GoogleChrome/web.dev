@@ -12,8 +12,8 @@ tags:
 ---
 
 {% Aside %}
-  이 포스트는 글타래의 일부이며, 이전 글들에서 언급한 내용 위에 새로운 내용을 다루는 글이에요.
-  만약 이 페이지에 막 이르렀다면, [처음](/mini-app-super-apps/)부터 읽어보는 것을 추천해요.
+이 포스트는 글타래의 일부이며, 이전 글들에서 언급한 내용 위에 새로운 내용을 다루는 글이에요.
+만약 이 페이지에 막 이르렀다면, [처음](/mini-app-super-apps/)부터 읽어보는 것을 추천해요.
 {% endAside %}
 
 ## 구성 요소와 호환성
@@ -50,7 +50,6 @@ WeChat 슈퍼앱으로 바코드를 스캔하면, 미니앱이 바로 실행돼�
 모든 슈퍼앱은 미니앱을 위해 사실상 똑같은 사용자 경험을 제공해요.
 상단바의 테마는 커스터마이징이 가능하며 미니앱의 이름을 나타내고, 상단 오른쪽 구석에는 닫기 버튼과 액션 버튼(주로 공유, 즐겨찾기, 신고, 피드백, 설정 등)이 존재해요.
 아래 스크린샷은 Alipay 슈퍼앱에서 동작하는 쇼핑 미니앱과 액션 버튼의 메뉴들을 보여줘요.
-
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PkjzF8AyxDVIAMZmhVrr.jpg", alt="The Alipay super app running a shopping mini app with highlighted top bar, action menu button, and close button. The action menu is opened.", width="300", height="649" %}
@@ -89,7 +88,6 @@ WeChat 슈퍼앱으로 바코드를 스캔하면, 미니앱이 바로 실행돼�
 실행 URI는 또한 미니앱 내의 특정 페이지에 대한 정보를 마치 딥 링크처럼 담고 있을 수도 있어요.
 사이트맵을 통해 미니앱의 어느 페이지가 슈퍼앱의 크롤러에 의해 발견될 수 있는지 명시할 수도 있어요.
 
-
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZKLNvNnm3Rr6aBmYbons.png", alt="macOS Finder showing a folder containing cached WeChat mini app `.wxapkg` files.", width="800", height="465" %}
   <figcaption>
@@ -110,7 +108,7 @@ WeChat 슈퍼앱으로 바코드를 스캔하면, 미니앱이 바로 실행돼�
 플랫폼 제공자가 의무화할 경우 개발자는 권한 요구 이유까지 포함하여 작성하게 돼요.
 아래 스크린샷은 [Douyin 데모 미니앱](https://microapp.bytedance.com/docs/zh-CN/mini-app/introduction/plug-in/example/)이 위치 확인 권한을 사용자에게 묻는 장면이에요.
 어떤 슈퍼앱에서는 미니앱들이 특정 권한이 허용되었는지 확인하거나 권한을 미리 요청하는 Imperative API 등을 제공하기도 해요.
-심지어 어떤 슈퍼앱들은 슈퍼앱의 권한 설정 페이지를 여는 API를 제공하기도 해요 (마치 Chrome의 _[페이지 설정](about://settings/content/siteDetails?site=https%3A%2F%2Fexample.com%2F)_처럼요.
+심지어 어떤 슈퍼앱들은 슈퍼앱의 권한 설정 페이지를 여는 API를 제공하기도 해요 (마치 Chrome의 *[페이지 설정](about://settings/content/siteDetails?site=https%3A%2F%2Fexample.com%2F)*처럼요.
 미니앱은 또한 자신들이 통신하는 모든 서버(Origin)들을 미리 명시해야 해요.
 
 <figure>
@@ -128,7 +126,6 @@ WeChat 슈퍼앱으로 바코드를 스캔하면, 미니앱이 바로 실행돼�
 그 구현은 안드로이드의 경우 [`getConnectionInfo()`](<https://developer.android.com/reference/android/net/wifi/WifiManager#getConnectionInfo()>)로,
 iOS의 경우 [`CNCopyCurrentNetworkInfo()`](https://developer.apple.com/documentation/systemconfiguration/1614126-cncopycurrentnetworkinfo)로 구현되고요.
 슈퍼앱은 이 뿐만 아니라 더 다양한 기기 API들을 제공할 수 있어요 (예: 블루투스, NFC, iBeacon, GPS, 시스템 클립보드, 방향 센서, 배터리 정보, 캘린더 접근, 전화번호부 접근, 화면 밝기 조절, 파일 시스템 접근, 물리적 피드백을 위한 진동 하드웨어 접근, 카메라와 마이크 접근, 화면 녹화와 스크린샷 생성, 네트워크 상태, UDP 소켓, 바코드 인식, 기기 메모리 정보 등)
-
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNEKyoLVeq3IUKGXEZEZ.png", alt="The WeChat demo mini app showing a slider that controls the screen brightness of the device moved all the way to the maximum.", width="300", height="649" %}
@@ -162,7 +159,7 @@ Douyin과 WeChat 같은 슈퍼앱들은 소셜 네트워킹 사이트로 시작�
 그 경우 미니앱은 딱 한 번의 탭으로 열 수 있기 때문에, 사용자들은 어떤 불편함이나 방해 요소 없이 미니앱에 도달할 수 있어요.
 
 {% Aside 'success' %}
-  다음 챕터에서 [미니앱들이 H5 앱들과 QuickApp과 다른 점들](/mini-app-what-are-h5-and-quickapp)을 알아볼거예요.
+다음 챕터에서 [미니앱들이 H5 앱들과 QuickApp과 다른 점들](/mini-app-what-are-h5-and-quickapp)을 알아볼거예요.
 {% endAside %}
 
 ## Acknowledgements
