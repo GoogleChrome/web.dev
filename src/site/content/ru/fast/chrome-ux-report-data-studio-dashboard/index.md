@@ -6,12 +6,14 @@ authors:
 hero: image/admin/k3hWnnwqTvg7w7URsbIK.png
 description: Data Studio — это мощный инструмент визуализации данных, позволяющий создавать панели мониторинга на основе источников больших данных, таких как отчет Chrome UX. В этой статье вы узнаете, как создать собственную пользовательскую панель CrUX Dashboard для отслеживания пользовательских впечатлений.
 date: 2020-06-22
+updated: 2022-07-18
 tags:
   - performance
   - blog
+  - chrome-ux-report
 ---
 
-[Data Studio](https://marketingplatform.google.com/about/data-studio/) — это мощный инструмент визуализации данных, позволяющий создавать панели мониторинга поверх источников больших данных, таких как отчет [Chrome UX](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX). В этой статье вы узнаете, как создать собственную пользовательскую панель CrUX для отслеживания  тенденций взаимодействия с пользователем в источнике.
+[Data Studio](https://marketingplatform.google.com/about/data-studio/) — это мощный инструмент визуализации данных, позволяющий создавать панели мониторинга поверх источников больших данных, таких как отчет [Chrome UX](https://developer.chrome.com/docs/crux/) (CrUX). В этой статье вы узнаете, как создать собственную пользовательскую панель CrUX для отслеживания  тенденций взаимодействия с пользователем в источнике.
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Панель CrUX Dashboard", width="800", height="598" %}
 
@@ -28,7 +30,7 @@ tags:
 {% Compare 'better', 'Источник (поддерживается)'%}
 
 ```text
-https://developers.google.com
+https://web.dev
 ```
 
 {% endCompare %}
@@ -36,7 +38,7 @@ https://developers.google.com
 {% Compare 'worse', 'URL (Не поддерживается)' %}
 
 ```text
-https://developers.google.com/web/tools/chrome-user-experience-report/
+https://web.dev/chrome-ux-report-data-studio-dashboard/
 ```
 
 {% endCompare %}
@@ -79,7 +81,7 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 ### Метрики производительности
 
-После страницы с Core Web Vitals идут отдельные страницы для всех [метрик](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics) в наборе данных CrUX.
+После страницы с Core Web Vitals идут отдельные страницы для всех [метрик](https://developer.chrome.com/docs/crux/methodology/#metrics) в наборе данных CrUX.
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Страница LCP на панели CrUX", width="800", height="598" %}
 
@@ -103,7 +105,7 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 ### Демографические данные пользователей
 
-На демографических страницах пользователей указаны два [фактора распределения](https://developers.google.com/web/tools/chrome-user-experience-report/#dimensions): типы устройств и эффективные типы подключения (ECT). Эти страницы иллюстрируют распределение просмотров страниц по всему источнику для пользователей в каждом демографическом сегменте.
+На демографических страницах пользователей указаны два [фактора распределения](https://developer.chrome.com/docs/crux/methodology/#dimensions): типы устройств и эффективные типы подключения (ECT). Эти страницы иллюстрируют распределение просмотров страниц по всему источнику для пользователей в каждом демографическом сегменте.
 
 На странице распределения устройств показано распределение пользователей телефонов, компьютеров и планшетов с течением времени. Для многих источников, как правило, практически нет данных по планшетам, поэтому вы часто будете видеть 0% сбоку гистограммы.
 

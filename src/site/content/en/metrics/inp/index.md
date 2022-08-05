@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-06-21
+updated: 2022-07-18
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -14,40 +14,58 @@ tags:
 ---
 
 {% Aside %}
-Interaction to Next Paint (INP) is an experimental field metric that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). INP logs the latency of all interactions throughout the entire page lifecycle. The highest value of those interactions—or close to the highest for pages with many interactions—is recorded as the page's INP. A low INP ensures that the page will be reliably responsive at all times.
+Interaction to Next Paint (INP) is an experimental metric that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
 {% endAside %}
 
-Responsiveness—that is, how fast a page responds to user input—is crucial to the user experience. Chrome usage data shows that roughly 90% of a user's time on a page is spent _after_ it loads, thus, careful measurement of responsiveness is important especially as more websites rely increasingly on JavaScript to provide interactivity. This is what INP measures, and it encompasses the entire lifecycle of a page.
+Chrome usage data shows that 90% of a user's time on a page is spent _after_ it loads, Thus, careful measurement of responsiveness _throughout_ the page lifecycle is important. This is what the INP metric assesses.
 
-When responsiveness is good, pages respond quickly to the interactions made with it. When an app responds to interactions, the changes in the user interface that result are _visual feedback_. Visual feedback is what tells us if—for example—an item we've asked to add to an online shopping cart is indeed being added, if a login form's contents are being authenticated by the server, whether a mobile menu has opened, and so on.
+Good responsiveness means that a page responds quickly to interactions made with it. When a page responds to interactions, the changes in the user interface that result are _visual feedback_ provided in the next frame the browser presents. Visual feedback tells us if, for example, an item we've asked to add to an online shopping cart is indeed being added, if a login form's contents are being authenticated by the server, whether a mobile menu has opened, and so on.
 
-This article explains how INP works, how to measure it, and offers suggestions for improving it, as good responsiveness is imperative to a good user experience.
+The goal of INP is to ensure the time from when a user initiates an interaction until the next frame is painted is as short as possible, for all or most interactions the user makes.
+
+In the following video, the example on the right gives immediate visual feedback that an accordion is opening. It also demonstrates how poor responsiveness can cause multiple unintended responses to input because the user thinks the experience is broken.
+
+<style>
+  #responsiveness-video {
+    height: auto;
+    aspect-ratio: 1445 / 370;
+  }
+</style>
+<figure>
+  {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WSmcjiQC4lyLxGoES4dd.mp4", autoplay="true", loop="true", muted="true", playsinline="true", width="1445", height="370", id="responsiveness-video" %}
+  <figcaption>
+    An example of poor versus good responsiveness. At left, long tasks block the accordion from opening. This causes the user to click multiple times, thinking the experience is broken. When the main thread catches up, it processes the delayed inputs, resulting in the accordion opening and closing unexpectedly.
+  </figcaption>
+</figure>
+
+This article explains how INP works, how to measure it, and offers advice for improving it.
 
 ## What is INP?
 
-INP is a metric that aims to represent a page's overall _interaction latency_ by selecting one of the single longest interactions that occur when a user visits a page. For pages with less than 50 interactions in total, INP is the interaction with the worst latency. For pages with many interactions, INP is most often the 98th percentile of interaction latency.
+INP aims to represent a page's overall responsiveness by measuring all click, tap, and keyboard interactions made with a page. The longest of those observed interactions&mdash;with some exceptions noted below&mdash;is chosen as the page's INP value when the user is done with the page.
+
+{% Details %}
+
+{% DetailsSummary %}
+A note on how INP is calculated
+{% endDetailsSummary %}
+
+As stated above, INP is calculated by observing all the interactions made with a page. The chosen value is then a [percentile](https://en.wikipedia.org/wiki/Percentile) of those interactions. A formula is then used to choose a high percentile value of those interactions. For pages with few interactions, the interaction with the worst latency (the 100th percentile) is chosen. For pages with many interactions, the 99th or 98th percentile is chosen.
+{% endDetails %}
+
+An _interaction_ is a group of event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
+
+An interaction's latency consists of the single longest [duration](https://w3c.github.io/event-timing/#ref-for-dom-performanceentry-duration%E2%91%A1:~:text=The%20Event%20Timing%20API%20exposes%20a%20duration%20value%2C%20which%20is%20meant%20to%20be%20the%20time%20from%20when%20user%20interaction%20occurs%20(estimated%20via%20the%20Event%27s%20timeStamp)%20to%20the%20next%20time%20the%20rendering%20of%20the%20Event%27s%20relevant%20global%20object%27s%20associated%20Document%E2%80%99s%20is%20updated) of a group of event handlers that drives the interaction, from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
 
 {% Aside 'important' %}
-For more information on why the longest interaction isn't selected for every page, read the [Why not the worst interaction latency?](/inp/#why-not-the-worst-interaction-latency) section for more details.
+For more details on how INP is measured, read the ["What's in an interaction?"](#what's-in-an-interaction) section.
 {% endAside %}
 
-An _interaction_ is a set of related input events that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`, all of which may contribute to the overall interaction's _latency_.
+## What's a "good" INP value?
 
-A single interaction's latency consists of the single longest duration of any event that is part of the interaction, where the _duration_ is measured from the point at which the user interacted with the page until the next frame is presented after all associated event handlers have executed. The duration is the sum of the following timespans:
+Pinning labels such as "good" or "poor" on a responsiveness metric is difficult. On one hand, you want to encourage development practices that prioritize good responsiveness. On the other hand, you must account for the fact that there's considerable variability in the capabilities of devices people use to set achievable development expectations.
 
-- The _input delay_, which is the time between when the user interacts with the page, and when event handlers execute.
-- The _processing time_, which is the total amount of time it takes to execute code in associated event handlers.
-- The _presentation delay_, which is the time between when event handlers have finished executing, and when the browser presents the next frame.
-
-{% Aside 'important' %}
-For more information on exactly how INP is measured, read the [What's in an interaction?](/inp/#what's-in-an-interaction) section for more details.
-{% endAside %}
-
-## What is a good INP value?
-
-Pinning labels such as "good" or "poor" on a responsiveness metric is tough. On one hand, you want to encourage development of user experiences that deliver good responsiveness. On the other hand, you must account for the fact that there's considerable variability in the capabilities of devices people use, and set achievable expectations by selecting a target that's not impossible to meet on low-end devices.
-
-With that in mind, it's important that a responsiveness metric will be appropriate for broad use cases. To ensure you're hitting this target, a good threshold to measure at the **75th percentile** of page loads recorded in the field, segmented across mobile and desktop devices:
+To ensure you're delivering user experiences with good responsiveness, a good threshold to measure is the **75th percentile** of page loads recorded in the field, segmented across mobile and desktop devices:
 
 - An INP below or at **200 milliseconds** means that your page has **good responsiveness**.
 - An INP above **200 milliseconds** and below or at **500 milliseconds** means that your page's responsiveness **needs improvement**.
@@ -78,140 +96,69 @@ With that in mind, it's important that a responsiveness metric will be appropria
 </figure>
 
 {% Aside 'important' %}
-Since INP is an experimental metric, the guidance around thresholds may change over time as the metric is fine-tuned. [The CHANGELOG at the end of this document](/inp/#changelog) will be updated to reflect any changes.
+Since INP is experimental, the guidance around thresholds may change over time as it is fine-tuned. [The CHANGELOG at the end of this article](#changelog) will be updated to reflect any changes.
 {% endAside %}
 
 ## What's in an interaction?
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Ng0j5yaGYZX9Bm3VQ70c.svg", alt="ALT_TEXT_HERE", width="736", height="193.81333333333" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Ng0j5yaGYZX9Bm3VQ70c.svg", alt="A diagram depicting an interaction on the main thread. The user makes an input while blocking tasks run. The input is delayed until those tasks complete, after which the pointerup, mouseup, and click event handlers run, then rendering and painting work is kicked off until the next frame is presented.", width="736", height="193.81333333333" %}
   <figcaption>
-    The phases of a single interaction. The input delay occurs from the time an input is received, and may be caused by factors such as blocking tasks on the main thread. The processing time is the time it takes for the interaction's event handlers to execute. When execution finishes, we then enter the presentation delay, which is the time it takes to render and paint the next frame.
+    The life of an interaction. An input delay occurs until event handlers begin running, which may be caused by factors such as long tasks on the main thread. The interaction's event handlers then run, and a delay occurs before the next frame is presented.
   </figcaption>
 </figure>
 
-When an interaction is made with a page, the driver of that interactivity is often JavaScript—though browsers _do_ provide interactivity through controls not powered by JavaScript, such as checkboxes, radio buttons, the [HTML `<details>` element](https://developer.mozilla.org/docs/Web/HTML/Element/details), and so on. As far as INP is concerned, an interaction consists of one of the following:
+The primary driver of interactivity is often JavaScript, though browsers do provide interactivity through controls _not_ powered by JavaScript, such as checkboxes, radio buttons, and controls powered by CSS.
 
-- Clicking on an interactive element with a mouse.
-- Tapping on an interactive element on a device with a touchscreen.
+As far as INP goes, **only the following interaction types are observed:**
+
+- Clicking with a mouse.
+- Tapping on a device with a touchscreen.
 - Pressing a key on either a physical or onscreen keyboard.
 
-An interaction may consist of multiple events. For example, a keystroke consists of the `keydown` and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. All an interaction's events are part of what's known as a logical user interaction.
+{% Aside 'important' %}
+Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, page up, page down, and so forth) involves a keystroke, which may trigger other events that INP _does_ measure. Any resulting scrolling is _not_ factored into how INP is calculated.
+{% endAside %}
 
-You'll recall that each interaction consists of three phases: the input delay, the processing time, and the presentation delay. The duration of an interaction's associated event callbacks is the sum of the time involved for all three phases. The event with the longest duration in the logical user interaction is recorded.
+Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/vNosnKDYgBRnFmEvwm0c.svg", alt="ALT_TEXT_HERE", width="736", height="164.37333333333" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/vNosnKDYgBRnFmEvwm0c.svg", alt="A depiction of more complex interaction containing two interactions. The first is a mousedown event, which produces a frame before the mouse button is let up, which kicks off more work until yet another frame is presented as the result.", width="736", height="164.37333333333" %}
   <figcaption>
-    A depiction of a more complex interaction. The first part of the interaction receives an input when the user clicks down on a mouse button. However, before they release the mouse button, a frame is rendered and presented. When the user releases the mouse button, another series of input delay, processing time, and presentation delay phases must occur before the next frame is painted. The longest of the two is what is logged as the latency for the interaction.
+    A depiction of an interaction with multiple event handlers. The first part of the interaction receives an input when the user clicks down on a mouse button. However, before they release the mouse button, a frame is presented. When the user releases the mouse button, another series of event handlers must run before the next frame is presented.
   </figcaption>
 </figure>
 
-Similar to CLS, INP is calculated when the user leaves the page, resulting in a single value that is representative of the page's overall responsiveness throughout the entire page's lifecycle. **If high percentile page interactions are responded to quickly, that means that interactions at all lower percentiles are fast as well.**
-
-## Why not the worst interaction latency?
-
-For pages with relatively few interactions, the worst interaction is fine to use. Yet, not all web pages are the same. Some require more interactivity than others—for example, a text editor or video game app versus a blog or news website.
-
-For pages with a very high number of interactions, sampling the worst one could be misleading. Occasional hiccups occur even on websites that prioritize responsiveness, and those interactions should be overlooked.
-
-By focusing on a high percentile—yet not the _highest_ in all cases—it can be fairly assessed  whether the vast majority of a page's interactions are responded to in a timely fashion. If you're interested in seeing how the number of interactions affect which percentile of interaction latency is chosen, you can expand the section below for more information.
-
-{% Details %}
-
-{% DetailsSummary %}
-INP candidate by number of page interactions.
-{% endDetailsSummary %}
-
-<div class="table-wrapper scrollbar">
-  <table>
-    <thead>
-      <tr>
-        <th>Number of page interactions</th>
-        <th>Interaction reported as INP</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1-49</td>
-        <td>Largest</td>
-      </tr>
-      <tr>
-        <td>50-99</td>
-        <td>2nd Largest</td>
-      </tr>
-      <tr>
-        <td>100-149</td>
-        <td>3rd Largest</td>
-      </tr>
-      <tr>
-        <td>150-199</td>
-        <td>4th Largest</td>
-      </tr>
-      <tr>
-        <td>200-249</td>
-        <td>5th Largest</td>
-      </tr>
-      <tr>
-        <td>250-299</td>
-        <td>6th Largest</td>
-      </tr>
-      <tr>
-        <td>300-349</td>
-        <td>7th Largest</td>
-      </tr>
-      <tr>
-        <td>350-399</td>
-        <td>8th Largest</td>
-      </tr>
-      <tr>
-        <td>400-449</td>
-        <td>9th Largest</td>
-      </tr>
-      <tr>
-        <td>450+</td>
-        <td>10th Largest</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-{% endDetails %}
+INP is calculated when the user leaves the page, resulting in a single value that is representative of the page's overall responsiveness throughout the entire page's lifecycle. **A low INP means that a page is reliably responsive to user input.**
 
 ## How is INP different from First Input Delay (FID)?
 
-Where INP considers _all_ page interactions, [First Input Delay (FID)](/fid/) only accounts for the _first_ interaction. It also only measures the _input delay_, not the processing time of event handlers, or the delay in presenting the next frame.
+Where INP considers _all_ page interactions, [First Input Delay (FID)](/fid/) only accounts for the _first_ interaction. It also only measures the first interaction's _input delay_, not the time it takes to run event handlers, or the delay in presenting the next frame.
 
 Given that FID is also a [load responsiveness metric](/user-centric-performance-metrics/#types-of-metrics), the rationale behind it is that if the first interaction made with a page in the loading phase has little to no perceptible input delay, the page has made a good first impression.
 
-INP is more than about first impressions. It covers the _entire spectrum_ of interactions that can occur from the time the page begins loading to the time the user leaves the page. By sampling all interactions, responsiveness can be assessed comprehensively. This makes INP a more reliable indicator of responsiveness than FID.
+INP is more than about first impressions. By sampling all interactions, responsiveness can be assessed comprehensively, making INP a more reliable indicator of overall responsiveness than FID.
 
-{% Aside %}
-It's best to think of INP as being similar to [Cumulative Layout Shift (CLS)](/cls/) in that it's a metric that continually changes and updates throughout the entire lifecycle of the page. As with CLS, you don't want to record an INP value until the user leaves the page.
-{% endAside %}
+## What if no INP value is reported?
 
-## What if a user never interacts with the page?
+It's possible that a page can return no INP value. This can happen for a number of reasons:
 
-Sometimes a page is loaded, but not interacted with. This can occur for any number of reasons:
-
-- It's possible that someone has loaded a page, but became distracted, and never used it.
-- Someone loaded the page, scrolled through it (which isn't an interaction INP takes into account), but never clicked, tapped, or pressed a key on their keyboard. Perhaps the useful part of the page that the user was seeking required no interaction to reach.
-- The page is being accessed by a bot (for example, a search crawler or headless browser) which has not been scripted to interact with the page.
-
-In cases such as these, no INP value will be reported.
+- The page was loaded, but the user never clicked, tapped, or pressed a key on their keyboard.
+- The page was loaded, but the user interacted with the page using gestures that did not involve clicking, tapping, or using the keyboard. For example, scrolling or hovering over elements does not factor into how INP is calculated.
+- The page is being accessed by a bot such as a search crawler or headless browser that has not been scripted to interact with the page.
 
 ## How to measure INP
 
 INP can be measured both in [the field](/lab-and-field-data-differences/#field-data) and in [the lab](/lab-and-field-data-differences/#lab-data) (with some effort) through a variety of tools.
 
 {% Aside 'important' %}
-The best way to measure your website's INP is by gathering metrics from actual users in the field. If you're accustomed to relying on lab data for assessing performance, take a bit of time to read [Why lab and field data can be different (and what to do about it)](/lab-and-field-data-differences/).
+The best way to measure your website's INP is by gathering metrics from actual users in the field. If you're accustomed to relying on lab data for assessing performance, take some time to read [Why lab and field data can be different (and what to do about it)](/lab-and-field-data-differences/).
 {% endAside %}
 
 ### Field tools
 
 - [PageSpeed Insights](https://pagespeed.web.dev).
-- [Chrome User Experience Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report).
+- [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/).
   - Via BigQuery in the CrUX dataset's `experimental.interaction_to_next_paint` table.
   - CrUX API via `experimental_interaction_to_next_paint`.
   - CrUX Dashboard.
@@ -243,7 +190,7 @@ onINP(({value}) => {
 });
 ```
 
-Like other methods exported by `web-vitals`, `onINP` accepts a function as an argument, and will pass metric data to the function you give it. From there, you can send that data to an endpoint for collection and further analysis.
+As with other methods exported by `web-vitals`, `onINP` accepts a function as an argument, and will pass metric data to the function you give it. From there, you can send that data to an endpoint for collection and analysis.
 
 See the [`onINP()`](https://github.com/GoogleChrome/web-vitals/tree/next#oninp) reference documentation for additional usage instructions.
 
@@ -251,50 +198,16 @@ See the [`onINP()`](https://github.com/GoogleChrome/web-vitals/tree/next#oninp) 
 Gathering INP metrics in the field will only work on browsers that [fully support the Event Timing API](https://caniuse.com/mdn-api_performanceeventtiming), including its `interactionId` property.
 {% endAside %}
 
-Measuring INP on your own in JavaScript is tricky. To get the best results, it's strongly recommended that you use the `web-vitals` JavaScript library. However, if you want to get a sense of what the longest interactions may look like on your page, you can copy and paste the JavaScript snippet below in the console of your browser's developer tools and tweak as needed.
-
-{% Details %}
-
-{% DetailsSummary %}
-JavaScript snippet for logging interaction latency to the console.
-{% endDetailsSummary %}
-
-```js
-let maxDuration = 0;
-
-new PerformanceObserver(list => {
-  for (const entry of list.getEntries()) {
-    // Comment this out to show ALL event entry types (useful e.g. on Firefox).
-    if (!entry.interactionId) continue;
-
-    if (entry.duration > maxDuration) {
-      // New longest Interaction to Next Paint (duration).
-      maxDuration = entry.duration;
-      console.log(`[INP] duration: ${entry.duration}, type: ${entry.name}`, entry);
-    } else {
-      // Not the longest Interaction, but uncomment the next line if you still want to see it.
-      // console.log(`[Interaction] duration: ${entry.duration}, type: ${entry.name}`, entry);
-    }
-  }
-}).observe({
-  type: 'event',
-  durationThreshold: 16, // Minimum supported by the spec.
-  buffered: true
-});
-```
-
-{% endDetails %}
-
 ## How to improve INP
 
-If your website is reporting INP values that fall outside of the "good" threshold, you'll naturally want to figure out what you can do to improve these values. High INP values are usually indicative of a high reliance on JavaScript, or other non-JavaScript main thread work that may run concurrently with user interactions.
+If your website is reporting INP values that fall outside of the "good" threshold, you'll naturally want to figure out what you can do to improve. High INP values are usually indicative of a high reliance on JavaScript, or other non-JavaScript main thread work that may run concurrently with user interactions.
 
 ### Improving INP during page startup
 
 INP can be a factor during page load, because users may attempt to interact with a page as it's fetching JavaScript to set up event handlers that provide the interactivity required for a page to work.
 
 {% Aside %}
-Per the HTTP Archive, [Total Blocking Time (TBT)](/tbt/) correlates twice as well with INP than with FID. TBT is a lab metric, but if you're observing high TBT values in lab tools, that could be a signal that higher INP values in the field will be observed.
+Per the HTTP Archive, [Total Blocking Time (TBT)](/tbt/) has [a much stronger correlation with INP than it does with FID](https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb). TBT is a lab metric, but if you're observing high TBT values in lab tools, that could be a signal that higher INP values in the field will be observed.
 {% endAside %}
 
 To improve responsiveness during page load, look into the following solutions:
@@ -303,11 +216,11 @@ To improve responsiveness during page load, look into the following solutions:
 - [Find code-splitting opportunities](/reduce-javascript-payloads-with-code-splitting/) so you can lazy load JavaScript not needed during page load. The coverage tool can help with this.
 - [Identify slow third-party JavaScript](/identify-slow-third-party-javascript/) that you may be loading during startup.
 - Use the performance profiler to find [long tasks](/long-tasks-devtools/) that you can optimize.
-- Ensure you aren’t asking too much out of the browser rendering after your JavaScript is done—that is, large component tree re-rendering, large image decodes, too many heavy css effects, and so on.
+- Ensure you aren’t asking too much of the browser in terms of rendering work during startup. Avoid large component tree re-rendering, huge DOM sizes, large image decodes, computationally expensive [CSS animations](/animations-examples/), and so forth.
 
 ### Improving INP after page startup
 
-Because INP is calculated from inputs sampled during the entire page lifecycle, it's possible that your site's INP could be influenced by what happens _after_ page startup. If that's the case for your website, here are a few areas to look into for solutions:
+Because INP is calculated from inputs sampled during the entire page lifecycle, it's probable that your site's INP could be influenced by what happens _after_ page startup. If that's the case for your website, here are a few areas to look into for solutions:
 
 - Use the [`postTask` API](https://github.com/WICG/scheduling-apis/blob/main/explainers/prioritized-post-task.md) to appropriately prioritize tasks.
 - [Schedule non-essential work when the browser is idle](https://philipwalton.com/articles/idle-until-urgent/) with [`requestIdleCallback`](https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback).

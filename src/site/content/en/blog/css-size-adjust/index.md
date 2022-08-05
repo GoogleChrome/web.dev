@@ -10,7 +10,7 @@ tags:
   - blog
   - css
 date: 2021-06-09
-updated: 2021-06-09
+updated: 2022-07-25
 ---
 
 Consider the following
@@ -33,12 +33,12 @@ ensure `64px` is the consistent final size.
 
 This post explores a [new CSS font-face
 descriptor](https://drafts.csswg.org/css-fonts-5/#size-adjust-desc) called
-`size-adjust`, available in Chromium 92 and Firefox 89 (behind a flag); (see
-[caniuse](https://caniuse.com/mdn-css_at-rules_font-face_size-adjust) for latest
-support). It also demonstrates a few ways to correct and normalize font sizes
+`size-adjust`. It also demonstrates a few ways to correct and normalize font sizes
 for smoother user experience, consistent design systems and more predictable
 page layout. One important use case is optimizing web font rendering to prevent
 [cumulative layout shift](/cls/) (CLS).
+
+{% BrowserCompat 'css.at-rules.font-face.size-adjust' %}
 
 Here's an interactive [demo](https://codepen.io/argyleink/pen/rNyMjxR) of the
 problem space. Try changing the typeface with the dropdown and observe:
@@ -298,6 +298,8 @@ features can trim to", width="800", height="136" %}
 
 ### `ascent-override`
 
+{% BrowserCompat 'css.at-rules.font-face.ascent-override' %}
+
 The `ascent-override` descriptor defines the height above the baseline of a
 font.
 
@@ -321,6 +323,8 @@ bounding box.
 
 ### `descent-override`
 
+{% BrowserCompat 'css.at-rules.font-face.descent-override' %}
+
 The `descent-override` descriptor defines the height below the baseline of the
 font.
 
@@ -342,6 +346,8 @@ The red headline (unadjusted) has space below it's D and O
 headline has been adjusted so it's letters rest snug on the baseline.
 
 ### `line-gap-override`
+
+{% BrowserCompat 'css.at-rules.font-face.line-gap-override' %}
 
  The `line-gap-override` descriptor defines the line-gap metric for the font.
  This is the font recommended line-gap or external leading.

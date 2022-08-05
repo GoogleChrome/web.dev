@@ -1,0 +1,179 @@
+---
+patternId: components/multi-select
+---
+
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <style>
+      :root{--border-color:hsl(221 30% 90%);--surface-color-1:hsl(221 90% 98%);--surface-color-2:hsl(221 40% 100%);--text-color-1:hsl(221 50% 15%);--text-color-2:hsl(221 20% 40%);--shadow-highlight-color:hsl(219 62% 42% / 25%);--isLTR:1;--isRTL:-1}:root:dir(rtl){--isLTR:-1;--isRTL:1}@media (prefers-color-scheme:dark){:root{--border-color:hsl(221 10% 20%);--surface-color-1:hsl(221 20% 5%);--surface-color-2:hsl(221 5% 10%);--text-color-1:hsl(221 90% 98%);--text-color-2:hsl(221 20% 80%);--shadow-highlight-color:hsl(219 50% 82% / 25%)}}select{font-size:max(100%,1rem);padding-inline:1ch;padding-block:.5ch;display:none}@media (pointer:coarse){select[multiple]{display:block}}form{display:grid;gap:2ch;max-inline-size:30ch}fieldset{padding:2ch;border-radius:10px;background-color:var(--surface-color-2);border:1px solid var(--border-color)}@media (pointer:coarse){fieldset{display:none}}fieldset:focus-within{border-color:var(--text-color-2)}fieldset:focus-within>legend{color:var(--text-color-1)}fieldset>legend{font-size:.9em;color:var(--text-color-2)}fieldset>div+div{-webkit-margin-before:2ch;margin-block-start:2ch}fieldset>div{display:flex;gap:2ch;align-items:baseline;color:var(--text-color-1)}fieldset>div>label{line-height:1.5}*{box-sizing:border-box;margin:0}html{block-size:100%;color-scheme:dark light;background-color:var(--surface-color-1);color:var(--text-color-1)}body{min-block-size:100%;font-family:Blokk,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;font-size:125%;display:flex;flex-direction:column;padding:10vmin}input[type=checkbox]{margin:0;outline-offset:5px;accent-color:var(--text-color-2);transform-style:preserve-3d;cursor:pointer}input[type=checkbox]:hover::before{--thumb-scale:1}@media (hover:none){input[type=checkbox]{inline-size:1.5rem;block-size:1.5rem}}input[type=checkbox]::before{--thumb-scale:.01;--thumb-highlight-size:3rem;content:"";inline-size:var(--thumb-highlight-size);block-size:var(--thumb-highlight-size);-webkit-clip-path:circle(50%);clip-path:circle(50%);position:absolute;inset-block-start:50%;inset-inline-start:50%;background:hsl(0 0% 50% / 20%);transform-origin:center center;transform:translateX(calc(var(--isRTL) * 50%)) translateY(-50%) translateZ(-1px) scale(var(--thumb-scale));will-change:transform}@media (prefers-reduced-motion:no-preference){input[type=checkbox]::before{transition:transform .2s ease}}main{display:grid;grid-template-columns:-webkit-max-content 1fr;grid-template-columns:max-content 1fr;gap:5vmin;align-items:flex-start}main>header{grid-column:1/-1}@media (orientation:portrait){main{grid-template-columns:1fr}}@media (pointer:coarse){main>article{grid-row:3;grid-column:1/-1}}article{--size:min(300px, calc(25% - 2ch));margin:-1ch}article>span{will-change:transform;background:hsl(0 0% 50% / 25%);border-radius:10px;inline-size:var(--size);block-size:15ch;margin:1ch}@media (orientation:portrait){article>span{--size:calc(50% - 2ch)}}@supports (aspect-ratio:1){article>span{block-size:auto;aspect-ratio:1}}header{display:grid;gap:1ch}aside{counter-reset:filters}aside :checked{counter-increment:filters}aside #applied-filters::before{content:counter(filters) " filters "}fieldset:first-of-type{-webkit-margin-before:-5px;margin-block-start:-5px}@media (pointer:coarse){[role=status]{display:none}}.sr-only{inline-size:0;block-size:0;overflow:hidden}.github-corner{fill:var(--border-color);color:var(--surface-color-1)}.github-corner:hover .octo-arm{-webkit-animation:octocat-wave 560ms ease-in-out;animation:octocat-wave 560ms ease-in-out}@-webkit-keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Lighting</h1>
+        <small>Find your perfect light</small>
+      </header>
+      <aside>
+        <form>
+          <select multiple="true" title="Filter results by category">
+            <optgroup label="New">
+              <option value="last 30 days">Last 30 Days</option>
+              <option value="last 6 months">Last 6 Months</option>
+            </optgroup>
+            <optgroup label="Lamps">
+              <option value="table lamps">Table Lamps</option>
+              <option value="desk lamps">Desk Lamps</option>
+              <option value="floor lamps">Floor Lamps</option>
+            </optgroup>
+            <optgroup label="Ceiling">
+              <option value="chandeliers">Chandeliers</option>
+              <option value="pendant">Pendant</option>
+              <option value="flush">Flush</option>
+              <option value="fans">Fans</option>
+            </optgroup>
+            <optgroup label="By Room">
+              <option value="bedroom">Bedroom</option>
+              <option value="dining room">Dining Room</option>
+              <option value="kitchen">Kitchen</option>
+              <option value="living room">Living Room</option>
+              <option value="bathroom">Bathroom</option>
+              <option value="entryway">Entryway</option>
+              <option value="outdoor">Outdoor</option>
+            </optgroup>
+            <optgroup label="Kids">
+              <option value="lamps">Lamps</option>
+              <option value="night lights">Night Lights</option>
+              <option value="ceiling">Ceiling</option>
+            </optgroup>
+          </select>
+
+          <fieldset>
+            <legend>New</legend>
+            <div>
+              <input type="checkbox" id="last-30-days" name="new" value="last 30 days">
+              <label for="last-30-days">Last 30 Days</label>
+            </div>
+            <div>
+              <input type="checkbox" id="last-6-months" name="new" value="last 6 months">
+              <label for="last-6-months">Last 6 Months</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Lamps</legend>
+            <div>
+              <input type="checkbox" id="table-lamps" name="lamps" value="table lamps">
+              <label for="table-lamps">Table Lamps</label>
+            </div>
+            <div>
+              <input type="checkbox" id="desk-lamps" name="lamps" value="desk lamps">
+              <label for="desk-lamps">Desk Lamps</label>
+            </div>
+            <div>
+              <input type="checkbox" id="floor-lamps" name="lamps" value="floor lamps">
+              <label for="floor-lamps">Floor Lamps</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Ceiling</legend>
+            <div>
+              <input type="checkbox" id="chandeliers" name="ceiling" value="chandeliers">
+              <label for="chandeliers">Chandeliers</label>
+            </div>
+            <div>
+              <input type="checkbox" id="pendant" name="ceiling" value="pendant">
+              <label for="pendant">Pendant</label>
+            </div>
+            <div>
+              <input type="checkbox" id="flush" name="ceiling" value="flush">
+              <label for="flush">Flush</label>
+            </div>
+            <div>
+              <input type="checkbox" id="fans" name="ceiling" value="fans">
+              <label for="fans">Fans</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>By Room</legend>
+            <div>
+              <input type="checkbox" id="bedroom" name="by room" value="bedroom">
+              <label for="bedroom">Bedroom</label>
+            </div>
+            <div>
+              <input type="checkbox" id="dining-room" name="by room" value="dining room">
+              <label for="dining-room">Dining Room</label>
+            </div>
+            <div>
+              <input type="checkbox" id="kitchen" name="by room" value="kitchen">
+              <label for="kitchen">Kitchen</label>
+            </div>
+            <div>
+              <input type="checkbox" id="living-room" name="by room" value="living room">
+              <label for="living-room">Living Room</label>
+            </div>
+            <div>
+              <input type="checkbox" id="bathroom" name="by room" value="bathroom">
+              <label for="bathroom">Bathroom</label>
+            </div>
+            <div>
+              <input type="checkbox" id="entryway" name="by room" value="entryway">
+              <label for="entryway">Entryway</label>
+            </div>
+            <div>
+              <input type="checkbox" id="outdoor" name="by room" value="outdoor">
+              <label for="outdoor">Outdoor</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Kids</legend>
+            <div>
+              <input type="checkbox" id="lamps" name="kids" value="lamps">
+              <label for="lamps">Lamps</label>
+            </div>
+            <div>
+              <input type="checkbox" id="night-lights" name="kids" value="night lights">
+              <label for="night-lights">Night Lights</label>
+            </div>
+            <div>
+              <input type="checkbox" id="ceiling" name="kids" value="ceiling">
+              <label for="ceiling">Ceiling</label>
+            </div>
+          </fieldset>
+        </form>
+        <div role="status" class="sr-only" id="applied-filters"></div>
+      </aside>
+      <article>
+        <span class="last-30-days table-lamps"></span>
+        <span class="last-6-months desk-lamps"></span>
+        <span class="floor-lamps"></span>
+        <span class="last-6-months chandeliers"></span>
+        <span class="pendant last-6-months"></span>
+        <span class="flush fans"></span>
+        <span class="fans pendant table-lamps"></span>
+        <span class="bedroom"></span>
+        <span class="dining-room last-30-days chandeliers"></span>
+        <span class="kitchen lamps"></span>
+        <span class="living-room"></span>
+        <span class="bathroom living-room chandeliers desk-lamps"></span>
+        <span class="bathroom table-lamps desk-lamps"></span>
+        <span class="entryway last-30-days"></span>
+        <span class="outdoor desk-lamps"></span>
+        <span class="lamps last-30-days"></span>
+        <span class="night-lights table-lamps"></span>
+        <span class="ceiling last-30-days"></span>
+        <span class="floor-lamps table-lamps"></span>
+        <span class="floor-lamps last-6-months"></span>
+        <span class="dining-room last-30-days chandeliers"></span>
+        <span class="kitchen lamps"></span>
+        <span class="living-room"></span>
+        <span class="bathroom living-room chandeliers desk-lamps"></span>
+      </article>
+    </main>
+
+    <script type="module">
+      import"https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js";const e=new Isotope("article",{itemSelector:"span",layoutMode:"fitRows",percentPosition:!0}),t=t=>{const{matches:r}=window.matchMedia("(prefers-reduced-motion: no-preference)");e.arrange({filter:t,stagger:25,transitionDuration:r?"0.4s":0})};document.querySelector("select").addEventListener("input",(r=>{let o=(n=r.target,Array.from(n.selectedOptions).reduce(((e,t)=>(e.push([t.parentElement.label.toLowerCase(),t.value]),e)),[]));var n;console.warn("Multiselect",o);let s=o.reduce(((e,t)=>(e.push("."+t[1].split(" ").join("-")),e)),[]).join(",");t(s);let i=document.querySelector("#applied-filters"),l=e.getFilteredItemElements().length;i.style.counterSet=o.length,i.textContent=" giving "+l+" results"})),document.querySelector("aside form").addEventListener("input",(r=>{if("SELECT"===r.target.nodeName)return;const o=new FormData(document.querySelector("form"));console.warn("Checkboxes",Array.from(o.entries()));let n=Array.from(o.values()).reduce(((e,t)=>(e.push("."+t.split(" ").join("-")),e)),[]).join(",");t(n),document.querySelector("#applied-filters").textContent=" giving "+e.getFilteredItemElements().length+" results"}));
+    </script>
+  </body>
+</html>

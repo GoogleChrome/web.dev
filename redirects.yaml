@@ -314,6 +314,16 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
   - source: /app-history-api
     destination: https://developer.chrome.com/docs/web-platform/navigation-api/
+  - source: /fetch-upload-streaming
+    destination: https://developer.chrome.com/articles/fetch-streaming-requests/
+  - source: /compute-pressure
+    destination: https://developer.chrome.com/docs/web-platform/compute-pressure/
+  - source: /declarative-link-capturing
+    destination: https://developer.chrome.com/docs/web-platform/declarative-link-capturing/
+  - source: /handwriting-recognition
+    destination: https://developer.chrome.com/docs/web-platform/handwriting-recognition/
+  - source: /virtualkeyboard
+    destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
 
   # Redirect for Aurora
   - source: /aurora
@@ -330,3 +340,11 @@ redirects:
   # Redirects old vitals tooling workflow doc to the updated doc
   - source: /vitals-tools-workflow
     destination: /vitals-tools
+
+  # Redirects Extending Workbox post to the Using Plugins doc on d.c.c.
+  - source: /extending-workbox
+    destination: https://developer.chrome.com/docs/workbox/using-plugins/
+
+  # Redirects lazysizes post to the browser-level lazy loading post
+  - source: /use-lazysizes-to-lazyload-images
+    destination: /browser-level-image-lazy-loading/

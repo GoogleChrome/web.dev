@@ -1,0 +1,80 @@
+---
+patternId: components/split-buttons
+---
+
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta name="theme-color" content="deeppink" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="Canvas" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <style>
+      .gui-split-button{--theme:hsl(220, 75%, 50%);--theme-hover:hsl(220, 75%, 45%);--theme-active:hsl(220, 75%, 40%);--theme-text:hsl(220, 75%, 25%);--theme-border:hsl(220, 50%, 75%);--ontheme:hsl(220, 90%, 98%);--popupbg:hsl(220, 0%, 100%);--border:1px solid var(--theme-border);--radius:6px;--in-speed:500ms;--out-speed:100ms;display:inline-flex;border-radius:var(--radius);background:var(--theme);color:var(--ontheme);fill:var(--ontheme);touch-action:manipulation;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}@media (prefers-color-scheme:dark){.gui-split-button{--theme:hsl(220, 50%, 60%);--theme-hover:hsl(220, 50%, 65%);--theme-active:hsl(220, 75%, 70%);--theme-text:hsl(220, 10%, 85%);--theme-border:hsl(220, 20%, 70%);--ontheme:hsl(220, 90%, 5%);--popupbg:hsl(220, 10%, 30%)}}.gui-split-button button{cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:0 0;border:none;display:inline-flex;align-items:center;gap:1ch;white-space:nowrap;font-family:inherit;font-size:inherit;font-weight:500;padding-block:1.25ch;padding-inline:2.5ch;color:var(--ontheme);outline-color:var(--theme);outline-offset:-5px}.gui-split-button button:is(:hover,:focus-visible){background:var(--theme-hover);color:var(--ontheme)}.gui-split-button button:is(:hover,:focus-visible)>svg{stroke:currentColor;fill:none}.gui-split-button button:active{background:var(--theme-active)}.gui-split-button>button{border-radius:var(--radius) 0 0 var(--radius)}@supports (border-start-start-radius:1px){.gui-split-button>button{border-end-start-radius:var(--radius);border-start-start-radius:var(--radius)}}@media (prefers-color-scheme:light){.gui-split-button button:is(:focus-visible,:hover),.gui-split-button>button{text-shadow:0 1px 0 var(--theme-active)}.gui-split-button button:is(:focus-visible,:hover)>svg,.gui-split-button>.gui-popup-button>svg{filter:drop-shadow(0 1px 0 var(--theme-active))}}.gui-split-button svg{inline-size:2ch;box-sizing:content-box;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}.gui-popup-button{inline-size:4ch;cursor:pointer;position:relative;display:inline-flex;align-items:center;justify-content:center;-webkit-border-start:var(--border);border-inline-start:var(--border);border-radius:0 var(--radius) var(--radius) 0}@supports (border-start-start-radius:1px){.gui-popup-button{-webkit-border-start:var(--border);border-inline-start:var(--border);border-start-end-radius:var(--radius);border-end-end-radius:var(--radius)}}.gui-popup-button:is(:hover,:focus-within){background:var(--theme-hover)}.gui-popup-button:focus{outline:0}.gui-popup-button:active{background:var(--theme-active)}.gui-popup-button:focus-within>svg{transition-duration:var(--in-speed);transform:rotateZ(.5turn)}.gui-popup-button:focus-within>.gui-popup{transition-duration:var(--in-speed);opacity:1;transform:translateY(0);pointer-events:auto}@media (prefers-reduced-motion:no-preference){.gui-popup-button>svg{transition:transform var(--out-speed) ease}.gui-popup-button>.gui-popup{transform:translateY(5px);transition:opacity var(--out-speed) ease,transform var(--out-speed) ease}}.gui-popup{--shadow:220 70% 15%;--shadow-strength:1%;opacity:0;pointer-events:none;position:absolute;inset-block-end:80%;inset-inline-start:-1.5ch;list-style-type:none;background:var(--popupbg);color:var(--theme-text);padding-inline:0;padding-block:.5ch;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;font-size:.9em;transition:opacity var(--out-speed) ease;box-shadow:0 -2px 5px 0 hsl(var(--shadow)/ calc(var(--shadow-strength) + 5%)),0 1px 1px -2px hsl(var(--shadow)/ calc(var(--shadow-strength) + 10%)),0 2px 2px -2px hsl(var(--shadow)/ calc(var(--shadow-strength) + 12%)),0 5px 5px -2px hsl(var(--shadow)/ calc(var(--shadow-strength) + 13%)),0 9px 9px -2px hsl(var(--shadow)/ calc(var(--shadow-strength) + 14%)),0 16px 16px -2px hsl(var(--shadow)/ calc(var(--shadow-strength) + 20%))}.gui-popup:focus{outline:0}@media (prefers-color-scheme:dark){.gui-popup{--shadow-strength:5%;--shadow:220 3% 2%}.gui-popup button:not(:focus-visible):not(:hover){text-shadow:0 1px 0 var(--ontheme)}.gui-popup button:not(:focus-visible):not(:hover)>svg{filter:drop-shadow(0 1px 0 var(--ontheme))}}@media (max-width:400px){.gui-popup{inset-inline-start:-200%}}.gui-popup svg{fill:var(--popupbg);stroke:var(--theme)}@media (prefers-color-scheme:dark){.gui-popup svg{stroke:var(--theme-border)}}.gui-popup button{color:var(--theme-text);width:100%}*{box-sizing:border-box;margin:0}html{--brand-hue:200;--brand-saturation:100%;--brand-lightness:50%;--brand-light:hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));--text1-light:hsl(var(--brand-hue) var(--brand-saturation) 10%);--surface1-light:hsl(var(--brand-hue) 25% 97%);--brand-dark:hsl( var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 1.5) );--text1-dark:hsl(var(--brand-hue) 15% 85%);--surface1-dark:hsl(var(--brand-hue) 10% 10%)}:root{--brand:var(--brand-light);--text1:var(--text1-light);--surface1:var(--surface1-light)}@media (prefers-color-scheme:dark){:root{--brand:var(--brand-dark);--text1:var(--text1-dark);--surface1:var(--surface1-dark)}}html{block-size:100%;background-color:var(--surface1);color:var(--text1)}body{min-block-size:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5vmin}.github-corner{fill:var(--text1);color:var(--surface1)}.github-corner:hover .octo-arm{-webkit-animation:octocat-wave 560ms ease-in-out;animation:octocat-wave 560ms ease-in-out}@-webkit-keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
+    </style>
+  </head>
+  <body>
+    <div class="gui-split-button">
+      <button>View Cart</button>
+      <span class="gui-popup-button" aria-haspopup="true" aria-expanded="false" title="Open for more actions">
+        <svg aria-hidden="true" viewBox="0 0 20 20">
+          <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+        </svg>
+        <ul class="gui-popup">
+          <li><button>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            Checkout
+          </button></li>
+          <li><button>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            Quick Pay
+          </button></li>
+          <li><button>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+            </svg>
+            Save for later
+          </button></li>
+        </ul>
+      </span>
+    </div>
+
+    <script type="module">
+      import $ from 'https://cdn.skypack.dev/blingblingjs'
+      import {rovingIndex} from 'https://cdn.skypack.dev/roving-ux'
+
+      const splitButtons = $('.gui-split-button')
+      const popupButtons = $('.gui-popup-button')
+
+      // popup activating roving index for it's buttons
+      popupButtons.forEach(element =>
+        rovingIndex({
+          element,
+          target: 'button',
+        }))
+
+      // support escape key
+      popupButtons.on('keyup', e => {
+        if (e.code === 'Escape')
+          e.target.blur()
+      })
+
+      popupButtons.on('focusin', e => {
+        e.currentTarget.setAttribute('aria-expanded', true)
+      })
+
+      popupButtons.on('focusout', e => {
+        e.currentTarget.setAttribute('aria-expanded', false)
+      })
+
+      // respond to any button interaction
+      splitButtons.on('click', event => {
+        if (event.target.nodeName !== 'BUTTON') return
+        console.info(event.target.innerText)
+      })
+    </script>
+  </body>
+</html>

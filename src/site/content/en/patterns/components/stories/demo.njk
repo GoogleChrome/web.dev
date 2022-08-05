@@ -1,0 +1,175 @@
+---
+patternId: components/stories
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <style>
+      body {
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        place-items: center;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+        margin: 0;
+        background: hsl(200, 15%, 93%)
+
+        /* parent owned aspects of the responsive stories */
+      }
+
+      body > .stories {
+          width: 100vw;
+          height: 100vh;
+
+          box-shadow:
+            0 5px 2.5px hsla(200, 95%, 3%, .037),
+            0 12px 6.5px hsla(200, 95%, 3%, .053),
+            0 22.5px 13px hsla(200, 95%, 3%, .065),
+            0 40.2px 24px hsla(200, 95%, 3%, .077),
+            0 75.2px 44px hsla(200, 95%, 3%, .093),
+            0 180px 80px hsla(200, 95%, 3%, .13)
+        }
+
+        @media (hover: hover) {
+
+body > .stories {
+      border-radius: 3ch
+  }
+    }
+
+      body > .stories {
+
+          /* desktop constraint */
+        }
+
+      @media (hover: hover) and (min-width: 480px) {
+
+      body > .stories {
+            max-width: 480px;
+            max-height: min(848px, 80vh)
+        }
+          }
+
+      body > .stories {
+
+          /* smaller desktop constraint */
+        }
+
+      @media (hover: hover) and (max-height: 880px) and (min-width: 720px) {
+
+      body > .stories {
+            max-width: 320px;
+            max-height: 568px
+        }
+          }
+
+      .stories {
+        display: grid;
+        grid: 1fr / auto-flow 100%;
+        grid-gap: 1ch;
+        gap: 1ch;
+        overflow-x: auto;
+        -ms-scroll-snap-type: x mandatory;
+            scroll-snap-type: x mandatory;
+        -ms-scroll-chaining: none;
+            overscroll-behavior: contain;
+        touch-action: pan-x;
+      }
+
+      .user {
+        /* outer */
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+
+        /* inner */
+        display: grid;
+        grid: [story] 1fr / [story] 1fr;
+      }
+
+      .story {
+        grid-area: story;
+
+        background-size: cover;
+        background-image:
+          var(--bg),
+          linear-gradient(to top, rgb(249, 249, 249), rgb(226, 226, 226));
+
+        -webkit-user-select: none;
+
+          -moz-user-select: none;
+
+            -ms-user-select: none;
+
+                user-select: none;
+        touch-action: manipulation;
+
+        transition: opacity .3s cubic-bezier(0.4, 0.0, 1, 1)
+      }
+
+      .story.seen {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+      .github-corner {
+        color: hsl(200, 15%, 93%);
+        fill: hsl(200, 15%, 73%)
+      }
+
+      .github-corner:hover .octo-arm {
+          -webkit-animation: octocat-wave 560ms ease-in-out;
+                  animation: octocat-wave 560ms ease-in-out
+        }
+
+      @-webkit-keyframes octocat-wave{
+        0%,100% {
+          transform: rotate(0)
+        }
+        20%,60% {
+          transform: rotate(-25deg)
+        }
+        40%,80% {
+          transform: rotate(10deg)
+        }
+      }
+
+      @keyframes octocat-wave{
+        0%,100% {
+          transform: rotate(0)
+        }
+        20%,60% {
+          transform: rotate(-25deg)
+        }
+        40%,80% {
+          transform: rotate(10deg)
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stories">
+      <section class="user">
+        <article class="story" style="--bg: url(https://picsum.photos/480/840);"></article>
+        <article class="story" style="--bg: url(https://picsum.photos/480/841);"></article>
+      </section>
+      <section class="user">
+        <article class="story" style="--bg: url(https://picsum.photos/481/840);"></article>
+      </section>
+      <section class="user">
+        <article class="story" style="--bg: url(https://picsum.photos/481/841);"></article>
+      </section>
+      <section class="user">
+        <article class="story" style="--bg: url(https://picsum.photos/482/840);"></article>
+        <article class="story" style="--bg: url(https://picsum.photos/482/843);"></article>
+        <article class="story" style="--bg: url(https://picsum.photos/482/844);"></article>
+      </section>
+    </div>
+
+    <script>
+      var e=document.querySelector(".stories"),t=e.offsetLeft+e.clientWidth/2,n={current_story:e.firstElementChild.lastElementChild};function r(e){var t=n.current_story,r=t.parentNode.firstElementChild,l=t.parentNode.lastElementChild,i=t.parentElement.nextElementSibling,o=t.parentElement.previousElementSibling;"next"===e?(r!==t||i)&&(r===t&&i?(n.current_story=t.parentElement.nextElementSibling.lastElementChild,t.parentElement.nextElementSibling.scrollIntoView({behavior:"smooth"})):(t.classList.add("seen"),n.current_story=t.previousElementSibling)):"prev"!==e||l===t&&!o||(l===t&&o?(n.current_story=t.parentElement.previousElementSibling.firstElementChild,t.parentElement.previousElementSibling.scrollIntoView({behavior:"smooth"})):(t.nextElementSibling.classList.remove("seen"),n.current_story=t.nextElementSibling))}e.addEventListener("click",(function(e){"ARTICLE"===e.target.nodeName&&r(e.clientX>t?"next":"prev")})),document.addEventListener("keydown",(function(e){"ArrowDown"===(e=e.key)&&"ArrowUp"===e||r("ArrowDown"===e?"next":"prev")}));
+    </script>
+  </body>
+</html>

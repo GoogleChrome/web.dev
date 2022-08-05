@@ -5,6 +5,7 @@ subhead: >
   Creating a web performance dashboard and optimizing JavaScript, resources, and the
   homepage to achieve business success.
 date: 2020-10-13
+updated: 2022-07-18
 hero: image/admin/MaUpfoZXyw4uhTEBLuV1.png
 thumbnail: image/admin/SI5jNv7NqnjkfIIXyZOa.png
 alt: An illustration of e-commerce icons next to the text "Scale on web"
@@ -126,7 +127,7 @@ performance.
         <code><a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing">Server-Timing</a></code>
         header), the <a href="https://developers.google.com/speed/docs/insights/v5/get-started">
           PageSpeed Insights (PSI) API</a>, and
-        <a href="https://developers.google.com/web/tools/chrome-user-experience-report">
+        <a href="https://developer.chrome.com/docs/crux/">
           Chrome User Experience Report</a> data to monitor field and lab metrics.
       </li>
       <li>

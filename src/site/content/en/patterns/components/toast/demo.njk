@@ -1,0 +1,124 @@
+---
+patternId: components/toast
+---
+
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <style>
+      .gui-toast-group{position:fixed;z-index:1;inset-block-end:0;inset-inline:0;-webkit-padding-after:5vh;padding-block-end:5vh;display:grid;justify-items:center;justify-content:center;gap:1vh;pointer-events:none}.gui-toast{--_duration: 3s;--_bg-lightness: 90%;--_travel-distance: 0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:#000;background:hsl(0 0% var(--_bg-lightness) / 90%);max-inline-size:min(25ch,90vw);padding-block:.5ch;padding-inline:1ch;border-radius:3px;font-size:1rem;will-change:transform;-webkit-animation:fade-in .3s ease,slide-in .3s ease,fade-out .3s ease var(--_duration);animation:fade-in .3s ease,slide-in .3s ease,fade-out .3s ease var(--_duration)}@media (prefers-color-scheme: dark){.gui-toast{color:#fff;--_bg-lightness: 20% }}@media (prefers-reduced-motion: no-preference){.gui-toast{--_travel-distance: 5vh }}@-webkit-keyframes fade-in{0%{opacity:0}}@keyframes fade-in{0%{opacity:0}}@-webkit-keyframes fade-out{to{opacity:0}}@keyframes fade-out{to{opacity:0}}@-webkit-keyframes slide-in{0%{transform:translateY(var(--_travel-distance, 10px))}}@keyframes slide-in{0%{transform:translateY(var(--_travel-distance, 10px))}}*{box-sizing:border-box;margin:0}html{block-size:100%;color-scheme:dark light}body{min-block-size:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;display:flex;gap:2ch;align-items:center;justify-content:center}@media (max-width: 720px){body{flex-direction:column}}button{font-size:1.5rem;touch-action:manipulation}.github-corner{fill:indigo;color:Canvas}.github-corner:hover .octo-arm{-webkit-animation:octocat-wave .56s ease-in-out;animation:octocat-wave .56s ease-in-out}@-webkit-keyframes octocat-wave{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@keyframes octocat-wave{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
+    </style>
+  </head>
+  <body>
+    <button id="spells">
+      Cast Spell
+    </button>
+    <button id="actions">
+      Mock User Action
+    </button>
+
+    <script type="module">
+      import $ from 'https://cdn.skypack.dev/blingblingjs'
+
+      const init = () => {
+        const node = document.createElement('section')
+        node.classList.add('gui-toast-group')
+
+        document.firstElementChild.insertBefore(node, document.body)
+        return node
+      }
+
+      const createToast = text => {
+        const node = document.createElement('output')
+
+        node.innerText = text
+        node.classList.add('gui-toast')
+        node.setAttribute('role', 'status')
+        node.setAttribute('aria-live', 'polite')
+
+        return node
+      }
+
+      const addToast = toast => {
+        const { matches:motionOK } = window.matchMedia(
+          '(prefers-reduced-motion: no-preference)'
+        )
+
+        Toaster.children.length && motionOK
+          ? flipToast(toast)
+          : Toaster.appendChild(toast)
+      }
+
+      const Toast = text => {
+        let toast = createToast(text)
+        addToast(toast)
+
+        return new Promise(async (resolve, reject) => {
+          await Promise.allSettled(
+            toast.getAnimations().map(animation =>
+              animation.finished
+            )
+          )
+          Toaster.removeChild(toast)
+          resolve()
+        })
+      }
+
+      // https://aerotwist.com/blog/flip-your-animations/
+      const flipToast = toast => {
+        // FIRST
+        const first = Toaster.offsetHeight
+
+        // add new child to change container size
+        Toaster.appendChild(toast)
+
+        // LAST
+        const last = Toaster.offsetHeight
+
+        // INVERT
+        const invert = last - first
+
+        // PLAY
+        const animation = Toaster.animate([
+          { transform: `translateY(${invert}px)` },
+          { transform: 'translateY(0)' }
+        ], {
+          duration: 150,
+          easing: 'ease-out',
+        })
+
+        animation.startTime = document.timeline.currentTime
+      }
+
+      const Toaster = init()
+
+      $('#spells').on('click', async () => {
+        await Toast(randomSpell())
+        console.log('poof')
+      })
+
+      $('#actions').on('click', () => {
+        Toast(randomAction())
+      })
+
+      const randomSpell = () => {
+        const spells = ['Fire', 'Ice', 'Lit', 'Dark', 'Toast']
+        const levels = ['I','II','III','IV','V']
+        return `${spells[getRandomInt(0, spells.length-1)]} ${levels[getRandomInt(0, levels.length-1)]}`
+      }
+
+      const randomAction = () => {
+        const actions = ['Saved', 'Added to cart', 'In cart', 'User removed', 'Timer set', 'Added to Favorites', `Multi-Line \n Support 👍`, 'This is just really long and completely unnecessary']
+        return `${actions[getRandomInt(0, actions.length-1)]}`
+      }
+
+      const getRandomInt = (min, max) => {
+        min = Math.ceil(min)
+        max = Math.floor(max)
+        return Math.floor(Math.random() * (max - min + 1)) + min
+      }
+
+    </script>
+  </body>
+</html>

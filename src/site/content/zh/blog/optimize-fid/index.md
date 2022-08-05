@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: 一只手触摸智能手机屏幕
 description: 首次输入延迟 (FID) 测量从用户第一次与您的网站交互直到浏览器实际能够对交互作出响应的时间。了解如何通过最小化未使用的 JavaScript、分割长任务和改进交互准备来优化 FID。
@@ -167,6 +168,6 @@ import('module.js').then((module) => {
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="灯塔 6.0.", width="800", height="309" %}
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)提供在域级聚合下的真实 FID 值
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)提供在域级聚合下的真实 FID 值
 
 *感谢 Philip Walton、Kayce Basques、Ilya Grigorik 和 Annie Sullivan 的审阅。*

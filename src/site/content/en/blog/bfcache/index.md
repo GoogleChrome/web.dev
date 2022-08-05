@@ -8,7 +8,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-11-10
-updated: 2022-07-01
+updated: 2022-07-18
 hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
@@ -583,7 +583,7 @@ all, a user doesn't care whether or not bfcache was enabled, they just care that
 the navigation was fast!
 
 Tools like the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report),
+Report](https://developer.chrome.com/docs/crux/),
 that collect and report on the Core Web Vitals metrics treat bfcache restores as
 separate page visits in their dataset.
 

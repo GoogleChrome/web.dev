@@ -8,11 +8,12 @@ description: |
   magnitude of a 25–35% reduction in filesize. This decreases page sizes and
   improves performance.
 date: 2018-11-05
-updated: 2020-04-06
+updated: 2022-07-18
 codelabs:
   - codelab-serve-images-webp
 tags:
   - performance
+  - web-vitals
 feedback:
   - api
 ---
@@ -125,11 +126,11 @@ The
 and `<img>` tags, including how they are ordered relative to each other, all
 interact to achieve this end result.
 
-### picture
+### `<picture>`
 
 The `<picture>` tag provides a wrapper for zero or more `<source>` tags and one `<img>` tag.
 
-### source
+### `<source>`
 
 The `<source>` tag specifies a media resource.
 
@@ -143,7 +144,7 @@ The browser uses the first listed source that's in a format it supports. If the 
 
 {% endAside %}
 
-### img
+### `<img>`
 
 The `<img>` tag is what makes this code work on browsers
 that don't support the `<picture>` tag.
@@ -152,9 +153,45 @@ ignore the tags it doesn't support. Thus, it only "sees" the
 `<img src="flower.jpg" alt="">` tag and loads that image.
 
 {% Aside 'gotchas' %}
-- The `<img>` tag should always be included, and it should always be listed last, after all `<source>` tags.
-- The resource specified by the `<img>` tag should be in a universally supported format (e.g. JPEG), so it can be used as a fallback.
+<ul>
+  <li>The `<img>` tag should always be included, and it should always be listed last, after all `<source>` tags.</li>
+  <li>The resource specified by the `<img>` tag should be in a universally supported format (e.g. JPEG), so it can be used as a fallback.</li>
+</ul>
 {% endAside %}
+
+### Reading the HTTP `Accept` header
+
+If you have an application back end or web server that allows you to rewrite requests, you can read the value of the [HTTP `Accept` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept), which will advertise what alternative image formats are supported:
+
+```http
+Accept: image/webp,image/svg+xml,image/*,*/*;q=0.8
+```
+
+Reading this request header and rewriting the response based on its contents has the benefit of simplifying your image markup. `<picture>` markup can get rather long with many sources. Below is an Apache `mod_rewrite` rule that can serve WebP alternates:
+
+```apacheconf
+RewriteEngine On
+RewriteCond %{HTTP:Accept} image/webp [NC]
+RewriteCond %{HTTP:Content-Disposition} !attachment [NC]
+RewriteCond %{DOCUMENT_ROOT}/$1.webp -f [NC]
+RewriteRule (.+)\.(png|jpe?g)$ $1.webp [T=image/webp,L]
+```
+
+If you go this route, you'll need to set the [HTTP `Vary` response header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Vary) to ensure caches will understand that the image may be served with varying content types:
+
+```apacheconf
+<FilesMatch ".(jpe?g|png)$">
+  <IfModule mod_headers.c>
+    Header set Vary "Content-Type"
+  </IfModule>
+</FilesMatch>
+```
+
+The rewrite rule above will look for a WebP version of any requested JPEG or PNG image. If a WebP alternate is found, it will be served with the proper `Content-Type`  header. This will allow you to use image markup similar to the following with automatic WebP support:
+
+```html
+<img src="flower-320w.jpg" srcset="flower-320w.jpg 320w, flower-640w.jpg 640w, flower-960w.jpg 960w">
+```
 
 ## Verify WebP usage
 

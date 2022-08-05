@@ -1,0 +1,79 @@
+---
+patternId: components/breadcrumbs
+---
+
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta name="theme-color" content="deeppink" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="Canvas" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="dark light">
+
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <style>
+      *{box-sizing:border-box;margin:0}html{block-size:100%}body{min-block-size:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;display:grid;gap:2ch;padding-block:.5ch;place-content:center}.breadcrumbs{--nav-gap:2ch;display:flex;align-items:center;overflow-x:auto;overscroll-behavior-x:contain;-ms-scroll-snap-type:x proximity;scroll-snap-type:x proximity;gap:var(--nav-gap);padding:calc(var(--nav-gap)/ 2);scroll-padding-inline:calc(var(--nav-gap)/ 2)}.breadcrumbs>a:first-of-type:not(.crumb){display:inline-flex;align-items:center;gap:calc(var(--nav-gap)/ 4)}@media (max-width:480px){.breadcrumbs>a:first-of-type:not(.crumb)>.home-label{display:none}}.breadcrumbs a{text-underline-offset:.25em;outline-offset:3px}@media (prefers-color-scheme:dark){@supports (-webkit-hyphens:none){.breadcrumbs a[href]{color:#9e9eff}}}.breadcrumbs>.crumb:last-of-type{scroll-snap-align:end}@supports (-webkit-hyphens:none){.breadcrumbs{-ms-scroll-snap-type:none;scroll-snap-type:none}}.crumb{display:inline-flex;align-items:center;gap:calc(var(--nav-gap)/ 4)}.crumb>a{white-space:nowrap}.crumb>a[aria-current=page]{font-weight:700}.crumb.tree-changed~*{display:none}.crumb-separator{color:ButtonText}.disguised-select{inline-size:100%;block-size:100%;opacity:.01;font-size:min(100%,16px)}.crumbicon{--size:3ch;display:grid;grid:[stack] var(--size)/[stack] var(--size);align-items:center;justify-items:center;place-items:center;border-radius:50%;--icon-shadow-size:0px;box-shadow:inset 0 0 0 var(--icon-shadow-size) currentColor}@media (prefers-reduced-motion:no-preference){.crumbicon{transition:box-shadow .2s ease}}.crumb:is([focus-within],:hover)>.crumbicon{--icon-shadow-size:1px}.crumb:is(:focus-within,:hover)>.crumbicon{--icon-shadow-size:1px}.crumb>.crumbicon:is([focus-within],:hover){--icon-shadow-size:2px}.crumb>.crumbicon:is(:focus-within,:hover){--icon-shadow-size:2px}.crumb>.crumbicon:is([focus-within],:hover) svg{stroke-width:2px}.crumb>.crumbicon:is(:focus-within,:hover) svg{stroke-width:2px}.crumbicon>*{grid-area:stack}.crumbicon>svg{max-block-size:100%;margin:calc(var(--nav-gap)/ 4);stroke:currentColor;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1px}.github-corner{fill:CanvasText;color:Canvas}.github-corner:hover .octo-arm{-webkit-animation:octocat-wave 560ms ease-in-out;animation:octocat-wave 560ms ease-in-out}@-webkit-keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
+    </style>
+  </head>
+  <body>
+     <svg style="display: none;">
+
+      <symbol id="icon-home">
+        <title>A home icon</title>
+        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+      </symbol>
+
+      <symbol id="icon-dropdown-arrow">
+        <title>A down arrow</title>
+        <path d="M19 9l-7 7-7-7"/>
+      </symbol>
+
+    </svg>
+
+    <nav class="breadcrumbs" role="navigation">
+      <a href="./home/">
+        <span class="crumbicon">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <use href="#icon-home" />
+          </svg>
+        </span>
+        <span class="home-label">Home</span>
+      </a>
+
+      <span class="crumb-separator" aria-hidden="true">|</span>
+
+      <span class="crumb">
+        <a href="./home/collection-b/">Collection B</a>
+        <span class="crumbicon">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <use href="#icon-dropdown-arrow" />
+          </svg>
+          <select class="disguised-select" title="Navigate to another collection">
+            <option>Collection A</option>
+            <option selected>Collection B</option>
+            <option>Other Collections</option>
+          </select>
+        </span>
+      </span>
+
+      <span class="crumb-separator" aria-hidden="true">|</span>
+
+      <span class="crumb">
+        <a aria-current="page">Sub Collection C</a>
+        <span class="crumbicon">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <use href="#icon-dropdown-arrow" />
+          </svg>
+          <select class="disguised-select" title="Navigate to another sub collection">
+            <option>Sub Collection A</option>
+            <option>Sub Collection B</option>
+            <option selected>Sub Collection C</option>
+          </select>
+        </span>
+      </span>
+    </nav>
+
+    <script>
+      const e=document.querySelectorAll(".breadcrumbs select"),t=new Set(["Tab","Enter"," "]),n=new Set(["ArrowUp","ArrowDown"]);e.forEach((e=>{let o=!1;e.addEventListener("change",(e=>{if(o)return;const t=e.target,n=t.value,c=t.closest(".crumb");c.classList.add("tree-changed"),c.querySelector(":scope > a").textContent=n,r(n)})),e.addEventListener("keydown",(({key:e})=>{n.has(e)?o=!0:t.has(e)&&(o=!1)}))}));const r=e=>{console.info("change path to: ",e)};
+    </script>
+  </body>
+</html>

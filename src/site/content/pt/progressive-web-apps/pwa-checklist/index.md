@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: |2
 
   O que torna um Progressive Web App bom ou ótimo?
@@ -37,7 +37,7 @@ O desempenho tem um papel significativo no sucesso de qualquer experiência onli
 
 A velocidade é crítica para fazer os usuários *usarem* seu aplicativo. Na verdade, à medida que o tempo de carregamento da página vai de um a dez segundos, a probabilidade de um usuário sair aumenta em 123%. O evento `load` não é o único aspecto importante para um bom desempenho. Os usuários nunca devem se perguntar se a interação (por exemplo, clicar em um botão) foi registrada ou não. A rolagem e a animação devem ser fluidas. O desempenho afeta toda a sua experiência, desde como os usuários percebem seu aplicativo até como ele realmente funciona.
 
-Embora todos os aplicativos tenham necessidades diferentes, as auditorias de desempenho no Lighthouse são baseadas no [modelo de desempenho centrado no usuário RAIL](/rail/), e uma pontuação alta nessas auditorias aumentará a chance de que seus usuários tenham uma experiência agradável. Você também pode usar o [PageSpeed Insights](https://pagespeed.web.dev/) ou o [Relatório de experiência do usuário do Chrome](https://developers.google.com/web/tools/chrome-user-experience-report/) para obter dados de desempenho do mundo real para seu aplicativo da web.
+Embora todos os aplicativos tenham necessidades diferentes, as auditorias de desempenho no Lighthouse são baseadas no [modelo de desempenho centrado no usuário RAIL](/rail/), e uma pontuação alta nessas auditorias aumentará a chance de que seus usuários tenham uma experiência agradável. Você também pode usar o [PageSpeed Insights](https://pagespeed.web.dev/) ou o [Relatório de experiência do usuário do Chrome](https://developer.chrome.com/docs/crux/) para obter dados de desempenho do mundo real para seu aplicativo da web.
 
 #### Como
 

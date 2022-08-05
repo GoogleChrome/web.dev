@@ -58,7 +58,7 @@ Alguns navegadores têm [uma funcionalidade que relata APIs deprecadas](https://
     ```
 3. Assim que o cabeçalho começar a se propagar, o endpoint no qual você se registrou deve começar a coletar relatórios de deprecação.
 
-Veja um exemplo de implementação aqui: [https://first-party-test.glitch.me](https://first-party-test.glitch.me) .
+Veja um exemplo de implementação aqui: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me) .
 
 {% endDetails %}
 

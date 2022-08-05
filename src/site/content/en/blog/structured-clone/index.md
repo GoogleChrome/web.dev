@@ -9,6 +9,7 @@ subhead: The Platform now ships with structuredClone(), a built-in function for 
 description: >
   For the longest time, you had to resort to workarounds and libraries to create a deep copy of a JavaScript value. The Platform now ships with `structuredClone()`, a built-in function for deep-copying.
 date: 2021-12-16
+updated: 2022-07-25
 tags:
   - performance
   - blog
@@ -17,8 +18,6 @@ tags:
 For the longest time, you had to resort to workarounds and libraries to create a deep copy of a JavaScript value. The Platform now ships with `structuredClone()`, a built-in function for deep-copying.
 
 {% BrowserCompat 'api.structuredClone' %}
-
-At the time of writing, _all browsers_ have  implemented this API in their nightly releases, Firefox has shipped it to stable in Firefox 94. Additionally, Node 17 and Deno 1.14 have implemented this API. *You can start using this function right now* and not feel bad about it.
 
 ## Shallow copies
 

@@ -47,7 +47,7 @@ Google은 Core Web Vitals가 모든 웹 경험에 필수적이라고 생각하�
 
 #### Core Web Vitals를 측정하기 위한 필드 도구
 
-[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)는 각 Core Web Vital에 대해 익명으로 실제 사용자 측정 데이터를 수집합니다. 사이트 소유자는 페이지에 대해 분석 도구를 사용할 필요 없이, 이 데이터를 활용해 신속하게 성능을 평가하고 [PageSpeed Insights](https://pagespeed.web.dev/) 및 Search Console의 [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520) 같은 도구를 지원할 수 있습니다.
+[Chrome User Experience Report](https://developer.chrome.com/docs/crux/)는 각 Core Web Vital에 대해 익명으로 실제 사용자 측정 데이터를 수집합니다. 사이트 소유자는 페이지에 대해 분석 도구를 사용할 필요 없이, 이 데이터를 활용해 신속하게 성능을 평가하고 [PageSpeed Insights](https://pagespeed.web.dev/) 및 Search Console의 [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520) 같은 도구를 지원할 수 있습니다.
 
 <div class="table-wrapper">
   <table>
@@ -58,7 +58,7 @@ Google은 Core Web Vitals가 모든 웹 경험에 필수적이라고 생각하�
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a></td>
+      <td><a href="https://developer.chrome.com/docs/crux/">Chrome User Experience Report</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>

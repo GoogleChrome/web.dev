@@ -4,7 +4,7 @@ title: First Contentful Paint(최초 콘텐츠풀 페인트, FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-07-18
 description: 이 게시물에서는 최초 콘텐츠풀 페인트(FCP) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -39,7 +39,7 @@ FCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 ### 현장 도구
 
 - [PageSpeed Insights](https://pagespeed.web.dev/)
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [Search Console(Speed Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
 

@@ -1234,6 +1234,12 @@ tools:
     ru: Последние новости и статьи об инструментах.
     zh: 我们关于工具的最新资讯、动态和故事。
 
+twitter-space:
+  title:
+    en: Space
+  description:
+    en: Page presenting a Twitter Space event.
+
 ux:
   title:
     en: UX
