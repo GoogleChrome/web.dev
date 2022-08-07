@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-07-18
+updated: 2022-08-09
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -102,13 +102,31 @@ Since INP is experimental, the guidance around thresholds may change over time a
 ## What's in an interaction?
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Ng0j5yaGYZX9Bm3VQ70c.svg", alt="A diagram depicting an interaction on the main thread. The user makes an input while blocking tasks run. The input is delayed until those tasks complete, after which the pointerup, mouseup, and click event handlers run, then rendering and painting work is kicked off until the next frame is presented.", width="736", height="193.81333333333" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/MIqyMz4KjPmBdVixdftA.svg", alt="A depiction of the event loop. Step 1: the event loop runs. Step 2: a task is queued. Step 3: the task is run. 4: Rendering work is done (if needed).", width="800", height="617" %}
+  <figcaption>
+    A depiction of JavaScript's event loop. The event loop runs continuously. When tasks are queued, they are run, popped off the stack, and if the task requires any rendering work, that work is done to present the next frame in the browser.
+  </figcaption>
+</figure>
+
+In JavaScript, tasks are queued by the [event loop](https://developer.mozilla.org/docs/Web/JavaScript/EventLoop). The event loop runs continuously, and&mdash;in simplified terms&mdash;does the following:
+
+1. The event loop runs.
+2. _If_ a task needs to run, _then_ it gets queued for the event loop to handle it.
+3. The task runs.
+4. _If_ the task requires layout, style, compositing, or paint work, _then_ the renderer processes the visual changes required by the application.
+
+Steps two through four are responsible for any perceptible delays that might occur. Delays are caused by [long tasks](/long-tasks-devtools/), which are tasks that run in excess of 50 milliseconds. **Long tasks cause poor responsiveness because the event loop is stopped until they finish running.** When the event loop is stopped, new tasks queued by user interactions must wait for long tasks to finish.
+
+<figure>
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Ng0j5yaGYZX9Bm3VQ70c.svg", alt="A diagram depicting an interaction on the main thread. The user makes an input while long tasks run. The input is delayed until those tasks complete, after which the pointerup, mouseup, and click event handlers run, then rendering and painting work is kicked off until the next frame is presented.", width="736", height="193.81333333333" %}
   <figcaption>
     The life of an interaction. An input delay occurs until event handlers begin running, which may be caused by factors such as long tasks on the main thread. The interaction's event handlers then run, and a delay occurs before the next frame is presented.
   </figcaption>
 </figure>
 
-The primary driver of interactivity is often JavaScript, though browsers do provide interactivity through controls _not_ powered by JavaScript, such as checkboxes, radio buttons, and controls powered by CSS.
+{% Aside %}
+Though primary driver of interactivity is usually JavaScript, browsers _do_ provide interactivity through controls _not_ powered by JavaScript. Examples are HTML elements such as checkboxes, radio buttons, or controls powered by CSS.
+{% endAside %}
 
 As far as INP goes, **only the following interaction types are observed:**
 
@@ -202,6 +220,10 @@ Gathering INP metrics in the field will only work on browsers that [fully suppor
 
 If your website is reporting INP values that fall outside of the "good" threshold, you'll naturally want to figure out what you can do to improve. High INP values are usually indicative of a high reliance on JavaScript, or other non-JavaScript main thread work that may run concurrently with user interactions.
 
+{% Aside 'important' %}
+When it comes to optimizing INP, the best thing you can do is **optimize long tasks**. Long tasks are what will delay the event loop from picking up new tasks while the main thread is busy dealing with them. The suggestions in the sections to follow can help you optimize long tasks.
+{% endAside %}
+
 ### Improving INP during page startup
 
 INP can be a factor during page load, because users may attempt to interact with a page as it's fetching JavaScript to set up event handlers that provide the interactivity required for a page to work.
@@ -210,10 +232,8 @@ INP can be a factor during page load, because users may attempt to interact with
 Per the HTTP Archive, [Total Blocking Time (TBT)](/tbt/) has [a much stronger correlation with INP than it does with FID](https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb). TBT is a lab metric, but if you're observing high TBT values in lab tools, that could be a signal that higher INP values in the field will be observed.
 {% endAside %}
 
-To improve responsiveness during page load, look into the following solutions:
-
 - Remove unused code using the [coverage tool](https://developer.chrome.com/docs/devtools/coverage/) in Chrome's DevTools.
-- [Find code-splitting opportunities](/reduce-javascript-payloads-with-code-splitting/) so you can lazy load JavaScript not needed during page load. The coverage tool can help with this.
+- [Find code-splitting opportunities](/reduce-javascript-payloads-with-code-splitting/) so you can lazy load JavaScript not needed during page load. [The coverage tool](https://developer.chrome.com/docs/devtools/coverage/) can help with this.
 - [Identify slow third-party JavaScript](/identify-slow-third-party-javascript/) that you may be loading during startup.
 - Use the performance profiler to find [long tasks](/long-tasks-devtools/) that you can optimize.
 - Ensure you aren’t asking too much of the browser in terms of rendering work during startup. Avoid large component tree re-rendering, huge DOM sizes, large image decodes, computationally expensive [CSS animations](/animations-examples/), and so forth.
