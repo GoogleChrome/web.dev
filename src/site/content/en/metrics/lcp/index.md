@@ -180,7 +180,7 @@ contentful element unless a larger element is rendered.
   `largest-contentful-paint` entry to be dispatched. However, due to popular UI
   patterns such as image carousels that often removed DOM elements, the metric
   was updated to more accurately reflect what users experience. See the
-  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/master/docs/speed/metrics_changelog/2020_11_lcp.md)
+  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/2020_11_lcp.md)
   for more details.
 {% endAside %}
 
@@ -334,7 +334,7 @@ getLCP(console.log);
 ```
 
 You can refer to [the source code for
-`getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)
+`getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts)
 for a complete example of how to measure LCP in JavaScript.
 
 {% Aside %}
