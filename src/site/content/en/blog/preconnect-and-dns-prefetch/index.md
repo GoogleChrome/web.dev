@@ -150,9 +150,13 @@ Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Sa
 
 ## Effect on Largest Contentful Paint (LCP)
 
-The goal of `dns-prefetch` and `preconnect` is to lessen the amount of time it takes to connect to another origin. The ultimate result is that the time to discover a resource loaded from another origin should be reduced, even if only somewhat.
+Using `dns-prefetch` and `preconnect` allows sites to reduce the amount of time it takes to connect to another origin. The ultimate aim is that the time to load a resource from another origin should be minimized as much as possible.
 
-Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, the least you can do to load a cross-origin resource faster is to use `preconnect`&mdash;but a well-placed [`preload`](/preload-critical-assets/) with a [`fetchpriority` value of `"high"`](/priority-hints/#:~:text=Note%20that%20preload%20is%20still%20required%20for%20the%20early%20discovery%20of%20LCP%20images%20included%20as%20CSS%20backgrounds%20and%20can%20be%20combined%20with%20priority%20hints%20by%20including%20the%20fetchpriority%3D%27high%27%20on%20the%20preload%2C%20otherwise%20it%20will%20still%20start%20with%20the%20default%20"Low"%20priority%20for%20images) would most likely be better for resources that aren't immediately discoverable, since [LCP candidates](/lcp/#what-elements-are-considered) are crucial parts of the user experience. A `preconnect` is sensible enough, but only if a `preload` isn't a fit.
+Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, it is better that resources are immediately discoverable, since [LCP candidates](/lcp/#what-elements-are-considered) are crucial parts of the user experience. A [`fetchpriority` value of `"high"`](/priority-hints/when-would-you-need-priority-hints) on LCP resources can further improve this by signalling the importance of this asset to the browser so it can fetch it early.
+
+Where it is not possible to make LCP assets immediately discoverable, a [`preload`](/preload-critical-assets/) link&mdash;also with the `fetchpriority` value of `"high"`&mdash;still allows the browser to load the resource as soon as possible.
+
+If neither of these options are available&mdash;because the exact resource will not be known until later in the page load&mdash;you can use `preconnect` on cross-origin resources to reduce the impact of the late discovery of the resource as much as possible.
 
 Additionally, `preconnect` is less expensive than `preload` in terms of bandwidth usage, but still not without its risks. As is the case with excessive `preload` hints, excessive `preconnect` hints still consume bandwidth where TLS certificates are concerned. Be careful not to preconnect to too many origins, as this may cause bandwidth contention.
 
