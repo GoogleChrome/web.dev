@@ -3,7 +3,7 @@ title: Establish network connections early to improve perceived page speed
 subhead: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
 date: 2019-07-30
-updated: 2022-08-03
+updated: 2022-08-07
 hero: image/admin/Dyccd1RLN0fzhjPXswmL.jpg
 alt: Adam's Creation by Michelangelo on Sistine Chapel ceiling
 authors:
