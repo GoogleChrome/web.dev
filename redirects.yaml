@@ -348,3 +348,7 @@ redirects:
   # Redirects lazysizes post to the browser-level lazy loading post
   - source: /use-lazysizes-to-lazyload-images
     destination: /browser-level-image-lazy-loading/
+
+  # Redirects an old HTTP caching guide to Ilya and Jeff's version on the same topic.
+  - source: /performance-get-started-httpcaching-6/
+    destination: /http-cache/
