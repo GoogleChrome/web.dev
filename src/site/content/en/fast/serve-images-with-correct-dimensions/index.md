@@ -132,7 +132,7 @@ While this guide discusses image dimensions in the context of performance, it's 
 
 Without these attributes, the browser has no idea how much space the image will take up until it has loaded. This will cause layout shifts in the document, which can be frustrating to users when they "miss" their intended hit target and end up clicking on something else they didn't intend to during page load.re-run
 
-If you're using images in CSS, be sure to use the `aspect-ratio` property on the image's container. This has the same effect on an element's size that `width` and `height` attributes do in the sense that the container will maintain a consistent aspect ratio.
+If you're using images in CSS, be sure to use the [`aspect-ratio` property](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) on the image's container. This has the same effect on an element's size that `width` and `height` attributes do in the sense that the container will maintain a consistent aspect ratio.
 
 ```css
 .masthead {
@@ -142,7 +142,7 @@ If you're using images in CSS, be sure to use the `aspect-ratio` property on the
 ```
 
 {% Aside 'important' %}
-Always evaluate whether you really need CSS background images. Sometimes an HTML `<img>` element is a better choice, and will lead to better loading performance, as the browser's preload scanner will be able to start loading the image while rendering is blocked. The browser preload scanner [can't discover images ahead of time in CSS](/preload-scanner/#css-background-images), and so loading for them will be delayed until [the CSSOM is constructed and applied to the DOM](/critical-rendering-path-render-tree-construction/).
+Always evaluate whether you really need CSS background images. Sometimes an HTML `<img>` element is a better choice. Using `<img~` will lead to better loading performance and a faster [Largest Contentful Paint (LCP)](/lcp/) (_if_ the image is an [LCP candidate](/lcp/#what-elements-are-considered)) as the browser's preload scanner will be able to start loading the image while rendering is blocked. The browser preload scanner [can't discover images ahead of time in CSS](/preload-scanner/#css-background-images), and so loading for them will be delayed until [the CSSOM is constructed and applied to the DOM](/critical-rendering-path-render-tree-construction/).
 {% endAside %}
 
 ## Verify
