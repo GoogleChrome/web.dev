@@ -8,6 +8,7 @@ description: |
   page. The image looks fine, but it is wasting users' data and hurting page
   performance.
 date: 2018-11-05
+updated: 2022-08-09
 wf_blink_components: N/A
 codelabs:
   - codelab-serve-images-correct-dimensions
@@ -120,6 +121,29 @@ magick convert flower.jpg -resize 200x100 flower_small.jpg
 If you'll be resizing many images, you may find it more convenient to use a
 script or service to automate the process. You can learn more about this in the
 Responsive Images guide.
+
+## Avoid layout shifts by specifying dimensions
+
+While this guide discusses image dimensions in the context of performance, it's important to note that reserving space for images in the layout is a crucial component of minimizing a page's [Cumulative Layout Shift](/cls/) metric. When serving images in HTML, be sure to use proper `width` and `height` attributes so that the browser knows how much space to allocate in the layout for the image:
+
+```html
+<img src="flower.jpg" width="640" height="480" alt="A picture of a siberian iris.">
+```
+
+Without these attributes, the browser has no idea how much space the image will take up until it has loaded. This will cause layout shifts in the document, which can be frustrating to users when they "miss" their intended hit target and end up clicking on something else they didn't intend to during page load.re-run
+
+If you're using images in CSS, be sure to use the `aspect-ratio` property on the image's container. This has the same effect on an element's size that `width` and `height` attributes do in the sense that the container will maintain a consistent aspect ratio.
+
+```css
+.masthead {
+  background: url('/flower.jpg');
+  aspect-ratio: 16 / 9;
+}
+```
+
+{% Aside 'important' %}
+Always evaluate whether you really need CSS background images. Sometimes an HTML `<img>` element is a better choice, and will lead to better loading performance, as the browser's preload scanner will be able to start loading the image while rendering is blocked. The browser preload scanner [can't discover images ahead of time in CSS](/preload-scanner/#css-background-images), and so loading for them will be delayed until [the CSSOM is constructed and applied to the DOM](/critical-rendering-path-render-tree-construction/).
+{% endAside %}
 
 ## Verify
 
