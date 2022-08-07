@@ -8,7 +8,7 @@ description: |
   page. The image looks fine, but it is wasting users' data and hurting page
   performance.
 date: 2018-11-05
-updated: 2022-08-09
+updated: 2022-08-07
 wf_blink_components: N/A
 codelabs:
   - codelab-serve-images-correct-dimensions
