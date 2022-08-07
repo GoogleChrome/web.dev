@@ -152,7 +152,7 @@ Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Sa
 
 Using `dns-prefetch` and `preconnect` allows sites to reduce the amount of time it takes to connect to another origin. The ultimate aim is that the time to load a resource from another origin should be minimized as much as possible.
 
-Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, it is better that resources are immediately discoverable, since [LCP candidates](/lcp/#what-elements-are-considered) are crucial parts of the user experience. A [`fetchpriority` value of `"high"`](/priority-hints/when-would-you-need-priority-hints) on LCP resources can further improve this by signalling the importance of this asset to the browser so it can fetch it early.
+Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, it is better that resources are immediately discoverable, since [LCP candidates](/lcp/#what-elements-are-considered) are crucial parts of the user experience. A [`fetchpriority` value of `"high"`](/priority-hints/#when-would-you-need-priority-hints) on LCP resources can further improve this by signalling the importance of this asset to the browser so it can fetch it early.
 
 Where it is not possible to make LCP assets immediately discoverable, a [`preload`](/preload-critical-assets/) link&mdash;also with the `fetchpriority` value of `"high"`&mdash;still allows the browser to load the resource as soon as possible.
 
