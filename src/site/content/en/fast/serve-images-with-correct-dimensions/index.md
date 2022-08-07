@@ -124,26 +124,23 @@ Responsive Images guide.
 
 ## Avoid layout shifts by specifying dimensions
 
-While this guide discusses image dimensions in the context of performance, it's important to note that reserving space for images in the layout is a crucial component of minimizing a page's [Cumulative Layout Shift](/cls/) metric. When serving images in HTML, be sure to use proper `width` and `height` attributes so that the browser knows how much space to allocate in the layout for the image:
+While this guide discusses image dimensions in the context of reducing the amount of unnecessary bytes downloaded, it's important to note that reserving the correct space for images in the layout is another crucial component of minimizing a page's [Cumulative Layout Shift](/cls/) metric. When serving images in HTML, be sure to use proper `width` and `height` attributes so that the browser knows how much space to allocate in the layout for the image:
 
 ```html
 <img src="flower.jpg" width="640" height="480" alt="A picture of a siberian iris.">
 ```
 
-Without these attributes, the browser has no idea how much space the image will take up until it has loaded. This will cause layout shifts in the document, which can be frustrating to users when they "miss" their intended hit target and end up clicking on something else they didn't intend to during page load.re-run
+Without these attributes, of the equivalent CSS sizing, the browser has no idea how much space the image will take up until it has loaded. This will cause layout shifts in the document, which can be frustrating to users when they "miss" their intended hit target and end up clicking on something else they didn't intend to during page load.re-run
 
-If you're using images in CSS, be sure to use the [`aspect-ratio` property](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) on the image's container. This has the same effect on an element's size that `width` and `height` attributes do in the sense that the container will maintain a consistent aspect ratio.
+An alternative to providing the width and height explicitly, is to use the  CSS [`aspect-ratio` property](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) on the image. This has a similar effect on an element's size that `width` and `height` attributes do in the sense that the container will maintain a consistent aspect ratio. However, the difference is that this may result in a different aspect-ratio being used than the image is provided in, so you will likely want to use an `object-fit` setting to ensure the image is not distorted in this explicit 16/9 view:
 
 ```css
-.masthead {
-  background: url('/flower.jpg');
+img {
   aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
 }
 ```
-
-{% Aside 'important' %}
-Always evaluate whether you really need CSS background images. Sometimes an HTML `<img>` element is a better choice. Using `<img~` will lead to better loading performance and a faster [Largest Contentful Paint (LCP)](/lcp/) (_if_ the image is an [LCP candidate](/lcp/#what-elements-are-considered)) as the browser's preload scanner will be able to start loading the image while rendering is blocked. The browser preload scanner [can't discover images ahead of time in CSS](/preload-scanner/#css-background-images), and so loading for them will be delayed until [the CSSOM is constructed and applied to the DOM](/critical-rendering-path-render-tree-construction/).
-{% endAside %}
 
 ## Verify
 
