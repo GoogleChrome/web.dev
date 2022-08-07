@@ -191,12 +191,6 @@ what's visible to the user (which is especially true with scrolling).
 For analysis purposes, you should only report the most recently dispatched
 `PerformanceEntry` to your analytics service.
 
-{% Aside 'caution' %}
-  Since users can open pages in a background tab, it's possible that the largest
-  contentful paint will not happen until the user focuses the tab, which can be
-  much later than when they first loaded it.
-{% endAside %}
-
 #### Load time vs. render time
 
 For security reasons, the render timestamp of images is not exposed for
