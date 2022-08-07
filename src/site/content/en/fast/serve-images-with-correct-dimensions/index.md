@@ -130,7 +130,7 @@ While this guide discusses image dimensions in the context of reducing the amoun
 <img src="flower.jpg" width="640" height="480" alt="A picture of a siberian iris.">
 ```
 
-Without these attributes, of the equivalent CSS sizing, the browser has no idea how much space the image will take up until it has loaded. This will cause layout shifts in the document, which can be frustrating to users when they "miss" their intended hit target and end up clicking on something else they didn't intend to during page load.re-run
+Without these attributes, or the equivalent CSS sizing, the browser has no idea how much space the image will take up until it has loaded. This will cause layout shifts in the document, which can be frustrating to users when content moves after they have started consuming it. This can result in users losing their place when reading, or to "miss" their intended hit target and end up clicking on something else they didn't intend to during page load.
 
 An alternative to providing the width and height explicitly, is to use the  CSS [`aspect-ratio` property](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) on the image. This has a similar effect on an element's size that `width` and `height` attributes do in the sense that the container will maintain a consistent aspect ratio. However, the difference is that this may result in a different aspect-ratio being used than the image is provided in, so you will likely want to use an `object-fit` setting to ensure the image is not distorted in this explicit 16/9 view:
 
