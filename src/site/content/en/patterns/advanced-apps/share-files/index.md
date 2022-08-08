@@ -103,6 +103,6 @@ button.addEventListener('click', async () => {
 ## Further reading
 
 - [Web Share API on MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share)
-- [Integrate with the OS sharing UI with the Web Share API](https://web.dev/web-share/)
+- [Integrate with the OS sharing UI with the Web Share API](/web-share/)
 
 ## Demo
