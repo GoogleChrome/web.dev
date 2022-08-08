@@ -2230,7 +2230,7 @@ patternId: components/media-scroller
       </ul>
     </section>
 
-    <script type="module">
+    {% set script %}
       import {rovingIndex} from "https://cdn.skypack.dev/roving-ux";
 
       document.querySelectorAll('.horizontal-media-scroller')
@@ -2238,6 +2238,7 @@ patternId: components/media-scroller
           element: scroller,
           target: 'a',
         }))
-    </script>
+    {% endset %}
+    <script type="module">{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

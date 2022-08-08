@@ -18,7 +18,7 @@ patternId: components/toast
       Mock User Action
     </button>
 
-    <script type="module">
+    {% set script %}
       import $ from 'https://cdn.skypack.dev/blingblingjs'
 
       const init = () => {
@@ -118,7 +118,7 @@ patternId: components/toast
         max = Math.floor(max)
         return Math.floor(Math.random() * (max - min + 1)) + min
       }
-
-    </script>
+    {% endset %}
+    <script type="module">{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

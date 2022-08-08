@@ -42,7 +42,7 @@ patternId: components/split-buttons
       </span>
     </div>
 
-    <script type="module">
+    {% set script %}
       import $ from 'https://cdn.skypack.dev/blingblingjs'
       import {rovingIndex} from 'https://cdn.skypack.dev/roving-ux'
 
@@ -75,6 +75,7 @@ patternId: components/split-buttons
         if (event.target.nodeName !== 'BUTTON') return
         console.info(event.target.innerText)
       })
-    </script>
+    {% endset %}
+    <script type="module">{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>
