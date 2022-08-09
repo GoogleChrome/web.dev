@@ -58,7 +58,7 @@ TTFB 可以在[实验场景](/user-centric-performance-metrics/#in-the-lab)或[�
 
 ### 在 JavaScript 中测量 TTFB
 
-可以在具备[Navigation Timing API](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API)功能的浏览器中测量 TTFB。下面的这个示例展示了如何创建 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 并监听 `navigation` ，最终打印结果至控制台：
+可以在具备[Navigation Timing API](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API)功能的浏览器中测量 TTFB。下面的这个示例展示了如何创建 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 并监听 `navigation` ，最终把日志输出到控制台：
 
 ```javascript
 new PerformanceObserver((entryList) => {
