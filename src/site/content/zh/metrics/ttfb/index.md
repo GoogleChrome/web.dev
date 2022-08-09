@@ -40,7 +40,28 @@ TTFB 是下列请求节点的时间损耗汇总：
 
 ### 什么是好的 TTFB 分数?
 
-由于网络与后端服务的差异很大，因此不能对什么是“好的” TTFB 分数设定一个任意的数字。由于 TTFB 先于[以用户为中心的指标](/user-centric-performance-metrics/)，如[首次内容显示（FCP）](/fcp/)和[最大内容显示（LCP）](/lcp/)，因此建议你的服务器对请求的响应速度要足够快，以使 **P75** 的用户体验在[良好的 FCP 分数](/fcp/#what-is-a-good-fcp-score).
+由于网络与后端服务的差异很大，因此不能对什么是“好的” TTFB 分数设定一个任意的数字。由于 TTFB 先于[以用户为中心的指标](/user-centric-performance-metrics/)，如[首次内容显示（FCP）](/fcp/)和[最大内容显示（LCP）](/lcp/)，因此建议您的服务器对请求的响应速度要足够快，以使 **P75** 的用户体验在[良好的 FCP 分数](/fcp/#what-is-a-good-fcp-score)。作为一个粗略的指导，大多数网站应努力使 TTFB 少于 **0.8秒** 。
+
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/ILJ1xKjzVisqOPPyHYVA.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/eNXaxPi9NdUVSTDRJFkV.svg",
+        alt="良好的 TTFB 应该小于 0.8 秒，大于 1.8 秒的 TTFB 被认为是差的表现，在这中间的值需要优化",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
+
+{% Aside %}
+  TTFB 不是 [核心 Web 指标](/vitals)，因此，只要不妨碍他们在重要的指标上获得良好的分数，网站并不绝对需要达到“良好”的 TTFB 指标。
+{% endAside %}
 
 ## 如何测量 TTFB
 
@@ -86,7 +107,6 @@ getTTFB(console.log);
 
 ### Measuring resource requests
 
-TTFB applies to _all_ requests, not just navigation requests. In particular, resources hosted on cross-origin servers can introduce latency due to the need to set up connections to those servers. To measure TTFB for resources in the field, use the [Resource Timing API](https://developer.mozilla.org/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) within a `PerformanceObserver`:
 TTFB适用于 _所有_ 的请求，而不仅仅是导航请求。特别是那些资源托管在需要跨域访问的服务器上时，由于需要建立与这些服务器的连接，会引入延迟。要测量实际场景中的TTFB，请在 `PerformanceObserver 中使用[Resource Timing API](https://developer.mozilla.org/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API)
 
 ```javascript
@@ -115,7 +135,7 @@ new PerformanceObserver((entryList) => {
 
 ## 如何优化 TTFB
 
-优化 TTFB 在很大程度上取决于你的托管供应商和后端服务。TTFB 值高可能是由于以下一个或多个问题造成的。
+优化 TTFB 在很大程度上取决于您的托管供应商和后端服务。TTFB 值高可能是由于以下一个或多个问题造成的。
 
 - 托管服务商的基础设施能力不足，无法处理高流量负载
 - 网络服务器的内存不足，可能导致 [系统颠簸](https://en.wikipedia.org/wiki/Memory_paging#Thrashing)
