@@ -33,5 +33,5 @@ Você pode ignorar esta auditoria se:
 
 ## Recursos
 
-- [O código-fonte do **conteúdo não está dimensionado corretamente para a** auditoria da janela de visualização](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/content-width.js)
+- [O código-fonte do **conteúdo não está dimensionado corretamente para a** auditoria da janela de visualização](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/content-width.js)
 - [Noções básicas de web design responsivo](/responsive-web-design-basics/)

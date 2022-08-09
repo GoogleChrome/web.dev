@@ -63,7 +63,7 @@ Lighthouse собирает каждое изображение BMP, JPEG и PNG
 
 ## Ресурсы
 
--  [Исходный код для проверки **использования современных форматов изображений**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/modern-image-formats.js).
+-  [Исходный код для проверки **использования современных форматов изображений**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/modern-image-formats.js).
 - [Используйте изображения в формате WebP](/serve-images-webp).
 
 <!-- https://www.reddit.com/r/webdev/comments/gspjwe/serve_images_in_nextgen_formats/ -->

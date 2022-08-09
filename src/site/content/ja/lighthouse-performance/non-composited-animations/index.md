@@ -33,7 +33,7 @@ HTML、CSS、およびJavaScriptをピクセルに変換するためのブラウ
 
 ## 資力
 
-- [合成されてい*ないアニメーションを回避する*監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
+- [合成されてい*ないアニメーションを回避する*監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/non-composited-animations.js)
 - [コンポジターのみのプロパティに固執し、レイヤー数を管理します](/stick-to-compositor-only-properties-and-manage-layer-count/)
 - [高性能アニメーション](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 - [ペイントの複雑さを簡素化し、ペイント領域を減らします](/simplify-paint-complexity-and-reduce-paint-areas/)

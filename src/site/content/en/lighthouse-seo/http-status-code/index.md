@@ -56,5 +56,5 @@ complicated. Learn how to [fix sneaky 404s in an Express application](/codelab-f
 
 ## Resources
 
-- [Source code for **Page has unsuccessful HTTP status code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/http-status-code.js)
+- [Source code for **Page has unsuccessful HTTP status code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/http-status-code.js)
 - [HTTP response status codes](https://developer.mozilla.org/docs/Web/HTTP/Status)

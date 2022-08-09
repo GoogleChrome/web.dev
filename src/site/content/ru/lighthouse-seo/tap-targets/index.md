@@ -54,4 +54,4 @@ web_lighthouse:
 ## Материалы
 
 - [Удобство использования целей касания](/accessible-tap-targets): подробнее о том, как сделать так, чтобы всем посетителям было удобно пользоваться целями касания.
-- [Исходный код аудита **Неверный размер целей касания** (Tap targets are not sized appropriately)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js).
+- [Исходный код аудита **Неверный размер целей касания** (Tap targets are not sized appropriately)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/tap-targets.js).

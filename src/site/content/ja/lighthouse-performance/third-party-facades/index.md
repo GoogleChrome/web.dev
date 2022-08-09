@@ -75,4 +75,4 @@ Lighthouseは、ソーシャルボタンウィジェットや動画埋め込み 
 
 ## リソース
 
-[ファサード監査を使用したサードパーティリソースの遅延読み込み](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-facades.js)のソースコード。
+[ファサード監査を使用したサードパーティリソースの遅延読み込み](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js)のソースコード。

@@ -55,4 +55,4 @@ web_lighthouse:
 
 ## Ресурсы
 
-[Исходный код проверки **Avoid enormous network payloads (Избегайте чрезмерных нагрузок на сеть)**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js).
+[Исходный код проверки **Avoid enormous network payloads (Избегайте чрезмерных нагрузок на сеть)**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/total-byte-weight.js).

@@ -76,6 +76,6 @@ Consulte la página de Google [Crear títulos y fragmentos óptimos en los resul
 
 ## Recursos
 
-- [El código fuente de la auditoría **El documento no tiene una metadescripción**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [El código fuente de la auditoría **El documento no tiene una metadescripción**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [Crear títulos y fragmentos óptimos en los resultados de búsqueda](https://support.google.com/webmasters/answer/35624#1)
 - [Palabras clave irrelevantes](https://support.google.com/webmasters/answer/66358)

@@ -56,5 +56,5 @@ Consulta la publicación de [Encabezados y puntos de referencia](/headings-and-l
 
 ## Recursos
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener">Código fuente para auditoría de <strong>los encabezados se saltan de nivel</strong></a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener">Código fuente para auditoría de <strong>los encabezados se saltan de nivel</strong></a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">Los niveles de encabezado solo deben aumentar en uno (Deque University)</a>

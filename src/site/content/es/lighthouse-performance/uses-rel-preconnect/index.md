@@ -59,7 +59,7 @@ Utiliza [un módulo que admite sugerencias de recursos de agentes de usuario](ht
 
 ## Recursos
 
-- [Código fuente para la auditoría de **preconexión a los orígenes requeridos**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preconnect.js)
+- [Código fuente para la auditoría de **preconexión a los orígenes requeridos**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/uses-rel-preconnect.js)
 - [Priorización de recursos: Conseguir que el navegador te ayude](https://developers.google.com/web/fundamentals/performance/resource-prioritization#preconnect)
 - [Establece conexiones de red con anticipación para mejorar la velocidad percibida de la página](/preconnect-and-dns-prefetch/)
 - [Tipos de enlace: preconnect](https://developer.mozilla.org/docs/Web/HTML/Link_types/preconnect#Browser_compatibility)

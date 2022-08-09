@@ -136,7 +136,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## Ресурсы
 
-- [Исходный код для аудита «**Недопустимый файл `robots.txt`**» (robots.txt is not valid)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [Исходный код для аудита «**Недопустимый файл `robots.txt`**» (robots.txt is not valid)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [Создание `файла robots.txt`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Спецификации метатега robots и HTTP-заголовка X-Robots-Tag](https://developers.google.com/search/reference/robots_meta_tag)

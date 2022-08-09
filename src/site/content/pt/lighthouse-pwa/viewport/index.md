@@ -53,6 +53,6 @@ Aqui está o que cada par de valores-chave faz:
 
 ## Recursos
 
-- [Source code for **Has a `<meta name="viewport">` tag with `width` or `initial-scale`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/viewport.js)
+- [Source code for **Has a `<meta name="viewport">` tag with `width` or `initial-scale`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/viewport.js)
 - [Noções básicas de web design responsivo](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport)
 - [Usando a meta tag viewport para controlar o layout em navegadores de celular](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag)

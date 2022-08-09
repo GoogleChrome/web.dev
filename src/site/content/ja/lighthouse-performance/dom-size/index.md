@@ -61,5 +61,5 @@ Lighthouse は DOM ツリーのあるページに以下のようなフラグを�
 
 ## リソース
 
-- [**過大なDOMサイズを回避**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [**過大なDOMサイズを回避**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
 - [スタイル計算の範囲と複雑さを軽減する](/reduce-the-scope-and-complexity-of-style-calculations/)

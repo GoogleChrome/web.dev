@@ -75,4 +75,4 @@ Lighthouse 会寻找可延迟加载的第三方产品，例如社交按钮小部
 
 ## 资源
 
-[使用 Facade 延迟加载第三方资源审计](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-facades.js)的源代码。
+[使用 Facade 延迟加载第三方资源审计](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js)的源代码。

@@ -101,5 +101,5 @@ pages](https://wordpress.org/support/article/inserting-images-into-posts-and-pag
 
 ## Resources
 
-- [Source code for **Properly size images** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
+- [Source code for **Properly size images** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-responsive-images.js)
 - [Serve images with correct dimensions](/serve-images-with-correct-dimensions)

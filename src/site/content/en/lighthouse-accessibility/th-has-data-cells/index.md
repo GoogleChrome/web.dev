@@ -103,5 +103,5 @@ it's very confusing.
 
 ## Resources
 
-- [Source code for **`<th>` elements and elements with `[role="columnheader"/"rowheader"]` do not have data cells they describe** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/th-has-data-cells.js)
+- [Source code for **`<th>` elements and elements with `[role="columnheader"/"rowheader"]` do not have data cells they describe** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/th-has-data-cells.js)
 - [All `<th>` elements and elements with `role="columnheader"` or `role="rowheader"` must have data cells they describe (Deque University)](https://dequeuniversity.com/rules/axe/3.3/th-has-data-cells)

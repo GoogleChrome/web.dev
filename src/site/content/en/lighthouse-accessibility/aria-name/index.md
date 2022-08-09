@@ -142,7 +142,7 @@ as its label and will be announced as "Search currency pairs":
 
 ## Resources
 
-- [Source code for **Not all ARIA toggle fields have accessible names** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js)
+- [Source code for **Not all ARIA toggle fields have accessible names** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-toggle-field-name.js)
 - [ARIA button, link, and menuitem must have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-command-name)
 - [ARIA input fields must have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-input-field-name)
 - [ARIA meter must have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-meter-name)

@@ -70,4 +70,4 @@ Veja a página [Preloading Assets da Tooling.Report](https://bundlers.tooling.re
 
 ## Recursos
 
-- [Código fonte para a auditoria **Pré-carregue solicitações importantes**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)
+- [Código fonte para a auditoria **Pré-carregue solicitações importantes**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/uses-rel-preload.js)

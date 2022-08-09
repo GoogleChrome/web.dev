@@ -61,5 +61,5 @@ Lighthouse 使用 DOM 树标记页面：
 
 ## 资源
 
-- [**避免 DOM 过大审核**的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [**避免 DOM 过大审核**的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
 - [减小样式计算的范围和复杂性](/reduce-the-scope-and-complexity-of-style-calculations/)

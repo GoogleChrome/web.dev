@@ -61,5 +61,5 @@ Lighthouseは、次の一般的なlink テキストにフラグを立てます�
 
 ## 資力
 
-- [**リンクには説明文がありません**監査用のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [**リンクには説明文がありません**監査用のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [検索エンジン最適化（SEO）初心者用のガイド](https://support.google.com/webmasters/answer/7451184)

@@ -60,4 +60,4 @@ each JavaScript file that your page loads.
 
 ## Resources
 
-[Source code for **Reduce JavaScript execution time** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[Source code for **Reduce JavaScript execution time** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/bootup-time.js)

@@ -50,5 +50,5 @@ Saiba mais no [guia de texto alternativo do WebAIM](https://webaim.org/technique
 
 ## Recursos
 
-- [Código fonte para **Elementos de imagem não possui auditoria de atributos `[alt]`**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
+- [Código fonte para **Elementos de imagem não possui auditoria de atributos `[alt]`**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/image-alt.js)
 - [As imagens devem ter um texto alternativo (Universidade Deque)](https://dequeuniversity.com/rules/axe/3.3/image-alt)

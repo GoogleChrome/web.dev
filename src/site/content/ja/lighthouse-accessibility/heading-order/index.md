@@ -54,5 +54,5 @@ Microsoftの<a href="https://accessibilityinsights.io/" rel="noopener">Accessibi
 
 ## リソース
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener"><strong>見出しスキップレベル</strong>監査のソースコード</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener"><strong>見出しスキップレベル</strong>監査のソースコード</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">見出しレベルは1つだけ増やす (Deque University)</a>

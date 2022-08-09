@@ -57,7 +57,7 @@ LCP измеряет время до вывода на экран самого �
 
 ## Ресурсы
 
-- [Исходный код проверки **LCP**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/largest-contentful-paint.js).
+- [Исходный код проверки **LCP**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/largest-contentful-paint.js).
 - скорость загрузки основного контента (LCP);
 - [API LCP](https://wicg.github.io/largest-contentful-paint/).
 - [Новое в Chrome 77: LCP (Скорость загрузки основного контента)](https://developers.google.com/web/updates/2019/09/nic77#lcp).

@@ -45,7 +45,7 @@ Si no puede corregir un error, considere la posibilidad de envolverlo en una sen
 
 ## Recursos
 
-- [El código fuente para **los errores del navegador se registraron en la consola** de la auditoría](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
+- [El código fuente para **los errores del navegador se registraron en la consola** de la auditoría](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/errors-in-console.js)
 - [Descripción general de la consola](https://developer.chrome.com/docs/devtools/console/)
 - [Stack Overflow](https://stackoverflow.com/)
 - [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

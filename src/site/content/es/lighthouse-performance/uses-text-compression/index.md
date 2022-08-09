@@ -80,4 +80,4 @@ Habilite la compresión de texto en la configuración de su servidor web.
 
 ## Recursos
 
-- [Código fuente para la auditoría **Habilitar compresión de texto**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [Código fuente para la auditoría **Habilitar compresión de texto**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-text-compression.js)

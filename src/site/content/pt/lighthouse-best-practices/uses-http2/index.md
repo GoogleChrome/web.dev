@@ -28,6 +28,6 @@ Para saber como habilitar HTTP/2 nos seus servidores, veja [Configurando HTTP/2]
 
 ## Recursos
 
-- [Código-fonte para a auditoria **Não usa HTTP/2 para todos os seus recursos**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
+- [Código-fonte para a auditoria **Não usa HTTP/2 para todos os seus recursos**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-http2.js)
 - [Introdução ao HTTP/2](/performance-http2/)
 - [Perguntas frequentes sobre HTTP/2](https://http2.github.io/faq/)

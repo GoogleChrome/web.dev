@@ -67,7 +67,7 @@ Especifique `@font-display` al [definir fuentes personalizadas](https://devdocs.
 
 ## Recursos
 
-- [Código fuente para **Asegurar que el texto permanezca visible durante la auditoría de carga para fuentes web**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/font-display.js)
+- [Código fuente para **Asegurar que el texto permanezca visible durante la auditoría de carga para fuentes web**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/font-display.js)
 - [Evitar el texto invisible durante la carga](/avoid-invisible-text)
 - [Controlar el rendimiento de las fuentes con visualizadores para fuentes](https://developers.google.com/web/updates/2016/02/font-display)
 - [Precargar fuentes web para mejorar la velocidad de carga (codelab)](/codelab-preload-web-fonts/)<a></a>

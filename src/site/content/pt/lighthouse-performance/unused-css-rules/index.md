@@ -64,4 +64,4 @@ Considere reduzir ou trocar o número de [plug-ins](https://wordpress.org/plugin
 
 ## Resources
 
-- [Código-fonte para auditoria **Remove unused CSS**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)
+- [Código-fonte para auditoria **Remove unused CSS**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-css-rules.js)

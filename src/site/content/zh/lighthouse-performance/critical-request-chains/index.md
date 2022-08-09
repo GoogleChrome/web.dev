@@ -44,4 +44,4 @@ Lighthouse 使用网络优先级作为识别阻塞呈现的关键资源的代理
 
 ## 资源
 
-[**最小化关键请求深度**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[**最小化关键请求深度**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/critical-request-chains.js)
