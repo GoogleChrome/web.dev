@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2022-07-18
+updated: 2022-08-09
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -98,6 +98,10 @@ considered for Largest Contentful Paint are:
   [CSS gradient](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
 * [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
+
+{% Aside 'important' %}
+Images that occupy the entire viewport are not considered LCP candidates.
+{% endAside %}
 
 Note, restricting the elements to this limited set was intentional in order to
 keep things simple in the beginning. Additional elements (e.g. `<svg>`,
