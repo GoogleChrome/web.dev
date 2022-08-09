@@ -99,6 +99,10 @@ considered for Largest Contentful Paint are:
 * [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
 
+{% Aside 'important' %}
+Starting in Chrome 88, [images that occupy the entire viewport are no longer considered LCP candidates](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/2020_11_lcp.md).
+{% endAside %}
+
 Note, restricting the elements to this limited set was intentional in order to
 keep things simple in the beginning. Additional elements (e.g. `<svg>`,
 `<video>`) may be added in the future as more research is conducted.
