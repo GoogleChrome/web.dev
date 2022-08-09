@@ -122,7 +122,7 @@ new PerformanceObserver((entryList) => {
 - 未经优化的数据库
 - 不良的数据库服务器配置
 
-通常通过选择一个合适的主机供应商是优化 TTFB ，其基础设施可确保高正常运行时间和响应能力。这与 CDN 相结合，可以起到帮助作用。
+通常通过选择一个合适的托管供应商是优化 TTFB ，其基础设施可确保高正常运行时间和响应能力。这与 CDN 相结合，可以起到帮助作用。
 
 {% Aside %}
 使用 [Server-Timing API](https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing) 来收集关于应用程序后端性能的额外现场数据，这可以帮助确定改进的机会，否则可能会被忽视。
