@@ -250,50 +250,49 @@ You can then open the `"store"` object store on this transaction and assign it t
 
 ### Reading data
 
-To read data, call the  [`get`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/get) method on the object store. The `get` method takes the primary key of the object you want to retrieve from the store. Here is a basic example:
+To read data, call the  [`get()`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/get) method on the object store. The `get()` method takes the primary key of the object you want to retrieve from the store. Here is a basic example:
 
 ```js
 someObjectStore.get(primaryKey);
 ```
 
-As with `add`, the `get` method returns a promise and must happen within a transaction.
+As with `add()`, the `get()` method returns a promise and must happen within a transaction.
 
-Let's look at an example of the `get` method:
+Let's look at an example of the `get()` method:
 
 ```js
 dbPromise.then(function(db) {
-  var tx = db.transaction('store', 'readonly');
-  var store = tx.objectStore('store');
+  const tx = db.transaction('store', 'readonly');
+  const store = tx.objectStore('store');
   return store.get('sandwich');
 }).then(function(val) {
   console.dir(val);
 });
 ```
 
-Once again, we start the operation by getting the database object and creating a transaction. Note that this time it is a read-only transaction because we are not writing anything to the database inside the transaction (that is, using `put`, `add`, or `delete`). We then open the object store on the transaction and assign the resulting object store object to the `store` variable. Finally, we return the result of `store.get` and log this object to the console.
+Once again, you start the operation by getting the database object and creating a transaction. Note that this time it is a read-only transaction because you are not writing anything to the database inside the transaction (that is, using `put()`, `add()`, or `delete()`). You then open the object store on the transaction and assign the resulting object store object to the `store` variable. Finally, you return the result of `store.get()` and log this object to the console.
 
 {% Aside %}
 If you try to get an object that doesn't exist, the success handler still executes, but the result is <code>undefined</code>.
 {% endAside %}
 
-
 ### Updating data
 
-To update data, call the  [`put`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/put) method on the object store. The `put` method is very similar to the `add` method and can be used instead of `add` to create data in the object store. Like `add`, `put` takes the data and an optional primary key:
+To update data, call the [`put()`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/put) method on the object store. The `put()` method is very similar to the `add()` method and can be used instead of `add()` to create data in the object store. Like `add()`, `put()` takes the data and an optional primary key:
 
 ```js
 someObjectStore.put(data, optionalKey);
 ```
 
-Again, this method returns a promise and occurs inside a transaction. As with `add`, we need to be careful to check `transaction.complete` if we want to be sure that the operation was actually carried out.
+Again, this method returns a promise and occurs inside a transaction. As with `add()`, you need to be careful to check `transaction.complete()` if you want to be sure that the operation was actually carried out.
 
 Here is an example using the `put` method:
 
 ```js
 dbPromise.then(function(db) {
-  var tx = db.transaction('store', 'readwrite');
-  var store = tx.objectStore('store');
-  var item = {
+  const tx = db.transaction('store', 'readwrite');
+  const store = tx.objectStore('store');
+  const item = {
     name: 'sandwich',
     price: 99.99,
     description: 'A very tasty, but quite expensive, sandwich',
@@ -302,15 +301,15 @@ dbPromise.then(function(db) {
   store.put(item);
   return tx.complete;
 }).then(function() {
-  console.log('item updated!');
+  console.log('Item updated!');
 });
 ```
 
-To update an existing item in the object store, use the `put` method on an object containing the same primary key value as the object in the store. We are assuming the keyPath for the store object store is the "name" property and we are updating the price and description of our "sandwich" object. The database interaction has the same structure as the create and read operations: get the database object, create a transaction, open an object store on the transaction, perform the operation on the object store.
+To update an existing item in the object store, use the `put()` method on an object containing the same primary key value as the object in the store. Here, the assumption is that the `keyPath` for the store object store is the `"name"` property and that you are updating the price and description of the `"sandwich"` object. The database interaction has the same structure as the create and read operations: get the database object, create a transaction, open an object store on the transaction, and perform the operation on the object store.
 
 ### Deleting data
 
-To delete data, call the  [`delete`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/delete) method on the object store.
+To delete data, call the [`delete()`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/delete) method on the object store.
 
 ```js
 someObjectStore.delete(primaryKey);
@@ -320,85 +319,85 @@ Once again, this method returns a promise and must be wrapped in a transaction. 
 
 ```js
 dbPromise.then(function(db) {
-  var tx = db.transaction('store', 'readwrite');
-  var store = tx.objectStore('store');
+  const tx = db.transaction('store', 'readwrite');
+  const store = tx.objectStore('store');
   store.delete(key);
   return tx.complete;
 }).then(function() {
-  console.log('Item deleted');
+  console.log('Item deleted.');
 });
 ```
 
-The structure of the database interaction is the same as for the other operations. Note that we again check that the whole transaction has completed by returning the `tx.complete` method to be sure that the delete was carried out.
+The structure of the database interaction is the same as for the other operations. Note that you again check that the whole transaction has completed by returning the `tx.complete()` method to be sure that the deletion was carried out.
 
 ## Getting all the data {: #get }
 
-So far we have only retrieved objects from the store one at a time. We can also retrieve all of the data (or subset) from an object store or index using either the `getAll` method or using cursors.
+So far you have only retrieved objects from the store one at a time. You can also retrieve all of the data (or a subset) from an object store or index using either the `getAll()` method or using cursors.
 
-### Using the getAll method
+### Using the `getAll()` method
 
-The simplest way to retrieve all of the data is to call the `getAll` method on the object store or index, like this:
+The simplest way to retrieve all of the data is to call the `getAll()` method on the object store or index, like this:
 
 ```js
 someObjectStore.getAll(optionalConstraint);
 ```
 
-This method returns all the objects in the object store matching the specified key or key range (see  [Working with ranges and indexes](#ranges)), or all objects in the store if no parameter is given. As with all other database operations, this operation happens inside a transaction. Here is a short example:
+This method returns all the objects in the object store matching the specified key or key range (see [Working with ranges and indexes](#ranges)), or all objects in the store if no parameter is given. As with all other database operations, this operation happens inside a transaction. Here is a short example:
 
 ```js
 dbPromise.then(function(db) {
-  var tx = db.transaction('store', 'readonly');
-  var store = tx.objectStore('store');
+  const tx = db.transaction('store', 'readonly');
+  const store = tx.objectStore('store');
   return store.getAll();
 }).then(function(items) {
   console.log('Items by name:', items);
 });
 ```
 
-Here we are calling `getAll` on the "store" object store. This returns all of the objects in the store ordered by the primary key.
+Here you are calling `getAll()` on the `"store"` object store. This returns all of the objects in the store ordered by the primary key.
 
 ### Using cursors
 
 Another way to retrieve all of the data is to use a cursor. A cursor selects each object in an object store or index one by one, letting you do something with the data as it is selected. Cursors, like the other database operations, work within transactions.
 
-We create the cursor by calling the  [openCursor](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openCursor) method on the object store, like this:
+You create the cursor by calling the  [`openCursor()`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openCursor) method on the object store, like this:
 
 ```js
 someObjectStore.openCursor(optionalKeyRange, optionalDirection);
 ```
 
-This method returns a promise that resolves with a cursor object representing the first object in the object store or `undefined` if there is no object. To move on to the next object in the object store, we call `cursor.continue`. This returns a promise that resolves with the next object, or `undefined` if there are no more objects. We put this inside a loop to move through all of the entries in the store one by one. The optional key range in the `openCursor` method limits the iteration to a subset of the objects in the store. The direction option can be `next` or `prev`, specifying forward or backward traversal through the data.
+This method returns a promise that resolves with a `cursor` object representing the first object in the object store or `undefined` if there is no object. To move on to the next object in the object store, you call `cursor.continue()`. This returns a promise that resolves with the next object, or `undefined` if there are no more objects. You put this inside a loop to move through all of the entries in the store one by one. The optional key range in the `openCursor()` method limits the iteration to a subset of the objects in the store. The direction option can be `next` or `prev`, specifying forward or backward traversal through the data.
 
 The next example uses a cursor to iterate through all the items in the "store" object store and log them to the console:
 
 ```js
 dbPromise.then(function(db) {
-  var tx = db.transaction('store', 'readonly');
-  var store = tx.objectStore('store');
+  const tx = db.transaction('store', 'readonly');
+  const store = tx.objectStore('store');
   return store.openCursor();
 }).then(function logItems(cursor) {
   if (!cursor) {
     return;
   }
   console.log('Cursored at:', cursor.key);
-  for (var field in cursor.value) {
+  for (const field in cursor.value) {
     console.log(cursor.value[field]);
   }
   return cursor.continue().then(logItems);
 }).then(function() {
-  console.log('Done cursoring');
+  console.log('Done cursoring.');
 });
 ```
 
-As usual, we start by getting the database object, creating a transaction, and opening an object store. We call the `openCursor` method on the object store and pass the cursor object to the callback function in `.then`. This time we name the callback function "logItems" so we can call it from inside the function and make a loop. The line `if (!cursor) {return;}` breaks the loop if the promise returned by `store.openCursor()` resolves with `undefined`, or if the promise returned by `cursor.continue()`resolves with `undefined` (indicating that there are no more objects).
+As usual, you start by getting the database object, creating a transaction, and opening an object store. You call the `openCursor()` method on the object store and pass the cursor object to the callback function in `.then()`. This time you name the callback function `"logItems"` so you can call it from inside the function and make a loop. The line `if (!cursor) {return;}` breaks the loop if the promise returned by `store.openCursor()` resolves with `undefined`, or if the promise returned by `cursor.continue()`resolves with `undefined` (indicating that there are no more objects).
 
-The cursor object contains a `key` property that represents the primary key for the item. It also contains a `value` property that represents the data. At the end of `logItems`, we return `cursor.continue().then(logItems)`. The `cursor.continue` method returns a promise that resolves to a cursor object representing the next item in the store or `undefined` if there are no more objects. This result is passed to the callback function in `.then,` which we have chosen to be `logItems,`so that the function loops. Consequently, `logItems` continues to call itself until no objects remain.
+The cursor object contains a `key` property that represents the primary key for the item. It also contains a `value` property that represents the data. At the end of `logItems()`, you return `cursor.continue().then(logItems)`. The `cursor.continue()` method returns a promise that resolves to a cursor object representing the next item in the store or `undefined` if there are no more objects. This result is passed to the callback function in `.then()`, which you have chosen to be `logItems()`, so that the function loops. Consequently, `logItems()` continues to call itself until no objects remain.
 
 ### Working with ranges and indexes {: #ranges }
 
-We can get all the data in a couple of different ways, but what if we want only a subset of the data based on a particular property? This is where indexes come in. Indexes let us fetch the data in an object store by a property other than the primary key. We can create an index on any property (which becomes the keypath for the index), specify a range on that property, and get the data within the range using the `getAll` method or a cursor.
+You can get all the data in a couple of different ways, but what if you want only a subset of the data based on a particular property? This is where indexes come in. Indexes let you fetch the data in an object store by a property other than the primary key. You can create an index on any property (which becomes the keypath for the index), specify a range on that property, and get the data within the range using the `getAll()` method or a cursor.
 
-We define the range using the `IDBKeyRange` object. This object has four methods that are used to define the limits of the range: `upperBound`, `lowerBound`, `bound` (which means both), and `only`. As expected, the `upperBound` and `lowerBound` methods specify the upper and lower limits of the range.
+You define the range using the `IDBKeyRange` object. This object has four methods that are used to define the limits of the range: `upperBound()`, `lowerBound()`, `bound()` (which means both), and `only()`. As expected, the `upperBound()` and `lowerBound()` methods specify the upper and lower limits of the range.
 
 ```js
 IDBKeyRange.lowerBound(indexKey);
@@ -410,23 +409,23 @@ Or
 IDBKeyRange.upperBound(indexKey);
 ```
 
-They each take one argument which is be the index's keypath value of the item you want to specify as the upper or lower limit.
+They each take one argument which is the index's keypath value of the item you want to specify as the upper or lower limit.
 
-The `bound` method is used to specify both an upper and lower limit, and takes the lower limit as the first argument:
+The `bound()` method is used to specify both an upper and lower limit, and takes the lower limit as the first argument:
 
 ```js
 IDBKeyRange.bound(lowerIndexKey, upperIndexKey);
 ```
 
-The range for these functions is inclusive by default, but can be specified as exclusive by passing `true` as the second argument (or the third and fourth in the case of `bound`, for the lower and upper limits respectively). An inclusive range includes the data at the limits of the range. An exclusive range does not.
+The range for these functions is inclusive by default, but can be specified as exclusive by passing `true` as the second argument (or the third and fourth in the case of `bound()`, for the lower and upper limits respectively). An inclusive range includes the data at the limits of the range. An exclusive range does not.
 
-Let's look at an example. For this demo, we have created an index on the "price" property in the "store" object store. We have also added a small form with two inputs for the upper and lower limits of the range. Imagine we are passing in the lower and upper bounds to the function as floating point numbers representing prices:
+Let's look at an example. For this demo, you have created an index on the `"price"` property in the `"store"` object store. You have also added a small form with two inputs for the upper and lower limits of the range. Imagine you are passing in the lower and upper bounds to the function as floating point numbers representing prices:
 
 ```js
 function searchItems(lower, upper) {
   if (lower === '' && upper === '') {return;}
 
-  var range;
+  let range;
   if (lower !== '' && upper !== '') {
     range = IDBKeyRange.bound(lower, upper);
   } else if (lower === '') {
@@ -436,78 +435,74 @@ function searchItems(lower, upper) {
   }
 
   dbPromise.then(function(db) {
-    var tx = db.transaction(['store'], 'readonly');
-    var store = tx.objectStore('store');
-    var index = store.index('price');
+    const tx = db.transaction(['store'], 'readonly');
+    const store = tx.objectStore('store');
+    const index = store.index('price');
     return index.openCursor(range);
   }).then(function showRange(cursor) {
     if (!cursor) {return;}
     console.log('Cursored at:', cursor.key);
-    for (var field in cursor.value) {
+    for (const field in cursor.value) {
       console.log(cursor.value[field]);
     }
     return cursor.continue().then(showRange);
   }).then(function() {
-    console.log('Done cursoring');
+    console.log('Done cursoring.');
   });
 }
 ```
 
-The code first gets the values for the limits and checks if the limits exist. The next block of code decides which method to use to limit the range based on the values. In the database interaction, we open the object store on the transaction as usual, then we open the "price" index on the object store. The "price" index allows us to search for the items by price. We open a cursor on the index and pass in the range. The cursor now returns a promise representing the first object in the range, or `undefined` if there is no data within the range. `cursor.continue` returns a cursor a object representing the next object and so on through the loop until we reach the end of the range.
-
+The code first gets the values for the limits and checks if the limits exist. The next block of code decides which method to use to limit the range based on the values. In the database interaction, you open the object store on the transaction as usual, then you open the `"price"` index on the object store. The `"price"` index allows you to search for the items by price. You open a cursor on the index and pass in the range. The cursor now returns a promise representing the first object in the range, or `undefined` if there is no data within the range. The `cursor.continue()` method returns a cursor representing the next object and so on through the loop until you reach the end of the range.
 
 ## Using database versioning {: #versioning }
 
-When we call `idb.open`, we can specify the database version number in the second parameter. If this version number is greater than the version of the existing database, the upgrade callback executes, allowing us to add object stores and indexes to the database.
+When you call `idb.open()`, you can specify the database version number in the second parameter. If this version number is greater than the version of the existing database, the upgrade callback executes, allowing you to add object stores and indexes to the database.
 
 {% Aside %}
-The browser throws an error if we try to create object stores or indexes that already exist in the database. We can wrap the calls to `createObjectStore` in `if` statements checking if the object store already exists using `upgradeDb.objectStoreNames.contains('objectStoreName')`. We can also use a `switc` statement on the `oldVersion` property as in the next example.
+The browser throws an error if you try to create object stores or indexes that already exist in the database. You can wrap the calls to `createObjectStore` in `if` statements checking if the object store already exists using `upgradeDb.objectStoreNames.contains('objectStoreName')`. You can also use a `switch` statement on the `oldVersion` property as in the next example.
 {% endAside %}
 
-
-The UpgradeDB object has a special `oldVersion` property, which indicates the version number of the database existing in the browser. We can pass this version number into a `switch` statement to execute blocks of code inside the upgrade callback based on the existing database version number. Let's look at an example:
+The `UpgradeDB` object has a special `oldVersion` property, which indicates the version number of the database existing in the browser. You can pass this version number into a `switch` statement to execute blocks of code inside the upgrade callback based on the existing database version number. Here's an example:
 
 ```js
-var dbPromise = idb.open('test-db7', 2, function(upgradeDb) {
+const dbPromise = idb.open('test-db7', 2, function(upgradeDb) {
   switch (upgradeDb.oldVersion) {
     case 0:
       upgradeDb.createObjectStore('store', {keyPath: 'name'});
     case 1:
-      var peopleStore = upgradeDb.transaction.objectStore('store');
+      const peopleStore = upgradeDb.transaction.objectStore('store');
       peopleStore.createIndex('price', 'price');
   }
 });
 ```
 
-In the example we have set the newest version of the database at 2. When this code first executes, since the database doesn't yet exist in the browser, `upgradeDb.oldVersion` is 0 and the `switch` statement starts at `case 0`. In our example, this results in a "store" object store being added to the database. Usually, in switch statements, there is a break after each case, but we are deliberately not doing that here. This way, if the existing database is a few versions behind (or if it doesn't exist), the code continues through the rest of the case blocks until it has executed all the latest changes. So in our example, the browser continues executing through `case 1`, creating a "price" index on the "store" object store. Once this has finished executing, the database in the browser is at version 2 and contains a "store" object store with a "price" index.
+In the example you have set the newest version of the database at 2. When this code first executes, since the database doesn't yet exist in the browser, `upgradeDb.oldVersion` is 0 and the `switch` statement starts at `case 0`. In the example, this results in a `"store"` object store being added to the database. Usually, in `switch` statements, there is a `break` after each case, but this is deliberately not used here. This way, if the existing database is a few versions behind (or if it doesn't exist), the code continues through the rest of the `case` blocks until it has executed all the latest changes. So in the example, the browser continues executing through `case 1`, creating a `"price"` index on the `"store"` object store. Once this has finished executing, the database in the browser is at version 2 and contains a `"store"` object store with a `"price"` index.
 
-Let's say we now want to create a "description" index on the "store" object store. We need to update the version number and add a case, like this:
+Let's say you now want to create a `"description"` index on the `"store"` object store. You need to update the version number and add a case, like this:
 
 ```js
-var dbPromise = idb.open('test-db7', 3, function(upgradeDb) {
+const dbPromise = idb.open('test-db7', 3, function(upgradeDb) {
   switch (upgradeDb.oldVersion) {
     case 0:
       upgradeDb.createObjectStore('store', {keyPath: 'name'});
     case 1:
-      var storeOS = upgradeDb.transaction.objectStore('store');
+      const storeOS = upgradeDb.transaction.objectStore('store');
       storeOS.createIndex('price', 'price');
     case 2:
-      var storeOS = upgradeDb.transaction.objectStore('store');
+      const storeOS = upgradeDb.transaction.objectStore('store');
       storeOS.createIndex('description', 'description');
   }
 });
 ```
 
-Assuming the database we created in the previous example still exists in the browser, when this executes `upgradeDb.oldVersion` is 2. `case 0` and `case 1` are skipped and the browser executes the code in `case 2`, which creates a "description" index. Once all this has finished, the browser has a database at version 3 containing a "store" object store with "price" and "description" indexes.
-
+Assuming the database you created in the previous example still exists in the browser, when this executes `upgradeDb.oldVersion` is 2. The `case 0` and `case 1` are skipped, and the browser executes the code in `case 2`, which creates a `"description"` index. Once all this has finished, the browser has a database at version 3 containing a `"store"` object store with `"price"` and `"description"` indexes.
 
 ## Further reading {: #resources }
-
 
 ### IndexedDB Documentation
 
 *  [Using IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API/Using_IndexedDB) - MDN
-*  [Basic Concepts Behind indexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API/Basic_Concepts_Behind_IndexedDB) - MDN
+*  [Basic Concepts Behind IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API/Basic_Concepts_Behind_IndexedDB) - MDN
 *  [Indexed Database API](https://www.w3.org/TR/IndexedDB/) - W3C
 
 ### Data storage limits
@@ -515,28 +510,26 @@ Assuming the database we created in the previous example still exists in the bro
 *  [Storage for the web](/storage-for-the-web/)
 *  [Browser storage limits and eviction criteria](https://developer.mozilla.org/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria)
 
-
 ## Appendix
 
 ### Comparison of IndexedDB API and IndexedDB Promised library
 
-The IndexedDB Promised library sits on top of the IndexedDB API, translating its requests into promises. The overall structure is the same between the library and the API and, in general, the actual syntax for the database operations is the same and they will act the same way. But there are a few differences because of the differences between requests and promises, which we will cover here.
+The IndexedDB Promised library sits on top of the IndexedDB API, translating its requests into promises. The overall structure is the same between the library and the API and, in general, the actual syntax for the database operations is the same and they will act the same way. But there are a few differences because of the differences between requests and promises, which are covered here.
 
-All database interactions in the IndexedDB API are requests and have associated `onsuccess` and `onerror` event handlers. These are similar to the `.then` and `.catch` promise functions. The `indexedDB.open` method in the raw API also gets a special event handler, `onupgradeneeded`, which is used to create the object stores and indexes. This is equivalent to the upgrade callback in `idb.open` in the Promised library. In fact, if you look through the Promised library, you will find the upgrade callback is just a convenient wrapper for the `onupgradeneeded` event handler.
+All database interactions in the IndexedDB API are requests and have associated `onsuccess` and `onerror` event handlers. These are similar to the `.then()` and `.catch()` promise functions. The `indexedDB.open()` method in the raw API also gets a special event handler, `onupgradeneeded`, which is used to create the object stores and indexes. This is equivalent to the upgrade callback in `idb.open()` in the Promised library. In fact, if you look through the Promised library, you will find the upgrade callback is just a convenient wrapper for the `onupgradeneeded` event handler.
 
-Let's look at an example of the IndexedDB API. In this example we will open a database, add an object store, and add one item to the object store:
+Here's an example of the IndexedDB API. In this example you will open a database, add an object store, and add one item to the object store:
 
 ```js
-var db;
+let db;
 
-var openRequest = indexedDB.open('test_db', 1);
+const openRequest = indexedDB.open('test_db', 1);
 
 openRequest.onupgradeneeded = function(e) {
-  var db = e.target.result;
+  db = e.target.result;
   console.log('running onupgradeneeded');
   if (!db.objectStoreNames.contains('store')) {
-    var storeOS = db.createObjectStore('store',
-      {keyPath: 'name'});
+    const storeOS = db.createObjectStore('store', {keyPath: 'name'});
   }
 };
 openRequest.onsuccess = function(e) {
@@ -550,16 +543,16 @@ openRequest.onerror = function(e) {
 };
 
 function addItem() {
-  var transaction = db.transaction(['store'], 'readwrite');
-  var store = transaction.objectStore('store');
-  var item = {
+  const transaction = db.transaction(['store'], 'readwrite');
+  const store = transaction.objectStore('store');
+  const item = {
     name: 'banana',
     price: '$2.99',
     description: 'It is a purple banana!',
     created: new Date().getTime()
   };
 
- var request = store.add(item);
+ const request = store.add(item);
 
  request.onerror = function(e) {
     console.log('Error', e.target.error.name);
@@ -570,7 +563,7 @@ function addItem() {
 }
 ```
 
-This code does something very similar to previous examples in this tutorial except that it doesn't use the Promised library. We can see that the structure of the database interaction hasn't changed. Object stores are created on the database object in the upgrade event handler, and items are added to the object store in the same transaction sequence we've seen before. The difference is that this is done with requests and event handlers rather than promises and promise chains.
+This code does something very similar to previous examples in this tutorial except that it doesn't use the Promised library. You can see that the structure of the database interaction hasn't changed. Object stores are created on the database object in the upgrade event handler, and items are added to the object store in the same transaction sequence you've seen before. The difference is that this is done with requests and event handlers rather than promises and promise chains.
 
 Here is a short reference of the differences between the IndexedDB API and the IndexedDB Promised library.
 
@@ -613,4 +606,3 @@ Error
 </tr>
 </table>
 </div>
-
