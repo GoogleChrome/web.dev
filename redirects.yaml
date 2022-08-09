@@ -350,6 +350,8 @@ redirects:
     destination: /browser-level-image-lazy-loading/
 
   # Redirects an old performance guides to more recent documentation
+  - source: /performance-get-started/
+    destination: /fast/
   - source: /performance-get-started-graphicalcontent-4/
     destination: /choose-the-right-image-format/
   - source: /performance-get-started-httpcaching-6/
