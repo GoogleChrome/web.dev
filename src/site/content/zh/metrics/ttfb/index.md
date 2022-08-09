@@ -115,7 +115,7 @@ new PerformanceObserver((entryList) => {
 
 ## 如何优化 TTFB
 
-优化 TTFB 在很大程度上取决于你的主机供应商和后端服务。TTFB 值高可能是由于以下一个或多个问题造成的。
+优化 TTFB 在很大程度上取决于你的托管供应商和后端服务。TTFB 值高可能是由于以下一个或多个问题造成的。
 
 - 托管服务商的基础设施能力不足，无法处理高流量负载
 - 网络服务器的内存不足，可能导致 [系统颠簸](https://en.wikipedia.org/wiki/Memory_paging#Thrashing)
