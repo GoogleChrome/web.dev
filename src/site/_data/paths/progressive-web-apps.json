@@ -53,7 +53,8 @@
             "badging-api",
             "web-share-target",
             "maskable-icon",
-            "periodic-background-sync"
+            "periodic-background-sync",
+            "window-controls-overlay"
           ]
         }, {
           "title": "i18n.paths.progressive_web_apps.topics.more_ways_to_improve_your_user_experience",

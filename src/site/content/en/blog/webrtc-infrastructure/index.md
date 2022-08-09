@@ -115,7 +115,7 @@ The following code snippet is a [W3C code example](https://w3c.github.io/webrtc-
 // handles JSON.stringify/parse
 const signaling = new SignalingChannel();
 const constraints = {audio: true, video: true};
-const configuration = {iceServers: [{urls: 'stuns:stun.example.org'}]};
+const configuration = {iceServers: [{urls: 'stun:stun.example.org'}]};
 const pc = new RTCPeerConnection(configuration);
 
 // Send any ice candidates to the other peer.

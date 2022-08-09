@@ -12,6 +12,7 @@ description: >
   performance for millions of sites, clearing the path for them to receive good PageSpeed Insights and
   Core Web Vitals scores.
 date: 2021-03-10
+updated: 2022-07-18
 hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/HNGPDotyTYOuPE0YxLQ9.jpg
 alt: "A fast train (source: https://unsplash.com/photos/60VrGk-bfeA)"
 tags:
@@ -30,7 +31,7 @@ Thanks to leveraging industry standards, cloud providers, and CDN capabilities,
 combined with a major rewrite of our website runtime, the percentage of Wix
 sites reaching good 75th percentile scores on all Core Web Vitals (CWV) metrics
 **more than tripled** year over year, according to data from
-[CrUX](https://developers.google.com/web/tools/chrome-user-experience-report)
+[CrUX](https://developer.chrome.com/docs/crux/)
 and
 [HTTPArchive](https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data).
 
@@ -349,7 +350,7 @@ middle of 2020.
 
 We look forward to seeing the updated report in 2021, and are actively
 monitoring
-[CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/)
+[CrUX](https://developer.chrome.com/docs/crux/)
 reports for our sites as well as our internal performance metrics.
 
 We are committed to continuously improve loading times and provide our users

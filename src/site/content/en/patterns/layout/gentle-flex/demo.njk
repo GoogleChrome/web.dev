@@ -1,0 +1,108 @@
+---
+patternId: layout/gentle-flex
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <style>
+      :root {
+        --surface1: #101010;
+        --surface2: #3b3b3b;
+        --text1: hsl(200 20% 80%);
+
+        --pink: hsl(330 60% 71%);
+        --purple: hsl(267 90% 70%);
+        --blue: hsl(188 90% 70%);
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --surface1:#fffffe;
+          --surface2: #c6c6c6;
+          --text1: hsl(200 20% 20%);
+        }
+      }
+
+      html {
+        block-size: 100%;
+        color-scheme: dark;
+      }
+
+      body {
+        min-block-size: 100%;
+        margin: 0;
+        background: var(--surface1);
+        color: var(--text1);
+        font-family: system-ui;
+        display: grid;
+        place-content: center;
+      }
+
+      body,h1 {
+        background: var(--surface1)
+      }
+
+      h1 {
+        margin: 0;
+        font-weight: lighter;
+        padding: 1ch 2ch;
+        border-radius: 1rem
+      }
+
+      article {
+        background: var(--surface2);
+        border-radius: 1rem 1rem 0 1rem;
+        color: var(--text1);
+
+        overflow: auto;
+        resize: both;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        margin-block-start: .5ch;
+      }
+
+      footer > button {
+        padding: 1ch 2ch;
+        cursor: pointer;
+      }
+
+      [has-centering-styles] {
+        border: 2px solid hotpink;
+      }
+
+      .gentle-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1ch;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="gentle-flex" has-centering-styles style="inline-size: 30ch; block-size: 15ch;">
+      <h1>Gentle Flex</h1>
+    </article>
+    <footer>
+      <button onclick="addEl()">Add element</button>
+      <div>Resize ⤴</div>
+    </footer>
+
+    <script>
+      const examples = ['Sibling', 'Sibling with a long name', 'Maybe a whole paragraph of content, you never know!', 'Short']
+      let position = 0
+
+      function addEl() {
+        let newNode = document.createElement('h1')
+        newNode.textContent = examples[position++] || 'Sibling'
+
+        document.querySelector('article').appendChild(newNode)
+      }
+    </script>
+  </body>
+</html>

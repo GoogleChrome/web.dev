@@ -1,0 +1,56 @@
+---
+patternId: components/game-menu
+---
+
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Audiowide&display=swap);body{perspective:40vw}.threeD-button-set{--distance:1px;--theme:hsl(180 100% 50%);--theme-bg:hsl(180 100% 50% / 25%);--theme-bg-hover:hsl(180 100% 50% / 40%);--theme-text:white;--theme-shadow:hsl(180 100% 10% / 25%);--_max-rotateY:10deg;--_max-rotateX:15deg;--_btn-bg:var(--theme-bg);--_btn-bg-hover:var(--theme-bg-hover);--_btn-text:var(--theme-text);--_btn-text-shadow:var(--theme-shadow);--_bounce-ease:cubic-bezier(.5, 1.75, .75, 1.25);margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:2.5vh;transform-style:preserve-3d;transform:rotateY(clamp(calc(var(--_max-rotateY) * -1),var(--y),var(--_max-rotateY))) rotateX(clamp(calc(var(--_max-rotateX) * -1),var(--x),var(--_max-rotateX)))}.threeD-button-set:focus{outline:0}@media (prefers-reduced-motion:no-preference){.threeD-button-set{will-change:transform;transition:transform .1s ease;-webkit-animation:rotate-y 5s ease-in-out infinite;animation:rotate-y 5s ease-in-out infinite}}@media (prefers-color-scheme:dark){.threeD-button-set{--theme:hsl(255 53% 50%);--theme-bg:hsl(255 53% 71% / 25%);--theme-bg-hover:hsl(255 53% 50% / 40%);--theme-shadow:hsl(255 53% 10% / 25%)}}@media (dynamic-range:high){@supports (color:color(display-p3 0 0 0)){.threeD-button-set{--theme:color(display-p3 .4 0 .9)}}}.threeD-button-set>li{display:inline-flex;position:relative;transform-style:preserve-3d}.threeD-button-set button{-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:0;border:none;-webkit-tap-highlight-color:transparent;background-color:var(--_btn-bg);color:var(--_btn-text);text-shadow:0 1px 1px var(--_btn-text-shadow);font-size:min(5vmin,3rem);font-family:Audiowide;padding-block:.75ch;padding-inline:2ch;border-radius:5px 20px;transform:translateZ(var(--distance));transform-style:preserve-3d}.threeD-button-set button:is(:hover,:focus-visible):not(:active){--distance:15px;background-color:var(--_btn-bg-hover)}@media (prefers-reduced-motion:no-preference){.threeD-button-set button:is(:hover,:focus-visible):not(:active){--distance:3vmax;transition-timing-function:var(--_bounce-ease);transition-duration:.4s}.threeD-button-set button:is(:hover,:focus-visible):not(:active)::after{transition-duration:.5s}.threeD-button-set button:is(:hover,:focus-visible):not(:active)::before{transition-duration:.3s}}.threeD-button-set button::after,.threeD-button-set button::before{content:'';opacity:.8;position:absolute;inset:0;border:1px solid var(--theme);border-radius:5px 20px;transform:translateZ(calc(var(--distance)/ 3))}@media (prefers-reduced-motion:no-preference){.threeD-button-set button::after,.threeD-button-set button::before{transition:transform .1s ease-out}}.threeD-button-set button::before{border-width:3px;transform:translateZ(calc(var(--distance)/ 3 * -1))}@media (prefers-color-scheme:dark){.threeD-button-set button::before{box-shadow:0 0 25px var(--theme),inset 0 0 25px var(--theme)}}@media (prefers-reduced-motion:no-preference){.threeD-button-set button{will-change:transform;transition:transform .2s ease,background-color .5s ease}}@-webkit-keyframes rotate-y{50%{transform:rotateY(15deg) rotateX(-6deg)}}@keyframes rotate-y{50%{transform:rotateY(15deg) rotateX(-6deg)}}*{box-sizing:border-box;margin:0}html{block-size:100%;background:conic-gradient(at -10%,at 50%,#ff1493,#0ff);background:conic-gradient(at -10% 50%,#ff1493,#0ff)}@media (prefers-color-scheme:dark){html{background:conic-gradient(at -10%,at 50%,#212529,50%,#495057,#212529);background:conic-gradient(at -10% 50%,#212529,50%,#495057,#212529)}}body{min-block-size:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;display:grid;align-content:center;justify-content:center;place-content:center}.github-corner{fill:indigo;color:#fff}.github-corner:hover .octo-arm{-webkit-animation:octocat-wave 560ms ease-in-out;animation:octocat-wave 560ms ease-in-out}@-webkit-keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
+    </style>
+  </head>
+  <body>
+    <ul class="threeD-button-set">
+      <li><button>New Game</button></li>
+      <li><button>Continue</button></li>
+      <li><button>Online</button></li>
+      <li><button>Settings</button></li>
+      <li><button>Quit</button></li>
+    </ul>
+
+    <script type="module">
+      import {rovingIndex} from 'https://cdn.skypack.dev/roving-ux'
+
+      const menu = document.querySelector('.threeD-button-set')
+      const menuRect = menu.getBoundingClientRect()
+
+      const { matches:motionOK } = window.matchMedia(
+        '(prefers-reduced-motion: no-preference)'
+      )
+
+      rovingIndex({
+        element: document.querySelector('.threeD-button-set'),
+        target: 'button',
+      })
+
+      if (motionOK) {
+        window.addEventListener('mousemove', ({target, clientX, clientY}) => {
+          const {dx,dy} = getAngles(clientX, clientY)
+
+          menu.style.setProperty('--x', `${dy / 20}deg`)
+          menu.style.setProperty('--y', `${dx / 20}deg`)
+        })
+      }
+
+      const getAngles = (clientX, clientY) => {
+        const { x, y, width, height } = menuRect
+
+        const dx = clientX - (x + 0.5 * width)
+        const dy = clientY - (y + 0.5 * height)
+
+        return {dx,dy}
+      }
+    </script>
+  </body>
+</html>

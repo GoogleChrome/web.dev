@@ -1,0 +1,99 @@
+---
+patternId: theming/theme-switch
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <style>
+      @import"https://unpkg.com/open-props/easings.min.css";.sun-and-moon>:is(.moon,.sun,.sun-beams){transform-origin:center center}.sun-and-moon>:is(.moon,.sun){fill:var(--icon-fill)}.theme-toggle:is(:hover,:focus-visible)>.sun-and-moon>:is(.moon,.sun){fill:var(--icon-fill-hover)}.sun-and-moon>.sun-beams{stroke:var(--icon-fill);stroke-width:2px}.theme-toggle:is(:hover,:focus-visible) .sun-and-moon>.sun-beams{stroke:var(--icon-fill-hover)}[data-theme=dark] .sun-and-moon>.sun{transform:scale(1.75)}[data-theme=dark] .sun-and-moon>.sun-beams{opacity:0}[data-theme=dark] .sun-and-moon>.moon>circle{transform:translate(-7px)}@supports (cx: 1){[data-theme=dark] .sun-and-moon>.moon>circle{transform:translate(0);cx:17}}@media (prefers-reduced-motion: no-preference){.sun-and-moon>.sun{transition:transform .5s var(--ease-elastic-3)}.sun-and-moon>.sun-beams{transition:transform .5s var(--ease-elastic-4),opacity .5s var(--ease-3)}.sun-and-moon .moon>circle{transition:transform .25s var(--ease-out-5)}@supports (cx: 1){.sun-and-moon .moon>circle{transition:cx .25s var(--ease-out-5)}}[data-theme=dark] .sun-and-moon>.sun{transform:scale(1.75);transition-timing-function:var(--ease-3);transition-duration:.25s}[data-theme=dark] .sun-and-moon>.sun-beams{transform:rotate(-25deg);transition-duration:.15s}[data-theme=dark] .sun-and-moon>.moon>circle{transition-delay:.25s;transition-duration:.5s}}.theme-toggle{--size: 2rem;--icon-fill: hsl(210 10% 30%);--icon-fill-hover: hsl(210 10% 15%);background:none;border:none;padding:0;inline-size:var(--size);block-size:var(--size);aspect-ratio:1;border-radius:50%;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;outline-offset:5px}.theme-toggle>svg{inline-size:100%;block-size:100%;stroke-linecap:round}[data-theme=dark] .theme-toggle{--icon-fill: hsl(210 10% 70%);--icon-fill-hover: hsl(210 15% 90%) }@media (hover: none){.theme-toggle{--size: 48px }}*{box-sizing:border-box;margin:0}html{block-size:100%;color-scheme:light}html[data-theme=dark]{color-scheme:dark}@supports not (color-scheme: dark){html[data-theme=dark]{background:#111}}body{min-block-size:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;display:grid;align-content:center;justify-content:center;place-content:center}.github-corner{fill:#ff69b4;color:Canvas}.github-corner:hover .octo-arm{-webkit-animation:octocat-wave .56s ease-in-out;animation:octocat-wave .56s ease-in-out}[data-theme=dark] .github-corner{fill:indigo}@-webkit-keyframes octocat-wave{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@keyframes octocat-wave{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
+    </style>
+    <script>
+      const storageKey = 'theme-preference'
+
+      const onClick = () => {
+        // flip current value
+        theme.value = theme.value === 'light'
+          ? 'dark'
+          : 'light'
+
+        setPreference()
+      }
+
+      const getColorPreference = () => {
+        if (localStorage.getItem(storageKey))
+          return localStorage.getItem(storageKey)
+        else
+          return window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+      }
+
+      const setPreference = () => {
+        localStorage.setItem(storageKey, theme.value)
+        reflectPreference()
+      }
+
+      const reflectPreference = () => {
+        document.firstElementChild
+          .setAttribute('data-theme', theme.value)
+
+        document
+          .querySelector('#theme-toggle')
+          ?.setAttribute('aria-label', theme.value)
+      }
+
+      const theme = {
+        value: getColorPreference(),
+      }
+
+      // set early so no page flashes / CSS is made aware
+      reflectPreference()
+
+      window.onload = () => {
+        // set on load so screen readers can see latest value on the button
+        reflectPreference()
+
+        // now this script can find and listen for clicks on the control
+        document
+          .querySelector('#theme-toggle')
+          .addEventListener('click', onClick)
+      }
+
+      // sync with system changes
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', ({matches:isDark}) => {
+          theme.value = isDark ? 'dark' : 'light'
+          setPreference()
+        })
+    </script>
+  </head>
+  <body>
+    <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+      <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+        <mask class="moon" id="moon-mask">
+          <rect x="0" y="0" width="100%" height="100%" fill="white" />
+          <circle cx="24" cy="10" r="6" fill="black" />
+        </mask>
+        <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+        <g class="sun-beams" stroke="currentColor">
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+         </g>
+      </svg>
+    </button>
+
+    <script>
+      !function(e=".",t="__import__"){try{self[t]=new Function("u","return import(u)")}catch(r){const o=new URL(e,location),n=e=>{URL.revokeObjectURL(e.src),e.remove()};self[t]=e=>new Promise(((r,c)=>{const l=new URL(e,o);if(self[t].moduleMap[l])return r(self[t].moduleMap[l]);const s=new Blob([`import * as m from '${l}';`,`${t}.moduleMap['${l}']=m;`],{type:"text/javascript"}),a=Object.assign(document.createElement("script"),{type:"module",src:URL.createObjectURL(s),onerror(){c(new Error(`Failed to import: ${e}`)),n(a)},onload(){r(self[t].moduleMap[l]),n(a)}});document.head.appendChild(a)})),self[t].moduleMap={}}}("assets/");const e=(e,t)=>{const r=document.createElement("span");return r.textContent=e,r.style.setProperty("--index",t),r},{matches:t}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(t){document.querySelectorAll("[split-by]").forEach((t=>{const r=t.getAttribute("split-by");let o=null;var n;"letter"===r?(n=t.innerText,o=[...n].map(e)):"word"===r&&(o=(t=>t.split(" ").map(e))(t.innerText)),o&&t.firstChild.replaceWith(...o)}))}
+    </script>
+  </body>
+</html>

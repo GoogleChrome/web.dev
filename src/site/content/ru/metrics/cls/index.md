@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-07-18
 description: В этой статье описывается метрика CLS (Совокупное смещение макета) и объясняются принципы ее измерения
 tags:
   - performance
@@ -161,7 +161,7 @@ CLS можно измерить в [лабораторных](/user-centric-perf
 
 ### Инструменты для измерения в полевых условиях
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (отчет Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -219,7 +219,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-Этот код показывает основной способ вычисления и регистрации CLS. Однако точно измерить CLS таким образом, чтобы метрика соответствовала измерениям в [отчете Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX), довольно сложно. Подробности см. ниже:
+Этот код показывает основной способ вычисления и регистрации CLS. Однако точно измерить CLS таким образом, чтобы метрика соответствовала измерениям в [отчете Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX), довольно сложно. Подробности см. ниже:
 
 {% endAside %}
 

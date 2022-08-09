@@ -868,6 +868,24 @@ new-to-the-web:
   description:
     en: A series of posts to keep you updated with what's landing in web browsers each month.
 
+newly-interoperable:
+  title:
+    en: Newly interoperable
+    es: Interoperable recientemente
+    ja: 新しく相互運用可能
+    ko: 새롭게 상호 운용 가능
+    pt: Recentemente interoperável
+    ru: Новый интероперабельный
+    zh: 新的互操作性
+  description:
+    en: Features that have recently become supported in all three engines.
+    es: Nuestras últimas noticias, actualizaciones e historias sobre funciones compatibles con todos los navegadores.
+    ja: クロスブラウザでサポートされている機能に関する最新のニュース、アップデート、ストーリー。
+    ko: 브라우저 간 지원되는 기능에 대한 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas notícias, atualizações e histórias mais recentes sobre recursos compatíveis com vários navegadores.
+    ru: Наши последние новости, обновления и истории о функциях, поддерживаемых в разных браузерах.
+    zh: 我们关于跨浏览器支持的功能的最新新闻、更新和故事。
+
 node:
   title:
     en: Node
@@ -1215,6 +1233,12 @@ tools:
     pt: Nossas últimas notícias, atualizações e histórias sobre ferramentas.
     ru: Последние новости и статьи об инструментах.
     zh: 我们关于工具的最新资讯、动态和故事。
+
+twitter-space:
+  title:
+    en: Space
+  description:
+    en: Page presenting a Twitter Space event.
 
 ux:
   title:

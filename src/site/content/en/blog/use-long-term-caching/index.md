@@ -617,6 +617,7 @@ module.exports = {
     })
   ]
 };
+```
 
 Feel free to play with the `minChunks` value to find the best one. Generally,
 you want to keep it small, but increase if the number of chunks grows. For

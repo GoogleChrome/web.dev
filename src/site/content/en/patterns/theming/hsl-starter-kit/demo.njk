@@ -1,0 +1,106 @@
+---
+patternId: theming/hsl-starter-kit
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <style>
+      :root {
+        color-scheme: dark light;
+
+        /* destructure brand channels */
+        --hue: 200; /* change me!! */
+        --saturation: 100%;
+        --lightness: 50%;
+
+        /* build colors with props */
+        --brand: hsl(
+          var(--hue)
+          var(--saturation)
+          var(--lightness)
+        );
+
+        /* very dark brand blue */
+        --text: hsl(
+          var(--hue)
+          var(--saturation)
+          10% /* lower is darker */
+        );
+
+        /* very bright brand white */
+        --surface: hsl(
+          var(--hue)
+          calc(var(--saturation) / 2)
+          95% /* higher is lighter */
+        );
+      }
+
+      h1 {
+        font-size: 10vmin;
+        font-weight: 300;
+      }
+
+      b {
+        color: hsl(
+          var(--hue)
+          var(--saturation)
+          30%
+        );
+      }
+
+      u {
+        text-decoration-color: var(--brand);
+      }
+
+      html {
+        block-size: 100%;
+        inline-size: 100%;
+      }
+
+      body {
+        color: var(--text);
+        background: var(--surface);
+        min-block-size: 100%;
+        min-inline-size: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        display: grid;
+        place-content: center;
+        font-family: system-ui, sans-serif;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        /* just tweak the lightness */
+        /* maybe desaturate too */
+
+        :root {
+          --text: hsl(
+            var(--hue)
+            calc(var(--saturation) / 2)
+            85%
+          );
+
+          --surface: hsl(
+            var(--hue)
+            var(--saturation)
+            5%
+          );
+        }
+
+        b {
+          color: hsl(
+            var(--hue)
+            var(--saturation)
+            75%
+          );
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1><b>HSL</b> is <u>awesome.</u></h1>
+  </body>
+</html>

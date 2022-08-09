@@ -184,7 +184,7 @@ method of the [Canvas API](https://developer.mozilla.org/docs/Web/API/Canvas_API
 ```js
 /**
  * Processing Layer - Frame Capture
- * https://developer.mozilla.org/docs/Web/API/Canvas_API/Manipulating_video_using_cacanvas
+ * https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas
  */
 async function captureFrames() {
   if (videoEle.readyState === videoEle.HAVE_ENOUGH_DATA) {

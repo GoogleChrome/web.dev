@@ -61,7 +61,7 @@ Chrome 92 以降、`SharedArrayBuffer` を使用する機能は、クロスオ�
     ```
 3. ヘッダーの伝播が開始されると、登録したエンドポイントが非推奨レポートの収集を開始します。
 
-こちらの実装例を参照してください： [https://first-party-test.glitch.me](https://first-party-test.glitch.me)。
+こちらの実装例を参照してください： [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me)。
 
 {% endDetails %}
 

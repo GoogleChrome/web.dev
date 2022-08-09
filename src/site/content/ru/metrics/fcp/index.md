@@ -4,7 +4,7 @@ title: Первая отрисовка контента (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-07-18
 description: В этой статье описывается метрика FCP (Первая отрисовка контента) и объясняются принципы ее измерения
 tags:
   - performance
@@ -39,7 +39,7 @@ FCP можно измерить в [лабораторных](/user-centric-perf
 ### Инструменты для измерения в полевых условиях
 
 - [PageSpeed Insights](https://pagespeed.web.dev/)
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [Search Console (отчет о скорости загрузки)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 

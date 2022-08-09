@@ -18,6 +18,7 @@ updated: 2022-05-09
 tags:
   - capabilities
   - progressive-web-apps
+  - case-study
   - blog
 ---
 

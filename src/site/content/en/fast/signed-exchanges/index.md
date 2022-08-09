@@ -8,7 +8,7 @@ authors:
   - katiehempenius
   - twifkak
 date: 2020-10-14
-updated: 2022-06-09
+updated: 2022-08-03
 hero: image/admin/6ll3P8MYWxvtb1ZjXIzb.jpg
 alt: A pile of envelopes.
 description: |
@@ -53,9 +53,9 @@ making content truly portable.
 
 An SXG is encapsulated in a [binary-encoded](https://cbor.io/) file that has two
 primary components: an HTTP exchange and a
-[signature](https://developer.mozilla.org/docs/Glossary/Signature/Security).
-The HTTP exchange consists of a request URL, content negotiation information,
-and an HTTP response.
+[signature](https://developer.mozilla.org/docs/Glossary/Signature/Security)
+that covers the exchange. The HTTP exchange consists of a request URL, content
+negotiation information, and an HTTP response.
 
 {% Details %}
 {% DetailsSummary %}
@@ -117,6 +117,13 @@ SXG may be valid for at most 7 days. Find more information on
 the signature header in the [Signed HTTP Exchanges
 spec](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#section-3.1).
 
+#### Support for server-side personalization
+
+An SXG containing a `Vary: Cookie` header will be shown only to users who don't
+have cookies for the signed request URL. If your site presents different HTML
+to its logged-in users, you can use this feature to take advantage of SXGs
+without altering that experience. See details on [server-side personalization
+with Dynamic SXG](/blog/sxg-desktop/#support-for-server-side-personalization).
 
 ### Web Packaging
 
@@ -153,6 +160,8 @@ Several global brands and sites have already benefited from Signed Exchanges. As
 - Narcity **improved LCP by 41%**
 - Paper Magazine noticed a **27% increase in Sessions per user** 
 - MLT Blog **decreased Page Load time by 21%**
+
+[Cloudflare found](https://blog.cloudflare.com/automatic-signed-exchanges-desktop-android/) that SXG **improved TTFB for 98% of sites** it tested, and **improved LCP for 85% of sites**, with a median improvement of over 20% in SXG-eligible page loads.
 
 {% Aside %}
 SXG enables [cross-origin prefetching](https://developer.chrome.com/blog/cross-origin-prefetch/) because it allows prefetch requests via an SXG cache server operated by the referrer, ensuring that the user's potentially identifying information is not revealed to the origin server until they navigate. This technique is available to any site that wishes to make its outlinks faster or more resilient to limited network access.

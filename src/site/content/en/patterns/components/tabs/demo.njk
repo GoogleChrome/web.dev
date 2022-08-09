@@ -1,0 +1,96 @@
+---
+patternId: components/tabs
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/blokk/blokk.css">
+    <style>
+      html {
+        color-scheme: light;
+        background: white;
+        color: black;
+      }
+      .device{display:flex;flex-direction:column;inline-size:300px;block-size:500px;border-radius:1ch;overflow:hidden;resize:both;border:1px solid #f2f2f2;box-shadow:0 2.9px 1.4px rgba(0,0,0,.018),0 6.8px 3.3px rgba(0,0,0,.026),0 12.3px 5.9px rgba(51,0,27,.032),0 20.4px 9.8px rgba(51,0,27,.038),0 33.6px 16.1px rgba(51,0,27,.044),0 58.7px 28.2px rgba(0,0,0,.052),0 127px 61px rgba(0,0,0,.07)}.device>nav{padding:1.5rem 1.5rem 1rem}.device>nav>svg{width:1.25rem}.device>.tabs{flex:1}snap-tabs{--hue:328deg;--accent:var(--hue) 100% 54%;--indicator-size:2px;--space-1:.5rem;--space-2:1rem;--space-3:1.5rem;display:flex;flex-direction:column;overflow:hidden;position:relative}snap-tabs a,snap-tabs article,snap-tabs header,snap-tabs nav,snap-tabs section{outline-color:hsl(var(--accent));outline-offset:-5px}.scroll-snap-x{overflow-x:auto;overflow-y:hidden;overflow:auto hidden;overscroll-behavior-x:contain;-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory}@media (prefers-reduced-motion:no-preference){.scroll-snap-x{scroll-behavior:smooth}}@media (hover:none){.scroll-snap-x{scrollbar-width:none}.scroll-snap-x::-webkit-scrollbar{width:0;height:0}}snap-tabs>header{--text-color:hsl(var(--hue) 5% 40%);--text-active-color:hsl(var(--hue) 20% 10%);flex-shrink:0;min-block-size:-webkit-fit-content;min-block-size:-moz-fit-content;min-block-size:fit-content;display:flex;flex-direction:column}snap-tabs>header>nav{display:flex}snap-tabs>header a{scroll-snap-align:start;display:inline-flex;align-items:center;white-space:nowrap;font-size:.8rem;color:var(--text-color);font-weight:700;text-decoration:none;padding:var(--space-2) var(--space-3)}snap-tabs>header a>svg{inline-size:1.5em;pointer-events:none}snap-tabs>header a:hover{background:hsl(var(--accent)/5%)}snap-tabs>header a:focus{outline-offset:-.5ch}snap-tabs>header>.snap-indicator{inline-size:0;block-size:var(--indicator-size);border-radius:var(--indicator-size);background:hsl(var(--accent))}snap-tabs>section{block-size:100%;display:grid;grid-auto-flow:column;grid-auto-columns:100%}snap-tabs>section>article{scroll-snap-align:start;overflow-y:auto;overscroll-behavior-y:contain;padding:var(--space-2) var(--space-3)}@media (prefers-reduced-motion:reduce){snap-tabs>header a{-webkit-border-after:var(--indicator-size) solid hsl(var(--accent)/0%);border-block-end:var(--indicator-size) solid hsl(var(--accent)/0%);transition:color .7s ease,border-color .5s ease}snap-tabs>header a:active,snap-tabs>header a:target,snap-tabs>header a[active]{color:var(--text-active-color);border-block-end-color:hsl(var(--accent))}snap-tabs .snap-indicator{visibility:hidden}}html{block-size:100%;inline-size:100%}body{min-block-size:100%;min-inline-size:100%;margin:0;box-sizing:border-box;display:grid;align-content:center;justify-content:center;place-content:center;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}p{max-inline-size:35ch;margin-block:.5ch}p+p{-webkit-margin-before:1rem;margin-block-start:1rem}h2{font-size:2.5rem;-webkit-margin-after:.5rem;margin-block-end:.5rem;line-height:1}h2:first-of-type{-webkit-margin-before:0;margin-block-start:0}article{box-sizing:border-box;font-family:Blokk;font-size:1.25rem;line-height:1;color:#333}.github-corner{fill:#ccc;color:#fff}.github-corner:hover .octo-arm{-webkit-animation:octocat-wave .56s ease-in-out;animation:octocat-wave .56s ease-in-out}@-webkit-keyframes octocat-wave{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@keyframes octocat-wave{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
+    </style>
+  </head>
+  <body>
+     <div class="device">
+      <nav>
+        <svg fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </nav>
+      <snap-tabs>
+        <header class="scroll-snap-x">
+          <nav>
+            <a active href="#responsive">Responsive</a>
+            <a href="#accessible">Accessible</a>
+            <a href="#overscroll">Horizontal Overscroll Ready</a>
+            <a href="#more">
+              <svg fill="currentColor" viewBox="0 0 20 20" role="presentation" focusable="false">
+                <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+            </a>
+          </nav>
+          <span class="snap-indicator"></span>
+        </header>
+        <section class="scroll-snap-x">
+          <article id="responsive">
+            <h2>Sit dolor</h2>
+            <p>Lorem ipsum dolor sit amet consectet adipisicing elit</p>
+            <h2>Lore sf</h2>
+            <p>Lorem ipsum dolor sit amet consectet adipisicing elit</p>
+            <p>Sit molestiae itaque rem optio molestias voluptati obcaecati!</p>
+            <p>Ipsum, a? Tenetur aut a nisi, aspernatur earum eligendi id quam nihil sint quas?</p>
+            <p>nisi, aspernatur earum eligendi id quam nihil sint quas?</p>
+            <p>Sit molestiae itaque rem optio molestias voluptati obcaecati!</p>
+            <p>Ipsum, a? Tenetur aut a nisi, aspernatur earum eligendi id quam nihil sint quas?</p>
+            <p>nisi, aspernatur earum eligendi id quam nihil sint quas?</p>
+          </article>
+          <article id="accessible">
+            <h2>Tenetur</h2>
+            <p>Lorem ipsum dolor sit amet consectet adipisicing elit. Sit molestiae itaque rem optio molestias voluptati obcaecati!</p>
+            <h2>Tenet urs</h2>
+            <p>Ipsum, a? Tenetur aut a nisi, aspernatur earum eligendi id quam nihil sint quas?</p>
+            <p>nisi, aspernatur earum eligendi id quam nihil sint quas?</p>
+            <h2>Lore s sdf</h2>
+            <p>Lorem ipsum dolor sit amet consectet adipisicing elit</p>
+            <p>Sit molestiae itaque rem optio molestias voluptati obcaecati!</p>
+            <p>Ipsum, a? Tenetur aut a nisi, aspernatur earum eligendi id quam nihil sint quas?</p>
+            <p>nisi, aspernatur earum eligendi id quam nihil sint quas?</p>
+          </article>
+          <article id="overscroll">
+            <h2>Lorems dolor</h2>
+            <p>Lorem ipsum dolor sit amet consectet adipisicing elit</p>
+            <p>Sit molestiae itaque rem optio molestias voluptati obcaecati!</p>
+            <p>nisi, aspernatur earum eligendi id quam nihil sint quas?</p><ul>
+              <li>Lorem</li>
+              <li>ipsum</li>
+              <li>dolor</li>
+            </ul>
+            <p>Sit molestiae itaque rem optio molestias voluptati obcaecati!</p>
+          </article>
+          <article id="more">
+            <h2>Lore s sdf</h2>
+            <ul>
+              <li>Lorem</li>
+              <li>ipsum</li>
+              <li>dolor</li>
+              <li>Lorem</li>
+              <li>ipsum</li>
+              <li>dolor</li>
+            </ul>
+            <p>Sit molestiae itaque rem optio molestias voluptati obcaecati!</p>
+          </article>
+        </section>
+      </snap-tabs>
+    </div>
+
+    <script>
+      function t(t){var n=Array.isArray(t)?e(t):void 0;if(n||(n="undefined"!=typeof Symbol&&Symbol.iterator in Object(t)?Array.from(t):void 0),!n)t:{if(t){if("string"==typeof t){n=e(t,void 0);break t}if("Object"===(n=Object.prototype.toString.call(t).slice(8,-1))&&t.constructor&&(n=t.constructor.name),"Map"===n||"Set"===n){n=Array.from(n);break t}if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)){n=e(t,void 0);break t}}n=void 0}if(!(t=n))throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");return t}function e(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,r=Array(e);n<e;n++)r[n]=t[n];return r}!function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}function e(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}function n(t){return(t=t.trim().match(/^(-?[0-9]*\.?[0-9]*)(px|%)$/))?{value:t[1],unit:t[2]}:null}function r(t){return t===document.scrollingElement?document:t}function o(t){var e=a.get(t).animations;if(0!==e.length){t=t.currentTime;for(var n=0;n<e.length;n++)null==t?"paused"===e[n].playState&&e[n].cancel():e[n].currentTime=t}}function i(t){return 1/0===t.iterationCount?1/0:Math.max((t.startDelay||0)+(t.duration||0)*(t.iterationCount||1)+(t.endDelay||0),0)}function l(t,e,r,o,i){return i?i(e,r,o,"0%"===t?"start":"end"):("block"===r?r="vertical":"inline"===r&&(r="horizontal"),e="vertical"===r?e.scrollHeight-e.clientHeight:e.scrollWidth-e.clientWidth,"%"===(t=n("auto"===o?t:o)).unit?parseFloat(t.value)*e/100:parseFloat(t.value))}var a=new WeakMap,c=[],s=function(){function t(t){a.set(this,{scrollSource:null,orientation:"block",startScrollOffset:"auto",endScrollOffset:"auto",timeRange:"auto",fill:"none",animations:[],animationOptions:[]}),this.scrollSource=t&&t.scrollSource||document.scrollingElement,this.orientation=t&&t.orientation||"block",this.startScrollOffset=t&&t.startScrollOffset||"auto",this.endScrollOffset=t&&t.endScrollOffset||"auto",this.timeRange=t&&t.timeRange||"auto",this.fill=t&&t.fill||"none"}return e(t,[{key:"scrollSource",set:function(t){var e=this;this.scrollSource&&r(this.scrollSource).removeEventListener("scroll",(function(){return o(e)})),t instanceof Element||(t=document.scrollingElement),a.get(this).scrollSource=t,r(t).addEventListener("scroll",(function(){return o(e)})),o(this)},get:function(){return a.get(this).scrollSource}},{key:"orientation",set:function(t){-1===["block","inline","horizontal","vertical"].indexOf(t)&&(t="block"),a.get(this).orientation=t,o(this)},get:function(){return a.get(this).orientation}},{key:"startScrollOffset",set:function(t){var e=a.get(this);e.startScrollOffsetFunction=null;for(var n=0;n<c.length;n++){var r=c[n].parse(t);if(void 0!==r){t=r,e.startScrollOffsetFunction=c[n].evaluate;break}}e.startScrollOffset=t,o(this)},get:function(){return a.get(this).startScrollOffset}},{key:"endScrollOffset",set:function(t){a.get(this).endScrollOffsetFunction=null;for(var e=0;e<c.length;e++){var n=c[e].parse(t);if(void 0!==n){t=n,a.get(this).endScrollOffsetFunction=c[e].evaluate;break}}a.get(this).endScrollOffset=t,o(this)},get:function(){return a.get(this).endScrollOffset}},{key:"timeRange",set:function(t){a.get(this).timeRange=t,o(this)},get:function(){return a.get(this).timeRange}},{key:"currentTime",get:function(){if(!this.scrollSource)return null;var t,e,n=l("0%",this.scrollSource,this.orientation,this.startScrollOffset,a.get(this).startScrollOffsetFunction),r=l("100%",this.scrollSource,this.orientation,this.endScrollOffset,a.get(this).endScrollOffsetFunction),o=this.timeRange;if("auto"===o){o=0;for(var c=a.get(this).animationOptions,s=0;s<c.length;s++)o=Math.max(o,i(c[s]));1/0===o&&(o=0)}return c=this.scrollSource.scrollTop,"inline"!==this.orientation&&"horizontal"!==this.orientation||(c=this.scrollSource.scrollLeft),c<n?"none"===this.fill||"forwards"===this.fill?null:0:c>=r?r<(t=this.scrollSource,"block"===(e=this.orientation)?e="vertical":"inline"===e&&(e="horizontal"),"vertical"===e?t.scrollHeight-t.clientHeight:"horizontal"===e?t.scrollWidth-t.clientWidth:void 0)&&("none"===this.fill||"backwards"===this.fill)?null:o:(c-n)/(r-n)*o}},{key:"__polyfill",get:function(){return!0}}]),t}(),u=new WeakMap,f=[[[0,1,2,3]],[[0,2],[1,3]],[[0],[1,3],[2]],[[0],[1],[2],[3]]],h=function(){function t(t){u.set(this,{target:null,edge:"start",threshold:0,rootMargin:[[0,"px"],[0,"px"],[0,"px"],[0,"px"]]}),this.target=t.target,this.edge=t.edge||"start",this.threshold=t.threshold||0,this.rootMargin=t.rootMargin||"0px 0px 0px 0px",this.clamp=t.clamp||!1}return e(t,[{key:"target",set:function(t){if(!(t instanceof Element))throw u.get(this).target=null,Error("Intersection target must be an element.");u.get(this).target=t},get:function(){return u.get(this).target}},{key:"edge",set:function(t){-1!=["start","end"].indexOf(t)&&(u.get(this).edge=t)},get:function(){return u.get(this).edge}},{key:"threshold",set:function(t){if(0>(t=parseFloat(t))||1<t)throw RangeError("threshold must be in the range [0, 1]");u.get(this).threshold=t},get:function(){return u.get(this).threshold}},{key:"rootMargin",set:function(t){if(1>(t=t.split(/ +/)).length||4<t.length)throw TypeError("rootMargin must contain between 1 and 4 length components");for(var e=[[],[],[],[]],r=0;r<t.length;r++){var o=n(t[r]);if(!o)throw TypeError("Unrecognized rootMargin length");for(var i=f[t.length-1][r],l=0;l<i.length;l++)e[i[l]]=[parseFloat(o.value),o.unit]}u.get(this).rootMargin=e},get:function(){return u.get(this).rootMargin.map((function(t){return t.join("")})).join(" ")}},{key:"clamp",set:function(t){u.get(this).clamp=!!t}}]),t}(),g=window.Element.prototype.animate;if(c.push({parse:function(t){if(t.target)return new h(t)},evaluate:function(t,e,n){"block"==e?e="vertical":"inline"==e&&(e="horizontal");for(var r,o=t==document.scrollingElement?{left:0,right:t.clientWidth,top:0,bottom:t.clientHeight,width:t.clientWidth,height:t.clientHeight}:t.getBoundingClientRect(),i=u.get(n).rootMargin,l=[],a=0;4>a;a++)l.push("%"==(r=i[a])[1]?r[0]*(0==a%2?o.height:o.width)/100:r[0]);i=o.left-l[3],r=o.right-o.left+l[3]+l[1],a=o.top-l[0],l=o.bottom-o.top+l[0]+l[2],o=u.get(n).clamp;var c=n.target.getBoundingClientRect(),s=n.threshold;return"start"==n.edge&&(s=1-s),"vertical"==e?(e=c.top+c.height*s-a+t.scrollTop,o?"end"==n.edge?Math.max(0,e-l):Math.min(e,t.scrollHeight-l):"end"==n.edge?e-l:e):(e=c.left+c.width*s-i+t.scrollLeft,o?"end"==n.edge?Math.max(0,e-r):Math.min(e,t.scrollWidth-r):"end"==n.edge?e-r:e)}}),!Reflect.defineProperty(window,"ScrollTimeline",{value:s}))throw Error("Error installing ScrollTimeline polyfill: could not attach ScrollTimeline to window");if(!Reflect.defineProperty(Element.prototype,"animate",{value:function(t,e){var n=e.timeline;if(!(n&&n instanceof s))return g.apply(this,[t,e]);delete e.timeline,(t=g.apply(this,[t,e])).pause();var r=a.get(n).animations,i=a.get(n).animationOptions;return r.push(t),i.push(e),o(n),t}}))throw Error("Error installing ScrollTimeline polyfill: could not attach WAAPI's animate to DOM Element")}();var n=window.matchMedia("(prefers-reduced-motion: no-preference)").matches,r=document.querySelector("snap-tabs"),o=r.querySelector(":scope > section"),i=r.querySelector(":scope nav"),l=i.querySelectorAll(":scope a"),a=r.querySelector(":scope .snap-indicator"),c=new ScrollTimeline({scrollSource:o,orientation:"inline",fill:"both"});function s(t){i.querySelector(":scope a[active]").removeAttribute("active"),t.setAttribute("active",""),t.scrollIntoView()}function u(){var t=l[o.scrollLeft/o.clientWidth];t&&s(t)}l.forEach((function(e){e.animate({color:t(l).map((function(t){return t===e?"var(--text-active-color)":"var(--text-color)"}))},{duration:1e3,fill:"both",timeline:c})})),n&&a.animate({transform:t(l).map((function(t){return"translateX(".concat(t.offsetLeft,"px)")})),width:t(l).map((function(t){return"".concat(t.offsetWidth,"px")}))},{duration:1e3,fill:"both",timeline:c}),i.addEventListener("click",(function(t){"A"===t.target.nodeName&&s(t.target)})),o.addEventListener("scroll",(function(){clearTimeout(o.scrollEndTimer),o.scrollEndTimer=setTimeout(u,100)})),window.onload=function(){location.hash&&(o.scrollLeft=document.querySelector(location.hash).offsetLeft),u()};
+    </script>
+  </body>
+</html>

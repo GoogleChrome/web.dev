@@ -295,7 +295,6 @@ class Search extends BaseStateElement {
 
   /**
    * Expand the search box.
-   * Only used on mobile viewports where we hide the search box behind an icon.
    */
   onOpenSearch() {
     this.expanded = true;
@@ -310,7 +309,6 @@ class Search extends BaseStateElement {
 
   /**
    * Collapse the search box.
-   * Only used on mobile viewports.
    */
   onCloseSearch() {
     this.expanded = false;

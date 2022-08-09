@@ -32,13 +32,13 @@ Lighthouse no evalúa la calidad de su descripción.
 Agregue un elemento `<meta name=description>` al `<head>` de cada una de sus páginas:
 
 ```html
-<meta name="descripción" content="Ponga su descripción aquí.">
+<meta name="description" content="Ponga su descripción aquí.">
 ```
 
 Si es apropiado, incluya datos claramente etiquetados en las descripciones. Por ejemplo:
 
 ```html
-<meta name="descripción" content="Autor: A.N. Autor,
+<meta name="description" content="Autor: A.N. Autor,
     Ilustrador: P. Imagen, Categoría: Libros, Precio: $17,99,
     Longitud: 784 páginas">
 ```
@@ -55,7 +55,7 @@ A continuación, se muestran ejemplos de descripciones buenas y malas:
 {% Compare 'worse' %}
 
 ```html
-<meta name="descripción" content="Una receta de donas.">
+<meta name="description" content="Una receta de donas.">
 ```
 
 {% CompareCaption %} Demasiado vago. {% endCompareCaption %} {% endCompare %}
@@ -64,7 +64,7 @@ A continuación, se muestran ejemplos de descripciones buenas y malas:
 
 ```html
 <meta
-  name="descripción"
+  name="description"
   content="La sencilla receta de Mary para las donas de tocino
            y arce es una golosina dulce y pegajosa con solo un
            toque de sal que siempre volverás a buscar.">

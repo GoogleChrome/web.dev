@@ -47,7 +47,7 @@ O Google acredita que as Core Web Vitals são essenciais para todas as experiên
 
 #### Ferramentas de campo para medir os Core Web Vitals
 
-O [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report) coleta dados anônimos de medição de usuários reais para cada Core Web Vital. Esses dados permitem que os proprietários de sites avaliem rapidamente seu desempenho sem a necessidade de instrumentar manualmente as análises nas suas páginas, além de servir a ferramentas como o [PageSpeed Insights](https://pagespeed.web.dev/) e o [relatório Core Web Vitals do](https://support.google.com/webmasters/answer/9205520) Console de Busca.
+O [Relatório de experiência do usuário Chrome](https://developer.chrome.com/docs/crux/) coleta dados anônimos de medição de usuários reais para cada Core Web Vital. Esses dados permitem que os proprietários de sites avaliem rapidamente seu desempenho sem a necessidade de instrumentar manualmente as análises nas suas páginas, além de servir a ferramentas como o [PageSpeed Insights](https://pagespeed.web.dev/) e o [relatório Core Web Vitals do](https://support.google.com/webmasters/answer/9205520) Console de Busca.
 
 <div class="table-wrapper">
   <table>
@@ -58,7 +58,7 @@ O [Relatório de experiência do usuário Chrome](https://developers.google.com/
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Relatório de experiência do usuário Chrome</a></td>
+      <td><a href="https://developer.chrome.com/docs/crux/">Relatório de experiência do usuário Chrome</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>

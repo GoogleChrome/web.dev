@@ -407,6 +407,6 @@ LCP を測定またはデバッグするためのツールは、以下のよう�
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools での LCP", width="800", height="509" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) は、オリジンレベルで集計された実際の環境での LCP 値を提供します。
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) は、オリジンレベルで集計された実際の環境での LCP 値を提供します。
 
 *レビューしていただいた Philip Walton、Katie Hempenius、Kayce Basques、Ilya Grigorik には、心より感謝申し上げます。*
