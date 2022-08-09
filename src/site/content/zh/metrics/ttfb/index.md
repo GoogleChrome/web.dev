@@ -40,7 +40,7 @@ TTFB 是下列请求节点的时间损耗汇总：
 
 ### 什么是好的 TTFB 分数?
 
-由于网络与后端服务的差异很大，因此不能对什么是“好的” TTFB 分数设定一个任意的数字。由于 TTFB 先于[以用户为中心的指标](/user-centric-performance-metrics/)，如[首次内容显示（FCP）](/fcp/)和[最大内容显示（LCP）](/lcp/)，因此建议您的服务器对请求的响应速度要足够快，以使 **P75** 的用户体验在[良好的 FCP 分数](/fcp/#what-is-a-good-fcp-score)。作为一个粗略的指导，大多数网站应努力使 TTFB 少于 **0.8秒** 。
+由于 TTFB 先于[以用户为中心的指标](/user-centric-performance-metrics/)，如[首次内容显示（FCP）](/fcp/)和[最大内容显示（LCP）](/lcp/)，因此建议您的服务器对请求的响应速度要足够快，以使 **P75** 的用户体验在[良好的 FCP 分数](/fcp/#what-is-a-good-fcp-score)。作为一个粗略的指导，大多数网站应努力使 TTFB 少于 **0.8秒** 。
 
 <figure>
   <picture>
