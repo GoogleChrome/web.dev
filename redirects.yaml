@@ -349,6 +349,16 @@ redirects:
   - source: /use-lazysizes-to-lazyload-images
     destination: /browser-level-image-lazy-loading/
 
-  # Redirects an old HTTP caching guide to Ilya and Jeff's version on the same topic.
+  # Redirects an old performance guides to more recent documentation
+  - source: /performance-get-started/
+    destination: /fast/
+  - source: /performance-get-started-graphicalcontent-4/
+    destination: /choose-the-right-image-format/
   - source: /performance-get-started-httpcaching-6/
     destination: /http-cache/
+  - source: /performance-get-started-httprequests-5/
+    destination: /optimizing-content-efficiency-eliminate-downloads/
+  - source: /performance-get-started-textcontent-3/
+    destination: /optimizing-content-efficiency-optimize-encoding-and-transfer/
+  - source: /performance-get-started-wrapup-7/
+    destination: /fast/
