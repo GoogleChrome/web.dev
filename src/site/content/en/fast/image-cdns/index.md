@@ -88,3 +88,13 @@ Third-party image CDNs provide image CDNs as a service. Just as cloud providers 
 There are many good options for image CDNs. Some will have more features than others, but all of them will probably help you save bytes on your images and therefore load your pages faster. Besides feature sets, other factors to consider when choosing an image CDN are cost, support, documentation, and ease of setup or migration.
 
 Trying them out yourself before making a decision can also be helpful. Below you can find codelabs with instructions on how to quickly get started with several image CDNs.
+
+## Effects on Largest Contentful Paint (LCP)
+
+Images are a vital part of the user experience on many websites, and thus factor into how well sites do when it comes to [Largest Contentful Paint](/lcp/). Here are a few things to keep in mind if you decide to use an image CDN:
+
+1. Images served from CDNs may come from a cross-origin server, which involves extra connection setup time. When possible, try to use an image CDN that proxies through the primary origin so that you're not adding extra origins for the browser to connect to. This has the same effect as self-hosting images on the primary origin.
+2. If proxying through your origin is not possible, [you should set up a connection to the cross-origin image CDN as early as possible](/preconnect-and-dns-prefetch/) to shorten the resource loading phase of what could be your page's LCP candidate image.
+3. Even better, consider using a [`rel=preload`](/uses-rel-preload/) hint for your LCP candidate image in combination with a [`fetchpriority` attribute value of `"high"`](/priority-hints/#summary) on the LCP image element so that the browser can begin loading that image as soon as possible.
+
+Image CDNs are indispensable tools that eliminate the toil of manually optimizing images, and should be considered. As always, though, there are trade-offs to consider, and keeping an eye on your website's LCP candidate images and adding hints as appropriate can mitigate any added latency to those key requests.
