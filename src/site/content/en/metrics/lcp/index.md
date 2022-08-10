@@ -191,6 +191,16 @@ what's visible to the user (which is especially true with scrolling).
 For analysis purposes, you should only report the most recently dispatched
 `PerformanceEntry` to your analytics service.
 
+{% Aside 'caution' %}
+  Since users can open pages in a background tab, it's possible that
+  `largest-contentful-paint` entries will not be dispatched until the user
+  focuses the tab, which can be much later than when they first loaded it.
+
+  Google tools that measure LCP do not report this metric if the page was
+  loaded in the background, as it does not reflect the user-perceived load time.
+{% endAside %}
+
+
 #### Load time vs. render time
 
 For security reasons, the render timestamp of images is not exposed for
