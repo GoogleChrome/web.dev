@@ -331,34 +331,6 @@ truncates longer descriptions
 right in your browser."
 ```
 
-#### `screenshots` {: #screenshots }
-
-The `screenshots` property is used with the description to show an installation
-prompt that contains more than just an application name and an installation
-button. It is an array of image objects representing your app in common usage
-scenarios. Each object must include the `src`, a `sizes` property, and the
-`type` of image. The `screenshots` property may contain no more than eight image
-objects.
-
-<figure>
-  {% Img src="image/xizoeLGxYNf3VLUHc5BsIoiE1Af1/SpStAtUk8Zp5iwi9yqKP.jpg", 
-alt="Richer Android installation prompt", width="342", height="722" %}
-  <figcaption>Richer Android installation prompt.</figcaption>
-</figure>
-
-In Chrome, the image must respond to certain criteria:
-
-* Width and height must be at least 320px and at most 3840px.
-* The maximum dimension can't be more than 2.3 times as long as the minimum
-  dimension.
-* All screenshots must have the same aspect ratio.
-* Only JPEG and PNG image formats are supported.
-
-{% Aside 'gotchas' %}
-The `description` and `screenshots` properties are currently used only in Chrome
-for Android when a user wants to install your app.
-{% endAside %}
-
 ## Add the web app manifest to your pages {: #link-manifest }
 
 After creating the manifest, add a `<link>` tag to all the pages of your
