@@ -91,7 +91,7 @@ patternId: layout/content-center
       <div>Resize ⤴</div>
     </footer>
 
-    <script>
+    {% set script %}
       const examples = ['Sibling', 'Sibling with a long name', 'Maybe a whole paragraph of content, you never know!', 'Short']
       let position = 0
 
@@ -101,6 +101,7 @@ patternId: layout/content-center
 
         document.querySelector('article').appendChild(newNode)
       }
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

@@ -19,7 +19,7 @@ patternId: components/game-menu
       <li><button>Quit</button></li>
     </ul>
 
-    <script type="module">
+    {% set script %}
       import {rovingIndex} from 'https://cdn.skypack.dev/roving-ux'
 
       const menu = document.querySelector('.threeD-button-set')
@@ -51,6 +51,7 @@ patternId: components/game-menu
 
         return {dx,dy}
       }
-    </script>
+    {% endset %}
+    <script type="module">{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>
