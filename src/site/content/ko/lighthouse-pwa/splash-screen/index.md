@@ -33,4 +33,4 @@ Android용 Chrome은 [웹 앱 매니페스트](/add-manifest)에서 다음 요�
 
 ## 리소스
 
-[**커스텀 스플래시 스크린에 대해 구성되지 않음** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/splash-screen.js)
+[**커스텀 스플래시 스크린에 대해 구성되지 않음** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/splash-screen.js)

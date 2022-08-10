@@ -44,5 +44,5 @@ Lighthouse помечает элементы формы, которым не с�
 
 ## Материалы
 
-- [Исходный код аудита **Элементам формы не сопоставлены ярлыки** (Form elements do not have associated labels)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js).
+- [Исходный код аудита **Элементам формы не сопоставлены ярлыки** (Form elements do not have associated labels)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/label.js).
 - [У элементов `<input>` форм должны быть ярлыки (Deque University)](https://dequeuniversity.com/rules/axe/3.3/label).

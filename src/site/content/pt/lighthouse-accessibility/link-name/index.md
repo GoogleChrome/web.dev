@@ -35,5 +35,5 @@ Saiba mais em [Rotule botões e links](/labels-and-text-alternatives#label-butto
 
 ## Recursos
 
-- [O código-fonte para **links não tem uma** auditoria de nome discernível](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
+- [O código-fonte para **links não tem uma** auditoria de nome discernível](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/link-name.js)
 - [Os links devem ter texto discernível (Deque University)](https://dequeuniversity.com/rules/axe/3.3/link-name)

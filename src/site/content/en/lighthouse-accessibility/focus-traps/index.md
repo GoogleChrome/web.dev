@@ -52,4 +52,4 @@ Learn more in [How to do an Accessibility Review](https://developers.google.com/
 
 ## Resources
 
-[Source code for **User focus is not accidentally trapped in a region** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/focus-traps.js)
+[Source code for **User focus is not accidentally trapped in a region** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/manual/focus-traps.js)

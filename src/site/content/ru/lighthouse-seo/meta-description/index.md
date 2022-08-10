@@ -77,6 +77,6 @@ Lighthouse не оценивает качество вашего описани�
 
 ## Ресурсы
 
-- [Исходный код для аудита «**У документа нет метаописания**»](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [Исходный код для аудита «**У документа нет метаописания**»](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [Как управлять ссылками-заголовками в результатах поиска](https://support.google.com/webmasters/answer/35624#1)
 - [Нерелевантные ключевые слова](https://support.google.com/webmasters/answer/66358)

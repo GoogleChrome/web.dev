@@ -82,7 +82,7 @@ should have a particularly big impact:
 
 ## Resources
 
-- [Source code for **Speed Index** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/speed-index.js)
+- [Source code for **Speed Index** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/speed-index.js)
 - [Lighthouse Scoring Guide](/performance-scoring)
 - [Speedline](https://github.com/paulirish/speedline)
 - [WebPagetest Speed Index](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/metrics/SpeedIndex.md)

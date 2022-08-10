@@ -72,4 +72,4 @@ Consulte la página de [Precargando archivos (Preloading Assets) de Tooling.Repo
 
 ## Recursos
 
-- [Código fuente para la auditoría de **Precargar consultas claves**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)
+- [Código fuente para la auditoría de **Precargar consultas claves**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/uses-rel-preload.js)

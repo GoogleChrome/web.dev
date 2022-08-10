@@ -33,7 +33,7 @@ Consulte [Atenha-se às propriedades somente do compositor e gerencie a contagem
 
 ## Recursos
 
-- [Código-fonte para a auditoria de *evitar animações não compostas*](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
+- [Código-fonte para a auditoria de *evitar animações não compostas*](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/non-composited-animations.js)
 - [Atenha-se às propriedades somente do compositor e gerencie a contagem de camadas](/stick-to-compositor-only-properties-and-manage-layer-count/)
 - [Animações de alto desempenho](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 - [Simplifique a complexidade da pintura e reduza as áreas de pintura](/simplify-paint-complexity-and-reduce-paint-areas/)

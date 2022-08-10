@@ -38,6 +38,6 @@ see [Setting up HTTP/2](https://dassur.ma/things/h2setup/).
 
 ## Resources
 
-- [Source code for **Does not use HTTP/2 for all of its resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
+- [Source code for **Does not use HTTP/2 for all of its resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-http2.js)
 - [Introduction to HTTP/2](/performance-http2/)
 - [HTTP/2 Frequently Asked Questions](https://http2.github.io/faq/)

@@ -54,5 +54,5 @@ web_lighthouse:
 
 ## 资源
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener"><strong>标题跳级</strong>审计的源代码</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener"><strong>标题跳级</strong>审计的源代码</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">标题级别应逐一增加 (Deque University)</a>

@@ -35,5 +35,5 @@ Check out <a href="…">our guide to creating accessible web pages</a>.
 
 ## 참고 자료
 
-- [**식별 가능한 이름이 없는 링크** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
+- [**식별 가능한 이름이 없는 링크** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/link-name.js)
 - [링크에는 식별 가능한 텍스트가 있어야 함(Deque University).](https://dequeuniversity.com/rules/axe/3.3/link-name)

@@ -43,7 +43,7 @@ updated: 2020-04-29
 
 ## 资源
 
-- [**显示纵横比不正确的图像**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
+- [**显示纵横比不正确的图像**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/image-aspect-ratio.js)
 - [CSS Aspect Ratio](https://www.npmjs.com/package/css-aspect-ratio)
 - [纵横比框](https://css-tricks.com/aspect-ratio-boxes/)
 - [以正确尺寸提供图像](/serve-images-with-correct-dimensions)

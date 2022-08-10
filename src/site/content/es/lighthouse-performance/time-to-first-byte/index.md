@@ -52,5 +52,5 @@ Tanto los temas, los complementos y las especificaciones del servidor contribuye
 
 ## Recursos
 
-- [Código fuente para la auditoría de **Reducción de los tiempos de respuesta del servidor (TTFB**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/server-response-time.js)
+- [Código fuente para la auditoría de **Reducción de los tiempos de respuesta del servidor (TTFB**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/server-response-time.js)
 - [Servicio adaptativo con API de Información de red](/adaptive-serving-based-on-network-quality)

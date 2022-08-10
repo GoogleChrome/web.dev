@@ -59,4 +59,4 @@ Considere mostrar trechos em suas listas de postagens (por exemplo, por meio da 
 
 ## Recursos
 
-[Código-fonte para auditoria **Evitar enormes cargas úteis de rede**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)
+[Código-fonte para auditoria **Evitar enormes cargas úteis de rede**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/total-byte-weight.js)

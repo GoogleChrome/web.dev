@@ -76,6 +76,6 @@ Lighthouseは記述の質を評価しません。
 
 ## リソース
 
-- [**ドキュメントにメタ記述がない**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [**ドキュメントにメタ記述がない**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [検索結果で適切なタイトルとスニペットを作成する](https://support.google.com/webmasters/answer/35624#1)
 - [無関係なキーワード](https://support.google.com/webmasters/answer/66358)

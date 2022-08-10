@@ -33,5 +33,5 @@ Haga clic en los enlaces de la columna **Versión de la biblioteca** de su infor
 
 ## Recursos
 
-- [Código fuente para la auditoría **Incluye bibliotecas JavaScript de front-end con** con vulnerabilidades de seguridad conocidas](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [Código fuente para la auditoría **Incluye bibliotecas JavaScript de front-end con** con vulnerabilidades de seguridad conocidas](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [Base de datos de vulnerabilidades Snyk](https://snyk.io/vuln?packageManager=all)

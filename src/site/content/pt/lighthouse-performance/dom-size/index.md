@@ -63,5 +63,5 @@ Se você estiver renderizando listas grandes, use a [rolagem virtual](/virtualiz
 
 ## Recursos
 
-- [Código-fonte da auditoria **Evitar tamanho excessivo do DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [Código-fonte da auditoria **Evitar tamanho excessivo do DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
 - [Reduza o escopo e a complexidade dos cálculos de estilo](/reduce-the-scope-and-complexity-of-style-calculations/)

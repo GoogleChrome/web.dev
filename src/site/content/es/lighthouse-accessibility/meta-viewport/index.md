@@ -29,5 +29,5 @@ Elimine el parámetro `user-scalable="no"` de la metaetiqueta de la ventana grá
 
 ## Recursos
 
-- [El código fuente de la auditoría **`[user-scalable="no"]` se usa en el elemento `<meta name="viewport">` o el atributo `[maximum-scale]` es menor que 5**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
+- [El código fuente de la auditoría **`[user-scalable="no"]` se usa en el elemento `<meta name="viewport">` o el atributo `[maximum-scale]` es menor que 5**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/meta-viewport.js)
 - [El zoom y el escalado no deben estar deshabilitados (Universidad de Deque)](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)

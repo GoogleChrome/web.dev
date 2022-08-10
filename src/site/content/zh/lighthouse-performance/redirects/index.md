@@ -39,6 +39,6 @@ Location: /path/to/new/location
 
 ## 资源
 
-- [**避免多个页面重定向**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
+- [**避免多个页面重定向**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js)
 - [HTTP 中的重定向](https://developer.mozilla.org/docs/Web/HTTP/Redirections)
 - [避免登陆页面重定向](https://developers.google.com/speed/docs/insights/AvoidRedirects)

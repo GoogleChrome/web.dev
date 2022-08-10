@@ -48,7 +48,7 @@ See [Stick to compositor-only properties and manage layer count][compositor] and
 
 ## Resources
 
-+ [Source code for the *Avoid non-composited animations* audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
++ [Source code for the *Avoid non-composited animations* audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/non-composited-animations.js)
 + [Stick to compositor-only properties and manage layer count][compositor]
 + [High-performance animations][animations]
 + [Simplify paint complexity and reduce paint areas][paint]

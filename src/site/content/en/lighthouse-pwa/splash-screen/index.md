@@ -50,4 +50,4 @@ for a discussion about the pros and cons of different approaches.
 
 ## Resources
 
-[Source code for **Is not configured for a custom splash screen** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/splash-screen.js)
+[Source code for **Is not configured for a custom splash screen** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/splash-screen.js)

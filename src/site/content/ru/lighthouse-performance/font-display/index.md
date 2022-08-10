@@ -67,7 +67,7 @@ web_lighthouse:
 
 ## Ресурсы
 
-- [Исходный код проверки **Ensure text remains visible during webfont** (Убедитесь, что текст остается видимым во время загрузки веб-шрифтов)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/font-display.js).
+- [Исходный код проверки **Ensure text remains visible during webfont** (Убедитесь, что текст остается видимым во время загрузки веб-шрифтов)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/font-display.js).
 - [Избегайте невидимого текста во время загрузки шрифта](/avoid-invisible-text).
 - [Управление производительностью шрифтов с помощью отображения шрифтов](https://developers.google.com/web/updates/2016/02/font-display).
 - [Предварительная загрузка веб-шрифтов для повышения скорости загрузки (codelab)](/codelab-preload-web-fonts/).

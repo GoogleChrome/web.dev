@@ -121,7 +121,7 @@ Por ejemplo, este cuadro de búsqueda personalizado se refiere al `searchLabel` 
 
 ## Recursos
 
-- [Código fuente para la auditoría **No todos los campos de alternancia ARIA tienen de nombres accesibles**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js)
+- [Código fuente para la auditoría **No todos los campos de alternancia ARIA tienen de nombres accesibles**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-toggle-field-name.js)
 - [Los elementos <code>button</code>, <code>link</code>, <code>menuitem</code> deben tener nombres accesibles (Universidad Deque)](https://dequeuniversity.com/rules/axe/4.1/aria-command-name)
 - [Los elementos <code>aria-input-field-name</code> deben tener nombres accesibles (Universidad Deque)](https://dequeuniversity.com/rules/axe/4.1/aria-input-field-name)
 - [El elemento <code>aria-meter-name</code> debe tener un nombre accesible (Universidad Deque)](https://dequeuniversity.com/rules/axe/4.1/aria-meter-name)

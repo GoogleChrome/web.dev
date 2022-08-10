@@ -75,6 +75,6 @@ Learn more in [How to do an Accessibility Review](https://developers.google.com/
 
 ## Resources
 
-- [Source code for **Interactive controls are keyboard focusable** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/focusable-controls.js)
+- [Source code for **Interactive controls are keyboard focusable** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/manual/focusable-controls.js)
 - [Some elements have a `[tabindex]` value greater than `0`](/tabindex)
 - [Use semantic HTML for easy keyboard wins](/use-semantic-html)

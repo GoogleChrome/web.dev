@@ -71,4 +71,4 @@ remove the entire event listener.
 
 ## Resources
 
-[Source code for **Prevents users from pasting into password fields** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)
+[Source code for **Prevents users from pasting into password fields** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)

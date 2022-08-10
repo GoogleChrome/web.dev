@@ -51,6 +51,6 @@ Lighthouseレポートで識別された各リンクに`rel="noopener"`または
 
 ## リソース
 
-- [**安全でないクロスオリジン宛先へのリンク**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+- [**安全でないクロスオリジン宛先へのリンク**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [クロスオリジンリソースを安全に共有する](/cross-origin-resource-sharing/)
 - [ウェブ開発者向けのサイト分離](https://developers.google.com/web/updates/2018/07/site-isolation)
