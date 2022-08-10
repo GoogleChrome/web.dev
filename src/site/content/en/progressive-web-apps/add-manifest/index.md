@@ -80,18 +80,6 @@ A typical manifest looks something like this:
     }
   ],
   "description": "Weather forecast information",
-  "screenshots": [
-    {
-      "src": "/images/screenshot1.png",
-      "type": "image/png",
-      "sizes": "540x720"
-    },
-    {
-      "src": "/images/screenshot2.jpg",
-      "type": "image/jpg",
-      "sizes": "540x720"
-    }
-  ]
 }
 ```
 
@@ -320,16 +308,7 @@ is a dictionary that contains at least a `name` and a `url`.
 
 #### `description` {: #description }
 
-The `description` property describes the purpose of your app. Descriptions are
-optional; however, only seven lines of text are allowed. That works out to
-roughly 324 characters. After that an ellipse appears and 
-truncates longer descriptions 
-([for example](https://glitch.com/edit/#!/richerinstall-longer-description)). 
-
- ```json
-"description": "Compress and compare images with different codecs 
-right in your browser."
-```
+The `description` property describes the purpose of your app. 
 
 ## Add the web app manifest to your pages {: #link-manifest }
 
