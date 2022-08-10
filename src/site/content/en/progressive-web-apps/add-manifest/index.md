@@ -320,13 +320,31 @@ is a dictionary that contains at least a `name` and a `url`.
 
 #### `description` {: #description }
 
-The `description` property describes the purpose of your app.
+The `description` property describes the purpose of your app. Descriptions are
+optional; however, only seven lines of text are allowed. That works out to
+roughly 324 characters. After that an ellipse appears and 
+truncates longer descriptions 
+([for example](https://glitch.com/edit/#!/richerinstall-longer-description)). 
+
+ ```json
+"description": "Compress and compare images with different codecs 
+right in your browser."
+```
 
 #### `screenshots` {: #screenshots }
 
-The `screenshots` property is an array of image objects representing your app
-in common usage scenarios. Each object must include the `src`, a `sizes`
-property, and the `type` of image.
+The `screenshots` property is used with the description to show an installation
+prompt that contains more than just an application name and an installation
+button. It is an array of image objects representing your app in common usage
+scenarios. Each object must include the `src`, a `sizes` property, and the
+`type` of image. The `screenshots` property may contain no more than eight image
+objects.
+
+<figure>
+  {% Img src="image/xizoeLGxYNf3VLUHc5BsIoiE1Af1/SpStAtUk8Zp5iwi9yqKP.jpg", 
+alt="Richer Android installation prompt", width="342", height="722" %}
+  <figcaption>Richer Android installation prompt.</figcaption>
+</figure>
 
 In Chrome, the image must respond to certain criteria:
 
