@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
-updated: 2022-04-29
+updated: 2022-08-10
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -18,9 +18,8 @@ tags:
   - capabilities
 ---
 
-{% Aside %} URL protocol handler registration for PWAs is part of the
-[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is currently in development. This post will
-be updated as the implementation progresses. {% endAside %}
+{% Aside 'success' %} URL protocol handler registration for PWAs is part of the
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is shipped. {% endAside %}
 
 ## Background on schemes (aka. protocols)
 
@@ -158,7 +157,6 @@ are two cases:
 
 You can see a demo of URL protocol handler registration for PWAs on Glitch.
 
-1. If you have not done so before, [enable the flag](#enabling-via-chrome:flags).
 1. Go to [https://protocol-handler.glitch.me/](https://protocol-handler.glitch.me/), install the
    PWA, and reload the app after the installation. The browser has now registered the PWA as a
    handler for the `web+coffee` protocol with the operating system.
