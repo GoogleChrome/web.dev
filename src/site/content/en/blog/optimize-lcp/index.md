@@ -5,7 +5,7 @@ subhead: |
 authors:
   - philipwalton
 date: 2020-05-05
-updated: 2022-05-11
+updated: 2022-08-10
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
@@ -218,7 +218,7 @@ In some cases, the LCP resource is discoverable from the HTML markup, but it _st
 
 For example, you can deprioritize your LCP image via HTML if you set [`loading="lazy"`](/browser-level-image-lazy-loading/) on your `<img>` element. The reduced priority means that the resource may begin loading later than it otherwise would.
 
-Beyond avoiding patterns such as specifying `loading="lazy"` on your LCP image, you can hint to the browser as to which resources are most important via the <code>[fetchpriority](/priority-hints/)</code> attribute for resources that could benefit from a higher priority:
+Beyond avoiding patterns such as specifying `loading="lazy"` on your LCP image, you can hint to the browser as to which resources are most important via the [`fetchpriority`](/priority-hints/) attribute for resources that could benefit from a higher priority:
 
 ```html
 <img fetchpriority="high" src="/path/to/hero-image.webp">
@@ -253,6 +253,7 @@ The primary reason the LCP element _wouldn't_ be able to render immediately afte
 - Rendering of the entire page is blocked due to stylesheets or synchronous scripts in the `<head>` that are still loading.
 - The LCP resource has finished loading, but the LCP element has not yet been added to the DOM (it's waiting for some JavaScript code to load).
 - The element is being hidden by some other code, such as an A/B testing library that's still determining what experiment the user should be in.
+- The main thread is blocked due to [long tasks](/long-tasks-devtools/#what-are-long-tasks), and rendering work needs to wait until those long tasks complete.
 
 The following sections explain how to address the most common causes of unnecessary element render delay.
 
@@ -315,12 +316,21 @@ The main downside of SSR is it requires additional server processing time, which
 
 A similar option to SSR is called static site generation (SSG) or [prerendering](/rendering-on-the-web/#terminology). This is the process of generating your HTML pages in a build step rather than on-demand. If prerendering is possible with your architecture, it's generally a better choice for performance.
 
+#### Break up long tasks
+
+Even if you've followed the above advice, and your JavaScript code is not render-blocking nor is it responsible for rendering your elements, it can still delay LCP.
+
+The most common reason this happens is when pages load large JavaScript files, which need to be parsed and executed on the browser's main thread. This means that, even if your image resource is fully downloaded, it may still have to wait until an unrelated script finishes executing before it can render.
+
+All browsers today render images on the main thread, which means anything that blocks the main thread can also lead to unnecessary _element render delay_.
+
 ### 3. Reduce _resource load time_
 
 The goal of this step is to reduce the time spent transferring the bytes of the resource over the network to the user's device. In general, there are three ways to do that:
 
 - Reduce the size of the resource.
 - Reduce the distance the resource has to travel.
+- Reduce contention for network bandwidth.
 - Eliminate the network time entirely.
 
 #### Reduce the size of the resource
@@ -341,6 +351,14 @@ In fact, [image CDNs](/image-cdns/) in particular are a great choice because the
 {% Aside 'important' %}
 While image CDNs are a great way to reduce resource load times, using a third-party domain to host your images comes with an additional connection cost. While preconnecting to the origin can mitigate some of this cost, the best option is to serve images from the same origin as your HTML document. Many CDNs allow you to proxy requests from your origin to theirs, which is a great option to look into if available.
 {% endAside %}
+
+#### Reduce contention for network bandwidth
+
+Even if you've reduced the size of your resource and the distance it has to travel, a resource can still take a long time to load if you're loading many other resources at the same time. This problem is know as _network contention_.
+
+If you've given your resource a [high `fetchpriority`](/priority-hints/) and [started loading it as soon as possible](#1.-eliminate-resource-load-delay) then the browser will do its best to prevent lower-priority resources from competing with the LCP resource. However, if you're loading many resources with high `fetchpriority`, or if you're just loading a lot of resources, then there's only so much the browser can do.
+
+In general, you only want to give a high `fetchpriority` to resources that are needed for the initial render (like stylesheets) or the one or two resources most likely to be your LCP resource.
 
 #### Eliminate the network time entirely
 
