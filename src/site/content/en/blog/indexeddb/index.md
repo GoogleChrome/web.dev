@@ -33,11 +33,11 @@ all, but different browsers handle limits and data eviction differently. See the
 
 ## IndexedDB terms {: #terms }
 
-**[Database](https://developer.mozilla.org/docs/Web/API/IDBDatabase):** This is the highest level of
+**[Database](https://developer.mozilla.org/docs/Web/API/IDBDatabase):** The highest level of
 IndexedDB. It contains the object stores, which in turn contain the data you would like to persist.
 You can create multiple databases with whatever names you choose.
 
-**[Object store](https://developer.mozilla.org/docs/Web/API/IDBObjectStore):** An object store is an
+**[Object store](https://developer.mozilla.org/docs/Web/API/IDBObjectStore):** An
 individual bucket to store data. You can think of object stores as being similar to tables in
 traditional relational databases. Typically, there is one object store for each _type_ (not
 JavaScript data type) of data you are storing. For example, given an app that persists blog posts
@@ -46,7 +46,7 @@ actual JavaScript data types of data within the store do not need to be consiste
 there are three people in the `people` object store, their age properties could be `53`,
 `'twenty-five'`, and `unknown` ).
 
-**[Index](https://developer.mozilla.org/docs/Web/API/IDBIndex):** An Index is a kind of object store
+**[Index](https://developer.mozilla.org/docs/Web/API/IDBIndex):** A kind of object store
 for organizing data in another object store (called the reference object store) by an individual
 property of the data. The index is used to retrieve records in the object store by this property.
 For example, if you're storing people, you may want to fetch them later by their name, age, or
@@ -54,15 +54,15 @@ favorite animal.
 
 **Operation:** An interaction with the database.
 
-**[Transaction](https://developer.mozilla.org/docs/Web/API/IDBTransaction):** A transaction is a
+**[Transaction](https://developer.mozilla.org/docs/Web/API/IDBTransaction):** A
 wrapper around an operation, or group of operations, that ensures database integrity. If one of the
-actions within a transaction fail, none of them are applied and the database returns to the state it
+actions within a transaction fails, none of them are applied and the database returns to the state it
 was in before the transaction began. All read or write operations in IndexedDB must be part of a
-transaction. This allows for atomic read-modify-write operations without worrying about other
+transaction. This allows for atomic read-modify-write operations without having to worry about other
 threads acting on the database at the same time.
 
 **[Cursor](https://developer.mozilla.org/docs/Web/API/IDBCursor):** A mechanism for iterating over
-multiple records in database.
+multiple records in a database.
 
 ## Checking for IndexedDB support {: #support }
 
@@ -91,7 +91,7 @@ idb.open(name, version, upgradeCallback);
 This method returns a promise that resolves to a database object. When using `idb.open`, you provide
 a name, version number, and an optional callback to set up the database.
 
-Here is an example of `idb.open` in context:
+Here is an example of `idb.open()` in context:
 
 ```js
 // Check for support.
@@ -105,7 +105,7 @@ const dbPromise = idb.open('test-db1', 1);
 
 You place the check for IndexedDB support at the top of the anonymous function. This exits out of
 the function if the browser doesn't support IndexedDB. Then you call `idb.open()` to open a database
-named `"test-db1"`. The optional callback function in this first example has been left out to keep
+named `"test-db1"`. In this example, the optional callback function has been left out to keep
 things simple.
 
 ## Working with object stores {: #stores }
@@ -119,7 +119,7 @@ containing `person` objects, and a `notes` object store. A well structured Index
 have one object store for each type of data that needs to be persisted.
 
 To ensure database integrity, object stores can only be created and removed in the callback function
-in `idb.open`. The callback receives an instance of `UpgradeDB`, a special object in the IDB
+in `idb.open()`. The callback receives an instance of `UpgradeDB`, a special object in the IDB
 Promised library that is used to create object stores. Call the
 [`createObjectStore()`](https://developer.mozilla.org/docs/Web/API/IDBDatabase/createObjectStore)
 method on `UpgradeDB` to create the object store:
@@ -288,7 +288,7 @@ All data operations in IndexedDB are carried out inside a transaction. Each oper
 4. Perform operation on object store
 
 A transaction can be thought of as a safe wrapper around an operation or group of operations. If one
-of the actions within a transaction fail, all of the actions are rolled back. Transactions are
+of the actions within a transaction fails, all of the actions are rolled back. Transactions are
 specific to one or more object stores, which you define when you open the transaction. They can be
 read-only or read and write. This signifies whether the operations inside the transaction read the
 data or make a change to the database.
@@ -340,7 +340,7 @@ dbPromise
   });
 ```
 
-First, you get the database object. You call `.then()` on `dbPromise`, which resolves to the
+First, you get the database object. You call `.then()` on `dbPromise`, which resolves with the
 database object, and pass this object to the callback function in `.then()`. Because `dbPromise`
 (from `idb.open()`) is a promise, you can safely assume that when `.then()` executes, the database
 is open and all object stores and indexes are ready for use.
@@ -470,7 +470,7 @@ So far you have only retrieved objects from the store one at a time. You can als
 the data (or a subset) from an object store or index using either the `getAll()` method or using
 cursors.
 
-### Using the `getAll()` method
+### Using the getAll() method
 
 The simplest way to retrieve all of the data is to call the `getAll()` method on the object store or
 index, like this:
@@ -681,7 +681,7 @@ const dbPromise = idb.open('test-db7', 2, function (upgradeDb) {
 ```
 
 In the example you have set the newest version of the database at 2. When this code first executes,
-since the database doesn't yet exist in the browser, `upgradeDb.oldVersion` is 0 and the `switch`
+and since the database doesn't yet exist in the browser, `upgradeDb.oldVersion` is 0 and the `switch`
 statement starts at `case 0`. In the example, this results in a `"store"` object store being added
 to the database. Usually, in `switch` statements, there is a `break` after each case, but this is
 deliberately not used here. This way, if the existing database is a few versions behind (or if it
@@ -744,8 +744,8 @@ is used to create the object stores and indexes. This is equivalent to the upgra
 `idb.open()` in the Promised library. In fact, if you look through the Promised library, you will
 find the upgrade callback is just a convenient wrapper for the `onupgradeneeded` event handler.
 
-Here's an example of the IndexedDB API. In this example you will open a database, add an object
-store, and add one item to the object store:
+Here's an example of the IndexedDB API. This example opens a database, adds an object
+store, and adds one item to the object store:
 
 ```js
 let db;
