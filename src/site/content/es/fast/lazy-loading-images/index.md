@@ -90,19 +90,7 @@ En el evento de `DOMContentLoaded` del documento, este script consulta al DOM to
 
 {% Glitch { id: 'lazy-intersection-observer', path: 'index.html', previewSize: 0 } %}
 
-Intersection Observer está disponible en todos los navegadores modernos. Por lo tanto, usarlo como polyfill para `loading="lazy"` garantizará que la carga diferida esté disponible para la mayoría de los visitantes. No se encuentra disponible para Internet Explorer. Si la compatibilidad con Internet Explorer es necesaria, sigue leyendo.
-
-### Usar controladores de eventos para la compatibilidad con Internet Explorer {: #images-inline-event-handlers }
-
-Si bien *deberías* de usar Intersection Observer para la carga diferida, los requisitos de tu aplicación pueden ser tales que la compatibilidad del navegador sea fundamental. [Puedes *usar* Intersección Observer con polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) (y esto sería más fácil), pero también pudieras hacer un fallback al código utilizando controladores de eventos de [`scroll`](https://developer.mozilla.org/docs/Web/Events/scroll), [`resize`](https://developer.mozilla.org/docs/Web/Events/resize), y posiblemente [`orientationchange`](https://developer.mozilla.org/docs/Web/Events/orientationchange) junto con  [`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect) para determinar si un elemento se encuentra en la ventana gráfica.
-
-Suponiendo el mismo patrón de marcado de antes, este ejemplo de Glitch usa `getBoundingClientRect` en un `scroll` para verificar si alguno de los `img.lazy` están en la ventana gráfica. Una llamada de `setTimeout` se usa para retrasar el procesamiento y una variable de `active` contiene el estado de procesamiento que se usa para limitar las llamadas a funciones. A medida que las imágenes se cargan de forma diferida, se eliminan de la matriz de elementos. Cuando la matriz de elementos alcanza un `length` de `0`, se elimina el código del controlador de eventos de desplazamiento.
-
-{% Glitch { id: 'lazy-loading-fallback', path: 'lazy.js', previewSize: 0 } %}
-
-Si bien este código funciona en prácticamente cualquier navegador, este tiene problemas en su potencial de rendimiento, ya que las llamadas repetidas de `setTimeout` pueden ser un desperdicio, incluso si el código dentro de ellas está limitado. En este ejemplo, se ejecuta una verificación cada 200 milisegundos en el desplazamiento del documento o en el cambio de tamaño de la ventana, independientemente de si hay una imagen en la ventana gráfica o no. Además, el tedioso trabajo de rastrear cuántos elementos quedan para cargar y desvincular el controlador de eventos de desplazamiento queda en manos del desarrollador. Puedes obtener más información sobre esta técnica en [La guía completa para la carga diferida de imágenes](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events).
-
-En pocas palabras: usa la carga diferida a nivel del navegador con una implementación de respaldo de Intersection Observer siempre que sea posible y solo usa controladores de eventos si la compatibilidad más amplia posible es un requisito indispensable de la aplicación.
+Intersection Observer está disponible en todos los navegadores modernos. Por lo tanto, usarlo como polyfill para `loading="lazy"` garantizará que la carga diferida esté disponible para la mayoría de los visitantes.
 
 ## Imágenes en CSS {: #images-css }
 
@@ -156,8 +144,6 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 {% Glitch { id: 'lazy-background', path: 'index.html', previewSize: 0 } %}
-
-Como se indicó anteriormente, si necesitas compatibilidad con Internet Explorer para la carga diferida de imágenes de fondo, deberás usar un polyfill con el código de Intersection Observer debido a la falta de compatibilidad en ese navegador.
 
 ## Bibliotecas de carga diferida {: #libraries }
 

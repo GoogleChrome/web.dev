@@ -90,19 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 {% Glitch { id: 'lazy-intersection-observer', path: 'index.html', previewSize: 0 } %}
 
-Intersection Observer는 모든 최신 브라우저에서 사용할 수 있습니다. 따라서 이를 `loading="lazy"`에 대한 폴리필로 사용하면 대부분의 방문자가 지연 로딩을 사용할 수 있습니다. Internet Explorer에서는 사용할 수 없습니다. Internet Explorer 지원이 중요한 경우 계속 읽으십시오.
-
-### Internet Explorer 지원용 이벤트 핸들러 사용 {: #images-inline-event-handlers }
-
-지연 로딩을 위해 Intersection Observer를 사용*해야* 하는 경우, 애플리케이션 요구 사항에서 브라우저 호환성이 매우 중요할 수 있습니다. [Intersection Observer 지원을 폴리필*할 수*있지만](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)(그리고 이러한 작업이 더 쉬울 수 있음) [`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/Events/orientationchange)와 함께 [`scroll`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect), [`resize`](https://developer.mozilla.org/docs/Web/Events/scroll) 및 가능한 경우 [`orientationchange`](https://developer.mozilla.org/docs/Web/Events/resize) 이벤트 핸들러를 사용하여 코드로 되돌아가 요소가 뷰포인트에 있는지 여부를 판단할 수 있습니다.
-
-이전과 동일한 마크업 패턴을 가정한 이 글리치 예에서는 `scroll` 이벤트 핸들러에서 `getBoundingClientRect`을 사용하여 `img.lazy` 요소가 뷰포트에 있는지 확인합니다. `setTimeout` 호출은 처리를 지연하는 데 사용되며 `active` 변수에는 함수 호출을 조절하는 데 사용되는 처리 상태가 포함됩니다. 이미지가 지연 로드되면 요소 배열에서 제거됩니다. 요소 배열이 `0`의 `length`에 도달하면 스크롤 이벤트 핸들러 코드가 제거됩니다.
-
-{% Glitch { id: 'lazy-loading-fallback', path: 'lazy.js', previewSize: 0 } %}
-
-이 코드는 대부분의 브라우저에서 작동하지만 반복적인 `setTimeout` 호출은 코드가 제한되더라도 낭비될 수 있다는 점에서 잠재적인 성능 문제가 있습니다. 이 예제에서는 뷰포트에 이미지가 있는지 여부에 관계없이 문서 스크롤 또는 창 크기 조정에 대해 200밀리초마다 검사가 실행됩니다. 또한 얼마나 많은 요소가 지연 로드되고 스크롤 이벤트 핸들러가 결합 해제되는지 추적하는 지루한 작업은 개발자의 몫입니다. 이 기법에 대한 자세한 내용은 [이미지 지연 로드에 대한 전체 가이드](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events)를 참조하십시오.
-
-요약: 가능하면 대체 Intersection Observer 구현과 함께 브라우저 수준의 지연 로딩을 사용하고 가능한 한 광범위한 호환성이 중요한 애플리케이션 요구 사항인 경우에만 이벤트 핸들러를 사용하십시오.
+Intersection Observer는 모든 최신 브라우저에서 사용할 수 있습니다. 따라서 이를 `loading="lazy"`에 대한 폴리필로 사용하면 대부분의 방문자가 지연 로딩을 사용할 수 있습니다.
 
 ## CSS의 이미지 {: #images-css }
 
@@ -156,8 +144,6 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 {% Glitch { id: 'lazy-background', path: 'index.html', previewSize: 0 } %}
-
-앞에서 설명한 것처럼 배경 이미지의 지연 로드에 대한 Internet Explorer 지원이 필요한 경우 해당 브라우저에서 지원되지 않기 때문에 Intersection Observer 코드를 폴리필해야 합니다.
 
 ## 지연 로딩 라이브러리 {: #libraries }
 

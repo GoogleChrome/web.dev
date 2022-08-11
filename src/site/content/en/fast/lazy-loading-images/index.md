@@ -5,7 +5,7 @@ authors:
   - jlwagner
   - rachelandrew
 date: 2019-08-16
-updated: 2020-06-09
+updated: 2022-08-11
 description: |
   This post explains lazy-loading and the options available to you when lazy-loading images.
 tags:
@@ -134,49 +134,6 @@ viewport.
 
 Intersection Observer is available in all modern browsers.
 Therefore using it as a polyfill for `loading="lazy"` will ensure that lazy-loading is available for most visitors.
-It is not available in Internet Explorer. If Internet Explorer support is critical, read on.
-
-### Using event handlers for Internet Explorer support {: #images-inline-event-handlers }
-
-While you _should_ use Intersection Observer for lazy-loading, your application
-requirements may be such that browser compatibility is critical. [You _can_
-polyfill Intersection Observer
-support](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) (and
-this would be easiest), but you could also fall back to code using
-[`scroll`](https://developer.mozilla.org/docs/Web/Events/scroll),
-[`resize`](https://developer.mozilla.org/docs/Web/Events/resize), and
-possibly
-[`orientationchange`](https://developer.mozilla.org/docs/Web/Events/orientationchange)
-event handlers in concert with
-[`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
-to determine whether an element is in the viewport.
-
-Assuming the same markup pattern from before,
-this Glitch example uses `getBoundingClientRect` in a `scroll` event handler to check if
-any of `img.lazy` elements are in the viewport. A `setTimeout` call is used to
-delay processing, and an `active` variable contains the processing state which
-is used to throttle function calls. As images are lazy-loaded, they're removed
-from the elements array. When the elements array reaches a `length` of `0`, the
-scroll event handler code is removed.
-
-{% Glitch {
-  id: 'lazy-loading-fallback',
-  path: 'lazy.js',
-  previewSize: 0
-} %}
-
-While this code works in pretty much any browser, it has potential performance
-issues in that repetitive `setTimeout` calls can be wasteful, even if the code
-within them is throttled. In this example, a check is being run every 200
-milliseconds on document scroll or window resize regardless of whether there's
-an image in the viewport or not. Plus, the tedious work of tracking how many
-elements are left to lazy-load and unbinding the scroll event handler are left
-to the developer. You can find out more about this technique in
- [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events).
-
-Simply put: Use browser-level lazy-loading with a fallback Intersection Observer implementation wherever possible, and only use event
-handlers if the widest possible compatibility is a critical application
-requirement.
 
 ## Images in CSS {: #images-css }
 
@@ -257,9 +214,6 @@ document.addEventListener("DOMContentLoaded", function() {
   path: 'index.html',
   previewSize: 0
 } %}
-
-As indicated earlier, if you need Internet Explorer support for lazy-loading of background images,
-you will need to polyfill the Intersection Observer code, due to lack of support in that browser.
 
 ## Lazy-loading libraries {: #libraries }
 

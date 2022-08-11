@@ -90,19 +90,7 @@ No `DOMContentLoaded` do documento, este script consulta o DOM para todos os `<i
 
 {% Glitch {id: 'lazy-intersection-observer', path: 'index.html', previewSize: 0}%}
 
-O Intersection Observer está disponível em todos os navegadores modernos. Portanto, usá-lo como um polyfill para o `loading="lazy"` garantirá que o carregamento lento esteja disponível para a maioria dos visitantes. Não está disponível no Internet Explorer. Se o suporte do Internet Explorer for essencial, continue lendo.
-
-### Usando manipuladores de eventos para suporte ao Internet Explorer {: #images-inline-event-handlers }
-
-Embora você *deva* usar o Intersection Observer para carregamento lento, os requisitos do seu aplicativo podem ser tais que a compatibilidade do navegador seja crítica. [Você *pode* usar polyfill no suporte do Intersection Observer](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) (e isso seria mais fácil), mas também pode voltar ao código usando os manipuladores de eventos [`scroll`](https://developer.mozilla.org/docs/Web/Events/scroll) , [`resize`](https://developer.mozilla.org/docs/Web/Events/resize) e, possivelmente [`orientationchange`](https://developer.mozilla.org/docs/Web/Events/orientationchange) [`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect) em conjunto com getBoundingClientRect para determinar se um elemento está na janela de visualização.
-
-Assumindo o mesmo padrão de marcação anterior, este exemplo de Glitch usa `getBoundingClientRect` em um `scroll` para verificar se algum dos `img.lazy` está na janela de visualização. Uma `setTimeout` é usada para atrasar o processamento e uma `active` contém o estado de processamento que é usado para controlar as chamadas de função. Como as imagens são carregadas lentamente, elas são removidas da matriz de elementos. Quando a matriz de elementos atinge o `length` `0`, o código do manipulador de eventos de rolagem é removido.
-
-{% Glitch {id: 'lazy-loading-fallback', caminho: 'lazy.js', previewSize: 0} %}
-
-Embora esse código funcione em praticamente qualquer navegador, ele tem problemas de desempenho em potencial, pois as `setTimeout` repetitivas podem ser um desperdício, mesmo se o código dentro delas for limitado. Neste exemplo, uma verificação está sendo executada a cada 200 milissegundos na rolagem do documento ou redimensionamento da janela, independentemente de haver uma imagem na janela de visualização ou não. Além disso, o trabalho tedioso de rastrear quantos elementos são deixados para o carregamento lento e desvincular o manipulador de eventos de rolagem é deixado para o desenvolvedor. Você pode descobrir mais sobre essa técnica no [Guia completo para imagens de carregamento lento](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events).
-
-Resumindo: use o carregamento lento no nível do navegador com uma implementação do Intersection Observer de fallback sempre que possível e apenas use manipuladores de eventos se a compatibilidade mais ampla possível for um requisito crítico do aplicativo.
+O Intersection Observer está disponível em todos os navegadores modernos. Portanto, usá-lo como um polyfill para o `loading="lazy"` garantirá que o carregamento lento esteja disponível para a maioria dos visitantes.
 
 ## Imagens em CSS {: #images-css }
 
@@ -156,8 +144,6 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 {% Glitch {id: 'lazy-background', caminho: 'index.html', previewSize: 0}%}
-
-Conforme indicado anteriormente, se você precisar de suporte do Internet Explorer para carregamento lento de imagens de fundo, precisará preencher o código do observador de intersecção devido à falta de suporte nesse navegador.
 
 ## Bibliotecas de carregamento lento {: #libraries }
 

@@ -88,19 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 {% Glitch { id: 'lazy-intersection-observer', path: 'index.html', previewSize: 0 } %}
 
-Intersection Observer 适用于所有现代浏览器。因此，将其用作 `loading="lazy"` 的 polyfill 将确保大多数访问者都可以使用延迟加载。但是它在 Internet Explorer 中不可用。如果对 Internet Explorer 的支持很重要，请继续阅读。
-
-### 使用 Internet Explorer 支持的事件处理程序 {: #images-inline-event-handlers }
-
-虽然您*应该*使用 Intersection Observer 进行延迟加载，但您的应用程序可能非常注重浏览器的兼容性。您[*可以*polyfill Intersection Observer 支持](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)（这是最简单的），但您也可以使用 [`scroll`](https://developer.mozilla.org/docs/Web/Events/scroll) 、[`resize`](https://developer.mozilla.org/docs/Web/Events/resize) 以及还有 [`orientationchange`](https://developer.mozilla.org/docs/Web/Events/orientationchange) 事件处理程序与 [`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect) 来回退代码，确定元素是否位于视区中。
-
-假设使用了与之前相同的标记模式，那么这个 Glitch 示例会在 `scroll` 事件处理程序中使用 `getBoundingClientRect`，来检查视区中是否存在任何 `img.lazy` 元素。并会调用 `setTimeout` 来进行延迟处理，以及一个包含用于限制函数调用的处理状态的 `active`变量。由于图像是延迟加载的，因此它们会从元素数组中删除。当元素数组的 `length` 为 `0` 时，将删除滚动事件处理程序代码。
-
-{% Glitch { id: 'lazy-loading-fallback', path: 'lazy.js', previewSize: 0 } %}
-
-虽然这段代码几乎适用于任何浏览器，但它存在潜在的性能问题，因为重复调用 `setTimeout` 可能会造成性能浪费，即使其中的代码受到了限制。在本例中，无论视区中是否有图像，都会每隔 200 毫秒对文档滚动或窗口大小调整运行一次检查。另外，跟踪有多少元素需要延迟加载以及取消绑定滚动事件处理程序的繁琐工作留给了开发人员。您可以在 [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events) 一文中查看关于此技术的更多信息。
-
-简而言之，请尽可能地使用浏览器级延迟加载加上回退 Intersection Observer 实现，并且仅需要兼容最多浏览器时才使用事件处理程序。
+Intersection Observer 适用于所有现代浏览器。因此，将其用作 `loading="lazy"` 的 polyfill 将确保大多数访问者都可以使用延迟加载。
 
 ## CSS 中的图像 {: #images-css }
 
@@ -154,8 +142,6 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 {% Glitch { id: 'lazy-background', path: 'index.html', previewSize: 0 } %}
-
-如前所述，如果您想让 Internet Explorer 支持延迟加载背景图像，那么需要填充 Intersection Observer 代码，因为该浏览器缺乏支持。
 
 ## 延迟加载库 {: #libraries }
 
