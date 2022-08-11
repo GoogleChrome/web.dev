@@ -33,36 +33,39 @@ all, but different browsers handle limits and data eviction differently. See the
 
 ## IndexedDB terms {: #terms }
 
-**[Database](https://developer.mozilla.org/docs/Web/API/IDBDatabase):** The highest level of
-IndexedDB. It contains the object stores, which in turn contain the data you would like to persist.
-You can create multiple databases with whatever names you choose.
+[Database](https://developer.mozilla.org/docs/Web/API/IDBDatabase)
+: The highest level of
+  IndexedDB. It contains the object stores, which in turn contain the data you would like to persist.
+  You can create multiple databases with whatever names you choose.
 
-**[Object store](https://developer.mozilla.org/docs/Web/API/IDBObjectStore):** An
-individual bucket to store data. You can think of object stores as being similar to tables in
-traditional relational databases. Typically, there is one object store for each _type_ (not
-JavaScript data type) of data you are storing. For example, given an app that persists blog posts
-and user profiles, you could imagine two object stores. Unlike tables in traditional databases, the
-actual JavaScript data types of data within the store do not need to be consistent (for example, if
-there are three people in the `people` object store, their age properties could be `53`,
-`'twenty-five'`, and `unknown` ).
+[Object store](https://developer.mozilla.org/docs/Web/API/IDBObjectStore)
+: An individual bucket to store data. You can think of object stores as being similar to tables in
+  traditional relational databases. Typically, there is one object store for each _type_ (not
+  JavaScript data type) of data you are storing. For example, given an app that persists blog posts
+  and user profiles, you could imagine two object stores. Unlike tables in traditional databases, the
+  actual JavaScript data types of data within the store do not need to be consistent (for example, if
+  there are three people in the `people` object store, their age properties could be `53`,
+  `'twenty-five'`, and `unknown` ).
 
-**[Index](https://developer.mozilla.org/docs/Web/API/IDBIndex):** A kind of object store
-for organizing data in another object store (called the reference object store) by an individual
-property of the data. The index is used to retrieve records in the object store by this property.
-For example, if you're storing people, you may want to fetch them later by their name, age, or
-favorite animal.
+[Index](https://developer.mozilla.org/docs/Web/API/IDBIndex)
+: A kind of object store
+  for organizing data in another object store (called the reference object store) by an individual
+  property of the data. The index is used to retrieve records in the object store by this property.
+  For example, if you're storing people, you may want to fetch them later by their name, age, or
+  favorite animal.
 
-**Operation:** An interaction with the database.
+Operation
+: An interaction with the database.
 
-**[Transaction](https://developer.mozilla.org/docs/Web/API/IDBTransaction):** A
-wrapper around an operation, or group of operations, that ensures database integrity. If one of the
-actions within a transaction fails, none of them are applied and the database returns to the state it
-was in before the transaction began. All read or write operations in IndexedDB must be part of a
-transaction. This allows for atomic read-modify-write operations without having to worry about other
-threads acting on the database at the same time.
+[Transaction](https://developer.mozilla.org/docs/Web/API/IDBTransaction)
+: A wrapper around an operation, or group of operations, that ensures database integrity. If one of the
+  actions within a transaction fails, none of them are applied and the database returns to the state it
+  was in before the transaction began. All read or write operations in IndexedDB must be part of a
+  transaction. This allows for atomic read-modify-write operations without having to worry about other
+  threads acting on the database at the same time.
 
-**[Cursor](https://developer.mozilla.org/docs/Web/API/IDBCursor):** A mechanism for iterating over
-multiple records in a database.
+[Cursor](https://developer.mozilla.org/docs/Web/API/IDBCursor)
+: A mechanism for iterating over multiple records in a database.
 
 ## Checking for IndexedDB support {: #support }
 
