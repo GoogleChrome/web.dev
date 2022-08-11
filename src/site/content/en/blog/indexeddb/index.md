@@ -573,9 +573,16 @@ in an object store by a property other than the primary key. You can create an i
 (which becomes the keypath for the index), specify a range on that property, and get the data within
 the range using the `getAll()` method or a cursor.
 
-You define the range using the `IDBKeyRange` object. This object has four methods that are used to
-define the limits of the range: `upperBound()`, `lowerBound()`, `bound()` (which means both), and
-`only()`. As expected, the `upperBound()` and `lowerBound()` methods specify the upper and lower
+You define the range using the `IDBKeyRange` object. This object has five methods that are used to
+define the limits of the range:
+
+- [`upperBound()`](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/upperBound)
+- [`lowerBound()`](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/lowerBound)
+- [`bound()`](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/bound) (which means both)
+- [`only()`](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/only)
+- [`includes()`](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/includes)
+
+As expected, the `upperBound()` and `lowerBound()` methods specify the upper and lower
 limits of the range.
 
 ```js
