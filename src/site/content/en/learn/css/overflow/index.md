@@ -120,7 +120,33 @@ Using the `overflow` property with a value other than `visible` creates a [block
 
 ## Scrolling and overflow
 
-Many of these `overflow` behaviors introduce a scrollbar, but there’s a few specific scroll behaviors and properties that can help you control scrolling on your overflow container.
+Many of these `overflow` behaviors introduce a scrollbar, but there’s a few specific scroll behaviors and properties that can help you control scrolling on your overflow container. 
+
+### Scrolling and accessibility
+
+It's important to make sure that the scrollable area can accept focus so that a keyboard user can tab to the box, then use the arrow keys to scroll. 
+
+To allow a scrolling box to accept focus add `tabindex="0"`, a name with the [`aria-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) attribute, and an appropriate `role` attribute. For example:
+
+```html
+<div tabindex="0" role="region" aria-labelledby="id-of-descriptive-text">
+    content
+</div>
+```
+
+CSS can then be used to indicate that the box has focus, using the `outline` property to give a visual clue that it will now be scrollable.
+
+In [Using CSS to Enforce Accessibility](https://adrianroselli.com/2021/06/using-css-to-enforce-accessibility.html) Adrian Roselli uses CSS as a way to enforce accessibility demonstrates how CSS can help prevent accessibility regressions. For example, to only turn on scrolling and add the focus indicator if the correct attributes are used. The following rules will only make the box scrollable if it has a `tabindex`, `aria-labelledby`, and `role` attribute.
+
+```css
+[role][aria-labelledby][tabindex] {
+  overflow: auto;
+}
+
+[role][aria-labelledby][tabindex]:focus {
+  outline: .1em solid blue;
+}
+```
 
 ### Scrollbar positioning within the box model
 
