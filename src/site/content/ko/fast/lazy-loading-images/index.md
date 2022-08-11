@@ -5,7 +5,7 @@ authors:
   - jlwagner
   - rachelandrew
 date: 2019-08-16
-updated: 2020-06-09
+updated: 2022-08-11
 description: |2-
 
   이 게시물에서는 지연 로딩과 이미지 지연 로딩 시 사용할 수 있는 옵션에 대해 설명합니다.
@@ -24,7 +24,6 @@ feedback:
 
 - [브라우저 수준 지연 로딩 사용](#images-inline-browser-level)
 - [Intersection Observer 사용](#images-inline-intersection-observer)
-- [스크롤 및 크기 조정 이벤트 핸들러 사용](#images-inline-event-handlers)
 
 ### 브라우저 수준 지연 로딩 사용 {: #images-inline-browser-level }
 
@@ -43,8 +42,6 @@ Chrome과 Firefox는 모두 `loading` 속성으로 지연 로딩을 지원합니
 `<img>` 요소의 지연 로딩을 폴리필하기 위해 JavaScript를 사용하여 해당 요소가 뷰포트에 있는지 확인합니다. 그렇다면 `src`(종종 `srcset`) 속성이 원하는 이미지 콘텐츠에 대한 URL로 채워집니다.
 
 이전에 지연 로딩 코드를 작성한 경우, `scroll` 또는 `resize`와 같은 이벤트 핸들러를 사용하여 작업을 완료했을 수 있습니다. 이 접근 방식은 여러 브라우저에서 가장 호환되지만 최신 브라우저는 [Intersection Observer API](https://developer.chrome.com/blog/intersectionobserver/)를 통해 요소 가시성을 확인하는 작업을 수행하는 더 성능적이고 효율적인 방법을 제공합니다.
-
-{% Aside %} Intersection Observer는 모든 브라우저, 특히 IE11 이하에서는 지원되지 않습니다. 브라우저 간 호환성이 중요한 경우 성능은 떨어지지만 호환성은 더 높은 스크롤 및 크기 조정 이벤트 핸들러를 사용하여 이미지를 지연 로드하는 방법을 보여주는 [다음 섹션](#images-inline-event-handlersy)을 읽으십시오. {% endAside %}
 
 Intersection Observer는 지루한 요소 가시성 감지 코드를 작성하는 대신 요소를 감시하기 위해 Observer를 등록하기만 하면 되기 때문에 다양한 이벤트 핸들러에 의존하는 코드보다 사용 및 읽기가 더 쉽습니다. 남은 일은 요소가 표시될 때 무엇을 할지 결정하는 것입니다. 지연 로드된 `<img>` 요소에 대해 다음과 같은 기본 마크업 패턴을 가정해 보겠습니다.
 
@@ -90,19 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 {% Glitch { id: 'lazy-intersection-observer', path: 'index.html', previewSize: 0 } %}
 
-Intersection Observer는 모든 최신 브라우저에서 사용할 수 있습니다. 따라서 이를 `loading="lazy"`에 대한 폴리필로 사용하면 대부분의 방문자가 지연 로딩을 사용할 수 있습니다. Internet Explorer에서는 사용할 수 없습니다. Internet Explorer 지원이 중요한 경우 계속 읽으십시오.
-
-### Internet Explorer 지원용 이벤트 핸들러 사용 {: #images-inline-event-handlers }
-
-지연 로딩을 위해 Intersection Observer를 사용*해야* 하는 경우, 애플리케이션 요구 사항에서 브라우저 호환성이 매우 중요할 수 있습니다. [Intersection Observer 지원을 폴리필*할 수*있지만](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)(그리고 이러한 작업이 더 쉬울 수 있음) [`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/Events/orientationchange)와 함께 [`scroll`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect), [`resize`](https://developer.mozilla.org/docs/Web/Events/scroll) 및 가능한 경우 [`orientationchange`](https://developer.mozilla.org/docs/Web/Events/resize) 이벤트 핸들러를 사용하여 코드로 되돌아가 요소가 뷰포인트에 있는지 여부를 판단할 수 있습니다.
-
-이전과 동일한 마크업 패턴을 가정한 이 글리치 예에서는 `scroll` 이벤트 핸들러에서 `getBoundingClientRect`을 사용하여 `img.lazy` 요소가 뷰포트에 있는지 확인합니다. `setTimeout` 호출은 처리를 지연하는 데 사용되며 `active` 변수에는 함수 호출을 조절하는 데 사용되는 처리 상태가 포함됩니다. 이미지가 지연 로드되면 요소 배열에서 제거됩니다. 요소 배열이 `0`의 `length`에 도달하면 스크롤 이벤트 핸들러 코드가 제거됩니다.
-
-{% Glitch { id: 'lazy-loading-fallback', path: 'lazy.js', previewSize: 0 } %}
-
-이 코드는 대부분의 브라우저에서 작동하지만 반복적인 `setTimeout` 호출은 코드가 제한되더라도 낭비될 수 있다는 점에서 잠재적인 성능 문제가 있습니다. 이 예제에서는 뷰포트에 이미지가 있는지 여부에 관계없이 문서 스크롤 또는 창 크기 조정에 대해 200밀리초마다 검사가 실행됩니다. 또한 얼마나 많은 요소가 지연 로드되고 스크롤 이벤트 핸들러가 결합 해제되는지 추적하는 지루한 작업은 개발자의 몫입니다. 이 기법에 대한 자세한 내용은 [이미지 지연 로드에 대한 전체 가이드](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events)를 참조하십시오.
-
-요약: 가능하면 대체 Intersection Observer 구현과 함께 브라우저 수준의 지연 로딩을 사용하고 가능한 한 광범위한 호환성이 중요한 애플리케이션 요구 사항인 경우에만 이벤트 핸들러를 사용하십시오.
+Intersection Observer는 모든 최신 브라우저에서 사용할 수 있습니다. 따라서 이를 `loading="lazy"`에 대한 폴리필로 사용하면 대부분의 방문자가 지연 로딩을 사용할 수 있습니다.
 
 ## CSS의 이미지 {: #images-css }
 
@@ -157,8 +142,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 {% Glitch { id: 'lazy-background', path: 'index.html', previewSize: 0 } %}
 
-앞에서 설명한 것처럼 배경 이미지의 지연 로드에 대한 Internet Explorer 지원이 필요한 경우 해당 브라우저에서 지원되지 않기 때문에 Intersection Observer 코드를 폴리필해야 합니다.
-
 ## 지연 로딩 라이브러리 {: #libraries }
 
 다음 라이브러리를 사용하여 이미지를 지연 로드할 수 있습니다.
@@ -166,5 +149,4 @@ document.addEventListener("DOMContentLoaded", function() {
 - [lazysizes](https://github.com/aFarkas/lazysizes)는 이미지와 iframe을 지연 로드하는 모든 기능을 갖춘 지연 로드 라이브러리입니다. 이것이 사용하는 패턴은 `lazyload` 클래스를 `<img>` 요소와 자동으로 결합하고 `src` 및/또는 `srcset` 속성으로 각각 스와핑되는 콘텐츠인 `data-src` 및/또는 `data-srcset` 속성으로 이미지 URL을 지정해야 한다는 점에서 여기에 제시된 코드 예제와 상당히 유사합니다. 이는 Intersection Observer(폴리필 가능)을 사용하며 [여러 플러그인](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo)으로 확장하여 비디오 지연 로드 같은 작업을 수행할 수 있습니다. [lazysizes 사용 방법에 대해 자세히 알아보세요](/use-lazysizes-to-lazyload-images/).
 - [Vanilla-lazyload](https://github.com/verlok/vanilla-lazyload)는 이미지, 배경 이미지, 비디오, iframe 및 스크립트를 지연 로드하는 가벼운 옵션입니다. 이는 Intersection Observer를 활용하고 반응형 이미지를 지원하며 브라우저 수준의 지연 로딩을 가능하게 합니다.
 - [lozad.js](https://github.com/ApoorvSaxena/lozad.js)는 Intersection Observer만 사용하는 또 다른 가벼운 옵션입니다. 따라서 고성능이지만 이전 브라우저에서 사용하려면 먼저 폴리필해야 합니다.
-- [yall.js](https://github.com/malchata/yall.js)는 Intersection Observer를 사용하고 이벤트 핸들러로 폴백하는 라이브러리입니다. IE11 및 주요 브라우저와 호환됩니다.
 - React 전용 지연 로딩 라이브러리가 필요한 경우 [react-lazyload](https://github.com/jasonslyvia/react-lazyload)를 고려하세요. 이는 Intersection Observer를 사용하지는 않지만, React로 애플리케이션을 개발하는 데 익숙한 사람들을 위해 이미지를 지연 로드하는 친숙한 방법을 *제공합니다*.
