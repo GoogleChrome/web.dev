@@ -136,7 +136,7 @@ To allow a scrolling box to accept focus add `tabindex="0"`, a name with the [`a
 
 CSS can then be used to indicate that the box has focus, using the `outline` property to give a visual clue that it will now be scrollable.
 
-In [Using CSS to Enforce Accessibility](https://adrianroselli.com/2021/06/using-css-to-enforce-accessibility.html) Adrian Roselli uses CSS as a way to enforce accessibility demonstrates how CSS can help prevent accessibility regressions. For example, to only turn on scrolling and add the focus indicator if the correct attributes are used. The following rules will only make the box scrollable if it has a `tabindex`, `aria-labelledby`, and `role` attribute.
+In [Using CSS to Enforce Accessibility](https://adrianroselli.com/2021/06/using-css-to-enforce-accessibility.html) Adrian Roselli demonstrates how CSS can help prevent accessibility regressions. For example, to only turn on scrolling and add the focus indicator if the correct attributes are used. The following rules will only make the box scrollable if it has a `tabindex`, `aria-labelledby`, and `role` attribute.
 
 ```css
 [role][aria-labelledby][tabindex] {
