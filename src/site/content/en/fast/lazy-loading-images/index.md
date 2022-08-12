@@ -209,7 +209,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ### Effects on Largest Contentful Paint (LCP)
 
+Lazy loading is a great optimization that reduces both overall data usage and network contention during startup by deferring the loading of images to when they're actually needed. This can improve startup time, and reduce processing on the main thread by reducing time needed for image decodes.
 
+However, lazy loading is a technique that can affect your website's [Largest Contentful Paint LCP](/lcp/) in a negative way if you're too eager with the technique. One thing you will want to avoid is lazy loading images that are in the viewport during startup.
+
+When using JavaScript-based lazy loaders, you will want to avoid lazy loading in-viewport images because these solutions often use a `data-src` or `data-srcset` attribute as a placeholder for `src` and `srcset` attributes. The problem here is that the loading of these images will be delayed because [the browser preload scanner can't find them during startup](/preload-scanner/#lazy-loading-with-javascript).
+
+Even using browser-level lazy loading to lazy load an in-viewport image can backfire. When `loading="lazy"` is applied to an in-viewport image, [that image's priority will be lowered](https://web.dev/optimize-lcp/#optimize-the-priority-the-resource-is-given), which can affect a page's LCP.
+
+_Never_ lazy load images that are visible in the viewport during startup. It's a pattern that will affect your site's LCP negatively, and therefore the user experience. If you need an image at startup, load it at startup as quickly as possible by not lazy loading it!
 
 ## Lazy-loading libraries {: #libraries }
 
