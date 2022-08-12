@@ -36,5 +36,6 @@ jobs:
 
       - name: Percy
         env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: npm run percy
