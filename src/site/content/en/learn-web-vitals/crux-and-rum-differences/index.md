@@ -12,6 +12,7 @@ date: 2022-08-11
 hero: image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/Q7jtkHwdv8dmhz1KhaiD.jpg
 alt: Runnings racing each other on a track
 tags:
+  - blog # blog is a required tag for the article to show up in the blog.
   - performance
   - web-vitals
   - chrome-ux-report
