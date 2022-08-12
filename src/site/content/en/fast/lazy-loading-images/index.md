@@ -207,9 +207,13 @@ document.addEventListener("DOMContentLoaded", function() {
   previewSize: 0
 } %}
 
+### Effects on Largest Contentful Paint (LCP)
+
+
+
 ## Lazy-loading libraries {: #libraries }
 
-The following libraries can be used to lazy-load images.
+You should use browser-level lazy loading whenever possible, but if you find yourself in a situation where that isn't an option&mdash;such as a significant group of users still reliant on older browsers&mdash;the following libraries can be used to lazy-load images:
 
 - [lazysizes](https://github.com/aFarkas/lazysizes) is a full-featured lazy
 loading library that lazy-loads images and iframes. The pattern it uses is quite
