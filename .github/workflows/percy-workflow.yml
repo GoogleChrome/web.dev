@@ -15,6 +15,7 @@ on:
       - '**.scss'
   pull_request:
     paths:
+      - '.github/workflows/percy-workflow.yml'
       - 'src/**.js'
       - 'shared/**.js'
       - '!src/site/_data/countries.js'
