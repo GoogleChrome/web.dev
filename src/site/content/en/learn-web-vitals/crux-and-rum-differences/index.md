@@ -113,7 +113,9 @@ RUM products often give a wider number of options of how to aggregate the metric
 
 The histogram data in CrUX includes all available data—not just 75th percentile—and shows the number of page views in each rating, but the aggregate score will be based on 75th percentile. This CrUX data is surfaced in tools like [PageSpeed Insights](https://pagespeed.web.dev/):
 
-{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oRCstCFf6JyiVlNuphuX.png", alt="PageSpeed Insights screenshot showing histograms of LCP rating page loads", width="632", height="428" %}
+<figure>
+  {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oRCstCFf6JyiVlNuphuX.png", alt="PageSpeed Insights screenshot showing histograms of LCP rating page loads", width="632", height="428" %}
+</figure>
 
 ### Differences in metrics
 
