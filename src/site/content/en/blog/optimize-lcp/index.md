@@ -199,7 +199,7 @@ Here are some examples where the LCP resource cannot be discovered from scanning
 
 In each of these cases, the browser needs to run the script or apply the stylesheet—which usually involves waiting for network requests to finish—before it can discover the LCP resource and could start loading it. This is never optimal.
 
-To eliminate unnecessary resource load delay, your LCP resource should _always_ be discoverable from the HTML source. In cases where the resource is only referenced from an external CSS or JavaScript file, then the LCP resource should be preloaded, with a high fetchpriorty; for example:
+To eliminate unnecessary resource load delay, your LCP resource should _always_ be discoverable from the HTML source. In cases where the resource is only referenced from an external CSS or JavaScript file, then the LCP resource should be preloaded, with a high fetchpriority (more on this in the [next section](#optimize-the-priority-the-resource-is-given)); for example:
 
 ```html
 <!-- Load the stylesheet that will reference the LCP image. -->
@@ -223,7 +223,7 @@ For example, you can delay your LCP image via HTML if you set [`loading="lazy"`]
 Never lazy-load your LCP image, as that will always lead to unnecessary resource load delay, and will have a negative impact on LCP.
 {% endAside %}
 
-Even without lazy loading, images are not loaded with the highest priority by browsers as they are not render-blocking resources. You can hint to the browser as to which resources are most important via the [`fetchpriority`](/priority-hints/) attribute for resources that could benefit from a higher priority:
+Even without lazy loading, images are not initially loaded with the highest priority by browsers as they are not render-blocking resources. You can hint to the browser as to which resources are most important via the [`fetchpriority`](/priority-hints/) attribute for resources that could benefit from a higher priority:
 
 ```html
 <img fetchpriority="high" src="/path/to/hero-image.webp">
