@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2022-04-21
+updated: 2022-08-12
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -250,6 +250,21 @@ while (true) {
   }
   // value is a string.
   console.log(value);
+}
+```
+
+To specify the buffer into which data is read instead of the stream allocating a buffer for each chunk, get a [ReadableStreamBYOBReader] by calling `port.readable.getReader({ mode: "byob" })` and read data into a new `ArrayBuffer`. Note that the Web Serial API supports "Bring Your Own Buffer" readers in Chrome 106 or later.
+
+```js
+try {
+  const reader = port.readable.getReader({ mode: "byob" });
+  let buffer = new ArrayBuffer(512);
+  // Call reader.read() to read data into the buffer...
+} catch (error) {
+  if (error instanceof TypeError) {
+    // BYOB readers are not supported.
+    // Fallback to port.readable.getReader()...
+  }
 }
 ```
 
@@ -633,6 +648,7 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Streams API concepts]: https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts
 [ReadableStream]: https://developer.mozilla.org/docs/Web/API/ReadableStream
 [WritableStream]: https://developer.mozilla.org/docs/Web/API/WritableStream
+[ReadableStreamBYOBReader]: https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader
 [unlocked]: https://streams.spec.whatwg.org/#lock
 [locked]: https://streams.spec.whatwg.org/#lock
 [output signals]: https://wicg.github.io/serial/#serialoutputsignals-dictionary
