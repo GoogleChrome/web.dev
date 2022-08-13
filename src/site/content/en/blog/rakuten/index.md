@@ -5,7 +5,7 @@ subhead: >
   By measuring real users' Web Vitals, Rakuten 24 also found that a good Largest Contentful Paint (LCP) can lead to a conversion rate increase of 61.13%.
 description: >
   By measuring real users' Web Vitals, Rakuten 24 also found that a good Largest Contentful Paint (LCP) can lead to a conversion rate increase of 61.13%.
-date: 2022-08-15
+date: 2022-08-19
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/uB1PUfGOXOhrqUBW3tfO.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/OLBDJ1YEaVWGkR5lqNyR.jpg
 alt: A banner image with the Rakuten 24 logo and branded artwork.
