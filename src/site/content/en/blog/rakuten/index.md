@@ -55,7 +55,7 @@ Being a relatively new and independent service, Rakuten 24 used their advantage 
 - Execute and load JavaScript on demand.
 - Identify slow JavaScript resources and optimize the loading process by using the async attribute on `<script>` tags and establishing early connections to important origins (Resource hints such as `dns-prefetch`, `preconnect`, and `preload`).
 - [Remove unused code](/remove-unused-code/), and [minify and compress code](/reduce-network-payloads-using-text-compression/).
-- Use a CDN.
+- [Use a CDN](/content-delivery-networks/).
 - [Control caching using Service Worker](/learn/pwa/caching/) with [Workbox](https://developer.chrome.com/docs/workbox/).
 
 #### Optimize images
