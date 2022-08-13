@@ -123,7 +123,7 @@ window.addEventListener(PerceptionToolkit.Events.PerceivedResults, onPerceivedRe
 
 Let's look at the event more closely. The event itself contains arrays of
 markers and targets that it has both found and lost. When targets are found in
-the world, the even fires and passes found objects in `event.found`. Similarly,
+the world, the event fires and passes found objects in `event.found`. Similarly,
 when targets pass from the camera view the event fires again, passing lost
 objects in `event.lost`. This helps account for hand and marker movements:
 cameras not held steadily enough, dropped markers, that kind of thing.
