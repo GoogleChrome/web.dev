@@ -5,7 +5,7 @@ subhead: >
   By measuring real users' Web Vitals, Rakuten 24 also found that a good Largest Contentful Paint (LCP) can lead to a conversion rate increase of 61.13%.
 description: >
   By measuring real users' Web Vitals, Rakuten 24 also found that a good Largest Contentful Paint (LCP) can lead to a conversion rate increase of 61.13%.
-date: 2022-08-15
+date: 2022-08-19
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/uB1PUfGOXOhrqUBW3tfO.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/OLBDJ1YEaVWGkR5lqNyR.jpg
 alt: A banner image with the Rakuten 24 logo and branded artwork.
@@ -51,7 +51,7 @@ Being a relatively new and independent service, Rakuten 24 used their advantage 
 - Execute and load JavaScript on demand.
 - Identify slow JavaScript resources and optimize the loading process by using the async attribute on `<script>` tags and establishing early connections to important origins (Resource hints such as `dns-prefetch`, `preconnect`, and `preload`).
 - [Remove unused code](/remove-unused-code/), and [minify and compress code](/reduce-network-payloads-using-text-compression/).
-- Use a CDN.
+- [Use a CDN](/content-delivery-networks/).
 - [Control caching using Service Worker](/learn/pwa/caching/) with [Workbox](https://developer.chrome.com/docs/workbox/).
 
 ## Optimize images
