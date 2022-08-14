@@ -5,7 +5,7 @@ authors:
   - jlwagner
   - rachelandrew
 date: 2019-08-16
-updated: 2020-06-05
+updated: 2022-08-15
 description: |
   This post explains lazy-loading and the options available to you when lazy-loading video.
 tags:
@@ -35,6 +35,10 @@ on the `<video>` element may be desirable:
 </video>
 ```
 
+{% Aside 'important' %}
+Video `poster` images may be considered [LCP candidates](/lcp/#what-elements-are-considered). If you decide to lazy load a video's `poster` image, make sure you're not lazy loading them with a JavaScript-based solution (such as [yall.js mentioned below](#libraries)) if they're in the viewport during startup. This is because the [browser preload scanner](/preload-scanner/#lazy-loading-with-javascript) can't discover them as soon as possible, as they will rely on [a data attribute](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes).
+{% endAside %}
+
 The example above uses a `preload` attribute with a value of `none` to prevent browsers
 from preloading _any_ video data. The `poster`
 attribute gives the `<video>` element a placeholder that will occupy the space while the video loads. The reason for this is
@@ -42,8 +46,7 @@ that default behaviors for loading video can vary from browser to browser:
 
 - In Chrome, the default for `preload` used to be `auto`, but as of Chrome 64, it now
 defaults to `metadata`. Even so, on the desktop version of Chrome, a portion of
-the video may be preloaded using the `Content-Range` header. Firefox, Edge and
-Internet Explorer 11 behave similarly.
+the video may be preloaded using the `Content-Range` header. Other Chromium-derived browsers and Edge behave similarly.
 - As with Chrome on desktop, 11.0 desktop versions of Safari will preload a range
 of the video.
 From version 11.2, only the video metadata is preloaded. [In Safari on iOS, videos are never
@@ -155,8 +158,7 @@ The following libraries can help you to lazy-load video:
 that use Intersection Observer only. As such, they are highly performant, but
 will need to be polyfilled before you can use them on older browsers.
 - [yall.js](https://github.com/malchata/yall.js) is a library that uses
-Intersection Observer and falls back to event handlers. It's compatible with IE11
-and major browsers.
+Intersection Observer and falls back to event handlers. It can also lazy load video `poster` images using a `data-poster` attribute.
 - If you need a React-specific lazy-loading library, you might consider
 [react-lazyload](https://github.com/jasonslyvia/react-lazyload). While it
 doesn't use Intersection Observer, it _does_ provide a familiar method of lazy
