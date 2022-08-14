@@ -43,11 +43,7 @@ Being a relatively new and independent service, Rakuten 24 used their advantage 
   </figcaption>
 </figure>
 
-## The approach they used
-
-### Web performance optimization
-
-#### Optimize JavaScript and resources
+## Optimize JavaScript and resources
 
 - Eliminate render-blocking resources.
 - Split code and use [dynamic `import()`](https://v8.dev/features/dynamic-import).
@@ -58,19 +54,17 @@ Being a relatively new and independent service, Rakuten 24 used their advantage 
 - Use a CDN.
 - [Control caching using Service Worker](/learn/pwa/caching/) with [Workbox](https://developer.chrome.com/docs/workbox/).
 
-#### Optimize images
+## Optimize images
 
 - [Lazy load below-the-fold images](/lazy-loading-images/).
 - [Optimize images with a CDN](/image-cdns/), deliver properly sized images, compress images, and adopt the right image formats for the job (WebP, SVG, Web Fonts).
 
-#### Optimize CLS
+## Optimize CLS
 
 - Use CSS [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) to reserve the required space for images while the images are loading.
 - Use CSS [`min-height`](https://developer.mozilla.org/docs/Web/CSS/min-height) to minimize layout shifts while elements are lazy loaded.
 
-### Performance measuring, analyzing, and monitoring
-
-#### Measuring
+## Performance measuring, analyzing, and monitoring
 
 Besides using [PageSpeed Insights](https://pagespeed.web.dev/) to audit their website, the team wanted to find a better way to know what the users are actually experiencing in the field. Therefore, Rakuten 24 decided to use the [web-vitals JavaScript library](https://github.com/GoogleChrome/web-vitals) to measure Core Web Vitals and other metrics in the field and send the data to inhouse analytics tool.
 
@@ -78,7 +72,7 @@ Besides using [PageSpeed Insights](https://pagespeed.web.dev/) to audit their we
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/o5Nd3IV6Yof3mfr3tVH3.jpg", alt="Rakuten 24's web vitals tracking integration flow. The first step is to integrate the web-vitals library by adding the script to the Rakuten 24 website. After that, web vitals can be measured from real user metrics, and the data is sent to Rakuten 24's in-house data collection tool.", width="800", height="495" %}
 </figure>
 
-#### Analyzing
+## Analyzing
 
 The team analyzed the collected field data to determine if there is any correlation between the Core Web Vitals and the key business metrics. They found out that the converted users tend to experience a better LCP than the users who didn’t convert.
 
@@ -119,7 +113,7 @@ The collected data also revealed that:
   </figcaption>
 </figure>
 
-#### Monitoring
+## Monitoring
 
 The team built a performance monitoring dashboard using the data collected in the field and business intelligence tool. This is important for monitoring progress and preventing regressions.
 
@@ -130,7 +124,7 @@ The team built a performance monitoring dashboard using the data collected in th
   </figcaption>
 </figure>
 
-### A/B test
+## A/B test
 
 Believing that A/B tests are a good way to measure the business impact of performance optimizations, the team optimized one of their landing pages for Core Web Vitals then compared the optimized version with the original page via A/B test for a month. They picked a landing page with significant traffic and conversion so that the test could achieve meaningful results. During the test duration, 50% of the traffic was sent to the optimized landing page (version A), and 50% was sent to the original page (version B). The only difference between version A and version B was that version A was optimized for Core Web Vitals and there were no other functional or visual differences.
 
