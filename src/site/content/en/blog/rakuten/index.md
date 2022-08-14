@@ -155,6 +155,6 @@ Comparing the optimized version A to the unoptimized version B, Rakuten 24 found
 
 ## Conclusion
 
-Web performance optimization is challenging but rewarding. By taking a data-driven approach, Rakuten 24 has successfully delivered better user experience as well as measured positive impact on their business. Understanding that this is just a part of the journey not the destination, they will continue improving their website to provide online shoppers with even more delighting experience.
+Web performance optimization is challenging but rewarding. By taking a data-driven approach, Rakuten 24 has successfully delivered better user experience as well as measured positive impact on their business. Understanding that this is just a part of the journey not the destination, they will continue improving their website to provide online shoppers with more delightful experiences.
 
-Optimization requires a joint effort and developers do not have to be alone on this journey. By sharing their struggles and achievements, Rakuten 24 hopes that more developers can start utilizing Core Web Vitals data to develop a mutual understanding with stakeholders then work together towards high-quality user experience and business growth.
+Optimization requires a joint effort and developers do not have to be alone on this journey. By sharing their struggles and achievements, Rakuten 24 hopes that more developers can use Core Web Vitals data to develop a mutual understanding with stakeholders then work together towards high-quality user experience and business growth.
