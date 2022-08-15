@@ -29,23 +29,21 @@ and better understand the user experience.
 ## Reading the data
 
 To get started, go to [https://pagespeed.web.dev/](https://pagespeed.web.dev/)
-and enter the URL of the page you want to test.
+and enter the URL of the page you want to test and click Analyze.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/GoTgDw7qJzuGdz0SHL8V.png", alt="Enter a URL to get started on PageSpeed Insights", width="800", height="106" %}
 
 After a few seconds, Lighthouse
-audits will be performed and you will see sections for Field ("Discover what your real users are experiencing") and Lab ("Diagnose performance issues") data. CrUX
-is a collection of real user experiences from the field, while Lighthouse is a
-controlled test in the lab.
+audits will be performed and you will see sections for from CrUX ("Discover what your real users are experiencing") and from Lighthouse ("Diagnose performance issues") data. CrUX is a collection of real user experiences from the field, while Lighthouse is a controlled test in the lab.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/jZSP6YZQHE8vBOJIMhCH.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="491" %}
 
 In the field data section, you'll see six metrics:
-[Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/) on the top as these are considered the [Core Web Vitals](/vitals/#core-web-vitals) metrics. Followed by [First Contentful Paint](/fcp/) (FCP), [Interaction to Next Paint](/inp/) (INP), and [Time to First Byte](/ttfb/) (TTFB) beneath as supplementary metrics.
+[Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/) on the top as these are considered the [Core Web Vitals](/vitals/#core-web-vitals) metrics. These are followed by [First Contentful Paint](/fcp/) (FCP), [Interaction to Next Paint](/inp/) (INP), and [Time to First Byte](/ttfb/) (TTFB) beneath as supplementary metrics.
 
-These metrics are representative of the user experience in different ways:
+These metrics are representative of the user experience in different ways.
 
-**Core Web Vitals:**
+### Core Web Vitals
 - **LCP** measures the time until the page displays what is likely its main
   content, like a hero image or heading.
 - **FID** measures the interactivity of the page, from the user's first
@@ -53,11 +51,13 @@ These metrics are representative of the user experience in different ways:
 - **CLS** measures the degree of layout instability on the page, due to shifts
   like asynchronously loaded content being injected.
 
-**Additional metrics:**
+### Additional metrics
 - **FCP** measures the time until the page displays something in the
  foreground, like some text or a logo.
 - **INP** is an experimental metric that measures the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below.
 - **TTFB** measures the the time between the request for a resource and when the first byte of a response begins to arrive.
+
+### Metric thresholds
 
 This table describes how values for these metrics are categorized as either
 "good", "needing improvement", or "poor".
