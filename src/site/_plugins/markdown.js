@@ -36,7 +36,18 @@ const markdown = md({
     permalinkClass: 'w-headline-link',
     permalinkSymbol: '#',
     // @ts-ignore
-    slugify: (s) => slugify(s, {lower: true}),
+    slugify: (s) => {
+      let slug = slugify(s, { lower: true });
+
+      // slugify might fail to generate a slug for strings that
+      // only contain non-latin characters, for this fallback to
+      // URL encoding
+      if (!slug) {
+        slug = encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'))
+      }
+
+      return slug;
+    }
   })
   // Disable indented code blocks.
   // We only support fenced code blocks.
@@ -69,6 +80,6 @@ const rules = {
   },
 };
 
-markdown.renderer.rules = {...markdown.renderer.rules, ...rules};
+markdown.renderer.rules = { ...markdown.renderer.rules, ...rules };
 
 module.exports = markdown;
