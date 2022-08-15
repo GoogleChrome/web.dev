@@ -31,7 +31,7 @@ module.exports = (str) => {
 
   return slugify(str, {
     replacement: '-',
-    remove: '"',
+    remove: /[$*_+~.()'"!\-:@]+/g,
     lower: true,
   });
 };

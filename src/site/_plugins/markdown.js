@@ -36,7 +36,7 @@ const markdown = md({
     permalinkClass: 'w-headline-link',
     permalinkSymbol: '#',
     // @ts-ignore
-    slugify: (s) => slugify(s, {lower: true, remove: '"'}),
+    slugify: (s) => slugify(s, {lower: true, remove: /[$*_+~.()'"!\-:@]+/g}),
   })
   // Disable indented code blocks.
   // We only support fenced code blocks.
