@@ -132,7 +132,7 @@ Tools that assess Core Web Vitals pass/fail status should consider a page passin
 
 #### Metric differences across browsers
 
-CrUX only measures in Chrome browsers, and you can refer to the [Web Vitals Changelog](https://chromium.googlesource.com/chromium/src/+/master/docs/speed/metrics_changelog/README.md) to see how these change with each version of Chrome.
+CrUX only measures in Chrome browsers, and you can refer to the [Web Vitals Changelog](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/README.md) to see how these change with each version of Chrome.
 
 RUM solutions, however, will measure from a wider variety of browsers. Chromium-based browsers (Edge, Opera, and so on) will likely be similar to Chrome, unless Chrome is implementing new changes as noted in the Changelog.
 
