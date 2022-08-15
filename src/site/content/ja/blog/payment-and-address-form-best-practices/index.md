@@ -466,7 +466,7 @@ Address line 2 (optional)
 
 {% Glitch { id: 'payment-card-input', path: 'index.html', height: 170 } %}
 
-ただし、正規表現 `pattern`[は、支払いカード番号の桁数](https://github.com/jaemok/credit-card-input/blob/master/creditcard.js#L35) (14 以上 ～ 20 桁以下) を処理できるほど柔軟でなくてはいけません。支払いカード番号の構成について詳しくは、[LDAPwiki](https://ldapwiki.com/wiki/Bank%20Card%20Number) でご確認いただけます。
+ただし、正規表現 `pattern` は、[支払いカード番号の桁数](https://github.com/jaemok/credit-card-input/blob/master/creditcard.js#L35) (14 以上 ～ 20 桁以下) を処理できるほど柔軟でなくてはいけません。支払いカード番号の構成について詳しくは、[LDAPwiki](https://ldapwiki.com/wiki/Bank%20Card%20Number) でご確認いただけます。
 
 物理的なカードの番号はスペースを挟んで表示されるため、ユーザーが新しい支払いカード番号を入力するときにはスペースを含められるようにします。その方が、ユーザーにとっては扱いやすいし (何かミスをしたと指摘しなくてすみます)、コンバージョンのフローを中断させる可能性も低いし、処理する前に簡単に数字の間のスペースを削除できます。
 
