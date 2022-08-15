@@ -104,7 +104,7 @@ That's where the [`threshold`](https://w3c.github.io/IntersectionObserver#dom-in
 
 ### Any other options?
 
-As of now, there's only one additional option to the ones listed above. [`rootMargin`](https://w3c.github.io/IntersectionObserver#dom-intersectionobserverinit-rootmargin) allows you to specify the margins for the root, effectively allowing you to either grow or shrink the area used for intersections. These margins are specified using a CSS-style string, á la "`10px 20px 30px 40px`", specifying top, right, bottom and left margin respectively. To summarize, the `IntersectionObserver` options struct offers the following options:
+As of now, there's only one additional option to the ones listed above. [`rootMargin`](https://w3c.github.io/IntersectionObserver#dom-intersectionobserverinit-rootmargin) allows you to specify the margins for the root, effectively allowing you to either grow or shrink the area used for intersections. These margins are specified using a CSS-style string, á la `"10px 20px 30px 40px"`, specifying top, right, bottom and left margin respectively. To summarize, the `IntersectionObserver` options struct offers the following options:
 
 ```js
 new IntersectionObserver(entries => {/* … */}, {
@@ -130,7 +130,7 @@ new IntersectionObserver(entries => {/* … */}, {
 
 ## What is `IntersectionObserver` *Not* about?
 
-Something to keep in mind is that `IntersectionObserver` is intentionally neither pixel perfect nor low latency. Using them to implement endeavours like scroll-dependent animations are bound to fail, as the data will be&mdash strictly speaking&mdash;out of date by the time you'll get to use it. The [explainer](https://github.com/WICG/IntersectionObserver/blob/gh-pages/explainer.md) has more details about the original use cases for `IntersectionObserver`.
+Something to keep in mind is that `IntersectionObserver` is intentionally neither pixel perfect nor low latency. Using them to implement endeavours like scroll-dependent animations are bound to fail, as the data will be&mdash;strictly speaking&mdash;out of date by the time you'll get to use it. The [explainer](https://github.com/WICG/IntersectionObserver/blob/gh-pages/explainer.md) has more details about the original use cases for `IntersectionObserver`.
 
 ### How much work can I do in the callback?
 
