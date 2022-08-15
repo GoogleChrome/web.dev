@@ -44,6 +44,7 @@ In the field data section, you'll see six metrics:
 These metrics are representative of the user experience in different ways.
 
 ### Core Web Vitals
+
 - **LCP** measures the time until the page displays what is likely its main
   content, like a hero image or heading.
 - **FID** measures the interactivity of the page, from the user's first
@@ -52,6 +53,7 @@ These metrics are representative of the user experience in different ways.
   like asynchronously loaded content being injected.
 
 ### Additional metrics
+
 - **FCP** measures the time until the page displays something in the
  foreground, like some text or a logo.
 - **INP** is an experimental metric that measures the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below.
