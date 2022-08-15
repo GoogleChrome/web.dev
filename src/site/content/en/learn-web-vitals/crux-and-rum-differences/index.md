@@ -36,7 +36,7 @@ However, for a deeper dive in investigating _why_ data is showing the numbers it
 
 CrUX can often be used to point out if you have a problem on your site, but not necessarily exactly where on your site the issue lies nor why. RUM solutions—whether home-grown through [the likes of the web-vitals library](/debug-web-vitals-in-the-field/) or some of the many commercial products—can help bridge that gap.
 
-Using a RUM solution gives you access to much more fine-grained data for all your pages, and on all browsers. It also allows you to slice and dice this data in ways CrUX does not, enablingto drill down and investigate problem areas of the site. Are they affected by a particular segment of users? Or users who take certain actions? Exactly when did the problem start? These are questions that are much easier to answer with the additional data that a RUM tool can provide.
+Using a RUM solution gives you access to much more fine-grained data for all your pages, and on all browsers. It also allows you to slice and dice this data in ways CrUX does not, enabling you to drill down and investigate problem areas of the site. Are they affected by a particular segment of users? Or users who take certain actions? Exactly when did the problem start? These are questions that are much easier to answer with the additional data that a RUM tool can provide.
 
 ### Correlating with other business metrics
 
@@ -76,7 +76,7 @@ RUM solutions can get data for non-Chrome browsers, and in particular from Chrom
 
 #### Opted-in users
 
-As well as being limited to Chrome users, CrUX is further restricted by only measuring [a subset of Chrome users](https://developer.chrome.com/docs/crux/methodology/#user-eligibility) who have opted in to share CrUX data when the browser has been installed.
+As well as being limited to Chrome users, CrUX is further restricted by only measuring [a subset of Chrome users](https://developer.chrome.com/docs/crux/methodology/#user-eligibility) who have opted in to share CrUX data when the browser was installed.
 
 RUM providers also only look at a subset of users, usually due to cookie banner prompts—asking users to opt into RUM data collection—or tracking blockers. This can adversely affect some initial page loads if the confirmation is not given until the second or subsequent page, when some of the site assets have already been cached from previous pages. If this happens frequently, the metrics may appear more favorable in RUM than they actually are if slower initial page loads are excluded in a sufficient number of cases.
 
@@ -136,7 +136,7 @@ CrUX only measures in Chrome browsers, and you can refer to the [Web Vitals Chan
 
 RUM solutions, however, will measure from a wider variety of browsers. Chromium-based browsers (Edge, Opera, and so on) will likely be similar to Chrome, unless Chrome is implementing new changes as noted in the Changelog.
 
-For non-Chromium browsers, the differences can be more pronounced. FCP, for example, is available in Safari and Firefox, but [is measured in a different way](https://blog.webpagetest.org/posts/why-first-contentful-paint-doesnt-work-as-a-cross-browser-metric/). This  can lead to significant variances in the times reported. As stated previously, if you are wanting to compare RUM to CrUX, it is best to filter on just Chrome users to allow for a like-for-like comparison.
+For non-Chromium browsers, the differences can be more pronounced. [First Contentful Paint (FCP)](/fcp/), for example, is available in Safari and Firefox, but [is measured in a different way](https://blog.webpagetest.org/posts/why-first-contentful-paint-doesnt-work-as-a-cross-browser-metric/). This  can lead to significant variances in the times reported. As stated previously, if you are wanting to compare RUM to CrUX, it is best to filter on just Chrome users to allow for a like-for-like comparison.
 
 #### Metrics timing
 
@@ -178,7 +178,7 @@ CrUX however, being measured by the Chrome browser itself rather than the page, 
 
 #### Cross-origin resources
 
-LCP media served from other domains do not give render time in the [PerformanceObserver API](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) (unless the [Timing-Allow-Origin header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin) (TAO) is provided) due to browser security restrictions to reduce timing attacks. This [falls back to the load time of the resource](/lcp/#load-time-vs.-render-time) but this may be quite different from when the content was actually painted.
+LCP media served from other domains do not give render time in the [PerformanceObserver API](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)—unless the [Timing-Allow-Origin header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin) (TAO) is provided—due to browser security restrictions to reduce timing attacks. This [falls back to the load time of the resource](/lcp/#load-time-vs.-render-time) but this may be quite different from when the content was actually painted.
 
 Again, CrUX does report the render time data for Core Web Vitals. Sites are advised to limit cross-origin content that impacts the Core Web Vitals metrics and to enable TAO where possible if they wish to measure this more accurately. Other cross-origin resources may be subject to similar restrictions.
 
@@ -192,9 +192,9 @@ We have shown why there may be differences between CrUX and RUM data, either due
 
 Where differences are slight (for example reporting a LCP of 2.0 seconds versus 2.2 seconds) both datasets will be useful and can usually be considered to be roughly in sync.
 
-When pronounced differences make you question the accuracy of the data, you should try to understand those differences. Can the RUM data be filtered to be more closely aligned with CrUX (looking only at Chrome users, for Desktop, with 75th percentile values over 28 days) to reduce these differences?
+When pronounced differences make you question the accuracy of the data, you should try to understand those differences. Can the RUM data be filtered to be more closely aligned with CrUX (looking only at Chrome users, for desktop or mobile, with 75th percentile values over 28 days) to reduce these differences?
 
-If so—and if you can get the data to match more closely—then you should still ask why you are seeing these differences in the overall data and what this means. Are non-Chrome users skewing your metrics in a positive or negative way? Does this give you more insights into where you have performance issues that you can prioritize?
+If so—and you can get the data to match more closely—then you should still ask why you are seeing these differences in the overall data and what this means. Are non-Chrome users skewing your metrics in a positive or negative way? Does this give you more insights into where you have performance issues that you can prioritize?
 
 If your non-Chrome users are getting different results then you can use this valuable insight that RUM has given you to optimize differently. For example, certain APIs are not available on certain browsers, but you can consider alternatives for unsupported browsers to also improve their experiences. Or you can give [a different, but more performant, experience](https://www.smashingmagazine.com/2022/03/signals-customizing-website-user-experience/) to users on constrained devices or networks. CrUX is limited to Chrome data, but you should consider all your site visitors' experiences to help prioritize improvements. RUM data can fill that gap.
 
