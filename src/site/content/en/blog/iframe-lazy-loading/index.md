@@ -5,7 +5,7 @@ subhead: Browser-level built-in lazy-loading for iframes is here
 authors:
   - addyosmani
 date: 2020-07-24
-updated: 2020-08-15
+updated: 2022-08-15
 hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: Phone outline with loading image and assets
 description: |
