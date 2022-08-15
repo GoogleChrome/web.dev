@@ -244,11 +244,10 @@ HIIT Time 어플리케이션은 [GitHub](https://github.com/tomayac/hiit-time)�
 마지막으로 미니앱에 대한 [결론](/mini-app-conclusion)을 살펴볼거예요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

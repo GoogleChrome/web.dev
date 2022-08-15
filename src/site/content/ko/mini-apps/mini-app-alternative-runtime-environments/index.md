@@ -85,7 +85,7 @@ macOS에서는 독에서 보관하는 기능이 존재하기는 하지만 WeChat
   </figcaption>
 </figure>
 
-대부분의 미니앱은 데스크톱에 최적화되지 않아 모바일 인터페이스로 고정된 크기로만 사용할 수 있어요. ([사용자 경험](/mini-app-about/#the-user-experience) 참고).
+대부분의 미니앱은 데스크톱에 최적화되지 않아 모바일 인터페이스로 고정된 크기로만 사용할 수 있어요. ([사용자 경험](/mini-app-about/#-3) 참고).
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uorcciuZIL8sadxTjXbv.png", alt="The Starbucks mini app running on macOS asking for the user profile permission which the user can grant via a prompt shown at the bottom.", width="300", height="484" %}
@@ -237,14 +237,13 @@ VK mini apps 또한 VK의 플랫폼별 모바일 앱 또는 데스크톱 웹사�
 </figure>
 
 {% Aside 'success' %}
-다음으로는 [미니앱 오픈소스 프로젝트](/mini-app-open-source-projects/)에 대해서 알아볼거예요.
+다음으로는 [미니앱 오픈소스 프로젝트](/mini-app-open-source-projects/)에 대해서 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

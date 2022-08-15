@@ -21,7 +21,7 @@ tags:
 미니앱은 엄청난 성장을 하고 있어요. WeChat의 미니앱은 2020년 6월에 [8억 3000만 활성 사용자](https://www.questmobile.com.cn/research/report-new/122)를 달성했어요.
 Alipay 미니앱은 2019년 4월 [4억 100만 활성 사용자](https://kr-asia.com/the-mau-of-wechat-alipay-and-baidus-mini-programs-now-add-up-to-more-than-1-billion)를 달성했고,
 Baidu 미니앱은 같은 달 [1억 1500만 활성 사용자](https://kr-asia.com/the-mau-of-wechat-alipay-and-baidus-mini-programs-now-add-up-to-more-than-1-billion)를 달성했어요.
-본질적으로, 기업체들은 iOS와 Android, 그리고 Web 플랫폼에서 앱을 개발하는 대신 위 3사의 (혹은 더 많은) [슈퍼앱 플랫폼](/mini-app-super-apps/#for-mini-apps-you-need-super-apps)에서 개발하기를 선택한거예요.
+본질적으로, 기업체들은 iOS와 Android, 그리고 Web 플랫폼에서 앱을 개발하는 대신 위 3사의 (혹은 더 많은) [슈퍼앱 플랫폼](/mini-app-super-apps/)에서 개발하기를 선택한거예요.
 이 슈퍼앱 플랫폼들은 안드로이드, iOS 그리고 Web만큼 서로 다르지 않지만, 그래도 파편화되어있기는 해요.
 안드로이드, iOS, 그리고 Web을 하나의 소스에서 빌드하는
 
@@ -80,14 +80,13 @@ W3C 멤버이자 그룹 참여자인 Fuqiao Xue (W3C)는 [미니앱과 웹앱의
 이 그룹의 호기심 많은 멤버로써 앞으로 어떤 여정을 하게 될지 기대돼요.
 
 {% Aside 'success' %}
-다음으로 모바일 기기가 아닌 [대안 미니앱 구동 환경](/mini-app-alternative-runtime-environments/)에 대해서 알아볼거예요.
+다음으로 모바일 기기가 아닌 [대안 미니앱 구동 환경](/mini-app-alternative-runtime-environments/)에 대해서 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

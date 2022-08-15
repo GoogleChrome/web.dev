@@ -71,14 +71,13 @@ Douyin 또한 자신의 소셜커머스 플랫폼을 엔터테인먼트와 쇼�
 </figure>
 
 {% Aside 'success' %}
-[다음 글](/mini-app-about/)에서 미니앱에 대해 더 배워보세요.
+다음으로 [미니앱에 대해](/mini-app-about/) 더 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

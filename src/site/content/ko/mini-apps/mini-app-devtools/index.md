@@ -22,7 +22,7 @@ tags:
 미니앱 개발은 슈퍼앱 플랫폼에 의해서 무료로 제공되는 IDE 위에서 개발돼요.
 여러 플랫폼이 존재하지만, 여기에서는 가장 유명한 4사의 개발 경험과, 비교를 위해 QuickApp의 개발 경험에 대해서 이야기해볼게요.
 
-## 미니앱 IDEs
+## 미니앱 IDE들
 
 슈퍼앱들이 그런 것처럼 대부분의 IDE 또한 중국어로만 제공돼요.
 영문 버전은 최신 버전이 아닐 수도 있으니 중국어 버전을 설치하는 것을 권장해요.
@@ -152,7 +152,7 @@ Chrome 개발자 도구의 [Elements panel](https://developer.chrome.com/docs/de
 Baidu의 경우 [Swan Element](https://smartprogram.baidu.com/docs/develop/framework/dev/)라고 하며, ByteDance의 경우
 [Bxml](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/guide/mini-app-framework/view/ttml)이라고 해요.
 Alipay는 [AXML](https://opendocs.alipay.com/mini/framework/axml)라고 하고, QuickApp의 경우는 그 패널을 단순히 [UX](https://doc.quickapp.cn/tutorial/framework/for.html)라고 해줘요
-이 마크업 언어들에 대해서는 [추후에](/mini-app-markup-styling-and-scripting/#markup-languages) 다룰게요.
+이 마크업 언어들에 대해서는 [추후에](/mini-app-markup-styling-and-scripting/#) 다룰게요.
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/k1FO68wZhzpRNvQl2bN3.png", alt="Inspecting an image with WeChat DevTools' 'Wxml' panel. It shows that the tag in use is an `image` tag.", width="800", height="572" %}
@@ -212,14 +212,13 @@ IDE 내 모습은 조금씩 다를 수 있어요.
 </figure>
 
 {% Aside 'success' %}
-[다음 글](/mini-app-markup-styling-and-scripting/)에서 미니앱의 마크업, 스타일링, 그리고 스크립팅에 대해서 알아봐요.
+다음으로 [미니앱의 마크업, 스타일링, 그리고 스크립팅](/mini-app-markup-styling-and-scripting/)에 대해서 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 웹 개발자의 관점에서 미니앱에 대한 생각을 정리하며
+title: 웹 개발자의, 미니앱에 대한 결론
 authors:
   - thomassteiner
 date: 2021-03-03
@@ -24,9 +24,9 @@ tags:
 분명한 사실은, 이 생태계가 엄청나게 흥미로우며 알아볼 가치가 있다는 점이에요.
 이 글타래는 미니앱을 사용하고 만드는 다양한 면에 대해서 깊이 알아봤어요.
 [개발자 도구](/mini-app-devtools/) 경험부터
-[마크업](/mini-app-markup-styling-and-scripting/#markup-languages),
-[스타일링](/mini-app-markup-styling-and-scripting/#styling), 그리고
-[스크립팅](/mini-app-markup-styling-and-scripting/#scripting)에 대한 접근, 그리고
+[마크업](/mini-app-markup-styling-and-scripting/#),
+[스타일링](/mini-app-markup-styling-and-scripting/#-6), 그리고
+[스크립팅](/mini-app-markup-styling-and-scripting/#-7)에 대한 접근, 그리고
 [컴포넌트 모델](/mini-app-components/), 그리고 마지막으로 전체적인
 [아키텍처](/mini-app-project-structure-lifecycle-and-bundling/)에 대해서 다뤘어요.
 미니앱은 앱과 웹 개발자들에게 영감과 가르침을 줄 기회를 제공해요.
@@ -39,9 +39,9 @@ tags:
 
 저는 미니앱 개발자 도구에서 배우는 것으로 전체 웹 개발 경험을 향상 시킬 수 있는 대담한 가능성을 확인했어요.
 
-간단한 [(원격) 기기 상 테스트 기능](/mini-app-devtools/#simulator-and-real-device-testing-and-debugging)과
-패키징, [빌딩](/mini-app-project-structure-lifecycle-and-bundling/#the-build-process) 경험,
-[IDE](/mini-app-devtools/#mini-app-ides)와 개발자 도구의 결합 등은 개발자의 삶을 편하게 할만한 많은 환경을 제공해요.
+간단한 [(원격) 기기 상 테스트 기능](/mini-app-devtools/#-4)과
+패키징, [빌딩](/mini-app-project-structure-lifecycle-and-bundling/#-4) 경험,
+[IDE](/mini-app-devtools/#ide)와 개발자 도구의 결합 등은 개발자의 삶을 편하게 할만한 많은 환경을 제공해요.
 
 ## 마무리하며
 
@@ -58,11 +58,10 @@ tags:
 축하해요. [미니앱 모음집](/mini-apps/)의 마지막에 이르렀어요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

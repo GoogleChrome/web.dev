@@ -160,12 +160,12 @@ HTML처럼 스타일은 in-line으로 선언될 수도 있고, 데이터 바인�
 JavaScript 코드는 `eval()` 등으로 실행될 수 없고 어떤 함수도 `new Function()`을 통해서 생성될 수 없어요.
 실행 환경은 기기에서는 [V8](https://v8.dev/)이나 [JavaScriptCore](https://developer.apple.com/documentation/javascriptcore)이고,
 시뮬레이터에서는 V8 또는 [NW.js](https://nwjs.io/)이에요
-대부분 IDE에서 트랜스파일링을 지원하기 때문에 빌드 타겟이 오래된 WebView 구현일지라도 ES6 등의 새로운 문법을 사용하는 것도 가능해요. ([추가 정보](/mini-app-project-structure-lifecycle-and-bundling/#the-build-process))
+대부분 IDE에서 트랜스파일링을 지원하기 때문에 빌드 타겟이 오래된 WebView 구현일지라도 ES6 등의 새로운 문법을 사용하는 것도 가능해요. ([추가 정보](/mini-app-project-structure-lifecycle-and-bundling/#-4))
 슈퍼앱의 개발자 문서에는 스크립팅 언어들이 JavaScript가 아니라고 명시하고 있어요.
 하지만 이 이야기는 거의 모듈 시스템에 대해서만 해당되는 이야기예요.
 그 말은, 미니앱은 아직 표준 [ES Modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules)을 지원하지 않아요.
 
-[이전에](/mini-app-markup-styling-and-scripting/#markup-languages) 언급한 것처럼 미니앱의 프로그래밍 콘셉트는
+[이전에](/mini-app-markup-styling-and-scripting/#) 언급한 것처럼 미니앱의 프로그래밍 콘셉트는
 [model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) (MVVM)이에요.
 논리 계층(Logic Layer)과 화면 계층(View Layer)는 서로 다른 쓰레드에서 동작해요.
 덕분에 계산에 오래 걸리는 작업 중에서 사용자 화면은 멈추지 않아요.
@@ -219,7 +219,7 @@ console.log(tools.msg);
 
 ### JavaScript 브릿지 API
 
-JavaScript 브릿지는 미니앱들을 강력한 기기 기능들을 사용할 수 있도록 해요. ([강력한 기능에 접근](/mini-app-about/#access-to-powerful-features) 참고)
+JavaScript 브릿지는 미니앱들을 강력한 기기 기능들을 사용할 수 있도록 해요. ([강력한 기능에 접근](/mini-app-about/#-7) 참고)
 그 외에도 여러 편리한 기능들을 제공해요.
 이에 대한 개략적인 이해를 위해
 [WeChat](https://developers.weixin.qq.com/miniprogram/en/dev/api/),
@@ -242,14 +242,13 @@ tt.canIUse('request.success.data');
 ```
 
 {% Aside 'success' %}
-다음 글에서는 [미니 앱 컴포넌트](/mini-app-components/)에 대해서 알아볼거예요.
+다음으로 [미니 앱 컴포넌트](/mini-app-components/)에 대해서 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

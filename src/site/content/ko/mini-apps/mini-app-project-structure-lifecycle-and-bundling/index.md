@@ -148,14 +148,13 @@ Page({
 WeChat의 `wxapkg` 포맷 등 몇몇 포맷은 [리버스 엔지니어링](https://github.com/sjatsh/unwxapkg)되었어요.
 
 {% Aside 'success' %}
-다음으로 [미니앱의 표준화를 위한 노력](/mini-app-standardization/)에 대해서 알아볼거예요.
+다음으로 [미니앱의 표준화를 위한 노력](/mini-app-standardization/)에 대해서 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

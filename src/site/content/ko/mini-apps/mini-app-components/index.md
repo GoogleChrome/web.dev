@@ -45,7 +45,7 @@ Judis의 [web-vitals-element](https://github.com/stefanjudis/web-vitals-element)
 [Baidu의 컴포넌트](https://smartprogram.baidu.com/docs/develop/component/component/), 또는
 [QuickApp 컴포넌트를](https://doc.quickapp.cn/widgets/common-events.html) 확인해보세요.
 
-앞서 몇몇 컴포넌트들은 [기반 레벨에서 웹 기술로 동작한다](/mini-app-devtools/#custom-elements-under-the-hood)는 것을 보여드렸어요.
+앞서 몇몇 컴포넌트들은 [기반 레벨에서 웹 기술로 동작한다](/mini-app-devtools/#-7)는 것을 보여드렸어요.
 예를 들어, WeChat의 `<image>`는 웹 기술로 구현되어 있어요.
 하지만 모든 컴포넌트가 웹 기술로 구현된 것은 아니에요.
 `<map>` 또는 `<video>` 등의 태그들은 [OS에 내장된 컴포넌트](https://developers.weixin.qq.com/ebook?action=get_post_info&docid=000caab39b88b06b00863ab085b80a)로
@@ -53,7 +53,7 @@ Judis의 [web-vitals-element](https://github.com/stefanjudis/web-vitals-element)
 어떤 식으로 구현되었는지 자세하게 공개된 바는 없지만, 다른 컴포넌트처럼 프로그램되어 있어요.
 
 여느 때와 같이, 사소한 디테일은 다르지만 모든 슈퍼앱들은 공통된 프로그래밍 철학을 가지고 있어요.
-가장 중요한 것은 [마크업 언어](/mini-app-markup-styling-and-scripting/#markup-languages)에서 설명한 것처럼 데이터 바인딩이에요.
+가장 중요한 것은 [마크업 언어](/mini-app-markup-styling-and-scripting/#)에서 설명한 것처럼 데이터 바인딩이에요.
 컴포넌트들은 주로 기능 단위로 구분되어 있으므로 필요한 컴포넌트를 찾는 것은 어렵지 않아요.
 아래는 Alipay의 분류이지만 다른 제조사들도 비슷해요.
 
@@ -100,7 +100,7 @@ Judis의 [web-vitals-element](https://github.com/stefanjudis/web-vitals-element)
 - 접근성
   - `aria-component`
 
-아래는 Alipay의 [`<image>`](https://opendocs.alipay.com/mini/component/image)로`a:for` directive([리스트 렌더링](/mini-app-markup-styling-and-scripting/#list-rendering) 참고)를 사용하는 예시예요.
+아래는 Alipay의 [`<image>`](https://opendocs.alipay.com/mini/component/image)로`a:for` directive([리스트 렌더링](/mini-app-markup-styling-and-scripting/#-3) 참고)를 사용하는 예시예요.
 `index.js`에서 이미지 데이터 배열을 받아서 배열을 순회해요.
 
 ```js
@@ -223,7 +223,7 @@ Page({
 ```
 
 그리고 `custom.js`는 로직을 담당해요. 컴포넌트의 라이프사이클 함수로는 `attached()`, `detached()`, `created()`, 그리고 `ready()` 등이 있어요.
-컴포넌트는 또한 `show()` 그리고 `hide()` 등의 [페이지 라이프 사이클](/mini-app-project-structure-lifecycle-and-bundling/#mini-app-lifecycle) 이벤트에도 반응할 수 있어요.
+컴포넌트는 또한 `show()` 그리고 `hide()` 등의 [페이지 라이프 사이클](/mini-app-project-structure-lifecycle-and-bundling/#-2) 이벤트에도 반응할 수 있어요.
 
 ```js
 Component({
@@ -270,14 +270,13 @@ Component({
 ```
 
 {% Aside 'success' %}
-다음으로 미니앱의 [프로젝트 구조, 라이프 사이클, 그리고 번들링](/mini-app-project-structure-lifecycle-and-bundling/)에 대해서 알아볼거예요.
+다음으로 미니앱의 [프로젝트 구조, 라이프 사이클, 그리고 번들링](/mini-app-project-structure-lifecycle-and-bundling/)에 대해서 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

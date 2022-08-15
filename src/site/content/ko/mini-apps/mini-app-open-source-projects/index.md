@@ -113,29 +113,33 @@ kbone-ui 컴포넌트는 [WeChat의 내장 미니앱 컴포넌트](https://devel
 
 ## WeUI
 
-[WeUI](https://github.com/Tencent/weui) is a set of basic style libraries consistent with WeChat's
-default visual experience. The official WeChat design team has tailored designs for WeChat internal
-web pages and WeChat mini apps to make users' perception of use more uniform. It includes components
-such as `button`, `cell`, `dialog`, `progress`, `toast`, `article`, `actionsheet`, and `icon`. There
-are different versions of WeUI available like [weui-wxss](https://github.com/Tencent/weui-wxss/) for
-WeChat mini apps styled with WXSS (see [Styling](/mini-app-markup-styling-and-scripting/#styling) above),
-[weui.js](https://github.com/weui/weui.js/) for web apps, and
-[react-weui](https://github.com/weui/react-weui/) for WeChat React components.
+[WeUI](https://github.com/Tencent/weui)는 WeChat의 시각적 경험과 동일하게 구성된 기본적인 스타일 라이브러리예요.
+WeChat 공식 팀에서 WeChat의 웹페이지와 미니앱의 경험을 동일하게 만들기 위해 디자인을 다듬었어요.
+`button`, `cell`, `dialog`, `progress`, `toast`, `article`, `actionsheet`, 그리고 `icon` 등의 컴포넌트를 제공해요.
+
+또한 서로 다른 WeUI 버번들이 존재해요.
+
+WXSS로 스타일링되는 WeChat 미니앱을 위한 [weui-wxss](https://github.com/Tencent/weui-wxss/)도 있고
+([스타일링](/mini-app-markup-styling-and-scripting/#-6) 참고),
+
+웹앱을 위한 [weui.js](https://github.com/weui/weui.js/),
+WeChat 리액트 컴포넌트를 위한 [react-weui](https://github.com/weui/react-weui/)도 있어요.
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V0xswCD3MJltrxALmy8n.png", alt="Demo of the WeUI framework showing form-related components, namely switches.", width="450", height="395" %}
   <figcaption>
-   The WeUI demo app showing switches.
+    스위치를 보여주는 WeChat 데모 앱
   </figcaption>
 </figure>
 
 ## Omi
 
-[Omi](https://tencent.github.io/omi/) is a self-proclaimed frontend cross-frameworks framework
-([GitHub 오픈소스](https://github.com/Tencent/omi). It merges Web Components, JSX, Virtual
-DOM, functional style, observer or Proxy into one framework with tiny size and high performance. Its
-aim is to let developers write components once and use them everywhere, such as Omi, React, Preact,
-Vue.js, or Angular. Writing Omi components is very intuitive and free of almost all boilerplate.
+[Omi](https://tencent.github.io/omi/)는 크로스 프레임워크를 지향하는 프론트엔드 프레임워크예요.
+([GitHub 오픈소스](https://github.com/Tencent/omi).
+웹 컴포넌트, JSX, 버추얼 돔, 함수형 수타일, 옵저버와 프록시를 하나의 프레임워크로 모아 적은 용량으로 고성능을 내요.
+이 프레임워크의 목표는 개발자들이 하나의 컴포넌트를 Omi, React, Preact,
+Vue.js, Angular 같은 여러 플랫폼에서 사용할 수 있게 하는거예요.
+Omi 컴포넌트를 작성하는 것은 직관적이고 어떤 보일러플레이트도 필요 없어요.
 
 ```js
 import {render, WeElement, define} from 'omi';
@@ -179,14 +183,13 @@ render(<my-counter />, 'body');
 
 ## Omiu
 
-[Omiu](https://tencent.github.io/omi/components/docs/) is a cross framework UI component library
-([GitHub 오픈소스](https://github.com/Tencent/omi#omiu)) developed based on Omi, which outputs
-custom elements of standard web components.
+[Omiu](https://tencent.github.io/omi/components/docs/)는 Omi에 기반한 크로스 프레임워크 UI 컴포넌트 라이브러리예요.
+([GitHub 오픈소스](https://github.com/Tencent/omi#omiu)). 일반적인 웹 컴포넌트의 커스텀된 엘리먼트들을 생성해요.
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eoNhik827CE4TfaT9ZaV.png", alt="Demo of the Omiu framework showing form-related components, namely switches.", width="800", height="939" %}
   <figcaption>
-   The Omiu demo app showing switches.
+   Omiu 데모 앱의 스위치.
   </figcaption>
 </figure>
 
@@ -278,14 +281,13 @@ vConsole은 로그, 시스템, 네트워크, 구성 요소, 그리고 저장소 
 </figure>
 
 {% Aside 'success' %}
-다음으로 [미니앱처럼 프로그래밍하는 방법](/mini-app-programming-way/)에 대해서 알아볼거예요.
+다음으로 [미니앱처럼 프로그래밍하는 방법](/mini-app-programming-way/)에 대해서 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

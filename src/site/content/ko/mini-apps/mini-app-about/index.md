@@ -18,7 +18,7 @@ tags:
 
 ## 구성 요소와 호환성
 
-미니앱은 아주 작으며 (주로 [2-4&nbsp;MB](https://www.w3.org/2021/10/MiniApp-Overview-breakout.pdf)) 구동되기 위해 [슈퍼앱](/mini-app-super-apps/#for-mini-apps-you-need-super-apps)이 필요해요.
+미니앱은 아주 작으며 (주로 [2-4&nbsp;MB](https://www.w3.org/2021/10/MiniApp-Overview-breakout.pdf)) 구동되기 위해 [슈퍼앱](/mini-app-super-apps/#-2)이 필요해요.
 대부분의 미니앱은 HTML, CSS, 그리고 JavaScript를 포함한 웹 기술들(혹은 그 "방언"들)로 만들어진다는 점이 비슷해요.
 미니앱의 구동 런타임은 슈퍼앱의 [웹뷰](https://research.google/pubs/pub46739/) 화면이기에 크로스플랫폼하게 구동돼요.
 그래서 똑같은 미니앱은 똑같은 슈퍼앱 안에서 그게 안드로이드든, iOS든, 또 다른 OS이든 동일하게 동작할 수 있어요.
@@ -118,7 +118,7 @@ WeChat 슈퍼앱으로 바코드를 스캔하면, 미니앱이 바로 실행돼�
   </figcaption>
 </figure>
 
-## 강력한 기능에 접근하기
+## 강력한 기능 접근
 
 미니앱을 호스팅하는 슈퍼앱은 JavaScript 브릿지를 통해 강력한 API 등을 미니앱에 제공해요.
 이 JavaScript 브릿지는 운영 체제의 API에 접근하는 다양한 Hook을 제공해요.
@@ -159,14 +159,13 @@ Douyin과 WeChat 같은 슈퍼앱들은 소셜 네트워킹 사이트로 시작�
 그 경우 미니앱은 딱 한 번의 탭으로 열 수 있기 때문에, 사용자들은 어떤 불편함이나 방해 요소 없이 미니앱에 도달할 수 있어요.
 
 {% Aside 'success' %}
-다음 챕터에서 [미니앱들이 H5 앱들과 QuickApp과 다른 점들](/mini-app-what-are-h5-and-quickapp)을 알아볼거예요.
+다음으로 [미니앱들이 H5 앱들과 QuickApp과 다른 점들](/mini-app-what-are-h5-and-quickapp)을 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.

@@ -52,14 +52,13 @@ QuickApp은 슈퍼앱 안에서 구동되는 것이 아니고, 기기와 강하�
 운영 체제에서 제공되는 JavaScript 브릿지를 통해서 전체화면 애플리케이션으로 렌더링되는거예요.
 
 {% Aside 'success' %}
-다음으로 [미니앱의 개발자 경험](/mini-app-devtools/)에 대해서 알아보세요.
+다음으로 [미니앱의 개발자 경험](/mini-app-devtools/)에 대해서 알아봐요.
 {% endAside %}
 
-## Acknowledgements
+## 감사의 말
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley),
+이 글은 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
 [Alan Kent](https://github.com/alankent),
-and Keith Gu.
+그리고 Keith Gu에 의해 리뷰되었어요.
