@@ -77,4 +77,4 @@ Si desea que su solución se incluya en la lista anterior, consulte el [proceso 
 
 ## Recursos
 
-Código fuente para [recursos de terceros de carga diferida con auditoría de fachadas](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-facades.js).
+Código fuente para [recursos de terceros de carga diferida con auditoría de fachadas](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js).

@@ -314,6 +314,16 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
   - source: /app-history-api
     destination: https://developer.chrome.com/docs/web-platform/navigation-api/
+  - source: /fetch-upload-streaming
+    destination: https://developer.chrome.com/articles/fetch-streaming-requests/
+  - source: /compute-pressure
+    destination: https://developer.chrome.com/docs/web-platform/compute-pressure/
+  - source: /declarative-link-capturing
+    destination: https://developer.chrome.com/docs/web-platform/declarative-link-capturing/
+  - source: /handwriting-recognition
+    destination: https://developer.chrome.com/docs/web-platform/handwriting-recognition/
+  - source: /virtualkeyboard
+    destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
 
   # Redirect for Aurora
   - source: /aurora
@@ -330,3 +340,25 @@ redirects:
   # Redirects old vitals tooling workflow doc to the updated doc
   - source: /vitals-tools-workflow
     destination: /vitals-tools
+
+  # Redirects Extending Workbox post to the Using Plugins doc on d.c.c.
+  - source: /extending-workbox
+    destination: https://developer.chrome.com/docs/workbox/using-plugins/
+
+  # Redirects lazysizes post to the browser-level lazy loading post
+  - source: /use-lazysizes-to-lazyload-images
+    destination: /browser-level-image-lazy-loading/
+
+  # Redirects an old performance guides to more recent documentation
+  - source: /performance-get-started/
+    destination: /fast/
+  - source: /performance-get-started-graphicalcontent-4/
+    destination: /choose-the-right-image-format/
+  - source: /performance-get-started-httpcaching-6/
+    destination: /http-cache/
+  - source: /performance-get-started-httprequests-5/
+    destination: /optimizing-content-efficiency-eliminate-downloads/
+  - source: /performance-get-started-textcontent-3/
+    destination: /optimizing-content-efficiency-optimize-encoding-and-transfer/
+  - source: /performance-get-started-wrapup-7/
+    destination: /fast/

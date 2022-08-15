@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## Recursos
 
-- [O código-fonte da auditoria **`robots.txt` não é válido**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [O código-fonte da auditoria **`robots.txt` não é válido**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [Crie um `robots.txt file`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Especificações de metatag de robôs e cabeçalho HTTP X-Robots-Tag](https://developers.google.com/search/reference/robots_meta_tag)

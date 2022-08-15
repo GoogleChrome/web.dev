@@ -10,7 +10,7 @@ tags:
   - blog
   - css
 date: 2021-05-27
-updated: 2021-05-27
+updated: 2022-07-25
 ---
 
 When writing CSS, you can sometimes end up with long selector lists to target
@@ -50,12 +50,13 @@ and value of these two functional pseudo selectors.
 
 ### Browser compatibility
 
-The `:is` and `:where` pseudo-classes are supported in Chromium (>=88), Firefox
-(>= 78) and Safari (>=14). See MDN's [browser
-compatibility](https://developer.mozilla.org/docs/Web/CSS/:where#Browser_compatibility)
-table for more information. Some older browser versions support the `:is()`
-selector as `:matches()` or `-webkit-any()`. For more information see the
-[`:is()`](https://developer.mozilla.org/docs/Web/CSS/:is) page on MDN.
+#### `:is()`
+
+{% BrowserCompat 'css.selectors.is' %}
+
+#### `:where()`
+
+{% BrowserCompat 'css.selectors.where' %}
 
 ## Meet `:is()` and `:where()`
 

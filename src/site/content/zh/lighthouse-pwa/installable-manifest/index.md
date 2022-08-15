@@ -58,7 +58,7 @@ updated: 2019-09-19
 
 ## 资源
 
-- [**Web 应用清单不符合可安装性要求**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [**Web 应用清单不符合可安装性要求**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [添加 Web 应用清单](/add-manifest/)
 - [了解如何具备可安装性](/discover-installable)
 - [Web 应用清单](https://developer.mozilla.org/docs/Web/Manifest)

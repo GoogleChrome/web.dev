@@ -36,7 +36,7 @@ Si su página ya se está ejecutando sobre HTTPS pero no pasa esta auditoría, e
 
 ## Recursos
 
-- [Código fuente de la auditoría **No utiliza HTTPS**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/is-on-https.js).
+- [Código fuente de la auditoría **No utiliza HTTPS**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/is-on-https.js).
 - [Por qué debería usar siempre HTTPS](/why-https-matters/)
 - [Habilitar HTTPS en sus servidores](/enabling-https-on-your-servers/)
 - [Comprenda los problemas de seguridad con Chrome DevTools](https://developer.chrome.com/docs/devtools/security/)

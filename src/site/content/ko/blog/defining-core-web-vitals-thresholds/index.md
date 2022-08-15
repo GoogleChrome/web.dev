@@ -6,7 +6,7 @@ authors:
   - bmcquade
 description: Core Web Vitals 임계값에 대한 연구 및 방법론
 date: 2020-05-21
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: Core Web Vitals 임계값에 대한 연구 및 방법론
 tags:
@@ -72,7 +72,7 @@ tags:
 <p data-md-type="paragraph">주어진 메트릭에 대해 관련 사용자 경험 연구를 이용할 수 있고 자료의 값 범위에 대해 합당한 합의가 있는 경우 우리는 이 범위를 임계값 선택 프로세스를 안내하는 입력으로 사용합니다. 누적 레이아웃 이동과 같은 새로운 메트릭처럼 관련 사용자 경험 연구를 사용할 수 없는 경우 대신 메트릭에 대한 서로 다른 후보 임계값을 충족하는 실제 페이지를 평가하여 우수한 사용자 경험을 제공하는 임계값을 식별합니다.</p>
 <h3 data-md-type="header" data-md-header-level="3">기존 웹 콘텐츠로 달성 가능</h3>
 <p data-md-type="paragraph">또한 사이트 소유자가 "양호" 임계값을 충족하도록 사이트를 최적화려면 웹의 기존 콘텐츠에 대해 이러한 임계값을 달성할 수 있어야 합니다. 예를 들어, 0밀리초는 즉각적인 로드 경험을 제공하는 이상적인 LCP "양호" 임계값이지만 네트워크 및 장치 처리 지연으로 인해 대부분의 경우 0밀리초 임계값을 실제로 달성할 수는 없습니다. 따라서 0밀리초는 Core Web Vitals에 대한 합리적인 LCP "양호" 임계값이라고 할 수 없습니다.</p>
-<p data-md-type="paragraph">Core Web Vitals의 "양호" 임계값 후보를 평가할 때는 <a href="https://developers.google.com/web/tools/chrome-user-experience-report" data-md-type="link">Chrome User Experience Report</a>(CrUX)의 데이터를 기반으로 해당 임계값을 달성할 수 있는지 확인합니다. 임계값을 달성할 수 있는지 확인하려면 현재 <a href="/same-site-same-origin/#origin" data-md-type="link">원본</a>의 10% 이상이 "양호" 임계값을 충족해야 합니다. 또한, 최적화가 제대로 이루어진 사이트가 필드 데이터의 가변성으로 인해 잘못 분류되지 않도록 이러한 최적화 콘텐츠가 일관되게 "양호" 임계값을 충족하는지 확인합니다.</p>
+<p data-md-type="paragraph">Core Web Vitals의 "양호" 임계값 후보를 평가할 때는 <a href="https://developer.chrome.com/docs/crux/" data-md-type="link">Chrome User Experience Report</a>(CrUX)의 데이터를 기반으로 해당 임계값을 달성할 수 있는지 확인합니다. 임계값을 달성할 수 있는지 확인하려면 현재 <a href="/same-site-same-origin/#origin" data-md-type="link">원본</a>의 10% 이상이 "양호" 임계값을 충족해야 합니다. 또한, 최적화가 제대로 이루어진 사이트가 필드 데이터의 가변성으로 인해 잘못 분류되지 않도록 이러한 최적화 콘텐츠가 일관되게 "양호" 임계값을 충족하는지 확인합니다.</p>
 <p data-md-type="paragraph">반대로, "나쁨" 임계값을 설정할 때는 현재 소수의 출처만이 충족하지 못하는 성능 수준을 식별합니다. "나쁨" 임계값을 정의하는 것과 관련해 사용 가능한 연구가 없는 한, 기본적으로 가장 성능이 좋지 않은 원본의 10~30%가 "나쁨"으로 분류됩니다.</p>
 <h3 data-md-type="header" data-md-header-level="3">기준에 대한 마지막 정리</h3>
 <p data-md-type="paragraph">후보 임계값을 평가하면서 우리는 기준이 서로 충돌하는 경우가 있음을 발견했습니다. 예를 들어, 지속적으로 달성할 수 있는 임계값과 지속적으로 우수한 사용자 경험을 보장하는 것 사이에 충돌이 있을 수 있습니다. 또한 인간의 인지와 관련한 연구는 일반적으로 다양한 값을 제공하며 사용자 행동 메트릭은 행동의 점진적인 변화를 보여주기 때문에 메트릭에 대한 단일 "올바른" 임계값이 없는 경우가 많습니다. 따라서 2020년 Core Web Vitals에 대한 우리의 접근 방식은 완벽한 임계값은 없으며 때로는 여러 가지 합리적인 임계값 중 선택해야 할 수도 있음을 인지하면서 위의 기준을 가장 잘 충족하는 임계값을 선택하는 것이었습니다. "완벽한 임계계값"을 찾는 것보다는 "우리 기준을 최적으로 달성하는 후보 임계값"을 찾는 데 집중했습니다.</p>

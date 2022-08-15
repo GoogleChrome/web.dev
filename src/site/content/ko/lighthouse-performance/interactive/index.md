@@ -78,7 +78,7 @@ TTI가 실제로 사용자의 기기에서 발생하는 시점을 측정하는 �
 
 ## 리소스
 
-- [**상호 작용까지의 시간** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
+- [**상호 작용까지의 시간** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/interactive.js)
 - [Lighthouse 스코어링 가이드](/performance-scoring)
 - [첫 상호 작용 및 지속적 상호 작용](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
 - [JavaScript 시작 최적화](/optimizing-content-efficiency-javascript-startup-optimization/)

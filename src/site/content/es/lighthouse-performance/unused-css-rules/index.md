@@ -64,4 +64,4 @@ Considera reducir o cambiar la cantidad de [complementos de WordPress que](https
 
 ## Recursos
 
-- [Código fuente para la auditoria de **Eliminar el CSS no utilizado**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)
+- [Código fuente para la auditoria de **Eliminar el CSS no utilizado**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-css-rules.js)

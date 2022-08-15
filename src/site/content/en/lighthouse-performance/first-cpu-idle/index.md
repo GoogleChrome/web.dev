@@ -98,7 +98,7 @@ largely the same as the strategies for improving TTI.
 
 ## Resources
 
-- [Source code for **First CPU Idle** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-cpu-idle.js)
+- [Source code for **First CPU Idle** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/first-cpu-idle.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [First Interactive And Consistently Interactive](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
 - [Time to Interactive](/tti/)

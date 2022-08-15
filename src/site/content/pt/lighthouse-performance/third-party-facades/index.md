@@ -75,4 +75,4 @@ Se você deseja que sua solução seja incluída na lista acima, dê uma olhada 
 
 ## Recursos
 
-Código-fonte para a auditoria [Carregue recursos de terceiros de forma lazy com fachadas](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-facades.js).
+Código-fonte para a auditoria [Carregue recursos de terceiros de forma lazy com fachadas](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js).

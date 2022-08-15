@@ -2,7 +2,7 @@
 layout: handbook
 title: Word list
 date: 2019-06-26
-updated: 2020-09-14
+updated: 2022-07-11
 description: |
   Spelling, punctuation, and capitalization for words and phrases commonly used on web.dev.
 ---
@@ -49,3 +49,10 @@ In this list are some words to avoid, along with alternative suggestions.
 * code-split (verb): use _split_
 * guide: use _post_
 * spec: use _specification_
+
+## Terminology
+
+Proper user of terminology is necessary so readers can consistently understand the state or nature of concepts and APIs across web.dev as they relate to the web. Below are some terms that you, as a writer should understand the meaning when writing content:
+
+- "Core Web Vitals" refers only to three metrics: Cumulative Layout Shift (CLS), Largest Contentful Paint (LCP), and First Input Delay (FID). Any other metrics are not "Core Web Vitals" or even "Web Vitals", they are simply "metrics".
+- Avoid using the term "Web Vitals" when you mean "Core Web Vitals".

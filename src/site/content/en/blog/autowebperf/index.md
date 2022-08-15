@@ -5,7 +5,7 @@ subhead: >
 description: >
   A new modular tool that enables automatic gathering of performance data from multiple sources.
 date: 2020-12-09
-updated: 2021-01-08
+updated: 2022-07-18
 authors:
   - jonchen
   - gilbertococchi
@@ -96,7 +96,7 @@ AWP comes with a number of pre-implemented gatherers and connectors:
 AWP automates the performance audits via your preferred audit platforms such as
 [PageSpeed Insights](https://pagespeed.web.dev/),
 [WebPageTest](https://webpagetest.org/), or
-[CrUX API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference).
+[CrUX API](https://developer.chrome.com/docs/crux/api/).
 AWP offers the flexibility to choose where to load the list of tests, and where
 to write the results to.
 

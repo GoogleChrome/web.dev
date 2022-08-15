@@ -34,5 +34,5 @@ but checks for duplicate IDs in a different set of elements.
 {% include 'content/lighthouse-accessibility/fix-duplicate-ids.njk' %}
 
 ## Resources
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/duplicate-id-active.js" rel="noopener">Source code for **`[id]` attributes on active, focusable elements are not unique** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/duplicate-id-active.js" rel="noopener">Source code for **`[id]` attributes on active, focusable elements are not unique** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/duplicate-id-active" rel="noopener">ID attribute value must be unique (Deque University)</a>

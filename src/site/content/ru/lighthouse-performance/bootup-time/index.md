@@ -44,4 +44,4 @@ tags:
 
 ## Ресурсы
 
-[Исходный проверки **Reduce JavaScript execution time** («Сократите время выполнения JavaScript»)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[Исходный проверки **Reduce JavaScript execution time** («Сократите время выполнения JavaScript»)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/bootup-time.js)

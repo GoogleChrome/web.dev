@@ -1,10 +1,9 @@
 ---
 title: Adaptive icon support in PWAs with maskable icons
-subhead: A new icon format to use adaptive icons on supporting platforms.
+subhead: App icons that adapt to platforms.
 description: |
-  Maskable icons are a new icon format that give you more control and let your Progressive Web App
-  use adaptive icons. By supplying a maskable icon, your icon can look great on all Android
-  devices.
+  Maskable icons are a format that give you more control and let your Progressive Web App
+  use adaptive icons. A maskable icon can look great on all Android devices.
 authors:
   - tigeroakes
   - thomassteiner
@@ -45,8 +44,8 @@ can adopt it in your apps.
 ## Are my current icons ready?
 
 Since maskable icons need to support a variety of shapes, you supply an opaque image with some
-padding that the browser can crop to the desired shape and size. It's best not to rely on
-any particular shape, since the ultimately chosen shape can vary by browser and platform.
+padding that the browser can crop to the required shape and size. It's best not to rely on
+any particular shape, since the ultimate shape varies by browser and platform.
 
 <figure data-float="right">
   {% Video
@@ -57,7 +56,7 @@ any particular shape, since the ultimately chosen shape can vary by browser and 
     playsinline=true
   %}
   <figcaption>
-    Different platform specific shapes.
+    Different platform-specific shapes.
   </figcaption>
 </figure>
 
@@ -90,33 +89,19 @@ then export the image.
 
 <figure>
   {% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor screenshot", width="670", height="569" %}
-  <figcaption>Creating icons in Maskable.app Editor.</figcaption>
+  <figcaption>Creating icons in the Maskable.app Editor.</figcaption>
 </figure>
 
-Once you've created a maskable icon image and tested it out in DevTools, you'll need to update your
+Once you've created a maskable icon and tested it in DevTools, you'll need to update your
 [web app manifest](/add-manifest/) to point to the
-new assets. The web app manifest provides information about your web app in a JSON file, and
+new asset. The web app manifest provides information about your web app in a JSON file, and
 includes an [`icons` array](/add-manifest/#icons).
 
-With the inclusion of maskable icons, a new property value has been added for image resources listed
-in a web app manifest. The `purpose` field tells the browser how your icon should be used. By
-default, icons will have a purpose of `"any"`. These icons will be resized on top of a white
-background on Android.
+For the inclusion of maskable icons, the `purpose` field tells the browser how your icon
+should be used. By default, icons will have a purpose of `"any"`. These icons will be
+resized on top of a white background on Android.
 
-Maskable icons should use a different purpose: `"maskable"`. This indicates that an image is meant
-to be used with icon masks, giving you more control over the result. This way, your icons will not
-have a white background. You can also specify multiple space-separated purposes (for example,
-`"any maskable"`), if you want your maskable icon to be used without a mask on other devices.
-
-{% Aside %}
-  While you _can_ specify multiple space-separated purposes such as `"any maskable"`, in
-  practice you _shouldn't_. Using `"maskable"` icons as `"any"` icons is suboptimal as the icon
-  is going to be used as-is, resulting in excess padding, making the core icon content smaller.
-  Ideally, icons for the `"any"` purpose should have transparent regions and no extra padding, like your site's favicons,
-  since the browser isn't going to add that for them.
-{% endAside %}
-
-```json
+```json/7,13
 {
   …
   "icons": [
@@ -138,6 +123,20 @@ have a white background. You can also specify multiple space-separated purposes 
   …
 }
 ```
+
+Maskable icons should use a different value for `purpose`: `"maskable"`. This indicates
+that an image is meant to be used with icon masks, giving you more control over the result.
+This way, your icons will not have a white background. You can also specify multiple
+space-separated purposes (for example, `"any maskable"`), if you want your maskable icon to
+be used without a mask on other devices.
+
+{% Aside %}
+  While you _can_ specify multiple space-separated purposes such as `"any maskable"`, in
+  practice you _shouldn't_. Using `"maskable"` icons as `"any"` icons is suboptimal as the icon
+  is going to be used as-is, resulting in excess padding, making the core icon content smaller.
+  Ideally, icons for the `"any"` purpose should have transparent regions and no extra padding,
+  like your site's favicons, since the browser isn't going to add that for them.
+{% endAside %}
 
 With this, you can go forth and create your own maskable icons, making sure your app looks great
 edge-to-edge (and for what it's worth, circle-to-circle, oval-to-oval 😄).

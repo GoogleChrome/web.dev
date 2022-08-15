@@ -38,5 +38,5 @@ También consulta [Botones y enlaces de etiquetas](/labels-and-text-alternatives
 
 ## Recursos
 
-- [El código fuente de la auditoría de **los botones no tienen un nombre accesible**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js)
+- [El código fuente de la auditoría de **los botones no tienen un nombre accesible**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/button-name.js)
 - [Los botones deben tener texto discernible (Deque University)](https://dequeuniversity.com/rules/axe/3.3/button-name)

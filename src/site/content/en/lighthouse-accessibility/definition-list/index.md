@@ -45,5 +45,5 @@ For example:
 
 ## Resources
 
-- [Source code for **`<dl>`s do not contain only properly ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/definition-list.js)
+- [Source code for **`<dl>`s do not contain only properly ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/definition-list.js)
 - [`<dl>` elements must only directly contain properly-ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements (Deque University)](https://dequeuniversity.com/rules/axe/3.3/definition-list)

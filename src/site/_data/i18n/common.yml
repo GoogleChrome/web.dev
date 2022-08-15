@@ -69,6 +69,15 @@ gotchas:
   pt: Pegadinhas
   ru: Обратите внимание
   zh: 问题
+  
+celebration:
+  en: Celebration
+  es: Celebración
+  ja: お祝い
+  ko: 축하
+  pt: Celebração
+  ru: праздник
+  zh: 庆典
 
 important:
   en: Important

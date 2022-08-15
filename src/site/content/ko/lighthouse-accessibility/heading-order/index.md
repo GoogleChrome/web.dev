@@ -58,5 +58,5 @@ web_lighthouse:
 
 ## 자원
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener"><strong>제목 건너뛰기 레벨</strong> 감사를 위한 소스 코드</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener"><strong>제목 건너뛰기 레벨</strong> 감사를 위한 소스 코드</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">제목 레벨은 1만 증가해야 합니다(Deque University).</a>

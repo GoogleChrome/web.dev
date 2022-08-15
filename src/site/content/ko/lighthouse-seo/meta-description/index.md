@@ -76,6 +76,6 @@ Lighthouse는 설명의 품질을 평가하지 않습니다.
 
 ## 리소스
 
-- [**문서에 메타 설명이 없음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [**문서에 메타 설명이 없음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [검색 결과에 좋은 제목과 스니펫 만들기](https://support.google.com/webmasters/answer/35624#1)
 - [관련이 없는 키워드](https://support.google.com/webmasters/answer/66358)

@@ -39,6 +39,6 @@ React Router를 사용하는 경우 [경로 탐색](https://reacttraining.com/re
 
 ## 참고 자료
 
-- [**다중 페이지 리디렉션 방지** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
+- [**다중 페이지 리디렉션 방지** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js)
 - [HTTP의 리디렉션](https://developer.mozilla.org/docs/Web/HTTP/Redirections)
 - [방문 페이지 리디렉션 방지](https://developers.google.com/speed/docs/insights/AvoidRedirects)

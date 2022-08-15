@@ -109,5 +109,5 @@ Consulta sobre [Encabezados y puntos de referencia](/headings-and-landmarks) par
 
 ## Recursos
 
-- [El código fuente de **la página no contiene un encabezado, un salto de enlace ni una** auditoría de puntos de referencia.](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/bypass.js)
+- [El código fuente de **la página no contiene un encabezado, un salto de enlace ni una** auditoría de puntos de referencia.](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/bypass.js)
 - [La página debe tener los medios para evitar los bloques repetidos (Universidad de Deque)](https://dequeuniversity.com/rules/axe/3.3/bypass)

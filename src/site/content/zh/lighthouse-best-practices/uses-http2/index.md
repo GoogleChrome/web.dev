@@ -28,6 +28,6 @@ Lighthouse 会收集页面请求的所有资源，并检查每个资源的 HTTP 
 
 ## 资源
 
-- [**不要为其所有资源使用 HTTP/2**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
+- [**不要为其所有资源使用 HTTP/2**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-http2.js)
 - [HTTP/2 简介](/performance-http2/)
 - [HTTP/2 常见问题](https://http2.github.io/faq/)

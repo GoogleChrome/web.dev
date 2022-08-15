@@ -74,6 +74,6 @@ Lighthouse 并不会评估描述的质量。
 
 ## 资源
 
-- [**文档没有描述标签**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [**文档没有描述标签**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [在搜索结果中创建优秀的标题和摘要](https://support.google.com/webmasters/answer/35624#1)
 - [不相关的关键词](https://support.google.com/webmasters/answer/66358)

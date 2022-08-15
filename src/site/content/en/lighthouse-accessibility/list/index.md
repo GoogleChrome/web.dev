@@ -36,5 +36,5 @@ Any other content elements are invalid.
 
 ## Resources
 
-- [Source code for **Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`)** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/list.js)
+- [Source code for **Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`)** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/list.js)
 - [`<ul>` and `<ol>` must only directly contain `<li>`, `<script>` or `<template>` elements (Deque University)](https://dequeuniversity.com/rules/axe/3.3/list)

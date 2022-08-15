@@ -52,4 +52,4 @@ web_lighthouse:
 ## 리소스
 
 - [접근 가능한 탭 대상](/accessible-tap-targets): 모든 사용자가 탭 대상에 액세스할 수 있도록 하는 방법에 대한 추가 정보입니다.
-- [**탭 대상의 크기가 적절하지 않습니다** Lighthouse 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+- [**탭 대상의 크기가 적절하지 않습니다** Lighthouse 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/tap-targets.js)

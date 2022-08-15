@@ -58,7 +58,7 @@ Chrome 92부터 출처 간 격리 없이는 `SharedArrayBuffer`를 사용하는 
     ```
 3. 헤더가 전파되기 시작하면 등록한 엔드포인트에서 사용 중단 보고서 수집을 시작합니다.
 
-여기에서 예제 구현을 참조하세요: [https://first-party-test.glitch.me](https://first-party-test.glitch.me) .
+여기에서 예제 구현을 참조하세요: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me) .
 
 {% endDetails %}
 

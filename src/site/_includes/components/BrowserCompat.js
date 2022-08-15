@@ -56,6 +56,15 @@ function getInfoFromSupportStatement(support, status, locale) {
         icon: support.version_added,
       };
     }
+
+    // See https://github.com/GoogleChrome/web.dev/issues/8333
+    if (support.version_added === true) {
+      return {
+        aria: i18n('i18n.browser_compat.supported', locale),
+        compatProperty: 'yes',
+        icon: '✅',
+      };
+    }
   }
 
   return {

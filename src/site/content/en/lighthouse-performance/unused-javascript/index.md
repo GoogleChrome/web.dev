@@ -97,7 +97,7 @@ plugins](https://wordpress.org/plugins/) loading unused JavaScript in your page.
 
 ## Resources
 
-* [Source code for the **Remove unused code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-javascript.js)
+* [Source code for the **Remove unused code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-javascript.js)
 * [Remove unused code](/remove-unused-code/)
 * [Adding interactivity with JavaScript][crp]
 * [Code Splitting][split]

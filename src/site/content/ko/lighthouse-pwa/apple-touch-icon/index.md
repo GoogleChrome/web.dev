@@ -50,6 +50,6 @@ Lighthouse는 아이콘이 실제로 존재하는지, 또는 아이콘이 올바
 
 ## 리소스
 
-- [**유효한 `apple-touch-icon`을 제공하지 않음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/apple-touch-icon.js)
+- [**유효한 `apple-touch-icon`을 제공하지 않음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/apple-touch-icon.js)
 - [설치 가능하게 하려면 필요한 사항 알아보기](/install-criteria)
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Apple 터치 아이콘 사용</a>

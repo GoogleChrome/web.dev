@@ -31,5 +31,5 @@ Lighthouse がフラグを立てるすべてのライブラリの使用を停止
 
 ## リソース
 
-- [「**既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリが含まれる**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [「**既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリが含まれる**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [snyk の Vulnerability DB](https://snyk.io/vuln?packageManager=all)

@@ -60,6 +60,6 @@ O navegador definirá a cor da barra de endereço de cada página do seu aplicat
 
 ## Recursos
 
-- [Código fonte para a auditoria**Não define uma cor de tema para a barra de endereço**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)
+- [Código fonte para a auditoria**Não define uma cor de tema para a barra de endereço**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/themed-omnibox.js)
 - [Adicionar um manifesto web app](/add-manifest)
 - [Suporte a <code>theme-color</code> no Chrome 39 para Android](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android)

@@ -81,7 +81,7 @@ Link: https://example.com; rel=canonical
 
 ## 참고 자료
 
-- [**문서에 유효한 `rel=canonical`**이 없음 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/canonical.js)
+- [**문서에 유효한 `rel=canonical`**이 없음 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/canonical.js)
 - [rel=canonical 관련 5가지 일반적인 실수](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
 - [중복 URL 통합](https://support.google.com/webmasters/answer/139066)
 - [매개변수화된 중복 콘텐츠 크롤링 차단](https://support.google.com/webmasters/answer/6080548)

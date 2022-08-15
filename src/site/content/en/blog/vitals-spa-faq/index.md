@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - yoavweiss
 date: 2021-09-14
-updated: 2022-05-11
+updated: 2022-07-18
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/FITOGeO0PDyPrBveixB7.jpeg
 alt: "Exterior view of the Walt Disney Concert Hall"
 tags:
@@ -129,7 +129,7 @@ page](https://en.wikipedia.org/wiki/Landing_page).
 You can check your site's score for different aggregation methods using
 [PageSpeed Insights](https://pagespeed.web.dev/) or
 the [Chrome User Experience Report
-API](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started),
+API](/chrome-ux-report-api/),
 which reports scores for both individual page URLs and the entire origin.
 
 Another way the SPA architecture can affect Core Web Vitals scores is for
@@ -216,7 +216,7 @@ expect to see their Core Web Vitals scores reflect that.
 
 Google tools that report field data for the Core Web Vitals metric (like Search
 Console and PageSpeed Insights) get their data from the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+Report](https://developer.chrome.com/docs/crux/)
 (CrUX). And CrUX aggregates data either by origin or by page URL (that is, the
 page URL at load time).
 

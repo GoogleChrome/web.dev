@@ -1,0 +1,32 @@
+@keyframes breath {
+  from {
+    animation-timing-function: ease-out;
+  }
+
+  to {
+    transform: scale(1.25) translateY(-5px) perspective(1px);
+    text-shadow: 0 0 40px var(--glow-color);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  [letter-animation] > span {
+    display: inline-block;
+    white-space: break-spaces;
+  }
+
+  [letter-animation=breath] {
+    --glow-color: white;
+  }
+
+  [letter-animation=breath]>span {
+    animation: breath 1.2s ease calc(var(--index) * 100 * 1ms) infinite alternate;
+  }
+}
+
+@media (prefers-reduced-motion:no-preference) and (prefers-color-scheme: light) {
+  [letter-animation=breath] {
+    --glow-color: black;
+  }
+}

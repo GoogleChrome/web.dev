@@ -62,6 +62,6 @@ Para outros casos, considere o uso de uma ferramenta como o <a href="https://dev
 
 ## Recursos
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/color-contrast.js" rel="noopener">O código-fonte para a auditoria <strong>cores de fundo e de primeiro plano não tem de relação de contraste suficiente</strong></a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/color-contrast.js" rel="noopener">O código-fonte para a auditoria <strong>cores de fundo e de primeiro plano não tem de relação de contraste suficiente</strong></a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/color-contrast" rel="noopener">Os elementos de texto devem ter contraste de cor suficiente contra o fundo (Deque University)</a>
 - <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Analisador de contraste de cor</a>

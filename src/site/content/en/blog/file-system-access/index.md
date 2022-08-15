@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-06-24
+updated: 2022-07-28
 tags:
   - blog
   - capabilities
@@ -403,7 +403,9 @@ the permissions currently need to be re-granted each time, which is suboptimal. 
 
 To enumerate all files in a directory, call [`showDirectoryPicker()`][showdirectorypicker]. The user
 selects a directory in a picker, after which a [`FileSystemDirectoryHandle`][fs-dir-handle] is
-returned, which lets you enumerate and access the directory's files.
+returned, which lets you enumerate and access the directory's files. By default, you will have read
+access to the files in the directory, but if you need write access, you can pass
+`{ mode: 'readwrite' }` to the method.
 
 ```js
 const butDir = document.getElementById('butDirectory');

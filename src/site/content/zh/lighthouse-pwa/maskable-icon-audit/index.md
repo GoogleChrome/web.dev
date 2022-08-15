@@ -51,7 +51,7 @@ date: 2020-05-06
 
 ## 资源
 
-- [**清单没有可屏蔽的图标**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [**清单没有可屏蔽的图标**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [PWA 中具有可屏蔽图标的自适应图标支持](/maskable-icon/)
 - [Maskable.app Editor](https://maskable.app/editor)
 - [添加 Web 应用清单](/add-manifest/)

@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-08-09
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -99,6 +99,10 @@ considered for Largest Contentful Paint are:
 * [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
 
+{% Aside 'important' %}
+Images that occupy the entire viewport are not considered LCP candidates.
+{% endAside %}
+
 Note, restricting the elements to this limited set was intentional in order to
 keep things simple in the beginning. Additional elements (e.g. `<svg>`,
 `<video>`) may be added in the future as more research is conducted.
@@ -180,7 +184,7 @@ contentful element unless a larger element is rendered.
   `largest-contentful-paint` entry to be dispatched. However, due to popular UI
   patterns such as image carousels that often removed DOM elements, the metric
   was updated to more accurately reflect what users experience. See the
-  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/master/docs/speed/metrics_changelog/2020_11_lcp.md)
+  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/2020_11_lcp.md)
   for more details.
 {% endAside %}
 
@@ -192,10 +196,14 @@ For analysis purposes, you should only report the most recently dispatched
 `PerformanceEntry` to your analytics service.
 
 {% Aside 'caution' %}
-  Since users can open pages in a background tab, it's possible that the largest
-  contentful paint will not happen until the user focuses the tab, which can be
-  much later than when they first loaded it.
+  Since users can open pages in a background tab, it's possible that
+  `largest-contentful-paint` entries will not be dispatched until the user
+  focuses the tab, which can be much later than when they first loaded it.
+
+  Google tools that measure LCP do not report this metric if the page was
+  loaded in the background, as it does not reflect the user-perceived load time.
 {% endAside %}
+
 
 #### Load time vs. render time
 
@@ -268,7 +276,7 @@ available in the following tools:
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
@@ -340,7 +348,7 @@ getLCP(console.log);
 ```
 
 You can refer to [the source code for
-`getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)
+`getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts)
 for a complete example of how to measure LCP in JavaScript.
 
 {% Aside %}

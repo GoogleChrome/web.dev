@@ -109,5 +109,5 @@ Consulte a [postagem de títulos e pontos de referência](/headings-and-landmark
 
 ## Recursos
 
-- [O código-fonte da **página não contém um título, link para pular ou** auditoria de região de referência](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/bypass.js)
+- [O código-fonte da **página não contém um título, link para pular ou** auditoria de região de referência](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/bypass.js)
 - [A página deve ter meios para contornar bloqueios repetidos (Universidade Deque)](https://dequeuniversity.com/rules/axe/3.3/bypass)

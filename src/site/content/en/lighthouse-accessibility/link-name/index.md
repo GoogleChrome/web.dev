@@ -41,5 +41,5 @@ Learn more in
 
 ## Resources
 
-- [Source code for **Links do not have a discernible name** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
+- [Source code for **Links do not have a discernible name** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/link-name.js)
 - [Links must have discernible text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/link-name)

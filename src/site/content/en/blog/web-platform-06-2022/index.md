@@ -2,7 +2,7 @@
 layout: post
 title: "New to the web platform in June"
 subhead: >
-  Discover some of the interesting features that landed in stable and beta web browsers during June 2022. 
+  Discover some of the interesting features that landed in stable and beta web browsers during June 2022.
 description: >
   Discover some of the interesting features that landed in stable and beta web browsers during June 2022.
 date: 2022-06-30
@@ -25,7 +25,7 @@ Firefox 102 includes support for [Transform Streams](https://developer.mozilla.o
 
 {% BrowserCompat 'api.TransformStream' %}
 
-[Readable byte streams](https://developer.mozilla.org/docs/Web/API/Streams_API#bytestream-related_interfaces) are also now supported in Firefox 102, enabling a BYOB (bring your own buffer) reader with the [`ReadableStreamBYOBReader`](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader) interface. This can be used to stream data supplied by the developer. 
+[Readable byte streams](https://developer.mozilla.org/docs/Web/API/Streams_API#bytestream-related_interfaces) are also now supported in Firefox 102, enabling a BYOB (bring your own buffer) reader with the [`ReadableStreamBYOBReader`](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader) interface. This can be used to stream data supplied by the developer.
 
 {% BrowserCompat 'api.ReadableStreamBYOBReader' %}
 
@@ -34,8 +34,7 @@ Firefox 102 includes support for [Transform Streams](https://developer.mozilla.o
 Chrome 103 includes the [Local Font Access API](/local-fonts/), which allows access to the user's locally installed fonts. After requesting access to the fonts installed on the device, call `window.queryLocalFonts()` to get an array of the installed fonts.
 
 ```js
-const opts = {};
-const pickedFonts = await self.queryLocalFonts();
+const pickedFonts = await window.queryLocalFonts();
 for (const fontData of pickedFonts) {
   console.log(fontData.postscriptName);
   console.log(fontData.fullName);
@@ -52,13 +51,13 @@ Firefox 102 includes the [`update`](https://developer.mozilla.org/docs/Web/CSS/@
 
 ### A new HTTP status code—103 early hints
 
-Chrome 103 adds a new status code HTTP 103 Early Hints. If the server or CDN knows that a certain set of subresources is required to load a page, it can advise the browser to preconnect to origins or even preload resources as the page that requires them comes in. This requires updates to your server or CDN to take advantage of the feature, [find out more about Early Hints](https://developer.chrome.com/blog/early-hints/). 
+Chrome 103 adds a new status code HTTP 103 Early Hints. If the server or CDN knows that a certain set of subresources is required to load a page, it can advise the browser to preconnect to origins or even preload resources as the page that requires them comes in. This requires updates to your server or CDN to take advantage of the feature, [find out more about Early Hints](https://developer.chrome.com/blog/early-hints/).
 
 ## Beta browser releases
 
 Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release.
 
-New betas in April were [Chrome 104](https://blog.chromium.org/2022/06/chrome-104-beta-new-media-query-syntax.html), [Firefox 103](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/103), and [Safari 16](https://developer.apple.com/documentation/safari-release-notes/safari-16-release-notes). 
+New betas in April were [Chrome 104](https://blog.chromium.org/2022/06/chrome-104-beta-new-media-query-syntax.html), [Firefox 103](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/103), and [Safari 16](https://developer.apple.com/documentation/safari-release-notes/safari-16-release-notes).
 
 ### New syntax for range media queries
 

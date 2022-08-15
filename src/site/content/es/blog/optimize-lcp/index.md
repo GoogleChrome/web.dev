@@ -4,7 +4,7 @@ subhead: Cómo renderizar su contenido principal más rápido.
 authors:
   - houssein
 date: 2020-05-05
-updated: 2020-08-20
+updated: 2022-07-18
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimizar el banner LCP
 description: Largest Contentful Paint (LCP) se puede utilizar para determinar cuándo el contenido principal de la página se terminó de renderizar en la pantalla. Aprenda a optimizar LCP mejorando los tiempos de respuesta lentos del servidor, los tiempos de carga de recursos y renderización del lado del cliente.
@@ -362,6 +362,6 @@ Hay varias herramientas disponibles para medir y depurar LCP:
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="LCP en Chrome DevTools", width="800", height="509" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) proporciona valores de LCP del mundo real agregados a nivel de origen.
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) proporciona valores de LCP del mundo real agregados a nivel de origen.
 
 *Agradecemos a Philip Walton, Katie Hempenius, Kayce Basques e Ilya Grigorik por sus comentarios.*

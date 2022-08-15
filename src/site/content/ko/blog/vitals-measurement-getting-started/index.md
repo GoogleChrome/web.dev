@@ -3,7 +3,7 @@ title: Web Vitals 측정 시작하기
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: LCP, FID 및 CLS라는 라벨이 붙은 스톱워치가 오버레이된 월별 그래프
 description: 실제 환경과 실험실 환경 모두에서 사이트의 Web Vitals를 측정하는 방법을 알아보세요.
@@ -21,7 +21,7 @@ tags:
 
 ### 시작하기
 
-RUM 설정이 없는 경우 다음 도구를 사용하여 사이트의 실제 성능에 대한 데이터를 빠르게 제공할 수 있습니다. 이러한 도구는 모두 동일한 기본 데이터 세트([Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report))를 기반으로 하지만 사용 사례가 약간 다릅니다.
+RUM 설정이 없는 경우 다음 도구를 사용하여 사이트의 실제 성능에 대한 데이터를 빠르게 제공할 수 있습니다. 이러한 도구는 모두 동일한 기본 데이터 세트([Chrome User Experience Report](https://developer.chrome.com/docs/crux/))를 기반으로 하지만 사용 사례가 약간 다릅니다.
 
 - **PageSpeed Insights(PSI)** : [PageSpeed Insights](https://pagespeed.web.dev/)는 지난 28일 동안 집계된 페이지 수준 및 원본 수준 성능에 대해 보고하며 성능 개선 방법을 제안합니다. 사이트의 Web Vitals 측정 및 개선을 하나로 시작하고 싶다면 PSI를 사용하여 사이트를 감사하는 것이 좋습니다. PSI는 [웹](https://pagespeed.web.dev/) 또는 [API](https://developers.google.com/speed/docs/insights/v5/get-started)를 통해 이용할 수 있습니다.
 - **Search Console** : [Search Console](https://search.google.com/search-console/welcome)은 페이지별로 성능 데이터를 보고합니다. 따라서 개선이 필요한 특정 페이지를 식별하는 데 적합합니다. PageSpeed Insights와 달리 Search Console 보고에는 과거 성능 데이터 내역이 포함됩니다. Search Console은 본인이 소유하고 있으며 소유권이 확인된 사이트에서만 사용할 수 있습니다.

@@ -47,7 +47,7 @@ Google 认为核心 Web 指标对一切网络体验都至关重要。因此，Go
 
 #### 核心 Web 指标的实测工具
 
-[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)为每项核心 Web 指标收集匿名的真实用户测量数据。这些数据既能使网站所有者快速进行性能评估，而无需在页面上进行手动检测分析，也能同时为[PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)和搜索控制台的[核心 Web 指标报告](https://support.google.com/webmasters/answer/9205520)等工具提供支持。
+[Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)为每项核心 Web 指标收集匿名的真实用户测量数据。这些数据既能使网站所有者快速进行性能评估，而无需在页面上进行手动检测分析，也能同时为[PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)和搜索控制台的[核心 Web 指标报告](https://support.google.com/webmasters/answer/9205520)等工具提供支持。
 
 <div class="table-wrapper">
   <table>
@@ -58,7 +58,7 @@ Google 认为核心 Web 指标对一切网络体验都至关重要。因此，Go
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome 用户体验报告</a></td>
+      <td><a href="https://developer.chrome.com/docs/crux/">Chrome 用户体验报告</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>

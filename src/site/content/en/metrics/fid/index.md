@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -252,7 +252,7 @@ user to interact with your page. You can measure FID with the following tools.
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)

@@ -96,7 +96,7 @@ APIs](https://wicg.github.io/deprecation-reporting/) to a specified endpoint.
    start collecting deprecation reports.
 
 See an example implementation here:
-[https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+[https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 

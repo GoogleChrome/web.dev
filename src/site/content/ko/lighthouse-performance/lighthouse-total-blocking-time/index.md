@@ -68,7 +68,7 @@ Chrome DevTools의 성능 패널로 긴 작업의 근본 원인을 진단하는 
 
 ## 참고 자료
 
-- [**총 차단 시간** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
+- [**총 차단 시간** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/total-blocking-time.js)
 - [긴 JavaScript 작업으로 인해 상호 작용까지의 시간이 지연됩니까?](/long-tasks-devtools)
 - [첫 번째 입력 지연 최적화](/optimize-fid)
 - [최초 콘텐츠풀 페인트](/fcp/)

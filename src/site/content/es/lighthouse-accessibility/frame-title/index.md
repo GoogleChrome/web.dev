@@ -42,6 +42,6 @@ Obtenga más información en [Escriba títulos descriptivos, descripciones y tex
 
 ## Recursos
 
-- [El código fuente de **los elementos `<frame>` o `<iframe>` no tiene una auditoría de título**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/frame-title.js)
+- [El código fuente de **los elementos `<frame>` o `<iframe>` no tiene una auditoría de título**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/frame-title.js)
 - [Etiquetar documentos y frames](/labels-and-text-alternatives#label-documents-and-frames)
 - [Los frames deben tener el atributo de título (Universidad de Deque)](https://dequeuniversity.com/rules/axe/3.3/frame-title)

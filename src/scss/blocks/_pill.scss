@@ -26,3 +26,15 @@
     @include apply-utility('bg', 'action-bg-primary');
   }
 }
+
+.pill[data-inactive] {
+  cursor: default;
+
+  &:hover,
+  &[data-state='active'],
+  &[aria-current='page'] {
+    background: transparent;
+    border-color: var(--color-stroke);
+    @include apply-utility('color', 'core-text');
+  }
+}
