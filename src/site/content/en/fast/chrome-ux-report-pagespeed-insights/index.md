@@ -3,12 +3,13 @@ layout: post
 title: Using the Chrome UX Report on PageSpeed Insights
 authors:
   - rviscomi
+  - tunetheweb
 description: |
   PageSpeed Insights (PSI) is a tool for web developers to understand what a
   page's performance is and how to improve it. In this guide, learn how to use
   PSI to extract insights from CrUX and better understand the user experience.
 date: 2020-05-28
-updated: 2022-07-18
+updated: 2022-08-15
 tags:
   - performance
   - chrome-ux-report
@@ -23,58 +24,67 @@ to show how real users experience the page and the origin in
 aggregate. In this guide, learn how to use PSI to extract insights from CrUX
 and better understand the user experience.
 
-{% Img src="image/admin/8ORarOdBzgJ5FAMkws7p.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="703" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oJIQroFHkp8unHziyoxn.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="786" %}
 
 ## Reading the data
 
-To get started, go to [https://developers.google.com/speed/pagespeed/insights/](https://pagespeed.web.dev/)
+To get started, go to [https://pagespeed.web.dev/](https://pagespeed.web.dev/)
 and enter the URL of the page you want to test.
 
-{% Img src="image/admin/5bnx9Xt0LT2XWk8Gpy3s.png", alt="Enter a URL to get started on PageSpeed Insights", width="800", height="203" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/GoTgDw7qJzuGdz0SHL8V.png", alt="Enter a URL to get started on PageSpeed Insights", width="800", height="106" %}
 
 After a few seconds, Lighthouse
-audits will be performed and you will see sections for Field and Lab data. CrUX
+audits will be performed and you will see sections for Field ("Discover what your real users are experiencing") and Lab ("Diagnose performance issues") data. CrUX
 is a collection of real user experiences from the field, while Lighthouse is a
 controlled test in the lab.
 
-{% Img src="image/admin/bKoL7v3vnO6Ttl70FkZe.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="296" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/jZSP6YZQHE8vBOJIMhCH.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="491" %}
 
-In the **Field Data** section, you'll see four metrics:
-[First Contentful Paint](/fcp/) (FCP), [First Input Delay](/fid/) (FID),
-[Largest Contentful Paint](/lcp/) (LCP), and
-[Cumulative Layout Shift](/cls/) (CLS). FID, LCP, and CLS are
-considered the [Core Web Vitals](/vitals/#core-web-vitals) metrics. These
-metrics are representative of the user experience in different ways:
+In the field data section, you'll see six metrics:
+[Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/) on the top as these are considered the [Core Web Vitals](/vitals/#core-web-vitals) metrics. Followed by [First Contentful Paint](/fcp/) (FCP), [Interaction to Next Paint](/inp/) (INP), and [Time to First Byte](/ttfb/) (TTFB) beneath as supplementary metrics.
 
-- **FCP** measures the time until the page displays something in the
- foreground, like some text or a logo.
-- **FID** measures the interactivity of the page, from the user's first
-  interaction to the time the page responds to it.
+These metrics are representative of the user experience in different ways:
+
+**Core Web Vitals:**
 - **LCP** measures the time until the page displays what is likely its main
   content, like a hero image or heading.
+- **FID** measures the interactivity of the page, from the user's first
+  interaction to the time the page responds to it.
 - **CLS** measures the degree of layout instability on the page, due to shifts
   like asynchronously loaded content being injected.
 
-Metric | "Good" | "Needs Improvement" | "Poor"
--- | -- | -- | --
-FCP | 0–1000ms | 1000ms–3000ms | 3000ms+
-FID | 0–100ms | 100–300ms | 300ms+
-LCP | 0–2500ms | 2500–4000ms | 4000ms+
-CLS | 0.00-0.10 | 0.10–0.25 | 0.25+
+**Additional metrics:**
+- **FCP** measures the time until the page displays something in the
+ foreground, like some text or a logo.
+- **INP** is an experimental metric that measures the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below.
+- **TTFB** measures the the time between the request for a resource and when the first byte of a response begins to arrive.
 
 This table describes how values for these metrics are categorized as either
 "good", "needing improvement", or "poor".
+
+Metric | "Good" | "Needs Improvement" | "Poor"
+-- | -- | -- | --
+LCP | 0–2500ms | 2500–4000ms | 4000ms+
+FID | 0–100ms | 100–300ms | 300ms+
+CLS | 0.00-0.10 | 0.10–0.25 | 0.25+
+FCP | 0–1800ms | 1800ms–3000ms | 3000ms+
+INP | 0–200ms | 200ms–500ms | 500ms+
+TTFB | 0–800ms | 800ms–1800ms | 1800ms+
+
+The three CWV metrics are the most important metrics, and are directly experienced by the users. The other metrics can influence those metrics but may not directly equate to user experience so it's not absolutely necessary that sites meet the "good" threshold, provided that it doesn't impede their ability to score well on the metrics that matter.
 
 There are three ways that the user experience is displayed in PSI:
 
 - a label summarizing the page as passing or not passing the Core Web Vitals
   assessment
 - percentiles measured in seconds or milliseconds (CLS is unitless)
-- a distribution representing the percent of "good", "needing improvement", and
-  "poor" experiences
+- a distribution representing the percent of "good", "needing improvement", and "poor" experiences is available by clicking on "Expand View" in the top right of this section.
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/6ykCy8x82DN4syjcxoyJ.png", alt="Expanded view of CrUX data in PageSpeed Insights", width="800", height="719" %}
 
 In the screenshot above, the page is labelled as "passing" the Core Web Vitals
-assessment. To pass, the percentile must be categorized as "good".
+assessment. To pass, the percentile must be categorized as "good" in all three
+Core Web Vitals (FID can be optional for pages that do not have interactions).
 Otherwise, the page is labelled as "not passing".
 
 The percentiles shown for all metrics correspond to the 75th percentile. In
@@ -86,8 +96,8 @@ where "good" values are green, values "needing improvement" are orange, and
 "poor" values are red.
 
 Finally, the distributions for each metric are illustrated using the "good",
-"needs improvement", and "poor" grouping. For example, FCP experiences on this
-page are "good" (less than 1 second) 44% of the time. FID is "poor" (at least
+"needs improvement", and "poor" grouping. For example, LCP experiences on this
+page are "good" (less than 2.5 seconds) 90% of the time. FID is "poor" (at least
 300 milliseconds) 1% of the time. These distributions represent all user
 experiences on the page and their shapes indicate the tendency to be either
 "good" or "poor".
@@ -99,23 +109,25 @@ user experiences across all pages of an origin. You can get the same stats for a
 closely aligned with what is available on [BigQuery](/chrome-ux-report-bigquery/), while the page-level
 performance is not made available to query.
 
-{% Img src="image/admin/7Xr7VVdZMbRlEMlgq3cj.png", alt="Origin CrUX performance in PageSpeed Insights", width="800", height="371" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/Mer6ovkOuMxHZH6fhHY7.png", alt="Origin CrUX performance in PageSpeed Insights", width="800", height="426" %}
 
 There is one major difference between the origin-level data on PSI versus
 BigQuery. The datasets on BigQuery are released once a month and encompass the data from the previous calendar month. For example, the 202005 dataset
-includes all user experiences that occurred in May 2020. On the other
-hand, PSI aggregates new data every day encompassing the previous 28 days. So
+includes all user experiences that occurred in the 28 days up until the end of May 2020.
+On the other hand, PSI aggregates new data every day encompassing the previous 28 days. So
 the results you see today may be different tomorrow and they would not
-necessarily be the same as what you'd see in the monthly aggregations on
+necessarily be the same as what you'd see in the current month's aggregations on
 BigQuery.
 
-## Null response when URL not available
+## Responses when URL data not available in CrUX
 
-If the URL you entered is not available in CrUX, you will see a null response
-like the one below, indicating that there is not enough field data.
-Lab data from Lighthouse is still available to give you an approximation of the page's performance.
+If the URL you entered is not available in CrUX, PageSpeed Insights will attempt to fallback to original level data as shown below. Clicking on the Information icon will show more explanation.
 
-{% Img src="image/admin/TQSwqryJR9phVV5vjDs4.png", alt="No CrUX data on PageSpeed Insights", width="800", height="202" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/A6hRLMwSCWUj1qcDUOTn.png", alt="No URL-level CrUX data on PageSpeed Insights, so showing Origin data", width="800", height="269" %}
+
+If the origin-level data is also not available in CrUX, then PSI is not able to display this section, as shown below. Lab data from Lighthouse is still available to give you an approximation of the page's performance.
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/tzZlOJKTVZB72Pr4LRgh.png", alt="No CrUX data on PageSpeed Insights", width="800", height="129" %}
 
 ## FAQ
 
