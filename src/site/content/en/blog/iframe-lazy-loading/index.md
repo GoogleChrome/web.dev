@@ -69,7 +69,7 @@ Delay](/fid/) (FID) improvements at the 95th percentile.
 ### How does built-in lazy-loading for iframes work?
 
 The `loading` attribute allows a browser to defer loading offscreen iframes and
-images until users scroll near them. `loading` supports three values:
+images until users scroll near them. `loading` supports two values:
 
 *   `lazy`: is a good candidate for lazy-loading.
 *   `eager`: is not a good candidate for lazy-loading. Load right away.
