@@ -13,6 +13,10 @@ tags:
   - performance
 ---
 
+{% Aside %}
+`IntersectionObserver` V2 has landed in Chromium-based browsers. [Read up on the updates](/intersectionobserver-v2/) for how that API improves on the first version of `IntersectionObserver`.
+{% endAside %}
+
 {% BrowserCompat 'api.IntersectionObserver' %}
 
 Let's say you want to track when an element in your DOM enters the visible [viewport](https://en.wikipedia.org/wiki/Viewport). You might want to do this so you can lazy-load images just in time or because you need to know if the user is actually looking at a certain ad banner. You can do that by hooking up the scroll event or by using a periodic timer and calling [`getBoundingClientRect()`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
