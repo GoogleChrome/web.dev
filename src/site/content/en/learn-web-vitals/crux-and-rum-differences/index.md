@@ -7,7 +7,7 @@ description: |
   Learn about reasons why RUM data can show different Core Web Vitals numbers from CrUX.
 authors:
   - tunetheweb
-date: 2022-08-11
+date: 2022-08-15
 #updated: 2022-07-18
 hero: image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/Q7jtkHwdv8dmhz1KhaiD.jpg
 alt: Runnings racing each other on a track
