@@ -23,7 +23,7 @@ patternId: components/dialog
             </svg>
             <h3>New User</h3>
           </section>
-          <button onclick="this.closest('dialog').close('close')" type="button" title="Close dialog">
+          <button type="button" title="Close dialog">
             <title>Close dialog icon</title>
             <svg width="24" height="24" viewBox="0 0 24 24">
               <line x1="18" y1="6" x2="6" y2="18"/>
@@ -43,7 +43,7 @@ patternId: components/dialog
             <button type="reset" value="clear">Clear</button>
           </menu>
           <menu>
-            <button autofocus type="button" onclick="this.closest('dialog').close('cancel')">Cancel</button>
+            <button autofocus type="button">Cancel</button>
             <button type="submit" value="confirm">Confirm</button>
           </menu>
         </footer>
@@ -65,7 +65,7 @@ patternId: components/dialog
         </article>
         <footer>
           <menu>
-            <button autofocus type="button" onclick="this.closest('dialog').close('cancel')">Cancel</button>
+            <button autofocus type="button">Cancel</button>
             <button type="submit" value="confirm">Confirm</button>
           </menu>
         </footer>
@@ -91,7 +91,7 @@ patternId: components/dialog
           </svg>
         </button>
       </div>
-      <button class="user" onclick="window.MegaDialog.showModal()">
+      <button class="user" aria-label="Add user">
         <svg width="24" height="24" viewBox="0 0 24 24">
           <line x1="12" y1="5" x2="12" y2="19"></line>
           <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -100,12 +100,12 @@ patternId: components/dialog
     </main>
 
     {% set script %}
-      (()=>{var p=new Event("closing"),w=new Event("closed"),h=new Event("opening"),b=new Event("opened"),L=new Event("removed"),y=new MutationObserver((e,n)=>{e.forEach(async i=>{if(i.attributeName==="open"){let t=i.target;if(!t.hasAttribute("open"))return;t.removeAttribute("inert");let o=t.querySelector("[autofocus]");o?o.focus():t.querySelector("button").focus(),t.dispatchEvent(h),await c(t),t.dispatchEvent(b)}})}),D=new MutationObserver((e,n)=>{e.forEach(i=>{i.removedNodes.forEach(t=>{t.nodeName==="DIALOG"&&(t.removeEventListener("click",d),t.removeEventListener("close",m),t.dispatchEvent(L))})})}),c=e=>Promise.allSettled(e.getAnimations().map(n=>n.finished)),d=({target:e})=>{e.nodeName==="DIALOG"&&e.close("dismiss")},m=async({target:e})=>{e.setAttribute("inert",""),e.dispatchEvent(p),await c(e),e.dispatchEvent(w)};async function l(e){e.addEventListener("click",d),e.addEventListener("close",m),y.observe(e,{attributes:!0}),D.observe(document.body,{attributes:!1,subtree:!1,childList:!0}),await c(e),e.removeAttribute("loading")}var M=e=>{let n=e.get("userimage");if(!n.size)return;let i=new FileReader;i.readAsDataURL(n),i.onload=t=>{let s=document.querySelector("main"),o=document.createElement("div");o.className="new user";let a=document.createElement("img");a.src=t.target.result;let r=document.createElement("button");r.title="Remove user",r.innerHTML=`
-        <svg width="24" height="24" viewBox="0 0 24 24">
-          <line x1="18" y1="6" x2="6" y2="18"/>
-          <line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      `,o.appendChild(a),o.appendChild(r),s.appendChild(o),s.appendChild(s.querySelector("button.user"))}},u=({target:e})=>{console.log("Dialog closing",e)},v=({target:e})=>{if(console.log("Dialog closed",e),console.info("Dialog user action:",e.returnValue),e.returnValue==="confirm"){let n=new FormData(e.querySelector("form"));console.info("Dialog form data",Object.fromEntries(n.entries())),M(n),e.querySelector("form")?.reset()}},g=({target:e})=>{console.log("Dialog open",e)},E=({target:e})=>{console.log("Dialog opening",e)},f=({target:e})=>{e.removeEventListener("closing",u),e.removeEventListener("closed",v),e.removeEventListener("opening",E),e.removeEventListener("opened",g),e.removeEventListener("removed",f),console.log("Dialog removed",e)};document.querySelectorAll('dialog[modal-mode="mega"]').forEach(e=>{l(e),e.addEventListener("closing",u),e.addEventListener("closed",v),e.addEventListener("opening",E),e.addEventListener("opened",g),e.addEventListener("removed",f)});document.querySelector("main").addEventListener("click",e=>{let n=e.target.closest("button:not(.user)");if(!n)return;let i=n.getBoundingClientRect(),t=window.MiniDialog.clientHeight-15,s=window.MiniDialog.clientWidth/2,o=i.left-s;o<0&&(o=10),window.MiniDialog.style.marginTop=i.y-t+"px",window.MiniDialog.style.marginLeft=null,window.innerWidth>=768&&(window.MiniDialog.style.marginLeft=o+"px"),window.MiniDialog.showModal(),window.MiniDialog.addEventListener("closing",({target:a})=>{if(a.returnValue==="confirm"){let r=n.closest(".user");r.style.animation="var(--animation-scale-down), var(--animation-fade-out)",r.addEventListener("animationend",O=>{r.remove()},{once:!0})}},{once:!0})});document.querySelectorAll('dialog[modal-mode="mini"]').forEach(e=>{l(e)});})();
+      (()=>{var p=new Event("closing"),w=new Event("closed"),h=new Event("opening"),L=new Event("opened"),b=new Event("removed"),y=new MutationObserver((e,t)=>{e.forEach(async i=>{if(i.attributeName==="open"){let n=i.target;if(!n.hasAttribute("open"))return;n.removeAttribute("inert");let o=n.querySelector("[autofocus]");o?o.focus():n.querySelector("button").focus(),n.dispatchEvent(h),await l(n),n.dispatchEvent(L)}})}),D=new MutationObserver((e,t)=>{e.forEach(i=>{i.removedNodes.forEach(n=>{n.nodeName==="DIALOG"&&(n.removeEventListener("click",d),n.removeEventListener("close",u),n.dispatchEvent(b))})})}),l=e=>Promise.allSettled(e.getAnimations().map(t=>t.finished)),d=({target:e})=>{e.nodeName==="DIALOG"&&e.close("dismiss")},u=async({target:e})=>{e.setAttribute("inert",""),e.dispatchEvent(p),await l(e),e.dispatchEvent(w)};async function c(e){e.addEventListener("click",d),e.addEventListener("close",u),y.observe(e,{attributes:!0}),D.observe(document.body,{attributes:!1,subtree:!1,childList:!0}),await l(e),e.removeAttribute("loading")}var M=e=>{let t=e.get("userimage");if(!t.size)return;let i=new FileReader;i.readAsDataURL(t),i.onload=n=>{let s=document.querySelector("main"),o=document.createElement("div");o.className="new user";let a=document.createElement("img");a.src=n.target.result;let r=document.createElement("button");r.title="Remove user",r.innerHTML=`
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+      `,o.appendChild(a),o.appendChild(r),s.appendChild(o),s.appendChild(s.querySelector("button.user"))}},m=({target:e})=>{console.log("Dialog closing",e)},v=({target:e})=>{if(console.log("Dialog closed",e),console.info("Dialog user action:",e.returnValue),e.returnValue==="confirm"){let t=new FormData(e.querySelector("form"));console.info("Dialog form data",Object.fromEntries(t.entries())),M(t),e.querySelector("form")?.reset()}},g=({target:e})=>{console.log("Dialog open",e)},E=({target:e})=>{console.log("Dialog opening",e)},f=({target:e})=>{e.removeEventListener("closing",m),e.removeEventListener("closed",v),e.removeEventListener("opening",E),e.removeEventListener("opened",g),e.removeEventListener("removed",f),console.log("Dialog removed",e)};document.querySelectorAll('dialog[modal-mode="mega"]').forEach(e=>{c(e),e.addEventListener("closing",m),e.addEventListener("closed",v),e.addEventListener("opening",E),e.addEventListener("opened",g),e.addEventListener("removed",f)});document.querySelector("main").addEventListener("click",e=>{let t=e.target.closest("button:not(.user)");if(!t)return;let i=t.getBoundingClientRect(),n=window.MiniDialog.clientHeight-15,s=window.MiniDialog.clientWidth/2,o=i.left-s;o<0&&(o=10),window.MiniDialog.style.marginTop=i.y-n+"px",window.MiniDialog.style.marginLeft=null,window.innerWidth>=768&&(window.MiniDialog.style.marginLeft=o+"px"),window.MiniDialog.showModal(),window.MiniDialog.addEventListener("closing",({target:a})=>{if(a.returnValue==="confirm"){let r=t.closest(".user");r.style.animation="var(--animation-scale-down), var(--animation-fade-out)",r.addEventListener("animationend",A=>{r.remove()},{once:!0})}},{once:!0})});document.querySelectorAll('[title="Close dialog"]').forEach(e=>{e.addEventListener("click",t=>{e.closest("dialog").close("close")})});document.querySelectorAll('menu > button[type="button"]').forEach(e=>{e.addEventListener("click",t=>{t.target.closest("dialog").close("cancel")})});document.querySelector('[aria-label="Add user"]').addEventListener("click",e=>{window.MegaDialog.showModal()});document.querySelectorAll('dialog[modal-mode="mini"]').forEach(e=>{c(e)});})();
     {% endset %}
     <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
