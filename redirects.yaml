@@ -364,3 +364,7 @@ redirects:
     destination: /optimizing-content-efficiency-optimize-encoding-and-transfer/
   - source: /performance-get-started-wrapup-7/
     destination: /fast/
+
+  # Redirects scrolling performance post to the Intersection Observer post
+  - source: /speed-scrolling/
+    destination: /intersectionobserver/
