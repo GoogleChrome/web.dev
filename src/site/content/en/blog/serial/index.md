@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2022-08-12
+updated: 2022-08-16
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -266,6 +266,79 @@ try {
     // Fallback to port.readable.getReader()...
   }
 }
+```
+
+Here's an example of how to reuse the buffer out of `value.buffer`:
+
+```js
+const bufferSize = 8 * 1024; // 8kB
+let reader;
+while (port.readable) {
+  try {
+    try {
+      reader = port.readable.getReader({ mode: "byob" });
+    } catch {
+      reader = port.readable.getReader();
+    }
+
+    let buffer = null;
+    while (true) {
+      const { value, done } = await (async () => {
+        if (reader instanceof ReadableStreamBYOBReader) {
+          if (!buffer) {
+            buffer = new ArrayBuffer(bufferSize);
+          }
+          const { value, done } = await reader.read(
+            new Uint8Array(buffer, 0, bufferSize)
+          );
+          buffer = value?.buffer;
+          return { value, done };
+        } else {
+          return await reader.read();
+        }
+      })();
+      if (done) {
+        // reader.cancel() has been called.
+        break;
+      }
+      // Handle value.
+    }
+  } catch (e) {
+    // Handle error...
+  } finally {
+    if (reader) {
+      // Allow the serial port to be closed later.
+      reader.releaseLock();
+      reader = undefined;
+    }
+  }
+}
+```
+
+Here's another example of how to read a specific amount of data from a serial port:
+
+```js
+async function readInto(reader, buffer) {
+  let offset = 0;
+  while (offset < buffer.byteLength) {
+    const { value, done } = await reader.read(
+      new Uint8Array(buffer, offset)
+    );
+    if (done) {
+      break;
+    }
+    buffer = value.buffer;
+    offset += value.byteLength;
+  }
+  return buffer;
+}
+
+const reader = port.readable.getReader({ mode: "byob" });
+let buffer = new ArrayBuffer(512);
+// Read the first 512 bytes.
+buffer = await readInto(reader, buffer);
+// Then read the next 512 bytes.
+buffer = await readInto(reader, buffer);
 ```
 
 ### Write to a serial port {: #write-port }
