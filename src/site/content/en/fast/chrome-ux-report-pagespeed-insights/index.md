@@ -92,8 +92,8 @@ Otherwise, the page is labelled as "not passing".
 The percentiles shown for all metrics correspond to the 75th percentile. In
 statistics, a percentile is a measure that indicates the value below which a
 given percentage of samples fall. For example, the screenshot above shows that
-FID's 75th percentile is 15ms, meaning that 75% of FID experiences are faster
-than 15ms. These values are color-coded according to the threshold table above
+FID's 75th percentile is 13ms, meaning that 75% of FID experiences are faster
+than 13ms. These values are color-coded according to the threshold table above
 where "good" values are green, values "needing improvement" are orange, and
 "poor" values are red.
 
@@ -123,7 +123,7 @@ BigQuery.
 
 ## Responses when URL data not available in CrUX
 
-If the URL you entered is not available in CrUX, PageSpeed Insights will attempt to fallback to original level data as shown below. Clicking on the Information icon will show more explanation.
+If the URL you entered is not available in CrUX, PageSpeed Insights will attempt to fallback to original level data as shown below. Clicking on the icon beside the disabled **This URL** button will show more explanation.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/A6hRLMwSCWUj1qcDUOTn.png", alt="No URL-level CrUX data on PageSpeed Insights, so showing Origin data", width="800", height="269" %}
 
