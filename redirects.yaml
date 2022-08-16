@@ -292,6 +292,8 @@ redirects:
     destination: /media-conversion
   - source: /media-eme-basics
     destination: /media-eme
+  - source: /capturing-images
+    destination: /media-capturing-images
 
   # Redirects to https://developer.chrome.com/.
   - source: /browser-flags
