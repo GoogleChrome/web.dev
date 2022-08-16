@@ -29,19 +29,16 @@ and better understand the user experience.
 ## Reading the data
 
 To get started, go to [https://pagespeed.web.dev/](https://pagespeed.web.dev/)
-and enter the URL of the page you want to test and click Analyze.
+and enter the URL of the page you want to test and click **Analyze**.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/GoTgDw7qJzuGdz0SHL8V.png", alt="Enter a URL to get started on PageSpeed Insights", width="800", height="106" %}
 
 After a few seconds, Lighthouse
-audits will be performed and you will see sections for from CrUX ("Discover what your real users are experiencing") and from Lighthouse ("Diagnose performance issues") data. CrUX is a collection of real user experiences from the field, while Lighthouse is a controlled test in the lab.
+audits will be performed and you will see sections with data from CrUX ("Discover what your real users are experiencing") and Lighthouse ("Diagnose performance issues"). CrUX is a collection of real-user experiences from the field, while Lighthouse is a controlled test in the lab.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/jZSP6YZQHE8vBOJIMhCH.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="491" %}
 
-In the field data section, you'll see six metrics:
-[Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/) on the top as these are considered the [Core Web Vitals](/vitals/#core-web-vitals) metrics. These are followed by [First Contentful Paint](/fcp/) (FCP), [Interaction to Next Paint](/inp/) (INP), and [Time to First Byte](/ttfb/) (TTFB) beneath as supplementary metrics.
-
-These metrics are representative of the user experience in different ways.
+In the real-user experiences section, metrics are grouped by [Core Web Vitals](/vitals/#core-web-vitals) and [other notable metrics](https://web.dev/vitals/#other-web-vitals). The three Core Web Vitals metrics are listed first: [Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/). These are followed by the other notable metrics: [First Contentful Paint](/fcp/) (FCP), [Interaction to Next Paint](/inp/) (INP), and [Time to First Byte](/ttfb/) (TTFB).
 
 ### Core Web Vitals
 
@@ -52,12 +49,12 @@ These metrics are representative of the user experience in different ways.
 - **CLS** measures the degree of layout instability on the page, due to shifts
   like asynchronously loaded content being injected.
 
-### Additional metrics
+### Other notable metrics
 
 - **FCP** measures the time until the page displays something in the
  foreground, like some text or a logo.
 - **INP** is an experimental metric that measures the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below.
-- **TTFB** measures the the time between the request for a resource and when the first byte of a response begins to arrive.
+- **TTFB** is an experimental metric that measures the the time between the request for a resource and when the first byte of a response begins to arrive.
 
 ### Metric thresholds
 
@@ -73,21 +70,20 @@ FCP | 0–1800ms | 1800ms–3000ms | 3000ms+
 INP | 0–200ms | 200ms–500ms | 500ms+
 TTFB | 0–800ms | 800ms–1800ms | 1800ms+
 
-The three CWV metrics are the most important metrics, and are directly experienced by the users. The other metrics can influence those metrics but may not directly equate to user experience so it's not absolutely necessary that sites meet the "good" threshold, provided that it doesn't impede their ability to score well on the metrics that matter.
+The three Core Web Vitals metrics are the most important metrics, and are directly experienced by real users. The other metrics may be used as diagnostics, but they're not necessarily perceptible by real users. Thus, these metrics are not factored into the Core Web Vitals assessment, and failing to meet the "good" thresholds only matters if they're adversely affecting the Core Web Vitals.
 
 There are three ways that the user experience is displayed in PSI:
 
 - a label summarizing the page as passing or not passing the Core Web Vitals
   assessment
 - percentiles measured in seconds or milliseconds (CLS is unitless)
-- a distribution representing the percent of "good", "needing improvement", and "poor" experiences is available by clicking on "Expand View" in the top right of this section.
+- a distribution representing the percent of "good", "needing improvement", and "poor" experiences is available by clicking on **Expand view** in the top right of this section.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/6ykCy8x82DN4syjcxoyJ.png", alt="Expanded view of CrUX data in PageSpeed Insights", width="800", height="719" %}
 
 In the screenshot above, the page is labelled as "passing" the Core Web Vitals
 assessment. To pass, the percentile must be categorized as "good" in all three
-Core Web Vitals (FID can be optional for pages that do not have interactions).
-Otherwise, the page is labelled as "not passing".
+Core Web Vitals. Otherwise, the assessment appears as "failed".  Some pages may not have sufficient FID data, in which case the page is assessed on the other two Core Web Vitals metrics.
 
 The percentiles shown for all metrics correspond to the 75th percentile. In
 statistics, a percentile is a measure that indicates the value below which a
@@ -115,19 +111,19 @@ performance is not made available to query.
 
 There is one major difference between the origin-level data on PSI versus
 BigQuery. The datasets on BigQuery are released once a month and encompass the data from the previous calendar month. For example, the 202005 dataset
-includes all user experiences that occurred in the 28 days up until the end of May 2020.
+includes all user experiences that occurred in May 2020.
 On the other hand, PSI aggregates new data every day encompassing the previous 28 days. So
 the results you see today may be different tomorrow and they would not
-necessarily be the same as what you'd see in the current month's aggregations on
+necessarily be the same as what you'd see in the current month's aggregation on
 BigQuery.
 
-## Responses when URL data not available in CrUX
+## Responses when URL data is not available in CrUX
 
-If the URL you entered is not available in CrUX, PageSpeed Insights will attempt to fallback to original level data as shown below. Clicking on the icon beside the disabled **This URL** button will show more explanation.
+If the URL you entered is not available in CrUX, PageSpeed Insights will attempt to fallback to origin-level data as shown below. Clicking on the icon beside the disabled **This URL** button will show more explanation.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/A6hRLMwSCWUj1qcDUOTn.png", alt="No URL-level CrUX data on PageSpeed Insights, so showing Origin data", width="800", height="269" %}
 
-If the origin-level data is also not available in CrUX, then PSI is not able to display this section, as shown below. Lab data from Lighthouse is still available to give you an approximation of the page's performance.
+If the origin-level data is also not available in CrUX, then PSI is not able to display this section and you will see **No Data**. Lab data from Lighthouse is still available to give you an approximation of the page's performance.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/tzZlOJKTVZB72Pr4LRgh.png", alt="No CrUX data on PageSpeed Insights", width="800", height="129" %}
 
