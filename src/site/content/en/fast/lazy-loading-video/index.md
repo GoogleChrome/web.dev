@@ -36,7 +36,7 @@ on the `<video>` element may be desirable:
 ```
 
 {% Aside 'important' %}
-Video `poster` images may be considered [LCP candidates](/lcp/#what-elements-are-considered). If you decide to lazy load a video's `poster` image, make sure you're not lazy loading them with a JavaScript-based solution (such as [yall.js mentioned below](#libraries)) if they're in the viewport during startup. This is because the [browser preload scanner](/preload-scanner/#lazy-loading-with-javascript) can't discover them as soon as possible, as they will rely on [a data attribute](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes).
+A video `poster` image can qualify as an [LCP candidates](/lcp/#what-elements-are-considered). If your `poster` image is an LCP candidate, you should [preload it](/preload-critical-assets/) with a [`fetchpriority` attribute value of `"high"`](/priority-hints/#the-fetchpriority-attribute) so the user sees it as soon as possible.
 {% endAside %}
 
 The example above uses a `preload` attribute with a value of `none` to prevent browsers
