@@ -107,7 +107,7 @@ Note, restricting the elements to this limited set was intentional in order to
 keep things simple in the beginning. Additional elements (e.g. `<svg>`,
 `<video>`) may be added in the future as more research is conducted.
 
-LCP elements may be from the main document or from iframes embedded in the document—for example poster images from embedded videos. End users will not be aware what is in an iframe or not. Therefore, if the LCP is within an iframes, it is needed to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so in pages with an LCP within an iframe this will [show as a difference between CrUX and RUM](https://web.dev/crux-and-rum-differences/#iframes).
+LCP elements may be from the main document or from iframes embedded in the document—for example poster images from embedded videos. End users will not be aware what is in an iframe or not. Therefore, if the LCP is within an iframes, it is needed to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so in pages with an LCP within an iframe this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
 
 ### How is an element's size determined?
 
