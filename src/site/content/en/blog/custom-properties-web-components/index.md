@@ -5,7 +5,7 @@ subhead: The benefits of using Custom Properties in design systems and component
 authors:
   - daviddarnes
 description: The benefits of using Custom Properties in design systems and component libraries.
-date: 2022-08-23
+date: 2022-08-17
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/iuFKGqZPtsuMKZSAPwMw.jpg
 alt: 'Computer components'
 tags:
