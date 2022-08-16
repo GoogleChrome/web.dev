@@ -38,7 +38,7 @@ audits will be performed and you will see sections with data from CrUX ("Discove
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/jZSP6YZQHE8vBOJIMhCH.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="491" %}
 
-In the real-user experiences section, metrics are grouped by [Core Web Vitals](/vitals/#core-web-vitals) and [other notable metrics](https://web.dev/vitals/#other-web-vitals). The three Core Web Vitals metrics are listed first: [Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/). These are followed by the other notable metrics: [First Contentful Paint](/fcp/) (FCP), [Interaction to Next Paint](/inp/) (INP), and [Time to First Byte](/ttfb/) (TTFB).
+In the real-user experiences section, metrics are grouped by [Core Web Vitals](/vitals/#core-web-vitals) and [other notable metrics](/vitals/#other-web-vitals). The three Core Web Vitals metrics are listed first: [Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/). These are followed by the other notable metrics: [First Contentful Paint](/fcp/) (FCP), [Interaction to Next Paint](/inp/) (INP), and [Time to First Byte](/ttfb/) (TTFB).
 
 ### Core Web Vitals
 
