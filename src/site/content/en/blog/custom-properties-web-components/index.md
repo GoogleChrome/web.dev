@@ -184,7 +184,7 @@ We'll also abstract some values that are specific to the component but not in ou
 <figcaption>The tab group padding contextual Custom Property being used in multiple places within the component code.</figcaption>
 </figure>
   
-And second, it makes component state and variation changes really clean— it's only the custom property that needs to be changed to update all those properties when, say, you're styling a hover or active state or, in this case, a variation.
+And second, it makes component state and variation changes really clean—it's only the custom property that needs to be changed to update all those properties when, say, you're styling a hover or active state or, in this case, a variation.
 
 <figure>
 
