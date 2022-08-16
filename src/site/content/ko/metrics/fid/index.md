@@ -160,7 +160,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-JavaScript에서 FID를 측정하는 방법에 대한 전체 예제는 [`getFID)`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)를 참조하세요.
+JavaScript에서 FID를 측정하는 방법에 대한 전체 예제는 [`getFID)`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 FID를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 

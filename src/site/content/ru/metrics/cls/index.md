@@ -250,7 +250,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-Полный пример измерения CLS в JavaScript приводится в [исходном коде `getCLS()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts).
+Полный пример измерения CLS в JavaScript приводится в [исходном коде `getCLS()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить CLS в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 

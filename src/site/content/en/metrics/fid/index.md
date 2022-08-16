@@ -321,7 +321,7 @@ getFID(console.log);
 ```
 
 You can refer to [the source code for
-`getFID)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)
+`getFID)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts)
 for a complete example of how to measure FID in JavaScript.
 
 {% Aside %}

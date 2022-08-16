@@ -439,7 +439,7 @@ getCLS(console.log);
 ```
 
 You can refer to [the source code for
-`getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)
+`getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)
 for a complete example of how to measure CLS in JavaScript.
 
 {% Aside %}
