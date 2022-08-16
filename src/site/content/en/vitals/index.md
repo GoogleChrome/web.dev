@@ -150,7 +150,7 @@ Each of the Core Web Vitals can be measured in JavaScript using standard web
 APIs.
 
 {% Aside %}
-Note that the Core Web Vitals measured in JavaScript using public APIs may differ from the Core Web Vitals reported by CrUX. Read [this article](https://web.dev/crux-and-rum-differences/) for more info.
+Note that the Core Web Vitals measured in JavaScript using public APIs may differ from the Core Web Vitals reported by CrUX. Read [this article](/crux-and-rum-differences/) for more info.
 {% endAside %}
 
 The easiest way to measure all the Core Web Vitals is to use the
