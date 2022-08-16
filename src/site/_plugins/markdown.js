@@ -37,7 +37,7 @@ const markdown = md({
     permalinkSymbol: '#',
     // @ts-ignore
     slugify: (s) => {
-      let slug = slugify(s, {lower: true});
+      let slug = slugify(s, {lower: true, remove: /[$*_+~.()'"!\-:@]+/g});
 
       // slugify might fail to generate a slug for strings that
       // only contain non-latin characters, for this fallback to
