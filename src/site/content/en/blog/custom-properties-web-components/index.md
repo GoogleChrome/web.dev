@@ -64,7 +64,7 @@ But the most appealing thing about Web Components is that they work with almost 
 
 ## Shadow DOM style encapsulation
 
-Much in the same way native HTML elements have a [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM), so do Web Components. Shadow DOM is a hidden tree of nodes within an element. The best way to visualise this is by opening up your web inspector and turning on the option to "Show Shadow DOM tree". Once you've done this, try looking at a native input element in the inspector—you'll now have the option to open up that input and see all the elements within it. You can even try this with one of our Web Components—try inspecting [our custom input component](https://nordhealth.design/components/input/) to see its Shadow DOM.
+Much in the same way native HTML elements have a [Shadow DOM](https://developer.mozilla.org/docs/Web/Web_Components/Using_shadow_DOM), so do Web Components. Shadow DOM is a hidden tree of nodes within an element. The best way to visualise this is by opening up your web inspector and turning on the option to "Show Shadow DOM tree". Once you've done this, try looking at a native input element in the inspector—you'll now have the option to open up that input and see all the elements within it. You can even try this with one of our Web Components—try inspecting [our custom input component](https://nordhealth.design/components/input/) to see its Shadow DOM.
 
 <figure>
 
