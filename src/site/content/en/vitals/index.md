@@ -6,7 +6,7 @@ hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2022-07-18
+updated: 2022-08-17
 tags:
   - metrics
   - performance
@@ -148,6 +148,10 @@ own real-user monitoring.
 
 Each of the Core Web Vitals can be measured in JavaScript using standard web
 APIs.
+
+{% Aside %}
+Note that the Core Web Vitals measured in JavaScript using public APIs may differ from the Core Web Vitals reported by CrUX. Read [this article](https://web.dev/crux-and-rum-differences/) for more info.
+{% endAside %}
 
 The easiest way to measure all the Core Web Vitals is to use the
 [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library, a

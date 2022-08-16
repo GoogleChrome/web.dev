@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-08-17
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -51,6 +51,8 @@ FID measures the time from when a user first interacts with a page (i.e. when
 they click a link, tap on a button, or use a custom, JavaScript-powered control)
 to the time when the browser is actually able to begin processing event handlers
 in response to that interaction.
+
+Interactions can happen the main document or in iframes embedded in the document—for example clicking play on an embedded video. End users will not be aware what is in an iframe or not. Therefore, FID within iframes are needed to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so may not be able to measure FID within an iframe and this will [show as a difference between CrUX and RUM](https://web.dev/crux-and-rum-differences/#iframes).
 
 ### What is a good FID score?
 

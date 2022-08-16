@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-08-17
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it.
@@ -14,12 +14,6 @@ tags:
   - metrics
   - web-vitals
 ---
-
-{% Aside 'caution' %}
-  **Jun 1, 2021:** The implementation of CLS has changed.
-  To learn more about the reasons behind the change, check out [Evolving the
-  CLS metric](/evolving-cls).
-{% endAside %}
 
 {% Aside 'key-term' %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
@@ -81,6 +75,8 @@ occurs during the entire lifespan of a page.
 A _layout shift_ occurs any time a visible element changes its position from one
 rendered frame to the next. (See below for details on how individual [layout
 shift scores](#layout-shift-score) are calculated.)
+
+Layout shifts may come from elements shifting in the main document or in iframes embedded in the document. End users will not be aware what is in an iframe or not. Therefore, CLS occuring within iframes are taken into account to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so may not be able to measure CLS within an iframe and this will [show as a difference between CrUX and RUM](https://web.dev/crux-and-rum-differences/#iframes).
 
 A burst of layout shifts, known as a [_session
 window_](/evolving-cls/#why-a-session-window), is when one or more individual
