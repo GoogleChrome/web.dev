@@ -180,9 +180,14 @@ The above diagram illustrates a font family that offers three different bold wei
 
 All other in-between variants (indicated in gray) are automatically mapped to the closest variant by the browser.
 
-{% blockquote '[CSS font matching algorithm](http://www.w3.org/TR/css3-fonts/#font-matching-algorithm)' %}
-When a weight is specified for which no face exists, a face with a nearby weight is used. In general, bold weights map to faces with heavier weights and light weights map to faces with lighter weights.
-{% endBlockquote %}
+<blockquote>
+  <p>
+    When a weight is specified for which no face exists, a face with a nearby weight is used. In general, bold weights map to faces with heavier weights and light weights map to faces with lighter weights.
+  </p>
+  <cite>
+    <a href="http://www.w3.org/TR/css3-fonts/#font-matching-algorithm" rel="noopener">CSS font matching algorithm</a>
+  </cite>
+</blockquote>
 
 Similar logic applies to _italic_ variants. The font designer controls which variants they will produce, and you control which variants you'll use on the page. Because each variant is a separate download, it's a good idea to keep the number of variants small. For example, you can define two bold variants for the _Awesome Font_ family:
 
