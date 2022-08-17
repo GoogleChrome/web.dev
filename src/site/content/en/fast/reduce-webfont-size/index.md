@@ -238,8 +238,8 @@ good practice is to subset based on script: for example, Latin, and Cyrillic.
 
 ## Effects on Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS)
 
-Depending on your page's content, text nodes can be considered candidates for [Largest Contentful Paint (LCP)](/lcp/). It's therefore vital to ensure your web fonts are as small as possible by following the advice in this article so that your users will see the text on your page as soon as they possibly can.
+Depending on your page's content, text nodes can be considered candidates for [Largest Contentful Paint (LCP)](/lcp/). It's therefore vital to ensure your web fonts are as small as possible by following the advice in this article so that your users will see the text on your page [as soon as they possibly can](/optimize-webfont-loading/).
 
-If you're concerned that, despite your optimization efforts, page text might take too long to appear because of large web font resource, the `font-display` property has a number of settings that can help you to avoid invisible text while a font is downloading. However, using the `swap` value may cause significant layout shifts that affect your site's [Cumulative Layout Shift (CLS)](/cls/). Consider using the `optional` or `fallback` values if possible.
+If you're concerned that, despite your optimization efforts, page text might take too long to appear because of large web font resource, the `font-display` property has a number of settings that can help you to [avoid invisible text](/avoid-invisible-text) while a font is downloading. However, using the `swap` value may cause significant layout shifts that affect your site's [Cumulative Layout Shift (CLS)](/cls/). Consider using the `optional` or `fallback` values if possible.
 
 If your web fonts are crucial to your branding&mdash;and by extension, the user experience&mdash; consider preloading your fonts so that the browser has a head start on requesting them. This can reduce both the swap period if you use `font-display: swap`, or the blocking period if you're not using `font-display`.
