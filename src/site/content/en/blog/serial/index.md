@@ -270,8 +270,11 @@ try {
 Here's an example of how to reuse the buffer out of `value.buffer`:
 
 ```js
-const bufferSize = 8 * 1024; // 8kB
+const bufferSize = 1024; // 1kB
 let buffer = new ArrayBuffer(bufferSize);
+
+// Set `bufferSize` on open() to at least the size of the buffer.
+await port.open({ baudRate: 9600, bufferSize });
 
 const reader = port.readable.getReader({ mode: "byob" });
 while (true) {
@@ -301,9 +304,6 @@ async function readInto(reader, buffer) {
   }
   return buffer;
 }
-
-// Set `bufferSize` on open() to at least the size of the buffer.
-await port.open({ baudRate: 9600, bufferSize: 1024 });
 
 const reader = port.readable.getReader({ mode: "byob" });
 let buffer = new ArrayBuffer(512);
