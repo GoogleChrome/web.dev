@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2022-08-09
+updated: 2022-08-17
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -332,9 +332,13 @@ the metric is calculated.
   restored from the [back/forward cache](/bfcache/#impact-on-core-web-vitals),
   but LCP should be measured in these cases since users experience them as
   distinct page visits.
-- The API does not consider elements within iframes, but to properly measure LCP
-  you should consider them. Sub-frames can use the API to report their
-  `largest-contentful-paint` entries to the parent frame for aggregation.
+- The API does not consider elements within iframes but the metric does as they
+  are part of the user experience of the page. In pages with an LCP within an
+  iframe—for example a poster image on an embedded video—this will
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure LCP you should consider them. Sub-frames can use the API
+  to report their `largest-contentful-paint` entries to the parent frame for
+  aggregation.
 
 Rather than memorizing all these subtle differences, developers can use the
 [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
