@@ -150,7 +150,7 @@ Elements with CSS background images are considered a candidate for [Largest Cont
 
 The first option you should consider is whether your LCP candidate image could work in an `<img>` element with `srcset` and `sizes` attributes for responsiveness. The browser preload scanner _will_ discover `<img>` elements, and send requests for them while the parser is blocked on rendering.
 
-If you can't (or don't want to) avoid using a CSS background image, the second option would be to [preload responsve images](/preload-responsive-images/) to ensure you preload the right image for the proper viewport size. The `<link>` elements `media`, `imagesrcset`, and `imagesizes` attributes hint to the browser that a given resource hint only applies in certain viewport conditions, avoiding multiple wasted preloads when you only want to load the one resource that's a fit for the current viewport.
+If you can't (or don't want to) avoid using a CSS background image, the second option would be to [preload responsive images](/preload-responsive-images/) to ensure you preload the right image for the proper viewport size. The `<link>` elements `media`, `imagesrcset`, and `imagesizes` attributes hint to the browser that a given resource hint only applies in certain viewport conditions, avoiding multiple wasted preloads when you only want to load the one resource that's a fit for the current viewport.
 
 ## Summary
 
