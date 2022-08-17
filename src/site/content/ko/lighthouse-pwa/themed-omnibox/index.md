@@ -62,6 +62,6 @@ Google의 [Android용 Chrome 39의 `theme-color` 지원](https://developers.goog
 
 ## 참고자료
 
-- [**주소 표시줄의 테마 색상을 설정하지 않음** 감사용 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)
+- [**주소 표시줄의 테마 색상을 설정하지 않음** 감사용 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/themed-omnibox.js)
 - [웹앱 매니페스트 추가](/add-manifest)
 - [Android용 Chrome 39의 `theme-color` 지원](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android)

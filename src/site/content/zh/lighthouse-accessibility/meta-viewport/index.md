@@ -29,5 +29,5 @@ Lighthouse 可以标记禁用浏览器缩放的页面：
 
 ## 资源
 
-- [**在 `<meta name="viewport">` 元素中使用 `[user-scalable="no"]` 或 `[maximum-scale]` 属性小于 5** <br> 审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
+- [**在 `<meta name="viewport">` 元素中使用 `[user-scalable="no"]` 或 `[maximum-scale]` 属性小于 5** <br> 审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/meta-viewport.js)
 - [不得禁用缩放 (Deque University)](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)

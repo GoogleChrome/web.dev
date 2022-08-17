@@ -31,5 +31,5 @@ Puedes ignorar esta auditoría si:
 
 ## Recursos
 
-- [El código fuente para la auditoría de **El contenido no tiene el tamaño correcto para la ventana gráfica**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/content-width.js)
+- [El código fuente para la auditoría de **El contenido no tiene el tamaño correcto para la ventana gráfica**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/content-width.js)
 - [Conceptos básicos del diseño web responsivo](/responsive-web-design-basics/)

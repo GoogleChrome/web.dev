@@ -40,5 +40,5 @@ Cuando la casilla de verificación se ha etiquetado correctamente, las tecnolog�
 
 ## Recursos
 
-- [Código fuente para la auditoría **Los elementos de formulario no tienen etiquetas asociadas.**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js)
+- [Código fuente para la auditoría **Los elementos de formulario no tienen etiquetas asociadas.**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/label.js)
 - [Los elementos `<input>` de formulario deben tener etiquetas (Deque University)](https://dequeuniversity.com/rules/axe/3.3/label)

@@ -58,5 +58,5 @@ CDK(Component Dev Kit)의 [`BreakpointObserver` 유틸리티](https://material.a
 
 ## 리소스
 
-- [**적절한 크기의 이미지** 감사 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
+- [**적절한 크기의 이미지** 감사 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-responsive-images.js)
 - [올바른 크기의 이미지 제공](/serve-images-with-correct-dimensions)

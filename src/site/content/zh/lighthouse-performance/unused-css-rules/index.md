@@ -64,4 +64,4 @@ Lighthouse 报告的“Opportunities（机会）”部分列出了所有未使�
 
 ## 资源
 
-- [**删除未使用的 CSS** 审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)
+- [**删除未使用的 CSS** 审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-css-rules.js)

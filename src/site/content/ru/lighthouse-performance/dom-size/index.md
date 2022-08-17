@@ -63,5 +63,5 @@ Lighthouse отмечает страницы со следующими дере�
 
 ## Ресурсы
 
-- [Исходный код для аудита **предотвращения чрезмерного размера DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [Исходный код для аудита **предотвращения чрезмерного размера DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
 - [Уменьшение объема и сложности расчетов стилей](/reduce-the-scope-and-complexity-of-style-calculations/)

@@ -56,5 +56,5 @@ Carregue imagens diretamente pela [biblioteca de mídia](https://wordpress.org/s
 
 ## Recursos
 
-- [Código fonte para a auditoria **Redimensione imagens corretamente**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
+- [Código fonte para a auditoria **Redimensione imagens corretamente**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-responsive-images.js)
 - [Sirva imagens com dimensões corretas](/serve-images-with-correct-dimensions)

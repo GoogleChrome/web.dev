@@ -72,8 +72,9 @@ patternId: components/breadcrumbs
       </span>
     </nav>
 
-    <script>
+    {% set script %}
       const e=document.querySelectorAll(".breadcrumbs select"),t=new Set(["Tab","Enter"," "]),n=new Set(["ArrowUp","ArrowDown"]);e.forEach((e=>{let o=!1;e.addEventListener("change",(e=>{if(o)return;const t=e.target,n=t.value,c=t.closest(".crumb");c.classList.add("tree-changed"),c.querySelector(":scope > a").textContent=n,r(n)})),e.addEventListener("keydown",(({key:e})=>{n.has(e)?o=!0:t.has(e)&&(o=!1)}))}));const r=e=>{console.info("change path to: ",e)};
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

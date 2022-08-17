@@ -369,4 +369,4 @@ the ID of the audit in Lighthouse's source code. For example, the ID for the Lig
 audit associated to the [cross-origin links](/external-anchors-use-rel-noopener/) guide
 is `external-anchors-use-rel-noopener`, which is the [filename of the audit source code][noopener].
 
-[noopener]: https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js
+[noopener]: https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js

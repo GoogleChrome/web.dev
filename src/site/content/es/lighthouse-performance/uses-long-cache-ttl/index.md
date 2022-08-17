@@ -102,6 +102,6 @@ Consulte el [Caché del navegador](https://wordpress.org/support/article/optimiz
 
 ## Recursos
 
-- [Código fuente para la auditoría: **Cómo publicar activos estáticos con Políticas eficientes para el caché**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
+- [Código fuente para la auditoría: **Cómo publicar activos estáticos con Políticas eficientes para el caché**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [Requisitos para especificar los controles del caché](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 - [Control del caché (MDN)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)

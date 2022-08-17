@@ -65,7 +65,7 @@ FCP измеряет, сколько времени требуется брау�
 
 ## Ресурсы
 
-- [Исходный код проверки **FCP**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-contentful-paint.js).
+- [Исходный код проверки **FCP**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/first-contentful-paint.js).
 - [Руководство по метрике FCP](/fcp).
 - [Руководство по оценке производительности в Lighthouse](/performance-scoring).
 - [Спецификация Paint Timing](https://w3c.github.io/paint-timing).

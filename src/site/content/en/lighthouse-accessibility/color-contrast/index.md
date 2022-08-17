@@ -99,6 +99,6 @@ For other cases, consider using a tool like the Paciello Group's
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/color-contrast.js" rel="noopener">Source code for **Background and foreground colors do not have a sufficient contrast ratio** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/color-contrast.js" rel="noopener">Source code for **Background and foreground colors do not have a sufficient contrast ratio** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/color-contrast" rel="noopener">Text elements must have sufficient color contrast against the background (Deque University)</a>
 - <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Colour Contrast Analyser</a>

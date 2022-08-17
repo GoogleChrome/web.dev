@@ -55,4 +55,4 @@ web_lighthouse:
 
 ## 资源
 
-[**避免巨大的网络有效负载**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)
+[**避免巨大的网络有效负载**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/total-byte-weight.js)

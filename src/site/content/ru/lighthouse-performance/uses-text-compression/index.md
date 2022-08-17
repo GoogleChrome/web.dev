@@ -80,4 +80,4 @@ Lighthouse собирает все ответы, в которых:
 
 ## **Ресурсы
 
-- [Исходный код для аудита функции **Enable text compression** (Включить сжатие текста)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [Исходный код для аудита функции **Enable text compression** (Включить сжатие текста)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-text-compression.js)

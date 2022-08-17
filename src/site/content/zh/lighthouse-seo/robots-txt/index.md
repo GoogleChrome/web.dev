@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## 资源
 
-- [**`robots.txt` 无效**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [**`robots.txt` 无效**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [创建`robots.txt file`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Robots 元标签和 X-Robots-Tag HTTP 标头规范](https://developers.google.com/search/reference/robots_meta_tag)

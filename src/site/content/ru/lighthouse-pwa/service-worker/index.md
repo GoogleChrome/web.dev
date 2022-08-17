@@ -42,7 +42,7 @@ Lighthouse проверяет, возвращает ли [Chrome Remote Debuggin
 
 ## Ресурсы
 
-- [Исходный код проверки **Does not register a service worker that controls page and `start_url`**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
+- [Исходный код проверки **Does not register a service worker that controls page and `start_url`**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/service-worker.js)
 - [Сервис-воркеры: введение](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [Сервис-воркеры и Cache Storage API](/service-workers-cache-storage/)
 - [Что такое надежность сети и как ее измерить?](/network-connections-unreliable)

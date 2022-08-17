@@ -52,4 +52,4 @@ web_lighthouse:
 ## リソース
 
 - [アクセス可能なタップターゲット](/accessible-tap-targets): すべてのユーザーがアクセスできるタップターゲットを得るための方法に関する詳細。
-- [「**タップターゲットのサイズが適切でない**」監査のソースコード****](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+- [「**タップターゲットのサイズが適切でない**」監査のソースコード****](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/tap-targets.js)

@@ -52,4 +52,4 @@ Los objetivos que miden menos de 48 px por 48 px o que están a menos de 8 px de
 ## Recursos
 
 - [Objetivos táctiles accesibles](/accessible-tap-targets): más información sobre cómo garantizar que todos los usuarios puedan acceder a sus objetivos táctiles.
-- [Código fuente para la auditoría **Los objetivos táctiles no tienen el tamaño adecuado.**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+- [Código fuente para la auditoría **Los objetivos táctiles no tienen el tamaño adecuado.**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/tap-targets.js)

@@ -51,6 +51,6 @@ Lighthouse 使用以下过程将链接识别为不安全：
 
 ## 资源
 
-- [**指向跨源目的地的链接不安全**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+- [**指向跨源目的地的链接不安全**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [安全地共享跨源资源](/cross-origin-resource-sharing/)
 - [面向 Web 开发人员的站点隔离](https://developers.google.com/web/updates/2018/07/site-isolation)

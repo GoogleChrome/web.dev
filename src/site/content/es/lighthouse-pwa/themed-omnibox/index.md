@@ -62,6 +62,6 @@ El navegador establecerá el color de la barra de direcciones de cada página de
 
 ## Recursos
 
-- [Código fuente para la auditoría **No establece un color de tema para la barra de direcciones**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)
+- [Código fuente para la auditoría **No establece un color de tema para la barra de direcciones**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/themed-omnibox.js)
 - [Agregar un manifiesto de aplicación web](/add-manifest)
 - [Support for <code>theme-color</code> in Chrome 39 for Android](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android)

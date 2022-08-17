@@ -5,7 +5,7 @@ subhead: O carregamento lazy integrado no navegador para iframes já chegou
 authors:
   - addyosmani
 date: 2020-07-24
-updated: 2022-07-12
+updated: 2022-08-15
 hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: Contorno de telefone com carregamento de imagem e recursos
 description: Este artigo trata o atributo loading e como ele pode ser usado para controlar o carregamento de iframes.
@@ -46,7 +46,7 @@ Com base na pesquisa do Chrome sobre [carregamento automático de iframes offscr
 
 ### Como funciona o carregamento lazy integrado para iframes?
 
-O atributo `loading` permite que um navegador adie o carregamento de iframes e imagens offscreen até que os usuários rolarem para perto deles. O atributo `loading` suporta três valores:
+O atributo `loading` permite que um navegador adie o carregamento de iframes e imagens offscreen até que os usuários rolarem para perto deles. O atributo `loading` suporta dois valores:
 
 - `lazy` : é um bom candidato para carregamento lazy.
 - `eager` : não é um bom candidato para carregamento lazy. Carregue imediatamente.

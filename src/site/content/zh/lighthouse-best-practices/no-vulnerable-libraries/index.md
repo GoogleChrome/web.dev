@@ -33,5 +33,5 @@ updated: 2020-06-04
 
 ## 资源
 
-- [**包括具有已知安全漏洞的前端 JavaScript 库**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [**包括具有已知安全漏洞的前端 JavaScript 库**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [snyk 的漏洞数据库](https://snyk.io/vuln?packageManager=all)

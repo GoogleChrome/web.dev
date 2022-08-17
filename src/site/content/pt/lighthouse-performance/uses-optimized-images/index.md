@@ -56,4 +56,4 @@ Considere o uso de um [plug-in de otimização de imagem para o WordPress](https
 
 ## Recursos
 
-- [Código-fonte para auditoria de **imagens com codificação eficiente**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
+- [Código-fonte para auditoria de **imagens com codificação eficiente**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-optimized-images.js)

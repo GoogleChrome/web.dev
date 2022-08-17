@@ -45,5 +45,5 @@ You can ignore this audit if:
 
 ## Resources
 
-- [Source code for **Content is not sized correctly for the viewport** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/content-width.js)
+- [Source code for **Content is not sized correctly for the viewport** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/content-width.js)
 - [Responsive Web Design Basics](/responsive-web-design-basics/)

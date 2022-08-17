@@ -67,4 +67,4 @@ post for more information.
 
 ## Resources
 
-[Source code for **Document does not use legible font sizes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/font-size.js)
+[Source code for **Document does not use legible font sizes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/font-size.js)

@@ -78,7 +78,7 @@ Para saber como medir quando a TTI ocorre nos dispositivos dos seus usuários, c
 
 ## Recursos
 
-- [Código fonte para a auditoria **Time to Interactive**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
+- [Código fonte para a auditoria **Time to Interactive**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/interactive.js)
 - [Guia de pontuação do Lighthouse](/performance-scoring)
 - [First Interactive And Consistently Interactive](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
 - [Otimização de inicialização de JavaScript](/optimizing-content-efficiency-javascript-startup-optimization/)

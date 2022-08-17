@@ -61,5 +61,5 @@ Consulte a seção [Usar os links de maneira inteligente](https://support.google
 
 ## Recursos
 
-- [Código-fonte da auditoria **Os links não possuem texto descritivo**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [Código-fonte da auditoria **Os links não possuem texto descritivo**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [Guia de otimização de mecanismos de pesquisa (SEO) para iniciantes](https://support.google.com/webmasters/answer/7451184)

@@ -61,6 +61,6 @@ Veja [Faça menos trabalho no thread principal](https://developer.chrome.com/doc
 
 ## Recursos
 
-- [Código fonte para a auditoria **Minimize main thread work**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
+- [Código fonte para a auditoria **Minimize main thread work**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/mainthread-work-breakdown.js)
 - [Thread principal (MDN)](https://developer.mozilla.org/docs/Glossary/Main_thread)
 - [Visão interna de um navegador da web moderno (parte 3)](https://developer.chrome.com/blog/inside-browser-part3/)

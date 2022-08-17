@@ -64,4 +64,4 @@ web_lighthouse:
 
 ## Ресурсы
 
-- [Исходный код для проверки **Remove unused CSS (Удалите неиспользуемый CSS-код)**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js).
+- [Исходный код для проверки **Remove unused CSS (Удалите неиспользуемый CSS-код)**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-css-rules.js).

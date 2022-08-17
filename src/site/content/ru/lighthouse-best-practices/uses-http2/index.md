@@ -30,6 +30,6 @@ Lighthouse собирает все ресурсы, запрашиваемые с
 
 ## Ресурсы
 
-- [Исходный код для аудита «**Не использует HTTP/2 для всех своих ресурсов**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)»
+- [Исходный код для аудита «**Не использует HTTP/2 для всех своих ресурсов**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-http2.js)»
 - [Введение в HTTP/2](/performance-http2/)
 - [Часто задаваемые вопросы о HTTP/2](https://http2.github.io/faq/)

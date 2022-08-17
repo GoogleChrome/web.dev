@@ -33,7 +33,7 @@ Consulta [Adherirse a las propiedades exclusivas del compositor y administrar el
 
 ## Recursos
 
-- [Código fuente para la auditoría de *Evitar animaciones no compuestas*](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
+- [Código fuente para la auditoría de *Evitar animaciones no compuestas*](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/non-composited-animations.js)
 - [Limítate a las propiedades exclusivas del compositor y gestiona el número de capas](/stick-to-compositor-only-properties-and-manage-layer-count/)
 - [Animaciones de alto rendimiento](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 - [Simplifica la complejidad de la pintura y reduce sus áreas](/simplify-paint-complexity-and-reduce-paint-areas/)

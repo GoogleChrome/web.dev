@@ -67,7 +67,7 @@ Lighthouse отображает индекс скорости в секунда�
 
 ## Ресурсы
 
-- [Исходный код для аудита **индекса скорости**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/speed-index.js)
+- [Исходный код для аудита **индекса скорости**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/speed-index.js)
 - [Руководство по оценкам Lighthouse v3](/performance-scoring)
 - [Speedline](https://github.com/paulirish/speedline)
 - [Индекс скорости WebPagetest](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/metrics/SpeedIndex.md)
