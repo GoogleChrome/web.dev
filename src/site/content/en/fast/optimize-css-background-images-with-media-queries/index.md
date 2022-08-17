@@ -7,9 +7,10 @@ description: |
   Use media queries to send images that are only as large as they need to be,
   a technique commonly known as responsive images.
 date: 2020-03-05
-updated: 2020-03-05
+updated: 2022-08-18
 tags:
   - performance
+  - web-vitals
 ---
 
 Many sites request heavy resources, like images, that are not optimized for certain screens, and send large CSS files containing styles that some devices will never use. Using media queries is a popular technique for delivering tailored stylesheets and assets to different screens to reduce the amount of data transferred to users and improve page load performance. This guide shows you how to use media queries to send images that are only as large as they need to be, a technique commonly known as **responsive images**.
@@ -142,6 +143,14 @@ In particular when the width is below the value defined in the mobile breakpoint
 </figure>
 
 The size of the new mobile background is **67% smaller** than the desktop one.
+
+## Effects on Largest Contentful Paint (LCP)
+
+Elements with CSS background images are considered a candidate for [Largest Contentful Paint (LCP)](/lcp/), however, CSS background images [are not discoverable by the browser preload scanner](/preload-scanner/#css-background-images), which means you could be delaying your site's LCP if you're not careful.
+
+The first option you should consider is whether your LCP candidate image could work in an `<img>` element with `srcset` and `sizes` attributes for responsiveness. The browser preload scanner _will_ discover `<img>` elements, and send requests for them while the parser is blocked on rendering.
+
+If you can't (or don't want to) avoid using a CSS background image, the second option would be to [preload responsve images](/preload-responsive-images/) to ensure you preload the right image for the proper viewport size. The `<link>` elements `media`, `imagesrcset`, and `imagesizes` attributes hint to the browser that a given resource hint only applies in certain viewport conditions, avoiding multiple wasted preloads when you only want to load the one resource that's a fit for the current viewport.
 
 ## Summary
 
