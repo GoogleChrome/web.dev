@@ -4,7 +4,7 @@ subhead: >
   A look at some useful and creative ways to style a list.
 description: >
   A look at some useful and creative ways to style a list.
-date: 2022-08-11
+date: 2022-08-23
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/NqMw5qZ6sdS1UEG2Wx5u.png
 alt: A list showing two items with different color decorations. 
 tags:
@@ -37,14 +37,6 @@ Which one to pick depends on the use case.
 The unordered list element (`<ul>`) is most useful when the items in the list don't correspond to any particular order. By default this will display as a bulleted list. An example is a shopping list, where the order doesn't matter.
 
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/59pGr3TkE9oBx4QDCiUM.png", alt="A shopping list of items such as bread, milk, apples.", width="800", height="387" %}
-
-{% Codepen {
-  user: 'web-dot-dev',
-  id: 'bGvjMEe',
-  height: 500,
-  theme: 'light',
-  tab: 'result'
-} %}
 
 A more common example on the web is a navigation menu. When building a menu, it is good practice to wrap the `ul` in a `nav` element and to identify the menu with a label, to aid assistive technologies. We should also identify the current page in the menu, which we can do using the `aria-current` attribute:
 
@@ -90,7 +82,7 @@ A description list contains terms (`<dt>` elements) and descriptions (`<dd>`). E
 In HTML it is permitted to group terms with their accompanying descriptions using a `<div>`. This can be useful for styling purposes, as we'll see later on.
 
 ```html  
-/* This is valid */  
+<!-- This is valid --> 
 <dl>  
     <dt>Term 1</dt>  
     <dd>This is the first description of the first term in the list</dd>  
@@ -99,7 +91,7 @@ In HTML it is permitted to group terms with their accompanying descriptions usin
     <dd>This is the description of the second term in the list</dd>  
 </dl>
 
-/* This is also valid */  
+<!-- This is also valid --> 
 <dl>  
     <div>  
         <dt>Term 1</dt>  
@@ -181,7 +173,7 @@ There are times when we might want more control over the position and style of o
 
 ## Styling lists that don't look like lists
 
-Sometimes we might want to style our lists in a way that is totally different from the default styling.This is often the case with a navigation menu, for example, where we usually want to remove all markers, and might display our list horizontally, using flexbox. A common practice is to set the `list-style` property to `none`. This will mean the marker pseudo-element will no longer be accessible in the DOM.
+Sometimes we might want to style our lists in a way that is totally different from the default styling. [This is often the case with a navigation menu](https://codepen.io/michellebarker/pen/vYRXNXX), for example, where we usually want to remove all markers, and might display our list horizontally, using flexbox. A common practice is to set the `list-style` property to `none`. This will mean the marker pseudo-element will no longer be accessible in the DOM.
 
 {% Aside 'caution' %}
 A word of warning: `list-style: none` will cause Safari to no longer recognise an unordered list in the accessibility tree—meaning that a screen reader would no longer announce helpful information such as the number of items. A simple fix (assuming your list should be read as such) is to use `role="list"` on the `<ul>` or `<ol>` element in your HTML, as [recommended by accessibility expert Scott O'Hara](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html).
@@ -323,6 +315,7 @@ But we _can_ set the element's index within the `style` attribute in our HTML, w
 <ol style="--length: items|length">  
   {% for item in items %}  
   <li style="--i: {{ loop.index }}">...</li>  
+  {% endfor %}
 </ol>  
 ```
 {% endraw %}
