@@ -32,30 +32,27 @@ In this post you will find out how to reduce the delivered filesize of your web 
 
 ### Web font formats
 
-Today there are four font container formats in use on the web:
+Today there are two recommeded font container formats in use on the web:
 
 * [EOT](https://en.wikipedia.org/wiki/Embedded_OpenType)
 * [TTF](https://en.wikipedia.org/wiki/TrueType)
 * [WOFF](https://en.wikipedia.org/wiki/Web_Open_Font_Format)
 * [WOFF2](https://www.w3.org/TR/WOFF2/).
 
-[WOFF](http://caniuse.com/#feat=woff) and [WOFF 2.0](http://caniuse.com/#feat=woff2) enjoy the widest support, and WOFF 2.0 is supported by all modern browsers (excluding Internet Explorer 11).
+[WOFF](http://caniuse.com/#feat=woff) and [WOFF 2.0](http://caniuse.com/#feat=woff2) enjoy wide support and are supported by all modern browsers.
 
 * Serve WOFF 2.0 variant to modern browsers.
 * If absolutely necessary&mdash;such as if you still need to support Internet Explorer 11, for example&mdash;serve the WOFF as a fallback.
-* Since WOFF and WOFF 2.0 cover all bases for modern and legacy browsers still in use, use of EOT and TTF are no longer necessary. In fact, shipping EOT and TTF fonts will result in long web font download times.
+* Alternatively, consider not using web fonts for legacy browsers and falling back to the system fonts. This may be more performant for older, more constrained, devices as well.
+* Since WOFF and WOFF 2.0 cover all bases for modern and legacy browsers still in use, use of EOT and TTF are no longer necessary and can result in longer web font download times.
 
 ### Web fonts and compression
 
-A font is a collection of glyphs, each of which is a set of paths describing the letter form. Older formats can be compressed further using [GZIP](https://en.wikipedia.org/wiki/Gzip) or [Brotli](https://en.wikipedia.org/wiki/Brotli), but you should no longer concern yourself with these formats, less alone compressing them.
 
-Both WOFF and WOFF 2.0 have built-in compression. WOFF 2.0's internal compression uses Brotli, and can't be compressed any further by supported compression algorithms used on the web. For more information, see [the WOFF 2.0 evaluation report](http://www.w3.org/TR/WOFF20ER/).
+Both WOFF and WOFF 2.0 have built-in compression. WOFF 2.0's internal compression uses Brotli, and offers up to 30% better compression than WOFF. For more information, see [the WOFF 2.0 evaluation report](http://www.w3.org/TR/WOFF20ER/).
 
-{% Aside %}
-If WOFF is necessary to backfill support for browsers that don't support WOFF 2.0, you _can_ compress WOFF fonts using Brotli, but the savings are very likely not enough to justify the processing cost.
-{% endAside %}
 
-Finally, it's worth noting that some font formats contain additional metadata, such as [font hinting](https://en.wikipedia.org/wiki/Font_hinting) and [kerning](https://en.wikipedia.org/wiki/Kerning) information that may not be necessary on some platforms, which allows for further file-size optimization. Consult your font compressor for available optimization options, and if you take this route, ensure that you have the appropriate infrastructure to test and deliver these optimized fonts to each browser. For example, [Google Fonts](https://fonts.google.com/) maintains 30+ optimized variants for each font and automatically detects and delivers the optimal variant for each platform and browser.
+Finally, it's worth noting that some font formats contain additional metadata, such as [font hinting](https://en.wikipedia.org/wiki/Font_hinting) and [kerning](https://en.wikipedia.org/wiki/Kerning) information that may not be necessary on some platforms, which allows for further file-size optimization. For example, [Google Fonts](https://fonts.google.com/) maintains 30+ optimized variants for each font and automatically detects and delivers the optimal variant for each platform and browser.
 
 ## Define a font family with `@font-face`
 
@@ -63,7 +60,7 @@ The `@font-face` CSS at-rule allows you to define the location of a particular f
 
 ### Consider a variable font
 
-Variable fonts can significantly reduce the filesize of your fonts in cases where you need multiple variants of a font. Instead of needing to load the regular and bold styles plus their italic versions, you can load a single file that contains all of the information.
+Variable fonts can significantly reduce the filesize of your fonts in cases where you need multiple variants of a font. Instead of needing to load the regular and bold styles plus their italic versions, you can load a single file that contains all of the information. However, variable font file sizes will be larger than an individual font variant—though smaller than the combination of many variants. Rather than one large variable font, it may be better to serve critical font variants first, with other variants downloaded later.
 
 Variable fonts are now supported by all modern browsers, find out more in the [Introduction to variable fonts on the web](/variable-fonts/).
 
@@ -78,7 +75,7 @@ Each `@font-face` declaration provides the name of the font family, which acts a
   font-weight: 400;
   src: local('Awesome Font'),
        url('/fonts/awesome.woff2') format('woff2'),
-       /* Only serve WOFF is necessary. Otherwise,
+       /* Only serve WOFF if necessary. Otherwise,
           WOFF 2.0 is fine by itself. */
        url('/fonts/awesome.woff') format('woff');
 }
@@ -93,13 +90,13 @@ Each `@font-face` declaration provides the name of the font family, which acts a
 }
 ```
 
-First, note that the above examples define a single _Awesome Font_ family with two styles normal and _italic_), each of which points to a different set of font resources. In turn, each `src` descriptor contains a prioritized, comma-separated list of resource variants:
+First, note that the above examples define a single _Awesome Font_ family with two styles (normal and _italic_), each of which points to a different set of font resources. In turn, each `src` descriptor contains a prioritized, comma-separated list of resource variants:
 
 * The `local()` directive allows you to reference, load, and use locally installed fonts. If the user already has the font installed on their system, this bypasses the network entirely, and is the fastest.
 * The `url()` directive allows you to load external fonts, and are allowed to contain an optional `format()` hint indicating the format of the font referenced by the provided URL.
 
 {% Aside %}
-Unless you're referencing one of the default system fonts, it is rare for the user to have it locally installed, especially on mobile devices, where it is effectively impossible to "install" additional fonts. You should always start with a `local()` entry "just in case," and then provide a list of `url()` entries.
+Unless you're referencing one of the default system fonts, it is rare for the user to have it locally installed, especially on mobile devices, where it is effectively impossible to "install" additional fonts. Even if you start with a `local()` entry, you should always provide a list of `url()` entries for those that do not have it downloaded.
 {% endAside %}
 
 When the browser determines that the font is needed, it iterates through the provided resource list in the specified order and tries to load the appropriate resource. For example, following the example above:
@@ -112,7 +109,7 @@ When the browser determines that the font is needed, it iterates through the pro
 
 The combination of local and external directives with appropriate format hints allows you to specify all of the available font formats and let the browser handle the rest. The browser determines which resources are required and selects the optimal format.
 
-{% Aside %}
+{% Aside 'important' %}
 If you're shipping more formats than just WOFF 2.0, the order in which the font variants are specified matters. The browser picks the first format it supports. Therefore, if you want the newer browsers to use WOFF 2.0, then you should place the WOFF 2.0 declaration above WOFF.
 {% endAside %}
 
@@ -164,6 +161,7 @@ Nearly all browsers [support `unicode-range`](https://caniuse.com/font-unicode-r
    * If the browser doesn't support unicode-range subsetting, then the page needs to hide all unnecessary subsets; that is, the developer must specify the required subsets.
 1. **Generate font subsets:**
    - Use the open-source [pyftsubset tool](https://github.com/behdad/fonttools/) to subset and optimize your fonts.
+   - Some font servers—such as Google Font—will automatically subset by default.
    - Some font services allow manual subsetting via custom query parameters, which you can use to manually specify the required subset for your page. Consult the documentation from your font provider.
 
 ### Font selection and synthesis
@@ -182,14 +180,9 @@ The above diagram illustrates a font family that offers three different bold wei
 
 All other in-between variants (indicated in gray) are automatically mapped to the closest variant by the browser.
 
-<blockquote>
-  <p>
-    When a weight is specified for which no face exists, a face with a nearby weight is used. In general, bold weights map to faces with heavier weights and light weights map to faces with lighter weights.
-  </p>
-  <cite>
-    <a rel="noopener" href="http://www.w3.org/TR/css3-fonts/#font-matching-algorithm">CSS font matching algorithm</a>
-  </cite>
-</blockquote>
+{% blockquote '[CSS font matching algorithm](http://www.w3.org/TR/css3-fonts/#font-matching-algorithm)' %}
+When a weight is specified for which no face exists, a face with a nearby weight is used. In general, bold weights map to faces with heavier weights and light weights map to faces with lighter weights.
+{% endBlockquote %}
 
 Similar logic applies to _italic_ variants. The font designer controls which variants they will produce, and you control which variants you'll use on the page. Because each variant is a separate download, it's a good idea to keep the number of variants small. For example, you can define two bold variants for the _Awesome Font_ family:
 
