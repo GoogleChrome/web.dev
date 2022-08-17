@@ -1,11 +1,11 @@
 ---
 layout: post
 title: |
-  GEDI Digital reduced mobile bounce rate by 8% with Core Web Vitals
+  GEDI reduced mobile bounce rate by 8% with Core Web Vitals
 subhead: |
   By focusing development effort on performance improvement and applying the
-  latest web technologies and techniques, GEDI Digital has created one of the
-  fastest newspaper sites.
+  latest web technologies and techniques, GEDI has created sites among
+  the fastest newspaper sites.
 authors:
   - maurizioparadisi
 date: 2021-12-10
@@ -13,15 +13,13 @@ hero: image/VbsHyyQopiec0718rMq2kTE1hke2/IY9FEuclK1ky89V6zwaP.jpg
 alt: GEDI logo
 description: |
   By focusing development effort on performance improvement and applying the
-  latest web technologies and techniques, GEDI Digital has created one of the
-  fastest newspaper sites.
+  latest web technologies and techniques, GEDI has created sites among
+  the fastest newspaper sites.
 tags:
   - blog
   - case-study
   - web-vitals
 ---
-
-## Introduction
 
 Based in Rome, Italy, and formed in 1976, [GEDI](http://www.gedispa.it/) is a
 media company that publishes 12 newspapers, several magazines, radio stations,
@@ -40,12 +38,6 @@ According to Giuseppe Covato, Head of Innovation and New Technologies at GEDI
 Digital, before 2017, they didn't have a strategic path for web performance.
 Knowledge sharing between teams was minimal and inefficient. In particular, it
 was hard to get marketing on board on technical topics such as Core Web Vitals.
-
-With the introduction of Rep, a new premium content site, the Digital
-team took the opportunity to experiment with emerging technologies such as
-Polymer, AMP, and [progressive web apps](/progressive-web-apps/) (PWA). The
-project also served as a playground to upscale the team around
-performance-related objectives.
 
 ## Optimizations
 
@@ -120,3 +112,6 @@ example, they measured a 77% reduction in [Cumulative Layout Shift](/cls/)
 (CLS) and a 26% improvement in time to [Largest Contentful Paint](/lcp/)
 (LCP). Overall, the team found they reduced La Repubblica's mobile bounce
 rate by 8%.
+
+GEDI’s next steps will be to focus on minimizing Desktop CLS in the near
+future while balancing Ad Monetization and Layout Stability objectives.
