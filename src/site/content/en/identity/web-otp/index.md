@@ -437,9 +437,9 @@ and UX complexities.
 
 {% endAside %}
 
-## Use WebOTP from desktop
+## Use WebOTP on desktop
 
-On Chrome, WebOTP supports listening for SMSes received on other devices to
+In Chrome, WebOTP supports listening for SMSes received on other devices to
 assist users in completing phone number verification on desktop.
 
 <figure>
@@ -459,8 +459,8 @@ assist users in completing phone number verification on desktop.
 This capability requires the user to sign-in to the same Google account on both
 desktop Chrome and Android Chrome.
 
-All developers have to do is to implement WebOTP API to their desktop website,
-the same way they do to their mobile website, but no special tricks are
+All developers have to do is to implement WebOTP API on their desktop website,
+the same way they do on their mobile website, but no special tricks are
 required.
 
 Learn more details at [Verify a phone number on desktop using WebOTP
