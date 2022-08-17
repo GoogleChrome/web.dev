@@ -46,7 +46,7 @@ that default behaviors for loading video can vary from browser to browser:
 
 - In Chrome, the default for `preload` used to be `auto`, but as of Chrome 64, it now
 defaults to `metadata`. Even so, on the desktop version of Chrome, a portion of
-the video may be preloaded using the `Content-Range` header. Other Chromium-derived browsers and Edge behave similarly.
+the video may be preloaded using the `Content-Range` header. Other Chromium-based browsers and Firefox behave similarly.
 - As with Chrome on desktop, 11.0 desktop versions of Safari will preload a range
 of the video.
 From version 11.2, only the video metadata is preloaded. [In Safari on iOS, videos are never
