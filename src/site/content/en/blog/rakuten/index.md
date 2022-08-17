@@ -24,7 +24,7 @@ tags:
 
 Understanding the impact of web performance on user experience, the Rakuten 24 team has been continuously measuring, optimizing and monitoring Core Web Vitals and other metrics.
 
-As a result, **over 75% of their users are experiencing good Largest Contentful Paint (LCP), First Input Delay (FID) and First Contentful Paint (FCP)**.
+As a result, **over 75% of their users are experiencing good Largest Contentful Paint (LCP), First Input Delay (FID) and First Contentful Paint (FCP)**. However, they are still working on Cumulative Layout Shift (CLS) improvements.
 
 After analyzing homepage data, Rakuten 24 found that a good LCP score can lead to an increase of up to **61.13% in conversion rate**, **26.09% in revenue per visitor**, and **11.26% in average order value**. A good FID score can lead to an increase of up to **55.88% in conversion rate**.
 
