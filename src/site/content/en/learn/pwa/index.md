@@ -36,8 +36,6 @@ Check out [Learn CSS](/learn/css), and the
 [HTML](https://developer.mozilla.org/docs/Learn/HTML) and
 [JavaScript](https://developer.mozilla.org/docs/Learn/JavaScript) courses on MDN.
 
-**The first eight modules are available now**. The rest are in progress.
-
 Here's what you'll learn:
 
 {% include 'partials/course-index.njk' %}
@@ -45,5 +43,5 @@ Here's what you'll learn:
 So, are you ready to learn PWA?
 
 {% Aside %}
-This course was written by [Maximiliano Firtman](https://twitter.com/firt), with input and review from [Rachel Andrew](https://twitter.com/rachelandrew), [Adriana Jara](https://twitter.com/tropicadri), [Pete LePage](https://twitter.com/petele), and [Sam Richard](https://twitter.com/snugug).
+This course was written by [Maximiliano Firtman](https://twitter.com/firt), with input and review from [Rachel Andrew](https://twitter.com/rachelandrew), [Adriana Jara](https://twitter.com/tropicadri), [Pete LePage](https://twitter.com/petele), [Sam Richard](https://twitter.com/snugug), and [Joe Medley](https://twitter.com/medleyjp).
 {% endAside %}

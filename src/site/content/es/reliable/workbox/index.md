@@ -11,22 +11,22 @@ feedback:
 
 Dos API juegan un papel crucial en la creación de aplicaciones web confiables: [Service worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) y [Almacenamiento en caché](https://developer.mozilla.org/docs/Web/API/Cache). Pero usarlas de manera efectiva, sin introducir errores sutiles o chocar con casos extremos, puede ser un desafío. Por ejemplo, los errores en el código de su service worker pueden causar problemas de almacenamiento en caché; a los usuarios se les puede mostrar contenido desactualizado o enlaces rotos.
 
-[Workbox](https://developers.google.com/web/tools/workbox/) es un conjunto de herramientas de service worker de alto nivel construido sobre las API de Service worker y Almacenamiento en caché. Proporciona un conjunto de bibliotecas listas para producción para agregarles soporte sin conexión a las aplicaciones web. El kit de herramientas está estructurado en dos colecciones: herramientas que ayudan a administrar el código que se ejecuta dentro de su service worker y herramientas que se integran con su proceso de compilación.
+[Workbox](https://developer.chrome.com/docs/workbox/) es un conjunto de herramientas de service worker de alto nivel construido sobre las API de Service worker y Almacenamiento en caché. Proporciona un conjunto de bibliotecas listas para producción para agregarles soporte sin conexión a las aplicaciones web. El kit de herramientas está estructurado en dos colecciones: herramientas que ayudan a administrar el código que se ejecuta dentro de su service worker y herramientas que se integran con su proceso de compilación.
 
 ### Código de tiempo de ejecución
 
-Este es el código que se ejecuta dentro de la secuencia de comandos del service worker y controla cómo éste intercepta las solicitudes salientes e interactúa con la API de almacenamiento en caché. Workbox tiene aproximadamente una [docena de módulos de biblioteca en total](https://developers.google.com/web/tools/workbox/modules/), cada una de ellas maneja una variedad de casos de uso especializados. Los módulos más importantes determinan *si* el service worker responderá (conocido como [enrutamiento](https://developers.google.com/web/tools/workbox/modules/workbox-routing)) y *cómo* responderá (conocido como [estrategia de almacenamiento en caché](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)).
+Este es el código que se ejecuta dentro de la secuencia de comandos del service worker y controla cómo éste intercepta las solicitudes salientes e interactúa con la API de almacenamiento en caché. Workbox tiene aproximadamente una [docena de módulos de biblioteca en total](https://developer.chrome.com/docs/workbox/modules/), cada una de ellas maneja una variedad de casos de uso especializados. Los módulos más importantes determinan *si* el service worker responderá (conocido como [enrutamiento](https://developer.chrome.com/docs/workbox/modules/workbox-routing/)) y *cómo* responderá (conocido como [estrategia de almacenamiento en caché](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/)).
 
 ### Integración de compilación
 
-Workbox ofrece herramientas de [línea de comando](https://developers.google.com/web/tools/workbox/modules/workbox-cli) ,[módulo Node.js](https://developers.google.com/web/tools/workbox/modules/workbox-build) y [complemento de paquete web](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) que brindan formas alternativas de lograr dos cosas:
+Workbox ofrece herramientas de [línea de comando](https://developer.chrome.com/docs/workbox/modules/workbox-cli/) ,[módulo Node.js](https://developer.chrome.com/docs/workbox/modules/workbox-build/) y [complemento de paquete web](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/) que brindan formas alternativas de lograr dos cosas:
 
 - Crear un script de service worker basado en un conjunto de opciones de configuración. El service worker generado usa las bibliotecas de tiempo de ejecución de Workbox "bajo el capó" para poner en acción las estrategias de almacenamiento en caché que usted configura.
-- Generar una lista de URL que se deben "[almacenar en caché](https://developers.google.com/web/tools/workbox/modules/workbox-precaching)", con base en patrones configurables para incluir y excluir archivos generados durante su proceso de compilación.
+- Generar una lista de URL que se deben "[almacenar en caché](https://developer.chrome.com/docs/workbox/modules/workbox-precaching/)", con base en patrones configurables para incluir y excluir archivos generados durante su proceso de compilación.
 
 ## ¿Por qué debería utilizar Workbox?
 
-El uso de Workbox al crear su service worker es opcional; existen varias guías que recorren [estrategias comunes de almacenamiento en caché](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/) desde una perspectiva "básica" de service worker. Si decide utilizar Workbox, estos son algunos de sus beneficios.
+El uso de Workbox al crear su service worker es opcional; existen varias guías que recorren [estrategias comunes de almacenamiento en caché](/offline-cookbook/) desde una perspectiva "básica" de service worker. Si decide utilizar Workbox, estos son algunos de sus beneficios.
 
 ### Gestión de caché
 
@@ -44,8 +44,8 @@ SI le hace seguimiento a los mensajes de registro, puede llegar a la raíz de cu
 
 Workbox se desarrolla contra un conjunto de pruebas de varios navegadores y, cuando es posible, recurre automáticamente a implementaciones alternativas de funciones que faltan en ciertos navegadores.
 
-- El [`workbox-broadcast-cache-update module`](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update) usa la [API de canal de transmisión](https://developer.mozilla.org/docs/Web/API/Broadcast_Channel_API) cuando está disponible, y regresa a una implementación basada en [`postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage) en los navegadores que carecen de soporte.
-- El [módulo workbox-background-sync](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync) usa la [API de sincronización en segundo plano](https://developers.google.com/web/updates/2015/12/background-sync) si es posible, y si no, recurre a reintentar los eventos en cola cada vez que se inicia el service worker.
+- El [`workbox-broadcast-cache-update module`](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/) usa la [API de canal de transmisión](https://developer.mozilla.org/docs/Web/API/Broadcast_Channel_API) cuando está disponible, y regresa a una implementación basada en [`postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage) en los navegadores que carecen de soporte.
+- El [módulo workbox-background-sync](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/) usa la [API de sincronización en segundo plano](https://developer.chrome.com/blog/background-sync/) si es posible, y si no, recurre a reintentar los eventos en cola cada vez que se inicia el service worker.
 
 ## ¿Cómo debería utilizar Workbox?
 
@@ -61,7 +61,7 @@ Si está comenzando un nuevo proyecto desde cero, puede aprovechar la integraci�
 
 ### Agregue Workbox a su proceso de compilación existente
 
-Si ya tiene implementado un proceso de compilación para su sitio, integrar la [línea de comando](https://developers.google.com/web/tools/workbox/modules/workbox-cli), el [módulo Node.js](https://developers.google.com/web/tools/workbox/modules/workbox-build) o la [herramienta de complemento de paquete web](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) apropiados puede ser todo lo que necesita para comenzar con el uso de Workbox.
+Si ya tiene implementado un proceso de compilación para su sitio, integrar la [línea de comando](https://developer.chrome.com/docs/workbox/modules/workbox-cli/), el [módulo Node.js](https://developer.chrome.com/docs/workbox/modules/workbox-build/) o la [herramienta de complemento de paquete web](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/) apropiados puede ser todo lo que necesita para comenzar con el uso de Workbox.
 
 En particular, la interfaz de línea de comandos de Workbox facilita la puesta en marcha, con un modo `wizard` que verificará su entorno de desarrollo local y sugerirá una configuración predeterminada razonable que podría usar en el futuro:
 
@@ -77,7 +77,7 @@ Para construir su service worker, ejecute `workbox generateSW workbox-config.js`
 
 ### Use Workbox en tiempo de ejecución en un service worker existente
 
-Si tiene un service worker existente y desea probar las bibliotecas en tiempo de ejecución de Workbox, [importe Workbox desde su CDN oficial](https://developers.google.com/web/tools/workbox/modules/workbox-sw#using_workbox_sw_via_cdn) y comience a usarlo para el almacenamiento en caché en tiempo de ejecución de inmediato. Tenga en cuenta que este caso de uso significa que no podrá aprovechar el almacenamiento en caché (que requiere integración en el tiempo de compilación), pero es excelente para crear prototipos y probar diferentes estrategias de almacenamiento en caché sobre la marcha.
+Si tiene un service worker existente y desea probar las bibliotecas en tiempo de ejecución de Workbox, [importe Workbox desde su CDN oficial](https://developer.chrome.com/docs/workbox/modules/workbox-sw/#using-workbox-sw-via-cdn) y comience a usarlo para el almacenamiento en caché en tiempo de ejecución de inmediato. Tenga en cuenta que este caso de uso significa que no podrá aprovechar el almacenamiento en caché (que requiere integración en el tiempo de compilación), pero es excelente para crear prototipos y probar diferentes estrategias de almacenamiento en caché sobre la marcha.
 
 ```js
 // Remplace 3.6.3 con el número de versión actual de Workbox.

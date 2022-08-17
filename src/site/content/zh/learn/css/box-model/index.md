@@ -97,8 +97,8 @@ p {
 
 继续并在浏览器中尝试执行以下操作：
 
-1. [打开 DevTools](https://developers.google.com/web/tools/chrome-devtools/open)
-2. [选择一个元素](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
+1. [打开 DevTools](https://developer.chrome.com/docs/devtools/open/)
+2. [选择一个元素](https://developer.chrome.com/docs/devtools/css/reference/#select)
 3. 显示方框模型调试器
 
 <figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>

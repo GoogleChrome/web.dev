@@ -22,7 +22,7 @@ updated: 2020-06-10
 
 ## Lighthouse のサービスワーカー監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、サービスワーカーを登録しないページをフラグします。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、サービスワーカーを登録しないページをフラグします。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="サイトがサービスワーカーを登録しないことを示す Lighthouse 監査", width="800", height="95" %}</figure>
 
@@ -42,8 +42,8 @@ Lighthouse は、[Chrome Remote Debugging Protocol (Chrome リモートデバッ
 
 ## リソース
 
-- [**Does not register a service worker that controls page and `start_url (ページと `start_url` を制御するサービスワーカーが登録されない)`** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
-- [Service Workers: an Introduction (サービスワーカー: はじめに)](https://developers.google.com/web/fundamentals/primers/service-workers)
+- [**Does not register a service worker that controls page and `start_url (ページと `start_url` を制御するサービスワーカーが登録されない)`** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/service-worker.js)
+- [Service Workers: an Introduction (サービスワーカー: はじめに)](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [Service workers and the Cache Storage API (サービスワーカーと Cache Storage API)](/service-workers-cache-storage/)
 - [What is network reliability and how do you measure it? (ネットワークの信頼性とは、またその評価方法とは？)](/network-connections-unreliable)
 - [Make it installable (インストール可能にする)](/codelab-make-installable/)

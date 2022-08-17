@@ -34,15 +34,15 @@ tags:
 
 ### Service Worker 缓存
 
-Service Worker 拦截网络类型的 HTTP 请求并使用[缓存策略](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook#serving-suggestions)来确定应将哪些资源返回给浏览器。 Service Worker 缓存和 HTTP 缓存的通用目的相同，但 Service Worker 缓存提供了更多的缓存功能，例如，对缓存内容和缓存完成方式进行精细控制。
+Service Worker 拦截网络类型的 HTTP 请求并使用[缓存策略](/offline-cookbook/#serving-suggestions)来确定应将哪些资源返回给浏览器。 Service Worker 缓存和 HTTP 缓存的通用目的相同，但 Service Worker 缓存提供了更多的缓存功能，例如，对缓存内容和缓存完成方式进行精细控制。
 
 #### 控制 Service Worker 缓存
 
-Service Worker 使用[事件侦听器](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)（通常是 `fetch` 事件）拦截 HTTP 请求。以下[代码片段](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)演示了[缓存优先](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network)这一缓存策略的逻辑。
+Service Worker 使用[事件侦听器](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)（通常是 `fetch` 事件）拦截 HTTP 请求。以下[代码片段](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)演示了[缓存优先](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network)这一缓存策略的逻辑。
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="该图展示了 Service Worker 如何拦截 HTTP 请求", width="800", height="516" %}
 
-强烈建议使用[工具箱](https://developers.google.com/web/tools/workbox)以免白费力气重复工作。例如，您可以[使用一行正则表达式代码来注册资源 URL 路径](https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_regular_expression_route)。
+强烈建议使用[工具箱](https://developer.chrome.com/docs/workbox/)以免白费力气重复工作。例如，您可以[使用一行正则表达式代码来注册资源 URL 路径](https://developer.chrome.com/docs/workbox/modules/workbox-routing/#how-to-register-a-regular-expression-route)。
 
 ```js
 import {registerRoute} from 'workbox-routing';
@@ -107,7 +107,7 @@ registerRoute(new RegExp('styles/.*\\.css'), callbackHandler);
 
 除了对缓存逻辑的精细控制外，Service Worker 缓存还具有以下优势：
 
-- **为您的源提供更多内存和存储空间：**浏览器基于每个[源](/same-site-same-origin/#origin)分配 HTTP 缓存资源。换句话说，如果您有多个子域，它们将共享相同的 HTTP 缓存。无法保证您的源/域的内容会长时间保留在 HTTP 缓存中。例如，用户可以通过以下方式清除缓存：在浏览器的设置 UI 中进行手动清理或者触发页面上的硬重新加载。使用 Service Worker 缓存，您的缓存内容保持缓存状态的可能性要高得多。请参阅[持久存储](https://developers.google.com/web/updates/2016/06/persistent-storage)以了解更多信息。
+- **为您的源提供更多内存和存储空间：**浏览器基于每个[源](/same-site-same-origin/#origin)分配 HTTP 缓存资源。换句话说，如果您有多个子域，它们将共享相同的 HTTP 缓存。无法保证您的源/域的内容会长时间保留在 HTTP 缓存中。例如，用户可以通过以下方式清除缓存：在浏览器的设置 UI 中进行手动清理或者触发页面上的硬重新加载。使用 Service Worker 缓存，您的缓存内容保持缓存状态的可能性要高得多。请参阅[持久存储](/persistent-storage/)以了解更多信息。
 - **网络不稳定或离线时提高灵活性：**使用 HTTP 缓存，您只能做二元选择：要么缓存资源，要么不缓存。使用 Service Worker 缓存，您可以更轻松地缓解小“小问题”（使用“重新验证时过期”策略）、提供完整的离线体验（使用“仅缓存”策略），或者是介于二者之间，例如，对于自定义 UI，必要时，页面的一部分来自 Service Worker 缓存，而某些部分被排除在外（使用“设置捕获处理程序“策略）。
 
 ### HTTP 缓存

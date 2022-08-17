@@ -16,6 +16,10 @@ description: |
 - Content images should be no wider than 1600px.
 - Author images should be a 384px square.
 
+When using the images CDN, treat those dimensions as the minimums and overall
+aspect ratio for the source image you upload. The CDN will take care of
+downsizing source images that are larger than the recommended dimensions.
+
 ### Using the images CDN
 
 All images on web.dev are required to use our image CDN so we can optimize

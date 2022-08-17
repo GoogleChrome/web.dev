@@ -56,7 +56,7 @@ User-Agent 문자열과 관련하여 웹 호환성을 개선할 필요도 있습
 
 [User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity)는 개인정보를 더 안전하게 지키는 방식으로 동일한 정보에 대한 액세스를 제공하므로 브라우저가 결국 모든 것을 브로드캐스트하는 User-Agent 문자열의 기본 동작을 줄일 수 있습니다. [Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints)는 서버가 브라우저에 클라이언트에 대한 데이터 집합(힌트)을 요청해야 하고 브라우저가 자체 정책 또는 사용자 구성을 적용하여 반환되는 데이터를 결정하는 모델을 실행합니다. 즉, 기본적으로 **모든** User-Agent 정보를 노출하는 대신 액세스가 이제 명시적이고 감사 가능한 방식으로 관리됩니다. 개발자는 또한 더 이상 정규 표현식이 필요 없는 더 간단한 API의 이점을 누릴 수 있습니다!
 
-현재 Client Hints 세트는 주로 브라우저의 표시 및 연결 기능을 설명합니다. [Client Hints를 사용하여 리소스 선택 자동화](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints)에서 자세한 내용을 알아볼 수 있지만 여기에는 프로세스만 간단히 되짚어봅니다.
+현재 Client Hints 세트는 주로 브라우저의 표시 및 연결 기능을 설명합니다. [Client Hints를 사용하여 리소스 선택 자동화](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/)에서 자세한 내용을 알아볼 수 있지만 여기에는 프로세스만 간단히 되짚어봅니다.
 
 서버는 헤더를 통해 특정한 Client Hints를 요청합니다.
 

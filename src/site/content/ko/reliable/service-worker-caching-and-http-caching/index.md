@@ -34,15 +34,15 @@ tags:
 
 ### 서비스 워커 캐싱
 
-서비스 워커는 네트워크 유형의 HTTP 요청을 가로채고 [캐싱 전략](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook#serving-suggestions)을 사용하여 브라우저에 반환되어야 하는 리소스를 결정합니다. 서비스 워커 캐시와 HTTP 캐시는 동일한 일반 용도로 사용되지만 서비스 워커 캐시는 정확히 무엇을 캐시하고 어떻게 캐싱을 수행하는지에 대한 세분화된 제어와 같은 더 많은 캐싱 기능을 제공합니다.
+서비스 워커는 네트워크 유형의 HTTP 요청을 가로채고 [캐싱 전략](/offline-cookbook/#serving-suggestions)을 사용하여 브라우저에 반환되어야 하는 리소스를 결정합니다. 서비스 워커 캐시와 HTTP 캐시는 동일한 일반 용도로 사용되지만 서비스 워커 캐시는 정확히 무엇을 캐시하고 어떻게 캐싱을 수행하는지에 대한 세분화된 제어와 같은 더 많은 캐싱 기능을 제공합니다.
 
 #### 서비스 워커 캐시 제어
 
-[서비스 워커는 이벤트 리스너](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)(일반적으로 `fetch` 이벤트)로 HTTP 요청을 가로챕니다. 이 [코드 조각](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)은 [Cache-First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network) 캐싱 전략의 논리를 보여줍니다.
+[서비스 워커는 이벤트 리스너](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)(일반적으로 `fetch` 이벤트)로 HTTP 요청을 가로챕니다. 이 [코드 조각](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)은 [Cache-First](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network) 캐싱 전략의 논리를 보여줍니다.
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="서비스 워커가 HTTP 요청을 가로채는 방법을 보여주는 다이어그램", width="800", height="516" %}
 
-바퀴를 재발명하지 않으려면 [Workbox](https://developers.google.com/web/tools/workbox)를 사용하는 것이 좋습니다. 예를 들어 [한 줄의 정규식 코드로 리소스 URL 경로를 등록](https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_regular_expression_route)할 수 있습니다.
+바퀴를 재발명하지 않으려면 [Workbox](https://developer.chrome.com/docs/workbox/)를 사용하는 것이 좋습니다. 예를 들어 [한 줄의 정규식 코드로 리소스 URL 경로를 등록](https://developer.chrome.com/docs/workbox/modules/workbox-routing/#how-to-register-a-regular-expression-route)할 수 있습니다.
 
 ```js
 import {registerRoute} from 'workbox-routing';
@@ -107,7 +107,7 @@ registerRoute(new RegExp('styles/.*\\.css'), callbackHandler);
 
 캐싱 로직의 세분화된 제어 외에도 서비스 워커 캐싱은 다음을 제공합니다.
 
-- **오리진을 위한 더 많은 메모리 및 저장 공간:** 브라우저는 [오리진](/same-site-same-origin/#origin) 별로 HTTP 캐시 리소스를 할당합니다. 즉, 여러 하위 도메인이 있는 경우 모두 동일한 HTTP 캐시를 공유합니다. 오리진/도메인의 콘텐츠가 오랫동안 HTTP 캐시에 유지된다는 보장은 없습니다. 예를 들어 사용자는 브라우저의 설정 UI에서 수동으로 정리하거나 페이지에서 강제로 다시 로드하여 캐시를 제거할 수 있습니다. 서비스 워커 캐시를 사용하면 캐시된 콘텐츠가 캐시된 상태로 유지될 가능성이 훨씬 높아집니다. 자세한 내용은 [영구 스토리지](https://developers.google.com/web/updates/2016/06/persistent-storage)를 참조하세요.
+- **오리진을 위한 더 많은 메모리 및 저장 공간:** 브라우저는 [오리진](/same-site-same-origin/#origin) 별로 HTTP 캐시 리소스를 할당합니다. 즉, 여러 하위 도메인이 있는 경우 모두 동일한 HTTP 캐시를 공유합니다. 오리진/도메인의 콘텐츠가 오랫동안 HTTP 캐시에 유지된다는 보장은 없습니다. 예를 들어 사용자는 브라우저의 설정 UI에서 수동으로 정리하거나 페이지에서 강제로 다시 로드하여 캐시를 제거할 수 있습니다. 서비스 워커 캐시를 사용하면 캐시된 콘텐츠가 캐시된 상태로 유지될 가능성이 훨씬 높아집니다. 자세한 내용은 [영구 스토리지](/persistent-storage/)를 참조하세요.
 - **불안정한 네트워크 또는 오프라인 경험을 통한 더 높은 유연성:** HTTP 캐시를 사용하면 리소스를 캐시할지 여부를 바이너리 선택만 할 수 있습니다. 서비스 워커 캐싱을 사용하면 약간의 "딸꾹질"을 훨씬 쉽게 완화할 수 있고("stale-while-revalidate" 전략 사용), 완전한 오프라인 경험("캐시 전용" 전략 사용) 또는 그 사이에 있는 사용자 지정 UI 서비스 워커 캐시에서 가져온 페이지의 일부와 해당되는 경우 일부 부분은 제외됩니다("캐치 핸들러 설정" 전략 사용).
 
 ### HTTP 캐싱

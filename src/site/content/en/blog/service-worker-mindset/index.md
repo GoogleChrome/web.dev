@@ -54,7 +54,7 @@ Having a service worker on your site gives you incredible benefits. Your site ca
 - work flawlessly even when the user is offline
 - gain massive performance improvements through [caching](https://developer.mozilla.org/docs/Web/API/Cache)
 - use [push notifications](https://developers.google.com/web/fundamentals/push-notifications/)
-- be installed as a [PWA](https://developers.google.com/web/progressive-web-apps/)
+- be installed as a [PWA](/progressive-web-apps/)
 
 With as much as service workers can do, they are limited by design. They can't do anything synchronous or in the same thread as your site. So that means no access to:
 

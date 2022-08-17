@@ -89,7 +89,7 @@ Cookie 通知脚本要异步加载。为此，您要将 [`async`](https://develo
 这些技术需要做更多的工作才能实现，但可以进一步优化 Cookie 通知脚本的加载：
 
 - 从自己的服务器缓存和提供第三方 Cookie 通知脚本可以提高这些资源的交付速度。
-- 使用[服务工作进程](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers)可以更好地控制[第三方脚本（](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)例如，Cookie 通知脚本）的获取和缓存。
+- 使用[服务工作进程](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers)可以更好地控制[第三方脚本（](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations)例如，Cookie 通知脚本）的获取和缓存。
 
 ## 性能测量
 

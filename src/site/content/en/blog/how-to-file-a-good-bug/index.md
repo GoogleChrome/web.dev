@@ -41,7 +41,7 @@ Edge, possibly using a tool like [BrowserStack](https://www.browserstack.com/).
 
 If possible, check that the page isn't intentionally behaving differently due to
 user agent sniffing. In Chrome DevTools, try [setting the `User-Agent` string
-to another browser](https://developers.google.com/web/tools/chrome-devtools/device-mode/override-user-agent).
+to another browser](https://developer.chrome.com/docs/devtools/device-mode/override-user-agent/).
 
 ### Did it break in a recent release?
 

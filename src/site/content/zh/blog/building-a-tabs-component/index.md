@@ -347,7 +347,7 @@ DevTools 可以帮我们把这个视觉化：
 
 #### 功能亮点
 
-在调整大小期间，滚动对齐的子项保持其锁定的位置。这意味着 JavaScript 不需要在设备旋转或浏览器调整大小时显示任何内容。在 Chromium DevTools [设备模式](https://developers.google.com/web/tools/chrome-devtools/device-mode)中选择 **Responsive** 以外的任何模式，然后调整设备框架的大小，来试用一下。请注意，该元素保持在视图中并被其内容锁定。自从 Chromium 更新他们的实现以匹配此规范以来，这功能已经可以使用了。这里有一篇关于它的[博客文章](/snap-after-layout/)。
+在调整大小期间，滚动对齐的子项保持其锁定的位置。这意味着 JavaScript 不需要在设备旋转或浏览器调整大小时显示任何内容。在 Chromium DevTools [设备模式](https://developer.chrome.com/docs/devtools/device-mode/)中选择 **Responsive** 以外的任何模式，然后调整设备框架的大小，来试用一下。请注意，该元素保持在视图中并被其内容锁定。自从 Chromium 更新他们的实现以匹配此规范以来，这功能已经可以使用了。这里有一篇关于它的[博客文章](/snap-after-layout/)。
 
 ### 动画 {: #animation }
 

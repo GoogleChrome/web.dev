@@ -19,7 +19,7 @@ tags:
 
 Hoy, cubriremos nuevas funciones de herramientas en Lighthouse, PageSpeed y DevTools para ayudar a identificar cómo tu sitio puede mejorar en [Web Vitals](/vitals).
 
-Como recordatorio de las herramientas, [Lighthouse](https://github.com/GoogleChrome/lighthouse) es una herramienta automatizada de código abierto para mejorar la calidad de las páginas web. Puedes encontrarla en el conjunto de herramientas de depuración de [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) y ejecutarla en cualquier página web, pública o que requiera autenticación. También puedes encontrar Lighthouse en [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fstore.google.com), [CI](https://github.com/GoogleChrome/lighthouse-ci) y [WebPageTest](https://www.webpagetest.org/easy).
+Como recordatorio de las herramientas, [Lighthouse](https://github.com/GoogleChrome/lighthouse) es una herramienta automatizada de código abierto para mejorar la calidad de las páginas web. Puedes encontrarla en el conjunto de herramientas de depuración de [Chrome DevTools](https://developer.chrome.com/docs/devtools/) y ejecutarla en cualquier página web, pública o que requiera autenticación. También puedes encontrar Lighthouse en [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fstore.google.com), [CI](https://github.com/GoogleChrome/lighthouse-ci) y [WebPageTest](https://www.webpagetest.org/easy).
 
 Lighthouse 7.x incluye nuevas funciones, como capturas de pantalla de elementos, para facilitar la inspección visual de las partes de la interfaz de usuario que afectan las métricas de la experiencia del usuario (por ejemplo, qué nodos contribuyen al cambio de diseño).
 
@@ -41,7 +41,7 @@ La sección "Métricas" del informe Lighthouse incluye versiones de laboratorio 
 
 <figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PLMoiQpi12jT7BJUvlOJ.png", alt="Web Vitals lane in the devtools performance panel", width="800", height="476" %} <figcaption> La nueva opción Web Vitals en el panel DevTools Performance muestra una pista que resalta los momentos métricos, como Layout Shift (LS) o cambio de diseño que se muestra arriba.</figcaption></figure>
 
-[Las métricas de campo](/vitals-field-measurement-best-practices/), como las que se encuentran en [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) o [RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic), no tienen esta limitación y son un complemento valioso para los datos de laboratorio, ya que reflejan la experiencia que tienen los usuarios reales. Los datos de campo no pueden ofrecer el tipo de información de diagnóstico que se obtiene en el laboratorio, por lo que ambos van de la mano.
+[Las métricas de campo](/vitals-field-measurement-best-practices/), como las que se encuentran en [Chrome UX Report](https://developer.chrome.com/docs/crux/) o [RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic), no tienen esta limitación y son un complemento valioso para los datos de laboratorio, ya que reflejan la experiencia que tienen los usuarios reales. Los datos de campo no pueden ofrecer el tipo de información de diagnóstico que se obtiene en el laboratorio, por lo que ambos van de la mano.
 
 ## Identificar dónde se puede mejorar en Web Vitals
 

@@ -14,7 +14,7 @@ HTTP-кеширование может ускорить загрузку ваш�
 
 ## Причины плохих результатов проверки политики кеширования в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает все статические ресурсы, которые не кешируются:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает все статические ресурсы, которые не кешируются:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="Скриншот проверки Lighthouse «Обслуживание статических ресурсов с эффективной политикой кеширования»", width="800", height="490" %}</figure>
 
@@ -102,6 +102,6 @@ Chrome обслуживает наиболее запрашиваемые рес
 
 ## Ресурсы
 
-- [Исходный код проверки **Serve static assets with an efficient cache policy** (Обслуживайте статические ресурсы сайта с помощью эффективной политики кеширования).](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
+- [Исходный код проверки **Serve static assets with an efficient cache policy** (Обслуживайте статические ресурсы сайта с помощью эффективной политики кеширования).](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [Спецификация Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9).
 - [Описание заголовка Cache-Control (MDN)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control).

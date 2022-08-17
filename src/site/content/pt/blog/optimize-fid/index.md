@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: Uma mão tocando a tela de um smartphone
 description: A métrica First Input Delay (FID) mede o tempo a partir do momento em que um usuário interage pela primeira vez com o seu site até o momento em que o navegador é capaz de responder a essa interação. Saiba como otimizar a FID minimizando o JavaScript não utilizado, dividindo tarefas longas e melhorando a interação e prontidão.
@@ -103,7 +104,7 @@ Para reduzir a quantidade de JavaScript executado em sua página:
 
 Por default, todo JavaScript bloqueia a renderização. Quando o navegador encontra uma tag de script que vincula a um arquivo JavaScript externo, ele deve pausar o que está fazendo e fazer o download, processar, compilar e executar esse JavaScript. Portanto, você só deve carregar o código necessário para a página ou para responder à entrada do usuário.
 
-A aba [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) no Chrome DevTools pode informar quanto JavaScript não está sendo usado na sua página da web.
+A aba [Coverage](https://developer.chrome.com/docs/devtools/coverage/) no Chrome DevTools pode informar quanto JavaScript não está sendo usado na sua página da web.
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="A aba Coverage.", width="800", height="559" %}
 
@@ -163,10 +164,10 @@ Para otimizar o uso de polyfills em seu site:
 
 Uma série de ferramentas estão disponíveis para medir e depurar a FID:
 
-- O [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) não inclui suporte para FID, já que é uma métrica de campo. No entanto, o [Total Blocking Time](/tbt/) (TBT) pode ser usado como proxy. As otimizações que melhoram a TBT também devem melhorar a FID em campo.
+- O [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) não inclui suporte para FID, já que é uma métrica de campo. No entanto, o [Total Blocking Time](/tbt/) (TBT) pode ser usado como proxy. As otimizações que melhoram a TBT também devem melhorar a FID em campo.
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
-- O [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report) fornece valores de FID do mundo real agregados no nível de origem
+- O [Relatório de Experiência do Usuário Chrome](https://developer.chrome.com/docs/crux/) fornece valores de FID do mundo real agregados no nível de origem
 
 *Com agradecimentos a Philip Walton, Kayce Basques, Ilya Grigorik e Annie Sullivan por suas avaliações.*

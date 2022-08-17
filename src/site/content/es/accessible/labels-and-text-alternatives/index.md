@@ -23,7 +23,7 @@ Es fácil verificar el nombre accesible de un elemento usando DevTools de Chrome
 
 <figure>{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %} <figcaption> Panel de accesibilidad de DevTools que muestra el nombre de un botón.</figcaption></figure>
 
-{% Aside %} Para obtener más información, consulte la [Referencia de accesibilidad de DevTools](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference). {% endAside %}
+{% Aside %} Para obtener más información, consulte la [Referencia de accesibilidad de DevTools](https://developer.chrome.com/docs/devtools/accessibility/reference/). {% endAside %}
 
 Ya sea que esté viendo un `img` con texto `alt` o un `input` con `label`, todos estos escenarios dan el mismo resultado: brindarle a un elemento su nombre accesible.
 

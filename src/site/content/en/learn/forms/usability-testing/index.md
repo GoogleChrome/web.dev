@@ -80,7 +80,7 @@ Try navigating your form via a screen reader such as
 [NVDA](https://www.nvaccess.org/) on Windows.
 
 Learn more about 
-[doing an accessibility review](https://developers.google.com/web/fundamentals/accessibility/how-to-review).
+[doing an accessibility review](/how-to-review/).
 
 ## Measure and monitor impact of changes
 
@@ -108,4 +108,4 @@ Learn more about [A/B testing](https://www.smashingmagazine.com/2010/06/the-ulti
 
 - [Discount Usability Testing](https://www.nngroup.com/articles/discount-usability-20-years/)
 - [Hallway Usability Testing](https://digital.gov/2014/02/19/10-tips-for-better-hallway-usability-testing/)
-- [Doing an accessibility review](https://developers.google.com/web/fundamentals/accessibility/how-to-review)
+- [Doing an accessibility review](/how-to-review/)

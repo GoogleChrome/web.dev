@@ -126,9 +126,9 @@ feedback:
 
 ## 브라우저 지원
 
-앱 바로가기는 Android(Chrome 84), Windows(Chrome 85 및 Edge 85), Chrome OS(Chrome 92), macOS 및 Linux(Chrome 96 및 Edge 96)에서 사용할 수 있습니다.
+앱 바로가기는 Android(Chrome 84), Windows(Chrome 85 및 Edge 85), ChromeOS(Chrome 92), macOS 및 Linux(Chrome 96 및 Edge 96)에서 사용할 수 있습니다.
 
-<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Chrome OS에서 열린 앱 바로 가기 메뉴의 스크린샷", width="800", height="450" %}<figcaption> Chrome OS에서 열린 앱 바로 가기 메뉴</figcaption></figure>
+<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="ChromeOS에서 열린 앱 바로 가기 메뉴의 스크린샷", width="800", height="450" %}<figcaption> ChromeOS에서 열린 앱 바로 가기 메뉴</figcaption></figure>
 
 ## 신뢰할 수 있는 웹 활동 지원
 

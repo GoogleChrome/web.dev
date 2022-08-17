@@ -35,9 +35,9 @@ Si ya sabe dónde está utilizando `SharedArrayBuffer`, pase a [Analizar el impa
 
 ### Cómo utilizar Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) permite que los desarrolladores inspeccionen sitios web.
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) permite que los desarrolladores inspeccionen sitios web.
 
-1. [Abra Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) en la página que sospecha que podría estar usando `SharedArrayBuffer`.
+1. [Abra Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) en la página que sospecha que podría estar usando `SharedArrayBuffer`.
 2. Seleccione el panel **Consola.**
 3. Si la página usa `SharedArrayBuffer`, aparecerá el siguiente mensaje:
     ```text
@@ -58,7 +58,7 @@ Algunos navegadores tienen [una función de generación de informes en las API d
     ```
 3. Una vez que el encabezado comienza a propagarse, el endpoint en el que se registró debería comenzar a recopilar informes de depreciación.
 
-Consulte un ejemplo de implementación aquí: [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+Consulte un ejemplo de implementación aquí: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 
@@ -70,7 +70,7 @@ Consulte un ejemplo de implementación aquí: [https://first-party-test.glitch.m
 2. Establezca los informes y configure un servidor web para recibir y guardar los informes.
 3. Establezca [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources) en su documento de nivel superior. Nuevamente, este encabezado le permite ver el impacto de habilitar `COEP: require-corp` sin afectar realmente el funcionamiento de su sitio. Puede configurar este encabezado para enviar informes al mismo servidor de informes que configuró en el paso anterior.
 
-{% Aside %} También puede [habilitar la columna **Dominio**](https://developers.google.com/web/tools/chrome-devtools/network#information) en el panel de la **Red** de Chrome DevTools para obtener una visualización general de los recursos que se verían afectados. {% endAside %}
+{% Aside %} También puede [habilitar la columna **Dominio**](https://developer.chrome.com/docs/devtools/network/#information) en el panel de la **Red** de Chrome DevTools para obtener una visualización general de los recursos que se verían afectados. {% endAside %}
 
 {% Aside 'caution' %}
 

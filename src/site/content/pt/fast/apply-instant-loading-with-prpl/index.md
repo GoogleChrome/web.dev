@@ -47,11 +47,11 @@ Para mais informações sobre o pré-carregamento de recursos críticos, veja o 
 
 ## Renderize a rota inicial o mais rápido possível
 
-O Lighthouse avisa se há recursos que atrasam o [**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (primeira renderização), o momento em que seu site renderiza pixels na tela:
+O Lighthouse avisa se há recursos que atrasam o [**First Paint**](/user-centric-performance-metrics/#important-metrics-to-measure) (primeira renderização), o momento em que seu site renderiza pixels na tela:
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Auditoria Lighthouse: Elimine recursos bloqueantes", width="800", height="111" %}
 
-Para melhorar a métrica First Paint, o Lighthouse recomenda integrar na página o JavaScript crítico e adiar o resto usando [`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript), bem como também integrar o CSS crítico usado acima da dobra. Isso tudo melhora o desempenho, eliminando viagens de ida e volta ao servidor para buscar ativos de renderização bloqueantes. No entanto, o código inline é mais difícil de manter do ponto de vista do desenvolvimento e não pode ser armazenado em cache separadamente pelo navegador.
+Para melhorar a métrica First Paint, o Lighthouse recomenda integrar na página o JavaScript crítico e adiar o resto usando [`async`](/critical-rendering-path-adding-interactivity-with-javascript/), bem como também integrar o CSS crítico usado acima da dobra. Isso tudo melhora o desempenho, eliminando viagens de ida e volta ao servidor para buscar ativos de renderização bloqueantes. No entanto, o código inline é mais difícil de manter do ponto de vista do desenvolvimento e não pode ser armazenado em cache separadamente pelo navegador.
 
 Outra abordagem para melhorar o First Paint é **renderizar do lado do servidor** o HTML inicial da sua página. Isto permite mostrar o conteúdo imediatamente para o usuário enquanto os scripts ainda estão sendo buscados, processados e executados. No entanto, isto pode aumentar a carga útil do arquivo HTML significativamente, o que pode prejudicar a métrica [**Time to Interactive**](/tti/) ou seja, o tempo que leva para seu aplicativo se tornar interativo e responder à entrada do usuário.
 

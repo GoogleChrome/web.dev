@@ -74,8 +74,8 @@ O uso de stale-while-revalidate por meio de um `Cache-Control` compartilha algum
 ### Use uma abordagem baseada em service worker se
 
 - Você já estiver usando um service worker em seu aplicativo da web.
-- Você precisar de controle refinado sobre o conteúdo de seus caches e deseja implementar algo como uma política de expiração usada pelo menos recentemente. [O módulo de expiração de cache](https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration) do Workbox pode ajudar com isso.
-- Você desejar ser notificado quando uma resposta desatualizada muda em segundo plano durante a etapa de revalidação. [O módulo Broadcast Cache Update](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update) da Workbox pode ajudar com isso.
+- Você precisar de controle refinado sobre o conteúdo de seus caches e deseja implementar algo como uma política de expiração usada pelo menos recentemente. [O módulo de expiração de cache](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/) do Workbox pode ajudar com isso.
+- Você desejar ser notificado quando uma resposta desatualizada muda em segundo plano durante a etapa de revalidação. [O módulo Broadcast Cache Update](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/) da Workbox pode ajudar com isso.
 - Você precisa desse `stale-while-revalidate` em todos os navegadores modernos.
 
 ### Use uma abordagem de controle de cache se

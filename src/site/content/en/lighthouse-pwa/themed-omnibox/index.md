@@ -21,7 +21,7 @@ for updates.
 
 ## How the Lighthouse theme color audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't apply a theme to the address bar:
 
 <figure>
@@ -77,6 +77,6 @@ according to the manifest's `theme_color`.
 
 ## Resources
 
-- [Source code for **Does not set a theme color for the address bar** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)
+- [Source code for **Does not set a theme color for the address bar** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/themed-omnibox.js)
 - [Add a web app manifest](/add-manifest)
 - [Support for `theme-color` in Chrome 39 for Android](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android)

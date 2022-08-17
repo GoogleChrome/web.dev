@@ -43,7 +43,7 @@ URL.
 {% Img src="image/admin/AyTKqrG1aBH2JOkz3LzL.png", alt="Diagram showing the request going from the page to the service worker and from the service worker to the network. The network request fails so the request goes to the cache.", width="800", height="388" %}
 
 If the network request fails entirely, or
-[takes too long](https://developers.google.com/web/tools/workbox/guides/common-recipes#force_a_timeout_on_network_requests)
+[takes too long](https://developer.chrome.com/docs/workbox/forcing-a-network-timeout/)
 to return a response, then the most recent response from the cache is returned
 instead.
 
@@ -81,13 +81,13 @@ app.
 These caching strategies amount to recipes that you would normally have to
 rewrite in your own service worker, again and again. Instead of resorting to
 that, Workbox offers them packaged up as part of its
-[strategies library](https://developers.google.com/web/tools/workbox/modules/workbox-strategies),
+[strategies library](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/),
 ready for you to drop in to your service worker.
 
 Workbox also provides versioning support, allowing you to automatically
-[expire](https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration)
+[expire](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/)
 cached entries, or notify your web app when
-[updates](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)
+[updates](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/)
 to a previously cached entry occur.
 
 ## Which of your assets should be cached, with which strategies?

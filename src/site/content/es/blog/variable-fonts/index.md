@@ -287,11 +287,11 @@ Roboto Flex ofrece algunos ejes personalizados, y el más importante es Grade (`
   </source></video>
   <figcaption>El eje de Grade de Roboto Flex se cambia de su mínimo a su máximo.</figcaption></figure>
 
-Como `GRAD` es un eje personalizado, con un rango de -1 a 1, debemos utilizarlo con `font-variation-settings`:
+Como `GRAD` es un eje personalizado, con un rango de -200 a 150, debemos utilizarlo con `font-variation-settings`:
 
 ```css
 .grade-light {
-	font-variation-settings: `GRAD` -1;
+	font-variation-settings: `GRAD` -200;
 }
 
 .grade-normal {
@@ -299,7 +299,7 @@ Como `GRAD` es un eje personalizado, con un rango de -1 a 1, debemos utilizarlo 
 }
 
 .grade-heavy {
-	font-variation-settings: `GRAD` 1;
+	font-variation-settings: `GRAD` 150;
 }
 ```
 
@@ -323,7 +323,7 @@ Sin embargo, tenemos un pequeño problema con `font-variation-settings`. Cada pr
 </span>
 ```
 
-Primero, el navegador aplicará `font-variation-settings: 'slnt' 10` de la clase `.slanted`. Luego aplicará `font-variation-settings: 'GRAD' -1` de la clase `.grade-light` ¡Pero esto restablecerá el `slnt` a su valor predeterminado de 0! El resultado será un texto en un grade ligero, pero no inclinado.
+Primero, el navegador aplicará `font-variation-settings: 'slnt' 10` de la clase `.slanted`. Luego aplicará `font-variation-settings: 'GRAD' -200` de la clase `.grade-light` ¡Pero esto restablecerá el `slnt` a su valor predeterminado de 0! El resultado será un texto en un grade ligero, pero no inclinado.
 
 Afortunadamente, podemos solucionar esto mediante el uso de variables CSS:
 
@@ -340,7 +340,7 @@ Afortunadamente, podemos solucionar esto mediante el uso de variables CSS:
 }
 
 .grade-light {
-	--grad: -1;
+	--grad: -200;
 }
 
 .grade-normal {
@@ -348,7 +348,7 @@ Afortunadamente, podemos solucionar esto mediante el uso de variables CSS:
 }
 
 .grade-heavy {
-	--grad: 1;
+	--grad: 150;
 }
 
 /* Aplicar cual sea el valor que se mantiene en las variables CSS */

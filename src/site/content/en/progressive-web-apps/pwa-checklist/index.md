@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: |
   What makes a good, or great Progressive Web App?
 tags:
@@ -53,11 +53,11 @@ application to how it actually performs.
 
 While all applications have different needs, the performance audits in
 Lighthouse are based on the
-[RAIL user-centric performance model](https://developers.google.com/web/fundamentals/performance/rail),
+[RAIL user-centric performance model](/rail/),
 and scoring high on those audits will make it more likely that your users have
 an enjoyable experience. You can also use
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
-or the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/)
+[PageSpeed Insights](https://pagespeed.web.dev/)
+or the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 to get real-world performance data for your web app.
 
 #### How
@@ -282,12 +282,12 @@ need to make your content available and adaptable to offline contexts. In
 addition, you can use
 [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb),
 an in-browser NoSQL storage system, to store and retrieve data, and
-[background sync](https://developers.google.com/web/updates/2015/12/background-sync)
+[background sync](https://developer.chrome.com/blog/background-sync/)
 to allow users to take actions while offline and defer server communications
 until the user has a stable connection again. You can also use service
 workers to store other kinds of content, such as images, video files, and
 audio files for offline use, as well as use them to implement
-[safe, long-lived sessions](https://developers.google.com/web/updates/2016/06/2-cookie-handoff)
+[safe, long-lived sessions](https://developer.chrome.com/blog/2-cookie-handoff/)
 to keep users authenticated. From a user experience perspective, you can use
 [skeleton screens](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)
 that give users a perception of speed and content while loading that can
@@ -395,7 +395,7 @@ input-specific controls as well (such as pull-to-refresh).
 
 #### How
 
-The [Pointer Events API](https://developers.google.com/web/updates/2016/10/pointer-events)
+The [Pointer Events API](https://developer.chrome.com/blog/pointer-events/)
 provides a unified interface for working with various input options, and is
 especially good for adding stylus support. For supporting both touch and
 keyboard, ensure that you're using the correct semantic elements (anchors,

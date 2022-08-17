@@ -35,7 +35,7 @@ Progressive Web App 버즈워드 빙고를 플레이할 때 "PWA는 웹사이트
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/onUIDiaFNNHOmnwXzRh1.png", alt="재생 중인 팟캐스트의 다운로드 에피소드가 있는 팟캐스트 앱.", width="800", height="440" %}<figcaption> 다운로드한 팟캐스트 에피소드는 네트워크 없이도 재생할 수 있습니다.</figcaption></figure>
 
-{% Details %} {% DetailsSummary %} 웹에서 이 작업을 수행하는 방법 {% endDetailsSummary %} 이전에 다운로드한 미디어 콘텐츠는 예를 들어 <a href="https://developers.google.com/web/tools/workbox">Workbox</a> 라이브러리에서 <a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">캐시된 오디오 및 비디오 제공</a> 레시피를 사용하여 캐시에서 제공할 수 있습니다. 다른 콘텐츠는 항상 캐시나 IndexedDB에 저장할 수 있습니다. 모든 세부 정보와 언제 어떤 스토리지 기술을 사용해야 하는지 알아보려면 <a href="/storage-for-the-web/">웹용 스토리지</a> 기사를 읽으십시오. 사용 가능한 메모리 양이 줄어들 때 제거될 위험 없이 지속적으로 저장해야 하는 데이터가 있는 경우 <a href="/persistent-storage/">Persistent Storage API</a>를 사용할 수 있습니다. {% endDetails %}
+{% Details %} {% DetailsSummary %} 웹에서 이 작업을 수행하는 방법 {% endDetailsSummary %} 이전에 다운로드한 미디어 콘텐츠는 예를 들어 <a href="https://developer.chrome.com/docs/workbox/">Workbox</a> 라이브러리에서 <a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">캐시된 오디오 및 비디오 제공</a> 레시피를 사용하여 캐시에서 제공할 수 있습니다. 다른 콘텐츠는 항상 캐시나 IndexedDB에 저장할 수 있습니다. 모든 세부 정보와 언제 어떤 스토리지 기술을 사용해야 하는지 알아보려면 <a href="/storage-for-the-web/">웹용 스토리지</a> 기사를 읽으십시오. 사용 가능한 메모리 양이 줄어들 때 제거될 위험 없이 지속적으로 저장해야 하는 데이터가 있는 경우 <a href="/persistent-storage/">Persistent Storage API</a>를 사용할 수 있습니다. {% endDetails %}
 
 ## 사전 백그라운드 다운로드
 
@@ -211,8 +211,8 @@ iOS의 팟캐스트 앱은 실제 애플리케이션이 아닌 다른 위치의 
         <td><a href="#offline-content-available-and-media-playable">오프라인 콘텐츠 사용 가능 및 미디어 재생 가능</a></td>
         <td>
           <ul>
-            <li><a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">캐시된 오디오 및 비디오 제공</a></li>
-            <li><a href="https://developers.google.com/web/tools/workbox">워크박스 라이브러리</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">캐시된 오디오 및 비디오 제공</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/">워크박스 라이브러리</a></li>
             <li><a href="/storage-for-the-web/">스토리지 API</a></li>
             <li><a href="/persistent-storage/">영구 저장소 API</a></li>
           </ul>
@@ -398,7 +398,7 @@ iOS의 팟캐스트 앱은 실제 애플리케이션이 아닌 다른 위치의 
 
 ## 결론
 
-PWA는 2015년에 도입된 이후로 먼 길을 왔습니다. [Project Fugu 🐡](/fugu-status)의 맥락에서 회사 간 Chromium 팀이 마지막 남은 공백을 메우기 위해 노력하고 있습니다. 이 기사의 조언 중 일부만 따르면 앱과 같은 느낌에 조금씩 더 다가갈 수 있으며 사용자가 "단지 웹사이트"를 다루고 있다는 사실을 잊게 만들 수 있습니다. *실제* 앱처럼 느껴지기만 하면 앱이 어떻게 구축되는지(왜 그래야 하는지?) 신경 쓰지 마세요.
+PWA는 2015년에 도입된 이후로 먼 길을 왔습니다. [Project Fugu 🐡](https://developer.chrome.com/blog/fugu-status)의 맥락에서 회사 간 Chromium 팀이 마지막 남은 공백을 메우기 위해 노력하고 있습니다. 이 기사의 조언 중 일부만 따르면 앱과 같은 느낌에 조금씩 더 다가갈 수 있으며 사용자가 "단지 웹사이트"를 다루고 있다는 사실을 잊게 만들 수 있습니다. *실제* 앱처럼 느껴지기만 하면 앱이 어떻게 구축되는지(왜 그래야 하는지?) 신경 쓰지 마세요.
 
 ## 감사의 말
 

@@ -24,11 +24,11 @@ Lighthouse를 사용하여 페이지를 감사하는 경우 사용자가 페이�
 
 웹 페이지가 로드되는 동안 긴 작업은 메인 스레드를 묶어두기 때문에 페이지가 준비된 것처럼 보이더라도 사용자 입력에 응답하지 않게 만들 수 있습니다. 이벤트 리스너, 클릭 핸들러 등이 아직 연결되지 않았기 때문에 클릭과 탭이 작동하지 않는 경우가 많습니다.
 
-CPU를 많이 사용하는 긴 작업은 50ms 이상 걸리는 복잡한 작업으로 인해 발생합니다. 왜 하필 50ms일까요? [RAIL 모델](https://developers.google.com/web/fundamentals/performance/rail)은 100ms 이내에 가시적인 응답을 보장하기 위해 [50ms](https://developers.google.com/web/fundamentals/performance/rail#response) 내에 사용자 입력 이벤트를 처리할 것을 제안합니다. 그렇지 않으면 동작과 그 반응 사이의 연결이 끊어집니다.
+CPU를 많이 사용하는 긴 작업은 50ms 이상 걸리는 복잡한 작업으로 인해 발생합니다. 왜 하필 50ms일까요? [RAIL 모델](/rail/)은 100ms 이내에 가시적인 응답을 보장하기 위해 [50ms](/rail/#response:-process-events-in-under-50ms) 내에 사용자 입력 이벤트를 처리할 것을 제안합니다. 그렇지 않으면 동작과 그 반응 사이의 연결이 끊어집니다.
 
 ## 내 페이지에 상호 작용을 지연시킬 수 있는 긴 작업이 있나요?
 
-지금까지는 [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)에서 50ms가 넘는 스크립트의 "긴 노란색 블록"을 수동으로 찾거나 [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/)를 사용하여 상호 작용을 지연시키는 작업을 파악해야 했습니다. 조금 번거로울 수 있습니다.
+지금까지는 [Chrome DevTools](https://developer.chrome.com/docs/devtools/)에서 50ms가 넘는 스크립트의 "긴 노란색 블록"을 수동으로 찾거나 [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/)를 사용하여 상호 작용을 지연시키는 작업을 파악해야 했습니다. 조금 번거로울 수 있습니다.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="짧은 작업과 긴 작업의 차이점을 보여주는 DevTools 성능 패널 스크린샷", width="800", height="450" %}
 
@@ -36,7 +36,7 @@ CPU를 많이 사용하는 긴 작업은 50ms 이상 걸리는 복잡한 작업�
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools는 긴 작업에 대해 성능 패널에서 빨간색 플래그가 있는 회색 막대를 표시해 시각화", width="800", height="450" %}
 
-- 웹 페이지를 로드하는 [성능 패널](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)에서 추적을 기록합니다.
+- 웹 페이지를 로드하는 [성능 패널](https://developer.chrome.com/docs/devtools/evaluate-performance/)에서 추적을 기록합니다.
 - 기본 스레드 보기에서 빨간색 플래그를 찾습니다. 이제 작업이 회색("작업")으로 표시된 것을 볼 수 있습니다.
 - 막대 위로 마우스를 가져가면 작업 기간과 이 작업이 "긴" 것으로 간주되었는지 여부를 알 수 있습니다.
 

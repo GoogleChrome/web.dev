@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: Esta publicación presenta la métrica First Input Delay (FID) y explica como medirla
 tags:
   - performance
@@ -94,7 +94,7 @@ FID es una métrica que mide la capacidad de respuesta de una página durante la
 
 Otras interacciones, como el desplazamiento y el acercamiento, son acciones continuas y tienen restricciones de rendimiento completamente diferentes (además, los navegadores con frecuencia pueden ocultar su latencia cuando se ejecutan en un subproceso separado).
 
-Para decirlo de otra manera, FID se centra en la R (capacidad de respuesta) en el [modelo de rendimiento de RAIL](https://developers.google.com/web/fundamentals/performance/rail), mientras que el desplazamiento y el acercamiento se relacionan más con A (animación), y sus cualidades de rendimiento deben evaluarse por separado.
+Para decirlo de otra manera, FID se centra en la R (capacidad de respuesta) en el [modelo de rendimiento de RAIL](/rail/), mientras que el desplazamiento y el acercamiento se relacionan más con A (animación), y sus cualidades de rendimiento deben evaluarse por separado.
 
 ### ¿Qué sucede si un usuario nunca interactúa con su sitio?
 
@@ -120,8 +120,8 @@ FID es una métrica que solo se puede medir [en el campo](/user-centric-performa
 
 ### Herramientas de campo
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca de JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 

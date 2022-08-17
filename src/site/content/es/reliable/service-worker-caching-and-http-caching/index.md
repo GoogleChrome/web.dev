@@ -34,15 +34,15 @@ En un nivel alto, un navegador sigue el orden de almacenamiento en caché a cont
 
 ### Almacenamiento en caché del service worker
 
-Un service worker intercepta consultas HTTP de tipo red y utiliza una [estrategia de almacenamiento](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook#serving-suggestions) en caché para determinar qué recursos deben devolverse al navegador. La caché del service worker y la caché HTTP tienen el mismo propósito general, pero la caché del service worker ofrece más capacidades de almacenamiento en caché, como un control detallado sobre exactamente lo que se almacena en caché y cómo se realiza el almacenamiento en caché.
+Un service worker intercepta consultas HTTP de tipo red y utiliza una [estrategia de almacenamiento](/offline-cookbook/#serving-suggestions) en caché para determinar qué recursos deben devolverse al navegador. La caché del service worker y la caché HTTP tienen el mismo propósito general, pero la caché del service worker ofrece más capacidades de almacenamiento en caché, como un control detallado sobre exactamente lo que se almacena en caché y cómo se realiza el almacenamiento en caché.
 
 #### Controlar la caché del service worker
 
-Un service worker intercepta solicitudes HTTP con [oyentes de eventos](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (generalmente utilizando el evento de `fetch`). Este [fragmento de código](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) demuestra la lógica de una estrategia de almacenamiento en caché con el nombre de [Cache-First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network).
+Un service worker intercepta solicitudes HTTP con [oyentes de eventos](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (generalmente utilizando el evento de `fetch`). Este [fragmento de código](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) demuestra la lógica de una estrategia de almacenamiento en caché con el nombre de [Cache-First](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network).
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="Un diagrama que muestra cómo los service worker interceptan las consultas HTTP", width="800", height="516" %}
 
-Es muy recomendable utilizar [Workbox](https://developers.google.com/web/tools/workbox) para evitar reinventar la rueda. Por ejemplo, puedes [registrar rutas de URL de recursos con una sola línea de código regex](https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_regular_expression_route).
+Es muy recomendable utilizar [Workbox](https://developer.chrome.com/docs/workbox/) para evitar reinventar la rueda. Por ejemplo, puedes [registrar rutas de URL de recursos con una sola línea de código regex](https://developer.chrome.com/docs/workbox/modules/workbox-routing/#how-to-register-a-regular-expression-route).
 
 ```js
 import {registerRoute} from 'workbox-routing';
@@ -107,7 +107,7 @@ La siguiente tabla describe las estrategias comunes de almacenamiento en caché 
 
 Además del control detallado de la lógica del almacenamiento en caché, el almacenamiento en caché del service worker también proporciona:
 
-- **Más memoria y espacio de almacenamiento para tu origen:** El navegador asigna recursos de caché HTTP por [origen](/same-site-same-origin/#origin). En otras palabras, si tienes varios subdominios, todos comparten la misma caché HTTP. No hay garantía de que el contenido de tu origen y/o dominio permanezca en la caché HTTP durante mucho tiempo. Por ejemplo, un usuario puede purgar manualmente la caché limpiando desde la interfaz de usuario de configuración de un navegador o activando una recarga completa en una página. Con una caché de service worker, tienes una probabilidad mucho mayor de que tu contenido almacenado en caché permanezca en la caché. Consulta [Almacenamiento persistente](https://developers.google.com/web/updates/2016/06/persistent-storage) para obtener más información.
+- **Más memoria y espacio de almacenamiento para tu origen:** El navegador asigna recursos de caché HTTP por [origen](/same-site-same-origin/#origin). En otras palabras, si tienes varios subdominios, todos comparten la misma caché HTTP. No hay garantía de que el contenido de tu origen y/o dominio permanezca en la caché HTTP durante mucho tiempo. Por ejemplo, un usuario puede purgar manualmente la caché limpiando desde la interfaz de usuario de configuración de un navegador o activando una recarga completa en una página. Con una caché de service worker, tienes una probabilidad mucho mayor de que tu contenido almacenado en caché permanezca en la caché. Consulta [Almacenamiento persistente](/persistent-storage/) para obtener más información.
 - **Mayor flexibilidad con redes inestables o experiencias fuera de línea:** Con la caché HTTP solo tienes una opción binaria: el recurso se almacena en la caché o no. Con el almacenamiento en caché del service worker puedes mitigar los pequeños "contratiempos" de una manera más sencilla (con la estrategia de "stale-while-revalidate"), ofrecer una experiencia completa fuera de línea (con la estrategia de "Solo caché") o incluso algo intermedio, como IU personalizadas con partes de la página que provienen de la caché del service worker y algunas partes excluidas (con la estrategia "Establecer controlador de captura") cuando corresponda.
 
 ### Almacenamiento en caché HTTP

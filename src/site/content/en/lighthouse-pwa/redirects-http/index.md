@@ -15,7 +15,7 @@ and how to set up HTTPS on your server.
 
 ## How the Lighthouse HTTP redirection audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that aren't redirected to HTTPS:
 
 <figure>
@@ -41,6 +41,6 @@ make sure that all unsecure HTTP traffic to your site is redirected to HTTPS:
   * [Microsoft IIS](https://serverfault.com/q/893315)
 
 ## Resources
-- [Source code for **Does not redirect HTTP traffic to HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects-http.js)
+- [Source code for **Does not redirect HTTP traffic to HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects-http.js)
 - [Does not use HTTPS](/is-on-https)
 - [Document does not have a valid `rel=canonical`](/canonical)

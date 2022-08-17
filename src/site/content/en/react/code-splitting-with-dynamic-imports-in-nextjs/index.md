@@ -37,7 +37,7 @@ dynamically and load each import as a separate chunk. This gives you
 component-level code splitting and enables you to control resource loading so
 that users only download the code they need for the part of the site that
 they're viewing. In Next.js, these components are [server-side rendered
-(SSR)](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
+(SSR)](/rendering-on-the-web/)
 by default.
 
 ## Dynamic imports in action

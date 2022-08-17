@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-07-18
 description: Este artigo apresenta a métrica First Contentful Paint (FCP) e explica como medi-la
 tags:
   - performance
@@ -38,16 +38,16 @@ A FCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 ### Ferramentas de campo
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
-- [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
+- [Relatório de experiência do usuário Chrome](https://developer.chrome.com/docs/crux/)
 - [Console de Busca (relatório de velocidade)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
 ### Ferramentas de laboratório
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Medição da FCP em JavaScript
 

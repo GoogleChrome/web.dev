@@ -26,7 +26,7 @@ A Atividade da Web Confiável é um padrão aberto que permite aos navegadores f
 
 Sempre foi possível incluir experiências da web em um aplicativo Android, usando tecnologias como o [Android WebView](https://developer.android.com/reference/android/webkit/WebView) ou estruturas como [Cordova](https://cordova.apache.org/) .
 
-A limitação do Android WebView é que ele não pretende ser um substituto do navegador. O Android WebView é uma ferramenta de desenvolvedor para usar a interface do usuário da web em um aplicativo Android e não fornece acesso completo aos recursos da plataforma web moderna, como [seletor de contatos](/contact-picker/) ou [sistema de arquivos](/file-system-access/) , [entre outros](/fugu-status/) .
+A limitação do Android WebView é que ele não pretende ser um substituto do navegador. O Android WebView é uma ferramenta de desenvolvedor para usar a interface do usuário da web em um aplicativo Android e não fornece acesso completo aos recursos da plataforma web moderna, como [seletor de contatos](/contact-picker/) ou [sistema de arquivos](/file-system-access/) , [entre outros](https://developer.chrome.com/blog/fugu-status/) .
 
 Cordova foi projetado para aumentar as deficiências do WebView, mas as APIs são então limitadas ao ambiente Cordova. Isso significa que você precisa manter uma base de código adicional para usar as APIs do Cordova para seu aplicativo Android, separada de seu PWA na web aberta.
 
@@ -34,7 +34,7 @@ Além disso, a descoberta de recursos nem sempre funciona conforme o esperado e 
 
 ### A Atividade da Web Confiável é um novo contêiner para aplicativos da Web no Android
 
-Os desenvolvedores agora podem usar uma [Atividade da Web Confiável](https://developers.google.com/web/updates/2019/02/using-twa) como um contêiner para incluir um PWA como uma atividade de inicialização para um aplicativo Android. A tecnologia aproveita o navegador para renderizar o PWA em tela cheia, garantindo que a Atividade da Web Confiável tenha a mesma compatibilidade com os recursos da plataforma da Web e APIs que o navegador subjacente tem. Existem também utilitários de código aberto para tornar a implementação de um aplicativo Android usando uma Atividade da Web Confiável ainda mais fácil.
+Os desenvolvedores agora podem usar uma [Atividade da Web Confiável](https://developer.chrome.com/docs/android/trusted-web-activity/) como um contêiner para incluir um PWA como uma atividade de inicialização para um aplicativo Android. A tecnologia aproveita o navegador para renderizar o PWA em tela cheia, garantindo que a Atividade da Web Confiável tenha a mesma compatibilidade com os recursos da plataforma da Web e APIs que o navegador subjacente tem. Existem também utilitários de código aberto para tornar a implementação de um aplicativo Android usando uma Atividade da Web Confiável ainda mais fácil.
 
 Outra vantagem não disponível em outras soluções é que o contêiner compartilha armazenamento com o navegador. Os estados de login e as preferências dos usuários são compartilhados perfeitamente entre as experiências.
 
@@ -104,7 +104,7 @@ Para evitar mostrar um aplicativo quebrado aos usuários, implante o aplicativo 
 
 Um Progressive Web App é uma experiência da web de alta qualidade. A Atividade da Web Confiável é uma nova maneira de abrir experiências de alta qualidade de um aplicativo Android quando atendem aos critérios mínimos de qualidade.
 
-Se estiver começando a usar Progressive Web Apps, leia [nossa orientação sobre como criar um ótimo PWA](/progressive-web-apps/). Para desenvolvedores que já têm um PWA, use o [Lighthouse](https://developers.google.com/web/tools/lighthouse) para verificar se ele atende aos critérios de qualidade.
+Se estiver começando a usar Progressive Web Apps, leia [nossa orientação sobre como criar um ótimo PWA](/progressive-web-apps/). Para desenvolvedores que já têm um PWA, use o [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) para verificar se ele atende aos critérios de qualidade.
 
 Em seguida, use [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) ou [PWABuilder](https://pwabuilder.com/) para gerar o aplicativo Android, [carregue o aplicativo em um canal de teste fechado na Play Store](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en-GB) e emparelhe-o com o PWA usando [Peter's Asset Link Tool](https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool).
 

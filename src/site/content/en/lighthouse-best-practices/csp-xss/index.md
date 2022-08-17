@@ -58,7 +58,7 @@ Implement the following practices for added security and compatibility. If the C
 
 ### Configure CSP reporting
 
-[Configuring a reporting destination](https://developers.google.com/web/updates/2018/09/reportingapi) will help monitor for any breakages. You can set the reporting destination by using the `report-uri` or `report-to` directives. `report-to` is not currently supported by all modern browsers so it is recommended to use both or just `report-uri`.
+[Configuring a reporting destination](/reporting-api/) will help monitor for any breakages. You can set the reporting destination by using the `report-uri` or `report-to` directives. `report-to` is not currently supported by all modern browsers so it is recommended to use both or just `report-uri`.
 
 If any content violates the CSP, the browser will send a report to the configured destination. Make sure you have an application configured at this destination handling these reports.
 

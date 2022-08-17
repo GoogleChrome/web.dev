@@ -52,7 +52,7 @@ Unfortunately, there is no clear specification for this part yet.{% endAside %}
 ### Service worker caching
 
 A service worker intercepts network-type HTTP requests and uses a
-[caching strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook#serving-suggestions)
+[caching strategy](/offline-cookbook/#serving-suggestions)
 to determine what resources should be returned to the browser. The service worker cache and the HTTP
 cache serve the same general purpose, but the service worker cache offers more caching capabilities,
 such as fine-grained control over exactly what is cached and how caching is done.
@@ -62,14 +62,14 @@ such as fine-grained control over exactly what is cached and how caching is done
 A service worker intercepts HTTP requests with [event
 listeners](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (usually the `fetch` event). This
 [code snippet](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) demonstrates the logic of a
-[Cache-First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network)
+[Cache-First](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network)
 caching strategy.
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="A diagram showing how service workers intercept HTTP requests", width="800", height="516" %}
 
-It's highly recommended to use [Workbox](https://developers.google.com/web/tools/workbox) to avoid
+It's highly recommended to use [Workbox](https://developer.chrome.com/docs/workbox/) to avoid
 reinventing the wheel. For example, you can
-[register resource URL paths with a single line of regex code](https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_regular_expression_route).
+[register resource URL paths with a single line of regex code](https://developer.chrome.com/docs/workbox/modules/workbox-routing/#how-to-register-a-regular-expression-route).
 
 ```js
 import {registerRoute} from 'workbox-routing';
@@ -154,7 +154,7 @@ In addition to fine-grained control of caching logic, service worker caching als
     example, a user may purge the cache by manually cleaning up from a browser's settings UI, or
     triggering a hard-reload on a page. With a service worker cache you have a much higher
     likelihood that your cached content stays cached. See [Persistent
-    storage](https://developers.google.com/web/updates/2016/06/persistent-storage) to learn more.
+    storage](/persistent-storage/) to learn more.
 +   **Higher flexibility with flaky networks or offline experiences:** With the HTTP cache you
     only have a binary choice: either the resource is cached, or not. With service worker caching
     you can mitigate little "hiccups" much easier (with the "stale-while-revalidate" strategy),

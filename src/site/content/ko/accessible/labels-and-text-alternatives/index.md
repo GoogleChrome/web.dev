@@ -21,7 +21,7 @@ Chrome의 DevTools를 사용하여 요소의 액세스 가능한 이름을 쉽�
 
 <figure>{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %} <figcaption> 버튼의 계산된 이름을 보여주는 DevTools 접근 가능성 창. </figcaption></figure>
 
-{% Aside %} 자세히 알아보려면 [DevTools 접근 가능성 참조](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference)를 확인하세요. {% endAside %}
+{% Aside %} 자세히 알아보려면 [DevTools 접근 가능성 참조](https://developer.chrome.com/docs/devtools/accessibility/reference/)를 확인하세요. {% endAside %}
 
 `alt{/code1 텍스트가 있는 <code data-md-type="codespan">img` 또는 `label`이 있는 `input`을 찾고 있든지 관계 없이 이러한 모든 시나리오에서 동일한 결과가 나타납니다. 요소에 액세스 가능한 이름을 부여합니다.
 
@@ -219,6 +219,6 @@ Check out <a href="/guide">our guide to web performance</a>.
 
 확인란 레이블이 올바르게 지정된 경우, 스크린 리더는 요소가 확인란 역할을 하고, 선택된 상태이며, 아래의 VoiceOver 예제와 같이 "홍보 제안을 수신하시겠습니까?"라는 이름을 가진 요소를 보고할 수 있습니다.
 
-<figure>{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="'홍보 제안을 수신하시겠습니까?'를 나타내는 VoiceOver 텍스트 출력", width="640", height="174" %}<br>{% Assessment 'self-assessment' %}</figure>
+<figure>{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="'홍보 제안을 수신하시겠습니까?'를 나타내는 VoiceOver 텍스트 출력", width="640", height="174" %}</figure>
 
 {% Assessment 'self-assessment' %}

@@ -23,7 +23,7 @@ thread](https://developer.mozilla.org/docs/Glossary/Main_thread) can update the 
 In this guide we'll explore the different ways of implementing a **two-way** communication between
 the [Window](https://developer.mozilla.org/docs/Web/API/Window) and [service
 worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) context, by exploring
-different APIs, the [Workbox library](https://developers.google.com/web/tools/workbox), as well as
+different APIs, the [Workbox library](https://developer.chrome.com/docs/workbox/), as well as
 some advanced cases.
 
 <figure>
@@ -39,10 +39,10 @@ some advanced cases.
 
 ## Using Workbox {: #using-workbox }
 
-[`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) is a set of
-modules of the [Workbox library](https://developers.google.com/web/tools/workbox) that are intended
+[`workbox-window`](https://developer.chrome.com/docs/workbox/modules/workbox-window/) is a set of
+modules of the [Workbox library](https://developer.chrome.com/docs/workbox/) that are intended
 to run in the window context. The [`Workbox`
-](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-window.Workbox) class provides a `messageSW()` method to send a message to the instance's registered service worker and
+](https://developer.chrome.com/docs/workbox/reference/workbox-window/#type-Workbox) class provides a `messageSW()` method to send a message to the instance's registered service worker and
 await a response.
 
 The following page code creates a new `Workbox` instance and sends a message to the service worker
@@ -269,7 +269,7 @@ scenarios: lack of connectivity and long downloads.
 #### Background Sync {: #background-sync }
 
 A chat app might want to make sure that messages are never lost due to bad connectivity. The
-[Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync) lets you
+[Background Sync API](https://developer.chrome.com/blog/background-sync/) lets you
 defer actions to be retried when the user has stable connectivity. This is useful for ensuring that
 whatever the user wants to send, is actually sent.
 
@@ -308,7 +308,7 @@ the user via a web push notification:
 
 {% Aside %} Check out [Resilient search experiences
 ](/resilient-search-experiences/) to learn how to implement this feature using [Workbox Background
-Sync](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync). {% endAside
+Sync](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/). {% endAside
 %}
 
 #### Background Fetch {: #background-fetch }
@@ -317,7 +317,7 @@ For relatively short bits of work like sending a message, or a list of URLs to c
 explored so far are a good choice. If the task takes too long the browser will kill the service
 worker, otherwise it's a risk to the user's privacy and battery.
 
-The [Background Fetch API](https://developers.google.com/web/updates/2018/12/background-fetch)
+The [Background Fetch API](https://developer.chrome.com/blog/background-fetch/)
 allows you to offload a long task to a service worker, like downloading movies, podcasts, or levels
 of a game.
 
@@ -366,7 +366,7 @@ bgFetch.addEventListener('progress', () => {
 </figure>
 
 {% Aside %} Check out the [Background Fetch
-guide](https://developers.google.com/web/updates/2018/12/background-fetch), which includes an
+guide](https://developer.chrome.com/blog/background-fetch/), which includes an
 [example podcast app](https://bgfetch-http203.glitch.me/) along with its [Glitch
 code](https://glitch.com/edit/#!/bgfetch-http203). {% endAside %}
 

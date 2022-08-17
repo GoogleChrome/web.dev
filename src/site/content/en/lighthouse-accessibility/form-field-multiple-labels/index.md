@@ -19,7 +19,7 @@ and others will read both labels.
 
 ## How the Lighthouse multiple label audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags form elements that have more than one label:
 
 <figure>
@@ -100,5 +100,5 @@ Labels can be assigned in three ways:
 Verify that you're using only one of these techniques for each form element.
 
 ## Resources
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/form-field-multiple-labels.js" rel="noopener">Source code for **Form fields have multiple labels** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/form-field-multiple-labels.js" rel="noopener">Source code for **Form fields have multiple labels** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/form-field-multiple-labels" rel="noopener">Form fields do not have duplicate labels (Deque University)</a>

@@ -223,7 +223,7 @@ A API Generic Sensor é muito simples e fácil de usar. A interface tem métodos
 
 ### Ambiente de desenvolvimento
 
-Durante o desenvolvimento, você poderá usar sensores pelo `localhost`. Se estiver desenvolvendo para dispositivos móveis, configure o [encaminhamento de porta](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server) para seu servidor local e você está pronto para começar.
+Durante o desenvolvimento, você poderá usar sensores pelo `localhost`. Se estiver desenvolvendo para dispositivos móveis, configure o [encaminhamento de porta](https://developer.chrome.com/docs/devtools/remote-debugging/local-server/) para seu servidor local e você está pronto para começar.
 
 Quando o código estiver pronto, faça a implantação em um servidor que ofereça suporte a HTTPS. As [páginas do GitHub](https://pages.github.com/) são exibidas em HTTPS e, por isso, são ótimas para compartilhar demonstrações.
 
@@ -281,7 +281,7 @@ A velocidade atual é calculada como uma aproximação da integral da função d
 
 ## Depuração e substituição do sensor com o Chrome DevTools
 
-Em alguns casos, você não precisa de um dispositivo físico para testar a API Generic Sensor. O Chrome DevTools oferece um ótimo suporte para [simular a orientação do dispositivo](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation).
+Em alguns casos, você não precisa de um dispositivo físico para testar a API Generic Sensor. O Chrome DevTools oferece um ótimo suporte para [simular a orientação do dispositivo](https://developer.chrome.com/docs/devtools/device-mode/orientation/).
 
 <figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="Uso do Chrome DevTools para substituir os dados de orientação personalizados de um telefone virtual", width="800", height="648" %} <figcaption>Simulação da orientação do dispositivo com o Chrome DevTools</figcaption></figure>
 
@@ -295,7 +295,7 @@ Como a API Generic Sensor é um recurso poderoso, ela só é permitida pelo nave
 
 ### Integração com as políticas de permissão
 
-A [integração com as políticas de permissão](https://w3c.github.io/webappsec-permissions-policy/) na API Generic Sensor controla o acesso aos dados dos sensores para um frame.
+A [integração com as políticas de permissão](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) na API Generic Sensor controla o acesso aos dados dos sensores para um frame.
 
 Por padrão, os objetos `Sensor` podem ser criados apenas dentro de um frame principal ou subframes de mesma origem, evitando que iframes de origem cruzada não autorizados leiam os dados dos sensores. Esse comportamento padrão pode ser modificado ativando ou desativando explicitamente os [recursos controlados pelas políticas](https://w3c.github.io/webappsec-permissions-policy/#features) correspondentes.
 

@@ -17,7 +17,7 @@ tags:
 
 La métrica TTI mide el tiempo que transcurre desde que se inicia la carga de la página hasta que se cargan sus principales recursos secundarios y es capaz de responder de manera confiable a la entrada del usuario rápidamente.
 
-Para calcular la TTI a partir de un [seguimiento](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference) de rendimiento de una página web, siga estos pasos:
+Para calcular la TTI a partir de un [seguimiento](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/) de rendimiento de una página web, siga estos pasos:
 
 1. Comience en [First Contentful Paint: Despliegue de la primera entrada (FCP)](/fcp/).
 2. Busque en el tiempo una ventana tranquila de al menos cinco segundos, donde la *ventana tranquila* se define como: ninguna [tarea larga](/custom-metrics/#long-tasks-api) y no más de dos solicitudes GET en la red de abordaje.
@@ -45,7 +45,7 @@ TTI es una métrica que se mide mejor [en el laboratorio](/user-centric-performa
 
 ### Herramientas de laboratorio
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %} Si bien es posible medir TTI en el campo, no se recomienda ya que la interacción del usuario puede afectar la TTI de su página de manera que genere muchas variaciones en sus reportes. Para comprender la interactividad de una página en el campo, debe medir [First Input Delay (FID)](/fid/). {% endAside %}

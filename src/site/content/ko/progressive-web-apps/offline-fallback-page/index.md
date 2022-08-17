@@ -242,6 +242,6 @@ self.addEventListener("fetch", (event) => {
 
 ### Workbox.js로 오프라인 폴백 페이지 제공에 대한 참고 사항
 
-[Workbox.js](https://developers.google.com/web/tools/workbox)에 대해 들어본 적이 있을 것입니다. Workbox.js는 웹 앱에 오프라인 지원을 추가하기 위한 JavaScript 라이브러리 세트입니다. 더 적은 서비스 워커 코드를 직접 작성하려는 경우 [오프라인 페이지](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only)에만 Workbox.js 레시피를 사용할 수 있습니다.
+[Workbox.js](https://developer.chrome.com/docs/workbox/)에 대해 들어본 적이 있을 것입니다. Workbox.js는 웹 앱에 오프라인 지원을 추가하기 위한 JavaScript 라이브러리 세트입니다. 더 적은 서비스 워커 코드를 직접 작성하려는 경우 [오프라인 페이지](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only)에만 Workbox.js 레시피를 사용할 수 있습니다.
 
 다음으로 [앱의 설치 전략을 정의하는 방법](/define-install-strategy/)을 알아보세요.

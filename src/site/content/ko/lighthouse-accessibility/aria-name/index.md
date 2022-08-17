@@ -25,7 +25,7 @@ tags:
 
 ## Lighthouse가 접근 가능한 이름이 없는 ARIA 항목을 식별하는 방법
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 보조 기술에서 이름에 액세스할 수 없는 사용자 지정 ARIA 항목에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 보조 기술에서 이름에 액세스할 수 없는 사용자 지정 ARIA 항목에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="접근 가능한 이름이 없는 사용자 지정 토글 요소를 표시하는 Lighthouse 감사", width="800", height="259" %}</figure>
 
@@ -125,7 +125,7 @@ tags:
 
 ## 리소스
 
-- [**모든 ARIA 토글 필드에 액세스 가능한 이름이 있는 것은 아님** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js)
+- [**모든 ARIA 토글 필드에 액세스 가능한 이름이 있는 것은 아님** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-toggle-field-name.js)
 - [ARIA 버튼, 링크 및 메뉴 항목에는 액세스 가능한 이름이 있어야 함(Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-command-name)
 - [ARIA 입력 필드에는 액세스 가능한 이름이 있어야 함(Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-input-field-name)
 - [ARIA 미터에는 액세스 가능한 이름이 있어야 함(Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-meter-name)

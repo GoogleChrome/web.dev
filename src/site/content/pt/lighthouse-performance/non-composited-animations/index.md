@@ -19,9 +19,9 @@ Tudo bem se você não entender o que significa cada etapa do pipeline de render
 
 Confira os seguintes recursos para aprender mais sobre o pipeline de renderização:
 
-- [Visão interna dos navegadores da web modernos (parte 3)](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
-- [Simplifique a complexidade da pintura e reduza as áreas de pintura](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
-- [Atenha-se às propriedades somente do compositor e gerencie a contagem de camadas](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+- [Visão interna dos navegadores da web modernos (parte 3)](https://developer.chrome.com/blog/inside-browser-part3/)
+- [Simplifique a complexidade da pintura e reduza as áreas de pintura](/simplify-paint-complexity-and-reduce-paint-areas/)
+- [Atenha-se às propriedades somente do compositor e gerencie a contagem de camadas](/stick-to-compositor-only-properties-and-manage-layer-count/)
 
 ## Como o Lighthouse detecta animações não compostas
 
@@ -29,12 +29,12 @@ Quando uma animação não pode ser composta, o Chrome relata os motivos da falh
 
 ## Como garantir que as animações sejam compostas
 
-Consulte [Atenha-se às propriedades somente do compositor e gerencie a contagem de camadas](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count) e [animações de alto desempenho](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/) .
+Consulte [Atenha-se às propriedades somente do compositor e gerencie a contagem de camadas](/stick-to-compositor-only-properties-and-manage-layer-count/) e [animações de alto desempenho](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/) .
 
 ## Recursos
 
-- [Código-fonte para a auditoria de *evitar animações não compostas*](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
-- [Atenha-se às propriedades somente do compositor e gerencie a contagem de camadas](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+- [Código-fonte para a auditoria de *evitar animações não compostas*](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/non-composited-animations.js)
+- [Atenha-se às propriedades somente do compositor e gerencie a contagem de camadas](/stick-to-compositor-only-properties-and-manage-layer-count/)
 - [Animações de alto desempenho](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
-- [Simplifique a complexidade da pintura e reduza as áreas de pintura](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
-- [Visão interna dos navegadores da web modernos (parte 3)](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
+- [Simplifique a complexidade da pintura e reduza as áreas de pintura](/simplify-paint-complexity-and-reduce-paint-areas/)
+- [Visão interna dos navegadores da web modernos (parte 3)](https://developer.chrome.com/blog/inside-browser-part3/)

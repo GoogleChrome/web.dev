@@ -74,8 +74,8 @@ Cache-Control: max-age=1, stale-while-revalidate=59
 ### 在以下情况下使用服务工作进程方法……
 
 - 您已经在您的 Web 应用中使用了服务工作进程。
-- 您需要对缓存的内容进行细粒度控制，并希望实现诸如最近最少使用的过期策略之类的东西。Workbox 的[缓存过期](https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration)模块可以帮助解决这个问题。
-- 您希望在重新验证步骤期间当后台更改陈旧响应时收到通知。Workbox 的[广播缓存更新](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)模块可以帮助解决这个问题。
+- 您需要对缓存的内容进行细粒度控制，并希望实现诸如最近最少使用的过期策略之类的东西。Workbox 的[缓存过期](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/)模块可以帮助解决这个问题。
+- 您希望在重新验证步骤期间当后台更改陈旧响应时收到通知。Workbox 的[广播缓存更新](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/)模块可以帮助解决这个问题。
 - 在所有现代浏览器中，您都需要这种 `stale-while-revalidate` 行为。
 
 ### 在以下情况下使用缓存控制方法……

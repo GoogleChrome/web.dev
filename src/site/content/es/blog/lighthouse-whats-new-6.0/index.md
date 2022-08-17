@@ -15,7 +15,7 @@ tags:
 
 ¡Hoy estamos lanzamos Lighthouse 6.0!
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouse/) es una herramienta automatizada de auditoría de sitios web que ayuda a los desarrolladores con oportunidades y diagnósticos para mejorar la experiencia del usuario de sus sitios. Está disponible en Chrome DevTools, npm (como módulo de nodo y como CLI) o como extensión del navegador (en [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) y [Firefox](https://addons.mozilla.org/firefox/addon/google-lighthouse/)). Es la [base](/measure/) de muchos servicios de Google, incluyendo web.dev/measure y [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+[Lighthouse](https://github.com/GoogleChrome/lighthouse/) es una herramienta automatizada de auditoría de sitios web que ayuda a los desarrolladores con oportunidades y diagnósticos para mejorar la experiencia del usuario de sus sitios. Está disponible en Chrome DevTools, npm (como módulo de nodo y como CLI) o como extensión del navegador (en [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) y [Firefox](https://addons.mozilla.org/firefox/addon/google-lighthouse/)). Es la [base](/measure/) de muchos servicios de Google, incluyendo web.dev/measure y [PageSpeed Insights](https://pagespeed.web.dev/).
 
 Lighthouse 6.0 está disponible inmediatamente en npm y en [Chrome Canary](https://www.google.com/chrome/canary/). Otros servicios de Google que aprovechan Lighthouse recibirán la actualización a fin de mes. Llegará a Chrome Stable en Chrome 84 (mediados de julio).
 
@@ -193,7 +193,7 @@ Hemos publicado una [calculadora de puntuación](https://googlechrome.github.io/
 
 ### JavaScript no utilizado {: #unused-javascript }
 
-[Aprovechamos la cobertura del código de DevTools](https://developers.google.com/web/tools/chrome-devtools/coverage) en una nueva auditoría: [**JavaScript no utilizado**](/remove-unused-code/).
+[Aprovechamos la cobertura del código de DevTools](https://developer.chrome.com/docs/devtools/coverage/) en una nueva auditoría: [**JavaScript no utilizado**](/remove-unused-code/).
 
 Esta auditoría no es *completamente* nueva: se [agregó a mediados de 2017](https://github.com/GoogleChrome/lighthouse/issues/1852#issuecomment-306900595), pero debido a la sobrecarga de rendimiento, se deshabilitó de forma predeterminada para mantener Lighthouse lo más rápido posible. La recopilación de estos datos de cobertura es mucho más eficiente ahora, por lo que nos sentimos cómodos habilitándolos de forma predeterminada.
 
@@ -236,7 +236,7 @@ Hemos cambiado el nombre del panel **Auditorías** a panel de **Lighthouse**. ¡
 
 Dependiendo del tamaño de la ventana de DevTools, el panel probablemente esté detrás del botón `»` Puede arrastrar la pestaña para cambiar el orden.
 
-Para exhibir rápidamente el panel con el [menú de Comando](https://developers.google.com/web/tools/chrome-devtools/command-menu):
+Para exhibir rápidamente el panel con el [menú de Comando](https://developer.chrome.com/docs/devtools/command-menu/):
 
 1. {% Instruction 'devtools', 'none' %}
 2. {% Instruction 'devtools-command', 'none' %}

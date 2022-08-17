@@ -181,7 +181,7 @@ Cookie のデフォルトを `SameSite=Lax` に変更した主な理由の 1 つ
 
 Chrome と Firefox で開発者向けツールとメッセージングを使用できます。
 
-Chrome 86 では、スキームフル Same-Site 問題は、[DevTools の［Issue］タブ](https://developers.google.com/web/tools/chrome-devtools/issues)に含まれます。サイトでは以下の問題がハイライトされる場合があります。
+Chrome 86 では、スキームフル Same-Site 問題は、[DevTools の［Issue］タブ](https://developer.chrome.com/docs/devtools/issues/)に含まれます。サイトでは以下の問題がハイライトされる場合があります。
 
 ナビゲーションの問題:
 

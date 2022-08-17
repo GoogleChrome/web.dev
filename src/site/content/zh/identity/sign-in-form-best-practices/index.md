@@ -55,7 +55,7 @@ codelabs:
 还有以下两个相对较新的 API 没有在本文中介绍，但它们可以帮助您构建更好的登录体验：
 
 - [**WebOTP**](/web-otp/)：通过短信向手机发送一次性密码或 PIN 码。这可以允许用户选择电话号码作为标识符（无需输入电子邮件地址！），还可以启用登录的两步验证和付款确认的一次性代码。
-- [**凭据管理**](https://developers.google.com/web/updates/2016/04/credential-management-api)：使开发人员能够以编程方式存储和检索密码凭据和联合凭据。 {% endAside %}
+- [**凭据管理**](https://developer.chrome.com/blog/credential-management-api/)：使开发人员能够以编程方式存储和检索密码凭据和联合凭据。 {% endAside %}
 
 ## 使用有意义的 HTML {: #meaningful-html }
 
@@ -421,11 +421,11 @@ HTML 表单元素和属性具有用于基本验证的内置功能，但您还应
 
 ## 继续学习 {: #resources }
 
-- [创建惊人的表格](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [创建惊人的表格](/learn/forms/)
 - [移动表单设计的最佳实践](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [更强大的表单控件](/more-capable-form-controls)
 - [创建可访问表单](https://webaim.org/techniques/forms/)
-- [使用凭证管理 API 简化登录流程](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [使用凭证管理 API 简化登录流程](https://developer.chrome.com/blog/credential-management-api/)
 - [使用 WebOTP API 验证网络上的电话号码](/web-otp/)
 
 照片：[Meghan Schiereck](https://unsplash.com/photos/_XFObcM_7KU)；来源：[Unsplash](https://unsplash.com)

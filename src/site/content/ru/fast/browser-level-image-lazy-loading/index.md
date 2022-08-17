@@ -38,7 +38,7 @@ feedback:
 
 В настоящее время есть два способа отложить загрузку скрытых изображений:
 
-- использование [API Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver);
+- использование [API Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/);
 - использование [обработчиков событий](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way) `scroll`, `resize` или `orientationchange`.
 
 Любой из этих вариантов позволяет разработчикам добавить функциональность отложенной загрузки. Кроме того, многие разработчики создали сторонние библиотеки, предоставляющие слои абстракций, которые еще проще использовать. Однако если отложенная загрузка поддерживается непосредственно браузером, то необходимость во внешней библиотеке отпадает. Отложенная загрузка изображений на уровне браузера гарантирует, что эта функция будет работать, даже если JavaScript отключен на клиенте.
@@ -79,7 +79,7 @@ Chrome уже умеет загружать изображения с разны
 
 Значения по умолчанию для различных типов эффективных соединений можно найти в [исходном коде Chromium](https://cs.chromium.org/chromium/src/third_party/blink/renderer/core/frame/settings.json5?l=971-1003&rcl=e8f3cf0bbe085fee0d1b468e84395aad3ebb2cad). Эти цифры и даже подход, при котором выборка выполняется только при достижении определенного расстояния от области просмотра, могут измениться в ближайшем будущем, поскольку команда Chrome совершенствует эвристику для определения момента начала загрузки.
 
-{% Aside %} В Chrome 77+ вы можете поэкспериментировать с различными пороговыми значениями, [изменяя тип сети](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) в DevTools. Переопределите также эффективный тип подключения браузера с помощью флага `about://flags/#force-effective-connection-type`. {% endAside %}
+{% Aside %} В Chrome 77+ вы можете поэкспериментировать с различными пороговыми значениями, [изменяя тип сети](https://developer.chrome.com/docs/devtools/network/#throttle) в DevTools. Переопределите также эффективный тип подключения браузера с помощью флага `about://flags/#force-effective-connection-type`. {% endAside %}
 
 ## Улучшенная экономия данных и пороговые значения расстояния от области просмотра
 

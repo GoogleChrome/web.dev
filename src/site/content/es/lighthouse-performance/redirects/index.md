@@ -23,7 +23,7 @@ Después, el navegador debe realizar otra solicitud HTTP en la nueva ubicación 
 
 ## Cómo fallar la auditoría de redireccionamientos múltiples de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que tienen múltiples redireccionamientos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas que tienen múltiples redireccionamientos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 
@@ -31,9 +31,9 @@ Una página falla en esta auditoría cuando tiene dos o más redireccionamientos
 
 ## Cómo eliminar redireccionamientos
 
-Señale los enlaces a los recursos marcados con las ubicaciones actuales de los recursos. Es especialmente importante evitar las redirecciones en los recursos necesarios para su [ruta de procesamieno crítica](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).
+Señale los enlaces a los recursos marcados con las ubicaciones actuales de los recursos. Es especialmente importante evitar las redirecciones en los recursos necesarios para su [ruta de procesamieno crítica](/critical-rendering-path/).
 
-Si está utilizando redireccionamientos para desviar a los usuarios de dispositivos móviles, a la versión móvil de su página, considere rediseñar su sitio para usar un [diseño adaptable](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
+Si está utilizando redireccionamientos para desviar a los usuarios de dispositivos móviles, a la versión móvil de su página, considere rediseñar su sitio para usar un [diseño adaptable](/responsive-web-design-basics/).
 
 ## Orientación específica de la pila
 
@@ -43,6 +43,6 @@ Si está utilizando React Router, minimice el uso del componente `<Redirect>` pa
 
 ## Recursos
 
-- [Código fuente para la auditoría **Evitar redireccionamientos de varias páginas**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
+- [Código fuente para la auditoría **Evitar redireccionamientos de varias páginas**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js)
 - [Redirecciones en HTTP](https://developer.mozilla.org/docs/Web/HTTP/Redirections)
 - [Evitar los redireccionamientos de la página de destino](https://developers.google.com/speed/docs/insights/AvoidRedirects)

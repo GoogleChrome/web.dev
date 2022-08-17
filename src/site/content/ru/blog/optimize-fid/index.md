@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: Рука, касающаяся экрана смартфона
 description: Метрика FID (Время ожидания до первого взаимодействия с контентом) измеряет время с момента первого взаимодействия пользователя с сайтом до момента, когда браузер фактически способен ответить на это взаимодействие. Узнайте, как оптимизировать FID путем минимизации неиспользуемого JavaScript, разбиения длительных задач и улучшения готовности к взаимодействию.
@@ -103,7 +104,7 @@ tags:
 
 По умолчанию весь JavaScript блокирует рендеринг. Когда браузер встречает тег скрипта, который ссылается на внешний файл JavaScript, он должен приостановить свои действия и загрузить, проанализировать, скомпилировать и выполнить этот JavaScript. Поэтому вам следует загружать только тот код, который необходим для страницы или ответа на ввод пользователя.
 
-На вкладке [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) в Chrome DevTools можно узнать, сколько неиспользуемого кода JavaScript находится на вашей странице.
+На вкладке [Coverage](https://developer.chrome.com/docs/devtools/coverage/) в Chrome DevTools можно узнать, сколько неиспользуемого кода JavaScript находится на вашей странице.
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Вкладка Coverage.", width="800", height="559" %}
 
@@ -163,10 +164,10 @@ import('module.js').then((module) => {
 
 Для измерения и отладки FID доступен ряд инструментов:
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) не поддерживает FID, поскольку это полевой показатель. Однако метрику [TBT (Общее время блокировки)](/tbt/) можно использовать в качестве косвенного показателя. Оптимизация, улучшающая TBT, должна также улучшить FID в полевых условиях.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) не поддерживает FID, поскольку это полевой показатель. Однако метрику [TBT (Общее время блокировки)](/tbt/) можно использовать в качестве косвенного показателя. Оптимизация, улучшающая TBT, должна также улучшить FID в полевых условиях.
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) предоставляет реальные значения FID, агрегированные на уровне источника.
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) предоставляет реальные значения FID, агрегированные на уровне источника.
 
 *Выражаем благодарность Филиппу Уолтону, Кейси Баскесу, Илье Григорику и Энни Салливан за их обзоры.*

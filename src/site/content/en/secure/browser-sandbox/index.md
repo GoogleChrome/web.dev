@@ -53,7 +53,7 @@ security? Absolutely yes!
 First of all, sandbox features are not the perfect shield. Even though browser
 engineers work hard, browsers could have vulnerabilities and attackers are
 always trying to bypass the sandbox (such as with
-[Spectre Attack](https://developers.google.com/web/updates/2018/02/meltdown-spectre)).
+[Spectre Attack](https://developer.chrome.com/blog/meltdown-spectre/)).
 
 The sandbox could sometimes get in a way of creating a great web experience. For
 example, a browser may block a fetch request to an image hosted on a different

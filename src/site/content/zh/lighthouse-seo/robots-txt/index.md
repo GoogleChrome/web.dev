@@ -17,7 +17,7 @@ web_lighthouse:
 
 ## Lighthouse `robots.txt` 审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 可以标记无效的 `robots.txt` 文件：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 可以标记无效的 `robots.txt` 文件：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Lighthouse 审计显示无效的 robots.txt", width="800", height="203" %}</figure>
 
@@ -43,7 +43,7 @@ Lighthouse 不检查您的 `robots.txt` 文件是否位于正确的位置。该�
 
 如果您的服务器针对 `robots.txt` 返回服务器错误（500 秒内[的 HTTP 状态代码](/http-status-code)），搜索引擎不知道应该抓取哪些页面，而可能会停止抓取您的整个网站，这会阻止将新内容编入索引。
 
-要检查 HTTP 状态代码，在 Chrome 中打开 `robots.txt` 并[在 Chrome DevTools 中检查请求](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze)。
+要检查 HTTP 状态代码，在 Chrome 中打开 `robots.txt` 并[在 Chrome DevTools 中检查请求](https://developer.chrome.com/docs/devtools/network/reference/#analyze)。
 
 ### 保持`robots.txt`小于 500 KiB
 
@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## 资源
 
-- [**`robots.txt` 无效**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [**`robots.txt` 无效**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [创建`robots.txt file`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Robots 元标签和 X-Robots-Tag HTTP 标头规范](https://developers.google.com/search/reference/robots_meta_tag)

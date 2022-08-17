@@ -21,7 +21,7 @@ description: 为了让屏幕阅读器向用户呈现鲜明的 UI，有意义的�
 
 <figure>{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %}<figcaption> 显示按钮的计算名称的 DevTools 辅助功能窗格。</figcaption></figure>
 
-{% Aside %}要了解更多信息，请查阅 [DevTools 辅助功能参考](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference)。 {% endAside %}
+{% Aside %}要了解更多信息，请查阅 [DevTools 辅助功能参考](https://developer.chrome.com/docs/devtools/accessibility/reference/)。 {% endAside %}
 
 无论您是查看具有 `alt` 文本的 `img`，还是具有 `label` 的 `input`，所有这些场景都会产生相同的结果：为元素提供可访问的名称。
 

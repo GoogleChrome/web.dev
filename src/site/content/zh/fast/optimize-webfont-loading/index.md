@@ -128,7 +128,7 @@ font.load().then(function() {
 
 字体资源通常是不经常更新的静态资源。因此，它们非常适合长时间的最大寿命期 - 确保为所有字体资源指定[条件 ETag 标头](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#validating-cached-responses-with-etags)和[最佳缓存控制策略。](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control)
 
-如果您的 Web 应用程序使用[服务工作进程](https://developers.google.com/web/fundamentals/primers/service-workers/) ，则使用[缓存优先策略](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network)提供字体资源适用于大多数用例。
+如果您的 Web 应用程序使用[服务工作进程](https://developer.chrome.com/docs/workbox/service-worker-overview/) ，则使用[缓存优先策略](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network)提供字体资源适用于大多数用例。
 
 不应该使用 [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 或 [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) 存储字体；因为它们中的每一个都有自己的一套性能问题。浏览器的 HTTP 缓存提供最佳和最强大的机制来向浏览器传送字体资源。
 
@@ -139,7 +139,7 @@ font.load().then(function() {
 
 ## 使用 Lighthouse 自动测试 WebFont 加载行为
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) 可以帮助自动执行相关过程，确保您遵循 Web 字体优化的最佳实践。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 可以帮助自动执行相关过程，确保您遵循 Web 字体优化的最佳实践。
 
 以下审计可以帮助您确保您的页面随着时间的推移继续遵循 Web 字体优化最佳实践：
 

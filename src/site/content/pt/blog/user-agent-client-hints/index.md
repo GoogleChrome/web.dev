@@ -58,7 +58,7 @@ Também é necessário melhorar a compatibilidade com a web no que diz respeito 
 
 O [User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity) permite o acesso às mesmas informações, mas de uma maneira que preserva melhor a privacidade, enquanto ainda permite que os navegadores reduzam o comportamento default da string User-Agent, que é transmitir tudo. As [Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) impõem um modelo em que o servidor precisa solicitar ao navegador um conjunto de dados sobre o cliente (as dicas/hints) e o navegador aplica suas próprias políticas ou configuração de usuário para determinar quais dados são retornados. Isto significa que, em vez de expor **todas** as informações do User-Agent por default, o acesso agora é gerenciado de maneira explícita e auditável. Os desenvolvedores também se beneficiam de uma API mais simples: não é preciso mais usar expressões regulares!
 
-O conjunto atual de Client Hints descreve principalmente os recursos de exibição e conexão do navegador. Você pode explorar os detalhes em [Automating Resource Selection with Client Hints](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints), mas aqui está um rápido resumo do processo.
+O conjunto atual de Client Hints descreve principalmente os recursos de exibição e conexão do navegador. Você pode explorar os detalhes em [Automating Resource Selection with Client Hints](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/), mas aqui está um rápido resumo do processo.
 
 O servidor solicita Client Hints específicas por meio de um cabeçalho:
 

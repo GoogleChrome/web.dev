@@ -16,7 +16,7 @@ tags:
 
 Como desarrollador, a menudo no tiene control sobre [qué scripts de terceros](/third-party-javascript/#network) carga su sitio. Antes de que pueda optimizar el contenido de terceros, debe hacer un trabajo de detective para averiguar qué hace que su sitio sea lento. 🕵️
 
-En este post, aprenderá a usar [Lighthouse](https://developers.google.com/web/tools/lighthouse/) y [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) para identificar recursos lentos de terceros. El post le irá mostrando técnicas cada vez más sólidas que se utilizan mejor combinadas.
+En este post, aprenderá a usar [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) y [Chrome DevTools](https://developer.chrome.com/docs/devtools/) para identificar recursos lentos de terceros. El post le irá mostrando técnicas cada vez más sólidas que se utilizan mejor combinadas.
 
 ## Si solo tiene 5 minutos
 

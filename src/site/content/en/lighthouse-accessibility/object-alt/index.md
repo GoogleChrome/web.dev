@@ -58,5 +58,5 @@ Learn more in
 
 ## Resources
 
-- [Source code for **`<object>` elements do not have alt text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/object-alt.js)
+- [Source code for **`<object>` elements do not have alt text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/object-alt.js)
 - [`<object>` elements must have alternate text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/object-alt)

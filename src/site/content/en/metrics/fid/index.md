@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -52,17 +52,29 @@ they click a link, tap on a button, or use a custom, JavaScript-powered control)
 to the time when the browser is actually able to begin processing event handlers
 in response to that interaction.
 
-<picture>
-  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="400", height="300" %}
-</picture>
-
 ### What is a good FID score?
 
 To provide a good user experience, sites should strive to have a First Input
 Delay of **100 milliseconds** or less. To ensure you're hitting this target for
 most of your users, a good threshold to measure is the **75th percentile** of
 page loads, segmented across mobile and desktop devices.
+
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg",
+        alt="Good FID values are 2.5 seconds or less, poor values are greater than 4.0 seconds, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,
@@ -185,7 +197,7 @@ hide their latency by running them on a separate thread).
 
 To put this another way, FID focuses on the R (responsiveness) in the [RAIL
 performance
-model](https://developers.google.com/web/fundamentals/performance/rail), whereas
+model](/rail/), whereas
 scrolling and zooming are more related to A (animation), and their performance
 qualities should be evaluated separately.
 
@@ -240,8 +252,8 @@ user to interact with your page. You can measure FID with the following tools.
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+  Report](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)

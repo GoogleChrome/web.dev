@@ -271,7 +271,7 @@ const Row = ({ index, style }) => {
 
 如果您不确定从哪里开始虚拟化应用程序中的列表和表格，请按照以下步骤操作：
 
-1. 测量渲染和滚动性能。这篇[文章](https://addyosmani.com/blog/react-window/)展示了如何使用 Chrome DevTools 中的 [FPS meter](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#analyze_frames_per_second) 来探索列表上的项目的渲染效率。
+1. 测量渲染和滚动性能。这篇[文章](https://addyosmani.com/blog/react-window/)展示了如何使用 Chrome DevTools 中的 [FPS meter](https://developer.chrome.com/docs/devtools/evaluate-performance/#analyze_frames_per_second) 来探索列表上的项目的渲染效率。
 2. 对于任何会影响性能的长列表或网格，包含 `react-window`
 3. 如果 `react-window` 不支持某些功能，并且您无法自己添加此功能，请考虑使用 [`react-virtualized`](https://github.com/bvaughn/react-virtualized)。
 4. 如果需要在用户滚动时延迟加载项目，则使用 `react-window-infinite-loader` 包装虚拟化列表。

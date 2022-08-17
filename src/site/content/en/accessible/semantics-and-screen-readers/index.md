@@ -95,7 +95,7 @@ _collapsed_ state, depending on if it's open or closed.
 
 For each node in the DOM, the browser determines if the
 node is semantically "interesting" and adds it to [the accessibility
-tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree).
+tree](/the-accessibility-tree/).
 When assistive technology, like a screen reader, is providing an alternative UI
 to the user, it is often doing so by walking this accessibility tree.
 
@@ -108,7 +108,7 @@ to cut down on noise.
 {% endAside %}
 
 Using Chrome's DevTools you can [inspect an element's semantic
-properties](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
+properties](https://developer.chrome.com/docs/devtools/accessibility/reference/#pane)
 and explore its position in the accessibility tree.
 
 ## Next steps

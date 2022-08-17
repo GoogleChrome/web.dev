@@ -6,7 +6,7 @@ authors:
   - bmcquade
 description: The research and methodology behind Core Web Vitals thresholds
 date: 2020-05-21
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: The research and methodology behind Core Web Vitals thresholds
 tags:
@@ -74,7 +74,8 @@ performance as either "good", "needs improvement", or "poor":
       <td>>0.25</td>
       <td>75</td>
     </tr>
-</table>
+  </table>
+</div>
 
 Additionally, to classify the overall performance of a page or site, we use the
 75th percentile value of all page views to that page or site. In other words, if
@@ -136,7 +137,7 @@ reasonable LCP "good" threshold for Core Web Vitals.
 
 When evaluating candidate Core Web Vitals "good" thresholds, we verify that
 those thresholds are achievable, based on data from the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+Report](https://developer.chrome.com/docs/crux/)
 (CrUX). To confirm that a threshold is achievable, we require that at least 10%
 of [origins](/same-site-same-origin/#origin) currently meet the "good"
 threshold. Additionally, to ensure that well-optimized sites are not

@@ -50,7 +50,7 @@ Web-based payment apps are built using the standard web technologies. Every
 web-based payment app must include a service worker.
 
 {% Aside %}
-A [Service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
+A [Service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 is an event-driven script that runs in the background even if the registering
 website is not open in the browser. Service workers enable websites to work
 offline and send push notifications, because they can respond to requests with
@@ -101,7 +101,7 @@ API](https://groups.google.com/g/mozilla.dev.platform/c/gBQp1URD1lE/m/Fswh-5-ZBg
 
 ### WebAuthn support
 
-[WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn) is an
+[WebAuthn](https://developer.chrome.com/blog/webauthn/) is an
 authentication mechanism based on the public key cryptography. You can let users
 sign-in through a biometric verification. WebAuthn is already supported in the
 payment handler window on Chrome, and the standard body is looking into creating
@@ -110,7 +110,7 @@ an even-tighter connection between Web Payments and WebAuthn.
 ### Credential Management API support
 
 [The Credential Management
-API](https://developers.google.com/web/fundamentals/security/credential-management/)
+API](/security-credential-management/)
 provides a programmatic interface between the site and the browser for seamless
 sign-in across devices. You can let users sign-in to your website automatically
 based on the information stored to the browser's password manager. It's planned

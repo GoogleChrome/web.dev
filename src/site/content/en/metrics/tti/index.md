@@ -4,7 +4,7 @@ title: Time to Interactive (TTI)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-15
+updated: 2022-05-11
 description: |
   This post introduces the Time to Interactive (TTI) metric and explains
   how to measure it
@@ -29,7 +29,7 @@ loading to when its main sub-resources have loaded and it is capable of reliably
 responding to user input quickly.
 
 To calculate TTI based on a [performance
-trace](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)
+trace](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/)
 of a web page, follow these steps:
 
 1. Start at [First Contentful Paint (FCP)](/fcp/).
@@ -75,14 +75,14 @@ TTI](/tti/) for usage details.
 
 ### Lab tools
 
-* [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 * [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %}
   While it's possible to measure TTI in the field, it's not recommended, as user
   interaction can affect your page's TTI in ways that lead to lots of variance
   in your reports. To understand a page's interactivity in the field, you should
-  measure [First Input Delay (FID)](/fid/).
+  measure [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/).
 {% endAside %}
 
 ## What is a good TTI score?

@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2021-10-12
+updated: 2022-06-08
 hero: image/admin/1ekafMZjtzcd0G3TLQJ4.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -17,11 +17,11 @@ feedback:
   - api
 ---
 
-To improve users' productivity and facilitate re-engagement with key tasks, the
+To improve users' productivity and facilitate reengagement with key tasks, the
 web platform now supports app shortcuts. They allow web developers to provide
 quick access to a handful of common actions that users need frequently.
 
-This article will teach you how to define those app shortcuts. Additionally,
+This article will teach you how to define app shortcuts. Additionally,
 you'll learn some associated best practices.
 
 ## About app shortcuts
@@ -35,22 +35,25 @@ The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
 (Windows) or dock (macOS) on the user's desktop, or long pressing the app's
 launcher icon on Android.
 
-<figure>
-  {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420" %}
-  <figcaption>App shortcuts menu opened on Android</figcaption>
-</figure>
+<div class="w-columns" >
+  <figure>
+    {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420" %}
+    <figcaption>App shortcuts menu opened on Android</figcaption>
+  </figure>
 
-<figure>
-  {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420" %}
-  <figcaption>App shortcuts menu opened on Windows</figcaption>
-</figure>
+  <figure>
+    {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420" %}
+    <figcaption>App shortcuts menu opened on Windows</figcaption>
+  </figure>
+</div>
+
 
 The app shortcuts menu is shown only for [Progressive Web Apps] that are
-installed on the user's desktop or mobile device. Check out [What does it take
-to be installable?] to learn about installability requirements.
+installed on the user's desktop or mobile device. Check out [Installation]
+in our "Learn PWA" module to learn about installability requirements.
 
 Each app shortcut expresses a user intent, each of which is associated with a
-URL within the [scope] of your web app. The URL is opened when users activate
+URL within the [scope] of your web app. The URL is opened when a user activate
 the app shortcut. Examples of app shortcuts include the following:
 
 - Top-level navigation items (e.g., home, timeline, recent orders)
@@ -68,7 +71,7 @@ Googler, and these contributors deserve special recognition!
 ## Define app shortcuts in the web app manifest
 
 App shortcuts are optionally defined in the [web app manifest], a JSON file that
-tells the browser about your Progressive Web App and how it should behave when
+tells the browser about your web app and how it should behave when
 installed on the user's desktop or mobile device. More specifically, they are
 declared in the `shortcuts` array member. Below is an
 example of a potential web app manifest.
@@ -100,49 +103,43 @@ example of a potential web app manifest.
 Each member of the `shortcuts` array is a dictionary that contains at least a
 `name` and a `url`. Other members are optional.
 
-### name
-
-The human-readable label for the app shortcut when
+`name`
+:   The human-readable label for the app shortcut when
 displayed to the user.
 
-### short_name (optional)
-
-The human-readable label used where space is limited. It is recommended
+`short_name` (optional)
+:   The human-readable label used where space is limited. It is recommended
 that you provide it, even though it's
 optional.
 
-### description (optional)
-
-The human-readable purpose for the app shortcut.
+`description` (optional)
+:   The human-readable purpose for the app shortcut.
 It is not used at the time of writing but may be exposed to assistive technology
 in the future.
 
-### url
-
-The URL opened when a user activates the app
+`url`
+:   The URL opened when a user activates the app
 shortcut. This URL must exist within the scope of the web app manifest. If it is
 a relative URL, the base URL will be the URL of the web app manifest.
 
-### icons (optional)
-
-An array of image resource objects. Each object must
+`icons` (optional)
+:   An array of image resource objects. Each object must
 include the `src` and a `sizes` property. Unlike [web app manifest icons], the
-`type` of image is optional.
+`type` of image is optional. SVG files are not supported at the time of writing.
+Use PNG instead.
 
-SVG files are not supported at the time of writing, use PNG instead.
-
-If you want pixel-perfect icons, provide them in increments of 48dp (i.e. 36x36,
+   If you want pixel-perfect icons, provide them in increments of 48dp (i.e. 36x36,
 48x48, 72x72, 96x96, 144x144, 192x192 pixel icons). Otherwise, it is recommended
 that you use a single 192x192 pixel icon.
 
-As a quality measure, icons must be at least half of the device's ideal size on
+   As a quality measure, icons must be at least half of the device's ideal size on
 Android, which is 48dp. For example, to display on an [xxhdpi screen], the icon
 must be at least 72 by 72 pixels. (This is derived from the
 [formula for converting] dp units for pixel units.)
 
 ## Test your app shortcuts
 
-To verify your app shortcuts are setup correctly, use the **Manifest** pane in the
+To verify that your app shortcuts are set up correctly, use the **Manifest** pane in the
 **Application** panel of DevTools.
 
 <figure>
@@ -162,16 +159,13 @@ Web App updates are capped to once a day.  Find out more about
 
 ### Order app shortcuts by priority
 
-You are encouraged to order app shortcuts by priority, with the most critical
-app shortcuts appearing first in the `shortcuts` array as the limit on the
-number of app shortcuts displayed varies depending on the platform. Chrome and
-Edge on Windows for instance limit the number of app shortcuts to 10 while
-Chrome for Android only takes the first 4 app shortcuts into account.
-
-{% Aside %}
-Chrome 92 for Android 7 now allow only 3 app shortcuts. A shortcut to the site
-settings was added, taking one of the available shortcut slots for the app.
-{% endAside %}
+Shortcuts are displayed in the order by which you define them in the manifest.
+You are encouraged to order app shortcuts by priority because the limit on the
+number of app shortcuts displayed varies byß platform. Chrome and Edge on
+Windows for instance limit the number of app shortcuts to 10 while Chrome for
+Android only display 3. Before Chrome 92 for Android 7, 4 were allowed. Chrome
+92 added a shortcut to the site settings, taking one of the available shortcut
+slots for the app.
 
 ### Use distinct app shortcut names
 
@@ -187,12 +181,13 @@ You should annotate app shortcuts `url` entries like you would do with
 
 ## Browser support
 
-App shortcuts are available on Android (Chrome 84), Windows (Chrome 85 and
-Edge 85), Chrome OS (Chrome 92), macOS and Linux (Chrome 96 and Edge 96).
+App shortcuts are available on the platforms and versions listed below.
+
+{% BrowserCompat 'html.manifest.shortcuts' %}
 
 <figure>
-  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on Chrome OS", width="800", height="450" %}
-  <figcaption>App shortcuts menu opened on Chrome OS</figcaption>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on ChromeOS", width="800", height="450" %}
+  <figcaption>App shortcuts menu opened on ChromeOS</figcaption>
 </figure>
 
 ## Trusted Web Activity support
@@ -228,19 +223,17 @@ Check out the [app shortcuts sample] and its [source].
 
 ## Helpful links
 
-* [Explainer][explainer]
+* [MDN][mdn-shortcuts]
 * [Spec][spec]
 * [App shortcuts sample][app shortcuts sample] | [App shortcuts sample source][source]
-* [Tracking bug][cr-bug]
-* [ChromeStatus.com entry][cr-status]
 * Blink Component: [`UI>Browser>WebAppInstalls`]
 
 [Progressive Web Apps]: /progressive-web-apps/
-[What does it take to be installable?]: /install-criteria/
+[Installation]: /learn/pwa/installation/
 [scope]: /add-manifest/#scope
-[web app manifest]: /add-manifest
+[web app manifest]: /learn/pwa/web-app-manifest/
 [web app manifest icons]: /add-manifest/#icons
-[explainer]: https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Shortcuts/explainer.md
+[mdn-shortcuts]: https://developer.mozilla.org/en-US/docs/Web/Manifest/shortcuts
 [spec]: https://w3c.github.io/manifest/#shortcuts-member
 [app shortcuts sample]: https://app-shortcuts.glitch.me
 [source]: https://glitch.com/edit/#!/app-shortcuts

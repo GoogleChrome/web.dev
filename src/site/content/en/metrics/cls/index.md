@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-07-18
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it.
@@ -115,10 +115,22 @@ To provide a good user experience, sites should strive to have a CLS score of
 good threshold to measure is the **75th percentile** of page loads, segmented
 across mobile and desktop devices.
 
-<picture>
-  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="400", height="300" %}
-</picture>
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg",
+        alt="Good CLS values are 0.1 or less, poor values are greater than 0.25, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,
@@ -313,16 +325,16 @@ available in the following tools:
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+  Report](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Lab tools
 
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Measure CLS in JavaScript
@@ -380,7 +392,7 @@ new PerformanceObserver((entryList) => {
   This code shows the basic way to calculate and log CLS. However, accurately
   measuring CLS in a way that matches what is measured in the [Chrome User
   Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
   (CrUX) is more complicated. See below for details:
 
 {% endAside %}
@@ -414,7 +426,7 @@ that it measures the entire lifespan of a page:
 
 To handle such cases, CLS should be reported any time a page is
 background&mdash;in addition to any time it's unloaded (the [`visibilitychange`
-event](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)
+event](https://developer.chrome.com/blog/page-lifecycle-api/#event-visibilitychange)
 covers both of these scenarios). And analytics systems receiving this data will
 then need to calculate the final CLS value on the backend.
 

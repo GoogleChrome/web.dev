@@ -91,7 +91,7 @@ tags:
 
 - В таких условиях высокой нагрузки, как анимация, главное — ничего не делать там, где это возможно, и выполнять абсолютный минимум в остальных случаях. По возможности используйте отклик в 100 мс, чтобы предварительно рассчитать дорогостоящую работу: так вы повысите свои шансы на достижение 60 кадров в секунду.
 
-- Информацию о различных стратегиях оптимизации анимации см. в разделе «[Производительность рендеринга»](https://developers.google.com/web/fundamentals/performance/rendering).
+- Информацию о различных стратегиях оптимизации анимации см. в разделе «[Производительность рендеринга»](/rendering-performance/).
 
 {% Aside %} Различайте все типы анимации. Анимация — это не только навороченные эффекты пользовательского интерфейса. Каждое из этих взаимодействий считается анимацией:
 
@@ -151,35 +151,35 @@ tags:
 
 ### Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) обеспечивает углубленный анализ всего, что происходит во время загрузки или запуска вашей страницы. См. раздел «[Aнализ производительности во время выполнения](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)», чтобы ознакомиться с пользовательским интерфейсом панели «**Производительность**».
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/) обеспечивает углубленный анализ всего, что происходит во время загрузки или запуска вашей страницы. См. раздел «[Aнализ производительности во время выполнения](https://developer.chrome.com/docs/devtools/evaluate-performance/)», чтобы ознакомиться с пользовательским интерфейсом панели «**Производительность**».
 
 Следующие функции DevTools особенно важны:
 
-- [Замедлите работу процессора](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#cpu-throttle), чтобы смоделировать менее мощное устройство.
+- [Замедлите работу процессора](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#cpu-throttle), чтобы смоделировать менее мощное устройство.
 
-- [Замедлите работу сети](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network-throttle), чтобы имитировать более медленные соединения.
+- [Замедлите работу сети](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network-throttle), чтобы имитировать более медленные соединения.
 
-- [Просматривайте активность основного потока](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main), чтобы отслеживать все события, произошедшие в основном потоке во время записи.
+- [Просматривайте активность основного потока](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#main), чтобы отслеживать все события, произошедшие в основном потоке во время записи.
 
-- [Просматривайте действия основного потока в таблице](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#activities), чтобы отсортировать действия в зависимости от того, какие из них занимали больше всего времени.
+- [Просматривайте действия основного потока в таблице](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#activities), чтобы отсортировать действия в зависимости от того, какие из них занимали больше всего времени.
 
-- [Анализируйте количество кадров в секунду (FPS)](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#fps), чтобы определить, насколько плавно работает ваша анимация.
+- [Анализируйте количество кадров в секунду (FPS)](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#fps), чтобы определить, насколько плавно работает ваша анимация.
 
 - [Отслеживайте использование ЦП, размер кучи JS, узлы DOM, число макетов в секунду и многое другое](https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor) в режиме реального времени с помощью **монитора производительности**.
 
-- [Визуализируйте сетевые запросы](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network), которые произошли во время записи, с помощью раздела «**Сеть**».
+- [Визуализируйте сетевые запросы](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network), которые произошли во время записи, с помощью раздела «**Сеть**».
 
-- [Делайте снимки экрана во время записи](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#screenshots), чтобы точно воспроизвести то, как страница выглядела во время загрузки, как сработала анимация и т. д.
+- [Делайте снимки экрана во время записи](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#screenshots), чтобы точно воспроизвести то, как страница выглядела во время загрузки, как сработала анимация и т. д.
 
-- [Просматривайте взаимодействия](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#interactions), чтобы быстро определить, что произошло на странице после взаимодействия с ней пользователя.
+- [Просматривайте взаимодействия](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#interactions), чтобы быстро определить, что произошло на странице после взаимодействия с ней пользователя.
 
-- [Находите проблемы с производительностью прокрутки в режиме реального времени](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#scrolling-performance-issues), подсвечивая страницу при срабатывании потенциально проблемного прослушивателя.
+- [Находите проблемы с производительностью прокрутки в режиме реального времени](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#scrolling-performance-issues), подсвечивая страницу при срабатывании потенциально проблемного прослушивателя.
 
-- [Просматривайте события рисования в режиме реального времени](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-flashing), чтобы определять дорогостоящие события рисования, которые могут повлиять на производительность вашей анимации.
+- [Просматривайте события рисования в режиме реального времени](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-flashing), чтобы определять дорогостоящие события рисования, которые могут повлиять на производительность вашей анимации.
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) доступен в Chrome DevTools по адресу [web.dev/measure](/measure/) как расширение Chrome, как модуль Node.js и в WebPageTest. Вы даете ему URL-адрес, он имитирует устройство среднего класса с медленным 3G-соединением, выполняет серию аудитов на странице, а затем дает отчет о скорости загрузки и предложения по ее улучшению.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) доступен в Chrome DevTools по адресу [web.dev/measure](/measure/) как расширение Chrome, как модуль Node.js и в WebPageTest. Вы даете ему URL-адрес, он имитирует устройство среднего класса с медленным 3G-соединением, выполняет серию аудитов на странице, а затем дает отчет о скорости загрузки и предложения по ее улучшению.
 
 Наиболее важны следующие аудиты:
 

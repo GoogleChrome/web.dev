@@ -2,7 +2,7 @@
 layout: post
 title: Mainline Menswear implements PWA and sees a 55% conversion rate uplift
 authors:
-  - charistheodoulou
+  - harrytheodoulou
   - natashakosoglov
   - thomassteiner
 description: >
@@ -147,13 +147,13 @@ client side.
 
 The Cache API gives Mainline Menswear finer control over the cached assets, allowing them to apply
 complex strategies to each file type. While all this sounds complicated and hard to set up and
-maintain, [Workbox](https://developers.google.com/web/tools/workbox) provides them with an easy
+maintain, [Workbox](https://developer.chrome.com/docs/workbox/) provides them with an easy
 way of declaring such complex strategies and eases the pain of maintenance.
 
 #### Caching CSS and JS
 
 For CSS and JS files, the team chose to cache them and serve them over the cache using the
-[`StaleWhileRevalidate`](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.StaleWhileRevalidate)
+[`StaleWhileRevalidate`](https://developer.chrome.com/docs/workbox/reference/workbox-strategies/#type-StaleWhileRevalidate)
 Workbox strategy. This strategy allows them to serve all Nuxt CSS and JS files fast,
 which significantly increases their site's performance.
 At the same time, the files are being updated in the background to the latest version for the next visit:
@@ -206,7 +206,7 @@ workbox.routing.registerRoute(
 ```
 
 {% Aside %} A full example of the common Google Fonts strategy can be found in the
-[Workbox Docs](https://developers.google.com/web/tools/workbox/guides/common-recipes#google_fonts).
+[Workbox Docs](https://developer.chrome.com/docs/workbox/#use-cases-and-recipes).
 {% endAside %}
 
 #### Caching images
@@ -216,7 +216,7 @@ to all images coming from their CDN, which are usually product images. Their pag
 they are conscious of not taking too much of their users' device storage. So through Workbox, they
 added a strategy that is **caching images coming only from their CDN** with a **maximum
 of 60 images** using the
-[`ExpirationPlugin`](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-expiration.ExpirationPlugin).
+[`ExpirationPlugin`](https://developer.chrome.com/docs/workbox/reference/workbox-expiration/#type-ExpirationPlugin).
 
 The 61st (newest) image requested, replaces the 1st (oldest) image so that no more than 60 product
 images are cached at any point in time.
@@ -292,7 +292,7 @@ page shows only after the page reloads, the user closes and reopens the browser 
 app is launched from the home screen while offline.
 
 To achieve this, Mainline Menswear provided a fallback to failed
-[`NavigationRoute`](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-routing.NavigationRoute)
+[`NavigationRoute`](https://developer.chrome.com/docs/workbox/reference/workbox-routing/#type-NavigationRoute)
 requests with the precached offline page:
 
 ```js/4-6

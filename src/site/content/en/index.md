@@ -12,11 +12,11 @@ intro:
   imageWidth: '333'
   imageHeight: '240'
 featureCard:
-  theme: 'dark'
-  title: 'A celebration of web design'
+  theme: 'light'
+  title: 'Connect with us on Twitter Spaces'
   eyebrow: 'Event'
-  url: 'https://designcember.com'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/eLup3ce5FiasuQ3DX61F.jpg?auto=format'
+  url: 'https://web.dev/spaces/'
+  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/X49lrIUVWJr3OTkKX21n.svg'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
@@ -27,7 +27,7 @@ promoPanel:
   image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/KwS4L954TzN3KK3pWmtA.svg'
   imageWidth: '530'
   imageHeight: '483'
-pickedCaseStudyUrl: '/mainline-mensware/'
+pickedCaseStudyUrl: '/mishipay/'
 pickedCaseStudyTheme: 'light'
 pageSpeed:
   eyebrow: 'PageSpeed Insights'
@@ -56,7 +56,7 @@ podcasts:
   buttonUrl: '/podcasts/'
 patterns:
   title: 'Patterns'
-  summary: 'A collection of code snippets to help you optmize your web projects.'
+  summary: 'A collection of code snippets to help you optimize your web projects.'
   buttonText: 'See all'
   buttonUrl: '/patterns/'
 ---

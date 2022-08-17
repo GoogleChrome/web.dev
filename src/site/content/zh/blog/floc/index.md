@@ -163,7 +163,7 @@ FLoC 为基于兴趣的广告选择提供了一种隐私保护机制。
 
 网站将能够选择加入或退出 FLoC，因此有关敏感主题的网站将能够阻止对网站的访问被包含在 FLoC 计算中。作为额外的保护，FLoC 服务的分析将评估群组是否可能披露有关用户的敏感信息，而不会了解该群组为何敏感。如果一个群组代表的访问敏感类别网站的人数多于典型人数，则整个群组将被删除。负面财务状况和心理健康属于该分析覆盖的敏感类别。
 
-网站可以通过为页面设置 [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) 标题 `interest-cohort=()` 来[从 FLoC 计算中排除该页面](https://www.w3.org/TR/permissions-policy-1/#introduction)。对于尚未排除的页面，如果在页面上使用 `document.interestCohort()`，则页面访问将包含在浏览器的 FLoC 计算中。在当前 [FLoC 原始试验](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561)期间，如果 Chrome 检测到页面[加载广告或与广告相关的资源](https://github.com/WICG/floc/issues/82)，也会将该页面包含在计算中。（[Chromium 中的广告标记](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md)解释了 Chrome 的广告检测机制的工作原理。）
+网站可以通过为页面设置 [Permissions-Policy](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) 标题 `interest-cohort=()` 来[从 FLoC 计算中排除该页面](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/)。对于尚未排除的页面，如果在页面上使用 `document.interestCohort()`，则页面访问将包含在浏览器的 FLoC 计算中。在当前 [FLoC 原始试验](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561)期间，如果 Chrome 检测到页面[加载广告或与广告相关的资源](https://github.com/WICG/floc/issues/82)，也会将该页面包含在计算中。（[Chromium 中的广告标记](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md)解释了 Chrome 的广告检测机制的工作原理。）
 
 私有 IP 地址提供的页面（例如 Intranet 页面）不会成为 FLoC 计算的一部分。
 

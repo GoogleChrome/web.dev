@@ -19,7 +19,7 @@ break the role, but it should still be fixed.
 
 ## How Lighthouse identifies ARIA mismatches
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags mismatches between ARIA roles and `aria-*` attributes:
 
 <figure>
@@ -57,6 +57,6 @@ you can apply it.
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-allowed-attr.js" rel="noopener">Source code for <strong><code>[aria-*]</code> attributes do not match their roles</strong> audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-allowed-attr.js" rel="noopener">Source code for <strong><code>[aria-*]</code> attributes do not match their roles</strong> audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-allowed-attr" rel="noopener">Elements must only use allowed ARIA attributes (Deque University)</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

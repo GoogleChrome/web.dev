@@ -14,7 +14,7 @@ web_lighthouse:
 
 [关键请求链](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)是一系列对页面呈现很重要的依赖网络请求。链的长度越长，下载量越大，对页面加载性能的影响就越大。
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 报告通过高优先级加载的关键请求：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 报告通过高优先级加载的关键请求：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Lighthouse 最小化关键请求深度审计的截图", width="800", height="452" %}</figure>
 
@@ -44,4 +44,4 @@ Lighthouse 使用网络优先级作为识别阻塞呈现的关键资源的代理
 
 ## 资源
 
-[**最小化关键请求深度**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[**最小化关键请求深度**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/critical-request-chains.js)

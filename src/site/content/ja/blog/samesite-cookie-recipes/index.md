@@ -19,7 +19,7 @@ feedback:
 
 {% Aside %}この記事は、Cookie の `SameSite` 属性の変更を扱うシリーズ記事の一部です。
 
-- SameSite Cookie の説明
+- [SameSite Cookie の説明](/samesite-cookies-explained/)
 - [SameSite Cookie のレシピ](/samesite-cookie-recipes/)
 - [スキームフル Same-Site](/schemeful-samesite){% endAside %}
 

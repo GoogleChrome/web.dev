@@ -21,7 +21,7 @@ feedback:
 ---
 
 {% Aside 'warning' %} The development of Notification Triggers API, part of Google's
-[capabilities project](https://developers.google.com/web/updates/capabilities), is no longer
+[capabilities project](https://developer.chrome.com/blog/capabilities/), is no longer
 pursued. The notification landscape across operating systems is moving fairly quickly, and it is not
 clear that we would be able to provide a solid, consistent, and reliable experience across
 platforms.

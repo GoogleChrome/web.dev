@@ -25,11 +25,11 @@ A [Long Task](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) is Java
 
 While a web page is loading, Long Tasks can tie up the main thread and make the page unresponsive to user input even if it looks ready. Clicks and taps often don't work because event listeners, click handlers etc have not yet been attached.
 
-CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms? [The RAIL model](https://developers.google.com/web/fundamentals/performance/rail) suggests you process user input events in [50ms](https://developers.google.com/web/fundamentals/performance/rail#response) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
+CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms? [The RAIL model](/rail/) suggests you process user input events in [50ms](/rail/#response:-process-events-in-under-50ms) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
 
 ## Are there Long Tasks in my page that could delay interactivity?
 
-Until now, you've needed to manually look for "long yellow blocks" of script over 50ms long in [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) or use the [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) to figure out what tasks were delaying interactivity. This could be a little cumbersome.
+Until now, you've needed to manually look for "long yellow blocks" of script over 50ms long in [Chrome DevTools](https://developer.chrome.com/docs/devtools/) or use the [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) to figure out what tasks were delaying interactivity. This could be a little cumbersome.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="A DevTools Performance panel screenshot showing the differences between short tasks and long tasks", width="800", height="450" %}
 
@@ -37,7 +37,7 @@ To help ease your performance auditing workflow, [DevTools now visualizes Long T
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools visualizing Long Tasks as gray bars in the Performance Panel with a red flag for long tasks", width="800", height="450" %}
 
-* Record a trace in the [Performance panel](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/) of loading up a web page.
+* Record a trace in the [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) of loading up a web page.
 * Look for a red flag in the main thread view. You should see tasks are now gray ("Task").
 *  Hovering over a bar will let you know the duration of the task and if it was considered "long".
 

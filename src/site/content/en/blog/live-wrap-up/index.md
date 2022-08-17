@@ -140,7 +140,7 @@ learn more.
 
 Chrome wants you to be free to create the highest quality web apps that give you the biggest reach
 to users across devices. Combining the installability and reliability of PWAs, with the
-[capabilities project](/fugu-status/) (Project Fugu), Chrome is focusing on three
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) (Project Fugu), Chrome is focusing on three
 things to close the gap between platform-specific apps and the web, to help you build and deliver great
 experiences.
 
@@ -181,9 +181,9 @@ One of the most powerful features of Chrome DevTools is its ability to spot issu
 bring them to the developer's attention. This is most pertinent as we move into the next phase of a
 [privacy-first web](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html).
 To reduce notification fatigue and clutter in the Console, Chrome DevTools launched the [Issues
-tab](https://developers.google.com/web/tools/chrome-devtools/issues) which focuses on three types of
+tab](https://developer.chrome.com/docs/devtools/issues/) which focuses on three types of
 critical issues to start with: [cookie problems](/samesite-cookies-explained),
-[mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content),
+[mixed content](/what-is-mixed-content/),
 and [COEP issues](/coop-coep/). Watch the web.dev LIVE session on [finding and fixing
 problems with the Issues tab](https://youtu.be/1TbkSxQb4bI) to get started.
 
@@ -209,7 +209,7 @@ DevTools](https://youtu.be/6yrJZHqJe2k) session.
 
 ### Lighthouse 6.0: New metrics, Core Web Vitals lab measurements, an updated Performance score, and new audits
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source automated tool
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is an open-source automated tool
 that helps developers improve their site's performance. In its latest version, the Lighthouse team
 focused on providing insights based on metrics that give you a balanced view of the quality of your
 user experience against critical dimensions.

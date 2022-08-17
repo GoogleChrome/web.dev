@@ -20,7 +20,7 @@ stack_overflow_tag: webnfc
 ---
 
 {% Aside 'success' %}
-Интерфейс Web NFC, часть [проекта по расширению возможностей](/fugu-status/),
+Интерфейс Web NFC, часть [проекта по расширению возможностей](https://developer.chrome.com/blog/fugu-status/),
 реализован в Chrome 89 для Android.
 {% endAside %}
 

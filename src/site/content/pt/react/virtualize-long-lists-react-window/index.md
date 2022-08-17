@@ -275,7 +275,7 @@ Para `FixedSizeGrid` e `VariableSizeGrid`, utilize o `overscanColumnsCount` e pr
 
 Se você não tiver certeza de onde começar a virtualizar listas e tabelas em seu aplicativo, siga estas etapas:
 
-1. Avalie o desempenho de renderização e rolagem. Este [artigo](https://addyosmani.com/blog/react-window/) mostra como o [medidor FPS](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#analyze_frames_per_second) no Chrome DevTools pode ser usado para explorar a eficiência com que os itens são renderizados em uma lista.
+1. Avalie o desempenho de renderização e rolagem. Este [artigo](https://addyosmani.com/blog/react-window/) mostra como o [medidor FPS](https://developer.chrome.com/docs/devtools/evaluate-performance/#analyze_frames_per_second) no Chrome DevTools pode ser usado para explorar a eficiência com que os itens são renderizados em uma lista.
 2. Inclua `react-window` para quaisquer listas longas ou grades que estão afetando o desempenho.
 3. Se houver certos recursos não suportados na `react-window`, considere usar o [`react-virtualized`](https://github.com/bvaughn/react-virtualized) se você não puder adicionar essa funcionalidade sozinho.
 4. Faça sua lista virtualizada com `react-window-infinite-loader` se você precisar carregar itens lentamente enquanto o usuário rola a tela.

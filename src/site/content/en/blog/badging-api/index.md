@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The App Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2021-02-23
+updated: 2022-03-28
 tags:
   - blog
   - capabilities
@@ -42,7 +42,7 @@ because they don't interrupt the user, they don't need the user's permission.
 
 ### Possible use cases {: #use-cases }
 
-Examples of sites that may use this API include:
+Examples of apps that might use this API include:
 
 * Chat, email, and social apps, to signal that new messages have arrived, or to
   show the number of unread items.
@@ -51,30 +51,17 @@ Examples of sites that may use this API include:
 * Games, to signal that a player action is required (e.g., in Chess, when it
   is the player's turn).
 
-## Current status {: #status }
+### Support
 
-<div>
-
-| Step                                       | Status                       |
-| ------------------------------------------ | ---------------------------- |
-| 1. Create explainer                        | [Complete][explainer]        |
-| 2. Create initial draft of specification   | [Complete][spec]             |
-| 3. Gather feedback & iterate on design     | Complete                     |
-| 4. Origin trial                            | Complete                     |
-| **5. Launch**                              | **Complete**                 |
-
-</div>
-
-The App Badging API works on Windows, and macOS, in Chrome 81 or later.
-It has also been confirmed to work on Edge 84 or later.
-Support for Chrome OS is in development and will be available in a future
-release of Chrome. On Android, the Badging API is not supported. Instead,
+The App Badging API works on Windows, and macOS, in Chrome 81 and Edge 81 or later.
+Support for ChromeOS is in development and will be available in a future
+release. On Android, the Badging API is not supported. Instead,
 Android automatically shows a badge on app icon for the installed web app
 when there is an unread notification, just as for Android apps.
 
 ## Try it
 
-1. Using Chrome 81 or later on Windows or Mac, open the
+1. Open the
    [App Badging API demo][demo].
 2. When prompted, click **Install** to install the app, or use the Chrome
    menu to install it.
@@ -95,7 +82,7 @@ The Badge API consists of two methods on `navigator`:
   badge to the provided value otherwise, display a plain white dot (or other
   flag as appropriate to the platform). Setting *`number`* to `0` is the same as
   calling `clearAppBadge()`.
-* `clearAppBadge()`: Removes app's badge.
+* `clearAppBadge()`: Removes the app's badge.
 
 Both return empty promises you can use for error handling.
 
@@ -116,7 +103,7 @@ navigator.clearAppBadge().catch((error) => {
 });
 ```
 
-In some cases, the OS may not allow the exact representation of the badge.
+In some cases, the operating system may not allow the exact representation of the badge.
 In such cases, the browser will attempt to provide the best representation for
 that device. For example, because the Badging API isn't supported on Android,
 Android only ever shows a dot instead of a numeric value.
@@ -136,8 +123,8 @@ If it works, it works. If not, it simply doesn't.
 ## Setting and clearing the badge in the background from a service worker
 
 You can also set the app badge in the background using the service worker,
-allowing them to be updated even when the app isn't open. Do this either
-through the Push API, periodic background sync, or a combination of both.
+allowing it to be updated even when the app isn't open. Do this either
+through periodic background sync, the Push API, or a combination of both.
 
 ### Periodic background sync
 
@@ -166,19 +153,10 @@ receive push messages.
 ### A combination of both
 
 While not perfect, using Push API and periodic background sync together
-provide a good solution. High priority information is delivered via the Push
+provides a good solution. High priority information is delivered via the Push
 API, showing a notification and updating the badge. And lower priority
 information is delivered by updating the badge, either when the page is open,
 or via periodic background sync.
-
-### The future
-
-The Chrome team is investigating ways to more reliably [update the app badge in
-the background](https://github.com/w3c/badging/blob/master/explainer.md#background-updates),
-and wants to hear from you. Let them know what works best for your
-use case by commenting on the
-[Notification Background Updates](https://github.com/w3c/badging/issues/28)
-issue.
 
 ## Feedback {: #feedback }
 

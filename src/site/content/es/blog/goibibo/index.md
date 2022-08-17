@@ -79,7 +79,7 @@ En su viaje para mejorar la experiencia del usuario, Goibibo notó algunas tende
 ## Resultados comerciales generales {: #results }
 
 - Las iteraciones en las interfaces de PWA dieron como resultado un aumento del 60% en la tasa de conversión (en comparación con el flujo web móvil anterior) y deleitaron a los usuarios.
-- [Las nuevas capacidades web](/fugu-status/) mejoraron la UX y provocaron un aumento del 20% en los usuarios registrados (que se convierten 6 veces más).
+- [Las nuevas capacidades web](https://developer.chrome.com/blog/fugu-status/) mejoraron la UX y provocaron un aumento del 20% en los usuarios registrados (que se convierten 6 veces más).
 
 <blockquote>
   <p style="font-style: italic; font-size: 1.5rem;">Siempre nos esforzamos por lograr una experiencia de usuario perfecta y, a su vez, mejores tasas de conversión. Vimos una mayor participación del usuario y mejores tasas de conversión en el PWA que en el flujo web móvil original. Por lo tanto, invertir en una PWA es fundamental para nuestro éxito y, si no lo hubiéramos hecho, nos habría costado una fortuna.</p>

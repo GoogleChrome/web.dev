@@ -1,12 +1,12 @@
 # This Cloud Build task can kick off our actual deploy if the hash has changed.
 
 steps:
-  - name: node:16
+  - name: node:16.14.2
     id: 'Install dependencies'
     entrypoint: npm
-    args: ['ci']
+    args: ['ci', '--production']
 
-  - name: node:16
+  - name: node:16.14.2
     id: 'Verify and maybe kick off build for new version'
     entrypoint: npm
     args: ['run', 'version-check']

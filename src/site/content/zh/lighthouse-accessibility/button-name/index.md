@@ -36,5 +36,5 @@ Lighthouse 会标记出缺少文本内容或 `aria-label` 属性的按钮：
 
 ## 资源
 
-- [**按钮没有可访问的名称**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js)
+- [**按钮没有可访问的名称**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/button-name.js)
 - [按钮必须有可辨别的文字（德克大学）](https://dequeuniversity.com/rules/axe/3.3/button-name)

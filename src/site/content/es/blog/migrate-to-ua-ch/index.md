@@ -132,7 +132,7 @@ Al procesar esto en el lado del servidor, primero debe verificar si se ha enviad
 
 Si solicita subrecursos de origen cruzado o entre sitios que requieren que se envíen indicadores de cliente de agente de usuario en sus solicitudes, deberá especificar explícitamente los indicadores deseados mediante una política de permisos.
 
-{% Aside %} La [política de permisos](https://www.w3.org/TR/permissions-policy-1/) es la nueva forma de política de funciones {%  endAside %}
+{% Aside %} La [política de permisos](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) es la nueva forma de política de funciones {%  endAside %}
 
 Por ejemplo, digamos que `https://blog.site` aloja recursos en `https://cdn.site` que puede devolver recursos optimizados para un dispositivo específico. `https://blog.site` puede solicitar el indicador `Sec-CH-UA-Model`, pero debe delegarlo explícitamente en `https://cdn.site` mediante el encabezado `Permissions-Policy`. La lista de indicadores controlados por políticas está disponible en el [borrador de infraestructura de indicadores para clientes](https://wicg.github.io/client-hints-infrastructure/#policy-controlled-client-hints-features).
 

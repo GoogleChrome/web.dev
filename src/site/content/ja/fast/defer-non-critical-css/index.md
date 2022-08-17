@@ -12,7 +12,7 @@ tags:
 
 CSS ファイルは[レンダリングをブロックするリソース](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)です。つまり、ブラウザがページをレンダリングする前に、CSS ファイルを読み込み、処理する必要があります。不要に大きなスタイルを使うウェブページは、その分レンダリングの時間が長くなります。
 
-[本ガイドでは、Critical Rendering Path (クリティカルレンダリングパス) を最適化し、FCP (First Contentful Paint) を改善する目的で重大でない CSS を延期する方法について学びます。](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+[本ガイドでは、Critical Rendering Path (クリティカルレンダリングパス) を最適化し、FCP (First Contentful Paint) を改善する目的で重大でない CSS を延期する方法について学びます。](/critical-rendering-path/)
 
 ## 準最適な方法で CSS を読み込む
 
@@ -49,7 +49,7 @@ CSS ファイルは[レンダリングをブロックするリソース](https:/
 
 このページを最適化するには、どのクラスが「クリティカル」と見なされるかを知る必要があります。それには、[Coverage Tool](https://developer.chrome.com/docs/devtools/css/reference/#coverage) (カバレッジツール) を使用します。
 
-1. DevTools で、`Control+Shift+P` または `Command+Shift+P` (Mac の場合) をクリックして、[Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu) (コマンドメニュー) を開きます。
+1. DevTools で、`Control+Shift+P` または `Command+Shift+P` (Mac の場合) をクリックして、[Command Menu](https://developer.chrome.com/docs/devtools/command-menu/) (コマンドメニュー) を開きます。
 2. 「Coverage」と入力し、**Show Coverage** (カバレッジを表示) を選択します。
 3. [**Reload**] (再読み込み) ボタンをクリックして、ページを再読み込みし、カバレッジの取り込みを開始します。
 

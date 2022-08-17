@@ -234,7 +234,7 @@ setTimeout(async () => {
 
 ## Integración de la política de permisos
 
-Para usar la API en iframes, debe habilitarla con la [Política de permisos](https://w3c.github.io/webappsec-permissions-policy/), que define un mecanismo que permite habilitar y deshabilitar selectivamente varias API y funciones del navegador. Concretamente, debe pasar una o ambas de las opciones siguientes: `clipboard-read` o `clipboard-write`, según las necesidades de su aplicación.
+Para usar la API en iframes, debe habilitarla con la [Política de permisos](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/), que define un mecanismo que permite habilitar y deshabilitar selectivamente varias API y funciones del navegador. Concretamente, debe pasar una o ambas de las opciones siguientes: `clipboard-read` o `clipboard-write`, según las necesidades de su aplicación.
 
 ```html/2
 <iframe

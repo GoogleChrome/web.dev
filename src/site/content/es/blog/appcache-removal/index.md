@@ -20,7 +20,7 @@ origin_trial:
 
 Siguiendo [los anuncios anteriores](https://blog.chromium.org/2020/01/appcache-scope-restricted.html), la compatibilidad con [AppCache](https://developer.mozilla.org/docs/Web/API/Window/applicationCache) se eliminará de Chrome y otros navegadores basados en Chromium. Alentamos a los desarrolladores a migrar fuera de AppCache ahora, en lugar de esperar más.
 
-Los [trabajadores de servicio](https://developers.google.com/web/fundamentals/primers/service-workers), que son ampliamente compatibles con los navegadores actuales, ofrecen una alternativa para proporcionar la experiencia sin conexión que ofrecía AppCache. Consulte [Estrategias de migración](#migration-strategies).
+Los [trabajadores de servicio](https://developer.chrome.com/docs/workbox/service-worker-overview/), que son ampliamente compatibles con los navegadores actuales, ofrecen una alternativa para proporcionar la experiencia sin conexión que ofrecía AppCache. Consulte [Estrategias de migración](#migration-strategies).
 
 ## Línea de tiempo
 
@@ -133,11 +133,11 @@ Los trabajadores de servicio, que son [ampliamente compatibles con los navegador
 
 Hemos proporcionado un [polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior) que utiliza un trabajador de servicio para replicar algunas de las funciones de AppCache, aunque no replica toda su interfaz. En particular, no reemplaza la interfaz `window.applicationCache` ni los eventos relacionados de AppCache.
 
-Para casos más complejos, bibliotecas como [Workbox](https://developers.google.com/web/tools/workbox/) ofrecen una manera fácil de crear un trabajador de servicio moderno para su aplicación web.
+Para casos más complejos, bibliotecas como [Workbox](https://developer.chrome.com/docs/workbox/) ofrecen una manera fácil de crear un trabajador de servicio moderno para su aplicación web.
 
 ### Los trabajadores de servicio y AppCache son mutuamente excluyentes
 
-Mientras trabaja en su estrategia de migración, tenga en cuenta que Chrome deshabilitará la funcionalidad AppCache en cualquier página que se cargue bajo el [control](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#scope_and_control) de un trabajador del servicio. En otras palabras, tan pronto como implemente un trabajador de servicio que controle una página determinada, ya no podrá usar AppCache en ella.
+Mientras trabaja en su estrategia de migración, tenga en cuenta que Chrome deshabilitará la funcionalidad AppCache en cualquier página que se cargue bajo el [control](/service-worker-lifecycle/#scope-and-control) de un trabajador del servicio. En otras palabras, tan pronto como implemente un trabajador de servicio que controle una página determinada, ya no podrá usar AppCache en ella.
 
 Debido a esto, le recomendamos que no intente migrar a trabajadores de servicio pieza por pieza. Sería un error implementar un trabajador de servicio que solo contiene parte de su lógica de caché. No puede recurrir a AppCache para "llenar los vacíos".
 
@@ -169,15 +169,15 @@ A continuación, se muestran algunos recursos para los desarrolladores que migra
 
 ### Artículos
 
-- [Trabajadores de servicio: una introducción](https://developers.google.com/web/fundamentals/primers/service-workers)
-- [El ciclo de vida del trabajador de servicio](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
+- [Trabajadores de servicio: una introducción](https://developer.chrome.com/docs/workbox/service-worker-overview/)
+- [El ciclo de vida del trabajador de servicio](/service-worker-lifecycle/)
 - [Entrenamiento de aplicaciones web progresivas](https://developers.google.com/web/ilt/pwa)
 - [Fiabilidad de la red](/reliable/)
 
 ### Herramientas
 
 - [Polyfill de AppCache](https://github.com/GoogleChromeLabs/sw-appcache-behavior)
-- [Workbox](https://developers.google.com/web/tools/workbox/)
+- [Workbox](https://developer.chrome.com/docs/workbox/)
 - [PWA Builder](https://www.pwabuilder.com/)
 
 ## Obtenga ayuda

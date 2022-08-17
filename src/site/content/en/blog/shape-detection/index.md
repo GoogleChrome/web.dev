@@ -22,7 +22,7 @@ feedback:
 
 {% Aside %}
   This API is part of the new
-  [capabilities project](https://developers.google.com/web/updates/capabilities).
+  [capabilities project](https://developer.chrome.com/blog/capabilities/).
   Barcode detection has launched in Chrome 83.
   Face and text detection are available behind a flag. This post will be updated as
   the Shape Detection API evolves.
@@ -296,7 +296,7 @@ and so developers should be encouraged to check for precisely the capability
 
 ## Operating system support {: #os-support}
 
-Barcode detection is available on macOS, Chrome OS, and Android. [Google Play
+Barcode detection is available on macOS, ChromeOS, and Android. [Google Play
 Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
 are required on Android.
 

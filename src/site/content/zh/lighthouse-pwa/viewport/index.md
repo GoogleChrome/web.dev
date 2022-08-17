@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse  viewport meta 标记审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出没有  viewport meta 标记的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记出没有  viewport meta 标记的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="Lighthouse 审计显示页面缺少 viewport", width="800", height="76" %}</figure>
 
@@ -50,6 +50,6 @@ Lighthouse*不会*检查 `width` 是否等于 `device-width`，也不会检查 `
 
 ## 资源
 
-- [**具有带 `width` 或 `initial-scale` 的 `<meta name="viewport">` 标记**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/viewport.js)
+- [**具有带 `width` 或 `initial-scale` 的 `<meta name="viewport">` 标记**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/viewport.js)
 - [响应式网页设计基础](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport)
 - [使用  viewport meta 标记控制移动浏览器上的布局](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag)

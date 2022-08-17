@@ -94,7 +94,7 @@ formats.
 
 ## Resources
 
-- [Source code for **Serve images in modern formats** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/modern-image-formats.js)
+- [Source code for **Serve images in modern formats** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/modern-image-formats.js)
 - [Use WebP images](/serve-images-webp)
 
 <!-- https://www.reddit.com/r/webdev/comments/gspjwe/serve_images_in_nextgen_formats/ -->

@@ -47,7 +47,7 @@ Later on, another module can import and use some or all of these functions:
 
 ```javascript
 // index.js
-const { add } = require('./utils');
+const { add } = require('./utils.js');
 console.log(add(1, 2));
 ```
 
@@ -103,7 +103,7 @@ export const max = arr => maxBy(arr);
 And `index.js` would import from `utils.js` using ECMAScript module syntax:
 
 ```javascript
-import { add } from './utils';
+import { add } from './utils.js';
 
 console.log(add(1, 2));
 ```
@@ -135,7 +135,7 @@ export const subtract = (a, b) => a - b;
 
 ```javascript
 // index.js
-import { add } from './utils';
+import { add } from './utils.js';
 const subtract = (a, b) => a - b;
 
 console.log(add(1, 2));

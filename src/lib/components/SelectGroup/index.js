@@ -1,4 +1,4 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
 import {generateIdSalt} from '../../utils/generate-salt';
 import 'focus-visible';

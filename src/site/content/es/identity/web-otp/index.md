@@ -289,7 +289,7 @@ Tu código de verificación es 123456
 
 ### Configurar la política de permisos
 
-Para usar WebOTP en un iframe de origen cruzado, el incrustador debe otorgar acceso a esta API a través de la [política de permisos](https://www.w3.org/TR/permissions-policy-1) de otp-credentials para evitar comportamientos no deseados. De manera general, existen dos formas de lograr este objetivo:
+Para usar WebOTP en un iframe de origen cruzado, el incrustador debe otorgar acceso a esta API a través de la [política de permisos](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) de otp-credentials para evitar comportamientos no deseados. De manera general, existen dos formas de lograr este objetivo:
 
 {% Label %} a través de la cabecera HTTP: {% endLabel %}
 
@@ -303,7 +303,7 @@ Permissions-Policy: otp-credentials=(self "https://bank.example")
 <iframe src="https://bank.example/…" allow="otp-credentials"></iframe>
 ```
 
-Consulta [más ejemplos sobre cómo especificar una política de permisos](https://github.com/w3c/webappsec-permissions-policy/blob/master/permissions-policy-explainer.md#how-is-a-policy-specified).
+Consulta [más ejemplos sobre cómo especificar una política de permisos](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/).
 
 {% Aside %}
 

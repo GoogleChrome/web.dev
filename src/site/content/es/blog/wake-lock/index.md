@@ -18,7 +18,7 @@ feedback:
   - api
 ---
 
-{% Aside 'success' %} La API Screen Wake Lock, parte del [capabilities project (proyecto de capacidades)](https://developers.google.com/web/updates/capabilities) de Google, se lanzó en Chrome 84. {% endAside %}
+{% Aside 'success' %} La API Screen Wake Lock, parte del [capabilities project (proyecto de capacidades)](https://developer.chrome.com/blog/capabilities/) de Google, se lanzó en Chrome 84. {% endAside %}
 
 ## ¿Qué es la API de Screen Wake Lock? {: #what }
 
@@ -158,8 +158,8 @@ document.addEventListener('visibilitychange', handleVisibilityChange);
 
 Antes de agregar un screen wake lock a tu aplicación, considera si tus casos de uso podrían resolverse con una de las siguientes soluciones alternativas:
 
-- Si tu aplicación está realizando descargas de larga duración, considera usar [background fetch (recuperación en segundo plano)](https://developers.google.com/web/updates/2018/12/background-fetch).
-- Si tu aplicación está sincronizando datos de un servidor externo, considera usar [background sync (sincronización en segundo plano)](https://developers.google.com/web/updates/2015/12/background-sync).
+- Si tu aplicación está realizando descargas de larga duración, considera usar [background fetch (recuperación en segundo plano)](https://developer.chrome.com/blog/background-fetch/).
+- Si tu aplicación está sincronizando datos de un servidor externo, considera usar [background sync (sincronización en segundo plano)](https://developer.chrome.com/blog/background-sync/).
 
 {% Aside %} Como la mayoría de las otras API web potentes, la API Screen Wake Lock solo está disponible cuando se sirve a través de **HTTPS** . {% endAside %}
 

@@ -174,7 +174,7 @@ Para obtener información sobre la duración de un cambio de diseño, abra la pe
 
 {% Aside %} La duración de un cambio de diseño no tiene ningún impacto en su puntuación de cambio de diseño. {% endAside %}
 
-Para obtener más información sobre el uso del panel **Rendimiento**, consulte el documento [Referencia de análisis de rendimiento](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference).
+Para obtener más información sobre el uso del panel **Rendimiento**, consulte el documento [Referencia de análisis de rendimiento](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/).
 
 #### Resaltar las regiones de cambio de diseño
 

@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Какие URL-адреса помечаются как ресурсы, блокирующие рендеринг?
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает два типа URL-адресов, блокирующих рендеринг: скрипты и таблицы стилей.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает два типа URL-адресов, блокирующих рендеринг: скрипты и таблицы стилей.
 
 Скрипт `<script>` помечается, если он:
 
@@ -42,7 +42,7 @@ web_lighthouse:
 
 Как только вы определили критический код, переместите этот код из URL-адреса, блокирующего рендеринг, во встроенный тег `script` на вашей HTML-странице. Теперь во время загрузки у страницы будет всё необходимое для обработки основных функций.
 
-Если в URL-адресе, блокирующем рендеринг, есть код, который не является критическим, вы можете сохранить его в URL-адресе, а затем пометить URL-адрес атрибутами `async` или `defer` (см. также статью [«Добавление интерактивности с помощью JavaScript»](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)).
+Если в URL-адресе, блокирующем рендеринг, есть код, который не является критическим, вы можете сохранить его в URL-адресе, а затем пометить URL-адрес атрибутами `async` или `defer` (см. также статью [«Добавление интерактивности с помощью JavaScript»](/critical-rendering-path-adding-interactivity-with-javascript/)).
 
 Код, который вообще не используется, следует удалить (см. статью [«Удалите неиспользуемый код»](/remove-unused-code)).
 
@@ -76,7 +76,7 @@ web_lighthouse:
 
 ## Ресурсы
 
-- [Исходный код проверки **Eliminate render-blocking resources** (Устраните ресурсы, блокирующие рендеринг)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js).
+- [Исходный код проверки **Eliminate render-blocking resources** (Устраните ресурсы, блокирующие рендеринг)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js).
 - [Сократите полезную нагрузку JavaScript за счет разделения кода](/reduce-javascript-payloads-with-code-splitting).
 - [Удалите неиспользуемый код (codelab)](/codelab-remove-unused-code).
-- [Оптимизация загрузки JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/).
+- [Оптимизация загрузки JavaScript](/optimizing-content-efficiency-javascript-startup-optimization/).

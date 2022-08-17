@@ -15,7 +15,7 @@ tags:
 
 这样，主线程的工作负荷变得无比繁重。随着 Web 应用复杂性的增加，主线程成为性能的重要瓶颈。更糟糕的是，在给定用户的主线程上运行代码所需的时间**几乎完全不可预测**，因为设备功能对性能有巨大影响。这种不可预测性只会随着用户从越来越多样化的设备访问网络而增加，从超受限的功能手机到高性能、高刷新率的旗舰机器，无不如此。
 
-如果我们希望复杂的 Web 应用能够可靠地满足性能准则，比如像 [RAIL 模型](https://developers.google.com/web/fundamentals/performance/rail)——它基于人类感知和心理经验数据，则我们需要采取**在主线程之外 (OMT)**执行代码的方法。
+如果我们希望复杂的 Web 应用能够可靠地满足性能准则，比如像 [RAIL 模型](/rail/)——它基于人类感知和心理经验数据，则我们需要采取**在主线程之外 (OMT)**执行代码的方法。
 
 {% Aside %}如果您想了解更多有关 OMT 架构案例的信息，请观看我在下面的 CDS 2019 演讲。 {% endAside %}
 
@@ -179,6 +179,6 @@ Web Worker 尚未成为主流，因此大多数模块化工具 — 比如 [WebPa
 此外，OMT 还有下列好处：
 
 - 它将 JavaScript 执行成本转移到一个单独的线程。
-- 它移动*解析*成本，这意味着 UI 可能会启动得更快。这可能会减少 [First Contentful Paint](/fcp/) 甚至 [Time to Interactive](/tti/) ，从而提高您的 [Lighthouse](https://developers.google.com/web/tools/lighthouse) 分数。
+- 它移动*解析*成本，这意味着 UI 可能会启动得更快。这可能会减少 [First Contentful Paint](/fcp/) 甚至 [Time to Interactive](/tti/) ，从而提高您的 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 分数。
 
 Web Worker 无需担忧。Comlink 等工具正在减轻其工作，并使它们成为各种 Web 应用的可行选择。

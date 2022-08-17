@@ -35,9 +35,9 @@ Wenn Sie bereits wissen, wo Sie `SharedArrayBuffer` nutzen, fahren Sie mit dem A
 
 ### Verwendung der Chrome-Entwicklertools
 
-Die [Chrome-Entwicklertools](https://developers.google.com/web/tools/chrome-devtools/open) ermöglichen es Entwicklern, Websites zu überprüfen.
+Die [Chrome-Entwicklertools](https://developer.chrome.com/docs/devtools/open/) ermöglichen es Entwicklern, Websites zu überprüfen.
 
-1. [Öffnen Sie die Chrome-Entwicklertools](https://developers.google.com/web/tools/chrome-devtools/open) auf der Seite, auf der Sie den Einsatz von `SharedArrayBuffer` vermuten.
+1. [Öffnen Sie die Chrome-Entwicklertools](https://developer.chrome.com/docs/devtools/open/) auf der Seite, auf der Sie den Einsatz von `SharedArrayBuffer` vermuten.
 2. Wählen Sie das **Konsolenfenster** aus.
 3. Wenn die Seite `SharedArrayBuffer` nutzt, wird die folgende Meldung angezeigt:
     ```text
@@ -58,7 +58,7 @@ Einige Browser verfügen über [eine Funktion zur Berichterstattung über veralt
     ```
 3. Sobald der Header ausgegeben wird, sollte der von ihnen festgelegte Endpunkt mit dem Sammeln von Berichten über veraltete Software (Deprecation Reports) beginnen.
 
-Sehen Sie sich hier eine Beispielimplementierung an: [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+Sehen Sie sich hier eine Beispielimplementierung an: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 
@@ -70,7 +70,7 @@ Wäre es nicht großartig, wenn Sie die Auswirkungen abschätzen könnten, die d
 2. Setzen Sie die Einstellungen für die Berichterstellung und konfigurieren Sie einen Webserver zum Empfangen und Speichern der Berichte.
 3. Legen Sie in Ihrem Dokument auf oberster Websiteebene die Einstellung [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources). Auch dieser Header zeigt Ihnen die Auswirkungen der Aktivierung von `COEP: require-corp`, ohne die Funktion Ihrer Site tatsächlich zu beeinträchtigen. Sie können diesen Header so konfigurieren, dass Berichte an denselben Berichtsserver gesendet werden, den Sie im vorherigen Schritt eingerichtet haben.
 
-{% Aside %} Sie können ebenfalls [die **Domain**-Spalte](https://developers.google.com/web/tools/chrome-devtools/network#information) im **Netzwerk**-Panel der Chrome-Entwicklertools aktivieren, um einen grundlegenden Überblick über die betroffenen Ressourcen zu erhalten. {% endAside %}
+{% Aside %} Sie können ebenfalls [die **Domain**-Spalte](https://developer.chrome.com/docs/devtools/network/#information) im **Netzwerk**-Panel der Chrome-Entwicklertools aktivieren, um einen grundlegenden Überblick über die betroffenen Ressourcen zu erhalten. {% endAside %}
 
 {% Aside 'caution' %}
 

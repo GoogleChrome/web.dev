@@ -299,7 +299,7 @@ while (true) {
 
 ### Chrome DevTools의 WebTransport
 
-불행히도 WebTransport에 대한 [Chrome의 DevTools](https://developers.google.com/web/tools/chrome-devtools) 지원은 원본 평가판을 시작할 준비가 되지 않았습니다. [이 Chrome 문제](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290)에 "별표"를 표시하여 DevTools 인터페이스의 업데이트에 대한 알림을 받을 수 있습니다.
+불행히도 WebTransport에 대한 [Chrome의 DevTools](https://developer.chrome.com/docs/devtools/) 지원은 원본 평가판을 시작할 준비가 되지 않았습니다. [이 Chrome 문제](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290)에 "별표"를 표시하여 DevTools 인터페이스의 업데이트에 대한 알림을 받을 수 있습니다.
 
 ## 개인 정보 및 보안 고려 사항
 

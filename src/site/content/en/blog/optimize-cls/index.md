@@ -337,11 +337,11 @@ To learn more about what CSS properties trigger layout, see [CSS Triggers](https
 
 I'm happy to share there are a number of tools available to measure and debug Cumulative Layout Shift (CLS).
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) and above include support for measuring CLS in a lab setting. This release will also highlight the nodes that cause the most layout shifting.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) and above include support for measuring CLS in a lab setting. This release will also highlight the nodes that cause the most layout shifting.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0 includes support for measuring CLS in the metrics section", width="800", height="309" %}
 
-The [Performance panel](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) in DevTools highlights layout shifts in the **Experience** section as of Chrome 84. The **Summary** view for a `Layout Shift` record includes the cumulative layout shift score as well as a rectangle overlay showing the affected regions.
+The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) in DevTools highlights layout shifts in the **Experience** section as of Chrome 84. The **Summary** view for a `Layout Shift` record includes the cumulative layout shift score as well as a rectangle overlay showing the affected regions.
 
 <figure>
   {% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Layout Shift records being displayed in the Chrome DevTools performance panel when expanding the Experience section", width="800", height="438" %}

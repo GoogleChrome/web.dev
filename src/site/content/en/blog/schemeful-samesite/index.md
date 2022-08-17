@@ -270,7 +270,7 @@ entering any sensitive information into the form.
 Developer tooling and messaging are available in Chrome and Firefox.
 
 From Chrome 86, the [Issue tab in
-DevTools](https://developers.google.com/web/tools/chrome-devtools/issues) will
+DevTools](https://developer.chrome.com/docs/devtools/issues/) will
 include Schemeful Same-Site issues. You may see the following issues highlighted
 for your site.
 

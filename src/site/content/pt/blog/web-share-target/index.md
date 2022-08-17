@@ -147,7 +147,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-Certifique-se de usar um service worker para [pré-armazenar](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) em cache a página `action` para que ela carregue rapidamente e funcione de forma confiável, mesmo se o usuário estiver offline. [Workbox](https://developers.google.com/web/tools/workbox/) é uma ferramenta que pode ajudá-lo a [implementar o pré-cache](/precache-with-workbox/) em seu service worker.
+Certifique-se de usar um service worker para [pré-armazenar](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) em cache a página `action` para que ela carregue rapidamente e funcione de forma confiável, mesmo se o usuário estiver offline. [Workbox](https://developer.chrome.com/docs/workbox/) é uma ferramenta que pode ajudá-lo a [implementar o pré-cache](/precache-with-workbox/) em seu service worker.
 
 ### Processando compartilhamentos POST
 
@@ -185,7 +185,7 @@ Por exemplo, no Android, o campo [`url` ficará vazio](https://bugs.chromium.org
 Desde o início de 2021, a API Web Share Target é compatível com:
 
 - Chrome e Edge 76 ou posterior no Android.
-- Chrome 89 ou posterior no Chrome OS.
+- Chrome 89 ou posterior no ChromeOS.
 
 Em todas as plataformas, seu aplicativo da web deve ser [instalado](https://developers.google.com/web/fundamentals/app-install-banners/#criteria) antes de aparecer como um alvo potencial para receber dados compartilhados.
 

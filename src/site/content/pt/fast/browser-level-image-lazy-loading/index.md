@@ -38,7 +38,7 @@ De acordo com o [HTTPArchive](https://httparchive.org/reports/page-weight), as i
 
 Atualmente, há duas maneiras de adiar o carregamento de imagens fora da tela:
 
-- Usando a [API Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver)
+- Usando a [API Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/)
 - Usando `scroll`, `resize` ou handlers para o evento `orientationchange` [](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way)
 
 Qualquer uma das opções permite que os desenvolvedores incluam a funcionalidade lazy-loading, e muitos desenvolvedores têm criado bibliotecas de terceiros para fornecer abstrações que são ainda mais fáceis de usar. Com o lazy-loading suportado diretamente pelo navegador, no entanto, não há necessidade de uma biblioteca externa. O lazy-loading no nível do navegador também garante que o carregamento adiado de imagens ainda funcione, mesmo se o JavaScript estiver desabilitado no cliente.
@@ -79,7 +79,7 @@ O limite de distância não é fixo e varia dependendo de vários fatores:
 
 Você pode encontrar os valores default para os diferentes tipos de conexão efetiva na [fonte do Chromium](https://cs.chromium.org/chromium/src/third_party/blink/renderer/core/frame/settings.json5?l=971-1003&rcl=e8f3cf0bbe085fee0d1b468e84395aad3ebb2cad). Esses números, e até mesmo a abordagem de buscar apenas quando uma certa distância da viewport é alcançada, podem mudar num futuro próximo, conforme a equipe do Chrome aprimora a heurística para determinar quando começar o carregamento.
 
-{% Aside %} A partir do Chrome 77, você pode experimentar esses diferentes limites [limitando a rede](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) no DevTools. Nesse ínterim, você precisará substituir o tipo de conexão efetiva do navegador usando a flag `about://flags/#force-effective-connection-type`. {% endAside %}
+{% Aside %} A partir do Chrome 77, você pode experimentar esses diferentes limites [limitando a rede](https://developer.chrome.com/docs/devtools/network/#throttle) no DevTools. Nesse ínterim, você precisará substituir o tipo de conexão efetiva do navegador usando a flag `about://flags/#force-effective-connection-type`. {% endAside %}
 
 ## Melhoria nos limites de economia de dados e distance-from-viewport
 

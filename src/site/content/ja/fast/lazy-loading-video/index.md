@@ -32,7 +32,7 @@ feedback:
 - デスクトップ版の Chrome と同様に、Safari の 11.0 デスクトップ版は、動画の範囲をプリロードします。バージョン 11.2 からは、動画メタデータのみがプリロードされます。 [iOS の Safariでは、動画がプリロードされることはありません](https://developer.apple.com/library/content/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/AudioandVideoTagBasics/AudioandVideoTagBasics.html#//apple_ref/doc/uid/TP40009523-CH2-SW9)。
 - [データセーバーモード](https://support.google.com/chrome/answer/2392284)が有効になっている場合、 `preload` はデフォルトで `none` になります。
 
-`preload` に関するブラウザのデフォルトの動作は明確に設定されていないため、明示的に設定することがおそらく最善の策と言えるでしょう。ユーザーが再生を開始するこのケースでは、`preload="none"` が、すべてのプラットフォームで動画の読み込みを延期する最も簡単な方法です。`preload` 属性は、動画コンテンツの読み込みを延期する唯一の方法ではありません。「[*Fast Playback with Video Preload*](https://developers.google.com/web/fundamentals/media/fast-playback-with-video-preload)」で、JavaScript で動画再生を扱うためのアイデアや洞察を得られるかもしれません。
+`preload` に関するブラウザのデフォルトの動作は明確に設定されていないため、明示的に設定することがおそらく最善の策と言えるでしょう。ユーザーが再生を開始するこのケースでは、`preload="none"` が、すべてのプラットフォームで動画の読み込みを延期する最も簡単な方法です。`preload` 属性は、動画コンテンツの読み込みを延期する唯一の方法ではありません。「[*Fast Playback with Video Preload*](/fast-playback-with-preload/)」で、JavaScript で動画再生を扱うためのアイデアや洞察を得られるかもしれません。
 
 残念ながら、アニメーション GIF の代わりに動画を使用する場合は役に立ちません。これについて、次のセクションで説明します。
 

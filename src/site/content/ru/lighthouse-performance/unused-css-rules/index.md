@@ -34,7 +34,7 @@ web_lighthouse:
 
 ## Как определить неиспользуемый CSS-код {: #coverage}
 
-Вкладка Coverage в Chrome DevTools поможет обнаружить критический и некритический CSS-код. См. раздел [«Просмотр используемого и неиспользуемого CSS-кода на вкладке Coverage»](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
+Вкладка Coverage в Chrome DevTools поможет обнаружить критический и некритический CSS-код. См. раздел [«Просмотр используемого и неиспользуемого CSS-кода на вкладке Coverage»](https://developer.chrome.com/docs/devtools/css/reference/#coverage).
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: вкладка Coverage", width="800", height="407" %} <figcaption> Chrome DevTools: вкладка Coverage. </figcaption></figure>
 
@@ -64,4 +64,4 @@ web_lighthouse:
 
 ## Ресурсы
 
-- [Исходный код для проверки **Remove unused CSS (Удалите неиспользуемый CSS-код)**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js).
+- [Исходный код для проверки **Remove unused CSS (Удалите неиспользуемый CSS-код)**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-css-rules.js).

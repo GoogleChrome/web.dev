@@ -25,7 +25,7 @@ tags:
 
 ## Como o Lighthouse identifica itens ARIA sem nomes acessíveis
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza itens ARIA personalizados cujos nomes não são acessíveis a tecnologias de assistência:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza itens ARIA personalizados cujos nomes não são acessíveis a tecnologias de assistência:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Auditoria do Lighthouse mostrando elementos de alternância personalizados sem nomes acessíveis", width="800", height="259" %}</figure>
 
@@ -125,7 +125,7 @@ Por exemplo, esta caixa de `searchLabel` personalizada refere-se ao parágrafo s
 
 ## Recursos
 
-- [Código-fonte para a auditoria **Nem todos os campos de alternância ARIA têm nomes acessíveis**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js)
+- [Código-fonte para a auditoria **Nem todos os campos de alternância ARIA têm nomes acessíveis**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-toggle-field-name.js)
 - [O botão ARIA, link e item de menu devem ter um nome acessível (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-command-name)
 - [Os campos de entrada ARIA devem ter um nome acessível (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-input-field-name)
 - [O medidor ARIA deve ter um nome acessível (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-meter-name)

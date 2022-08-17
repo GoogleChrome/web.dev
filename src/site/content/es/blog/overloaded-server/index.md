@@ -71,11 +71,11 @@ Busca formas de almacenar contenidos en caché de forma más activa. Si un recur
 
 Los encabezados HTTP como [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires) y [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag) indican cómo un recurso debe almacenarse en caché mediante un caché HTTP. Auditar y corregir estos encabezados mejorará el almacenamiento en caché.
 
-Aunque [los trabajadores de servicio](https://developers.google.com/web/fundamentals/primers/service-workers) también se pueden utilizar para el almacenamiento en caché, utilizan un [caché](https://developer.mozilla.org/docs/Web/API/Cache) separado y son un complemento, en lugar de un reemplazo, para un adecuado almacenamiento en caché HTTP. Por esta razón, cuando se maneja un servidor sobrecargado, los esfuerzos deben centrarse en optimizar el almacenamiento en caché HTTP.
+Aunque [los trabajadores de servicio](https://developer.chrome.com/docs/workbox/service-worker-overview/) también se pueden utilizar para el almacenamiento en caché, utilizan un [caché](https://developer.mozilla.org/docs/Web/API/Cache) separado y son un complemento, en lugar de un reemplazo, para un adecuado almacenamiento en caché HTTP. Por esta razón, cuando se maneja un servidor sobrecargado, los esfuerzos deben centrarse en optimizar el almacenamiento en caché HTTP.
 
 #### Diagnosticar
 
-Ejecuta [Lighthouse](https://developers.google.com/web/tools/lighthouse) y observa los [activos estáticos de servicio con una auditoría de política de caché eficiente](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) para ver una lista de recursos con un [tiempo de vida](https://en.wikipedia.org/wiki/Time_to_live) corto o medio (TTL). Para cada recurso enumerado, considera si se debe aumentar el TTL. A título orientativo:
+Ejecuta [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) y observa los [activos estáticos de servicio con una auditoría de política de caché eficiente](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) para ver una lista de recursos con un [tiempo de vida](https://en.wikipedia.org/wiki/Time_to_live) corto o medio (TTL). Para cada recurso enumerado, considera si se debe aumentar el TTL. A título orientativo:
 
 - Los recursos estáticos deben almacenarse en caché con un TTL largo (1 año).
 - Los recursos dinámicos deben almacenarse en caché con un TTL breve (3 horas).
@@ -174,8 +174,8 @@ Auditorías relevantes de Lighthouse:
 
 Flujo de trabajo de Chrome DevTools:
 
-- [Registrar la actividad de la red](https://developers.google.com/web/tools/chrome-devtools/network#load)
-- Haz clic en **Img** para [filtrar los recursos que no son imágenes](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter-by-type)
+- [Registrar la actividad de la red](https://developer.chrome.com/docs/devtools/network/#load)
+- Haz clic en **Img** para [filtrar los recursos que no son imágenes](https://developer.chrome.com/docs/devtools/network/reference/#filter-by-type)
 - Haz clic en la columna **Tamaño** para ordenar los archivos de imágenes por tamaño
 
 #### Reparar

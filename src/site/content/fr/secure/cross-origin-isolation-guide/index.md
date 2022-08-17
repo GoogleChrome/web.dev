@@ -35,9 +35,9 @@ Si vous savez déjà où vous utilisez un `SharedArrayBuffer`, passez à [Analys
 
 ### Utiliser Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) permet aux développeurs d'inspecter les sites Web.
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) permet aux développeurs d'inspecter les sites Web.
 
-1. [Ouvrez Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) sur la page que vous soupçonnez d'utiliser un `SharedArrayBuffer`.
+1. [Ouvrez Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) sur la page que vous soupçonnez d'utiliser un `SharedArrayBuffer`.
 2. Sélectionnez le panneau **Console.**
 3. Si la page utilise un `SharedArrayBuffer`, le message suivant s'affichera :
     ```text
@@ -58,7 +58,7 @@ Certains navigateurs disposent d'[une fonctionnalité de rapport d'obsolescence 
     ```
 3. Une fois que l'en-tête commence à se propager, le point de terminaison que vous avez inscrit doit commencer à collecter des rapports d'obsolescence.
 
-Pour voir un exemple d'implémentation, accédez au lien suivant : [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+Pour voir un exemple d'implémentation, accédez au lien suivant : [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 
@@ -70,7 +70,7 @@ Ne serait-il pas formidable de pouvoir évaluer l'impact de l'activation de l'is
 2. Configurez la création de rapports et configurez un serveur Web pour recevoir et enregistrer les rapports.
 3. Définissez [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources) sur votre document de premier niveau. Encore une fois, cet en-tête vous permet de visualiser l'impact de l'activation de `COEP: require-corp` sans réellement affecter le fonctionnement de votre site pour le moment. Vous pouvez configurer cet en-tête pour envoyer des rapports au même serveur de rapports que celui que vous avez configuré à l'étape précédente.
 
-{% Aside %} Vous pouvez également [activer la colonne **Domaine**](https://developers.google.com/web/tools/chrome-devtools/network#information) dans le panneau **Réseau** de Chrome DevTools pour obtenir une vue générale des ressources susceptibles d'être affectées. {% endAside %}
+{% Aside %} Vous pouvez également [activer la colonne **Domaine**](https://developer.chrome.com/docs/devtools/network/#information) dans le panneau **Réseau** de Chrome DevTools pour obtenir une vue générale des ressources susceptibles d'être affectées. {% endAside %}
 
 {% Aside 'caution' %}
 

@@ -29,5 +29,5 @@ Lighthouse는 브라우저 확대/축소를 비활성화하는 페이지에 플�
 
 ## 참고자료
 
-- [**`[user-scalable="no"]`가 `<meta name="viewport">` 요소에 사용되거나 ` [maximum-scale]` 속성이 5 미만**인 소스 코드 감사](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
+- [**`[user-scalable="no"]`가 `<meta name="viewport">` 요소에 사용되거나 ` [maximum-scale]` 속성이 5 미만**인 소스 코드 감사](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/meta-viewport.js)
 - [확대/축소 및 크기 조정을 비활성화하면 안 됩니다(Deque University).](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)

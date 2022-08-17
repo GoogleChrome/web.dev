@@ -20,7 +20,7 @@ Algumas funções ARIA requerem funções secundárias específicas. Por exemplo
 
 ## Como o Lighthouse identifica funções filhas ausentes
 
-O <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a> sinaliza funções ARIA que não têm as funções filho necessárias:
+O <a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a> sinaliza funções ARIA que não têm as funções filho necessárias:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/meMpRNGub2polfC7ysFf.png", alt="Auditoria Lighthouse mostrando função ARIA sem função(ões) filho(s) necessária(s)", width="800", height="205" %}</figure>
 
@@ -40,6 +40,6 @@ Consulte as <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="
 
 ## Recursos
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-children.js" rel="noopener">O código-fonte para a auditoria <strong>Elementos com um ARIA <code>[role]</code> que exigem que as filhas contenham uma [role] específica estão faltando alguns ou todos as filhas necessárias</strong></a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-required-children.js" rel="noopener">O código-fonte para a auditoria <strong>Elementos com um ARIA <code>[role]</code> que exigem que as filhas contenham uma [role] específica estão faltando alguns ou todos as filhas necessárias</strong></a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-required-children" rel="noopener">Certas funções ARIA devem conter filhas específicas (Deque University)</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Definições de função da especificação WAI-ARIA</a>

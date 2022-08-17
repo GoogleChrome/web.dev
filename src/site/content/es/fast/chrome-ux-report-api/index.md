@@ -10,6 +10,7 @@ authors:
 hero: image/admin/TQ4U8BZanGFSfJI973xn.png
 description: Aprende a utilizar la API de Chrome UX Report para obtener un acceso fácil, con acceso REST a datos de la experiencia del usuario real en millones de sitios web.
 date: 2020-06-25
+updated: 2022-07-18
 tags:
   - blog
   - chrome-ux-report
@@ -18,7 +19,7 @@ tags:
   - metrics
 ---
 
-El [Chrome UX Report (CrUX): Reporte de la experiencia de usuario de Chrome](https://developers.google.com/web/tools/chrome-user-experience-report) representa cómo los usuarios de Chrome en el mundo real experimentan los destinos populares en la web. Desde 2017, cuando el conjunto de datos consultables se lanzó por primera vez en [BigQuery](/chrome-ux-report-bigquery/), los datos de campo de CrUX se han integrado en herramientas para desarrolladores como [PageSpeed Insights](/chrome-ux-report-pagespeed-insights/), [CrUX Dashboard](/chrome-ux-report-data-studio-dashboard/) y el [Core Web Vitals report](https://support.google.com/webmasters/answer/9205520) de Search Console, lo que permite a los desarrolladores medir y monitorear fácilmente las experiencias de los usuarios reales. La pieza que ha faltado todo este tiempo ha sido una herramienta que proporciona acceso gratuito y del tipo REST a los datos de CrUX mediante programación. Para ayudar a cerrar esa brecha, ¡nos complace anunciar el lanzamiento de la nueva [API de Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)!
+El [Chrome UX Report (CrUX): Reporte de la experiencia de usuario de Chrome](https://developer.chrome.com/docs/crux/) representa cómo los usuarios de Chrome en el mundo real experimentan los destinos populares en la web. Desde 2017, cuando el conjunto de datos consultables se lanzó por primera vez en [BigQuery](/chrome-ux-report-bigquery/), los datos de campo de CrUX se han integrado en herramientas para desarrolladores como [PageSpeed Insights](/chrome-ux-report-pagespeed-insights/), [CrUX Dashboard](/chrome-ux-report-data-studio-dashboard/) y el [Core Web Vitals report](https://support.google.com/webmasters/answer/9205520) de Search Console, lo que permite a los desarrolladores medir y monitorear fácilmente las experiencias de los usuarios reales. La pieza que ha faltado todo este tiempo ha sido una herramienta que proporciona acceso gratuito y del tipo REST a los datos de CrUX mediante programación. Para ayudar a cerrar esa brecha, ¡nos complace anunciar el lanzamiento de la nueva [API de Chrome UX Report](https://developer.chrome.com/docs/crux/api/)!
 
 Esta API se ha creado con el objetivo de proporcionar a los desarrolladores un acceso sencillo, rápido y completo a los datos de CrUX. La API de CrUX solo informa datos de la experiencia del usuario de [*campo*](/how-to-measure-speed/#lab-data-vs-field-data), a diferencia de la [API de PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/get-started) existente, que también informa datos de *laboratorio* de las auditorías de rendimiento de Lighthouse. La API de CrUX está optimizada y puede servir rápidamente datos de la experiencia del usuario, lo que la hace ideal para aplicaciones de auditoría en tiempo real.
 
@@ -37,15 +38,15 @@ curl "https://chromeuxreport.googleapis.com/v1/records:queryRecord?key=$API_KEY"
   --data '{"origin": "https://web.dev"}'
 ```
 
-Ejecuta esta consulta de forma interactiva en el [explorador de la API de CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord?apix=true&apix_params=%7B%22resource%22%3A%7B%22origin%22%3A%22https%3A%2F%2Fwww.google.com%22%7D%7D).
-
-{% Aside %} Todas las solicitudes de API deben proporcionar un valor para el parámetro `key` usando el `[YOUR_API_KEY]` donde en el ejemplo anterior se deja como marcador de posición (placeholder). Obtén tu propia llave API de CrUX privada con solo hacer clic en un botón en la [documentación oficial de la API de CrUX](https://goo.gle/crux-api-key). Para mayor comodidad, el [explorador interactivo de la API de CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord?apix=true) no requiere una llave de la API. {% endAside %}
+{% Aside %}
+Todas las solicitudes de API deben proporcionar un valor para el parámetro `key` usando el `[YOUR_API_KEY]` donde en el ejemplo anterior se deja como marcador de posición (placeholder). Obtén tu propia llave API de CrUX privada en la [documentación oficial de la API de CrUX](https://developer.chrome.com/docs/crux/api/#crux-api-key).
+{% endAside %}
 
 El `curl` se compone de tres partes:
 
 1. El endpoint de la URL de la API, incluida la llave API privada de la persona que llama.
 2. La cabecera de `Content-Type: application/json`, que indica que el cuerpo de la solicitud contiene JSON.
-3. [El cuerpo de la solicitud](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord#request-body) codificado en JSON, que especifica el origen `https://web.dev`.
+3. [El cuerpo de la solicitud](https://developer.chrome.com/docs/crux/api/#request-body) codificado en JSON, que especifica el origen `https://web.dev`.
 
 Para hacer lo mismo en JavaScript, usa la utilidad <a name="crux-api-util"><code>CrUXApiUtil</code></a>, que realiza la llamada a la API y devuelve la respuesta decodificada.
 
@@ -70,7 +71,7 @@ CrUXApiUtil.query = function (requestBody) {
 };
 ```
 
-Reemplaza `[YOUR_API_KEY]` con tu [llave](https://goo.gle/crux-api-key). A continuación, llama a la función `CrUXApiUtil.query` y pasa el objeto del [cuerpo de la solicitud](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord#request-body).
+Reemplaza `[YOUR_API_KEY]` con tu [llave](https://goo.gle/crux-api-key). A continuación, llama a la función `CrUXApiUtil.query` y pasa el objeto del [cuerpo de la solicitud](https://developer.chrome.com/docs/crux/api/#request-body).
 
 ```js/1
 CrUXApiUtil.query({
@@ -82,7 +83,7 @@ CrUXApiUtil.query({
 });
 ```
 
-Si existen datos para este origen, la respuesta de la API es un objeto codificado en JSON que contiene [métricas](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/Metric) que representan la distribución de las experiencias del usuario. Las métricas de distribución son los intervalos de histograma y los percentiles.
+Si existen datos para este origen, la respuesta de la API es un objeto codificado en JSON que contiene [métricas](https://developer.chrome.com/docs/crux/api/#metric) que representan la distribución de las experiencias del usuario. Las métricas de distribución son los intervalos de histograma y los percentiles.
 
 ```json/11,24
 {
@@ -118,7 +119,7 @@ Si existen datos para este origen, la respuesta de la API es un objeto codificad
 }
 ```
 
-Las propiedades de `start` y `end` del objeto `histogram` representan el rango de valores que experimentan los usuarios para la métrica dada. La propiedad `density` representa la proporción de experiencias de usuario dentro de ese rango. En este ejemplo, el 79% de las experiencias del usuario del LCP en todas las páginas de web.dev están por debajo de los 2500 milisegundos, que es el umbral de LCP definido como ["bueno".](/lcp/#what-is-lcp) Los `percentiles.p75` significa que el 75% de las experiencias de los usuarios en esta distribución fueron menos de 2216 milisegundos. Obtén más información sobre la estructura de la respuesta en la documentación del [cuerpo de la respuesta](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord#response-body).
+Las propiedades de `start` y `end` del objeto `histogram` representan el rango de valores que experimentan los usuarios para la métrica dada. La propiedad `density` representa la proporción de experiencias de usuario dentro de ese rango. En este ejemplo, el 79% de las experiencias del usuario del LCP en todas las páginas de web.dev están por debajo de los 2500 milisegundos, que es el umbral de LCP definido como ["bueno".](/lcp/#what-is-lcp) Los `percentiles.p75` significa que el 75% de las experiencias de los usuarios en esta distribución fueron menos de 2216 milisegundos. Obtén más información sobre la estructura de la respuesta en la documentación del [cuerpo de la respuesta](https://developer.chrome.com/docs/crux/api/#response-body).
 
 ### Errores
 
@@ -152,7 +153,7 @@ Para depurar este error, primero verifica que el origen solicitado sea navegable
 
 {% CompareCaption %} Este origen es navegable públicamente. {% endCompareCaption %} {% endCompare %}
 
-Si el origen solicitado *es* la versión navegable, este error también puede ocurrir si el origen tiene un número insuficiente de muestras. Todos los orígenes y URL incluidos en el conjunto de datos deben tener una cantidad suficiente de muestras para anonimizar a los usuarios individuales. Además, los orígenes y las URL deben ser [rastreables públicamente](https://developers.google.com/search/reference/robots_txt). Consulta la [CrUX methodology (metodología CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report#methodology) para obtener más información sobre cómo se incluyen los sitios web en el conjunto de datos.
+Si el origen solicitado *es* la versión navegable, este error también puede ocurrir si el origen tiene un número insuficiente de muestras. Todos los orígenes y URL incluidos en el conjunto de datos deben tener una cantidad suficiente de muestras para anonimizar a los usuarios individuales. Además, los orígenes y las URL deben ser [públicamente indexable](https://developers.google.com/search/docs/advanced/crawling/block-indexing). Consulta la [CrUX methodology (metodología CrUX)](https://developer.chrome.com/docs/crux/methodology/#origin-eligibility) para obtener más información sobre cómo se incluyen los sitios web en el conjunto de datos.
 
 ## Consulta de datos de URL
 
@@ -236,15 +237,15 @@ La API de CrUX puede normalizar las URL solicitadas para que coincidan mejor con
 }
 ```
 
-Obtén más información sobre la [URL normalization (normalización de URL)](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord#urlnormalization) en la documentación de CrUX.
+Obtén más información sobre la [URL normalization (normalización de URL)](https://developer.chrome.com/docs/crux/api/#api-response-urlnormalization) en la documentación de CrUX.
 
 ## Consulta por factor de forma
 
 {% Aside 'key-term' %} Un factor de forma es el tipo de dispositivo en el que un usuario visita un sitio web. Los tipos de dispositivos comunes incluyen computadoras de escritorio, teléfonos y tabletas. {% endAside%}
 
-Las experiencias de los usuarios pueden variar significativamente según las optimizaciones del sitio web, las condiciones de la red y los dispositivos de los usuarios. Para comprender mejor estas diferencias, profundiza en el origen y el rendimiento de la URL utilizando la dimensión [`formFactor`](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord#formfactor) de la API de CrUX.
+Las experiencias de los usuarios pueden variar significativamente según las optimizaciones del sitio web, las condiciones de la red y los dispositivos de los usuarios. Para comprender mejor estas diferencias, profundiza en el origen y el rendimiento de la URL utilizando la dimensión [`formFactor`](https://developer.chrome.com/docs/crux/api/#form-factor) de la API de CrUX.
 
-La API admite tres valores de factor de forma explícitos: `DESKTOP`, `PHONE` y `TABLET`. Además del origen o la URL, especifica uno de estos valores en el [cuerpo de la solicitud](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord#request-body) para restringir los resultados solo a esas experiencias de usuario. El siguiente ejemplo demuestra cómo consultar la API por factor de forma usando cURL.
+La API admite tres valores de factor de forma explícitos: `DESKTOP`, `PHONE` y `TABLET`. Además del origen o la URL, especifica uno de estos valores en el [cuerpo de la solicitud](https://developer.chrome.com/docs/crux/api/#request-body) para restringir los resultados solo a esas experiencias de usuario. El siguiente ejemplo demuestra cómo consultar la API por factor de forma usando cURL.
 
 ```bash/0,3
 API_KEY="[YOUR_API_KEY]"
@@ -379,4 +380,4 @@ Las características incluidas en la versión inicial de la API de CrUX solo toc
 
 Con el tiempo, esperamos integrar más de estas características con la facilidad de uso y en los precios gratuitos de la API de CrUX para permitir nuevas formas de explorar los datos y descubrir información sobre el estado de las experiencias de los usuarios en la web.
 
-Consulta los documentos oficiales de la [API de CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference) para [adquirir tu llave API](https://goo.gle/crux-api-key) y explorar más aplicaciones de ejemplo. Esperamos que lo pruebes y nos encantaría escuchar cualquier pregunta o comentario que puedas tener, así que comunícate con nosotros en el [foro de discusión de CrUX](https://groups.google.com/a/chromium.org/forum/#!forum/chrome-ux-report). Y para estar al día de todo lo que hemos planeado para la API de CrUX, suscríbete al [foro de anuncios de CrUX](https://groups.google.com/a/chromium.org/forum/#!forum/chrome-ux-report-announce) o síguenos en Twitter en [@ChromeUXReport](https://twitter.com/ChromeUXReport).
+Consulta los documentos oficiales de la [API de CrUX](https://developer.chrome.com/docs/crux/api/) para [adquirir tu llave API](https://goo.gle/crux-api-key) y explorar más aplicaciones de ejemplo. Esperamos que lo pruebes y nos encantaría escuchar cualquier pregunta o comentario que puedas tener, así que comunícate con nosotros en el [foro de discusión de CrUX](https://groups.google.com/a/chromium.org/forum/#!forum/chrome-ux-report). Y para estar al día de todo lo que hemos planeado para la API de CrUX, suscríbete al [foro de anuncios de CrUX](https://groups.google.com/a/chromium.org/forum/#!forum/chrome-ux-report-announce) o síguenos en Twitter en [@ChromeUXReport](https://twitter.com/ChromeUXReport).

@@ -14,7 +14,7 @@ Muchos sitios solicitan recursos pesados, como imágenes, que no están optimiza
 
 ## Prerrequisitos
 
-Esta guía asume que está familiarizado con [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools). En su lugar, puede utilizar las DevTools de otro navegador si lo prefiere. Sólo tendrá que correlacionar las capturas de pantalla de Chrome DevTools de esta guía con las características pertinentes de su navegador.
+Esta guía asume que está familiarizado con [Chrome DevTools](https://developer.chrome.com/docs/devtools/). En su lugar, puede utilizar las DevTools de otro navegador si lo prefiere. Sólo tendrá que correlacionar las capturas de pantalla de Chrome DevTools de esta guía con las características pertinentes de su navegador.
 
 ## Comprenda las imágenes de fondo responsivas
 
@@ -24,7 +24,7 @@ Primero, analice el tráfico de red de la demostración no optimizada:
 {% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'reload-page', 'ol' %}
 
-{% Aside %} Consulte [Inspeccionar la actividad de la red con Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/) si necesita más ayuda con DevTools. {% endAside %}
+{% Aside %} Consulte [Inspeccionar la actividad de la red con Chrome DevTools](https://developer.chrome.com/docs/devtools/network/) si necesita más ayuda con DevTools. {% endAside %}
 
 Verá que la única imagen que se solicita es `background-desktop.jpg`, que tiene un tamaño de **1006 KB**:
 

@@ -171,7 +171,7 @@ need to collaborate.
 -  **Check how much each script slows down your site by comparing site speed with and without it**.
    In [WebPageTest](https://www.webpagetest.org/) this can be set up
    via the [Block tab in Advanced Settings](https://andydavies.me/blog/2018/02/19/using-webpagetest-to-measure-the-impact-of-3rd-party-tags/).
-   Or you can [block network requests in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/#block).
+   Or you can [block network requests in Chrome DevTools](https://developer.chrome.com/docs/devtools/network/#block).
 
 ### Meet with your marketing team
 

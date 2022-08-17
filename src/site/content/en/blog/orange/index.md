@@ -77,7 +77,7 @@ for our SEO),  data prefetching, and code splitting. Another key consideration f
 Next.js enabled us to migrate pages one-by-one without introducing any problems in our legacy
 applications. Nevertheless, we had to manage the transformation in a complex environment where we
 were still reliant on legacy systems, resulting in service unavailability. To remedy this we have
-integrated [Workbox](https://developers.google.com/web/tools/workbox) so that our website would
+integrated [Workbox](https://developer.chrome.com/docs/workbox/) so that our website would
 always be available even if the backend was down. Workbox also gave us nice performance boosts
 thanks to its built-in solutions for precaching, request routing, and runtime caching.
 

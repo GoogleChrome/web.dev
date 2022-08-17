@@ -51,7 +51,7 @@ fulfill a browser's request. From the perspective of `stale-while-revalidate`,
 there's nothing to do in this scenario.
 
 But if the cached response is stale, then another age-based check is performed:
-is the age of the cached response within the window of time covered by the
+is the age of the cached response within the additional time window provided by the
 `stale-while-revalidate` setting?
 
 If the age of a stale response falls into this window, then it will be used to
@@ -137,11 +137,11 @@ whether to implement a service worker-based approach, or just rely on the
 * You're already using a service worker in your web app.
 * You need fine-grained control over the contents of your caches, and want to
   implement something like a least-recently used expiration policy. Workbox's
-  [Cache Expiration](https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration)
+  [Cache Expiration](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/)
   module can help with this.
 * You want to be notified when a stale response changes in the background during
   the revalidation step. Workbox's
-  [Broadcast Cache Update](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)
+  [Broadcast Cache Update](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/)
   module can help with this.
 * You need this `stale-while-revalidate` behavior in all modern browsers.
 

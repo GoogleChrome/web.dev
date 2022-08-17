@@ -14,7 +14,7 @@ tags:
 You've done hard work to get fast, now make sure you stay fast by automating
 performance testing with [Lighthouse Bot](https://github.com/ebidel/lighthousebot).
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) grades your app
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) grades your app
 in 5 categories, and one of those is performance. While you could try to remember to
 monitor performance changes with [DevTools](https://developers.google.com/web/tools/lighthouse/#devtools)
 or [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) every

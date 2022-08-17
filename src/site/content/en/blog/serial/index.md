@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-11-18
+updated: 2022-04-21
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -20,7 +20,7 @@ feedback:
 ---
 
 {% Aside 'success' %}
-The Web Serial API, part of the [capabilities project](/fugu-status/), launched
+The Web Serial API, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/), launched
 in Chrome&nbsp;89.
 {% endAside %}
 
@@ -507,6 +507,28 @@ const [appReadable, devReadable] = port.readable.tee();
 // and log incoming data in JS console for inspection from devReadable.
 ```
 
+### Revoke access to a serial port {: #revoke-access }
+
+The website can clean up permissions to access a serial port it is no longer
+interested in retaining by calling `forget()` on the `SerialPort` instance. For
+example, for an educational web application used on a shared computer with many
+devices, a large number of accumulated user-generated permissions creates a poor
+user experience.
+
+```js
+// Voluntarily revoke access to this serial port.
+await port.forget();
+```
+
+As `forget()` is available in Chrome 103 or later, check if this feature is
+supported with the following:
+
+```js
+if ("serial" in navigator && "forget" in SerialPort.prototype) {
+  // forget() is supported.
+}
+```
+
 ## Dev Tips {: #dev-tips }
 
 Debugging the Web Serial API in Chrome is easy with the internal page,
@@ -525,7 +547,7 @@ with a [BBC micro:bit] board to show images on its 5x5 LED matrix.
 
 ## Browser support {: #browser-support }
 
-The Web Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
+The Web Serial API is available on all desktop platforms (ChromeOS, Linux, macOS,
 and Windows) in Chrome 89.
 
 ## Polyfill {: #polyfill }
@@ -590,6 +612,7 @@ and let us know where and how you're using it.
 ## Demos {: #demos }
 
 * [Serial Terminal](https://googlechromelabs.github.io/serial-terminal/)
+* [WebSerial](https://webserial.io/)
 * [Espruino Web IDE](https://www.espruino.com/ide/)
 
 ## Acknowledgements

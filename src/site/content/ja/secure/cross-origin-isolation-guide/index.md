@@ -35,9 +35,9 @@ Chrome 92 以降、`SharedArrayBuffer` を使用する機能は、クロスオ�
 
 ### ChromeDevTools を使う
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) を使用すると、開発者はウェブサイトを検査できます。
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) を使用すると、開発者はウェブサイトを検査できます。
 
-1. [SharedArrayBuffer](https://developers.google.com/web/tools/chrome-devtools/open) を使用していると思われるページで [Chrome DevTools を開きます](https://developers.google.com/web/tools/chrome-devtools/open)。
+1. [SharedArrayBuffer](https://developer.chrome.com/docs/devtools/open/) を使用していると思われるページで [Chrome DevTools を開きます](https://developer.chrome.com/docs/devtools/open/)。
 2. **コンソール**パネルを選択します。
 3. ページに `SharedArrayBuffer` が使用されている場合は、次のメッセージが表示されます。
     ```text
@@ -61,7 +61,7 @@ Chrome 92 以降、`SharedArrayBuffer` を使用する機能は、クロスオ�
     ```
 3. ヘッダーの伝播が開始されると、登録したエンドポイントが非推奨レポートの収集を開始します。
 
-こちらの実装例を参照してください： [https://first-party-test.glitch.me](https://first-party-test.glitch.me)。
+こちらの実装例を参照してください： [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me)。
 
 {% endDetails %}
 
@@ -73,7 +73,7 @@ Chrome 92 以降、`SharedArrayBuffer` を使用する機能は、クロスオ�
 2. レポートを設定し、レポートを受信して保存するようにウェブサーバーを設定します。
 3. トップレベルのドキュメントで [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources) を設定します。ここでも、`COEP: require-corp` を有効化することのインパクトをサイトに影響を与えずに確認することができます。このヘッダーは、前のステップでセットアップした同じレポートサーバーにレポートを送信するように設定できます。
 
-{% Aside %} Chrome DevTools の**ネットワーク**パネルの[**ドメイン**列を有効化する](https://developers.google.com/web/tools/chrome-devtools/network#information)ことにより、影響を受けると思われるリソースの全体像を確認することもできます。{% endAside %}
+{% Aside %} Chrome DevTools の**ネットワーク**パネルの[**ドメイン**列を有効化する](https://developer.chrome.com/docs/devtools/network/#information)ことにより、影響を受けると思われるリソースの全体像を確認することもできます。{% endAside %}
 
 {% Aside 'caution' %}
 

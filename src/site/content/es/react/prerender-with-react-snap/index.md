@@ -11,7 +11,7 @@ feedback:
   - api
 ---
 
-[`react-snap`](https://github.com/stereobooster/react-snap) es una biblioteca de terceros que pre-renderiza las páginas de su sitio en archivos HTML estáticos. Esto puede mejorar los tiempos de [First Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) en su aplicación.
+[`react-snap`](https://github.com/stereobooster/react-snap) es una biblioteca de terceros que pre-renderiza las páginas de su sitio en archivos HTML estáticos. Esto puede mejorar los tiempos de [First Paint](/user-centric-performance-metrics/#important-metrics-to-measure) en su aplicación.
 
 A continuación, se muestra una comparación de la misma aplicación con y sin pre-renderizado cargada en una conexión 3G simulada y un dispositivo móvil:
 

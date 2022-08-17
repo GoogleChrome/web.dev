@@ -45,18 +45,17 @@ an input value into a compressed numerical value—a hash. A _hash_ (such as
 `<script>` tag as trusted.
 {% endAside %}
 
-A Content Security Policy based on nonces or hashes is often called a *strict
-CSP*. When an application uses a strict CSP, attackers who find HTML injection
+A Content Security Policy based on nonces or hashes is often called a _strict
+CSP_. When an application uses a strict CSP, attackers who find HTML injection
 flaws will generally not be able to use them to force the browser to execute
 malicious scripts in the context of the vulnerable document. This is because
 strict CSP only permits hashed scripts or scripts with the correct nonce value
 generated on the server, so attackers cannot execute the script without knowing
 the correct nonce for a given response.
 
-
 {% Aside %}
 To protect your site from XSS, make sure to sanitize user input
-*and* use CSP as an extra security layer. CSP is a
+_and_ use CSP as an extra security layer. CSP is a
 [defense-in-depth](https://en.wikipedia.org/wiki/Defense_in_depth_(computing))
 technique that can prevent the execution of malicious scripts, but it's not a
 substitute for avoiding (and promptly fixing) XSS bugs.
@@ -67,8 +66,9 @@ substitute for avoiding (and promptly fixing) XSS bugs.
 If your site already has a CSP that looks like this: `script-src
 www.googleapis.com`, it may not be effective against cross-site scripting! This
 type of CSP is called an allowlist CSP and it has a couple of downsides:
- - It requires a lot of customization.
- - It can be [bypassed in most
+
+- It requires a lot of customization.
+- It can be [bypassed in most
    configurations](https://research.google.com/pubs/pub45542.html).
 
 This makes allowlist CSPs generally ineffective at preventing attackers from
@@ -77,41 +77,44 @@ cryptographic nonces or hashes, which avoids the pitfalls outlined above.
 
 <div class="switcher">
 {% Compare 'worse', 'Allowlist CSP' %}
+
 - Doesn't effectively protect your site. ❌
 - Must be highly customized. 😓
+
 {% endCompare %}
 
 {% Compare 'better', 'Strict CSP' %}
+
 - Effectively protects your site. ✅
 - Always has the same structure. 😌
+
 {% endCompare %}
 </div>
-
 
 ## What is a strict Content Security Policy?
 
 A strict Content Security Policy has the following structure and is enabled by
 setting one of the following HTTP response headers:
+
 - **Nonce-based strict CSP**
+
 ```text
 Content-Security-Policy:
   script-src 'nonce-{RANDOM}' 'strict-dynamic';
   object-src 'none';
   base-uri 'none';
-
 ```
 
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/er4BaGCJzBwDaESFKfZd.jpg",
 alt="", width="800", height="279" %}
 
-
 - **Hash-based strict CSP**
+
 ```text
 Content-Security-Policy:
   script-src 'sha256-{HASHED_INLINE_SCRIPT}' 'strict-dynamic';
   object-src 'none';
   base-uri 'none';
-
 ```
 
 {% Aside warning %}
@@ -122,9 +125,9 @@ browsers](#step-4:-add-fallbacks-to-support-safari-and-older-browsers) for
 details.
 {% endAside %}
 
-
 The following properties make a CSP like the one above "strict" and hence
 secure:
+
 - Uses nonces `'nonce-{RANDOM}'` or hashes `'sha256-{HASHED_INLINE_SCRIPT}'` to
   indicate which `<script>` tags are trusted by the site's developer and should
   be allowed to execute in the user's browser.
@@ -142,15 +145,15 @@ secure:
 - Restricts `base-uri` to block the injection of `<base>` tags. This prevents
   attackers from changing the locations of scripts loaded from relative URLs.
 
-
-{% Aside %} Another advantage of a strict CSP is that the CSP always has the
-same structure and doesn't need to be customized for your application. {%
-endAside %}
-
+{% Aside %}
+Another advantage of a strict CSP is that the CSP always has the
+same structure and doesn't need to be customized for your application.
+{% endAside %}
 
 ## Adopting a strict CSP
 
 To adopt a strict CSP, you need to:
+
 1. Decide if your application should set a nonce- or hash-based CSP.
 1. Copy the CSP from the [What is a strict Content Security
    Policy](#what-is-a-strict-content-security-policy) section and set it as a
@@ -160,7 +163,7 @@ To adopt a strict CSP, you need to:
 1. Add fallbacks to support Safari and older browsers.
 1. Deploy your CSP.
 
-You can use [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+You can use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 (v7.3.0 and above with flag `--preset=experimental`) **Best Practices** audit throughout this process to check
 whether your site has a CSP, and whether it's strict enough to be effective
 against XSS.
@@ -172,7 +175,8 @@ width="730", height="78" %}
 ### Step 1: Decide if you need a nonce- or hash-based CSP
 
 There are two types of strict CSPs, nonce- and hash-based. Here's how they work:
-- **Nonce-based CSP**: You generate a random number *at runtime*, include it in
+
+- **Nonce-based CSP**: You generate a random number _at runtime_, include it in
   your CSP, and associate it with every script tag in your page. An attacker
   can't include and run a malicious script in your page, because they would need
   to guess the correct random number for that script. This only works if the
@@ -205,12 +209,10 @@ statically served without server-side rendering.</td>
   </table>
 </div>
 
-
-
 ### Step 2: Set a strict CSP and prepare your scripts
 
-
 When setting a CSP, you have a few options:
+
 - Report-only mode (`Content-Security-Policy-Report-Only`) or enforcement mode
   (`Content-Security-Policy`). In report-only, the CSP won't block resources
   yet—nothing will break—but you'll be able to see errors and receive reports
@@ -232,10 +234,13 @@ When setting a CSP, you have a few options:
 
 {% Details %}
 
-{% DetailsSummary %} Option A: Nonce-based CSP {% endDetailsSummary %}
+{% DetailsSummary %}
+Option A: Nonce-based CSP
+{% endDetailsSummary %}
 
 Set the following `Content-Security-Policy` HTTP response header in your
 application:
+
 ```text
 Content-Security-Policy:
   script-src 'nonce-{RANDOM}' 'strict-dynamic';
@@ -244,20 +249,22 @@ Content-Security-Policy:
 ```
 
 {% Aside 'caution' %}
-
-Replace the `{RANDOM}` placeholder with a *random* nonce that is regenerated
-**on every server response**. {% endAside %}
+Replace the `{RANDOM}` placeholder with a _random_ nonce that is regenerated
+**on every server response**.
+{% endAside %}
 
 #### Generate a nonce for CSP
 
 A nonce is a random number used only once per page load. A nonce-based CSP can
 only mitigate XSS if the nonce value is **not guessable** by an attacker. A
 nonce for CSP needs to be:
+
 - A cryptographically **strong random** value (ideally 128+ bits in length)
 - Newly **generated for every response**
 - Base64 encoded
 
 Here are some examples on how to add a CSP nonce in server-side frameworks:
+
 - [Django (python)](https://django-csp.readthedocs.io/en/latest/nonce.html)
 - Express (JavaScript):
 
@@ -283,10 +290,12 @@ can have the same nonce). The first step is to add these attributes to all
 scripts:
 
 {% Compare 'worse', 'Blocked by CSP'%}
+
 ```html
 <script src="/path/to/script.js"></script>
 <script>foo()</script>
 ```
+
 {% CompareCaption %}
 CSP will block these scripts, because they don't have
 `nonce` attributes.
@@ -295,10 +304,12 @@ CSP will block these scripts, because they don't have
 {% endCompare %}
 
 {% Compare 'better', 'Allowed by CSP' %}
+
 ```html
 <script nonce="${NONCE}" src="/path/to/script.js"></script>
 <script nonce="${NONCE}">foo()</script>
 ```
+
 {% CompareCaption %}
 CSP will allow the execution of these scripts if `${NONCE}`
 is replaced with a value matching the nonce in the CSP response header. Note
@@ -361,15 +372,16 @@ inline script, because CSP hashes are supported across browsers only for inline
 scripts (hashes for sourced scripts are [not well-supported across
 browsers](https://wpt.fyi/results/content-security-policy/script-src/script-src-sri_hash.sub.html?label=master&label=experimental&aligned)).
 
-
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/B2YsfJDYw8PRI6kJI7Bs.jpg",
 alt="", width="800", height="333" %}
 
 {% Compare 'worse', 'Blocked by CSP' %}
+
 ```html
 <script src="https://example.org/foo.js"></script>
 <script src="https://example.org/bar.js"></script>
 ```
+
 {% CompareCaption %}
 CSP will block these scripts since only inline-scripts can
 be hashed.
@@ -378,6 +390,7 @@ be hashed.
 {% endCompare %}
 
 {% Compare 'better', 'Allowed by CSP' %}
+
 ```html
 <script>
 var scripts = [ 'https://example.org/foo.js', 'https://example.org/bar.js'];
@@ -389,6 +402,7 @@ scripts.forEach(function(scriptUrl) {
 });
 </script>
 ```
+
 {% CompareCaption %}
 To allow execution of this script, the hash of the inline
 script must be calculated and added to the CSP response header, replacing the
@@ -408,12 +422,7 @@ calculate CSP hashes for inline scripts using this
 [tool](https://strict-csp-codelab.glitch.me/csp_sha256_util.html).
 {% endAside %}
 
-{% Details %}
-
-{% DetailsSummary %}
-About `async = false` and script loading `async = false`
-isn't blocking in this case, but use this with care.
-{% endDetailsSummary %}
+#### Script loading considerations
 
 In the code snippet above, `s.async = false` is added to ensure that foo
 executes before bar (even if bar loads first). **In this snippet, `s.async =
@@ -421,7 +430,8 @@ false` does not block the parser while the scripts load**; that's because the
 scripts are added dynamically. The parser will only stop as the scripts are
 being executed, just like it would behave for `async` scripts. However, with
 this snippet, keep in mind:
- - One/both scripts may execute before the document has finished downloading. If
+
+- One/both scripts may execute before the document has finished downloading. If
    you want the document to be ready by the time the scripts execute, you need
    to wait for the [`DOMContentLoaded`
    event](https://developer.mozilla.org/docs/Web/API/Window/DOMContentLoaded_event)
@@ -429,8 +439,8 @@ this snippet, keep in mind:
    the scripts don't start downloading early enough), you can use [preload
    tags](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
    earlier in the page.
- - `defer = true` won't do anything. If you need that behaviour, you'll have to
-   manually run the script at the time you want to run it. {% endDetails %}
+- `defer = true` won't do anything. If you need that behaviour, you'll have to
+   manually run the script at the time you want to run it.
 
 {% endDetails %}
 
@@ -454,9 +464,11 @@ In most cases, the fix is straightforward:
 #### To refactor inline event handlers, rewrite them to be added from a JavaScript block
 
 {% Compare 'worse', 'Blocked by CSP' %}
+
 ```html
 <span onclick="doThings();">A thing.</span>
 ```
+
 {% CompareCaption %}
 CSP will block inline event handlers.
 {% endCompareCaption%}
@@ -464,6 +476,7 @@ CSP will block inline event handlers.
 {% endCompare %}
 
 {% Compare 'better', 'Allowed by CSP' %}
+
 ```html
 <span id="things">A thing.</span>
 <script nonce="${nonce}">
@@ -481,9 +494,11 @@ CSP will allow event handlers that are registered via JavaScript.
 #### For `javascript:` URIs, you can use a similar pattern
 
 {% Compare 'worse', 'Blocked by CSP' %}
+
 ```html
 <a href="javascript:linkClicked()">foo</a>
 ```
+
 {% CompareCaption %}
 CSP will block javascript: URIs.
 {% endCompareCaption %}
@@ -491,6 +506,7 @@ CSP will block javascript: URIs.
 {% endCompare %}
 
 {% Compare 'better', 'Allowed by CSP' %}
+
 ```html
 <a id="foo">foo</a>
 <script nonce="${nonce}">
@@ -528,11 +544,12 @@ Codelab:
 ### Step 4:  Add fallbacks to support Safari and older browsers
 
 CSP is supported by all major browsers, but you'll need two fallbacks:
+
 - Using `'strict-dynamic'` requires adding `https:` as a fallback for Safari,
   the only major browser without support for `'strict-dynamic'`. By doing so:
   - All browsers that support `'strict-dynamic'` will ignore the `https:`
     fallback, so this won't reduce the strength of the policy.
-  -  In Safari, externally sourced scripts will be allowed to load only if they
+  - In Safari, externally sourced scripts will be allowed to load only if they
      come from an HTTPS origin. This is less secure than a strict CSP–it's a
      fallback–but would still prevent certain common XSS causes like injections
      of `javascript:` URIs because `'unsafe-inline'` is not present or ignored
@@ -548,6 +565,7 @@ Content-Security-Policy:
   object-src 'none';
   base-uri 'none';
 ```
+
 {% Aside %}
 `https:` and `unsafe-inline` don't make your policy less safe
 because they will be ignored by browsers which support `strict-dynamic`.
@@ -558,6 +576,7 @@ because they will be ignored by browsers which support `strict-dynamic`.
 After confirming that no legitimate scripts are being blocked by CSP in your
 local development environment, you can proceed with deploying your CSP to your
 (staging, then) production environment:
+
 1. (Optional) Deploy your CSP in report-only mode using the
    `Content-Security-Policy-Report-Only` header. Learn more about the [Reporting
    API](/reporting-api).
@@ -572,7 +591,6 @@ local development environment, you can proceed with deploying your CSP to your
    once you've completed this step, will CSP begin to protect your application
    from XSS**. Setting your CSP via a HTTP header server-side is more secure
    than setting it as a `<meta>` tag; use a header if you can.
-
 
 {% Aside 'gotchas' %}
 Make sure that the CSP you're using is "strict" by
@@ -593,6 +611,7 @@ helps to mitigate XSS. In most cases, CSP reduces the attack surface
 significantly (dangerous patterns like `javascript:` URIs are completely turned
 off). However, based on the type of CSP you're using (nonces, hashes, with or
 without `'strict-dynamic'`), there are cases where CSP doesn't protect:
+
 - If you nonce a script, but there's an injection directly into the body or into
   the `src` parameter of that `<script>` element.
 - If there are injections into the locations of dynamically created scripts
@@ -611,13 +630,11 @@ patterns during code reviews and security audits. You can find more details on
 the cases described above in [this CSP
 presentation](https://static.sched.com/hosted_files/locomocosec2019/db/CSP%20-%20A%20Successful%20Mess%20Between%20Hardening%20and%20Mitigation%20%281%29.pdf#page=27).
 
-
 {% Aside %}
 Trusted Types complements strict CSP very well and can efficiently
 protect against some of the limitations listed above. Learn more about [how to
 use Trusted Types at web.dev](/trusted-types).
 {% endAside %}
-
 
 ## Further reading
 

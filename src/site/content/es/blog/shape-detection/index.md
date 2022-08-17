@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-{% Aside %} Esta API es parte del [proyecto de nuevas funcionalidades](https://developers.google.com/web/updates/capabilities). La detección de códigos de barras se lanzó en Chrome 83. La detección de rostros y texto está disponible detrás de una bandera. Esta publicación se actualizará a medida que la API de detección de formas evolucione. {% endAside %}
+{% Aside %} Esta API es parte del [proyecto de nuevas funcionalidades](https://developer.chrome.com/blog/capabilities/). La detección de códigos de barras se lanzó en Chrome 83. La detección de rostros y texto está disponible detrás de una bandera. Esta publicación se actualizará a medida que la API de detección de formas evolucione. {% endAside %}
 
 ## ¿Qué es la API de detección de formas? {: #what }
 
@@ -215,7 +215,7 @@ Esto es mejor que ocultar las interfaces porque, incluso entre plataformas, las 
 
 ## Compatibilidad con el sistema operativo {: #os-support }
 
-La detección de códigos de barras está disponible en macOS, Chrome OS y Android. Se requiere [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms) para Android.
+La detección de códigos de barras está disponible en macOS, ChromeOS y Android. Se requiere [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms) para Android.
 
 ## Prácticas recomendadas {: #bestpractices }
 

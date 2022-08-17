@@ -57,7 +57,7 @@ FCP измеряет, сколько времени требуется брау�
 
 ## Отслеживайте FCP на устройствах реальных пользователей
 
-Чтобы узнать, как измерять FCP на реальных устройствах пользователей, см. статью [Google «Ориентированные на пользователя показатели производительности».](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) В разделе [«Отслеживание FP/FCP»](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fpfcp) описывается, как программно получить доступ к данным FCP и отправить их в Google Analytics.
+Чтобы узнать, как измерять FCP на реальных устройствах пользователей, см. статью [Google «Ориентированные на пользователя показатели производительности».](/user-centric-performance-metrics/) В разделе [«Отслеживание FP/FCP»](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fpfcp) описывается, как программно получить доступ к данным FCP и отправить их в Google Analytics.
 
 См. статью Google [«Оценка производительности загрузки в реальных условиях с помощью API Navigation Timing и API Resource Timing»](https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/), чтобы узнать больше о сборе метрик реальных пользователей.
 
@@ -65,7 +65,7 @@ FCP измеряет, сколько времени требуется брау�
 
 ## Ресурсы
 
-- [Исходный код проверки **FCP**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-contentful-paint.js).
+- [Исходный код проверки **FCP**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/first-contentful-paint.js).
 - [Руководство по метрике FCP](/fcp).
 - [Руководство по оценке производительности в Lighthouse](/performance-scoring).
 - [Спецификация Paint Timing](https://w3c.github.io/paint-timing).

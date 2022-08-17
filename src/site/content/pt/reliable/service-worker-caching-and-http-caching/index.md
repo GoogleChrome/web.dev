@@ -34,15 +34,15 @@ Em um nível superior, um navegador segue a ordem de cache abaixo ao solicitar u
 
 ### Cache do Service Worker
 
-Um service worker intercepta solicitações HTTP do tipo de rede e usa uma [estratégia de cache](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook#serving-suggestions) para determinar quais recursos devem ser retornados ao navegador. O cache do service worker e o cache HTTP têm a mesma finalidade geral, mas o cache do service worker oferece mais recursos de cache, como controle refinado sobre exatamente o que é armazenado em cache e como o cache é feito.
+Um service worker intercepta solicitações HTTP do tipo de rede e usa uma [estratégia de cache](/offline-cookbook/#serving-suggestions) para determinar quais recursos devem ser retornados ao navegador. O cache do service worker e o cache HTTP têm a mesma finalidade geral, mas o cache do service worker oferece mais recursos de cache, como controle refinado sobre exatamente o que é armazenado em cache e como o cache é feito.
 
 #### Controlar o cache do service worker
 
-Um service worker intercepta solicitações HTTP com [ouvintes de eventos](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (geralmente o `fetch` ). Este [trecho de código](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) demonstra a lógica de uma estratégia de cache [Cache-First.](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network)
+Um service worker intercepta solicitações HTTP com [ouvintes de eventos](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (geralmente o `fetch` ). Este [trecho de código](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) demonstra a lógica de uma estratégia de cache [Cache-First.](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network)
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="Um diagrama que mostra como os service workers interceptam solicitações HTTP", width="800", height="516" %}
 
-É altamente recomendável usar o [Workbox](https://developers.google.com/web/tools/workbox) para evitar reinventar a roda. Por exemplo, você pode [registrar caminhos de URL de recurso com uma única linha de código regex](https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_regular_expression_route) .
+É altamente recomendável usar o [Workbox](https://developer.chrome.com/docs/workbox/) para evitar reinventar a roda. Por exemplo, você pode [registrar caminhos de URL de recurso com uma única linha de código regex](https://developer.chrome.com/docs/workbox/modules/workbox-routing/#how-to-register-a-regular-expression-route) .
 
 ```js
 import {registerRoute} from 'workbox-routing';
@@ -107,7 +107,7 @@ A próxima tabela descreve as estratégias comuns de armazenamento em cache do s
 
 Além do controle refinado da lógica de armazenamento em cache, o armazenamento em cache do service worker também fornece:
 
-- **Mais memória e espaço de armazenamento para sua origem:** O navegador aloca recursos de cache HTTP por [origem](/same-site-same-origin/#origin) . Em outras palavras, se você tiver vários subdomínios, todos eles compartilham o mesmo cache HTTP. Não há garantia de que o conteúdo de sua origem / domínio permaneça no cache HTTP por muito tempo. Por exemplo, um usuário pode limpar o cache limpando manualmente da IU de configurações do navegador ou acionando um recarregamento físico em uma página. Com um cache de service worker, você tem uma probabilidade muito maior de que seu conteúdo em cache permaneça armazenado em cache. Consulte [Armazenamento persistente](https://developers.google.com/web/updates/2016/06/persistent-storage) para saber mais.
+- **Mais memória e espaço de armazenamento para sua origem:** O navegador aloca recursos de cache HTTP por [origem](/same-site-same-origin/#origin) . Em outras palavras, se você tiver vários subdomínios, todos eles compartilham o mesmo cache HTTP. Não há garantia de que o conteúdo de sua origem / domínio permaneça no cache HTTP por muito tempo. Por exemplo, um usuário pode limpar o cache limpando manualmente da IU de configurações do navegador ou acionando um recarregamento físico em uma página. Com um cache de service worker, você tem uma probabilidade muito maior de que seu conteúdo em cache permaneça armazenado em cache. Consulte [Armazenamento persistente](/persistent-storage/) para saber mais.
 - **Maior flexibilidade com redes fragmentadas ou experiências offline:** com o cache HTTP, você só tem uma escolha binária: o recurso é armazenado em cache ou não. Com o cache do service worker, você pode mitigar pequenos "soluços" com muito mais facilidade (com a estratégia "desatualizar durante a revalidação"), oferecer uma experiência offline completa (com a estratégia "Somente cache") ou até mesmo algo intermediário, como interfaces de usuário personalizadas com partes da página provenientes do cache do service worker e algumas partes excluídas (com a estratégia "Set catch handler") quando apropriado.
 
 ### Cache HTTP

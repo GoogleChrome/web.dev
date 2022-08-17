@@ -11,7 +11,7 @@ tags:
 
 {% Aside %}
 Unsure whether or not your site is hacked? Start by reading our
-[how to check if your site is hacked](/secure/how-do-I-know-if-my-site-was-hacked/) guide.
+[how to check if your site is hacked](/how-do-i-know-if-my-site-was-hacked/) guide.
 {% endAside %}
 
 This guide is created specifically for a type of hack that creates

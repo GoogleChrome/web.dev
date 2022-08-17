@@ -230,7 +230,7 @@ In practice this presents the following issues:
   especially likely if the outer app is installed but the inner app isn't.
   Similarly, links within the outer app that link to the inner app will not
   link capture into the inner app, since they are considered to be within the
-  outer app's scope. Additionally, on Chrome OS and Android, if these apps are
+  outer app's scope. Additionally, on ChromeOS and Android, if these apps are
   added to the Play Store (as [Trusted Web
   Activities](https://developer.chrome.com/docs/android/trusted-web-activity/overview/)),
   the outer app will capture all links. Even if the inner app is installed,

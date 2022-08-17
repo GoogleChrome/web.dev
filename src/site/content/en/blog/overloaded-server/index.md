@@ -71,11 +71,11 @@ Look for ways to more aggressively cache content. If a resource can be served fr
 
 HTTP headers like [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires), and [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag) indicate how a resource should be cached by an HTTP cache. Auditing and fixing these headers will improve caching.
 
-Although [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can also be used for caching, they utilize a separate [cache](https://developer.mozilla.org/docs/Web/API/Cache) and are a supplement, rather than a replacement, for proper HTTP caching. For this reason, when handling an overloaded server, efforts should be focused on optimizing HTTP caching.
+Although [service workers](https://developer.chrome.com/docs/workbox/service-worker-overview/) can also be used for caching, they utilize a separate [cache](https://developer.mozilla.org/docs/Web/API/Cache) and are a supplement, rather than a replacement, for proper HTTP caching. For this reason, when handling an overloaded server, efforts should be focused on optimizing HTTP caching.
 
 #### Diagnose
 
-Run [Lighthouse](https://developers.google.com/web/tools/lighthouse) and look at the [Serve static assets with an efficient cache policy](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) audit to view a list of resources with a short to medium [time to live](https://en.wikipedia.org/wiki/Time_to_live) (TTL). For each listed resource, consider if the TTL should be increased. As a rough guideline:
+Run [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and look at the [Serve static assets with an efficient cache policy](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) audit to view a list of resources with a short to medium [time to live](https://en.wikipedia.org/wiki/Time_to_live) (TTL). For each listed resource, consider if the TTL should be increased. As a rough guideline:
 *   Static resources should be cached with a long TTL (1 year).
 *   Dynamic resources should be cached with a short TTL (3 hours).
 
@@ -182,8 +182,8 @@ Relevant Lighthouse audits:
 *   [Use video formats for animated content](/efficient-animated-content/)
 
 Chrome DevTools workflow:
-- [Log network activity](https://developers.google.com/web/tools/chrome-devtools/network#load)
-- Click **Img** to [filter out non-image resources](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter-by-type)
+- [Log network activity](https://developer.chrome.com/docs/devtools/network/#load)
+- Click **Img** to [filter out non-image resources](https://developer.chrome.com/docs/devtools/network/reference/#filter-by-type)
 - Click the **Size** column to sort the image files by size
 
 #### Fix

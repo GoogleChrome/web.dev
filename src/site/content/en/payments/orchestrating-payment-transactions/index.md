@@ -194,7 +194,7 @@ class PromiseResolver {
 {% Aside %}
 For security reasons, the frontend page opened in the payment handler window
 must have valid HTTPS certificates and no [mixed
-content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content);
+content](/what-is-mixed-content/);
 otherwise the payment request will be cancelled by Chrome. Learn more at
 [Debugging a web-based payment
 app](/registering-a-web-based-payment-app/#debugging-a-web-based-payment-app).

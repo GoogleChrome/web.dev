@@ -16,7 +16,7 @@ CSS files are [render-blocking resources](https://developers.google.com/web/tool
 they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles
 take longer to render.
 
-In this guide, you'll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [First Contentful Paint (FCP)](/fcp/).
+In this guide, you'll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](/critical-rendering-path/), and improving [First Contentful Paint (FCP)](/fcp/).
 
 ## Loading CSS in a suboptimal way
 
@@ -75,7 +75,7 @@ before painting a single pixel on the screen.
 To optimize this page, you need to know which classes are considered "critical".
 You'll use the [Coverage Tool](https://developer.chrome.com/docs/devtools/css/reference/#coverage) for that:
 
-1. In DevTools, open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu), by pressing `Control+Shift+P` or `Command+Shift+P` (Mac).
+1. In DevTools, open the [Command Menu](https://developer.chrome.com/docs/devtools/command-menu/), by pressing `Control+Shift+P` or `Command+Shift+P` (Mac).
 1. Type "Coverage" and select **Show Coverage**.
 1. Click the **Reload** button, to reload the page and start capturing the
    coverage.

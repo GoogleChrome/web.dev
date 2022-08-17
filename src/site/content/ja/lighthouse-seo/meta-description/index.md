@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouseメタ記述監査が失敗する理由
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)はメタ記述のないページにフラグを設定します。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)はメタ記述のないページにフラグを設定します。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="ドキュメントにメタ記述がないことを示すLighthouse監査", width="800", height="74" %}</figure>
 
@@ -76,6 +76,6 @@ Lighthouseは記述の質を評価しません。
 
 ## リソース
 
-- [**ドキュメントにメタ記述がない**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [**ドキュメントにメタ記述がない**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [検索結果で適切なタイトルとスニペットを作成する](https://support.google.com/webmasters/answer/35624#1)
 - [無関係なキーワード](https://support.google.com/webmasters/answer/66358)

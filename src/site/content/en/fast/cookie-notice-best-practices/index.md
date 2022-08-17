@@ -175,7 +175,7 @@ loading of cookie notice scripts:
     workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers)
     can allow you more control over the [fetching and caching of
     third-party
-    scripts](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
+    scripts](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations)
     such as cookie notice scripts.
 
 

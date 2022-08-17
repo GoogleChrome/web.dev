@@ -12,7 +12,7 @@ tags:
 
 CSS 文件是[渲染阻塞资源](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)：它们必须在浏览器渲染页面之前加载和处理。包含不必要的大样式的网页需要更长的渲染时间。
 
-在本指南中，您将了解如何以优化[关键渲染路径](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)和改善 [First Contentful Paint (FCP)](/fcp/) 为目标来延迟加载非关键 CSS。
+在本指南中，您将了解如何以优化[关键渲染路径](/critical-rendering-path/)和改善 [First Contentful Paint (FCP)](/fcp/) 为目标来延迟加载非关键 CSS。
 
 ## 以次优方式加载 CSS
 
@@ -49,7 +49,7 @@ CSS 文件是[渲染阻塞资源](https://developers.google.com/web/tools/lighth
 
 要优化此页面，您需要知道哪些类被视为“关键”类。为此，您将使用[Coverage Tool：](https://developer.chrome.com/docs/devtools/css/reference/#coverage)
 
-1. 在 DevTools 中，按下 `Control+Shift+P` 或`Command+Shift+P` (Mac) 打开[命令菜单](https://developers.google.com/web/tools/chrome-devtools/command-menu)。
+1. 在 DevTools 中，按下 `Control+Shift+P` 或`Command+Shift+P` (Mac) 打开[命令菜单](https://developer.chrome.com/docs/devtools/command-menu/)。
 2. 输入“Coverage”并选择 **Show Coverage** 。
 3. 单击 **Reload** 按钮，重新加载页面并开始捕获覆盖范围。
 

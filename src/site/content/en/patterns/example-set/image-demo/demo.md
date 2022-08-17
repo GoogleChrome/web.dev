@@ -1,5 +1,6 @@
 ---
 layout: demo
+noindex: true
 patternId: example-set/image-demo
 ---
 

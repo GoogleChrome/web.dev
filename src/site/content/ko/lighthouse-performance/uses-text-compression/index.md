@@ -63,7 +63,7 @@ Content-Encoding: br
 
 {% Instruction 'devtools-network', 'ol' %}
 
-1. 큰 요청 행을 활성화합니다. [큰 요청 행 사용](https://developers.google.com/web/tools/chrome-devtools/network/reference#request-rows)을 참조하십시오.
+1. 큰 요청 행을 활성화합니다. [큰 요청 행 사용](https://developer.chrome.com/docs/devtools/network/reference/#request-rows)을 참조하십시오.
 2. 관심 있는 응답의 **크기** 열을 확인하십시오. 최상위 값은 압축된 크기입니다. 하단 값은 압축 해제된 크기입니다.
 
 [네트워크 페이로드 축소 및 압축](/reduce-network-payloads-using-text-compression)도 참조하십시오.
@@ -80,4 +80,4 @@ Gzip 페이지 압축 설정(**시스템** &gt; **전역 구성** &gt; **서버*
 
 ## 리소스
 
-- [**텍스트 압축 활성화** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [**텍스트 압축 활성화** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-text-compression.js)

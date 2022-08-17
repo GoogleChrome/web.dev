@@ -35,9 +35,9 @@ tags:
 
 ### Chrome DevTools
 
-С помощью [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) можно проверить качество кода на сайте.
+С помощью [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) можно проверить качество кода на сайте.
 
-1. [Откройте Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) на странице, где может использоваться `SharedArrayBuffer`.
+1. [Откройте Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) на странице, где может использоваться `SharedArrayBuffer`.
 2. Выберите панель **Console (Консоль)**.
 3. Если на странице используется `SharedArrayBuffer`, то отобразится следующее сообщение:
     ```text
@@ -58,7 +58,7 @@ tags:
     ```
 3. Как только заголовок начнет передаваться дальше, конечная точка, которую вы зарегистрировали, станет собирать отчеты о нежелательных функциях.
 
-Пример реализации приведен здесь: [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+Пример реализации приведен здесь: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 
@@ -70,7 +70,7 @@ tags:
 2. Настройте функцию отчетности и веб-сервер для получения и сохранения отчетов.
 3. Задайте заголовок [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources) в документе верхнего уровня. Именно этот заголовок позволяет, не нарушая работу сайта, проследить, как включение `COEP: require-corp` повлияет на него. Вы можете настроить этот заголовок для отправки отчетов на тот же сервер отчетов, который настроили на предыдущем шаге.
 
-{% Aside %} Можно также [включить столбец **Domain (Домен)**](https://developers.google.com/web/tools/chrome-devtools/network#information) на панели **Network (Сеть)** в Chrome DevTools, чтобы получить общее представление о том, какие ресурсы будут затронуты. {% endAside %}
+{% Aside %} Можно также [включить столбец **Domain (Домен)**](https://developer.chrome.com/docs/devtools/network/#information) на панели **Network (Сеть)** в Chrome DevTools, чтобы получить общее представление о том, какие ресурсы будут затронуты. {% endAside %}
 
 {% Aside 'caution' %}
 

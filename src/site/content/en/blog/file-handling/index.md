@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2022-01-30
+updated: 2022-06-15
 tags:
   - blog
   - capabilities
@@ -15,8 +15,9 @@ hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 ---
 
-{% Aside %} The File Handling API is part of the [capabilities project](/fugu-status/) and is
-currently in development. This post will be updated as the implementation progresses. {% endAside %}
+{% Aside 'success' %}
+The File Handling API was part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/) and has now shipped.
+{% endAside %}
 
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical
 step is to let developers declare these very web apps as file handlers for the files their apps can
@@ -29,7 +30,7 @@ default.
 
 Examples of sites that may use this API include:
 
-- Office applications like text editors, spreadsheet apps, and slideshow creators.
+- Office applications such as text editors, spreadsheet apps, and slideshow creators.
 - Graphics editors and drawing tools.
 - Video game level editor tools.
 
@@ -37,13 +38,13 @@ Examples of sites that may use this API include:
 
 <div>
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | Complete                 |
-| 4. Origin trial                          | Complete                 |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                                               |
+| ---------------------------------------- | ---------------------------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]                                |
+| 2. Create initial draft of specification | [Started](https://github.com/w3c/manifest/pull/1005) |
+| 3. Gather feedback & iterate on design   | Complete                                             |
+| 4. Origin trial                          | Complete                                             |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;102)                     |
 
 </div>
 
@@ -76,7 +77,7 @@ if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
 As a first step, web apps need to declaratively describe in their [web app manifest](/add-manifest/)
 what kind of files they can handle. The File Handling API extends web app manifest with a new
 property called `"file_handlers"` that accepts an array of, well, file handlers. A file handler is
-an object with two properties:
+an object with these properties:
 
 - An `"action"` property that points to a URL within the scope of the app as its value.
 - An `"accept"` property with an object of MIME-types as keys and lists of file extensions as their
@@ -85,6 +86,12 @@ an object with two properties:
   icons. Some operating systems allow a file type association to display an icon that is not just
   the associated application icon, but rather a special icon related to the use of that file type
   with the application.
+- A `"launch_type"` property that defines whether multiple files should be opened in a single
+  client or in multiple clients. The default is `"single-client"`. If the user
+  opens multiple files and if the file handler has been annotated with `"multiple-clients"` as
+  its `"launch_type"`, more than one app launch will occur, and for each launch, the
+  `LaunchParams.files` array (see [further down](#the-imperative-part-of-the-file-handling-api))
+   will have just one element.
 
 The example below, showing only the relevant excerpt of the web app manifest, should make it
 clearer:
@@ -103,7 +110,8 @@ clearer:
           "sizes": "256x256",
           "type": "image/png"
         }
-      ]
+      ],
+      "launch_type": "single-client"
     },
     {
       "action": "/open-svg",
@@ -116,7 +124,8 @@ clearer:
           "sizes": "256x256",
           "type": "image/png"
         }
-      ]
+      ],
+      "launch_type": "single-client"
     },
     {
       "action": "/open-graf",
@@ -130,7 +139,8 @@ clearer:
           "sizes": "256x256",
           "type": "image/png"
         }
-      ]
+      ],
+      "launch_type": "multiple-clients"
     }
   ]
 }
@@ -138,7 +148,8 @@ clearer:
 
 This is for a hypothetical application that handles comma-separated value (`.csv`) files at
 `/open-csv`, scalable vector graphics (`.svg`) files at `/open-svg`, and a made-up Grafr file format
-with any of `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
+with any of `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`. The first two will open
+in a single client, the last one in multiple clients if multiple files are being handled.
 
 {% Aside %} For this declaration to have any effect, the application must be installed. You can
 learn more in an article series on this very site on
@@ -203,7 +214,7 @@ transparency, and ergonomics.
 
 ## Permissions, permissions persistence, and file handler updates
 
-To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
+To ensure user trust and the safety of users' files, when the File Handling API opens a file,
 a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
 right after the user selects the PWA to open a file, so that the permission is tightly coupled to the
 action of opening a file using the PWA, making it more understandable and relevant.
@@ -234,7 +245,7 @@ signal of trust in the application.
 
 The exception to this is when there are no applications on the host system for a given file type. In
 this case, some host operating systems may automatically promote the newly registered handler to the
-default handler for that file type, silently and without any intervention by the user. This would
+default handler for that file type silently and without any intervention by the user. This would
 mean if the user double clicks a file of that type, it would automatically open in the registered
 web app. On such host operating systems, when the user agent determines that there is no existing
 default handler for the file type, an explicit permission prompt might be necessary to avoid

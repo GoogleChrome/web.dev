@@ -10,14 +10,16 @@ description: |
   guide, learn how to create your own custom CrUX Dashboard to track an origin's
   user experience.
 date: 2020-06-22
+updated: 2022-07-18
 tags:
   - performance
   - blog
+  - chrome-ux-report
 ---
 
 [Data Studio](https://marketingplatform.google.com/about/data-studio/) is a
 powerful data visualization tool that enables you to build dashboards on top of
-big data sources, like the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/)
+big data sources, like the [Chrome UX Report](https://developer.chrome.com/docs/crux/)
 (CrUX). In this guide, learn how to create your own custom CrUX Dashboard to
 track an origin's user experience trends.
 
@@ -45,13 +47,13 @@ The text input field only accepts origins, not full URLs. For example:
 
 {% Compare 'better', 'Origin (Supported)' %}
 ```text
-https://developers.google.com
+https://web.dev
 ```
 {% endCompare %}
 
 {% Compare 'worse', 'URL (Not supported)' %}
 ```text
-https://developers.google.com/web/tools/chrome-user-experience-report/
+https://web.dev/chrome-ux-report-data-studio-dashboard/
 ```
 {% endCompare %}
 
@@ -118,7 +120,7 @@ below.
 ### Metric performance
 
 After the Core Web Vitals page, you'll find standalone pages for all
-[metrics](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)
+[metrics](https://developer.chrome.com/docs/crux/methodology/#metrics)
 in the CrUX dataset.
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard LCP page", width="800", height="598" %}
@@ -181,7 +183,7 @@ public BigQuery dataset and are able to provide millisecond-precision values.
 
 ### User demographics
 
-There are two [dimensions](https://developers.google.com/web/tools/chrome-user-experience-report/#dimensions)
+There are two [dimensions](https://developer.chrome.com/docs/crux/methodology/#dimensions)
 included on the user demographic pages: devices and effective connection
 types (ECTs). These pages illustrate the distribution of page views across the
 entire origin for users in each demographic.

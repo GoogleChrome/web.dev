@@ -47,11 +47,11 @@ Lighthouseは、特定のリソースが解析されて遅れて取得された�
 
 ## できるだけ早く最初のルートをレンダリングする
 
-サイトが画面にピクセルをレンダリングする瞬間に、[**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)を遅らせるリソースがある場合、Lighthouseによって警告が表示されます。
+サイトが画面にピクセルをレンダリングする瞬間に、[**First Paint**](/user-centric-performance-metrics/#important-metrics-to-measure)を遅らせるリソースがある場合、Lighthouseによって警告が表示されます。
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="レンダリングをブロックするリソースの監査を排除する", width="800", height="111" %}
 
-First Paintを改善するために、Lighthouseは、重要なJavaScriptをインライン化し、[`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)を使用してその他の項目を遅延すること、および最も重要なCSSをインライン化することをお勧めします。これにより、レンダリングをブロックするアセットを取得するためのサーバーとの間の往復処理が排除され、パフォーマンスが向上します。ただし、開発の観点からは、インラインコードはメンテナンスが難しく、ブラウザで個別にキャッシュに保存できません。
+First Paintを改善するために、Lighthouseは、重要なJavaScriptをインライン化し、[`async`](/critical-rendering-path-adding-interactivity-with-javascript/)を使用してその他の項目を遅延すること、および最も重要なCSSをインライン化することをお勧めします。これにより、レンダリングをブロックするアセットを取得するためのサーバーとの間の往復処理が排除され、パフォーマンスが向上します。ただし、開発の観点からは、インラインコードはメンテナンスが難しく、ブラウザで個別にキャッシュに保存できません。
 
 First Paintを改善する別のアプローチは、ページの初期HTML**をサーバー側でレンダリング**することです。これにより、スクリプトの取得、解析、および実行中に、コンテンツがすぐにユーザーに表示されます。ただし、HTMLファイルのペイロードが大幅に増加する可能性があります。このため、[**Time to Interactive**](/tti/) (アプリケーションがインタラクティブになってユーザー入力に応答までにかかる時間) が長くなる可能性があります。
 

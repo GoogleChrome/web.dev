@@ -69,7 +69,7 @@ Vea [Cómo mejorar despliegue del contenido más extenso en su sitio](/largest-c
 
 ## Seguimiento de FMP en dispositivos de usuarios reales
 
-Para saber cómo medir cuándo ocurre realmente el FMP en los dispositivos de sus usuarios, consulte la página de [métricas de rendimiento centradas en el usuario](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) de Google. La sección [Seguimiento de FMP usando elementos principales](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements) describe cómo acceder a los datos de FCP mediante programación y enviarlos a Google Analytics.
+Para saber cómo medir cuándo ocurre realmente el FMP en los dispositivos de sus usuarios, consulte la página de [métricas de rendimiento centradas en el usuario](/user-centric-performance-metrics/) de Google. La sección [Seguimiento de FMP usando elementos principales](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements) describe cómo acceder a los datos de FCP mediante programación y enviarlos a Google Analytics.
 
 Consulte [Evaluación del rendimiento de carga en la vida real con la navegación y sincronización de recursos](https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/) de Google para obtener más información sobre la recopilación de métricas de usuarios reales. La [auditoría de Lighthouse User Timing marks and measures](/user-timings) le permite ver los datos del tiempo del usuario en su informe.
 
@@ -77,7 +77,7 @@ Consulte [Evaluación del rendimiento de carga en la vida real con la navegació
 
 ## Recursos
 
-- [Código fuente para la auditoría de **Primer despliegue significativo**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
+- [Código fuente para la auditoría de **Primer despliegue significativo**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/first-meaningful-paint.js)
 - [Guía de puntuación de Lighthouse v3](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Hasta el primer despliegue significativo: un enfoque basado en diseño](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
 - [Despliegue con contenido más extenso](/lcp/)

@@ -141,7 +141,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-사용자가 오프라인인 경우에도 빠르게 로드되고 안정적으로 작동할 수 있도록, 서비스 워커를 사용하여 `action`페이지를 [프리캐싱](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker)하십시오. [Workbox](https://developers.google.com/web/tools/workbox/)는 서비스 워커에서 [프리캐싱을 구현](/precache-with-workbox/)하는 데 도움이 되는 툴입니다.
+사용자가 오프라인인 경우에도 빠르게 로드되고 안정적으로 작동할 수 있도록, 서비스 워커를 사용하여 `action`페이지를 [프리캐싱](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker)하십시오. [Workbox](https://developer.chrome.com/docs/workbox/)는 서비스 워커에서 [프리캐싱을 구현](/precache-with-workbox/)하는 데 도움이 되는 툴입니다.
 
 ### POST 공유 처리
 
@@ -179,7 +179,7 @@ self.addEventListener('fetch', event => {
 2021년 초부터 Web Share Target API는 다음에서 지원됩니다.
 
 - Android의 Chrome 및 Edge 76 이상.
-- Chrome OS의 Chrome 89 이상.
+- ChromeOS의 Chrome 89 이상.
 
 모든 플랫폼에서, 웹 앱이 공유 데이터를 수신할 수 있는 잠재적 대상으로 표시되려면 그 전에 해당 웹 앱이 [설치](https://developers.google.com/web/fundamentals/app-install-banners/#criteria)된 상태여야 합니다.
 

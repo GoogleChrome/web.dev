@@ -26,7 +26,7 @@ tags:
 
 ## Lighthouse の DOM サイズ監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、ページの DOM 要素の合計、ページの最大 DOM 深度、およびその最大子要素を報告します。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、ページの DOM 要素の合計、ページの最大 DOM 深度、およびその最大子要素を報告します。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Lighthouse の「過大な DOM サイズを回避」監査のスクリーンショット", width="800", height="363" %}</figure>
 
@@ -43,9 +43,9 @@ Lighthouse は DOM ツリーのあるページに以下のようなフラグを�
 
 現在、大規模な DOM ツリーを公開している場合は、ページを読み込んで、度のノードを表示するかを手動で指定するようにします。おそらく、表示されていないノードは最初に書見込まれるドキュメントから除去し、スクロールやボタンクリックといった関連するユーザー操作の後にのみ作成するようにすることができます。
 
-ランタイム時に DOM ノードを作成する場合は、[DOM 変更ブレークポイントでサブツリーの変更](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#dom)を使用すると、ノードが作成されるタイミングをピンポイントするのに役立ちます。
+ランタイム時に DOM ノードを作成する場合は、[DOM 変更ブレークポイントでサブツリーの変更](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom)を使用すると、ノードが作成されるタイミングをピンポイントするのに役立ちます。
 
-大規模な DOM ツリーを避けられない場合は、CSS セレクターを単純化することで、レンダリングのパフォーマンスを改善することができます。詳細は、Google の「[スタイル計算の範囲と複雑さを軽減する](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)」をご覧ください。
+大規模な DOM ツリーを避けられない場合は、CSS セレクターを単純化することで、レンダリングのパフォーマンスを改善することができます。詳細は、Google の「[スタイル計算の範囲と複雑さを軽減する](/reduce-the-scope-and-complexity-of-style-calculations/)」をご覧ください。
 
 ## スタック特定のガイダンス
 
@@ -61,5 +61,5 @@ Lighthouse は DOM ツリーのあるページに以下のようなフラグを�
 
 ## リソース
 
-- [**過大なDOMサイズを回避**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
-- [スタイル計算の範囲と複雑さを軽減する](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+- [**過大なDOMサイズを回避**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
+- [スタイル計算の範囲と複雑さを軽減する](/reduce-the-scope-and-complexity-of-style-calculations/)

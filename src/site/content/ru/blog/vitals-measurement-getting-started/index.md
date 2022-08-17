@@ -3,7 +3,7 @@ title: Как начать измерять Web Vitals
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: Месячный график с наложением секундомеров с ярлыками LCP, FID и CLS.
 description: Узнайте, как измерить Web Vitals вашего сайта в полевых и лабораторных условиях.
@@ -21,9 +21,9 @@ tags:
 
 ### С чего начать измерение
 
-Если у вас нет настройки RUM, следующие инструменты быстро предоставят вам данные о реальной производительности вашего сайта. Все эти инструменты основаны на одном и том же базовом наборе данных ([Chrome User Experience Report (Отчет об удобстве пользования браузером Chrome)](https://developers.google.com/web/tools/chrome-user-experience-report)), но имеют несколько разные варианты использования:
+Если у вас нет настройки RUM, следующие инструменты быстро предоставят вам данные о реальной производительности вашего сайта. Все эти инструменты основаны на одном и том же базовом наборе данных ([Chrome User Experience Report (Отчет об удобстве пользования браузером Chrome)](https://developer.chrome.com/docs/crux/)), но имеют несколько разные варианты использования:
 
-- **PageSpeed Insights (PSI)**: [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) сообщает о сводной производительности на уровне страницы и на уровне источника за последние 28 дней. Кроме того, он содержит предложения по улучшению производительности. Если вы ищете с чего начать измерение и оптимизацию Web Vitals вашего сайта, мы рекомендуем использовать PSI. PSI доступен в виде [веб-инструмента](https://developers.google.com/speed/pagespeed/insights/) и [API](https://developers.google.com/speed/docs/insights/v5/get-started).
+- **PageSpeed Insights (PSI)**: [PageSpeed Insights](https://pagespeed.web.dev/) сообщает о сводной производительности на уровне страницы и на уровне источника за последние 28 дней. Кроме того, он содержит предложения по улучшению производительности. Если вы ищете с чего начать измерение и оптимизацию Web Vitals вашего сайта, мы рекомендуем использовать PSI. PSI доступен в виде [веб-инструмента](https://pagespeed.web.dev/) и [API](https://developers.google.com/speed/docs/insights/v5/get-started).
 - **Search Console**: [Search Console](https://search.google.com/search-console/welcome) предоставляет данные о производительности каждой страницы. Это позволяет выявить конкретные страницы, нуждающиеся в улучшении. В отличие от PageSpeed Insights, отчеты Search Console включают исторические данные о производительности. Search Console можно использовать для сайта, только если вы его владелец с подтверждённым правом собственности.
 - **Панель управления CrUX**: [панель управления CrUX](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard)это предварительно созданная панель управления, на которой отображаются данные CrUX для источника по вашему выбору. Она построен на основе Data Studio, процесс установки занимает около минуты. По сравнению с PageSpeed Insights и Search Console, отчеты панели управления CrUX включают больше параметровнапример, данные можно разбить по типу устройства и соединения.
 

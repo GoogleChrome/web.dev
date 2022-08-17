@@ -32,7 +32,7 @@ feedback:
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="3개의 쿠키가 응답으로 서버에서 브라우저로 전송되고 있습니다", width="800", height="276", style="max-width: 60vw" %}<figcaption> 서버는 <code>Set-Cookie</code> 헤더를 사용하여 쿠키를 설정합니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="3개의 쿠키가 응답으로 서버에서 브라우저로 전송되고 있습니다", width="800", height="276", style="max-width: 35vw" %}<figcaption> 서버는 <code>Set-Cookie</code> 헤더를 사용하여 쿠키를 설정합니다.</figcaption></figure>
 
 독자가 이러한 요구 사항을 충족하는 페이지를 볼 때, 즉 보안 연결에 있고 쿠키가 한 달 미만인 경우 브라우저는 요청에 다음 헤더를 보냅니다.
 
@@ -40,20 +40,20 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 Cookie: promo_shown=1
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="요청에 브라우저에서 서버로 3개의 쿠키를 보내는 중", width="800", height="165", style="max-width: 60vw" %}<figcaption> 귀하의 브라우저에서 <code>Cookie</code> 헤더에 쿠키를 다시 보냅니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="요청에 브라우저에서 서버로 3개의 쿠키를 보내는 중", width="800", height="165", style="max-width: 35vw" %}<figcaption> 귀하의 브라우저에서 <code>Cookie</code> 헤더에 쿠키를 다시 보냅니다.</figcaption></figure>
 
 `document.cookie`를 사용하여 JavaScript에서 해당 사이트에 사용할 수 있는 쿠키를 추가하고 읽을 수도 있습니다. `document.cookie`에 할당을 하면 해당 키를 포함한 쿠키가 생성되거나 재정의됩니다. 예를 들어 브라우저의 JavaScript 콘솔에서 다음을 시도할 수 있습니다.
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 `document.cookie`를 읽으면 현재 컨텍스트에서 액세스할 수 있는 모든 쿠키가 출력되며 각 쿠키는 세미콜론으로 구분됩니다.
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="브라우저 내에서 쿠키에 액세스하는 JavaScript", width="600", height="382", style="max-width: 35vw" %}<figcaption> JavaScript는 <code>document.cookie</code>를 사용하여 쿠키에 액세스할 수 있습니다.</figcaption></figure>
@@ -64,13 +64,13 @@ Cookie: promo_shown=1
 
 이전에 보았던 동일한 사이트로 돌아가면 현재 방문 중인 도메인뿐만 아니라 다양한 도메인에 대한 쿠키가 있음을 알 수 있습니다. 현재 사이트의 도메인, 즉 브라우저의 주소 표시줄에 표시되는 도메인과 일치하는 쿠키를 **자사** 쿠키라고 합니다. 마찬가지로 현재 사이트가 아닌 다른 도메인의 쿠키를 **타사** 쿠키라고 합니다. 이것은 절대적인 레이블은 아니며 사용자의 컨텍스트에 상대적입니다. 동일한 쿠키가 사용자가 당시 어느 사이트에 있는 지에 따라 자사 또는 타사가 될 수 있습니다.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="같은 페이지의 서로 다른 요청에서 브라우저로 3개의 쿠키가 전송되고 있습니다", width="800", height="346", style="max-width: 60vw" %} <figcaption> 쿠키는 한 페이지의 다양한 도메인에서 제공될 수 있습니다. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="같은 페이지의 서로 다른 요청에서 브라우저로 3개의 쿠키가 전송되고 있습니다", width="800", height="346", style="max-width: 35vw" %} <figcaption> 쿠키는 한 페이지의 다양한 도메인에서 제공될 수 있습니다. </figcaption></figure>
 
 위의 예를 계속 이어가 보면, 블로그 게시물 중 하나에 정말 멋진 고양이 사진이 있고 `/blog/img/amazing-cat.png`에서 호스팅된다고 가정해 보겠습니다. 이미지가 너무 멋져서 다른 사람이 자신의 사이트에 이 이미지를 직접 사용합니다. 방문자가 귀하의 블로그에 방문했고 `promo_shown` 쿠키가 있는 경우 다른 사람의 사이트에서 `amazing-cat.png`를 볼 때 이미지에 대한 이 요청에서 해당 쿠키가 **전송됩니다**. 이것이 누구에게나 특별하게 유용하지는 않은데, `promo_shown`은 이 다른 사람의 사이트에서 아무 것에도 사용되지 않고 단순히 요청에 오버헤드만 가중시킬뿐이기 때문입니다.
 
 이것이 의도하지 않은 결과라면 그렇게 할 이유가 있을까요? 사이트가 타사 컨텍스트에서 사용될 때 상태를 유지할 수 있도록 하는 것이 바로 이 메커니즘입니다. 예를 들어, 사이트에 YouTube 동영상을 삽입하면 방문자의 플레이어에 "나중에 보기" 옵션이 표시됩니다. 방문자가 이미 YouTube에 로그인되어 있는 경우 해당 세션은 타사 쿠키에 의해 내장 플레이어에서 제공되고 있는 것입니다. 즉, "나중에 보기" 버튼을 누르면 로그인하거나 페이지에서 다른 곳으로 이동했다가 다시 YouTube로 이동할 필요 없이 한 번에 동영상을 저장할 것입니다.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="같은 쿠키가 세 가지 다른 컨텍스트로 전송 중입니다", width="800", height="433", style="max-width: 60vw" %} <figcaption> 타사 컨텍스트의 쿠키는 다른 페이지를 방문할 때 전송됩니다. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="같은 쿠키가 세 가지 다른 컨텍스트로 전송 중입니다", width="800", height="433", style="max-width: 35vw" %} <figcaption> 타사 컨텍스트의 쿠키는 다른 페이지를 방문할 때 전송됩니다. </figcaption></figure>
 
 웹의 문화적 속성 중 하나는 기본적으로 열려 있는 경향이 있다는 것입니다. 바로 이러한 부분 때문에 많은 사람들이 이곳에서 자신의 콘텐츠와 앱을 만들 수 있는 것입니다. 그러나 이로 인해 많은 보안 및 개인정보보호 문제도 대두됩니다. 사이트 간 요청 위조(CSRF) 공격은 누가 요청을 시작했는 지에 관계없이 쿠키가 지정된 출처에 대한 모든 요청에 첨부된다는 사실을 악용한 것입니다. 예를 들어, `evil.example`를 방문한다면 `your-blog.example`에 대한 요청이 트리거될 수 있고 브라우저는 기꺼이 관련 쿠키를 첨부할 것입니다. 여러분의 블로그가 이러한 요청을 검증하는 방식에 주의를 기울이지 않는다면 `evil.example`이 게시물을 삭제하거나 자체 콘텐츠를 추가하는 등의 작업을 트리거할 수 있습니다.
 
@@ -128,7 +128,7 @@ Set-Cookie: promo_shown=1; SameSite=Lax
 
 마지막으로, 이전에 모든 컨텍스트에서 쿠키가 전송되기를 원한다는 사실을 암시적으로 명시하는 방식으로서, 값을 지정하지 않는 방법이 있습니다. [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03)의 최신 초안에서는 `SameSite=None`의 새 값을 도입하여 이 부분을 명시적으로 나타냅니다. 즉, `None`을 사용하여 의도적으로 타자 컨텍스트에서 쿠키가 전송되기를 원한다는 사실을 명확하게 전달할 수 있습니다.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="해당 컨텍스트에 따라 세 가지 쿠키에 None, Lax 또는 Strict의 레이블이 붙습니다", width="800", height="456", style="max-width: 60vw" %} <figcaption> 쿠키의 컨텍스트를 <code>None</code>, <code>Lax</code> 또는 <code>Strict</code>으로 명시적으로 나타냅니다. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="해당 컨텍스트에 따라 세 가지 쿠키에 None, Lax 또는 Strict의 레이블이 붙습니다", width="800", height="456", style="max-width: 35vw" %} <figcaption> 쿠키의 컨텍스트를 <code>None</code>, <code>Lax</code> 또는 <code>Strict</code>으로 명시적으로 나타냅니다. </figcaption></figure>
 
 {% Aside %}
 
@@ -241,6 +241,6 @@ Chrome, Safari 및 UC 브라우저를 비롯한 이전 버전의 여러 브라�
 
 `SameSite=None`에 대한 이러한 변경 사항과 브라우저 동작의 차이를 성공적으로 처리하도록 쿠키를 업데이트하는 방법에 대한 자세한 내용은 후속 게시물, [SameSite 쿠키 레시피](/samesite-cookie-recipes)를 참조하세요.
 
-*Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner, Vivek Sekhar의 기여와 피드백에 감사드립니다.*
+_Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner, Vivek Sekhar의 기여와 피드백에 감사드립니다._
 
-*[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)의 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)가 제공한 쿠키 영웅 이미지*
+_[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)의 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)가 제공한 쿠키 영웅 이미지_

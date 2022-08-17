@@ -24,11 +24,11 @@ tags:
 
 在加载网页时，长任务会占用主线程并使页面对用户输入无响应，即使它看起来已准备就绪。点击和轻按通常不起作用，因为尚未附加事件侦听器、单击处理程序等。
 
-由于耗时超过 50 毫秒的复杂工作，会出现占用大量 CPU 的长任务。为什么是 50 毫秒？ [RAIL 模型](https://developers.google.com/web/fundamentals/performance/rail)建议您在[50 毫秒](https://developers.google.com/web/fundamentals/performance/rail#response)内处理用户输入事件，以确保在 100 毫秒内做出可见响应。如果你不这样做，操作和反应之间的连接就会中断。
+由于耗时超过 50 毫秒的复杂工作，会出现占用大量 CPU 的长任务。为什么是 50 毫秒？ [RAIL 模型](/rail/)建议您在[50 毫秒](/rail/#response:-process-events-in-under-50ms)内处理用户输入事件，以确保在 100 毫秒内做出可见响应。如果你不这样做，操作和反应之间的连接就会中断。
 
 ## 我的页面中是否存在可能会延迟交互的长任务？
 
-到目前为止，您需要在 [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) 中手动查找超过 50 毫秒的“黄色长块”脚本，或者使用 [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) 找出哪些任务延迟了交互。这可能有点麻烦。
+到目前为止，您需要在 [Chrome DevTools](https://developer.chrome.com/docs/devtools/) 中手动查找超过 50 毫秒的“黄色长块”脚本，或者使用 [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) 找出哪些任务延迟了交互。这可能有点麻烦。
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="显示短任务和长任务差异的 DevTools Performance 面板截图", width="800", height="450" %}
 
@@ -36,7 +36,7 @@ tags:
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools 将长任务可视化为性能面板中的灰色条，以红色标注", width="800", height="450" %}
 
-- 在[性能面板](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)中记录加载网页的跟踪情况。
+- 在[性能面板](https://developer.chrome.com/docs/devtools/evaluate-performance/)中记录加载网页的跟踪情况。
 - 在主线程视图中寻找红色标志。您应该会看到任务现在是灰色的（“任务”）。
 - 将鼠标悬停在栏上可以查看任务的持续时间以及它是否被视为“长任务”。
 

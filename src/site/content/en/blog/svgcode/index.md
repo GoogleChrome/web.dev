@@ -14,10 +14,11 @@ description: >
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/lqecVwtwI01kJ7n52Sqp.jpg
 alt: SVGcode logo
 date: 2021-11-19
-updated: 2021-12-23
+updated: 2022-05-09
 tags:
   - capabilities
   - progressive-web-apps
+  - case-study
   - blog
 ---
 
@@ -116,7 +117,7 @@ on the
 [Vanilla JS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-vanilla)
 for [Vite.js](https://github.com/vitejs/vite) and uses the popular
 [Vite plugin PWA](https://github.com/antfu/vite-plugin-pwa), which creates a service worker that
-uses [Workbox.js](https://developers.google.com/web/tools/workbox) under the hood. Workbox is a set
+uses [Workbox.js](https://developer.chrome.com/docs/workbox/) under the hood. Workbox is a set
 of libraries that can power a production-ready service worker for Progressive Web Apps, This pattern
 may not necessarily work for all apps, but for SVGcode's use case it's great.
 
@@ -287,6 +288,100 @@ window.launchQueue.setConsumer(async (launchParams) => {
 
 For more information, see [Let installed web applications be file handlers](/file-handling/), and view the source code in
 [`src/js/filehandling.js`](https://github.com/tomayac/SVGcode/blob/main/src/js/filehandling.js).
+
+### Web Share (Files)
+
+Another example of blending in with the operating system is the app's share feature. Assuming I want
+to make edits to an SVG created with SVGcode, one way to deal with this would be to save the file,
+launch the SVG editing app, and then open the SVG file from there. A smoother flow, though, is to
+use the [Web Share API](/web-share/#sharing-files), which allows for files to be shared directly. So if
+the SVG editing app is a share target, it can directly receive the file without deviation.
+
+```js
+shareSVGButton.addEventListener('click', async () => {
+  let svg = svgOutput.innerHTML;
+  svg = await optimizeSVG(svg);
+  const suggestedFileName =
+    getSuggestedFileName(await get(FILE_HANDLE)) || 'Untitled.svg';
+  const file = new File([svg], suggestedFileName, { type: 'image/svg+xml' });
+  const data = {
+    files: [file],
+  };
+  if (navigator.canShare(data)) {
+    try {
+      await navigator.share(data);
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error(err.name, err.message);
+      }
+    }
+  }
+});
+```
+
+<figure>
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/p3Dn9FXrNLPtb4syXnfl.mp4" %}
+  <figcaption>
+    Sharing an SVG image to Gmail.
+  </figcaption>
+</figure>
+
+### Web Share Target (Files)
+
+The other way round, SVGcode can also act as a share target and receive files from other apps. To
+make this work, the app needs to let the operating system know via the
+[Web Share Target API](/web-share-target/) what types of data it can accept. This happens via a
+dedicated field in the Web App Manifest.
+
+```json
+{
+  "share_target": {
+    "action": "https://svgco.de/share-target/",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "files": [
+        {
+          "name": "image",
+          "accept": ["image/jpeg", "image/png", "image/webp", "image/gif"]
+        }
+      ]
+    }
+  }
+}
+```
+
+The `action` route does not actually exist, but is handled purely in the service worker's `fetch`
+handler, which then passes on received files for actual processing in the app.
+
+```js
+self.addEventListener('fetch', (fetchEvent) => {
+  if (
+    fetchEvent.request.url.endsWith('/share-target/') &&
+    fetchEvent.request.method === 'POST'
+  ) {
+    return fetchEvent.respondWith(
+      (async () => {
+        const formData = await fetchEvent.request.formData();
+        const image = formData.get('image');
+        const keys = await caches.keys();
+        const mediaCache = await caches.open(
+          keys.filter((key) => key.startsWith('media'))[0],
+        );
+        await mediaCache.put('shared-image', new Response(image));
+        return Response.redirect('./?share-target', 303);
+      })(),
+    );
+  }
+});
+```
+
+<figure>
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/SVtll3ShgNigvkVLu7cn.mp4" %}
+  <figcaption>
+    Sharing a screenshot to SVGcode.
+  </figcaption>
+</figure>
 
 ## Conclusion
 

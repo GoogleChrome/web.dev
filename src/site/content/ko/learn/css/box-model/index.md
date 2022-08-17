@@ -100,8 +100,8 @@ CSS를 작성하거나 웹에서 통으로 작업할 때 기억해야 할 정말
 
 계속해서 여러분의 브라우저에서 다음을 시도합니다.
 
-1. [개발자 도구 열기](https://developers.google.com/web/tools/chrome-devtools/open)
-2. [요소 선택](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
+1. [개발자 도구 열기](https://developer.chrome.com/docs/devtools/open/)
+2. [요소 선택](https://developer.chrome.com/docs/devtools/css/reference/#select)
 3. 박스 모델 디버거 표시
 
 <figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>

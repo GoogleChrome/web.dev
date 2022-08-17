@@ -234,7 +234,7 @@ setTimeout(async () => {
 
 ## アクセス権ポリシーの統合
 
-iframeでAPIを使用するには、[アクセス権ポリシー](https://w3c.github.io/webappsec-permissions-policy/)を使用してAPIを有効にする必要があります。これにより、さまざまなブラウザ機能とAPIを選択的に有効化または無効化できるメカニズムが定義されます。具体的には、アプリのニーズに応じて、`clipboard-read`または`clipboard-write`のいずれかまたは両方を渡す必要があります。
+iframeでAPIを使用するには、[アクセス権ポリシー](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/)を使用してAPIを有効にする必要があります。これにより、さまざまなブラウザ機能とAPIを選択的に有効化または無効化できるメカニズムが定義されます。具体的には、アプリのニーズに応じて、`clipboard-read`または`clipboard-write`のいずれかまたは両方を渡す必要があります。
 
 ```html/2
 <iframe

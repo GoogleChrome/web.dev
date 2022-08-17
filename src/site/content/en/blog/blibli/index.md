@@ -5,7 +5,7 @@ subhead: "How Blibli achieved a 42% reduction in bounce rate, an 8x improvement 
 authors:
   - collindionagata
   - swethagopalakrishnan
-date: 2021-06-15T19:59:43.1Z
+date: 2021-06-15
 description: How Blibli achieved a 42% reduction in bounce rate, an 8x improvement in mobile conversion rate, and 2.5x more pages per session.
 hero: image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/nO8c2UEgQRXsoYVp3tZO.png
 alt: |
@@ -61,7 +61,7 @@ mobile web platform. This included:
 +   A performance optimized website including a UX revamped [home
     page](https://www.blibli.com).
 +   A lite version of the home page for new users with a
-    [service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
+    [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)
     to cache critical assets for subsequent navigation.
 +   A [Progressive Web App](/progressive-web-apps/) (PWA) for
     returning users.

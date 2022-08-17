@@ -31,7 +31,7 @@ Web Share API를 통해 웹 앱은 플랫폼별 앱과 동일한 시스템 제�
 - [HTTPS를 통해 액세스](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features)하는 사이트에서만 사용할 수 있습니다.
 - 클릭과 같은 사용자 작업에 대한 응답으로 호출되어야 합니다. `onload` 핸들러를 통해 호출하는 것은 불가능합니다.
 - URL, 텍스트 또는 파일을 공유할 수 있습니다.
-- 2021년 1월부터 Safari, Chromium 포크의 Android, Chrome OS 및 Windows의 Chrome에서 사용할 수 있습니다. MacOS의 Chrome은 아직 개발 중입니다. 자세한 내용은 [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)을 참조하세요.
+- 2021년 1월부터 Safari, Chromium 포크의 Android, ChromeOS 및 Windows의 Chrome에서 사용할 수 있습니다. MacOS의 Chrome은 아직 개발 중입니다. 자세한 내용은 [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)을 참조하세요.
 
 ### 링크 및 텍스트 공유
 
@@ -97,12 +97,12 @@ Web Share API에 대한 브라우저 지원은 미묘한 부분이 있으며 특
 2021년 초부터 API를 사용하여 제목, 텍스트 및 URL을 공유하는 기능이 다음 환경에서 지원됩니다.
 
 - macOS 및 iOS에서 Safari 12 이상
-- Android에서 Chrome 75 이상, Chrome OS 및 Windows에서 89 이상
+- Android에서 Chrome 75 이상, ChromeOS 및 Windows에서 89 이상
 
 API를 사용한 파일 공유는 다음 환경에서 지원됩니다.
 
 - macOS 및 iOS에서 Safari 15 이상
-- Android에서 Chrome 75 이상, Chrome OS 및 Windows에서 89 이상
+- Android에서 Chrome 75 이상, ChromeOS 및 Windows에서 89 이상
 
 (Edge와 같은 대부분의 Chromium 기반 브라우저는 해당하는 Chrome 버전과 동일하게 이 기능을 지원합니다.)
 

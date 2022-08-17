@@ -347,7 +347,7 @@ DevTools는 다음을 시각화하는 데 도움이 될 수 있습니다.
 
 #### 기능 하이라이트
 
-스크롤 스냅된 자식은 크기 조정 중에 잠긴 위치를 유지합니다. 즉, JavaScript는 장치 회전 또는 브라우저 크기 조정 시 아무 것도 표시할 필요가 없습니다. Chromium DevTools [장치 모드](https://developers.google.com/web/tools/chrome-devtools/device-mode)에서 **반응형** 이외의 모드를 선택한 다음 장치 프레임 크기를 조정하여 사용해 보세요. 요소는 계속 표시되며 콘텐츠와 함께 잠겨 있음에 유의하세요. 이것은 Chromium이 사양과 일치하도록 구현을 업데이트한 이후에 사용할 수 있었습니다. 다음은 이에 대한 [블로그 게시물](/snap-after-layout/)입니다.
+스크롤 스냅된 자식은 크기 조정 중에 잠긴 위치를 유지합니다. 즉, JavaScript는 장치 회전 또는 브라우저 크기 조정 시 아무 것도 표시할 필요가 없습니다. Chromium DevTools [장치 모드](https://developer.chrome.com/docs/devtools/device-mode/)에서 **반응형** 이외의 모드를 선택한 다음 장치 프레임 크기를 조정하여 사용해 보세요. 요소는 계속 표시되며 콘텐츠와 함께 잠겨 있음에 유의하세요. 이것은 Chromium이 사양과 일치하도록 구현을 업데이트한 이후에 사용할 수 있었습니다. 다음은 이에 대한 [블로그 게시물](/snap-after-layout/)입니다.
 
 ### 애니메이션 {: #animation }
 

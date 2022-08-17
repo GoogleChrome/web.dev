@@ -29,7 +29,7 @@ Insertar estilos extraídos en el `<head>` del documento HTML elimina la necesid
 
 <figure>{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="Archivo HTML con CSS crítico insertado en el encabezado", width="800", height="325" %}<figcaption> CSS crítico en línea</figcaption></figure>
 
-La mejora de los tiempos de renderizado puede marcar una gran diferencia en el [rendimiento percibido](https://developers.google.com/web/fundamentals/performance/rail#ux), especialmente en condiciones de red deficientes. En las redes móviles, la latencia alta es un problema independientemente del ancho de banda.
+La mejora de los tiempos de renderizado puede marcar una gran diferencia en el [rendimiento percibido](/rail/#focus-on-the-user), especialmente en condiciones de red deficientes. En las redes móviles, la latencia alta es un problema independientemente del ancho de banda.
 
 <figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="Comparación de vista de tira de película sobre la carga de una página con CSS que bloquea el renderizado (arriba) y la misma página con CSS crítico en línea (abajo) en una conexión 3G. La tira de película superior muestra seis fotogramas en blanco antes de mostrar finalmente el contenido. La tira de película inferior muestra contenido significativo en el primer fotograma.", width="800", height="363" %}<figcaption> Comparación de la carga de una página con CSS que bloquea el renderizado (arriba) y la misma página con CSS crítico en línea (abajo) en una conexión 3G</figcaption></figure>
 

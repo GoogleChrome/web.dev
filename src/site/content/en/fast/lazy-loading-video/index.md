@@ -56,7 +56,7 @@ being explicit is probably your best bet. In this cases where the user initiates
 playback, using `preload="none"` is the easiest way to defer loading of video on
 all platforms. The `preload` attribute isn't the only way to defer the loading
 of video content. [_Fast Playback with Video
-Preload_](https://developers.google.com/web/fundamentals/media/fast-playback-with-video-preload) may give you
+Preload_](/fast-playback-with-preload/) may give you
 some ideas and insight into working with video playback in JavaScript.
 
 Unfortunately, it doesn't prove useful when you want to use video in place of

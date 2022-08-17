@@ -4,7 +4,7 @@ title: A guide to enable cross-origin isolation
 authors:
   - agektmr
 date: 2021-02-09
-updated: 2021-12-21
+updated: 2022-06-23
 subhead: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article explains how to enable cross-origin
@@ -56,11 +56,11 @@ If you already know where you are using `SharedArrayBuffer`, skip to
 
 ### Using Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open)
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/open/)
 allows developers to inspect websites.
 
 1. [Open the Chrome
-   DevTools](https://developers.google.com/web/tools/chrome-devtools/open) on
+   DevTools](https://developer.chrome.com/docs/devtools/open/) on
    the page you suspect might be using `SharedArrayBuffer`.
 2. Select the **Console** panel.
 3. If the page is using `SharedArrayBuffer`, the following message will show up:
@@ -96,7 +96,7 @@ APIs](https://wicg.github.io/deprecation-reporting/) to a specified endpoint.
    start collecting deprecation reports.
 
 See an example implementation here:
-[https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+[https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 
@@ -123,7 +123,7 @@ HTTP headers allow you to do just that.
 
 {% Aside %}
 You can also [enable the **Domain**
-column](https://developers.google.com/web/tools/chrome-devtools/network#information)
+column](https://developer.chrome.com/docs/devtools/network/#information)
 in Chrome DevTools **Network** panel to get a general view of which resources
 would be impacted.
 {% endAside %}
@@ -173,17 +173,18 @@ cross-origin resources:
    cross-origin`](https://resourcepolicy.fyi/#cross-origin) header. On same-site
    resources, set [`Cross-Origin-Resource-Policy:
    same-site`](https://resourcepolicy.fyi/#same-origin) header.
-2. Set the `crossorigin` attribute in the HTML tag on top-level document if the
-   resource is served with [CORS](/cross-origin-resource-sharing/) (for example,
-   `<img src="example.jpg" crossorigin>`).
-4. If you want to use powerful features such as `SharedArrayBuffer` inside a
+2. For resources loadable using [CORS](/cross-origin-resource-sharing/), make
+   sure it is enabled, by setting the `crossorigin` attribute in its HTML tag
+   (for example, `<img src="example.jpg" crossorigin>`). For JavaScript fetch
+   request, make sure `request.mode` is set to `cors`.
+3. If you want to use powerful features such as `SharedArrayBuffer` inside a
    loaded iframe, append `allow="cross-origin-isolated"` to the `<iframe>`.
-4. If cross-origin resources loaded into iframes involve another layer of
-   iframes, recursively apply steps described in this section before moving
-   forward.
+4. If cross-origin resources loaded into iframes or worker scripts involve
+   another layer of iframes or worker scripts, recursively apply steps described
+   in this section before moving forward.
 5. Once you confirm that all cross-origin resources are opted-in, set the
-   `Cross-Origin-Embedder-Policy: require-corp` header on the cross-origin
-   resources loaded into iframes.
+   `Cross-Origin-Embedder-Policy: require-corp` header on iframes and worker
+   scripts (This is required regardless of same-origin or cross-origin).
 6. Make sure there are no cross-origin popup windows that require communication
    through `postMessage()`. There's no way to keep them working when
    cross-origin isolation is enabled. You can move the communication to another

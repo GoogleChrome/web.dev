@@ -20,7 +20,7 @@ origin_trial:
 
 继[之前的公告](https://blog.chromium.org/2020/01/appcache-scope-restricted.html)之后，Chrome 和其他基于 Chromium 的浏览器将不再[支持 AppCache](https://developer.mozilla.org/docs/Web/API/Window/applicationCache)。我们鼓励开发人员立即从 AppCache 迁移，不要再继续等待。
 
-当前浏览器广泛支持的 [Service worker](https://developers.google.com/web/fundamentals/primers/service-workers) 是一种替代方案，可以提供 AppCache 所提供的离线体验。请参阅[迁移策略](#migration-strategies)。
+当前浏览器广泛支持的 [Service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/) 是一种替代方案，可以提供 AppCache 所提供的离线体验。请参阅[迁移策略](#migration-strategies)。
 
 ## 时间线
 
@@ -128,11 +128,11 @@ TOKEN_GOES_HERE
 
 我们提供了一个 [Polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior)，它使用 Service worker 来复制 AppCache 的一些功能，但它不会复制整个 AppCache 接口。特别是，它不提供 `window.applicationCache` 接口或相关 AppCache 事件的替代。
 
-对于更复杂的情况，像 [Workbox](https://developers.google.com/web/tools/workbox/) 这样的库提供了一种简单的方法来为您的 Web 应用创建现代 Service worker。
+对于更复杂的情况，像 [Workbox](https://developer.chrome.com/docs/workbox/) 这样的库提供了一种简单的方法来为您的 Web 应用创建现代 Service worker。
 
 ### Service worker 和 AppCache 不能同时使用
 
-在制定您的迁移策略时，请记住，Chrome 将禁用在 Service worker [控制](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#scope_and_control)下加载的任何页面上的 AppCache 功能。换句话说，一旦您部署了控制给定页面的 Service worker，您就无法再在该页面上使用 AppCache。
+在制定您的迁移策略时，请记住，Chrome 将禁用在 Service worker [控制](/service-worker-lifecycle/#scope-and-control)下加载的任何页面上的 AppCache 功能。换句话说，一旦您部署了控制给定页面的 Service worker，您就无法再在该页面上使用 AppCache。
 
 因此，我们建议您不要尝试逐个迁移到 Service worker。部署一个只包含一部分缓存逻辑的 Service worker 是错误的。您不能回退到让 AppCache 来“填补空白”。
 
@@ -164,15 +164,15 @@ Safari 在 2018 年初[弃用了 AppCache](https://bugs.webkit.org/show_bug.cgi?
 
 ### 文章
 
-- [Service worker：简介](https://developers.google.com/web/fundamentals/primers/service-workers)
-- [Service worker 生命周期](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
+- [Service worker：简介](https://developer.chrome.com/docs/workbox/service-worker-overview/)
+- [Service worker 生命周期](/service-worker-lifecycle/)
 - [渐进式 Web 应用培训](https://developers.google.com/web/ilt/pwa)
 - [网络可靠性](/reliable/)
 
 ### 工具
 
 - [AppCache Polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior)
-- [Workbox](https://developers.google.com/web/tools/workbox/)
+- [Workbox](https://developer.chrome.com/docs/workbox/)
 - [PWA 生成器](https://www.pwabuilder.com/)
 
 ## 获得帮助

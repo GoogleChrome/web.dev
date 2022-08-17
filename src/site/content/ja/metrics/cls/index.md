@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-07-18
 description: この投稿では、Cumulative Layout Shift (累積レイアウト シフト数、CLS) という指標について紹介し、その測定方法に関する説明を行います。
 tags:
   - performance
@@ -161,15 +161,15 @@ CLS は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### フィールド測定を実施するためのツール
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)
 
 ### ラボ測定を実施するためのツール
 
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript を使用して CLS を測定する
@@ -219,7 +219,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-このコードは CLS を計算してログとして記録するための基本的な方法を示していますが、[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) での測定結果と一致するように CLS を正確に測定する方法はより複雑です。詳細については、以下を参照してください。
+このコードは CLS を計算してログとして記録するための基本的な方法を示していますが、[Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX) での測定結果と一致するように CLS を正確に測定する方法はより複雑です。詳細については、以下を参照してください。
 
 {% endAside %}
 
@@ -238,7 +238,7 @@ new PerformanceObserver((entryList) => {
 - ユーザーは、1 つのタブを (数日間、数週間、数か月など) *かなりの*長期間に渡って開き続ける場合があります。実際に、タブをまったく閉じないユーザーが存在する可能性もあります。
 - モバイル OS では、通常ブラウザーはバックグラウンド タブについてはページ アンロード コールバックを実行しないため、"最終的な" 値のレポートが困難になっています。
 
-こういったケースに対処するためには、ページがアンロードされるタイミングに加えて、バックグラウンドに移行するタイミングでも CLS をレポートする必要があります ([`visibilitychange` イベント](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)は、これらのシナリオの両方をカバーしています)。このデータを受け取ったアナリティクス システムは、最終的な CLS 値をバックエンドで計算する必要があります。
+こういったケースに対処するためには、ページがアンロードされるタイミングに加えて、バックグラウンドに移行するタイミングでも CLS をレポートする必要があります ([`visibilitychange` イベント](https://developer.chrome.com/blog/page-lifecycle-api/#event-visibilitychange)は、これらのシナリオの両方をカバーしています)。このデータを受け取ったアナリティクス システムは、最終的な CLS 値をバックエンドで計算する必要があります。
 
 開発者がこれらのケースをすべて記憶して対処する必要はありません。[`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)を使用すれば、上記すべてが考慮された状態で CLS の測定を行うことができます。
 

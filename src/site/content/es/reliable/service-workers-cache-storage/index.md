@@ -59,6 +59,6 @@ Los service workers y la API de almacenamiento en caché utilizan [conceptos de 
 
 ## No implemente ese código … todavía
 
-Si bien proporcionan una base importante y se pueden usar tal cual, tanto los service workers como la API de almacenamiento en caché son bloques de construcción de nivel inferior, con una serie de casos extremos y "errores". Hay algunas herramientas de nivel superior que pueden ayudar a suavizar las partes difíciles de esas API y proporcionar todo lo que necesita para crear un service worker listo para la producción. La siguiente guía cubre una de estas herramientas: [Workbox](https://developers.google.com/web/tools/workbox/).
+Si bien proporcionan una base importante y se pueden usar tal cual, tanto los service workers como la API de almacenamiento en caché son bloques de construcción de nivel inferior, con una serie de casos extremos y "errores". Hay algunas herramientas de nivel superior que pueden ayudar a suavizar las partes difíciles de esas API y proporcionar todo lo que necesita para crear un service worker listo para la producción. La siguiente guía cubre una de estas herramientas: [Workbox](https://developer.chrome.com/docs/workbox/).
 
 {% Aside 'success' %} Aprenda mientras se divierte. ¡Échele un vistazo al nuevo [juego Service Workies](https://serviceworkies.com/)! {% endAside %}

@@ -125,7 +125,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 
 +   Iterations to PWA interfaces resulted in a 60% jump in conversion rate (compared to the
     previous mobile web flow) and delighted users.
-+   [New web capabilities](/fugu-status/) improved UX and caused a 20% increase
++   [New web capabilities](https://developer.chrome.com/blog/fugu-status/) improved UX and caused a 20% increase
     in logged-in users (who convert 6x more).
 
 <blockquote>

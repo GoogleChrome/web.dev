@@ -21,7 +21,7 @@ feedback:
 stack_overflow_tag: webhid
 ---
 
-{% Aside 'success' %} A API WebHID, que faz parte do [projeto de recursos](/fugu-status/), foi lançada no Chrome 89. {% endAside %}
+{% Aside 'success' %} A API WebHID, que faz parte do [projeto de recursos](https://developer.chrome.com/blog/fugu-status/), foi lançada no Chrome 89. {% endAside %}
 
 Há vários dispositivos de interface humana (HIDs), como teclados alternativos ou gamepads exóticos, que são muito novos, antigos ou incomuns para serem acessados pelos drivers de dispositivo dos sistemas. A API WebHID resolve isso fornecendo uma maneira de implementar a lógica específica do dispositivo em JavaScript.
 
@@ -292,7 +292,7 @@ Depurar o HID no Chrome é fácil com a página interna, `about://device-log`, o
 
 ## Compatibilidade com o navegador {: #browser-support }
 
-A API WebHID está disponível em todas as plataformas para desktop (Chrome OS, Linux, macOS e Windows) no Chrome 89.
+A API WebHID está disponível em todas as plataformas para desktop (ChromeOS, Linux, macOS e Windows) no Chrome 89.
 
 ## Demonstrações {: #demos }
 

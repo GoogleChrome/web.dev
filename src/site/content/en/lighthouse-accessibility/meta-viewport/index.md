@@ -37,5 +37,5 @@ make sure the `maximum-scale` parameter is set to `5` or greater.
 
 ## Resources
 
-- [Source code for **`[user-scalable="no"]` is used in the `<meta name="viewport">` element or the `[maximum-scale]` attribute is less than 5** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
+- [Source code for **`[user-scalable="no"]` is used in the `<meta name="viewport">` element or the `[maximum-scale]` attribute is less than 5** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/meta-viewport.js)
 - [Zooming and scaling must not be disabled (Deque University)](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)

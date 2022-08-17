@@ -27,7 +27,7 @@ Declarative Shadow DOM is a proposed web platform feature that the Chrome team i
 feedback on. Try it out using the [experimental flag](#detection-support) or [polyfill](#polyfill).
 {% endAside %}
 
-[Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom)
+[Shadow DOM](/shadowdom-v1/)
 is one of the three Web Components standards, rounded out by
 [HTML templates](https://developer.mozilla.org/docs/Web/Web_Components/Using_templates_and_slots)
 and
@@ -53,7 +53,7 @@ important part of delivering a reasonable experience to visitors who may not be 
 JavaScript.
 
 The justifications for
-[Server-Side Rendering](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
+[Server-Side Rendering](/rendering-on-the-web/)
 (SSR) vary from project to project. Some websites must provide fully functional server-rendered
 HTML in order to meet accessibility guidelines, others choose to deliver a baseline no-JavaScript
 experience as a way to guarantee good performance on slow connections or devices.

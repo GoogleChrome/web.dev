@@ -23,7 +23,7 @@ As conexões com a Internet podem ser instáveis ou inexistentes em trânsito, e
 
 Aqui está uma recomendação geral para armazenar recursos:
 
-- Para os recursos de rede necessários para carregar seu aplicativo e conteúdo baseado em arquivo, use a [**API Cache Storage**](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api) (parte dos [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) ).
+- Para os recursos de rede necessários para carregar seu aplicativo e conteúdo baseado em arquivo, use a [**API Cache Storage**](/cache-api-quick-guide/) (parte dos [service workers](https://developer.chrome.com/docs/workbox/service-worker-overview/) ).
 - Para outros dados, use [**IndexedDB**](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) (com um [wrapper de promises](https://www.npmjs.com/package/idb) ).
 
 IndexedDB e a API Cache Storage são suportados em todos os navegadores modernos. Ambos são assíncronos e não bloquearão o thread principal. Eles são acessíveis a partir do objeto `window`, web workers e service workers, tornando mais fácil usá-los em qualquer lugar em seu código.
@@ -129,7 +129,7 @@ try {
 
 O armazenamento da Web é categorizado em dois grupos, "Melhor esforço" e "Persistente". Melhor esforço significa que o armazenamento pode ser limpo pelo navegador sem interromper o usuário, mas é menos durável para dados críticos ou de longo prazo. O armazenamento persistente não é apagado automaticamente quando o armazenamento está baixo. O usuário precisa limpar manualmente esse armazenamento (por meio das configurações do navegador).
 
-Por padrão, os dados de um site (incluindo IndexedDB, Cache API, etc) se enquadram na categoria de melhor esforço, o que significa que, a menos que um site tenha [solicitado armazenamento persistente](https://developers.google.com/web/updates/2016/06/persistent-storage) , o navegador pode despejar os dados do site a seu critério, por exemplo, quando o armazenamento do dispositivo estiver baixo .
+Por padrão, os dados de um site (incluindo IndexedDB, Cache API, etc) se enquadram na categoria de melhor esforço, o que significa que, a menos que um site tenha [solicitado armazenamento persistente](/persistent-storage/) , o navegador pode despejar os dados do site a seu critério, por exemplo, quando o armazenamento do dispositivo estiver baixo .
 
 A política de despejo para o melhor esforço é:
 
@@ -148,11 +148,11 @@ IndexedDB é uma API de baixo nível que requer configuração significativa ant
 
 ## Conclusão
 
-Já se foi o tempo de armazenamento limitado e de solicitação ao usuário para armazenar cada vez mais dados. Os sites podem armazenar com eficácia todos os recursos e dados de que precisam para funcionar. Usando a [API StorageManager,](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate) você pode determinar quanto está disponível para você e quanto você usou. E com o [armazenamento persistente](https://developers.google.com/web/updates/2016/06/persistent-storage) , a menos que o usuário o remova, você pode protegê-lo contra despejo.
+Já se foi o tempo de armazenamento limitado e de solicitação ao usuário para armazenar cada vez mais dados. Os sites podem armazenar com eficácia todos os recursos e dados de que precisam para funcionar. Usando a [API StorageManager,](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate) você pode determinar quanto está disponível para você e quanto você usou. E com o [armazenamento persistente](/persistent-storage/) , a menos que o usuário o remova, você pode protegê-lo contra despejo.
 
 ### Recursos adicionais
 
-- [Melhores práticas de IndexedDB](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)
+- [Melhores práticas de IndexedDB](/indexeddb-best-practices/)
 - [Conceitos de cota e armazenamento da Web do Chrome](https://docs.google.com/document/d/19QemRTdIxYaJ4gkHYf2WWBNPbpuZQDNMpUVf8dQxj4U/preview)
 
 ### Obrigado

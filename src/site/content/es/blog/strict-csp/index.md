@@ -102,7 +102,7 @@ Para adoptar un CSP estricto, debes:
 4. Agregar alternativas para admitir Safari y navegadores más antiguos.
 5. Implementar tu CSP.
 
-Puedes utilizar la **auditoría de prácticas** [recomendadas Lighthouse](https://developers.google.com/web/tools/lighthouse) (v7.3.0 y superior con flag `--preset=experimental` ) a lo largo de este proceso para comprobar si tu sitio tiene un CSP y si es lo suficientemente estricto como para ser eficaz contra XSS.
+Puedes utilizar la **auditoría de prácticas** [recomendadas Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) (v7.3.0 y superior con flag `--preset=experimental` ) a lo largo de este proceso para comprobar si tu sitio tiene un CSP y si es lo suficientemente estricto como para ser eficaz contra XSS.
 
 {% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="Lighthouse report warning that no CSP is found in enforcement mode.", width="730", height="78" %}
 
@@ -381,7 +381,7 @@ Content-Security-Policy:
 
 Después de confirmar que CSP no está bloqueando scripts legítimos en tu entorno de desarrollo local, puedes continuar con la implementación de tu CSP en su (puesta en escena, luego) entorno de producción:
 
-1. (Opcional) Implementa tu CSP en modo de solo informe mediante el `Content-Security-Policy-Report-Only`. Puedes obtener más información sobre la [API de informes](https://developers.google.com/web/updates/2018/09/reportingapi). El modo de solo informe es útil para probar un cambio potencialmente importante como un nuevo CSP en producción, antes de aplicar las restricciones de CSP. En el modo de solo informe, tu CSP no afecta el comportamiento de tu aplicación (nada realmente se romperá). Pero el navegador seguirá generando errores de consola e informes de infracción cuando se encuentren patrones incompatibles con CSP (para que pueda ver lo que habría fallado para sus usuarios finales).
+1. (Opcional) Implementa tu CSP en modo de solo informe mediante el `Content-Security-Policy-Report-Only`. Puedes obtener más información sobre la [API de informes](/reporting-api/). El modo de solo informe es útil para probar un cambio potencialmente importante como un nuevo CSP en producción, antes de aplicar las restricciones de CSP. En el modo de solo informe, tu CSP no afecta el comportamiento de tu aplicación (nada realmente se romperá). Pero el navegador seguirá generando errores de consola e informes de infracción cuando se encuentren patrones incompatibles con CSP (para que pueda ver lo que habría fallado para sus usuarios finales).
 2. Una vez que estés seguro de que tu CSP no provocará daños para tus usuarios finales, implementa tu CSP utilizando el encabezado de respuesta `Content-Security-Policy` **Solo una vez que hayas completado este paso, CSP comenzará a proteger tu aplicación de XSS**. Configurar tu CSP a través de un encabezado HTTP del lado del servidor es más seguro que configurarlo como una etiqueta `<meta>`; usa un encabezado si puedes.
 
 {% Aside 'gotchas' %} Asegúrate de que el CSP que estás utilizando sea "estricto" verificándolo con el [evaluador de CSP](https://csp-evaluator.withgoogle.com) o Lighthouse. Esto es muy importante, ya que incluso pequeños cambios en una política pueden reducir significativamente tu seguridad. {% endAside %}

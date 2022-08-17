@@ -20,7 +20,7 @@ stack_overflow_tag: webnfc
 ---
 
 {% Aside 'success' %}
-Web NFC, part of the [capabilities project](/fugu-status/), launched in
+Web NFC, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/), launched in
 Chrome&nbsp;89 for Android.
 {% endAside %}
 

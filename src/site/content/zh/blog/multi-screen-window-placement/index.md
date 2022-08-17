@@ -17,7 +17,7 @@ feedback:
   - api
 ---
 
-{% Aside %}Multi-Screen Window Placement API 是[功能项目](/fugu-status/)的一部分，目前正在开发中。本文将随着实施的进展而更新。 {% endAside %}
+{% Aside %}Multi-Screen Window Placement API 是[功能项目](https://developer.chrome.com/blog/fugu-status/)的一部分，目前正在开发中。本文将随着实施的进展而更新。 {% endAside %}
 
 Multi-Screen Window Placement API 允许您枚举连接到您的机器的显示器并将窗口放置在特定的屏幕上。
 

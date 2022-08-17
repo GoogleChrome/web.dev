@@ -1,5 +1,5 @@
-import {html} from 'lit-element';
-import {until} from 'lit-html/directives/until';
+import {html} from 'lit';
+import {until} from 'lit/directives/until.js';
 import {BaseElement} from '../BaseElement';
 import {signIn, signOut} from '../../fb';
 import './_styles.scss';

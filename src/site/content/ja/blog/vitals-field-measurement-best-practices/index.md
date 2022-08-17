@@ -71,7 +71,7 @@ getLCP(sendToAnalytics);
 
 パフォーマンス指標の中には、ページの読み込みが完了した時点ですぐに計算できるものもあれば、CLS のようにページの表示期間全体を考慮し、ページのアンロードが開始された時点で初めて確定するものもあります。
 
-ただし、`beforeunload` と `unload` イベントの両方が (特にモバイル環境では) 信頼性が低く、その使用が[推奨されていない](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#legacy-lifecycle-apis-to-avoid)ため (ページが [Back-Forward Cache](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#page-navigation-cache) の対象となることを妨げてしまう可能性があるため)、これが原因となって問題を引き起こしてしまう可能性があります。
+ただし、`beforeunload` と `unload` イベントの両方が (特にモバイル環境では) 信頼性が低く、その使用が[推奨されていない](https://developer.chrome.com/blog/page-lifecycle-api/#legacy-lifecycle-apis-to-avoid)ため (ページが [Back-Forward Cache](https://developer.chrome.com/blog/page-lifecycle-api/#what-is-the-back-forward-cache) の対象となることを妨げてしまう可能性があるため)、これが原因となって問題を引き起こしてしまう可能性があります。
 
 ページの表示期間全体を追跡する指標の場合には、ページの可視性の状態が `hidden` に変化したときには、指標の現在の値にかかわらず `visibilitychange` イベントの発生中に送信を行うことが最善の処理となります。これは、ページの可視性の状態が `hidden` に変更された時点で、そのページのスクリプトが再度実行可能となる保証がないからです。これは、ページのコールバックが発生していない状態でブラウザー アプリそのものを閉じることができるモバイル OS において特に顕著に見られます。
 

@@ -4,7 +4,7 @@ title: Скорость загрузки основного контента (LC
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-07-18
 description: В этой статье описывается метрика LCP (Скорость загрузки основного контента) и объясняются принципы ее измерения
 tags:
   - performance
@@ -120,15 +120,15 @@ LCP можно измерить в [лабораторных](/user-centric-perf
 
 ### Инструменты для измерения в полевых условиях
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (отчет Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
 ### Инструменты для измерения в лабораторных условиях
 
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Измерение LCP в JavaScript
@@ -189,7 +189,7 @@ getLCP(console.log);
 Подробные сведения о том, как улучшить LCP, см. в статье [«Оптимизация LCP»](/optimize-lcp/). Дополнительные рекомендации по отдельным методам повышения производительности, которые также могут улучшить LCP, смотрите в следующих статьях:
 
 - [Применение мгновенной загрузки с помощью шаблона PRPL](/apply-instant-loading-with-prpl)
-- [Оптимизация критического пути рендеринга](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [Оптимизация критического пути рендеринга](/critical-rendering-path/)
 - [Оптимизация CSS](/fast#optimize-your-css)
 - [Оптимизация изображений](/fast#optimize-your-images)
 - [Оптимизация веб-шрифтов](/fast#optimize-web-fonts)

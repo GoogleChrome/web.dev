@@ -5,7 +5,7 @@ authors:
   - thomassteiner
   - petelepage
 date: 2020-09-24
-updated: 2021-05-19
+updated: 2022-06-15
 description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
@@ -91,7 +91,7 @@ example, the famous [trivago offline maze game](https://www.trivago.com/offline)
 ### Registering the service worker
 
 The way to make this happen is through a service worker. You can register a service worker
-from your main page like in the code sample below. Usually you do this once
+from your main page as in the code sample below. Usually you do this once
 your app has loaded.
 
 ```js
@@ -106,7 +106,7 @@ window.addEventListener("load", () => {
 
 The contents of the actual service worker file may seem a little involved at first sight, but the
 comments in the sample below should clear things up. The core idea is to pre-cache a file named
-`offline.html` that gets only served on _failing_ navigation requests, and to let the browser handle
+`offline.html` that only gets served on _failing_ navigation requests, and to let the browser handle
 all other cases:
 
 ```js
@@ -137,9 +137,9 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
-      // Setting {cache: 'reload'} in the new request will ensure that the
-      // response isn't fulfilled from the HTTP cache; i.e., it will be from
-      // the network.
+      // Setting {cache: 'reload'} in the new request ensures that the
+      // response isn't fulfilled from the HTTP cache; i.e., it will be
+      // from the network.
       await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
     })()
   );
@@ -163,13 +163,14 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  // We only want to call event.respondWith() if this is a navigation request
+  // Only call event.respondWith() if this is a navigation request
   // for an HTML page.
   if (event.request.mode === "navigate") {
     event.respondWith(
       (async () => {
         try {
-          // First, try to use the navigation preload response if it's supported.
+          // First, try to use the navigation preload response if it's
+          // supported.
           const preloadResponse = await event.preloadResponse;
           if (preloadResponse) {
             return preloadResponse;
@@ -179,8 +180,8 @@ self.addEventListener("fetch", (event) => {
           const networkResponse = await fetch(event.request);
           return networkResponse;
         } catch (error) {
-          // catch is only triggered if an exception is thrown, which is likely
-          // due to a network error.
+          // catch is only triggered if an exception is thrown, which is
+          // likely due to a network error.
           // If fetch() returns a valid HTTP response with a response code in
           // the 4xx or 5xx range, the catch() will NOT be called.
           console.log("Fetch failed; returning offline page instead.", error);
@@ -193,11 +194,12 @@ self.addEventListener("fetch", (event) => {
     );
   }
 
-  // If our if() condition is false, then this fetch handler won't intercept the
-  // request. If there are any other fetch handlers registered, they will get a
-  // chance to call event.respondWith(). If no fetch handlers call
-  // event.respondWith(), the request will be handled by the browser as if there
-  // were no service worker involvement.
+  // If our if() condition is false, then this fetch handler won't
+  // intercept the request. If there are any other fetch handlers
+  // registered, they will get a chance to call event.respondWith().
+  // If no fetch handlers call event.respondWith(), the request
+  // will be handled by the browser as if there were no service
+  // worker involvement.
 });
 ```
 
@@ -310,9 +312,9 @@ with an [install strategy](/define-install-strategy/).
 
 ### Side note on serving an offline fallback page with Workbox.js
 
-You may have heard of [Workbox.js](https://developers.google.com/web/tools/workbox).
-Workbox.js is a set of JavaScript libraries for adding offline support to web apps. If you prefer to
-write less service worker code yourself, you can use the Workbox.js recipe for an
-[offline page only](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only).
+You may have heard of [Workbox](https://developer.chrome.com/docs/workbox/).
+Workbox is a set of JavaScript libraries for adding offline support to web apps. If you prefer to
+write less service worker code yourself, you can use the Workbox recipe for an
+[offline page only](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only).
 
 Up next, learn [how to define an install strategy](/define-install-strategy/) for your app.

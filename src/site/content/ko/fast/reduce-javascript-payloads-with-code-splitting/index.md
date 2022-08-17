@@ -23,7 +23,7 @@ Lighthouse는 페이지에서 모든 JavaScript를 실행하는 데 상당한 �
 
 사용자가 애플리케이션을 로드할 때 초기 경로에 필요한 코드만 보내도록 JavaScript 번들을 분할합니다. 이렇게 하면 구문 분석 및 컴파일해야 하는 스크립트의 양이 최소화되어 페이지 로드 시간이 빨라집니다.
 
-[webpack](https://parceljs.org/code_splitting.html), [Parcel](https://rollupjs.org/guide/en#dynamic-import), [Rollup](https://webpack.js.org/guides/code-splitting/)과 같은 인기 있는 모듈 번들러를 사용하면 [동적 가져오기](https://developers.google.com/web/updates/2017/11/dynamic-import)를 사용하여 번들을 분할할 수 있습니다. 예를 들어 양식이 제출될 때 실행되는 `someFunction` 메소드의 예를 보여주는 다음 코드 스니펫을 고려하십시오.
+[webpack](https://parceljs.org/code_splitting.html), [Parcel](https://rollupjs.org/guide/en#dynamic-import), [Rollup](https://webpack.js.org/guides/code-splitting/)과 같은 인기 있는 모듈 번들러를 사용하면 [동적 가져오기](https://v8.dev/features/dynamic-import)를 사용하여 번들을 분할할 수 있습니다. 예를 들어 양식이 제출될 때 실행되는 `someFunction` 메소드의 예를 보여주는 다음 코드 스니펫을 고려하십시오.
 
 ```js
 import moduleA from "library";

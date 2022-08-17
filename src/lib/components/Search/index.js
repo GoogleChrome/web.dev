@@ -2,7 +2,7 @@
  * @fileoverview An Algolia search box.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseStateElement} from '../BaseStateElement';
 import {store} from '../../store';
 import {debounce} from '../../utils/debounce';
@@ -295,21 +295,20 @@ class Search extends BaseStateElement {
 
   /**
    * Expand the search box.
-   * Only used on mobile viewports where we hide the search box behind an icon.
    */
   onOpenSearch() {
     this.expanded = true;
     // Set state here even though it'll happen again during onFocusIn.
     // If we wait until onFocusIn the animation has a bit of jank to it.
     store.setState({isSearchExpanded: true});
-    this.requestUpdate().then(() => {
+    this.requestUpdate();
+    this.updateComplete.then(() => {
       this.inputEl.focus();
     });
   }
 
   /**
    * Collapse the search box.
-   * Only used on mobile viewports.
    */
   onCloseSearch() {
     this.expanded = false;

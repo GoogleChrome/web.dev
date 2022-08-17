@@ -7,6 +7,7 @@ authors:
   - antoinebisch
   - cédricbazureau
 date: 2021-10-08
+updated: 2022-07-18
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/PHqBoMdg3WgcQWWIIkWj.jpg
 alt: Renault Group logo.
 description: |
@@ -85,13 +86,13 @@ Here is how they've approached it.
 
 ### A central optimization of the SPA
 
-From a platform standpoint, performance has been a priority for years and including Core Web Vitals (CWV) as key metrics was a smooth process. Central teams have set up a comprehensive monitoring solution (with [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) and [Chrome UX Report API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)) and established a performance culture across the organization. There were several strategies to optimize their Single Page Application, including:
+From a platform standpoint, performance has been a priority for years and including Core Web Vitals (CWV) as key metrics was a smooth process. Central teams have set up a comprehensive monitoring solution (with [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [Chrome UX Report API](https://developer.chrome.com/docs/crux/api/)) and established a performance culture across the organization. There were several strategies to optimize their Single Page Application, including:
 
-+   [Server side rendering (SSR)](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) to ensure a fast First Contentful Paint (FCP).
++   [Server side rendering (SSR)](/rendering-on-the-web/) to ensure a fast First Contentful Paint (FCP).
 +   [Code splitting](/codelab-code-splitting/) to deliver only the JS and CSS chunks needed for the landing page (for better LCP and FID).
 +   [CDN](/content-delivery-networks/) with a high level of resource caching (including a [Lambda@Edge](https://aws.amazon.com/lambda/edge/) to sort and remove unnecessary query parameters). This helped avoid the drawbacks of SSR (slower TTFB due to server computation) and deliver content closer to the final user (for better TTFB and LCP).
 +   [Optimizing compression with brotli](/codelab-text-compression-brotli/) to reduce the code size.
-+   [HTTP2](https://developers.google.com/web/fundamentals/performance/http2/) to enable multiplexing of requests and responses.
++   [HTTP2](/performance-http2/) to enable multiplexing of requests and responses.
 +   Using responsive images with [WebP support](/serve-images-webp/) and [`srcset`](/use-srcset-to-automatically-choose-the-right-image/#help-the-browser-choose-the-right-image-size) and [`sizes`](/use-srcset-to-automatically-choose-the-right-image/#what-about-the-display-size-of-the-image) attribute to serve the most appropriate image size and format to users.
 +   Lazy-loading images, videos, and iframes using [`IntersectionObserver`](/lazy-loading-images/#images-inline-intersection-observer) and FPOs (small 1&nbsp;KB thumbnails).
 +   Removing blocking scripts and [adjusting transpilation to browser targets](/serve-modern-code-to-modern-browsers/#use-@babelpreset-env) to reduce JS file sizes (by avoiding unnecessary polyfills).

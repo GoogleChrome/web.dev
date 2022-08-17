@@ -17,7 +17,7 @@ feedback:
   - api
 ---
 
-{% Aside %} Multi-Screen Window Placement API는 [기능 프로젝트의](/fugu-status/) 일부이며 현재 개발 중입니다. 이 게시물은 구현이 진행되는 대로 업데이트됩니다. {% endAside %}
+{% Aside %} Multi-Screen Window Placement API는 [기능 프로젝트의](https://developer.chrome.com/blog/fugu-status/) 일부이며 현재 개발 중입니다. 이 게시물은 구현이 진행되는 대로 업데이트됩니다. {% endAside %}
 
 Muti-Screen Window Placement API를 사용하면 컴퓨터에 연결된 디스플레이를 열거하고 특정 화면에 창을 배치할 수 있습니다.
 

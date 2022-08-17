@@ -115,7 +115,7 @@ Los anuncios son una fuente importante de ingresos para muchos sitios, pero los 
 
 Un enfoque alternativo es cargar contenido de terceros solo cuando los usuarios se desplazan hacia abajo en dirección hacia sección de la página.
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) es una API de navegador que detecta de manera eficiente cuando un elemento entra o sale de la ventana gráfica del navegador y se puede utilizar para implementar esta técnica. [lazysizes](/use-lazysizes-to-lazyload-images/) es una biblioteca popular de JavaScript cargar imágenes y [`iframes`](http://afarkas.github.io/lazysizes/#examples) de manera diferida. Es compatible con incrustaciones y [widgets de](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks) YouTube. También tiene [compatibilidad opcional](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) para IntersectionObserver.
+[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/) es una API de navegador que detecta de manera eficiente cuando un elemento entra o sale de la ventana gráfica del navegador y se puede utilizar para implementar esta técnica. [lazysizes](/use-lazysizes-to-lazyload-images/) es una biblioteca popular de JavaScript cargar imágenes y [`iframes`](http://afarkas.github.io/lazysizes/#examples) de manera diferida. Es compatible con incrustaciones y [widgets de](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks) YouTube. También tiene [compatibilidad opcional](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) para IntersectionObserver.
 
 {% Aside 'caution' %} Ten cuidado al cargar recursos de forma diferida con JavaScript. Si JavaScript no se carga, quizás debido a condiciones de red inestables, tus recursos no se cargarán. {% endAside %}
 
@@ -137,7 +137,7 @@ Los scripts de terceros auto-hospedados es una opción que te da más control so
 
 - Reducir los tiempos de búsqueda de DNS y de ida y vuelta.
 - Mejora las cabeceras de [almacenamiento en caché HTTP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
-- Aprovechar [HTTP/2 server push](https://developers.google.com/web/fundamentals/performance/http2/).
+- Aprovechar [HTTP/2 server push](/performance-http2/).
 
 Por ejemplo, Casper se las arregló para [reducir en 1,7 segundos](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec) el tiempo de carga al autohospedar un script de Prueba A/B.
 
@@ -149,4 +149,4 @@ La actualización manual de los scripts puede agregar una gran cantidad de gasto
 
 ### Utiliza los service workers para almacenar en caché los scripts de los servidores de terceros
 
-Una alternativa al auto-hospedaje que te permite un mayor control sobre el almacenamiento en caché al mismo tiempo que obtienes los beneficios de CDN de terceros es [utilizar los service workers para almacenar en caché los scripts de servidores de terceros](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests). Esto te da control sobre la frecuencia con la que se recuperan los scripts de la red y hace posible crear una estrategia de carga que limita las solicitudes de recursos de terceros no esenciales hasta que la página llega a un momento clave para el usuario. El uso de `preconnect` para establecer conexiones tempranas en este caso también puede mitigar los costos de la red hasta cierto punto.
+Una alternativa al auto-hospedaje que te permite un mayor control sobre el almacenamiento en caché al mismo tiempo que obtienes los beneficios de CDN de terceros es [utilizar los service workers para almacenar en caché los scripts de servidores de terceros](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations). Esto te da control sobre la frecuencia con la que se recuperan los scripts de la red y hace posible crear una estrategia de carga que limita las solicitudes de recursos de terceros no esenciales hasta que la página llega a un momento clave para el usuario. El uso de `preconnect` para establecer conexiones tempranas en este caso también puede mitigar los costos de la red hasta cierto punto.

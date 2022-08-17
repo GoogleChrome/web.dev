@@ -20,7 +20,7 @@ which may not be what you intended.
 
 ## How Lighthouse identifies ARIA elements that refer to duplicate IDs
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags elements that share an ID referred to
 by another element's `aria-labelledby` attribute:
 
@@ -54,5 +54,5 @@ One ID should be changed:
 ```
 
 ## Resources
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/duplicate-id-aria.js" rel="noopener">Source code for **ARIA IDs are not all unique** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/duplicate-id-aria.js" rel="noopener">Source code for **ARIA IDs are not all unique** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/duplicate-id-aria" rel="noopener">IDs used in ARIA and labels must be unique (Deque University)</a>

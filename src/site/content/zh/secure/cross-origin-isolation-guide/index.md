@@ -35,9 +35,9 @@ tags:
 
 ### 使用 Chrome 开发者工具
 
-[Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/open)允许开发者对网站进行检查。
+[Chrome 开发者工具](https://developer.chrome.com/docs/devtools/open/)允许开发者对网站进行检查。
 
-1. 在您怀疑可能正在使用`SharedArrayBuffer`的页面上[打开 Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/open)。
+1. 在您怀疑可能正在使用`SharedArrayBuffer`的页面上[打开 Chrome 开发者工具](https://developer.chrome.com/docs/devtools/open/)。
 2. 选择**控制台**面板。
 3. 如果该页面正在使用`SharedArrayBuffer`，则会显示以下消息：
     ```text
@@ -61,7 +61,7 @@ tags:
     ```
 3. 一旦标头开始传播，您注册的端点就应该能够开始收集弃用报告。
 
-请在此处查看执行示例：[https://first-party-test.glitch.me](https://first-party-test.glitch.me)。
+请在此处查看执行示例：[https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me)。
 
 {% endDetails %}
 
@@ -73,7 +73,7 @@ tags:
 2. 设置报告内容并配置一个网络服务器来接收和保存报告。
 3. 在顶级文档上设置[`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources)。与之前一样，该标头能够让您看到启用`COEP: require-corp`后的影响，而不会实际影响您的网站功能。您可以配置该标头，将报告发送到您在上一步中设置的同一个报告服务器。
 
-{% Aside %}您也可以在 Chrome 开发者工具的**网络**面板中[启用**域**列](https://developers.google.com/web/tools/chrome-devtools/network#information)，从而对哪些资源会受到影响形成总体的概念。{% endAside %}
+{% Aside %}您也可以在 Chrome 开发者工具的**网络**面板中[启用**域**列](https://developer.chrome.com/docs/devtools/network/#information)，从而对哪些资源会受到影响形成总体的概念。{% endAside %}
 
 {% Aside 'caution' %}
 

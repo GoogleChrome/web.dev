@@ -139,7 +139,7 @@ See MDN's [Browser compatibility] table for updates.
 
 ### Operating system support {: #os-support }
 
-Disabling OS-level adjustment for mouse acceleration is supported on Chrome OS,
+Disabling OS-level adjustment for mouse acceleration is supported on ChromeOS,
 macOS Catalina 10.15.1, and Windows. Linux will follow.
 
 ## Sample  {: #sample }

@@ -14,7 +14,7 @@ Una pantalla de presentación personalizada hace que su [aplicación web progres
 
 ## Cómo falla la auditoría Lighthouse de la pantalla de presentación
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no tienen una pantalla de presentación personalizada:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas que no tienen una pantalla de presentación personalizada:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Auditoría Lighthouse que muestra que el sitio no está configurado para una pantalla de presentación personalizada", width="800", height="98" %}</figure>
 
@@ -35,4 +35,4 @@ Consulte el documento [Agregar una pantalla de presentación para las aplicacion
 
 ## Recursos
 
-[El código fuente de la auditoría **No está configurada para una pantalla de presentación personalizada**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/splash-screen.js)
+[El código fuente de la auditoría **No está configurada para una pantalla de presentación personalizada**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/splash-screen.js)

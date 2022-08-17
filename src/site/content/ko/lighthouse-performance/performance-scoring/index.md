@@ -23,7 +23,7 @@ updated: 2021-02-26
 
 [가변성에 대한 Lighthouse 문서](https://github.com/GoogleChrome/lighthouse/blob/master/docs/variability.md)에서 이에 대해 더 자세히 설명합니다.
 
-또한 Lighthouse가 전체 성능 점수를 종합적으로 제공할 수 있지만 사이트 성능을 단일 숫자가 아닌 점수 분포로 생각하는 것이 더 유용할 수 있습니다. 그 이유를 이해하려면 [사용자 중심적 성능 메트릭](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics)의 소개 내용을 참조하세요.
+또한 Lighthouse가 전체 성능 점수를 종합적으로 제공할 수 있지만 사이트 성능을 단일 숫자가 아닌 점수 분포로 생각하는 것이 더 유용할 수 있습니다. 그 이유를 이해하려면 [사용자 중심적 성능 메트릭](/user-centric-performance-metrics/)의 소개 내용을 참조하세요.
 
 ## 성능 점수에 가중치가 부여되는 방식 {: #weightings }
 

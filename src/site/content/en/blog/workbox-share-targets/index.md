@@ -26,7 +26,7 @@ user's system-level share [sheet] after it's been installed. While it works grea
 available to receive the request, it's much harder to get working if you don't.
 
 In this article we'll use
-[Workbox](https://developers.google.com/web/tools/workbox), a set of JavaScript
+[Workbox](https://developer.chrome.com/docs/workbox/), a set of JavaScript
 libraries for adding offline support to web apps, to create a share target URL
 that lives entirely inside your [service worker](/service-workers-cache-storage/). This lets static sites and
 single-page apps serve as share targets without a dedicated server endpoint.
@@ -77,7 +77,7 @@ While normally handled by a server endpoint, a neat trick you can do for a share
 target is to register a route directly in your service worker to handle the
 request. This will let your app be a share target without a backend.
 
-You do this in [Workbox](https://developers.google.com/web/tools/workbox) by
+You do this in [Workbox](https://developer.chrome.com/docs/workbox/) by
 registering a route that's handled by your service worker. Start by importing
 `registerRoute` from `'workbox-routing'`. Notice that it's registered for the
 `/share` route, the same one listed in the example web app manifest. In
@@ -115,7 +115,7 @@ You can then do whatever you'd like with these files. You can cache them. You
 can send them somewhere with a fetch request. You can even use the other
 manifest options, maybe serving a page with some query parameters for the other
 shared items or storing the data and pointers to the media in the [Cache Storage
-API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api)
+API](/cache-api-quick-guide/)
 or [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API).
 
 You can try it out on the sample app [Fugu

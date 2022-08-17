@@ -22,7 +22,7 @@ functionality should not rely on CSS or JavaScript.
 
 ## How the Lighthouse fallback content audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't contain _some_ content
 when JavaScript is unavailable:
 
@@ -63,11 +63,11 @@ about whether there's a problem with the page, their browsers, or their
 computers.
 
 To see how your site looks and performs when JavaScript is disabled, use
-Chrome DevTools' [Disable JavaScript](https://developers.google.com/web/tools/chrome-devtools/javascript/disable) feature.
+Chrome DevTools' [Disable JavaScript](https://developer.chrome.com/docs/devtools/javascript/disable/) feature.
 
 ## Resources
 
-- [Source code for **Does not provide fallback content when JavaScript is not available** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/without-javascript.js)
+- [Source code for **Does not provide fallback content when JavaScript is not available** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/without-javascript.js)
 - [Progressive Enhancement: What It Is, And How To Use It](https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/)
-- [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
-- [Disable JavaScript With Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/javascript/disable)
+- [Critical Rendering Path](/critical-rendering-path/)
+- [Disable JavaScript With Chrome DevTools](https://developer.chrome.com/docs/devtools/javascript/disable/)

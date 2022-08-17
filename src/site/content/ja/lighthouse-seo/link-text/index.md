@@ -14,7 +14,7 @@ Link テキストは、ハイパーリンク内のクリック可能な単語ま
 
 ## Lighthouse link テキスト監査がどのように失敗します
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、説明文なしでlinkにフラグを立てます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)は、説明文なしでlinkにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Lighthouse auditは説明文なしでlinkを表示します", width="800", height="191" %}</figure>
 
@@ -61,5 +61,5 @@ Lighthouseは、次の一般的なlink テキストにフラグを立てます�
 
 ## 資力
 
-- [**リンクには説明文がありません**監査用のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [**リンクには説明文がありません**監査用のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [検索エンジン最適化（SEO）初心者用のガイド](https://support.google.com/webmasters/answer/7451184)

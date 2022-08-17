@@ -105,7 +105,7 @@ Our primary `.stories` component wrapper is a mobile-first horizontal scrollview
   </video>
   <figcaption>
     Using Chrome DevTools'
-    <a href="https://developers.google.com/web/tools/chrome-devtools/device-mode">Device Mode</a>
+    <a href="https://developer.chrome.com/docs/devtools/device-mode/">Device Mode</a>
     to highlight the columns created by Grid
   </figcaption>
 </figure>

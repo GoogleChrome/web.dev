@@ -18,7 +18,7 @@ Se o navegador não receber uma [resposta HTTP 200](https://developer.mozilla.or
 
 ## Como a auditoria `start_url` falha
 
-[O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza aplicativos da web cujo URL inicial não responde com 200 quando off-line:
+[O Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza aplicativos da web cujo URL inicial não responde com 200 quando off-line:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZR8gYzKNpBkrXEgQQnbl.png", alt="Auditoria do Lighthouse mostrando que URL inicial não responde com 200 quando está off-line", width="800", height="76" %}</figure>
 

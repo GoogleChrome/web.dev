@@ -79,7 +79,7 @@ worker and vice versa, but there are important differences between them:
   registered with.
 - The lifespan of the web worker is tightly coupled to the tab it belongs to, while the [service
   worker's
-  lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle) is
+  lifecycle](/service-worker-lifecycle/) is
   independent of it. For that reason, closing the tab where a web worker is running will terminate
   it, while a service worker can continue running in the background, even when the site doesn't have
   any active tabs open.
@@ -87,7 +87,7 @@ worker and vice versa, but there are important differences between them:
 {% Aside %} For relatively short bits of work like sending a message, the browser won't likely
 terminate a service worker when there are no active tabs, but if the task takes too long the browser
 will terminate the service worker, otherwise it's a risk to the user's privacy and battery. APIs
-like [Background Fetch](https://developers.google.com/web/updates/2018/12/background-fetch), that
+like [Background Fetch](https://developer.chrome.com/blog/background-fetch/), that
 can let you avoid the service worker's termination. {% endAside %}
 
 ## Use cases {: #use-cases }
@@ -121,7 +121,7 @@ background tasks, and things like caching and offline.
 
 **Example:** In a [podcast PWA](https://bgfetch-http203.glitch.me/), one might want to allow users
 to download complete episodes to listen to them while offline. A service worker, and, in particular,
-the [Background Fetch API](https://developers.google.com/web/updates/2018/12/background-fetch) can
+the [Background Fetch API](https://developer.chrome.com/blog/background-fetch/) can
 be used to that end. That way, if the user closes the tab while the episode is downloading, the task
 doesn't have to be interrupted.
 
@@ -136,7 +136,7 @@ Window and worker communication can be implemented by using different lower leve
 there are libraries that abstract this process, taking care of the most common use cases. In this
 section, we'll cover two of them that take care of window to web workers and service workers
 respectively: [Comlink](https://github.com/GoogleChromeLabs/comlink) and
-[Workbox](https://developers.google.com/web/tools/workbox).
+[Workbox](https://developer.chrome.com/docs/workbox/).
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MNMwX5KuJt5iOLZJbdO0.png", alt="A screenshot of the videogame PROXX.", width="500", height="269" %}
@@ -152,9 +152,9 @@ and code samples can be found [here](https://surma.dev/things/when-workers/).
 
 ### Workbox {: #workbox }
 
-[Workbox](https://developers.google.com/web/tools/workbox) is a popular library to build websites
+[Workbox](https://developer.chrome.com/docs/workbox/) is a popular library to build websites
 that use service workers. It packages a set of best practices around things like caching, offline,
-background synchronization, etc. The [`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) module provides a
+background synchronization, etc. The [`workbox-window`](https://developer.chrome.com/docs/workbox/modules/workbox-window/) module provides a
 convenient way to exchange messages between the service worker and the page.
 
 ## Next steps {: #next-steps }

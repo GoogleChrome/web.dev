@@ -306,7 +306,7 @@ You can customize the notification in lots of ways. See the parameters of
   The call to 
   [`self.skipWaiting()`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) 
   in your service worker's `install` listener is important to understand. See 
-  [Skip the waiting phase](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase) 
+  [Skip the waiting phase](/service-worker-lifecycle/#skip-the-waiting-phase) 
   for an explanation. Without it, the code changes that you make to your service worker
   wouldn't take effect immediately. You may or may not want to use this feature on 
   your own website depending on your needs, but either way it's important to understand its effect.

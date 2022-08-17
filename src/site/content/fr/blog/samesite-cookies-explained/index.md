@@ -6,7 +6,7 @@ authors:
 date: 2019-05-07
 updated: 2020-05-28
 hero: image/admin/UTOC41rgCccAqVNbJlyK.jpg
-description:  "Apprenez à marquer vos cookies pour une utilisation propriétaire et tierce avec l'attribut SameSite. Vous pouvez améliorer la sécurité de votre site en utilisant les valeurs Lax et Strict de SameSite pour améliorer la protection contre les attaques CSRF. La spécification du nouvel attribut None vous permet de marquer explicitement vos cookies pour une utilisation intersites."
+description: "Apprenez à marquer vos cookies pour une utilisation propriétaire et tierce avec l'attribut SameSite. Vous pouvez améliorer la sécurité de votre site en utilisant les valeurs Lax et Strict de SameSite pour améliorer la protection contre les attaques CSRF. La spécification du nouvel attribut None vous permet de marquer explicitement vos cookies pour une utilisation intersites."
 tags:
   - blog
   - security
@@ -32,7 +32,7 @@ Supposons que vous ayez un blog sur lequel vous souhaitez afficher une promotion
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Trois cookies envoyés à un navigateur depuis un serveur dans une réponse", width="800", height="276", style="max- largeur : 60 vw" %}<figcaption> Les serveurs définissent des cookies à l'aide de l'en-tête <code>Set-Cookie</code></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Trois cookies envoyés à un navigateur depuis un serveur dans une réponse", width="800", height="276", style="max-width: 35vw" %}<figcaption> Les serveurs définissent des cookies à l'aide de l'en-tête <code>Set-Cookie</code></figcaption></figure>
 
 Lorsque votre lecteur consulte une page qui répond à ces exigences, c'est-à-dire qu'il utilise une connexion sécurisée et que le cookie date de moins d'un mois, son navigateur enverra cet en-tête dans sa requête :
 
@@ -40,20 +40,20 @@ Lorsque votre lecteur consulte une page qui répond à ces exigences, c'est-à-d
 Cookie: promo_shown=1
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Trois cookies envoyés d'un navigateur à un serveur dans une requête", width="800", height="165", style="max- largeur : 60 vw" %}<figcaption> Votre navigateur renvoie des cookies dans l'en-tête <code>Cookie</code></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Trois cookies envoyés d'un navigateur à un serveur dans une requête", width="800", height="165", style="max-width: 35vw" %}<figcaption> Votre navigateur renvoie des cookies dans l'en-tête <code>Cookie</code></figcaption></figure>
 
 Vous pouvez également ajouter et lire les cookies disponibles sur ce site en JavaScript à l'aide de `document.cookie`. Effectuer une affectation à `document.cookie` créera ou remplacera un cookie avec cette clé. Par exemple, vous pouvez essayer ce qui suit dans la console JavaScript de votre navigateur :
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 La lecture de `document.cookie` affichera tous les cookies accessibles dans le contexte actuel, chaque cookie étant séparé par un point-virgule :
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript accédant aux cookies dans le navigateur", width="600", height="382", style="max-width: 35vw" %}<figcaption> JavaScript peut accéder aux cookies en utilisant <code>document.cookie</code>.</figcaption></figure>
@@ -70,7 +70,7 @@ En reprenant l'exemple ci-dessus, supposons que l'un de vos articles de blog con
 
 S'il s'agit d'un effet involontaire, pourquoi faire cela ? C'est ce mécanisme qui permet aux sites de conserver leur état lorsqu'ils sont utilisés dans un contexte tiers. Par exemple, si vous intégrez une vidéo YouTube sur votre site, les visiteurs verront une option "Regarder plus tard" dans le lecteur. Si votre visiteur est déjà connecté à YouTube, cette session est rendue accessible dans le lecteur intégré grâce à un cookie tiers. Ainsi, le bouton "Regarder plus tard" enregistrera simplement la vidéo en un clic plutôt que de l'inviter à se connecter ou de l'éloigner de votre page et revenir à YouTube.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="Le même cookie est envoyé dans trois contextes différents", width="800", height="433", style="max-width: 60vw" %} <figcaption> Un cookie dans un contexte tiers est envoyé lors de la visite de différentes pages. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="Le même cookie est envoyé dans trois contextes différents", width="800", height="433", style="max-width: 35vw" %} <figcaption> Un cookie dans un contexte tiers est envoyé lors de la visite de différentes pages. </figcaption></figure>
 
 L'une des propriétés culturelles du Web est qu'il a tendance à être ouvert par défaut. Cela fait partie de ce qui a permis à tant de personnes de créer leur propre contenu et applications dessus. Cependant, cela a également entraîné un certain nombre de problèmes de sécurité et de confidentialité. Les attaques de falsification de requête intersites (CSRF) reposent sur le fait que des cookies sont joints à toute requête à une origine donnée, peu importe qui initie la requête. Par exemple, si vous visitez `evil.example`, cela peut déclencher des requêtes vers `your-blog.example`, et votre navigateur se fera un plaisir de joindre les cookies associés. Si votre blog ne fait pas attention à la façon dont il valide ces requêtes, `evil.example` peut déclencher des actions telles que la suppression de publications ou l'ajout de leur propre contenu.
 
@@ -78,7 +78,7 @@ Les utilisateurs sont également de plus en plus conscients de la manière dont 
 
 ## Indiquez explicitement l'utilisation des cookies avec l'attribut `SameSite`
 
-L'introduction de l'attribut `SameSite` (défini dans  [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00)) vous permet de déclarer si votre cookie doit être restreint à un contexte propriétaire ou de même site. Il est utile de comprendre exactement ce que "site" signifie ici. Le site est la combinaison du suffixe de domaine et de la partie du domaine juste avant. Par exemple, le domaine `www.web.dev` fait partie du site `web.dev`.
+L'introduction de l'attribut `SameSite` (défini dans [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00)) vous permet de déclarer si votre cookie doit être restreint à un contexte propriétaire ou de même site. Il est utile de comprendre exactement ce que "site" signifie ici. Le site est la combinaison du suffixe de domaine et de la partie du domaine juste avant. Par exemple, le domaine `www.web.dev` fait partie du site `web.dev`.
 
 {% Aside 'key-term' %}
 
@@ -128,7 +128,7 @@ Ni `Strict` ni `Lax` sont une solution complète pour la sécurité de votre sit
 
 Enfin, il y a la possibilité de ne pas spécifier la valeur, ce qui était auparavant le moyen de déclarer implicitement que vous souhaitez que le cookie soit envoyé dans tous les contextes. Dans la dernière version de [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03), cela est rendu explicite en introduisant une nouvelle valeur de `SameSite=None`. Ainsi, vous pouvez utiliser `None` pour indiquer clairement que vous souhaitez intentionnellement que le cookie soit envoyé dans un contexte tiers.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Trois cookies étiquetés Aucun, Lax ou Strict selon leur contexte", width="800", height="456", style="max- largeur : 60 vw" %}<figcaption> Marquez explicitement le contexte d'un cookie comme <code>None</code>, <code>Lax</code> ou <code>Strict</code>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Trois cookies étiquetés Aucun, Lax ou Strict selon leur contexte", width="800", height="456", style="max-width: 35vw" %}<figcaption> Marquez explicitement le contexte d'un cookie comme <code>None</code>, <code>Lax</code> ou <code>Strict</code>.</figcaption></figure>
 
 {% Aside %}
 
@@ -241,6 +241,6 @@ Un certain nombre d'anciennes versions de navigateurs, notamment Chrome, Safari 
 
 Pour plus de détails sur comment mettre à jour vos cookies pour gérer les modifications apportées à `SameSite=None` et la différence de comportement des navigateurs, consultez l'article suivant : [Recettes pour utiliser les cookies SameSite](/samesite-cookie-recipes).
 
-*Merci pour les contributions et les commentaires de Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner et Vivek Sekhar*
+_Merci pour les contributions et les commentaires de Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner et Vivek Sekhar_
 
-*Cookie hero image par [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) sur [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Cookie hero image par [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) sur [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_

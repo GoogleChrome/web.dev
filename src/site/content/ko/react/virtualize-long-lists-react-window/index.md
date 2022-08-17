@@ -271,7 +271,7 @@ const Row = ({ index, style }) => {
 
 애플리케이션에서 리스트 및 테이블 가상화를 어디서 시작해야 할지 잘 모르겠다면 다음 단계를 따르세요.
 
-1. 렌더링 및 스크롤링 성능을 측정합니다. 이 [문서](https://addyosmani.com/blog/react-window/)에서는 Chrome DevTools의 [FPS meter](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#analyze_frames_per_second)를 사용하여 항목이 리스트에서 얼마나 효율적으로 렌더링되는지 탐색하는 방법을 보여줍니다.
+1. 렌더링 및 스크롤링 성능을 측정합니다. 이 [문서](https://addyosmani.com/blog/react-window/)에서는 Chrome DevTools의 [FPS meter](https://developer.chrome.com/docs/devtools/evaluate-performance/#analyze_frames_per_second)를 사용하여 항목이 리스트에서 얼마나 효율적으로 렌더링되는지 탐색하는 방법을 보여줍니다.
 2. 성능에 영향을 미치는 긴 리스트 또는 그리드에 대한`react-window`를 포함합니다.
 3. `react-window`에서 지원하지 않는 특정 기능이 있는 경우 이 기능을 직접 추가할 수 없다면 [`react-virtualized`](https://github.com/bvaughn/react-virtualized) 사용을 고려하세요.
 4. 사용자가 스크롤할 때 항목을 지연 로드해야 하는 경우 가상화된 리스트를 `react-window-infinite-loader`로 래핑하세요.

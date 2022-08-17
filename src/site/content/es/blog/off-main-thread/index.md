@@ -15,7 +15,7 @@ En los últimos 20 años, la web ha evolucionado drásticamente de documentos es
 
 Como resultado, el hilo principal se ha visto increíblemente sobrecargado de trabajo y a medida que aumenta la complejidad de las aplicaciones web, esto se convierte en un obstáculo importante para el rendimiento. Para empeorar las cosas, la cantidad de tiempo que lleva ejecutar el código en el hilo principal para un usuario dado, es **casi completamente impredecible**, porque las capacidades del dispositivo tienen un efecto masivo en el rendimiento. Esa imprevisibilidad solo aumentará a medida que los usuarios accedan a la web desde un conjunto cada vez más diverso de dispositivos, desde teléfonos con funciones hiperrestringidas hasta máquinas representativas de alta potencia y frecuencia de actualización.
 
-Si queremos que las aplicaciones web sofisticadas cumplan con las pautas de rendimiento como el [modelo RAIL,](https://developers.google.com/web/fundamentals/performance/rail) que se basa en datos empíricos sobre la percepción humana y la psicología, necesitamos formas de ejecutar nuestro código **desde el thread principal (OMT)**.
+Si queremos que las aplicaciones web sofisticadas cumplan con las pautas de rendimiento como el [modelo RAIL,](/rail/) que se basa en datos empíricos sobre la percepción humana y la psicología, necesitamos formas de ejecutar nuestro código **desde el thread principal (OMT)**.
 
 {% Aside %} Si quiere saber más sobre el caso de una arquitectura OMT, a continuación, puede ver mi charla en el CDS 2019. {% endAside %}
 
@@ -179,6 +179,6 @@ Para asegurarnos de que nuestras aplicaciones sean lo más confiables y accesibl
 Además, la OMT tiene beneficios secundarios:
 
 - Mueve los costos de ejecución de JavaScript a un hilo separado.
-- Mueve los costos de *análisis*, lo que significa que la interfaz de usuario podría iniciarse más rápido. Eso podría reducir [First Contentful Paint](/fcp/) (primera pintura de contenido) o incluso [Time to Interactive](/tti/) (tiempo de interacción), lo que a su vez puede aumentar su puntaje [Lighthouse.](https://developers.google.com/web/tools/lighthouse)
+- Mueve los costos de *análisis*, lo que significa que la interfaz de usuario podría iniciarse más rápido. Eso podría reducir [First Contentful Paint](/fcp/) (primera pintura de contenido) o incluso [Time to Interactive](/tti/) (tiempo de interacción), lo que a su vez puede aumentar su puntaje [Lighthouse.](https://developer.chrome.com/docs/lighthouse/overview/)
 
 Los trabajadores web no tienen por qué dar miedo. Herramientas como Comlink eliminan el trabajo de los trabajadores y los convierten en una opción viable para una amplia gama de aplicaciones web.

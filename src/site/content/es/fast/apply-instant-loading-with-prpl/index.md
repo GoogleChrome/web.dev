@@ -47,11 +47,11 @@ Para obtener más información sobre la precarga de recursos críticos, consulte
 
 ## Renderizar la ruta inicial lo antes posible
 
-Lighthouse proporciona una advertencia si hay recursos que retrasan el [**First Paint (Primer despliegue)**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint), el momento en que su sitio muestra los píxeles en la pantalla:
+Lighthouse proporciona una advertencia si hay recursos que retrasan el [**First Paint (Primer despliegue)**](/user-centric-performance-metrics/#important-metrics-to-measure), el momento en que su sitio muestra los píxeles en la pantalla:
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: Auditoría para eliminar los recursos que bloquean el renderizado", width="800", height="111" %}
 
-Para mejorar el Primer despliegue, Lighthouse recomienda insertar JavaScript crítico y diferir el resto mediante el uso de [`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript), así como también incluir CSS crítico usado en la mitad superior de la página. Esto mejora el rendimiento al eliminar los viajes de ida y vuelta al servidor para buscar activos que bloquean el renderizado. Sin embargo, el código en línea es más difícil de mantener desde una perspectiva de desarrollo y el navegador no puede almacenarlo en caché por separado.
+Para mejorar el Primer despliegue, Lighthouse recomienda insertar JavaScript crítico y diferir el resto mediante el uso de [`async`](/critical-rendering-path-adding-interactivity-with-javascript/), así como también incluir CSS crítico usado en la mitad superior de la página. Esto mejora el rendimiento al eliminar los viajes de ida y vuelta al servidor para buscar activos que bloquean el renderizado. Sin embargo, el código en línea es más difícil de mantener desde una perspectiva de desarrollo y el navegador no puede almacenarlo en caché por separado.
 
 Otro enfoque para mejorar el Primer despliegue es **renderizar en el lado del servidor** el HTML inicial de su página. Esto le muestra el contenido inmediatamente al usuario mientras los scripts aún se están recuperando, analizando y ejecutando. Sin embargo, esto puede aumentar la carga útil del archivo HTML de manera significativa, lo que puede dañar [**Time to Interactive (Tiempo para volverse interactiva)**](/tti/) o el tiempo que le toma a su aplicación volverse interactiva y responder a la entrada del usuario.
 

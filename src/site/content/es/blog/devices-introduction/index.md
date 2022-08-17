@@ -58,7 +58,7 @@ Si no te funciona, una API de nivel inferior puede ser la solución. Consulta [D
 
 ## 🛰 Acceder a las coordenadas GPS en este dispositivo {: #gps }
 
-Utiliza [Geolocation API](https://developers.google.com/web/fundamentals/native-hardware/user-location) para obtener la latitud y la longitud de la posición actual del usuario en este dispositivo.
+Utiliza [Geolocation API](/native-hardware-user-location/) para obtener la latitud y la longitud de la posición actual del usuario en este dispositivo.
 
 Si no te funciona, una API de nivel inferior puede ser la solución. Consulta [Descubre cómo comunicarte con tu dispositivo](#discover) para comenzar tu recorrido.
 

@@ -4,7 +4,7 @@ title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2022-01-11
+updated: 2022-06-09
 description: |
   Progressive Web App installability criteria.
 tags:
@@ -19,7 +19,7 @@ it easier for users to find and use them.
 Most users are familiar with installing applications, and the benefits of an
 installed experience. Installed applications appear on operating system
 launch surfaces, such as the Applications folder on Mac OS X, the Start menu
-on Windows, and the homescreen on Android and iOS. Installed applications
+on Windows, and the home screen on Android and iOS. Installed applications
 also show up in the activity switcher, device search engines such as
 Spotlight and in content sharing sheets.
 
@@ -79,7 +79,7 @@ minor differences. Check the respective sites for full details:
 On Android, if the web app manifest includes `related_applications` and
 `"prefer_related_applications": true`, the user will be directed to the
 Google Play store and
-[prompted to install the specified Android app](https://developers.google.com/web/fundamentals/app-install-banners/native)
+[prompted to install the specified Android app](https://developer.chrome.com/blog/app-install-banners-native/)
 instead.
 {% endAside %}
 

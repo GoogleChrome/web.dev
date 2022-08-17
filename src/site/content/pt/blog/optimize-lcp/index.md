@@ -154,7 +154,7 @@ Se você usar um empacotador de módulos ou ferramenta de build, inclua um plug-
 
 ### Adiando o CSS que não for crítico
 
-Use a aba [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) no Chrome DevTools para localizar qualquer CSS não utilizado em sua página web.
+Use a aba [Coverage](https://developer.chrome.com/docs/devtools/coverage/) no Chrome DevTools para localizar qualquer CSS não utilizado em sua página web.
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Aba Coverage no Chrome DevTools", width="800", height="559" %}
 
@@ -338,7 +338,7 @@ Uma lista de propriedades úteis que você pode usar:
 
 Os service workers podem ser usados para muitas tarefas úteis, incluindo a entrega de respostas HTML menores, conforme mencionado anteriormente neste artigo. Eles também podem ser usados para armazenar em cache qualquer recurso estático que possa ser servido ao navegador em vez de ser transferido pela rede em solicitações repetidas.
 
-O pré-cache de recursos críticos usando um service worker pode reduzir seus tempos de carregamento significativamente, especialmente para usuários que recarregam a página web com uma conexão mais fraca (ou mesmo a acessam offline). Bibliotecas como a [Workbox](https://developers.google.com/web/tools/workbox/) podem deixar o processo de atualização de ativos pré-armazenados mais fácil do que escrever um service worker personalizado para lidar com isso você mesmo.
+O pré-cache de recursos críticos usando um service worker pode reduzir seus tempos de carregamento significativamente, especialmente para usuários que recarregam a página web com uma conexão mais fraca (ou mesmo a acessam offline). Bibliotecas como a [Workbox](https://developer.chrome.com/docs/workbox/) podem deixar o processo de atualização de ativos pré-armazenados mais fácil do que escrever um service worker personalizado para lidar com isso você mesmo.
 
 {% Aside %} Dê uma olhada em [Confiabilidade da rede](/reliable/) para aprender mais sobre service workers e o Workbox. {% endAside %}
 
@@ -392,20 +392,20 @@ Com a pré-renderização, a TTI ainda é impactada negativamente, mas os tempos
   </figcaption>
 </figure>
 
-{% Aside %} Para um mergulho mais profundo em diferentes arquiteturas de renderização de servidor, dê uma olhada em [Renderização na web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
+{% Aside %} Para um mergulho mais profundo em diferentes arquiteturas de renderização de servidor, dê uma olhada em [Renderização na web](/rendering-on-the-web/). {% endAside %}
 
 ## Ferramentas de desenvolvimento
 
 Uma série de ferramentas estão disponíveis para medir e depurar LCP:
 
-- O [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) inclui suporte para medição de LCP em ambiente de laboratório.
+- O [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) inclui suporte para medição de LCP em ambiente de laboratório.
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- A seção de **intervalos** do painel [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) no Chrome DevTools inclui um marcador de LCP e mostra qual elemento está associado com a LCP quando você passar o mouse sobre o campo **Related Node**.
+- A seção de **intervalos** do painel [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) no Chrome DevTools inclui um marcador de LCP e mostra qual elemento está associado com a LCP quando você passar o mouse sobre o campo **Related Node**.
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="LCP no Chrome DevTools", width="800", height="509" %}
 
-- O [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report) fornece valores de LCP do mundo real agregados no nível de origem
+- O [Relatório de Experiência do Usuário Chrome](https://developer.chrome.com/docs/crux/) fornece valores de LCP do mundo real agregados no nível de origem
 
 *Com agradecimentos a Philip Walton, Katie Hempenius, Kayce Basques e Ilya Grigorik por suas análises.*

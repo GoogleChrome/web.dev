@@ -18,7 +18,6 @@ tags:
   - memory
 ---
 
-
 At Google I/O 2019 Mariko, Jake, and I shipped [PROXX], a modern Minesweeper-clone for the web. Something that sets PROXX apart is the focus on accessibility (you can play it with a screenreader!) and the ability to run as well on a feature phone as on a high-end desktop device. Feature phones are constrained in multiple ways:
 
 * Weak CPUs
@@ -116,6 +115,7 @@ The two fonts and their styles, however, are a problem as they block rendering a
 {% endAside %}
 
 ### Parallelizing loads
+
 Looking at the waterfall, we can see that once the first JavaScript file is done loading, new files start loading immediately. This is typical for module dependencies. Our main module probably has static imports, so the JavaScript cannot run until those imports are loaded. The important thing to realize here is that these kinds of dependencies are known at build time. We can make use of `<link rel="preload">` tags to make sure all dependencies start loading the second we receive our HTML.
 
 ### Results
@@ -170,7 +170,7 @@ With this in place, we can expect an improvement for our FMP. We still need to l
 
 ## Inlining
 
-Another metric that both DevTools and WebPageTest give us is [Time To First Byte (TTFB)][ttfb]. This is the time it takes from the first byte of the request being sent to the first byte of the response being received. This time is also often called a Round Trip Time (RTT), although technically there is a difference between these two numbers: RTT does not include the processing time of the request on the server side. [DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#timing-preview) and WebPageTest visualize TTFB with a light color within the request/response block.
+Another metric that both DevTools and WebPageTest give us is [Time To First Byte (TTFB)][ttfb]. This is the time it takes from the first byte of the request being sent to the first byte of the response being received. This time is also often called a Round Trip Time (RTT), although technically there is a difference between these two numbers: RTT does not include the processing time of the request on the server side. [DevTools](https://developer.chrome.com/docs/devtools/network/reference/#timing-preview) and WebPageTest visualize TTFB with a light color within the request/response block.
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J86O71iJ9OPjlginvwrp.svg", alt="", width="800", height="171" %}
@@ -283,6 +283,7 @@ With all of this in place, we reduced our `index.html` to a mere 20 KB, less tha
 Our FMP and TTI are only 100ms apart, as it is only a matter of parsing and executing the inlined JavaScript. After just 5.4s on 2G, the app is completely interactive. All the other, less essential modules are loaded in the background.
 
 ## More Sleight of Hand
+
 If you look at our list of critical modules above, you'll see that the rendering engine is not part of the critical modules. Of course, the game cannot start until we have our rendering engine to render the game. We could disable the "Start" button until our rendering engine is ready to start the game, but in our experience the user usually takes long enough to configure their game settings that this isn't necessary. Most of the time the rendering engine and the other remaining modules are done loading by the time the user presses "Start". In the rare case that the user is quicker than their network connection, we show a simple loading screen that waits for the remaining modules to finish.
 
 ## Conclusion

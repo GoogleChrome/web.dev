@@ -17,7 +17,7 @@ hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Fichários em várias cores.
 ---
 
-{% Aside %} A API de Gerenciamento de Arquivos faz parte do [projeto de recursos](/fugu-status/) e está atualmente em desenvolvimento. Esta postagem será atualizada conforme o andamento da implementação. {% endAside %}
+{% Aside %} A API de Gerenciamento de Arquivos faz parte do [projeto de recursos](https://developer.chrome.com/blog/fugu-status/) e está atualmente em desenvolvimento. Esta postagem será atualizada conforme o andamento da implementação. {% endAside %}
 
 Agora que os aplicativos da web são [capazes de ler e gravar arquivos](/file-system-access/) , a próxima etapa lógica é permitir que os desenvolvedores declarem esses mesmos aplicativos da web como gerenciadores de arquivos para os arquivos que seus aplicativos podem criar e processar. A API de gerenciamento de arquivos permite que você faça exatamente isso. Depois de registrar um aplicativo de editor de texto como um gerenciador de arquivos e depois de instalá-lo, você pode clicar com o botão direito em um arquivo `.txt` no macOS e selecionar "Obter informações" para instruir o sistema operacional de que ele deve sempre abrir arquivos `.txt` com este aplicativo como padrão .
 

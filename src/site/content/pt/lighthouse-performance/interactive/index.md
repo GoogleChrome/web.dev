@@ -70,7 +70,7 @@ Essas duas auditorias de diagnóstico fornecem oportunidades adicionais para red
 
 ## Rastreando a TTI em dispositivos de usuários reais
 
-Para saber como medir quando a TTI ocorre nos dispositivos dos seus usuários, consulte a página Google [Métricas de desempenho centradas no usuário](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics). A [seção Tracking TTI](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_tti) descreve como acessar programaticamente os dados do TTI e enviá-los ao Google Analytics.
+Para saber como medir quando a TTI ocorre nos dispositivos dos seus usuários, consulte a página Google [Métricas de desempenho centradas no usuário](/user-centric-performance-metrics/). A [seção Tracking TTI](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_tti) descreve como acessar programaticamente os dados do TTI e enviá-los ao Google Analytics.
 
 {% Aside %} TTI pode ser difícil de rastrear em campo. Rastrear o [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) pode ser um bom proxy para TTI. {% endAside %}
 
@@ -78,9 +78,9 @@ Para saber como medir quando a TTI ocorre nos dispositivos dos seus usuários, c
 
 ## Recursos
 
-- [Código fonte para a auditoria **Time to Interactive**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
+- [Código fonte para a auditoria **Time to Interactive**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/interactive.js)
 - [Guia de pontuação do Lighthouse](/performance-scoring)
 - [First Interactive And Consistently Interactive](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
-- [Otimização de inicialização de JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
+- [Otimização de inicialização de JavaScript](/optimizing-content-efficiency-javascript-startup-optimization/)
 - [Reduza payloads JavaScript com tree shaking](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/)
 - [Otimize recursos de terceiros](/fast/#optimize-your-third-party-resources)

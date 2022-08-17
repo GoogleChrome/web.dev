@@ -35,7 +35,7 @@ because of concerns about storage space.
 To reduce the Android app's footprint on users' devices
 while keeping the benefits of the Android experience,
 the team decided to turn to
-[Trusted Web Activities (TWAs)](https://developers.google.com/web/updates/2019/02/using-twa).
+[Trusted Web Activities (TWAs)](https://developer.chrome.com/docs/android/trusted-web-activity/).
 
 ## What's a TWA?
 Before Chrome 72, Android developers who wanted to display web content in
@@ -46,7 +46,7 @@ it's not as fast as Chrome and doesn't include all of Chrome's APIs and features
 So, if you wanted behavior that WebView's rendering engine didn't support,
 you had to build your own browser around it—which isn't exactly trivial!
 
-[Trusted Web Activities (TWAs)](https://developers.google.com/web/updates/2019/02/using-twa)
+[Trusted Web Activities (TWAs)](https://developer.chrome.com/docs/android/trusted-web-activity/)
 address those limitations by showing web content directly in Chrome.
 Breaking down the TWA name helps explain its features:
 - An _activity_ is one screen or view in an Android app's user interface.
@@ -173,6 +173,6 @@ They can be a great fit for many projects currently built as platform-specific a
 from shopping carts and checkout flows to FAQs and contact forms.
 
 Check out these links to get started with TWAs:
-- [Using Trusted Web Activities](https://developers.google.com/web/updates/2019/02/using-twa)
+- [Using Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/)
 - [Taking Chrome Full Screen with Trusted Web Activities (YouTube)](https://youtu.be/6lHBw3F4cWs)
 - [A complete guide to Trusted Web Activity (TWA): OYO case study](https://medium.com/@ankitjainaj/3dd327d7afc5)

@@ -256,7 +256,7 @@ Chromium 93 및 Safari 15부터 `meta` 테마 색상 요소의 `media` 특성을
 
 ### DevTools에서 `prefers-color-scheme` 에뮬레이션
 
-전체 운영 체제의 색 구성표를 전환하는 것은 매우 성가신 일이 될 수 있으므로, Chrome DevTools를 사용하여 현재 표시되는 탭에만 영향을 미치는 방식으로 사용자가 선호하는 색 구성표를 에뮬레이션할 수 있습니다. [명령 메뉴](https://developers.google.com/web/tools/chrome-devtools/command-menu)를 열고 `Rendering` 입력을 시작하고 `Show Rendering` 명령을 실행한 다음, **CSS 미디어 요소 prefers-color-scheme 에뮬레이션** 옵션을 변경합니다.
+전체 운영 체제의 색 구성표를 전환하는 것은 매우 성가신 일이 될 수 있으므로, Chrome DevTools를 사용하여 현재 표시되는 탭에만 영향을 미치는 방식으로 사용자가 선호하는 색 구성표를 에뮬레이션할 수 있습니다. [명령 메뉴](https://developer.chrome.com/docs/devtools/command-menu/)를 열고 `Rendering` 입력을 시작하고 `Show Rendering` 명령을 실행한 다음, **CSS 미디어 요소 prefers-color-scheme 에뮬레이션** 옵션을 변경합니다.
 
 <figure>   {% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="A Chrome DevTools의 렌더링 탭에 있는 'CSS 미디어 요소 prefers-color-scheme 에뮬레이션' 옵션을 보여주는 스크린샷", width="800", height="552" %}</figure>
 

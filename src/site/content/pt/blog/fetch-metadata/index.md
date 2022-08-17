@@ -19,7 +19,7 @@ feedback:
 
 ## Por que você deve se preocupar em isolar seus recursos da Web?
 
-Muitos aplicativos da wWeb são vulneráveis a ataques [entre origens](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) [como falsificação de solicitação intersites](https://portswigger.net/web-security/csrf) (CSRF), [inclusão de script intersites](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), ataques programados, [vazamento de informações entre origens](https://arxiv.org/pdf/1908.02204.pdf) ou ataques de canal lateral de execução especulativa ([Espectro).](https://developers.google.com/web/updates/2018/02/meltdown-spectre)
+Muitos aplicativos da wWeb são vulneráveis a ataques [entre origens](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) [como falsificação de solicitação intersites](https://portswigger.net/web-security/csrf) (CSRF), [inclusão de script intersites](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), ataques programados, [vazamento de informações entre origens](https://arxiv.org/pdf/1908.02204.pdf) ou ataques de canal lateral de execução especulativa ([Espectro).](https://developer.chrome.com/blog/meltdown-spectre/)
 
 Os cabeçalhos de solicitação de [busca de metadados](https://www.w3.org/TR/fetch-metadata/) (Fetch Metadata) permitem que você implante um forte mecanismo de defesa em profundidade - uma Política de Isolamento de Recursos - para proteger seu aplicativo contra esses ataques comuns entre origens.
 

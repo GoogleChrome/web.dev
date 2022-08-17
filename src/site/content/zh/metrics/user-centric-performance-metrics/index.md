@@ -93,7 +93,7 @@ tags:
 - **[First input delay 首次输入延迟 (FID)](/fid/)：**测量从用户第一次与您的网站交互（例如当他们单击链接、点按按钮或使用由 JavaScript 驱动的自定义控件）直到浏览器实际能够对交互做出响应所经过的时间。*([实际](#in-the-field))*
 - **[Time to Interactive 可交互时间 (TTI)](/tti/)：**测量页面从开始加载到视觉上完成渲染、初始脚本（如果有的话）完成加载，并能够快速、可靠地响应用户输入所需的时间。*（[实验室](#in-the-lab)）*
 - **[Total blocking time 总阻塞时间 (TBT)](/tbt/)：**测量 FCP 与 TTI 之间的总时间，这期间，主线程被阻塞的时间过长，无法作出输入响应。*（[实验室](#in-the-lab)）*
-- **[Cumulative layout shift 累积布局偏移 (CLS)](/cls/)：**测量页面在开始加载和其[生命周期状态](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)变为隐藏期间发生的所有意外布局偏移的累积分数。*（[实验室](#in-the-lab)、[实际](#in-the-field)）*
+- **[Cumulative layout shift 累积布局偏移 (CLS)](/cls/)：**测量页面在开始加载和其[生命周期状态](https://developer.chrome.com/blog/page-lifecycle-api/)变为隐藏期间发生的所有意外布局偏移的累积分数。*（[实验室](#in-the-lab)、[实际](#in-the-field)）*
 
 虽然此列表中包含的指标能够测量与用户相关的众多方面的性能，但该列表并不包括所有内容（例如，当前还未涵盖运行时响应度和平滑度）。
 

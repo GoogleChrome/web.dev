@@ -71,7 +71,7 @@ Veja [Como melhorar a Largest Contentful Paint em seu site](/largest-contentful-
 
 ## Rastreando FMP em dispositivos de usuários reais
 
-Para saber como medir quando a FMP realmente ocorre nos dispositivos dos usuários, consulte a página [Métricas de desempenho centradas no usuário do Google.](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) A seção [Acompanhamento de FMP usando elementos hero](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements) descreve como acessar programaticamente os dados da FCP e enviá-los ao Google Analytics.
+Para saber como medir quando a FMP realmente ocorre nos dispositivos dos usuários, consulte a página [Métricas de desempenho centradas no usuário do Google.](/user-centric-performance-metrics/) A seção [Acompanhamento de FMP usando elementos hero](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements) descreve como acessar programaticamente os dados da FCP e enviá-los ao Google Analytics.
 
 Consulte [Avaliação do desempenho de carregamento do Google na vida real com navegação e tempo de recursos](https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/) para obter mais informações sobre como coletar métricas de usuários reais. A auditoria [Marcas e medidas de tempo do usuário do Lighthouse](/user-timings) permite que você veja os dados de tempo do usuário em seu relatório.
 
@@ -79,7 +79,7 @@ Consulte [Avaliação do desempenho de carregamento do Google na vida real com n
 
 ## Recursos
 
-- [Código-fonte para auditoria da **First Meaningful Paint**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
+- [Código-fonte para auditoria da **First Meaningful Paint**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/first-meaningful-paint.js)
 - [Guia de pontuação do Lighthouse v3](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Tempo até a First Meaningful Paint: uma abordagem baseada em layout](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
 - [Largest Contentful Paint](/lcp/)

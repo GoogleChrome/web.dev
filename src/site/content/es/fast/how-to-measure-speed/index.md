@@ -13,6 +13,7 @@ description: |2
   herramientas que pueden ayudarlo a recopilar datos de laboratorio o de campo para evaluar el rendimiento de la página.
 web_lighthouse: N / A
 date: 2019-05-01
+updated: 2022-07-18
 tags:
   - performance
 ---
@@ -33,14 +34,14 @@ El rendimiento en el mundo real es muy variable debido a las diferencias en los 
 
 ### Datos de laboratorio
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) toma una URL y ejecuta una serie de auditorías en la página, generando un informe sobre qué tan bien le fue a la página. Hay varias formas de ejecutar Lighthouse, incluida una opción para auditar fácilmente una página desde Chrome DevTools.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) toma una URL y ejecuta una serie de auditorías en la página, generando un informe sobre qué tan bien le fue a la página. Hay varias formas de ejecutar Lighthouse, incluida una opción para auditar fácilmente una página desde Chrome DevTools.
 
 ### Datos de campo
 
-[El Informe de experiencia del usuario de Chrome (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report/) proporciona métricas que muestran cómo los usuarios de Chrome en el mundo real experimentan los destinos populares en la web.
+[El Informe de experiencia del usuario de Chrome (CrUX)](https://developer.chrome.com/docs/crux/) proporciona métricas que muestran cómo los usuarios de Chrome en el mundo real experimentan los destinos populares en la web.
 
 ### Otras herramientas
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) proporciona datos de laboratorio y de campo sobre una página. Utiliza Lighthouse para recopilar y analizar datos de laboratorio sobre la página, mientras que los datos de campo del mundo real se basan en el conjunto de datos del Informe de experiencia del usuario de Chrome.
+[PageSpeed Insights](https://pagespeed.web.dev/) proporciona datos de laboratorio y de campo sobre una página. Utiliza Lighthouse para recopilar y analizar datos de laboratorio sobre la página, mientras que los datos de campo del mundo real se basan en el conjunto de datos del Informe de experiencia del usuario de Chrome.
 
-[Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) son un conjunto de herramientas para desarrolladores web integradas directamente en el navegador Google Chrome. Le permite perfilar el tiempo de ejecución de una página, así como identificar y depurar cuellos de botella de rendimiento.
+[Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) son un conjunto de herramientas para desarrolladores web integradas directamente en el navegador Google Chrome. Le permite perfilar el tiempo de ejecución de una página, así como identificar y depurar cuellos de botella de rendimiento.

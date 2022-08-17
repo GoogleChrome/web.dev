@@ -98,7 +98,7 @@ Content-Security-Policy:
 4. Safari 및 이전 브라우저를 지원하도록 대비책을 추가합니다.
 5. CSP를 배포합니다.
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) (플래그 `--preset=experimental`를 포함한 v7.3.0 이상) **모범 사례** 감사를 이 프로세스 전반에 걸쳐 사용하여 사이트에 CSP가 있는지, 그리고 이것이 XSS에 대해 효과적일 만큼 충분히 엄격한지 확인할 수 있습니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) (플래그 `--preset=experimental`를 포함한 v7.3.0 이상) **모범 사례** 감사를 이 프로세스 전반에 걸쳐 사용하여 사이트에 CSP가 있는지, 그리고 이것이 XSS에 대해 효과적일 만큼 충분히 엄격한지 확인할 수 있습니다.
 
 {% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="시행 모드에서 CSP를 찾을 수 없다는 Lighthouse 보고서 경고", width="730", height="78" %}
 
@@ -377,7 +377,7 @@ Content-Security-Policy:
 
 로컬 개발 환경에서 CSP에 의해 차단되는 합법적인 스크립트가 없는지 확인한 후 CSP를 (스테이징 후) 프로덕션 환경에 배포할 수 있습니다.
 
-1. `Content-Security-Policy-Report-Only` 헤더를 사용하여 보고서 전용 모드에서 CSP를 (선택적으로) 배포합니다. [보고 API](https://developers.google.com/web/updates/2018/09/reportingapi)에 대해 자세히 알아보세요. 보고서 전용 모드는 실제로 CSP 제한을 적용하기 전에 프로덕션의 새 CSP와 같은 잠재적인 주요 변경 사항을 테스트하는 데 편리합니다. 보고 전용 모드에서 CSP는 애플리케이션의 동작에 영향을 주지 않습니다(실제로 중단되는 것은 없음). 그러나 브라우저는 CSP와 호환되지 않는 패턴이 발생하는 경우 콘솔 오류 및 위반 보고서를 계속 생성합니다(따라서 최종 사용자에게 어떤 문제가 발생했는지 확인할 수 있습니다).
+1. `Content-Security-Policy-Report-Only` 헤더를 사용하여 보고서 전용 모드에서 CSP를 (선택적으로) 배포합니다. [보고 API](/reporting-api/)에 대해 자세히 알아보세요. 보고서 전용 모드는 실제로 CSP 제한을 적용하기 전에 프로덕션의 새 CSP와 같은 잠재적인 주요 변경 사항을 테스트하는 데 편리합니다. 보고 전용 모드에서 CSP는 애플리케이션의 동작에 영향을 주지 않습니다(실제로 중단되는 것은 없음). 그러나 브라우저는 CSP와 호환되지 않는 패턴이 발생하는 경우 콘솔 오류 및 위반 보고서를 계속 생성합니다(따라서 최종 사용자에게 어떤 문제가 발생했는지 확인할 수 있습니다).
 2. CSP가 최종 사용자에게 손상을 초래하지 않을 것이라고 확신하면 `Content-Security-Policy` 응답 헤더를 사용하여 CSP를 배포합니다. **이 단계를 완료해야만 CSP가 XSS로부터 애플리케이션을 보호하기 시작합니다** . HTTP 헤더 서버 측을 통해 CSP를 설정하는 것이 `<meta>` 태그로 설정하는 것보다 더 안전합니다. 가능하면 헤더를 사용하십시오.
 
 {% Aside 'gotchas' %} 사용 중인 CSP를 [CSP Evaluator](https://csp-evaluator.withgoogle.com) 또는 Lighthouse로 확인하여 "엄격"한지 확인하세요. 정책을 조금만 변경해도 보안이 크게 저하될 수 있으므로 이는 매우 중요합니다. {% endAside %}

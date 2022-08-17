@@ -14,7 +14,7 @@ Uma tela inicial personalizada torna seu [Progressive Web App (PWA)](/discover-i
 
 ## Como a auditoria da tela inicial do Lighthouse falha
 
-[O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não têm uma tela inicial personalizada:
+[O Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que não têm uma tela inicial personalizada:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Auditoria do Lighthouse mostrando que o site não está configurado para ter uma tela inicial personalizada", width="800", height="98" %}</figure>
 
@@ -35,4 +35,4 @@ Consulte [Adicionando uma tela inicial para aplicativos da Web instalados no Chr
 
 ## Recursos
 
-[Código-fonte da auditoria **Não está configurado para uma tela inicial personalizada**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/splash-screen.js)
+[Código-fonte da auditoria **Não está configurado para uma tela inicial personalizada**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/splash-screen.js)

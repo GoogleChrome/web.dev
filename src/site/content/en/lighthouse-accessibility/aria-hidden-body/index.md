@@ -17,7 +17,7 @@ element hides your entire web page from assistive technology users.
 
 ## How Lighthouse identifies hidden body elements
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags pages whose `<body>` element has an `aria-hidden="true"` attribute:
 
 <figure>
@@ -63,5 +63,5 @@ which precedes the dialog in the HTML:
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-body.js" rel="noopener">Source code for **`[aria-hidden="true"]` is present on the document `<body>`** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-hidden-body.js" rel="noopener">Source code for **`[aria-hidden="true"]` is present on the document `<body>`** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-hidden-body" rel="noopener">aria-hidden="true" must not be present on the document &#60;body&#62; (Deque University)</a>

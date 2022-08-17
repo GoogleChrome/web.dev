@@ -55,7 +55,7 @@ Aqui está um exemplo de um formulário de login simples que demonstra todas as 
 Existem também duas APIs relativamente novas não abordadas neste artigo que podem ajudá-lo a construir uma melhor experiência de login:
 
 - [**WebOTP**](/web-otp/): para fornecer senhas únicas ou números PIN via SMS para telefones celulares. Isso pode permitir que os usuários selecionem um número de telefone como identificador (não é necessário inserir um endereço de e-mail!). Também permite a verificação em duas etapas para login e códigos únicos para confirmação de pagamento.
-- [**Gerenciamento de credenciais**](https://developers.google.com/web/updates/2016/04/credential-management-api): para permitir que os desenvolvedores armazenem e recuperem credenciais de senha e credenciais federadas de maneira programática. {% endAside %}
+- [**Gerenciamento de credenciais**](https://developer.chrome.com/blog/credential-management-api/): para permitir que os desenvolvedores armazenem e recuperem credenciais de senha e credenciais federadas de maneira programática. {% endAside %}
 
 ## Use HTML significativo {: #meaningful-html}
 
@@ -421,11 +421,11 @@ IU e UX bem projetadas podem reduzir o abandono do formulário de login:
 
 ## Continue aprendendo {: #resources}
 
-- [Crie formulários incríveis](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Crie formulários incríveis](/learn/forms/)
 - [Melhores práticas para design de formulários para celular](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Controles de formulário mais capazes](/more-capable-form-controls)
 - [Criação de formulários acessíveis](https://webaim.org/techniques/forms/)
-- [Simplificação do fluxo de login usando a API de gerenciamento de credenciais](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Simplificação do fluxo de login usando a API de gerenciamento de credenciais](https://developer.chrome.com/blog/credential-management-api/)
 - [Verifique os números de telefone na web com a API WebOTP](/web-otp/)
 
 Foto de [Meghan Schiereck](https://unsplash.com/photos/_XFObcM_7KU) no [Unsplash](https://unsplash.com).

@@ -31,7 +31,7 @@ Lighthouse muestra una auditoría como fallida cuando se tarda una cantidad sign
 
 Divida el paquete de JavaScript para enviar solo el código necesario para la ruta inicial cuando el usuario carga una aplicación. Esto minimiza la cantidad de script que necesita ser analizado y compilado, resultando en tiempos de carga de página más rápidos.
 
-Los paquetes de módulos populares como[webpack](https://webpack.js.org/guides/code-splitting/), [Parcel](https://parceljs.org/code_splitting.html) y [Rollup](https://rollupjs.org/guide/en#dynamic-import) le permiten dividir sus paquetes mediante [importaciones dinámicas](https://developers.google.com/web/updates/2017/11/dynamic-import). Por ejemplo, considere el siguiente fragmento de código que muestra un ejemplo de una función `someFunction` que se activa al enviar un formulario.
+Los paquetes de módulos populares como[webpack](https://webpack.js.org/guides/code-splitting/), [Parcel](https://parceljs.org/code_splitting.html) y [Rollup](https://rollupjs.org/guide/en#dynamic-import) le permiten dividir sus paquetes mediante [importaciones dinámicas](https://v8.dev/features/dynamic-import). Por ejemplo, considere el siguiente fragmento de código que muestra un ejemplo de una función `someFunction` que se activa al enviar un formulario.
 
 ```js
 import moduleA from "library";

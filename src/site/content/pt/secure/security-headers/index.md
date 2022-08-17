@@ -397,7 +397,7 @@ Como usar as opções do X-Frame
 
 Todos os documentos que não foram projetados para serem incorporados devem usar o cabeçalho `X-Frame-Options`
 
-Você pode experimentar como as configurações a seguir afetam o carregamento de um iframe [nesta demonstração](https://first-party-test.glitch.me/). Altere o `X-Frame-Options` e clique no botão **Recarregar o iframe**.
+Você pode experimentar como as configurações a seguir afetam o carregamento de um iframe [nesta demonstração](https://cross-origin-isolation.glitch.me/). Altere o `X-Frame-Options` e clique no botão **Recarregar o iframe**.
 
 #### Protege o seu site de ser incorporado por qualquer outro site
 
@@ -457,7 +457,7 @@ Como usar o CORP
 
 É recomendável que **todos os** recursos sejam servidos com um dos três cabeçalhos a seguir.
 
-Você pode experimentar como as configurações a seguir afetam o carregamento de recursos em um ambiente [`Cross-Origin-Embedder-Policy: require-corp`](#coep) [nesta demonstração](https://first-party-test.glitch.me/?coep=require-corp&). Altere o **menu suspenso Cross-Origin-Resource-Policy** e clique no botão **Recarregar o iframe** ou **Recarregar a imagem** para ver o efeito.
+Você pode experimentar como as configurações a seguir afetam o carregamento de recursos em um ambiente [`Cross-Origin-Embedder-Policy: require-corp`](#coep) [nesta demonstração](https://cross-origin-isolation.glitch.me/?coep=require-corp&). Altere o **menu suspenso Cross-Origin-Resource-Policy** e clique no botão **Recarregar o iframe** ou **Recarregar a imagem** para ver o efeito.
 
 #### Permitir que recursos sejam carregados `cross-origin`
 
@@ -531,7 +531,7 @@ Como usar o COOP
 
 ### Usos recomendados
 
-Você pode tentar como as configurações a seguir afetam a comunicação com uma janela pop-up de origem cruzada [nesta demonstração](https://first-party-test.glitch.me/). Altere o **menu suspenso Cross-Origin-Opener-Policy** para o documento e a janela pop-up, clique no botão **Abrir um pop-up** e, em seguida, clique em **Enviar uma postMessage** para confirmar se a mensagem foi realmente entregue.
+Você pode tentar como as configurações a seguir afetam a comunicação com uma janela pop-up de origem cruzada [nesta demonstração](https://cross-origin-isolation.glitch.me/). Altere o **menu suspenso Cross-Origin-Opener-Policy** para o documento e a janela pop-up, clique no botão **Abrir um pop-up** e, em seguida, clique em **Enviar uma postMessage** para confirmar se a mensagem foi realmente entregue.
 
 #### Isole um documento de janelas de origem cruzada
 
@@ -655,7 +655,7 @@ Access-Control-Allow-Credentials: true
 - `Access-Control-Allow-Origin: https://example.com` indica que `https://example.com` pode acessar o conteúdo da resposta. Os recursos que devem ser lidos por qualquer site podem definir esse cabeçalho como `*`, caso em que o navegador exigirá apenas que a solicitação seja feita [sem credenciais](https://developer.mozilla.org/docs/Web/API/Request/credentials#value).
 - `Access-Control-Allow-Credentials: true` indica que as solicitações que carregam credenciais (cookies) têm permissão para carregar o recurso. Caso contrário, as solicitações autenticadas serão rejeitadas mesmo se a origem da solicitação estiver presente no cabeçalho `Access-Control-Allow-Origin`
 
-Você pode experimentar como a solicitação simples afeta o carregamento de recursos em um ambiente [`Cross-Origin-Embedder-Policy: require-corp`](#coep) [nesta demonstração](https://first-party-test.glitch.me/?coep=require-corp&). Clique na **caixa de seleção Compartilhamento de recursos de origem cruzada** e clique no botão **Recarregar a imagem** para ver o efeito.
+Você pode experimentar como a solicitação simples afeta o carregamento de recursos em um ambiente [`Cross-Origin-Embedder-Policy: require-corp`](#coep) [nesta demonstração](https://cross-origin-isolation.glitch.me/?coep=require-corp&). Clique na **caixa de seleção Compartilhamento de recursos de origem cruzada** e clique no botão **Recarregar a imagem** para ver o efeito.
 
 #### Solicitações comprovadas
 
@@ -726,7 +726,7 @@ COEP assume um único valor de `require-corp`. Ao enviar esse cabeçalho, você 
 
 {% Img src="image/admin/MAhaVZdShm8tRntWieU4.png", alt="Como a COEP funciona", width="800", height="410" %}
 
-Você pode experimentar como as configurações a seguir afetam o carregamento de recursos [nesta demonstração](https://first-party-test.glitch.me/). Altere o menu suspenso **Cross-Origin-Embedder-Policy**, o menu suspenso **Cross-Origin-Resource-Policy**, a caixa de seleção **Apenas relatório** e afins para ver como eles afetam o carregamento de recursos. Além disso, abra [a demonstração do endpoint de relatório](https://reporting-endpoint.glitch.me/) para ver se os recursos bloqueados são relatados.
+Você pode experimentar como as configurações a seguir afetam o carregamento de recursos [nesta demonstração](https://cross-origin-isolation.glitch.me/). Altere o menu suspenso **Cross-Origin-Embedder-Policy**, o menu suspenso **Cross-Origin-Resource-Policy**, a caixa de seleção **Apenas relatório** e afins para ver como eles afetam o carregamento de recursos. Além disso, abra [a demonstração do endpoint de relatório](https://reporting-endpoint.glitch.me/) para ver se os recursos bloqueados são relatados.
 
 #### Ativar isolamento de origem cruzada
 

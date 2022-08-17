@@ -30,7 +30,7 @@ Ya hemos mencionado algunas cosas que se pueden incluir en un presupuesto de ren
 - Tamaño máximo de scripts, incluyendo marcos
 - Número total de recursos externos, como scripts de terceros
 
-Sin embargo, estos números no le dicen mucho sobre la experiencia del usuario. Dos páginas con la misma cantidad de solicitudes o el mismo peso se pueden procesar de manera diferente según el orden en que se soliciten los recursos. Si un [recurso crítico](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) como una imagen principal o una hoja de estilo en una de las páginas se carga tarde en el proceso, los usuarios esperarán más para ver algo útil y percibirán la página como más lenta. Si en la otra página las partes más importantes se cargan rápidamente, es posible que ni siquiera se den cuenta si el resto de la página no lo hace.
+Sin embargo, estos números no le dicen mucho sobre la experiencia del usuario. Dos páginas con la misma cantidad de solicitudes o el mismo peso se pueden procesar de manera diferente según el orden en que se soliciten los recursos. Si un [recurso crítico](/critical-rendering-path/) como una imagen principal o una hoja de estilo en una de las páginas se carga tarde en el proceso, los usuarios esperarán más para ver algo útil y percibirán la página como más lenta. Si en la otra página las partes más importantes se cargan rápidamente, es posible que ni siquiera se den cuenta si el resto de la página no lo hace.
 
 <figure>{% Img src ="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Imagen del procesamiento progresivo de la página basada en la ruta crítica", width="611", height="300" %}</figure>
 
@@ -38,7 +38,7 @@ Por eso es importante realizar un seguimiento de otro tipo de métrica.
 
 ### Tiempos de hito ⏱️
 
-Los tiempos de hito marcan eventos que suceden durante la carga de la página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) o un evento de [carga.](https://developer.mozilla.org/docs/Web/Events/load) Los tiempos más útiles sonlas  [métricas de rendimiento centradas en el usuario](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) que le dicen algo sobre la experiencia al cargar una página. Estas métricas están disponibles a través de las [API del navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) y como parte de los informes [Lighthouse](https://developers.google.com/web/tools/lighthouse/).
+Los tiempos de hito marcan eventos que suceden durante la carga de la página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) o un evento de [carga.](https://developer.mozilla.org/docs/Web/Events/load) Los tiempos más útiles sonlas  [métricas de rendimiento centradas en el usuario](/user-centric-performance-metrics/) que le dicen algo sobre la experiencia al cargar una página. Estas métricas están disponibles a través de las [API del navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) y como parte de los informes [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/).
 
 La métrica [First Contentful Paint o primer despliegue de contenido (FCP)](/fcp/) mide el momento en que el navegador muestra el primer fragmento de contenido del DOM, como texto o imágenes.
 
@@ -46,7 +46,7 @@ La métrica [First Contentful Paint o primer despliegue de contenido (FCP)](/fcp
 
 ### Métricas basadas en reglas 💯
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) y [WebPageTest](https://www.webpagetest.org/) calculan [las puntuaciones de rendimiento](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) en función de las reglas generales de mejores prácticas, que puede utilizar como directrices. Como beneficio adicional, Lighthouse también le ofrece sugerencias para optimizaciones simples.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) y [WebPageTest](https://www.webpagetest.org/) calculan [las puntuaciones de rendimiento](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) en función de las reglas generales de mejores prácticas, que puede utilizar como directrices. Como beneficio adicional, Lighthouse también le ofrece sugerencias para optimizaciones simples.
 
 Obtendrá los mejores resultados si realiza un seguimiento de una combinación de métricas de rendimiento basadas en la cantidad y centradas en el usuario. Concéntrese en el tamaño de los activos en las primeras fases de un proyecto y comience a rastrear FCP y TTI en cuanto sea posible.
 
@@ -57,7 +57,7 @@ La única forma de saber realmente qué funciona mejor para su sitio es probarlo
 Si no tiene tiempo para eso, aquí hay buenos números predeterminados para comenzar:
 
 - Menos de **5 s** Tiempo para interactuar
-- Menos de **170 KB** de recursos de [ruta crítica](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) (comprimidos/minificados)
+- Menos de **170 KB** de recursos de [ruta crítica](/critical-rendering-path/) (comprimidos/minificados)
 
 Estos [números](https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/) se calculan en función de los dispositivos de referencia del mundo real y **la velocidad de la red 3G**. [Más de la mitad del tráfico de Internet](https://www.statista.com/statistics/277125/share-of-website-traffic-coming-from-mobile-devices/) actual ocurre en redes móviles, por lo que debe usar la velocidad de la red 3G como punto de partida.
 

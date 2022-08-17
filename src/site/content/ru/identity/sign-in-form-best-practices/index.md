@@ -55,7 +55,7 @@ codelabs:
 Кроме того, существует два указанных ниже относительно новых API, которые не рассмотрены в этой статье и с помощью которых можно улучшить процесс входа в систему.
 
 - [**WebOTP**](/web-otp/): используется для доставки одноразовых секретных кодов или PIN-кодов с помощью SMS на мобильные телефоны. Благодаря этому пользователи могут выбрать номер телефона в качестве идентификатора (не нужно будет вводить адрес электронной почты). Кроме того, можно будет использовать двухэтапную проверку для входа в систему и одноразовые коды для подтверждения платежей.
-- [**Управление учетными данными**](https://developers.google.com/web/updates/2016/04/credential-management-api): позволяет разработчикам программным способом хранить и получать учетные данные с паролями и федеративные учетные данные. {% endAside %}
+- [**Управление учетными данными**](https://developer.chrome.com/blog/credential-management-api/): позволяет разработчикам программным способом хранить и получать учетные данные с паролями и федеративные учетные данные. {% endAside %}
 
 ## Используйте понятный HTML {: #meaningful-html }
 
@@ -421,11 +421,11 @@ function togglePassword() {
 
 ## Продолжайте учиться {: #resources }
 
-- [Создание потрясающих форм](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Создание потрясающих форм](/learn/forms/)
 - [Рекомендации по разработке форм для мобильных устройств](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Функциональные элементы управления в формах](/more-capable-form-controls)
 - [Создание форм с поддержкой специальных возможностей](https://webaim.org/techniques/forms/)
-- [Оптимизация процесса входа в систему с помощью Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Оптимизация процесса входа в систему с помощью Credential Management API](https://developer.chrome.com/blog/credential-management-api/)
 - [Проверка номеров телефонов в Интернете с помощью WebOTP API](/web-otp/)
 
 Фотография [Меган Ширек](https://unsplash.com/photos/_XFObcM_7KU) (Meghan Schiereck) с [Unsplash](https://unsplash.com) .

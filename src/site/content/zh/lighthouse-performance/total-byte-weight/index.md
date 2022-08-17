@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse 网络有效负载审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 显示页面请求的所有资源的总大小（单位是 [千字节 (KiB) ）。](https://en.wikipedia.org/wiki/Kibibyte)首先呈现最大的请求：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 显示页面请求的所有资源的总大小（单位是 [千字节 (KiB) ）。](https://en.wikipedia.org/wiki/Kibibyte)首先呈现最大的请求：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Lighthouse 避免巨大网络有效负载审计的截图", width="800", height="518" %}</figure>
 
@@ -55,4 +55,4 @@ web_lighthouse:
 
 ## 资源
 
-[**避免巨大的网络有效负载**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)
+[**避免巨大的网络有效负载**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/total-byte-weight.js)

@@ -775,11 +775,11 @@ That, in turn, gives you a solid basis for prioritizing effort, making changes, 
 * [Sign-in form best practices](/sign-in-form-best-practices)
 * [Sign-up form best practices](/sign-up-form-best-practices)
 * [Verify phone numbers on the web with the WebOTP API](/web-otp)
-* [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+* [Create Amazing Forms](/learn/forms/)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
-* [Streamlining the Sign-up Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
+* [Streamlining the Sign-up Flow Using Credential Management API](https://developer.chrome.com/blog/credential-management-api/)
 * [Frank's Compulsive Guide to Postal Addresses](http://www.columbia.edu/~fdc/postal/) provides
 useful links and extensive guidance for address formats in over 200 countries.
 * [Countries Lists](http://www.countries-list.info/Download-List) has a tool for downloading country

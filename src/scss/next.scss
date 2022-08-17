@@ -503,6 +503,10 @@ details summary + * {
 
 /// Form fields
 
+// Style inputs without a type attribute the same as type="text", since they
+// are semantically equivalent.
+// See https://github.com/GoogleChrome/web.dev/issues/7638#issuecomment-1087607518
+input:not([type]),
 input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -526,6 +530,10 @@ textarea {
   @include apply-utility('leading', 'short');
 }
 
+// Style inputs without a type attribute the same as type="text", since they
+// are semantically equivalent.
+// See https://github.com/GoogleChrome/web.dev/issues/7638#issuecomment-1087607518
+input:not([type]),
 input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -719,6 +727,7 @@ video,
 @import 'blocks/carousel';
 @import 'blocks/compare';
 @import 'blocks/counter';
+@import 'blocks/ellipsis';
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
 @import 'blocks/feature-card';
@@ -781,6 +790,7 @@ video,
 @import 'pages/measure';
 @import 'pages/path';
 @import 'pages/pattern';
+@import 'pages/spaces';
 
 // Temporary rollout patches
 @import 'rollout';

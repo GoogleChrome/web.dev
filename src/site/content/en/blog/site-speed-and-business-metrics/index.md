@@ -160,7 +160,7 @@ options.
 *   Use a tool like [Squoosh](https://squoosh.app/) to manually optimize the
     images on your test page
 *   [Use DevTools code
-    coverage](https://developers.google.com/web/tools/chrome-devtools/coverage)
+    coverage](https://developer.chrome.com/docs/devtools/coverage/)
     to manually eliminate unused JavaScript or CSS just for that one page
 *   [Efficiently load third-party
     scripts](/efficiently-load-third-party-javascript/)
@@ -178,7 +178,7 @@ Additional optimizations to consider can be found at [Fast load times](/fast/)
 and [Frontend Performance
 Checklist](https://www.smashingmagazine.com/2020/01/front-end-performance-checklist-2020-pdf-pages/).
 You can also use [PageSpeed
-Insights](https://developers.google.com/speed/pagespeed/insights/) to run
+Insights](https://pagespeed.web.dev/) to run
 Lighthouse, which identifies opportunities to improve performance.
 
 **Slow down the page**

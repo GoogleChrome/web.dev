@@ -23,7 +23,7 @@ tags:
 
 拆分 JavaScript 包以仅在用户加载应用程序时发送初始路由所需的代码。这最大限度地减少了需要解析和编译的脚本数量，从而加快了页面加载时间。
 
-流行的模块包（如 [webpack](https://webpack.js.org/guides/code-splitting/)、[Parcel](https://parceljs.org/code_splitting.html) 和 [Rollup](https://rollupjs.org/guide/en#dynamic-import)）允许您使用[动态导入](https://developers.google.com/web/updates/2017/11/dynamic-import)来拆分包。例如，考虑以下的代码片段，其中显示了在提交表单时触发的 `someFunction` 方法示例。
+流行的模块包（如 [webpack](https://webpack.js.org/guides/code-splitting/)、[Parcel](https://parceljs.org/code_splitting.html) 和 [Rollup](https://rollupjs.org/guide/en#dynamic-import)）允许您使用[动态导入](https://v8.dev/features/dynamic-import)来拆分包。例如，考虑以下的代码片段，其中显示了在提交表单时触发的 `someFunction` 方法示例。
 
 ```js
 import moduleA from "library";

@@ -20,7 +20,7 @@ tags:
 
 As a developer, you often don't have control over [which third-party scripts](/third-party-javascript/#network) your site loads. Before you can optimize third-party content you have to do some detective work to find out what's making your site slow. 🕵️
 
-In this post, you'll learn how to use [Lighthouse](https://developers.google.com/web/tools/lighthouse/) and [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) to identify slow third-party resources. The post walks through increasingly robust techniques which are best used in combination.
+In this post, you'll learn how to use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/) to identify slow third-party resources. The post walks through increasingly robust techniques which are best used in combination.
 
 ## If you only have 5 minutes
 
@@ -49,11 +49,13 @@ The Lighthouse **Third-party usage** audit shows a list of the third-party provi
 </figure>
 
 ### Reduce JavaScript execution time
+
 The Lighthouse [Reduce JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
 
 {% Img src="image/admin/O7vN1En6dtbL3Q8TbufC.png", alt="Screenshot showing that the 'Show third-party resources' checkbox is checked.", width="800", height="981" %}
 
 ### Avoid enormous network payloads
+
 The Lighthouse [Avoid enormous network payloads](/total-byte-weight) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
 
 {% Img src="image/admin/9Pnoz73MLeNzooUQLuam.png", alt="Screenshot of the Chrome DevTools 'Avoid enormous network payloads' audit.", width="799", height="631" %}

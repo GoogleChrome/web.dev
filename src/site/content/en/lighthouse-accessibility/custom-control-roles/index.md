@@ -14,14 +14,14 @@ Check that all custom controls have an appropriate `role` and
 any required ARIA attributes that confer their properties and state.
 For example, a custom checkbox needs a `role="checkbox"` and
 `aria-checked="true|false"` to properly convey its state.
-See the [Introduction to ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/)
+See the [Introduction to ARIA](/semantics-aria/)
 for a general overview of how ARIA can provide missing semantics for custom controls.
 
 ## How to manually test
 
 To check that all custom interactive controls have appropriate ARIA roles,
 test the page using either the
-[Chrome DevTools accessibility pane](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
+[Chrome DevTools accessibility pane](https://developer.chrome.com/docs/devtools/accessibility/reference/#pane)
 or a screen reader.
 [JAWS](https://www.freedomscientific.com/products/software/jaws/) and
 [NVDA](https://www.nvaccess.org/)
@@ -66,10 +66,10 @@ Using a screen reader first hand will give you a clear understanding
 of how your content is labeled, and if there are any obstructions to
 assistive technology navigation.
 If you're unfamiliar with how semantic markup gets interpreted by assistive technology,
-see the [Introduction to Semantics](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/) for a refresher.
+see the [Introduction to Semantics](/semantics-builtin/) for a refresher.
 
 See also [How to Do an Accessibility Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).
 
 ## Resources
 
-[Source code for **Custom controls have ARIA roles** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/custom-controls-roles.js)
+[Source code for **Custom controls have ARIA roles** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/manual/custom-controls-roles.js)

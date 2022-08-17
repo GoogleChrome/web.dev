@@ -91,7 +91,7 @@ RAILのコンテキストにおいて、**目標**と**ガイドライン**と�
 
 - アニメーションのようにプレッシャーの高いポイントでは、他の作業が一切必要なければ何もしない、何らかの作業が必要な場合は、極力最小の作業に抑えるのがカギです。可能であれば、60fpsに達する可能性を最大限に引き出せるように、100ミリ秒の応答を利用して高価な作業を事前に計算するようにします。
 
-- アニメーションを最適化するさまざまな戦略については、[Rendering Performance (パフォーマンスのレンダリング)](https://developers.google.com/web/fundamentals/performance/rendering)を参照してください。
+- アニメーションを最適化するさまざまな戦略については、[Rendering Performance (パフォーマンスのレンダリング)](/rendering-performance/)を参照してください。
 
 {% Aside %}すべての種類のアニメーションを認識します。アニメーションは、単なるUI効果ではありません。以下のインタラクションは、すべてアニメーションと見なされます。
 
@@ -151,35 +151,35 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 ### Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)は、ページの読み込み中または実行中に発生するすべてのイベントについて詳細な分析を提供します。**パフォーマンス**パネルのUIを理解するには、[Get Started With Analyzing Runtime Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)を参照してください。
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/)は、ページの読み込み中または実行中に発生するすべてのイベントについて詳細な分析を提供します。**パフォーマンス**パネルのUIを理解するには、[Get Started With Analyzing Runtime Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/)を参照してください。
 
 以下のDevTools機能は特に関連性が高いと言えます。
 
-- さほど強力でないデバイスをシミュレートするために、[CPUをスロットルする](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#cpu-throttle)。
+- さほど強力でないデバイスをシミュレートするために、[CPUをスロットルする](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#cpu-throttle)。
 
-- 低速の接続をシミュレートするために、[ネットワークをスロットルする](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network-throttle)。
+- 低速の接続をシミュレートするために、[ネットワークをスロットルする](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network-throttle)。
 
-- [メインスレッドのアクティビティを表示](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main)して、記録中にメインスレッドで発生したすべてのイベントを表示する。
+- [メインスレッドのアクティビティを表示](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#main)して、記録中にメインスレッドで発生したすべてのイベントを表示する。
 
-- [メインスレッドのアクティビティをテーブルに表示](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#activities)して、最も時間を要したものの順にアクティビティを並べ替えます。
+- [メインスレッドのアクティビティをテーブルに表示](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#activities)して、最も時間を要したものの順にアクティビティを並べ替えます。
 
-- アニメーションが本当にスムーズに実行されているかを評価するために、[1秒あたりのフレーム数（FPS）](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#fps)を分析する。
+- アニメーションが本当にスムーズに実行されているかを評価するために、[1秒あたりのフレーム数（FPS）](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#fps)を分析する。
 
 - [**パフォーマンスモニター**を使用して、CPU使用率、JSヒープサイズ、DOMノード、1秒あたりのレイアウトなど](https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor)をリアルタイムに監視します。
 
-- **ネットワーク**セクションで記録している間に発生した[ネットワーク要求を視覚化](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network)する。
+- **ネットワーク**セクションで記録している間に発生した[ネットワーク要求を視覚化](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network)する。
 
-- ページの読み込み中またはアニメーションの起動中にページがどのようにレンダリングされたかを正確に再生するために、[記録中にスクリーンショットをキャプチャ](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#screenshots)する。
+- ページの読み込み中またはアニメーションの起動中にページがどのようにレンダリングされたかを正確に再生するために、[記録中にスクリーンショットをキャプチャ](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#screenshots)する。
 
-- ユーザーがページを操作した後にページで何が起こったかをすばやく特定するために、[インタラクションを表示](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#interactions)する。
+- ユーザーがページを操作した後にページで何が起こったかをすばやく特定するために、[インタラクションを表示](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#interactions)する。
 
-- 潜在的に問題のあるリスナーが起動するたびに、ページを強調表示することにより、[スクロールパフォーマンスの問題をリアルタイムに見つける](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#scrolling-performance-issues)。
+- 潜在的に問題のあるリスナーが起動するたびに、ページを強調表示することにより、[スクロールパフォーマンスの問題をリアルタイムに見つける](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#scrolling-performance-issues)。
 
-- アニメーションのパフォーマンスに悪影響を与える可能性がある高価なペイントイベントを特定するために、[ペイントイベントをリアルタイムに表示](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-flashing)する。
+- アニメーションのパフォーマンスに悪影響を与える可能性がある高価なペイントイベントを特定するために、[ペイントイベントをリアルタイムに表示](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-flashing)する。
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)は、Chrome DevTools、 [web.dev / measure](/measure/) 、Chrome拡張機能、Node.jsモジュール、およびWebPageTest内で利用できます。 URLを指定すると、3G接続が遅いミッドレンジデバイスをシミュレートし、ページで一連の監査を実行してから、読み込みパフォーマンスに関するレポートと改善方法の提案を行います。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)は、Chrome DevTools、 [web.dev / measure](/measure/) 、Chrome拡張機能、Node.jsモジュール、およびWebPageTest内で利用できます。 URLを指定すると、3G接続が遅いミッドレンジデバイスをシミュレートし、ページで一連の監査を実行してから、読み込みパフォーマンスに関するレポートと改善方法の提案を行います。
 
 以下の監査は特に関連性が高いと言えます。
 

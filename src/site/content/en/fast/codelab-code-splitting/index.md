@@ -163,7 +163,7 @@ out by the proposal.
 
 {% Aside %}
 Read more about how dynamic imports work in this [Web Updates
-article](https://developers.google.com/web/updates/2017/11/dynamic-import).
+article](https://v8.dev/features/dynamic-import).
 {% endAside %}
 
 

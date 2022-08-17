@@ -124,6 +124,12 @@ augmented-reality:
     ru: Последние новости и статьи о дополненной реальности.
     zh: 我们关于增强现实的最新资讯、动态和故事。
 
+aurora-project:
+  title:
+    en: Aurora Project
+  description:
+    en: Our latest news, updates, and stories about the Chrome Aurora project.
+
 canvas:
   title:
     en: Canvas
@@ -231,6 +237,12 @@ chrome-dev-summit:
     pt: Nossas últimas notícias, atualizações e histórias sobre o Chrome Dev Summit.
     ru: Последние новости и статьи о конференции Chrome Dev Summit.
     zh: 我们关于 Chrome 开发者峰会的最新资讯、动态和故事。
+
+community:
+  title:
+    en: Community
+  description:
+    en: Interviews, features, and stories, from the wider web community.
 
 content-security-policy:
   title:
@@ -850,6 +862,30 @@ network:
     ru: Последние новости и статьи о работе с сетью.
     zh: 我们关于网络的最新资讯、动态和故事。
 
+new-to-the-web:
+  title:
+    en: New to the web platform
+  description:
+    en: A series of posts to keep you updated with what's landing in web browsers each month.
+
+newly-interoperable:
+  title:
+    en: Newly interoperable
+    es: Interoperable recientemente
+    ja: 新しく相互運用可能
+    ko: 새롭게 상호 운용 가능
+    pt: Recentemente interoperável
+    ru: Новый интероперабельный
+    zh: 新的互操作性
+  description:
+    en: Features that have recently become supported in all three engines.
+    es: Nuestras últimas noticias, actualizaciones e historias sobre funciones compatibles con todos los navegadores.
+    ja: クロスブラウザでサポートされている機能に関する最新のニュース、アップデート、ストーリー。
+    ko: 브라우저 간 지원되는 기능에 대한 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas notícias, atualizações e histórias mais recentes sobre recursos compatíveis com vários navegadores.
+    ru: Наши последние новости, обновления и истории о функциях, поддерживаемых в разных браузерах.
+    zh: 我们关于跨浏览器支持的功能的最新新闻、更新和故事。
+
 node:
   title:
     en: Node
@@ -1048,6 +1084,12 @@ rendering:
     ru: Последние новости и статьи о рендеринге.
     zh: 我们关于呈现的最新资讯、动态和故事。
 
+resources:
+  title:
+    en: Resources
+  description:
+    en: Useful links shared by the people of Chrome Developer Relations.
+
 scale-on-web:
   title:
     en: Scale on web
@@ -1191,6 +1233,12 @@ tools:
     pt: Nossas últimas notícias, atualizações e histórias sobre ferramentas.
     ru: Последние новости и статьи об инструментах.
     zh: 我们关于工具的最新资讯、动态和故事。
+
+twitter-space:
+  title:
+    en: Space
+  description:
+    en: Page presenting a Twitter Space event.
 
 ux:
   title:

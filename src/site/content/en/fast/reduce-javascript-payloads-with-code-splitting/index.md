@@ -37,7 +37,7 @@ parsed and compiled, which results in faster page load times.
 Popular module bundlers like [webpack](https://webpack.js.org/guides/code-splitting/),
 [Parcel](https://parceljs.org/code_splitting.html), and
 [Rollup](https://rollupjs.org/guide/en#dynamic-import) allow you to split your
-bundles using [dynamic imports](https://developers.google.com/web/updates/2017/11/dynamic-import).
+bundles using [dynamic imports](https://v8.dev/features/dynamic-import).
 For example, consider the following code snippet that shows an example of a
 `someFunction` method that gets fired when a form is submitted.
 

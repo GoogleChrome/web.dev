@@ -188,7 +188,7 @@ As a result, they are ideally suited for a long max-age expiry&mdash;
 ensure that you specify both a [conditional ETag header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#validating-cached-responses-with-etags),
 and an [optimal Cache-Control policy](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control) for all font resources.
 
-If your web application uses a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/),
+If your web application uses a [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/),
 serving font resources with a [cache-first strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network) is appropriate for most use cases.
 
 You should not store fonts using [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage)
@@ -209,7 +209,7 @@ worker, a cache-first strategy is appropriate.
 
 ## Automated testing for WebFont loading behavior with Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 can help automate the process of making sure that you're following web font optimization best practices.
 
 The following audits can help you make sure that your pages are continuing to follow web font optimization best practices over time:

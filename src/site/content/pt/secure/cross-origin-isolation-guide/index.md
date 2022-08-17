@@ -35,9 +35,9 @@ Se você já sabe onde está usando `SharedArrayBuffer`, vá para [Analisar o im
 
 ### Usando Chrome DevTools
 
-[O Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) permite que os desenvolvedores inspecionem sites.
+[O Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) permite que os desenvolvedores inspecionem sites.
 
-1. [Abra o Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) na página que você suspeita estar usando `SharedArrayBuffer`.
+1. [Abra o Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) na página que você suspeita estar usando `SharedArrayBuffer`.
 2. Selecione o painel **Console.**
 3. Se a página estiver usando `SharedArrayBuffer`, a seguinte mensagem será exibida:
     ```text
@@ -58,7 +58,7 @@ Alguns navegadores têm [uma funcionalidade que relata APIs deprecadas](https://
     ```
 3. Assim que o cabeçalho começar a se propagar, o endpoint no qual você se registrou deve começar a coletar relatórios de deprecação.
 
-Veja um exemplo de implementação aqui: [https://first-party-test.glitch.me](https://first-party-test.glitch.me) .
+Veja um exemplo de implementação aqui: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me) .
 
 {% endDetails %}
 
@@ -70,7 +70,7 @@ Não seria ótimo se você pudesse avaliar o impacto que a ativação do isolame
 2. Configure relatórios e configure um servidor web para receber e salvar os relatórios.
 3. Defina [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources) em seu documento de nível superior. Novamente, este cabeçalho permite que você veja o impacto de habilitar `COEP: require-corp` sem realmente afetar o funcionamento do seu site ainda. Você pode configurar este cabeçalho para enviar relatórios ao mesmo servidor de relatórios que configurou na etapa anterior.
 
-{% Aside %} Você também pode [ativar a coluna **Domínio**](https://developers.google.com/web/tools/chrome-devtools/network#information) **no painel Rede do** Chrome DevTools para obter uma visão geral de quais recursos seriam afetados. {% endAside %}
+{% Aside %} Você também pode [ativar a coluna **Domínio**](https://developer.chrome.com/docs/devtools/network/#information) **no painel Rede do** Chrome DevTools para obter uma visão geral de quais recursos seriam afetados. {% endAside %}
 
 {% Aside 'caution' %}
 

@@ -20,7 +20,7 @@ user experience.
 
 ## How the Lighthouse Apple touch icon audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages without a `<link rel="apple-touch-icon" href="/example.png">`
 tag in the `<head>`:
 
@@ -73,4 +73,4 @@ To provide a good user experience, make sure that:
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use Apple Touch Icon</a>
 
 [a2hs]: https://support.apple.com/guide/shortcuts/run-shortcuts-from-the-ios-home-screen-apd735880972/ios#apd175362e63
-[source]: https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/apple-touch-icon.js
+[source]: https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/apple-touch-icon.js

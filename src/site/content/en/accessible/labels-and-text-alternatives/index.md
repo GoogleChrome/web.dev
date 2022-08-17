@@ -43,7 +43,7 @@ It's easy to check an element's accessible name using Chrome's DevTools:
 
 {% Aside %}
 To learn more, check out the [DevTools Accessibility
-Reference](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference).
+Reference](https://developer.chrome.com/docs/devtools/accessibility/reference/).
 {% endAside %}
 
 Whether you're looking at an `img` with `alt` text or an `input` with a

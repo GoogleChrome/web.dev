@@ -14,7 +14,7 @@ tags:
 
 ## 전제 조건
 
-이 가이드는 사용자가 [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)에 익숙하다고 가정합니다. 원하는 경우 다른 브라우저의 DevTools를 대신 사용할 수 있습니다. 이 가이드의 Chrome DevTools 스크린샷을 선택한 브라우저의 관련 기능에 다시 매핑하기만 하면 됩니다.
+이 가이드는 사용자가 [Chrome DevTools](https://developer.chrome.com/docs/devtools/)에 익숙하다고 가정합니다. 원하는 경우 다른 브라우저의 DevTools를 대신 사용할 수 있습니다. 이 가이드의 Chrome DevTools 스크린샷을 선택한 브라우저의 관련 기능에 다시 매핑하기만 하면 됩니다.
 
 ## 반응형 배경 이미지의 이해하기
 
@@ -22,7 +22,7 @@ tags:
 
 1. 새 Chrome 탭에서 [최적화되지 않은 데모](https://use-media-queries-unoptimized.glitch.me/)를 엽니다. {% Instruction 'devtools-network', 'ol' %} {% Instruction 'reload-page', 'ol' %}
 
-{% Aside %} DevTools에 대해 더 많은 도움이 필요하면 [Chrome DevTools로 네트워크 활동 검사하기](https://developers.google.com/web/tools/chrome-devtools/network/)를 확인하세요. {% endAside %}
+{% Aside %} DevTools에 대해 더 많은 도움이 필요하면 [Chrome DevTools로 네트워크 활동 검사하기](https://developer.chrome.com/docs/devtools/network/)를 확인하세요. {% endAside %}
 
 요청되는 유일한 이미지는 **1006KB** 크기인 `background-desktop.jpg`입니다.
 

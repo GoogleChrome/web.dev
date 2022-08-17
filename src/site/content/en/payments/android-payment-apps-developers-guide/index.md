@@ -26,7 +26,7 @@ apps.
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </video>
-  <figcaption>Checkout flow with platform-specific Google Pay app that uses Web Payments</a>.
+  <figcaption>Checkout flow with platform-specific Google Pay app that uses Web Payments.
   </figcaption>
 </figure>
 

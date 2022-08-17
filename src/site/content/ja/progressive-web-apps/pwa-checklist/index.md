@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: 優れたまたは素晴らしいプログレッシブ Web アプリとは？
 tags:
   - progressive-web-apps
@@ -35,7 +35,7 @@ tags:
 
 ユーザーにアプリを*使用*させるには、速度が重要です。実際、ページの読み込み時間が 1 秒から 10 秒になると、ユーザーがバウンスする確率は 123％ 増加します。パフォーマンスは `load` イベントに限られたことではありません。ユーザーが、ボタンのクリックなどの操作が届いているかどうかを考えるようなことがあってはいけません。スクロールとアニメーションはスムーズに感じられなければなりません。パフォーマンスは、アプリケーションに対するユーザーの認識から実際の実行まで、エクスペリエンス全体に影響を及ぼします。
 
-アプリケーションごとにニーズは異なりますが、Lighthouse のパフォーマンス監査は、[RAIL ユーザー中心のパフォーマンスモデル](https://developers.google.com/web/fundamentals/performance/rail)に基づいており、これらの監査で高いスコアを得られれば、ユーザーが楽しい体験を得る可能性が高くなります。また、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) や [Chrome ユーザーエクスペリエンスレポート](https://developers.google.com/web/tools/chrome-user-experience-report/)を使用して、Web アプリの実際のパフォーマンスデータを取得することもできます。
+アプリケーションごとにニーズは異なりますが、Lighthouse のパフォーマンス監査は、[RAIL ユーザー中心のパフォーマンスモデル](/rail/)に基づいており、これらの監査で高いスコアを得られれば、ユーザーが楽しい体験を得る可能性が高くなります。また、[PageSpeed Insights](https://pagespeed.web.dev/) や [Chrome ユーザーエクスペリエンスレポート](https://developer.chrome.com/docs/crux/)を使用して、Web アプリの実際のパフォーマンスデータを取得することもできます。
 
 #### 方法
 
@@ -161,7 +161,7 @@ Service Worker の `install` イベント中に、後で使用するためのカ
 
 #### 方法
 
-ユーザーがオフラインで作業できることを期待している機能を決定したら、コンテンツを利用可能にしてオフラインのコンテキストに適応できるようにする必要があります。さらに、ブラウザ内の NoSQL ストレージシステムである [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb) を使用してデータを保存および取得し、[バックグラウンド同期](https://developers.google.com/web/updates/2015/12/background-sync)を使用して、ユーザーがオフライン中にアクションを実行し、ユーザーが再び安定した接続を確立するまでサーバー通信を延期できるようにすることができます。また、Service Worker を使用して、オフラインで使用する画像、動画ファイル、音声ファイルなどの他の種類のコンテンツを保存したり、それらを使用して[安全で長期間有効なセッション](https://developers.google.com/web/updates/2016/06/2-cookie-handoff)を実装し、ユーザーの認証を維持したりすることもできます。ユーザーエクスペリエンスの観点から、読み込み中に速度とコンテンツをユーザーに認識させる[スケルトン画面](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)を使用して、必要に応じてキャッシュされたコンテンツまたはオフラインインジケーターにフォールバックできます。
+ユーザーがオフラインで作業できることを期待している機能を決定したら、コンテンツを利用可能にしてオフラインのコンテキストに適応できるようにする必要があります。さらに、ブラウザ内の NoSQL ストレージシステムである [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb) を使用してデータを保存および取得し、[バックグラウンド同期](https://developer.chrome.com/blog/background-sync/)を使用して、ユーザーがオフライン中にアクションを実行し、ユーザーが再び安定した接続を確立するまでサーバー通信を延期できるようにすることができます。また、Service Worker を使用して、オフラインで使用する画像、動画ファイル、音声ファイルなどの他の種類のコンテンツを保存したり、それらを使用して[安全で長期間有効なセッション](https://developer.chrome.com/blog/2-cookie-handoff/)を実装し、ユーザーの認証を維持したりすることもできます。ユーザーエクスペリエンスの観点から、読み込み中に速度とコンテンツをユーザーに認識させる[スケルトン画面](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)を使用して、必要に応じてキャッシュされたコンテンツまたはオフラインインジケーターにフォールバックできます。
 
 {% endDetails %}
 
@@ -221,7 +221,7 @@ PWA は、マウス、キーボード、スタイラス、またはタッチで�
 
 #### 方法
 
-[Pointer Events API](https://developers.google.com/web/updates/2016/10/pointer-events) は、さまざまな入力オプションを操作するための統一されたインターフェイスを提供し、スタイラスサポートを追加するのに特に適しています。タッチとキーボードの両方をサポートするには、正しいセマンティック要素（アンカー、ボタン、フォームコントロールなど）を使用し、非セマンティック HTML（アクセシビリティに適している）でこれらを再構築しないようにしてください。ホバー時にアクティブになる操作を含める場合は、クリックまたはタップでもアクティブにできることを確認してください。
+[Pointer Events API](https://developer.chrome.com/blog/pointer-events/) は、さまざまな入力オプションを操作するための統一されたインターフェイスを提供し、スタイラスサポートを追加するのに特に適しています。タッチとキーボードの両方をサポートするには、正しいセマンティック要素（アンカー、ボタン、フォームコントロールなど）を使用し、非セマンティック HTML（アクセシビリティに適している）でこれらを再構築しないようにしてください。ホバー時にアクティブになる操作を含める場合は、クリックまたはタップでもアクティブにできることを確認してください。
 
 {% endDetails %}
 

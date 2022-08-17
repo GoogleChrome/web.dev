@@ -75,8 +75,8 @@ both Android and iOS devices.
 ### Workbox for service workers {: #workbox }
 
 The Rakuten 24 team used
-[Workbox](https://developers.google.com/web/tools/workbox) (the
-[workbox-webpack-plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
+[Workbox](https://developer.chrome.com/docs/workbox/) (the
+[workbox-webpack-plugin](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/)
 to be precise) to ensure their PWA worked well even when the user was offline or
 on a bad network.  Workbox's APIs for controlling
 [the cache](/service-workers-cache-storage/#the-cache-storage-api)

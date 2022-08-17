@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-07-18
 description: 이 게시물에서는 누적 레이아웃 이동(CLS) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -161,15 +161,15 @@ CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### 현장 도구
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
 
 ### 실험실 도구
 
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript에서 CLS 측정
@@ -219,7 +219,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-이 코드는 CLS를 계산하고 기록하는 기본적인 방법을 보여줍니다. 그러나 [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)(CrUX)에서 측정된 것과 일치하는 방식으로 CLS를 정확하게 측정하는 것은 보다 복잡한 문제입니다. 자세한 내용은 아래를 참조하세요.
+이 코드는 CLS를 계산하고 기록하는 기본적인 방법을 보여줍니다. 그러나 [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)(CrUX)에서 측정된 것과 일치하는 방식으로 CLS를 정확하게 측정하는 것은 보다 복잡한 문제입니다. 자세한 내용은 아래를 참조하세요.
 
 {% endAside %}
 
@@ -238,7 +238,7 @@ new PerformanceObserver((entryList) => {
 - 사용자는 며칠, 몇 주, 몇 달 등 *매우* 오랫동안 탭을 열어 둘 수 있습니다. 실제로 사용자는 탭을 닫지 않을 수도 있습니다.
 - 모바일 운영 체제에서 브라우저는 일반적으로 백그라운드 탭에 대해 페이지 언로드 콜백을 실행하지 않으므로 "최종" 값을 보고하기 어렵습니다.
 
-이러한 경우를 처리하려면 페이지가 언로드될 때뿐 아니라 페이지가 백그라운드일 때마다 CLS를 보고해야 합니다([`visibilitychange` 이벤트](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)는 이 두 시나리오 모두에 적용됨). 그리고 이 데이터를 수신하는 분석 시스템은 백엔드에서 최종 CLS 값을 계산해야 합니다.
+이러한 경우를 처리하려면 페이지가 언로드될 때뿐 아니라 페이지가 백그라운드일 때마다 CLS를 보고해야 합니다([`visibilitychange` 이벤트](https://developer.chrome.com/blog/page-lifecycle-api/#event-visibilitychange)는 이 두 시나리오 모두에 적용됨). 그리고 이 데이터를 수신하는 분석 시스템은 백엔드에서 최종 CLS 값을 계산해야 합니다.
 
 개발자는 이러한 모든 경우를 직접 암기하고 고심하지 않아도, [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)를 사용해 위에서 언급한 모든 것을 처리하는 CLS를 측정할 수 있습니다.
 

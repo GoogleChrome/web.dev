@@ -55,7 +55,7 @@ codelabs:
 또한 더 나은 로그인 환경을 구축하는 데 도움이 될 수 있는 이 문서에서 다루지 않은 두 가지 비교적 새로운 API가 있습니다.
 
 - [**WebOTP**](/web-otp/): SMS를 통해 휴대폰으로 일회용 비밀번호 또는 PIN 번호를 전달합니다. 이를 통해 사용자는 전화번호를 식별자로 선택할 수 있고(이메일 주소를 입력할 필요가 없음!) 로그인을 위한 2단계 인증과 결제 확인을 위한 일회성 코드를 사용할 수 있습니다.
-- [**자격 증명 관리**](https://developers.google.com/web/updates/2016/04/credential-management-api): 개발자가 비밀번호 자격 증명 및 연합 자격 증명을 프로그래밍 방식으로 저장 및 검색할 수 있도록 합니다. {% endAside %}
+- [**자격 증명 관리**](https://developer.chrome.com/blog/credential-management-api/): 개발자가 비밀번호 자격 증명 및 연합 자격 증명을 프로그래밍 방식으로 저장 및 검색할 수 있도록 합니다. {% endAside %}
 
 ## 의미 있는 HTML 사용 {: #meaningful-html }
 
@@ -421,11 +421,11 @@ HTML 양식 요소 및 속성에는 기본 유효성 검사를 위한 기본 제
 
 ## 학습 계속 {: #resources }
 
-- [놀라운 양식 만들기](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [놀라운 양식 만들기](/learn/forms/)
 - [모바일 양식 디자인 모범 사례](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [더 많은 기능을 갖춘 양식 컨트롤](/more-capable-form-controls)
 - [액세스 가능한 양식 만들기](https://webaim.org/techniques/forms/)
-- [Credential Management API를 사용하여 로그인 흐름 간소화](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Credential Management API를 사용하여 로그인 흐름 간소화](https://developer.chrome.com/blog/credential-management-api/)
 - [WebOTP API로 웹에서 전화번호 확인](/web-otp/)
 
 사진 제공: [Unsplash](https://unsplash.com)에서 [Meghan Schiereck](https://unsplash.com/photos/_XFObcM_7KU)

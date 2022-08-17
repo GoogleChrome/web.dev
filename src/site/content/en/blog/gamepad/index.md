@@ -238,7 +238,7 @@ const vibrate = (gamepad, delay = 0, duration = 100, weak = 1.0, strong = 1.0) =
 ### Integration with Permissions Policy
 
 The Gamepad API spec defines a
-[policy-controlled feature](https://w3c.github.io/webappsec-permissions-policy/) identified by the
+[policy-controlled feature](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) identified by the
 string `"gamepad"`. Its default `allowlist` is `"self"`. A document's permissions policy determines
 whether any content in that document is allowed to access `navigator.getGamepads()`. If disabled in
 any document, no content in the document will be allowed to use `navigator.getGamepads()`, nor will

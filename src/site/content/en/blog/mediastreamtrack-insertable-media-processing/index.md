@@ -143,7 +143,7 @@ trackProcessor.readable.pipeThrough(transformer).pipeTo(trackGenerator.writable)
 const videoBefore = document.getElementById('video-before');
 const videoAfter = document.getElementById('video-after');
 videoBefore.srcObject = stream;
-const streamAfter = new MediaStream([generator]);
+const streamAfter = new MediaStream([trackGenerator]);
 videoAfter.srcObject = streamAfter;
 ```
 

@@ -43,7 +43,7 @@ unneeded boilerplate, and writing code that made changes to globally exposed
 variables.
 
 Scripts imported via ES modules can trigger the service worker
-[update](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#updates)
+[update](/service-worker-lifecycle/#updates)
 flow if their contents change, matching the
 [behavior](https://developers.google.com/web/updates/2019/09/fresher-sw#checks_for_updates_to_imported_scripts)
 of

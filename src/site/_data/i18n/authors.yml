@@ -1,3 +1,357 @@
+danristic:
+  title:
+    en: Dan Ristic
+  description:
+    en: Developer at PubNub
+
+gman:
+  title:
+    en: Gregg Tavares
+  description:
+    en: Software Engineer at Google
+
+dominiccooney:
+  title:
+    en: Dominic Cooney
+  description:
+    en: Software Engineer at Google
+
+zgoddard:
+  title:
+    en: Z Goddard
+  description:
+    en: Game Developer at Gradient Studios, Inc.
+
+tomwiltzius:
+  title:
+    en: Tom Wiltzius
+  description:
+    en: Chrome Product Manager at Google
+
+coltmcanlis:
+  title:
+    en: Colt McAnlis
+  description:
+    en: Developer Relations at Google
+
+marcinwichary:
+  title:
+    en: Marcin Wichary
+  description:
+    en: Sr. User Experience Designer at Google
+
+razvancaliman:
+  title:
+    en: Razvan Caliman
+  description:
+    en: Web Platform Adobe
+
+christiancantrell:
+  title:
+    en: Christian Cantrell
+  description:
+    en: Web Platform Adobe
+
+jameswilliams:
+  title:
+    en: James Williams
+  description:
+    en: Independent Developer
+
+joemarini:
+  title:
+    en: Joe Marini
+  description:
+    en: Chrome Developer Advocate at Google
+
+loreenalee:
+  title:
+    en: Loreena Lee
+  description:
+    en: Software Engineer at Google
+
+malteubl:
+  title:
+    en: Malte Ubl
+  description:
+    en: Customer Solutions Engineering at Google
+
+raymondcamden:
+  title:
+    en: Raymond Camden
+  description:
+    en: Developer Relations at Adobe
+
+brianford:
+  title:
+    en: Brian Ford
+  description:
+    en: Software Engineer Intern at Google
+
+tjvantoll:
+  title:
+    en: TJ VanToll
+  description:
+    en: Web Develope at Liquid Web
+
+bradfrost:
+  title:
+    en: Brian Ford
+  description:
+    en: Front-end designer at R/GA
+
+lillithompson:
+  title:
+    en: Lilli Thompson
+  description:
+    en: Game Developer
+
+saqoosha:
+  title:
+    en: Saqoosha
+  description:
+    en: Programmer at Katamari Inc.
+
+adriangould:
+  title:
+    en: Adrian Gould
+  description:
+    en: Programmer, Designer at Pagoda Software
+
+adammark:
+  title:
+    en: Adam Mark
+  description:
+    en: Programmer, Designer at Pagoda Software
+
+gskinnerdotcom:
+  title:
+    en: Sean Middleditch
+  description:
+    en: Agency
+
+seanmiddleditch:
+  title:
+    en: Sean Middleditch
+  description:
+    en: Developer at Subsonic LLC
+
+justingitlin:
+  title:
+    en: Justin Gitlin
+  description:
+    en: Agency/Developer at Legwork/Mode Set
+
+activetheory:
+  title:
+    en: Active Theory
+  description:
+    en: Creative Development
+
+luigimontanez:
+  title:
+    en: Luigi Montanez
+  description:
+    en: Software Developer at Sunlight Labs
+
+michaeldewey:
+  title:
+    en: Mike Dewey
+  description:
+    en: Muro at deviantART
+
+oskareriksson:
+  title:
+    en: Oskar Eriksson
+  description:
+    en: Technical Director at Dinahmoe
+
+fredchasen:
+  title:
+    en: Fred Chasen
+  description:
+    en: Lead Developer at Tool Of North America
+
+plan8:
+  title:
+    en: Plan 8
+  description:
+    en: Audio Agency
+
+unit9com:
+  title:
+    en: unit9 com
+  description:
+    en: Production Company
+
+geoffblair:
+  title:
+    en: Geoff Blair
+  description:
+    en: Programmer, Designer at Lost Decade Games
+
+matthackett:
+  title:
+    en: Matt Hackett
+  description:
+    en: Programmer, Designer at Lost Decade Games
+
+christophergammon:
+  title:
+    en: Christopher Gammon
+  description:
+    en: Web Platform Adobe
+
+ericrk:
+  title:
+    en: Eric Karl
+  description:
+    en: Developer at Munkadoo Games LLC
+
+thomasreynolds:
+  title:
+    en: Thomas Reynolds
+  description:
+    en: Agency Instrument
+
+einaroberg:
+  title:
+    en: Einar Öberg
+  description:
+    en: Developer at North Kingdom
+
+danielisaksson:
+  title:
+    en: Daniel Isaksson
+  description:
+    en: Technical Director at North Kingdom
+
+michaelchang:
+  title:
+    en: Michael Chang
+  description:
+    en: Developer
+
+hakimelhattab:
+  title:
+    en: Hakim El Hattab
+  description:
+    en: Senior Interactive Developer
+
+hanseklund:
+  title:
+    en: Hans Eklund
+  description:
+    en: Technical Director at North Kingdom
+
+derekdetweiler:
+  title:
+    en: Derek Detweiler
+  description:
+    en: Game Designer at Gopherwood Studios
+
+johnmccutchan:
+  title:
+    en: John McCutchan
+  description:
+    en: Developer Relations at Google
+
+wesleyhales:
+  title:
+    en: Wesley Hales
+  description:
+    en: Senior Developer at Red Hat
+
+mahemoff:
+  title:
+    en: Michael Mahemoff
+  description:
+    en: Freelance Web Developer
+
+taligarsiel:
+  title:
+    en: Tali Garsiel
+  description:
+    en: Developer at Incapsula
+
+paulirish:
+  title:
+    en: Paul Irish
+  description:
+    en: Developer Relations at Google
+
+mdeal:
+  title:
+    en: Michael Deal
+  description:
+    en: New Product Development at Orange Honey
+
+smus:
+  title:
+    en: Boris Smus
+  description:
+    en: Google Developer Relations
+
+danielmoore:
+  title:
+    en: Daniel X. Moore
+  description:
+    en: Pixel Relations at STRd6
+
+davidtong:
+  title:
+    en: David Tong
+  description:
+    en: Box.net
+
+jeremychone:
+  title:
+    en: Jeremy Chone
+  description:
+    en: Developer
+
+ernestd:
+  title:
+    en: Ernest Delgado
+  description:
+    en: Google Developer Relations
+
+chriswilson:
+  title:
+    en: Chris Wilson
+  description:
+    en: Google Developer Relations
+
+sethladd:
+  title:
+    en: Seth Ladd
+  description:
+    en: Seth is a contributor to web.dev
+
+mustafa:
+  title:
+    en: Mustafa Kurtuldu
+  description:
+    en: Design Advocate at Google • Material Design, UX & Design Sprints
+
+mco:
+  title:
+    en: Marc Cohen
+  description:
+    en: Eng Manager, Web Developer Relations
+
+iamakulov:
+  title:
+    en: Ivan Akulov
+  description:
+    en: Contracting software engineer · Blogging, open source, performance, UX
+
+pbakaus:
+  title:
+    en: Paul Bakaus
+  description:
+    en: Open Web Developer Advocate at Google • Tools, Performance, Animation, UX
+
 paulkinlan:
   title:
     en: Paul Kinlan
@@ -63,12 +417,6 @@ aliceboxhall:
     en: Alice Boxhall
   description:
     en: Alice is a contributor to web.dev
-
-jeremywagner:
-  title:
-    en: Jeremy Wagner
-  description:
-    en: Jeremy is a contributor to web.dev
 
 eligrey:
   title:
@@ -494,7 +842,7 @@ agektmr:
   title:
     en: Eiji Kitamura
     es: Eiji Kitamura
-    ja: Eiji Kitamura
+    ja: えーじ
     ko: Eiji Kitamura
     pt: Eiji Kitamura
     ru: Eiji Kitamura
@@ -502,7 +850,7 @@ agektmr:
   description:
     en: Developer Advocate in Tokyo
     es: Desarrollador partidario en Tokio
-    ja: 東京を拠点に活動する Developer Advocate
+    ja: 東京を拠点に活動するデベロッパー アドボケート
     ko: 도쿄의 개발자 애드버킷
     pt: Developer Advocate em Tóquio
     ru: Developer Advocate в Токио
@@ -814,6 +1162,25 @@ philipwalton:
     ru: Инженер в компании Google, участвующий в разработке веб-платформы
     zh: 研究网络平台的 Google 工程师
 
+tunetheweb:
+  title:
+    en: Barry Pollard
+    es: Barry Pollard
+    ja: Barry Pollard
+    ko: Barry Pollard
+    pt: Barry Pollard
+    ru: Barry Pollard
+    zh: Barry Pollard
+  description:
+    en: Web Performance Developer Advocate for Google
+    es: Rendimiento web aesarrollador partidario para Google
+    ja: Google を対象とした Developer Advocate
+    ko: Google의 개발자 애드버킷
+    pt: Developer Advocate para o Google
+    ru: Developer Advocate по вопросам Google
+    zh: 负责 Google 的开发技术推广工程师
+
+
 ekharvey:
   title:
     en: Lizzi Harvey
@@ -914,13 +1281,7 @@ jlwagner:
     ru: Jeremy Wagner
     zh: Jeremy Wagner
   description:
-    en: Our latest news, updates, and stories by Jeremy Wagner.
-    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Jeremy Wagner.
-    ja: Jeremy Wagner による最新のニュース、アップデート情報、記事などをご紹介します。
-    ko: Jeremy Wagner의 최신 뉴스, 업데이트 및 스토리.
-    pt: Nossas últimas notícias, atualizações e histórias por Jeremy Wagner.
-    ru: Последние новости и статьи от Jeremy Wagner.
-    zh: Jeremy Wagner 撰写我们的最新资讯、动态和故事。
+    en: Tech writin', doc slingin' reprobate.
 
 gmimani:
   title:
@@ -2206,23 +2567,23 @@ bpj:
     ru: Последние новости и статьи от Bart Jarochowski.
     zh: Bart Jarochowski 撰写我们的最新资讯、动态和故事。
 
-charistheodoulou:
+harrytheodoulou:
   title:
-    en: Charis Theodoulou
-    es: Charis Theodoulou
-    ja: Charis Theodoulou
-    ko: Charis Theodoulou
-    pt: Charis Theodoulou
-    ru: Charis Theodoulou
-    zh: Charis Theodoulou
+    en: Harry Theodoulou
+    es: Harry Theodoulou
+    ja: Harry Theodoulou
+    ko: Harry Theodoulou
+    pt: Harry Theodoulou
+    ru: Harry Theodoulou
+    zh: Harry Theodoulou
   description:
-    en: Our latest news, updates, and stories by Charis Theodoulou.
-    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Charis Theodoulou.
-    ja: Charis Theodoulou による最新のニュース、アップデート情報、記事などをご紹介します。
-    ko: Charis Theodoulou의 최신 뉴스, 업데이트 및 스토리.
-    pt: Nossas últimas notícias, atualizações e histórias por Charis Theodoulou.
-    ru: Последние новости и статьи от Charis Theodoulou.
-    zh: Charis Theodoulou 撰写我们的最新资讯、动态和故事。
+    en: Our latest news, updates, and stories by Harry Theodoulou.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Harry Theodoulou.
+    ja: Harry Theodoulou による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Harry Theodoulou의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Harry Theodoulou.
+    ru: Последние новости и статьи от Harry Theodoulou.
+    zh: Harry Theodoulou 撰写我们的最新资讯、动态和故事。
 
 natashakosoglov:
   title:
@@ -3542,7 +3903,7 @@ firt:
   title:
     en: Maximiliano Firtman
   description:
-    en:  Author of Hacking Web Performance from O'Reilly
+    en: Author of Hacking Web Performance from O'Reilly
 
 patrickbrosset:
   title:
@@ -3636,15 +3997,15 @@ alexandrawhite:
 
 svenmay:
   title:
-      en: Sven May
+    en: Sven May
   description:
-      en: Privacy Web Ecosystem Consultant at Google
+    en: Privacy Web Ecosystem Consultant at Google
 
 denisstasyev:
   title:
-      en: Denis Stasyev
+    en: Denis Stasyev
   description:
-      en: Software Engineer
+    en: Software Engineer
 
 lozandier:
   title:
@@ -3725,16 +4086,16 @@ chrispalmer:
     en: Software Security Engineer at Google
 
 karldubost:
- title:
-   en: Karl Dubost
- description:
-   en: Web Compatibility Engineering Manager at Mozilla
+  title:
+    en: Karl Dubost
+  description:
+    en: Web Compatibility Engineering Manager at Mozilla
 
 abeyad:
- title:
-   en: Ali Beyad
- description:
-   en: Software Engineer
+  title:
+    en: Ali Beyad
+  description:
+    en: Software Engineer
 
 sdenaro:
   title:
@@ -3747,3 +4108,189 @@ kbalasub:
     en: Kalyanaraman Balasubramaniam Krishnan
   description:
     en: Kalyan is a Sr. Computer Scientist at Adobe
+
+monikajanota:
+  title:
+    en: Monika Janota
+  description:
+    en: Monika is a Community Manager at Google.
+
+patrickhlauke:
+  title:
+    en: Patrick H. Lauke
+  description:
+    en: Patrick is a Web Evangelist
+
+kevinkiklee:
+  title:
+    en: Kevin K. Lee
+    ko: 이경인
+  description:
+    en: Developer Relations Engineer, Google Chrome
+    ko: Google Chrome의 개발자 관계 엔지니어
+
+nikilmathew:
+  title:
+    en: Nikil Mathew
+  description:
+    en: Lead Software engineer at Mishipay
+
+jhey:
+  title:
+    en: Jhey Tompkins
+    es: Jhey Tompkins
+    it: Jhey Tompkins
+    ja: Jhey Tompkins
+    ko: Jhey Tompkins
+    pt: Jhey Tompkins
+    ru: Jhey Tompkins
+    zh: Jhey Tompkins
+  description:
+    en: Whimsy Dev Supreme! Developer Relations Engineer @ Google
+    es: ¡Extravagante Dev Supremo! Ingeniero de Relaciones con los Desarrolladores @ Google
+    it: Stravagante Dev Supremo! Ingegnere relazioni con gli sviluppatori @ Google
+    ja: 気まぐれな開発最高！開発者関係エンジニア@Google
+    ko: 변덕스러운 데브 슈프림! 개발자 관계 엔지니어 @ Google
+    pt: Excêntrico Dev Supremo! Engenheiro de relações com desenvolvedores @ Google
+    ru: Причудливый Дев Высший! Инженер по связям с разработчиками @ Google
+    zh: 奇思妙想的开发者至尊！开发者关系工程师 @ Google
+
+andreabreanna:
+  title:
+    en: Andrea Breanna
+    es: Andrea Breanna
+    ja: Andrea Breanna
+    ko: Andrea Breanna
+    pt: Andrea Breanna
+    ru: Andrea Breanna
+    zh: Andrea Breanna
+  description:
+    en: Our latest news, updates, and stories by Andrea Breanna.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Andrea Breanna.
+    ja: Andrea Breanna による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Andrea Breanna의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Andrea Breanna.
+    ru: Последние новости и статьи от Andrea Breanna.
+    zh: Andrea Breanna 撰写我们的最新资讯、动态和故事。
+
+keenyeeliau:
+  title:
+    en: Keen Yee Liau
+    es: Keen Yee Liau
+    ja: Keen Yee Liau
+    ko: Keen Yee Liau
+    pt: Keen Yee Liau
+    ru: Keen Yee Liau
+    zh: Keen Yee Liau
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniera de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师。
+
+yuyaito:
+  title:
+    en: Yuya Ito
+  description:
+    en: Vice President ID Division at Yahoo! JAPAN
+
+jimmymooney:
+  title:
+    en: Jimmy Mooney
+    es: Jimmy Mooney
+    ja: Jimmy Mooney
+    ko: Jimmy Mooney
+    pt: Jimmy Mooney
+    ru: Jimmy Mooney
+    zh: Jimmy Mooney
+  description:
+    en: Senior Product Manager, Google Fonts.
+    es: Gerente Sénior de Productos, Google Fonts.
+    ja: GoogleFontsシニアプロダクトマネージャー。
+    ko: Google Fonts 수석 제품 관리자.
+    pt: Gerente de Produto Sênior, Google Fonts.
+    ru: Старший менеджер по продукту, Google Fonts.
+    zh: Google Fonts 高级产品经理。
+
+alexeyrodionov:
+  title:
+    en: Alexey Rodionov
+    ru: Алексей Родионов
+  description:
+    en: PWA developer. UI/UX engineer. Web platform advocate. PWA, Web Components, GraphQL evangelist. PWA Russian-speaking community organizer. Chromium contributor. Lead front-end developer at Mercury Development.
+    ru: Разработчик PWA. UI/UX-инженер. Адвокат веб-платформы. Евангелист PWA, Web Components, GraphQL. Организатор русскоязычного сообщества PWA. Контрибьютор Chromium. Ведущий фронтенд-разработчик в Mercury Development.
+
+twifkak:
+  title:
+    en: Devin Mullins
+  description:
+    en: Software engineer at Google, signed exchanges integration lead in Search
+
+ruisantos:
+  title:
+    en: Rui Santos
+  description:
+    en: Senior Head of Product Strategy & Operations at Farfetch
+
+manuelgarcia:
+  title:
+    en: Manuel Garcia
+  description:
+    en: Senior Principal Engineer at Farfetch
+
+patriciacoutoneto:
+  title:
+    en: Patrícia Couto Neto
+  description:
+    en: Senior Analytics Manager
+
+steveworkman:
+  title:
+    en: steveworkman
+  description:
+    en: Lead Engineer at Maersk.com
+
+simonleparc:
+  title:
+    en: Simon Le Parc
+  description:
+    en: Senior Manager Software Development at GoDaddy
+
+dbaron:
+  title:
+    en: L. David Baron
+  description:
+    en: Software engineer at Google and contributor to Web standards
+
+bramus:
+  title:
+    en: Bramus
+    es: Bramus
+    ja: Bramus
+    ko: Bramus
+    pt: Bramus
+    ru: Bramus
+    zh: Bramus
+  description:
+    en: Developer Advocate for CSS, UI, and DevTools at Chrome
+    es: Desarrollador partidario para CSS, UI y DevTools en Chrome
+    ja: Chrome の CSS、UI、DevTools を対象とした Developer Advocate
+    ko: Chrome의 CSS, UI 및 DevTools 개발자 애드버킷
+    pt: Developer Advocate para CSS, UI e DevTools no Chrome
+    ru: Developer Advocate по вопросам CSS, UI и DevTools в команде Chrome
+    zh: Chrome 的 CSS、UI 和 DevTools 开发技术推广工程师
+
+kadirtopal:
+  title:
+    en: Kadir Topal
+  description:
+    en: Kadir is a product manager on the Web Developer Platform team.
+
+daviddarnes:
+  title:
+    en: David Darnes
+  description:
+    en: David is a senior front-end developer at Nordhealth.

@@ -74,7 +74,7 @@ The router also registered the modules' route declarations so that when you navi
 
 `PreloadAllModules` is useful in a lot of cases. When you have dozens of modules, however, its aggressive preloading can really increase network usage. Also, since the router needs to register the routes in all the preloaded modules, it can cause intensive computations in the UI thread and lead to sluggish user experience.
 
-The [quicklink](https://github.com/GoogleChromeLabs/quicklink) library provides a better strategy for larger apps. It uses the [IntersectionObserver](https://developers.google.com/web/updates/2019/02/intersectionobserver-v2) API to preload only modules associated with links that are currently visible on the page.
+The [quicklink](https://github.com/GoogleChromeLabs/quicklink) library provides a better strategy for larger apps. It uses the [IntersectionObserver](/intersectionobserver-v2/) API to preload only modules associated with links that are currently visible on the page.
 
 You can add quicklink to an Angular app by using the [ngx-quicklink](https://www.npmjs.com/package/ngx-quicklink) package. Start by installing the package from npm:
 

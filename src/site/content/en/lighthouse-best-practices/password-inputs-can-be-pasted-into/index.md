@@ -22,7 +22,7 @@ to remember.
 
 ## How this Lighthouse audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags code that prevents users from pasting into password fields:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags code that prevents users from pasting into password fields:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0tAkhHny7nQu4pYJ9m9E.png", alt="Lighthouse audit shows page stops users from pasting into password fields", width="800", height="163" %}
@@ -45,7 +45,7 @@ Lighthouse doesn't detect that scenario, either.
 
 To quickly find and inspect the code that's preventing pasting:
 {% Instruction 'devtools-sources', 'ol' %}
-1. Expand the [**Event Listener Breakpoints**](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#event-listeners) pane.
+1. Expand the [**Event Listener Breakpoints**](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#event-listeners) pane.
 1. Expand the **Clipboard** list.
 1. Select the **`paste`** checkbox.
 1. Paste some text into a password field on your page.
@@ -71,4 +71,4 @@ remove the entire event listener.
 
 ## Resources
 
-[Source code for **Prevents users from pasting into password fields** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)
+[Source code for **Prevents users from pasting into password fields** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)

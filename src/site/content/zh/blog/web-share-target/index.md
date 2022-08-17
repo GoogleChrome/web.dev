@@ -141,7 +141,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-请务必使用服务工作进程来[预缓存](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker)`action`页面，以便它能够快速加载并可靠地工作，即便用户处于离线状态。[Workbox](/precache-with-workbox/) 这个工具可以帮您在服务工作进程中[实现预缓存](https://developers.google.com/web/tools/workbox/)。
+请务必使用服务工作进程来[预缓存](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker)`action`页面，以便它能够快速加载并可靠地工作，即便用户处于离线状态。[Workbox](/precache-with-workbox/) 这个工具可以帮您在服务工作进程中[实现预缓存](https://developer.chrome.com/docs/workbox/)。
 
 ### 处理 POST 分享
 
@@ -179,7 +179,7 @@ self.addEventListener('fetch', event => {
 截至 2021 年初，下列浏览器支持 Web Share Target API：
 
 - Android 上的 Chrome 和 Edge 76 或更高版本。
-- Chrome OS 上的 Chrome 89 或更高版本。
+- ChromeOS 上的 Chrome 89 或更高版本。
 
 在所有平台上，您的 Web 应用程序必须先[安装](https://developers.google.com/web/fundamentals/app-install-banners/#criteria)，然后它才会显示为接收分享数据的潜在目标。
 

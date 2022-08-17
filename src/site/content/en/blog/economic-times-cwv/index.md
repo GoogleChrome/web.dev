@@ -21,7 +21,7 @@ With internet speeds improving day-by-day, users expect websites to respond and 
 
 ## Measuring the Impact
 
-We focused on [Largest Contentful Paint (LCP)](/lcp/) and[Cumulative Layout Shift (CLS)](/cls/), as they matter the most when it comes to providing a great reading experience to our users. After implementing various performance fixes as described below, The Economic Times managed to improve Chrome User Experients (CrUX) report metrics significantly within a few months.
+We focused on [Largest Contentful Paint (LCP)](/lcp/) and [Cumulative Layout Shift (CLS)](/cls/), as they matter the most when it comes to providing a great reading experience to our users. After implementing various performance fixes as described below, The Economic Times managed to improve Chrome User Experiments (CrUX) report metrics significantly within a few months.
 
 **Overall, CLS improved** by 250% from 0.25 to 0.09.
 **Overall, LCP improved** by 80% from 4.5 seconds to 2.5 seconds.

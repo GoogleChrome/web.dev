@@ -495,11 +495,11 @@ Address line 2 (optional)
 - [로그인 양식 모범 사례](/sign-in-form-best-practices)
 - [가입 양식 모범 사례](/sign-up-form-best-practices)
 - [WebOTP API로 웹에서 전화번호 확인](/web-otp)
-- [놀라운 양식 만들기](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [놀라운 양식 만들기](/learn/forms/)
 - [모바일 양식 디자인 모범 사례](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [더 많은 기능을 갖춘 양식 컨트롤](/more-capable-form-controls)
 - [액세스 가능한 양식 만들기](https://webaim.org/techniques/forms/)
-- [Credential Management API를 사용하여 가입 흐름 간소화](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Credential Management API를 사용하여 가입 흐름 간소화](https://developer.chrome.com/blog/credential-management-api/)
 - [Frank의 우편 주소에 대한 필수 가이드(Frank's Compulsive Guide to Postal Addresses)](http://www.columbia.edu/~fdc/postal/)는 200개가 넘는 국가의 주소 형식에 대한 유용한 링크와 광범위한 지침을 제공합니다.
 - [국가 목록](http://www.countries-list.info/Download-List)에는 국가 코드와 이름을 여러 언어로, 그리고 여러 형식으로 다운로드할 수 있는 도구가 있습니다.
 

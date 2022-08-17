@@ -56,4 +56,4 @@ Lighthouse находит все изображения в формате JPEG �
 
 ## Ресурсы
 
-- [Исходный код аудита **Efficiently encode images**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
+- [Исходный код аудита **Efficiently encode images**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-optimized-images.js)

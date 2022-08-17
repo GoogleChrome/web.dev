@@ -103,7 +103,7 @@ En la mayoría de los casos, no hay una solución para esto, pero se puede aplic
 
 {% Aside 'caution' %} La técnica anterior puede ayudar a mitigar el posible cambio en la IU en una pequeña parte del sitio, donde el usuario puede realizar una acción en un subdominio y regresar al origen principal (como en un flujo de inicio de sesión), pero no será una técnica eficaz para implementar en rutas completas, incluidas muchas páginas alojadas en subdominios (como secciones completas del sitio). {% endAside %}
 
-{% Aside %} En el contexto de [Trusted Web Activities](https://developers.google.com/web/updates/2019/02/using-twa), existe una forma recomendada de evitar este problema, [validando todos los orígenes mediante enlaces de activos digitales](https://developers.google.com/web/updates/2020/01/twa-multi-origin). {% endAside %}
+{% Aside %} En el contexto de [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/), existe una forma recomendada de evitar este problema, [validando todos los orígenes mediante enlaces de activos digitales](https://developers.google.com/web/updates/2020/01/twa-multi-origin). {% endAside %}
 
 ### Conclusión
 

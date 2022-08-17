@@ -72,8 +72,8 @@ without the need of going to the network, making the navigation faster.
 
 ## Using Workbox {: #using-workbox }
 
-[Workbox](https://developers.google.com/web/tools/workbox) provides an easy way to send messages to
-a service worker, via the [`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) package, a set of modules
+[Workbox](https://developer.chrome.com/docs/workbox/) provides an easy way to send messages to
+a service worker, via the [`workbox-window`](https://developer.chrome.com/docs/workbox/modules/workbox-window/) package, a set of modules
 that are intended to run in the window context. They're a complement to the other Workbox packages
 that run in the service worker.
 

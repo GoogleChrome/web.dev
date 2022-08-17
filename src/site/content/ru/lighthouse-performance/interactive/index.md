@@ -74,7 +74,7 @@ TTI измеряет, сколько времени требуется стра�
 
 ## Отслеживание TTI на устройствах реальных пользователей
 
-Чтобы узнать, как измерить реальное значение TTI на устройствах ваших пользователей, см. страницу Google [с показателями производительности, ориентированными на пользователя](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics). В разделе [«Отслеживание TTI»](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_tti) описывается, как программно получить доступ к данным TTI и отправить их в Google Analytics.
+Чтобы узнать, как измерить реальное значение TTI на устройствах ваших пользователей, см. страницу Google [с показателями производительности, ориентированными на пользователя](/user-centric-performance-metrics/). В разделе [«Отслеживание TTI»](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_tti) описывается, как программно получить доступ к данным TTI и отправить их в Google Analytics.
 
 {% Aside %} TTI может быть сложно отследить в естественных условиях. Отслеживая показатель [First Input Delay (задержка первого ввода)](https://developers.google.com/web/updates/2018/05/first-input-delay), можно получить достаточно близкое к TTI значение. {% endAside %}
 
@@ -82,9 +82,9 @@ TTI измеряет, сколько времени требуется стра�
 
 ## Ресурсы
 
-- [Исходный код для аудита **Time to Interactive**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
+- [Исходный код для аудита **Time to Interactive**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/interactive.js)
 - [Руководство по оценкам Lighthouse](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Первая интерактивность и полная интерактивность](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
-- [Оптимизация запуска JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
+- [Оптимизация запуска JavaScript](/optimizing-content-efficiency-javascript-startup-optimization/)
 - [Уменьшение полезной нагрузки JavaScript с помощью Tree Shaking](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/)
 - [Оптимизация сторонних ресурсов](/fast/#optimize-your-third-party-resources)

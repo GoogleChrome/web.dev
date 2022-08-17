@@ -50,6 +50,10 @@
     --flow-space: #{get-space('size-2')};
   }
 
+  details + details {
+    margin-top: 0;
+  }
+
   details > * {
     --flow-space: #{get-space('size-1')};
   }

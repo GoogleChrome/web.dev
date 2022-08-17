@@ -6,6 +6,7 @@ authors:
   - philipwalton
   - yoavweiss
 date: 2021-09-14
+updated: 2022-07-18
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/FITOGeO0PDyPrBveixB7.jpeg
 alt: "Exterior view of the Walt Disney Concert Hall"
 tags:
@@ -126,9 +127,9 @@ loads experienced on the site's [landing
 page](https://en.wikipedia.org/wiki/Landing_page).
 
 You can check your site's score for different aggregation methods using
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) or
+[PageSpeed Insights](https://pagespeed.web.dev/) or
 the [Chrome User Experience Report
-API](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started),
+API](/chrome-ux-report-api/),
 which reports scores for both individual page URLs and the entire origin.
 
 Another way the SPA architecture can affect Core Web Vitals scores is for
@@ -147,7 +148,7 @@ with full page loads in an MPA. This can also lead to confusion because layout
 shifts that occur after a route transition will be attributed to the URL of the
 page when it was loaded, not the URL in the address bar at the time of the shift
 ([more details
-below](#if-core-web-vitals-scores-are-only-reported-for-an-spa's-landing-pages-how-can-i-debug-issues-that-occur-on-"pages"-after-a-route-transition)).
+below](#if-core-web-vitals-scores-are-only-reported-for-an-spa's-landing-pages-how-can-i-debug-issues-that-occur-on-pages-after-a-route-transition)).
 
 ### If SPA architectures improve the user experience, shouldn't that improvement be reflected in the metrics?
 
@@ -184,8 +185,7 @@ in-page navigation experience is excellent.
 In the future we plan to develop metrics that encourage great, post-load
 experiences, and we believe this is the best path to incentivize high-quality
 SPAs in a way that doesn't compromise the initial load experience. We have
-already published our plans to develop [a new responsiveness
-metric](/better-responsiveness-metric/), and we're actively working on other
+already delivered a new metric named [Interaction to Next Paint (INP)](/inp/) that measures interaction latency throughout the entire page lifecycle, and we're actively working on other
 post-load metrics as well, including metrics that measure SPA route transitions
 ([see below](#design-new-apis-that-enable-better-spa-measurement)).
 
@@ -197,7 +197,7 @@ could account for some of the change.
 
 A quick way to check would be to test both an MPA and SPA version of one of your
 landing pages with
-[Lighthouse](https://developers.google.com/web/tools/lighthouse). If the
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/). If the
 Lighthouse score is lower on any of the Core Web Vitals metric for the SPA
 version, then it's likely that the load experience did get worse after the
 update.
@@ -216,7 +216,7 @@ expect to see their Core Web Vitals scores reflect that.
 
 Google tools that report field data for the Core Web Vitals metric (like Search
 Console and PageSpeed Insights) get their data from the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+Report](https://developer.chrome.com/docs/crux/)
 (CrUX). And CrUX aggregates data either by origin or by page URL (that is, the
 page URL at load time).
 

@@ -143,7 +143,7 @@ CSS ファイルには、読みやすくするために、スペース、イン�
 
 ### 重要でない CSS を先送りする
 
-Chrome DevTools の [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) (カバレッジ) タブを使用し、Web ページで使用されていない CSS を見つけます。
+Chrome DevTools の [Coverage](https://developer.chrome.com/docs/devtools/coverage/) (カバレッジ) タブを使用し、Web ページで使用されていない CSS を見つけます。
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Chrome DevTools の Coverage (カバレッジ) タブ", width="800", height="559" %}
 
@@ -339,7 +339,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 この記事の前半で説明したように、Service Worker は比較的小さな HTML レスポンスの配信などを含む数多くの便利なタスクに利用が可能です。また、これを利用して静的なリソースをブラウザーにキャッシュし、繰り返しリクエストされる場合にネットワークを経由せずにリソースを提供することも可能です。
 
-Service Worker を使用して重要なリソースを事前にキャッシュしておくと、特に接続状態が悪い中で Web ページを再読み込みするユーザー (またはオフラインでアクセスするユーザー) の読み込み時間を大幅に削減することができます。また、[Workbox](https://developers.google.com/web/tools/workbox/) のようなライブラリを使用すれば、事前にキャッシュされたアセットの更新処理を自分で Service Worker を記述して処理するよりも簡単に行うことができます。
+Service Worker を使用して重要なリソースを事前にキャッシュしておくと、特に接続状態が悪い中で Web ページを再読み込みするユーザー (またはオフラインでアクセスするユーザー) の読み込み時間を大幅に削減することができます。また、[Workbox](https://developer.chrome.com/docs/workbox/) のようなライブラリを使用すれば、事前にキャッシュされたアセットの更新処理を自分で Service Worker を記述して処理するよりも簡単に行うことができます。
 
 {% Aside %}Service Worker と Workbox については、「[ネットワークの信頼性](/reliable/)」を参照してください。{% endAside %}
 
@@ -393,20 +393,20 @@ Service Worker を使用して重要なリソースを事前にキャッシュ�
   </figcaption>
 </figure>
 
-{% Aside %}さまざまな種類のサーバーサイド レンダリング アーキテクチャの詳細については、「[Web 上でのレンダリング](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)」を参照してください。{% endAside %}
+{% Aside %}さまざまな種類のサーバーサイド レンダリング アーキテクチャの詳細については、「[Web 上でのレンダリング](/rendering-on-the-web/)」を参照してください。{% endAside %}
 
 ## 開発者ツール
 
 LCP を測定またはデバッグするためのツールは、以下のように様々なものが用意されています。
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) では、ラボ設定での LCP の測定がサポートされています。
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) では、ラボ設定での LCP の測定がサポートされています。
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- Chrome DevTools の [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) (パフォーマンス) パネルの **Timings** (タイミング) セクションには LCP マーカーが含まれており、**Related Node** (関連するノード) フィールドにカーソルを置くことで LCP に関連する要素を表示することができます。
+- Chrome DevTools の [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) (パフォーマンス) パネルの **Timings** (タイミング) セクションには LCP マーカーが含まれており、**Related Node** (関連するノード) フィールドにカーソルを置くことで LCP に関連する要素を表示することができます。
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools での LCP", width="800", height="509" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) は、オリジンレベルで集計された実際の環境での LCP 値を提供します。
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) は、オリジンレベルで集計された実際の環境での LCP 値を提供します。
 
 *レビューしていただいた Philip Walton、Katie Hempenius、Kayce Basques、Ilya Grigorik には、心より感謝申し上げます。*

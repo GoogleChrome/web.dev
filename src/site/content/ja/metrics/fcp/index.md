@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-07-18
 description: この投稿では、First Contentful Paint (視覚コンテンツの初期表示時間、FCP) という指標について紹介し、その測定方法に関する説明を行います。
 tags:
   - performance
@@ -38,16 +38,16 @@ FCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### フィールド測定を実施するためのツール
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [Search Console (Core Web Vitals Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)
 
 ### ラボ測定を実施するためのツール
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### JavaScript を使用して FCP を測定する
 

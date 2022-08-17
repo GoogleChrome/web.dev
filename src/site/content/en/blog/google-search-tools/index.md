@@ -24,7 +24,7 @@ gives you an overview of the available tools and suggestions on when to use each
 
 ## Find basic SEO issues with Lighthouse
 
-Use [Lighthouse](https://developers.google.com/web/tools/lighthouse) for your first investigation.
+Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) for your first investigation.
 It comes with a bunch of [SEO audits](/pass-lighthouse-seo-audit/).
 
 <figure>

@@ -13,7 +13,7 @@ Os [ícones mascaráveis](/maskable-icon/) são um novo formato de ícone que ga
 
 ## Como a auditoria do ícone mascarável do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não têm suporte para ícones mascaráveis:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que não têm suporte para ícones mascaráveis:
 
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="A auditoria do ícone mascarável na IU do relatório Lighthouse.", width="800", height="110" %}</figure>
 
@@ -53,7 +53,7 @@ Para passar na auditoria:
 
 ## Recursos
 
-- [O código-fonte para a auditoria **O manifesto não tem um ícone mascarável**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [O código-fonte para a auditoria **O manifesto não tem um ícone mascarável**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [Suporte de ícone adaptável em PWAs com ícones mascaráveis](/maskable-icon/)
 - [Editor Maskable.app](https://maskable.app/editor)
 - [Adicionar um manifesto de aplicativo da web](/add-manifest/)

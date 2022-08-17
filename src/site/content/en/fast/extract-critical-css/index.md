@@ -39,7 +39,7 @@ Inlining extracted styles in the `<head>` of the HTML document eliminates the ne
     </figcaption>
 </figure>
 
-Improving render times can make a huge difference in [perceived performance](https://developers.google.com/web/fundamentals/performance/rail#ux), especially under poor network conditions. On mobile networks, high latency is an issue regardless of bandwidth.
+Improving render times can make a huge difference in [perceived performance](/rail/#focus-on-the-user), especially under poor network conditions. On mobile networks, high latency is an issue regardless of bandwidth.
 
 <figure>
   {% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="Filmstrip view comparison of loading a page with render-blocking CSS (top) and the same page with inlined critical CSS (bottom) on a 3G connection. Top filmstrip shows six blank frames before finally displaying content. Bottom filmstrip displays meaningful content in the first frame.", width="800", height="363" %}

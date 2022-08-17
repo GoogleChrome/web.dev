@@ -214,7 +214,7 @@ The above results were achieved by grabbing low hanging fruit such as:
 For more best practices, check out the
 [Web Vitals guidance](/learn-web-vitals).
 Use
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+[PageSpeed Insights](https://pagespeed.web.dev/)
 to audit your website and get actionable recommendations immediately.
 
 There are several more global brands which have also benefited from investing in Core Web Vitals.

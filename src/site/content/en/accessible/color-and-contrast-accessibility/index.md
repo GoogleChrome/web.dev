@@ -62,7 +62,7 @@ You will get a detailed report of any failing elements.
 
 ## Advanced Perceptual Contrast Algorithm (APCA)
 
-The [Advanced Perceptual Contrast Algorithm (APCA)](https://w3c.github.io/silver/guidelines/methods/Method-font-characteristic-contrast.html) is a new way to compute contrast based on modern research on color perception.
+The [Advanced Perceptual Contrast Algorithm (APCA)](https://git.apcacontrast.com/documentation/WhyAPCA) is a new way to compute contrast based on modern research on color perception.
 
 Compared to [AA](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum)/[AAA](https://www.w3.org/WAI/WCAG21/quickref/#contrast-enhanced) guidelines, APCA is more context-dependent.
 

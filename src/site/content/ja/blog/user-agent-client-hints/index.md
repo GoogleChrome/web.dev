@@ -56,7 +56,7 @@ User-Agent 文字列は、数多くの合法的な[ユース ケース](https://
 
 [User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity) は、同一の情報へのアクセスを実現しながらも、プライバシーをより安全に保護することができる方法であり、ブラウザーは最終的に User-Agent 文字列のすべてのブロードキャストの既定値を削減することができるようになります。[Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) は、サーバーがブラウザーにクライアントに関する一連のデータ (ヒント) をリクエストし、ブラウザーが独自のポリシーやユーザー構成を適用して返されるデータを決定するようなモデルを強制します。つまり、**すべて**の User-Agent 情報をデフォルトで公開するのではなく、明示的かつ監査可能な方法でアクセスが管理されるようになったのです。また、開発者にとっても API がシンプルになる (正規表現を使用する必要がなくなるなど) というメリットがあります。
 
-現在の Client Hints には、主にブラウザーの表示や接続に関連する機能の情報が記載されています。詳細については「[Client Hints によるリソース選択の自動化](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints)」でご確認いただくことが可能ですが、ここでもこの手順について簡単にご説明させていただきます。
+現在の Client Hints には、主にブラウザーの表示や接続に関連する機能の情報が記載されています。詳細については「[Client Hints によるリソース選択の自動化](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/)」でご確認いただくことが可能ですが、ここでもこの手順について簡単にご説明させていただきます。
 
 サーバーは、ヘッダーを介して特定の Client Hint をリクエストします。
 

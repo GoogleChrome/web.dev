@@ -19,7 +19,7 @@ thumbnail: image/admin/X84uooDup0B9OYWY4ZKh.jpg
 
 {% YouTube 'NXCT3htg9nk' %}
 
-En marzo de 2003, [Nick Finck](https://twitter.com/nickf) y [Steve Champeon](https://twitter.com/schampeo) sorprendieron al mundo del diseño web con el concepto de [mejora progresiva](http://www.hesketh.com/publications/inclusive_web_design_for_the_future/), una estrategia para el diseño web que enfatiza la carga del contenido principal de la página web en primer lugar, y que luego agrega progresivamente capas de presentación y características más matizadas y técnicamente rigurosas sobre el contenido. Mientras que en 2003, la mejora progresiva consistía en usar, en ese momento, características modernas de CSS, JavaScript discreto e incluso gráficos vectoriales escalables. La mejora progresiva en 2020 y después se trata de utilizar [las capacidades de los navegadores modernos](/fugu-status/).
+En marzo de 2003, [Nick Finck](https://twitter.com/nickf) y [Steve Champeon](https://twitter.com/schampeo) sorprendieron al mundo del diseño web con el concepto de [mejora progresiva](http://www.hesketh.com/publications/inclusive_web_design_for_the_future/), una estrategia para el diseño web que enfatiza la carga del contenido principal de la página web en primer lugar, y que luego agrega progresivamente capas de presentación y características más matizadas y técnicamente rigurosas sobre el contenido. Mientras que en 2003, la mejora progresiva consistía en usar, en ese momento, características modernas de CSS, JavaScript discreto e incluso gráficos vectoriales escalables. La mejora progresiva en 2020 y después se trata de utilizar [las capacidades de los navegadores modernos](https://developer.chrome.com/blog/fugu-status/).
 
 <figure>
  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IEOd4MT9BqnbeXQ7z0vC.png", alt="Diseño web inclusivo para el futuro con mejoras progresivas. Diapositiva de título de la presentación original de Finck y Champeon.", width="800", height="597" %}
@@ -71,7 +71,7 @@ console.log(0 ?? 42);
 
 ## La aplicación de muestra: Fugu Greetings
 
-Para este artículo, trabajo con una PWA simple, llamada [Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/) ([GitHub](https://github.com/tomayac/fugu-greetings)). El nombre de esta aplicación es un homenaje al Project Fugu 🐡, un esfuerzo por darle a la web todos los poderes de las aplicaciones de escritorio/Android/iOS. Puede leer más sobre el proyecto en su [página de inicio](/fugu-status).
+Para este artículo, trabajo con una PWA simple, llamada [Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/) ([GitHub](https://github.com/tomayac/fugu-greetings)). El nombre de esta aplicación es un homenaje al Project Fugu 🐡, un esfuerzo por darle a la web todos los poderes de las aplicaciones de escritorio/Android/iOS. Puede leer más sobre el proyecto en su [página de inicio](https://developer.chrome.com/blog/fugu-status).
 
 Fugu Greetings es una aplicación de dibujo que te permite crear tarjetas de felicitación virtuales y enviárselas a tus seres queridos. Ejemplifica [los conceptos centrales de PWA](/progressive-web-apps/). Es [confiable](/reliable/) y está completamente habilitada sin conexión, por lo que puede usarla incluso si no está conectado a una red. También se puede [instalar](/install-criteria/) en la pantalla de inicio de un dispositivo y se integra perfectamente con el sistema operativo como una aplicación independiente.
 
@@ -323,7 +323,7 @@ En Fugu Greetings, si toco el botón **Compartir** en un navegador compatible co
      El archivo se adjunta a un nuevo correo electrónico en el redactor de Gmail.
    </figcaption>
   </figure>
-</div>  
+</div>
 
 ## La API de selección de contactos
 

@@ -25,7 +25,7 @@ Quando o nome de um elemento é combinado com a **função** do elemento, ele fo
 
 <figure>{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %} <figcaption> Painel de acessibilidade do DevTools mostrando o nome calculado para um botão.</figcaption></figure>
 
-{% Aside %} Para saber mais, consulte a [Referência de acessibilidade](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference) do DevTools. {% endAside %}
+{% Aside %} Para saber mais, consulte a [Referência de acessibilidade](https://developer.chrome.com/docs/devtools/accessibility/reference/) do DevTools. {% endAside %}
 
 Quer você esteja olhando para um `img` com `alt` ou uma `input` com um `label`, todos esses cenários resultam no mesmo resultado: dar a um elemento seu nome acessível.
 

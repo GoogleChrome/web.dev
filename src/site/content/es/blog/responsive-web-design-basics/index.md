@@ -327,8 +327,8 @@ Una vez que haya configurado sus consultas de medios de breakpoints, querrá ver
 
 Para ver su página en diferentes breakpoints:
 
-[Abra DevTools](https://developers.google.com/web/tools/chrome-devtools#open) y luego active el [modo de dispositivo](https://developers.google.com/web/tools/chrome-devtools/device-mode#toggle). Esto se abre en [modo responsivo](https://developers.google.com/web/tools/chrome-devtools/device-mode#responsive) de forma predeterminada.
+[Abra DevTools](https://developer.chrome.com/docs/devtools/open/) y luego active el [modo de dispositivo](https://developer.chrome.com/docs/devtools/device-mode/#toggle). Esto se abre en [modo responsivo](https://developer.chrome.com/docs/devtools/device-mode/#responsive) de forma predeterminada.
 
-Para ver sus consultas de medios, abra el menú de modo de dispositivo y seleccione [Mostrar consultas de medios](https://developers.google.com/web/tools/chrome-devtools/device-mode#queries) para mostrar sus breakpoints como barras de colores sobre su página.
+Para ver sus consultas de medios, abra el menú de modo de dispositivo y seleccione [Mostrar consultas de medios](https://developer.chrome.com/docs/devtools/device-mode/#queries) para mostrar sus breakpoints como barras de colores sobre su página.
 
 Haga clic en una de las barras para ver su página mientras esa consulta de medios está activa. Haga clic con el botón derecho en una barra para saltar a la definición de la consulta de medios.

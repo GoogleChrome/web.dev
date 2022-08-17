@@ -234,7 +234,7 @@ setTimeout(async () => {
 
 ## 权限策略集成
 
-要在 iframe 中使用 API，您需要使用[权限策略](https://w3c.github.io/webappsec-permissions-policy/)启用它，权限策略定义了一种机制，允许有选择地启用和禁用各种浏览器功能和 API。具体来说，您需要根据应用程序的需要传递 `clipboard-read` 或 `clipboard-write` 之一或两者。
+要在 iframe 中使用 API，您需要使用[权限策略](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/)启用它，权限策略定义了一种机制，允许有选择地启用和禁用各种浏览器功能和 API。具体来说，您需要根据应用程序的需要传递 `clipboard-read` 或 `clipboard-write` 之一或两者。
 
 ```html/2
 <iframe

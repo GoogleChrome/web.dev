@@ -33,7 +33,7 @@ tags:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/onUIDiaFNNHOmnwXzRh1.png", alt="ポッドキャスト再生のエピソードをダウンロードしたPodcastsアプリ。", width="800", height="440" %} <figcaption>ダウンロードしたポッドキャストのエピソードは、ネットワークがなくても再生できます。</figcaption></figure>
 
-{% Details %} {% DetailsSummary %} Webでこれを実行する方法{% endDetailsSummary %}以前にダウンロードしたメディアコンテンツは、たとえば<a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Workbox</a>ライブラリの<a href="https://developers.google.com/web/tools/workbox">キャッシュに保存された音声と動画の再生</a>レシピを使用して、キャッシュから再生できます。その他のコンテンツは、常にキャッシュまたはIndexedDBに保存できます。詳細については、<a href="/storage-for-the-web/">Webのストレージ</a>の記事を読み、どのストレージテクノロジーをいつ使用するかを確認してください。使用可能なメモリ量が少なくなっても、消去されずに永続的に保存する必要があるデータの場合には、<a href="/persistent-storage/">永続ストレージAPI</a>を使用できます。 {% endDetails %}
+{% Details %} {% DetailsSummary %} Webでこれを実行する方法{% endDetailsSummary %}以前にダウンロードしたメディアコンテンツは、たとえば<a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">Workbox</a>ライブラリの<a href="https://developer.chrome.com/docs/workbox/">キャッシュに保存された音声と動画の再生</a>レシピを使用して、キャッシュから再生できます。その他のコンテンツは、常にキャッシュまたはIndexedDBに保存できます。詳細については、<a href="/storage-for-the-web/">Webのストレージ</a>の記事を読み、どのストレージテクノロジーをいつ使用するかを確認してください。使用可能なメモリ量が少なくなっても、消去されずに永続的に保存する必要があるデータの場合には、<a href="/persistent-storage/">永続ストレージAPI</a>を使用できます。 {% endDetails %}
 
 ## プロアクティブなバックグラウンドダウンロード
 
@@ -209,8 +209,8 @@ PodcastsアプリはmacOSデスクトップエクスペリエンスの一部で�
         <td><a href="#offline-content-available-and-media-playable">オフラインコンテンツが利用可能、メディア再生可能</a></td>
         <td>
           <ul>
-            <li><a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">キャッシュに保存された音声と動画を再生</a></li>
-            <li><a href="https://developers.google.com/web/tools/workbox">ワークボックスライブラリ</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">キャッシュに保存された音声と動画を再生</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/">ワークボックスライブラリ</a></li>
             <li><a href="/storage-for-the-web/">ストレージAPI</a></li>
             <li><a href="/persistent-storage/">永続ストレージAPI</a></li>
           </ul>
@@ -396,7 +396,7 @@ PodcastsアプリはmacOSデスクトップエクスペリエンスの一部で�
 
 ## まとめ
 
-PWAは、2015年の導入以来、長い道のりを歩んできました。[ProjectFugu🐡](/fugu-status)のコンテキストでは、会社横断的なChromiumチームが最後に残ったギャップを埋めるために取り組んでいます。この記事のアドバイスの一部だけに従うことで、アプリのような感覚に少しずつ近づき、ユーザーに「単なるWebサイト」を扱っていることを忘れさせることができます。正直なところ、ほとんどの人にとって*実際の*アプリのように感じられる限り、アプリがどのように構築されているか (そしてなぜそれらが必要なのか) は気にしないはずです。
+PWAは、2015年の導入以来、長い道のりを歩んできました。[ProjectFugu🐡](https://developer.chrome.com/blog/fugu-status)のコンテキストでは、会社横断的なChromiumチームが最後に残ったギャップを埋めるために取り組んでいます。この記事のアドバイスの一部だけに従うことで、アプリのような感覚に少しずつ近づき、ユーザーに「単なるWebサイト」を扱っていることを忘れさせることができます。正直なところ、ほとんどの人にとって*実際の*アプリのように感じられる限り、アプリがどのように構築されているか (そしてなぜそれらが必要なのか) は気にしないはずです。
 
 ## 謝辞
 

@@ -17,7 +17,7 @@ web_lighthouse:
 
 ## Lighthouse の `robots.txt` 監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、無効な `robots.txt` ファイルにフラグを立てます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、無効な `robots.txt` ファイルにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="無効な robots.txt を示す Lighthouse の監査", width="800", height="203" %}</figure>
 
@@ -43,7 +43,7 @@ Lighthouse は、`robots.txt` ファイルが正しい場所にあることを�
 
 サーバーがサーバーエラーに対してサーバーエラー（500 番代の [HTTP ステータスコード](/http-status-code)）を返した場合、検索エンジンはクロールする必要のあるページを認識しません。サイト全体のクロールが停止し、新しいコンテンツのインデックスが作成されなくなります。
 
-HTTP ステータスコードを確認するには、Chrome で `robots.txt` を開き、[Chrome DevTools でリクエストを確認](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze)します。
+HTTP ステータスコードを確認するには、Chrome で `robots.txt` を開き、[Chrome DevTools でリクエストを確認](https://developer.chrome.com/docs/devtools/network/reference/#analyze)します。
 
 ### `robots.txt` を 500KiB 未満に保つ
 
@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## リソース
 
-- [「**`robots.txt` が無効です**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [「**`robots.txt` が無効です**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [`robots.txt file` を作成する](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Robots メタタグと X-Robots-Tag HTTP ヘッダーの仕様](https://developers.google.com/search/reference/robots_meta_tag)

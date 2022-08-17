@@ -63,7 +63,7 @@ framework will work.
 ## What we learned about service workers {: #lessons-learned }
 
 You can't have a PWA without a [service
-worker](https://developers.google.com/web/fundamentals/primers/service-workers/). Service workers
+worker](https://developer.chrome.com/docs/workbox/service-worker-overview/). Service workers
 give you a lot of power, such as advanced caching strategies, offline capabilities, background sync,
 etc. While service workers do add some complexity, we found that their benefits outweighed the added
 complexity.
@@ -72,7 +72,7 @@ complexity.
 
 Avoid writing a service worker script by hand. Writing service workers by hand requires manually
 managing cached resources and rewriting logic that is common to most service workers libraries, such
-as [Workbox](https://developers.google.com/web/tools/workbox/).
+as [Workbox](https://developer.chrome.com/docs/workbox/).
 
 Having said that, due to our internal tech stack we could not use a library to generate and manage
 our service worker. Our learnings below will at times reflect that. Go to [Pitfalls for
@@ -146,7 +146,7 @@ caching any assets](/http-cache/#unversioned-urls).
 
 ### Lighthouse {: #lighthouse }
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) provides a number of debugging
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) provides a number of debugging
 tools useful for PWAs. It scans a site and generates reports covering PWAs, performance,
 accessibility, SEO, and other best practices.
 We recommend [running Lighthouse on continuous
@@ -202,7 +202,7 @@ worker script has changed in some way, so we had to ensure the service worker sc
 changed in some way when a cached file changed. We did this manually by embedding a hash of the
 static resource fileset within our service worker script, so every release produced a distinct
 service worker JavaScript file. Service worker libraries like
-[Workbox](https://developers.google.com/web/tools/workbox/) automate this process for you.
+[Workbox](https://developer.chrome.com/docs/workbox/) automate this process for you.
 
 ### Unit testing {: #unit-testing }
 

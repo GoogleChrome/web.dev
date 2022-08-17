@@ -264,11 +264,11 @@ img {
 
 Я рад сообщить, что существует ряд инструментов для измерения и отладки CLS (Совокупного смещения макета)
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) и более поздние версии включают поддержку измерения CLS в лабораторных условиях. В этом релизе также будут выделены узлы, вызывающие наибольшее смещение макета.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) и более поздние версии включают поддержку измерения CLS в лабораторных условиях. В этом релизе также будут выделены узлы, вызывающие наибольшее смещение макета.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0 включает поддержку измерения CLS в разделе метрик", width="800", height="309" %}
 
-Панель [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) в DevTools показывает смещения макета в разделе **Experience** в Chrome 84. Представление **Summary** для `Layout Shift` включает совокупную оценку сдвига макета, а также прямоугольное наложение, показывающее затронутые области.
+Панель [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) в DevTools показывает смещения макета в разделе **Experience** в Chrome 84. Представление **Summary** для `Layout Shift` включает совокупную оценку сдвига макета, а также прямоугольное наложение, показывающее затронутые области.
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Записи Layout Shift отображаются на панели производительности Chrome DevTools при раскрытии раздела Experience", width="800", height="438" %}<figcaption> После записи новой трассировки на панели Performance в разделе <b>Experience</b> появляется красная полоса, отображающая запись <code>Layout Shift</code> Щелкнув по этой записи, вы сможете просмотреть затронутые элементы (например, увидеть смещенные записи из/в).</figcaption></figure>
 

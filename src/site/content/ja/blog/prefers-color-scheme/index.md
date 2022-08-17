@@ -261,7 +261,7 @@ Chromium 93 と Safari 15 において、この色は、`meta` テーマカラ�
 
 ### DevTools で `prefers-color-scheme` をエミュレートする
 
-オペレーティングシステム全体の配色を切り替えると、すぐに煩わしくなります。そのため、Chrome DevTools では、現在表示されているタブのみに影響するように、ユーザーの好みの配色をエミュレートできるようになりました。[Command メニュー](https://developers.google.com/web/tools/chrome-devtools/command-menu)を開いて、「`Rendering`」と入力し、`Show Rendering` コマンドを実行して、**Emulate CSS media feature prefers-color-scheme** オプションを変更します。
+オペレーティングシステム全体の配色を切り替えると、すぐに煩わしくなります。そのため、Chrome DevTools では、現在表示されているタブのみに影響するように、ユーザーの好みの配色をエミュレートできるようになりました。[Command メニュー](https://developer.chrome.com/docs/devtools/command-menu/)を開いて、「`Rendering`」と入力し、`Show Rendering` コマンドを実行して、**Emulate CSS media feature prefers-color-scheme** オプションを変更します。
 
 <figure>{% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="Chrome DevTools の［Rendering］タブにある［Emulate CSS media feature prefers-color-scheme］オプションのスクリーンショット", width="800", height="552" %}</figure>
 

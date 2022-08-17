@@ -21,7 +21,7 @@ feedback:
 ---
 
 {% Aside 'success' %}
-The Content Indexing API, part of the [capabilities project](/fugu-status/),
+The Content Indexing API, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/),
 launched in Chrome&nbsp;84 for Android.
 {% endAside %}
 
@@ -31,9 +31,9 @@ Using a [progressive web
 app](https://developers.google.com/web/progressive-web-apps) means having access
 to information people care about—images, videos, articles, and more—regardless
 of the current state of your network connection. Technologies like [service
-workers](https://developers.google.com/web/fundamentals/primers/service-workers),
+workers](https://developer.chrome.com/docs/workbox/service-worker-overview/),
 the [Cache Storage
-API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api),
+API](/cache-api-quick-guide/),
 and [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API)
 provide you with the building blocks for storing and serving data when folks
 interact directly with a PWA. But building a high-quality, offline-first PWA is
@@ -105,13 +105,13 @@ illustrates the use of the Content Indexing API with the [Web
 Share Target API](/web-share-target/). The [code demonstrates a
 technique](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/src/js/contentIndexing.js)
 for keeping the Content Indexing API in sync with items stored by a web app
-using the [Cache Storage API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
+using the [Cache Storage API](/cache-api-quick-guide/).
 
 ## Using the API {: #using-the-api }
 
 To use the API your app must have a service worker and URLs that are navigable
 offline. If your web app does not currently have a service worker, the [Workbox
-libraries](https://developers.google.com/web/tools/workbox/) can simplify
+libraries](https://developer.chrome.com/docs/workbox/) can simplify
 creating one.
 
 ### What type of URLs can be indexed as offline-capable? {: #offline-capable-urls }
@@ -192,7 +192,7 @@ await registration.index.add({
 ```
 
 Adding an entry only affects the content index; it does not add anything to the
-[cache](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
+[cache](/cache-api-quick-guide/).
 
 #### Edge case: Call `add()` from `window` context if your icons rely on a `fetch` handler
 
@@ -233,7 +233,7 @@ await registration.index.delete('article-123');
 ```
 
 Calling `delete()` only affects the index. It does not delete anything from the
-[cache](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
+[cache](/cache-api-quick-guide/).
 
 {% Aside 'warning' %}
   Once indexed, entries do not automatically expire. It's

@@ -27,7 +27,7 @@ tags:
 
 <figure>{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="标签内嵌关键 CSS 的 HTML 文件", width="800", height="325" %}<figcaption>内联关键 CSS</figcaption></figure>
 
-缩短渲染时间可以对[用户体验](https://developers.google.com/web/fundamentals/performance/rail#ux)产生巨大影响，尤其是在较差的网络条件下。在移动网络上，无论带宽如何，高延迟都是一个问题。
+缩短渲染时间可以对[用户体验](/rail/#focus-on-the-user)产生巨大影响，尤其是在较差的网络条件下。在移动网络上，无论带宽如何，高延迟都是一个问题。
 
 <figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="使用 3G 连接加载具有渲染阻塞 CSS（顶部）的页面和具有内联关键 CSS（底部）的相同页面的胶片视图比较。顶部幻灯片在最终显示内容之前显示六个空白帧。底部幻灯片在第一帧显示有意义的内容。", width="800", height="363" %}<figcaption>使用 3G 连接加载具有渲染阻塞 CSS 的页面（顶部）和具有内联关键 CSS 的同一页面（底部）的比较</figcaption></figure>
 

@@ -35,7 +35,7 @@ A large DOM tree can slow down your page performance in multiple ways:
 
 ## How the Lighthouse DOM size audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 reports the total DOM elements for a page, the page's maximum DOM depth,
 and its maximum child elements:
 <figure>
@@ -61,12 +61,12 @@ and only create them after a relevant user interaction,
 such as a scroll or a button click.
 
 If you create DOM nodes at runtime,
-[Subtree Modification DOM Change Breakpoints](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#dom)
+[Subtree Modification DOM Change Breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom)
 can help you pinpoint when nodes get created.
 
 If you can't avoid a large DOM tree,
 another approach for improving rendering performance is simplifying your CSS selectors.
-See Google's [Reduce the Scope and Complexity of Style Calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+See Google's [Reduce the Scope and Complexity of Style Calculations](/reduce-the-scope-and-complexity-of-style-calculations/)
 for more information.
 
 ## Stack-specific guidance
@@ -91,5 +91,5 @@ with the Component Dev Kit (CDK).
 
 ## Resources
 
-- [Source code for **Avoid an excessive DOM size** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
-- [Reduce the Scope and Complexity of Style Calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+- [Source code for **Avoid an excessive DOM size** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
+- [Reduce the Scope and Complexity of Style Calculations](/reduce-the-scope-and-complexity-of-style-calculations/)

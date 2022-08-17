@@ -79,7 +79,7 @@ Safari has more complex scope management, known as partitions, affecting how sco
 ## Lifecycle
 
 Service workers have a lifecycle that dictates how they are installed, this is separate from your PWA installation.
-The service worker lifecycle starts with registering the service worker. The browser then attempts to download and parse the service worker file. If parsing succeeds, it's `install` event is fired. The `install` event only fires once.
+The service worker lifecycle starts with registering the service worker. The browser then attempts to download and parse the service worker file. If parsing succeeds, its `install` event is fired. The `install` event only fires once.
 
 Service worker installation happens silently, without requiring user permission, even if the user doesn't install the PWA. The Service Worker API is even available on platforms that do not support PWA installation, such as Safari and Firefox on desktop devices.
 
@@ -113,7 +113,7 @@ When updating your service worker, do so without renaming it. Do not even add fi
 
 After a successful installation, the new service worker will wait to activate until the existing (old) service worker no longer controls any clients. This state is called "waiting", and it's how the browser ensures that only one version of your service worker is running at a time.
 Refreshing a page or reopening the PWA won't make the new service worker take control. The user needs to close or navigate away from all tabs and windows using the current service worker and then navigate back. Only then will the new service worker to take control.
-Visit this [service worker lifecycle article](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle) for more information.
+Visit this [service worker lifecycle article](/service-worker-lifecycle/) for more information.
 
 ## Service worker lifespan
 
@@ -127,7 +127,7 @@ Service workers don't live indefinitely. While exact timings differ between brow
 
 With a registered and active service worker, you have a thread with a completely different execution lifecycle than the main one on your PWA. However, by default, the service worker file itself has no behavior. It won't cache or serve any resources, as this has to be done by your code. You'll find out how in the following chapters.
 
-Service worker's capabilities are not just for proxy or serving HTTP requests; other features are available on top of it for other purposes, such as background code execution, web push notifications, and process payments. We'll discuss these additions in the [capabilities chapter](/learn/pwa/capabilities) chapter.
+Service worker's capabilities are not just for proxy or serving HTTP requests; other features are available on top of it for other purposes, such as background code execution, web push notifications, and process payments. We'll discuss these additions in the [capabilities chapter](/learn/pwa/capabilities).
 
 ##  Resources
 
@@ -135,4 +135,4 @@ Service worker's capabilities are not just for proxy or serving HTTP requests; o
 - [Service Worker mindset](/service-worker-mindset/)
 - [WebKit Workers at your service](https://webkit.org/blog/8090/workers-at-your-service/)
 - [ES Modules in Service Workers](/es-modules-in-sw/)
-- [Service worker lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
+- [Service worker lifecycle](/service-worker-lifecycle/)

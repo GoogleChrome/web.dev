@@ -37,7 +37,7 @@ Quando offline, através da gaveta do lado esquerdo, eu ainda consigo navegar at
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/onUIDiaFNNHOmnwXzRh1.png", alt="Aplicativo Podcasts com um episódio baixado de um podcast em execução.", width="800", height="440" %} <figcaption>Os episódios de podcast baixados podem ser reproduzidos mesmo sem rede.</figcaption></figure>
 
-{% Details %} {% DetailsSummary %} Como fazer isso na web {% endDetailsSummary %} O conteúdo de mídia baixado anteriormente pode ser servido a partir do cache, por exemplo, usando a receita <a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Servir áudio e vídeo em cache</a> da biblioteca <a href="https://developers.google.com/web/tools/workbox">Workbox.</a> Outro conteúdo sempre pode ser armazenado no cache ou em IndexedDB. Leia o artigo <a href="/storage-for-the-web/">Armazenamento para a web</a> para saber todos os detalhes e para saber quando usar qual tecnologia de armazenamento. Se você tiver dados que devem ser armazenados de forma persistente sem o risco de serem eliminados quando a quantidade de memória disponível ficar baixa, você pode usar a <a href="/persistent-storage/">API de armazenamento persistente</a>. {% endDetails %}
+{% Details %} {% DetailsSummary %} Como fazer isso na web {% endDetailsSummary %} O conteúdo de mídia baixado anteriormente pode ser servido a partir do cache, por exemplo, usando a receita <a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">Servir áudio e vídeo em cache</a> da biblioteca <a href="https://developer.chrome.com/docs/workbox/">Workbox.</a> Outro conteúdo sempre pode ser armazenado no cache ou em IndexedDB. Leia o artigo <a href="/storage-for-the-web/">Armazenamento para a web</a> para saber todos os detalhes e para saber quando usar qual tecnologia de armazenamento. Se você tiver dados que devem ser armazenados de forma persistente sem o risco de serem eliminados quando a quantidade de memória disponível ficar baixa, você pode usar a <a href="/persistent-storage/">API de armazenamento persistente</a>. {% endDetails %}
 
 ## Download proativo em segundo plano
 
@@ -213,8 +213,8 @@ A tabela abaixo mostra uma visão geral compacta de todos os recursos e fornece 
         <td><a href="#offline-content-available-and-media-playable">Conteúdo offline disponível e reproduzível em mídia</a></td>
         <td>
           <ul>
-            <li><a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Exibir áudio e vídeo em cache</a></li>
-            <li><a href="https://developers.google.com/web/tools/workbox">Biblioteca Workbox</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">Exibir áudio e vídeo em cache</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/">Biblioteca Workbox</a></li>
             <li><a href="/storage-for-the-web/">API de armazenamento</a></li>
             <li><a href="/persistent-storage/">API de armazenamento persistente</a></li>
           </ul>
@@ -400,7 +400,7 @@ A tabela abaixo mostra uma visão geral compacta de todos os recursos e fornece 
 
 ## Conclusão
 
-Os PWAs já percorreram um longo caminho desde sua introdução em 2015. No contexto do [Projeto Fugu 🐡](/fugu-status), a equipe multiempresarial do Chromium está trabalhando para preencher as últimas lacunas restantes. Seguindo apenas alguns dos conselhos deste artigo, você pode chegar mais perto de oferecer uma sensação de app e fazer com que seus usuários esqueçam que estão lidando com "apenas um site", porque, sinceramente, a maioria deles não se preocupe como seu aplicativo é construído (e por que deveria?), contanto que pareça um aplicativo *de verdade.*
+Os PWAs já percorreram um longo caminho desde sua introdução em 2015. No contexto do [Projeto Fugu 🐡](https://developer.chrome.com/blog/fugu-status), a equipe multiempresarial do Chromium está trabalhando para preencher as últimas lacunas restantes. Seguindo apenas alguns dos conselhos deste artigo, você pode chegar mais perto de oferecer uma sensação de app e fazer com que seus usuários esqueçam que estão lidando com "apenas um site", porque, sinceramente, a maioria deles não se preocupe como seu aplicativo é construído (e por que deveria?), contanto que pareça um aplicativo *de verdade.*
 
 ## Agradecimentos
 

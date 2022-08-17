@@ -5,13 +5,11 @@ authors:
   - petelepage
 description: There are many different options for storing data in the browser. Which one is best for your needs?
 date: 2020-04-27
-updated: 2022-02-18
+updated: 2022-03-08
 tags:
   - blog
   - progressive-web-apps
   - storage
-  # - indexeddb
-  # - cachestorage
   - memory
 hero: image/admin/c8u2hKEFoFfgTsmcKeuK.jpg
 alt: Stack of shipping containers
@@ -96,9 +94,14 @@ device.
 * Chrome allows the browser to use up to 80% of total disk space. An origin can
   use up to 60% of the total disk space. You can use the [StorageManager
   API](#check) to determine the maximum quota available. Other Chromium-based
-  browsers may allow the browser to use more storage. See
-  [PR #3896](https://github.com/GoogleChrome/web.dev/pull/3896) for details about
-  Chrome's implementation.
+  browsers may be different.
+  * In incognito mode, Chrome reduces the amount of storage an origin can use
+    to approximately 5% of the total disk space.
+  * If the user has enabled "Clear cookies and site data when you close all
+    windows" in Chrome, the storage quota is significantly reduced to a
+    maximum of approximately 300MB.
+  * See [PR #3896](https://github.com/GoogleChrome/web.dev/pull/3896) for
+    details about Chrome's implementation.
 * Internet Explorer 10 and later can store up to 250MB and will prompt the
   user when more than 10MB has been used.
 * Firefox allows the browser to use up to 50% of free disk space. An

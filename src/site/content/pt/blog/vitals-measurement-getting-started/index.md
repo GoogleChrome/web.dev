@@ -3,7 +3,7 @@ title: Introdução à medição de Web Vitals
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: Gráfico mensal sobreposto com cronômetros identificados como LCP, FID e CLS.
 description: Aprenda como medir as Web Vitals do seu site em ambientes de mundo real e de laboratório.
@@ -21,9 +21,9 @@ Os dados do [Real User Monitoring](https://en.wikipedia.org/wiki/Real_user_monit
 
 ### Introdução
 
-Se você não tiver uma configuração RUM, as ferramentas a seguir irão lhe fornecer dados sobre o desempenho do seu site no mundo real. Todas essas ferramentas são baseadas no mesmo conjunto de dados subjacente (o [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)), mas têm casos de uso ligeiramente diferentes:
+Se você não tiver uma configuração RUM, as ferramentas a seguir irão lhe fornecer dados sobre o desempenho do seu site no mundo real. Todas essas ferramentas são baseadas no mesmo conjunto de dados subjacente (o [Relatório de Experiência do Usuário Chrome](https://developer.chrome.com/docs/crux/)), mas têm casos de uso ligeiramente diferentes:
 
-- **PageSpeed Insights (PSI)**: o [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) produz relatórios sobre o desempenho agregado no nível da página e no nível da origem nos últimos 28 dias. Além disso, fornece sugestões sobre como melhorar o desempenho. Se você está procurando uma única ferramenta para começar a medir e melhorar os Web Vitals do seu site, recomendamos auditá-lo com o PSI. O PSI está disponível na [web](https://developers.google.com/speed/pagespeed/insights/) e como [API](https://developers.google.com/speed/docs/insights/v5/get-started).
+- **PageSpeed Insights (PSI)**: o [PageSpeed Insights](https://pagespeed.web.dev/) produz relatórios sobre o desempenho agregado no nível da página e no nível da origem nos últimos 28 dias. Além disso, fornece sugestões sobre como melhorar o desempenho. Se você está procurando uma única ferramenta para começar a medir e melhorar os Web Vitals do seu site, recomendamos auditá-lo com o PSI. O PSI está disponível na [web](https://pagespeed.web.dev/) e como [API](https://developers.google.com/speed/docs/insights/v5/get-started).
 - **Console de Busca**: o [Console de Busca](https://search.google.com/search-console/welcome) gera relatórios de dados de desempenho por página. Isso o torna adequado para identificar páginas específicas que precisam de melhorias. Ao contrário do PageSpeed Insights, os relatórios do Console de Busca incluem dados históricos de desempenho. O Console de Busca só pode ser usado com sites de sua propriedade e cuja propriedade possa ser verificada.
 - **Painel CrUX** : o [painel CrUX](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) é um painel pré-construído que apresenta dados CrUX para uma origem de sua escolha. Ele é baseado no Data Studio e o processo de configuração leva cerca de um minuto. Em comparação com o PageSpeed Insights e o Console de Busca, os relatórios do painel CrUX incluem mais dimensões, por exemplo, os dados podem ser divididos por dispositivo e tipo de conexão.
 

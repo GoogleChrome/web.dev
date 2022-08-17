@@ -6,7 +6,7 @@ hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2021-10-26
+updated: 2022-07-18
 tags:
   - metrics
   - performance
@@ -92,11 +92,11 @@ Core Web Vitals.
 #### Field tools to measure Core Web Vitals
 
 The [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+Report](https://developer.chrome.com/docs/crux/)
 collects anonymized, real user measurement data for each Core Web Vital. This
 data enables site owners to quickly assess their performance without requiring
 them to manually instrument analytics on their pages, and powers tools like
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),
+[PageSpeed Insights](https://pagespeed.web.dev/),
 and Search Console's [Core Web Vitals
 report](https://support.google.com/webmasters/answer/9205520).
 
@@ -109,7 +109,7 @@ report](https://support.google.com/webmasters/answer/9205520).
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">
+      <td><a href="https://developer.chrome.com/docs/crux/">
         Chrome User Experience Report</a></td>
       <td>✔</td>
       <td>✔</td>
@@ -268,14 +268,14 @@ environment:
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">
+        <td><a href="https://developer.chrome.com/docs/devtools/">
           Chrome DevTools</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse">
+        <td><a href="https://developer.chrome.com/docs/lighthouse/overview/">
           Lighthouse</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>

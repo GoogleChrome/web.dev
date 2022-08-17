@@ -91,7 +91,7 @@ Si el objetivo es responder a la entrada en menos de 100 ms, entonces, ¿por qu�
 
 - En puntos de alta presión como las animaciones, la clave es no hacer nada donde se pueda y el mínimo absoluto donde no puedas. Siempre que sea posible, utiliza la respuesta de 100 ms para calcular previamente el trabajo costoso para maximizar sus posibilidades de alcanzar los 60 fps.
 
-- Consulta [Rendimiento del renderizado](https://developers.google.com/web/fundamentals/performance/rendering) para conocer varias estrategias de optimización de animaciones.
+- Consulta [Rendimiento del renderizado](/rendering-performance/) para conocer varias estrategias de optimización de animaciones.
 
 {% Aside %} Reconoce todos los tipos de animaciones. Las animaciones no son solo efectos de interfaz de usuario sofisticados. Cada una de estas interacciones se consideran animaciones:
 
@@ -151,35 +151,35 @@ Hay algunas herramientas que te ayudarán a automatizar tus mediciones RAIL. La 
 
 ### Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) proporciona un análisis en profundidad de todo lo que sucede mientras tu página se carga o se ejecuta. Consulta [Introducción al análisis del rendimiento en tiempo de ejecución](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) para familiarizarse con la interfaz de usuario del panel de **Rendimiento**.
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/) proporciona un análisis en profundidad de todo lo que sucede mientras tu página se carga o se ejecuta. Consulta [Introducción al análisis del rendimiento en tiempo de ejecución](https://developer.chrome.com/docs/devtools/evaluate-performance/) para familiarizarse con la interfaz de usuario del panel de **Rendimiento**.
 
 Las siguientes funciones de DevTools son especialmente relevantes:
 
-- [Throttle (estrangula) tu CPU](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#cpu-throttle) para simular un dispositivo menos potente.
+- [Throttle (estrangula) tu CPU](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#cpu-throttle) para simular un dispositivo menos potente.
 
-- [Throttle tu red](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network-throttle) para simular conexiones más lentas.
+- [Throttle tu red](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network-throttle) para simular conexiones más lentas.
 
-- [Ver la actividad del hilo principal](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main) para ver todos los eventos que ocurrieron en el hilo principal mientras estaba grabando.
+- [Ver la actividad del hilo principal](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#main) para ver todos los eventos que ocurrieron en el hilo principal mientras estaba grabando.
 
-- [Ver las actividades del hilo principal en una tabla](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#activities) para ordenar las actividades en función de las que consumieron más tiempo.
+- [Ver las actividades del hilo principal en una tabla](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#activities) para ordenar las actividades en función de las que consumieron más tiempo.
 
-- [Analizar fotogramas por segundo (FPS)](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#fps) para medir si tus animaciones realmente se ejecutan sin problemas.
+- [Analizar fotogramas por segundo (FPS)](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#fps) para medir si tus animaciones realmente se ejecutan sin problemas.
 
 - [Supervisa el uso de la CPU, el tamaño del JS, los nodos DOM, los diseños por segundo y más](https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor) en tiempo real con el **Monitor de rendimiento**.
 
-- [Visualizar las solicitudes de red](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network) en la sección de **Red** que se produjeron mientras grababas.
+- [Visualizar las solicitudes de red](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network) en la sección de **Red** que se produjeron mientras grababas.
 
-- [Obtén captura pantallas mientras grabas](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#screenshots) para reproducir exactamente cómo se veía la página mientras se cargaba, o se activaba una animación, etc.
+- [Obtén captura pantallas mientras grabas](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#screenshots) para reproducir exactamente cómo se veía la página mientras se cargaba, o se activaba una animación, etc.
 
-- [Ver las interacciones](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#interactions) para identificar rápidamente lo que sucedió en una página después de que un usuario interactuó con ella.
+- [Ver las interacciones](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#interactions) para identificar rápidamente lo que sucedió en una página después de que un usuario interactuó con ella.
 
-- [Encuentra problemas de rendimiento de desplazamiento en tiempo real](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#scrolling-performance-issues) resaltando la página cada vez que se dispara un oyente potencialmente problemático.
+- [Encuentra problemas de rendimiento de desplazamiento en tiempo real](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#scrolling-performance-issues) resaltando la página cada vez que se dispara un oyente potencialmente problemático.
 
-- [Ver eventos de pintura en tiempo real](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-flashing) para identificar eventos de pintura costosos que pueden perjudicar el rendimiento de tus animaciones.
+- [Ver eventos de pintura en tiempo real](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-flashing) para identificar eventos de pintura costosos que pueden perjudicar el rendimiento de tus animaciones.
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) está disponible en Chrome DevTools, en [web.dev/measure](/measure/) como una extensión de Chrome, como un módulo Node.js y dentro de WebPageTest. Ingresas una URL, esta simula un dispositivo de rango medio con una conexión 3G lenta, ejecuta una serie de auditorías en la página y luego te brinda un informe sobre el rendimiento de la carga, así como sugerencias sobre cómo mejorar.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) está disponible en Chrome DevTools, en [web.dev/measure](/measure/) como una extensión de Chrome, como un módulo Node.js y dentro de WebPageTest. Ingresas una URL, esta simula un dispositivo de rango medio con una conexión 3G lenta, ejecuta una serie de auditorías en la página y luego te brinda un informe sobre el rendimiento de la carga, así como sugerencias sobre cómo mejorar.
 
 Las siguientes auditorías son especialmente relevantes:
 

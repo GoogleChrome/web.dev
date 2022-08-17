@@ -1,4 +1,4 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseResponseElement} from '../BaseResponseElement';
 import {generateIdSalt} from '../../utils/generate-salt';
 

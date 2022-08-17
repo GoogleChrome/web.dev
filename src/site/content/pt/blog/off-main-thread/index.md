@@ -25,7 +25,7 @@ Nos últimos 20 anos, a Internet evoluiu drasticamente de documentos estáticos 
 
 Como resultado, o thread principal ficou incrivelmente sobrecarregado. E à medida que os aplicativos da Web crescem em complexidade, o segmento principal se torna um gargalo significativo para o desempenho. Para piorar a situação, a quantidade de tempo que leva para executar o código no thread principal para um determinado usuário é **quase completamente imprevisível** porque os recursos do dispositivo têm um efeito enorme no desempenho. Essa imprevisibilidade só vai crescer à medida que os usuários acessam a web a partir de um conjunto cada vez mais diversificado de dispositivos, de telefones com recursos hiper-restritos a máquinas carro-chefe de alta potência e alta taxa de atualização.
 
-Se quisermos aplicativos da web sofisticados que atendam de forma confiável as diretrizes de desempenho como o [modelo RAIL](https://developers.google.com/web/fundamentals/performance/rail) - que é baseado em dados empíricos sobre a percepção humana e psicologia - precisamos de maneiras de executar nosso código **fora do thread principal (OMT)**.
+Se quisermos aplicativos da web sofisticados que atendam de forma confiável as diretrizes de desempenho como o [modelo RAIL](/rail/) - que é baseado em dados empíricos sobre a percepção humana e psicologia - precisamos de maneiras de executar nosso código **fora do thread principal (OMT)**.
 
 {% Aside %} Se você quiser saber mais sobre o caso de uma arquitetura OMT, assista minha palestra CDS 2019 abaixo. {% endAside %}
 
@@ -189,6 +189,6 @@ Para garantir que nossos aplicativos sejam tão confiáveis e acessíveis quanto
 Além disso, OMT tem benefícios secundários:
 
 - Ele move os custos de execução do JavaScript para um thread separado.
-- Ele move os *custos de análise*, o que significa que a IU pode inicializar mais rápido. Isso pode reduzir o [First Contentful Paint](/fcp/) ou mesmo o [Time to Interactive](/tti/), o que pode, por sua vez, aumentar sua pontuação no [Lighthouse.](https://developers.google.com/web/tools/lighthouse)
+- Ele move os *custos de análise*, o que significa que a IU pode inicializar mais rápido. Isso pode reduzir o [First Contentful Paint](/fcp/) ou mesmo o [Time to Interactive](/tti/), o que pode, por sua vez, aumentar sua pontuação no [Lighthouse.](https://developer.chrome.com/docs/lighthouse/overview/)
 
 Os web workers não precisam ser assustadores. Ferramentas como o Comlink estão tirando o trabalho dos workers e tornando-os uma escolha viável para uma ampla gama de aplicativos da Web.

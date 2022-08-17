@@ -13,7 +13,7 @@ Quando os usuários do Safari do iOS adicionam [Progressive Web Apps (PWAs)](/di
 
 ## Como a auditoria de ícone Apple Touch do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza as páginas sem uma tag `<link rel="apple-touch-icon" href="/example.png">` em `<head>`:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza as páginas sem uma tag `<link rel="apple-touch-icon" href="/example.png">` em `<head>`:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mXGs4XSr4DXMxLk536wo.png", alt="O apple-touch-icon fornecido não é válido", width="800", height="95" %}</figure>
 
@@ -50,6 +50,6 @@ Para fornecer uma boa experiência do usuário, verifique o seguinte:
 
 ## Recursos
 
-- [Código-fonte da auditoria **O `apple-touch-icon` fornecido não é valido**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/apple-touch-icon.js)
+- [Código-fonte da auditoria **O `apple-touch-icon` fornecido não é valido**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/apple-touch-icon.js)
 - [Veja os critérios para a instalação](/install-criteria)
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use o ícone Apple Touch</a>

@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-07-18
 description: 本篇文章介绍了累积布局偏移 (CLS) 指标并说明了该指标的测量方式。
 tags:
   - performance
@@ -172,15 +172,15 @@ CLS 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 实测工具
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
 
 ### 实验室工具
 
-- [Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/)
-- [灯塔](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
+- [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 
 ### 在 JavaScript 中测量 CLS
@@ -230,7 +230,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-上述代码说明了计算和记录 CLS 的基本方法。但是，要想准确测量 CLS，使之与[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) 中的测量值相匹配，那么测量方式要更为复杂。详情请见下文：
+上述代码说明了计算和记录 CLS 的基本方法。但是，要想准确测量 CLS，使之与[Chrome 用户体验报告](https://developer.chrome.com/docs/crux/) (CrUX) 中的测量值相匹配，那么测量方式要更为复杂。详情请见下文：
 
 {% endAside %}
 
@@ -249,7 +249,7 @@ new PerformanceObserver((entryList) => {
 - 用户可能会在*很*长一段时间内（几天、几周、几个月）让一个选项卡保持打开状态。事实上，用户可能永远不会关闭该选项卡。
 - 在移动操作系统上，浏览器通常不会为后台选项卡运行页面卸载回调，因为这样很难报告"最终"值。
 
-为了应对这些情况，只要当页面处于后台时就应该报告 CLS，页面卸载时也是如此（[`visibilitychange`事件](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)涵盖这两种情况）。而接收该数据的分析系统则需要在后端计算最终的 CLS 值。
+为了应对这些情况，只要当页面处于后台时就应该报告 CLS，页面卸载时也是如此（[`visibilitychange`事件](https://developer.chrome.com/blog/page-lifecycle-api/#event-visibilitychange)涵盖这两种情况）。而接收该数据的分析系统则需要在后端计算最终的 CLS 值。
 
 开发者不必记住所有这些情况并独自应付，而是可以使用[`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)来测量 CLS，库会自行处理上述所有情况：
 

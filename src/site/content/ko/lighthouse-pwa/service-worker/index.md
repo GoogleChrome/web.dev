@@ -22,7 +22,7 @@ Internet Explorer를 제외한 모든 주요 브라우저는 서비스 워커를
 
 ## Lighthouse 서비스 워커 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 서비스 워커를 등록하지 않은 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 서비스 워커를 등록하지 않은 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse 감사 표시 사이트에서 서비스 워커를 등록하지 않음", width="800", height="95" %}</figure>
 
@@ -42,8 +42,8 @@ Lighthouse는 [Chrome 원격 디버깅 프로토콜](https://github.com/ChromeDe
 
 ## 자원
 
-- [**페이지 및 `start_url`을 제어하는 서비스 작업자를 등록하지 않은** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
-- [서비스 워커: 소개](https://developers.google.com/web/fundamentals/primers/service-workers)
+- [**페이지 및 `start_url`을 제어하는 서비스 작업자를 등록하지 않은** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/service-worker.js)
+- [서비스 워커: 소개](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [서비스 워커와 Cache Storage API](/service-workers-cache-storage/)
 - [네트워크 안정성이란 무엇이며 어떻게 측정합니까?](/network-connections-unreliable)
 - [설치 가능하게 만들기](/codelab-make-installable/)

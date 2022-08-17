@@ -47,7 +47,7 @@ feedback:
 
 <figure>{% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor 截图", width="670", height="569" %}<figcaption>在 Maskable.app Editor 中创建图标</figcaption></figure>
 
-创建可遮罩图标图像并在 DevTools 中测试后，您需要将 [Web 应用程序清单](https://developers.google.com/web/fundamentals/web-app-manifest)更新为指向新资产。Web 应用程序清单在一个 JSON 文件中提供有关 Web 应用程序的信息，并包含一个 [`icons` 数组](https://developers.google.com/web/fundamentals/web-app-manifest#icons)。
+创建可遮罩图标图像并在 DevTools 中测试后，您需要将 [Web 应用程序清单](/add-manifest/)更新为指向新资产。Web 应用程序清单在一个 JSON 文件中提供有关 Web 应用程序的信息，并包含一个 [`icons` 数组](/add-manifest/#icons)。
 
 包含可遮罩图标后，Web 应用程序清单中列出的图像资源即增加了一个新的属性值。`purpose` 字段告诉浏览器应该如何使用图标。默认情况下，图标的 purpose 为 `"any"`。在 Android 上，这些图标将在白色背景上调整大小。
 

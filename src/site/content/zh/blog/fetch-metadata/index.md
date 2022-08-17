@@ -19,7 +19,7 @@ feedback:
 
 ## 为什么要留心隔离您的网络资源？
 
-许多 Web 应用程序容易受到[跨源](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22)攻击，例如[跨站点请求伪造](https://portswigger.net/web-security/csrf)(CSRF)、[跨站点脚本包含](https://portswigger.net/research/json-hijacking-for-the-modern-web)(XSSI)、定时攻击、[跨源信息泄漏](https://arxiv.org/pdf/1908.02204.pdf)或推测执行侧信道 ( [Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre) ) 攻击。
+许多 Web 应用程序容易受到[跨源](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22)攻击，例如[跨站点请求伪造](https://portswigger.net/web-security/csrf)(CSRF)、[跨站点脚本包含](https://portswigger.net/research/json-hijacking-for-the-modern-web)(XSSI)、定时攻击、[跨源信息泄漏](https://arxiv.org/pdf/1908.02204.pdf)或推测执行侧信道 ( [Spectre](https://developer.chrome.com/blog/meltdown-spectre/) ) 攻击。
 
 [Fetch Metadata](https://www.w3.org/TR/fetch-metadata/) 请求标头允许您部署强大的纵深防御机制 — 资源隔离策略 — 以保护您的应用程序免受这些常见的跨源攻击。
 

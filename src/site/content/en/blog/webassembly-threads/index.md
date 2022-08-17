@@ -77,7 +77,7 @@ compilation target for traditional synchronisation primitives.
 
 `SharedArrayBuffer` has a complicated history. It was initially shipped in several browsers
 mid-2017, but had to be disabled in the beginning of 2018 due to discovery of [Spectre
-vulnerabilities](https://developers.google.com/web/updates/2018/02/meltdown-spectre). The particular
+vulnerabilities](https://developer.chrome.com/blog/meltdown-spectre/). The particular
 reason was that data extraction in Spectre relies on timing attacks—measuring execution time of a
 particular piece of code. To make this kind of attack harder, browsers reduced precision of standard
 timing APIs like `Date.now` and `performance.now`. However, shared memory, combined with a simple

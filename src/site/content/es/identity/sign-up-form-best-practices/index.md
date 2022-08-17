@@ -214,7 +214,7 @@ Muchos usuarios comparten dispositivos e intercambian cuentas mediante el mismo 
 
 ## Considere ofrecer autenticación multifactor {: #multi-factor-authentication}
 
-La autenticación multifactor significa garantizar que los usuarios proporcionen autenticación en más de una forma. Por ejemplo, además de pedirle al usuario que establezca una contraseña, también puede hacer cumplir la verificación mediante un código de acceso único enviado por correo electrónico o un mensaje de texto SMS, o mediante un código único basado en la aplicación, una clave de seguridad o un sensor de huellas dactilares. Los documentos [Prácticas recomendadas de SMS OTP](/sms-otp-form) y [Habilitación de la autenticación robusta con WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn) explican cómo implementar la autenticación multifactor.
+La autenticación multifactor significa garantizar que los usuarios proporcionen autenticación en más de una forma. Por ejemplo, además de pedirle al usuario que establezca una contraseña, también puede hacer cumplir la verificación mediante un código de acceso único enviado por correo electrónico o un mensaje de texto SMS, o mediante un código único basado en la aplicación, una clave de seguridad o un sensor de huellas dactilares. Los documentos [Prácticas recomendadas de SMS OTP](/sms-otp-form) y [Habilitación de la autenticación robusta con WebAuthn](https://developer.chrome.com/blog/webauthn/) explican cómo implementar la autenticación multifactor.
 
 Sin duda, debe ofrecer (o hacer cumplir) la autenticación multifactor si su sitio maneja información personal o confidencial.
 
@@ -246,11 +246,11 @@ Los pequeños cambios pueden marcar una gran diferencia en las tasas de finaliza
 
 - [Prácticas recomendables para el formulario de inicio de sesión](/sign-in-form-best-practices)
 - [Prácticas recomendadas para los formularios de pago y de dirección](/payment-and-address-form-best-practices)
-- [Cree formas asombrosas](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Cree formas asombrosas](/learn/forms/)
 - [Prácticas recomendadas para el diseño de formularios móviles](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Controles de formulario más capaces](/more-capable-form-controls)
 - [Crear formularios accesibles](https://webaim.org/techniques/forms/)
-- [Optimización del flujo de registro mediante la API de gestión de credenciales](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Optimización del flujo de registro mediante la API de gestión de credenciales](https://developer.chrome.com/blog/credential-management-api/)
 - [Verifique los números de teléfono en la web con la API WebOTP](/web-otp)
 
 Foto de [@ecowarriorprincess](https://unsplash.com/@ecowarriorprincess) en [Unsplash](https://unsplash.com/photos/lUShu7PHIGA).

@@ -34,7 +34,7 @@ El CSS no utilizado también ralentiza la construcción del [render tree (árbol
 
 ## Cómo detectar el CSS no utilizado {: #coverage }
 
-La pestaña de Cobertura (Coverage) de Chrome DevTools puede ayudarte a descubrir el CSS crítico y no crítico. Consulta [Ver CSS usado y no usado en la pestaña de Cobertura](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
+La pestaña de Cobertura (Coverage) de Chrome DevTools puede ayudarte a descubrir el CSS crítico y no crítico. Consulta [Ver CSS usado y no usado en la pestaña de Cobertura](https://developer.chrome.com/docs/devtools/css/reference/#coverage).
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: pestaña de Cobertura", width="800", height="407" %} <figcaption> Chrome DevTools: pestaña de Cobertura.</figcaption></figure>
 
@@ -64,4 +64,4 @@ Considera reducir o cambiar la cantidad de [complementos de WordPress que](https
 
 ## Recursos
 
-- [Código fuente para la auditoria de **Eliminar el CSS no utilizado**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)
+- [Código fuente para la auditoria de **Eliminar el CSS no utilizado**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-css-rules.js)

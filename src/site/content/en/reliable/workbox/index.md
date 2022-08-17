@@ -20,7 +20,7 @@ cases—can be a challenge. For example, errors in your service worker code can
 cause caching problems; users might be shown out-of-date content or broken
 links.
 
-[Workbox](https://developers.google.com/web/tools/workbox/) is a high-level
+[Workbox](https://developer.chrome.com/docs/workbox/) is a high-level
 service worker toolkit built on top of the Service Worker and Cache Storage
 APIs. It provides a production-ready set of libraries for adding offline support to
 web apps. The toolkit is structured into two collections: tools that help manage
@@ -32,27 +32,27 @@ build process.
 This is the code that runs inside of your service worker script and controls how
 it intercepts outgoing requests and interacts with the Cache Storage API.
 Workbox has a
-[dozen or so library modules in total](https://developers.google.com/web/tools/workbox/modules/),
+[dozen or so library modules in total](https://developer.chrome.com/docs/workbox/modules/),
 that each handle a variety of specialized use cases. The most important modules
 determine _whether_ the service worker will respond (known as
-[routing](https://developers.google.com/web/tools/workbox/modules/workbox-routing)),
+[routing](https://developer.chrome.com/docs/workbox/modules/workbox-routing/)),
 and _how_ it will respond (known as the
-[caching strategy](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)).
+[caching strategy](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/)).
 
 ### Build integration
 
 Workbox offers
-[command line](https://developers.google.com/web/tools/workbox/modules/workbox-cli),
-[Node.js module](https://developers.google.com/web/tools/workbox/modules/workbox-build),
+[command line](https://developer.chrome.com/docs/workbox/modules/workbox-cli/),
+[Node.js module](https://developer.chrome.com/docs/workbox/modules/workbox-build/),
 and
-[webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
+[webpack plugin](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/)
 tools that provide alternative ways to accomplish two things:
 
 +  Create a service worker script based on a set of configuration
     options. The generated service worker uses Workbox's runtime libraries
     "under the hood" to put into action the caching strategies you configure.
 +  Generate a list of URLs that should be
-    "[precached](https://developers.google.com/web/tools/workbox/modules/workbox-precaching)",
+    "[precached](https://developer.chrome.com/docs/workbox/modules/workbox-precaching/)",
     based on configurable patterns to include and exclude files generated
     during your build process.
 
@@ -60,7 +60,7 @@ tools that provide alternative ways to accomplish two things:
 
 Using Workbox when building your service worker is optional—there are a number
 of guides out there that walk through
-[common caching strategies](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/)
+[common caching strategies](/offline-cookbook/)
 from a "vanilla" service worker perspective. If you do decide to use Workbox,
 here are some of its benefits.
 
@@ -92,16 +92,16 @@ automatically falls back to alternative implementations of features that are
 missing from certain browsers.
 
 +  The
-    [`workbox-broadcast-cache-update module`](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)
+    [`workbox-broadcast-cache-update module`](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/)
     uses the
     [Broadcast Channel API](https://developer.mozilla.org/docs/Web/API/Broadcast_Channel_API)
     when available, and falls back to a
     [`postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage)-based
     implementation on browsers that lack support.
 +  The
-    [workbox-background-sync module](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync)
+    [workbox-background-sync module](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/)
     uses the
-    [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync)
+    [Background Sync API](https://developer.chrome.com/blog/background-sync/)
     if possible, and if not, falls back to retrying queued events each time the
     service worker starts up.
 
@@ -122,10 +122,10 @@ Workbox integration found in many popular starter kits and add-on plugins:
 
 If you already have a build process for your site in place, dropping in the
 appropriate
-[command line](https://developers.google.com/web/tools/workbox/modules/workbox-cli),
-[Node.js module](https://developers.google.com/web/tools/workbox/modules/workbox-build),
+[command line](https://developer.chrome.com/docs/workbox/modules/workbox-cli/),
+[Node.js module](https://developer.chrome.com/docs/workbox/modules/workbox-build/),
 or
-[webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
+[webpack plugin](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/)
 tool may be all you need to start using Workbox.
 
 In particular, the Workbox command line interface makes it easy to get up and
@@ -151,7 +151,7 @@ See the [documentation of the options](https://goo.gl/gVo87N) for details.
 
 If you have an existing service worker and want to try out Workbox's runtime
 libraries,
-[import Workbox from its official CDN](https://developers.google.com/web/tools/workbox/modules/workbox-sw#using_workbox_sw_via_cdn)
+[import Workbox from its official CDN](https://developer.chrome.com/docs/workbox/modules/workbox-sw/#using-workbox-sw-via-cdn)
 and start using it for runtime caching right away. Please note that this use
 case means that you won't be able to take advantage of precaching (which
 requires build-time integration), but it's great for prototyping and trying out

@@ -91,7 +91,7 @@ module.exports = function (type, listStyle = 'ul') {
         <img
           src="/images/glitch/fullscreen.svg"
           alt="fullscreen"
-          style="padding: 4px 8px; opacity: .5; border: 1px solid #c3c3c3; border-radius: 5px;"
+          style="padding: 4px 8px; opacity: .5; border: 1px solid #c3c3c3; border-radius: 5px; margin-top: 0;"
         />.
       `;
       break;
@@ -126,7 +126,7 @@ module.exports = function (type, listStyle = 'ul') {
         <img
           src="/images/icons/reload.svg"
           alt="reload"
-          style="width: 1.2em; padding: 0px 0px 2px 2px; opacity: .5"
+          style="width: 1.2em; padding: 0px 0px 2px 2px; opacity: .5; margin-top: 0;"
         />.
       `;
       break;

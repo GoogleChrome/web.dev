@@ -1,7 +1,6 @@
 ---
 title: SameSite cookies explained
-subhead:
-  Secure your site by learning how to explicitly mark your cross-site cookies.
+subhead: Secure your site by learning how to explicitly mark your cross-site cookies.
 authors:
   - rowan_m
 date: 2019-05-07
@@ -24,10 +23,11 @@ feedback:
 
 {% Aside %}
 This article is part of a series on the `SameSite` cookie attribute changes:
+
 - [SameSite cookies explained](/samesite-cookies-explained/)
 - [SameSite cookies recipes](/samesite-cookie-recipes/)
 - [Schemeful Same-Site](/schemeful-samesite)
-{% endAside %}
+  {% endAside %}
 
 Cookies are one of the methods available for adding persistent state to web
 sites. Over the years their capabilities have grown and evolved, but left the
@@ -54,7 +54,7 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Three cookies being sent to a browser from a server in a response", width="800", height="276", style="max-width: 60vw" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Three cookies being sent to a browser from a server in a response", width="800", height="276", style="max-width: 35vw" %}
   <figcaption>
     Servers set cookies using the <code>Set-Cookie</code> header.
   </figcaption>
@@ -69,7 +69,7 @@ Cookie: promo_shown=1
 ```
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Three cookies being sent from a browser to a server in a request", width="800", height="165", style="max-width: 60vw" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Three cookies being sent from a browser to a server in a request", width="800", height="165", style="max-width: 35vw" %}
   <figcaption>
     Your browser sends cookies back in the <code>Cookie</code> header.
   </figcaption>
@@ -81,16 +81,16 @@ override a cookie with that key. For example, you can try the following in your
 browser's JavaScript console:
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 Reading `document.cookie` will output all the cookies accessible in the current
 context, with each cookie separated by a semicolon:
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>
@@ -121,7 +121,7 @@ label but is relative to the user's context; the same cookie can be either
 first-party or third-party depending on which site the user is on at the time.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Three cookies being sent to a browser from different requests on the same page", width="800", height="346", style="max-width: 60vw" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Three cookies being sent to a browser from different requests on the same page", width="800", height="346", style="max-width: 35vw" %}
   <figcaption>
     Cookies may come from a variety of different domains on one page.
   </figcaption>
@@ -146,7 +146,7 @@ just save the video in one go rather than prompting them to sign in or having to
 navigate them away from your page and back over to YouTube.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="The same cookie being sent in three different contexts", width="800", height="433", style="max-width: 60vw" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="The same cookie being sent in three different contexts", width="800", height="433", style="max-width: 35vw" %}
   <figcaption>
     A cookie in a third-party context is sent when visiting different pages.
   </figcaption>
@@ -262,7 +262,7 @@ you can use `None` to clearly communicate that you intentionally want the cookie
 sent in a third-party context.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Three cookies labelled None, Lax, or Strict depending on their context", width="800", height="456", style="max-width: 60vw" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Three cookies labelled None, Lax, or Strict depending on their context", width="800", height="456", style="max-width: 35vw" %}
   <figcaption>
     Explicitly mark the context of a cookie as <code>None</code>, <code>Lax</code>, or <code>Strict</code>.
   </figcaption>

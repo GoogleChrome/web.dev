@@ -8,22 +8,10 @@ title:
   zh: 通知
 
 description:
-  en: Notifications
-  es: Notificaciones
-  ja: 通知
-  ko: 알림
-  pt: Notificações
-  ru: Уведомления
-  zh: 通知
+  en: Web Push and Notifications
 
 overview:
-  en: Notifications
-  es: Notificaciones
-  ja: 通知
-  ko: 알림
-  pt: Notificações
-  ru: Уведомления
-  zh: 通知
+  en: Push messages enable you to bring information to the attention of your users even when they're not using your website.
 
 topics:
   notifications:
@@ -34,3 +22,12 @@ topics:
     pt: Notificações
     ru: Уведомления
     zh: 通知
+
+  codelabs:
+    en: Codelabs
+    es: Codelabs
+    ja: Codelabs
+    ko: Codelabs
+    pt: Codelabs
+    ru: Проекты Codelabs
+    zh: 代码实验室

@@ -46,7 +46,7 @@ codelabs:
 - [用途がはっきりした HTML 要素を使用する](#meaningful-html): `<form>` 、`<input>` 、`<label>` 、`<button>` 。
 - `<label>` を使って[各フォームフィールドに ラベルを付ける。](#html-label)
 - HTML 要素の属性を使用して、[組み込みのブラウザー機能にアクセスする](#html-attributes)。特に適切な値を持つ [`type`](#type-attribute) と [`autocomplete`](#autocomplete-attribute)。
-- 支払いカード番号など、増加させることを意図していない番号には `type="number"` を使用しない。代わりに、`type="text"{/code1 }と <a href="#inputmode-attribute" data-md-type="link"><code data-md-type="codespan">inputmode="numeric"` 使用する。
+- 支払いカード番号など、増加させることを意図していない番号には `type="number"` を使用しない。代わりに、`type="text"`と [`inputmode="numeric"`](#inputmode-attribute) を使用する。
 - [適切なオートコンプリート値](#autocomplete-attribute)を `input` 、`select` 、または`textarea` に使用できる場合は、それを使用する。
 - ブラウザがフォームを自動入力できるように、入力の `name` と `id` 属性に、ページの読み込み中またはウェブサイトの展開中に変化しない[安定した値](#stable-name-id)を指定する。
 - 一旦タップされたり、クリックされたりした[送信ボタンを無効にする](#disable-submit)。
@@ -82,7 +82,7 @@ codelabs:
 
 ### HTML 要素を意図したとおりに使用する {: #html-elements }
 
-#### フォームを <form> の中に入れます {: #html-form }
+#### フォームを `<form>` の中に入れます {: #html-form }
 
 `<input>` 要素を `<form>` でラップせずに、単純に JavaScript でデータ送信を処理しようと考えることがあるかもしれません。
 
@@ -153,7 +153,7 @@ HTML の `<form>` を使用すると、すべての最新ブラウザーで一�
 
 #### オートコンプリートを使用してアクセシビリティを改善し、ユーザーがデータを再入力しなくていいようにする {: #autocomplete-attribute }
 
-適切な `autocomplete` 値を使用すると、ブラウザはデータを安全に保存し、`input`、`select`、および `textarea` の値を自動入力してユーザーをサポートします。これはモバイルでは特に重要であり、[高いフォーム離脱率](https://www.zuko.io/blog/8-surprising-insights-from-zukos-benchmarking-data)を避ける上で欠かせ磨円。オートコンプリートには、 [アクセシビリティのメリットもたくさんあります](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html)。
+適切な `autocomplete` 値を使用すると、ブラウザはデータを安全に保存し、`input`、`select`、および `textarea` の値を自動入力してユーザーをサポートします。これはモバイルでは特に重要であり、[高いフォーム離脱率](https://www.zuko.io/blog/8-surprising-insights-from-zukos-benchmarking-data)を避ける上で欠かせません。オートコンプリートには、 [アクセシビリティのメリットもたくさんあります](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html)。
 
 フォームフィールドに適切なオートコンプリート値を使用できるのであれば、それを使用するべきです。すべての値の一覧とそれぞれの正しい使用法については、[MDN のウェブドキュメント](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete)に記載されています。
 
@@ -466,7 +466,7 @@ Address line 2 (optional)
 
 {% Glitch { id: 'payment-card-input', path: 'index.html', height: 170 } %}
 
-ただし、正規表現 `pattern`[は、支払いカード番号の桁数](https://github.com/jaemok/credit-card-input/blob/master/creditcard.js#L35) (14 以上 ～ 20 桁以下) を処理できるほど柔軟でなくてはいけません。支払いカード番号の構成について詳しくは、[LDAPwiki](https://ldapwiki.com/wiki/Bank%20Card%20Number) でご確認いただけます。
+ただし、正規表現 `pattern` は、[支払いカード番号の桁数](https://github.com/jaemok/credit-card-input/blob/master/creditcard.js#L35) (14 以上 ～ 20 桁以下) を処理できるほど柔軟でなくてはいけません。支払いカード番号の構成について詳しくは、[LDAPwiki](https://ldapwiki.com/wiki/Bank%20Card%20Number) でご確認いただけます。
 
 物理的なカードの番号はスペースを挟んで表示されるため、ユーザーが新しい支払いカード番号を入力するときにはスペースを含められるようにします。その方が、ユーザーにとっては扱いやすいし (何かミスをしたと指摘しなくてすみます)、コンバージョンのフローを中断させる可能性も低いし、処理する前に簡単に数字の間のスペースを削除できます。
 
@@ -496,12 +496,12 @@ Address line 2 (optional)
 
 - [Sign-up form best practices (サインアップフォームのベストプラクティス)](/sign-in-form-best-practices)
 - [Sign-in form best practices (サインアップフォームのベストプラクティス)](/sign-up-form-best-practices)
-- WebOTP APIを使用してウェブ上の電話番号を確認する
-- [Create Amazing Forms (すばらしいフォームを作成する)](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [WebOTP APIを使用してウェブ上の電話番号を確認する](/web-otp)
+- [Create Amazing Forms (すばらしいフォームを作成する)](/learn/forms/)
 - [Best Practices For Mobile Form Design (モバイルフォームデザインのベストプラクティス)](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [More capable form controls (より細かく機能するフォームコントロール)](/more-capable-form-controls)
 - [Creating Accessible Forms (使いやすいフォームの作成)](https://webaim.org/techniques/forms/)
-- [Streamlining the Sign-up Flow Using Credential Management API (認証情報管理 API を使用したサインアップフローの合理化)](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Streamlining the Sign-up Flow Using Credential Management API (認証情報管理 API を使用したサインアップフローの合理化)](https://developer.chrome.com/blog/credential-management-api/)
 - [『Frank's Compulsive Guide to Postal Addresses』](http://www.columbia.edu/~fdc/postal/)は、200 か国以上で使用される住所形式に関する便利なリンクと広範なガイダンスを提供します。
 - [国リスト](http://www.countries-list.info/Download-List)には、国コードと名前を複数の言語かつ複数の形式でダウンロードするためのツールが用意されています。
 

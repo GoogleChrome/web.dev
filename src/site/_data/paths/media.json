@@ -34,7 +34,8 @@
         "media-accessibility",
         "media-frameworks",
         "pwa-with-offline-streaming",
-        "fast-playback-with-preload"
+        "fast-playback-with-preload",
+        "debug-playback-errors"
       ]
     }
   ]

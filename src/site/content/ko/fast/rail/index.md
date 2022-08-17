@@ -91,7 +91,7 @@ RAIL의 컨텍스트에서 **목표** 및 **지침**이라는 용어는 다음�
 
 - 애니메이션과 같이 높은 가중 지점에서의 핵심은 가능하다면 아무것도 하지 않고, 그럴 수 없는 경우 절대적으로 최소한의 작업만 수행합니다. 가능할 때마다 100ms 응답을 사용하여 값비싼 작업을 미리 계산하여 60fps에 도달할 가능성을 극대화합니다.
 
-- 다양한 애니메이션 최적화 전략은 [렌더링 성능](https://developers.google.com/web/fundamentals/performance/rendering)을 참조합니다.
+- 다양한 애니메이션 최적화 전략은 [렌더링 성능](/rendering-performance/)을 참조합니다.
 
 {% Aside %} 모든 유형의 애니메이션을 인식합니다. 애니메이션은 단순한 UI 효과가 아닙니다. 이러한 각 상호 작용은 애니메이션으로 간주됩니다.
 
@@ -151,35 +151,35 @@ RAIL 측정을 자동화하는 데 도움이 되는 몇 가지 도구가 있습�
 
 ### Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)는 페이지가 로드되거나 실행되는 동안 발생하는 모든 것에 대한 심층 분석을 제공합니다. **성능** 패널 UI에 익숙해지려면 [런타임 성능 분석 시작하기](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)를 참조하십시오.
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/)는 페이지가 로드되거나 실행되는 동안 발생하는 모든 것에 대한 심층 분석을 제공합니다. **성능** 패널 UI에 익숙해지려면 [런타임 성능 분석 시작하기](https://developer.chrome.com/docs/devtools/evaluate-performance/)를 참조하십시오.
 
 다음 DevTools 기능이 특히 관련이 있습니다.
 
-- [CPU 조절](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#cpu-throttle)로 덜 강력한 장치를 시뮬레이션합니다.
+- [CPU 조절](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#cpu-throttle)로 덜 강력한 장치를 시뮬레이션합니다.
 
-- [네트워크 조절](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network-throttle)로 느린 연결을 시뮬레이션합니다.
+- [네트워크 조절](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network-throttle)로 느린 연결을 시뮬레이션합니다.
 
-- [기본 스레드 활동 보기](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main)로 기록하는 동안 기본 스레드에서 발생한 모든 이벤트를 봅니다.
+- [기본 스레드 활동 보기](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#main)로 기록하는 동안 기본 스레드에서 발생한 모든 이벤트를 봅니다.
 
-- [표로 기본 스레드 활동 보기](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#activities)로 가장 많은 시간을 차지하는 활동을 기준으로 활동을 정렬합니다.
+- [표로 기본 스레드 활동 보기](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#activities)로 가장 많은 시간을 차지하는 활동을 기준으로 활동을 정렬합니다.
 
-- [초당 프레임 수(FPS) 분석](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#fps)으로 애니메이션이 실제로 원활하게 실행되는지 측정합니다.
+- [초당 프레임 수(FPS) 분석](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#fps)으로 애니메이션이 실제로 원활하게 실행되는지 측정합니다.
 
 - **성능 모니터링**을 사용하여 실시간으로 [CPU 사용량, JS 힙 크기, DOM 노드, 초당 레이아웃 등을 모니터링](https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor)합니다.
 
-- **네트워크** 섹션을 사용하여 기록하는 동안 발생한 [네트워크 요청을 시각화](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network)합니다.
+- **네트워크** 섹션을 사용하여 기록하는 동안 발생한 [네트워크 요청을 시각화](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network)합니다.
 
-- [기록하는 동안 스크린샷을 캡처](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#screenshots)하여 페이지가 로드되는 동안이나 애니메이션이 실행되는 동안 등에 페이지가 어떻게 보이는지 정확하게 재생합니다.
+- [기록하는 동안 스크린샷을 캡처](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#screenshots)하여 페이지가 로드되는 동안이나 애니메이션이 실행되는 동안 등에 페이지가 어떻게 보이는지 정확하게 재생합니다.
 
-- [상호 작용 확인](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#interactions)으로 사용자가 페이지와 상호 작용한 후 페이지에서 발생한 일을 빠르게 식별합니다.
+- [상호 작용 확인](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#interactions)으로 사용자가 페이지와 상호 작용한 후 페이지에서 발생한 일을 빠르게 식별합니다.
 
-- 잠재적으로 문제가 있는 수신기가 실행될 때마다 페이지를 강조 표시하여 [실시간으로 스크롤 성능 문제를 찾습니다](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#scrolling-performance-issues).
+- 잠재적으로 문제가 있는 수신기가 실행될 때마다 페이지를 강조 표시하여 [실시간으로 스크롤 성능 문제를 찾습니다](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#scrolling-performance-issues).
 
-- [실시간으로 페인트 이벤트 보기](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-flashing)로 애니메이션 성능에 해를 끼칠 수 있는 비용이 많이 드는 페인트 이벤트를 식별합니다.
+- [실시간으로 페인트 이벤트 보기](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-flashing)로 애니메이션 성능에 해를 끼칠 수 있는 비용이 많이 드는 페인트 이벤트를 식별합니다.
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)는 Chrome DevTools와 [web.dev/measure](/measure/)에서 사용하고, Chrome 확장 프로그램과 Node.js 모듈로 사용하거나 WebPageTest 내에서 사용할 수 있습니다. URL을 지정하면 느린 3G 연결을 사용하는 중급 장치를 시뮬레이션하고 페이지에서 일련의 감사를 실행한 다음 로드 성능에 대한 보고서와 개선 방법에 대한 제안을 제공합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 Chrome DevTools와 [web.dev/measure](/measure/)에서 사용하고, Chrome 확장 프로그램과 Node.js 모듈로 사용하거나 WebPageTest 내에서 사용할 수 있습니다. URL을 지정하면 느린 3G 연결을 사용하는 중급 장치를 시뮬레이션하고 페이지에서 일련의 감사를 실행한 다음 로드 성능에 대한 보고서와 개선 방법에 대한 제안을 제공합니다.
 
 다음 감사가 특히 관련이 있습니다.
 

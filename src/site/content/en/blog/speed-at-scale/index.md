@@ -109,7 +109,7 @@ addition.
 
 Here's a [demo](https://glitch.com/~truth-bookcase) on Glitch of using display
 with multiple font families. Try it out with [DevTools network
-emulation](https://developers.google.com/web/tools/chrome-devtools/network/#throttle)
+emulation](https://developer.chrome.com/docs/devtools/network/#throttle)
 to see the impact of `font-display: swap`.
 
 ## Watch for more

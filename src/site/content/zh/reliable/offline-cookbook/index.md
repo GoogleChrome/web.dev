@@ -81,7 +81,7 @@ self.addEventListener('install', function (event) {
 
 **适合：**清理和迁移。
 
-安装新的服务工作进程并且不再使用以前的版本后，新版本将激活，并且您会收到一个 `activate` 事件。由于旧版本已经过时，这正是处理 [IndexedDB 中的架构迁移](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)以及删除未使用缓存的好时机。
+安装新的服务工作进程并且不再使用以前的版本后，新版本将激活，并且您会收到一个 `activate` 事件。由于旧版本已经过时，这正是处理 [IndexedDB 中的架构迁移](/indexeddb-best-practices/)以及删除未使用缓存的好时机。
 
 ```js
 self.addEventListener('activate', function (event) {
@@ -198,7 +198,7 @@ self.addEventListener('fetch', function (event) {
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="推送消息时。", width="800", height="498" %} <figcaption>推送消息时。</figcaption></figure>
 
-[Push API](https://developers.google.com/web/fundamentals/push-notifications) 是构建在服务工作进程之上的另一个功能。它允许唤醒服务工作进程以响应来自操作系统消息服务的消息。即使用户没有标签页打开您的网站，此功能仍然有效。只有服务工作进程被唤醒。执行此操作的权限将从页面请求，系统将提示用户。
+[Push API](/push-notifications/) 是构建在服务工作进程之上的另一个功能。它允许唤醒服务工作进程以响应来自操作系统消息服务的消息。即使用户没有标签页打开您的网站，此功能仍然有效。只有服务工作进程被唤醒。执行此操作的权限将从页面请求，系统将提示用户。
 
 **适合：**与通知相关的内容，例如聊天消息、突发新闻或电子邮件。也适合不频繁变化但受益于即时同步的内容，例如待办事项列表更新或日历变化。
 
@@ -244,7 +244,7 @@ self.addEventListener('notificationclick', function (event) {
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="后台同步时。", width="800", height="219" %} <figcaption>后台同步时。</figcaption></figure>
 
-[后台同步](https://developers.google.com/web/updates/2015/12/background-sync)是构建在服务工作进程之上的另一个功能。它允许一次性或以一个（极具启发性的）时间间隔请求后台数据同步。即使用户没有标签页打开您的网站，此功能仍然有效。只有服务工作进程被唤醒。执行此操作的权限将从页面请求，系统将提示用户。
+[后台同步](https://developer.chrome.com/blog/background-sync/)是构建在服务工作进程之上的另一个功能。它允许一次性或以一个（极具启发性的）时间间隔请求后台数据同步。即使用户没有标签页打开您的网站，此功能仍然有效。只有服务工作进程被唤醒。执行此操作的权限将从页面请求，系统将提示用户。
 
 **适合：**非紧急更新，尤其是那些每次更新都推送消息对于用户来说过于频繁的定期更新，例如社交媒体时间线或新闻文章。
 

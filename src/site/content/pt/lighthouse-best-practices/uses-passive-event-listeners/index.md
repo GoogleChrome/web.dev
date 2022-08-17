@@ -16,7 +16,7 @@ A maioria dos navegadores oferece suporte a ouvintes de eventos passivos. Veja [
 
 ## Como falha a auditoria do ouvinte de evento passivo do Lighthouse
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza ouvintes de eventos que podem atrasar a rolagem da página:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza ouvintes de eventos que podem atrasar a rolagem da página:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="A auditoria Lighthouse mostra que a página não usa ouvintes de eventos passivos para melhorar o desempenho de rolagem", width="800", height="213" %}</figure>
 
@@ -45,7 +45,7 @@ Se você [oferece suporte a navegadores mais antigos que não suportam ouvintes 
 
 ## Recursos
 
-- [Código-fonte da auditoria **Não usa ouvintes passivos para melhorar o desempenho da rolagem**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-passive-event-listeners.js)
+- [Código-fonte da auditoria **Não usa ouvintes passivos para melhorar o desempenho da rolagem**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-passive-event-listeners.js)
 - [Melhorando o desempenho da rolagem com ouvintes de eventos passivos](https://developers.google.com/web/updates/2016/06/passive-event-listeners)
 - [Explicação sobre ouvintes de evento passivos](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)
 - [EventTarget.addEventListener()](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener)

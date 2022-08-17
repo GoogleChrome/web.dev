@@ -14,7 +14,7 @@ tags:
 
 ## 先决条件
 
-本指南假设您非常熟悉 [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)。如果您愿意，可以改用其他浏览器的 DevTools。只需将本指南中的 Chrome DevTools 屏幕截图映射回您所选浏览器中的相关功能。
+本指南假设您非常熟悉 [Chrome DevTools](https://developer.chrome.com/docs/devtools/)。如果您愿意，可以改用其他浏览器的 DevTools。只需将本指南中的 Chrome DevTools 屏幕截图映射回您所选浏览器中的相关功能。
 
 ## 了解响应式背景图像
 
@@ -22,7 +22,7 @@ tags:
 
 1. 在一个新 Chrome 标签中打开[未优化的演示](https://use-media-queries-unoptimized.glitch.me/)。{% Instruction 'devtools-network', 'ol' %} {% Instruction 'reload-page', 'ol' %}
 
-{% Aside %}如果您需要有关 DevTools 的更多帮助，请查看[使用 Chrome DevTools 检查网络活动](https://developers.google.com/web/tools/chrome-devtools/network/)。{% endAside %}
+{% Aside %}如果您需要有关 DevTools 的更多帮助，请查看[使用 Chrome DevTools 检查网络活动](https://developer.chrome.com/docs/devtools/network/)。{% endAside %}
 
 您会看到请求的唯一图像为 `background-desktop.jpg`，大小为 **1006KB**：
 

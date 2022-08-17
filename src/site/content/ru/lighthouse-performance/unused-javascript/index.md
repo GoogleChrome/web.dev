@@ -9,12 +9,12 @@ date: 2020-07-07
 
 Неиспользуемый JavaScript может замедлить скорость загрузки вашей страницы:
 
-- Если JavaScript [блокирует рендеринг](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript), браузер должен загрузить, проанализировать, скомпилировать и оценить скрипт, прежде чем он сможет продолжить всю остальную работу, необходимую для рендеринга страницы.
+- Если JavaScript [блокирует рендеринг](/critical-rendering-path-adding-interactivity-with-javascript/), браузер должен загрузить, проанализировать, скомпилировать и оценить скрипт, прежде чем он сможет продолжить всю остальную работу, необходимую для рендеринга страницы.
 - Даже если JavaScript является асинхронным (т. е. не блокирует рендеринг), код во время загрузки конкурирует за пропускную способность с другими ресурсами, что значительно снижает производительность. Отправка неиспользованного кода по сети также расточительна для мобильных пользователей, у которых нет безлимитных тарифных планов.
 
 ## Причины плохих результатов проверки неиспользуемого JavaScript
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает каждый файл JavaScript с более чем 20 кибибайтами неиспользуемого кода:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает каждый файл JavaScript с более чем 20 кибибайтами неиспользуемого кода:
 
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt = "Скриншот проверки.", width = "800", height = "332"%}<figcaption> Щелкните значение в столбце <b>URL</b>, чтобы открыть исходный код сценария в новой вкладке.</figcaption></figure>
 
@@ -24,7 +24,7 @@ date: 2020-07-07
 
 ### Выявите неиспользуемый JavaScript
 
-Вкладка [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) в Chrome DevTools предоставляет построчную разбивку неиспользуемого кода.
+Вкладка [Coverage](https://developer.chrome.com/docs/devtools/coverage/) в Chrome DevTools предоставляет построчную разбивку неиспользуемого кода.
 
 Класс [`Coverage`](https://pptr.dev/#?product=Puppeteer&version=v4.0.0&show=api-class-coverage) в Puppeteer может помочь автоматизировать процесс обнаружения неиспользуемого кода и извлечения используемого кода.
 
@@ -68,11 +68,11 @@ date: 2020-07-07
 
 ## Ресурсы
 
-- [Исходный код для проверки **Remove unused code** (Удалите неиспользуемый код)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-javascript.js).
+- [Исходный код для проверки **Remove unused code** (Удалите неиспользуемый код)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-javascript.js).
 - [Удалите неиспользуемый код](/remove-unused-code/).
-- [Добавление интерактивности с помощью JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript).
+- [Добавление интерактивности с помощью JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/).
 - [Разделение кода](https://bundlers.tooling.report/code-splitting/).
 - [Устранение мертвого кода](https://bundlers.tooling.report/transformations/dead-code/).
 - [Мертвый импортированный код](https://bundlers.tooling.report/transformations/dead-code-dynamic/).
-- [Найдите неиспользуемый код JavaScript и CSS с помощью вкладки Coverage в Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/coverage).
+- [Найдите неиспользуемый код JavaScript и CSS с помощью вкладки Coverage в Chrome DevTools](https://developer.chrome.com/docs/devtools/coverage/).
 - [Класс: `Coverage`](https://pptr.dev/#?product=Puppeteer&version=v4.0.0&show=api-class-coverage).

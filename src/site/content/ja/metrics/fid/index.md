@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: この投稿では、First Input Delay（FID）メトリックを紹介し、説明しますそれを測定する方法
 tags:
   - performance
@@ -94,7 +94,7 @@ FID は、読み込み時のページの応答性を測定するための指標�
 
 スクロールやズームなどといったその他のインタラクションは連続的な動作であり、パフォーマンス上の制限事項が全く異なります (また、別のスレッドで実行することによってブラウザー側でレイテンシーを隠すことも可能です)。
 
-言い換えるならば、FID は [RAIL パフォーマンス モデル](https://developers.google.com/web/fundamentals/performance/rail)における R (応答性) に焦点を当てているのに対し、スクロールやズームは A (アニメーション) により強い関連性を持っており、それらのパフォーマンス品質は個別に評価される必要があります。
+言い換えるならば、FID は [RAIL パフォーマンス モデル](/rail/)における R (応答性) に焦点を当てているのに対し、スクロールやズームは A (アニメーション) により強い関連性を持っており、それらのパフォーマンス品質は個別に評価される必要があります。
 
 ### ユーザーがサイトを操作したことがない場合はどうなりますか？
 
@@ -120,8 +120,8 @@ FID の測定には実際のユーザーによるページの操作が必要と�
 
 ### フィールド測定を実施するためのツール
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)
 

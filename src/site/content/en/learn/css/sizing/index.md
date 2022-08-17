@@ -84,7 +84,7 @@ Numbers can also be used in the following places:
 ## Percentages
 
 When using a percentage in CSS you need to know how the percentage is calculated.
-For example,`width` is calculated as a percentage of the width of the parent element.
+For example,`width` is calculated as a percentage of the available width in the parent element.
 
 ```css
 div {
@@ -93,7 +93,7 @@ div {
 }
 
 div p {
-  width: 50%; /* calculated: 150px */
+  width: 50%; 
 }
 ```
 
@@ -105,7 +105,7 @@ div p {
 } %}
 </figure>
 
-In the above example, the width of `div p` is `150px`.
+In the above example, the width of `div p` is `150px`, assuming that the layout uses the default `box-sizing: content-box`.
 
 If you set `margin` or `padding` as a percentage,
 they will be a portion of the **parent element's width**,

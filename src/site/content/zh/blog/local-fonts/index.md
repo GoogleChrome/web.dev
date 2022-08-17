@@ -21,7 +21,7 @@ origin_trial:
   url: "https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775"
 ---
 
-{% Aside %} 本地字体访问 API 是[功能项目](https://developers.google.com/web/updates/capabilities)的一部分，目前正在开发中。本文将随着实施的进展而更新。{% endAside %}
+{% Aside %} 本地字体访问 API 是[功能项目](https://developer.chrome.com/blog/capabilities/)的一部分，目前正在开发中。本文将随着实施的进展而更新。{% endAside %}
 
 ## Web 安全字体
 

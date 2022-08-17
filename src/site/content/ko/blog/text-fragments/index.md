@@ -205,7 +205,7 @@ if ('fragmentDirective' in document) {
 }
 ```
 
-보시다시피 브라우저는 적용된 강조 표시를 사용자 지정하는 데 사용할 수 가상 선택기(pseudo selector) [`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text)를 내포합니다. 예를 들어 텍스트 조각을 빨간색 배경에 검은색 텍스트로 디자인할 수 있습니다. 항상 그렇듯이, 재정의 스타일로 인해 접근성 문제가 발생하지 않도록 [색상 대비를 확인](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#contrast)하고 강조 표시가 나머지 콘텐츠와 시각적으로 뚜렷하게 구분되는지 확인하십시오.
+보시다시피 브라우저는 적용된 강조 표시를 사용자 지정하는 데 사용할 수 가상 선택기(pseudo selector) [`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text)를 내포합니다. 예를 들어 텍스트 조각을 빨간색 배경에 검은색 텍스트로 디자인할 수 있습니다. 항상 그렇듯이, 재정의 스타일로 인해 접근성 문제가 발생하지 않도록 [색상 대비를 확인](https://developer.chrome.com/docs/devtools/accessibility/reference/#contrast)하고 강조 표시가 나머지 콘텐츠와 시각적으로 뚜렷하게 구분되는지 확인하십시오.
 
 ```css
 :root::target-text {

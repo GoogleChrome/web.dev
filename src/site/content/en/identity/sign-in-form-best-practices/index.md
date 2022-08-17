@@ -87,7 +87,7 @@ help you build a better sign-in experience:
 PIN numbers via SMS to mobile phones. This can allow users to select a phone
 number as an identifier (no need to enter an email address!) and also enables
 two-step verification for sign-in and one-time codes for payment confirmation.
-* [**Credential Management**](https://developers.google.com/web/updates/2016/04/credential-management-api): to enable developers to store and retrieve password credentials and federated credentials programmatically.
+* [**Credential Management**](https://developer.chrome.com/blog/credential-management-api/): to enable developers to store and retrieve password credentials and federated credentials programmatically.
 {% endAside %}
 
 ## Use meaningful HTML {: #meaningful-html }
@@ -737,11 +737,11 @@ Well designed UI and UX can reduce sign-in form abandonment:
 
 ## Keep learning {: #resources }
 
-* [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+* [Create Amazing Forms](/learn/forms/)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
-* [Streamlining the Sign-in Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
+* [Streamlining the Sign-in Flow Using Credential Management API](https://developer.chrome.com/blog/credential-management-api/)
 * [Verify phone numbers on the web with the WebOTP API](/web-otp/)
 
 Photo by [Meghan Schiereck](https://unsplash.com/photos/_XFObcM_7KU) on [Unsplash](https://unsplash.com).

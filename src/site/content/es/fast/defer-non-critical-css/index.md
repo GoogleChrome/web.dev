@@ -12,7 +12,7 @@ tags:
 
 Los archivos CSS son [recursos que bloquean el renderizado](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources): deben cargarse y procesarse antes de que el navegador muestre la página. Las páginas web que contienen estilos de CSS innecesariamente grandes tardan más en procesarse.
 
-En esta guía aprenderá cómo aplazar el CSS no crítico, con el objetivo de optimizar la [ruta de renderización crítica](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) y mejorar la [First Contentful Paint o FCP (primer despliegue de contenido)](/fcp/).
+En esta guía aprenderá cómo aplazar el CSS no crítico, con el objetivo de optimizar la [ruta de renderización crítica](/critical-rendering-path/) y mejorar la [First Contentful Paint o FCP (primer despliegue de contenido)](/fcp/).
 
 ## Cargar CSS de una manera deficiente
 
@@ -50,7 +50,7 @@ Esto significa que el navegador debe esperar a que todo el CSS se cargue y proce
 
 Para optimizar esta página, necesita saber qué clases se consideran "críticas". Utilizará la [herramienta de cobertura](https://developer.chrome.com/docs/devtools/css/reference/#coverage) para eso:
 
-1. En DevTools, abra el [menú de comandos](https://developers.google.com/web/tools/chrome-devtools/command-menu) presionando `Control+Shift+P` o `Command+Shift+P` (Mac).
+1. En DevTools, abra el [menú de comandos](https://developer.chrome.com/docs/devtools/command-menu/) presionando `Control+Shift+P` o `Command+Shift+P` (Mac).
 2. Escriba "Cobertura" y seleccione **Mostrar cobertura**.
 3. Haga clic en el botón **Actualizar** para volver a cargar la página y comenzar a capturar la cobertura.
 

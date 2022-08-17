@@ -4,6 +4,7 @@ title: Image demo pattern
 description: Shows off how to create a pattern that uses the Img shortcode.
 date: 2021-08-10
 height: 400
+noindex: true
 ---
 
 It is possible to use an image (static or animated) as a demo in a CodePattern.

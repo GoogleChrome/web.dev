@@ -22,7 +22,7 @@ and removing anything unused.
 
 ## Which URLs get flagged as render-blocking resources?
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags two types of render-blocking URLs: scripts and stylesheets.
 
 A `<script>` tag that:
@@ -69,7 +69,7 @@ When the page loads, it will have what it needs to handle the page's core functi
 If there's code in a render-blocking URL that's not critical,
 you can keep it in the URL,
 and then mark the URL with `async` or `defer` attributes
-(see also [Adding Interactivity with JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)).
+(see also [Adding Interactivity with JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/)).
 
 Code that isn't being used at all should be removed (see [Remove unused code](/remove-unused-code)).
 
@@ -124,7 +124,7 @@ resources](https://wordpress.org/plugins/search/defer+css+javascript/).
 
 ## Resources
 
-- [Source code for **Eliminate render-blocking resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js)
+- [Source code for **Eliminate render-blocking resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js)
 - [Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
 - [Remove unused code codelab](/codelab-remove-unused-code)
-- [JavaScript Start-up Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
+- [JavaScript Start-up Optimization](/optimizing-content-efficiency-javascript-startup-optimization/)

@@ -492,11 +492,11 @@ Address line 2 (optional)
 - [Рекомендации по формам входа в систему](/sign-in-form-best-practices)
 - [Рекомендации по формам регистрации](/sign-up-form-best-practices)
 - [Подтвердите номера телефонов в Интернете с помощью API WebOTP](/web-otp)
-- [Как создавать потрясающие формы](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Как создавать потрясающие формы](/learn/forms/)
 - Рекомендации по разработке форм для мобильных устройств
 - Функциональные элементы управления в формах
 - [Создание доступных форм](https://webaim.org/techniques/forms/)
-- [Оптимизация процесса регистрации с помощью API управления учетными данными](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Оптимизация процесса регистрации с помощью API управления учетными данными](https://developer.chrome.com/blog/credential-management-api/)
 - [Руководство Фрэнка по почтовым адресам](http://www.columbia.edu/~fdc/postal/) содержит полезные ссылки и подробные инструкции по форматам адресов в более чем 200 странах.
 - На [Countries Lists](http://www.countries-list.info/Download-List) есть инструмент для скачивания кодов и названий стран на различных языках и в различных форматах.
 

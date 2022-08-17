@@ -108,7 +108,7 @@ if ('serviceWorker' in navigator) {
 
 {% Aside %}
 If you are new to the service worker, learn more at [Service Workers: an
-Introduction](https://developers.google.com/web/fundamentals/primers/service-workers).
+Introduction](https://developer.chrome.com/docs/workbox/service-worker-overview/).
 {% endAside %}
 
 ### Set a payment instrument
@@ -253,13 +253,13 @@ flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
 You can port forward the local web server to an Android device using Chrome's
 DevTools and test how it works from a mobile browser. To learn how to do it,
 check out [Access Local
-Servers](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server).
+Servers](https://developer.chrome.com/docs/devtools/remote-debugging/local-server/).
 
 ### Remote debugging a website on Android Chrome from desktop DevTools
 
 You can also debug Android Chrome on desktop DevTools. To learn how to do it,
 check out [Get Started with Remote Debugging Android
-Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging).
+Devices](https://developer.chrome.com/docs/devtools/remote-debugging/).
 
 ### Payment Handler event logging
 

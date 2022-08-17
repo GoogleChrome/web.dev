@@ -22,7 +22,7 @@ web_lighthouse:
 
 ## Lighthouse 정식 링크 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 잘못된 정식 링크가 있는 아무 페이지에나 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 잘못된 정식 링크가 있는 아무 페이지에나 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="유효하지 않은 정식 링크가 있는 문서를 표시하는 Lighthouse 감사", width="800", height="76" %}</figure>
 
@@ -67,7 +67,7 @@ Link: https://example.com; rel=canonical
 ### 일반 지침
 
 - 정식 URL이 유효한지 확인합니다.
-- 가능하면 HTTP 대신 안전한 [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https) 정식 URL을 사용합니다.
+- 가능하면 HTTP 대신 안전한 [HTTPS](/why-https-matters/) 정식 URL을 사용합니다.
 - [`hreflang` 링크](/hreflang)를 사용하여 사용자의 언어 또는 국가에 따라 다른 버전의 페이지를 제공하는 경우 정식 URL이 해당 언어 또는 국가에 대한 적절한 페이지를 가리키는지 확인합니다.
 - 정식 URL을 다른 도메인으로 지정하지 않습니다. Yahoo와 Bing은 이를 허용하지 않습니다.
 - 콘텐츠가 동일하지 않은 경우 하위 수준 페이지가 사이트의 루트 페이지를 가리키도록 하지 않습니다.
@@ -81,7 +81,7 @@ Link: https://example.com; rel=canonical
 
 ## 참고 자료
 
-- [**문서에 유효한 `rel=canonical`**이 없음 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/canonical.js)
+- [**문서에 유효한 `rel=canonical`**이 없음 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/canonical.js)
 - [rel=canonical 관련 5가지 일반적인 실수](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
 - [중복 URL 통합](https://support.google.com/webmasters/answer/139066)
 - [매개변수화된 중복 콘텐츠 크롤링 차단](https://support.google.com/webmasters/answer/6080548)

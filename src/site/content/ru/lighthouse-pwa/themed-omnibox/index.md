@@ -18,7 +18,7 @@ updated: 2020-06-17
 
 ## Аудит цвета темы в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, которые не применяют тему к адресной строке:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, которые не применяют тему к адресной строке:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Аудит Lighthouse показывает, что для адресной строки не установлена тема согласно цветам страницы", width="800", height="98" %}</figure>
 
@@ -62,6 +62,6 @@ updated: 2020-06-17
 
 ## Материалы
 
-- [Исходный код для аудита **Не установлен цвет темы для адресной строки** (Does not set a theme color for the address bar)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js).
+- [Исходный код для аудита **Не установлен цвет темы для адресной строки** (Does not set a theme color for the address bar)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/themed-omnibox.js).
 - [Как добавить манифест веб-приложения](/add-manifest).
 - [Поддержка `theme-color` в Chrome 39 для Android](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android).

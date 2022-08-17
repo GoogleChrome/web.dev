@@ -54,7 +54,7 @@ experience, unload is unreliable on modern browsers and risks data loss if
 something goes wrong. Specifically, unload events [often don't fire on mobile
 browsers](https://www.igvita.com/2015/11/20/dont-lose-user-and-app-state-use-page-visibility/)
 because there are [many ways to
-close](https://developers.google.com/web/updates/2018/07/page-lifecycle-api) a
+close](https://developer.chrome.com/blog/page-lifecycle-api/) a
 tab or browser on mobile operating systems without the `unload` event firing.
 With `XMLHttpRequest()`, using small payloads was a choice. Now it's a
 requirement. Both of its alternatives have an upload limit of 64&nbsp;KB per

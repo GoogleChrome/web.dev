@@ -4,7 +4,7 @@ title: First Input Delay 首次输入延迟 (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: 这篇文章介绍了首次输入延迟 (FID) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -94,7 +94,7 @@ FID 是测量页面加载期间响应度的指标。因此，FID 只关注不连
 
 其他诸如滚动和缩放之类的交互属于连续操作，具有完全不同的性能约束（而且，浏览器通常能够通过在单独的线程上执行这些操作来隐藏延迟）。
 
-换句话说，FID 侧重于[RAIL 性能模型](https://developers.google.com/web/fundamentals/performance/rail)中的 R（响应度），而滚动和缩放与 A（动画）更为相关，因此这些操作的性能质量应该单独进行评估。
+换句话说，FID 侧重于[RAIL 性能模型](/rail/)中的 R（响应度），而滚动和缩放与 A（动画）更为相关，因此这些操作的性能质量应该单独进行评估。
 
 ### 如果用户始终没有与您的网站进行交互怎么办？
 
@@ -120,8 +120,8 @@ FID 是一个只能进行[实际](/user-centric-performance-metrics/#in-the-fiel
 
 ### 实测工具
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
 

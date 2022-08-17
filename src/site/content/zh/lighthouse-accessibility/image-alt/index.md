@@ -46,5 +46,5 @@ Lighthouse 标记没有 `alt` 属性的 `<img>` 元素：
 
 ## 资源
 
-- [**没有 `[alt]` 属性的图像元素**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
+- [**没有 `[alt]` 属性的图像元素**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/image-alt.js)
 - [图像必须有替代文本 (Deque University)](https://dequeuniversity.com/rules/axe/3.3/image-alt)

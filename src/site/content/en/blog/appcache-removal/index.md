@@ -23,7 +23,7 @@ origin_trial:
 
 Following up on [previous announcements](https://blog.chromium.org/2020/01/appcache-scope-restricted.html), support for [AppCache](https://developer.mozilla.org/docs/Web/API/Window/applicationCache) will be removed from Chrome and other Chromium-based browsers. We encourage developers to migrate off of AppCache now, rather than waiting any longer.
 
-[Service workers](https://developers.google.com/web/fundamentals/primers/service-workers),
+[Service workers](https://developer.chrome.com/docs/workbox/service-worker-overview/),
 which are widely supported in current browsers, offer an alternative to providing the offline
 experience that AppCache had offered. See [Migration strategies](#migration-strategies).
 
@@ -162,11 +162,11 @@ Service workers, which are [widely supported in current browsers](https://develo
 
 We've provided a [polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior) that uses a service worker to replicate some of the functionality of AppCache, though it does not replicate the entire AppCache interface. In particular, it does not provide a replacement for the `window.applicationCache` interface or the related AppCache events.
 
-For more complex cases, libraries like [Workbox](https://developers.google.com/web/tools/workbox/) provide an easy way to create a modern service worker for your web app.
+For more complex cases, libraries like [Workbox](https://developer.chrome.com/docs/workbox/) provide an easy way to create a modern service worker for your web app.
 
 ### Service workers and AppCache are mutually exclusive
 
-While working on your migration strategy, please keep in mind that Chrome will disable AppCache functionality on any page that's loaded under the [control](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#scope_and_control) of a service worker. In other words, as soon as you deploy a service worker that controls a given page, you're no longer able to use AppCache on that page.
+While working on your migration strategy, please keep in mind that Chrome will disable AppCache functionality on any page that's loaded under the [control](/service-worker-lifecycle/#scope-and-control) of a service worker. In other words, as soon as you deploy a service worker that controls a given page, you're no longer able to use AppCache on that page.
 
 Because of this, we recommend that you do not attempt to migrate to service workers piece-by-piece. It would be a mistake to deploy a service worker that only contains some of your caching logic. You cannot fall back on AppCache to "fill in the gaps."
 
@@ -198,15 +198,15 @@ Here are some resources for developers migrating from AppCache to service worker
 
 ### Articles
 
-- [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers)
-- [The Service Worker Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
+- [Service Workers: an Introduction](https://developer.chrome.com/docs/workbox/service-worker-overview/)
+- [The Service Worker Lifecycle](/service-worker-lifecycle/)
 - [Progressive Web Apps Training](https://developers.google.com/web/ilt/pwa)
 - [Network Reliability](/reliable/)
 
 ### Tools
 
 - [AppCache Polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior)
-- [Workbox](https://developers.google.com/web/tools/workbox/)
+- [Workbox](https://developer.chrome.com/docs/workbox/)
 - [PWA Builder](https://www.pwabuilder.com/)
 
 ## Getting help

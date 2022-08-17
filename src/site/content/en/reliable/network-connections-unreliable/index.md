@@ -38,7 +38,7 @@ web app loading at a fast enough speed when they have a network connection that
 might be less than ideal. Will returning users have the same experience
 interacting with your web app when they're on a cellular connection as they do
 when they're on wi-fi? And what about users who have a high-latency, or
-"[lie-fi](https://developers.google.com/web/fundamentals/performance/poor-connectivity/#lie-fi)"
+"[lie-fi](/performance-poor-connectivity/#what-is-lie-fi)"
 connection. Will your web app be reliably fast even in those scenarios?
 
 It's not enough to  be fast under the best circumstances. Your users will view
@@ -63,7 +63,7 @@ service worker you implement really does help your web app avoid the network?
 How do you prevent a small change to your caching strategy from breaking your
 carefully crafted offline experience?
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) provides one
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) provides one
 specific test that is of particular interest when building a reliable web app:
 **Responds with a 200 OK while offline**:
 

@@ -44,11 +44,11 @@ Para Bulletin, usamos [Polymer](https://www.polymer-project.org/), pero cualquie
 
 ## Lo que aprendimos sobre los service workers {: #lesson-learned }
 
-No puede tener una PWA sin un [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/). Los service workers le brindan mucho poder, como estrategias avanzadas de almacenamiento en caché, capacidades fuera de línea, sincronización en segundo plano, etc. Si bien los service workers agregan cierta complejidad, descubrimos que sus beneficios superan la complejidad agregada.
+No puede tener una PWA sin un [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/). Los service workers le brindan mucho poder, como estrategias avanzadas de almacenamiento en caché, capacidades fuera de línea, sincronización en segundo plano, etc. Si bien los service workers agregan cierta complejidad, descubrimos que sus beneficios superan la complejidad agregada.
 
 ### Genérelo si puede {: #generate }
 
-Evite escribir un guion de service worker a mano, ya que esto requiere administrar manualmente los recursos almacenados en caché y reescribir la lógica que es común a la mayoría de las bibliotecas de service workers, como [Workbox](https://developers.google.com/web/tools/workbox/).
+Evite escribir un guion de service worker a mano, ya que esto requiere administrar manualmente los recursos almacenados en caché y reescribir la lógica que es común a la mayoría de las bibliotecas de service workers, como [Workbox](https://developer.chrome.com/docs/workbox/).
 
 Dicho esto, debido a nuestra pila de tecnología interna, no pudimos usar una biblioteca para generar y administrar nuestro service worker. Nuestros aprendizajes a continuación reflejarán en ocasiones eso. Puede leer más en [Obstáculos para los service workers no generados](#pitfalls).
 
@@ -85,7 +85,7 @@ Un componente importante de los service workers es el almacenamiento local en ca
 
 ### Lighthouse {: #lighthouse}
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) proporciona una serie de herramientas de depuración útiles para las PWA. Para ello, escanea un sitio y genera informes que cubren las PWA, rendimiento, accesibilidad, SEO y otras mejores prácticas. Recomendamos [ejecutar Lighthouse en integración continua](https://github.com/GoogleChrome/lighthouse-ci) para alertarle si incumple uno de los criterios para ser una PWA. En realidad, esto nos sucedió una vez, donde el service worker no estaba instalando y no nos dimos cuenta antes de un impulso de producción. Tener Lighthouse como parte de nuestro CI lo habría evitado.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) proporciona una serie de herramientas de depuración útiles para las PWA. Para ello, escanea un sitio y genera informes que cubren las PWA, rendimiento, accesibilidad, SEO y otras mejores prácticas. Recomendamos [ejecutar Lighthouse en integración continua](https://github.com/GoogleChrome/lighthouse-ci) para alertarle si incumple uno de los criterios para ser una PWA. En realidad, esto nos sucedió una vez, donde el service worker no estaba instalando y no nos dimos cuenta antes de un impulso de producción. Tener Lighthouse como parte de nuestro CI lo habría evitado.
 
 ### Adoptar la entrega continua {: #continuous-delivery }
 
@@ -103,7 +103,7 @@ Con el lanzamiento de la [API de tienda de cookies](https://developers.google.co
 
 ### Asegure el cambio del script del service worker si cambia algún archivo estático en caché {: #regeneration }
 
-Un patrón común de PWA es que un service worker instale todos los archivos de aplicaciones estáticos durante su fase `install`, lo que permite a los clientes acceder directamente a la caché de la API de almacenamiento en caché para todas las visitas posteriores. Los service workers solo se instalan cuando el navegador detecta que el script del service worker ha cambiado de alguna manera, por lo que teníamos que asegurarnos de que el archivo del script del service worker cambiara de alguna manera cuando cambiaba un archivo en caché. Hicimos esto manualmente al incrustar un hash del conjunto de archivos de recursos estáticos dentro de nuestro script de service worker, por lo que cada versión produjo un archivo JavaScript de service worker distinto. Las bibliotecas de service workers como [Workbox](https://developers.google.com/web/tools/workbox/) automatizan este proceso por usted.
+Un patrón común de PWA es que un service worker instale todos los archivos de aplicaciones estáticos durante su fase `install`, lo que permite a los clientes acceder directamente a la caché de la API de almacenamiento en caché para todas las visitas posteriores. Los service workers solo se instalan cuando el navegador detecta que el script del service worker ha cambiado de alguna manera, por lo que teníamos que asegurarnos de que el archivo del script del service worker cambiara de alguna manera cuando cambiaba un archivo en caché. Hicimos esto manualmente al incrustar un hash del conjunto de archivos de recursos estáticos dentro de nuestro script de service worker, por lo que cada versión produjo un archivo JavaScript de service worker distinto. Las bibliotecas de service workers como [Workbox](https://developer.chrome.com/docs/workbox/) automatizan este proceso por usted.
 
 ### Prueba unitaria {: #unit-testing }
 

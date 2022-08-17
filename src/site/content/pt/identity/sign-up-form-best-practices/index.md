@@ -214,7 +214,7 @@ Muitos usuários compartilham dispositivos e trocam de contas usando o mesmo nav
 
 ## Considere oferecer autenticação multifator {: #autenticação multifator}
 
-A autenticação multifator significa garantir que os usuários forneçam autenticação em mais de uma maneira. Por exemplo, além de exigir que o usuário defina uma senha, você também pode aplicar a verificação usando uma senha única enviada por e-mail ou mensagem de texto SMS ou usando um código único baseado em aplicativo, chave de segurança ou sensor de impressão digital. [Práticas recomendadas de SMS OTP](/sms-otp-form) e [Habilitando autenticação forte com WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn) explicam como implementar a autenticação multifator.
+A autenticação multifator significa garantir que os usuários forneçam autenticação em mais de uma maneira. Por exemplo, além de exigir que o usuário defina uma senha, você também pode aplicar a verificação usando uma senha única enviada por e-mail ou mensagem de texto SMS ou usando um código único baseado em aplicativo, chave de segurança ou sensor de impressão digital. [Práticas recomendadas de SMS OTP](/sms-otp-form) e [Habilitando autenticação forte com WebAuthn](https://developer.chrome.com/blog/webauthn/) explicam como implementar a autenticação multifator.
 
 Você certamente deve oferecer (ou aplicar) autenticação multifator se seu site lida com informações pessoais ou confidenciais.
 
@@ -246,11 +246,11 @@ Pequenas mudanças podem fazer uma grande diferença nas taxas de conclusão dos
 
 - [Práticas recomendadas para formulários de login](/sign-in-form-best-practices)
 - [Práticas recomendadas para formulários de pagamento e endereço](/payment-and-address-form-best-practices)
-- [Crie formulários incríveis](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Crie formulários incríveis](/learn/forms/)
 - [Melhores práticas para design de formulários para celular](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Controles de formulário mais capazes](/more-capable-form-controls)
 - [Criação de formulários acessíveis](https://webaim.org/techniques/forms/)
-- [Simplificando o fluxo de inscrição usando a API de gerenciamento de credenciais](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Simplificando o fluxo de inscrição usando a API de gerenciamento de credenciais](https://developer.chrome.com/blog/credential-management-api/)
 - [Verifique os números de telefone na web com a API WebOTP](/web-otp)
 
 Foto de [@ecowarriorprincess](https://unsplash.com/@ecowarriorprincess) no [Unsplash](https://unsplash.com/photos/lUShu7PHIGA).

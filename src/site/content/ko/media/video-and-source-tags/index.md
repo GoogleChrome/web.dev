@@ -6,7 +6,7 @@ authors:
   - joemedley
   - derekherman
 description: 웹용 비디오 파일을 제대로 준비하고, 정확한 치수와 해상도를 주고, 다양한 브라우저를 위해 별도의 WebM 및 MP4 파일도 생성하셨네요. 그렇지만 모두가 보려면 웹 페이지에 추가해야 합니다.
-date: 2014-14-15
+date: 2014-02-15
 updated: 2021-07-05
 tags:
   - media
@@ -57,7 +57,7 @@ tags:
 
 이러한 문제는 대역폭과 대기 시간이 중요하고 사용자의 인내심이 제한될 가능성이 있는 모바일 컨텍스트에서 특히 중요합니다. `type` 속성을 생략하면 지원되지 않는 유형의 소스가 여러 개 있는 경우 성능에 영향을 줄 수 있습니다.
 
-세부 정보를 자세히 알아 볼 수 있는 몇 가지 방법이 있습니다. 비디오와 오디오가 웹에서 어떻게 작동하는지 자세히 알아보려면 [괴짜를 위한 디지털 미디어 입문서](https://www.xiph.org/video/vid1.shtml)를 확인하십시오. 또한 DevTools에서 [원격 디버깅](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)을 사용하여 [유형 속성이 있는](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html) 네트워크 활동과 [유형 속성이 없는](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/notype.html) 네트워크 활동을 비교할 수 있습니다.
+세부 정보를 자세히 알아 볼 수 있는 몇 가지 방법이 있습니다. 비디오와 오디오가 웹에서 어떻게 작동하는지 자세히 알아보려면 [괴짜를 위한 디지털 미디어 입문서](https://www.xiph.org/video/vid1.shtml)를 확인하십시오. 또한 DevTools에서 [원격 디버깅](https://developer.chrome.com/docs/devtools/remote-debugging/)을 사용하여 [유형 속성이 있는](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html) 네트워크 활동과 [유형 속성이 없는](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/notype.html) 네트워크 활동을 비교할 수 있습니다.
 
 {% Aside 'caution' %} 브라우저 개발자 도구에서 응답 헤더를 확인하여 서버가 [올바른 MIME 유형을 보고하는지 확인하십시오](https://developer.mozilla.org/en/docs/Properly_Configuring_Server_MIME_Types). 그렇지 않으면 비디오 소스 유형 검사가 작동하지 않습니다. {% endAside %}
 
@@ -84,7 +84,7 @@ tags:
 
 이 기능이 작동하려면 서버가 범위 요청을 지원해야 하고 해당 기능을 활성화해야 합니다. 대부분의 서버는 기본적으로 범위 요청을 활성화합니다. 일부 호스팅 서비스는 이 기능을 끄므로 사이트에서 조각을 사용하기 위해 범위 요청을 사용할 수 있는지 확인해야 합니다.
 
-다행히 브라우저 개발자 도구에서 이 작업을 수행할 수 있습니다. 예를 들어 Chrome에서는 [네트워크 패널에](https://developers.google.com/web/tools/chrome-devtools/?utm_source=devtools#network) 있습니다. `Accept-Ranges` `bytes` 라고 표시되어 있는지 확인합니다. 이미지에서 이 헤더 주위에 빨간색 상자를 그렸습니다. `bytes` 가 표시되지 않으면 호스팅 제공업체에 문의해야 합니다.
+다행히 브라우저 개발자 도구에서 이 작업을 수행할 수 있습니다. 예를 들어 Chrome에서는 [네트워크 패널에](https://developer.chrome.com/docs/devtools/#network) 있습니다. `Accept-Ranges` `bytes` 라고 표시되어 있는지 확인합니다. 이미지에서 이 헤더 주위에 빨간색 상자를 그렸습니다. `bytes` 가 표시되지 않으면 호스팅 제공업체에 문의해야 합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Chrome DevTools 스크린샷. Accept-Ranges: 바이트.", width="800", height="480" %} <figcaption> Chrome DevTools 스크린샷. Accept-Ranges: 바이트.</figcaption></figure>
 

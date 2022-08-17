@@ -69,7 +69,7 @@ Algunos ejemplos de sitios que pueden utilizar esta API son:
 </table>
 <div data-md-type="block_html"></div>
 
-La API de identificación de aplicaciones funciona en Windows y macOS, en Chrome 81 o posterior. También se ha confirmado que funciona en Edge 84 o posterior. La compatibilidad con Chrome OS está en desarrollo y estará disponible en una versión futura de Chrome. En Android, la API no es compatible. En cambio, este sistema operativo muestra automáticamente un distintivo en el icono de la aplicación web instalada cuando hay una notificación no leída, al igual que para las aplicaciones de Android.
+La API de identificación de aplicaciones funciona en Windows y macOS, en Chrome 81 o posterior. También se ha confirmado que funciona en Edge 84 o posterior. La compatibilidad con ChromeOS está en desarrollo y estará disponible en una versión futura de Chrome. En Android, la API no es compatible. En cambio, este sistema operativo muestra automáticamente un distintivo en el icono de la aplicación web instalada cuando hay una notificación no leída, al igual que para las aplicaciones de Android.
 
 ## Pruébalo
 

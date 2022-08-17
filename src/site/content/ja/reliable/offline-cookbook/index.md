@@ -81,7 +81,7 @@ self.addEventListener('install', function (event) {
 
 **理想的な用途:** クリーンアップと移行。
 
-新しいサービスワーカーがインストールされ、前のバージョンが使用されなくなれば、新しいサービスワーカーがアクティブになり、`activate` イベントが発生します。古いバージョンはもう使用されないため、このタイミングで [IndexedDB におけるスキーマの移行](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)を処理し、未使用のキャッシュを削除しておくとよいでしょう。
+新しいサービスワーカーがインストールされ、前のバージョンが使用されなくなれば、新しいサービスワーカーがアクティブになり、`activate` イベントが発生します。古いバージョンはもう使用されないため、このタイミングで [IndexedDB におけるスキーマの移行](/indexeddb-best-practices/)を処理し、未使用のキャッシュを削除しておくとよいでしょう。
 
 ```js
 self.addEventListener('activate', function (event) {
@@ -198,7 +198,7 @@ self.addEventListener('fetch', function (event) {
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="プッシュメッセージ送信時。", width="800", height="498" %}<figcaption>プッシュメッセージ送信時。</figcaption></figure>
 
-[Push API](https://developers.google.com/web/fundamentals/push-notifications) は、サービスワーカーを土台に構築されたもう 1 つの機能です。これを使用することで、OS のメッセージングサービスから送られてくるメッセージに応答して、サービスワーカーを起動できます。これは、ユーザーがサイトに対してタブを開いていない場合でも発生します。サービスワーカーだけが起動します。ページからこれを行う許可を要求すると、ユーザーにプロンプトが表示されます。
+[Push API](/push-notifications/) は、サービスワーカーを土台に構築されたもう 1 つの機能です。これを使用することで、OS のメッセージングサービスから送られてくるメッセージに応答して、サービスワーカーを起動できます。これは、ユーザーがサイトに対してタブを開いていない場合でも発生します。サービスワーカーだけが起動します。ページからこれを行う許可を要求すると、ユーザーにプロンプトが表示されます。
 
 **最適な用途:** チャットメッセージ、最新ニュース、電子メールなどの通知に関連するコンテンツ。また、ToDo リストの更新やカレンダーの変更など、即時に同期することがメリットとなるコンテンツを変更する頻度が低い場合。
 
@@ -244,7 +244,7 @@ self.addEventListener('notificationclick', function (event) {
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="バックグランドでの同期時。", width="800", height="219" %}<figcaption>バックグランドでの同期時。</figcaption></figure>
 
-[バックグランドでの同期時](https://developers.google.com/web/updates/2015/12/background-sync)も、サービスワーカーを土台に構築された機能の 1 です。これを使えば、バックグラウンドデータの同期を 1 回だけ、または (非常にヒューリスティックな) 間隔で要求できます。これは、ユーザーがサイトに対してタブを開いていなくても発生します。サービスワーカーだけが起動します。ページからこれを行う許可を要求すると、ユーザーにプロンプトが表示されます。
+[バックグランドでの同期時](https://developer.chrome.com/blog/background-sync/)も、サービスワーカーを土台に構築された機能の 1 です。これを使えば、バックグラウンドデータの同期を 1 回だけ、または (非常にヒューリスティックな) 間隔で要求できます。これは、ユーザーがサイトに対してタブを開いていなくても発生します。サービスワーカーだけが起動します。ページからこれを行う許可を要求すると、ユーザーにプロンプトが表示されます。
 
 **理想的な用途:** 緊急性のない更新。特に更新がある度に送られてくるプッシュメッセージがユーザーにとって頻繁すぎるほど定期的に発生する更新  (ソーシャルタイムラインやニュース記事など)。
 

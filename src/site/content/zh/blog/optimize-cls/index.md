@@ -264,11 +264,11 @@ img {
 
 我很高兴与大家分享可用于测量和调试累积布局偏移 (CLS) 的各种工具。
 
-[灯塔](https://developers.google.com/web/tools/lighthouse)[6.0](https://github.com/GoogleChrome/lighthouse/releases)及更高版本支持在实验室环境中测量 CLS。该版本还将突出显示导致最多布局偏移的节点。
+[灯塔](https://developer.chrome.com/docs/lighthouse/overview/)[6.0](https://github.com/GoogleChrome/lighthouse/releases)及更高版本支持在实验室环境中测量 CLS。该版本还将突出显示导致最多布局偏移的节点。
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="灯塔 6.0 支持在指标部分测量 CLS", width="800", height="309" %}
 
-开发者工具中的[性能面板](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)突出显示了 Chrome 84 中**体验**部分的布局偏移。`Layout Shift`记录的**摘要**视图包括累积布局偏移分数以及显示受影响区域的矩形叠加层。
+开发者工具中的[性能面板](https://developer.chrome.com/docs/devtools/evaluate-performance/)突出显示了 Chrome 84 中**体验**部分的布局偏移。`Layout Shift`记录的**摘要**视图包括累积布局偏移分数以及显示受影响区域的矩形叠加层。
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="展开体验部分时，Chrome 开发者工具性能面板中显示出布局偏移记录", width="800", height="438" %}<figcaption>在性能面板中记录新的跟踪后，结果中的<b>体验</b>部分将填充一个显示<code>Layout Shift</code>记录的红色条。单击记录可以让您详细了解受影响的元素（例如，标记位移自/至条目）。</figcaption></figure>
 

@@ -30,7 +30,7 @@ tags:
 
 ## Lighthouse JavaScript 执行时间审计失败的原因
 
-当 JavaScript 执行时间超过 2 秒时，[Lighthouse](https://developers.google.com/web/tools/lighthouse/)会显示警告。当执行时间超过 3.5 秒时审计失败：
+当 JavaScript 执行时间超过 2 秒时，[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)会显示警告。当执行时间超过 3.5 秒时审计失败：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="减少 JavaScript 执行时间的 Lighthouse 审计截图", width="800", height="321" %}</figure>
 
@@ -44,4 +44,4 @@ tags:
 
 ## 资源
 
-[**减少 JavaScript 执行时间**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[**减少 JavaScript 执行时间**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/bootup-time.js)

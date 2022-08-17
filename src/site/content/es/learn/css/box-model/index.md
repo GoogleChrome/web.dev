@@ -100,8 +100,8 @@ Browser DevTools proporciona una visualización de los cálculos del modelo de c
 
 Prueba lo siguiente en tu propio navegador:
 
-1. [Abre DevTools](https://developers.google.com/web/tools/chrome-devtools/open)
-2. [Selecciona un elemento](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
+1. [Abre DevTools](https://developer.chrome.com/docs/devtools/open/)
+2. [Selecciona un elemento](https://developer.chrome.com/docs/devtools/css/reference/#select)
 3. Muestra el depurador del modelo de caja
 
 <figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>

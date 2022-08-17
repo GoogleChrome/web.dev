@@ -12,7 +12,7 @@ web_lighthouse:
 
 ## Почему не удается пройти аудит уровней заголовков в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, в заголовках которых пропущен один или несколько уровней:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, в заголовках которых пропущен один или несколько уровней:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Аудит Lighthouse, в котором отображены заголовки с пропущенными уровнями", width="800", height="206" %}</figure>
 
@@ -54,5 +54,5 @@ web_lighthouse:
 
 ## Ресурсы
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener">Исходный код аудита <strong>Headings skip levels</strong></a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener">Исходный код аудита <strong>Headings skip levels</strong></a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">Уровни заголовков должны увеличиваться только на единицу (Deque University)</a>

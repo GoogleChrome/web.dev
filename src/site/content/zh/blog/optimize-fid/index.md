@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: 一只手触摸智能手机屏幕
 description: 首次输入延迟 (FID) 测量从用户第一次与您的网站交互直到浏览器实际能够对交互作出响应的时间。了解如何通过最小化未使用的 JavaScript、分割长任务和改进交互准备来优化 FID。
@@ -103,7 +104,7 @@ tags:
 
 默认情况下，所有 JavaScript 都是阻塞渲染的。当浏览器遇到链接到外部 JavaScript 文件的脚本标签时，就必须暂停正在执行的操作，转而下载、解析、编译和执行该 JavaScript。因此，您应该只加载页面所需的代码或响应用户输入所需的代码。
 
-Chrome 开发者工具中的[代码覆盖率](https://developers.google.com/web/tools/chrome-devtools/coverage)选项卡能够告诉您网页上有多少未在使用的 JavaScript。
+Chrome 开发者工具中的[代码覆盖率](https://developer.chrome.com/docs/devtools/coverage/)选项卡能够告诉您网页上有多少未在使用的 JavaScript。
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="代码覆盖率选项卡。", width="800", height="559" %}
 
@@ -163,10 +164,10 @@ import('module.js').then((module) => {
 
 许多工具都可以用于测量和调试 FID：
 
-- [灯塔 6.0](https://developers.google.com/web/tools/lighthouse) 不支持 FID，因为 FID 是一个实际指标。但是，可以用[总阻塞时间](/tbt/) (TBT) 作为代理。能够改进 TBT 的优化也应该能改进实际情况下的 FID。
+- [灯塔 6.0](https://developer.chrome.com/docs/lighthouse/overview/) 不支持 FID，因为 FID 是一个实际指标。但是，可以用[总阻塞时间](/tbt/) (TBT) 作为代理。能够改进 TBT 的优化也应该能改进实际情况下的 FID。
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="灯塔 6.0.", width="800", height="309" %}
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)提供在域级聚合下的真实 FID 值
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)提供在域级聚合下的真实 FID 值
 
 *感谢 Philip Walton、Kayce Basques、Ilya Grigorik 和 Annie Sullivan 的审阅。*

@@ -6,7 +6,7 @@ authors:
   - joemedley
   - derekherman
 description: 您已经为 Web 正确准备了视频文件，也为其设置了正确的尺寸和分辨率，甚至还创建了适用于不同浏览器的单独 WebM 和 MP4 文件。为了让用户能够观看，您仍然需要为其添加一个网页。
-date: 2014-14-15
+date: 2014-02-15
 updated: 2021-07-05
 tags:
   - media
@@ -57,7 +57,7 @@ tags:
 
 这些问题在移动环境下尤其重要。在这种环境下，带宽和延迟非常重要，而且用户的耐心可能有限。当多个来源具有不支持的类型时，省略 `type` 属性可能影响性能。
 
-您有几种方法可以深入了解详细信息。查看 [A Digital Media Primer for Geeks](https://www.xiph.org/video/vid1.shtml) 可了解有关视频和音频如何在 Web 上工作的更多信息。您还可以使用 DevTools 中的[远程调试](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)来比较具有[类型属性和](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/notype.html)和[没有类型属性](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)的网络活动。
+您有几种方法可以深入了解详细信息。查看 [A Digital Media Primer for Geeks](https://www.xiph.org/video/vid1.shtml) 可了解有关视频和音频如何在 Web 上工作的更多信息。您还可以使用 DevTools 中的[远程调试](https://developer.chrome.com/docs/devtools/remote-debugging/)来比较具有[类型属性和](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/notype.html)和[没有类型属性](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)的网络活动。
 
 {% Aside 'caution' %} 请务必检查浏览器开发人员工具中的响应标头，以[确保服务器报告正确的 MIME 类型](https://developer.mozilla.org/en/docs/Properly_Configuring_Server_MIME_Types)；否则视频源类型检查将不起作用。{% endAside %}
 
@@ -84,7 +84,7 @@ tags:
 
 要让此功能起作用，您的服务器必须支持范围请求并启用该功能。默认情况下，大多数服务器会启用范围请求。由于某些托管服务会将其关闭，因此，您要确认范围请求可用于在您的站点上使用片段。
 
-幸运的是，您可以在浏览器开发人员工具中执行此操作。例如，在 Chrome 中，它位于[“网络”面板](https://developers.google.com/web/tools/chrome-devtools/?utm_source=devtools#network)中。请查找 `Accept-Ranges` 标头并验证它是否显示 `bytes`。在下图中，我将标头上画了一个红色框。如果您没有看到 `bytes` 值，则需要联系您的托管服务提供商。
+幸运的是，您可以在浏览器开发人员工具中执行此操作。例如，在 Chrome 中，它位于[“网络”面板](https://developer.chrome.com/docs/devtools/#network)中。请查找 `Accept-Ranges` 标头并验证它是否显示 `bytes`。在下图中，我将标头上画了一个红色框。如果您没有看到 `bytes` 值，则需要联系您的托管服务提供商。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Chrome DevTools 截屏：Accept-Ranges: bytes。", width="800", height="480" %}<figcaption> Chrome DevTools 截屏：Accept-Ranges: bytes。</figcaption></figure>
 

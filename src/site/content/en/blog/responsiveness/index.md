@@ -5,6 +5,7 @@ description: An update on our plans for measuring responsiveness on the web.
 authors:
   - hbsong
 date: 2021-11-03
+updated: 2022-05-11
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/GNWyQZ5l1uy1b7s5ursN.jpeg
 alt: Water droplet rippling outward
 tags:
@@ -14,9 +15,7 @@ tags:
 ---
 
 {% Aside 'important' %}
-A candidate for a new responsiveness metric has been chosen, so feedback is no
-longer necessary at this time. When finalized, this metric will be documented
-with its own landing page. This space will be updated when that happens.
+This article was written during a period of time in which a new responsiveness metric was being developed to measure end-to-end latency on web pages. That new metric has been released, and is named [Interaction to Next Paint (INP)](/inp/).
 {% endAside %}
 
 Earlier this year, the Chrome Speed Metrics Team shared [some of the

@@ -33,7 +33,7 @@ tags:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/onUIDiaFNNHOmnwXzRh1.png", alt="Podcasts 应用下载了一集可播放的播客。", width="800", height="440" %}<figcaption>即使没有网络也可以播放下载的播客剧集。</figcaption></figure>
 
-{% Details %} {% DetailsSummary %}如何在 web 上实现{% endDetailsSummary %} 可以从缓存提供以前下载的媒体内容，例如使用 <a href="https://developers.google.com/web/tools/workbox">Workbox</a> 库中的<a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">提供缓存的音频和视频</a>方法。其他内容可以随时存储在缓存或 IndexedDB 中。请查阅 <a href="/storage-for-the-web/">Web 存储</a>一文了解所有详细信息，以及何时使用何种存储技术。如果您的数据需要持久存储，不想在可用内存变低时被清除，则可以使用 <a href="/persistent-storage/">Persistent Storage API</a> 。 {% endDetails %}
+{% Details %} {% DetailsSummary %}如何在 web 上实现{% endDetailsSummary %} 可以从缓存提供以前下载的媒体内容，例如使用 <a href="https://developer.chrome.com/docs/workbox/">Workbox</a> 库中的<a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">提供缓存的音频和视频</a>方法。其他内容可以随时存储在缓存或 IndexedDB 中。请查阅 <a href="/storage-for-the-web/">Web 存储</a>一文了解所有详细信息，以及何时使用何种存储技术。如果您的数据需要持久存储，不想在可用内存变低时被清除，则可以使用 <a href="/persistent-storage/">Persistent Storage API</a> 。 {% endDetails %}
 
 ## 后台主动下载
 
@@ -209,8 +209,8 @@ iOS 上的 Podcasts 应用可以在应用之外的其他位置显示内容，例
         <td><a href="#offline-content-available-and-media-playable">可使用离线内容且可播放媒体数据</a></td>
         <td>
           <ul>
-            <li><a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">提供缓存的音频和视频</a></li>
-            <li><a href="https://developers.google.com/web/tools/workbox">Workbox 库</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">提供缓存的音频和视频</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/">Workbox 库</a></li>
             <li><a href="/storage-for-the-web/">Storage API</a></li>
             <li><a href="/persistent-storage/">Persistent Storage API</a></li>
           </ul>
@@ -396,7 +396,7 @@ iOS 上的 Podcasts 应用可以在应用之外的其他位置显示内容，例
 
 ## 结论
 
-自 2015 年推出以来，PWA 已经取得了长足的进步。在 [Fugu 计划🐡](/fugu-status)的背景下，跨公司的 Chromium 团队正在努力缩小最后剩余的差距。通过遵循本文中的一些建议，您可以一点一点地接近那种类似应用的感觉，让用户忘记他们正在处理“只是一个网站”，因为老实说，大多数用户并不关心应用的构建方式（以及构建原因），只要它感觉像一个*真正的*应用就可以了。
+自 2015 年推出以来，PWA 已经取得了长足的进步。在 [Fugu 计划🐡](https://developer.chrome.com/blog/fugu-status)的背景下，跨公司的 Chromium 团队正在努力缩小最后剩余的差距。通过遵循本文中的一些建议，您可以一点一点地接近那种类似应用的感觉，让用户忘记他们正在处理“只是一个网站”，因为老实说，大多数用户并不关心应用的构建方式（以及构建原因），只要它感觉像一个*真正的*应用就可以了。
 
 ## 鸣谢
 

@@ -54,7 +54,7 @@ Os CDNs de imagem oferecem dezenas, e em alguns casos centenas de diferentes tra
 
 Tende a ser uma configuração objetivamente melhor para transformações de desempenho, portanto, alguns CDNs de imagem suportam um modo "automático" para essas transformações. Por exemplo, em vez de especificar que as imagens sejam transformadas no formato WebP, você pode permitir que o CDN selecione automaticamente e forneça o formato ideal. Os sinais que um CDN de imagem pode usar para determinar a melhor maneira de transformar uma imagem incluem:
 
-- [Dicas do cliente](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints) (por exemplo, largura da janela de visualização, DPR e largura da imagem)
+- [Dicas do cliente](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/) (por exemplo, largura da janela de visualização, DPR e largura da imagem)
 - O cabeçalho [`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data)
 - O cabeçalho da solicitação [User-Agent](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent)
 - A [API de informações de rede](https://developer.mozilla.org/docs/Web/API/Network_Information_API)

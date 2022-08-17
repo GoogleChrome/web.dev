@@ -130,7 +130,7 @@ O melhor de tudo é que você também pode misturar e combinar as estratégias a
 
 Os recursos de fonte são, normalmente, recursos estáticos que não veem atualizações frequentes. Como resultado, eles são ideais para uma expiração de idade máxima longa - certifique-se de especificar um [cabeçalho ETag condicional](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#validating-cached-responses-with-etags) e uma [política de controle de cache ideal](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control) para todos os recursos de fonte.
 
-Se o seu aplicativo da web usa um [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/), disponibilizar recursos de fonte com uma [estratégia de cache primeiro](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network) é apropriado para a maioria dos casos de uso.
+Se o seu aplicativo da web usa um [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/), disponibilizar recursos de fonte com uma [estratégia de cache primeiro](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network) é apropriado para a maioria dos casos de uso.
 
 Você não deve armazenar fontes usando [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API); cada um deles tem seu próprio conjunto de problemas de desempenho. O cache HTTP do navegador oferece o melhor e mais robusto mecanismo para fornecer recursos de fonte ao navegador.
 
@@ -141,7 +141,7 @@ Você não deve armazenar fontes usando [`localStorage`](https://developer.mozil
 
 ## Teste automatizado para comportamento de carregamento de WebFont com Lighthouse
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse) pode ajudar a automatizar o processo de garantir que você esteja seguindo as melhores práticas de otimização de fontes da web.
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) pode ajudar a automatizar o processo de garantir que você esteja seguindo as melhores práticas de otimização de fontes da web.
 
 As auditorias a seguir podem ajudá-lo a garantir que suas páginas continuem a seguir as práticas recomendadas de otimização de fontes da web ao longo do tempo:
 

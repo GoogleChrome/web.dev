@@ -265,11 +265,11 @@ CSS プロパティの値が変更されると、ブラウザーがその変更�
 
 喜ばしいことに、Cumulative Layout Shift (CLS) の測定やデバッグを行うためのツールは、以下に示すようにたくさんのものが存在します。
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) 以降では、ラボ設定での CLS の測定がサポートされています。また、このリリースにおいては、レイアウト シフトを最も多く発生させているノードが強調表示されます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) 以降では、ラボ設定での CLS の測定がサポートされています。また、このリリースにおいては、レイアウト シフトを最も多く発生させているノードが強調表示されます。
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0 では、Metrics (指標) セクションで CLS を測定することが可能です", width="800", height="309" %}
 
-DevTools の[パフォーマンス パネル](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)では、Chrome 84 以降 **Experience** (エクスペリエンス) セクションでレイアウト シフトが強調表示されています。`Layout Shift` レコードの **Summary** (概要) ビューでは、Cumulative Layout Shift のスコアに加えて影響を受ける範囲を示す四角形のオーバーレイが表示されます。
+DevTools の[パフォーマンス パネル](https://developer.chrome.com/docs/devtools/evaluate-performance/)では、Chrome 84 以降 **Experience** (エクスペリエンス) セクションでレイアウト シフトが強調表示されています。`Layout Shift` レコードの **Summary** (概要) ビューでは、Cumulative Layout Shift のスコアに加えて影響を受ける範囲を示す四角形のオーバーレイが表示されます。
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Experience セクションを展開し、Layout Shift レコードが表示されている Chrome DevTools のパフォーマンス パネル", width="800", height="438" %} <figcaption>パフォーマンス パネルで新しいトレースを記録すると、結果を示す <b>Experience</b> セクションには <code>Layout Shift</code> レコードを表す赤色のバーが表示されます。レコードをクリックすることで、影響を受ける要素を詳細に確認することができます (例: エントリの Moved from (移動元) や Moved to (移動先) を確認する)。</figcaption></figure>
 

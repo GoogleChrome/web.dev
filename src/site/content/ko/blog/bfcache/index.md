@@ -34,12 +34,13 @@ bfcache는 사용자가 다른 곳으로 이동할 때 페이지의 전체 스�
 웹사이트를 방문하고 다른 페이지로 이동하기 위해 링크를 클릭한 적이 몇 번이나 있었는데, 원하는 페이지가 아님을 깨닫고 뒤로 버튼을 클릭했습니까? 그 순간에 bfcache는 이전 페이지가 로드되는 속도에 큰 차이를 만들 수 있습니다.
 
 <div class="table-wrapper">
-  <table data-alignment="top&gt;
-    &lt;tr&gt;
-      &lt;td width=">
-<strong>bfcache가 활성화되지 <em>않은 경우</em></strong>
+  <table data-alignment="top">
+    <tr>
+      <td width="30%">
+        <strong>bfcache가 활성화되지 <em>않은 경우</em></strong>
+      </td>
       <td>이전 페이지를 로드하기 위해 새 요청이 시작되고 해당 페이지가 반복 방문에 대해 얼마나 <a href="/reliable/#the-options-in-your-caching-toolbox">최적화</a>되었는지에 따라 브라우저는 리소스의 일부(또는 전체)를 다시 다운로드하고, 다시 구문 분석하고, 다시 실행해야 할 수 있습니다. 방금 다운로드했습니다.</td>
-    
+    </tr>
     <tr>
       <td><strong>bfcache가 활성화된 <em>경우</em></strong></td>
       <td>이전 페이지를 로드하는 것은 <em>본질적으로 즉각적입니다</em> . 네트워크에 전혀 연결하지 않고도 전체 페이지를 메모리에서 복원할 수 있기 때문입니다.</td>
@@ -75,7 +76,7 @@ bfcache는 브라우저가 자동으로 수행하는 최적화이지만 개발�
 
 bfcache를 관찰하는 데 사용되는 주요 이벤트는 [페이지 전환 이벤트](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)(`pageshow` 및 `pagehide`)로, bfcache가 있는 동안 계속 존재했으며 [현재 사용 중인 거의 모든 브라우저](https://caniuse.com/page-transition-events)에서 지원됩니다.
 
-새로운 [페이지 수명 주기](https://developers.google.com/web/updates/2018/07/page-lifecycle-api) 이벤트(`freeze` 및 `resume`)는 페이지가 bfcache에 들어오거나 나갈 때뿐만 아니라 다른 상황에서도 전달됩니다. 예를 들어 CPU 사용량을 최소화하기 위해 백그라운드 탭이 정지되는 경우입니다. 페이지 수명 주기 이벤트는 현재 Chromium 기반 브라우저에서만 지원됩니다.
+새로운 [페이지 수명 주기](https://developer.chrome.com/blog/page-lifecycle-api/) 이벤트(`freeze` 및 `resume`)는 페이지가 bfcache에 들어오거나 나갈 때뿐만 아니라 다른 상황에서도 전달됩니다. 예를 들어 CPU 사용량을 최소화하기 위해 백그라운드 탭이 정지되는 경우입니다. 페이지 수명 주기 이벤트는 현재 Chromium 기반 브라우저에서만 지원됩니다.
 
 #### bfcache에서 페이지가 복원될 때 관찰
 
@@ -123,7 +124,7 @@ window.addEventListener('pagehide', (event) => {
 
 모든 브라우저에서 bfcache를 최적화하는 가장 중요한 방법은 `unload` 이벤트를 사용하지 않는 것입니다. 항상!
 
-`unload` 이벤트는 bfcache보다 앞서고 `unload` 이벤트가 발생한 후 페이지가 계속 존재하지 않을 것이라는 (합리적) 가정 하에 인터넷 상의 많은 페이지가 작동하기 때문에 브라우저에 문제가 있습니다. *또한*, 이러한 페이지의 대부분은 사용자가 탐색할 때마다 `unload` 이벤트가 발생한다는 가정 하에 작성되었기 때문에 더 이상 사실이 아니며 [오랫동안 사실이 아니었습니다](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event).
+`unload` 이벤트는 bfcache보다 앞서고 `unload` 이벤트가 발생한 후 페이지가 계속 존재하지 않을 것이라는 (합리적) 가정 하에 인터넷 상의 많은 페이지가 작동하기 때문에 브라우저에 문제가 있습니다. *또한*, 이러한 페이지의 대부분은 사용자가 탐색할 때마다 `unload` 이벤트가 발생한다는 가정 하에 작성되었기 때문에 더 이상 사실이 아니며 [오랫동안 사실이 아니었습니다](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event).
 
 따라서 브라우저는 딜레마에 직면해 있으며 사용자 경험을 개선할 수 있지만 페이지가 깨질 위험이 있는 것 중에서 선택해야 합니다.
 
@@ -326,7 +327,7 @@ bfcache 탐색은 새 페이지 로드를 시작하지 않고 기존 페이지�
 
 [Core Web Vitals](/vitals/)는 다양한 차원(로딩 속도, 상호 작용, 시각적 안정성)에 걸쳐 웹 페이지에 대한 사용자 경험을 측정하고 사용자는 bfcache 복원을 기존 페이지 로드보다 더 빠른 탐색으로 경험하기 때문에 Core Web Vitals 메트릭이 이를 반영하는 것이 중요합니다. 결국 사용자는 bfcache가 활성화되었는지 여부를 신경 쓰지 않고 탐색이 빠르기만 하면 됩니다!
 
-Core Web Vitals 측정항목을 수집하고 보고하는 [Chrome 사용자 경험 보고서](https://developers.google.com/web/tools/chrome-user-experience-report)와 같은 도구는 bfcache 복원을 데이터세트에서 별도의 페이지 방문으로 처리합니다.
+Core Web Vitals 측정항목을 수집하고 보고하는 [Chrome 사용자 경험 보고서](https://developer.chrome.com/docs/crux/)와 같은 도구는 bfcache 복원을 데이터세트에서 별도의 페이지 방문으로 처리합니다.
 
 bfcache 복원 후 이러한 메트릭을 측정하기 위한 전용 웹 성능 API는 (아직) 없지만 기존 웹 API를 사용하여 해당 값을 근사화할 수 있습니다.
 

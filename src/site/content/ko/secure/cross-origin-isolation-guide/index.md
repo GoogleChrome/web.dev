@@ -35,9 +35,9 @@ Chrome 92부터 출처 간 격리 없이는 `SharedArrayBuffer`를 사용하는 
 
 ### Chrome DevTools 사용
 
-개발자는 [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open)를 사용하여 웹사이트를 검사할 수 있습니다.
+개발자는 [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/)를 사용하여 웹사이트를 검사할 수 있습니다.
 
-1. `SharedArrayBuffer`를 사용하고 있다고 의심되는 페이지에서 [Chrome DevTools를 엽니다](https://developers.google.com/web/tools/chrome-devtools/open).
+1. `SharedArrayBuffer`를 사용하고 있다고 의심되는 페이지에서 [Chrome DevTools를 엽니다](https://developer.chrome.com/docs/devtools/open/).
 2. **콘솔** 패널을 선택합니다.
 3. 페이지가 `SharedArrayBuffer`를 사용하는 경우 다음 메시지가 표시됩니다.
     ```text
@@ -58,7 +58,7 @@ Chrome 92부터 출처 간 격리 없이는 `SharedArrayBuffer`를 사용하는 
     ```
 3. 헤더가 전파되기 시작하면 등록한 엔드포인트에서 사용 중단 보고서 수집을 시작합니다.
 
-여기에서 예제 구현을 참조하세요: [https://first-party-test.glitch.me](https://first-party-test.glitch.me) .
+여기에서 예제 구현을 참조하세요: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me) .
 
 {% endDetails %}
 
@@ -70,7 +70,7 @@ Chrome 92부터 출처 간 격리 없이는 `SharedArrayBuffer`를 사용하는 
 2. 보고를 설정하고 보고서를 수신하고 저장하도록 웹 서버를 구성합니다.
 3. 최상위 문서에서 [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources)를 설정합니다. 다시 말하지만, 이 헤더를 사용하면 아직 사이트 기능에 실제로 영향을 주지 않으면서 `COEP: require-corp`을 활성화할 때의 영향을 확인할 수 있습니다. 이전 단계에서 설정한 동일한 보고 서버로 보고서를 보내도록 이 헤더를 구성할 수 있습니다.
 
-{% Aside %} Chrome DevTools **네트워크** 패널에서 [**도메인** 컬럼을 활성화](https://developers.google.com/web/tools/chrome-devtools/network#information)하여 어떤 리소스가 영향을 받는지 전반적으로 파악할 수도 있습니다. {% endAside %}
+{% Aside %} Chrome DevTools **네트워크** 패널에서 [**도메인** 컬럼을 활성화](https://developer.chrome.com/docs/devtools/network/#information)하여 어떤 리소스가 영향을 받는지 전반적으로 파악할 수도 있습니다. {% endAside %}
 
 {% Aside 'caution' %}
 

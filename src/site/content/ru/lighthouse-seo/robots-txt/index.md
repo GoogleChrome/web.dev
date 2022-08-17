@@ -15,7 +15,7 @@ web_lighthouse:
 
 ## Причины плохих результатов аудита `robots.txt` в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает недопустимые файлы `robots.txt`:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает недопустимые файлы `robots.txt`:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Аудит Lighthouse показывает недопустимый файл robots.txt", width="800", height="203" %}</figure>
 
@@ -41,7 +41,7 @@ Lighthouse не проверяет правильность расположен
 
 Если ваш сервер возвращает ошибку сервера ([код состояния HTTP](/http-status-code) 5xx) для `robots.txt`, поисковые системы не будут знать, какие страницы следует сканировать. Они могут перестать сканировать весь ваш сайт, что предотвратит индексацию нового контента.
 
-Чтобы проверить код состояния HTTP, откройте `robots.txt` в Chrome и [проверьте запрос в Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze).
+Чтобы проверить код состояния HTTP, откройте `robots.txt` в Chrome и [проверьте запрос в Chrome DevTools](https://developer.chrome.com/docs/devtools/network/reference/#analyze).
 
 ### Размер `robots.txt` не должен превышать 500 КиБ
 
@@ -136,7 +136,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## Ресурсы
 
-- [Исходный код для аудита «**Недопустимый файл `robots.txt`**» (robots.txt is not valid)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [Исходный код для аудита «**Недопустимый файл `robots.txt`**» (robots.txt is not valid)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [Создание `файла robots.txt`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Спецификации метатега robots и HTTP-заголовка X-Robots-Tag](https://developers.google.com/search/reference/robots_meta_tag)

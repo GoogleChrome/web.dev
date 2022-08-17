@@ -14,7 +14,7 @@ Muchos motores de búsqueda clasifican las páginas en función de su compatibil
 
 ## Cómo fallar la auditoría de objetivos táctiles de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas con objetivos táctiles que son demasiado pequeños o están demasiado juntos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca páginas con objetivos táctiles que son demasiado pequeños o están demasiado juntos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Auditoría de Lighthouse que muestra objetivos táctiles de tamaño inadecuado", width="800", height="206" %}</figure>
 
@@ -52,4 +52,4 @@ Los objetivos que miden menos de 48 px por 48 px o que están a menos de 8 px de
 ## Recursos
 
 - [Objetivos táctiles accesibles](/accessible-tap-targets): más información sobre cómo garantizar que todos los usuarios puedan acceder a sus objetivos táctiles.
-- [Código fuente para la auditoría **Los objetivos táctiles no tienen el tamaño adecuado.**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+- [Código fuente para la auditoría **Los objetivos táctiles no tienen el tamaño adecuado.**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/tap-targets.js)

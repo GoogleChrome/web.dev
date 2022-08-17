@@ -128,7 +128,7 @@ font.load().then(function() {
 
 Шрифты, как правило, представляют собой статические ресурсы, которые обновляются нечасто. В результате для них идеально подходят длительные сроки действия (max-age). Обязательно указывайте для всех ресурсов шрифтов [условный заголовок ETag](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#validating-cached-responses-with-etags) и [оптимальную политику Cache-Control](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control).
 
-Если в вашем веб-приложении используется [служебный сценарий](https://developers.google.com/web/fundamentals/primers/service-workers/), получение ресурсов шрифтов с применением [стратегии «сначала кэш»](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network) подходит для большинства сценариев использования.
+Если в вашем веб-приложении используется [служебный сценарий](https://developer.chrome.com/docs/workbox/service-worker-overview/), получение ресурсов шрифтов с применением [стратегии «сначала кэш»](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network) подходит для большинства сценариев использования.
 
 Не следует хранить шрифты с использованием свойства [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage) или API [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API); у каждого из этих способов есть свой набор проблем с производительностью. Кэш HTTP браузера — лучший и самый надежный механизм доставки ресурсов шрифтов в браузер.
 
@@ -139,7 +139,7 @@ font.load().then(function() {
 
 ## Автоматическая проверка поведения при загрузке веб-шрифта  с помощью Lighthouse
 
-С помощью [Lighthouse](https://developers.google.com/web/tools/lighthouse) можно автоматизировать процесс проверки соответствия рекомендациям по оптимизации веб-шрифтов.
+С помощью [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) можно автоматизировать процесс проверки соответствия рекомендациям по оптимизации веб-шрифтов.
 
 С помощью указанных ниже аудитов можно периодически проверять, соответствуют ли ваши страницы рекомендациям по оптимизации веб-шрифтов.
 

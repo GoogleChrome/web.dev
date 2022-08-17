@@ -326,8 +326,8 @@ CSS 그리드 레이아웃을 사용하면 유연한 그리드를 간단하게 �
 
 다른 중단점에서 페이지를 보려면 다음 단계를 따르세요.
 
-[DevTools](https://developers.google.com/web/tools/chrome-devtools#open)를 연 다음 [Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode#toggle)를 켭니다. 기본적으로 [반응형 모드](https://developers.google.com/web/tools/chrome-devtools/device-mode#responsive)에서 열립니다.
+[DevTools](https://developer.chrome.com/docs/devtools/open/)를 연 다음 [Device Mode](https://developer.chrome.com/docs/devtools/device-mode/#toggle)를 켭니다. 기본적으로 [반응형 모드](https://developer.chrome.com/docs/devtools/device-mode/#responsive)에서 열립니다.
 
-미디어 쿼리를 보려면 장치 모드 메뉴를 열고 [미디어 쿼리 표시](https://developers.google.com/web/tools/chrome-devtools/device-mode#queries)를 선택하여 중단점을 페이지 위에 컬러 막대로 표시합니다.
+미디어 쿼리를 보려면 장치 모드 메뉴를 열고 [미디어 쿼리 표시](https://developer.chrome.com/docs/devtools/device-mode/#queries)를 선택하여 중단점을 페이지 위에 컬러 막대로 표시합니다.
 
 해당 미디어 쿼리가 활성화되어 있는 동안 막대 중 하나를 클릭하여 페이지를 봅니다. 막대를 마우스 오른쪽 버튼으로 클릭하면 미디어 쿼리의 정의를 볼 수 있습니다.

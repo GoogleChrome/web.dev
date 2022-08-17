@@ -26,7 +26,7 @@ Lighthouse 보고서의 '기회' 섹션에는 페이지에서 크기가 적절�
 
 [이미지 CDN](/image-cdns/)은 적절한 크기의 이미지를 제공하기 위한 또 다른 주요 전략입니다. 이미지 변환을 위한 웹 서비스 API와 같은 이미지 CDN을 생각해볼 수 있습니다.
 
-또 다른 전략은 SVG와 같은 벡터 기반 이미지 형식을 사용하는 것입니다. SVG 이미지는 한정된 양의 코드를 사용해 어떤 크기로든 확장할 수 있습니다. 자세한 내용은 [복잡한 아이콘을 SVG로 바꾸기](https://developers.google.com/web/fundamentals/design-and-ux/responsive/images#replace_complex_icons_with_svg)를 참조하세요.
+또 다른 전략은 SVG와 같은 벡터 기반 이미지 형식을 사용하는 것입니다. SVG 이미지는 한정된 양의 코드를 사용해 어떤 크기로든 확장할 수 있습니다. 자세한 내용은 [복잡한 아이콘을 SVG로 바꾸기](/responsive-images/#replace-complex-icons-with-svg)를 참조하세요.
 
 [gulp-responsive](https://www.npmjs.com/package/gulp-responsive) 또는 [responsive-images-generator](https://www.npmjs.com/package/responsive-images-generator)와 같은 도구를 사용하면 이미지를 여러 형식으로 변환하는 프로세스를 자동화할 수 있습니다. 이미지를 업로드하거나 페이지에서 이미지를 요청할 때 여러 버전을 생성할 수 있는 이미지 CDN도 있습니다.
 
@@ -58,5 +58,5 @@ CDK(Component Dev Kit)의 [`BreakpointObserver` 유틸리티](https://material.a
 
 ## 리소스
 
-- [**적절한 크기의 이미지** 감사 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
+- [**적절한 크기의 이미지** 감사 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-responsive-images.js)
 - [올바른 크기의 이미지 제공](/serve-images-with-correct-dimensions)

@@ -287,11 +287,11 @@ i, em, .italic {
   </source></video>
   <figcaption>Шрифт Roboto Flex меняется по оси Grade от минимального до максимального значения.</figcaption></figure>
 
-Поскольку `GRAD` — это пользовательская ось с диапазоном от –1 до 1, нужно задавать ее через `font-variation-settings`:
+Поскольку `GRAD` — это пользовательская ось с диапазоном от –200 до 150, нужно задавать ее через `font-variation-settings`:
 
 ```css
 .grade-light {
-	font-variation-settings: `GRAD` -1;
+	font-variation-settings: `GRAD` -200;
 }
 
 .grade-normal {
@@ -299,7 +299,7 @@ i, em, .italic {
 }
 
 .grade-heavy {
-	font-variation-settings: `GRAD` 1;
+	font-variation-settings: `GRAD` 150;
 }
 ```
 
@@ -323,7 +323,7 @@ i, em, .italic {
 </span>
 ```
 
-Сначала браузер применит `font-variation-settings: 'slnt' 10` из класса `.slanted`. Затем он применит `font-variation-settings: 'GRAD' -1` из класса `.grade-light`. Но это вернет `slnt` к значению по умолчанию 0! В результате текст будет светлым, но не наклонным.
+Сначала браузер применит `font-variation-settings: 'slnt' 10` из класса `.slanted`. Затем он применит `font-variation-settings: 'GRAD' -200` из класса `.grade-light`. Но это вернет `slnt` к значению по умолчанию 0! В результате текст будет светлым, но не наклонным.
 
 К счастью, это можно обойти, используя переменные CSS:
 
@@ -340,7 +340,7 @@ i, em, .italic {
 }
 
 .grade-light {
-	--grad: -1;
+	--grad: -200;
 }
 
 .grade-normal {
@@ -348,7 +348,7 @@ i, em, .italic {
 }
 
 .grade-heavy {
-	--grad: 1;
+	--grad: 150;
 }
 
 /* Apply whatever value is kept in the CSS variables */

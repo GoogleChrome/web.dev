@@ -82,7 +82,7 @@ for same-origin routing within a self-contained web app.
 
 Taking origins into account opens the door for additional use cases, like
 routing cross-origin requests inside of a
-[service worker](https://developers.google.com/web/fundamentals/primers/service-workers)'s
+[service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)'s
 `fetch` event handler. If you're only routing same-origin URLs, you can
 effectively ignore this additional feature and use `URLPattern` like
 other libraries.

@@ -41,7 +41,7 @@ Here's what it looks like:
     {% Img src="image/admin/oqcdfVAVj2RajVWfs6ap.png", alt="An example of how priorities are displayed in Chrome Developer Tools", width="800", height="249" %}
   <figcaption>
     The <b>Priority</b> column, which is hidden by default (see
-    <a href="https://developers.google.com/web/tools/chrome-devtools/network/reference#columns">
+    <a href="https://developer.chrome.com/docs/devtools/network/reference/#columns">
       Add or remove columns
     </a>.
   </figcaption>

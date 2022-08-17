@@ -124,7 +124,7 @@ everyone.
   team member (product managers, engineers, designers, QA, and so on) can
   contribute.
 * Do an [Accessibility
-  Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review)
+  Review](/how-to-review/)
   to determine what's working well, and what needs improvement.
   The [WAVE browser extensions](https://wave.webaim.org/extension/) can help
   guide you through a manual accessibility audit of your site.
@@ -158,7 +158,7 @@ protect this sensitive user data at all costs and convince people that their
 information](https://en.wikipedia.org/wiki/Personal_data) (PII) is safe.
 
 * Understand [why all websites should be protected with
-  HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https),
+  HTTPS](/why-https-matters/),
   not just those that handle sensitive PII data.
 * Switch to a hosting provider that uses HTTPS by default, or use [Let's
   Encrypt](https://letsencrypt.org/getting-started/) or similar services to
@@ -201,7 +201,7 @@ possible.
 * Ensure that your forms are
   [efficient](https://www.smashingmagazine.com/2017/06/designing-efficient-web-forms/)
   and
-  [well-designed](https://developers.google.com/web/fundamentals/design-and-ux/input/forms).
+  [well-designed](/learn/forms/).
 
 ### SEO {: #seo }
 
@@ -284,7 +284,7 @@ performance impact of reduced bandwidth.
 * If feature releases are deprioritized, this might be the perfect time to clean
   up. Remove tags from your tag managers, clean up bloated CSS and JS, and
   remove deprecated features or code. The
-  [Coverage tab](https://developers.google.com/web/tools/chrome-devtools/coverage)
+  [Coverage tab](https://developer.chrome.com/docs/devtools/coverage/)
   in Chrome DevTools and the
   [`Coverage`](https://pptr.dev/#?product=Puppeteer&version=v2.1.1&show=api-class-coverage) class
   in Puppeteer can help you detect unused code.

@@ -7,7 +7,7 @@ authors:
 description: |
   Today, we will cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify how your site can improve on the Web Vitals.
 date: 2021-05-11
-updated: 2022-01-20
+updated: 2022-07-18
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6GPqQDYxZnVq8qF6DJ02.jpeg
 alt: "A Lighthouse illuminating the sea"
 tags:
@@ -22,7 +22,7 @@ how your site can improve on the [Web Vitals](/vitals).
 
 As a refresher on the tools, [Lighthouse](https://github.com/GoogleChrome/lighthouse) is an
 open-source, automated tool for improving the quality of web pages. You can find it in the [Chrome
-DevTools](https://developers.google.com/web/tools/chrome-devtools) suite of debugging tools and run
+DevTools](https://developer.chrome.com/docs/devtools/) suite of debugging tools and run
 it against any web page, public or requiring authentication. You can also find Lighthouse in
 [PageSpeed
 Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fstore.google.com),
@@ -80,7 +80,7 @@ track which highlights metric moments, such as Layout Shift (LS) shown above.</f
 </figure>
 
 [Field metrics](/vitals-field-measurement-best-practices/), such as those found in the [Chrome UX
-Report](https://developers.google.com/web/tools/chrome-user-experience-report) or
+Report](https://developer.chrome.com/docs/crux/) or
 [RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic), do not have this
 limitation and are a valuable complement to lab data as they reflect the experience real users
 have. Field data can't offer the kinds of diagnostic information you get in the lab, so the two go

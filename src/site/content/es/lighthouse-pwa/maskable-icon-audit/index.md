@@ -13,7 +13,7 @@ date: 2020-05-06
 
 ## Cómo falla la auditoría de los íconos enmascarables de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no tienen soporte de íconos enmascarables:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas que no tienen soporte de íconos enmascarables:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="La auditoría de ícono enmascarable en la interfaz de usuario de Lighthouse Report.", width="800", height="110" %}</figure>
 
@@ -53,7 +53,7 @@ Para aprobar la auditoría:
 
 ## Recursos
 
-- [El código fuente de **El manifiesto no tiene una auditoría de ícono enmascarable**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [El código fuente de **El manifiesto no tiene una auditoría de ícono enmascarable**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [Soporte de íconos adaptables en PWA con íconos enmascarables](/maskable-icon/)
 - [Editor de Maskable.app](https://maskable.app/editor)
 - [Agregar un manifiesto de aplicación web](/add-manifest/)

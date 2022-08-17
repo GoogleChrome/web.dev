@@ -19,7 +19,7 @@ often making it impossible to understand the content.
 
 ## How the Lighthouse missing `<html>` `lang` audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages whose `<html>` element doesn't have a `lang` attribute:
 
 <figure>
@@ -39,5 +39,5 @@ checks whether the _value_ for that attribute is valid.
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/html-has-lang.js" rel="noopener">Source code for **`<html>` element does not have a `[lang]` attribute** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/html-has-lang.js" rel="noopener">Source code for **`<html>` element does not have a `[lang]` attribute** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/html-has-lang" rel="noopener">`<html>` element must have a lang attribute (Deque University)</a>

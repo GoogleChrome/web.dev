@@ -4,10 +4,10 @@ authors:
   - ericbidelman
   - rachelandrew
 date: 2010-09-30
-updated: 2022-01-28
+updated: 2022-04-05
 description: >
-  The HTML5 Drag and Drop (DnD) API means that we can make almost any element on our page draggable.
-  In this post we’ll explain the basics of Drag and Drop.
+  The HTML5 Drag and Drop API means that we can make almost any element on our page draggable.
+  In this post we’ll explain the basics of drag and drop.
 tags:
   - blog
   - html
@@ -15,22 +15,22 @@ tags:
   - file-system
 ---
 
-The HTML5 Drag and Drop (DnD) API means that we can make almost any element on our page draggable.
-In this post we'll explain the basics of Drag and Drop.
+The HTML5 Drag and Drop API means that we can make almost any element on our page draggable.
+In this post we'll explain the basics of drag and drop.
 
 ## Creating draggable content
 
-It's worth noting that in most browsers, text selections, images, and links are draggable by
-default. For example, if you drag the Google logo on [Google Search](https://google.com) you will
-see the ghost image. The image can then be dropped in the address bar, an `<input type="file" />`
-element, or even the desktop. To make other types of content draggable you need to use the HTML5 DnD
-APIs.
+It's worth noting that in most browsers, text selections, images, and links are
+draggable by default. For example, if you drag a link on a web page you will see
+a small box with a title and URL. You can drop this box on the address bar or
+the desktop to create a shortcut or to navigate to the link. To make other types
+of content draggable you need to use the HTML5 Drag and Drop APIs.
 
 To make an object draggable set `draggable=true` on that element. Just about anything can be
-drag-enabled, images, files, links, files, or any markup on your page.
+drag-enabled: images, files, links, files, or any markup on your page.
 
-In our example we're creating an interface to rearrange some columns, which have been laid out with
-CSS Grid. The basic markup for my columns looks like this, with each column having the `draggable`
+Our example creates an interface to rearrange columns that have been laid out with
+CSS Grid. The basic markup for the columns looks like this, with each column having the `draggable`
 attribute set to `true`.
 
 ```html
@@ -41,7 +41,7 @@ attribute set to `true`.
 </div>
 ```
 
-Here's the CSS for my container and box elements. Note that the only CSS related to DnD
+Here's the CSS for the container and box elements. Note that the only CSS related to drag and drop
 functionality is the [`cursor: move`](https://developer.mozilla.org/docs/Web/CSS/cursor) property.
 The rest of the code just controls the layout and styling of the container and box elements.
 
@@ -62,7 +62,7 @@ The rest of the code just controls the layout and styling of the container and b
 ```
 
 At this point you will find that you can drag the items, however nothing else will happen. To add
-the DnD functionality we need to use the JavaScript API.
+the drag and drop functionality we need to use the JavaScript API.
 
 ## Listening for dragging events
 
@@ -76,7 +76,7 @@ There are a number of different events to attach to for monitoring the entire dr
 - [`drop`](https://developer.mozilla.org/docs/Web/API/Document/drop_event)
 - [`dragend`](https://developer.mozilla.org/docs/Web/API/Document/dragend_event)
 
-To handle the DnD flow, you need some kind of source element (where the drag originates), the data
+To handle the drag and drop flow, you need some kind of source element (where the drag originates), the data
 payload (what you're trying to drop), and a target (an area to catch the drop). The source element
 can be an image, list, link, file object, block of HTML, etc. The target is the drop zone (or set of
 drop zones) that accepts the data the user is trying to drop. Keep in mind that not all elements can
@@ -85,7 +85,7 @@ be targets, for example an image can't be a target.
 ## Starting and ending a drag and drop sequence
 
 Once you have `draggable="true"` attributes defined on your content, attach a `dragstart` event
-handler to kick off the DnD sequence for each column.
+handler to kick off the drag and drop sequence for each column.
 
 This code will set the column's opacity to 40% when the user begins dragging it, then return it to
 100% when the dragging event ends.
@@ -150,10 +150,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function handleDragOver(e) {
-    if (e.preventDefault) {
-      e.preventDefault();
-    }
-
+    e.preventDefault();
     return false;
   }
 
@@ -184,9 +181,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 There are a couple of points worth covering in this code:
 
-- In the case of dragging something like a link, you need to prevent the browser's default behavior,
-  which is to navigate to that link. To do this, call `e.preventDefault()` in the `dragover` event.
-  Another good practice is to return `false` in that same handler.
+- The [default
+  action](https://developer.mozilla.org/docs/Web/API/Document/dragover_event#browser_compatibility)
+  for `dragover` event is to set the `dataTransfer.dropEffect` property to
+  `"none"`. The `dropEffect` property is covered later in this article. For now,
+  just know that it prevents the `drop` event from being fired. To override this
+  behavior, call `e.preventDefault()`. Another good practice is to return
+  `false` in that same handler.
+
 - The `dragenter` event handler is used to toggle the `over` class instead of `dragover`. If you use
   `dragover`, the CSS class would be toggled many times as the event `dragover` continued to fire on
   a column hover. Ultimately, that would cause the browser's renderer to do a large amount of
@@ -225,7 +227,7 @@ Be sure to register the new handler in amongst the other handlers:
 If you run the code at this point, the item will not drop to the new location. To achieve this you
 need to use the [`DataTransfer`](https://developer.mozilla.org/docs/Web/API/DataTransfer) object.
 
-The `dataTransfer` property is where all the DnD magic happens. It holds the piece of data sent in a
+The `dataTransfer` property is where all the drag and drop magic happens. It holds the piece of data sent in a
 drag action. `dataTransfer` is set in the `dragstart` event and read/handled in the drop event.
 Calling `e.dataTransfer.setData(mimeType, dataPayload)` lets you set the object's MIME type and data
 payload.
@@ -267,8 +269,9 @@ function handleDrop(e) {
 }
 ```
 
-You can see the result in the following demo. Drag and release the A column on top of the B column
-and notice how they change places:
+You can see the result in the following demo. For this to work, you'll need a
+desktop browser. The Drag and Drop API isn't supported on mobile. Drag and
+release the A column on top of the B column and notice how they change places:
 
 {% Glitch {
   id: 'simple-drag-drop',
@@ -288,8 +291,8 @@ data type.
   `linkMove`, `move`, `all`, and `uninitialized`.
 - [`dataTransfer.dropEffect`](https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect)
   controls the feedback that the user is given during the `dragenter` and `dragover` events. When
-  the user hovers over a target element, the browser's cursor will indicate what type of operation
-  is going to take place (e.g. a copy, a move, etc.). The effect can take on one of the following
+  the user hovers over a target element, the browser's cursor indicates what type of operation
+  is going to take place (e.g. a copy, a move, etc.). The effect can take one of the following
   values: `none`, `copy`, `link`, `move`.
 - [`e.dataTransfer.setDragImage(imgElement, x, y)`](https://developer.mozilla.org/docs/Web/API/DataTransfer/setDragImage)
   means that instead of using the browser's default 'ghost image' feedback, you can optionally set a

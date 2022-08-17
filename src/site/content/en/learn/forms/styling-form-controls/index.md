@@ -118,7 +118,7 @@ input[type="checkbox"] {
 Use `position: absolute` in combination with `opacity: 0` instead of `display: none` or `visibility: hidden` 
 to only hide the elements visually, 
 and to ensure they are still present in the 
-[accessibility tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree). 
+[accessibility tree](/the-accessibility-tree/). 
 
 To show your custom checkboxes and radio buttons, you have different options. 
 You use the `:before` CSS pseudo-element and the CSS `background` property, or use inline SVG images. 

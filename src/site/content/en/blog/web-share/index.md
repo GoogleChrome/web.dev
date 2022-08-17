@@ -4,7 +4,7 @@ subhead: Web apps can use the same system-provided share capabilities as platfor
 authors:
   - joemedley
 date: 2019-11-08
-updated: 2021-07-09
+updated: 2022-03-30
 hero: image/admin/ruvEms3AeSZvlEI01DKo.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
@@ -28,11 +28,9 @@ way as platform-specific apps.
 {% Aside %}
   Sharing is only half of the magic. Web apps can also be share
   targets, meaning they can receive data, links, text, and files from
-  platform-specific or web apps. See the [Receive shared data](/web-share-target/)
-  post for details on how to register your app as a share target.
+  platform-specific or web apps. Read [Receive shared data](/web-share-target/)
+  to learn how to register your app as a share target.
 {% endAside %}
-
-## Concepts and usage
 
 <figure data-float="right">
   {% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="System-level share target picker with an installed PWA as an option.", width="370", height="349" %}
@@ -41,7 +39,7 @@ way as platform-specific apps.
   </figcaption>
 </figure>
 
-### Capabilities and limitations
+## Capabilities and limitations
 
 Web share has the following capabilities and limitations:
 * It can only be used on a site that is [accessed via HTTPS](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features).
@@ -49,11 +47,11 @@ Web share has the following capabilities and limitations:
   through the `onload` handler is impossible.
 * It can share, URLs, text, or files.
 * As of January 2021, it is available on Safari, Android in Chromium forks,
-  Chrome OS, and Chrome on Windows. Chrome on MacOS is still in development. See
+  ChromeOS, and Chrome on Windows. Chrome on MacOS is still in development. See
   [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)
   for details.
 
-### Sharing links and text
+## Sharing links and text
 
 To share links and text, use the `share()` method, which is a promise-based
 method with a required properties object.
@@ -96,7 +94,7 @@ if (canonicalElement !== null) {
 navigator.share({url});
 ```
 
-### Sharing files
+## Sharing files
 
 To share files, first test for and call `navigator.canShare()`. Then include an
 array of files in the call to `navigator.share()`:
@@ -118,9 +116,9 @@ if (navigator.canShare && navigator.canShare({ files: filesArray })) {
 Notice that the sample handles feature detection by testing for
 `navigator.canShare()` rather than for `navigator.share()`.
 The data object passed to `canShare()` only supports the `files` property.
-Image, video, audio, and text files can be shared. (See
-[Permitted File Extensions in Chromium](https://docs.google.com/document/d/1tKPkHA5nnJtmh2TgqWmGSREUzXgMUFDL6yMdVZHqUsg/edit?usp=sharing).)
-More file types may be added in the future.
+Certain times of audio, image, pdf, video, and text files can be shared.
+See [Permitted File Extensions in Chromium](https://docs.google.com/document/d/1tKPkHA5nnJtmh2TgqWmGSREUzXgMUFDL6yMdVZHqUsg/edit?usp=sharing).)
+for a complete list. More file types may be added in the future.
 
 ## Santa Tracker case study
 
@@ -152,20 +150,16 @@ Browser support for the Web Share API is nuanced, and it's recommended that you 
 detection (as described in the earlier code samples) instead of assuming that a particular method is
 supported.
 
-As of early 2021, using the API to share title, text, and URL is supported by:
+Here's a rough outline of support for this feature. For detailed information, follow either of the support links.
 
-- Safari 12 or later on macOS and iOS.
-- Chrome 75 or later on Android, and 89 or later on Chrome OS and Windows.
+<dl>
+  <dt><code>navigator.canShare()</code></dt>
+  <dd>{% BrowserCompat 'api.Navigator.canShare' %}</dd>
+  <dt><code>navigator.share()</code></dt>
+  <dd>{% BrowserCompat 'api.Navigator.share' %}</dd>
+</dl>
 
-Using the API to share files is supported by:
-
-- Safari 15 or later on macOS and iOS.
-- Chrome 75 or later on Android, and 89 or later on Chrome OS and Windows.
-
-(Most Chromium-based browsers, like Edge, have the same support for this feature as the
-corresponding version of Chrome.)
-
-### Show support for the API
+## Show support for the API
 
 Are you planning to use the Web Share API? Your public support helps the Chromium team
 prioritize features and shows other browser vendors how critical it is to support them.

@@ -7,24 +7,26 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2021-11-10
+updated: 2022-07-19
 tags:
   - blog
   - capabilities
 hero: image/admin/9wQYJACMKOM6aUA0BPsW.jpg
 alt: Simulated trading desk showing multiple fake cryptocurrencies and their price charts.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/-8087339030850568191
 feedback:
   - api
 ---
 
-{% Aside %} The Multi-Screen Window Placement API is part of the
-[capabilities project](/fugu-status/) and is currently in development. This post will be updated as
-the implementation progresses. {% endAside %}
+{% Aside 'success' %} The Multi-Screen Window Placement API was part of the
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is now launched. {% endAside %}
 
 The Multi-Screen Window Placement API allows you to enumerate the displays connected to your machine
 and to place windows on specific screens.
+
+{% Aside %} The Multi-Screen Window Placement API is distinct from the proposed
+[Viewport Segments Property](https://github.com/WICG/visual-viewport/blob/gh-pages/segments-explainer/SEGMENTS-EXPLAINER.md),
+which is concerned with the representation of the regions of the window that reside on separate
+(adjacent) displays, for example, on foldable devices. {% endAside %}
 
 ### Suggested use cases {: #use-cases }
 
@@ -42,38 +44,17 @@ Examples of sites that may use this API include:
 
 <div>
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | [Complete][spec]         |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. **Origin trial**                      | **[In progress][ot]**    |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                           |
+| ---------------------------------------- | -------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]            |
+| 2. Create initial draft of specification | [Complete][spec]                 |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)         |
+| 4. Origin trial                          | Complete                         |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;100) |
 
 </div>
 
 ## How to use the Multi-Screen Window Placement API {: #use }
-
-### Enabling via about://flags
-
-To experiment with the Multi-Screen Window Placement API locally, without an origin trial token,
-enable the `#enable-experimental-web-platform-features` flag in `about://flags`.
-
-### Enabling support during the origin trial phase
-
-A first origin trial ran from Chromium&nbsp;86 to Chromium&nbsp;88. After this origin trial, we made
-some [changes](https://github.com/webscreens/window-placement/blob/main/CHANGES.md) to the API. The
-article has been updated accordingly.
-
-Starting in Chromium&nbsp;93, the Multi-Screen Window Placement API will again be available as an
-origin trial in Chromium. This second origin trial is expected to end in Chromium&nbsp;96 (December
-15, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### The problem
 
@@ -214,7 +195,7 @@ await window.getScreenDetails();
     isExtended: true
     isInternal: true
     isPrimary: true
-    label: ""
+    label: "Built-in Retina Display"
     left: 0
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
@@ -234,7 +215,7 @@ await window.getScreenDetails();
     isExtended: true
     isInternal: false
     isPrimary: false
-    label: ""
+    label: "Sidecar Display (AirPlay)"
     left: 1680
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
@@ -255,6 +236,11 @@ and whether it is an `isPrimary` one. Note that the built-in screen
 
 The `currentScreen` field is a live object corresponding to the current `window.screen`. The object
 is updated on cross-screen window placements or device changes.
+
+{% Aside %}
+Chromium's latest API implementation returns screen labels provided by the underlying platform, like
+`"Built-in Retina Display"`, instead of less descriptive placeholders, like `"Internal Display 1"`.
+{% endAside %}
 
 ### The `screenschange` event
 
@@ -391,13 +377,21 @@ new information about the screens connected to a device, increasing the fingerpr
 users, especially those with multiple screens consistently connected to their devices. As one
 mitigation of this privacy concern, the exposed screen properties are limited to the minimum needed
 for common placement use cases. User permission is required for sites to get multi-screen
-information and place windows on other screens.
+information and place windows on other screens. While Chromium returns detailed screen labels,
+browsers are free to return less descriptive (or even empty labels).
 
 ### User control
 
 The user is in full control of the exposure of their setup. They can accept or decline the
 permission prompt, and revoke a previously granted permission via the site information feature in
 the browser.
+
+### Enterprise control
+
+Chrome Enterprise users can control several aspects of the Multi-Screen Window Placement API as
+outlined in the relevant section of the
+[Atomic Policy Groups](https://chromeenterprise.google/policies/atomic-groups/#:~:text=Window%20Placement%20settings)
+settings.
 
 ### Transparency
 
@@ -427,7 +421,7 @@ model?
 Did you find a bug with Chrome's implementation? Or is the implementation different from the spec?
 
 - File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much detail as you
-  can, simple instructions for reproducing, and enter [`Blink>WindowDialog`][blink-component] in the
+  can, simple instructions for reproducing, and enter [`Blink>Screen>MultiScreen`][blink-component] in the
   **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
 
 ### Show support for the API
@@ -449,15 +443,17 @@ team to prioritize features and shows other browser vendors how critical it is t
   source][demo-source]
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
-- Blink Component: [`Blink>WindowDialog`][blink-component]
+- Blink Component: [`Blink>Screen>MultiScreen`][blink-component]
 - [TAG Review][tag-review]
 - [Intent to Experiment][i2e]
 
 ## Acknowledgements
 
 The Multi-Screen Window Placement API spec was edited by
-[Victor Costan](https://www.linkedin.com/in/pwnall) and
-[Joshua Bell](https://www.linkedin.com/in/joshuaseanbell). The API was implemented by
+[Victor Costan](https://www.linkedin.com/in/pwnall),
+[Joshua Bell](https://www.linkedin.com/in/joshuaseanbell), and
+[Mike Wasserman](https://www.linkedin.com/in/mike-wasserman-9900a079/).
+The API was implemented by
 [Mike Wasserman](https://www.linkedin.com/in/mike-wasserman-9900a079/) and
 [Adrienne Walker](https://github.com/quisquous). This article was reviewed by
 [Joe Medley](https://github.com/jpmedley), [François Beaufort](https://github.com/beaufortfrancois),
@@ -472,10 +468,9 @@ and [Kayce Basques](https://github.com/kaycebasques). Thanks to Laura Torrent Pu
   https://discourse.wicg.io/t/proposal-supporting-window-placement-on-multi-screen-devices/3948
 [cr-bug]: https://crbug.com/897300
 [cr-status]: https://chromestatus.com/feature/5252960583942144
-[blink-component]: https://bugs.chromium.org/p/chromium/issues/list?q=component:Blink%3EWindowDialog
+[blink-component]: https://bugs.chromium.org/p/chromium/issues/list?q=component:Blink%3EScreen%3EMultiScreen
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[tag-review]: https://github.com/w3ctag/design-reviews/issues/522
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/-8087339030850568191
+[tag-review]: https://github.com/w3ctag/design-reviews/issues/602
 [i2e]: https://groups.google.com/a/chromium.org/g/blink-dev/c/C6xw8i1ZIdE/m/TJsr0zXxBwAJ

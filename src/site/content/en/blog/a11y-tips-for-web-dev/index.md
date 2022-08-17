@@ -453,7 +453,7 @@ debugging the accessibility of your visual components.
   for your framework or browser of choice.
   [Axe Puppeteer](https://www.deque.com/blog/axe-and-attest-integration-puppeteer/)
   can be used for writing automated accessibility tests.
-- The [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+- The [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
   Accessibility audits provide helpful insights for discovering common accessibility issues.
   The accessibility score is a weighted average of all accessibility audits
   based on [Axe user impact assessments](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md).

@@ -242,6 +242,6 @@ Ahora que tu sitio tiene una página fallback sin conexión, es posible que te p
 
 ### Hincapié en servir una página fallback sin conexión con Workbox.js
 
-Es posible que hayas oído hablar de [Workbox.js](https://developers.google.com/web/tools/workbox). Workbox.js es un conjunto de bibliotecas de JavaScript para agregar soporte sin conexión a aplicaciones web. Si prefieres escribir menos código de service worker por ti mismo, puedes usar la receta de Workbox.js solo para una [página sin conexión](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only).
+Es posible que hayas oído hablar de [Workbox.js](https://developer.chrome.com/docs/workbox/). Workbox.js es un conjunto de bibliotecas de JavaScript para agregar soporte sin conexión a aplicaciones web. Si prefieres escribir menos código de service worker por ti mismo, puedes usar la receta de Workbox.js solo para una [página sin conexión](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only).
 
 A continuación, aprenderás a [definir una estrategia de instalación](/define-install-strategy/) para tu aplicación.

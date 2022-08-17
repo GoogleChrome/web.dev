@@ -15,8 +15,23 @@
  */
 
 const {html} = require('common-tags');
+
+const {defaultLanguage} = require('../../../lib/utils/language');
 const {findByUrl} = require('../../_filters/find-by-url');
 const md = require('../../_filters/md');
+
+/**
+ * Find matching collection items given a language code.
+ *
+ * @param {string[]} slugs
+ * @param {string} lang
+ * @returns {EleventyCollectionItem[]}
+ */
+function filterCodelabsByLang(slugs, lang) {
+  return slugs
+    .map((slug) => findByUrl(`/${lang}/${slug}/`))
+    .filter((item) => item); // filter out any undefined entries
+}
 
 /**
  * Generates codelab links HTML.
@@ -29,12 +44,15 @@ function CodelabsCallout(slugs, lang) {
   // Coerce slugs to Array just in case someone pasted in a single slug string.
   slugs = slugs instanceof Array ? slugs : [slugs];
 
-  const codelabs = slugs
-    .map((slug) => findByUrl(`/${lang}/${slug}/`))
-    .filter((item) => item); // filter out any undefined entries
-
-  if (!codelabs.length) {
-    return;
+  let codelabs = filterCodelabsByLang(slugs, lang);
+  // If there's no language-specific codelab, returning the default (English)
+  // language one is preferable.
+  if (codelabs.length === 0) {
+    codelabs = filterCodelabsByLang(slugs, defaultLanguage);
+  }
+  // If there's still no codelabs found, return an empty string (not undefined).
+  if (codelabs.length === 0) {
+    return '';
   }
 
   return `

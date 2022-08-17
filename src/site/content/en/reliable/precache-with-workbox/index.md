@@ -31,10 +31,10 @@ if you had to manage the versioning and updating of these files on your own.
 
 Precaching is driven by a list of URLs and associated versioning information for
 each URL. Taken together, this information is known as a
-[**precache manifest**](https://developers.google.com/web/tools/workbox/modules/workbox-precaching#explanation_of_the_precache_list).
+[**precache manifest**](https://developer.chrome.com/docs/workbox/modules/workbox-precaching/#explanation-of-the-precache-list).
 The manifest is the "source of truth" for the state of everything meant to be in
 the precache for a given version of a web app. A precache manifest, in the
-format used by [Workbox](https://developers.google.com/web/tools/workbox/),
+format used by [Workbox](https://developer.chrome.com/docs/workbox/),
 looks something like:
 
 ```js
@@ -66,7 +66,7 @@ assets are cached, they need to respond to outgoing requests. That requires a
 been precached, and return those cached responses reliably, bypassing the
 network in the process. Since the service worker checks the cache for responses
 (and uses those before the network), this is called a
-[**cache-first strategy**](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network).
+[**cache-first strategy**](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network).
 
 ## Efficient updates
 
@@ -75,7 +75,7 @@ state; if a URL/revision combination in the manifest changes, a service worker
 _knows_ that the previous cached entry is no longer valid, and needs to be
 updated. It only takes a single network request, made automatically by the
 browser as part of the service worker
-[update check](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#updates),
+[update check](/service-worker-lifecycle/#updates),
 to determine which precached URLs need to be refreshed.
 
 ## Updates to precached resources
@@ -89,9 +89,9 @@ precache state at any point in time.
 If there's an existing URL with a new revision field, or if any URLs have been
 added or dropped from the manifest, that's a sign to your service worker that
 updates need to be performed, as part of the
-[`install`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install_1)
+[`install`](/service-worker-lifecycle/#install)
 and
-[`activate`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate_1)
+[`activate`](/service-worker-lifecycle/#activate)
 event handlers. For instance, if you've made some changes to your site and
 rebuilt, your latest precache manifest might have undergone the following
 changes:

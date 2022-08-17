@@ -51,7 +51,7 @@ tags:
 
 パフォーマンス変換には客観的に最適な設定が存在する傾向があるため、一部の画像CDNは、このような変換に対して「自動」モードをサポートしています。たとえば、画像をWebP形式に変換するように指定するのではなく、CDNに最適な形式を自動的に選択させて提供させることができます。画像CDNが画像を変換する最善の方法を決定するために使用できるシグナルは次のとおりです。
 
-- [クライアントのヒント](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints) (たとえば、ビューポートの幅、DPR、画像の幅)
+- [クライアントのヒント](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/) (たとえば、ビューポートの幅、DPR、画像の幅)
 - [`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data)ヘッダー
 - [User-Agent](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent)要求ヘッダー
 - [ネットワーク情報API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)

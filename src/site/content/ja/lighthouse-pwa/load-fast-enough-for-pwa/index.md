@@ -14,7 +14,7 @@ updated: 2020-06-10
 
 ## Lighthouseページの読み込み速度の監査がどうのように失敗します
 
-[Lighthouseは](https://developers.google.com/web/tools/lighthouse/)、モバイルである程度で早めに読み込まないページにフラグを立てます。
+[Lighthouseは](https://developer.chrome.com/docs/lighthouse/overview/)、モバイルである程度で早めに読み込まないページにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse監査はモバイルである程度で早めに読み込まないページを表示します", width="800", height="98" %}</figure>
 
@@ -35,10 +35,10 @@ Lighthouseは、低速の4Gネットワーク接続でTTIがどうなると計�
 
 ## リソース
 
-- [**モバイルである程度で早めに読み込まないページ**用のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js)
+- [**モバイルである程度で早めに読み込まないページ**用のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/load-fast-enough-for-pwa.js)
 - [基本プログレッシブWeb Appのチェックリスト](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
-- [重要なレンダリングパス](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
-- [ランタイムパフォーマンスの分析から開始する](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
-- [読み込みパフォーマンスの記録](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#record-load)
-- [コンテンツ効率の最適化](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
-- [レンダリングパフォーマンス](https://developers.google.com/web/fundamentals/performance/rendering/)
+- [重要なレンダリングパス](/critical-rendering-path/)
+- [ランタイムパフォーマンスの分析から開始する](https://developer.chrome.com/docs/devtools/evaluate-performance/)
+- [読み込みパフォーマンスの記録](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
+- [コンテンツ効率の最適化](/performance-optimizing-content-efficiency/)
+- [レンダリングパフォーマンス](/rendering-performance/)

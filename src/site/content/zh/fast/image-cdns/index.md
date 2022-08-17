@@ -51,7 +51,7 @@ tags:
 
 性能转换往往有一个客观的最佳设置，因此一些图像 CDN 支持这些转换的“自动”模式。例如，您可以允许 CDN 自动选择并提供最佳格式，而不是指定将图像转换为 WebP 格式。图像 CDN 可用来确定图像转换的最佳方式的信号包括：
 
-- [客户端提示](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints)（例如，视口宽度、DPR 和图像宽度）
+- [客户端提示](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/)（例如，视口宽度、DPR 和图像宽度）
 - [`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data) 标头
 - [User-Agent](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent) 请求标头
 - [网络状况 API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)

@@ -8,13 +8,13 @@ date: 2019-05-02
 updated: 2019-08-28
 ---
 
-La mayoría de los navegadores incorporan herramientas para desarrolladores. Estas herramientas para desarrolladores suelen incluir una [consola](https://developers.google.com/web/tools/chrome-devtools/console/). La consola le da información sobre la página que se está ejecutando actualmente.
+La mayoría de los navegadores incorporan herramientas para desarrolladores. Estas herramientas para desarrolladores suelen incluir una [consola](https://developer.chrome.com/docs/devtools/console/). La consola le da información sobre la página que se está ejecutando actualmente.
 
 Los mensajes que se registran en la consola provienen de los desarrolladores web que desarrollaron la página o del propio navegador. Todos los mensajes de la consola tienen un nivel de importancia: `Verbose`, `Info`, `Warning`, o `Error`. Un mensaje de `Error` significa que se produjo un problema en su página que debe resolver.
 
 ## Cómo falla la auditoría de errores del navegador Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca todos los errores del navegador que se registran en la consola:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca todos los errores del navegador que se registran en la consola:
 
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt = "La auditoría de Lighthouse muestra los errores del navegador en la consola", width = "800", height = "247"%}</figure>
 
@@ -45,7 +45,7 @@ Si no puede corregir un error, considere la posibilidad de envolverlo en una sen
 
 ## Recursos
 
-- [El código fuente para **los errores del navegador se registraron en la consola** de la auditoría](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
-- [Descripción general de la consola](https://developers.google.com/web/tools/chrome-devtools/console/)
+- [El código fuente para **los errores del navegador se registraron en la consola** de la auditoría](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/errors-in-console.js)
+- [Descripción general de la consola](https://developer.chrome.com/docs/devtools/console/)
 - [Stack Overflow](https://stackoverflow.com/)
 - [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

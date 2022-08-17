@@ -8,7 +8,7 @@ authors:
 description: |2-
 
   Você preparou adequadamente um arquivo de vídeo para a web. Você lhe atribuiu as dimensões e a resolução corretas. Você até criou arquivos WebM e MP4 separados para navegadores diferentes. Para que qualquer um possa vê-lo, você ainda precisa adicioná-lo a uma página da web.
-date: 2014-14-15
+date: 2014-02-15
 updated: 2021-07-05
 tags:
   - media
@@ -59,7 +59,7 @@ Essa abordagem possui várias vantagens em relação à exibição de HTML difer
 
 Esses problemas são especialmente importantes em contextos móveis, onde a largura de banda e a latência são precárias e a paciência do usuário provavelmente é limitada. A omissão do `type` pode afetar o desempenho quando há várias fontes com tipos não suportados.
 
-Existem algumas maneiras de se aprofundar nos detalhes. Confira [A Digital Media Primer for Geeks](https://www.xiph.org/video/vid1.shtml) para saber mais sobre como o vídeo e o áudio funcionam na web. Você também pode usar [a depuração remota](https://developers.google.com/web/tools/chrome-devtools/remote-debugging) em DevTools para comparar a atividade de rede [com atributos de tipo](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html) e [sem atributos de tipo](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/notype.html) .
+Existem algumas maneiras de se aprofundar nos detalhes. Confira [A Digital Media Primer for Geeks](https://www.xiph.org/video/vid1.shtml) para saber mais sobre como o vídeo e o áudio funcionam na web. Você também pode usar [a depuração remota](https://developer.chrome.com/docs/devtools/remote-debugging/) em DevTools para comparar a atividade de rede [com atributos de tipo](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html) e [sem atributos de tipo](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/notype.html) .
 
 {% Aside 'caution' %} Certifique-se de verificar os cabeçalhos de resposta nas ferramentas de desenvolvedor de seu navegador para [garantir que seu servidor informe o tipo MIME correto](https://developer.mozilla.org/en/docs/Properly_Configuring_Server_MIME_Types) ; caso contrário, as verificações do tipo de fonte de vídeo não funcionarão. {% endAside %}
 
@@ -86,7 +86,7 @@ Você pode usar esse recurso para fornecer várias visualizações no mesmo víd
 
 Para que esse recurso funcione, seu servidor deve oferecer suporte a solicitações de intervalo e esse recurso deve ser ativado. A maioria dos servidores habilita solicitações de intervalo por padrão. Como alguns serviços de hospedagem os desativam, você deve confirmar se as solicitações de intervalo estão disponíveis para o uso de fragmentos em seu site.
 
-Felizmente, você pode fazer isso nas ferramentas de desenvolvedor do seu navegador. No Chrome, por exemplo, está no [painel Rede](https://developers.google.com/web/tools/chrome-devtools/?utm_source=devtools#network) . Procure o `Accept-Ranges` e verifique se ele diz `bytes` . Na imagem, desenhei uma caixa vermelha ao redor deste cabeçalho. Se você não vir `bytes` como o valor, entre em contato com seu provedor de hospedagem.
+Felizmente, você pode fazer isso nas ferramentas de desenvolvedor do seu navegador. No Chrome, por exemplo, está no [painel Rede](https://developer.chrome.com/docs/devtools/#network) . Procure o `Accept-Ranges` e verifique se ele diz `bytes` . Na imagem, desenhei uma caixa vermelha ao redor deste cabeçalho. Se você não vir `bytes` como o valor, entre em contato com seu provedor de hospedagem.
 
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt = "Captura de tela do Chrome DevTools: Intervalos de aceitação: bytes.", width = "800", height = "480"%}<figcaption> Captura de tela do Chrome DevTools: Intervalos de aceitação: bytes.</figcaption></figure>
 

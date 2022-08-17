@@ -34,7 +34,7 @@ Lighthouse 报告的“Opportunities（机会）”部分列出了所有未使�
 
 ## 如何检测未使用的 CSS {: #覆盖率 }
 
-借助 Chrome DevTools 的“Coverage（覆盖率）”选项卡，您可以发现关键和非关键 CSS。请参阅[使用 Coverage 选项卡查看已使用和未使用的 CSS](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage)。
+借助 Chrome DevTools 的“Coverage（覆盖率）”选项卡，您可以发现关键和非关键 CSS。请参阅[使用 Coverage 选项卡查看已使用和未使用的 CSS](https://developer.chrome.com/docs/devtools/css/reference/#coverage)。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools：Coverage 选项卡", width="800", height="407" %} <figcaption> Chrome DevTools：Coverage 选项卡。</figcaption></figure>
 
@@ -64,4 +64,4 @@ Lighthouse 报告的“Opportunities（机会）”部分列出了所有未使�
 
 ## 资源
 
-- [**删除未使用的 CSS** 审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)
+- [**删除未使用的 CSS** 审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-css-rules.js)

@@ -10,7 +10,7 @@ web_lighthouse:
 
 [중요한 요청 연결](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)은 페이지 렌더링에 중요한 일련의 종속 네트워크 요청입니다. 연결의 길이와 다운로드 크기가 클수록 페이지 로드 성능에 미치는 영향이 더 커집니다.
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 높은 우선순위로 로드된 중요한 요청을 보고합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 높은 우선순위로 로드된 중요한 요청을 보고합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Lighthouse 최소화 중요 요청 깊이를 보여주는 스크린샷", width="800", height="452" %}</figure>
 
@@ -40,4 +40,4 @@ JavaScript 자산을 번들로 묶지 않는 경우 [baler](https://github.com/m
 
 ## 참고 자료
 
-[**중요 요청 깊이 최소화** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[**중요 요청 깊이 최소화** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/critical-request-chains.js)

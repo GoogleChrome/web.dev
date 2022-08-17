@@ -4,7 +4,7 @@ title: First Contentful Paint 首次内容绘制 (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-07-18
 description: 本篇文章介绍了首次内容绘制 (FCP) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -38,16 +38,16 @@ FCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 实测工具
 
-- [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)
 - [搜索控制台（速度报告](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
 
 ### 实验室工具
 
-- [灯塔](https://developers.google.com/web/tools/lighthouse/)
-- [Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/)
-- [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
+- [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
+- [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 
 ### 在 JavaScript 中测量 FCP
 

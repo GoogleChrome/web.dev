@@ -113,7 +113,7 @@ tags:
 
 別のアプローチは、ユーザーがページのそのセクションまでスクロールしたときにのみサードパーティのコンテンツを読み込む方法です。
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver)は、要素がブラウザーのビューポートに入出力されるタイミングを効率的に検出するブラウザAPIであり、この手法を実装するために使用できます。[lazysizes](/use-lazysizes-to-lazyload-images/)は画像と[`iframes`](http://afarkas.github.io/lazysizes/#examples)を遅延読み込みするための一般的なJavaScriptライブラリです。 YouTubeの埋め込みと[ウィジェット](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)をサポートしています。また、IntersectionObserverの[オプションのサポート](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)もあります。
+[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/)は、要素がブラウザーのビューポートに入出力されるタイミングを効率的に検出するブラウザAPIであり、この手法を実装するために使用できます。[lazysizes](/use-lazysizes-to-lazyload-images/)は画像と[`iframes`](http://afarkas.github.io/lazysizes/#examples)を遅延読み込みするための一般的なJavaScriptライブラリです。 YouTubeの埋め込みと[ウィジェット](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)をサポートしています。また、IntersectionObserverの[オプションのサポート](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)もあります。
 
 {% Aside 'caution' %} JavaScriptを使用してリソースを遅延ロードするときには注意が必要です。不安定なネットワーク状態が原因でJavaScriptの読み込みに失敗した場合、リソースはまったく読み込まれません。 {% endAside %}
 
@@ -135,7 +135,7 @@ tags:
 
 - DNSルックアップとラウンドトリップ時間を短縮する。
 - [HTTPキャッシュ](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)ヘッダーを改善する。
-- [HTTP / 2サーバープッシュを利用](https://developers.google.com/web/fundamentals/performance/http2/)する。
+- [HTTP / 2サーバープッシュを利用](/performance-http2/)する。
 
 たとえば、Casperは、A/Bテストスクリプトをセルフホスティングすることで、読み込み時間を[1.7秒短縮](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec)することができました。
 
@@ -147,4 +147,4 @@ tags:
 
 ### サービスワーカーを使用して、サードパーティサーバーのスクリプトをキャッシュに保存する
 
-サードパーティのCDNの利点を活用しながら、キャッシュをより細かく制御できるセルフホスティングの代わりに、[サービスワーカーを使用してサードパーティのサーバーからスクリプトをキャッシュに保存することもできます](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)。これにより、スクリプトがネットワークから再取得される頻度を制御でき、ページが主要なユーザーの瞬間に到達するまで、必須ではないサードパーティリソースの要求を抑制する読み込み戦略を作成できます。この場合は、`preconnect`接続を使用して早期接続を確立することで、ネットワークコストをある程度軽減することもできます。
+サードパーティのCDNの利点を活用しながら、キャッシュをより細かく制御できるセルフホスティングの代わりに、[サービスワーカーを使用してサードパーティのサーバーからスクリプトをキャッシュに保存することもできます](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations)。これにより、スクリプトがネットワークから再取得される頻度を制御でき、ページが主要なユーザーの瞬間に到達するまで、必須ではないサードパーティリソースの要求を抑制する読み込み戦略を作成できます。この場合は、`preconnect`接続を使用して早期接続を確立することで、ネットワークコストをある程度軽減することもできます。

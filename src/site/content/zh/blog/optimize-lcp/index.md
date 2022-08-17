@@ -143,7 +143,7 @@ tags:
 
 ### 延迟加载非关键 CSS
 
-使用 Chrome 开发者工具中的[代码覆盖率](https://developers.google.com/web/tools/chrome-devtools/coverage)选项卡查找您网页上任何未使用的 CSS。
+使用 Chrome 开发者工具中的[代码覆盖率](https://developer.chrome.com/docs/devtools/coverage/)选项卡查找您网页上任何未使用的 CSS。
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Chrome 开发者工具中的代码覆盖率选项卡", width="800", height="559" %}
 
@@ -292,7 +292,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 Service Worker 可用于完成许多有用的任务，其中包括本文前面提到的提供较小的 HTML 响应。Service Worker 还可用于缓存任何静态资源，并在收到重复请求时将资源直接提供给浏览器，而无需通过网络。
 
-使用 Service Worker 预缓存关键资源可以显著减少资源加载时间，特别是对于使用较弱连接重新加载网页（甚至离线访问）的用户。与自己编写自定义 Service Worker 来更新预缓存资产相比，诸如 [Workbox](https://developers.google.com/web/tools/workbox/) 这样的库可以使整个过程更加容易。
+使用 Service Worker 预缓存关键资源可以显著减少资源加载时间，特别是对于使用较弱连接重新加载网页（甚至离线访问）的用户。与自己编写自定义 Service Worker 来更新预缓存资产相比，诸如 [Workbox](https://developer.chrome.com/docs/workbox/) 这样的库可以使整个过程更加容易。
 
 {% Aside %}请查看[网络可靠性](/reliable/)，了解 Service Worker 和 Workbox 的更多相关信息。{% endAside %}
 
@@ -336,20 +336,20 @@ Service Worker 可用于完成许多有用的任务，其中包括本文前面�
 
 <figure>{% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="LCP 改进示例：预渲染前后对比", width="800", height="139" %}<figcaption>LCP 改进示例：预渲染前后对比</figcaption></figure>
 
-{% Aside %} 如需更深入地了解不同的服务端渲染架构，请查看[网络中的渲染](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)。{% endAside %}
+{% Aside %} 如需更深入地了解不同的服务端渲染架构，请查看[网络中的渲染](/rendering-on-the-web/)。{% endAside %}
 
 ## 开发者工具
 
 许多工具都可以用于测量和调试 LCP：
 
-- [灯塔 6.0](https://developers.google.com/web/tools/lighthouse) 支持在实验室环境中测量 LCP。
+- [灯塔 6.0](https://developer.chrome.com/docs/lighthouse/overview/) 支持在实验室环境中测量 LCP。
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="灯塔 6.0", width="800", height="309" %}
 
-- Chrome 开发者工具中[性能](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)面板的**时间点**部分包括一个 LCP 标记，并会在您将鼠标悬停在**相关节点**字段上时显示哪些元素与 LCP 相关联。
+- Chrome 开发者工具中[性能](https://developer.chrome.com/docs/devtools/evaluate-performance/)面板的**时间点**部分包括一个 LCP 标记，并会在您将鼠标悬停在**相关节点**字段上时显示哪些元素与 LCP 相关联。
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome 开发者工具中的 LCP", width="800", height="509" %}
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)提供在域级聚合下的真实 LCP 值
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)提供在域级聚合下的真实 LCP 值
 
 *感谢 Philip Walton、Katie Hempenius、Kayce Basques 和 Ilya Grigorik 的审阅。*

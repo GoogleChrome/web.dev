@@ -34,10 +34,11 @@ bfcacheは、ユーザーが移動しているときにページの完全なス�
 Webサイトにアクセスし、リンクをクリックして別のページに移動したことがありますが、それが目的のページではないことに気づき、[戻る] ボタンをクリックしたことが何度もあることでしょう。その瞬間、bfcacheは前のページの読み込み速度に大きな違いをもたらす可能性があります。
 
 <div class="table-wrapper">
-  <table data-alignment="top>
+  <table data-alignment="top">
     <tr>
-      <td width=">
-<strong>bfcacheが有効になってい<em>ない</em></strong>
+      <td width="30%">
+        <strong>bfcacheが有効になってい<em>ない</em></strong>
+      </td>
       <td>前のページを読み込む新しい要求が開始され、そのページが繰り返しアクセスできるように<a href="/reliable/#the-options-in-your-caching-toolbox">最適化</a>されているかどうかに応じて、ブラウザーはダウンロードされたばかりのリソースの一部 (またはすべて) を再ダウンロード、再解析、および再実行しなければならない場合があります。</td>
     <tr>
       <td><strong>bfcacheを有効に<em>すると</em></strong></td>
@@ -74,7 +75,7 @@ bfcacheはブラウザーが自動的に行う最適化ですが、開発者が[
 
 bfcacheを監視するために使用される主なイベントは、[ページ遷移イベント](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent) (`pageshow`および`pagehide`) です。これらは、bfcacheが存在し、[現在使用されているほとんどすべてのブラウザー](https://caniuse.com/page-transition-events)でサポートされている限り存在します。
 
-新しい[ページライフサイクル](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)イベント (`freeze`と`resume`) も、ページがbfcacheに入出力されるとき、およびその他の状況で配信されます。たとえば、CPU使用率を最小限に抑えるために、背景タブがフリーズした場合です。現在、ページライフサイクルイベントはChromiumベースのブラウザでのみサポートされていることに注意してください。
+新しい[ページライフサイクル](https://developer.chrome.com/blog/page-lifecycle-api/)イベント (`freeze`と`resume`) も、ページがbfcacheに入出力されるとき、およびその他の状況で配信されます。たとえば、CPU使用率を最小限に抑えるために、背景タブがフリーズした場合です。現在、ページライフサイクルイベントはChromiumベースのブラウザでのみサポートされていることに注意してください。
 
 #### ページがbfcacheから復元されるタイミングを監視する
 
@@ -122,7 +123,7 @@ window.addEventListener('pagehide', (event) => {
 
 すべてのブラウザーでbfcacheを最適化する最も重要な方法は、`unload`イベントを使用しないことです。
 
-`unload` `unload`イベントが発生した後はページが存在し続けないという（合理的な）仮定の下で動作するため、ブラウザにとって問題があります。このプレゼント、これらのページの多くは*また、*ことを前提に構築されたので、挑戦`unload`イベントはもはや真でユーザーが離れてナビゲートされるたびに、火災う（と[長い時間のために、真されていません](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event)）。
+`unload` `unload`イベントが発生した後はページが存在し続けないという（合理的な）仮定の下で動作するため、ブラウザにとって問題があります。このプレゼント、これらのページの多くは*また、*ことを前提に構築されたので、挑戦`unload`イベントはもはや真でユーザーが離れてナビゲートされるたびに、火災う（と[長い時間のために、真されていません](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event)）。
 
 そのため、ブラウザーはジレンマに直面しており、ユーザーエクスペリエンスを向上させることができるものから選択する必要がありますが、ページを壊すリスクもあります。
 
@@ -325,7 +326,7 @@ bfcacheナビゲーションは、新しいページの読み込みを開始す�
 
 [Core Web Vitals](/vitals/)はさまざまな次元 (読み込み速度、双方向性、視覚的安定性) でWebページのユーザーエクスペリエンスを測定します。ユーザーは、従来のページ読み込みよりも高速なナビゲーションとしてbfcacheの復元を体験するため、Core WebVitalsのメトリックがこれを反映することが重要です。 結局のところ、ユーザーにとって気になるのは、bfcacheが有効になっているかどうかではなく、ナビゲーションが高速であることだけです。
 
-Core Web Vitalsメトリックを収集して報告する[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)などのツールは、bfcacheの復元をデータセット内の個別のページアクセスとして扱います。
+Core Web Vitalsメトリックを収集して報告する[Chrome User Experience Report](https://developer.chrome.com/docs/crux/)などのツールは、bfcacheの復元をデータセット内の個別のページアクセスとして扱います。
 
 また、bfcacheの復元後にこれらのメトリックを測定するための専用のWebパフォーマンスAPIは (まだ) ありませんが、既存のWeb APIを使用してそれらの値を概算できます。
 

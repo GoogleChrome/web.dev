@@ -214,7 +214,7 @@ guide](/reporting-api-migration/#network-error-logging) for details.
   </table>
 </div>
 
-{% Aside %} [Permissions policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy)
+{% Aside %} [Permissions policy](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/)
 (formerly feature policy) violation reports may be supported by default in the future. Right now,
 they're experimental. One example situation where such reports would be generated: your site
 has a permission policy that prevents microphone usage, and a script requests audio input.
@@ -818,7 +818,7 @@ While reports are sent in both cases, `-Report-Only` headers do not enforce the 
 The [`ReportingObserver`](/reporting-observer) JavaScript API can help you observe client-side
 warnings.
 
-`ReportingObserver` and the `Reporting-Enpoints` header generate reports that look the same, but they enable slightly different uses cases.
+`ReportingObserver` and the `Reporting-Endpoints` header generate reports that look the same, but they enable slightly different uses cases.
 
 Use `ReportingObserver` if:
 

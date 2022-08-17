@@ -29,7 +29,7 @@ tabs it controls to inform of a certain event. Examples include:
 We'll call these types of use cases where the service worker doesn't need to receive a message from
 the page to start a communication **"broadcast updates"**. In this guide we'll review different
 ways of implementing this type of communication between pages and service workers, by using standard
-browser APIs and the [Workbox library](https://developers.google.com/web/tools/workbox).
+browser APIs and the [Workbox library](https://developer.chrome.com/docs/workbox/).
 
 {% Aside %}
   Check out [Workers overview](/workers-overview/) for a high-level explanation
@@ -42,7 +42,7 @@ browser APIs and the [Workbox library](https://developers.google.com/web/tools/w
 
 ### Tinder {: #tinder }
 
-Tinder PWA uses [`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) to listen to
+Tinder PWA uses [`workbox-window`](https://developer.chrome.com/docs/workbox/modules/workbox-window/) to listen to
 important service worker lifecycle moments from the page ("installed", "controlled" and
 "activated"). That way when a new service worker comes into play, it shows an **"Update Available"**
 banner, so that they can refresh the PWA and access the latest features:
@@ -69,7 +69,7 @@ toast, letting the user know about the feature:
 ### Listen to service worker lifecycle events {: #listen-to-service-worker-lifecycle-events }
 
 `workbox-window` provides a straightforward interface to listen to [important service worker lifecycle
-events](https://developers.google.com/web/tools/workbox/modules/workbox-window#important_service_worker_lifecycle_moments).
+events](https://developer.chrome.com/docs/workbox/modules/workbox-window/#important-service-worker-lifecycle-moments).
 Under the hood, the library uses client-side APIs like
 [`updatefound`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/onupdatefound)
 and [statechange](https://developer.mozilla.org/docs/Web/API/ServiceWorker/onstatechange)
@@ -94,10 +94,10 @@ wb.register();
 ### Inform the page of changes in cache data {: #inform-the-page-of-changes-in-cache-data }
 
 The Workbox package
-[`workbox-broadcast-update`](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-update)
+[`workbox-broadcast-update`](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/)
 provides a standard way of notifying window clients that a cached response has been updated. This is
 most commonly used along with the [StaleWhileRevalidate
-strategy](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#stale-while-revalidate).
+strategy](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#stale-while-revalidate).
 
 To broadcast updates add a `broadcastUpdate.BroadcastUpdatePlugin` to your strategy options in the
 service worker side:
@@ -274,7 +274,7 @@ For more patterns of Window and service worker communication check out:
 
 ## Additional resources {: #additional-resources }
 
-- [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window)
-- [workbox-broadcast-update](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-update)
+- [workbox-window](https://developer.chrome.com/docs/workbox/modules/workbox-window/)
+- [workbox-broadcast-update](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/)
 - [Workbox 4: Implementing refresh-to-update-version flow using the workbox-window
   module](https://medium.com/google-developer-experts/workbox-4-implementing-refresh-to-update-version-flow-using-the-workbox-window-module-41284967e79c)

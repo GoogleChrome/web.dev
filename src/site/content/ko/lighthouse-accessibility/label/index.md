@@ -40,5 +40,5 @@ Lighthouse 플래그는 연결된 레이블이 없는 요소를 형성합니다.
 
 ## 리소스
 
-- [**양식 요소에 관련 레이블이 없습니다** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js)
+- [**양식 요소에 관련 레이블이 없습니다** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/label.js)
 - [양식 `<input>` 요소에는 레이블이 있어야 합니다(Deque University).](https://dequeuniversity.com/rules/axe/3.3/label)

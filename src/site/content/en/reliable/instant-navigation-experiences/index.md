@@ -56,7 +56,7 @@ As a result of this, over 3 weeks of observation Virgilio Sport witnessed load t
 
 In the following section we'll use [Workbox](/workbox/) to show how to implement different caching techniques in the service worker that can be used as a complement to `<link rel="prefetch">`, or even a replacement for it, by delegating this task completely to the service worker.
 
-{% Aside 'caution' %} You must take steps to ensure that adding a service worker to your site doesn't end up actually slowing down your navigations. Starting up the service worker without using it to respond to a navigation request will introduce a small amount of latency (as explained in [Building Faster, More Resilient Apps with Service Workers](https://www.youtube.com/watch?v=25aCD5XL1Jk)). You can mitigate this overhead by enabling a feature called [navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload), and then using the [network response](https://developers.google.com/web/updates/2017/02/navigation-preload#using_the_preloaded_response) that's been preloaded inside of your fetch event handler.
+{% Aside 'caution' %} You must take steps to ensure that adding a service worker to your site doesn't end up actually slowing down your navigations. Starting up the service worker without using it to respond to a navigation request will introduce a small amount of latency (as explained in [Building Faster, More Resilient Apps with Service Workers](https://www.youtube.com/watch?v=25aCD5XL1Jk)). You can mitigate this overhead by enabling a feature called [navigation preload](https://developer.chrome.com/blog/navigation-preload/), and then using the [network response](https://developer.chrome.com/blog/navigation-preload/#using-the-preloaded-response) that's been preloaded inside of your fetch event handler.
 {% endAside %}
 
 ### 1. Precache static pages and page subresources
@@ -132,7 +132,7 @@ new workbox.strategies.StaleWhileRevalidate({
 });
 ```
 
-In this case, we have opted to use a [stale-while-revalidate strategy](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#stale-while-revalidate). In this strategy, pages can be requested from both the cache and the network, in parallel. The response comes from the cache if available, otherwise from the network. The cache is always kept up to date with the network response with each successful request.
+In this case, we have opted to use a [stale-while-revalidate strategy](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#stale-while-revalidate). In this strategy, pages can be requested from both the cache and the network, in parallel. The response comes from the cache if available, otherwise from the network. The cache is always kept up to date with the network response with each successful request.
 
 ### 3. Delegate prefetching to the service worker
 
@@ -147,7 +147,7 @@ In cases like this, use a "page to service worker communication strategy", to de
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vokHySREOo6Y3PpxzxRC.png", alt="An icon of a page making two way communication with a service worker.", width="626", height="205" %}
 </figure>
 
-The [Workbox Window package](https://developers.google.com/web/tools/workbox/modules/workbox-window) simplifies this type of communication, abstracting many details of the underlying call being done.
+The [Workbox Window package](https://developer.chrome.com/docs/workbox/modules/workbox-window/) simplifies this type of communication, abstracting many details of the underlying call being done.
 
 Prefetching with Workbox Window can be implemented in the following way:
 

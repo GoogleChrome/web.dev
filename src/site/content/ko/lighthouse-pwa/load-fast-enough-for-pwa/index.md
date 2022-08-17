@@ -16,7 +16,7 @@ updated: 2020-06-10
 
 ## Lighthouse 페이지 로드 속도 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 모바일에서 충분히 빠르게 로드되지 않는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 모바일에서 충분히 빠르게 로드되지 않는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="페이지가 모바일에서 충분히 빠르게 로드되지 않음을 보여주는 Lighthouse 감사", width="800", height="98" %}</figure>
 
@@ -37,10 +37,10 @@ Lighthouse는 느린 4G 네트워크 연결에서 TTI가 무엇인지 계산합�
 
 ## 참고 자료
 
-- [**모바일 네트워크에서 페이지 로드가 충분히 빠르지 않습니다.** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js)
+- [**모바일 네트워크에서 페이지 로드가 충분히 빠르지 않습니다.** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/load-fast-enough-for-pwa.js)
 - [베이스라인 프로그레시브 웹 앱 체크리스트](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
-- [중요 렌더링 경로](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
-- [런타임 성능 분석 시작하기](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
-- [로드 성능 기록](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#record-load)
-- [콘텐츠 효율성 최적화](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
-- [렌더링 성능](https://developers.google.com/web/fundamentals/performance/rendering/)
+- [중요 렌더링 경로](/critical-rendering-path/)
+- [런타임 성능 분석 시작하기](https://developer.chrome.com/docs/devtools/evaluate-performance/)
+- [로드 성능 기록](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
+- [콘텐츠 효율성 최적화](/performance-optimizing-content-efficiency/)
+- [렌더링 성능](/rendering-performance/)

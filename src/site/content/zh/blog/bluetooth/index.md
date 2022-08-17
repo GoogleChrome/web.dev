@@ -32,13 +32,13 @@ stack_overflow_tag: web-bluetooth
 
 尽管 [Web Bluetooth API 规范](https://webbluetoothcg.github.io/web-bluetooth/)尚未最终确定，但规范的作者们正在积极寻找热情的开发人员来试用此 API，并就[规范](https://github.com/WebBluetoothCG/web-bluetooth/issues)和[实施](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EBluetooth)提供反馈。
 
-Chrome OS、Chrome for Android 6.0、Mac (Chrome 56) 和 Windows 10 (Chrome 70) 中有一个可用的 Web Bluetooth API 子集。这意味着您应该能够[请求](#request)并[连接](#connect)到附近的低功耗蓝牙设备、[读取](#read)/[写入](#write)蓝牙特性、[接收 GATT 通知](#notifications)、了解[蓝牙设备何时断开连接](#disconnect)，甚至[读取和写入蓝牙描述符](#descriptors)。有关更多信息，请参阅 MDN 的[浏览器兼容性](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility)表。
+ChromeOS、Chrome for Android 6.0、Mac (Chrome 56) 和 Windows 10 (Chrome 70) 中有一个可用的 Web Bluetooth API 子集。这意味着您应该能够[请求](#request)并[连接](#connect)到附近的低功耗蓝牙设备、[读取](#read)/[写入](#write)蓝牙特性、[接收 GATT 通知](#notifications)、了解[蓝牙设备何时断开连接](#disconnect)，甚至[读取和写入蓝牙描述符](#descriptors)。有关更多信息，请参阅 MDN 的[浏览器兼容性](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility)表。
 
 对于 Linux 和更早版本的 Windows，请在 `about://flags` 中启用 `#experimental-web-platform-features` 标志。
 
 ### 初步试用
 
-为了尽可能多地获得开发人员对使用 Web Bluetooth API 的一手反馈，Chrome 此前已在 Chrome 53 中添加了此功能，以供在 Chrome OS、Android 和 Mac 中[初步试用。](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
+为了尽可能多地获得开发人员对使用 Web Bluetooth API 的一手反馈，Chrome 此前已在 Chrome 53 中添加了此功能，以供在 ChromeOS、Android 和 Mac 中[初步试用。](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
 
 试用已于 2017 年 1 月顺利结束。
 
@@ -52,7 +52,7 @@ Chrome OS、Chrome for Android 6.0、Mac (Chrome 56) 和 Windows 10 (Chrome 70) 
 
 ### 需要用户手势
 
-作为一项安全功能，使用 `navigator.bluetooth.requestDevice` 发现蓝牙设备必须由[用户手势](https://html.spec.whatwg.org/multipage/interaction.html#activation)（例如触摸或鼠标点击）触发。我们正在谈论对 [`pointerup`](https://developers.google.com/web/updates/2016/10/pointer-events) 、 `click` 和 `touchend` 事件的侦听。
+作为一项安全功能，使用 `navigator.bluetooth.requestDevice` 发现蓝牙设备必须由[用户手势](https://html.spec.whatwg.org/multipage/interaction.html#activation)（例如触摸或鼠标点击）触发。我们正在谈论对 [`pointerup`](https://developer.chrome.com/blog/pointer-events/) 、 `click` 和 `touchend` 事件的侦听。
 
 ```js
 button.addEventListener('pointerup', function(event) {

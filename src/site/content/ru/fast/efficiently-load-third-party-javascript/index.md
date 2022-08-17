@@ -113,7 +113,7 @@ tags:
 
 Альтернативный метод — загружать сторонний контент только тогда, когда пользователи прокручивают страницу вниз до соответствующего раздела.
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) — это API браузера, который эффективно определяет, когда элемент входит в окно просмотра браузера и выходит из него. Его можно использовать для реализации этого метода. [lazysizes](/use-lazysizes-to-lazyload-images/) — это популярная библиотека JavaScript для отложенной загрузки изображений и элементов [`iframe`](http://afarkas.github.io/lazysizes/#examples). Она поддерживает внедренные элементы YouTube и [виджеты](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). В ней также имеется [дополнительная поддержка](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) API IntersectionObserver.
+[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/) — это API браузера, который эффективно определяет, когда элемент входит в окно просмотра браузера и выходит из него. Его можно использовать для реализации этого метода. [lazysizes](/use-lazysizes-to-lazyload-images/) — это популярная библиотека JavaScript для отложенной загрузки изображений и элементов [`iframe`](http://afarkas.github.io/lazysizes/#examples). Она поддерживает внедренные элементы YouTube и [виджеты](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). В ней также имеется [дополнительная поддержка](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) API IntersectionObserver.
 
 {% Aside 'caution' %} Будьте осторожны при отложенной загрузке ресурсов с помощью JavaScript. Если не удается загрузить JavaScript, например из-за нестабильной работы сети, ваши ресурсы вообще не загрузятся. {% endAside %}
 
@@ -135,7 +135,7 @@ tags:
 
 - Уменьшение времени поиска DNS и кругового пути.
 - Улучшение [HTTP-кэширования](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) заголовков.
-- Использование [операций push сервера HTTP/2](https://developers.google.com/web/fundamentals/performance/http2/).
+- Использование [операций push сервера HTTP/2](/performance-http2/).
 
 Например, веб-сайту Casper удалось [уменьшить время загрузки на 1,7 секунды](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec), разместив скрипт A/B-тестирования на собственном ресурсе.
 
@@ -147,4 +147,4 @@ tags:
 
 ### Использование служебных сценариев для кеширования скриптов со сторонних серверов
 
-Альтернатива размещению скриптов на собственных ресурсах, которая позволяет лучше управлять кешированием и при этом пользоваться преимуществами сторонних CDN, — [использование служебных сценариев для кэширования скриптов со сторонних серверов](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests). Вы сможете управлять периодичностью повторной загрузки скриптов из сети и создать стратегию загрузки, с помощью которой можно будет ограничивать запросы к несущественным сторонним ресурсам до тех пор, пока страница не достигнет ключевого для пользователя момента. В этом случае можно в некоторой степени уменьшить расходы на передачу данных по сети, создавая заблаговременные подключения с использованием атрибута `preconnect`.
+Альтернатива размещению скриптов на собственных ресурсах, которая позволяет лучше управлять кешированием и при этом пользоваться преимуществами сторонних CDN, — [использование служебных сценариев для кэширования скриптов со сторонних серверов](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations). Вы сможете управлять периодичностью повторной загрузки скриптов из сети и создать стратегию загрузки, с помощью которой можно будет ограничивать запросы к несущественным сторонним ресурсам до тех пор, пока страница не достигнет ключевого для пользователя момента. В этом случае можно в некоторой степени уменьшить расходы на передачу данных по сети, создавая заблаговременные подключения с использованием атрибута `preconnect`.

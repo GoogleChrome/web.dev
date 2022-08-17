@@ -354,7 +354,7 @@ class.
 
 During development you'll be able to use sensors through `localhost`. If you are developing for
 mobile devices, set up
-[port forwarding](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server)
+[port forwarding](https://developer.chrome.com/docs/devtools/remote-debugging/local-server/)
 for your local server, and you are ready to rock!
 
 When your code is ready, deploy it on a server that supports HTTPS.
@@ -432,7 +432,7 @@ The current velocity is calculated as an approximation to the integral of the ac
 
 In some cases you don't need a physical device to play with the Generic Sensor API. Chrome DevTools
 has great support for
-[simulating device orientation](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation).
+[simulating device orientation](https://developer.chrome.com/docs/devtools/device-mode/orientation/).
 
 <figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="Chrome DevTools used to override the custom orientation data of a virtual phone", width="800", height="648" %}
@@ -456,7 +456,7 @@ and guidelines.
 
 ### Permissions Policy integration
 
-The [Permissions Policy integration](https://w3c.github.io/webappsec-permissions-policy/) in Generic
+The [Permissions Policy integration](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) in Generic
 Sensor API controls access to sensors data for a frame.
 
 By default the `Sensor` objects can be created only within a main frame or same-origin subframes,

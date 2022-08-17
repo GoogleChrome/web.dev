@@ -42,7 +42,7 @@ from hyper-constrained feature phones to high-powered,
 high-refresh-rate flagship machines.
 
 If we want sophisticated web apps to reliably meet performance guidelines
-like the [RAIL model](https://developers.google.com/web/fundamentals/performance/rail)—which
+like the [RAIL model](/rail/)—which
 is based on empirical data about human perception and psychology—we
 need ways to execute our code **off the main thread (OMT)**.
 
@@ -318,7 +318,7 @@ Also, OMT has secondary benefits:
     That might reduce [First Contentful Paint](/fcp/)
     or even [Time to Interactive](/tti/),
     which can in turn increase your
-    [Lighthouse](https://developers.google.com/web/tools/lighthouse) score.
+    [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) score.
 
 Web workers don't have to be scary.
 Tools like Comlink are taking the work out of workers

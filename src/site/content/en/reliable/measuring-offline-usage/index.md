@@ -66,7 +66,7 @@ drawbacks and limitations need to be considered carefully.
 The solution that enables offline mode turns out to be the better solution for tracking offline
 usage.  The basic idea is to store analytics pings into IndexedDB as long as the user is offline,
 and just resend them when the user goes online again. For Google Analytics this is already available
-[off-the-shelf through a Workbox module](https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics),
+[off-the-shelf through a Workbox module](https://developer.chrome.com/docs/workbox/modules/workbox-google-analytics/),
 but keep in mind that hits sent more than
 [four hours deferred](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#qt)
 may not be processed. In its simplest form, it can be activated within a Workbox-based service
@@ -80,7 +80,7 @@ googleAnalytics.initialize();
 
 This tracks all existing events and pageview pings while being offline, but you wouldn't know that
 they happened offline (as they are just replayed as-is). For this
-[you can manipulate tracking requests with Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics#using_a_custom_dimension_to_track_online_vs_offline_interactions)
+[you can manipulate tracking requests with Workbox](https://developer.chrome.com/docs/workbox/modules/workbox-google-analytics/#using-a-custom-dimension-to-track-online-vs-offline-interactions)
 by adding an `offline` flag to the analytics ping, using a custom dimension (`cd1` in the code
 sample below):
 
@@ -97,7 +97,7 @@ googleAnalytics.initialize({
 What if the user drops out of the page due to being offline, before an internet connection comes
 back? Even though this normally puts the service worker to sleep (i.e. it's unable to send the data
 when the connection comes back), the Workbox Google Analytics module uses the [Background Sync
-API](https://developers.google.com/web/updates/2015/12/background-sync), which sends the analytics
+API](https://developer.chrome.com/blog/background-sync/), which sends the analytics
 data later when the connection comes back, even if the user closes the tab or browser.
 
 There is still a drawback: while this makes existing tracking offline-capable, you would most likely
@@ -121,7 +121,7 @@ below the fold will silently fail and be missing.
 
 As these cases are really irritating to users, it makes sense to track them. Service workers are the
 perfect spot to catch network errors, and eventually track them using analytics. With Workbox, a
-[global catch handler](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#comprehensive_fallbacks)
+[global catch handler](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#comprehensive-fallbacks)
 can be configured to inform the page about failed requests by sending a message event:
 
 ```js
@@ -229,9 +229,9 @@ obviously won't see much offline usage in analytics.
 We recommend to get the full tracking in place, and then extend your offline capabilities in
 iterations with an eye on tracking numbers. Start with a simple offline error page first–with
 [Workbox it's trivial to
-do](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only)–and
+do](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only)–and
 should be considered a UX best practice similar to custom 404 pages anyway. Then work your way
-[towards more advanced offline fallbacks](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#comprehensive_fallbacks)
+[towards more advanced offline fallbacks](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#comprehensive-fallbacks)
 and finally towards real offline content. Make sure you advertise and explain this to your users
 well, and you will see increasing usage. After all, everyone goes offline every once in a while.
 

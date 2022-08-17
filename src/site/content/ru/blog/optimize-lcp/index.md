@@ -163,7 +163,7 @@ tags:
 
 ### Отложенная загрузка некритичного CSS-кода
 
-Используйте вкладку [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) в Chrome DevTools, чтобы найти неиспользуемый CSS-код на своей веб-странице.
+Используйте вкладку [Coverage](https://developer.chrome.com/docs/devtools/coverage/) в Chrome DevTools, чтобы найти неиспользуемый CSS-код на своей веб-странице.
 
 {% Img
   src="image/admin/wjS4NrU5EsJeCuvK0zhn.png",
@@ -364,7 +364,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 Сервис-воркеры могут использоваться для множества полезных задач, в том числе для сокращения ответов на запросы контента HTML, как упоминалось ранее в этой статье. Их также можно использовать для кеширования любого статического ресурса, чтобы затем выдать его браузеру, а не загружать из сети при повторных запросах.
 
-Предварительное кеширование критических ресурсов с помощью сервис-воркера может значительно сократить время их загрузки, особенно для пользователей, которые перезагружают веб-страницу, используя более слабое подключение (или даже получают к ней доступ в автономном режиме). Иногда, чтобы упростить процесс обновления предварительно кешированных ресурсов, проще использовать библиотеку наподобие [Workbox](https://developers.google.com/web/tools/workbox/), чем писать пользовательский сервис-воркер.
+Предварительное кеширование критических ресурсов с помощью сервис-воркера может значительно сократить время их загрузки, особенно для пользователей, которые перезагружают веб-страницу, используя более слабое подключение (или даже получают к ней доступ в автономном режиме). Иногда, чтобы упростить процесс обновления предварительно кешированных ресурсов, проще использовать библиотеку наподобие [Workbox](https://developer.chrome.com/docs/workbox/), чем писать пользовательский сервис-воркер.
 
 {% Aside %} Ознакомьтесь со статьей [«Надежность сети»](/reliable/), чтобы узнать больше о сервис-воркерах и Workbox. {% endAside %}
 
@@ -418,13 +418,13 @@ if (navigator.connection && navigator.connection.effectiveType) {
   </figcaption>
 </figure>
 
-{% Aside %} Чтобы глубже погрузиться в различные архитектуры серверного рендеринга, ознакомьтесь со статьей [«Рендеринг в Интернете»](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
+{% Aside %} Чтобы глубже погрузиться в различные архитектуры серверного рендеринга, ознакомьтесь со статьей [«Рендеринг в Интернете»](/rendering-on-the-web/). {% endAside %}
 
 ## Инструменты разработчика
 
 Для измерения и отладки LCP доступен ряд инструментов:
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) включает поддержку измерения LCP в лабораторных условиях.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) включает поддержку измерения LCP в лабораторных условиях.
 
 {% Img
   src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg",
@@ -433,7 +433,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
   height="309"
 %}
 
-- Раздел **Timings** панели [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) в Chrome Devtools включает маркер LCP и показывает, какой элемент связан с LCP при наведении мыши на поле **Related Node**.
+- Раздел **Timings** панели [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) в Chrome Devtools включает маркер LCP и показывает, какой элемент связан с LCP при наведении мыши на поле **Related Node**.
 
 {% Img
   src="image/admin/sxczQPKH0cvMBsNCx5uH.png",
@@ -442,6 +442,6 @@ if (navigator.connection && navigator.connection.effectiveType) {
   height="509"
 %}
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) предоставляет реальные значения LCP, агрегированные на уровне источника.
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) предоставляет реальные значения LCP, агрегированные на уровне источника.
 
 *Выражаем благодарность Филиппу Уолтону, Кэти Хемпениус, Кейси Баскесу и Илье Григорику за их обзоры.*

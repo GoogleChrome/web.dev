@@ -91,7 +91,7 @@ tags:
 이러한 기술은 구현하는 데 더 많은 작업이 필요하지만 쿠키 알림 스크립트의 로드를 더욱 최적화할 수 있습니다.
 
 - 자체 서버에서 타사 쿠키 알림 스크립트를 캐싱하고 제공하면 이러한 리소스의 전달 속도를 향상시킬 수 있습니다.
-- [서비스 워커](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers)를 사용하면 쿠키 알림 스크립트와 같은 [타사 스크립트의 가져오기 및 캐싱](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)을 더 잘 제어할 수 있습니다.
+- [서비스 워커](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers)를 사용하면 쿠키 알림 스크립트와 같은 [타사 스크립트의 가져오기 및 캐싱](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations)을 더 잘 제어할 수 있습니다.
 
 ## 성능 측정
 

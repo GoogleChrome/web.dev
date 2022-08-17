@@ -25,7 +25,7 @@ tags:
 
 This means that the web app doesn't perform an actual page reload. The [History API](https://developer.mozilla.org/docs/Web/API/History_API) is used instead to navigate back and forth through the user's history and manipulate the contents of the history stack.
 
-Using this type of architecture can provide an [app shell UX](https://developers.google.com/web/fundamentals/architecture/app-shell) that's fast, reliable, and usually consumes less data when navigating.
+Using this type of architecture can provide an [app shell UX](/learn/pwa/architecture/) that's fast, reliable, and usually consumes less data when navigating.
 
 In multi-page apps (MPAs) each time a user navigates to a new URL, the browser progressively renders HTML specific to that page. This means a full page refresh every time you visit a new page.
 
@@ -63,7 +63,7 @@ The previous section contains a quick summary of DEV's solution. For a more deta
 ## Implement an app shell UX architecture in MPAs with Workbox
 
 In this section we'll cover a summary of the different parts involved in implementing an app shell UX architecture in MPAs.
-For a more detailed post on how to implement this on a real site, check out [Beyond SPAs: alternative architectures for your PWA](https://developers.google.com/web/updates/2018/05/beyond-spa).
+For a more detailed post on how to implement this on a real site, check out [Beyond SPAs: alternative architectures for your PWA](https://developer.chrome.com/blog/beyond-spa/).
 
 ### The server
 
@@ -99,9 +99,9 @@ After the first page load, the service worker is registered, allowing you to fet
 #### Precaching static assets
 
 The first step is to cache the partial HTML templates, so they are immediately available.
-With [Workbox precaching](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) you can store these files at the `install` event of the service worker and keep them up to date when changes are deployed to the web app.
+With [Workbox precaching](https://developer.chrome.com/docs/workbox/modules/workbox-precaching/) you can store these files at the `install` event of the service worker and keep them up to date when changes are deployed to the web app.
 
-Depending on the build process, Workbox has different solutions to generate a service worker and indicate the list of files to precache, including [webpack](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) and [gulp](https://developers.google.com/web/tools/workbox/guides/codelabs/gulp) plugins, a [generic node module](https://developers.google.com/web/tools/workbox/modules/workbox-build) and a [command line interface](https://developers.google.com/web/tools/workbox/modules/workbox-cli).
+Depending on the build process, Workbox has different solutions to generate a service worker and indicate the list of files to precache, including [webpack](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/) and [gulp](https://developers.google.com/codelabs/workbox-lab#0) plugins, a [generic node module](https://developer.chrome.com/docs/workbox/modules/workbox-build/) and a [command line interface](https://developer.chrome.com/docs/workbox/modules/workbox-cli/).
 
 For a partials configuration like the one described earlier, the resulting service worker file should contain something similar to the following:
 
@@ -122,7 +122,7 @@ workbox.precaching.precacheAndRoute([
 #### Streaming
 
 Next, add the service worker logic so that the precached partial HTML can be sent back to the web app immediately. This is a crucial part of being reliably fast. Using the [Streams API](https://developer.mozilla.org/docs/Web/API/Streams_API) within our service worker makes that possible.
-[Workbox Streams](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-streams) abstracts the details of how streaming works. The package lets you pass to the library a mix of streaming sources, both from caches and runtime data that might come from the network. Workbox takes care of coordinating the individual sources and stitching them together into a single, streaming response.
+[Workbox Streams](https://developer.chrome.com/docs/workbox/reference/workbox-streams/) abstracts the details of how streaming works. The package lets you pass to the library a mix of streaming sources, both from caches and runtime data that might come from the network. Workbox takes care of coordinating the individual sources and stitching them together into a single, streaming response.
 
 First, set up the strategies in Workbox to handle the different sources that will make up the streaming response.
 
@@ -140,7 +140,7 @@ const apiStrategy = workbox.strategies.staleWhileRevalidate({
 ```
 
 - The first strategy reads data that's been precached, like the partial HTML templates.
-- The second strategy implements the [stale-while-revalidate](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#stale-while-revalidate) caching logic, along with [least-recently-used cache expiration](https://developers.google.com/web/tools/workbox/modules/workbox-expiration#restrict_the_number_of_cache_entries) logic once we reach 50 entries.
+- The second strategy implements the [stale-while-revalidate](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#stale-while-revalidate) caching logic, along with [least-recently-used cache expiration](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/#restrict-the-number-of-cache-entries) logic once we reach 50 entries.
 
 Next, tell Workbox how to use the strategies to construct a complete, streaming response, by passing in an array of sources as functions to execute immediately:
 

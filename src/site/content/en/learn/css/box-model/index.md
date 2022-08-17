@@ -218,8 +218,8 @@ how it is affecting the website you're working on.
 
 Go ahead and try this in your own browser:
 
-1. [Open DevTools](https://developers.google.com/web/tools/chrome-devtools/open)
-1. [Select an element](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
+1. [Open DevTools](https://developer.chrome.com/docs/devtools/open/)
+1. [Select an element](https://developer.chrome.com/docs/devtools/css/reference/#select)
 1. Show the box model debugger
 
 <figure>

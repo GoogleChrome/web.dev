@@ -192,7 +192,7 @@ used with signed exchanges.
     **Optional**
 
     If you want to enable or disable [subresource
-    preloading](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md),
+    preloading](https://github.com/WICG/webpackage/blob/main/explainers/signed-exchange-subresource-substitution.md),
     the following `webpkgserver.toml` configuration options are relevant:
 
     *   To have `webpkgserver` insert directives for preloading stylesheet
@@ -215,7 +215,7 @@ used with signed exchanges.
         `#KeepNonSXGPreloads (default = false)` to `KeepNonSXGPreloads = true`.
         Keep in mind that enabling this option may make the SXG ineligible for
         the Google SXG cache per these
-        [requirements](https://github.com/google/webpackager/blob/master/docs/cache_requirements.md).
+        [requirements](https://github.com/google/webpackager/blob/main/docs/cache_requirements.md).
 
 4. Start `webpkgserver`.
 
@@ -317,6 +317,12 @@ used with signed exchanges.
 *  You have a `CanSignHttpExchanges` certificate. This
      [page](https://github.com/google/webpackager/wiki/Certificate-Authorities)
      lists the CAs that offer this type of certificate.
+   
+*  If you don't have a certificate, then you can configure your webpkgserver to
+   automatically retrieve certificates from your CA. You can follow the
+   directions for what goes in `webpkgserver.toml` in this
+   [page](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#configuration).
+
 *  Although not a requirement, it is strongly recommended that you run
    `webpkgserver` behind an edge server. If you do not use an edge server, you
    will need to configure the `TLS.PEMFile` and `TLS.KeyFile` options in
@@ -354,9 +360,9 @@ used with signed exchanges.
         private key corresponding to your PEM File.
     *   Change the line `Domain = 'example.org'` to reflect your site.
     *   (Optional) To have `webpkgserver` auto-renew the SXG certificate every
-        90 days, configure the options in the `[SXG.ACME]` section of
+        90 days (45 days for Google), configure the options in the `[SXG.ACME]` section of
         `webpkgserver.toml`. This option only applies to sites with a DigiCert
-        ACME account setup.
+        or Google ACME account setup.
 
 3.  Configure your edge server to forward traffic to the `webpkgserver`
     instance.
@@ -366,7 +372,7 @@ used with signed exchanges.
     the SXG certificate (which are served by the `/webpkg/cert/` endpoint). The
     URL rewriting rules for each of these request types varies slightly. For
     more information, see [Running behind front end edge
-    server](https://github.com/google/webpackager/blob/master/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
+    server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
 
     **Note:**
 

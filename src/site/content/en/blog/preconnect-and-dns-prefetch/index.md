@@ -3,10 +3,12 @@ title: Establish network connections early to improve perceived page speed
 subhead: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
 date: 2019-07-30
+updated: 2022-08-07
 hero: image/admin/Dyccd1RLN0fzhjPXswmL.jpg
 alt: Adam's Creation by Michelangelo on Sistine Chapel ceiling
 authors:
   - mihajlija
+  - jlwagner
 description: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
 tags:
@@ -44,7 +46,7 @@ Informing the browser of your intention is as simple as adding a `<link>` tag to
 
 {% Img src="image/admin/988BgvmiVEAp2YVKt2jq.png", alt="A diagram showing how the download doesn't start for a while after the connection is established.", width="800", height="539" %}
 
-You can speed up the load time by 100–500 ms by establishing early connections to important third-party origins. These numbers might seem small, but they make a difference in how [users perceive web page performance](https://developers.google.com/web/fundamentals/performance/rail#ux).
+You can speed up the load time by 100–500 ms by establishing early connections to important third-party origins. These numbers might seem small, but they make a difference in how [users perceive web page performance](/rail/#focus-on-the-user).
 
 {% Aside %}
 chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/1090874825286000640) by almost 1 s by pre-connecting to important origins.
@@ -146,5 +148,18 @@ Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Sa
 
 {% endCompare %}
 
+## Effect on Largest Contentful Paint (LCP)
+
+Using `dns-prefetch` and `preconnect` allows sites to reduce the amount of time it takes to connect to another origin. The ultimate aim is that the time to load a resource from another origin should be minimized as much as possible.
+
+Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, it is better that resources are immediately discoverable, since [LCP candidates](/lcp/#what-elements-are-considered) are crucial parts of the user experience. A [`fetchpriority` value of `"high"`](/priority-hints/#when-would-you-need-priority-hints) on LCP resources can further improve this by signaling the importance of this asset to the browser so it can fetch it early.
+
+Where it is not possible to make LCP assets immediately discoverable, a [`preload`](/preload-critical-assets/) link&mdash;also with the `fetchpriority` value of `"high"`&mdash;still allows the browser to load the resource as soon as possible.
+
+If neither of these options are available&mdash;because the exact resource will not be known until later in the page load&mdash;you can use `preconnect` on cross-origin resources to reduce the impact of the late discovery of the resource as much as possible.
+
+Additionally, `preconnect` is less expensive than `preload` in terms of bandwidth usage, but still not without its risks. As is the case with excessive `preload` hints, excessive `preconnect` hints still consume bandwidth where TLS certificates are concerned. Be careful not to preconnect to too many origins, as this may cause bandwidth contention.
+
 ## Conclusion
+
 These two resource hints are helpful for improving page speed when you know you'll download something from a third-party domain soon, but you don't know the exact URL for the resource. Examples include CDNs that distribute JavaScript libraries, images or fonts. Be mindful of constraints, use `preconnect` only for the most important resources, rely on `dns-prefetch` for the rest, and always measure the impact in the real-world.

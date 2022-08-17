@@ -113,7 +113,7 @@ and "Zoom (Relative)" UVC controls are not supported in Chromium-based browsers.
 <figure>
   {% Img
     src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/4EDS8fYYifXAUY6SBaiV.png",
-    alt="Screenshot of the internal page in Chrome OS to debug PTZ camera support.",
+    alt="Screenshot of the internal page in ChromeOS to debug PTZ camera support.",
     width="800",
     height="481" %}
   <figcaption>Internal page to debug PTZ camera support.</figcaption>

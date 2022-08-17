@@ -24,7 +24,7 @@ feedback:
 
 Some HTTP requests contain a [`Range:` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Range), indicating that only a portion of the full resource should be returned. They're commonly used for streaming audio or video content to allow smaller chunks of media to be loaded on demand, instead of requesting the entirety of the remote file all at once.
 
-A [service worker](https://developers.google.com/web/fundamentals/primers/service-workers) is JavaScript code that sits in between your web app and the network, potentially intercepting outgoing network requests and generating responses for them.
+A [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/) is JavaScript code that sits in between your web app and the network, potentially intercepting outgoing network requests and generating responses for them.
 
 Historically, range requests and service workers haven't played nicely together. It's been necessary to take special steps to avoid bad outcomes in your service worker. Fortunately, this is starting to change. In browsers exhibiting the correct behavior, range requests will "just work" when passing through a service worker.
 
@@ -90,6 +90,6 @@ Service workers can do much more than just pass a request through to the network
 
 All browsers, including Firefox, support inspecting a request inside a `fetch` handler, checking for the presence of the `Range:` header, and then locally fulfilling the request with a [`206` response](https://developer.mozilla.org/docs/Web/HTTP/Status/206) that comes from a cache. The service worker code to properly parse the `Range:` header and return only the appropriate segment of the complete cached response is not trivial, though.
 
-Fortunately, developers who want some help can turn to [Workbox](https://developers.google.com/web/tools/workbox/), which is a set of libraries that simplifies common service worker use cases. The [`workbox-range-request module`](https://developers.google.com/web/tools/workbox/modules/workbox-range-requests) implements all the logic necessary to serve partial responses directly from the cache. A full recipe for this use case can be found [in the Workbox documentation](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av).
+Fortunately, developers who want some help can turn to [Workbox](https://developer.chrome.com/docs/workbox/), which is a set of libraries that simplifies common service worker use cases. The [`workbox-range-request module`](https://developer.chrome.com/docs/workbox/modules/workbox-range-request/) implements all the logic necessary to serve partial responses directly from the cache. A full recipe for this use case can be found [in the Workbox documentation](https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/).
 
 _The hero image on this post is by [Natalie Rhea Riggs](https://unsplash.com/photos/OnAwTs0tu3k) on Unsplash._

@@ -46,7 +46,7 @@ Informar o navegador da sua intenção é tão simples quanto adicionar uma `<li
 
 {% Img src="image/admin/988BgvmiVEAp2YVKt2jq.png", alt="Um diagrama mostrando como o download não começa por um tempo depois que a conexão é estabelecida.", width="800", height="539" %}
 
-Você pode acelerar o tempo de carregamento em 100–500 ms estabelecendo conexões antecipadas com origens de terceiros importantes. Esses números podem parecer pequenos, mas fazem diferença na forma como os [usuários percebem o desempenho da página web](https://developers.google.com/web/fundamentals/performance/rail#ux).
+Você pode acelerar o tempo de carregamento em 100–500 ms estabelecendo conexões antecipadas com origens de terceiros importantes. Esses números podem parecer pequenos, mas fazem diferença na forma como os [usuários percebem o desempenho da página web](/rail/#focus-on-the-user).
 
 {% Aside %} chrome.com [melhorou o tempo de interação](https://twitter.com/addyosmani/status/1090874825286000640) em quase 1 s ao conectar-se previamente a origens importantes. {% endAside %}
 

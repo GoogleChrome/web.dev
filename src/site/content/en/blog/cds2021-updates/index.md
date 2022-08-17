@@ -38,7 +38,7 @@ You can read about their work in the post
 
 ## Allow new classes of applications to run on the web
 
-[Project Fugu](/fugu-status/) is an effort that aims to allow new classes of applications to the web.
+[Project Fugu](https://developer.chrome.com/blog/fugu-status/) is an effort that aims to allow new classes of applications to the web.
 You can keep up to date with progress on the Fugu APIs at [fugu-tracker.web.app](https://fugu-tracker.web.app/).
 
 Adobe recently announced that they are bringing Photoshop to the web,

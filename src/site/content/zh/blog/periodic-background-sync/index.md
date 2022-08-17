@@ -22,7 +22,7 @@ feedback:
   - api
 ---
 
-{% Aside %} Web 应用程序要像 iOS/Android/桌面应用程序一样具有强大的功能。为了实现这一目标，[Capabilities 项目](https://developers.google.com/web/updates/capabilities)中的后台定期同步只是其中一个功能。要了解其他功能和关注其进展，请关注 [Web 新功能揭秘](https://developers.google.com/web/updates/capabilities)。{% endAside %}
+{% Aside %} Web 应用程序要像 iOS/Android/桌面应用程序一样具有强大的功能。为了实现这一目标，[Capabilities 项目](https://developer.chrome.com/blog/capabilities/)中的后台定期同步只是其中一个功能。要了解其他功能和关注其进展，请关注 [Web 新功能揭秘](https://developer.chrome.com/blog/capabilities/)。{% endAside %}
 
 您是否遇到过下面的情况？
 

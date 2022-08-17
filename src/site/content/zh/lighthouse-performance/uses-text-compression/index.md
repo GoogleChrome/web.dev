@@ -61,7 +61,7 @@ Content-Encoding: br
 
 {% Instruction 'devtools-network', 'ol' %}
 
-1. 启用大请求行。请参阅[使用大请求行](https://developers.google.com/web/tools/chrome-devtools/network/reference#request-rows)。
+1. 启用大请求行。请参阅[使用大请求行](https://developer.chrome.com/docs/devtools/network/reference/#request-rows)。
 2. 查看您感兴趣的响应的 **Size** 列。上面的值是压缩大小，下面的值是解压缩大小。
 
 另请参阅[缩小和压缩网络有效负载](/reduce-network-payloads-using-text-compression)。
@@ -78,4 +78,4 @@ Content-Encoding: br
 
 ## 资源
 
-- [**启用文本压缩**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [**启用文本压缩**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-text-compression.js)

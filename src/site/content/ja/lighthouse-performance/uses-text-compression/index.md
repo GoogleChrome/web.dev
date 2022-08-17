@@ -63,7 +63,7 @@ Content-Encoding: br
 
 {% Instruction 'devtools-network', 'ol' %}
 
-1. 大きなリクエスト行を有効にします。[Use large request rows (大きなリクエスト行を使用する)](https://developers.google.com/web/tools/chrome-devtools/network/reference#request-rows)を参照してください。
+1. 大きなリクエスト行を有効にします。[Use large request rows (大きなリクエスト行を使用する)](https://developer.chrome.com/docs/devtools/network/reference/#request-rows)を参照してください。
 2. 関心のあるレスポンスの[**Size**]列を見てください。一番上の値は圧縮されたサイズで、一番下の値は圧縮解除されたサイズです。
 
 [Minify and compress network payloads (ネットワークペイロードの縮小と圧縮)](/reduce-network-payloads-using-text-compression) も参照してください。
@@ -80,4 +80,4 @@ Gzipのページ圧縮設定を有効にします (**System** (システム) &gt
 
 ## リソース
 
-- [**Enable text compression (テキストの圧縮を有効にする)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [**Enable text compression (テキストの圧縮を有効にする)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-text-compression.js)

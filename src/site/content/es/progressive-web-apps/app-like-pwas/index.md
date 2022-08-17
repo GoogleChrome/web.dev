@@ -38,7 +38,7 @@ Mientras estoy sin conexión, a través del panel de la izquierda, todavía pued
  <figcaption>Los episodios de podcasts descargados se pueden reproducir incluso sin conexión a una red.</figcaption>
 </figure>
 
-{% Details %} {% DetailsSummary %} Cómo hacer esto en la web {% endDetailsSummary %} El contenido multimedia descargado previamente se puede servir desde la caché, por ejemplo, utilizando la receta de <a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Servir audio y video almacenado en caché</a> de la biblioteca de <a href="https://developers.google.com/web/tools/workbox">Workbox</a>. Otro contenido siempre se puede almacenar en la caché o en IndexedDB. Lea el artículo <a href="/storage-for-the-web/">Almacenamiento para la web</a> para obtener todos los detalles y saber cuándo y cuál tecnología de almacenamiento usar. Si tiene datos que deben almacenarse de forma persistente sin el riesgo de que se eliminen cuando la cantidad de memoria disponible sea baja, puede utilizar la <a href="/persistent-storage/">API de almacenamiento persistente</a>. {% endDetails %}
+{% Details %} {% DetailsSummary %} Cómo hacer esto en la web {% endDetailsSummary %} El contenido multimedia descargado previamente se puede servir desde la caché, por ejemplo, utilizando la receta de <a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">Servir audio y video almacenado en caché</a> de la biblioteca de <a href="https://developer.chrome.com/docs/workbox/">Workbox</a>. Otro contenido siempre se puede almacenar en la caché o en IndexedDB. Lea el artículo <a href="/storage-for-the-web/">Almacenamiento para la web</a> para obtener todos los detalles y saber cuándo y cuál tecnología de almacenamiento usar. Si tiene datos que deben almacenarse de forma persistente sin el riesgo de que se eliminen cuando la cantidad de memoria disponible sea baja, puede utilizar la <a href="/persistent-storage/">API de almacenamiento persistente</a>. {% endDetails %}
 
 ## Descarga proactiva en segundo plano
 
@@ -297,8 +297,8 @@ La siguiente tabla muestra una descripción general compacta de todas las funcio
         <td>Reproducción multimedia y contenido disponible sin conexión</td>
         <td>
           <ul>
-            <li><a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Servir audio y video almacenado en caché</a></li>
-            <li><a href="https://developers.google.com/web/tools/workbox">Biblioteca de Workbox</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">Servir audio y video almacenado en caché</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/">Biblioteca de Workbox</a></li>
             <li><a href="/storage-for-the-web/">API de almacenamiento</a></li>
             <li><a href="/persistent-storage/">API de almacenamiento persistente</a></li>
           </ul>
@@ -484,7 +484,7 @@ La siguiente tabla muestra una descripción general compacta de todas las funcio
 
 ## Conclusión
 
-Las PWA han recorrido un largo camino desde su introducción en 2015. En el contexto del [Proyecto Fugu 🐡](/fugu-status), el equipo de Chromium entre empresas está trabajando para cerrar las brechas restantes. Si sigue solo algunos de los consejos de este artículo, puede acercarse poco a poco a esa sensación similar a la de una aplicación y hacer que sus usuarios olviden que están tratando con "solo un sitio web", porque, sinceramente, a la mayoría de ellos no le importa cómo se construye su aplicación (y por qué debería hacerlo), siempre que se sienta como una aplicación *real*.
+Las PWA han recorrido un largo camino desde su introducción en 2015. En el contexto del [Proyecto Fugu 🐡](https://developer.chrome.com/blog/fugu-status), el equipo de Chromium entre empresas está trabajando para cerrar las brechas restantes. Si sigue solo algunos de los consejos de este artículo, puede acercarse poco a poco a esa sensación similar a la de una aplicación y hacer que sus usuarios olviden que están tratando con "solo un sitio web", porque, sinceramente, a la mayoría de ellos no le importa cómo se construye su aplicación (y por qué debería hacerlo), siempre que se sienta como una aplicación *real*.
 
 ## Agradecimientos
 

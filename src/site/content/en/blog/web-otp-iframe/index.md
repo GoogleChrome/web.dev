@@ -127,8 +127,7 @@ followed by the iframe origin preceded by `@`.
 ### Configure Permissions Policy
 
 To use WebOTP in a cross-origin iframe, the embedder must grant access to this
-API via otp-credentials [permissions
-policy](https://www.w3.org/TR/permissions-policy-1) to avoid unintended
+API via otp-credentials [permissions policy](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) to avoid unintended
 behavior. In general there are two ways to achieve this goal:
 
 - via HTTP Header:
@@ -144,7 +143,7 @@ Permissions-Policy: otp-credentials=(self "https://bank.example")
 ```
 
 See [more examples on how to specify a permission policy
-](https://github.com/w3c/webappsec-permissions-policy/blob/master/permissions-policy-explainer.md#how-is-a-policy-specified).
+](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/#example-permissions-policy-setups/).
 
 ### Caveats
 

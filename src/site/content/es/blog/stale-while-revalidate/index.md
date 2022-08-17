@@ -74,8 +74,8 @@ El uso de stale-while-revalidate a través de un encabezado `Cache-Control` comp
 ### Utilice un enfoque de service worker si…
 
 - Ya está utilizando un service worker en su aplicación web.
-- Necesita un control detallado sobre el contenido de sus cachés y desea implementar algo como una política de vencimiento utilizada menos recientemente. El módulo de [Vencimiento de caché](https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration) de Workbox puede ayudar con esto.
-- Desea recibir una notificación cuando una respuesta obsoleta cambie en segundo plano durante el paso de revalidación. El módulo [Transmisión de actualización de caché](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update) de Workbox puede ayudar con esto.
+- Necesita un control detallado sobre el contenido de sus cachés y desea implementar algo como una política de vencimiento utilizada menos recientemente. El módulo de [Vencimiento de caché](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/) de Workbox puede ayudar con esto.
+- Desea recibir una notificación cuando una respuesta obsoleta cambie en segundo plano durante el paso de revalidación. El módulo [Transmisión de actualización de caché](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/) de Workbox puede ayudar con esto.
 - Necesita este comportamiento `stale-while-revalidate` en todos los navegadores modernos.
 
 ### Utilice un enfoque de control de caché si…

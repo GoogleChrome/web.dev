@@ -64,5 +64,5 @@ Learn more in
 
 ## Resources
 
-- [Source code for **Image elements do not have `[alt]` attributes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
+- [Source code for **Image elements do not have `[alt]` attributes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/image-alt.js)
 - [Images must have alternate text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/image-alt)

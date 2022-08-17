@@ -1,0 +1,130 @@
+snap-tabs {
+  --hue: 328deg;
+  --accent: var(--hue) 100% 54%;
+  --indicator-size: 2px;
+
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  position: relative;
+
+  & :matches(header, nav, section, article, a) {
+    outline-color: hsl(var(--accent));
+    outline-offset: -5px;
+  }
+}
+
+.scroll-snap-x {
+  overflow: auto hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+  
+  @media (hover: none) {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+snap-tabs > header {
+  --text-color: hsl(var(--hue) 5% 40%);
+  --text-active-color: hsl(var(--hue) 20% 10%);
+
+  flex-shrink: 0;
+  min-block-size: fit-content;
+
+  display: flex;
+  flex-direction: column;
+
+  & > nav {
+    display: flex;
+  }
+
+  & a {
+    scroll-snap-align: start;
+
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+
+    font-size: .8rem;
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+    padding: var(--space-2) var(--space-3);
+
+    & > svg {
+      inline-size: 1.5em;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background: hsl(var(--accent) / 5%);
+    }
+
+    &:focus {
+      outline-offset: -.5ch;
+    }
+  }
+
+  & > .snap-indicator {
+    inline-size: 0;
+    block-size: var(--indicator-size);
+    border-radius: var(--indicator-size);
+    background: hsl(var(--accent));
+  }
+}
+
+snap-tabs > section {
+  block-size: 100%;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+
+  & > article {
+    scroll-snap-align: start;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* 
+    - swap to border-bottom styles
+    - transition colors
+    - hide the animated .indicator 
+  */
+
+  snap-tabs {
+    & > header a {
+      border-block-end: var(--indicator-size) solid hsl(var(--accent) / 0%);
+      transition:
+        color .7s ease,
+        border-color .5s ease;
+
+      &:matches(:target,:active,[active]) {
+        color: var(--text-active-color);
+        border-block-end-color: hsl(var(--accent));
+      }
+    }
+
+    & .snap-indicator {
+      visibility: hidden;
+    }
+  }
+}

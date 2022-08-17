@@ -289,7 +289,7 @@ The sphere is made up of a set of rotating planes and spokes.
 </figure>
 
 {% Aside %}
-The [DOM Search Tool](https://developers.google.com/web/tools/chrome-devtools/dom#search)
+The [DOM Search Tool](https://developer.chrome.com/docs/devtools/dom/#search)
 in Chrome DevTools can make it easier to find an element that you want to inspect.
 {% endAside %}
 

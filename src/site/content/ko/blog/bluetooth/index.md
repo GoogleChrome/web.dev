@@ -28,13 +28,13 @@ stack_overflow_tag: web-bluetooth
 
 [Web Bluetooth API 사양](https://webbluetoothcg.github.io/web-bluetooth/)은 아직 확정되지 않았지만 사양 작성자들이 열정적인 개발자를 대상으로 이 API를 사용해 보고 [사양에 대한 피드백](https://github.com/WebBluetoothCG/web-bluetooth/issues)과 [구현에 대한 피드백](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EBluetooth)을 제공할 것을 적극적으로 권하고 있습니다.
 
-Web Bluetooth API의 하위 요소는 Chrome OS, Android 6.0용 Chrome, Mac(Chrome 56) 및 Windows 10(Chrome 70)에서 사용할 수 있습니다. 즉, 가까운 BLE(Bluetooth Low Energy) 장치를 [요청](#request)하여 여기에 [연결](#connect)하고, 블루투스 특성을 [읽고](#read) [쓰며](#write), [GATT 알림을 수신](#notifications)하고 [블루투스 장치의 연결이 끊긴 시점](#disconnect)을 인식하고, 심지어 [블루투스 설명자를 읽고 쓸](#descriptors) 수 있게 될 것입니다. 자세한 내용은 MDN의 [브라우저 호환성](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility) 표를 참조하세요.
+Web Bluetooth API의 하위 요소는 ChromeOS, Android 6.0용 Chrome, Mac(Chrome 56) 및 Windows 10(Chrome 70)에서 사용할 수 있습니다. 즉, 가까운 BLE(Bluetooth Low Energy) 장치를 [요청](#request)하여 여기에 [연결](#connect)하고, 블루투스 특성을 [읽고](#read) [쓰며](#write), [GATT 알림을 수신](#notifications)하고 [블루투스 장치의 연결이 끊긴 시점](#disconnect)을 인식하고, 심지어 [블루투스 설명자를 읽고 쓸](#descriptors) 수 있게 될 것입니다. 자세한 내용은 MDN의 [브라우저 호환성](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility) 표를 참조하세요.
 
 Linux 및 이전 버전의 Windows의 경우 `about://flags`에서 `#experimental-web-platform-features` 플래그를 활성화합니다.
 
 ### 원본 평가에 사용 가능
 
-현장에서 Web Bluetooth API를 사용하는 개발자로부터 최대한 많은 피드백을 얻기 위해 Chrome은 이전에 Chrome OS, Android 및 Mac에 대한 [원본 평가](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)로 Chrome 53에 이 기능을 추가했습니다.
+현장에서 Web Bluetooth API를 사용하는 개발자로부터 최대한 많은 피드백을 얻기 위해 Chrome은 이전에 ChromeOS, Android 및 Mac에 대한 [원본 평가](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)로 Chrome 53에 이 기능을 추가했습니다.
 
 이 평가는 2017년 1월에 성공적으로 종료되었습니다.
 
@@ -48,7 +48,7 @@ Linux 및 이전 버전의 Windows의 경우 `about://flags`에서 `#experimenta
 
 ### 사용자 제스처 필요
 
-보안 조치로서, `navigator.bluetooth.requestDevice`를 사용하여 블루투스 장치를 검색하려면 터치 또는 마우스 클릭과 같은 [사용자 제스처](https://html.spec.whatwg.org/multipage/interaction.html#activation)로 트리거해야 합니다. [`pointerup`](https://developers.google.com/web/updates/2016/10/pointer-events), `click` 및 `touchend` 이벤트 수신에 대해 이야기하고 있는 것입니다.
+보안 조치로서, `navigator.bluetooth.requestDevice`를 사용하여 블루투스 장치를 검색하려면 터치 또는 마우스 클릭과 같은 [사용자 제스처](https://html.spec.whatwg.org/multipage/interaction.html#activation)로 트리거해야 합니다. [`pointerup`](https://developer.chrome.com/blog/pointer-events/), `click` 및 `touchend` 이벤트 수신에 대해 이야기하고 있는 것입니다.
 
 ```js
 button.addEventListener('pointerup', function(event) {

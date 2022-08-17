@@ -11,21 +11,19 @@ tags:
 authors:
   - thomassteiner
 description: >
-  The Local Fonts API enumerates the user's installed local fonts and provides low-level access to
+  The Local Font Access API enumerates the user's installed local fonts and provides low-level access to
   the various TrueType/OpenType tables.
 date: 2020-08-24
-updated: 2021-07-30
+updated: 2022-07-01
 hero: image/admin/oeXwG1zSwnivzpvcUJly.jpg
 alt: Page of a font book.
 feedback:
   - api
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775
 ---
 
-{% Aside %} The Local Font Access API is part of the
-[capabilities project](https://developers.google.com/web/updates/capabilities) and is currently in
-development. This post will be updated as the implementation progresses. {% endAside %}
+{% Aside 'success' %} The Local Font Access API was part of the
+[capabilities project](https://developer.chrome.com/blog/capabilities/) and is now shipped.
+{% endAside %}
 
 ## Web safe fonts
 
@@ -52,11 +50,11 @@ body {
 ## Web fonts
 
 The days where web safe fonts really mattered are long gone. Today, we have
-[web fonts](https://developer.mozilla.org/docs/Learn/CSS/Styling_text/Web_fonts), some of
-which are even [variable fonts](/variable-fonts/) that we can tweak further by changing the values
-for the various exposed axes. You can use web fonts by declaring an
-[`@font-face`](https://developer.mozilla.org/docs/Web/CSS/@font-face) block at the start of
-the CSS, which specifies the font file(s) to download:
+[web fonts](https://developer.mozilla.org/docs/Learn/CSS/Styling_text/Web_fonts), some of which are
+even [variable fonts](/variable-fonts/) that we can tweak further by changing the values for the
+various exposed axes. You can use web fonts by declaring an
+[`@font-face`](https://developer.mozilla.org/docs/Web/CSS/@font-face) block at the start of the CSS,
+which specifies the font file(s) to download:
 
 ```css
 @font-face {
@@ -77,8 +75,8 @@ body {
 ## Local fonts as fingerprint vector
 
 Most web fonts come from, well, the web. An interesting fact, though, is that the
-[`src`](https://developer.mozilla.org/docs/Web/CSS/@font-face/src) property in the
-`@font-face` declaration, apart from the
+[`src`](https://developer.mozilla.org/docs/Web/CSS/@font-face/src) property in the `@font-face`
+declaration, apart from the
 [`url()`](<https://developer.mozilla.org/docs/Web/CSS/@font-face/src#Values:~:text=%3Curl%3E%20%5B%20format(%20%3Cstring%3E%23%20)%20%5D%3F,-Specifies>)
 function, also accepts a
 [`local()`](<https://developer.mozilla.org/docs/Web/CSS/@font-face/src#format():~:text=downloaded.-,%3Cfont%2Dface%2Dname%3E>)
@@ -158,106 +156,84 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 
 <div>
 
-| Step                                     | Status                                                                                          |
-| ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| 1. Create explainer                      | [Complete][explainer]                                                                           |
-| 2. Create initial draft of specification | [In progress][spec]                                                                             |
-| 3. **Gather feedback & iterate on design**   | [**In progress**](#feedback)                                                                        |
-| 4. Origin trial                     | Complete |
-| 5. Launch                                | Not started                                                                                     |
+| Step                                     | Status                                      |
+| ---------------------------------------- | ------------------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]                       |
+| 2. Create initial draft of specification | [In progress][spec]                         |
+| 3. Gather feedback & iterate on design   | [Complete](#feedback).                      |
+| 4. Origin trial                          | Complete                                    |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;103 on desktop) |
 
 </div>
 
 ### How to use the Local Font Access API
-
-#### Enabling via about://flags
-
-To experiment with the Local Font Access API locally, enable the `#font-access` flag in
-`about://flags`.
 
 #### Feature detection
 
 To check if the Local Font Access API is supported, use:
 
 ```js
-if ('fonts' in navigator) {
+if ('queryLocalFonts' in window) {
   // The Local Font Access API is supported
 }
 ```
 
-#### Asking for permission
-
-Access to a user's local fonts is gated behind the `"local-fonts"` permission, which you can request
-with
-[`navigator.permissions.request()`](https://w3c.github.io/permissions/#requesting-more-permission).
-
-```js
-// Ask for permission to use the API
-try {
-  const status = await navigator.permissions.request({
-    name: 'local-fonts',
-  });
-  if (status.state !== 'granted') {
-    throw new Error('Permission to access local fonts not granted.');
-  }
-} catch (err) {
-  // A `TypeError` indicates the 'local-fonts'
-  // permission is not yet implemented, so
-  // only `throw` if this is _not_ the problem.
-  if (err.name !== 'TypeError') {
-    throw err;
-  }
-}
-```
+{% Aside %} The Local Font Access API is currently only available on desktop versions of Chromium,
+but not on mobile operating systems like Android or iOS. {% endAside %}
 
 #### Enumerating local fonts
 
-Once the permission has been granted, you can then, from the `FontManager` interface that is exposed
-on `navigator.fonts`, call `query()` to ask the browser for the locally installed fonts, which it
-will display in a picker for the user to select all or a subset from to be shared with the page.
-This results in an array that you can loop over. Each font is represented as a `FontMetadata` object
-with the properties `family` (for example, `"Comic Sans MS"`), `fullName` (for example,
-`"Comic Sans MS"`), and `postscriptName` (for example, `"ComicSansMS"`).
+To obtain a list of the locally installed fonts, you need to call `window.queryLocalFonts()`. The
+first time, this will trigger a permission prompt, which the user can approve or deny. If the user
+approves their local fonts to be queried, the browser will return an array with fonts data
+that you can loop over. Each font is represented as a `FontData` object with the properties `family`
+(for example, `"Comic Sans MS"`), `fullName` (for example, `"Comic Sans MS"`), `postscriptName` (for
+example, `"ComicSansMS"`), and `style` (for example, `"Regular"`).
 
 ```js
 // Query for all available fonts and log metadata.
 try {
-  const pickedFonts = await navigator.fonts.query();
-  for (const metadata of pickedFonts) {
-    console.log(metadata.postscriptName);
-    console.log(metadata.fullName);
-    console.log(metadata.family);
+  const availableFonts = await window.queryLocalFonts();
+  for (const fontData of availableFonts) {
+    console.log(fontData.postscriptName);
+    console.log(fontData.fullName);
+    console.log(fontData.family);
+    console.log(fontData.style);
   }
 } catch (err) {
   console.error(err.name, err.message);
 }
 ```
 
+If you are only interested in a subset of fonts, you can also filter them based on the PostScript
+names by adding a `postscriptNames` parameter.
+
+```js
+const availableFonts = await window.queryLocalFonts({
+  postscriptNames: ['Verdana', 'Verdana-Bold', 'Verdana-Italic'],
+});
+```
+
 #### Accessing SFNT data
 
 Full [SFNT](https://en.wikipedia.org/wiki/SFNT) access is available via the `blob()` method of the
-`FontMetadata` object. SFNT is a font file format which can contain other fonts, such as PostScript,
+`FontData` object. SFNT is a font file format which can contain other fonts, such as PostScript,
 TrueType, OpenType, Web Open Font Format (WOFF) fonts and others.
 
 ```js
 try {
-  const pickedFonts = await navigator.fonts.query();
-  for (const metadata of pickedFonts) {
-    // We're only interested in a particular font.
-    if (metadata.family !== 'Comic Sans MS') {
-      continue;
-    }
+  const availableFonts = await window.queryLocalFonts({
+    postscriptNames: ['ComicSansMS'],
+  });
+  for (const fontData of availableFonts) {
     // `blob()` returns a Blob containing valid and complete
     // SFNT-wrapped font data.
-    const sfnt = await metadata.blob();
-
-    const sfntVersion = new TextDecoder().decode(
-      // Slice out only the bytes we need: the first 4 bytes are the SFNT
-      // version info.
-      // Spec: https://docs.microsoft.com/en-us/typography/opentype/spec/otff#organization-of-an-opentype-font
-      await sfnt.slice(0, 4).arrayBuffer(),
-    );
-
+    const sfnt = await fontData.blob();
+    // Slice out only the bytes we need: the first 4 bytes are the SFNT
+    // version info.
+    // Spec: https://docs.microsoft.com/en-us/typography/opentype/spec/otff#organization-of-an-opentype-font
+    const sfntVersion = await sfnt.slice(0, 4).text();
+    
     let outlineFormat = 'UNKNOWN';
     switch (sfntVersion) {
       case '\x00\x01\x00\x00':
@@ -366,7 +342,6 @@ us know where and how you're using it.
 - [GitHub repo][issues]
 - [TAG review][tag-review]
 - [Mozilla standards position][mozilla]
-- [Origin Trial](https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775)
 
 ## Acknowledgements
 

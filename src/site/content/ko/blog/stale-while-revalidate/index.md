@@ -74,8 +74,8 @@ Cache-Control: max-age=1, stale-while-revalidate=59
 ### 다음과 같은 경우 서비스 워커 접근 방식을 사용하세요…
 
 - 웹 앱에서 이미 서비스 워커를 사용하고 있습니다.
-- 캐시 콘텐츠에 대한 세밀한 제어가 필요하고 가장 최근에 사용한 만료 정책과 같은 것을 구현하려고 합니다. Workbox의 [Cache Expiration](https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration) 모듈이 도움이 될 수 있습니다.
-- 재검증 단계 동안 백그라운드에서 오래된 응답이 변경될 때 알림을 받고 싶습니다. Workbox의 [브로드캐스트 캐시 업데이트](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update) 모듈이 이에 도움이 될 수 있습니다.
+- 캐시 콘텐츠에 대한 세밀한 제어가 필요하고 가장 최근에 사용한 만료 정책과 같은 것을 구현하려고 합니다. Workbox의 [Cache Expiration](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/) 모듈이 도움이 될 수 있습니다.
+- 재검증 단계 동안 백그라운드에서 오래된 응답이 변경될 때 알림을 받고 싶습니다. Workbox의 [브로드캐스트 캐시 업데이트](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/) 모듈이 이에 도움이 될 수 있습니다.
 - 모든 최신 브라우저에서 `stale-while-revalidate` 동작이 필요합니다.
 
 ### 다음과 같은 경우 캐시 제어 접근 방식을 사용하세요…

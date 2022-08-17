@@ -12,7 +12,7 @@ updated: 2020-04-29
 
 ## Lighthouse 图像纵横比审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出其渲染尺寸与以自然比例渲染时的预期尺寸相差超过几个像素的图像：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记出其渲染尺寸与以自然比例渲染时的预期尺寸相差超过几个像素的图像：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Lighthouse 审计显示展示的图像纵横比不正确", width="800", height="198" %}</figure>
 
@@ -31,7 +31,7 @@ updated: 2020-04-29
 
 ### 检查影响图像纵横比的 CSS
 
-如果您找不到导致纵横比不正确的 CSS，Chrome DevTools 可以为您显示影响给定图像的 CSS 声明。有关详细信息，请参阅 Google 的[《仅查看实际应用于元素的 CSS》](https://developers.google.com/web/tools/chrome-devtools/css/reference#computed)页面。
+如果您找不到导致纵横比不正确的 CSS，Chrome DevTools 可以为您显示影响给定图像的 CSS 声明。有关详细信息，请参阅 Google 的[《仅查看实际应用于元素的 CSS》](https://developer.chrome.com/docs/devtools/css/reference/#computed)页面。
 
 ### 检查图像在 HTML 中的`width`和`height`属性
 
@@ -43,7 +43,7 @@ updated: 2020-04-29
 
 ## 资源
 
-- [**显示纵横比不正确的图像**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
+- [**显示纵横比不正确的图像**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/image-aspect-ratio.js)
 - [CSS Aspect Ratio](https://www.npmjs.com/package/css-aspect-ratio)
 - [纵横比框](https://css-tricks.com/aspect-ratio-boxes/)
 - [以正确尺寸提供图像](/serve-images-with-correct-dimensions)

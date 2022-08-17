@@ -5,7 +5,7 @@ authors:
   - jlwagner
   - rachelandrew
 date: 2019-08-16
-updated: 2020-06-09
+updated: 2022-08-11
 description: |2-
 
   Esta publicación explica la carga diferida y las opciones disponibles para cargar las imágenes de forma diferida.
@@ -24,7 +24,6 @@ Los candidatos de carga diferida más comunes son las imágenes que se usan en l
 
 - [Usar la carga diferida a nivel del navegador](#images-inline-browser-level)
 - [Usar Intersection Observer](#images-inline-intersection-observer)
-- [Usar controladores de eventos de desplazamiento y cambio de tamaño](#images-inline-event-handlers)
 
 ### Usar la carga diferida a nivel del navegador {: #images-inline-browser-level }
 
@@ -42,9 +41,7 @@ Para obtener más información, consulta [Carga diferida a nivel del navegador p
 
 Para hacer un polyfill de carga diferida de los elementos de `<img>`, usamos JavaScript para verificar si están en la ventana gráfica. Si es así, los atributos de `src` (y algunas veces los atributos de `srcset`) se completan con los URL para el contenido de imagen deseado.
 
-Si has escrito código de carga diferida antes, es posible que hayas logrado tu tarea mediante el uso de controladores de eventos como `scroll` o `resize`. Si bien este enfoque es el más compatible en todos los navegadores, los navegadores modernos ofrecen una forma más eficaz y eficiente de realizar el trabajo de verificar la visibilidad de los elementos a través de [la API de Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver).
-
-{% Aside %} Intersection Observer no es compatible con todos los navegadores, especialmente con IE11 y versiones anteriores. Si la compatibilidad entre navegadores es crucial, asegúrate de leer [la siguiente sección](#images-inline-event-handlersy), que muestra cómo cargar imágenes de forma diferida utilizando controladores de eventos de menor rendimiento (¡pero más compatibles!) de desplazamiento (scroll) y de reajuste (resize) de tamaño. {% endAside %}
+Si has escrito código de carga diferida antes, es posible que hayas logrado tu tarea mediante el uso de controladores de eventos como `scroll` o `resize`. Si bien este enfoque es el más compatible en todos los navegadores, los navegadores modernos ofrecen una forma más eficaz y eficiente de realizar el trabajo de verificar la visibilidad de los elementos a través de [la API de Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/).
 
 Intersection Observer es más fácil de usar y leer que el código que se basa en varios controladores de eventos, porque solo necesita registrar un observador para mirar los elementos en lugar de escribir un tedioso código de detección de visibilidad de elementos. Todo lo que queda por hacer es decidir qué hacer cuando un elemento esté visible. Supongamos el siguiente patrón de marcado básico para tus elementos `<img>`:
 
@@ -90,19 +87,7 @@ En el evento de `DOMContentLoaded` del documento, este script consulta al DOM to
 
 {% Glitch { id: 'lazy-intersection-observer', path: 'index.html', previewSize: 0 } %}
 
-Intersection Observer está disponible en todos los navegadores modernos. Por lo tanto, usarlo como polyfill para `loading="lazy"` garantizará que la carga diferida esté disponible para la mayoría de los visitantes. No se encuentra disponible para Internet Explorer. Si la compatibilidad con Internet Explorer es necesaria, sigue leyendo.
-
-### Usar controladores de eventos para la compatibilidad con Internet Explorer {: #images-inline-event-handlers }
-
-Si bien *deberías* de usar Intersection Observer para la carga diferida, los requisitos de tu aplicación pueden ser tales que la compatibilidad del navegador sea fundamental. [Puedes *usar* Intersección Observer con polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) (y esto sería más fácil), pero también pudieras hacer un fallback al código utilizando controladores de eventos de [`scroll`](https://developer.mozilla.org/docs/Web/Events/scroll), [`resize`](https://developer.mozilla.org/docs/Web/Events/resize), y posiblemente [`orientationchange`](https://developer.mozilla.org/docs/Web/Events/orientationchange) junto con  [`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect) para determinar si un elemento se encuentra en la ventana gráfica.
-
-Suponiendo el mismo patrón de marcado de antes, este ejemplo de Glitch usa `getBoundingClientRect` en un `scroll` para verificar si alguno de los `img.lazy` están en la ventana gráfica. Una llamada de `setTimeout` se usa para retrasar el procesamiento y una variable de `active` contiene el estado de procesamiento que se usa para limitar las llamadas a funciones. A medida que las imágenes se cargan de forma diferida, se eliminan de la matriz de elementos. Cuando la matriz de elementos alcanza un `length` de `0`, se elimina el código del controlador de eventos de desplazamiento.
-
-{% Glitch { id: 'lazy-loading-fallback', path: 'lazy.js', previewSize: 0 } %}
-
-Si bien este código funciona en prácticamente cualquier navegador, este tiene problemas en su potencial de rendimiento, ya que las llamadas repetidas de `setTimeout` pueden ser un desperdicio, incluso si el código dentro de ellas está limitado. En este ejemplo, se ejecuta una verificación cada 200 milisegundos en el desplazamiento del documento o en el cambio de tamaño de la ventana, independientemente de si hay una imagen en la ventana gráfica o no. Además, el tedioso trabajo de rastrear cuántos elementos quedan para cargar y desvincular el controlador de eventos de desplazamiento queda en manos del desarrollador. Puedes obtener más información sobre esta técnica en [La guía completa para la carga diferida de imágenes](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events).
-
-En pocas palabras: usa la carga diferida a nivel del navegador con una implementación de respaldo de Intersection Observer siempre que sea posible y solo usa controladores de eventos si la compatibilidad más amplia posible es un requisito indispensable de la aplicación.
+Intersection Observer está disponible en todos los navegadores modernos. Por lo tanto, usarlo como polyfill para `loading="lazy"` garantizará que la carga diferida esté disponible para la mayoría de los visitantes.
 
 ## Imágenes en CSS {: #images-css }
 
@@ -157,8 +142,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 {% Glitch { id: 'lazy-background', path: 'index.html', previewSize: 0 } %}
 
-Como se indicó anteriormente, si necesitas compatibilidad con Internet Explorer para la carga diferida de imágenes de fondo, deberás usar un polyfill con el código de Intersection Observer debido a la falta de compatibilidad en ese navegador.
-
 ## Bibliotecas de carga diferida {: #libraries }
 
 Las siguientes bibliotecas se pueden utilizar para cargar imágenes de forma diferida.
@@ -166,5 +149,4 @@ Las siguientes bibliotecas se pueden utilizar para cargar imágenes de forma dif
 - [lazysizes](https://github.com/aFarkas/lazysizes) es una biblioteca de carga diferida que contiene todas las funciones usadas para cargar imágenes e iframes de forma diferida. El patrón que usa es bastante similar a los ejemplos de código que se muestran aquí, ya que se vincula automáticamente a una clase de `lazyload` a `<img>` y requiere que especifiques las URL de la imagen en `data-src` y/o `data-srcset`, el contenido de que se intercambian en los `src` y/o `srcset` respectivamente. Utiliza Intersection Observer (que puede usarse mediante un polyfill) y se puede ampliar con [varios complementos](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo) para hacer cosas como cargas diferidas de videos. [Obtén más información sobre el uso de lazysizes](/use-lazysizes-to-lazyload-images/).
 - [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) es una opción ligera para imágenes de carga diferida, imágenes de fondo, videos, iframes y scripts. Este utiliza Intersection Observer, admite imágenes receptivas y permite la carga diferida a nivel del navegador.
 - [lozad.js](https://github.com/ApoorvSaxena/lozad.js) es otra opción ligera que solo usa Intersection Observer. Como tal, tiene un alto rendimiento, pero se tiene que hacer un polyfill antes de poder usarlo en navegadores más antiguos.
-- [yall.js](https://github.com/malchata/yall.js) es una biblioteca que usa Intersection Observer y recurre a los controladores de eventos. Es compatible con IE11 y los principales navegadores.
 - Si necesitas una biblioteca de carga diferida específica para React, considera [react-lazyload](https://github.com/jasonslyvia/react-lazyload). A pesar de que no utiliza Intersección Observer, *este* proporciona un método conocido de imágenes carga diferida para aquellos que están acostumbrados a desarrollar aplicaciones con React.

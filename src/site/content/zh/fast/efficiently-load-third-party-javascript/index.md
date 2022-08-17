@@ -113,7 +113,7 @@ tags:
 
 另一种方法是仅当用户向下滚动到页面的相应部分时才加载第三方内容。
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) 是一种浏览器 API，可高效检测元素何时进入或退出浏览器视口，并可用于实现此技术。[lazysizes](/use-lazysizes-to-lazyload-images/) 是一个流行的 JavaScript 库，用于延迟加载图像和 [`iframes`](http://afarkas.github.io/lazysizes/#examples) 。它支持 YouTube 嵌入和[小部件](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)。它还具有针对 IntersectionObserver 的[可选支持。](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)
+[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/) 是一种浏览器 API，可高效检测元素何时进入或退出浏览器视口，并可用于实现此技术。[lazysizes](/use-lazysizes-to-lazyload-images/) 是一个流行的 JavaScript 库，用于延迟加载图像和 [`iframes`](http://afarkas.github.io/lazysizes/#examples) 。它支持 YouTube 嵌入和[小部件](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)。它还具有针对 IntersectionObserver 的[可选支持。](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)
 
 {% Aside 'caution' %} 使用 JavaScript 延迟加载资源时要小心。如果 JavaScript 无法加载，可能是由于不稳定的网络条件，您的资源将根本无法加载。 {% endAside %}
 
@@ -135,7 +135,7 @@ tags:
 
 - 减少 DNS 查找和往返时间。
 - 改进 [HTTP 缓存](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)头。
-- 利用 [HTTP/2 服务器推送](https://developers.google.com/web/fundamentals/performance/http2/)。
+- 利用 [HTTP/2 服务器推送](/performance-http2/)。
 
 例如，Casper 通过自托管 A/B 测试脚本设法将负载时间[缩短了 1.7 秒。](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec)
 
@@ -147,4 +147,4 @@ tags:
 
 ### 使用服务工作程序缓存来自第三方服务器的脚本
 
-自托管的另一种替代方案是[使用服务工作程序缓存来自第三方服务器的脚本](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)，这可以让您更好地控制缓存，同时仍能获得第三方 CDN 的好处。这使您可以控制从网络重新获取脚本的频率，并可以创建一种加载策略，以限制对非必要第三方资源的请求，直到页面到达关键用户时刻。在这种情况下使用 `preconnect` 建立早期连接也可以在一定程度上降低网络成本。
+自托管的另一种替代方案是[使用服务工作程序缓存来自第三方服务器的脚本](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations)，这可以让您更好地控制缓存，同时仍能获得第三方 CDN 的好处。这使您可以控制从网络重新获取脚本的频率，并可以创建一种加载策略，以限制对非必要第三方资源的请求，直到页面到达关键用户时刻。在这种情况下使用 `preconnect` 建立早期连接也可以在一定程度上降低网络成本。

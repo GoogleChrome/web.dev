@@ -89,7 +89,7 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 - 在动画之类对计算速度要求极高的场景下，关键在于即使可行，您也不能执行任何其他操作，让不能执行的操作保持绝对最少。只要可能，您就要利用这 100 毫秒的响应时间预先计算最消耗资源的工作，从而最大限度地提高达到 60 fps 的几率。
 
-- 有关各种动画优化策略，请参阅[渲染性能](https://developers.google.com/web/fundamentals/performance/rendering)。
+- 有关各种动画优化策略，请参阅[渲染性能](/rendering-performance/)。
 
 {% Aside %} 识别所有类型的动画。动画不是花哨的 UI 效果。下面这些交互都是动画：
 
@@ -149,35 +149,35 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 ### Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) 对加载或运行页面时发生的一切活动进行深入分析。请参阅[分析运行时性能入门](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)，熟悉**性能**面板 UI。
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/) 对加载或运行页面时发生的一切活动进行深入分析。请参阅[分析运行时性能入门](https://developer.chrome.com/docs/devtools/evaluate-performance/)，熟悉**性能**面板 UI。
 
 以下 DevTools 功能密切相关：
 
-- [限制 CPU 性能](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#cpu-throttle)来模拟功能较弱的设备。
+- [限制 CPU 性能](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#cpu-throttle)来模拟功能较弱的设备。
 
-- [限制网络速度](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network-throttle)来模拟速度较慢的连接。
+- [限制网络速度](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network-throttle)来模拟速度较慢的连接。
 
-- [查看主线程活动](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main)，以查看记录时主线程上发生的每个事件。
+- [查看主线程活动](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#main)，以查看记录时主线程上发生的每个事件。
 
-- [查看表中的主线程活动](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#activities)，以根据活动占用的时间多少来对活动进行排序。
+- [查看表中的主线程活动](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#activities)，以根据活动占用的时间多少来对活动进行排序。
 
-- [分析每秒帧数 (FPS)](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#fps) 以衡量您的动画能否真正流畅地运行。
+- [分析每秒帧数 (FPS)](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#fps) 以衡量您的动画能否真正流畅地运行。
 
 - **使用性能监视器 (Performance Monitor)** 实时[监控 CPU 使用率、JS 堆大小、DOM 节点数、每秒布局数等](https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor)。
 
-- 使用**网络**部分[可视化](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network)记录时发生的网络请求。
+- 使用**网络**部分[可视化](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network)记录时发生的网络请求。
 
-- [在记录时捕获屏幕截图](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#screenshots)，以便准确回放加载页面时页面的外观，或触发的动画等。
+- [在记录时捕获屏幕截图](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#screenshots)，以便准确回放加载页面时页面的外观，或触发的动画等。
 
-- [查看交互](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#interactions)，以便快速识别用户与其交互后，页面上发生的情况。
+- [查看交互](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#interactions)，以便快速识别用户与其交互后，页面上发生的情况。
 
-- 通过在潜在问题侦听器触发时突出显示页面来[实时查找滚动性能问题](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#scrolling-performance-issues)。
+- 通过在潜在问题侦听器触发时突出显示页面来[实时查找滚动性能问题](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#scrolling-performance-issues)。
 
-- [实时查看绘制事件](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-flashing)，以便识别可能损害动画性能的高资源消耗绘制事件。
+- [实时查看绘制事件](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-flashing)，以便识别可能损害动画性能的高资源消耗绘制事件。
 
 ### Lighthouse
 
-[web.dev/measure](/measure/) 下的 Chrome DevTools 中以 Chrome 扩展和 Node.js 模块的形式提供了 [Lighthouse](https://developers.google.com/web/tools/lighthouse)，WebPageTest 中也提供了此工具。只要您提供一个 URL，它就会模拟使用速度较慢的 3G 连接的中端设备在页面上运行一系列审核，然后提供关于加载性能的报告以及如何改进的建议。
+[web.dev/measure](/measure/) 下的 Chrome DevTools 中以 Chrome 扩展和 Node.js 模块的形式提供了 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)，WebPageTest 中也提供了此工具。只要您提供一个 URL，它就会模拟使用速度较慢的 3G 连接的中端设备在页面上运行一系列审核，然后提供关于加载性能的报告以及如何改进的建议。
 
 以下审核密切相关：
 

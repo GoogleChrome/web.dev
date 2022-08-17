@@ -58,9 +58,9 @@ PWAは、高速でインストール可能、信頼性が高く、魅力的な�
 
 [Deloitte Digitalの最近の調査](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html)によると、ページ速度はビジネスメトリクスに大きな影響を及ぼします。
 
-さまざまな方法で、サイトの速度を最適化して、すべてのユーザーの重要なユーザージャーニーを最適化することができます。どこから始めればよいかわからない場合は、[Fast](/fast/)セクションを参照して、[Lighthouse](https://developers.google.com/web/tools/lighthouse)を使用し、最も重要な項目の修正を優先してください。
+さまざまな方法で、サイトの速度を最適化して、すべてのユーザーの重要なユーザージャーニーを最適化することができます。どこから始めればよいかわからない場合は、[Fast](/fast/)セクションを参照して、[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)を使用し、最も重要な項目の修正を優先してください。
 
-速度の最適化に取り組むときは、適切なツールとメトリックを使用してサイトの速度を頻繁に測定し、進捗状況を監視します。たとえば、[Lighthouse](https://developers.google.com/web/tools/lighthouse)を使用してメトリックを測定し、[「良好な」Core Web Vitals](/vitals/#core-web-vitals)といった明確な目標を修正し、[ビルドプロセスにパフォーマンスバジェット](/incorporate-performance-budgets-into-your-build-tools/)を組み込みます。毎日の測定と[「速度の価値」の方法論](/value-of-speed/)のおかげで、速度の増分的な変化の影響を分離し、作業によって生み出された収益の増加分を計算できます。
+速度の最適化に取り組むときは、適切なツールとメトリックを使用してサイトの速度を頻繁に測定し、進捗状況を監視します。たとえば、[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)を使用してメトリックを測定し、[「良好な」Core Web Vitals](/vitals/#core-web-vitals)といった明確な目標を修正し、[ビルドプロセスにパフォーマンスバジェット](/incorporate-performance-budgets-into-your-build-tools/)を組み込みます。毎日の測定と[「速度の価値」の方法論](/value-of-speed/)のおかげで、速度の増分的な変化の影響を分離し、作業によって生み出された収益の増加分を計算できます。
 
 {% Img src="image/admin/yyRfQaDL3NcGhB0f79RN.jpg", alt="速度の値を測定し、それをコンバージョンと相関させます", width="800", height="306" %}
 

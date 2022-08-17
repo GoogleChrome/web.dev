@@ -118,7 +118,7 @@ shortcut <kbd>Control</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (or
 ## Simulator and real device testing and debugging
 
 The simulator is comparable with what you might know from Chrome DevTools'
-[device mode](https://developers.google.com/web/tools/chrome-devtools/device-mode). You can simulate
+[device mode](https://developer.chrome.com/docs/devtools/device-mode/). You can simulate
 different Android and iOS devices, change the scale and device orientation, but also simulate
 various network states, memory pressure, a barcode reading event, unexpected termination, and dark
 mode.
@@ -167,7 +167,7 @@ DevTools window running on the computer for remote debugging.
 The mini app debugging experience is very familiar to anyone who has ever worked with Chrome
 DevTools. There are some important differences, though, that make the workflow tailored to mini
 apps. Instead of the Chrome DevTools'
-[Elements panel](https://developers.google.com/web/tools/chrome-devtools#elements), mini app IDEs
+[Elements panel](https://developer.chrome.com/docs/devtools/#elements), mini app IDEs
 have a customized panel that is tailored to their particular dialect of HTML. For example, in the
 case of WeChat, the panel is called
 [Wxml](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxml/), which stands for

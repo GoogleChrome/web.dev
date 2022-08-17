@@ -17,7 +17,7 @@ tags:
 
 TTI 메트릭은 페이지가 로드되기 시작한 시점부터 주요 하위 리소스가 로드되고 사용자 입력에 신속하게 안정적으로 응답할 수 있는 시점까지의 시간을 측정합니다.
 
-[웹 페이지의 성능 추적](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)을 기반으로 TTI를 계산하려면 다음 단계를 따르세요.
+[웹 페이지의 성능 추적](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/)을 기반으로 TTI를 계산하려면 다음 단계를 따르세요.
 
 1. [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/)에서 시작합니다.
 2. 이 시점 이후부터 최소 5초 정도의 조용한 기간을 검색합니다. 여기서 *조용한 기간*이란 [긴 작업](/custom-metrics/#long-tasks-api)이 없고 전송 중 네트워크 GET 요청이 2개 미만인 기간을 뜻합니다.
@@ -45,7 +45,7 @@ TTI는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 가장 �
 
 ### 실험실 도구
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %} TTI는 현장에서 측정하는 것도 가능하지만, 사용자 상호 작용이 보고서에서 많은 편차를 일으키는 방식으로 페이지의 TTI에 영향을 줄 수 있으므로 권장하지 않습니다. 현장에서 페이지의 상호 작용을 이해하려면 [First Input Delay(최초 입력 지연, FID)](/fid/)를 측정해야 합니다. {% endAside %}

@@ -36,5 +36,5 @@ Wrap any orphaned `<li>` elements inside a `<ul>` or `<ol>` element.
 
 ## Resources
 
-- [Source code for **List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/listitem.js)
+- [Source code for **List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/listitem.js)
 - [`<li>` elements must be contained in a `<ul>` or `<ol>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/listitem)

@@ -25,7 +25,7 @@ feedback:
 
 리소스 저장에 대한 일반적인 권장 사항은 다음과 같습니다.
 
-- 앱 및 파일 기반 콘텐츠를 로드하는 데 필요한 네트워크 리소스의 경우, [**Cache Storage API**](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api)([서비스 작업자](https://developers.google.com/web/fundamentals/primers/service-workers)의 일부)를 사용합니다.
+- 앱 및 파일 기반 콘텐츠를 로드하는 데 필요한 네트워크 리소스의 경우, [**Cache Storage API**](/cache-api-quick-guide/)([서비스 작업자](https://developer.chrome.com/docs/workbox/service-worker-overview/)의 일부)를 사용합니다.
 - 다른 데이터의 경우, [**IndexedDB**](https://developer.mozilla.org/docs/Web/API/IndexedDB_API)([promise wrapper](https://www.npmjs.com/package/idb) 포함)를 사용합니다.
 
 IndexedDB 및 Cache Storage API는 모든 최신 브라우저에서 지원됩니다. 둘 모두 비동기식이며 메인 스레드를 차단하지 않습니다. 이러한 API는 `window` 개체, 웹 작업자 및 서비스 작업자에서 액세스할 수 있으므로 코드의 어디에서나 쉽게 사용할 수 있습니다.
@@ -131,7 +131,7 @@ try {
 
 웹 스토리지는 "Best Effort"와 "Persistent"의 두 가지 버킷으로 분류됩니다. Best Effort는 사용자의 개입 없이 브라우저에서 저장소를 지울 수 있음을 의미하지만 장기 또는 중요한 데이터에는 내구성이 떨어집니다. Persistent 스토리지는 스토리지가 부족할 때 자동으로 지워지지 않습니다. 사용자가 브라우저 설정을 통해 이 스토리지를 직접 지워야 합니다.
 
-기본적으로, 사이트의 데이터(IndexedDB, Cache API 등 포함)는 Best Effort의 범주에 속합니다. 즉, 사이트에서 [Persistent 스토리지를 요청](https://developers.google.com/web/updates/2016/06/persistent-storage)하지 않았다면 브라우저가 예를 들어 장치 스토리지가 부족할 때 자유 판단에 따라 사이트 데이터를 제거할 수 있습니다.
+기본적으로, 사이트의 데이터(IndexedDB, Cache API 등 포함)는 Best Effort의 범주에 속합니다. 즉, 사이트에서 [Persistent 스토리지를 요청](/persistent-storage/)하지 않았다면 브라우저가 예를 들어 장치 스토리지가 부족할 때 자유 판단에 따라 사이트 데이터를 제거할 수 있습니다.
 
 Best Effort의 제거 정책은 다음과 같습니다.
 
@@ -150,11 +150,11 @@ IndexedDB는 사용하기 전에 상당한 설정이 필요한 저수준 API로,
 
 ## 결론
 
-스토리지가 제한적인 시대는 지났고 사용자들은 더욱 더 많은 데이터를 저장하고 있습니다. 사이트는 실행에 필요한 모든 리소스와 데이터를 효과적으로 저장할 수 있습니다. [StorageManager API](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)를 사용하면 사용 가능한 스토리지 양과 사용한 양을 확인할 수 있습니다. 그리고 [Persistent 스토리지](https://developers.google.com/web/updates/2016/06/persistent-storage)를 사용하면 사용자가 제거하지 않는 한 데이터가 제거되지 않도록 보호할 수 있습니다.
+스토리지가 제한적인 시대는 지났고 사용자들은 더욱 더 많은 데이터를 저장하고 있습니다. 사이트는 실행에 필요한 모든 리소스와 데이터를 효과적으로 저장할 수 있습니다. [StorageManager API](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)를 사용하면 사용 가능한 스토리지 양과 사용한 양을 확인할 수 있습니다. 그리고 [Persistent 스토리지](/persistent-storage/)를 사용하면 사용자가 제거하지 않는 한 데이터가 제거되지 않도록 보호할 수 있습니다.
 
 ### 추가 리소스
 
-- [IndexedDB 모범 사례](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)
+- [IndexedDB 모범 사례](/indexeddb-best-practices/)
 - [Chrome 웹 스토리지 및 할당량 개념](https://docs.google.com/document/d/19QemRTdIxYaJ4gkHYf2WWBNPbpuZQDNMpUVf8dQxj4U/preview)
 
 ### 감사의 말

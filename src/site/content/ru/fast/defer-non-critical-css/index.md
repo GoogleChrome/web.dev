@@ -16,7 +16,7 @@ tags:
 
 CSS-файлы [блокируют отрисовку](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), поскольку эти ресурсы должны загружаться и обрабатываться до того, как браузер отобразит страницу. Поэтому объемные файлы стилей значительно замедляют отрисовку страницы.
 
-В этом руководстве рассказывается, как оптимизировать [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) (путь критичной отрисовки) и ускорить [First Contentful Paint (FCP)](/fcp/) (первая отрисовка контента), откладывая некритичные CSS.
+В этом руководстве рассказывается, как оптимизировать [Critical Rendering Path](/critical-rendering-path/) (путь критичной отрисовки) и ускорить [First Contentful Paint (FCP)](/fcp/) (первая отрисовка контента), откладывая некритичные CSS.
 
 ## Неоптимальная загрузка CSS
 
@@ -53,7 +53,7 @@ CSS-файлы [блокируют отрисовку](https://developers.google
 
 Чтобы оптимизировать страницу, надо знать, какие классы считаются критичными. Для этого используем [Coverage Tool](https://developer.chrome.com/docs/devtools/css/reference/#coverage) (инструмент «Покрытие»):
 
-1. В DevTools откройте [командное меню](https://developers.google.com/web/tools/chrome-devtools/command-menu), нажав `Control+Shift+P` или `Command+Shift+P` (Mac).
+1. В DevTools откройте [командное меню](https://developer.chrome.com/docs/devtools/command-menu/), нажав `Control+Shift+P` или `Command+Shift+P` (Mac).
 2. Введите «coverage» (область действия) и выберите **Show Coverage** (Показать область действия).
 3. Нажмите кнопку **перезагрузки** — страница будет обновлена и начнется сбор данных.
 

@@ -128,7 +128,7 @@ font.load().then(function() {
 
 フォントリソースは、通常、頻繁に更新されない静的リソースです。その結果、最大有効期限が長い場合に最適です。すべてのフォントリソースに対して、[条件付き ETag ヘッダー](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#validating-cached-responses-with-etags)または[最適なキャッシュコントロールポリシー](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control)を必ず指定しましょう。
 
-ウェブアプリケーションが[サービスワーカー](https://developers.google.com/web/fundamentals/primers/service-workers/)を使用する場合は、ほぼすべてのユースケースにおいて、[キャッシュファースト戦略](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network)を用いてフォントリソースを提供するのが適切です。
+ウェブアプリケーションが[サービスワーカー](https://developer.chrome.com/docs/workbox/service-worker-overview/)を使用する場合は、ほぼすべてのユースケースにおいて、[キャッシュファースト戦略](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network)を用いてフォントリソースを提供するのが適切です。
 
 フォントを保存するために、[`localStorage`](https://developer.mozilla.org/docs/Web/API/IndexedDB_API)  や [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) を使用するのは避けましょう。どちらも、パフォーマンスに問題があります。ブラウザの HTTP キャッシュは、ブラウザにフォントリソースを提供するのに最も適した、最も堅牢なメカニズムを提供します。
 
@@ -139,7 +139,7 @@ font.load().then(function() {
 
 ## Lighthouse を使用した WebFont の読み込み動作の自動テスト
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) を使用すると、ウェブフォントを最適化するためのベストプラクティスが実践されていることを確認するプロセスを自動化できます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) を使用すると、ウェブフォントを最適化するためのベストプラクティスが実践されていることを確認するプロセスを自動化できます。
 
 以下の監査を実施すれば、ウェブページでウェブフォントを最適化するためのベストプラクティスが長期に渡って実践されていることが保証されます。
 

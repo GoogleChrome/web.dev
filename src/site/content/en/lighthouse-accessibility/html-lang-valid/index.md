@@ -19,7 +19,7 @@ for the `<html>` element.
 
 ## How the Lighthouse invalid `<html>` `lang` value audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages whose `<html>` element doesn't have a valid value
 for its `lang` attribute:
 
@@ -39,5 +39,5 @@ This audit checks whether the _value_ for that attribute is valid.
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/html-lang-valid.js" rel="noopener">Source code for **`<html>` element does not have a valid value for its `[lang]` attribute** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/html-lang-valid.js" rel="noopener">Source code for **`<html>` element does not have a valid value for its `[lang]` attribute** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/html-lang-valid" rel="noopener">&#60;html&#62; element must have a valid value for the lang attribute (Deque University)</a>

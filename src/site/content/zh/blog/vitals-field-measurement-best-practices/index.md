@@ -71,7 +71,7 @@ getLCP(sendToAnalytics);
 
 一些性能指标可以在页面完成加载后进行计算，而其他指标（如 CLS）则会将页面的整个生命周期纳入考量范围，且只有在页面开始卸载后才会完成计算。
 
-然而，这可能会导致一些问题，因为`beforeunload`和`unload`事件都不可靠（特别是在移动设备上），因此我们[不建议](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#legacy-lifecycle-apis-to-avoid)您使用这些事件（因为这些事件会导致页面不符合[往返缓存](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#page-navigation-cache)的条件）。
+然而，这可能会导致一些问题，因为`beforeunload`和`unload`事件都不可靠（特别是在移动设备上），因此我们[不建议](https://developer.chrome.com/blog/page-lifecycle-api/#legacy-lifecycle-apis-to-avoid)您使用这些事件（因为这些事件会导致页面不符合[往返缓存](https://developer.chrome.com/blog/page-lifecycle-api/#what-is-the-back-forward-cache)的条件）。
 
 对于跟踪整个页面生命周期的指标，最好一旦在页面的可见性状态更改为`hidden`时，就在`visibilitychange`事件的过程中发送指标的当前值。这是因为一旦页面的可见性状态更改为`hidden`，就无法保证该页面上的任何脚本都能够再次运行。这一点在移动操作系统上尤其如此，在这些操作系统中，浏览器应用程序本身就可以在无需触发任何页面回调的情况下被关闭。
 

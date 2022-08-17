@@ -163,7 +163,7 @@ FLoCを使用すると、ユーザーのブラウザーは、他の何千もの�
 
 WebサイトはFLoCをオプトインまたはオプトアウトできるため、機密性の高いトピックに関するサイトは、サイトへのアクセスがFLoCの計算に含まれないようにすることができます。追加の保護として、FLoCサービスによる分析では、コホートが機密である理由を学習せずに、コホートがユーザーに関する機密情報を公開する可能性があるかどうかを評価します。コホートがデリケートなカテゴリのサイトにアクセスする通常よりも多くの人々を表す可能性がある場合、そのコホート全体が削除されます。ネガティブな財政状態とメンタルヘルスは、この分析の対象となるデリケートなカテゴリーの1つです。
 
-Webサイトは、そのページに[Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction)ヘッダー`interest-cohort=()`を設定することにより、[FLoC計算からページを除外できます](https://www.w3.org/TR/permissions-policy-1/#introduction)。除外されていないページの場合、ページで `document.interestCohort()`を使用していると、ページへのアクセスがブラウザのFLoC計算に含まれます。現在の[FLoCオリジントライアル](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561)中に、ページが[広告または広告関連リソースをロード](https://github.com/WICG/floc/issues/82)していることをChromeが検出した場合、ページも計算に含まれます。 （[Chromiumの広告タグ付け](https://github.com/WICG/floc/issues/82)は、Chromeの広告検出メカニズムがどのように機能するかを説明しています。）
+Webサイトは、そのページに[Permissions-Policy](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/)ヘッダー`interest-cohort=()`を設定することにより、[FLoC計算からページを除外できます](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/)。除外されていないページの場合、ページで `document.interestCohort()`を使用していると、ページへのアクセスがブラウザのFLoC計算に含まれます。現在の[FLoCオリジントライアル](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561)中に、ページが[広告または広告関連リソースをロード](https://github.com/WICG/floc/issues/82)していることをChromeが検出した場合、ページも計算に含まれます。 （[Chromiumの広告タグ付け](https://github.com/WICG/floc/issues/82)は、Chromeの広告検出メカニズムがどのように機能するかを説明しています。）
 
 イントラネットページなどのプライベートIPアドレスから提供されるページは、FLoC計算の一部にはなりません。
 

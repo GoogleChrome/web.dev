@@ -12,6 +12,7 @@ authors:
   - rachelandrew
 tags:
   - blog
+  - new-to-the-web
 ---
 
 ## Stable browser releases

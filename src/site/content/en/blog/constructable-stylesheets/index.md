@@ -14,7 +14,7 @@ tags:
 
 [Constructable Stylesheets](https://wicg.github.io/construct-stylesheets) are a
 way to create and distribute reusable styles when using [Shadow
-DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom).
+DOM](/shadowdom-v1/).
 
 {% Aside %}
 Constructable Stylesheets are available in Chromium

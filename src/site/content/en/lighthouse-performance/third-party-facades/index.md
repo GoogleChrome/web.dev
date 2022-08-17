@@ -90,4 +90,4 @@ If you would like your solution to be included in the list above, check out the 
 
 ## Resources
 
-Source code for [Lazy load third-party resources with facades audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-facades.js).
+Source code for [Lazy load third-party resources with facades audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js).

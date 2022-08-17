@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2022-02-10
+updated: 2022-07-26
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -22,7 +22,7 @@ stack_overflow_tag: webhid
 ---
 
 {% Aside 'success' %}
-The WebHID API, part of the [capabilities project](/fugu-status/), launched in
+The WebHID API, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/), launched in
 Chrome&nbsp;89.
 {% endAside %}
 
@@ -174,6 +174,20 @@ const devices = await navigator.hid.getDevices();
   {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of an HID device prompt on a website.", width="800", height="513" %}
   <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
+
+You can also use the optional `exclusionFilters` key in
+`navigator.hid.requestDevice()` to exclude some devices from the browser picker
+that are known to be malfunctioning for instance.
+
+```js
+// Request access to a device with vendor ID 0xABCD. The device must also have
+// a collection with usage page Consumer (0x000C) and usage ID Consumer
+// Control (0x0001). The device with product ID 0x1234 is malfunctioning.
+const [device] = await navigator.hid.requestDevice({
+  filters: [{ vendorId: 0xabcd, usagePage: 0x000c, usage: 0x0001 }],
+  exclusionFilters: [{ vendorId: 0xabcd, productId: 0x1234 }],
+});
+```
 
 A `HIDDevice` object contains USB vendor and product identifiers for device
 identification. Its `collections` attribute is initialized with a hierarchical
@@ -399,7 +413,7 @@ reconnect your device.
 
 ## Browser support {: #browser-support }
 
-The WebHID API is available on all desktop platforms (Chrome OS, Linux, macOS,
+The WebHID API is available on all desktop platforms (ChromeOS, Linux, macOS,
 and Windows) in Chrome 89.
 
 ## Demos {: #demos }
@@ -446,7 +460,7 @@ to an existing issue.
 Did you find a bug with Chrome's implementation? Or is the implementation
 different from the spec?
 
-File a bug at [https://new.crbug.com][new-bug]. Be sure to include as much
+Check out [How to file WebHID bugs][how-to-file]. Be sure to include as much
 detail as you can, provide simple instructions for reproducing the bug, and have
 *Components* set to `Blink>HID`. [Glitch](https://glitch.com) works great for
 sharing quick and easy repros.
@@ -496,7 +510,7 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/usb/usb_blocklist.cc
 [HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_blocklist.cc
 [issues]: https://github.com/wicg/webhid/issues
-[new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID
+[how-to-file]: https://www.chromium.org/developers/how-tos/file-web-hid-bugs/
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [ot]: https://developers.chrome.com/origintrials/#/register_trial/1074108511127863297
 [cr-bug]: https://crbug.com/890096

@@ -34,7 +34,7 @@ caching](/http-cache/).
 As detailed in the [Identify resources loaded from the
 network](/identify-resources-via-network-panel/) guide, a navigation request is the first of
 potentially many requests made in the
-["waterfall"](https://developers.google.com/web/tools/chrome-devtools/network/reference#waterfall)
+["waterfall"](https://developer.chrome.com/docs/devtools/network/reference/#waterfall)
 of network traffic. The HTML that you load via a navigation request kicks off the flow of all other
 requests for subresources like images, scripts, and styles.
 
@@ -94,7 +94,7 @@ make sure that it isn't blocked on the network.
 
 Fortunately, if you're using the single-page architecture, there's a straightforward pattern to
 follow for serving the initial navigation from the cache: the [application
-shell](https://developers.google.com/web/fundamentals/architecture/app-shell). In this model, your
+shell](/learn/pwa/architecture/). In this model, your
 service worker responds to navigation requests by returning the same, single HTML file that has
 already been precached—regardless of the URL being requested. This HTML should be bare-bones,
 consisting of, perhaps, a generic loading indicator or [skeleton
@@ -103,7 +103,7 @@ has loaded this HTML from the cache, your existing client-side JavaScript takes 
 the correct HTML content for the URL from the original navigation request.
 
 Workbox provides the tools that you need to implement this approach; the <code>[navigateFallback
-option](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)</code>
+option](https://developer.chrome.com/docs/workbox/reference/workbox-build/#method-generateSW)</code>
 allows you to specify which HTML document to use as your app shell, along with an optional allow and
 deny list to limit this behavior to a subset of your URLs.
 
@@ -122,7 +122,7 @@ particular, if your web server uses JavaScript (without relying on
 If your web server falls into that category and you would like to explore one approach to moving
 HTML generation off the network and into your service worker, the guidance in [Beyond SPAs:
 alternative architectures for your
-PWA](https://developers.google.com/web/updates/2018/05/beyond-spa) can get you started.
+PWA](https://developer.chrome.com/blog/beyond-spa/) can get you started.
 
 ### Everything else {: #everything-else }
 
@@ -132,13 +132,13 @@ down your navigations. Starting up the service worker without using it to respon
 request will introduce a small amount of latency (as explained in [Building Faster, More Resilient
 Apps with Service Worker](https://youtu.be/25aCD5XL1Jk)). You can mitigate this overhead by enabling
 a feature called [navigation
-preload](https://developers.google.com/web/updates/2017/02/navigation-preload), and then [using the
+preload](https://developer.chrome.com/blog/navigation-preload/), and then [using the
 network
-response](https://developers.google.com/web/updates/2017/02/navigation-preload#using_the_preloaded_response)
+response](https://developer.chrome.com/blog/navigation-preload/#using-the-preloaded-response)
 that's been preloaded inside of your `fetch` event handler.
 
 Workbox [provides a helper
-library](https://developers.google.com/web/tools/workbox/modules/workbox-navigation-preload) that
+library](https://developer.chrome.com/docs/workbox/modules/workbox-navigation-preload/) that
 feature-detects whether navigation preload is supported, and if so, simplifies the process of
 telling your service worker to use the network response.
 

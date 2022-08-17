@@ -15,7 +15,7 @@ is [deprecated](https://html.spec.whatwg.org/multipage/browsers.html#offline).
 
 ## How the Lighthouse Application Cache audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that use the Application Cache:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags pages that use the Application Cache:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zOiY51J8avDQU8IkL2XG.png", alt="Lighthouse audit showing that a page uses the Application Cache", width="800", height="74" %}
@@ -39,7 +39,7 @@ To pass this audit,
 remove the manifest from your page,
 and use the
 [Cache API](https://developer.mozilla.org/docs/Web/API/Cache)
-via a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/)
+via a [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 instead.
 
 To migrate from the Application Cache to service workers,

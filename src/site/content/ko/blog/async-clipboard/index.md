@@ -234,7 +234,7 @@ setTimeout(async () => {
 
 ## 권한 정책 통합
 
-iframe에서 API를 사용하려면 다양한 브라우저 기능과 API를 선택적으로 활성화 및 비활성화할 수 있는 메커니즘을 정의하는 [권한 정책](https://w3c.github.io/webappsec-permissions-policy/)으로 이를 활성화해야 합니다. 구체적으로, 앱의 필요에 따라 `clipboard-read` 또는 `clipboard-write` 중 하나 또는 둘 모두를 전달해야 합니다.
+iframe에서 API를 사용하려면 다양한 브라우저 기능과 API를 선택적으로 활성화 및 비활성화할 수 있는 메커니즘을 정의하는 [권한 정책](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/)으로 이를 활성화해야 합니다. 구체적으로, 앱의 필요에 따라 `clipboard-read` 또는 `clipboard-write` 중 하나 또는 둘 모두를 전달해야 합니다.
 
 ```html/2
 <iframe

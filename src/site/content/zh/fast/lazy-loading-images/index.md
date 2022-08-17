@@ -5,7 +5,7 @@ authors:
   - jlwagner
   - rachelandrew
 date: 2019-08-16
-updated: 2020-06-09
+updated: 2022-08-11
 description: 本文解释了延迟加载，以及在延迟加载图像时可用的选项。
 tags:
   - performance
@@ -22,7 +22,6 @@ feedback:
 
 - [使用浏览器级延迟加载](#images-inline-browser-level)
 - [使用 Intersection Observer（交叉观察器）](#images-inline-intersection-observer)
-- [使用滚动和调整大小事件处理程序](#images-inline-event-handlers)
 
 ### 使用浏览器级延迟加载 {: #images-inline-browser-level }
 
@@ -40,9 +39,7 @@ Chrome 和 Firefox 都支持通过 `loading` 属性实现延迟加载。此属�
 
 为填充 `<img>` 元素的延迟加载，我们使用 JavaScript 来检查它们是否位于视区。若位于视区，则会向它们的 `src` （有时是`srcset` ）属性填充那些指向所需图像内容的 URL。
 
-如果您之前写过延迟加载代码，那么可能已经通过使用诸如 `scroll` 或 `resize` 之类的事件处理程序来完成任务。虽然这种方法在各大浏览器之间的兼容性最好，但现代浏览器提供了一种性能更高、效率更高的方法，通过 [Intersection Observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver) 来完成检查元素可见性的工作。
-
-{% Aside %} 并非所有浏览器都支持 Intersection Observer，尤其是 IE11 及更低版本。如果跨浏览器的兼容性至关重要，请务必阅读[下一节](#images-inline-event-handlersy)，它将向您展示如何使用性能较低（但兼容性更好）的滚动和调整大小事件处理程序延迟加载图像。 {% endAside %}
+如果您之前写过延迟加载代码，那么可能已经通过使用诸如 `scroll` 或 `resize` 之类的事件处理程序来完成任务。虽然这种方法在各大浏览器之间的兼容性最好，但现代浏览器提供了一种性能更高、效率更高的方法，通过 [Intersection Observer API](https://developer.chrome.com/blog/intersectionobserver/) 来完成检查元素可见性的工作。
 
 相较于依赖各种事件处理程序的代码，Intersection Observer 更易于使用和阅读，因为您只需注册一个观察器即可观察元素，无需编写繁琐的元素可见性检测代码。剩下的工作就是决定当元素可见时要执行何种操作。我们来为延迟加载的 `<img>` 元素假设这个基本的标记模式：
 
@@ -88,19 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 {% Glitch { id: 'lazy-intersection-observer', path: 'index.html', previewSize: 0 } %}
 
-Intersection Observer 适用于所有现代浏览器。因此，将其用作 `loading="lazy"` 的 polyfill 将确保大多数访问者都可以使用延迟加载。但是它在 Internet Explorer 中不可用。如果对 Internet Explorer 的支持很重要，请继续阅读。
-
-### 使用 Internet Explorer 支持的事件处理程序 {: #images-inline-event-handlers }
-
-虽然您*应该*使用 Intersection Observer 进行延迟加载，但您的应用程序可能非常注重浏览器的兼容性。您[*可以*polyfill Intersection Observer 支持](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)（这是最简单的），但您也可以使用 [`scroll`](https://developer.mozilla.org/docs/Web/Events/scroll) 、[`resize`](https://developer.mozilla.org/docs/Web/Events/resize) 以及还有 [`orientationchange`](https://developer.mozilla.org/docs/Web/Events/orientationchange) 事件处理程序与 [`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect) 来回退代码，确定元素是否位于视区中。
-
-假设使用了与之前相同的标记模式，那么这个 Glitch 示例会在 `scroll` 事件处理程序中使用 `getBoundingClientRect`，来检查视区中是否存在任何 `img.lazy` 元素。并会调用 `setTimeout` 来进行延迟处理，以及一个包含用于限制函数调用的处理状态的 `active`变量。由于图像是延迟加载的，因此它们会从元素数组中删除。当元素数组的 `length` 为 `0` 时，将删除滚动事件处理程序代码。
-
-{% Glitch { id: 'lazy-loading-fallback', path: 'lazy.js', previewSize: 0 } %}
-
-虽然这段代码几乎适用于任何浏览器，但它存在潜在的性能问题，因为重复调用 `setTimeout` 可能会造成性能浪费，即使其中的代码受到了限制。在本例中，无论视区中是否有图像，都会每隔 200 毫秒对文档滚动或窗口大小调整运行一次检查。另外，跟踪有多少元素需要延迟加载以及取消绑定滚动事件处理程序的繁琐工作留给了开发人员。您可以在 [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events) 一文中查看关于此技术的更多信息。
-
-简而言之，请尽可能地使用浏览器级延迟加载加上回退 Intersection Observer 实现，并且仅需要兼容最多浏览器时才使用事件处理程序。
+Intersection Observer 适用于所有现代浏览器。因此，将其用作 `loading="lazy"` 的 polyfill 将确保大多数访问者都可以使用延迟加载。
 
 ## CSS 中的图像 {: #images-css }
 
@@ -155,8 +140,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 {% Glitch { id: 'lazy-background', path: 'index.html', previewSize: 0 } %}
 
-如前所述，如果您想让 Internet Explorer 支持延迟加载背景图像，那么需要填充 Intersection Observer 代码，因为该浏览器缺乏支持。
-
 ## 延迟加载库 {: #libraries }
 
 以下库可用于延迟加载图像。
@@ -164,5 +147,4 @@ document.addEventListener("DOMContentLoaded", function() {
 - [lazysizes](https://github.com/aFarkas/lazysizes) 是一个功能齐全的延迟加载库，可以延迟加载图像和 iframe。它使用的模式与本文中的代码示例非常相似，因为它会自动绑定到 `<img>` 元素上 `lazyload` 类，并要求您在 `data-src` 和/或 `data-srcset` 属性中指定图像的 URL，并将其内容分别交换至 `src` 和/或 `srcset`属性。它使用 Intersection Observer（可以对其进行 polyfill），并可以使用[许多插件](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo)进行扩展来执行诸如延迟加载视频之类的操作。[了解有关使用 lazysizes 的更多信息](/use-lazysizes-to-lazyload-images/)。
 - [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) 是用于延迟加载图像、背景图像、视频、iframe 和脚本的轻量级选项。它利用 Intersection Observer，支持响应式图像，并能开启浏览器级的延迟加载。
 - [lozad.js](https://github.com/ApoorvSaxena/lozad.js) 是另一个仅使用 Intersection Observer 的轻量级选项。因此它的性能很好，但需要先进行 polyfill 然后才能在较旧的浏览器上使用。
-- [yall.js](https://github.com/malchata/yall.js) 是一个使用 Intersection Observer 并回退到事件处理程序的库。它与 IE11 和主要浏览器都兼容。
 - 如果您需要使用 React 特定的延迟加载库，请考虑 [react-lazyload](https://github.com/jasonslyvia/react-lazyload) 。虽然它不使用 Intersection Observer，但*确实*为那些习惯于使用 React 开发应用程序的人提供了一种熟悉的延迟加载图像方法。

@@ -115,7 +115,7 @@ tags:
 
 다른 접근 방식은 사용자가 페이지의 해당 섹션으로 스크롤할 때만 타사 콘텐츠를 로드하는 것입니다.
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver)는 요소가 브라우저의 뷰포트에 들어오거나 나갈 때 효율적으로 감지하는 브라우저 API이며 이 기술을 구현하는 데 사용할 수 있습니다. [lazysizes](/use-lazysizes-to-lazyload-images/)는 [`iframes`](http://afarkas.github.io/lazysizes/#examples)을 지연 로드하는 인기 있는 JavaScript 라이브러리입니다. YouTube 임베드 및 [위젯](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)을 지원합니다. IntersectionObserver에 대한 [선택적 지원](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)도 있습니다.
+[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/)는 요소가 브라우저의 뷰포트에 들어오거나 나갈 때 효율적으로 감지하는 브라우저 API이며 이 기술을 구현하는 데 사용할 수 있습니다. [lazysizes](/use-lazysizes-to-lazyload-images/)는 [`iframes`](http://afarkas.github.io/lazysizes/#examples)을 지연 로드하는 인기 있는 JavaScript 라이브러리입니다. YouTube 임베드 및 [위젯](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)을 지원합니다. IntersectionObserver에 대한 [선택적 지원](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)도 있습니다.
 
 {% Aside 'caution' %} 자바스크립트로 리소스를 지연 로드할 때 주의하세요. 불안정한 네트워크 상태로 인해 JavaScript가 로드되지 않으면 리소스가 전혀 로드되지 않습니다. {% endAside %}
 
@@ -137,7 +137,7 @@ tags:
 
 - DNS 조회 및 왕복 시간을 줄입니다.
 - [HTTP 캐싱](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) 헤더를 개선합니다.
-- [HTTP/2 서버 푸시](https://developers.google.com/web/fundamentals/performance/http2/)를 활용합니다.
+- [HTTP/2 서버 푸시](/performance-http2/)를 활용합니다.
 
 예를 들어 Casper는 A/B 테스트 스크립트를 자체 호스팅하여 로드 시간을 [1.7초 단축](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec)했습니다.
 
@@ -149,4 +149,4 @@ tags:
 
 ### 서비스 워커를 사용하여 타사 서버의 스크립트 캐시
 
-타사 CDN 이점을 유지하면서 캐싱을 더 잘 제어할 수 있는 자체 호스팅의 대안은 [서비스 워커를 사용하여 타사 서버의 스크립트를 캐시하는 것](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)입니다. 이렇게 하면 네트워크에서 스크립트를 다시 가져오는 빈도를 제어할 수 있으며 페이지가 주요 사용자 순간에 도달할 때까지 중요하지 않은 타사 리소스에 대한 요청을 조절하는 로드 전략을 만들 수 있습니다. `preconnect`을 사용하여 초기 연결을 설정하면 네트워크 비용을 어느 정도 완화할 수도 있습니다.
+타사 CDN 이점을 유지하면서 캐싱을 더 잘 제어할 수 있는 자체 호스팅의 대안은 [서비스 워커를 사용하여 타사 서버의 스크립트를 캐시하는 것](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations)입니다. 이렇게 하면 네트워크에서 스크립트를 다시 가져오는 빈도를 제어할 수 있으며 페이지가 주요 사용자 순간에 도달할 때까지 중요하지 않은 타사 리소스에 대한 요청을 조절하는 로드 전략을 만들 수 있습니다. `preconnect`을 사용하여 초기 연결을 설정하면 네트워크 비용을 어느 정도 완화할 수도 있습니다.

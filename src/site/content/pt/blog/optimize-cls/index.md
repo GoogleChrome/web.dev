@@ -337,11 +337,11 @@ Para saber mais sobre quais propriedades CSS causam alterações no layout, veja
 
 Há uma série de ferramentas disponíveis para medir e depurar a Cumulative Layout Shift (CLS).
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) e superior inclui suporte a medição de CLS em ambiente de laboratório. Esta versão também destaca os nós que causam a maior parte dos deslocamentos no layout.
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) e superior inclui suporte a medição de CLS em ambiente de laboratório. Esta versão também destaca os nós que causam a maior parte dos deslocamentos no layout.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="O Lighthouse 6.0 inclui suporte à medição de CLS na seção de métricas", width="800", height="309" %}
 
-O painel [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) no DevTools destaca os deslocamentos de layout na seção **Experience** a partir do Chrome 84. A tela **Summary** para um registro de `Layout Shift` inclui a pontuação do deslocamento cumulativo layout cumulativa, bem como uma sobreposição de retângulo mostrando as regiões afetadas.
+O painel [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) no DevTools destaca os deslocamentos de layout na seção **Experience** a partir do Chrome 84. A tela **Summary** para um registro de `Layout Shift` inclui a pontuação do deslocamento cumulativo layout cumulativa, bem como uma sobreposição de retângulo mostrando as regiões afetadas.
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Registros de mudança de layout exibidos no painel de desempenho do Chrome DevTools ao expandir a seção Experiência", width="800", height="438" %} <figcaption> Depois de registrar um novo registro no painel Performance, a seção <b>Experience</b> dos resultados é preenchida com uma barra tingida de vermelho exibindo um registro de <code>Layout Shift</code> Clicar no registro permite detalhar os elementos impactados (por exemplo, observe as entradas de movimento de/para).</figcaption></figure>
 

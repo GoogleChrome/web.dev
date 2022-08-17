@@ -319,7 +319,7 @@ if (file?.type === 'application/json' || file?.name.endsWith('.excalidraw')) {
 
 ## Sharing files
 
-Another system integration currently on Android, Chrome OS, and Windows is through the
+Another system integration currently on Android, ChromeOS, and Windows is through the
 [Web Share Target API](/web-share-target/). Here I am in the Files app in my `Downloads` folder. I
 can see two files, one of them with the non-descript name `untitled` and a timestamp. To check what
 it contains, I click on the three dots, then share, and one of the options that appears is

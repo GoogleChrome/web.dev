@@ -48,4 +48,4 @@ tags:
 - [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
 - [UC Browser](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56)
 
-{% Aside %} На Android, если манифест веб-приложения включает `related_applications` и `"prefer_related_applications": true`, пользователь будет перенаправлен в магазин Google Play и вместо этого ему будет предложено [установить указанное приложение Android.](https://developers.google.com/web/fundamentals/app-install-banners/native) {% endAside %}
+{% Aside %} На Android, если манифест веб-приложения включает `related_applications` и `"prefer_related_applications": true`, пользователь будет перенаправлен в магазин Google Play и вместо этого ему будет предложено [установить указанное приложение Android.](https://developer.chrome.com/blog/app-install-banners-native/) {% endAside %}

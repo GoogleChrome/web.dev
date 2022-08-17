@@ -6,12 +6,14 @@ authors:
 hero: image/admin/k3hWnnwqTvg7w7URsbIK.png
 description: "\nData Studio é uma ferramenta poderosa de visualização de dados que permite construir \npainéis em cima de fontes de big data, como o Chrome UX Report. Nesse guia, aprenda a criar seu próprio painel CrUX personalizado para rastrear uma origem experiência de usuário."
 date: 2020-06-22
+updated: 2022-07-18
 tags:
   - performance
   - blog
+  - chrome-ux-report
 ---
 
-O [Data Studio](https://marketingplatform.google.com/about/data-studio/) é uma ferramenta poderosa de visualização de dados que permite criar painéis em cima de fontes de big data, como o [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX). Neste guia, aprenda a criar seu próprio CrUX Dashboard personalizado para rastrear as tendências de experiência do usuário de uma origem.
+O [Data Studio](https://marketingplatform.google.com/about/data-studio/) é uma ferramenta poderosa de visualização de dados que permite criar painéis em cima de fontes de big data, como o [Chrome UX Report](https://developer.chrome.com/docs/crux/) (CrUX). Neste guia, aprenda a criar seu próprio CrUX Dashboard personalizado para rastrear as tendências de experiência do usuário de uma origem.
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Painel CrUX", width="800", height="598" %}
 
@@ -28,7 +30,7 @@ O campo de entrada de texto aceita apenas origens, não URLs completos. Por exem
 {% Compare 'melhor', 'Origem (suportado)' %}
 
 ```text
-https://developers.google.com
+https://web.dev
 ```
 
 {% endCompare %}
@@ -36,7 +38,7 @@ https://developers.google.com
 {% Compare 'pior', 'URL (não suportado)'%}
 
 ```text
-https://developers.google.com/web/tools/chrome-user-experience-report/
+https://web.dev/chrome-ux-report-data-studio-dashboard/
 ```
 
 {% endCompare %}
@@ -79,7 +81,7 @@ Observe que o tablet é omitido desses gráficos por padrão, mas se necessário
 
 ### Desempenho métrico
 
-Após a página Core Web Vitals, você encontrará páginas independentes para todas as [métricas](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics) no conjunto de dados CrUX.
+Após a página Core Web Vitals, você encontrará páginas independentes para todas as [métricas](https://developer.chrome.com/docs/crux/methodology/#metrics) no conjunto de dados CrUX.
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Página LCP do Painel CrUX", width="800", height="598" %}
 
@@ -103,7 +105,7 @@ Os valores P75 correspondentes em ferramentas como o PageSpeed Insights não sã
 
 ### Dados demográficos do usuário
 
-Existem duas [dimensões](https://developers.google.com/web/tools/chrome-user-experience-report/#dimensions) incluídas nas páginas demográficas do usuário: dispositivos e tipos de conexão efetiva (ECTs). Essas páginas ilustram a distribuição de visualizações de página em toda a origem para usuários em cada grupo demográfico.
+Existem duas [dimensões](https://developer.chrome.com/docs/crux/methodology/#dimensions) incluídas nas páginas demográficas do usuário: dispositivos e tipos de conexão efetiva (ECTs). Essas páginas ilustram a distribuição de visualizações de página em toda a origem para usuários em cada grupo demográfico.
 
 A página de distribuição de dispositivos mostra a análise de usuários de telefones, desktops e tablets ao longo do tempo. Muitas origens tendem a ter poucos ou nenhum dado de tablet, então você verá "0%" pendurado na borda do gráfico.
 

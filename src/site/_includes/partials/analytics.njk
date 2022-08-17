@@ -15,6 +15,7 @@ try {
 } catch (error) {
   ga('set', '{{ site.analytics.dimensions.NAVIGATION_TYPE }}', '(not set)');
 }
+ga('set', '{{ site.analytics.dimensions.COLOR_SCHEME_PREFERENCE }}', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 ga('send', 'pageview');
 {% endset %}
 <script>{{ analyticsScript | minifyJs | cspHash | safe }}</script>

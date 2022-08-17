@@ -23,7 +23,7 @@ tags:
 
 Разбейте бандл JavaScript на фрагменты, чтобы при загрузке приложения пользователь получал только код, необходимый для начального маршрута. Это позволяет сократить объем обрабатываемого и компилируемого кода, благодаря чему загрузка страницы ускоряется.
 
-Популярные упаковщики модулей, такие как [webpack](https://webpack.js.org/guides/code-splitting/), [Parcel](https://parceljs.org/code_splitting.html) или [Rollup](https://rollupjs.org/guide/en#dynamic-import), позволяют разбивать бандлы на части, используя [динамический импорт](https://developers.google.com/web/updates/2017/11/dynamic-import). Например, давайте рассмотрим следующий фрагмент кода с примером метода `someFunction`, который вызывается при отправке формы.
+Популярные упаковщики модулей, такие как [webpack](https://webpack.js.org/guides/code-splitting/), [Parcel](https://parceljs.org/code_splitting.html) или [Rollup](https://rollupjs.org/guide/en#dynamic-import), позволяют разбивать бандлы на части, используя [динамический импорт](https://v8.dev/features/dynamic-import). Например, давайте рассмотрим следующий фрагмент кода с примером метода `someFunction`, который вызывается при отправке формы.
 
 ```js
 import moduleA from "library";

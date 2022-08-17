@@ -325,7 +325,7 @@ and collision-avoidance for components.
 <figure>
 {% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/FCHIEO4IouHOQaOJXrQD.png",
 alt="scoped styles diagram", width="759", height="636" %}
-<figcaption>Figure originally designed by <a href="https://css.oddbird.net/">Miriam Suzanne</a>.
+<figcaption>Figure originally designed by <a href="https://css.oddbird.net/">Miriam Suzanne</a>.</figcaption>
 </figure>
 
 Scoped styles allow for pass-through and component-specific styling to avoid
@@ -360,7 +360,7 @@ reality).
 <figure>
 {% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/OeskptFb2djUWWmX7K9y.svg",
 alt="Spanning diagram", width="800", height="488" %}
-<figcaption>Diagram from <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Foldables/explainer.md">Microsoft Edge Explainers</a>.
+<figcaption>Diagram from <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Foldables/explainer.md">Microsoft Edge Explainers</a>.</figcaption>
 </figure>
 
 Foldable or flexible screens, and designing for screen spanning is one example

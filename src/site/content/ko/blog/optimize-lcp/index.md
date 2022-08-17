@@ -20,9 +20,9 @@ tags:
   <p>쓸 만한 콘텐츠가 보이지 않아요! 로드하는 데 왜 이렇게 오래 걸리는 거죠? 😖</p>
 </blockquote>
 
-열악한 사용자 경험에 큰 영향을 미치는 요소 중 하나는 사용자가 화면에 렌더링되는 콘텐츠를 보기까지 얼마나 많은 시간이 걸리느냐입니다. [First Contentful Paint](/fcp)(최초 콘텐츠풀 페인트, FIP)는 초기 DOM 콘텐츠가 렌더링되는 데 걸리는 시간을 측정하지만 페이지에서 가장 크고 일반적으로 가장 의미 있는 콘텐츠를 렌더링하는 데 걸린 시간은 포착하지 않습니다.
+열악한 사용자 경험에 큰 영향을 미치는 요소 중 하나는 사용자가 화면에 렌더링되는 콘텐츠를 보기까지 얼마나 많은 시간이 걸리느냐입니다. [First Contentful Paint](/fcp)(최초 콘텐츠풀 페인트, FCP)는 초기 DOM 콘텐츠가 렌더링되는 데 걸리는 시간을 측정하지만 페이지에서 가장 크고 일반적으로 가장 의미 있는 콘텐츠를 렌더링하는 데 걸린 시간은 포착하지 않습니다.
 
-[Large Contentful Paint](/lcp)(최대 콘텐츠풀 페인트, LCP)는 [)Core Web Vitals](/vitals/) 메트릭이며 뷰포트에서 가장 큰 콘텐츠 요소가 표시되는 시점을 측정합니다. 페이지의 메인 콘텐츠가 화면에서 렌더링을 완료한 시점을 결정하는 데 사용할 수 있습니다.
+[Large Contentful Paint](/lcp)(최대 콘텐츠풀 페인트, LCP)는 [Core Web Vitals](/vitals/) 메트릭이며 뷰포트에서 가장 큰 콘텐츠 요소가 표시되는 시점을 측정합니다. 페이지의 메인 콘텐츠가 화면에서 렌더링을 완료한 시점을 결정하는 데 사용할 수 있습니다.
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
@@ -170,7 +170,7 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
 
 ### 중요하지 않은 CSS 지연
 
-Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) 탭을 사용하여 웹 페이지에서 사용하지 않는 CSS를 찾습니다.
+Chrome DevTools의 [Coverage](https://developer.chrome.com/docs/devtools/coverage/) 탭을 사용하여 웹 페이지에서 사용하지 않는 CSS를 찾습니다.
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Chrome DevTools의 Coverage 탭", width="800", height="559" %}
 
@@ -180,7 +180,12 @@ Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-dev
 - 초기 렌더링에 필요하지 않은 CSS의 경우 [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md)를 사용해 `rel="preload"` 및 `onload`를 활용해 비동기식으로 파일을 로드합니다.
 
 ```html
-<link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
+<link
+  rel="preload"
+  href="stylesheet.css"
+  as="style"
+  onload="this.rel='stylesheet'"
+/>
 ```
 
 <figure>
@@ -250,7 +255,7 @@ CSS 또는 JavaScript 차단 시간이 증가는 성능 저하에 직접적 영�
 - `<img>` 요소
 - `<svg>` 요소 내부의 `<image>`
 - `<video>` 요소([포스터](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) 이미지는 LCP 측정에 사용됨)
-- [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) 함수를 통해 로드된 배경 이미지가 있는 요소<a>(CSS 그라데이션</a>과는 대조적임)
+- [`url()`](https://developer.mozilla.org/docs/Web/CSS/url) 함수를 통해 로드된 배경 이미지가 있는 요소<a>(CSS 그라데이션</a>과는 대조적임)
 - 텍스트 노드 또는 기타 인라인 수준 텍스트 요소를 포함하는 [블록 수준 요소](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
 
 스크롤 없이 볼 수 있는 상태로 렌더링된 경우 이러한 요소를 로드하는 데 걸리는 시간은 LCP에 직접적인 영향을 미칩니다. 이러한 파일이 가능한 한 빨리 로드되도록 하는 몇 가지 방법이 있습니다.
@@ -364,7 +369,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 서비스 작업자는 이 글의 앞에서 언급했듯 더 작은 HTML 응답을 제공하는 것을 포함하여 여러 가지 유용한 작업에 사용될 수 있습니다. 또한 반복 요청 시 네트워크에서 대신 브라우저에 제공할 수 있는 정적 리소스를 캐시하는 데 사용할 수도 있습니다.
 
-서비스 작업자를 사용하여 중요한 리소스를 미리 캐싱하면 로드 시간을 크게 줄일 수 있습니다. 연결 상태가 약한 상태에서, 심지어는 오프라인에서 웹 페이지를 다시 로드하는 사용자의 경우 특히 그렇습니다. [Workbox](https://developers.google.com/web/tools/workbox/)와 같은 라이브러리는 사전 캐시된 자산 업데이트 프로세스를 만들 수 있으며 이는 커스텀 서비스 작업자를 작성하는 것보다 쉽습니다.
+서비스 작업자를 사용하여 중요한 리소스를 미리 캐싱하면 로드 시간을 크게 줄일 수 있습니다. 연결 상태가 약한 상태에서, 심지어는 오프라인에서 웹 페이지를 다시 로드하는 사용자의 경우 특히 그렇습니다. [Workbox](https://developer.chrome.com/docs/workbox/)와 같은 라이브러리는 사전 캐시된 자산 업데이트 프로세스를 만들 수 있으며 이는 커스텀 서비스 작업자를 작성하는 것보다 쉽습니다.
 
 {% Aside %} 서비스 작업자 및 Workbox에 대해 자세히 알아보려면 [네트워크 안정성](/reliable/)을 참조하세요. {% endAside %}
 
@@ -418,20 +423,20 @@ if (navigator.connection && navigator.connection.effectiveType) {
   </figcaption>
 </figure>
 
-{% Aside %} 다양한 서버 렌더링 아키텍처에 대해 자세히 알아보려면 [웹에서 렌더링하기](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)를 참조하세요. {% endAside %}
+{% Aside %} 다양한 서버 렌더링 아키텍처에 대해 자세히 알아보려면 [웹에서 렌더링하기](/rendering-on-the-web/)를 참조하세요. {% endAside %}
 
 ## 개발자 도구
 
 LCP를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도구가 있습니다.
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse)은 실험실 설정에서 LCP를 측정할 수 있도록 지원합니다.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/)은 실험실 설정에서 LCP를 측정할 수 있도록 지원합니다.
 
-    {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
+  {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- Chrome DevTools의 [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) 패널에 있는 **Timing** 섹션에는 LCP 마커가 포함되어 있으며 **Related Node** 필드 위로 마우스를 가져가면 해당 LCP와 연결된 요소가 표시됩니다.
+- Chrome DevTools의 [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) 패널에 있는 **Timing** 섹션에는 LCP 마커가 포함되어 있으며 **Related Node** 필드 위로 마우스를 가져가면 해당 LCP와 연결된 요소가 표시됩니다.
 
-    {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools의 LCP", width="800", height="509" %}
+  {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools의 LCP", width="800", height="509" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) 는 원본 수준에서 집계된 실제 LCP 값을 제공합니다.
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) 는 원본 수준에서 집계된 실제 LCP 값을 제공합니다.
 
-*Philip Walton, Katie Hempenius, Kayce Basques, Ilya Grigorik의 리뷰에 감사드립니다.*
+_Philip Walton, Katie Hempenius, Kayce Basques, Ilya Grigorik의 리뷰에 감사드립니다._
