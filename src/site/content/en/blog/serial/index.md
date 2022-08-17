@@ -258,8 +258,7 @@ To specify the buffer into which data is read instead of the stream allocating a
 ```js
 try {
   const reader = port.readable.getReader({ mode: "byob" });
-  let buffer = new ArrayBuffer(512);
-  // Call reader.read() to read data into the buffer...
+  // Call reader.read() to read data into a buffer...
 } catch (error) {
   if (error instanceof TypeError) {
     // BYOB readers are not supported.
@@ -272,46 +271,16 @@ Here's an example of how to reuse the buffer out of `value.buffer`:
 
 ```js
 const bufferSize = 8 * 1024; // 8kB
-let reader;
-while (port.readable) {
-  try {
-    try {
-      reader = port.readable.getReader({ mode: "byob" });
-    } catch {
-      reader = port.readable.getReader();
-    }
+let buffer = new ArrayBuffer(bufferSize);
 
-    let buffer = null;
-    while (true) {
-      const { value, done } = await (async () => {
-        if (reader instanceof ReadableStreamBYOBReader) {
-          if (!buffer) {
-            buffer = new ArrayBuffer(bufferSize);
-          }
-          const { value, done } = await reader.read(
-            new Uint8Array(buffer, 0, bufferSize)
-          );
-          buffer = value?.buffer;
-          return { value, done };
-        } else {
-          return await reader.read();
-        }
-      })();
-      if (done) {
-        // reader.cancel() has been called.
-        break;
-      }
-      // Handle value.
-    }
-  } catch (e) {
-    // Handle error...
-  } finally {
-    if (reader) {
-      // Allow the serial port to be closed later.
-      reader.releaseLock();
-      reader = undefined;
-    }
+const reader = port.readable.getReader({ mode: "byob" });
+while (true) {
+  const { value, done } = await reader.read(new Uint8Array(buffer));
+  if (done) {
+    break;
   }
+  buffer = value.buffer;
+  // Handle `value`.
 }
 ```
 
@@ -332,6 +301,9 @@ async function readInto(reader, buffer) {
   }
   return buffer;
 }
+
+// Set `bufferSize` on open() to at least the size of the buffer.
+await port.open({ baudRate: 9600, bufferSize: 1024 });
 
 const reader = port.readable.getReader({ mode: "byob" });
 let buffer = new ArrayBuffer(512);
