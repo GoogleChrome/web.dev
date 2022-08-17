@@ -219,6 +219,6 @@ Check out <a href="/guide">our guide to web performance</a>.
 
 확인란 레이블이 올바르게 지정된 경우, 스크린 리더는 요소가 확인란 역할을 하고, 선택된 상태이며, 아래의 VoiceOver 예제와 같이 "홍보 제안을 수신하시겠습니까?"라는 이름을 가진 요소를 보고할 수 있습니다.
 
-<figure>{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="'홍보 제안을 수신하시겠습니까?'를 나타내는 VoiceOver 텍스트 출력", width="640", height="174" %}<br>{% Assessment 'self-assessment' %}</figure>
+<figure>{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="'홍보 제안을 수신하시겠습니까?'를 나타내는 VoiceOver 텍스트 출력", width="640", height="174" %}</figure>
 
 {% Assessment 'self-assessment' %}
