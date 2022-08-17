@@ -76,8 +76,6 @@ A _layout shift_ occurs any time a visible element changes its position from one
 rendered frame to the next. (See below for details on how individual [layout
 shift scores](#layout-shift-score) are calculated.)
 
-Layout shifts may come from elements shifting in the main document or in iframes embedded in the document. End users will not be aware what is in an iframe or not. Therefore, CLS occuring within iframes are taken into account to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so may not be able to measure CLS within an iframe and this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
-
 A burst of layout shifts, known as a [_session
 window_](/evolving-cls/#why-a-session-window), is when one or more individual
 layout shifts occur in rapid succession with less than 1-second in between each
@@ -407,7 +405,10 @@ the metric is calculated.
   cache](/bfcache/#impact-on-core-web-vitals), its CLS value should be reset to
   zero since users experience this as a distinct page visit.
 - The API does not report `layout-shift` entries for shifts that occur within
-  iframes, but to properly measure CLS you should consider them. Sub-frames can
+  iframes but the metric does as they are part of the user experience of the
+  page. This can
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure CLS you should consider them. Sub-frames can
   use the API to report their `layout-shift` entries to the parent frame for
   [aggregation](https://github.com/WICG/layout-instability#cumulative-scores).
 

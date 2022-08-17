@@ -52,8 +52,6 @@ they click a link, tap on a button, or use a custom, JavaScript-powered control)
 to the time when the browser is actually able to begin processing event handlers
 in response to that interaction.
 
-Interactions can happen the main document or in iframes embedded in the document—for example clicking play on an embedded video. End users will not be aware what is in an iframe or not. Therefore, FID within iframes are needed to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so may not be able to measure FID within an iframe and this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
-
 ### What is a good FID score?
 
 To provide a good user experience, sites should strive to have a First Input
@@ -305,9 +303,11 @@ the metric is calculated.
   the [back/forward cache](/bfcache/#impact-on-core-web-vitals), but FID should
   be measured in these cases since users experience them as distinct page
   visits.
-- The API does not report inputs that occur within iframes, but to properly
-  measure FID you should consider them. Sub-frames can use the API to report
-  their `first-input` entries to the parent frame for aggregation.
+- The API does not report inputs that occur within iframes but the metric does
+  as they are part of the user experience of the page. This can
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure FID you should consider them. Sub-frames can use the API
+  to report their `first-input` entries to the parent frame for aggregation.
 
 Rather than memorizing all these subtle differences, developers can use the
 [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to

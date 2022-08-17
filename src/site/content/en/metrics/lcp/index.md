@@ -107,8 +107,6 @@ Note, restricting the elements to this limited set was intentional in order to
 keep things simple in the beginning. Additional elements (e.g. `<svg>`,
 `<video>`) may be added in the future as more research is conducted.
 
-LCP elements may be from the main document or from iframes embedded in the document—for example poster images from embedded videos. End users will not be aware what is in an iframe or not. Therefore, if the LCP is within an iframes, it is needed to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so in pages with an LCP within an iframe this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
-
 ### How is an element's size determined?
 
 The size of the element reported for Largest Contentful Paint is typically the
@@ -334,9 +332,13 @@ the metric is calculated.
   restored from the [back/forward cache](/bfcache/#impact-on-core-web-vitals),
   but LCP should be measured in these cases since users experience them as
   distinct page visits.
-- The API does not consider elements within iframes, but to properly measure LCP
-  you should consider them. Sub-frames can use the API to report their
-  `largest-contentful-paint` entries to the parent frame for aggregation.
+- The API does not consider elements within iframes but the metric does as they
+  are part of the user experience of the page. In pages with an LCP within an
+  iframe—for example a poster image on an embedded video—this will
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure LCP you should consider them. Sub-frames can use the API
+  to report their `largest-contentful-paint` entries to the parent frame for
+  aggregation.
 
 Rather than memorizing all these subtle differences, developers can use the
 [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
