@@ -55,4 +55,4 @@ JavaScript 번들 크기를 최소화하려면 [경로 수준 코드 분할](/ro
 
 ## 리소스
 
-[**막대한 네트워크 페이로드 방지** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)
+[**막대한 네트워크 페이로드 방지** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/total-byte-weight.js)

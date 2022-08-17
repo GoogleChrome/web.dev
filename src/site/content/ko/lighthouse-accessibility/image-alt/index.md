@@ -46,5 +46,5 @@ Lighthouse는 `alt` 속성이 없는 `<img>` 요소에 플래그를 지정합니
 
 ## 참고자료
 
-- [**이미지 요소에 `[alt]` 속성**이 없습니다 감사 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
+- [**이미지 요소에 `[alt]` 속성**이 없습니다 감사 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/image-alt.js)
 - [이미지에는 대체 텍스트가 있어야 합니다(Deque University)](https://dequeuniversity.com/rules/axe/3.3/image-alt)

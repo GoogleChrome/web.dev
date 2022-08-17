@@ -31,5 +31,5 @@ Check out <a href="…">our guide to creating accessible web pages</a>.
 
 ## Ресурсы
 
-- [Исходный код проверки **Links do not have a discernible name** («Ссылки имеют неинформативные названия»)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
+- [Исходный код проверки **Links do not have a discernible name** («Ссылки имеют неинформативные названия»)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/link-name.js)
 - [Ссылки должны содержать информативный текст (Deque University)](https://dequeuniversity.com/rules/axe/3.3/link-name)

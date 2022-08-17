@@ -38,4 +38,4 @@ Lighthouse 보고서의 기회 섹션에는 페이지의 모든 오프스크린 
 
 ## 리소스
 
-- [**오프스크린 이미지 지연** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/offscreen-images.js)
+- [**오프스크린 이미지 지연** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/offscreen-images.js)

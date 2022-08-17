@@ -56,5 +56,5 @@ Lighthouse сравнивает размер каждого отрисованн
 
 ## Ресурсы
 
-- [Исходный код проверки **Properly size images** (Выбирайте размер изображений правильно)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js).
+- [Исходный код проверки **Properly size images** (Выбирайте размер изображений правильно)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-responsive-images.js).
 - [Предоставляйте изображения с правильными размерами](/serve-images-with-correct-dimensions).

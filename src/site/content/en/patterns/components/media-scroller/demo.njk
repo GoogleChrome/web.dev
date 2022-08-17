@@ -2230,14 +2230,9 @@ patternId: components/media-scroller
       </ul>
     </section>
 
-    <script type="module">
-      import {rovingIndex} from "https://cdn.skypack.dev/roving-ux";
-
-      document.querySelectorAll('.horizontal-media-scroller')
-        .forEach(scroller => rovingIndex({
-          element: scroller,
-          target: 'a',
-        }))
-    </script>
+    {% set script %}
+      (()=>{var a=new Map,s=({element:e,target:t})=>{let n=e.querySelectorAll(t||":scope *"),o=n[0];e.tabIndex=-1,n.forEach(r=>r.tabIndex=-1),o.tabIndex=0,a.set(e,{targets:n,active:o,index:0}),e.addEventListener("focusin",r=>{a.get("last_rover")!=e&&(i(e,a.get(e).active),a.set("last_rover",e))}),e.addEventListener("keydown",r=>{switch(r.keyCode){case 39:r.preventDefault(),c(e);break;case 37:r.preventDefault(),d(e)}})},c=e=>{let t=a.get(e);t.index+=1,t.index>t.targets.length-1&&(t.index=t.targets.length-1);let n=t.targets[t.index];n&&i(e,n)},d=e=>{let t=a.get(e);t.index-=1,t.index<1&&(t.index=0);let n=t.targets[t.index];n&&i(e,n)},i=(e,t)=>{let n=a.get(e);n.active.tabIndex=-1,n.active=t,n.active.tabIndex=0,n.active.focus()};document.querySelectorAll(".horizontal-media-scroller").forEach(e=>s({element:e,target:"a"}));})();
+    {% endset %}
+    <script type="module">{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

@@ -33,4 +33,4 @@ updated: 2019-09-19
 
 ## 资源
 
-[**未配置自定义初始屏幕**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/splash-screen.js)
+[**未配置自定义初始屏幕**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/splash-screen.js)

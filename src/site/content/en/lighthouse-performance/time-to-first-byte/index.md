@@ -75,5 +75,5 @@ optimization plugin, and/or upgrading your server.
 
 ## Resources
 
-- [Source code for **Reduce server response times (TTFB)** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/server-response-time.js)
+- [Source code for **Reduce server response times (TTFB)** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/server-response-time.js)
 - [Adaptive Serving with Network Information API](/adaptive-serving-based-on-network-quality)

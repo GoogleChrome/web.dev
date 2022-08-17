@@ -61,6 +61,6 @@ Test carefully before using in production.
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-focus.js" rel="noopener">Source code for **`[aria-hidden="true"]` elements contain focusable descendants** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-hidden-focus.js" rel="noopener">Source code for **`[aria-hidden="true"]` elements contain focusable descendants** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-hidden-focus" rel="noopener">aria-hidden elements do not contain focusable elements (Deque University)</a>
 - <a href="https://github.com/WICG/inert" rel="noopener">WICG `inert` polyfill</a>

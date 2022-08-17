@@ -36,7 +36,7 @@ Se sua página já está sendo executada em HTTPS, mas você está falhando nest
 
 ## Recursos
 
-- [Código-fonte para **Não use a auditoria do HTTPS**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/is-on-https.js)
+- [Código-fonte para **Não use a auditoria do HTTPS**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/is-on-https.js)
 - [Por que você deve sempre usar o HTTPS](/why-https-matters/)
 - [Como ativar o HTTPS em seus servidores](/enabling-https-on-your-servers/)
 - [Entenda os problemas de segurança com o Chrome DevTools](https://developer.chrome.com/docs/devtools/security/)

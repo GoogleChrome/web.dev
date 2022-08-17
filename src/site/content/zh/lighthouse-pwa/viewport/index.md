@@ -50,6 +50,6 @@ Lighthouse*不会*检查 `width` 是否等于 `device-width`，也不会检查 `
 
 ## 资源
 
-- [**具有带 `width` 或 `initial-scale` 的 `<meta name="viewport">` 标记**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/viewport.js)
+- [**具有带 `width` 或 `initial-scale` 的 `<meta name="viewport">` 标记**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/viewport.js)
 - [响应式网页设计基础](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport)
 - [使用  viewport meta 标记控制移动浏览器上的布局](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag)

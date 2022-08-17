@@ -33,7 +33,7 @@ web_lighthouse:
 
 ## 资源
 
-- [*避免非合成动画*审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
+- [*避免非合成动画*审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/non-composited-animations.js)
 - [坚持仅合成器的属性和管理层计数](/stick-to-compositor-only-properties-and-manage-layer-count/)
 - [高性能动画](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 - [简化绘制的复杂度、减小绘制区域](/simplify-paint-complexity-and-reduce-paint-areas/)

@@ -40,4 +40,4 @@ JavaScriptアセットをバンドルしていない場合は、 [baler](https:/
 
 ## リソース
 
-[**クリティカル要求の深度の最小化**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[**クリティカル要求の深度の最小化**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/critical-request-chains.js)

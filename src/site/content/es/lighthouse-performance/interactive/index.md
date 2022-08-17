@@ -80,7 +80,7 @@ Para saber cómo medir cuándo ocurre realmente el TTI en los dispositivos de su
 
 ## Recursos
 
-- [Código fuente para la auditoría de **Tiempo para interactuar**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
+- [Código fuente para la auditoría de **Tiempo para interactuar**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/interactive.js)
 - [Guía de puntuación de Lighthouse v3](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [First Interactive And Consistently Interactive (Primer interactivo y consistentemente interactivo)](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
 - [Optimización del JavaScript de arranque](/optimizing-content-efficiency-javascript-startup-optimization/)

@@ -35,7 +35,7 @@ O Lighthouse calcula qual seria o valor do TTI numa conexão de rede 4G lenta. S
 
 ## Recursos
 
-- [Código fonte para auditoria **Carregamento da página não é rápido o suficiente en dispositivos móveis**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js)
+- [Código fonte para auditoria **Carregamento da página não é rápido o suficiente en dispositivos móveis**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/load-fast-enough-for-pwa.js)
 - [Checkout básico do Progressive Web App](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
 - [Caminho de renderização crítico](/critical-rendering-path/)
 - [Comece a analisar o desempenho do tempo de execução](https://developer.chrome.com/docs/devtools/evaluate-performance/)

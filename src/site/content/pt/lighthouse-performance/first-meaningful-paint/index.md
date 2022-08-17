@@ -79,7 +79,7 @@ Consulte [Avaliação do desempenho de carregamento do Google na vida real com n
 
 ## Recursos
 
-- [Código-fonte para auditoria da **First Meaningful Paint**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
+- [Código-fonte para auditoria da **First Meaningful Paint**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/first-meaningful-paint.js)
 - [Guia de pontuação do Lighthouse v3](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Tempo até a First Meaningful Paint: uma abordagem baseada em layout](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
 - [Largest Contentful Paint](/lcp/)

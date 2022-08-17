@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## 참고자료
 
-- [**`robots.txt`가 유효하지 않음** 소소 코드 감사](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [**`robots.txt`가 유효하지 않음** 소소 코드 감사](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [`robots.txt file` 만들기](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [로봇 메타 태그 및 X-Robots-Tag HTTP 헤더 사양](https://developers.google.com/search/reference/robots_meta_tag)

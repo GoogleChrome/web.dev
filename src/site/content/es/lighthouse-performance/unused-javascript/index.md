@@ -70,7 +70,7 @@ Considere la posibilidad de reducir, o cambiar, el número de [complementos de J
 
 ## Recursos
 
-- [Código fuente para **Eliminar el código que no se utiliza** en la auditoría](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-javascript.js)
+- [Código fuente para **Eliminar el código que no se utiliza** en la auditoría](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-javascript.js)
 - [Eliminar el código que no se utiliza](/remove-unused-code/)
 - [Agregar interactividad con JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/)
 - [Dividir el código](https://bundlers.tooling.report/code-splitting/)

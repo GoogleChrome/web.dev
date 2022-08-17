@@ -69,7 +69,7 @@ In order to pass the audit:
 
 ## Resources
 
-- [Source code for **Manifest doesn't have a maskable icon** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [Source code for **Manifest doesn't have a maskable icon** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [Adaptive icon support in PWAs with maskable icons][guide]
 - [Maskable.app Editor][editor]
 - [Add a web app manifest][manifest]

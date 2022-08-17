@@ -34,6 +34,6 @@ Consulte las <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel=
 
 ## Recursos
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-children.js" rel="noopener">Código fuente para la auditoría <strong>A los elementos con un <code>[role]</code> ARIA que requieren que los hijos contengan un [role] específico les faltan algunos o todos los hijos requeridos</strong></a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-required-children.js" rel="noopener">Código fuente para la auditoría <strong>A los elementos con un <code>[role]</code> ARIA que requieren que los hijos contengan un [role] específico les faltan algunos o todos los hijos requeridos</strong></a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-required-children" rel="noopener">Ciertos roles de ARIA deben contener ciertos hijos en particular (Deque University)</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Definiciones de roles de la especificación WAI-ARIA</a>

@@ -61,5 +61,5 @@ Si renderiza listas grandes, utilice [desplazamiento virtual](/virtualize-lists-
 
 ## Recursos
 
-- [Código fuente para **evitar una auditoría de tamaño excesivo del DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [Código fuente para **evitar una auditoría de tamaño excesivo del DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
 - [Reducir el alcance y la complejidad de los cálculos de estilo](/reduce-the-scope-and-complexity-of-style-calculations/)

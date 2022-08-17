@@ -77,7 +77,7 @@ Consulte [Evaluación del rendimiento de carga en la vida real con la navegació
 
 ## Recursos
 
-- [Código fuente para la auditoría de **Primer despliegue significativo**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
+- [Código fuente para la auditoría de **Primer despliegue significativo**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/first-meaningful-paint.js)
 - [Guía de puntuación de Lighthouse v3](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Hasta el primer despliegue significativo: un enfoque basado en diseño](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
 - [Despliegue con contenido más extenso](/lcp/)

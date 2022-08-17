@@ -125,7 +125,7 @@ Por exemplo, esta caixa de `searchLabel` personalizada refere-se ao parágrafo s
 
 ## Recursos
 
-- [Código-fonte para a auditoria **Nem todos os campos de alternância ARIA têm nomes acessíveis**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js)
+- [Código-fonte para a auditoria **Nem todos os campos de alternância ARIA têm nomes acessíveis**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-toggle-field-name.js)
 - [O botão ARIA, link e item de menu devem ter um nome acessível (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-command-name)
 - [Os campos de entrada ARIA devem ter um nome acessível (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-input-field-name)
 - [O medidor ARIA deve ter um nome acessível (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-meter-name)

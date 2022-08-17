@@ -31,5 +31,5 @@ updated: 2020-06-04
 
 ## Ресурсы
 
-- [Исходный код для аудита «**Включает интерфейсные библиотеки JavaScript с известными уязвимостями безопасности**» (Includes front-end JavaScript libraries with known security vulnerabilities)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [Исходный код для аудита «**Включает интерфейсные библиотеки JavaScript с известными уязвимостями безопасности**» (Includes front-end JavaScript libraries with known security vulnerabilities)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [База данных уязвимостей snyk](https://snyk.io/vuln?packageManager=all)

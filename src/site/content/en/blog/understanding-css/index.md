@@ -14,7 +14,7 @@ Filters are a powerful tool that web authors can use to achieve interesting visu
 ## The past, present and future of filter effects
 
 Filter effects originated as part of the Scalable Vector Graphics (SVG) specification. They were created to apply a number of different pixel based image effects to a vector drawing. Over time as browser vendors added SVG capabilities into their browsers, the usefulness of filters became evident. Robert O’Callahan from Mozilla came up with
-[the brilliant idea](http://robert.ocallahan.org/2008/06/applying-svg-effects-to-html-content_04.html) of using SVG filters through the application of CSS to ‘normal’ HTML content. Robert prototyped an early version that showed how powerful the combination of filters and CSS styling could be. The CSS and SVG working groups in the W3C decided to harmonize the use of filters for both HTML and SVG via CSS styling, and thus the ‘filter’ property for CSS was born. Right now a joint task force of people working on CSS and SVG is doing a ton of work to make filters universally useful. You can find the current specification for all this stuff [here]("http://dev.w3.org/fxtf/filters).
+[the brilliant idea](http://robert.ocallahan.org/2008/06/applying-svg-effects-to-html-content_04.html) of using SVG filters through the application of CSS to ‘normal’ HTML content. Robert prototyped an early version that showed how powerful the combination of filters and CSS styling could be. The CSS and SVG working groups in the W3C decided to harmonize the use of filters for both HTML and SVG via CSS styling, and thus the ‘filter’ property for CSS was born. Right now a joint task force of people working on CSS and SVG is doing a ton of work to make filters universally useful. You can find the current specification for all this stuff [here](http://dev.w3.org/fxtf/filters).
 
 ## A new life for the ‘filter’ CSS property
 
@@ -180,7 +180,7 @@ brightness(amount)
     <figcaption>brightness(140%)</figcaption>
 </figure>
 
-contrast(amount)  
+contrast(amount)
 : More controls from your TV set! This will adjust the difference between the darkest and lightest parts of the input image. If you use 0% you end up with black just like with ‘brightness’, so not too interesting. However as you increase the value towards 100% the difference in darkness changes until you hit 100% and it’s the original image again. You can also go beyond 100% for this effect too, which increases the difference between light and dark colors even more.
 
 <figure>

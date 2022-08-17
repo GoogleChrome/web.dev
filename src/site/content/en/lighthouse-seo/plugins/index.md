@@ -55,7 +55,7 @@ plugin. For example, MDN explains [how to convert Flash video to HTML5 video](ht
 
 ## Resources
 
-- [Source code for **Document uses plugins** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/plugins.js)
+- [Source code for **Document uses plugins** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/plugins.js)
 - [Unplayable content on mobile devices](https://developers.google.com/search/mobile-sites/mobile-seo/common-mistakes#unplayable-content)
 - [Flash video to HTML5 video](https://developer.mozilla.org/docs/Plugins/Flash_to_HTML5/Video)
 

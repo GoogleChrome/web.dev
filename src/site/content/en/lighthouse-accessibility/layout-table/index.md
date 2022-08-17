@@ -41,5 +41,5 @@ and use cascading style sheets (CSS) to control layout instead.
 
 ## Resources
 
-- [Source code for **Presentational `<table>` elements do not avoid using `<th>`, `<caption>`, or the `[summary]` attribute** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/layout-table.js)
+- [Source code for **Presentational `<table>` elements do not avoid using `<th>`, `<caption>`, or the `[summary]` attribute** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/layout-table.js)
 - [Layout tables must not use data table elements (Deque University)](https://dequeuniversity.com/rules/axe/3.3/layout-table)

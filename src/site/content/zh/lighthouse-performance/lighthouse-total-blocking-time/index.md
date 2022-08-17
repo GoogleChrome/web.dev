@@ -68,7 +68,7 @@ TBT 测量页面被阻止响应用户输入（例如鼠标点击、屏幕点击�
 
 ## 资源
 
-- [**总阻塞时间**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
+- [**总阻塞时间**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/total-blocking-time.js)
 - [长的 JavaScript 任务是否会延迟您的交互时间？](/long-tasks-devtools)
 - [优化首次输入延迟](/optimize-fid)
 - [首次内容绘制](/fcp/)

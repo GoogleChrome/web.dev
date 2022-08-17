@@ -29,5 +29,5 @@ Lighthouse отмечает страницы, которые отключают 
 
 ## Ресурсы
 
-- [Исходный код для аудита «**`[user-scalable="no"]` используется в элементе `<meta name="viewport">` или значение атрибута `[maximum-scale]` меньше 5**» ([user-scalable="no"] is used in the <meta name="viewport"> element or the [maximum-scale] attribute is less than 5)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
+- [Исходный код для аудита «**`[user-scalable="no"]` используется в элементе `<meta name="viewport">` или значение атрибута `[maximum-scale]` меньше 5**» ([user-scalable="no"] is used in the <meta name="viewport"> element or the [maximum-scale] attribute is less than 5)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/meta-viewport.js)
 - [Масштабирование нельзя отключать (Университет Дек)](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)

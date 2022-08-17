@@ -48,7 +48,7 @@ If the time to interactive is more than 10&nbsp;seconds, the audit fails.
 
 ## Resources
 
-- [Source code for **Page load is not fast enough on mobile networks** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js)
+- [Source code for **Page load is not fast enough on mobile networks** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/load-fast-enough-for-pwa.js)
 - [Baseline Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
 - [Critical Rendering Path](/critical-rendering-path/)
 - [Get Started With Analyzing Runtime Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/)

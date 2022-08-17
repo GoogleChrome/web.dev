@@ -58,7 +58,7 @@ Outros navegadores têm critérios diferentes para instalação e para acionar o
 
 ## Recursos
 
-- [O código-fonte para auditoria **Manifesto do aplicativo da web não atende aos requisitos de instabilidade**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [O código-fonte para auditoria **Manifesto do aplicativo da web não atende aos requisitos de instabilidade**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [Adicionar um manifesto de aplicativo da web](/add-manifest/)
 - [Descubra o que é necessário para ser instalável](/discover-installable)
 - [Manifesto de aplicativo da web](https://developer.mozilla.org/docs/Web/Manifest)

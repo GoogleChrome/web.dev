@@ -115,7 +115,7 @@ can be a good proxy for TTI.
 
 ## Resources
 
-- [Source code for **Time to Interactive** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
+- [Source code for **Time to Interactive** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/interactive.js)
 - [Lighthouse Scoring Guide](/performance-scoring)
 - [First Interactive And Consistently Interactive](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
 - [JavaScript Start-up Optimization](/optimizing-content-efficiency-javascript-startup-optimization/)

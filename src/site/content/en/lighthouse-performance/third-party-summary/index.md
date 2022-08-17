@@ -37,7 +37,7 @@ optimization strategies.
 
 ## Resources
 
-- [Source code for **Reduce the impact of third-party code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-summary.js)
+- [Source code for **Reduce the impact of third-party code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-summary.js)
 - [Loading Third-party JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)
 
 [main thread]: https://developer.mozilla.org/docs/Glossary/Main_thread

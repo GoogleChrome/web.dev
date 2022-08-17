@@ -65,6 +65,6 @@ web_lighthouse:
 
 ## Ресурсы
 
-- [Исходный код для аудита **минимизации работы основного потока**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
+- [Исходный код для аудита **минимизации работы основного потока**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/mainthread-work-breakdown.js)
 - [Основной поток (MDN)](https://developer.mozilla.org/docs/Glossary/Main_thread)
 - [Взгляд изнутри на современный веб-браузер (часть 3)](https://developer.chrome.com/blog/inside-browser-part3/)

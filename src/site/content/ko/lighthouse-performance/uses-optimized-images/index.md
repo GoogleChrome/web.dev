@@ -56,4 +56,4 @@ Lighthouse는 페이지의 모든 JPEG 또는 BMP 이미지를 수집하고 각 
 
 ## 리소스
 
-- [**효율적인 이미지 인코딩** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
+- [**효율적인 이미지 인코딩** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-optimized-images.js)

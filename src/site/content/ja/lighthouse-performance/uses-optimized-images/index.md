@@ -54,4 +54,4 @@ Lighthouseは、ページ上のすべてのJPEGまたはBMP画像を収集し、
 
 ## リソース
 
-- [**Efficiently encode images (画像を効率的にエンコードする)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
+- [**Efficiently encode images (画像を効率的にエンコードする)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-optimized-images.js)

@@ -40,5 +40,5 @@ web_lighthouse:
 
 ## 资源
 
-- [**表单元素没有关联标签**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js)
+- [**表单元素没有关联标签**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/label.js)
 - [表单 `<input>` 元素必须有标签 (Deque University)](https://dequeuniversity.com/rules/axe/3.3/label)
