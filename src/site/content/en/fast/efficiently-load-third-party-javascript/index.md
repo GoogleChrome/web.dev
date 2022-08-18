@@ -5,6 +5,7 @@ subhead: Avoid the common pitfalls of using third-party scripts to improve load 
 authors:
   - mihajlija
 date: 2019-08-14
+updated: 2022-08-18
 description: |
   Learn how to avoid the common pitfalls of using third-party scripts to improve load times and user experience.
 hero: image/admin/udp7L9LSo5mfI3F0tvNY.jpg
@@ -146,7 +147,7 @@ When you use files from third-party servers, you rarely have control over cachin
 Self-hosting third-party scripts is an option that gives you more control over a script's loading process. By self-hosting you can:
 
 * Reduce DNS lookup and round-trip times.
-* Improve [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) headers.
+* Improve [HTTP caching](https://web.dev/http-cache/) headers.
 * Take advantage of [HTTP/2](/performance-http2/), or the newer HTTP/3.
 
 For example, Casper managed to [shave 1.7 seconds](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec) off load time by self-hosting an A/B testing script.

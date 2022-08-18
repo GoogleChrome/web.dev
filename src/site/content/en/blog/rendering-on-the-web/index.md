@@ -5,7 +5,7 @@ authors:
   - developit
   - addyosmani
 date: 2019-02-06
-updated: 2019-08-27
+updated: 2022-08-18
 description: |
   Where should we implement logic and rendering in our applications? Should we use Server Side Rendering? What about Rehydration? Let's find some answers!
 tags:
