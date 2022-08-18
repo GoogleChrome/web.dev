@@ -147,7 +147,7 @@ When you use files from third-party servers, you rarely have control over cachin
 Self-hosting third-party scripts is an option that gives you more control over a script's loading process. By self-hosting you can:
 
 * Reduce DNS lookup and round-trip times.
-* Improve [HTTP caching](https://web.dev/http-cache/) headers.
+* Improve [HTTP caching](/http-cache/) headers.
 * Take advantage of [HTTP/2](/performance-http2/), or the newer HTTP/3.
 
 For example, Casper managed to [shave 1.7 seconds](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec) off load time by self-hosting an A/B testing script.
