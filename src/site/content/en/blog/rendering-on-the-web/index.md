@@ -5,7 +5,7 @@ authors:
   - developit
   - addyosmani
 date: 2019-02-06
-updated: 2019-08-27
+updated: 2022-08-18
 description: |
   Where should we implement logic and rendering in our applications? Should we use Server Side Rendering? What about Rehydration? Let's find some answers!
 tags:
@@ -178,8 +178,8 @@ client rather than the server._
 Client-side rendering can be difficult to get and keep fast for mobile. It can
 approach the performance of pure server-rendering if doing minimal work, keeping
 a [tight JavaScript budget] and delivering value in as few [RTTs] as possible.
-Critical scripts and data can be delivered sooner using [HTTP/2 Server Push] or
-`<link rel=preload>`, which gets the parser working for you sooner. Patterns
+Critical scripts and data can be delivered sooner using `<link rel=preload>`,
+which gets the parser working for you sooner. Patterns
 like [PRPL] are worth evaluating in order to ensure initial and subsequent
 navigations feel instant.
 

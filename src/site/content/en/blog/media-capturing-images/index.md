@@ -1,13 +1,13 @@
 ---
-layout: post
-title: Capturing an Image from the User
-description: >
-  Most browsers can get access to the user's camera.
+title: Capturing an image from the user
+subhead: Most browsers can get access to the user's camera.
 date: 2016-08-23
 updated: 2021-01-26
 authors:
   - paulkinlan
   - mscales
+description: |
+  Most browsers can get access to the user's camera.
 ---
 
 Many browsers now have the ability to access video and audio input from the

@@ -22,6 +22,25 @@ const languageNames = {
 };
 
 /**
+ * When we display a list of translations available for a given page,
+ * use this ordering for the names of the languages.
+ * See https://github.com/GoogleChrome/web.dev/issues/7430
+ * @const
+ */
+const languageOrdering = [
+  'de',
+  'en',
+  'es',
+  'fr',
+  'pl',
+  'pt',
+  'ru',
+  'zh',
+  'ja',
+  'ko',
+];
+
+/**
  * A default language for the site.
  * @const
  */
@@ -43,8 +62,9 @@ function isValidLanguage(lang) {
 }
 
 module.exports = {
-  languageNames,
   defaultLanguage,
   isValidLanguage,
+  languageNames,
+  languageOrdering,
   supportedLanguages,
 };

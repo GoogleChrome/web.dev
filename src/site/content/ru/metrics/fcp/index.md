@@ -86,7 +86,7 @@ import {getFCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-Полный пример измерения FCP в JavaScript приводится в [исходном коде `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts).
+Полный пример измерения FCP в JavaScript приводится в [исходном коде `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить FCP в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 

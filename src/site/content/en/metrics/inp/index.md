@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-07-18
+updated: 2022-08-17
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -119,6 +119,9 @@ As far as INP goes, **only the following interaction types are observed:**
 {% Aside 'important' %}
 Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, page up, page down, and so forth) involves a keystroke, which may trigger other events that INP _does_ measure. Any resulting scrolling is _not_ factored into how INP is calculated.
 {% endAside %}
+
+Interactions happen in the main document or in iframes embedded in the document—for example clicking play on an embedded video. End users will not be aware what is in an iframe or not. Therefore, INP within iframes are needed to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so may not be able to measure INP within an iframe and this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+
 
 Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
 
