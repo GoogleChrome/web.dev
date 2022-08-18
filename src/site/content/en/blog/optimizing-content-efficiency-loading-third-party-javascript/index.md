@@ -467,9 +467,8 @@ a site.
 
 Self-hosting third-party scripts may be an option if you would like more control
 over a script’s loading story. For example, if you wanted to reduce DNS or
-round-trip times, improve HTTP caching headers or take advantage of advanced
-techniques like HTTP/2 server push. Self-hosting may be a viable consideration
-if a script is considered critical.
+round-trip times, or improve HTTP caching headers. Self-hosting may be a viable
+consideration if a script is considered critical.
 
 Self-hosting can come with a number of big caveats:
 
