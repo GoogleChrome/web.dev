@@ -140,7 +140,7 @@ The team built a performance monitoring dashboard using the data collected in th
 Believing that A/B tests are a good way to measure the business impact of performance optimizations, the team optimized one of their landing pages for Core Web Vitals then compared the optimized version with the original page via A/B test for a month. They picked a landing page with significant traffic and conversion so that the test could achieve meaningful results. During the test duration, 50% of the traffic was sent to the optimized landing page (version A), and 50% was sent to the original page (version B). The only difference between version A and version B was that version A was optimized for Core Web Vitals and there were no other functional or visual differences.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pN5i17Rh7VxrObYlgdiu.jpg", alt="A screenshot of a mobile A/B test for the Rakuten 24 website. Each version was visually and functionally the same, with version A optimized for better Core Web Vitals.", width="800", height="1129" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/fc1R2EzGmE8WNd0C9CWu.jpg", alt="A screenshot of a mobile A/B test for the Rakuten 24 website. Each version was visually and functionally the same, with version A optimized for better Core Web Vitals.", width="800", height="1129" %}
 </figure>
 
 The optimized version A finished loading 0.4 seconds earlier in the mobile load test and shows no significant layout shift. In fact, the CLS of version A improved by **92.72% compared to version B**. Other Web Vitals scores also improved: **FID improved by 7.95%**, **FCP improved by 8.45%**, and **TTFB improved by 18.03%**.
