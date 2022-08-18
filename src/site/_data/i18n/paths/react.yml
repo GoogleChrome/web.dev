@@ -2,7 +2,7 @@ title:
   en: React
   es: React
   ja: React
-  ko: 반응
+  ko: React
   pt: React
   ru: React
   zh: React
@@ -38,8 +38,8 @@ topics:
   create_react_app:
     en: Create React App
     es: Create React App
-    ja: React アプリを構築する
-    ko: React 앱 만들기
-    pt: Criação de uma aplicação React
-    ru: Создание приложения на основе React
-    zh: 创建 React 应用
+    ja: Create React App
+    ko: Create React App
+    pt: Create React App
+    ru: Create React App
+    zh: Create React App
