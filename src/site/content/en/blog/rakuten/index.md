@@ -24,11 +24,22 @@ tags:
 
 Understanding the impact of web performance on user experience, the Rakuten 24 team has been continuously measuring, optimizing and monitoring Core Web Vitals and other metrics.
 
-As a result, **over 75% of their users are experiencing good Largest Contentful Paint (LCP), First Input Delay (FID) and First Contentful Paint (FCP)**. However, they are still working on Cumulative Layout Shift (CLS) improvements.
+As a result, over 75% of their users are experiencing good Largest Contentful Paint (LCP), First Input Delay (FID) and First Contentful Paint (FCP). However, they are still working on Cumulative Layout Shift (CLS) improvements.
 
-After analyzing homepage data, Rakuten 24 found that a good LCP score can lead to an increase of up to **61.13% in conversion rate**, **26.09% in revenue per visitor**, and **11.26% in average order value**. A good FID score can lead to an increase of up to **55.88% in conversion rate**.
+After analyzing homepage data, Rakuten 24 found that a good LCP score can lead to:
 
-To further correlate Core Web Vitals and business metrics, Rakuten 24 also ran an A/B test focused on optimizing Core Web Vitals and related metrics, and saw an improvement of **53.37% in revenue per visitor**, **33.13% in conversion rate**, **15.20% in average order value**, **9.99% in average time spent**, and a **35.12% reduction in exit rate**.
+- An increase of up to 61.13% in conversion rate.
+- 26.09% in revenue per visitor.
+- 11.26% in average order value.
+- A good FID score can lead to an increase of up to 55.88% in conversion rate.
+
+To further correlate Core Web Vitals and business metrics, Rakuten 24 also ran an A/B test focused on optimizing Core Web Vitals and related metrics, and saw an improvement of: 
+
+- 53.37% in revenue per visitor.
+- 33.13% in conversion rate.
+- 15.20% in average order value.
+- 9.99% in average time spent.
+- A 35.12% reduction in exit rate.
 
 ## Highlight the opportunity
 
@@ -82,8 +93,8 @@ The team analyzed the collected field data to determine if there is any correlat
 
 The collected data also revealed that:
 
-- A good LCP can lead to an increase of up to **61.13% in conversion rate**, **26.09% in revenue per visitor**, and **11.26% in average order value**.
-- A good FID can lead to an increase of up to **55.88% in conversion rate** compared to the overall average data.
+- A good LCP can lead to an increase of up to 61.13% in conversion rate, 26.09% in revenue per visitor, and 11.26% in average order value.
+- A good FID can lead to an increase of up to 55.88% in conversion rate compared to the overall average data.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/kW535AoWqoPqmUWARPZt.jpg", alt="LCP bucketed by conversion rate and LCP time. Users who converted more frequently converted when LCP was lower, with 61.13% of users converting with an LCP of one second or lower.", width="800", height="376" %}
