@@ -105,6 +105,18 @@ Use the success aside to describe a successful action or an error-free status.
 Use the success aside to describe a successful action or an error-free status.
 {% endAside %}
 
+### Celebration asides
+
+```text
+{% raw %}&#123;% Aside 'celebration' %&#125;
+Use the celebration aside to celebrate events like a cross-browser launch.
+&#123;% endAside %&#125;{% endraw %}
+```
+
+{% Aside 'celebration' %}
+Use the celebration aside to celebrate events like a cross-browser launch.
+{% endAside %}
+
 ### Objective asides
 
 ```text
@@ -274,14 +286,23 @@ With the `BrowserCompat` shortcode, you can embed an
 widget in your post. You have to pass in the dot-separated feature ID,
 as used on [BCD Schema](https://github.com/mdn/browser-compat-data), e.g. for
 [Web/API/BackgroundFetchEvent](https://developer.mozilla.org/docs/Web/API/BackgroundFetchEvent)
-the ID is `api.BackgroundFetchEvent`:
-
+the ID is `api.BackgroundFetchEvent`.
 
 ```text
 {% raw %}{% BrowserCompat 'api.BackgroundFetchEvent' %}{% endraw %}
 ```
 
 {% BrowserCompat 'api.BackgroundFetchEvent' %}
+
+The widget will use 🗑 symbols to represent features that are deprecated:
+
+{% BrowserCompat 'api.Document.execCommand' %}
+
+The following JavaScript snippet, run from the DevTools console, will display the correct ID for a given MDN page that's currently open:
+
+```js
+window.alert(document.querySelector(".bc-github-link")?.href.match(/title=(.+?)\+/)[1] ?? "No browser compat widget found on the page.")
+```
 
 ## Buttons
 

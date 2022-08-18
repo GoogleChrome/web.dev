@@ -6,12 +6,14 @@ authors:
 hero: image/admin/k3hWnnwqTvg7w7URsbIK.png
 description: Data Studioは、Chrome UXレポートなどのビッグデータソースの上にダッシュボードを構築できるようにする強力なデータ可視化ツールです。このガイドでは、オリジンのユーザーエクスペリエンスを追跡する独自のカスタムCrUX Dashboardを作成する方法を学習します。
 date: 2020-06-22
+updated: 2022-07-18
 tags:
   - performance
   - blog
+  - chrome-ux-report
 ---
 
-[Data Studio](https://marketingplatform.google.com/about/data-studio/)は、[Chrome UXレポート](https://developers.google.com/web/tools/chrome-user-experience-report/)（CrUX）などのビッグデータソースの上にダッシュボードを構築できるようにする強力なデータ可視化ツールです。このガイドでは、オリジンのユーザーエクスペリエンスの傾向を追跡する独自のカスタムCrUX Dashboardを作成する方法を学習します。
+[Data Studio](https://marketingplatform.google.com/about/data-studio/)は、[Chrome UXレポート](https://developer.chrome.com/docs/crux/)（CrUX）などのビッグデータソースの上にダッシュボードを構築できるようにする強力なデータ可視化ツールです。このガイドでは、オリジンのユーザーエクスペリエンスの傾向を追跡する独自のカスタムCrUX Dashboardを作成する方法を学習します。
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598" %}
 
@@ -28,7 +30,7 @@ CrUX Dashboardは、[コミュニティコネクター](https://developers.googl
 {% Compare 'better', 'Origin (Supported)' %}
 
 ```text
-https://developers.google.com
+https://web.dev
 ```
 
 {% endCompare %}
@@ -36,7 +38,7 @@ https://developers.google.com
 {% Compare 'worse', 'URL (Not supported)' %}
 
 ```text
-https://developers.google.com/web/tools/chrome-user-experience-report/
+https://web.dev/chrome-ux-report-data-studio-dashboard/
 ```
 
 {% endCompare %}
@@ -79,7 +81,7 @@ Core Web Vitalsページを使用すると、デスクトップと携帯電話�
 
 ### 指標のパフォーマンス
 
-Core Web Vitalsページの次に、CrUXデータセットのあるあらゆる[指標](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)を示す独立したページがあります。
+Core Web Vitalsページの次に、CrUXデータセットのあるあらゆる[指標](https://developer.chrome.com/docs/crux/methodology/#metrics)を示す独立したページがあります。
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX DashboardのLCPページ", width="800", height="598" %}
 
@@ -103,7 +105,7 @@ PageSpeed Insightsなどのツールの対応するP75値は、公開されて�
 
 ### ユーザーの統計情報
 
-ユーザーの統計情報ページには、デバイスと有効な接続タイプ（ECT）の2つの[次元](https://developers.google.com/web/tools/chrome-user-experience-report/#dimensions)が含まれています。これらのページは、各統計情報のユーザーのオリジン全体にわたるページビューの分布を示しています。
+ユーザーの統計情報ページには、デバイスと有効な接続タイプ（ECT）の2つの[次元](https://developer.chrome.com/docs/crux/methodology/#dimensions)が含まれています。これらのページは、各統計情報のユーザーのオリジン全体にわたるページビューの分布を示しています。
 
 デバイス分布ページには、携帯電話、デスクトップ、およびタブレットのユーザーの内訳が時系列で表示されます。多くのオリジンはタブレットデータがほとんどないかまったく存在しない傾向があるため、グラフの端からのぶら下がりが「0％」であることがよくあります。
 

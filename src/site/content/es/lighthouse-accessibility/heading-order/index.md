@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Cómo falla la auditoría de niveles de encabezados de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas cuyos encabezados saltan uno o más niveles:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas cuyos encabezados saltan uno o más niveles:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Auditoría de Lighthouse que muestra encabezados que omiten niveles", width="800", height="206" %}</figure>
 
@@ -56,5 +56,5 @@ Consulta la publicación de [Encabezados y puntos de referencia](/headings-and-l
 
 ## Recursos
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener">Código fuente para auditoría de <strong>los encabezados se saltan de nivel</strong></a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener">Código fuente para auditoría de <strong>los encabezados se saltan de nivel</strong></a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">Los niveles de encabezado solo deben aumentar en uno (Deque University)</a>

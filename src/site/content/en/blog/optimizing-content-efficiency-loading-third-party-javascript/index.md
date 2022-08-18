@@ -7,7 +7,7 @@ authors:
 description: >
   Third-party scripts provide a wide range of useful functionality, making the web more dynamic. Learn how to optimize the loading of third-party scripts to reduce their impact on performance.
 date: 2018-02-28
-updated: 2018-10-31
+updated: 2022-08-18
 ---
 
 You've optimized all of your code, but your site still loads too slowly. Who's
@@ -83,29 +83,27 @@ These issues can include:
 - Firing too many network requests to multiple servers. The more requests a site
   has to make, the longer it can take to load.
 
-- Sending [too much JavaScript](/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
+- Sending [too much JavaScript](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
   that keeps the main thread busy. Too much JavaScript can block DOM
   construction, delaying how quickly pages can render. CPU-intensive script
   parsing and execution can delay user interaction and cause battery drain.
 
-- Sending large, [unoptimized image files](/web/tools/lighthouse/audits/unoptimized-images) or videos. This can
+- Sending large, [unoptimized image files](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/) or videos. This can
   consume data and cost users money.
 
 - Third-party scripts loaded without care can be a [single-point of failure](http://blog.patrickmeenan.com/2011/10/testing-for-frontend-spof.html)
   (SPOF)
 
-- Insufficient [HTTP caching](/web/fundamentals/performance/optimizing-content-efficiency/http-caching),
+- Insufficient [HTTP caching](/http-cache/),
   forcing resources to be fetched from the network often
 
-- Lack of sufficient [server compression](/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer)
+- Lack of sufficient [server compression](/optimizing-content-efficiency-optimize-encoding-and-transfer/)
   of resources
 
 - Blocking content display until they complete processing. This can also be true
   for async A/B testing scripts.
 
-- Use of legacy APIs (e.g
-  [document.write()](/web/updates/2016/08/removing-document-write)) known to be
-  [harmful](/web/tools/lighthouse/audits/document-write) to the user experience
+- Use of legacy APIs (e.g [document.write()](https://developer.chrome.com/docs/lighthouse/best-practices/no-document-write/)) known to be harmful to the user experience
 
 - Excessive DOM elements or expensive CSS selectors.
 
@@ -126,7 +124,7 @@ resources.
 
 Unless you’re aware which third-party scripts are loaded by your site and what
 their performance impact is, it’s impossible to know how to optimize them. Many
-free web speed test tools can highlight costly third-parties including [Chrome DevTools](https://developer.chrome.com/devtools), [PageSpeed Insights](/speed/pagespeed/insights/) and
+free web speed test tools can highlight costly third-parties including [Chrome DevTools](https://developer.chrome.com/devtools), [PageSpeed Insights](https://pagespeed.web.dev/) and
 [WebPageTest](https://www.webpagetest.org/). These tools display rich diagnostic
 information that can tell you _how many_ third party scripts are loaded by your
 site and which take the most time to execute.
@@ -469,9 +467,8 @@ a site.
 
 Self-hosting third-party scripts may be an option if you would like more control
 over a script’s loading story. For example, if you wanted to reduce DNS or
-round-trip times, improve HTTP caching headers or take advantage of advanced
-techniques like HTTP/2 server push. Self-hosting may be a viable consideration
-if a script is considered critical.
+round-trip times, or improve HTTP caching headers. Self-hosting may be a viable
+consideration if a script is considered critical.
 
 Self-hosting can come with a number of big caveats:
 

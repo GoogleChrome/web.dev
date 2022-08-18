@@ -17,7 +17,7 @@ web_lighthouse:
 
 ## `robots.txt` 감사가 실패하는 이유
 
-[Lighthouse는](https://developers.google.com/web/tools/lighthouse/) `robots.txt` 파일에 플래그를 지정합니다.
+[Lighthouse는](https://developer.chrome.com/docs/lighthouse/overview/) `robots.txt` 파일에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Lighthouse 감사에서 잘못된 robots.txt가 표시됨", width="800", height="203" %}</figure>
 
@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## 참고자료
 
-- [**`robots.txt`가 유효하지 않음** 소소 코드 감사](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [**`robots.txt`가 유효하지 않음** 소소 코드 감사](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [`robots.txt file` 만들기](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [로봇 메타 태그 및 X-Robots-Tag HTTP 헤더 사양](https://developers.google.com/search/reference/robots_meta_tag)

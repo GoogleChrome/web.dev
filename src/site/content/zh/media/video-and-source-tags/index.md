@@ -6,7 +6,7 @@ authors:
   - joemedley
   - derekherman
 description: 您已经为 Web 正确准备了视频文件，也为其设置了正确的尺寸和分辨率，甚至还创建了适用于不同浏览器的单独 WebM 和 MP4 文件。为了让用户能够观看，您仍然需要为其添加一个网页。
-date: 2014-14-15
+date: 2014-02-15
 updated: 2021-07-05
 tags:
   - media

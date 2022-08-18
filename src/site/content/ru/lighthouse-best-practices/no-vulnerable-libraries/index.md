@@ -12,7 +12,7 @@ updated: 2020-06-04
 
 ## Причины плохих результатов этого аудита в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает интерфейсные библиотеки JavaScript с известными уязвимостями безопасности:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает интерфейсные библиотеки JavaScript с известными уязвимостями безопасности:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Аудит Lighthouse, показывающий все интерфейсные библиотеки JavaScript с известными уязвимостями безопасности, используемые на странице", width="800", height="190" %}</figure>
 
@@ -31,5 +31,5 @@ updated: 2020-06-04
 
 ## Ресурсы
 
-- [Исходный код для аудита «**Включает интерфейсные библиотеки JavaScript с известными уязвимостями безопасности**» (Includes front-end JavaScript libraries with known security vulnerabilities)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [Исходный код для аудита «**Включает интерфейсные библиотеки JavaScript с известными уязвимостями безопасности**» (Includes front-end JavaScript libraries with known security vulnerabilities)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [База данных уязвимостей snyk](https://snyk.io/vuln?packageManager=all)

@@ -8,7 +8,7 @@ description: |
 authors:
   - philipwalton
 date: 2021-08-17
-updated: 2021-08-17
+updated: 2022-07-18
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/OKW9sizk0a8UloNOFx9g.jpeg
 alt: Users on their phones
 tags:
@@ -56,7 +56,7 @@ predefined set of network and device conditions. These conditions are known as a
 _lab_ environment, sometimes also referred to as a _synthetic_ environment.
 
 Chrome tools that report lab data are generally running
-[Lighthouse](https://developers.google.com/web/tools/lighthouse).
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/).
 
 The purpose of a lab test is to control for as many factors as you can, so the
 results are (as much as possible) consistent and reproducible from run to run.
@@ -74,7 +74,7 @@ are interchangeable.
 
 Chrome tools that report _field data_ generally get that data from the [Chrome
 User Experience Report
-(CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report).
+(CrUX)](https://developer.chrome.com/docs/crux/).
 It's also common (and recommended) for site owners to [collect field data
 themselves](/vitals-field-measurement-best-practices/) because it can provide
 [more actionable insights](/vitals-ga4/) than just using CrUX alone.

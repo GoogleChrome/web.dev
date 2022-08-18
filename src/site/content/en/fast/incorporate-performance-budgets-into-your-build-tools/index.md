@@ -21,7 +21,7 @@ how to choose one that best fits your needs and current setup. 🕵️‍♀️
 
 ## Lighthouse performance budgets
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an auditing tool that tests sites in a few key areas—performance, accessibility, best practices and how well your site performs as a progressive web application.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is an auditing tool that tests sites in a few key areas—performance, accessibility, best practices and how well your site performs as a progressive web application.
 
 The [command line version](https://developers.google.com/web/tools/lighthouse/#cli) of Lighthouse (v5+) supports setting [performance budgets](https://developers.google.com/web/tools/lighthouse/audits/budgets) based on:
 
@@ -50,7 +50,7 @@ Budgets are set in a JSON file and after defining them the new "Over Budget" col
 
 ## Webpack performance hints
 
-[Webpack](https://developers.google.com/web/fundamentals/performance/webpack/) is a powerful build tool for optimizing how your code is delivered to the users. It also supports setting performance budgets based on **asset size**.
+[Webpack](/webpack/) is a powerful build tool for optimizing how your code is delivered to the users. It also supports setting performance budgets based on **asset size**.
 
 Turn on [performance hints](https://webpack.js.org/configuration/performance/) in `webpack.config.js` to get command line warnings or errors when your bundle size grows over the limit. It's a great way to stay mindful about asset sizes throughout the development.
 

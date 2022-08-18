@@ -45,7 +45,7 @@ TTI は、[ラボ環境](/user-centric-performance-metrics/#in-the-lab)で測定
 
 ### ラボ測定を実施するためのツール
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %}実際のユーザー環境での TTI の測定は可能ですが、ユーザーの操作がページの TTI に影響を与え、レポートに多数のばらつきが出てしまう可能性があるため、お勧めできません。実際のユーザー環境でのページのインタラクティブ性を理解するためには、[First Input Delay (FID)](/fid/) を測定する必要があります。{% endAside %}

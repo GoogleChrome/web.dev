@@ -12,7 +12,7 @@ web_lighthouse:
 
 ## Lighthouse 描述标签审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出没有描述标签的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记出没有描述标签的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="显示文档没有描述标签的 Lighthouse 审计", width="800", height="74" %}</figure>
 
@@ -74,6 +74,6 @@ Lighthouse 并不会评估描述的质量。
 
 ## 资源
 
-- [**文档没有描述标签**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [**文档没有描述标签**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [在搜索结果中创建优秀的标题和摘要](https://support.google.com/webmasters/answer/35624#1)
 - [不相关的关键词](https://support.google.com/webmasters/answer/66358)

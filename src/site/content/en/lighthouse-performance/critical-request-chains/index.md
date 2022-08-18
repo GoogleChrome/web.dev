@@ -15,7 +15,7 @@ are series of dependent network requests important for page rendering.
 The greater the length of the chains and the larger the download sizes,
 the more significant the impact on page load performance.
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 reports critical requests loaded with a high priority:
 
 <figure>
@@ -57,4 +57,4 @@ If you are not bundling your JavaScript assets, consider using [baler](https://g
 
 ## Resources
 
-[Source code for **Minimize critical request depth** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[Source code for **Minimize critical request depth** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/critical-request-chains.js)

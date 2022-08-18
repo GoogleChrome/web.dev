@@ -70,4 +70,4 @@ index.html
 
 ## Ресурсы
 
-- [Исходный код для проверки **предварительной загрузки ключевых запросов**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js).
+- [Исходный код для проверки **предварительной загрузки ключевых запросов**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/uses-rel-preload.js).

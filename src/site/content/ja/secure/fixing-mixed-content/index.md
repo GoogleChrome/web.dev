@@ -70,7 +70,7 @@ Google ChromeでHTTPSのページにアクセスすると、ブラウザは、�
 
 ### コンテンツセキュリティポリシー
 
-[Content security policy (コンテンツセキュリティポリシー)](https://developers.google.com/web/fundamentals/security/csp/) (CSP) は、混在コンテンツを大規模に管理する際に便利な多目的ブラウザ機能です。CSPレポートメカニズムを使用すれば、サイトの混在コンテンツを追跡し、混在コンテンツを更新またはブロックすることで、ユーザーを保護するための実施ポリシーを提供できます。
+[Content security policy (コンテンツセキュリティポリシー)](/csp/) (CSP) は、混在コンテンツを大規模に管理する際に便利な多目的ブラウザ機能です。CSPレポートメカニズムを使用すれば、サイトの混在コンテンツを追跡し、混在コンテンツを更新またはブロックすることで、ユーザーを保護するための実施ポリシーを提供できます。
 
 対象となるページでこうした機能を有効化するには、サーバーから送信されるレスポンスに`Content-Security-Policy`または`Content-Security-Policy-Report-Only`ヘッダーを含めます。さらに、ページの`<head>`セクションに`<meta>`タグを使えば、`Content-Security-Policy`を設定できます (`Content-Security-Policy-Report-Only`は**設定できません**)。
 
@@ -93,7 +93,7 @@ Google ChromeでHTTPSのページにアクセスすると、ブラウザは、�
 - ユーザーは、CSPヘッダーを理解できるブラウザーでページにアクセスする必要があります。最新のブラウザの多くについて言えることです。
 - レポートは、ユーザーがアクセスしたページの分しか取得できません。トラフィックの少ないページがある場合は、サイト全体のレポートを取得するまでに少し時間がかかるかもしれません。
 
-[Content security policy (コンテンツセキュリティポリシー)](https://developers.google.com/web/fundamentals/security/csp/) ガイドに詳しい情報とエンドポイントの例を記載しています。
+[Content security policy (コンテンツセキュリティポリシー)](/csp/) ガイドに詳しい情報とエンドポイントの例を記載しています。
 
 ### CSPを使用したレポートの代替手段
 

@@ -14,7 +14,7 @@ HTTP 캐싱은 반복 방문 시 페이지 로드 시간을 단축할 수 있습
 
 ## Lighthouse 캐시 정책 감사가 실패하는 방식
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 캐시되지 않은 모든 정적 리소스에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 캐시되지 않은 모든 정적 리소스에 플래그를 지정합니다.
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="효율적인 캐시 정책 감사가 포함된 Lighthouse Serve 정적 자산을 보여주는 스크린샷", width="800", height="490" %}</figure>
 
@@ -102,6 +102,6 @@ Chrome은 메모리 캐시에서 가장 많이 요청된 리소스를 제공하�
 
 ## 리소스
 
-- [**효율적인 캐시 정책으로 정적 자산 제공** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
+- [**효율적인 캐시 정책으로 정적 자산 제공** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [캐시 제어 사양](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 - [캐시 제어(MDN)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)

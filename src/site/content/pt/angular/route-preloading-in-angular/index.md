@@ -64,7 +64,7 @@ O roteador também registrou as declarações de rota dos módulos para que, qua
 
 `PreloadAllModules` é útil em muitos casos. Quando você tem dezenas de módulos, no entanto, seu pré-carregamento agressivo pode realmente aumentar o uso da rede. Além disso, como o roteador precisa registrar as rotas em todos os módulos pré-carregados, isso pode causar cálculos intensivos no thread de IU e levar a uma experiência do usuário lenta.
 
-A [biblioteca de link rápido](https://github.com/GoogleChromeLabs/quicklink) oferece uma estratégia melhor para aplicativos maiores. Ele usa a [API IntersectionObserver](https://developers.google.com/web/updates/2019/02/intersectionobserver-v2) para pré-carregar apenas módulos associados a links que estiverem atualmente visíveis na página.
+A [biblioteca de link rápido](https://github.com/GoogleChromeLabs/quicklink) oferece uma estratégia melhor para aplicativos maiores. Ele usa a [API IntersectionObserver](/intersectionobserver-v2/) para pré-carregar apenas módulos associados a links que estiverem atualmente visíveis na página.
 
 Você pode adicionar um link rápido para um aplicativo Angular usando o pacote [ngx-quicklink.](https://www.npmjs.com/package/ngx-quicklink) Comece instalando o pacote do npm:
 

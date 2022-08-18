@@ -1,4 +1,4 @@
-import {LitElement} from 'lit-element';
+import {LitElement} from 'lit';
 
 /* eslint-disable require-jsdoc */
 export class BaseElement extends LitElement {

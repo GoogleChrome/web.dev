@@ -47,7 +47,7 @@ Para obtener más información sobre la precarga de recursos críticos, consulte
 
 ## Renderizar la ruta inicial lo antes posible
 
-Lighthouse proporciona una advertencia si hay recursos que retrasan el [**First Paint (Primer despliegue)**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint), el momento en que su sitio muestra los píxeles en la pantalla:
+Lighthouse proporciona una advertencia si hay recursos que retrasan el [**First Paint (Primer despliegue)**](/user-centric-performance-metrics/#important-metrics-to-measure), el momento en que su sitio muestra los píxeles en la pantalla:
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: Auditoría para eliminar los recursos que bloquean el renderizado", width="800", height="111" %}
 

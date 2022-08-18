@@ -1,4 +1,260 @@
 {
+  "danristic": {
+    "homepage": "http://www.danristic.com/",
+    "twitter": "dristic101",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/b6v4qq26t6NWHAIm0SbV.png"
+  },
+  "gman": {
+    "homepage": "http://games.greggman.com/game/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/1BBm3UlHXE5rTYgdFr7e.png"
+  },
+  "dominiccooney": {
+    "homepage": "http://dcooney.com/",
+    "twitter": "coonsta",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/LZY3l6Yk6Nfj2whuB15r.png"
+  },
+  "zgoddard": {
+    "homepage": "http://gradientstudios.com/",
+    "twitter": "ZofGames",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/eYqcqTbc2Lgfn9013boG.png"
+  },
+  "tomwiltzius": {
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/pfj6ogyKu63pn6IOoJEA.png"
+  },
+  "coltmcanlis": {
+    "homepage": "http://mainroach.blogspot.com/",
+    "twitter": "duhroach",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/YT88zCOqYHewnehPUatW.png"
+  },
+  "marcinwichary": {
+    "homepage": "http://www.aresluna.org/",
+    "twitter": "mwichary",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/xUepvN9NAbPTBl8gZNkS.png"
+  },
+  "razvancaliman": {
+    "homepage": "http://razvancaliman.com/",
+    "twitter": "razvancaliman",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/7dpZJ4nTkOOGSpZdJqeR.png"
+  },
+  "christiancantrell": {
+    "homepage": "http://www.livingdigitally.net/",
+    "twitter": "cantrell",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/YguFULnqX68vwQFm3kXi.png"
+  },
+  "jameswilliams": {
+    "homepage": "http://jameswilliams.be/",
+    "twitter": "ecspike",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/XAcwYmIIXpwKmGY5oUsy.png"
+  },
+  "joemarini": {
+    "twitter": "joemarini",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/HWikKThV8CDipPIInN3c.png"
+  },
+  "loreenalee": {
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/CvudF1XU7va8GySmmbqU.png"
+  },
+  "malteubl": {
+    "homepage": "http://nonblocking.io/",
+    "twitter": "cramforce",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/bealJ5BxlwRxOGhya1PK.png"
+  },
+  "raymondcamden": {
+    "homepage": "http://www.raymondcamden.com/",
+    "twitter": "cfjedimaster",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/1AfrcGQyX3BBB6hK6VGM.png"
+  },
+  "brianford": {
+    "homepage": "http://briantford.com/",
+    "twitter": "briantford",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/L4fwOAEyX6GidNzg9kOo.png"
+  },
+  "tjvantoll": {
+    "homepage": "http://tjvantoll.com/",
+    "twitter": "tjvantoll",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/OVtLm4LBwpG4NHlgIOvh.png"
+  },
+  "bradfrost": {
+    "homepage": "http://http//bradfrostweb.com/",
+    "twitter": "brad_frost",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/Ng7L8xiEtfwItM990PhT.png"
+  },
+  "lillithompson": {
+    "twitter": "lillithompson",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/WiYHLt4y5HHcWvKPN017.png"
+  },
+  "saqoosha": {
+    "homepage": "http://saqoo.sh/a",
+    "twitter": "Saqoosha",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/kZHW6d3oVitJH5CRRbFT.png"
+  },
+  "adriangould": {
+    "homepage": "http://pagodagames.com/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0JlbM6fxB53uDHeSAs1U.png"
+  },
+  "adammark": {
+    "homepage": "http://www.adammark.net/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/QXPmWhi88BVfaVcS72d4.png"
+  },
+  "gskinnerdotcom": {
+    "homepage": "http://gskinner.com/",
+    "twitter": "gskinner",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZtebgoAmedmaAWsHNMgS.png"
+  },
+  "seanmiddleditch": {
+    "homepage": "http://sonargame.com/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/IVLI2l2RjFbHDB9MJOg3.png"
+  },
+  "justingitlin": {
+    "homepage": "http://legworkstudio.com/",
+    "twitter": "legwork",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ARaEfdMejcNWtPLqyf3O.png"
+  },
+  "activetheory": {
+    "homepage": "http://activetheory.net/",
+    "twitter": "active_theory",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/gNL5Xc8KIWX7RlLfccdz.png"
+  },
+  "luigimontanez": {
+    "homepage": "http://sunlightlabs.com/",
+    "twitter": "LuigiMontanez",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/glvD0KI05d9PTHfzRWRw.png"
+  },
+  "michaeldewey": {
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/HHHUxL7iukuBbyuVMnqR.png"
+  },
+  "oskareriksson": {
+    "homepage": "http://www.dinahmoe.com/",
+    "twitter": "_oskareriksson",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/1d8l0y8VlzSZJslyjG61.png"
+  },
+  "fredchasen": {
+    "homepage": "http://www.fchasen.com/",
+    "twitter": "fredjc",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZIZgvlAA5NnDA5EQexpB.png"
+  },
+  "plan8": {
+    "homepage": "http://plan8.se/",
+    "twitter": "Plan8_Music",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZIZgvlAA5NnDA5EQexpB.png"
+  },
+  "unit9com": {
+    "homepage": "http://unit9.com/",
+    "twitter": "unit9",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/cyO3s1wDVx9DcPfFLTfT.png"
+  },
+  "geoffblair": {
+    "homepage": "http://www.lostdecadegames.com/",
+    "twitter": "geoffblair",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/gSUNYY4W3dJE9tYlp4ZG.png"
+  },
+  "matthackett": {
+    "homepage": "http://www.lostdecadegames.com/",
+    "twitter": "richtaur",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/UH9IVsVygWpMOqtPsVrQ.png"
+  },
+  "christophergammon": {
+    "homepage": "http://www.cjgammon.com/",
+    "twitter": "cjgammon",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/tRs6b787z7gcczj3sZt8.png"
+  },
+  "ericrk": {
+    "homepage": "http://allthecodes.tumblr.com/",
+    "twitter": "ericrkarlSF",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/9iO5gZZ7T89hpyTaKn0x.png"
+  },
+  "thomasreynolds": {
+    "homepage": "http://awardwinningfjords.com/",
+    "twitter": "tdreyno",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/9a6bZAoux8hlKtPGQdG5.png"
+  },
+  "einaroberg": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "inear",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/A5LlokBwOGhxuOd2g0g0.png"
+  },
+  "danielisaksson": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "northkingdom",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/rOydjtEeVxCf2G0gLuKA.png"
+  },
+  "michaelchang": {
+    "homepage": "http://ghost-hack.com/",
+    "twitter": "mflux",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZgEOjGWE13Mq77PmQuy2.png"
+  },
+  "hakimelhattab": {
+    "homepage": "http://hakim.se/experiments",
+    "twitter": "hakimel",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/cNfAWdx2YLptERfhfevM.png"
+  },
+  "hanseklund": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "boolhaze",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/E6s2qr8J7nxIfGwuGHVk.png"
+  },
+  "derekdetweiler": {
+    "homepage": "http://gopherwoodstudios.com/",
+    "twitter": "gopherwood",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/7vUD1Qw3zif8kJidsFXr.png"
+  },
+  "johnmccutchan": {
+    "homepage": "http://www.johnmccutchan.com/",
+    "twitter": "johnmccutchan",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/hYFvb82T2jrdglYrC0o9.png"
+  },
+  "wesleyhales": {
+    "homepage": "http://wesleyhales.com/",
+    "twitter": "wesleyhales",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/Gfvo39bDqZMSOQmQ9WRc.png"
+  },
+  "mahemoff": {
+    "homepage": "http://mahemoff.com/",
+    "twitter": "mahemoff",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/8qXOF2DbhYTGnJG5qHXh.png"
+  },
+  "taligarsiel": {
+    "homepage": "http://taligarsiel.com/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/V3imNwHh9VNaDmFpXRnC.png"
+  },
+  "paulirish": {
+    "homepage": "https://www.paulirish.com/",
+    "twitter": "paul_irish",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/pkfFfQq25tFjXgFQw1rF.png"
+  },
+  "mdeal": {
+    "homepage": "https://galactic.ink/",
+    "twitter": "mudcube",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/OAJG3V813un1iXuy451G.png"
+  },
+  "smus": {
+    "homepage": "https://smus.com/",
+    "twitter": "borismus",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/qjz6fGVI9DfXFbR2n4KC.png"
+  },
+  "danielmoore": {
+    "homepage": "https://blog.danielx.net/",
+    "twitter": "STRd6",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/oHvCdFmgZrWSnqFWK2Qz.png"
+  },
+  "davidtong": {
+    "homepage": "http://ww25.davidtong.me/?subid1=20220505-1958-5384-b7d2-32bce5bbc6f8",
+    "twitter": "davidalism",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/oateRfgAPbjgAOQYLcCZ.png"
+  },
+  "jeremychone": {
+    "homepage": "https://britesnow.com",
+    "twitter": "jeremychone",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/bnjbSoWQdzP3AEYOyZnW.png"
+  },
+  "ernestd": {
+    "twitter": "edr",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/CoDoVg4PZ64aeUGLbr9i.png"
+  },
+  "chriswilson": {
+    "homepage": "https://cwilso.com/",
+    "twitter": "cwilso",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/RudCxfjPZlFSFeFRaYuG.png"
+  },
   "sethladd": {
     "homepage": "https://sethladd.com/",
     "twitter": "sethladd",
@@ -52,9 +308,11 @@
     "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/rGy547i80kDDHCjlAOdD.jpeg"
   },
   "umarhansa": {
-    "homepage": "https://umaar.com/",
+    "country": "UK",
+    "homepage": "https://umaar.com",
     "twitter": "umaar",
-    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/8Q36Mw54GMn4ag6m60nx.jpeg"
+    "github": "umaar",
+    "image": "image/eHjLPdOn1XcKYDm76GytojNeEkZ2/C0zDh9w4i3wZ8oOunJvR.jpg"
   },
   "ilmariheikkinen": {
     "homepage": "http://fhtr.org/",
@@ -327,6 +585,13 @@
     "twitter": "philwalton",
     "github": "philipwalton",
     "image": "image/admin/ovBM8MF9rYDxVVHUVlcG.jpg"
+  },
+  "tunetheweb": {
+    "country": "Ireland",
+    "homepage": "https://www.tunetheweb.com",
+    "twitter": "tunetheweb",
+    "github": "tunetheweb",
+    "image": "image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/FzCdsVVLfgdqxfgs6BDc.jpeg"
   },
   "ekharvey": {
     "twitter": "HarveyLizzi",
@@ -753,10 +1018,10 @@
     "github": "maranag",
     "image": "image/admin/ChOBe0OzPT7siDgFmjC9.jpg"
   },
-  "charistheodoulou": {
-    "twitter": "charistheo_dev",
+  "harrytheodoulou": {
+    "twitter": "harryTheo_",
     "country": "UK",
-    "homepage": "https://www.charistheo.io/",
+    "homepage": "https://www.harrytheo.com/",
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/RDHNBibB1P7yeOIrw0JX.jpg"
   },
   "natashakosoglov": {
@@ -1124,7 +1389,7 @@
     "linkedin": "https://www.linkedin.com/in/malchata/",
     "homepage": "https://jlwagner.net/",
     "country": "US",
-    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2qO19NkWfYnvHe2zLkhG.jpg"
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/R2HoNXU2ROjJSpY0uIFB.jpg"
   },
   "cédricbazureau": {
     "github": "cbazureau",
@@ -1177,7 +1442,7 @@
     "country": "US",
     "github": "heyawhite",
     "twitter": "heyawhite",
-    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/tKKMrgVB852NNd1UMRzN.png"
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/zTnfwJRcRiKepGLRlu7t.jpeg"
   },
   "svenmay": {
     "country": "DE",
@@ -1313,5 +1578,82 @@
     "twitter": "andreabreannany",
     "linkedin": "https://www.linkedin.com/in/andreabreanna/",
     "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8X4Jxtq931g6qIBH5fNK.jpg"
+  },
+  "yuyaito": {
+    "country": "JP",
+    "twitter": "bang_yy",
+    "image": "image/YLflGBAPWecgtKJLqCJHSzHqe2J2/2oSWqurqXEqx9jzuAqyn.jpeg"
+  },
+  "keenyeeliau": {
+    "image": "image/Or7Bgsqru3MxJHvMtp68LKOjxkH3/UbfmJ8kJwfT9FVLHjX3r.jpeg",
+    "github": "kyliau"
+  },
+  "jimmymooney": {
+    "homepage": "https://www.jimmymooney.com/",
+    "twitter": "jimmy0x52",
+    "github": "jimmy0x52",
+    "linkedin": "https://www.linkedin.com/in/jimmymooney/",
+    "country": "US",
+    "image": "image/Xyvh8LLq27V5yRjH5iS1dbf64pE2/M2E7ke6rO6ZpIabYeizX.jpg"
+  },
+  "alexeyrodionov": {
+    "country": "RU",
+    "twitter": "alexey_rodionov",
+    "github": "FluorescentHallucinogen",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/n6mW0LtLb2NtYAoQSCx7.png"
+  },
+  "twifkak": {
+    "twitter": "twifkak",
+    "github": "twifkak",
+    "image": "image/rULxC7pPw3PFS4o9xr7v8isFmCv1/fDaDWpuKLKDm4mjnt0jV.jpg"
+  },
+  "ruisantos": {
+    "twitter": "ruijssantos",
+    "linkedin": "https://www.linkedin.com/in/ruijssantos/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/AVrqFlCqg3j6Rp03tPco.jpg"
+  },
+  "manuelgarcia": {
+    "homepage": "https://farfetchtechblog.com/en/blog/authors/manuel-garcia/",
+    "twitter": "corrosion_pt",
+    "github": "soulcorrosion",
+    "linkedin": "https://www.linkedin.com/in/manuel-garcia-12b6928/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/KZ5GI42sni0kphabO7ut.jpg"
+  },
+  "patriciacoutoneto": {
+    "linkedin": "https://www.linkedin.com/in/pccneto",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/rZFsmMBh2R3d0MCV6gLE.jpg"
+  },
+  "steveworkman": {
+    "twitter": "steveworkman",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/ZQJOeFPFZCQrWmWfFGeH.jpeg"
+  },
+  "simonleparc": {
+    "twitter": "sleparc",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/u9LOvMuiDIAoW5aKZgsQ.jpg"
+  },
+  "dbaron": {
+    "country": "US",
+    "twitter": "davidbaron",
+    "github": "dbaron",
+    "linkedin": "https://www.linkedin.com/in/ldavidbaron/",
+    "homepage": "https://dbaron.org/",
+    "image": "image/ORyRmnnHXAbyJZvAGcyoT2oKi2o2/1Npv2NPkO3ht3vWAqkGv.jpg"
+  },
+  "bramus": {
+    "homepage": "https://www.bram.us/",
+    "twitter": "bramus",
+    "github": "bramus",
+    "country": "BE",
+    "image": "image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/CQMqvg5UkY4weDnJij3b.jpeg"
+  },
+  "kadirtopal": {
+    "country": "US",
+    "twitter": "atopal",
+    "image": "image/HodOHWjMnbNw56hvNASHWSgZyAf2/locu2HN2Xf0XCE3kqoLl.jpeg"
+  },
+  "daviddarnes": {
+    "country": "UK",
+    "twitter": "DavidDarnes",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/D4RF9eRlpsL0byFo3nTu.jpeg"
   }
 }

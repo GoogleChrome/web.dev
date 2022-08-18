@@ -98,7 +98,7 @@ Content-Security-Policy:
 4. Safari 및 이전 브라우저를 지원하도록 대비책을 추가합니다.
 5. CSP를 배포합니다.
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) (플래그 `--preset=experimental`를 포함한 v7.3.0 이상) **모범 사례** 감사를 이 프로세스 전반에 걸쳐 사용하여 사이트에 CSP가 있는지, 그리고 이것이 XSS에 대해 효과적일 만큼 충분히 엄격한지 확인할 수 있습니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) (플래그 `--preset=experimental`를 포함한 v7.3.0 이상) **모범 사례** 감사를 이 프로세스 전반에 걸쳐 사용하여 사이트에 CSP가 있는지, 그리고 이것이 XSS에 대해 효과적일 만큼 충분히 엄격한지 확인할 수 있습니다.
 
 {% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="시행 모드에서 CSP를 찾을 수 없다는 Lighthouse 보고서 경고", width="730", height="78" %}
 

@@ -18,7 +18,7 @@ Um [manifesto de aplicativo da web](/add-manifest/) inclui informações importa
 
 ## Como a auditoria de manifesto do aplicativo da web Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não têm um [manifesto de aplicativo da web](/add-manifest/) que atenda aos requisitos mínimos de instalação:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que não têm um [manifesto de aplicativo da web](/add-manifest/) que atenda aos requisitos mínimos de instalação:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Auditoria do farol mostrando que o usuário não pode instalar o aplicativo da web a partir da tela inicial", width="800", height="98" %}</figure>
 
@@ -28,7 +28,7 @@ Se o manifesto de uma página não incluir as seguintes propriedades, ele falhar
 - Uma [`icons`](https://developer.mozilla.org/docs/Web/Manifest/icons) que inclui um ícone de 192x192 px e um ícone de 512x512 px
 - Uma propriedade [`start_url`](https://developer.mozilla.org/docs/Web/Manifest/start_url)
 - Uma propriedade [`display`](https://developer.mozilla.org/docs/Web/Manifest/display) ajustada para `fullscreen`, `standalone` ou `minimal-ui`
-- Uma propriedade [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native) definida com um valor diferente de `true`.
+- Uma propriedade [`prefer_related_applications`](https://developer.chrome.com/blog/app-install-banners-native/) definida com um valor diferente de `true`.
 
 {% Aside 'caution' %} Um manifesto de aplicativo da web é *necessário* para que seu aplicativo seja instalável, mas não é *suficiente*. Para saber como atender a todos os requisitos de instalabilidade, consulte a postagem [Descubra o que é preciso para ser instalável.](/discover-installable) {% endAside %}
 
@@ -58,7 +58,7 @@ Outros navegadores têm critérios diferentes para instalação e para acionar o
 
 ## Recursos
 
-- [O código-fonte para auditoria **Manifesto do aplicativo da web não atende aos requisitos de instabilidade**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [O código-fonte para auditoria **Manifesto do aplicativo da web não atende aos requisitos de instabilidade**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [Adicionar um manifesto de aplicativo da web](/add-manifest/)
 - [Descubra o que é necessário para ser instalável](/discover-installable)
 - [Manifesto de aplicativo da web](https://developer.mozilla.org/docs/Web/Manifest)

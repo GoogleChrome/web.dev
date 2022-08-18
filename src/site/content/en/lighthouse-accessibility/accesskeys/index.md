@@ -64,5 +64,5 @@ or screen reader shortcut keys.
 
 ## Resources
 
-- [Source code for **`[accesskey]` values are not unique** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/accesskeys.js)
+- [Source code for **`[accesskey]` values are not unique** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/accesskeys.js)
 - [accesskey attribute value must be unique (Deque University)](https://dequeuniversity.com/rules/axe/3.3/accesskeys)

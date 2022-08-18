@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Когда проверка нагрузки на сеть считается непройденной в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) показывает общий размер всех ресурсов, запрошенных вашей страницей, в [кибибайтах (КиБ)](https://en.wikipedia.org/wiki/Kibibyte). Сначала перечисляются самые тяжеловесные запросы:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) показывает общий размер всех ресурсов, запрошенных вашей страницей, в [кибибайтах (КиБ)](https://en.wikipedia.org/wiki/Kibibyte). Сначала перечисляются самые тяжеловесные запросы:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Скриншот проверки Avoid enormous network payloads (Избегайте чрезмерных нагрузок на сеть) в Lighthouse", width="800", height="518" %}</figure>
 
@@ -55,4 +55,4 @@ web_lighthouse:
 
 ## Ресурсы
 
-[Исходный код проверки **Avoid enormous network payloads (Избегайте чрезмерных нагрузок на сеть)**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js).
+[Исходный код проверки **Avoid enormous network payloads (Избегайте чрезмерных нагрузок на сеть)**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/total-byte-weight.js).

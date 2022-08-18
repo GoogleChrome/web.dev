@@ -40,7 +40,7 @@ it slows down your page performance in several ways:
 
 ## How the Lighthouse JavaScript execution time audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 shows a warning when JavaScript execution takes longer than 2&nbsp;seconds.
 The audit fails when execution takes longer than 3.5&nbsp;seconds:
 
@@ -60,4 +60,4 @@ each JavaScript file that your page loads.
 
 ## Resources
 
-[Source code for **Reduce JavaScript execution time** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[Source code for **Reduce JavaScript execution time** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/bootup-time.js)

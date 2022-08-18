@@ -28,7 +28,7 @@ And if privacy and security weren't enough of a reason to protect your users, ma
 browser features like service workers, the Payment Request API, and even some older
 APIs like GeoLocation now require HTTPS.
 
-[Enabling HTTPS on Your Servers](/web/fundamentals/security/encrypt-in-transit/enable-https)
+[Enabling HTTPS on Your Servers](/enabling-https-on-your-servers/)
 
 ## Content Security Policy
 

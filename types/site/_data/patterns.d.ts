@@ -27,6 +27,7 @@ declare global {
     layout: string;
     title: string;
     description: string;
+    static?: string[];
     assets: CodePatternAssets;
     demo: string;
     suite: string;

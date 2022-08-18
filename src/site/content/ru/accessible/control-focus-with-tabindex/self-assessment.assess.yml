@@ -72,7 +72,7 @@ questions:
           is considered an anti-pattern.)
   - stimulus: |
       This HTML renders a custom radio group, which should have a
-      [roving `tabindex`](#create-accessible-components-with-"roving-tabindex").
+      [roving `tabindex`](#create-accessible-components-with-roving-tabindex).
       (To keep things simpler, ignore the
       [`aria-*` attributes](/semantics-and-screen-readers) for now.)
 

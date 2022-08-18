@@ -60,6 +60,6 @@ Lighthouse는 배경색과 전경색의 명암비가 충분히 높지 않은 텍
 
 ## 리소스
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/color-contrast.js" rel="noopener"><strong>배경색과 전경색의 명암비가 충분하지 않음</strong>에 대한 소스 코드</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/color-contrast.js" rel="noopener"><strong>배경색과 전경색의 명암비가 충분하지 않음</strong>에 대한 소스 코드</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/color-contrast" rel="noopener">텍스트 요소는 배경과 충분한 색상 대비를 가져야 합니다(Deque University).</a>
 - <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Colour Contrast Analyser</a>

@@ -16,7 +16,7 @@ web_lighthouse:
 
 ## Lighthouse 제목 레벨 감사가 실패하는 방법
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 제목이 하나 이상의 레벨을 건너뛰는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 제목이 하나 이상의 레벨을 건너뛰는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="레벨을 건너뛰는 제목을 표시하는 Lighthouse 감사", width="800", height="206" %}</figure>
 
@@ -58,5 +58,5 @@ web_lighthouse:
 
 ## 자원
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener"><strong>제목 건너뛰기 레벨</strong> 감사를 위한 소스 코드</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener"><strong>제목 건너뛰기 레벨</strong> 감사를 위한 소스 코드</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">제목 레벨은 1만 증가해야 합니다(Deque University).</a>

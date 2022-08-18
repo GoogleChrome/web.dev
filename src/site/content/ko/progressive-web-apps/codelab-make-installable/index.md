@@ -95,4 +95,4 @@ window.addEventListener('appinstalled', (event) => {
 다음은 몇 가지 추가적으로 수행할 수 있는 작업들입니다.
 
 - [앱이 홈 화면에서 실행되었는지 감지](/customize-install/#detect-mode)
-- [대신 운영 체제의 앱 설치 프롬프트 표시](https://developers.google.com/web/fundamentals/app-install-banners/native)
+- [대신 운영 체제의 앱 설치 프롬프트 표시](https://developer.chrome.com/blog/app-install-banners-native/)

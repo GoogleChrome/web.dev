@@ -15,7 +15,7 @@ icon, it ensures that the icon takes up all of the space that Android provides f
 
 ## How the Lighthouse maskable icon audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that do not have maskable icon support:
 
 <figure>
@@ -39,8 +39,8 @@ In order to pass the audit:
 ## How to add maskable icon support to your PWA
 
 1. Use [Maskable.app Editor][editor] to convert an existing icon to a maskable icon.
-1. Add the `purpose` property to one of the `icons` objects in your [web app manifest][manifest].
-   Set the value of `purpose` to `maskable` or `any maskable`. See [Values][values].
+1. Add the maskable icon in different sizes to the `icons` array in your [web app manifest][manifest].
+   Set the value of `purpose` to `maskable`. See [Values][values].
 
    ```json/8
    {
@@ -48,10 +48,16 @@ In order to pass the audit:
      "icons": [
        …
        {
-         "src": "path/to/maskable_icon.png",
-         "sizes": "196x196",
+         "src": "path/to/maskable_icon_192.png",
+         "sizes": "192x192",
          "type": "image/png",
-         "purpose": "any maskable"
+         "purpose": "maskable"
+       },
+       {
+         "src": "path/to/maskable_icon_512.png",
+         "sizes": "512x512",
+         "type": "image/png",
+         "purpose": "maskable"
        }
      ]
      …
@@ -63,7 +69,7 @@ In order to pass the audit:
 
 ## Resources
 
-- [Source code for **Manifest doesn't have a maskable icon** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [Source code for **Manifest doesn't have a maskable icon** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [Adaptive icon support in PWAs with maskable icons][guide]
 - [Maskable.app Editor][editor]
 - [Add a web app manifest][manifest]

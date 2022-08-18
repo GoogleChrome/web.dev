@@ -61,7 +61,7 @@ than having to touch the screen with messy hands or even your nose when the scre
 Betty Crocker asked themselves how they could port the killer feature of their iOS/Android apps
 over to the web app.
 This is when they learned about
-[Project Fugu](https://developers.google.com/web/updates/capabilities) and the
+[Project Fugu](https://developer.chrome.com/blog/capabilities/) and the
 [Wake Lock API](/wakelock/).
 
 {% Img src="image/admin/Yoj65m20XpoPdaL8ejAv.jpg", alt="A person kneading dough on a kitchen table covered in flour", width="800", height="533" %}

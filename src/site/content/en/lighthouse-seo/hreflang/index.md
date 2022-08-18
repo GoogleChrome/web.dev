@@ -15,7 +15,7 @@ a page so that they can display the correct version for each language or region.
 
 ## How the Lighthouse `hreflang` audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags
 incorrect `hreflang` links:
 
 <figure>
@@ -102,7 +102,7 @@ For more information, see Google's
 
 ## Resources
 
-- [Source code for **Document does not have a valid `hreflang`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/hreflang.js)
+- [Source code for **Document does not have a valid `hreflang`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/hreflang.js)
 - [Tell Google about localized versions of your page](https://support.google.com/webmasters/answer/189077)
 - [ISO 639-1 format](https://wikipedia.org/wiki/List_of_ISO_639-1_codes)
 - [ISO 3166-1 alpha-2 format](https://wikipedia.org/wiki/ISO_3166-1_alpha-2)

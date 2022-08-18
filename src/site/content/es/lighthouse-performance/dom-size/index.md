@@ -26,7 +26,7 @@ Un árbol DOM grande puede ralentizar el rendimiento de tu página de varias man
 
 ## Cómo falla la auditoría sobre el tamaño del DOM de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) reporta el total de elementos que conforman el DOM, la profundidad máxima del DOM de la página y el máximo de elementos hijos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reporta el total de elementos que conforman el DOM, la profundidad máxima del DOM de la página y el máximo de elementos hijos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Una captura de pantalla de Lighthouse evita una auditoría de tamaño excesivo del DOM", width="800", height="363" %}</figure>
 
@@ -45,7 +45,7 @@ Si actualmente envía un gran árbol DOM, intente cargar su página y anotar man
 
 Si crea nodos DOM durante la ejecución, la [Modificación del subárbol DOM cambia puntos de interrupción](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom) puede ayudarle a determinar cuando se crean los nodos.
 
-Si no puede evitar un árbol DOM grande, otro enfoque para mejorar el rendimiento de la renderización es simplificar sus selectores de CSS. Consulte el documento de Google [Reducir el alcance y la complejidad de los cálculos de estilo](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations) para obtener más información.
+Si no puede evitar un árbol DOM grande, otro enfoque para mejorar el rendimiento de la renderización es simplificar sus selectores de CSS. Consulte el documento de Google [Reducir el alcance y la complejidad de los cálculos de estilo](/reduce-the-scope-and-complexity-of-style-calculations/) para obtener más información.
 
 ## Orientación específica de una pila
 
@@ -61,5 +61,5 @@ Si renderiza listas grandes, utilice [desplazamiento virtual](/virtualize-lists-
 
 ## Recursos
 
-- [Código fuente para **evitar una auditoría de tamaño excesivo del DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
-- [Reducir el alcance y la complejidad de los cálculos de estilo](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+- [Código fuente para **evitar una auditoría de tamaño excesivo del DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
+- [Reducir el alcance y la complejidad de los cálculos de estilo](/reduce-the-scope-and-complexity-of-style-calculations/)

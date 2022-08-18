@@ -14,7 +14,7 @@ Se uma imagem renderizada tem uma [proporção de aspecto](https://en.wikipedia.
 
 ## Como a auditoria da proporção da imagem do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza qualquer imagem com uma dimensão renderizada com mais do que alguns pixels de diferença da dimensão esperada quando renderizada em sua proporção natural:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza qualquer imagem com uma dimensão renderizada com mais do que alguns pixels de diferença da dimensão esperada quando renderizada em sua proporção natural:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="A auditoria do Lighthouse mostra as imagens exibidas com proporção incorreta", width="800", height="198" %}</figure>
 
@@ -45,7 +45,7 @@ Por fim, confira a postagem [Exibir imagens com dimensões corretas](/serve-imag
 
 ## Recursos
 
-- [Código-fonte para a auditoria **Exibe imagens com proporção incorreta**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
+- [Código-fonte para a auditoria **Exibe imagens com proporção incorreta**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/image-aspect-ratio.js)
 - [Proporção CSS](https://www.npmjs.com/package/css-aspect-ratio)
 - [Caixas de proporção de aspecto](https://css-tricks.com/aspect-ratio-boxes/)
 - [Sirva imagens com dimensões corretas](/serve-images-with-correct-dimensions)

@@ -326,7 +326,7 @@ bfcacheナビゲーションは、新しいページの読み込みを開始す�
 
 [Core Web Vitals](/vitals/)はさまざまな次元 (読み込み速度、双方向性、視覚的安定性) でWebページのユーザーエクスペリエンスを測定します。ユーザーは、従来のページ読み込みよりも高速なナビゲーションとしてbfcacheの復元を体験するため、Core WebVitalsのメトリックがこれを反映することが重要です。 結局のところ、ユーザーにとって気になるのは、bfcacheが有効になっているかどうかではなく、ナビゲーションが高速であることだけです。
 
-Core Web Vitalsメトリックを収集して報告する[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)などのツールは、bfcacheの復元をデータセット内の個別のページアクセスとして扱います。
+Core Web Vitalsメトリックを収集して報告する[Chrome User Experience Report](https://developer.chrome.com/docs/crux/)などのツールは、bfcacheの復元をデータセット内の個別のページアクセスとして扱います。
 
 また、bfcacheの復元後にこれらのメトリックを測定するための専用のWebパフォーマンスAPIは (まだ) ありませんが、既存のWeb APIを使用してそれらの値を概算できます。
 

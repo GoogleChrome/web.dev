@@ -32,7 +32,7 @@ We've already mentioned a few things you can include in a performance budget suc
 * Maximum size of scripts, including frameworks
 * Total number of external resources, such as third-party scripts
 
-However, these numbers don't tell you much about the user experience. Two pages with the same number of requests or same weight can render differently depending on the order in which resources get requested. If a [critical resource](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) like a hero image or a stylesheet on one of the pages is loaded late in the process, the users will wait longer to see something useful and perceive the page as slower. If on the other page the most important parts load quickly, they may not even notice if the rest of the page doesn't.
+However, these numbers don't tell you much about the user experience. Two pages with the same number of requests or same weight can render differently depending on the order in which resources get requested. If a [critical resource](/critical-rendering-path/) like a hero image or a stylesheet on one of the pages is loaded late in the process, the users will wait longer to see something useful and perceive the page as slower. If on the other page the most important parts load quickly, they may not even notice if the rest of the page doesn't.
 
 <figure>
   {% Img src="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Image of progressive page rendering based on the critical-path", width="611", height="300" %}
@@ -42,7 +42,7 @@ This is why it's important to keep track of another type of metric.
 
 ### Milestone timings ⏱️
 
-Milestone timings mark events that happen during page load, such as [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) or [load](https://developer.mozilla.org/docs/Web/Events/load) event. The most useful timings are [user-centric performance metrics](/user-centric-performance-metrics/) that tell you something about the experience of loading a page. These metrics are available through [browser APIs](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) and as part of [Lighthouse](https://developers.google.com/web/tools/lighthouse/) reports.
+Milestone timings mark events that happen during page load, such as [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) or [load](https://developer.mozilla.org/docs/Web/Events/load) event. The most useful timings are [user-centric performance metrics](/user-centric-performance-metrics/) that tell you something about the experience of loading a page. These metrics are available through [browser APIs](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) and as part of [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports.
 
 [First Contentful Paint (FCP)](/fcp/) measures when the browser displays the first bit of content from the DOM, like text or images.
 
@@ -50,7 +50,7 @@ Milestone timings mark events that happen during page load, such as [DOMContentL
 
 ### Rule-based metrics 💯
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) and [WebPageTest](https://www.webpagetest.org/) calculate [performance scores](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) based on general best practice rules, that you can use as guidelines. As a bonus, Lighthouse also offers you hints for simple optimizations.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [WebPageTest](https://www.webpagetest.org/) calculate [performance scores](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) based on general best practice rules, that you can use as guidelines. As a bonus, Lighthouse also offers you hints for simple optimizations.
 
 You'll get the best results if you keep track of a combination of quantity-based and user-centric performance metrics. Focus on asset sizes in the early phases of a project and start tracking FCP and TTI as soon as possible.
 
@@ -61,7 +61,7 @@ The only way to really know what works best for your site is to try it—researc
 If you don't have time for that, here are good default numbers to get you started:
 
 * Under **5 s** Time to Interactive
-* Under **170 KB** of [critical-path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) resources (compressed/minified)
+* Under **170 KB** of [critical-path](/critical-rendering-path/) resources (compressed/minified)
 
 These [numbers](https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/) are calculated based on real-world baseline devices and **3G network speed**. [Over half of the internet traffic](https://www.statista.com/statistics/277125/share-of-website-traffic-coming-from-mobile-devices/) today happens on mobile networks, so you should use 3G network speed as a starting point.
 

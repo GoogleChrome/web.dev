@@ -56,8 +56,8 @@ button:focus {
 
 If you click on the `<button>` with a mouse in Chrome on macOS you should see
 its custom focus style. However, you will not see the custom focus style if you
-click on the `<button>` in Firefox or Safari on macOS. This is because in
-Firefox and Safari the element does not receive focus when you click on it.
+click on the `<button>` in Safari on macOS. This is because in
+Safari the element does not receive focus when you click on it.
 
 {% Glitch {
   id: 'focus-style2',
@@ -84,12 +84,6 @@ browser determines via heuristics that displaying a focus indicator would be
 beneficial to the user. In particular, if the most recent user interaction
 was via the keyboard and the key press did not include a meta, `ALT` / `OPTION`,
 or `CONTROL` key, then `:focus-visible` will match.
-
-{% Aside %}
-`:focus-visible` is currently only supported in Chrome behind a flag,
-but there is a [lightweight polyfill](https://github.com/WICG/focus-visible)
-that can be added to your app to make it work.
-{% endAside %}
 
 The button in the example below will _selectively_ show a focus indicator. If
 you use a mouse to click on it, the results are different than if you first use

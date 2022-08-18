@@ -58,7 +58,7 @@ Algunos navegadores tienen [una función de generación de informes en las API d
     ```
 3. Una vez que el encabezado comienza a propagarse, el endpoint en el que se registró debería comenzar a recopilar informes de depreciación.
 
-Consulte un ejemplo de implementación aquí: [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+Consulte un ejemplo de implementación aquí: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 

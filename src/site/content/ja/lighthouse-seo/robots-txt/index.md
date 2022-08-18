@@ -17,7 +17,7 @@ web_lighthouse:
 
 ## Lighthouse の `robots.txt` 監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、無効な `robots.txt` ファイルにフラグを立てます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、無効な `robots.txt` ファイルにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="無効な robots.txt を示す Lighthouse の監査", width="800", height="203" %}</figure>
 
@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## リソース
 
-- [「**`robots.txt` が無効です**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [「**`robots.txt` が無効です**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [`robots.txt file` を作成する](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Robots メタタグと X-Robots-Tag HTTP ヘッダーの仕様](https://developers.google.com/search/reference/robots_meta_tag)

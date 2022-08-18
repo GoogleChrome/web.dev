@@ -34,7 +34,7 @@ Já mencionamos algumas coisas que você pode incluir em um orçamento de desemp
 - Tamanho máximo de scripts, incluindo estruturas
 - Número total de recursos externos, como scripts de terceiros
 
-No entanto, esses números não dizem muito sobre a experiência do usuário. Duas páginas com o mesmo número de solicitações ou mesmo peso podem ser renderizadas de maneira diferente dependendo da ordem em que os recursos são solicitados. Se um [recurso crítico,](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) como uma imagem principal ou uma folha de estilo em uma das páginas, for carregado no final do processo, os usuários irão esperar mais para ver algo útil e perceber a página como mais lenta. Se na outra página as partes mais importantes carregarem rapidamente, eles podem nem perceber se o resto da página carregou ou não.
+No entanto, esses números não dizem muito sobre a experiência do usuário. Duas páginas com o mesmo número de solicitações ou mesmo peso podem ser renderizadas de maneira diferente dependendo da ordem em que os recursos são solicitados. Se um [recurso crítico,](/critical-rendering-path/) como uma imagem principal ou uma folha de estilo em uma das páginas, for carregado no final do processo, os usuários irão esperar mais para ver algo útil e perceber a página como mais lenta. Se na outra página as partes mais importantes carregarem rapidamente, eles podem nem perceber se o resto da página carregou ou não.
 
 <figure>{% Img src="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Imagem de renderização progressiva de página com base no caminho crítico", width="611", height="300" %}</figure>
 
@@ -42,7 +42,7 @@ No entanto, esses números não dizem muito sobre a experiência do usuário. Du
 
 ### Cronometragem dos marcos ⏱️
 
-Os tempos de marcos marcam eventos que acontecem durante o carregamento da página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) ou evento de [carregamento.](https://developer.mozilla.org/docs/Web/Events/load) Os tempos mais úteis são [métricas de desempenho centradas no usuário](/user-centric-performance-metrics/) que informam algo sobre a experiência de carregar uma página. Essas métricas estão disponíveis por meio de [APIs de navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) e como parte dos relatórios do [Lighthouse.](https://developers.google.com/web/tools/lighthouse/)
+Os tempos de marcos marcam eventos que acontecem durante o carregamento da página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) ou evento de [carregamento.](https://developer.mozilla.org/docs/Web/Events/load) Os tempos mais úteis são [métricas de desempenho centradas no usuário](/user-centric-performance-metrics/) que informam algo sobre a experiência de carregar uma página. Essas métricas estão disponíveis por meio de [APIs de navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) e como parte dos relatórios do [Lighthouse.](https://developer.chrome.com/docs/lighthouse/overview/)
 
 [First Contentful Paint (FCP)](/fcp/) mede quando o navegador exibe o primeiro bit de conteúdo do DOM, como texto ou imagens.
 
@@ -50,7 +50,7 @@ Os tempos de marcos marcam eventos que acontecem durante o carregamento da pági
 
 ### Métricas baseadas em regras 💯
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) e o [WebPageTest](https://www.webpagetest.org/) calculam [as pontuações de desempenho](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) com base nas regras de melhores práticas gerais, que podem ser usadas como diretrizes. Como bônus, o Lighthouse também oferece dicas para otimizações simples.
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) e o [WebPageTest](https://www.webpagetest.org/) calculam [as pontuações de desempenho](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) com base nas regras de melhores práticas gerais, que podem ser usadas como diretrizes. Como bônus, o Lighthouse também oferece dicas para otimizações simples.
 
 Você obterá os melhores resultados se acompanhar uma combinação de métricas de desempenho baseadas em quantidade e centradas no usuário. Concentre-se nos tamanhos dos ativos nas fases iniciais de um projeto e comece a acompanhar o FCP e o TTI o mais rápido possível.
 
@@ -61,7 +61,7 @@ A única maneira de saber realmente o que funciona melhor para o seu site é exp
 Se você não tem tempo para isso, aqui estão alguns bons números padrão para você começar:
 
 - Menos de **5 segundos** de Time to Interactive
-- Menos de **170 KB** de [recursos de caminho crítico](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) (compactado/reduzido)
+- Menos de **170 KB** de [recursos de caminho crítico](/critical-rendering-path/) (compactado/reduzido)
 
 Esses [números](https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/) são calculados com base em dispositivos de linha de base do mundo real e na **velocidade da rede 3G** . [Mais da metade do tráfego da Internet](https://www.statista.com/statistics/277125/share-of-website-traffic-coming-from-mobile-devices/) hoje acontece em redes móveis, então você deve usar a velocidade da rede 3G como ponto de partida.
 

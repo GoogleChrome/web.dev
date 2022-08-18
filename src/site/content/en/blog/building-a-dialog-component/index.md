@@ -665,7 +665,7 @@ will be custom presentation styles:
 
 ```css
 dialog > form > article {
-  overflow-y: scroll; 
+  overflow-y: auto; 
   max-block-size: 100%; /* safari */
   overscroll-behavior-y: contain;
   display: grid;
@@ -1262,8 +1262,14 @@ to the community remixes section below!
 
 ## Community remixes
 
-- [@GrimLink](https://twitter.com/GrimLink) with a [3-in-1 dialog](https://fylgja.dev/components/dialog/).
-- [@mikemai2awesome](https://twitter.com/mikemai2awesome) with [a nice remix](https://codepen.io/mikemai2awesome/pen/dyJgPxX) that doesn't change the `display` property.
+- [@GrimLink](https://twitter.com/GrimLink) with a [3-in-1
+  dialog](https://fylgja.dev/components/dialog/).
+- [@mikemai2awesome](https://twitter.com/mikemai2awesome) with [a nice
+  remix](https://codepen.io/mikemai2awesome/pen/dyJgPxX) that doesn't change the
+  `display` property.
+- [@geoffrich_](https://twitter.com/geoffrich_) with
+  [Svelte](https://github.com/geoffrich/dialog-gui-challenge-svelte) and nice
+  [Svelte FLIP](https://svelte.dev/docs#run-time-svelte-animate-flip) polish.
 
 ### Resources
 

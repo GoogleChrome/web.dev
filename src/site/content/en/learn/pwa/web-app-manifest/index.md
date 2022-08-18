@@ -5,12 +5,13 @@ description: >
 authors:
   - firt
 date: 2022-01-10
+updated: 2022-05-10
 ---
 
 The web app manifest is a file you create that tells the browser how you want your web content to display as an app in the operating system. The manifest can include basic information such as the app's name, icon, and theme color; advanced preferences, such as desired orientation and app shortcuts; and catalog metadata, such as screenshots.
 
 {% Aside 'warning' %}
-A web app manifest is a required installability criteria in every browser. Your PWA will not install without it.
+A web app manifest is a required [installability criteria](installation/#installation-criteria) in every browser. Your PWA will not install without it.
 {% endAside %}
 
 Each PWA should include a single manifest per application, typically hosted in the root folder, and linked on all HTML pages your PWA can be installed from. Its official extension is `.webmanifest`, so you could name your manifest something like `app.webmanifest`.

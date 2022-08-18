@@ -33,7 +33,7 @@ Workbox modules work in different contexts, such as:
 
 - **Within a service worker context**: you import the modules you need and use them from your service worker file, for example to help manage caching and serve files with different strategies.
 - **Within the main `window` context**: helping to register a service worker and communicating with it
-- **As part of a build system**: for example, WebPack, for purposes such as creating a manifest of your assets, or even generating your entire service worker.
+- **As part of a build system**: for example, webpack, for purposes such as creating a manifest of your assets, or even generating your entire service worker.
 
 Some popular modules are:
 - [workbox-routing](https://developer.chrome.com/docs/workbox/modules/workbox-routing/): When the service worker intercepts requests this module routes those requests to different functions that provide responses; it's an implementation of the `fetch` event handler as mentioned in the [Serving chapter](/learn/pwa/serving).

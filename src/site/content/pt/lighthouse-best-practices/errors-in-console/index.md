@@ -16,7 +16,7 @@ As mensagens registradas no console vêm dos desenvolvedores da web que criaram 
 
 ## Como a auditoria do Lighthouse de erro de navegador falha
 
-[O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza todos os erros do navegador registrados no console:
+[O Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza todos os erros do navegador registrados no console:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="Auditoria do Lighthouse mostrando erros do navegador no console", width="800", height="247" %}</figure>
 
@@ -47,7 +47,7 @@ Se você não puder corrigir um erro, considere envolvê-lo em uma [`try…catch
 
 ## Recursos
 
-- [O código-fonte dos **erros do navegador foi registrado na** auditoria do console](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
+- [O código-fonte dos **erros do navegador foi registrado na** auditoria do console](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/errors-in-console.js)
 - [Visão geral do console](https://developer.chrome.com/docs/devtools/console/)
 - [Stack Overflow](https://stackoverflow.com/)
 - [tente … pegar](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

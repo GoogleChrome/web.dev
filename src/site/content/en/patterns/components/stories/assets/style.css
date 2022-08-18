@@ -1,0 +1,36 @@
+.stories {
+  display: grid;
+  grid: 1fr / auto-flow 100%;
+  grid-gap: 1ch;
+  gap: 1ch;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior: contain;
+  touch-action: pan-x;
+}
+
+.user {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: grid;
+  grid: [story] 1fr / [story] 1fr;
+}
+
+.story {
+  grid-area: story;
+
+  background-size: cover;
+  background-image: 
+    var(--bg), 
+    linear-gradient(to top, rgb(249, 249, 249), rgb(226, 226, 226));
+
+  user-select: none;
+  touch-action: manipulation;
+
+  transition: opacity .3s cubic-bezier(0.4, 0.0, 1, 1)
+}
+
+.story.seen {
+  opacity: 0;
+  pointer-events: none;
+}

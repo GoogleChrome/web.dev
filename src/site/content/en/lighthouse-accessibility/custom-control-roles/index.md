@@ -72,4 +72,4 @@ See also [How to Do an Accessibility Review](https://developers.google.com/web/f
 
 ## Resources
 
-[Source code for **Custom controls have ARIA roles** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/custom-controls-roles.js)
+[Source code for **Custom controls have ARIA roles** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/manual/custom-controls-roles.js)

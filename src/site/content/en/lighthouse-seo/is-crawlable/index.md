@@ -17,7 +17,7 @@ Only block indexing for content that you don't want to appear in search results.
 
 ## How the Lighthouse indexing audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags pages
 that search engines can't index:
 
 <figure>
@@ -95,7 +95,7 @@ headers for specific search engines, see these guides:
 
 ## Resources
 
-- [Source code for **Page is blocked from indexing** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/is-crawlable.js)
+- [Source code for **Page is blocked from indexing** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/is-crawlable.js)
 - Google's [Robots meta tag and X-Robots-Tag HTTP header specifications](https://developers.google.com/search/reference/robots_meta_tag)
 - Bing's [Robots Metatags](https://www.bing.com/webmaster/help/which-robots-metatags-does-bing-support-5198d240)
 - Yandex's [Using HTML elements](https://yandex.com/support/webmaster/controlling-robot/html.html)

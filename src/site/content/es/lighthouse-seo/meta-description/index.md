@@ -14,7 +14,7 @@ El elemento `<meta name="description">` proporciona un resumen del contenido de 
 
 ## Cómo falla la auditoría de la metadescripción de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas sin una metadescripción:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas sin una metadescripción:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Auditoría Lighthouse que muestra que el documento no tiene una metadescripción", width="800", height="74" %}</figure>
 
@@ -32,13 +32,13 @@ Lighthouse no evalúa la calidad de su descripción.
 Agregue un elemento `<meta name=description>` al `<head>` de cada una de sus páginas:
 
 ```html
-<meta name="descripción" content="Ponga su descripción aquí.">
+<meta name="description" content="Ponga su descripción aquí.">
 ```
 
 Si es apropiado, incluya datos claramente etiquetados en las descripciones. Por ejemplo:
 
 ```html
-<meta name="descripción" content="Autor: A.N. Autor,
+<meta name="description" content="Autor: A.N. Autor,
     Ilustrador: P. Imagen, Categoría: Libros, Precio: $17,99,
     Longitud: 784 páginas">
 ```
@@ -55,7 +55,7 @@ A continuación, se muestran ejemplos de descripciones buenas y malas:
 {% Compare 'worse' %}
 
 ```html
-<meta name="descripción" content="Una receta de donas.">
+<meta name="description" content="Una receta de donas.">
 ```
 
 {% CompareCaption %} Demasiado vago. {% endCompareCaption %} {% endCompare %}
@@ -64,7 +64,7 @@ A continuación, se muestran ejemplos de descripciones buenas y malas:
 
 ```html
 <meta
-  name="descripción"
+  name="description"
   content="La sencilla receta de Mary para las donas de tocino
            y arce es una golosina dulce y pegajosa con solo un
            toque de sal que siempre volverás a buscar.">
@@ -76,6 +76,6 @@ Consulte la página de Google [Crear títulos y fragmentos óptimos en los resul
 
 ## Recursos
 
-- [El código fuente de la auditoría **El documento no tiene una metadescripción**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [El código fuente de la auditoría **El documento no tiene una metadescripción**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [Crear títulos y fragmentos óptimos en los resultados de búsqueda](https://support.google.com/webmasters/answer/35624#1)
 - [Palabras clave irrelevantes](https://support.google.com/webmasters/answer/66358)

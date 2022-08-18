@@ -264,7 +264,7 @@ img {
 
 我很高兴与大家分享可用于测量和调试累积布局偏移 (CLS) 的各种工具。
 
-[灯塔](https://developers.google.com/web/tools/lighthouse)[6.0](https://github.com/GoogleChrome/lighthouse/releases)及更高版本支持在实验室环境中测量 CLS。该版本还将突出显示导致最多布局偏移的节点。
+[灯塔](https://developer.chrome.com/docs/lighthouse/overview/)[6.0](https://github.com/GoogleChrome/lighthouse/releases)及更高版本支持在实验室环境中测量 CLS。该版本还将突出显示导致最多布局偏移的节点。
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="灯塔 6.0 支持在指标部分测量 CLS", width="800", height="309" %}
 

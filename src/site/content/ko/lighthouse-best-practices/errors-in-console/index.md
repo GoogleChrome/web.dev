@@ -16,7 +16,7 @@ updated: 2019-08-28
 
 ## Lighthouse 브라우저 오류 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 콘솔에 기록된 모든 브라우저 오류에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 콘솔에 기록된 모든 브라우저 오류에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="콘솔에서 브라우저 오류를 보여주는 Lighthouse 감사", width="800", height="247" %}</figure>
 
@@ -47,7 +47,7 @@ Chrome DevTools에는 오류 원인을 추적하는 데 도움이 되는 몇 가
 
 ## 참고자료
 
-- [**브라우저 오류**에 대한 소스 코드가 콘솔 감사에 기록되었습니다](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
+- [**브라우저 오류**에 대한 소스 코드가 콘솔 감사에 기록되었습니다](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/errors-in-console.js)
 - [콘솔 개요](https://developer.chrome.com/docs/devtools/console/)
 - [Stack Overflow](https://stackoverflow.com/)
 - [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

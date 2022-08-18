@@ -17,7 +17,7 @@ tags:
 In the [Speed Tooling Evolutions](https://youtu.be/iaWLXf1FgI0) talk at Chrome
 Developer Summit (CDS), Paul Irish and I presented the newest products and
 features coming from Google that can help you build and maintain an exceptionally fast experience for all your users. At the center of that story
-are additions to the [Lighthouse](https://developers.google.com/web/tools/lighthouse) family of performance monitoring tools.
+are additions to the [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) family of performance monitoring tools.
 
 ## Lighthouse CI alpha release
 

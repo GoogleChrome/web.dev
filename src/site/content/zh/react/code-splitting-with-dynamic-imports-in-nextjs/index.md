@@ -19,7 +19,7 @@ feedback:
 
 虽然基于路由的代码拆分是一个很好的默认设置，但您可以通过组件级别的代码拆分进一步优化加载过程。如果您的应用含有大型组件，最好将它们分成单独的块。这样，任何不重要或仅在某些用户交互（例如点击按钮）时呈现的大型组件都可以延迟加载。
 
-Next.js 支持[动态 `import()`](https://v8.dev/features/dynamic-import) ，它允许您动态导入 JavaScript 模块（包括 React 组件）并将每个导入作为单独的块加载。这为您提供了组件级代码拆分并使您能够控制资源加载，以便用户只下载他们正在查看的站点部分所需的代码。在 Next.js 中，这些组件默认是[服务器端呈现（SSR）](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)。
+Next.js 支持[动态 `import()`](https://v8.dev/features/dynamic-import) ，它允许您动态导入 JavaScript 模块（包括 React 组件）并将每个导入作为单独的块加载。这为您提供了组件级代码拆分并使您能够控制资源加载，以便用户只下载他们正在查看的站点部分所需的代码。在 Next.js 中，这些组件默认是[服务器端呈现（SSR）](/rendering-on-the-web/)。
 
 ## 动态导入操作
 

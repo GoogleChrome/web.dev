@@ -4,7 +4,7 @@ title: Первая отрисовка контента (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-07-18
 description: В этой статье описывается метрика FCP (Первая отрисовка контента) и объясняются принципы ее измерения
 tags:
   - performance
@@ -39,13 +39,13 @@ FCP можно измерить в [лабораторных](/user-centric-perf
 ### Инструменты для измерения в полевых условиях
 
 - [PageSpeed Insights](https://pagespeed.web.dev/)
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [Search Console (отчет о скорости загрузки)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
 ### Инструменты для измерения в лабораторных условиях
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
@@ -86,7 +86,7 @@ import {getFCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-Полный пример измерения FCP в JavaScript приводится в [исходном коде `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts).
+Полный пример измерения FCP в JavaScript приводится в [исходном коде `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить FCP в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 

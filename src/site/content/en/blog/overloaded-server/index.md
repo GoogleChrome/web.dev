@@ -75,7 +75,7 @@ Although [service workers](https://developer.chrome.com/docs/workbox/service-wor
 
 #### Diagnose
 
-Run [Lighthouse](https://developers.google.com/web/tools/lighthouse) and look at the [Serve static assets with an efficient cache policy](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) audit to view a list of resources with a short to medium [time to live](https://en.wikipedia.org/wiki/Time_to_live) (TTL). For each listed resource, consider if the TTL should be increased. As a rough guideline:
+Run [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and look at the [Serve static assets with an efficient cache policy](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) audit to view a list of resources with a short to medium [time to live](https://en.wikipedia.org/wiki/Time_to_live) (TTL). For each listed resource, consider if the TTL should be increased. As a rough guideline:
 *   Static resources should be cached with a long TTL (1 year).
 *   Dynamic resources should be cached with a short TTL (3 hours).
 

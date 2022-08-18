@@ -10,7 +10,7 @@ description: |
   dimensions and the correct resolution. You've even created separate WebM and
   MP4 files for different browsers. For anyone to see it, you still need to add
   it to a web page.
-date: 2014-14-15
+date: 2014-02-15
 updated: 2021-07-05
 tags:
   - media

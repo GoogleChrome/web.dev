@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-08-17
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it.
@@ -14,12 +14,6 @@ tags:
   - metrics
   - web-vitals
 ---
-
-{% Aside 'caution' %}
-  **Jun 1, 2021:** The implementation of CLS has changed.
-  To learn more about the reasons behind the change, check out [Evolving the
-  CLS metric](/evolving-cls).
-{% endAside %}
 
 {% Aside 'key-term' %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
@@ -115,10 +109,22 @@ To provide a good user experience, sites should strive to have a CLS score of
 good threshold to measure is the **75th percentile** of page loads, segmented
 across mobile and desktop devices.
 
-<picture>
-  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="400", height="300" %}
-</picture>
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg",
+        alt="Good CLS values are 0.1 or less, poor values are greater than 0.25, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,
@@ -313,7 +319,7 @@ available in the following tools:
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
@@ -322,7 +328,7 @@ available in the following tools:
 ### Lab tools
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Measure CLS in JavaScript
@@ -380,7 +386,7 @@ new PerformanceObserver((entryList) => {
   This code shows the basic way to calculate and log CLS. However, accurately
   measuring CLS in a way that matches what is measured in the [Chrome User
   Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
   (CrUX) is more complicated. See below for details:
 
 {% endAside %}
@@ -399,7 +405,10 @@ the metric is calculated.
   cache](/bfcache/#impact-on-core-web-vitals), its CLS value should be reset to
   zero since users experience this as a distinct page visit.
 - The API does not report `layout-shift` entries for shifts that occur within
-  iframes, but to properly measure CLS you should consider them. Sub-frames can
+  iframes but the metric does as they are part of the user experience of the
+  page. This can
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure CLS you should consider them. Sub-frames can
   use the API to report their `layout-shift` entries to the parent frame for
   [aggregation](https://github.com/WICG/layout-instability#cumulative-scores).
 
@@ -431,7 +440,7 @@ getCLS(console.log);
 ```
 
 You can refer to [the source code for
-`getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)
+`getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)
 for a complete example of how to measure CLS in JavaScript.
 
 {% Aside %}

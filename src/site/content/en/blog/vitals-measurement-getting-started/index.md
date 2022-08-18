@@ -3,7 +3,7 @@ title: Getting started with measuring Web Vitals
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: Monthly graph overlayed with stopwatches labeled LCP, FID, and CLS.
 description: |
@@ -23,7 +23,7 @@ Collecting data on your site's Web Vitals is the first step towards improving th
 
 ### Getting started
 
-If you don't have a RUM setup, the following tools will quickly provide you with data about the real-world performance of your site. These tools are all based on the same underlying data set (the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)), but have slightly different use cases:
+If you don't have a RUM setup, the following tools will quickly provide you with data about the real-world performance of your site. These tools are all based on the same underlying data set (the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)), but have slightly different use cases:
 
 * **PageSpeed Insights (PSI)**: [PageSpeed Insights](https://pagespeed.web.dev/) reports on the aggregate page-level and origin-level performance over the past 28 days. In addition, it provides suggestions on how to improve performance. If you're looking for a single action to take in order to get started with measuring and improving your site's Web Vitals, we recommend using PSI to audit your site. PSI is available on the [web](https://pagespeed.web.dev/) and as an [API](https://developers.google.com/speed/docs/insights/v5/get-started).
 * **Search Console**: [Search Console](https://search.google.com/search-console/welcome) reports performance data on a per-page basis. This makes it well-suited for identifying specific pages that need improvement. Unlike PageSpeed Insights, Search Console reporting includes historical performance data. Search Console can only be used with sites that you own and have verified ownership of.

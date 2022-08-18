@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-08-17
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -52,17 +52,29 @@ they click a link, tap on a button, or use a custom, JavaScript-powered control)
 to the time when the browser is actually able to begin processing event handlers
 in response to that interaction.
 
-<picture>
-  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="400", height="300" %}
-</picture>
-
 ### What is a good FID score?
 
 To provide a good user experience, sites should strive to have a First Input
 Delay of **100 milliseconds** or less. To ensure you're hitting this target for
 most of your users, a good threshold to measure is the **75th percentile** of
 page loads, segmented across mobile and desktop devices.
+
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg",
+        alt="Good FID values are 2.5 seconds or less, poor values are greater than 4.0 seconds, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,
@@ -240,7 +252,7 @@ user to interact with your page. You can measure FID with the following tools.
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
@@ -291,9 +303,11 @@ the metric is calculated.
   the [back/forward cache](/bfcache/#impact-on-core-web-vitals), but FID should
   be measured in these cases since users experience them as distinct page
   visits.
-- The API does not report inputs that occur within iframes, but to properly
-  measure FID you should consider them. Sub-frames can use the API to report
-  their `first-input` entries to the parent frame for aggregation.
+- The API does not report inputs that occur within iframes but the metric does
+  as they are part of the user experience of the page. This can
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure FID you should consider them. Sub-frames can use the API
+  to report their `first-input` entries to the parent frame for aggregation.
 
 Rather than memorizing all these subtle differences, developers can use the
 [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
@@ -307,7 +321,7 @@ getFID(console.log);
 ```
 
 You can refer to [the source code for
-`getFID)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)
+`getFID)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts)
 for a complete example of how to measure FID in JavaScript.
 
 {% Aside %}

@@ -1,4 +1,4 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
 import './_styles.scss';
 
@@ -30,6 +30,9 @@ class UrlChooser extends BaseElement {
   }
 
   render() {
+    const currentURL = new URL(location.href);
+    const urlSearchParam = currentURL.searchParams.get('url');
+
     return html`
       <div
         class="lh-report-header-enterurl ${this.disabled ? 'lh-running' : ''}"
@@ -50,6 +53,7 @@ class UrlChooser extends BaseElement {
             pattern="https?://.+"
             minlength="7"
             @keyup="${this.onUrlKeyup}"
+            value="${urlSearchParam}"
           />
           <button
             ?disabled=${this.disabled}
@@ -152,6 +156,10 @@ class UrlChooser extends BaseElement {
 
     const event = new CustomEvent('audit', {detail: this._urlInput.value});
     this.dispatchEvent(event);
+
+    const currentURL = new URL(location.href);
+    currentURL.searchParams.set('url', this._urlInput.value);
+    history.replaceState({}, '', currentURL.href);
   }
 
   onSwitchUrl() {

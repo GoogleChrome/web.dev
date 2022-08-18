@@ -97,4 +97,4 @@ Consider reducing, or switching, the number of [WordPress plugins](https://wordp
 
 ## Resources
 
-- [Source code for **Remove unused CSS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)
+- [Source code for **Remove unused CSS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-css-rules.js)

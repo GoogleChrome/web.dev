@@ -54,4 +54,4 @@ Lighthouse 会收集页面上的所有 JPEG 或 BMP 图像，将每个图像的�
 
 ## 资源
 
-- [**高效编码图像**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
+- [**高效编码图像**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-optimized-images.js)

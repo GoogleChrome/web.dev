@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: Este artigo apresenta a métrica First Input Delay (FID) e explica como medi-la
 tags:
   - performance
@@ -120,7 +120,7 @@ A FID é uma métrica que só pode ser medida [em campo](/user-centric-performan
 
 ### Ferramentas de campo
 
-- [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Relatório de experiência do usuário Chrome](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Console de Busca (relatório Core Web Vitals)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -160,7 +160,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-Para um exemplo completo de como medir a FID em JavaScript, consulte [o código-fonte de `getFID()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts).
+Para um exemplo completo de como medir a FID em JavaScript, consulte [o código-fonte de `getFID()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts).
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a FID em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 

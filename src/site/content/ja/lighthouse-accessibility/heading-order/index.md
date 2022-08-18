@@ -12,7 +12,7 @@ web_lighthouse:
 
 ## Lighthouse見出しレベルの監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、見出しが1つ以上のレベルをスキップするページにフラグを設定します。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)は、見出しが1つ以上のレベルをスキップするページにフラグを設定します。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="レベルをスキップする見出しを示すLighthouse監査", width="800", height="206" %}</figure>
 
@@ -54,5 +54,5 @@ Microsoftの<a href="https://accessibilityinsights.io/" rel="noopener">Accessibi
 
 ## リソース
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener"><strong>見出しスキップレベル</strong>監査のソースコード</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener"><strong>見出しスキップレベル</strong>監査のソースコード</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">見出しレベルは1つだけ増やす (Deque University)</a>

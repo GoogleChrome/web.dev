@@ -17,7 +17,7 @@ O `robots.txt` informa aos mecanismos de pesquisa quais páginas do seu site ele
 
 ## Como a auditoria `robots.txt`
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza arquivos `robots.txt`
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza arquivos `robots.txt`
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Auditoria do Lighthouse mostrando robots.txt inválido", width="800", height="203" %}</figure>
 
@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## Recursos
 
-- [O código-fonte da auditoria **`robots.txt` não é válido**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [O código-fonte da auditoria **`robots.txt` não é válido**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [Crie um `robots.txt file`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Especificações de metatag de robôs e cabeçalho HTTP X-Robots-Tag](https://developers.google.com/search/reference/robots_meta_tag)

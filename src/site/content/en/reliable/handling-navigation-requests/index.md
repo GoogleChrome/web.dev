@@ -94,7 +94,7 @@ make sure that it isn't blocked on the network.
 
 Fortunately, if you're using the single-page architecture, there's a straightforward pattern to
 follow for serving the initial navigation from the cache: the [application
-shell](https://developers.google.com/web/fundamentals/architecture/app-shell). In this model, your
+shell](/learn/pwa/architecture/). In this model, your
 service worker responds to navigation requests by returning the same, single HTML file that has
 already been precached—regardless of the URL being requested. This HTML should be bare-bones,
 consisting of, perhaps, a generic loading indicator or [skeleton

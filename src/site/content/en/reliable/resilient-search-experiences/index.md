@@ -29,7 +29,7 @@ For example: a user is on the subway searching on the phone for a product on an 
 
 As a result, unless the user decides to come back to the site later, and repeat the same task, the site might lose a potential transaction and customer.
 
-To provide a more resilient search experience in these cases you can use the [Background Sync API](https://developer.chrome.com/blog/background-sync/), which persists failed queries so they can be retried once the connection is recovered. This technique, in combination with [Web Push Notifications](https://developers.google.com/web/fundamentals/push-notifications) lets you inform the user of the search results, allowing you to keep them engaged with your service.
+To provide a more resilient search experience in these cases you can use the [Background Sync API](https://developer.chrome.com/blog/background-sync/), which persists failed queries so they can be retried once the connection is recovered. This technique, in combination with [Web Push Notifications](/push-notifications/) lets you inform the user of the search results, allowing you to keep them engaged with your service.
 
 {% Aside 'codelab' %}
   Try the [Building resilient search experiences with Workbox](/codelab-building-resilient-search-experiences)

@@ -337,7 +337,7 @@ To learn more about what CSS properties trigger layout, see [CSS Triggers](https
 
 I'm happy to share there are a number of tools available to measure and debug Cumulative Layout Shift (CLS).
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) and above include support for measuring CLS in a lab setting. This release will also highlight the nodes that cause the most layout shifting.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) and above include support for measuring CLS in a lab setting. This release will also highlight the nodes that cause the most layout shifting.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0 includes support for measuring CLS in the metrics section", width="800", height="309" %}
 

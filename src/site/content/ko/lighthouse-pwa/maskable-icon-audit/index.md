@@ -13,7 +13,7 @@ date: 2020-05-06
 
 ## Lighthouse 마스크 가능 아이콘 감사가 실패하는 방법
 
-마스크 가능 아이콘 지원이 없는 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 플래그 페이지:
+마스크 가능 아이콘 지원이 없는 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 플래그 페이지:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse 보고서 UI의 마스크 가능한 아이콘 감사.", width="800", height="110" %}</figure>
 
@@ -53,7 +53,7 @@ date: 2020-05-06
 
 ## 자원
 
-- [**매니페스트의 소스 코드에 마스크 가능 아이콘** 감사 없음](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [**매니페스트의 소스 코드에 마스크 가능 아이콘** 감사 없음](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [마스크 가능 아이콘이 있는 PWA의 적응형 아이콘 지원](/maskable-icon/)
 - [Maskable.app 편집기](https://maskable.app/editor)
 - [웹 앱 매니페스트 추가](/add-manifest/)

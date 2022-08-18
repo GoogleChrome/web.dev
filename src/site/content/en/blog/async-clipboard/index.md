@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2021-07-29
+updated: 2022-05-10
 tags:
   - blog
   - capabilities
@@ -129,37 +129,46 @@ try {
 
 ### The copy event
 
-In the case where a user initiates a clipboard copy, non-textual data is
-provided as a Blob for you. The
+In the case where a user initiates a clipboard copy
+and does _not_ call `preventDefault()`, the
 [`copy` event](https://developer.mozilla.org/docs/Web/API/Document/copy_event)
-includes a `clipboardData` property with the items already in the right format,
-eliminating the need to manually create a Blob. Call `preventDefault()` to
-prevent the default behavior in favor of your own logic, then copy contents to
-the clipboard. What's not covered in this example is how to fall back to earlier
+includes a `clipboardData` property with the items already in the right format.
+If you want to implement your own logic, you need to call `preventDefault()` to
+prevent the default behavior in favor of your own implementation.
+In this case, `clipboardData` will be empty.
+Consider a page with text and an image, and when the user selects all and
+initiates a clipboard copy, your custom solution should discard text and only
+copy the image. You can achieve this as shown in the code sample below.
+What's not covered in this example is how to fall back to earlier
 APIs when the Clipboard API isn't supported. I'll cover that under
 [Feature detection](#feature-detection), later in this article.
 
+```html
+<!-- The image we want on the clipboard. -->
+<img src="kitten.webp" alt="Cute kitten.">
+<!-- Some text we're not interested in. -->
+<p>Lorem ipsum</p>
+```
+
 ```js
-document.addEventListener('copy', async (e) => {
-    e.preventDefault();
-    try {
-      let clipboardItems = [];
-      for (const item of e.clipboardData.items) {
-        if (!item.type.startsWith('image/')) {
-          continue;
-        }
-        clipboardItems.push(
-          new ClipboardItem({
-            [item.type]: item,
-          })
-        );
-        await navigator.clipboard.write(clipboardItems);
-        console.log('Image copied.');
-      }
-    } catch (err) {
-      console.error(err.name, err.message);
-    }
-  });
+document.addEventListener("copy", async (e) => {
+  // Prevent the default behavior.
+  e.preventDefault();
+  try {
+    // Prepare an array for the clipboard items.
+    let clipboardItems = [];
+    // Assume `blob` is the blob representation of `kitten.webp`.
+    clipboardItems.push(
+      new ClipboardItem({
+        [blob.type]: blob,
+      })
+    );
+    await navigator.clipboard.write(clipboardItems);
+    console.log("Image copied, text ignored.");
+  } catch (err) {
+    console.error(err.name, err.message);
+  }
+});
 ```
 
 ## Paste: reading data from clipboard
@@ -406,8 +415,10 @@ event—part of asking permission responsibly—no permissions prompt is shown.
 
 ## Demos
 
-You can play with the Async Clipboard API in the demos below or
-[directly on Glitch](https://async-clipboard-api.glitch.me/).
+You can play with the Async Clipboard API in the demos below. On Glitch you
+can remix [the text demo](https://glitch.com/edit/#!/async-clipboard-text)
+or [the image demo](https://glitch.com/edit/#!/async-clipboard-api) to
+experiment with them.
 
 The first example demonstrates moving text on and off the clipboard.
 

@@ -80,6 +80,6 @@ usage when the content is offscreen.
 
 ## Resources
 
-- [Source code for **Use video formats for animated content** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/efficient-animated-content.js)
+- [Source code for **Use video formats for animated content** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/efficient-animated-content.js)
 - [Replace animated GIFs with video for faster page loads](/replace-gifs-with-videos)
 - [Replace GIFs with video codelab](/codelab-replace-gifs-with-video)

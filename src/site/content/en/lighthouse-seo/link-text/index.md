@@ -15,7 +15,7 @@ understand your content and how it relates to other pages.
 
 ## How the Lighthouse link text audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags links
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags links
 without descriptive text:
 
 <figure>
@@ -79,5 +79,5 @@ for more tips.
 
 ## Resources
 
-- [Source code for **Links do not have descriptive text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [Source code for **Links do not have descriptive text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [Search Engine Optimization (SEO) Starter Guide](https://support.google.com/webmasters/answer/7451184)

@@ -21,7 +21,7 @@ Por padrão, o Next.js divide seu JavaScript em partes separadas para cada rota.
 
 Embora a divisão de código baseada em rota seja um bom padrão, você pode otimizar ainda mais o processo de carregamento com a divisão de código no nível do componente. Se você tiver componentes grandes em seu aplicativo, é uma ótima ideia dividi-los em partes separadas. Dessa forma, qualquer componente grande que não seja crítico ou apenas renderize em certas interações do usuário (como clicar em um botão) pode ser carregado lentamente.
 
-Next.js suporta o elemento [`import()` dinâmico](https://v8.dev/features/dynamic-import), que permite importar módulos JavaScript (incluindo componentes React) dinamicamente e carregar cada importação como um pedaço separado. Isso oferece divisão de código em nível de componente e permite controlar o carregamento de recursos para que os usuários baixem apenas o código de que precisam para a parte do site que estão visualizando. No Next.js, esses componentes são [renderizados do lado do servidor (SSR)](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) por padrão.
+Next.js suporta o elemento [`import()` dinâmico](https://v8.dev/features/dynamic-import), que permite importar módulos JavaScript (incluindo componentes React) dinamicamente e carregar cada importação como um pedaço separado. Isso oferece divisão de código em nível de componente e permite controlar o carregamento de recursos para que os usuários baixem apenas o código de que precisam para a parte do site que estão visualizando. No Next.js, esses componentes são [renderizados do lado do servidor (SSR)](/rendering-on-the-web/) por padrão.
 
 ## Importações dinâmicas em ação
 

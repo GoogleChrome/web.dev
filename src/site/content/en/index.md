@@ -12,11 +12,11 @@ intro:
   imageWidth: '333'
   imageHeight: '240'
 featureCard:
-  theme: 'dark'
-  title: 'Explore structured learning paths to learn new skills'
-  eyebrow: 'Learn'
-  url: '/learn'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/yJSJQfrrK4pVh44yuMZV.svg'
+  theme: 'light'
+  title: 'Connect with us on Twitter Spaces'
+  eyebrow: 'Event'
+  url: 'https://web.dev/spaces/'
+  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/X49lrIUVWJr3OTkKX21n.svg'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'

@@ -13,7 +13,7 @@ date: 2020-05-06
 
 ## Почему не удается пройти аудит маскируемых значков в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, не поддерживающие маскируемые значки:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, не поддерживающие маскируемые значки:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Аудит маскируемых значков в пользовательском интерфейсе отчетов Lighthouse.", width="800", height="110" %}</figure>
 
@@ -53,7 +53,7 @@ date: 2020-05-06
 
 ## Ресурсы
 
-- [Исходный код аудита **Manifest doesn't have a maskable icon**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [Исходный код аудита **Manifest doesn't have a maskable icon**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [Поддержка адаптивных значков в прогрессивных веб-приложениях (PWA) с маскируемыми значками](/maskable-icon/)
 - [Редактор Maskable.app](https://maskable.app/editor)
 - [Добавление манифеста веб-приложения](/add-manifest/)

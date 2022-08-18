@@ -1,0 +1,63 @@
+.horizontal-media-scroller {
+  --size: 150px;
+
+  display: grid;
+  grid-auto-flow: column;
+  gap: calc(var(--gap) / 2);
+  margin: 0;
+
+  padding-inline-start: var(--gap);
+  padding-inline-end: var(--gap);
+  padding-block-start: calc(var(--gap) / 2);
+  padding-block-end: calc(var(--gap) / 2);
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-left: var(--gap);
+  scroll-padding-right: var(--gap);
+  scroll-padding-inline: var(--gap);
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+
+  & > li {
+    display: inline-block;
+
+    /*  container padding fix  */
+    &:last-of-type figure {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+
+        inline-size: var(--gap);
+        block-size: 100%;
+
+        inset-block-start: 0;
+        inset-inline-end: calc(var(--gap) * -1);
+      }
+    }
+  }
+
+  & figure {
+    scroll-snap-align: start;
+  }
+
+  & a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    outline-offset: 12px;
+
+    &:focus {
+      outline-offset: 7px;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: outline-offset .25s ease;
+    }
+  }
+}

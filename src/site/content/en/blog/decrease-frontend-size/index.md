@@ -183,6 +183,7 @@ module.exports = {
     ],
   },
 };
+```
 
 ### Further reading
 

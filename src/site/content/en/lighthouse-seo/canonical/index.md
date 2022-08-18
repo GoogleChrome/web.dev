@@ -32,7 +32,7 @@ Using canonical links has many advantages:
 
 ## How the Lighthouse canonical links audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags any page
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags any page
 with an invalid canonical link:
 
 <figure>
@@ -84,7 +84,7 @@ page.
 ### General guidelines
 
 - Make sure that the canonical URL is valid.
-- Use secure [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https) canonical URLs rather than HTTP whenever possible.
+- Use secure [HTTPS](/why-https-matters/) canonical URLs rather than HTTP whenever possible.
 - If you use [`hreflang` links](/hreflang) to serve different versions of a page
   depending on a user's language or country, make sure that the canonical URL
   points to the   proper page for that respective language or country.
@@ -108,7 +108,7 @@ Recommendations for other search engines are welcome.
 
 ## Resources
 
-- [Source code for **Document does not have a valid `rel=canonical`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/canonical.js)
+- [Source code for **Document does not have a valid `rel=canonical`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/canonical.js)
 - [5 common mistakes with rel=canonical](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
 - [Consolidate duplicate URLs](https://support.google.com/webmasters/answer/139066)
 - [Block crawling of parameterized duplicate content](https://support.google.com/webmasters/answer/6080548)

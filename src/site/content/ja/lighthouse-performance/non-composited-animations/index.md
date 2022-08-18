@@ -19,9 +19,9 @@ HTML、CSS、およびJavaScriptをピクセルに変換するためのブラウ
 
 レンダリングパイプラインの詳細については、次のリソースを確認してください。
 
-- [最新のWebブラウザの内部を見る（パート3）](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
-- [ペイントの複雑さを簡素化し、ペイント領域を減らします](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
-- [コンポジターのみのプロパティに固執し、レイヤー数を管理します](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+- [最新のWebブラウザの内部を見る（パート3）](https://developer.chrome.com/blog/inside-browser-part3/)
+- [ペイントの複雑さを簡素化し、ペイント領域を減らします](/simplify-paint-complexity-and-reduce-paint-areas/)
+- [コンポジターのみのプロパティに固執し、レイヤー数を管理します](/stick-to-compositor-only-properties-and-manage-layer-count/)
 
 ## Lighthouseが合成されていないアニメーションを検出する方法
 
@@ -29,12 +29,12 @@ HTML、CSS、およびJavaScriptをピクセルに変換するためのブラウ
 
 ## アニメーションを確実に合成する方法
 
-[コンポジターのみのプロパティに固執し、レイヤー数](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)と[高性能アニメーション](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)を管理するを参照してください。
+[コンポジターのみのプロパティに固執し、レイヤー数](/stick-to-compositor-only-properties-and-manage-layer-count/)と[高性能アニメーション](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)を管理するを参照してください。
 
 ## 資力
 
-- [合成されてい*ないアニメーションを回避する*監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
-- [コンポジターのみのプロパティに固執し、レイヤー数を管理します](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+- [合成されてい*ないアニメーションを回避する*監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/non-composited-animations.js)
+- [コンポジターのみのプロパティに固執し、レイヤー数を管理します](/stick-to-compositor-only-properties-and-manage-layer-count/)
 - [高性能アニメーション](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
-- [ペイントの複雑さを簡素化し、ペイント領域を減らします](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
-- [最新のWebブラウザの内部を見る（パート3）](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
+- [ペイントの複雑さを簡素化し、ペイント領域を減らします](/simplify-paint-complexity-and-reduce-paint-areas/)
+- [最新のWebブラウザの内部を見る（パート3）](https://developer.chrome.com/blog/inside-browser-part3/)

@@ -19,7 +19,7 @@ Over the coming months, we hope to share actionable insights from our work—so 
 Here we'll be covering the build process for our static site and the (optional!) JavaScript behind our web components.
 
 web.dev provides content about building modern web experiences and allows you to [measure](/measure/) your site's performance.
-Savvy users may have realized that [our Measure page](/measure/) is just an interface for [Lighthouse](https://developers.google.com/web/tools/lighthouse), which is also available in Chrome's DevTools.
+Savvy users may have realized that [our Measure page](/measure/) is just an interface for [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), which is also available in Chrome's DevTools.
 Signing in to web.dev lets you run regular Lighthouse audits on your site so you can see how its score changes over time.
 I'll be revisiting the Measure page a bit later, as we think it's fairly special. 🎊
 
@@ -144,7 +144,7 @@ The design lends itself well to largely static sites like web.dev: your browser 
 And antiquated browsers just ignore Web Components altogether and render whatever is left in the DOM.
 
 Each Web Component is a class with methods including `connectedCallback()`, `disconnectedCallback()`, and `attributeChangedCallback()`.
-web.dev's custom elements mostly inherit from [LitElement](https://lit-element.polymer-project.org/), which provides a simple base for complex components.
+web.dev's custom elements mostly inherit from [LitElement](https://lit.dev/), which provides a simple base for complex components.
 
 While web.dev uses Web Components on many pages, nowhere is it more necessary than on the [Measure](/measure) page.
 Two elements provide the bulk of the functionality you see on this page:

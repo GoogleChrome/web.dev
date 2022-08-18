@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-07-18
 description: この投稿では、Largest Contentful Paint (LCP) という指標について紹介し、その測定方法に関する説明を行います。
 tags:
   - performance
@@ -120,7 +120,7 @@ LCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### フィールド測定を実施するためのツール
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)
@@ -128,7 +128,7 @@ LCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 ### ラボ測定を実施するためのツール
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript を使用して LCP を測定する
@@ -169,7 +169,7 @@ import {getLCP} from 'web-vitals';
 getLCP(console.log);
 ```
 
-JavaScript を使用して LCP を測定する方法に関する詳細な例については、[`getLCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)を参照してください。
+JavaScript を使用して LCP を測定する方法に関する詳細な例については、[`getLCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts)を参照してください。
 
 {% Aside %}場合によっては (クロスオリジン iframe など)、JavaScript を使用して LCP を測定することはできません。詳細については、`web-vitals` ライブラリの「[limitations](https://github.com/GoogleChrome/web-vitals#limitations) (制限事項)」セクションを参照してください。{% endAside %}
 
@@ -189,7 +189,7 @@ LCPは、主に次の 4 つの要因の影響を受けます。
 LCP の改善方法の詳細については、「[LCP を最適化する](/optimize-lcp/)」を参照してください。LCP の改善にもつながる個別のパフォーマンス改善手法に関するその他のガイダンスについては、以下を参照してください。
 
 - [PRPL パターンを使用して読み込みを高速化する](/apply-instant-loading-with-prpl)
-- [クリティカル レンダリング パスの最適化](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [クリティカル レンダリング パスの最適化](/critical-rendering-path/)
 - [CSS を最適化する](/fast#optimize-your-css)
 - [画像を最適化する](/fast#optimize-your-images)
 - [Web フォントを最適化する](/fast#optimize-web-fonts)

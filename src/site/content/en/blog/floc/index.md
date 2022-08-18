@@ -4,24 +4,27 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-10-29
+updated: 2022-07-08
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
 tags:
   - blog
-  - privacy
+  # - privacy
   # - privacy-sandbox
-  - security
+  # - security
 feedback:
   - api
 ---
 
 {% Aside %}
-This post outlines the API design implemented in Chrome for the first origin trial of FLoC. 
+This post outlined the API design implemented in Chrome for the first origin trial of FLoC. The development of FLoC stopped in 2021.
 
-Future iterations of an API to enable interest-based advertising without third-party cookies 
-or other cross-site tracking mechanisms are currently in development.
+In January 2022, the Privacy Sandbox released the [Topics API
+proposal](https://github.com/jkarlin/topics) to address interest-based
+advertising, without having to resort to tracking the sites a user visits. The
+design of the API was informed by community feedback from our earlier FLoC
+trials, and supersedes the FLoC proposal.
 {% endAside %}
 
 FLoC provides a privacy-preserving mechanism for interest-based ad selection.
@@ -58,10 +61,10 @@ The Privacy Sandbox is a series of proposals to satisfy third-party use cases wi
 cookies or other tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)
 for an overview of all the proposals.
 
-**This proposal needs your feedback.** If you have comments, please [create an
+If you have comments on this proposal, [create an
 issue](https://github.com/WICG/floc/issues/new) on the [FLoC Explainer](https://github.com/WICG/floc)
-repository.  If you have feedback on Chrome's experiment with this proposal, please post a reply on
-the [Intent to Experiment](https://groups.google.com/a/chromium.org/g/blink-dev/c/MmijXrmwrJs).
+repository.  If you have feedback on Chrome's experiment with this proposal,
+post a reply on the [Intent to Experiment](https://groups.google.com/a/chromium.org/g/blink-dev/c/MmijXrmwrJs).
 
 ## Why do we need FLoC?
 
@@ -345,7 +348,7 @@ the user's cohort when asked for it via JavaScript: the promise returned by
 
 ## How can I make suggestions or provide feedback?
 
-If you have comments on the API, please [create an issue](https://github.com/WICG/floc/issues/new)
+If you have comments on the API, [create an issue](https://github.com/WICG/floc/issues/new)
 on the [FLoC Explainer](https://github.com/WICG/floc) repository.
 
 ## Find out more

@@ -1,0 +1,65 @@
+---
+patternId: example-set/full-html-demo
+draft: true
+noindex: true
+---
+
+<!--
+  This demo requires you to specify the full HTML that's used to render the demo, so it doesn't
+  read body.html or include any assets automatically. Use `example-pattern` if you'd like helper
+  behavior.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="assets/special-script.js"></script>
+  </head>
+  <body>
+    <h1>I'm a full HTML demo.</h1>
+    <p>
+      Please note this file has an .njk extension.
+    </p>
+    <p>
+      To include arbitrary static resources in this demo, you must declare
+      them in <code>static</code> property in this pattern's <code>index.md</code> file.
+      Then you can use them in the demo as static files. E.g.:
+    </p>
+    <pre>
+      <code>
+        // index.md file:
+
+        ---
+        ...
+        static:
+          - special-script.js
+          - icon.svg
+        ---
+      </code>
+    </pre>
+    <pre>
+      <code>
+        // demo.njk file:
+        &lt;script src="special-script.js"&gt;
+        &lt;img src="icon.svg" alt="..."&gt;
+      </code>
+    </pre>
+
+    <p>
+      To use inline scripts, you need to declare them for CSP policy by using <code> cspHash</code> filter:
+      <ul>
+        <li>Declare content of the script as an njk variable (e.g. 'script')</li>
+        <li>Output this variable by passing it throuh <code>cspHash</code> and <code>safe</code> filter</li>
+    </p>
+    <pre>
+      <code>
+        // demo.njk file:
+        &#123;% set script %&#125;
+          console.log('Here goes script logic')
+        &#123;% endset %&#125;
+        &lt;script&gt;&#123;&#123; script | minifyJs | cspHash | safe &#125;&#125;&lt;/script&gt;
+      </code>
+    </pre>
+
+  </body>
+</html>

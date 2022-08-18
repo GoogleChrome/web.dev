@@ -421,7 +421,7 @@ function togglePassword() {
 
 ## Продолжайте учиться {: #resources }
 
-- [Создание потрясающих форм](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Создание потрясающих форм](/learn/forms/)
 - [Рекомендации по разработке форм для мобильных устройств](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Функциональные элементы управления в формах](/more-capable-form-controls)
 - [Создание форм с поддержкой специальных возможностей](https://webaim.org/techniques/forms/)

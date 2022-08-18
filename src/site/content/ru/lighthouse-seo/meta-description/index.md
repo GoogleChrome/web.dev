@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Причины плохих результатов аудита метаописания в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает страницы без метаописания:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает страницы без метаописания:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Аудит Lighthouse показывает, что у документа нет метаописания", width="800", height="74" %}</figure>
 
@@ -77,6 +77,6 @@ Lighthouse не оценивает качество вашего описани�
 
 ## Ресурсы
 
-- [Исходный код для аудита «**У документа нет метаописания**»](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [Исходный код для аудита «**У документа нет метаописания**»](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [Как управлять ссылками-заголовками в результатах поиска](https://support.google.com/webmasters/answer/35624#1)
 - [Нерелевантные ключевые слова](https://support.google.com/webmasters/answer/66358)

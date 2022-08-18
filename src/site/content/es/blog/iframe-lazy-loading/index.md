@@ -5,6 +5,7 @@ subhead: "¡Llegó la carga diferida incorporada al navegador para iframes!"
 authors:
   - addyosmani
 date: 2020-07-24
+updated: 2022-08-15
 hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: Esquema del teléfono con carga de imagen y recursos
 description: Esta publicación cubre el atributo loading y cómo se puede utilizar para controlar la carga de los iframes.
@@ -45,13 +46,10 @@ Según la investigación de Chrome sobre [iframes fuera de pantalla de carga dif
 
 ### ¿Cómo funciona la carga diferida incorporada para iframes?
 
-El atributo `loading` permite que un navegador difiera la carga de iframes e imágenes fuera de la pantalla hasta que los usuarios se desplacen cerca de ellos. `loading` admite tres valores:
+El atributo `loading` permite que un navegador difiera la carga de iframes e imágenes fuera de la pantalla hasta que los usuarios se desplacen cerca de ellos. `loading` admite dos valores:
 
 - `lazy`: es un buen candidato para la carga diferida.
 - `eager`: no es un buen candidato para la carga diferida. Cargue de inmediato.
-- `auto`: el navegador determinará si se carga de forma diferida o no.
-
-{% Aside %} `auto` es actualmente un valor no estándar, pero es el predeterminado en Chrome en la actualidad. Chrome tiene la intención de llevar una propuesta de este valor a la mesa de estándares. {% endAside %}
 
 El uso del `loading` en iframes funciona de la siguiente manera:
 
@@ -146,14 +144,6 @@ Aunque las incrustaciones anteriores ilustran los beneficios potenciales de los 
 <figure>{% Img src = "image/admin/fdy8o61jxPN560IkF2Ne.png", alt = "Botón Me gusta de Facebook", width = "800", height = "71"%}</figure>
 
 Gracias al ingeniero Stoyan Stefanov, [todos los complementos sociales de Facebook ahora admiten la carga diferida de iframe estandarizada](https://developers.facebook.com/docs/plugins/like-button#settings) . Los desarrolladores que opten por la carga diferida a través de la `data-lazy` diferidos de los complementos ahora podrán evitar que se cargue hasta que el usuario se desplace cerca. Esto permite que la inserción siga funcionando completamente para los usuarios que la necesitan, al tiempo que ofrece ahorros de datos para aquellos que no se desplazan hacia abajo en una página. Tenemos la esperanza de que esta sea la primera de muchas incorporaciones para explorar la carga diferida de iframe estandarizada en producción.
-
-### Espera, ¿no pueden los navegadores simplemente cargar automáticamente iframes fuera de la pantalla de forma diferida?
-
-Ciertamente pueden. En Chrome 77, Chrome agregó soporte para imágenes fuera de pantalla e iframes de carga diferida automáticamente cuando un usuario ha optado por el [modo básico](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) (modo de ahorro de datos) en Chrome para Android.
-
-El modo básico se usa comúnmente en regiones del mundo donde la calidad de la conexión de red y los planes de datos no son los mejores. Cada byte es importante y, por lo tanto, los iframes de carga diferida tienen el potencial de marcar una diferencia significativa para estos usuarios.
-
-Origins puede detectar qué porcentaje de su tráfico proviene de los usuarios del modo básico al verificar la `navigator.connection.saveData` , que es parte de la [API `NetworkInformation`](https://developer.mozilla.org/docs/Web/API/NetworkInformation) .
 
 ### ¿Puedo cargar iframes de forma diferida en varios navegadores? sí
 

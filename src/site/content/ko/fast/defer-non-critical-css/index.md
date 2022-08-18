@@ -12,7 +12,7 @@ tags:
 
 CSS 파일은 [렌더링 차단 리소스](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)입니다. 브라우저가 페이지를 렌더링하기 전에 로드 및 처리해야 합니다. 불필요하게 큰 스타일이 포함된 웹 페이지는 렌더링하는 데 시간이 더 오래 걸립니다.
 
-이 가이드에서는 [중요 렌더링 경로](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)를 최적화하고 [FCP(First Contentful Paint)](/fcp/)를 개선하기 위해 중요하지 않은 CSS를 연기하는 방법에 대해 배우게 됩니다.
+이 가이드에서는 [중요 렌더링 경로](/critical-rendering-path/)를 최적화하고 [FCP(First Contentful Paint)](/fcp/)를 개선하기 위해 중요하지 않은 CSS를 연기하는 방법에 대해 배우게 됩니다.
 
 ## 차선책으로 CSS 로드하기
 

@@ -58,7 +58,7 @@ where to start optimizing. Fortunately, there are tools that can help you on the
 
 ## Lighthouse - a base for performance workflow
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a part of Chrome DevTools
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is a part of Chrome DevTools
 that allows you to make an audit of your website, and gives you hints on how to make it better.
 
 We recently launched a bunch of
@@ -696,7 +696,7 @@ this working smoothly across different routes.
 
 If you are not careful or your site structure is really complex, it might be really difficult to
 introduce this type of pattern if you did not plan for
-[app shell architecture](https://developers.google.com/web/fundamentals/architecture/app-shell)
+[app shell architecture](/learn/pwa/architecture/)
 from the beginning.
 
 This is why it's so important to take performance considerations early on. If you don't design for

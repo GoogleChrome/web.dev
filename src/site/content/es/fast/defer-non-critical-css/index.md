@@ -12,7 +12,7 @@ tags:
 
 Los archivos CSS son [recursos que bloquean el renderizado](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources): deben cargarse y procesarse antes de que el navegador muestre la página. Las páginas web que contienen estilos de CSS innecesariamente grandes tardan más en procesarse.
 
-En esta guía aprenderá cómo aplazar el CSS no crítico, con el objetivo de optimizar la [ruta de renderización crítica](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) y mejorar la [First Contentful Paint o FCP (primer despliegue de contenido)](/fcp/).
+En esta guía aprenderá cómo aplazar el CSS no crítico, con el objetivo de optimizar la [ruta de renderización crítica](/critical-rendering-path/) y mejorar la [First Contentful Paint o FCP (primer despliegue de contenido)](/fcp/).
 
 ## Cargar CSS de una manera deficiente
 

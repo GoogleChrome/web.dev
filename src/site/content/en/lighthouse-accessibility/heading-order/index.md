@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## How the Lighthouse heading levels audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages whose headings skip one or more levels:
 
 <figure>
@@ -78,5 +78,5 @@ post for more information.
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener">Source code for **Headings skip levels** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener">Source code for **Headings skip levels** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">Heading levels should only increase by one (Deque University)</a>

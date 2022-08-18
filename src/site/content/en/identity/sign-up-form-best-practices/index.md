@@ -353,7 +353,7 @@ Multi-factor authentication means ensuring that users provide authentication in 
 For example, as well as requiring the user to set a password, you might also enforce verification
 using a one-time-passcode sent by email or an SMS text message, or by using an app-based one-time
 code, security key or fingerprint sensor. [SMS OTP best practices](/sms-otp-form) and
-[Enabling Strong Authentication with WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn)
+[Enabling Strong Authentication with WebAuthn](https://developer.chrome.com/blog/webauthn/)
 explain how to implement multi-factor authentication.
 
 You should certainly offer (or enforce) multi-factor authentication if your site handles personal or
@@ -407,7 +407,7 @@ exposed by local testing.
 
 - [Sign-in form best practices](/sign-in-form-best-practices)
 - [Payment and address form best practices](/payment-and-address-form-best-practices)
-- [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Create Amazing Forms](/learn/forms/)
 - [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [More capable form controls](/more-capable-form-controls)
 - [Creating Accessible Forms](https://webaim.org/techniques/forms/)

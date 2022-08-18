@@ -72,7 +72,7 @@ passwords—and [don't try to invent your own hashing algorithm](https://www.sch
 Offer [multi-factor authentication](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html), 
 especially if you store personal or sensitive data. 
 [SMS OTP best practices](/sms-otp-form) and 
-[Enabling Strong Authentication with WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn) 
+[Enabling Strong Authentication with WebAuthn](https://developer.chrome.com/blog/webauthn/) 
 explain how to implement multi-factor authentication.
 
 Ensure users don't use compromised passwords. 
@@ -132,7 +132,7 @@ Learn more about
 
 Test your sign-in and sign-up forms regularly with real people to make sure that authentication works as expected. 
 Use analytics and [real user measurement (RUM)](/user-centric-performance-metrics/) to collect field data, 
-and tools such as [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 
+and tools such as [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 
 and [PageSpeed Insights](https://pagespeed.web.dev/) to run tests yourself. 
 Learn more about [testing for usability](/learn/forms/usability-testing) and 
 [gathering analytics data](/learn/forms/data).

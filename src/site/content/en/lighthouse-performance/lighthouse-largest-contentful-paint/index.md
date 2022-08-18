@@ -67,7 +67,7 @@ See [How to improve Largest Contentful Paint on your site][improve].
 
 ## Resources
 
-- [Source code for **Largest Contentful Paint** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/largest-contentful-paint.js)
+- [Source code for **Largest Contentful Paint** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/largest-contentful-paint.js)
 - [Largest Contentful Paint](/lcp/)
 - [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/)
 - [New in Chrome 77: Largest Contentful Paint][launch]

@@ -36,5 +36,5 @@ Lighthouse отмечает кнопки, у которых нет тексто�
 
 ## Ресурсы
 
-- [Исходный код проверки **Buttons do not have an accessible name** (Кнопки имеют неинформативные названия)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js).
+- [Исходный код проверки **Buttons do not have an accessible name** (Кнопки имеют неинформативные названия)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/button-name.js).
 - [Кнопки должны содержать информативный текст (Deque University)](https://dequeuniversity.com/rules/axe/3.3/button-name).

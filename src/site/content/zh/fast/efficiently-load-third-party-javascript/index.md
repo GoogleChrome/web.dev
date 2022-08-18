@@ -135,7 +135,7 @@ tags:
 
 - 减少 DNS 查找和往返时间。
 - 改进 [HTTP 缓存](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)头。
-- 利用 [HTTP/2 服务器推送](https://developers.google.com/web/fundamentals/performance/http2/)。
+- 利用 [HTTP/2 服务器推送](/performance-http2/)。
 
 例如，Casper 通过自托管 A/B 测试脚本设法将负载时间[缩短了 1.7 秒。](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec)
 

@@ -18,7 +18,7 @@ Also, most mobile devices don't support plugins, which
 
 ## How the Lighthouse plugins audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags pages
 that use plugins:
 
 <figure>
@@ -55,7 +55,7 @@ plugin. For example, MDN explains [how to convert Flash video to HTML5 video](ht
 
 ## Resources
 
-- [Source code for **Document uses plugins** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/plugins.js)
+- [Source code for **Document uses plugins** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/plugins.js)
 - [Unplayable content on mobile devices](https://developers.google.com/search/mobile-sites/mobile-seo/common-mistakes#unplayable-content)
 - [Flash video to HTML5 video](https://developer.mozilla.org/docs/Plugins/Flash_to_HTML5/Video)
 

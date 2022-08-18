@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-07-18
 description: Esta publicación presenta la métrica de Largest Contentful Paint (LCP) y explica como medirla
 tags:
   - performance
@@ -120,7 +120,7 @@ LCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 ### Herramientas de campo
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -128,7 +128,7 @@ LCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 ### Herramientas de laboratorio
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Cómo medir LCP en JavaScript
@@ -169,7 +169,7 @@ import {getLCP} from 'web-vitals';
 getLCP(console.log);
 ```
 
-Puede consultar [el código fuente de `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts) para obtener un ejemplo completo de cómo medir LCP en JavaScript.
+Puede consultar [el código fuente de `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts) para obtener un ejemplo completo de cómo medir LCP en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir LCP en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) `web-vitals` para obtener más información. {% endAside %}
 
@@ -189,7 +189,7 @@ LCP se ve afectado principalmente por cuatro factores:
 Para profundizar en cómo mejorar LCP, consulte [Optimizar LCP](/optimize-lcp/). Para obtener orientación adicional sobre las técnicas de rendimiento individual que también pueden mejorar LCP, consulte:
 
 - [Aplicar carga instantánea con el patrón PRPL](/apply-instant-loading-with-prpl)
-- [Optimización de la ruta de renderización crítica](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [Optimización de la ruta de renderización crítica](/critical-rendering-path/)
 - [Optimizar su CSS](/fast#optimize-your-css)
 - [Optimizar sus imágenes](/fast#optimize-your-images)
 - [Optimizar las fuentes web](/fast#optimize-web-fonts)

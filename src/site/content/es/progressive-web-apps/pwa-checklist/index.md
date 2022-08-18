@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: "¿Qué se necesita para que una Aplicación Web Progresiva sea buena o excelente?"
 tags:
   - progressive-web-apps
@@ -35,7 +35,7 @@ El rendimiento representa un papel importante en el éxito de cualquier experien
 
 La velocidad es fundamental para lograr que los usuarios *utilicen* su aplicación. De hecho, conforme el tiempo de carga de la página aumenta de un segundo a diez segundos, la probabilidad de que un usuario se retire aumenta en un 123%. El rendimiento no termina con el evento `load`. Los usuarios nunca deben preguntarse si su interacción (por ejemplo, hacer clic en un botón) se registró o no. Tanto la navegación como las animaciones deben ser muy fluidas. El rendimiento afecta a toda la experiencia, desde la forma en que los usuarios perciben la aplicación hasta cómo funciona realmente.
 
-Si bien todas las aplicaciones tienen diferentes requisitos, las auditorías de rendimiento en Lighthouse se basan en el [modelo de rendimiento centrado en el usuario de RAIL](/rail/), y si consigue una puntuación alta en esas auditorías, será más probable que sus usuarios tengan una experiencia agradable. También puede utilizar [PageSpeed Insights](https://pagespeed.web.dev/) o el [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) para obtener datos de rendimiento del mundo real para su aplicación web.
+Si bien todas las aplicaciones tienen diferentes requisitos, las auditorías de rendimiento en Lighthouse se basan en el [modelo de rendimiento centrado en el usuario de RAIL](/rail/), y si consigue una puntuación alta en esas auditorías, será más probable que sus usuarios tengan una experiencia agradable. También puede utilizar [PageSpeed Insights](https://pagespeed.web.dev/) o el [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) para obtener datos de rendimiento del mundo real para su aplicación web.
 
 #### Cómo
 
@@ -161,7 +161,7 @@ Además de ofrecer una página personalizada sin conexión, los usuarios esperan
 
 #### Cómo
 
-Después de determinar las características con las que sus usuarios esperan trabajar sin conexión, tendrá que hacer que su contenido esté disponible y se adapte a los contextos sin conexión. Además, puedes utilizar [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb), un sistema de almacenamiento NoSQL dentro del navegador, para almacenar y recuperar datos, y [sincronización en segundo plano](https://developer.chrome.com/blog/background-sync/) para permitir a los usuarios realizar acciones mientras están desconectados y aplazar las comunicaciones con el servidor hasta que el usuario vuelva a tener una conexión estable. También puede utilizar service workers para almacenar otros tipos de contenido, como imágenes, archivos de video y de audio para su uso sin conexión, así como utilizarlos para implementar [sesiones seguras y de larga duración](https://developers.google.com/web/updates/2016/06/2-cookie-handoff) para mantener a los usuarios autenticados. Desde el punto de vista de la experiencia del usuario, se pueden utilizar [pantallas esqueleto](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a) que ofrezcan a los usuarios una percepción de velocidad y contenido mientras se cargan y que luego puedan recurrir al contenido almacenado en el caché o a un indicador sin conexión, cuando sea necesario.
+Después de determinar las características con las que sus usuarios esperan trabajar sin conexión, tendrá que hacer que su contenido esté disponible y se adapte a los contextos sin conexión. Además, puedes utilizar [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb), un sistema de almacenamiento NoSQL dentro del navegador, para almacenar y recuperar datos, y [sincronización en segundo plano](https://developer.chrome.com/blog/background-sync/) para permitir a los usuarios realizar acciones mientras están desconectados y aplazar las comunicaciones con el servidor hasta que el usuario vuelva a tener una conexión estable. También puede utilizar service workers para almacenar otros tipos de contenido, como imágenes, archivos de video y de audio para su uso sin conexión, así como utilizarlos para implementar [sesiones seguras y de larga duración](https://developer.chrome.com/blog/2-cookie-handoff/) para mantener a los usuarios autenticados. Desde el punto de vista de la experiencia del usuario, se pueden utilizar [pantallas esqueleto](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a) que ofrezcan a los usuarios una percepción de velocidad y contenido mientras se cargan y que luego puedan recurrir al contenido almacenado en el caché o a un indicador sin conexión, cuando sea necesario.
 
 {% endDetails %}
 

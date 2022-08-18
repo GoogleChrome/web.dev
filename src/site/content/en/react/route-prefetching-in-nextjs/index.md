@@ -6,6 +6,7 @@ authors:
 subhead: |
   How Next.js speeds up navigations with route prefetching and how to customize it.
 date: 2019-11-08
+updated: 2022-08-12
 feedback:
   - api
 ---
@@ -89,7 +90,7 @@ Console warnings. [Priority
 hints](/priority-hints/) will
 soon become available in Chrome, which will allow Next.js to indicate lower
 priority for resources that are not needed immediately with `<link rel="preload"
-importance="low">`. {% endAside %}
+fetchpriority="low">`. {% endAside %}
 
 ## Avoid unnecessary prefetching
 

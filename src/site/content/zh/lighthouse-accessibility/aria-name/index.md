@@ -21,7 +21,7 @@ tags:
 
 ## Lighthouse 如何识别没有可访问名称的 ARIA 项目
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 标记了辅助技术无法访问其名称的自定义 ARIA 项目：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 标记了辅助技术无法访问其名称的自定义 ARIA 项目：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Lighthouse 审计显示了没有可访问名称的自定义切换元素", width="800", height="259" %}</figure>
 
@@ -121,7 +121,7 @@ tags:
 
 ## 资源
 
-- [**并非所有 ARIA 切换字段都有可访问的名称**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js)
+- [**并非所有 ARIA 切换字段都有可访问的名称**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-toggle-field-name.js)
 - [ARIA 按钮、链接和菜单项必须具有可访问名称（德克大学）](https://dequeuniversity.com/rules/axe/4.1/aria-command-name)
 - [ARIA 输入字段必须具有可访问名称（德克大学）](https://dequeuniversity.com/rules/axe/4.1/aria-input-field-name)
 - [ARIA 仪表必须具有可访问名称（德克大学）](https://dequeuniversity.com/rules/axe/4.1/aria-meter-name)

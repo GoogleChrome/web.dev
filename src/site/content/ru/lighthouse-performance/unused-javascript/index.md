@@ -14,7 +14,7 @@ date: 2020-07-07
 
 ## Причины плохих результатов проверки неиспользуемого JavaScript
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает каждый файл JavaScript с более чем 20 кибибайтами неиспользуемого кода:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает каждый файл JavaScript с более чем 20 кибибайтами неиспользуемого кода:
 
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt = "Скриншот проверки.", width = "800", height = "332"%}<figcaption> Щелкните значение в столбце <b>URL</b>, чтобы открыть исходный код сценария в новой вкладке.</figcaption></figure>
 
@@ -68,7 +68,7 @@ date: 2020-07-07
 
 ## Ресурсы
 
-- [Исходный код для проверки **Remove unused code** (Удалите неиспользуемый код)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-javascript.js).
+- [Исходный код для проверки **Remove unused code** (Удалите неиспользуемый код)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-javascript.js).
 - [Удалите неиспользуемый код](/remove-unused-code/).
 - [Добавление интерактивности с помощью JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/).
 - [Разделение кода](https://bundlers.tooling.report/code-splitting/).

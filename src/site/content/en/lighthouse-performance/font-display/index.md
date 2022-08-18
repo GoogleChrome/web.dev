@@ -16,7 +16,7 @@ causing a [flash of invisible text (FOIT)](/avoid-invisible-text).
 
 ## How the Lighthouse font-display audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags any font URLs that may flash invisible text:
 
 <figure>
@@ -85,7 +85,7 @@ Specify `@font-display` when [defining custom fonts](https://devdocs.magento.com
 
 ## Resources
 
-* [Source code for **Ensure text remains visible during webfont load** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/font-display.js)
+* [Source code for **Ensure text remains visible during webfont load** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/font-display.js)
 * [Avoid invisible text during loading](/avoid-invisible-text)
 * [Controlling font performance with font displays](https://developers.google.com/web/updates/2016/02/font-display)
 * [Preload web fonts to improve loading speed (codelab)](/codelab-preload-web-fonts/)

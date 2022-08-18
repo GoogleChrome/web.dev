@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2019-08-28
-updated: 2022-03-29
+updated: 2022-08-03
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 description: |
@@ -383,9 +383,9 @@ const shaderModule = device.createShaderModule({
 
     @group(0) @binding(0) var<storage, read> firstMatrix : Matrix;
     @group(0) @binding(1) var<storage, read> secondMatrix : Matrix;
-    @group(0) @binding(2) var<storage, write> resultMatrix : Matrix;
+    @group(0) @binding(2) var<storage, read_write> resultMatrix : Matrix;
 
-    @stage(compute) @workgroup_size(8, 8)
+    @compute @workgroup_size(8, 8)
     fn main(@builtin(global_invocation_id) global_id : vec3<u32>) {
       // Guard against out-of-bounds work group sizes
       if (global_id.x >= u32(firstMatrix.size.x) || global_id.y >= u32(secondMatrix.size.y)) {
@@ -443,12 +443,12 @@ that will perform the matrix multiplication. Set its pipeline with
 
 Now, let's talk about how this compute shader is going to run on the GPU. Our
 goal is to execute this program in parallel for each cell of the result matrix,
-step by step. For a result matrix of size 2 by 4 for instance, we'd call
-`passEncoder.dispatch(2, 4)` to encode the command of execution. The first
-argument "x" is the first dimension, the second one "y" is the second dimension,
-and the latest one "z" is the third dimension that defaults to 1 as we don't
-need it here. In the GPU compute world, encoding a command to execute a kernel
-function on a set of data is called dispatching.
+step by step. For a result matrix of size 16 by 32 for instance, to encode
+the command of execution, on a `@workgroup_size(8, 8)`, we'd call
+`passEncoder.dispatchWorkgroups(2, 4)` or `passEncoder.dispatchWorkgroups(16 / 8, 32 / 8)`.
+The first argument "x" is the first dimension, the second one "y" is the second dimension,
+and the latest one "z" is the third dimension that defaults to 1 as we don't need it here.
+In the GPU compute world, encoding a command to execute a kernel function on a set of data is called dispatching.
 
 <figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg", alt="Execution in parallel for each result matrix cell", width="800", height="530" %}
@@ -459,8 +459,8 @@ The size of the workgroup grid for our compute shader is `(8, 8)` in our WGSL
 code. Because of that, "x" and "y" that are respectively the number of rows of
 the first matrix and the number of columns of the second matrix will be divided
 by 8. With that, we can now dispatch a compute call with
-`passEncoder.dispatch(firstMatrix[0] / 8, secondMatrix[1] / 8)`. The number of
-workgroup grids to run are the `dispatch()` arguments.
+`passEncoder.dispatchWorkgroups(firstMatrix[0] / 8, secondMatrix[1] / 8)`. The
+number of workgroup grids to run are the `dispatchWorkgroups()` arguments.
 
 As seen in the drawing above, each shader will have access to a unique
 `builtin(global_invocation_id)` object that will be used to know which result
@@ -472,9 +472,9 @@ const commandEncoder = device.createCommandEncoder();
 const passEncoder = commandEncoder.beginComputePass();
 passEncoder.setPipeline(computePipeline);
 passEncoder.setBindGroup(0, bindGroup);
-const x = Math.ceil(firstMatrix[0] / 8); // X dimension of the grid of workgroups to dispatch.
-const y = Math.ceil(secondMatrix[1] / 8); // Y dimension of the grid of workgroups to dispatch.
-passEncoder.dispatch(x, y);
+const workgroupCountX = Math.ceil(firstMatrix[0] / 8);
+const workgroupCountY = Math.ceil(secondMatrix[1] / 8);
+passEncoder.dispatchWorkgroups(workgroupCountX, workgroupCountY);
 passEncoder.end();
 ```
 

@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-07-18
 description: 이 게시물에서는 누적 레이아웃 이동(CLS) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -161,7 +161,7 @@ CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### 현장 도구
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
@@ -169,7 +169,7 @@ CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 ### 실험실 도구
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript에서 CLS 측정
@@ -219,7 +219,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-이 코드는 CLS를 계산하고 기록하는 기본적인 방법을 보여줍니다. 그러나 [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)(CrUX)에서 측정된 것과 일치하는 방식으로 CLS를 정확하게 측정하는 것은 보다 복잡한 문제입니다. 자세한 내용은 아래를 참조하세요.
+이 코드는 CLS를 계산하고 기록하는 기본적인 방법을 보여줍니다. 그러나 [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)(CrUX)에서 측정된 것과 일치하는 방식으로 CLS를 정확하게 측정하는 것은 보다 복잡한 문제입니다. 자세한 내용은 아래를 참조하세요.
 
 {% endAside %}
 
@@ -250,7 +250,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`getCLS)` 의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)를 참조하세요.
+JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`getCLS)` 의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 CLS를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 

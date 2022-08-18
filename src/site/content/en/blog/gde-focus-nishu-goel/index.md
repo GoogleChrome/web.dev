@@ -13,6 +13,7 @@ description: >
 date: 2022-04-05
 tags:
   - blog
+  - community
 ---
 
 <figure>

@@ -198,7 +198,7 @@ Isso é muito semelhante ao [obsoleto na revalidação](https://www.mnot.net/blo
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="Na mensagem por push.", width="800", height="498" %}<figcaption>Na mensagem por push.</figcaption></figure>
 
-A [API Push](https://developers.google.com/web/fundamentals/push-notifications) é outro recurso criado com base no Trabalho de Serviço. Isso permite que o Trabalho de Serviço seja despertado em resposta a uma mensagem do serviço de mensagens do sistema operacional. Isso acontece mesmo quando o usuário não tem uma guia aberta no seu site. Apenas o Trabalho de Serviço é despertado. Você solicita permissão para fazer isso a partir de uma página e o usuário será solicitado.
+A [API Push](/push-notifications/) é outro recurso criado com base no Trabalho de Serviço. Isso permite que o Trabalho de Serviço seja despertado em resposta a uma mensagem do serviço de mensagens do sistema operacional. Isso acontece mesmo quando o usuário não tem uma guia aberta no seu site. Apenas o Trabalho de Serviço é despertado. Você solicita permissão para fazer isso a partir de uma página e o usuário será solicitado.
 
 **Ideal para:** conteúdo relacionado a uma notificação, como uma mensagem de bate-papo, uma notícia de última hora ou um e-mail. Também não muda com frequência o conteúdo que se beneficia da sincronização imediata, como uma atualização da lista de tarefas ou uma alteração do calendário.
 

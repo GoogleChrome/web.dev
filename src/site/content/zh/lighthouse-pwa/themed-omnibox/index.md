@@ -16,7 +16,7 @@ updated: 2020-06-17
 
 ## Lighthouse 主题颜色审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出没有为地址栏设置主题的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记出没有为地址栏设置主题的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse 审计显示地址栏的颜色与页面颜色不匹配", width="800", height="98" %}</figure>
 
@@ -60,6 +60,6 @@ Web 应用清单中的`theme_color`属性，可确保在用户从主屏幕启动
 
 ## 资源
 
-- [**没有为地址栏设置主题颜色**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)
+- [**没有为地址栏设置主题颜色**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/themed-omnibox.js)
 - [添加 web 应用清单](/add-manifest)
 - [对 Android 版 Chrome 39 中的`theme-color`](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android) 的支持

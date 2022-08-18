@@ -20,7 +20,7 @@ tags:
 다음과 같은 다양한 방법으로 이를 달성할 수 있습니다.
 
 - [브라우저](/customize-install/)에서 PWA 설치.
-- [앱 스토어](https://developers.google.com/web/android/trusted-web-activity)에서 PWA 설치.
+- [앱 스토어](https://developer.chrome.com/docs/android/trusted-web-activity/)에서 PWA 설치.
 
 다양한 유통 채널을 보유하는 것은 광범위한 사용자에게 다가갈 수 있는 강력한 방법이지만 사용자를 홍보할 올바른 전략을 선택하는 것은 어려울 수 있습니다.
 
@@ -86,7 +86,7 @@ PWA가 [설치 가능성 기준](/install-criteria/)을 충족하면 대부분�
 
 [Google Play 연구](https://medium.com/googleplaydev/shrinking-apks-growing-installs-5d3fcba23ce2)에 따르면 APK 크기가 6MB 증가할 때마다 설치 전환율은 1%씩 감소합니다. 즉, 10MB 앱의 다운로드 완료율은 **100MB 앱보다 약 30% 더 높을 수 있습니다!**
 
-이 문제를 해결하기 위해 일부 회사에서는 PWA를 활용하여 신뢰할 수 있는 웹 활동을 사용하여 Play 스토어에서 앱의 경량 버전을 제공하고 있습니다. [신뢰할 수 있는 웹 활동](https://developers.google.com/web/android/trusted-web-activity)을 통해 Play 스토어에서 PWA를 제공할 수 있으며 웹을 사용하여 구축되기 때문에 앱 크기는 일반적으로 몇 메가바이트에 불과합니다.
+이 문제를 해결하기 위해 일부 회사에서는 PWA를 활용하여 신뢰할 수 있는 웹 활동을 사용하여 Play 스토어에서 앱의 경량 버전을 제공하고 있습니다. [신뢰할 수 있는 웹 활동](https://developer.chrome.com/docs/android/trusted-web-activity/)을 통해 Play 스토어에서 PWA를 제공할 수 있으며 웹을 사용하여 구축되기 때문에 앱 크기는 일반적으로 몇 메가바이트에 불과합니다.
 
 인도의 가장 큰 환대 회사 중 하나인 Oyo는 [앱의 Lite 버전](/oyo-lite-twa/)을 만들고 TWA를 사용하여 Play 스토어에서 사용할 수 있도록 했습니다. Android 앱 크기의 7%에 불과한 850KB에 불과합니다. 그리고 일단 설치되면 Android 앱과 구별할 수 없습니다.
 
@@ -156,7 +156,7 @@ if (isDeviceMidOrLowEnd()) {
 }
 ```
 
-{% Aside %} 기기 신호를 기기 카테고리에 매핑하는 방법에 대한 심층적인 기술은 이 가이드의 범위를 벗어나지만 Addy Osmani의 [적응형 로딩 가이드](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69), Philip Walton의 [The Device Memory API](https://developers.google.com/web/updates/2017/12/device-memory) 및 Jeremy Wagner의 [Adapting to Users with Client](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/)를 확인할 수 있습니다. 이에 대한 모범 사례에 대한 자세한 정보는 힌트입니다. {% endAside %}
+{% Aside %} 기기 신호를 기기 카테고리에 매핑하는 방법에 대한 심층적인 기술은 이 가이드의 범위를 벗어나지만 Addy Osmani의 [적응형 로딩 가이드](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69), Philip Walton의 [The Device Memory API](https://developer.chrome.com/blog/device-memory/) 및 Jeremy Wagner의 [Adapting to Users with Client](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/)를 확인할 수 있습니다. 이에 대한 모범 사례에 대한 자세한 정보는 힌트입니다. {% endAside %}
 
 ## 결론
 

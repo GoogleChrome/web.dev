@@ -49,7 +49,7 @@ Lighthouse는 특정 리소스을 분석하고 가져오는 게 늦어지는 경
 
 ## 최대한 빠르게 초기 경로를 렌더링
 
-Lighthouse는 사이트에서 픽셀을 화면에 렌더링하는 순간인 [**FP(First Paint)**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)를 지연시키는 리소스가 있는 경우 경고합니다.
+Lighthouse는 사이트에서 픽셀을 화면에 렌더링하는 순간인 [**FP(First Paint)**](/user-centric-performance-metrics/#important-metrics-to-measure)를 지연시키는 리소스가 있는 경우 경고합니다.
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: 렌더링 차단 리소스 감사 제거", width="800", height="111" %}
 

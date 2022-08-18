@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2022-04-20
+updated: 2022-06-15
 tags:
   - blog
   - capabilities
@@ -15,8 +15,9 @@ hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 ---
 
-{% Aside %} The File Handling API is part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/) and is
-currently in development. This post will be updated as the implementation progresses. {% endAside %}
+{% Aside 'success' %}
+The File Handling API was part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/) and has now shipped.
+{% endAside %}
 
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical
 step is to let developers declare these very web apps as file handlers for the files their apps can
@@ -29,7 +30,7 @@ default.
 
 Examples of sites that may use this API include:
 
-- Office applications like text editors, spreadsheet apps, and slideshow creators.
+- Office applications such as text editors, spreadsheet apps, and slideshow creators.
 - Graphics editors and drawing tools.
 - Video game level editor tools.
 
@@ -37,13 +38,13 @@ Examples of sites that may use this API include:
 
 <div>
 
-| Step                                     | Status                           |
-| ---------------------------------------- | -------------------------------- |
-| 1. Create explainer                      | [Complete][explainer]            |
-| 2. Create initial draft of specification | Not started                      |
-| 3. Gather feedback & iterate on design   | Complete                         |
-| 4. Origin trial                          | Complete                         |
-| 5. **Launch**                            | **Complete** (Chromium&nbsp;102) |
+| Step                                     | Status                                               |
+| ---------------------------------------- | ---------------------------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]                                |
+| 2. Create initial draft of specification | [Started](https://github.com/w3c/manifest/pull/1005) |
+| 3. Gather feedback & iterate on design   | Complete                                             |
+| 4. Origin trial                          | Complete                                             |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;102)                     |
 
 </div>
 
@@ -76,7 +77,7 @@ if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
 As a first step, web apps need to declaratively describe in their [web app manifest](/add-manifest/)
 what kind of files they can handle. The File Handling API extends web app manifest with a new
 property called `"file_handlers"` that accepts an array of, well, file handlers. A file handler is
-an object with two properties:
+an object with these properties:
 
 - An `"action"` property that points to a URL within the scope of the app as its value.
 - An `"accept"` property with an object of MIME-types as keys and lists of file extensions as their
@@ -213,7 +214,7 @@ transparency, and ergonomics.
 
 ## Permissions, permissions persistence, and file handler updates
 
-To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
+To ensure user trust and the safety of users' files, when the File Handling API opens a file,
 a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
 right after the user selects the PWA to open a file, so that the permission is tightly coupled to the
 action of opening a file using the PWA, making it more understandable and relevant.
@@ -244,7 +245,7 @@ signal of trust in the application.
 
 The exception to this is when there are no applications on the host system for a given file type. In
 this case, some host operating systems may automatically promote the newly registered handler to the
-default handler for that file type, silently and without any intervention by the user. This would
+default handler for that file type silently and without any intervention by the user. This would
 mean if the user double clicks a file of that type, it would automatically open in the registered
 web app. On such host operating systems, when the user agent determines that there is no existing
 default handler for the file type, an explicit permission prompt might be necessary to avoid

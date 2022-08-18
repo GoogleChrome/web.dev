@@ -421,7 +421,7 @@ Una interfaz de usuario y una experiencia de usuario bien diseñadas pueden redu
 
 ## Siga aprendiendo {: #resources }
 
-- [Cree formas asombrosas](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Cree formas asombrosas](/learn/forms/)
 - [Prácticas recomendadas para el diseño de formularios para dispositivos móviles](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Controles de formulario más capaces](/more-capable-form-controls)
 - [Crear formularios accesibles](https://webaim.org/techniques/forms/)

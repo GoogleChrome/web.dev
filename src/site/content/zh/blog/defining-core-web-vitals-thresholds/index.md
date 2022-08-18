@@ -6,7 +6,7 @@ authors:
   - bmcquade
 description: 核心 Web 指标阈值背后的研究和方法论
 date: 2020-05-21
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: 核心 Web 指标阈值背后的研究和方法论
 tags:
@@ -71,7 +71,7 @@ tags:
 <p data-md-type="paragraph">如果针对某一指标有相关的用户体验研究，并且对文献中的数值范围有合理共识，那么我们会用这个范围作为输入来指导我们的阈值选取过程。在没有相关的用户体验研究的情况下，例如对于像累积布局偏移这样的新指标，我们会转而对满足不同指标候选阈值的真实世界页面进行评估，从而确定一个能带来良好用户体验的阈值。</p>
 <h3 data-md-type="header" data-md-header-level="3">可通过现有网络内容实现</h3>
 <p data-md-type="paragraph">此外，为了确保网站所有者能够成功地优化他们的网站并满足"良好"阈值，我们要求这些阈值对于网络上现有的内容是可以实现的。例如，虽然零毫秒是理想的 LCP "良好"阈值，并且可以带来即时加载体验，但由于网络和设备处理延迟，零毫秒的阈值实际上在大多数情况下都无法实现。因此，对于核心 Web 指标来说，零毫秒不是一个合理的 LCP "良好"阈值。</p>
-<p data-md-type="paragraph">在评估核心 Web 指标的候选"良好"阈值时，我们会根据 <a href="https://developers.google.com/web/tools/chrome-user-experience-report" data-md-type="link">Chrome 用户体验报告</a> (CrUX) 中的数据验证这些阈值是否可以实现。为了确认一个阈值是可以实现的，我们要求目前至少有 10% 的<a href="/same-site-same-origin/#origin" data-md-type="link">域</a>满足"良好"阈值。此外，为了确保优化良好的网站不会因为实际数据的变化而被错误分类，我们还会验证优化良好的内容始终满足"良好"阈值。</p>
+<p data-md-type="paragraph">在评估核心 Web 指标的候选"良好"阈值时，我们会根据 <a href="https://developer.chrome.com/docs/crux/" data-md-type="link">Chrome 用户体验报告</a> (CrUX) 中的数据验证这些阈值是否可以实现。为了确认一个阈值是可以实现的，我们要求目前至少有 10% 的<a href="/same-site-same-origin/#origin" data-md-type="link">域</a>满足"良好"阈值。此外，为了确保优化良好的网站不会因为实际数据的变化而被错误分类，我们还会验证优化良好的内容始终满足"良好"阈值。</p>
 <p data-md-type="paragraph">相反地，我们通过确定当前只有少数域未能达到的性能水平来建立"欠佳"阈值。除非有"欠佳"阈值定义的相关研究，否则在默认情况下，性能表现最差的 10-30% 的域将被归类为"欠佳"。</p>
 <h3 data-md-type="header" data-md-header-level="3">关于标准的最终总结</h3>
 <p data-md-type="paragraph">在评估候选阈值时，我们发现这些标准有时会相互冲突。例如，一个阈值始终可实现和该阈值始终确保良好的用户体验之间可能存在矛盾。此外，鉴于人类感知研究通常提供一个范围值，而用户行为指标又显示了行为的逐渐变化，我们发现通常没有唯一"正确"的指标阈值。因此，我们针对 2020 年核心 Web 指标的方案就是选择最符合上述标准的阈值，同时认识到没有一个完美的阈值，并且我们有时可能需要从多个合理的候选阈值中进行选择。我们不会想弄清"完美的阈值是多少？"相反地，我们专注于认清"哪一个候选阈值最符合我们的标准？"</p>

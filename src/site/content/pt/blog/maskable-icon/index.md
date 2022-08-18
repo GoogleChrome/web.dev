@@ -47,7 +47,7 @@ Se você deseja criar um ícone mascarável com base em seu ícone existente, vo
 
 <figure>   {% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor screenshot", width="670", height="569" %}   <figcaption>Criação de ícones no Maskable.app Editor</figcaption></figure>
 
-Depois de criar uma imagem de ícone mascarável e testá-la no DevTools, você precisará atualizar o {a0web app manifest  para apontar para os novos ativos. O web app manifest fornece informações sobre sua aplicação web em um arquivo JSON e inclui um [array de `icons`](https://developers.google.com/web/fundamentals/web-app-manifest#icons).
+Depois de criar uma imagem de ícone mascarável e testá-la no DevTools, você precisará atualizar o {a0web app manifest  para apontar para os novos ativos. O web app manifest fornece informações sobre sua aplicação web em um arquivo JSON e inclui um [array de `icons`](/add-manifest/#icons).
 
 Com a inclusão de ícones mascaráveis, um novo valor de propriedade foi adicionado para recursos de imagem listados num web app manifest. O campo `purpose` informa ao navegador como seu ícone deve ser usado. Por default, os ícones terão a finalidade `"any"`. Esses ícones serão redimensionados sobre um fundo branco no Android.
 

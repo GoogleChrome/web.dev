@@ -20,7 +20,7 @@ En el pasado, la instalación de aplicaciones solo era posible en el contexto de
 Puedes conseguirlo de diferentes formas:
 
 - Instalación de la PWA [desde el navegador](/customize-install/).
-- Instalación de la PWA [desde la app store](https://developers.google.com/web/android/trusted-web-activity).
+- Instalación de la PWA [desde la app store](https://developer.chrome.com/docs/android/trusted-web-activity/).
 
 Tener diferentes canales de distribución es una poderosa forma de llegar a un grande número de usuarios, pero elegir la estrategia adecuada para promoverlos puede ser un desafío.
 
@@ -86,7 +86,7 @@ En esta sección clasificaremos las aplicaciones de la tienda en dos grupos:
 
 Según un [estudio de Google Play](https://medium.com/googleplaydev/shrinking-apks-growing-installs-5d3fcba23ce2), por cada aumento de 6 MB al tamaño de un APK, la tasa de conversión de instalación disminuye en un 1%. ¡Esto significa que la tasa de finalización de descarga de una aplicación de 10 MB podría ser aproximadamente un **30% más alta que una aplicación de 100 MB!**
 
-Para solucionar este problema, algunas empresas están aprovechando de su PWA para ofrecer una versión liviana de su aplicación en la Play Store utilizando Trusted Web Activities (Actividades web de confianza). Las [Trusted Web Activities](https://developers.google.com/web/android/trusted-web-activity) permiten entregar tu PWA en la Play Store y, debido a que se creó a través de la web, el tamaño de la aplicación suele ser de solo unos pocos megabytes.
+Para solucionar este problema, algunas empresas están aprovechando de su PWA para ofrecer una versión liviana de su aplicación en la Play Store utilizando Trusted Web Activities (Actividades web de confianza). Las [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/) permiten entregar tu PWA en la Play Store y, debido a que se creó a través de la web, el tamaño de la aplicación suele ser de solo unos pocos megabytes.
 
 Oyo, una de las empresas hoteleras más grandes de la India, creó una [versión Lite de su aplicación](/oyo-lite-twa/) y la publicó en la Play Store mediante TWA. Pesa 850 KB, eso es el 7% del tamaño de su aplicación de Android. Y una vez instalado, es indistinguible de su aplicación de Android:
 
@@ -156,7 +156,7 @@ if (isDeviceMidOrLowEnd()) {
 }
 ```
 
-{% Aside %} Al cubrir en profundidad las técnicas sobre cómo asignar señales de dispositivos a categorías de dispositivos está fuera del alcance de esta guía, pero puedes consultar la [adaptive loading guide (guía de carga adaptable)](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69) de Addy Osmani, [The Device Memory API (La API de la Memoria del dispisitivo)](https://developers.google.com/web/updates/2017/12/device-memory) de Philip Walton y [Adapting to Users with Client Hints (Adaptando a los usuarios mediante las sugerencias del cliente)](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) de Jeremy Wagner para obtener más información sobre las mejores prácticas en torno a lo anterior. {% endAside %}
+{% Aside %} Al cubrir en profundidad las técnicas sobre cómo asignar señales de dispositivos a categorías de dispositivos está fuera del alcance de esta guía, pero puedes consultar la [adaptive loading guide (guía de carga adaptable)](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69) de Addy Osmani, [The Device Memory API (La API de la Memoria del dispisitivo)](https://developer.chrome.com/blog/device-memory/) de Philip Walton y [Adapting to Users with Client Hints (Adaptando a los usuarios mediante las sugerencias del cliente)](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) de Jeremy Wagner para obtener más información sobre las mejores prácticas en torno a lo anterior. {% endAside %}
 
 ## Conclusión
 

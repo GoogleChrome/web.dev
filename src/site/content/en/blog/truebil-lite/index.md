@@ -47,7 +47,7 @@ An in-house team took four months to develop Truebil Lite using React, Django, a
 
 ### Optimize for fast first load and navigations
 
-Using [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to guide performance optimizations, the team adopted a performance-first culture while implementing new features. Truebil was able to significantly improve user experience by prioritizing the [First Contentful Paint](/fcp/) and [Time to Interactive (TTI)](/tti/) metrics and optimizing for fast first loads, repeat visits, and smooth navigation. The team achieved those results by setting performance budgets and using a variety of techniques to achieve them.
+Using [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to guide performance optimizations, the team adopted a performance-first culture while implementing new features. Truebil was able to significantly improve user experience by prioritizing the [First Contentful Paint](/fcp/) and [Time to Interactive (TTI)](/tti/) metrics and optimizing for fast first loads, repeat visits, and smooth navigation. The team achieved those results by setting performance budgets and using a variety of techniques to achieve them.
 
 #### Set performance budgets
 

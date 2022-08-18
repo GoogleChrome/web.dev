@@ -25,7 +25,7 @@ Location: /путь/к/новому/местоположению
 
 ## Аудит множественной переадресации в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 помечает страницы с множественной переадресацией:
 
 <figure>
@@ -39,7 +39,7 @@ Location: /путь/к/новому/местоположению
 Поставьте актуальные ссылки
 на помеченные в отчете ресурсы.
 Особенно важно избегать переадресации ресурсов,
-необходимых для [пути критичной отрисовки](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).
+необходимых для [пути критичной отрисовки](/critical-rendering-path/).
 
 Если вы посредством переадресации направляете смартфоны на мобильную версию
 страницы, попробуйте изменить дизайн сайта —
@@ -54,6 +54,6 @@ Location: /путь/к/новому/местоположению
 
 ## Материалы
 
-- [Исходный код для аудита **Избежание множественной переадресации страниц** (Avoid multiple page redirects)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js).
+- [Исходный код для аудита **Избежание множественной переадресации страниц** (Avoid multiple page redirects)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js).
 - [Переадресация в HTTP](https://developer.mozilla.org/docs/Web/HTTP/Redirections).
 - [Избежание переадресации целевой страницы (Avoid Landing Page Redirects)](https://developers.google.com/speed/docs/insights/AvoidRedirects).

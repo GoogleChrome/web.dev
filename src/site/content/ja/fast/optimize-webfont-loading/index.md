@@ -139,7 +139,7 @@ font.load().then(function() {
 
 ## Lighthouse を使用した WebFont の読み込み動作の自動テスト
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) を使用すると、ウェブフォントを最適化するためのベストプラクティスが実践されていることを確認するプロセスを自動化できます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) を使用すると、ウェブフォントを最適化するためのベストプラクティスが実践されていることを確認するプロセスを自動化できます。
 
 以下の監査を実施すれば、ウェブページでウェブフォントを最適化するためのベストプラクティスが長期に渡って実践されていることが保証されます。
 

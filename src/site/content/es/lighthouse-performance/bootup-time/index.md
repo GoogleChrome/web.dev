@@ -32,7 +32,7 @@ Cuando su JavaScript tarda mucho en ejecutarse, ralentiza el rendimiento de su p
 
 ## Cómo fallar la auditoría Reducir el tiempo de ejecución de JavaScript de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) muestra una advertencia cuando la ejecución de JavaScript tarda más de 2 segundos. La auditoría falla cuando la ejecución tarda más de 3,5 segundos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) muestra una advertencia cuando la ejecución de JavaScript tarda más de 2 segundos. La auditoría falla cuando la ejecución tarda más de 3,5 segundos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="Una captura de pantalla de la auditoría de Lighthouse Reducir el tiempo de ejecución de JavaScript", width="800", height="321" %}</figure>
 
@@ -46,4 +46,4 @@ Para ayudarlo a identificar los mayores contribuyentes al tiempo de ejecución, 
 
 ## Recursos
 
-[Código fuente para la auditoría **Reducir el tiempo de ejecución de JavaScript**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[Código fuente para la auditoría **Reducir el tiempo de ejecución de JavaScript**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/bootup-time.js)

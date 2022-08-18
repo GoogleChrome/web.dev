@@ -6,12 +6,14 @@ authors:
 hero: image/admin/k3hWnnwqTvg7w7URsbIK.png
 description: Data Studio는 Chrome UX Report와 같은 빅 데이터 소스를 기반으로 대시보드를 구축할 수 있는 강력한 데이터 시각화 도구입니다. 이 가이드에서는 출처의 사용자 환경을 추적하기 위해 고유한 사용자 지정 CrUX Dashboard를 만드는 방법에 대해 알아봅니다.
 date: 2020-06-22
+updated: 2022-07-18
 tags:
   - performance
   - blog
+  - chrome-ux-report
 ---
 
-[Data Studio](https://marketingplatform.google.com/about/data-studio/)[는](https://developers.google.com/web/tools/chrome-user-experience-report/)[Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/)(CrUX)와 같은 빅 데이터 소스를 기반으로 대시보드를 구축할 수 있는 강력한 데이터 시각화 도구입니다. 이 가이드에서는 출처의 사용자 환경을 추적하기 위해 고유한 사용자 지정 CrUX Dashboard를 만드는 방법에 대해 알아봅니다.
+[Data Studio](https://marketingplatform.google.com/about/data-studio/)[는](https://developer.chrome.com/docs/crux/)[Chrome UX Report](https://developer.chrome.com/docs/crux/)(CrUX)와 같은 빅 데이터 소스를 기반으로 대시보드를 구축할 수 있는 강력한 데이터 시각화 도구입니다. 이 가이드에서는 출처의 사용자 환경을 추적하기 위해 고유한 사용자 지정 CrUX Dashboard를 만드는 방법에 대해 알아봅니다.
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598" %}
 
@@ -28,7 +30,7 @@ CrUX Dashboard는 [커뮤니티 커넥터(Community Connector)](https://develope
 {% Compare 'better', 'Origin (Supported)' %}
 
 ```text
-https://developers.google.com
+https://web.dev
 ```
 
 {% endCompare %}
@@ -36,7 +38,7 @@ https://developers.google.com
 {% Compare 'worse', 'URL (Not supported)' %}
 
 ```text
-https://developers.google.com/web/tools/chrome-user-experience-report/
+https://web.dev/chrome-ux-report-data-studio-dashboard/
 ```
 
 {% endCompare %}
@@ -79,7 +81,7 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 ### 메트릭 성능
 
-Core Web Vitals 페이지 다음에 CrUX 데이터 세트의 모든 [메트릭](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)에 대한 독립 실행형 페이지를 찾을 수 있습니다.
+Core Web Vitals 페이지 다음에 CrUX 데이터 세트의 모든 [메트릭](https://developer.chrome.com/docs/crux/methodology/#metrics)에 대한 독립 실행형 페이지를 찾을 수 있습니다.
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX 대시보드 LCP 페이지", width="800", height="598" %}
 
@@ -103,7 +105,7 @@ PageSpeed Insights와 같은 도구의 해당 P75 값은 공개 BigQuery 데이�
 
 ### 사용자 인구통계
 
-사용자 인구통계 페이지에는 장치 및 ECT(유효 연결 유형)의 두 가지 [차원](https://developers.google.com/web/tools/chrome-user-experience-report/#dimensions)이 포함되어 있습니다. 이 페이지는 각 인구통계의 사용자에 대한 전체 출처의 페이지 화면 분포를 보여줍니다.
+사용자 인구통계 페이지에는 장치 및 ECT(유효 연결 유형)의 두 가지 [차원](https://developer.chrome.com/docs/crux/methodology/#dimensions)이 포함되어 있습니다. 이 페이지는 각 인구통계의 사용자에 대한 전체 출처의 페이지 화면 분포를 보여줍니다.
 
 장치 배포 페이지는 시간 경과에 따른 전화, 데스크탑 및 태블릿 사용자의 분석 결과를 보여줍니다. 여러 출처에는 태블릿 데이터가 거의 또는 전혀 없는 경향이 있으므로 종종 차트 가장자리에 "0%"가 걸려 있는 것을 볼 수 있습니다.
 

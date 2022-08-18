@@ -16,7 +16,7 @@ tags:
 date: 2021-10-08
 ---
 
-If you've used connection throttling in the network panel in a browser's developer tools (or [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome) to assess loading performance, you know how convenient those tools are for performance tuning. You can quickly measure the impact of performance optimizations with a consistent and stable baseline connection speed. The only problem is that this is synthetic testing, which yields [lab data](/lab-and-field-data-differences/#lab-data), not [field data](/lab-and-field-data-differences/#field-data).
+If you've used connection throttling in the network panel in a browser's developer tools (or [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) in Chrome) to assess loading performance, you know how convenient those tools are for performance tuning. You can quickly measure the impact of performance optimizations with a consistent and stable baseline connection speed. The only problem is that this is synthetic testing, which yields [lab data](/lab-and-field-data-differences/#lab-data), not [field data](/lab-and-field-data-differences/#field-data).
 
 Synthetic testing isn't inherently _bad_, but it's not representative of how fast your website is loading for real users. That requires field data, which you can collect from the Navigation Timing and Resource Timing APIs.
 

@@ -28,7 +28,7 @@ tags:
 
 ## Lighthouse DOM 크기 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 페이지의 총 DOM 요소, 페이지의 최대 DOM 깊이 및 최대 하위 요소를 보고합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 페이지의 총 DOM 요소, 페이지의 최대 DOM 깊이 및 최대 하위 요소를 보고합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Lighthouse Avoids 과도한 DOM 크기 감사 스크린샷.", width="800", height="363" %}</figure>
 
@@ -47,7 +47,7 @@ Lighthouse는 다음과 같은 DOM 트리가 있는 페이지에 플래그를 �
 
 런타임에 DOM 노드를 생성하는 경우 [하위 트리 수정 DOM 변경 중단점](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom)을 사용하면 노드가 생성되는 시점을 정확히 찾아낼 수 있습니다.
 
-큰 DOM 트리를 피할 수 없는 경우 렌더링 성능을 개선하기 위한 또 다른 방법은 CSS 선택기를 단순화하는 것입니다. 자세한 내용은 Google의 [스타일 계산 범위 및 복잡성 줄이기](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)를 참조하세요.
+큰 DOM 트리를 피할 수 없는 경우 렌더링 성능을 개선하기 위한 또 다른 방법은 CSS 선택기를 단순화하는 것입니다. 자세한 내용은 Google의 [스타일 계산 범위 및 복잡성 줄이기](/reduce-the-scope-and-complexity-of-style-calculations/)를 참조하세요.
 
 ## 스택별 지침
 
@@ -63,5 +63,5 @@ Lighthouse는 다음과 같은 DOM 트리가 있는 페이지에 플래그를 �
 
 ## 참고자료
 
-- [**과도한 DOM 크기** 감사 방지를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
-- [스타일 계산의 범위와 복잡성 줄이기](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+- [**과도한 DOM 크기** 감사 방지를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
+- [스타일 계산의 범위와 복잡성 줄이기](/reduce-the-scope-and-complexity-of-style-calculations/)

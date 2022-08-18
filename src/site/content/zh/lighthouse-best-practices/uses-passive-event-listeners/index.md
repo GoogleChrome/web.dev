@@ -16,7 +16,7 @@ updated: 2019-08-28
 
 ## Lighthouse 被动事件监听器审计失败的方法
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 可以标记可能会延迟页面滚动的事件监听器：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 可以标记可能会延迟页面滚动的事件监听器：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Lighthouse 审计显示页面不使用被动事件监听器来提高滚动性能", width="800", height="213" %}</figure>
 
@@ -45,7 +45,7 @@ document.addEventListener('touchstart', onTouchStart, {passive: true});
 
 ## 资源
 
-- [**不使用被动监听器来提高滚动性能**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-passive-event-listeners.js)
+- [**不使用被动监听器来提高滚动性能**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-passive-event-listeners.js)
 - [使用被动事件监听器提高滚动性能](https://developers.google.com/web/updates/2016/06/passive-event-listeners)
 - [被动事件监听器说明文档](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)
 - [EventTarget.addEventListener()](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener)

@@ -31,5 +31,5 @@ Obtenga más información en [Botones y vínculos de etiquetas](/labels-and-text
 
 ## Recursos
 
-- [Código fuente para la auditoría **Los enlaces no tienen un nombre discernible**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
+- [Código fuente para la auditoría **Los enlaces no tienen un nombre discernible**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/link-name.js)
 - [Los enlaces deben tener texto discernible (Deque University)](https://dequeuniversity.com/rules/axe/3.3/link-name)

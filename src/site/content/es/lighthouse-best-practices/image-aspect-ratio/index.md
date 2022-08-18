@@ -14,7 +14,7 @@ Si una imagen renderizada tiene una [relación de aspecto](https://en.wikipedia.
 
 ## Cómo falla la auditoría Lighthouse para la relación de aspecto de imágenes
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca cualquier imagen con una dimensión renderizada más de unos pocos píxeles diferente de la dimensión esperada cuando se renderiza en su proporción natural:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca cualquier imagen con una dimensión renderizada más de unos pocos píxeles diferente de la dimensión esperada cuando se renderiza en su proporción natural:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Auditoría Lighthouse que muestra imágenes con una relación de aspecto incorrecta", width="800", height="198" %}</figure>
 
@@ -45,7 +45,7 @@ Por último, consulte la publicación [Suministrar imágenes con las dimensiones
 
 ## Recursos
 
-- [Código fuente para la auditoría **Mostrar las imágenes con una relación de aspecto incorrecta**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
+- [Código fuente para la auditoría **Mostrar las imágenes con una relación de aspecto incorrecta**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/image-aspect-ratio.js)
 - [Relación de aspecto CSS](https://www.npmjs.com/package/css-aspect-ratio)
 - [Cajas de relación de aspecto](https://css-tricks.com/aspect-ratio-boxes/)
 - [Suministrar imágenes con las dimensiones correctas](/serve-images-with-correct-dimensions)

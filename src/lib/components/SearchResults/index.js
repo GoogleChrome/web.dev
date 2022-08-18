@@ -2,8 +2,8 @@
  * @fileoverview An Algolia search box.
  */
 
-import {html} from 'lit-element';
-import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+import {html} from 'lit';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {BaseElement} from '../BaseElement';
 import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
 import 'focus-visible';
@@ -107,7 +107,8 @@ export class SearchResults extends BaseElement {
    * overflown the container.
    */
   scrollHitIntoView() {
-    this.requestUpdate().then(() => {
+    this.requestUpdate();
+    this.updateComplete.then(() => {
       const selected = this.renderRoot.querySelector('[aria-selected="true"]');
       selected.scrollIntoView({block: 'nearest'});
       this.dispatchEvent(new CustomEvent('resultselect', {detail: {selected}}));

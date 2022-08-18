@@ -22,7 +22,7 @@ updated: 2020-06-10
 
 ## Lighthouse 服务工作进程审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记不注册服务工作进程的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记不注册服务工作进程的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse 审计显示网站不注册服务工作进程", width="800", height="95" %}</figure>
 
@@ -42,7 +42,7 @@ Lighthouse 检查 [Chrome 远程调试协议](https://github.com/ChromeDevTools/
 
 ## 资源
 
-- [**不注册可控制页面和 `start_url` 的服务工作进程**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
+- [**不注册可控制页面和 `start_url` 的服务工作进程**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/service-worker.js)
 - [服务工作进程：简介](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [服务工作进程和缓存存储 API](/service-workers-cache-storage/)
 - [什么是网络可靠性以及如何进行测量？](/network-connections-unreliable)

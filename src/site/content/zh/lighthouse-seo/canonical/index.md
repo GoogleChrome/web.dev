@@ -24,7 +24,7 @@ web_lighthouse:
 
 ## Lighthouse 规范链接审核失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记任何具有无效 canonical 链接的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记任何具有无效 canonical 链接的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="Lighthouse 审计显示文档具有无效的 canonical 链接", width="800", height="76" %}</figure>
 
@@ -69,7 +69,7 @@ Link: https://example.com; rel=canonical
 ### 一般准则
 
 - 确保 canonical URL 有效。
-- 尽可能使用安全的 [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https) canonical URL 而不是 HTTP。
+- 尽可能使用安全的 [HTTPS](/why-https-matters/) canonical URL 而不是 HTTP。
 - 如果您根据用户的语言或国家/地区使用 [`hreflang` 链接](/hreflang)来提供不同版本的页面，请确保 canonical URL 指向相应语言或国家/地区的正确页面。
 - 不要将 canonical URL 指向不同的域。雅虎和必应不允许这样做。
 - 不要将较低级别的页面指向站点的根页面，除非它们的内容相同。
@@ -83,7 +83,7 @@ Link: https://example.com; rel=canonical
 
 ## 资源
 
-- 文档的[源代码**没有有效的 `rel=canonical`** 审计](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/canonical.js)
+- 文档的[源代码**没有有效的 `rel=canonical`** 审计](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/canonical.js)
 - [rel=canonical 的 5 个常见错误](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
 - [合并重复的 URL](https://support.google.com/webmasters/answer/139066)
 - [阻止对参数化重复内容的抓取](https://support.google.com/webmasters/answer/6080548)

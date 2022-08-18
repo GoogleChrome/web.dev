@@ -14,7 +14,7 @@ updated: 2020-04-29
 
 ## Lighthouse 이미지 종횡비 감사가 실패하는 원인
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 기본 비율로 렌더링될 때 예상 크기와 몇 픽셀 이상 다른 렌더링된 크기를 가진 모든 이미지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 기본 비율로 렌더링될 때 예상 크기와 몇 픽셀 이상 다른 렌더링된 크기를 가진 모든 이미지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Lighthouse 감사에서 잘못된 종횡비로 표시된 이미지가 표시됨", width="800", height="198" %}</figure>
 
@@ -45,7 +45,7 @@ updated: 2020-04-29
 
 ## 리소스
 
-- [**이미지가 잘못된 종횡비로 나타납니다** 검사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
+- [**이미지가 잘못된 종횡비로 나타납니다** 검사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/image-aspect-ratio.js)
 - [CSS 종횡비](https://www.npmjs.com/package/css-aspect-ratio)
 - [종횡비 상자](https://css-tricks.com/aspect-ratio-boxes/)
 - [이미지를 올바른 크기로 제공하기](/serve-images-with-correct-dimensions)

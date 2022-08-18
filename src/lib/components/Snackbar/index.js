@@ -18,7 +18,7 @@
  * @fileoverview A Material snackbar for showing notifications.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
 
 const OPENING_ANIMATION_TIME = 150;

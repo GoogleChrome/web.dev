@@ -2,8 +2,8 @@
  * @fileoverview An Algolia search box.
  */
 
-import {html} from 'lit-element';
-import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+import {html} from 'lit';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {SearchResults} from '../SearchResults';
 import 'focus-visible';
 

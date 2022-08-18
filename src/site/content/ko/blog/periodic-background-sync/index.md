@@ -22,7 +22,7 @@ feedback:
   - api
 ---
 
-{% Aside %} 웹 앱은 iOS/Android/데스크톱 앱이 할 수 있는 모든 작업을 수행할 수 있어야 합니다. 주기적인 백그라운드 동기화가 포함되어 있는 [기능 프로젝트](https://developers.google.com/web/updates/capabilities)는 이를 목표로 합니다. 다른 기능에 대해 알아보고 진행 상황을 확인하려면 [웹을 위한 새로운 기능 잠금 해제](https://developers.google.com/web/updates/capabilities)를 따르십시오. {% endAside %}
+{% Aside %} 웹 앱은 iOS/Android/데스크톱 앱이 할 수 있는 모든 작업을 수행할 수 있어야 합니다. 주기적인 백그라운드 동기화가 포함되어 있는 [기능 프로젝트](https://developer.chrome.com/blog/capabilities/)는 이를 목표로 합니다. 다른 기능에 대해 알아보고 진행 상황을 확인하려면 [웹을 위한 새로운 기능 잠금 해제](https://developer.chrome.com/blog/capabilities/)를 따르십시오. {% endAside %}
 
 다음과 같은 상황에 처한 적이 있습니까?
 

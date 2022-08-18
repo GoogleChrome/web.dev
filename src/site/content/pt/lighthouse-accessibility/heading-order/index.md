@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Como a auditoria dos níveis de título do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza as páginas cujos títulos pulam um ou mais níveis:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza as páginas cujos títulos pulam um ou mais níveis:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Auditoria do Lighthouse mostrando cabeçalhos que pulam níveis", width="800", height="206" %}</figure>
 
@@ -56,5 +56,5 @@ Consulte a postagem [títulos e pontos de referência](/headings-and-landmarks) 
 
 ## Recursos
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener">Código-fonte para auditoria de <strong>níveis de salto de títulos</strong></a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener">Código-fonte para auditoria de <strong>níveis de salto de títulos</strong></a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">Os níveis de título devem aumentar apenas em um (Deque University)</a>

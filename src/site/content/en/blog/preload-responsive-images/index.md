@@ -112,7 +112,7 @@ background-image: image-set( "cat.png" 1x, "cat-2x.png" 2x);
 
 {% Aside %}
 
-The above syntax ignores the fact that vendor prefixes are needed for this feature in both Chromium and WebKit based browsers. If you're planning to use this feature, you should consider using [Autoprefixer](https://github.com/postcss/autoprefixer) to address that automatically.
+The above syntax ignores the fact that vendor prefixes are needed for this feature in both Chromium and WebKit based browsers. If you're planning to use this feature, you should consider using [Autoprefixer](https://github.com/postcss/autoprefixer) ([available as an online tool](https://goonlinetools.com/autoprefixer/)) to address that automatically.
 
 {% endAside %}
 
@@ -170,9 +170,9 @@ Given the following scenario:
 
 ```html
 <picture>
-    <source src="small_cat.jpg" media="(max-width: 400px)">
-    <source src="medium_cat.jpg" media="(max-width: 800px)">
-    <img src="huge_cat.jpg">
+    <source srcset="small_cat.jpg" media="(max-width: 400px)">
+    <source srcset="medium_cat.jpg" media="(max-width: 800px)">
+    <img src="large_cat.jpg">
 </picture>
 ```
 

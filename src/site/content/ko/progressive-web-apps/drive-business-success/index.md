@@ -58,9 +58,9 @@ PWA는 사이트를 빠르고 설치 가능하며 안정적이고 매력적으�
 
 [Deloitte Digital](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html)의 최근 연구에 따르면 페이지 속도는 비즈니스 지표에 상당한 영향을 미칩니다.
 
-모든 사용자의 중요한 사용자 여정을 최적화하기 위해 사이트 속도를 최적화하기 위해 할 수 있는 일은 많습니다. 어디서부터 시작해야 할지 모르겠다면 [빠른](/fast/) 섹션을 살펴보고 [Lighthouse](https://developers.google.com/web/tools/lighthouse)를 사용하여 가장 중요한 수정 사항의 우선 순위를 지정하십시오.
+모든 사용자의 중요한 사용자 여정을 최적화하기 위해 사이트 속도를 최적화하기 위해 할 수 있는 일은 많습니다. 어디서부터 시작해야 할지 모르겠다면 [빠른](/fast/) 섹션을 살펴보고 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)를 사용하여 가장 중요한 수정 사항의 우선 순위를 지정하십시오.
 
-속도 최적화 작업을 할 때 진행 상황을 모니터링하기 위해 적절한 도구와 측정항목을 사용하여 사이트 속도를 자주 측정하십시오. 예를 들어 [Lighthouse를](https://developers.google.com/web/tools/lighthouse) 사용하여 측정항목을 측정하고 ["좋은" 핵심 Web Vitals 점수](/vitals/#core-web-vitals)를 갖는 것과 같은 명확한 목표를 수정하고 [성능 예산을 빌드 프로세스에 통합](/incorporate-performance-budgets-into-your-build-tools/)합니다. 일일 측정값과 ["속도의 가치" 방법론](/value-of-speed/) 덕분에 증분 속도 변경의 영향을 분리하고 작업으로 생성된 추가 수익을 계산할 수 있습니다.
+속도 최적화 작업을 할 때 진행 상황을 모니터링하기 위해 적절한 도구와 측정항목을 사용하여 사이트 속도를 자주 측정하십시오. 예를 들어 [Lighthouse를](https://developer.chrome.com/docs/lighthouse/overview/) 사용하여 측정항목을 측정하고 ["좋은" 핵심 Web Vitals 점수](/vitals/#core-web-vitals)를 갖는 것과 같은 명확한 목표를 수정하고 [성능 예산을 빌드 프로세스에 통합](/incorporate-performance-budgets-into-your-build-tools/)합니다. 일일 측정값과 ["속도의 가치" 방법론](/value-of-speed/) 덕분에 증분 속도 변경의 영향을 분리하고 작업으로 생성된 추가 수익을 계산할 수 있습니다.
 
 {% Img src="image/admin/yyRfQaDL3NcGhB0f79RN.jpg", alt="속도의 가치를 측정하고 이를 전환과 연관시키십시오", width="800", height="306" %}
 

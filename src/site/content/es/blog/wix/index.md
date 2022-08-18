@@ -8,6 +8,7 @@ authors:
   - alonko
 description: Un caso de estudio de algunos cambios importantes introducidos en Wix para mejorar el rendimiento de la carga del sitio web para millones de sitios, despejando el camino para que reciban buenos PageSpeed Insights y puntuaciones de Core Web Vitals.
 date: 2021-03-10
+updated: 2022-07-18
 hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/HNGPDotyTYOuPE0YxLQ9.jpg
 alt: 'Un tren rápido (fuente: https://unsplash.com/photos/60VrGk-bfeA)'
 tags:
@@ -19,7 +20,7 @@ tags:
 
 {% Aside %} Alon lidera el equipo central de backend en [Wix](https://www.wix.com). {% endAside %}
 
-Gracias al aprovechamiento de los estándares de la industria, los proveedores de nube y las capacidades de CDN, combinado con una reescritura importante del tiempo de ejecución de nuestro sitio web, el porcentaje de sitios Wix que alcanzaron buenas puntuaciones del percentil 75 en todas las métricas de Core Web Vitals (CWV) se **triplicó** año tras año, según a los datos de [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report) y [HTTPArchive](https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data).
+Gracias al aprovechamiento de los estándares de la industria, los proveedores de nube y las capacidades de CDN, combinado con una reescritura importante del tiempo de ejecución de nuestro sitio web, el porcentaje de sitios Wix que alcanzaron buenas puntuaciones del percentil 75 en todas las métricas de Core Web Vitals (CWV) se **triplicó** año tras año, según a los datos de [CrUX](https://developer.chrome.com/docs/crux/) y [HTTPArchive](https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data).
 
 Wix adoptó una cultura orientada al rendimiento y se seguirán implementando nuevas mejoras para los usuarios. A medida que nos centramos en los KPI de rendimiento, esperamos ver crecer el número de sitios que superan los umbrales de CWV.
 
@@ -175,7 +176,7 @@ La mayor parte del trabajo realizado anteriormente se implementó el año pasado
 
 El Web Almanac de HTTPArchive publicó recientemente la [edición 2020](https://almanac.httparchive.org/en/2020) que incluye un excelente capítulo sobre la [experiencia del usuario de CMS](https://almanac.httparchive.org/en/2020/cms). Ten en cuenta que muchos de los números descritos en este artículo son a mediados del 2020.
 
-Esperamos ver el informe actualizado en 2021 y estamos monitoreando activamente los informes de [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/) para nuestros sitios, así como nuestras métricas de rendimiento internas.
+Esperamos ver el informe actualizado en 2021 y estamos monitoreando activamente los informes de [CrUX](https://developer.chrome.com/docs/crux/) para nuestros sitios, así como nuestras métricas de rendimiento internas.
 
 Estamos comprometidos a mejorar continuamente los tiempos de carga y proporcionar a nuestros usuarios una plataforma en la que puedan crear sitios como ellos lo imaginen, sin comprometer el rendimiento.
 

@@ -4,7 +4,7 @@ title: First Contentful Paint(최초 콘텐츠풀 페인트, FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-07-18
 description: 이 게시물에서는 최초 콘텐츠풀 페인트(FCP) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -39,13 +39,13 @@ FCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 ### 현장 도구
 
 - [PageSpeed Insights](https://pagespeed.web.dev/)
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [Search Console(Speed Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
 
 ### 실험실 도구
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
@@ -86,7 +86,7 @@ import {getFCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-JavaScript에서 FCP를 측정하는 방법에 대한 전체 예제는 [`getFCP()`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)를 참조하세요.
+JavaScript에서 FCP를 측정하는 방법에 대한 전체 예제는 [`getFCP()`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 FCP를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 

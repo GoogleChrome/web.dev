@@ -423,13 +423,13 @@ if (navigator.connection && navigator.connection.effectiveType) {
   </figcaption>
 </figure>
 
-{% Aside %} 다양한 서버 렌더링 아키텍처에 대해 자세히 알아보려면 [웹에서 렌더링하기](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)를 참조하세요. {% endAside %}
+{% Aside %} 다양한 서버 렌더링 아키텍처에 대해 자세히 알아보려면 [웹에서 렌더링하기](/rendering-on-the-web/)를 참조하세요. {% endAside %}
 
 ## 개발자 도구
 
 LCP를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도구가 있습니다.
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse)은 실험실 설정에서 LCP를 측정할 수 있도록 지원합니다.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/)은 실험실 설정에서 LCP를 측정할 수 있도록 지원합니다.
 
   {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
@@ -437,6 +437,6 @@ LCP를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도�
 
   {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools의 LCP", width="800", height="509" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) 는 원본 수준에서 집계된 실제 LCP 값을 제공합니다.
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) 는 원본 수준에서 집계된 실제 LCP 값을 제공합니다.
 
 _Philip Walton, Katie Hempenius, Kayce Basques, Ilya Grigorik의 리뷰에 감사드립니다._

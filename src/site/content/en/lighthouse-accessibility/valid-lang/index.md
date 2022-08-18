@@ -19,7 +19,7 @@ to ensure that the section in the new language is pronounced correctly.
 
 ## How the Lighthouse invalid `lang` attribute audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags elements that have a `lang` attribute with an invalid value:
 
 <figure>
@@ -36,5 +36,5 @@ in all `lang` attribute values.
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/valid-lang.js" rel="noopener">Source code for **`[lang]` attributes do not have a valid value** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/valid-lang.js" rel="noopener">Source code for **`[lang]` attributes do not have a valid value** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/valid-lang" rel="noopener">lang attribute must have a valid value (Deque University)</a>

@@ -1,4 +1,4 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseStateElement} from '../BaseStateElement';
 import {renderReport} from 'lighthouse/dist/report/bundle.esm.js';
 import './_styles.scss';

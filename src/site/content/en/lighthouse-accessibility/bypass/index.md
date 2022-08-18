@@ -128,5 +128,5 @@ information.
 
 ## Resources
 
-- [Source code for **The page does not contain a heading, skip link, or landmark region** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/bypass.js)
+- [Source code for **The page does not contain a heading, skip link, or landmark region** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/bypass.js)
 - [Page must have means to bypass repeated blocks (Deque University)](https://dequeuniversity.com/rules/axe/3.3/bypass)

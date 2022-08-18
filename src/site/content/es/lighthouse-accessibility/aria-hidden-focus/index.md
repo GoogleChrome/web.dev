@@ -17,7 +17,7 @@ El uso del `aria-hidden="true"` en un elemento oculta el elemento y todos sus el
 
 ## Cómo identifica Lighthouse los elementos enfocables parcialmente ocultos
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a> señala los elementos enfocables que tienen padres con el atributo `aria-hidden="true"`
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a> señala los elementos enfocables que tienen padres con el atributo `aria-hidden="true"`
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqhdHogcBrLR4W0uiECZ.png", alt="Auditoría de Lighthouse que muestra elementos enfocables que tienen padres con el atributo aria-hidden", width="800", height="206" %}</figure>
 
@@ -42,6 +42,6 @@ Si no puede ocultar visualmente el elemento contenedor, por ejemplo, si está de
 
 ## Recursos
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-focus.js" rel="noopener">El código fuente de los elementos <strong><code>[aria-hidden="true"]</code> contiene una auditoría de descendientes enfocables</strong> </a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-hidden-focus.js" rel="noopener">El código fuente de los elementos <strong><code>[aria-hidden="true"]</code> contiene una auditoría de descendientes enfocables</strong> </a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-hidden-focus" rel="noopener">Los elementos aria-hidden no contienen elementos enfocables (Universidad Deque)</a>
 - <a href="https://github.com/WICG/inert" rel="noopener">Polyfill <code>inert</code> de WICG</a>

@@ -9,6 +9,7 @@ description: |
   fit together but still can be used independently to achieve performance
   results.
 date: 2018-11-05
+updated: 2022-08-18
 tags:
   - performance
 ---
@@ -16,7 +17,7 @@ tags:
 PRPL is an acronym that describes a pattern used to make web pages load and
 become interactive, faster:
 
-+  **Push** (or **preload**) the most important resources.
++  **Preload** the most important resources.
 +  **Render** the initial route as soon as possible.
 +  **Pre-cache** remaining assets.
 +  **Lazy load** other routes and non-critical assets.
@@ -59,7 +60,7 @@ For more information about preloading critical resources, refer to the
 
 ## Render the initial route as soon as possible
 
-Lighthouse provides a warning if there are resources that delay [**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint),
+Lighthouse provides a warning if there are resources that delay [**First Paint**](/user-centric-performance-metrics/#important-metrics-to-measure),
 the moment when your site renders pixels to the screen:
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: Eliminate render-blocking resources audit", width="800", height="111" %}
@@ -142,7 +143,7 @@ It's important to remember that not all of the techniques need to be
 applied together. Any efforts made with any of the following will provide
 noticeable performance improvements.
 
-+  **Push** (or **preload**) critical resources.
++  **Preload** critical resources.
 +  **Render** the initial route as soon as possible.
 +  **Pre-cache** remaining assets.
 +  **Lazy load** other routes and non-critical assets.

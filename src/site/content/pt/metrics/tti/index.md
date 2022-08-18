@@ -45,7 +45,7 @@ A TTI é uma métrica que é idealmente medida [em laboratório](/user-centric-p
 
 ### Ferramentas de laboratório
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %} Embora seja possível medir a TTI em campo, isto não é recomendado, pois a interação com o usuário pode afetar a TTI de sua página de maneiras que podem levar a muitas variações em seus relatórios. Para entender a interatividade de uma página em campo, você deve medir a [First Input Delay (FID)](/fid/). {% endAside %}

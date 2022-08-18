@@ -10,7 +10,7 @@ web_lighthouse:
   - mainthread-work-breakdown
 ---
 
-The browser's [renderer process](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
+The browser's [renderer process](https://developer.chrome.com/blog/inside-browser-part3/)
 is what turns your code into a web page that your users can interact with.
 By default, the [main thread](https://developer.mozilla.org/docs/Glossary/Main_thread)
 of the renderer process typically handles most code:
@@ -24,7 +24,7 @@ leading to a bad experience.
 
 ## How the Lighthouse main thread work audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that keep the main thread busy for longer than 4&nbsp;seconds
 during load:
 
@@ -51,18 +51,18 @@ as the page loads.
 ### Script evaluation
 
 * [Optimize third-party JavaScript](/fast/#optimize-your-third-party-resources)
-* [Debounce your input handlers](https://developers.google.com/web/fundamentals/performance/rendering/debounce-your-input-handlers)
+* [Debounce your input handlers](/debounce-your-input-handlers/)
 * [Use web workers](/off-main-thread/)
 
 ### Style and layout
 
-* [Reduce the scope and complexity of style calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+* [Reduce the scope and complexity of style calculations](/reduce-the-scope-and-complexity-of-style-calculations/)
 * [Avoid large, complex layouts and layout thrashing](/avoid-large-complex-layouts-and-layout-thrashing/)
 
 ### Rendering
 
-* [Stick to compositor only properties and manage layer count](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
-* [Simplify paint complexity and reduce paint areas](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
+* [Stick to compositor only properties and manage layer count](/stick-to-compositor-only-properties-and-manage-layer-count/)
+* [Simplify paint complexity and reduce paint areas](/simplify-paint-complexity-and-reduce-paint-areas/)
 
 ### Parsing HTML and CSS
 
@@ -81,6 +81,6 @@ as the page loads.
 
 ## Resources
 
-- [Source code for **Minimize main thread work** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
+- [Source code for **Minimize main thread work** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/mainthread-work-breakdown.js)
 - [Main thread (MDN)](https://developer.mozilla.org/docs/Glossary/Main_thread)
-- [Inside look at modern web browser (part 3)](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
+- [Inside look at modern web browser (part 3)](https://developer.chrome.com/blog/inside-browser-part3/)
