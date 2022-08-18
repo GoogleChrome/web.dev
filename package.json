@@ -117,7 +117,7 @@
     "yaml-front-matter": "^4.0.0"
   },
   "devDependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.9.1",
     "@actions/github": "^5.0.0",
     "@percy/cli": "^1.0.0-beta.71",
     "@percy/puppeteer": "^2.0.0",
