@@ -206,7 +206,7 @@ CSS tiene unidades útiles que son relativas al tamaño de los elementos de la t
 <a href="https://www.w3.org/TR/css-values-4/#length-advance-measure">Avance de carácter</a> promedio de un glifo de ancho completo en la fuente del elemento, representado por el glifo "水" (ideograma de agua CJK, U + 6C34).</td>
       </tr>
       <tr>
-        <td><a href="https://www.w3.org/TR/css-values-4/#rem">movimiento rápido del ojo</a></td>
+        <td><a href="https://www.w3.org/TR/css-values-4/#rem">rem</a></td>
         <td>Tamaño de fuente del elemento raíz (el valor predeterminado es 16px).</td>
       </tr>
       <tr>
