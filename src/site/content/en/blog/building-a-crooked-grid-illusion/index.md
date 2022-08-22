@@ -55,10 +55,10 @@ class="square">` elements.
 
 ## Styles
 
-I chose [CSS grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid)
+I chose [CSS grid](https://developer.mozilla.org/docs/Web/CSS/grid)
 because it seemed fitting given the presentation style of rows, and it also
 features
-[`justify-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)
+[`justify-content`](https://developer.mozilla.org/docs/Web/CSS/justify-content)
 which seemed like a good way to offset row children.
 
 ### Body styles
