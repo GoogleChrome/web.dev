@@ -60,7 +60,7 @@ Para todos los elementos, no se considera ningún margen, relleno o borde aplica
 
 {% Aside %} Determinar qué nodos de texto pertenecen a qué elementos a veces puede ser complicado, especialmente para elementos cuyos elementos secundarios incluyen elementos de estilos integrados en el código y nodos de texto sin formato, pero también elementos a nivel de bloque. El punto clave es que cada nodo de texto pertenece (y solo a) su elemento ancestro de nivel de bloque más cercano. En [términos de especificaciones](https://wicg.github.io/element-timing/#set-of-owned-text-nodes) : cada nodo de texto pertenece al elemento que genera su [bloque contenedor](https://developer.mozilla.org/docs/Web/CSS/Containing_block). {% endAside %}
 
-### ¿Cuándo se reporta largest contentful pain?
+### ¿Cuándo se reporta largest contentful paint?
 
 Las páginas web a menudo se cargan en etapas y, como resultado, es posible que el elemento más grande de la página cambie.
 
