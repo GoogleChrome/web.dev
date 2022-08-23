@@ -53,7 +53,7 @@ module.exports = {
       NAVIGATION_TYPE: 'dimension6',
       COLOR_SCHEME_PREFERENCE: 'dimension7',
     },
-    version: 10,
+    version: 11,
   },
   firebase: {
     prod: {

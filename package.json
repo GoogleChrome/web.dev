@@ -112,7 +112,7 @@
     "truncate-utf8-bytes": "^1.0.2",
     "unistore": "^3.4.1",
     "web-vitals": "^2.1.4",
-    "webdev-infra": "^1.0.31",
+    "webdev-infra": "^1.0.32",
     "wicg-inert": "^3.0.1",
     "yaml-front-matter": "^4.0.0"
   },
