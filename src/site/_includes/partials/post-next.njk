@@ -12,7 +12,7 @@
 {% set tocTitle = 'i18n.toc.on_this_page' | i18n(locale) %}
 
 {% if hero %}
-  {% Img src=hero, alt=alt or '', importance='high', class='hero-image', height='480', width='1600', sizes='100vw' %}
+  {% Img src=hero, alt=alt or '', fetchpriority='high', class='hero-image', height='480', width='1600', sizes='100vw' %}
 {% endif %}
 
 <div class="post wrapper" data-flush>
