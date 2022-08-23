@@ -92,13 +92,8 @@ Para ilustrar ambos, digamos que eu tenha um botão de inscrição importante no
 }
 ```
 
-{% Aside %} Se você tem muito CSS relacionado à animação, pode evitar que os usuários que optaram por não façam o download terceirizando todo o CSS relacionado à animação em uma folha de estilo separada que você carrega apenas condicionalmente por `media` atributo de mídia no elemento de `link`:
-
-```html
-<link rel="stylesheet" href="animations.css"
-      media="(prefers-reduced-motion: no-preference)">
-```
-
+{% Aside %}
+Se você tem muito CSS relacionado à animação, pode evitar que os usuários que optaram por não façam o download terceirizando todo o CSS relacionado à animação em uma folha de estilo separada que você carrega apenas condicionalmente por `media` atributo de mídia no elemento de `link`: `<link rel="stylesheet" href="animations.css" media="(prefers-reduced-motion: no-preference)">`
 {% endAside %}
 
 Para ilustrar como trabalhar com `prefers-reduced-motion` com JavaScript, vamos imaginar que eu tenha definido uma animação complexa com a [API Web Animations](https://developer.mozilla.org/docs/Web/API/Web_Animations_API). Embora as regras CSS sejam acionadas dinamicamente pelo navegador quando a preferência do usuário muda, para animações JavaScript eu mesmo tenho que escutar as mudanças e, em seguida, parar manualmente minhas animações em potencial (ou reiniciá-las se o usuário permitir):
