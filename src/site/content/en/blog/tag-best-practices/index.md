@@ -40,7 +40,7 @@ many of the ideas discussed are also applicable to other tag managers.
 
 Tag Managers can often impact your Core Web Vitals indirectly by using up resources needed to load your page quickly and keep it responsive. Bandwidth can be spent downloading the tag manager JavaScript for your sites, or the subsequent calls this makes. CPU time on the main thread can be spent evaluating and executing JavaScript contained within the tag manager and the tags.
 
-[Largest Contentful Paint](/lcp/) (LCP) is vulnerable to bandwidth contention during the critical page load time. Additionally, blocking the main thread can [delay the LCP render time]*https://web.dev/optimize-lcp/#2-eliminate-element-render-delay).
+[Largest Contentful Paint](/lcp/) (LCP) is vulnerable to bandwidth contention during the critical page load time. Additionally, blocking the main thread can [delay the LCP render time](/optimize-lcp/#2-eliminate-element-render-delay).
 
 [Cumulative Layout Shift](/cls/) (CLS) can be impacted, either by delaying loading critical resources before the first render, or by tag managers injecting content into the page.
 
