@@ -5,7 +5,7 @@ subhead: >
   By measuring real users' Web Vitals, Rakuten 24 also found that a good Largest Contentful Paint (LCP) can lead to a conversion rate increase of 61.13%.
 description: >
   By measuring real users' Web Vitals, Rakuten 24 also found that a good Largest Contentful Paint (LCP) can lead to a conversion rate increase of 61.13%.
-date: 2022-08-19
+date: 2022-08-23
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/uB1PUfGOXOhrqUBW3tfO.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/OLBDJ1YEaVWGkR5lqNyR.jpg
 alt: A banner image with the Rakuten 24 logo and branded artwork.
@@ -45,7 +45,7 @@ To further correlate Core Web Vitals and business metrics, Rakuten 24 also ran a
 
 Though optimizing web performance is a smart investment to improve user experience and business growth, Rakuten 24 team understands how difficult it can be to convince stakeholders to adopt Core Web Vitals and focus on web performance. They believe that showing stakeholders exactly what kind of Return on Investment (ROI) performance optimization can bring is the best way to get them on board.
 
-Being a relatively new and independent service, Rakuten 24 used their advantage of flexibility to take up the challenge. They believe that the result of their case study would help them make more data-oriented decisions in the future, as well as help other developers measure the impact of their work and convince their stakeholders that improving performance is worth the investment.
+Being a relatively new and independent service, Rakuten 24 used their advantage of flexibility to take up the challenge. They believe that the result of their case study would help them make more data-oriented decisions in the future, as well as help other developers measure the impact of their work and convince their stakeholders that improving performance is worth the investment. Find out how they did it in this post.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ij6fET9W23vj1IOb3e6O.jpg", alt="Example screenshots of Rakuten 24's homepage, with mobile device frames around each screenshot.", width="800", height="537" %}
@@ -75,7 +75,7 @@ Being a relatively new and independent service, Rakuten 24 used their advantage 
 - Use CSS [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) to reserve the required space for images while the images are loading.
 - Use CSS [`min-height`](https://developer.mozilla.org/docs/Web/CSS/min-height) to minimize layout shifts while elements are lazy loaded.
 
-## Performance measuring, analyzing, and monitoring
+## Performance measuring
 
 Besides using [PageSpeed Insights](https://pagespeed.web.dev/) to audit their website, the team wanted to find a better way to know what the users are actually experiencing in the field. Therefore, Rakuten 24 decided to use the [web-vitals JavaScript library](https://github.com/GoogleChrome/web-vitals) to measure Core Web Vitals and other metrics in the field and send the data to inhouse analytics tool.
 
@@ -83,7 +83,7 @@ Besides using [PageSpeed Insights](https://pagespeed.web.dev/) to audit their we
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/o5Nd3IV6Yof3mfr3tVH3.jpg", alt="Rakuten 24's web vitals tracking integration flow. The first step is to integrate the web-vitals library by adding the script to the Rakuten 24 website. After that, web vitals can be measured from real user metrics, and the data is sent to Rakuten 24's in-house data collection tool.", width="800", height="495" %}
 </figure>
 
-## Analyzing
+## Performance analyzing
 
 The team analyzed the collected field data to determine if there is any correlation between the Core Web Vitals and the key business metrics. They found out that the converted users tend to experience a better LCP than the users who didn’t convert.
 
@@ -124,7 +124,7 @@ The collected data also revealed that:
   </figcaption>
 </figure>
 
-## Monitoring
+## Performance monitoring
 
 The team built a performance monitoring dashboard using the data collected in the field and business intelligence tool. This is important for monitoring progress and preventing regressions.
 
