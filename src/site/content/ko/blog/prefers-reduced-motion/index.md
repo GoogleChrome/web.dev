@@ -93,13 +93,7 @@ feedback:
 ```
 
 {% Aside %}
-`link` 요소 `media` 속성을 통해서만 조건부로 로드하는 별도의 스타일시트에 모든 애니메이션 관련 CSS를 아웃소싱하여 선택 해제된 사용자가 다운로드하지 않도록 할 수 있습니다. 😎
-
-```html
-<link rel="stylesheet" href="animations.css"
-      media="(prefers-reduced-motion: no-preference)">
-```
-
+`link` 요소 `media` 속성을 통해서만 조건부로 로드하는 별도의 스타일시트에 모든 애니메이션 관련 CSS를 아웃소싱하여 선택 해제된 사용자가 다운로드하지 않도록 할 수 있습니다. 😎 `<link rel="stylesheet" href="animations.css" media="(prefers-reduced-motion: no-preference)">`
 {% endAside %}
 
 `prefers-reduced-motion`으로 작업하는 방법을 설명하기 위해 [Web Animations API](https://developer.mozilla.org/docs/Web/API/Web_Animations_API)로 복잡한 애니메이션을 정의했다고 가정해 보겠습니다. CSS 규칙은 사용자 기본 설정이 변경될 때 브라우저에 의해 동적으로 트리거되지만 JavaScript 애니메이션의 경우 변경 사항을 직접 수신한 다음 잠재적으로 실행 중인 애니메이션을 수동으로 중지해야 합니다(또는 사용자가 허용하는 경우 다시 시작해야 함).
