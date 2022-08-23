@@ -21,7 +21,7 @@ source](https://github.com/argyleink/gui-challenges).
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'oHcTn83M1ls' %}
+{% YouTube '71jpjr7syc4' %}
 
 ## Overview
 
