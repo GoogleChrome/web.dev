@@ -3,12 +3,15 @@ layout: post
 title: Reduce JavaScript payloads with code splitting
 authors:
   - houssein
+  - jlwagner
 description: |
   Sending large JavaScript payloads impacts the speed of your site
   significantly. Instead of shipping all the JavaScript to your user as soon as
   the first page of your application is loaded, split your bundle into
   multiple pieces and only send what's necessary at the very beginning.
 date: 2018-11-05
+updated: 2022-08-24
+updated: 
 codelabs:
   - codelab-code-splitting
 tags:
@@ -22,6 +25,18 @@ Sending large JavaScript payloads impacts the speed of your site
 significantly. Instead of shipping all the JavaScript to your user as soon as
 the first page of your application is loaded, split your bundle into
 multiple pieces and only send what's necessary at the very beginning.
+
+## Why is code splitting beneficial?
+
+Code splitting is a measure that seeks to minimize startup time. When we ship less JavaScript at startup, we can get applications to be [interactive faster](/tti/) by minimizing main thread work.
+
+When it comes to [Core Web Vitals](/vitals/), reducing JavaScript payloads downloaded at startup will contribute to better [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/) times. The reasoning behind this is that, by freeing up the main thread, the application is able to respond to user inputs more quickly by reducing JavaScript parse, compile, and execution-related startup costs.
+
+Depending on your website's architecture&mdash;particularly if your website relies heavily on client-side rendering&mdash;reducing the size of JavaScript payloads responsible for rendering markup may lead to improved [Largest Contentful Paint (LCP)](/lcp/) times in some situations.
+
+{% Aside 'important' %}
+If your website relies on client-side rendering exclusively, you should seek to use [Server-Side Rendering (SSR)](/rendering-on-the-web/#server-rendering) to ensure that the server is sending meaningful markup to the client in response to the navigation request. This can help [the browser preload scanner](/preload-scanner/) to opportunistically fetch resources [more effectively](/preload-scanner/#rendering-markup-with-client-side-javascript).
+{% endAside %}
 
 ## Measure
 
