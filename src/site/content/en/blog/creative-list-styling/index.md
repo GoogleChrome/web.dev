@@ -4,7 +4,7 @@ subhead: >
   A look at some useful and creative ways to style a list.
 description: >
   A look at some useful and creative ways to style a list.
-date: 2022-08-23
+date: 2022-08-24
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/NqMw5qZ6sdS1UEG2Wx5u.png
 alt: A list showing two items with different color decorations. 
 tags:
