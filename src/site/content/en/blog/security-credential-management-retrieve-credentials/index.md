@@ -177,13 +177,13 @@ skipping the ordinary sign-in form, for example:
 </figure>
 
 The steps to sign in via the account chooser are the same as in
-[auto sign-in](#auto_sign-in),
+[auto sign-in](#auto-sign-in),
 with an additional call to show the account chooser
 as part of getting credential information:
 
 1. Get the credential information and show the account chooser.
-2. [Authenticate the user](#authenticate_user).
-3. [Update the UI or proceed to a personalized page](#update_ui).
+2. [Authenticate the user](#authenticate-user).
+3. [Update the UI or proceed to a personalized page](#update-ui).
 
 ### Get credential information and show account chooser
 
@@ -296,7 +296,7 @@ To implement federated login:
 
 1. Authenticate the user with a third-party identity.
 2. Store the identity information.
-3. [Update the UI or proceed to a personalized page](#update_ui) (same as in auto sign-in).
+3. [Update the UI or proceed to a personalized page](#update-ui) (same as in auto sign-in).
 
 ### Authenticate user with third-party identity
 

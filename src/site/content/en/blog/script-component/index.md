@@ -40,7 +40,7 @@ While there are [best practices](/fast/#optimize-your-third-party-resources) to 
 
 ## Aurora’s focus on third-party scripts
 
-Part of Aurora's [collaboration](/introducing-aurora/#aurora:-a-collaboration-between-chrome-and-open-source-web-frameworks-and-tools) with open source web frameworks and tools is to provide strong defaults and opinionated tooling to help developers improve aspects of the user experience such as performance, accessibility, security, and mobile readiness. In 2021, we were focused on helping framework stacks improve user experience and their [Core Web Vitals](/vitals/) metrics.
+Part of Aurora's [collaboration](/introducing-aurora/#aurora-a-collaboration-between-chrome-and-open-source-web-frameworks-and-tools) with open source web frameworks and tools is to provide strong defaults and opinionated tooling to help developers improve aspects of the user experience such as performance, accessibility, security, and mobile readiness. In 2021, we were focused on helping framework stacks improve user experience and their [Core Web Vitals](/vitals/) metrics.
 
 One of the most significant steps towards achieving our goal to improve framework performance involved researching the ideal loading sequence of third-party scripts in Next.js. Frameworks such as Next.js are uniquely positioned to provide useful defaults and features that help developers efficiently load resources, including third-parties. We studied extensive [HTTP Archive](https://httparchive.org/) and Lighthouse [data](https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?resourcekey=0-ZCfve5cngWxF0-sv5pLRzg#gid=1628564987) to find which third-parties [block rendering](/render-blocking-resources/) the most across different frameworks.
 
