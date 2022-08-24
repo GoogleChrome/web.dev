@@ -71,7 +71,7 @@ questions:
     options:
       - content: "The longest sentence or biggest image."
         rationale: "This is the maximum size the content of the box is asking
-        for or has specified. It's a sentence as its widest or an image at its
+        for or has specified. It's a sentence at its widest or an image at its
         widest."
       - content: "The longest letter."
         rationale: "While there is a longest letter, letters are not what
