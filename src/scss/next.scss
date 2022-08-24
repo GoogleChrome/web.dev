@@ -700,12 +700,8 @@ web-copy-code {
 video,
 .youtube {
   position: relative;
-  aspect-ratio: 16/9;
-}
-
-video {
   height: auto;
-  aspect-ratio: var(--vid-width) / var(--vid-height);
+  aspect-ratio: var(--vid-width, 16) / var(--vid-height, 9);
 }
 
 /// COMPOSITIONS
