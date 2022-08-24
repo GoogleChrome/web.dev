@@ -176,13 +176,7 @@ The best way to measure your website's INP is by gathering metrics from actual u
 
 ### Measure INP In JavaScript
 
-Writing your own [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to measure INP can be difficult. To measure INP in JavaScript, it's advised that you use the `web-vitals` JavaScript library, which exports an `onINP` function to do this work for you. At the moment, getting INP data is only possible in version 3 of `web-vitals`, currently in beta, which can be installed with the following command:
-
-```bash
-npm install web-vitals@next --save
-```
-
-You can then get a page's INP by passing a function to the `onINP` method:
+Writing your own [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to measure INP can be difficult. To measure INP in JavaScript, it's advised that you use the `web-vitals` JavaScript library, which exports an `onINP` function to do this work for you. You can then get a page's INP by passing a function to the `onINP` method:
 
 ```js
 import {onINP} from 'web-vitals';
