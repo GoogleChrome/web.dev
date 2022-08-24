@@ -45,7 +45,7 @@ tags:
 
 ## 什么是 CLS？
 
-CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-unexpected-layout-shifts)布局偏移中最大一连串的*布局偏移分数*。
+CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs-unexpected-layout-shifts)布局偏移中最大一连串的*布局偏移分数*。
 
 每当一个可见元素的位置从一个已渲染帧变更到下一个已渲染帧时，就发生了*布局偏移* 。（有关单次[布局偏移分数](#layout-shift-score)计算方式的详细信息，请参阅下文。）
 
