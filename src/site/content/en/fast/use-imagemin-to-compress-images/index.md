@@ -21,7 +21,7 @@ tags:
 
 Uncompressed images bloat your pages with unnecessary bytes. Because images can be [candidates for Largest Contentful Paint (LCP)](/lcp/#what-elements-are-considered), those unnecessary bytes can add unnecessary [resource load time](/optimize-lcp/#3-reduce-resource-load-time), which can result in longer LCP times.
 
-The photo on theright is 40% smaller than the one on the left, yet would probably look identical to the average user.
+The photo on the right is 40% smaller than the one on the left, yet would probably look identical to the average user.
 
 <div class="table-wrapper">
   <table>
