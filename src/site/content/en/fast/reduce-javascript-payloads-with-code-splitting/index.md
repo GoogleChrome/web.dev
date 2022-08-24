@@ -11,7 +11,6 @@ description: |
   multiple pieces and only send what's necessary at the very beginning.
 date: 2018-11-05
 updated: 2022-08-24
-updated: 
 codelabs:
   - codelab-code-splitting
 tags:
@@ -28,7 +27,7 @@ multiple pieces and only send what's necessary at the very beginning.
 
 ## Why is code splitting beneficial?
 
-Code splitting is a measure that seeks to minimize startup time. When we ship less JavaScript at startup, we can get applications to be [interactive faster](/tti/) by minimizing main thread work.
+Code splitting is a technique that seeks to minimize startup time. When we ship less JavaScript at startup, we can get applications to be [interactive faster](/tti/) by minimizing main thread work during this critical period.
 
 When it comes to [Core Web Vitals](/vitals/), reducing JavaScript payloads downloaded at startup will contribute to better [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/) times. The reasoning behind this is that, by freeing up the main thread, the application is able to respond to user inputs more quickly by reducing JavaScript parse, compile, and execution-related startup costs.
 
