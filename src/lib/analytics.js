@@ -79,12 +79,6 @@ function sendToGoogleAnalytics({name, delta, id, attribution, navigationType}) {
     case 'LCP':
       webVitalInfo = attribution.element;
       break;
-    case 'TTFB':
-      webVitalInfo = attribution.connectionTime;
-      break;
-    case 'FCP':
-      webVitalInfo = attribution.firstByteToFCP;
-      break;
   }
   // Assumes the global `ga()` function exists, see:
   // https://developers.google.com/analytics/devguides/collection/analyticsjs
