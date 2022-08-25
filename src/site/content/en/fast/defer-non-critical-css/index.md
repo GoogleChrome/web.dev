@@ -126,6 +126,9 @@ production scenario, it's a good practice to use functions like
 [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md), that
 can encapsulate this behavior and work well across browsers.
 {% endAside %}
+{% Aside 'important' %}
+If your site has a [Content Security Policy](/csp/) you will not be able to use this technique without enabling `unsafe-inline` for `script-src`.
+{% endAside %}
 
 The [resulting page](https://defer-css-optimized.glitch.me/) looks exactly like the previous version, even when most styles load asynchronously. Here's how the inlined styles and asynchronous request to the CSS file look like in the HTML file:
 
