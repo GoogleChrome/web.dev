@@ -1,4 +1,4 @@
-import {getCLS, getFCP, getFID, getLCP, getTTFB} from 'web-vitals';
+import {onCLS, onFCP, onFID, onLCP, onTTFB, onINP} from 'web-vitals';
 import {dimensions} from 'webdev_analytics';
 import {store} from './store';
 
@@ -132,8 +132,9 @@ window.addEventListener(
   },
 );
 
-getCLS(sendToGoogleAnalytics);
-getFCP(sendToGoogleAnalytics);
-getFID(sendToGoogleAnalytics);
-getLCP(sendToGoogleAnalytics);
-getTTFB(sendToGoogleAnalytics);
+onCLS(sendToGoogleAnalytics);
+onFCP(sendToGoogleAnalytics);
+onFID(sendToGoogleAnalytics);
+onLCP(sendToGoogleAnalytics);
+onTTFB(sendToGoogleAnalytics);
+onINP(sendToGoogleAnalytics);
