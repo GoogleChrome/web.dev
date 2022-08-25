@@ -1,4 +1,4 @@
-import {onCLS, onFCP, onFID, onLCP, onTTFB, onINP} from 'web-vitals';
+import {onCLS, onFCP, onFID, onLCP, onTTFB, onINP} from 'web-vitals/attribution';
 import {dimensions} from 'webdev_analytics';
 import {store} from './store';
 
@@ -58,7 +58,28 @@ export function trackError(error, message = '', fatal = false) {
  * See: https://github.com/GoogleChrome/web-vitals#using-analyticsjs
  * @param {Object} metric
  */
-function sendToGoogleAnalytics({name, delta, id}) {
+function sendToGoogleAnalytics({name, delta, id, attribution, navigationType}) {
+
+  let webVitalInfo = '(not set)';
+
+  switch (name) {
+    case 'CLS':
+      webVitalInfo = attribution.largestShiftTarget;
+      break;
+    case 'FID':
+    case 'INP':
+      webVitalInfo = attribution.eventTarget;
+      break;
+    case 'LCP':
+      webVitalInfo = attribution.element;
+      break;
+    case 'TTFB':
+      webVitalInfo = attribution.connectionTime;
+      break;
+    case 'FCP':
+      webVitalInfo = attribution.firstByteToFCP;
+      break;
+  }
   // Assumes the global `ga()` function exists, see:
   // https://developers.google.com/analytics/devguides/collection/analyticsjs
   ga('send', 'event', {
@@ -75,6 +96,10 @@ function sendToGoogleAnalytics({name, delta, id}) {
     eventLabel: id,
     // Use a non-interaction event to avoid affecting bounce rate.
     nonInteraction: true,
+
+    // See: https://web.dev/debug-web-vitals-in-the-field/
+    [dimensions.WEB_VITALS_DEBUG]: webVitalInfo,
+    [dimensions.NAVIGATION_TYPE]: navigationType,
   });
 }
 
@@ -135,6 +160,6 @@ window.addEventListener(
 onCLS(sendToGoogleAnalytics);
 onFCP(sendToGoogleAnalytics);
 onFID(sendToGoogleAnalytics);
+onINP(sendToGoogleAnalytics);
 onLCP(sendToGoogleAnalytics);
 onTTFB(sendToGoogleAnalytics);
-onINP(sendToGoogleAnalytics);
