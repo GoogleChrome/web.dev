@@ -1,4 +1,11 @@
-import {onCLS, onFCP, onFID, onLCP, onTTFB, onINP} from 'web-vitals/attribution';
+import {
+  onCLS,
+  onFCP,
+  onFID,
+  onINP,
+  onLCP,
+  onTTFB,
+} from 'web-vitals/attribution';
 import {dimensions} from 'webdev_analytics';
 import {store} from './store';
 
@@ -59,7 +66,6 @@ export function trackError(error, message = '', fatal = false) {
  * @param {Object} metric
  */
 function sendToGoogleAnalytics({name, delta, id, attribution, navigationType}) {
-
   let webVitalInfo = '(not set)';
 
   switch (name) {
