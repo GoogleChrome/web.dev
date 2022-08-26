@@ -8,7 +8,6 @@ alt: Clamp.
 author: thomassteiner
 tags:
   - blog
-  - newly-interoperable
 ---
 
 {% Aside 'celebration' %} This web feature is now available in two major browser engines!
