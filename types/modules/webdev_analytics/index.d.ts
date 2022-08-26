@@ -20,6 +20,7 @@ declare module 'webdev_analytics' {
     SIGNED_IN: 'dimension1';
     TRACKING_VERSION: 'dimension5';
     NAVIGATION_TYPE: 'dimension6';
+    WEB_VITALS_DEBUG: 'dimension8';
   };
   export declare const version: number;
 }
