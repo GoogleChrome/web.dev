@@ -1,11 +1,11 @@
 title:
-  en: Web Vitals
-  es: Web Vitals
-  ja: Web Vitals
-  ko: Web Vitals
-  pt: Web Vitals
-  ru: Web Vitals
-  zh: Web Vitals
+  en: Core Web Vitals
+  es: Core Web Vitals
+  ja: Core Web Vitals
+  ko: Core Web Vitals
+  pt: Core Web Vitals
+  ru: Core Web Vitals
+  zh: Core Web Vitals
 
 description:
   en: Essential metrics for a healthy site.
@@ -35,40 +35,40 @@ topics:
     ru: Краткий обзор
     zh: 概览
 
-  web_vitals_metrics:
-    en: Web Vitals Metrics
-    es: Métricas de Web Vitals
-    ja: Web Vitals 指標
-    ko: Web Vitals 메트릭
-    pt: Métricas Web Vitals
-    ru: Показатели Web Vitals
+  core_web_vitals_metrics:
+    en: Core Web Vitals Metrics
+    es: Métricas de Core Web Vitals
+    ja: Core Web Vitals 指標
+    ko: Core Web Vitals 메트릭
+    pt: Métricas Core Web Vitals
+    ru: Показатели Core Web Vitals
     zh: 网页指标
 
-  measure_web_vitals:
-    en: Measure Web Vitals
-    es: Medir Web Vitals
-    ja: Web Vitals を測定する
-    ko: Web Vitals 측정
-    pt: Medição das Web Vitals
-    ru: Измерение Web Vitals
+  measure_core_web_vitals:
+    en: Measure Core Web Vitals
+    es: Medir Core Web Vitals
+    ja: Core Web Vitals を測定する
+    ko: Core Web Vitals 측정
+    pt: Medição das Core Web Vitals
+    ru: Измерение Core Web Vitals
     zh: 衡量网页指标
 
-  improve_web_vitals:
-    en: Improve Web Vitals
-    es: Mejorar Web Vitals
-    ja: Web Vitals を改善する
-    ko: Web Vitals 개선
-    pt: Melhoria das Web Vitals
-    ru: Улучшение Web Vitals
+  improve_core_web_vitals:
+    en: Improve Core Web Vitals
+    es: Mejorar Core Web Vitals
+    ja: Core Web Vitals を改善する
+    ko: Core Web Vitals 개선
+    pt: Melhoria das Core Web Vitals
+    ru: Улучшение Core Web Vitals
     zh: 改善网页指标
 
-  debug_web_vitals:
-    en: Debug Web Vitals
-    es: Depurar Web Vitals
-    ja: Web Vitals のデバッグを行う
-    ko: Web Vitals 디버깅
-    pt: Depuração das Web Vitals
-    ru: Отладка Web Vitals
+  debug_core_web_vitals:
+    en: Debug Core Web Vitals
+    es: Depurar Core Web Vitals
+    ja: Core Web Vitals のデバッグを行う
+    ko: Core Web Vitals 디버깅
+    pt: Depuração das Core Web Vitals
+    ru: Отладка Core Web Vitals
     zh: 调试网页指标
 
   best_practices:

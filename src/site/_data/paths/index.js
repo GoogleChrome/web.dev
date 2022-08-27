@@ -3,7 +3,7 @@ const angular = require('./angular.json');
 const devices = require('./devices.json');
 const discoverable = require('./discoverable.json');
 const fast = require('./fast.json');
-const learnWebVitals = require('./learn-web-vitals.json');
+const learnCoreWebVitals = require('./learn-core-web-vitals.json');
 const lighthouseAccessibility = require('./lighthouse-accessibility.json');
 const lighthouseBestPractices = require('./lighthouse-best-practices.json');
 const lighthousePerformance = require('./lighthouse-performance.json');
@@ -29,7 +29,7 @@ module.exports = {
   devices,
   discoverable,
   fast,
-  'learn-web-vitals': learnWebVitals,
+  'learn-core-web-vitals': learnCoreWebVitals,
   'lighthouse-accessibility': lighthouseAccessibility,
   'lighthouse-best-practices': lighthouseBestPractices,
   'lighthouse-performance': lighthousePerformance,
