@@ -27,7 +27,7 @@ Lighthouse flags pages that don't provide a way to skip repetitive content:
 </figure>
 
 Lighthouse checks that the page contains at least one of the following:
-- A `<header>` element
+- A [heading element](/headings-and-landmarks/#use-headings-to-outline-the-page)
 - A [skip link](/headings-and-landmarks#bypass-repetitive-content-with-skip-links)
 - A [landmark](/headings-and-landmarks/#use-landmarks-to-aid-navigation)
 
