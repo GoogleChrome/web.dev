@@ -326,8 +326,8 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/handwriting-recognition/
   - source: /virtualkeyboard
     destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
-  - source /workingoffthegrid
-    destination: https://developer.chrome.com/docs/workbox/service-worker-overview/
+  - source: /workingoffthegrid
+  - destination: https://developer.chrome.com/docs/workbox/service-worker-overview/
 
   # Redirect for Aurora
   - source: /aurora
