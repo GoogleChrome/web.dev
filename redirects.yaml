@@ -326,10 +326,26 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/handwriting-recognition/
   - source: /virtualkeyboard
     destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
+  - source: /workingoffthegrid
+    destination: https://developer.chrome.com/docs/workbox/service-worker-overview/
 
   # Redirect for Aurora
   - source: /aurora
-    destination: /introducing-aurora
+    destination: https://developer.chrome.com/blog/introducing-aurora/
+  - source: /introducing-aurora
+    destination: https://developer.chrome.com/blog/introducing-aurora/
+  - source: /inp-in-frameworks
+    destination: https://developer.chrome.com/blog/inp-in-frameworks/
+  - source: /script-component
+    destination: https://developer.chrome.com/blog/script-component/
+  - source: /image-component
+    destination: https://developer.chrome.com/blog/image-component/
+  - source: /aurora-resource-inlining
+    destination: https://developer.chrome.com/blog/aurora-resource-inlining/
+  - source: /conformance
+    destination: https://developer.chrome.com/blog/conformance/
+  - source: /tags/aurora-project
+    destination: https://developer.chrome.com/tags/aurora-project/
 
   # Design system
   - source: /design-system/component/action

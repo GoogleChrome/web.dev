@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
-updated: 2022-08-10
+updated: 2022-08-26
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -152,6 +152,17 @@ are two cases:
 - An update that adds new handlers triggers handler registration (separate from app installation).
 - An update that removes handlers triggers handler unregistration (separate from app
   uninstallation).
+
+## Protocol handler debugging in DevTools
+
+Navigate to the **Protocol Handlers** section via the **Application** > **Manifest** pane. You can
+view and test all the available protocols here.
+
+For example, install [this demo PWA](https://protocol-handler.glitch.me/). In the
+**Protocol Handlers** section, type "americano" and click **Test protocol** to open the coffee page
+in the PWA. 
+
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/DuH2YwkYGPpYjnUKln8m.png", alt="Protocol handlers in the Manifest pane", width="800", height="402" %}
 
 ## Demo
 

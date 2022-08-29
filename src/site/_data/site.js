@@ -52,8 +52,9 @@ module.exports = {
       TRACKING_VERSION: 'dimension5',
       NAVIGATION_TYPE: 'dimension6',
       COLOR_SCHEME_PREFERENCE: 'dimension7',
+      WEB_VITALS_DEBUG: 'dimension8',
     },
-    version: 11,
+    version: 12,
   },
   firebase: {
     prod: {

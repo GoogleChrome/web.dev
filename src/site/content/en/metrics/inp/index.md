@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-08-17
+updated: 2022-08-26
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -165,7 +165,7 @@ The best way to measure your website's INP is by gathering metrics from actual u
   - Via BigQuery in the CrUX dataset's `experimental.interaction_to_next_paint` table.
   - CrUX API via `experimental_interaction_to_next_paint`.
   - CrUX Dashboard.
-- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals/tree/next).
+- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals).
 
 ### Lab tools
 
@@ -176,13 +176,7 @@ The best way to measure your website's INP is by gathering metrics from actual u
 
 ### Measure INP In JavaScript
 
-Writing your own [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to measure INP can be difficult. To measure INP in JavaScript, it's advised that you use the `web-vitals` JavaScript library, which exports an `onINP` function to do this work for you. At the moment, getting INP data is only possible in version 3 of `web-vitals`, currently in beta, which can be installed with the following command:
-
-```bash
-npm install web-vitals@next --save
-```
-
-You can then get a page's INP by passing a function to the `onINP` method:
+Writing your own [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to measure INP can be difficult. To measure INP in JavaScript, it's advised that you use the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals), which exports an `onINP` function to do this work for you. You can then get a page's INP by passing a function to the `onINP` method:
 
 ```js
 import {onINP} from 'web-vitals';
@@ -195,7 +189,7 @@ onINP(({value}) => {
 
 As with other methods exported by `web-vitals`, `onINP` accepts a function as an argument, and will pass metric data to the function you give it. From there, you can send that data to an endpoint for collection and analysis.
 
-See the [`onINP()`](https://github.com/GoogleChrome/web-vitals/tree/next#oninp) reference documentation for additional usage instructions.
+See the [`onINP()`](https://github.com/GoogleChrome/web-vitals#oninp) reference documentation for additional usage instructions.
 
 {% Aside 'warning' %}
 Gathering INP metrics in the field will only work on browsers that [fully support the Event Timing API](https://caniuse.com/mdn-api_performanceeventtiming), including its `interactionId` property.
