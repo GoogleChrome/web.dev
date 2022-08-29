@@ -78,9 +78,9 @@ alt="The gui-split-button class inspected and showing the CSS properties used in
 
 The initially visible and focusable `<button>` fits within the container with
 two matching corner shapes for
-[focus](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible),
-[hover](/learn/css/pseudo-classes/#:hover) and
-[active](/learn/css/pseudo-classes/#:active) interactions to
+[focus](/learn/css/pseudo-classes/#focus,-focus-within,-and-focus-visible),
+[hover](/learn/css/pseudo-classes/#hover) and
+[active](/learn/css/pseudo-classes/#active) interactions to
 appear contained within `.gui-split-button`.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/69gvxF4AfQoNki4pBtVb.png",

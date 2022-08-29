@@ -211,6 +211,6 @@ the savings are definitely worth it.
 
 ## Impact on Largest Contentful Paint (LCP)
 
-Images may be [LCP candidates](/lcp/#what-elements-are-considered). That means the size of an image affects its [load time](/optimize-lcp/#3.-reduce-resource-load-time). When an image is an LCP candidate, efficiently encoding that image is crucial to improving LCP.
+Images may be [LCP candidates](/lcp/#what-elements-are-considered). That means the size of an image affects its [load time](/optimize-lcp/#3-reduce-resource-load-time). When an image is an LCP candidate, efficiently encoding that image is crucial to improving LCP.
 
 You should strive to apply the advice given in this article so that the perceptual performance of a page is as fast as it can possibly be for all users. LCP is part of perceptual performance, as it measures how fast the largest (and therefore most perceivable) element on the page displays.

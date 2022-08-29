@@ -310,7 +310,7 @@ In cases where JavaScript code needs to run as early as possible in the page loa
 
 From the perspective of optimizing LCP, there are two primary advantage of SSR:
 
-- Your image resources will be discoverable from the HTML source (as discussed in [step 1](#1.-eliminate-resource-load-delay) earlier).
+- Your image resources will be discoverable from the HTML source (as discussed in [step 1](#1-eliminate-resource-load-delay) earlier).
 - Your page content will not require additional JavaScript requests to finish before it can render.
 
 The main downside of SSR is it requires additional server processing time, which can slow down your TTFB. This trade-off is usually worth it though because server processing times are within your control, whereas the network and device capabilities of your users are not.
@@ -357,7 +357,7 @@ While image CDNs are a great way to reduce resource load times, using a third-pa
 
 Even if you've reduced the size of your resource and the distance it has to travel, a resource can still take a long time to load if you're loading many other resources at the same time. This problem is know as _network contention_.
 
-If you've given your LCP resource a [high `fetchpriority`](/priority-hints/) and [started loading it as soon as possible](#1.-eliminate-resource-load-delay) then the browser will do its best to prevent lower-priority resources from competing with it. However, if you're loading many resources with high `fetchpriority`, or if you're just loading a lot of resources in general, then it could affect how quickly the LCP resource loads.
+If you've given your LCP resource a [high `fetchpriority`](/priority-hints/) and [started loading it as soon as possible](#1-eliminate-resource-load-delay) then the browser will do its best to prevent lower-priority resources from competing with it. However, if you're loading many resources with high `fetchpriority`, or if you're just loading a lot of resources in general, then it could affect how quickly the LCP resource loads.
 
 #### Eliminate the network time entirely
 

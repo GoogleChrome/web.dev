@@ -19,7 +19,7 @@ Isso significa que você precisa usar HTTPS localmente **apenas em casos especia
 
 Se o seu site de produção usa HTTPS, você deseja que seu site de desenvolvimento local se comporte **como um site HTTPS** (se o seu site de produção não usa HTTPS, [priorize a mudança para HTTPS](/why-https-matters/) ). Na maioria das vezes, você pode confiar que `http://localhost` se comportará **como um site HTTPS** . Mas, [em alguns casos](/when-to-use-local-https) , você precisa executar seu site localmente com HTTPS. Vamos dar uma olhada em como fazer isso.
 
-**⏩ Você está procurando instruções rápidas ou já esteve aqui antes? Pule para o [Cheatsheet](#using-mkcert:-cheatsheet).**
+**⏩ Você está procurando instruções rápidas ou já esteve aqui antes? Pule para o [Cheatsheet](#using-mkcert-cheatsheet).**
 
 ## Execução local do seu site com HTTPS usando mkcert (recomendado)
 
@@ -38,7 +38,7 @@ mkcert (e ferramentas semelhantes) fornecem vários benefícios:
 - mkcert é especializado na criação de certificados que são **compatíveis com o que os navegadores consideram certificados válidos**. Ele permanece atualizado para atender aos requisitos e práticas recomendadas. É por isso que você não terá que executar comandos mkcert com configurações ou argumentos complexos para gerar os certificados corretos!
 - mkcert é uma ferramenta de plataforma cruzada. Qualquer pessoa da sua equipe pode usá-lo.
 
-mkcert é a ferramenta que recomendamos para criar um certificado TLS para desenvolvimento local. Você pode verificar [outras opções](#running-your-site-locally-with-https:-other-options) também.
+mkcert é a ferramenta que recomendamos para criar um certificado TLS para desenvolvimento local. Você pode verificar [outras opções](#running-your-site-locally-with-https-other-options) também.
 
 Muitos sistemas operacionais podem incluir bibliotecas para produzir certificados, como o [openssl](https://www.openssl.org/). Ao contrário do mkcert e ferramentas semelhantes, essas bibliotecas podem não produzir certificados corretos de maneira consistente, podem exigir a execução de comandos complexos e não são necessariamente multiplataforma.
 

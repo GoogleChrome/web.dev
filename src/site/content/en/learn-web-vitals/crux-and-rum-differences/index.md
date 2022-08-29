@@ -178,7 +178,7 @@ CrUX however, being measured by the Chrome browser itself rather than the page, 
 
 #### Cross-origin resources
 
-LCP media served from other domains do not give render time in the [PerformanceObserver API](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)—unless the [Timing-Allow-Origin header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin) (TAO) is provided—due to browser security restrictions to reduce timing attacks. This [falls back to the load time of the resource](/lcp/#load-time-vs.-render-time) but this may be quite different from when the content was actually painted.
+LCP media served from other domains do not give render time in the [PerformanceObserver API](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)—unless the [Timing-Allow-Origin header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin) (TAO) is provided—due to browser security restrictions to reduce timing attacks. This [falls back to the load time of the resource](/lcp/#load-time-vs-render-time) but this may be quite different from when the content was actually painted.
 
 Again, CrUX does report the render time data for Core Web Vitals. Sites are advised to limit cross-origin content that impacts the Core Web Vitals metrics and to enable TAO where possible if they wish to measure this more accurately. Other cross-origin resources may be subject to similar restrictions.
 

@@ -28,22 +28,22 @@ each with its own set of common issues / problems:
   You should be getting a 201 HTTP code. If you aren't :
   - **Check for Authorization Errors:** If you receive an authorization
     error message see the
-    [Authorization Issues section](#authorization_issues).
+    [Authorization Issues section](#authorization-issues).
   - **Other API Errors:** If you receive a non-201 status code response,
-    see the [HTTP Status Codes section](#http_status_codes) for
+    see the [HTTP Status Codes section](#http-status-codes) for
     guidance on the cause of the issue.
 - **Receiving a Message**: If you're able to send a message successfully,
   but the message is not received on the browser:
   - **Check for Encryption Issues:** See the [Payload Encryption
-    Issue Section](#payload_encryption_issue).
+    Issue Section](#payload-encryption-issue).
   - **Check for Connection Issues:** If the problem is on Chrome, it
-    may be a connection. See [Connection Issues section](#connection_issue)
+    may be a connection. See [Connection Issues section](#connection-issue)
     for more info.
 
 If you aren't able to send and receive a push message and the relevant sections
 in this doc aren't helping debug the problem then you may have found a
 bug in the push mechanism itself. In this case, refer to the
-[Raising Bug Reports](#raising_bug_reports)
+[Raising Bug Reports](#raising-bug-reports)
 section to file a good bug report with all the necessary information to expedite
 the bug fixing process.
 

@@ -1205,7 +1205,7 @@ section:has(*:focus-visible) {...}
 ```
 
 {% Aside %}
-[`:focus-within`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible)
+[`:focus-within`](/learn/css/pseudo-classes/#focus,-focus-within,-and-focus-visible)
 already behaves similarly to `section:has(*:focus-visible)` and
 should be used instead.
 {% endAside %}

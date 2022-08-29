@@ -265,7 +265,7 @@ Use DevTools to see how it's used.
   old browser versions. `https:` and `unsafe-inline` don't make your policy less
   safe because they will be ignored by browsers who support `strict-dynamic`.
   Read more in [Add fallbacks to support Safari and older
-  browsers](/strict-csp/#step-4:-add-fallbacks-to-support-safari-and-older-browsers).
+  browsers](/strict-csp/#step-4-add-fallbacks-to-support-safari-and-older-browsers).
 * Safari does *not* support `strict-dynamic` yet. But a strict CSP like in the
   examples above is safer than an allowlist CSP (and much safer than no CSP at
   all) for all of your users. Even in Safari, a strict CSP protects your site
@@ -286,7 +286,7 @@ Use DevTools to see how it's used.
   become less relevant: nowadays, most browsers block
   [mixed-content](/what-is-mixed-content/).
 * You can also set a CSP in [report-only
-  mode](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts).
+  mode](/strict-csp/#step-2-set-a-strict-csp-and-prepare-your-scripts).
 * If you can't set a CSP as a header server-side, you can also set it as a meta
   tag. Note that you can't use **report-only** mode for meta tags (though
   [this may change](https://github.com/w3c/webappsec-csp/issues/277)).

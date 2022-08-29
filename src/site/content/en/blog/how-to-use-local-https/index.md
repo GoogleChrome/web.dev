@@ -27,7 +27,7 @@ cases](/when-to-use-local-https), you need to run your site locally with HTTPS. 
 at how to do this.
 
 **⏩ Are you looking for quick instructions, or have you been here before?
-Skip to the [Cheatsheet](#using-mkcert:-cheatsheet).**
+Skip to the [Cheatsheet](#using-mkcert-cheatsheet).**
 
 ## Running your site locally with HTTPS using mkcert (recommended)
 
@@ -60,7 +60,7 @@ mkcert (and similar tools) provide several benefits:
   certificates!
 - mkcert is a cross-platform tool. Anyone on your team can use it.
 
-mkcert is the tool we recommend for creating a TLS certificate for local development. You can check out [other options](#running-your-site-locally-with-https:-other-options) too.
+mkcert is the tool we recommend for creating a TLS certificate for local development. You can check out [other options](#running-your-site-locally-with-https-other-options) too.
 
 Many operating systems may include libraries to produce certificates, such as [openssl](https://www.openssl.org/). Unlike mkcert
 and similar tools, such libraries may not consistently produce correct certificates, may require

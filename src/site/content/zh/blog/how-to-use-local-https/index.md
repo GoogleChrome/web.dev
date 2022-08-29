@@ -19,7 +19,7 @@ tags:
 
 如果您在生产网站使用了 HTTPS，并希望本地开发网站的行为**可以接近 HTTPS 网站**（如果您的生产网站还没有使用 HTTPS，请[优先切换到 HTTPS](/why-https-matters/) ）。在大多数情况下，您可以认为 `http://localhost` 的行为**类似于 HTTPS 网站**。但[在某些情况下](/when-to-use-local-https)，您需要使用 HTTPS 在本地运行网站。现在来看看如何做到这一点。
 
-**⏩ 如果您想查看快速说明，或是之前看到过这里？请跳转至[备忘单](#using-mkcert:-cheatsheet)。**
+**⏩ 如果您想查看快速说明，或是之前看到过这里？请跳转至[备忘单](#using-mkcert-cheatsheet)。**
 
 ## 使用 mkcert 为本地网站开启 HTTPS（推荐）
 
@@ -38,7 +38,7 @@ mkcert（和类似工具）具备下列几种优势：
 - mkcert 专门用于创建**与浏览器认为有效相兼容的证书**。它会保持更新，来满足需求和最佳实践。因此您无需运行具备复杂配置或参数的 mkcert 命令，就可以生成正确的证书！
 - mkcert 是跨平台的工具。团队中的任何人都可以使用。
 
-我们推荐使用 mkcert 为本地开发创建 TLS 证书。您也可以查看[其他选择](#running-your-site-locally-with-https:-other-options)。
+我们推荐使用 mkcert 为本地开发创建 TLS 证书。您也可以查看[其他选择](#running-your-site-locally-with-https-other-options)。
 
 许多操作系统可能会提供用于生成证书的库，例如 [openssl](https://www.openssl.org/) 。与 mkcert 和类似工具不同，此类库可能无法始终生成正确的证书，或可能需要运行复杂的命令，并且不一定能够跨平台使用。
 
