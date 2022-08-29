@@ -103,4 +103,4 @@ revenue-related metrics drawn from each brand's analytics tool.
 
 For more information, read the full [Milliseconds Make Millions][report] report.
 
-[report]: https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html
+[report]: https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Milliseconds_Make_Millions_report.pdf
