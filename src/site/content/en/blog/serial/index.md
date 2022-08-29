@@ -253,7 +253,7 @@ while (true) {
 }
 ```
 
-To specify the buffer into which data is read instead of the stream allocating a buffer for each chunk, get a [ReadableStreamBYOBReader] by calling `port.readable.getReader({ mode: "byob" })` and read data into a new `ArrayBuffer`. Note that the Web Serial API supports "Bring Your Own Buffer" readers in Chrome 106 or later.
+You can take control of how memory is allocated when you read from the stream using a "Bring Your Own Buffer" reader. Call `port.readable.getReader({ mode: "byob" })` to get the [ReadableStreamBYOBReader] interface and provide your own `ArrayBuffer` when calling `read(). Note that the Web Serial API supports this feature in Chrome 106 or later.
 
 ```js
 try {
