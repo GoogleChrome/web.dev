@@ -219,7 +219,7 @@ information rather than the viewport and user agent.
 
 ```css
 .card {
-  contain: size layout;
+  container-type: inline-size;
 }
 
 @container (max-width: 850px) {
@@ -262,7 +262,7 @@ flow into their space, and re-layout the grid when that space is too compressed
 
 ```css
 .product {
-  contain: layout inline-size;
+  container-type: inline-size;
 }
 
 @container (min-width: 350px) {

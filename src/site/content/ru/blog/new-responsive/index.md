@@ -119,7 +119,7 @@ tags:
 
 ```css
 .card {
-  contain: size layout;
+  container-type: inline-size;
 }
 
 @container (max-width: 850px) {
@@ -149,7 +149,7 @@ tags:
 
 ```css
 .product {
-  contain: layout inline-size;
+  container-type: inline-size;
 }
 
 @container (min-width: 350px) {
