@@ -4,7 +4,7 @@ title: How Rakuten 24's investment in Core Web Vitals increased revenue per visi
 subhead: >
   By measuring real users' Web Vitals, Rakuten 24 also found that a good Largest Contentful Paint (LCP) can lead to a conversion rate increase of 61.13%.
 description: >
-  By measuring real users' Web Vitals, Rakuten 24 also found that a good Largest Contentful Paint (LCP) can lead to a conversion rate increase of 61.13%.
+  By measuring real users' Web Vitals, Rakuten 24 also found that a good Largest Contentful Paint (LCP) can lead to a conversion rate increase of 61.13%!
 date: 2022-08-24
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/uB1PUfGOXOhrqUBW3tfO.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/OLBDJ1YEaVWGkR5lqNyR.jpg
