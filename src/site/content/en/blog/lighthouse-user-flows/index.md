@@ -221,7 +221,7 @@ async function captureReport() {
   // https://chromedevtools.github.io/devtools-protocol/tot/Input/#method-synthesizeScrollGesture
   await session.send('Input.synthesizeScrollGesture', {
     x: 100,
-    y: 0,
+    y: 600,
     yDistance: -2500,
     speed: 1000,
     repeatCount: 2,
