@@ -96,7 +96,7 @@ Firefox 104 adds support for the methods [Array.prototype.findLast()](https://de
 
 ### Sanitizer API
 
-ALso in Chrome 105 is the [Sanitizer API](https://developer.chrome.com/blog/new-in-chrome-105/#sanitizer-api). This API builds sanitization into the platform to help remove cross-site scriptig vulnerabilities. 
+Also in Chrome 105 is the [Sanitizer API](https://developer.chrome.com/blog/new-in-chrome-105/#sanitizer-api). This API builds sanitization into the platform to help remove cross-site scripting vulnerabilities. 
 
 ## Beta browser releases
 
