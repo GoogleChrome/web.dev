@@ -82,7 +82,7 @@ You can find out more about container queries in the post [@container and :has()
 
 ### The :has() parent pseudo-class
 
-The post mentioned above also mentions `:has()`. This new pseudo-class The CSS :has() pseudo-class gives you a way to check if a parent element contains children with specific parameters. Learn more in [:has() the family selector](https://developer.chrome.com/blog/has-m105/).
+The post mentioned above also mentions `:has()`. This new pseudo-class The CSS :has() pseudo-class gives you a way to target the parent element and siblings based on conditions. Learn more in [:has() the family selector](https://developer.chrome.com/blog/has-m105/).
 
 {% BrowserCompat 'css.selectors.has' %}
 
@@ -97,6 +97,12 @@ Firefox 104 adds support for the methods [Array.prototype.findLast()](https://de
 ### Sanitizer API
 
 Also in Chrome 105 is the [Sanitizer API](https://developer.chrome.com/blog/new-in-chrome-105/#sanitizer-api). This API builds sanitization into the platform to help remove cross-site scripting vulnerabilities. 
+
+{% BrowserCompat 'api.Sanitizer' %}
+
+Also in Chrome 105 is the [:modal](https://developer.mozilla.org/docs/Web/CSS/:modal) CSS pseudo-class. This matches an element that is in a state in which it excludes all interaction with elements outside it. For example, a `<dialog>` opened with the `showModal()` API.
+
+{% BrowserCompat 'css.selectors.modal' %}
 
 ## Beta browser releases
 
