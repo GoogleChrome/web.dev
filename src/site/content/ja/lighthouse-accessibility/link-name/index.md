@@ -31,5 +31,5 @@ Check out <a href="…">our guide to creating accessible web pages</a>.
 
 ## リソース
 
-- [**Links do not have a discernible name (リンクの名前が識別できない)**監査のソースコード****](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
+- [**Links do not have a discernible name (リンクの名前が識別できない)**監査のソースコード****](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/link-name.js)
 - [Links must have discernible text (Deque University) (リンクには識別できるテキストが必要)](https://dequeuniversity.com/rules/axe/3.3/link-name)

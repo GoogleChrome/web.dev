@@ -549,7 +549,7 @@ See [the full list of values on MDN](https://developer.mozilla.org/docs/Web/CSS/
 The next demo has a single line of flex items with `flex-direction: row`.
 The last item defines the height of the flex container.
 The first item has the `align-self` property with a value of `flex-start`.
-Try changing the value on that property to see how it moves within it's space on the cross axis.
+Try changing the value on that property to see how it moves within its space on the cross axis.
 
 {% Codepen {
   user: 'web-dot-dev',

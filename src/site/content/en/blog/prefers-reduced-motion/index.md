@@ -150,12 +150,7 @@ have opted out of animations, or users on browsers that don't understand the med
 {% Aside %}
 If you have a lot of animation-related CSS, you can spare your opted-out users from
 downloading it by outsourcing all animation-related CSS into a separate stylesheet that you only
-load conditionally via the `media` attribute on the `link` element&nbsp;😎:
-
-```html
-<link rel="stylesheet" href="animations.css"
-      media="(prefers-reduced-motion: no-preference)">
-```
+load conditionally via the `media` attribute on the `link` element&nbsp;😎: `<link rel="stylesheet" href="animations.css" media="(prefers-reduced-motion: no-preference)">`
 {% endAside %}
 
 To illustrate how to work with `prefers-reduced-motion` with JavaScript, let's imagine I have

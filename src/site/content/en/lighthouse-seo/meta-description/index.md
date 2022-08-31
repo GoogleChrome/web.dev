@@ -85,6 +85,6 @@ page for more tips.
 
 ## Resources
 
-- [Source code for **Document does not have a meta description** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [Source code for **Document does not have a meta description** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624#1)
 - [Irrelevant keywords](https://support.google.com/webmasters/answer/66358)

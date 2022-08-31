@@ -52,5 +52,5 @@ Learn more in [How to do an Accessibility Review](https://developers.google.com/
 
 ## Resources
 
-- [Source code for **Custom controls have associated labels** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/custom-controls-labels.js)
+- [Source code for **Custom controls have associated labels** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/manual/custom-controls-labels.js)
 - [Some elements have a `[tabindex]` value greater than `0`](/tabindex)

@@ -100,7 +100,7 @@ Web 上的兼容性一直是开发人员面临的一大挑战。在过去的几�
 
 ### CSS 纵横比属性
 
-新的 [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) CSS 属性可以轻松地为元素保持一致的纵横比，从而消除对常见的 [`padding-top` hack 的需要](/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top)：
+新的 [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) CSS 属性可以轻松地为元素保持一致的纵横比，从而消除对常见的 [`padding-top` hack 的需要](/aspect-ratio/#the-old-hack-maintaining-aspect-ratio-with-padding-top)：
 
 <div class="switcher">{% Compare 'worse', 'Using padding-top' %} ```css .container { 宽度：100%;填充顶部：56.25%； } ``` {% endCompare %}</div>
 <p data-md-type="paragraph">{% Compare 'better', 'Using aspect-ratio' %}</p>

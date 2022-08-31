@@ -82,7 +82,7 @@ TTI измеряет, сколько времени требуется стра�
 
 ## Ресурсы
 
-- [Исходный код для аудита **Time to Interactive**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
+- [Исходный код для аудита **Time to Interactive**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/interactive.js)
 - [Руководство по оценкам Lighthouse](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Первая интерактивность и полная интерактивность](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
 - [Оптимизация запуска JavaScript](/optimizing-content-efficiency-javascript-startup-optimization/)

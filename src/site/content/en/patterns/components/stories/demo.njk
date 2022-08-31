@@ -168,8 +168,9 @@ body > .stories {
       </section>
     </div>
 
-    <script>
+    {% set script %}
       var e=document.querySelector(".stories"),t=e.offsetLeft+e.clientWidth/2,n={current_story:e.firstElementChild.lastElementChild};function r(e){var t=n.current_story,r=t.parentNode.firstElementChild,l=t.parentNode.lastElementChild,i=t.parentElement.nextElementSibling,o=t.parentElement.previousElementSibling;"next"===e?(r!==t||i)&&(r===t&&i?(n.current_story=t.parentElement.nextElementSibling.lastElementChild,t.parentElement.nextElementSibling.scrollIntoView({behavior:"smooth"})):(t.classList.add("seen"),n.current_story=t.previousElementSibling)):"prev"!==e||l===t&&!o||(l===t&&o?(n.current_story=t.parentElement.previousElementSibling.firstElementChild,t.parentElement.previousElementSibling.scrollIntoView({behavior:"smooth"})):(t.nextElementSibling.classList.remove("seen"),n.current_story=t.nextElementSibling))}e.addEventListener("click",(function(e){"ARTICLE"===e.target.nodeName&&r(e.clientX>t?"next":"prev")})),document.addEventListener("keydown",(function(e){"ArrowDown"===(e=e.key)&&"ArrowUp"===e||r("ArrowDown"===e?"next":"prev")}));
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

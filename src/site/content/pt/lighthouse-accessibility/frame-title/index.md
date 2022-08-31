@@ -38,6 +38,6 @@ Saiba mais em [Escrever títulos descritivos, descrições e texto de link para 
 
 ## Recursos
 
-- [O código-fonte dos **elementos `<frame>` ou `<iframe>` não tem** auditoria de título](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/frame-title.js)
+- [O código-fonte dos **elementos `<frame>` ou `<iframe>` não tem** auditoria de título](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/frame-title.js)
 - [Rotular documentos e frames](/labels-and-text-alternatives#label-documents-and-frames)
 - [Os frames devem ter o atributo title (Deque University)](https://dequeuniversity.com/rules/axe/3.3/frame-title)

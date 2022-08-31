@@ -14,7 +14,7 @@ pageScripts:
         <div>
           <span aria-hidden="true" class="hero__eyebrow">{{ intro.eyebrow }}</span>
           <div class="hero__content flow">
-            <img importance="high" src="{{ intro.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ intro.imageWidth }}" height="{{ intro.imageHeight }}" />
+            <img fetchpriority="high" src="{{ intro.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ intro.imageWidth }}" height="{{ intro.imageHeight }}" />
             <h1 class="hero__title">{{ intro.title }}</h1>
             {{ intro.summary | md | safe }}
             <a class="button" data-type="primary" href="{{ intro.buttonUrl }}">{{ intro.buttonText }}</a>
@@ -24,7 +24,7 @@ pageScripts:
           <a class="feature-card" href="{{ featureCard.url }}" data-theme="{{ featureCard.theme }}" data-treatment="illustration">
             <span class="feature-card__eyebrow">{{ featureCard.eyebrow }}</span>
             <h3 class="{{ 'visually-hidden' if featureCard.hiddenTitle else 'feature-card__title' }}" style="width: 230px;">{{ featureCard.title }}</h3>
-            <img importance="high" class="feature-card__background" alt="" aria-hidden="true" src="{{ featureCard.background }}" />
+            <img fetchpriority="high" class="feature-card__background" alt="" aria-hidden="true" src="{{ featureCard.background }}" />
           </a>
           {% include "partials/picked-case-study.njk" %}
         </div>
@@ -50,7 +50,7 @@ pageScripts:
             </div>
           </div>
           <div>
-            <img importance="high" src="{{ promoPanel.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ promoPanel.imageWidth }}" height="{{ promoPanel.imageHeight }}" />
+            <img fetchpriority="high" src="{{ promoPanel.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ promoPanel.imageWidth }}" height="{{ promoPanel.imageHeight }}" />
           </div>
         </div>
       </div>

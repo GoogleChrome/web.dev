@@ -54,5 +54,5 @@ Magento의 [Varnish 통합](https://devdocs.magento.com/guides/v2.3/config-guide
 
 ## 리소스
 
-- [**서버 응답 시간(TTFB) 단축** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/server-response-time.js)
+- [**서버 응답 시간(TTFB) 단축** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/server-response-time.js)
 - [네트워크 정보 API를 사용한 적응형 서비스](/adaptive-serving-based-on-network-quality)

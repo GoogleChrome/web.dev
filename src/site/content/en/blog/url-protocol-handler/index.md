@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
-updated: 2022-04-29
+updated: 2022-08-26
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -18,9 +18,8 @@ tags:
   - capabilities
 ---
 
-{% Aside %} URL protocol handler registration for PWAs is part of the
-[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is currently in development. This post will
-be updated as the implementation progresses. {% endAside %}
+{% Aside 'success' %} URL protocol handler registration for PWAs is part of the
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is shipped. {% endAside %}
 
 ## Background on schemes (aka. protocols)
 
@@ -154,11 +153,21 @@ are two cases:
 - An update that removes handlers triggers handler unregistration (separate from app
   uninstallation).
 
+## Protocol handler debugging in DevTools
+
+Navigate to the **Protocol Handlers** section via the **Application** > **Manifest** pane. You can
+view and test all the available protocols here.
+
+For example, install [this demo PWA](https://protocol-handler.glitch.me/). In the
+**Protocol Handlers** section, type "americano" and click **Test protocol** to open the coffee page
+in the PWA. 
+
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/DuH2YwkYGPpYjnUKln8m.png", alt="Protocol handlers in the Manifest pane", width="800", height="402" %}
+
 ## Demo
 
 You can see a demo of URL protocol handler registration for PWAs on Glitch.
 
-1. If you have not done so before, [enable the flag](#enabling-via-chrome:flags).
 1. Go to [https://protocol-handler.glitch.me/](https://protocol-handler.glitch.me/), install the
    PWA, and reload the app after the installation. The browser has now registered the PWA as a
    handler for the `web+coffee` protocol with the operating system.

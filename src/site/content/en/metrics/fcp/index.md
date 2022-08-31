@@ -144,7 +144,7 @@ getFCP(console.log);
 ```
 
 You can refer to [the source code for
-`getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)
+`getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts)
 for a complete example of how to measure FCP in JavaScript.
 
 {% Aside %}

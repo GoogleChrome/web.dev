@@ -103,7 +103,7 @@ Note that this URL uses HTTP. Thumbor uses HTTP by default but can be [configure
 
 You should see an image that is 100 pixels wide by 100 pixels tall. Thumbor has taken the image `hero.jpg` and size specified in the URL string and served the result. You can replace the image in the URL string (i.e., `https://web.dev/install-thumbor/hero.jpg`) with any other image (e.g., `https://your-site.com/cat.jpg`) and Thumbor will resize that image too.
 
-The [Optimize images with Thumbor](/use-thumbor/#thumbor-url-format) article has more information on using the Thumbor API. In particular, you may be interested in [setting up a Thumbor configuration file](/use-thumbor/#appendix:-thumbor.conf).
+The [Optimize images with Thumbor](/use-thumbor/#thumbor-url-format) article has more information on using the Thumbor API. In particular, you may be interested in [setting up a Thumbor configuration file](/use-thumbor/#appendix-thumborconf).
 
 ## Appendix: Configuring Systemd
 

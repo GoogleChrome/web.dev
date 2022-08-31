@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2022-04-21
+updated: 2022-08-16
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -251,6 +251,66 @@ while (true) {
   // value is a string.
   console.log(value);
 }
+```
+
+You can take control of how memory is allocated when you read from the stream using a "Bring Your Own Buffer" reader. Call `port.readable.getReader({ mode: "byob" })` to get the [ReadableStreamBYOBReader] interface and provide your own `ArrayBuffer` when calling `read(). Note that the Web Serial API supports this feature in Chrome 106 or later.
+
+```js
+try {
+  const reader = port.readable.getReader({ mode: "byob" });
+  // Call reader.read() to read data into a buffer...
+} catch (error) {
+  if (error instanceof TypeError) {
+    // BYOB readers are not supported.
+    // Fallback to port.readable.getReader()...
+  }
+}
+```
+
+Here's an example of how to reuse the buffer out of `value.buffer`:
+
+```js
+const bufferSize = 1024; // 1kB
+let buffer = new ArrayBuffer(bufferSize);
+
+// Set `bufferSize` on open() to at least the size of the buffer.
+await port.open({ baudRate: 9600, bufferSize });
+
+const reader = port.readable.getReader({ mode: "byob" });
+while (true) {
+  const { value, done } = await reader.read(new Uint8Array(buffer));
+  if (done) {
+    break;
+  }
+  buffer = value.buffer;
+  // Handle `value`.
+}
+```
+
+Here's another example of how to read a specific amount of data from a serial port:
+
+```js
+async function readInto(reader, buffer) {
+  let offset = 0;
+  while (offset < buffer.byteLength) {
+    const { value, done } = await reader.read(
+      new Uint8Array(buffer, offset)
+    );
+    if (done) {
+      break;
+    }
+    buffer = value.buffer;
+    offset += value.byteLength;
+  }
+  return buffer;
+}
+
+const reader = port.readable.getReader({ mode: "byob" });
+let buffer = new ArrayBuffer(512);
+// Read the first 512 bytes.
+buffer = await readInto(reader, buffer);
+// Then read the next 512 bytes.
+buffer = await readInto(reader, buffer);
 ```
 
 ### Write to a serial port {: #write-port }
@@ -633,6 +693,7 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Streams API concepts]: https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts
 [ReadableStream]: https://developer.mozilla.org/docs/Web/API/ReadableStream
 [WritableStream]: https://developer.mozilla.org/docs/Web/API/WritableStream
+[ReadableStreamBYOBReader]: https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader
 [unlocked]: https://streams.spec.whatwg.org/#lock
 [locked]: https://streams.spec.whatwg.org/#lock
 [output signals]: https://wicg.github.io/serial/#serialoutputsignals-dictionary

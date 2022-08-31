@@ -530,7 +530,7 @@ identify pages where the page itself is preventing bfcache usage for a high
 proportion of back and forward navigations.
 
 The Chrome team is working on a
-(`NotRestoredReason API`)[https://github.com/rubberyuzu/bfcache-not-retored-reason/blob/main/NotRestoredReason.md]
+[`NotRestoredReason API`](https://github.com/rubberyuzu/bfcache-not-retored-reason/blob/main/NotRestoredReason.md)
 to help expose the reasons why the bfcache was not used to help developers
 understand the reasoning the cache was not used and if this is something they
 can work on to improve for their sites.

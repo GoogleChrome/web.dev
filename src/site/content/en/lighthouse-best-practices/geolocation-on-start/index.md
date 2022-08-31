@@ -53,5 +53,5 @@ article for more information.
 
 ## Resources
 
-- [Source code for **Requests the geolocation permission on page load** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/geolocation-on-start.js)
+- [Source code for **Requests the geolocation permission on page load** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/geolocation-on-start.js)
 - [User Location](https://developers.google.com/web/fundamentals/native-hardware/user-location/)

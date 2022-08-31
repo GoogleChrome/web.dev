@@ -65,7 +65,7 @@ Embora qualquer coisa que você faça para melhorar a velocidade de carregamento
 
 ## Recursos
 
-- [Código fonte para a auditoria **Speed Index**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/speed-index.js)
+- [Código fonte para a auditoria **Speed Index**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/speed-index.js)
 - [Guia de pontuação do Lighthouse](/performance-scoring)
 - [Speedline](https://github.com/paulirish/speedline)
 - [WebPagetest Speed Index](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/metrics/SpeedIndex.md)

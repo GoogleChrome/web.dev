@@ -44,4 +44,4 @@ Se você não estiver agrupando seus ativos JavaScript, considere usar o [baler]
 
 ## Recursos
 
-[Código-fonte para a auditoria **Minimizar profundidade de solicitação crítica**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[Código-fonte para a auditoria **Minimizar profundidade de solicitação crítica**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/critical-request-chains.js)

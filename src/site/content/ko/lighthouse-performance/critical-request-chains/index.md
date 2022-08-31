@@ -40,4 +40,4 @@ JavaScript 자산을 번들로 묶지 않는 경우 [baler](https://github.com/m
 
 ## 참고 자료
 
-[**중요 요청 깊이 최소화** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[**중요 요청 깊이 최소화** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/critical-request-chains.js)

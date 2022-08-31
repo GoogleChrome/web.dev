@@ -160,7 +160,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-Puede consultar [el código fuente de `getFID)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts) para obtener un ejemplo completo de cómo medir FID en JavaScript.
+Puede consultar [el código fuente de `getFID)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts) para obtener un ejemplo completo de cómo medir FID en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir FID en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) de los `web-vitals` para obtener más información. {% endAside %}
 

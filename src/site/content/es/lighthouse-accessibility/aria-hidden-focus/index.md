@@ -42,6 +42,6 @@ Si no puede ocultar visualmente el elemento contenedor, por ejemplo, si está de
 
 ## Recursos
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-focus.js" rel="noopener">El código fuente de los elementos <strong><code>[aria-hidden="true"]</code> contiene una auditoría de descendientes enfocables</strong> </a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-hidden-focus.js" rel="noopener">El código fuente de los elementos <strong><code>[aria-hidden="true"]</code> contiene una auditoría de descendientes enfocables</strong> </a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-hidden-focus" rel="noopener">Los elementos aria-hidden no contienen elementos enfocables (Universidad Deque)</a>
 - <a href="https://github.com/WICG/inert" rel="noopener">Polyfill <code>inert</code> de WICG</a>

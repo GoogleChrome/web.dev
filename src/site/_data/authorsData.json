@@ -1646,9 +1646,37 @@
     "country": "BE",
     "image": "image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/CQMqvg5UkY4weDnJij3b.jpeg"
   },
-  "crivero": {
+  "kadirtopal": {
     "country": "US",
-    "twitter": "carolrivero_",
-    "image": "image/HodOHWjMnbNw56hvNASHWSgZyAf2/ECocrmuvoYCEILXxTf1a.jpeg"
+    "twitter": "atopal",
+    "image": "image/HodOHWjMnbNw56hvNASHWSgZyAf2/locu2HN2Xf0XCE3kqoLl.jpeg"
+  },
+  "michellebarker": {
+    "country": "GB",
+    "twitter": "michebarks",
+    "homepage": "https://css-irl.info/",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/TXk0tkZHdsVgSI0XlYMo.jpeg"
+  },
+  "daviddarnes": {
+    "country": "UK",
+    "twitter": "DavidDarnes",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/D4RF9eRlpsL0byFo3nTu.jpeg"
+  },
+  "linhduong": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/49yMNi8zYI3ufLHlPL2S.png",
+    "github": "duongkhlinh"
+  },
+  "shogokashiwase": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/65uId5WZmSmGVf4iNFjS.png"
+  },
+  "hayounglee": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mrDD7FK1dMWyzJCD4EBy.png"
+  },
+  "ryunosukeakiba": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/x1WXJeBxlPZftTHVnSmP.png"
   }
 }

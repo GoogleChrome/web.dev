@@ -91,5 +91,5 @@ with the Component Dev Kit (CDK).
 
 ## Resources
 
-- [Source code for **Avoid an excessive DOM size** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [Source code for **Avoid an excessive DOM size** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
 - [Reduce the Scope and Complexity of Style Calculations](/reduce-the-scope-and-complexity-of-style-calculations/)

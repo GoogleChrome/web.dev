@@ -59,5 +59,5 @@ See also [Label buttons and links](/labels-and-text-alternatives#label-buttons-a
 
 ## Resources
 
-- [Source code for **Buttons do not have an accessible name** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js)
+- [Source code for **Buttons do not have an accessible name** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/button-name.js)
 - [Buttons must have discernible text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/button-name)

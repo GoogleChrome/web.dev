@@ -86,7 +86,7 @@ import {getFCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-JavaScript を使用して FCP を測定する方法に関する詳細な例については、[`getFCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)を参照してください。
+JavaScript を使用して FCP を測定する方法に関する詳細な例については、[`getFCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts)を参照してください。
 
 {% Aside %}場合によっては (クロスオリジン iframe など)、JavaScript を使用して FCP を測定することはできません。詳細については、`web-vitals` ライブラリの「[制限事項](https://github.com/GoogleChrome/web-vitals#limitations)」セクションを参照してください。{% endAside %}
 

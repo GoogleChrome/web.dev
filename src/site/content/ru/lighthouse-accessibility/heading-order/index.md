@@ -54,5 +54,5 @@ web_lighthouse:
 
 ## Ресурсы
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener">Исходный код аудита <strong>Headings skip levels</strong></a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener">Исходный код аудита <strong>Headings skip levels</strong></a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">Уровни заголовков должны увеличиваться только на единицу (Deque University)</a>

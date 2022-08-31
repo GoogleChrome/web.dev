@@ -46,5 +46,5 @@ For example:
 
 ## Resources
 
-- [Source code for **Definition list items are not wrapped in `<dl>` elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/dlitem.js)
+- [Source code for **Definition list items are not wrapped in `<dl>` elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/dlitem.js)
 - [`<dt>` and `<dd>` elements must be contained by a `<dl>` (Deque University)](https://dequeuniversity.com/rules/axe/3.1/dlitem)

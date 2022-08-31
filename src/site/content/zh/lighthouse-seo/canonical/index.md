@@ -83,7 +83,7 @@ Link: https://example.com; rel=canonical
 
 ## 资源
 
-- 文档的[源代码**没有有效的 `rel=canonical`** 审计](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/canonical.js)
+- 文档的[源代码**没有有效的 `rel=canonical`** 审计](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/canonical.js)
 - [rel=canonical 的 5 个常见错误](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
 - [合并重复的 URL](https://support.google.com/webmasters/answer/139066)
 - [阻止对参数化重复内容的抓取](https://support.google.com/webmasters/answer/6080548)

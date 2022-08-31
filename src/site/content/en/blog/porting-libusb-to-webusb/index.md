@@ -366,7 +366,7 @@ What it does is:
 
 As the comment mentions, this approach was not optimal, because it kept saving-restoring the entire call stack with Asyncify even when there were no USB events to handle yet (which is most of the time), and because `setTimeout()` itself has a minimal duration of 4ms in modern browsers. Still, it worked well enough to produce 13-14 FPS livestream from DSLR in the proof-of-concept.
 
-Later, I decided to improve it by leveraging the browser event system. There are several ways in which this implementation could be improved further, but for now I've chosen to emit custom events directly on the global object, without associating them with a particular libusb data structure. I've done so via the following wait and notify mechanism based on the [`EM_ASYNC_JS` macro](/emscripten-embedding-js-snippets/#em_async_js-macro):
+Later, I decided to improve it by leveraging the browser event system. There are several ways in which this implementation could be improved further, but for now I've chosen to emit custom events directly on the global object, without associating them with a particular libusb data structure. I've done so via the following wait and notify mechanism based on the [`EM_ASYNC_JS` macro](/emscripten-embedding-js-snippets/#emasyncjs-macro):
 
 ```js
 EM_JS(void, em_libusb_notify, (void), {

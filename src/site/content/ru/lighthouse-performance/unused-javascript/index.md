@@ -68,7 +68,7 @@ date: 2020-07-07
 
 ## Ресурсы
 
-- [Исходный код для проверки **Remove unused code** (Удалите неиспользуемый код)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-javascript.js).
+- [Исходный код для проверки **Remove unused code** (Удалите неиспользуемый код)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-javascript.js).
 - [Удалите неиспользуемый код](/remove-unused-code/).
 - [Добавление интерактивности с помощью JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/).
 - [Разделение кода](https://bundlers.tooling.report/code-splitting/).

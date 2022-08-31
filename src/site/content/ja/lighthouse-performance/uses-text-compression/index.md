@@ -80,4 +80,4 @@ Gzipのページ圧縮設定を有効にします (**System** (システム) &gt
 
 ## リソース
 
-- [**Enable text compression (テキストの圧縮を有効にする)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [**Enable text compression (テキストの圧縮を有効にする)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-text-compression.js)

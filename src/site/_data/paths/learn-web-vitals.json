@@ -26,7 +26,8 @@
             "pathItems": [
                 "vitals-measurement-getting-started",
                 "vitals-tools",
-                "vitals-field-measurement-best-practices"
+                "vitals-field-measurement-best-practices",
+                "crux-and-rum-differences"
             ]
         },
         {

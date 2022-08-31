@@ -79,7 +79,7 @@ page for more details about these tips.
 
 ## Resources
 
-- [Source code for **Document has a `<title>` element** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/document-title.js)
+- [Source code for **Document has a `<title>` element** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/document-title.js)
 - [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624)
 - [Documents must contain a title element to aid in navigation (Deque University)](https://dequeuniversity.com/rules/axe/3.2/document-title)
 - [Irrelevant keywords](https://support.google.com/webmasters/answer/66358)

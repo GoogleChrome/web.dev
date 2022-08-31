@@ -36,5 +36,5 @@ Lighthouseはテキストコンテンツまたは`aria-label`プロパティが�
 
 ## リソース
 
-- [**ボタンにアクセス可能な名前がない**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js)
+- [**ボタンにアクセス可能な名前がない**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/button-name.js)
 - [Buttons must have discernible text（Deque University）](https://dequeuniversity.com/rules/axe/3.3/button-name)（ボタンには識別可能なテキストが必要です）

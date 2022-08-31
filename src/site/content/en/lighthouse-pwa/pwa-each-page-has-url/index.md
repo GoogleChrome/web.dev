@@ -25,4 +25,4 @@ to make them easily shareable on social media.
 
 ## Resources
 
-[Source code for **Each page has a URL** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/manual/pwa-each-page-has-url.js)
+[Source code for **Each page has a URL** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/manual/pwa-each-page-has-url.js)

@@ -322,7 +322,7 @@ the fold and during load, but this is only a subset of what CLS actually
 measures.
 
 In the field, CLS considers all [unexpected layout
-shifts](/cls/#expected-vs.-unexpected-layout-shifts) that occur throughout the
+shifts](/cls/#expected-vs-unexpected-layout-shifts) that occur throughout the
 lifespan of the page, including content that shifts as the user scrolls or in
 response to slow network requests after user interaction.
 

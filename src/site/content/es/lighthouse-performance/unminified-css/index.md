@@ -76,6 +76,6 @@ Varios [complementos](https://wordpress.org/plugins/search/minify+css/) de WordP
 
 ## Recursos
 
-- [Código fuente para la auditoría **Minificar CSS**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-css.js)
+- [Código fuente para la auditoría **Minificar CSS**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unminified-css.js)
 - [Minificar CSS](/minify-css)
 - [Minifique y comprima las cargas útiles de la red](/reduce-network-payloads-using-text-compression)

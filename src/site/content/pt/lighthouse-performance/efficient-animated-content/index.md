@@ -65,6 +65,6 @@ Para conteúdo animado, use [`amp-anim`](https://amp.dev/documentation/component
 
 ## Recursos
 
-- [Código-fonte para a auditoria **Use formatos de vídeo conteúdo animado**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/efficient-animated-content.js)
+- [Código-fonte para a auditoria **Use formatos de vídeo conteúdo animado**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/efficient-animated-content.js)
 - [Substitua GIFs animados por vídeo para carregamentos de página mais rápidos](/replace-gifs-with-videos)
 - [Codelab Substitua GIFs por vídeo](/codelab-replace-gifs-with-video)

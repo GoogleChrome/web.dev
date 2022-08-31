@@ -148,7 +148,7 @@ with full page loads in an MPA. This can also lead to confusion because layout
 shifts that occur after a route transition will be attributed to the URL of the
 page when it was loaded, not the URL in the address bar at the time of the shift
 ([more details
-below](#if-core-web-vitals-scores-are-only-reported-for-an-spa's-landing-pages-how-can-i-debug-issues-that-occur-on-"pages"-after-a-route-transition)).
+below](#if-core-web-vitals-scores-are-only-reported-for-an-spa's-landing-pages-how-can-i-debug-issues-that-occur-on-pages-after-a-route-transition)).
 
 ### If SPA architectures improve the user experience, shouldn't that improvement be reflected in the metrics?
 

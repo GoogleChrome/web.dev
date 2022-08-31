@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-08-17
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it.
@@ -14,12 +14,6 @@ tags:
   - metrics
   - web-vitals
 ---
-
-{% Aside 'caution' %}
-  **Jun 1, 2021:** The implementation of CLS has changed.
-  To learn more about the reasons behind the change, check out [Evolving the
-  CLS metric](/evolving-cls).
-{% endAside %}
 
 {% Aside 'key-term' %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
@@ -75,7 +69,7 @@ measuring how often it's occurring for real users.
 ## What is CLS?
 
 CLS is a measure of the largest burst of _layout shift scores_ for every
-[unexpected](/cls/#expected-vs.-unexpected-layout-shifts) layout shift that
+[unexpected](/cls/#expected-vs-unexpected-layout-shifts) layout shift that
 occurs during the entire lifespan of a page.
 
 A _layout shift_ occurs any time a visible element changes its position from one
@@ -411,7 +405,10 @@ the metric is calculated.
   cache](/bfcache/#impact-on-core-web-vitals), its CLS value should be reset to
   zero since users experience this as a distinct page visit.
 - The API does not report `layout-shift` entries for shifts that occur within
-  iframes, but to properly measure CLS you should consider them. Sub-frames can
+  iframes but the metric does as they are part of the user experience of the
+  page. This can
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure CLS you should consider them. Sub-frames can
   use the API to report their `layout-shift` entries to the parent frame for
   [aggregation](https://github.com/WICG/layout-instability#cumulative-scores).
 
@@ -443,7 +440,7 @@ getCLS(console.log);
 ```
 
 You can refer to [the source code for
-`getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)
+`getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)
 for a complete example of how to measure CLS in JavaScript.
 
 {% Aside %}

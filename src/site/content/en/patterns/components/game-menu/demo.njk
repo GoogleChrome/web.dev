@@ -19,38 +19,9 @@ patternId: components/game-menu
       <li><button>Quit</button></li>
     </ul>
 
-    <script type="module">
-      import {rovingIndex} from 'https://cdn.skypack.dev/roving-ux'
-
-      const menu = document.querySelector('.threeD-button-set')
-      const menuRect = menu.getBoundingClientRect()
-
-      const { matches:motionOK } = window.matchMedia(
-        '(prefers-reduced-motion: no-preference)'
-      )
-
-      rovingIndex({
-        element: document.querySelector('.threeD-button-set'),
-        target: 'button',
-      })
-
-      if (motionOK) {
-        window.addEventListener('mousemove', ({target, clientX, clientY}) => {
-          const {dx,dy} = getAngles(clientX, clientY)
-
-          menu.style.setProperty('--x', `${dy / 20}deg`)
-          menu.style.setProperty('--y', `${dx / 20}deg`)
-        })
-      }
-
-      const getAngles = (clientX, clientY) => {
-        const { x, y, width, height } = menuRect
-
-        const dx = clientX - (x + 0.5 * width)
-        const dy = clientY - (y + 0.5 * height)
-
-        return {dx,dy}
-      }
-    </script>
+    {% set script %}
+      (()=>{var r=new Map,g=({element:e,target:t})=>{let n=e.querySelectorAll(t||":scope *"),s=n[0];e.tabIndex=-1,n.forEach(o=>o.tabIndex=-1),s.tabIndex=0,r.set(e,{targets:n,active:s,index:0});let d=o=>{r.get("last_rover")!=e&&(i(e,r.get(e).active),r.set("last_rover",e))};e.addEventListener("focusin",d);let a=o=>{switch(o.keyCode){case 39:case 40:o.preventDefault(),x(e);break;case 37:case 38:o.preventDefault(),u(e)}};e.addEventListener("keydown",a);let c=o=>{e.removeEventListener("focusin",d),e.removeEventListener("keydown",a),e.removeEventListener("DOMNodeRemoved",c),r.delete(e),n.forEach(m=>m.tabIndex="")};e.addEventListener("DOMNodeRemovedFromDocument",c)},x=e=>{let t=r.get(e);t.index+=1,t.index>t.targets.length-1&&(t.index=t.targets.length-1);let n=t.targets[t.index];n&&i(e,n)},u=e=>{let t=r.get(e);t.index-=1,t.index<1&&(t.index=0);let n=t.targets[t.index];n&&i(e,n)},i=(e,t)=>{let n=r.get(e);n.active.tabIndex=-1,n.active=t,n.active.tabIndex=0,n.active.focus()};g({element:document.querySelector(".threeD-button-set"),target:"button"});var v=document.querySelector(".threeD-button-set"),l=v.getBoundingClientRect(),{matches:p}=window.matchMedia("(prefers-reduced-motion: no-preference)");p&&window.addEventListener("mousemove",({target:e,clientX:t,clientY:n})=>{let{dx:s,dy:d}=y(t,n);v.style.setProperty("--x",`${d/20}deg`),v.style.setProperty("--y",`${s/20}deg`)});var y=(e,t)=>{let{x:n,y:s,width:d,height:a}=l,c=e-(n+.5*d),o=t-(s+.5*a);return{dx:c,dy:o}};})();
+    {% endset %}
+    <script type="module">{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

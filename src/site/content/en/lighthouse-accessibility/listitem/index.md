@@ -12,7 +12,7 @@ web_lighthouse:
 
 Screen readers and other assistive technologies
 require list items (`<li>`) to be contained
-within parent `<ul>` or `<ol>` to be announced properly.
+within parent `<ul>`, `<ol>`, or `<menu>` to be announced properly.
 
 When assistive technologies come to a list,
 they notify users how many items are within the list.
@@ -22,7 +22,7 @@ assistive technologies can't set user expectations correctly.
 ## How this Lighthouse audit fails
 
 Lighthouse flags list items (`<li>`) that aren't contained
-in `<ul>` or `<ol>` parent elements:
+in `<ul>`, `<ol>`, or `<menu>` parent elements:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t0eKD6m7y03inCQUuyUx.png", alt="Lighthouse audit showing list item isn't contained within a parent list", width="800", height="206" %}
@@ -32,9 +32,9 @@ in `<ul>` or `<ol>` parent elements:
 
 ## How to fix orphaned list items
 
-Wrap any orphaned `<li>` elements inside a `<ul>` or `<ol>` element.
+Wrap any orphaned `<li>` elements inside a `<ul>`, `<ol>`, or `<menu>` element.
 
 ## Resources
 
-- [Source code for **List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/listitem.js)
-- [`<li>` elements must be contained in a `<ul>` or `<ol>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/listitem)
+- [Lighthouse audit source code](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/listitem.js) for **List items (`<li>`) are not contained within `<ul>`, `<ol>` or `<menu>` parent elements**
+- [`<li>` elements must be contained in a `<ul>` or `<ol>`](https://dequeuniversity.com/rules/axe/3.3/listitem), Deque University

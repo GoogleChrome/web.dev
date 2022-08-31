@@ -44,4 +44,4 @@ JavaScriptの実行に2秒以上かかると、[Lighthouseは警告を表示し�
 
 ## リソース
 
-[**Reduce JavaScript execution time (JavaScriptの実行時間を短縮する)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[**Reduce JavaScript execution time (JavaScriptの実行時間を短縮する)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/bootup-time.js)

@@ -40,5 +40,5 @@ Quando a caixa de seleção é marcada corretamente, as tecnologias assistivas r
 
 ## Recursos
 
-- [O código-fonte para a auditoria **elementos de formulário não tem rótulos associados**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js)
+- [O código-fonte para a auditoria **elementos de formulário não tem rótulos associados**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/label.js)
 - [Os elementos do formulário `<input>` devem ter rótulos (Deque University)](https://dequeuniversity.com/rules/axe/3.3/label)

@@ -35,4 +35,4 @@ Consulte el documento [Agregar una pantalla de presentación para las aplicacion
 
 ## Recursos
 
-[El código fuente de la auditoría **No está configurada para una pantalla de presentación personalizada**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/splash-screen.js)
+[El código fuente de la auditoría **No está configurada para una pantalla de presentación personalizada**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/splash-screen.js)

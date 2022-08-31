@@ -375,7 +375,7 @@ for the most part, Google Search is a traditional web app that uses "real"
 navigations. This comes into play when the team decided that it would be
 effective to use two options that accelerate the service worker update
 lifecycle:
-[`clients.claim()`](/service-worker-lifecycle/#clients.claim)
+[`clients.claim()`](/service-worker-lifecycle/#clientsclaim)
 and
 [`skipWaiting()`](/service-worker-lifecycle/#skip-the-waiting-phase).
 Clicking around Google Search's interface generally ends up navigating to new

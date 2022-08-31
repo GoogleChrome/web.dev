@@ -38,7 +38,7 @@ process, and hides all the complexity from our applications within the new
 framing layer. As a result, all existing applications can be delivered without
 modification.
 
-## Why not HTTP/1.2?\_
+## Why not HTTP/1.2?
 
 To achieve the performance goals set by the HTTP Working Group, HTTP/2
 introduces a new binary framing layer that is not backward compatible with

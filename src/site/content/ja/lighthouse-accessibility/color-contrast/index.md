@@ -60,6 +60,6 @@ Lighthouse は <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" rel="noo
 
 ## リソース
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/color-contrast.js" rel="noopener"><strong>Background and foreground colors do not have a sufficient contrast ratio (背景色と前景色のコントラスト比が不十分である)</strong></a> 監査のソースコード
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/color-contrast.js" rel="noopener"><strong>Background and foreground colors do not have a sufficient contrast ratio (背景色と前景色のコントラスト比が不十分である)</strong></a> 監査のソースコード
 - <a href="https://dequeuniversity.com/rules/axe/3.3/color-contrast" rel="noopener">Text elements must have sufficient color contrast against the background (テキスト要素は、背景に対する十分なカラーコントラストが必要である) (Deque University)</a>
 - <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Colour Contrast Analyser (カラーコントラストアナライザー)</a>

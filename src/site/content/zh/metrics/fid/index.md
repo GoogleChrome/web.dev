@@ -160,7 +160,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-您可以参考[`getFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
+您可以参考[`getFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），FID 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 

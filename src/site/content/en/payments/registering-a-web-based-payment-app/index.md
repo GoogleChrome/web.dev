@@ -31,7 +31,7 @@ declaratively with a web app manifest or imperatively with JavaScript.
 ## Configuring a payment app with a web app manifest
 
 To configure your web-based payment app declaratively, [serve a web app
-manifest](/setting-up-a-payment-method/#step-3:-serve-a-web-app-manifest).
+manifest](/setting-up-a-payment-method/#step-3-serve-a-web-app-manifest).
 
 The following properties in the web app manifest are relevant for web-based payment apps:
 * `name`
@@ -42,7 +42,7 @@ The following properties in the web app manifest are relevant for web-based paym
     * `use_cache`
 
 Check out [Setting up a payment
-method](/setting-up-a-payment-method/#step-3:-serve-a-web-app-manifest)
+method](/setting-up-a-payment-method/#step-3-serve-a-web-app-manifest)
 to make sure your payment method manifest points to your web app manifest
 properly.
 
@@ -56,7 +56,7 @@ registration*.
 {% endAside %}
 
 The JIT registration requires only serving [the web app
-manifest](/setting-up-a-payment-method/#step-3:-serve-a-web-app-manifest)
+manifest](/setting-up-a-payment-method/#step-3-serve-a-web-app-manifest)
 and no additional coding. If you've already configured your web app manifest and
 are serving it properly, you should be all set. The browser will handle the
 rest.
@@ -206,7 +206,7 @@ contains details about the instrument.
 
 {% Aside %}
 Chrome ignores the `name` and `icons` properties. It respects the [web app
-manifest](/setting-up-a-payment-method/#step-3:-serve-a-web-app-manifest)'s
+manifest](/setting-up-a-payment-method/#step-3-serve-a-web-app-manifest)'s
 respective properties instead, but other browsers may behave differently.
 {% endAside %}
 

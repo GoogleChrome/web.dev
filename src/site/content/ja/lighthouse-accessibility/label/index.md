@@ -40,5 +40,5 @@ Lighthouse は、ラベルが関連付けられていないフォーム要素に
 
 ## リソース
 
-- [「**フォーム要素にラベルが関連付けられていない**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js)
+- [「**フォーム要素にラベルが関連付けられていない**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/label.js)
 - [Form `<input>` elements must have labels（Deque University）](https://dequeuniversity.com/rules/axe/3.3/label)

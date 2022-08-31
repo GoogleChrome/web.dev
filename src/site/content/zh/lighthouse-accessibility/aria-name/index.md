@@ -121,7 +121,7 @@ tags:
 
 ## 资源
 
-- [**并非所有 ARIA 切换字段都有可访问的名称**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js)
+- [**并非所有 ARIA 切换字段都有可访问的名称**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-toggle-field-name.js)
 - [ARIA 按钮、链接和菜单项必须具有可访问名称（德克大学）](https://dequeuniversity.com/rules/axe/4.1/aria-command-name)
 - [ARIA 输入字段必须具有可访问名称（德克大学）](https://dequeuniversity.com/rules/axe/4.1/aria-input-field-name)
 - [ARIA 仪表必须具有可访问名称（德克大学）](https://dequeuniversity.com/rules/axe/4.1/aria-meter-name)

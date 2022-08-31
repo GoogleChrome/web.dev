@@ -292,6 +292,8 @@ redirects:
     destination: /media-conversion
   - source: /media-eme-basics
     destination: /media-eme
+  - source: /capturing-images
+    destination: /media-capturing-images
 
   # Redirects to https://developer.chrome.com/.
   - source: /browser-flags
@@ -324,10 +326,26 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/handwriting-recognition/
   - source: /virtualkeyboard
     destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
+  - source: /workingoffthegrid
+    destination: https://developer.chrome.com/docs/workbox/service-worker-overview/
 
   # Redirect for Aurora
   - source: /aurora
-    destination: /introducing-aurora
+    destination: https://developer.chrome.com/blog/introducing-aurora/
+  - source: /introducing-aurora
+    destination: https://developer.chrome.com/blog/introducing-aurora/
+  - source: /inp-in-frameworks
+    destination: https://developer.chrome.com/blog/inp-in-frameworks/
+  - source: /script-component
+    destination: https://developer.chrome.com/blog/script-component/
+  - source: /image-component
+    destination: https://developer.chrome.com/blog/image-component/
+  - source: /aurora-resource-inlining
+    destination: https://developer.chrome.com/blog/aurora-resource-inlining/
+  - source: /conformance
+    destination: https://developer.chrome.com/blog/conformance/
+  - source: /tags/aurora-project
+    destination: https://developer.chrome.com/tags/aurora-project/
 
   # Design system
   - source: /design-system/component/action
@@ -348,3 +366,21 @@ redirects:
   # Redirects lazysizes post to the browser-level lazy loading post
   - source: /use-lazysizes-to-lazyload-images
     destination: /browser-level-image-lazy-loading/
+
+  # Redirects an old performance guides to more recent documentation
+  - source: /performance-get-started/
+    destination: /fast/
+  - source: /performance-get-started-graphicalcontent-4/
+    destination: /choose-the-right-image-format/
+  - source: /performance-get-started-httpcaching-6/
+    destination: /http-cache/
+  - source: /performance-get-started-httprequests-5/
+    destination: /optimizing-content-efficiency-eliminate-downloads/
+  - source: /performance-get-started-textcontent-3/
+    destination: /optimizing-content-efficiency-optimize-encoding-and-transfer/
+  - source: /performance-get-started-wrapup-7/
+    destination: /fast/
+
+  # Redirects scrolling performance post to the Intersection Observer post
+  - source: /speed-scrolling/
+    destination: /intersectionobserver/

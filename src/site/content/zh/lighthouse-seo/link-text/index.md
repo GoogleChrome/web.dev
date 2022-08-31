@@ -61,5 +61,5 @@ Lighthouse 标记以下通用链接文本：
 
 ## 资源
 
-- [**链接没有描述性文本**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [**链接没有描述性文本**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [搜索引擎优化 (SEO) 入门指南](https://support.google.com/webmasters/answer/7451184)

@@ -42,7 +42,7 @@ La métrica Cumulative Layout Shift (CLS) lo ayuda a abordar este problema al me
 
 ## ¿Qué es CLS?
 
-CLS es una medida de la ráfaga más grande de las *puntuaciones de cambio* de diseño para cada cambio de diseño [inesperado](/cls/#expected-vs.-unexpected-layout-shifts) que se produce durante toda la vida útil de una página.
+CLS es una medida de la ráfaga más grande de las *puntuaciones de cambio* de diseño para cada cambio de diseño [inesperado](/cls/#expected-vs-unexpected-layout-shifts) que se produce durante toda la vida útil de una página.
 
 Se produce un *cambio de diseño* cada vez que un elemento visible cambia su posición de un fotograma renderizado al siguiente. (Consulte más abajo para obtener más información sobre cómo se calculan las [puntuaciones de cambio de diseño](#layout-shift-score) individuales).
 
@@ -256,7 +256,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-Puede consultar [el código fuente de `getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts) para obtener un ejemplo completo de cómo medir CLS en JavaScript.
+Puede consultar [el código fuente de `getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts) para obtener un ejemplo completo de cómo medir CLS en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir CLS en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) de la biblioteca de `web-vitals` para obtener más información. {% endAside %}
 

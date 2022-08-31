@@ -72,4 +72,4 @@ HTML에 사전 로드 링크를 선언하여 브라우저가 가능한 한 빨�
 
 ## 리소스
 
-- [**주요 요청 사전 로드** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)
+- [**주요 요청 사전 로드** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/uses-rel-preload.js)
