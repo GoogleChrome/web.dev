@@ -86,14 +86,6 @@ The post mentioned above also mentions `:has()`. This new pseudo-class The CSS :
 
 {% BrowserCompat 'css.selectors.has' %}
 
-### The findLast() and findLastIndex() methods
-
-Firefox 104 adds support for the methods [Array.prototype.findLast()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast), 
-[Array.prototype.findLastIndex()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex), 
-[TypedArray.prototype.findLast()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLast), and [TypedArray.prototype.findLastIndex()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLastIndex). These are used to find the value and index (respectively) of the last element in an Array or TypedArray that matches a supplied test function.
-
-{% BrowserCompat 'javascript.builtins.Array.findLast' %}
-
 ### Sanitizer API
 
 Also in Chrome 105 is the [Sanitizer API](https://developer.chrome.com/blog/new-in-chrome-105/#sanitizer-api). This API builds sanitization into the platform to help remove cross-site scripting vulnerabilities. 
@@ -103,6 +95,14 @@ Also in Chrome 105 is the [Sanitizer API](https://developer.chrome.com/blog/new-
 Also in Chrome 105 is the [:modal](https://developer.mozilla.org/docs/Web/CSS/:modal) CSS pseudo-class. This matches an element that is in a state in which it excludes all interaction with elements outside it. For example, a `<dialog>` opened with the `showModal()` API.
 
 {% BrowserCompat 'css.selectors.modal' %}
+
+### The findLast() and findLastIndex() methods
+
+Firefox 104 adds support behind a flag for the methods [Array.prototype.findLast()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast), 
+[Array.prototype.findLastIndex()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex), 
+[TypedArray.prototype.findLast()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLast), and [TypedArray.prototype.findLastIndex()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLastIndex). These are used to find the value and index (respectively) of the last element in an Array or TypedArray that matches a supplied test function.
+
+{% BrowserCompat 'javascript.builtins.Array.findLast' %}
 
 ## Beta browser releases
 
