@@ -383,7 +383,7 @@ experience for your users.
 
 ## Further reading
 
-* [Debug Web Vitals in the Field](/debug-web-vitals-in-the-field/)
+* [Debug performance in the Field](/debug-performance-in-the-field/)
 * [A performance-focused workflow based on Google
   tools](/vitals-tools-workflow/)
 

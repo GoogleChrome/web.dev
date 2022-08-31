@@ -97,7 +97,7 @@ function sendToGoogleAnalytics({name, delta, id, attribution, navigationType}) {
     // Use a non-interaction event to avoid affecting bounce rate.
     nonInteraction: true,
 
-    // See: https://web.dev/debug-web-vitals-in-the-field/
+    // See: https://web.dev/debug-performance-in-the-field/
     [dimensions.WEB_VITALS_DEBUG]: webVitalInfo,
     [dimensions.NAVIGATION_TYPE]: navigationType,
   });

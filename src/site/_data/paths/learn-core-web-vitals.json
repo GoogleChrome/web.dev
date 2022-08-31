@@ -35,7 +35,7 @@
             "pathItems": [
                 "lab-and-field-data-differences",
                 "debug-layout-shifts",
-                "debug-web-vitals-in-the-field"
+                "debug-performance-in-the-field"
             ]
         },
         {

@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Debug Web Vitals in the field
+title: Debug performance in the field
 subhead: |
-  Learn how to attribute your Web Vitals data with debug information
+  Learn how to attribute your performance data with debug information
   to help you identify and fix real-user issues with analytics
 description: |
-  Learn how to attribute your Web Vitals data with debug information
+  Learn how to attribute your performance data with debug information
   to help you identify and fix real-user issues with analytics
 authors:
   - philipwalton
 date: 2021-04-01
-updated: 2022-07-18
+updated: 2022-09-13
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/pOHexwZOflz5RGf6FT4P.jpg
 alt: Laptop screen showing an analytics interface
 tags:
@@ -19,7 +19,7 @@ tags:
   - web-vitals
 ---
 
-Google currently provides two categories of tools to measure and debug Web Vitals:
+Google currently provides two categories of tools to measure and debug performance:
 
 - **Lab tools:** Tools such as Lighthouse, where your page is loaded in a
   simulated environment that can mimic various conditions (for example, a slow
@@ -47,7 +47,7 @@ that only manifest as a result of user interaction such as scrolling or clicking
 buttons on the page.
 
 This raises an important question: **how can you capture debug information for
-the Web Vitals metric data from real users in the field?**
+Core Web Vitals or other performance metrics from real users in the field?**
 
 This post will explain in detail what APIs you can use to collect additional
 debugging information for each of the current Core Web Vitals metrics and give
@@ -87,7 +87,7 @@ interface makes that possible.
 
 The [LayoutShiftAttribution](/debug-layout-shifts/#layoutshiftattribution)
 interface is exposed on each `layout-shift` entry that [Layout Instability
-API](https://wicg.github.io/layout-instability) emmits.
+API](https://wicg.github.io/layout-instability) emits.
 
 For a detailed explanation of both of these interfaces, see [Debug layout
 shifts](/debug-layout-shifts/#layoutshiftattribution). For the purposes of
@@ -118,7 +118,7 @@ every single layout shift that occurs; however, by monitoring all shifts, you
 can keep track of the worst shifts and just report information about those.
 
 The goal isn't to identify and fix every single layout shift that occurs for
-every user, the goal is to identify the shifts that affect the largest number of
+every user; the goal is to identify the shifts that affect the largest number of
 users and thus contribute the most to your page's CLS at the 75th percentile.
 
 Also, you don't need to compute the largest source element every time there's a
@@ -152,7 +152,7 @@ The element contributing the most to CLS for a given page will likely vary from
 user to user, but if you aggregate those elements across all users, you'll be
 able to generate a list of shifting elements affecting the most number of users.
 
-Once you've identified and fixed the root cause of the shifts for those
+After you've identified and fixed the root cause of the shifts for those
 elements, your analytics code will start reporting smaller shifts as the "worst"
 shifts for your pages. Eventually, all reported shifts will be small enough that
 your pages are well within [the "good" threshold of
@@ -190,20 +190,27 @@ This means you cannot make assumptions about which element or set of elements
 will be the most common LCP candidate element for a particular page. You have to
 measure it based on real-user behavior.
 
+{% Aside %}
+For more details on these differences, see: [Why lab and field data can be
+different (and what to do about it)](/lab-and-field-data-differences/)
+{% endAside %}
+
 #### Identify the LCP candidate element
 
 To determine the LCP candidate element in JavaScript you can use the [Largest
 Contentful Paint API](https://wicg.github.io/largest-contentful-paint/), the
 same API you use to determine the LCP time value.
 
-Given a list of `largest-contentful-paint` entries, you can determine the
-current LCP candidate element by looking at the last entry:
+When observing `largest-contentful-paint` entries, you can determine the
+current LCP candidate element by looking at the `element` property of the last entry:
 
 ```js
-function getLCPDebugTarget(entries) {
+new PerformanceObserver((list) => {
+  const entries = list.getEntries();
   const lastEntry = entries[entries.length - 1];
-  return lastEntry.element;
-}
+
+  console.log('LCP element:', lastEntry.element);
+}).observe({type: 'largest-contentful-paint', buffered: true});
 ```
 
 {% Aside 'caution' %}
@@ -220,12 +227,9 @@ Once you know the LCP candidate element, you can send it to your analytics tool
 along with the metric value. As with CLS, this will help you identify which
 elements are most important to optimize first.
 
-Some other metadata that may be useful to capture along with the LCP candidate
-element:
-
-- The image source URL (if the LCP candidate element is an image).
-- The text font family (if the LCP candidate element is text and the page uses
-  web fonts).
+In addition to the LCP candidate element, it may also be useful to measure the
+[LCP sub-part times](/optimize-lcp/#optimal-sub-part-times), which can be useful
+in determining what specific optimization steps are relevant for your site.
 
 ### FID
 
@@ -258,14 +262,18 @@ and parsed, which includes waiting for any synchronous, deferred, or module
 scripts (including all statically imported modules) to load. So you can use the
 timing of that event and compare it to when FID occurred.
 
-The following code takes a `first-input` entry and returns true if the first
-input occurred prior to the end of the `DOMContentLoaded` event:
+The following code observes `first-input` entries and logs whether or not the
+first input occurred prior to the end of the `DOMContentLoaded` event:
 
 ```js
-function wasFIDBeforeDCL(fidEntry) {
+new PerformanceObserver((list) => {
+  const fidEntry = list.getEntries()[0];
   const navEntry = performance.getEntriesByType('navigation')[0];
-  return navEntry && fidEntry.startTime < navEntry.domContentLoadedEventStart;
-}
+  const wasFIDBeforeDCL =
+    fidEntry.startTime < navEntry.domContentLoadedEventStart;
+
+  console.log('FID occurred before DOMContentLoaded:', wasFIDBeforeDCL);
+}).observe({type: 'first-input', buffered: true});
 ```
 
 {% Aside %}
@@ -277,157 +285,175 @@ function wasFIDBeforeDCL(fidEntry) {
   entry for that script.
 {% endAside %}
 
-#### Identify the FID target element
+#### Identify the FID target element and event type
 
-Another potentially useful debug signal is the element that was interacted with.
-While the interaction with the element itself does not contribute to FID
-(remember FID is just the delay portion of the total event latency), knowing
-which elements your users are interacting with may be useful in determining how
-best to improve FID.
+Additional potentially-useful debug signals are the element that was interacted
+with as well as the type of interaction it was (such as `mousedown`, `keydown`,
+`pointerdown`). While the interaction with the element itself does not
+contribute to FID (remember FID is just the delay portion of the total event
+latency), knowing which elements your users are interacting with may be useful
+in determining how best to improve FID.
 
 For example, if the vast majority of your user's first interactions are with a
-particular element, it consider inlining the JavaScript code needed for that
+particular element, consider inlining the JavaScript code needed for that
 element in the HTML, and lazy loading the rest.
 
 To get the element associated with the first input event, you can reference the
 `first-input` entry's `target` property:
 
 ```js
-function getFIDDebugTarget(entries) {
-  return entries[0].target;
+new PerformanceObserver((list) => {
+  const fidEntry = list.getEntries()[0];
+
+  console.log('FID target element:', fidEntry.target);
+  console.log('FID interaction type:', fidEntry.name);
+}).observe({type: 'first-input', buffered: true});
+```
+
+### INP
+
+INP is very similar to FID in that the most useful bits of information to
+capture in the field are:
+
+1. What element was interacted with
+2. Why type of interaction it was
+3. When that interaction took place
+
+Like FID, a major cause of slow interactions is a blocked main thread, which can
+be common while JavaScript is loading. Knowing whether most slow interactions
+occur during page load is helpful in determining what needs to be done to fix
+the problem.
+
+Unlike FID, the INP metric considers the full latency of an
+interaction—including the time it takes to run any registered event listeners as
+well as the time it takes to paint the next frame after all events listeners
+have run. This means that for INP it's even more useful to know which target
+elements tend to result in slow interactions, and what types of interactions
+those are.
+
+Since INP and FID are both based on the Event Timing API, the way you determine
+this information in JavaScript is very similar to the previous example. The
+following code logs the target element and time (relative to `DOMContentLoaded`)
+of the INP entry.
+
+```js
+function logINPDebugInfo(inpEntry) {
+  console.log('INP target element:', inpEntry.target);
+  console.log('INP interaction type:', inpEntry.name);
+
+  const navEntry = performance.getEntriesByType('navigation')[0];
+  const wasINPBeforeDCL =
+    inpEntry.startTime < navEntry.domContentLoadedEventStart;
+
+  console.log('INP occurred before DCL:', wasINPBeforeDCL);
 }
 ```
 
-Some other metadata that may be useful to capture along with the FID target
-element:
-
-- The type of event (such as `mousedown`, `keydown`, `pointerdown`).
-- Any relevant [long task attribution
-  ](https://w3c.github.io/longtasks/#taskattributiontiming)data for the long
-  task that occurred at the same time as the first input (useful if the page
-  loads third-party scripts).
+Note that this code doesn't show how to determine which `event` entry is the INP
+entry, as that logic is more involved. However, the following section explains
+how to get this information using the
+[web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library.
 
 ## Usage with the web-vitals JavaScript library
 
-The sections above offer some suggestions for additional debug info to include
-in the data you send to your analytics tool. Each of the examples includes some
-code that uses one or more performance entries associated with a particular Web
-Vitals metric and returns a DOM element that can be used to help debug issues
-affecting that metric.
+The sections above offer some general suggestions and code examples to capture
+debug info to include in the data you send to your analytics tool.
 
-These examples are designed to work well with the
-[web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library,
-which exposes the list of performance entries on the
-[`Metric`](https://github.com/GoogleChrome/web-vitals#api) object passed to each
-callback function.
+Since version 3, the [web-vitals](https://github.com/GoogleChrome/web-vitals/)
+JavaScript library includes an [attribution
+build](https://github.com/GoogleChrome/web-vitals#attribution-build) that
+surfaces all of this information, and a few [additional
+signals](https://github.com/GoogleChrome/web-vitals#attribution) as well.
 
-If you combine the examples listed above with the `web-vitals` metric functions,
-the end result will look something like this:
+The following code example shows how you could set an additional [event
+parameter](https://support.google.com/analytics/answer/11396839) (or [custom
+dimension](https://support.google.com/analytics/answer/2709828)) containing a
+debug string useful for helping to identify the root cause of performance
+issues.
 
 ```js
-import {getLCP, getFID, getCLS} from 'web-vitals';
+import {onCLS, onFID, onINP, onLCP} from 'web-vitals/attribution';
 
-function getSelector(node, maxLen = 100) {
-  let sel = '';
-  try {
-    while (node && node.nodeType !== 9) {
-      const part = node.id ? '#' + node.id : node.nodeName.toLowerCase() + (
-        (node.className && node.className.length) ?
-        '.' + Array.from(node.classList.values()).join('.') : '');
-      if (sel.length + part.length > maxLen - 1) return sel || part;
-      sel = sel ? part + '>' + sel : part;
-      if (node.id) break;
-      node = node.parentNode;
-    }
-  } catch (err) {
-    // Do nothing...
+function sendToGoogleAnalytics({name, value, id, attribution}) {
+  const eventParams = {
+    metric_value: value,
+    metric_id: id,
   }
-  return sel;
-}
 
-function getLargestLayoutShiftEntry(entries) {
-  return entries.reduce((a, b) => a && a.value > b.value ? a : b);
-}
-
-function getLargestLayoutShiftSource(sources) {
-  return sources.reduce((a, b) => {
-    return a.node && a.previousRect.width * a.previousRect.height >
-        b.previousRect.width * b.previousRect.height ? a : b;
-  });
-}
-
-function wasFIDBeforeDCL(fidEntry) {
-  const navEntry = performance.getEntriesByType('navigation')[0];
-  return navEntry && fidEntry.startTime < navEntry.domContentLoadedEventStart;
-}
-
-function getDebugInfo(name, entries = []) {
-  // In some cases there won't be any entries (e.g. if CLS is 0,
-  // or for LCP after a bfcache restore), so we have to check first.
-  if (entries.length) {
-    if (name === 'LCP') {
-      const lastEntry = entries[entries.length - 1];
-      return {
-        debug_target: getSelector(lastEntry.element),
-        event_time: lastEntry.startTime,
-      };
-    } else if (name === 'FID') {
-      const firstEntry = entries[0];
-      return {
-        debug_target: getSelector(firstEntry.target),
-        debug_event: firstEntry.name,
-        debug_timing: wasFIDBeforeDCL(firstEntry) ? 'pre_dcl' : 'post_dcl',
-        event_time: firstEntry.startTime,
-      };
-    } else if (name === 'CLS') {
-      const largestEntry = getLargestLayoutShiftEntry(entries);
-      if (largestEntry && largestEntry.sources && largestEntry.sources.length) {
-        const largestSource = getLargestLayoutShiftSource(largestEntry.sources);
-        if (largestSource) {
-          return {
-            debug_target: getSelector(largestSource.node),
-            event_time: largestEntry.startTime,
-          };
-        }
-      }
-    }
+  switch (name) {
+    case 'CLS':
+      eventParams.debug_string = attribution.largestShiftTarget;
+      break;
+    case 'LCP':
+      eventParams.debug_string = attribution.element;
+      break;
+    case 'FID':
+    case 'INP':
+      eventParams.debug_string = attribution.eventTarget;
+      break;
   }
-  // Return default/empty params in case there are no entries.
-  return {
-    debug_target: '(not set)',
-  };
+
+  // Assumes the global `gtag()` function exists, see:
+  // https://developers.google.com/analytics/devguides/collection/ga4
+  gtag('event', name, eventParams);
 }
 
-function sendToAnalytics({name, value, entries}) {
-  navigator.sendBeacon('/analytics', JSON.stringify({
-    name,
-    value,
-    ...getDebugInfo(name, entries)
-  });
-}
-
-getLCP(sendToAnalytics);
-getFID(sendToAnalytics);
-getCLS(sendToAnalytics);
+onCLS(sendToGoogleAnalytics);
+onLCP(sendToGoogleAnalytics);
+onFID(sendToGoogleAnalytics);
+onINP(sendToGoogleAnalytics);
 ```
 
-The specific format required to send the data will vary by analytics tool, but
-the above code should be sufficient to get the data needed, regardless of the
-format requirements.
+This code is specific to Google Analytics, but the general idea should easily
+translate to other analytics tools as well.
 
-{% Aside %}
-  The code above also includes a `getSelector()` function (not mentioned in
-  previous sections), which takes a DOM node and returns a CSS selector
-  representing that node and its place in the DOM. It also takes an optional
-  maximum length parameter (defaulting to 100 characters) in the event that your
-  analytics provider has length restrictions on the data you send it.
-{% endAside %}
+This code also just shows how to report on a single debug signal, but it may be
+useful to be able to collect and report on multiple different signals per
+metric. For example, to debug INP you might want to collect the interaction
+type, time, and also the element being interacted with. The `web-vitals`
+attribution build exposes all of this information, as show in the following
+example:
+
+```js
+import {onCLS, onFID, onINP, onLCP} from 'web-vitals/attribution';
+
+function sendToGoogleAnalytics({name, value, id, attribution}) {
+  const eventParams = {
+    metric_value: value,
+    metric_id: id,
+  }
+
+  switch (name) {
+    case 'INP':
+      eventParams.inp_target = attribution.eventTarget;
+      eventParams.inp_type = attribution.eventType;
+      eventParams.inp_time = attribution.eventTime;
+      eventParams.inp_load_state = attribution.loadState;
+      break;
+
+    // Additional metric logic...
+  }
+
+  // Assumes the global `gtag()` function exists, see:
+  // https://developers.google.com/analytics/devguides/collection/ga4
+  gtag('event', name, eventParams);
+}
+
+onCLS(sendToGoogleAnalytics);
+onLCP(sendToGoogleAnalytics);
+onFID(sendToGoogleAnalytics);
+onINP(sendToGoogleAnalytics);
+```
+
+Refer to the [web-vitals attribution
+documentation](https://github.com/GoogleChrome/web-vitals#attribution) for the
+complete list of debug signals exposed.
 
 ## Report and visualize the data
 
-Once you've started collecting debug information along with your Web Vitals
-metrics, the next step is aggregating the data across all your users to start
-looking for patterns and trends.
+Once you've started collecting debug information along with the metric values,
+the next step is aggregating the data across all your users to start looking for
+patterns and trends.
 
 As mentioned above, you don't necessarily need to address every single issue
 your users are encountering, you want to address—especially at first—the issues
@@ -437,8 +463,8 @@ that have the largest negative impact on your Core Web Vitals scores.
 ### The Web Vitals Report tool
 
 If you're using the [Web Vitals
-Report](https://github.com/GoogleChromeLabs/web-vitals-report) tool, it's been
-recently updated to support [reporting on a single debug
+Report](https://github.com/GoogleChromeLabs/web-vitals-report) tool, it allows
+you to additionally report on [a single debug
 dimension](https://github.com/GoogleChromeLabs/web-vitals-report#debug-dimension)
 for each of the Core Web Vitals metrics.
 
@@ -458,14 +484,14 @@ score.
 ## Summary
 
 Hopefully this post has helped outline the specific ways you can use the
-existing performance APIs to get debug information for each of the Core Web
-Vitals metrics based on real-user interactions in the field. While it's focused
-on the Core Web Vitals, the concepts also apply to debugging any performance
-metric that's measurable in JavaScript.
+existing performance APIs and the `web-vitals` library to get debug information
+to help diagnose performance based on real users visits in the field. While this
+guide is focused on the Core Web Vitals, the concepts also apply to debugging
+any performance metric that's measurable in JavaScript.
 
 If you're just getting started measuring performance, and you're already a
 Google Analytics user, the Web Vitals Report tool may be a good place to start
-because it already supports reporting debug information for each of the Core Web
+because it already supports reporting debug information for the Core Web
 Vitals metrics.
 
 If you're an analytics vendor and you're looking to improve your products and
