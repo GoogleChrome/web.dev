@@ -17,7 +17,7 @@ tags:
 
 ## Stable browser releases
 
-In July, [Firefox 104](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/104), [Chrome 104](https://developer.chrome.com/blog/new-in-chrome-104/), and [Chrome 105](https://developer.chrome.com/blog/new-in-chrome-105/) became stable.
+In August, [Firefox 104](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/104), [Chrome 104](https://developer.chrome.com/blog/new-in-chrome-104/), and [Chrome 105](https://developer.chrome.com/blog/new-in-chrome-105/) became stable.
 
 ### Individual transforms
 
