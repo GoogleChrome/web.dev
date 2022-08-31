@@ -92,7 +92,7 @@
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-attrs": "^4.1.4",
     "markdown-it-deflist": "^2.1.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "node-fetch": "^2.6.7",
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.3",
