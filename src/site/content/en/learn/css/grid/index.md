@@ -177,7 +177,7 @@ they will immediately lay out on this grid. You can see this in action in the de
   id: 'NWdbrzr'
 } %}
 
-The [grid overlay in Chrome DevTools ](https://developer.chrome.com/docs/devtools/css/grid/) can help you understand the various parts of the grid.
+The [grid overlay in Chrome DevTools](https://developer.chrome.com/docs/devtools/css/grid/) can help you understand the various parts of the grid.
 
 Open the [demo](https://codepen.io/web-dot-dev/full/NWdbrzr) in Chrome.
 Inspect the element with the grey background, which has an ID of `container`.
