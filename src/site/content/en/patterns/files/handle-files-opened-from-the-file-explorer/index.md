@@ -138,5 +138,5 @@ elem.addEventListener('drop', async (e) => {
 
 ## Further reading
 
-- [Let installed web applications be file handlers](https://web.dev/file-handling/)
-- [The File System Access API: simplifying access to local files](https://web.dev/file-system-access/)
+- [Let installed web applications be file handlers](/file-handling/)
+- [The File System Access API: simplifying access to local files](/file-system-access/)

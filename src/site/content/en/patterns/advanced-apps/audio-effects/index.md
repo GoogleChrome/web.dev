@@ -2,7 +2,7 @@
 layout: pattern
 title: How to add effects to audio
 date: 2022-09-01
-description: |
+description: >
   Learn how to use the Web Audio API to add effects to audio sources.
 ---
 
@@ -62,7 +62,7 @@ Before the availability of the Web Audio API, there was no way to add effects to
 The only audio effects that can be directly controlled are playback and volume.
 
 ```js
-const audio = document.querySelector(‘audio);
+const audio = document.querySelector('audio');
  // Sets audio volume to 50%
 audio.volume = 0.5;
 // Doubles the playback rate.
