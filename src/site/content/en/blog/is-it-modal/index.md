@@ -47,7 +47,7 @@ Consider this demo where you can show a `<dialog>` in either "modal" or "non-mod
 
 When you show the "modal" version, it uses the `::backdrop` provided by the top layer.
 
-{ % aside %}
+{% Aside %}
 [Top layer elements](https://developer.chrome.com/blog/what-is-the-top-layer/) have a styleable backdrop element.
 {% endAside %}
 
@@ -105,7 +105,7 @@ header:modal span {
 
 {% Codepen {
     user: 'web-dot-dev',
-    id: ‘YzLKQGx',
+    id: 'YzLKQGx',
     height: 450,
     tab: 'result'
   }
