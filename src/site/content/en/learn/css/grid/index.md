@@ -177,7 +177,7 @@ they will immediately lay out on this grid. You can see this in action in the de
   id: 'NWdbrzr'
 } %}
 
-The Chrome Grid dev tools can help you to understand the various parts of the grid.
+The [grid overlay in Chrome DevTools ](https://developer.chrome.com/docs/devtools/css/grid/) can help you understand the various parts of the grid.
 
 Open the [demo](https://codepen.io/web-dot-dev/full/NWdbrzr) in Chrome.
 Inspect the element with the grey background, which has an ID of `container`.
@@ -492,7 +492,7 @@ To place your item set the start and end lines of the grid area that it should b
 }
 ```
 
-Chrome DevTools can give you a visual guide to the lines in order to check where your item is placed.
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/css/grid/) can give you a visual guide to the lines in order to check where your item is placed.
 
 The line numbering follows the writing mode and direction of the component.
 In the next demo change the writing mode or direction
@@ -818,4 +818,5 @@ To find out more, take a look at the following resources.
 - [MDN CSS Grid Layout](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Creating a Grid Container](https://www.smashingmagazine.com/2020/01/understanding-css-grid-container/)
+- [Inspect CSS grid in Chrome DevTools](https://developer.chrome.com/docs/devtools/css/grid/)
 - [A comprehensive collection of grid learning material](https://gridbyexample.com/)
