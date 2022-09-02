@@ -96,7 +96,7 @@ Here's what you can do:
 -  Improve focus styling.
 
 {% Aside %}
-`margin-inline-end` and `margin-block-end` are known as [logical properties](/learn/css/box-model/) and an alternative to writing margin-right and margin-bottom. Logical properties are a new way of working with directions and dimensions, one that allows you to control layout through logical, rather than physical mappings. This is especially useful, if you're dealing with websites that are presented in different languages and writing modes, like right-to-left. Have a look at[ "Physical vs. logical properties" on CodePen](https://codepen.io/matuzo/pen/zYWmemQ?editors=1100) for an example.
+`margin-inline-end` and `margin-block-end` are known as [logical properties](/learn/css/logical-properties/) and an alternative to writing `margin-right` and `margin-bottom`. Logical properties are a new way of working with directions and dimensions, one that allows you to control layout through logical, rather than physical mappings. This is especially useful, if you're dealing with websites that are presented in different languages and writing modes, like right-to-left. Have a look at ["Physical vs. logical properties" on CodePen](https://codepen.io/matuzo/pen/zYWmemQ?editors=1100) for an example.
 {% endAside %}
 
 ## Highlight the active page
@@ -576,7 +576,7 @@ ul {
 }
 ```
 
-If you want to animate motion instead, you should consider wrapping the transition property in a[ prefers-reduced-motion](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) media query because animations can trigger[ nausea, dizziness, and headaches](https://alistapart.com/article/accessibility-for-vestibular/) in some users.
+If you want to animate motion instead, you should consider wrapping the transition property in a [prefers-reduced-motion](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) media query because animations can trigger [nausea, dizziness, and headaches](https://alistapart.com/article/accessibility-for-vestibular/) in some users.
 
 ```css
 ul {
