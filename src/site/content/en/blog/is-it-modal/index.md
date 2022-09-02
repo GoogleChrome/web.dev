@@ -8,7 +8,7 @@ description: This handy CSS pseudo-selector gives you a way to select elements t
 date: 2022-09-01
 updated: 2022-09-01
 thumbnail: image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/xyyPgtSNjfzhcOGPn5lG.jpg
-alt: The unveiling of the new Torah display at Trinity International University, photo by Taylor Wilcox.
+alt: Orange sheets of paper lie on a green school board and form a chat bubble with three crumpled papers.
 tags:
   - blog
   - css
@@ -111,5 +111,7 @@ header:modal span {
   }
 %}
 
+_Photo by [Volodymyr Hryshchenko](https://unsplash.com/@lunarts) on [Unsplash](https://unsplash.com/s/photos/dialog)_
+  
 
 
