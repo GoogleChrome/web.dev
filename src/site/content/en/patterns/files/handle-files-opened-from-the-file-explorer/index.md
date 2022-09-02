@@ -8,7 +8,7 @@ description: >
   Learn how to use the File Handling API to register your web app as a file handler to the operating
   system.
 height: 800
-assets:
+static:
   - sw.js
   - assets/manifest.json
   - assets/favicon.png
