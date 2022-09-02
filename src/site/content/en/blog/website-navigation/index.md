@@ -82,7 +82,7 @@ a:where(:hover, :focus) {
   tab: 'result'
 } %}
 
-    <figcaption>View [Step 1: Basic HTML and CSS" on CodePen](https://codepen.io/web-dot-dev/pen/wvjvJrw).</figcaption>
+  <figcaption>View [Step 1: Basic HTML and CSS" on CodePen](https://codepen.io/web-dot-dev/pen/wvjvJrw).</figcaption>
 </figure> 
 
 This works well for most users, no matter how they're accessing the site. The navigation is accessible with a mouse, a keyboard, a touch device, or a screen reader, but there's room for improvement. You can enhance the experience by extending this basic pattern with additional functionality and information.  
@@ -150,7 +150,7 @@ A convenient side effect is that you can use the attribute to select the active 
   tab: 'result'
 } %}
 
-    <figcaption>View [Step 2: Highlight the active page on CodePen](https://codepen.io/web-dot-dev/pen/OJZJpOe).</figcaption>
+  <figcaption>View [Step 2: Highlight the active page on CodePen](https://codepen.io/web-dot-dev/pen/OJZJpOe).</figcaption>
 </figure> 
 
 
@@ -243,7 +243,7 @@ If you validate your HTML and the validation service reports a warning like "The
   tab: 'result'
 } %}
 
-    <figcaption>View [Step 3: Announcing the number of items on CodePen](https://codepen.io/web-dot-dev/pen/bGMGqxd).</figcaption>
+  <figcaption>View [Step 3: Announcing the number of items on CodePen](https://codepen.io/web-dot-dev/pen/bGMGqxd).</figcaption>
 </figure> 
 
 
@@ -266,7 +266,7 @@ If you have a site-wide navigation, a local navigation for the page, and a pagin
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/4gvD6LQ2lyILiWaWmH4K.png", alt="Image showing three landmarks that all say 'navigation'.", width="800", height="457" %}
 
-    <figcaption>The rotor in VoiceOver listing three unlabelled navigation landmarks. </figcaption> 
+  <figcaption>The rotor in VoiceOver listing three unlabelled navigation landmarks. </figcaption> 
 </figure>
 
 To make them distinguishable, you should label them by either using `aria-labelledby` or `aria-label`.
@@ -309,7 +309,7 @@ A concise label is sufficient, don't get too wordy. Omit expressions like "navig
 
 <figure>
     {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/tmDUEwjcXnymsvjIqGSC.png", alt='Landmarks "banner", "main navigation", "main", "page navigation", "select page navigation" and "content information".', width="800", height="457" %}
-    <figcaption>VoiceOver listing the landmarks "banner", "main navigation", "main", "page navigation", "select page navigation" and "content information". </figcaption> 
+  <figcaption>VoiceOver listing the landmarks "banner", "main navigation", "main", "page navigation", "select page navigation" and "content information". </figcaption> 
 </figure>
 
 <figure>
@@ -321,7 +321,7 @@ A concise label is sufficient, don't get too wordy. Omit expressions like "navig
   tab: 'result'
 } %}
 
-    <figcaption>View [Step 4: Adding a landmark on CodePen](https://codepen.io/web-dot-dev/pen/MWGWpqp).</figcaption>
+  <figcaption>View [Step 4: Adding a landmark on CodePen](https://codepen.io/web-dot-dev/pen/MWGWpqp).</figcaption>
 </figure> 
 
 ## Hide the navigation on narrow viewports
@@ -417,7 +417,7 @@ button {
   tab: 'result'
 } %}
 
-    <figcaption>View [Step 5: Adding a burger button on CodePen](https://codepen.io/web-dot-dev/pen/JjvjWaZ).</figcaption>
+  <figcaption>View [Step 5: Adding a burger button on CodePen](https://codepen.io/web-dot-dev/pen/JjvjWaZ).</figcaption>
 </figure> 
 
 ### Hiding the list
@@ -469,7 +469,7 @@ Your navigation should look something like this on narrow viewports.
 
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/fl6W5M221mboQckgvco4.png", alt="The page showing the navigation list and the burger button.", width="800", height="495" %}
-    <figcaption>Both the burger button and the list are placed in the top end corner of the viewport.</figcaption>
+  <figcaption>Both the burger button and the list are placed in the top end corner of the viewport.</figcaption>
 </figure>
 
 The list obviously needs some CSS. We'll move it up to the top end corner, make it fill the whole screen vertically, apply a background-color and a box-shadow.
@@ -555,7 +555,7 @@ It's important to use a property declaration like `visibility: hidden` or `displ
   tab: 'result'
 } %}
 
-    <figcaption>View [Step 6: Hiding the list](https://codepen.io/web-dot-dev/pen/RwywpYO).</figcaption>
+  <figcaption>View [Step 6: Hiding the list](https://codepen.io/web-dot-dev/pen/RwywpYO).</figcaption>
 </figure> 
 
 ### Animating the list
@@ -606,7 +606,7 @@ This makes sure that only people who have no preference for reduced motion will 
   tab: 'result'
 } %}
 
-    <figcaption>View [Step 7: Animating the list on CodePen](https://codepen.io/web-dot-dev/pen/jOxOBeM).</figcaption>
+  <figcaption>View [Step 7: Animating the list on CodePen](https://codepen.io/web-dot-dev/pen/jOxOBeM).</figcaption>
 </figure> 
 
 ## Improve focus styling
@@ -652,7 +652,7 @@ There are different ways of highlighting items when they're focused. Using the `
   tab: 'result'
 } %}
 
-    <figcaption>View [Step 8: Improve focus styles on CodePen](https://codepen.io/web-dot-dev/pen/ExLxWdQ).</figcaption>
+  <figcaption>View [Step 8: Improve focus styles on CodePen](https://codepen.io/web-dot-dev/pen/ExLxWdQ).</figcaption>
 </figure> 
 
 Congratulations! You've built a progressively enhanced, semantically rich, accessible, and mobile friendly main navigation.  
