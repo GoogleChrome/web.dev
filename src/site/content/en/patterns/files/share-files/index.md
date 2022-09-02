@@ -2,6 +2,8 @@
 layout: pattern
 title: How to share files
 date: 2022-08-08
+authors:
+  - pliao
 description: >
   Sharing files across different apps nowadays is a popular operation. To achieve this, use the navigator.share() method of Web Share API.
 height: 800

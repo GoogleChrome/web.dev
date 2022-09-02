@@ -6,6 +6,7 @@ authors:
   - harrytheodoulou
 description: >
   Pasting images into the browser consists of using the read() method of the Async Clipboard API.
+height: 800
 ---
 
 ## The modern way

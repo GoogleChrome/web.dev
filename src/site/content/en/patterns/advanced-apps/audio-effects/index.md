@@ -2,8 +2,11 @@
 layout: pattern
 title: How to add effects to audio
 date: 2022-09-01
+authors:
+  - conwayt
 description: >
   Learn how to use the Web Audio API to add effects to audio sources.
+height: 800
 ---
 
 ## The modern way

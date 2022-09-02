@@ -4,8 +4,9 @@ title: How to paste files
 date: 2022-07-18
 authors:
   - harrytheodoulou
-description: |
+description: >
   Learn how to handle pasted files into the browser.
+height: 800
 ---
 
 Pasting files into the browser consists of using the `paste` event of the `HTMLElement`.

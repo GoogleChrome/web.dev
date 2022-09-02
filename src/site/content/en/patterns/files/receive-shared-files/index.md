@@ -2,9 +2,12 @@
 layout: pattern
 title: How to receive shared files
 date: 2022-09-01
+authors:
+  - pliao
 description: >
   Learn how to receive shared files from other websites in your web app with the Web Share Target
   API.
+height: 800
 ---
 
 ## The modern way

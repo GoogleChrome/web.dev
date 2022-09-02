@@ -2,8 +2,10 @@
 layout: pattern
 title: How to let the user share the website they are on
 date: 2022-07-11
-description: |
+description: >
   Learn how to let the user share the website they are on.
+authors:
+  - thomassteiner
 height: 800
 static:
   - share.svg
