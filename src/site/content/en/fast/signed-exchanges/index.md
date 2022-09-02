@@ -8,7 +8,7 @@ authors:
   - katiehempenius
   - twifkak
 date: 2020-10-14
-updated: 2022-08-03
+updated: 2022-09-02
 hero: image/admin/6ll3P8MYWxvtb1ZjXIzb.jpg
 alt: A pile of envelopes.
 description: |
@@ -246,6 +246,24 @@ a general-purpose tool.
 
 ### General-purpose SXG tooling
 
+#### sxg-rs HTTP server
+
+The [sxg-rs
+http\_server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md)
+acts as a [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) for
+serving SXGs. For requests from SXG crawlers, `http_server` will sign the
+responses from the backend and respond with an SXG. For installation
+instructions, see [the
+README](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md).
+
+#### Web Packager Server
+
+The [Web Packager
+Server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md),
+`webpkgserver`, is an alternative to sxg-rs http\_server, written in Go. For
+instructions on setting up the Web Packager server, see [How to set up signed
+exchanges using Web Packager](/signed-exchanges-webpackager).
+
 #### Web Packager CLI
 
 The [Web Packager CLI](https://github.com/google/webpackager) generates a SXG
@@ -261,17 +279,6 @@ webpackager \
 Once the SXG file has been generated, upload it to your server and serve it with
 the `application/signed-exchange;v=b3` MIME type. In addition, you will need to
 serve the SXG certificate as `application/cert-chain+cbor`.
-
-#### Web Packager Server
-
-The [Web Packager
-Server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md),
-`webpkgserver`, acts as a [reverse
-proxy](https://en.wikipedia.org/wiki/Reverse_proxy) for serving SXGs. Given a
-URL, `webpkgserver` will fetch the URL's contents, package them as an SXG, and
-serve the SXG in response. For instructions on setting up the Web Packager
-server, see [How to set up signed exchanges using Web
-Packager](/signed-exchanges-webpackager).
 
 ### SXG libraries
 
