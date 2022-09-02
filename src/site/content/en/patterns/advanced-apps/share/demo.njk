@@ -7,7 +7,7 @@ patternId: advanced-apps/share
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lorem ipsum</title>
+    <title>How to let the user share the website they are on</title>
     <style>
       :root {
         color-scheme: dark light;
@@ -59,7 +59,7 @@ patternId: advanced-apps/share
     </style>
   </head>
   <body>
-    <h1>Lorem ipsum</h1>
+    <h1>How to let the user share the website they are on</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at libero
       eget ante congue molestie. Integer varius enim leo. Duis est nisi,
@@ -105,8 +105,8 @@ patternId: advanced-apps/share
         }
         const shareURL = new URL('https://twitter.com/intent/tweet');
         const params = new URLSearchParams();
-        params.append('text', encodeURIComponent(text));
-        params.append('url', encodeURIComponent(url));
+        params.append('text', text);
+        params.append('url', url);
         shareURL.search = params;
         window.open(shareURL, '_blank', 'popup,noreferrer,noopener');
       });

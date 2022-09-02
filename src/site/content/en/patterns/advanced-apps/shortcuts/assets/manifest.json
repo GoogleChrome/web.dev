@@ -1,5 +1,6 @@
 {
-  "name": "App Shortcuts PWA",
+  "name": "How to create app shortcuts",
+  "short_name": "App shortcuts",
   "start_url": "../demo.html",
   "icons": [
     {

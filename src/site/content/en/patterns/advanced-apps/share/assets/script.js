@@ -37,8 +37,8 @@ button.addEventListener('click', async () => {
   // (https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/guides/web-intent)
   const shareURL = new URL('https://twitter.com/intent/tweet');
   const params = new URLSearchParams();
-  params.append('text', encodeURIComponent(text));
-  params.append('url', encodeURIComponent(url));
+  params.append('text', text);
+  params.append('url', url);
   shareURL.search = params;
   window.open(shareURL, '_blank', 'popup,noreferrer,noopener');
 });

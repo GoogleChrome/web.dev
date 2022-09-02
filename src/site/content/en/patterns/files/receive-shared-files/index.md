@@ -8,6 +8,11 @@ description: >
   Learn how to receive shared files from other websites in your web app with the Web Share Target
   API.
 height: 800
+static:
+  - sw.js
+  - assets/manifest.json
+  - assets/favicon.png
+  - assets/favicon.svg
 ---
 
 ## The modern way
@@ -62,19 +67,19 @@ Finally, you need to consume the file in the client.
 
 ```js
 window.addEventListener('load', async () => {
-    if (location.search.includes('share-target')) {
-      const keys = await caches.keys();
-      const mediaCache = await caches.open(
-        keys.filter((key) => key.startsWith('media'))[0],
-      );
-      const image = await mediaCache.match('shared-image');
-      if (image) {
-        const blob = await image.blob();
-        await mediaCache.delete('shared-image');
-        // Handle the shared file somehow.
-      }
+  if (location.search.includes('share-target')) {
+    const keys = await caches.keys();
+    const mediaCache = await caches.open(
+      keys.filter((key) => key.startsWith('media'))[0],
+    );
+    const image = await mediaCache.match('shared-image');
+    if (image) {
+      const blob = await image.blob();
+      await mediaCache.delete('shared-image');
+      // Handle the shared file somehow.
     }
-  });
+  }
+});
 ```
 
 ### Browser compatibility
