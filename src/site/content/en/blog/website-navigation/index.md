@@ -58,7 +58,6 @@ body {
 /* Link styling */
 a {
   --text-color: var(--color-shades-dark);
-
   border-block-end: 3px solid var(--border-color, transparent);
   color: var(--text-color);
   display: inline-block;
@@ -97,7 +96,7 @@ Here's what you can do:
 -  Improve focus styling.
 
 {% Aside %}
-**Note**: margin-inline-end and margin-block-end are known as[ logical properties](/learn/css/box-model/) and an alternative to writing margin-right and margin-bottom. Logical properties are a new way of working with directions and dimensions, one that allows you to control layout through logical, rather than physical mappings. This is especially useful, if you're dealing with websites that are presented in different languages and writing modes, like right-to-left. Have a look at[ "Physical vs. logical properties" on CodePen](https://codepen.io/matuzo/pen/zYWmemQ?editors=1100) for an example.
+`margin-inline-end` and `margin-block-end` are known as [logical properties](/learn/css/box-model/) and an alternative to writing margin-right and margin-bottom. Logical properties are a new way of working with directions and dimensions, one that allows you to control layout through logical, rather than physical mappings. This is especially useful, if you're dealing with websites that are presented in different languages and writing modes, like right-to-left. Have a look at[ "Physical vs. logical properties" on CodePen](https://codepen.io/matuzo/pen/zYWmemQ?editors=1100) for an example.
 {% endAside %}
 
 ## Highlight the active page
@@ -108,7 +107,7 @@ To highlight the active page, you can add a class to the corresponding link.
 <a href="/about-us" class="active-page">About us</a>
 ```
 
-The issue with this approach is that it conveys the information which link is active purely visually. A blind screen reader user couldn't tell the difference between the active page and other pages. Fortunately, the[ Advanced Rich Internet Applications (ARIA)](https://www.w3.org/TR/wai-aria/) standard offers a way to communicate this information semantically, as well. Use the [aria-current="page"](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-current) attribute and value instead of a class.  
+The issue with this approach is that it conveys the information which link is active purely visually. A blind screen reader user couldn't tell the difference between the active page and other pages. Fortunately, the [Advanced Rich Internet Applications (ARIA)](https://www.w3.org/TR/wai-aria/) standard offers a way to communicate this information semantically, as well. Use the [aria-current="page"](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-current) attribute and value instead of a class.  
 
 <blockquote>
 `aria-current` (state) indicates the element that represents the current item within a container or set of related elements.  
@@ -220,7 +219,7 @@ Using lists can have many advantages for screen reader users:
 
 On top of that, if the page is presented without CSS, the list shows the links as a coherent group of items instead of just a pile of links. 
 
-A notable detail about VoiceOver in Safari is that you lose all these advantages, when you set list-style: none. This is by design. The WebKit team decided to[ remove list semantics, when a list doesn't look like a list](https://bugs.webkit.org/show_bug.cgi?id=170179). Depending on the complexity of your navigation, this may or may not be an issue. On one hand, the navigation is still usable and it only affects VoiceOver in Safari. VoiceOver with Chrome or Firefox still announces the number of items, as well as other screen readers, like NVDA. On the other hand, the semantic information could be really useful in some situations. To make that decision, you should test the navigation with actual screen reader users and get their feedback. If you decide that you need VoiceOver in Safari to behave like all the other screen readers, you can work around the issue by setting the ARIA list role explicitly on the `<ul>`. This reverts the behaviour to the state before you've removed the list styling. Visually, the list still looks the same.
+A notable detail about VoiceOver in Safari is that you lose all these advantages, when you set list-style: none. This is by design. The WebKit team decided to [remove list semantics, when a list doesn't look like a list](https://bugs.webkit.org/show_bug.cgi?id=170179). Depending on the complexity of your navigation, this may or may not be an issue. On one hand, the navigation is still usable and it only affects VoiceOver in Safari. VoiceOver with Chrome or Firefox still announces the number of items, as well as other screen readers, like NVDA. On the other hand, the semantic information could be really useful in some situations. To make that decision, you should test the navigation with actual screen reader users and get their feedback. If you decide that you need VoiceOver in Safari to behave like all the other screen readers, you can work around the issue by setting the ARIA list role explicitly on the `<ul>`. This reverts the behaviour to the state before you've removed the list styling. Visually, the list still looks the same.
 
 ```html
 <ul role="list">
@@ -252,7 +251,7 @@ If you validate your HTML and the validation service reports a warning like "The
 
 With little effort, you've made great improvements for screen reader users, but there's one more thing you can do. The navigation is semantically still just a list of links and it's hard to tell that this specific list is the main navigation of your website. You can turn this ordinary list into a navigational list by wrapping the `<ul>` in a `<nav>` element.
 
-Using the `<nav>` element has several advantages. Notably, a screen reader announces something like "navigation", when the user interacts with it, and it adds a[ landmark](/headings-and-landmarks/) to the page. Landmarks are special regions on the page, like the `<header>`, `<footer>` or `<main>`, to which a screen reader can jump. Having landmarks on a page can be useful, because it allows screen reader users to access important regions on the page directly without having to interact with the rest of the page. For example, you can jump from landmark to landmark by pressing the D key in NVDA. In Voice Over you can use the rotor to list all landmarks on the page by pressing VO + U.
+Using the `<nav>` element has several advantages. Notably, a screen reader announces something like "navigation", when the user interacts with it, and it adds a [landmark](/headings-and-landmarks/) to the page. Landmarks are special regions on the page, like the `<header>`, `<footer>` or `<main>`, to which a screen reader can jump. Having landmarks on a page can be useful, because it allows screen reader users to access important regions on the page directly without having to interact with the rest of the page. For example, you can jump from landmark to landmark by pressing the D key in NVDA. In Voice Over you can use the rotor to list all landmarks on the page by pressing VO + U.
 
 <figure>
     {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/ietbB6hSonYQR65N7NBG.png", alt="A list of four landmarks: banner, navigation, main, content information.", width="800", height="457" %}
@@ -638,7 +637,7 @@ You can improve that by providing your own styles in your own colors. By using `
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/rLVEARIKPeDR1ahwaxjm.png", alt="Clearly visible dark 2px outline with spacing inside.", width="800", height="496" %}
 </figure>
 
-There are different ways of highlighting items when they're focused. Using the `outline` property is recommended because it doesn't break layout, which could happen with `border`, and it works well with[ high contrast mode on Windows](/color-and-contrast-accessibility/#high-contrast-mode). Properties that don't work well are `background-color` or `box-shadow`, because they might not be displayed at all with custom contrast settings.
+There are different ways of highlighting items when they're focused. Using the `outline` property is recommended because it doesn't break layout, which could happen with `border`, and it works well with [high contrast mode on Windows](/color-and-contrast-accessibility/#high-contrast-mode). Properties that don't work well are `background-color` or `box-shadow`, because they might not be displayed at all with custom contrast settings.
 
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/iAziYKbiDIMw0w1TrEK8.png", alt="A site with a dark background with the focus highlighted in purple.", width="800", height="495" %}
@@ -660,8 +659,8 @@ Congratulations! You've built a progressively enhanced, semantically rich, acces
 
 There's always something that can be improved, for example:
 
--  You could consider[ trapping focus](https://hidde.blog/using-javascript-to-trap-focus-in-an-element/) inside the navigation or making the rest of the page[ inert](https://developer.chrome.com/articles/inert/) on narrow viewports.
--  You can add a[ skip link](/headings-and-landmarks/#bypass-repetitive-content-with-skip-links) at the top of the page to allow keyboard users to skip the navigation.
+-  You could consider [trapping focus](https://hidde.blog/using-javascript-to-trap-focus-in-an-element/) inside the navigation or making the rest of the page [inert](https://developer.chrome.com/articles/inert/) on narrow viewports.
+-  You can add a [skip link](/headings-and-landmarks/#bypass-repetitive-content-with-skip-links) at the top of the page to allow keyboard users to skip the navigation.
 
 If you remember how this article started, with the aim that the solution should "neither be too simple, nor too complicated", that's where we are now. It's possible however to over-engineer a navigation. 
 
@@ -744,7 +743,7 @@ Menus expect a certain DOM structure. `menuitem` must be a direct child item of 
 </ul>
 ```
 
-Savvy users expect certain keyboard shortcuts to work with menus and menubars. Based on the[ ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/), this includes:
+Savvy users expect certain keyboard shortcuts to work with menus and menubars. Based on the [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/), this includes:
 
 -  Enter and Space to select menu items.
 -  Arrow keys in all directions to navigate between items.
