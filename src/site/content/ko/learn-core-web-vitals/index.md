@@ -1,5 +1,5 @@
 ---
 layout: path
 override:tags: []
-pathName: learn-web-vitals
+pathName: learn-core-web-vitals
 ---

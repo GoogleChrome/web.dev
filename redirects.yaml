@@ -384,3 +384,7 @@ redirects:
   # Redirects scrolling performance post to the Intersection Observer post
   - source: /speed-scrolling/
     destination: /intersectionobserver/
+
+  # Redirects /learn-web-vitals/ to /learn-core-web-vitals/ for consistency in terminology
+  - source: /learn-web-vitals/
+    destination: /learn-core-web-vitals/
