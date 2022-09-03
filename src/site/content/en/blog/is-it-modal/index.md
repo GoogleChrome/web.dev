@@ -15,7 +15,7 @@ tags:
   - newly-interoperable
 ---
 {% Aside 'celebration' %}
-This web feature is now available in all three browser engines!
+This web feature is now available in all three major browser engines!
 {% endAside %}
 
 CSS `:modal` is available from Chrome 105. This handy pseudo-selector gives you a way to select elements that are "modal", and to avoid managing classes in JavaScript by providing a way to detect modal elements.
