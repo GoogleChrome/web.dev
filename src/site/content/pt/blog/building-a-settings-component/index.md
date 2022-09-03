@@ -144,7 +144,7 @@ form {
 
 Esta grade tem um valor diferente para `row-gap` (--space-xl) do que `column-gap` de coluna (--space-xxl) para colocar aquele toque personalizado no layout responsivo. Quando as colunas se empilham, queremos uma grande lacuna, mas não tão grande como se estivéssemos em uma tela ampla.
 
-A propriedade `grid-template-columns` usa 3 funções CSS: `repeat()`, `minmax()` e `min()`. [Una Kravets](#) tem um [ótimo post de layout](/one-line-layouts/) sobre isso, chamando-o de [RAM](/one-line-layouts/#07.-ram-(repeat-auto-minmax):-grid-template-columns(auto-fit-minmax(lessbasegreater-1fr))).
+A propriedade `grid-template-columns` usa 3 funções CSS: `repeat()`, `minmax()` e `min()`. [Una Kravets](#) tem um [ótimo post de layout](/one-line-layouts/) sobre isso, chamando-o de [RAM](/one-line-layouts/#07-ram-repeat,-auto,-minmax-grid-template-columnsauto-fit,-minmaxlessbasegreater,-1fr).
 
 Existem 3 adições especiais em nosso layout, se você compará-lo com o de Una:
 
@@ -587,7 +587,7 @@ input[type="checkbox"]::before {
   block-size: var(--thumb-highlight-size);
   clip-path: circle(50%);                     /* circle shape */
   position: absolute;                         /* this is why position relative on parent */
-  top: 50%;                                   /* pop and plop technique (https://web.dev/centering-in-css/#5.-pop-and-plop) */
+  top: 50%;                                   /* pop and plop technique (https://web.dev/centering-in-css/#5-pop-and-plop) */
   left: 50%;
   background: var(--thumb-highlight-color);
   transform-origin: center center;            /* goal is a centered scaling circle */

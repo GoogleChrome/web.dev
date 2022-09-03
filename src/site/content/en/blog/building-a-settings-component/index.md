@@ -192,7 +192,7 @@ want a large gap, but not as large as if we're on a wide screen.
 The `grid-template-columns` property uses 3 CSS functions: `repeat()`, `minmax()` and
 `min()`. [Una Kravets](#) has a [great layout blog
 post](/one-line-layouts/) about this, calling it
-[RAM](/one-line-layouts/#07.-ram-(repeat-auto-minmax):-grid-template-columns(auto-fit-minmax(lessbasegreater-1fr))).
+[RAM](/one-line-layouts/#07-ram-repeat,-auto,-minmax-grid-template-columnsauto-fit,-minmaxlessbasegreater,-1fr).
 
 There's 3 special additions in our layout, if you compare it to Una's:
 
@@ -811,7 +811,7 @@ input[type="checkbox"]::before {
   block-size: var(--thumb-highlight-size);
   clip-path: circle(50%);                     /* circle shape */
   position: absolute;                         /* this is why position relative on parent */
-  top: 50%;                                   /* pop and plop technique (/centering-in-css/#5.-pop-and-plop) */
+  top: 50%;                                   /* pop and plop technique (https://web.dev/centering-in-css/#5-pop-and-plop) */
   left: 50%;
   background: var(--thumb-highlight-color);
   transform-origin: center center;            /* goal is a centered scaling circle */

@@ -116,6 +116,8 @@ WebTransport API 的设计考虑了 Web 开发人员的用例，与使用 WebRTC
 
 试验 WebTransport 的最佳方法是在本地启动兼容的 HTTP/3 服务器。（遗憾的是，目前没有与最新规范兼容的公共参考服务器。）然后，您可以将此页面与[基本 JavaScript 客户端](https://googlechrome.github.io/samples/webtransport/client.html)一起使用来试验客户端/服务器通信。
 
+此外，可以使用 [webtransport.day](https://webtransport.day) 来进行尝试，它是一个由社区维护的 WebTransport echo 服务器。
+
 ## 使用 API
 
 WebTransport 的设计基于现代 Web 平台基本类型（如 [Streams API](https://developer.mozilla.org/docs/Web/API/Streams_API)）。它在很大程度上依赖于 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises)，并且可以很好地与 [<code>async</code> 和 <code>await</code>](https://developer.mozilla.org/docs/Learn/JavaScript/Asynchronous/Async_await) 配合使用。

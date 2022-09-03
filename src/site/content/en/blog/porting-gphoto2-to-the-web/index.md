@@ -16,7 +16,7 @@ tags:
 
 In [the previous post](/porting-libusb-to-webusb/) I showed how the [libusb](https://libusb.info/) library was ported to run on the web with WebAssembly / [Emscripten](https://emscripten.org/), Asyncify, and [WebUSB](/usb/).
 
-I also showed [a demo](/porting-libusb-to-webusb/#first-things-first:-a-demo) built with [gPhoto2](http://gphoto.org/) that can control DSLR and mirrorless cameras over USB from a web application. In this post I'll go deeper into the technical details behind the gPhoto2 port.
+I also showed [a demo](/porting-libusb-to-webusb/#first-things-first-a-demo) built with [gPhoto2](http://gphoto.org/) that can control DSLR and mirrorless cameras over USB from a web application. In this post I'll go deeper into the technical details behind the gPhoto2 port.
 
 ## Pointing build systems to custom forks
 

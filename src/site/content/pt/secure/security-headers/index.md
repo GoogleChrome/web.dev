@@ -184,7 +184,7 @@ Chrome, Firefox, Edge, Safari
 
 {% Aside 'gotchas' %}
 
-- `https:` é um substituto para o Safari e `unsafe-inline` é um substituto para versões de navegador muito antigas. `https:` e `unsafe-inline` não tornam sua política menos segura porque serão ignorados por navegadores que oferecem suporte a `strict-dynamic`. Leia mais em [Adicionar substitutos para oferecer suporte ao Safari e navegadores mais antigos](/strict-csp/#step-4:-add-fallbacks-to-support-safari-and-older-browsers).
+- `https:` é um substituto para o Safari e `unsafe-inline` é um substituto para versões de navegador muito antigas. `https:` e `unsafe-inline` não tornam sua política menos segura porque serão ignorados por navegadores que oferecem suporte a `strict-dynamic`. Leia mais em [Adicionar substitutos para oferecer suporte ao Safari e navegadores mais antigos](/strict-csp/#step-4-add-fallbacks-to-support-safari-and-older-browsers).
 - O Safari ainda *não* suporta `strict-dynamic`. Mas um CSP estrito como nos exemplos acima é mais seguro do que um CSP de lista de permissões (e muito mais seguro do que nenhum CSP) para todos os seus usuários. Mesmo no Safari, um CSP estrito protege seu site de alguns tipos de ataques XSS, porque a presença do CSP não permite certos padrões inseguros.
 
 {% endAside %}
@@ -195,7 +195,7 @@ Veja[mais compatibilidades](https://developer.mozilla.org/docs/Web/HTTP/CSP#brow
 
 - [`frame-ancestors`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) protege seu site contra clickjacking - um risco que surge se você permitir que sites não confiáveis incorporem o seu. Se você preferir uma solução mais simples, pode usar [`X-Frame-Options`](#xfo) para bloquear o carregamento, mas `frame-ancestors` oferecem uma configuração avançada para permitir apenas origens específicas como incorporadores.
 - Você pode ter usado [um CSP para garantir que todos os recursos do seu site sejam carregados por HTTPS](/fixing-mixed-content/#content-security-policy). Isso se tornou menos relevante: hoje em dia, a maioria dos navegadores bloqueia [conteúdo misto](/what-is-mixed-content/).
-- Você também pode definir um CSP no [modo somente relatório](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts).
+- Você também pode definir um CSP no [modo somente relatório](/strict-csp/#step-2-set-a-strict-csp-and-prepare-your-scripts).
 - Se você não pode definir um CSP como um cabeçalho do lado do servidor, você também pode defini-lo como uma metatag. Observe que você não pode usar o **modo somente relatório** para metatags (embora [isso possa mudar](https://github.com/w3c/webappsec-csp/issues/277)).
 
 ### Saber mais

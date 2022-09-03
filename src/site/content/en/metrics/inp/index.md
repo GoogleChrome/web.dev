@@ -58,7 +58,7 @@ An _interaction_ is a group of event handlers that fire during the same logical 
 An interaction's latency consists of the single longest [duration](https://w3c.github.io/event-timing/#ref-for-dom-performanceentry-duration%E2%91%A1:~:text=The%20Event%20Timing%20API%20exposes%20a%20duration%20value%2C%20which%20is%20meant%20to%20be%20the%20time%20from%20when%20user%20interaction%20occurs%20(estimated%20via%20the%20Event%27s%20timeStamp)%20to%20the%20next%20time%20the%20rendering%20of%20the%20Event%27s%20relevant%20global%20object%27s%20associated%20Document%E2%80%99s%20is%20updated) of a group of event handlers that drives the interaction, from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
 
 {% Aside 'important' %}
-For more details on how INP is measured, read the ["What's in an interaction?"](#what's-in-an-interaction) section.
+For more details on how INP is measured, read the ["What's in an interaction?"](#whats-in-an-interaction) section.
 {% endAside %}
 
 ## What's a "good" INP value?

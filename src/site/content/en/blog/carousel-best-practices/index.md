@@ -136,7 +136,7 @@ carousels:
   carousel-related layout shifts. In a non-autoplay carousel these layout shifts
   typically occur within 500ms of a user interaction and [therefore do not count
   towards Cumulative Layout Shift
-  (CLS)](/cls/#expected-vs.-unexpected-layout-shifts). However,
+  (CLS)](/cls/#expected-vs-unexpected-layout-shifts). However,
   for autoplay carousels, not only can these layout shifts potentially count
   towards CLS - but they can also repeat indefinitely. Thus, it is particularly
   important to verify that an autoplay carousel is not a source of layout

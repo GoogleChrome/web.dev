@@ -42,7 +42,7 @@ La métrica Cumulative Layout Shift (CLS) lo ayuda a abordar este problema al me
 
 ## ¿Qué es CLS?
 
-CLS es una medida de la ráfaga más grande de las *puntuaciones de cambio* de diseño para cada cambio de diseño [inesperado](/cls/#expected-vs.-unexpected-layout-shifts) que se produce durante toda la vida útil de una página.
+CLS es una medida de la ráfaga más grande de las *puntuaciones de cambio* de diseño para cada cambio de diseño [inesperado](/cls/#expected-vs-unexpected-layout-shifts) que se produce durante toda la vida útil de una página.
 
 Se produce un *cambio de diseño* cada vez que un elemento visible cambia su posición de un fotograma renderizado al siguiente. (Consulte más abajo para obtener más información sobre cómo se calculan las [puntuaciones de cambio de diseño](#layout-shift-score) individuales).
 

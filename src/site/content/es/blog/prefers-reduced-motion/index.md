@@ -27,7 +27,7 @@ El otro día, estaba patinando sobre hielo con mis hijos. Era un día hermoso, e
 
 Ocasionalmente, puede suceder lo mismo en la web: con anuncios parpadeantes, efectos de paralaje sofisticados, animaciones reveladoras sorprendentes, videos de reproducción automática, etc., *la web a veces puede ser bastante abrumadora*… Afortunadamente, a diferencia de la vida real, hay una solución para eso. La consulta de medios CSS, `prefers-reduced-motion` permite a los desarrolladores crear una variante de una página para los usuarios que, básicamente, prefieren que el movimiento sea reducido. Esto puede abarcar cualquier cosa, desde abstenerse de reproducir videos automáticamente hasta deshabilitar ciertos efectos puramente decorativos, hasta rediseñar completamente una página para ciertos usuarios.
 
-Antes de detallar la función a fondo, demos un paso atrás y pensemos para qué se utilizan las animaciones en la web. Si lo desea, también puede omitir la información general y [pasar directamente a los detalles técnicos](#working_with_the_media_query) a continuación.
+Antes de detallar la función a fondo, demos un paso atrás y pensemos para qué se utilizan las animaciones en la web. Si lo desea, también puede omitir la información general y [pasar directamente a los detalles técnicos](#working-with-the-media-query) a continuación.
 
 ## Animación en la web
 

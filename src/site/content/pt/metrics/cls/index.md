@@ -36,7 +36,7 @@ A métrica Cumulative Layout Shift (CLS) ajuda a resolver esse problema medindo 
 
 ## O que é CLS?
 
-CLS é uma medida da maior explosão de ocorrências de *mudança de layout* para cada mudança de layout [inesperada](/cls/#expected-vs.-unexpected-layout-shifts) que ocorre durante toda a existência de uma página.
+CLS é uma medida da maior explosão de ocorrências de *mudança de layout* para cada mudança de layout [inesperada](/cls/#expected-vs-unexpected-layout-shifts) que ocorre durante toda a existência de uma página.
 
 Uma *mudança de layout* ocorre sempre que um elemento visível muda sua posição de um quadro renderizado para o próximo. (Veja abaixo os detalhes sobre como as [pontuações de mudança de layout](#layout-shift-score) individuais são calculadas.)
 

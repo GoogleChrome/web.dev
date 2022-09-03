@@ -69,7 +69,7 @@ measuring how often it's occurring for real users.
 ## What is CLS?
 
 CLS is a measure of the largest burst of _layout shift scores_ for every
-[unexpected](/cls/#expected-vs.-unexpected-layout-shifts) layout shift that
+[unexpected](/cls/#expected-vs-unexpected-layout-shifts) layout shift that
 occurs during the entire lifespan of a page.
 
 A _layout shift_ occurs any time a visible element changes its position from one
