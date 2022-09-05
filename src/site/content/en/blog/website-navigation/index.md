@@ -5,7 +5,7 @@ subhead: >
   This tutorial describes how to build an accessible main navigation of a website. You learn about semantic HTML, accessibility, and how using ARIA attributes can sometimes do more harm than good.
 description: >
   This tutorial describes how to build an accessible main navigation of a website. You learn about semantic HTML, accessibility, and how using ARIA attributes can sometimes do more harm than good.
-date: 2022-09-02
+date: 2022-09-06
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/tRG45IUUaywMyn4CtTR2.jpg
 alt: A compass.
 authors:
@@ -123,7 +123,7 @@ With the additional attribute, a screen reader now announces something like "cur
 <a href="/about-us" aria-current="page" class="active-page">About us</a>
 ```
 
-A convenient side effect is that you can use the attribute to select the active link in CSS, making the active-page class obsolete.
+A convenient side effect is that you can use the attribute to select the active link in CSS, making the `active-page` class obsolete.
 
 ```html
 <a href="/home">Home</a>
@@ -178,7 +178,7 @@ A nice way of communicating the number of items upfront, is wrapping each link i
 
 When a screen reader user finds the list, their software will announce something like "list, 4 items".  
 
-Here's a demo of the navigation used with the screen readers VoiceOver (VO) on macOs and NVDA on Windows.  
+Here's a demo of the navigation used with the screen reader NVDA on Windows.  
 
 <figure>
 {% Video src="video/kheDArv5csY6rvQUJDbWRscckLr1/vfuNO0UE0xNG4DiKKqQG.mov", autoplay="true", loop="true", controls="true" %}
@@ -215,11 +215,11 @@ Using lists can have many advantages for screen reader users:
 -  They can get the total number of items before they interact with the items.
 -  They may use shortcuts to jump from list item to list item.
 -  They may use shortcuts to jump from list to list.
--  The screen reader may announce the index of the current item (for example "list item, two of four").
+-  The screen reader may announce the index of the current item (for example, "list item, two of four").
 
 On top of that, if the page is presented without CSS, the list shows the links as a coherent group of items instead of just a pile of links. 
 
-A notable detail about VoiceOver in Safari is that you lose all these advantages, when you set list-style: none. This is by design. The WebKit team decided to [remove list semantics, when a list doesn't look like a list](https://bugs.webkit.org/show_bug.cgi?id=170179). Depending on the complexity of your navigation, this may or may not be an issue. On one hand, the navigation is still usable and it only affects VoiceOver in Safari. VoiceOver with Chrome or Firefox still announces the number of items, as well as other screen readers, like NVDA. On the other hand, the semantic information could be really useful in some situations. To make that decision, you should test the navigation with actual screen reader users and get their feedback. If you decide that you need VoiceOver in Safari to behave like all the other screen readers, you can work around the issue by setting the ARIA list role explicitly on the `<ul>`. This reverts the behaviour to the state before you've removed the list styling. Visually, the list still looks the same.
+A notable detail about VoiceOver in Safari is that you lose all these advantages, when you set `list-style: none`. This is by design. The WebKit team decided to [remove list semantics, when a list doesn't look like a list](https://bugs.webkit.org/show_bug.cgi?id=170179). Depending on the complexity of your navigation, this may or may not be an issue. On one hand, the navigation is still usable and it only affects VoiceOver in Safari. VoiceOver with Chrome or Firefox still announces the number of items, as well as other screen readers, like NVDA. On the other hand, the semantic information could be really useful in some situations. To make that decision, you should test the navigation with actual screen reader users and get their feedback. If you decide that you need VoiceOver in Safari to behave like all the other screen readers, you can work around the issue by setting the ARIA list role explicitly on the `<ul>`. This reverts the behaviour to the state before you've removed the list styling. Visually, the list still looks the same.
 
 ```html
 <ul role="list">
@@ -251,7 +251,7 @@ If you validate your HTML and the validation service reports a warning like "The
 
 With little effort, you've made great improvements for screen reader users, but there's one more thing you can do. The navigation is semantically still just a list of links and it's hard to tell that this specific list is the main navigation of your website. You can turn this ordinary list into a navigational list by wrapping the `<ul>` in a `<nav>` element.
 
-Using the `<nav>` element has several advantages. Notably, a screen reader announces something like "navigation", when the user interacts with it, and it adds a [landmark](/headings-and-landmarks/) to the page. Landmarks are special regions on the page, like the `<header>`, `<footer>` or `<main>`, to which a screen reader can jump. Having landmarks on a page can be useful, because it allows screen reader users to access important regions on the page directly without having to interact with the rest of the page. For example, you can jump from landmark to landmark by pressing the D key in NVDA. In Voice Over you can use the rotor to list all landmarks on the page by pressing VO + U.
+Using the `<nav>` element has several advantages. Notably, a screen reader announces something like "navigation", when the user interacts with it, and it adds a [landmark](/headings-and-landmarks/) to the page. Landmarks are special regions on the page, like the `<header>`, `<footer>` or `<main>`, to which a screen reader can jump. Having landmarks on a page can be useful, because it allows screen reader users to access important regions on the page directly without having to interact with the rest of the page. For example, you can jump from landmark to landmark by pressing the **D** key in NVDA. In Voice Over you can use the rotor to list all landmarks on the page by pressing **VO** + **U**.
 
 <figure>
     {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/ietbB6hSonYQR65N7NBG.png", alt="A list of four landmarks: banner, navigation, main, content information.", width="800", height="457" %}
@@ -261,7 +261,7 @@ Using the `<nav>` element has several advantages. Notably, a screen reader annou
 
 In this list you see 4 landmarks: **banner** which is the `<header>` element, **navigation** is the `<nav>`, **main** the `<main>` element, and **content information** is the `<footer>`. This list shouldn't be too long, you really only want to mark critical parts of your UI as landmarks, like the site search, a local navigation, or a pagination.  
 
-If you have a site-wide navigation, a local navigation for the page, and a pagination on a single page, you might also have 3 `<nav>` elements. That's fine, but now there are 3 navigation landmarks and semantically they all look the same. It's hard to tell them apart, unless you know the structure of the page really well.
+If you have a site-wide navigation, a local navigation for the page, and a pagination on a single page, you might also have 3 `<nav>` elements. That's fine, but now there are three navigation landmarks and semantically they all look the same. It's hard to tell them apart, unless you know the structure of the page really well.
 
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/4gvD6LQ2lyILiWaWmH4K.png", alt="Image showing three landmarks that all say 'navigation'.", width="800", height="457" %}
@@ -291,7 +291,7 @@ To make them distinguishable, you should label them by either using `aria-labell
 </nav>
 ```
 
-If the label you've picked already exists somewhere in the page, you can use aria-labelledby instead and reference the existing label using the id attribute.
+If the label you've picked already exists somewhere in the page, you can use `aria-labelledby` instead and reference the existing label using the `id` attribute.
 
 ```html
 <nav aria-labelledby="pagination_heading">
@@ -440,7 +440,7 @@ nav {
 }
 ```
 
-Next, change the layout on narrow viewports by adding a new custom property (—-nav-list-layout). The layout is column by default and switches to row on larger screens.
+Next, change the layout on narrow viewports by adding a new custom property `(—-nav-list-layout)`. The layout is column by default and switches to row on larger screens.
 
 ```css
 @media (min-width: 48em) {
@@ -472,7 +472,7 @@ Your navigation should look something like this on narrow viewports.
   <figcaption>Both the burger button and the list are placed in the top end corner of the viewport.</figcaption>
 </figure>
 
-The list obviously needs some CSS. We'll move it up to the top end corner, make it fill the whole screen vertically, apply a background-color and a box-shadow.
+The list obviously needs some CSS. We'll move it up to the top end corner, make it fill the whole screen vertically, apply a `background-color` and a `box-shadow`.
 
 ```css
 @media (min-width: 48em) {
@@ -544,7 +544,7 @@ ul {
 }
 ```
 
-It's important to use a property declaration like `visibility: hidden` or `display: none` instead of `opacity: 0` or `translateX(100%)` to hide the list. These properties make sure that the links are not focusable when the navigation is hidden. Using opacity or translate will remove content visually so the links would be invisible yet still accessible using the keyboard which would be confusing and frustrating. Using visibility or display hides it visually and makes it inaccessible, therefore hiding it for all users. 
+It's important to use a property declaration like `visibility: hidden` or `display: none` instead of `opacity: 0` or `translateX(100%)` to hide the list. These properties make sure that the links are not focusable when the navigation is hidden. Using `opacity` or `translate` will remove content visually so the links would be invisible yet still accessible using the keyboard which would be confusing and frustrating. Using `visibility` or `display` hides it visually and makes it inaccessible, therefore hiding it for all users. 
 
 <figure>
 {% Codepen {
@@ -560,9 +560,9 @@ It's important to use a property declaration like `visibility: hidden` or `displ
 
 ### Animating the list
 
-If you're wondering why to use `visibility: hidden;` over `display: none;`, it's because you can animate visibility. It only has two states, hidden and visible, but you can combine it with another property like transform or opacity to create a slide- or fade-in effect. That wouldn't work with display: none because the display property is not animatable. 
+If you're wondering why to use `visibility: hidden;` over `display: none;`, it's because you can animate visibility. It only has two states, `hidden` and `visible`, but you can combine it with another property like `transform` or `opacity` to create a slide- or fade-in effect. That wouldn't work with display: none because the display property is not animatable. 
 
-The following CSS transitions opacity to create a fade-in and fade-out effect.
+The following CSS transitions `opacity` to create a fade-in and fade-out effect.
 
 ```css
 ul {
@@ -576,7 +576,7 @@ ul {
 }
 ```
 
-If you want to animate motion instead, you should consider wrapping the transition property in a [prefers-reduced-motion](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) media query because animations can trigger [nausea, dizziness, and headaches](https://alistapart.com/article/accessibility-for-vestibular/) in some users.
+If you want to animate motion instead, you should consider wrapping the `transition` property in a [prefers-reduced-motion](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) media query because animations can trigger [nausea, dizziness, and headaches](https://alistapart.com/article/accessibility-for-vestibular/) in some users.
 
 ```css
 ul {
@@ -611,14 +611,15 @@ This makes sure that only people who have no preference for reduced motion will 
 
 ## Improve focus styling
 
-Keyboard users rely on the focus styles of elements for orientation and navigation on a page. Default focus styles are better than no focus styles (which happens if you set outline: none), but having more clearly visible custom focus styles improves the user experience.  
+Keyboard users rely on the focus styles of elements for orientation and navigation on a page. Default focus styles are better than no focus styles (which happens if you set `outline: none`), but having more clearly visible custom focus styles improves the user experience.  
+
 Here's how the default focus styles on the link look in Chrome 103.
 
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/wcNrqh5i0lVD1zAznxsk.png", alt="A blue 2px outline around a focused link in Chrome 103.", width="800", height="495" %}
 </figure>  
 
-You can improve that by providing your own styles in your own colors. By using `:focus-visible` instead of `:focus` you let the browser decide when it's appropriate to show focus styles. :focus styles will be visible to everyone, mouse, keyboard and touch users, no matter whether they need them or not. With `:focus-visible` the browser uses internal heuristics to decide whether to show them just to keyboard users or to everyone.
+You can improve that by providing your own styles in your own colors. By using `:focus-visible` instead of `:focus` you let the browser decide when it's appropriate to show focus styles. `:focus` styles will be visible to everyone, mouse, keyboard and touch users, no matter whether they need them or not. With `:focus-visible` the browser uses internal heuristics to decide whether to show them just to keyboard users or to everyone.
 
 ```css
 /* Remove the default :focus outline */
@@ -632,6 +633,10 @@ You can improve that by providing your own styles in your own colors. By using `
   outline-offset: 4px;
 }
 ```
+
+### Browser support for `:focus-visible`
+
+{% BrowserCompat 'css.selectors.focus-visible' %}
 
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/rLVEARIKPeDR1ahwaxjm.png", alt="Clearly visible dark 2px outline with spacing inside.", width="800", height="496" %}
@@ -745,15 +750,15 @@ Menus expect a certain DOM structure. `menuitem` must be a direct child item of 
 
 Savvy users expect certain keyboard shortcuts to work with menus and menubars. Based on the [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/), this includes:
 
--  Enter and Space to select menu items.
+-  **Enter** and **Space** to select menu items.
 -  Arrow keys in all directions to navigate between items.
--  The Home and End keys to move focus to the first or last items respectively.
+-  The **Home** and **End** keys to move focus to the first or last items respectively.
 -  a-z to move focus to the next menu item with a label that starts with the typed character.
--  Esc to close the menu.
+-  **Esc** to close the menu.
 
 If a screen reader detects a menu, the software might automatically change the browsing mode, enabling usage of the previously mentioned shortcuts. Inexperienced screen reader users might not be able to use the menu because they don't know these shortcuts or how to use them.  
 
-That's the same for keyboard users who might expect that they can use Shift and Shift + Tab.  
+That's the same for keyboard users who might expect that they can use **Shift** and **Shift** + **Tab**.  
   
 There's a lot to consider when you create menus and menu bars, with whether it's appropriate to use them in the first place leading the way. When you're building a typical website, the nav element with a list and links is all you need. This also includes Single Page Applications (SPA) or web apps. The underlying stack doesn't matter. Unless you're building something that's very close to a desktop application, avoid menu roles.
 
