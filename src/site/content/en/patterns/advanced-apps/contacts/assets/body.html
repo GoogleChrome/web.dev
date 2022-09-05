@@ -16,6 +16,19 @@
   </head>
   <body>
     <h1>How to access contacts from the address book</h1>
+
+    <script src="https://unpkg.com/own-window"></script>
+    <style>
+      own-window {
+        border: dashed red 2px;
+        padding: 0.25rem;
+      }
+    </style>
+    <own-window>
+      <div>This demo needs to run in its own window, not in an iframe.</div>
+      <button type="button">Open in new window</button>
+    </own-window>
+
     <p>Ship your order as a present to a friend.</p>
     <button hidden type="button">Open address book</button>
     <pre></pre>

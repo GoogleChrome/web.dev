@@ -53,6 +53,19 @@ patternId: advanced-apps/shortcuts
   </head>
   <body>
     <h1>How to create app shortcuts</h1>
+
+    <script src="https://unpkg.com/own-window"></script>
+    <style>
+      own-window {
+        border: dashed red 2px;
+        padding: 0.25rem;
+      }
+    </style>
+    <own-window>
+      <div>This demo needs to run in its own window, not in an iframe.</div>
+      <button type="button">Open in new window</button>
+    </own-window>
+
     <ol>
       <li>
         You can drag these <a href="blue.html">blue page</a> or
