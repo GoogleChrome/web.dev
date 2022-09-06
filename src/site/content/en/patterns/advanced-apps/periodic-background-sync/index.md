@@ -5,6 +5,8 @@ date: 2022-09-05
 description: >
   Learn how to use Periodic Background Sync to enable web applications to periodically synchronize
   data in the background.
+authors:
+  - chuijun
 height: 800
 static:
   - sw.js
@@ -92,7 +94,7 @@ way simply consists of updating the data on load.
 
 ## Further reading
 
-- [Richer offline experiences with the Periodic Background Sync API](https://web.dev/i18n/en/periodic-background-sync/)
-- [Web Periodic Background Synchronization API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API)
+- [Richer offline experiences with the Periodic Background Sync API](/i18n/en/periodic-background-sync/)
+- [Web Periodic Background Synchronization API](https://developer.mozilla.org/docs/Web/API/Web_Periodic_Background_Synchronization_API)
 
 ## Demo
