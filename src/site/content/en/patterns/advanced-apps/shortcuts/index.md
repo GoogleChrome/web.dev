@@ -81,4 +81,3 @@ If the app is not installed yet, you can suggest the user to drag some links fro
 - [Get things done quickly with app shortcuts](app-shortcuts/)
 
 ## Demo
-

@@ -120,3 +120,5 @@ const openDirectory = async (mode = "read") => {
 ## Further reading
 
 - [File System Access API](/file-system-access/)
+
+## Demo

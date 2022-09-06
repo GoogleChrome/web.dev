@@ -96,3 +96,5 @@ const saveFile = async (blob, suggestedName) => {
 ## Further reading
 
 - [File System Access API](/file-system-access/)
+
+## Demo

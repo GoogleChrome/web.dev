@@ -115,3 +115,5 @@ const openFileOrFiles = async (multiple = false) => {
 ## Further reading
 
 - [File System Access API](/file-system-access/)
+
+## Demo

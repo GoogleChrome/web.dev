@@ -88,5 +88,7 @@ The Web Share Target API is supported from Chromium 76 on mobile and Chromium 89
 
 ## Further reading
 
-[Receiving shared data with the Web Share Target API](/web-share-target/)
-[W3C Web Share Target API](https://w3c.github.io/web-share-target/)
+- [Receiving shared data with the Web Share Target API](/web-share-target/)
+- [W3C Web Share Target API](https://w3c.github.io/web-share-target/)
+
+## Demo

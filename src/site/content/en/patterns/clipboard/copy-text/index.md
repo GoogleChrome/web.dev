@@ -64,3 +64,5 @@ if ('clipboard' in navigator) {
 
 - [Unblocking clipboard access](/async-clipboard/) (the modern way)
 - [Cut and copy commands](https://developer.chrome.com/blog/cut-and-copy-commands/) (the classic way)
+
+## Demo

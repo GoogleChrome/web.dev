@@ -4,7 +4,7 @@ title: How to create an app badge
 date: 2022-05-18
 authors:
   - thomassteiner
-description: |
+description: >
   Learn how to create an app badge.
 height: 800
 static:

@@ -64,3 +64,5 @@ button.addEventListener('click', async () => {
 ## Further reading
 
 - [Unblocking clipboard access](/async-clipboard/)
+
+## Demo
