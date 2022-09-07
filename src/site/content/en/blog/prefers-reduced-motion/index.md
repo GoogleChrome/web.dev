@@ -197,12 +197,14 @@ display the animated version, else the static version:
   <!-- Animated versions. -->
   <source
     srcset="nyancat.avifs"
+    type="image/avif"
     width="250"
     height="250"
     media="(prefers-reduced-motion: no-preference)"
   />
   <source
     srcset="nyancat.gif"
+    type="image/gif"
     width="250"
     height="250"
     media="(prefers-reduced-motion: no-preference)"
@@ -215,8 +217,8 @@ display the animated version, else the static version:
 You can see the example below. Try toggling your device's motion preferences to see the difference.
 
 <picture>
-  <source srcset="https://storage.googleapis.com/web-dev-uploads/file/8WbTDNrhLsU0El80frMBGE4eMCD3/ZhnJj0x2s7oQ10vydXDy.avifs" width="250" height="250" media="(prefers-reduced-motion: no-preference)">
-  <source srcset="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/5K63Q5tcQ3vLWAJWQfCp.gif" width="250" height="250" media="(prefers-reduced-motion: no-preference)">
+  <source srcset="https://storage.googleapis.com/web-dev-uploads/file/8WbTDNrhLsU0El80frMBGE4eMCD3/ZhnJj0x2s7oQ10vydXDy.avifs" type="image/avif" width="250" height="250" media="(prefers-reduced-motion: no-preference)">
+  <source srcset="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/5K63Q5tcQ3vLWAJWQfCp.gif" type="image/gif" width="250" height="250" media="(prefers-reduced-motion: no-preference)">
   <img src="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/ipZALS4nnkUlleymYJXe.png" alt="Nyan cat" width="250" height="250">
 </picture>
 
