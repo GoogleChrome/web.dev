@@ -5,7 +5,7 @@ subhead: >
   This tutorial describes how to build an accessible main navigation of a website. You learn about semantic HTML, accessibility, and how using ARIA attributes can sometimes do more harm than good.
 description: >
   This tutorial describes how to build an accessible main navigation of a website. You learn about semantic HTML, accessibility, and how using ARIA attributes can sometimes do more harm than good.
-date: 2022-09-06
+date: 2022-09-07
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/tRG45IUUaywMyn4CtTR2.jpg
 alt: A compass.
 authors:
@@ -82,7 +82,7 @@ a:where(:hover, :focus) {
   tab: 'result'
 } %}
 
-  <figcaption>View [Step 1: Basic HTML and CSS" on CodePen](https://codepen.io/web-dot-dev/pen/wvjvJrw).</figcaption>
+  <figcaption>View <a href="https://codepen.io/web-dot-dev/pen/wvjvJrw">Step 1: Basic HTML and CSS" on CodePen</a>.</figcaption>
 </figure> 
 
 This works well for most users, no matter how they're accessing the site. The navigation is accessible with a mouse, a keyboard, a touch device, or a screen reader, but there's room for improvement. You can enhance the experience by extending this basic pattern with additional functionality and information.  
@@ -150,7 +150,7 @@ A convenient side effect is that you can use the attribute to select the active 
   tab: 'result'
 } %}
 
-  <figcaption>View [Step 2: Highlight the active page on CodePen](https://codepen.io/web-dot-dev/pen/OJZJpOe).</figcaption>
+  <figcaption>View <a href="https://codepen.io/web-dot-dev/pen/OJZJpOe">Step 2: Highlight the active page on CodePen</a>.</figcaption>
 </figure> 
 
 
@@ -243,7 +243,7 @@ If you validate your HTML and the validation service reports a warning like "The
   tab: 'result'
 } %}
 
-  <figcaption>View [Step 3: Announcing the number of items on CodePen](https://codepen.io/web-dot-dev/pen/bGMGqxd).</figcaption>
+  <figcaption>View <a href="https://codepen.io/web-dot-dev/pen/bGMGqxd">Step 3: Announcing the number of items on CodePen</a>.</figcaption>
 </figure> 
 
 
@@ -321,7 +321,7 @@ A concise label is sufficient, don't get too wordy. Omit expressions like "navig
   tab: 'result'
 } %}
 
-  <figcaption>View [Step 4: Adding a landmark on CodePen](https://codepen.io/web-dot-dev/pen/MWGWpqp).</figcaption>
+  <figcaption>View <a href="https://codepen.io/web-dot-dev/pen/MWGWpqp">Step 4: Adding a landmark on CodePen</a>.</figcaption>
 </figure> 
 
 ## Hide the navigation on narrow viewports
@@ -417,7 +417,7 @@ button {
   tab: 'result'
 } %}
 
-  <figcaption>View [Step 5: Adding a burger button on CodePen](https://codepen.io/web-dot-dev/pen/JjvjWaZ).</figcaption>
+  <figcaption>View <a href="https://codepen.io/web-dot-dev/pen/JjvjWaZ">Step 5: Adding a burger button on CodePen</a>.</figcaption>
 </figure> 
 
 ### Hiding the list
@@ -555,7 +555,7 @@ It's important to use a property declaration like `visibility: hidden` or `displ
   tab: 'result'
 } %}
 
-  <figcaption>View [Step 6: Hiding the list](https://codepen.io/web-dot-dev/pen/RwywpYO).</figcaption>
+  <figcaption>View <a href="https://codepen.io/web-dot-dev/pen/RwywpYO">Step 6: Hiding the list</a>.</figcaption>
 </figure> 
 
 ### Animating the list
@@ -606,7 +606,7 @@ This makes sure that only people who have no preference for reduced motion will 
   tab: 'result'
 } %}
 
-  <figcaption>View [Step 7: Animating the list on CodePen](https://codepen.io/web-dot-dev/pen/jOxOBeM).</figcaption>
+  <figcaption>View <a href="https://codepen.io/web-dot-dev/pen/jOxOBeM">Step 7: Animating the list on CodePen</a>.</figcaption>
 </figure> 
 
 ## Improve focus styling
@@ -657,7 +657,7 @@ There are different ways of highlighting items when they're focused. Using the `
   tab: 'result'
 } %}
 
-  <figcaption>View [Step 8: Improve focus styles on CodePen](https://codepen.io/web-dot-dev/pen/ExLxWdQ).</figcaption>
+  <figcaption>View <a href="https://codepen.io/web-dot-dev/pen/ExLxWdQ">Step 8: Improve focus styles on CodePen</a>.</figcaption>
 </figure> 
 
 Congratulations! You've built a progressively enhanced, semantically rich, accessible, and mobile friendly main navigation.  
