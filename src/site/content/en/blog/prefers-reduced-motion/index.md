@@ -198,15 +198,11 @@ display the animated version, else the static version:
   <source
     srcset="nyancat.avifs"
     type="image/avif"
-    width="250"
-    height="250"
     media="(prefers-reduced-motion: no-preference)"
   />
   <source
     srcset="nyancat.gif"
     type="image/gif"
-    width="250"
-    height="250"
     media="(prefers-reduced-motion: no-preference)"
   />
   <!-- Static versions. -->
