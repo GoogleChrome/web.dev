@@ -188,18 +188,26 @@ window.matchMedia('(prefers-reduced-motion: reduce)');
 
 ## Working with the media query from `<picture>` contexts
 
-An interesting use case is to make playing of an animated GIF dependent on the `media` attribute. If
-`(prefers-reduced-motion: no-preference)` evaluates to `true`, it's safe to display the GIF, else
-the static PNG:
+An interesting use case is to make playing of an animated AVIF, WebP, or GIF dependent on the `media` attribute. If
+`(prefers-reduced-motion: no-preference)` evaluates to `true`, it's safe to display the animated version, else
+the static version:
 
 ```html
 <picture>
+  <!-- Animated versions. -->
+  <source
+    srcset="nyancat.avifs"
+    width="250"
+    height="250"
+    media="(prefers-reduced-motion: no-preference)"
+  />
   <source
     srcset="nyancat.gif"
     width="250"
     height="250"
     media="(prefers-reduced-motion: no-preference)"
   />
+  <!-- Static versions. -->
   <img src="nyancat.png" alt="Nyan cat" width="250" height="250" />
 </picture>
 ```
@@ -207,6 +215,7 @@ the static PNG:
 You can see the example below. Try toggling your device's motion preferences to see the difference.
 
 <picture>
+  <source srcset="https://storage.googleapis.com/web-dev-uploads/file/8WbTDNrhLsU0El80frMBGE4eMCD3/ZhnJj0x2s7oQ10vydXDy.avifs" width="250" height="250" media="(prefers-reduced-motion: no-preference)">
   <source srcset="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/5K63Q5tcQ3vLWAJWQfCp.gif" width="250" height="250" media="(prefers-reduced-motion: no-preference)">
   <img src="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/ipZALS4nnkUlleymYJXe.png" alt="Nyan cat" width="250" height="250">
 </picture>
