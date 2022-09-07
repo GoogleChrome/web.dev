@@ -188,9 +188,9 @@ window.matchMedia('(prefers-reduced-motion: reduce)');
 
 ## Working with the media query from `<picture>` contexts
 
-An interesting use case is to make playing of an animated AVIF, WebP, or GIF dependent on the `media` attribute. If
-`(prefers-reduced-motion: no-preference)` evaluates to `true`, it's safe to display the animated version, else
-the static version:
+An interesting use case is to make playing of an animated AVIF, WebP, or GIF dependent on the
+`media` attribute. If `(prefers-reduced-motion: no-preference)` evaluates to `true`, it's safe to
+display the animated version, else the static version:
 
 ```html
 <picture>
