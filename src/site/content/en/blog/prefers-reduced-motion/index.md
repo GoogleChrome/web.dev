@@ -8,7 +8,7 @@ authors:
   - thomassteiner
 description: The prefers-reduced-motion media query detects whether the user has requested that the system minimize the amount of animation or motion it uses. This is for users who either require or prefer minimized animations; for example people with vestibular disorders often desire animations to be kept to a minimum.
 date: 2019-03-11
-updated: 2022-02-16
+updated: 2022-09-07
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media-queries
@@ -114,7 +114,7 @@ animation or motion it uses. It can take two possible values:
   interfaces should minimize movement or animation, preferably to the point where all non-essential
   movement is removed.
 
-## Working with the media query
+## Working with the media query from CSS and JavaScript contexts
 
 As with all media queries, `prefers-reduced-motion` can be checked from a CSS context and from a
 JavaScript context.
@@ -181,6 +181,26 @@ window.matchMedia('prefers-reduced-motion: reduce')
 window.matchMedia('(prefers-reduced-motion: reduce)')
 ```
 {% endCompare %}
+
+## Working with the media query from `<picture>` contexts
+
+An interesting use case is to make playing of an animated GIF dependent on the `media` attribute.
+If `(prefers-reduced-motion: no-preference)` evaluates to `true`, it's safe to display the GIF,
+else the static PNG:
+
+```html
+<picture>
+  <source srcset="nyancat.gif" width="250" height="250" media="(prefers-reduced-motion: no-preference)">
+  <img src="nyancat.png" alt="Nyan cat" width="250" height="250">
+</picture>
+```
+
+You can see the example below. Try toggling your device's motion preferences to see the difference.
+
+<picture>
+  <source srcset="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/5K63Q5tcQ3vLWAJWQfCp.gif" width="250" height="250" media="(prefers-reduced-motion: no-preference)">
+  <img src="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/ipZALS4nnkUlleymYJXe.png" alt="Nyan cat" width="250" height="250">
+</picture>
 
 ## Demo
 
