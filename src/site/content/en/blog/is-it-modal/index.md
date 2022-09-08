@@ -107,7 +107,8 @@ header:modal span {
     user: 'web-dot-dev',
     id: 'YzLKQGx',
     height: 450,
-    tab: 'result'
+    tab: 'result',
+    allow: ['fullscreen']
   }
 %}
 
