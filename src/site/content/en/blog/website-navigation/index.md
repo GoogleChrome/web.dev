@@ -107,7 +107,7 @@ To highlight the active page, you can add a class to the corresponding link.
 <a href="/about-us" class="active-page">About us</a>
 ```
 
-The issue with this approach is that it conveys the information which link is active purely visually. A blind screen reader user couldn't tell the difference between the active page and other pages. Fortunately, the [Advanced Rich Internet Applications (ARIA)](https://www.w3.org/TR/wai-aria/) standard offers a way to communicate this information semantically, as well. Use the [aria-current="page"](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-current) attribute and value instead of a class.  
+The issue with this approach is that it conveys the information which link is active purely visually. A blind screen reader user couldn't tell the difference between the active page and other pages. Fortunately, the [Accessible Rich Internet Applications (ARIA)](https://www.w3.org/TR/wai-aria/) standard offers a way to communicate this information semantically, as well. Use the [aria-current="page"](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-current) attribute and value instead of a class.  
 
 <blockquote>
 `aria-current` (state) indicates the element that represents the current item within a container or set of related elements.  
