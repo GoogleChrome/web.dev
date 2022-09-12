@@ -398,8 +398,9 @@ h6 code,
   word-break: break-all;
 }
 
-p code {
-  word-break: break-all;
+p code,
+li code {
+  overflow-wrap: break-word;
 }
 
 /// Sub and sup
