@@ -162,8 +162,8 @@ The best way to measure your website's INP is by gathering metrics from actual u
 
 - [PageSpeed Insights](https://pagespeed.web.dev).
 - [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/).
-  - Via BigQuery in the CrUX dataset's <code style="overflow-wrap: break-word">experimental.interaction_to_next_paint</code> table.
-  - CrUX API via <code style="overflow-wrap: break-word">experimental_interaction_to_next_paint</code>.
+  - Via BigQuery in the CrUX dataset's `experimental.interaction_to_next_paint` table.
+  - CrUX API via `experimental_interaction_to_next_paint`.
   - CrUX Dashboard.
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals).
 
