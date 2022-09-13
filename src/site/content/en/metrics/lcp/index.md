@@ -345,14 +345,14 @@ Rather than memorizing all these subtle differences, developers can use the
 measure LCP, which handles these differences for you (where possible):
 
 ```js
-import {getLCP} from 'web-vitals';
+import {onLCP} from 'web-vitals';
 
 // Measure and log LCP as soon as it's available.
-getLCP(console.log);
+onLCP(console.log);
 ```
 
 You can refer to [the source code for
-`getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts)
+`onLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onLCP.ts)
 for a complete example of how to measure LCP in JavaScript.
 
 {% Aside %}
