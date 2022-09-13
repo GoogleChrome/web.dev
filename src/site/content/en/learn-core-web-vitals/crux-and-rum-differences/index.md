@@ -34,7 +34,7 @@ However, for a deeper dive in investigating _why_ data is showing the numbers it
 
 ### Deeper analysis to investigate issues
 
-CrUX can often be used to point out if you have a problem on your site, but not necessarily exactly where on your site the issue lies nor why. RUM solutions—whether home-grown through [the likes of the web-vitals library](/debug-web-vitals-in-the-field/) or some of the many commercial products—can help bridge that gap.
+CrUX can often be used to point out if you have a problem on your site, but not necessarily exactly where on your site the issue lies nor why. RUM solutions—whether home-grown through [the likes of the web-vitals library](/debug-performance-in-the-field/) or some of the many commercial products—can help bridge that gap.
 
 Using a RUM solution gives you access to much more fine-grained data for all your pages, and on all browsers. It also allows you to slice and dice this data in ways CrUX does not, enabling you to drill down and investigate problem areas of the site. Are they affected by a particular segment of users? Or users who take certain actions? Exactly when did the problem start? These are questions that are much easier to answer with the additional data that a RUM tool can provide.
 
