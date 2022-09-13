@@ -101,10 +101,10 @@ Not all browsers support `PerformanceObserver` or its `buffered` flag. To get th
 The [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) can also measure TTFB in the browser with less complexity:
 
 ```javascript
-import {getTTFB} from 'web-vitals';
+import {onTTFB} from 'web-vitals';
 
 // Measure and log TTFB as soon as it's available.
-getTTFB(console.log);
+onTTFB(console.log);
 ```
 
 ### Measuring resource requests

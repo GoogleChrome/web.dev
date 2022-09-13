@@ -137,14 +137,14 @@ Rather than memorizing all these subtle differences, developers can use the
 measure FCP, which handles these differences for you (where possible):
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // Measure and log FCP as soon as it's available.
-getFCP(console.log);
+onFCP(console.log);
 ```
 
 You can refer to [the source code for
-`getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts)
+`onFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts)
 for a complete example of how to measure FCP in JavaScript.
 
 {% Aside %}

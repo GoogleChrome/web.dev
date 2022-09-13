@@ -399,12 +399,13 @@ follow along with progress on that audit. Until then, one thing developers could
 instances of LCP elements being lazy-loaded is to add more detailed logging to their field data.
 
 ```js
-webVitals.getLCP(lcp => {
-  const latestEntry = lcp.entries[lcp.entries.length - 1];
+new PerformanceObserver((list) => {
+  const latestEntry = list.getEntries().at(-1);
+
   if (latestEntry?.element?.getAttribute('loading') == 'lazy') {
     console.warn('Warning: LCP element was lazy loaded', latestEntry);
   }
-});
+}).observe({type: 'largest-contentful-paint', buffered: true});
 ```
 
 The JavaScript snippet above will evaluate the most recent LCP element and log a warning if it was
