@@ -428,7 +428,7 @@ butDir.addEventListener('click', async () => {
   const promises = [];
   for await (const entry of dirHandle.values()) {
     if (entry.kind !== 'file') {
-      break;
+      continue;
     }
     promises.push(entry.getFile().then((file) => `${file.name} (${file.size})`));
   }
