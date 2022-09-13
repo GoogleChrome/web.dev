@@ -298,8 +298,8 @@ For example, if the vast majority of your user's first interactions are with a
 particular element, consider inlining the JavaScript code needed for that
 element in the HTML, and lazy loading the rest.
 
-To get the element associated with the first input event, you can reference the
-`first-input` entry's `target` property:
+To get the interaction type and element associated with the first input event,
+you can reference the `first-input` entry's `target` and `name` properties:
 
 ```js
 new PerformanceObserver((list) => {

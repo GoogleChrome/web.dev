@@ -389,9 +389,11 @@ redirects:
   - source: /speed-scrolling/
     destination: /intersectionobserver/
 
-  # Redirects /learn-web-vitals/ to /learn-core-web-vitals/ for consistency in terminology
+  # Redirects for outdated usage of "Web Vitals"
   - source: /learn-web-vitals/
     destination: /learn-core-web-vitals/
+  - source: /debug-web-vitals-in-the-field/
+    destination: /debug-performance-in-the-field/
 
    # Redirects for Lighthouse accessibility audits, now deferring to axe docs.
   - source: /accesskeys/
