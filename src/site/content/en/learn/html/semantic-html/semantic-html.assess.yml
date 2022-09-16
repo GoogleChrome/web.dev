@@ -1,0 +1,13 @@
+setLeader: Test your knowledge of semantic HTML.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: 'You should always add role="button" to a <button> element.'
+    options:
+      - content: "False."
+        rationale: "Correct! The <button> element already has this role."
+      - content: "True."
+        rationale: "Try again."

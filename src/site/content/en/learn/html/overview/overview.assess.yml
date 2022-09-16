@@ -1,0 +1,13 @@
+setLeader: Test your knowledge of HTML
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "HTML elements are used for styling."
+    options:
+      - content: "True"
+        rationale: "Try again. CSS, not HTML is used for styling."
+      - content: "False"
+        rationale: "Correct! HTML elements are used to describe what the content is."

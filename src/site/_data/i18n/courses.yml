@@ -79,3 +79,8 @@ learn_pwa:
     en: Learn PWA!
   description:
     en: "A course that breaks down every aspect of modern progressive web app development."
+learn_html:
+  title:
+    en: Learn HTML!
+  description:
+    en: "This HTML course for web developers provides a solid overview for developers, from novice to expert level HTML."

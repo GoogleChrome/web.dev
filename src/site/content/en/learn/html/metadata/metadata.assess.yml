@@ -1,0 +1,15 @@
+setLeader: Test your knowledge of metadata
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: "The refresh pragma directive."
+    options:
+      - content: "Reloads the page."
+        rationale: "Correct!"
+      - content: "Redirects the visitor to another page."
+        rationale: "Try again."
+      - content: "Resets all form fields to their default values."
+        rationale: "Try again."
