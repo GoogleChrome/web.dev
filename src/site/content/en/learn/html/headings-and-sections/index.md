@@ -81,7 +81,7 @@ This is the main header. The `<header>` element isn't always a landmark. It has 
 
 The `<nav>` element identifies content as navigation. As this `<nav>` is nested in the site heading, it is the main navigation for the site. If it was nested in an `<article>` or `<section>`, it would be internal navigation for that section only. By using semantic elements, you built a meaningful accessibility object model, or AOM. The AOM enables the screen reader to inform the user that this section consists of a major navigation block that they can either navigate through or skip. 
 
-Using `</nav>` and `</header>` closing tags removes the need for comments to identify which element each end tag closed. In addition, using different tags for different elements removes the need for `id` and `class` hooks. The CSS selectors can have low [specificity](https://web.dev/learn/css/specificity/); you can probably target the links with `header nav a` without worrying about conflict.
+Using `</nav>` and `</header>` closing tags removes the need for comments to identify which element each end tag closed. In addition, using different tags for different elements removes the need for `id` and `class` hooks. The CSS selectors can have low [specificity](/learn/css/specificity/); you can probably target the links with `header nav a` without worrying about conflict.
 
 You have written a header with very little HTML and no classes or ids. When using semantic HTML, you don't need to. 
 
@@ -147,10 +147,6 @@ If you are creating a blog, you might have a series of articles in `<main>`:
 </body>  
 ```
 
-![image]((ch05)headings--2nw20p2nhny.png)
-
-![image]((ch05)headings--n3uylfkx9up.png)
-
 Here, a `banner` and `contentinfo` are provided through a site `<header>` and `<footer>`.  The new elements added here include `<main>`, `<aside>`, and `<article>`; also, `<h1>` and `<nav>` that you used earlier, and `<section>`, which you haven't used yet.
 
 ### `<main>` 
@@ -184,7 +180,7 @@ Include [https://codepen.io/estelle/pen/NWYVWaN](https://codepen.io/estelle/pen/
 
 You now have enough knowledge to outline MachineLearningWorkshop.com:
 
-## Outlining the `<body>` of MLW.com:
+## Outlining the `<body>` of MLW.com
 
 This is the outline for the visible content of the machine learning workshop site:
 

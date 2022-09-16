@@ -87,7 +87,7 @@ To set the theme color to the blue tone of our site's background color,  include
 
 The theme color meta tag can include a `media` attribute enabling setting different theme colors based on media queries. The `media` attribute can be included in this meta tag only and  is ignored in all other meta tags. 
 
-There are several[ other `name` meta values](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name), but the ones we have discussed are the most common. Except for declaring different `theme-color` values for different media queries, only include one of each meta tag. If you do need to include more than one type of meta tag to support legacy browsers, the legacy values should come after the newer values, as user agents read successive rules until they find a match.
+There are several [other `name` meta values](https://developer.mozilla.org/docs/Web/HTML/Element/meta/name), but the ones we have discussed are the most common. Except for declaring different `theme-color` values for different media queries, only include one of each meta tag. If you do need to include more than one type of meta tag to support legacy browsers, the legacy values should come after the newer values, as user agents read successive rules until they find a match.
 
 ## Open Graph 
 
@@ -166,7 +166,7 @@ If someone is going to save your icon to their tiny device's home screen, you wa
 <meta name="application-name" content="MLW">  
 ```
 
-You've covered several meta tags, all of which will make your header longer. If you're indeed creating a web app-capable, offline-friendly progressive web application, instead of including these two additional meta tags, you can more simply and succinctly include `short_name: ‘MLW` in a webmanifest file. 
+You've covered several meta tags, all of which will make your header longer. If you're indeed creating a web app-capable, offline-friendly progressive web application, instead of including these two additional meta tags, you can more simply and succinctly include `short_name: MLW` in a webmanifest file. 
 
 The manifest file can prevent an unwieldy header full of <link> and <meta> tags. We can create a manifest file, generally called `manifest.webmanifest` or `manifest.json`. We then use the handy <link> tag with a `rel` attribute set to `manifest` and the `href` attribute set to the URL of the manifest file: 
 
@@ -211,7 +211,7 @@ Our HTML now looks something like this:
 </html>  
 ```
 
-It's pretty long, but it's done. It would have been much longer, but you've summed up all the icons, short name, etc. in a[ manifest file](/add-manifest/), enabling you to omit many `<meta>` and `<link>` tags,
+It's pretty long, but it's done. It would have been much longer, but you've summed up all the icons, short name, etc. in a [manifest file](/add-manifest/), enabling you to omit many `<meta>` and `<link>` tags,
 
 Now that your `<head>` is mostly complete, you can dive into some semantic HTML.
 

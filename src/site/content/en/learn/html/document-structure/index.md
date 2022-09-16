@@ -210,7 +210,7 @@ The alternate value is for more than just translations. For example, the `type` 
 <link rel="alternate" type="application/x-pdf" href="[https://machinelearningworkshop.com/mlw.pdf](https://machinelearningworkshop.com/mlw.pdf)">  
 ```
 
- If the `rel` value is `alternate style sheet`, it defines an[ alternate style sheet](https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets) and the `title` attribute must be set giving that alternate style a name. 
+ If the `rel` value is `alternate style sheet`, it defines an [alternate style sheet](https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets) and the `title` attribute must be set giving that alternate style a name. 
 
 #### Canonical
 
@@ -230,7 +230,7 @@ The `<script>` tag is used to include, well, scripts. The default type is JavaSc
 
 The `<script>` tags can be used to encapsulate your code or to download an external file. In MLW, there is no external script file because contrary to popular belief, you don't need JavaScript for a functional website, and, well, this is an HTML learning path, not a JavaScript one.
 
-You will be including a tiny bit of JavaScript to create an[ Easter egg](https://www.webopedia.com/definitions/easter-egg/) later on:
+You will be including a tiny bit of JavaScript to create an [Easter egg](https://www.webopedia.com/definitions/easter-egg/) later on:
 
 ```html  
 <script>  
