@@ -15,7 +15,7 @@ tags:
 As developers, we are often faced with decisions that will affect the entire
 architecture of our applications. One of the core decisions web developers must
 make is where to implement logic and rendering in their application. This can be
-a difficult, since there are a number of different ways to build a website.
+difficult, since there are a number of different ways to build a website.
 
 Our understanding of this space is informed by our work in Chrome talking to
 large sites over the past few years. Broadly speaking, we would encourage
