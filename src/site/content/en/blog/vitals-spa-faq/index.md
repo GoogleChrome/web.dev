@@ -232,8 +232,8 @@ allow you to both debug individual issues that occur throughout the page
 lifecycle as well as aggregate by original page URL in order to match how Google
 tools measure and report on the metrics.
 
-For more details and best practices on this topic, see: [Debug Web Vitals in the
-field](/debug-web-vitals-in-the-field/).
+For more details and best practices on this topic, see: [Debug performance in the
+field](/debug-performance-in-the-field/).
 
 ### What is Google doing to ensure MPAs do not have an unfair advantage compared to SPAs?
 

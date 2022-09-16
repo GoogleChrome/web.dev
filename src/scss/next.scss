@@ -395,11 +395,12 @@ h6 code,
   margin: 0;
   padding: 0;
   white-space: normal;
-  word-break: break-all;
+  overflow-wrap: break-word
 }
 
-p code {
-  word-break: break-all;
+p code,
+li code {
+  overflow-wrap: break-word;
 }
 
 /// Sub and sup
