@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-08-26
+updated: 2022-09-20
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -14,12 +14,14 @@ tags:
 ---
 
 {% Aside %}
-Interaction to Next Paint (INP) is an experimental metric that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
+Interaction to Next Paint (INP) is an experimental metric that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). When an interaction causes a page to become unresponsive, that is a poor user experience. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
 {% endAside %}
 
 Chrome usage data shows that 90% of a user's time on a page is spent _after_ it loads, Thus, careful measurement of responsiveness _throughout_ the page lifecycle is important. This is what the INP metric assesses.
 
-Good responsiveness means that a page responds quickly to interactions made with it. When a page responds to interactions, the changes in the user interface that result are _visual feedback_ provided in the next frame the browser presents. Visual feedback tells us if, for example, an item we've asked to add to an online shopping cart is indeed being added, if a login form's contents are being authenticated by the server, whether a mobile menu has opened, and so on.
+Good responsiveness means that a page responds quickly to interactions made with it. When a page responds to an interaction, the result is _visual feedback_, which is presented by the browser in the next frame the browser presents. Visual feedback tells you if, for example, an item you add to an online shopping cart is indeed being added, whether a mobile navigation menu has opened, if a login form's contents are being authenticated by the server, and so forth.
+
+Some interactions will naturally take longer than others, but for especially complex interactions, it's important to quickly present some initial visual feedback as a cue to the user that something is _happening_.  The time until the next paint is the earliest opportunity to do this. Therefore, the intent of INP is not to merely measure the total time of the interaction, but also the time in which the next paint is being blocked. By delaying visual feedback, you may be giving users the impression that the page is not responding to their actions.
 
 The goal of INP is to ensure the time from when a user initiates an interaction until the next frame is painted is as short as possible, for all or most interactions the user makes.
 
