@@ -168,7 +168,7 @@ Our trivial stylesheet takes ~0.6ms to process and affects eight elements on
 the page&mdash;not much, but once again, not free. However, where did the
 eight elements come from? The CSSOM and DOM are independent data structures!
 Turns out, the browser is hiding an important step. Next, lets talk about the
-[render tree](/web/fundamentals/performance/critical-rendering-path/render-tree-construction)
+[render tree](/critical-rendering-path-render-tree-construction)
 that links the DOM and CSSOM together.
 
 ## Feedback {: #feedback }
