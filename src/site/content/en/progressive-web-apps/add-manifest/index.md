@@ -329,7 +329,7 @@ The `description` property describes the purpose of your app.
 The `screenshots` property is an array of image objects representing your app
 in common usage scenarios. Each object must include the `src`, a `sizes`
 property, and the `type` of image.  The `form_factor` property is optional.
-It can be set either to `"wide"` for screenshots applicable to wide screens
+You can set it either to `"wide"` for screenshots applicable to wide screens
 only or `"narrow"` for narrow screenshots. You should only use it when the
 layout varies by screen size.
 
@@ -340,7 +340,13 @@ In Chrome, the image must respond to certain criteria:
   dimension.
 * All screenshots matching the appropriate form factor must have the same
   aspect ratio.
-* Only JPEG and PNG image formats are supported.
+
+<figure>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/5SlCnibmZHqkXdGVgPZY.jpeg", alt="Screenshots of richer installation UI on desktop and mobile", width="800", height="386" %}
+  <figcaption>
+    Richer installation UI on desktop and mobile.
+  </figcaption>
+</figure>
 
 ## Add the web app manifest to your pages {: #link-manifest }
 
