@@ -131,6 +131,6 @@ updateScreenInfo = () => {
 ## Further reading
 
 - [Managing several displays with the Multi-Screen Window Placement API](/multi-screen-window-placement/)
-- [Screen API](https://developer.mozilla.org/en-US/docs/Web/API/Screen)
+- [Screen API](https://developer.mozilla.org/docs/Web/API/Screen)
 
 [Demo]
