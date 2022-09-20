@@ -183,7 +183,7 @@ Jeremy Keith의 [탄력적인 웹 디자인](https://resilientwebdesign.com/)은
 
 #### 방법
 
-W3C의 [웹 접근성 개론](https://www.w3.org/WAI/fundamentals/accessibility-intro/)은 시작하기에 좋은 곳입니다. 접근성 테스트의 대부분은 수동으로 수행해야 합니다. Lighthouse의 [접근성](https://github.com/dequelabs/axe-core) 감사, [axe](https://accessibilityinsights.io/) 및 [Accessibility Insights](/lighthouse-accessibility/)와 같은 도구를 사용하면 일부 접근성 테스트를 자동화할 수 있습니다.  `a`나 `button`과 같은 요소를 스스로 재창조하는 대신 의미적으로 올바른 요소를 사용하는 것도 중요합니다. 이렇게 하면 더 고급 기능을 구축해야 할 때 접근성 기대치를 충족할 수 있습니다(예: 화살표와 탭을 사용해야 하는 경우). [A11Y 영양 카드](https://accessibilityinsights.io/)에는 몇 가지 일반적인 구성 요소에 대한 훌륭한 조언이 있습니다.
+W3C의 [웹 접근성 개론](https://www.w3.org/WAI/fundamentals/accessibility-intro/)은 시작하기에 좋은 곳입니다. 접근성 테스트의 대부분은 수동으로 수행해야 합니다. Lighthouse의 [접근성](https://github.com/dequelabs/axe-core) 감사, [axe](https://accessibilityinsights.io/) 및 [Accessibility Insights](https://developer.chrome.com/docs/lighthouse/accessibility/)와 같은 도구를 사용하면 일부 접근성 테스트를 자동화할 수 있습니다.  `a`나 `button`과 같은 요소를 스스로 재창조하는 대신 의미적으로 올바른 요소를 사용하는 것도 중요합니다. 이렇게 하면 더 고급 기능을 구축해야 할 때 접근성 기대치를 충족할 수 있습니다(예: 화살표와 탭을 사용해야 하는 경우). [A11Y 영양 카드](https://accessibilityinsights.io/)에는 몇 가지 일반적인 구성 요소에 대한 훌륭한 조언이 있습니다.
 
 {% endDetails %}
 
