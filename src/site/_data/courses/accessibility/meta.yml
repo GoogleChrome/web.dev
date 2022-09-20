@@ -10,10 +10,10 @@ draft: false
 title: i18n.courses.learn_accessibility.title
 description: i18n.courses.learn_accessibility.description
 # This is the logo that appears in the navigation drawer and header.
-# logo: '/images/courses/accessibility/logo.svg'
+logo: '/images/courses/accessibility/logo.svg'
 # This is used to provide the background for the navigation drawer and header.
-# background: '/images/courses/accessibility/background.svg'
+background: '/images/courses/accessibility/background.svg'
 # This provides the cover image for the card on /learn/
-# card: '/images/courses/accessibility/card.svg'
+card: '/images/courses/accessibility/card.svg'
 # This is used for the social media thumbnail.
-# thumbnail: 'image/kheDArv5csY6rvQUJDbWRscckLr1/NUc0UUPjUOXpaLvvEz1H.png'
+thumbnail: 'image/VbsHyyQopiec0718rMq2kTE1hke2/03dCg7PsCbcwblqRHYMB.png'
