@@ -141,8 +141,8 @@ products are used by real humans, including people with disabilities.
 
 {% Details %}
 
-{% DetailsSummary %}
-### Perceivable
+{% DetailsSummary 'h3' %}
+Perceivable
 {% endDetailsSummary %}
 
 The first category in POUR is Perceivable. This principle states that users must be able to perceive all essential information on the screen, and it must be conveyed to multiple senses.
@@ -158,8 +158,8 @@ The first category in POUR is Perceivable. This principle states that users must
 
 {% Details %}
 
-{% DetailsSummary %}
-### Operable
+{% DetailsSummary 'h3' %}
+Operable
 {% endDetailsSummary %}
 
 The second category is Operable. For this principle, users must be able to operate the digital product's interface. The interface cannot require interaction that a user cannot perform.
@@ -175,8 +175,8 @@ The second category is Operable. For this principle, users must be able to opera
 
 {% Details %}
 
-{% DetailsSummary %}
-### Understandable
+{% DetailsSummary 'h3' %}
+Understandable
 {% endDetailsSummary %}
 
 The third category of POUR is Understandable. For this principle, users must understand the information and the operation of the user interface.
@@ -192,8 +192,8 @@ The third category of POUR is Understandable. For this principle, users must und
 
 {% Details %}
 
-{% DetailsSummary %}
-### Robust
+{% DetailsSummary 'h3' %}
+Robust
 {% endDetailsSummary %}
 
 The last category is Robust. This principle focuses on supporting assistive technologies and ensuring that, as devices and user agents evolve, the digital product remains accessible.
