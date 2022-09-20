@@ -321,7 +321,7 @@ making your PWA accessible, you ensure it's usable for everyone.
 
 W3C's [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
 is a good place to start. A majority of accessibility testing
-must be done manually. Tools like the [Accessibility](/lighthouse-accessibility/)
+must be done manually. Tools like the [Accessibility](https://developer.chrome.com/docs/lighthouse/accessibility/)
 audits in Lighthouse, [axe](https://github.com/dequelabs/axe-core), and
 [Accessibility Insights](https://accessibilityinsights.io/) can help you
 automate some accessibility testing. It's also important to use semantically

@@ -37,7 +37,6 @@ module.exports = function () {
     allPaths['lighthouse-performance'],
     allPaths['lighthouse-pwa'],
     allPaths['lighthouse-best-practices'],
-    allPaths['lighthouse-accessibility'],
     allPaths['lighthouse-seo'],
   ].filter(livePaths);
 
