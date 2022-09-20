@@ -7,7 +7,7 @@
 		<meta name="generator" content="Astro v1.1.5">
 		<title>Scrolly time.</title>
 		<script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
-	<link rel="stylesheet" href="/chrometober-2022/assets/index.8fc983a2.css" /><script type="module">const s=()=>{document.querySelector(".bunny").animate([{rotate:"90deg"},{rotate:"0deg",translate:"0 0 "},{translate:"-50% 0",rotate:"0deg"}],{timeline:CHROMETOBER_TIMELINES[1],timeRange:"enter 25% 90%",fill:"both"})};window.addEventListener("DOMContentLoaded",s);const e="inline";document.documentElement.className=e;document.body.className=`${e}-body`;const i=document.querySelector(".book"),t=document.querySelectorAll("[data-scroll-trigger]"),c=document.querySelector("[data-scroll-intro]"),m=document.querySelector("[data-scroll-outro]"),u=document.querySelector("[data-scroll-intro-two]"),r={timeRange:"enter",fill:"both"},d=(n,o)=>{window.CHROMETOBER_TIMELINES||(window.CHROMETOBER_TIMELINES=[]);const l=document.querySelector(`[data-scroll-target="${n.getAttribute("data-scroll-trigger")}"]`),a=new ViewTimeline({subject:n,axis:e});window.CHROMETOBER_TIMELINES.push(a),l.animate([{transform:`translateZ(${(t.length-o)*2}px)`},{transform:`translateZ(${(t.length-o)*2}px)`,offset:.75},{transform:`translateZ(${(t.length-o)*-1}px)`}],{timeline:a,...r}),l.querySelector(".page__paper").animate([{transform:"rotateY(0deg)"},{transform:"rotateY(-180deg)"}],{timeline:a,...r})},g=new ViewTimeline({subject:c,axis:e});i.animate([{scale:1}],{timeline:g,timeRange:"enter",fill:"both"});const E=new ViewTimeline({subject:u,axis:e});i.animate([{translate:"50% 0"}],{timeline:E,timeRange:"enter",fill:"both"});const w=new ViewTimeline({subject:m,axis:e});i.animate([{translate:"100% 0"}],{timeline:w,...r});t.forEach(d);
+	<link rel="stylesheet" href="/chrometober-2022/assets/index.86913771.css" /><script type="module">const O=()=>{document.querySelector(".bunny").animate([{rotate:"90deg"},{rotate:"0deg",translate:"0 0 "},{translate:"-50% 0",rotate:"0deg"}],{timeline:CHROMETOBER_TIMELINES[1],timeRange:"enter 25% 90%",fill:"both"})};window.addEventListener("DOMContentLoaded",O);const a="inline";document.documentElement.className=a;document.body.className=`${a}-body`;const m=document.querySelector(".book"),i=document.querySelectorAll("[data-scroll-trigger]"),_=document.querySelector("[data-scroll-intro]"),M=document.querySelector("[data-scroll-outro]"),b=document.querySelector("[data-scroll-intro-two]"),c={timeRange:"enter",fill:"both"},p=(e,n)=>{window.CHROMETOBER_TIMELINES||(window.CHROMETOBER_TIMELINES=[]);const o=document.querySelector(`[data-scroll-target="${e.getAttribute("data-scroll-trigger")}"]`),t=new ViewTimeline({subject:e,axis:a});window.CHROMETOBER_TIMELINES.push(t),o.animate([{transform:`translateZ(${(i.length-n)*2}px)`},{transform:`translateZ(${(i.length-n)*2}px)`,offset:.75},{transform:`translateZ(${(i.length-n)*-1}px)`}],{timeline:t,...c}),o.querySelector(".page__paper").animate([{transform:"rotateY(0deg)"},{transform:"rotateY(-180deg)"}],{timeline:t,...c})},h=new ViewTimeline({subject:_,axis:a});m.animate([{scale:1}],{timeline:h,timeRange:"enter",fill:"both"});const N=new ViewTimeline({subject:b,axis:a});m.animate([{translate:"50% 0"}],{timeline:N,timeRange:"enter",fill:"both"});const L=new ViewTimeline({subject:M,axis:a});m.animate([{translate:"100% 0"}],{timeline:L,...c});i.forEach(p);const q=()=>{const e=document.querySelector(".gargoyle"),n=e.querySelector(".gargoyle__wing--left"),o=e.querySelector(".gargoyle__wing--right");e.animate([{transform:"translateY(0)"},{transform:"translateY(-200%)"}],{fill:"both",timeline:CHROMETOBER_TIMELINES[2],timeRange:"enter 110% 150%"}),n.animate([{rotate:"0deg"},{rotate:"-35deg",offset:.5},{rotate:"0deg"}],{iterations:4,timeline:CHROMETOBER_TIMELINES[2],timeRange:"enter 90% 150%",fill:"both"}),o.animate([{rotate:"0deg"},{rotate:"35deg",offset:.5},{rotate:"0deg"}],{iterations:4,timeline:CHROMETOBER_TIMELINES[2],timeRange:"enter 90% 150%",fill:"both"})};window.addEventListener("DOMContentLoaded",q);const E=(e,n,o,t)=>{const r=n-e,s=t-o;return l=>o+((l-e)/r*s||0)},u=(e,n,o)=>Math.min(Math.max(o,e),n),C=()=>{const e=document.querySelector(".portrait"),n=e.querySelector(".portrait__eyes"),o=e.querySelector(".portrait__nose"),t=5,r=100,s=({x:l,y:R})=>{const{left:T,width:y,top:w,height:f}=o.getBoundingClientRect(),d=T+y*.5,g=w+f*.5,S=u(-t,t,E(d-r,d+r,-t,t)(l)),I=u(-t,t,E(g-r,g+r,-t,t)(R));n.style.setProperty("--x",S),n.style.setProperty("--y",I)};window.addEventListener("pointermove",s)};window.addEventListener("DOMContentLoaded",C);
 </script></head>
 	<body>
 		<div class="book-placeholder">
@@ -86,16 +86,16 @@
   <path d="M75.89 68.69c-.38 0-.76-.18-1-.51-.4-.55-.27-1.32.28-1.72.32-.23 7.84-5.53 17.59-.68.61.3.86 1.04.55 1.65-.3.61-1.05.86-1.65.55-8.38-4.17-14.78.28-15.05.47-.22.16-.47.23-.72.23v.01Z" fill="#000"/>
   <path d="M114.45 72.12c-.34 0-.67-.14-.92-.41-5.35-5.93-12.73-4.28-13.04-4.21-.66.16-1.33-.25-1.48-.91-.16-.66.25-1.33.91-1.48.37-.09 9.09-2.09 15.44 4.95.46.51.42 1.29-.09 1.74-.24.21-.53.32-.83.32h.01Z" fill="#000"/>
 </svg>
-  <article class="content-block content-block--one">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
-  <article class="content-block content-block--two">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
+  <article class="content-block content-block--one astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
+  <article class="content-block content-block--two astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
     </div>
   </div>
@@ -107,11 +107,11 @@
   <img class="page__feature pumpkin--one" src="/chrometober-2022/assets/PumpkinOne.445af041.svg" alt="">
   <img class="page__feature pumpkin--two" src="/chrometober-2022/assets/PumpkinTwo.e6b26837.svg" alt="">
   <img class="page__feature pumpkin--three" src="/chrometober-2022/assets/PumpkinThree.54220f57.svg" alt="">
-  <article class="content-block content-block--three">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
+  <article class="content-block content-block--three astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
     </div>
     <div class="page__side page__side--back">
@@ -136,11 +136,11 @@
   <path d="M8.12 95.01s39.15 4.5 43.79 50.47c0 0-35.78-3.2-43.79-50.47Z" fill="#994E63"/>
   <path d="M56.97 6.15c27.95 0 50.61 31.24 50.61 69.78 0 38.54-22.66 69.78-50.61 69.78S6.36 114.47 6.36 75.93c0-38.54 22.66-69.78 50.61-69.78Zm0-5.37c-7.8 0-15.33 2.09-22.4 6.21-6.67 3.89-12.64 9.42-17.73 16.44C6.62 37.52.99 56.16.99 75.92c0 19.76 5.63 38.41 15.85 52.49 5.09 7.02 11.05 12.55 17.73 16.44 7.07 4.12 14.61 6.21 22.4 6.21 7.8 0 15.33-2.09 22.4-6.21 6.67-3.89 12.64-9.42 17.73-16.44 10.22-14.09 15.85-32.73 15.85-52.49 0-19.76-5.63-38.41-15.85-52.49-5.09-7.02-11.05-12.55-17.73-16.44C72.3 2.87 64.76.78 56.97.78Z" fill="#000"/>
 </svg>
-  <article class="content-block content-block--four">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
+  <article class="content-block content-block--four astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
     </div>
   </div>
@@ -218,17 +218,16 @@
   <path d="M69.49 85.56c-.15 0-11.68-.17-22.94-4.24-4.09-1.8-4.92-6.01-4.96-6.21-.13-.71-.8-1.17-1.51-1.05-.62.11-1.06.64-1.07 1.25-.25-.51-.36-.85-.38-.9-.21-.68-.93-1.07-1.62-.86-.69.21-1.08.93-.87 1.62.02.07.17.54.51 1.24-.14-.09-.28-.18-.42-.28a1.299 1.299 0 1 0-1.49 2.13c2.68 1.87 5.59 3.39 8.56 4.62.52.25 1.06.49 1.66.7.06.02.13.02.2.03.51.19 1.02.37 1.53.55 11.21 3.85 22.14 4 22.77 4h.01c.71 0 1.29-.57 1.3-1.29 0-.72-.57-1.31-1.29-1.31h.01Z" fill="#050505"/>
   <path d="M69.93 109.64c7.986 0 14.46-3.989 14.46-8.91 0-4.92-6.474-8.91-14.46-8.91-7.986 0-14.46 3.99-14.46 8.91 0 4.921 6.474 8.91 14.46 8.91Z" fill="#68887D"/>
 </svg>
-  <article class="content-block content-block--five">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
-  <article class="content-block content-block--six">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
-
+  <article class="content-block content-block--five astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
+  <article class="content-block content-block--six astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
 
 
@@ -306,16 +305,16 @@
   <path d="M9.84 29.73h35.02s25.29 4.86 24.32-22.37" stroke="#000" stroke-width="2.92" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M61.73 27.08c.71 4.21 2.63 8.37 7.03 10.61 11.11 5.66 27.27.48 27.27.48l26.64-6.5" stroke="#000" stroke-width="2.92" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-  <article class="content-block content-block--seven">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
-  <article class="content-block content-block--eight">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
+  <article class="content-block content-block--seven astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
+  <article class="content-block content-block--eight astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
     </div>
   </div>
@@ -328,8 +327,8 @@
   <path d="M110.03 129.11H59.56c-4.03-20.09-8.06-40.18-12.09-60.28 24.53-7.05 50.11-7.05 74.64 0-4.03 20.09-8.06 40.18-12.09 60.28h.01Z" fill="#5A6578"/>
   <path opacity=".82" d="M59.69 78.2h20.03c2.84 0 5.14 2.31 5.14 5.14v4.04c0 8.13-6.6 14.73-14.73 14.73H59.68c-2.84 0-5.14-2.31-5.14-5.14V83.35c0-2.84 2.31-5.14 5.14-5.14l.01-.01Z" fill="#4E5967"/>
   <path opacity=".82" d="M109.34 102.1H98.89c-8.13 0-14.73-6.6-14.73-14.73v-4.04c0-2.84 2.31-5.14 5.14-5.14h20.03c2.84 0 5.14 2.31 5.14 5.14v13.62c0 2.84-2.31 5.14-5.14 5.14l.01.01Z" fill="#4E5967"/>
-  <path d="M1.92 6.61c10.02-3.94 35.96-11.36 59.05 5.51 4.27 3.12 6.41 8.36 5.64 13.59-1.23 8.41-1.73 22.09 5.66 31.03 2.72 3.29 1.64 8.26-2.17 10.18l-11.91 5.99c-3.39 1.71-7.55.1-8.83-3.48-1.95-5.44-6.52-12.14-17.23-13.23-1.05-.11-1.88-.94-2.02-1.99-.65-4.97-3.68-18.24-17.38-18.95a2.27 2.27 0 0 1-2.13-2.47c.44-4.86.21-15.74-9.17-22.2-1.5-1.03-1.21-3.33.49-3.99v.01Z" fill="#4B5663"/>
-  <path d="M164.07 5.87c-10.02-3.94-35.96-11.36-59.05 5.51-4.27 3.12-6.41 8.36-5.64 13.59 1.23 8.41 1.73 22.09-5.66 31.03-2.72 3.29-1.64 8.26 2.17 10.18l11.91 5.99c3.39 1.71 7.55.1 8.83-3.48 1.95-5.44 6.52-12.14 17.23-13.23 1.05-.11 1.88-.94 2.02-1.99.65-4.97 3.68-18.24 17.38-18.95a2.27 2.27 0 0 0 2.13-2.47c-.44-4.86-.21-15.74 9.17-22.2 1.5-1.03 1.21-3.33-.49-3.99v.01Z" fill="#4B5663"/>
+  <path class="gargoyle__wing gargoyle__wing--left" d="M1.92 6.61c10.02-3.94 35.96-11.36 59.05 5.51 4.27 3.12 6.41 8.36 5.64 13.59-1.23 8.41-1.73 22.09 5.66 31.03 2.72 3.29 1.64 8.26-2.17 10.18l-11.91 5.99c-3.39 1.71-7.55.1-8.83-3.48-1.95-5.44-6.52-12.14-17.23-13.23-1.05-.11-1.88-.94-2.02-1.99-.65-4.97-3.68-18.24-17.38-18.95a2.27 2.27 0 0 1-2.13-2.47c.44-4.86.21-15.74-9.17-22.2-1.5-1.03-1.21-3.33.49-3.99v.01Z" fill="#4B5663"/>
+  <path class="gargoyle__wing gargoyle__wing--right" d="M164.07 5.87c-10.02-3.94-35.96-11.36-59.05 5.51-4.27 3.12-6.41 8.36-5.64 13.59 1.23 8.41 1.73 22.09-5.66 31.03-2.72 3.29-1.64 8.26 2.17 10.18l11.91 5.99c3.39 1.71 7.55.1 8.83-3.48 1.95-5.44 6.52-12.14 17.23-13.23 1.05-.11 1.88-.94 2.02-1.99.65-4.97 3.68-18.24 17.38-18.95a2.27 2.27 0 0 0 2.13-2.47c-.44-4.86-.21-15.74 9.17-22.2 1.5-1.03 1.21-3.33-.49-3.99v.01Z" fill="#4B5663"/>
   <path d="M113.65 84.18c-.34-10.28 18.22-14.14 24.42-5.08l.12.18c4.38 6.55 4.53 11.6.38 18.3l-9.3 16.15c-1.21 2.11-3.96 3.51-7 3.58-4.18.1-7.61-2.33-7.72-5.46l-.9-27.69v.02Z" fill="#72798C"/>
   <path d="m144.747 127.009-24.302-.938a3.704 3.704 0 0 1-3.555-3.84l.164-4.236a5.982 5.982 0 0 1 6.206-5.745l15.069.581c5.756.222 10.252 5.079 10.029 10.835a3.482 3.482 0 0 1-3.611 3.343Z" fill="#72798C"/>
   <path d="M141.4 120.88h4.14c1.55 0 2.82 1.26 2.82 2.82v3.35a4.89 4.89 0 0 1-9.78 0v-3.35c0-1.55 1.26-2.82 2.82-2.82Z" fill="#72798C"/>
@@ -366,6 +365,10 @@
   <path d="M94.64 179.51c-4.9-1.23-9.64-.34-12.49 1.98-.32.26-.79.26-1.11 0-2.85-2.33-7.59-3.21-12.49-1.98-7.04 1.76-11.74 7.21-10.5 12.17.77 3.07 3.64 5.24 7.38 6.02a.902.902 0 0 0 1.08-.91v-.05c0-2.56 2.13-4.63 4.76-4.63 2.15 0 3.97 1.39 4.55 3.3.16.54.79.78 1.28.51 1.5-.79 2.8-1.77 3.85-2.86.35-.36.94-.36 1.29 0 1.08 1.13 2.44 2.13 4.01 2.94.5.26 1.12 0 1.27-.53.56-1.94 2.39-3.37 4.57-3.37 2.63 0 4.76 2.07 4.76 4.63v.01c0 .58.52 1.03 1.09.91 3.65-.82 6.44-2.96 7.19-5.97 1.24-4.96-3.46-10.41-10.5-12.17h.01Z" fill="#000"/>
   <path d="M108.18 198.39c-3.71.71-9.77 1.81-13.46 2.19-.89.09-1.56.84-1.56 1.74v3.98c0 .96-.78 1.74-1.74 1.74h-3.45c-.96 0-1.74-.78-1.74-1.74v-3.33c0-.98-.8-1.77-1.78-1.74-2.49.06-4.99.04-7.48-.05-.98-.04-1.8.76-1.8 1.74v3.38c0 .96-.78 1.74-1.74 1.74h-3.45c-.96 0-1.74-.78-1.74-1.74v-4.18c0-.88-.66-1.63-1.54-1.73-3.81-.44-7.6-1.06-11.37-1.84-1.83-.38-3.49 1.17-3.21 3.02.88 5.84 4.03 16.34 15.38 16.34 2.72.26 5.45.45 8.18.56.99.04 1.82-.75 1.82-1.74v-3.33c0-.96.78-1.74 1.74-1.74h3.97c.96 0 1.74.78 1.74 1.74v3.36c0 .99.82 1.78 1.81 1.74 2.99-.1 5.98-.3 8.96-.59 12.7 0 15.22-10.92 15.66-16.68.14-1.76-1.45-3.16-3.18-2.83l-.02-.01Z" fill="#000"/>
 </svg>
+
+
+
+
   <svg class="page__feature fox" viewBox="0 0 245 231" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="m19.53 23.56 3.92.49-10.06 93.54s-.17 4.83-4.21 4.17c-4.04-.66-3.25-5.11-3.25-5.11l13.6-93.1v.01Z" fill="#DCB99B"/>
   <path d="m26.02 32.85-3.72-2.68c-.86-.62-2.05-.75-3.02-.34l-4.23 1.79c-2.08.88-4.5-.77-3.96-2.71l1.76-6.36c.17-.62.03-1.29-.39-1.84L8.17 15.1c-1.15-1.51-.03-3.46 2.04-3.55l5.83-.25c.95-.04 1.78-.5 2.21-1.2l2.69-4.44c1.12-1.86 4.4-1.49 5.08.57l1.63 4.93c.26.79.97 1.41 1.89 1.66l5.63 1.53c2 .55 2.67 2.7 1.21 3.92l-5.42 4.52c-.53.44-.81 1.06-.78 1.7l.31 6.59c.09 2.01-2.63 3.09-4.47 1.77Z" fill="#D288A9"/>
@@ -424,27 +427,27 @@
   <path d="M89.81 67.36c-.11-.23-2.72-5.62-7.9-6.09-4.34-.39-8.94 2.82-13.7 9.54-1.28.69-2.7 1.13-4.15 1.33-1.67.22-3.4.14-4.89-.37-1.63-.52-2.3 1.99-.65 2.44 1.38.31 2.77.38 4.13.27-1.48.29-3 .38-4.47.21-1.71-.18-1.86 2.45-.14 2.53.92 0 1.81-.07 2.69-.2-1.24.3-2.57.37-3.98.19-.69-.09-1.29.41-1.37 1.1-.08.69.42 1.33 1.1 1.41.73.09 1.45.13 2.15.11 4.34-.1 8.06-2.3 10.83-6.43 4.44-6.6 8.67-9.92 12.24-9.62 3.73.33 5.82 4.56 5.86 4.64.3.63 1.05.91 1.66.61.62-.3.87-1.05.57-1.68l.02.01Z" fill="#050505"/>
   <path d="M103.9 76.27c.87 3.45-8.67 8.86-8.67 8.86s-10.87-.28-11.74-3.73c-.87-3.45 3-7.39 8.64-8.81 5.64-1.42 10.91.23 11.77 3.68Z" fill="#050505"/>
 </svg>
-  <article class="content-block content-block--nine">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
-  <article class="content-block content-block--ten">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
+  <article class="content-block content-block--nine astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
+  <article class="content-block content-block--ten astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
     </div>
     <div class="page__side page__side--back">
       <img class="page__background page__background--left" src="/chrometober-2022/assets/chrometober_spread4.c413e30a.svg" alt="">
 <div class="page__content">
   <img src="/chrometober-2022/assets/Shelves.966d3f3c.svg" class="page__feature shelves" alt="">
-  <article class="content-block content-block--eleven">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
+  <article class="content-block content-block--eleven astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
     </div>
   </div>
@@ -540,16 +543,16 @@
   <path d="M88.23 112.28c-.28 0-.55-.1-.77-.31-.45-.43-.47-1.13-.04-1.58.51-.54 1.05-1.1 1.34-1.72.25-.54.29-1.12.1-1.48-.21-.4-.72-.61-1-.71-.51-.17-2.37-.04-3.48.98-.84.77-1.08 1.88-.72 3.39.14.6-.23 1.2-.83 1.35-.61.14-1.2-.23-1.35-.83-.68-2.91.38-4.63 1.39-5.55 1.74-1.6 4.43-1.87 5.69-1.45 1.05.35 1.84.97 2.28 1.78.53 1 .51 2.3-.06 3.49-.45.94-1.13 1.66-1.74 2.3-.22.23-.52.35-.81.35v-.01Z" fill="#17181C"/>
   <path d="M88.01 112.5a1.121 1.121 0 0 1-.83-1.87c.41-.45 1.5-1.66 1.91-2.58l.06-.12c.69-1.14.6-2.35-.24-3.17-1.02-1-3.34-1.46-6.54.54-.52.33-1.21.17-1.54-.36-.33-.52-.17-1.21.36-1.54 4.31-2.69 7.7-1.81 9.3-.24 1.55 1.52 1.79 3.87.62 5.87-.51 1.09-1.48 2.23-2.27 3.1-.22.24-.52.37-.83.37Z" fill="#17181C"/>
 </svg>
-  <article class="content-block content-block--twelve">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
-  <article class="content-block content-block--thirteen">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
+  <article class="content-block content-block--twelve astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
+  <article class="content-block content-block--thirteen astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
     </div>
     <div class="page__side page__side--back">
@@ -656,16 +659,16 @@
   <path d="M73.28 147.65a1.14 1.14 0 0 1-.98-1.72c1.43-2.43 4.72-6.43 10.71-5.9.63.05 1.09.61 1.04 1.23-.05.63-.61 1.09-1.23 1.04-4.51-.39-7.14 2.38-8.55 4.78-.21.36-.59.56-.98.56l-.01.01Z" fill="#161414"/>
   <path d="M106 143.41c-.26 0-.52-.09-.73-.26-2.1-1.75-5.5-3.45-9.76-1.56-.58.25-1.25 0-1.5-.58-.26-.58 0-1.25.58-1.5 5.61-2.49 10.02.12 12.14 1.89.48.4.55 1.12.15 1.61-.23.27-.55.41-.88.41v-.01Z" fill="#161414"/>
 </svg>
-  <article class="content-block content-block--fourteen">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
-  <article class="content-block content-block--fifteen">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
+  <article class="content-block content-block--fourteen astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
+  <article class="content-block content-block--fifteen astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
     </div>
   </div>
@@ -700,8 +703,10 @@
   <path d="M41.8 89.27c2.817 0 5.1-2.104 5.1-4.7s-2.283-4.7-5.1-4.7c-2.817 0-5.1 2.104-5.1 4.7s2.283 4.7 5.1 4.7Z" fill="#EF8229"/>
   <path d="M102.04 88.67c2.745 0 4.97-2.104 4.97-4.7s-2.225-4.7-4.97-4.7c-2.745 0-4.97 2.104-4.97 4.7s2.225 4.7 4.97 4.7Z" fill="#EF8229"/>
   <path d="M94.56 46.78c-8.4-5.68-18.53-5.84-23.16-.54-4.63-5.31-14.76-5.14-23.16.54-8.74 5.91-12.3 15.54-7.96 21.52 4.35 5.98 14.96 6.03 23.7.13 3.22-2.18 5.74-4.86 7.42-7.69 1.68 2.82 4.2 5.51 7.42 7.69 8.74 5.91 19.35 5.85 23.7-.13 4.35-5.98.79-15.61-7.96-21.52Z" fill="#fff"/>
-  <path d="M91.762 58.364c1.484-2.908-.308-6.793-4.003-8.679-3.694-1.885-7.892-1.057-9.376 1.85-1.483 2.908.309 6.793 4.003 8.678 3.694 1.886 7.892 1.058 9.376-1.85Z" fill="#000"/>
-  <path d="M61.901 59.951c3.69-1.894 5.473-5.783 3.983-8.687-1.49-2.904-5.69-3.723-9.38-1.829-3.69 1.894-5.473 5.784-3.983 8.688 1.49 2.903 5.69 3.722 9.38 1.828Z" fill="#000"/>
+  <g class="portrait__eyes">
+    <path class="portrait__eye portrait__eye--right" d="M91.762 58.364c1.484-2.908-.308-6.793-4.003-8.679-3.694-1.885-7.892-1.057-9.376 1.85-1.483 2.908.309 6.793 4.003 8.678 3.694 1.886 7.892 1.058 9.376-1.85Z" fill="#000"/>
+    <path class="portrait__eye portrait__eye--left" d="M61.901 59.951c3.69-1.894 5.473-5.783 3.983-8.687-1.49-2.904-5.69-3.723-9.38-1.829-3.69 1.894-5.473 5.784-3.983 8.688 1.49 2.903 5.69 3.722 9.38 1.828Z" fill="#000"/>
+  </g>
   <path d="M67.57 54.64c2.32.37 4.47-1.34 4.61-3.69.35-5.59-1.35-15.02-15.7-18.3-14.82-3.38-19.63 6.42-21.17 12.41-.58 2.27.93 4.54 3.24 4.91l29.02 4.66v.01Z" fill="#EF8229"/>
   <path d="M104.07 48.02c2.3-.51 3.67-2.88 2.94-5.12-1.73-5.33-6.77-13.48-21.32-11.26-15.03 2.29-15.9 13.18-15.14 19.32.29 2.32 2.53 3.88 4.81 3.38l28.71-6.32Z" fill="#EF8229"/>
   <path d="M81.24 37.49s4.63 8.69-7.61 12.72c-.39.13-.81-.14-.75-.48l.75-4.27c.07-.39-.43-.68-.85-.49-1.94.83-6.4 2.4-11.27 1.71-.74-.1-.95-.89-.34-1.24l5.39-3.17" fill="#B3C6A8"/>
@@ -717,36 +722,40 @@
   <path d="M90.43 157.14c-.5 0-.89-.41-.89-.9l.06-15.64c0-1.54-.73-2.99-1.98-3.89L35.53 99.03a.896.896 0 0 1 1.05-1.45l52.09 37.68a6.59 6.59 0 0 1 2.72 5.35l-.06 15.64c0 .49-.4.89-.9.89Z" fill="#000"/>
   <path d="M65.44 120.61c-.18 0-.37-.06-.53-.17a.894.894 0 0 1-.19-1.25l7.65-10.41c1.6-1.89 3.84-2.93 6.31-2.93 2.54 0 4.96 1.13 6.63 3.09l8.48 8.21a.9.9 0 0 1-1.25 1.29l-8.57-8.3c-1.34-1.58-3.27-2.49-5.3-2.49-1.92 0-3.67.81-4.92 2.27l-7.6 10.33c-.18.24-.45.37-.72.37l.01-.01Z" fill="#000"/>
   <path d="M83.56 132.97a.896.896 0 0 1-.72-1.42l23.34-32.4a.896.896 0 0 1 1.45 1.05l-23.34 32.4a.91.91 0 0 1-.73.37Z" fill="#000"/>
-  <path d="M72.67 77.01c-6.1 0-9.3-4.34-8.28-8.61.47-1.98.94-3.95 1.42-5.93.75-3.16 3.01-5.35 6.92-5.35s6.06 2.19 6.81 5.35c.47 1.98.94 3.95 1.42 5.93 1.02 4.26-2.18 8.61-8.28 8.61h-.01Z" fill="#EF8229"/>
+  <path class="portrait__nose" d="M72.67 77.01c-6.1 0-9.3-4.34-8.28-8.61.47-1.98.94-3.95 1.42-5.93.75-3.16 3.01-5.35 6.92-5.35s6.06 2.19 6.81 5.35c.47 1.98.94 3.95 1.42 5.93 1.02 4.26-2.18 8.61-8.28 8.61h-.01Z" fill="#EF8229"/>
   <path d="M72.56 163.29c-19.41 0-37.63-8.5-51.31-23.94C7.67 124.03.2 103.69.2 82.08c0-21.61 7.48-41.95 21.05-57.27C34.93 9.37 53.15.87 72.56.87c19.41 0 37.63 8.5 51.31 23.94 13.58 15.32 21.05 35.66 21.05 57.27 0 21.61-7.48 41.95-21.05 57.27-13.68 15.44-31.9 23.94-51.31 23.94Zm0-155.48c-36.07 0-65.42 33.31-65.42 74.26s29.35 74.26 65.42 74.26 65.42-33.31 65.42-74.26S108.63 7.81 72.56 7.81Z" fill="#BD8835"/>
 </svg>
-  <article class="content-block content-block--sixteen">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
-  <article class="content-block content-block--seventeen">
-    <h2>The 2021 Web Almanac</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
-    <a href="#">Read more.</a>
-  </article>
+
+
+
+
+  <article class="content-block content-block--sixteen astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
+  <article class="content-block content-block--seventeen astro-HS6UMC2C">
+  <h2 class="astro-HS6UMC2C">The 2021 Web Almanac</h2>
+  <p class="astro-HS6UMC2C">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cupiditate dolor mollitia nobis facilis atque eveniet perferendis blanditiis asperiores laboriosam, exercitationem expedita, amet soluta praesentium magnam ea tempora vitae. Dolore.</p>  
+  <a href="https://web.dev/blog" class="astro-HS6UMC2C">Read more.</a>
+</article>
 </div>
     </div>
     <div class="page__side page__side--back">
-      <img class="page__background page__background--left astro-FCH2ZQPE" src="/chrometober-2022/assets/chrometober_index.0c52aa6c.svg" alt="">
-<div class="page__content astro-FCH2ZQPE">
-  <h2 class="astro-FCH2ZQPE">Brought to you by:</h2>
-  <dl class="astro-FCH2ZQPE">
-    <dt class="astro-FCH2ZQPE">Tyler Reed</dt>
-    <dd class="astro-FCH2ZQPE">
+      <img class="page__background page__background--left astro-N2NWF27Q" src="/chrometober-2022/assets/chrometober_index.0c52aa6c.svg" alt="">
+<div class="page__content astro-N2NWF27Q">
+  <h2 class="astro-N2NWF27Q">Brought to you by:</h2>
+  <dl class="astro-N2NWF27Q">
+    <dt class="astro-N2NWF27Q">Tyler Reed</dt>
+    <dd class="astro-N2NWF27Q">
       Illustration and Design
     </dd>
-    <dt class="astro-FCH2ZQPE">Jhey Tompkins</dt>
-    <dd class="astro-FCH2ZQPE">
+    <dt class="astro-N2NWF27Q">Jhey Tompkins</dt>
+    <dd class="astro-N2NWF27Q">
       Architectural and Creative Lead
     </dd>
-    <dt class="astro-FCH2ZQPE">Una Kravets</dt>
-    <dd class="astro-FCH2ZQPE">
+    <dt class="astro-N2NWF27Q">Una Kravets</dt>
+    <dd class="astro-N2NWF27Q">
       Project Lead
     </dd>
   </dl>
@@ -764,7 +773,7 @@
   </div>
 </li>
     </ul>
-  </div><li aria-hidden="true">
+  </div><h2 class="book-instructions">Please use landscape orientation</h2><li aria-hidden="true">
     <h2>intro spacer</h2>
   </li><li data-scroll-intro aria-hidden="true">
     <h2>scale trigger</h2>
