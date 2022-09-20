@@ -634,3 +634,4 @@ If you need to align something it's a great way to do it.
 - [Everything You Need To Know About Alignment In Flexbox](https://www.smashingmagazine.com/2018/08/flexbox-alignment/)
 - [How Big Is That Flexible Box?](https://www.smashingmagazine.com/2018/09/flexbox-sizing-flexible-box/)
 - [Use Cases For Flexbox](https://www.smashingmagazine.com/2018/10/flexbox-use-cases/)
+- [Inspect and debug CSS Flexbox layouts in Chrome DevTools](https://developer.chrome.com/docs/devtools/css/flexbox/)
