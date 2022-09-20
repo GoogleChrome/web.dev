@@ -43,8 +43,7 @@ including design, automated, manual, and assistive technology (AT) testing.
 
 Perform an accessibility audit to capture the baseline accessibility compliance of a digital product. But, running it once at the start of a project is not enough to determine if a product is accessible. You should run this audit multiple times throughout the software product lifecycle to check for changes in the level of conformance, against a set of pre-determined accessibility checkpoints or guidelines. 
 
-We’ll cover how to conduct an accessibility audit in the foundational conformance testing module, coming soon.
-
+We'll cover how to conduct an accessibility audit in the foundational conformance testing module, coming soon.
 
 ## Web Content Accessibility Guidelines (WCAG) {:#wcag}
 
@@ -135,7 +134,7 @@ Understanding these guidelines is critical to address issues that arise in
 accessibility compliance testing, but the guidelines quickly become very technical.
 
 If you are new to this field, start with the principles of
-WCAG—[Perceivable, Operable, Understandable, and Robust (POUR)](https://www.w3.org/WAI/fundamentals/accessibility-principles/).
+WCAG&mdash;[Perceivable, Operable, Understandable, and Robust (POUR)](https://www.w3.org/WAI/fundamentals/accessibility-principles/).
 By applying POUR principles to your digital products, you can focus on how your
 products are used by real humans, including people with disabilities. 
 
@@ -145,9 +144,14 @@ products are used by real humans, including people with disabilities.
 Perceivable
 {% endDetailsSummary %}
 
-The first category in POUR is Perceivable. This principle states that users must be able to perceive all essential information on the screen, and it must be conveyed to multiple senses.
+The first category in POUR is Perceivable. This principle states that users
+must be able to perceive all essential information on the screen, and it must
+be conveyed to multiple senses.
 
-**Ask yourself**: Is there any content or functionality in your digital product that a person with a specific disability would not be able to perceive? Be sure to consider all the different types of disabilities—visual, mobility, hearing, cognitive, and speech impairments, vestibular and seizure disorders, and more.
+**Ask yourself**: Is there any content or functionality in your digital product
+that a person with a specific disability would not be able to perceive? Be sure
+to consider all the different types of disabilities—visual, mobility, hearing,
+cognitive, and speech impairments, vestibular and seizure disorders, and more.
 
 **Examples of Perceivable**:
 
@@ -162,9 +166,13 @@ The first category in POUR is Perceivable. This principle states that users must
 Operable
 {% endDetailsSummary %}
 
-The second category is Operable. For this principle, users must be able to operate the digital product's interface. The interface cannot require interaction that a user cannot perform.
+The second category is Operable. For this principle, users must be able to
+operate the digital product's interface. The interface cannot require
+interaction that a user cannot perform.
 
-**Ask yourself**: Can users control the interactive elements of your digital product? Are there any focus order issues or keyboard traps? How are touch interfaces handled?
+**Ask yourself**: Can users control the interactive elements of your digital
+product? Are there any focus order issues or keyboard traps? How are touch
+interfaces handled?
 
 **Examples of Operable**:
 
@@ -181,11 +189,13 @@ Understandable
 
 The third category of POUR is Understandable. For this principle, users must understand the information and the operation of the user interface.
 
-**Ask yourself**: Is all of the content clearly written? Are all of the interactions easy to understand? Does the order of the page make sense—to sighted users, keyboard-only users, screen reader users?
+**Ask yourself**: Is all of the content clearly written? Are all of the
+interactions easy to understand? Does the order of the page make sense—to
+sighted users, keyboard-only users, screen reader users?
 
 **Examples of Understandable**:
 
-* Writing simply—don’t use a complex word when a simple one will do.
+* Writing simply—don't use a complex word when a simple one will do.
 * Ensuring your digital product has predictable navigation.
 * Ensuring error messages are clear and easy to resolve.
 {% endDetails %}
@@ -196,9 +206,13 @@ The third category of POUR is Understandable. For this principle, users must und
 Robust
 {% endDetailsSummary %}
 
-The last category is Robust. This principle focuses on supporting assistive technologies and ensuring that, as devices and user agents evolve, the digital product remains accessible.
+The last category is Robust. This principle focuses on supporting assistive
+technologies and ensuring that, as devices and user agents evolve, the digital
+product remains accessible.
 
-**Ask yourself:** What types of assistive technology are you supporting? Does your digital product only work on the newest browsers or operating systems? Does it work at all breakpoints and in different device orientations? 
+**Ask yourself**: What types of assistive technology are you supporting? Does
+your digital product only work on the newest browsers or operating systems?
+Does it work at all breakpoints and in different device orientations? 
 
 **Examples of Robust**:
 
