@@ -239,6 +239,8 @@ li::before {
 }  
 ```
 
+This will be sufficient in Firefox, but in Chrome and Safari the markers will count down from zero to -10. We can fix that by adding the `start` attribute to the list.
+
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWmBrGp',
