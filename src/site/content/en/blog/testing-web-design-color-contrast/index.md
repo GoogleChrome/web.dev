@@ -173,7 +173,7 @@ alt="Two colors that look like gray but are actually very desaturated purples ar
 
 #### Comparing colors with gradients
 
-Compare text on a gradient or on an image. Here the L from "Lasso" is 
+Compare text on a gradient or on an image. Here the L from "Lasso" is
 compared against the light blue of the image:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/pvFbvPiUoSKVFkay28Cs.png",
@@ -195,8 +195,8 @@ UI and UX of the design tools that folks have come to know and love to use.
 
 One of its tool offerings is the Accessibility Inspect tool.
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3rUbTN4EPJNLcglBJk80.png",
-alt="Screenshot of the VisBug toolbar on the left side of a blank page, the accessibility tool icon is pink and a popover is shown that provides instruction of the tool.", width="800", height="608" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eBATv3Jt8iONLM5YrOSQ.png",
+alt="Screenshot of the VisBug toolbar on the left side of a blank page, the accessibility tool icon is pink and a popover is shown that provides instruction of the tool.", width="800", height="469" %}
 
 #### Inspect across browsers (and even on mobile)
 
@@ -359,8 +359,8 @@ will negatively impact your Lighthouse score.
 
 Here's what those results can look like:
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/NQZX5G3ILhfLghgkKb9G.png",
-alt="ALT_TEXT_HERE", width="800", height="540" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/uo97bt52l87Tbk6C6NZC.png",
+alt="A screenshot of a Lighthouse evaluation, showing results of low-contrast text of the color combinations of 2 words.", width="800", height="567" %}
 
 #### The JS console
 
