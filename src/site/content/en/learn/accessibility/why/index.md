@@ -58,15 +58,13 @@ Inaccessible digital products impact people with disabilities. Some types of
 disabilities are impacted more in the digital world than others. Examples
 include people with:
 
-### Visual impairments
+{% Details  'open' %}
+
+{% DetailsSummary 'h3' %}
+Visual impairments
+{% endDetailsSummary %}
 
 _[Visual impairment](https://www.disabled-world.com/disability/types/vision/)_ (vision impairment, vision disability) is a decreased ability to see to the degree that causes problems not fixable by usual means, such as glasses or medication. Visual impairment can be due to disease, trauma, or congenital or degenerative conditions.
-
-{% Details %}
-
-{% DetailsSummary %}
-Get the facts about visual impairments.
-{% endDetailsSummary %}
 
 <figure data-float="right">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/9rl95PJGmH4j9z6PYCVD.png", alt="A black woman using a white cane.", width="240", height="300" %}
@@ -86,15 +84,12 @@ Read a short [article in the New York Times](https://www.nytimes.com/2022/08/16/
 
 {% endDetails %}
 
-### Mobility impairments
+{% Details %}
+{% DetailsSummary 'h3' %}
+Mobility impairments
+{% endDetailsSummary %}
 
 _[Mobility impairment](https://www.disabled-world.com/disability/types/mobility/)_ is a category of disability that includes people with various physical disabilities. This type of disability includes upper or lower limb loss or disability, manual dexterity, and disability in coordination with different organs of the body.
-
-{% Details %}
-
-{% DetailsSummary %}
-Get the facts about mobility impairments.
-{% endDetailsSummary %}
 
 <figure data-float="right">
 {% Img
@@ -109,10 +104,26 @@ Get the facts about mobility impairments.
 * _Tools_: Adaptative switches, eye tracking devices, mouth/head sticks, speech input.
 * _Pain points_: Elements that are only designed to work with the use of a mouse.
 
-<blockquote>
-  <p>"Accessibility isn't just for people with disabilities. I had elbow surgery back in 2012 and it temporarily changed how I managed my daily digital activities."</p>
-  <cite>Melissa</cite>
-</blockquote>
+{% endDetails %}
+
+{% Details %}
+
+{% DetailsSummary 'h3' %}
+Hearing impairments
+{% endDetailsSummary %}
+
+A [hearing impairment or hearing loss](https://www.disabled-world.com/disability/types/hearing/) is a full or partial decrease in the ability to detect or understand sounds. Hearing impairments are caused by a wide range of biological and environmental factors.
+
+<figure data-float="right">
+  {% Img
+    src="image/VbsHyyQopiec0718rMq2kTE1hke2/1nUPylVp4y3mMe6ksPKq.png", alt="A man with a hearing aid.", width="183", height="320"
+    %}
+</figure>
+
+* _Examples_: D/deafness, hard of hearing (HoH), hearing impaired (HI)
+* _Prevalence_: 66 million people worldwide have disabling hearing loss ([Source](https://www.who.int/health-topics/hearing-loss#tab=tab_1))
+* _Tools_: hearing aids, captions, transcripts, sign language.
+* _Pain points_: Audio content without text transcripts, video with no synchronized captions
 
 {% endDetails %}
 
