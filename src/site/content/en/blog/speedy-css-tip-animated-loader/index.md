@@ -41,7 +41,7 @@ Bonus points for using a generator(Pug 👇) to configure the number of lines.
     - i++
 ```
 
-Give our loader some styles.
+Give our loader some styles:
 
 ```css
 loader {
