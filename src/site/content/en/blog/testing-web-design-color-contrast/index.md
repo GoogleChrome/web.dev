@@ -9,7 +9,8 @@ authors:
   - adamargyle
   - superhighfives
 date: 2022-09-16
-hero: image/admin/t8pdBQKAaLW8lDp4UqfO.jpg
+hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/q6qpUvm2TwTyRWKbYCQd.png
+thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/93UiiPbes6SjeGjB8w1N.png
 alt: A description of the hero image for screen reader users.
 tags:
   - blog
