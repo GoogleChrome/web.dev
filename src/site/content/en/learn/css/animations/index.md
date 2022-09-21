@@ -26,8 +26,8 @@ How do you do this with CSS though?
 } %}
 
 In CSS, you can make this type of animation using CSS animations,
- which allow you to set an animation sequence, using keyframes.
-Animations can be simple, one state animations,
+which allows you to set an animation sequence, using keyframes.
+Animations can be simple, one-state animations,
 or even complex, time-based sequences.
 
 ## What is a keyframe?
@@ -41,11 +41,11 @@ The entire animation runs for 1 second and runs over 2 states.
 
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/pWCGpgzJqJNTBluK5u8S.svg",
-alt="The states of the pulser animation over the 1 second timeframe",
+alt="The states of the pulser animation over the 1-second timeframe",
 width="800",
 height="340" %}
 
-There's a specific point where each of these animation states start and end.
+There's a specific point where each of these animation states starts and ends.
 You map these out on the timeline with keyframes.
 
 {% Img
@@ -83,12 +83,12 @@ lets you reference the keyframes rule elsewhere in your CSS code.
 A `<custom-ident>` is used in various places in CSS,
 and allows you to provide your own name for things.
 These identifiers are case-sensitive,
-and in some cases there are words that you can't use.
+and in some cases, there are words that you can't use.
 For example, when naming lines in CSS Grid, you can't use the word `span`.
 {% endAside %}
 
 Inside the keyframes rule, `from` and `to` are keywords that represent `0%` and `100%`,
-which are the start of the animation and end.
+which are the start of the animation and the end.
 You could re-create the same rule like this:
 
 ```css
@@ -148,7 +148,7 @@ You can't add negative time values.
 ### `animation-timing-function`
 
 To help recreate natural motion in animation,
-you can use timing functions that calculate the speed of an animation at each point.
+you can use timing functions that calculate the speed of animation at each point.
 Calculated values are often _curved_,
 making the animation run at variable speeds over the course of `animation-duration`,
 and if a value is calculated beyond that of the value defined in `@keyframes`, make the element appear to bounce.
@@ -190,7 +190,7 @@ alt="A bézier on a progression vs time chart",
 width="800",
 height="499" %}
 
-Understanding bézier curves is complicated and visual tools,
+Understanding bézier curves are complicated and visual tools,
 such as
 [this generator by Lea Verou](https://cubic-bezier.com/)
 are very helpful.
@@ -238,7 +238,7 @@ property defines how many times the `@keyframes` timeline should run.
 By default, this is 1,
 which means that when the animation reaches the end of your timeline,
 it will stop at the end.
-The number can't be a negative number.
+The number can't be negative.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -290,7 +290,7 @@ Like the `animation-duration` property, this accepts a time value.
 
 Unlike the `animation-duration` property, you _can_ define this as a negative value.
 If you set a negative value, the timeline in your `@keyframes` will start at that point.
-For example, if your animation is 10 seconds long and you set `animation-delay` to `-5s`, it will start from half-way along your timeline.
+For example, if your animation is 10 seconds long and you set `animation-delay` to `-5s`, it will start from halfway along your timeline.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -368,7 +368,7 @@ media query.
 }
 ```
 
-This isn't necessarily a preference of no animation,
+This isn't necessarily a preference for no animation,
 but rather, a preference to reduce animations—
 [especially unexpected ones](/prefers-reduced-motion/).
 You can learn more about this preference and overall performance with
