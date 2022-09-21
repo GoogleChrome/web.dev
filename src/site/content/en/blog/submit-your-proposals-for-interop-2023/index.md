@@ -19,7 +19,7 @@ tags:
   - browsers
 ---
 
-The Chrome team has worked with other browser vendors and partners in the ecosystem to help improve browser compatibility since 2019, starting with the [MDN Developer Needs Assessment](https://insights.developer.mozilla.org/reports/mdn-web-developer-needs-assessment-2019.html) survey and most recently on [Interop 2022](https://web.dev/interop-2022/). For Interop 2022, all major browser vendors and other stakeholders worked together to improve top browser compatibility issues identified by web developers. We are thrilled at [the progress that we’ve made together](https://wpt.fyi/interop-2022) and are excited to announce Interop 2023 is happening!
+The Chrome team has worked with other browser vendors and partners in the ecosystem to help improve browser compatibility since 2019, starting with the [MDN Developer Needs Assessment](https://insights.developer.mozilla.org/reports/mdn-web-developer-needs-assessment-2019.html) survey and most recently on [Interop 2022](/interop-2022/). For Interop 2022, all major browser vendors and other stakeholders worked together to improve top browser compatibility issues identified by web developers. We are thrilled at [the progress that we’ve made together](https://wpt.fyi/interop-2022) and are excited to announce Interop 2023 is happening!
 
 <figure>
   {% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/8ryQRYl1NBObumG4IA97.png", alt="Showing three circles with scores: 71 for Chrome Dev and Edge Dev, 74 for Firefox Nightly and 73 for Safari Technology Preview", width="800", height="375" %}
