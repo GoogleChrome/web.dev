@@ -9,6 +9,7 @@ tags:
   - blog
   - css
 ---
+
 Hop over to [CodePen](https://pen.new) and create a new pen.
 
 Create the markup for our loader. Note the use of inline custom properties!
