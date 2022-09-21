@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-07-28
+updated: 2022-09-13
 tags:
   - blog
   - capabilities
@@ -59,10 +59,12 @@ API to ensure that people can easily manage their files. See the
 
 The File System Access API is currently supported on most Chromium browsers on
 Windows, macOS, ChromeOS, and Linux. A notable exception is Brave where it is
-[currently available behind a
+[currently only available behind a
 flag](https://github.com/brave/brave-browser/issues/18979). Android support is
-not immediately planned, but you can track potential progress by starring
-[crbug.com/1011535](https://crbug.com/1011535).
+coming for the origin private file system part
+([https://crbug.com/1354273](https://bugs.chromium.org/p/chromium/issues/detail?id=1354273)).
+There are no plans currently for picker methods, but you can track
+potential progress by starring [crbug.com/1011535](https://crbug.com/1011535).
 
 ## Using the File System Access API {: #how-to-use }
 
