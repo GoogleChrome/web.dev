@@ -57,7 +57,8 @@ APIs to provide a representation that assistive technologies can understand.
 {% Img
   src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/G1IWcJBT9tfZq4xCKTqq.jpg",
   alt="The ARIA augmented accessibility tree.", 
-  width="575"
+  width="575",
+  height="383"
 %}
 </figure>
 
@@ -342,7 +343,7 @@ No unintended side effects.
 </div>
 
 {% Aside %}
-One place in particular where ARIA can be useful is in forms. Check out the [Learn Forms accessibility module](https://web.dev/learn/forms/accessibility/).
+One place in particular where ARIA can be useful is in forms. Check out the [Learn Forms accessibility module](/learn/forms/accessibility/).
 {% endAside %}
 
 ## Complexities of ARIA
