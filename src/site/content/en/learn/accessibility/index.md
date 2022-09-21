@@ -3,7 +3,7 @@ title: Learn Accessibility
 authors:
   - cariefisher
 description: An evergreen accessibility course and reference to level up your web development.
-date: 2022-09-23
+date: 2022-09-30
 tags:
   - accessibility
 ---
@@ -28,6 +28,9 @@ people confirm their understanding.
 Some accessibility best practices differ, based on the disability you're
 addressing. It's important to understand your users and to
 listen to people with disabilities when they tell you what they need.
+
+We are open to your feedback! [Open a GitHub issue](https://github.com/GoogleChrome/web.dev/issues/new/choose)
+and give as much information as you can so we can address it.
 
 Here's what you'll learn:
 
