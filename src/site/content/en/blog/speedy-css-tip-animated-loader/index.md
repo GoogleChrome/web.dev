@@ -46,6 +46,7 @@ Give our loader some styles:
 ```css
 loader {
   --size: 10vmin;
+
   height: var(--size);
   position: relative;
   width: var(--size);
