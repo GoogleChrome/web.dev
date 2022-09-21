@@ -51,7 +51,7 @@ loader {
 }
 ```
 
-Position our lines using absolute positioning and a combo of `calc` with `transform`.
+Position our lines using absolute positioning and a combination of `calc` with `transform`:
 
 ```css
 .loader span {
