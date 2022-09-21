@@ -63,12 +63,12 @@ Here is a basic rule with two states.
 
 ```css
 @keyframes my-animation {
-	from {
-		transform: translateY(20px);
-	}
-	to {
-		transform: translateY(0px);
-	}
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 ```
 
@@ -93,12 +93,12 @@ You could re-create the same rule like this:
 
 ```css
 @keyframes my-animation {
-	0% {
-		transform: translateY(20px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 ```
 
@@ -135,7 +135,7 @@ To use your `@keyframes` in a CSS rule, define various animation properties _or_
 
 ```css
 .my-element {
-	animation-duration: 10s;
+  animation-duration: 10s;
 }
 ```
 
@@ -149,7 +149,7 @@ You can't add negative time values.
 
 To help recreate natural motion in animation,
 you can use timing functions that calculate the speed of an animation at each point.
-Calculated values are often *curved*,
+Calculated values are often _curved_,
 making the animation run at variable speeds over the course of `animation-duration`,
 and if a value is calculated beyond that of the value defined in `@keyframes`, make the element appear to bounce.
 
@@ -159,7 +159,7 @@ There are several keywords available as presets in CSS, which are used as the va
 
 ```css
 .my-element {
-	animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
 }
 ```
 
@@ -178,7 +178,7 @@ which accepts four number values: `x1`, `y1`, `x2`, `y2`.
 
 ```css
 .my-element {
-	animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
 }
 ```
 
@@ -203,7 +203,7 @@ The `steps()` easing function lets you break the timeline into defined, **equal 
 
 ```css
 .my-element {
-	animation-timing-function: steps(10, end);
+  animation-timing-function: steps(10, end);
 }
 ```
 
@@ -229,7 +229,7 @@ which means it ends one step earlier than `end`.
 
 ```css
 .my-element {
-	animation-iteration-count: 10;
+  animation-iteration-count: 10;
 }
 ```
 
@@ -259,7 +259,7 @@ which is how the "pulser" demo from the start of this lesson works.
 
 ```css
 .my-element {
-	animation-direction: reverse;
+  animation-direction: reverse;
 }
 ```
 
@@ -280,7 +280,7 @@ You can set which direction the timeline runs over your keyframes with
 
 ```css
 .my-element {
-	animation-delay: 5s;
+  animation-delay: 5s;
 }
 ```
 
@@ -288,7 +288,7 @@ The [animation-delay](https://developer.mozilla.org/docs/Web/CSS/animation-delay
 property defines how long to wait before starting the animation.
 Like the `animation-duration` property, this accepts a time value.
 
-Unlike the `animation-duration` property, you *can* define this as a negative value.
+Unlike the `animation-duration` property, you _can_ define this as a negative value.
 If you set a negative value, the timeline in your `@keyframes` will start at that point.
 For example, if your animation is 10 seconds long and you set `animation-delay` to `-5s`, it will start from half-way along your timeline.
 
@@ -301,7 +301,7 @@ For example, if your animation is 10 seconds long and you set `animation-delay` 
 
 ```css
 .my-element:hover {
-	animation-play-state: paused;
+  animation-play-state: paused;
 }
 ```
 
@@ -348,7 +348,7 @@ which lets you define the animation properties in the following order:
 
 ```css
 .my-element {
-	animation: my-animation 10s ease-in-out 1s infinite forwards forwards running;
+  animation: my-animation 10s ease-in-out 1s infinite forwards forwards running;
 }
 ```
 
@@ -373,7 +373,6 @@ but rather, a preference to reduce animations—
 [especially unexpected ones](/prefers-reduced-motion/).
 You can learn more about this preference and overall performance with
 [this animation guide](/animations/).
-
 
 {% Codepen {
   user: 'web-dot-dev',
