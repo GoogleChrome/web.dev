@@ -30,7 +30,7 @@ Create the markup for our loader. Note the use of inline custom properties!
 
 ```
 
-Bonus points for using a generator(Pug 👇) to configure the number of lines.
+You can also use a generator ([Pug](https://pugjs.org/api/getting-started.html)) to configure the number of lines:
 
 ```pug
 - const COUNT = 10
