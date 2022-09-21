@@ -51,9 +51,9 @@ from 0 to 360, with red at 0, green at 120, and blue at 240.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'eYrEZqE',
- height: 300,
+ height: 350,
  theme: 'dark',
- tab: 'css,result',
+ tab: 'result',
  allow: ['geolocation']
 } %}
 
@@ -64,9 +64,9 @@ with no saturation (0%) would be grayscale or black and white.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'vYjJKBP',
- height: 300,
+ height: 350,
  theme: 'dark',
- tab: 'css,result',
+ tab: 'result',
  allow: ['geolocation']
 } %}
 
@@ -76,9 +76,9 @@ from 0% (black) to 100% (white).
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'poVrboR',
- height: 300,
+ height: 350,
  theme: 'dark',
- tab: 'css,result',
+ tab: 'result',
  allow: ['geolocation']
 } %}
 
@@ -148,8 +148,35 @@ https://codepen.io/web-dot-dev/pen/PoeKzWq
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'PoeKzWq',
- height: 300,
+ height: 350,
  theme: 'dark',
- tab: 'css,result',
+ tab: 'result',
  allow: ['geolocation']
 } %}
+
+## Using color
+
+Without good color contrast levels in place, words, icons, and other graphical elements are [hard to discover](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html), and the design can quickly become inaccessible. But it’s also important to pay attention to [how the color is used](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) on the screen, as you cannot use color alone to convey information, actions, or distinguish a visual element.
+
+For example, if you say, "[click the green button to continue](https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html)," but omit any additional content or identifiers to the button, it would be difficult for people with certain types of colorblindness to know which button to click. Similarly, many graphs, charts, and tables use color alone to convey information. Adding another identifier, like a pattern, text, or icon, is crucial to help people understand the content. Reviewing your digital products in grayscale is a good way to detect potential color issues quickly.
+
+{% Codepen {
+ user: 'web-dev-codepen-external',
+ id: 'rNvzLmd',
+ height: 350,
+ theme: 'dark',
+ tab: 'result',
+ allow: ['geolocation']
+} %}
+
+## Color-focused media queries
+
+Beyond checking for color contrast ratios and the use of color on your screen, you should consider applying the increasingly popular and supported [media queries](/learn/design/media-features/#preferences) that offer the users more control over what is displayed on the screen.
+
+For example, using the [@prefers-color-scheme](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme) media query, you can create a dark theme, which can be helpful to people with [photophobia](https://w3c.github.io/low-vision-a11y-tf/requirements.html#light-and-glare-sensitivity) or light sensitivity. You could also build a high contrast theme with [@prefers-contrast](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-contrast), which supports people with color deficiencies and [contrast sensitivity](https://w3c.github.io/low-vision-a11y-tf/requirements.html#contrast-sensitivity).
+
+{% Aside %}
+There are additional media queries and OS settings to consider for color accessibility, but they are far less supported than the two listed in this module. See the article [Operating System and Browser Accessibility Display Modes](https://www.a11yproject.com/posts/operating-system-and-browser-accessibility-display-modes/) for more information on the various OS accessibility settings.
+{% endAside %}
+
+
