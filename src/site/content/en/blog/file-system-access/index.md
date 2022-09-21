@@ -63,7 +63,7 @@ Windows, macOS, ChromeOS, and Linux. A notable exception is Brave where it is
 flag](https://github.com/brave/brave-browser/issues/18979). Android support is
 coming for the origin private file system part
 ([https://crbug.com/1354273](https://bugs.chromium.org/p/chromium/issues/detail?id=1354273)).
-What is not immediately planned are the picker methods, but you can track
+There are no plans currently for picker methods, but you can track
 potential progress by starring [crbug.com/1011535](https://crbug.com/1011535).
 
 ## Using the File System Access API {: #how-to-use }
