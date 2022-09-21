@@ -86,7 +86,7 @@ Read a short [article in the New York Times](https://www.nytimes.com/2022/08/16/
 
 {% endDetails %}
 
-### Mobility impairment
+### Mobility impairments
 
 _[Mobility impairment](https://www.disabled-world.com/disability/types/mobility/)_ is a category of disability that includes people with various physical disabilities. This type of disability includes upper or lower limb loss or disability, manual dexterity, and disability in coordination with different organs of the body.
 
