@@ -142,7 +142,14 @@ L1 is the relative luminance of the lighter color
 L2 is the relative luminance of the darker colors
 ```
 
-Thankfully, no advanced math is required as there are a lot of tools that will do the color contrast calculations for you. Tools like [Adobe Color](https://color.adobe.com/create/color-accessibility), [Color Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/), [Leonardo](https://leonardocolor.io/), and [Chrome’s DevTools color picker](https://developer.chrome.com/docs/devtools/accessibility/reference/#contrast) can quickly tell you the color contrast ratios and offer suggestions to help create the most inclusive color pairs and palettes.
+Thankfully, no advanced math is required as there are a lot of tools that will
+do the color contrast calculations for you. Tools like
+[Adobe Color](https://color.adobe.com/create/color-accessibility),
+[Color Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/),
+[Leonardo](https://leonardocolor.io/), and
+[Chrome's DevTools color picker](https://developer.chrome.com/docs/devtools/accessibility/reference/#contrast)
+can quickly tell you the color contrast ratios and offer suggestions to help
+create the most inclusive color pairs and palettes.
 
 {% Codepen {
  user: 'web-dev-codepen-external',
@@ -155,9 +162,20 @@ Thankfully, no advanced math is required as there are a lot of tools that will d
 
 ## Using color
 
-Without good color contrast levels in place, words, icons, and other graphical elements are [hard to discover](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html), and the design can quickly become inaccessible. But it’s also important to pay attention to [how the color is used](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) on the screen, as you cannot use color alone to convey information, actions, or distinguish a visual element.
+Without good color contrast levels in place, words, icons, and other graphical
+elements are [hard to discover](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html),
+and the design can quickly become inaccessible. But it's also important to pay
+attention to [how the color is used](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)
+on the screen, as you cannot use color alone to convey information, actions, or
+distinguish a visual element.
 
-For example, if you say, "[click the green button to continue](https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html)," but omit any additional content or identifiers to the button, it would be difficult for people with certain types of colorblindness to know which button to click. Similarly, many graphs, charts, and tables use color alone to convey information. Adding another identifier, like a pattern, text, or icon, is crucial to help people understand the content. Reviewing your digital products in grayscale is a good way to detect potential color issues quickly.
+For example, if you say, "[click the green button to continue](https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html),"
+but omit any additional content or identifiers to the button, it would be
+difficult for people with certain types of colorblindness to know which button
+to click. Similarly, many graphs, charts, and tables use color alone to convey
+information. Adding another identifier, like a pattern, text, or icon, is
+crucial to help people understand the content. Reviewing your digital products
+in grayscale is a good way to detect potential color issues quickly.
 
 {% Codepen {
  user: 'web-dev-codepen-external',
@@ -170,12 +188,18 @@ For example, if you say, "[click the green button to continue](https://www.w3.or
 
 ## Color-focused media queries
 
-Beyond checking for color contrast ratios and the use of color on your screen, you should consider applying the increasingly popular and supported [media queries](/learn/design/media-features/#preferences) that offer the users more control over what is displayed on the screen.
+Beyond checking for color contrast ratios and the use of color on your screen,
+you should consider applying the increasingly popular and supported
+[media queries](/learn/design/media-features/#preferences) that offer the users
+more control over what is displayed on the screen.
 
-For example, using the [@prefers-color-scheme](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme) media query, you can create a dark theme, which can be helpful to people with [photophobia](https://w3c.github.io/low-vision-a11y-tf/requirements.html#light-and-glare-sensitivity) or light sensitivity. You could also build a high contrast theme with [@prefers-contrast](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-contrast), which supports people with color deficiencies and [contrast sensitivity](https://w3c.github.io/low-vision-a11y-tf/requirements.html#contrast-sensitivity).
+For example, using the [`@prefers-color-scheme`](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme) media query, you can create a dark theme, which can be helpful to people with [photophobia](https://w3c.github.io/low-vision-a11y-tf/requirements.html#light-and-glare-sensitivity) or light sensitivity. You could also build a high contrast theme with [`@prefers-contrast`](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-contrast), which supports people with color deficiencies and [contrast sensitivity](https://w3c.github.io/low-vision-a11y-tf/requirements.html#contrast-sensitivity).
 
 {% Aside %}
-There are additional media queries and OS settings to consider for color accessibility, but they are far less supported than the two listed in this module. See the article [Operating System and Browser Accessibility Display Modes](https://www.a11yproject.com/posts/operating-system-and-browser-accessibility-display-modes/) for more information on the various OS accessibility settings.
+There are additional media queries and OS settings to consider for color
+accessibility, but they are far less supported than the two listed in this
+module. See the article [Operating System and Browser Accessibility Display Modes](https://www.a11yproject.com/posts/operating-system-and-browser-accessibility-display-modes/)
+for more information on the various OS accessibility settings.
 {% endAside %}
 
 ### Prefers color scheme
@@ -185,10 +209,15 @@ There are additional media queries and OS settings to consider for color accessi
 The media query `@prefers-color-scheme` allows users to choose a light or
 dark-themed version of the website or app they are visiting. You can see this
 theme change in action by changing your light/dark preference settings and
-navigating to a browser that supports this media query (Mac and Windows
-light/dark mode settings).
+navigating to a browser that supports this media query. Review the
+[Mac](https://support.apple.com/en-us/HT208976) and
+[Windows](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) instructions for dark mode.
 
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/Xl1Rw2thm1lf0aVDFYmv.png", alt="macOS General settings for light or dark mode.", width="800", height="336" %}
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/Xl1Rw2thm1lf0aVDFYmv.png",
+  alt="macOS General settings for light or dark mode.",
+  width="800", height="336"
+%}
 
 {% Codepen {
  user: 'web-dev-codepen-external',
@@ -221,7 +250,10 @@ Compare light and dark mode.
 {% BrowserCompat 'css.prefers-contrast' %}
 
 The [`@prefers-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast)
-media query checks the user’s OS settings to see if high contrast is toggled on or off. You can see this theme change in action by changing your contrast preference settings and navigating to a browser that supports this media query (Mac and Windows contrast mode settings).
+media query checks the user's OS settings to see if high contrast is toggled on
+or off. You can see this theme change in action by changing your contrast
+preference settings and navigating to a browser that supports this media query
+(Mac and Windows contrast mode settings).
 
 {% Codepen {
  user: 'web-dev-codepen-external',
@@ -249,7 +281,9 @@ Compare regular and high contrast.
 
 ### Layering media queries
 
-You can use multiple color-focused media queries to give your users even more choices. In this example, we stacked `@prefers-color-scheme` and `@prefers-contrast` together.
+You can use multiple color-focused media queries to give your users even more
+choices. In this example, we stacked `@prefers-color-scheme` and
+`@prefers-contrast` together.
 
 {% Codepen {
  user: 'web-dev-codepen-external',
@@ -259,5 +293,3 @@ You can use multiple color-focused media queries to give your users even more ch
  tab: 'css,result',
  allow: ['geolocation']
 } %}
-
-{% Assessment 'color' %}
