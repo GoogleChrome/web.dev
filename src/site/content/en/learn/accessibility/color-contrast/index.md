@@ -52,7 +52,7 @@ from 0 to 360, with red at 0, green at 120, and blue at 240.
  user: 'web-dev-codepen-external',
  id: 'eYrEZqE',
  height: 350,
- theme: 'dark',
+ theme: 'auto',
  tab: 'result',
  allow: ['geolocation']
 } %}
@@ -65,7 +65,7 @@ with no saturation (0%) would be grayscale or black and white.
  user: 'web-dev-codepen-external',
  id: 'vYjJKBP',
  height: 350,
- theme: 'dark',
+ theme: 'auto',
  tab: 'result',
  allow: ['geolocation']
 } %}
@@ -77,7 +77,7 @@ from 0% (black) to 100% (white).
  user: 'web-dev-codepen-external',
  id: 'poVrboR',
  height: 350,
- theme: 'dark',
+ theme: 'auto',
  tab: 'result',
  allow: ['geolocation']
 } %}
@@ -155,7 +155,7 @@ create the most inclusive color pairs and palettes.
  user: 'web-dev-codepen-external',
  id: 'PoeKzWq',
  height: 350,
- theme: 'dark',
+ theme: 'auto',
  tab: 'result',
  allow: ['geolocation']
 } %}
@@ -181,7 +181,7 @@ in grayscale is a good way to detect potential color issues quickly.
  user: 'web-dev-codepen-external',
  id: 'rNvzLmd',
  height: 400,
- theme: 'dark',
+ theme: 'auto',
  tab: 'js,result',
  allow: ['geolocation']
 } %}
@@ -204,7 +204,7 @@ for more information on the various OS accessibility settings.
 
 ### Prefers color scheme
 
-{% BrowserCompat 'css.prefers-color-scheme' %}
+{% BrowserCompat 'css.at-rules.media.prefers-color-scheme' %}
 
 The media query `@prefers-color-scheme` allows users to choose a light or
 dark-themed version of the website or app they are visiting. You can see this
@@ -213,18 +213,21 @@ navigating to a browser that supports this media query. Review the
 [Mac](https://support.apple.com/en-us/HT208976) and
 [Windows](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) instructions for dark mode.
 
+<figure>
 {% Img
   src="image/VbsHyyQopiec0718rMq2kTE1hke2/Xl1Rw2thm1lf0aVDFYmv.png",
-  alt="macOS General settings for light or dark mode.",
+  alt="Mac settings UI",
   width="800", height="336"
 %}
+<figcaption>macOS general settings for appearance.</figcaption>
+</figure>
 
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'ExLvNOw',
  height: 300,
- theme: 'dark',
- tab: 'result',
+ theme: 'auto',
+ tab: 'css,result',
  allow: ['geolocation']
 } %}
 
@@ -237,9 +240,11 @@ Compare light and dark mode.
 <div class="switcher">
   <figure>
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/wDeiH1l9XfzJZz1wxBZg.png", alt="Code example in light mode.", width="600", height="186" %}
+    <figcaption>Light mode.</figcaption>
   </figure>
   <figure>
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6F0bSF5fQyxkkqEcRF4q.png", alt="Code example in dark mode.", width="600", height="186" %}
+    <figcaption>Dark mode.</figcaption>
   </figure>
 </div>
 
@@ -247,33 +252,36 @@ Compare light and dark mode.
 
 ### Prefers contrast
 
-{% BrowserCompat 'css.prefers-contrast' %}
+{% BrowserCompat 'css.at-rules.media.prefers-contrast' %}
 
 The [`@prefers-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast)
 media query checks the user's OS settings to see if high contrast is toggled on
 or off. You can see this theme change in action by changing your contrast
 preference settings and navigating to a browser that supports this media query
-(Mac and Windows contrast mode settings).
+([Mac](https://support.apple.com/lv-lv/guide/mac-help/unac089/mac) and [Windows](https://support.microsoft.com/windows/change-color-contrast-in-windows-fedc744c-90ac-69df-aed5-c8a90125e696) contrast mode settings).
 
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'bGMrgNV',
- height: 350,
- theme: 'dark',
- tab: 'result',
+ height: 300,
+ theme: 'auto',
+ tab: 'css,result',
  allow: ['geolocation']
 } %}
 
+{% Details %}
 {% DetailsSummary %}
 Compare regular and high contrast.
 {% endDetailsSummary %}
 
 <div class="switcher">
   <figure>
-    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/wDeiH1l9XfzJZz1wxBZg.png", alt="Regular contrast.", width="600", height="186" %}
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/wDeiH1l9XfzJZz1wxBZg.png", alt="Code example in light mode with no contrast preference.", width="600", height="186" %}
+    <figcaption>Light mode, no contrast preference.</figcaption>
   </figure>
   <figure>
-    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/vKrSleRSunOTlwLlZMbR.png", alt="High contrast.", width="600", height="186" %}
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/vKrSleRSunOTlwLlZMbR.png", alt="Code example in dark mode with high contrast preference.", width="600", height="186" %}
+    <figcaption>Dark mode, high contrast preference.</figcaption>
   </figure>
 </div>
 
@@ -288,8 +296,39 @@ choices. In this example, we stacked `@prefers-color-scheme` and
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'wvjqgaK',
- height: 350,
- theme: 'dark',
+ height: 300,
+ theme: 'auto',
  tab: 'css,result',
  allow: ['geolocation']
 } %}
+
+{% Details %}
+{% DetailsSummary %}
+Compare both color and contrast.
+{% endDetailsSummary %}
+
+<div class="switcher">
+  <figure>
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/wDeiH1l9XfzJZz1wxBZg.png", alt="Light mode, regular contrast.", width="600", height="186" %}
+    <figcaption>Light mode, no contrast preference.</figcaption>
+  </figure>
+  <figure>
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6F0bSF5fQyxkkqEcRF4q.png", alt="Dark mode, regular contrast.", width="600", height="186" %}
+    <figcaption>Dark mode, no contrast preference.</figcaption>
+  </figure>
+</div>
+
+<div class="switcher">
+  <figure>
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/vn8QJND0mRMg9rrn1JrK.png", alt="Light mode, high contrast.", width="600", height="186" %}
+    <figcaption>Light mode, high contrast preference.</figcaption>
+  </figure>
+  <figure>
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/vKrSleRSunOTlwLlZMbR.png", alt="Dark mode, high contrast.", width="600", height="186" %}
+    <figcaption>Dark mode, high contrast preference.</figcaption>
+  </figure>
+</div>
+
+{% endDetails %}
+
+{% Assessment 'color' %}
