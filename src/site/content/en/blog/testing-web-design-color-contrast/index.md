@@ -155,12 +155,12 @@ cases:
 Compare text to a background color:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qJutaWyNQZvDBcQxZHUT.png",
-alt="ALT_TEXT_HERE", width="800", height="553" %}
+alt="Two grays are compared in a side by side, they have a contrast ratio of 13.01 and is passing AA and AAA targets.", width="800", height="553" %}
 
 Compare stroke and fill colors of vector graphics:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/awGWrJlqYytjJe0aUcDZ.png",
-alt="ALT_TEXT_HERE", width="800", height="691" %}
+alt="Two purples are compared from a duo-toned icon, they have a contrast ratio of 1.63 and are not passing any WCAG targets.", width="800", height="691" %}
 
 #### Comparing colors with transparency
 
@@ -169,14 +169,15 @@ gray from the [frosted glass effect](https://codepen.io/argyleink/pen/qBmJyvv)
 is used as the background comparison color.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/D7IiPPGcppmBrDlDZ9zM.png",
-alt="ALT_TEXT_HERE", width="800", height="339" %}
+alt="Two colors that look like gray but are actually very desaturated purples are compared from an image with a blurry semi-transparent caption, they have a contrast ratio of 4.65 and are passing the AA target.", width="800", height="339" %}
 
 #### Comparing colors with gradients
 
-Compare text against a gradient, or text inside an image:
+Compare text on a gradient or on an image. Here the L from "Lasso" is 
+compared against the light blue of the image:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/pvFbvPiUoSKVFkay28Cs.png",
-alt="ALT_TEXT_HERE", width="800", height="476" %}
+alt="A screenshot from a TV show has the show title overtop, the L is white and the blue behind it are compared. They have a contrast ratio of 8 and are passing the AA and AAA targets.", width="800", height="476" %}
 
 ### VisBug
 
@@ -194,15 +195,15 @@ UI and UX of the design tools that folks have come to know and love to use.
 
 One of its tool offerings is the Accessibility Inspect tool.
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/bOXSSviSfH1tw1E4Fsyr.png",
-alt="ALT_TEXT_HERE", width="450", height="672" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3rUbTN4EPJNLcglBJk80.png",
+alt="Screenshot of the VisBug toolbar on the left side of a blank page, the accessibility tool icon is pink and a popover is shown that provides instruction of the tool.", width="800", height="608" %}
 
 #### Inspect across browsers (and even on mobile)
 
 Once the Accessibility Inspect tool has been clicked, anything the user points to, or keyboard navigates to, will have its accessibility information reported in the tooltip. This tooltip includes color comparisons between discovered foreground and background colors.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/47Csfarpjv0NdZFsgXgv.png",
-alt="ALT_TEXT_HERE", width="800", height="833" %}
+alt="A component with a title and an icon are shown with a pink bounding box around it, a VisBug accessibility tooltip points to the pink box with a color comparison report of the text color and it's background. The ratio is 13.86 and is passing both AA and AAA targets.", width="800", height="833" %}
 
 {% Aside %}
 VisBug's color contrast UI is heavily inspired by the fantastic design of
@@ -218,7 +219,7 @@ put. Hold Shift and continue clicking other elements and all of the tooltips
 will stay put:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/axWMocJEUs0CCfVTXwVL.png",
-alt="ALT_TEXT_HERE", width="800", height="583" %}
+alt="A list of links on a webpage are shown with multiple VisBug accessibility overlays, each contextually pointing to and reporting the discovered text and background color contrasts.", width="800", height="583" %}
 
 This is especially important for component based design, where multiple parts of
 a component need to pass contrast ratio scores. This method allows seeing all of
@@ -250,8 +251,7 @@ In the following example, the color picker is opened for a custom property color
 value. The contrast ratio score is reported as 15.79 and has two green check
 marks, indicating the score passes AA and AAA WCAG 2.1 requirements:
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jMeWoW9QXGbLYYg89T0e.png",
-alt="ALT_TEXT_HERE", width="800", height="1098" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/RialptHZZEuHttshMLdy.png", alt="Screenshot of DevTools Elements panel, in the styles the color picker is shown and in the middle is reporting the contrast ratio of the color of 4.98.", width="800", height="602" %}
 
 ##### Color Picker auto correction
 
@@ -263,11 +263,18 @@ dropper](https://developer.chrome.com/blog/new-in-chrome-95/#eyedropper) tool.
 Next to AA and AAA are swatches and a refresh icon that when clicked will find
 the nearest passing color for you:
 
+<style>
+  .auto-aspect {
+    aspect-ratio: auto;
+  }
+</style>
+
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fa74vzYyHK5vbk6lH2ok.mp4",
   autoplay="true",
   loop="true",
-  muted="true"
+  muted="true",
+  class="auto-aspect"
 %}
 
 If you're not picky about colors, the auto correction feature is a great way to
@@ -282,13 +289,13 @@ cursor over the bottom right corner. It can also be selected using the hotkey
 `Control+Shift+C` (or `Command+Shift+C` on MacOS).
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/ZhRJEcge2Dowm36zBU35.png",
-alt="ALT_TEXT_HERE", width="446", height="172" %}
+alt="Screenshot of the box and arrow icon in DevTools that invokes the element select tool.", width="446", height="172" %}
 
 Once activated, the icon will turn blue, and pointing to anything in the page
 will show the following quick inspect tooltip:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jnpoQugZCrUJTvUG6RC1.png",
-alt="ALT_TEXT_HERE", width="708", height="550" %}
+alt="A screenshot of an overlay very similar to VisBug, it shows some style information and an accessibility section that shows a contrast score of 15.79 that passes the AA target.", width="708", height="550" %}
 
 Instead of the color picker tool, which requires you to find the color swatch in
 the Styles pane, this tool lets you simply point around the page to see contrast
@@ -335,7 +342,7 @@ Overview](https://developer.chrome.com/docs/devtools/css-overview/) can crawl
 your entire page and present all the inaccessible pairings at once:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/wGFo3rxvWyACrT6ZVxtm.png",
-alt="ALT_TEXT_HERE", width="800", height="283" %}
+alt="Screenshot of the Overview Summary from running the CSS Overview capture tool. It shows 7 contrast issues, showing the discovered color pairings and their failing results.", width="800", height="283" %}
 
 Read more about this feature in this post [CSS Overview: Identify potential CSS
 improvements](https://developer.chrome.com/docs/devtools/css-overview/) or watch
@@ -364,13 +371,13 @@ The Issues pane of the console can constantly report any color contrast
 accessibility issues as you build. Enable the feature in Settings > Experiments,
 as shown in the following:
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/pz17vgSpdFuU0NYGZJhc.png", alt="ALT_TEXT_HERE", width="800", height="47" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/pz17vgSpdFuU0NYGZJhc.png", alt="Screenshot of an enabled checkbox: 'Enable automatic contrast issue reporting via the Issues panel.'", width="800", height="47" %}
 
 Then open the Issue pane and see if it's made any discoveries. If it does, they
 can look like this:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qtXnfLI296d57IWhdPP5.png",
-alt="ALT_TEXT_HERE", width="800", height="521" %}
+alt="Screenshot of the Issues panel inside the Console, it reports 6 errors around contrast.", width="800", height="521" %}
 
 #### Colorblind emulation
 
@@ -381,7 +388,7 @@ varieties of color blindness, giving you the opportunity to modify your design
 so that color isn't the only way the UX is communicating to a user.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/R9FpuGeUS9GlYfToWvfK.png",
-alt="ALT_TEXT_HERE", width="800", height="558" %}
+alt="Screenshot of the options in the emulation DevTools for emulating vision deficiencies: no emulation, blurred vision, protanopia, deuteranopia, tritanopia, achromatopsia.", width="800", height="558" %}
 
 It's not a safe accessibility practice to exclusively use color to depict
 information, like red for bad and green for good. Some folks don't see greens or
@@ -398,7 +405,7 @@ so designs can test and adapt to the user request without toggling the setting
 from the system.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/zSpeqvfJk9V2XrFZWNsb.png",
-alt="ALT_TEXT_HERE", width="800", height="315" %}
+alt="Screenshot of the options in the emulation DevTools for emulating the CSS media query prefers-contrast: no emulation, more, less, custom.", width="800", height="315" %}
 
 #### Try WCAG 3.0 APCA
 
@@ -409,13 +416,13 @@ algorithm, letting you preview its results as the proposal works towards a
 standard.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/k3P5tDwEueZFFGqQH40m.png",
-alt="ALT_TEXT_HERE", width="800", height="131" %}
+alt="Screenshot of an enabled checkbox: 'Enable new Advanced Perceptual Contrast Algorithm (APCA) replacing previous contrast ratio and AA/AAA guidelines.'", width="800", height="131" %}
 
 Once enabled, use the point inspect tooltip or the color picker to see the color
 pairing score and see if it passes:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/s2qRDE5RRswXWwwKewRI.png",
-alt="ALT_TEXT_HERE", width="800", height="365" %}
+alt="Devtools inspect element tooltip is showing -100.2% for the contrast score on a dd element.", width="800", height="365" %}
 
 ## Conclusion
 
