@@ -163,9 +163,9 @@ For example, if you say, "[click the green button to continue](https://www.w3.or
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'rNvzLmd',
- height: 350,
+ height: 400,
  theme: 'dark',
- tab: 'result',
+ tab: 'js,result',
  allow: ['geolocation']
 } %}
 
@@ -179,4 +179,86 @@ For example, using the [@prefers-color-scheme](https://drafts.csswg.org/mediaque
 There are additional media queries and OS settings to consider for color accessibility, but they are far less supported than the two listed in this module. See the article [Operating System and Browser Accessibility Display Modes](https://www.a11yproject.com/posts/operating-system-and-browser-accessibility-display-modes/) for more information on the various OS accessibility settings.
 {% endAside %}
 
+### Prefers color scheme
 
+{% BrowserCompat 'css.prefers-color-scheme' %}
+
+The media query `@prefers-color-scheme` allows users to choose a light or
+dark-themed version of the website or app they are visiting. You can see this
+theme change in action by changing your light/dark preference settings and
+navigating to a browser that supports this media query (Mac and Windows
+light/dark mode settings).
+
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/Xl1Rw2thm1lf0aVDFYmv.png", alt="macOS General settings for light or dark mode.", width="800", height="336" %}
+
+{% Codepen {
+ user: 'web-dev-codepen-external',
+ id: 'ExLvNOw',
+ height: 300,
+ theme: 'dark',
+ tab: 'result',
+ allow: ['geolocation']
+} %}
+
+{% Details %}
+
+{% DetailsSummary %}
+Compare light and dark mode.
+{% endDetailsSummary %}
+
+<div class="switcher">
+  <figure>
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/wDeiH1l9XfzJZz1wxBZg.png", alt="Code example in light mode.", width="600", height="186" %}
+  </figure>
+  <figure>
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6F0bSF5fQyxkkqEcRF4q.png", alt="Code example in dark mode.", width="600", height="186" %}
+  </figure>
+</div>
+
+{% endDetails %}
+
+### Prefers contrast
+
+{% BrowserCompat 'css.prefers-contrast' %}
+
+The [`@prefers-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast)
+media query checks the user’s OS settings to see if high contrast is toggled on or off. You can see this theme change in action by changing your contrast preference settings and navigating to a browser that supports this media query (Mac and Windows contrast mode settings).
+
+{% Codepen {
+ user: 'web-dev-codepen-external',
+ id: 'bGMrgNV',
+ height: 350,
+ theme: 'dark',
+ tab: 'result',
+ allow: ['geolocation']
+} %}
+
+{% DetailsSummary %}
+Compare regular and high contrast.
+{% endDetailsSummary %}
+
+<div class="switcher">
+  <figure>
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/wDeiH1l9XfzJZz1wxBZg.png", alt="Regular contrast.", width="600", height="186" %}
+  </figure>
+  <figure>
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/vKrSleRSunOTlwLlZMbR.png", alt="High contrast.", width="600", height="186" %}
+  </figure>
+</div>
+
+{% endDetails %}
+
+### Layering media queries
+
+You can use multiple color-focused media queries to give your users even more choices. In this example, we stacked `@prefers-color-scheme` and `@prefers-contrast` together.
+
+{% Codepen {
+ user: 'web-dev-codepen-external',
+ id: 'wvjqgaK',
+ height: 350,
+ theme: 'dark',
+ tab: 'css,result',
+ allow: ['geolocation']
+} %}
+
+{% Assessment 'color' %}
