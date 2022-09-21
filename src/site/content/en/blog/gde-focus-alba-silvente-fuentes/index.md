@@ -17,7 +17,7 @@ tags:
 ---
 
 <figure>
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/YcD8pQOpwfcHv2iCw5lW.jpeg", alt="Nishu on stage.", width="800", height="533" %}
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/TorTqrnIdn5WAXwPKLgS.jpeg", alt="Alba with a speaker lanyard.", width="800", height="598" %}
 </figure>
 
 **Monika:** What products are you working with? What's your professional focus, and what tools make your day-to-day work easy and efficient? 
@@ -73,6 +73,10 @@ People who listen to our podcast and form a community around it are very inclusi
 For example, watching prepared tutorials on YouTube won't give you the same feeling.The creators of those don't make mistakes, unless it's a livestream, you don't see their real reactions, they have scripts prepared for that.
 
 Communities—for example, Google Developer Groups—are great, because you feel that you can fail live, and they'll still love you. It's amazing to feel that people around are just the same as me, and we can grow together. 
+
+<figure>
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/D2nOKPybx9AqsrkKC7KF.jpeg", alt="Alba and other attendees in front of a Google sign.", width="800", height="600" %}
+</figure>
 
 **Monika:** What's your story as a Google Developer Expert in web technologies? Would you recommend the program to a friend?
 
