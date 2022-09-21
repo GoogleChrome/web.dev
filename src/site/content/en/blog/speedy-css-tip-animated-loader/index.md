@@ -67,7 +67,7 @@ Position our lines using absolute positioning and a combo of `calc` with `transf
 }
 ```
 
-Apply an opacity based on the `--index`.
+Apply an opacity based on the `--index`:
 
 ```css
 .loader span {
