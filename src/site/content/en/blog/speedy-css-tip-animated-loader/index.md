@@ -101,6 +101,12 @@ Note the use of `steps(var(--count))` to get the right effect ✨
 
 Done! 🎉
 
+{% Video {
+    controls: true,
+    src:"video/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/Hs8ynufhs5B9PA0GSnZ8.mp4"
+  }
+%}
+
 Prefer this in [tweet form](https://twitter.com/jh3yy/status/1513599688662044684)? 🐦
 
 Stay Awesome! ʕ •ᴥ•ʔ
