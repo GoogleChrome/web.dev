@@ -64,7 +64,7 @@ include people with:
 Visual impairments
 {% endDetailsSummary %}
 
-_[Visual impairment](https://www.disabled-world.com/disability/types/vision/)_ (vision impairment, vision disability) is a decreased ability to see to the degree that causes problems not fixable by usual means, such as glasses or medication. Visual impairment can be due to disease, trauma, or congenital or degenerative conditions.
+[Visual impairment](https://www.disabled-world.com/disability/types/vision/) (vision impairment, vision disability) is a decreased ability to see to the degree that causes problems not fixable by usual means, such as glasses or medication. Visual impairment can be due to disease, trauma, or congenital or degenerative conditions.
 
 <figure data-float="right">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/9rl95PJGmH4j9z6PYCVD.png", alt="A black woman using a white cane.", width="240", height="300" %}
@@ -89,7 +89,7 @@ Read a short [article in the New York Times](https://www.nytimes.com/2022/08/16/
 Mobility impairments
 {% endDetailsSummary %}
 
-_[Mobility impairment](https://www.disabled-world.com/disability/types/mobility/)_ is a category of disability that includes people with various physical disabilities. This type of disability includes upper or lower limb loss or disability, manual dexterity, and disability in coordination with different organs of the body.
+[Mobility impairment](https://www.disabled-world.com/disability/types/mobility/) is a category of disability that includes people with various physical disabilities. This type of disability includes upper or lower limb loss or disability, manual dexterity, and disability in coordination with different organs of the body.
 
 <figure data-float="right">
 {% Img
