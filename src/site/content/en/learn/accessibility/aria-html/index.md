@@ -4,7 +4,6 @@ authors:
   - cariefisher
 description: When to use ARIA versus HTML.
 date: 2023-09-23
-placeholder: false
 tags:
   - accessibility
 ---
@@ -37,8 +36,16 @@ found in modern browsers. This communication happens through the accessibility
 tree.
 
 <blockquote>
-  <p>"ARIA is a way to make Web content and Web applications more accessible to people with disabilities. It especially helps with dynamic content, and advanced user interface controls developed with HTML, JavaScript, and related technologies."</p>
-  <cite>[WAI group](https://www.w3.org/WAI/standards-guidelines/aria/)</cite>
+  <p>
+    "<a href="https://www.w3.org/WAI/standards-guidelines/aria/">ARIA</a> is a
+    way to make Web content and Web applications more accessible to people with
+    disabilities. It especially helps with dynamic content, and advanced user
+    interface controls developed with HTML, JavaScript, and related
+    technologies."
+  </p>
+  <cite>
+    <a href="https://www.w3.org/WAI/">The WAI group</a>
+  </cite>
 </blockquote>
 
 ### The accessibility tree
@@ -248,7 +255,11 @@ boots."
 <label for="shoes">Red leather boots</label>
 ```
 
-There are many ways to check an element's accessible name, including inspecting the accessibility tree using [Chrome DevTools](https://developer.chrome.com/blog/full-accessibility-tree/) or testing it with a screen reader. Read more about screen reader testing in module [testing module link]. 
+There are many ways to check an element's accessible name, including inspecting the accessibility tree using [Chrome DevTools](https://developer.chrome.com/blog/full-accessibility-tree/) or testing it with a screen reader.
+
+{% Aside %}
+Coming soon: read more about screen reader testing in module 17 on Assistive Technology.
+{% endAside %}
 
 ## ARIA in HTML
 
