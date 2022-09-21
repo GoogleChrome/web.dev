@@ -143,7 +143,6 @@ L2 is the relative luminance of the darker colors
 ```
 
 Thankfully, no advanced math is required as there are a lot of tools that will do the color contrast calculations for you. Tools like [Adobe Color](https://color.adobe.com/create/color-accessibility), [Color Contrast Analyzer](https://www.tpgi.com/color-contrast-checker/), [Leonardo](https://leonardocolor.io/), and [Chrome’s DevTools color picker](https://developer.chrome.com/docs/devtools/accessibility/reference/#contrast) can quickly tell you the color contrast ratios and offer suggestions to help create the most inclusive color pairs and palettes.
-https://codepen.io/web-dot-dev/pen/PoeKzWq
 
 {% Codepen {
  user: 'web-dev-codepen-external',
