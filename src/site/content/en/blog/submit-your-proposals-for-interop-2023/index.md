@@ -28,7 +28,7 @@ The Chrome team has worked with other browser vendors and partners in the ecosys
 
 
 <figure>
-  {% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/8fXDfdtPWAh2xMF6iiYT.png", alt="Showing three circles with scores: 80 for Chrome Dev and Edge Dev, 82 for Firefox Nightly and 86 for Safari Technology Preview", width="800", height="501" %}
+  {% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/8fXDfdtPWAh2xMF6iiYT.png", alt="Showing three circles with scores: 80 for Chrome Dev and Edge Dev, 82 for Firefox Nightly, and 86 for Safari Technology Preview.", width="800", height="501" %}
   <figcaption>September 2022.</figcaption>
 </figure>
 
