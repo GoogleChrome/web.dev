@@ -10,7 +10,7 @@ authors:
   - robertnyman
   - foolip
 hero: "image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/ZZjlTqQijYN8FocvisWC.jpg"
-alt: "A picture of three post-its and a marker pen"
+alt: "A picture of three post-its and a marker pen."
 date: 2022-09-21
 updated: 2022-09-21
 tags:
