@@ -1,9 +1,9 @@
 ---
 title: Speedy CSS Tip! Animated Loader
 subhead: Let's make an animated CSS loader with scoped custom properties and animation-timing-function
-date: 2022-04-12
-hero: image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/vzvc5Ep1blYUQMYYnAKT.jpg,
-author: jhey
+date: 2022-09-22
+hero: image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/vzvc5Ep1blYUQMYYnAKT.jpg
+author: jheyy
 tags: 
   - blog
   - css
@@ -92,8 +92,8 @@ Get things spinning!
 Note the use of `steps(var(--count))` to get the right effect ✨
 
 {% CodePen {
-  user: 'jh3y',
-  id: 'KKZREbx',
+  user: 'web-dot-dev',
+  id: 'oNdeWep',
   height: 300,
   theme: 'dark',
   tab: 'result'
