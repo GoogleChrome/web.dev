@@ -3,7 +3,7 @@ title: 'ARIA and HTML'
 authors:
   - cariefisher
 description: When to use ARIA versus HTML.
-date: 2023-09-23
+date: 2023-09-30
 tags:
   - accessibility
 ---
@@ -275,14 +275,13 @@ default HTML roles, reduce redundancy, and be aware of unintended side effects.
 
 Let's look at some examples.
 
-<div class="switcher">
 {% Compare 'worse' %}
 ```html
 <a role="heading">Read more</a>
 ```
 
 {% CompareCaption %}
-Wrong role.
+Assigned the wrong role.
 {% endCompareCaption %}
 
 {% endCompare %}
@@ -297,9 +296,9 @@ Correct role and an extra link description.
 {% endCompareCaption %}
 
 {% endCompare %}
-</div>
 
-<div class="switcher">
+<hr />
+
 {% Compare 'worse' %}
 ```html
 <ul role="list">...</ul>
@@ -321,9 +320,9 @@ Redundancy removed
 {% endCompareCaption %}
 
 {% endCompare %}
-</div>
 
-<div class="switcher">
+<hr />
+
 {% Compare 'worse' %}
 ```html
 <details>
@@ -351,7 +350,6 @@ No unintended side effects.
 {% endCompareCaption %}
 
 {% endCompare %}
-</div>
 
 {% Aside %}
 One place in particular where ARIA can be useful is in forms. Check out the [Learn Forms accessibility module](/learn/forms/accessibility/).

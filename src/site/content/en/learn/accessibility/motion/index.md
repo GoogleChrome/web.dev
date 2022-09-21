@@ -1,12 +1,10 @@
 ---
-title: 'Animation and motion
-'
+title: 'Animation and motion'
 authors:
   - cariefisher
 description: >
   Support people with all types of movement-triggered disorders.  
-date: 2023-09-23
-placeholder: false
+date: 2023-09-30
 tags:
   - accessibility
 ---

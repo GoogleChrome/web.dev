@@ -6,7 +6,7 @@ description: >
   and equivalent way.
 authors:
   - cariefisher
-date: 2022-09-23
+date: 2022-09-30
 ---
 
 Imagine a world where you couldn't buy a present for a friend because the
@@ -22,5 +22,17 @@ accessibility a priority. Digital accessibility, commonly abbreviated
 [a11y](https://www.a11yproject.com/posts/a11y-and-other-numeronyms/), is about
 designing and building digital products so that disabled people can still
 interact with that product in a meaningful and equivalent way.
+
+Beyond the typical leadership buy-in, time, effort, and budget that is required
+of any project, building digital products with full inclusivity in mind also
+requires:
+
+* Expert knowledge of various accessibility standards
+* Understanding the fundamentals of accessible designs and code
+* Importance of using multiple testing techniques and tools
+
+Most importantly, true inclusivity can only come when you include people with
+disabilities and accessibility best practices into the full product
+lifecycle&mdash;from planning, to designing, to coding, and more.
 
 {% Assessment 'why' %}

@@ -4,21 +4,22 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "0"
-    stem: The **name or custom identifier** of a `@keyframes` animation is case sensitive?
+    stem: How many people globally self-identify as disabled?
     options:
-      - content: "True"
-        rationale: "🎉"
-      - content: "False"
-        rationale: "CSS does not allow 2 animations to have the same name, but
-        it does allow `SWOOP` and `swoop` to coexist."
+      - content: "1.3 billion"
+        rationale: "According to WHO, disability results from the interaction between individuals with a health condition, as well as personal and environmental factors."
+      - content: "3 billion"
+        rationale: "Not quite!"
+      - content: "10 million"
+        rationale: "Not quite!"
   - type: multiple-choice
-    cardinality: "1"
-    correctAnswers: "1"
-    stem: The keywords `from` and `to` are the same as
+    cardinality: "1+"
+    correctAnswers: "0,1,2"
+    stem: What tools are commonly used to help disabled people use the web?
     options:
-      - content: "`start` and `end`."
-        rationale: "Try again!"
-      - content: "`0%` and `100%`."
-        rationale: "`from` is the same as `0%` and `to` is the same as 100%."
-      - content: "`0` and `1`"
-        rationale: "Try again!"
+      - content: "Screen readers"
+        rationale: "Screen readers allow people to relay information from a computer using speech or braille, with a Text-To-Speech engine."
+      - content: "Braille output devices"
+        rationale: "A Braille display is an electro-mechanical device which helps people with visual impairments read text output."
+      - content: "Operating system settings"
+        rationale: "A user with seizures or vestibular disorders may set preferences within their operating system to reduce motion."
