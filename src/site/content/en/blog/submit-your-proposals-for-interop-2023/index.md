@@ -2,7 +2,7 @@
 layout: post
 title: "Submit your proposals for Interop 2023"
 subhead:
-    "We are thrilled at the progress of Interop 2022 that we’ve made together and are excited to announce  Interop 2023 is happening!"
+    "We are thrilled at the progress of Interop 2022 that we’ve made together and are excited to announce that Interop 2023 is happening!"
 description:
     "Learn more about how to submit a proposal for Interop 2023"
 authors:
