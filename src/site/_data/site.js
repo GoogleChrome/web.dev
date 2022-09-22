@@ -32,8 +32,9 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
-  isBannerEnabled: false,
-  banner: '',
+  isBannerEnabled: true,
+  banner:
+    'PWA Summit 22 is ready for you, with talks from the community and organizers along with workshops and more. [Get your ticket today](https://pwasummit.com/register)',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
