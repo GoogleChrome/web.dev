@@ -5,11 +5,22 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
-    stem: What is the element used to contain the area of your site that includes the site logo or title, and main navigation.
+    stem: How do you identify the language of the document?
     options:
-      - content: "<heading>"
+      - content: "Add the `language` attribute to the HTML tag."
         rationale: "Try again."
-      - content: "<header>"
+      - content: "Add the `lang` attribute to the HTML tag."
         rationale: "Correct!"
-      - content: "<title>"
+      - content: "`Add the <lang>` element to the `<head>`."
         rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,2"
+    stem: Select elements that can be included in the `<head>`.
+    options:
+      - content: "`<p>`"
+        rationale: "Try again."
+      - content: "`<title>`"
+        rationale: "Correct!"
+      - content: "`<meta>`"
+        rationale: "Correct!"

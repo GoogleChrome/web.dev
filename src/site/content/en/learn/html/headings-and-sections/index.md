@@ -174,9 +174,15 @@ There are six section heading elements: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, 
 
 When a heading is nested in a document banner `<header>`, it is the heading for the application or site. When nested in `<main>`, whether or not it is nested within a `<header>` in `<main>`, it is the header for that page, not the whole site. When nested in an `<article>` or `<section>`, it is the header for that subsection of the page. It is recommended to use heading levels similarly to heading levels in a text editor: starting with a `<h1>` as the main heading, with `<h2>` as headings for sub-sections, and `<h3>` if those sub-sections have sections; avoid skipping heading levels. There is a good [article on section headings](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements) here.
 
-Some screen reader users do access headings to understand a page's content. Originally, headings were supposed to outline a document, just as MS Word or Google Docs can produce an outline based on headings, but browsers never implemented this structure. While browsers do display nested headings at increasingly smaller font sizes, they don't actually support outlining per se:
+Some screen reader users do access headings to understand a page's content. Originally, headings were supposed to outline a document, just as MS Word or Google Docs can produce an outline based on headings, but browsers never implemented this structure. While browsers do display nested headings at increasingly smaller font sizes as shown in the following example, they don't actually support outlining.
 
-Include [https://codepen.io/estelle/pen/NWYVWaN](https://codepen.io/estelle/pen/NWYVWaN) here. 
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'oNdePZj',
+  height: 500,
+  theme: 'dark',
+  tab: 'html,result'
+} %}
 
 You now have enough knowledge to outline MachineLearningWorkshop.com:
 
@@ -184,46 +190,16 @@ You now have enough knowledge to outline MachineLearningWorkshop.com:
 
 This is the outline for the visible content of the machine learning workshop site:
 
-```html
-<body>
-<header>
-    <h1>Machine Learning Workshop</h1>
-    <nav>
-    </nav>
-</header> 
-<main>
-
-<header>
-<h1>Full Terabyte Machine Learning Workshop</h1>
-</header>
-
-<section id="reg">
-<h2>Machine Learning Workshop Tickets</h2>
-</section>
-
-<section id="about">
-<h2>What you'll learn</h2>
-</section>
-
-<section id="teachers">
-<h2>Your Instructors</h2>
-<h3>Hal 9000 <span>&amp;</span> EVE</h3>
-</section>
-
-<section id="feedback">
-<h2>What it's like to learn good and do other stuff good too</h2>
-</section>
-
-</main>
-
-<footer>    
-    <h2>Delivering accessible, performant, standards-compliant websites since 1999.</h2>
-</footer>
-</body>
-```
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'gOzxdxR',
+  height: 700,
+  theme: 'dark',
+  tab: 'html'
+} %}
 
 {% Aside %}  
-This code snippet only includes the `<body>`. The [`<!doctype>`, `<html>`, `<body>`, and meta-information](/learn/html/metadata/) were covered earlier.  
+This code snippet only includes the content of the `<body>`. The [`<!doctype>`, `<html>`, `<body>`, and meta-information](/learn/html/metadata/) were covered earlier.  
 {% endAside%}
 
 As no piece of content is a standalone, complete piece of content, `<section>` is more appropriate than `<article>`; while each has a heading, no section is worthy of a `<footer>`.

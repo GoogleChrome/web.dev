@@ -13,3 +13,14 @@ questions:
         rationale: "Try again."
       - content: "Resets all form fields to their default values."
         rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: "Open Graph meta tags."
+    options:
+      - content: "Allow you to link to charts."
+        rationale: "Try again"
+      - content: "Are required for all pages."
+        rationale: "Try again."
+      - content: "Are used to create social media cards for your pages."
+        rationale: "Correct!"

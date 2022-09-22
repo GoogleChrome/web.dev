@@ -168,7 +168,7 @@ Then there's the one way of including styles you'll never use in the `<head>` of
 
 While you can add inline styles on the `<style>`, it's way more fun to style your `<style>` in your `style`. I digress.
 
-### Other uses of the `<link>` tag
+### Other uses of the `<link>` element
 
 The `link` element is used to create relationships between the HTML document and external resources. Some of these resources may be downloaded, others are informational. The type of relationship is defined by the value of the `rel` attribute.  There are currently [25 available values for the `rel` attribute](https://html.spec.whatwg.org/multipage/links.html#linkTypes) that can be used with `<link>`,  `<a>` and `<area>`, or `<form>`, with a few that can be used with all. It's preferable to include those related to meta information in the head and those related to performance in the `<body>`.  
 
@@ -182,7 +182,7 @@ If you don't declare a favicon, the browser will look for a file named `favicon.
 
 ```html
 <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="/images/mlwicon.png"/>  
-<link rel="mask-icon" sizes="any" href="/images/mlwicon.svg" color="#226DAA"
+<link rel="mask-icon" sizes="any" href="/images/mlwicon.svg" color="#226DAA"/>
 ```
 
 The preceding code says "use the `mlwicon.png` as the icon for scenarios where a 16px, 32px, or 48px makes sense." The sizes attribute accepts the value of `any` for scalable icons or a space-separated list of square `widthXheight` values; where the width and height values are 16, 32, 48, or greater in that geometric sequence, the pixel unit is omitted, and the X is case-insensitive. 
@@ -242,7 +242,7 @@ You will be including a tiny bit of JavaScript to create an [Easter egg](https:/
 
 This snippet creates an event handler for an element with the id of `switch`. With JavaScript, you don't want to reference an element before it exists.  It doesn't exist yet, so we won't include it yet. When we do add the light switch element, we'll add the `<script>` at the bottom of the `<body>` rather than in the `<head>`. Why? Two reasons. We want to ensure elements exist before the script referencing them is encountered. And, mainly, JavaScript is not only [render-blocking](/render-blocking-resources/), but the browser stops downloading all assets when scripts are downloaded and doesn't resume downloading other assets until the JavaScript is executed. For this reason, you will often find JavaScript requests at the end of the document rather than in the head. 
 
-There are two attributes that can reduce the blocking nature of JavaScript download and execution: `defer` and `async`. With `defer`, HTML rendering is not blocked during the download, and the JavaScript only executes after the document has otherwise finished rendering. With async, rendering isn't blocked during the download either, but once the script has finished downloading, the rendering is paused while the JavaScript is executed.
+There are two attributes that can reduce the blocking nature of JavaScript download and execution: `defer` and `async`. With `defer`, HTML rendering is not blocked during the download, and the JavaScript only executes after the document has otherwise finished rendering. With `async`, rendering isn't blocked during the download either, but once the script has finished downloading, the rendering is paused while the JavaScript is executed.
 
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/bMpXQsshdEYqlmwV2wBW.png", alt="loading when using async and defer.", width="800", height="365" %}
 
@@ -251,7 +251,7 @@ To include MLW's JavaScript in an external file, you could write:
 ```html  
 <script href="js/switch.js" defer>  
 ```  
-Adding the `[defer](https://developer.mozilla.org/docs/Learn/JavaScript/First_steps/What_is_JavaScript#script_loading_strategies)` attribute defers the execution of the script until after everything is rendered, preventing the script from harming performance. The `async` and `defer` attributes are only valid on external scripts.
+Adding the [`defer`](https://developer.mozilla.org/docs/Learn/JavaScript/First_steps/What_is_JavaScript#script_loading_strategies) attribute defers the execution of the script until after everything is rendered, preventing the script from harming performance. The `async` and `defer` attributes are only valid on external scripts.
 
 ### Base
 
@@ -262,12 +262,12 @@ The `target` attribute, valid on `<base>` as well as on links and forms, sets wh
 Most developers add the `target` attribute to the few, if any, links they want to open in a new window on the links or form themselves, rather than using `<base>`.  
 
 ```html  
-<base target="_top" href="[https://machinelearningworkshop.com](https://machinelearningworkshop.com)">  
+<base target="_top" href="https://machinelearningworkshop.com">  
 ```
 
 If our website found itself nested within an iframe on a site like Yummly, including the `<base>` element would mean when a user clicks on any links within our document, the line will load popped out of the iframe, taking up the whole browser window. 
 
-One of the drawbacks of this element is that anchor links are resolved with `<base>`. The `<base>` effectively converts the link `<a href="#ref">` to `<a target="_top" href="[https://machinelearningworkshop.com](https://machinelearningworkshop.com)#ref">`,  triggering an HTTP request to the base URL with the fragment attached.
+One of the drawbacks of this element is that anchor links are resolved with `<base>`. The `<base>` effectively converts the link `<a href="#ref">` to `<a target="_top" href="https://machinelearningworkshop.com#ref">`,  triggering an HTTP request to the base URL with the fragment attached.
 
 A few other things to note about `<base>`: there can be only one `<base>` element in a document, and it should come before any relative URLs are used, including possible script or stylesheet references.
 

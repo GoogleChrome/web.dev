@@ -158,7 +158,7 @@ Go back to the screenshot of the AOM for the non-semantic code block. You'll not
 </div>
 ```
 
-While the `role` attribute can be used to add semantics to any element, use elements with the implicit role you need!
+While the `role` attribute can be used to add semantics to any element, yu should instead use elements with the implicit role you need.
 
 ## Semantic elements
 
@@ -168,6 +168,6 @@ HTML should be used to structure content, not to define content's appearance. Th
 
 Choosing the right elements for the job as you code means you won't have to refactor or comment your HTML. If you think about using the right element for the job, you'll most often pick the right element for the job. If you don't, you probably won't. When you understand the semantics of each element and are aware of why choosing the right element is important, you will generally be able to make the right choice without much additional effort.    
 
-In the next section, you'll use the semantic elements to build your document structure.
+In the next section, you'll use the semantic elements to build your [document structure](/learn/html/document-structure/).
 
 {% Assessment 'semantic-html' %}

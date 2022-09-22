@@ -14,7 +14,7 @@ The specification includes several meta tags, and there are many, many other app
 
 ## The required `<meta>` tags, revisited
 
-Let's revisit the two necessary `<meta>` tags already covered—the [character set declaration]() and the [viewport meta tag]()—and get a better understanding of the `<meta>` tag in the process.  
+Let's revisit the two necessary `<meta>` tags already covered—the [character set declaration](/learn/html/document-structure/#character-set) and the [viewport meta tag](/learn/html/document-structure/#viewport-metadata)—and get a better understanding of the `<meta>` tag in the process.  
 
 The `charset` attribute of the `<meta>` element came about in a unique manner. Originally the character set meta data was written as `<meta http-equiv="Content-Type" content="text/html; charset=<characterset>"/>`, but so many developers mis-typed the `content` attribute as `content="text/html" charset="<characterset>"` that browsers began supporting charset as an attribute. It is standardized now in the HTML living standard as `<meta charset=<charset>"/>`, where, for HTML,`<charset>` is the case-insensitive string "utf-8" .
 
@@ -28,12 +28,12 @@ There are two main types of meta tags: pragma directives, with the `http-equiv` 
 
 The `http-equiv` attribute has as its value a pragma directive. These directives describe how the page should be parsed.  Supported `http-equiv` values enable setting directives when you are unable to set HTTP headers directly. 
 
-The specification defines seven [pragma directives](https://html.spec.whatwg.org/multipage/semantics.html#pragma-directives), most of which have other methods of being set. For example, while you can include a language directive with  `<meta http-equiv="content-language" content="en-us">`, we have already discussed using the [`lang` attribute on the HTML element](https://docs.google.com/document/u/0/d/1tnt72xeVV3raGFHM4i1Xbb-k74Kw8lRCciZxgKVO6Ec/edit#document-human-language), which is what should be used instead.
+The specification defines seven [pragma directives](https://html.spec.whatwg.org/multipage/semantics.html#pragma-directives), most of which have other methods of being set. For example, while you can include a language directive with  `<meta http-equiv="content-language" content="en-us">`, we have already discussed using the [`lang` attribute on the HTML element](/learn/html/document-structure/#content-language), which is what should be used instead.
 
 The most common pragma directive is the `refresh` directive. 
 
 ```html  
-<meta http-equiv="refresh" content="60; [https://machinelearningworkshop.com/regTimeout](https://machinelearningworkshop.com/regTimeout)"/>  
+<meta http-equiv="refresh" content="60; https://machinelearningworkshop.com/regTimeout"/>  
 ```
 
 While you can set a directive to refresh at an interval of the number of seconds set in the `content` attribute, and even redirect to a different URL, please don't. Refreshing and redirecting content without an explicit user request to do so is poor usability and negatively impacts accessibility. Don't you hate it when you're in the middle of a paragraph and the page resets? Imagine having cognitive or vision issues and that happening? If you are going to set a refresh with a redirect, make sure the user has enough time to read the page, a link to hasten the process, and, if appropriate, a button to "stop the clock" and  prevent the redirect from happening. 
@@ -63,7 +63,8 @@ Search engine optimization snake-oil salespeople abused the keywords meta tag by
 The `description` value, however, is super important for SEO; in addition to helping sites rank based on the content, the description content value is often what search engines display under the page's title in search results.  Several browsers, like Firefox and Opera, use this as the default description of bookmarked pages. The description should be a short and accurate summary of the page's content. 
 
 ```html  
-<meta name="description" content="Register for a machine learning workshop at our school for machines who can't learn good and want to do other stuff good too">  
+<meta name="description" 
+content="Register for a machine learning workshop at our school for machines who can't learn good and want to do other stuff good too">  
 ```  
 If the second half of our description makes no sense to you, you probably haven't seen the movie [Zoolander](https://www.youtube.com/watch?v=NQ-8IuUkJJc).
 
@@ -77,7 +78,7 @@ If you don't want your site to be indexed by search engines, you can let them kn
 
 #### Theme color
 
-The [`theme-color](/learn/design/theming/#customize-the-browser-interface)` value lets you define a color to customize the browser interface. The color value on the content attribute will be used by supporting browsers and operating systems, letting you provide a suggested color for the user agents that support coloring the title bar, tab bar, or other chrome components. This meta tag is especially useful for [progressive web apps](/learn/pwa/). But, if you're including a manifest file, which a PWA requires, you can include the theme color there instead. Defining it in the HTML, however, ensures that the color will be found immediately, before rendering, which may be faster on first load than waiting for the manifest.
+The [`theme-color`](/learn/design/theming/#customize-the-browser-interface) value lets you define a color to customize the browser interface. The color value on the content attribute will be used by supporting browsers and operating systems, letting you provide a suggested color for the user agents that support coloring the title bar, tab bar, or other chrome components. This meta tag is especially useful for [progressive web apps](/learn/pwa/). But, if you're including a manifest file, which a PWA requires, you can include the theme color there instead. Defining it in the HTML, however, ensures that the color will be found immediately, before rendering, which may be faster on first load than waiting for the manifest.
 
 To set the theme color to the blue tone of our site's background color,  include:
 
@@ -110,7 +111,7 @@ Include a title of your post for display. This title is generally displayed belo
 
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/BPMSBLm8xjwAW9U3VnVI.png", alt="Facebook card for Machine Learning Workshop.", width="800", height="796" %}
 
-These meta tags are all defined in the O[pen Graph protocol](https://ogp.me/). The values should be the content you would like the third-party web application to display. 
+These meta tags are all defined in the [Open Graph protocol](https://ogp.me/). The values should be the content you would like the third-party web application to display. 
 
 Other social media have their own similar syntaxes, like [Twitter card markup](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup). This enables providing a different experience depending on where the link appears, or enabling link tracking by adding a parameter at the end of the URL. 
 
@@ -176,7 +177,7 @@ The manifest file can prevent an unwieldy header full of <link> and <meta> tags.
 
 This series is focused on HTML, but you can check out the [web.dev course on progressive web applications](/learn/pwa/web-app-manifest/) or [MDN's web app manifest documentation](https://developer.mozilla.org/docs/Web/Manifest).
 
-Our HTML now looks something like this:
+Your HTML now looks something like this:
 
 ```html  
 <!DOCTYPE html>  
@@ -193,14 +194,14 @@ Our HTML now looks something like this:
 <meta name="twitter:title" content="Machine Learning Workshop">  
 <meta name="twitter:description" content="School for machines who can't learn good and want to do other stuff good too"/>  
 <meta name="twitter:url" content="https://www.machinelearningworkshop.com/?src=twitter" />  
-<meta name="twitter:image:src" content="[http://www.machinelearningworkshop.com/image/all.png"/](http://www.machinelearningworkshop.com/image/all.png"/)>  
+<meta name="twitter:image:src" content="http://www.machinelearningworkshop.com/image/all.png">  
 <meta name="twitter:image:alt" content="27 different home appliances" />  
 <meta name="twitter:creator" content="@estellevw">  
 <meta name="twitter:site" content="@perfmattersconf">  
 <link rel="stylesheet" src="css/styles.css">  
 <link rel="icon" type="image/png" href="/images/favicon.png"/>  
 <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />  
-<link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR />  
+<link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR" />  
 <link rel="canonical" href="https://www.machinelearning.com"/>  
 <link rel="manifest" href="/mlwmanifest.json"/>  
 </head>  
@@ -213,6 +214,6 @@ Our HTML now looks something like this:
 
 It's pretty long, but it's done. It would have been much longer, but you've summed up all the icons, short name, etc. in a [manifest file](/add-manifest/), enabling you to omit many `<meta>` and `<link>` tags,
 
-Now that your `<head>` is mostly complete, you can dive into some semantic HTML.
+Now that your `<head>` is mostly complete, you can dive into some [semantic HTML](/learn/html/semantic-html/).
 
 {% Assessment 'metadata' %}

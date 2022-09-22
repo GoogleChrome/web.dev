@@ -27,7 +27,9 @@ The closing tag is the same tag as the opening tag, preceded by a slash.
 Elements and tags aren't the exact same thing, though many people use the terms interchangeably. The tag name is the content in the brackets. The tag includes the brackets. In this case, `<h1>`. An "element" is the opening and closing tags, and all the content between those tags, including nested elements.
 
 ```html  
-<p>This paragraph has some <strong><em>strongly emphasized</em></strong> content</p>  
+<p>This paragraph has some 
+  <strong><em>strongly emphasized</em></strong> 
+  content</p>  
 ```
 
 This paragraph element has other elements _nested_ in it.  When nesting elements, it's important that they are properly nested.  HTML tags should be closed in the reverse order of which they were opened. In the above example, notice how the `<em>` is both opened and closed within the opening and closing `<strong>` tags, and the `<strong>` is both open and closed within the `<p>` tags. 
@@ -48,7 +50,15 @@ Although it is valid to not close an `<li>`, it isn't good practice.  The closin
 
 The specification for each element lists whether the closing tag is mandatory or not. "Neither tag is omissible" in the specification means both an opening tag and a closing tag are required. The [specification provides a list of all the required closing tags](https://html.spec.whatwg.org/multipage/syntax.html#syntax-tag-omission). 
 
-If the `<em>` or `<strong>` in the example earlier  had not been closed, the browser may or may not close the element for you. Not closing an `<em>` simply leads to content possibly being rendered differently than you intended.  If a `</ul>` is omitted and the next tag is a closing tag for the list's parent container, you're lucky. If, on the other hand, it's an opening `<h1>` tag, the browser will assume the header is part of the list, including inheriting styles. Some omitted closing tags cause bigger issues: not closing some tags, such as `<script>`, `<style>`, `<template>`, `<textarea>`, and `<title>`, [breaks subsequent content](https://codepen.io/estelle/pen/RwMRzvj). 
+If the `<em>` or `<strong>` in the example earlier  had not been closed, the browser may or may not close the element for you. Not closing an `<em>` simply leads to content possibly being rendered differently than you intended.  If a `</ul>` is omitted and the next tag is a closing tag for the list's parent container, you're lucky. If, on the other hand, it's an opening `<h1>` tag, the browser will assume the header is part of the list, including inheriting styles. Some omitted closing tags cause bigger issues: not closing some tags, such as `<script>`, `<style>`, `<template>`, `<textarea>`, and `<title>`, breaks subsequent content as shown in the following example. 
+
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'VwxzBLq',
+  height: 500,
+  theme: 'dark',
+  tab: 'html,result'
+} %}
 
 Having some content being unintentionally italic or having a heading indented won't destroy your business. Having most of your content appear unstyled in a 200x300 textarea because you forgot to add a `</textarea>` or not show up at all because you forgot to close a `</style>` makes the site unusable.
 
@@ -113,7 +123,7 @@ Most attributes are name/value pairs. Boolean attributes, whose value is true, f
 <img src="switch.svg" alt="light switch" ismap />  
 ```  
 
-This image has three attributes: `src`, `alt`, and `ismap`. The `src` attribute is used to provide the location of the SVG image asset. The `alt` attribute provides alternative text describing the contents of the image. The ` ismap` attribute is Boolean, and doesn't require a value. This is just to explain what attributes are. We'll cover these attributes in more detail in the [images](IMAGES) section.
+This image has three attributes: `src`, `alt`, and `ismap`. The `src` attribute is used to provide the location of the SVG image asset. The `alt` attribute provides alternative text describing the contents of the image. The ` ismap` attribute is Boolean, and doesn't require a value. This is just to explain what attributes are. We'll cover these attributes in more detail in the [images](/learn/html/images/) section.
 
 While quoting attributes isn't always required, it sometimes is. If the value includes a space or special characters, quotes are needed. For this reason, quoting is always recommended. One or more spaces between attributes if the attribute value is quoted are not actually required, but, to be safe, and for legibility, quotes and spaces are recommended, and appreciated. 
 
@@ -135,8 +145,8 @@ The element you choose, and therefore the tags you use, should be appropriate fo
 
 ## Element, attributes, and JavaScript
 
-The Document Object Model (DOM) is the data representation of the structure and content of the HTML document.  As the browser parses HTML, it creates a JavaScript object for every element and section of text encountered. These objects are called nodes — element nodes and text nodes, respectively. 
+The Document Object Model (DOM) is the data representation of the structure and content of the HTML document.  As the browser parses HTML, it creates a JavaScript object for every element and section of text encountered. These objects are called nodes—element nodes and text nodes, respectively. 
 
-There is an interface to define the functionality of every HTML element.  The [HTML DOM API](https://developer.mozilla.org/docs/Web/API/HTML_DOM_API) provides access to and control of every HTML element via the DOM, providing interfaces for the HTML element and all the HTML classes that inherit from it. The [HTMLElement](https://developer.mozilla.org/docs/Web/API/HTMLElement) interface represents the HTML element and all of its descendant nodes. Every other element implements it via an interface that inherits from it. Each inheriting interface has a constructor, methods, and properties.  Via the inherited HTMLElement properties, you can access every global attribute, as well as input, pointer, transition, and animation events. Via the individual element's sub-type, such as [HTMLAnchorElement](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement) and  [HTMLImageElement](https://developer.mozilla.org/docs/Web/API/HTMLImageElement), you can access element-specific attribute values and methods.
+There is an interface to define the functionality of every HTML element.  The [HTML DOM API](https://developer.mozilla.org/docs/Web/API/HTML_DOM_API) provides access to and control of every HTML element via the DOM, providing interfaces for the HTML element and all the HTML classes that inherit from it. The [HTMLElement](https://developer.mozilla.org/docs/Web/API/HTMLElement) interface represents the HTML element and all of its descendant nodes. Every other element implements it via an interface that inherits from it. Each inheriting interface has a constructor, methods, and properties.  Via the inherited HTMLElement properties, you can access every global attribute, as well as `input`, `pointer`, `transition`, and `animation` events. Via the individual element's sub-type, such as [HTMLAnchorElement](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement) and  [HTMLImageElement](https://developer.mozilla.org/docs/Web/API/HTMLImageElement), you can access element-specific attribute values and methods.
 
 {% Assessment 'overview' %}
