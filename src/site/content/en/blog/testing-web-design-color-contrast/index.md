@@ -8,10 +8,10 @@ description: |
 authors:
   - adamargyle
   - superhighfives
-date: 2022-09-16
+date: 2022-09-22
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/q6qpUvm2TwTyRWKbYCQd.png
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/93UiiPbes6SjeGjB8w1N.png
-alt: A description of the hero image for screen reader users.
+alt: Text becoming progressively lower contrast.
 tags:
   - blog
   - accessibility
@@ -32,7 +32,7 @@ the end of this post you'll have three new tools and techniques for inspecting,
 correcting, and verifying your web design contrast so you can tackle the hardest
 scenarios.
 
-## WCAG and Color Contrast
+## WCAG and color contrast
 
 [W3C’s Web Accessibility Initiative](https://www.w3.org/WAI/) provides
 strategies, standards, and resources to ensure that the internet is accessible
@@ -104,7 +104,7 @@ confidently test the accessibility of your site’s colors and content in a
 multitude of ways.
 
 1. [Pika](https://superhighfives.com/pika)<br>
-A MacOS system extension, uniquely capable of showing the contrast of any colors
+A MacOS app, uniquely capable of showing the contrast of any colors
 on the entire screen, colors on gradients, colors with transparency, and more.
 Intent is explicit, users manually choose the pixels to compare. A tiny bit less
 automated with a huge feature gain.
