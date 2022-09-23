@@ -294,7 +294,7 @@ animations tend to distract users and move the eyes away from more important
 content; simultaneously, because users often associate animations with ads, they
 will ignore carousels that autoplay.
 
-Thus, it's a rare that autoplay is a good choice. If content is important, not
+Thus, it's rare that autoplay is a good choice. If content is important, not
 using autoplay will maximize its exposure; if carousel content is not important,
 then the use of autoplay will detract from more important content. In addition,
 autoplaying carousels can be difficult to read (and annoying, too). People read
