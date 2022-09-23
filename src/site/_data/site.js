@@ -34,7 +34,7 @@ module.exports = {
   thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
   isBannerEnabled: true,
   banner:
-    'PWA Summit 22 is ready for you, with talks from the community and organizers along with workshops and more. [Get your ticket today](https://pwasummit.com/register)',
+    'PWA Summit 22 is ready for you, with talks from the community and organizers along with workshops and more. [Get your ticket today](https://pwasummit.org/register)',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
