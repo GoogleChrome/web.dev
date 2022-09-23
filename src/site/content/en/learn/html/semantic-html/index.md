@@ -8,7 +8,7 @@ tags:
   - html
 ---
 
-With over 100 HTML elements, and the ability to create [custom elements](), there are infinite ways to mark up your content; but some ways—notably _semantically_—are better than others. 
+With over 100 HTML elements, and the ability to create custom elements, there are infinite ways to mark up your content; but some ways—notably _semantically_—are better than others. 
 
 _Semantic_ means "relating to meaning". Writing semantic HTML means using HTML elements to structure your content based on each element's meaning, not its appearance. 
 
@@ -134,7 +134,9 @@ It's pretty clear that semantic element usage helps accessibility, and using non
 
 ### The `role` attribute
 
-The `role` attribute describes the role an element has in the context of the document. The `role` attribute is a global attribute—meaning it is valid on all elements—defined by the [ARIA specification](https://w3c.github.io/aria/#dfn-role) rather than the [WHATWG HTML specification](https://html.spec.whatwg.org/dev/), where almost everything else in the series is defined.  Semantic elements each have an implicit role, some depending on the context. As we saw in the Firefox accessibility dev tools screenshot, the top level `<header>`, `<main>`, `<footer>`, and `<nav>` were all  landmarks, while the `<header>` nested in `<main>` was a section. The Chrome screenshot lists these elements' [ARIA  roles](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles): `<main>` is `main`, `<nav>` is `navigation`, and `<footer>`, as it was the footer of the document, is `contentinfo`. When `<header>` is the header for the document, the default role is `banner`, which defines the section as the global site header. When a `<header>` or `<footer>` is nested within a sectioning element, it is not a landmark role. Both dev tools screenshots show this.
+The `role` attribute describes the role an element has in the context of the document. The `role` attribute is a global attribute—meaning it is valid on all elements—defined by the [ARIA specification](https://w3c.github.io/aria/#dfn-role) rather than the [WHATWG HTML specification](https://html.spec.whatwg.org/dev/), where almost everything else in this series is defined.  
+
+Semantic elements each have an implicit role, some depending on the context. As we saw in the Firefox accessibility dev tools screenshot, the top level `<header>`, `<main>`, `<footer>`, and `<nav>` were all landmarks, while the `<header>` nested in `<main>` was a section. The Chrome screenshot lists these elements' [ARIA  roles](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles): `<main>` is `main`, `<nav>` is `navigation`, and `<footer>`, as it was the footer of the document, is `contentinfo`. When `<header>` is the header for the document, the default role is `banner`, which defines the section as the global site header. When a `<header>` or `<footer>` is nested within a sectioning element, it is not a landmark role. Both dev tools' screenshots show this.
 
 Element role names are important in building the AOM. The semantics of an element, or ‘role',  are important to assistive technologies and, in some cases, search engines.  Assistive technology users rely on semantics to navigate through and understand the meaning of content. The element's role enables a user to access the content they seek quickly and, possibly, more importantly, the role informs the screen reader user how to interact with an interactive element once it has focus.  
 
@@ -142,7 +144,7 @@ Interactive elements, such as buttons, links, ranges, and checkboxes, all have i
 
 Using the `role` attribute, you can give any element a role, including a different role than the tag implies. For example, `<button>` has the implicit role of `button`.  With `role="button"`, you can turn any element semantically into a button: `<p role="button">Click Me</p>`. 
 
-While adding `role="button"` to an element will inform screen readers that the element is a button, it doesn't change the appearance or functionality of the element.  The `button` element provides so many features without you doing any work. The `button` element is automatically added to the document's tab ordering sequence, meaning it is by default keyboard focusable. The Enter and Space keys both activate the button. Buttons also have all the methods and properties provided to them by the [HTMLButtonElement](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement) interface. If you don't use the semantic button for your button, you have to program all those features back in. It's so much easier to just go with `<button>`. 
+While adding `role="button"` to an element will inform screen readers that the element is a button, it doesn't change the appearance or functionality of the element. The `button` element provides so many features without you doing any work. The `button` element is automatically added to the document's tab ordering sequence, meaning it is by default keyboard focusable. The Enter and Space keys both activate the button. Buttons also have all the methods and properties provided to them by the [HTMLButtonElement](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement) interface. If you don't use the semantic button for your button, you have to program all those features back in. It's so much easier to just go with `<button>`. 
 
 Go back to the screenshot of the AOM for the non-semantic code block. You'll note that non-semantic elements don't have implicit roles. We can make the non-semantic version semantic by assigning each element a role:
 
@@ -158,7 +160,7 @@ Go back to the screenshot of the AOM for the non-semantic code block. You'll not
 </div>
 ```
 
-While the `role` attribute can be used to add semantics to any element, yu should instead use elements with the implicit role you need.
+While the `role` attribute can be used to add semantics to any element, you should instead use elements with the implicit role you need.
 
 ## Semantic elements
 

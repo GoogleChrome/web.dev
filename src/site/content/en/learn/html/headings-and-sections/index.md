@@ -29,18 +29,18 @@ If you put little to no thought into the semantics for our header, you might use
     <!-- navigation -->
     <div id="navigation">
        <a href="#reg">Register</a>
-    <a href="#about">About</a>
+      <a href="#about">About</a>
        <a href="#teachers">Instructors</a>
        <a href="#feedback">Testimonials</a>
     </div>
     <!-- end navigation bar -->
 </div> 
-<!-- end of header →
+<!-- end of header -->
 ```
 
 CSS can make (almost) any markup look right. But using the non-semantic `<div>` for everything actually creates extra work. To target multiple `<div>`s with CSS, you end up using ids or classes to identify the content. The code also includes a comment for each closing `</div>` to indicate which opening tag each `</div>` closed. 
 
-While the `id` attribute provides hooks for styling and JavaScript, they add no semantic value for the screen reader and (for the most part) the search engines.  
+While the `id` and `class` attributes provide hooks for styling and JavaScript, they add no semantic value for the screen reader and (for the most part) the search engines.  
 
 You can include `role` attributes to provide semantics to create a good accessibility object model (AOM) for screen readers:
 
@@ -50,16 +50,16 @@ You can include `role` attributes to provide semantics to create a good accessib
     <div role="heading" aria-level="1">Machine Learning Workshop</div>
     <div role="navigation">
        <a href="#reg">Register</a>
-   <a href="#about">About</a>
+     <a href="#about">About</a>
        <a href="#teachers">Instructors</a>
        <a href="#feedback">Testimonials</a>
     </div>
     <!-- end navigation bar -->
 <div> 
-<!-- end of header →
+<!-- end of header -->
 ```
 
-This at least is semantic, and uses attribute selectors in the CSS, but it still adds comments to identify which `<div>` each `</div>` closes. 
+This at least provides semantics and enables using attribute selectors in the CSS, but it still adds comments to identify which `<div>` each `</div>` closes. 
 
 If you know HTML, all you have to do is think about the purpose of the content. Then you can write this code semantically without using `role` and without needing to comment the closing tags:
 
@@ -68,7 +68,7 @@ If you know HTML, all you have to do is think about the purpose of the content. 
     <h1>Machine Learning Workshop</h1>
     <nav>
       <a href="#reg">Register</a>
-   <a href="#about">About</a>
+     <a href="#about">About</a>
       <a href="#teachers">Instructors</a>
       <a href="#feedback">Testimonials</a>
     </nav>
@@ -79,7 +79,7 @@ This code uses two semantic landmarks: `<header>` and `</nav>`.
 
 This is the main header. The `<header>` element isn't always a landmark. It has different semantics depending on where it is nested. When the `<header>` is top level, it is the site `banner`, a landmark role, which you may have noted in the `role` code block. When a `<header>` is nested in  `<main>`, `<article>`,  or `<section>`, it just identifies it as the header for that section and isn't a landmark. 
 
-The `<nav>` element identifies content as navigation. As this `<nav>` is nested in the site heading, it is the main navigation for the site. If it was nested in an `<article>` or `<section>`, it would be internal navigation for that section only. By using semantic elements, you built a meaningful accessibility object model, or AOM. The AOM enables the screen reader to inform the user that this section consists of a major navigation block that they can either navigate through or skip. 
+The `<nav>` element identifies content as navigation. As this `<nav>` is nested in the site heading, it is the main navigation for the site. If it was nested in an `<article>` or `<section>`, it would be internal navigation for that section only. By using semantic elements, you built a meaningful [accessibility object model](https://developer.mozilla.org/docs/Glossary/Accessibility_tree), or AOM. The AOM enables the screen reader to inform the user that this section consists of a major navigation block that they can either navigate through or skip. 
 
 Using `</nav>` and `</header>` closing tags removes the need for comments to identify which element each end tag closed. In addition, using different tags for different elements removes the need for `id` and `class` hooks. The CSS selectors can have low [specificity](/learn/css/specificity/); you can probably target the links with `header nav a` without worrying about conflict.
 
@@ -101,7 +101,7 @@ Similar to `<header>`, whether the footer is a landmark depends on where the foo
 
 In this screenshot, there are two footers: one in an `<article>` and one top level. The top level footer is a landmark with the implicit role of `contentinfo`. The other footer isn't a landmark. Chrome shows it as `FooterAsNonLandmark`; Firefox shows it as `section`.
 
-That doesn't mean you shouldn't use `<footer>`. Let's say you have a blog. The blog has a site footer with an implicit `contentinfo` role. Each blog post can also have a `<footer>`. On your blog's main landing page, the browser knows the main footer is the top-level footer, and that all the other footers are related to the posts in which they are nested. 
+That doesn't mean you shouldn't use `<footer>`. Let's say you have a blog. The blog has a site footer with an implicit `contentinfo` role. Each blog post can also have a `<footer>`. On your blog's main landing page, the browser, search engine, and screen reader know the main footer is the top-level footer, and that all the other footers are related to the posts in which they are nested. 
 
 When a `<footer>` is a descendant of an `<article>`, `<aside>`, `<main>`, `<nav>`, or `<section>`, it's not a landmark. If the post appears on its own, depending on the markup, that footer might get promoted. 
 
@@ -166,7 +166,7 @@ An article isn't a landmark unless it has an accessible name; if it has an acces
 
 ### `<section>`
 
-The `<section>` element is used to encompass generic standalone sections of a document when there is no more specific semantic element to use. Sections should have a heading, with very few exceptions.  Going back to the Jacinda Ardern example, on the home page of the newspaper, the banner would include the name of the newspaper, followed by a single `<main>`, divided into several `<section>`s, each with a header, such as "World news" and "Politics"; and in each section you'll find a series of `<article>`s. Within each `<article>`, you might find one or more `<section>` elements as well. If you look at this page, the entire "headers and sections'' part is the `<article>`. This `<article>` is then divided into several `<section>`s, including `site header`, `site footer`, and document structure. The article itself has a header, as do each of the sections.
+The `<section>` element is used to encompass generic standalone sections of a document when there is no more specific semantic element to use. Sections should have a heading, with very few exceptions.  Going back to the Jacinda Ardern example, on the home page of the newspaper, the banner would include the name of the newspaper, followed by a single `<main>`, divided into several `<section>`s, each with a header, such as "World news" and "Politics"; and in each section you'll find a series of `<article>`s. Within each `<article>`, you might find one or more `<section>` elements as well. If you look at this page, the entire "headers and sections" part is the `<article>`. This `<article>` is then divided into several `<section>`s, including `site header`, `site footer`, and document structure. The article itself has a header, as do each of the sections.
 
 ### Headings: `<h1>`-`<h6>`
 
@@ -204,6 +204,6 @@ This code snippet only includes the content of the `<body>`. The [`<!doctype>`, 
 
 As no piece of content is a standalone, complete piece of content, `<section>` is more appropriate than `<article>`; while each has a heading, no section is worthy of a `<footer>`.
 
-It should go without saying by this point, but don't use headings to make text bold or large; use CSS instead. If you want to emphasize text, there are semantic elements to do that too. We'll cover that in the next section. In fact, we'll fill in most of the page's content as we discuss text basics.
+It should go without saying by this point, but don't use headings to make text bold or large; use CSS instead. If you want to emphasize text, there are semantic elements to do that too. We'll cover that and fill in most of the page's content as we discuss text basics; after taking a deeper dive into attributes.
 
 {% Assessment 'headings-and-sections' %}

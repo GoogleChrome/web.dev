@@ -85,9 +85,6 @@ Output of the above HTML:
 
 <input type="range">  
 <img src="https://machinelearningworkshop.com/svg/switch2.svg" alt="light switch" style="max-width: 200px;">  
-
-
-
 Replaced elements and void elements are often confused. Void elements are all self-closing elements and are represented by one tag. This means there is no such thing as a closing tag for a void element. Optionally, you can include a slash at the end of the tag, which many people find makes markup easier to read. Continuing with this example, we self close the tag with a slash:
 
 ```html  
@@ -123,7 +120,7 @@ Most attributes are name/value pairs. Boolean attributes, whose value is true, f
 <img src="switch.svg" alt="light switch" ismap />  
 ```  
 
-This image has three attributes: `src`, `alt`, and `ismap`. The `src` attribute is used to provide the location of the SVG image asset. The `alt` attribute provides alternative text describing the contents of the image. The ` ismap` attribute is Boolean, and doesn't require a value. This is just to explain what attributes are. We'll cover these attributes in more detail in the [images](/learn/html/images/) section.
+This image has three attributes: `src`, `alt`, and `ismap`. The `src` attribute is used to provide the location of the SVG image asset. The `alt` attribute provides alternative text describing the contents of the image. The `ismap` attribute is Boolean, and doesn't require a value. This is just to explain what attributes are. We'll cover these attributes in more detail in the [images](/learn/html/images/) section.
 
 While quoting attributes isn't always required, it sometimes is. If the value includes a space or special characters, quotes are needed. For this reason, quoting is always recommended. One or more spaces between attributes if the attribute value is quoted are not actually required, but, to be safe, and for legibility, quotes and spaces are recommended, and appreciated. 
 
