@@ -234,9 +234,9 @@ You will be including a tiny bit of JavaScript to create an [Easter egg](https:/
 
 ```html  
 <script>  
-	document.getElementById('switch').addEventListener('click', function(){  
-		document.body.classList.toggle('black');  
-	});  
+document.getElementById('switch').addEventListener('click', function(){  
+  document.body.classList.toggle('black');  
+});  
 </script>  
 ```
 
@@ -277,15 +277,15 @@ The code now looks like this:
 <!DOCTYPE html>  
 <html lang="en">  
   <head>  
-	<meta charset="utf-8">  
-    <title>Machine Learning Workshop</title>  
-    <meta name="viewport" content="width=device-width">  
-    <link rel="stylesheet" src="css/styles.css">  
-    <link rel="icon" type="image/png" href="/images/favicon.png"/>  
-    <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />  
-    <link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR />  
-    <link rel="canonical" href="https://www.machinelearning.com"/>  
-   </head>
+	  <meta charset="utf-8">  
+      <title>Machine Learning Workshop</title>  
+      <meta name="viewport" content="width=device-width">  
+      <link rel="stylesheet" src="css/styles.css">  
+      <link rel="icon" type="image/png" href="/images/favicon.png"/>  
+      <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />  
+      <link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR />  
+      <link rel="canonical" href="https://www.machinelearning.com"/>  
+  </head>
   <body>
 
 	<!-- <script defer src="scripts/lightswitch.js"></script>-->  
