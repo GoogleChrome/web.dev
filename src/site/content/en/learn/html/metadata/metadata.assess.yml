@@ -11,7 +11,7 @@ questions:
         rationale: "Correct!"
       - content: "Redirects the visitor to another page."
         rationale: "Try again."
-      - content: "Resets all form fields to their default values."
+      - content: "Loads in additional content from another file."
         rationale: "Try again."
   - type: multiple-choice
     cardinality: "1"
