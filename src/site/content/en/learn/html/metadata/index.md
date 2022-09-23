@@ -10,7 +10,7 @@ tags:
 
 In the document structure section you learned about the components you (almost) always find in the `<head>` of an HTML document. While everything in the `<head>`, including the `<title>`, `<link>`, `<script>`, `<style>`, and the lesser used `<base>`, is actually "meta data", there is a `<meta>` tag for metadata that cannot be represented by these other elements. 
 
-The specification includes several meta tags, and there are many, many other application-supported meta types not in any official specification.  In this section, we'll discuss the attributes and values that are included in the specifications, some common meta names and content values, and a few meta types that are incredibly useful for search engine optimization, social media posting, and user experience that are not officially defined by the [WHATWG](https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element) or [W3C](https://www.w3.org/MarkUp/html-spec/Elements/META.html). 
+The specification includes several meta types, and there are many, many other application-supported meta types not in any official specification.  In this section, we'll discuss the attributes and values that are included in the specifications, some common meta names and content values, and a few meta types that are incredibly useful for search engine optimization, social media posting, and user experience that are not officially defined by the [WHATWG](https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element) or [W3C](https://www.w3.org/MarkUp/html-spec/Elements/META.html). 
 
 ## The required `<meta>` tags, revisited
 
@@ -18,17 +18,17 @@ Let's revisit the two necessary `<meta>` tags already covered—the [character s
 
 The `charset` attribute of the `<meta>` element came about in a unique manner. Originally the character set meta data was written as `<meta http-equiv="Content-Type" content="text/html; charset=<characterset>"/>`, but so many developers mis-typed the `content` attribute as `content="text/html" charset="<characterset>"` that browsers began supporting charset as an attribute. It is standardized now in the HTML living standard as `<meta charset=<charset>"/>`, where, for HTML,`<charset>` is the case-insensitive string "utf-8" .
 
-You may have noticed the character set meta declaration used to include the `http-equiv` attribute. This is short for "http-equivalent", as the meta tag is basically replicating what could be set in an HTTP header. Aside from the `charset` exception, all other meta tags defined in the WHATWG HTML specification contain either the `http-equiv` or `name` attribute.
+You may have noticed the original character set meta declaration used to include the `http-equiv` attribute. This is short for "http-equivalent", as the meta tag is basically replicating what could be set in an HTTP header. Aside from the `charset` exception, all other meta tags defined in the WHATWG HTML specification contain either the `http-equiv` or `name` attribute.
 
 ## Officially defined meta tags
 
-There are two main types of meta tags: pragma directives, with the `http-equiv` attribute like the charset meta tag used to have, and named meta types, like the viewport meta tag with the `name` attribute that we discussed in the document structure section.  Both the `name` and `http-equiv` meta types must include the `content `attribute, which defines the content for the type of metadata listed.
+There are two main types of meta tags: pragma directives, with the `http-equiv` attribute like the charset meta tag used to have, and named meta types, like the viewport meta tag with the `name` attribute that we discussed in the [document structure](/learn/html/document-structure/#) section.  Both the `name` and `http-equiv` meta types must include the `content `attribute, which defines the content for the type of metadata listed.
 
 ### Pragma directives
 
-The `http-equiv` attribute has as its value a pragma directive. These directives describe how the page should be parsed.  Supported `http-equiv` values enable setting directives when you are unable to set HTTP headers directly. 
+The `http-equiv` attribute has as its value a pragma directive. These directives describe how the page should be parsed. Supported `http-equiv` values enable setting directives when you are unable to set HTTP headers directly. 
 
-The specification defines seven [pragma directives](https://html.spec.whatwg.org/multipage/semantics.html#pragma-directives), most of which have other methods of being set. For example, while you can include a language directive with  `<meta http-equiv="content-language" content="en-us">`, we have already discussed using the [`lang` attribute on the HTML element](/learn/html/document-structure/#content-language), which is what should be used instead.
+The specification defines seven [pragma directives](https://html.spec.whatwg.org/multipage/semantics.html#pragma-directives), most of which have other methods of being set. For example, while you can include a language directive with `<meta http-equiv="content-language" content="en-us">`, we have already discussed using the [`lang` attribute on the HTML element](/learn/html/document-structure/#content-language), which is what should be used instead.
 
 The most common pragma directive is the `refresh` directive. 
 
@@ -36,7 +36,7 @@ The most common pragma directive is the `refresh` directive.
 <meta http-equiv="refresh" content="60; https://machinelearningworkshop.com/regTimeout"/>  
 ```
 
-While you can set a directive to refresh at an interval of the number of seconds set in the `content` attribute, and even redirect to a different URL, please don't. Refreshing and redirecting content without an explicit user request to do so is poor usability and negatively impacts accessibility. Don't you hate it when you're in the middle of a paragraph and the page resets? Imagine having cognitive or vision issues and that happening? If you are going to set a refresh with a redirect, make sure the user has enough time to read the page, a link to hasten the process, and, if appropriate, a button to "stop the clock" and  prevent the redirect from happening. 
+While you can set a directive to refresh at an interval of the number of seconds set in the `content` attribute, and even redirect to a different URL, please don't. Refreshing and redirecting content without an explicit user request to do so is poor usability and negatively impacts accessibility. Don't you hate it when you're in the middle of a paragraph and the page resets? Imagine having cognitive or vision issues and that happening. If you are going to set a refresh with a redirect, make sure the user has enough time to read the page, a link to hasten the process, and, if appropriate, a button to "stop the clock" and prevent the redirect from happening. 
 
 We won't include this in our site because there is no reason to time out a user session other than to annoy our visitors.
 
@@ -80,13 +80,13 @@ If you don't want your site to be indexed by search engines, you can let them kn
 
 The [`theme-color`](/learn/design/theming/#customize-the-browser-interface) value lets you define a color to customize the browser interface. The color value on the content attribute will be used by supporting browsers and operating systems, letting you provide a suggested color for the user agents that support coloring the title bar, tab bar, or other chrome components. This meta tag is especially useful for [progressive web apps](/learn/pwa/). But, if you're including a manifest file, which a PWA requires, you can include the theme color there instead. Defining it in the HTML, however, ensures that the color will be found immediately, before rendering, which may be faster on first load than waiting for the manifest.
 
-To set the theme color to the blue tone of our site's background color,  include:
+To set the theme color to the blue tone of our site's background color, include:
 
 ```html  
 <meta name="theme-color" content="#226DAA">  
 ```
 
-The theme color meta tag can include a `media` attribute enabling setting different theme colors based on media queries. The `media` attribute can be included in this meta tag only and  is ignored in all other meta tags. 
+The theme color meta tag can include a `media` attribute enabling the setting of different theme colors based on media queries. The `media` attribute can be included in this meta tag only and is ignored in all other meta tags. 
 
 There are several [other `name` meta values](https://developer.mozilla.org/docs/Web/HTML/Element/meta/name), but the ones we have discussed are the most common. Except for declaring different `theme-color` values for different media queries, only include one of each meta tag. If you do need to include more than one type of meta tag to support legacy browsers, the legacy values should come after the newer values, as user agents read successive rules until they find a match.
 
@@ -169,7 +169,7 @@ If someone is going to save your icon to their tiny device's home screen, you wa
 
 You've covered several meta tags, all of which will make your header longer. If you're indeed creating a web app-capable, offline-friendly progressive web application, instead of including these two additional meta tags, you can more simply and succinctly include `short_name: MLW` in a webmanifest file. 
 
-The manifest file can prevent an unwieldy header full of <link> and <meta> tags. We can create a manifest file, generally called `manifest.webmanifest` or `manifest.json`. We then use the handy <link> tag with a `rel` attribute set to `manifest` and the `href` attribute set to the URL of the manifest file: 
+The manifest file can prevent an unwieldy header full of `<link>` and `<meta>` tags. We can create a manifest file, generally called `manifest.webmanifest` or `manifest.json`. We then use the handy `<link>` tag with a `rel` attribute set to `manifest` and the `href` attribute set to the URL of the manifest file: 
 
 ```html  
 <link rel="manifest" href="/mlw.webmanifest">  
@@ -183,28 +183,28 @@ Your HTML now looks something like this:
 <!DOCTYPE html>  
 <html lang="en">  
   <head>  
-	<meta charset="utf-8">  
-<title>Machine Learning Workshop</title>  
-<meta name="viewport" content="width=device-width">  
-<meta name="description" content="Register for a machine learning workshop at our school for machines who can't learn good and want to do other stuff good too">  
-<meta property="og:title" content="Machine Learning Workshop" />  
-<meta property="og:description" content="School for Machines Who Can't Learn Good and Want to Do Other Stuff Good Too"/>  
-<meta property="og:image" content="http://www.machinelearningworkshop.com/image/all.png" />  
-<meta property="og:image:alt" content="Black and white line drawing of refrigerator, french door refrigerator, range, washer, fan, microwave, vaccuum, space heater and air conditioner" />  
-<meta name="twitter:title" content="Machine Learning Workshop">  
-<meta name="twitter:description" content="School for machines who can't learn good and want to do other stuff good too"/>  
-<meta name="twitter:url" content="https://www.machinelearningworkshop.com/?src=twitter" />  
-<meta name="twitter:image:src" content="http://www.machinelearningworkshop.com/image/all.png">  
-<meta name="twitter:image:alt" content="27 different home appliances" />  
-<meta name="twitter:creator" content="@estellevw">  
-<meta name="twitter:site" content="@perfmattersconf">  
-<link rel="stylesheet" src="css/styles.css">  
-<link rel="icon" type="image/png" href="/images/favicon.png"/>  
-<link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />  
-<link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR" />  
-<link rel="canonical" href="https://www.machinelearning.com"/>  
-<link rel="manifest" href="/mlwmanifest.json"/>  
-</head>  
+  <meta charset="utf-8">  
+  <title>Machine Learning Workshop</title>  
+  <meta name="viewport" content="width=device-width">  
+  <meta name="description" content="Register for a machine learning workshop at our school for machines who can't learn good and want to do other stuff good too">  
+  <meta property="og:title" content="Machine Learning Workshop" />  
+  <meta property="og:description" content="School for Machines Who Can't Learn Good and Want to Do Other Stuff Good Too"/>  
+  <meta property="og:image" content="http://www.machinelearningworkshop.com/image/all.png" />  
+  <meta property="og:image:alt" content="Black and white line drawing of refrigerator, french door refrigerator, range, washer, fan, microwave, vaccuum, space heater and air conditioner" />  
+  <meta name="twitter:title" content="Machine Learning Workshop">  
+  <meta name="twitter:description" content="School for machines who can't learn good and want to do other stuff good too"/>  
+  <meta name="twitter:url" content="https://www.machinelearningworkshop.com/?src=twitter" />  
+  <meta name="twitter:image:src" content="http://www.machinelearningworkshop.com/image/all.png">  
+  <meta name="twitter:image:alt" content="27 different home appliances" />  
+  <meta name="twitter:creator" content="@estellevw">  
+  <meta name="twitter:site" content="@perfmattersconf">  
+  <link rel="stylesheet" src="css/styles.css">  
+  <link rel="icon" type="image/png" href="/images/favicon.png"/>  
+  <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />  
+  <link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR" />  
+  <link rel="canonical" href="https://www.machinelearning.com"/>  
+  <link rel="manifest" href="/mlwmanifest.json"/>  
+</head> 
   <body>
 
 	<!-- <script defer src="scripts/lightswitch.js"></script>-->  

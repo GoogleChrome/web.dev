@@ -2,7 +2,7 @@
 title: 'Document structure'
 authors:
   - estellweyl
-description: Learn how to structure your HTML documents to start with a solid foundation.
+description: Learn how to structure your HTML documents with a solid foundation.
 date: 2022-09-08
 tags:
   - html
@@ -22,7 +22,7 @@ The first thing in any HTML document is the preamble. For HTML, all you need is 
 
 ### `<html>`
 
-The HTML is the root element for an HTML document. It is the parent of the `<head>` and `<body>`, containing everything in the HTML document other than the DTD. If omitted it will be implied, but it is important to include it, as this is the element on which the language of the content of the document is declared. 
+The `<html>` element is the root element for an HTML document. It is the parent of the `<head>` and `<body>`, containing everything in the HTML document other than the DTD. If omitted it will be implied, but it is important to include it, as this is the element on which the language of the content of the document is declared. 
 
 ### Content language
 
@@ -38,7 +38,7 @@ Nested between the opening and closing `<html>` tags, we find the two children: 
 
 ```html  
 <!DOCTYPE html>  
-  <html lang="en">  
+  <html lang="en-US">  
     <head>  
     </head>  
     <body>  
@@ -78,7 +78,7 @@ Your home page and all additional pages should each have a unique title. The con
 
 ### Viewport metadata
 
-The other meta tag that should be considered essential is the [viewport](/learn/design/intro/#a-meta-element-for-viewport) meta tag, which helps site responsiveness, enabling content to render well by default, no matter the viewport width. While the [viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) has been around since June 2007, when the first iPhone came out, it's only recently been [documented in a specification.](https://drafts.csswg.org/css-device-adapt/#viewport-meta)  As it enables controlling a viewport's size and scale, and prevents the site's content from being sized down to fit a 960px site onto a 320px screen, it is definitely recommended.
+The other meta tag that should be considered essential is the [viewport](/learn/design/intro/#a-meta-element-for-viewport) meta tag, which helps site responsiveness, enabling content to render well by default, no matter the viewport width. While the [viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) has been around since June 2007, when the first iPhone came out, it's only recently been [documented in a specification](https://drafts.csswg.org/css-device-adapt/#viewport-meta).  As it enables controlling a viewport's size and scale, and prevents the site's content from being sized down to fit a 960px site onto a 320px screen, it is definitely recommended.
 
 ```html  
 <meta name="viewport" content="width=device-width">
@@ -99,7 +99,7 @@ So far, the outline for our HTML file is:
 <!DOCTYPE html>  
 <html lang="en">  
   <head>  
-	<meta charset="utf-8">  
+    <meta charset="utf-8">  
     <title>Machine Learning Workshop</title>  
     <meta name="viewport" content="width=device-width">  
   </head>  
@@ -125,11 +125,11 @@ The main two ways to include styles in your HTML file are by including an extern
 
 The `<link>` tag is the preferred method of including stylesheets. Linking a single or a few external style sheets is good for both developer experience and site performance: you get to maintain CSS in one spot instead of it being sprinkled everywhere, and browsers can cache the external file, meaning it doesn't have to be downloaded again with every page navigation. 
 
-The syntax is `<link rel="stylesheet" href="styles.css">`, where styles.css is the URL of your stylesheet. You'll often see `type="css/text"`. Not necessary! If you are including styles written in something other than CSS, the `type` is needed, but since there isn't any other type this attribute isn't needed. The `rel` attribute defines the relationship: in this case `stylesheet`. If you omit this, your CSS will not be linked. 
+The syntax is `<link rel="stylesheet" href="styles.css">`, where styles.css is the URL of your stylesheet. You'll often see `type="css/text"`. Not necessary! If you are including styles written in something other than CSS, the `type` is needed, but since there isn't any other type, this attribute isn't needed. The `rel` attribute defines the relationship: in this case `stylesheet`. If you omit this, your CSS will not be linked. 
 
 You'll discover a few other `rel` values shortly, but let's first discuss other ways of including CSS.
 
-If you want your external style sheet styles to be within a cascade layer but you don't have access to edit the CSS file to put the layer information in it, you'll want to include the CSS with `@import` inside a `<style>`:
+If you want your external style sheet styles to be within a cascade layer but you don't have access to edit the CSS file to put the layer information in it, you'll want to include the CSS with [`@import`](https://developer.mozilla.org/docs/Web/CSS/@import) inside a `<style>`:
 
 ```html  
 <style>  
@@ -178,7 +178,7 @@ You'll include three other types in your header now: `icon`, `alternate`, and `c
 
 Use the `<link>` tag, with the `rel="icon"` attribute/value pair to identify the favicon to be used for your document. A favicon is a very small icon that appears on the browser tab, generally to the left of the document title. When you have an unwieldy number of tabs open, the tabs will shrink and the title may disappear altogether, but the icon always remains visible. Most favicons are company or application logos.
 
-If you don't declare a favicon, the browser will look for a file named `favicon.ico` in the top level directory (the website's root folder). With `<link>`, you can use a different file name  and location: 
+If you don't declare a favicon, the browser will look for a file named `favicon.ico` in the top-level directory (the website's root folder). With `<link>`, you can use a different file name and location: 
 
 ```html
 <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="/images/mlwicon.png"/>  
@@ -189,7 +189,7 @@ The preceding code says "use the `mlwicon.png` as the icon for scenarios where a
 
 For iOS, there is a different sequence, but the syntax is the same. To serve a scalable image to Safari, we used `mask-icon`, which is necessary for Safari support when linking to an SVG image. SVG favicons for Safari should be black; the color is then defined with the non-standard `color` attribute.
 
-While you can use `<link>` to define a completely different image on each page or even each page load, don't. For consistency and a good user experience, use a single image! Twitter uses the blue bird: when you see the blue bird in your browser tab, you know that tab is open to a  Twitter page without clicking on the tab. Google uses different favicons for each of its different applications: there's a mail icon, a calendar icon, for example. But all the Google icons use the same color scheme. Again, you know exactly what the content of an open tab is simply from the icon.
+While you can use `<link>` to define a completely different image on each page or even each page load, don't. For consistency and a good user experience, use a single image! Twitter uses the blue bird: when you see the blue bird in your browser tab, you know that tab is open to a Twitter page without clicking on the tab. Google uses different favicons for each of its different applications: there's a mail icon, a calendar icon, for example. But all the Google icons use the same color scheme. Again, you know exactly what the content of an open tab is simply from the icon.
 
 #### Alternate versions of the site
 
@@ -202,15 +202,15 @@ Let's pretend we have versions of the site translated into French and Brazilian 
 <link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR />  
 ```
 
-When using `alternate` for a translation, the  `hreflang` attribute must be set.
+When using `alternate` for a translation, the `hreflang` attribute must be set.
 
-The alternate value is for more than just translations. For example, the `type` attribute can define the alternate URI for an RSS feed when the `type` attribute is set to `application/rss+xml` or `application/atom+xml`. Let's link to a PDF version of the site.
+The alternate value is for more than just translations. For example, the `type` attribute can define the alternate URI for an RSS feed when the `type` attribute is set to `application/rss+xml` or `application/atom+xml`. Let's link to a pretend PDF version of the site.
 
 ```html  
-<link rel="alternate" type="application/x-pdf" href="[https://machinelearningworkshop.com/mlw.pdf](https://machinelearningworkshop.com/mlw.pdf)">  
+<link rel="alternate" type="application/x-pdf" href="https://machinelearningworkshop.com/mlw.pdf">  
 ```
 
- If the `rel` value is `alternate style sheet`, it defines an [alternate style sheet](https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets) and the `title` attribute must be set giving that alternate style a name. 
+If the `rel` value is `alternate style sheet`, it defines an [alternate stylesheet](https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets) and the `title` attribute must be set giving that alternate style a name. 
 
 #### Canonical
 
@@ -240,7 +240,7 @@ You will be including a tiny bit of JavaScript to create an [Easter egg](https:/
 </script>  
 ```
 
-This snippet creates an event handler for an element with the id of `switch`. With JavaScript, you don't want to reference an element before it exists.  It doesn't exist yet, so we won't include it yet. When we do add the light switch element, we'll add the `<script>` at the bottom of the `<body>` rather than in the `<head>`. Why? Two reasons. We want to ensure elements exist before the script referencing them is encountered. And, mainly, JavaScript is not only [render-blocking](/render-blocking-resources/), but the browser stops downloading all assets when scripts are downloaded and doesn't resume downloading other assets until the JavaScript is executed. For this reason, you will often find JavaScript requests at the end of the document rather than in the head. 
+This snippet creates an event handler for an element with the id of `switch`. With JavaScript, you don't want to reference an element before it exists.  It doesn't exist yet, so we won't include it yet. When we do add the light switch element, we'll add the `<script>` at the bottom of the `<body>` rather than in the `<head>`. Why? Two reasons. We want to ensure elements exist before the script referencing them is encountered as we're not basing this script on a [DOMContentLoaded event](https://developer.mozilla.org/docs/Web/API/Document/DOMContentLoaded_event). And, mainly, JavaScript is not only [render-blocking](/render-blocking-resources/), but the browser stops downloading all assets when scripts are downloaded and doesn't resume downloading other assets until the JavaScript is executed. For this reason, you will often find JavaScript requests at the end of the document rather than in the head. 
 
 There are two attributes that can reduce the blocking nature of JavaScript download and execution: `defer` and `async`. With `defer`, HTML rendering is not blocked during the download, and the JavaScript only executes after the document has otherwise finished rendering. With `async`, rendering isn't blocked during the download either, but once the script has finished downloading, the rendering is paused while the JavaScript is executed.
 
@@ -265,7 +265,7 @@ Most developers add the `target` attribute to the few, if any, links they want t
 <base target="_top" href="https://machinelearningworkshop.com">  
 ```
 
-If our website found itself nested within an iframe on a site like Yummly, including the `<base>` element would mean when a user clicks on any links within our document, the line will load popped out of the iframe, taking up the whole browser window. 
+If our website found itself nested within an iframe on a site like Yummly, including the `<base>` element would mean when a user clicks on any links within our document, the link will load popped out of the iframe, taking up the whole browser window. 
 
 One of the drawbacks of this element is that anchor links are resolved with `<base>`. The `<base>` effectively converts the link `<a href="#ref">` to `<a target="_top" href="https://machinelearningworkshop.com#ref">`,  triggering an HTTP request to the base URL with the fragment attached.
 
@@ -285,7 +285,7 @@ The code now looks like this:
     <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />  
     <link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR />  
     <link rel="canonical" href="https://www.machinelearning.com"/>  
-</head>  
+   </head>
   <body>
 
 	<!-- <script defer src="scripts/lightswitch.js"></script>-->  
