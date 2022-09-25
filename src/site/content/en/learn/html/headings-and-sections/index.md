@@ -147,7 +147,7 @@ If you are creating a blog, you might have a series of articles in `<main>`:
 </body>  
 ```
 
-Here, a `banner` and `contentinfo` are provided through a site `<header>` and `<footer>`.  The new elements added here include `<main>`, `<aside>`, and `<article>`; also, `<h1>` and `<nav>` that you used earlier, and `<section>`, which you haven't used yet.
+When employing semantic elements, browsers are able to create meaningful accessibility trees, enabling screen reader users to more easily navigate. Here, a `banner` and `contentinfo` are provided through a site `<header>` and `<footer>`.  The new elements added here include `<main>`, `<aside>`, and `<article>`; also, `<h1>` and `<nav>` that you used earlier, and `<section>`, which you haven't used yet.
 
 ### `<main>` 
 
