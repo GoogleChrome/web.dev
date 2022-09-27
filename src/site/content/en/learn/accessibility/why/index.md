@@ -147,7 +147,6 @@ A [hearing impairment or hearing loss](https://www.disabled-world.com/disability
 {% endDetails %}
 
 {% Details %}
-
 {% DetailsSummary 'h3' %}
 Cognitive impairments
 {% endDetailsSummary %}
@@ -180,6 +179,7 @@ Read a short [article in the New York Times](https://www.nytimes.com/2022/08/30/
 
 {% endDetails %}
 
+{% Details %}
 {% DetailsSummary 'h3' %}
 Seizure and vestibular disorders
 {% endDetailsSummary %}
@@ -204,6 +204,7 @@ Read a short [article in the New York Times](https://www.nytimes.com/2022/08/30/
 
 {% endDetails %}
 
+{% Details %}
 {% DetailsSummary 'h3' %}
 Speech impairments
 {% endDetailsSummary %}
