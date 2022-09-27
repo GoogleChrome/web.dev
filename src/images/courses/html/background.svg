@@ -1,0 +1,23 @@
+<svg width="360" height="144" viewBox="0 0 360 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1864_2072)">
+<path d="M50 34.15L39.8 23.95L50.05 13.75L50.8 14.55L41.4 23.95L50.8 33.35L50 34.15ZM65.9501 34.2L65.2001 33.4L74.6 24L65.2001 14.55L66 13.75L76.2001 23.95L65.9501 34.2Z" fill="#33CC00"/>
+<mask id="path-2-inside-1_1864_2072" fill="white">
+<path d="M95 14H422V29H95V14Z"/>
+</mask>
+<path d="M422 28H95V30H422V28Z" fill="#66CCFF" mask="url(#path-2-inside-1_1864_2072)"/>
+<rect x="128" y="63" width="42.8859" height="7.62416" fill="#CCEEFF"/>
+<rect x="141.819" y="78.6241" width="50.5101" height="7.62416" fill="#CCEEFF"/>
+<rect x="157" y="94" width="102" height="8" fill="#CCEEFF"/>
+<rect x="157" y="110" width="119" height="8" fill="#CCEEFF"/>
+<rect x="95.5" y="14.5" width="326" height="269" stroke="#66CCFF"/>
+<rect x="116.5" y="51.5" width="284" height="78" stroke="#FF66CC" stroke-dasharray="1.34 1.34"/>
+<circle cx="106.358" cy="22.0175" r="3.34061" fill="#FFDDEE"/>
+<circle cx="118.384" cy="22.0175" r="3.34061" fill="#FFEEDD"/>
+<circle cx="130.41" cy="22.0175" r="3.34061" fill="#DDEEDD"/>
+</g>
+<defs>
+<clipPath id="clip0_1864_2072">
+<rect width="360" height="144" fill="white"/>
+</clipPath>
+</defs>
+</svg>
