@@ -146,4 +146,3 @@ Accessible typography can be boiled down to common-sense design choices based on
 {% Aside %}
 Refer to the [Typography module for Learn CSS](/learn/design/typography/) to learn how to implement certain rules and styles.
 {% endAside %}
-

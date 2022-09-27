@@ -23,3 +23,14 @@ questions:
         rationale: "A Braille display is an electro-mechanical device which helps people with visual impairments read text output."
       - content: "Operating system settings"
         rationale: "A user with seizures or vestibular disorders may set preferences within their operating system to reduce motion."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,2"
+    stem: How might someone try to enact change on the web?
+    options:
+      - content: "Complain on Twitter."
+        rationale: "Complaining may make you feel better, but you can't expect change."
+      - content: "File a lawsuit."
+        rationale: "This is an option available in many countries, but not all places."
+      - content: "Contact a company's developers directly."
+        rationale: "If you see something, say something. If you're able to contact developers through the website or other methods, you could encourage change."
