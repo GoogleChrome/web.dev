@@ -108,7 +108,7 @@ Mobility impairments
 %}
 </figure>
 
-* _Examples_: Arthritis, paralysis, amputees, seizure disorders
+* _Examples_: Arthritis, paralysis, amputees, seizure disorders.
 * _Prevalence_: 1 in 7 people have mobility issues. ([Source](https://www.cdc.gov/media/releases/2018/p0816-disability.html#:~:text=One%20in%204%20U.S.%20adults,affects%201%20in%207%20adults.))
 * _Tools_: Adaptative switches, eye tracking devices, mouth/head sticks, speech input.
 * _Pain points_: Elements that are only designed to work with the use of a mouse.
