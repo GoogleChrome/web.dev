@@ -4,7 +4,6 @@ const devices = require('./devices.json');
 const discoverable = require('./discoverable.json');
 const fast = require('./fast.json');
 const learnCoreWebVitals = require('./learn-core-web-vitals.json');
-const lighthouseAccessibility = require('./lighthouse-accessibility.json');
 const lighthouseBestPractices = require('./lighthouse-best-practices.json');
 const lighthousePerformance = require('./lighthouse-performance.json');
 const lighthousePwa = require('./lighthouse-pwa.json');
@@ -30,7 +29,6 @@ module.exports = {
   discoverable,
   fast,
   'learn-core-web-vitals': learnCoreWebVitals,
-  'lighthouse-accessibility': lighthouseAccessibility,
   'lighthouse-best-practices': lighthouseBestPractices,
   'lighthouse-performance': lighthousePerformance,
   'lighthouse-pwa': lighthousePwa,

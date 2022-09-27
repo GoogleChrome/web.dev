@@ -86,3 +86,9 @@ learn_accessibility:
     en: Learn Accessibility
    description:
     en: "Discover how to make your websites and web apps more accessible."
+
+learn_html:
+  title:
+    en: Learn HTML!
+  description:
+    en: "This HTML course for web developers provides a solid overview for developers, from novice to expert level HTML."

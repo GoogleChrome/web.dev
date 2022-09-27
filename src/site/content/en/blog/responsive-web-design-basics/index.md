@@ -4,7 +4,7 @@ subhead: How to create sites which respond to the needs and capabilities of the 
 description: |
   How to create sites which respond to the needs and capabilities of the device they are viewed on.
 date: 2019-02-12
-updated: 2020-05-14
+updated: 2022-09-22
 authors:
  - petelepage
  - rachelandrew
@@ -16,20 +16,17 @@ tags:
  - ux
 ---
 
-{# TODO(kayce): Remove this hard-coded ToC once #1983 lands. #}
-
-* [Set the viewport](#viewport)
-* [Size content to the viewport](#size-content)
-* [Use CSS media queries for responsiveness](#media-queries)
-* [How to choose breakpoints](#breakpoints)
-* [View media query breakpoints in Chrome DevTools](#devtools)
+{% Aside %}
+Take a look at our complete course on Responsive Web Design—[Learn Design](/learn/design/).
+{% endAside %}
 
 The use of mobile devices to surf the web continues to grow at an astronomical pace, and these devices are often constrained by display size and require a different approach to how content is laid out on the screen.
 
 Responsive web design, originally defined by [Ethan Marcotte in A List Apart](http://alistapart.com/article/responsive-web-design/), responds to the needs of the users and the devices they're using. The layout changes based on the size and capabilities of the device. For example, on a phone users would see content shown in a single column view; a tablet might show the same content in two columns.
 
 <figure>
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, playsinline=true %}
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, playsinline=true, alt="A video of a design moving from a narrow viewport to a wider one, showing how the design responds to the different screen real estate." %}
+  <figcaption>In this video the design moves from a narrow to a wide viewport, responding to the available screen real estate.</figcaption>
 </figure>
 
 A multitude of different screen sizes exist across phones, "phablets," tablets, desktops, game consoles, TVs, and even wearables. Screen sizes are always changing, so it's important that your site can adapt to any screen size, today or in the future. In addition, devices have different features with which we interact with them. For example some of your visitors will be using a touchscreen. Modern responsive design considers all of these things to optimize the experience for everyone.
@@ -66,14 +63,14 @@ content to match different screen sizes, whether rendered on a small mobile
 phone or a large desktop monitor.
 
 <figure>
-  {% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="Screenshot of a page with the text hard to read as it is very zoomed out", width="500", height="640" %}
+  {% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="Screenshot of a page with the text hard to read as it is very zoomed out.", width="500", height="640" %}
   <figcaption>
     An example of how the page loads in a device without the viewport meta tag. <a href="https://without-vp-meta.glitch.me/">See this example on Glitch</a>.
   </figcaption>
 </figure>
 
 <figure>
-  {% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="Screenshot of the same page with the text at a size that can be read", width="500", height="888" %}
+  {% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="Screenshot of the same page with the text at a size that can be read.", width="500", height="888" %}
   <figcaption>
     An example of how the page loads in a device with the viewport meta tag. <a href="https://with-vp-meta.glitch.me/">See this example on Glitch</a>.
   </figcaption>

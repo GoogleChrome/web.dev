@@ -1684,6 +1684,11 @@
     "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/X3PNOGXB6wYGEqGEjoWd.jpeg",
     "twitter": "mmatuzo"
   },
+  "estelleweyl": {
+    "country": "US",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/tdK5bAeVqsW0WEJNyvUg.jpeg",
+    "twitter": "estellevw"
+  },
   "davideast": {
     "homepage": "https://davidea.st",
     "twitter": "_davideast",
@@ -1694,5 +1699,11 @@
     "twitter": "cariefisher",
     "country": "US",
     "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/eurEFMIkwaNmX7HpnGJg.png"
+  },
+  "superhighfives": {
+    "homepage": "https://charliegleason.com",
+    "twitter": "superhighfives",
+    "image": "image/vS06HQ1YTsbMKSFTIPl2iogUQP73/yFI6NAn66sh1FZF5yfFK.jpg",
+    "github": "https://github.com/superhighfives"
   }
 }
