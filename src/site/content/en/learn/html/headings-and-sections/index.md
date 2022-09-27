@@ -3,7 +3,7 @@ title: 'Headings and sections'
 authors:
   - estellweyl
 description: How to correctly use sectioning elements to give meaning to your content.
-date: 2022-09-08
+date: 2022-09-27
 tags:
   - html
 ---

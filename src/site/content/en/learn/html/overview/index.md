@@ -3,7 +3,7 @@ title: 'Overview of HTML'
 authors:
   - estellweyl
 description: A brief introduction to the key concepts in HTML.
-date: 2022-09-08
+date: 2022-09-27
 tags:
   - html
 ---

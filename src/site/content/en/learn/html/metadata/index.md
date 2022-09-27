@@ -3,7 +3,7 @@ title: 'Metadata'
 authors:
   - estellweyl
 description: How to use meta tags to provide information about your documents.
-date: 2022-09-08
+date: 2022-09-27
 tags:
   - html
 ---

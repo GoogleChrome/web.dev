@@ -3,7 +3,7 @@ title: 'Document structure'
 authors:
   - estellweyl
 description: Learn how to structure your HTML documents with a solid foundation.
-date: 2022-09-08
+date: 2022-09-27
 tags:
   - html
 ---

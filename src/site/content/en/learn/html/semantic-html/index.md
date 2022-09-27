@@ -3,7 +3,7 @@ title: 'Semantic HTML'
 authors:
   - estellweyl
 description: Using the correct HTML elements to describe your document content.
-date: 2022-09-08
+date: 2022-09-27
 tags:
   - html
 ---
@@ -12,7 +12,7 @@ With over 100 HTML elements, and the ability to create custom elements, there ar
 
 _Semantic_ means "relating to meaning". Writing semantic HTML means using HTML elements to structure your content based on each element's meaning, not its appearance. 
 
-You haven't covered many HTML elements yet, but even without knowing HTML, the following two code snippets show how semantic markup can give content context. Both use a word count instead of _ipsum lorem_ to save some scrolling—use your imagination to expand "thirty words" into 30 words:
+This series hasn't covered many HTML elements yet, but even without knowing HTML, the following two code snippets show how semantic markup can give content context. Both use a word count instead of _ipsum lorem_ to save some scrolling—use your imagination to expand "thirty words" into 30 words:
 
 The first code snippet uses `<div>` and `<span>`, two elements with no semantic value.   
 
