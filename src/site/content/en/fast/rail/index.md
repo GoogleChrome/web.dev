@@ -225,10 +225,10 @@ Be aware that these targets may change over time.
 
 {% Aside %} Recognize the factors that affect page load performance:
 
-* Network speed and latency
-* Hardware (slower CPUs, for example)
-* Cache eviction
-* Differences in L2/L3 caching
+* Network speed and latency<br />
+* Hardware (slower CPUs, for example)<br />
+* Cache eviction<br />
+* Differences in L2/L3 caching<br />
 * Parsing JavaScript {% endAside %}
 
 ## Tools for measuring RAIL
