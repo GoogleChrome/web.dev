@@ -138,7 +138,7 @@ A [hearing impairment or hearing loss](https://www.disabled-world.com/disability
 </figure>
 
 * _Examples_: D/deafness, hard of hearing (HoH), hearing impaired (HI)
-* _Prevalence_: 66 million people worldwide have disabling hearing loss ([Source](https://www.who.int/health-topics/hearing-loss#tab=tab_1))
+* _Prevalence_: Globally, over 1.5 billion people have a low to medium level of hearing loss, while it is estimated that 66 million people have a [significant level of hearing loss](https://www.who.int/health-topics/hearing-loss#tab=tab_1).
 * _Tools include_: hearing aids, captions, transcripts, sign language.
 * _Pain points_: Audio content without text transcripts, video with no synchronized captions
 

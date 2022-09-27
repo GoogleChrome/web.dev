@@ -27,9 +27,6 @@ of the [Voluntary Product Accessibility Template (VPAT)](#vpat).
 as an accessibility audit. The ACT utilizes various testing methodology and
 tools: primarily automated, manual, and assistive technology (AT) devices. The
 ACT is first performed as a baseline metric to gauge general accessibility
-compliance of a digital product. It’s often run multiple times throughout the
+compliance of a digital product. It's often run multiple times throughout the
 software product lifecycle to check for changes in the level of conformance
 against a set of pre-determined accessibility checkpoints or guidelines. 
-
-
-
