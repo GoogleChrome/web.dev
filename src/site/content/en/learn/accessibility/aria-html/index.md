@@ -109,6 +109,11 @@ accomplished your final accessibility goal. Correctly incorporating ARIA into
 your code base ensures that AT users will have all the information they need to
 use your website, app, or other digital product successfully and equitably.
 
+Recently, Chrome DevTools has created a way to
+[see the full accessibility tree](https://developer.chrome.com/blog/full-accessibility-tree/)
+making it easier for developers to understand how their code impacts
+accessibility.
+
 ## When to use ARIA
 
 In 2014, the W3C officially published the HTML5 recommendation. With it came
