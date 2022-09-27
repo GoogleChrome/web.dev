@@ -41,7 +41,9 @@ lifecycle—from planning, to designing, to coding, and more.
 The [World Health Organization](https://www.who.int/teams/noncommunicable-diseases/sensory-functions-disability-and-rehabilitation/world-report-on-disability)
 (WHO) estimates that over 15% of the world's population—or 1.3 billion
 people—self-identify as having a disability, making this group the largest
-minority group globally. More recent reports from the
+minority group globally.
+
+More recent reports from the
 [Centers for Disease Control and Prevention (CDC)](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html),
 the [US Census](https://www.census.gov/content/dam/Census/library/publications/2018/demo/p70-152.pdf),
 the [Academic Network of European Disability experts (ANED)](https://includ-ed.eu/sites/default/files/documents/aned_2013_task_6_-_comparative_data_synthesis_report_-_europe2020_final.pdf),
@@ -199,7 +201,7 @@ A seizure is an excessive surge of electrical activity in the brain that can cau
 * _Pain points_: Videos that autoplay, extreme flashing or strobing of visual content, parallax effects, or scroll-triggered animations.
 
 <blockquote>
-  <p>"I _really_ dislike the superfluous animation that plagues iOS transitions between apps, so I turn it off. Downside: I'm denied most of the thoughtfully executed motion design on the web because there's no “some motion is fine” middle ground."</p>
+  <p>"I <em>really</em> dislike the superfluous animation that plagues iOS transitions between apps, so I turn it off. Downside: I'm denied most of the thoughtfully executed motion design on the web because there's no “some motion is fine” middle ground."</p>
   <cite>Oliver</cite>
 </blockquote>
 
@@ -254,7 +256,9 @@ including those who are:
 ## Business impact
 
 People with disabilities make up almost a fourth of the world's population, but
-did you know that they also have a lot of spending power? According to the
+did you know that they also have a lot of spending power?
+
+According to the
 [American Institutes for Research (AIR)](https://www.researchgate.net/profile/Dahlia-Shaewitz/publication/324603094_A_Hidden_Market_The_Purchasing_Power_of_Working-Age_Adults_With_Disabilities_A_Hidden_Market_The_Purchasing_Power_of_Working-Age_Adults_With_Disabilities/links/5ad89016458515c60f5918f3/A-Hidden-Market-The-Purchasing-Power-of-Working-Age-Adults-With-Disabilities-A-Hidden-Market-The-Purchasing-Power-of-Working-Age-Adults-With-Disabilities.pdf),
 the total after-tax disposable income for working-age Americans with
 disabilities is about $490 billion annually. This number is similar to other
@@ -315,6 +319,5 @@ website and the second for their mobile app.
 While avoiding lawsuits shouldn't be the only reason you focus on making sure
 your digital products are accessible, it is an important piece of the
 conversation.
-  
 
 {% Assessment 'why' %}
