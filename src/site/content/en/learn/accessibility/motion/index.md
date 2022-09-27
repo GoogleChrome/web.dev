@@ -11,7 +11,7 @@ tags:
 
 Have you ever been riding in a car, boat, or plane and suddenly felt the world
 spin? Or had a migraine so bad that animations on your phone or tablet, 
-created to “delight” you, suddenly make you sick? Or perhaps you've always been
+created to "delight" you, suddenly make you sick? Or perhaps you've always been
 sensitive to all types of motion? These are examples of different types of
 vestibular disorders. 
 
@@ -74,7 +74,7 @@ Similar to the color-focused media queries in the [color module](/learn/accessib
 <figcaption>On MacOS, a user can set <strong>Reduce motion</strong> in Settings > Accessibility > Display. It's up to developers to build products which respect this setting.</figcaption>
 </figure>
 
-A user may set display preferences to reduce motion. With [@prefers-reduced-motion](https://web.dev/prefers-reduced-motion/), you can design a site which respects this preference. The @prefers-reduced-motion media query is currently supported by [94.76% of all browsers](https://caniuse.com/prefers-reduced-motion).
+A user may set display preferences to reduce motion. With [@prefers-reduced-motion](/prefers-reduced-motion/), you can design a site which respects this preference. The @prefers-reduced-motion media query is currently supported by [94.76% of all browsers](https://caniuse.com/prefers-reduced-motion).
 
 {% Codepen {
  user: 'web-dev-codepen-external',
