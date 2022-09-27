@@ -72,7 +72,10 @@ medication. Visual impairment can be due to disease, trauma, or congenital or
 degenerative conditions.
 
 <figure data-float="right">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/9rl95PJGmH4j9z6PYCVD.png", alt="A black woman using a white cane.", width="240", height="300" %}
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/9rl95PJGmH4j9z6PYCVD.png",
+  alt="A woman using a white cane.", width="240", height="300"
+  %}
 </figure>
 
 * _Examples_: B/blindness, low vision, color blindness
