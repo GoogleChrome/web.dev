@@ -10,7 +10,7 @@ subhead: >
   Today we are launching Learn HTML—the next course in our series to help get you up to speed with modern web development.
 description: >
   Today we are launching Learn HTML—the next course in our series to help get you up to speed with modern web development.
-date: 2022-09-22
+date: 2022-09-27
 tags:
   - html
   - blog
