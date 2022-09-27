@@ -97,6 +97,11 @@ about any "accessibility blockers" they may encounter. A VPAT does not mean
 that a digital product is 100% accessible: it is just a report of the state 
 of a product from an accessibility conformance perspective.
 
+## Web Accessibility Initiative (WAI)
+
+The [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) is a 
+sub-group of the W3C focuses only on digital accessibility. 
+
 ## Web Content Accessibility Guidelines (WCAG) {: #wcag}
 
 Web Content Accessibility Guidelines (commonly referred to as ]=
@@ -105,8 +110,3 @@ set of accessibility standards developed through the W3C in cooperation with
 individuals and organizations. The goal of WCAG is to provide a single shared 
 standard for digital accessibility that meets the needs of individuals, 
 organizations, and governments worldwide.
-
-## Web Accessibility Initiative (WAI)
-
-The [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) is a 
-sub-group of the W3C focuses only on digital accessibility. 
