@@ -67,7 +67,12 @@ In addition to being selective about your animations, giving your users options 
 
 ### Prefers reduced motion
 
-Similar to the color-focused media queries in the [color module](/learn/accessibility/color-contrast), the @prefers-reduced-motion media query checks the [user's OS settings](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion#user_preferences) related to animation.
+Similar to the color-focused media queries in the [color module](/learn/accessibility/color-contrast), the @prefers-reduced-motion media query checks the [user's OS settings](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion#user_preferences) related to animation.
+
+<figure>
+  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/THGrOrf3wJxPZWDJAcZx.png", alt="MacOS Display settings UI.", width="800", height="580" %}
+<figcaption>On MacOS, a user can set <strong>Reduce motion</strong> in Settings > Accessibility > Display. It's up to developers to build products which respect this setting.</figcaption>
+</figure>
 
 A user may set display preferences to reduce motion. With [@prefers-reduced-motion](https://web.dev/prefers-reduced-motion/), you can design a site which respects this preference. The @prefers-reduced-motion media query is currently supported by [94.76% of all browsers](https://caniuse.com/prefers-reduced-motion).
 
@@ -81,4 +86,38 @@ A user may set display preferences to reduce motion. With [@prefers-reduced-moti
 
 Alternatively, as shown in the next set of examples, you can code all your animations to stop moving within five seconds or less instead of playing on an infinite loop.
 
+### Progressive enhancement for movement
 
+As designers and developers, we have a lot of choices to make, including default movement states and how much movement to display. Let's take another look at the last example on motion.
+
+Suppose we decide the animation is unnecessary for understanding the content on the screen. In that case, we can choose to set the default state to the reduced motion animation instead of the full motion version. Unless users specifically ask for animations, the animations are turned off. 
+
+{% Aside %}
+The motion preferences available are dependent on the operating system. Some allow you to opt-in to animations, while others require you to opt out of the animations.
+{% endAside %}
+
+We cannot predict what level of movement will cause issues for people with seizure, vestibular, and other visual disorders. Even a small amount of motion on the screen can trigger dizziness, blurred vision, or worse. So, in the following example, we default to no animation,
+
+{% Codepen {
+ user: 'web-dev-codepen-external',
+ id: 'qBYpvam',
+ height: 350,
+ theme: 'auto',
+ tab: 'css,result'
+} %}
+
+### Layering media queries
+
+You can use multiple media queries to give your users even more choices. Let's use `@prefers-color-scheme`, `@prefers-contrast`, and `@prefers-reduced-motion` all together.
+
+{% Codepen {
+ user: 'web-dev-codepen-external',
+ id: 'wvjpOzR',
+ height: 350,
+ theme: 'auto',
+ tab: 'css,result'
+} %}
+
+## Allow your users to choose
+
+While it can be fun to build animation into our digital products to delight users, it's critical we remember some people will be affected by these designs. Motion sensitivity can affect anyone, from feeling slight discomfort to causing a debilitating illness or seizure. You can use a number of different tools to allow the user to decide what's best for them.
