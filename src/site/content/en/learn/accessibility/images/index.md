@@ -229,11 +229,11 @@ visual and the action conveyed in one image.
 
 ### Complex images
 
-A [complex image](https://www.w3.org/WAI/tutorials/images/complex/) is often
-intricate, and possibly used to explain complicated concepts, which require
-more information than a standard image. It requires both a short and a long
-alternative description to convey the full message. Complex images include
-infographics, maps, graphs/charts, and complex illustrations. As with the other
+A [complex image](https://www.w3.org/WAI/tutorials/images/complex/) often
+requires more explanation  Comment start than a decorative, informational, or
+functional image Comment end . It requires both a short and a long alternative
+description to convey the full message. Complex images include infographics,
+maps, graphs/charts, and complex illustrations. As with the other
 image types, there are different methods you can use to add alternative
 descriptions to your complex images.
 
