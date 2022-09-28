@@ -75,7 +75,7 @@ If you know HTML, all you have to do is think about the purpose of the content. 
 </header> 
 ```
 
-This code uses two semantic landmarks: `<header>` and `</nav>`.
+This code uses two semantic landmarks: `<header>` and `<nav>`.
 
 This is the main header. The `<header>` element isn't always a landmark. It has different semantics depending on where it is nested. When the `<header>` is top level, it is the site `banner`, a landmark role, which you may have noted in the `role` code block. When a `<header>` is nested in  `<main>`, `<article>`,  or `<section>`, it just identifies it as the header for that section and isn't a landmark. 
 
