@@ -149,7 +149,7 @@ While cascade layers are still fairly new and you might not spot the `@import` i
 ```
 
 {% Aside %}
-Styles, the presentation layer, are the purview of CSS, here we are considering how to attach your styles to the content layer, your HTML. If the CSS of the preceding code interests you, look up [cascade layers](https://developer.mozilla.org/docs/docs/Learn/CSS/Building_blocks/Cascade_layers) and [custom properties](https://developer.mozilla.org/docs/Web/CSS/Using_CSS_custom_properties).
+Styles, the presentation layer, are the purview of CSS, here we are considering how to attach your styles to the content layer, your HTML. If the CSS of the preceding code interests you, look up [cascade layers](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Cascade_layers) and [custom properties](https://developer.mozilla.org/docs/Web/CSS/Using_CSS_custom_properties).
 {% endAside %}
 
 Styles, either via `<link>` or `<style>`, or both, should go in the head. They will work if included in the document's body, but you want your styles in the head for performance reasons. That may seem counterintuitive, as you may think you want your content to load first, but you actually want the browser to know how to render the content when it is loaded. Adding styles first prevents the unnecessary repainting that occurs if an element is styled after it is first rendered.
