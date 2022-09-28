@@ -115,19 +115,41 @@ would appear to those with specific forms of color blindness.
 
 On the left, the image shows rainbow sand with purple, red, orange, yellow, aqua green, light blue, and dark blue colors. On the right is a brighter, multicolored rainbow pattern. 
 
-<!-- ADD IMAGES -->
+<div class="switcher">
+<figure>
+  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/MmstWzPwC5oEZiy3ltXJ.jpg", alt="Rainbow sand, as seen by a person with deuteranopia.", width="450", height="300" %}
+</figure>
+<figure>
+     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/i9uQOQaWkyjUv0p2EqTI.jpg", alt="Rainbow pattern, as seen by a person with deuteranopia.", width="450", height="300" %}
+</figure>
+</div>
 
 [Deuteranopia](https://www.color-blindness.com/deuteranopia-red-green-color-blindness/) (green blind) - Population % - Male: 1-5, Female: 0.1-0.35.
 
 People with Deuteranopia have a reduced sensitivity to green light. This color blindness filter simulates what this type of color blindness might look like.
 
-<!-- ADD IMAGES -->
+<div class="switcher">
+<figure>
+  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/hj9QDGzaCx7Fd9g5oJBr.jpg", alt="Rainbow sand, as seen by a person with protanopia.", width="450", height="300" %}  
+</figure>
+<figure>
+     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/o2Tu1YwNNgX3FYnCSocq.jpg", alt="Rainbow pattern, as seen by a person with protanopia.", width="450", height="300" %}
+</figure>
+</div>
 
 [Protanopia](https://www.color-blindness.com/protanopia-red-green-color-blindness/) (red blind) - Population % - Male: 1.01-1.08, Female: 0.02-0.03
 
 People with Protanopia have a reduced sensitivity to red light. This color blindness filter simulates what this type of color blindness might look like.
 
-<!-- ADD IMAGES -->
+<div class="switcher">
+<figure>
+  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/R372C4rw8c4bb3PKialX.jpg", alt="Rainbow sand, as seen by a person with achromatopsia.", width="450", height="300"  %}
+</figure>
+<figure>
+  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/41D6WgI6mnv2tgYhtLzt.jpg", alt="Rainbow pattern, as seen by a person with achromatopsia.", width="450", height="300"  %}
+</figure>
+</div>
+
 [Achromatopsia/Monochromatism](https://www.color-blindness.com/2007/07/20/monochromacy-complete-color-blindness/) (RGB blind) - Population % - Male/Felmale: very rare
 People with Achromatopsia or Monochromatism have almost no perception of red, green, or blue light. This color blindness filter simulates what this type of color blindness might look like.
 
