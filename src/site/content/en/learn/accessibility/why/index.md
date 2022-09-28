@@ -58,8 +58,13 @@ chronic health conditions.
 %}
 
 Inaccessible digital products impact people with disabilities. Some types of
-disabilities are impacted more in the digital world than others. Examples
-include people with:
+disabilities are impacted more in the digital world than others.
+
+{% Aside %}
+To learn more about identity and language choices, we recommend reading
+[Demystifying Disability: What to Know, What to Say, and How to be an Ally](https://emilyladau.com/book/)
+by Emily Ladau.
+{% endAside %}
 
 {% Details  'open' %}
 
@@ -89,6 +94,10 @@ degenerative conditions.
 * _Tools include_: Screen reader software, screen magnification tools, Braille output devices.
 * _Pain points_: ​Digital products that do not work with screen reader software, mobile websites/apps without pinch to zoom, complex graphs and charts differentiated by colors alone, color contrasts that make it difficult to read text on the screen
 
+{% Aside 'important' %}
+Use lowercase when referring to a vision-loss condition or to a blind person who prefers lowercase. Capitalize for those who capitalize Blind when describing themselves.
+{% endAside %}
+
 <blockquote>
   <p>"My vision has deteriorated rapidly over the last three years, and my phone's default font size ranges from large to mega-large. There are a decent amount of mobile apps that I can barely use because of their absurd font sizes."</p>
   <cite>Frank</cite>
@@ -103,7 +112,11 @@ Read a short [article in the New York Times](https://www.nytimes.com/2022/08/16/
 Mobility impairments
 {% endDetailsSummary %}
 
-[Mobility impairment](https://www.disabled-world.com/disability/types/mobility/) is a category of disability that includes people with various physical disabilities. This type of disability includes upper or lower limb loss or disability, manual dexterity, and disability in coordination with different organs of the body.
+[Mobility impairment](https://www.disabled-world.com/disability/types/mobility/)
+is a category of disability that includes people with various physical 
+disabilities. This type of disability includes upper or lower limb loss or
+disability, manual dexterity, and disability in coordination with different
+organs of the body.
 
 <figure data-float="right">
 {% Img
@@ -131,7 +144,10 @@ Mobility impairments
 Hearing impairments
 {% endDetailsSummary %}
 
-A [hearing impairment or hearing loss](https://www.disabled-world.com/disability/types/hearing/) is a full or partial decrease in the ability to detect or understand sounds. Hearing impairments are caused by a wide range of biological and environmental factors.
+A [hearing impairment or hearing loss](https://www.disabled-world.com/disability/types/hearing/)
+is a full or partial decrease in the ability to detect or understand sounds.
+Hearing impairments are caused by a wide range of biological and environmental
+factors.
 
 <figure data-float="right">
   {% Img
@@ -143,6 +159,12 @@ A [hearing impairment or hearing loss](https://www.disabled-world.com/disability
 * _Prevalence_: Globally, over 1.5 billion people have a low to medium level of hearing loss, while it is estimated that 66 million people have a [significant level of hearing loss](https://www.who.int/health-topics/hearing-loss#tab=tab_1).
 * _Tools include_: hearing aids, captions, transcripts, sign language.
 * _Pain points_: Audio content without text transcripts, video with no synchronized captions
+
+{% Aside 'important' %}
+Use lowercase when referring to a hearing-loss condition or to a deaf person
+who prefers lowercase. Capitalize for those who identify as members of the Deaf
+community or when they capitalize Deaf when describing themselves.
+{% endAside %}
 
 <blockquote>
   <p>"Some deaf people say auto-captions are NOT better than nothing. Some deaf people say automatic captions ARE better than nothing. Unlike people with hearing, deaf people have nothing to fall back on. All they have is the captions. Personally, I'd rather see no captions than watch automatic captions. Sure, I'm disappointed there aren't captions. With no auto-captions, I avoid the painful experience of its notoriously bad captions."</p>
@@ -170,17 +192,29 @@ or neurodegenerative diseases like dementia.
     %}
 </figure>
 
-* _Examples_: Down's syndrome, autism, ADHD, dyslexia, aphasia.
+* _Examples_: Down's syndrome, A/autism, ADHD, dyslexia, aphasia.
 * _Frequency_: Varies by condition.
-* _Tools include_: Screen readers, text highlighting, text prediction, abstractive summarization tools.
-* _Pain points_: Busy interfaces that make it overly complicated to focus on the task at hand, big walls of words with little whitespace, justified text, and small or hard-to-read fonts.
+* _Tools include_: Screen readers, text highlighting, text prediction,
+  abstractive summarization tools.
+* _Pain points_: Busy interfaces that make it overly complicated to focus on
+  the task at hand, big walls of words with little whitespace, justified text,
+  and small or hard-to-read fonts.
+
+{% Aside 'important' %}
+Use lowercase when referring to autism as a disorder or to an autistic person
+who prefers lowercase. Capitalize for those who capitalize Autism or Autistic
+when describing themselves.
+{% endAside %}
 
 <blockquote>
   <p>"Right now, I am recovering from an ocular migraine, and I would say dark mode is not helping enough. I still need contrast, but less harshly bright."</p>
   <cite>Ruth</cite>
 </blockquote>
 
-Read a short [article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html) or watch a [video](https://youtu.be/3-MzNPcEh6M) on face blindness (prosopagnosia).
+Read a short
+[article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html) 
+or watch a [video](https://youtu.be/3-MzNPcEh6M) on face blindness
+(prosopagnosia).
 
 {% endDetails %}
 
@@ -189,16 +223,29 @@ Read a short [article in the New York Times](https://www.nytimes.com/2022/08/30/
 Seizure and vestibular disorders
 {% endDetailsSummary %}
 
-A seizure is an excessive surge of electrical activity in the brain that can cause various symptoms, depending on which parts of the brain are involved. Seizures may result from genetics or a brain injury, but their [cause is often unknown](https://nyulangone.org/conditions/epilepsy-seizure-disorders-in-adults/types). The vestibular system includes the parts of the inner ear and brain that process the sensory information that controls balance and eye movements. If disease or injury damages these processing areas, vestibular disorders can result. [Vestibular disorders](https://vestibular.org/article/diagnosis-treatment/types-of-vestibular-disorders/) can also result from or be worsened by genetic or environmental conditions or occur for unknown reasons.
+A seizure is an excessive surge of electrical activity in the brain that can
+cause various symptoms, depending on which parts of the brain are involved.
+Seizures may result from genetics or a brain injury, but their
+[cause is often unknown](https://nyulangone.org/conditions/epilepsy-seizure-disorders-in-adults/types).
+
+The vestibular system includes the parts of the inner ear and brain that
+process the sensory information that controls balance and eye movements. If
+disease or injury damages these processing areas, vestibular disorders can
+result. [Vestibular disorders](https://vestibular.org/article/diagnosis-treatment/types-of-vestibular-disorders/)
+can also result from or be worsened by genetic or environmental conditions or
+occur for unknown reasons.
 
 <figure data-float="right">
  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6jKwFBXkliZ0wtJgr8tj.png", alt="A person in a green jacket with glasses.", width="183", height="320" %}
 </figure>
 
 * _Examples_: Epilepsy, vertigo, dizziness, labyrinthitis, balance, and eye movement disorders.
-* _Frequency_: [50 million people worldwide have epilepsy](https://www.who.int/health-topics/epilepsy), and 1.8 million adults worldwide have [bilateral vestibular hypofunction](https://www.hopkinsmedicine.org/news/newsroom/news-releases/implant-improves-balance-movement-and-quality-of-life-for-people-with-inner-ear-disorder) (BVH).
+* _Frequency_: [50 million people worldwide have epilepsy](https://www.who.int/health-topics/epilepsy),
+  and 1.8 million adults worldwide have
+  [bilateral vestibular hypofunction](https://www.hopkinsmedicine.org/news/newsroom/news-releases/implant-improves-balance-movement-and-quality-of-life-for-people-with-inner-ear-disorder) (BVH).
 * _Tools include_: Operating system settings to reduce motion.
-* _Pain points_: Videos that autoplay, extreme flashing or strobing of visual content, parallax effects, or scroll-triggered animations.
+* _Pain points_: Videos that autoplay, extreme flashing or strobing of visual
+  content, parallax effects, or scroll-triggered animations.
 
 <blockquote>
   <p>"I <em>really</em> dislike the superfluous animation that plagues iOS transitions between apps, so I turn it off. Downside: I'm denied most of the thoughtfully executed motion design on the web because there's no “some motion is fine” middle ground."</p>
@@ -214,7 +261,9 @@ Read a short [article in the New York Times](https://www.nytimes.com/2022/08/30/
 Speech impairments
 {% endDetailsSummary %}
 
-A [speech disorder](https://www.pennmedicine.org/for-patients-and-visitors/patient-information/conditions-treated-a-to-z/speech-and-language-disorders#:~:text=A%20speech%20disorder%20is%20a,Articulation%20disorders) is a condition in which a person has problems creating or forming the speech sounds needed to communicate with others.
+A [speech disorder](https://www.pennmedicine.org/for-patients-and-visitors/patient-information/conditions-treated-a-to-z/speech-and-language-disorders#:~:text=A%20speech%20disorder%20is%20a,Articulation%20disorders)
+is a condition in which a person has problems creating or forming the speech
+sounds needed to communicate with others.
 
 <figure data-float="right">
 {% Img
