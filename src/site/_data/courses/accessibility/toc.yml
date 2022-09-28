@@ -7,8 +7,9 @@
 - url: /learn/accessibility/more-html
 - url: /learn/accessibility/images
 - url: /learn/accessibility/color-contrast
-- url: /learn/accessibility/typography
 - url: /learn/accessibility/motion
+- url: /learn/accessibility/typography
+- url: /learn/accessibility/video-audio
 - url: /learn/accessibility/forms
 - url: /learn/accessibility/complex-topics
 - url: /learn/accessibility/patterns
@@ -17,5 +18,4 @@
 - url: /learn/accessibility/manual-test
 - url: /learn/accessibility/assitive-technology
 - url: /learn/accessibility/user-test
-- url: /learn/accessibility/video-audio
 - url: /learn/accessibility/glossary
