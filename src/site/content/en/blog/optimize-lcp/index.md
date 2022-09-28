@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-05-05
-updated: 2022-08-12
+updated: 2022-09-27
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
@@ -364,10 +364,6 @@ If you've given your LCP resource a [high `fetchpriority`](/priority-hints/) and
 The best way to reduce resource load times is to eliminate the network entirely from the process. If you serve your resources with an [efficient cache-control policy](/uses-long-cache-ttl/), then visitors who request those resources a second time will have them served from the cache—bringing the _resource load time_ to essentially zero!
 
 And if your LCP resource is a web font, in addition to [reducing web font size](/reduce-webfont-size/), you should also consider whether you need to block rendering on the web font resource load. If you set a [`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display) value of anything other than `auto` or `block`, then text will [always be visible during load](/font-display/), and LCP will not be blocked on an additional network request.
-
-{% Aside 'warning' %}
-One important exception to the previous statement is if your web font glyphs are bigger than the glyphs in your fallback font, then the swap from the fallback font may result in a new LCP candidate. In these cases the web font resource is still a critical part of LCP.
-{% endAside %}
 
 Finally, if your LCP resource is small, it may make sense to inline the resources as a [data URL](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs), which will also eliminate the additional network request. However, using data URLs [comes with caveats](https://calendar.perfplanet.com/2018/performance-anti-patterns-base64-encoding/) because then the resources cannot be cached and in some cases can lead to longer render delays because of the additional [decode cost](https://www.catchpoint.com/blog/data-uri).
 
