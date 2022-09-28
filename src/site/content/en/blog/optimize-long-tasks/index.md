@@ -4,7 +4,7 @@ subhead: |
   You've been told to "don't block the main thread" and "break up your long tasks", but what does it mean to do those things? Find out in this article.
 authors:
   - jlwagner
-date: 2022-09-28
+date: 2022-09-29
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/MpP0GrDpLMztUsdMocP9.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Eup7oLu7L0bglCH4YPGq.jpg
 alt: A photograph of a spool of purple thread, with the thread unraveled to the right until it goes out of the frame.
