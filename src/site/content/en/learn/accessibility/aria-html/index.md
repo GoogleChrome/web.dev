@@ -37,11 +37,11 @@ tree.
 
 <blockquote>
   <p>
-    "<a href="https://www.w3.org/WAI/standards-guidelines/aria/">ARIA</a> is a
-    way to make Web content and Web applications more accessible to people with
-    disabilities. It especially helps with dynamic content, and advanced user
-    interface controls developed with HTML, JavaScript, and related
-    technologies."
+    "<a href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a>, 
+    the Accessible Rich Internet Applications Suite, defines a way to make web
+    conent and web applications more accessible to people with disabilities. It
+    especially helps with dynamic content and advanced user interface controls
+    developed with HTML, JavaScript, and related technologies."
   </p>
   <cite>
     <a href="https://www.w3.org/WAI/">The WAI group</a>
