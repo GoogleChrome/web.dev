@@ -96,7 +96,7 @@ JavaScript works this way because it uses the [run-to-completion model](https://
 {% endAside %}
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/RW8gUNmQArBFjG9milCt.png", alt="The saveSettings function as depicted in Chrome's performance profiler. While the top-level function calls five other functions, all the work takes place in one long task that blocks the main thread.", width="800", height="181" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/0c61l5DCix9y0GBa3pFj.png", alt="The saveSettings function as depicted in Chrome's performance profiler. While the top-level function calls five other functions, all the work takes place in one long task that blocks the main thread.", width="800", height="181" %}
   <figcaption>
     A single function <code>saveSettings</code> that calls five functions. The work is run as part of one long monolithic task.
   </figcaption>
@@ -193,7 +193,7 @@ You don't have to yield after _every_ function call. For example, if you run two
 The result is that the once-monolithic task is now broken up into separate tasks.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/nRKV63bqGUhU3niGDesc.png", alt="The same saveSettings function depicted in Chrome's performance profiler, only with yielding. The result is the once-monolithic task is now broken up into five separate tasks&mdash;one for each function.", width="800", height="211" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wg0FW6S29CzOCbbwk9kK.png", alt="The same saveSettings function depicted in Chrome's performance profiler, only with yielding. The result is the once-monolithic task is now broken up into five separate tasks&mdash;one for each function.", width="800", height="211" %}
   <figcaption>
     The <code>saveSettings</code> function now executes its child functions as separate tasks.
   </figcaption>
@@ -239,7 +239,7 @@ async function saveSettings () {
 While `saveSettings` runs, it will loop over the tasks in the queue. If `isInputPending` ever returns `true` during the loop, `saveSettings` will call `yield` so the user input can be handled. Otherwise, it will shift the next task off the front of the queue and run it continuously. It will do this until no more tasks are left.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/SlE4MGIeGzZSJj0K6Kc8.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, in which case, the task yields to the main thread.", width="800", height="254" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/K0PEngJQFDDOxn9kM8ne.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, in which case, the task yields to the main thread.", width="800", height="254" %}
   <figcaption>
     <code>saveSettings</code> runs a task queue for five tasks, but the user has clicked to open a menu while the second work item was running. <code>isInputPending</code> yields to the main thread to handle the interaction, and resume running the rest of the tasks.
   </figcaption>
@@ -331,7 +331,7 @@ function saveSettings () {
 With this code sample, the priority of tasks is scheduled in such a way that browser-prioritized tasks—such as user interactions—can work their way in. 
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/B7P8NqYEkTcDYIpViJ50.png", alt="The saveSettings function as depicted in Chrome's performance profiler, but using postTask. postTask splits up each function saveSettings runs, and prioritizes them such that a user interaction has a chance to run without being blocked.", width="800", height="256" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ttvI1HqusI02CAdqhjWP.png", alt="The saveSettings function as depicted in Chrome's performance profiler, but using postTask. postTask splits up each function saveSettings runs, and prioritizes them such that a user interaction has a chance to run without being blocked.", width="800", height="256" %}
   <figcaption>
     When <code>saveSettings</code> is run, the function schedules the individual functions using <code>postTask</code>. The critical user-facing work is scheduled at high priority, while work the user doesn't know about is scheduled to run in the background. This allows for user interactions to execute more quickly, as the work is both broken up <em>and</em> prioritized appropriately.
   </figcaption>
