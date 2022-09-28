@@ -84,7 +84,7 @@ from 0% (black) to 100% (white).
 
 ## Measuring color contrast
 
-To help support people with various visual disabilities, the W3C created a
+To help support people with various visual disabilities, the WAI group created a
 [color contrast formula](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio) to
 ensure [enough contrast exists](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
 between the text and its background. When these color contrast ratios are
