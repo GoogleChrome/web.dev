@@ -4,7 +4,7 @@ authors:
   - cariefisher
 description: >
   Support people with all types of movement-triggered disorders.  
-date: 2023-09-30
+date: 2022-09-30
 tags:
   - accessibility
 ---

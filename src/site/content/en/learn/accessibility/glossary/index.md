@@ -3,7 +3,7 @@ title: 'Glossary'
 authors:
   - cariefisher
 description: Learn common accessibility terms and concepts.
-date: 2023-09-30
+date: 2022-09-30
 tags:
   - accessibility
 ---

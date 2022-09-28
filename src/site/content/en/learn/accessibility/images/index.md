@@ -3,7 +3,7 @@ title: 'Images'
 authors:
   - cariefisher
 description: Create accessible images.
-date: 2023-09-30
+date: 2022-09-30
 tags:
   - accessibility
 ---

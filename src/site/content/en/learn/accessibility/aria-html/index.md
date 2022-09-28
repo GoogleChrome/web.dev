@@ -3,7 +3,7 @@ title: 'ARIA and HTML'
 authors:
   - cariefisher
 description: When to use ARIA versus HTML.
-date: 2023-09-30
+date: 2022-09-30
 tags:
   - accessibility
 ---
