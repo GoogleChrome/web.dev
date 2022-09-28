@@ -125,7 +125,7 @@ The main two ways to include styles in your HTML file are by including an extern
 
 The `<link>` tag is the preferred method of including stylesheets. Linking a single or a few external style sheets is good for both developer experience and site performance: you get to maintain CSS in one spot instead of it being sprinkled everywhere, and browsers can cache the external file, meaning it doesn't have to be downloaded again with every page navigation. 
 
-The syntax is `<link rel="stylesheet" href="styles.css">`, where styles.css is the URL of your stylesheet. You'll often see `type="css/text"`. Not necessary! If you are including styles written in something other than CSS, the `type` is needed, but since there isn't any other type, this attribute isn't needed. The `rel` attribute defines the relationship: in this case `stylesheet`. If you omit this, your CSS will not be linked. 
+The syntax is `<link rel="stylesheet" href="styles.css">`, where styles.css is the URL of your stylesheet. You'll often see `type="text/css"`. Not necessary! If you are including styles written in something other than CSS, the `type` is needed, but since there isn't any other type, this attribute isn't needed. The `rel` attribute defines the relationship: in this case `stylesheet`. If you omit this, your CSS will not be linked. 
 
 You'll discover a few other `rel` values shortly, but let's first discuss other ways of including CSS.
 
