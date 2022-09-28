@@ -46,7 +46,7 @@ HTML is very, very forgiving. For example, if we omit the closing `</li>` tags, 
 </ul>  
 ```
 
-It is valid to not close an `<li>`, and some style guides (such as [Google’s](https://google.github.io/styleguide/htmlcssguide.html#Optional_Tags)) even recommend doing so. The closing `</ul>` is mandatory. If the unordered list's closing tag is omitted, the browser will try to determine where your list and list items end, but you might not agree with the decision.
+It is valid to not close an `<li>`, but the closing `</ul>` is mandatory. If the unordered list's closing tag is omitted, the browser will try to determine where your list and list items end, but you might not agree with the decision.
 
 The specification for each element lists whether the closing tag is mandatory or not. "Neither tag is omissible" in the specification means both an opening tag and a closing tag are required. The [specification provides a list of all the required closing tags](https://html.spec.whatwg.org/multipage/syntax.html#syntax-tag-omission). 
 
