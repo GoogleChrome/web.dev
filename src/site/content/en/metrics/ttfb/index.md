@@ -53,7 +53,7 @@ Because TTFB precedes [user-centric metrics](/user-centric-performance-metrics/)
       height="200">
     {%
       Img
-        src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/eNXaxPi9NdUVSTDRJFkV.svg",
+        src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/EcKicxW5ErYYhf8RvpeO.svg",
         alt="Good TTFB values are 0.8 seconds or less, poor values are greater than 1.8 seconds, and anything in between needs improvement",
         width="640",
         height="480"
