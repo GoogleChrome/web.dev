@@ -16,7 +16,7 @@ tags:
   - javascript
 ---
 
-If you read lots of stuff about web performance, the advice for improving JavaScript-related performance advice tends to involve some of these tidbits: 
+If you read lots of stuff about web performance, the advice for keeping your JavaScript apps fast tends to involve some of these tidbits:
 
 - "Don't block the main thread."
 - "Break up your long tasks."
