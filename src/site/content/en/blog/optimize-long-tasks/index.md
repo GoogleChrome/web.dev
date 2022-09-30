@@ -195,7 +195,7 @@ The result is that the once-monolithic task is now broken up into separate tasks
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wg0FW6S29CzOCbbwk9kK.png", alt="The same saveSettings function depicted in Chrome's performance profiler, only with yielding. The result is the once-monolithic task is now broken up into five separate tasks&mdash;one for each function.", width="800", height="211" %}
   <figcaption>
-    The <code>saveSettings</code> function now executes its child functions as separate tasks.
+    The <code>saveSettings()</code> function now executes its child functions as separate tasks.
   </figcaption>
 </figure>
 
