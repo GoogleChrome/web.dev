@@ -337,7 +337,7 @@ With this code sample, the priority of tasks is scheduled in such a way that bro
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ttvI1HqusI02CAdqhjWP.png", alt="The saveSettings function as depicted in Chrome's performance profiler, but using postTask. postTask splits up each function saveSettings runs, and prioritizes them such that a user interaction has a chance to run without being blocked.", width="800", height="256" %}
   <figcaption>
-    When <code>saveSettings</code> is run, the function schedules the individual functions using <code>postTask</code>. The critical user-facing work is scheduled at high priority, while work the user doesn't know about is scheduled to run in the background. This allows for user interactions to execute more quickly, as the work is both broken up <em>and</em> prioritized appropriately.
+    When <code>saveSettings()</code> is run, the function schedules the individual functions using <code>postTask()</code>. The critical user-facing work is scheduled at high priority, while work the user doesn't know about is scheduled to run in the background. This allows for user interactions to execute more quickly, as the work is both broken up <em>and</em> prioritized appropriately.
   </figcaption>
 </figure>
 
