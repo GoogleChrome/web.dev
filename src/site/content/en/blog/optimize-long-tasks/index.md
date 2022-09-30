@@ -395,6 +395,7 @@ Managing tasks can be challenging, but doing so helps your page respond more qui
 - Yield to the main thread for critical, user-facing tasks.
 - Use `isInputPending()` to yield to the main thread when the user is trying to interact with the page.
 - Prioritize tasks with `postTask()`.
+- In addition to all of this, **keep your functions as short as possible.**
 
 With one or more of these tools, you should be able to structure the work in your application so that it prioritizes the user's needs, while ensuring that less critical work still gets done. That's going to create a better user experience which is more responsive and more enjoyable to use.
 
