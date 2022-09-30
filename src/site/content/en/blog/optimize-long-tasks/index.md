@@ -87,7 +87,7 @@ function saveSettings () {
 }
 ```
 
-In this example, there's a function named `saveSettings` that calls five functions within it to do the work, such as validating a form, showing a spinner, sending data, and so on. Conceptually, this is well architected. If you need to debug one of these functions, you can traverse a project tree to figure out what each function does.
+In this example, there's a function named `saveSettings` that calls five functions within it to do the work, such as validating a form, showing a spinner, sending data, and so on. Conceptually, this is well architected. If you need to debug one of these functions, you can traverse the project tree to figure out what each function does.
 
 The problem, however, is that JavaScript doesn't run each of these functions as separate tasks because they are being executed within the `saveSettings` function. **This means that all five functions run as a single task.**
 
