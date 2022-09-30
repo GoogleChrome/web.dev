@@ -4,7 +4,7 @@ subhead: |
   You've been told to "don't block the main thread" and "break up your long tasks", but what does it mean to do those things? Find out in this article.
 authors:
   - jlwagner
-date: 2022-09-29
+date: 2022-09-30
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/MpP0GrDpLMztUsdMocP9.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Eup7oLu7L0bglCH4YPGq.jpg
 alt: A photograph of a spool of purple thread, with the thread unraveled to the right until it goes out of the frame.
@@ -244,6 +244,10 @@ While `saveSettings` runs, it will loop over the tasks in the queue. If `isInput
     <code>saveSettings</code> runs a task queue for five tasks, but the user has clicked to open a menu while the second work item was running. <code>isInputPending</code> yields to the main thread to handle the interaction, and resume running the rest of the tasks.
   </figcaption>
 </figure>
+
+{% Aside %}
+`isInputPending()` may not always return `true` immediately after user input. This is because it takes time for the operating system to tell the browser that the interaction occurred. This means that other code may have already started executing (as you can see with the `saveToDatabase` function in the above screenshot). Even if you use `isInputPending()` it's still crucial that you limit the amount of work you do in each function.
+{% endAside %}
 
 `isInputPending` in combination with a yielding mechanism is a great way to get the browser to stop whatever tasks it's processing on so that it can respond to critical user-facing interactions. That can help improve your page's ability to respond to the user in many situations when a lot of tasks are in flight.
 
