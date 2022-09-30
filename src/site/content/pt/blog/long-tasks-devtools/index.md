@@ -26,7 +26,7 @@ Uma [tarefa longa](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) é
 
 Enquanto uma página da web está sendo carregada, as Tarefas Longas podem bloquear o tópico principal e fazer com que a página não responda às entradas do usuário, mesmo se parecer estar pronta. Cliques e toques geralmente não funcionam porque ouvintes de eventos, manipuladores de cliques etc. ainda não foram anexados.
 
-Tarefas longas com uso intenso de CPU ocorrem devido a um trabalho complexo que leva mais de 50 ms. Por que 50ms? [O modelo RAIL](/rail/) sugere que você processe eventos de entrada do usuário em [50 ms](/rail/#response:-process-events-in-under-50ms) para garantir uma resposta visível em 100 ms. Do contrário, a conexão entre ação e reação é rompida.
+Tarefas longas com uso intenso de CPU ocorrem devido a um trabalho complexo que leva mais de 50 ms. Por que 50ms? [O modelo RAIL](/rail/) sugere que você processe eventos de entrada do usuário em [50 ms](/rail/#response-process-events-in-under-50ms) para garantir uma resposta visível em 100 ms. Do contrário, a conexão entre ação e reação é rompida.
 
 ## Há tarefas longas em minha página que podem atrasar a interatividade?
 

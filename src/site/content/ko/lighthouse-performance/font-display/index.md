@@ -67,7 +67,7 @@ Google 글꼴 URL 끝에 `&display=swap` [매개변수](https://developer.mozill
 
 ## 리소스
 
-- [**웹폰트 로드 중에 텍스트가 계속 표시되도록 하기** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/font-display.js)
+- [**웹폰트 로드 중에 텍스트가 계속 표시되도록 하기** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/font-display.js)
 - [로딩 중 보이지 않는 텍스트 피하기](/avoid-invisible-text)
 - [글꼴 표시로 글꼴 성능 제어](https://developers.google.com/web/updates/2016/02/font-display)
 - [로딩 속도 향상을 위해 웹 글꼴 미리 로드(codelab)](/codelab-preload-web-fonts/)

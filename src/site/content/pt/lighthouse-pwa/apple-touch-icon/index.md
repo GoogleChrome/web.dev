@@ -50,6 +50,6 @@ Para fornecer uma boa experiência do usuário, verifique o seguinte:
 
 ## Recursos
 
-- [Código-fonte da auditoria **O `apple-touch-icon` fornecido não é valido**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/apple-touch-icon.js)
+- [Código-fonte da auditoria **O `apple-touch-icon` fornecido não é valido**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/apple-touch-icon.js)
 - [Veja os critérios para a instalação](/install-criteria)
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use o ícone Apple Touch</a>

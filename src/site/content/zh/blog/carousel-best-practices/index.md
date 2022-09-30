@@ -82,7 +82,7 @@ Chrome 88-90 内置了多个与布局偏移计算方式有关的[错误修复](h
 
 以下是关于轮播的 CLS 测量的几点常见混淆：
 
-- **自动播放轮播：**幻灯片切换是轮播相关的布局偏移的最常见来源。在非自动播放轮播中，这些布局偏移通常发生在用户交互的 500 毫秒内，[因此不计入 Cumulative Layout Shift (CLS)](/cls/#expected-vs.-unexpected-layout-shifts)。然而，对于自动播放轮播，这些布局偏移不仅可以计入 CLS，还可以无限重复。因此，确定自动播放轮播不是布局偏移的来源尤为重要。
+- **自动播放轮播：**幻灯片切换是轮播相关的布局偏移的最常见来源。在非自动播放轮播中，这些布局偏移通常发生在用户交互的 500 毫秒内，[因此不计入 Cumulative Layout Shift (CLS)](/cls/#expected-vs-unexpected-layout-shifts)。然而，对于自动播放轮播，这些布局偏移不仅可以计入 CLS，还可以无限重复。因此，确定自动播放轮播不是布局偏移的来源尤为重要。
 
 - **滚动：**某些轮播允许用户使用滚动来浏览轮播幻灯片。如果元素的起始位置发生变化，但其滚动偏移量（即 [`scrollLeft`](https://developer.mozilla.org/docs/Web/API/Element/scrollLeft) 或 [`scrollTop`](https://developer.mozilla.org/docs/Web/API/Element/scrollTop)）也发生了相同的变化（但方向相反），只要它们发生在同一帧中，就不会被视为布局偏移。
 

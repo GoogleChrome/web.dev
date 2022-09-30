@@ -189,7 +189,7 @@ xrDevice.requestSession(sessionOptions)
 
 The code for this step takes a bit of untangling. To untangle it, I'm about to
 throw a bunch of words at you. If you want a peek at the final code, [jump
-ahead](#the_whole_render_loop) to have a quick look then come back for the full
+ahead](#the-whole-render-loop) to have a quick look then come back for the full
 explanation. There's quite a bit that you may not be able to infer.
 
 The basic process for a render loop is this:

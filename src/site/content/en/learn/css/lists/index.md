@@ -101,7 +101,7 @@ Let's look at how we can add an image of each of our grocery items as the `list-
 } %}
 
 {% Aside %}
-This property is a bit limited in controlling the position, size, etc. of the bullets, so we recommend using the [`::marker`](#::marker-pseudo) property for a more customizable approach.
+This property is a bit limited in controlling the position, size, etc. of the bullets, so we recommend using the [`::marker`](#marker-pseudo) property for a more customizable approach.
 {% endAside %}
 
 ### `list-style-type`

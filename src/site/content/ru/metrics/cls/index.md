@@ -36,7 +36,7 @@ tags:
 
 ## Что такое CLS?
 
-CLSэто показатель по временному окну с максимальными *оценками смещения макета* для каждого [неожиданного](/cls/#expected-vs.-unexpected-layout-shifts) смещения макета, которые происходят в течение всего времени жизни страницы.
+CLS — это показатель по временному окну с максимальными *оценками смещения макета* для каждого [неожиданного](/cls/#expected-vs-unexpected-layout-shifts) смещения макета, которые происходят в течение всего времени жизни страницы.
 
 *Смещение макета* происходит каждый раз, когда видимый элемент меняет свое положение от одного отрисованного фрейма к другому (см. ниже подробные сведения о том, как рассчитываются [оценки смещения макета](#layout-shift-score)).
 
@@ -250,7 +250,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-Полный пример измерения CLS в JavaScript приводится в [исходном коде `getCLS()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts).
+Полный пример измерения CLS в JavaScript приводится в [исходном коде `getCLS()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить CLS в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 

@@ -14,7 +14,7 @@ tags:
   - css
 ---
 
-A maneira como você escreve seus estilos e cria layouts pode ter um grande impacto no [Core Web Vitals](/learn-web-vitals). Isso é particularmente verdadeiro para o [Deslocamento cumulativo de layout (CLS)](/cls) e a [Tinta com maior conteúdo (LCP)](/lcp).
+A maneira como você escreve seus estilos e cria layouts pode ter um grande impacto no [Core Web Vitals](/learn-core-web-vitals/). Isso é particularmente verdadeiro para o [Deslocamento cumulativo de layout (CLS)](/cls) e a [Tinta com maior conteúdo (LCP)](/lcp).
 
 Este artigo abrange técnicas relacionadas a CSS para otimizar o Web Vitals. Essas otimizações são divididas por diferentes aspectos de uma página: layout, imagens, fontes, animações e carregamento. Ao longo do artigo, exploraremos como melhorar uma [página de exemplo](https://codepen.io/una/pen/vYyLKvY):
 
@@ -261,4 +261,4 @@ As folhas de estilo bloqueiam a renderização. Isso significa que o navegador e
 
 ## Conclusão
 
-Embora ainda haja espaço para melhorias adicionais (por exemplo, usando [compactação de imagem](/use-imagemin-to-compress-images/) para fornecer imagens mais rapidamente), essas alterações melhoraram significativamente os Web Vitals deste site. Se este fosse um site real, a próxima etapa seria [coletar dados de desempenho de usuários reais](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data) para avaliar se ele está [atendendo aos limites do Web Vitals para a maioria dos usuários](/vitals-measurement-getting-started/#data-interpretation). Para obter mais informações sobre Web Vitals, consulte [Saiba mais  sobre o Web Vitals](/learn-web-vitals).
+Embora ainda haja espaço para melhorias adicionais (por exemplo, usando [compactação de imagem](/use-imagemin-to-compress-images/) para fornecer imagens mais rapidamente), essas alterações melhoraram significativamente os Web Vitals deste site. Se este fosse um site real, a próxima etapa seria [coletar dados de desempenho de usuários reais](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data) para avaliar se ele está [atendendo aos limites do Web Vitals para a maioria dos usuários](/vitals-measurement-getting-started/#data-interpretation). Para obter mais informações sobre Web Vitals, consulte [Saiba mais  sobre o Web Vitals](/learn-core-web-vitals/).

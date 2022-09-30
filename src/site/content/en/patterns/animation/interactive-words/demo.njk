@@ -14,8 +14,9 @@ patternId: animation/interactive-words
   <body>
     <h1 split-by="word" word-animation="hover">hover the words</h1>
 
-    <script>
+    {% set script %}
       !function(e=".",t="__import__"){try{self[t]=new Function("u","return import(u)")}catch(r){const o=new URL(e,location),n=e=>{URL.revokeObjectURL(e.src),e.remove()};self[t]=e=>new Promise(((r,c)=>{const l=new URL(e,o);if(self[t].moduleMap[l])return r(self[t].moduleMap[l]);const s=new Blob([`import * as m from '${l}';`,`${t}.moduleMap['${l}']=m;`],{type:"text/javascript"}),a=Object.assign(document.createElement("script"),{type:"module",src:URL.createObjectURL(s),onerror(){c(new Error(`Failed to import: ${e}`)),n(a)},onload(){r(self[t].moduleMap[l]),n(a)}});document.head.appendChild(a)})),self[t].moduleMap={}}}("assets/");const e=(e,t)=>{const r=document.createElement("span");return r.textContent=e,r.style.setProperty("--index",t),r},{matches:t}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(t){document.querySelectorAll("[split-by]").forEach((t=>{const r=t.getAttribute("split-by");let o=null;var n;"letter"===r?(n=t.innerText,o=[...n].map(e)):"word"===r&&(o=(t=>t.split(" ").map(e))(t.innerText)),o&&t.firstChild.replaceWith(...o)}))}
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

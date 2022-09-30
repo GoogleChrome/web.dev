@@ -275,7 +275,7 @@ When debugging performance issues related to LCP, TBT, and FID, and general load
 
 #### Debug Core Web Vitals in the field
 
-Lab tools can't always identify the cause of all Core Web Vitals issues affecting your users. This is one reason why it's so important to collect your own field data, as it takes factors into account that lab data cannot. Additionally, [learning how to debug Core Web Vitals in the field](/debug-web-vitals-in-the-field/) can help you make sense of changes in your website's Core Web Vitals in the field.
+Lab tools can't always identify the cause of all Core Web Vitals issues affecting your users. This is one reason why it's so important to collect your own field data, as it takes factors into account that lab data cannot. Additionally, [learning how to debug Core Web Vitals in the field](/debug-performance-in-the-field/) can help you make sense of changes in your website's Core Web Vitals in the field.
 
 ### Step 3: Monitor with continuous integration tools
 

@@ -54,6 +54,6 @@ Location: /путь/к/новому/местоположению
 
 ## Материалы
 
-- [Исходный код для аудита **Избежание множественной переадресации страниц** (Avoid multiple page redirects)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js).
+- [Исходный код для аудита **Избежание множественной переадресации страниц** (Avoid multiple page redirects)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js).
 - [Переадресация в HTTP](https://developer.mozilla.org/docs/Web/HTTP/Redirections).
 - [Избежание переадресации целевой страницы (Avoid Landing Page Redirects)](https://developers.google.com/speed/docs/insights/AvoidRedirects).

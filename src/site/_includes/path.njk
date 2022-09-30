@@ -21,7 +21,7 @@ eleventyComputed:
       {% if path.cover %}
         <div class="all-center">
           {% Img
-            importance="high",
+            fetchpriority="high",
             height=220,
             width=330,
             src=path.cover,

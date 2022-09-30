@@ -102,6 +102,6 @@ Veja [Cache do navegador](https://wordpress.org/support/article/optimization/#br
 
 ## Recursos
 
-- [Código-fonte para a auditoria **Sirva ativos estáticos com uma política de cache eficiente**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
+- [Código-fonte para a auditoria **Sirva ativos estáticos com uma política de cache eficiente**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [Especificação do Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 - [Cache-Control (MDN)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)

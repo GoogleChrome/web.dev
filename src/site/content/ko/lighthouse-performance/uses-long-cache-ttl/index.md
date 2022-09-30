@@ -102,6 +102,6 @@ Chrome은 메모리 캐시에서 가장 많이 요청된 리소스를 제공하�
 
 ## 리소스
 
-- [**효율적인 캐시 정책으로 정적 자산 제공** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
+- [**효율적인 캐시 정책으로 정적 자산 제공** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [캐시 제어 사양](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 - [캐시 제어(MDN)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)

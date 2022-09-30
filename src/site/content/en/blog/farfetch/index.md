@@ -55,15 +55,17 @@ Finally, Farfetch established time-based [performance budgets](/performance-budg
 
 ## Step 2: Communicating via business language
 
-With performance data now available in Farfetch's internal business intelligence datasets, the analytics team started exploring mathematical models and patterns in the data that could indicate a correlation between performance metrics and business KPIs (for example, conversion rate and percentage of single-page visits), allowing a new view of the financial impact of site speed and UX for the business. This enabled performance to be discussed in a common language with the business decision makers. The analysis included all Core Web Vitals and the other metrics Farfetch defined and revealed truly impactful insights.
+With performance data now available in Farfetch's internal business intelligence datasets, the analytics team started exploring mathematical models and patterns in the data that could indicate a correlation between performance metrics and business KPIs (for example, conversion rate and percentage of single-page visits), allowing a new view of the financial impact of site speed and UX for the business. This enabled performance to be discussed in a common language with the business decision makers. The analysis included all Core Web Vitals and the other metrics Farfetch deemed valuable. It revealed truly impactful insights.
 
-Farfetch web conversion rate would increase by 1.3% with each 100ms reduction in [Largest Contentful Paint (LCP)](/lcp/). LCP showed a very strong correlation with business metrics across all page types, but especially on mobile product pages, proving the usefulness of having the main product image loading fast.
+Having in mind that Google recommends [Largest Contentful Paint (LCP)](/lcp/) to stay below 2.5 seconds to provide an optimal user experience, Farfetch studied this threshold carefully and found meaningful results.
+
+Farfetch statistical correlation analysis showed that beyond that point, the conversion rate starts to drop, as well as the exit rate rises. This shows that users really start to feel the downside of a slow page load perception and conversion rate decreases on average -1.3% with each 100ms more of LCP.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/bdmOd1MUc6Wt4EUFRzUG.png", alt="A graph of LCP, where the Y-axis is conversion rate and percentage of page visits and the X-axis is LCP time. As LCP is faster, percentage of single page visits decreases, and conversion rate increases.", width="800", height="386" %}
 </figure>
 
-Farfetch exit rate showed a decrease of 3.1% for each 0.01 reduction on the Cumulative Layout Shift (CLS) score, reaffirming the impact of page stability to keep users on a website.
+Farfetch also verified an exit rate decrease of -3.1% for each 0.01 less on the [Cumulative Layout Shift (CLS)](/cls/) score, reaffirming the impact of page stability to keep users on a website.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ijjXV4FFD5lyBYVFEBH2.png", alt="A graph of CLS, where the Y-axis is conversion rate and percentage of page visits, and the X-axis is the CLS score. The lowest CLS scores show the highest percentage of single page visits, whereas conversions raise at lower CLS scores.", width="800", height="357" %}

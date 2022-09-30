@@ -1,0 +1,70 @@
+{
+    "slug": "learn-core-web-vitals",
+    "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg",
+    "title": "i18n.paths.learn_core_web_vitals.title",
+    "description": "i18n.paths.learn_core_web_vitals.description",
+    "overview": "i18n.paths.learn_core_web_vitals.overview",
+    "topics": [
+        {
+            "title": "i18n.paths.learn_core_web_vitals.topics.overview",
+            "pathItems": [
+                "vitals",
+                "vitals-business-impact"
+            ]
+        },
+        {
+            "title": "i18n.paths.learn_core_web_vitals.topics.core_web_vitals_metrics",
+            "pathItems": [
+                "lcp",
+                "fid",
+                "cls",
+                "defining-core-web-vitals-thresholds"
+            ]
+        },
+        {
+            "title": "i18n.paths.learn_core_web_vitals.topics.measure_core_web_vitals",
+            "pathItems": [
+                "vitals-measurement-getting-started",
+                "vitals-tools",
+                "vitals-field-measurement-best-practices",
+                "crux-and-rum-differences"
+            ]
+        },
+        {
+            "title": "i18n.paths.learn_core_web_vitals.topics.debug_core_web_vitals",
+            "pathItems": [
+                "lab-and-field-data-differences",
+                "crux-and-rum-differences",
+                "debug-layout-shifts",
+                "debug-performance-in-the-field"
+            ]
+        },
+        {
+            "title": "i18n.paths.learn_core_web_vitals.topics.improve_core_web_vitals",
+            "pathItems": [
+                "optimize-lcp",
+                "optimize-fid",
+                "optimize-cls"
+            ]
+        },
+        {
+            "title": "i18n.paths.learn_core_web_vitals.topics.best_practices",
+            "pathItems": [
+                {
+                    "title": "UX patterns optimized for Core Web Vitals",
+                    "url": "/patterns/web-vitals-patterns"
+                },
+                "carousel-best-practices",
+                "cookie-notice-best-practices",
+                "font-best-practices",
+                "tag-best-practices",
+                "embed-best-practices",
+                {
+                    "title": "Infinite scroll without layout shifts",
+                    "url": "https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/"
+                },
+                "css-web-vitals"
+            ]
+        }
+    ]
+}

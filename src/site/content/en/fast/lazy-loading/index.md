@@ -5,14 +5,13 @@ authors:
   - jlwagner
   - rachelandrew
 date: 2019-08-16
-updated: 2020-06-09
+updated: 2022-08-17
 description: |
   This post explains lazy-loading and why you might want to lazy-load elements on your site.
 tags:
   - performance
   - images
 ---
-
 
 The portion of
 [images](http://beta.httparchive.org/reports/state-of-images?start=earliest&end=latest)
@@ -104,8 +103,8 @@ and things to watch out for in your implementation.
 ## Conclusion
 
 Used with care, lazy-loading images and video can seriously lower the initial
-load time and page payloads on your site. Users won't incur unnecessary network
-activity and processing costs of media resources they may never see, but they
+load time and page payloads on your site, including [Core Web Vitals](/vitals/). Users won't incur unnecessary network
+activity&mdash;including network contention on slower connections&mdash;and processing costs of media resources they may never see, but they
 can still view those resources if they want.
 
 As far as performance improvement techniques go, lazy-loading is reasonably

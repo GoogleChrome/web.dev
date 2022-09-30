@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-08-17
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -303,23 +303,25 @@ the metric is calculated.
   the [back/forward cache](/bfcache/#impact-on-core-web-vitals), but FID should
   be measured in these cases since users experience them as distinct page
   visits.
-- The API does not report inputs that occur within iframes, but to properly
-  measure FID you should consider them. Sub-frames can use the API to report
-  their `first-input` entries to the parent frame for aggregation.
+- The API does not report inputs that occur within iframes but the metric does
+  as they are part of the user experience of the page. This can
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure FID you should consider them. Sub-frames can use the API
+  to report their `first-input` entries to the parent frame for aggregation.
 
 Rather than memorizing all these subtle differences, developers can use the
 [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
 measure FID, which handles these differences for you (where possible):
 
 ```js
-import {getFID} from 'web-vitals';
+import {onFID} from 'web-vitals';
 
 // Measure and log FID as soon as it's available.
-getFID(console.log);
+onFID(console.log);
 ```
 
 You can refer to [the source code for
-`getFID)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)
+`onFID)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts)
 for a complete example of how to measure FID in JavaScript.
 
 {% Aside %}

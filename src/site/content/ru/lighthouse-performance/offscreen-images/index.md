@@ -40,4 +40,4 @@ web_lighthouse:
 
 ## Ресурсы
 
-- [Исходный код для аудита **откладывания закадровых изображений**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/offscreen-images.js)
+- [Исходный код для аудита **откладывания закадровых изображений**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/offscreen-images.js)

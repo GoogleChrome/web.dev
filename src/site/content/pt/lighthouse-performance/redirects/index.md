@@ -43,6 +43,6 @@ Se você estiver usando o React Router, minimize o uso do componente `<Redirect>
 
 ## Recursos
 
-- [Código-fonte para evitar auditoria de **redirecionamentos de várias páginas**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
+- [Código-fonte para evitar auditoria de **redirecionamentos de várias páginas**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js)
 - [Redirecionamentos em HTTP](https://developer.mozilla.org/docs/Web/HTTP/Redirections)
 - [Evite redirecionamentos da página de destino](https://developers.google.com/speed/docs/insights/AvoidRedirects)

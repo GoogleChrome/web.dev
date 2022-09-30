@@ -73,8 +73,9 @@ patternId: theming/color-schemes
       </section>
     </main>
 
-    <script>
+    {% set script %}
       !function(e=".",t="__import__"){try{self[t]=new Function("u","return import(u)")}catch(o){const r=new URL(e,location),n=e=>{URL.revokeObjectURL(e.src),e.remove()};self[t]=e=>new Promise(((o,c)=>{const s=new URL(e,r);if(self[t].moduleMap[s])return o(self[t].moduleMap[s]);const l=new Blob([`import * as m from '${s}';`,`${t}.moduleMap['${s}']=m;`],{type:"text/javascript"}),m=Object.assign(document.createElement("script"),{type:"module",src:URL.createObjectURL(l),onerror(){c(new Error(`Failed to import: ${e}`)),n(m)},onload(){o(self[t].moduleMap[s]),n(m)}});document.head.appendChild(m)})),self[t].moduleMap={}}}("assets/");const e=document.querySelector("#theme-switcher"),t=document.firstElementChild;e.addEventListener("input",(e=>o(e.target.value)));const o=e=>t.setAttribute("color-scheme",e);
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

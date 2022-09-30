@@ -19,7 +19,7 @@ tags:
 
 프로덕션 웹 사이트에서 HTTPS를 사용하는 경우 로컬 개발 사이트가 **HTTPS 사이트처럼** 작동하기를 원합니다(프로덕션 웹 사이트에서 HTTPS를 사용하지 않는 경우 [HTTPS로 전환하는 것을 우선 순위로 지정](/why-https-matters/)). 대부분의 경우 `http://localhost`가 **HTTPS 사이트처럼** 작동할 것으로 여길 수 있습니다. 그러나 [일부 경우에서](/when-to-use-local-https) HTTPS를 사용하여 로컬에서 사이트를 실행해야 합니다. 이 작업을 수행하는 방법을 살펴보겠습니다.
 
-**⏩ 빠른 지침을 찾고 있습니까, 아니면 전에 여기에 와본 적이 있습니까? [Cheatsheet](#using-mkcert:-cheatsheet)로 건너뛰십시오.**
+**⏩ 빠른 지침을 찾고 있습니까, 아니면 전에 여기에 와본 적이 있습니까? [Cheatsheet](#using-mkcert-cheatsheet)로 건너뛰십시오.**
 
 ## mkcert를 사용하여 HTTPS로 로컬에서 사이트 실행(권장)
 
@@ -38,7 +38,7 @@ mkcert(및 유사 도구)는 다음과 같은 몇 가지 이점을 제공합니�
 - mkcert는 **브라우저가 유효한 인증서로 간주하는 것과 호환되는** 인증서를 생성하는 데 특화되어 있습니다. 요구 사항 및 모범 사례에 맞게 계속 업데이트됩니다. 이러한 이유로 올바른 인증서를 생성하기 위해 복잡한 구성이나 인수로 mkcert 명령을 실행할 필요가 없습니다!
 - mkcert는 교차 플랫폼 도구입니다. 팀원 누구나 사용할 수 있습니다.
 
-mkcert는 로컬 개발을 위한 TLS 인증서 생성에 권장하는 도구입니다. [다른 옵션](#running-your-site-locally-with-https:-other-options)도 확인할 수 있습니다.
+mkcert는 로컬 개발을 위한 TLS 인증서 생성에 권장하는 도구입니다. [다른 옵션](#running-your-site-locally-with-https-other-options)도 확인할 수 있습니다.
 
 많은 운영 체제에는 [openssl](https://www.openssl.org/)과 같은 인증서를 생성하는 라이브러리가 포함되어 있을 수 있습니다. mkcert 및 이와 유사한 도구와 달리 이러한 라이브러리는 올바른 인증서를 일관되게 생성하지 않을 수 있고 복잡한 명령을 실행해야 할 수 있으며 반드시 교차 플랫폼일 필요는 없습니다.
 

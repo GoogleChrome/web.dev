@@ -39,9 +39,9 @@ questions:
     correctAnswers: "1"
     stem: "The `srcset` attribute doesn't _______ the `src` attribute, it _______ it."
     options:
-      - content: "compliment, replaces"
+      - content: "complement, replaces"
         rationale: "`srcset` definitely doesn't replace the `src` attribute."
-      - content: "replace, compliments"
+      - content: "replace, complements"
         rationale: "It provides additional options for the browser to choose from, if it's capable."
   - type: multiple-choice
     cardinality: "1"

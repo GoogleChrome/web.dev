@@ -7,7 +7,7 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2022-06-24
+updated: 2022-08-29
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
@@ -255,6 +255,30 @@ if (navigator.windowControlsOverlay.visible) {
 CSS sense of whatever HTML content you place next to the window controls overlay. Even if you set
 `display: none` on the `div` placed into the window controls overlay, the `visible` property of the
 window controls overlay would still report `true`. {% endAside %}
+
+Alternatively, you can also use the `display-mode` media query in JavaScript and/or CSS:
+
+```js
+// Create the query list.
+const mediaQueryList = window.matchMedia('(display-mode: window-controls-overlay)');
+
+// Define a callback function for the event listener.
+function handleDisplayModeChange(mql) {
+  // React on display mode changes.
+}
+
+// Run the display mode change handler once.
+handleOrientationChange(mediaQueryList);
+
+// Add the callback function as a listener to the query list.
+mediaQueryList.addEventListener('change', handleDisplayModeChange);
+```
+
+```css
+@media (display-mode: window-controls-overlay) { 
+  /* React on display mode changes. */ 
+}
+```
 
 ### Being notified of geometry changes
 

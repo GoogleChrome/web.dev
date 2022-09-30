@@ -46,4 +46,4 @@ Para ayudarlo a identificar los mayores contribuyentes al tiempo de ejecución, 
 
 ## Recursos
 
-[Código fuente para la auditoría **Reducir el tiempo de ejecución de JavaScript**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[Código fuente para la auditoría **Reducir el tiempo de ejecución de JavaScript**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/bootup-time.js)

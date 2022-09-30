@@ -105,12 +105,12 @@ so why not style them to support their behavior?
 
 Buttons also have [pseudo classes](/learn/css/pseudo-classes/)
 for CSS to use for styling. These classes provide CSS hooks into customizing the
-feel of the button: [`:hover`](/learn/css/pseudo-classes/#:hover)
+feel of the button: [`:hover`](/learn/css/pseudo-classes/#hover)
 for when a mouse is over the button,
-[`:active`](/learn/css/pseudo-classes/#:active) for when a mouse
+[`:active`](/learn/css/pseudo-classes/#active) for when a mouse
 or keyboard is pressing, and
-[`:focus`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible) or 
-[`:focus-visible`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible)
+[`:focus`](/learn/css/pseudo-classes/#focus,-focus-within,-and-focus-visible) or 
+[`:focus-visible`](/learn/css/pseudo-classes/#focus,-focus-within,-and-focus-visible)
 for assisting in assistive technology styling. 
 
 ```css

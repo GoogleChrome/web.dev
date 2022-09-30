@@ -53,7 +53,7 @@ Para aprobar la auditoría:
 
 ## Recursos
 
-- [El código fuente de **El manifiesto no tiene una auditoría de ícono enmascarable**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [El código fuente de **El manifiesto no tiene una auditoría de ícono enmascarable**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [Soporte de íconos adaptables en PWA con íconos enmascarables](/maskable-icon/)
 - [Editor de Maskable.app](https://maskable.app/editor)
 - [Agregar un manifiesto de aplicación web](/add-manifest/)

@@ -42,39 +42,9 @@ patternId: components/split-buttons
       </span>
     </div>
 
-    <script type="module">
-      import $ from 'https://cdn.skypack.dev/blingblingjs'
-      import {rovingIndex} from 'https://cdn.skypack.dev/roving-ux'
-
-      const splitButtons = $('.gui-split-button')
-      const popupButtons = $('.gui-popup-button')
-
-      // popup activating roving index for it's buttons
-      popupButtons.forEach(element =>
-        rovingIndex({
-          element,
-          target: 'button',
-        }))
-
-      // support escape key
-      popupButtons.on('keyup', e => {
-        if (e.code === 'Escape')
-          e.target.blur()
-      })
-
-      popupButtons.on('focusin', e => {
-        e.currentTarget.setAttribute('aria-expanded', true)
-      })
-
-      popupButtons.on('focusout', e => {
-        e.currentTarget.setAttribute('aria-expanded', false)
-      })
-
-      // respond to any button interaction
-      splitButtons.on('click', event => {
-        if (event.target.nodeName !== 'BUTTON') return
-        console.info(event.target.innerText)
-      })
-    </script>
+    {% set script %}
+      (()=>{var l={on:function(t,e){return t.split(" ").forEach(n=>this.addEventListener(n,e)),this},off:function(t,e){return t.split(" ").forEach(n=>this.removeEventListener(n,e)),this},attr:function(t,e){return e===void 0?this.getAttribute(t):(e==null?this.removeAttribute(t):this.setAttribute(t,e||""),this)}};function a(t,e=document){let n=t instanceof NodeList||Array.isArray(t)?t:t instanceof HTMLElement||t instanceof SVGElement?[t]:e.querySelectorAll(t);return n.length||(n=[]),Object.assign(Array.from(n).map(r=>Object.assign(r,l)),{on:function(r,i){return this.forEach(o=>o.on(r,i)),this},off:function(r,i){return this.forEach(o=>o.off(r,i)),this},attr:function(r,i){return typeof r=="string"&&i===void 0?this[0].attr(r):(typeof r=="object"?this.forEach(o=>Object.entries(r).forEach(([d,g])=>o.attr(d,g))):typeof r=="string"&&(i||i==null||i=="")&&this.forEach(o=>o.attr(r,i)),this)}})}var s=new Map,u=({element:t,target:e})=>{let n=t.querySelectorAll(e||":scope *"),r=n[0];t.tabIndex=-1,n.forEach(i=>i.tabIndex=-1),r.tabIndex=0,s.set(t,{targets:n,active:r,index:0}),t.addEventListener("focusin",i=>{s.get("last_rover")!=t&&(f(t,s.get(t).active),s.set("last_rover",t))}),t.addEventListener("keydown",i=>{switch(i.keyCode){case 39:case 40:i.preventDefault(),h(t);break;case 37:case 38:i.preventDefault(),p(t)}})},h=t=>{let e=s.get(t);e.index+=1,e.index>e.targets.length-1&&(e.index=e.targets.length-1);let n=e.targets[e.index];n&&f(t,n)},p=t=>{let e=s.get(t);e.index-=1,e.index<1&&(e.index=0);let n=e.targets[e.index];n&&f(t,n)},f=(t,e)=>{let n=s.get(t);n.active.tabIndex=-1,n.active=e,n.active.tabIndex=0,n.active.focus()};var x=a(".gui-split-button"),c=a(".gui-popup-button");c.forEach(t=>u({element:t,target:"button"}));c.on("keyup",t=>{t.code==="Escape"&&t.target.blur()});c.on("focusin",t=>{t.currentTarget.setAttribute("aria-expanded",!0)});c.on("focusout",t=>{t.currentTarget.setAttribute("aria-expanded",!1)});x.on("click",t=>{t.target.nodeName==="BUTTON"&&console.info(t.target.innerText)});})();
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

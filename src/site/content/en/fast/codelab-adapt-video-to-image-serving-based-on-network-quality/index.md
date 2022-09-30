@@ -27,7 +27,7 @@ serve an image. `effectiveType` can be `'slow-2g'`, `'2g'`, `'3g'`, or `'4g'`.
 
 ## Step 1: Check connection type
 
-The `index.html` file contains a `<video>` tag to display the background video (line 22). The code in `script.js` loads the video by setting the video tag's `src` attribute. (The video loading code is described in more detail in [Step 2](/codelab-adapt-video-to-image-serving-based-on-network-quality#step-2:-load-video).)
+The `index.html` file contains a `<video>` tag to display the background video (line 22). The code in `script.js` loads the video by setting the video tag's `src` attribute. (The video loading code is described in more detail in [Step 2](/codelab-adapt-video-to-image-serving-based-on-network-quality/#step-2-load-video).)
 
 To load the video conditionally, first check if the Network Information API is available; if it is, check the connection type.
 

@@ -29,7 +29,7 @@ perspectives on how to solve them.
 
 Turns out GUI Challenges fit nicely into patterns:
 
-{% CodePattern 'gui-challenges/animation/interactive-words' %}
+{% CodePattern 'animation/interactive-words' %}
 
 Now they can be embedded into posts (like above), aggregated for easy browsing
 and inspiration, and also have added new categories for other contributors to
@@ -86,10 +86,10 @@ height="240" %}
 View [the animation patterns landing page](/patterns/animation/) or check each
 out individually:
 
-1. [Animated Letters](/patterns/animations/animated-letters/)
-1. [Animated Words](/patterns/animations/animated-words/)
-1. [Interactive Letters](/patterns/animations/interactive-letters/)
-1. [Interactive Words](/patterns/animations/interactive-words/)
+1. [Animated Letters](/patterns/animation/animated-letters/)
+1. [Animated Words](/patterns/animation/animated-words/)
+1. [Interactive Letters](/patterns/animation/interactive-letters/)
+1. [Interactive Words](/patterns/animation/interactive-words/)
 
 Here's a preview of the animated letters pattern:
 
@@ -125,7 +125,7 @@ Here's a preview of the color schemes pattern:
 
 ### New layout patterns on centering
 
-View [the layout patterns landing page](/patterns/layouts/) or check each out
+View [the layout patterns landing page](/patterns/layout/) or check each out
 individually:
 
 1. [Autobot](/patterns/layout/autobot/)

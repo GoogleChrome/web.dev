@@ -47,7 +47,7 @@ Chrome DevTools에는 오류 원인을 추적하는 데 도움이 되는 몇 가
 
 ## 참고자료
 
-- [**브라우저 오류**에 대한 소스 코드가 콘솔 감사에 기록되었습니다](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
+- [**브라우저 오류**에 대한 소스 코드가 콘솔 감사에 기록되었습니다](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/errors-in-console.js)
 - [콘솔 개요](https://developer.chrome.com/docs/devtools/console/)
 - [Stack Overflow](https://stackoverflow.com/)
 - [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

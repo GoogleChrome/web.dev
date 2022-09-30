@@ -42,7 +42,7 @@ Lighthouse は、[Chrome Remote Debugging Protocol (Chrome リモートデバッ
 
 ## リソース
 
-- [**Does not register a service worker that controls page and `start_url (ページと `start_url` を制御するサービスワーカーが登録されない)`** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
+- [**Does not register a service worker that controls page and `start_url (ページと `start_url` を制御するサービスワーカーが登録されない)`** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/service-worker.js)
 - [Service Workers: an Introduction (サービスワーカー: はじめに)](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [Service workers and the Cache Storage API (サービスワーカーと Cache Storage API)](/service-workers-cache-storage/)
 - [What is network reliability and how do you measure it? (ネットワークの信頼性とは、またその評価方法とは？)](/network-connections-unreliable)

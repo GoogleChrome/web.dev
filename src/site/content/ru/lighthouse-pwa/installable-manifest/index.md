@@ -58,7 +58,7 @@ updated: 2019-09-19
 
 ## Ресурсы
 
-- [Исходный код аудита **Web app manifest does not meet the installability requirements**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [Исходный код аудита **Web app manifest does not meet the installability requirements**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [Добавление манифеста веб-приложения](/add-manifest/)
 - [Узнайте, что нужно, чтобы приложение поддерживало установку](/discover-installable)
 - [Манифест веб-приложения](https://developer.mozilla.org/docs/Web/Manifest)

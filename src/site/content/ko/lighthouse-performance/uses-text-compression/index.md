@@ -80,4 +80,4 @@ Gzip 페이지 압축 설정(**시스템** &gt; **전역 구성** &gt; **서버*
 
 ## 리소스
 
-- [**텍스트 압축 활성화** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [**텍스트 압축 활성화** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-text-compression.js)

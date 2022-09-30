@@ -53,7 +53,7 @@ Because TTFB precedes [user-centric metrics](/user-centric-performance-metrics/)
       height="200">
     {%
       Img
-        src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/eNXaxPi9NdUVSTDRJFkV.svg",
+        src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/EcKicxW5ErYYhf8RvpeO.svg",
         alt="Good TTFB values are 0.8 seconds or less, poor values are greater than 1.8 seconds, and anything in between needs improvement",
         width="640",
         height="480"
@@ -101,10 +101,10 @@ Not all browsers support `PerformanceObserver` or its `buffered` flag. To get th
 The [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) can also measure TTFB in the browser with less complexity:
 
 ```javascript
-import {getTTFB} from 'web-vitals';
+import {onTTFB} from 'web-vitals';
 
 // Measure and log TTFB as soon as it's available.
-getTTFB(console.log);
+onTTFB(console.log);
 ```
 
 ### Measuring resource requests

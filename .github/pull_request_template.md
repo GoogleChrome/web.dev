@@ -12,4 +12,3 @@ Changes proposed in this pull request:
 -
 -
 
-When you're ready to submit your PR, don't forget to add the `$-presubmit` label.

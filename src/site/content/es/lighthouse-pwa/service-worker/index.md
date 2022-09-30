@@ -42,7 +42,7 @@ El registro de un trabajador del servicio implica solo unas pocas líneas de có
 
 ## Recursos
 
-- [Código fuente para la auditoría **No registra un service worker que controla la página y el `start_url`**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
+- [Código fuente para la auditoría **No registra un service worker que controla la página y el `start_url`**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/service-worker.js)
 - [Service workers: una introducción](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [Service workers y la API de almacenamiento en caché](/service-workers-cache-storage/)
 - [¿Qué es la confiabilidad de la red y cómo se mide?](/network-connections-unreliable)

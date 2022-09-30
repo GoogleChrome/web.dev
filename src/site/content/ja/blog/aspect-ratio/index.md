@@ -141,7 +141,7 @@ tags:
 
 ## 例: レイアウトシフトを防止する
 
-`aspect-ratio` のもう 1 つの優れた機能は、プレースホルダースペースを作成して、[累積レイアウトシフト](/cls/)を防止し、より優れた[ウェブバイタル](/learn-web-vitals/)を提供できることです。この最初の例では、[Unsplash](https://source.unsplash.com/) などの API からアセットを読み込むと、メディアの読み込みが終了したときにレイアウトシフトが作成されます。
+`aspect-ratio` のもう 1 つの優れた機能は、プレースホルダースペースを作成して、[累積レイアウトシフト](/cls/)を防止し、より優れた[ウェブバイタル](/learn-core-web-vitals/)を提供できることです。この最初の例では、[Unsplash](https://source.unsplash.com/) などの API からアセットを読み込むと、メディアの読み込みが終了したときにレイアウトシフトが作成されます。
 
 <figure>
   <video controls autoplay loop muted playsinline>
@@ -166,7 +166,7 @@ img {
 
 ### ボーナスヒント: アスペクト比の画像属性
 
-画像のアスペクト比を設定するもう 1 つの方法は、[画像の属性](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)を使用することです。前もって画像のサイズがわかっている場合、これらのサイズをその `width` と `height` で設定するのが[ベストプラクティス](/image-aspect-ratio/#check-the-image's-width-and-height-attributes-in-the-html)とされています。
+画像のアスペクト比を設定するもう 1 つの方法は、[画像の属性](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)を使用することです。前もって画像のサイズがわかっている場合、これらのサイズをその `width` と `height` で設定するのが[ベストプラクティス](/image-aspect-ratio/#check-the-images-width-and-height-attributes-in-the-html)とされています。
 
 上記の例では、サイズが 800 x 600px であることがわかっている場合、画像のマークアップは、`<img src="image.jpg" alt="..." width="800" height="600">` のようになります。送信される画像のアスペクト比がそれと同じでも、ピクセル値が必ずしも同じでない場合であっても、画像の属性値を使用して比率を設定し、スタイルで `width: 100%` にすることで、画像が適切なスペースを占有するようにすることができます。これらをまとめると、以下のようになります。
 

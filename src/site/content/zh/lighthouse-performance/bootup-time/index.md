@@ -44,4 +44,4 @@ tags:
 
 ## 资源
 
-[**减少 JavaScript 执行时间**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[**减少 JavaScript 执行时间**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/bootup-time.js)

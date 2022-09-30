@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2022-07-18
+updated: 2022-08-17
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -99,6 +99,10 @@ considered for Largest Contentful Paint are:
 * [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
 
+{% Aside 'important' %}
+Images that occupy the entire viewport are not considered LCP candidates.
+{% endAside %}
+
 Note, restricting the elements to this limited set was intentional in order to
 keep things simple in the beginning. Additional elements (e.g. `<svg>`,
 `<video>`) may be added in the future as more research is conducted.
@@ -180,7 +184,7 @@ contentful element unless a larger element is rendered.
   `largest-contentful-paint` entry to be dispatched. However, due to popular UI
   patterns such as image carousels that often removed DOM elements, the metric
   was updated to more accurately reflect what users experience. See the
-  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/master/docs/speed/metrics_changelog/2020_11_lcp.md)
+  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/2020_11_lcp.md)
   for more details.
 {% endAside %}
 
@@ -192,10 +196,14 @@ For analysis purposes, you should only report the most recently dispatched
 `PerformanceEntry` to your analytics service.
 
 {% Aside 'caution' %}
-  Since users can open pages in a background tab, it's possible that the largest
-  contentful paint will not happen until the user focuses the tab, which can be
-  much later than when they first loaded it.
+  Since users can open pages in a background tab, it's possible that
+  `largest-contentful-paint` entries will not be dispatched until the user
+  focuses the tab, which can be much later than when they first loaded it.
+
+  Google tools that measure LCP do not report this metric if the page was
+  loaded in the background, as it does not reflect the user-perceived load time.
 {% endAside %}
+
 
 #### Load time vs. render time
 
@@ -324,23 +332,27 @@ the metric is calculated.
   restored from the [back/forward cache](/bfcache/#impact-on-core-web-vitals),
   but LCP should be measured in these cases since users experience them as
   distinct page visits.
-- The API does not consider elements within iframes, but to properly measure LCP
-  you should consider them. Sub-frames can use the API to report their
-  `largest-contentful-paint` entries to the parent frame for aggregation.
+- The API does not consider elements within iframes but the metric does as they
+  are part of the user experience of the page. In pages with an LCP within an
+  iframe—for example a poster image on an embedded video—this will
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure LCP you should consider them. Sub-frames can use the API
+  to report their `largest-contentful-paint` entries to the parent frame for
+  aggregation.
 
 Rather than memorizing all these subtle differences, developers can use the
 [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
 measure LCP, which handles these differences for you (where possible):
 
 ```js
-import {getLCP} from 'web-vitals';
+import {onLCP} from 'web-vitals';
 
 // Measure and log LCP as soon as it's available.
-getLCP(console.log);
+onLCP(console.log);
 ```
 
 You can refer to [the source code for
-`getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)
+`onLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onLCP.ts)
 for a complete example of how to measure LCP in JavaScript.
 
 {% Aside %}

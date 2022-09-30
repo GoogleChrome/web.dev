@@ -2567,23 +2567,23 @@ bpj:
     ru: Последние новости и статьи от Bart Jarochowski.
     zh: Bart Jarochowski 撰写我们的最新资讯、动态和故事。
 
-charistheodoulou:
+harrytheodoulou:
   title:
-    en: Charis Theodoulou
-    es: Charis Theodoulou
-    ja: Charis Theodoulou
-    ko: Charis Theodoulou
-    pt: Charis Theodoulou
-    ru: Charis Theodoulou
-    zh: Charis Theodoulou
+    en: Harry Theodoulou
+    es: Harry Theodoulou
+    ja: Harry Theodoulou
+    ko: Harry Theodoulou
+    pt: Harry Theodoulou
+    ru: Harry Theodoulou
+    zh: Harry Theodoulou
   description:
-    en: Our latest news, updates, and stories by Charis Theodoulou.
-    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Charis Theodoulou.
-    ja: Charis Theodoulou による最新のニュース、アップデート情報、記事などをご紹介します。
-    ko: Charis Theodoulou의 최신 뉴스, 업데이트 및 스토리.
-    pt: Nossas últimas notícias, atualizações e histórias por Charis Theodoulou.
-    ru: Последние новости и статьи от Charis Theodoulou.
-    zh: Charis Theodoulou 撰写我们的最新资讯、动态和故事。
+    en: Our latest news, updates, and stories by Harry Theodoulou.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Harry Theodoulou.
+    ja: Harry Theodoulou による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Harry Theodoulou의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Harry Theodoulou.
+    ru: Последние новости и статьи от Harry Theodoulou.
+    zh: Harry Theodoulou 撰写我们的最新资讯、动态和故事。
 
 natashakosoglov:
   title:
@@ -4135,7 +4135,7 @@ nikilmathew:
   description:
     en: Lead Software engineer at Mishipay
 
-jhey:
+jheyy:
   title:
     en: Jhey Tompkins
     es: Jhey Tompkins
@@ -4283,8 +4283,68 @@ bramus:
     ru: Developer Advocate по вопросам CSS, UI и DevTools в команде Chrome
     zh: Chrome 的 CSS、UI 和 DevTools 开发技术推广工程师
 
-crivero:
+kadirtopal:
   title:
-    en: Carol Rivero
+    en: Kadir Topal
   description:
-    en: Carol is a program manager on the Web DevRel team.
+    en: Kadir is a product manager on the Web Developer Platform team.
+
+michellebarker:
+  title:
+    en: Michelle Barker
+  description:
+    en: Michelle is a senior front-end developer at Ada Mode.
+
+daviddarnes:
+  title:
+    en: David Darnes
+  description:
+    en: David is a senior front-end developer at Nordhealth.
+
+linhduong:
+  title:
+    en: Linh Duong
+  description:
+    en: Front-end Engineer at Rakuten Group, Inc.
+
+shogokashiwase:
+  title:
+    en: Shogo Kashiwase
+  description:
+    en: Designer at Rakuten Group, Inc.
+
+hayounglee:
+  title:
+    en: Hayoung Lee
+  description:
+    en: Front-end Engineer at Rakuten Group, Inc.
+
+ryunosukeakiba:
+  title:
+    en: Ryunosuke Akiba
+  description:
+    en: Creative Director at Rakuten Group, Inc.
+
+mmatuzo:
+  title:
+    en: Manuel Matuzović
+  description:
+    en: Front-end developer.
+
+estelleweyl:
+  title:
+    en: Estelle Weyl
+  description:
+    en: Open-source maintainer. Front-end engineer. Technical writer.
+
+davideast:
+  title:
+    en: David East
+  description:
+    en: Web Developer
+
+superhighfives:
+  title:
+    en: Charlie Gleason
+  description:
+    en: Designer and Developer

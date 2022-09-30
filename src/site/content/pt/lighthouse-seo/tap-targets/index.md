@@ -54,4 +54,4 @@ Os destinos menores que 48 x 48 pixels ou mais próximos do que 8 pixels entre e
 ## Recursos
 
 - [Pontos de toque acessíveis](/accessible-tap-targets) : mais informações sobre como garantir que seus pontos de toque sejam acessíveis a todos os usuários.
-- [O código-fonte dos pontos de auditoria **pontos de toque não são dimensionados de forma adequada**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+- [O código-fonte dos pontos de auditoria **pontos de toque não são dimensionados de forma adequada**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/tap-targets.js)

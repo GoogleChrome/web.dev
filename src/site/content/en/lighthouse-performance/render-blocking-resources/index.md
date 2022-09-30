@@ -124,7 +124,7 @@ resources](https://wordpress.org/plugins/search/defer+css+javascript/).
 
 ## Resources
 
-- [Source code for **Eliminate render-blocking resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js)
+- [Source code for **Eliminate render-blocking resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js)
 - [Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
 - [Remove unused code codelab](/codelab-remove-unused-code)
 - [JavaScript Start-up Optimization](/optimizing-content-efficiency-javascript-startup-optimization/)

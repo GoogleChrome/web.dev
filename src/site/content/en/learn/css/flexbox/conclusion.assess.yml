@@ -28,7 +28,7 @@ questions:
     type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
-    stem: To horizonally align with flexbox, use
+    stem: To horizontally align with flexbox, use
     options:
       - content: "align keywords"
         rationale: "Sorry"

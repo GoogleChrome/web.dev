@@ -1,0 +1,31 @@
+setLeader: Teste seu conhecimento sobre herança
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: '1+'
+    correctAnswers: '1,2,3,4'
+    stem: Quais das seguintes propriedades são herdáveis?
+    options:
+      - content: '`animation`'
+        rationale: 'Animações não passam para os filhos.'
+      - content: '`font-size`'
+        rationale: '🎉'
+      - content: '`color`'
+        rationale: '🎉'
+      - content: '`text-align`'
+        rationale: '🎉'
+      - content: '`line-height`'
+        rationale: '🎉'
+  - type: multiple-choice
+    cardinality: '1'
+    correctAnswers: '1'
+    stem: |
+      Qual valor se comporta como `inherit` e quando não há nada para herdar se comporta como `initial`?
+    options:
+      - content: '`reset`'
+        rationale: 'incorreto, tente novamente!'
+      - content: '`unset`'
+        rationale: '🎉'
+      - content: '`superset`'
+        rationale: 'incorreto, tente novamente!'

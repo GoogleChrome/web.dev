@@ -49,6 +49,6 @@ Lighthouse 보고서에서 식별된 각 링크에 `rel="noopener"` 또는 `rel=
 
 ## 리소스
 
-- [**교차 출처 대상에 대한 링크가 안전하지 않음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+- [**교차 출처 대상에 대한 링크가 안전하지 않음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [교차 출처 리소스를 안전하게 공유](/cross-origin-resource-sharing/)
 - [웹 개발자를 위한 사이트 격리](https://developers.google.com/web/updates/2018/07/site-isolation)

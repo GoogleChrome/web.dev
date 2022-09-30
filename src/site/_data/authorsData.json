@@ -1018,10 +1018,10 @@
     "github": "maranag",
     "image": "image/admin/ChOBe0OzPT7siDgFmjC9.jpg"
   },
-  "charistheodoulou": {
-    "twitter": "charistheo_dev",
+  "harrytheodoulou": {
+    "twitter": "harryTheo_",
     "country": "UK",
-    "homepage": "https://www.charistheo.io/",
+    "homepage": "https://www.harrytheo.com/",
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/RDHNBibB1P7yeOIrw0JX.jpg"
   },
   "natashakosoglov": {
@@ -1558,13 +1558,13 @@
     "linkedin": "https://www.linkedin.com/in/nikilmat/",
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/mc2N7pSjT8K7WBi8PR6L.jpeg"
   },
-  "jhey": {
+  "jheyy": {
     "country": "UK",
     "twitter": "jh3yy",
     "github": "jh3y",
     "linkedin": "https://www.linkedin.com/in/jheytompkins/",
     "homepage": "https://jhey.dev/links",
-    "image": "image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/JMkAJAgH01auU1FiapGg.jpeg"
+    "image": "image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/JjwUlxDMTmjyFEvBC8wG.jpeg"
   },
   "patrickkettner": {
     "country": "US",
@@ -1646,9 +1646,58 @@
     "country": "BE",
     "image": "image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/CQMqvg5UkY4weDnJij3b.jpeg"
   },
-  "crivero": {
+  "kadirtopal": {
     "country": "US",
-    "twitter": "carolrivero_",
-    "image": "image/HodOHWjMnbNw56hvNASHWSgZyAf2/ECocrmuvoYCEILXxTf1a.jpeg"
+    "twitter": "atopal",
+    "image": "image/HodOHWjMnbNw56hvNASHWSgZyAf2/locu2HN2Xf0XCE3kqoLl.jpeg"
+  },
+  "michellebarker": {
+    "country": "GB",
+    "twitter": "michebarks",
+    "homepage": "https://css-irl.info/",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/TXk0tkZHdsVgSI0XlYMo.jpeg"
+  },
+  "daviddarnes": {
+    "country": "UK",
+    "twitter": "DavidDarnes",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/D4RF9eRlpsL0byFo3nTu.jpeg"
+  },
+  "linhduong": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/49yMNi8zYI3ufLHlPL2S.png",
+    "github": "duongkhlinh"
+  },
+  "shogokashiwase": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/65uId5WZmSmGVf4iNFjS.png"
+  },
+  "hayounglee": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mrDD7FK1dMWyzJCD4EBy.png"
+  },
+  "ryunosukeakiba": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/x1WXJeBxlPZftTHVnSmP.png"
+  },
+  "mmatuzo": {
+    "country": "AT",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/X3PNOGXB6wYGEqGEjoWd.jpeg",
+    "twitter": "mmatuzo"
+  },
+  "estelleweyl": {
+    "country": "US",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/tdK5bAeVqsW0WEJNyvUg.jpeg",
+    "twitter": "estellevw"
+  },
+  "davideast": {
+    "homepage": "https://davidea.st",
+    "twitter": "_davideast",
+    "image": "image/vS06HQ1YTsbMKSFTIPl2iogUQP73/S8CN1AfcJpoUJvYqrfeT.jpeg"
+  },
+  "superhighfives": {
+    "homepage": "https://charliegleason.com",
+    "twitter": "superhighfives",
+    "image": "image/vS06HQ1YTsbMKSFTIPl2iogUQP73/yFI6NAn66sh1FZF5yfFK.jpg",
+    "github": "https://github.com/superhighfives"
   }
 }

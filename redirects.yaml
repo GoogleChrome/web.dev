@@ -292,6 +292,8 @@ redirects:
     destination: /media-conversion
   - source: /media-eme-basics
     destination: /media-eme
+  - source: /capturing-images
+    destination: /media-capturing-images
 
   # Redirects to https://developer.chrome.com/.
   - source: /browser-flags
@@ -324,10 +326,26 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/handwriting-recognition/
   - source: /virtualkeyboard
     destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
+  - source: /workingoffthegrid
+    destination: https://developer.chrome.com/docs/workbox/service-worker-overview/
 
   # Redirect for Aurora
   - source: /aurora
-    destination: /introducing-aurora
+    destination: https://developer.chrome.com/blog/introducing-aurora/
+  - source: /introducing-aurora
+    destination: https://developer.chrome.com/blog/introducing-aurora/
+  - source: /inp-in-frameworks
+    destination: https://developer.chrome.com/blog/inp-in-frameworks/
+  - source: /script-component
+    destination: https://developer.chrome.com/blog/script-component/
+  - source: /image-component
+    destination: https://developer.chrome.com/blog/image-component/
+  - source: /aurora-resource-inlining
+    destination: https://developer.chrome.com/blog/aurora-resource-inlining/
+  - source: /conformance
+    destination: https://developer.chrome.com/blog/conformance/
+  - source: /tags/aurora-project
+    destination: https://developer.chrome.com/tags/aurora-project/
 
   # Design system
   - source: /design-system/component/action
@@ -344,3 +362,149 @@ redirects:
   # Redirects Extending Workbox post to the Using Plugins doc on d.c.c.
   - source: /extending-workbox
     destination: https://developer.chrome.com/docs/workbox/using-plugins/
+
+  # Redirects lazysizes post to the browser-level lazy loading post
+  - source: /use-lazysizes-to-lazyload-images
+    destination: /browser-level-image-lazy-loading/
+
+  # Redirects an old performance guides to more recent documentation
+  - source: /performance-get-started/
+    destination: /fast/
+  - source: /performance-get-started-graphicalcontent-4/
+    destination: /choose-the-right-image-format/
+  - source: /performance-get-started-httpcaching-6/
+    destination: /http-cache/
+  - source: /performance-get-started-httprequests-5/
+    destination: /optimizing-content-efficiency-eliminate-downloads/
+  - source: /performance-get-started-textcontent-3/
+    destination: /optimizing-content-efficiency-optimize-encoding-and-transfer/
+  - source: /performance-get-started-wrapup-7/
+    destination: /fast/
+  - source: /speed-txt-compression/
+    destination: /reduce-network-payloads-using-text-compression/
+  - source: /webperformance-basics/
+    destination: /navigation-and-resource-timing/
+
+  # Redirects scrolling performance post to the Intersection Observer post
+  - source: /speed-scrolling/
+    destination: /intersectionobserver/
+
+  # Redirects for outdated usage of "Web Vitals"
+  - source: /learn-web-vitals/
+    destination: /learn-core-web-vitals/
+  - source: /debug-web-vitals-in-the-field/
+    destination: /debug-performance-in-the-field/
+
+  # Redirects for Lighthouse accessibility content.
+  - source: /lighthouse-accessibility
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/
+  - source: /accessibility-scoring
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/scoring/
+  # Redirects accessibility audits, now deferring to axe docs.
+  - source: /accesskeys
+    destination: https://dequeuniversity.com/rules/axe/4.4/accesskeys
+  - source: /bypass
+    destination: https://dequeuniversity.com/rules/axe/4.4/bypass
+  - source: /duplicate-id-active
+    destination: https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active
+  - source: /heading-order
+    destination: https://dequeuniversity.com/rules/axe/4.4/heading-order
+  - source: /tabindex
+    destination: https://dequeuniversity.com/rules/axe/4.4/tabindex
+  - source: /aria-allowed-attr
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr
+  - source: /aria-hidden-body
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body
+  - source: /aria-hidden-focus
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus
+  - source: /aria-required-attr
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-required-attr
+  - source: /aria-required-children
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-required-children
+  - source: /aria-required-parent
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-required-parent
+  - source: /aria-roles
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-roles
+  - source: /aria-valid-attr-value
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value
+  - source: /aria-valid-attr
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr
+  - source: /duplicate-id-aria
+    destination: https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria
+  - source: /button-name
+    destination: https://dequeuniversity.com/rules/axe/4.4/button-name
+  - source: /document-title
+    destination: https://dequeuniversity.com/rules/axe/4.4/document-title
+  - source: /form-field-multiple-labels
+    destination: https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels
+  - source: /frame-title
+    destination: https://dequeuniversity.com/rules/axe/4.4/frame-title
+  - source: /image-alt
+    destination: https://dequeuniversity.com/rules/axe/4.4/image-alt
+  - source: /input-image-alt
+    destination: https://dequeuniversity.com/rules/axe/4.4/input-image-alt
+  - source: /label
+    destination: https://dequeuniversity.com/rules/axe/4.4/label
+  - source: /link-name
+    destination: https://dequeuniversity.com/rules/axe/4.4/link-name
+  - source: /object-alt
+    destination: https://dequeuniversity.com/rules/axe/4.4/object-alt
+  - source: /color-contrast
+    destination: https://dequeuniversity.com/rules/axe/4.4/color-contrast
+  - source: /definition-list
+    destination: https://dequeuniversity.com/rules/axe/4.4/definition-list
+  - source: /dlitem
+    destination: https://dequeuniversity.com/rules/axe/4.4/dlitem
+  - source: /list
+    destination: https://dequeuniversity.com/rules/axe/4.4/list
+  - source: /listitem
+    destination: https://dequeuniversity.com/rules/axe/4.4/listitem
+  - source: /layout-table
+    destination: https://dequeuniversity.com/rules/axe/3.5/layout-table
+  - source: /td-headers-attr
+    destination: https://dequeuniversity.com/rules/axe/4.4/td-headers-attr
+  - source: /th-has-data-cells
+    destination: https://dequeuniversity.com/rules/axe/4.4/th-has-data-cells
+  - source: /meta-refresh
+    destination: https://dequeuniversity.com/rules/axe/4.4/meta-refresh
+  - source: /meta-viewport
+    destination: https://dequeuniversity.com/rules/axe/4.4/meta-viewport
+  - source: /audio-caption
+    destination: https://dequeuniversity.com/rules/axe/3.5/audio-caption
+  - source: /video-caption
+    destination: https://dequeuniversity.com/rules/axe/4.4/video-caption
+  - source: /video-description
+    destination: https://dequeuniversity.com/rules/axe/3.3/video-description
+  - source: /html-has-lang
+    destination: https://dequeuniversity.com/rules/axe/4.4/html-has-lang
+  - source: /html-lang-valid
+    destination: https://dequeuniversity.com/rules/axe/4.4/html-lang-valid
+  - source: /valid-lang
+    destination: https://dequeuniversity.com/rules/axe/4.4/valid-lang
+  - source: /aria-name
+    destination: https://dequeuniversity.com/rules/axe/4.4
+  - source: /duplicate-id
+    destination: https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active
+  - source: /heading-levels
+    destination: https://dequeuniversity.com/rules/axe/4.4/heading-order
+  # "Manual" Lighthouse accessibility audits, separate from axe docs.
+  - source: /logical-tab-order
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order/
+  - source: /focusable-controls
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls/
+  - source: /interactive-element-affordance
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/interactive-element-affordance/
+  - source: /managed-focus
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/managed-focus/
+  - source: /focus-traps
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps/
+  - source: /custom-controls-labels
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/custom-controls-labels/
+  - source: /custom-control-roles
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/custom-control-roles/
+  - source: /visual-order-follows-dom
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/visual-order-follows-dom/
+  - source: /offscreen-content-hidden
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/
+  - source: /use-landmarks
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/

@@ -25,7 +25,7 @@ A [Long Task](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) is Java
 
 While a web page is loading, Long Tasks can tie up the main thread and make the page unresponsive to user input even if it looks ready. Clicks and taps often don't work because event listeners, click handlers etc have not yet been attached.
 
-CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms? [The RAIL model](/rail/) suggests you process user input events in [50ms](/rail/#response:-process-events-in-under-50ms) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
+CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms? [The RAIL model](/rail/) suggests you process user input events in [50ms](/rail/#response-process-events-in-under-50ms) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
 
 ## Are there Long Tasks in my page that could delay interactivity?
 

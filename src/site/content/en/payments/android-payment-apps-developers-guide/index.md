@@ -251,7 +251,7 @@ to verify that the calling package has the right signature.
 ## Step 3: Let a customer make payment
 
 The merchant calls `show()` to [launch the payment
-app](/life-of-a-payment-transaction#step-4:-the-browser-launches-the-payment-app)
+app](/life-of-a-payment-transaction#launch)
 so the customer can make a payment. The payment app is invoked via an Android
 intent `PAY` with transaction information in the intent parameters.
 

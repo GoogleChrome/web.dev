@@ -63,5 +63,5 @@ Lighthouse는 다음과 같은 DOM 트리가 있는 페이지에 플래그를 �
 
 ## 참고자료
 
-- [**과도한 DOM 크기** 감사 방지를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [**과도한 DOM 크기** 감사 방지를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
 - [스타일 계산의 범위와 복잡성 줄이기](/reduce-the-scope-and-complexity-of-style-calculations/)

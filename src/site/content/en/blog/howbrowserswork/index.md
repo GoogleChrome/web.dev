@@ -100,14 +100,14 @@ After that, this is the basic flow of the rendering engine:
   <figcaption>Figure : Rendering engine basic flow</figcaption>
 </figure>
 
-The rendering engine will start parsing the HTML document and convert elements to [DOM](#Dom) nodes in a tree called the "content tree". The engine will parse the style data, both in external CSS files and in style elements. Styling information together with visual instructions in the HTML will be used to create another tree: the [render tree](#Render_tree_construction).
+The rendering engine will start parsing the HTML document and convert elements to [DOM](#dom) nodes in a tree called the "content tree". The engine will parse the style data, both in external CSS files and in style elements. Styling information together with visual instructions in the HTML will be used to create another tree: the [render tree](#render-tree-construction).
 
 The render tree contains rectangles with visual attributes like color and dimensions.
 The rectangles are in the right order to be displayed on the screen.
 
 After the construction of the render tree it goes through a "[layout](#layout)" process.
 This means giving each node the exact coordinates where it should appear on the screen.
-The next stage is [painting](#Painting) - the render tree will be traversed and each node will be painted using the UI backend layer.
+The next stage is [painting](#painting) - the render tree will be traversed and each node will be painted using the UI backend layer.
 
 It's important to understand that this is a gradual process. For better user experience, the rendering engine will try to display contents on the screen as soon as possible.
 It will not wait until all HTML is parsed before starting to build and layout the render tree.
@@ -1084,7 +1084,7 @@ According to CSS2 spec, the cascade order is (from low to high):
 1. User important declarations
 
 The browser declarations are least important and the user overrides the author only if the declaration was marked as important.
-Declarations with the same order will be sorted by [specificity](#Specificity) and then the order they are specified.
+Declarations with the same order will be sorted by [specificity](#specificity) and then the order they are specified.
 The HTML visual attributes are translated to matching CSS declarations . They are treated as author rules with low priority.
 
 ### Specificity

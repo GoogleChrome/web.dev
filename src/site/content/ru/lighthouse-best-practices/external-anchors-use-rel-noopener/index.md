@@ -51,6 +51,6 @@ Lighthouse использует следующий процесс для опр�
 
 ## Ресурсы
 
-- [Исходный код для аудита «**Небезопасные ссылки на пункты назначения из разных источников**»](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+- [Исходный код для аудита «**Небезопасные ссылки на пункты назначения из разных источников**»](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [Безопасный общий доступ к ресурсам из разных источников](/cross-origin-resource-sharing/)
 - [Изоляция сайта для веб-разработчиков](https://developers.google.com/web/updates/2018/07/site-isolation)

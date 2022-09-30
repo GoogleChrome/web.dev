@@ -67,7 +67,7 @@ h1::after {
  </figcaption>
 </figure>
 
-
+Learn how to [inspect grid layouts](https://developer.chrome.com/docs/devtools/css/grid/) in Chrome DevTools.
 
 ## Flexbox
 
@@ -108,6 +108,8 @@ But the image never gets larger than 200 pixels.
  </figcaption>
 </figure>
 
+Learn how to [inspect flexbox layouts](https://developer.chrome.com/docs/devtools/css/flexbox/) in Chrome DevTools.
+
 ## Container queries
 
 Flexbox allows you to design from the content out. 
@@ -130,6 +132,7 @@ Container queries are a new experimental technology that isn't widely available 
 To test the code below, and see the example working, enable container queries in Chrome. 
 
 Go to `chrome://flags/`, search for **Container Queries**, and enable the `#enable-container-queries` flag.
+With the flag enabled, you can [inspect and debug container queries](https://developer.chrome.com/docs/devtools/css/container-queries/) in Chrome DevTools.
 {% endAside %}
 
 To start, define which elements will act as containers.

@@ -38,4 +38,4 @@ Instale um [plug-in WordPress de lazy-loading](https://wordpress.org/plugins/sea
 
 ## Recursos
 
-- [Código fonte para auditoria **Defer offscreen images**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/offscreen-images.js)
+- [Código fonte para auditoria **Defer offscreen images**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/offscreen-images.js)

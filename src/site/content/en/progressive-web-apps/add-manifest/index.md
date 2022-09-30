@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2022-06-20
+updated: 2022-09-14
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -58,6 +58,7 @@ A typical manifest looks something like this:
       "sizes": "512x512"
     }
   ],
+  "id": "/?source=pwa",
   "start_url": "/?source=pwa",
   "background_color": "#3367D6",
   "display": "standalone",
@@ -145,6 +146,10 @@ state they were in at install time.
 To use SVG icons safely, you should always specify a rasterized icon as a
 fallback for browsers that do not support SVG icons.
 {% endAside %}
+
+#### `id` {: #id }
+
+The `id` property allows you to explicitly define the identifier used for your application. Adding the `id` property to the manifest removes the dependency on the `start_url` or the location of the manifest, and makes it possible for them to be updated in the future. For more information, see [Uniquely identifying PWAs with the web app manifest id property](https://developer.chrome.com/blog/pwa-manifest-id/).
 
 #### `start_url` {: #start-url }
 

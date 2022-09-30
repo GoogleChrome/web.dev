@@ -57,4 +57,4 @@ If you are not bundling your JavaScript assets, consider using [baler](https://g
 
 ## Resources
 
-[Source code for **Minimize critical request depth** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[Source code for **Minimize critical request depth** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/critical-request-chains.js)

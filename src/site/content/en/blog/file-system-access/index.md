@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-06-24
+updated: 2022-09-13
 tags:
   - blog
   - capabilities
@@ -59,10 +59,12 @@ API to ensure that people can easily manage their files. See the
 
 The File System Access API is currently supported on most Chromium browsers on
 Windows, macOS, ChromeOS, and Linux. A notable exception is Brave where it is
-[currently available behind a
+[currently only available behind a
 flag](https://github.com/brave/brave-browser/issues/18979). Android support is
-not immediately planned, but you can track potential progress by starring
-[crbug.com/1011535](https://crbug.com/1011535).
+coming for the origin private file system part
+([https://crbug.com/1354273](https://bugs.chromium.org/p/chromium/issues/detail?id=1354273)).
+There are no plans currently for picker methods, but you can track
+potential progress by starring [crbug.com/1011535](https://crbug.com/1011535).
 
 ## Using the File System Access API {: #how-to-use }
 
@@ -403,7 +405,9 @@ the permissions currently need to be re-granted each time, which is suboptimal. 
 
 To enumerate all files in a directory, call [`showDirectoryPicker()`][showdirectorypicker]. The user
 selects a directory in a picker, after which a [`FileSystemDirectoryHandle`][fs-dir-handle] is
-returned, which lets you enumerate and access the directory's files.
+returned, which lets you enumerate and access the directory's files. By default, you will have read
+access to the files in the directory, but if you need write access, you can pass
+`{ mode: 'readwrite' }` to the method.
 
 ```js
 const butDir = document.getElementById('butDirectory');
@@ -426,7 +430,7 @@ butDir.addEventListener('click', async () => {
   const promises = [];
   for await (const entry of dirHandle.values()) {
     if (entry.kind !== 'file') {
-      break;
+      continue;
     }
     promises.push(entry.getFile().then((file) => `${file.name} (${file.size})`));
   }

@@ -57,4 +57,4 @@ Considera mostrar extractos en tus listas de publicaciones (por ejemplo, a trav�
 
 ## Recursos
 
-[Código fuente para la auditoría **Evita enormes cargas útiles de red**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)
+[Código fuente para la auditoría **Evita enormes cargas útiles de red**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/total-byte-weight.js)
