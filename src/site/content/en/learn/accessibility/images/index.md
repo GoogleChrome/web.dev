@@ -186,7 +186,7 @@ visual aspects.
  id: 'YzLxxPw',
  height: 350,
  theme: 'auto',
- tab: 'html'
+ tab: 'html,result'
 } %}
 
 {% Codepen {
@@ -194,7 +194,7 @@ visual aspects.
  id: 'gOzxxbg',
  height: 350,
  theme: 'auto',
- tab: 'html,css'
+ tab: 'html,result'
 } %}
 
 In the logo example, the image is both informative and actionable as it is both
