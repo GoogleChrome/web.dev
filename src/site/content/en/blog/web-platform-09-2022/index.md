@@ -51,13 +51,13 @@ Safari has also added support for [offset-path](https://developer.mozilla.org/do
 
 ### Encoding API
 
-Firefox 105 supports the [TextDecoderStream](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream) and [TextEncoderStream](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderStream) interfaces of the Encoding API. 
+Firefox 105 supports the [TextDecoderStream](https://developer.mozilla.org/docs/Web/API/TextDecoderStream) and [TextEncoderStream](https://developer.mozilla.org/docs/Web/API/TextEncoderStream) interfaces of the Encoding API. 
 
 {% BrowserCompat 'api.TextEncoderStream' %}
 
 ### New Intl APIs
 
-The [Intl APIs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat) help to display content in a localized format and Chrome 106 adds a slew of new number format functionality.
+The [Intl APIs](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat) help to display content in a localized format and Chrome 106 adds a slew of new number format functionality.
 
 Like other Intl APIs, this shifts the burden to the system—so you don’t need to ship or maintain complex localization code to every user. The API knows where the currency symbol goes, how to format dates and times, or compile a list.
 
