@@ -32,7 +32,7 @@ product type, local/country
 will dictate which set of guidelines to follow and levels to meet. If no
 specific standard is required for your project, the standard recommendation is
 to follow the latest version of the
-[Web Content Accessibility Guidelines (WCAG)](#wcag)(WCAG).
+[Web Content Accessibility Guidelines (WCAG)](#wcag).
 
 Testing your digital product against an accessibility standard and conformance
 level is commonly referred to as an
