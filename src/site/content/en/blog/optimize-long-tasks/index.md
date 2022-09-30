@@ -98,7 +98,7 @@ JavaScript works this way because it uses the [run-to-completion model](https://
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/0c61l5DCix9y0GBa3pFj.png", alt="The saveSettings function as depicted in Chrome's performance profiler. While the top-level function calls five other functions, all the work takes place in one long task that blocks the main thread.", width="800", height="181" %}
   <figcaption>
-    A single function <code>saveSettings</code> that calls five functions. The work is run as part of one long monolithic task.
+    A single function <code>saveSettings()</code> that calls five functions. The work is run as part of one long monolithic task.
   </figcaption>
 </figure>
 
