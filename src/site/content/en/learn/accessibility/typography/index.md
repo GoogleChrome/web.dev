@@ -3,7 +3,7 @@ title: 'Typography'
 authors:
   - cariefisher
 description: How to create accessible typography.
-date: 2022-09-21
+date: 2022-09-30
 tags:
   - accessibility
 ---
