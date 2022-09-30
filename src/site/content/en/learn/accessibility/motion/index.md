@@ -75,9 +75,9 @@ to allow users to control their experience. When the button is toggled to
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'xxjpBGE',
- height: 300,
+ height: 450,
  theme: 'auto',
- tab: 'html,css,result'
+ tab: 'js,result'
 } %}
 
 ## Reduced motion media query
