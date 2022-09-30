@@ -203,7 +203,7 @@ The benefit of using a promise-based approach to yielding rather than manual use
 
 ### Yield only when necessary
 
-What if you have a bunch of tasks, but you only want to yield if the user attempts to interact with the page? That's the kind of thing that [`isInputPending`](/isinputpending/) was made for!
+What if you have a bunch of tasks, but you only want to yield if the user attempts to interact with the page? That's the kind of thing that [`isInputPending()`](/isinputpending/) was made for.
 
 `isInputPending` is a function you can run at any time to determine if the user is attempting to interact with a page element: a call to `isInputPending` will return `true`. It returns `false` otherwise.
 
