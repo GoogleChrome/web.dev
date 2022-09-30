@@ -12,7 +12,6 @@ questions:
         rationale: "A level is the most basic level of the WCAG standards, at 30 criteria."
       - content: "POUR"
         rationale: "POUR is a set of principles to help you focus on how your products are used. But, this is not the measurable standard."
-questions:
   - type: multiple-choice
     cardinality: "1+"
     correctAnswers: "0,2,3"
