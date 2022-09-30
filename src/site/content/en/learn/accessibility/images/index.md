@@ -222,7 +222,7 @@ visual and the action conveyed in one image.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'qBYXXdW',
- height: 300,
+ height: 350,
  theme: 'auto',
  tab: 'html,result'
 } %}
@@ -240,7 +240,7 @@ descriptions to your complex images.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'NWMvvqw',
- height: 300,
+ height: 400,
  theme: 'auto',
  tab: 'html,result'
 } %}
@@ -259,7 +259,7 @@ information readily available on the screen instead of buried in the code.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'OJZjxGK',
- height: 350,
+ height: 400,
  theme: 'auto',
  tab: 'html,result'
 } %}
@@ -274,7 +274,7 @@ more people.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'MWGvEdJ',
- height: 350,
+ height: 450,
  theme: 'auto',
  tab: 'html,result'
 } %}
