@@ -174,7 +174,7 @@ Operable
 {% endDetailsSummary %}
 
 <figure data-float="right">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/ndg3E43yqkSKludvAmTe.png", alt="Operable is represented by a keyboard, but there are a number of interfaces and softwares one may use to interact.", width="339", height="157" %}
+  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/XPLRoBlh2fFMgY9rUDeV.png", alt="Operable is represented by a keyboard, but there are a number of interfaces and softwares one may use to interact.", width="353", height="177" %}
 </figure>
 
 The second category is Operable. For this principle, users must be able to
