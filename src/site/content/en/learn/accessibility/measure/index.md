@@ -137,6 +137,10 @@ WCAG&mdash;[Perceivable, Operable, Understandable, and Robust (POUR)](https://ww
 By applying POUR principles to your digital products, you can focus on how your
 products are used by real humans, including people with disabilities. 
 
+<figure class="screenshot">
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/j2qQcEjknNhD46OxDtaE.png", alt="Perceivable, Operable, Understandable, and Robust all connect to one another.", width="800", height="679" %}
+</figure>
+
 {% Details %}
 
 {% DetailsSummary 'h3' %}
