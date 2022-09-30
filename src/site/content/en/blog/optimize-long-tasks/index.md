@@ -344,7 +344,7 @@ With this code sample, the priority of tasks is scheduled in such a way that bro
 This is a simplistic example of how `postTask` can be used. It's possible to instantiate different `TaskController` objects that can share priorities between tasks, including the ability to change priorities for different `TaskController` instances as needed.
 
 {% Aside 'important' %}
-[`postTask` is not supported in all browsers](https://caniuse.com/mdn-api_scheduler_posttask). You can use feature checking to see if it's available, or consider using [a polyfill](https://www.npmjs.com/package/scheduler-polyfill).
+[`postTask` is not supported in all browsers](https://caniuse.com/mdn-api_scheduler_posttask). You can use feature detection to see if it's available, or consider using [a polyfill](https://www.npmjs.com/package/scheduler-polyfill).
 {% endAside %}
 
 ### Built-in yield with continuation
