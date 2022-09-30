@@ -3,6 +3,9 @@ layout: post
 title: 'Introducing Learn Accessibility'
 authors: 
   - alexandrawhite
+hero: image/VbsHyyQopiec0718rMq2kTE1hke2/47JeuiQdxypVbW87NnSB.svg
+thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/03dCg7PsCbcwblqRHYMB.png
+alt: 'Learn Accessibility'
 subhead: >
   Today we are launching Learn Accessibility—the next in our series to help get you up to speed with modern web development.
 description: >
