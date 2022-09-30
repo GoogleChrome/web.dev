@@ -89,17 +89,17 @@ about the image.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'mdLMwje',
- height: 300,
+ height: 350,
  theme: 'auto',
- tab: 'html,css,result'
+ tab: 'html,result'
 } %}
 
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'abGywjP',
- height: 300,
+ height: 350,
  theme: 'auto',
- tab: 'html,css,result'
+ tab: 'html,result'
 } %}
 
 ```html
@@ -118,7 +118,7 @@ you do not wish to hide.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'GRdvEYo',
- height: 300,
+ height: 350,
  theme: 'auto',
  tab: 'css,result'
 } %}
@@ -147,7 +147,7 @@ points to, such as `.jpg`, `.png`, `.svg`, and others.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'yLjoXrj',
- height: 300,
+ height: 350,
  theme: 'auto',
  tab: 'html,result'
 } %}
@@ -184,7 +184,7 @@ visual aspects.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'YzLxxPw',
- height: 300,
+ height: 350,
  theme: 'auto',
  tab: 'html'
 } %}
@@ -192,7 +192,7 @@ visual aspects.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'gOzxxbg',
- height: 300,
+ height: 350,
  theme: 'auto',
  tab: 'html,css'
 } %}
@@ -259,7 +259,7 @@ information readily available on the screen instead of buried in the code.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'OJZjxGK',
- height: 300,
+ height: 350,
  theme: 'auto',
  tab: 'html,result'
 } %}
@@ -274,7 +274,7 @@ more people.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'MWGvEdJ',
- height: 300,
+ height: 350,
  theme: 'auto',
  tab: 'html,result'
 } %}
