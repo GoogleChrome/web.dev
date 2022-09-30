@@ -251,7 +251,7 @@ While `saveSettings` runs, it will loop over the tasks in the queue. If `isInput
 
 `isInputPending()` in combination with a yielding mechanism is a great way to get the browser to stop whatever tasks it's processing on so that it can respond to critical user-facing interactions. That can help improve your page's ability to respond to the user in many situations when a lot of tasks are in flight.
 
-Another way to use `isInputPending`—particularly if you're concerned about providing some kind of fallback for browsers that don't support it—is to use a time-based approach in conjunction with the [optional chaining operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Optional_chaining):
+Another way to use `isInputPending()`—particularly if you're concerned about providing some kind of fallback for browsers that don't support it—is to use a time-based approach in conjunction with the [optional chaining operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Optional_chaining):
 
 ```js
 async function saveSettings () {
