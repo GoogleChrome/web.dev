@@ -392,7 +392,7 @@ The benefit of `scheduler.yield` is continuation, which means that if you yield 
 
 Managing tasks can be challenging, but doing so helps your page respond more quickly to user interactions. There's no one single piece of advice for managing and prioritizing tasks. Rather, it's a number of different techniques. To reiterate, these are the main things you'll want to consider when managing tasks:
 
-- Yielding to the main thread for critical, user-facing tasks.
+- Yield to the main thread for critical, user-facing tasks.
 - Use `isInputPending` to yield to the main thread when the user is trying to interact with the page.
 - Prioritize tasks with `postTask`.
 
