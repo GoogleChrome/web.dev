@@ -113,7 +113,9 @@ would appear to those with specific forms of color blindness.
 </figure>
 </div>
 
-On the left, the image shows rainbow sand with purple, red, orange, yellow, aqua green, light blue, and dark blue colors. On the right is a brighter, multicolored rainbow pattern. 
+On the left, the image shows rainbow sand with purple, red, orange, yellow, aqua green, light blue, and dark blue colors. On the right is a brighter, multicolored rainbow pattern.
+
+### Deuteranopia
 
 <div class="switcher">
 <figure>
@@ -124,9 +126,13 @@ On the left, the image shows rainbow sand with purple, red, orange, yellow, aqua
 </figure>
 </div>
 
-[Deuteranopia](https://www.color-blindness.com/deuteranopia-red-green-color-blindness/) (green blind) - Population % - Male: 1-5, Female: 0.1-0.35.
+[Deuteranopia](https://www.color-blindness.com/deuteranopia-red-green-color-blindness/)
+(also referred to as green blind) occurs in 1% to 5% of males, 0.35% to 0.1% of
+females.
 
 People with Deuteranopia have a reduced sensitivity to green light. This color blindness filter simulates what this type of color blindness might look like.
+
+### Protanopia
 
 <div class="switcher">
 <figure>
@@ -137,9 +143,12 @@ People with Deuteranopia have a reduced sensitivity to green light. This color b
 </figure>
 </div>
 
-[Protanopia](https://www.color-blindness.com/protanopia-red-green-color-blindness/) (red blind) - Population % - Male: 1.01-1.08, Female: 0.02-0.03
+[Protanopia](https://www.color-blindness.com/protanopia-red-green-color-blindness/)
+(red blind) occurs in 1.01% to 1.08% of males and 0.02% of 0.03% of females.
 
 People with Protanopia have a reduced sensitivity to red light. This color blindness filter simulates what this type of color blindness might look like.
+
+### Achromatopsia or Monochromatism
 
 <div class="switcher">
 <figure>
@@ -150,9 +159,13 @@ People with Protanopia have a reduced sensitivity to red light. This color blind
 </figure>
 </div>
 
-[Achromatopsia/Monochromatism](https://www.color-blindness.com/2007/07/20/monochromacy-complete-color-blindness/) (RGB blind) - Population % - Male/Felmale: very rare
-People with Achromatopsia or Monochromatism have almost no perception of red, green, or blue light. This color blindness filter simulates what this type of color blindness might look like.
+[Achromatopsia or Monochromatism](https://www.color-blindness.com/2007/07/20/monochromacy-complete-color-blindness/) (or complete color blindness) occurs very, very rarely.
 
+People with Achromatopsia or Monochromatism have almost no perception of red,
+green, or blue light. This color blindness filter simulates what this type of
+color blindness might look like.
+
+### Calculate color contrast
 
 The color contrast formula uses the
 [relative luminance](https://www.w3.org/TR/WCAG/#dfn-relative-luminance) of
@@ -176,10 +189,9 @@ create the most inclusive color pairs and palettes.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'PoeKzWq',
- height: 350,
+ height: 450,
  theme: 'auto',
- tab: 'result',
- allow: ['geolocation']
+ tab: 'result'
 } %}
 
 ## Using color
