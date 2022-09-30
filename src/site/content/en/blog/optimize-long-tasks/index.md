@@ -207,7 +207,7 @@ What if you have a bunch of tasks, but you only want to yield if the user attemp
 
 `isInputPending()` is a function you can run at any time to determine if the user is attempting to interact with a page element: a call to `isInputPending()` will return `true`. It returns `false` otherwise.
 
-Say you have a queue of tasks you need to run, but you don't want to get in the way of any inputs, such as an attempt to open a navigation menu, for example. This code which uses both `isInputPending` and our custom `yieldToMain()` function ensures that the input won't be delayed while the user is trying to interact with the page:
+Say you have a queue of tasks you need to run, but you don't want to get in the way of any inputs, such as an attempt to open a navigation menu, for example. This code which uses both `isInputPending()` and our custom `yieldToMain()` function ensures that the input won't be delayed while the user is trying to interact with the page:
 
 ```js
 async function saveSettings () {
