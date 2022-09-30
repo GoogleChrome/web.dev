@@ -159,7 +159,7 @@ function yieldToMain () {
 While this code example returns a `Promise` that resolves after a call to `setTimeout`, it's not the `Promise` that is responsible for running the rest of the code in a new task, it's the `setTimeout` call. Promise callbacks run as [microtasks](https://developer.mozilla.org/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks_vs_microtasks) rather than tasks, and therefore don't yield to the main thread.
 {% endAside %}
 
-Then in the `saveSettings` function, you can yield to the main thread after each bit of work if you `await` the `yieldToMain()` function after each function call:
+Then in the `saveSettings()` function, you can yield to the main thread after each bit of work if you `await` the `yieldToMain()` function after each function call:
 
 ```js
 async function saveSettings () {
