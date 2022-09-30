@@ -39,4 +39,8 @@ Learn Accessibility joins our existing courses:
 * [Learn Forms](/learn/forms/)
 * [Learn PWA](/learn/pwa/)
 
+We are open to your feedback. [Open a GitHub issue](https://github.com/GoogleChrome/web.dev/issues/new/choose)
+and give as much information as you can so we can address your questions or
+concerns.
+
 Coming up, we'll also have a series of interviews with various people working in accessibility. Follow this space to read their insights.
