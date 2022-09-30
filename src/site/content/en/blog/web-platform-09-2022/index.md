@@ -72,12 +72,12 @@ Beta browser versions give you a preview of things that will be in the next stab
 
 Chrome 107 includes the ability to animate grid tracks, that also shipped in Safari this month. Once this lands in Chrome it will be supported in all three major engines. 
 
-Also in Chrome are some additions to [`getDisplayMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) that aim to prevent [accidental oversharing when screen sharing]((/blog/avoiding-oversharing-when-screen-sharing/)). 
+Also in Chrome are some additions to [`getDisplayMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) that aim to prevent [accidental oversharing when screen sharing]((https://developer.chrome.com/blog/avoiding-oversharing-when-screen-sharing/)). 
 
-- The [`displaySurface`](/docs/web-platform/screen-sharing-controls/#displaySurface) option can indicate that the web app prefers to offer a specific display surface type (tabs, windows, or screens).
-- The [`surfaceSwitching`](/docs/web-platform/screen-sharing-controls/#surfaceSwitching) option indicates whether Chrome should allow the user to dynamically switch between shared tabs.
-- The [`selfBrowserSurface`](/docs/web-platform/screen-sharing-controls/#selfBrowserSurface) option can be used to prevent the user from sharing the current tab. This avoids the "hall of mirrors" effect.
-- The [`systemAudio`](/docs/web-platform/screen-sharing-controls/#systemAudio) option ensures Chrome only offers relevant audio-capture to the user.
+- The [`displaySurface`](https://developer.chrome.com/docs/web-platform/screen-sharing-controls/#displaySurface) option can indicate that the web app prefers to offer a specific display surface type (tabs, windows, or screens).
+- The [`surfaceSwitching`](https://developer.chrome.com/docs/web-platform/screen-sharing-controls/#surfaceSwitching) option indicates whether Chrome should allow the user to dynamically switch between shared tabs.
+- The [`selfBrowserSurface`](https://developer.chrome.com/docs/web-platform/screen-sharing-controls/#selfBrowserSurface) option can be used to prevent the user from sharing the current tab. This avoids the "hall of mirrors" effect.
+- The [`systemAudio`](https://developer.chrome.com/docs/web-platform/screen-sharing-controls/#systemAudio) option ensures Chrome only offers relevant audio-capture to the user.
 
 Safari 16.1 includes an additional fix to accessibility of `display: contents`, a fix to dynamic viewport height (`dvh`) units, and support for scroll to text fragments.
 
