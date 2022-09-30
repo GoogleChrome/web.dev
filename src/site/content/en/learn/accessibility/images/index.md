@@ -154,9 +154,9 @@ points to, such as `.jpg`, `.png`, `.svg`, and others.
 
 When you use `<svg>` elements inline, however, you need to pay attention to accessibility.
   
-First, since SVGs are semantically code, an AT will skip over them by default.
+First, since SVGs are semantically coded, AT will skip over them by default.
 If you have a decorative image, this is not an issue&mdash;the AT will ignore
-them as intended. But if you have an informative image, an ARIA `<role="img">`
+it as intended. But if you have an informative image, an ARIA `role="img"`
 needs to be added to the pattern for the AT to recognize it as an image.
 
 Second, `<svg>` elements do not use the `alt` attribute, so
