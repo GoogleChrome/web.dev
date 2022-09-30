@@ -127,7 +127,7 @@ On the left, the image shows rainbow sand with purple, red, orange, yellow, aqua
 </div>
 
 [Deuteranopia](https://www.color-blindness.com/deuteranopia-red-green-color-blindness/)
-(also referred to as green blind) occurs in 1% to 5% of males, 0.35% to 0.1% of
+(commonly known as green blind) occurs in 1% to 5% of males, 0.35% to 0.1% of
 females.
 
 People with Deuteranopia have a reduced sensitivity to green light. This color blindness filter simulates what this type of color blindness might look like.
@@ -144,7 +144,8 @@ People with Deuteranopia have a reduced sensitivity to green light. This color b
 </div>
 
 [Protanopia](https://www.color-blindness.com/protanopia-red-green-color-blindness/)
-(red blind) occurs in 1.01% to 1.08% of males and 0.02% of 0.03% of females.
+(commonly known as red blind) occurs in 1.01% to 1.08% of males and 0.02% of
+0.03% of females.
 
 People with Protanopia have a reduced sensitivity to red light. This color blindness filter simulates what this type of color blindness might look like.
 
@@ -208,16 +209,16 @@ but omit any additional content or identifiers to the button, it would be
 difficult for people with certain types of colorblindness to know which button
 to click. Similarly, many graphs, charts, and tables use color alone to convey
 information. Adding another identifier, like a pattern, text, or icon, is
-crucial to help people understand the content. Reviewing your digital products
-in grayscale is a good way to detect potential color issues quickly.
+crucial to help people understand the content.
+
+Reviewing your digital products in grayscale is a good way to detect potential color issues quickly.
 
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'rNvzLmd',
- height: 400,
+ height: 500,
  theme: 'auto',
- tab: 'js,result',
- allow: ['geolocation']
+ tab: 'result'
 } %}
 
 ## Color-focused media queries
