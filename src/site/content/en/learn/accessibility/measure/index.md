@@ -141,7 +141,7 @@ products are used by real humans, including people with disabilities.
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/j2qQcEjknNhD46OxDtaE.png", alt="Perceivable, Operable, Understandable, and Robust all connect to one another.", width="800", height="679" %}
 </figure>
 
-{% Details %}
+{% Details 'open' %}
 
 {% DetailsSummary 'h3' %}
 Perceivable
@@ -163,7 +163,7 @@ cognitive, and speech impairments, vestibular and seizure disorders, and more.
 * Ensuring color is not the only method of conveying meaning.
 {% endDetails %}
 
-{% Details %}
+{% Details 'open' %}
 
 {% DetailsSummary 'h3' %}
 Operable
@@ -184,7 +184,7 @@ interfaces handled?
 * Giving users enough time to fill out a form or a method to extend the time.
 {% endDetails %}
 
-{% Details %}
+{% Details 'open' %}
 
 {% DetailsSummary 'h3' %}
 Understandable
@@ -203,7 +203,7 @@ sighted users, keyboard-only users, screen reader users?
 * Ensuring error messages are clear and easy to resolve.
 {% endDetails %}
 
-{% Details %}
+{% Details 'open' %}
 
 {% DetailsSummary 'h3' %}
 Robust
