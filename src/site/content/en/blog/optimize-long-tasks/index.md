@@ -236,7 +236,7 @@ async function saveSettings () {
 }
 ```
 
-While `saveSettings` runs, it will loop over the tasks in the queue. If `isInputPending` ever returns `true` during the loop, `saveSettings` will call `yield` so the user input can be handled. Otherwise, it will shift the next task off the front of the queue and run it continuously. It will do this until no more tasks are left.
+While `saveSettings` runs, it will loop over the tasks in the queue. If `isInputPending()` ever returns `true` during the loop, `saveSettings` will call `yield` so the user input can be handled. Otherwise, it will shift the next task off the front of the queue and run it continuously. It will do this until no more tasks are left.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/snMl3kRlWyJjdbL0qsqM.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, in which case, the task yields to the main thread.", width="800", height="254" %}
