@@ -87,7 +87,7 @@ function saveSettings () {
 }
 ```
 
-In this example, there's a function named `saveSettings` that calls five functions within it to do the work, such as validating a form, showing a spinner, sending data, and so on. Conceptually, this is well architected. If you need to debug one of these functions, you can traverse the project tree to figure out what each function does.
+In this example, there's a function named `saveSettings()` that calls five functions within it to do the work, such as validating a form, showing a spinner, sending data, and so on. Conceptually, this is well architected. If you need to debug one of these functions, you can traverse the project tree to figure out what each function does.
 
 The problem, however, is that JavaScript doesn't run each of these functions as separate tasks because they are being executed within the `saveSettings()` function. **This means that all five functions run as a single task.**
 
@@ -236,7 +236,7 @@ async function saveSettings () {
 }
 ```
 
-While `saveSettings` runs, it will loop over the tasks in the queue. If `isInputPending()` ever returns `true` during the loop, `saveSettings` will call `yield` so the user input can be handled. Otherwise, it will shift the next task off the front of the queue and run it continuously. It will do this until no more tasks are left.
+While `saveSettings()` runs, it will loop over the tasks in the queue. If `isInputPending()` ever returns `true` during the loop, `saveSettings()` will call `yieldToMain()` so the user input can be handled. Otherwise, it will shift the next task off the front of the queue and run it continuously. It will do this until no more tasks are left.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/snMl3kRlWyJjdbL0qsqM.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, in which case, the task yields to the main thread.", width="800", height="254" %}
@@ -246,7 +246,7 @@ While `saveSettings` runs, it will loop over the tasks in the queue. If `isInput
 </figure>
 
 {% Aside %}
-`isInputPending()` may not always return `true` immediately after user input. This is because it takes time for the operating system to tell the browser that the interaction occurred. This means that other code may have already started executing (as you can see with the `saveToDatabase` function in the above screenshot). Even if you use `isInputPending()` it's still crucial that you limit the amount of work you do in each function.
+`isInputPending()` may not always return `true` immediately after user input. This is because it takes time for the operating system to tell the browser that the interaction occurred. This means that other code may have already started executing (as you can see with the `saveToDatabase()` function in the above screenshot). Even if you use `isInputPending()` it's still crucial that you limit the amount of work you do in each function.
 {% endAside %}
 
 `isInputPending()` in combination with a yielding mechanism is a great way to get the browser to stop whatever tasks it's processing on so that it can respond to critical user-facing interactions. That can help improve your page's ability to respond to the user in many situations when a lot of tasks are in flight.
@@ -291,7 +291,7 @@ async function saveSettings () {
 }
 ```
 
-With this approach, you get a fallback for browsers that don't support `isInputPending` by using a time-based approach that uses (and adjusts) a deadline so that work will be broken up where necessary, whether by yielding to user input, or by a certain point in time.
+With this approach, you get a fallback for browsers that don't support `isInputPending()` by using a time-based approach that uses (and adjusts) a deadline so that work will be broken up where necessary, whether by yielding to user input, or by a certain point in time.
 
 ## Gaps in current APIs
 
@@ -349,7 +349,7 @@ This is a simplistic example of how `postTask` can be used. It's possible to ins
 
 ### Built-in yield with continuation
 
-One proposed part of the scheduler API that's not currently implemented in any browser is a built-in yield function. As it is currently proposed, its use would resemble the `yieldToMain` function demonstrated earlier in this article:
+One proposed part of the scheduler API that's not currently implemented in any browser is a built-in yield function. As it is currently proposed, its use would resemble the `yieldToMain()` function demonstrated earlier in this article:
 
 ```js
 async function saveSettings () {
@@ -377,24 +377,24 @@ async function saveSettings () {
 }
 ```
 
-You'll note that the code above is largely familiar, but instead of using `yieldToMain`, you call and `await` the `scheduler.yield` function instead.
+You'll note that the code above is largely familiar, but instead of using `yieldToMain()`, you call and `await` the `scheduler.yield()` function instead.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/fyuvJqAV0mLxfZDM9tAm.png", alt="Three diagrams depicting tasks without yielding, yielding, and with yielding and continuation. Without yielding, there are long tasks. With yielding, there are more tasks that are shorter, but may be interrupted by other unrelated tasks. With yielding and continuation, there are more tasks that are shorter, but their order of execution is preserved.", width="647", height="258" %}
   <figcaption>
-    A visualization of task execution without yielding, with yielding, and with yielding and continuation. When <code>scheduler.yield</code> is used, task execution picks up where it left off even after the yield point.
+    A visualization of task execution without yielding, with yielding, and with yielding and continuation. When <code>scheduler.yield()</code> is used, task execution picks up where it left off even after the yield point.
   </figcaption>
 </figure>
 
-The benefit of `scheduler.yield` is continuation, which means that if you yield in the middle of a set of tasks, the other scheduled tasks will continue in the same order after the yield point. **This avoids code from third-party scripts from usurping the order of your code's execution.**
+The benefit of `scheduler.yield()` is continuation, which means that if you yield in the middle of a set of tasks, the other scheduled tasks will continue in the same order after the yield point. **This avoids code from third-party scripts from usurping the order of your code's execution.**
 
 ## Conclusion
 
 Managing tasks can be challenging, but doing so helps your page respond more quickly to user interactions. There's no one single piece of advice for managing and prioritizing tasks. Rather, it's a number of different techniques. To reiterate, these are the main things you'll want to consider when managing tasks:
 
 - Yield to the main thread for critical, user-facing tasks.
-- Use `isInputPending` to yield to the main thread when the user is trying to interact with the page.
-- Prioritize tasks with `postTask`.
+- Use `isInputPending()` to yield to the main thread when the user is trying to interact with the page.
+- Prioritize tasks with `postTask()`.
 
 With one or more of these tools, you should be able to structure the work in your application so that it prioritizes the user's needs, while ensuring that less critical work still gets done. That's going to create a better user experience which is more responsive and more enjoyable to use.
 
