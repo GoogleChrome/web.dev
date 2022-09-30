@@ -100,7 +100,7 @@ h2 {font-size: 1rem;}
 {% endCompare %}
 </div>
 
-Since you cannot predict what every user’s needs are, when adding fonts to your digital products, be sure to consider the following guidelines:
+Since you cannot predict what every user's needs are, when adding fonts to your digital products, be sure to consider the following guidelines:
 
 * Base font sizes should be defined with a relative value (%, rem, or em) to
   allow easy resizing.
@@ -137,9 +137,9 @@ to use headings, subheadings, and lists whenever appropriate.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'poVreqB',
- height: 350,
+ height: 450,
  theme: 'auto',
- tab: 'html,result'
+ tab: 'result'
 } %}
 
 ### Spacing
@@ -151,7 +151,7 @@ to use headings, subheadings, and lists whenever appropriate.
  id: 'ExLvWrP',
  height: 350,
  theme: 'auto',
- tab: 'html,result'
+ tab: 'result'
 } %}
 
 ### Content alignment
@@ -169,7 +169,7 @@ boundaries.
  id: 'OJZjpdE',
  height: 350,
  theme: 'auto',
- tab: 'css,result'
+ tab: 'result'
 } %}
 
 Thankfully, there are clear guidelines on spacing and tools such as [Good Line-Height](http://thegoodlineheight.com) and the [Golden Ratio Calculator](https://grtcalculator.com/) to help make our copy more accessible. Incorporating these guidelines helps people with attention-deficit disorders, reading, and vision-based disabilities focus more on the copy and less on the layout.
@@ -189,7 +189,7 @@ When considering structure and layout, be sure to:
 ## Accessible typography takeaways 
 
 Accessible typography can be boiled down to common-sense design choices based
-on your knowledge of your users’ needs. Keeping this module in mind as you
+on your knowledge of your users' needs. Keeping this module in mind as you
 design and build out your content will go a long way toward helping you
 communicate clearly with the greatest number of people.
 
