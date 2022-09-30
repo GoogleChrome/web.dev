@@ -147,6 +147,10 @@ products are used by real humans, including people with disabilities.
 Perceivable
 {% endDetailsSummary %}
 
+<figure data-float="right">
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/haquBrDGcS5NehEPGYoK.png", alt="Perceivable is represented by glasses, but multiple sesnes are used to understand content on a screen.", width="234", height="98" %}
+</figure>
+
 The first category in POUR is Perceivable. This principle states that users
 must be able to perceive all essential information on the screen, and it must
 be conveyed to multiple senses.
@@ -169,6 +173,10 @@ cognitive, and speech impairments, vestibular and seizure disorders, and more.
 Operable
 {% endDetailsSummary %}
 
+<figure data-float="right">
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/ndg3E43yqkSKludvAmTe.png", alt="Operable is represented by a keyboard, but there are a number of interfaces and softwares one may use to interact.", width="339", height="157" %}
+</figure>
+
 The second category is Operable. For this principle, users must be able to
 operate the digital product's interface. The interface cannot require
 interaction that a user cannot perform.
@@ -190,6 +198,10 @@ interfaces handled?
 Understandable
 {% endDetailsSummary %}
 
+<figure data-float="right">
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/Wu11xfdtJVoYTNiY9BxO.png", alt="Understandable is represented by a head with colorful connected dots.", width="168", height="215" %}
+</figure>
+
 The third category of POUR is Understandable. For this principle, users must understand the information and the operation of the user interface.
 
 **Ask yourself**: Is all of the content clearly written? Are all of the
@@ -208,6 +220,10 @@ sighted users, keyboard-only users, screen reader users?
 {% DetailsSummary 'h3' %}
 Robust
 {% endDetailsSummary %}
+
+<figure data-float="right">
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6n5u7FVgb5dCCup50UKY.png", alt="Robust", width="362", height="218" %}
+</figure>
 
 The last category is Robust. This principle focuses on supporting assistive
 technologies and ensuring that, as devices and user agents evolve, the digital
