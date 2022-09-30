@@ -139,7 +139,7 @@ In addition to `setTimeout`, there are a few other APIs that allow you to defer 
 
 ### Use `async`/`await` to create yield points
 
- you'll see throughout the rest of this guide is "yield to the main thread"—but what does that mean? Why should you do it? When should you do it?
+A phrase you'll see throughout the rest of this guide is "yield to the main thread"—but what does that mean? Why should you do it? When should you do it?
 
 {% Aside 'important' %}
 When you _yield_ to the main thread, you're giving it an opportunity to handle more important tasks than the ones that are currently queued up. Ideally, you should yield to the main thread whenever you have some crucial user-facing work that needs to execute sooner than if you didn't yield. **Yielding to the main thread creates opportunities for critical work to run sooner.** Yielding to the main thread is accomplished by breaking up big tasks into smaller ones.
