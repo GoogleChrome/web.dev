@@ -241,7 +241,7 @@ While `saveSettings` runs, it will loop over the tasks in the queue. If `isInput
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/snMl3kRlWyJjdbL0qsqM.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, in which case, the task yields to the main thread.", width="800", height="254" %}
   <figcaption>
-    <code>saveSettings</code> runs a task queue for five tasks, but the user has clicked to open a menu while the second work item was running. <code>isInputPending</code> yields to the main thread to handle the interaction, and resume running the rest of the tasks.
+    <code>saveSettings()</code> runs a task queue for five tasks, but the user has clicked to open a menu while the second work item was running. <code>isInputPending()</code> yields to the main thread to handle the interaction, and resume running the rest of the tasks.
   </figcaption>
 </figure>
 
