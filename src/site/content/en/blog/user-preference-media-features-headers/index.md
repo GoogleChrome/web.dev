@@ -41,7 +41,7 @@ ideally at request time, so that the initial HTML payload already has the right 
 Additionally, and specifically for `prefers-color-scheme`, sites by all means want to avoid a
 [flash of inaccurate color theme](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/).
 
-The `Sec-CH-Prefers-Color-Scheme` and `Sec-CH-Prefers-Reduced-Motion` client hint headers are the first of a
+The `Sec-CH-Prefers-Color-Scheme` and the `Sec-CH-Prefers-Reduced-Motion` client hint headers are the first of a
 [series of user preference media features client hints headers](https://wicg.github.io/user-preference-media-features-headers/)
 that aims to solve this issue.
 
