@@ -10,7 +10,7 @@ tags:
 
 ## Welcome to Learn Accessibility!
 
-Digital accessibility, commonly abbreviated a11y, is about designing and building websites and web apps so that disabled people can interact with in a meaningful and equivalent way.
+Digital accessibility, commonly abbreviated a11y, is about designing and building websites and web apps that disabled people can interact with in a meaningful and equivalent way.
 
 This course is created for beginner and advanced web developers.
 You can go through the series from start to finish
