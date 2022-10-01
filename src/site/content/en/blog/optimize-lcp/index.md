@@ -355,7 +355,7 @@ While image CDNs are a great way to reduce resource load times, using a third-pa
 
 #### Reduce contention for network bandwidth
 
-Even if you've reduced the size of your resource and the distance it has to travel, a resource can still take a long time to load if you're loading many other resources at the same time. This problem is know as _network contention_.
+Even if you've reduced the size of your resource and the distance it has to travel, a resource can still take a long time to load if you're loading many other resources at the same time. This problem is known as _network contention_.
 
 If you've given your LCP resource a [high `fetchpriority`](/priority-hints/) and [started loading it as soon as possible](#1-eliminate-resource-load-delay) then the browser will do its best to prevent lower-priority resources from competing with it. However, if you're loading many resources with high `fetchpriority`, or if you're just loading a lot of resources in general, then it could affect how quickly the LCP resource loads.
 
