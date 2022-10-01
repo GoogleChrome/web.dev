@@ -252,8 +252,6 @@ occur for unknown reasons.
   <cite>Oliver</cite>
 </blockquote>
 
-Read a short [article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html) or watch a [video](https://youtu.be/3-MzNPcEh6M) on face blindness (prosopagnosia).
-
 {% endDetails %}
 
 {% Details %}
