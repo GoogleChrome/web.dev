@@ -277,7 +277,20 @@ sounds needed to communicate with others.
 * _Pain points_: Voice-activated technology such as smart home devices and apps.
 
 <blockquote>
-  <p>"My son has a lisp due to dyspraxia. He will say “seep” rather than “sheep” or “fower” rather than “flower”. It is sweet but he gets so frustrated by voice activated software. One example is our new car uses voice activation to interact with a phone. Often if we are together my husband will send us a WhatsApp message. The car will read it out but when it asks us if we want to reply my son's reply is not understood. He gets so upset he now whispers the message to me so I can say it for the reply."</p>
+  <p>"My son has a lisp due to dyspraxia.
+He will say "seep" rather than "sheep" or
+"fower" rather than "flower". It is sweet,
+but he gets so frustrated by voice-activated
+software.</p>
+<p>Our new car uses voice activation to
+interact with a phone. Often if we are
+together, my husband will send us a
+WhatsApp message. The car will read it
+out loud, but when it asks us if we want
+to reply, my son's reply is not understood.
+He gets so upset... he now whispers the
+message to me so I can say it for the
+reply."</p>
   <cite>Helen</cite>
 </blockquote>
 
