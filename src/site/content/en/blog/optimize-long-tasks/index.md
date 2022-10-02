@@ -1,15 +1,16 @@
 ---
 title: Optimize long tasks
 subhead: |
-  You've been told: "don't block the main thread" and "break up your long tasks", but what does it mean to do those things? Find out in this article.
+  You've been told to "don't block the main thread" and "break up your long tasks", but what does it mean to do those things?
 authors:
   - jlwagner
 date: 2022-09-30
+updated: 2022-10-03
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/MpP0GrDpLMztUsdMocP9.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Eup7oLu7L0bglCH4YPGq.jpg
-alt: A photograph of a spool of purple thread, with the thread unraveled to the right until it goes out of the frame.
+alt: A photograph of a spool of purple thread unraveling to the right until it goes out of the frame.
 description: |
-  You've been told to "don't block the main thread" and "break up your long tasks", but what does it mean to do those things? Find out in this article.
+  You've been told to "don't block the main thread" and "break up your long tasks", but what does it mean to do those things?
 tags:
   - blog
   - performance
@@ -23,11 +24,11 @@ If you read lots of stuff about web performance, the advice for keeping your Jav
 
 What does any of that mean? Shipping _less_ JavaScript is good, but does that automatically equate to snappier user interfaces throughout the page lifecycle? Maybe, but maybe not.
 
-To get your head around why it's important to optimize tasks in JavaScript, you need to understand the role of tasks and how the browser handles them—and that starts with understanding what a task is.
+To get your head around why it's important to optimize tasks in JavaScript, you need to understand the role of tasks and how the browser handles them&mdash;and that starts with understanding what a task is.
 
 ## What is a task?
 
-A _task_ is any discrete piece of work that the browser does. Tasks involve work such as rendering, parsing HTML and CSS, running the JavaScript code you write, and other things you may not have direct control over. But the JavaScript you write and deploy to the web is a major source of tasks.
+A _task_ is any discrete piece of work that the browser does. Tasks involve work such as rendering, parsing HTML and CSS, running the JavaScript code you write, and other things you may not have direct control over. Of all of this, the JavaScript you write and deploy to the web is a major source of tasks.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/xTKRUAedOdL0VQIZalRL.png", alt="A screenshot of a task as depicted in the performance profliler of Chrome's DevTools. The task is at the top of a stack, with a click event handler, a function call, and more items beneath it.", width="800", height="181" %}
@@ -36,22 +37,22 @@ A _task_ is any discrete piece of work that the browser does. Tasks involve work
   </figcaption>
 </figure>
 
-Tasks impact performance in a couple of ways. For example, when a browser downloads a JavaScript file during startup, it queues tasks to parse and compile that JavaScript so it can be executed. Later on in the page lifecycle, tasks are kicked off when your JavaScript does work such as driving interactions through event handlers, JavaScript-driven animations, and background activity such as analytics collection. All of this stuff—with the exception of [web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) and similar APIs—happens on the main thread.
+Tasks impact performance in a couple of ways. For example, when a browser downloads a JavaScript file during startup, it queues tasks to parse and compile that JavaScript so it can be executed. Later on in the page lifecycle, tasks are kicked off when your JavaScript does work such as driving interactions through event handlers, JavaScript-driven animations, and background activity such as analytics collection. All of this stuff&mdash;with the exception of [web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) and similar APIs&mdash;happens on the main thread.
 
 ## What is the main thread?
 
-The _main thread_ is where most tasks are run in the browser. Although the main thread is far from the only thread the browser uses, it's called the main thread for a reason: it's the one thread where nearly all the JavaScript you write does its work.
+The _main thread_ is where most tasks are run in the browser. It's called the main thread for a reason: it's the one thread where nearly all the JavaScript you write does its work.
 
-The main thread can only take on one task at a time. When tasks stretch beyond a certain point—50 milliseconds to be exact—they're classified as _long tasks_. If the user is attempting to interact with the page while a long task is running, or if an important rendering update needs to happen, the page will be delayed in handling that work, resulting in interaction or rendering latency.
+The main thread can only process one task at a time. When tasks stretch beyond a certain point&mdash;50 milliseconds to be exact&mdash;they're classified as _long tasks_. If the user is attempting to interact with the page while a long task runs&mdash;or if an important rendering update needs to happen&mdash;the browser will be delayed in handling that work. This results in interaction or rendering latency.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/DWuk5yucTPHslv8osoI2.png", alt="A long task in the performance profiler of Chrome's DevTools. The blocking portion of the task (greater than 50 milliseconds) is depicted with a pattern of red diagonal stripes.", width="800", height="179" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/NOVR7JgJ8sMM7Fhc0tzo.png", alt="A long task in the performance profiler of Chrome's DevTools. The blocking portion of the task (greater than 50 milliseconds) is depicted with a pattern of red diagonal stripes.", width="800", height="179" %}
   <figcaption>
     A long task as depicted in Chrome's performance profiler. Long tasks are indicated by a red triangle in the corner of the task, with the blocking portion of the task filled in with a pattern of diagonal red stripes.
   </figcaption>
 </figure>
 
-What you want is to _break up_ tasks. This means taking a single, long task and dividing it into smaller tasks that take less time to run individually.
+You need to _break up_ tasks. This means taking a single long task and dividing it into smaller tasks that take less time to run individually.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8Bhl9Ilki4tM0aC1nfn8.png", alt="A single long task versus the same task broken up into shorter task. The long task is one large rectangle, whereas the chunked task is five smaller boxes which are collectively the same width as the long task.", width="800", height="242" %}
@@ -60,7 +61,7 @@ What you want is to _break up_ tasks. This means taking a single, long task and 
   </figcaption>
 </figure>
 
-The reason this matters is because when tasks are broken up, the browser has more of an opportunity to respond to higher-priority work—including user interactions.
+This matters because when tasks are broken up, the browser has more opportunities to respond to higher-priority work&mdash;and that includes user interactions.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/0yV0ynwW7FujIwvCbCxQ.png", alt="A depiction of how breaking up a task can facilitate a user interaction. At the top, a long task blocks an event handler from running until the task is finished. At the bottom, the chunked up task permits the event handler to run sooner than it otherwise would have.", width="800", height="448" %}
@@ -69,13 +70,13 @@ The reason this matters is because when tasks are broken up, the browser has mor
   </figcaption>
 </figure>
 
-In the preceding figure at the top, an event handler queued up by a user interaction had to wait for a single long task before it could run, delaying the interaction. At the bottom, the event handler has a chance to run sooner. Because that event handler had an opportunity to run in between smaller tasks, it runs sooner than if it had to wait for one big task to complete. In the top example, the user might have noticed lag; in the bottom, the interaction might have felt _instant_.
+At the top of the preceding figure, an event handler queued up by a user interaction had to wait for a single long task before it could run, This delays the interaction from taking place. At the bottom, the event handler has a chance to run sooner. Because the event handler had an opportunity to run in between smaller tasks, it runs sooner than if it had to wait for a long task to finish. In the top example, the user might have noticed lag; in the bottom, the interaction might have felt _instant_.
 
-The problem, however, is that the typical advice of "break up your long tasks" and "don't block the main thread" isn't specific enough, unless you already know _how_ to do those things. That's exactly what this guide will explain.
+The problem, though, is that the advice of "break up your long tasks" and "don't block the main thread" isn't specific enough unless you already know _how_ to do those things. That's what this guide will explain.
 
 ## Task management strategies
 
-One of the best pieces of advice you can follow in software architecture is to break up your work into little functions that do discrete things. This gives you the benefits of better code readability, project maintainability, and makes tests easier to write.
+A common bit of advice in software architecture is to break up your work into smaller functions. This gives you the benefits of better code readability, and project maintainability. This also makes tests easier to write.
 
 ```js
 function saveSettings () {
@@ -92,7 +93,7 @@ In this example, there's a function named `saveSettings()` that calls five funct
 The problem, however, is that JavaScript doesn't run each of these functions as separate tasks because they are being executed within the `saveSettings()` function. **This means that all five functions run as a single task.**
 
 {% Aside 'important' %}
-JavaScript works this way because it uses the [run-to-completion model](https://developer.mozilla.org/docs/Web/JavaScript/EventLoop#run-to-completion) of task execution. This means that each task, when started, will run until it finishes, regardless of how long it blocks the main thread.
+JavaScript works this way because it uses the [run-to-completion model](https://developer.mozilla.org/docs/Web/JavaScript/EventLoop#run-to-completion) of task execution. This means that each task will run until it finishes, regardless of how long it blocks the main thread.
 {% endAside %}
 
 <figure>
@@ -102,11 +103,11 @@ JavaScript works this way because it uses the [run-to-completion model](https://
   </figcaption>
 </figure>
 
-This isn't good, because in the best case scenario, even just one of those functions can contribute 50 milliseconds or more to the total length of the task. In the worst case, you can imagine just how long those tasks can get—especially on resource-constrained devices, such as feature phones. What follows is a set of strategies you can use to break up and prioritize tasks.
+In the best case scenario, even just one of those functions can contribute 50 milliseconds or more to the total length of the task. In the worst case, more of those tasks can run quite a bit longer&mdash;especially on resource-constrained devices. What follows is a set of strategies you can use to break up and prioritize tasks.
 
 ### Manually defer code execution
 
-One method developers have used to break up tasks into smaller ones involves using `setTimeout`. With this approach, you pass the function to `setTimeout`, which postpones execution of the callback into a separate task—even if you specify a timeout of `0`.
+One method developers have used to break up tasks into smaller ones involves `setTimeout()`. With this technique, you pass the function to `setTimeout()`. This postpones execution of the callback into a separate task, even if you specify a timeout of `0`.
 
 ```js
 function saveSettings () {
@@ -133,19 +134,19 @@ function processData () {
 }
 ```
 
-Using `setTimeout` here is problematic, because the ergonomics of it make it difficult to implement, and the entire array of data could take a very long time to process, even if each item can be processed very quickly. In other words, it all adds up, and `setTimeout` isn't the right tool for the job—at least not when used this way.
+Using `setTimeout()` here is problematic, because the ergonomics of it make it difficult to implement, and the entire array of data could take a very long time to process, even if each item can be processed very quickly. It all adds up, and `setTimeout()` isn't the right tool for the job&mdash;at least not when used this way.
 
-In addition to `setTimeout`, there are a few other APIs that allow you to defer code execution to a subsequent task. One [involves using `postMessage` for faster timeouts](https://dbaron.org/log/20100309-faster-timeouts). You can also break up work using `requestIdleCallback`—but beware!—`requestIdleCallback` schedules tasks at the lowest possible priority, and only during browser idle time. When the main thread is congested, tasks scheduled with `requestIdleCallback` may never get to run.
+In addition to `setTimeout()`, there are a few other APIs that allow you to defer code execution to a subsequent task. One [involves using `postMessage()` for faster timeouts](https://dbaron.org/log/20100309-faster-timeouts). You can also break up work using `requestIdleCallback()`&mdash;but beware!&mdash;`requestIdleCallback()` schedules tasks at the lowest possible priority, and only during browser idle time. When the main thread is congested, tasks scheduled with `requestIdleCallback()` may never get to run.
 
 ### Use `async`/`await` to create yield points
 
-A phrase you'll see throughout the rest of this guide is "yield to the main thread"—but what does that mean? Why should you do it? When should you do it?
+A phrase you'll see throughout the rest of this guide is "yield to the main thread"&mdash;but what does that mean? Why should you do it? When should you do it?
 
 {% Aside 'important' %}
-When you _yield_ to the main thread, you're giving it an opportunity to handle more important tasks than the ones that are currently queued up. Ideally, you should yield to the main thread whenever you have some crucial user-facing work that needs to execute sooner than if you didn't yield. **Yielding to the main thread creates opportunities for critical work to run sooner.** Yielding to the main thread is accomplished by breaking up big tasks into smaller ones.
+When you _yield_ to the main thread, you're giving it an opportunity to handle more important tasks than the ones that are currently queued up. Ideally, you should yield to the main thread whenever you have some crucial user-facing work that needs to execute sooner than if you didn't yield. **Yielding to the main thread creates opportunities for critical work to run sooner.**
 {% endAside %}
 
-When tasks are broken up, other tasks can be prioritized better by the browser's internal prioritization scheme. One way to yield to the main thread involves using a combination of a `Promise` that resolves with a call to `setTimeout`:
+When tasks are broken up, other tasks can be prioritized better by the browser's internal prioritization scheme. One way to yield to the main thread involves using a combination of a `Promise` that resolves with a call to `setTimeout()`:
 
 ```js
 function yieldToMain () {
@@ -156,10 +157,10 @@ function yieldToMain () {
 ```
 
 {% Aside 'caution' %}
-While this code example returns a `Promise` that resolves after a call to `setTimeout`, it's not the `Promise` that is responsible for running the rest of the code in a new task, it's the `setTimeout` call. Promise callbacks run as [microtasks](https://developer.mozilla.org/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks_vs_microtasks) rather than tasks, and therefore don't yield to the main thread.
+While this code example returns a `Promise` that resolves after a call to `setTimeout()`, it's not the `Promise` that is responsible for running the rest of the code in a new task, it's the `setTimeout()` call. Promise callbacks run as [microtasks](https://developer.mozilla.org/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks_vs_microtasks) rather than tasks, and therefore don't yield to the main thread.
 {% endAside %}
 
-Then in the `saveSettings()` function, you can yield to the main thread after each bit of work if you `await` the `yieldToMain()` function after each function call:
+In the `saveSettings()` function, you can yield to the main thread after each bit of work if you `await` the `yieldToMain()` function after each function call:
 
 ```js
 async function saveSettings () {
@@ -187,7 +188,7 @@ async function saveSettings () {
 ```
 
 {% Aside 'important' %}
-You don't have to yield after _every_ function call. For example, if you run two functions that result in critical updates to the user interface, you probably don't want to yield in between them. If you can, let that work run _first_, then consider yielding in between functions that do less critical or background work that the user doesn't see.
+You don't have to yield after _every_ function call. For example, if you run two functions that result in critical updates to the user interface, you probably don't want to yield in between them. If you can, let that work run first, _then_ consider yielding in between functions that do less critical or background work that the user doesn't see.
 {% endAside %}
 
 The result is that the once-monolithic task is now broken up into separate tasks.
@@ -199,7 +200,7 @@ The result is that the once-monolithic task is now broken up into separate tasks
   </figcaption>
 </figure>
 
-The benefit of using a promise-based approach to yielding rather than manual use of `setTimeout` is better ergonomics. Yield points become declarative, and therefore easier to write, read, and understand.
+The benefit of using a promise-based approach to yielding rather than manual use of `setTimeout()` is better ergonomics. Yield points become declarative, and therefore easier to write, read, and understand.
 
 ### Yield only when necessary
 
@@ -207,7 +208,7 @@ What if you have a bunch of tasks, but you only want to yield if the user attemp
 
 `isInputPending()` is a function you can run at any time to determine if the user is attempting to interact with a page element: a call to `isInputPending()` will return `true`. It returns `false` otherwise.
 
-Say you have a queue of tasks you need to run, but you don't want to get in the way of any inputs, such as an attempt to open a navigation menu, for example. This code which uses both `isInputPending()` and our custom `yieldToMain()` function ensures that the input won't be delayed while the user is trying to interact with the page:
+Say you have a queue of tasks you need to run, but you don't want to get in the way of any inputs. This code&mdash;which uses both `isInputPending()` and our custom `yieldToMain()` function&mdash;ensures that an input won't be delayed while the user is trying to interact with the page:
 
 ```js
 async function saveSettings () {
@@ -236,7 +237,7 @@ async function saveSettings () {
 }
 ```
 
-While `saveSettings()` runs, it will loop over the tasks in the queue. If `isInputPending()` ever returns `true` during the loop, `saveSettings()` will call `yieldToMain()` so the user input can be handled. Otherwise, it will shift the next task off the front of the queue and run it continuously. It will do this until no more tasks are left.
+While `saveSettings()` runs, it will loop over the tasks in the queue. If `isInputPending()` returns `true` during the loop, `saveSettings()` will call `yieldToMain()` so the user input can be handled. Otherwise, it will shift the next task off the front of the queue and run it continuously. It will do this until no more tasks are left.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/snMl3kRlWyJjdbL0qsqM.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, in which case, the task yields to the main thread.", width="800", height="254" %}
@@ -249,9 +250,9 @@ While `saveSettings()` runs, it will loop over the tasks in the queue. If `isInp
 `isInputPending()` may not always return `true` immediately after user input. This is because it takes time for the operating system to tell the browser that the interaction occurred. This means that other code may have already started executing (as you can see with the `saveToDatabase()` function in the above screenshot). Even if you use `isInputPending()` it's still crucial that you limit the amount of work you do in each function.
 {% endAside %}
 
-`isInputPending()` in combination with a yielding mechanism is a great way to get the browser to stop whatever tasks it's processing on so that it can respond to critical user-facing interactions. That can help improve your page's ability to respond to the user in many situations when a lot of tasks are in flight.
+Using `isInputPending()` in combination with a yielding mechanism is a great way to get the browser to stop whatever tasks it's processing so that it can respond to critical user-facing interactions. That can help improve your page's ability to respond to the user in many situations when a lot of tasks are in flight.
 
-Another way to use `isInputPending()`—particularly if you're concerned about providing some kind of fallback for browsers that don't support it—is to use a time-based approach in conjunction with the [optional chaining operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Optional_chaining):
+Another way to use `isInputPending()`&mdash;particularly if you're concerned about providing a fallback for browsers that don't support it&mdash;is to use a time-based approach in conjunction with the [optional chaining operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Optional_chaining):
 
 ```js
 async function saveSettings () {
@@ -295,23 +296,23 @@ With this approach, you get a fallback for browsers that don't support `isInputP
 
 ## Gaps in current APIs
 
-The APIs mentioned thus far can help you break up tasks, but they have a significant downside: when you yield to the main thread by deferring code to run in a subsequent task, that code gets added to the very end of the task queue.
+The APIs mentioned so far can help you break up tasks, but they have a significant downside: when you yield to the main thread by deferring code to run in a subsequent task, that code gets added to the very end of the task queue.
 
 If you control all the code on your page, it's possible to create your own scheduler with the ability to prioritize tasks, but third-party scripts won't use your scheduler. In effect, you're not really able to _prioritize_ work in such environments. You can only chunk it up, or explicitly yield to user interactions.
 
-Fortunately, there is a native scheduler API that is currently in development that addresses these problems.
+Fortunately, there is a dedicated scheduler API that is currently in development that addresses these problems.
 
 ### A dedicated scheduler API
 
-The scheduler API currently offers the `postTask` method which, at the time of writing, is available in Chromium browsers and Firefox behind a flag. `postTask` allows for finer-grained scheduling of tasks, and is one way to help the browser prioritize work so that low priority tasks yield to the main thread. `postTask` uses promises, and accepts a `priority` setting to help with scheduling tasks.
+The scheduler API currently offers the `postTask()` function which, at the time of writing, is available in Chromium browsers and Firefox behind a flag. `postTask()` allows for finer-grained scheduling of tasks, and is one way to help the browser prioritize work so that low priority tasks yield to the main thread. `postTask()` uses promises, and accepts a `priority` setting.
 
-The `postTask` API has three priorities you can use:
+The `postTask()` API has three priorities you can use:
 
 - `'background'` for the lowest priority tasks.
 - `'user-visible'` for medium priority tasks. This is the default if no `priority` is set.
 - `'user-blocking'` for critical tasks that need to run at high priority.
 
-Take the following code as an example, where the `postTask` API is used to run the first two tasks at the highest possible priority, and the final three tasks at the lowest possible priority.
+Take the following code as an example, where the `postTask()` API is used to run three tasks at the highest possible priority, and the remaining two tasks at the lowest possible priority.
 
 ```js
 function saveSettings () {
@@ -332,7 +333,7 @@ function saveSettings () {
 };
 ```
 
-With this code sample, the priority of tasks is scheduled in such a way that browser-prioritized tasks—such as user interactions—can work their way in. 
+Here, the priority of tasks is scheduled in such a way that browser-prioritized tasks&mdash;such as user interactions&mdash;can work their way in. 
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ttvI1HqusI02CAdqhjWP.png", alt="The saveSettings function as depicted in Chrome's performance profiler, but using postTask. postTask splits up each function saveSettings runs, and prioritizes them such that a user interaction has a chance to run without being blocked.", width="800", height="256" %}
@@ -341,15 +342,15 @@ With this code sample, the priority of tasks is scheduled in such a way that bro
   </figcaption>
 </figure>
 
-This is a simplistic example of how `postTask` can be used. It's possible to instantiate different `TaskController` objects that can share priorities between tasks, including the ability to change priorities for different `TaskController` instances as needed.
+This is a simplistic example of how `postTask()` can be used. It's possible to instantiate different `TaskController` objects that can share priorities between tasks, including the ability to change priorities for different `TaskController` instances as needed.
 
 {% Aside 'important' %}
-[`postTask` is not supported in all browsers](https://caniuse.com/mdn-api_scheduler_posttask). You can use feature detection to see if it's available, or consider using [a polyfill](https://www.npmjs.com/package/scheduler-polyfill).
+[`postTask()` is not supported in all browsers](https://caniuse.com/mdn-api_scheduler_posttask). You can use feature detection to see if it's available, or consider using [a polyfill](https://www.npmjs.com/package/scheduler-polyfill).
 {% endAside %}
 
 ### Built-in yield with continuation
 
-One proposed part of the scheduler API that's not currently implemented in any browser is a built-in yield function. As it is currently proposed, its use would resemble the `yieldToMain()` function demonstrated earlier in this article:
+One proposed part of the scheduler API that's not currently implemented in any browser is a built-in yielding mechanism. Its use resembles the `yieldToMain()` function demonstrated earlier in this article:
 
 ```js
 async function saveSettings () {
@@ -377,7 +378,7 @@ async function saveSettings () {
 }
 ```
 
-You'll note that the code above is largely familiar, but instead of using `yieldToMain()`, you call and `await` the `scheduler.yield()` function instead.
+You'll note that the code above is largely familiar, but instead of using `yieldToMain()`, you call and `await scheduler.yield()` instead.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/fyuvJqAV0mLxfZDM9tAm.png", alt="Three diagrams depicting tasks without yielding, yielding, and with yielding and continuation. Without yielding, there are long tasks. With yielding, there are more tasks that are shorter, but may be interrupted by other unrelated tasks. With yielding and continuation, there are more tasks that are shorter, but their order of execution is preserved.", width="647", height="258" %}
@@ -390,12 +391,12 @@ The benefit of `scheduler.yield()` is continuation, which means that if you yiel
 
 ## Conclusion
 
-Managing tasks can be challenging, but doing so helps your page respond more quickly to user interactions. There's no one single piece of advice for managing and prioritizing tasks. Rather, it's a number of different techniques. To reiterate, these are the main things you'll want to consider when managing tasks:
+Managing tasks is challenging, but doing so helps your page respond more quickly to user interactions. There's no one single piece of advice for managing and prioritizing tasks. Rather, it's a number of different techniques. To reiterate, these are the main things you'll want to consider when managing tasks:
 
 - Yield to the main thread for critical, user-facing tasks.
 - Use `isInputPending()` to yield to the main thread when the user is trying to interact with the page.
 - Prioritize tasks with `postTask()`.
-- In addition to all of this, **keep your functions as short as possible.**
+- Finally, **do as little work as possible in your functions.**
 
 With one or more of these tools, you should be able to structure the work in your application so that it prioritizes the user's needs, while ensuring that less critical work still gets done. That's going to create a better user experience which is more responsive and more enjoyable to use.
 
