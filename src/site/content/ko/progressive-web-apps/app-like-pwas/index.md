@@ -13,7 +13,7 @@ tags:
   - capabilities
 ---
 
-Progressive Web App 버즈워드 빙고를 플레이할 때 "PWA는 웹사이트일 뿐입니다"로 설정하는 것이 안전합니다. Microsoft의 PWA 문서는 [동의하고](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/#progressive-web-apps-on-windows:~:text=PWAs%20are%20just%20websites), 우리는 바로 이 사이트에서 [말하고](/progressive-web-apps/#content:~:text=Progressive%20Web%20Apps,Websites) 있으며, 심지어 PWA 후보인 Frances Berriman과 Alex Russell도 [그렇게 씁니다](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/#post-2263:~:text=they%E2%80%99re%20just%20websites). PWA는 단순한 웹사이트 그 이상을 의미합니다. 제대로 수행되면 PWA는 웹사이트가 아니라 "실제" 앱처럼 느껴질 것입니다. 그렇다면 실제 앱처럼 느껴진다는 것은 무엇을 의미할까요?
+Progressive Web App 버즈워드 빙고를 플레이할 때 "PWA는 웹사이트일 뿐입니다"로 설정하는 것이 안전합니다. Microsoft의 PWA 문서는 이것에 [동의하고](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/#progressive-web-apps-on-windows:~:text=PWAs%20are%20just%20websites), 우리는 바로 이 사이트에서 [말하고](/progressive-web-apps/#content:~:text=Progressive%20Web%20Apps,Websites) 있으며, 심지어 PWA 후보인 Frances Berriman과 Alex Russell도 [그렇게 씁니다](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/#post-2263:~:text=they%E2%80%99re%20just%20websites). PWA는 단순한 웹사이트 그 이상을 의미합니다. 제대로 수행되면 PWA는 웹사이트가 아니라 "실제" 앱처럼 느껴질 것입니다. 그렇다면 실제 앱처럼 느껴진다는 것은 무엇을 의미할까요?
 
 이 질문에 답하기 위해 Apple [Podcasts](https://support.apple.com/en-us/HT201859) 앱을 예로 들어 보겠습니다. 데스크톱의 macOS와 모바일의 iOS(각각 iPadOS)에서 사용할 수 있습니다. Podcasts는 미디어 응용 프로그램이지만 도움말과 함께 설명하는 핵심 아이디어는 다른 범주의 응용 프로그램에도 적용됩니다.
 
