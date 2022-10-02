@@ -132,7 +132,7 @@ organs of the body.
 * _Pain points_: Elements that are only designed to work with the use of a mouse.
 
 <blockquote>
-  <p>"Accessibility isn't just for people with disabilities. I had elbow surgery and it temporarily changed how I managed my daily digital activities."</p>
+  <p>"Accessibility isn't just for people with disabilities. I had elbow surgery, and it temporarily changed how I managed my daily digital activities."</p>
   <cite>Melissa</cite>
 </blockquote>
 
