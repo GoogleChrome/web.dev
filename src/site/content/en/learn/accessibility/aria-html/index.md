@@ -39,7 +39,7 @@ tree.
   <p>
     "<a href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a>, 
     the Accessible Rich Internet Applications Suite, defines a way to make web
-    conent and web applications more accessible to people with disabilities. It
+    content and web applications more accessible to people with disabilities. It
     especially helps with dynamic content and advanced user interface controls
     developed with HTML, JavaScript, and related technologies."
   </p>
