@@ -2,8 +2,8 @@ setLeader: Test your knowledge of ARIA and HTML
 tabLabel: question
 questions:
   - type: multiple-choice
-    cardinality: "2"
-    correctAnswers: "0"
+    cardinality: "1"
+    correctAnswers: "2"
     stem: Which of the following is the best practice for building an accessible button?
     options:
       - content: '`<div id="saveChanges" aria-role="button" aria-pressed="false" tabindex="0">Go to shop</div>`'
