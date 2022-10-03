@@ -314,14 +314,14 @@ Rather than memorizing all these subtle differences, developers can use the
 measure FID, which handles these differences for you (where possible):
 
 ```js
-import {getFID} from 'web-vitals';
+import {onFID} from 'web-vitals';
 
 // Measure and log FID as soon as it's available.
-getFID(console.log);
+onFID(console.log);
 ```
 
 You can refer to [the source code for
-`getFID)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts)
+`onFID)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts)
 for a complete example of how to measure FID in JavaScript.
 
 {% Aside %}

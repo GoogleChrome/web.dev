@@ -432,15 +432,15 @@ Rather than memorizing and grappling with all of these cases yourself, developer
 measure CLS, which accounts for everything mentioned above:
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // Measure and log CLS in all situations
 // where it needs to be reported.
-getCLS(console.log);
+onCLS(console.log);
 ```
 
 You can refer to [the source code for
-`getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)
+`onCLS)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts)
 for a complete example of how to measure CLS in JavaScript.
 
 {% Aside %}

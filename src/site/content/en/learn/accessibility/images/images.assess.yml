@@ -1,0 +1,16 @@
+setLeader: Test your knowledge of ARIA and HTML
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,2"
+    stem: How can you make complex images accessible?
+    options:
+      - content: "Include an explanation later in the article."
+        rationale: "Not quite. This can be helpful, but only when used with a link to the longer description."
+      - content: "Use a link for longer explanations."
+        rationale: "This method is a good choice for anyone who might benefit from having this additional image information readily available on the screen, instead of buried in the code."
+      - content: 'Add the `aria-describedby` attribute to the image.'
+        rationale: "This method creates a strong association between the image and the full description."
+      - content: "Add longform alt text with a full description."
+        rationale: "Avoid using alt text in this instance, as it won’t be available to users without AT and may not be read in-full."

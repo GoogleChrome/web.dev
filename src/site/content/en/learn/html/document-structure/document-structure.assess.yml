@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of document-structure.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: How do you identify the language of the document?
+    options:
+      - content: "Add the `language` attribute to the HTML tag."
+        rationale: "Try again."
+      - content: "Add the `lang` attribute to the HTML tag."
+        rationale: "Correct!"
+      - content: "`Add the <lang>` element to the `<head>`."
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,2"
+    stem: Select elements that can be included in the `<head>`.
+    options:
+      - content: "`<p>`"
+        rationale: "Try again."
+      - content: "`<title>`"
+        rationale: "Correct!"
+      - content: "`<meta>`"
+        rationale: "Correct!"

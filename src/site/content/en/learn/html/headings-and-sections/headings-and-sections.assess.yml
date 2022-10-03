@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of headings and sections.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: What is the element used to contain the area of your site that includes the site logo or title, and main navigation.
+    options:
+      - content: "`<heading>`"
+        rationale: "Try again."
+      - content: "`<header>`"
+        rationale: "Correct!"
+      - content: "`<title>`"
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: How many `<main>` elements are allowed on a page?
+    options:
+      - content: "One."
+        rationale: "Correct!"
+      - content: "None. This isn't a vaid element."
+        rationale: "Try again."
+      - content: "As many as required as long as they have an accessible name."
+        rationale: "Try again."

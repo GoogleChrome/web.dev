@@ -9,7 +9,7 @@ description: |
   improve the navigation experience for users of assitive technology.
 ---
 
-{% include 'content/lighthouse-accessibility/why-headings.njk' %}
+{% include 'content/why-headings.njk' %}
 
 ## Use headings to outline the page
 

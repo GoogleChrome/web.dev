@@ -1401,7 +1401,7 @@
     "linkedin": "https://www.linkedin.com/in/malchata/",
     "homepage": "https://jlwagner.net/",
     "country": "US",
-    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/R2HoNXU2ROjJSpY0uIFB.jpg"
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YROiiX412sAFeV58NStI.jpg"
   },
   "cédricbazureau": {
     "github": "cbazureau",
@@ -1570,13 +1570,13 @@
     "linkedin": "https://www.linkedin.com/in/nikilmat/",
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/mc2N7pSjT8K7WBi8PR6L.jpeg"
   },
-  "jhey": {
+  "jheyy": {
     "country": "UK",
     "twitter": "jh3yy",
     "github": "jh3y",
     "linkedin": "https://www.linkedin.com/in/jheytompkins/",
     "homepage": "https://jhey.dev/links",
-    "image": "image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/JMkAJAgH01auU1FiapGg.jpeg"
+    "image": "image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/JjwUlxDMTmjyFEvBC8wG.jpeg"
   },
   "patrickkettner": {
     "country": "US",
@@ -1690,5 +1690,32 @@
   "ryunosukeakiba": {
     "country": "JP",
     "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/x1WXJeBxlPZftTHVnSmP.png"
+  },
+  "mmatuzo": {
+    "country": "AT",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/X3PNOGXB6wYGEqGEjoWd.jpeg",
+    "twitter": "mmatuzo"
+  },
+  "estelleweyl": {
+    "country": "US",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/tdK5bAeVqsW0WEJNyvUg.jpeg",
+    "twitter": "estellevw"
+  },
+  "davideast": {
+    "homepage": "https://davidea.st",
+    "twitter": "_davideast",
+    "image": "image/vS06HQ1YTsbMKSFTIPl2iogUQP73/S8CN1AfcJpoUJvYqrfeT.jpeg"
+  },
+  "cariefisher": {
+    "homepage": "https://cariefisher.com/",
+    "twitter": "cariefisher",
+    "country": "US",
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/eurEFMIkwaNmX7HpnGJg.png"
+  },
+  "superhighfives": {
+    "homepage": "https://charliegleason.com",
+    "twitter": "superhighfives",
+    "image": "image/vS06HQ1YTsbMKSFTIPl2iogUQP73/yFI6NAn66sh1FZF5yfFK.jpg",
+    "github": "https://github.com/superhighfives"
   }
 }

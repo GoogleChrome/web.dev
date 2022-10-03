@@ -181,7 +181,7 @@ Service Worker の `install` イベント中に、後で使用するためのカ
 
 #### 方法
 
-W3C の『[Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)』は最適な出発点です。アクセシビリティテストの大部分は手動で行う必要があります。Lighthouse の[アクセシビリティ](https://github.com/dequelabs/axe-core)監査、[axe](https://accessibilityinsights.io/)、[Accessibility Insights](/lighthouse-accessibility/) などのツールは、アクセシビリティテストを自動化するのに役立ちます。また、`a` や `button` 要素のように、意味的に正しい要素を独自に再作成せずに使用することも重要です。そうすることで、より高度な機能を構築する必要がある場合に、アクセシビリティへの期待を確実に満たすことができます（矢印とタブのどちらをいつ使用するかなど）。[A11Y Nutrition Cards](https://accessibilityinsights.io/) には、いくつかの一般的なコンポーネントについて、これに関する優れたアドバイスをていきょうしています。
+W3C の『[Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)』は最適な出発点です。アクセシビリティテストの大部分は手動で行う必要があります。Lighthouse の[アクセシビリティ](https://github.com/dequelabs/axe-core)監査、[axe](https://accessibilityinsights.io/)、[Accessibility Insights](https://developer.chrome.com/docs/lighthouse/accessibility/) などのツールは、アクセシビリティテストを自動化するのに役立ちます。また、`a` や `button` 要素のように、意味的に正しい要素を独自に再作成せずに使用することも重要です。そうすることで、より高度な機能を構築する必要がある場合に、アクセシビリティへの期待を確実に満たすことができます（矢印とタブのどちらをいつ使用するかなど）。[A11Y Nutrition Cards](https://accessibilityinsights.io/) には、いくつかの一般的なコンポーネントについて、これに関する優れたアドバイスをていきょうしています。
 
 {% endDetails %}
 
