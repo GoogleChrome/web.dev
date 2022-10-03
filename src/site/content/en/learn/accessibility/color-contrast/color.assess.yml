@@ -2,7 +2,7 @@ setLeader: Test your knowledge of color and contrast
 tabLabel: question
 questions:
   - type: multiple-choice
-    cardinality: "2"
+    cardinality: "1"
     correctAnswers: "3"
     stem: Color alone isn’t a sufficient identifier for documentation. What else will help readers identify UI elements?
     options:
