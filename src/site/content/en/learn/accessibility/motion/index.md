@@ -80,27 +80,39 @@ to allow users to control their experience. When the button is toggled to
  tab: 'js,result'
 } %}
 
-## Reduced motion media query
+## Use media queries
 
 In addition to being selective about your animations, giving your users options
-to pause, stop, hide movement, and avoiding infinite animation loops, you may
+to pause, stop, hide movement, and avoiding infinite animation loops, you can
 also consider adding a movement-focused media query. This gives your users even
 more choice when it comes to what is displayed on the screen.
 
-### Prefers reduced motion
+### `@prefers-reduced-motion` {: #prefers-reduced-motion}
 
 Similar to the color-focused media queries in the [color module](/learn/accessibility/color-contrast), the @prefers-reduced-motion media query checks the [user's OS settings](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion#user_preferences) related to animation.
 
 <figure>
-  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/THGrOrf3wJxPZWDJAcZx.png", alt="MacOS Display settings UI.", width="800", height="580" %}
-<figcaption>On MacOS, a user can set <strong>Reduce motion</strong> in Settings > Accessibility > Display. It's up to developers to build products which respect this setting.</figcaption>
+  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/THGrOrf3wJxPZWDJAcZx.png", alt="MacOS Display settings UI, where Reduce motion is turned on.", width="800", height="580" %}
 </figure>
 
-A user may set display preferences to reduce motion. With
-[@prefers-reduced-motion](/prefers-reduced-motion/), you can design a site
-which respects this preference.
+A user may set display preferences to reduce motion. These settings are
+different across operating systems, and may be framed positively or negatively.
+With [@prefers-reduced-motion](/prefers-reduced-motion/), you can design a site
+which respects these preferences.
 
 {% BrowserCompat 'css.at-rules.media.prefers-reduced-motion' %}
+
+On MacOS and Android, the user turns the setting on to reduce motion. On MacOS,
+a user can set **Reduce motion** in Settings > Accessibility > Display.
+Android's setting is **Remove animations**. On Windows, the setting is framed
+positively as **Show animations**, which is on by default. A user must turn
+this setting off to reduce motion.
+
+{% Aside %}
+As each UI uses different language, consider still [allowing users to choose for themselves](#allow-user-choice),
+rather than guessing how much animation is too much. This may differ on a
+situation-by-situation basis.
+{% endAside %}
 
 {% Codepen {
  user: 'web-dev-codepen-external',
@@ -135,7 +147,7 @@ following example, we default to no animation.
  tab: 'css,result'
 } %}
 
-### Layering media queries
+### Layered media queries
 
 You can use multiple media queries to give your users even more choices. Let's
 use `@prefers-color-scheme`, `@prefers-contrast`, and `@prefers-reduced-motion`
@@ -144,15 +156,21 @@ all together.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'wvjpOzR',
- height: 350,
+ height: 400,
  theme: 'auto',
  tab: 'css,result'
 } %}
 
-## Allow your users to choose
+## Allow your users to choose {: #allow-user-choice}
 
 While it can be fun to build animation into our digital products to delight
 users, it's critical we remember some people will be affected by these designs.
 Motion sensitivity can affect anyone, from feeling slight discomfort to causing 
-a debilitating illness or seizure. You can use a number of different tools to
-allow the user to decide what's best for them.
+a debilitating illness or seizure.
+
+You can use a number of different tools to allow the user to decide what's best
+for them, rather than guessing how much motion is too much. For example, add a
+toggle to turn on or off animation within your site or web app. Consider
+defaulting such a toggle to **off**.
+
+{% Assessment 'motion' %}
