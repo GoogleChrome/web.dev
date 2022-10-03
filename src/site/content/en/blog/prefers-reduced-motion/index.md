@@ -218,7 +218,7 @@ You can see the example below. Try toggling your device's motion preferences to 
   <img src="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/ipZALS4nnkUlleymYJXe.png" alt="Nyan cat" width="250" height="250">
 </picture>
 
-## Learning about a user's preferences at request time
+## Discover the user's preferences at request time
 
 The [`Sec-CH-Prefers-Reduced-Motion`](/user-preference-media-features-headers/) client hint header
 allows sites to obtain the user's motion preferences optionally at request time,
