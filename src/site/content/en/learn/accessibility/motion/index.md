@@ -83,14 +83,9 @@ to allow users to control their experience. When the button is toggled to
 ## Use media queries
 
 In addition to being selective about your animations, giving your users options
-to pause, stop, hide movement, and avoiding infinite animation loops, you may
+to pause, stop, hide movement, and avoiding infinite animation loops, you can
 also consider adding a movement-focused media query. This gives your users even
 more choice when it comes to what is displayed on the screen.
-
-{% Aside %}
-As each UI uses different language, consider [allowing users to choose for themselves](#allow-user-choice),
-rather than guessing how much animation is too much.
-{% endAside %}
 
 ### `@prefers-reduced-motion` {: #prefers-reduced-motion}
 
@@ -112,6 +107,12 @@ a user can set **Reduce motion** in Settings > Accessibility > Display.
 Android's setting is **Remove animations**. On Windows, the setting is framed
 positively as **Show animations**, which is on by default. A user must turn
 this setting off to reduce motion.
+
+{% Aside %}
+As each UI uses different language, consider still [allowing users to choose for themselves](#allow-user-choice),
+rather than guessing how much animation is too much. This may differ on a
+situation-by-situation basis.
+{% endAside %}
 
 {% Codepen {
  user: 'web-dev-codepen-external',
