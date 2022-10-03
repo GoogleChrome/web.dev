@@ -103,7 +103,7 @@ Android's setting is **Remove animations**. On Windows, the setting is framed
 positively as **Show animations**, which is on by default. A user must turn
 this setting off to reduce motion. With
 [@prefers-reduced-motion](/prefers-reduced-motion/), you can design a site
-which respects these preferences
+which respects these preferences.
 
 {% BrowserCompat 'css.at-rules.media.prefers-reduced-motion' %}
 
