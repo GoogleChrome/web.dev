@@ -12,7 +12,7 @@ description:
   minimized animations; for example people with vestibular disorders often desire animations to be
   kept to a minimum.
 date: 2019-03-11
-updated: 2022-09-07
+updated: 2022-09-30
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media-queries
@@ -217,6 +217,12 @@ You can see the example below. Try toggling your device's motion preferences to 
   <source srcset="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/5K63Q5tcQ3vLWAJWQfCp.gif" type="image/gif" media="(prefers-reduced-motion: no-preference)">
   <img src="https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/ipZALS4nnkUlleymYJXe.png" alt="Nyan cat" width="250" height="250">
 </picture>
+
+## Discover the user's preferences at request time
+
+The [`Sec-CH-Prefers-Reduced-Motion`](/user-preference-media-features-headers/) client hint header
+allows sites to obtain the user's motion preferences optionally at request time,
+allowing servers to inline the right CSS for performance reasons.
 
 ## Demo
 
