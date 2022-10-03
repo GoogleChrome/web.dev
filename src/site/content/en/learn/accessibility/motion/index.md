@@ -92,13 +92,18 @@ more choice when it comes to what is displayed on the screen.
 Similar to the color-focused media queries in the [color module](/learn/accessibility/color-contrast), the @prefers-reduced-motion media query checks the [user's OS settings](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion#user_preferences) related to animation.
 
 <figure>
-  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/THGrOrf3wJxPZWDJAcZx.png", alt="MacOS Display settings UI.", width="800", height="580" %}
-<figcaption>On MacOS, a user can set <strong>Reduce motion</strong> in Settings > Accessibility > Display. It's up to developers to build products which respect this setting.</figcaption>
+  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/THGrOrf3wJxPZWDJAcZx.png", alt="MacOS Display settings UI, where Reduce motion is turned on.", width="800", height="580" %}
 </figure>
 
-A user may set display preferences to reduce motion. With
+A user may set display preferences to reduce motion. These settings are different across operating systems, and may be framed positively or negatively.
+
+On MacOS and Android, the user turns the setting on to reduce motion. On MacOS,
+a user can set **Reduce motion** in Settings > Accessibility > Display.
+Android's setting is **Remove animations**. On Windows, the setting is framed
+positively as **Show animations**, which is on by default. A user must turn
+this setting off to reduce motion. With
 [@prefers-reduced-motion](/prefers-reduced-motion/), you can design a site
-which respects this preference.
+which respects these preferences
 
 {% BrowserCompat 'css.at-rules.media.prefers-reduced-motion' %}
 
@@ -111,6 +116,10 @@ which respects this preference.
 } %}
 
 Alternatively, as shown in the next set of examples, you can code all your animations to stop moving within five seconds or less instead of playing on an infinite loop.
+
+As each UI uses different language, consider adding a toggle to turn on or off
+animation within your site or web app, rather than guessing how much animation
+is too much.
 
 ### Progressive enhancement for movement
 
