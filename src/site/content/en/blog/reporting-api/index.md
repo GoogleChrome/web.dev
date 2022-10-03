@@ -516,28 +516,29 @@ Report-To: ...
 
 #### Keys (endpoint names)
 
-Each key can be a name of your choice, such as `main-endpoint` or `endpoint-1`. You can decide to
-set different named endpoints for different report types&mdash;for example, `my-coop-endpoint`,
-`my-csp-endpoint`. With this, you can route reports to different endpoints depending on their
-type.
+Each key can be a name of your choice, such as `main-endpoint` or `endpoint-1`.
+You can decide to set different named endpoints for different report
+types&mdash;for example, `my-coop-endpoint`, `my-csp-endpoint`. With this, you
+can route reports to different endpoints depending on their type.
 
-If you want to receive **intervention**, **deprecation** and/or **crash** reports, set an endpoint
-named `default`.
+If you want to receive **intervention**, **deprecation** and/or **crash**
+reports, set an endpoint named `default`.
+
+If the `Reporting-Endpoints` header defines no `default` endpoint, reports of this type will **not** be sent (although they will be generated).
 
 {% Aside 'gotchas' %}
-
-If the `Reporting-Endpoints` header defines no `default` endpoint, reports of this type will **not**
-be sent (although they will be generated).
-
-Despite its name, `default` is **not** a fallback endpoint. For example, if you set up `report-to my-endpoint` for `Document-Policy` and omit to define `my-endpoint` in `Reporting-Endpoints`,
-`Document-Policy` violations reports will be generated but will **not** be sent because the browser doesn't know where to send them to.
-
+Despite its name, <code>default</code> is <strong>not</strong> a fallback
+endpoint. For example, if you set up <code>report-to my-endpoint</code> for
+<code>Document-Policy</code> and omit to define <code>my-endpoint</code> in
+<code>Reporting-Endpoints</code>, <code>Document-Policy</code> violations
+reports will be generated but will <strong>not</strong> be sent because the
+browser doesn't know where to send them to.
 {% endAside %}
 
 #### Values (URLs)
 
-Each value is a URL of your choice, where the reports will be sent to; the URL to set here depends
-on what you've decided in Step 1.
+Each value is a URL of your choice, where the reports will be sent to. The URL
+to set here depends on what you decided in Step 1.
 
 An endpoint URL:
 
@@ -550,15 +551,19 @@ An endpoint URL:
 Reporting-Endpoints: my-coop-endpoint="https://reports.example/coop", my-csp-endpoint="https://reports.example/csp", default="https://reports.example/default"
 ```
 
-You can then use each named endpoint in the appropriate policy, or use one single endpoint across all policies.
+You can then use each named endpoint in the appropriate policy, or use one
+single endpoint across all policies.
 
 #### Where to set the header?
 
-In the new Reporting API&mdash;the one that is covered in this post&mdash; reports are scoped to **documents**.
-This means that for one given origin, different documents, such as `site.example/page1` and
+In the new Reporting API&mdash;the one that is covered in this
+post&mdash; reports are scoped to **documents**. This means that for one given
+origin, different documents, such as `site.example/page1` and
 `site.example/page2`, can send reports to different endpoints.
 
-To receive report for violations or deprecations take place on any page of your site, set the header as a middleware on all responses.
+To receive report for violations or deprecations take place on any page of your
+site, set the header as a middleware on all responses.
+
 Here's an example in Express:
 
 ```javascript
@@ -570,7 +575,7 @@ app.use(function (request, response, next) {
   // Set up the Reporting API
   response.set(
     'Reporting-Endpoints',
-    `main-endpoint="${REPORTING_ENDPOINT_MAIN}", default="${REPORTING_ENDPOINT_DEFAULT}"`,
+    'main-endpoint="${REPORTING_ENDPOINT_MAIN}", default="${REPORTING_ENDPOINT_DEFAULT}"',
   );
   next();
 });
@@ -585,19 +590,22 @@ to the new Reporting API, check the [migration guide](/reporting-api-migration).
 
 ### Edit your policies
 
-Now that the `Reporting-Endpoints` header is configured, add a `report-to` directive to each policy
-header for which you wish to receive violation reports. The value of `report-to` should be one of
-the named endpoints you've configured.
+Now that the `Reporting-Endpoints` header is configured, add a `report-to`
+directive to each policy header for which you wish to receive violation
+reports. The value of `report-to` should be one of the named endpoints you've
+configured.
 
-You can use the multiple endpoint for multiple policies, or use different endpoints across policies.
+You can use the multiple endpoint for multiple policies, or use different
+endpoints across policies.
 
-{% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/rqqhNNcLiTfrXXjiEHDU.png", alt="Diagram showing that
-for each policy, the value of report-to should be one of the named endpoints you've configured.",
-width="800", height="271" %}
+{% Img
+  src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/rqqhNNcLiTfrXXjiEHDU.png", alt="For each policy, the value of report-to should be one of the named endpoints you've configured.",
+  width="800", height="271"
+%}
 
-`report-to` is not needed for **deprecation**, **intervention** and **crash** reports. These reports
-aren't bound to any policy. They're generated as long as a `default` endpoint is set up and are sent
-to this `default` endpoint.
+`report-to` is not needed for **deprecation**, **intervention** and **crash**
+reports. These reports aren't bound to any policy. They're generated as long as
+a `default` endpoint is set up and are sent to this `default` endpoint.
 
 #### Example
 
@@ -619,9 +627,9 @@ the same header structure. Depending on the policy, the right syntax may be
 
 ### Example code
 
-To see all this in context, below is an example Node server that uses Express and brings together
-all the pieces discussed in this article. It shows how to configure reporting for several different
-report types and displays the results.
+To see all this in context, below is an example Node server that uses Express
+and brings together all the pieces discussed in this article. It shows how to
+configure reporting for several different report types and displays the results.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
@@ -643,9 +651,9 @@ generate reports of all types, check out the [demo](#demo-and-code).
 
 ### Save time
 
-Reports may be sent with a delay&mdash;about a minute, which is a _long_ time when debugging. 😴 Luckily,
-when debugging in Chrome, you can use the flag `--short-reporting-delay` to receive reports as soon
-as they're generated.
+Reports may be sent with a delay&mdash;about a minute, which is a _long_ time
+when debugging. 😴 Luckily, when debugging in Chrome, you can use the flag
+`--short-reporting-delay` to receive reports as soon as they're generated.
 
 Run this command in your terminal to turn on this flag:
 
@@ -653,9 +661,11 @@ Run this command in your terminal to turn on this flag:
 YOUR_PATH/TO/EXECUTABLE/Chrome --short-reporting-delay
 ```
 
-{% Aside 'gotchas' %} This flag is not available via the Chrome UI, it's a command line flag only.
-See [How to run Chromium with
-flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags). {% endAside %}
+{% Aside 'gotchas' %}
+This flag is not available via the Chrome UI, it's a command line flag only.
+Learn [how to run Chromium with
+flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
+{% endAside %}
 
 ### Use DevTools
 
@@ -749,9 +759,11 @@ If the report you expect does **not** show up in this list:
 
 What if you can see a report in DevTools, but your endpoint doesn't receive it?
 
-{% Aside 'gotchas' %} Because the report is sent out-of-band by the browser itself and not by a
-certain site, the `POST` requests containing the reports are not displayed in the **Network** panel of
-your Developer Tools. {% endAside %}
+{% Aside 'gotchas' %}
+Because the report is sent out-of-band by the browser itself and not by a
+certain site, the `POST` requests containing the reports are not displayed in
+the **Network** panel of your Developer Tools.
+{% endAside %}
 
 - Make sure to use [short delays](#save-time). Maybe the reason you can't see a report is because it
   hasn't been sent yet!
@@ -814,12 +826,16 @@ Endpoints configured in `Reporting-Endpoints` and specified in the `report-to` f
 [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) and
 [`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy), will receive reports when these policies are violated.
 
-Endpoints configured in `Reporting-Endpoints` can also be specified in the `report-to` field of
+Endpoints configured in `Reporting-Endpoints` can also be specified in the
+`report-to` field of
 [`Content-Security-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only),
 [`Cross-Origin-Embedder-Policy-Report-Only`](/coop-coep/#:~:text=If%20you%20prefer%20to%20receive%20reports%20without%20blocking%20any%20embedded%20content%20or%20without%20isolating%20a%20popup%20window%2C%20append%20-Report-Only%20to%20respective%20headers) and
-[`Cross-Origin-Opener-Policy-Report-Only`](/coop-coep/#:~:text=If%20you%20prefer%20to%20receive%20reports%20without%20blocking%20any%20embedded%20content%20or%20without%20isolating%20a%20popup%20window%2C%20append%20-Report-Only%20to%20respective%20headers); they'll also receive reports when these policies are violated.
+[`Cross-Origin-Opener-Policy-Report-Only`](/coop-coep/#:~:text=If%20you%20prefer%20to%20receive%20reports%20without%20blocking%20any%20embedded%20content%20or%20without%20isolating%20a%20popup%20window%2C%20append%20-Report-Only%20to%20respective%20headers).
+They'll also receive reports when these policies are violated.
 
-While reports are sent in both cases, `-Report-Only` headers do not enforce the policies: nothing will break or actually get blocked, but you will receive reports of what _would_ have broken or been blocked.
+While reports are sent in both cases, `-Report-Only` headers do not enforce the
+policies: nothing will break or actually get blocked, but you will receive
+reports of what _would_ have broken or been blocked.
 
 {% Aside %}
 If you're using a `-Report-Only` header and have configured your reporting endpoints via the legacy header `Report-To`, migrate to `Reporting-Endpoints` if you can. Read more in the [migration guide](/reporting-api-migration).
@@ -827,10 +843,11 @@ If you're using a `-Report-Only` header and have configured your reporting endpo
 
 ### `ReportingObserver`
 
-The [`ReportingObserver`](/reporting-observer) JavaScript API can help you observe client-side
-warnings.
+The [`ReportingObserver`](/reporting-observer) JavaScript API can help you
+observe client-side warnings.
 
-`ReportingObserver` and the `Reporting-Endpoints` header generate reports that look the same, but they enable slightly different uses cases.
+`ReportingObserver` and the `Reporting-Endpoints` header generate reports that
+look the same, but they enable slightly different uses cases.
 
 Use `ReportingObserver` if:
 
