@@ -1,8 +1,8 @@
 ---
 title: What is digital accessibility, and why does it matter?
 description: >
-  Digital accessibility is designing and building websites and web
-  apps so that disabled people can interact with in a meaningful
+  Learn how why it matters to design and build websites and web
+  apps so that disabled people can interact with them in a meaningful
   and equivalent way.
 authors:
   - cariefisher
