@@ -88,7 +88,7 @@ The other meta tag that should be considered essential is the [viewport](/learn/
 The preceding code means "make the site responsive, starting by making the width of the content the width of the screen". In addition to `width`, you can set zoom and scalability, but they both default to accessible values. If you want to be explicit, include:
 
 ```html  
-<meta name="viewport" content="width=device-width;initial-scale:1;user-scalable=1;">  
+<meta name="viewport" content="width=device-width, initial-scale:1, user-scalable=1">  
 ```
 
 Viewport is part of the [Lighthouse accessibility audit](/meta-viewport/); your site will pass if it is scalable and has no maximum size set.  
