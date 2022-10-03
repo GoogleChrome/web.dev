@@ -117,9 +117,11 @@ which respects these preferences
 
 Alternatively, as shown in the next set of examples, you can code all your animations to stop moving within five seconds or less instead of playing on an infinite loop.
 
+{% Aside %}
 As each UI uses different language, consider adding a toggle to turn on or off
 animation within your site or web app, rather than guessing how much animation
 is too much.
+{% endAside %}
 
 ### Progressive enhancement for movement
 
