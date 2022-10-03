@@ -171,3 +171,5 @@ You can use a number of different tools to allow the user to decide what's best
 for them, rather than guessing how much motion is too much. For example, add a
 toggle to turn on or off animation within your site or web app. Consider
 defaulting such a toggle to **off**.
+
+{% Assessment 'motion' %}

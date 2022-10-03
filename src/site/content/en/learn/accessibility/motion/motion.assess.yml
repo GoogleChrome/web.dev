@@ -1,0 +1,12 @@
+setLeader: Test your knowledge of motion and animation accessibility.
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What can we build which reflects the operating system settings for motion?
+    options:
+      - content: '`@prefers-reduced-motion`'
+        rationale: "Yes! This media query allows you to decide how much motion to used based on a user's Display settings."
+      - content: "JavaScript toggles"
+        rationale: "Not quite. Toggles allow the user to make a choice after arriving to your website, but cannot read the user's settings."
