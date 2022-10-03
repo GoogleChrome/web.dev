@@ -7,6 +7,7 @@ description: >
 authors:
   - cariefisher
 date: 2022-09-30
+updated: 2022-10-03
 ---
 
 Imagine a world where you couldn't buy a present for a friend because the
@@ -245,7 +246,9 @@ occur for unknown reasons.
 * _Frequency_: [50 million people worldwide have epilepsy](https://www.who.int/health-topics/epilepsy),
   and 1.8 million adults worldwide have
   [bilateral vestibular hypofunction](https://www.hopkinsmedicine.org/news/newsroom/news-releases/implant-improves-balance-movement-and-quality-of-life-for-people-with-inner-ear-disorder) (BVH).
-* _Tools include_: Operating system settings to reduce motion.
+* _Tools include_: Operating system settings to reduce motion. In Windows, this
+  setting is framed positively as **Show animation**, and is turned off. On
+  Android, the setting **Remove animations** is turned on.
 * _Pain points_: Videos that autoplay, extreme flashing or strobing of visual
   content, parallax effects, or scroll-triggered animations.
 
