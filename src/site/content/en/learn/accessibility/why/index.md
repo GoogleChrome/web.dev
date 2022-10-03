@@ -103,7 +103,9 @@ Use lowercase when referring to a vision-loss condition or to a blind person who
   <cite>Frank</cite>
 </blockquote>
      
-Read a short [article in the New York Times](https://www.nytimes.com/2022/08/16/opinion/blindness-retinitis-pigmentosa.html) or watch a [video](https://youtu.be/X04HKyW-3hc) on what it means to be legally blind.
+Read a short [article in the New York Times](https://www.nytimes.com/2022/08/16/opinion/blindness-retinitis-pigmentosa.html)
+or watch a [video](https://youtu.be/X04HKyW-3hc) on what it means to be
+legally blind.
 
 {% endDetails %}
 
@@ -252,8 +254,6 @@ occur for unknown reasons.
   <cite>Oliver</cite>
 </blockquote>
 
-Read a short [article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html) or watch a [video](https://youtu.be/3-MzNPcEh6M) on face blindness (prosopagnosia).
-
 {% endDetails %}
 
 {% Details %}
@@ -294,7 +294,9 @@ reply."</p>
   <cite>Helen</cite>
 </blockquote>
 
-Read a short [article in the New York Times](https://www.nytimes.com/2022/08/23/opinion/stutter-speech-listening.html) or watch a [video](https://youtu.be/m0E_wMIwfSI) on stuttering and technology.
+Read a short [article in the New York
+Times](https://www.nytimes.com/2022/08/23/opinion/stutter-speech-listening.html)
+or watch a [video](https://youtu.be/m0E_wMIwfSI) on stuttering and technology.
 
 {% endDetails %}
 
