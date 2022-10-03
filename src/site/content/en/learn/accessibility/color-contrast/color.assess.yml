@@ -4,13 +4,13 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "3"
-    stem: Color alone isn’t a sufficient identifier for documentation. What else will help readers identify UI elements?
+    stem: Color alone isn't a sufficient identifier for documentation. What else will help readers identify UI elements?
     options:
       - content: "Pattern"
-        rationale: "Not quite."
+        rationale: "Not quite. Patterns alone isn't enough to help a user identify a UI element."
       - content: "Text"
-        rationale: "Not quite."
+        rationale: "Not quite. Text alone may not be enough to help a user identify a UI element."
       - content: "Icon"
-        rationale: "Not quite."
+        rationale: "Not quite. An icon alone isn't enough to help a user identify a UI element."
       - content: "All of the above"
-        rationale: "Yes!"
+        rationale: "Yes! Two or more identifiers will help your user identify a UI element."
