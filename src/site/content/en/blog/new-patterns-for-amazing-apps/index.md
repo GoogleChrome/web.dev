@@ -41,7 +41,7 @@ or copying to the clipboard, which is the
 [Wordle](https://www.nytimes.com/games/wordle/index.html) when the Web Share API isn't implemented.
 Phew, barely got this one:
 
-```
+```text
 Wordle 471 6/6
 
 ⬛⬛⬛⬛🟨
