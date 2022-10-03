@@ -567,7 +567,7 @@ Priority Hints was first experimented with in Chrome as an origin trial in 2018 
 
 ## Browser compatibility
 
-As of this writing, Priority Hints are only available in Chromium-based browsers. Other browser engines or earlier versions of Chromium browsers will ignore the attribute and use their default prioritization heuristics. Until another browser implements Priority Hints, you may notice some references—[such as MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/fetchPriority)—mark this as [_Experimental_](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Experimental_deprecated_obsolete#experimental).
+As of this writing, Priority Hints are only available in Chromium-based browsers. Other browser engines or earlier versions of Chromium browsers will ignore the attribute and use their default prioritization heuristics. Until another browser implements Priority Hints, you may notice some references—[such as MDN](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority)—mark this as [_Experimental_](https://developer.mozilla.org/docs/MDN/Writing_guidelines/Experimental_deprecated_obsolete#experimental).
 
 ## Conclusion
 
