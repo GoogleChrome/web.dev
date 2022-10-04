@@ -20,8 +20,9 @@ tags:
 _This post highlights a community expert, as a part of [Learn Accessibility!](/learn/accessibility/)_
 
 {% Aside %}
-Read some recent articles by Melanie on [her process for accessibility testing](https://melsumner.github.io/accessibility-testing) and
-[getting started with accessibility](https://melsumner.github.io/getting-started-with-accessibility).
+Read some recent articles by Melanie on
+[her process for accessibility testing](https://melsumner.github.io/accessibility-testing)
+and [getting started with accessibility](https://melsumner.github.io/getting-started-with-accessibility).
 {% endAside %}
 
 **Alexandra White**: Thanks for joining me! Who you are and what you do?
@@ -44,7 +45,8 @@ wanted to do next, and it was time to turn my hobby into my career. In the last
 10 years, I've really focused on software engineering in the accessibility
 space, specifically. 
 
-**Alexandra**: You don't often hear, "Oh first I was a spy." No big deal. What brought you into accessibility work? 
+**Alexandra**: You don't often hear, "Oh first I was a spy." No big deal. What
+brought you into accessibility work? 
 
 **Melanie**:  I was working at the University of North Carolina [UNC] Chapel
 Hill at the time, in the Department of Development. They don't mean development
@@ -122,6 +124,11 @@ really great outcome for the web.
 
 ## How to fund accessibility
 
+{% Aside 'codelab' %}
+Learn about the [business impact](/learn/accessibility/why/#business-impact) of
+building accessible websites.
+{% endAside %}
+
 **Alexandra**: I was really drawn to
 [pleasefunda11y.com](http://pleasefunda11y.com). It's really important to get
 developers to learn how to build accessible sites, but they won't always have
@@ -145,11 +152,6 @@ accessibility on the web forward in a really significant way. It's a very small
 spend by comparison to other web efforts, and it would have a huge impact on
 people's lives.
 
-{% Aside 'codelab' %}
-Learn about the [business impact](/learn/accessibility/why/#business-impact) of
-building accessible websites.
-{% endAside %}
-
 The current way of thinking is often, "Well, how many people have a
 disability?" It should be: "What is any person's relationship to their
 technology?"
@@ -157,6 +159,38 @@ technology?"
 And some folks have told me, "Well, I don't think color blindness is a
 disability." You may not identify yourself as having a disability if you're
 colorblind, but it does affect your relationship with technology. 
+
+<figure>
+<ul class="stats bg-state-info-bg color-state-info-text">
+  <div class="stats__item">
+    <p class="stats__figure">
+      15
+      <sub>%</sub>
+    </p>
+    <p>people self-identify as disabled.</p>
+    <p><sub><a href="https://www.who.int/teams/noncommunicable-diseases/sensory-functions-disability-and-rehabilitation/world-report-on-disability" aria-label="View the statistic source, WHO.">Source</a></sub></p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      253 
+      <sub>m</sub>
+    </p>
+    <p>people with visual impairments.</p>
+    <p><sub><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5820628/" aria-label="View the statistic source, National Library of Medicine.">Source</a></sub></p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      39
+    </p>
+    <p>countries with web accessibility law.</p>
+    <p><sub><a href="https://www.w3.org/WAI/policies/" aria-label="View the statistic source, Web Accessibility Intiative.">Source</a></sub></p>
+  </div>
+</ul>
+<figcaption>
+  Learn more about the statistics in Learn Accessibility's first module:
+  <a href="/learn/accessibility/why/">What is digital accessibility, and why does it matter?</a>
+</figcaption>
+</figure>
 
 **Alexandra**: Tell me more about understanding your relationship with
 technology. How does that relate to accessibility?
@@ -170,7 +204,7 @@ We have whole companies that do devops, and if you try to use some of those
 websites, you're like, "Oh my god," you know? We try to pack the kitchen sink
 into all of our interfaces these days.
 
-**Alexandra**: [Laughs]
+**Alexandra**: Can you share an example?
 
 **Melanie**: For example, GitHub has dropdowns with nested tabs. And
 [exasperated sigh]. I can't get upset (even if I'm frustrated). The modern web
@@ -223,8 +257,8 @@ When I got out of the military, I wanted to go into security. I went to an
 infosec meetup, and didn't see any other woman there. One of the older guys
 looked at me and said, "Are you sure you're in the right room, sweetheart?"
 
-**Alexandra**: [Groans] It hurts. And it's completely unsurprising. I've been
-there.
+**Alexandra**: [Groans] It hurts. And it's completely unsurprising. I've
+experienced something similar.
 
 **Melanie**: I want to say this was 2011, maybe 2012? The landscape has changed
 a lot. I stayed that night, through that meetup, to prove a point. I wasn't
@@ -281,38 +315,6 @@ semantic HTML instead of just divs, and you'll use headings. You'll choose a
 `<button>` instead of adding a click event to a `<div>`, and you'll get
 performance enhancements.
 
-<figure>
-<ul class="stats bg-state-info-bg color-state-info-text">
-  <div class="stats__item">
-    <p class="stats__figure">
-      15
-      <sub>%</sub>
-    </p>
-    <p>people self-identify as disabled.</p>
-    <p><a href="https://www.who.int/teams/noncommunicable-diseases/sensory-functions-disability-and-rehabilitation/world-report-on-disability" aria-label="View the statistic source, WHO.">Source</a></p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">
-      253 
-      <sub>mil</sub>
-    </p>
-    <p>people with visual impairments.</p>
-    <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5820628/" aria-label="View the statistic source, National Library of Medicine.">Source</a></p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">
-      39
-    </p>
-    <p>countries with web accessibility law.</p>
-    <p><a href="https://www.w3.org/WAI/policies/" aria-label="View the statistic source, Web Accessibility Intiative.">Source</a></p>
-  </div>
-</ul>
-<figcaption>
-  Learn more about the statistics in Learn Accessibility's first module:
-  <a href="/learn/accessibility/why/">What is digital accessibility, and why does it matter?</a>
-</figcaption>
-</figure>
-
 ## Do one thing: automate accessibility
 
 **Alexandra**: What's one thing web developers should do to build accessible
@@ -326,14 +328,11 @@ Some things can't be automated, because AI can't yet decipher intent. For
 example, an image's alt text value should be _meaningful_, but what does that
 actually mean? Right now, a human needs to discern that, and not automation.
 
-But an automated tool can tell you, "You're not passing color contrast." Just
+But an automated tool can tell you, "You're not passing
+[color contrast](/learn/accessibility/color-contrast/)." Just
 fix it. Don't fight it, don't say, "But I don't want to, I prefer it this way."
 This is not about you. It's about making what we do available for everyone in
 the world every day.
-
-{% Aside 'codelab' %}
-Take the Learn Accessibility module [Color and contrast](/learn/accessibility/color-contrast/).
-{% endAside %}
 
 Accessibility is a journey, and you're always going to be learning. I've been
 specializing in accessibility for over a decade, and I'm still learning new
