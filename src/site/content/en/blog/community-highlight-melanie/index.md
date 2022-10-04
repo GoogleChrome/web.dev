@@ -270,13 +270,46 @@ plan for?
 **Alexandra**: Accessibility is a civil right. That gives me chills! It
 should just be a thing we all know as truth.
 
-**Melanie**: I've had people say uninformed things to me, like "I wouldn't use the internet if I was blind." Or, "Why do I have to think about disabilities when it's only 5% of my users, when it's working for 90% of my users?" I won't have those discussions, because they're often used to distract from the work.
+**Melanie**: I've had people say uninformed things to me, like "I wouldn't use
+the internet if I was blind." Or, "Why do I have to think about disabilities
+when it's only 5% of my users, when it's working for 90% of my users?" I won't
+have those discussions, because they're often used to distract from the work.
 
 When you write accessible code, you're going to get performance boosts because
 you're thinking about building sites informed by W3C specs. You'll use the
 semantic HTML instead of just divs, and you'll use headings. You'll choose a
 `<button>` instead of adding a click event to a `<div>`, and you'll get
-  performance enhancements.
+performance enhancements.
+
+<figure>
+<ul class="stats bg-state-info-bg color-state-info-text">
+  <div class="stats__item">
+    <p class="stats__figure">
+      15
+      <sub>%</sub>
+    </p>
+    <p>of the world self-identifies as disable.</p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      253 
+      <sub>million</sub>
+    </p>
+    <p>people with visual impairments.</p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      $490
+      <sub>billion</sub>
+    </p>
+    <p>annual after-tax disposable income of Americans with disabilities.</p>
+  </div>
+</ul>
+<figcaption>
+  Learn more about the statistics in Learn Accessibility's first module:
+  <a href="/learn/accessibility/why/">What is digital accessibility, and why does it matter?</a>
+</figcaption>
+</figure>
 
 ## Do one thing: automate accessibility
 
