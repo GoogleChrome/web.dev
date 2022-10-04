@@ -575,7 +575,7 @@ app.use(function (request, response, next) {
   // Set up the Reporting API
   response.set(
     'Reporting-Endpoints',
-    'main-endpoint="${REPORTING_ENDPOINT_MAIN}", default="${REPORTING_ENDPOINT_DEFAULT}"',
+    `main-endpoint="${REPORTING_ENDPOINT_MAIN}", default="${REPORTING_ENDPOINT_DEFAULT}"`,
   );
   next();
 });
