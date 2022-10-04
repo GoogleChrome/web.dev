@@ -116,8 +116,8 @@ built-in password-management features.
       <input id="email" name="email" type="email" autocomplete="username" required autofocus>
     </section>
     <section>        
-      <label for="current-password">Password</label>
-      <input id="password" name="password" type="password" autocomplete="new-password" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
     </section>
     <button id="sign-in">Sign in</button>
   </form>
