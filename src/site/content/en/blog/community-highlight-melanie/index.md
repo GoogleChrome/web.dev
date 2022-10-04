@@ -294,7 +294,7 @@ performance enhancements.
   <div class="stats__item">
     <p class="stats__figure">
       253 
-      <sub>million</sub>
+      <sub>mil</sub>
     </p>
     <p>people with visual impairments.</p>
     <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5820628/" aria-label="View the statistic source, National Library of Medicine.">Source</a></p>
