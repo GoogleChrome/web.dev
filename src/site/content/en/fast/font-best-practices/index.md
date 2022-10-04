@@ -131,13 +131,13 @@ stylesheet to download.
 ```
 
 {% Aside %}
-    If only some of the CSS is inlined, then the browser will still need to wait for all the CSS to be loaded, before it can discover if fonts are needed.
-
-    Inlining the font files themselves is not recommended. Inlining large resources like fonts is likely to delay the delivery of the main document, and with it, the discovery of other resources.
+    Note that if only some of the CSS is inlined, then the browser will still need to wait for all the CSS to be loaded, before it can discover if fonts are needed.<br>
+    <br>
+    Also note that inlining the font files themselves is not recommended. Inlining large resources like fonts is likely to delay the delivery of the main document, and with it, the discovery of other resources.
 {% endAside %}
 
 
-Note that inlining critical CSS can be a more advanced technique that not all sites will be able to achieve. The performance benefits are clear, but it requires additional processes and build tools to ensure the necessarily CSS—and ideally only the critical CSS—is inlined correctly and that any additional CSS is delivered in a non-render blocking fashion.
+Inlining critical CSS can be a more advanced technique that not all sites will be able to achieve. The performance benefits are clear, but it requires additional processes and build tools to ensure the necessarily CSS—and ideally only the critical CSS—is inlined correctly and that any additional CSS is delivered in a non-render blocking fashion.
 
 ### Preconnect to critical third-party origins
 
@@ -278,9 +278,9 @@ Given the browser support, experts now recommend only using WOFF2:
 
 <blockquote>
   <p>
-    In fact, we think it is also time to proclaim: Use only WOFF2 and forget about everything else.<br><br>
-
-    This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now supported everywhere. So, unless you need to support really ancient browsers, just use WOFF2. If you can’t, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
+    In fact, we think it is also time to proclaim: Use only WOFF2 and forget about everything else.<br>
+    <br>
+    This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now supported everywhere. So, unless you need to support really ancient browsers, just use WOFF2. If you can't, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
   </p>
   <cite>
     <a href="https://almanac.httparchive.org/en/2022/fonts#performance">Bram Stein, from the 2022 Web Almanac</a>
