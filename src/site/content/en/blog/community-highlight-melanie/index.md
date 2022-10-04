@@ -3,9 +3,9 @@ layout: post
 title: 'Community highlight: Melanie Sumner'
 authors: 
   - alexandrawhite
-hero: image/VbsHyyQopiec0718rMq2kTE1hke2/47JeuiQdxypVbW87NnSB.svg
-alt: 'Learn Accessibility!'
-thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/47JeuiQdxypVbW87NnSB.svg
+hero: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
+alt: 'Learn Accessibility! Community highlight.'
+thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
 subhead: >
   Melanie Sumner is a software engineer, specializing in digital accessibility. We talked about her path to engineering, accessible design, Ember.js, and the importance of funding these efforts.
 description: >
@@ -341,4 +341,9 @@ things all the time!  Don't be defensive, just do it.
 
 <hr />
 
-Keep up with Melanie's work on her website at [melanie.codes](https://melanie.codes) and Twitter [@a11yMel](https://twitter.com/a11yMel). Check out her accessibility resources on [pleasefunda11y.com](https://pleasefunda11y.com), [a11y-info.com](https://a11y-info.com), and [a11y-automation.dev](https://a11y-automation.dev).
+Keep up with Melanie's work on her website at
+[melanie.codes](https://melanie.codes) and Twitter
+[@a11yMel](https://twitter.com/a11yMel). Check out her accessibility resources
+on [pleasefunda11y.com](https://pleasefunda11y.com),
+[a11y-info.com](https://a11y-info.com), and
+[a11y-automation.dev](https://a11y-automation.dev).
