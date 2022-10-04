@@ -19,19 +19,19 @@ tags:
 
 _This post highlights a community expert, as a part of [Learn Accessibility!](/learn/accessibility/)_
 
-<figure data-float="left">
-{% Img
-  src="image/VbsHyyQopiec0718rMq2kTE1hke2/j1ZYEFXC0JsAlpQsswJX.png", alt="Melanie Sumner's headshot.",
-  width="800", height="800"
-%}
-</figure>
-
 {% Aside %}
 Read some recent articles by Melanie on [her process for accessibility testing](https://melsumner.github.io/accessibility-testing) and
 [getting started with accessibility](https://melsumner.github.io/getting-started-with-accessibility).
 {% endAside %}
 
 **Alexandra White**: Thanks for joining me! Who you are and what you do?
+
+<figure data-float="right">
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/j1ZYEFXC0JsAlpQsswJX.png", alt="Melanie Sumner's headshot.",
+  width="350", height="350"
+%}
+</figure>
 
 **Melanie Sumner**: My name is Melanie Sumner and I am a software engineer
 specializing in digital accessibility. I've been writing code for the web for
@@ -288,7 +288,8 @@ performance enhancements.
       15
       <sub>%</sub>
     </p>
-    <p>of the world self-identifies as disable.</p>
+    <p>people self-identify as disabled.</p>
+    <p><a href="https://www.who.int/teams/noncommunicable-diseases/sensory-functions-disability-and-rehabilitation/world-report-on-disability" aria-label="View the statistic source, WHO.">Source</a></p>
   </div>
   <div class="stats__item">
     <p class="stats__figure">
@@ -296,13 +297,14 @@ performance enhancements.
       <sub>million</sub>
     </p>
     <p>people with visual impairments.</p>
+    <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5820628/" aria-label="View the statistic source, National Library of Medicine.">Source</a></p>
   </div>
   <div class="stats__item">
     <p class="stats__figure">
-      $490
-      <sub>billion</sub>
+      39
     </p>
-    <p>annual after-tax disposable income of Americans with disabilities.</p>
+    <p>countries with web accessibility law.</p>
+    <p><a href="https://www.w3.org/WAI/policies/" aria-label="View the statistic source, Web Accessibility Intiative.">Source</a></p>
   </div>
 </ul>
 <figcaption>
