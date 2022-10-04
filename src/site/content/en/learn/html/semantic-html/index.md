@@ -150,7 +150,7 @@ Go back to the screenshot of the AOM for the non-semantic code block. You'll not
 
 ```html
 <div role="banner">
-    <span role=header aria-level="1">Three words</span>
+    <span role="heading" aria-level="1">Three words</span>
     <div role="navigation">
       <a>one word</a>
       <a>one word</a>

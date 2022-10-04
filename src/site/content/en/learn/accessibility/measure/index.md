@@ -4,7 +4,7 @@ authors:
   - cariefisher
 description: >
   Introduction to measuring accessibility of digital products so that
-  everyone, including people with disabilies, can still interact in
+  everyone, including people with disabilities, can still interact in
   a meaningful and equal way.
 date: 2022-09-30
 tags:
