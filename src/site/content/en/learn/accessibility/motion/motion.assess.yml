@@ -7,6 +7,6 @@ questions:
     stem: What can we build which reflects the operating system settings for motion?
     options:
       - content: '`@prefers-reduced-motion`'
-        rationale: "Yes! This media query allows you to decide how much motion to used based on a user's Display settings. These settings differ across operating systems, so consider implementing choice for motion in addition to this media query."
+        rationale: "Yes! This media query allows you to decide how much motion to use based on a user's Display settings. These settings differ across operating systems, so consider implementing choice for motion in addition to this media query."
       - content: "JavaScript toggles"
         rationale: "Not quite. Toggles allow the user to make a choice after arriving to your website, but cannot read the user's settings."
