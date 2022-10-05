@@ -10,7 +10,7 @@ tags:
 
 Accessible images may seem like a simple topic at first glance&mdash;you add
 some "alt text" to an image, and you are done. But, the topic is more nuanced
-than some people think. In this section, we’ll review:
+than some people think. In this section, we'll review:
 
 * How to update the code to make images accessible.
 * What information should be shared with users and where to share it.
@@ -41,7 +41,7 @@ Try hiding the images on your site or web app using a browser extension or
 other methods. Then ask yourself: "Do I understand the content that remains?"
 If the answer is yes, it is most likely a decorative image. If not, the image
 is instead informative in some way and contextually necessary. Once you
-determine the image’s purpose, you can determine the most accurate way to code
+determine the image's purpose, you can determine the most accurate way to code
 for it.
 
 {% Img
@@ -51,7 +51,7 @@ for it.
 ### Decorative images
 
 A [decorative image](https://www.w3.org/WAI/tutorials/images/decorative/) is a
-visual element that doesn’t add additional context or information that allows
+visual element that doesn't add additional context or information that allows
 the user to better understand the context. Decorative images are supplemental
 and may provide style rather than substance.
 
@@ -64,14 +64,16 @@ adding the image as a CSS background. Below are a few examples of how to hide a
 decorative image from users.
 
 {% Aside 'caution' %}
-Be mindful when making this choice, as
+<p>Be mindful when making this choice, as
 "[decorative](https://www.smashingmagazine.com/2021/06/img-alt-attribute-alternate-description-decorative/)"
 can mean different things to different users. Some AT users want to hear
-descriptions for every visual on the screen. They can always choose to skip
-over your image descriptions if and when they deem them redundant or verbose,
-but they cannot imagine descriptions that don’t exist. When in doubt, add
-descriptions to your images.
+descriptions for every visual on the screen.</p>
+<p>Users can choose to skip over your image descriptions if and when they deem
+  them redundant or verbose, but they cannot imagine descriptions that don't
+  exist. When in doubt, add descriptions to your images.</p>
 {% endAside %}
+
+#### Empty or null `alt`
 
 {% Codepen {
  user: 'web-dev-codepen-external',
@@ -86,6 +88,8 @@ text attribute. If the alternative text attribute is missing, the AT might read
 out the file name or surrounding content to give the user more information
 about the image.
 
+#### Role set to `presentation` or `none`
+
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'mdLMwje',
@@ -94,26 +98,23 @@ about the image.
  tab: 'html,result'
 } %}
 
-{% Codepen {
- user: 'web-dev-codepen-external',
- id: 'abGywjP',
- height: 350,
- theme: 'auto',
- tab: 'html,result'
-} %}
+A role set to [`presentation` or `none`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role)
+removes an element's semantics from exposure to the accessibility
+tree. Meanwhile, [`aria-hidden= "true"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-hidden)
+will remove the entire element&mdash;and all of its children&mdash;from the
+accessibility API.
 
 ```html
+<!-- All of these choices lead to the same result. -->
 <img src=".../Ladybug.jpg" role="presentation">
 <img src=".../Ladybug.jpg" role="none">
 <img src=".../Ladybug.jpg" aria-hidden="true">
 ```
 
-The [`"presentation"` or `"none"` role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role)
-will remove an element's semantics from being exposed to the accessibility
-tree. Meanwhile, [`aria-hidden= "true"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-hidden)
-will remove the entire element&mdash;and all of its children&mdash;from the
-accessibility API. Use `aria-hidden` with caution as it may hide elements that
+Use `aria-hidden` with caution as it may hide elements that
 you do not wish to hide.
+
+#### Images in CSS
 
 {% Codepen {
  user: 'web-dev-codepen-external',
@@ -122,10 +123,6 @@ you do not wish to hide.
  theme: 'auto',
  tab: 'css,result'
 } %}
-
-```html
-<div class="ladybug">
-```
 
 When you add a background image with CSS, a screen reader will not detect the
 image file. Be sure you want the image to be hidden before applying this method.

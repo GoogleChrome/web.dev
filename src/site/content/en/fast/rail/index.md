@@ -223,13 +223,16 @@ Be aware that these targets may change over time.
   bundles](/reduce-javascript-payloads-with-code-splitting/), and
   other [optimizations suggested on web.dev](/fast/).
 
-{% Aside %} Recognize the factors that affect page load performance:
-
-* Network speed and latency
-* Hardware (slower CPUs, for example)
-* Cache eviction
-* Differences in L2/L3 caching
-* Parsing JavaScript {% endAside %}
+{% Aside %}
+<p>Recognize the factors that affect page load performance:</p>
+<ul>
+<li>Network speed and latency</li>
+<li>Hardware (slower CPUs, for example)</li>
+<li>Cache eviction</li>
+<li>Differences in L2/L3 caching</li>
+<li>Parsing JavaScript</li>
+</ul>
+{% endAside %}
 
 ## Tools for measuring RAIL
 
