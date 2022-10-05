@@ -14,7 +14,7 @@ hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/QdKJmzxJE8e63gdXWzeo.jpg
 alt: Computer keyboard with rainbow keyboard backlighting.
 tags:
   - blog
-  - pwa
+  - progressive-web-apps
   - capabilities
 ---
 
