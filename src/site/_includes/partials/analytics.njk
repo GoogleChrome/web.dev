@@ -11,7 +11,7 @@ ga('set', 'anonymizeIp', true);
 ga('set', 'page', window.location.pathname);
 ga('set', '{{ site.analytics.dimensions.TRACKING_VERSION }}', '{{ site.analytics.version}}');
 try {
-  ga('set', '{{ site.analytics.dimensions.NAVIGATION_TYPE }}', performance.getEntriesByType('navigation')[0].type);
+  ga('set', '{{ site.analytics.dimensions.NAVIGATION_TYPE }}', performance.getEntriesByType('navigation')[0].type.replace(/_/g, '-'));
 } catch (error) {
   ga('set', '{{ site.analytics.dimensions.NAVIGATION_TYPE }}', '(not set)');
 }
