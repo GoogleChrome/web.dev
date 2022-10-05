@@ -22,12 +22,34 @@ pageScripts:
   {# Hero ends #}
 
   {# Courses start #}
-  <div class="wrapper">
-    <h2 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.courses' | i18n(locale) }}</h2>
-  </div>
   <div class="bg-mid-bg region gap-top-size-1">
     <div class="wrapper">
-      {% include "partials/course-cards-next.njk" %}
+      <h2 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.courses' | i18n(locale) }}</h2>
+      <div class="auto-grid gap-top-size-2">
+      {# Convert the courses object into an array of objects. #}
+      {% set coursesArr = helpers.values(courses) %}
+      {# Sort courses by descending date order (most recent comes first) #}
+      {% for course in coursesArr|sort(true, false, 'meta.date') %}
+        {% if course.meta and not course.meta.draft %}
+          <div>
+            <a href="{{ course.meta.url }}" class="card" data-style="branded">
+              <h3 class="visually-hidden">{{ course.meta.title }}</h3>
+              <div class="card__header repel">
+                <p class="color-mid-text">Course</p>
+                <div class="counter t-bg-core-primary t-color-shades-light-bright">
+                  {% set pages = collections.all | navigation(course.toc) %}
+                  <span class="counter__content" aria-label="{{ pages.list.length }} {{ 'i18n.learn.resources' | i18n(locale) }}">{{ pages.list.length }}</span>
+                  {{ icon('mortarboard') }}
+                </div>
+              </div>
+              <img importance="high" src="{{ course.meta.card }}" alt="{{ course.meta.title }} branding" />
+              <div class="card__content flow">
+                <p class="text-size-0">{{ course.meta.description | i18n(locale) }}</p>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
   {# Courses end #}
