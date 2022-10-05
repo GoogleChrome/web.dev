@@ -59,7 +59,7 @@ When it comes to saving, the go-to approach is to use the
 allows you to implement a true [save, edit, save flow](/excalidraw-and-fugu/#saving-files). The next
 best thing is to fall back to a classic `<a download>`, which likewise lets the user save data, but
 has the downside of creating new files on each download, so they end up with `my-video.mp4`,
-`my-video.mp4 (1)`, `my-video.mp4 (2)`, etc.
+`my-video (1).mp4`, `my-video (2).mp4`, etc.
 
 ### Pasting images
 
