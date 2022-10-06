@@ -158,7 +158,7 @@ If you are considering using self-hosted fonts, confirm that your site is using 
     If you're unsure if using self-hosted fonts will deliver better performance, try serving a font file from your own servers and compare the transfer time (including connection setup) with that of a third-party font. If you have slow servers, don't use a CDN, or don't use HTTP/2 it becomes less likely that the self-hosted font will be more performant.
 {% endAside %}
 
-If you use a self-hosted font, it is recommended that you also apply some of the font file optimizations that third-party font providers typically provide automatically—for example, font subsetting and WOFF2 compression. The amount of effort required to apply these optimizations will depend somewhat on the languages that your site supports. In particular, be aware that optimizing fonts for [CJK languages](https://en.wikipedia.org/wiki/CJK_characters) ch
+If you use a self-hosted font, it is recommended that you also apply some of the font file optimizations that third-party font providers typically provide automatically—for example, font subsetting and WOFF2 compression. The amount of effort required to apply these optimizations will depend somewhat on the languages that your site supports. In particular, be aware that optimizing fonts for [CJK languages](https://en.wikipedia.org/wiki/CJK_characters) can be particularly challenging.
 
 ### Use WOFF2
 
