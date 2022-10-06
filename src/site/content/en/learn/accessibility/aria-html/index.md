@@ -293,7 +293,7 @@ Assigned the wrong role.
 
 {% Compare 'better' %}
 ```html
-<a aria-label="Some awesome article title">Read More</a>
+<a aria-label="Read more about some awesome article title">Read More</a>
 ```
 
 {% CompareCaption %}
