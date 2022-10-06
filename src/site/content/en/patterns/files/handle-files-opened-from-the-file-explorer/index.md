@@ -52,9 +52,7 @@ if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
 }
 ```
 
-### Browser compatibility
-
-The File Handling API is currently supported from Chromium 102.
+{% BrowserCompat 'api.LaunchQueue' %}
 
 ## The classic way
 

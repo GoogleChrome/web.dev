@@ -43,6 +43,8 @@ if (navigator.canShare(data)) {
 
 The next best thing to offer to the user if the Web Share API is not supported is falling back to letting the user download the file, so they can share it manually, for example, via email or via a messenger or online social network app.
 
+{% BrowserCompat 'api.HTMLAnchorElement.download' %}
+
 ## Progressive enhancement
 
 The method below uses the Web Share API when the browser supports it and when the data can be shared based on the [supported file types](https://developer.mozilla.org/docs/Web/API/Navigator/share#shareable_file_types).

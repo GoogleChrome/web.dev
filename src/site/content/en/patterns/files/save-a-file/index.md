@@ -32,7 +32,7 @@ which returns a promise with [`FileSystemFileHandle`](https://developer.mozilla.
 The `<a download>` element on a page allows the user to click it and download
 a file. The trick now consists of inserting the element invisibly into a page with JavaScript and clicking it programmatically.
 
-{% BrowserCompat 'api.HTMLAnchorElement.download ' %}
+{% BrowserCompat 'api.HTMLAnchorElement.download' %}
 
 ## Progressive enhancement
 

@@ -24,4 +24,6 @@ if ('contacts' in navigator) {
 }
 ```
 
+{% BrowserCompat 'api.ContactsManager' %}
+
 ## Demo

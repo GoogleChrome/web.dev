@@ -82,9 +82,7 @@ window.addEventListener('load', async () => {
 });
 ```
 
-### Browser compatibility
-
-The Web Share Target API is supported from Chromium 76 on mobile and Chromium 89 on desktop.
+{% BrowserCompat 'html.manifest.share_target' %}
 
 ## Further reading
 

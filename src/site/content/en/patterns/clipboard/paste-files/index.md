@@ -11,8 +11,6 @@ height: 800
 
 Pasting files into the browser consists of using the `paste` event of the `HTMLElement`.
 
-{% BrowserCompat 'api.Clipboard' %}
-
 ## Using the `HTMLElement`'s `paste` event
 
 As a first step, you add an event listener for the `paste` event at the desired element, commonly
@@ -22,6 +20,8 @@ the `clipboardData` field of the `HTMLElement`'s `paste` event, whose `files` li
 iterate over. Based on the MIME type of each of the files pasted, you can decide whether to render
 it to the screen, as in the case of an image or video, or to paste the text contents of the file
 into, for example, a `textarea` element, in the case of a text file.
+
+{% BrowserCompat 'api.Clipboard' %}
 
 ```js
 document.addEventListener('paste', async (e) => {
