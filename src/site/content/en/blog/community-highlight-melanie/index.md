@@ -171,7 +171,7 @@ colorblind, but it does affect your relationship with technology.
     <p><sub><a href="https://www.who.int/teams/noncommunicable-diseases/sensory-functions-disability-and-rehabilitation/world-report-on-disability" aria-label="View the statistic source, WHO.">Source</a></sub></p>
   </div>
   <div class="stats__item">
-    <p class="stats__figure">
+    <p class="stats__figure" style="white-space: nowrap">
       253 
       <sub>m</sub>
     </p>
