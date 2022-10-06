@@ -26,7 +26,7 @@ The `<html>` element is the root element for an HTML document. It is the parent 
 
 ### Content language
 
-The `lang` language attribute added to the `<html>` tag defines the main language of the document. The value of the [`lang` attribute](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang#language_tag_syntax) is a two-letter ISO language code followed by the region. The region is optional, but recommended, as a language can vary greatly between regions. For example, French is very different in Canada (`fr-CA`) versus Burkina Faso (`fr-BF`). This language declaration enables screen readers, search engines, and translation services to know the document language. 
+The `lang` language attribute added to the `<html>` tag defines the main language of the document. The value of the [`lang` attribute](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang#language_tag_syntax) is a two- or three-letter ISO language code followed by the region. The region is optional, but recommended, as a language can vary greatly between regions. For example, French is very different in Canada (`fr-CA`) versus Burkina Faso (`fr-BF`). This language declaration enables screen readers, search engines, and translation services to know the document language. 
 
 The `lang` attribute is not limited to the `<html>`tag. If there is text within the page that is in a language different from the main document language, the `lang` attribute should be used to identify exceptions to the main language within the document.  Just like when it is included in the head, the `lang` attribute in the body has no visual effect. It only adds semantics, enabling assistive technologies and automated services to know the language of the impacted content.
 
