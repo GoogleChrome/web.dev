@@ -181,13 +181,17 @@ Use the `<link>` tag, with the `rel="icon"` attribute/value pair to identify the
 If you don't declare a favicon, the browser will look for a file named `favicon.ico` in the top-level directory (the website's root folder). With `<link>`, you can use a different file name and location: 
 
 ```html
-<link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="/images/mlwicon.png"/>  
-<link rel="mask-icon" sizes="any" href="/images/mlwicon.svg" color="#226DAA"/>
+<link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="/images/mlwicon.png"/>
 ```
 
-The preceding code says "use the `mlwicon.png` as the icon for scenarios where a 16px, 32px, or 48px makes sense." The sizes attribute accepts the value of `any` for scalable icons or a space-separated list of square `widthXheight` values; where the width and height values are 16, 32, 48, or greater in that geometric sequence, the pixel unit is omitted, and the X is case-insensitive. 
+The preceding code says "use the `mlwicon.png` as the icon for scenarios where a 16px, 32px, or 48px makes sense." The sizes attribute accepts the value of `any` for scalable icons or a space-separated list of square `widthXheight` values; where the width and height values are 16, 32, 48, or greater in that geometric sequence, the pixel unit is omitted, and the X is case-insensitive.
 
-For iOS, there is a different sequence, but the syntax is the same. To serve a scalable image to Safari, we used `mask-icon`, which is necessary for Safari support when linking to an SVG image. SVG favicons for Safari should be black; the color is then defined with the non-standard `color` attribute.
+```html
+<link rel="apple-touch-icon" sizes="180x180" href="/images/mlwicon.png"/>
+<link rel="mask-icon" href="/images/mlwicon.svg" color="#226DAA"/>
+```
+
+There are two special non-standard kind of icons for Safari browser: `apple-touch-icon` for iOS devices and `mask-icon` for pinned tabs on macOS. `apple-touch-icon` is applied only when the user adds a site to home screen: you can specify multiple icons with different `sizes` for different devices. `mask-icon` will only be used if the user pins the tab in desktop Safari: the icon itself should be a monochrome SVG, and the `color` attribute fills the icon with needed color.
 
 While you can use `<link>` to define a completely different image on each page or even each page load, don't. For consistency and a good user experience, use a single image! Twitter uses the blue bird: when you see the blue bird in your browser tab, you know that tab is open to a Twitter page without clicking on the tab. Google uses different favicons for each of its different applications: there's a mail icon, a calendar icon, for example. But all the Google icons use the same color scheme. Again, you know exactly what the content of an open tab is simply from the icon.
 
