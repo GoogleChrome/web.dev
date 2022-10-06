@@ -5,7 +5,7 @@ subhead: A foundational overview of how to build color-adaptive, responsive, and
 authors:
   - adamargyle
 description: A foundational overview of how to build color-adaptive, responsive, and accessible FAB components.
-date: 2022-09-21
+date: 2022-10-06
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/0mQ6NlDjbNGqdcjiJRaM.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/sGEdjhUpRkriI86wZctn.png
 alt: A tilted grid of hotpink FABs.
@@ -61,7 +61,7 @@ this container.
 
 #### FABs markup
 
-Start with a ".fabs" class for CSS to hook into for style, then add
+Start with a `.fabs` class for CSS to hook into for style, then add
 `role="group"` and `aria-label` so it's  not just a generic container, it's
 named and purposeful.
 
@@ -107,7 +107,7 @@ users and keyboard users, as the styling of the primary action as larger than
 the mini buttons indicates to sighted users that it's a primary action, and
 keyboard users will focus it as the first item in the source.
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PkRWiv4mtfCDXujti7lL.png", alt="ALT_TEXT_HERE", width="800", height="501" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PkRWiv4mtfCDXujti7lL.png", alt="Two fab buttons are shown with DevTools overlaying their grid layout. Shows the gap between them with a striped pattern and also shows their computed height and width.", width="800", height="501" %}
 
 ```css
 .fabs {
@@ -287,7 +287,7 @@ the `--_size` variable.
 }
 ```
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/bYhvGgYmV0OiztY7j58r.png", alt="ALT_TEXT_HERE", width="664", height="410" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/bYhvGgYmV0OiztY7j58r.png", alt="A screenshot of the two fab buttons stacked and the top button is smaller than the one on the bottom.", width="664", height="410" %}
 
 ## Accessibility
 
