@@ -52,13 +52,13 @@ The `<head>`, or document metadata header, contains all the metadata for a site 
 
 The document metadata, including the document title, character set, viewport settings, description, base URL, stylesheet links, and icons, are found in the `<head>` element. While you may not need all these features, always include character set, title, and viewport settings.
 
-### Character set 
+### Character encoding 
 
-The very first element in the `<head>` should be the character set declaration. It comes before the title to ensure the browser can render the characters in that title and all the characters in the rest of the document.  
+The very first element in the `<head>` should be the character declaration. It comes before the title to ensure the browser can render the characters in that title and all the characters in the rest of the document.  
 
-The default language set in most browsers is `ISO-8859-1`, the Latin character set. However, you should use UTF-8, as it contains most of the characters you didn't even know existed. Also, it's the encoding type required by HTML5. 
+The default language encoding in most browsers is `ISO-8859-1`, the Latin character set. However, you should use UTF-8, as it contains most of the characters you didn't even know existed. Also, it's the encoding type required by HTML5. 
 
-To set the character set to UTF-8, include:
+To set the character encoding to UTF-8, include:
 
 ```html  
 <meta charset="utf-8">  
@@ -66,7 +66,7 @@ To set the character set to UTF-8, include:
 
 By declaring `UTF-8` (case-insensitive), you can even include emojis in your title (but please don't). 
 
-The character set is inherited into everything in the document, even `<style>` and `<script>`. This little declaration means you can include emojis in class names and the selectorAPI (again, please don't).  If you do [use emojis](https://readabilityguidelines.co.uk/images/emojis/), make sure to use them in a way that enhances usability without harming accessibility.
+The character encoding is inherited into everything in the document, even `<style>` and `<script>`. This little declaration means you can include emojis in class names and the selectorAPI (again, please don't).  If you do [use emojis](https://readabilityguidelines.co.uk/images/emojis/), make sure to use them in a way that enhances usability without harming accessibility.
 
 ### Document title
 
