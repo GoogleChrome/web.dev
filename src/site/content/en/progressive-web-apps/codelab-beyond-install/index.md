@@ -18,14 +18,19 @@ Web App installable, including a
 and a
 [web app manifest](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=manifest.json).
 
+Since most of these integrations interact directly with the operating system, to test them you'll have to install the app, once you create your own fork, click on `preview` in the bottom tool bar and then `Preview in a new window` to be able to install the app and try out your changes.
+
 ## Add richer install ui
 
 1. Add a description and screenshots to your `manifest.json` and Chrome will display a UI that provides more space to show off your app.
-   The [richer install UI] (https://developer.chrome.com/blog/richer-pwa-installation/) is closer to a traditional app installation dialog and teaches users it is possible to install apps directly from the browser.
+
+The [richer install UI] (https://developer.chrome.com/blog/richer-pwa-installation/) is closer to a traditional app installation dialog and teaches users it is possible to install apps directly from the browser and gives developer a space to present their app to users.
 
 {% Instruction 'remix', 'ol' %}
 
 Code:
+
+[manifest.json](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=manifest.json)
 
 ```json
 "screenshots":[
@@ -45,12 +50,18 @@ Code:
 
 Save your users time by adding shortcuts to frequently used tasks.
 
-1. `shortcuts` is an array on your `manifest`. You specify each shortcut with `name`, `url`, `description` and `icons`. [Shortcuts](/app-shortcuts/) are supported on Android, Windows, MacOS and ChromeOS.
-2. Add the code that will handle the shortcuts, in the code lab we have an event handler where we parse query string and do actions based on the parameters. We use shortcuts to start the counter at a specific number.
+1. `shortcuts` is an array on your `manifest`. You specify each shortcut with:
+   * `name`: the action the user will see when menu is displayed.
+   * `url`: the page that will handle the shortcut.
+   * `description`: what the action does in the app.
+   *  `icons`: graphic that represents the action.
+2. Add the code that will handle the shortcuts. In the code lab we have an event handler where we parse query string and do actions based on the parameters. We use shortcuts to start the counter at a specific number.
 
-Shortcuts become available after the user installs the app.
+[Shortcuts](/app-shortcuts/) are supported on Android, Windows, MacOS and ChromeOS and become available after the user installs the app.
 
 Code:
+
+[manifest.json](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=manifest.json)
 
 ```json
 "shortcuts": [
@@ -79,6 +90,7 @@ Code:
   ],
 
 ```
+[script.js](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=script.js)
 
 ```js
 document.addEventListener('DOMContentLoaded', async function () {
@@ -103,7 +115,7 @@ Once your app is installed it can interact with other apps in the platform and b
 
 Code:
 
-Add this code to the [script](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=script.js) file
+[script](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=script.js)
 
 ```js
 shareB.addEventListener('click', (e) => {
@@ -130,8 +142,11 @@ shareB.addEventListener('click', (e) => {
 If your app can process data that can be shared between apps you can use the share target API to register your app as an option.
 
 1. Add the `share_target` member to the manifest.
-2. Add the code to handle the shared data. In hour case counts the text length and sets it to the counter.
+2. Add the code to handle the shared data. In hour case counts the text length and sets it to the counter and displays the source of the count in a span.
 3. Make sure the code that handles the share data is cached locally at install time.
+4. To learn more and handle other data types checkout the article [Web Share Target](/web-share-target/)
+
+[manifest.json](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=manifest.json)
 
 ```json
 "share_target": {
@@ -144,6 +159,8 @@ If your app can process data that can be shared between apps you can use the sha
     }
   }
 ```
+
+[script.js](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=script.js)
 
 ```js
 
@@ -166,7 +183,12 @@ document.addEventListener('DOMContentLoaded', async function() {
 ## Register your app as a file handler
 
 1. Register you app as handling a type of files in the manifest, in our case we are handling txt files that have the extension `.countme`
-2. Add the code to handle the files registered on the manifest
+2. Add the code to handle the files registered on the manifest.
+3. Check more about interacting with files in these articles: ][Let installed web apps be file handlers](/file-handling/) and [File System Access](/file-system-access/)
+
+
+
+[manifest.json](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=manifest.json)
 
 ```json
 "file_handlers": [
@@ -178,6 +200,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
   ],
 ```
+
+[script.js](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=script.js)
 
 ```js
 if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
