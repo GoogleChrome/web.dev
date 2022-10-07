@@ -56,7 +56,7 @@ The document metadata, including the document title, character set, viewport set
 
 The very first element in the `<head>` should be the `charset` character encoding declaration. It comes before the title to ensure the browser can render the characters in that title and all the characters in the rest of the document.  
 
-The default encoding in most browsers is `ISO-8859-1`. However, you should use [`UTF-8`](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8), as it enables the two- to four-byte encoding of all characters, even ones you didn't even know existed. Also, it's the encoding type required by HTML5. 
+The default encoding in most browsers is `windows-1252`. However, you should use [`UTF-8`](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8), as it enables the two- to four-byte encoding of all characters, even ones you didn't even know existed. Also, it's the encoding type required by HTML5. 
 
 To set the character encoding to UTF-8, include:
 
