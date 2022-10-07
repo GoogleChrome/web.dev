@@ -14,7 +14,7 @@ intro:
 featureCard:
   theme: 'light'
   title: 'Celebrate Chrometober with web tricks and treats.'
-  eyebrow: 'Event'
+  eyebrow: 'Featured'
   url: 'https://web.dev/chrometober-2022'
   background: 'https://web-dev.imgix.net/image/HodOHWjMnbNw56hvNASHWSgZyAf2/AwSceHfK5B3n1z1XSx1Z.gif'
 promoPanel:
