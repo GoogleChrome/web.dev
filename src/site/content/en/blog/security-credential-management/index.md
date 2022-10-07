@@ -62,7 +62,7 @@ For example:
 3. Update the UI to indicate the user has been signed in.
 
 Learn more in
-[Sign In Users](src/site/content/en/blog/security-credential-management-retrieve-credentials#auto-sign-in).
+[Sign In Users](../security-credential-management-retrieve-credentials#auto-sign-in).
 
 ### Save or update user credentials
 
