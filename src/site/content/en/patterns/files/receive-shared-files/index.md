@@ -19,8 +19,8 @@ static:
 
 ### Using the Web Share Target API
 
-First, declare a `share_target` in your web app manifest that lists an `action` (a URL to handle
-shared files at), a `method` (`"POST"` for files) and an `enctype` (`"multipart/form-data"` for
+First, declare a `share_target` in your web app manifest that lists an `action` (your URL that handles
+shared files), a `method` (`"POST"` for files) and an `enctype` (`"multipart/form-data"` for
 files) and a `params` object that contains a `files` property with an array of objects with a `name`
 and `accept` property that list the sharable file types and the name to obtain them.
 

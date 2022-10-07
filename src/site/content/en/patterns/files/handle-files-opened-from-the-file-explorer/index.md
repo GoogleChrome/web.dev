@@ -62,6 +62,7 @@ If the File Handling API is not supported, you can still drag and drop files fro
 into the app. The `DataTransferItem.getAsFile()` method returns the drag data item's `File` object.
 If the item is not a file, this method returns `null`. While you can read the file, there is no way
 to write back to it. This method has the disadvantage that it does not support directories.
+
 {% BrowserCompat 'api.DataTransferItem.getAsFile' %}
 
 ## Progressive enhancement

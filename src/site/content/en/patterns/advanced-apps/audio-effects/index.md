@@ -13,6 +13,7 @@ height: 800
 The Web Audio API uses the `AudioContext()` interface to manage sources, filters, and destinations. Once you’ve created a new `AudioContext()`, create an audio source node, like an `AudioBufferSourceNode` or `OscillatorNode`.  As an example, consider a basic oscillator with a [low pass filter](https://en.wikipedia.org/wiki/Low-pass_filter) applied.
 
 {% BrowserCompat 'api.AudioContext' %}
+
 ### Using the `createBiquadFilter()` method
 
 First, create a new `AudioContext()`. Then create an audio source node, like an [`AudioBufferSourceNode`](https://developer.mozilla.org/docs/Web/API/AudioBufferSourceNode) or [`OscillatorNode`](https://developer.mozilla.org/docs/Web/API/OscillatorNode).  You'll create a `sine` oscillator node, for this example, which has a frequency of 420 hertz from the moment it starts playing.
@@ -25,7 +26,7 @@ oscillator.type = 'sine';
 oscillator.frequency.setValueAtTime(420, audioCtx.currentTime);
 ```
 
-Next, create an effect node using `createBiquadFilter()`. Set the type to `lowpass` and the frequency to start 1 second after the start of playback. Then connect the `biquadFilter` to the `oscillator`.
+Next, create an effect node using `createBiquadFilter()`. Set the type to `lowpass` and the frequency to start one second after the start of playback. Then connect the `biquadFilter` to the `oscillator`.
 
 ```js
 const biquadFilter = audioCtx.createBiquadFilter();
@@ -34,7 +35,7 @@ biquadFilter.frequency.setValueAtTime(200, audioCtx.currentTime + 1);
 oscillator.connect(biquadFilter);
 ```
 
-Finally connect the `biquadFilter` to the destination of the `audioCtx`, before starting the `oscillator` and stopping it after 2 seconds of playback.
+Finally connect the `biquadFilter` to the destination of the `audioCtx`, before starting the `oscillator` and stopping it after two seconds of playback.
 
 ```js
 biquadFilter.connect(audioCtx.destination);
@@ -42,7 +43,7 @@ oscillator.start();
 oscillator.stop(2);
 ```
 
-The sound from the oscillator is passed through the unaffected filter, and on to the destination, which is your computer's speakers. After 1 second of playback, the `lowpass` filter comes into effect. After 2 seconds, the oscillator is stopped.
+The sound from the oscillator is passed through the unaffected filter, and on to the destination, which is your computer's speakers. After one second of playback, the `lowpass` filter comes into effect. After two seconds, the oscillator is stopped.
 
 {% BrowserCompat 'api.BiquadNodeFilter' %}
 ### Other available filters and effects

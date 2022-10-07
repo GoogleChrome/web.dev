@@ -15,7 +15,7 @@ static:
 
 ### Using `window.getScreenDetails()`
 
-To make sure your browser supports the `getScreenDetails()` method, you need to check if it exists
+To make sure your browser supports the `getScreenDetails()` method, first check if it exists
 on the `window` object. Then, call `window.getScreenDetails()` to get attached screens. Adding an
 event listener to adapt to changed screen details allows you to manage multiple screens according to
 the needs of your app.

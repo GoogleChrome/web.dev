@@ -27,7 +27,7 @@ allow the user to select multiple contacts, pass `{multiple: true}` as the secon
 
 {% BrowserCompat 'api.AudioContext.outputLatency' %}
 
-The Contact Picker API is available in the Android version of Chrome starting in version 80 and up.
+The Contact Picker API is available in the Android version of Chrome from version 80.
 
 ## The classic way
 

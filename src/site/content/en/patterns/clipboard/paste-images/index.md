@@ -58,7 +58,7 @@ document.addEventListener('paste', async (e) => {
 
 ## Progressive enhancement
 
-For browsers that do not support the Async Clipboard API, it is impossible to access the user's clipboard programmatically (i.e., on a button click). Thus for accessing a user's clipboard on a `paste` event, you can use the Async Clipboard API and fall back to the (synchronous) Clipboard API.
+For browsers that do not support the Async Clipboard API, it is impossible to access the user's clipboard programmatically (for example, on a button click). Thus for accessing a user's clipboard on a `paste` event, you can use the Async Clipboard API and fall back to the (synchronous) Clipboard API.
 
 The `ClipboardItem` objects coming from `navigator.clipboard.read` have a `types` field which is an array, and `File` objects coming from `event.clipboardData.files` have a `type` field which is a string. You can conditionally check each of the `type` or `types` fields for images in the clipboard:
 

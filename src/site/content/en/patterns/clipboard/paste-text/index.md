@@ -13,7 +13,7 @@ description: >
 
 ### Using the Async Clipboard API
 
-To read text from the user's clipboard programmatically, i.e., after a button click, you can use the [`readText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/readText) method of the [Async Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API). If permissions to read clipboard have not been granted yet, the call to `navigator.clipboard.readText()` will request it upon the first call to the method.
+To read text from the user's clipboard programmatically, for example, after a button click, you can use the [`readText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/readText) method of the [Async Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API). If permissions to read clipboard have not been granted yet, the call to `navigator.clipboard.readText()` will request it upon the first call to the method.
 
 ```js
 const pasteButton = document.querySelector('#paste-button');
