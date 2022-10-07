@@ -87,7 +87,7 @@ You'll use the [Coverage Tool](https://developer.chrome.com/docs/devtools/css/re
 
 Double-click on the report, to see classes marked in two colors:
 
-* Green (**critical**): These are the classes the browser needs to render the
+* Blue (**critical**): These are the classes the browser needs to render the
   visible content (like the title, subtitle, and accordion buttons).
 * Red (**non-critical**): These styles apply to content that's not immediately
   visible (like the paragraphs inside the accordions).
@@ -96,7 +96,7 @@ With this information, optimize your CSS so that the browser starts processing
 critical styles immediately after page loads, while deferring non-critical CSS
 for later:
 
-* Extract the class definitions marked with green in the report obtained from
+* Extract the class definitions marked with Blue in the report obtained from
   the coverage tool, and put those classes inside a `<style>` block at the head
   of the page:
 
