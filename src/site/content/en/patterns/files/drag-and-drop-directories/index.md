@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to drag and drop directories
-date: 2022-04-22
+date: 2022-10-10
 authors:
   - thomassteiner
 description: >

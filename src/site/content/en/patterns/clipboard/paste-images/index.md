@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to paste images
-date: 2022-08-01
+date: 2022-10-10
 authors:
   - harrytheodoulou
 description: >

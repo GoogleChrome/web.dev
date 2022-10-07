@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to create an app badge
-date: 2022-05-18
+date: 2022-10-10
 authors:
   - thomassteiner
 description: >

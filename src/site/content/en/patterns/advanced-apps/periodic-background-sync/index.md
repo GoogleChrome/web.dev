@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to periodically synchronize data in the background
-date: 2022-09-05
+date: 2022-10-10
 description: >
   Learn how to use Periodic Background Sync to enable web applications to periodically synchronize
   data in the background.

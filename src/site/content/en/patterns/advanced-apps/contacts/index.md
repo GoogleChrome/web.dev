@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to access contacts from the address book
-date: 2022-10-06
+date: 2022-10-10
 authors:
   - thomassteiner
 description: >

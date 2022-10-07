@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to create app shortcuts
-date: 2022-07-21
+date: 2022-10-10
 authors:
   - beaufortfrancois
 description: |

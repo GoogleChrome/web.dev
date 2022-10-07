@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to receive shared files
-date: 2022-09-01
+date: 2022-10-10
 authors:
   - pliao
 description: >

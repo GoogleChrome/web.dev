@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to use multiple screens
-date: 2022-09-19
+date: 2022-10-10
 authors:
   - pliao
 description: >

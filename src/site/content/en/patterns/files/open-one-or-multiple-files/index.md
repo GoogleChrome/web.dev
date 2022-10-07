@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to open one or multiple files
-date: 2022-07-13
+date: 2022-10-10
 authors:
   - thomassteiner
 description: >

@@ -3,7 +3,7 @@ layout: pattern
 title: How to handle files opened from the file explorer
 authors:
   - pliao
-date: 2022-09-01
+date: 2022-10-10
 description: >
   Learn how to use the File Handling API to register your web app as a file handler to the operating
   system.

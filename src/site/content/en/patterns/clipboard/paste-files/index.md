@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to paste files
-date: 2022-07-18
+date: 2022-10-10
 authors:
   - harrytheodoulou
 description: >

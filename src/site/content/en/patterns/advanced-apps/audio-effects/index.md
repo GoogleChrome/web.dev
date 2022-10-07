@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to add effects to audio
-date: 2022-09-01
+date: 2022-10-10
 authors:
   - conwayt
 description: >

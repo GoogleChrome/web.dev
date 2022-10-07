@@ -3,7 +3,7 @@ layout: pattern
 title: How to copy images
 subhead: Learn how to copy images to the clipboard.
 description: Learn how to copy images to the clipboard.
-date: 2022-09-05
+date: 2022-10-10
 authors:
   - thomassteiner
 height: 800

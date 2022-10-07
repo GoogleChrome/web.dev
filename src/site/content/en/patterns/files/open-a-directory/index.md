@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to open a directory
-date: 2022-07-19
+date: 2022-10-10
 authors:
   - thomassteiner
 description: >
