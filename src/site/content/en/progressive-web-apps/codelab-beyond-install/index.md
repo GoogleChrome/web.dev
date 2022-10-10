@@ -166,7 +166,7 @@ If your app can process data that can be shared between apps you can use the sha
 
 document.addEventListener('DOMContentLoaded', () => {
     //gets the query string
-    let qs = new URLSearchParams(document.location.search);
+    const qs = new URLSearchParams(document.location.search);
 
     //...
 
