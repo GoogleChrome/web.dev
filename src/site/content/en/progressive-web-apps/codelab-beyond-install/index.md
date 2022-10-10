@@ -20,7 +20,7 @@ and a
 
 Since most of these integrations interact directly with the operating system, to test them you'll have to install the app, once you create your own fork, click on `preview` in the bottom tool bar and then `Preview in a new window` to be able to install the app and try out your changes.
 
-## Add richer install ui
+## Add richer install UI
 
 1. Add a description and screenshots to your `manifest.json` and Chrome will display a UI that provides more space to show off your app.
 
