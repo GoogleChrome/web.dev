@@ -8,34 +8,24 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 		<link href="https://fonts.googleapis.com/css2?family=Germania+One&amp;family=Nanum+Gothic:wght@400;700;800&amp;display=swap" rel="stylesheet">
 		<!-- Google tag (gtag.js) -->
-		
-      {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
-      {% include 'partials/script-loader.njk' %}
-      {% set apiScripts %}
-        loadScript('https://www.googletagmanager.com/gtag/js?id=UA-126406676-2', null);
-      {% endset %}
-      <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
-    
-		
-      {% set script %}
-        
+		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126406676-2"></script>
+		<script is:inline>
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
 		  gtag('js', new Date());
 
 		  gtag('config', 'UA-126406676-2');
-		
-      {% endset %}
-      <script>{{ script | minifyJs | cspHash | safe }}</script>
-    
+		</script> -->
 	<link rel="stylesheet" href="/third_party/chrometober-2022/assets/index.330d5f28.css">
       {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
       {% include 'partials/script-loader.njk' %}
       {% set apiScripts %}
-        loadScript('/third_party/chrometober-2022/hoisted.8c758cd2.js', null);
+        loadScript('/third_party/chrometober-2022/hoisted.bd8088e4.js', null);
       {% endset %}
       <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
-    </head>
+    
+{% include 'partials/analytics.njk' %}
+</head>
 	<body>
 		<main class="book-placeholder" aria-label="A book with artful pages and interesting links to articles for October. Turn pages with the arrow keys.">
     <ul class="book" style="--count: 7;">
