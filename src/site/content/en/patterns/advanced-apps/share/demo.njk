@@ -8,6 +8,8 @@ patternId: advanced-apps/share
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>How to let the user share the website they are on</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
     <style>
       :root {
         color-scheme: dark light;

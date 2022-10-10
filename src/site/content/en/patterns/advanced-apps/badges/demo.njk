@@ -10,6 +10,8 @@ patternId: advanced-apps/badges
     <meta name="color-scheme" content="dark light" />
     <link rel="manifest" href="assets/manifest.json" />
     <title>How to create an app badge</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
     <style>
       html {
         box-sizing: border-box;
