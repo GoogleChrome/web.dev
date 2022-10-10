@@ -73,7 +73,7 @@ With this out of the way, the new pattern sections are:
 
 ### Clipboard patterns
 
-[Clipboard patterns](/patterns/clipboard/) for everything concerned with the system clipbaord like
+[Clipboard patterns](/patterns/clipboard/) for everything concerned with the system clipboard like
 copying and pasting of all sorts of things.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/eWdb4ici0H9p8tueeUUG.svg", alt="", width="200", height="200" %}
