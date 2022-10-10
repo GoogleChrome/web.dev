@@ -8,7 +8,7 @@ authors:
   - thomassteiner
 height: 800
 static:
-  - assets/fugu.svg
+  - assets/fugu.png
 ---
 
 Many modern browsers support copying images to the clipboard in the formats PNG and SVG. Other formats are not yet supported for security reasons.

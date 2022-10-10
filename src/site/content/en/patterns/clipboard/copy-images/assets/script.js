@@ -3,6 +3,7 @@ const img = document.querySelector('img');
 
 button.addEventListener('click', async () => {
   const responsePromise = fetch(img.src);
+
   try {
     if ('write' in navigator.clipboard) {
       await navigator.clipboard.write([
