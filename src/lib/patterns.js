@@ -61,6 +61,10 @@ const allPatterns = files.reduce((patterns, file) => {
   const assetsPaths = glob.sync(path.join(path.dirname(file), 'assets', '*'));
   /** @type {CodePatternAssets} */
   const assets = assetsPaths.reduce((out, assetPath) => {
+    // Ignore images.
+    if (/\.(?:png|jpe?g|avif|webp|gif|svg)$/.test(assetPath)) {
+      return out;
+    }
     const basename = path.basename(assetPath);
     const type = path.extname(assetPath).replace(stripDot, '');
     const content = fs.readFileSync(assetPath, 'utf-8');

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="manifest" href="manifest.json" />
+    <title>How to create app shortcuts</title>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js');
+        });
+      }
+    </script>
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <h1>How to create app shortcuts</h1>
+    <ol>
+      <li>
+        You can drag these <a href="blue.html">blue page</a> or
+        <a href="red.html">red page</a> links to the bookmarks bar
+        and access them later.
+      </li>
+      <li>
+        Install the app by clicking the button below. After the installation,
+        the button is disabled.
+        <p>
+          <button disabled type="button">Install</button>
+        </p>
+      </li>
+    </ol>
+  </body>
+</html>

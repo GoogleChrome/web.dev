@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+    />
+    <title>How to save a file</title>
+    <script>
+      if (!isSecureContext) location.protocol = 'https:';
+    </script>
+  </head>
+  <body>
+    <h1>How to save a file</h1>
+
+    <label
+      >Text to save
+      <textarea rows="3">
+Some sample text for you to save. Feel free to edit this.</textarea
+      >
+    </label>
+    <label>File name <input class="text" value="example.txt" /></label>
+    <button class="text" type="button">Save text</button>
+
+    <label
+      >Image to save
+      <img
+        src="https://cdn.glitch.global/75170424-3d76-41d7-ae77-72d0efb0401b/AVIF%20Test%20picture%20(JPEG%20converted%20to%20AVIF%20with%20Convertio).avif?v=1658240752363"
+        alt="Blue flower."
+        width="630"
+        height="420"
+    /></label>
+    <label>File name <input class="img" value="example.avif" /></label>
+    <button class="img" type="button">Save image</button>
+  </body>
+</html>

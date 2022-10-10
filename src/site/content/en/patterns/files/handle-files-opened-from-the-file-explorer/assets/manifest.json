@@ -1,0 +1,27 @@
+{
+  "name": "How to handle files opened from the file explorer",
+  "short_name": "Handle files",
+  "start_url": "../demo.html",
+  "id": "../demo.html",
+  "icons": [
+    {
+      "src": "../assets/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "../assets/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "display": "standalone",
+  "file_handlers": [
+    {
+      "action": "../demo.html",
+      "accept": {
+        "image/*": [".jpg", ".jpeg", ".png", ".webp", ".svg"]
+      }
+    }
+  ]
+}
