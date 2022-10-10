@@ -95,7 +95,7 @@ Code:
 ```js
 document.addEventListener('DOMContentLoaded', async function () {
   //gets the query string
-  let qs = new URLSearchParams(document.location.search);
+  const qs = new URLSearchParams(document.location.search);
 
   // Add code to handle shortcuts here
   if (qs.has('start')) {
