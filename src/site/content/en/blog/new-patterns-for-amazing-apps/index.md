@@ -104,7 +104,8 @@ You can provide feedback by tweeting at [@ChromiumDev](https://twitter.com/Chrom
 
 I'm grateful to [Joe Medley](https://github.com/jpmedley) for his help with reviewing and editing
 the patterns. Thanks to [Pete LePage](https://github.com/petele),
-[Ewa Gasperowicz](https://twitter.com/devnook), and [Rachel Andrew](https://twitter.com/rachelandrew)
+[Ewa Gasperowicz](https://twitter.com/devnook), [Rachel Andrew](https://twitter.com/rachelandrew),
+and [Ken Pascal](https://www.linkedin.com/in/kenpascal/)
 for all their support and
 encouragements to land this. The entire patterns project would not have been possible without the
 help of the authors of the individual patterns, namely
