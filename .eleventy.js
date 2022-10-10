@@ -300,6 +300,7 @@ module.exports = function (config) {
   // Chrometober config
   config.addPassthroughCopy({
     'src/site/content/en/chrometober-2022/': 'chrometober-2022',
+    'src/site/content/en/third_party/': 'third_party',
   });
 
   return {
