@@ -10,6 +10,8 @@ patternId: advanced-apps/shortcuts
     <meta name="color-scheme" content="dark light" />
     <link rel="manifest" href="assets/manifest.json" />
     <title>How to create app shortcuts</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
     <style>
       html {
         font-family: system-ui, sans-serif;

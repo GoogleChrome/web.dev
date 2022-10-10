@@ -9,6 +9,8 @@ patternId: files/handle-files-opened-from-the-file-explorer
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="assets/manifest.json" />
     <title>How to handle files opened from the file explorer</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
     <style>
       html {
         box-sizing: border-box;
