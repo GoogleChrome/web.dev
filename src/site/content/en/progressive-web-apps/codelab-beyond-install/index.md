@@ -51,10 +51,10 @@ Code:
 Save your users time by adding shortcuts to frequently used tasks.
 
 1. `shortcuts` is an array on your `manifest`. You specify each shortcut with:
-   * `name`: the action the user will see when menu is displayed.
-   * `url`: the page that will handle the shortcut.
-   * `description`: what the action does in the app.
-   *  `icons`: graphic that represents the action.
+   - `name`: the action the user will see when menu is displayed.
+   - `url`: the page that will handle the shortcut.
+   - `description`: what the action does in the app.
+   - `icons`: graphic that represents the action.
 2. Add the code that will handle the shortcuts. In the code lab we have an event handler where we parse query string and do actions based on the parameters. We use shortcuts to start the counter at a specific number.
 
 [Shortcuts](/app-shortcuts/) are supported on Android, Windows, MacOS and ChromeOS and become available after the user installs the app.
@@ -90,6 +90,7 @@ Code:
   ],
 
 ```
+
 [script.js](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=script.js)
 
 ```js
@@ -163,14 +164,13 @@ If your app can process data that can be shared between apps you can use the sha
 [script.js](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=script.js)
 
 ```js
-
 document.addEventListener('DOMContentLoaded', () => {
     //gets the query string
     const qs = new URLSearchParams(document.location.search);
 
     //...
 
-  // Add code to handle share target here.
+    // Add code to handle share target here.
     if(qs.has('url') || qs.has('text') || qs.has('title')) {
         let total = 0;
         total += qs.get('text') ? qs.get('text').length : 0;
@@ -185,8 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
 1. Register you app as handling a type of files in the manifest, in our case we are handling txt files that have the extension `.countme`
 2. Add the code to handle the files registered on the manifest.
 3. Check more about interacting with files in these articles: [Let installed web apps be file handlers](/file-handling/) and [File System Access](/file-system-access/)
-
-
 
 [manifest.json](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=manifest.json)
 
@@ -229,5 +227,5 @@ Congratulations, your app now give your users an integrated user experience
 
 Here are some additional things that you can do:
 
-- [Integrate with desktop UI by adding Window Controls Overlay](/url-protocol-handler/)
-- [Make your app handle specific protocols](/window-controls-overlay/)
+- [Integrate with desktop UI by adding Window Controls Overlay](/window-controls-overlay/)
+- [Make your app handle specific protocols](/url-protocol-handler/)
