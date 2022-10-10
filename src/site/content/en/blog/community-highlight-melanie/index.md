@@ -9,7 +9,7 @@ thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
 subhead: >
   Melanie Sumner is a software engineer, specializing in digital accessibility. We talked about her path to engineering, accessible design, Ember.js, and the importance of funding these efforts.
 description: >
-  One of a series of interviews with people from the web development community who are doing interesting things with CSS. This time I speak to accessibility expert, Melanie Sumner.
+  One of a series of interviews with people working in accessibility. This time, I spoke with accessibility expert, Melanie Sumner.
 date: 2022-10-06
 tags:
   - blog
