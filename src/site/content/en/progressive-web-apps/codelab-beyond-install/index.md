@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 Once your app is installed it can interact with other apps in the platform and be more engaging by sharing with other apps.
 
-1. Check if the browser support `navigator.share`
+1. Check if the browser supports `navigator.share`
 2. With the `share` method you can share data like `title`, `url` and `text`
 3. For sharing other types of data check the article [here](/web-share/)
 
