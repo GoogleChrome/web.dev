@@ -24,7 +24,7 @@ Since most of these integrations interact directly with the operating system, to
 
 1. Add a description and screenshots to your `manifest.json` and Chrome will display a UI that provides more space to show off your app.
 
-The [richer install UI] (https://developer.chrome.com/blog/richer-pwa-installation/) is closer to a traditional app installation dialog and teaches users it is possible to install apps directly from the browser and gives developer a space to present their app to users.
+The [richer install UI](https://developer.chrome.com/blog/richer-pwa-installation/) is closer to a traditional app installation dialog. It shows users it is possible to install apps directly from the browser, and gives developer a space to present more information about their app to users.
 
 {% Instruction 'remix', 'ol' %}
 
