@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 1. Register you app as handling a type of files in the manifest, in our case we are handling txt files that have the extension `.countme`
 2. Add the code to handle the files registered on the manifest.
-3. Check more about interacting with files in these articles: ][Let installed web apps be file handlers](/file-handling/) and [File System Access](/file-system-access/)
+3. Check more about interacting with files in these articles: [Let installed web apps be file handlers](/file-handling/) and [File System Access](/file-system-access/)
 
 
 
