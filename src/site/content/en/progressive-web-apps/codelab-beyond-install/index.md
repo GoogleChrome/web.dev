@@ -143,7 +143,7 @@ If your app can process data that can be shared between apps you can use the sha
 
 1. Add the `share_target` member to the manifest.
 2. Add the code to handle the shared data. In hour case counts the text length and sets it to the counter and displays the source of the count in a span.
-3. Make sure the code that handles the share data is cached locally at install time.
+3. Ensure the code that handles the incoming shared data is cached locally at install time. Otherwise the experience will fail if the user is not online.
 4. To learn more and handle other data types checkout the article [Web Share Target](/web-share-target/)
 
 [manifest.json](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=manifest.json)
