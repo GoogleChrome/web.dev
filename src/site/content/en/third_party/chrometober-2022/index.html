@@ -9,7 +9,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Germania+One&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/third_party/chrometober-2022/assets/index.add3a404.css" /><script type="module" src="/third_party/chrometober-2022/hoisted.e52fe626.js"></script></head>
+	<link rel="stylesheet" href="/third_party/chrometober-2022/assets/index.add3a404.css" /><script type="module" src="/third_party/chrometober-2022/hoisted.7426df08.js"></script></head>
 	<body>
 		<main class="book-placeholder" aria-label="A book with artful pages and interesting links to articles for October. Turn pages with the arrow keys.">
     <ul class="book" style="--count: 7;">
@@ -114,39 +114,7 @@
   <a href="https://web.dev/spaces" target="_blank" rel="noopener" aria-describedby="Chrometober-<abbr-title='Ask-me-anything'>AMA</abbr>" class="astro-SCMHTS4H">Read more</a>
 </article>
 
-<script>
-  const setUpPageOne = () => {
-    const scarecrow_lefteye = document.querySelector('.scarecrow__eye--left');
-    const scarecrow_righteye = document.querySelector('.scarecrow__eye--right');
 
-    scarecrow_lefteye.animate([
-      {
-        transform: 'translateX(-150%) scale(0.3)',
-      },
-      {
-        transform: 'none',
-      },
-    ], {
-      timeline: CHROMETOBER_TIMELINES[0],
-      timeRange: 'enter 25% 90%',
-      fill: 'both'  
-    })
-
-    scarecrow_righteye.animate([
-      {
-        transform: 'translateX(-100%) scale(0.5)',
-      },
-      {
-        transform: 'none',
-      },
-    ], {
-      timeline: CHROMETOBER_TIMELINES[0],
-      timeRange: 'enter 25% 90%',
-      fill: 'both'  
-    })
-  }
-  window.addEventListener('DOMContentLoaded', setUpPageOne)
-</script>
       </div>
     </div>
   </div>
@@ -271,27 +239,7 @@
   </g>
 </svg>
 
-<script>
-  const setUpPageThree = () => {
-    const owl = document.querySelector('.owl__owl');
 
-    owl.animate([
-      {
-        transform: 'translateY(110%) rotate(2deg)',
-      },
-      {
-        transform: 'translateY(0)',
-      },
-    ], {
-      timeline: CHROMETOBER_TIMELINES[1],
-      timeRange: 'enter 80% 90%',
-      fill: 'both'  
-    });
-  }
-
-  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches)
-    window.addEventListener('DOMContentLoaded', setUpPageThree)
-</script>
 
 
 <article class="content-block content-block--four astro-SCMHTS4H">
@@ -354,35 +302,7 @@
   </g>
 </svg>
 
-<script>
-  const setUpBat = () => {
-    const bat = document.querySelector('.bat')
-    bat.animate([
-      {
-        transform: 'translateX(100%) translateY(-100%) scale(0.1)'
-      },{
-        transform: 'none'
-      },
-    ], {
-      timeline: CHROMETOBER_TIMELINES[1],
-      timeRange: 'enter 25% 90%',
-      fill: 'backwards'    
-    })
-    bat.animate([
-      {
-        transform: 'none'
-      },{
-        transform: 'translateX(-100%) translateY(-100%) scale(0.1)'
-      },
-    ], {
-      timeline: CHROMETOBER_TIMELINES[1],
-      timeRange: 'enter 110% 150%',
-      fill: 'forwards'    
-    })
-  }
-  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches)
-    window.addEventListener('DOMContentLoaded', setUpBat)
-</script>
+
 
 
 <svg class="page__feature bunny" viewBox="0 0 176 213" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -421,32 +341,7 @@
   <path d="M69.93 109.64c7.986 0 14.46-3.989 14.46-8.91 0-4.92-6.474-8.91-14.46-8.91-7.986 0-14.46 3.99-14.46 8.91 0 4.921 6.474 8.91 14.46 8.91Z" fill="#68887D"/>
 </svg>
 
-<script>
-  const setUpBunny = () => {
-    const bunny = document.querySelector('.bunny')
-    bunny.animate([
-      {
-        rotate: '90deg'
-      },
-      {
-        rotate: '0deg',
-        translate: '0 0 '
-      },
-      {
-        translate: '-50% 0',
-        rotate: '0deg',
-      }
-    ], {
-      timeline: CHROMETOBER_TIMELINES[1],
-      delay: { phase: "enter", percent: CSS.percent(25) },
-      endDelay: { phase: "enter", percent: CSS.percent(90) },
-      fill: 'both'    
-    })
-  }
 
-  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches)
-    window.addEventListener('DOMContentLoaded', setUpBunny)
-</script>
 
 
 <article class="content-block content-block--five astro-SCMHTS4H">
@@ -619,67 +514,7 @@
   <path d="M108.18 198.39c-3.71.71-9.77 1.81-13.46 2.19-.89.09-1.56.84-1.56 1.74v3.98c0 .96-.78 1.74-1.74 1.74h-3.45c-.96 0-1.74-.78-1.74-1.74v-3.33c0-.98-.8-1.77-1.78-1.74-2.49.06-4.99.04-7.48-.05-.98-.04-1.8.76-1.8 1.74v3.38c0 .96-.78 1.74-1.74 1.74h-3.45c-.96 0-1.74-.78-1.74-1.74v-4.18c0-.88-.66-1.63-1.54-1.73-3.81-.44-7.6-1.06-11.37-1.84-1.83-.38-3.49 1.17-3.21 3.02.88 5.84 4.03 16.34 15.38 16.34 2.72.26 5.45.45 8.18.56.99.04 1.82-.75 1.82-1.74v-3.33c0-.96.78-1.74 1.74-1.74h3.97c.96 0 1.74.78 1.74 1.74v3.36c0 .99.82 1.78 1.81 1.74 2.99-.1 5.98-.3 8.96-.59 12.7 0 15.22-10.92 15.66-16.68.14-1.76-1.45-3.16-3.18-2.83l-.02-.01Z" fill="#000"/>
 </svg>
 
-<script>
 
-const setUpGargoyle = () => {
-  // On page turn, translate the Gargoyle out of shot.
-  const GARGOYLE = document.querySelector('.gargoyle')
-  const LEFT_WING = GARGOYLE.querySelector('.gargoyle__wing--left')
-  const RIGHT_WING = GARGOYLE.querySelector('.gargoyle__wing--right')
-  GARGOYLE.animate([
-    {
-      transform: 'translateY(0)',
-    },
-    {
-      transform: 'translateY(-200%)',
-    }
-  ], {
-    fill: 'both',
-    timeline: CHROMETOBER_TIMELINES[2],
-    delay: { phase: "enter", percent: CSS.percent(110) },
-    endDelay: { phase: "enter", percent: CSS.percent(150) },
-  })
-  LEFT_WING.animate([
-    {
-      rotate: '0deg'
-    },
-    {
-      rotate: '-35deg',
-      offset: 0.5,
-    },
-    {
-      rotate: '0deg'
-    },
-  ], {
-    iterations: 4,
-    timeline: CHROMETOBER_TIMELINES[2],
-    delay: { phase: "enter", percent: CSS.percent(90) },
-    endDelay: { phase: "enter", percent: CSS.percent(150) },
-    fill: 'both',
-  })
-  RIGHT_WING.animate([
-    {
-      rotate: '0deg'
-    },
-    {
-      rotate: '35deg',
-      offset: 0.5,
-    },
-    {
-      rotate: '0deg'
-    },
-  ], {
-    iterations: 4,
-    timeline: CHROMETOBER_TIMELINES[2],
-    delay: { phase: "enter", percent: CSS.percent(90) },
-    endDelay: { phase: "enter", percent: CSS.percent(150) },
-    fill: 'both',
-  })
-}
-
-if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches)
-  window.addEventListener('DOMContentLoaded', setUpGargoyle)
-</script>
 
 
 <svg class="page__feature fox" viewBox="0 0 245 231" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1066,57 +901,7 @@ if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches)
   <path d="M72.56 163.29c-19.41 0-37.63-8.5-51.31-23.94C7.67 124.03.2 103.69.2 82.08c0-21.61 7.48-41.95 21.05-57.27C34.93 9.37 53.15.87 72.56.87c19.41 0 37.63 8.5 51.31 23.94 13.58 15.32 21.05 35.66 21.05 57.27 0 21.61-7.48 41.95-21.05 57.27-13.68 15.44-31.9 23.94-51.31 23.94Zm0-155.48c-36.07 0-65.42 33.31-65.42 74.26s29.35 74.26 65.42 74.26 65.42-33.31 65.42-74.26S108.63 7.81 72.56 7.81Z" fill="#BD8835"/>
 </svg>
 
-<script>
-  const mapRange = (inputLower, inputUpper, outputLower, outputUpper) => {
-    const INPUT_RANGE = inputUpper - inputLower
-    const OUTPUT_RANGE = outputUpper - outputLower
-    return (value) =>
-      outputLower + (((value - inputLower) / INPUT_RANGE) * OUTPUT_RANGE || 0)
-  }
-  const clamp = (min, max, value) => Math.min(Math.max(value, min), max)
-  const setUpPortrait = () => {
-    const PORTRAIT = document.querySelector('.portrait')
-    const EYES = PORTRAIT.querySelector('.portrait__eyes')
-    const NOSE = PORTRAIT.querySelector('.portrait__nose')
 
-    const RANGE = 5
-    const LIMIT = 100
-    const interact = ({ x, y }) => {
-      // map a range agains the eyes and pass in via custom properties
-      const { left, width, top, height } = NOSE.getBoundingClientRect()
-      // Nose is the center point we're gonna use
-      // Use the LIMIT each direction from the center point and map to RANGE
-      const centerX = left + width * 0.5
-      const centerY = top + height * 0.5
-      const newX = clamp(
-        -RANGE,
-        RANGE,
-        mapRange(
-          centerX - LIMIT,
-          centerX + LIMIT,
-          -RANGE,
-          RANGE
-        )(x)
-      )
-      const newY = clamp(
-        -RANGE,
-        RANGE,
-        mapRange(
-          centerY - LIMIT,
-          centerY + LIMIT,
-          -RANGE,
-          RANGE
-        )(y)
-      )
-      //Apply to the eyes
-      EYES.style.setProperty('--x', newX)
-      EYES.style.setProperty('--y', newY)
-    }
-
-    window.addEventListener('pointermove', interact)
-  }
-  window.addEventListener('DOMContentLoaded', setUpPortrait)
-</script>
 
 
 <article class="content-block content-block--sixteen astro-SCMHTS4H">
