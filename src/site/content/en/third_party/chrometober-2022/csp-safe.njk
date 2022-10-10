@@ -1019,16 +1019,9 @@
       {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
       {% include 'partials/script-loader.njk' %}
       {% set apiScripts %}
-        loadScript('/third_party/chrometober-2022/hoisted.f9312f96.js', null);
+        loadScript('/third_party/chrometober-2022/hoisted.f9b94292.js', null);
       {% endset %}
       <script type="module">{{ apiScripts | minifyJs | cspHash | safe }}</script>
-    
-      {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
-      {% include 'partials/script-loader.njk' %}
-      {% set apiScripts %}
-        loadScript('https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js', null);
-      {% endset %}
-      <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
     
       {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
       {% include 'partials/script-loader.njk' %}
