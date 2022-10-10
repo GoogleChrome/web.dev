@@ -47,7 +47,7 @@ patternId: advanced-apps/shortcuts
         Install the app by clicking the button below. After the installation,
         the button is disabled.
         <p>
-          <button disabled>Install</button>
+          <button id="install" disabled>Install</button>
         </p>
       </li>
     </ol>
@@ -62,7 +62,7 @@ patternId: advanced-apps/shortcuts
     <script>{{ script | minifyJs | cspHash | safe }}</script>
 
     {% set script %}
-      const installButton = document.querySelector('button');
+      const installButton = document.querySelector('#install');
       if ('BeforeInstallPromptEvent' in window) {
         let installEvent = null;
         const onInstall = () => {
