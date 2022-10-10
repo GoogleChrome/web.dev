@@ -45,7 +45,6 @@ patternId: advanced-apps/multiple-screens
     <button id="detectScreen">Detect Screens</button>
     <button id="create" disabled>Create Page On Random Screen</button>
     {% set script %}
-      if (!isSecureContext) location.protocol = 'https:';
       const detectButton = document.querySelector('#detectScreen');
       const createButton = document.querySelector('#create');
       const permissionLabel = document.querySelector('#permissionStatus');

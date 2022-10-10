@@ -9,6 +9,7 @@ authors:
 height: 800
 static:
   - assets/fugu.png
+  - assets/fugu.svg
 ---
 
 Many modern browsers support copying images to the clipboard in the formats PNG and SVG. Other formats are not yet supported for security reasons.

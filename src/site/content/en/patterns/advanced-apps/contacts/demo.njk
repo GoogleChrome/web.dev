@@ -74,7 +74,6 @@ patternId: advanced-apps/contacts
     <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
 
     {% set script %}
-      if (!isSecureContext) location.protocol = 'https:';
       const button = document.querySelector('button');
       const name = document.querySelector('.name')
       const address = document.querySelector('.address')

@@ -16,7 +16,6 @@ patternId: advanced-apps/multiple-screens
   </head>
   <body>
     {% set script %}
-      if (!isSecureContext) location.protocol = 'https:';
       function randomBackgroundColor() {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
