@@ -1003,8 +1003,8 @@
   </div><div data-timeline-trigger="" data-timeline-trigger--last="" aria-hidden="true" inert="">
     <h2>Thanks for checking this out!</h2>
   </div>
-
-
+		<!-- <script src="../assets/polyfills/scroll-timeline.js"></script>
+		<script src="../assets/polyfills/container-query.js"></script> -->
 
 		
 		
@@ -1012,16 +1012,34 @@
 
 
 
+
+<!-- Moved these up so can wrap them in the DOMContentLoaded as an attempt -->
+
+
       {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
       {% include 'partials/script-loader.njk' %}
       {% set apiScripts %}
-        loadScript('/third_party/chrometober-2022/hoisted.7426df08.js', null);
+        loadScript('/third_party/chrometober-2022/hoisted.f9312f96.js', null);
       {% endset %}
       <script type="module">{{ apiScripts | minifyJs | cspHash | safe }}</script>
     
+      {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+      {% include 'partials/script-loader.njk' %}
+      {% set apiScripts %}
+        loadScript('https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js', null);
+      {% endset %}
+      <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+    
+      {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+      {% include 'partials/script-loader.njk' %}
+      {% set apiScripts %}
+        loadScript('https://cdn.jsdelivr.net/npm/container-query-polyfill@1/dist/container-query-polyfill.modern.js', null);
+      {% endset %}
+      <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+    
       {% set script %}
         
-	ga('send', {
+	if (window.ga) window.ga('send', {
 		hitType: 'pageview',
 		page: window.location.pathname,
 		title: document.title
