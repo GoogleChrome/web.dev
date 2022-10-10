@@ -1015,9 +1015,254 @@
       {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
       {% include 'partials/script-loader.njk' %}
       {% set apiScripts %}
-        loadScript('/third_party/chrometober-2022/hoisted.c28e3946.js', null);
+        loadScript('/third_party/chrometober-2022/hoisted.e52fe626.js', null);
       {% endset %}
       <script type="module">{{ apiScripts | minifyJs | cspHash | safe }}</script>
+    
+      {% set script %}
+        
+  const setUpPageOne = () =&gt; {
+    const scarecrow_lefteye = document.querySelector('.scarecrow__eye--left');
+    const scarecrow_righteye = document.querySelector('.scarecrow__eye--right');
+
+    scarecrow_lefteye.animate([
+      {
+        transform: 'translateX(-150%) scale(0.3)',
+      },
+      {
+        transform: 'none',
+      },
+    ], {
+      timeline: CHROMETOBER_TIMELINES[0],
+      timeRange: 'enter 25% 90%',
+      fill: 'both'  
+    })
+
+    scarecrow_righteye.animate([
+      {
+        transform: 'translateX(-100%) scale(0.5)',
+      },
+      {
+        transform: 'none',
+      },
+    ], {
+      timeline: CHROMETOBER_TIMELINES[0],
+      timeRange: 'enter 25% 90%',
+      fill: 'both'  
+    })
+  }
+  window.addEventListener('DOMContentLoaded', setUpPageOne)
+
+      {% endset %}
+      <script>{{ script | minifyJs | cspHash | safe }}</script>
+    
+      {% set script %}
+        
+  const setUpPageThree = () =&gt; {
+    const owl = document.querySelector('.owl__owl');
+
+    owl.animate([
+      {
+        transform: 'translateY(110%) rotate(2deg)',
+      },
+      {
+        transform: 'translateY(0)',
+      },
+    ], {
+      timeline: CHROMETOBER_TIMELINES[1],
+      timeRange: 'enter 80% 90%',
+      fill: 'both'  
+    });
+  }
+
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches)
+    window.addEventListener('DOMContentLoaded', setUpPageThree)
+
+      {% endset %}
+      <script>{{ script | minifyJs | cspHash | safe }}</script>
+    
+      {% set script %}
+        
+  const setUpBat = () =&gt; {
+    const bat = document.querySelector('.bat')
+    bat.animate([
+      {
+        transform: 'translateX(100%) translateY(-100%) scale(0.1)'
+      },{
+        transform: 'none'
+      },
+    ], {
+      timeline: CHROMETOBER_TIMELINES[1],
+      timeRange: 'enter 25% 90%',
+      fill: 'backwards'    
+    })
+    bat.animate([
+      {
+        transform: 'none'
+      },{
+        transform: 'translateX(-100%) translateY(-100%) scale(0.1)'
+      },
+    ], {
+      timeline: CHROMETOBER_TIMELINES[1],
+      timeRange: 'enter 110% 150%',
+      fill: 'forwards'    
+    })
+  }
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches)
+    window.addEventListener('DOMContentLoaded', setUpBat)
+
+      {% endset %}
+      <script>{{ script | minifyJs | cspHash | safe }}</script>
+    
+      {% set script %}
+        
+  const setUpBunny = () =&gt; {
+    const bunny = document.querySelector('.bunny')
+    bunny.animate([
+      {
+        rotate: '90deg'
+      },
+      {
+        rotate: '0deg',
+        translate: '0 0 '
+      },
+      {
+        translate: '-50% 0',
+        rotate: '0deg',
+      }
+    ], {
+      timeline: CHROMETOBER_TIMELINES[1],
+      delay: { phase: "enter", percent: CSS.percent(25) },
+      endDelay: { phase: "enter", percent: CSS.percent(90) },
+      fill: 'both'    
+    })
+  }
+
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches)
+    window.addEventListener('DOMContentLoaded', setUpBunny)
+
+      {% endset %}
+      <script>{{ script | minifyJs | cspHash | safe }}</script>
+    
+      {% set script %}
+        
+
+const setUpGargoyle = () =&gt; {
+  // On page turn, translate the Gargoyle out of shot.
+  const GARGOYLE = document.querySelector('.gargoyle')
+  const LEFT_WING = GARGOYLE.querySelector('.gargoyle__wing--left')
+  const RIGHT_WING = GARGOYLE.querySelector('.gargoyle__wing--right')
+  GARGOYLE.animate([
+    {
+      transform: 'translateY(0)',
+    },
+    {
+      transform: 'translateY(-200%)',
+    }
+  ], {
+    fill: 'both',
+    timeline: CHROMETOBER_TIMELINES[2],
+    delay: { phase: "enter", percent: CSS.percent(110) },
+    endDelay: { phase: "enter", percent: CSS.percent(150) },
+  })
+  LEFT_WING.animate([
+    {
+      rotate: '0deg'
+    },
+    {
+      rotate: '-35deg',
+      offset: 0.5,
+    },
+    {
+      rotate: '0deg'
+    },
+  ], {
+    iterations: 4,
+    timeline: CHROMETOBER_TIMELINES[2],
+    delay: { phase: "enter", percent: CSS.percent(90) },
+    endDelay: { phase: "enter", percent: CSS.percent(150) },
+    fill: 'both',
+  })
+  RIGHT_WING.animate([
+    {
+      rotate: '0deg'
+    },
+    {
+      rotate: '35deg',
+      offset: 0.5,
+    },
+    {
+      rotate: '0deg'
+    },
+  ], {
+    iterations: 4,
+    timeline: CHROMETOBER_TIMELINES[2],
+    delay: { phase: "enter", percent: CSS.percent(90) },
+    endDelay: { phase: "enter", percent: CSS.percent(150) },
+    fill: 'both',
+  })
+}
+
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches)
+  window.addEventListener('DOMContentLoaded', setUpGargoyle)
+
+      {% endset %}
+      <script>{{ script | minifyJs | cspHash | safe }}</script>
+    
+      {% set script %}
+        
+  const mapRange = (inputLower, inputUpper, outputLower, outputUpper) =&gt; {
+    const INPUT_RANGE = inputUpper - inputLower
+    const OUTPUT_RANGE = outputUpper - outputLower
+    return (value) =&gt;
+      outputLower + (((value - inputLower) / INPUT_RANGE) * OUTPUT_RANGE || 0)
+  }
+  const clamp = (min, max, value) =&gt; Math.min(Math.max(value, min), max)
+  const setUpPortrait = () =&gt; {
+    const PORTRAIT = document.querySelector('.portrait')
+    const EYES = PORTRAIT.querySelector('.portrait__eyes')
+    const NOSE = PORTRAIT.querySelector('.portrait__nose')
+
+    const RANGE = 5
+    const LIMIT = 100
+    const interact = ({ x, y }) =&gt; {
+      // map a range agains the eyes and pass in via custom properties
+      const { left, width, top, height } = NOSE.getBoundingClientRect()
+      // Nose is the center point we're gonna use
+      // Use the LIMIT each direction from the center point and map to RANGE
+      const centerX = left + width * 0.5
+      const centerY = top + height * 0.5
+      const newX = clamp(
+        -RANGE,
+        RANGE,
+        mapRange(
+          centerX - LIMIT,
+          centerX + LIMIT,
+          -RANGE,
+          RANGE
+        )(x)
+      )
+      const newY = clamp(
+        -RANGE,
+        RANGE,
+        mapRange(
+          centerY - LIMIT,
+          centerY + LIMIT,
+          -RANGE,
+          RANGE
+        )(y)
+      )
+      //Apply to the eyes
+      EYES.style.setProperty('--x', newX)
+      EYES.style.setProperty('--y', newY)
+    }
+
+    window.addEventListener('pointermove', interact)
+  }
+  window.addEventListener('DOMContentLoaded', setUpPortrait)
+
+      {% endset %}
+      <script>{{ script | minifyJs | cspHash | safe }}</script>
     
       {% set script %}
         
