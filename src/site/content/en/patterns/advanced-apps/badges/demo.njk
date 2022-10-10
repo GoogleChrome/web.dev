@@ -98,8 +98,6 @@ patternId: advanced-apps/badges
     {% endset %}
     <script>{{ script | minifyJs | cspHash | safe }}</script>
 
-    {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
-    {% include 'partials/script-loader.njk' %}
     {% set apiScripts %}
       loadScript('https://unpkg.com/favicon-badge@2.0.0/dist/FavIconBadge.js', null);
     {% endset %}
