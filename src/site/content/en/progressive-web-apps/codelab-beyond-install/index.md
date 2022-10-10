@@ -93,7 +93,7 @@ Code:
 [script.js](https://glitch.com/edit/#!/pwa-os-integrations-starter?path=script.js)
 
 ```js
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', () => {
   //gets the query string
   const qs = new URLSearchParams(document.location.search);
 
