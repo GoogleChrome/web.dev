@@ -33,7 +33,7 @@ patternId: advanced-apps/audio-effects
   <body>
     <h1>How to add effects to audio</h1>
     <button type="button">Press to hear audio effect</button>
-    <script>
+    {% set script %}
       const button = document.querySelector('button');
       button.addEventListener('click', () => {
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -49,6 +49,7 @@ patternId: advanced-apps/audio-effects
         oscillator.start();
         oscillator.stop(2);
       });
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

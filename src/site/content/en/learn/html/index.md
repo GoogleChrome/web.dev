@@ -1,7 +1,7 @@
 ---
 title: Learn HTML
 authors:
-  - estellweyl
+  - estelleweyl
 description: This HTML course for web developers provides a solid overview for developers, from novice to expert level HTML.
 date: 2022-09-08
 tags:
@@ -10,9 +10,9 @@ tags:
 
 ## Welcome to Learn HTML!
 
-Welcome to HTML!  HyperText Markup Language, or HTML, is the backbone of the web, providing the content, as well as the structure of that content, that you see displayed in your web browser. 
+Welcome to HTML!  HyperText Markup Language, or HTML, is the backbone of the web, providing the content, as well as the structure of that content, that you see displayed in your web browser.
 
-Unless you're reading a PDF or a printed version of this page, this content is made up of various HTML elements and text. HTML is the content layer of the web. HTML elements are the nodes that make up the [Document Object Model](https://developer.mozilla.org/docs/Web/API/Document_Object_Model). 
+Unless you're reading a PDF or a printed version of this page, this content is made up of various HTML elements and text. HTML is the content layer of the web. HTML elements are the nodes that make up the [Document Object Model](https://developer.mozilla.org/docs/Web/API/Document_Object_Model).
 
 [Cascading Style Sheets](/learn/css/) provide the look and feel, or presentation layer of the page. [JavaScript](https://developer.mozilla.org/docs/Learn/JavaScript) is the behavior layer, often used to manipulate the objects within a document. Sites that are built with JavaScript frameworks are really just manipulating HTML. In turn, it's important to mark up your HTML in a way that scripts can easily parse and that assistive technologies can easily understand. This means writing HTML code with modern standards.
 

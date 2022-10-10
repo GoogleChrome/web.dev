@@ -1,0 +1,144 @@
+---
+patternId: files/save-a-file
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+    />
+    <title>How to save a file</title>
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+
+      img {
+        max-width: 320px;
+        height: auto;
+      }
+
+      label,
+      button,
+      textarea,
+      input,
+      img {
+        display: block;
+        margin-block: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to save a file</h1>
+
+    <label
+      >Text to save
+      <textarea rows="3">
+Some sample text for you to save. Feel free to edit this.</textarea
+      >
+    </label>
+    <label>File name <input class="text" value="example.txt" /></label>
+    <button class="text" type="button">Save text</button>
+
+    <label
+      >Image to save
+      <img
+        src="https://cdn.glitch.global/75170424-3d76-41d7-ae77-72d0efb0401b/AVIF%20Test%20picture%20(JPEG%20converted%20to%20AVIF%20with%20Convertio).avif?v=1658240752363"
+        alt="Blue flower."
+        width="630"
+        height="420"
+    /></label>
+    <label>File name <input class="img" value="example.avif" /></label>
+    <button class="img" type="button">Save image</button>
+
+    {% set script %}
+      const textarea = document.querySelector('textarea');
+      const textInput = document.querySelector('input.text');
+      const textButton = document.querySelector('button.text');
+
+      const img = document.querySelector('img');
+      const imgInput = document.querySelector('input.img');
+      const imgButton = document.querySelector('button.img');
+
+      const saveFile = async (blob, suggestedName) => {
+        // Feature detection. The API needs to be supported
+        // and the app not run in an iframe.
+        const supportsFileSystemAccess =
+          'showSaveFilePicker' in window &&
+          (() => {
+            try {
+              return window.self === window.top;
+            } catch {
+              return false;
+            }
+          })();
+        // If the File System Access API is supported…
+        if (supportsFileSystemAccess) {
+          try {
+            // Show the file save dialog.
+            const handle = await showSaveFilePicker({
+              suggestedName,
+            });
+            // Write the blob to the file.
+            const writable = await handle.createWritable();
+            await writable.write(blob);
+            await writable.close();
+            return;
+          } catch (err) {
+            // Fail silently if the user has simply canceled the dialog.
+            if (err.name !== 'AbortError') {
+              console.error(err.name, err.message);
+            }
+            return;
+          }
+        }
+        // Fallback if the File System Access API is not supported…
+        // Create the blob URL.
+        const blobURL = URL.createObjectURL(blob);
+        // Create the `<a download>` element and append it invisibly.
+        const a = document.createElement('a');
+        a.href = blobURL;
+        a.download = suggestedName;
+        document.body.append(a);
+        a.style.display = 'none';
+        // Click the element.
+        a.click();
+        // Revoke the blob URL and remove the element.
+        setTimeout(() => {
+          URL.revokeObjectURL(blobURL);
+          a.remove();
+        }, 1000);
+      };
+
+      textButton.addEventListener('click', async () => {
+        const blob = new Blob([textarea.value], { type: 'text/plain' });
+        await saveFile(blob, textInput.value);
+      });
+
+      imgButton.addEventListener('click', async () => {
+        const blob = await fetch(img.src).then((response) => response.blob());
+        await saveFile(blob, imgInput.value);
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

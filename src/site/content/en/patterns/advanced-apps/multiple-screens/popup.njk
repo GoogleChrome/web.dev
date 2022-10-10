@@ -1,3 +1,7 @@
+---
+patternId: advanced-apps/multiple-screens
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,12 +13,9 @@
     />
     <title>How to use multiple screens</title>
     <link rel="stylesheet" href="/style.css" />
-    <script>
-      if (!isSecureContext) location.protocol = 'https:';
-    </script>
   </head>
   <body>
-    <script>
+    {% set script %}
       function randomBackgroundColor() {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
@@ -23,6 +24,7 @@
         document.body.style.backgroundColor = bgColor;
       }
       randomBackgroundColor();
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

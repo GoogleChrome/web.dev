@@ -8,6 +8,7 @@ authors:
   - thomassteiner
 height: 800
 static:
+  - assets/fugu.png
   - assets/fugu.svg
 ---
 

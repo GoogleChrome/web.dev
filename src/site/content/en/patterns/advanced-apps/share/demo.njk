@@ -75,7 +75,7 @@ patternId: advanced-apps/share
     </p>
     <hr />
     <button type="button"><span class="icon"></span>Share</button>
-    <script>
+    {% set script %}
       const IS_MAC = /Mac|iPhone/.test(navigator.platform);
       const IS_WINDOWS = /Win/.test(navigator.platform);
 
@@ -110,7 +110,7 @@ patternId: advanced-apps/share
         shareURL.search = params;
         window.open(shareURL, '_blank', 'popup,noreferrer,noopener');
       });
-
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

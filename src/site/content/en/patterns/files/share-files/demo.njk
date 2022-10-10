@@ -12,9 +12,6 @@ patternId: advanced-apps/share-files
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
     />
     <title>How to share files</title>
-    <script>
-      if (!isSecureContext) location.protocol = 'https:';
-    </script>
     <style>
       :root {
         color-scheme: dark light;
@@ -41,6 +38,10 @@ patternId: advanced-apps/share-files
         max-width: 100%;
         display: block;
       }
+
+      button {
+       margin: 1rem;
+      }
     </style>
   </head>
   <body>
@@ -52,7 +53,8 @@ patternId: advanced-apps/share-files
       src="cat.png"
     />
     <button type=button></button>
-    <script>
+
+    {% set script %}
       const button = document.querySelector('button');
       const img =  document.querySelector('img');
 
@@ -101,6 +103,7 @@ patternId: advanced-apps/share-files
         const blob = await fetch(img.src).then(res => res.blob());
         await shareOrDownload(blob, 'cat.png', 'Cat in the snow', 'Getting cold feet…');
       });
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

@@ -1,0 +1,105 @@
+---
+patternId: files/drag-and-drop-directories
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to drag and drop directories</title>
+    <style>
+      :root {
+        color-scheme: dark light;
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 0;
+        padding: 1rem;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      img,
+      video {
+        height: auto;
+        max-width: 100%;
+      }
+
+      main {
+        flex-grow: 1;
+      }
+
+      footer {
+        margin-top: 1rem;
+        border-top: solid CanvasText 1px;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>How to drag and drop directories</h1>
+      <p>Drag and drop one or multiple files or directories onto the page.</p>
+      <pre></pre>
+    </main>
+
+    {% set script %}
+      const supportsFileSystemAccessAPI =
+        "getAsFileSystemHandle" in DataTransferItem.prototype;
+      const supportsWebkitGetAsEntry =
+        "webkitGetAsEntry" in DataTransferItem.prototype;
+
+      const elem = document.querySelector("main");
+      const debug = document.querySelector("pre");
+
+      elem.addEventListener("dragover", (e) => {
+        // Prevent navigation.
+        e.preventDefault();
+      });
+
+      elem.addEventListener("dragenter", (e) => {
+        elem.style.outline = "solid red 1px";
+      });
+
+      elem.addEventListener("dragleave", (e) => {
+        elem.style.outline = "";
+      });
+
+      elem.addEventListener("drop", async (e) => {
+        e.preventDefault();
+        elem.style.outline = "";
+        const fileHandlesPromises = [...e.dataTransfer.items]
+          .filter((item) => item.kind === "file")
+          .map((item) =>
+            supportsFileSystemAccessAPI
+              ? item.getAsFileSystemHandle()
+              : supportsWebkitGetAsEntry
+              ? item.webkitGetAsEntry()
+              : item.getAsFile()
+          );
+
+        for await (const handle of fileHandlesPromises) {
+          if (handle.kind === "directory" || handle.isDirectory) {
+            console.log(`Directory: ${handle.name}`);
+            debug.textContent += `Directory: ${handle.name}\n`;
+          } else {
+            console.log(`File: ${handle.name}`);
+            debug.textContent += `File: ${handle.name}\n`;
+          }
+        }
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

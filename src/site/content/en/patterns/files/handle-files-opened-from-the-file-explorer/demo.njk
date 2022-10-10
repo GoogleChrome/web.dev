@@ -29,8 +29,30 @@ patternId: files/handle-files-opened-from-the-file-explorer
         max-width: 100%;
         display: block;
       }
+      own-window {
+        border: dashed red 2px;
+        padding: 0.25rem;
+      }
     </style>
-    <script>
+  </head>
+  <body>
+    <h1>How to handle files opened from the file explorer</h1>
+
+    <own-window>
+      <div>This demo needs to run in its own window, not in an iframe.</div>
+      <button type="button">Open in new window</button>
+    </own-window>
+
+    <p>Install the app. After the installation, try opening an image file from the file explorer with the app.
+
+    {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+    {% include 'partials/script-loader.njk' %}
+    {% set apiScripts %}
+      loadScript('https://unpkg.com/own-window@1.0.3/dist/index.min.js', null);
+    {% endset %}
+    <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+
+    {% set script %}
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', async () => {
           const registration = await navigator.serviceWorker.register(
@@ -42,25 +64,10 @@ patternId: files/handle-files-opened-from-the-file-explorer
           );
         });
       }
-    </script>
-  </head>
-  <body>
-    <h1>How to handle files opened from the file explorer</h1>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
 
-    <script src="https://unpkg.com/own-window"></script>
-    <style>
-      own-window {
-        border: dashed red 2px;
-        padding: 0.25rem;
-      }
-    </style>
-    <own-window>
-      <div>This demo needs to run in its own window, not in an iframe.</div>
-      <button type="button">Open in new window</button>
-    </own-window>
-
-    <p>Install the app. After the installation, try opening an image file from the file explorer with the app.
-    <script>
+    {% set script %}
       if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
         launchQueue.setConsumer((launchParams) => {
           if (!launchParams.files.length) {
@@ -71,6 +78,7 @@ patternId: files/handle-files-opened-from-the-file-explorer
           }
         });
       }
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

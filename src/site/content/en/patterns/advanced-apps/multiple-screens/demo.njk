@@ -32,9 +32,6 @@ patternId: advanced-apps/multiple-screens
       }
     </style>
     <title>How to use multiple screens</title>
-    <script>
-      if (!isSecureContext) location.protocol = 'https:';
-    </script>
   </head>
   <body>
     <h1>How to use multiple screens</h1>
@@ -47,7 +44,7 @@ patternId: advanced-apps/multiple-screens
     </div>
     <button id="detectScreen">Detect Screens</button>
     <button id="create" disabled>Create Page On Random Screen</button>
-    <script>
+    {% set script %}
       const detectButton = document.querySelector('#detectScreen');
       const createButton = document.querySelector('#create');
       const permissionLabel = document.querySelector('#permissionStatus');
@@ -119,6 +116,7 @@ patternId: advanced-apps/multiple-screens
           createButton.disabled = true;
         }
       };
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

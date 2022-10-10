@@ -29,38 +29,46 @@ patternId: advanced-apps/badges
         max-width: 100%;
         display: block;
       }
-    </style>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', async () => {
-          const registration = await navigator.serviceWorker.register(
-            'sw.js',
-          );
-          console.log(
-            'Service worker registered for scope',
-            registration.scope,
-          );
-        });
-      }
-    </script>
-  </head>
-  <body>
-    <h1>How to receive shared files</h1>
 
-    <script src="https://unpkg.com/own-window"></script>
-    <style>
       own-window {
         border: dashed red 2px;
         padding: 0.25rem;
       }
     </style>
+  </head>
+  <body>
+    <h1>How to receive shared files</h1>
+
     <own-window>
       <div>This demo needs to run in its own window, not in an iframe.</div>
       <button type="button">Open in new window</button>
     </own-window>
 
     <p>Install the app. After the installation, try sharing an image to it from another app.</p>
-    <script>
+
+    {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+    {% include 'partials/script-loader.njk' %}
+    {% set apiScripts %}
+      loadScript('https://unpkg.com/own-window@1.0.3/dist/index.min.js', null);
+    {% endset %}
+    <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+
+    {% set script %}
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', async () => {
+            const registration = await navigator.serviceWorker.register(
+              'sw.js',
+            );
+            console.log(
+              'Service worker registered for scope',
+              registration.scope,
+            );
+          });
+        }
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+
+    {% set script %}
       window.addEventListener('load', async () => {
         if (location.search.includes('share-target')) {
           const keys = await caches.keys();
@@ -75,6 +83,7 @@ patternId: advanced-apps/badges
           }
         }
       });
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

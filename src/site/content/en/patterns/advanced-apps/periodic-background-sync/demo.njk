@@ -7,11 +7,11 @@ patternId: advanced-apps/periodic-background-sync
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="assets/manifest.json" />
     <link
       rel="icon"
-      href=""
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
     />
-    <link rel="manifest" href="assets/manifest.json" />
     <title>How to periodically synchronize data in the background</title>
     <style>
       html {
@@ -29,18 +29,22 @@ patternId: advanced-apps/periodic-background-sync
       body {
         margin: 1rem;
       }
-    </style>
-  </head>
-  <body>
-    <h1>How to periodically synchronize data in the background</h1>
-
-    <script src="https://unpkg.com/own-window"></script>
-    <style>
       own-window {
         border: dashed red 2px;
         padding: 0.25rem;
       }
     </style>
+  </head>
+  <body>
+    <h1>How to periodically synchronize data in the background</h1>
+
+    {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+    {% include 'partials/script-loader.njk' %}
+    {% set apiScripts %}
+      loadScript('https://unpkg.com/own-window@1.0.3/dist/index.min.js', null);
+    {% endset %}
+    <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+
     <own-window>
       <div>This demo needs to run in its own window, not in an iframe.</div>
       <button type="button">Open in new window</button>
@@ -54,7 +58,7 @@ patternId: advanced-apps/periodic-background-sync
     <ul>
       <li>None yet.</li>
     </ul>
-    <script>
+    {% set script %}
       const available = document.querySelector('.available');
       const notAvailable = document.querySelector('.not-available');
       const ul = document.querySelector('ul');
@@ -131,7 +135,8 @@ patternId: advanced-apps/periodic-background-sync
           await registerPeriodicBackgroundSync(registration);
         });
       }
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>
 

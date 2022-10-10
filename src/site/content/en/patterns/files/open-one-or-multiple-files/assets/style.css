@@ -16,3 +16,7 @@ body {
   margin: 1rem;
   font-family: system-ui, sans-serif;
 }
+
+button {
+  margin: 1rem;
+}

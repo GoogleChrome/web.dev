@@ -1,7 +1,7 @@
 ---
 title: 'Images'
 authors:
-  - estellweyl
+  - estelleweyl
 description: An overview of images in HTML.
 date: 2022-09-08
 placeholder: true
