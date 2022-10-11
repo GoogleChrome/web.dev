@@ -54,8 +54,12 @@ const openFileOrFiles = async (multiple = false) => {
       // Return all files or just one file.
       resolve(multiple ? input.files : input.files[0]);
     });
-    // Programmatically click the `<input type="file" multiple? />`.
-    input.click();
+    // Show the picker.
+    if ('showPicker' in HTMLInputElement.prototype) {
+      input.showPicker();
+    } else {
+      input.click();
+    }
   });
 };
 

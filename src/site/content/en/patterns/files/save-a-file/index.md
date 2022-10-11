@@ -2,6 +2,7 @@
 layout: pattern
 title: How to save a file
 date: 2022-10-10
+updated: 2022-10-10
 authors:
   - thomassteiner
 description: >
@@ -84,7 +85,7 @@ const saveFile = async (blob, suggestedName) => {
   a.download = suggestedName;
   document.body.append(a);
   a.style.display = 'none';
-  // Click the element.
+  // Programmatically click the element.
   a.click();
   // Revoke the blob URL and remove the element.
   setTimeout(() => {
