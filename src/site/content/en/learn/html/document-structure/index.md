@@ -18,11 +18,11 @@ There are several features that should be considered essential for any and every
 
 ### `<!DOCTYPE html>`
 
-The first thing in any HTML document is the preamble. For HTML, all you need is `<!DOCTYPE html>`. This may look like an HTML element, but it isn't. It's a document type definition or DTD. The DTD tells the browser to use standards mode. If omitted, browsers will use a different rendering mode known as [quirks mode](https://developer.mozilla.org/docs/Web/HTML/Quirks_Mode_and_Standards_Mode). Including the DOCTYPE helps prevent quirks mode.
+The first thing in any HTML document is the preamble. For HTML, all you need is `<!DOCTYPE html>`. This may look like an HTML element, but it isn't. It's  a special kind of node called "doctype". The doctype tells the browser to use standards mode. If omitted, browsers will use a different rendering mode known as [quirks mode](https://developer.mozilla.org/docs/Web/HTML/Quirks_Mode_and_Standards_Mode). Including the doctype helps prevent quirks mode.
 
 ### `<html>`
 
-The `<html>` element is the root element for an HTML document. It is the parent of the `<head>` and `<body>`, containing everything in the HTML document other than the DTD. If omitted it will be implied, but it is important to include it, as this is the element on which the language of the content of the document is declared.
+The `<html>` element is the root element for an HTML document. It is the parent of the `<head>` and `<body>`, containing everything in the HTML document other than the doctype. If omitted it will be implied, but it is important to include it, as this is the element on which the language of the content of the document is declared.
 
 ### Content language
 
