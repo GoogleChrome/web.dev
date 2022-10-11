@@ -10,6 +10,7 @@ description:
   This blog post announces a new collection of patterns for amazing apps, including clipboard
   patterns, file patterns, and advanced app patterns.
 date: 2022-10-10
+updated: 2022-10-11
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/QdKJmzxJE8e63gdXWzeo.jpg
 alt: Computer keyboard with rainbow keyboard backlighting.
 tags:
@@ -104,8 +105,10 @@ You can provide feedback by tweeting at [@ChromiumDev](https://twitter.com/Chrom
 
 I'm grateful to [Joe Medley](https://github.com/jpmedley) for his help with reviewing and editing
 the patterns. Thanks to [Pete LePage](https://github.com/petele),
-[Ewa Gasperowicz](https://twitter.com/devnook), and [Rachel Andrew](https://twitter.com/rachelandrew)
-for all their support and
+[Ewa Gasperowicz](https://twitter.com/devnook), [Rachel Andrew](https://twitter.com/rachelandrew),
+[Ken Pascal](https://www.linkedin.com/in/kenpascal/),
+and [Matthias Rohmer](https://twitter.com/matthiasrohmer)
+for all their technical and organizational support and
 encouragements to land this. The entire patterns project would not have been possible without the
 help of the authors of the individual patterns, namely
 [Harry Theodoulou](https://www.harrytheo.com/), [Tony Conway](/authors/conwayt/),
