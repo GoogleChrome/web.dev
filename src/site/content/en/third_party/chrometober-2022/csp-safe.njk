@@ -11,7 +11,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 		<link href="https://fonts.googleapis.com/css2?family=Germania+One&amp;family=Nanum+Gothic:wght@400;700&amp;display=swap" rel="stylesheet">
 		<!-- <script is:inline type="module" src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script> -->
-	<link rel="stylesheet" href="/third_party/chrometober-2022/assets/index.589f3736.css">
+	<link rel="stylesheet" href="/third_party/chrometober-2022/assets/index.e7604c46.css">
 {% include 'partials/analytics.njk' %}
 
     {# Sourced scripts cannot be authorized by a CSP hash individually, so we need
@@ -22,7 +22,7 @@
     function loadScript(url, type) {
       const s = document.createElement('script');
       s.src = url;
-      s.onload = () =&gt; {
+      s.onload = function() {
         document.dispatchEvent(new CustomEvent('scriptLoaded', {detail: {url}}));
       }
       if (type) {
@@ -35,7 +35,7 @@
         pre.href = url;
         document.head.append(pre);
         // We use DOMContentLoaded as the loader script is running sync, and inserting a module script here doesn't defer. This brings back normal type="module" behavior.
-        window.addEventListener('DOMContentLoaded', () =&gt; {
+        window.addEventListener('DOMContentLoaded', function() {
           document.head.append(s);
         });
       } else {
@@ -46,7 +46,7 @@
     <script>{{ scriptLoader | minifyJs | cspHash | safe }}</script>
   
       {% set apiScripts %}
-        loadScript('/third_party/chrometober-2022/hoisted.fb3e1f2c.js', "module");
+        loadScript('/third_party/chrometober-2022/hoisted.a3799169.js', "module");
       {% endset %}
       <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
     
