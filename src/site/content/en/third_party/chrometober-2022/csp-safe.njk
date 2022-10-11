@@ -10,7 +10,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 		<link href="https://fonts.googleapis.com/css2?family=Germania+One&amp;family=Nanum+Gothic:wght@400;700;800&amp;display=swap" rel="stylesheet">
-		
+		<!-- <script is:inline type="module" src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script> -->
 	<link rel="stylesheet" href="/third_party/chrometober-2022/assets/index.40d0c63b.css">
 {% include 'partials/analytics.njk' %}
 
@@ -18,12 +18,7 @@
     {% include 'partials/script-loader.njk' %}
   
       {% set apiScripts %}
-        loadScript('https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js', "module");
-      {% endset %}
-      <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
-    
-      {% set apiScripts %}
-        loadScript('/third_party/chrometober-2022/hoisted.e97f0b08.js', "module");
+        loadScript('/third_party/chrometober-2022/hoisted.f9cc0f04.js', "module");
       {% endset %}
       <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
     
@@ -1051,8 +1046,6 @@
   </div><div data-timeline-trigger="" data-timeline-trigger--last="" aria-hidden="true" inert="">
     <h2>Thanks for checking this out!</h2>
   </div>
-		<!-- <script src="../assets/polyfills/scroll-timeline.js"></script> -->
-		<!-- <script src="../assets/polyfills/container-query.js"></script> -->
 	
 
 
