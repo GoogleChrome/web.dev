@@ -266,11 +266,11 @@ Now what happens if the CSS _and_ all the fonts are inlined as base64 resources?
 
 The impact of inlining yields negative consequences for LCP in this example&mdash;and for performance in general. The version of the page that doesn't inling anything paints the LCP image in about 3.5 seconds. The page that inlines everything doesn't paint the LCP image until roughly 6.4 seconds.
 
-To be candid, there's more at play here than just the preload scanner. Inlining fonts is not a great strategy because base64 is an inefficient format for binary resources. Additionally, because external font resources aren't downloaded unless they're determined necessary by the CSSOM but when those fonts are inlined as base64, they're downloaded whether they're needed or not.
+To be candid, there's more at play here than just the preload scanner. Inlining fonts is not a great strategy because base64 is an inefficient format for binary resources. Additionally, because external font resources aren't downloaded unless they're determined necessary by the CSSOM. When those fonts are inlined as base64, they're downloaded whether they're needed for the current page or not.
 
 Could a preload improve things here? Sure. You _could_ preload the LCP image and reduce LCP time, but bloating your potentially uncacheable HTML with inlined resources has other negative performance consequences. [First Contentful Paint (FCP)](/fcp/) is also affected by this pattern. In the version of the page where nothing is inlined, FCP is roughly 2.7 seconds. In the version where everything is inlined, FCP is roughly 5.1 seconds.
 
-Be very careful with inlining stuff into HTML, especially base64-encoded resources. In general it is not recommended, except for very small resources. So, inline as little as possible&mdash;inlining too much is playing with fire.
+Be very careful with inlining stuff into HTML, especially base64-encoded resources. In general it is not recommended, except for very small resources. Inline as little as possible, because inlining too much is playing with fire.
 
 ## Rendering markup with client-side JavaScript
 
