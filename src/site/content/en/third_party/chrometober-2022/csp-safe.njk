@@ -15,10 +15,10 @@
 {% include 'partials/analytics.njk' %}
 
     {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
-    {% include 'partials/script-loader.njk' %}
+    {% include 'partials/script-loader-embed.njk' %}
   
       {% set apiScripts %}
-        loadScript('/third_party/chrometober-2022/hoisted.f9cc0f04.js', "module");
+        loadScript('/third_party/chrometober-2022/hoisted.3397d7e6.js', "module");
       {% endset %}
       <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
     
