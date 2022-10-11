@@ -103,7 +103,7 @@ The key parameters here are:
     but never do this during sign-in.
 -   [`rp.id`](https://w3c.github.io/webauthn/#dom-publickeycredentialrpentity-id):
     A "relying party" ID. A relying party is any entity that uses passkeys to
-    authenticate users, e.g. a website. An RP ID is a domain and a website can
+    authenticate users, for example, a website. An RP ID is a domain and a website can
     specify either its domain or a registrable suffix. For example, if an RP's
     origin is `https://login.example.com:1337`, the RP ID can be either
     `login.example.com` or `example.com`. If the RP ID is specified as
@@ -113,7 +113,7 @@ The key parameters here are:
     The RP's name.
 -   [`user.id`](https://w3c.github.io/webauthn/#dom-publickeycredentialuserentity-id):
      A user's unique ID. This must be an ArrayBuffer which does not include
-    personally identifying information, e.g., e-mail addresses or usernames. A
+    personally identifying information, such as e-mail addresses or usernames. A
     random, 16-byte value generated per account will work well.
 -   [`user.name`](https://w3c.github.io/webauthn/#dom-publickeycredentialentity-name):
     This should be a unique identifier for the account that the user will
@@ -127,8 +127,8 @@ The key parameters here are:
     on the account selector depending on the browser.
 -   [`authenticatorSelection.authenticatorAttachment`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-authenticatorattachment):
     Set it to "platform". This indicates that we want an authenticator that is
-    embedded into the platform device, and the user will not be prompted to
-    insert e.g. a USB security key.
+    embedded into the platform device and the user will not be prompted to
+    insert an external authenticator such as a USB security key.
 -   [`authenticatorSelection.requireResidentKey`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-residentkey):
     Set it to "true". Requiring a discoverable credential (resident key)
     enables better sign-in experiences.
@@ -141,7 +141,7 @@ The key parameters here are:
     during the registration of each credential.
 
 {% Aside %}
-Note: Some browsers don't require any parameters on
+Some browsers don't require any parameters on
 `authenticatorSelection` to create a passkey, but others may. We
 recommend specifying those parameters explicitly.
 {% endAside %}
