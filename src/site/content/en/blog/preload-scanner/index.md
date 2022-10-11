@@ -312,11 +312,12 @@ If, for whatever reason, you _can't_ avoid a pattern that negatively affects the
 
 ## Resources
 
-- [Script-injected "async scripts" considered harmful](https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/).
-- [How the Browser Pre-loader Makes Pages Load Faster](https://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/).
-- [Preload critical assets to improve loading speed](/preload-critical-assets/).
-- [Establish network connections early to improve perceived page speed](/preconnect-and-dns-prefetch/).
-- [Optimizing Largest Contentful Paint](/optimize-lcp/).
+- [Script-injected "async scripts" considered harmful](https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/)
+- [How the Browser Pre-loader Makes Pages Load Faster](https://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/)
+- [Opinion: Inling CSS is not for me](https://www.tunetheweb.com/blog/inlining-css-is-not-for-me/)
+- [Preload critical assets to improve loading speed](/preload-critical-assets/)
+- [Establish network connections early to improve perceived page speed](/preconnect-and-dns-prefetch/)
+- [Optimizing Largest Contentful Paint](/optimize-lcp/)
 
 _Hero image from [Unsplash](https://unsplash.com/photos/oXlXu2qukGE), by [Mohammad Rahmani
 ](https://unsplash.com/@afgprogrammer)._
