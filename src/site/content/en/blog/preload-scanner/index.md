@@ -240,7 +240,7 @@ With the `rel=preload` hint, the LCP candidate is discovered sooner, lowering th
 
 Inlining is a practice that places a resource inside of the HTML. You can inline stylesheets in `<style>` elements, scripts in `<script>` elements, and virtually any other resource using [base64 encoding](https://developer.mozilla.org/docs/Glossary/Base64).
 
-Inlining resources is faster than downloading them because a separate request isn't issued for the resource. It's right in the document, and loads instantly. However, there are drawbacks:
+Inlining resources is often faster than downloading them because a separate request isn't issued for the resource. It's right in the document, and loads instantly. However, there are drawbacks:
 
 - If you're not caching your HTML&mdash;and you just can't if the HTML response is dynamic&mdash;the inlined resources are never cached. This affects performance because the inlined resources aren't reusable.
 - If you inline too much, you delay the preload scanner from discovering resources in the document, because parsers for CSS and scripts have to do their thing before the preload scanner can continue on to discover other resources in the document.
@@ -254,7 +254,7 @@ Take [this page](https://preload-scanner-fights.glitch.me/inline-nothing.html) a
   </figcaption>
 </figure>
 
-Now what happens if we inline the CSS _and_ inline all the fonts as base64 resources?
+Now what happens if the CSS _and_ all the fonts are inlined as base64 resources?
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ommDo1DKQUu1GxJ3YPvq.png", alt="A WebPageTest network waterfall chart of page with an external CSS file with four fonts referenced in it. The preload scanner is delayed significantly from discovering the LCP image .", width="800", height="297", loading="lazy" %}
@@ -265,11 +265,11 @@ Now what happens if we inline the CSS _and_ inline all the fonts as base64 resou
 
 The impact of inlining yields negative consequences for LCP in this example&mdash;and for performance in general. The version of the page that doesn't inling anything paints the LCP image in about 3.5 seconds. The page that inlines everything doesn't paint the LCP image until roughly 6.4 seconds.
 
-To be candid, there's more at play here than just the preload scanner. Inlining fonts is not a great strategy in part because external font resources aren't downloaded unless they're determined necessary by the CSSOM. When those fonts are inlined as base64, however, they're downloaded whether they're needed or not.
+To be candid, there's more at play here than just the preload scanner. Inlining fonts is not a great strategy because base64 is an inefficient format for binary resources. Additionally, because external font resources aren't downloaded unless they're determined necessary by the CSSOM but when those fonts are inlined as base64, they're downloaded whether they're needed or not.
 
 Could a preload improve things here? Sure. You _could_ preload the LCP image and reduce LCP time, but bloating your potentially uncacheable HTML with inlined resources has other negative performance consequences. [First Contentful Paint (FCP)](/fcp/) is also affected by this pattern. In the version of the page where nothing is inlined, FCP is roughly 2.7 seconds. In the version where everything is inlined, FCP is roughly 5.1 seconds.
 
-Be very careful with inlining stuff into HTML, especially base64-encoded resources. Don't do it if you can help it. If you can't help it, inline as little as possible. Inlining too much is playing with fire.
+Be very careful with inlining stuff into HTML, especially base64-encoded resources. In general it is not recommended, except for very small resources. So, inline as little as possible&mdash;inlining too much is playing with fire.
 
 ## Rendering markup with client-side JavaScript
 
