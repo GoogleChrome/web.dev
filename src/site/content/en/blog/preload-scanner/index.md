@@ -236,7 +236,7 @@ That `rel=preload` hint is small, but it helps the browser discover the image so
 
 With the `rel=preload` hint, the LCP candidate is discovered sooner, lowering the LCP time. While that hint helps fix this issue, the better option may be to assess whether or not your image LCP candidate _has_ to be loaded from CSS. With an `<img>` tag, you'll have more control over loading an image that's appropriate for the viewport while allowing the preload scanner to discover it.
 
-## Inlining too much stuff
+## Inlining too many resources
 
 Inlining is a practice that places a resource inside of the HTML. You can inline stylesheets in `<style>` elements, scripts in `<script>` elements, and virtually any other resource using [base64 encoding](https://developer.mozilla.org/docs/Glossary/Base64).
 
