@@ -48,6 +48,8 @@
           "title": "FIDO Authentication with passkeys",
           "url": "https://developers.google.com/identity/fido/"
         },
+        "passkey-registration",
+        "passkey-form-autofill",
         {
           "title": "[Codelab] Set up a biometric re-authentication functionality with WebAuthn",
           "url": "https://developers.google.com/codelabs/webauthn-reauth/"
