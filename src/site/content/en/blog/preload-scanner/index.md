@@ -244,6 +244,7 @@ Inlining resources is often faster than downloading them because a separate requ
 
 - If you're not caching your HTML&mdash;and you just can't if the HTML response is dynamic&mdash;the inlined resources are never cached. This affects performance because the inlined resources aren't reusable.
 - If you inline too much, you delay the preload scanner from discovering resources in the document, because parsers for CSS and scripts have to do their thing before the preload scanner can continue on to discover other resources in the document.
+- Even if you can cache the HTML, inlined resources aren't shared between documents. This reduces caching efficiency compared to external files that can be cached and reused across an entire origin.
 
 Take [this page](https://preload-scanner-fights.glitch.me/inline-nothing.html) as an example. In certain conditions the LCP candidate is the image at the top of the page, and the CSS is in a separate file loaded by a `<link>` element. The page also uses four web fonts which are requested as separate files from the CSS resource.
 
