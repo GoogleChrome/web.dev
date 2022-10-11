@@ -22,21 +22,8 @@ tags:
 ---
 
 Over 90% of browsers are capable of running modern JavaScript, but the
-prevalence of legacy JavaScript remains one of the biggest contributors to
-performance problems on the web today. [EStimator.dev](http://estimator.dev/) is
-a simple web-based tool that calculates the size and performance improvement a
-site could achieve by delivering modern JavaScript syntax.
-
-<figure>
-  {% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="EStimator.dev analysis showing a website could be 9% faster with modern JavaScript.", width="800", height="785" %}
-  <figcaption>
-    EStimator.dev
-  </figcaption>
-</figure>
-
-The web today is limited by legacy JavaScript, and no single optimization will
-improve performance as much as writing, publishing, and shipping your web page
-or package using **ES2017** syntax.
+prevalence of legacy JavaScript remains a large source of performance problems
+on the web today.
 
 ## Modern JavaScript
 
@@ -443,20 +430,6 @@ bundles with legacy fallbacks can be added to any project using
 standalone tool that transforms the output from a build system to produce legacy
 JavaScript variants, allowing bundling and transformations to assume a modern
 output target.
-
-## Conclusion
-
-[EStimator.dev](http://estimator.dev/) was built to provide an easy way to
-assess how much of an impact it can make to switch to modern-capable JavaScript
-code for the majority of your users. Today, ES2017 is the closest to modern
-syntax and tools such as npm, Babel, webpack, and Rollup have made it possible
-to configure your build system and write your packages using this syntax. This
-post covers several approaches, and you should use the easiest option that works
-for your use case.
-
-{% YouTube 'cLxNdLK--yI' %}
-
-<br>
 
 [parcel]: https://parceljs.org/
 [snowpack]: https://www.snowpack.dev/
