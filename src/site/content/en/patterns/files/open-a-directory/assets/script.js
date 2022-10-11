@@ -66,8 +66,11 @@ const openDirectory = async (mode = "read") => {
       let files = Array.from(input.files);
       resolve(files);
     });
-
-    input.click();
+    if ('showPicker' in HTMLInputElement.prototype) {
+      input.showPicker();
+    } else {
+      input.click();
+    }
   });
 };
 

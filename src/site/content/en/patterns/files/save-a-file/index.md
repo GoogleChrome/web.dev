@@ -85,12 +85,8 @@ const saveFile = async (blob, suggestedName) => {
   a.download = suggestedName;
   document.body.append(a);
   a.style.display = 'none';
-  // Show the picker.
-  if ('showPicker' in HTMLInputElement.prototype) {
-    a.showPicker();
-  } else {
-    a.click();
-  }
+  // Programmatically click the element.
+  a.click();
   // Revoke the blob URL and remove the element.
   setTimeout(() => {
     URL.revokeObjectURL(blobURL);
