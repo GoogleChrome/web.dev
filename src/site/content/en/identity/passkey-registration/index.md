@@ -173,7 +173,7 @@ database for future use. Here are typical properties to save:
 
 To process the credential on the server side, we recommend using a server side
 library or a solution instead of writing your own code.
-[You can find open source libraries in the awesome-webauth GitHub repo.](https://github.com/herrjemand/awesome-webauthn).
+[You can find open source libraries in the awesome-webauth GitHub repo](https://github.com/herrjemand/awesome-webauthn).
 
 To authenticate the user, read
 [Sign in with a passkey through form autofill](/passkey-form-autofill).
