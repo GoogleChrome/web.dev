@@ -15,7 +15,7 @@ tags:
 [Passkeys](https://developers.google.com/identity/passkeys) replace passwords
 and make user accounts on the web safer, simpler, easier to use. However, the
 transition from password-based to passkey-based authentication can complicate
-the user experience. Leveraging form autofill to suggest passkeys can help
+the user experience. Using form autofill to suggest passkeys can help
 create a unified experience.
 
 ## Why use form autofill to sign-in with a passkey?
