@@ -74,7 +74,7 @@ properties:
 - A **state** (optional)
 
 An element's **role** describes its type, i.e. "button," "input," or even just
-"group" for things like `div`'s and `span`'s.
+"group" for things like `div`s and `span`s.
 
 An element's **name** is its computed label. Screen readers typically announce
 an element's name followed by its role, e.g. "Sign Up, button." The algorithm
@@ -103,7 +103,7 @@ to the user, it is often doing so by walking this accessibility tree.
 Browsers will often remove semantically uninteresting nodes like `div` and
 `span` from the accessibility tree, especially if they're just being used to
 position their children with CSS. For instance, if you have a `button` nested
-inside of 5 `div`'s, the browser may prune out some of the `div`'s in the middle
+inside of 5 `div`s, the browser may prune out some of the `div`s in the middle
 to cut down on noise.
 {% endAside %}
 
