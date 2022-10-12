@@ -45,8 +45,8 @@
       "title": "i18n.paths.identity.topics.build_advanced_authentication_systems",
       "pathItems": [
         {
-          "title": "FIDO Authentication with passkeys",
-          "url": "https://developers.google.com/identity/fido/"
+          "title": "Passwordless login with passkeys",
+          "url": "https://developers.google.com/identity/passkeys/"
         },
         "passkey-registration",
         "passkey-form-autofill",
