@@ -65,7 +65,7 @@ to sign in.
 
 This way, users can sign in to your website with the existing form as if
 nothing has changed, but with
-[the added security benefit of passkeys](https://docs.google.com/document/d/1cPn7f-QJ_B10HYa_yN6LFsHKUJ051ydAPAg4N3hHBXM/edit#heading=h.gbh1vq1hvzqp)
+[the added security benefit of passkeys](https://developers.google.com/identity/passkeys#security-considerations)
 if they have one.
 
 {% Aside %}
