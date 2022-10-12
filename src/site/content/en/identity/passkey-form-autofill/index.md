@@ -5,11 +5,13 @@ subhead: Create a sign in experience that leverages passkeys while still accommo
 authors:
   - agektmr
 date: 2022-10-12
+hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/n2fXJDSlefAg8EPLkqEr.jpg
 description: |
   Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses how  how a passwordless sign-in with passkeys should be designed while accommodating existing password users.
 tags:
   - identity
   - security
+  - blog
 ---
 
 [Passkeys](https://developers.google.com/identity/passkeys) replace passwords
