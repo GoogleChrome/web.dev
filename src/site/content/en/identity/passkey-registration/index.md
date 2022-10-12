@@ -126,11 +126,11 @@ The key parameters here are:
     suitable value to include here, pass an empty string. This may be displayed
     on the account selector depending on the browser.
 -   [`authenticatorSelection.authenticatorAttachment`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-authenticatorattachment):
-    Set it to "platform". This indicates that we want an authenticator that is
+    Set it to `"platform"`. This indicates that we want an authenticator that is
     embedded into the platform device and the user will not be prompted to
     insert an external authenticator such as a USB security key.
 -   [`authenticatorSelection.requireResidentKey`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-residentkey):
-    Set it to "true". Requiring a discoverable credential (resident key)
+    Set it to `"true"`. Requiring a discoverable credential (resident key)
     enables better sign-in experiences.
 -   [`excludeCredentials`](https://w3c.github.io/webauthn/#dom-publickeycredentialcreationoptions-excludecredentials):
     Prevent registering the same authenticator by providing a list of already
