@@ -1,15 +1,17 @@
 ---
 layout: post
 title: Create a passkey for passwordless logins
-subhead: Passkeys make  user accounts safer, simpler, easier to use.
+subhead: Passkeys make user accounts safer, simpler, easier to use.
 authors:
   - agektmr
 date: 2022-10-12
+hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/ESXHlkzce7qhQSqQHacV.jpg
 description: |
   Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses how to allow users to create passkeys for your website.
 tags:
   - identity
   - security
+  - blog
 ---
 
 Using [passkeys](https://developers.google.com/identity/passkeys) instead of
@@ -35,7 +37,7 @@ Otherwise the call to `navigator.credentials.create()` below will fail.
 
 Before prompting the user to create a new passkey, check if:
 
--   The browser supports WebAuthn.
+-   The browser supports [WebAuthn](https://w3c.github.io/webauthn/).
 -   The device supports a platform authenticator.
 -   The browser supports conditional UI.
 
@@ -58,7 +60,7 @@ if (window.PublicKeyCredential &&
 
 ### Call WebAuthn API to create a passkey
 
-To create a passkey, call the [WebAuthn](https://w3c.github.io/webauthn/) API
+To create a passkey, call the WebAuthn API
 `navigator.credentials.create()`. See below for details on each parameter.
 
 ```js
