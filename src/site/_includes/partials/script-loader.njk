@@ -58,5 +58,9 @@ loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
   loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module');
 {% endfor %}
 
+{% for item in externalScripts %}
+  loadScript('{{item}}', null);
+{% endfor %}
+
 {% endset %}
 <script>{{ scriptLoader | minifyJs | cspHash | safe }}</script>

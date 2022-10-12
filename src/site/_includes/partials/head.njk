@@ -56,7 +56,6 @@
 {% include 'partials/script-loader.njk' %}
 {% set apiScripts %}
   loadScript('https://www.google-analytics.com/analytics.js', null);
-  loadScript('https://www.google.com/recaptcha/api.js', null);
 {% endset %}
 <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
 
