@@ -101,7 +101,7 @@ Add an `autocomplete` attribute to the `username` input field, if needed.
 Append `username` and `webauthn` as its tokens to let it suggest passkeys.
 
 ```html
-<input type="text" name="username" autocomplete="username webauthn"` ...>
+<input type="text" name="username" autocomplete="username webauthn" ...>
 ```
 
 ### Feature detection
