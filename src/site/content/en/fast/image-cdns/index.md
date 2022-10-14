@@ -77,7 +77,9 @@ Image CDNs can be broken down into two categories: self-managed and third-party-
 
 Self-managed CDNs can be a good choice for sites with engineering staff who are comfortable maintaining their own infrastructure.
 
-[Thumbor](https://github.com/thumbor/thumbor) is the only self-managed image CDN available today. While it is open-source and free to use, it generally has fewer features than most commercial CDNs, and its documentation is somewhat limited. [Wikipedia](https://wikitech.wikimedia.org/wiki/Thumbor), [Square](https://medium.com/square-corner-blog/dynamic-images-with-thumbor-a430a1cfcd87), and [99designs](https://99designs.com/tech-blog/blog/2013/07/01/thumbnailing-with-thumbor/) are three sites that use Thumbor. See the [How to install the Thumbor image CDN](/install-thumbor) post for instructions on setting it up.
+- [Thumbor](https://github.com/thumbor/thumbor) is the most popular self-managed image CDN. While it is open-source and free to use, it generally has fewer features than most commercial CDNs, and its documentation is somewhat limited. [Wikipedia](https://wikitech.wikimedia.org/wiki/Thumbor), [Square](https://medium.com/square-corner-blog/dynamic-images-with-thumbor-a430a1cfcd87), and [99designs](https://99designs.com/tech-blog/blog/2013/07/01/thumbnailing-with-thumbor/) are three sites that use Thumbor. See the [How to install the Thumbor image CDN](/install-thumbor) post for instructions on setting it up.
+- [Imaginary](https://github.com/h2non/imaginary)
+- [Imagor](https://github.com/cshum/imagor)
 
 ### Third-party image CDNs
 
