@@ -74,7 +74,7 @@ properties:
 - A **state** (optional)
 
 An element's **role** describes its type, i.e. "button," "input," or even just
-"group" for things like `div`s and `span`s.
+"group" for things like `div` and `span` elements.
 
 An element's **name** is its computed label. Screen readers typically announce
 an element's name followed by its role, e.g. "Sign Up, button." The algorithm
