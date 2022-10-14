@@ -30,7 +30,7 @@ CSS 파일은 [렌더링 차단 리소스](https://developers.google.com/web/too
 
 보고서는 값이 "1s"인 **First Contentful Paint** 메트릭과 **style.css** 파일을 가리키는 **렌더 차단 리소스 제거** 기회를 보여줍니다.
 
-<figure>% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="'1s'의 FCP를 표시하는 최적화되지 않은 페이지의 Lighthouse 보고서 및  '기회'" 아래 '차단 리소스 제거', width="800", height="640" %}</figure>
+<figure>{% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="'1s'의 FCP를 표시하는 최적화되지 않은 페이지의 Lighthouse 보고서 및  '기회'" 아래 '차단 리소스 제거', width="800", height="640" %}</figure>
 
 {% Aside %} 이 데모 사이트에 사용하는 CSS는 매우 작습니다.  더 큰 CSS 파일(프로덕션 시나리오에서 흔히 볼 수 있음)을 요청하는 경우 그리고 Lighthouse가 **폴드 상에 있는** 콘텐츠를  렌더링하는 동안 사용되지 않은 2048바이트 이상의 CSS 규칙이 페이지에 있음을 감지하면 **미사용 CSS 제거**라는 제안도 받게 됩니다. {% endAside %}
 
