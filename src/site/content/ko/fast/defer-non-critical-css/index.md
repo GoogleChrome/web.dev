@@ -66,43 +66,15 @@ CSS 파일은 [렌더링 차단 리소스](https://developers.google.com/web/too
 
 ```html
 <style type="text/css">
-  .accordion-btn {
-    background-color: #add8e6;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-  }
-  .container {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-    overflow: hidden;
-  }
-  h1 {
-    word-spacing: 5px;
-    color: blue;
-    font-weight: bold;
-    text-align: center;
-  }
+  .accordion-btn {background-color: #ADD8E6;color: #444;cursor: pointer;padding: 18px;width: 100%;border: none;text-align: left;outline: none;font-size: 15px;transition: 0.4s;}.container {padding: 0 18px;display: none;background-color: white;overflow: hidden;}h1 {word-spacing: 5px;color: blue;font-weight: bold;text-align: center;}
 </style>
 ```
 
 - 그다음, 다음과 같은 패턴을 적용하여 나머지 클래스를 비동기적으로 로드합니다.
 
 ```html
-<link
-  rel="preload"
-  href="styles.css"
-  as="style"
-  onload="this.onload=null;this.rel='stylesheet'"
-/>
-<noscript><link rel="stylesheet" href="styles.css" /></noscript>
+<link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="styles.css"></noscript>
 ```
 
 이것은 CSS를 로드하는 일반적인 방법이 아닙니다. 작동 방식은 다음과 같습니다.
