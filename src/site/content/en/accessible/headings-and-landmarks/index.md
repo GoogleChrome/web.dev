@@ -18,7 +18,7 @@ to create a skeleton or scaffold of the page such that anyone navigating by
 headings can form a mental picture.
 
 A common practice is to use a single `h1` for the primary headline or logo on a
-page, `h2`s to designate major sections, and `h3`'s in supporting subsections:
+page, `h2` elements to designate major sections, and `h3` elements in supporting subsections:
 
 ```html
 <h1>Company name</h1>
@@ -44,7 +44,7 @@ headlines:
 {% Img src="image/admin/CdBjBuUo2yVVHWVFnQzx.png", alt="A news site with a headline, hero image, and subsections.", width="800", height="414" %}
 
 The section heading, "IN THE NEWS", could be an `h2`, and the supporting
-headlines could both be `h3`'s.
+headlines could both be `h3` elements.
 
 Because the `font-size` for "IN THE NEWS" is _smaller_ than the headline, it may
 be tempting to make the headline for the first story an `h2` and to make
@@ -52,8 +52,8 @@ be tempting to make the headline for the first story an `h2` and to make
 it would break the outline conveyed to a screen reader user!
 
 {% Aside %}
-Though it may seem counterintuitive, it does not matter if _visually_ `h3`'s and
-`h4`'s are larger than their `h2` or `h1` counterparts. What matters is the
+Though it may seem counterintuitive, it does not matter if _visually_ `h3` and
+`h4` elements are larger than their `h2` or `h1` counterparts. What matters is the
 outline conveyed by the elements and elements' ordering.
 {% endAside %}
 
