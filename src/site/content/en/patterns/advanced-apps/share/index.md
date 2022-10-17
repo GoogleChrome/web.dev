@@ -2,7 +2,7 @@
 layout: pattern
 title: How to let the user share the website they are on
 date: 2022-10-10
-updated: 2022-10-10
+updated: 2022-10-17
 description: >
   Learn how to let the user share the website they are on.
 authors:
