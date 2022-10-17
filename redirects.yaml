@@ -395,6 +395,12 @@ redirects:
   - source: /debug-web-vitals-in-the-field/
     destination: /debug-performance-in-the-field/
 
+  # Redirects for patterns
+  - source: /patterns/advanced-apps/audio-effects/demo.html
+    destination: /patterns/media/audio-effects/demo.html
+  - source: /patterns/advanced-apps/audio-effects
+    destination: /patterns/media/audio-effects
+
   # Redirects for Lighthouse accessibility content.
   - source: /lighthouse-accessibility
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/
