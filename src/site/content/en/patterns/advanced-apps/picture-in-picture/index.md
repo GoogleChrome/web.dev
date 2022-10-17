@@ -11,7 +11,7 @@ height: 800
 
 ## The modern way
 
-The [Picture-in-Picture (PiP) Web API](https://w3c.github.io/picture-in-picture/) allows websites to create a floating video window always on top of other windows so that users may continue consuming media while they interact with other content sites, or applications on their device.
+The [Picture-in-Picture (PiP) Web API](https://w3c.github.io/picture-in-picture/) allows websites to create a floating video window always on top of other windows so that users may continue consuming media while they interact with other content sites or applications on their device.
 
 {% BrowserCompat 'api.Picture-in-Picture_API' %}
 
@@ -21,9 +21,11 @@ The example below shows you how to create a button that users can use to toggle 
 togglePipButton.addEventListener("click", async (event) => {
   togglePipButton.disabled = true;
   try {
-    if (video !== document.pictureInPictureElement)
+    if (video !== document.pictureInPictureElement) {
       await video.requestPictureInPicture();
-    else await document.exitPictureInPicture();
+    } else {
+      await document.exitPictureInPicture();
+    }
   } finally {
     togglePipButton.disabled = false;
   }
@@ -37,8 +39,7 @@ video.addEventListener("leavepictureinpicture", (event) => {
   togglePipButton.classList.remove("on");
 });
 
-/* Feature support */
-
+/* Feature detection */
 if ("pictureInPictureEnabled" in document) {
   // Set button ability depending on whether Picture-in-Picture can be used.
   setPipButton();
@@ -61,7 +62,7 @@ function setPipButton() {
 
 Before the availability of the Picture-in-Picture Web API, there was no way to create a floating video window always on top of other windows. Playing the video on top of other elements on the web page is possible though with CSS.
 
-The example below shows you how to display your video on top of other elements at the bottom right corner of your web page when user click a button.
+The example below shows you how to display your video on top of other elements at the bottom right corner of your web page when the user clicks a button.
 
 ```js
 toggleFakePipButton.addEventListener("click", (event) => {
@@ -70,6 +71,7 @@ toggleFakePipButton.addEventListener("click", (event) => {
 ```
 
 ```css
+/* Place the video in the bottom right corner on top of everything else via CSS. */
 video.fake-pip {
   position: fixed;
   z-index: 1000;

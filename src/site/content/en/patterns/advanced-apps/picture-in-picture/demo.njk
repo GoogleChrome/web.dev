@@ -9,9 +9,9 @@ patternId: advanced-apps/picture-in-picture
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📺</text></svg>"
     />
-    <title>How to create a custom Picture-in-Picture button for your video player</title>
+    <title>How to add Picture-in-Picture to video controls</title>
     {# Include the GA object so we can start queuing events. #}
     {% include 'partials/analytics.njk' %}
     <style>
@@ -50,7 +50,7 @@ patternId: advanced-apps/picture-in-picture
     </style>
   </head>
   <body>
-    <h1>How to create a custom Picture-in-Picture button for your video player</h1>
+    <h1>How to add Picture-in-Picture to video controls</h1>
     <button id="togglePipButton">Picture-in-Picture</button>
     <button id="toggleFakePipButton">Fake Picture-in-Picture</button>
     <video autoplay muted playsinline loop src="https://storage.googleapis.com/media-session/caminandes/short.mp4"></video>
@@ -62,9 +62,11 @@ patternId: advanced-apps/picture-in-picture
       togglePipButton.addEventListener("click", async (event) => {
         togglePipButton.disabled = true;
         try {
-          if (video !== document.pictureInPictureElement)
+          if (video !== document.pictureInPictureElement) {
             await video.requestPictureInPicture();
-          else await document.exitPictureInPicture();
+          } else {
+            await document.exitPictureInPicture();
+          }
         } finally {
           togglePipButton.disabled = false;
         }
@@ -78,8 +80,7 @@ patternId: advanced-apps/picture-in-picture
         togglePipButton.classList.remove("on");
       });
 
-      /* Feature support */
-
+      /* Feature detection */
       if ("pictureInPictureEnabled" in document) {
         // Hide fake PiP button if Picture-in-Picture is supported.
         toggleFakePipButton.hidden = true;
@@ -100,7 +101,6 @@ patternId: advanced-apps/picture-in-picture
       }
 
       /* Fake Picture-in-Picture */
-
       toggleFakePipButton.addEventListener("click", (event) => {
         toggleFakePipButton.classList.toggle("on");
         video.classList.toggle("fake-pip");

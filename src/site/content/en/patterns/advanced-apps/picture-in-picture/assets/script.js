@@ -5,9 +5,11 @@ const toggleFakePipButton = document.querySelector('#toggleFakePipButton');
 togglePipButton.addEventListener("click", async (event) => {
   togglePipButton.disabled = true;
   try {
-    if (video !== document.pictureInPictureElement)
+    if (video !== document.pictureInPictureElement) {
       await video.requestPictureInPicture();
-    else await document.exitPictureInPicture();
+    } else {
+      await document.exitPictureInPicture();
+    }
   } finally {
     togglePipButton.disabled = false;
   }
@@ -21,8 +23,7 @@ video.addEventListener("leavepictureinpicture", (event) => {
   togglePipButton.classList.remove("on");
 });
 
-/* Feature support */
-
+/* Feature detection */
 if ("pictureInPictureEnabled" in document) {
   // Hide fake PiP button if Picture-in-Picture is supported.
   toggleFakePipButton.hidden = true;
@@ -43,7 +44,6 @@ function setPipButton() {
 }
 
 /* Fake Picture-in-Picture */
-
 toggleFakePipButton.addEventListener("click", (event) => {
   toggleFakePipButton.classList.toggle("on");
   video.classList.toggle("fake-pip");
