@@ -27,6 +27,7 @@ function algoliaIndexable(posts) {
     (post) =>
       post.url &&
       post.data.title &&
+      !(post.template.frontMatter.data.permalink === false) &&
       !(post.data.noindex === true || post.data.noindex === 'true'),
   );
 }
