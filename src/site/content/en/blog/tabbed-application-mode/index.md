@@ -5,7 +5,7 @@ subhead: Work on more than one document at a time with tabs in your Progressive 
 authors:
   - thomassteiner
 date: 2021-02-25
-updated: 2022-08-03
+updated: 2022-10-18
 description: |
   Tabbed application mode allows Progressive Web App developers to add a tabbed document interface
   to their standalone PWAs.
@@ -87,13 +87,13 @@ window.
 
 <div>
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [In progress][issue]     |
-| 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Not started              |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                     |
+| ---------------------------------------- | -------------------------- |
+| 1. Create explainer                      | [Completed][explainer]     |
+| 2. Create initial draft of specification | Not started                |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)   |
+| 4. Origin trial                          | Not started                |
+| 5. Launch                                | Not started                |
 
 </div>
 
@@ -218,6 +218,7 @@ and let us know where and how you are using it.
 
 ## Useful links
 
+- [Explainer][explainer]
 - [Web app manifest spec issue][issue]
 - [Chromium bug](https://crbug.com/897314)
 - Blink Component: [`UI>Browser>WebAppInstalls`][blink-component]
@@ -233,3 +234,4 @@ was reviewed by [Joe Medley](https://github.com/jpmedley). Hero image by
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EUI>Browser>WebAppInstalls
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issue]: https://github.com/w3c/manifest/issues/737
+[explainer]: https://github.com/WICG/manifest-incubations/blob/gh-pages/tabbed-mode-explainer.md
