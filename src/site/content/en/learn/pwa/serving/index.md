@@ -176,19 +176,22 @@ With this strategy, the assets are updated in the background. This means your us
 
 ```js
 self.addEventListener("fetch", event => {
-   event.respondWith(
-     caches.match(event.request).then(cachedResponse => {
-         const networkFetch = fetch(event.request).then(response => {
-           // update the cache with a clone of the network response
-           caches.open("pwa-assets").then(cache => {
-               cache.put(event.request, response.clone());
-           });
-         });
-         // prioritize cached response over network
-         return cachedResponse || networkFetch;
-     }
-   )
-  )
+    event.respondWith(
+        caches.match(event.request).then(cachedResponse => {
+            let fetchResponse;
+            const networkFetch = fetch(event.request).then(response => {
+                fetchResponse = response;
+                return caches.open("pwa-assets");
+            }).then(cache => {
+                // update the cache with a clone of the network response
+                return cache.put(event.request, fetchResponse.clone());
+            }).then(() => {
+                return fetchResponse;
+            });
+            // prioritize cached response over network
+            return cachedResponse || networkFetch;
+        })
+    );
 });
 ```
 
