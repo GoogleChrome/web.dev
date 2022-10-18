@@ -13,10 +13,10 @@ intro:
   imageHeight: '240'
 featureCard:
   theme: 'light'
-  title: 'Connect with us on Twitter Spaces'
-  eyebrow: 'Event'
-  url: 'https://web.dev/spaces/'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/X49lrIUVWJr3OTkKX21n.svg'
+  title: 'Celebrate Chrometober with web tricks and treats.'
+  eyebrow: 'Featured'
+  url: 'https://web.dev/chrometober-2022'
+  background: 'https://web-dev.imgix.net/image/HodOHWjMnbNw56hvNASHWSgZyAf2/AwSceHfK5B3n1z1XSx1Z.gif'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'

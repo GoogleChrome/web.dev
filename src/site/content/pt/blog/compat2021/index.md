@@ -103,7 +103,7 @@ Confira a <a href="https://output.jsbin.com/xunosud">demonstração dos cabeçal
 
 ### Propriedade de proporção de aspecto CSS
 
-A nova propriedade [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) facilita a manutenção de uma proporção consistente de largura e altura para os elementos, eliminando a necessidade do conhecido [hack `padding-top`](/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top) :
+A nova propriedade [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) facilita a manutenção de uma proporção consistente de largura e altura para os elementos, eliminando a necessidade do conhecido [hack `padding-top`](/aspect-ratio/#the-old-hack-maintaining-aspect-ratio-with-padding-top) :
 
 <div class="switcher">{% Compare 'worse', 'Usando padding-top' %} ```css .container { width: 100%; padding-top: 56.25%; } ``` {% endCompare %}</div>
 <p data-md-type="paragraph">{% Compare 'better', 'Usando aspect-ratio' %}</p>

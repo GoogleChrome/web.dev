@@ -75,7 +75,7 @@ You can also insert a
 
 {% Aside 'key-term' %}
 You can create a named counter and then increment it,
-based on it's position in the document flow.
+based on its position in the document flow.
 There's all sorts of contexts where they can be really useful, such as automatically numbering an outline.
 {% endAside %}
 

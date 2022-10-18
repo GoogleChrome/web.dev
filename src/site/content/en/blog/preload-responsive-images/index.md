@@ -9,6 +9,7 @@ description: |
 hero: image/admin/QDCTiiyXE11bYSZMP3Yt.jpg
 alt: A wall with a bunch of image frames in different sizes.
 date: 2019-09-30
+updated: 2022-09-27
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
@@ -185,6 +186,12 @@ Because responsive preload has no notion of "order" or "first match", the breakp
 <link rel="preload" href="medium_cat.jpg" as="image" media="(min-width: 400.1px) and (max-width: 800px)">
 <link rel="preload" href="large_cat.jpg" as="image" media="(min-width: 800.1px)">
 ```
+
+## Effects on Largest Contentful Paint (LCP)
+
+Since images can be [candidates for Largest Contentful Paint (LCP)](/lcp/#what-elements-are-considered), preloading them may improve your website's LCP. Using the techniques above, you can also ensure that your responsive images will load more quickly.
+
+Regardless of whether the image you're preloading is responsive, be aware that preloads work especially well when the image resource isn't discoverable in the initial markup payload. For websites that send complete markup from the server, you may not realize a huge benefit. However, if your website renders markup on the client&mdash;which sidesteps the browser's [preload scanner](/preload-scanner/)&mdash;there's an opportunity on the table to preload potential LCP images to improve performance.
 
 ## Summary
 

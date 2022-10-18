@@ -221,5 +221,4 @@ That’s all for now. Stay tuned for a couple more articles on practical implica
 
 - [Scrolling Performance](http://www.html5rocks.com/en/tutorials/speed/scrolling/)
 - [Profiling Long Paint Times with DevTools' Continuous Painting Mode](http://updates.html5rocks.com/2013/02/Profiling-Long-Paint-Times-with-DevTools-Continuous-Painting-Mode)
-- [http://jankfree.com](http://jankfree.com)
 - [http://aerotwist.com/blog/on-translate3d-and-layer-creation-hacks/](http://aerotwist.com/blog/on-translate3d-and-layer-creation-hacks/)

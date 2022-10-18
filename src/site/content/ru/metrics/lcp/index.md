@@ -169,7 +169,7 @@ import {getLCP} from 'web-vitals';
 getLCP(console.log);
 ```
 
-Полный пример измерения LCP в JavaScript приводится в [исходном коде `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts).
+Полный пример измерения LCP в JavaScript приводится в [исходном коде `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить LCP в JavaScript. См. подробности в разделе  [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 

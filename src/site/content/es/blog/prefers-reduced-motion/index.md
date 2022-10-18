@@ -27,7 +27,7 @@ El otro día, estaba patinando sobre hielo con mis hijos. Era un día hermoso, e
 
 Ocasionalmente, puede suceder lo mismo en la web: con anuncios parpadeantes, efectos de paralaje sofisticados, animaciones reveladoras sorprendentes, videos de reproducción automática, etc., *la web a veces puede ser bastante abrumadora*… Afortunadamente, a diferencia de la vida real, hay una solución para eso. La consulta de medios CSS, `prefers-reduced-motion` permite a los desarrolladores crear una variante de una página para los usuarios que, básicamente, prefieren que el movimiento sea reducido. Esto puede abarcar cualquier cosa, desde abstenerse de reproducir videos automáticamente hasta deshabilitar ciertos efectos puramente decorativos, hasta rediseñar completamente una página para ciertos usuarios.
 
-Antes de detallar la función a fondo, demos un paso atrás y pensemos para qué se utilizan las animaciones en la web. Si lo desea, también puede omitir la información general y [pasar directamente a los detalles técnicos](#working_with_the_media_query) a continuación.
+Antes de detallar la función a fondo, demos un paso atrás y pensemos para qué se utilizan las animaciones en la web. Si lo desea, también puede omitir la información general y [pasar directamente a los detalles técnicos](#working-with-the-media-query) a continuación.
 
 ## Animación en la web
 
@@ -88,13 +88,8 @@ Para ilustrar ambos, digamos que tengo un botón de registro importante en el qu
 }
 ```
 
-{% Aside %} Si tiene una gran cantidad de CSS relacionado con la animación, puede evitar que los usuarios que optaron por no recibir animaciones lo descarguen mediante la transferencia de todo el CSS relacionado con la animación a una hoja de estilo separada que solo carga condicionalmente a través del atributo `media` en el elemento del `link` 😎:
-
-```html
-<link rel="stylesheet" href="animations.css"
-      media="(prefers-reduced-motion: no-preference)">
-```
-
+{% Aside %}
+Si tiene una gran cantidad de CSS relacionado con la animación, puede evitar que los usuarios que optaron por no recibir animaciones lo descarguen mediante la transferencia de todo el CSS relacionado con la animación a una hoja de estilo separada que solo carga condicionalmente a través del atributo `media` en el elemento del `link` 😎: `<link rel="stylesheet" href="animations.css" media="(prefers-reduced-motion: no-preference)">`
 {% endAside %}
 
 Para ilustrar cómo trabajar con `prefers-reduced-motion` con JavaScript, imaginemos que he definido una animación compleja con la [API de animaciones web](https://developer.mozilla.org/docs/Web/API/Web_Animations_API) (Web Animations API). Si bien el navegador activará dinámicamente las reglas de CSS cuando cambie la preferencia del usuario, para las animaciones de JavaScript tengo que captar los cambios por mi cuenta y luego detener manualmente las animaciones potencialmente en ejecución (o reiniciarlas si el usuario me lo permite):

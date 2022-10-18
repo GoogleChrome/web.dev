@@ -476,16 +476,6 @@ best be able to support them within the protective confines of CSP.
 
 ### Use case #1: social media widgets
 
-* Google's [+1 button](https://developers.google.com/+/web/+1button/)
-includes a script from `https://apis.google.com`, and embeds an `<iframe>` from
-`https://plusone.google.com`. You need a policy that includes both these
-origins in order to embed the button. A minimal policy would be `script-src
-https://apis.google.com; child-src https://plusone.google.com`. You also need
-to ensure that the snippet of JavaScript that Google provides is pulled out into
-an external JavaScript file. If you had a Level 1-based policy using `frame-src`
-Level 2 required you to change it to `child-src`. This is no longer necessary
-in CSP Level 3.
-
 * Facebook's [Like button](//developers.facebook.com/docs/plugins/like-button){: .external }
 has a number of implementation options. We recommend sticking with the
 `<iframe>` version as it's safely sandboxed from the rest of your site. It

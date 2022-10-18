@@ -149,7 +149,7 @@ can make analytics calls, cache pages offline and show notifications.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/DCOmdNQ0YXPfd082WUgz.svg", alt="When a push message is sent from a push service to a user's device, your service worker receives a push event", width="800", height="238" %}
 
-That's the whole flow for push messaging. Lets go through each step in more detail.
+That's the whole flow for push messaging.
 
 ## Where to go next
 

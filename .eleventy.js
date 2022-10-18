@@ -297,6 +297,11 @@ module.exports = function (config) {
     }
   }
 
+  // Chrometober config
+  config.addPassthroughCopy({
+    'src/site/content/en/third_party/': 'third_party',
+  });
+
   return {
     dir: {
       input: 'src/site/content/', // we use a string path with the forward slash since windows doesn't like the paths generated from path.join

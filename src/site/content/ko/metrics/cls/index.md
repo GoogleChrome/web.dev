@@ -36,7 +36,7 @@ tags:
 
 ## CLS란 무엇인가요?
 
-CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](/cls/#expected-vs.-unexpected-layout-shifts) 레이아웃 이동에 대해 가장 큰 *레이아웃 이동 점수* 버스트를 뜻합니다.
+CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](/cls/#expected-vs-unexpected-layout-shifts) 레이아웃 이동에 대해 가장 큰 *레이아웃 이동 점수* 버스트를 뜻합니다.
 
 *레이아웃 이동*은 시각적 요소가 렌더링된 프레임에서 다음 프레임으로 위치를 변경할 때마다 발생합니다. 개별 [레이아웃 이동 점수](#layout-shift-score) 계산 방법에 대한 자세한 내용은 아래를 참조하세요.
 
@@ -250,7 +250,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`getCLS)` 의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)를 참조하세요.
+JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`getCLS)` 의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 CLS를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 

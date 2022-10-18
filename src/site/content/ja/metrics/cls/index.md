@@ -36,7 +36,7 @@ Cumulative Layout Shift (CLS) 指標は、実際のユーザーに対するこ�
 
 ## CLS とは？
 
-CLS は、ページの表示中に発生した[予期しない](/cls/#expected-vs.-unexpected-layout-shifts)レイアウトシフトごとに*レイアウト シフト スコア*の最大バーストを測定します。
+CLS は、ページの表示中に発生した[予期しない](/cls/#expected-vs-unexpected-layout-shifts)レイアウトシフトごとに*レイアウト シフト スコア*の最大バーストを測定します。
 
 *レイアウト シフト*は、表示された要素がレンダリングされたフレームから次のフレームへと位置を変更する際に発生します。(個々の[レイアウト シフト スコア](#layout-shift-score)の計算方法に関する詳細については、以下を参照してください)。
 
@@ -250,7 +250,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-JavaScript を使用して CLS を測定する方法に関する詳細な例については、[`getCLS()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)を参照してください。
+JavaScript を使用して CLS を測定する方法に関する詳細な例については、[`getCLS()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)を参照してください。
 
 {% Aside %}場合によっては (クロスオリジン iframe など)、JavaScript を使用して CLS を測定することはできません。詳細については、`web-vitals` ライブラリの「[制限事項](https://github.com/GoogleChrome/web-vitals#limitations)」セクションを参照してください。{% endAside %}
 

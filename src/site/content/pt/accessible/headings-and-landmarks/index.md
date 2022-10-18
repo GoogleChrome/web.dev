@@ -9,7 +9,7 @@ description: |2-
   melhorar expressivamente a experiência de navegação para usuários de tecnologia assistiva.
 ---
 
-{% include 'content/lighthouse-accessibility/why-headings.njk' %}
+{% include 'content/why-headings.njk' %}
 
 ## Use títulos para delinear a página
 

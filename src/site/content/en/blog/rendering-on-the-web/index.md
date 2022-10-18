@@ -5,7 +5,7 @@ authors:
   - developit
   - addyosmani
 date: 2019-02-06
-updated: 2019-08-27
+updated: 2022-08-18
 description: |
   Where should we implement logic and rendering in our applications? Should we use Server Side Rendering? What about Rehydration? Let's find some answers!
 tags:
@@ -15,7 +15,7 @@ tags:
 As developers, we are often faced with decisions that will affect the entire
 architecture of our applications. One of the core decisions web developers must
 make is where to implement logic and rendering in their application. This can be
-a difficult, since there are a number of different ways to build a website.
+difficult, since there are a number of different ways to build a website.
 
 Our understanding of this space is informed by our work in Chrome talking to
 large sites over the past few years. Broadly speaking, we would encourage
@@ -45,7 +45,7 @@ the lens of performance.
 
 - **TTFB:**  Time to First Byte - seen as the time between clicking a link and
   the first bit of content coming in.
-- **FP:**  First Paint - the first time any pixel gets becomes visible to the
+- **FP:**  First Paint - the first time any pixel becomes visible to the
   user.
 - **FCP:**  First Contentful Paint - the time when requested content (article
   body, etc) becomes visible.
@@ -178,8 +178,8 @@ client rather than the server._
 Client-side rendering can be difficult to get and keep fast for mobile. It can
 approach the performance of pure server-rendering if doing minimal work, keeping
 a [tight JavaScript budget] and delivering value in as few [RTTs] as possible.
-Critical scripts and data can be delivered sooner using [HTTP/2 Server Push] or
-`<link rel=preload>`, which gets the parser working for you sooner. Patterns
+Critical scripts and data can be delivered sooner using `<link rel=preload>`,
+which gets the parser working for you sooner. Patterns
 like [PRPL] are worth evaluating in order to ensure initial and subsequent
 navigations feel instant.
 

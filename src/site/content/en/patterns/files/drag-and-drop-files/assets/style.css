@@ -1,0 +1,36 @@
+:root {
+  color-scheme: dark light;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  margin-top: 1rem;
+  border-top: solid CanvasText 1px;
+  font-size: 0.8rem;
+}

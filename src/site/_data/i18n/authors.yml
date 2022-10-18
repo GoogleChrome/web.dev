@@ -1054,6 +1054,60 @@ thomassteiner:
     ru: Том — Developer Advocate
     zh: Tom 是一名开发技术推广工程师
 
+pliao:
+  title:
+    en: Palances Liao
+    es: Palances Liao
+    ja: Palances Liao
+    ko: Palances Liao
+    pt: Palances Liao
+    ru: Palances Liao
+    zh: Palances Liao
+  description:
+    en: Palances is a Web Ecosystem Consultant
+    es: Palances es un Consultor de Ecosistemas Web
+    ja: Palances は Web エコシステム コンサルタントです。
+    ko: Palances는 웹 생태계 컨설턴트입니다.
+    pt: Palances é um Consultor de Ecossistemas Web
+    ru: Palances — консультант по веб-экосистеме
+    zh: Palances 是一名网络生态系统顾问
+
+conwayt:
+  title:
+    en: Tony Conway
+    es: Tony Conway
+    ja: Tony Conway
+    ko: Tony Conway
+    pt: Tony Conway
+    ru: Tony Conway
+    zh: Tony Conway
+  description:
+    en: Tony is a Web Ecosystem Consultant
+    es: Tony es un Consultor de Ecosistemas Web
+    ja: Tony は Web エコシステム コンサルタントです。
+    ko: Tony는 웹 생태계 컨설턴트입니다.
+    pt: Tony é um Consultor de Ecossistemas Web
+    ru: Tony — консультант по веб-экосистеме
+    zh: Tony 是一名网络生态系统顾问
+
+chuijun:
+  title:
+    en: Cecilia Cong
+    es: Cecilia Cong
+    ja: Cecilia Cong
+    ko: Cecilia Cong
+    pt: Cecilia Cong
+    ru: Cecilia Cong
+    zh: Cecilia Cong
+  description:
+    en: Cecilia is a Web Ecosystem Consultant
+    es: Cecilia es una Consultora de Ecosistemas Web
+    ja: Cecilia は Web エコシステム コンサルタントです。
+    ko: Cecilia는 웹 생태계 컨설턴트입니다.
+    pt: Cecilia é uma Consultora de Ecossistemas Web
+    ru: Cecilia — консультант по веб-экосистеме
+    zh: Cecilia 是一名网络生态系统顾问
+
 surma:
   title:
     en: Surma
@@ -4135,7 +4189,7 @@ nikilmathew:
   description:
     en: Lead Software engineer at Mishipay
 
-jhey:
+jheyy:
   title:
     en: Jhey Tompkins
     es: Jhey Tompkins
@@ -4288,3 +4342,69 @@ kadirtopal:
     en: Kadir Topal
   description:
     en: Kadir is a product manager on the Web Developer Platform team.
+
+michellebarker:
+  title:
+    en: Michelle Barker
+  description:
+    en: Michelle is a senior front-end developer at Ada Mode.
+
+daviddarnes:
+  title:
+    en: David Darnes
+  description:
+    en: David is a senior front-end developer at Nordhealth.
+
+linhduong:
+  title:
+    en: Linh Duong
+  description:
+    en: Front-end Engineer at Rakuten Group, Inc.
+
+shogokashiwase:
+  title:
+    en: Shogo Kashiwase
+  description:
+    en: Designer at Rakuten Group, Inc.
+
+hayounglee:
+  title:
+    en: Hayoung Lee
+  description:
+    en: Front-end Engineer at Rakuten Group, Inc.
+
+ryunosukeakiba:
+  title:
+    en: Ryunosuke Akiba
+  description:
+    en: Creative Director at Rakuten Group, Inc.
+
+mmatuzo:
+  title:
+    en: Manuel Matuzović
+  description:
+    en: Front-end developer.
+
+estelleweyl:
+  title:
+    en: Estelle Weyl
+  description:
+    en: Open-source maintainer. Front-end engineer. Technical writer.
+
+davideast:
+  title:
+    en: David East
+  description:
+    en: Web Developer
+
+cariefisher:
+   title:
+      en: Carie Fisher
+   description:
+      en: Senior Accessibility Consultant and developer
+
+superhighfives:
+  title:
+    en: Charlie Gleason
+  description:
+    en: Designer and Developer

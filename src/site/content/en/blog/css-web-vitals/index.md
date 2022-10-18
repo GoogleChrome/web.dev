@@ -17,7 +17,7 @@ tags:
 ---
 
 The way you write your styles and build layouts can have a major impact on [Core
-Web Vitals](/learn-web-vitals). This is particularly true for
+Web Vitals](/learn-core-web-vitals/). This is particularly true for
 [Cumulative Layout Shift (CLS)](/cls) and [Largest Contentful
 Paint (LCP)](/lcp). 
 
@@ -482,4 +482,4 @@ users](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)
 to assess whether it is [meeting the Web Vitals thresholds for most
 users](/vitals-measurement-getting-started/#data-interpretation).
 For more information about Web Vitals, see [Learn Web
-Vitals](/learn-web-vitals).
+Vitals](/learn-core-web-vitals/).

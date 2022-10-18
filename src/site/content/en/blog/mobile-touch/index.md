@@ -102,7 +102,8 @@ by Paul Irish and others.
 
 <figure >
 <a href="http://paulirish.com/demo/multi">
-  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/6MOW324g39nsDYgL3IA3.png", alt="Drawing screenshot", width="650", height="244" %}a>
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/6MOW324g39nsDYgL3IA3.png", alt="Drawing screenshot", width="650", height="244" %}
+</a>
 </figure>
 
 And [Browser Ninja](http://borismus.github.com/mobile-web-samples/browser-ninja/), a tech

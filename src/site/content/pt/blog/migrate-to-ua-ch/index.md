@@ -101,7 +101,7 @@ Se você estiver usando o cabeçalho de solicitação do `User-Agent` no servido
 
 Considere esta estratégia se você estiver transformando ou customizando as respostas servidas com base nos dados do agente do usuário.
 
-{% Aside %} Você também pode considerar a migração para a estratégia da [API do JavaScript sob demanda do lado do cliente](#strategy:-on-demand-client-side-javascript-api) em vez de enviar cabeçalhos adicionais. {% endAside %}
+{% Aside %} Você também pode considerar a migração para a estratégia da [API do JavaScript sob demanda do lado do cliente](#strategy-on-demand-client-side-javascript-api) em vez de enviar cabeçalhos adicionais. {% endAside %}
 
 Navegadores ou outros clientes podem optar por fornecer dicas padrão diferentes, portanto, é uma boa prática especificar tudo o que você precisa, mesmo que geralmente seja fornecido por padrão.
 
@@ -210,7 +210,7 @@ Pode haver casos em que você exija mais do que o conjunto padrão de dicas na p
 
 A primeira solicitação realmente significa a primeira solicitação de nível superior para aquela origem enviada naquela sessão de navegação. O conjunto padrão de dicas inclui o nome do navegador com a versão principal, a plataforma e o indicador móvel. Portanto, a pergunta a se fazer aqui é: você precisa de dados estendidos no carregamento inicial da página?
 
-{% Aside %} Considere também usar a [estratégia da API do JavaScript sob demanda do lado do cliente](#strategy:-on-demand-client-side-javascript-api) para alterar o conteúdo na página, em vez do lado do servidor. {% endAside %}
+{% Aside %} Considere também usar a [estratégia da API do JavaScript sob demanda do lado do cliente](#strategy-on-demand-client-side-javascript-api) para alterar o conteúdo na página, em vez do lado do servidor. {% endAside %}
 
 Para dicas adicionais sobre a primeira solicitação, existem duas opções. Primeiro, você pode usar o cabeçalho `Critical-CH`. Ele assume o mesmo formato que o `Accept-CH`, mas informa ao navegador que ele deve repetir a solicitação imediatamente se a primeira foi enviada sem a dica crítica.
 

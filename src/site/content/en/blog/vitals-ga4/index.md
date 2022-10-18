@@ -281,7 +281,7 @@ why?
 Knowing _what_ your scores are is not helpful if you're not able to take action
 and fix the problems.
 
-[Debug Web Vitals in the field](/debug-web-vitals-in-the-field/) explains how
+[Debug performance in the field](/debug-performance-in-the-field/) explains how
 you can send additional debug information with your analytics data. If you
 follow the instructions detailed in that post, you should see that debug
 information appear in BigQuery as well.
@@ -360,8 +360,8 @@ WHERE metric_name = 'CLS'
 WHERE metric_name = 'LCP'
 ```
 
-Again, you can refer to [Debug Web Vitals in the
-field](/debug-web-vitals-in-the-field/) for instructions on how to collect and
+Again, you can refer to [Debug performance in the
+field](/debug-performance-in-the-field/) for instructions on how to collect and
 send debug information for each of the Core Web Vitals metrics.
 
 ## Visualize

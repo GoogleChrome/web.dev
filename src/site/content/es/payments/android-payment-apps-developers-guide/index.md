@@ -202,7 +202,7 @@ Consulte [Verificar el certificado de firma de quien hizo la invocación](#headi
 
 ## Paso 3: dejar que un cliente realice el pago
 
-El comerciante invoca a `show()` para [iniciar la aplicación de pago](/life-of-a-payment-transaction#step-4:-the-browser-launches-the-payment-app) para que el cliente pueda realizar un pago. La aplicación de pago se invoca a través de un intento `PAY` de Android con información de la transacción en los parámetros de intención.
+El comerciante invoca a `show()` para [iniciar la aplicación de pago](/life-of-a-payment-transaction#launch) para que el cliente pueda realizar un pago. La aplicación de pago se invoca a través de un intento `PAY` de Android con información de la transacción en los parámetros de intención.
 
 La aplicación de pago responde con el nombre del `methodName` y la cadena `details`, que son específicos de la aplicación de pago y son opacos para el navegador. El navegador convierte la cadena `details` en un objeto JavaScript para el comerciante a través de la deserialización JSON, pero no aplica ninguna validez más allá de eso. El navegador no modifica los `details`; el valor de ese parámetro se le pasa directamente al comerciante.
 

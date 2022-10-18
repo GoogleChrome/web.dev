@@ -45,7 +45,7 @@ tags:
 
 ## 什么是 CLS？
 
-CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-unexpected-layout-shifts)布局偏移中最大一连串的*布局偏移分数*。
+CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs-unexpected-layout-shifts)布局偏移中最大一连串的*布局偏移分数*。
 
 每当一个可见元素的位置从一个已渲染帧变更到下一个已渲染帧时，就发生了*布局偏移* 。（有关单次[布局偏移分数](#layout-shift-score)计算方式的详细信息，请参阅下文。）
 
@@ -261,7 +261,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-您可以参考[`getCLS)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)，了解如何在 JavaScript 中测量 CLS 的完整示例。
+您可以参考[`getCLS)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)，了解如何在 JavaScript 中测量 CLS 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），CLS 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 

@@ -31,7 +31,7 @@ Outro dia, eu estava patinando no gelo com meus filhos. Estava um dia lindo, o s
 
 Ocasionalmente, o mesmo pode acontecer na web: com anúncios piscando, efeitos extravagantes de paralaxe, animações de revelação surpreendentes, vídeos de reprodução automática e assim por diante, *a web às vezes pode ser bastante opressora* … Felizmente, ao contrário da vida real, há uma solução para isso . A consulta de mídia CSS `prefers-reduced-motion` permite que os desenvolvedores criem uma variante de uma página para usuários que, bem, preferem movimento reduzido. Isso pode incluir qualquer coisa, desde evitar a reprodução automática de vídeos até a desativação de certos efeitos puramente decorativos e até o redesenho completo de uma página para determinados usuários.
 
-Antes de mergulhar no recurso, vamos dar um passo para trás e pensar em como as animações são usadas na web. Se desejar, você também pode pular as informações básicas e [ir direto para os detalhes técnicos](#working_with_the_media_query) abaixo.
+Antes de mergulhar no recurso, vamos dar um passo para trás e pensar em como as animações são usadas na web. Se desejar, você também pode pular as informações básicas e [ir direto para os detalhes técnicos](#working-with-the-media-query) abaixo.
 
 ## Animação na web
 
@@ -92,13 +92,8 @@ Para ilustrar ambos, digamos que eu tenha um botão de inscrição importante no
 }
 ```
 
-{% Aside %} Se você tem muito CSS relacionado à animação, pode evitar que os usuários que optaram por não façam o download terceirizando todo o CSS relacionado à animação em uma folha de estilo separada que você carrega apenas condicionalmente por `media` atributo de mídia no elemento de `link`:
-
-```html
-<link rel="stylesheet" href="animations.css"
-      media="(prefers-reduced-motion: no-preference)">
-```
-
+{% Aside %}
+Se você tem muito CSS relacionado à animação, pode evitar que os usuários que optaram por não façam o download terceirizando todo o CSS relacionado à animação em uma folha de estilo separada que você carrega apenas condicionalmente por `media` atributo de mídia no elemento de `link`: `<link rel="stylesheet" href="animations.css" media="(prefers-reduced-motion: no-preference)">`
 {% endAside %}
 
 Para ilustrar como trabalhar com `prefers-reduced-motion` com JavaScript, vamos imaginar que eu tenha definido uma animação complexa com a [API Web Animations](https://developer.mozilla.org/docs/Web/API/Web_Animations_API). Embora as regras CSS sejam acionadas dinamicamente pelo navegador quando a preferência do usuário muda, para animações JavaScript eu mesmo tenho que escutar as mudanças e, em seguida, parar manualmente minhas animações em potencial (ou reiniciá-las se o usuário permitir):

@@ -13,7 +13,7 @@ module.exports = function () {
   // const web_dev_basics = [allPaths['web-dev-basics-one']];
 
   const performance = [
-    allPaths['learn-web-vitals'],
+    allPaths['learn-core-web-vitals'],
     allPaths['metrics'],
     allPaths['fast'],
   ];
@@ -37,7 +37,6 @@ module.exports = function () {
     allPaths['lighthouse-performance'],
     allPaths['lighthouse-pwa'],
     allPaths['lighthouse-best-practices'],
-    allPaths['lighthouse-accessibility'],
     allPaths['lighthouse-seo'],
   ].filter(livePaths);
 

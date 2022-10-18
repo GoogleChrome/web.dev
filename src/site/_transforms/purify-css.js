@@ -24,7 +24,9 @@ const stagingUrls =
   require('../../../tools/lhci/lighthouserc').ci.collect.url.map((url) =>
     path.join('dist', new URL(url).pathname, 'index.html'),
   );
-const pathToCss = 'dist/css/main.css';
+const mainCss = fs.readFileSync('dist/css/main.css', {
+  encoding: 'utf-8',
+});
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
@@ -40,10 +42,6 @@ const purifyCss = async (content, outputPath) => {
       !/data-style-override/.test(content)) ||
     (isStaging && stagingUrls.includes(outputPath))
   ) {
-    const before = fs.readFileSync(pathToCss, {
-      encoding: 'utf-8',
-    });
-
     const purged = await new PurgeCSS().purge({
       // Here we take the actual text of the current page and give it to
       // PurgeCss to grep and look for any strings that match the regex listed
@@ -63,7 +61,7 @@ const purifyCss = async (content, outputPath) => {
       ],
       css: [
         {
-          raw: before,
+          raw: mainCss,
         },
       ],
       defaultExtractor: (content) => {
