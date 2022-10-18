@@ -75,7 +75,7 @@
     "dotenv": "^8.2.0",
     "fast-glob": "^3.2.7",
     "firebase": "^9.0.0-beta.7",
-    "firebase-tools": "^9.3.0",
+    "firebase-tools": "^9.23.3",
     "focus-visible": "^5.0.2",
     "gorko": "^0.8.0",
     "gray-matter": "^4.0.3",
