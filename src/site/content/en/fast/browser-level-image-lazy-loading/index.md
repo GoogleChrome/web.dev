@@ -8,7 +8,7 @@ authors:
   - mathiasbynens
   - tunetheweb
 date: 2019-08-06
-updated: 2022-10-14
+updated: 2022-10-18
 hero: image/admin/F6VE4QkpCsomiJilTFNG.png
 alt: Phone outline with loading image and assets
 description: |
