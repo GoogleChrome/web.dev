@@ -20,10 +20,11 @@ startShareScreenButton.addEventListener("click", async () => {
 });
 
 stopShareScreenButton.addEventListener("click", () => {
-  // Stop stream.
+  // Stop the stream.
   stream.getTracks().forEach(track => track.stop());
   video.srcObject = null;
 
+  stopShareScreenButton.disabled = true;
   startRecordButton.disabled = true;
   stopRecordButton.disabled = true;
   log("Your screen is not shared anymore.");

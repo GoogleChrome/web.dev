@@ -9,9 +9,9 @@ description: >
 height: 800
 ---
 
-Sharing tabs, windows, and screens is possible on the web platform with the [Screen Capture API](https://w3c.github.io/mediacapture-screen-share/). The `getDisplayMedia()` method allows the user to select a screen to capture as a media stream. This stream can then be recorded with the [MediaRecorder API](https://developer.chrome.com/blog/mediarecorder/) or shared with others over the network. The recording can be saved to a local file via the [`showOpenFilePicker()`](/file-system-access/) method.
+Sharing tabs, windows, and screens is possible on the web platform with the [Screen Capture API](https://w3c.github.io/mediacapture-screen-share/). The [`getDisplayMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) method allows the user to select a screen to capture as a media stream. This stream can then be recorded with the [MediaRecorder API](https://developer.chrome.com/blog/mediarecorder/) or shared with others over the network. The recording can be saved to a local file via the [`showOpenFilePicker()`](https://developer.mozilla.org/docs/Web/API/Window/showOpenFilePicker) method.
 
-The example below shows how the user's screen can be recorded in the WebM format, locally previewed on the same page, and saved to the local file system.
+The example below shows how you can record the user's screen in the WebM format, locally preview on the same page, and save the recording to the user's file system.
 
 ```js
 let stream;
@@ -26,7 +26,7 @@ shareScreenButton.addEventListener("click", async () => {
 });
 
 stopShareScreenButton.addEventListener("click", () => {
-  // Stop stream.
+  // Stop the stream.
   stream.getTracks().forEach(track => track.stop());
   video.srcObject = null;
 });
