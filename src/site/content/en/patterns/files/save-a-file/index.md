@@ -83,8 +83,8 @@ const saveFile = async (blob, suggestedName) => {
   const a = document.createElement('a');
   a.href = blobURL;
   a.download = suggestedName;
-  document.body.append(a);
   a.style.display = 'none';
+  document.body.append(a);
   // Programmatically click the element.
   a.click();
   // Revoke the blob URL and remove the element.
