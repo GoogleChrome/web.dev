@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-10-19
 description: この投稿では、First Contentful Paint (視覚コンテンツの初期表示時間、FCP) という指標について紹介し、その測定方法に関する説明を行います。
 tags:
   - performance
@@ -50,6 +50,8 @@ FCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### JavaScript を使用して FCP を測定する
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 JavaScript を使用した FCP の測定には、[Paint Timing API](https://w3c.github.io/paint-timing/) を使用することができます。以下の例では、`first-contentful-paint` という名前の `paint` エントリをリッスンし、コンソールにログを記録する [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) の作成方法を示しています。
 

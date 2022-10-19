@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-10-13
 description: 이 게시물에서는 누적 레이아웃 이동(CLS) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -170,9 +170,12 @@ CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript에서 CLS 측정
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 JavaScript에서 CLS를 측정하려면 [Layout Instability API를](https://github.com/WICG/layout-instability) 사용할 수 있습니다. 다음 예시에서는 예기치 않은 `layout-shift` 항목을 수신 대기하고, 세션으로 그룹화하고, 변경될 때마다 최대 세션 값을 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 를 생성하는 방법을 보여줍니다.
 

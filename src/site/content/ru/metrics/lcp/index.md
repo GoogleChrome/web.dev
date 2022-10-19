@@ -4,7 +4,7 @@ title: Скорость загрузки основного контента (LC
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2022-07-18
+updated: 2022-10-19
 description: В этой статье описывается метрика LCP (Скорость загрузки основного контента) и объясняются принципы ее измерения
 tags:
   - performance
@@ -129,9 +129,12 @@ LCP можно измерить в [лабораторных](/user-centric-perf
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Измерение LCP в JavaScript
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 Чтобы измерить LCP с помощью JavaScript, можно воспользоваться [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver), который прослушивает записи `largest-contentful-paint` и регистрирует их в консоли.
 

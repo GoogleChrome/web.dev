@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-10-19
 description: В этой статье описывается метрика CLS (Совокупное смещение макета) и объясняются принципы ее измерения
 tags:
   - performance
@@ -170,9 +170,12 @@ CLS можно измерить в [лабораторных](/user-centric-perf
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Измерение CLS в JavaScript
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 Чтобы измерить CLS с помощью JavaScript, можно воспользоваться [Layout Instability API (API нестабильности макета)](https://github.com/WICG/layout-instability). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) который прослушивает неожиданные записи смещений макета `layout-shift`, группирует их в сеансы и регистрирует максимальное значение сеанса при каждом его изменении.
 

@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-10-19
 description: 本篇文章介绍了累积布局偏移 (CLS) 指标并说明了该指标的测量方式。
 tags:
   - performance
@@ -181,9 +181,12 @@ CLS 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 - [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
 - [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 
 ### 在 JavaScript 中测量 CLS
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 要在 JavaScript 中测量 CLS，您可以使用[布局不稳定性 API](https://github.com/WICG/layout-instability)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听意外`layout-shift`条目、将条目按会话分组、记录最大会话值，并在最大会话值发生改变时更新记录。
 

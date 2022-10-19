@@ -4,7 +4,7 @@ title: Largest Contentful Paint 最大内容绘制 (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2022-07-18
+updated: 2022-10-19
 description: 本篇文章介绍了最大内容绘制 (LCP) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -129,9 +129,12 @@ LCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 - [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
 - [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 
 ### 在 JavaScript 中测量 LCP
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 要在 JavaScript 中测量 LCP，您可以使用[最大内容绘制 API](https://wicg.github.io/largest-contentful-paint/) 。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听`largest-contentful-paint`条目并记录在控制台中。
 

@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-10-19
 description: この投稿では、Cumulative Layout Shift (累積レイアウト シフト数、CLS) という指標について紹介し、その測定方法に関する説明を行います。
 tags:
   - performance
@@ -170,9 +170,12 @@ CLS は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript を使用して CLS を測定する
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 JavaScript を使用した CLS の測定には、[Layout Instability API](https://github.com/WICG/layout-instability) を使用することができます。以下の例では、予期しない `layout-shift` エントリをリッスンしてセッションごとに分類し、変更が発生するたびにセッションの最大値をログとして記録する [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) の作成方法を示しています。
 

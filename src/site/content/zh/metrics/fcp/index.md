@@ -4,7 +4,7 @@ title: First Contentful Paint 首次内容绘制 (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-10-19
 description: 本篇文章介绍了首次内容绘制 (FCP) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -50,6 +50,8 @@ FCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 - [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 
 ### 在 JavaScript 中测量 FCP
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 要在 JavaScript 中测量 FCP，您可以使用[绘制计时 API](https://w3c.github.io/paint-timing/)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听名称为`first-contentful-paint`的`paint`条目并记录在控制台中。
 

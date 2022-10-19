@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-10-19
 description: |
   Esta publicación presenta la métrica Cumulative Layout Shift (CLS) y explica cómo medirlo.
 tags:
@@ -176,9 +176,12 @@ CLS se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Medir CLS en JavaScript
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 Para medir CLS en JavaScript, puede utilizar la [API de inestabilidad de diseño](https://github.com/WICG/layout-instability) . El siguiente ejemplo muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que atiende las entradas inesperadas de `layout-shift`, las agrupa en sesiones y registra el valor máximo de la sesión cada vez que cambia.
 
