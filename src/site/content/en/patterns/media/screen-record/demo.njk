@@ -11,7 +11,7 @@ patternId: media/screen-record
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>"
     />
-    <title>How to record screen</title>
+    <title>How to record the user's screen</title>
     {# Include the GA object so we can start queuing events. #}
     {% include 'partials/analytics.njk' %}
     <style>
@@ -48,34 +48,48 @@ patternId: media/screen-record
     </style>
   </head>
   <body>
-    <h1>How to record screen</h1>
-    <button id="shareScreenButton">Share screen</button>
+    <h1>How to record the user's screen</h1>
+    <button id="startShareScreenButton">Start sharing screen</button>
+    <button id="stopShareScreenButton" disabled>Stop sharing screen</button>
     <button id="startRecordButton" disabled>Start recording</button>
     <button id="stopRecordButton" disabled>Stop recording</button>
     <video autoplay muted playsinline></video>
     <pre id="logs"></pre>
     {% set script %}
       const video = document.querySelector('video');
-      const shareScreenButton = document.querySelector('#shareScreenButton');
+      const startShareScreenButton = document.querySelector('#startShareScreenButton');
+      const stopShareScreenButton = document.querySelector('#stopShareScreenButton');
       const startRecordButton = document.querySelector('#startRecordButton');
       const stopRecordButton = document.querySelector('#stopRecordButton');
 
+      let stream;
       let recorder;
 
-      shareScreenButton.addEventListener("click", async () => {
-        // Prompt user to share their screen.
-        const stream = await navigator.mediaDevices.getDisplayMedia();
+      startShareScreenButton.addEventListener("click", async () => {
+        // Prompt the user to share their screen.
+        stream = await navigator.mediaDevices.getDisplayMedia();
         recorder = new MediaRecorder(stream);
-        // Preview screen locally.
+        // Preview the screen locally.
         video.srcObject = stream;
 
         startRecordButton.disabled = false;
+        stopShareScreenButton.disabled = false;
         log("Your screen is being shared.");
       });
 
+      stopShareScreenButton.addEventListener("click", () => {
+        // Stop stream.
+        stream.getTracks().forEach(track => track.stop());
+        video.srcObject = null;
+
+        startRecordButton.disabled = true;
+        stopRecordButton.disabled = true;
+        log("Your screen is not shared anymore.");
+      });
+
       startRecordButton.addEventListener("click", async () => {
-        // Prompt user to choose where to save the recording file.
-        const suggestedName = "screen-record.webm";
+        // Prompt the user to choose where to save the recording file.
+        const suggestedName = "screen-recording.webm";
         const handle = await window.showSaveFilePicker({ suggestedName });
         const writable = await handle.createWritable();
 
@@ -84,8 +98,8 @@ patternId: media/screen-record
         recorder.addEventListener("dataavailable", async (event) => {
           // Write chunks to the file.
           await writable.write(event.data);
-          if (recorder.state == "inactive") {
-            // Close file when recording stops.
+          if (recorder.state === "inactive") {
+            // Close the file when the recording stops.
             await writable.close();
           }
         });
@@ -95,7 +109,7 @@ patternId: media/screen-record
       });
 
       stopRecordButton.addEventListener("click", () => {
-        // Stop recording.
+        // Stop the recording.
         recorder.stop();
 
         stopRecordButton.disabled = true;

@@ -1,37 +1,44 @@
 ---
 layout: pattern
-title: How to record screen
+title: How to record the user's screen
 date: 2022-10-14
 authors:
   - beaufortfrancois
 description: >
-  Learn how to record screen.
+  Learn how to record the user's screen.
 height: 800
 ---
 
-Sharing tabs, windows, and screens is already possible on the web platform with the [Screen Capture API](https://w3c.github.io/mediacapture-screen-share/). In short, `getDisplayMedia()` allows the user to select a screen to capture as a media stream. This stream can then be recorded with [MediaRecorder](https://developer.chrome.com/blog/mediarecorder/) or shared with others over the network. [showOpenFilePicker()](/file-system-access/) allows us finally to save the recording file locally.
+Sharing tabs, windows, and screens is possible on the web platform with the [Screen Capture API](https://w3c.github.io/mediacapture-screen-share/). The `getDisplayMedia()` method allows the user to select a screen to capture as a media stream. This stream can then be recorded with the [MediaRecorder API](https://developer.chrome.com/blog/mediarecorder/) or shared with others over the network. The recording can be saved to a local file via the [`showOpenFilePicker()`](/file-system-access/) method.
 
-The example below shows how user's screen can be recorded as webm content, locally previewed on the same page, and saved to the local file system.
+The example below shows how the user's screen can be recorded in the WebM format, locally previewed on the same page, and saved to the local file system.
 
 ```js
+let stream;
 let recorder;
 
 shareScreenButton.addEventListener("click", async () => {
-  // Prompt user to share their screen.
-  const stream = await navigator.mediaDevices.getDisplayMedia();
+  // Prompt the user to share their screen.
+  stream = await navigator.mediaDevices.getDisplayMedia();
   recorder = new MediaRecorder(stream);
-  // Preview screen locally.
+  // Preview the screen locally.
   video.srcObject = stream;
 });
 
+stopShareScreenButton.addEventListener("click", () => {
+  // Stop stream.
+  stream.getTracks().forEach(track => track.stop());
+  video.srcObject = null;
+});
+
 startRecordButton.addEventListener("click", async () => {
-  // For the sake of more legible code, it only uses the
-  // showSaveFilePicker() method. In production, you need to
+  // For the sake of more legible code, this sample only uses the
+  // `showSaveFilePicker()` method. In production, you need to
   // cater for browsers that don't support this method, as
   // outlined in https://web.dev/patterns/files/save-a-file/.
 
-  // Prompt user to choose where to save the recording file.
-  const suggestedName = "screen-record.webm";
+  // Prompt the user to choose where to save the recording file.
+  const suggestedName = "screen-recording.webm";
   const handle = await window.showSaveFilePicker({ suggestedName });
   const writable = await handle.createWritable();
 
@@ -40,15 +47,15 @@ startRecordButton.addEventListener("click", async () => {
   recorder.addEventListener("dataavailable", async (event) => {
     // Write chunks to the file.
     await writable.write(event.data);
-    if (recorder.state == "inactive") {
-      // Close file when recording stops.
+    if (recorder.state === "inactive") {
+      // Close the file when the recording stops.
       await writable.close();
     }
   });
 });
 
 stopRecordButton.addEventListener("click", () => {
-  // Stop recording.
+  // Stop the recording.
   recorder.stop();
 });
 ```
@@ -74,3 +81,4 @@ stopRecordButton.addEventListener("click", () => {
 - [WICG File System Access Specification](https://wicg.github.io/file-system-access/)
 
 ## Demo
+

@@ -1,24 +1,37 @@
 const video = document.querySelector('video');
-const shareScreenButton = document.querySelector('#shareScreenButton');
+const startShareScreenButton = document.querySelector('#startShareScreenButton');
+const stopShareScreenButton = document.querySelector('#stopShareScreenButton');
 const startRecordButton = document.querySelector('#startRecordButton');
 const stopRecordButton = document.querySelector('#stopRecordButton');
 
+let stream;
 let recorder;
 
-shareScreenButton.addEventListener("click", async () => {
-  // Prompt user to share their screen.
-  const stream = await navigator.mediaDevices.getDisplayMedia();
+startShareScreenButton.addEventListener("click", async () => {
+  // Prompt the user to share their screen.
+  stream = await navigator.mediaDevices.getDisplayMedia();
   recorder = new MediaRecorder(stream);
-  // Preview screen locally.
+  // Preview the screen locally.
   video.srcObject = stream;
 
   startRecordButton.disabled = false;
+  stopShareScreenButton.disabled = false;
   log("Your screen is being shared.");
 });
 
+stopShareScreenButton.addEventListener("click", () => {
+  // Stop stream.
+  stream.getTracks().forEach(track => track.stop());
+  video.srcObject = null;
+
+  startRecordButton.disabled = true;
+  stopRecordButton.disabled = true;
+  log("Your screen is not shared anymore.");
+});
+
 startRecordButton.addEventListener("click", async () => {
-  // Prompt user to choose where to save the recording file.
-  const suggestedName = "screen-record.webm";
+  // Prompt the user to choose where to save the recording file.
+  const suggestedName = "screen-recording.webm";
   const handle = await window.showSaveFilePicker({ suggestedName });
   const writable = await handle.createWritable();
 
@@ -27,8 +40,8 @@ startRecordButton.addEventListener("click", async () => {
   recorder.addEventListener("dataavailable", async (event) => {
     // Write chunks to the file.
     await writable.write(event.data);
-    if (recorder.state == "inactive") {
-      // Close file when recording stops.
+    if (recorder.state === "inactive") {
+      // Close the file when the recording stops.
       await writable.close();
     }
   });
@@ -38,7 +51,7 @@ startRecordButton.addEventListener("click", async () => {
 });
 
 stopRecordButton.addEventListener("click", () => {
-  // Stop recording.
+  // Stop the recording.
   recorder.stop();
 
   stopRecordButton.disabled = true;
