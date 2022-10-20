@@ -29,7 +29,7 @@ a better web". The first part of the series will dive into how YouTube built a
 faster web experience.
 
 <figure>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hIcVf8Pob6DaLrmNjdNX.png", alt="PageSpeed Insights showing the Chrome UX Report data for YouTube Mobile Web passing the Core Web Vitals", width="800", height="450" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hIcVf8Pob6DaLrmNjdNX.png", alt="PageSpeed Insights showing the Chrome UX Report data for YouTube Mobile Web passing the Core Web Vitals.", width="800", height="450" %}
   <figcaption>
     The YouTube for mobile web Watch page passing the <a href="/vitals">Core Web Vitals</a> thresholds.
   </figcaption>
