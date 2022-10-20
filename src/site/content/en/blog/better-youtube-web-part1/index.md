@@ -173,7 +173,7 @@ As a result of YouTube's investment in performance, watch pages load much faster
 76% of YouTube's mobile web URLs now pass the Core Web Vitals metrics, with improvements to business metrics like watch time as a result.
 {% endAside %}
 
-Improvements to the performance of YouTube web over the last year have also improved business metrics, including watch time and daily active users. We look forward to exploring how more of these performance optimizations can be applied to the YouTube desktop site.
+Improvements to the performance of YouTube web over the last year have also improved business metrics, including watch time and daily active users. Based on the success of these efforts, we plan to continue exploring even more ways to optimize in the future.
 
 In part two of this series, "Building an accessible web", you’ll read how YouTube made their website more accessible for screen-reader users.
 
