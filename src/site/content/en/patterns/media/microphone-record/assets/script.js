@@ -1,33 +1,28 @@
-const video = document.querySelector('video');
-const startShareScreenButton = document.querySelector('#startShareScreenButton');
-const stopShareScreenButton = document.querySelector('#stopShareScreenButton');
+const startMicrophoneButton = document.querySelector('#startMicrophoneButton');
+const stopMicrophoneButton = document.querySelector('#stopMicrophoneButton');
 const startRecordButton = document.querySelector('#startRecordButton');
 const stopRecordButton = document.querySelector('#stopRecordButton');
 
 let stream;
 let recorder;
 
-startShareScreenButton.addEventListener("click", async () => {
-  // Prompt the user to share their screen.
-  stream = await navigator.mediaDevices.getDisplayMedia();
+startMicrophoneButton.addEventListener("click", async () => {
+  // Prompt the user to use their microphone.
+  stream = await navigator.mediaDevices.getUserMedia({ audio: true });
   recorder = new MediaRecorder(stream);
-  // Preview the screen locally.
-  video.srcObject = stream;
 
+  stopMicrophoneButton.disabled = false;
   startRecordButton.disabled = false;
-  stopShareScreenButton.disabled = false;
-  log("Your screen is being shared.");
+  log("Your microphone audio is being used.");
 });
 
-stopShareScreenButton.addEventListener("click", () => {
+stopMicrophoneButton.addEventListener("click", () => {
   // Stop the stream.
   stream.getTracks().forEach(track => track.stop());
-  video.srcObject = null;
 
-  stopShareScreenButton.disabled = true;
   startRecordButton.disabled = true;
   stopRecordButton.disabled = true;
-  log("Your screen is not shared anymore.");
+  log("Your microphone audio is not used anymore.");
 });
 
 startRecordButton.addEventListener("click", async () => {
@@ -37,7 +32,7 @@ startRecordButton.addEventListener("click", async () => {
   // outlined in https://web.dev/patterns/files/save-a-file/.
 
   // Prompt the user to choose where to save the recording file.
-  const suggestedName = "screen-recording.webm";
+  const suggestedName = "microphone-recording.webm";
   const handle = await window.showSaveFilePicker({ suggestedName });
   const writable = await handle.createWritable();
 
@@ -53,7 +48,7 @@ startRecordButton.addEventListener("click", async () => {
   });
 
   stopRecordButton.disabled = false;
-  log("Your screen is being recorded locally.");
+  log("Your microphone audio is being recorded locally.");
 });
 
 stopRecordButton.addEventListener("click", () => {
@@ -61,5 +56,5 @@ stopRecordButton.addEventListener("click", () => {
   recorder.stop();
 
   stopRecordButton.disabled = true;
-  log("Your screen has been successfully recorded locally.");
+  log("Your microphone audio has been successfully recorded locally.");
 });
