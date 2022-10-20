@@ -5,7 +5,7 @@ subhead: >
 description: >
   This is Part 1 of our new series on Building a Better YouTube Web called "Building a faster YouTube on web"
 layout: post
-date: 2022-10-19
+date: 2022-10-20
 authors:
   - addyosmani
   - sriramkrishnan
