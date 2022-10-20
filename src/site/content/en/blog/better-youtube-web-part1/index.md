@@ -158,7 +158,7 @@ update (render) cycle for any state change, eliminating chained updates. The new
 player progress bar touch-move event has no style recalculations during its
 JavaScript execution and now only requires 25% the time of the old player.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/E1EbOYuT2q7mDqfmR1zz.png", alt="Reduced time in events shown on the performance timeline", width="800", height="90" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/E1EbOYuT2q7mDqfmR1zz.png", alt="Reduced time in events shown on the performance timeline.", width="800", height="90" %}
 
 This code modernization also resulted in additional performance improvements
 such as improved watch load times on old devices, fewer abandoned playbacks, and
