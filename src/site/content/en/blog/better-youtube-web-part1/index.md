@@ -145,7 +145,7 @@ Each progress bar touch-move event triggered two
 extra style recalculations and took 21.17 ms during performance test runs in the lab. As new controls were added over time, the pattern of decentralized control would often cause circular dependencies and memory leaks, negatively impacting watch page performance.
 
 <figure>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vCTMilflEoDnkw1p8EuU.png", alt="21.17ms event shown on the Performance timeline", width="800", height="202" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vCTMilflEoDnkw1p8EuU.png", alt="21.17 ms event shown on the Performance timeline.", width="800", height="202" %}
   <figcaption>
     Chrome DevTools with a 4 times CPU slow-down performance run. 
   </figcaption>
