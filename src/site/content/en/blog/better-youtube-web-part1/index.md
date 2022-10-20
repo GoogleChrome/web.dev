@@ -148,7 +148,7 @@ extra style recalculations and took 21.17 ms during performance test runs in the
 <figure>
 {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vCTMilflEoDnkw1p8EuU.png", alt="21.17ms event shown on the Performance timeline", width="800", height="202" %}
   <figcaption>
-    Chrome DevTools with a 4x CPU slow-down performance run. 
+    Chrome DevTools with a 4 times CPU slow-down performance run. 
   </figcaption>
 </figure>
 
