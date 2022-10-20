@@ -1,17 +1,18 @@
 ---
 layout: pattern
-title: How to record audio from a microphone
+title: How to record audio from the user's microphone
 date: 2022-10-19
 authors:
   - beaufortfrancois
 description: >
-  Learn how to record audio from a microphone.
+  Learn how to record audio from the user's microphone.
 height: 800
 ---
 
 Accessing the user's camera and microphone is possible on the web platform with the [Media Capture and Streams API](https://www.w3.org/TR/mediacapture-streams/). The [`getUserMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia) method prompts the user to access a camera and/or microphone to capture as a media stream. This stream can then be recorded with the [MediaRecorder API](https://developer.chrome.com/blog/mediarecorder/) or shared with others over the network. The recording can be saved to a local file via the [`showOpenFilePicker()`](https://developer.mozilla.org/docs/Web/API/Window/showOpenFilePicker) method.
 
-The example below shows how you can record the audio from a microphone in the WebM format and save the recording to the user's file system.
+The example below shows how you can record audio from the user's microphone in the WebM format and save the recording to the user's file system.
+
 ```js
 let stream;
 let recorder;

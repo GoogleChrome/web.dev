@@ -31,6 +31,11 @@ stopShareScreenButton.addEventListener("click", () => {
 });
 
 startRecordButton.addEventListener("click", async () => {
+  // For the sake of more legible code, this sample only uses the
+  // `showSaveFilePicker()` method. In production, you need to
+  // cater for browsers that don't support this method, as
+  // outlined in https://web.dev/patterns/files/save-a-file/.
+
   // Prompt the user to choose where to save the recording file.
   const suggestedName = "screen-recording.webm";
   const handle = await window.showSaveFilePicker({ suggestedName });

@@ -11,7 +11,7 @@ patternId: media/microphone-record
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎙️</text></svg>"
     />
-    <title>How to record audio from a microphone</title>
+    <title>How to record audio from the user's microphone</title>
     {# Include the GA object so we can start queuing events. #}
     {% include 'partials/analytics.njk' %}
     <style>
@@ -34,13 +34,6 @@ patternId: media/microphone-record
         display: block;
         margin-bottom: 4px;
       }
-      video {
-        display: block;
-        margin-top: 10px;
-        max-width: 100%;
-        background: black;
-        max-height: 480px;
-      }
       pre {
         color: red;
         white-space: pre-line;
@@ -48,7 +41,7 @@ patternId: media/microphone-record
     </style>
   </head>
   <body>
-    <h1>How to record audio from a microphone</h1>
+    <h1>How to record audio from the user's microphone</h1>
     <button id="startMicrophoneButton">Start using microphone</button>
     <button id="stopMicrophoneButton" disabled>Stop using microphone</button>
     <button id="startRecordButton" disabled>Start recording</button>
