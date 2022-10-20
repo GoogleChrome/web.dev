@@ -16,6 +16,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - case-study
   - performance
+  - web-vitals
 ---
 
 The Chrome team often talks about "building a *better* web", but what does that
@@ -52,10 +53,7 @@ modernization.
 
 ### Improving Core Web Vitals
 
-To identify areas of improvement, the YouTube team used the Chrome User
-Experience Report
-([CrUX](https://developer.chrome.com/docs/crux/))
-to see how real users were experiencing video watch and search result pages on
+To identify areas of improvement, the YouTube team used the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/) to see how real users were experiencing video watch and search result pages on
 mobile in [the
 field](/lab-and-field-data-differences/#field-data). They
 realized their Core Web Vitals metrics had a lot of room for improvement, with
@@ -103,9 +101,7 @@ resulting in two big discoveries.
 {% Aside%}
 While bringing these optimizations to all platforms, YouTube also took advantage of the new [Priority Hints](/priority-hints/) `fetchpriority` attribute, which we use with `<link rel=preload>` to prioritize discovering and loading the poster image early:
 
-```html
-<link as="image" rel="preload" href="poster.jpg" fetchpriority="high">
-```
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>poster.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">fetchpriority</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>high<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
 {% endAside %}
 
 While these optimizations did improve LCP, the team felt that the current definition of the LCP metric wasn't fully capturing, from the user's perspective, when the "main content" of the page had loaded—which is the goal of LCP.
