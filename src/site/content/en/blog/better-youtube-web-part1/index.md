@@ -21,7 +21,7 @@ tags:
 
 The Chrome team often talks about "building a *better* web", but what does that
 mean? Web experiences should be [fast](/why-speed-matters/),
-[accessible](/accessibility/), and leverage [device
+[accessible](/accessibility/), and use [device
 capabilities](/reliable/) in the moment when users need it most.
 Dogfooding is part of Google's culture, so the Chrome team has partnered with
 YouTube to share lessons learned along the way in a new series called, "Building
@@ -29,18 +29,17 @@ a better web". The first part of the series will dive into how YouTube built a
 faster web experience.
 
 <figure>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hIcVf8Pob6DaLrmNjdNX.png", alt="PageSpeed Insights showing the Chrome UX Report data for YouTube Mobile Web passing the Core Web Vitals", width="800", height="450" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hIcVf8Pob6DaLrmNjdNX.png", alt="PageSpeed Insights showing the Chrome UX Report data for YouTube Mobile Web passing the Core Web Vitals.", width="800", height="450" %}
   <figcaption>
-    The YouTube for mobile web Watch page passing the <a href="/vitals">Core Web Vitals</a> thresholds 
+    The YouTube for mobile web Watch page passing the <a href="/vitals">Core Web Vitals</a> thresholds.
   </figcaption>
 </figure>
 
 ## Building a faster web
 
-Performance to YouTube is how fast videos and other content, such as
-recommendations and comments, load on web pages. It is also how quickly it
-responds to user interactions such as search, player control, likes, shares, and
-many others.
+At YouTube, _performance_ relates to how fast videos and other content—such as
+recommendations and comments—load on web pages. Performance is also measured by how quickly YouTube
+responds to user interactions such as search, player control, likes, and shares.
 
 Growing developing markets, such as Brazil, India, and Indonesia are important
 for YouTube mobile web. Because many users in these regions have slower devices
@@ -61,7 +60,7 @@ their [Largest Contentful Paint (LCP)](/lcp/) metric clocking in
 at 4-6 seconds in some cases. This was substantially higher than their target of
 2.5 seconds.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/uy6hO7M60rRw3bTfXTCH.png", alt="Charts of FCP and LCP showing YouTube Watch page pass rates as well as the YouTube origin", width="800", height="285" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/uy6hO7M60rRw3bTfXTCH.png", alt="Charts of FCP and LCP showing YouTube Watch page pass rates as well as the YouTube origin.", width="800", height="285" %}
 
 To identify areas for improvement, they turned to
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to audit
@@ -70,7 +69,7 @@ the YouTube watch pages, revealing a low Lighthouse
 First Contentful Paint (FCP) of 3.5 seconds and a LCP of 8.5 seconds.
 
 <figure>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PeCzGyBCTcY63B5Nft1a.jpg", alt="Lighthouse Report for YouTube Mobile", width="800", height="518" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PeCzGyBCTcY63B5Nft1a.jpg", alt="Lighthouse Report for YouTube Mobile.", width="800", height="518" %}
 
   <figcaption>
     Chrome sets a target of 1.8s for FCP and 2.5s for LCP as a gold standard. The FCP and LCP were clearly in the yellow and red at 3.5s and 8.5s, respectively.
@@ -146,9 +145,9 @@ Each progress bar touch-move event triggered two
 extra style recalculations and took 21.17 ms during performance test runs in the lab. As new controls were added over time, the pattern of decentralized control would often cause circular dependencies and memory leaks, negatively impacting watch page performance.
 
 <figure>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vCTMilflEoDnkw1p8EuU.png", alt="21.17ms event shown on the Performance timeline", width="800", height="202" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vCTMilflEoDnkw1p8EuU.png", alt="21.17 ms event shown on the Performance timeline.", width="800", height="202" %}
   <figcaption>
-    Chrome DevTools with a 4x CPU slow-down performance run. 
+    Chrome DevTools with a 4 times CPU slow-down performance run. 
   </figcaption>
 </figure>
 
@@ -159,7 +158,7 @@ update (render) cycle for any state change, eliminating chained updates. The new
 player progress bar touch-move event has no style recalculations during its
 JavaScript execution and now only requires 25% the time of the old player.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/E1EbOYuT2q7mDqfmR1zz.png", alt="Reduced time in events shown on the performance timeline", width="800", height="90" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/E1EbOYuT2q7mDqfmR1zz.png", alt="Reduced time in events shown on the performance timeline.", width="800", height="90" %}
 
 This code modernization also resulted in additional performance improvements
 such as improved watch load times on old devices, fewer abandoned playbacks, and
