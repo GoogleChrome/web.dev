@@ -28,7 +28,7 @@ platforms.
 
 On top of that, in order to create a good experience, there needs to be a mechanism for being able
 to prune stale or invalidated scheduled notifications, for example, canceled calendar events,
-without relying on the tab being open. We have heard feedback that the candence at which
+without relying on the tab being open. We have heard feedback that the cadence at which
 <a href="/periodic-background-sync/">Periodic Background Sync</a> can be used is not sufficient for
 this, and that, by virtue of being required to show a notification, the Push API is not a good
 solution either. {% endAside %}
