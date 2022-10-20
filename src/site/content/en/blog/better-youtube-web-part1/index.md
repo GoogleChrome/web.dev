@@ -21,7 +21,7 @@ tags:
 
 The Chrome team often talks about "building a *better* web", but what does that
 mean? Web experiences should be [fast](/why-speed-matters/),
-[accessible](/accessibility/), and leverage [device
+[accessible](/accessibility/), and use [device
 capabilities](/reliable/) in the moment when users need it most.
 Dogfooding is part of Google's culture, so the Chrome team has partnered with
 YouTube to share lessons learned along the way in a new series called, "Building
