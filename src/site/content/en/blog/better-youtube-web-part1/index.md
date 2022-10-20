@@ -37,10 +37,9 @@ faster web experience.
 
 ## Building a faster web
 
-Performance to YouTube is how fast videos and other content, such as
-recommendations and comments, load on web pages. It is also how quickly it
-responds to user interactions such as search, player control, likes, shares, and
-many others.
+At YouTube, _performance_ relates to how fast videos and other content—such as
+recommendations and comments—load on web pages. Performance is also measured by how quickly YouTube
+responds to user interactions such as search, player control, likes, and shares.
 
 Growing developing markets, such as Brazil, India, and Indonesia are important
 for YouTube mobile web. Because many users in these regions have slower devices
