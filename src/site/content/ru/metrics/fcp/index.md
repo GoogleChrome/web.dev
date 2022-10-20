@@ -4,7 +4,7 @@ title: Первая отрисовка контента (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-10-19
 description: В этой статье описывается метрика FCP (Первая отрисовка контента) и объясняются принципы ее измерения
 tags:
   - performance
@@ -50,6 +50,8 @@ FCP можно измерить в [лабораторных](/user-centric-perf
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Измерение FCP в JavaScript
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 Чтобы измерить FCP в JavaScript, можно воспользоваться [Paint Timing API](https://w3c.github.io/paint-timing/). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver), который прослушивает записи `paint` с именем `first-contentful-paint` и регистрирует их в консоли.
 

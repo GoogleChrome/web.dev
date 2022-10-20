@@ -5,7 +5,7 @@ authors:
   - jlwagner
   - tunetheweb
 date: 2021-10-26
-updated: 2022-07-26
+updated: 2022-10-19
 description: |
   This post introduces the Time to First Byte (TTFB) metric and explains
   how to measure it.
@@ -80,6 +80,8 @@ TTFB can be measured in [the lab](/user-centric-performance-metrics/#in-the-lab)
 - [WebPageTest](https://www.webpagetest.org/)
 
 ### Measure TTFB in JavaScript
+
+{% BrowserCompat 'api.PerformanceResourceTiming.responseStart' %}
 
 You can measure the TTFB of [navigation requests](https://developer.mozilla.org/docs/Web/API/Request/mode) in the browser with the [Navigation Timing API](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API). The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) that listens for a `navigation` entry and logs it to the console:
 

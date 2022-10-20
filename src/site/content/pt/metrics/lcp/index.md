@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2022-07-18
+updated: 2022-10-19
 description: Este artigo apresenta a métrica Largest Contentful Paint (LCP) e explica como medi-la
 tags:
   - performance
@@ -129,9 +129,12 @@ A LCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Medição da LCP em JavaScript
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 Para medir o LCP em JavaScript, você pode usar a [API Largest Contentful Paint](https://wicg.github.io/largest-contentful-paint/). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que escuta as `largest-contentful-paint` e as registra no console.
 

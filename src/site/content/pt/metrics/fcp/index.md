@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-10-19
 description: Este artigo apresenta a métrica First Contentful Paint (FCP) e explica como medi-la
 tags:
   - performance
@@ -50,6 +50,8 @@ A FCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Medição da FCP em JavaScript
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 Para medir a FCP em JavaScript, você pode usar a [API Paint Timing](https://w3c.github.io/paint-timing/). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que escuta uma entrada `paint` com o nome `first-contentful-paint` e a registra no console.
 

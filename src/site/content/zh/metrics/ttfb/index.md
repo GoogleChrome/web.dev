@@ -4,7 +4,7 @@ title: Time to First Byte 第一字节时间 (TTFB)
 authors:
   - jlwagner
 date: 2021-10-26
-updated: 2022-03-30
+updated: 2022-10-19
 description: |
   本篇文章介绍了第一字节时间 (TTFB) 指标并说明了该指标的测量方式
 tags:
@@ -78,6 +78,8 @@ TTFB 可以在[实验场景](/user-centric-performance-metrics/#in-the-lab)或[�
 - [WebPageTest](https://www.webpagetest.org/)
 
 ### 在 JavaScript 中测量 TTFB
+
+{% BrowserCompat 'api.PerformanceResourceTiming.responseStart' %}
 
 可以在具备[Navigation Timing API](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API)功能的浏览器中测量 TTFB。下面的这个示例展示了如何创建 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 并监听 `navigation` ，最终把日志输出到控制台：
 

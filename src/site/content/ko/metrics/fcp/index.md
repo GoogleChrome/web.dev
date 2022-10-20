@@ -4,7 +4,7 @@ title: First Contentful Paint(최초 콘텐츠풀 페인트, FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-10-13
 description: 이 게시물에서는 최초 콘텐츠풀 페인트(FCP) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -50,6 +50,8 @@ FCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### JavaScript에서 FCP 측정
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 JavaScript에서 FCP를 측정하려면 [Paint Timing API를](https://w3c.github.io/paint-timing/) 사용할 수 있습니다. 다음 예시에서는 이름이 `first-contentful-paint`인 `paint` 항목을 수신 대기하고 콘솔에 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)를 작성하는 방법을 확인하실 수 있습니다.
 

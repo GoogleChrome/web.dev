@@ -4,7 +4,7 @@ title: Largest Contentful Paint(최대 콘텐츠풀 페인트, LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2022-07-18
+updated: 2022-10-13
 description: 이 게시물에서는 최대 콘텐츠풀 페인트(LCP) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -129,9 +129,12 @@ LCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript에서 LCP 측정
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 JavaScript에서 LCP를 측정하려면 [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/)를 사용할 수 있습니다. 다음 예시에서는 `largest-contentful-paint` 항목을 수신 대기하고 콘솔에 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)를 작성하는 방법을 확인하실 수 있습니다.
 

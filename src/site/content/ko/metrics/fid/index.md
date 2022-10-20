@@ -127,6 +127,8 @@ FID는 실제 사용자가 페이지와 상호 작용해야 하므로 [사이트
 
 ### JavaScript에서 FID 측정
 
+{% BrowserCompat 'api.PerformanceEventTiming' %}
+
 JavaScript에서 FID를 측정하려면 [Event Timing API](https://wicg.github.io/event-timing)를 사용할 수 있습니다. 다음 예시에서는 [`PerformanceObserver`](https://wicg.github.io/event-timing/#sec-performance-event-timing)를 작성해 [`first-input`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 항목을 수신 대기하고 콘솔에 기록하는 방법을 확인하실 수 있습니다.
 
 ```js

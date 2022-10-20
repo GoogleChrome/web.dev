@@ -127,6 +127,8 @@ FID の測定には実際のユーザーによるページの操作が必要と�
 
 ### JavaScript を使用して FID を測定する
 
+{% BrowserCompat 'api.PerformanceEventTiming' %}
+
 JavaScript を使用した FID の測定には、[Event Timing API](https://wicg.github.io/event-timing) を使用することができます。以下の例では、[`first-input`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) エントリをリッスンしてコンソールにログを記録する [`PerformanceObserver`](https://wicg.github.io/event-timing/#sec-performance-event-timing) の作成方法を示しています。
 
 ```js

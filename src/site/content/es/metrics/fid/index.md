@@ -127,6 +127,8 @@ FID es una métrica que solo se puede medir [en el campo](/user-centric-performa
 
 ### Cómo medir FID en JavaScript
 
+{% BrowserCompat 'api.PerformanceEventTiming' %}
+
 Para medir FID en JavaScript, puede utilizar la [API para cronometrar eventos](https://wicg.github.io/event-timing). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que capte las entradas [`first-input`](https://wicg.github.io/event-timing/#sec-performance-event-timing) y las registre en la consola:
 
 ```js
