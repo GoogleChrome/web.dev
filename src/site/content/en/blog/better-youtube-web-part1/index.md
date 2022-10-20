@@ -60,7 +60,7 @@ their [Largest Contentful Paint (LCP)](/lcp/) metric clocking in
 at 4-6 seconds in some cases. This was substantially higher than their target of
 2.5 seconds.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/uy6hO7M60rRw3bTfXTCH.png", alt="Charts of FCP and LCP showing YouTube Watch page pass rates as well as the YouTube origin", width="800", height="285" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/uy6hO7M60rRw3bTfXTCH.png", alt="Charts of FCP and LCP showing YouTube Watch page pass rates as well as the YouTube origin.", width="800", height="285" %}
 
 To identify areas for improvement, they turned to
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to audit
