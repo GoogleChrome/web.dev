@@ -127,6 +127,8 @@ FIDэто показатель, который измеряет скорость
 
 ### Измерение FID в JavaScript
 
+{% BrowserCompat 'api.PerformanceEventTiming' %}
+
 Чтобы измерить FID с помощью JavaScript, можно воспользоваться [Event Timing API](https://wicg.github.io/event-timing). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver), который прослушивает записи [`first-input`](https://wicg.github.io/event-timing/#sec-performance-event-timing) и регистрирует их в консоли:
 
 ```js

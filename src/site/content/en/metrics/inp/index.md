@@ -178,6 +178,8 @@ The best way to measure your website's INP is by gathering metrics from actual u
 
 ### Measure INP In JavaScript
 
+{% BrowserCompat 'api.PerformanceEventTiming.interactionId' %}
+
 Writing your own [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to measure INP can be difficult. To measure INP in JavaScript, it's advised that you use the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals), which exports an `onINP` function to do this work for you. You can then get a page's INP by passing a function to the `onINP` method:
 
 ```js

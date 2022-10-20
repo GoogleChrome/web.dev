@@ -260,6 +260,8 @@ user to interact with your page. You can measure FID with the following tools.
 
 ### Measure FID in JavaScript
 
+{% BrowserCompat 'api.PerformanceEventTiming' %}
+
 To measure FID in JavaScript, you can use the [Event Timing
 API](https://wicg.github.io/event-timing). The following example shows how to
 create a
