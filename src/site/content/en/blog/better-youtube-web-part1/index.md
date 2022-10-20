@@ -47,7 +47,7 @@ and limited network bandwidth, ensuring a fast and seamless experience is a
 critical goal.
 
 To provide an inclusive experience for all users, YouTube set out to improve
-performance metrics such as Core Web Vitals through lazy-loading and code
+performance metrics such as [Core Web Vitals](/vitals) through lazy-loading and code
 modernization.
 
 ### Improving Core Web Vitals
