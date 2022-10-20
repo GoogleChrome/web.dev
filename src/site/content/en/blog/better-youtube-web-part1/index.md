@@ -70,7 +70,7 @@ the YouTube watch pages, revealing a low Lighthouse
 First Contentful Paint (FCP) of 3.5 seconds and a LCP of 8.5 seconds.
 
 <figure>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PeCzGyBCTcY63B5Nft1a.jpg", alt="Lighthouse Report for YouTube Mobile", width="800", height="518" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PeCzGyBCTcY63B5Nft1a.jpg", alt="Lighthouse Report for YouTube Mobile.", width="800", height="518" %}
 
   <figcaption>
     Chrome sets a target of 1.8s for FCP and 2.5s for LCP as a gold standard. The FCP and LCP were clearly in the yellow and red at 3.5s and 8.5s, respectively.
