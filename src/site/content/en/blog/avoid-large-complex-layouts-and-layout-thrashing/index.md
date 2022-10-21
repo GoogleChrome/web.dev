@@ -63,11 +63,6 @@ If it’s not possible to avoid layout then the key is to once again use Chrome 
 
 When digging into the frame in the above example, we see that over 20ms is spent inside layout, which, when we have 16ms to get a frame on screen in an animation, is far too high. You can also see that DevTools will tell you the tree size (1,618 elements in this case), and how many nodes were in need of layout.
 
-{% Aside %}
-Want a definitive list of which CSS properties trigger layout, paint, or composite? Check out [CSS Triggers](https://csstriggers.com).
-{% endAside %}
-
-
 ## Use flexbox over older layout models
 
 The web has a range of layout models, some being more widely supported than others. The oldest CSS layout model  allows us to position elements on screen relatively, absolutely, and by floating elements.
