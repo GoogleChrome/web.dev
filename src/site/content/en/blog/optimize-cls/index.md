@@ -368,9 +368,9 @@ Downloading and rendering web fonts can cause layout shifts in two ways:
 The following tools can help you minimize this:
 
 - [`font-display`](/font-display/) allows you to modify the rendering behavior of custom fonts with values such as `auto`, `swap`, `block`, `fallback` and `optional`. Unfortunately, all of these values (except [`optional`](http://crrev.com/749080)) can cause a re-layout in one of the above ways.
-- The [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) can reduce the time it takes to get necessary fonts.
+- The [Font Loading API](./optimize-webfont-loading/#the-font-loading-api) can reduce the time it takes to get necessary fonts.
 
-As of Chrome 83, I can recommend the following too:
+We recommend the following too to reduce CLS for fonts:
 
 - Using `<link rel=preload>` on the key web fonts: a preloaded font will have a higher chance to meet the first paint, in which case there's no layout shifting.
 - Combining `<link rel=preload>` and `font-display: optional`
@@ -387,7 +387,7 @@ To learn more about what CSS properties trigger layout, see [CSS Triggers](https
 
 ### Developer Tools
 
-I'm happy to share there are a number of tools available to measure and debug Cumulative Layout Shift (CLS).
+There are a number of tools available to measure and debug Cumulative Layout Shift (CLS).
 
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) includes support for measuring CLS in a lab setting. It will also highlight the nodes that cause the most layout shifting.
 
@@ -408,6 +408,6 @@ Measuring real-world CLS aggregated at an origin-level is also possible using th
 
 There are a number of techniques to improve CLS as detailed above. There are allowances built into Core Web Vitals, so even if you cannot eliminate CLS completely, using some of these techniques should allow you to reduce the impact. This will be better for your users and hopefully allow you to stay within those limits.
 
-That's it for this guide. I hope it helps keep your pages just a little less shifty :)
+That's it for this guide. We hope it helps keep your pages just a little less shifty :)
 
 _With thanks to Philip Walton, Kenji Baheux, Warren Maresca, Annie Sullivan, Steve Kobes and Gilberto Cocchi for their helpful reviews._
