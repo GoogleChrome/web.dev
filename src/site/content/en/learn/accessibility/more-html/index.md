@@ -140,17 +140,16 @@ To make your `<iframe>` accessible, there are a couple of aspects to consider. F
 
 Second, as a best practice, it is good to set the scrolling to "auto" or "yes" in the `<iframe>` tag settings. This allows people with low vision to be able to scroll into content within the `<iframe>` that they might not otherwise be able to see. Ideally, the `<iframe>` container would also be flexible in its height and width.
 
-Don't do this:
-
-
-```
+<div class="switcher">
+{% Compare 'worse' %}
+```html
 <iframe src="https://www.youtube.com/embed/3obixhGZ5ds"></iframe>
 ```
+{% endCompare %}
 
-
-Do this:
-
-
-```
+{% Compare 'better' %}
+```html
 <iframe title="Google Pixel - Lizzo in Real Tone" src="https://www.youtube.com/embed/3obixhGZ5ds" scrolling="auto"></iframe>
-
+```
+{% endCompare %}
+</div>
