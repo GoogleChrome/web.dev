@@ -8,12 +8,26 @@ date: 2022-09-21
 tags:
   - accessibility
 ---
-Many people use a keyboard—or other software/hardware that mimics the functionality of a keyboard, such as a switch device—as their primary means of navigation. People with temporary issues like a sprained wrist or fine motor disabilities like carpal tunnel, as well as some people without disabilities, may choose to use a keyboard to navigate a page due to personal preference, efficiency, or broken hardware.
 
-Low-vision or blind users may also use a keyboard for navigation combined with their magnification or screen reader software, though they may use different keyboard shortcut commands to navigate a screen than a sighted user would.
+Many people use a keyboard—or other software/hardware that mimics the
+functionality of a keyboard, such as a switch device—as their primary means of
+navigation. People with temporary issues like a sprained wrist or fine motor
+disabilities like carpal tunnel, as well as some people without disabilities,
+may choose to use a keyboard to navigate a page due to personal preference,
+efficiency, or broken hardware.
 
-Keyboard support for all of these disabilities and situations is critical. A large part of keyboard accessibility is centered around [focus](https://web.dev/focus). Focus refers to which element on the screen currently receives input from the keyboard. For this module, we will concentrate on HTML structure and CSS styling for keyboard and focusable elements, while the JavaScript module will include more information on focus management and keystrokes for interactive elements.
+Low-vision or blind users may also use a keyboard for navigation combined with
+their magnification or screen reader software, though they may use different
+keyboard shortcut commands to navigate a screen than a sighted user would.
 
+Keyboard support for all of these disabilities and situations is critical. A
+large part of keyboard accessibility is centered around
+[focus](/focus). Focus refers to which element on the screen
+currently receives input from the keyboard.
+
+For this module, we will concentrate on HTML structure and CSS styling for
+keyboard and focusable elements, while the JavaScript module will include more
+information on focus management and keystrokes for interactive elements.
 
 ## Focus order
 
@@ -32,9 +46,9 @@ Your `tab` key moves the keyboard focus up the DOM, and `shift+tab` moves the fo
 
 ### Tabindex
 
-The focus order begins with elements with a positive [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) attribute (if there are any) and moves from the smallest positive number to the largest (e.g., 1, 2, 3). It then proceeds through elements with a tabindex of zero according to their order in the DOM. Any elements with a negative tabindex are removed from the natural focus order.
+The focus order begins with elements with a positive [tabindex](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex) attribute (if there are any) and moves from the smallest positive number to the largest (e.g., 1, 2, 3). It then proceeds through elements with a tabindex of zero according to their order in the DOM. Any elements with a negative tabindex are removed from the natural focus order.
 
-When a [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) of zero (tabindex= "0") is applied to normally unfocusable elements, they are added into the natural focus order of the page according to the way they appear in the DOM. However, unlike naturally focusable HTML elements, you must [provide additional keyboard support](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/) for them to be fully accessible.
+When a [tabindex](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex) of zero (tabindex= "0") is applied to normally unfocusable elements, they are added into the natural focus order of the page according to the way they appear in the DOM. However, unlike naturally focusable HTML elements, you must [provide additional keyboard support](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/) for them to be fully accessible.
 
 Similarly, if you have an element that normally is focusable but is inactive—such as a button that is inoperative until an input field is filled in—you should add a negative tabindex (tabindex= "-1") to this element. Adding a negative tabindex signals to assistive technologies and keyboards that this button should be removed from the natural focus order. But don't worry—you can use JavaScript to add the focus back to the element when needed. 
 
@@ -163,41 +177,12 @@ in WCAG 2.2 arrives, it is best to adhere to the 3:1 color contrast ratio for
 all focus indicators.
 {% endAside %}
 
-```
-/* Adds the browser default styling back */
-a.style1:focus {
-  outline: auto 5px Highlight; /* for non-webkit browsers */
-  outline: auto 5px -webkit-focus-ring-color; /* for webkit browsers */
-}
-
-/* Adds a thick green rounded outline */
-a.style2:focus {
-  outline: 0.5rem solid #25aa00;
-  border-radius: 5px;
-}
-
-/* Adds a medium-sized dotted purple outline */
-a.style3:focus {
-  outline: medium dashed #bf40bf;
-}
-
-/* Adds a blue wavy underline */
-a.style4:focus {
-  text-decoration: wavy underline 2px #0000ff;
-}
-
-/* Adds a green background */
-a.style5:focus {
-  background-color: #25aa00;
-}
-```
-
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'PoaowNz',
  height: 350,
  theme: 'dark',
- tab: 'css,result'
+ tab: 'css'
 } %}
 
 ## Wrap-up
