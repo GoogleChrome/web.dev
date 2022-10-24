@@ -26,11 +26,11 @@ questions:
   - type: multiple-choice
     cardinality: "1+"
     correctAnswers: "1,2"
-    stem: How might someone try to enact change on the web?
+    stem: What is an effective way to enact change on the web?
     options:
       - content: "Complain on Twitter."
-        rationale: "Complaining may make you feel better, but you can't expect change."
+        rationale: "If you have a large following or you say the right thing at the right time, your tweet may pick up conversation and possibly lead to change. However, for many, Twitter is a way to talk about a problem but not make lasting changes."
       - content: "File a lawsuit."
-        rationale: "This is an option available in many countries, but not all places."
+        rationale: "This is an option available to people in countries with accessibility laws. Filing a lawsuit will bring the attention of a company's lawyers, who may decide it's worth the company's time to address the problem."
       - content: "Contact a company's developers directly."
-        rationale: "If you see something, say something. If you're able to contact developers through the website or other methods, you could encourage change."
+        rationale: "If you see something, say something. If you encounter accessibility problems online and are able to contact the developers, through the platform directly or by other methods, it's possible you'll draw their attention to a problem they were otherwise unaware of and therefore may fix. The more evidence you can offer, the more likely the developers will understand the problem."
