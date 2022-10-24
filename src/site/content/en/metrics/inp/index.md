@@ -250,7 +250,7 @@ As with other methods exported by `web-vitals`, `onINP` accepts a function as an
 See the [`onINP()`](https://github.com/GoogleChrome/web-vitals#oninp) reference documentation for additional usage instructions.
 
 {% Aside 'warning' %}
-Gathering INP metrics in the field will only work on browsers that fully support the Event Timing API, including its `interactionId` property.
+Gathering INP metrics in the field will only work on browsers that [fully support the Event Timing API, including its `interactionId` property](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/interactionId#browser_compatibility).
 {% endAside %}
 
 ## How to improve INP
