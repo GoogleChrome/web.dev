@@ -16,7 +16,7 @@ tags:
   - web-vitals
 ---
 
-{% YouTube id='AQqFZ5t8uNc', startTime='88' %}
+{% YouTube id='AQqFZ5t8uNc', startTime='88', width=2482, height=1396 %}
 
 "I was about to click that! Why did it move? 😭"
 
@@ -49,7 +49,9 @@ The most common causes of a poor CLS are:
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg",
       controls=true,
       loop=true,
-      muted=true %}
+      muted=true,
+      width=2482,
+      height=1396 %}
    <figcaption>
       Images without width and height specified.
     </figcaption>
@@ -61,7 +63,9 @@ The most common causes of a poor CLS are:
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg",
       controls=true,
       loop=true,
-      muted=true %}
+      muted=true,
+      width=2482,
+      height=1396 %}
    <figcaption>
       Images with width and height specified.
     </figcaption>
@@ -217,19 +221,23 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
       controls=true,
       loop=true,
-      muted=true %}
+      muted=true,
+      width=2482,
+      height=1396 %}
    <figcaption>
       Ads without sufficient space reserved.
     </figcaption>
   </figure>
 
   <figure>
-      {% Video
-        src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"],
-        poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
-        controls=true,
-        loop=true,
-        muted=true %}
+    {% Video
+      src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"],
+      poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
+      controls=true,
+      loop=true,
+      muted=true,
+      width=2482,
+      height=1396 %}
    <figcaption>
       Ads with sufficient space reserved.
     </figcaption>
@@ -246,7 +254,7 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
 
 Statically style slot DOM elements with the same sizes passed to your tag library. This can help ensure the library doesn't introduce layout shifts when it loads. If you don't do this, the library may change the size of the slot element after page layout.
 
-This can be as simple as adding a `min-height` styling to reserve space or, for responsive ad sizings using the new [`aspect-ratio`](https://web.dev/aspect-ratio/) CSS property in a similar manner to the way browsers automatically use this for images with dimensions provided.
+This can be as simple as adding a `min-height` styling to reserve space or, for responsive ad sizings using the new [`aspect-ratio`](/aspect-ratio/) CSS property in a similar manner to the way browsers automatically use this for images with dimensions provided.
 
 Also consider the sizes of smaller ad serves. If a smaller ad is served, a publisher can style the (larger) container to avoid layout shifts. The downside to this approach is that it will increase the amount of blank space, so keep in mind the trade-off here.
 
@@ -267,14 +275,28 @@ Embeddable widgets allow you to embed portable web content in your page (for exa
 These embeds often aren't aware in advance just how large an embed will be (for example, in the case of a social media post - does it have an embedded image? video? multiple rows of text?). As a result, platforms offering embeds do not always reserve enough space for their embeds and can cause layout shifts when they finally load.
 
   <figure>
-    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true %}
+    {% Video
+      src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"],
+      poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg",
+      controls=true,
+      loop=true,
+      muted=true,
+      width=2482,
+      height=1396 %}
    <figcaption>
       Embed without space reserved.
     </figcaption>
   </figure>
 
   <figure>
-    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true %}
+    {% Video
+      src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"],
+      poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg",
+      controls=true,
+      loop=true,
+      muted=true,
+      width=2482,
+      height=1396 %}
    <figcaption>
       Embed with space reserved.
     </figcaption>
@@ -307,7 +329,14 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
 - "GDPR notice"
 
   <figure>
-    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true %}
+    {% Video
+      src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"],
+      poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg",
+      controls=true,
+      loop=true,
+      muted=true,
+      width=2482,
+      height=1396 %}
    <figcaption>
       Dynamic content without space reserved.
     </figcaption>
