@@ -309,7 +309,7 @@ onAllChangesSaved(() => {
 
 For sites that simply want to ensure a reasonably fresh page, using `Cache-Control: no-cache` or `Cache-Control: max-age=0` prevents the page being used without being revalidated but, unlike `Cache-control: no-store`, still allows the bfcache to be used. For bfcache navigations a page refresh may not be expected or desirable for the user.
 
-For best performance, it is recommended that pages are cacheable, even if only for a short time. This will improve performance in general, but also avoid your site becoming ineligible for the bfcache and therefore not benefiting from those instant page restores. Where this is not possible `Cache-Control: no-cache`, `Cache-Control: max-age=0` should be used unless there are good security reasons for using `Cache-control: no-store`.
+For best performance, it is recommended that pages are cacheable, even if only for a short time. This will improve performance in general, but also avoid your site becoming ineligible for the bfcache and therefore not benefiting from those instant page restores. Where this is not possible `Cache-Control: no-cache` or `Cache-Control: max-age=0` should be used unless there are good security reasons for using `Cache-control: no-store`.
 
 ### Avoid `window.opener` references
 
