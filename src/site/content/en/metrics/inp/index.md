@@ -46,7 +46,7 @@ This article explains how INP works, how to measure it, and offers advice for im
 
 INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made with a page. An _interaction_ is one or more event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
 
-The duration for every interaction is captured by the [Event Timing API](https://caniuse.com/mdn-api_performanceeventtiming). In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the interaction with the highest latency of all observed interactions is chosen as the page's INP when the user is done with the page.
+The duration for every interaction is captured by the [Event Timing API](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming). In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the interaction with the highest latency of all observed interactions is chosen as the page's INP when the user is done with the page.
 
 However, in cases where there are many interactions with a page&mdash;50 or more to be specific&mdash;the interaction with the highest latency isn't the page's INP, but rather a high-latency interaction that's close to the worst. The table below provides more information on how INP is calculated based on the total number of interactions made with a page.
 
