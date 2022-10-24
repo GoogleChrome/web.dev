@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-09-20
+updated: 2022-10-24
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -14,7 +14,7 @@ tags:
 ---
 
 {% Aside %}
-Interaction to Next Paint (INP) is an experimental metric that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). When an interaction causes a page to become unresponsive, that is a poor user experience. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
+Interaction to Next Paint (INP) is a metric that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). When an interaction causes a page to become unresponsive, that is a poor user experience. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
 {% endAside %}
 
 Chrome usage data shows that 90% of a user's time on a page is spent _after_ it loads, Thus, careful measurement of responsiveness _throughout_ the page lifecycle is important. This is what the INP metric assesses.
@@ -44,18 +44,72 @@ This article explains how INP works, how to measure it, and offers advice for im
 
 ## What is INP?
 
-INP aims to represent a page's overall responsiveness by measuring all click, tap, and keyboard interactions made with a page. The longest of those observed interactions&mdash;with some exceptions noted below&mdash;is chosen as the page's INP value when the user is done with the page.
+INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made with a page. An _interaction_ is one or more event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
+
+The duration for every interaction is captured by the [Event Timing API](https://caniuse.com/mdn-api_performanceeventtiming). In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the interaction with the highest latency of all observed interactions is chosen as the page's INP when the user is done with the page.
+
+However, in cases where there are many interactions with a page&mdash;50 or more to be specific&mdash;the interaction with the highest latency isn't the page's INP, but rather a high-latency interaction that's close to the worst. The table below provides more information on how INP is calculated based on the total number of interactions made with a page.
 
 {% Details %}
 
 {% DetailsSummary %}
-A note on how INP is calculated
+INP values by number of interactions.
 {% endDetailsSummary %}
 
-As stated above, INP is calculated by observing all the interactions made with a page. The chosen value is then a [percentile](https://en.wikipedia.org/wiki/Percentile) of those interactions. A formula is then used to choose a high percentile value of those interactions. For pages with few interactions, the interaction with the worst latency (the 100th percentile) is chosen. For pages with many interactions, the 99th or 98th percentile is chosen.
-{% endDetails %}
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Number of page interactions</th>
+        <th>Interaction reported as INP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1-49</td>
+        <td>Largest</td>
+      </tr>
+      <tr>
+        <td>50-99</td>
+        <td>2nd Largest</td>
+      </tr>
+      <tr>
+        <td>100-149</td>
+        <td>3rd Largest</td>
+      </tr>
+      <tr>
+        <td>150-199</td>
+        <td>4th Largest</td>
+      </tr>
+      <tr>
+        <td>200-249</td>
+        <td>5th Largest</td>
+      </tr>
+      <tr>
+        <td>250-299</td>
+        <td>6th Largest</td>
+      </tr>
+      <tr>
+        <td>300-349</td>
+        <td>7th Largest</td>
+      </tr>
+      <tr>
+        <td>350-399</td>
+        <td>8th Largest</td>
+      </tr>
+      <tr>
+        <td>400-449</td>
+        <td>9th Largest</td>
+      </tr>
+      <tr>
+        <td>450+</td>
+        <td>10th Largest</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-An _interaction_ is a group of event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
+{% endDetails %}
 
 An interaction's latency consists of the single longest [duration](https://w3c.github.io/event-timing/#ref-for-dom-performanceentry-duration%E2%91%A1:~:text=The%20Event%20Timing%20API%20exposes%20a%20duration%20value%2C%20which%20is%20meant%20to%20be%20the%20time%20from%20when%20user%20interaction%20occurs%20(estimated%20via%20the%20Event%27s%20timeStamp)%20to%20the%20next%20time%20the%20rendering%20of%20the%20Event%27s%20relevant%20global%20object%27s%20associated%20Document%E2%80%99s%20is%20updated) of a group of event handlers that drives the interaction, from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
 
@@ -98,7 +152,7 @@ To ensure you're delivering user experiences with good responsiveness, a good th
 </figure>
 
 {% Aside 'important' %}
-Since INP is experimental, the guidance around thresholds may change over time as it is fine-tuned. [The CHANGELOG at the end of this article](#changelog) will be updated to reflect any changes.
+The guidance around INP thresholds may change over time. [The CHANGELOG at the end of this article](#changelog) will be updated as needed to reflect whatever changes are made.
 {% endAside %}
 
 ## What's in an interaction?
@@ -196,7 +250,7 @@ As with other methods exported by `web-vitals`, `onINP` accepts a function as an
 See the [`onINP()`](https://github.com/GoogleChrome/web-vitals#oninp) reference documentation for additional usage instructions.
 
 {% Aside 'warning' %}
-Gathering INP metrics in the field will only work on browsers that [fully support the Event Timing API](https://caniuse.com/mdn-api_performanceeventtiming), including its `interactionId` property.
+Gathering INP metrics in the field will only work on browsers that fully support the Event Timing API, including its `interactionId` property.
 {% endAside %}
 
 ## How to improve INP
