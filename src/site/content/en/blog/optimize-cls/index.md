@@ -385,6 +385,12 @@ Changes to CSS property values can require the browser to react to these changes
 
 To learn more about what CSS properties trigger layout, see [CSS Triggers](https://csstriggers.com/) and [High-performance animations](/animations-guide/).
 
+### bfcache
+
+The baxck/forward cache, or bfcache keeps pages in browsers memory for a short period so if you return to them, then they will be restored exactly as you left them. This means the fully loaded page is instantly available - without any shifts which may be normally seen during load to to any of the reason above. When this was rolled out to Chrome, we saw [noticeable improvements in CLS](https://twitter.com/anniesullie/status/1491399685961293828?s=20&t=Qj_nzSRZD0_c-HaAnfr98Q).
+
+However, some sites are inelgible for the bfcache. Ensuring your site is eligible is a sure fire way to keep CLS scores down. Read [the bfcache article](/bfcache/) for more details on how to test and identify any issues preventing bfcache usage.
+
 ### Developer Tools
 
 There are a number of tools available to measure and debug Cumulative Layout Shift (CLS).
