@@ -35,7 +35,12 @@ The elements that a keyboard user can navigate to are called focusable elements.
 
 For most languages, the focus order starts at the top of the page and ends at the bottom, traveling from left to right. However, some languages are read right to left, so the primary language of the page may warrant a different focus order.
 
-By default, focus order includes naturally focusable HTML elements, such as links, checkboxes, and text inputs. Naturally focusable HTML elements include built-in tab order support and basic keyboard event handling. The focus order can also include any elements that don't normally receive focus, such as non-interactive HTML elements, custom components, or when ARIA is used to override the natural semantics of a focusable element.
+By default, focus order includes naturally focusable HTML elements, such as
+links, checkboxes, and text inputs. Naturally focusable HTML elements include
+built-in tab order support and basic keyboard event handling. You can also
+update the focus order to include any elements that don't normally receive
+focus, such as non-interactive HTML elements, custom components, or when ARIA
+is used to override the natural semantics of a focusable element.
 
 {% Aside %}
 Your `tab` key moves the keyboard focus up the DOM, and `shift + tab` moves the focus down the DOM.
