@@ -2,7 +2,9 @@
 title: 'Video and audio'
 authors:
   - cariefisher
-description: How to create accessible video and audio.
+description: >
+  Learn about alternative media types available to make
+  your video and audio accessible.
 date: 2022-10-26
 tags:
   - accessibility
@@ -15,7 +17,7 @@ transcript instead? If so, you probably understand the importance and
 convenience of having alternative ways to access audio and video content. 
 
 While your role at your company or organization may not require you to create
-audio and video content directly, it is important to know the basics of
+audio and video content directly, it's important to know the basics of
 [accessibility requirements for media](https://www.w3.org/WAI/WCAG21/Understanding/time-based-media).
 This knowledge will help you design and build the appropriate layouts and
 features to accommodate users with different environmental and sensory needs,
@@ -31,12 +33,12 @@ accessing audio and video content.
 The [alternative media types you must include](https://www.w3.org/WAI/media/av/planning/#wcag-standard)
 with your media files depend on:
 
-* The type of media you are supporting—audio-only, video-only, or video with audio (multimedia) formats
+* The type of media you are supporting&mdash;audio-only, video-only, or video with audio (multimedia) formats
 * Whether the media is live or pre-recorded
 * The version and level of WCAG compliance you are targeting
 * Any additional media-related user needs
 
-When it comes to [creating accessible audio and video content](https://www.w3.org/WAI/media/av/)
+To create [accessible audio and video content](https://www.w3.org/WAI/media/av/)
 for websites and apps, there are four main types of alternative media types:
 [captions](#captions), [transcripts](#transcripts),
 [audio descriptions](#audio-descriptions), and
@@ -54,7 +56,7 @@ effects, background noises, and essential music.
 Captions benefit people who are deaf, hard of hearing, or have cognitive
 disabilities, but are useful to many other people as well.
 
-Captions come in two forms—open or closed. 
+Captions come in two forms&mdash;open or closed. 
 
 * Closed captions (CC) are text on top of a video that can be turned on or off
   by the viewer and, depending on the media player, styled in a way that fits
@@ -206,8 +208,8 @@ have low vision, but could help people with some cognitive disorders as well.
 ## Sign language interpretation
 
 Another major alternative media type you may encounter is [sign language
-interpretation](https://www.w3.org/WAI/media/av/sign-languages/), where you add
-an interpreter to narrate the auditory portion of the audio-only or multimedia
+interpretation](https://www.w3.org/WAI/media/av/sign-languages/), where
+an interpreter narrates the auditory portion of the audio-only or multimedia
 content using sign language. This is very important for many people who are
 deaf, as sign language is their first and most fluent language. 
 
