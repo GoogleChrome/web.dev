@@ -8,7 +8,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-11-10
-updated: 2022-10-24
+updated: 2022-10-25
 hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
@@ -302,14 +302,43 @@ onAllChangesSaved(() => {
 {% endCompareCaption %}
 {% endCompare %}
 
+### Minimize use of `Cache-Control: no-store`
 
-### Do not serve pages with `Cache-control: no-store`
+`Cache-Control: no-store` is an HTTP header web servers can set on responses that instructs the browser not to store the response in any cache. This should be used for resources containing private information—for example, pages behind a login.
 
-`Cache-Control: no-store` is an HTTP header web servers can set on responses that instructs the browser not to store the response in any cache. When this is set on the page itself (as opposed to any subresource), it means that page will not be eligible for bfcache. There is [a proposal to change this behavior](https://github.com/fergald/explainer-bfcache-ccns/blob/main/README.md) but at present any pages using `Cache-control: no-store` are not eligible for bfcache.
+When `Cache-Control: no-store` is set on the page itself (as opposed to any subresource), it means that page will not be eligible for bfcache. There is [a proposal to change this behavior](https://github.com/fergald/explainer-bfcache-ccns/blob/main/README.md) in a privacy-preserving manner, but at present any pages using `Cache-Control: no-store` are not eligible for bfcache.
 
-For sites that simply want to ensure an up-to-date page is used each time, using `Cache-Control: no-cache` or `Cache-Control: max-age=0` prevents the page being used without being revalidated but, unlike `Cache-control: no-store`, still allows the bfcache to be used. For bfcache navigations a page refresh may not be expected or desirable for the user.
+For best performance, it is recommended that pages are cacheable, even if only for a short time. This will improve performance in general, but also avoid your site becoming ineligible for the bfcache and therefore not benefiting from those instant page restores.
 
-For best performance, it is recommended that pages are cacheable, even if only for a short time. This will improve performance in general, but also avoid your site becoming ineligible for the bfcache and therefore not benefiting from those instant page restores. Where this is not possible `Cache-Control: no-cache` or `Cache-Control: max-age=0` should be used unless there are good security reasons for using `Cache-control: no-store`.
+For sites that simply want to ensure an up-to-date page is used each time, using `Cache-Control: no-cache` or `Cache-Control: max-age=0` prevents the page from being used without being revalidated first. However, unlike `Cache-Control: no-store`, these directives do not disqualify a page from being eligible for bfcache. For back/forward navigations a page refresh may not be expected nor desirable for the user. In the next section we shall show how you can ensure stale data is not served if you do want to update this on bfcache restores but still retain the performance benefits of using the bfcache.
+
+### Update stale or sensitive data after bfcache restore
+
+If your site keeps user state—especially any sensitive user information—that
+data needs to be updated or cleared after a page is restored from bfcache.
+
+For example, if a user navigates to a checkout page and then updates their
+shopping cart, a back navigation could potentially surface out-of-date
+information if a stale page is restored from bfcache.
+
+Another, more critical example is if a user signs out of a site on a public
+computer and the next user clicks the back button. This could potentially expose
+private data that the user assumed was cleared when they logged out.
+
+To avoid situations like this, it's good to always update the page after a
+`pageshow` event if `event.persisted` is `true`.
+
+The following code checks for the presence of a site-specific cookie in the
+`pageshow` event and reloads if the cookie is not found:
+
+```js
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted && !document.cookie.match(/my-cookie/)) {
+    // Force a reload if the user has logged out.
+    location.reload();
+  }
+});
+```
 
 ### Avoid `window.opener` references
 
@@ -397,34 +426,6 @@ window.addEventListener('pagehide', () => {
 
 // Open the connection when the page is loaded or restored from bfcache.
 window.addEventListener('pageshow', () => openDB());
-```
-
-### Update stale or sensitive data after bfcache restore
-
-If your site keeps user state—especially any sensitive user information—that
-data needs to be updated or cleared after a page is restored from bfcache.
-
-For example, if a user navigates to a checkout page and then updates their
-shopping cart, a back navigation could potentially surface out-of-date
-information if a stale page is restored from bfcache.
-
-Another, more critical example is if a user signs out of a site on a public
-computer and the next user clicks the back button. This could potentially expose
-private data that the user assumed was cleared when they logged out.
-
-To avoid situations like this, it's good to always update the page after a
-`pageshow` event if `event.persisted` is `true`.
-
-The following code checks for the presence of a site-specific cookie in the
-`pageshow` event and reloads if the cookie is not found:
-
-```js
-window.addEventListener('pageshow', (event) => {
-  if (event.persisted && !document.cookie.match(/my-cookie/)) {
-    // Force a reload if the user has logged out.
-    location.reload();
-  }
-});
 ```
 
 ### Test to ensure your pages are cacheable
