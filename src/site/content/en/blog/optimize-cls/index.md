@@ -5,7 +5,7 @@ authors:
   - addyosmani
   - tunetheweb
 date: 2020-05-05
-updated: 2022-10-24
+updated: 2022-10-25
 hero: image/admin/74TRx6aETydsBGa2IZ7R.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
@@ -256,9 +256,16 @@ Statically style slot DOM elements with the same sizes passed to your tag librar
 
 This can be as simple as adding a `min-height` styling to reserve space or, for responsive ad sizings using the new [`aspect-ratio`](/aspect-ratio/) CSS property in a similar manner to the way browsers automatically use this for images with dimensions provided.
 
+<figure>
+  {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/ThcGvVp0RiiABpmnWz7u.svg", alt="Three mobile devices with jjst text content in the first device, this is shifted down in the second device, and reserving space with a placehodler as shown in the third device prevents the shift", width="295", height="150" %}
+  <figcaption>
+    Reserving space for ads can prevent layout shifts
+  </figcaption>
+</figure>
+
 Also consider the sizes of smaller ad serves. If a smaller ad is served, a publisher can style the (larger) container to avoid layout shifts. The downside to this approach is that it will increase the amount of blank space, so keep in mind the trade-off here.
 
-Alternatively, set the initial size to the smallest ad size, and accept some level of shift for larger ads. This will not eliminate CLS, but will hopefully reduce the impact of it to a more managable level.
+Alternatively, set the initial size to the smallest ad size, and accept some level of shift for larger ads. This will not fully eliminate CLS, but will hopefully reduce the impact of it to a more managable level.
 
 #### Avoid placing ads near the top of the viewport
 
