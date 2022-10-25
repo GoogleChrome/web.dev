@@ -196,7 +196,7 @@ Our goal is on demand supplemental messaging. A sighted mouse or keyboard user c
 <figure>
   {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/UysCSNx4AhGBPeStZ3CU.png", width="800", height="189", alt="" %}
   <figcaption>
-    Screenshot of MacOS VoiceOver reading a link with a `<tool-tip>`
+    Screenshot of MacOS VoiceOver reading a link with a tooltip
   </figcaption>
 </figure>
 
