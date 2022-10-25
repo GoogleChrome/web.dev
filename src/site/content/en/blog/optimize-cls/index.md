@@ -129,7 +129,7 @@ img[Attributes Style] {
 }
 ```
 
-Safari does similarly with a `HTML Attributes` style source. Firefox does not currently display this calculated `aspect-ratio` at all in it's Inspector panel, but does use it for layout.
+Safari behaves similarly by using a `HTML Attributes` style source. Firefox does not currently display this calculated `aspect-ratio` at all in it's Inspector panel, but does use it for layout.
 
 The `auto` part of the above code, is important and causes the `640 / 360` to be overriden with the image dimensions once the image is downloaded. If the image dimensions are different this will still cause some layout shift after the impage loads, but this ensures the image aspect-ratio is still used ultimately when it becomes available—as it was in the past—in case the HTML is incorrect. Plus, the shift is likely to be a lot smaller than the 0x0 default image size when dimentions are not provided!
 
