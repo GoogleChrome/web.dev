@@ -305,7 +305,7 @@ onAllChangesSaved(() => {
 
 ### Do not serve pages with `Cache-control: no-store`
 
-`Cache-control: no-store` is an HTTP header web servers can set on responses to ensure the response is not stored in any cache. When this is set on the page itself (as opposed to any subresource), this means that page will not be included the bfcache. There is [a proposal to change this](https://bugs.chromium.org/p/chromium/issues/detail?id=1228611) but at present any pages sending this are ineligible to use the bfcache.
+`Cache-Control: no-store` is an HTTP header web servers can set on responses that instructs the browser not to store the response in any cache. When this is set on the page itself (as opposed to any subresource), it means that page will not be eligible for bfcache. There is [a proposal to change this behavior](https://github.com/fergald/explainer-bfcache-ccns/blob/main/README.md) but at present any pages using `Cache-control: no-store` are not eligible for bfcache.
 
 For sites that simply want to ensure an up-to-date page is used each time, using `Cache-Control: no-cache` or `Cache-Control: max-age=0` prevents the page being used without being revalidated but, unlike `Cache-control: no-store`, still allows the bfcache to be used. For bfcache navigations a page refresh may not be expected or desirable for the user.
 
