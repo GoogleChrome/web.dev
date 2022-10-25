@@ -1,0 +1,23 @@
+setLeader: Test your knowledge of ARIA and HTML
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: 'On which elements should you add `tabindex="0"`'
+    options:
+      - content: "All HTML elements."
+        rationale: 'Naturally focusable elements are already included in focus order, so it is unnecessary and potentially disruptive to add additional `tabindex`.'
+      - content: 'A non-interactive element that has CSS `overflow` applied to it.'
+        rationale: 'This will allow keyboard users to navigate to and move around overflow content. Learn more about [tabindex and scrollable overflow containers](https://www.a11yproject.com/posts/how-to-use-the-tabindex-attribute/#scrollable-overflow-containers).'
+      - content: "A non-interactive element nested within an interactive element."
+        rationale: 'If the parent element is interactive, adding `tabindex` to the child element may cause confusion.'
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What's the purpose of a skip link?
+    options:
+      - content: "Help keyboard users skip over redundant or unuseful groups of links."
+        rationale: "This is especially helpful in long navigation menus, when a user may have already gone to the page of interest."
+      - content: "Help keyboard users skip over uninteresting content."
+        rationale: "It's not necessarily possible to know what content is or isn't interesting to any user. This is not a useful way of defining skip link usage."

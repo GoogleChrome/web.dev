@@ -105,8 +105,9 @@ past the header section and main navigation. If they choose not to click the
 skip link and continue to tab down the DOM, they'll be sent to the next
 focusable element.
 
-It's important that the skip link includes context about the purpose of the link, such as "Skip to main content," so the user knows where the link is taking them to.
-
+It's important that the skip link includes context about the purpose of the
+link, such as "Skip to main content," so the user knows where the link is
+taking them.
 
 <div class="switcher">
   <figure>
@@ -230,4 +231,6 @@ confusion.
 For a website or app to be considered accessible, everything that can be
 accessed with a mouse must also be accessed with a keyboard. This module
 focused on the visual aspect of keyboard accessibility, in particular, focus
-order and focus indicators. 
+order and focus indicators.
+
+{% Assessment 'focus' %}
