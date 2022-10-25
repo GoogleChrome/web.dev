@@ -49,9 +49,7 @@ The most common causes of a poor CLS are:
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      width=2482,
-      height=1396 %}
+      muted=true %}
    <figcaption>
       Images without width and height specified.
     </figcaption>
@@ -63,9 +61,7 @@ The most common causes of a poor CLS are:
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      width=2482,
-      height=1396 %}
+      muted=true %}
    <figcaption>
       Images with width and height specified.
     </figcaption>
@@ -221,9 +217,7 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      width=2482,
-      height=1396 %}
+      muted=true %}
    <figcaption>
       Ads without sufficient space reserved.
     </figcaption>
@@ -235,9 +229,7 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      width=2482,
-      height=1396 %}
+      muted=true %}
    <figcaption>
       Ads with sufficient space reserved.
     </figcaption>
@@ -257,7 +249,7 @@ Statically style slot DOM elements with the same sizes passed to your tag librar
 This can be as simple as adding a `min-height` styling to reserve space or, for responsive ad sizings using the new [`aspect-ratio`](/aspect-ratio/) CSS property in a similar manner to the way browsers automatically use this for images with dimensions provided.
 
 <figure>
-  {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/ThcGvVp0RiiABpmnWz7u.svg", alt="Three mobile devices with jjst text content in the first device, this is shifted down in the second device, and reserving space with a placehodler as shown in the third device prevents the shift", width="295", height="150" %}
+  {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/ThcGvVp0RiiABpmnWz7u.svg", alt="Three mobile devices with jjst text content in the first device, this is shifted down in the second device, and reserving space with a placehodler as shown in the third device prevents the shift", width="1180", height="600" %}
   <figcaption>
     Reserving space for ads can prevent layout shifts
   </figcaption>
@@ -287,9 +279,7 @@ These embeds often aren't aware in advance just how large an embed will be (for 
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      width=2482,
-      height=1396 %}
+      muted=true %}
    <figcaption>
       Embed without space reserved.
     </figcaption>
@@ -301,9 +291,7 @@ These embeds often aren't aware in advance just how large an embed will be (for 
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      width=2482,
-      height=1396 %}
+      muted=true %}
    <figcaption>
       Embed with space reserved.
     </figcaption>
@@ -341,9 +329,7 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      width=2482,
-      height=1396 %}
+      muted=true %}
    <figcaption>
       Dynamic content without space reserved.
     </figcaption>
