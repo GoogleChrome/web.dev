@@ -99,7 +99,7 @@ classname with less specificity. There's no JavaScript involved.
 ```
 
 This is like a div with some text inside. We can tie into the accessibility tree
-of capable screen readers by adding `[role="tooltip"]:
+of capable screen readers by adding `[role="tooltip"]`.
 
 ```html
 <tool-tip role="tooltip">A tooltip</tool-tip>
