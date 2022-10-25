@@ -147,7 +147,7 @@ only supported in Chromium-based browsers.
 The `pageshow` event fires right after the `load` event when the page is
 initially loading and any time the page is restored from bfcache. The `pageshow`
 event has a
-<code>[persisted](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)</code>
+[`persisted`](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted]
 property which will be <code>true</code> if the page was restored from bfcache
 (and <code>false</code> if not). You can use the <code>persisted</code> property
 to distinguish regular page loads from bfcache restores. For example:
@@ -240,12 +240,7 @@ Instead of using the `unload` event, use the `pagehide` event. The `pagehide`
 event fires in all cases where the `unload` event currently fires, and it
 _also_ fires when a page is put in the bfcache.
 
-In fact, [Lighthouse
-v6.2.0](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.2.0) has
-added a <code>[no-unload-listeners
-audit](https://github.com/GoogleChrome/lighthouse/pull/11085)</code>, which will
-warn developers if any JavaScript on their pages (including that from
-third-party libraries) adds an <code>unload</code> event listener.
+In fact, [Lighthouse](https://developer.chrome.com/docs/lighthouse/) has a [`no-unload-listeners` audit](https://github.com/GoogleChrome/lighthouse/pull/11085), which will warn developers if any JavaScript on their pages (including that from third-party libraries) adds an `unload` event listener.
 
 {% Aside 'warning' %}
   Never add an `unload` event listener! Use the `pagehide` event instead.
@@ -304,13 +299,15 @@ onAllChangesSaved(() => {
 
 ### Minimize use of `Cache-Control: no-store`
 
-`Cache-Control: no-store` is an HTTP header web servers can set on responses that instructs the browser not to store the response in any cache. This should be used for resources containing private information—for example, pages behind a login.
+`Cache-Control: no-store` is an HTTP header web servers can set on responses that instructs the browser not to store the response in any cache. This should be used for resources containing sensitive user information, for example pages behind a login.
 
 When `Cache-Control: no-store` is set on the page itself (as opposed to any subresource), it means that page will not be eligible for bfcache. There is [a proposal to change this behavior](https://github.com/fergald/explainer-bfcache-ccns/blob/main/README.md) in a privacy-preserving manner, but at present any pages using `Cache-Control: no-store` are not eligible for bfcache.
 
-For best performance, it is recommended that pages are cacheable, even if only for a short time. This will improve performance in general, but also avoid your site becoming ineligible for the bfcache and therefore not benefiting from those instant page restores.
+For best performance, it is recommended that pages that do not contain sensitive user information are cacheable, even if only for a short time. This will improve performance in general, but also avoid your site becoming ineligible for the bfcache and therefore not benefiting from those instant page restores.
 
-For sites that simply want to ensure an up-to-date page is used each time, using `Cache-Control: no-cache` or `Cache-Control: max-age=0` prevents the page from being used without being revalidated first. However, unlike `Cache-Control: no-store`, these directives do not disqualify a page from being eligible for bfcache. For back/forward navigations a page refresh may not be expected nor desirable for the user. In the next section we shall show how you can ensure stale data is not served if you do want to update this on bfcache restores but still retain the performance benefits of using the bfcache.
+For sites that do not contain sensitive user information but still wish to ensure stale pages are not served, using `Cache-Control: no-cache` or `Cache-Control: max-age=0` prevents the page from being used without being revalidated first. However, unlike `Cache-Control: no-store`, these directives do not disqualify a page from being eligible for bfcache. For back/forward navigations a page refresh may not be expected nor desirable for the user.
+
+In the next section we show how you can ensure stale data is not served if you do want to update the page on bfcache restores but still retain the performance benefits of using the bfcache.
 
 ### Update stale or sensitive data after bfcache restore
 
@@ -343,23 +340,23 @@ window.addEventListener('pageshow', (event) => {
 ### Avoid `window.opener` references
 
 In some browsers (including Chromium-based browsers) if a page was opened using
-<code>[window.open()](https://developer.mozilla.org/docs/Web/API/Window/open)</code>
+[`window.open()`](https://developer.mozilla.org/docs/Web/API/Window/open]
 or (in [Chromium-based browsers prior to version 88](https://crbug.com/898942)) from a link with
-<code>[target=_blank](https://developer.mozilla.org/docs/Web/HTML/Element/a#target)</code>—without
+[`target=_blank`](https://developer.mozilla.org/docs/Web/HTML/Element/a#target]—without
 specifying
-<code>[rel="noopener"](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener)</code>—then
+[`rel="noopener"`](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener]—then
 the opening page will have a reference to the window object of the opened page.
 
 In addition to [being a security
 risk](https://mathiasbynens.github.io/rel-noopener/), a page with a non-null
-<code>[window.opener](https://developer.mozilla.org/docs/Web/API/Window/opener)</code>
+[`window.opener`](https://developer.mozilla.org/docs/Web/API/Window/opener]
 reference cannot safely be put into the bfcache because that could break any
 pages attempting to access it.
 
 As a result, it's best to avoid creating `window.opener` references by using
 `rel="noopener"` whenever possible. If your site requires opening a window and
 controlling it through
-<code>[window.postMessage()](https://developer.mozilla.org/docs/Web/API/Window/postMessage)</code>
+[`window.postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage]
 or directly referencing the window object, neither the opened window nor the
 opener will be eligible for bfcache.
 
