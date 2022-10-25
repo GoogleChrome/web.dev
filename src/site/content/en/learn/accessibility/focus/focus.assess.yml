@@ -3,15 +3,17 @@ tabLabel: question
 questions:
   - type: multiple-choice
     cardinality: "1"
-    correctAnswers: "1"
-    stem: 'On which elements should you add `tabindex="0"`'
+    correctAnswers: "2"
+    stem: 'Which example of `:focus` CSS style is the most accessible on a white background?'
     options:
-      - content: "All HTML elements."
-        rationale: 'Naturally focusable elements are already included in focus order, so it is unnecessary and potentially disruptive to add additional `tabindex`.'
-      - content: 'A non-interactive element that has CSS `overflow` applied to it.'
-        rationale: 'This will allow keyboard users to navigate to and move around overflow content. Learn more about [tabindex and scrollable overflow containers](https://www.a11yproject.com/posts/how-to-use-the-tabindex-attribute/#scrollable-overflow-containers).'
-      - content: "A non-interactive element nested within an interactive element."
-        rationale: 'If the parent element is interactive, adding `tabindex` to the child element may cause confusion.'
+      - content: '`outline: 0.5rem solid yellow;`'
+        rationale: "This would not meet WCAG's color contrast guidelines."
+      - content: '`background-color:black;`'
+        rationale: "While it's possible this may be accessible, this design requires additional consideration of text color and placement in the document."
+      - content: '`text-decoration: dotted underline 2px blue;`'
+        rationale: "This design is the most accessible option on this list. However, this is not the only accessible design choice. Remember that your design should adhere to the 3:1 color contrast ratio as set by WCAG."
+      - content: '`outline: none; text-decoration:none; background:none;`'
+        rationale: "A visual indicator is important for some keyboard users. Always include style for focus."
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "0"
