@@ -375,7 +375,7 @@ More recommendations for reducing font-related CLS:
 - Using `<link rel=preload>` on the key web fonts: a preloaded font will have a higher chance to meet the first paint, in which case there's no layout shifting.
 - Combining `<link rel=preload>` and `font-display: optional`
 
-Read [Prevent layout shifting and flashes of invisible text (FOIT) by preloading optional fonts](/preload-optional-fonts/) for more details, and [Best practices for fonts](./font-best-practices/) for other font best practices.
+Read [Prevent layout shifting and flashes of invisible text (FOIT) by preloading optional fonts](/preload-optional-fonts/) for more details, and [Best practices for fonts](/font-best-practices/) for other font best practices.
 
 ### Animations
 
