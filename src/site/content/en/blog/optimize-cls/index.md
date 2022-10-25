@@ -121,7 +121,7 @@ All browsers will then add a [default aspect ratio](https://html.spec.whatwg.org
 
 This calculates an aspect ratio based on the `width` and `height` attributes before the image has loaded. It provides this information at the very start of layout calculation. As soon as an image is told to be a certain width (for example `width: 100%`), the aspect ratio is used to calculate the height.
 
-This `aspect-ratio` value is calculated by major browsers as the HTML is processed, rather than with a default User Agent stylesheet (see [this post for a deep dive into why](https://jakearchibald.com/2022/img-aspect-ratio/#width--height-presentational-hints)), so are displayed a little differently. For example, Chrome displays it like this in the Styles section of the Element panel:
+This `aspect-ratio` value is calculated by major browsers as the HTML is processed, rather than with a default User Agent stylesheet (see [this post for a deep dive into why](https://jakearchibald.com/2022/img-aspect-ratio/#width--height-presentational-hints)), so the value is displayed a little differently. For example, Chrome displays it like this in the Styles section of the Element panel:
 
 ```css
 img[Attributes Style] {
