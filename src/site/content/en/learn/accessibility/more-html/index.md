@@ -3,7 +3,7 @@ title: 'The Document'
 authors:
   - cariefisher
 description: >
-  Advanced HTML accessibility.
+  Additional HTML elements to consider when building accessible websites and web apps.
 date: 2022-09-21
 tags:
   - accessibility
@@ -153,3 +153,5 @@ Second, as a best practice, it is good to set the scrolling to "auto" or "yes" i
 ```
 {% endCompare %}
 </div>
+
+{% Assessment 'document' %}
