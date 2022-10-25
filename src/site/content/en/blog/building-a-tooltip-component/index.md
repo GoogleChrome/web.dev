@@ -8,7 +8,7 @@ description: A foundational overview of how to build a color-adaptive and access
 date: 2022-10-24
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Mx5dDmELgbJottijzfwF.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/5XgqLJdeI33MDjvJu2te.png
-alt: A tilted grid of hotpink FABs.
+alt: A tiled grid of tooltips.
 tags:
   - blog
   - css
