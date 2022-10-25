@@ -5,7 +5,7 @@ subhead: A foundational overview of how to build a color-adaptive and accessible
 authors:
   - adamargyle
 description: A foundational overview of how to build a color-adaptive and accessible tooltip custom element.
-date: 2022-10-24
+date: 2022-10-25
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Mx5dDmELgbJottijzfwF.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/5XgqLJdeI33MDjvJu2te.png
 alt: A tiled grid of tooltips.
