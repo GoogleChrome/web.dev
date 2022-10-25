@@ -147,9 +147,9 @@ only supported in Chromium-based browsers.
 The `pageshow` event fires right after the `load` event when the page is
 initially loading and any time the page is restored from bfcache. The `pageshow`
 event has a
-[`persisted`](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted]
-property which will be <code>true</code> if the page was restored from bfcache
-(and <code>false</code> if not). You can use the <code>persisted</code> property
+[`persisted`](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)
+property which will be `true` if the page was restored from bfcache
+(and `false` if not). You can use the `persisted` property
 to distinguish regular page loads from bfcache restores. For example:
 
 ```js
@@ -340,23 +340,23 @@ window.addEventListener('pageshow', (event) => {
 ### Avoid `window.opener` references
 
 In some browsers (including Chromium-based browsers) if a page was opened using
-[`window.open()`](https://developer.mozilla.org/docs/Web/API/Window/open]
+[`window.open()`](https://developer.mozilla.org/docs/Web/API/Window/open)
 or (in [Chromium-based browsers prior to version 88](https://crbug.com/898942)) from a link with
-[`target=_blank`](https://developer.mozilla.org/docs/Web/HTML/Element/a#target]—without
+[`target=_blank`](https://developer.mozilla.org/docs/Web/HTML/Element/a#target)—without
 specifying
-[`rel="noopener"`](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener]—then
+[`rel="noopener"`](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener)—then
 the opening page will have a reference to the window object of the opened page.
 
 In addition to [being a security
 risk](https://mathiasbynens.github.io/rel-noopener/), a page with a non-null
-[`window.opener`](https://developer.mozilla.org/docs/Web/API/Window/opener]
+[`window.opener`](https://developer.mozilla.org/docs/Web/API/Window/opener)
 reference cannot safely be put into the bfcache because that could break any
 pages attempting to access it.
 
 As a result, it's best to avoid creating `window.opener` references by using
 `rel="noopener"` whenever possible. If your site requires opening a window and
 controlling it through
-[`window.postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage]
+[`window.postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
 or directly referencing the window object, neither the opened window nor the
 opener will be eligible for bfcache.
 
