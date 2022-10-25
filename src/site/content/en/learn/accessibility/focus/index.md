@@ -16,17 +16,17 @@ disabilities like carpal tunnel, as well as some people without disabilities,
 may choose to use a keyboard to navigate a page due to personal preference,
 efficiency, or broken hardware.
 
-Low-vision or blind users may also use a keyboard for navigation combined with
-their magnification or screen reader software, though they may use different
+Low-vision or blind users may use a keyboard for navigation combined with
+their magnification or screen reader software. However, they may use different
 keyboard shortcut commands to navigate a screen than a sighted user would.
 
-Keyboard support for all of these disabilities and situations is critical. A
+Keyboard support for all of these disabilities and circumstances is critical. A
 large part of keyboard accessibility is centered around
 [focus](/focus). Focus refers to which element on the screen
 currently receives input from the keyboard.
 
-For this module, we will concentrate on HTML structure and CSS styling for
-keyboard and focusable elements, while the JavaScript module will include more
+In this module, we'll concentrate on HTML structure and CSS styling for
+keyboard and focusable elements. The JavaScript module will include more
 information on focus management and keystrokes for interactive elements.
 
 ## Focus order
@@ -38,32 +38,46 @@ For most languages, the focus order starts at the top of the page and ends at th
 By default, focus order includes naturally focusable HTML elements, such as links, checkboxes, and text inputs. Naturally focusable HTML elements include built-in tab order support and basic keyboard event handling. The focus order can also include any elements that don't normally receive focus, such as non-interactive HTML elements, custom components, or when ARIA is used to override the natural semantics of a focusable element.
 
 {% Aside %}
-
-Your `tab` key moves the keyboard focus up the DOM, and `shift+tab` moves the focus down the DOM. More information about how to navigate and test your websites and apps using the keyboard can be found in the Learn Accessibility Manual Testing module.
-
+Your `tab` key moves the keyboard focus up the DOM, and `shift + tab` moves the focus down the DOM.
 {% endAside %}
-
 
 ### Tabindex
 
-The focus order begins with elements with a positive [tabindex](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex) attribute (if there are any) and moves from the smallest positive number to the largest (e.g., 1, 2, 3). It then proceeds through elements with a tabindex of zero according to their order in the DOM. Any elements with a negative tabindex are removed from the natural focus order.
+The focus order begins with elements with a positive [tabindex](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex) attribute (if there are any) and moves from the smallest positive number to the largest (such as 1, 2, 3). It then proceeds through elements with a tabindex of zero according to their order in the DOM. Any elements with a negative tabindex are removed from the natural focus order.
 
-When a [tabindex](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex) of zero (tabindex= "0") is applied to normally unfocusable elements, they are added into the natural focus order of the page according to the way they appear in the DOM. However, unlike naturally focusable HTML elements, you must [provide additional keyboard support](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/) for them to be fully accessible.
+When a [tabindex](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex) of zero (`tabindex="0"`) is applied to normally unfocusable elements, they are added into the natural focus order of the page according to the way they appear in the DOM. However, unlike naturally focusable HTML elements, you must [provide additional keyboard support](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/) for them to be fully accessible.
 
-Similarly, if you have an element that normally is focusable but is inactive—such as a button that is inoperative until an input field is filled in—you should add a negative tabindex (tabindex= "-1") to this element. Adding a negative tabindex signals to assistive technologies and keyboards that this button should be removed from the natural focus order. But don't worry—you can use JavaScript to add the focus back to the element when needed. 
+Similarly, if you have an element that normally is focusable but is inactive—such as a button that is inoperative until an input field is filled in—you should add a negative tabindex (`tabindex="-1"`) to this element. Adding a negative tabindex signals to assistive technologies and keyboards that this button should be removed from the natural focus order. But don't worry—you can use JavaScript to add the focus back to the element when needed. 
 
-In this example, a tabindex attribute was added to elements that do not naturally receive focus. The order of the elements was manipulated using tabindex to illustrate the power it can have on focus order. This is an example of what not to do!
+In this example, a `tabindex` attribute was added to elements that do not
+naturally receive focus. The order of the elements was manipulated using
+`tabindex` to illustrate the power it can have on focus order. This is an
+example of what not to do!
+
+<div class="switcher">
+<figure>
 
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'QWxWwNM',
- height: 350,
+ height: 300,
  theme: 'dark',
- tab: 'html,result'
+ tab: 'html'
 } %}
 
+</figure>
 
-{% Aside ‘caution’ %}
+<figure>
+  {% Img
+    src="image/VbsHyyQopiec0718rMq2kTE1hke2/CMwbHhLmPO3aO0AB4KBy.gif", alt="New focus order reflects the HTML", width="800", height="450"
+   %}
+   <figcaption>
+     Watch as a keyboard user tabs through the CodePen HTML.
+   </figcaption>
+</figure>
+</div>
+
+{% Aside 'caution' %}
 As a general rule, you should avoid positive tabindexes. Giving focus to
 non-interactive elements and disrupting the normal focus order may confuse and
 frustrate your users. It should be rare that a circumstance warrants adding a
@@ -93,13 +107,22 @@ focusable element.
 
 It's important that the skip link includes context about the purpose of the link, such as "Skip to main content," so the user knows where the link is taking them to.
 
+
+<div class="switcher">
+  <figure>
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'LYrYEGo',
  height: 350,
  theme: 'dark',
- tab: 'html,result'
+ tab: 'html'
 } %}
+</figure>
+<figure>
+{% Video src="video/VbsHyyQopiec0718rMq2kTE1hke2/neMsx6esz4BbknMkMFrk.mp4" %}
+<figcaption>Watch a keyboard user navigate with and without a skip link.</figcaption>
+</figure>
+</div>
 
 ## Focus indicator
 
@@ -156,34 +179,51 @@ underline, a box, a background change, or some other obvious stylistic change
 that does not rely on color alone to indicate the keyboard's focus is active on
 that element.
 
-A focus indicator can also change depending on what background is behind it.
-For example, when focused on a button with a white background, the focus
-indicator is blue. The focus indicator changes to white when the same button is
-on a blue background.
+You could change a focus indicator style to ensure it isn’t lost in the
+background. For example, when a page has a white background, you could set the
+button focus indicator to a blue background. When the page has a blue
+background, you could set that same button focus style to a white background.
 
-A focus indicator can also change depending on the type of element being
-focused on. For example, you could use a dotted underline for body links but
-choose a rounded border for a button element. There is no rule about how many
-focus indicator styles you have on one page—but be sure to keep it to a
-reasonable number to avoid unnecessary confusion.
+You could change the focus element style based on element type. For example,
+you could use a dotted underline for body links but choose a rounded border for
+a button element.
 
 {% Aside %}
-Depending on how the focus indicator is styled, it may also need to meet the
+<p>Depending on how the focus indicator is styled, it may also need to meet the
 [minimum color contrast](https://www.w3.org/WAI/WCAG21/Techniques/general/G195)
-requirements against the background. As a best practice and future proofing for
-when the new success criteria
-[Focus Appearance (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-minimum)
-in WCAG 2.2 arrives, it is best to adhere to the 3:1 color contrast ratio for
-all focus indicators.
+requirements against the background.</p>
+<p>We recommend adhering to a 3:1 color contrast ratio for all focus
+indicators. This will meet WCAG 2.2's
+[Focus Appearance (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-minimum).</p>
 {% endAside %}
+
+<div class="switcher">
+<figure>
 
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'PoaowNz',
- height: 350,
+ height: 300,
  theme: 'dark',
  tab: 'css'
 } %}
+
+</figure>
+
+<figure>
+  {% Img
+    src="image/VbsHyyQopiec0718rMq2kTE1hke2/IXSs4AMZF8AePoCjkf0h.gif",
+    alt="Focus style as demonstrated in CSS.", width="800", height="450"
+    %}
+    <figcaption>
+      Watch what happens as a keyboard user tabs through each styled focus element.
+    </figcaption>
+</figure>
+</div>
+
+There is no rule about how many focus indicator styles you have on one
+page&mdash;but be sure to keep it to a reasonable number to avoid unnecessary
+confusion.
 
 ## Wrap-up
 
