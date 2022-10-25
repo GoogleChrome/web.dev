@@ -370,7 +370,7 @@ The following tools can help you minimize this:
 - [`font-display`](/font-display/) allows you to modify the rendering behavior of custom fonts with values such as `auto`, `swap`, `block`, `fallback` and `optional`. Unfortunately, all of these values (except [`optional`](http://crrev.com/749080)) can cause a re-layout in one of the above ways.
 - The [Font Loading API](./optimize-webfont-loading/#the-font-loading-api) can reduce the time it takes to get necessary fonts.
 
-We recommend the following too to reduce CLS for fonts:
+More recommendations for reducing font-related CLS:
 
 - Using `<link rel=preload>` on the key web fonts: a preloaded font will have a higher chance to meet the first paint, in which case there's no layout shifting.
 - Combining `<link rel=preload>` and `font-display: optional`
