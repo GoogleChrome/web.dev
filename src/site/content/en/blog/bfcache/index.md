@@ -301,11 +301,11 @@ onAllChangesSaved(() => {
 
 `Cache-Control: no-store` is an HTTP header web servers can set on responses that instructs the browser not to store the response in any cache. This should be used for resources containing sensitive user information, for example pages behind a login.
 
-When `Cache-Control: no-store` is set on the page itself (as opposed to any subresource), it means that page will not be eligible for bfcache. There is [a proposal to change this behavior](https://github.com/fergald/explainer-bfcache-ccns/blob/main/README.md) in a privacy-preserving manner, but at present any pages using `Cache-Control: no-store` are not eligible for bfcache.
+When `Cache-Control: no-store` is set on the page itself (as opposed to any subresource), it currently means that page will not be included in the bfcache. There is [work currently underway to change this behavior for Chrome](https://github.com/fergald/explainer-bfcache-ccns/blob/main/README.md) in a privacy-preserving manner, but at present any pages using `Cache-Control: no-store` will not get the performance benefits of the bfcache.
 
 For best performance, it is recommended that pages that do not contain sensitive user information are cacheable, even if only for a short time. This will improve performance in general, but also avoid your site becoming ineligible for the bfcache and therefore not benefiting from those instant page restores.
 
-For sites that do not contain sensitive user information but still wish to ensure stale pages are not served, using `Cache-Control: no-cache` or `Cache-Control: max-age=0` prevents the page from being used without being revalidated first. However, unlike `Cache-Control: no-store`, these directives do not disqualify a page from being eligible for bfcache. For back/forward navigations a page refresh may not be expected nor desirable for the user.
+For sites that do not contain sensitive user information but still wish to ensure stale pages are not served, using `Cache-Control: no-cache` or `Cache-Control: max-age=0` prevents the page from being used without being revalidated first. However, unlike `Cache-Control: no-store`, these directives do not prevent pages from being included in—and getting the performance benefits of—the bfcache. For back/forward navigations a page refresh may not be expected nor desirable for the user.
 
 In the next section we show how you can ensure stale data is not served if you do want to update the page on bfcache restores but still retain the performance benefits of using the bfcache.
 
