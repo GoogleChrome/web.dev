@@ -26,7 +26,7 @@ Users of AT rely on structural elements to give them information about the page'
 
 Some resources suggest combining [ARIA and HTML landmarks](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/landmark_role#best_practices) together to provide better AT coverage. While this type of redundancy shouldn't cause issues for your users, be sure to test the patterns using a screen reader to be certain. When in doubt, it is best to default to using only the newer HTML landmark elements, as the [browser support](https://stevefaulkner.github.io/HTML5accessibility/) is very robust.
 
-HTML landmark elements [mapped to](https://www.a11yproject.com/posts/aria-landmark-roles/) their counterpart ARIA landmark roles.
+Compare the HTML landmark elements as [mapped](https://www.a11yproject.com/posts/aria-landmark-roles/) to their counterpart ARIA landmark roles.
 
 <div class="table-wrapper">
   <table>
@@ -38,31 +38,36 @@ HTML landmark elements [mapped to](https://www.a11yproject.com/posts/aria-landma
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/header">`<header></a></td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/header"><code><header></code></a></td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/banner_role">banner</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/aside">`<aside>`</a></td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/aside"><code><aside></code></a></td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/complementary_role">complementary</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/footer">`<footer>`</a></td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/footer">
+          <code><footer></code></a></td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/contentinfo_role">contentinfo</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/form">`<form>`</a> (requires an accessible name)</td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/form"><code><form></code></a> (requires an accessible name)</td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/form_role">form</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/main">`<main>`</a> (only one per page)</td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/main"><code><main></code></a> (only one per page)</td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/main_role">main</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/nav">`<nav>`</a></td>
+        <td>
+          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/nav"><code><nav></code></a>
+          </td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/navigation_role">navigation</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/section">`<section>`</a> (requires an accessible name)</td>
+        <td>
+          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/section"><code><section></code></a> 
+            (requires an accessible name)</td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/region_role">region</a></td>
       </tr>
   </tbody>
