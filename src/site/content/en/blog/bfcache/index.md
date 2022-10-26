@@ -301,7 +301,7 @@ onAllChangesSaved(() => {
 
 `Cache-Control: no-store` is an HTTP header web servers can set on responses that instructs the browser not to store the response in any HTTP cache. This should be used for resources containing sensitive user information, for example pages behind a login.
 
-Bfcache is not a HTTP cache but, historically, when `Cache-Control: no-store` is set on the page itself (as opposed to any subresource), browsers have not be included the page in the bfcache. There is [work currently underway to change this behavior for Chrome](https://github.com/fergald/explainer-bfcache-ccns/blob/main/README.md) in a privacy-preserving manner, but at present any pages using `Cache-Control: no-store` will not get the performance benefits of the bfcache.
+Bfcache is not a HTTP cache but, historically, when `Cache-Control: no-store` is set on the page itself (as opposed to any subresource), browsers have not included the page in the bfcache. There is [work currently underway to change this behavior for Chrome](https://github.com/fergald/explainer-bfcache-ccns/blob/main/README.md) in a privacy-preserving manner, but at present any pages using `Cache-Control: no-store` will not get the performance benefits of the bfcache.
 
 For best performance, it is recommended that pages that do not contain sensitive user information are cacheable, even if only for a short time. This will improve performance in general, but also avoid your site becoming ineligible for the bfcache and therefore not benefiting from those instant page restores.
 
