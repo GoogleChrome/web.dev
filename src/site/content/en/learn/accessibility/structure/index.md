@@ -38,35 +38,35 @@ Compare the HTML landmark elements as [mapped](https://www.a11yproject.com/posts
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/header"><code><header></code></a></td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/header"><code>&lt;header&gt;</code></a></td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/banner_role">banner</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/aside"><code><aside></code></a></td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/aside"><code>&lt;aside&gt;</code></a></td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/complementary_role">complementary</a></td>
       </tr>
       <tr>
         <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/footer">
-          <code><footer></code></a></td>
+          <code>&lt;footer&gt;</code></a></td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/contentinfo_role">contentinfo</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/form"><code><form></code></a> (requires an accessible name)</td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/form"><code>&lt;form&gt;</code></a> (requires an accessible name)</td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/form_role">form</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/main"><code><main></code></a> (only one per page)</td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/main"><code>&lt;main&gt;</code></a> (only one per page)</td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/main_role">main</a></td>
       </tr>
       <tr>
         <td>
-          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/nav"><code><nav></code></a>
+          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code></a>
           </td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/navigation_role">navigation</a></td>
       </tr>
       <tr>
         <td>
-          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/section"><code><section></code></a> 
+          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/section"><code>&lt;section&gt;</code></a> 
             (requires an accessible name)</td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/region_role">region</a></td>
       </tr>
@@ -81,7 +81,10 @@ Compare the HTML landmark elements as [mapped](https://www.a11yproject.com/posts
 	<div>...</div>
 </div>
 <div>
-	<p>Stamp collecting, also known as philately, is the study of postage stamps, stamped envelopes, postmarks, postcards, and other materials relating to postal delivery.</p>
+	<p>Stamp collecting, also known as philately, is
+    the study of postage stamps, stamped envelopes,
+    postmarks, postcards, and other materials relating
+    to postal delivery.</p>
 </div>
 <div>
 <p>© 2022 - Stamps R Awesome</p>
@@ -96,7 +99,10 @@ Compare the HTML landmark elements as [mapped](https://www.a11yproject.com/posts
 </header>
 <main>
 	<section aria-label="Introduction to stamp collecting">
-		<p>Stamp collecting, also known as philately, is the study of postage stamps, stamped envelopes, postmarks, postcards, and other materials relating to postal delivery.</p>
+    <p>Stamp collecting, also known as philately, is
+    the study of postage stamps, stamped envelopes,
+    postmarks, postcards, and other materials relating
+    to postal delivery.</p>
 	</section>
 </main>
 <footer>
