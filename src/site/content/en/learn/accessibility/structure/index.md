@@ -26,7 +26,7 @@ Users of AT rely on structural elements to give them information about the page'
 
 Some resources suggest combining [ARIA and HTML landmarks](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/landmark_role#best_practices) together to provide better AT coverage. While this type of redundancy shouldn't cause issues for your users, be sure to test the patterns using a screen reader to be certain. When in doubt, it is best to default to using only the newer HTML landmark elements, as the [browser support](https://stevefaulkner.github.io/HTML5accessibility/) is very robust.
 
-Compare the HTML landmark elements as [mapped](https://www.a11yproject.com/posts/aria-landmark-roles/) to their counterpart ARIA landmark roles.
+Let's compare the HTML landmark elements as [mapped](https://www.a11yproject.com/posts/aria-landmark-roles/) to their counterpart ARIA landmark roles.
 
 <div class="table-wrapper">
   <table>
@@ -251,7 +251,7 @@ basic semantic rules, they are fairly accessible without much intervention.
 
 In the early days of the internet, layout tables were the primary HTML element used to build visual structures. Today, we use a mix of semantic and non-semantic elements such as `<div>`s and landmarks to create layouts.
 
-While the days of creating layout tables are mostly over, there are times when layout tables are still used, such as in visual-focused emails like newsletters and advertisements. In these cases, tables used only for layout purposes must not use structural elements that convey relationships and add context, such as `<th>` or `<caption>`. Layout tables must also be hidden from AT users by the ARIA [presentation role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role) or [aria-hidden state](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-hidden).
+While the days of creating layout tables are mostly over, there are times when layout tables are still used, such as in visually rich emails, newsletters, and advertisements. In these cases, tables used only for layout purposes must not use structural elements that convey relationships and add context, such as `<th>` or `<caption>`. Layout tables must also be hidden from AT users by the ARIA [presentation role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role) or [aria-hidden state](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-hidden).
   
 <div class="switcher">
 {% Compare 'worse' %}

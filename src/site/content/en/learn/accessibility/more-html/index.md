@@ -107,7 +107,8 @@ Remember that the language you add to the `<html> element cascades down to all t
 <html lang="en">
   <body>...
     <div>
-      <p>While traveling in Estonia this summer, I often asked, "Kas sa räägid inglise keelt?" when I met someone new.</p>
+      <p>While traveling in Estonia this summer, I often asked,
+        "Kas sa räägid inglise keelt?" when I met someone new.</p>
     </div>
   </body>
 </html>
@@ -119,7 +120,9 @@ Remember that the language you add to the `<html> element cascades down to all t
 <html lang="en">
   <body>...
     <div>
-      <p>While traveling in Estonia this summer, I often asked, <span lang="ee">"Kas sa räägid iglise keelt?"</span> when I met someone new.</p>
+      <p>While traveling in Estonia this summer, I often asked,
+        <span lang="ee">"Kas sa räägid inglise keelt?"</span>
+        when I met someone new.</p>
     </div>
   </body>
 </html>
@@ -132,7 +135,7 @@ Remember that the language you add to the `<html> element cascades down to all t
 The iFrame element
 ([`<iframe>`](https://developer.mozilla.org/docs/Web/HTML/Element/iframe)) is
 used to host another HTML page or a third party's content within the page. It
-essentially puts another webpage within the parent page. IFrames are commonly
+essentially puts another webpage within the parent page. iFrames are commonly
 used for advertisements, embedded videos, web analytics, and interactive
 content.
 
@@ -149,7 +152,10 @@ Second, as a best practice, it is good to set the scrolling to "auto" or "yes" i
 
 {% Compare 'better' %}
 ```html
-<iframe title="Google Pixel - Lizzo in Real Tone" src="https://www.youtube.com/embed/3obixhGZ5ds" scrolling="auto"></iframe>
+<iframe title="Google Pixel - Lizzo in Real Tone"
+  src="https://www.youtube.com/embed/3obixhGZ5ds"
+  scrolling="auto">
+</iframe>
 ```
 {% endCompare %}
 </div>
