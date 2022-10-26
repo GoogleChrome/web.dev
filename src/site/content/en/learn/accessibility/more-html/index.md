@@ -34,16 +34,26 @@ an HTML document and is equivalent to the `<h1>` or main topic of the page. The
 title content is displayed in the browser tab and helps users understand which
 page they are visiting, but it is not displayed on the website or app itself.
 
+In a [single-page app](https://developer.mozilla.org/docs/Glossary/SPA) (SPA),
+the `<title>` is handled in a slightly different way, as users don't navigate
+between pages as they do on multi-page websites. For SPAs, the value of the
+[`document.title`](https://developer.mozilla.org/docs/Web/API/Document/title)
+property can be added manually or by a helper package, depending on the
+JavaScript framework. Announcing the
+[updated page titles](https://hidde.blog/accessible-page-titles-in-a-single-page-app/)
+to a screen reader user may take some additional work.
+
+
 Descriptive page titles are good for both users and
 [search engine optimization (SEO)](https://developer.mozilla.org/docs/Web/HTML/Element/title#page_titles_and_seo)—but
-don't go overboard and add a bunch of keywords. Since the title is the first
+don't go overboard and add lots of keywords. Since the title is the first
 thing announced when an AT user visits a page, it must be accurate, unique, and
-descriptive but also concise.
+descriptive, but also concise.
 
 When writing page titles, it is also best practice to "front load" the interior
 page or important content first, then add any preceding pages or information
 after. This way, AT users don't have to sit through the information they have
-already heard again.
+already heard.
 
 <div class="switcher">
 {% Compare 'worse' %}
