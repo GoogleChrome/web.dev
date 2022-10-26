@@ -3,7 +3,8 @@ title: 'The Document'
 authors:
   - cariefisher
 description: >
-  Additional HTML elements to consider when building accessible websites and web apps.
+  Additional HTML elements to consider when building accessible
+  websites and web apps.
 date: 2022-09-21
 tags:
   - accessibility

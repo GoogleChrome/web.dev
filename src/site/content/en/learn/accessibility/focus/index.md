@@ -125,7 +125,9 @@ taking them.
 } %}
 </figure>
 <figure>
-{% Video src="video/VbsHyyQopiec0718rMq2kTE1hke2/neMsx6esz4BbknMkMFrk.mp4" %}
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/zQ9dGirSD5Tkg4NRdHDQ.gif", alt="Preview CodePen with keyboard focus.", width="800", height="450"
+%}
 <figcaption>Watch a keyboard user navigate with and without a skip link.</figcaption>
 </figure>
 </div>
