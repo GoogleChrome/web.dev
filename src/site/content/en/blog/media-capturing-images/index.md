@@ -47,8 +47,8 @@ upload an image file from the file system. In Chrome and Safari on iOS and Andro
 give the user a choice of which app to use to capture the image, including the option of taking a
 photo directly with the camera or choosing an existing image file.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/0ntcSaXvXa2SF8tMZPAf.png", alt="ALT_TEXT_HERE", width="500", height="450" %}
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/0be5Qo05FEpWvPxy5F6p.png", alt="ALT_TEXT_HERE", width="500", height="450" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/0ntcSaXvXa2SF8tMZPAf.png", alt="An Android menu, with two options: capture image and files", width="250", height="225" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/0be5Qo05FEpWvPxy5F6p.png", alt="An iOS menu, with three options: take photo, photo library, iCloud", width="250", height="225" %}
 
 The data can then be attached to a `<form>` or manipulated with JavaScript by
 listening for an `onchange` event on the input element and then reading
