@@ -309,7 +309,9 @@ Since `Cache-Control: no-store` restricts a page's eligibility for bfcache, it s
 
 For pages that wish to always serve up-to-date content—and that content does not contain sensitive information—use `Cache-Control: no-cache` or `Cache-Control: max-age=0`. These directives instruct the browser to revalidate the content before serving it, and they do not affect a page's bfcache eligibility.
 
-In the next section we show how you can ensure stale data is not served if you do want to update the page on bfcache restores but still retain the performance benefits of using the bfcache.
+Note that when a page is restored from bfcache, it is restored from memory, not from the HTTP cache. As a result, directives like `Cache-Control: no-cache` or `Cache-Control: max-age=0` are not taken into account, and no revalidation occurs before the content is displayed to the user.
+
+This is still likely a better user experience, however, as bfcache restores are instant and—since pages do not stay in the bfcache for very long—it's unlikely that the content is out of date. However, if your content does change minute-by-minute, you can fetch any updates using the `pageshow` event, as outlined in the next section.
 
 ### Update stale or sensitive data after bfcache restore
 
