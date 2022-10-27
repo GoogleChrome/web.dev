@@ -305,7 +305,9 @@ Though bfcache is not an HTTP cache, historically, when `Cache-Control: no-store
 
 For best performance, it is recommended that pages that do not contain sensitive user information are cacheable, even if only for a short time. This will improve performance in general, but also avoid your site becoming ineligible for the bfcache and therefore not benefiting from those instant page restores.
 
-For sites that do not contain sensitive user information but still wish to ensure stale pages are not served, using `Cache-Control: no-cache` or `Cache-Control: max-age=0` prevents the page from being used without being revalidated first. However, unlike `Cache-Control: no-store`, these directives do not prevent pages from being included in—and getting the performance benefits of—the bfcache. For back/forward navigations a page refresh may not be expected nor desirable for the user.
+Since `Cache-Control: no-store` restricts a page's eligibility for bfcache, it should only be set on pages that contain sensitive information where caching of any sort is never appropriate. 
+
+For pages that wish to always serve up-to-date content—and that content does not contain sensitive information—use `Cache-Control: no-cache` or `Cache-Control: max-age=0`. These directives instruct the browser to revalidate the content before serving it, and they do not affect a page's bfcache eligibility.
 
 In the next section we show how you can ensure stale data is not served if you do want to update the page on bfcache restores but still retain the performance benefits of using the bfcache.
 
