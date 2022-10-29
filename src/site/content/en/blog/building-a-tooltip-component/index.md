@@ -16,7 +16,7 @@ tags:
 ---
 
 In this post I want to share my thoughts on how to build a color-adaptive and accessible `<tool-tip>` custom element. [Try the
-demo](https://gui-challenges.web.app/tooltip/dist/) and [view the
+demo](https://gui-challenges.web.app/tooltips/dist/) and [view the
 source](https://github.com/argyleink/gui-challenges)!
 
 <style>
