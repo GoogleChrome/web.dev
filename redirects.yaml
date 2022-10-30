@@ -39,6 +39,9 @@ redirects:
   - source: /fast/serve-images-webp/codelab-serve-images-webp
     destination: /codelab-serve-images-webp
 
+  - source: /security
+    destination: /secure
+
   - source: /fast/remove-unused-code/codelab-remove-unused-code
     destination: /codelab-remove-unused-code
 
