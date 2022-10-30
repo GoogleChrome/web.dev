@@ -120,7 +120,7 @@ dynamically rather than generated as a build step. Others like [Jekyll] and
 approach.
 
 One of the downsides to static rendering is that individual HTML files must be
-generated for every possible URL. This can be challenging or even infeasible
+generated for every possible URL. This can be challenging or even unfeasible
 when you can't predict what those URLs will be ahead of time, or for sites with
 a large number of unique pages.
 
