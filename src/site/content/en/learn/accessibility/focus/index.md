@@ -12,6 +12,7 @@ tags:
 Many people use a keyboard—or other software/hardware that mimics the
 functionality of a keyboard, such as a switch device—as their primary means of
 navigation. People with temporary physical limitations such as sprained wrist
+or fine motor disabilities like carpal tunnel, as well as some people without
 disabilities, may choose to use a keyboard to navigate a page due to personal
 preference, efficiency, or broken hardware.
 

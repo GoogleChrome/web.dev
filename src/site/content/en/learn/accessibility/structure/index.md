@@ -22,11 +22,18 @@ Our [Learn HTML course](/learn/html/) covers the basics of HTML and [semantic st
 
 ## Landmarks
 
-Users of AT rely on structural elements to give them information about the page's overall layout. When sectioning off large regions of content, you can use either ARIA landmark roles or the newer HTML landmark elements to add structural context to your page. It is recommended to supply at least one landmark per page.
+Users of AT rely on structural elements to give them information about the page's overall layout. When sectioning off large regions of content, you can use either ARIA landmark roles or the newer HTML landmark elements to add structural context to your page. It's recommended that you supply at least one landmark per page.
 
-Some resources suggest combining [ARIA and HTML landmarks](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/landmark_role#best_practices) together to provide better AT coverage. While this type of redundancy shouldn't cause issues for your users, be sure to test the patterns using a screen reader to be certain. When in doubt, it is best to default to using only the newer HTML landmark elements, as the [browser support](https://stevefaulkner.github.io/HTML5accessibility/) is very robust.
+Some resources suggest combining [ARIA and HTML landmarks](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/landmark_role#best_practices)
+together to provide better AT coverage. While this type of redundancy shouldn't
+cause issues for your users, be sure to test the patterns using a screen reader
+to be certain. When in doubt, it's best to default to using only the newer HTML
+landmark elements, as the
+[browser support](https://stevefaulkner.github.io/HTML5accessibility/) is very robust.
 
-Let's compare the HTML landmark elements as [mapped](https://www.a11yproject.com/posts/aria-landmark-roles/) to their counterpart ARIA landmark roles.
+Let's compare the HTML landmark elements as
+[mapped](https://www.a11yproject.com/posts/aria-landmark-roles/) to their
+counterpart ARIA landmark roles.
 
 <div class="table-wrapper">
   <table>
@@ -122,20 +129,28 @@ Check out this [landmark resource](https://www.w3.org/WAI/ARIA/apg/example-index
 
 When implemented correctly, [HTML heading levels](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements) form a succinct outline of the overall page content. There are six heading levels we can use. Heading level one `<h1>` is used for the page's highest/most important information down to heading level six `<h6>` for the lowest/least important information.
 
-When building accessible headings, the sequence of the heading levels is important. Ideally, you won’t skip heading levels, for example, going from an `<h1>` to `<h5>`. Instead, you should progress down to the` <h5>` in order. [Heading level order is especially important to AT users](https://youtu.be/vAAzdi1xuUY) as this is one of their primary ways of navigating through content.
+When building accessible headings, the sequence of the heading levels is
+important. Ideally, you won't skip heading levels, for example, going from an
+`<h1>` to `<h5>`. Instead, you should progress down to the` <h5>` in order.
+[Heading level order is especially important to AT users](https://youtu.be/vAAzdi1xuUY)
+as this is one of their primary ways of navigating through content.
 
 {% Aside %}
 
-While you can use [ARIA heading roles](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/heading_role) for heading levels, it’s recommended to use semantic HTML heading levels whenever possible.
+While you can use [ARIA heading roles](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/heading_role) for heading levels, it's recommended to use semantic HTML heading levels whenever possible.
 
 {% endAside %}
 
-To help you adhere to the proper semantic structure and order for headings, consider decoupling your CSS styles from the heading levels. This allows you more flexibility in heading styles while maintaining the heading level order. Just be sure not to use styles alone to create faux headings. 
+To help you adhere to the proper semantic structure and order for headings,
+consider decoupling your CSS styles from the heading levels. This allows you
+more flexibility in heading styles while maintaining the heading level order.
+However, it's critical you don't use styles alone to create headings, as these
+aren't seen by AT as a heading.
 
-When we fake headings, the appropriate structure is not conveyed to AT users.
+When we fake headings, the appropriate structure isn't conveyed to AT users.
 
 Headings are also helpful for people with cognitive and attention deficit
-disorders. It is important to make the heading content meaningful to help them
+disorders. It's important to make the heading content meaningful to help them
 understand what is most important on the page.
 
 <div class="switcher">
@@ -200,7 +215,7 @@ description term
 [`<dd>`](https://developer.mozilla.org/docs/Web/HTML/Element/dd) elements can
   be found in the description list.
 
-When programmed correctly, these elements can inform non-sighted AT users about the visible structure of the list. When an AT encounters a semantic list, it can tell the user the list name and how many items are in it. As the user navigates within the list, the AT will read each list item out loud and tell which number it is in the list—item one of five, item two of five, and so on.
+When programmed correctly, these elements can inform non-sighted AT users about the visible structure of the list. When an AT encounters a semantic list, it can tell the user the list name and how many items are in it. As the user navigates within the list, the AT will read each list item out loud and tell which number it's in the list—item one of five, item two of five, and so on.
 
 Grouping items into lists also helps sighted people who have cognitive and
 attention disorders and those with reading disabilities, as list content is
@@ -243,15 +258,24 @@ typically styled to have more visual whitespace and the content is to the point.
 ## Tables
 
 In HTML, tables are generally used for organizing data or page layout.
+
 Depending on the table's purpose, you'll use different semantic structural
 elements. Tables can be very complex in structure, but when you stick to the
 basic semantic rules, they are fairly accessible without much intervention.
 
 ### Layout
 
-In the early days of the internet, layout tables were the primary HTML element used to build visual structures. Today, we use a mix of semantic and non-semantic elements such as `<div>`s and landmarks to create layouts.
+In the early days of the internet, layout tables were the primary HTML element
+used to build visual structures. Today, we use a mix of semantic and
+non-semantic elements such as `<div>`s and landmarks to create layouts.
 
-While the days of creating layout tables are mostly over, there are times when layout tables are still used, such as in visually rich emails, newsletters, and advertisements. In these cases, tables used only for layout purposes must not use structural elements that convey relationships and add context, such as `<th>` or `<caption>`. Layout tables must also be hidden from AT users by the ARIA [presentation role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role) or [aria-hidden state](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-hidden).
+While the days of creating layout tables are mostly over, there are times when
+layout tables are still used, such as in visually rich emails, newsletters, and
+advertisements. In these cases, tables used only for layout purposes must not
+use structural elements that convey relationships and add context, such as
+`<th>` or `<caption>`. Layout tables must also be hidden from AT users by the
+ARIA [presentation role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role)
+or [aria-hidden state](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-hidden).
   
 <div class="switcher">
 {% Compare 'worse' %}
