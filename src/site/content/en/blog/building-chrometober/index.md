@@ -31,12 +31,12 @@ The goal of the project was to deliver a whimsical experience highlighting the s
 
 Our team structure looked like this:
 
-- [Tyler Reed](https://twitter.com/intent/follow?screen_name=rudepetsclub) – Illustration & Design
-- [Jhey Tompkins](https://twitter.com/intent/follow?screen_name=jh3yy) – Architectural and Creative Lead
-- [Una Kravets](https://twitter.com/intent/follow?screen_name=una) – Project Lead
-- [Bramus Van Damme](https://twitter.com/intent/follow?screen_name=bramus) – Site Contributor
-- [Adam Argyle](https://twitter.com/intent/follow?screen_name=argyleink) – Accessibility Review
-- Aaron Forinton – Copywriting
+- [Tyler Reed](https://twitter.com/intent/follow?screen_name=rudepetsclub): Illustration and design
+- [Jhey Tompkins](https://twitter.com/intent/follow?screen_name=jh3yy): Architectural and creative lead
+- [Una Kravets](https://twitter.com/intent/follow?screen_name=una): Project lead
+- [Bramus Van Damme](https://twitter.com/intent/follow?screen_name=bramus): Site contributor
+- [Adam Argyle](https://twitter.com/intent/follow?screen_name=argyleink): Accessibility review
+- Aaron Forinton: Copywriting
 
 ## Drafting a scrollytelling experience
 
