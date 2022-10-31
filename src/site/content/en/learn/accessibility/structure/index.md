@@ -3,7 +3,7 @@ title: 'Content structure'
 authors:
   - cariefisher
 description: How to create accessible structure and layouts.
-date: 2022-10-26
+date: 2022-10-31
 tags:
   - accessibility
 ---

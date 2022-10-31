@@ -5,7 +5,7 @@ authors:
 description: >
   Learn about alternative media types available to make
   your video and audio accessible.
-date: 2022-10-26
+date: 2022-10-31
 tags:
   - accessibility
 ---
@@ -33,7 +33,8 @@ accessing audio and video content.
 The [alternative media types you must include](https://www.w3.org/WAI/media/av/planning/#wcag-standard)
 with your media files depend on:
 
-* The type of media you are supporting&mdash;audio-only, video-only, or video with audio (multimedia) formats
+* The type of media you are supporting&mdash;audio-only, video-only, or video
+  with audio (multimedia) formats
 * Whether the media is live or pre-recorded
 * The version and level of WCAG compliance you are targeting
 * Any additional media-related user needs
@@ -48,7 +49,7 @@ for websites and apps, there are four main types of alternative media types:
 
 One of the most widely used alternative media types are
 [captions](https://www.w3.org/WAI/media/av/captions/). Captions are written
-text synchronized with multimedia content for people who cannot hear or
+text synchronized with multimedia content for people who can't hear or
 understand spoken words. They are presented in the same language as the main
 audio track and include important non-speech information, such as sound
 effects, background noises, and essential music. 
@@ -67,7 +68,7 @@ Captions come in two forms&mdash;open or closed.
 One method might be preferable, depending on the situation or how the
 multimedia will be consumed.
 
-People often confuse captions with subtitles, but they are not synonymous. Both
+People often confuse captions with subtitles, but they aren't synonymous. Both
 are text synchronized with multimedia content, often appearing at the bottom of
 the media. Captions can be thought of as a transcription of dialogue and other
 essential sounds for people with disabilities. Subtitles are visual text for
@@ -151,10 +152,10 @@ captions to their media, export them, and then use them as the foundation of
 their transcripts. Repurposing your captions to build your transcripts saves
 time versus creating everything from scratch.
 
-Search bots cannot access your captions but can crawl your text transcripts.
+Search bots can't access your captions but can crawl your text transcripts.
 When you include transcripts with your media files, your search engine
 optimization gets a boost. It's one of those rare exceptions when
-duplicate content is not confusing to users or penalized by search engine
+duplicate content isn't confusing to users or penalized by search engine
 algorithms.
 
 Every media player handles transcripts in a different way. Some providers may
@@ -184,12 +185,12 @@ For example, visit YouTube to watch [_Password Problems? | There's no place like
 Another alternative media used to support people with disabilities is
 [audio description](https://www.w3.org/WAI/media/av/description/). This type
 of alternative media utilizes a narrator to explain important visual
-information to people who cannot see the visual content. These descriptions
+information to people who can't see the visual content. These descriptions
 include nonverbal information such as facial expressions, unspoken actions, and
 the background environment in video-only and multimedia content.
 
 Sometimes audio descriptions need to be very detailed due to the large amount
-of information that needs to be shared with the viewer. If there are not enough
+of information that needs to be shared with the viewer. If there aren't enough
 natural pauses in the video for audio descriptions, extended audio descriptions
 are used. In extended audio descriptions, a video will pause to give a narrator
 enough time to convey all the information in the media before playing the rest
@@ -221,8 +222,8 @@ That said, sign language interpretation can be time-consuming and
 cost-prohibitive to many organizations. And even if you have the time and
 budget to add sign language interpretation to your media, there are
 [over 300 different sign languages](https://en.wikipedia.org/wiki/List_of_sign_languages)
-worldwide. Adding one sign language interpretation to your media would not be
-enough if you need to support a global audience.
+worldwide. Adding one sign language interpretation to your media wouldn't be
+enough to support a global audience.
 
 <figure>
 {% YouTube "MbHuSHGZf5U", startTime="34" %}
