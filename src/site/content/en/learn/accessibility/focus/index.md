@@ -3,7 +3,7 @@ title: 'Keyboard focus'
 authors:
   - cariefisher
 description: >
-  Advanced HTML accessibility.
+  Understand and enhance keyboard navigation order and style.
 date: 2022-10-31
 tags:
   - accessibility
