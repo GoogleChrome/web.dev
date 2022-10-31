@@ -96,16 +96,18 @@ counterpart ARIA landmark roles.
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/main_role">main</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/form"><code>&lt;form&gt;</code></a> <sup>*</sup></td>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/form"><code>&lt;form&gt;</code></a> <sup>1</sup></td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/form_role">form</a></td>
       </tr>
       <tr>
         <td>
-          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/section"><code>&lt;section&gt;</code></a> <sup>*</sup></td>
+          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/section"><code>&lt;section&gt;</code></a> <sup>1</sup></td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/region_role">region</a></td>
       </tr>
   </tbody>
-  <caption><sup>*</sup> Requires a `name` attribute to be accessible.</caption>
+  <caption>
+    <sup>1</sup> Requires inclusion of the `name` attribute to be accessible.
+  </caption>
 </table>
 </div>
 
