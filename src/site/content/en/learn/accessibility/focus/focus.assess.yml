@@ -19,7 +19,7 @@ questions:
     correctAnswers: "0"
     stem: What's the purpose of a skip link?
     options:
-      - content: "Help keyboard users skip over redundant or unuseful groups of links."
+      - content: "Help a keyboard user skip over redundant or unuseful groups of links."
         rationale: "This is especially helpful in long navigation menus, when a user may have already gone to the page of interest."
-      - content: "Help keyboard users skip over uninteresting content."
+      - content: "Help a keyboard user skip over uninteresting content."
         rationale: "It's not necessarily possible to know what content is or isn't interesting to any user. This is not a useful way of defining skip link usage."
