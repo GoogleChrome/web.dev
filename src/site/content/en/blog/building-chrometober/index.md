@@ -17,7 +17,7 @@ tags:
 ---
 Following on from [Designcember](https://designcember.com), we wanted to build Chrometober for you this year as a way to highlight and share web content from the community and Chrome team. Designcember showcased the use of Container Queries, but this year we're showcasing the CSS scroll-linked animations API.
 
-Check out the scrolling book experience at [web.dev/chrometober-2022](https://web.dev/chrometober-2022).
+Check out the scrolling book experience at [web.dev/chrometober-2022](/chrometober-2022).
 
 {% Video
   controls="true",
@@ -121,7 +121,7 @@ Here's an example of what using `ViewTimeline` looks like in CSS:
 }
 ```
 
-We create a `ViewTimeline` with `view-timeline-name` and define the axis for it. In this example, `block` refers to [logical `block`](https://web.dev/learn/css/logical-properties/). The animation gets linked to scroll with the `animation-timeline` property. `animation-delay` and `animation-end-delay` (at the time of writing) are how we define phases.
+We create a `ViewTimeline` with `view-timeline-name` and define the axis for it. In this example, `block` refers to [logical `block`](/learn/css/logical-properties/). The animation gets linked to scroll with the `animation-timeline` property. `animation-delay` and `animation-end-delay` (at the time of writing) are how we define phases.
 
 These phases define the points at which the animation should get linked in relation to an element's position in its scrolling container. In our example, we're saying start the animation when the element enters (`enter 0%`) the scrolling container. And finish when it has covered 50% (`cover 50%`) of the scrolling container.
 
@@ -182,7 +182,7 @@ With this,"Mover" scales up as it enters the viewport, triggering the rotation o
 Do check out [the spec](https://drafts.csswg.org/scroll-animations-1/) for more in-depth details about the API. Also look out for an article dedicated to scroll-linked animations coming soon!
 {% endAside %}
 
-What I found from experimenting was that the API works very well with [scroll-snap](https://web.dev/css-scroll-snap/). Scroll-snap combined with `ViewTimeline` would be a great fit for snapping page turns in a book.
+What I found from experimenting was that the API works very well with [scroll-snap](/css-scroll-snap/). Scroll-snap combined with `ViewTimeline` would be a great fit for snapping page turns in a book.
 
 {% Aside %}
 Feel free to check out my [scroll-linked animations API collection](https://codepen.io/collection/qOPdLq) over on CodePen.
@@ -265,7 +265,7 @@ body > [data-scroll-trigger] {
 }
 ```
 
-This time, we do not connect the `ViewTimeline` in CSS, but use the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) in JavaScript. This has the added benefit of being able to loop over a set of elements and generate the `ViewTimeline` we need, instead of creating them each by hand.
+This time, we do not connect the `ViewTimeline` in CSS, but use the [Web Animations API](https://developer.mozilla.org/docs/Web/API/Web_Animations_API) in JavaScript. This has the added benefit of being able to loop over a set of elements and generate the `ViewTimeline` we need, instead of creating them each by hand.
 
 ```js
 const triggers = document.querySelectorAll("[data-scroll-trigger]")
@@ -339,7 +339,7 @@ Once I'd worked out the mechanism for the book, I could focus on bringing Tyler'
 
 ### Astro
 
-The team [used Astro for Designcember](https://web.dev/how-we-built-designcember/) in 2021 and I was keen to use it again for Chrometober. The developer experience of being able to break things up into components is well suited to this project.
+The team [used Astro for Designcember](/how-we-built-designcember/) in 2021 and I was keen to use it again for Chrometober. The developer experience of being able to break things up into components is well suited to this project.
 
 The book itself is a component. It is also a collection of page components. Each page has two sides and they have backdrops. The children of a page side are components which can be added, removed, and positioned with ease.
 
@@ -525,7 +525,7 @@ import { contentBlocks } from '../../assets/content-blocks.json'
 import ContentBlock from '../ContentBlock/ContentBlock.astro'
 ---
 <TreeOwl/>
-<ContentBlock {...contentBlocks[3]} id=”four” />
+<ContentBlock {...contentBlocks[3]} id="four" />
 
 <style is:global>
   .content-block--four {
@@ -599,7 +599,7 @@ import { default as Owl } from '../Features/Owl.svg?raw'
 
 And the styles for positioning our owl are co-located with the component code.
 
-```
+```css
 .owl {
   width: 34%;
   left: 10%;
@@ -1002,12 +1002,12 @@ This has been a real fun project to work on, resulting in a whimsical scrolling 
   }
 %}
 
-[Chrometober 2022](https://web.dev/chrometober-2022) is a wrap.
+[Chrometober 2022](/chrometober-2022) is a wrap.
 
 We hope you enjoyed it! What's your favorite feature? [Tweet me](https://twitter.com/jh3yy) and let us know!
 
 {% Img src="image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/RjZRcgYXbrBiUuI9q2iB.jpg", alt="Jhey holding a sticker sheet of the characters from Chrometober.", width="800", height="601" %}
 
-You might even be able to grab some stickers from one of the team if you see us at an event.
+You might even be able to grab some stickers from one of the team if you [see us at an event](https://developer.chrome.com/meet-the-team/).
 
 _Hero Photo by [David Menidrey](https://unsplash.com/@cazault) on [Unsplash](https://unsplash.com/s/photos/pumpkins)_
