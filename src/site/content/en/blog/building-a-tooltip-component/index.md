@@ -29,6 +29,7 @@ source](https://github.com/argyleink/gui-challenges)!
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/pLo4ykDKsCiyDexUb208.mp4",
     autoplay="true",
+    controls="true", 
     loop="true",
     muted="true"
   %}
@@ -79,6 +80,7 @@ close with light dismiss or the escape key:
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/DM7qi0GUBZQGpR2qvMst.mp4",
   autoplay="true",
+  controls="true", 
   loop="true",
   muted="true",
   class="auto-aspect"
@@ -480,6 +482,7 @@ left-to-right and right-to-left directions.
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Qi9AZrjpX4s9Nzoe1yZX.mp4",
   autoplay="true",
+  controls="true", 
   loop="true",
   muted="true",
   class="auto-aspect"
@@ -600,6 +603,7 @@ tool-tip {
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/zCibybxd4947z1qLnGEP.mp4",
   autoplay="true",
+  controls="true", 
   loop="true",
   muted="true"
 %}
@@ -633,6 +637,7 @@ travel from:
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/OUglbz54FT80hEZY5ouw.mp4",
   autoplay="true",
+  controls="true", 
   loop="true",
   muted="true"
 %}
