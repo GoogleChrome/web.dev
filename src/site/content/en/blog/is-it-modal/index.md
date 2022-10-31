@@ -7,6 +7,7 @@ authors:
 description: This handy CSS pseudo-selector gives you a way to select elements that are modal.
 date: 2022-09-02
 thumbnail: image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/xyyPgtSNjfzhcOGPn5lG.jpg
+hero: image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/xyyPgtSNjfzhcOGPn5lG.jpg
 alt: Orange sheets of paper lie on a green school board and form a chat bubble with three crumpled papers.
 tags:
   - blog
