@@ -97,7 +97,7 @@ example of what not to do!
 
 <figure>
   {% Img
-    src="image/VbsHyyQopiec0718rMq2kTE1hke2/CMwbHhLmPO3aO0AB4KBy.gif", alt="New focus order reflects the HTML", width="800", height="450"
+    src="image/VbsHyyQopiec0718rMq2kTE1hke2/CMwbHhLmPO3aO0AB4KBy.gif", alt="New focus order reflects the HTML.", width="800", height="450"
    %}
    <figcaption>
      Watch as a keyboard user tabs through the CodePen HTML.
