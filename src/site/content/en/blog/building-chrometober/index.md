@@ -469,7 +469,7 @@ This code is mostly for setting up structure. Contributors can work on the bookâ
 
 The creative shift towards a book made splitting up the sections much easier, and each spread of the book is a scene taken from the original design.
 
-{% Img src="image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/N3UtScgJr16t0Xp4vDN7.png", alt="Page spread illustration from the book which features an apple tree in a graveyard. The graveyard has multiple headstones and there is a bat in the sky in front of a large moon. ", width="800", height="560" %}
+{% Img src="image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/N3UtScgJr16t0Xp4vDN7.png", alt="Page spread illustration from the book which features an apple tree in a graveyard. The graveyard has multiple headstones and there is a bat in the sky in front of a large moon.", width="800", height="560" %}
 
 As we had decided on an aspect ratio for the book, the backdrop for each page could have a picture element. Setting that element to 200% width and using `object-position` based on page side does the trick.
 
