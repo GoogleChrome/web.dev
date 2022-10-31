@@ -2,34 +2,62 @@
 title: 'Content structure'
 authors:
   - cariefisher
-description: How to create accessible structure and layouts.
+description: >
+  Use semantic HTML, landmarks, and tables for accessible content.
 date: 2022-10-31
 tags:
   - accessibility
 ---
 
-One of the most important aspects of digital accessibility is the underlying structure of the page. When you build your website or app using [structural elements](https://www.w3.org/WAI/tutorials/page-structure/) instead of relying on styles alone, you give critical context to people using assistive technologies (AT), such as screen readers. Structural elements serve as an outline of the content on the screen, but they also act as anchor points to allow for easier navigation within the content.
+One of the most important aspects of digital accessibility is the underlying
+structure of the page. When you build your website or app using
+[structural elements](https://www.w3.org/WAI/tutorials/page-structure/) instead
+of relying on styles alone, you give critical context to people using assistive
+technologies (AT), such as screen readers.
 
-When you use [semantic HTML elements](https://developer.mozilla.org/docs/Glossary/Semantics#semantics_in_html) to build the structure, the inherent meaning of each element is passed on to the accessibility tree and used by the AT, giving more meaning to the content than non-semantic elements. There may be cases where you need to add additional ARIA attributes to build relationships or to enhance the overall user experience, but in most situations, one of the [100+ HTML elements](https://developer.mozilla.org/docs/Web/HTML/Element) available should work fairly well on its own.
+Structural elements serve as an outline of the content on the screen, but they
+also act as anchor points to allow for easier navigation within the content.
 
-While this module focuses on the most widely used structural elements critical to digital accessibility, there are certainly additional elements and environmental factors to consider when building structure into your website or app. These examples should not be considered exhaustive but an introduction to the topic.
+When you use [semantic HTML elements](https://developer.mozilla.org/docs/Glossary/Semantics#semantics_in_html),
+the inherent meaning of each element is passed on to the accessibility tree and
+used by the AT, giving more meaning to the content than non-semantic elements.
+There may be cases where you need to add additional ARIA attributes to build
+relationships or to enhance the overall user experience, but in most
+situations, one of the [100+ HTML elements](https://developer.mozilla.org/docs/Web/HTML/Element)
+available should work fairly well on its own.
+
+While this module focuses on the most widely used structural elements critical
+to digital accessibility, there are certainly additional elements and
+environmental factors to consider when building structure into your website or
+app. These examples are an introduction to the topic, rather than all-inclusive.
 
 {% Aside %}
 
-Our [Learn HTML course](/learn/html/) covers the basics of HTML and [semantic structure](/learn/html/semantic-html/) in great detail. As such, this module builds off of that course material and is focused specifically on digital accessibility. Likewise, be sure to review the [ARIA and HTML module](/learn/accessibility/aria-html/) in this course before diving into this module.
+Our [Learn HTML course](/learn/html/) covers the basics of HTML and
+[semantic structure](/learn/html/semantic-html/) in great detail. As such, this
+module builds off of that course material and is focused specifically on
+digital accessibility. Likewise, be sure to review the
+[ARIA and HTML module](/learn/accessibility/aria-html/) in this course before
+diving into this module.
 
 {% endAside %}
 
 ## Landmarks
 
-Users of AT rely on structural elements to give them information about the page's overall layout. When sectioning off large regions of content, you can use either ARIA landmark roles or the newer HTML landmark elements to add structural context to your page. It's recommended that you supply at least one landmark per page.
+Users of AT rely on structural elements to give them information about the
+page's overall layout. When sectioning off large regions of content, you can
+use either ARIA landmark roles or the newer HTML landmark elements to add
+structural context to your page.
+
+Landmarks ensure content is in navigable regions. It's recommended that you supply at least one landmark per page.
 
 Some resources suggest combining [ARIA and HTML landmarks](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/landmark_role#best_practices)
 together to provide better AT coverage. While this type of redundancy shouldn't
-cause issues for your users, be sure to test the patterns using a screen reader
+cause issues for your users, test the patterns using a screen reader
 to be certain. When in doubt, it's best to default to using only the newer HTML
 landmark elements, as the
-[browser support](https://stevefaulkner.github.io/HTML5accessibility/) is very robust.
+[browser support](https://stevefaulkner.github.io/HTML5accessibility/) is very
+robust.
 
 Let's compare the HTML landmark elements as
 [mapped](https://www.a11yproject.com/posts/aria-landmark-roles/) to their
@@ -58,28 +86,30 @@ counterpart ARIA landmark roles.
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/contentinfo_role">contentinfo</a></td>
       </tr>
       <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/form"><code>&lt;form&gt;</code></a> (requires an accessible name)</td>
-        <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/form_role">form</a></td>
-      </tr>
-      <tr>
-        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/main"><code>&lt;main&gt;</code></a> (only one per page)</td>
-        <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/main_role">main</a></td>
-      </tr>
-      <tr>
         <td>
           <a href="https://developer.mozilla.org/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code></a>
           </td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/navigation_role">navigation</a></td>
       </tr>
       <tr>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/main"><code>&lt;main&gt;</code></a></td>
+        <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/main_role">main</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://developer.mozilla.org/docs/Web/HTML/Element/form"><code>&lt;form&gt;</code></a> <sup>*</sup></td>
+        <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/form_role">form</a></td>
+      </tr>
+      <tr>
         <td>
-          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/section"><code>&lt;section&gt;</code></a> 
-            (requires an accessible name)</td>
+          <a href="https://developer.mozilla.org/docs/Web/HTML/Element/section"><code>&lt;section&gt;</code></a> <sup>*</sup></td>
         <td><a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/region_role">region</a></td>
       </tr>
   </tbody>
+  <caption><sup>*</sup> Requires a `name` attribute to be accessible.</caption>
 </table>
 </div>
+
+Now, let's compare examples of accessible content structure.
 
 <div class="switcher">
 {% Compare 'worse' %}
@@ -121,7 +151,9 @@ counterpart ARIA landmark roles.
 
 {% Aside %}
 
-Check out this [landmark resource](https://www.w3.org/WAI/ARIA/apg/example-index/landmarks/index.html) from the WAI group for more information and examples.
+Check out the
+[ARIA Landmarks Example](https://www.w3.org/WAI/ARIA/apg/example-index/landmarks/index.html)
+for more information and best practices.
 
 {% endAside %}
 

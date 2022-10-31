@@ -3,8 +3,7 @@ title: 'Video and audio'
 authors:
   - cariefisher
 description: >
-  Learn about alternative media types available to make
-  your video and audio accessible.
+  Alternative media types which make your video and audio accessible.
 date: 2022-10-31
 tags:
   - accessibility
