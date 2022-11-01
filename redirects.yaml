@@ -334,9 +334,9 @@ redirects:
   - source: /bluetooth
     destination: https://developer.chrome.com/articles/bluetooth/
   - source: /usb
-    desintation: https://developer.chrome.com/articles/usb/
+    destination: https://developer.chrome.com/articles/usb/
   - source: /period-background-sync
-    desintation: https://developer.chrome.com/articles/periodic-background-sync/
+    destination: https://developer.chrome.com/articles/periodic-background-sync/
 
   # Redirect for Aurora
   - source: /aurora
