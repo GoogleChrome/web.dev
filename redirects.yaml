@@ -518,4 +518,4 @@ redirects:
   - source: /use-landmarks
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/
   - source: /eyedropper
-    destination: https://developer.chrome.com/articles/eyedropper
+    destination: https://developer.chrome.com/articles/eyedropper/
