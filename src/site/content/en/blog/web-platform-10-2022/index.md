@@ -39,7 +39,7 @@ Thanks to the work of our contributors at Microsoft, Chrome is now able to inter
 
 ### Additions to `getDisplayMedia()`
 
-Also in Chrome are some additions to [`getDisplayMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) that aim to prevent [accidental oversharing when screen sharing]((https://developer.chrome.com/blog/avoiding-oversharing-when-screen-sharing/)). 
+Also in Chrome are some additions to [`getDisplayMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) that aim to prevent [accidental oversharing when screen sharing](https://developer.chrome.com/blog/avoiding-oversharing-when-screen-sharing/). 
 
 - The [`displaySurface`](https://developer.chrome.com/docs/web-platform/screen-sharing-controls/#displaySurface) option can indicate that the web app prefers to offer a specific display surface type (tabs, windows, or screens).
 - The [`surfaceSwitching`](https://developer.chrome.com/docs/web-platform/screen-sharing-controls/#surfaceSwitching) option indicates whether Chrome should allow the user to dynamically switch between shared tabs.
