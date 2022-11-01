@@ -196,7 +196,7 @@ us know where and how you're using it.
 ## Helpful links {: #helpful }
 
 - [Public explainer][explainer]
-- [Spec draft](https://wicg.github.io/eyedropper-api/)
+- [Spec draft][spec]
 - [EyeDropper API Demo][demo] | [EyeDropper API Demo source][demo-source]
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
