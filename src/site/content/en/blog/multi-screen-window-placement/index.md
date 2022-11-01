@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2022-07-19
+updated: 2022-11-01
 tags:
   - blog
   - capabilities
