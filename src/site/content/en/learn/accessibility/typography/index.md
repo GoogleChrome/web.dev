@@ -60,8 +60,8 @@ tight. Pay special attention to kerning, especially between the problematic
 letter pair r/n. Otherwise, words like "yarn" could change to "yam" or "stern"
 to "stem," entirely changing the meaning of the copy. 
 
-Accessible typeface collections like the
-[Google Foundry on Adobe Fonts](https://fonts.adobe.com/foundries/google) can
+Open-source typeface collections like 
+[Google Fonts](https://fonts.google.com) can
 aid you in selecting the most inclusive typeface for your next design.
 
 {% Codepen {
