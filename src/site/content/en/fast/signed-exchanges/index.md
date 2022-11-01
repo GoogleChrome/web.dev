@@ -313,6 +313,10 @@ Accept: /(^|,)\s\*application\/signed-exchange\s\*;\s\*v=[[:alnum:]\_-]+\s\*(,|$
 SXG can deliver superior performance when used with caching or prefetching. However, for content that is loaded directly from the origin server without the benefit of these optimizations, text/html delivers better performance than SXG. Serving content as SXG allows crawlers and other intermediaries to cache SXGs for faster delivery to users.
 {% endAside %}
 
+### Update cache API
+
+The Google SXG Cache has an API that site owners can use to remove SXGs from the cache before they've expired due to `Cache-Control: max-age`. See the [update cache API reference](https://github.com/google/webpackager/blob/main/docs/update_cache_api.md) for details.
+
 ### Linking to SXG
 
 Any site can cache, serve, and prefetch SXGs of the pages that it links to, where available, using the <link> and <a> tags:
@@ -340,14 +344,6 @@ You may see additional page speed improvement due to the prefetch surfaces and c
 - SXGs can be shown to users with cookies for your site.
 - SXG also prefetches subresources for your pages, such as JavaScript, CSS, fonts, and images, when specified using a `Link` header.
 - In the near future, SXG prefetching from Google Search will be available on more search result types.
-
-## Roadmap
-
-We are continuing to invest in SXG with new features and capabilities. Here is a preview of some improvements coming over the next few months, which address common limitations for sites looking to implement SXG.
-
-### Update Cache API
-
-The Google SXG Cache will soon launch an API that site owners can use to remove SXGs from the cache. This can help ensure freshness in cases where `max-age` isn't enough.
 
 ## Conclusion
  
