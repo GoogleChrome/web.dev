@@ -335,7 +335,7 @@ redirects:
     destination: https://developer.chrome.com/articles/bluetooth/
   - source: /usb
     destination: https://developer.chrome.com/articles/usb/
-  - source: /period-background-sync
+  - source: /periodic-background-sync
     destination: https://developer.chrome.com/articles/periodic-background-sync/
 
   # Redirect for Aurora
