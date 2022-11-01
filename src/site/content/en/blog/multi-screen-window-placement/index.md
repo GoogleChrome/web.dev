@@ -137,16 +137,20 @@ if ('getScreenDetails' in window) {
 }
 ```
 
-### The `window-placement` permission
+### The `window-management` permission
+
+{% Aside %}
+In earlier versions of the API, the permission was called `window-placement`.
+{% endAside %}
 
 Before I can use the Multi-Screen Window Placement API, I must ask the user for permission to do so.
-The new `window-placement` permission can be queried with the
+The `window-management` permission can be queried with the
 [Permissions API](https://developer.mozilla.org/docs/Web/API/Permissions_API) like so:
 
 ```js
 let granted = false;
 try {
-  const { state } = await navigator.permissions.query({ name: 'window-placement' });
+  const { state } = await navigator.permissions.query({ name: 'window-management' });
   granted = state === 'granted';
 } catch {
   // Nothing.
@@ -359,7 +363,6 @@ completely off-guard and left me
 
 You can play with the [demo][demo] embedded below, or see its [source code][demo-source] on glitch.
 
-<!-- Copy and Paste Me -->
 <div class="glitch-embed-wrap" style="height: 800px; width: 100%;">
   <iframe src="https://window-placement.glitch.me/"
     title="window-placement on Glitch"
