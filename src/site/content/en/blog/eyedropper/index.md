@@ -13,6 +13,7 @@ description: >
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/6Gl4RG1zitlgmpMZviDD.jpg
 alt: A pipette.
 date: 2021-10-27
+updated: 2022-11-01
 tags:
   - capabilities
   - progressive-web-apps
@@ -195,6 +196,7 @@ us know where and how you're using it.
 ## Helpful links {: #helpful }
 
 - [Public explainer][explainer]
+- [Spec draft](https://wicg.github.io/eyedropper-api/)
 - [EyeDropper API Demo][demo] | [EyeDropper API Demo source][demo-source]
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
