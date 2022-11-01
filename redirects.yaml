@@ -331,6 +331,8 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
   - source: /workingoffthegrid
     destination: https://developer.chrome.com/docs/workbox/service-worker-overview/
+  - source: /eyedropper
+    destination: https://developer.chrome.com/articles/eyedropper/
 
   # Redirect for Aurora
   - source: /aurora
@@ -517,5 +519,3 @@ redirects:
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/
   - source: /use-landmarks
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/
-  - source: /eyedropper
-    destination: https://developer.chrome.com/articles/eyedropper/
