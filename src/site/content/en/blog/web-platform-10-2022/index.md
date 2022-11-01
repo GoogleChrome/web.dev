@@ -86,7 +86,7 @@ figure {
 
 Chrome 108 starts to roll out a change to the way overflow behaves on replaced elements, which may cause visual changes in some circumstances. Read the article [A change to overflow on replaced elements in CSS](https://developer.chrome.com/blog/overflow-replaced-elements/) for more details and to see how to address any issues you see.
 
-There's a change to how the Layout Viewport behaves in Chrome on Android when the on-screen keyboard is shown. Read [Prepare for viewport resize behavior changes coming to Chrome on Android](/blog/viewport-resize-behavior/) to learn more and find out how to prepare for this shipping to stable next month.
+There's a change to how the Layout Viewport behaves in Chrome on Android when the on-screen keyboard is shown. Read [Prepare for viewport resize behavior changes coming to Chrome on Android](https://developer.chrome.com/blog/viewport-resize-behavior/) to learn more and find out how to prepare for this shipping to stable next month.
 
 Also in Chrome are the new CSS Viewport Units. These include small (`svw`, `svh`, `svi`, `svb`, `svmin`, `svmax`), large (`lvw`, `lvh`, `lvi`, `lvb`, `lvmin`, `lvmax`), dynamic (`dvw`, `dvh`, `dvi`, `dvb`, `dvmin`, `dvmax`), and logical (`vi`, `vb`) units. These units are already implemented in Firefox and Safari.
 
