@@ -74,7 +74,7 @@ Safari 16.1 brings Web Push support to Safari on macOS Ventura. This uses the Pu
 
 ## Beta browser releases
 
-Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release. New betas this month are [Chrome 108](/blog/chrome-108-beta/), [Firefox 107](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/107), and [Safari 16.2](https://developer.apple.com/documentation/safari-release-notes/safari-16_2-release-notes).
+Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release. New betas this month are [Chrome 108](https://developer.chrome.com/blog/chrome-108-beta/), [Firefox 107](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/107), and [Safari 16.2](https://developer.apple.com/documentation/safari-release-notes/safari-16_2-release-notes).
 
 Chrome 108 includes support for the `avoid` value of the CSS fragmentation properties `break-before`, `break-after`, and `break-inside` when printing. This value tell the browser to avoid breaking before, after or inside the element it is applied to. For example, the following CSS avoids a figure being broken at a page break.
 
