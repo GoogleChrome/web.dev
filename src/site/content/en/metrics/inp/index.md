@@ -14,14 +14,14 @@ tags:
 ---
 
 {% Aside %}
-Interaction to Next Paint (INP) is a metric that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). When an interaction causes a page to become unresponsive, that is a poor user experience. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
+Interaction to Next Paint (INP) is an experimental metric that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). When interactions cause a page to become slow or unresponsive, that is a poor user experience. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
 {% endAside %}
 
 Chrome usage data shows that 90% of a user's time on a page is spent _after_ it loads, Thus, careful measurement of responsiveness _throughout_ the page lifecycle is important. This is what the INP metric assesses.
 
 Good responsiveness means that a page responds quickly to interactions made with it. When a page responds to an interaction, the result is _visual feedback_, which is presented by the browser in the next frame the browser presents. Visual feedback tells you if, for example, an item you add to an online shopping cart is indeed being added, whether a mobile navigation menu has opened, if a login form's contents are being authenticated by the server, and so forth.
 
-Some interactions will naturally take longer than others, but for especially complex interactions, it's important to quickly present some initial visual feedback as a cue to the user that something is _happening_.  The time until the next paint is the earliest opportunity to do this. Therefore, the intent of INP is not to measure all the eventual effects of the interaction (such as network fetches and UI updates from other asynchronous operations), but the time in which the _next_ paint is being blocked. By delaying visual feedback, you may be giving users the impression that the page is not responding to their actions.
+Some interactions will naturally take longer than others, but for especially complex interactions, it's important to quickly present some initial visual feedback as a cue to the user that something is _happening_.  The next paint is the earliest opportunity to do this. Therefore, the intent of INP is not to measure all the eventual effects of the interaction (such as network fetches and UI updates from other asynchronous operations), but the time in which the _next_ paint is being blocked. By delaying visual feedback, you may be giving users the impression that the page is not responding to their actions.
 
 The goal of INP is to ensure the time from when a user initiates an interaction until the next frame is painted is as short as possible, for all or most interactions the user makes.
 
@@ -44,11 +44,25 @@ This article explains how INP works, how to measure it, and offers advice for im
 
 ## What is INP?
 
-INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made with a page. An _interaction_ is one or more event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
+INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made with a page.
 
-The duration for every interaction is captured by the [Event Timing API](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming). In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the interaction with the highest latency of all observed interactions is chosen as the page's INP when the user is done with the page.
+### What is an interaction?
 
-However, in cases where there are many interactions with a page&mdash;50 or more to be specific&mdash;the interaction with the highest latency isn't the page's INP, but rather a high-latency interaction that's close to the worst. The table below provides more information on how INP is calculated based on the total number of interactions made with a page.
+An interaction is one or more discrete user input actions. More than one interaction may consist of what's considered a "logical user gesture". For a key board interaction, this would consist of both a `keydown` _and_ a `keyup` event.
+
+### What is an event?
+
+Interactions are driven by events. Events fire callbacks during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. While JavaScript is a common driver of interactivity, interactions can also be driven by CSS and built-in browser controls (such as `<input>` elements, for example).
+
+The time it takes to queue up an interaction, including the time it takes for the event callbacks for the interaction to run, and the time it takes to present the next frame that shows the result of the interaction is known as the _event duration_.
+
+### How is INP calculated?
+
+Event duration for every interaction is recorded throughout the page lifecycle. In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the interaction with the highest latency is chosen as the page's INP when the user is done with the page.
+
+However, in cases where there are many interactions with a page&mdash;50 or more to be specific&mdash;the interaction with the highest latency _isn't_ the page's INP, but rather an interaction that's close to the worst. The reasoning for this is that if the user has made many interactions with a page, the worst interaction may be an outlier that would unfairly penalize a page that was otherwise interacted with numerous times.
+
+The table in the expandable section below provides more information on how INP is calculated based on the total number of interactions made with a page.
 
 {% Details %}
 
@@ -111,7 +125,7 @@ INP values by number of interactions.
 
 {% endDetails %}
 
-An interaction's latency consists of the single longest [duration](https://w3c.github.io/event-timing/#ref-for-dom-performanceentry-duration%E2%91%A1:~:text=The%20Event%20Timing%20API%20exposes%20a%20duration%20value%2C%20which%20is%20meant%20to%20be%20the%20time%20from%20when%20user%20interaction%20occurs%20(estimated%20via%20the%20Event%27s%20timeStamp)%20to%20the%20next%20time%20the%20rendering%20of%20the%20Event%27s%20relevant%20global%20object%27s%20associated%20Document%E2%80%99s%20is%20updated) of a group of event handlers that drives the interaction, from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
+An interaction's latency consists of the single longest [duration](https://w3c.github.io/event-timing/#ref-for-dom-performanceentry-duration%E2%91%A1:~:text=The%20Event%20Timing%20API%20exposes%20a%20duration%20value%2C%20which%20is%20meant%20to%20be%20the%20time%20from%20when%20user%20interaction%20occurs%20(estimated%20via%20the%20Event%27s%20timeStamp)%20to%20the%20next%20time%20the%20rendering%20of%20the%20Event%27s%20relevant%20global%20object%27s%20associated%20Document%E2%80%99s%20is%20updated) of a group of event callbacks that drives the interaction, from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
 
 {% Aside 'important' %}
 For more details on how INP is measured, read the ["What's in an interaction?"](#whats-in-an-interaction) section.
@@ -158,9 +172,9 @@ The guidance around INP thresholds may change over time. [The CHANGELOG at the e
 ## What's in an interaction?
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Ng0j5yaGYZX9Bm3VQ70c.svg", alt="A diagram depicting an interaction on the main thread. The user makes an input while blocking tasks run. The input is delayed until those tasks complete, after which the pointerup, mouseup, and click event handlers run, then rendering and painting work is kicked off until the next frame is presented.", width="736", height="193.81333333333" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Ng0j5yaGYZX9Bm3VQ70c.svg", alt="A diagram depicting an interaction on the main thread. The user makes an input while blocking tasks run. The input is delayed until those tasks complete, after which the pointerup, mouseup, and click event callbacks run, then rendering and painting work is kicked off until the next frame is presented.", width="736", height="193.81333333333" %}
   <figcaption>
-    The life of an interaction. An input delay occurs until event handlers begin running, which may be caused by factors such as long tasks on the main thread. The interaction's event handlers then run, and a delay occurs before the next frame is presented.
+    The life of an interaction. An input delay occurs until event callbacks begin running, which may be caused by factors such as long tasks on the main thread. The interaction's event callbacks then run, and a delay occurs before the next frame is presented.
   </figcaption>
 </figure>
 
@@ -176,15 +190,18 @@ As far as INP goes, **only the following interaction types are observed:**
 Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, page up, page down, and so forth) involves a keystroke, which may trigger other events that INP _does_ measure. Any resulting scrolling is _not_ factored into how INP is calculated.
 {% endAside %}
 
-Interactions happen in the main document or in iframes embedded in the document—for example clicking play on an embedded video. End users will not be aware what is in an iframe or not. Therefore, INP within iframes are needed to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so may not be able to measure INP within an iframe and this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+Interactions happen in the main document or in `<iframe>` elements embedded in the document&mdash;for example clicking play on an embedded video. End users will not be aware what is in an `<iframe>` or not. Therefore, INP within `<iframe>` elements are needed to measure the user experience for the top level page.
 
+{% Aside %}
+JavaScript Web APIs will not have access to the iframe contents so may not be able to measure INP within an iframe and this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+{% endAside %}
 
 Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/vNosnKDYgBRnFmEvwm0c.svg", alt="A depiction of more complex interaction containing two interactions. The first is a mousedown event, which produces a frame before the mouse button is let up, which kicks off more work until yet another frame is presented as the result.", width="736", height="164.37333333333" %}
   <figcaption>
-    A depiction of an interaction with multiple event handlers. The first part of the interaction receives an input when the user clicks down on a mouse button. However, before they release the mouse button, a frame is presented. When the user releases the mouse button, another series of event handlers must run before the next frame is presented.
+    A depiction of an interaction with multiple event callbacks. The first part of the interaction receives an input when the user clicks down on a mouse button. However, before they release the mouse button, a frame is presented. When the user releases the mouse button, another series of event callbacks must run before the next frame is presented.
   </figcaption>
 </figure>
 
@@ -192,7 +209,7 @@ INP is calculated when the user leaves the page, resulting in a single value tha
 
 ## How is INP different from First Input Delay (FID)?
 
-Where INP considers _all_ page interactions, [First Input Delay (FID)](/fid/) only accounts for the _first_ interaction. It also only measures the first interaction's _input delay_, not the time it takes to run event handlers, or the delay in presenting the next frame.
+Where INP considers _all_ page interactions, [First Input Delay (FID)](/fid/) only accounts for the _first_ interaction. It also only measures the first interaction's _input delay_, not the time it takes to run event callbacks, or the delay in presenting the next frame.
 
 Given that FID is also a [load responsiveness metric](/user-centric-performance-metrics/#types-of-metrics), the rationale behind it is that if the first interaction made with a page in the loading phase has little to no perceptible input delay, the page has made a good first impression.
 
@@ -259,7 +276,7 @@ If your website is reporting INP values that fall outside of the "good" threshol
 
 ### Improving INP during page startup
 
-INP can be a factor during page load, because users may attempt to interact with a page as it's fetching JavaScript to set up event handlers that provide the interactivity required for a page to work.
+INP can be a factor during page load, because users may attempt to interact with a page as it's fetching JavaScript to set up event callbacks that provide the interactivity by the page.
 
 {% Aside %}
 Per the HTTP Archive, [Total Blocking Time (TBT)](/tbt/) has [a much stronger correlation with INP than it does with FID](https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb). TBT is a lab metric, but if you're observing high TBT values in lab tools, that could be a signal that higher INP values in the field will be observed.
