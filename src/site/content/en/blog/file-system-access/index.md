@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-09-13
+updated: 2022-11-02
 tags:
   - blog
   - capabilities
@@ -584,28 +584,25 @@ await root.removeEntry('Old Stuff', { recursive: true });
 
 The origin private file system provides optional access to a special kind of file that is highly
 optimized for performance, for example, by offering in-place and exclusive write access to a file's
-content. In Chrome 102 and later, there are two new methods on the origin private file system for
-simplifying file access: `createAccessHandle()` (for asynchronous read and write operations) and
-`createSyncAccessHandle()` (for synchronous read and write operations). Both are exposed on
-`FileSystemFileHandle`.
-
-```js
-// Asynchronous access in all contexts:
-const accessHandle = await fileHandle.createAccessHandle();
-await accessHandle.writable.getWriter().write(buffer);
-const reader = accessHandle.readable.getReader({ mode: 'byob' });
-// Assumes seekable streams, and SharedArrayBuffer support are available
-await reader.read(buffer, { at: 1 });
-```
+content. In Chromium&nbsp;102 and later, there is an additional method on the origin private file system for
+simplifying file access: `createSyncAccessHandle()` (for synchronous read and write operations).
+It is exposed on `FileSystemFileHandle`, but exclusively in
+[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers).
 
 ```js
 // (Read and write operations are synchronous,
 // but obtaining the handle is asynchronous.)
-// Synchronous access exclusively in Worker contexts
+// Synchronous access exclusively in Worker contexts.
 const accessHandle = await fileHandle.createSyncAccessHandle();
 const writtenBytes = accessHandle.write(buffer);
 const readBytes = accessHandle.read(buffer, { at: 1 });
 ```
+
+{% Aside %}
+People interested in the `createAccessHandle()` method (that is, the async variant available on
+the main thread and in Web Workers) should track
+[crbug.com/1323922](https://bugs.chromium.org/p/chromium/issues/detail?id=1323922).
+{% endAside %}
 
 ## Polyfilling
 
