@@ -102,7 +102,7 @@ const {
 const {calendarLink} = require('./src/site/_filters/calendar-link');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
-const {purifyCss} = require('./src/site/_transforms/purify-css');
+const {CssTransform} = require('webdev-infra/transforms/css');
 const {minifyHtml} = require('./src/site/_transforms/minify-html');
 
 // Shared dependencies between web.dev and developer.chrome.com
@@ -246,7 +246,19 @@ module.exports = function (config) {
   }
 
   if (isProd || isStaging) {
-    config.addTransform('purifyCss', purifyCss);
+    config.addTransform(
+      'purifyCss',
+      new CssTransform().configure({
+        cssPath: 'dist/css/main.css',
+        jsPaths: ['dist/js/**/*.js'],
+        insert: (content, result) => {
+          return content.replace(
+            '<!-- __PURGECSS_INJECT -->',
+            `<style>${result}</style>`,
+          );
+        },
+      }),
+    );
     config.addTransform('minifyHtml', minifyHtml);
   }
 
