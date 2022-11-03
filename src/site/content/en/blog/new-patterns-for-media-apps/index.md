@@ -27,6 +27,4 @@ Let's welcome our new collection of [media patterns](/patterns/media) to help yo
 
 We hope these patterns will help you build amazing apps, and I'm looking forward to your feedback! You can provide feedback by tweeting at [@ChromiumDev](https://twitter.com/ChromiumDev) or [filing an Issue](https://github.com/GoogleChrome/web.dev/issues/new/choose).
 
-## Acknowledgements
-
 _Photo by [Kenny Eliason](https://unsplash.com/photos/plrlb68XPqI)._
