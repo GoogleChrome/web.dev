@@ -97,7 +97,7 @@ To clip the background to the text set the `color` to `transparent`, and set `ba
 The `background-clip` property needs prefixing in some browsers as `-webkit-background-clip`.
 {% endAside %}
 
-At this point, you could leave it there and experiment with the `background-position` and the gradient used in the `background-image`. Or, you could animate that gradient across your text. First, define a keyframe for the animation. This will use the `--bg-size` custom property we defined earlier. A good example of scoped custom properties making maintenance easier for you.
+At this point, you could leave it there and experiment with the `background-position` and the gradient used in the `background-image`. Or, you could animate that gradient across your text. First, define a keyframe for the animation. This will use the `--bg-size` custom property you defined earlier. A good example of scoped custom properties making maintenance easier for you.
 
 ```css
 @keyframes move-bg {
