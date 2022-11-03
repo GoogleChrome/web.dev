@@ -48,7 +48,7 @@ navigator.mediaSession.setActionHandler("play", async () => {
     await video.play();
   } catch (err) {
     console.error(err.name, err.message);
-    }
+  }
 });
 
 navigator.mediaSession.setActionHandler("pause", () => {
