@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-10-24
+updated: 2022-11-04
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -44,7 +44,7 @@ This article explains how INP works, how to measure it, and offers advice for im
 
 ## What is INP?
 
-INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made with a page.
+INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made on a page.
 
 ### What is an interaction?
 
@@ -52,7 +52,7 @@ An interaction is one or more discrete user input actions. More than one interac
 
 ### What is an event?
 
-Interactions are driven by events. Events fire callbacks during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. While JavaScript is a common driver of interactivity, interactions can also be driven by CSS and built-in browser controls (such as `<input>` elements, for example).
+Interactions are driven by events. Events fire callbacks during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. While JavaScript is a common handler of interactivity, interactions can also be handled by CSS and built-in browser controls (such as `<input>` elements, for example).
 
 The time it takes to queue up an interaction, including the time it takes for the event callbacks for the interaction to run, and the time it takes to present the next frame that shows the result of the interaction is known as the _event duration_.
 
@@ -60,7 +60,7 @@ The time it takes to queue up an interaction, including the time it takes for th
 
 Event duration for every interaction is recorded throughout the page lifecycle. In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the interaction with the highest latency is chosen as the page's INP when the user is done with the page.
 
-However, in cases where there are many interactions with a page&mdash;50 or more to be specific&mdash;the interaction with the highest latency _isn't_ the page's INP, but rather an interaction that's close to the worst. The reasoning for this is that if the user has made many interactions with a page, the worst interaction may be an outlier that would unfairly penalize a page that was otherwise interacted with numerous times.
+In cases where there are many interactions with a page, the worst interaction may be an outlier that would unfairly penalize a page that was otherwise interacted with quickly numerous times. The more interactions, the more likely an outlier interaction will be experienced. For this reason, where there are many interactions with a page&mdash;50 or more to be specific&mdash;we exclude an increasing number of the the worst interactions, to look at an INP that is more representative of how responsive the page was overall for the user.
 
 The table in the expandable section below provides more information on how INP is calculated based on the total number of interactions made with a page.
 
