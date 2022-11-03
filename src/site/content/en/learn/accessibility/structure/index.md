@@ -161,25 +161,39 @@ for more information and best practices.
 
 ## Headings
 
-When implemented correctly, [HTML heading levels](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements) form a succinct outline of the overall page content. There are six heading levels we can use. Heading level one `<h1>` is used for the page's highest/most important information down to heading level six `<h6>` for the lowest/least important information.
+When implemented correctly, [HTML heading levels](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements)
+form a succinct outline of the overall page content.
 
-When building accessible headings, the sequence of the heading levels is
-important. Ideally, you won't skip heading levels, for example, going from an
-`<h1>` to `<h5>`. Instead, you should progress down to the` <h5>` in order.
-[Heading level order is especially important to AT users](https://youtu.be/vAAzdi1xuUY)
-as this is one of their primary ways of navigating through content.
+There are six heading levels we can use. Heading level one `<h1>` is used for the page's highest and most important information, moving incrementally to
+heading level six `<h6>` for the lowest and least important information.
+
+The sequence of the heading levels is important. Ideally, you won't skip
+heading levels, for example, starting a section with an `<h1>` and immediately
+following it with an `<h5>`. Instead, you should progress to the `<h5>` in
+order. [Heading level order is especially important to AT users](https://youtu.be/vAAzdi1xuUY)
+as this is one of their primary ways to navigate through content.
 
 {% Aside %}
 
-While you can use [ARIA heading roles](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/heading_role) for heading levels, it's recommended to use semantic HTML heading levels whenever possible.
+While you can use [ARIA heading roles](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/heading_role)
+for heading levels, it's recommended you use semantic HTML heading levels
+whenever possible.
 
 {% endAside %}
 
 To help you adhere to the proper semantic structure and order for headings,
 consider decoupling your CSS styles from the heading levels. This allows you
 more flexibility in heading styles while maintaining the heading level order.
-However, it's critical you don't use styles alone to create headings, as these
+It's critical you don't use styles alone to create headings, as these
 aren't seen by AT as a heading.
+
+{% Codepen {
+ user: 'web-dev-codepen-external',
+ id: 'Vwdajpe',
+ height: 400,
+ theme: 'auto',
+ tab: 'html,css,result'
+} %}
 
 When we fake headings, the appropriate structure isn't conveyed to AT users.
 
@@ -196,11 +210,11 @@ understand what is most important on the page.
 </div>
 <div>
 	<h3>How do I start a stamp collection?</h3>
-<h2>Equipment you will need</h2>
+  <h2>Equipment you will need</h2>
 	<h4>...</h4>
-<h2>How to acquire stamps</h2>
+  <h2>How to acquire stamps</h2>
 	<h4>...</h4>
-<h2>Organizations you can join</h2>
+  <h2>Organizations you can join</h2>
 	<h4>...</h4>
 </div>
 ```
@@ -208,22 +222,24 @@ understand what is most important on the page.
 
 {% Compare 'better' %}
 ```html
+<header>
+  <h1>Stamp collecting</h1>
+</header>
 <main>
 	<section aria-label="Introduction to stamp collecting">
-		<h1>What is stamp collecting?</h1>
+		<h2>What is stamp collecting?</h2>
 		<p>Stamp collecting, also known as philately, is the study of postage stamps, stamped envelopes, postmarks, postcards, and other materials relating to postal delivery.</p>
 	</section>
 
-	<section aria-label="How to start a stamp collection">
-		<h1>How do I start a stamp collection?</h1>
+	<section aria-label="Start a stamp collection">
+		<h2>How do I start a stamp collection?</h2>
+    <h3>Required equiment</h3>
+    <p>...</p>
+    
+    <h3>How to acquire stamps</h3>
+    <p>...</p>
 
-<h2>Equipment you will need</h2>
-		<p>...</p>
-		
-<h2>How to acquire stamps</h2>
-		<p>...</p>
-
-<h2>Organizations you can join</h2>
+    <h3>Organizations you can join</h3>
 		<p>...</p>
 	</section>
 </main>
@@ -234,7 +250,10 @@ understand what is most important on the page.
 
 ## Lists
 
-[HTML lists](https://www.w3.org/WAI/tutorials/page-structure/content/#lists) are a way to semantically group items similar to one other giving them inherent meaning, much like your grocery store list or that never-ending to-do list you keep ignoring. 
+[HTML lists](https://www.w3.org/WAI/tutorials/page-structure/content/#lists)
+are a way to semantically group items similar to one other giving them inherent
+meaning, much like your grocery store list or that never-ending to-do list you
+keep ignoring. 
 
 There are three types of HTML lists:
 
@@ -249,7 +268,11 @@ description term
 [`<dd>`](https://developer.mozilla.org/docs/Web/HTML/Element/dd) elements can
   be found in the description list.
 
-When programmed correctly, these elements can inform non-sighted AT users about the visible structure of the list. When an AT encounters a semantic list, it can tell the user the list name and how many items are in it. As the user navigates within the list, the AT will read each list item out loud and tell which number it's in the list—item one of five, item two of five, and so on.
+When programmed correctly, these elements can inform non-sighted AT users about
+the visible structure of the list. When an AT encounters a semantic list, it
+can tell the user the list name and how many items are in it. As the user
+navigates within the list, the AT will read each list item out loud and tell
+which number it's in the list—item one of five, item two of five, and so on.
 
 Grouping items into lists also helps sighted people who have cognitive and
 attention disorders and those with reading disabilities, as list content is
@@ -305,10 +328,12 @@ non-semantic elements such as `<div>`s and landmarks to create layouts.
 
 While the days of creating layout tables are mostly over, there are times when
 layout tables are still used, such as in visually rich emails, newsletters, and
-advertisements. In these cases, tables used only for layout purposes must not
+advertisements. In these cases, tables used only for layout must not
 use structural elements that convey relationships and add context, such as
-`<th>` or `<caption>`. Layout tables must also be hidden from AT users by the
-ARIA [presentation role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role)
+`<th>` or `<caption>`.
+  
+Layout tables must also be hidden from AT users with the ARIA
+[presentation role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role)
 or [aria-hidden state](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-hidden).
   
 <div class="switcher">
