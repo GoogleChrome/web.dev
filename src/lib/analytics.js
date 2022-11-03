@@ -159,6 +159,7 @@ window.addEventListener(
 
 // Handle prerenders that have already activated
 if (
+  performance &&
   performance.getEntriesByType &&
   performance.getEntriesByType('navigation')[0].activationStart > 0
 ) {
