@@ -44,7 +44,11 @@ navigator.mediaSession.metadata = new MediaMetadata({
 
 navigator.mediaSession.setActionHandler("play", async () => {
   // Resume playback
-  await video.play();
+  try {
+    await video.play();
+  } catch (err) {
+    console.error(err.name, err.message);
+    }
 });
 
 navigator.mediaSession.setActionHandler("pause", () => {
