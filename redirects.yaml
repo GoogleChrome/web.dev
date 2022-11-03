@@ -337,6 +337,8 @@ redirects:
     destination: https://developer.chrome.com/articles/usb/
   - source: /periodic-background-sync
     destination: https://developer.chrome.com/articles/periodic-background-sync/
+  - source: /eyedropper
+    destination: https://developer.chrome.com/articles/eyedropper/
 
   # Redirect for Aurora
   - source: /aurora

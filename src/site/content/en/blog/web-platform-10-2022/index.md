@@ -39,7 +39,7 @@ Thanks to the work of our contributors at Microsoft, Chrome is now able to inter
 
 ### Additions to `getDisplayMedia()`
 
-Also in Chrome are some additions to [`getDisplayMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) that aim to prevent [accidental oversharing when screen sharing]((https://developer.chrome.com/blog/avoiding-oversharing-when-screen-sharing/)). 
+Also in Chrome are some additions to [`getDisplayMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) that aim to prevent [accidental oversharing when screen sharing](https://developer.chrome.com/blog/avoiding-oversharing-when-screen-sharing/). 
 
 - The [`displaySurface`](https://developer.chrome.com/docs/web-platform/screen-sharing-controls/#displaySurface) option can indicate that the web app prefers to offer a specific display surface type (tabs, windows, or screens).
 - The [`surfaceSwitching`](https://developer.chrome.com/docs/web-platform/screen-sharing-controls/#surfaceSwitching) option indicates whether Chrome should allow the user to dynamically switch between shared tabs.
@@ -74,7 +74,7 @@ Safari 16.1 brings Web Push support to Safari on macOS Ventura. This uses the Pu
 
 ## Beta browser releases
 
-Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release. New betas this month are [Chrome 108](/blog/chrome-108-beta/), [Firefox 107](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/107), and [Safari 16.2](https://developer.apple.com/documentation/safari-release-notes/safari-16_2-release-notes).
+Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release. New betas this month are [Chrome 108](https://developer.chrome.com/blog/chrome-108-beta/), [Firefox 107](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/107), and [Safari 16.2](https://developer.apple.com/documentation/safari-release-notes/safari-16_2-release-notes).
 
 Chrome 108 includes support for the `avoid` value of the CSS fragmentation properties `break-before`, `break-after`, and `break-inside` when printing. This value tell the browser to avoid breaking before, after or inside the element it is applied to. For example, the following CSS avoids a figure being broken at a page break.
 
@@ -86,7 +86,7 @@ figure {
 
 Chrome 108 starts to roll out a change to the way overflow behaves on replaced elements, which may cause visual changes in some circumstances. Read the article [A change to overflow on replaced elements in CSS](https://developer.chrome.com/blog/overflow-replaced-elements/) for more details and to see how to address any issues you see.
 
-There's a change to how the Layout Viewport behaves in Chrome on Android when the on-screen keyboard is shown. Read [Prepare for viewport resize behavior changes coming to Chrome on Android](/blog/viewport-resize-behavior/) to learn more and find out how to prepare for this shipping to stable next month.
+There's a change to how the Layout Viewport behaves in Chrome on Android when the on-screen keyboard is shown. Read [Prepare for viewport resize behavior changes coming to Chrome on Android](https://developer.chrome.com/blog/viewport-resize-behavior/) to learn more and find out how to prepare for this shipping to stable next month.
 
 Also in Chrome are the new CSS Viewport Units. These include small (`svw`, `svh`, `svi`, `svb`, `svmin`, `svmax`), large (`lvw`, `lvh`, `lvi`, `lvb`, `lvmin`, `lvmax`), dynamic (`dvw`, `dvh`, `dvi`, `dvb`, `dvmin`, `dvmax`), and logical (`vi`, `vb`) units. These units are already implemented in Firefox and Safari.
 
