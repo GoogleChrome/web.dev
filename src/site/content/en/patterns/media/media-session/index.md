@@ -9,7 +9,7 @@ description: >
 height: 800
 ---
 
-The [Media Session API](https://w3c.github.io/mediasession/) allows websites to let users know what's currently playing in their browser and control it without returning to the page that launched it. The user experience can be customized through metadata in custom media notifications, media events such as playing, pausing, seeking, and track changing. These customizations are available in several contexts including desktop media hubs, media notifications on mobile, and even on wearable devices.
+The [Media Session API](https://developer.mozilla.org/docs/Web/API/Media_Session_API) allows websites to let users know what's currently playing in their browser and control it without returning to the page that launched it. The user experience can be customized through metadata in custom media notifications, media events such as playing, pausing, seeking, and track changing. These customizations are available in several contexts, including desktop media hubs, media notifications on mobile, and even on wearable devices.
 
 {% BrowserCompat 'api.MediaSession' %}
 
@@ -25,8 +25,7 @@ When a website is playing audio or video, users automatically get media notifica
   <figcaption>Anatomy of a media notification on mobile.</figcaption>
 </figure>
 
-
-The example below shows you how to create a custom media notification and respond to basic user's media actions such as play and pause.
+The example below shows you how to create a custom media notification and respond to basic media actions such as play and pause.
 
 ```js
 const video = document.querySelector("video");
