@@ -2,7 +2,7 @@
 layout: post
 title: New patterns for media apps
 subhead:
-  Dive into a fantastic collection of new patterns for media apps. Grab the user's screen, add video PiP mode or audio effects, record from the mic, or customize media notifications.
+  Dive into a fantastic collection of new patterns for media apps. Grab the user's screen, add video Picture-in-Picture mode, create audio effects, record from the mic, or customize media notifications.
 authors:
   - beaufortfrancois
   - conwayt
