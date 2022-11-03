@@ -16,6 +16,10 @@ try {
   ga('set', '{{ site.analytics.dimensions.NAVIGATION_TYPE }}', '(not set)');
 }
 ga('set', '{{ site.analytics.dimensions.COLOR_SCHEME_PREFERENCE }}', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-ga('send', 'pageview');
+// Do not send a pageview on pages which are prerendering
+// These will be handled later once the page becomes active
+if (!document.prerendering) {
+  ga('send', 'pageview');
+}
 {% endset %}
 <script>{{ analyticsScript | minifyJs | cspHash | safe }}</script>

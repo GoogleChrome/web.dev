@@ -157,6 +157,24 @@ window.addEventListener(
   },
 );
 
+// Handle prerenders that have already activated
+if (performance.getEntriesByType && performance.getEntriesByType('navigation')[0].activationStart > 0) {
+    ga('set', dimensions.NAVIGATION_TYPE, 'prerender');
+    ga('send', 'pageview');
+}
+
+// Handle prerenders that activate in the future
+if (document.prerendering) {
+  window.addEventListener(
+    'prerenderchange',
+    () => {
+      ga('set', dimensions.NAVIGATION_TYPE, 'prerender');
+      ga('send', 'pageview');
+    },
+    { once: true },
+  );
+}
+
 onCLS(sendToGoogleAnalytics);
 onFCP(sendToGoogleAnalytics);
 onFID(sendToGoogleAnalytics);
