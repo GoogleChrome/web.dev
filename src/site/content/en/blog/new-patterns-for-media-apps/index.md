@@ -24,7 +24,7 @@ Let's welcome our new collection of [media patterns](/patterns/media) to help yo
 4. [Create a custom Picture-in-Picture button for your video player](/patterns/media/picture-in-picture/)
 5. [Record the user's screen](/patterns/media/screen-record/)
 
-I hope these patterns will help you build amazing apps, and I'm looking forward to your feedback! You can provide feedback by tweeting at [@ChromiumDev](https://twitter.com/ChromiumDev) or [filing an Issue](https://github.com/GoogleChrome/web.dev/issues/new/choose).
+We hope these patterns will help you build amazing apps, and I'm looking forward to your feedback! You can provide feedback by tweeting at [@ChromiumDev](https://twitter.com/ChromiumDev) or [filing an Issue](https://github.com/GoogleChrome/web.dev/issues/new/choose).
 
 ## Acknowledgements
 
