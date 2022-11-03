@@ -62,6 +62,7 @@ to "stem," entirely changing the meaning of the copy.
 
 Open source typeface collections like [Google Fonts](https://fonts.google.com) can
 aid you in selecting the most inclusive typeface for your next design.
+This collection can also be found in [Adobe Fonts foundries](https://fonts.adobe.com/foundries/google).
 
 {% Codepen {
  user: 'web-dev-codepen-external',
