@@ -331,6 +331,12 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
   - source: /workingoffthegrid
     destination: https://developer.chrome.com/docs/workbox/service-worker-overview/
+  - source: /bluetooth
+    destination: https://developer.chrome.com/articles/bluetooth/
+  - source: /usb
+    destination: https://developer.chrome.com/articles/usb/
+  - source: /periodic-background-sync
+    destination: https://developer.chrome.com/articles/periodic-background-sync/
   - source: /eyedropper
     destination: https://developer.chrome.com/articles/eyedropper/
 
