@@ -197,7 +197,7 @@ While you can use `<link>` to define a completely different image on each page o
 
 #### Alternate versions of the site
 
-We use the `alternative` value of the `rel` attribute to identify translations, or alternate representations, of the site.
+We use the `alternate` value of the `rel` attribute to identify translations, or alternate representations, of the site.
 
 Let's pretend we have versions of the site translated into French and Brazilian Portuguese:
 
