@@ -168,7 +168,11 @@ document.addEventListener("copy", async (e) => {
 });
 ```
 
+For the `copy` event:
+
 {% BrowserCompat 'api.Element.copy_event' %}
+
+For `ClipboardItem`:
 
 {% BrowserCompat 'api.ClipboardItem' %}
 
