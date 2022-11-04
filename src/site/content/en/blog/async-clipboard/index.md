@@ -6,19 +6,17 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2022-05-10
+updated: 2022-11-04
 tags:
   - blog
   - capabilities
-  # - input
-  # - clipboard
 hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: Clipboard with shopping list
 feedback:
   - api
 ---
 
-Over the past few years, browsers have used
+The traditional way of getting access to the system clipboard was via
 [`document.execCommand()`](https://developers.google.com/web/updates/2015/04/cut-and-copy-commands)
 for clipboard interactions. Though widely supported, this method of cutting and
 pasting came at a cost: clipboard access was synchronous, and could only read
@@ -35,20 +33,16 @@ clipboard access. At the same time, the permissions put in place around
 between browsers.
 
 The
-[Async Clipboard API](https://www.w3.org/TR/clipboard-apis/#async-clipboard-api)
+[Async Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API)
 addresses these issues, providing a well-defined permissions model that doesn't
-block the page. Safari recently announced  [support for it in version
-13.1](https://webkit.org/blog/10855/). With that, major browsers have a basic
-level of support in place. As of this writing, Firefox only supports text; and
-image support is limited to PNGs in some browsers. If you're interested in using
-the API,
-[consult a browser support table](https://developer.mozilla.org/docs/Web/API/Clipboard#Browser_compatibility)
-before proceeding.
+block the page. The Async Clipboard API is limited to handling text and images
+on most browsers, but support varies. Be sure to carefully study the browser
+compatibility overview for each of the following sections.
 
-{% Aside %}
-The Async Clipboard API is limited to handling text and images. Chrome&nbsp;84
-introduces an experimental feature that allows the clipboard to handle any
-arbitrary data type.
+{% Aside 'important' %}
+Chrome as of version 104 supports
+[web custom formats](https://developer.chrome.com/blog/web-custom-formats-for-the-async-clipboard-api/)
+that let developers write arbitrary data to the clipboard.
 {% endAside %}
 
 ## Copy: writing data to the clipboard
@@ -69,6 +63,8 @@ async function copyPageUrl() {
   }
 }
 ```
+
+{% BrowserCompat 'api.Clipboard.writeText' %}
 
 ### write()
 
@@ -91,7 +87,7 @@ method.
 Next, pass an array of `ClipboardItem` objects as a parameter to the `write()`
 method. Currently you can only pass one image at a time, but we hope to add
 support for multiple images in the future. `ClipboardItem` takes an object with
-the MIME type of the image as the key and the blob as the value. For Blob
+the MIME type of the image as the key and the blob as the value. For blob
 objects obtained from `fetch()` or `canvas.toBlob()`, the `blob.type` property
 automatically contains the correct MIME type for an image.
 
@@ -127,6 +123,8 @@ try {
   ```
 {% endAside %}
 
+{% BrowserCompat 'api.Clipboard.write' %}
+
 ### The copy event
 
 In the case where a user initiates a clipboard copy
@@ -140,8 +138,7 @@ Consider a page with text and an image, and when the user selects all and
 initiates a clipboard copy, your custom solution should discard text and only
 copy the image. You can achieve this as shown in the code sample below.
 What's not covered in this example is how to fall back to earlier
-APIs when the Clipboard API isn't supported. I'll cover that under
-[Feature detection](#feature-detection), later in this article.
+APIs when the Clipboard API isn't supported.
 
 ```html
 <!-- The image we want on the clipboard. -->
@@ -171,35 +168,41 @@ document.addEventListener("copy", async (e) => {
 });
 ```
 
+{% BrowserCompat 'api.Element.copy_event' %}
+
+{% BrowserCompat 'api.ClipboardItem' %}
+
 ## Paste: reading data from clipboard
 
 ### readText()
 
 To read text from the clipboard, call `navigator.clipboard.readText()` and wait
-for the returned Promise to resolve:
+for the returned promise to resolve:
 
-  ```js
-  async function getClipboardContents() {
-    try {
-      const text = await navigator.clipboard.readText();
-      console.log('Pasted content: ', text);
-    } catch (err) {
-      console.error('Failed to read clipboard contents: ', err);
-    }
+```js
+async function getClipboardContents() {
+  try {
+    const text = await navigator.clipboard.readText();
+    console.log('Pasted content: ', text);
+  } catch (err) {
+    console.error('Failed to read clipboard contents: ', err);
   }
-  ```
+}
+```
+
+{% BrowserCompat 'api.Clipboard.readText' %}
 
 ### read()
 
 The `navigator.clipboard.read()` method is also asynchronous and returns a
-Promise. To read an image from the clipboard, obtain a list of
+promise. To read an image from the clipboard, obtain a list of
 [`ClipboardItem`](https://developer.mozilla.org/docs/Web/API/ClipboardItem)
 objects, then iterate over them.
 
 Each `ClipboardItem` can hold its contents in different types, so you'll need to
 iterate over the list of types, again using a `for...of` loop. For each type,
 call the `getType()` method with the current type as an argument to obtain the
-corresponding Blob. As before, this code is not tied to images, and will
+corresponding blob. As before, this code is not tied to images, and will
 work with other future file types.
 
 ```js
@@ -217,6 +220,8 @@ async function getClipboardContents() {
   }
 }
 ```
+
+{% BrowserCompat 'api.Clipboard.read' %}
 
 ### Working with pasted files
 
@@ -240,6 +245,8 @@ document.addEventListener("paste", async e => {
 });
 ```
 
+{% BrowserCompat 'api.DataTransfer.files' %}
+
 ### The paste event
 
 As noted before, there are plans to introduce events to work with the Clipboard API,
@@ -255,15 +262,14 @@ document.addEventListener('paste', async (e) => {
 });
 ```
 
-As with the `copy` event, falling back to earlier APIs when the Clipboard API
-isn't supported will be covered under [Feature detection](#feature-detection).
+{% BrowserCompat 'api.Element.copy_event' %}
 
-## Handling multiple file types
+## Handling multiple MIME types
 
 Most implementations put multiple data formats on the clipboard for a single cut
 or copy operation. There are two reasons for this: as an app developer, you have
 no way of knowing the capabilities of the app that a user wants to copy text or images to,
-and many applications support pasting structured data as plain text. This is
+and many applications support pasting structured data as plain text. This is typically
 presented to users with an **Edit** menu item with a name such as **Paste and
 match style** or **Paste without formatting**.
 
@@ -339,9 +345,9 @@ permission if it hasn't already been granted. Since the API is promise-based,
 this is completely transparent, and a user denying clipboard permission causes
 the promise to reject so the page can respond appropriately.
 
-Because Chrome only allows clipboard access when a page is the active tab,
+Because browsers only allow clipboard access when a page is the active tab,
 you'll find that some of the examples here don't run if pasted directly into
-DevTools, since DevTools itself is the active tab. There's a trick: defer
+the browser's console, since the developer tools themselves are the active tab. There's a trick: defer
 clipboard access using `setTimeout()`, then quickly click inside the page to
 focus it before the functions are called:
 
@@ -367,6 +373,10 @@ or both of `clipboard-read` or `clipboard-write`, depending on the needs of your
 >
 </iframe>
 ```
+
+{% Aside 'caution' %}
+The values of the `allow` attribute need to be separated by semicolon.
+{% endAside %}
 
 ## Feature detection
 
@@ -398,6 +408,7 @@ DOM and selected:
 ```js
 button.addEventListener('click', (e) => {
   const input = document.createElement('input');
+  input.style.display = 'none';
   document.body.appendChild(input);
   input.value = text;
   input.focus();
@@ -406,12 +417,9 @@ button.addEventListener('click', (e) => {
   if (result === 'unsuccessful') {
     console.error('Failed to copy text.');
   }
+  input.remove();
 });
 ```
-
-In Internet Explorer, you can also access the clipboard through
-`window.clipboardData`. If accessed within a user gesture such as a click
-event—part of asking permission responsibly—no permissions prompt is shown.
 
 ## Demos
 
@@ -431,7 +439,7 @@ The first example demonstrates moving text on and off the clipboard.
   </iframe>
 </div>
 
-To try the API with images use this demo. Recall that only PNGs are supported
+To try the API with images, use this demo. Recall that only PNGs are supported
 and only in
 [a few browsers](https://developer.mozilla.org/docs/Web/API/Clipboard_API#browser_compatibility).
 
@@ -444,23 +452,10 @@ and only in
   </iframe>
 </div>
 
-## Next Steps
-
-Chrome is actively working on expanding the Asynchronous Clipboard API with
-simplified events aligned with the
-[Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API).
-Because of potential risks Chrome is
-treading carefully. To stay up to date on Chrome's progress, watch this article
-and our [blog](/blog/) for updates.
-
-For now, support for the Clipboard API is available in
-[a number of browsers](https://developer.mozilla.org/docs/Web/API/Clipboard#Browser_compatibility).
-
-Happy copying and pasting!
-
 ## Related links
 
 * [MDN](https://developer.mozilla.org/docs/Web/API/Clipboard_API)
+* [Web custom formats](https://developer.chrome.com/blog/web-custom-formats-for-the-async-clipboard-api/)
 
 ## Acknowledgements
 
