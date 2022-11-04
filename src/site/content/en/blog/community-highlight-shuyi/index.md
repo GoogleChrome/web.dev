@@ -10,7 +10,7 @@ subhead: >
   Olutimilehin Olushuyi is a lawyer, new to accessibility. We talked about his battle with JavaScript, international standards, and the importance of reading a website's contents.
 description: >
   One of a series of interviews with people from the web development community who are workinf in accessibility. This time I spoke with Olutimilehin Olushuyi.
-date: 2022-10-31
+date: 2022-11-10
 tags:
   - blog
   - accessibility
