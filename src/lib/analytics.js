@@ -169,8 +169,8 @@ if (
 
 // Handle prerenders that activate in the future
 if (document.prerendering) {
-  window.addEventListener(
-    'prerenderchange',
+  document.addEventListener(
+    'prerenderingchange',
     () => {
       ga('set', dimensions.NAVIGATION_TYPE, 'prerender');
       ga('send', 'pageview');
