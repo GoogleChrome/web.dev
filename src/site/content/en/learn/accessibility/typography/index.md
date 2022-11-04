@@ -62,8 +62,8 @@ to "stem," entirely changing the meaning of the copy.
 
 Open source typeface collections like [Google Fonts](https://fonts.google.com) can
 aid you in selecting the most inclusive typeface for your next design.
-If you use Adobe products, you can embed accessible font families from partnering
-foundry collections directly into your design&mdash;this includes select
+If you use Adobe products, you can embed accessible font families from foundry
+partners directly into your designs&mdash;this includes select
 [Google Fonts](https://fonts.adobe.com/foundries/google).
 
 {% Codepen {
