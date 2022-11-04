@@ -178,8 +178,8 @@ document.querySelector('.cache-article').addEventListener('click', function (eve
 });
 ```
 
-The [caches API][caches_api] is available from pages as well as service workers, meaning you don't
-need to involve the service worker to add things to the cache.
+The [caches API][caches_api] is available from pages as well as service workers, meaning you
+can add to the cache directly from the page.
 
 ### On network response {: #on-network-response }
 
