@@ -138,47 +138,64 @@ store.subscribe(({isSignedIn}) => {
   ga('set', dimensions.SIGNED_IN, isSignedIn ? '1' : '0');
 });
 
-/**
- * Add a listener to detect back/forward cache restores and track them
- * as pageviews with the "bfcache" navigation type set (in case we need
- * to distinguish them from regular pageviews).
- * https://web.dev/bfcache/#how-bfcache-affects-analytics-and-performance-measurement
- */
-window.addEventListener(
-  'pageshow',
+function sendPageView() {
   /**
-   * @param {PageTransitionEvent} e
+   * Add a listener to detect back/forward cache restores and track them
+   * as pageviews with the "back-forward-cache" navigation type set (in
+   * case we need to distinguish them from regular pageviews).
+   * https://web.dev/bfcache/#how-bfcache-affects-analytics-and-performance-measurement
    */
-  (e) => {
-    if (e.persisted) {
-      ga('set', dimensions.NAVIGATION_TYPE, 'back-forward-cache');
-      ga('send', 'pageview');
-    }
-  },
-);
+  window.addEventListener(
+    'pageshow',
+    /**
+     * @param {PageTransitionEvent} e
+     */
+    (e) => {
+      if (e.persisted) {
+        ga('set', dimensions.NAVIGATION_TYPE, 'back-forward-cache');
+        ga('send', 'pageview');
+      }
+    },
+  );
 
-// Handle prerenders that have already activated
-if (
-  performance &&
-  performance.getEntriesByType &&
-  performance.getEntriesByType('navigation')[0].activationStart > 0
-) {
-  ga('set', dimensions.NAVIGATION_TYPE, 'prerender');
+  // Handle prerenders that have already activated
+  if (
+    performance &&
+    performance.getEntriesByType &&
+    performance.getEntriesByType('navigation')[0].activationStart > 0
+  ) {
+    ga('set', dimensions.NAVIGATION_TYPE, 'prerender');
+    ga('send', 'pageview');
+    return;
+  }
+
+  // Handle prerenders that activate in the future
+  if (document.prerendering) {
+    document.addEventListener(
+      'prerenderingchange',
+      () => {
+        ga('set', dimensions.NAVIGATION_TYPE, 'prerender');
+        ga('send', 'pageview');
+      },
+      {once: true},
+    );
+    return;
+  }
+
+  // Handle normal page views
+  try {
+    ga(
+      'set',
+      dimensions.NAVIGATION_TYPE,
+      performance.getEntriesByType('navigation')[0].type.replace(/_/g, '-'),
+    );
+  } catch (error) {
+    ga('set', dimensions.NAVIGATION_TYPE, '(not set)');
+  }
   ga('send', 'pageview');
 }
 
-// Handle prerenders that activate in the future
-if (document.prerendering) {
-  document.addEventListener(
-    'prerenderingchange',
-    () => {
-      ga('set', dimensions.NAVIGATION_TYPE, 'prerender');
-      ga('send', 'pageview');
-    },
-    {once: true},
-  );
-}
-
+sendPageView();
 onCLS(sendToGoogleAnalytics);
 onFCP(sendToGoogleAnalytics);
 onFID(sendToGoogleAnalytics);

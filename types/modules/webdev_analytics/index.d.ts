@@ -17,10 +17,11 @@
 declare module 'webdev_analytics' {
   export declare const id: string;
   export declare const dimensions: {
-    SIGNED_IN: 'dimension1';
-    TRACKING_VERSION: 'dimension5';
-    NAVIGATION_TYPE: 'dimension6';
-    WEB_VITALS_DEBUG: 'dimension8';
+    SIGNED_IN: string;
+    TRACKING_VERSION: string;
+    NAVIGATION_TYPE: string;
+    COLOR_SCHEME_PREFERENCE: string,
+    WEB_VITALS_DEBUG: string;
   };
   export declare const version: number;
 }
