@@ -7,9 +7,11 @@ hero: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
 alt: 'Learn Accessibility! Community highlight.'
 thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
 subhead: >
-  Olutimilehin Olushuyi is a lawyer, new to accessibility. We talked about his battle with JavaScript, international standards, and the importance of reading a website's contents.
+  Olutimilehin Olushuyi is a lawyer, new to accessibility. We talked about his battle with JavaScript,
+  international standards, and the importance of reading a website's contents.
 description: >
-  One of a series of interviews with people from the web development community who are workinf in accessibility. This time I spoke with Olutimilehin Olushuyi.
+  One of a series of interviews with people from the web development community who
+  work in web accessibility. This time I spoke with Olutimilehin Olushuyi.
 date: 2022-11-10
 tags:
   - blog
