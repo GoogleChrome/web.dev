@@ -10,15 +10,15 @@ ga('set', 'transport', 'beacon');
 ga('set', 'anonymizeIp', true);
 ga('set', 'page', window.location.pathname);
 ga('set', '{{ site.analytics.dimensions.TRACKING_VERSION }}', '{{ site.analytics.version}}');
-try {
-  ga('set', '{{ site.analytics.dimensions.NAVIGATION_TYPE }}', performance.getEntriesByType('navigation')[0].type.replace(/_/g, '-'));
-} catch (error) {
-  ga('set', '{{ site.analytics.dimensions.NAVIGATION_TYPE }}', '(not set)');
-}
 ga('set', '{{ site.analytics.dimensions.COLOR_SCHEME_PREFERENCE }}', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 // Do not send a pageview on pages which are prerendering
 // These will be handled later once the page becomes active
 if (!document.prerendering) {
+  try {
+    ga('set', '{{ site.analytics.dimensions.NAVIGATION_TYPE }}', performance.getEntriesByType('navigation')[0].type.replace(/_/g, '-'));
+  } catch (error) {
+    ga('set', '{{ site.analytics.dimensions.NAVIGATION_TYPE }}', '(not set)');
+  }
   ga('send', 'pageview');
 }
 {% endset %}
