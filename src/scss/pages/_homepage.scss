@@ -118,12 +118,6 @@
 /// Specific overrides for the page-speed hero that are not consistent
 /// with the main hero pattern
 @include media-query('lg') {
-  .homepage__page-speed-hero {
-    .hero__content {
-      margin-block-start: get-space('size-4');
-    }
-  }
-
   .homepage__shows {
     flex-direction: row;
     gap: 0;
