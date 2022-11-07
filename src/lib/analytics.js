@@ -138,7 +138,55 @@ store.subscribe(({isSignedIn}) => {
   ga('set', dimensions.SIGNED_IN, isSignedIn ? '1' : '0');
 });
 
-function sendPageView() {
+// Set up a promise for when the page is activated,
+// which is needed for prerendered pages.
+const whenActivated = new Promise((resolve) => {
+  if (document.prerendering) {
+    document.addEventListener('prerenderingchange', () => resolve());
+  } else {
+    resolve();
+  }
+});
+
+// The Navigation Timing API will give us the navigation type in MOST cases
+// but there are a few edge cases to handle.
+function getNavigationType() {
+  // Track document restores (e.g. if a tab is unloaded to save memory)
+  if (document.wasDiscarded) {
+    return 'restore';
+  }
+
+  const navEntry =
+    self.performance &&
+    performance.getEntriesByType &&
+    performance.getEntriesByType('navigation')[0];
+
+  if (navEntry) {
+    // Prerendered pages have an activationStart time after activation
+    if (navEntry.activationStart > 0) {
+      return 'prerender';
+    } else {
+      return navEntry.type.replace(/_/, '-');
+    }
+  }
+  return '(not set)';
+}
+
+async function initAnalytics() {
+  // If prerendering then only init once the page is activated
+  await whenActivated;
+
+  // Set some custom dimensions
+  ga(
+    'set',
+    dimensions.COLOR_SCHEME_PREFERENCE,
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light',
+  );
+  ga('set', dimensions.NAVIGATION_TYPE, getNavigationType());
+  ga('send', 'pageview');
+
   /**
    * Add a listener to detect back/forward cache restores and track them
    * as pageviews with the "back-forward-cache" navigation type set (in
@@ -158,47 +206,13 @@ function sendPageView() {
     },
   );
 
-  // Handle prerenders that have already activated
-  if (
-    performance &&
-    performance.getEntriesByType &&
-    performance.getEntriesByType('navigation')[0].activationStart > 0
-  ) {
-    ga('set', dimensions.NAVIGATION_TYPE, 'prerender');
-    ga('send', 'pageview');
-    return;
-  }
-
-  // Handle prerenders that activate in the future
-  if (document.prerendering) {
-    document.addEventListener(
-      'prerenderingchange',
-      () => {
-        ga('set', dimensions.NAVIGATION_TYPE, 'prerender');
-        ga('send', 'pageview');
-      },
-      {once: true},
-    );
-    return;
-  }
-
-  // Handle normal page views
-  try {
-    ga(
-      'set',
-      dimensions.NAVIGATION_TYPE,
-      performance.getEntriesByType('navigation')[0].type.replace(/_/g, '-'),
-    );
-  } catch (error) {
-    ga('set', dimensions.NAVIGATION_TYPE, '(not set)');
-  }
-  ga('send', 'pageview');
+  // Track CWVs using web-vitals.js
+  onCLS(sendToGoogleAnalytics);
+  onFCP(sendToGoogleAnalytics);
+  onFID(sendToGoogleAnalytics);
+  onINP(sendToGoogleAnalytics);
+  onLCP(sendToGoogleAnalytics);
+  onTTFB(sendToGoogleAnalytics);
 }
 
-sendPageView();
-onCLS(sendToGoogleAnalytics);
-onFCP(sendToGoogleAnalytics);
-onFID(sendToGoogleAnalytics);
-onINP(sendToGoogleAnalytics);
-onLCP(sendToGoogleAnalytics);
-onTTFB(sendToGoogleAnalytics);
+initAnalytics();

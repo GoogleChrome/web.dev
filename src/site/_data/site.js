@@ -55,7 +55,7 @@ module.exports = {
       COLOR_SCHEME_PREFERENCE: 'dimension7',
       WEB_VITALS_DEBUG: 'dimension8',
     },
-    version: 13,
+    version: 14,
   },
   firebase: {
     prod: {
