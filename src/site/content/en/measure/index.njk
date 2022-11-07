@@ -6,92 +6,57 @@ description: |
 date: 2021-10-13
 pageScripts:
   - '/js/measure.js'
+pageSpeed:
+  eyebrow: 'PageSpeed Insights'
+  title: 'Measure performance with PageSpeed Insights'
+  summary: |
+    PageSpeed Insights is a tool for measuring the performance and Core Web Vitals of a page with lab and field data.
+  image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/6Ye3EKc6quNaopPrigno.png'
+  imageWidth: '546'
+  imageHeight: '421'
+  primaryButtonText: 'Try PageSpeed Insights'
+  primaryButtonUrl: 'https://pagespeed.web.dev/'
+  secondaryButtonText: 'Learn more'
+  secondaryButtonUrl: 'https://developers.google.com/speed/docs/insights/v5/about?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI#faq'
 ---
-<section class="bg-mid-bg">
-  <header class="flow all-center bg-mid-bg wrapper region">
-    <h1 class="text-size-4">
-      <svg width="53" height="53" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.625 9.938a3.313 3.313 0 0 1 3.313-3.313h33.124a3.313 3.313 0 0 1 3.313 3.313V39.44a.31.31 0 0 1-.31.31H6.934a.31.31 0 0 1-.31-.31V9.938Z" fill="#DEF"/><path d="M6.625 9.938a3.313 3.313 0 0 1 3.313-3.313h33.124a3.313 3.313 0 0 1 3.313 3.313v3.312H6.625V9.937Z" fill="#BDF"/><mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="6" y="6" width="41" height="34"><path d="M6.625 9.938a3.313 3.313 0 0 1 3.313-3.313h33.124a3.313 3.313 0 0 1 3.313 3.313V39.44a.31.31 0 0 1-.31.31H6.934a.31.31 0 0 1-.31-.31V9.938Z" fill="#DEF"/></mask><g mask="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M26.5 53c7.318 0 13.25-5.932 13.25-13.25S33.818 26.5 26.5 26.5s-13.25 5.932-13.25 13.25S19.182 53 26.5 53Zm0 6.625c10.977 0 19.875-8.898 19.875-19.875S37.477 19.875 26.5 19.875 6.625 28.773 6.625 39.75 15.523 59.625 26.5 59.625Z" fill="#06F"/><mask id="b" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="6" y="19" width="41" height="41"><path d="m6.625 59.625 39.75-39.75v39.75H6.625Z" fill="#C4C4C4"/></mask><g mask="url(#b)"><path fill-rule="evenodd" clip-rule="evenodd" d="M26.5 53c7.318 0 13.25-5.932 13.25-13.25S33.818 26.5 26.5 26.5s-13.25 5.932-13.25 13.25S19.182 53 26.5 53Zm0 6.625c10.977 0 19.875-8.898 19.875-19.875S37.477 19.875 26.5 19.875 6.625 28.773 6.625 39.75 15.523 59.625 26.5 59.625Z" fill="#C6F"/></g><path d="M32.74 41.983a6.625 6.625 0 1 1-8.473-8.473l13.657-6.003a.621.621 0 0 1 .819.819L32.74 41.983Z" fill="#6CF"/><path d="M24.158 42.092a3.313 3.313 0 1 0 4.684-4.684 3.313 3.313 0 0 0-4.684 4.684Z" fill="#06F"/></g></svg>
-      <br>
-      {{ title }}
-    </h1>
-    {% if description %}
-      <p class="flow-space-base color-mid-text">{{ description | md | safe }}</p>
-    {% endif %}
-  </header>
+<section>
+  <article class="bg-core-bg hero measure__page-speed-hero">
+    <div class="wrapper">
+      <div class="hero__columns switcher" data-direction="rev">
+        <div class="flow">
+          <img src="{{ pageSpeed.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ pageSpeed.imageWidth }}" height="{{ pageSpeed.imageHeight }}" />
+        </div>
+        <div>
+          <span aria-hidden="true" class="hero__eyebrow">{{ pageSpeed.eyebrow }}</span>
+          <div class="hero__content flow gap-top-size-5">
+            <h1 class="hero__title">{{ pageSpeed.title }}</h1>
+            {{ pageSpeed.summary | md | safe }}
+            <div class="cluster gutter-base flow-space-size-2">
+              <a class="button" data-type="primary" href="{{ pageSpeed.primaryButtonUrl }}">{{ pageSpeed.primaryButtonText }}</a>
+              <a class="button" data-type="secondary" href="{{ pageSpeed.secondaryButtonUrl }}">{{ pageSpeed.secondaryButtonText }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
 </section>
 
-<section class="bg-mid-bg measure-tool">
-  <div class="wrapper region" data-size="narrow">
-    <web-url-chooser-container></web-url-chooser-container>
-    <web-lighthouse-viewer></web-lighthouse-viewer>
+<section class="bg-mid-bg measure__section gap-top-size-1">
+  <div class="wrapper all-center flow">
+    <h2 class="no-link w-headline--two w-font-weight--medium">Please note</h2>
+
+    <p class="color-mid-text">
+      If you've been to this page before, you probably expected to see a field where you can input
+      a URL and get performance diagnostics for that page. This tool has been removed because of
+      the significant overlap it has with PageSpeed Insights.
+    </p>
+
+    <p>
+      Going forward, PageSpeed Insights will be what you need. It will give you detailed lab insights
+      into your website's performance, but also field data insights, which is important as it allows
+      you to assess your website's user experience from the perspective of your website's actual
+      users.
+    </p>
   </div>
 </section>
-<div class="region">
-  <section class="measure-steps numbered-headers wrapper gap-top-size-2" data-size="narrow">
-    <div class="numbered-headers__step">
-      <div class="numbered-headers__heading 1">
-        <h3 class="text-size-3">Run tests on your site</h3>
-      </div>
-      <p>Enter your site's URL to see how well it performs across all audits.</p>
-    </div>
-    <div class="numbered-headers__step">
-      <div class="numbered-headers__heading 2">
-        <h3 class="text-size-3">Look at what matters</h3>
-      </div>
-      <p>See your site's performance across the areas you care about.</p>
-    </div>
-    <div class="numbered-headers__step">
-      <div class="numbered-headers__heading 2">
-        <h3 class="text-size-3">Get tips for improving</h3>
-      </div>
-      <p>Each test comes with helpful steps to improve your site's results.</p>
-    </div>
-  </section>
-
-  <section class="flow all-center wrapper gap-top-size-4" data-size="narrow">
-    <h2 class="no-link w-headline--two w-font-weight--medium">
-      How your site is measured
-    </h2>
-    <p class="color-mid-text">
-      When you measure your site, web.dev uses
-      <a href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse</a>,
-      an open-source, automated tool for improving the quality of web pages.
-      Lighthouse will audit your site in the following categories:
-    </p>
-  </section>
-
-  <section class="wrapper region measure-faq" data-size="narrow">
-    <details class="bg-mid-bg">
-      <summary>
-        What is the data source powering the web.dev/measure tool?
-      </summary>
-      <p>
-        web.dev/measure uses Lighthouse data from the PageSpeed Insights API.
-        Learn more about PageSpeed Insights in the
-        <a href="https://developers.google.com/speed/docs/insights/v5/about?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI#faq)">
-        official FAQs</a>
-      </p>
-    </details>
-    <details class="bg-mid-bg">
-      <summary>
-        How does web.dev/measure differ from PageSpeed Insights?
-      </summary>
-      <p>
-        web.dev/measure measures the overall quality of a web page in a
-        <a href="/lab-and-field-data-differences/">lab
-        environment</a> (using Lighthouse). It gives insights about multiple
-        quality categories from Lighthouse, including Performance, Accessibility
-        and SEO. PageSpeed Insights (PSI) is performance focused,
-        using both lab (Lighthouse) and field (Chrome UX Report) data
-        to provide a summary of performance.
-        Furthermore, PSI provides origin level insights in the field,
-        whereas web.dev/measure is intended to deep-dive into a single
-        URL in the lab.
-      </p>
-      <p>
-        Use PSI when you want to measure and optimize your Core Web Vitals, and use web.dev/measure when optimizing a broader set of quality signals about a page.
-      </p>
-    </details>
-
-  </section>
-</div>
