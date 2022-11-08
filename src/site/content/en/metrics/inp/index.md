@@ -44,30 +44,30 @@ This article explains how INP works, how to measure it, and offers advice for im
 
 ## What is INP?
 
-INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made on a page.
+INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made on a page. Every qualifying interaction can be considered an _INP candidate_.
 
 ### What is an interaction?
 
-An interaction is one or more discrete user input actions. More than one interaction may consist of what's considered a "logical user gesture". For a key board interaction, this would consist of both a `keydown` _and_ a `keyup` event.
+An interaction is one or more discrete user input actions. More than one interaction may consist of what's considered a _logical user gesture_. For a key board interaction, this would consist of both a `keydown` _and_ a `keyup` event.
 
 ### What is an event?
 
-Interactions are driven by events. Events fire callbacks during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. While JavaScript is a common handler of interactivity, interactions can also be handled by CSS and built-in browser controls (such as `<input>` elements, for example).
+Interactions are driven by events. Events fire callbacks during the same logical user gesture. For example, tap interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. While JavaScript is a common handler of interactivity, interactions can also be handled by CSS and built-in browser controls (such as `<input>` elements, for example).
 
 The time it takes to queue up an interaction, including the time it takes for the event callbacks for the interaction to run, and the time it takes to present the next frame that shows the result of the interaction is known as the _event duration_.
 
 ### How is INP calculated?
 
-Event duration for every interaction is recorded throughout the page lifecycle. In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the interaction with the highest latency is chosen as the page's INP when the user is done with the page.
+Event duration for every interaction&mdash;or INP candidate&mdash;is recorded throughout the page lifecycle. In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the INP candidate with the highest latency is chosen as the page's INP when the user is done with the page.
 
-In cases where there are many interactions with a page, the worst interaction may be an outlier that would unfairly penalize a page that was otherwise interacted with quickly numerous times. The more interactions, the more likely an outlier interaction will be experienced. For this reason, where there are many interactions with a page&mdash;50 or more to be specific&mdash;we exclude an increasing number of the the worst interactions, to look at an INP that is more representative of how responsive the page was overall for the user.
+In cases where there are many interactions with a page, the worst INP candidate may be an outlier that would unfairly penalize a page that otherwise may have had many satisfactory interactions. The more interactions, the more likely an outlier interaction will be experienced. For this reason, where there are many interactions with a page&mdash;50 or more to be specific&mdash;we exclude an increasing number of the the worst interactions, to look at an INP candidate that is more representative of how responsive the page was overall for the user.
 
 The table in the expandable section below provides more information on how INP is calculated based on the total number of interactions made with a page.
 
 {% Details %}
 
 {% DetailsSummary %}
-INP values by number of interactions.
+Chosen INP candidate by number of interactions.
 {% endDetailsSummary %}
 
 <div class="table-wrapper scrollbar">
@@ -75,7 +75,7 @@ INP values by number of interactions.
     <thead>
       <tr>
         <th>Number of page interactions</th>
-        <th>Interaction reported as INP</th>
+        <th>INP candidate determined as a page's INP</th>
       </tr>
     </thead>
     <tbody>
@@ -187,13 +187,13 @@ As far as INP goes, **only the following interaction types are observed:**
 - Pressing a key on either a physical or onscreen keyboard.
 
 {% Aside 'important' %}
-Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, page up, page down, and so forth) involves a keystroke, which may trigger other events that INP _does_ measure. Any resulting scrolling is _not_ factored into how INP is calculated.
+Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, arrow keys, page up and page down keys, and so on) involves a keystroke that may trigger other events that INP _does_ measure. Any resulting scrolling is _not_ factored into how INP is calculated.
 {% endAside %}
 
 Interactions happen in the main document or in `<iframe>` elements embedded in the document&mdash;for example clicking play on an embedded video. End users will not be aware what is in an `<iframe>` or not. Therefore, INP within `<iframe>` elements are needed to measure the user experience for the top level page.
 
 {% Aside %}
-JavaScript Web APIs will not have access to the iframe contents so may not be able to measure INP within an iframe and this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+JavaScript Web APIs will not have access to the `<iframe>` contents so may not be able to measure INP within an iframe and this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
 {% endAside %}
 
 Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
@@ -213,7 +213,7 @@ Where INP considers _all_ page interactions, [First Input Delay (FID)](/fid/) on
 
 Given that FID is also a [load responsiveness metric](/user-centric-performance-metrics/#types-of-metrics), the rationale behind it is that if the first interaction made with a page in the loading phase has little to no perceptible input delay, the page has made a good first impression.
 
-INP is more than about first impressions. By sampling all interactions, responsiveness can be assessed comprehensively, making INP a more reliable indicator of overall responsiveness than FID.
+INP is more than about first impressions. By sampling all interactions, responsiveness can be comprehensively assessed. This makes INP a more reliable indicator of overall responsiveness than FID.
 
 ## What if no INP value is reported?
 
@@ -222,6 +222,12 @@ It's possible that a page can return no INP value. This can happen for a number 
 - The page was loaded, but the user never clicked, tapped, or pressed a key on their keyboard.
 - The page was loaded, but the user interacted with the page using gestures that did not involve clicking, tapping, or using the keyboard. For example, scrolling or hovering over elements does not factor into how INP is calculated.
 - The page is being accessed by a bot such as a search crawler or headless browser that has not been scripted to interact with the page.
+
+## What if an interaction causes no layout changes?
+
+If you have an interaction with an event callback that causes no change to the layout in an event handler, that interaction can still be an INP candidate&mdash;**even if your event handler does nothing at all**. The reason for this is that the Event Timing API&mdash;which is what supplies the data needed to calculate the page's INP&mdash;will still add entries to the performance entry buffer in such cases.
+
+In these cases, you should be thinking about what sort of visual feedback you can provide for the user that lets them know that something is happening as a result of the interaction. One of the primary goals of INP is to recognize when you have an opportunity to present the next frame to the user&mdash;and that frame should show the result of that interaction, even if it's a small visual change that communicates whether some work is in progress.
 
 ## How to measure INP
 
@@ -294,9 +300,10 @@ To improve responsiveness during page load, look into the following solutions:
 
 Because INP is calculated from inputs sampled during the entire page lifecycle, it's probable that your site's INP could be influenced by what happens _after_ page startup. If that's the case for your website, here are a few areas to look into for solutions:
 
+- [Break up long tasks and yield to main thread](/optimize-long-tasks/).
 - Use the [`postTask` API](https://github.com/WICG/scheduling-apis/blob/main/explainers/prioritized-post-task.md) to appropriately prioritize tasks.
 - [Schedule non-essential work when the browser is idle](https://philipwalton.com/articles/idle-until-urgent/) with [`requestIdleCallback`](https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback).
-- Use the performance profiler to assess discrete interactions (for example, toggling a mobile navigation menu) and find long tasks to optimize.
+- Use the performance profiler to assess discrete interactions&mdash;toggling a mobile navigation menu, for example&mdash;and find long tasks to optimize.
 - Audit third-party JavaScript in your website to see if it's affecting page responsiveness.
 
 ## CHANGELOG
