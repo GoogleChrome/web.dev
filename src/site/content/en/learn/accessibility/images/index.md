@@ -129,7 +129,7 @@ image file. Be sure you want the image to be hidden before applying this method.
 
 ### Informative images
 
-An [informative image](https://www.w3.org/WAI/tutorials/images/informative/) is an image that conveys a simple concept, idea, or emotion. Types of informative images include photos of real-world objects, essential icons, simple drawings, and [images of text](https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html). 
+An [informative image](https://www.w3.org/WAI/tutorials/images/informative/) is an image that conveys a simple concept, idea, or emotion. Types of informative images include photos of real-world objects, essential icons, simple drawings, and [images of text](https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html).
 
 If your image is informative, you should include [programmatic alternative text](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html) describing the purpose of the image. Alternative image descriptions&mdash;often abbreviated as "alt text"&mdash;give AT users more context about an image and help them better understand an image's message or intent.
 
@@ -150,7 +150,7 @@ points to, such as `.jpg`, `.png`, `.svg`, and others.
 } %}
 
 When you use `<svg>` elements inline, however, you need to pay attention to accessibility.
-  
+
 First, since SVGs are semantically coded, AT will skip over them by default.
 If you have a decorative image, this is not an issue&mdash;the AT will ignore
 it as intended. But if you have an informative image, an ARIA `role="img"`
@@ -197,7 +197,7 @@ visual aspects.
 In the logo example, the image is both informative and actionable as it is both
 an image that conveys information and behaves as a link. In cases like these,
 you can add alternative descriptions to each element&mdash;but it is not a
-requirement. 
+requirement.
 
 One way to add alternative descriptions to images is through visually hidden
 text. When you use this method, the text will be read by screen readers because
@@ -227,8 +227,8 @@ visual and the action conveyed in one image.
 ### Complex images
 
 A [complex image](https://www.w3.org/WAI/tutorials/images/complex/) often
-requires more explanation  Comment start than a decorative, informational, or
-functional image Comment end . It requires both a short and a long alternative
+requires more explanation than a decorative, informational, or
+functional image. It requires both a short and a long alternative
 description to convey the full message. Complex images include infographics,
 maps, graphs/charts, and complex illustrations. As with the other
 image types, there are different methods you can use to add alternative
@@ -298,7 +298,7 @@ practices](https://www.w3.org/WAI/tutorials/images/tips/) include:
 * Avoid using words like "image of" or "photo of" in the description, as the
   screen reader will identify these file types for you.
 * When naming your images, be as consistent and accurate as possible. Image
-  names are a fallback when the alternative text is missing or ignored. 
+  names are a fallback when the alternative text is missing or ignored.
 * Avoid using non-alpha characters (for example, #, 9, &) and use dashes
   between words rather than underscores in your image names or alternative text.
 * Use proper punctuation whenever possible. Without it, the image descriptions

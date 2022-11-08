@@ -12,7 +12,7 @@ tags:
 
 Along with structure, there are many supporting HTML elements to consider when
 building and designing for digital accessibility. Throughout the Learn
-Accessibility course, we cover a lot of elements. 
+Accessibility course, we cover a lot of elements.
 
 This module focuses on very specific elements that don't quite fit into any of
 the other modules but are useful to understand.
@@ -79,7 +79,7 @@ title, so be sure to limit your total page title characters.
 
 ### Page language
 
-The page language attribute ([`lang`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang)) sets the default language for the entire page. This attribute is added to the [`<html>`](https://developer.mozilla.org/docs/Web/HTML/Element/html) tag. A valid language attribute should be added to every page as it signals the AT to which language it should use. 
+The page language attribute ([`lang`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang)) sets the default language for the entire page. This attribute is added to the [`<html>`](https://developer.mozilla.org/docs/Web/HTML/Element/html) tag. A valid language attribute should be added to every page as it signals the AT to which language it should use.
 
 It's recommended that you use two-character
 [ISO language codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
@@ -108,9 +108,9 @@ digital product and a frustrated user.
 
 ### Section language
 
-You can also use the language attribute ([lang](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang)) for language switches in the content itself. The same basic rules apply as the full-page language attribute, except you add it to the appropriate in-page element instead of on the `<html> tag.
+You can also use the language attribute ([lang](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang)) for language switches in the content itself. The same basic rules apply as the full-page language attribute, except you add it to the appropriate in-page element instead of on the `<html>` tag.
 
-Remember that the language you add to the `<html> element cascades down to all the contained elements, so always set the primary language of the page top-level `lang` attribute first. Then for any in-page elements written in a different language, add that lang attribute to the appropriate wrapper element. Doing this will override the top-level language setting until that element is closed. 
+Remember that the language you add to the `<html>` element cascades down to all the contained elements, so always set the primary language of the page top-level `lang` attribute first. Then for any in-page elements written in a different language, add that lang attribute to the appropriate wrapper element. Doing this will override the top-level language setting until that element is closed.
 
 <div class="switcher">
 {% Compare 'worse' %}
