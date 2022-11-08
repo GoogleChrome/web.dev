@@ -766,9 +766,9 @@ There's a lot to consider when you create menus and menu bars, with whether it's
 
 -  [Fixing Lists](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html) by Scott O'hara.
 -  [Don't Use ARIA Menu Roles for Site Nav](https://adrianroselli.com/2017/10/dont-use-aria-menu-roles-for-site-nav.html) by Adrian Roselli.
--  [Menus & Menu Buttons](https://www.notion.so/Sat-kabel-checken-32dbdc65502240db8a06c38aba55e8f9) by Heydon Pickering.
+-  [Menus & Menu Buttons](https://inclusive-components.design/menus-menu-buttons/) by Heydon Pickering.
 -  [WAI-ARIA menus, and why you should handle them with great care](https://www.marcozehe.de/wai-aria-menus-use-with-care/) by Marco Zehe.
 -  [Hiding content responsibly](https://kittygiraudel.com/2021/02/17/hiding-content-responsibly/) by Kitty Giraudel.
--  [:focus-visible Is Here](https://www.notion.so/Build-the-main-navigation-of-a-website-1962225cf9154812ab7b8032c1c0aaa6) by Matthias Ott.
+-  [:focus-visible Is Here](https://matthiasott.com/notes/focus-visible-is-here) by Matthias Ott.
 
 _Hero image by [Mick Haupt](https://unsplash.com/@rocinante_11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
