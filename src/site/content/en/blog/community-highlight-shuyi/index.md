@@ -7,11 +7,13 @@ hero: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
 alt: 'Learn Accessibility! Community highlight.'
 thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
 subhead: >
-  Olutimilehin Olushuyi is a lawyer, new to accessibility. We talked about his battle with JavaScript,
-  international standards, and the importance of reading a website's contents.
+  Olutimilehin Olushuyi is a lawyer, new to accessibility. We talked about
+  his battle with JavaScript, international standards, and the importance
+  of reading a website's contents.
 description: >
-  One of a series of interviews with people from the web development community who
-  work in web accessibility. This time I spoke with Olutimilehin Olushuyi.
+  One of a series of interviews with people from the web development
+  community who work in web accessibility. This time we spoke with
+  Olutimilehin Olushuyi.
 date: 2022-11-09
 tags:
   - blog
@@ -119,6 +121,10 @@ build things.
 
 So much accessibility infrastructure work doesn't get attention at all, and it
 breaks my heart.
+
+{% Aside %}
+Learn how to improve your [content structure](/learn/accessibility/structure/).
+{% endAside %}
 
 **Alexandra**: How did you do your research to make sure the advice you gave in
 the article was correct?
@@ -244,7 +250,11 @@ liabilities. They trust you to know the law."
 Of course, so many businesses are seeking accessibility help because they are
 legally required, and not just because it's the right thing. Capitalism is the
 reason accessibility is being implemented. At the end of the day, it doesn't
-matter why it happened, it matters that the product is accessible. 
+matter why it happened, it matters that the product is accessible.
+
+{% Aside %}
+Learn more about the [business impact of digital accessibility](/learn/accessibility/why/#business-impact).
+{% endAside %}
 
 I put a pause on freelancing until I have full confidence that I can help
 clients with the laws of their region. Standardization is critical, the efforts
@@ -286,8 +296,14 @@ What's one thing you want developers to do to make their site accessible?
 **Shuyi**: Keyboard focus. I am begging from the bottom of my heart. My
 trackpad currently doesn't work, so when I'm on the go, I rely on my keyboard
 to navigate the web, and almost every website is horrible. Keyboard focus
-doesn't just benefit disabled people. Building accessible platforms benefits
-everyone.
+doesn't just benefit disabled people.
+
+Building accessible platforms benefits everyone.
+
+{% Aside %}
+Learn more about [keyboard focus](/learn/accessibility/focus/) in the latest
+module for Learn Accessibility!
+{% endAside %}
 
 <hr />
 
