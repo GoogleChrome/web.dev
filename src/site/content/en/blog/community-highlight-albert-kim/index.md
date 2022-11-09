@@ -116,7 +116,9 @@ or have another visible permanent disability, like those who require a
 wheelchair. But there are so many invisible disabilities, like mental health
 disabilities. 
 
-You're an invited expert to the W3C group, ​​the Cognitive and Learning Disabilities (COGA) Task Force and Mental Health subgroup. What is COGA?
+You're an invited expert to the W3C group, ​​the
+[Cognitive and Learning Disabilities Task Force](https://www.w3.org/WAI/GL/task-forces/coga/)
+and Mental Health subgroup. What is COGA?
 
 **Albert**: The COGA task force is a joint commitment of the Accessible
 Platform Architecture (APA) Working Group and the Web Content Accessibility
