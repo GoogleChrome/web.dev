@@ -17,7 +17,7 @@ tags:
 ---
 
 <figure>
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/roVI1kelp323efzmIs7X.jpeg", alt="Lars presenting on stage with two other speakers", width="800", height="600" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/roVI1kelp323efzmIs7X.jpeg", alt="Lars presenting on stage with two other speakers.", width="800", height="600" %}
 </figure>
 
 **Monika:** What inspired you to become a developer? What’s your current professional focus?
