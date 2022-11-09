@@ -10,7 +10,7 @@ subhead: >
   Lars Knudsen is a Google Developer Expert, we talked to him about how a $10 device can make computers more accessible for people with disabilities.
 description: >
   One of a series of interviews with members of the Google Developers Experts (GDE) program.
-date: 2022-11-04
+date: 2022-11-09
 tags:
   - blog
   - community
