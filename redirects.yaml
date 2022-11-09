@@ -343,11 +343,11 @@ redirects:
     destination:  https://developer.chrome.com/articles/mediastreamtrack-insertable-media-processing/
   - source: /pwa-url-handler
     destination: https://developer.chrome.com/articles/pwa-url-handler/
-    source: /reporting-api-migration
+  - source: /reporting-api-migration
     destination: https://developer.chrome.com/articles/reporting-api-migration/
-    source: /reporting-api
+  - source: /reporting-api
     destination: https://developer.chrome.com/articles/reporting-api/
-    source: /urlpattern
+  - source: /urlpattern
     destination: https://developer.chrome.com/articles/urlpattern/
 
   # Redirect for Aurora
