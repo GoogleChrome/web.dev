@@ -41,7 +41,7 @@ The service worker layer has its **own lifecycle** independent of the browser ta
 
 In the [Service Workies](https://serviceworkies.com) game we cover the many details of the service worker lifecycle and give you a ton of practice working with it.
 
-{% Img src="image/admin/mOyHcAJW55YiI12VW05a.gif", alt="a new service worker replacing an old one", width="800", height="460" %}
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/MhBc1XtdrEGOQn8iXtKZ.mp4", alt="a new service worker replacing an old one", width="800", height="460" %}
 
 {% Aside 'note' %}
 Think of your service worker as a new middle layer with its own lifecycle and methods for updating.
@@ -74,7 +74,7 @@ An active service worker goes on living even after a user leaves your site or cl
 
 In [Service Workies](https://serviceworkies.com) we visualize this concept with Kolohe (a friendly service worker) intercepting and handling requests.
 
-{% Img src="image/admin/YcXrupDTu2m7nlRU4FAz.gif", alt="service worker intercepting http requests", width="800", height="605" %}
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BeJWEOe4TPoMzdBTFVWI.mp4", alt="service worker intercepting http requests", width="800", height="605" %}
 
 ### Stopped
 
@@ -203,4 +203,4 @@ Getting into the right mindset while thinking about service workers will help yo
 
 If you want to understand all this by [playing a game](https://gedd.ski/post/mastery-through-play/), then you're in luck! Go play [Service Workies](https://serviceworkies.com) where you'll learn the ways of the service worker in order to slay the offline beasts.
 
-{% Img src="image/admin/HN8hJsK415482mqXmiaI.gif", alt="preview of the Service Workies game", width="800", height="519" %}
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ammLWAa5Kc13D5CgstvK.mp4", alt="preview of the Service Workies game", width="800", height="519" %}
