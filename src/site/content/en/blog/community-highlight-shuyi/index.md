@@ -137,8 +137,7 @@ are what experts interpret from the law.
 I decided to refer only to the primary sources: the HTML, WCAG, and WAI-ARIA
 specs. I read other people's works, a lot of good work. But, at the end of the
 day, the opinions were so divergent, I decided I could only take them as useful
-context but not rely on them as having the right answers. That was definitely
-the right choice.
+context but not rely on them as having the right answers.
 
 ## Build an accessible community
 
