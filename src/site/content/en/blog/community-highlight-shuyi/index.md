@@ -12,7 +12,7 @@ subhead: >
 description: >
   One of a series of interviews with people from the web development community who
   work in web accessibility. This time I spoke with Olutimilehin Olushuyi.
-date: 2022-11-10
+date: 2022-11-09
 tags:
   - blog
   - accessibility
