@@ -73,7 +73,7 @@ accessibility because of my personal experience as someone with a disability,
 but also with a love for digital products. I really, really love a good
 product. Useful, functional products.
 
-We often use the phrase "[assistive technology](https://web.dev/learn/accessibility/glossary/#at),"
+We often use the phrase "[assistive technology](/learn/accessibility/glossary/#at),"
 but all technologies are assistive. I'm passionate about digital products that
 help improve my life, that make my life easier. I want to connect consumers
 with the producers of digital products, and digital accessibility is
