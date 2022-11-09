@@ -209,6 +209,12 @@ semantic structure. Clear headings can be very helpful for users with OCD,
 ADHD, or dyslexia. Even for me, and my anxiety as well. All of these illnesses
 share some pain points, they're interconnected. 
 
+{% Aside 'codelab' %}
+Take the Learn Accessibility module on
+[Content structure](/learn/accessibility/structure) to read about semantic HTML,
+landmarks, data tables, and more.
+{% endAside %}
+
 ## Stop building bad user experiences
 
 **Alexandra**: Okay, what about the opposite? What are people building that is
