@@ -122,8 +122,10 @@ build things.
 So much accessibility infrastructure work doesn't get attention at all, and it
 breaks my heart.
 
-{% Aside %}
-Learn how to improve your [content structure](/learn/accessibility/structure/).
+{% Aside 'codelab' %}
+Take the Learn Accessibility module on
+[Content structure](/learn/accessibility/structure) to read about semantic HTML,
+landmarks, data tables, and more.
 {% endAside %}
 
 **Alexandra**: How did you do your research to make sure the advice you gave in
@@ -251,7 +253,7 @@ legally required, and not just because it's the right thing. Capitalism is the
 reason accessibility is being implemented. At the end of the day, it doesn't
 matter why it happened, it matters that the product is accessible.
 
-{% Aside %}
+{% Aside 'codelab' %}
 Learn more about the [business impact of digital accessibility](/learn/accessibility/why/#business-impact).
 {% endAside %}
 
@@ -299,9 +301,10 @@ doesn't just benefit disabled people.
 
 Building accessible platforms benefits everyone.
 
-{% Aside %}
-Learn more about [keyboard focus](/learn/accessibility/focus/) in the latest
-module for Learn Accessibility!
+{% Aside 'codelab' %}
+Take the Learn Accessibility module on
+[Keyboard focus](/learn/accessibility/focus/) to discover how to
+ensure all users can navigate your content.
 {% endAside %}
 
 <hr />
