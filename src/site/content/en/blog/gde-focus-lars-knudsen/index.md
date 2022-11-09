@@ -63,7 +63,7 @@ Another thing is that the toolchains for building embedded solutions have a stee
 
 You could also buy a heart rate monitor or a multisensor unit, which are already using Bluetooth GATT services, so you don’t have to build your own hardware or firmware—you can use what’s already there and start experimenting with the Web Bluetooth API to start communicating with it.
 
-There are also devices that use a serial protocol—for these, you can use the serial API ([also Fugu](https://fugu-tracker.web.app/)). Recently I’ve been looking into using the WebHID API, which enables you to talk to all the human interface devices that everyone has access to. I found some old ones in my basement that had not been supported by any operating system for years, but thanks to reverse engineering it took me a few hours to re-enable them.
+There are also devices that use a serial protocol—for these, you can use the [Web Serial API](https://developer.mozilla.org/docs/Web/API/Web_Serial_API) ([also Fugu](https://fugu-tracker.web.app/)). Recently I’ve been looking into using the [WebHID API](https://developer.mozilla.org/docs/Web/API/WebHID_API), which enables you to talk to all the human interface devices that everyone has access to. I found some old ones in my basement that had not been supported by any operating system for years, but thanks to reverse engineering it took me a few hours to re-enable them.
 
 There are different approaches depending on what you want to build, but to a web developer I would say, get a solid sensor unit, maybe a Thingy 52 from Nordic Semiconductor; it has a lot of sensors, and you can hook up to your web application with very little effort.
 
