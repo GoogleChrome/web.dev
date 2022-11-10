@@ -230,7 +230,7 @@ time](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event)).
 So browsers are faced with a dilemma, they have to choose between something that
 can improve the user experience—but might also risk breaking the page.
 
-On Desktop Chrome and Firefox have chosen to make pages ineligible for bfcache if they add an `unload`
+On desktop, Chrome and Firefox have chosen to make pages ineligible for bfcache if they add an `unload`
 listener, which is less risky but also disqualifies _a lot_ of pages. Safari
 will attempt to cache some pages with an `unload` event listener, but to reduce
 potential breakage it will not run the `unload` event when a user is navigating
