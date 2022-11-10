@@ -25,6 +25,13 @@ _This post highlights a community expert, as a part of [Learn Accessibility!](/l
 
 **Alexandra White**: How'd you get started with web accessibility?
 
+<figure data-float="right">
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/gAeaexQOr9TO1FaNvpqb.jpeg", alt="Olutimilehin Olushuyi's headshot.",
+  width="350", height="334"
+%}
+</figure>
+
 **Olutimilehin Olushuyi (Shuyi)**: Okay, so, it's a funny story. I'm a lawyer.
 I realized in my final year of school, I didn't want to practice law for the
 rest of my life. So, I tried to drop out of school, but my dean and "school
