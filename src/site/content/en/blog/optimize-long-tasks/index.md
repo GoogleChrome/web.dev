@@ -5,7 +5,7 @@ subhead: |
 authors:
   - jlwagner
 date: 2022-09-30
-updated: 2022-10-03
+updated: 2022-11-15
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/MpP0GrDpLMztUsdMocP9.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Eup7oLu7L0bglCH4YPGq.jpg
 alt: A photograph of a spool of purple thread unraveling to the right until it goes out of the frame.
@@ -293,6 +293,68 @@ async function saveSettings () {
 ```
 
 With this approach, you get a fallback for browsers that don't support `isInputPending()` by using a time-based approach that uses (and adjusts) a deadline so that work will be broken up where necessary, whether by yielding to user input, or by a certain point in time.
+
+### Frame-aware yielding
+
+Now for a more nuanced approach, which is something you could call "frame-aware" yielding. This yielding technique is a bit different than the ones outlined previously. Yet, the effects of it are more aware of when a frame needs to be presented, and does its best to yield when this is the case:
+
+```js
+function frameAwareYield (needsFrameAfterInput) {
+  return new Promise(resolve => {
+    if (needsFrameAfterInput) {
+      requestAnimationFrame(() => {
+        setTimeout(resolve, 0);
+      });
+    } else { 
+      setTimeout(resolve, 0);
+    }
+  });
+}
+```
+
+`frameAwareYield` takes one argument, which is a boolean produced by `isInputPending`. What's being done here is that if `isInputPending` returns `true`, the `frameAwareYield` calls the promise's `resolve` function _inside_ of a `requestAnimationFrame` call. The result is that the yield point is created _just before_ any rendering work that needs to be done. If there is no pending input, a yield point using `setTimeout` is done the same as before.
+
+You could certainly use `frameAwareYield` much the same way as other yielding functions, but there's a more intelligent way to use it. The first part is to construct a library function to run tasks:
+
+```js
+async function queueForLater (tasks) {
+  while (tasks.length > 0) {
+    if (navigator?.scheduling?.isInputPending()) {
+      await frameAwareYield(true);
+    } else {
+      const task  = tasks.shift();
+
+      task();
+    }
+  }
+}
+```
+
+This function takes an array of functions to run, very similar to how it was done in previous examples of the `saveSettings` function. `queueForLater` will loop over tasks until the task queue is empty. During each iteration of the `while` loop, `isInputPending` is called. If it returns `true`, `frameAwareYield` is called with its `needsFrameAfterInput` argument set to `true`, and sits out this iteration of the loop. Otherwise, the task is shifted off the array, and ran.
+
+Then in the `saveSettings` function, something a bit different is done:
+
+```js
+async function saveSettings () {
+  validateForm();
+  showSpinner();
+
+  const tasks = [
+    saveToDatabase,
+    updateUI,
+    sendAnalytics
+  ];
+
+  queueForLater(tasks);
+}
+```
+
+This function initially runs two pieces of critical work that will eventually update the UI to show a spinner. This guarantees that this work is done immediately after the user input, without any yielding. After this, the remaining tasks are sent to `queueForLater`, which manages yielding.
+
+The result is similar to `yieldToMain`, but has a benefit in situations where there is more work going on. Most importantly, it asks the question 
+"when should I yield?", and if so, it will yield in a way that's aware of any potential rendering work. Otherwise, it yields normally.
+
+In an ideal world, there would be [a better way](https://github.com/szager-chromium/isFramePending/blob/master/explainer.md) to figure out if a frame is pending, but by inferring that rendering work needs to be done as the result of a pending user input `isInputPending`, the result is a yielding mechanism that takes a bit more into account rather than just yielding all the time, or yielding with only `setTimeout` if there is a pending user input.
 
 ## Gaps in current APIs
 
