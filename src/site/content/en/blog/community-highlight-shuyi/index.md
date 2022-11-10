@@ -248,7 +248,7 @@ opposite things. What would you do in those cases?
 
 **Shuyi**: I thought about launching a business for freelance accessibility
 work. I went into a global web accessibility chat channel and asked for tips on
-how to get started. [Adrian Russell](https://adrianrussell.co.uk/) reached out
+how to get started. [Adrian Roselli](https://adrianroselli.com/) reached out
 and said, "Your clients will be relying on you to keep them compliant with laws
 which could have major consequences. Before you offer your services, know what
 region you have expertise in. Know what laws you're familiar with so that,
