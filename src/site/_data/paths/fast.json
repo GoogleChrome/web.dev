@@ -89,7 +89,8 @@
       "pathItems": [
         "third-party-javascript",
         "identify-slow-third-party-javascript",
-        "efficiently-load-third-party-javascript"
+        "efficiently-load-third-party-javascript",
+        "tag-best-practices"
       ]
     },
     {
