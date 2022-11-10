@@ -52,13 +52,13 @@ An interaction is one or more discrete user input actions. More than one interac
 
 ### What is an event?
 
-Interactions are driven by events. Events fire callbacks during the same logical user gesture. For example, tap interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. While JavaScript is a common handler of interactivity, interactions can also be handled by CSS and built-in browser controls (such as `<input>` elements, for example).
+Interactions are driven by events. Events fire callbacks during the same logical user gesture. For example, tap interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. While JavaScript is a common handler of interactivity, interactions can also be powered by CSS and built-in browser controls (such as `<input>` elements, for example).
 
 The time it takes to queue up an interaction, including the time it takes for the event callbacks for the interaction to run, and the time it takes to present the next frame that shows the result of the interaction is known as the _event duration_.
 
 ### How is INP calculated?
 
-Event duration for every interaction&mdash;or INP candidate&mdash;is recorded throughout the page lifecycle. In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the INP candidate with the highest latency is chosen as the page's INP when the user is done with the page.
+Event duration for every interaction is recorded throughout the page lifecycle. In cases where there are few interactions made with a page&mdash;less than 50 to be exact&mdash;the INP candidate with the highest latency is chosen as the page's INP when the user is done with the page.
 
 In cases where there are many interactions with a page, the worst INP candidate may be an outlier that would unfairly penalize a page that otherwise may have had many satisfactory interactions. The more interactions, the more likely an outlier interaction will be experienced. For this reason, where there are many interactions with a page&mdash;50 or more to be specific&mdash;we exclude an increasing number of the the worst interactions, to look at an INP candidate that is more representative of how responsive the page was overall for the user.
 
@@ -125,7 +125,7 @@ Chosen INP candidate by number of interactions.
 
 {% endDetails %}
 
-An interaction's latency consists of the single longest [duration](https://w3c.github.io/event-timing/#ref-for-dom-performanceentry-duration%E2%91%A1:~:text=The%20Event%20Timing%20API%20exposes%20a%20duration%20value%2C%20which%20is%20meant%20to%20be%20the%20time%20from%20when%20user%20interaction%20occurs%20(estimated%20via%20the%20Event%27s%20timeStamp)%20to%20the%20next%20time%20the%20rendering%20of%20the%20Event%27s%20relevant%20global%20object%27s%20associated%20Document%E2%80%99s%20is%20updated) of a group of event callbacks that drives the interaction, from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
+An interaction's latency consists of the single longest [duration](https://w3c.github.io/performance-timeline/#dom-performanceentry-duration) of a group of event callbacks that drives the interaction, from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
 
 {% Aside 'important' %}
 For more details on how INP is measured, read the ["What's in an interaction?"](#whats-in-an-interaction) section.
