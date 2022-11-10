@@ -153,7 +153,8 @@ such as the main content on a website, via a skip link.
 
 The [`:link`](https://developer.mozilla.org/docs/Web/CSS/:link)
 pseudo-class can be applied to any `<a>` element that has a `href` value that **hasn't been** visited yet.
-`:visited`
+
+### `:visited`
 
 You can style a link that's already been visited by the user using the
 [`:visited`](https://developer.mozilla.org/docs/Web/CSS/:visited) pseudo-class.
