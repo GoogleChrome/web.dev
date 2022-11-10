@@ -339,6 +339,16 @@ redirects:
     destination: https://developer.chrome.com/articles/periodic-background-sync/
   - source: /eyedropper
     destination: https://developer.chrome.com/articles/eyedropper/
+  - source: /contact-picker
+    destination: https://developer.chrome.com/articles/contact-picker/
+  - source: /multi-screen-window-placement
+    destination: https://developer.chrome.com/articles/multi-screen-window-placement/
+  - source: /shape-detection
+    destination: https://developer.chrome.com/articles/shape-detection/
+  - source: /url-protocol-handler
+    destination: https://developer.chrome.com/articles/url-protocol-handler/
+  - source: /websocketstream
+    destination: https://developer.chrome.com/articles/websocketstream/
   - source: /web-share-target
     destination: https://developer.chrome.com/articles/web-share-target/
   - source: /local-fonts
