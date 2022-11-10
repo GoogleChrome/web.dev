@@ -349,6 +349,22 @@ redirects:
     destination: https://developer.chrome.com/articles/reporting-api/
   - source: /urlpattern
     destination: https://developer.chrome.com/articles/urlpattern/
+  - source: /contact-picker
+    destination: https://developer.chrome.com/articles/contact-picker/
+  - source: /multi-screen-window-placement
+    destination: https://developer.chrome.com/articles/multi-screen-window-placement/
+  - source: /shape-detection
+    destination: https://developer.chrome.com/articles/shape-detection/
+  - source: /url-protocol-handler
+    destination: https://developer.chrome.com/articles/url-protocol-handler/
+  - source: /websocketstream
+    destination: https://developer.chrome.com/articles/websocketstream/
+  - source: /web-share-target
+    destination: https://developer.chrome.com/articles/web-share-target/
+  - source: /local-fonts
+    destination: https://developer.chrome.com/articles/local-fonts/
+  - source: /notification-triggers
+    destination: https://developer.chrome.com/docs/web-platform/notification-triggers/
 
   # Redirect for Aurora
   - source: /aurora
