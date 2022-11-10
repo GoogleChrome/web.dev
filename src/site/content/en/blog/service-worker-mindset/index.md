@@ -79,7 +79,12 @@ An active service worker goes on living even after a user leaves your site or cl
 
 In [Service Workies](https://serviceworkies.com) we visualize this concept with Kolohe (a friendly service worker) intercepting and handling requests.
 
-{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BeJWEOe4TPoMzdBTFVWI.mp4", alt="service worker intercepting http requests", width="800", height="605" %}
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BeJWEOe4TPoMzdBTFVWI.mp4", 
+autoplay="true",
+controls="true", 
+loop="true",
+muted="true",
+alt="service worker intercepting http requests", width="800", height="605" %}
 
 ### Stopped
 
@@ -208,4 +213,9 @@ Getting into the right mindset while thinking about service workers will help yo
 
 If you want to understand all this by [playing a game](https://gedd.ski/post/mastery-through-play/), then you're in luck! Go play [Service Workies](https://serviceworkies.com) where you'll learn the ways of the service worker in order to slay the offline beasts.
 
-{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ammLWAa5Kc13D5CgstvK.mp4", alt="preview of the Service Workies game", width="800", height="519" %}
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ammLWAa5Kc13D5CgstvK.mp4",
+autoplay="true",
+controls="true", 
+loop="true",
+muted="true",
+alt="preview of the Service Workies game", width="800", height="519" %}
