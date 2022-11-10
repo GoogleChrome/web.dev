@@ -96,8 +96,8 @@
     {
       "title": "i18n.paths.fast.topics.optimize_webfonts",
       "pathItems": [
+        "font-best-practices/",
         "avoid-invisible-text",
-        "optimize-webfont-loading",
         "reduce-webfont-size"
       ]
     },
