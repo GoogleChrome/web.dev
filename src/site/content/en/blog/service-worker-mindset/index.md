@@ -41,7 +41,12 @@ The service worker layer has its **own lifecycle** independent of the browser ta
 
 In the [Service Workies](https://serviceworkies.com) game we cover the many details of the service worker lifecycle and give you a ton of practice working with it.
 
-{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/MhBc1XtdrEGOQn8iXtKZ.mp4", alt="a new service worker replacing an old one", width="800", height="460" %}
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/MhBc1XtdrEGOQn8iXtKZ.mp4",
+autoplay="true",
+controls="true", 
+loop="true",
+muted="true",
+alt="a new service worker replacing an old one", width="800", height="460" %}
 
 {% Aside 'note' %}
 Think of your service worker as a new middle layer with its own lifecycle and methods for updating.
