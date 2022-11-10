@@ -339,6 +339,8 @@ async function saveSettings () {
   validateForm();
   showSpinner();
 
+  await frameAwareYield(true);
+
   const tasks = [
     saveToDatabase,
     updateUI,
@@ -349,7 +351,7 @@ async function saveSettings () {
 }
 ```
 
-This function initially runs two pieces of critical work that will eventually update the UI to show a spinner. This guarantees that this work is done immediately after the user input, without any yielding. After this, the remaining tasks are sent to `queueForLater`, which manages yielding.
+This function initially runs two pieces of critical work that will eventually update the UI to show a spinner. This guarantees that this work is done immediately after the user input, without any yielding. After this, we explicitly yield via `frameAwareYield`, then remaining tasks are ran by `queueForLater`, which creates subsequent yield points when necessary.
 
 The result is similar to `yieldToMain`, but has a benefit in situations where there is more work going on. Most importantly, it asks the question 
 "when should I yield?", and if so, it will yield in a way that's aware of any potential rendering work. Otherwise, it yields normally.
