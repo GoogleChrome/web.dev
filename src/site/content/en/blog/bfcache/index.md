@@ -8,7 +8,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-11-10
-updated: 2022-10-26
+updated: 2022-11-10
 hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
@@ -230,11 +230,11 @@ time](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event)).
 So browsers are faced with a dilemma, they have to choose between something that
 can improve the user experience—but might also risk breaking the page.
 
-Chrome and Firefox have chosen to make pages ineligible for bfcache if they add an `unload`
+On Desktop Chrome and Firefox have chosen to make pages ineligible for bfcache if they add an `unload`
 listener, which is less risky but also disqualifies _a lot_ of pages. Safari
 will attempt to cache some pages with an `unload` event listener, but to reduce
 potential breakage it will not run the `unload` event when a user is navigating
-away, which makes the event very unreliable.
+away, which makes the event very unreliable. Mobile browsers will attempt to cache some pages with an `unload` event listener but the `unload` event is even unreliable on mobile as processes are often killed to save memory.
 
 Instead of using the `unload` event, use the `pagehide` event. The `pagehide`
 event fires in all cases where the `unload` event currently fires, and it
