@@ -234,7 +234,7 @@ On desktop, Chrome and Firefox have chosen to make pages ineligible for bfcache 
 listener, which is less risky but also disqualifies _a lot_ of pages. Safari
 will attempt to cache some pages with an `unload` event listener, but to reduce
 potential breakage it will not run the `unload` event when a user is navigating
-away, which makes the event very unreliable. Mobile browsers will attempt to cache some pages with an `unload` event listener but the `unload` event is even unreliable on mobile as processes are often killed to save memory.
+away, which makes the event very unreliable. Mobile browsers will attempt to cache some pages with an `unload` event listener but the `unload` event is extremely unreliable on mobile as processes are killed to save resources.
 
 Instead of using the `unload` event, use the `pagehide` event. The `pagehide`
 event fires in all cases where the `unload` event currently fires, and it
