@@ -468,7 +468,7 @@ in order to see the theme color and favicon changes, open the
 
 ```js
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-darkModeMediaQuery.addListener((e) => {
+darkModeMediaQuery.addEventListener('change', (e) => {
   const darkModeOn = e.matches;
   console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
 });

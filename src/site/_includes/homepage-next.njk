@@ -63,31 +63,8 @@ externalScripts:
   {# Optional divider between promo (if both enabled) #}
   {# <hr /> #}
 
-  {# Page speed starts #}
-  <article class="hero bg-core-bg homepage__page-speed-hero">
-    <div class="wrapper">
-      <div class="hero__columns switcher" data-direction="rev">
-        <div class="flow">
-          <img src="{{ pageSpeed.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ pageSpeed.imageWidth }}" height="{{ pageSpeed.imageHeight }}" />
-        </div>
-        <div>
-          <span aria-hidden="true" class="hero__eyebrow">{{ pageSpeed.eyebrow }}</span>
-          <div class="hero__content flow gap-top-size-5">
-            <h1 class="hero__title">{{ pageSpeed.title }}</h1>
-            {{ pageSpeed.summary | md | safe }}
-            <div class="cluster gutter-base flow-space-size-2">
-              <a class="button" data-type="primary" href="{{ pageSpeed.primaryButtonUrl }}">{{ pageSpeed.primaryButtonText }}</a>
-              <a class="button" data-type="secondary" href="{{ pageSpeed.secondaryButtonUrl }}">{{ pageSpeed.secondaryButtonText }}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-  {# Page speed ends #}
-
   {# Courses start #}
-  <div class="homepage__section bg-mid-bg">
+  <div class="homepage__section">
     <div class="wrapper">
       <div class="headline all-center flow">
         <h2 class="headline__title">{{ courses.title }}</h2>
@@ -104,7 +81,7 @@ externalScripts:
   {# Courses end #}
 
   {# Case studies start #}
-  <div class="homepage__section">
+  <div class="homepage__section bg-mid-bg">
     <div class="wrapper">
       <div class="headline all-center flow">
         <h2 class="headline__title">{{ caseStudies.title }}</h2>

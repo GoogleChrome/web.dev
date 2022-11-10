@@ -349,6 +349,12 @@ redirects:
     destination: https://developer.chrome.com/articles/url-protocol-handler/
   - source: /websocketstream
     destination: https://developer.chrome.com/articles/websocketstream/
+  - source: /web-share-target
+    destination: https://developer.chrome.com/articles/web-share-target/
+  - source: /local-fonts
+    destination: https://developer.chrome.com/articles/local-fonts/
+  - source: /notification-triggers
+    destination: https://developer.chrome.com/docs/web-platform/notification-triggers/
 
   # Redirect for Aurora
   - source: /aurora
