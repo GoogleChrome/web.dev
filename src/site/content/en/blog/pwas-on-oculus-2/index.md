@@ -310,7 +310,7 @@ PWAs for Meta Quest devices.
 It can generate *universal* APKs that open a TWA on regular Android devices and open Meta Quest
 Browser on Meta Quest devices, so it can be published to the Google Play Store and the Meta Quest Store.
 
-Assuming you have [Node.js](https://nodejs.org) installed. Bubblewrap CLI can be installed with the
+Assuming you have [Node.js](https://nodejs.org) installed, Bubblewrap CLI can be installed with the
 following command:
 
 ```bash
