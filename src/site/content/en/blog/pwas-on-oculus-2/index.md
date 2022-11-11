@@ -360,7 +360,7 @@ generate an APK for your PWA using a local manifest file and the `--manifest-con
 parameter.
 
 To leave the manifest as pure as possible, use the `--package-name` parameter with a value in
-reverse domain name notation (e.g., `com.company.app.pwa`), rather than adding the proprietary
+reverse domain name notation (for example, `com.company.app.pwa`), rather than adding the proprietary
 `ovr_package_name` field to the manifest.
 
 ```bash
