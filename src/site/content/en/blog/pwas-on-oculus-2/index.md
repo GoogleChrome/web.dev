@@ -337,9 +337,11 @@ bubblewrap build
 This will output a file called `app-release-signed.apk`. This file can be installed on the device
 or uploaded to the Meta Quest Store and the Google Play Store.
 
-{% Aside 'important' %} You can also use the `--chromeosonly` flag in addition to the `--metaquest`
-flag to make the APK compatible not only with Meta Quest and regular Android devices, but also with
-[ChromeOS](https://chromeos.dev) devices. {% endAside %}
+{% Aside 'note' %}
+Pro tip: you can also use the `--chromeosonly` flag in addition to the `--metaquest` flag to make
+the APK compatible not only with Meta Quest and regular Android devices, but also with
+[ChromeOS](https://chromeos.dev) devices.
+{% endAside %}
 
 ### Packaging PWAs with Oculus Platform Utility
 
@@ -387,8 +389,9 @@ button.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/sWjB34HjwjatCMUz39Q3.png", alt="Packaging PWAs for Meta Quest with PWABuilder.", width="800", height="450" %}
 
-{% Aside %} Pro tip: since PWABuilder is a PWA itself that works everywhere there is a browser, you
-can open it in the Meta Quest Browser and perform all the steps right on your Meta Quest.
+{% Aside 'note' %}
+Pro tip: since PWABuilder is a PWA itself that works everywhere there is a browser, you can open it
+in the Meta Quest Browser and perform all the steps right on your Meta Quest.
 {% endAside %}
 
 PWABuilder uses the `ovr-platform-util` under the hood to package PWAs for Meta Quest, but the size
@@ -397,8 +400,15 @@ is smaller thanks to the
 
 ### Installing PWAs with ADB
 
-After creating the APK, developers can sideload it to the Meta Quest device using the Android Debug
-Bridge (ADB) via USB or Wi-Fi:
+{% Aside 'important' %}
+To enable Android Debug Bridge (ADB) on the Meta Quest device, you must
+[enable developer mode](https://developer.oculus.com/documentation/native/android/mobile-device-setup/)
+in the companion mobile app. Before you can put your device in developer mode, you must belong to
+(or have created) a developer organization in the Oculus Developer Center.
+{% endAside %}
+
+After creating the APK, developers can sideload it to the Meta Quest device using the ADB via USB
+or Wi-Fi:
 
 ```bash
 adb install app-release-signed.apk
@@ -411,20 +421,20 @@ the APK:
 bubblewrap install
 ```
 
-{% Aside %} Pro tip: you can use [Android Web Toolbox](https://yume-chan.github.io/ya-webadb/install)
-to sideload the APK. It's an [open source](https://github.com/yume-chan/ya-webadb/) web app that
+{% Aside 'note' %}
+Pro tip: you can use [Android Web Toolbox](https://yume-chan.github.io/ya-webadb/install) to
+sideload the APK. It's an [open source](https://github.com/yume-chan/ya-webadb/) web app that
 allows you to access all ADB functionality right from the browser even from another Android device.
-No installation or drivers are required thanks to the [Web USB API](/usb/). {% endAside %}
-
-To enable ADB on the Meta Quest device, you must
-[enable developer mode](https://developer.oculus.com/documentation/native/android/mobile-device-setup/).
+No installation or drivers are required thanks to the [Web USB API](/usb/).
+{% endAside %}
 
 Sideloaded apps appear in an **Unknown Sources** section in the app drawer.
 
 ### App submission
 
-{% Aside %} Submission and consideration for the Oculus Store is only available if you have been
-approved as an Oculus Quest Store developer. Distribution of PWAs via
+{% Aside 'important' %}
+Submission and consideration for the Oculus Store is only available if you have been approved as an
+Meta Quest Store developer. Distribution of PWAs via
 [App Lab](https://developer.oculus.com/blog/introducing-app-lab-a-new-way-to-distribute-oculus-quest-apps/)
 is not currently available. The Meta team will share more on when and how you can submit a PWA to
 App Lab soon.
