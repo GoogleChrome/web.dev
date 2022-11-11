@@ -376,7 +376,7 @@ be run on regular Android devices.
 Using [PWABuilder](https://pwabuilder.com) is in the authors' view the easiest and therefore recommended way to package PWAs for
 Meta Quest at the moment.
 
-PWABuilder is an [open source](https://github.com/pwa-builder), community guided project founded by
+PWABuilder is an [open source](https://github.com/pwa-builder) project founded by
 Microsoft, that allows developers to package and sign their PWAs for publishing to various stores,
 including Microsoft Store, Google Play Store, App Store, and Meta Quest Store.
 
