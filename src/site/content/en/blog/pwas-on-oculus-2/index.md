@@ -320,7 +320,7 @@ npm i -g @bubblewrap/cli
 When running Bubblewrap for the first time, it will offer to automatically download and install the
 required external dependencies—Java Development Kit (JDK) and Android SDK Build Tools.
 
-To generate a Meta Quest compatible Android project that wraps your PWA just run the `init` command
+To generate a Meta Quest compatible Android project that wraps your PWA, run the `init` command
 with the `--metaquest` flag and follow the wizard:
 
 ```bash
