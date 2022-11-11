@@ -300,7 +300,7 @@ customize the PWA experience.
 
 [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) is an open source set of libraries and
 a command line tool (CLI) for Node.js developed by the Google Chrome team that helps developers
-generate, build and sign an Android project that launches your PWA as a
+generate, build, and sign an Android project that launches your PWA as a
 [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/) (TWA).
 
 Meta Quest Browser currently doesn't fully support TWA, but starting from version 1.18.0,
