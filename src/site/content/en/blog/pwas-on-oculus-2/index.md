@@ -399,7 +399,7 @@ After creating the APK, developers can sideload it to the Meta Quest device usin
 Bridge (ADB) via USB or Wi-Fi:
 
 ```bash
-adb install output.apk
+adb install app-release-signed.apk
 ```
 
 If you use Bubblewrap CLI for packaging PWAs, it provides a convenient alias command to sideload
