@@ -304,11 +304,12 @@ generate, build, and sign an Android project that launches your PWA as a
 [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/) (TWA).
 
 Meta Quest Browser currently doesn't fully support TWA, but starting from version 1.18.0,
-Bubblewrap [supports](https://github.com/GoogleChromeLabs/bubblewrap/releases/tag/v1.18.0) packaging
-PWAs for Meta Quest devices.
+Bubblewrap [supports](https://github.com/GoogleChromeLabs/bubblewrap/releases/tag/v1.18.0)
+packaging PWAs for Meta Quest devices.
 
 It can generate *universal* APKs that open a TWA on regular Android devices and open Meta Quest
-Browser on Meta Quest devices, so it can be published to the Google Play Store and the Meta Quest Store.
+Browser on Meta Quest devices, so it can be published to the Google Play Store and the Meta Quest
+Store.
 
 Assuming you have [Node.js](https://nodejs.org) installed, Bubblewrap CLI can be installed with the
 following command:
