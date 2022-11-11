@@ -49,11 +49,9 @@ include people with OCD, ADHD, dyslexia, and PTSD into the product development
 process.
 
 Offline, I'm a DEI community leader, blogger, huge foodie, photographer, and I
-love traveling—I travel a lot.
-
-I'm the first generation in my family to live abroad, the first generation to
-get any formal education. I was raised by a single mother in a low-income
-household. I'm a military veteran. 
+love traveling—I travel a lot. I'm the first generation in my family to live
+abroad, the first generation to get any formal education. I was raised by a
+single mother in a low-income household. I'm a military veteran. 
 
 I identify myself as someone who can empathize with a lot of different
 struggles and life stories.
