@@ -373,7 +373,7 @@ be run on regular Android devices.
 
 ### Packaging PWAs with PWABuilder
 
-Using [PWABuilder](https://pwabuilder.com) is the easiest and recommended way to package PWAs for
+Using [PWABuilder](https://pwabuilder.com) is in my view the easiest and therefore recommended way to package PWAs for
 Meta Quest at the moment.
 
 PWABuilder is an [open source](https://github.com/pwa-builder), community guided project founded by
