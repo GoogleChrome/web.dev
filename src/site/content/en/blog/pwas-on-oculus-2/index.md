@@ -307,7 +307,7 @@ Meta Quest Browser currently doesn't fully support TWA, but starting from versio
 Bubblewrap [supports](https://twitter.com/alexey_rodionov/status/1544374516767285249) packaging
 PWAs for Meta Quest devices.
 
-It can generate *universal* APKs that open TWA on regular Android devices and open Meta Quest
+It can generate *universal* APKs that open a TWA on regular Android devices and open Meta Quest
 Browser on Meta Quest devices, and can be published to Google Play Store and Meta Quest Store.
 
 Assuming you have [Node.js](https://nodejs.org) installed. Bubblewrap CLI can be installed with the
