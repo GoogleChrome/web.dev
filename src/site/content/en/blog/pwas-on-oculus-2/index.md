@@ -299,8 +299,8 @@ customize the PWA experience.
 ### Packaging PWAs with Bubblewrap CLI
 
 [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) is an open source set of libraries and
-a command line tool (CLI) for Node.js. Bubblewrap is developed by the Google Chrome team, to help developers
-generate, build, and sign an Android project that launches your PWA as a
+a command line tool (CLI) for Node.js. Bubblewrap is developed by the Google Chrome team, to help
+developers generate, build, and sign an Android project that launches your PWA as a
 [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/) (TWA).
 
 Meta Quest Browser currently doesn't fully support TWA, but starting from version 1.18.0,
@@ -360,8 +360,8 @@ generate an APK for your PWA using a local manifest file and the `--manifest-con
 parameter.
 
 To leave the manifest as pure as possible, use the `--package-name` parameter with a value in
-reverse domain name notation (for example, `com.company.app.pwa`), rather than adding the proprietary
-`ovr_package_name` field to the manifest.
+reverse domain name notation (for example, `com.company.app.pwa`), rather than adding the
+proprietary `ovr_package_name` field to the manifest.
 
 ```bash
 ovr-platform-util create-pwa -o output.apk --android-sdk ~/bin/android-10 --manifest-content-file manifest.json --package-name com.company.app.pwa
@@ -412,9 +412,9 @@ bubblewrap install
 ```
 
 {% Aside %} Pro tip: you can use [Android Web Toolbox](https://yume-chan.github.io/ya-webadb/install)
-to sideload the APK. It's an [open source](https://github.com/yume-chan/ya-webadb/) web app that allows
-you to access all ADB functionality right from the browser even from another Android device. No
-installation or drivers are required thanks to the [Web USB API](/usb/). {% endAside %}
+to sideload the APK. It's an [open source](https://github.com/yume-chan/ya-webadb/) web app that
+allows you to access all ADB functionality right from the browser even from another Android device.
+No installation or drivers are required thanks to the [Web USB API](/usb/). {% endAside %}
 
 To enable ADB on the Meta Quest device, you must
 [enable developer mode](https://developer.oculus.com/documentation/native/android/mobile-device-setup/).
