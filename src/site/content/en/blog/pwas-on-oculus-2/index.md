@@ -373,12 +373,12 @@ be run on regular Android devices.
 
 ### Packaging PWAs with PWABuilder
 
-Using [PWABuilder](https://pwabuilder.com) is in the authors' view the easiest and therefore recommended way to package PWAs for
-Meta Quest at the moment.
+Using [PWABuilder](https://pwabuilder.com) is in the authors' view the easiest and therefore
+recommended way to package PWAs for Meta Quest at the moment.
 
-PWABuilder is an [open source](https://github.com/pwa-builder) project founded by
-Microsoft, that allows developers to package and sign their PWAs for publishing to various stores,
-including Microsoft Store, Google Play Store, App Store, and Meta Quest Store.
+PWABuilder is an [open source](https://github.com/pwa-builder) project developed by Microsoft,
+that allows developers to package and sign their PWAs for publishing to various stores, including
+Microsoft Store, Google Play Store, App Store, and Meta Quest Store.
 
 Packaging PWAs with PWABuilder is as easy as entering the URL of a PWA, selecting the platform
 (**Meta Quest** in this case), entering/editing metadata for the app, and clicking the **Generate**
@@ -391,7 +391,8 @@ can open it in the Meta Quest Browser and perform all the steps right on your Me
 {% endAside %}
 
 PWABuilder uses the `ovr-platform-util` under the hood to package PWAs for Meta Quest, but the size
-can be [smaller](https://github.com/pwa-builder/pwabuilder-oculus/pull/7) due to dead code removal.
+is smaller thanks to the
+[removal of unused code and resources](https://github.com/pwa-builder/pwabuilder-oculus/pull/7).
 
 ### Installing PWAs with ADB
 
