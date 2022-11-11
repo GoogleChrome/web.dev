@@ -336,7 +336,7 @@ bubblewrap build
 This will output a file called `app-release-signed.apk`. This file can be installed on the device
 or uploaded to the Meta Quest Store and the Google Play Store.
 
-{% Aside %} Pro tip: you can also use the `--chromeosonly` flag in addition to the `--metaquest`
+{% Aside 'important' %} You can also use the `--chromeosonly` flag in addition to the `--metaquest`
 flag to make the APK compatible not only with Meta Quest and regular Android devices, but also with
 [ChromeOS](https://chromeos.dev) devices. {% endAside %}
 
