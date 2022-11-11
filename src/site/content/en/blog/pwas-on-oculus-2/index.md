@@ -391,7 +391,7 @@ can open it in the Meta Quest Browser and perform all the steps right on your Me
 {% endAside %}
 
 PWABuilder uses the `ovr-platform-util` under the hood to package PWAs for Meta Quest, but the size
-is [smaller up to 1000x](https://twitter.com/alexey_rodionov/status/1547301992925540352).
+can be [smaller](https://github.com/pwa-builder/pwabuilder-oculus/pull/7) due to dead code removal.
 
 ### Installing PWAs with ADB
 
