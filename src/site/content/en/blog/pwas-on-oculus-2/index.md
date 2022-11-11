@@ -395,7 +395,7 @@ is [smaller up to 1000x](https://twitter.com/alexey_rodionov/status/154730199292
 
 ### Installing PWAs with ADB
 
-After creating the APK, developers can sideload it to the Meta Quest device using Android Debug
+After creating the APK, developers can sideload it to the Meta Quest device using the Android Debug
 Bridge (ADB) via USB or Wi-Fi:
 
 ```bash
