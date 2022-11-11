@@ -299,7 +299,7 @@ customize the PWA experience.
 ### Packaging PWAs with Bubblewrap CLI
 
 [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) is an open source set of libraries and
-a command line tool (CLI) for Node.js developed by the Google Chrome team that helps developers
+a command line tool (CLI) for Node.js. Bubblewrap is developed by the Google Chrome team, to help developers
 generate, build, and sign an Android project that launches your PWA as a
 [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/) (TWA).
 
