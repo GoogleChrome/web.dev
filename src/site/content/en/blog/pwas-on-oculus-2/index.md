@@ -424,7 +424,7 @@ Sideloaded apps appear in an **Unknown Sources** section in the app drawer.
 {% Aside %} Submission and consideration for the Oculus Store is only available if you have been
 approved as an Oculus Quest Store developer. Distribution of PWAs via
 [App Lab](https://developer.oculus.com/blog/introducing-app-lab-a-new-way-to-distribute-oculus-quest-apps/)
-is not currently available. The Oculus team will share more on when and how you can submit a PWA to
+is not currently available. The Meta team will share more on when and how you can submit a PWA to
 App Lab soon.
 {% endAside %}
 
