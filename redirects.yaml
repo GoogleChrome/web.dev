@@ -339,6 +339,16 @@ redirects:
     destination: https://developer.chrome.com/articles/periodic-background-sync/
   - source: /eyedropper
     destination: https://developer.chrome.com/articles/eyedropper/
+  - source: /cors-rfc1918-feedback
+    destination: https://developer.chrome.com/articles/cors-rfc1918-feedback/
+  - source: /file-handling
+    destination: https://developer.chrome.com/articles/file-handling
+  - source: /hid
+    destination: https://developer.chrome.com/articles/hid
+  - source: /isinputpending
+    destination: https://developer.chrome.com/articles/isinputpending
+  - source: /webcodecs
+    destination: https://developer.chrome.com/articles/webcodecs
 
   # Redirect for Aurora
   - source: /aurora
