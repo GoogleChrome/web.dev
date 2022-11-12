@@ -360,12 +360,12 @@ async function saveSettings () {
 }
 ```
 
-This function initially runs two pieces of critical work that will eventually update the UI to show a spinner. This guarantees that this work is done immediately after the user input, without yielding. After this, we explicitly yield via `frameAwareYield`, then remaining tasks are ran by `queueForLater`, which creates subsequent yield points when necessary.
+This function initially runs two pieces of critical work that will eventually update the UI to show a spinner. This guarantees that this work is done immediately after the user input without yielding. After this, we nest a call to `queueForLater` inside of a `requestIdleCallback` call, which will run these tasks after a frame has been presented for the critical work.
 
 The result is similar to `yieldToMain`, but has a benefit in situations where there is more work going on. Most importantly, it asks the question 
 "when should I yield?", and if so, it will yield in a way that's aware of any potential rendering work. Otherwise, it yields normally.
 
-In an ideal world, there would be [a better way](https://github.com/szager-chromium/isFramePending/blob/master/explainer.md) to figure out if a frame is pending, but by inferring that rendering work needs to be done as the result of a pending user input `isInputPending`, the result is a yielding mechanism that takes a bit more into account rather than just yielding all the time, or yielding with only `setTimeout` if there is a pending user input.
+In an ideal world, there would be [a better way](https://github.com/szager-chromium/isFramePending/blob/master/explainer.md) to figure out if a frame is pending, but by inferring that rendering work needs to be done as the result of a pending user input `isInputPending`, the result is a yielding mechanism that takes a bit more into account rather than just yielding all the time, or yielding with just `setTimeout` if there is a pending user input.
 
 ## Gaps in current APIs
 
@@ -415,7 +415,7 @@ Here, the priority of tasks is scheduled in such a way that browser-prioritized 
   </figcaption>
 </figure>
 
-This is a simplistic example of how `postTask()` can be used. It's possible to instantiate different `TaskController` objects that can share priorities between tasks, including the ability to change priorities for different `TaskController` instances as needed.
+This is a simplistic example of how `postTask()` can be used. It's possible to create separate `TaskController` instances that can share priorities between tasks, including the ability to change priorities for different `TaskController` instances as needed.
 
 {% Aside 'important' %}
 [`postTask()` is not supported in all browsers](https://caniuse.com/mdn-api_scheduler_posttask). You can use feature detection to see if it's available, or consider using [a polyfill](https://www.npmjs.com/package/scheduler-polyfill).
@@ -451,7 +451,7 @@ async function saveSettings () {
 }
 ```
 
-You'll note that the code above is largely familiar, but instead of using `yieldToMain()`, you call and `await scheduler.yield()` instead.
+You'll note that the code above is largely familiar, but instead of using `yieldToMain()`, you `await scheduler.yield()` instead.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/fyuvJqAV0mLxfZDM9tAm.png", alt="Three diagrams depicting tasks without yielding, yielding, and with yielding and continuation. Without yielding, there are long tasks. With yielding, there are more tasks that are shorter, but may be interrupted by other unrelated tasks. With yielding and continuation, there are more tasks that are shorter, but their order of execution is preserved.", width="647", height="258" %}
