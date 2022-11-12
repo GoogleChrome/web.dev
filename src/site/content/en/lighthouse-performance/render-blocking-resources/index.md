@@ -47,7 +47,7 @@ When you load or run a page, the tab tells you how much code was used,
 versus how much was loaded:
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y2Yc8DMcBYMknz5y0Are.png", alt="Chrome DevTools: Coverage tab", width="800", height="407" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ic4rP7pdvEDg4IngB0o0.png", alt="Chrome DevTools: Coverage tab", width="800", height="262" %}
   <figcaption>
     Chrome DevTools: Coverage tab.
   </figcaption>
