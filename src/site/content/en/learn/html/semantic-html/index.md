@@ -130,7 +130,7 @@ Note that `<header>` and `<footer>` are landmarks, with the roles of `banner` an
 
 Looking at Chrome developer tools, you'll note a significant difference between the accessibility object model when using semantic elements versus when you don't.
 
-It's pretty clear that semantic element usage helps accessibility, and using non-semantic elements reduces accessibility. HTML is generally, by default, accessible. Our job as developers is not just to not harm HTML's default accessible nature, but also to ensure that we maximize accessibility. You can [inspect the AOM in developer tools](https://developer.chrome.com/docs/devtools/accessibility/reference/#explore-tree).
+It's pretty clear that semantic element usage helps accessibility, and using non-semantic elements reduces accessibility. HTML is generally, by default, accessible. Our job as developers is to both protect HTML's default accessible nature and ensure that we maximize accessibility. You can [inspect the AOM in developer tools](https://developer.chrome.com/docs/devtools/accessibility/reference/#explore-tree).
 
 ### The `role` attribute
 

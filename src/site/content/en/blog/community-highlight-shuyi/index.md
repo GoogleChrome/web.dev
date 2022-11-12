@@ -7,11 +7,13 @@ hero: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
 alt: 'Learn Accessibility! Community highlight.'
 thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
 subhead: >
-  Olutimilehin Olushuyi is a lawyer, new to accessibility. We talked about his battle with JavaScript,
-  international standards, and the importance of reading a website's contents.
+  Olutimilehin Olushuyi is a lawyer, new to accessibility. We talked about
+  his battle with JavaScript, international standards, and the importance
+  of reading a website's contents.
 description: >
-  One of a series of interviews with people from the web development community who
-  work in web accessibility. This time I spoke with Olutimilehin Olushuyi.
+  One of a series of interviews with people from the web development
+  community who work in web accessibility. This time we spoke with
+  Olutimilehin Olushuyi.
 date: 2022-11-09
 tags:
   - blog
@@ -22,6 +24,13 @@ tags:
 _This post highlights a community expert, as a part of [Learn Accessibility!](/learn/accessibility/)_
 
 **Alexandra White**: How'd you get started with web accessibility?
+
+<figure data-float="right">
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/gAeaexQOr9TO1FaNvpqb.jpeg", alt="Olutimilehin Olushuyi's headshot.",
+  width="350", height="334"
+%}
+</figure>
 
 **Olutimilehin Olushuyi (Shuyi)**: Okay, so, it's a funny story. I'm a lawyer.
 I realized in my final year of school, I didn't want to practice law for the
@@ -120,6 +129,12 @@ build things.
 So much accessibility infrastructure work doesn't get attention at all, and it
 breaks my heart.
 
+{% Aside 'codelab' %}
+Take the Learn Accessibility module on
+[Content structure](/learn/accessibility/structure) to read about semantic HTML,
+landmarks, data tables, and more.
+{% endAside %}
+
 **Alexandra**: How did you do your research to make sure the advice you gave in
 the article was correct?
 
@@ -131,8 +146,7 @@ are what experts interpret from the law.
 I decided to refer only to the primary sources: the HTML, WCAG, and WAI-ARIA
 specs. I read other people's works, a lot of good work. But, at the end of the
 day, the opinions were so divergent, I decided I could only take them as useful
-context but not rely on them as having the right answers. That was definitely
-the right choice.
+context but not rely on them as having the right answers.
 
 ## Build an accessible community
 
@@ -234,7 +248,7 @@ opposite things. What would you do in those cases?
 
 **Shuyi**: I thought about launching a business for freelance accessibility
 work. I went into a global web accessibility chat channel and asked for tips on
-how to get started. [Adrian Russell](https://adrianrussell.co.uk/) reached out
+how to get started. [Adrian Roselli](https://adrianroselli.com/) reached out
 and said, "Your clients will be relying on you to keep them compliant with laws
 which could have major consequences. Before you offer your services, know what
 region you have expertise in. Know what laws you're familiar with so that,
@@ -244,7 +258,11 @@ liabilities. They trust you to know the law."
 Of course, so many businesses are seeking accessibility help because they are
 legally required, and not just because it's the right thing. Capitalism is the
 reason accessibility is being implemented. At the end of the day, it doesn't
-matter why it happened, it matters that the product is accessible. 
+matter why it happened, it matters that the product is accessible.
+
+{% Aside 'codelab' %}
+Learn more about the [business impact of digital accessibility](/learn/accessibility/why/#business-impact).
+{% endAside %}
 
 I put a pause on freelancing until I have full confidence that I can help
 clients with the laws of their region. Standardization is critical, the efforts
@@ -286,8 +304,15 @@ What's one thing you want developers to do to make their site accessible?
 **Shuyi**: Keyboard focus. I am begging from the bottom of my heart. My
 trackpad currently doesn't work, so when I'm on the go, I rely on my keyboard
 to navigate the web, and almost every website is horrible. Keyboard focus
-doesn't just benefit disabled people. Building accessible platforms benefits
-everyone.
+doesn't just benefit disabled people.
+
+Building accessible platforms benefits everyone.
+
+{% Aside 'codelab' %}
+Take the Learn Accessibility module on
+[Keyboard focus](/learn/accessibility/focus/) to discover how to
+ensure all users can navigate your content.
+{% endAside %}
 
 <hr />
 
