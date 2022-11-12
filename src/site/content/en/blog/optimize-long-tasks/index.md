@@ -296,15 +296,24 @@ With this approach, you get a fallback for browsers that don't support `isInputP
 
 ### Frame-aware yielding
 
-Now for a more nuanced approach, which is something you could call "frame-aware" yielding. This yielding technique is a bit different than the ones outlined previously. Yet, the effects of it are more aware of when a frame needs to be presented, and does its best to yield when this is the case:
+Now for a more nuanced approach, which is something you could call "frame-aware" yielding. This technique is a bit different than the ones outlined previously. Yet, the effects of it are more aware of when a frame needs to be presented, and does its best to yield when this is the case:
 
 ```js
-function frameAwareYield (needsFrameAfterInput) {
+let needsFrameAfterInput = false;
+
+function frameAwareYield () {
+  if (navigator.scheduling.isInputPending()) {
+    needsFrameAfterInput = true;
+  }
+
   return new Promise(resolve => {
     if (needsFrameAfterInput) {
       requestAnimationFrame(() => {
+        needsFrameAfterInput = false;
+
         setTimeout(resolve, 0);
       });
+
     } else { 
       setTimeout(resolve, 0);
     }
@@ -312,7 +321,7 @@ function frameAwareYield (needsFrameAfterInput) {
 }
 ```
 
-`frameAwareYield` takes one argument, which is a boolean produced by `isInputPending`. What's being done here is that if `isInputPending` returns `true`, the `frameAwareYield` calls the promise's `resolve` function _inside_ of a `requestAnimationFrame` call. The result is that the yield point is created _just before_ any rendering work that needs to be done. If there is no pending input, a yield point using `setTimeout` is done the same as before.
+What `frameAwareYield` does is that if `isInputPending` is `true`, it calls the promise's `resolve` function _inside_ of a `requestAnimationFrame` call. The result is that the yield point is created _just before_ any rendering work that needs to be done. If there is no pending input, a yield point using `setTimeout` is done the same as before.
 
 You could certainly use `frameAwareYield` much the same way as other yielding functions, but there's a more intelligent way to use it. The first part is to construct a library function to run tasks:
 
@@ -320,7 +329,7 @@ You could certainly use `frameAwareYield` much the same way as other yielding fu
 async function queueForLater (tasks) {
   while (tasks.length > 0) {
     if (navigator?.scheduling?.isInputPending()) {
-      await frameAwareYield(true);
+      await frameAwareYield();
     } else {
       const task  = tasks.shift();
 
@@ -330,7 +339,7 @@ async function queueForLater (tasks) {
 }
 ```
 
-This function takes an array of functions to run, very similar to how it was done in previous examples of the `saveSettings` function. `queueForLater` will loop over tasks until the task queue is empty. During each iteration of the `while` loop, `isInputPending` is called. If it returns `true`, `frameAwareYield` is called with its `needsFrameAfterInput` argument set to `true`, and sits out this iteration of the loop. Otherwise, the task is shifted off the array, and ran.
+This function takes an array of functions to run, similar to how work was done in previous examples of the `saveSettings` function. `queueForLater` will loop over tasks until the task queue is empty. During each iteration of the `while` loop, `isInputPending` is called. If it returns `true`, `frameAwareYield` is called, and will sit out this iteration of the loop without running any tasks. Otherwise, the task is shifted off the array, and ran.
 
 Then in the `saveSettings` function, something a bit different is done:
 
@@ -339,19 +348,19 @@ async function saveSettings () {
   validateForm();
   showSpinner();
 
-  await frameAwareYield(true);
-
   const tasks = [
     saveToDatabase,
     updateUI,
     sendAnalytics
   ];
 
-  queueForLater(tasks);
+  requestIdleCallback(() => {
+    queueForLater(tasks);
+  });
 }
 ```
 
-This function initially runs two pieces of critical work that will eventually update the UI to show a spinner. This guarantees that this work is done immediately after the user input, without any yielding. After this, we explicitly yield via `frameAwareYield`, then remaining tasks are ran by `queueForLater`, which creates subsequent yield points when necessary.
+This function initially runs two pieces of critical work that will eventually update the UI to show a spinner. This guarantees that this work is done immediately after the user input, without yielding. After this, we explicitly yield via `frameAwareYield`, then remaining tasks are ran by `queueForLater`, which creates subsequent yield points when necessary.
 
 The result is similar to `yieldToMain`, but has a benefit in situations where there is more work going on. Most importantly, it asks the question 
 "when should I yield?", and if so, it will yield in a way that's aware of any potential rendering work. Otherwise, it yields normally.
