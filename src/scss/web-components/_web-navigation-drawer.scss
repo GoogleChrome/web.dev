@@ -59,7 +59,8 @@ web-navigation-drawer[open]::before {
   opacity: 1;
 }
 
-web-navigation-drawer[open] [data-drawer-container] {
+web-navigation-drawer[open] [data-drawer-container],
+web-navigation-drawer:focus-within [data-drawer-container] {
   transform: none;
 }
 
