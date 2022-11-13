@@ -88,7 +88,7 @@ we'd get this notification in Chrome on Linux:
 
 In Firefox on Linux it would look like this:
 
-// FIXME: replace by original-1.webp
+// FIXME: replace by original-1.png
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/hyJWXo3xO7AlrlE3I61F.png", alt="Notification with title and body text in Firefox on Linux.", width="521", height="74" %}
 
@@ -106,7 +106,7 @@ the notification to expand:
 
 The same notifications in Firefox on Windows look like this:
 
-// FIXME: replace by original-2.webp
+// FIXME: replace by original-2.png
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/OQRchMO68ph6UV2Lovy0.png", alt="Notification with title and body text in Firefox on Windows.", width="562", height="281" %}
 

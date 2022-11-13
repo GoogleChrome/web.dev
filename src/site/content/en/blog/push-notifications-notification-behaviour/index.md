@@ -202,7 +202,7 @@ registration.showNotification(title, options);
 
 Which will show our first notification.
 
-// FIXME: replace by original-3.webp
+// FIXME: replace by original-3.png
 
 ![First notification with tag of message group 1.](./images/notification-screenshots/desktop/chrome-first-tag.png){: .center-image }
 
@@ -221,7 +221,7 @@ registration.showNotification(title, options);
 
 This will display a second notification to the user.
 
-// FIXME: replace by original-4.webp
+// FIXME: replace by original-4.png
 
 ![Two notifications where the second tag is message group 2.](./images/notification-screenshots/desktop/chrome-second-tag.png){: .center-image }
 
@@ -241,7 +241,7 @@ registration.showNotification(title, options);
 
 Now we have two notifications even though `showNotification()` was called three times.
 
-// FIXME: replace by original-5.webp
+// FIXME: replace by original-5.png
 
 ![Two notifications where the first notification is replaced by a third notification.](./images/notification-screenshots/desktop/chrome-third-tag.png){: .center-image }
 
