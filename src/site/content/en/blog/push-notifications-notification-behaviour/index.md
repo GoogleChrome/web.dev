@@ -275,12 +275,7 @@ registration.showNotification(title, options);
 
 {% Aside 'warning' %}
 If you set `renotify` to `true` on a notification without a `tag`, you'll get the following error:
-
-```
-TypeError: Failed to execute 'showNotification' on 'ServiceWorkerRegistration':
-
-Notifications which set the renotify flag must specify a non-empty tag
-```
+`TypeError: Failed to execute 'showNotification' on 'ServiceWorkerRegistration': Notifications which set the renotify flag must specify a non-empty tag`
 {% endAside %}
 
 ## Silent
