@@ -18,7 +18,7 @@ description: >
   of Oculus Quest 2's multitasking feature. This article describes the experience and how to build,
   sideload, and test your PWA on the Oculus Quest 2.
 date: 2022-01-10
-updated: 2022-11-11
+updated: 2022-11-13
 tags:
   - blog
   - capabilities
