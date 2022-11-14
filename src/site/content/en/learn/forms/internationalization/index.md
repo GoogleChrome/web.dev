@@ -148,4 +148,4 @@ Learn more about other ways to work with
 
 - [W3C Internationalization articles and tutorials](https://www.w3.org/International/articlelist)
 - [Frank's Compulsive Guide to Postal Addresses](http://www.columbia.edu/~fdc/postal/) provides useful links and extensive guidance for address formats in over 200 countries.
-- [Countries Lists](http://www.countries-list.info/Download-List) has a tool for downloading country codes and names in multiple languages, in multiple formats.
+- [DataHub.io](https://datahub.io/core/country-list) is a tool for downloading country codes and names.

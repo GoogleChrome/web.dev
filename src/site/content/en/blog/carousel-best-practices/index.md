@@ -164,7 +164,7 @@ use more efficient APIs and are less likely to require additional dependencies
 like jQuery.
 
 
-However, dependng on the type of carousel you are building, you may not need
+However, depending on the type of carousel you are building, you may not need
 JavaScript at all. The new [Scroll
 Snap](https://developer.mozilla.org/docs/Web/CSS/CSS_Scroll_Snap) API
 makes it possible to implement carousel-like transitions using only HTML and

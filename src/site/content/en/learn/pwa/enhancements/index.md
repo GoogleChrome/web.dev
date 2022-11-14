@@ -81,7 +81,7 @@ Different versions of the launch image can be set with a media query inside the 
 ```html
 <link rel="apple-touch-startup-image" href="ios-startup.png"
       media="orientation: portrait">
-<link rel="apple-touch-startup-image" href="ios-startup-landscape.png">
+<link rel="apple-touch-startup-image" href="ios-startup-landscape.png"
       media="orientation: landscape">
 ```
 {% Aside 'warning' %}

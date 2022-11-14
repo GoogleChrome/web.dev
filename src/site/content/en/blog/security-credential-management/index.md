@@ -62,7 +62,7 @@ For example:
 3. Update the UI to indicate the user has been signed in.
 
 Learn more in
-[Sign In Users](/web/fundamentals/security/credential-management/retrieve-credentials#auto-sign-in).
+[Sign In Users](../security-credential-management-retrieve-credentials#auto-sign-in).
 
 ### Save or update user credentials
 
@@ -74,7 +74,7 @@ Sign-In, Facebook, GitHub:
 2. Save the credential object using [`navigator.credentials.store()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store).
 
 Learn more in
-[Sign In Users](/web/fundamentals/security/credential-management/retrieve-credentials#federated-login).
+[Sign In Users](../security-credential-management-retrieve-credentials#federated-login).
 
 If the user signed in with a username and password:
 
@@ -83,7 +83,7 @@ If the user signed in with a username and password:
 2. Save the credential object using [`navigator.credentials.store()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store).
 
 Learn more in
-[Save Credentials from Forms](/web/fundamentals/security/credential-management/save-forms).
+[Save Credentials from Forms](../security-credential-management-save-forms).
 
 ### Sign out
 
@@ -95,6 +95,6 @@ for example, between work and personal accounts, or between accounts on
 shared devices, without having to re-enter their sign-in information.
 
 Learn more in
-[Sign out](/web/fundamentals/security/credential-management/retrieve-credentials#sign-out).
+[Sign out](../security-credential-management-retrieve-credentials#sign-out).
 
 ## Feedback {: #feedback }

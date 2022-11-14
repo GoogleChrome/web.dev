@@ -66,7 +66,7 @@ Use the list below to jump to topics of interest:
           <a href="#subgrid">subgrid</a>
         </td>
         <td>
-          <a href="#css-can't-help-users-reduce-data">@media (prefers-reduced-data)</a>
+          <a href="#css-cant-help-users-reduce-data">@media (prefers-reduced-data)</a>
         </td>
       </tr>
       <tr>
@@ -79,7 +79,7 @@ Use the list below to jump to topics of interest:
       </tr>
       <tr>
         <td>
-          <a href="#hwb()">hwb()</a>
+          <a href="#hwb">hwb()</a>
         </td>
         <td>
           <a href="#was-in-min-width-or-max-width">Media query ranges</a>
@@ -95,7 +95,7 @@ Use the list below to jump to topics of interest:
       </tr>
       <tr>
         <td>
-          <a href="#color-mix()">color-mix()</a>
+          <a href="#color-mix">color-mix()</a>
         </td>
         <td>
           <a href="#scroll-start">scroll-start</a>
@@ -103,10 +103,10 @@ Use the list below to jump to topics of interest:
       </tr>
       <tr>
         <td>
-          <a href="#color-contrast()">color-contrast()</a>
+          <a href="#color-contrast">color-contrast()</a>
         </td>
         <td>
-          <a href="#:snap-target">:snap-target</a>
+          <a href="#snap-target">:snap-target</a>
         </td>
       </tr>
       <tr>
@@ -114,7 +114,7 @@ Use the list below to jump to topics of interest:
           <a href="#relative-color-syntax">Relative color syntax</a>
         </td>
         <td>
-          <a href="#snapchanging()">snapChanging() and snapChanged()</a>
+          <a href="#snapchanging">snapChanging() and snapChanged()</a>
         </td>
       </tr>
       <tr>
@@ -155,7 +155,7 @@ Use the list below to jump to topics of interest:
       </tr>
       <tr>
         <td>
-          <a href="#:has()">:has()</a>
+          <a href="#has">:has()</a>
         </td>
         <td></td>
       </tr>
