@@ -44,13 +44,9 @@ user to get the best possible experience for their device. Tailoring the
 experience to users' constraints can include:
 
 * Serving low-quality images and videos on slow networks.
-
 * Throttling the frame-rate of animations on low-end devices.
-
 * Avoiding computationally expensive operations on low-end devices.
-
 * Blocking third-party scripts on slower devices.
-
 * Loading non-critical JavaScript for interactivity only on fast CPUs.
 
 ## Browser support and how to implement adaptive loading
@@ -58,16 +54,16 @@ experience to users' constraints can include:
 The signals you can use for adaptive loading are listed below. Browser support is also included for each signal:
 
 ### The NetworkInformation.effectiveType property
-[`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType), network—for fine-tuning data transfer to use less bandwidth. {% BrowserCompat 'api.NetworkInformation.effectiveType' %}
+[`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType) is used to fine-tune data transfer to use less bandwidth. {% BrowserCompat 'api.NetworkInformation.effectiveType' %}
 
 ### The NetworkInformation.saveData property
-[`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data), leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %
+[`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data) is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %
 
 ### The Navigator.deviceMemory property
-[`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory), memory-for reducing memory consumption on low-end devices. {% BrowserCompat 'api.Navigator.deviceMemory' %}
+[`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory), used to reduce memory consumption on low-end devices. {% BrowserCompat 'api.Navigator.deviceMemory' %}
 
 ### The Navigator.hardwareConcurrency property
-[`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), CPU core count—for limiting costly JavaScript execution and reducing CPU intensive logic when a device can't handle it well. {% BrowserCompat 'api.Navigator.hardwareConcurrency' %}
+[`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), is the CPU core count—for limiting costly JavaScript execution and reducing CPU intensive logic when a device can't handle it well. {% BrowserCompat 'api.Navigator.hardwareConcurrency' %}
 
 There are two places where you can make a decision about what to serve to users:
 the client and the server. On the client, you have the JavaScript APIs noted
