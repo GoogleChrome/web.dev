@@ -208,6 +208,40 @@ API is primarily gated by the same permission model as the [Media Capture and
 Streams API]. In response to a user prompt, the website is allowed to control
 camera PTZ only when the page is visible to the user.
 
+## Browser compatibility
+
+### `MediaStream`
+
+{% BrowserCompat '' %}
+
+### Permissions API
+
+{% BrowserCompat 'api.Permissions' %}
+
+### Page Visibility API
+
+{% BrowserCompat 'api.Document.visibilityState' %}
+
+### `MediaDevices.getUserMedia()`
+
+{% BrowserCompat 'api.MediaDevices.getUserMedia' %}
+
+### `MediaDevices.getSupportedConstraints()`
+
+{% BrowserCompat 'api.MediaDevices.getSupportedConstraints' %}
+
+### `MediaStreamTrack.applyConstraints()`
+
+{% BrowserCompat 'api.MediaStreamTrack.applyConstraints' %}
+
+### `MediaStreamTrack.getCapabilities()`
+
+{% BrowserCompat 'api.MediaStreamTrack.getCapabilities' %}
+
+### `MediaStreamTrack.getSettings()`
+
+{% BrowserCompat 'api.MediaStreamTrack.getSettings' %}
+
 ## Helpful links {: #helpful }
 
 - [PTZ Explainer](https://github.com/w3c/mediacapture-image/blob/master/ptz-explainer.md)

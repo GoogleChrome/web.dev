@@ -81,6 +81,10 @@ Anything you `await` is passed through `Promise.resolve()`, so you can
 safely `await` non-platform promises, such as those created by promise polyfills.
 {% endAside %}
 
+## Browser support
+
+{% BrowserCompat 'javascript.statements.async_function' %}
+
 ## Async return values
 
 Async functions *always* return a promise, whether you use `await` or not. That
@@ -333,12 +337,7 @@ In this example, the URLs are fetched and read in parallel, but the "smart"
 
 {% endCompare %}
 
-## Browser support and workarounds
-
-Async functions are enabled by default in most major browsers. If your site
-still needs to support older browsers without async, here are a few workarounds.
-
-### Workaround: generators
+### Browser support workaround: generators
 
 If you're targeting browsers that support generators (which includes
 [the latest version of every major browser](http://kangax.github.io/compat-table/es6/#test-generators)

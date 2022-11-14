@@ -27,6 +27,8 @@ feedback:
   </figcaption>
 </figure>
 
+{% BrowserCompat 'api.Navigator.setAppBadge' %}
+
 The App Badging API allows installed web apps to set an application-wide badge,
 shown in an operating-system-specific place associated with the application
 (such as the shelf or home screen).

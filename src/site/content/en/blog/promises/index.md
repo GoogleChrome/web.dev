@@ -40,6 +40,15 @@ At this point you fall into one of these categories:
   down like it's news to them. Take a moment to bask in your own superiority,
   then head straight to the [API reference](#promise-api-reference).
 
+## Browser support and polyfill
+
+{% BrowserCompat 'javascript.builtins.Promise' %}
+
+To bring browsers that lack a complete promises implementation up to spec
+compliance, or add promises to other browsers and Node.js, check out
+[the polyfill](https://github.com/jakearchibald/ES6-Promises#readme)
+(2k gzipped).
+
 ## What's all the fuss about? {: #whats-all-the-fuss-about }
 
 JavaScript is single threaded, meaning that two bits of script cannot run at
@@ -253,20 +262,6 @@ This is happening already with
 [ServiceWorker](https://github.com/slightlyoff/ServiceWorker/blob/cf459d473ae09f6994e8539113d277cbd2bce939/service_worker.ts#L17),
 [Web MIDI](https://webaudio.github.io/web-midi-api/#widl-Navigator-requestMIDIAccess-Promise-MIDIOptions-options),
 [Streams](https://github.com/whatwg/streams#basereadablestream), and more.
-
-
-## Browser support &amp; polyfill
-
-There are already implementations of promises in browsers today.
-
-As of Chrome 32, Opera 19, Firefox 29, Safari 8 &amp; Microsoft Edge,
-promises are enabled by default.
-
-To bring browsers that lack a complete promises implementation up to spec
-compliance, or add promises to other browsers and Node.js, check out
-[the polyfill](https://github.com/jakearchibald/ES6-Promises#readme)
-(2k gzipped).
-
 
 ## Compatibility with other libraries
 

@@ -39,6 +39,20 @@ Historically, these techniques were difficult to implement on the web, requiring
   </figcaption>
 </figure>
 
+## Browser support
+
+{% BrowserCompat 'css.properties.backdrop-filter' %}
+
+For performance reasons, fall back to an image instead of a polyfill when `backdrop-filter` isn't supported. The example below shows this.
+
+```css
+@supports not (backdrop-filter: none) {
+  .background {
+    background-image: blurred-hero.png;
+  }
+}
+```
+
 ## Basics
 
 - The `backdrop-filter` property applies one or more filters to an element, changing the appearance of anything behind the element.
@@ -82,23 +96,6 @@ When `backdrop-filter` is set to anything other than `none`, the browser creates
 
 You can combine filters for rich and clever effects, or use just one filter for more subtle or precise effects. You can even combine them with [SVG filters](https://developer.mozilla.org/docs/Web/SVG/Element/filter).
 
-## Feature detection and fallback
-
-As with many features of the modern web, you'll want to know whether the user's browser supports `backdrop-filter` before using it. Do this with `@supports()`. For performance reasons, fall back to an image instead of a polyfill when `backdrop-filter` isn't supported. The example below shows this.
-
-```css
-@supports (backdrop-filter: none) {
-	.background {
-		backdrop-filter: blur(10px);
-	}
-}
-
-@supports not (backdrop-filter: none) {
-  .background {
-    background-image: blurred-hero.png;
-  }
-}
-```
 ## Examples
 
 Design techniques and styles previously reserved for operating systems are now performant and achievable with a single CSS declaration. Let's look at some examples.
