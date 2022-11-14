@@ -57,16 +57,16 @@ experience to users' constraints can include:
 
 The signals you can use for adaptive loading are listed below. Browser support is also included for each signal:
 
-### The `NetworkInformation.effectiveType` property
+### The NetworkInformation.effectiveType property
 [`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType), network—for fine-tuning data transfer to use less bandwidth. {% BrowserCompat 'api.NetworkInformation.effectiveType' %}
 
-### The `NetworkInformation.saveData` property
+### The NetworkInformation.saveData property
 [`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data), leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %
 
-### The `Navigator.deviceMemory` property
+### The Navigator.deviceMemory property
 [`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory), memory-for reducing memory consumption on low-end devices. {% BrowserCompat 'api.Navigator.deviceMemory' %}
 
-### The `Navigator.hardwareConcurrency` property
+### The Navigator.hardwareConcurrency property
 [`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), CPU core count—for limiting costly JavaScript execution and reducing CPU intensive logic when a device can't handle it well. {% BrowserCompat 'api.Navigator.hardwareConcurrency' %}
 
 There are two places where you can make a decision about what to serve to users:
