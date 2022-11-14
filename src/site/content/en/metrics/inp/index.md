@@ -225,9 +225,7 @@ It's possible that a page can return no INP value. This can happen for a number 
 
 ## What if an interaction causes no layout changes?
 
-If you have an interaction with an event callback that causes no change to the layout in an event handler, that interaction can still be an INP candidate&mdash;**even if your event handler does nothing at all**. The reason for this is that the Event Timing API&mdash;which is what supplies the data needed to calculate the page's INP&mdash;will still add entries to the performance entry buffer in such cases.
-
-In these cases, you should be thinking about what sort of visual feedback you can provide for the user that lets them know that something is happening as a result of the interaction. One of the primary goals of INP is to recognize when you have an opportunity to present the next frame to the user&mdash;and that frame should show the result of that interaction, even if it's a small visual change that communicates whether some work is in progress.
+If you have an interaction with an event callback that causes no change to the layout in an event handler, that interaction can still be a candidate for INP. In these cases, you should be thinking about what sort of visual feedback you _could_ provide for the user that lets them know that something is happening as a result of the interaction. The intent of INP is to measure the delay before any potential paint can complete, and that involves recognizing _when_ you have an opportunity to present the next frame to the user. In the case of asynchronous work especially, that frame should communicate that work is in progress as soon as possible.
 
 ## How to measure INP
 
