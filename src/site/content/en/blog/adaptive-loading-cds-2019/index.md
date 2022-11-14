@@ -42,9 +42,13 @@ based on their network and hardware constraints, specifically:
 By optimizing for specific hardware and network constraints you enable every user to get the best possible experience for their device. Tailoring the experience to users' constraints can include:
 
 * Serving low-quality images and videos on slow networks.
+
 * Throttling the frame-rate of animations on low-end devices.
+
 * Avoiding computationally expensive operations on low-end devices.
+
 * Blocking third-party scripts on slower devices.
+
 * Loading non-critical JavaScript for interactivity only on fast CPUs.
 
 ## Browser support and how to implement adaptive loading
@@ -57,7 +61,7 @@ The signals you can use for adaptive loading are listed below. Browser support i
 
 ### The `NetworkInformation.saveData` property
 
-[`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data) is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %
+[`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data) is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %}
 
 ### The `Navigator.deviceMemory` property
 
