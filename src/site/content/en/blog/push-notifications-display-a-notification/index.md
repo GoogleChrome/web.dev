@@ -121,7 +121,7 @@ are available.
 For example, system notifications on macOS don't support images and actions (buttons and inline
 replies).
 
-Chrome also has a custom notifications for all desktop platforms. You can enable it by setting a
+Chrome also has a custom notifications for all desktop platforms. You can enable it by setting the
 `chrome://flags/#enable-system-notifications` flag to the `Disabled` state.
 
 ### Icon
