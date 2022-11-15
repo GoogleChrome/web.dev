@@ -290,7 +290,7 @@ On desktop, the action button icons display their colors (see the pink doughnut)
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/REyUtJ7icGvOoepXgpLQ.png", alt="Notification with action buttons on Chrome on Linux.", width="380", height="178" %}
 
-On Android 6, the icons are colored to match the system color scheme:
+On Android 6 and earlier, the icons are colored to match the system color scheme:
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/GI8sj9krxVtxWVeHGuvs.png", alt="Notification with action buttons on Chrome for Android.", width="800", height="296" %}
 
