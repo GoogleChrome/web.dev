@@ -14,10 +14,6 @@ feedback:
   - api
 ---
 
-### Browser compatibility
-
-{% BrowserCompat 'css.properties.gap' %}
-
 ## CSS Gap
 
 {% Aside 'key-term' %}
@@ -42,6 +38,10 @@ the component and CSS author. **Less code scaling further.**
     <a href="https://twitter.com/argyleink/status/1254794309263491072?s=20">Tweet</a>
   </figcaption>
 </figure>
+
+### Browser compatibility
+
+{% BrowserCompat 'css.properties.gap' %}
 
 ### Usage
 `gap` accepts any CSS [length](https://drafts.csswg.org/css-values-4/#lengths)

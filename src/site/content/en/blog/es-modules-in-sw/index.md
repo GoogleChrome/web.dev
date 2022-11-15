@@ -114,10 +114,6 @@ Safari added support in the
 and developers should expect to see this functionality released in the stable
 version of Safari in the future.
 
-Firefox does not currently support this functionality, and updates on their
-position can be found in this
-[GitHub issue](https://github.com/mozilla/standards-positions/issues/499).
-
 ## Example code
 
 This is a basic example of using a shared ES module in a web app's `window`

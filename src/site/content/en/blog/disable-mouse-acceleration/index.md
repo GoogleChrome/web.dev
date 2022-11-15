@@ -40,10 +40,10 @@ Starting in Chrome 88, web apps can switch back and forth between accelerated
 and non-accelerated mouse movement data thanks to the [updated Pointer Lock
 API].
 
-{% BrowserCompat 'api.Element.requestPointerLock' %}
-
 Web-based gaming platforms such as [Google Stadia] and [Nvidia GeForce Now]
 already use these new capabilities to please FPS gamers.
+
+{% BrowserCompat 'api.Element.requestPointerLock' %}
 
 ## Using the API {: #use }
 
