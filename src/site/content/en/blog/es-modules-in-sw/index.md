@@ -104,6 +104,8 @@ workers.
 
 ## Browser support
 
+{% BrowserCompat 'javascript.statements.import' %}
+
 ES modules in service workers are supported in Chrome and Edge starting with
 [version 91](https://chromestatus.com/feature/4609574738853888).
 

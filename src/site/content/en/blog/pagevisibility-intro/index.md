@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using the Notifications API
+title: Using the Page Visibility API
 authors:
   - ernestd
 date: 2010-02-24
@@ -21,6 +21,8 @@ The [Page Visibility API](http://www.w3.org/TR/page-visibility/) performs a simp
 - An application can decide to display notifications to the user only when it is hidden from view
 
 At first, this API may not seem very useful beyond user convenience, but considering the huge increase in mobile Web browsing, anything that helps save the device's battery power becomes very important. By using the PageVisibility API, your site can help the user's device consume less power and last longer.
+
+{% BrowserCompat 'api.Document.visibilityState' %}
 
 The API specification, which as of this writing is in the Candidate Recommendation stage, provides both properties for detecting the document's visibility state as well as an event for responding to visibility changes.
 
@@ -43,13 +45,13 @@ To keep the focus on the code instead of all the vendor-specific prefixing, I’
 ```js
 function getHiddenProp(){
     var prefixes = ['webkit','moz','ms','o'];
-    
+
     // if 'hidden' is natively supported just return it
     if ('hidden' in document) return 'hidden';
-    
+
     // otherwise loop over all the known prefixes until we find one
     for (var i = 0; i &lt; prefixes.length; i++){
-        if ((prefixes[i] + 'Hidden') in document) 
+        if ((prefixes[i] + 'Hidden') in document)
             return prefixes[i] + 'Hidden';
     }
 
@@ -66,7 +68,7 @@ Now we can write a cross-browser function, `isHidden()`, to see if the document 
 function isHidden() {
     var prop = getHiddenProp();
     if (!prop) return false;
-    
+
     return document[prop];
 }
 ```

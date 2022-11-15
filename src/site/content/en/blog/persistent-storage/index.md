@@ -40,6 +40,9 @@ persistent.
 {% endAside %}
 
 Persistent storage is [supported in many modern][caniuse-persistent] browsers.
+
+{% BrowserCompat 'api.StorageManager.persisted' %}
+
 To learn more about eviction, how much you can store, and how to handle quota
 limitations, see [Storage for the web](/storage-for-the-web/).
 

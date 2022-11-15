@@ -77,8 +77,9 @@ Comparing to the existing interfaces, Generic Sensor API provides a great number
 
 ## Browser compatibility
 
-The Generic Sensor API is supported by Google Chrome as of version 67. Most Chromium-derived
-browsers like Microsoft Edge, Opera, or Samsung Internet support this API as well. For other
+{% BrowserCompat 'api.Sensor' &}
+
+For other
 browsers, see [Can I use](https://caniuse.com/mdn-api_sensor). Note that the Generic Sensor API can
 be [polyfilled](#polyfill).
 

@@ -82,6 +82,10 @@ will take the following steps after calling `register()`:
 When `register()` does resolve, it returns a `ServiceWorkerRegistration`. We'll use this
 registration to access the [PushManager API](https://developer.mozilla.org/docs/Web/API/PushManager).
 
+### PushManager API browser compatibility
+
+{% BrowserCompat 'api.PushManager' %}
+
 ## Requesting permission
 
 We've registered our service worker and are ready to subscribe the user, the next step is to get
