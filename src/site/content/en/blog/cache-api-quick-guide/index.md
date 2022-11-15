@@ -25,8 +25,6 @@ availability. However, the API can also be used as a general storage mechanism.
 
 ## Where is it available?
 
-{% BrowserCompat 'api.Cache' %}
-
 The Cache API is available in [all modern browsers][caniuse-cache]. It is
 exposed via the global `caches` property, so you can test for the presence of
 the API with a simple feature detection:
@@ -34,6 +32,8 @@ the API with a simple feature detection:
 ```js
 const cacheAvailable = 'caches' in self;
 ```
+
+{% BrowserCompat 'api.Cache' %}
 
 The Cache API can be accessed from a window, iframe, worker, or service worker.
 

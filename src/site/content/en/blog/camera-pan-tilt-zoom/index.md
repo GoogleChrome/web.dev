@@ -210,9 +210,9 @@ camera PTZ only when the page is visible to the user.
 
 ## Browser compatibility
 
-### `MediaStream`
+### MediaStream API
 
-{% BrowserCompat '' %}
+{% BrowserCompat 'api.MediaStream' %}
 
 ### Permissions API
 

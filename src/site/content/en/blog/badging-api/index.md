@@ -27,8 +27,6 @@ feedback:
   </figcaption>
 </figure>
 
-{% BrowserCompat 'api.Navigator.setAppBadge' %}
-
 The App Badging API allows installed web apps to set an application-wide badge,
 shown in an operating-system-specific place associated with the application
 (such as the shelf or home screen).
@@ -40,6 +38,8 @@ information, such as an unread count.
 Badges tend to be more user-friendly than notifications, and can be updated
 with a much higher frequency, since they don't interrupt the user. And,
 because they don't interrupt the user, they don't need the user's permission.
+
+{% BrowserCompat 'api.Navigator.setAppBadge' %}
 
 ### Possible use cases {: #use-cases }
 

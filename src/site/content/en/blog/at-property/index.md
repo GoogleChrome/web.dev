@@ -28,11 +28,11 @@ One of the most exciting additions to CSS within the Houdini umbrella is the
 [Properties and Values
 API](https://developer.mozilla.org/docs/Web/API/CSS_Properties_and_Values_API).
 
-{% BrowserCompat 'api.CSS.registerProperty' %}
-
 This API supercharges your CSS custom properties (also commonly referred to as
 CSS variables) by giving them semantic meaning (defined by a syntax) and even
 fallback values, enabling CSS testing.
+
+{% BrowserCompat 'api.CSS.registerProperty' %}
 
 ## Writing Houdini custom properties
 

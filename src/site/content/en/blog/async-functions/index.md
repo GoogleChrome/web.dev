@@ -42,6 +42,10 @@ If you're unfamiliar with promises, check out [our
 promises guide](/promises).
 {% endAside %}
 
+## Browser support
+
+{% BrowserCompat 'javascript.statements.async_function' %}
+
 ## Example: logging a fetch
 
 Say you want to fetch a URL and log the response as text. Here's how it looks
@@ -80,10 +84,6 @@ easier to read, especially for those less familiar with promises.
 Anything you `await` is passed through `Promise.resolve()`, so you can
 safely `await` non-platform promises, such as those created by promise polyfills.
 {% endAside %}
-
-## Browser support
-
-{% BrowserCompat 'javascript.statements.async_function' %}
 
 ## Async return values
 
