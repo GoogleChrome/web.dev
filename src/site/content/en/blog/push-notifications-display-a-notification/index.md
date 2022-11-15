@@ -60,7 +60,7 @@ Let's look at the visual options:
 
 This is what a notification looks like without the title and options in Chrome on Windows:
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/oq8F8nrC9z8aY3CtC8pr.png", alt="Notification without the title and options in Chrome on Windows", width="780", height="312" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/oq8F8nrC9z8aY3CtC8pr.png", alt="Notification without the title and options in Chrome on Windows.", width="780", height="312" %}
 
 As you can see, the browser name is used as the title and the "New notification" placeholder is
 used as the notification body.
