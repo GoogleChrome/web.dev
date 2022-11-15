@@ -18,7 +18,7 @@ tags:
 
 {% Aside 'celebration' %}
 This web feature is now available in all three browser engines!
-{% BrowserCompat 'css.properties.transform' %}
+{% BrowserCompat 'css.properties.rotate' %}
 {% endAside %}
 
 ## The CSS `transform` property

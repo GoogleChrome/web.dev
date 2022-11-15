@@ -20,7 +20,7 @@ tags:
 This web feature is now available in all three browser engines!
 {% endAside %}
 
-{% BrowserCompat 'css.properties.grid-template-columns' %}
+{% BrowserCompat 'css.properties.grid-template-columns.animation' %}
 
 ## Value Interpolation in CSS
 

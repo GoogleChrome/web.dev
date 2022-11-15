@@ -46,12 +46,17 @@ Historically, these techniques were difficult to implement on the web, requiring
 For performance reasons, fall back to an image instead of a polyfill when `backdrop-filter` isn't supported. The example below shows this.
 
 ```css
+@supports (backdrop-filter: none) {
+	.background {
+		backdrop-filter: blur(10px);
+	}
+}
+
 @supports not (backdrop-filter: none) {
   .background {
     background-image: blurred-hero.png;
   }
 }
-```
 
 ## Basics
 
