@@ -60,7 +60,7 @@ Let's look at the visual options:
 
 This is what a notification looks like without the title and options in Chrome on Windows:
 
-// TODO: add new-1.png
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/oq8F8nrC9z8aY3CtC8pr.png", alt="Notification without the title and options in Chrome on Windows", width="780", height="312" %}
 
 As you can see, the browser name is used as the title and the "New notification" placeholder is
 used as the notification body.
@@ -68,7 +68,7 @@ used as the notification body.
 If a progressive web application is installed on the device, the web app name will be used instead
 of the browser name:
 
-// TODO: add new-2.png
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/5TmavxZQDURHIHQnwScW.png", alt="Notification with the web app name instead of the browser name", width="780", height="312" %}
 
 If we ran the following code:
 
@@ -88,9 +88,7 @@ we'd get this notification in Chrome on Linux:
 
 In Firefox on Linux it would look like this:
 
-// FIXME: replace by original-1.png
-
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/hyJWXo3xO7AlrlE3I61F.png", alt="Notification with title and body text in Firefox on Linux.", width="521", height="74" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/53pAkj17dCQhnODMk2jq.png", alt="Notification with title and body text in Firefox on Linux.", width="521", height="74" %}
 
 This is what the notification with a lot of text in the title and body looks like in Chrome on
 Linux:
@@ -106,9 +104,7 @@ the notification to expand:
 
 The same notifications in Firefox on Windows look like this:
 
-// FIXME: replace by original-2.png
-
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/OQRchMO68ph6UV2Lovy0.png", alt="Notification with title and body text in Firefox on Windows.", width="562", height="281" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/l5Pi7IvjKtGnn6YK2NdS.png", alt="Notification with title and body text in Firefox on Windows.", width="562", height="232" %}
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/OQRchMO68ph6UV2Lovy0.png", alt="Notification with long title and body text in Firefox on Windows.", width="562", height="281" %}
 
@@ -282,7 +278,7 @@ const maxVisibleActions = window.Notification?.maxActions;
 if (maxVisibleActions) {
   options.body = `Up to ${maxVisibleActions} notification actions can be displayed.`;
 } else {
-  options.body = `Notification actions are not supported.`;
+  options.body = 'Notification actions are not supported.';
 }
 ```
 
@@ -344,11 +340,11 @@ registration.showNotification(title, options);
 
 This is what it will look like on Android:
 
-// TODO: add new-3.png
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/Ph3WKnKo7I2qIZdHSmzO.png", alt="Notification on Android with a reply action button", width="800", height="304" %}
 
 Clicking on the action button opens a text input field:
 
-// TODO: add new-4.png
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/3eVno9EWU28kN2DP2xIT.png", alt="Notification on Android with an opened text input field", width="800", height="330" %}
 
 You can customize the placeholder for the text input field:
 
@@ -373,12 +369,12 @@ const options = {
 registration.showNotification(title, options);
 ```
 
-// TODO: add new-5.png
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/dD8gIYQMO29voqF3qyHY.png", alt="Notification on Android with customized placeholder for text input field", width="800", height="330" %}
 
 In Chrome on Windows, the text input field is always visible without having to click the action
 button:
 
-// TODO: add new-6.png
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/qZhA529rWfVHzt7RVacJ.png", alt="Notification on Windows with a text input field and a reply action button", width="780", height="504" %}
 
 You can add more than one inline reply or combine buttons and inline replies:
 
@@ -386,7 +382,7 @@ You can add more than one inline reply or combine buttons and inline replies:
 const title = 'Poll';
 
 const options = {
-  body: `Do you like this photo?`,
+  body: 'Do you like this photo?',
   image: '/images/demos/cat-image.jpg',
   icon: '/images/demos/icon-512x512.png',
   badge: '/images/demos/badge-128x128.png',
@@ -408,7 +404,7 @@ const options = {
 registration.showNotification(title, options);
 ```
 
-// TODO: add new-7.png
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/fKYyLvbAKghcnbmwEOfE.png", alt="Notification on Windows with a text input field and two action buttons", width="800", height="891" %}
 
 ### Direction
 

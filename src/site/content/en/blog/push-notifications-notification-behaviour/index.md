@@ -146,7 +146,7 @@ Also, in the previous section, you saw how to add an inline reply to the notific
 const title = 'Poll';
 
 const options = {
-  body: `Do you like this photo?`,
+  body: 'Do you like this photo?',
   image: '/images/demos/cat-image.jpg',
   icon: '/images/demos/icon-512x512.png',
   badge: '/images/demos/badge-128x128.png',
@@ -202,9 +202,7 @@ registration.showNotification(title, options);
 
 Which will show our first notification.
 
-// FIXME: replace by original-3.png
-
-![First notification with tag of message group 1.](./images/notification-screenshots/desktop/chrome-first-tag.png){: .center-image }
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/UKvAEJq7hWFQsxQjlnKv.png", alt="First notification with tag of message group 1", width="380", height="222" %}
 
 Let's display a second notification with a new tag of `'message-group-2'`, like so:
 
@@ -221,9 +219,7 @@ registration.showNotification(title, options);
 
 This will display a second notification to the user.
 
-// FIXME: replace by original-4.png
-
-![Two notifications where the second tag is message group 2.](./images/notification-screenshots/desktop/chrome-second-tag.png){: .center-image }
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/L1reebxFF4pJ1sIYRvcE.png", alt="Two notifications where the second tag of message group 2", width="380", height="222" %}
 
 Now let's show a third notification but re-use the first tag of `'message-group-1'`. Doing this
 will close the first notification and replace it with our new notification.
@@ -241,9 +237,7 @@ registration.showNotification(title, options);
 
 Now we have two notifications even though `showNotification()` was called three times.
 
-// FIXME: replace by original-5.png
-
-![Two notifications where the first notification is replaced by a third notification.](./images/notification-screenshots/desktop/chrome-third-tag.png){: .center-image }
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/RLHBEuD6REvyuZhHgWJw.png", alt="Two notifications where the first notification is replaced by a third notification", width="380", height="222" %}
 
 The `tag` option is simply a way of grouping messages so that any old notifications that are
 currently displayed will be closed if they have the same tag as a new notification.
