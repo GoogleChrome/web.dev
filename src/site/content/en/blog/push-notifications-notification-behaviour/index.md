@@ -202,7 +202,7 @@ registration.showNotification(title, options);
 
 Which will show our first notification.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/UKvAEJq7hWFQsxQjlnKv.png", alt="First notification with tag of message group 1", width="380", height="222" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/UKvAEJq7hWFQsxQjlnKv.png", alt="First notification with tag of message group 1.", width="380", height="222" %}
 
 Let's display a second notification with a new tag of `'message-group-2'`, like so:
 
