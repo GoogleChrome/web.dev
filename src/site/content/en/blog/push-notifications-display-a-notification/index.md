@@ -344,7 +344,7 @@ This is what it will look like on Android:
 
 Clicking on the action button opens a text input field:
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/3eVno9EWU28kN2DP2xIT.png", alt="Notification on Android with an opened text input field", width="800", height="330" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/3eVno9EWU28kN2DP2xIT.png", alt="Notification on Android with an opened text input field.", width="800", height="330" %}
 
 You can customize the placeholder for the text input field:
 
