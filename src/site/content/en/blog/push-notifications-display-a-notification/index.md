@@ -219,7 +219,7 @@ guidelines.
 
 Since Chrome on desktop doesn't fill the available space and has a ratio of 4:3, perhaps the best
 approach is to serve an image with this ratio and allow Android to crop the image. That being said,
-the `image` option is still new and this behavior may change.
+the `image` option may still change.
 
 On Android, the only [guideline](https://code.google.com/p/android/issues/detail?id=36744) is a
 width of 450dp.
