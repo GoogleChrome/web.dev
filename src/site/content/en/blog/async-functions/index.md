@@ -42,6 +42,10 @@ If you're unfamiliar with promises, check out [our
 promises guide](/promises).
 {% endAside %}
 
+## Browser support
+
+{% BrowserCompat 'javascript.statements.async_function' %}
+
 ## Example: logging a fetch
 
 Say you want to fetch a URL and log the response as text. Here's how it looks
@@ -333,12 +337,7 @@ In this example, the URLs are fetched and read in parallel, but the "smart"
 
 {% endCompare %}
 
-## Browser support and workarounds
-
-Async functions are enabled by default in most major browsers. If your site
-still needs to support older browsers without async, here are a few workarounds.
-
-### Workaround: generators
+### Browser support workaround: generators
 
 If you're targeting browsers that support generators (which includes
 [the latest version of every major browser](http://kangax.github.io/compat-table/es6/#test-generators)

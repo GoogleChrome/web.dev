@@ -30,9 +30,11 @@ Thanks to Igalia, sponsored by Bloomberg, we can finally put our hacks away for 
 
 Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we can change the content and some of the styles of bullets and numbers.
 
-## Browser compatibilty
+## Browser compatibility
 
-`::marker` is supported in Firefox for desktop and Android, desktop Safari and iOS Safari (but only the `color` and `font-*` properties, see [Bug 204163](https://bugs.webkit.org/show_bug.cgi?id=204163)), and Chromium-based desktop and Android browsers. See MDN's [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/::marker#Browser_compatibility) table for updates.
+`::marker` is supported in Firefox for desktop and Android, desktop Safari and iOS Safari (but only the `color` and `font-*` properties, see [Bug 204163](https://bugs.webkit.org/show_bug.cgi?id=204163)), and Chromium-based desktop and Android browsers.
+
+{% BrowserCompat 'css.selectors.marker' %}
 
 ## Pseudo-elements
 Consider the following essential HTML unordered list:

@@ -21,7 +21,7 @@ be created solely for the purpose of storing data for later use.
 
 The Cache API was created to enable service workers to cache network requests
 so that they can provide fast responses, regardless of network speed or
-availablity. However, the API can also be used as a general storage mechanism.
+availability. However, the API can also be used as a general storage mechanism.
 
 ## Where is it available?
 
@@ -32,6 +32,8 @@ the API with a simple feature detection:
 ```js
 const cacheAvailable = 'caches' in self;
 ```
+
+{% BrowserCompat 'api.Cache' %}
 
 The Cache API can be accessed from a window, iframe, worker, or service worker.
 
