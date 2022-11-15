@@ -340,7 +340,7 @@ registration.showNotification(title, options);
 
 This is what it will look like on Android:
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/Ph3WKnKo7I2qIZdHSmzO.png", alt="Notification on Android with a reply action button", width="800", height="304" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/Ph3WKnKo7I2qIZdHSmzO.png", alt="Notification on Android with a reply action button.", width="800", height="304" %}
 
 Clicking on the action button opens a text input field:
 
