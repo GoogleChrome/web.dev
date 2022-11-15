@@ -118,7 +118,7 @@ different in the same browser on different platforms.
 Chrome and Firefox use the system notifications and notification center on platforms where these
 are available.
 
-For example, system notifications on MacOS don't support images and actions (buttons and inline
+For example, system notifications on macOS don't support images and actions (buttons and inline
 replies).
 
 Chrome also has a custom notifications for all desktop platforms. You can enable it by setting a
