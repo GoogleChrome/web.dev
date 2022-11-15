@@ -55,14 +55,6 @@ By optimizing for specific hardware and network constraints you enable every use
 
 The signals you can use for adaptive loading are listed below. Browser support is also included for each signal:
 
-### `NetworkInformation.effectiveType`
-
-The [`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType) property is used to fine-tune data transfer to use less bandwidth. {% BrowserCompat 'api.NetworkInformation.effectiveType' %}
-
-### `NetworkInformation.saveData`
-
-The [`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data) property is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %}
-
 ### `Navigator.deviceMemory`
 
 The [`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory) property is used to reduce memory consumption on low-end devices. {% BrowserCompat 'api.Navigator.deviceMemory' %}
@@ -70,6 +62,14 @@ The [`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Naviga
 ### `Navigator.hardwareConcurrency`
 
 The [`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency) property is the CPU core count. It is used to limit costly JavaScript execution and reduce CPU intensive logic when a device can't handle it well. {% BrowserCompat 'api.Navigator.hardwareConcurrency' %}
+
+### `NetworkInformation.effectiveType`
+
+The [`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType) property is used to fine-tune data transfer to use less bandwidth. {% BrowserCompat 'api.NetworkInformation.effectiveType' %}
+
+### `NetworkInformation.saveData`
+
+The [`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data) property is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %}
 
 There are two places where you can make a decision about what to serve to users:
 the client and the server. On the client, you have the JavaScript APIs noted
