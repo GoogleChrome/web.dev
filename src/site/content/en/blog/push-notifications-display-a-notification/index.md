@@ -374,7 +374,7 @@ registration.showNotification(title, options);
 In Chrome on Windows, the text input field is always visible without having to click the action
 button:
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/qZhA529rWfVHzt7RVacJ.png", alt="Notification on Windows with a text input field and a reply action button", width="780", height="504" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/qZhA529rWfVHzt7RVacJ.png", alt="Notification on Windows with a text input field and a reply action button.", width="780", height="504" %}
 
 You can add more than one inline reply or combine buttons and inline replies:
 
