@@ -49,7 +49,7 @@ self.addEventListener('notificationclick', (event) => {
 ```
 
 As you can see in this example, the notification that was clicked can be accessed as
-`event.notification`. From this, we can access the notification's properties and methods. In this
+`event.notification`. From this, you can access the notification's properties and methods. In this
 case, we call its `close()` method and perform additional work.
 
 {% Aside 'warning' %}
