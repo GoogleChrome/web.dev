@@ -128,7 +128,7 @@ Chrome also has a custom notifications for all desktop platforms. You can enable
 
 The `icon` option is essentially a small image you can show next to the title and body text.
 
-In your code you just need to provide a URL to the image you'd like to load:
+In your code you need to provide a URL to the image you'd like to load:
 
 ```js/3
 const title = 'Icon Notification';
