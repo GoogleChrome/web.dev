@@ -45,6 +45,8 @@ await document.documentElement.requestFullscreen();
 
 {% BrowserCompat 'api.Keyboard.lock' %}
 
+Note that some system keys cannot be locked. This varies from operating system to operating system.
+
 ### Feature detection
 
 You can use the following pattern to check if the Keyboard Lock API is supported:
