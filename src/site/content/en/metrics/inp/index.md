@@ -44,15 +44,17 @@ This article explains how INP works, how to measure it, and offers advice for im
 
 ## What is INP?
 
-INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made on a page. Every qualifying interaction can be considered an _INP candidate_.
+INP aims to represent a page's overall responsiveness. It does so by measuring every click, tap, and keyboard interaction made on a page. Every keyboard, click, or tap interaction can be considered an _INP candidate_. The INP candidate with the longest interaction latency for the current page is generally chosen as the page's INP.
 
 ### What is an interaction?
 
-An interaction is one or more discrete user input actions. More than one interaction may consist of what's considered a _logical user gesture_. For a key board interaction, this would consist of both a `keydown` _and_ a `keyup` event.
+An interaction is one or more discrete user input actions. A single interaction may involve multiple input actions&mdash;such as pressing down a key and releasing it&mdash;which is considered a _logical user gesture_. For a keyboard interaction, this would consist of both a `keydown` _and_ a `keyup` event.
 
 ### What is an event?
 
-Interactions are driven by events. Events fire callbacks during the same logical user gesture. For example, tap interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. While JavaScript is a common handler of interactivity, interactions can also be powered by CSS and built-in browser controls (such as `<input>` elements, for example).
+An event is the result of an interaction. Events are dispatched by user inputs, which run callbacks during the same logical user gesture.
+
+For example, tap interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. While JavaScript is a common handler of interactivity, interactions can also be powered by CSS and built-in browser controls (such as `<input>` elements, for example).
 
 The time it takes to queue up an interaction, including the time it takes for the event callbacks for the interaction to run, and the time it takes to present the next frame that shows the result of the interaction is known as the _event duration_.
 
@@ -125,7 +127,7 @@ Chosen INP candidate by number of interactions.
 
 {% endDetails %}
 
-An interaction's latency consists of the single longest [duration](https://w3c.github.io/performance-timeline/#dom-performanceentry-duration) of a group of event callbacks that drives the interaction, from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
+An interaction's latency consists of the single longest [duration](https://w3c.github.io/performance-timeline/#dom-performanceentry-duration) of the event callbacks that drive the interaction, starting from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
 
 {% Aside 'important' %}
 For more details on how INP is measured, read the ["What's in an interaction?"](#whats-in-an-interaction) section.
@@ -223,7 +225,7 @@ It's possible that a page can return no INP value. This can happen for a number 
 - The page was loaded, but the user interacted with the page using gestures that did not involve clicking, tapping, or using the keyboard. For example, scrolling or hovering over elements does not factor into how INP is calculated.
 - The page is being accessed by a bot such as a search crawler or headless browser that has not been scripted to interact with the page.
 
-## What if an interaction causes no layout changes?
+## What if an interaction doesn't result in any visual update?
 
 If you have an interaction with an event callback that causes no change to the layout in an event handler, that interaction can still be a candidate for INP. In these cases, you should be thinking about what sort of visual feedback you _could_ provide for the user that lets them know that something is happening as a result of the interaction. The intent of INP is to measure the delay before any potential paint can complete, and that involves recognizing _when_ you have an opportunity to present the next frame to the user. In the case of asynchronous work especially, that frame should communicate that work is in progress as soon as possible.
 
