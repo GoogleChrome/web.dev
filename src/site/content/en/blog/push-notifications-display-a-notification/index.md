@@ -435,7 +435,7 @@ In Firefox (while hovering over it) you'll get this:
 ### Vibrate
 
 {% Aside 'caution' %}
-Support for [`vibrate` has been deprecated](https://crbug.com/971422) on Android 8+.
+Support for [`vibrate` has been deprecated](https://crbug.com/971422) on Android 8 and later.
 {% endAside %}
 
 The vibrate option allows you to define a vibration pattern that'll run when a notification is
