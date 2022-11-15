@@ -481,7 +481,7 @@ Timestamp allows you to tell the platform the time when an event occurred that r
 notification being sent.
 
 The `timestamp` should be the number of milliseconds since 00:00:00 UTC, which is 1 January 1970
-(i.e. the UNIX epoch).
+(which is the UNIX epoch).
 
 ```js/4
 const title = 'Timestamp Notification';
