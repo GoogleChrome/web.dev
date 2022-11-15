@@ -310,7 +310,7 @@ The best practice we can draw from these differences:
 - Stick to a consistent color scheme for your icons so at least all your icons are consistently
   displayed to the user.
 - Make sure they work in monochrome as some platforms may display them that way.
-- Test the size and see what works for you. 128px x 128px works well on Android for me but was poor
+- Test the size and see what works for you. 128px × 128px works well on Android for me but was poor
   quality on desktop.
 - Expect your action icons not to be displayed at all.
 
