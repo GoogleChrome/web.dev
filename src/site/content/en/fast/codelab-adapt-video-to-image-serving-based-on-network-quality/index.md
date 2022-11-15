@@ -25,6 +25,8 @@ enables you to access information about the user's connection quality. You will
 use its `effectiveType` property to decide when to serve a video and when to
 serve an image. `effectiveType` can be `'slow-2g'`, `'2g'`, `'3g'`, or `'4g'`.
 
+{% BrowserCompat 'api.NetworkInformation' %}
+
 ## Step 1: Check connection type
 
 The `index.html` file contains a `<video>` tag to display the background video (line 22). The code in `script.js` loads the video by setting the video tag's `src` attribute. (The video loading code is described in more detail in [Step 2](/codelab-adapt-video-to-image-serving-based-on-network-quality/#step-2-load-video).)
