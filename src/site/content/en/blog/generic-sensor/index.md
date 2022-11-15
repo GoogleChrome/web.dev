@@ -77,7 +77,7 @@ Comparing to the existing interfaces, Generic Sensor API provides a great number
 
 ## Browser compatibility
 
-{% BrowserCompat 'api.Sensor' &}
+{% BrowserCompat 'api.Sensor' %}
 
 For other
 browsers, see [Can I use](https://caniuse.com/mdn-api_sensor). Note that the Generic Sensor API can
