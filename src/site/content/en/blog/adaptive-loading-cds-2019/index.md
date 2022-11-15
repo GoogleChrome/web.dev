@@ -55,21 +55,21 @@ By optimizing for specific hardware and network constraints you enable every use
 
 The signals you can use for adaptive loading are listed below. Browser support is also included for each signal:
 
-### The `NetworkInformation.effectiveType` property
+### `NetworkInformation.effectiveType`
 
-[`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType) is used to fine-tune data transfer to use less bandwidth. {% BrowserCompat 'api.NetworkInformation.effectiveType' %}
+The [`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType) property is used to fine-tune data transfer to use less bandwidth. {% BrowserCompat 'api.NetworkInformation.effectiveType' %}
 
-### The `NetworkInformation.saveData` property
+### `NetworkInformation.saveData`
 
-[`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data) is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %}
+The [`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data) property is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %}
 
-### The `Navigator.deviceMemory` property
+### `Navigator.deviceMemory`
 
-[`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory), used to reduce memory consumption on low-end devices. {% BrowserCompat 'api.Navigator.deviceMemory' %}
+The [`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory) property is used to reduce memory consumption on low-end devices. {% BrowserCompat 'api.Navigator.deviceMemory' %}
 
-### The `Navigator.hardwareConcurrency` property
+### `Navigator.hardwareConcurrency`
 
-[`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), is the CPU core count—for limiting costly JavaScript execution and reducing CPU intensive logic when a device can't handle it well. {% BrowserCompat 'api.Navigator.hardwareConcurrency' %}
+The [`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency) property is the CPU core count. It is used to limit costly JavaScript execution and reduce CPU intensive logic when a device can't handle it well. {% BrowserCompat 'api.Navigator.hardwareConcurrency' %}
 
 There are two places where you can make a decision about what to serve to users:
 the client and the server. On the client, you have the JavaScript APIs noted
