@@ -404,7 +404,7 @@ const options = {
 registration.showNotification(title, options);
 ```
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/fKYyLvbAKghcnbmwEOfE.png", alt="Notification on Windows with a text input field and two action buttons", width="800", height="891" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/fKYyLvbAKghcnbmwEOfE.png", alt="Notification on Windows with a text input field and two action buttons.", width="800", height="891" %}
 
 ### Direction
 
