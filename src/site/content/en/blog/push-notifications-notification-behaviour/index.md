@@ -315,7 +315,7 @@ const options = {
 registration.showNotification(title, options);
 ```
 
-Please use this option with consideration. Showing a notification and forcing the user to stop what
+Use this option with consideration. Showing a notification and forcing the user to stop what
 they are doing to dismiss your notification can be frustrating.
 
 In the next section, we are going to look at some of the common patterns used on the web for
