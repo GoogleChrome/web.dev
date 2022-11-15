@@ -153,7 +153,7 @@ Sadly there aren't any solid guidelines for what size image to use for an icon.
 [Android seems to want a 64dp image](http://stackoverflow.com/questions/7220738/honeycomb-notifications-how-to-set-largeicon-to-the-right-size)
 (which is 64px multiples by the device pixel ratio).
 
-If we assume the highest pixel ratio for a device will be 3, an icon size of 192px or more is a
+Assuming the highest pixel ratio for a device is 3, an icon size of 192px or more is a
 safe bet.
 
 {% Aside %}
