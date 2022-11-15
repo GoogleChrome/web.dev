@@ -294,7 +294,7 @@ On Android 6 and earlier, the icons are colored to match the system color scheme
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/GI8sj9krxVtxWVeHGuvs.png", alt="Notification with action buttons on Chrome for Android.", width="800", height="296" %}
 
-On Android 7+, the action icons aren't shown at all.
+On Android 7 and later, the action icons aren't shown at all.
 
 Chrome will hopefully change it's behavior on desktop to match Android (i.e. apply the
 appropriate color scheme to make the icons match the system look and feel). In the meantime, you
