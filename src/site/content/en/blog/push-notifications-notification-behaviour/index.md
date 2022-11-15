@@ -34,7 +34,7 @@ even close or remove the notification.
 The common practice for a notification click is for it to close and perform some other logic (i.e.
 open a window or make some API call to the application).
 
-To achieve this, we need to add a `'notificationclick'` event listener to our service worker. This
+To achieve this, you need to add a `'notificationclick'` event listener to our service worker. This
 will be called whenever a notification is clicked.
 
 ```js
