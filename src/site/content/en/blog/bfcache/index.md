@@ -234,7 +234,9 @@ On desktop, Chrome and Firefox have chosen to make pages ineligible for bfcache 
 listener, which is less risky but also disqualifies _a lot_ of pages. Safari
 will attempt to cache some pages with an `unload` event listener, but to reduce
 potential breakage it will not run the `unload` event when a user is navigating
-away, which makes the event very unreliable. Mobile browsers will attempt to cache some pages with an `unload` event listener but the `unload` event is extremely unreliable on mobile as processes are killed to save resources.
+away, which makes the event very unreliable.
+
+On mobile, most browsers will attempt to cache pages with an `unload` event listener since the risk of breakage is lower due to the fact that the `unload` event has always been extremely unreliable on mobile.
 
 Instead of using the `unload` event, use the `pagehide` event. The `pagehide`
 event fires in all cases where the `unload` event currently fires, and it
@@ -531,6 +533,8 @@ the bfcache, including:
 - when the user quits the browser and starts it again
 - when the user duplicates a tab
 - when the user closes a tab and uncloses it
+
+Even without those exclusions the bfcache will be discarded after a period to conserve memory.
 
 So, website owners should not be expecting a 100% bfcache hit ratio for all
 `back_forward` navigations. However, measuring their ratio can be useful to
