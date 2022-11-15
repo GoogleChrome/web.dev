@@ -68,7 +68,7 @@ used as the notification body.
 If a progressive web application is installed on the device, the web app name will be used instead
 of the browser name:
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/5TmavxZQDURHIHQnwScW.png", alt="Notification with the web app name instead of the browser name", width="780", height="312" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/5TmavxZQDURHIHQnwScW.png", alt="Notification with the web app name instead of the browser name.", width="780", height="312" %}
 
 If we ran the following code:
 
