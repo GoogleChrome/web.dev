@@ -97,7 +97,7 @@ Linux:
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/MjZfnuD9h6MJLjv9enVi.png", alt="Notification with long title and body text in Chrome on Linux.", width="380", height="156" %}
 
-Interestingly, Firefox on Linux collapses the body text until you hover the notification, causing
+Firefox on Linux collapses the body text until you hover the notification, causing
 the notification to expand:
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/hyJWXo3xO7AlrlE3I61F.png", alt="Notification with long title and body text in Firefox on Linux.", width="521", height="74" %}
