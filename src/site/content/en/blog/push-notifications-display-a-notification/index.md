@@ -267,7 +267,7 @@ registration.showNotification(title, options);
 
 For each action you can define a `title`, an `action` (which is essentially an ID), an `icon`, and
 a `type`. The title and icon is what you can see in the notification. The ID is used when detecting
-that the action button had been clicked (we'll look into this more in the next section). The type
+that the action button had been clicked (more about this in the next section). The type
 can be omitted because `'button'` is the default value.
 
 At the time of writing only Chrome and Opera for Android support actions.
