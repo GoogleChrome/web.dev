@@ -219,7 +219,7 @@ registration.showNotification(title, options);
 
 This will display a second notification to the user.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/L1reebxFF4pJ1sIYRvcE.png", alt="Two notifications where the second tag of message group 2", width="380", height="222" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/L1reebxFF4pJ1sIYRvcE.png", alt="Two notifications where the second tag of message group 2.", width="380", height="222" %}
 
 Now let's show a third notification but re-use the first tag of `'message-group-1'`. Doing this
 will close the first notification and replace it with our new notification.
