@@ -237,7 +237,7 @@ registration.showNotification(title, options);
 
 Now we have two notifications even though `showNotification()` was called three times.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/RLHBEuD6REvyuZhHgWJw.png", alt="Two notifications where the first notification is replaced by a third notification", width="380", height="222" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/RLHBEuD6REvyuZhHgWJw.png", alt="Two notifications where the first notification is replaced by a third notification.", width="380", height="222" %}
 
 The `tag` option is simply a way of grouping messages so that any old notifications that are
 currently displayed will be closed if they have the same tag as a new notification.
