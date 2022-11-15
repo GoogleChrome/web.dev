@@ -272,7 +272,7 @@ can be omitted because `'button'` is the default value.
 
 At the time of writing only Chrome and Opera for Android support actions.
 
-In the example above we've defined 4 actions to illustrate that you can define more actions than
+In the example above there are four actions defined to illustrate that you can define more actions than
 will be displayed. If you want to know the number of actions that will be displayed by the browser,
 you can check `window.Notification?.maxActions`:
 
