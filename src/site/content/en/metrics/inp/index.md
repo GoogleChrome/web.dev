@@ -227,7 +227,9 @@ It's possible that a page can return no INP value. This can happen for a number 
 
 ## What if an interaction doesn't result in any visual update?
 
-If you have an interaction with an event callback that causes no change to the layout in an event handler, that interaction can still be a candidate for INP. In these cases, you should be thinking about what sort of visual feedback you _could_ provide for the user that lets them know that something is happening as a result of the interaction. The intent of INP is to measure the delay before any potential paint can complete, and that involves recognizing _when_ you have an opportunity to present the next frame to the user. In the case of asynchronous work especially, that frame should communicate that work is in progress as soon as possible.
+INP measures the difference between when an input event is received, and when the next frame has been presented. **This means INP candidates may involve interactions with elements that have no registered event listener.**
+
+Additionally, an interaction that triggers an event callback which results in no visual update will also be considered an INP candidate. The intent of INP is to measure the delay before any potential paint can complete, and that involves recognizing _when_ you have an opportunity to present the next frame to the user. In the case of asynchronous work especially, that frame should communicate that work is in progress as soon as possible.
 
 ## How to measure INP
 
