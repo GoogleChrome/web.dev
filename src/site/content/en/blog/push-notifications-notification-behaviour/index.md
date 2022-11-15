@@ -50,7 +50,7 @@ self.addEventListener('notificationclick', (event) => {
 
 As you can see in this example, the notification that was clicked can be accessed as
 `event.notification`. From this, you can access the notification's properties and methods. In this
-case, we call its `close()` method and perform additional work.
+case, you call its `close()` method and perform additional work.
 
 {% Aside 'warning' %}
 You need to make use of `event.waitUntil()` to keep the service worker running while your code is
