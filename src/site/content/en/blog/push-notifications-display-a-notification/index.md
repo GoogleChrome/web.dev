@@ -140,7 +140,7 @@ const options = {
 registration.showNotification(title, options);
 ```
 
-We get this notification in Chrome on Linux:
+You get this notification in Chrome on Linux:
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/RBQH1QGLIRT9HxJTDjkj.png", alt="Notification with icon in Chrome on Linux.", width="380", height="100" %}
 
