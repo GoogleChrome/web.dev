@@ -369,7 +369,7 @@ const options = {
 registration.showNotification(title, options);
 ```
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/dD8gIYQMO29voqF3qyHY.png", alt="Notification on Android with customized placeholder for text input field", width="800", height="330" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/dD8gIYQMO29voqF3qyHY.png", alt="Notification on Android with customized placeholder for text input field.", width="800", height="330" %}
 
 In Chrome on Windows, the text input field is always visible without having to click the action
 button:
