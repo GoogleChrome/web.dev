@@ -351,11 +351,14 @@ larger network of family members, friends, communities, and institutions. This
 larger network often looks for and supports businesses that create accessible
 digital products. When you factor in the friends and family of the over 1.3
 billion people worldwide who identify as disabled, the disability market
-touches 53% of all consumers. It is the world's largest emerging market.
+touches 53% of all consumers. It's the world's largest emerging market.
 
 In addition to money and market shares, businesses focused on disability
 inclusion as part of an overall diversity strategy are [higher performing and
-more innovative](https://www.w3.org/WAI/business-case/). There are many examples of [everyday products](https://incl.ca/the-evolution-of-assistive-technology-into-everyday-products/) that evolved from technology developed by, or for, people with disabilities, including: 
+more innovative](https://www.w3.org/WAI/business-case/). There are many
+examples of [everyday products](https://incl.ca/the-evolution-of-assistive-technology-into-everyday-products/)
+that evolved from technology developed by, or for, people with disabilities,
+including: 
 
 * Telephones
 * Typewriters / keyboards

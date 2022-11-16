@@ -101,7 +101,7 @@ utilize their products.
 
 ## Building for "invisible" disabilities
 
-**Alexandra**: I love that you mentioned your blind friend specifically,
+**Alexandra**: I appreciate that you mentioned your blind friend specifically,
 because often the first thing that comes to mind when developers and designers
 _do_ think about disability are the "obvious" ones: visible and often permanent
 disabilities. But there are [so many people impacted by accessible
