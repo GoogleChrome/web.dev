@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Animating Modal Views
-subhead: By using real user monitoring tools and focusing on improving Core Web Vitals in refactoring their app, they also improved CLS by 72%, as well as application responsiveness.
+subhead: Modal views block the user interface to display important information. Learn how to animate modal views in your apps.
 authors:
   - paullewis
 date: 2014-08-08
@@ -20,7 +20,7 @@ tags:
 
 Modal views are for important messages, and for which you have very good reasons to block the user interface. Use them carefully, because they're disruptive and can easily ruin the user’s experience if overused. But, in some circumstances, they’re the right views to use, and adding some animation will bring them to life.
 
-### TL;DR 
+### TL;DR
 * Use modal views sparingly; users get frustrated if you interrupt their experience unnecessarily.
 * Adding scale to the animation gives a nice "drop on" effect.
 * Get rid of the modal view quickly when the user dismisses it. However, bring the modal view onto the screen a little more slowly so that it doesn't surprise the user.
@@ -58,7 +58,7 @@ Now whenever the modal view is required, you can use JavaScript to toggle the "v
 
 ```js
 modal.classList.add('visible');
-```    
+```
 
 At this point, the modal view appears without any animation, so you can now add that in
 (see also [Custom Easing](https://developers.google.com/web/fundamentals/design-and-ux/animations/custom-easing)):
