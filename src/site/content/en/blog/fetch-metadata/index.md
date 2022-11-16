@@ -73,6 +73,8 @@ Malicious cross-site requests can be rejected by the server because of the addit
 
 ### `Sec-Fetch-Site`
 
+{% BrowserCompat 'http.headers.Sec-Fetch-Site' %}
+
 `Sec-Fetch-Site` tells the server which [site](/same-site-same-origin) sent the request. The browser sets this value to one of the following:
 
  - `same-origin`, if the request was made by your own application (e.g. `site.example`)
@@ -82,9 +84,13 @@ Malicious cross-site requests can be rejected by the server because of the addit
 
 ### `Sec-Fetch-Mode`
 
+{% BrowserCompat 'http.headers.Sec-Fetch-Mode' %}
+
 `Sec-Fetch-Mode` indicates the [mode](https://developer.mozilla.org/docs/Web/API/Request/mode) of the request. This roughly corresponds to the type of the request and allows you to distinguish resource loads from navigation requests. For example, a destination of `navigate` indicates a top-level navigation request while `no-cors` indicates resource requests like loading an image.
 
 ### `Sec-Fetch-Dest`
+
+{% BrowserCompat 'http.headers.Sec-Fetch-Dest' %}
 
 `Sec-Fetch-Dest` exposes a request's [destination](https://developer.mozilla.org/docs/Web/API/Request/destination) (e.g. if a `script` or an `img` tag caused a resource to be requested by the browser).
 

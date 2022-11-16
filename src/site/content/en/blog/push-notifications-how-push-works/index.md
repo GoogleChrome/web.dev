@@ -9,7 +9,7 @@ tags:
 ---
 
 Before getting into the API, let's look at push from a high level, start to finish. Then as we
-step through individual topics or API's later on, you'll have an idea of how and why it's
+step through individual topics or APIs later on, you'll have an idea of how and why it's
 important.
 
 The three key steps to implementing push are:
@@ -33,6 +33,8 @@ A `PushSubscription` contains all the information we need to send a push message
 You can "kind of" think of this as an ID for that user's device.
 
 This is all done in JavaScript with the [Push API](https://developer.mozilla.org/docs/Web/API/Push_API).
+
+{% BrowserCompat 'api.PushEvent' %}
 
 Before subscribing a user you'll need to generate a set of
 "application server keys", which we'll cover later on.
