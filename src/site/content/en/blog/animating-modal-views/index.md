@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Animating Modal Views
-subhead: Modal views block the user interface to display important information. Learn how to animate modal views in your apps.
+subhead: Modal views block the user interface to display important messages. Learn how to animate modal views in your apps.
 authors:
   - paullewis
 date: 2014-08-08
