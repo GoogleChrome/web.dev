@@ -23,6 +23,10 @@ _This post highlights a community expert, as a part of [Learn Accessibility!](/l
 
 **Alexandra White**: How would you introduce yourself? You do so much accessibility work.
 
+**Albert Kim**: I'm a digital accessibility subject matter expert (SME), a UX
+design consultant, and a public speaker and coach, raising mental health
+awareness in the tech community.
+
 <figure data-float="right">
   {% Img
     src="image/VbsHyyQopiec0718rMq2kTE1hke2/oXT7rUXWYTEXaDfIabUf.jpg",
@@ -30,11 +34,8 @@ _This post highlights a community expert, as a part of [Learn Accessibility!](/l
   %}
 </figure>
 
-**Albert Kim**: I'm a digital accessibility subject matter expert (SME), a UX
-design consultant, and a public speaker and coach, raising mental health
-awareness in the tech community. I founded
-[Accessibility NextGen](https://twitter.com/a11ynextgen), a community for
-people interested in learning more about accessibility. I'm a
+I founded [Accessibility NextGen](https://twitter.com/a11ynextgen), a community
+for people interested in learning more about accessibility. I'm a
 [Disability:IN NextGen Leader](https://disabilityin.org/what-we-do/nextgen-leaders-initiatives/).
 And currently, I'm a W3C invited expert for the
 [Cognitive and Learning Disabilities Task Force](https://www.w3.org/WAI/GL/task-forces/coga/)
@@ -290,7 +291,8 @@ If you get pushback on adding space for trigger warnings, you could argue it's
 a business issue. When you lose those users forever, you lose that revenue or
 potential revenue. 
 
-Learn more about the [business impact of accessibility](/learn/accessibility/why/#business-impact).
+Learn more about the
+[business impact of accessibility](/learn/accessibility/why/#business-impact).
 
 {% endAside %}
 
@@ -304,9 +306,13 @@ themselves.
 
 ## Do one more thing: communicate clearly
 
-**Alexandra**: If you asked developers to change one thing about the way they design and build websites to make them more accessible, what would you ask for?
+**Alexandra**: If you asked developers to change one thing about the way they
+design and build websites to make them more accessible, what would you ask for?
 
-**Albert**: Don't forget that the fundamental purpose of a website is to clearly communicate information to the user. To do this, you must think about what information you want to share with your users, and more importantly, how to frame that information so the content and your intentions are understood.
+**Albert**: Don't forget that the fundamental purpose of a website is to
+clearly communicate information to the user. To do this, you must think about
+what information you want to share with your users, and more importantly, how
+to frame that information so the content and your intentions are understood.
 
 {% Aside 'codelab' %}
 Take the Learn Accessibility module on
