@@ -103,7 +103,7 @@ Use lowercase when referring to a vision-loss condition or to a blind person who
   <p>"My vision has deteriorated rapidly over the last three years, and my phone's default font size ranges from large to mega-large. There are a decent amount of mobile apps that I can barely use because of their absurd font sizes."</p>
   <cite>Frank</cite>
 </blockquote>
-     
+
 Read a short [article in the New York Times](https://www.nytimes.com/2022/08/16/opinion/blindness-retinitis-pigmentosa.html)
 or watch a [video](https://youtu.be/X04HKyW-3hc) on what it means to be
 legally blind.
@@ -116,7 +116,7 @@ Mobility impairments
 {% endDetailsSummary %}
 
 [Mobility impairment](https://www.disabled-world.com/disability/types/mobility/)
-is a category of disability that includes people with various physical 
+is a category of disability that includes people with various physical
 disabilities. This type of disability includes upper or lower limb loss or
 disability, manual dexterity, and disability in coordination with different
 organs of the body.
@@ -131,7 +131,7 @@ organs of the body.
 
 * _Examples_: Arthritis, paralysis, amputees, seizure disorders.
 * _Prevalence_: 1 in 7 people have mobility issues. ([Source](https://www.cdc.gov/media/releases/2018/p0816-disability.html#:~:text=One%20in%204%20U.S.%20adults,affects%201%20in%207%20adults.))
-* _Tools include_: Adaptative switches, eye tracking devices, mouth/head sticks, speech input.
+* _Tools include_: Adaptive switches, eye tracking devices, mouth/head sticks, speech input.
 * _Pain points_: Elements that are only designed to work with the use of a mouse.
 
 <blockquote>
@@ -215,7 +215,7 @@ when describing themselves.
 </blockquote>
 
 Read a short
-[article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html) 
+[article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html)
 or watch a [video](https://youtu.be/3-MzNPcEh6M) on face blindness
 (prosopagnosia).
 
@@ -347,7 +347,7 @@ touches 53% of all consumers. It is the world's largest emerging market.
 
 In addition to money and market shares, businesses focused on disability
 inclusion as part of an overall diversity strategy are [higher performing and
-more innovative](https://www.w3.org/WAI/business-case/). There are many examples of [everyday products](https://incl.ca/the-evolution-of-assistive-technology-into-everyday-products/) that evolved from technology developed by, or for, people with disabilities, including: 
+more innovative](https://www.w3.org/WAI/business-case/). There are many examples of [everyday products](https://incl.ca/the-evolution-of-assistive-technology-into-everyday-products/) that evolved from technology developed by, or for, people with disabilities, including:
 
 * Telephones
 * Typewriters / keyboards

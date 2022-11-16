@@ -188,4 +188,14 @@ f.addEventListener('submit', (e) => {
 });
 ```
 
+## Browser compatibility
+
+### `PasswordCredential`
+
+{% BrowserCompat 'api.PasswordCredential' %}
+
+### `navigator.credentials.store()`
+
+{% BrowserCompat 'api.CredentialsContainer.store' %}
+
 ## Feedback {: #feedback }
