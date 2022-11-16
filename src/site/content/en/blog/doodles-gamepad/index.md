@@ -28,10 +28,7 @@ Ephemeral as they are, interactive doodles tend to be pretty complex under the h
 
 ## What browsers support it today?
 
-As of early August 2012:
-
-- Chrome 21 and newer on Windows, Mac, Linux, and Chrome OS
-- [special builds of Firefox](http://people.mozilla.com/~tmielczarek/gamepad/) with Gamepad API support.
+{% BrowserCompat 'api.Gamepad' %}
 
 ## What gamepads can be used?
 
@@ -90,7 +87,7 @@ Here is the code from the tester:
  */
 startPolling: function() {
     // Don't accidentally start a second loop, man.
-    if (!gamepadSupport.ticking) { 
+    if (!gamepadSupport.ticking) {
     gamepadSupport.ticking = true;
     gamepadSupport.tick();
     }
@@ -107,7 +104,7 @@ stopPolling: function() {
 /**
  * A function called with each requestAnimationFrame(). Polls the gamepad
  * status and schedules another poll.
- */  
+ */
 tick: function() {
     gamepadSupport.pollStatus();
     gamepadSupport.scheduleNextTick();
@@ -126,14 +123,14 @@ scheduleNextTick: function() {
     }
     // Note lack of setTimeout since all the browsers that support
     // Gamepad API are already supporting requestAnimationFrame().
-    }    
+    }
 },
 
 /**
  * Checks for the gamepad status. Monitors the necessary data and notices
- * the differences from previous state (buttons for Chrome/Firefox, 
- * new connects/disconnects for Chrome). If differences are noticed, asks 
- * to update the display accordingly. Should run as close to 60 frames per 
+ * the differences from previous state (buttons for Chrome/Firefox,
+ * new connects/disconnects for Chrome). If differences are noticed, asks
+ * to update the display accordingly. Should run as close to 60 frames per
  * second as possible.
  */
 pollStatus: function() {
@@ -157,15 +154,15 @@ From the tester source code:
 
 ```js
 /**
- * React to the gamepad being connected. Today, this will only be executed 
+ * React to the gamepad being connected. Today, this will only be executed
  * on Firefox.
  */
 onGamepadConnect: function(event) {
     // Add the new gamepad on the list of gamepads to look after.
     gamepadSupport.gamepads.push(event.gamepad);
-    
+
     // Start the polling loop to monitor button changes.
-    gamepadSupport.startPolling();    
+    gamepadSupport.startPolling();
 
     // Ask the tester to update the screen to show more gamepads.
     tester.updateGamepads(gamepadSupport.gamepads);
@@ -182,9 +179,9 @@ In the end, our initialization function in the tester, supporting both approache
  */
 init: function() {
     // As of writing, it seems impossible to detect Gamepad API support
-    // in Firefox, hence we need to hardcode it in the third clause. 
+    // in Firefox, hence we need to hardcode it in the third clause.
     // (The preceding two clauses are for Chrome.)
-    var gamepadSupportAvailable = !!navigator.webkitGetGamepads || 
+    var gamepadSupportAvailable = !!navigator.webkitGetGamepads ||
         !!navigator.webkitGamepads ||
         (navigator.userAgent.indexOf('Firefox/') != -1);
 
@@ -195,15 +192,15 @@ init: function() {
     } else {
     // Firefox supports the connect/disconnect event, so we attach event
     // handlers to those.
-    window.addEventListener('MozGamepadConnected', 
+    window.addEventListener('MozGamepadConnected',
                             gamepadSupport.onGamepadConnect, false);
-    window.addEventListener('MozGamepadDisconnected', 
+    window.addEventListener('MozGamepadDisconnected',
                             gamepadSupport.onGamepadDisconnect, false);
 
     // Since Chrome only supports polling, we initiate polling loop straight
     // away. For Firefox, we will only do it if we get a connect event.
     if (!!navigator.webkitGamepads || !!navigator.webkitGetGamepads) {
-        gamepadSupport.startPolling(); 
+        gamepadSupport.startPolling();
     }
     }
 },
@@ -294,7 +291,7 @@ Ostensibly, every button could be an analogue one – this is somewhat common fo
 gamepad.ANALOGUE_BUTTON_THRESHOLD = .5;
 
 gamepad.buttonPressed_ = function(pad, buttonId) {
-    return pad.buttons[buttonId] && 
+    return pad.buttons[buttonId] &&
             (pad.buttons[buttonId] > gamepad.ANALOGUE_BUTTON_THRESHOLD);
 };
 ```
@@ -319,7 +316,7 @@ gamepad.stickMoved_ = function(pad, axisId, negativeDirection) {
 
 ### Events
 
-In some cases, like a flight simulator game, continuously checking and reacting to stick positions or button presses makes more sense… but for things like Hurdles 2012 doodle? You might wonder: Why do I need to check for buttons every single frame? Why can't I get events like I do for keyboard or mouse up/down? 
+In some cases, like a flight simulator game, continuously checking and reacting to stick positions or button presses makes more sense… but for things like Hurdles 2012 doodle? You might wonder: Why do I need to check for buttons every single frame? Why can't I get events like I do for keyboard or mouse up/down?
 
 Good news is, you can. Bad news is – in the future. It's in the spec, but not implemented in any browser yet.
 
@@ -328,8 +325,8 @@ Good news is, you can. Bad news is – in the future. It's in the spec, but not 
 In the meantime, your way out is comparing the current and previous state, and calling functions if you see any difference. For example:
 
 ```js
-if (buttonPressed(pad, 0) != buttonPressed(oldPad, 0)) { 
-    buttonEvent(0, buttonPressed(pad, 0) ? 'down' : 'up'); 
+if (buttonPressed(pad, 0) != buttonPressed(oldPad, 0)) {
+    buttonEvent(0, buttonPressed(pad, 0) ? 'down' : 'up');
 }
 ```
 
@@ -337,7 +334,7 @@ if (buttonPressed(pad, 0) != buttonPressed(oldPad, 0)) {
 Compare timestamps of the current and previously polled gamepad data (the timestamp field). If they're defined (Firefox doesn't support it yet) and identical, it means the state didn't change from the last time you looked at it, and no further work is necessary. From the tester source code:
 {% endAside %}
 
-```js    
+```js
 for (var i in gamepadSupport.gamepads) {
     var gamepad = gamepadSupport.gamepads[i];
 
@@ -346,7 +343,7 @@ for (var i in gamepadSupport.gamepads) {
     // This is only supported by Chrome right now, so the first check
     // makes sure we're not doing anything if the timestamps are empty
     // or undefined.
-    if (gamepadSupport.prevTimestamps[i] && 
+    if (gamepadSupport.prevTimestamps[i] &&
         (gamepad.timestamp == gamepadSupport.prevTimestamps[i])) {
     continue;
     }
@@ -381,10 +378,10 @@ Since without a gamepad, our today's doodle's preferred input method is the keyb
 1. We went as far as bolting the gamepad input onto the doodle, instead of baking it in – our polling loop actually synthesizes necessary keydown and keyup events (with a proper keyCode) and sends them back to DOM:
     ```js
     // Create and dispatch a corresponding key event.
-    var event = document.createEvent('Event');    
+    var event = document.createEvent('Event');
     var eventName = down ? 'keydown' : 'keyup';
     event.initEvent(eventName, true, true);
-    event.keyCode = gamepad.stateToKeyCodeMap_[state];    
+    event.keyCode = gamepad.stateToKeyCodeMap_[state];
     gamepad.containerElement_.dispatchEvent(event);
     ```
 
@@ -398,7 +395,7 @@ And that's all there is to it!
 
 ## The Future
 
-We hope this helps to shed some light on this new API – still a bit precarious, but already a lot of fun. 
+We hope this helps to shed some light on this new API – still a bit precarious, but already a lot of fun.
 
 In addition to the missing pieces of the API (e.g. events) and broader browser support, we're also hoping to eventually see things like rumble control, access to built-in gyroscopes, etc. And, more support for different types of gamepads – please [file a bug against Chrome](https://code.google.com/p/chromium/issues/entry?template=Defect%20report%20from%20user&cc=scottmg@chromium.org&labels=Type-Feature,Pri-2,Area-Internals,Feature-Gamepad) and/or [file a bug against Firefox](https://bugzilla.mozilla.org/) if you see find one that works incorrectly or not at all.
 

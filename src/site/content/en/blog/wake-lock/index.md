@@ -43,6 +43,10 @@ power-hungry workarounds. It addresses the shortcomings of an older API
 that was limited to simply keeping the screen on and had a number of
 security and privacy issues.
 
+## Browser support
+
+{% BrowserCompat 'api.WakeLock' %}
+
 ## Suggested use cases for the Screen Wake Lock API {: #use-cases }
 
 [RioRun](https://www.theguardian.com/sport/2016/aug/06/rio-running-app-marathon-course-riorun),
@@ -109,16 +113,6 @@ that prevents the device's CPU from entering standby mode so
 that your app can continue running.
 We have decided to not proceed with this type for the moment.
 {% endAside %}
-
-### Feature detection
-
-Browser support for the Screen Wake Lock API can be tested as follows:
-
-```js
-if ('wakeLock' in navigator) {
-  // Screen Wake Lock API supported 🎉
-}
-```
 
 ### Getting a screen wake lock {: #get-wake-lock }
 

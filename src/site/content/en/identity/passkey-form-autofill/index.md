@@ -80,8 +80,7 @@ offer them to
 
 ## Prerequisites
 
-Conditional WebAuthn UI is publicly supported in Safari on iOS 16. It's also
-available on Chrome Canary on Android, macOS and Windows 22H2.
+{% BrowserCompat 'api.Credential' %}
 
 On Chrome on Android, you need the
 [Google Play services beta](https://developers.google.com/android/guides/beta-program)
@@ -91,7 +90,7 @@ to authenticate with conditional UI.
 
 When a user wants to sign in, you can make a conditional WebAuthn `get` call to
 indicate that passkeys may be included in autofill suggestions. A conditional
-call to [WebAuthn](https://w3c.github.io/webauthn/) 
+call to [WebAuthn](https://w3c.github.io/webauthn/)
 `navigator.credentials.get()` API does not show UI and is pending until the user
 picks an account to sign-in with from the autofill suggestion. If the user picks
 a passkey account from the suggestions, the promise is resolved and you will

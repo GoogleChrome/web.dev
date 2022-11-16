@@ -68,9 +68,10 @@ is an API for specifying font display strategy. `swap` tells the browser that
 text using this font should be displayed immediately using a system font. Once
 the custom font is ready, the system font is swapped out.
 
+{% BrowserCompat 'css.at-rules.font-face.font-display' %}
+
 If a browser does not support `font-display`, the browser continues to follow
-it's default behavior for loading fonts. Check which browsers support
-`font-display` [here](https://caniuse.com/#search=font-display).
+its default behavior for loading fonts.
 
 These are the default font-loading behaviors for common browsers:
 

@@ -254,7 +254,7 @@ marks, indicating the score passes AA and AAA WCAG 2.1 requirements:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/RialptHZZEuHttshMLdy.png", alt="Screenshot of DevTools Elements panel, in the styles the color picker is shown and in the middle is reporting the contrast ratio of the color of 4.98.", width="800", height="602" %}
 
-##### Color Picker auto correction
+##### Color Picker autocorrection
 
 Seeing the score while picking colors is handy, but Chrome DevTools has an
 additional feature for autocorrection. When the color picker reports a failed

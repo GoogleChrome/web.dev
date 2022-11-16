@@ -67,6 +67,10 @@ Try this out using our example on Glitch. Be sure to run it on Chrome 77 or late
   previewSize: 0
 } %}
 
+## Browser compatibility
+
+{% BrowserCompat 'api.FormData' %}
+
 ## Form-associated custom elements
 
 You can use the event-based API with any kind of component, but it only allows you to interact with the submission process.

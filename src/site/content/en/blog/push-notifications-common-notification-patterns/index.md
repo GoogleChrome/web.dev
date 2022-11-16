@@ -10,7 +10,7 @@ tags:
 
 We're going to look at some common implementation patterns for web push.
 
-This will involve using a few different API's that are available in the service worker.
+This will involve using a few different APIs that are available in the service worker.
 
 ## Notification close event
 
@@ -397,6 +397,24 @@ This requires having your service worker set-up to handle `fetch` events,
 but if you implement a `fetch` event listener, make sure you take
 advantage of it in your `push` event by caching the page and assets
 you'll need before showing your notification.
+
+## Browser compatibility
+
+### The `notificationclose` event
+
+{% BrowserCompat 'api.ServiceWorkerGlobalScope.notificationclose_event' %}
+
+### `Clients.openWindow()`
+
+{% BrowserCompat 'api.Clients.openWindow' %}
+
+### `ServiceWorkerRegistration.getNotifications()`
+
+{% BrowserCompat 'api.ServiceWorkerRegistration.getNotifications' %}
+
+### `clients.matchAll()`
+
+{% BrowserCompat 'api.Clients.matchAll' %}
 
 For more information, check out this [introduction to service workers
 post](/web/fundamentals/getting-started/primers/service-workers).

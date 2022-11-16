@@ -42,6 +42,8 @@ This API is also a great companion to [WebUSB] as operating systems require
 applications to communicate with some serial ports using their higher-level
 serial API rather than the low-level USB API.
 
+{% BrowserCompat 'api.Serial' %}
+
 ## Suggested use cases {: #use-cases }
 
 In the educational, hobbyist, and industrial sectors, users connect peripheral

@@ -23,7 +23,8 @@ stack_overflow_tag: webhid
 
 {% Aside 'success' %}
 The WebHID API, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/), launched in
-Chrome&nbsp;89.
+Chrome 89.
+{% BrowserCompat 'api.HID' %}
 {% endAside %}
 
 There is a long tail of human interface devices (HIDs), such as alternative

@@ -11,7 +11,7 @@ tags:
 
 ## Introduction
 
-Validating forms has notoriously been a painful development experience.  Implementing client side validation in a user friendly, developer friendly, and accessible way is hard.  Before HTML5 there was no means of implementing validation natively; therefore, developers have resorted to a variety of JavaScript based solutions. 
+Validating forms has notoriously been a painful development experience.  Implementing client side validation in a user-friendly, developer-friendly, and accessible way is hard.  Before HTML5 there was no means of implementing validation natively; therefore, developers have resorted to a variety of JavaScript based solutions.
 
 To help ease the burden on developers, HTML5 introduced a concept known as [constraint validation](http://www.whatwg.org/specs/web-apps/current-work/#constraint-validation) - a native means of implementing client side validation on web forms.
 
@@ -48,7 +48,7 @@ If you attempt to submit this form as is, [supporting browsers](http://caniuse.c
     </figcaption>
   </figure>
   <figure>
-    {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/q4gt3tHHFcmHPsi3pu34.png", alt="Firefox 15 display", width="266", height="116" %}    
+    {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/q4gt3tHHFcmHPsi3pu34.png", alt="Firefox 15 display", width="266", height="116" %}
     <figcaption>
       Firefox 15
     </figcaption>
@@ -104,6 +104,8 @@ The [constraint validation API](http://www.whatwg.org/specs/web-apps/current-wor
 
 ### willValidate
 
+{% BrowserCompat 'api.ElementInternals.willValidate' %}
+
 The `willValidate` property indicates whether the node is a candidate for constraint validation.  For [submittable elements](http://www.whatwg.org/specs/web-apps/current-work/#category-submit) this will be set to `true` unless for some reason the node is [barred from constraint validation](http://www.whatwg.org/specs/web-apps/current-work/#barred-from-constraint-validation), such as possessing the `disabled` attribute.
 
 ```html
@@ -118,6 +120,8 @@ The `willValidate` property indicates whether the node is a candidate for constr
 ```
 
 ### validity
+
+{% BrowserCompat 'api.ElementInternals.validationMessage' %}
 
 The [`validity`](http://www.whatwg.org/specs/web-apps/current-work/#dom-cva-validity) property of a DOM node returns a [`ValidityState`](http://www.whatwg.org/specs/web-apps/current-work/#validitystate) object containing a number of boolean properties related to the validity of the data in the node.
 
@@ -207,6 +211,8 @@ The [`validity`](http://www.whatwg.org/specs/web-apps/current-work/#dom-cva-vali
 
 ### validationMessage
 
+{% BrowserCompat 'api.ElementInternals.validationMessage' %}
+
 The `validationMessage` property of a DOM node contains the message the browser displays to the user when a node's validity is checked and fails.
 
 The browser provides a default localized message for this property.  If the DOM node is not a candidate for constraint validation or if the node contains valid data `validationMessage` will be set to an empty string.
@@ -229,6 +235,8 @@ As of this writing Opera does not fill in this property by default.  It will sho
 ```
 
 ### checkValidity()
+
+{% BrowserCompat 'api.ElementInternals.checkValidity' %}
 
 The `checkValidity` method on a form element node (e.g. input, select, textarea) returns `true` if the element contains valid data.
 
@@ -271,6 +279,8 @@ document.getElementById('input-1').addEventListener('change', function(event) {
 ```
 
 ### setCustomValidity()
+
+{% BrowserCompat 'api.HTMLObjectElement.setCustomValidity' %}
 
 The `setCustomValidity` method changes the `validationMessage` property as well as allows you to add custom validation rules.
 
@@ -454,7 +464,7 @@ var checkPasswordValidity = function() {
         password1.setCustomValidity('Passwords must match.');
     } else {
         password1.setCustomValidity('');
-    }        
+    }
 };
 
 password1.addEventListener('change', checkPasswordValidity, false);
@@ -501,7 +511,7 @@ One way to accomplish this is by adding the `novalidate` attribute to the form a
             password1.setCustomValidity('Passwords must match.');
         } else {
             password1.setCustomValidity('');
-        }        
+        }
     };
 
     password1.addEventListener('change', checkPasswordValidity, false);
@@ -575,7 +585,7 @@ This feature was [proposed to the W3C](https://www.w3.org/Bugs/Public/show_bug.c
 
 <h4>Title Attribute</h4>
 
-While it doesn't change the `validationMessage`, in the case of a `patternMismatch` browsers do display the contents of the `title` attribute in the inline bubble if it's provided.  
+While it doesn't change the `validationMessage`, in the case of a `patternMismatch` browsers do display the contents of the `title` attribute in the inline bubble if it's provided.
 
 {% Aside %}
 Chrome will actually display the `title` attribute when provided for any type of error, not just `patternMismatch`es.
@@ -586,7 +596,7 @@ For example if you try to submit the following form:
 ```html
 <form>
     <label for="price">Price: $</label>
-    <input type="text" pattern="[0-9].[0-9][0-9]" 
+    <input type="text" pattern="[0-9].[0-9][0-9]"
         title="Please enter the price in x.xx format (e.g. 3.99)"
         id="price" value="3" />
     <input type="submit" value="Submit" />

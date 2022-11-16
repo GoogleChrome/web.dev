@@ -30,6 +30,8 @@ and take a look at the
 
 ### Check Credential Management API browser support
 
+{% BrowserCompat 'api.Credential' %}
+
 Before using the Credential Management API, first check if `PasswordCredential`
 or `FederatedCredential` is supported.
 

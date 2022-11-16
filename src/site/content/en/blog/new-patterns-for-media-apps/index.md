@@ -19,8 +19,8 @@ tags:
 
 Let's welcome our new collection of [media patterns](/patterns/media) to help you create modern media experiences on the web for great audio and video playback:
 
-1. [Use the Web Audio API to add effects to audio sources](/patterns/media/media-session/).
-2. [Let the user control media playback on the lock screen, in a widget, or with hardware keys](/patterns/media/audio-effects/).
+1. [Let the user control media playback on the lock screen, in a widget, or with hardware keys](/patterns/media/media-session/).
+2. [Use the Web Audio API to add effects to audio sources](/patterns/media/audio-effects/).
 3. [Record audio from the user's microphone](/patterns/media/microphone-record/).
 4. [Create a custom Picture-in-Picture button for your video player](/patterns/media/picture-in-picture/).
 5. [Record the user's screen](/patterns/media/screen-record/).
