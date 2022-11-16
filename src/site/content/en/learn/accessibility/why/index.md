@@ -330,6 +330,14 @@ accessible digital spaces. This includes:
 People with disabilities make up almost a fourth of the world's population, but
 did you know that they also have a lot of spending power?
 
+<figure data-float="right">
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/mPFzo0YRdCd8slPOjDgE.png",
+  alt="A collection of coins, representing the lost revenue when disabled communities are ignored.",
+  width="218", height="130"
+%}
+</figure>
+
 According to the
 [American Institutes for Research (AIR)](https://www.researchgate.net/profile/Dahlia-Shaewitz/publication/324603094_A_Hidden_Market_The_Purchasing_Power_of_Working-Age_Adults_With_Disabilities_A_Hidden_Market_The_Purchasing_Power_of_Working-Age_Adults_With_Disabilities/links/5ad89016458515c60f5918f3/A-Hidden-Market-The-Purchasing-Power-of-Working-Age-Adults-With-Disabilities-A-Hidden-Market-The-Purchasing-Power-of-Working-Age-Adults-With-Disabilities.pdf),
 the total after-tax disposable income for working-age Americans with
