@@ -8,10 +8,10 @@ alt: 'Learn Accessibility! Community highlight.'
 thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
 subhead: >
   Albert Kim is a multi-faceted accessibility expert, leading the
-  conversation around mental health awareness.
+  conversation around mental health and digital accessibility.
 description: >
   Albert Kim is a multi-faceted accessibility expert, leading the
-  conversation around mental health awareness.
+  conversation around mental health and digital accessibility.
 date: 2022-11-17
 tags:
   - blog
