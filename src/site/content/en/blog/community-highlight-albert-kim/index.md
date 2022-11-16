@@ -96,7 +96,7 @@ to my blind friend. If digital product makers hear these stories from users,
 then hopefully they'll make accessible design choices so the users can fully
 utilize their products.
 
-## Building for "invisible" disabilities
+## Build for "invisible" disabilities
 
 **Alexandra**: I appreciate that you mentioned your blind friend specifically,
 because often the first thing that comes to mind when developers and designers
@@ -138,7 +138,7 @@ I happened to know someone in that community who reached out on Twitter.
 I got in through that connections, and I'm very passionate about bringing
 invisible disabilities into web accessibility spaces.
 
-### Participate in COGA and other W3C initiatives
+## Participate in COGA and other W3C initiatives
 
 **Alexandra**: Can anyone participate in such a group, and do people attend
 regularly?
@@ -203,7 +203,7 @@ semantic structure. Clear headings can be very helpful for users with OCD,
 ADHD, or dyslexia. Even for me, and my anxiety as well. All of these illnesses
 share some pain points, they're interconnected. 
 
-## Stop building bad user experiences
+## Stop creating bad user experiences
 
 **Alexandra**: Okay, what about the opposite? What are people building that is
 against WCAG recommendations that is causing problems for those with mental
@@ -236,7 +236,7 @@ These aren't just accessibility issues, these are usability issues.
 **Albert**:  There are so many examples. Make a good product and users will
 come back. These are just some examples.
 
-### Include content warnings
+## Include content warnings
 
 **Alexandra**: Something often politicized, at least in the United States, is
 the idea of content warnings (colloquially known as "trigger warnings").
