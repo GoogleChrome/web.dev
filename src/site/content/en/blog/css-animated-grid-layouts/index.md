@@ -20,6 +20,8 @@ tags:
 This web feature is now available in all three browser engines!
 {% endAside %}
 
+{% BrowserCompat 'css.properties.grid-template-columns.animation' %}
+
 ## Value Interpolation in CSS
 
 In CSS you can smoothly transition properties from one value to the other using the `transition` property.

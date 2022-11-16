@@ -39,6 +39,8 @@ Badges tend to be more user-friendly than notifications, and can be updated
 with a much higher frequency, since they don't interrupt the user. And,
 because they don't interrupt the user, they don't need the user's permission.
 
+{% BrowserCompat 'api.Navigator.setAppBadge' %}
+
 ### Possible use cases {: #use-cases }
 
 Examples of apps that might use this API include:

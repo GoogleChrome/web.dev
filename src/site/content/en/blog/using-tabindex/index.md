@@ -18,8 +18,10 @@ physically moving elements in the HTML isn't always an optimal, or even a
 feasible, solution. For these cases you can use the `tabindex` HTML attribute to
 explicitly set an element's tab position.
 
-`tabindex` can be applied to any element &mdash; although it is not necessarily
-useful on every element &mdash; and takes a range of integer values. Using
+{% BrowserCompat 'html.global_attributes.tabindex' %}
+
+`tabindex` can be applied to any element - although it is not necessarily
+useful on every element - and takes a range of integer values. Using
 `tabindex`, you can specify an explicit order for focusable page elements,
 insert an otherwise unfocusable element into the tab order, and remove elements
 from the tab order. For example:

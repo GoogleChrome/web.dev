@@ -46,10 +46,8 @@ Web share has the following capabilities and limitations:
 * It must be invoked in response to a user action such as a click. Invoking it
   through the `onload` handler is impossible.
 * It can share, URLs, text, or files.
-* As of January 2021, it is available on Safari, Android in Chromium forks,
-  ChromeOS, and Chrome on Windows. Chrome on MacOS is still in development. See
-  [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)
-  for details.
+
+{% BrowserCompat 'api.Navigator.share' %}
 
 ## Sharing links and text
 

@@ -245,6 +245,8 @@ Sec-CH-UA-Platform: "Android"
 
 ### JavaScript API
 
+{% BrowserCompat 'api.Navigator.userAgentData' %}
+
 Alongside the headers, the User-Agent can also be accessed in JavaScript via
 `navigator.userAgentData`. The default `Sec-CH-UA`, `Sec-CH-UA-Mobile`, and
 `Sec-CH-UA-Platform` header information can be accessed via the `brands` and

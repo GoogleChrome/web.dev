@@ -14,13 +14,6 @@ feedback:
   - api
 ---
 
-### Browser compatibility
-
-At the time of writing `gap` is supported in desktop Firefox 63, Firefox for Android 63,
-and Chromium 84 (desktop and Android). See
-[Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/gap#Browser_compatibility)
-for updates.
-
 ## CSS Gap
 
 {% Aside 'key-term' %}
@@ -45,6 +38,10 @@ the component and CSS author. **Less code scaling further.**
     <a href="https://twitter.com/argyleink/status/1254794309263491072?s=20">Tweet</a>
   </figcaption>
 </figure>
+
+### Browser compatibility
+
+{% BrowserCompat 'css.properties.gap' %}
 
 ### Usage
 `gap` accepts any CSS [length](https://drafts.csswg.org/css-values-4/#lengths)

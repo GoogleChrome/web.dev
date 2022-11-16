@@ -93,17 +93,20 @@ degenerative conditions.
   12 men and 1 in 200 women are colorblind.
   ([Source](https://www.colourblindawareness.org/colour-blindness/))
 * _Tools include_: Screen reader software, screen magnification tools, Braille output devices.
-* _Pain points_: ​Digital products that do not work with screen reader software, mobile websites/apps without pinch to zoom, complex graphs and charts differentiated by colors alone, color contrasts that make it difficult to read text on the screen
+* _Pain points_: Digital products that do not work with screen reader software,
+  mobile websites/apps without pinch to zoom, complex graphs and charts differentiated
+  by colors alone, color contrasts that make it difficult to read text on the screen
 
 {% Aside 'important' %}
-Use lowercase when referring to a vision-loss condition or to a blind person who prefers lowercase. Capitalize for those who capitalize Blind when describing themselves.
+Use lowercase when referring to a vision-loss condition or to a blind person who prefers
+lowercase. Capitalize for those who capitalize Blind when describing themselves.
 {% endAside %}
 
 <blockquote>
   <p>"My vision has deteriorated rapidly over the last three years, and my phone's default font size ranges from large to mega-large. There are a decent amount of mobile apps that I can barely use because of their absurd font sizes."</p>
   <cite>Frank</cite>
 </blockquote>
-     
+
 Read a short [article in the New York Times](https://www.nytimes.com/2022/08/16/opinion/blindness-retinitis-pigmentosa.html)
 or watch a [video](https://youtu.be/X04HKyW-3hc) on what it means to be
 legally blind.
@@ -116,7 +119,7 @@ Mobility impairments
 {% endDetailsSummary %}
 
 [Mobility impairment](https://www.disabled-world.com/disability/types/mobility/)
-is a category of disability that includes people with various physical 
+is a category of disability that includes people with various physical
 disabilities. This type of disability includes upper or lower limb loss or
 disability, manual dexterity, and disability in coordination with different
 organs of the body.
@@ -130,8 +133,9 @@ organs of the body.
 </figure>
 
 * _Examples_: Arthritis, paralysis, amputees, seizure disorders.
-* _Prevalence_: 1 in 7 people have mobility issues. ([Source](https://www.cdc.gov/media/releases/2018/p0816-disability.html#:~:text=One%20in%204%20U.S.%20adults,affects%201%20in%207%20adults.))
-* _Tools include_: Adaptative switches, eye tracking devices, mouth/head sticks, speech input.
+* _Prevalence_: 1 in 7 people have mobility issues.
+  ([Source](https://www.cdc.gov/media/releases/2018/p0816-disability.html#:~:text=One%20in%204%20U.S.%20adults,affects%201%20in%207%20adults.))
+* _Tools include_: Adaptive switches, eye tracking devices, mouth/head sticks, speech input.
 * _Pain points_: Elements that are only designed to work with the use of a mouse.
 
 <blockquote>
@@ -215,7 +219,7 @@ when describing themselves.
 </blockquote>
 
 Read a short
-[article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html) 
+[article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html)
 or watch a [video](https://youtu.be/3-MzNPcEh6M) on face blindness
 (prosopagnosia).
 
@@ -239,7 +243,9 @@ can also result from or be worsened by genetic or environmental conditions or
 occur for unknown reasons.
 
 <figure data-float="right">
- {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6jKwFBXkliZ0wtJgr8tj.png", alt="A person in a green jacket with glasses.", width="183", height="320" %}
+ {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6jKwFBXkliZ0wtJgr8tj.png",
+  alt="A person in a green jacket with glasses.", width="183", height="320"
+ %}
 </figure>
 
 * _Examples_: Epilepsy, vertigo, dizziness, labyrinthitis, balance, and eye movement disorders.

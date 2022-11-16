@@ -39,6 +39,8 @@ This is why `ResizeObserver` is a useful primitive. It reacts to changes in
 size of any of the observed elements, independent of what caused the change.
 It provides access to the new size of the observed elements too.
 
+{% BrowserCompat 'api.ResizeObserver' %}
+
 ## API
 
 All the APIs with the `Observer` suffix we mentioned above share a simple API
@@ -139,7 +141,7 @@ will change its border radius according to its width.
 ```js
 const ro = new ResizeObserver(entries => {
   for (let entry of entries) {
-    entry.target.style.borderRadius = 
+    entry.target.style.borderRadius =
         Math.max(0, 250 - entry.contentRect.width) + 'px';
   }
 });

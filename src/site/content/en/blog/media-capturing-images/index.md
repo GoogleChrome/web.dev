@@ -116,11 +116,11 @@ desktop or another application.
 Similar to the file input, you can get a `FileList` object from the `dataTransfer.files` property of
 the `drop` event;
 
-The `dragover` event handler let's you signal to the user what will happen when they drop the file
+The `dragover` event handler lets you signal to the user what will happen when they drop the file
 by using
 [the `dropEffect` property](https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect).
 
-Drag and drop has been around for a long time and is well supported by the major browsers.
+Drag and drop has been around for a long time and is well-supported by the major browsers.
 
 ### Paste from clipboard
 
