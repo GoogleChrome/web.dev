@@ -23,14 +23,15 @@ You might have heard about the
 part of the
 [HTML5 Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API)
 and [Clipboard events](https://developer.mozilla.org/docs/Web/API/Element/copy_event). It can
-be used to transfer data between source and receiving targets. This API is
-[ready to use](https://caniuse.com/mdn-api_datatransfer_setdata) in all modern desktop browsers.
+be used to transfer data between source and receiving targets.
+
+{% BrowserCompat 'api.DataTransfer' %}
 
 The drag-drop and copy-paste interactions are often used for interactions within a page
 to transfer simple text from A to B. But what is oftentimes overlooked is the ability to use
 these same interactions to go beyond the browser window.
 
-Both the browser's built-in drag-and-drop as well as the copy-paste interactions can communicate
+Both the browser's built-in drag-and-drop and the copy-paste interactions can communicate
 with other applications, web or otherwise, and are not tied to any origin. The API supports multiple
 data entries with different behaviors based on where data is transferred to. Your
 web application can send and receive the transferred data when listening to incoming events.

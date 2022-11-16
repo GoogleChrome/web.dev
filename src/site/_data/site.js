@@ -32,9 +32,8 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
-  isBannerEnabled: true,
-  banner:
-    "From fun and frightful web tips and tricks to scary good scroll-linked animations, we're celebrating the web Halloween-style, in [Chrometober](http://web.dev/chrometober-2022).",
+  isBannerEnabled: false,
+  banner: '',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
@@ -55,7 +54,7 @@ module.exports = {
       COLOR_SCHEME_PREFERENCE: 'dimension7',
       WEB_VITALS_DEBUG: 'dimension8',
     },
-    version: 13,
+    version: 14,
   },
   firebase: {
     prod: {

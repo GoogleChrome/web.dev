@@ -62,7 +62,8 @@ Unused preloads trigger a Console warning in Chrome, approximately 3 seconds aft
 {% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Chrome DevTools Console warning about unused preloaded resources.", width="800", height="228" %}
 
 {% Aside %}
-[`preload` is supported](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility) in all modern browsers.
+`preload` is supported  in all modern browsers.
+{% BrowserCompat 'html.elements.link.rel.preload' %}
 {% endAside %}
 
 ## Use cases

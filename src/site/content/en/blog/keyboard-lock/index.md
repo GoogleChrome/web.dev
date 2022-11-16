@@ -43,7 +43,9 @@ await document.documentElement.requestFullscreen();
 
 ### Browser compatibility
 
-You can see browser compatibility on [Can I use](https://caniuse.com/#feat=mdn-api_keyboard_lock). Note that not all system keys can be locked. This varies from operating system to operating system.
+{% BrowserCompat 'api.Keyboard.lock' %}
+
+Note that some system keys cannot be locked. This varies from operating system to operating system.
 
 ### Feature detection
 

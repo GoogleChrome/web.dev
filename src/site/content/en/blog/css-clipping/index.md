@@ -47,8 +47,8 @@ There are a few different ways to create a `clip-path`, in this post we will tak
 
 ## Browser compatibility
 
-Other than the box values as explained later in the post,
-the various values of `clip-path` demonstrated have [excellent browser support](https://caniuse.com/#feat=css-clip-path).
+{% BrowserCompat 'css.properties.clip-path' %}
+
 For legacy browsers a fallback may be to allow the browser to ignore the `clip-path` property and show the unclipped image.
 If this is a problem you could test for `clip-path` in a feature query and offer an alternate layout for unsupporting browsers.
 

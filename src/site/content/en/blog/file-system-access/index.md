@@ -579,7 +579,7 @@ const dirHandle = await root.getDirectoryHandle('New Folder', { create: true });
 await root.removeEntry('Old Stuff', { recursive: true });
 ```
 
-## Accessing files optimized for performance from the origin private file system
+### Accessing files optimized for performance from the origin private file system
 
 The origin private file system provides optional access to a special kind of file that is highly
 optimized for performance, for example, by offering in-place and exclusive write access to a file's

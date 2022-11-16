@@ -22,6 +22,8 @@ Constructable Stylesheets are available in Chromium
 `layout.css.constructable-stylesheets.enabled` flag.
 {% endAside %}
 
+{% BrowserCompat 'api.CSSStyleSheet' %}
+
 It has always been possible to create stylesheets using JavaScript. However, the
 process has historically been to create a `<style>` element using
 `document.createElement('style')`, and then access its sheet property to obtain

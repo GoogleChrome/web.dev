@@ -23,9 +23,7 @@ based on the quality of their connection. This is now possible with the
 [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)
 which enables web applications to access information about the user's network.
 
-{% Aside %}
-  You can see which browsers support [the Network Information API on caniuse.com](https://caniuse.com/#feat=netinfo).
-{% endAside %}
+{% BrowserCompat 'api.NetworkInformation' %}
 
 ## Usage
 
