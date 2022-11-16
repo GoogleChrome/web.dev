@@ -303,10 +303,11 @@ or watch a [video](https://youtu.be/m0E_wMIwfSI) on stuttering and technology.
 
 {% endDetails %}
 
+### Additional beneficiaries of accessibility
+
 While the number of people with disabilities worldwide is large, it's important
-to remember that these numbers don’t include people who do not identify as
-having a disability but who could benefit from accessible digital products,
-including those who are:
+to remember that these numbers aren't inclusive of everyone that benefits from
+accessible digital spaces. This includes:
 
 * _Temporarily disabled_. It may mean someone has a broken wrist or is
   cognitively impaired due to medication.
@@ -322,8 +323,7 @@ including those who are:
   target size for buttons on their touch device due to an age-related hand
   tremor.
 * _Search engine optimization (SEO) bots_. SEO bots do not have senses like
-  sight and hearing and navigate by keyboard only, so they can also benefit from
-  accessible digital products.
+  sight and hearing and navigate by keyboard only. Your websites will be crawled more effectively when your site is accessible.
 
 ## Business impact
 

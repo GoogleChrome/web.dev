@@ -21,12 +21,6 @@ tags:
 
 _This post highlights a community expert, as a part of [Learn Accessibility!](/learn/accessibility/)_
 
-{% Aside %}
-Read some recent articles by Melanie on
-[her process for accessibility testing](https://melsumner.github.io/accessibility-testing)
-and [getting started with accessibility](https://melsumner.github.io/getting-started-with-accessibility).
-{% endAside %}
-
 **Alexandra White**: How would you introduce yourself? You do so much accessibility work.
 
 <figure data-float="right">
@@ -44,8 +38,8 @@ people interested in learning more about accessibility. I'm a
 [Disability:IN NextGen Leader](https://disabilityin.org/what-we-do/nextgen-leaders-initiatives/).
 And currently, I'm a W3C invited expert for the
 [Cognitive and Learning Disabilities Task Force](https://www.w3.org/WAI/GL/task-forces/coga/)
-and Mental Health Sub-Group. Lately, I've been researching a lot about how to
-include people with OCD, ADHD, dyslexia, and PTSD into the product development
+and Mental Health Sub-Group. Lately, I've been researching how to include
+people with OCD, ADHD, dyslexia, and PTSD into the product development
 process.
 
 Offline, I'm a DEI community leader, blogger, huge foodie, photographer, and I
@@ -109,10 +103,11 @@ utilize their products.
 
 **Alexandra**: I love that you mentioned your blind friend specifically,
 because often the first thing that comes to mind when developers and designers
-_do_ think about disability are the "obvious" ones: those who are blind or deaf
-or have another visible permanent disability, like those who require a
-wheelchair. But there are so many invisible disabilities, like mental health
-disabilities. 
+_do_ think about disability are the "obvious" ones: visible and often permanent
+disabilities. But there are [so many people impacted by accessible
+design](/learn/accessibility/why/#additional-beneficiaries-of-accessibility),
+such as those with temporary and invisible disabilities, like psychological
+disabilities.
 
 You're an invited expert to the W3C group, ​​the
 [Cognitive and Learning Disabilities Task Force](https://www.w3.org/WAI/GL/task-forces/coga/)
@@ -181,8 +176,8 @@ affects you as a person with OCD and PTSD. Is there guidance out there or sites
 that are doing a good job of giving people a way to opt-out of an experience
 that may be triggering.
 
-**Albert**: There is an [issue paper](https://www.w3.org/TR/coga-usable/#make-the-relationship-clear-between-controls-and-the-content-they-affect-pattern),
-written by COGA, that has supplemental guidance. As far as websites or
+**Albert**: There is a [COGA issue paper](https://www.w3.org/TR/coga-usable/#make-the-relationship-clear-between-controls-and-the-content-they-affect-pattern),
+that has supplemental guidance. As far as websites or
 resources acting as a good example… that might be hard to find! Addressing
 mental health in web development is still very new. But I do have a lot of
 advice and specific best practices that I can recommend as a user with
@@ -190,7 +185,11 @@ disabilities and as an accessibility SME.
 
 {% Aside %}
 
-The [COGA issue paper](https://www.w3.org/TR/coga-usable/#make-the-relationship-clear-between-controls-and-the-content-they-affect-pattern) doesn't directly consult on endless scroll. This advice comes from both Albert's experience as a neurodivergent user and common best practices. Preventing endless scroll is a very widely accepted and understood concept.
+The [COGA issue paper](https://www.w3.org/TR/coga-usable/#make-the-relationship-clear-between-controls-and-the-content-they-affect-pattern)
+doesn't directly consult on endless scroll. This advice comes from both
+Albert's experience as a neurodivergent user and common best practices.
+Preventing endless scroll is a widely accepted and understood as an
+accessibility best practice.
 
 {% endAside %}
 
@@ -206,12 +205,6 @@ One of the most important design choices that would be helpful is clear,
 semantic structure. Clear headings can be very helpful for users with OCD,
 ADHD, or dyslexia. Even for me, and my anxiety as well. All of these illnesses
 share some pain points, they're interconnected. 
-
-{% Aside 'codelab' %}
-Take the Learn Accessibility module on
-[Content structure](/learn/accessibility/structure) to read about semantic HTML,
-landmarks, data tables, and more.
-{% endAside %}
 
 ## Stop building bad user experiences
 
@@ -272,8 +265,8 @@ prepare themselves for what they'll be learning.
 
 {% Aside %}
 
-If you include a content warning in a video, it's important to let this warning
-play for long enough for people to read the message, especially in contexts
+If you include a content warning in a video, it's critical to let this warning
+play for long enough that people can read the message, especially in contexts
 where the video may not be paused.
 
 {% endAside %}
@@ -325,7 +318,13 @@ communicate better with your users, and are more scalable, usable, and
 accessible. Users can find the information they seek more easily and understand
 the relationships between different parts of the content.
 
-This advice itself touches upon three WCAG success criteria:
+{% Aside 'codelab' %}
+Take the Learn Accessibility module on
+[Content structure](/learn/accessibility/structure) to read about semantic HTML,
+landmarks, data tables, and more.
+{% endAside %}
+
+This advice touches upon three WCAG success criteria:
 
 * [2.4.6. Headings and Labels](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html)
 * [1.3.1. Info and Relationships](https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html)
