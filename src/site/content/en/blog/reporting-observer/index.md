@@ -43,8 +43,7 @@ a site locally. `ReportingObserver` provides a solution to this problem. When
 users experience potential issues in the wild, web developers can be notified
 about them.
 
-`ReportingObserver` has only shipped in Chrome 69. It is being considered by
-other browsers.
+{% BrowserCompat 'api.ReportingObserver' %}
 
 ## Background
 

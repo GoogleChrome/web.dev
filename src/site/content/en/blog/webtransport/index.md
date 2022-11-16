@@ -44,6 +44,19 @@ Many of the concepts in this proposal were previously experimented with as part 
 WebTransport helps with similar use cases as QuicTransport, with the primary difference being that [HTTP/3](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) instead of [QUIC](https://www.chromium.org/quic) is the underlying transport protocol.
 {% endAside %}
 
+## Browser support
+
+The WebTransport features described in this article are shipping in Chrome, Edge, and other Chromium-based browsers, starting with
+[version 97](https://chromestatus.com/feature/4854144902889472).
+
+Firefox does not currently have support for WebTransport. Updates on their
+position can be found in this
+[Mozilla bugs ticket](https://bugzilla.mozilla.org/show_bug.cgi?id=1709355).
+
+Safari does not currently have support for WebTransport.
+
+As with all features that do not have universal browser support, coding defensively via [feature detection](https://developer.mozilla.org/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection) is a best practice.
+
 ## Current status {: #status }
 
 <div>
@@ -277,19 +290,6 @@ The [WebTransport draft specification](https://wicg.github.io/web-transport/) in
 ### WebTransport in Chrome's DevTools
 
 Unfortunately, [Chrome's DevTools](https://developer.chrome.com/docs/devtools/) do not currently support WebTransport. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290) to be notified about updates on the DevTools interface.
-
-## Browser support
-
-The WebTransport features described in this article are shipping in Chrome, Edge, and other Chromium-based browsers, starting with
-[version 97](https://chromestatus.com/feature/4854144902889472).
-
-Firefox does not currently have support for WebTransport. Updates on their
-position can be found in this
-[GitHub issue](https://github.com/mozilla/standards-positions/issues/167).
-
-Safari does not currently have support for WebTransport.
-
-As with all features that do not have universal browser support, coding defensively via [feature detection](https://developer.mozilla.org/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection) is a best practice.
 
 ## Polyfill
 

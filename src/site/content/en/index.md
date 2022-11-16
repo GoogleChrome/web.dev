@@ -29,18 +29,6 @@ promoPanel:
   imageHeight: '483'
 pickedCaseStudyUrl: '/mishipay/'
 pickedCaseStudyTheme: 'light'
-pageSpeed:
-  eyebrow: 'PageSpeed Insights'
-  title: 'Measure performance with PageSpeed Insights'
-  summary: |
-    PageSpeed Insights is a tool for measuring the performance and Core Web Vitals of a page with lab and field data.
-  image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/6Ye3EKc6quNaopPrigno.png'
-  imageWidth: '546'
-  imageHeight: '421'
-  primaryButtonText: 'Try PageSpeed Insights'
-  primaryButtonUrl: 'https://pagespeed.web.dev/'
-  secondaryButtonText: 'Learn more'
-  secondaryButtonUrl: 'https://developers.google.com/speed/docs/insights/v5/about?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI#faq'
 courses:
   title: 'Featured courses'
   summary: 'Explore our structured learning paths to discover everything you need to know about building for the modern web.'

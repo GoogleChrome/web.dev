@@ -18,7 +18,9 @@ feedback:
   - api
 ---
 
-Since Chrome 84, [ResizeObserver] supports a new box measurement called `device-pixel-content-box`, that measures the element's dimension in _physical_ pixels. This enables rendering pixel-perfect graphics, especially in the context of high-density screens.
+Since Chrome 84, [ResizeObserver] supports a new box measurement called `devicePixelContentBox`, that measures the element's dimension in _physical_ pixels. This enables rendering pixel-perfect graphics, especially in the context of high-density screens.
+
+{% BrowserCompat 'api.ResizeObserverEntry.devicePixelContentBoxSize' %}
 
 ## Background: CSS pixels, canvas pixels, and physical pixels
 

@@ -25,7 +25,7 @@ To find out about the concretely supported properties, call `navigator.contacts.
 allow the user to select multiple contacts, pass `{multiple: true}` as the second parameter of
 `navigator.contacts.select()`.
 
-{% BrowserCompat 'api.AudioContext.outputLatency' %}
+{% BrowserCompat 'api.ContactsManager' %}
 
 The Contact Picker API is available in the Android version of Chrome from version 80.
 

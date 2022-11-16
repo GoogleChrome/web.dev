@@ -56,7 +56,6 @@ addEventListener('message', e => {
 });
 ```
 
-
 The Web Worker API has been available in most browsers for over ten years. While that
 means workers have excellent browser support and are well-optimized, it also means they long
 predate JavaScript modules. Since there was no module system when workers were designed, the API

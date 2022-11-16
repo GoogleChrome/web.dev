@@ -396,6 +396,10 @@ We hope to
 [add this to URLPattern](https://github.com/WICG/urlpattern/discussions/41) in
 the future, but it's not within scope for the initial release.
 
+### Browser compatibility
+
+{% BrowserCompat 'api.URLPattern' %}
+
 ### Enabling future web platform features {: #future-features }
 
 Assuming `URLPattern` becomes an established part of the web platform, other

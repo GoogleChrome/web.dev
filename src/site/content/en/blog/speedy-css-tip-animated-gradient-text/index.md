@@ -35,7 +35,7 @@ Bump up the `font-size` on our text. Use `clamp` to make it responsive:
 
 ```css
 .boujee-text {
-  font-size: clamp(3rem, 25vmin, 12rem);
+  font-size: clamp(3rem, 25vmin, 8rem);
 }
 ```
 

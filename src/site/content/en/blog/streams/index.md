@@ -44,6 +44,20 @@ This unlocks a number of use cases, some of which I list below:
   installed inside the `fetch` handler of a service worker, this allows you to transparently polyfill
   new image formats like AVIF.
 
+## Browser support
+
+### ReadableStream and WritableStream
+
+{% BrowserCompat 'api.ReadableStream' %}
+
+### TransformStream
+
+{% BrowserCompat 'api.TransformStream' %}
+
+{% Aside %}
+  For additional support, there is a [polyfill](https://github.com/MattiasBuelens/web-streams-polyfill) available. If possible, load the polyfill conditionally and only if the built-in feature is not available.
+{% endAside %}
+
 ## Core concepts
 
 Before I go into details on the various types of streams, let me introduce some core concepts.
@@ -938,21 +952,6 @@ fetch('./lorem-ipsum.txt').then((response) =>
     .pipeTo(appendToDOMStream(document.body))
 );
 ```
-
-## Browser support and polyfill
-
-Support for the Streams API in browsers varies. Be sure to check
-[Can I use](https://caniuse.com/streams) for detailed compatibility data. Note that some browsers only
-have partial implementations of certain features, so be sure to check the data thoroughly.
-
-The good news is that there is a
-[reference implementation](https://github.com/whatwg/streams/tree/main/reference-implementation)
-available and a [polyfill](https://github.com/MattiasBuelens/web-streams-polyfill) targeted at
-production use.
-
-{% Aside 'gotchas' %}
-  If possible, load the polyfill conditionally and only if the built-in feature is not available.
-{% endAside %}
 
 ## Demo
 
