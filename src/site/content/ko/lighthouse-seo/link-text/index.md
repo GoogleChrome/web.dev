@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse 링크 텍스트 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 설명 텍스트가 없는 링크에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 설명 텍스트가 없는 링크에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="설명 텍스트가 없는 링크를 표시하는 Lighthouse 감사", width="800", height="191" %}</figure>
 
@@ -61,5 +61,5 @@ Lighthouse는 다음의 일반적인 링크 텍스트에 플래그를 지정합�
 
 ## 참고 자료
 
-- [**링크에 설명 텍스트가 없습니다** 감사 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [**링크에 설명 텍스트가 없습니다** 감사 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [검색 엔진 최적화(SEO) 시작 가이드](https://support.google.com/webmasters/answer/7451184)

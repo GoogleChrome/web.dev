@@ -13,7 +13,7 @@ This step is for sites hacked to host spam, often with the warning
 _"This site may be hacked"_ displayed in search results. It's one of the
 longest steps in the recovery process. In this step, you'll compile a list of
 the damaged files on your site. You'll use this list in a later step,
-[Clean and maintain your site](/secure/clean-site/).
+[Clean and maintain your site](/clean-and-maintain-your-site/).
 
 {% Aside %}
 If your site was affected by malware and is flagged with the warning

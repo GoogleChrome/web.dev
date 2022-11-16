@@ -51,7 +51,7 @@ communication between the encryption system and a license or other server.
 EME implementations use the following external components:
 
 - **Key System:** A content protection (DRM) mechanism. EME doesn't define Key
-  Systems themselves, apart from Clear Key (more about that [below](#clear_key)).
+  Systems themselves, apart from Clear Key (more about that [below](#clear-key)).
 - **Content Decryption Module (CDM):** A client-side software or hardware
   mechanism that enables playback of encrypted media. As with Key Systems, EME
   doesn't define any CDMs, but provides an interface for applications to
@@ -71,7 +71,7 @@ determines the user's identity and privileges.
 ## How does EME work?
 
 Here's how the components of EME interact, corresponding to the
-[code example below](#getting_a_key_from_a_license_server):
+[code example below](#getting-a-key-from-a-license-server):
 
 If multiple formats or codecs are available,
 [MediaSource.isTypeSupported()](https://www.w3.org/TR/media-source/#dom-mediasource-istypesupported) or
@@ -269,7 +269,7 @@ testing EME implementations, and applications using EME, without the need to
 request a content key from a license server. There is a simple Clear Key example
 at [simpl.info/ck](http://simpl.info/eme/clearkey). Below is a walkthrough of
 the code, which parallels the steps described
-[above](#getting_a_key_from_a_license_server), though without license server
+[above](#getting-a-key-from-a-license-server), though without license server
 interaction.
 
 ```js
@@ -391,7 +391,7 @@ media streams provided by an MSE implementation, just as it would with media
 provided via a src attribute.
 
 How to chunk and play back media encoded at different bitrates? See the
-[DASH section below](#related_technology_2_dynamic_adaptive_streaming_over_http_dash).
+[DASH section below](#related-technology-2-dynamic-adaptive-streaming-over-http-dash).
 
 You can see MSE in action at [simpl.info/mse](http://simpl.info/mse);
 for the purposes of this example, a WebM video is split into five chunks using

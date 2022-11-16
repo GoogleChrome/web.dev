@@ -18,7 +18,7 @@ updated: 2019-09-19
 
 ## Lighthouse によるウェブアプリマニフェスト監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、インストール可能性の最低要件を満たす[ウェブアプリマニフェスト](/add-manifest/)がないページをフラグします。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、インストール可能性の最低要件を満たす[ウェブアプリマニフェスト](/add-manifest/)がないページをフラグします。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="ユーザーがホーム画面からウェブアプリをインストールできないことを示す Lighthouse 監査", width="800", height="98" %}</figure>
 
@@ -58,7 +58,7 @@ updated: 2019-09-19
 
 ## リソース
 
-- [**Web app manifest does not meet the installability requirements (ウェブアプリマニフェストがインストール可能性の要件を満たしていない)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [**Web app manifest does not meet the installability requirements (ウェブアプリマニフェストがインストール可能性の要件を満たしていない)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [Add a web app manifest (ウェブアプリマニフェストを追加する)](/add-manifest/)
 - [Discover what it takes to be installable (インストール可能にする方法について)](/discover-installable)
 - [Web App Manifest (ウェブアプリマニフェスト)](https://developer.mozilla.org/docs/Web/Manifest)

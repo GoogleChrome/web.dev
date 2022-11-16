@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse 뷰포트 메타 태그 감사가 실패하는 방법
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 표시 영역 메타 태그가 없는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 표시 영역 메타 태그가 없는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="Lighthouse 감사는 페이지에 표시 영역이 누락되었음을 보여줍니다", width="800", height="76" %}</figure>
 
@@ -50,6 +50,6 @@ Lighthouse `width`가 `device-width`와 같은지 확인하지 *않습니다*. `
 
 ## 자원
 
-- [**`너비` 또는 `최초 규모`가 있는 `<meta name="viewport">` 태그** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/viewport.js)
+- [**`너비` 또는 `최초 규모`가 있는 `<meta name="viewport">` 태그** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/viewport.js)
 - [반응형 웹 디자인 기초](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport)
 - [뷰포트 메타 태그를 사용하여 모바일 브라우저에서 레이아웃 제어](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag)

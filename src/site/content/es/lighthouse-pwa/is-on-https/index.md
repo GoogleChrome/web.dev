@@ -18,7 +18,7 @@ Para obtener más información sobre por qué todos los sitios deben protegerse 
 
 ## Cómo falla la auditoría Lighthouse para HTTPS
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no utilizan HTTPS:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas que no utilizan HTTPS:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FD2HDFl8SQCgRdhV4tzZ.png", alt="Auditoría Lighthouse que muestra que la página no utiliza HTTPS", width="800", height="139" %}</figure>
 
@@ -36,7 +36,7 @@ Si su página ya se está ejecutando sobre HTTPS pero no pasa esta auditoría, e
 
 ## Recursos
 
-- [Código fuente de la auditoría **No utiliza HTTPS**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/is-on-https.js).
+- [Código fuente de la auditoría **No utiliza HTTPS**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/is-on-https.js).
 - [Por qué debería usar siempre HTTPS](/why-https-matters/)
 - [Habilitar HTTPS en sus servidores](/enabling-https-on-your-servers/)
 - [Comprenda los problemas de seguridad con Chrome DevTools](https://developer.chrome.com/docs/devtools/security/)

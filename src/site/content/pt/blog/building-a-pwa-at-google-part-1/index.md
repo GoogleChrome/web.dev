@@ -91,7 +91,7 @@ Um dos principais componentes dos service workers é o armazenamento em cache de
 
 ### Lighthouse {: #lighthouse }
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) fornece várias ferramentas de depuração úteis para PWAs. Ele verifica um site e gera relatórios que abrangem PWAs, desempenho, acessibilidade, SEO e outras práticas recomendadas. Recomendamos [executar o Lighthouse em integração contínua](https://github.com/GoogleChrome/lighthouse-ci) para alertá-lo se você quebrar um dos critérios para ser um PWA. Na verdade, isso aconteceu conosco uma vez em que o service worker não estava instalando e não percebemos antes de um impulso para produção. Ter o Lighthouse como parte da nossa CI teria evitado isso.
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) fornece várias ferramentas de depuração úteis para PWAs. Ele verifica um site e gera relatórios que abrangem PWAs, desempenho, acessibilidade, SEO e outras práticas recomendadas. Recomendamos [executar o Lighthouse em integração contínua](https://github.com/GoogleChrome/lighthouse-ci) para alertá-lo se você quebrar um dos critérios para ser um PWA. Na verdade, isso aconteceu conosco uma vez em que o service worker não estava instalando e não percebemos antes de um impulso para produção. Ter o Lighthouse como parte da nossa CI teria evitado isso.
 
 ### Adote a entrega contínua {: #continuous-delivery }
 

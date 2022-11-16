@@ -25,104 +25,11 @@ Tali published her research on [her site](http://taligarsiel.com/), but we knew 
 As a web developer, **learning the internals of browser operations helps you make better decisions and know the justifications behind development best practices**. While this is a rather lengthy document, we recommend you spend some time digging in; we guarantee you'll be glad you did.
 {% endBlockquote %}
 
-This article has been translated into a few languages: HTML5 Rocks hosts the
-[German](http://www.html5rocks.com/de/tutorials/internals/howbrowserswork/),
-[Spanish](http://www.html5rocks.com/es/tutorials/internals/howbrowserswork/),
-[Japanese](http://www.html5rocks.com/ja/tutorials/internals/howbrowserswork/),
-[Portuguese](http://www.html5rocks.com/pt/tutorials/internals/howbrowserswork/),
-[Russian](http://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/) and
-[Simplified Chinese](http://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/) versions. You can view the externally hosted translations of [Korean](http://helloworld.naver.com/helloworld/59361) and [Turkish](http://sonsuzdongu.com/blog/tarayicilar-nasil-calisir-modern-web-tarayicilarin-perde-arkasi-cevirisi) as well.
-
 ## Introduction
 
 Web browsers are the most widely used software.
 In this primer, I will explain how they work behind the scenes.
 We will see what happens when you type `google.com` in the address bar until you see the Google page on the browser screen.
-
-### Table of Contents
-
-1. Introduction
-    1. [The browsers we will talk about](#The_browsers_we_will_talk_about)
-    1. [The browser's main functionality](#The_browser_main_functionality)
-    1. [The browser's high level structure](#The_browser_high_level_structure)
-
-1. [The rendering engine](#The_rendering_engine)
-    1. [Rendering engines](#Rendering_engines)
-    1.[The main flow](#The_main_flow)
-    1.[Main flow examples](#Main_flow_examples)
-
-1. [Parsing and DOM tree construction](#Parsing_general)
-    1. [Parsing: general](#Parsing_general)
-        1. [Grammars](#Grammars)
-        1. [Parser-Lexer combination](#Parser_Lexer_combination)
-        1. [Translation](#Translation)
-        1. [Parsing example](#Parsing_example)
-        1. [Formal definitions for vocabulary and syntax](#Formal_definitions_for_vocabulary_and_syntax)
-        1. [Types of parsers](#Types_of_parsers)
-        1. [Generating parsers automatically](#Generating_parsers_automatically)
-    1. [HTML Parser](#HTML_Parser)
-        1. [The HTML grammar definition](#The_HTML_grammar_definition)
-        1. [Not a context free grammar](#Not_a_context_free_grammar)
-        1. [HTML DTD](#HTML_DTD)
-        1. [DOM](#DOM)
-        1. [The parsing algorithm](#The_parsing_algorithm)
-        1. [The tokenization algorithm](#The_tokenization_algorithm)
-        1. [Tree construction algorithm](#Tree_construction_algorithm)
-        1. [Actions when parsing is finished](#Actions_when_the_parsing_is_finished)
-        1. [Browser error tolerance](#Browsers_error_tolerance)
-    1. [CSS parsing](#CSS_parsing)
-        1. [WebKit CSS parser](#WebKit_CSS_parser)
-    1. [The order of processing scripts and style sheets](#The_order_of_processing_scripts_and_style_sheets)
-      1. [Scripts](#Scripts)
-      1. [Speculative parsing](#Speculative_parsing)
-      1. [Style sheets](#Style_sheets)
-
-1. [Render tree construction](#Render_tree_construction)
-      1. [The render tree relation to the DOM tree](#The_render_tree_relation_to_the_DOM_tree)
-      1. [The flow of constructing the tree](#The_flow_of_constructing_the_tree)
-      1. [Style Computation](#Style_Computation)
-            1. [Sharing style data](#Sharing_style_data)
-            1. [Firefox rule tree](#Firefox_rule_tree)
-                1. [Division into structs](#Division_into_structs)
-                1. [Computing the style contexts using the rule tree](#Computing_the_style_contexts_using_the_rule_tree)
-            1. [Manipulating the rules for an easy match](#Manipulating_the_rules_for_an_easy_match)
-            1. [Applying the rules in the correct cascade order](#Applying_the_rules_in_the_correct_cascade_order)
-                    [Style sheet cascade order](#Style_sheet_cascade_order)
-                    [Specificity](#Specificity)
-                    [Sorting the rules](#Sorting_the_rules)
-      1. [Gradual process](#Gradual_process)
-
-1. [Layout](#Layout)
-      1. [Dirty bit system](#Dirty_bit_system)
-      1. [Global and incremental layout](#Global_and_incremental_layout)
-      1. [Asynchronous and synchronous layout](#Asynchronous_and_Synchronous_layout)
-      1. [Optimizations](#Optimizations)
-      1. [The layout process](#The_layout_process)
-      1. [Width calculation](#Width_calculation)
-      1. [Line breaking](#Line_Breaking)
-
-1. [Painting](#Painting)
-      1. [Global and incremental](#Global_and_Incremental)
-      1. [The painting order](#The_painting_order)
-      1. [Firefox display list](#Firefox_display_list)
-      1. [WebKit rectangle storage](#WebKit_rectangle_storage)
-  
-1. [Dynamic changes](#Dynamic_changes)
-1. [The rendering engine's threads](#The_rendering_engines_threads)
-      1. [Event loop](#Event_loop)
-
-1. [CSS2 visual model](#css)
-      1. [The canvas](#The_canvas)
-      1. [CSS box model](#CSS_Box_model)
-      1. [Positioning scheme](#Positioning_scheme)
-      1. [Box types](#Box_types)
-      1. [Positioning](#Positioning)
-        1. [Relative](#Relative)
-        1. [Floats](#Floats)
-        1. [Absolute and fixed](#Absolute_and_fixed)
-      1. [Layered representation](#Layered_representation)
-
-1. [Resources](#Resources)
 
 ## The browsers we will talk about
 
@@ -163,7 +70,7 @@ The browser's main components are:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/PgPX6ZMyKSwF6kB8zIhB.png", alt="Browser components", width="500", height="339" %}
-  <figcaption><span>Figure </span>:  Browser components</figcaption>
+  <figcaption>Figure : Browser components</figcaption>
 </figure>
 
 It is important to note that browsers such as Chrome run multiple instances of the rendering engine: one for each tab. Each tab runs in a separate process.
@@ -190,17 +97,17 @@ After that, this is the basic flow of the rendering engine:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/bPlYx9xODQH4X1KuUNpc.png", alt="Rendering engine basic flow", width="600", height="66" %}
-  <figcaption><span>Figure </span>: Rendering engine basic flow</figcaption>
+  <figcaption>Figure : Rendering engine basic flow</figcaption>
 </figure>
 
-The rendering engine will start parsing the HTML document and convert elements to [DOM](#Dom) nodes in a tree called the "content tree". The engine will parse the style data, both in external CSS files and in style elements. Styling information together with visual instructions in the HTML will be used to create another tree: the [render tree](#Render_tree_construction).
+The rendering engine will start parsing the HTML document and convert elements to [DOM](#dom) nodes in a tree called the "content tree". The engine will parse the style data, both in external CSS files and in style elements. Styling information together with visual instructions in the HTML will be used to create another tree: the [render tree](#render-tree-construction).
 
 The render tree contains rectangles with visual attributes like color and dimensions.
 The rectangles are in the right order to be displayed on the screen.
 
 After the construction of the render tree it goes through a "[layout](#layout)" process.
 This means giving each node the exact coordinates where it should appear on the screen.
-The next stage is [painting](#Painting) - the render tree will be traversed and each node will be painted using the UI backend layer.
+The next stage is [painting](#painting) - the render tree will be traversed and each node will be painted using the UI backend layer.
 
 It's important to understand that this is a gradual process. For better user experience, the rendering engine will try to display contents on the screen as soon as possible.
 It will not wait until all HTML is parsed before starting to build and layout the render tree.
@@ -208,15 +115,15 @@ Parts of the content will be parsed and displayed, while the process continues w
 
 ### Main flow examples
 
-  <figure>
-    {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/S9TJhnMX1cu1vrYuQRqM.png", alt="WebKit main flow.", width="624", height="289" %}
-    <figcaption><span>Figure </span>:  WebKit main flow</figcaption>
-  </figure>
+<figure>
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/S9TJhnMX1cu1vrYuQRqM.png", alt="WebKit main flow.", width="624", height="289" %}
+  <figcaption>Figure : WebKit main flow</figcaption>
+</figure>
 
-  <figure>
-    {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/Tbif2mUJCUVyPdyXntZk.jpg", alt="Mozilla's Gecko rendering engine main flow.", width="624", height="290" %}
-    <figcaption><span>Figure </span>:  Mozilla's Gecko rendering engine main flow</figcaption>
-  </figure>
+<figure>
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/Tbif2mUJCUVyPdyXntZk.jpg", alt="Mozilla's Gecko rendering engine main flow.", width="624", height="290" %}
+  <figcaption>Figure : Mozilla's Gecko rendering engine main flow</figcaption>
+</figure>
 
 From figures 3 and 4 you can see that although WebKit and Gecko use slightly different terminology, the flow is basically the same.
 
@@ -238,7 +145,7 @@ For example, parsing the expression `2 + 3 - 1` could return this tree:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/xNQUG9emGd8FzuOpumP7.png", alt="Mathematical expression tree node.", width="400", height="155" %}
-  <figcaption> <span>Figure </span>:  mathematical expression tree node</figcaption>
+  <figcaption>Figure : mathematical expression tree node</figcaption>
 </figure>
 
 ### Grammars
@@ -262,7 +169,7 @@ The lexer knows how to strip irrelevant characters like white spaces and line br
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/TfY1qPDNbZS8iBnlAO4b.png", alt="From source document to parse trees", width="101", height="300" %}
-  <figcaption>  <span>Figure </span>: from source document to parse trees</figcaption>
+  <figcaption>Figure : from source document to parse trees</figcaption>
 </figure>
 
 The parsing process is iterative. The parser will usually ask the lexer for a new token and try to match the token with one of the syntax rules.  If a rule is matched, a node corresponding to the token will be added to the parse tree and the parser will ask for another token.
@@ -275,7 +182,7 @@ In many cases the parse tree is not the final product. Parsing is often used in 
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/VhoUBTyHWNnnZJiIfRAo.png", alt="Compilation flow", width="104", height="400" %}
-  <figcaption><span>Figure </span>:  compilation flow</figcaption>
+  <figcaption>Figure : compilation flow</figcaption>
 </figure>
 
 ### Parsing example
@@ -355,23 +262,23 @@ The partly matched expression is placed on the parser's stack.
       </tr>
       <tr>
         <td>term</td>
-        <td> + 3 - 1  </td>
+        <td>+ 3 - 1</td>
       </tr>
       <tr>
         <td>term operation</td>
-        <td>3 - 1   </td>
+        <td>3 - 1</td>
       </tr>
       <tr>
         <td>expression</td>
-        <td>- 1       </a></td>
+        <td>- 1</td>
       </tr>
       <tr>
         <td>expression operation</td>
-        <td>1         </td>
+        <td>1</td>
       </tr>
       <tr>
         <td>expression</td>
-        <td> -     </td>
+        <td>-</td>
       </tr>
     </tbody>
   </table>
@@ -450,7 +357,7 @@ This markup would be translated to the following DOM tree:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/DNtfwOq9UaC3TrEj3D9h.png", alt="DOM tree of the example markup", width="400", height="219" %}
-  <figcaption>  <span>Figure </span>:  DOM tree of the example markup</figcaption>
+  <figcaption>Figure : DOM tree of the example markup</figcaption>
 </figure>
 
 
@@ -483,7 +390,7 @@ The tokenizer recognizes the token, gives it to the tree constructor, and consum
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/YYYp1GgcD0riUliWJdiX.png", alt="HTML parsing flow (taken from HTML5 spec)", width="308", height="400" %}
-  <figcaption><span>Figure </span>:  HTML parsing flow (taken from HTML5 spec)</figcaption>
+  <figcaption>Figure : HTML parsing flow (taken from HTML5 spec)</figcaption>
 </figure>
 
 ### The tokenization algorithm
@@ -504,7 +411,6 @@ Basic example - tokenizing the following HTML:
 </html>
 ```
 
-
 The initial state is the "Data state".
 When the `<` character is encountered, the state is changed to **"Tag open state"**.
 Consuming an `a-z` character causes creation of a "Start tag token", the state is changed to **"Tag name state"**.
@@ -521,7 +427,7 @@ The `</html>` input will be treated like the previous case.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/52SA8fqorIKP6h22JHUR.png", alt="Tokenizing the example input", width="627", height="387" %}
-  <figcaption><span>Figure </span>:  Tokenizing the example input</figcaption>
+  <figcaption>Figure : Tokenizing the example input</figcaption>
 </figure>
 
 #### Tree construction algorithm
@@ -559,7 +465,7 @@ Receiving the end of file token will end the parsing.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/Q8vtwKMnnvYf48eeY95Y.gif", alt="Tree construction of example HTML.", width="532", height="769" %}
-  <figcaption><span>Figure </span>:  tree construction of example html</figcaption>
+  <figcaption>Figure : tree construction of example html</figcaption>
 </figure>
 
 ### Actions when the parsing is finished
@@ -596,18 +502,16 @@ Like bookmarking and back/forward buttons it's just something that developed in 
 
 The HTML5 specification does define some of these requirements. (WebKit summarizes this nicely in the comment at the beginning of the HTML parser class.)
 
-{% Aside %}
 The parser parses tokenized input into the document, building up the document tree. If the document is well-formed, parsing it is straightforward.
 
 Unfortunately, we have to handle many HTML documents that are not well-formed, so the parser has to be tolerant about errors.
 
 We have to take care of at least the following error conditions:
 
-  1. The element being added is explicitly forbidden inside some outer tag. In this case we should close all tags up to the one which forbids the element, and add it afterwards.
-  1. We are not allowed to add the element directly. It could be that the person writing the document forgot some tag in between (or that the tag in between is optional). This could be the case with the following tags: HTML HEAD BODY TBODY TR TD LI (did I forget any?).
-  1. We want to add a block element inside an inline element. Close all inline elements up to the next higher block element.
-  1. If this doesn't help, close elements until we are allowed to add the element - or ignore the tag.
-{% endAside %}
+1. The element being added is explicitly forbidden inside some outer tag. In this case we should close all tags up to the one which forbids the element, and add it afterwards.
+1. We are not allowed to add the element directly. It could be that the person writing the document forgot some tag in between (or that the tag in between is optional). This could be the case with the following tags: HTML HEAD BODY TBODY TR TD LI (did I forget any?).
+1. We want to add a block element inside an inline element. Close all inline elements up to the next higher block element.
+1. If this doesn't help, close elements until we are allowed to add the element - or ignore the tag.
 
 Let's see some WebKit error tolerance examples:
 
@@ -633,10 +537,10 @@ For example:
 
 ```html
 <table>
-    <table>
-        <tr><td>inner table</td></tr>
-    </table>
-    <tr><td>outer table</td></tr>
+  <table>
+    <tr><td>inner table</td></tr>
+  </table>
+  <tr><td>outer table</td></tr>
 </table>
 ```
 
@@ -644,10 +548,10 @@ WebKit will change the hierarchy to two sibling tables:
 
 ```html
 <table>
-    <tr><td>outer table</td></tr>
+  <tr><td>outer table</td></tr>
 </table>
 <table>
-    <tr><td>inner table</td></tr>
+  <tr><td>inner table</td></tr>
 </table>
 ```
 
@@ -721,12 +625,12 @@ The lexical grammar (vocabulary) is defined by regular expressions for each toke
 
 ```markup
 comment   \/\*[^*]*\*+([^/*][^*]*\*+)*\/
-num   [0-9]+|[0-9]*"."[0-9]+
+num       [0-9]+|[0-9]*"."[0-9]+
 nonascii  [\200-\377]
 nmstart   [_a-z]|{nonascii}|{escape}
 nmchar    [_a-z0-9-]|{nonascii}|{escape}
-name    {nmchar}+
-ident   {nmstart}{nmchar}*
+name      {nmchar}+
+ident     {nmstart}{nmchar}*
 ```
 
 "ident" is short for identifier, like a class name.
@@ -795,7 +699,7 @@ In both cases each CSS file is parsed into a StyleSheet object. Each object cont
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/vBMlouM57RHDG29Ukzhi.png", alt="Parsing CSS.", width="500", height="393" %}
-  <figcaption><span>Figure </span>:  parsing CSS</figcaption>
+  <figcaption>Figure : parsing CSS</figcaption>
 </figure>
 
 ## The order of processing scripts and style sheets
@@ -904,8 +808,8 @@ Floats and absolutely positioned elements are out of flow, placed in a different
 A placeholder frame is where they should have been.
 
 <figure>
-{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/937hKTBHU2FAEyMRdi5z.png", alt="The render tree and the corresponding DOM tree.", width="731", height="396" %}
-<figcaption><span>Figure </span>:  The render tree and the corresponding DOM tree. The "Viewport" is the initial containing block. In WebKit it will be the "RenderView" object</figcaption>
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/937hKTBHU2FAEyMRdi5z.png", alt="The render tree and the corresponding DOM tree.", width="731", height="396" %}
+  <figcaption>Figure : The render tree and the corresponding DOM tree. The "Viewport" is the initial containing block. In WebKit it will be the "RenderView" object</figcaption>
 </figure>
 
 #### The flow of constructing the tree
@@ -977,7 +881,7 @@ WebKit also has style objects but they are not stored in a tree like the style c
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/qnms42muTKM1KVUarpVH.png", alt="Firefox style context tree.", width="640", height="407" %}
-  <figcaption><span>Figure </span>:  Firefox style context tree.</figcaption>
+  <figcaption>Figure : Firefox style context tree.</figcaption>
 </figure>
 
 The style contexts contain end values. The values are computed by applying all the matching rules in the correct order and performing manipulations that transform them from logical to concrete values. For example, if the logical value is a percentage of the screen it will be calculated and transformed to absolute units.
@@ -1042,7 +946,7 @@ Suppose we have this HTML
 And the following rules:
 
 ```css
-div {margin:5px;color:black}
+div {margin: 5px; color:black}
 .err {color:red}
 .big {margin-top:3px}
 div span {margin-bottom:4px}
@@ -1058,14 +962,14 @@ The resulting rule tree will look like this (the nodes are marked with the node 
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/zJM11a5O0t2C91bXl8wS.png", alt="The rule tree", width="500", height="294" %}
-  <figcaption><span>Figure </span>:  The rule tree</figcaption>
+  <figcaption>Figure : The rule tree</figcaption>
 </figure>
 
 The context tree will look like this (node name: rule node they point to):
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/3QoZ4kD7dDBR6HYobs4w.png", alt="The context tree.", width="400", height="305" %}
-  <figcaption> <span>Figure </span>:  The context tree</figcaption>
+  <figcaption>Figure : The context tree</figcaption>
 </figure>
 
 Suppose we parse the HTML and get to the second `<div>` tag. We need to create a style context for this node and fill its style structs.
@@ -1142,7 +1046,7 @@ The first rule will be inserted into the class map. The second into the id map a
 For the following HTML fragment;
 
 ```html
-<p class="error">an error occurred </p>
+<p class="error">an error occurred</p>
 <div id=" messageDiv">this is a message</div>
 ```
 
@@ -1180,7 +1084,7 @@ According to CSS2 spec, the cascade order is (from low to high):
 1. User important declarations
 
 The browser declarations are least important and the user overrides the author only if the declaration was marked as important.
-Declarations with the same order will be sorted by [specificity](#Specificity) and then the order they are specified.
+Declarations with the same order will be sorted by [specificity](#specificity) and then the order they are specified.
 The HTML visual attributes are translated to matching CSS declarations . They are treated as author rules with low priority.
 
 ### Specificity
@@ -1269,7 +1173,7 @@ Incremental layout is triggered (asynchronously) when renderers are dirty. For e
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/pjIcQqbVvJPryLtHpefc.png", alt="Incremental layout.", width="326", height="341" %}
-  <figcaption> <span>Figure </span>: Incremental layout - only dirty renderers and their children are laid out (<a href="#3_6">3.6</a>)</figcaption>
+  <figcaption>Figure : Incremental layout - only dirty renderers and their children are laid out (<a href="#3_6">3.6</a>)</figcaption>
 </figure>
 
 ### Asynchronous and Synchronous layout
@@ -1429,7 +1333,7 @@ Each box has a content area (e.g. text, an image, etc.) and optional surrounding
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/KbqHxGe3HMLM5BbXMcP8.jpg", alt="CSS2 box model", width="509", height="348" %}
-  <figcaption> <span>Figure </span>:  CSS2 box model</figcaption>
+  <figcaption>Figure : CSS2 box model</figcaption>
 </figure>
 
 Each  node generates 0…n such boxes.
@@ -1449,7 +1353,6 @@ For example: the default display for the "div" element is block.
 
 You can find a default style sheet example here: [www.w3.org/TR/CSS2/sample.html](http://www.w3.org/TR/CSS2/sample.html).
 
-
 ### Positioning scheme
 
 There are three schemes:
@@ -1457,7 +1360,6 @@ There are three schemes:
 1. Normal: the object is positioned according to its place in the document. This means its place in the render tree is like its place in the DOM tree and laid out according to its box type and dimensions
 1. Float: the object is first laid out like normal flow, then moved as far left or right as possible
 1. Absolute: the object is put in the render tree in a different place than in the DOM tree
-
 
 The positioning scheme is set by the "position" property and the "float" attribute.
 
@@ -1480,14 +1382,14 @@ Block box: forms a block - has its own rectangle in the browser window.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/fvhwoy1W1Se7IY4XyiXp.png", alt="Block box.", width="150", height="127" %}
-  <figcaption> <span>Figure </span>: Block box</figcaption>
+  <figcaption>Figure : Block box</figcaption>
 </figure>
 
 Inline box: does not have its own block, but is inside a containing block.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/srPz5klZnpr6j5edpV45.png", alt="Inline boxes.", width="300", height="233" %}
-  <figcaption><span>Figure </span>: Inline boxes</figcaption>
+  <figcaption>Figure : Inline boxes</figcaption>
 </figure>
 
 Blocks are formatted vertically one after the other.
@@ -1495,7 +1397,7 @@ Inlines are formatted horizontally.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/8i6bZtuslRR3kJdsST6p.png", alt="Block and Inline formatting.", width="350", height="324" %}
-  <figcaption><span>Figure </span>: Block and Inline formatting</figcaption>
+  <figcaption>Figure : Block and Inline formatting</figcaption>
 </figure>
 
 Inline boxes are put inside lines or "line boxes".
@@ -1505,7 +1407,7 @@ This is usually what happens in a paragraph.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/xChsrrYLPU7MfekdR7zS.png", alt="Lines.", width="400", height="277" %}
-  <figcaption><span>Figure</span>: Lines</figcaption>
+  <figcaption>Figure : Lines</figcaption>
 </figure>
 
 ### Positioning
@@ -1516,7 +1418,7 @@ Relative positioning - positioned like usual and then moved by the required delt
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/C1rUmDaOa8kGRx1PSdUu.png", alt="Relative positioning.", width="500", height="261" %}
-  <figcaption><span>Figure</span>: Relative positioning</figcaption>
+  <figcaption>Figure : Relative positioning</figcaption>
 </figure>
 
 #### Floats
@@ -1535,7 +1437,7 @@ Will look like:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/ozqqfqboQ0IJJWlv5xXx.png", alt="Float.", width="444", height="203" %}
-  <figcaption><span>Figure </span>: Float</figcaption>
+  <figcaption>Figure : Float</figcaption>
 </figure>
 
 #### Absolute and fixed
@@ -1546,7 +1448,7 @@ In fixed, the container is the viewport.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/0xwOrAiWm2kpuCecsRv1.png", alt="Fixed positioning.", width="500", height="343" %}
-  <figcaption><span>Figure </span>: Fixed positioning</figcaption>
+  <figcaption>Figure : Fixed positioning</figcaption>
 </figure>
 
 {% Aside %}
@@ -1569,28 +1471,28 @@ Example:
 
 ```html
 <style type="text/css">
-      div {
-        position: absolute;
-        left: 2in;
-        top: 2in;
-      }
+  div {
+    position: absolute;
+    left: 2in;
+    top: 2in;
+  }
 </style>
 
 <p>
-    <div
-         style="z-index: 3;background-color:red; width: 1in; height: 1in; ">
-    </div>
-    <div
-         style="z-index: 1;background-color:green;width: 2in; height: 2in;">
-    </div>
- </p>
+  <div
+    style="z-index: 3;background-color:red; width: 1in; height: 1in; ">
+  </div>
+  <div
+    style="z-index: 1;background-color:green;width: 2in; height: 2in;">
+  </div>
+</p>
 ```
 
 The result will be this:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/EXneyo5lwaJ6g09BuCo6.png", alt="Fixed positioning.", width="254", height="227" %}
-  <figcaption><span>Figure </span>: Fixed positioning</figcaption>
+  <figcaption>Figure : Fixed positioning</figcaption>
 </figure>
 
 Although the red div precedes the green one in the markup, and would have been painted before in the regular flow, the z-index property is higher, so it is more forward in the stack held by the root box.
@@ -1635,5 +1537,9 @@ Although the red div precedes the green one in the markup, and would have been p
 {% endAside %}
 
 ### Translations
-This page has been translated into Japanese, twice! [How Browsers Work - Behind the Scenes of Modern Web Browsers (ja)](http://cou929.nu/docs/how-browsers-work/) by [@_kosei_](https://twitter.com/#!/_kosei_) and also [ブラウザってどうやって動いてるの？（モダンWEBブラウザシーンの裏側](http://shanon-tech.blogspot.com/2011/09/web.html) by [@ikeike443](https://twitter.com/#!/ikeike443) and [@kiyoto01](https://twitter.com/#!/kiyoto01). Thanks everyone!
 
+This page has been translated into Japanese, twice! [How Browsers Work - Behind the Scenes of Modern Web Browsers (ja)](http://cou929.nu/docs/how-browsers-work/) by [@_kosei_](https://twitter.com/#!/_kosei_) and also [ブラウザってどうやって動いてるの？（モダンWEBブラウザシーンの裏側](http://shanon-tech.blogspot.com/2011/09/web.html) by [@ikeike443](https://twitter.com/#!/ikeike443) and [@kiyoto01](https://twitter.com/#!/kiyoto01).
+
+You can view the externally hosted translations of [Korean](http://helloworld.naver.com/helloworld/59361) and [Turkish](http://sonsuzdongu.com/blog/tarayicilar-nasil-calisir-modern-web-tarayicilarin-perde-arkasi-cevirisi) as well.
+
+Thanks everyone!

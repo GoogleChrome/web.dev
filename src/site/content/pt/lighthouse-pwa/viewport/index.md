@@ -17,7 +17,7 @@ Definir a viewport meta tag permite controlar a largura e a escala da janela de 
 
 ## Como a auditoria da meta tag viewport do Lighthouse falha
 
-[O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza as páginas sem uma meta tag da janela de visualização:
+[O Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza as páginas sem uma meta tag da janela de visualização:
 
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt = "A auditoria lighthouse mostra que a página está sem janela de visualização", width = "800", height = "76" %}</figure>
 
@@ -53,6 +53,6 @@ Aqui está o que cada par de valores-chave faz:
 
 ## Recursos
 
-- [Source code for **Has a `<meta name="viewport">` tag with `width` or `initial-scale`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/viewport.js)
+- [Source code for **Has a `<meta name="viewport">` tag with `width` or `initial-scale`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/viewport.js)
 - [Noções básicas de web design responsivo](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport)
 - [Usando a meta tag viewport para controlar o layout em navegadores de celular](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag)

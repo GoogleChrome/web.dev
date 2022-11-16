@@ -22,7 +22,7 @@ specification solves this problem.
 
 ## How the Lighthouse `charset` audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that do not specify their character encoding:
 
 <figure>
@@ -67,7 +67,7 @@ Content-Type: text/html; charset=UTF-8
 
 ## Resources
 
-- [Charset declaration is missing or occurs too late in the HTML](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/charset.js)
+- [Charset declaration is missing or occurs too late in the HTML](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/charset.js)
 - [Example page that fails the audit](https://charset.glitch.me/)
   ([source](https://glitch.com/edit/#!/charset))
 - [Character encoding][format]

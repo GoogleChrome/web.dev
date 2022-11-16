@@ -76,6 +76,6 @@ Veja o artigo do Google [Crie bons títulos e snippets em resultados de pesquisa
 
 ## Recursos
 
-- [O código-fonte da auditoria **Documento não tem meta description{/strong1**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [O código-fonte da auditoria **Documento não tem meta description{/strong1**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [Crie bons títulos e snippets em resultados de pesquisa](https://support.google.com/webmasters/answer/35624#1)
 - [Palavras-chave irrelevantes](https://support.google.com/webmasters/answer/66358)

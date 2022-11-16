@@ -18,7 +18,7 @@ Um [manifesto de aplicativo da web](/add-manifest/) inclui informações importa
 
 ## Como a auditoria de manifesto do aplicativo da web Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não têm um [manifesto de aplicativo da web](/add-manifest/) que atenda aos requisitos mínimos de instalação:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que não têm um [manifesto de aplicativo da web](/add-manifest/) que atenda aos requisitos mínimos de instalação:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Auditoria do farol mostrando que o usuário não pode instalar o aplicativo da web a partir da tela inicial", width="800", height="98" %}</figure>
 
@@ -58,7 +58,7 @@ Outros navegadores têm critérios diferentes para instalação e para acionar o
 
 ## Recursos
 
-- [O código-fonte para auditoria **Manifesto do aplicativo da web não atende aos requisitos de instabilidade**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [O código-fonte para auditoria **Manifesto do aplicativo da web não atende aos requisitos de instabilidade**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [Adicionar um manifesto de aplicativo da web](/add-manifest/)
 - [Descubra o que é necessário para ser instalável](/discover-installable)
 - [Manifesto de aplicativo da web](https://developer.mozilla.org/docs/Web/Manifest)

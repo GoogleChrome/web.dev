@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.json" />
+    <title>How to create an app badge</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', async () => {
+          const registration = await navigator.serviceWorker.register(
+            'sw.js',
+          );
+          console.log(
+            'Service worker registered for scope',
+            registration.scope,
+          );
+        });
+      }
+    </script>
+    <script src="script.js" type="module"></script>
+  </head>
+  <body>
+    <h1>How to create an app badge</h1>
+    <ol>
+      <li>
+        Watch the favicon. You should see a counter that updates each second
+        integrated into the favicon.
+        <img
+          src="../favicon.png"
+          style="width: 250px; height: auto"
+          width="528"
+          height="74"
+          alt="Favicon with counter."
+        />
+      </li>
+      <li>
+        Install the app by clicking the button below. After the installation,
+        the button is disabled.
+        <p>
+          <button disabled type="button">Install</button>
+        </p>
+      </li>
+      <li>
+        Watch the app icon in your operating system's task bar. You should see a
+        counter that updates each second as an app badge.
+        <img
+          src="../app-badge.png"
+          style="width: 80px; height: auto"
+          width="282"
+          height="388"
+          alt="App badge with counter."
+        />
+      </li>
+    </ol>
+    <favicon-badge src="../favicon.svg" textColor="#fff" badge="" />
+  </body>
+</html>

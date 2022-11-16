@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Какие URL-адреса помечаются как ресурсы, блокирующие рендеринг?
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает два типа URL-адресов, блокирующих рендеринг: скрипты и таблицы стилей.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает два типа URL-адресов, блокирующих рендеринг: скрипты и таблицы стилей.
 
 Скрипт `<script>` помечается, если он:
 
@@ -76,7 +76,7 @@ web_lighthouse:
 
 ## Ресурсы
 
-- [Исходный код проверки **Eliminate render-blocking resources** (Устраните ресурсы, блокирующие рендеринг)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js).
+- [Исходный код проверки **Eliminate render-blocking resources** (Устраните ресурсы, блокирующие рендеринг)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js).
 - [Сократите полезную нагрузку JavaScript за счет разделения кода](/reduce-javascript-payloads-with-code-splitting).
 - [Удалите неиспользуемый код (codelab)](/codelab-remove-unused-code).
 - [Оптимизация загрузки JavaScript](/optimizing-content-efficiency-javascript-startup-optimization/).

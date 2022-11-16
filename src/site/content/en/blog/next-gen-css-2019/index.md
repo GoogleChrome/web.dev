@@ -75,10 +75,10 @@ You can also find demos for all the features we discuss on our
 ## Contents
 
 - [Scroll Snap](#scroll-snap)
-- [`:focus-within`](#:focus-within)
+- [`:focus-within`](#focus-within)
 - [Media Queries Level 5](#media-queries-level-5)
 - [Logical properties](#logical-properties)
-- [`position: sticky`](#position:-sticky)
+- [`position: sticky`](#position-sticky)
 - [`backdrop-filter`](#backdrop-filter)
 - [`:is()`](#is)
 - [`gap`](#gap)

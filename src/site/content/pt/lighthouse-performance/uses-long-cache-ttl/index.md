@@ -14,7 +14,7 @@ Quando um navegador solicita um recurso, o servidor que fornece o recurso pode d
 
 ## Como falha a auditoria da política de cache do Lighthouse
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza todos os recursos estáticos que não são armazenados em cache:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza todos os recursos estáticos que não são armazenados em cache:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="Uma captura de tela da auditoria Lighthouse Sirva ativos estáticos com uma política de cache eficiente", width="800", height="490" %}</figure>
 
@@ -102,6 +102,6 @@ Veja [Cache do navegador](https://wordpress.org/support/article/optimization/#br
 
 ## Recursos
 
-- [Código-fonte para a auditoria **Sirva ativos estáticos com uma política de cache eficiente**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
+- [Código-fonte para a auditoria **Sirva ativos estáticos com uma política de cache eficiente**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [Especificação do Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 - [Cache-Control (MDN)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)

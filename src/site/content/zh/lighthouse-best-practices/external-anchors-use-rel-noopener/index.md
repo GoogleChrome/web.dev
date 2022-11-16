@@ -21,7 +21,7 @@ updated: 2019-08-28
 
 ## Lighthouse 跨源目的地审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 标记指向跨源目的地的不安全链接：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 标记指向跨源目的地的不安全链接：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="显示指向跨源目的地的不安全链接的 Lighthouse 审计", width="800", height="213" %}</figure>
 
@@ -51,6 +51,6 @@ Lighthouse 使用以下过程将链接识别为不安全：
 
 ## 资源
 
-- [**指向跨源目的地的链接不安全**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+- [**指向跨源目的地的链接不安全**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [安全地共享跨源资源](/cross-origin-resource-sharing/)
 - [面向 Web 开发人员的站点隔离](https://developers.google.com/web/updates/2018/07/site-isolation)

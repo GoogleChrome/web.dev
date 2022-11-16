@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting started with Web Audio API
+title: Working with Custom Elements
 authors:
   - smus
 date: 2011-10-14

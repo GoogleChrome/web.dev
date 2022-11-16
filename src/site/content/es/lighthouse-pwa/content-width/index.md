@@ -12,7 +12,7 @@ La ventana gráfica es la parte de la ventana del navegador en la que se ve el c
 
 ## Cómo falla la auditoría de ancho de contenido de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas cuyo ancho no es igual al ancho de la ventana gráfica:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas cuyo ancho no es igual al ancho de la ventana gráfica:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y8JKlbJTu7ERetHUGuaA.png", alt="Auditoría Lighthouse que muestra contenido que no tiene el tamaño correcto para la ventana gráfica", width="800", height="98" %}</figure>
 
@@ -31,5 +31,5 @@ Puedes ignorar esta auditoría si:
 
 ## Recursos
 
-- [El código fuente para la auditoría de **El contenido no tiene el tamaño correcto para la ventana gráfica**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/content-width.js)
+- [El código fuente para la auditoría de **El contenido no tiene el tamaño correcto para la ventana gráfica**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/content-width.js)
 - [Conceptos básicos del diseño web responsivo](/responsive-web-design-basics/)

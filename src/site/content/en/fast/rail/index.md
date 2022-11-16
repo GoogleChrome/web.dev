@@ -223,13 +223,16 @@ Be aware that these targets may change over time.
   bundles](/reduce-javascript-payloads-with-code-splitting/), and
   other [optimizations suggested on web.dev](/fast/).
 
-{% Aside %} Recognize the factors that affect page load performance:
-
-* Network speed and latency
-* Hardware (slower CPUs, for example)
-* Cache eviction
-* Differences in L2/L3 caching
-* Parsing JavaScript {% endAside %}
+{% Aside %}
+<p>Recognize the factors that affect page load performance:</p>
+<ul>
+<li>Network speed and latency</li>
+<li>Hardware (slower CPUs, for example)</li>
+<li>Cache eviction</li>
+<li>Differences in L2/L3 caching</li>
+<li>Parsing JavaScript</li>
+</ul>
+{% endAside %}
 
 ## Tools for measuring RAIL
 
@@ -295,7 +298,7 @@ The following DevTools features are especially relevant:
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) is available in
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is available in
 Chrome DevTools,  at [web.dev/measure](/measure/), as a
 Chrome Extension, as a Node.js module, and within WebPageTest. You give it a
 URL, it simulates a mid-range device with a slow 3G connection, runs a series of

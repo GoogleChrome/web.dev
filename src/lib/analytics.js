@@ -1,4 +1,11 @@
-import {getCLS, getFCP, getFID, getLCP, getTTFB} from 'web-vitals';
+import {
+  onCLS,
+  onFCP,
+  onFID,
+  onINP,
+  onLCP,
+  onTTFB,
+} from 'web-vitals/attribution';
 import {dimensions} from 'webdev_analytics';
 import {store} from './store';
 
@@ -58,7 +65,21 @@ export function trackError(error, message = '', fatal = false) {
  * See: https://github.com/GoogleChrome/web-vitals#using-analyticsjs
  * @param {Object} metric
  */
-function sendToGoogleAnalytics({name, delta, id}) {
+function sendToGoogleAnalytics({name, delta, id, attribution, navigationType}) {
+  let webVitalInfo = '(not set)';
+
+  switch (name) {
+    case 'CLS':
+      webVitalInfo = attribution.largestShiftTarget;
+      break;
+    case 'FID':
+    case 'INP':
+      webVitalInfo = attribution.eventTarget;
+      break;
+    case 'LCP':
+      webVitalInfo = attribution.element;
+      break;
+  }
   // Assumes the global `ga()` function exists, see:
   // https://developers.google.com/analytics/devguides/collection/analyticsjs
   ga('send', 'event', {
@@ -75,6 +96,10 @@ function sendToGoogleAnalytics({name, delta, id}) {
     eventLabel: id,
     // Use a non-interaction event to avoid affecting bounce rate.
     nonInteraction: true,
+
+    // See: https://web.dev/debug-performance-in-the-field/
+    [dimensions.WEB_VITALS_DEBUG]: webVitalInfo,
+    [dimensions.NAVIGATION_TYPE]: navigationType,
   });
 }
 
@@ -113,27 +138,81 @@ store.subscribe(({isSignedIn}) => {
   ga('set', dimensions.SIGNED_IN, isSignedIn ? '1' : '0');
 });
 
-/**
- * Add a listener to detect back/forward cache restores and track them
- * as pageviews with the "bfcache" navigation type set (in case we need
- * to distinguish them from regular pageviews).
- * https://web.dev/bfcache/#how-bfcache-affects-analytics-and-performance-measurement
- */
-window.addEventListener(
-  'pageshow',
-  /**
-   * @param {PageTransitionEvent} e
-   */
-  (e) => {
-    if (e.persisted) {
-      ga('set', dimensions.NAVIGATION_TYPE, 'bfcache');
-      ga('send', 'pageview');
-    }
-  },
-);
+// Set up a promise for when the page is activated,
+// which is needed for prerendered pages.
+const whenActivated = new Promise((resolve) => {
+  if (document.prerendering) {
+    document.addEventListener('prerenderingchange', () => resolve());
+  } else {
+    resolve();
+  }
+});
 
-getCLS(sendToGoogleAnalytics);
-getFCP(sendToGoogleAnalytics);
-getFID(sendToGoogleAnalytics);
-getLCP(sendToGoogleAnalytics);
-getTTFB(sendToGoogleAnalytics);
+// The Navigation Timing API will give us the navigation type in MOST cases
+// but there are a few edge cases to handle.
+function getNavigationType() {
+  // Track document restores (e.g. if a tab is unloaded to save memory)
+  if (document.wasDiscarded) {
+    return 'restore';
+  }
+
+  const navEntry =
+    self.performance &&
+    performance.getEntriesByType &&
+    performance.getEntriesByType('navigation')[0];
+
+  if (navEntry) {
+    // Prerendered pages have an activationStart time after activation
+    if (navEntry.activationStart > 0) {
+      return 'prerender';
+    } else {
+      return navEntry.type.replace(/_/, '-');
+    }
+  }
+  return '(not set)';
+}
+
+async function initAnalytics() {
+  // If prerendering then only init once the page is activated
+  await whenActivated;
+
+  // Set some custom dimensions
+  ga(
+    'set',
+    dimensions.COLOR_SCHEME_PREFERENCE,
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light',
+  );
+  ga('set', dimensions.NAVIGATION_TYPE, getNavigationType());
+  ga('send', 'pageview');
+
+  /**
+   * Add a listener to detect back/forward cache restores and track them
+   * as pageviews with the "back-forward-cache" navigation type set (in
+   * case we need to distinguish them from regular pageviews).
+   * https://web.dev/bfcache/#how-bfcache-affects-analytics-and-performance-measurement
+   */
+  window.addEventListener(
+    'pageshow',
+    /**
+     * @param {PageTransitionEvent} e
+     */
+    (e) => {
+      if (e.persisted) {
+        ga('set', dimensions.NAVIGATION_TYPE, 'back-forward-cache');
+        ga('send', 'pageview');
+      }
+    },
+  );
+
+  // Track CWVs using web-vitals.js
+  onCLS(sendToGoogleAnalytics);
+  onFCP(sendToGoogleAnalytics);
+  onFID(sendToGoogleAnalytics);
+  onINP(sendToGoogleAnalytics);
+  onLCP(sendToGoogleAnalytics);
+  onTTFB(sendToGoogleAnalytics);
+}
+
+initAnalytics();

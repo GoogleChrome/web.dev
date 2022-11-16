@@ -21,7 +21,7 @@ updated: 2019-08-28
 
 ## Lighthouseのクロスオリジン宛先監査が失敗する理由
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、安全でないクロスオリジン宛先へのリンクにフラグを設定します。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)は、安全でないクロスオリジン宛先へのリンクにフラグを設定します。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="安全でないクロスオリジン宛先へリンクを示すLighthouse監査", width="800", height="213" %}</figure>
 
@@ -51,6 +51,6 @@ Lighthouseレポートで識別された各リンクに`rel="noopener"`または
 
 ## リソース
 
-- [**安全でないクロスオリジン宛先へのリンク**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+- [**安全でないクロスオリジン宛先へのリンク**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [クロスオリジンリソースを安全に共有する](/cross-origin-resource-sharing/)
 - [ウェブ開発者向けのサイト分離](https://developers.google.com/web/updates/2018/07/site-isolation)

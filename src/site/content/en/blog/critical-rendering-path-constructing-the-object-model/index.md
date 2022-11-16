@@ -19,7 +19,7 @@ CSS to the browser as quickly as possible.
 - HTML markup is transformed into a Document Object Model (DOM); CSS markup is
   transformed into a CSS Object Model (CSSOM).
 - DOM and CSSOM are independent data structures.
-- Chrome DevTools Timeline allows us to capture and inspect the construction
+- Chrome DevTools Performance panel allows us to capture and inspect the construction
   and processing costs of DOM and CSSOM.
 
 ## Document Object Model (DOM)
@@ -73,14 +73,14 @@ above: convert bytes to characters, identify tokens, convert tokens to nodes,
 and build the DOM tree. This entire process can take some time, especially if
 we have a large amount of HTML to process.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/nAI6iO8vsAf03EUs4nWZ.png", alt="Tracing DOM construction in DevTools", width="766", height="180" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/XNtLYpXIK4zOXj9AgG5Y.png", alt="Tracing DOM construction in DevTools", width="766", height="180" %}
 
 {% Aside %}
 We're assuming that you have basic familiarity with Chrome DevTools - that
 is, you know how to capture a network waterfall or record a timeline. If you
 need a quick refresher, check out the
-[Chrome DevTools documentation](/web/tools/chrome-devtools/); if you're new to
-DevTools, check out [DevTools for Beginners](/web/tools/chrome-devtools/beginners/html)
+[Chrome DevTools documentation](https://developer.chrome.com/docs/devtools/overview/); if you're new to
+DevTools, check out [DevTools for Beginners](https://developer.chrome.com/docs/devtools/open/)
 in our DevTools documentation.
 {% endAside %}
 
@@ -162,13 +162,13 @@ timeline doesn’t show a separate "Parse CSS" entry, and instead captures
 parsing and CSSOM tree construction, plus the recursive calculation of
 computed styles under this one event.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/RHpJTxB4gBYuhzILaB7Y.png", alt="Tracing CSSOM construction in DevTools", width="766", height="180" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/nAI6iO8vsAf03EUs4nWZ.png", alt="Tracing CSSOM construction in DevTools", width="766", height="180" %}
 
 Our trivial stylesheet takes ~0.6ms to process and affects eight elements on
 the page&mdash;not much, but once again, not free. However, where did the
 eight elements come from? The CSSOM and DOM are independent data structures!
 Turns out, the browser is hiding an important step. Next, lets talk about the
-[render tree](/web/fundamentals/performance/critical-rendering-path/render-tree-construction)
+[render tree](/critical-rendering-path-render-tree-construction)
 that links the DOM and CSSOM together.
 
 ## Feedback {: #feedback }

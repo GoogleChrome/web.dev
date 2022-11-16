@@ -16,7 +16,7 @@ which can cause your page to [render in unexpected ways](https://quirks.spec.wha
 
 ## How the Lighthouse doctype audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages without the `<!DOCTYPE html>` declaration:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags pages without the `<!DOCTYPE html>` declaration:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Lighthouse audit showing missing doctype", width="800", height="76" %}

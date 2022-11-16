@@ -38,7 +38,7 @@
     <h2 class="card__heading text-size-3">
       <a href="{{ param.url }}">{{ param.title }}</a>
     </h2>
-    <p>{{ param.subhead }}</p>
+    <p>{{ param.subhead | md | safe }}</p>
   </div>
 
   {% if param.authors %}

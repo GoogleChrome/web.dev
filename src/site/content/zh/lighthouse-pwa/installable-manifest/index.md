@@ -18,7 +18,7 @@ updated: 2019-09-19
 
 ## Lighthouse Web 应用程序清单审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)会标记没有满足可安装性最低要求的[Web 应用程序清单](/add-manifest/)的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)会标记没有满足可安装性最低要求的[Web 应用程序清单](/add-manifest/)的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="显示用户无法从其主屏幕安装 Web 应用的 Lighthouse 审计", width="800", height="98" %}</figure>
 
@@ -58,7 +58,7 @@ updated: 2019-09-19
 
 ## 资源
 
-- [**Web 应用清单不符合可安装性要求**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [**Web 应用清单不符合可安装性要求**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [添加 Web 应用清单](/add-manifest/)
 - [了解如何具备可安装性](/discover-installable)
 - [Web 应用清单](https://developer.mozilla.org/docs/Web/Manifest)

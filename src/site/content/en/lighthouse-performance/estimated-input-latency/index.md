@@ -75,7 +75,7 @@ are complete within 50&nbsp;ms.
 
 ## Resources
 
-- [Source code for **Estimated Input Latency** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/estimated-input-latency.js)
+- [Source code for **Estimated Input Latency** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/estimated-input-latency.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Measure Performance with the RAIL Model](/rail/)
 - [Rendering Performance](/rendering-performance/)

@@ -1,13 +1,13 @@
 ---
-layout: post
-title: Capturing an Image from the User
-description: >
-  Most browsers can get access to the user's camera.
+title: Capturing an image from the user
+subhead: Most browsers can get access to the user's camera.
 date: 2016-08-23
 updated: 2021-01-26
 authors:
   - paulkinlan
   - mscales
+description: |
+  Most browsers can get access to the user's camera.
 ---
 
 Many browsers now have the ability to access video and audio input from the
@@ -47,8 +47,8 @@ upload an image file from the file system. In Chrome and Safari on iOS and Andro
 give the user a choice of which app to use to capture the image, including the option of taking a
 photo directly with the camera or choosing an existing image file.
 
-<img src="images/ios-chooser.png" width="250"/>
-<img src="images/android-chooser.png" width="250"/>
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/0ntcSaXvXa2SF8tMZPAf.png", alt="An Android menu, with two options: capture image and files", width="250", height="225" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/0be5Qo05FEpWvPxy5F6p.png", alt="An iOS menu, with three options: take photo, photo library, iCloud", width="250", height="225" %}
 
 The data can then be attached to a `<form>` or manipulated with JavaScript by
 listening for an `onchange` event on the input element and then reading
@@ -116,11 +116,11 @@ desktop or another application.
 Similar to the file input, you can get a `FileList` object from the `dataTransfer.files` property of
 the `drop` event;
 
-The `dragover` event handler let's you signal to the user what will happen when they drop the file
+The `dragover` event handler lets you signal to the user what will happen when they drop the file
 by using
 [the `dropEffect` property](https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect).
 
-Drag and drop has been around for a long time and is well supported by the major browsers.
+Drag and drop has been around for a long time and is well-supported by the major browsers.
 
 ### Paste from clipboard
 

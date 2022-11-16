@@ -10,7 +10,7 @@ web_lighthouse:
   - resource-summary
 ---
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 reports how many network requests were made and
 how much data was transferred while your page loaded:
 
@@ -85,7 +85,7 @@ Once you've optimized your code to reduce request counts and transfer sizes, see
 
 ## Resources
 
-[Source code for **Keep request counts low and transfer sizes small** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/resource-summary.js)
+[Source code for **Keep request counts low and transfer sizes small** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/resource-summary.js)
 
 [css]: /fast#optimize-your-css
 [js]: /fast#optimize-your-javascript

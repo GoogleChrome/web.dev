@@ -342,7 +342,7 @@ Service Worker 可用于完成许多有用的任务，其中包括本文前面�
 
 许多工具都可以用于测量和调试 LCP：
 
-- [灯塔 6.0](https://developers.google.com/web/tools/lighthouse) 支持在实验室环境中测量 LCP。
+- [灯塔 6.0](https://developer.chrome.com/docs/lighthouse/overview/) 支持在实验室环境中测量 LCP。
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="灯塔 6.0", width="800", height="309" %}
 
@@ -350,6 +350,6 @@ Service Worker 可用于完成许多有用的任务，其中包括本文前面�
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome 开发者工具中的 LCP", width="800", height="509" %}
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)提供在域级聚合下的真实 LCP 值
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)提供在域级聚合下的真实 LCP 值
 
 *感谢 Philip Walton、Katie Hempenius、Kayce Basques 和 Ilya Grigorik 的审阅。*

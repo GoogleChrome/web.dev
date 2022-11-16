@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-10-19
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
@@ -75,18 +75,20 @@ available in the following tools:
 
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [Search Console (Speed
   Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Lab tools
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Measure FCP in JavaScript
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 To measure FCP in JavaScript, you can use the [Paint Timing
 API](https://w3c.github.io/paint-timing/). The following example shows how to
@@ -137,14 +139,14 @@ Rather than memorizing all these subtle differences, developers can use the
 measure FCP, which handles these differences for you (where possible):
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // Measure and log FCP as soon as it's available.
-getFCP(console.log);
+onFCP(console.log);
 ```
 
 You can refer to [the source code for
-`getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)
+`onFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts)
 for a complete example of how to measure FCP in JavaScript.
 
 {% Aside %}

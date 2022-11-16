@@ -1,11 +1,11 @@
 ---
 title: Push notifications FAQ
-date: 2014-10-07 
+date: 2014-10-07
 updated: 2018-09-20
 authors:
   - mattgaunt
 tags:
-  - blog
+  - notifications
 ---
 
 ## Why doesn't push work when the browser is closed?
@@ -157,3 +157,23 @@ This uses web push behind the scenes, but its goal is to abstract it away.
 Like I said in the previous question, if you consider web push as just a browser and a push
 service, then you can consider the Messaging SDK in Firebase as a library to simplify
 implementing web push.
+
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* [How Push Works](/push-notifications-how-push-works/)
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* [Web Push Protocol](/push-notifications-web-push-protocol/)
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* Push Notifications FAQ
+* [Common Issues and Reporting Bugs](/push-notifications-common-issues-and-reporting-bugs/)
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)

@@ -1,0 +1,82 @@
+---
+patternId: clipboard/copy-images
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+    />
+    <title>How to copy images</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+
+      button {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to copy images</h1>
+    <img src="assets/fugu.svg" alt="Fugu fish." width="128" height="128">
+    <button type="button">Copy</button>
+
+    {% set script %}
+      const button = document.querySelector('button');
+      const img = document.querySelector('img');
+
+      button.addEventListener('click', async () => {
+        const responsePromise = fetch(img.src);
+        const responsePromise2 = fetch(img.src.replace('.svg', '.png'));
+
+        try {
+          if ('write' in navigator.clipboard) {
+            await navigator.clipboard.write([
+              new ClipboardItem({
+                'image/svg+xml': new Promise(async (resolve) => {
+                  const blob = await responsePromise.then(response => response.blob());
+                  resolve(blob);
+                }),
+                'image/png': new Promise(async (resolve) => {
+                  const blob = await responsePromise2.then(response => response.blob());
+                  resolve(blob);
+                }),
+              }),
+            ]);
+            // Image copied as image.
+          } else {
+            const text = await responsePromise.then(response => response.text());
+            await navigator.clipboard.writeText(text);
+            // Image copied as source code.
+          }
+        } catch (err) {
+          console.error(err.name, err.message);
+        }
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

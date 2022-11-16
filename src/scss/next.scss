@@ -395,7 +395,12 @@ h6 code,
   margin: 0;
   padding: 0;
   white-space: normal;
-  word-break: break-all;
+  overflow-wrap: break-word
+}
+
+p code,
+li code {
+  overflow-wrap: break-word;
 }
 
 /// Sub and sup
@@ -727,6 +732,7 @@ video,
 @import 'blocks/carousel';
 @import 'blocks/compare';
 @import 'blocks/counter';
+@import 'blocks/ellipsis';
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
 @import 'blocks/feature-card';
@@ -789,6 +795,7 @@ video,
 @import 'pages/measure';
 @import 'pages/path';
 @import 'pages/pattern';
+@import 'pages/spaces';
 
 // Temporary rollout patches
 @import 'rollout';

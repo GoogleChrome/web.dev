@@ -27,6 +27,17 @@ the **critical rendering path**.
 By optimizing the critical rendering path we can significantly improve the
 time to first render of our pages. Further, understanding the critical
 rendering path also serves as a foundation for building well-performing
-interactive applications. The interactive updates process is the same, just done in a continuous loop and ideally at 60 frames per second! But first, an overview of how the browser displays a simple page.
+interactive applications. The interactive updates process is the same, just done in a continuous loop and ideally at 60 frames per second!
+But first, an overview of how the browser displays a simple page.
+
+## Critical Rendering Path
+
+You will learn how to optimize any website for speed by diving into the details of how mobile and desktop browsers render pages.
+You’ll learn about the Critical Rendering Path, or the set of steps browsers must take to convert HTML, CSS and JavaScript into living,
+breathing websites. From there, you’ll start exploring and experimenting with tools to measure performance and simple strategies to deliver the first
+pixels to the screen as early as possible. You’ll learn how to dive into recommendations from PageSpeed Insights and the Timeline view of Google Chrome’s Developer
+Tools to find the data you need to achieve immediate performance boosts!
+
+This is a free course offered through [Udacity](https://www.udacity.com/course/website-performance-optimization--ud884).
 
 ## Feedback {: #feedback }

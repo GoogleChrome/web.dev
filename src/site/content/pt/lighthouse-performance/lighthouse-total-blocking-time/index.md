@@ -66,7 +66,7 @@ Em geral, as causas mais comuns das tarefas longas são:
 
 ## Recursos
 
-- [Código fonte para auditoria de **Total Blocking Time** (tempo total de bloqueio)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
+- [Código fonte para auditoria de **Total Blocking Time** (tempo total de bloqueio)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/total-blocking-time.js)
 - [As longas tarefas de JavaScript estão atrasando seu Time to Interactive (tempo até interativa)?](/long-tasks-devtools)
 - [First Contentful Paint (primeira renderização de conteúdo)](/fcp/)
 - [Time to Interactive (tempo até interativa)](/tti/)

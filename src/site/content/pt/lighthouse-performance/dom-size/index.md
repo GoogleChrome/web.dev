@@ -28,7 +28,7 @@ Uma grande árvore DOM pode diminuir o desempenho de sua página de várias mane
 
 ## Como a auditoria de tamanho do DOM do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) relata o total de elementos DOM de uma página, a profundidade máxima do DOM da página e o máximo de elementos filho:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) relata o total de elementos DOM de uma página, a profundidade máxima do DOM da página e o máximo de elementos filho:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Captura de tela da auditoria do Lighthouse 'Evitar um tamanho excessivo do DOM'", width="800", height="363" %}</figure>
 
@@ -63,5 +63,5 @@ Se você estiver renderizando listas grandes, use a [rolagem virtual](/virtualiz
 
 ## Recursos
 
-- [Código-fonte da auditoria **Evitar tamanho excessivo do DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [Código-fonte da auditoria **Evitar tamanho excessivo do DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
 - [Reduza o escopo e a complexidade dos cálculos de estilo](/reduce-the-scope-and-complexity-of-style-calculations/)

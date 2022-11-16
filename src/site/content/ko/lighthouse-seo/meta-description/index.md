@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse 메타 설명 감사가 실패하는 방식
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 메타 설명이 없는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 메타 설명이 없는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="문서에 메타 데이터가 없음을 보여주는 Lighthouse 감사", width="800", height="74" %}</figure>
 
@@ -76,6 +76,6 @@ Lighthouse는 설명의 품질을 평가하지 않습니다.
 
 ## 리소스
 
-- [**문서에 메타 설명이 없음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [**문서에 메타 설명이 없음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/meta-description.js)
 - [검색 결과에 좋은 제목과 스니펫 만들기](https://support.google.com/webmasters/answer/35624#1)
 - [관련이 없는 키워드](https://support.google.com/webmasters/answer/66358)

@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: Esta publicación presenta la métrica First Input Delay (FID) y explica como medirla
 tags:
   - performance
@@ -120,12 +120,14 @@ FID es una métrica que solo se puede medir [en el campo](/user-centric-performa
 
 ### Herramientas de campo
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca de JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
 ### Cómo medir FID en JavaScript
+
+{% BrowserCompat 'api.PerformanceEventTiming' %}
 
 Para medir FID en JavaScript, puede utilizar la [API para cronometrar eventos](https://wicg.github.io/event-timing). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que capte las entradas [`first-input`](https://wicg.github.io/event-timing/#sec-performance-event-timing) y las registre en la consola:
 
@@ -160,7 +162,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-Puede consultar [el código fuente de `getFID)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts) para obtener un ejemplo completo de cómo medir FID en JavaScript.
+Puede consultar [el código fuente de `getFID)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts) para obtener un ejemplo completo de cómo medir FID en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir FID en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) de los `web-vitals` para obtener más información. {% endAside %}
 

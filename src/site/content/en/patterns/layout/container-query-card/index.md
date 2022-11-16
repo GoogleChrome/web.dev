@@ -23,7 +23,9 @@ To create the container, first set containment on the parent:
 ```css
 /* Set containment on parent */
 .container {
-  container: inline-size;
+  container-name: myContainer;
+  container-type: inline-size;
+  /* You can also use the shorthand property `container: myContainer / inline-size`.
 }
 ```
 

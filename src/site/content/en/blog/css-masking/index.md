@@ -32,6 +32,8 @@ Most browsers only have partial support for the standard CSS masking property.
 You will need to use the `-webkit-` prefix in addition to the standard property in order to achieve the best browser compatibility.
 See [Can I use CSS Masks?](https://caniuse.com/#feat=css-masks) for full browser support information.
 
+{% BrowserCompat 'css.properties.mask-image' %}
+
 While browser support using the prefixed property is good,
 when using masking to make text on top of an image visible take care of what will happen if masking is unavailable.
 It may be worth using feature queries to detect support for `mask-image` or `-webkit-mask-image`

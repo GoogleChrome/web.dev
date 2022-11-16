@@ -24,7 +24,7 @@ O uso de links canônicos tem muitas vantagens:
 
 ## Como a auditoria de links canônicos do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza qualquer página com um link canônico inválido:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza qualquer página com um link canônico inválido:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="Auditoria do Lighthouse mostrando documento com link canônico inválido", width="800", height="76" %}</figure>
 
@@ -83,7 +83,7 @@ Para obter uma lista dos prós e contras de cada abordagem, consulte a página [
 
 ## Recursos
 
-- [Código-fonte para **documento não possui uma auditoria `rel=canonical` válida**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/canonical.js)
+- [Código-fonte para **documento não possui uma auditoria `rel=canonical` válida**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/canonical.js)
 - [5 erros comuns com rel=canonical](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
 - [Consolidar URLs duplicados](https://support.google.com/webmasters/answer/139066)
 - [Bloquear rastreamento de conteúdo duplicado parametrizado](https://support.google.com/webmasters/answer/6080548)

@@ -16,7 +16,7 @@ updated: 2020-06-04
 
 ## 이 Lighthouse 감사가 실패하는 방법
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 알려진 보안 취약점이 있는 프런트 엔드 JavaScript 라이브러리에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 알려진 보안 취약점이 있는 프런트 엔드 JavaScript 라이브러리에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="페이지에서 사용되는 알려진 보안 취약점이 있는 프런트 엔드 JavaScript 라이브러리를 보여주는 Lighthouse 감사", width="800", height="190" %}</figure>
 
@@ -35,5 +35,5 @@ Lighthouse에서 플래그를 지정하는 각 라이브러리 사용을 중지�
 
 ## 참고자료
 
-- [**알려진 보안 취약점 감사를 포함한 프런트 엔드 JavaScript 라이브러리**를 포함하는 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [**알려진 보안 취약점 감사를 포함한 프런트 엔드 JavaScript 라이브러리**를 포함하는 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [snyk의 취약점 DB](https://snyk.io/vuln?packageManager=all)

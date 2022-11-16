@@ -19,7 +19,7 @@ updated: 2019-08-28
 
 ## Lighthouse 교차 출처 대상 감사가 실패하는 방식
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 교차 출처 대상에 대한 안전하지 않은 링크를 표시합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 교차 출처 대상에 대한 안전하지 않은 링크를 표시합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="교차 출처 대상에 대한 안전하지 않은 링크를 표시하는 Lighthouse 감사", width="800", height="213" %}</figure>
 
@@ -49,6 +49,6 @@ Lighthouse 보고서에서 식별된 각 링크에 `rel="noopener"` 또는 `rel=
 
 ## 리소스
 
-- [**교차 출처 대상에 대한 링크가 안전하지 않음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+- [**교차 출처 대상에 대한 링크가 안전하지 않음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [교차 출처 리소스를 안전하게 공유](/cross-origin-resource-sharing/)
 - [웹 개발자를 위한 사이트 격리](https://developers.google.com/web/updates/2018/07/site-isolation)

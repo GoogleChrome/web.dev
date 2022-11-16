@@ -5,6 +5,7 @@ subhead: iframe用のブラウザレベルのビルトイン遅延読み込み�
 authors:
   - addyosmani
 date: 2020-07-24
+updated: 2022-08-15
 hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: 画像とアセットを読み込んでいるスマートフォンのアウトライン
 description: この投稿では、loading属性と、それを使用してiframeの読み込みを制御する方法について説明します。
@@ -45,13 +46,10 @@ iframeの標準化された遅延読み込みは、ユーザーがiframeの近�
 
 ### ビルトインのiframeの遅延読み込みの機能
 
-`loading`属性を使用すると、ブラウザは、ユーザーがオフスクリーンのiframeや画像の近くをスクロールするまで、それらの読み込みを遅延できます。 `loading`は次の3つの値をサポートします。
+`loading`属性を使用すると、ブラウザは、ユーザーがオフスクリーンのiframeや画像の近くをスクロールするまで、それらの読み込みを遅延できます。 `loading`は次の2つの値をサポートします。
 
 - `lazy`: 遅延読み込みの適切な候補です。
 - `eager`: 遅延読み込みには適していません。すぐに読み込みます。
-- `auto`: ブラウザが遅延読み込みするかどうかを決定します。
-
-{% Aside %} `auto`は現在非標準の値ですが、現在のChromeではデフォルトです。 Chromeは、この値の提案を標準テーブルに表示します。{% endAside %}
 
 iframeで`loading`属性を使用すると、次のように機能します。
 
@@ -145,14 +143,6 @@ Facebookの*ソーシャルプラグイン*を使用すると、開発者はFace
 <figure>{% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Facebookの「いいね」ボタン", width="800", height="71" %}</figure>
 
 エンジニアのStoyanStefanovのおかげで、[Facebookのすべてのソーシャルプラグインが標準化されたiframe遅延読み込みをサポートするようになりました](https://developers.facebook.com/docs/plugins/like-button#settings)。 プラグインの`data-lazy`構成を使用した遅延読み込みを選択する開発者は、ユーザーが近くをスクロールするまで、読み込みを回避できるようになります。これにより、埋め込みを必要とするユーザーにとっては埋め込みが完全に機能し、ページを最後までスクロールしていないユーザーにとってはデータが節約されます。これは、多数の埋め込みの中でも、本番環境で標準化されたiframe遅延読み込みを検討する最初の埋め込みであると思います。
-
-### ブラウザではオフスクリーンiframeを自動的に遅延読み込みできるのか。
-
-当然、ブラウザでは自動遅延読み込みができます。Chrome 77では、ユーザーがChrome for Androidで[Lite Mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) (Data Saver モード) を選択したときに、オフスクリーン画像とiframeを自動的に遅延読み込みするサポートが追加されました。
-
-最高レベルのネットワーク接続の品質とデータプランが得られない世界の地域では、Lite Modeが一般的に使用されています。1バイトが重要であるため、iframeの遅延読み込みは、これらのユーザーに有意義な違いをもたらす可能性があります。
-
-[`NetworkInformation` API](https://developer.mozilla.org/docs/Web/API/NetworkInformation)の一部である`navigator.connection.saveData`プロパティをチェックすることにより、トラフィックの何パーセントがLite Modeユーザーから来ているかを検出できます。
 
 ### iframeクロスブラウザの遅延読み込みも可能。
 

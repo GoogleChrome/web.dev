@@ -14,7 +14,7 @@ Los intrusos tienen rastreadores web automatizados que pueden escanear su sitio 
 
 ## Cómo falla esta auditoría de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las bibliotecas JavaScript de front-end con vulnerabilidades de seguridad conocidas:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las bibliotecas JavaScript de front-end con vulnerabilidades de seguridad conocidas:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Auditoría Lighthouse que muestra las bibliotecas JavaScript de front-end con vulnerabilidades de seguridad conocidas utilizadas por la página", width="800", height="190" %}</figure>
 
@@ -33,5 +33,5 @@ Haga clic en los enlaces de la columna **Versión de la biblioteca** de su infor
 
 ## Recursos
 
-- [Código fuente para la auditoría **Incluye bibliotecas JavaScript de front-end con** con vulnerabilidades de seguridad conocidas](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [Código fuente para la auditoría **Incluye bibliotecas JavaScript de front-end con** con vulnerabilidades de seguridad conocidas](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [Base de datos de vulnerabilidades Snyk](https://snyk.io/vuln?packageManager=all)

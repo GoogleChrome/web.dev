@@ -14,7 +14,7 @@ updated: 2019-08-28
 
 ## Причины плохих результатов аудита HTTP/2 в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) перечисляет все ресурсы, которые не обслуживаются через HTTP/2:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) перечисляет все ресурсы, которые не обслуживаются через HTTP/2:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Аудит Lighthouse показывает, что ресурсы не обслуживаются через HTTP/2", width="800", height="191" %}</figure>
 
@@ -30,6 +30,6 @@ Lighthouse собирает все ресурсы, запрашиваемые с
 
 ## Ресурсы
 
-- [Исходный код для аудита «**Не использует HTTP/2 для всех своих ресурсов**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)»
+- [Исходный код для аудита «**Не использует HTTP/2 для всех своих ресурсов**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-http2.js)»
 - [Введение в HTTP/2](/performance-http2/)
 - [Часто задаваемые вопросы о HTTP/2](https://http2.github.io/faq/)

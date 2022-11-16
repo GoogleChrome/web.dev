@@ -179,7 +179,7 @@ tags:
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) доступен в Chrome DevTools по адресу [web.dev/measure](/measure/) как расширение Chrome, как модуль Node.js и в WebPageTest. Вы даете ему URL-адрес, он имитирует устройство среднего класса с медленным 3G-соединением, выполняет серию аудитов на странице, а затем дает отчет о скорости загрузки и предложения по ее улучшению.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) доступен в Chrome DevTools по адресу [web.dev/measure](/measure/) как расширение Chrome, как модуль Node.js и в WebPageTest. Вы даете ему URL-адрес, он имитирует устройство среднего класса с медленным 3G-соединением, выполняет серию аудитов на странице, а затем дает отчет о скорости загрузки и предложения по ее улучшению.
 
 Наиболее важны следующие аудиты:
 

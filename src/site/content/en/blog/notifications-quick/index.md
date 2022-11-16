@@ -23,7 +23,7 @@ You can follow these simple steps to implement notifications in just a few minut
 
 ## Step 1: Check for Notifications API support
 
-We check if webkitNotifications` is supported. Note that the name of `webkitNotifications` is because it's part of a draft spec. The final spec will have a notifications() function instead.
+We check if `webkitNotifications` is supported. Note that the name of `webkitNotifications` is because it's part of a draft spec. The final spec will have a notifications() function instead.
 
 ```js
 // check for notifications support

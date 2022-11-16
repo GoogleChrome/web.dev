@@ -17,7 +17,7 @@ El archivo `robots.txt` le dice a los motores de búsqueda cuáles de las págin
 
 ## Cómo falla la auditoría Lighthouse  de `robots.txt`
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca los archivos `robots.txt` inválidos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca los archivos `robots.txt` inválidos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Auditoría Lighthouse que muestra un archivo robots.txt inválido", width="800", height="203" %}</figure>
 
@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## Recursos
 
-- [El código fuente de la auditoría **El archivo `robots.txt` es inválido**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [El código fuente de la auditoría **El archivo `robots.txt` es inválido**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [Cree un `robots.txt file`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Especificaciones de la metaetiqueta de robots y del encabezado HTTP X-Robots-Tag](https://developers.google.com/search/reference/robots_meta_tag)

@@ -19,7 +19,7 @@ Location: /path/to/new/location
 
 ## Lighthouse 多个重定向审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记具有多个重定向的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记具有多个重定向的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 
@@ -39,6 +39,6 @@ Location: /path/to/new/location
 
 ## 资源
 
-- [**避免多个页面重定向**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
+- [**避免多个页面重定向**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js)
 - [HTTP 中的重定向](https://developer.mozilla.org/docs/Web/HTTP/Redirections)
 - [避免登陆页面重定向](https://developers.google.com/speed/docs/insights/AvoidRedirects)

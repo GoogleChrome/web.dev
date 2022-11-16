@@ -20,7 +20,7 @@ required to make your app installable.
 
 ## How the Lighthouse web app manifest audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't have a [web app manifest](/add-manifest/)
 that meets minimum requirements for installability:
 
@@ -79,7 +79,7 @@ Check their respective sites for full details:
 
 ## Resources
 
-- [Source code for **Web app manifest does not meet the installability requirements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [Source code for **Web app manifest does not meet the installability requirements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [Add a web app manifest](/add-manifest/)
 - [Discover what it takes to be installable](/discover-installable)
 - [Web App Manifest](https://developer.mozilla.org/docs/Web/Manifest)

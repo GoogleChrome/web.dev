@@ -16,7 +16,7 @@ Muitos mecanismos de pesquisa classificam as páginas com base no grau de compat
 
 ## Como a auditoria dos pontos de toque do Lighthouse falha
 
-[O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas com pontos de toque muito pequenos ou muito próximos:
+[O Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas com pontos de toque muito pequenos ou muito próximos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Auditoria do Lighthouse mostrando pontos de toque de tamanho inadequado", width="800", height="206" %}</figure>
 
@@ -54,4 +54,4 @@ Os destinos menores que 48 x 48 pixels ou mais próximos do que 8 pixels entre e
 ## Recursos
 
 - [Pontos de toque acessíveis](/accessible-tap-targets) : mais informações sobre como garantir que seus pontos de toque sejam acessíveis a todos os usuários.
-- [O código-fonte dos pontos de auditoria **pontos de toque não são dimensionados de forma adequada**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+- [O código-fonte dos pontos de auditoria **pontos de toque não são dimensionados de forma adequada**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/tap-targets.js)

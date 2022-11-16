@@ -42,20 +42,34 @@ const getRelativePath = (url, pathPrefix) => path.relative(pathPrefix, url);
 /**
  * Find i18n equivalents of the current url and check if they exist.
  * @param {string} url Url of the original article.
- * @returns {Array} Array of language and url pairs.
+ * @returns {Array<Array<string, string>>} Array of language and url pairs.
  */
 const getTranslatedUrls = (url) => {
   url = getDefaultUrl(url);
   return (
     supportedLocales
-      .map((locale) => [locale, path.join('/', 'i18n', locale, url)])
+      .map((locale) => [locale, getLocaleSpecificUrl(locale, url)])
       // Filter out i18n urls that do not have an existing translated file.
-      .filter((langhref) => !!findByUrl(langhref[1]))
+      .filter((langHref) => !!findByUrl(langHref[1]))
   );
+};
+
+/**
+ * Generate a URL that includes the locale-specific prefix.
+ * @param {string} locale One of the support locale codes.
+ * @param {string} defaultUrl Default URL of the page.
+ * @returns {string} The locale-specific prefix followed by the default URL.
+ */
+const getLocaleSpecificUrl = (locale, defaultUrl) => {
+  if (!defaultUrl.startsWith('/')) {
+    defaultUrl = '/' + defaultUrl;
+  }
+  return `/i18n/${locale}${defaultUrl}`;
 };
 
 module.exports = {
   getDefaultUrl,
+  getLocaleSpecificUrl,
   getRelativePath,
   getTranslatedUrls,
 };

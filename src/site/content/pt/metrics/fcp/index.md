@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-10-19
 description: Este artigo apresenta a métrica First Contentful Paint (FCP) e explica como medi-la
 tags:
   - performance
@@ -39,17 +39,19 @@ A FCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 ### Ferramentas de campo
 
 - [PageSpeed Insights](https://pagespeed.web.dev/)
-- [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Relatório de experiência do usuário Chrome](https://developer.chrome.com/docs/crux/)
 - [Console de Busca (relatório de velocidade)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
 ### Ferramentas de laboratório
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Medição da FCP em JavaScript
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 Para medir a FCP em JavaScript, você pode usar a [API Paint Timing](https://w3c.github.io/paint-timing/). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que escuta uma entrada `paint` com o nome `first-contentful-paint` e a registra no console.
 
@@ -86,7 +88,7 @@ import {getFCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-Para um exemplo completo de como medir a FCP em JavaScript, consulte [o código-fonte de `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts).
+Para um exemplo completo de como medir a FCP em JavaScript, consulte [o código-fonte de `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts).
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a FCP em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 

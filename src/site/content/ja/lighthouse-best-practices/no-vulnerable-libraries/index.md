@@ -12,7 +12,7 @@ updated: 2020-06-04
 
 ## Lighthouseのこの監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリにフラグを立てます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリがページで使用されていることを示す Lighthouse 監査", width="800", height="190" %}</figure>
 
@@ -31,5 +31,5 @@ Lighthouse がフラグを立てるすべてのライブラリの使用を停止
 
 ## リソース
 
-- [「**既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリが含まれる**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [「**既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリが含まれる**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [snyk の Vulnerability DB](https://snyk.io/vuln?packageManager=all)

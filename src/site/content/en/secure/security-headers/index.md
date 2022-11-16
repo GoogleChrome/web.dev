@@ -265,7 +265,7 @@ Use DevTools to see how it's used.
   old browser versions. `https:` and `unsafe-inline` don't make your policy less
   safe because they will be ignored by browsers who support `strict-dynamic`.
   Read more in [Add fallbacks to support Safari and older
-  browsers](/strict-csp/#step-4:-add-fallbacks-to-support-safari-and-older-browsers).
+  browsers](/strict-csp/#step-4-add-fallbacks-to-support-safari-and-older-browsers).
 * Safari does *not* support `strict-dynamic` yet. But a strict CSP like in the
   examples above is safer than an allowlist CSP (and much safer than no CSP at
   all) for all of your users. Even in Safari, a strict CSP protects your site
@@ -286,7 +286,7 @@ Use DevTools to see how it's used.
   become less relevant: nowadays, most browsers block
   [mixed-content](/what-is-mixed-content/).
 * You can also set a CSP in [report-only
-  mode](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts).
+  mode](/strict-csp/#step-2-set-a-strict-csp-and-prepare-your-scripts).
 * If you can't set a CSP as a header server-side, you can also set it as a meta
   tag. Note that you can't use **report-only** mode for meta tags (though
   [this may change](https://github.com/w3c/webappsec-csp/issues/277)).
@@ -533,7 +533,7 @@ How to use X-Frame-Options
 All documents that are not designed to be embedded should use `X-Frame-Options` header.
 
 You can try how the following configurations affect loading an iframe on [this
-demo](https://first-party-test.glitch.me/). Change the `X-Frame-Options`
+demo](https://cross-origin-isolation.glitch.me/). Change the `X-Frame-Options`
 dropdown menu and click the **Reload the iframe** button.
 
 #### Protects your website from being embedded by any other websites
@@ -608,7 +608,7 @@ three headers.
 
 You can try how the following configurations affect loading resources under a
 [`Cross-Origin-Embedder-Policy: require-corp` environment](#coep) on [this
-demo](https://first-party-test.glitch.me/?coep=require-corp&). Change the
+demo](https://cross-origin-isolation.glitch.me/?coep=require-corp&). Change the
 **Cross-Origin-Resource-Policy** dropdown menu and click the **Reload the
 iframe** or **Reload the image** button to see the effect.
 
@@ -704,7 +704,7 @@ How to use COOP
 ### Recommended usages
 
 You can try how the following configurations affect communication with a
-cross-origin popup window on [this demo](https://first-party-test.glitch.me/).
+cross-origin popup window on [this demo](https://cross-origin-isolation.glitch.me/).
 Change the **Cross-Origin-Opener-Policy** dropdown menu for both the document
 and the popup window, click the **Open a popup** button then click **Send a
 postMessage** to see if the message is actually delivered.
@@ -873,7 +873,7 @@ Access-Control-Allow-Credentials: true
 
 You can try how the simple request affect loading resources under a
 [`Cross-Origin-Embedder-Policy: require-corp` environment](#coep) on [this
-demo](https://first-party-test.glitch.me/?coep=require-corp&). Click the
+demo](https://cross-origin-isolation.glitch.me/?coep=require-corp&). Click the
 **Cross-Origin Resource Sharing** checkbox and click the **Reload the image**
 button to see the effect.
 
@@ -965,7 +965,7 @@ instruct the browser to block loading resources that do not opt-in via
 width="800", height="410" %}
 
 You can try how the following configurations affect loading resources on [this
-demo](https://first-party-test.glitch.me/). Change the
+demo](https://cross-origin-isolation.glitch.me/). Change the
 **Cross-Origin-Embedder-Policy** dropdown menu, the
 **Cross-Origin-Resource-Policy** dropdown menu, the **Report Only** checkbox etc
 to see how they affect loading resources. Also, open [the reporting endpoint

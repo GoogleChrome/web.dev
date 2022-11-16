@@ -2,19 +2,23 @@
 layout: handbook
 title: Quick start guide
 date: 2020-02-11
+updated: 2022-07-11
 description: |
   How to create and publish content on web.dev and developer.chrome.com.
 ---
 
-Content creation for web.dev and developer.chrome.com has three phases: planning, writing, and publishing. 
+Content creation for web.dev and developer.chrome.com has four phases: planning, writing, reviewing, and publishing. 
 Most of the following information is relevant to both sites.
+
+All content goes through our editorial process. Unless you are working on part of an already approved set of content, 
+do not submit PRs for new content without following these instructions.
 
 ## Planning
 
-1. Decide if you want your post on [web.dev](/) or [developer.chrome.com](https://developer.chrome.com). [More about the right site for your post](/handbook/writing-blog-posts#which-site).
+1. Decide if you want your post on [web.dev](/) or [developer.chrome.com](https://developer.chrome.com/). [More about the right site for your post](/handbook/writing-blog-posts#which-site).
 1. If you're a Googler or have access to a Googler, use the [content proposal form][form] to submit
-   your new content request. If you don't have access to a Googler, use the
-   [content issue template](https://github.com/GoogleChrome/web.dev/issues/new?template=propose-new-content.md).
+   your new content request. If you don't have access to a Googler, use the content issue template for
+   [web.dev](https://github.com/GoogleChrome/web.dev/issues/new?template=propose-new-content.md) or [developer.chrome.com](https://github.com/GoogleChrome/developer.chrome.com/issues/new?assignees=rachelandrew&labels=new+content&template=propose-new-content.md&title=content%3A+TODO).
 1. The team will evaluate the proposal's suitability for the goals of the relevant site. If the idea is approved, it will be assigned a reviewer.
 
 {% Aside 'caution' %}
@@ -33,17 +37,30 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
    common problems. The more of these problems you fix yourself, the faster your review will go.
 1. When your first draft is ready, leave a comment in your GitHub issue and ask for a review.
 
+## Reviewing
+
+Your content will be edited and reviewed in Google docs, this will include:
+
+1. **Technical review** to check that the content is accurate.
+1. **Copy edit:** to check that the content meets our style guides and is free from typos and grammar errors.
+
 ## Publishing
 
 1. After you get approval from a web.dev team member that your content can be published on the site,
    submit a GitHub pull request.
+1. Make no changes to the approved copy when creating your PR. 
 1. Check out the [web.dev markup section](/handbook/#web.dev-markup) to learn how to make your markdown squeaky clean.
    In particular, check out the [web.dev components](/handbook/web-dev-components/) or 
-   [developer.chrome.com components](https://developer.chrome.com/docs/handbook/components/) guide
-   to discover UI elements that can make your content more engaging or aesthetically pleasing.
+   [developer.chrome.com components](https://developer.chrome.com/docs/handbook/components/) guide to discover UI elements that can make your content more engaging or aesthetically pleasing.
 1. Once your PR is merged, the content will be deployed to the site immediately, and appear live after around an hour.
 
+{% Aside 'warning' %}
+Following step 2 is very important, as changes to approved copy while a PR is in progress will result in the PR being closed until the copy is finalized.
+{% endAside %}
+
 ## Organizing content
+
+Check with your assigned technical writer before creating new collections or tags.
 
 ### Collections (learning paths)
 

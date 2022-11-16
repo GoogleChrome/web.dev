@@ -22,7 +22,7 @@ and removing anything unused.
 
 ## Which URLs get flagged as render-blocking resources?
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags two types of render-blocking URLs: scripts and stylesheets.
 
 A `<script>` tag that:
@@ -47,7 +47,7 @@ When you load or run a page, the tab tells you how much code was used,
 versus how much was loaded:
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y2Yc8DMcBYMknz5y0Are.png", alt="Chrome DevTools: Coverage tab", width="800", height="407" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ic4rP7pdvEDg4IngB0o0.png", alt="Chrome DevTools: Coverage tab", width="800", height="262" %}
   <figcaption>
     Chrome DevTools: Coverage tab.
   </figcaption>
@@ -57,7 +57,7 @@ You can reduce the size of your pages by only shipping the code and styles
 that you need. Click on a URL to inspect that file in the Sources panel.
 Styles in CSS files and code in JavaScript files are marked in two colors:
 
-* **Green (critical):** Styles that are required for first paint; code that's critical to the page's core functionality.
+* **Blue (critical):** Styles that are required for first paint; code that's critical to the page's core functionality.
 * **Red (non-critical):** Styles that apply to content not immediately visible; code not being used in page's core functionality.
 
 ## How to eliminate render-blocking scripts
@@ -124,7 +124,7 @@ resources](https://wordpress.org/plugins/search/defer+css+javascript/).
 
 ## Resources
 
-- [Source code for **Eliminate render-blocking resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js)
+- [Source code for **Eliminate render-blocking resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js)
 - [Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
 - [Remove unused code codelab](/codelab-remove-unused-code)
 - [JavaScript Start-up Optimization](/optimizing-content-efficiency-javascript-startup-optimization/)

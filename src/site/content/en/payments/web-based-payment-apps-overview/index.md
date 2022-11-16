@@ -73,11 +73,11 @@ transaction](/life-of-a-payment-transaction/).
 In order for a merchant to use your payment app, they need to use the [Payment
 Request API](https://developer.mozilla.org/docs/Web/API/Payment_Request_API) and
 specify the payment method you support using the [payment method
-identifier](/setting-up-a-payment-method/#step-1:-provide-the-payment-method-identifier).
+identifier](/setting-up-a-payment-method/#step-1-provide-the-payment-method-identifier).
 
 If you have a payment method identifier that is unique to your payment app, you
 can set up your own [payment method
-manifest](/setting-up-a-payment-method/#step-2:-serve-the-payment-method-manifest)
+manifest](/setting-up-a-payment-method/#step-2-serve-the-payment-method-manifest)
 and let browsers discover your app.
 
 Learn how it works and how you can set up a new payment method in [Setting up a

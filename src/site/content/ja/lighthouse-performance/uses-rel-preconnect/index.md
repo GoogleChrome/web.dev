@@ -59,7 +59,7 @@ LighthouseレポートのOpportunitiesセクションには、`<link rel=preconn
 
 ## リソース
 
-- [**必要なオリジンへの事前接続**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preconnect.js)
+- [**必要なオリジンへの事前接続**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/uses-rel-preconnect.js)
 - [リソースの優先順位付け―ブラウザの支援を活用する](https://developers.google.com/web/fundamentals/performance/resource-prioritization#preconnect)
 - [ページ速度の感触を改善するために、早期にネットワーク接続を確立する](/preconnect-and-dns-prefetch/)
 - [Linkタイプ: preconnect](https://developer.mozilla.org/docs/Web/HTML/Link_types/preconnect#Browser_compatibility)

@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2021-05-17
+updated: 2022-10-26
 hero: image/admin/Y4NLEbOwgTWdMNoxRYXw.jpg
 alt:
 description: |
@@ -107,9 +107,7 @@ user agent can emphasize and/or bring it to the user's attention.
 
 ### Browser compatibility
 
-The Text Fragments feature is supported in version 80 and beyond of Chromium-based browsers. At the
-time of writing, Safari and Firefox have not publicly signaled an intent to implement the feature.
-See [Related links](#related-links) for pointers to the Safari and Firefox discussions.
+{% BrowserCompat 'css.selectors.target-text' %}
 
 {% Aside 'success' %} These links used to not work when served across
 [client-side redirects](https://developer.mozilla.org/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
@@ -296,7 +294,7 @@ menu. This extension is available for the following browsers:
 
 Note that multiple text fragments can appear in one URL. The particular text fragments need to be
 separated by an ampersand character `&`. Here is an example link with three text fragments:
-<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet<mark class="highlight-line highlight-line-active"></code></a>.
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:<mark class="highlight-line highlight-line-active">text=Text%20URL%20Fragments</mark>&<mark class="highlight-line highlight-line-active">text=text,-parameter</mark>&<mark class="highlight-line highlight-line-active">text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet</mark></code></a>.
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %}

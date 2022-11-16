@@ -15,7 +15,7 @@ tags:
   - performance
 ---
 
-近期宣布的 [Web 指标](/vitals/)计划为网络质量信号提供统一指导，这些信号对于所有网站提供出色的网络用户体验至关重要。我们很高兴地宣布，**Google 为网络开发者提供的所有热门工具现在都支持核心 Web 指标的测量**，从而帮助您更轻松地诊断和修复用户体验问题。这些工具包括[灯塔](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://pagespeed.web.dev/)、[Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)、[搜索控制台](https://search.google.com/search-console/about)、[web.dev 测量工具](/measure/)、[Web 指标 Chrome 扩展程序](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)和一个全新的 (!) [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report) API。
+近期宣布的 [Web 指标](/vitals/)计划为网络质量信号提供统一指导，这些信号对于所有网站提供出色的网络用户体验至关重要。我们很高兴地宣布，**Google 为网络开发者提供的所有热门工具现在都支持核心 Web 指标的测量**，从而帮助您更轻松地诊断和修复用户体验问题。这些工具包括[灯塔](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://pagespeed.web.dev/)、[Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)、[搜索控制台](https://search.google.com/search-console/about)、[web.dev 测量工具](/measure/)、[Web 指标 Chrome 扩展程序](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)和一个全新的 (!) [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/) API。
 
 由于 Google 搜索现在将核心 Web 指标作为评估 [页面体验](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) 的基础，因此在最大程度上实现这些指标的可用性和可操作性就变得至关重要。
 
@@ -64,7 +64,7 @@ PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/sp
 
 ### CrUX
 
-[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) 是数百万个网站上的真实用户体验数据的公共数据集。该工具测量所有核心 Web 指标的实际版本。与实验室数据不同，CrUX 数据来自实际情况下[主动选择加入的用户](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology)。通过这些数据，开发者能够了解真实世界用户体验在自己的网站，甚至是竞争对手的网站上的分布。即使您的网站上还没有 RUM，CrUX 也可以提供一种快速简便的方法来评估您的核心 Web 指标。[BigQuery 上的 CrUX 数据集](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started)包含所有核心 Web 指标的细粒度性能数据，并在域级的每月快照中提供。
+[Chrome 用户体验报告](https://developer.chrome.com/docs/crux/) (CrUX) 是数百万个网站上的真实用户体验数据的公共数据集。该工具测量所有核心 Web 指标的实际版本。与实验室数据不同，CrUX 数据来自实际情况下[主动选择加入的用户](https://developer.chrome.com/docs/crux/methodology/#user-eligibility)。通过这些数据，开发者能够了解真实世界用户体验在自己的网站，甚至是竞争对手的网站上的分布。即使您的网站上还没有 RUM，CrUX 也可以提供一种快速简便的方法来评估您的核心 Web 指标。[BigQuery 上的 CrUX 数据集](https://developer.chrome.com/docs/crux/bigquery/)包含所有核心 Web 指标的细粒度性能数据，并在域级的每月快照中提供。
 
 要想真正了解您的网站为用户呈现的性能表现，唯一的方法就是在这些用户进行页面加载和页面交互时对页面性能进行实测。这种类型的测量通常被称为真实用户监控，或简称为 RUM。即使您的网站上还没有 RUM，CrUX 也可以提供一种快速简便的方法来评估您的核心 Web 指标。
 
@@ -79,7 +79,7 @@ PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/sp
 
 开发者可以查询域或 URL，并按不同的形式因素对结果进行细分。 API 会每日更新并汇总前 28 天的数据（与每月汇总的 BigQuery 数据集不同）。这款 API 也拥有充足的公共 API 配额，与另一个 PageSpeed Insights API 相同（每日 25,000 个请求）。
 
-下方是使用 CrUX API 来将各项核心 Web 指标可视化的[演示](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started)，其中的数据分布为**良好**、**需要改进**和**欠佳**：
+下方是使用 CrUX API 来将各项核心 Web 指标可视化的[演示](/chrome-ux-report-api/)，其中的数据分布为**良好**、**需要改进**和**欠佳**：
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="显示多项核心 Web 指标的 Chrome 用户体验报告演示", width="800", height="523" %}</figure>
 

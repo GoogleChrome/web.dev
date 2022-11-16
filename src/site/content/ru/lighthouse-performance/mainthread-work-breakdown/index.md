@@ -18,7 +18,7 @@ web_lighthouse:
 
 ## Почему аудит работы основного потока Lighthouse завершается неудачей
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает страницы, которые во время загрузки загружают основной поток более 4 секунд:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает страницы, которые во время загрузки загружают основной поток более 4 секунд:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="Снимок экрана аудита минимизации работы основного потока Lighthouse", width="800", height="408" %}</figure>
 
@@ -65,6 +65,6 @@ web_lighthouse:
 
 ## Ресурсы
 
-- [Исходный код для аудита **минимизации работы основного потока**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
+- [Исходный код для аудита **минимизации работы основного потока**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/mainthread-work-breakdown.js)
 - [Основной поток (MDN)](https://developer.mozilla.org/docs/Glossary/Main_thread)
 - [Взгляд изнутри на современный веб-браузер (часть 3)](https://developer.chrome.com/blog/inside-browser-part3/)

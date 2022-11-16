@@ -81,11 +81,11 @@ Different versions of the launch image can be set with a media query inside the 
 ```html
 <link rel="apple-touch-startup-image" href="ios-startup.png"
       media="orientation: portrait">
-<link rel="apple-touch-startup-image" href="ios-startup-landscape.png">
+<link rel="apple-touch-startup-image" href="ios-startup-landscape.png"
       media="orientation: landscape">
 ```
 {% Aside 'warning' %}
-If you want to provide all possible options combining screen definitions, orientations, and multitask mode, you will end up with more than 25 different images you need to create and link in your HTML.If you don't provide a startup image for your user's iOS or iPadOS context, a white screen will appear instead in the opening animation, and while your PWA is loading
+If you want to provide all possible options combining screen definitions, orientations, and multitask mode, you will end up with more than 25 different images you need to create and link in your HTML. If you don't provide a startup image for your user's iOS or iPadOS context, a white screen will appear instead in the opening animation, and while your PWA is loading
 {% endAside %}
 
 #### Design patterns for iOS startup images
@@ -93,7 +93,7 @@ If you want to provide all possible options combining screen definitions, orient
 Defining startup images is hard work, so we have a couple of tools for automated generation and configuration:
 
 * Static generation integrates with your build system, creates all the PNG static images and gives you the HTML code with `<link>` elements to inject into your document. [PWA Asset Generator](https://github.com/onderceylan/pwa-asset-generator) is an example of such a tool.
-* Client-side generator, a JavaScript tool that can embed one or more base64 versions of the startup image into `<link>` injected elements based on the current device's type and screen size. You can use an in-memory canvas, render the image and convert it into a `data:` URI with a PNG file. The[PWA Compat library](https://github.com/GoogleChromeLabs/pwacompat) is an easy-to-use client-side library that does this by cloning the Android's typical launch screen.
+* Client-side generator, a JavaScript tool that can embed one or more base64 versions of the startup image into `<link>` injected elements based on the current device's type and screen size. You can use an in-memory canvas, render the image and convert it into a `data:` URI with a PNG file. The [PWA Compat library](https://github.com/GoogleChromeLabs/pwacompat) is an easy-to-use client-side library that does this by cloning the Android's typical launch screen.
 
 ### Detecting a PWA on Apple mobile platforms
 

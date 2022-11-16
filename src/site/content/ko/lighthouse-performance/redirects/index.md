@@ -19,7 +19,7 @@ Location: /path/to/new/location
 
 ## Lighthouse 다중 리디렉션 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 여러 리디렉션이 있는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 여러 리디렉션이 있는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 
@@ -39,6 +39,6 @@ React Router를 사용하는 경우 [경로 탐색](https://reacttraining.com/re
 
 ## 참고 자료
 
-- [**다중 페이지 리디렉션 방지** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
+- [**다중 페이지 리디렉션 방지** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js)
 - [HTTP의 리디렉션](https://developer.mozilla.org/docs/Web/HTTP/Redirections)
 - [방문 페이지 리디렉션 방지](https://developers.google.com/speed/docs/insights/AvoidRedirects)

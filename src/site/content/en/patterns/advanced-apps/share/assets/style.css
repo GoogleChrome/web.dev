@@ -1,0 +1,47 @@
+:root {
+  color-scheme: dark light;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+button {
+  display: flex;
+}
+
+button .icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-size: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  button .icon {
+    filter: invert();
+  }
+}
+
+.share {
+  background-image: url('share.svg');
+}
+
+.sharemac {
+  background-image: url('sharemac.svg');
+}

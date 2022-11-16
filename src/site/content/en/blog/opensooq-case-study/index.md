@@ -38,7 +38,7 @@ OpenSooq's three in-house developers were able to build a full-featured PWA with
 
 To ensure that the site would be fast and easily indexable by search engines, the team chose to implement server-side rendering. With almost 28% of their users accessing the PWA on patchy 2G or 3G networks, it was critical that users trust the experience to work, regardless of network constraints. So the team implemented an offline experience using [service workers](/service-workers-cache-storage) and a [cache-first-then-network strategy](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network). They also used the [PRPL pattern](/apply-instant-loading-with-prpl/?hl=en) to give their users instant loading.
 
-By adopting these best practices, the team was able to cut the average page load time ([Time to Interactive](/tti/)) from 4 seconds to less than 2 seconds. And they used [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to make sure the site _stayed_ that fast. Those efforts helped OpenSooq hit over 1.8 billion pageviews a month.
+By adopting these best practices, the team was able to cut the average page load time ([Time to Interactive](/tti/)) from 4 seconds to less than 2 seconds. And they used [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to make sure the site _stayed_ that fast. Those efforts helped OpenSooq hit over 1.8 billion pageviews a month.
 
 <figure>
   {% Img src="image/admin/ItUJANptPfn2KooyDyq4.png", alt="A screenshot of the Lighthouse performance metrics for the OpenSooq PWA.", width="800", height="509" %}

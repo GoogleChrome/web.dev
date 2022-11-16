@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: スマートフォンの画面に触れる手
 description: First Input Delay (初回入力までの遅延時間、FID) は、ユーザーが初めてサイトを操作してからブラウザーが実際にその操作に応答するまでの時間を測定するものです。この記事では、使用されていない JavaScript の圧縮、長く時間がかかっているタスクの分割、操作に対する準備状況の改善などの実施により FID を最適化する方法について説明します。
@@ -163,10 +164,10 @@ import('module.js').then((module) => {
 
 FID を測定またはデバッグするためのツールは、以下のように様々なものが用意されています。
 
-- FID はフィールド指標であるため、[Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) には FID のサポートは含まれていません。ただし、その代替指標として [Total Blocking Time](/tbt/) (TBT) を使用することができます。TBT を改善することができる最適化手法であれば、実際のユーザー環境での FID も改善することができるはずです。
+- FID はフィールド指標であるため、[Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) には FID のサポートは含まれていません。ただし、その代替指標として [Total Blocking Time](/tbt/) (TBT) を使用することができます。TBT を改善することができる最適化手法であれば、実際のユーザー環境での FID も改善することができるはずです。
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) は、オリジンレベルで集計された実際の環境での FID 値を提供します。
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) は、オリジンレベルで集計された実際の環境での FID 値を提供します。
 
 *レビューしていただいた Philip Walton、Kayce Basques、Ilya Grigorik、Annie Sullivan には、心より感謝申し上げます。*

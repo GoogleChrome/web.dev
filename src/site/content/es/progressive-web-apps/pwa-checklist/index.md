@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: "¿Qué se necesita para que una Aplicación Web Progresiva sea buena o excelente?"
 tags:
   - progressive-web-apps
@@ -35,7 +35,7 @@ El rendimiento representa un papel importante en el éxito de cualquier experien
 
 La velocidad es fundamental para lograr que los usuarios *utilicen* su aplicación. De hecho, conforme el tiempo de carga de la página aumenta de un segundo a diez segundos, la probabilidad de que un usuario se retire aumenta en un 123%. El rendimiento no termina con el evento `load`. Los usuarios nunca deben preguntarse si su interacción (por ejemplo, hacer clic en un botón) se registró o no. Tanto la navegación como las animaciones deben ser muy fluidas. El rendimiento afecta a toda la experiencia, desde la forma en que los usuarios perciben la aplicación hasta cómo funciona realmente.
 
-Si bien todas las aplicaciones tienen diferentes requisitos, las auditorías de rendimiento en Lighthouse se basan en el [modelo de rendimiento centrado en el usuario de RAIL](/rail/), y si consigue una puntuación alta en esas auditorías, será más probable que sus usuarios tengan una experiencia agradable. También puede utilizar [PageSpeed Insights](https://pagespeed.web.dev/) o el [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) para obtener datos de rendimiento del mundo real para su aplicación web.
+Si bien todas las aplicaciones tienen diferentes requisitos, las auditorías de rendimiento en Lighthouse se basan en el [modelo de rendimiento centrado en el usuario de RAIL](/rail/), y si consigue una puntuación alta en esas auditorías, será más probable que sus usuarios tengan una experiencia agradable. También puede utilizar [PageSpeed Insights](https://pagespeed.web.dev/) o el [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) para obtener datos de rendimiento del mundo real para su aplicación web.
 
 #### Cómo
 
@@ -181,7 +181,7 @@ La mayoría de las personas, en algún momento de su vida, querrán aprovechar s
 
 #### Cómo
 
-El documento del W3C titulado [Introducción a la accesibilidad web](https://www.w3.org/WAI/fundamentals/accessibility-intro/) es un buen punto de partida. La mayoría de las pruebas de accesibilidad deben realizarse manualmente. Herramientas como las auditorías de [Accesibilidad](/lighthouse-accessibility/) en Lighthouse, [axe](https://github.com/dequelabs/axe-core) y las [Perspectivas de accesibilidad](https://accessibilityinsights.io/) pueden ayudarte a automatizar algunas pruebas de accesibilidad. También es importante utilizar elementos semánticamente correctos en vez de recrear esos elementos por su cuenta, por ejemplo, los elementos `a` y `button`. Esto garantiza que, cuando necesite crear una funcionalidad más avanzada, se cumplan las expectativas de accesibilidad (como, por ejemplo, cuando se deben utilizar flechas o pestañas). [A11Y Nutrition Cards](https://accessibilityinsights.io/) tiene excelentes consejos sobre esto para algunos componentes comunes.
+El documento del W3C titulado [Introducción a la accesibilidad web](https://www.w3.org/WAI/fundamentals/accessibility-intro/) es un buen punto de partida. La mayoría de las pruebas de accesibilidad deben realizarse manualmente. Herramientas como las auditorías de [Accesibilidad](https://developer.chrome.com/docs/lighthouse/accessibility/) en Lighthouse, [axe](https://github.com/dequelabs/axe-core) y las [Perspectivas de accesibilidad](https://accessibilityinsights.io/) pueden ayudarte a automatizar algunas pruebas de accesibilidad. También es importante utilizar elementos semánticamente correctos en vez de recrear esos elementos por su cuenta, por ejemplo, los elementos `a` y `button`. Esto garantiza que, cuando necesite crear una funcionalidad más avanzada, se cumplan las expectativas de accesibilidad (como, por ejemplo, cuando se deben utilizar flechas o pestañas). [A11Y Nutrition Cards](https://accessibilityinsights.io/) tiene excelentes consejos sobre esto para algunos componentes comunes.
 
 {% endDetails %}
 

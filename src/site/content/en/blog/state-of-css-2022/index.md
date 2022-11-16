@@ -66,7 +66,7 @@ Use the list below to jump to topics of interest:
           <a href="#subgrid">subgrid</a>
         </td>
         <td>
-          <a href="#css-can't-help-users-reduce-data">@media (prefers-reduced-data)</a>
+          <a href="#css-cant-help-users-reduce-data">@media (prefers-reduced-data)</a>
         </td>
       </tr>
       <tr>
@@ -79,7 +79,7 @@ Use the list below to jump to topics of interest:
       </tr>
       <tr>
         <td>
-          <a href="#hwb()">hwb()</a>
+          <a href="#hwb">hwb()</a>
         </td>
         <td>
           <a href="#was-in-min-width-or-max-width">Media query ranges</a>
@@ -95,7 +95,7 @@ Use the list below to jump to topics of interest:
       </tr>
       <tr>
         <td>
-          <a href="#color-mix()">color-mix()</a>
+          <a href="#color-mix">color-mix()</a>
         </td>
         <td>
           <a href="#scroll-start">scroll-start</a>
@@ -103,10 +103,10 @@ Use the list below to jump to topics of interest:
       </tr>
       <tr>
         <td>
-          <a href="#color-contrast()">color-contrast()</a>
+          <a href="#color-contrast">color-contrast()</a>
         </td>
         <td>
-          <a href="#:snap-target">:snap-target</a>
+          <a href="#snap-target">:snap-target</a>
         </td>
       </tr>
       <tr>
@@ -114,7 +114,7 @@ Use the list below to jump to topics of interest:
           <a href="#relative-color-syntax">Relative color syntax</a>
         </td>
         <td>
-          <a href="#snapchanging()">snapChanging() and snapChanged()</a>
+          <a href="#snapchanging">snapChanging() and snapChanged()</a>
         </td>
       </tr>
       <tr>
@@ -155,7 +155,7 @@ Use the list below to jump to topics of interest:
       </tr>
       <tr>
         <td>
-          <a href="#:has()">:has()</a>
+          <a href="#has">:has()</a>
         </td>
         <td></td>
       </tr>
@@ -239,21 +239,21 @@ needed.
 Chrome DevTools is helpful for visualizing which styles are coming from which
 layers:
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/17n44fLAbpo0wd6O6Gae.png", 
-  alt="Screenshot of the Styles sidebar of Chrome Devtools, highlighting how styles appear within new Layer groups.", 
-  width="771", 
-  height="689" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/17n44fLAbpo0wd6O6Gae.png",
+  alt="Screenshot of the Styles sidebar of Chrome Devtools, highlighting how styles appear within new Layer groups.",
+  width="771",
+  height="689"
 %}
 
 #### Resources
 
-- [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering)  
-- [Cascade layers explainer](https://css.oddbird.net/layers/explainer/)   
-- [Cascade layers on MDN](https://developer.mozilla.org/docs/Web/CSS/@layer)   
-- Post by [Una Kravets](https://twitter.com/Una), [Cascade
-  Layers](https://developer.chrome.com/blog/cascade-layers/)  
-- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Hello, CSS Cascade
+- [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering)
+- [Cascade layers explainer](https://css.oddbird.net/layers/explainer/)
+- [Cascade layers on MDN](https://developer.mozilla.org/docs/Web/CSS/@layer)
+- [Una Kravets](https://twitter.com/Una): [Cascade
+  Layers](https://developer.chrome.com/blog/cascade-layers/)
+- [Ahmad Shadeed](https://twitter.com/shadeed9): [Hello, CSS Cascade
   Layers](https://ishadeed.com/article/cascade-layers/)
 
 ### Subgrid
@@ -266,20 +266,20 @@ single grid over their whole design and constantly align items within it, which
 couldn't be done in CSS.
 
 After `subgrid`, a child of a grid can adopt its parents’ columns or rows as its
-own, and align itself or children to them! 
+own, and align itself or children to them!
 
 In the following demo, the body element creates a classic grid of three columns:
 the middle column is called `main`, and the left and right columns [name their
 lines](https://rachelandrew.co.uk/archives/2017/06/01/breaking-out-with-css-grid-explained)
 `fullbleed`. Then, each element in the body, `<nav>` and `<main>`, adopts the
-named lines from body by setting `grid-template-columns: subgrid`. 
+named lines from body by setting `grid-template-columns: subgrid`.
 
 ```css
 ​​body {
   display: grid;
   grid-template-columns:
-    [fullbleed-start] 
-    auto [main-start] min(90%, 60ch) [main-end] auto 
+    [fullbleed-start]
+    auto [main-start] min(90%, 60ch) [main-end] auto
     [fullbleed-end]
   ;
 }
@@ -313,22 +313,22 @@ Devtools can help you see the lines and subgrids (Firefox only at the moment).
 In the following image, the parent grid and subgrids have been overlaid. It now
 resembles how designers were thinking about the layout.
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/9V3fShGvncWBFIkfetY3.png", 
-  alt="Screenshot of a subgrid demo, using the Chrome Devtools grid overlay tooling to show the lines defined by CSS.", 
-  width="800", 
-  height="765" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/9V3fShGvncWBFIkfetY3.png",
+  alt="Screenshot of a subgrid demo, using the Chrome Devtools grid overlay tooling to show the lines defined by CSS.",
+  width="800",
+  height="765"
 %}
 
 In the elements panel of devtools you can see which elements are grids and
 subgrids, which is very helpful for debugging or validating layout.
 
 <figure data-size="full">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/2kDFaCapNPGWL2a8XCwI.png", 
-    alt="Screenshot of the Chrome Devtools Elements panel labelling which elements have grid or subgrid layouts.", 
-    width="800", 
-    height="509" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/2kDFaCapNPGWL2a8XCwI.png",
+    alt="Screenshot of the Chrome Devtools Elements panel labelling which elements have grid or subgrid layouts.",
+    width="800",
+    height="509"
   %}
   <figcaption>
     Screenshot from Firefox Devtools
@@ -337,11 +337,9 @@ subgrids, which is very helpful for debugging or validating layout.
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-grid-2/#subgrids](https://www.w3.org/TR/css-grid-2/#subgrids)   
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid)   
-- Post by [Bramus](https://twitter.com/bramus): [Practical CSS Subgrid Video
+- [Subgrid specification](https://www.w3.org/TR/css-grid-2/#subgrids)
+- [Subgrid on MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
+- [Bramus](https://twitter.com/bramus): [Practical CSS Subgrid Video
   Tutorials](https://www.bram.us/2021/11/04/practical-css-subgrid-video-tutorials/)
 
 ### Container queries
@@ -377,7 +375,7 @@ following video able to be queried by the event elements.
     class="adjusted-aspect-ratio"
   %}
   <figcaption>
-    <a href="https://codepen.io/una/pen/RwodQZw">Demo</a> 
+    <a href="https://codepen.io/una/pen/RwodQZw">Demo</a>
     by <a href="https://twitter.com/Una">Una Kravets</a>
   </figcaption>
 </figure>
@@ -410,7 +408,7 @@ in the column that it's dragged to:
     class="adjusted-aspect-ratio"
   %}
   <figcaption>
-    <a href="https://codepen.io/mxbck/full/XWMrMOp">Demo</a> 
+    <a href="https://codepen.io/mxbck/full/XWMrMOp">Demo</a>
     by <a href="https://twitter.com/mxbck">Max Böck</a>
   </figcaption>
 </figure>
@@ -422,20 +420,14 @@ are many exciting and meaningful design decisions to make when using
 
 #### Resources
 
-- Spec:
-  [https:/www.w3.org/TR/css-contain-3/#container-queries](https://www.w3.org/TR/css-contain-3/#container-queries)   
-- Explainer:
-  [https://css.oddbird.net/rwd/query/explainer/](https://css.oddbird.net/rwd/query/explainer/)   
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries)   
-- The new responsive:
-  [/new-responsive/#responsive-to-the-container](/new-responsive/#responsive-to-the-container)  
-- Calendar demo by Una:
-  [https://codepen.io/una/pen/RwodQZw](https://codepen.io/una/pen/RwodQZw)    
-- Awesome container queries:
-  [https://github.com/sturobson/Awesome-Container-Queries](https://github.com/sturobson/Awesome-Container-Queries)   
-- Designcember: - [How we built Designcember](/how-we-built-designcember/)  
-- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Say Hello To CSS
+- [Container Queries specification](https://www.w3.org/TR/css-contain-3/#container-queries)
+- [Container Queries explainer](https://css.oddbird.net/rwd/query/explainer/)
+- [Container Queries on MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries)
+- [The new responsive on web.dev](/new-responsive/#responsive-to-the-container)
+- [Calendar demo by Una](https://codepen.io/una/pen/RwodQZw)
+- [Awesome container queries collection](https://github.com/sturobson/Awesome-Container-Queries)
+- [How we built Designcember on web.dev](/how-we-built-designcember/)
+- [Ahmad Shadeed](https://twitter.com/shadeed9): [Say Hello To CSS
   Container
   Queries](https://ishadeed.com/article/say-hello-to-css-container-queries/)
 
@@ -466,11 +458,11 @@ progress {
 }
 ```
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/s0P0uAcTQiyQpwKGwLiA.png", 
-  alt="Light and dark accented HTML elements side by side for comparison.", 
-  width="800", 
-  height="348" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/s0P0uAcTQiyQpwKGwLiA.png",
+  alt="Light and dark accented HTML elements side by side for comparison.",
+  width="800",
+  height="348"
 %}
 
 To learn more about `accent-color`, [check out my post on
@@ -479,13 +471,10 @@ this useful CSS property.
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-ui-4/#widget-accent](https://www.w3.org/TR/css-ui-4/#widget-accent)  
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/accent-color](https://developer.mozilla.org/docs/Web/CSS/accent-color)  
-- web.dev: [/accent-color/](/accent-color/)   
-- Post by [Bramus](https://twitter.com/bramus): [Tint User-Interface Controls
-  with CSS
+- [accent-color specification](https://www.w3.org/TR/css-ui-4/#widget-accent)
+- [accent-color on MDN](https://developer.mozilla.org/docs/Web/CSS/accent-color)
+- [accent-color on web.dev](/accent-color/)
+- [Bramus](https://twitter.com/bramus): [Tint User-Interface Controls with CSS
   accent-color](https://www.bram.us/2021/08/23/tint-user-interface-controls-with-css-accent-color/)
 
 ### Color level 4 and 5
@@ -494,7 +483,7 @@ The web has been dominated by sRGB for the past decades, but in an expanding
 digital world of high-definition displays and mobile devices pre-equipped with
 OLED or QLED screens, sRGB is not enough. Furthermore, dynamic pages that adapt
 to user preferences are expected, and color management has been a growing
-concern for designers, design systems, and code maintainers. 
+concern for designers, design systems, and code maintainers.
 
 Not in 2022 though—CSS has a number of new color functions and spaces:
 - Colors that reach into the HD color capabilities of displays.
@@ -505,7 +494,7 @@ Not in 2022 though—CSS has a number of new color functions and spaces:
 
 Before all these color features, design systems needed to precalculate proper
 contrasting colors, and ensure appropriately vibrant palettes, all while
-preprocessors or JavaScript did the heavy lifting. 
+preprocessors or JavaScript did the heavy lifting.
 
 After all these color features, the browser and CSS can do all the work,
 dynamically and just in time. Instead of sending many KBs of CSS and JavaScript
@@ -549,11 +538,9 @@ but it may make some tasks easier for fans of the syntax and mental model.
 
 ##### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-color-4/#the-hwb-notation](https://www.w3.org/TR/css-color-4/#the-hwb-notation)   
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/color_value/hwb()](https://developer.mozilla.org/docs/Web/CSS/color_value/hwb())  
-- Post by [Stefan Judis](https://twitter.com/stefanjudis/): [hwb() – a color notation for
+- [HWB specification](https://www.w3.org/TR/css-color-4/#the-hwb-notation)
+- [HWB on MDN](https://developer.mozilla.org/docs/Web/CSS/color_value/hwb())
+- [Stefan Judis](https://twitter.com/stefanjudis/): [hwb() – a color notation for
   humans?](https://www.stefanjudis.com/blog/hwb-a-color-notation-for-humans/)
 
 #### Color spaces
@@ -621,16 +608,12 @@ Enjoy mixing colors in various color spaces in your stylesheets in 2022!
 
 ##### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-color-5/#color-mix](https://www.w3.org/TR/css-color-5/#color-mix)  
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix()](https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix())  
-- Theming demo:
-  [https://codepen.io/argyleink/pen/WNoWadG](https://codepen.io/argyleink/pen/WNoWadG)  
-- Another theming demo:
-  [https://codepen.io/argyleink/pen/YzZQYMq](https://codepen.io/argyleink/pen/YzZQYMq)  
-- Post by [Fabio Giolito](https://twitter.com/fabiogiolito): [Create a color
-  theme with these upcoming CSS
+- [color-mix() specification](https://www.w3.org/TR/css-color-5/#color-mix)
+- [color-mix() on MDN](https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix())
+- [Theming demo](https://codepen.io/argyleink/pen/WNoWadG)
+- [Another theming demo](https://codepen.io/argyleink/pen/YzZQYMq)
+- [Fabio Giolito](https://twitter.com/fabiogiolito): [Create a color theme with
+  these upcoming CSS
   features](https://dev.to/fabiogiolito/create-a-color-theme-with-these-upcoming-css-features-4o83)
 
 #### `color-contrast()`
@@ -640,14 +623,14 @@ Enjoy mixing colors in various color spaces in your stylesheets in 2022!
 Before `color-contrast()`, stylesheet authors needed to know accessible colors
 ahead of time. Often a palette would show black or white text on a color swatch,
 to indicate to a user of the color system which text color would be needed to
-properly contrast with that swatch. 
+properly contrast with that swatch.
 
 <figure data-size="full">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DZbWoSszQOrV0ts5oSu7.png", 
-    alt="Screenshot of 3 Material palettes, showing 14 colors and their appropriate white or black contrast colors for text.", 
-    width="760", 
-    height="632" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DZbWoSszQOrV0ts5oSu7.png",
+    alt="Screenshot of 3 Material palettes, showing 14 colors and their appropriate white or black contrast colors for text.",
+    width="760",
+    height="632"
   %}
   <figcaption>
     Example from <a href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors">2014 Material Design color palettes</a>
@@ -664,11 +647,11 @@ demo](https://codepen.io/web-dot-dev/pen/qBpzwZW) where the text colors are
 automatically chosen by the browser based on the swatch color:
 
 <figure data-size="full">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/LvVQghfnQr2aEXmLUnn4.png", 
-    alt="Screenshot of the HWB demo where each palette has a different pairing of light or dark text, as determined by the browser.", 
-    width="800", 
-    height="394" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/LvVQghfnQr2aEXmLUnn4.png",
+    alt="Screenshot of the HWB demo where each palette has a different pairing of light or dark text, as determined by the browser.",
+    width="800",
+    height="394"
   %}
   <figcaption>
     Try the <a href="https://codepen.io/web-dot-dev/pen/qBpzwZW">demo</a>
@@ -709,12 +692,11 @@ is built into the CSS language itself.
 
 ##### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-color-5/#colorcontrast](https://www.w3.org/TR/css-color-5/#colorcontrast)  
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/color_value/color-contrast()](https://developer.mozilla.org/docs/Web/CSS/color_value/color-contrast())  
-- Demo:
-  [https://codepen.io/web-dot-dev/pen/qBpzwZW](https://codepen.io/web-dot-dev/pen/qBpzwZW)  
+- [color-contrast()
+  specification](https://www.w3.org/TR/css-color-5/#colorcontrast)
+- [color-contrast() on
+  MDN](https://developer.mozilla.org/docs/Web/CSS/color_value/color-contrast())
+- [Demo](https://codepen.io/web-dot-dev/pen/qBpzwZW)
 
 #### Relative color syntax
 
@@ -757,11 +739,11 @@ darker variants of a base color, and used `color-contrast()` to ensure the
 labels have proper contrast:
 
 <figure data-size="full">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/lwCQAQJ3qc80Ap96Bn1J.png", 
-    alt="Screenshot with 3 columns, each column is either darker or lighter than the center column.", 
-    width="800", 
-    height="449" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/lwCQAQJ3qc80Ap96Bn1J.png",
+    alt="Screenshot with 3 columns, each column is either darker or lighter than the center column.",
+    width="800",
+    height="449"
   %}
   <figcaption>
     Try the <a href="https://codepen.io/web-dot-dev/pen/dyJBLWG">demo</a>
@@ -777,7 +759,7 @@ palettes are—no hot or dead spots to be seen, thanks to this color space.
 ```css
 :root {
   --_color-base: #339af0;
-  
+
   --color-0:  lch(from var(--_color-base) 98% 10 h);
   --color-1:  lch(from var(--_color-base) 93% 20 h);
   --color-2:  lch(from var(--_color-base) 85% 40 h);
@@ -798,11 +780,11 @@ palettes are—no hot or dead spots to be seen, thanks to this color space.
 ```
 
 <figure data-size="full">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/crmXDxirpYLGCl1jutSW.png", 
-    alt="Screenshot of 15 palettes all generated dynamically by CSS.", 
-    width="800", 
-    height="433" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/crmXDxirpYLGCl1jutSW.png",
+    alt="Screenshot of 15 palettes all generated dynamically by CSS.",
+    width="800",
+    height="433"
   %}
   <figcaption>
     Try the <a href="https://codepen.io/web-dot-dev/pen/dyJBLWG">demo</a>
@@ -814,12 +796,12 @@ all be used for different purposes, based on their strengths and weaknesses.
 
 ##### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-color-5/#relative-color-function](https://www.w3.org/TR/css-color-5/#relative-color-function)  
-- Palettes:
-  [https://codepen.io/web-dot-dev/pen/GRybLvm](https://codepen.io/web-dot-dev/pen/GRybLvm)  
-- Variants:
-  [https://codepen.io/web-dot-dev/pen/dyJBLWG](https://codepen.io/web-dot-dev/pen/dyJBLWG)  
+- [Relative color syntax
+  specification](https://www.w3.org/TR/css-color-5/#relative-color-function)
+- [Building color palettes with relative color
+  syntax](https://codepen.io/web-dot-dev/pen/GRybLvm)
+- [Building color variants with relative color
+  syntax](https://codepen.io/web-dot-dev/pen/dyJBLWG)
 
 #### Gradient color spaces
 
@@ -827,17 +809,17 @@ Before gradient color spaces, sRGB was the default color space used. sRGB is
 generally reliable, but does have some weaknesses like the [gray dead
 zone](https://css-tricks.com/the-gray-dead-zone-of-gradients/).
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/9mFuKPk1iIt47F9Z08An.png", 
-  alt="4 gradients in a grid, all from cyan to deeppink. LCH and LAB have more consistent vibrancy, where sRGB goes a bit desaturated in the middle.", 
-  width="800", 
-  height="430" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/9mFuKPk1iIt47F9Z08An.png",
+  alt="4 gradients in a grid, all from cyan to deeppink. LCH and LAB have more consistent vibrancy, where sRGB goes a bit desaturated in the middle.",
+  width="800",
+  height="430"
 %}
 
 After gradient color spaces, tell the browser which color space to use for the
 color interpolation. This gives developers and designers the ability to choose
 the gradient they prefer. The default color space also changes to LCH instead of
-sRGB. 
+sRGB.
 
 The syntax addition goes after the gradient direction, uses the new `in` syntax,
 and is optional:
@@ -856,13 +838,13 @@ background-image: linear-gradient(
 
 Here's a basic and essential gradient from black to white. Look at the range of
 results in each color space. Some reach dark black earlier than others, some
-fade to white too late. 
+fade to white too late.
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/LJXw2oaCcDOY8XIlgNa5.png", 
-  alt="11 color spaces shown comparing black to white.", 
-  width="800", 
-  height="1157" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/LJXw2oaCcDOY8XIlgNa5.png",
+  alt="11 color spaces shown comparing black to white.",
+  width="800",
+  height="1157"
 %}
 
 In this next example, black is transitioned to blue because it's a known problem
@@ -872,29 +854,28 @@ space from point A to point B. Since the gradient will take a straight line from
 point A to point B, the shape of the color space drastically changes the stops
 that the path takes along the way.
 
-{% Aside %} 
-`okLCH` and `okLAB` are specialized color spaces that account for various drifts, 
+{% Aside %}
+`okLCH` and `okLAB` are specialized color spaces that account for various drifts,
 like this one into purple, making them especially accurate for gradients.
 {% endAside %}
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/lIQwuIMIe58R76IOhnRS.png", 
-  alt="11 color spaces shown comparing blue to black.", 
-  width="800", 
-  height="1160" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/lIQwuIMIe58R76IOhnRS.png",
+  alt="11 color spaces shown comparing blue to black.",
+  width="800",
+  height="1160"
 %}
 
 For more deep explorations, examples and comments, read [this Twitter
 thread](https://twitter.com/argyleink/status/1490376117064065025?s=20&t=r1JAaqTwoeEitkVmUhTw0Q).
 
-##### Resources 
+##### Resources
 
-- Spec:
-  [https://drafts.csswg.org/css-images-4/#linear-gradients](https://drafts.csswg.org/css-images-4/#linear-gradients)  
-- Codepen comparing gradients:
-  [https://codepen.io/argyleink/pen/OJObWEW](https://codepen.io/argyleink/pen/OJObWEW)  
-- Observable notebook:
-  [https://observablehq.com/@argyleink/colorjs-notebook-fade-to-white](https://observablehq.com/@argyleink/colorjs-notebook-fade-to-white)  
+- [Gradient interpolation
+  specification](https://drafts.csswg.org/css-images-4/#linear-gradients)
+- [Demo comparing gradients in spaces](https://codepen.io/argyleink/pen/OJObWEW)
+- [Observable notebook comparing
+  gradients](https://observablehq.com/@argyleink/colorjs-notebook-fade-to-white)
 
 ### `inert`
 
@@ -960,11 +941,10 @@ ever find themselves lost somewhere else in the page with an open menu.
 
 #### Resources
 
-- Spec:
-  [https://html.spec.whatwg.org/multipage/interaction.html#inert](https://html.spec.whatwg.org/multipage/interaction.html#inert)  
-- MDN:
-  [https://developer.mozilla.org/docs/Web/API/HTMLElement/inert](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
-- Chrome Developers: [Introducing
+- [Inert
+  specification](https://html.spec.whatwg.org/multipage/interaction.html#inert)
+- [Inert on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
+- [Chrome Developers: Introducing
   inert](https://developer.chrome.com/blog/inert/)
 
 ### COLRv1 Fonts
@@ -981,11 +961,11 @@ blend-mode powered fonts that accept parameters to customize the font per use
 case or to match a brand.
 
 <figure data-size="full">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/vnSKm0j2gzr0uFfticVT.png", 
-    alt="Comparison visualization and bar chart, showing how COLRv1 fonts are sharper and smaller.", 
-    width="800", 
-    height="240" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/vnSKm0j2gzr0uFfticVT.png",
+    alt="Comparison visualization and bar chart, showing how COLRv1 fonts are sharper and smaller.",
+    width="800",
+    height="240"
   %}
   <figcaption>
     Image sourced from <a href="https://developer.chrome.com/blog/colrv1-fonts/">https://developer.chrome.com/blog/colrv1-fonts/</a>
@@ -1008,7 +988,7 @@ font file:
 
 ```css
 @import url(https://fonts.googleapis.com/css2?family=Bungee+Spice);
-``` 
+```
 
 Customizing the COLRv1 font is done with `@font-palette-values`, a special CSS
 at-rule for grouping and naming a set of customization options into a bundle for
@@ -1044,11 +1024,11 @@ the palette to an element that is using the color font family:
 ```
 
 <figure data-size="full">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/nccC2TpW80F5xXfLF6hq.png", 
-    alt="Screenshot of the Bungee Spice font with the word DUNE.", 
-    width="564", 
-    height="169" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/nccC2TpW80F5xXfLF6hq.png",
+    alt="Screenshot of the Bungee Spice font with the word DUNE.",
+    width="564",
+    height="169"
   %}
   <figcaption>
     Bungee Spice font shown with custom colors, source from <a href="https://developer.chrome.com/blog/colrv1-fonts/">https://developer.chrome.com/blog/colrv1-fonts/</a>
@@ -1059,30 +1039,30 @@ With more and more variable fonts and color fonts becoming available, web
 typography is on a very magnificent path towards rich customization and creative
 expression.
 
-#### Resources 
+#### Resources
 
-- Github:
-  [https://github.com/googlefonts/colr-gradients-spec](https://github.com/googlefonts/colr-gradients-spec)  
-- Chrome Developers:
-  [https://developer.chrome.com/blog/colrv1-fonts/](https://developer.chrome.com/blog/colrv1-fonts/)  
-- BlinkOn developer explainer video:
-  [https://www.youtube.com/watch?v=BmqYm5Wwz8M](https://www.youtube.com/watch?v=BmqYm5Wwz8M)  
+- [Colrv1 specification on
+  Github](https://github.com/googlefonts/colr-gradients-spec)
+- [Chrome Developers: Colrv1
+  Fonts](https://developer.chrome.com/blog/colrv1-fonts/)
+- [BlinkOn developer explainer
+  video](https://www.youtube.com/watch?v=BmqYm5Wwz8M)
 
 ### Viewport units
 
 {% BrowserCompat 'css.types.length.dvh' %}
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jE6JZPgLnHO8HQWtfgNE.png", 
-  alt="Graphic showing how the device screen and the browser window and an iframe, all have different viewports.", 
-  width="800", 
-  height="501" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jE6JZPgLnHO8HQWtfgNE.png",
+  alt="Graphic showing how the device screen and the browser window and an iframe, all have different viewports.",
+  width="800",
+  height="501"
 %}
 
 Before the new viewport variants, the web offered physical units to assist in
 fitting viewports. There was one for height, width, smallest size (vmin), and
 largest side (vmax). These worked well for many things, but mobile browsers
-introduced a complexity. 
+introduced a complexity.
 
 On mobile, when loading a page, the status bar with the url is shown, and this
 bar consumes some of the viewport space. After a few seconds and some
@@ -1111,18 +1091,18 @@ use for their given scenario. Maybe it's ok to have a small jarring layout shift
 when the status bar goes away, so then `dvh` (dynamic viewport height) could be
 used without worry.
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/KtZ9bXwtzmo7hguwQOWO.png", 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/KtZ9bXwtzmo7hguwQOWO.png",
   alt="A graphic with three phones to help illustrate DVH, LVH and SVH. The DVH
-   example phone has two vertical lines, one between the bottom of the search bar 
-   and the bottom of the viewport and one between above the search bar (under the 
-   system status bar) to the bottom of the viewport; showing how DVH can be either 
-   of these two lengths. LVH is shown in the middle with one line between the 
-   bottom of the device status bar and the button of the phone viewport. The last is 
-   the SVH unit example, showing a line from the bottom of the browser search bar 
-   to the bottom of the viewport", 
-  width="800", 
-  height="664" 
+   example phone has two vertical lines, one between the bottom of the search bar
+   and the bottom of the viewport and one between above the search bar (under the
+   system status bar) to the bottom of the viewport; showing how DVH can be either
+   of these two lengths. LVH is shown in the middle with one line between the
+   bottom of the device status bar and the button of the phone viewport. The last is
+   the SVH unit example, showing a line from the bottom of the browser search bar
+   to the bottom of the viewport",
+  width="800",
+  height="664"
 %}
 
 Here's a complete list of all the new viewport unit options made available with
@@ -1189,9 +1169,9 @@ achieve their viewport responsive designs.
 
 #### Resources
 
-- Spec:
-  [https://drafts.csswg.org/css-values-4/#viewport-relative-lengths](https://drafts.csswg.org/css-values-4/#viewport-relative-lengths)
-- Post by [Bramus](https://twitter.com/bramus): [The Large, Small, and Dynamic
+- [Viewport relative units
+  specification](https://drafts.csswg.org/css-values-4/#viewport-relative-lengths)
+- [Bramus](https://twitter.com/bramus): [The Large, Small, and Dynamic
   Viewports](https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/)
 
 ### `:has()`
@@ -1203,7 +1183,7 @@ Before `:has()`, the
 of a [selector](/learn/css/selectors/) was always at the end. For example, the
 subject of this selector is a list item: `ul > li`. Pseudo selectors can alter
 the selector but they don't change the subject: `ul > li:hover` or `ul >
-li:not(.selected)`. 
+li:not(.selected)`.
 
 After `:has()`, a subject higher in the element tree can remain the subject
 while providing a query about children: `ul:has(> li)`. It is easy to understand
@@ -1225,9 +1205,9 @@ section:has(*:focus-visible) {...}
 ```
 
 {% Aside %}
-[`:focus-within`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible) 
-already behaves similarly to `section:has(*:focus-visible)` and 
-should be used instead. 
+[`:focus-within`](/learn/css/pseudo-classes/#focus,-focus-within,-and-focus-visible)
+already behaves similarly to `section:has(*:focus-visible)` and
+should be used instead.
 {% endAside %}
 
 The `:has()` selector starts to become a fantastic utility once more practical
@@ -1272,12 +1252,10 @@ function, which tests if the browser understands the syntax before using it:
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/selectors-4/#relational](https://www.w3.org/TR/selectors-4/#relational)  
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/:has](https://developer.mozilla.org/docs/Web/CSS/:has)  
-- The CSS `:has()` selector is way more than a "parent selector":
-[https://www.bram.us/2021/12/21/the-css-has-selector-is-way-more-than-a-parent-selector/](https://www.bram.us/2021/12/21/the-css-has-selector-is-way-more-than-a-parent-selector/)  
+- [:has() specification](https://www.w3.org/TR/selectors-4/#relational)
+- [:has() on MDN](https://developer.mozilla.org/docs/Web/CSS/:has)
+- [The CSS `:has()` selector is way more than a "parent
+  selector"](https://www.bram.us/2021/12/21/the-css-has-selector-is-way-more-than-a-parent-selector/)
 
 ## 2022 and beyond
 
@@ -1298,9 +1276,9 @@ are going to be released in 2023.
 CSS [custom properties](https://developer.mozilla.org/docs/Web/CSS/--*)
 are amazing. They allow all sorts of things to be stored inside of a named
 variable, which then can be extended, calculated upon, shared, and more. In
-fact, they're so flexible, it would be nice to have some that are less flexible. 
+fact, they're so flexible, it would be nice to have some that are less flexible.
 
-Consider a scenario where a `box-shadow` uses custom properties for its values: 
+Consider a scenario where a `box-shadow` uses custom properties for its values:
 
 ```css
 box-shadow: var(--x) var(--y) var(--blur) var(--spread) var(--color);
@@ -1360,9 +1338,9 @@ value such as 25%, creating the spotlight focus circle at the mouse position:
   --mouse-y: center;
 
   mask-image: radial-gradient(
-    circle at var(--mouse-x) var(--mouse-y), 
-    transparent 0%, 
-    transparent var(--focal-size), 
+    circle at var(--mouse-x) var(--mouse-y),
+    transparent 0%,
+    transparent var(--focal-size),
     black 0%
   );
 }
@@ -1371,7 +1349,7 @@ value such as 25%, creating the spotlight focus circle at the mouse position:
 Gradients can't be animated though. They are too flexible and too complex for
 the browser to "just derive" how you want them to animate. With `@property`,
 though, one property can be typed and animated in isolation, for which the
-browser can easily understand the intent. 
+browser can easily understand the intent.
 
 Video games that use this focus effect always animate the circle, from a large
 circle to a pinhole circle. Here's how to use `@property` with our demo so the
@@ -1390,9 +1368,9 @@ browser animates the gradient mask:
   --mouse-y: center;
 
   mask-image: radial-gradient(
-    circle at var(--mouse-x) var(--mouse-y), 
-    transparent 0%, 
-    transparent var(--focal-size), 
+    circle at var(--mouse-x) var(--mouse-y),
+    transparent 0%,
+    transparent var(--focal-size),
     black 0%
   );
 
@@ -1420,15 +1398,13 @@ browser can intelligently interpolate the lengths.
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-properties-values-api-1/#at-property-rule](https://www.w3.org/TR/css-properties-values-api-1/#at-property-rule)  
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/@property](https://developer.mozilla.org/docs/Web/CSS/@property)  
-- web.dev: [https://web.dev/at-property/](/at-property/)  
-- Zoom demo:
-  [https://codepen.io/argyleink/pen/rNwWwor](https://codepen.io/argyleink/pen/rNwWwor)  
-- CSS Tricks:
-  [https://css-tricks.com/exploring-property-and-its-animating-powers/](https://css-tricks.com/exploring-property-and-its-animating-powers/)  
+- [@property
+  specification](https://www.w3.org/TR/css-properties-values-api-1/#at-property-rule)
+- [@property on MDN](https://developer.mozilla.org/docs/Web/CSS/@property)
+- [@property on web.dev](/at-property/)
+- [Zoom focus demo](https://codepen.io/argyleink/pen/rNwWwor)
+- [CSS Tricks: Exploring @property and its animating
+  powers](https://css-tricks.com/exploring-property-and-its-animating-powers/)
 
 ### Was in `min-width` or `max-width`
 
@@ -1473,12 +1449,12 @@ which they prefer, or even use them interchangeably.
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/mediaqueries-5/#mq-range-context](https://www.w3.org/TR/mediaqueries-5/#mq-range-context)  
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4)  
-- PostCSS plugin:
-  [https://github.com/postcss/postcss-media-minmax](https://github.com/postcss/postcss-media-minmax)
+- [Media query range syntax
+  specification](https://www.w3.org/TR/mediaqueries-5/#mq-range-context)
+- [Media query range syntax on
+  MDN](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4)
+- [Media query range syntax PostCSS
+  plugin](https://github.com/postcss/postcss-media-minmax)
 
 ### No media query variables
 
@@ -1522,10 +1498,10 @@ property library [Open Props](https://open-props.style).
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/mediaqueries-5/#custom-mq](https://www.w3.org/TR/mediaqueries-5/#custom-mq)  
-- PostCSS plugin:
-  [https://github.com/postcss/postcss-custom-media](https://github.com/postcss/postcss-custom-media)  
+- [Custom media queries
+  specification](https://www.w3.org/TR/mediaqueries-5/#custom-mq)
+- [Custom media queries PostCSS
+  plugin](https://github.com/postcss/postcss-custom-media)
 
 ### Nesting selectors is so nice
 
@@ -1559,24 +1535,24 @@ article {
 }
 ```
 
-{% Aside %} 
+{% Aside %}
 Use the syntax today with [PostCSS](https://postcss.org/) and the
 [PostCSS
 Nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting)
-plugin. 
-{% endAside %} 
+plugin.
+{% endAside %}
 
 What's most important about nesting to me, besides not repeating `article` in
 the nested selector, is the styling context remains within one style block.
 Instead of bouncing from one selector, and its styles, to another selector with
 styles (example 1), the reader can remain within the context of an article and
 see the article owns links inside of it. The relationship and style intent are
-bundled together, so `article` gets to appear to own its own styles. 
+bundled together, so `article` gets to appear to own its own styles.
 
 The ownership could also be thought of as centralization. Instead of looking
 around a stylesheet for relevant styles, they can all be found nested together
 within a context. This works with parent to child relationships, but also with
-child to parent relationships. 
+child to parent relationships.
 
 Consider a component child that wants to adjust itself when in a different
 parent context, as opposed to the parent owning the style and changing a child:
@@ -1603,18 +1579,17 @@ spread amongst other style blocks. It may seem small in these examples, but it
 can have very large impacts, for both convenience and legibility.
 
 {% Aside 'warning' %}
-Nesting more than four or five levels can become more troublesome 
-than repeating selectors. We advise you to not nest so deep, and instead 
+Nesting more than four or five levels can become more troublesome
+than repeating selectors. We advise you to not nest so deep, and instead
 begin a new selector blog and nest within it.
 {% endAside %}
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-nesting-1/](https://www.w3.org/TR/css-nesting-1/)  
-- PostCSS plugin:
-  [https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting)  
-- Post by [Bramus](https://twitter.com/bramus): [The future of CSS: Nesting
+- [@nest specification](https://www.w3.org/TR/css-nesting-1/)
+- [@nest PostCSS
+  plugin](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting)
+- [Bramus](https://twitter.com/bramus): [The future of CSS: Nesting
   Selectors](https://www.bram.us/2019/03/17/the-future-of-css-nesting-selectors/)
 
 ### Scoping styles is really hard
@@ -1629,7 +1604,7 @@ make styles feel like they're leaking.
 
 After `@scope`, not only can styles be scoped to only within a context, like a
 class, they can also articulate where the styles end and do not continue to
-cascade or inherit. 
+cascade or inherit.
 
 In the following example, [BEM](http://getbem.com/naming/) naming convention
 scoping can be reversed into the actual intent. The BEM selector is attempting
@@ -1688,10 +1663,8 @@ child of a `.media-block` is a sibling or parent of `.content`:
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-scoping-1/](https://www.w3.org/TR/css-scoping-1/)  
-- Explainer:
-  [https://css.oddbird.net/scope/explainer/](https://css.oddbird.net/scope/explainer/)  
+- [@scope specification](https://www.w3.org/TR/css-scoping-1/)
+- [@scope explainer](https://css.oddbird.net/scope/explainer/)
 
 ### No CSS way for a masonry layout
 
@@ -1703,11 +1676,11 @@ After CSS masonry with grid, no JavaScript libraries will be required and the
 content order will be correct.
 
 <figure data-size="full">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/xfOiyctwsXa8wnfkuoS2.png", 
-    alt="Screenshot of the masonry layout which shows numbers traveling along the top, then going down.", 
-    width="800", 
-    height="547" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/xfOiyctwsXa8wnfkuoS2.png",
+    alt="Screenshot of the masonry layout which shows numbers traveling along the top, then going down.",
+    width="800",
+    height="547"
   %}
   <figcaption>
     Image and demo from Smashing Magazine<br>
@@ -1731,12 +1704,12 @@ Firefox](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layo
 
 #### Resources
 
-- Spec:
-  [https://drafts.csswg.org/css-grid-3/#masonry-layout-algorithm](https://drafts.csswg.org/css-grid-3/#masonry-layout-algorithm)  
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout)  
-- Smashing Magazine:
-  [https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/](https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/)  
+- [Masonry layout
+  specification](https://drafts.csswg.org/css-grid-3/#masonry-layout-algorithm)
+- [Masonry layout on
+  MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout)
+- [Smashing Magazine: Native CSS Masonry Layout with CSS
+  Grid](https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/)
 
 ### CSS can't help users reduce data
 
@@ -1770,13 +1743,13 @@ can be huge. Depending on how large the visiting viewport is, the more savings
 to be had on page load. Saving continues as users interact with the media
 scrollers. The images all have `loading="lazy"` attributes on them and that,
 combined with CSS hiding the element entirely, means a network request for the
-image is never made. 
+image is never made.
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/BgbeJDFy5t2i8EfaBW8i.jpeg", 
-  alt="Screenshot of a TV show carousel interface with many thumbnails and titles shown.", 
-  width="800", 
-  height="528" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/BgbeJDFy5t2i8EfaBW8i.jpeg",
+  alt="Screenshot of a TV show carousel interface with many thumbnails and titles shown.",
+  width="800",
+  height="528"
 %}
 
 For my testing, on a medium sized viewport, 40 requests and 700kb of resources
@@ -1786,11 +1759,11 @@ resources are loaded. With CSS and the reduced data media query, 10 requests and
 hasn't even scrolled any of the media, at which point there are no additional
 requests made.
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/BcSDhqSWMsbCnNH4zXbR.jpeg", 
-  alt="Screenshot of a TV show carousel interface with no thumbnails and many titles shown.", 
-  width="800", 
-  height="528" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/BcSDhqSWMsbCnNH4zXbR.jpeg",
+  alt="Screenshot of a TV show carousel interface with no thumbnails and many titles shown.",
+  width="800",
+  height="528"
 %}
 
 There are more advantages to this reduced data experience than just data
@@ -1800,14 +1773,14 @@ megabyte of data—it's really nice to see CSS able to help out here.
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data)  
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data)  
-- GUI Challenges:
-  [https://gui-challenges.web.app/media-scroller/dist/](https://gui-challenges.web.app/media-scroller/dist/)  
-- Smashing Magazine:
-  [https://www.smashingmagazine.com/2021/12/core-web-vitals-case-study-smashing-magazine/#savedata-and-prefers-reduced-data](https://www.smashingmagazine.com/2021/12/core-web-vitals-case-study-smashing-magazine/#savedata-and-prefers-reduced-data)  
+- [prefers-reduced-data
+  specification](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data)
+- [prefers-reduced-data on
+  MDN](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data)
+- [prefers-reduced-data in a GUI
+  Challenge](https://gui-challenges.web.app/media-scroller/dist/)
+- [Smashing Magazine: Improving Core Web Vitals, A Smashing Magazine Case
+  Study](https://www.smashingmagazine.com/2021/12/core-web-vitals-case-study-smashing-magazine/#savedata-and-prefers-reduced-data)
 
 ### Scroll snap features are too limited
 
@@ -1848,7 +1821,7 @@ document.querySelector('.snap-carousel').addEventListener('snapchanged', event =
 Scrolling doesn't always begin at the start. Consider swipeable components where
 swiping left or right triggers different events, or a search bar that on page
 load is initially hidden until you scroll to the top. This CSS property lets
-developers specify that a scroller should begin at a specific point. 
+developers specify that a scroller should begin at a specific point.
 
 ```css
 :root { --nav-height: 100px }
@@ -1861,7 +1834,7 @@ developers specify that a scroller should begin at a specific point.
 ##### `:snap-target`
 
 This CSS selector will match elements in a scroll snap container that are
-currently snapped by the browser. 
+currently snapped by the browser.
 
 ```css
 .card {
@@ -1884,12 +1857,11 @@ for polyfills that can help adoption, and testing, of them soon.
 
 #### Resources
 
-- Draft spec:
-  [https://drafts.csswg.org/css-scroll-snap-2/](https://drafts.csswg.org/css-scroll-snap-2/)  
-- Explainers:
-  [https://github.com/argyleink/ScrollSnapExplainers/blob/main/css-snap-target/readme.md](https://github.com/argyleink/ScrollSnapExplainers/blob/main/css-snap-target/readme.md)  
-- Snap demos:
-  [https://snap-gallery.netlify.app/](https://snap-gallery.netlify.app/)  
+- [Scroll Snap 2 draft
+  specification](https://drafts.csswg.org/css-scroll-snap-2/)
+- [Scroll Snap 2
+  explainers](https://github.com/argyleink/ScrollSnapExplainers/blob/main/css-snap-target/readme.md)
+- [Snap demos](https://snap-gallery.netlify.app/)
 
 ### Cycling between known states
 
@@ -1899,7 +1871,7 @@ internally managed browser state for the input that CSS is able to use for
 changing the element visually.
 
 After `toggle()`, custom states can be created on any element for CSS to change
-and use for styling. It allows groups, cycling, directed toggling, and more. 
+and use for styling. It allows groups, cycling, directed toggling, and more.
 
 In the following example, the same effect of a list item strikethrough on
 complete is achieved but without any checkbox elements:
@@ -1931,9 +1903,8 @@ interaction and state.
 
 #### Resources
 
-- Draft:
-  [https://tabatkins.github.io/css-toggle/](https://tabatkins.github.io/css-toggle/)  
-- Post by [Bramus](https://twitter.com/bramus): [The Future of CSS: CSS
+- [toggle() draft specification](https://tabatkins.github.io/css-toggle/)
+- [Bramus](https://twitter.com/bramus): [The Future of CSS: CSS
   Toggles](https://www.bram.us/2022/04/20/the-future-of-css-css-toggles/)
 
 ### Customizing select elements
@@ -1977,11 +1948,11 @@ CSS can target and style the element's parts:
 }
 ```
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/wOUKMguhg268udindKlK.png", 
-  alt="A select looking menu with red accent colors.", 
-  width="186", 
-  height="265" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/wOUKMguhg268udindKlK.png",
+  alt="A select looking menu with red accent colors.",
+  width="186",
+  height="265"
 %}
 
 You can try the `<selectmenu>` element on Chromium in Canary with the web
@@ -1997,10 +1968,8 @@ menu elements.
 
 #### Resources
 
-- Spec:
-  [https://open-ui.org/prototypes/selectmenu](https://open-ui.org/prototypes/selectmenu)  
-- Demo:
-  [https://microsoftedge.github.io/Demos/selectmenu/](https://microsoftedge.github.io/Demos/selectmenu/)  
+- [Selectmenu specification](https://open-ui.org/prototypes/selectmenu)
+- [Selectmenu demo](https://microsoftedge.github.io/Demos/selectmenu/)
 
 ### Anchoring an element to another
 
@@ -2018,5 +1987,5 @@ interested in learning more.
 
 #### Resources
 
-- Explainer:
-  [https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/CSSAnchoredPositioning/explainer.md](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/CSSAnchoredPositioning/explainer.md) 
+- [anchor()
+  explainer](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/CSSAnchoredPositioning/explainer.md)

@@ -3,7 +3,7 @@ title: 开始测量 Web 指标
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: 月度图表叠加标有 LCP、FID 和 CLS 的秒表。
 description: 了解如何在真实世界和实验室环境中测量您的网站 Web 指标。
@@ -21,7 +21,7 @@ tags:
 
 ### 入门
 
-如果您还未设置 RUM，那么以下工具将快速为您提供网站实际性能的相关数据。这些工具都基于相同的底层数据集（[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)），但用例略有不同：
+如果您还未设置 RUM，那么以下工具将快速为您提供网站实际性能的相关数据。这些工具都基于相同的底层数据集（[Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)），但用例略有不同：
 
 - **PageSpeed Insights 网页速度测量工具 (PSI)**：[PageSpeed Insights](https://pagespeed.web.dev/)报告过去 28 天的页面级和域级聚合性能。此外，该工具还会提供如何改进性能的相关建议。如果您正在寻求一种单一操作来着手测量和改进您网站的 Web 指标，我们建议您使用 PSI 来审计您的网站。 PSI 可在[网页](https://pagespeed.web.dev/)上使用，也可作为[API](https://developers.google.com/speed/docs/insights/v5/get-started)使用。
 - **搜索控制台**：[搜索控制台](https://search.google.com/search-console/welcome)为每个页面报告性能数据。因此，该工具非常适合用来识别需要改进的特定页面。与 PageSpeed Insights 不同，搜索控制台的报告包括历史性能数据。只能针对您拥有并已验证所有权的网站使用搜索控制台。
@@ -71,7 +71,7 @@ Web 指标的构成指标并非都由浏览器的内置性能 API 直接公开�
 
 RUM 数据和实验室数据之间始终会存在差异，特别是在实验室环境的网络条件、设备类型或地理位置与用户相对应的信息之间存在显著差异的情况下。但是，在收集有关 Web 指标的实验室数据时，尤为需要注意以下几条具体注意事项：
 
-- **累积布局偏移 (CLS)：**在实验室环境中测量的[累积布局偏移](/cls/)可能会由于人为因素低于在 RUM 数据中观察到的 CLS。CLS 的定义为"*整个页面生命周期内*针对发生的每次意外布局偏移得出的所有单次布局偏移分数的总和。"然而，真实用户加载的页面生命周期通常会与虚拟性能测量工具加载的页面生命周期有很大不同。许多实验室工具只加载页面，而不进行交互。因此，这些工具只能捕获初始页面加载期间发生的布局偏移。相比之下，由 RUM 工具测量的 CLS 能够捕获整个页面生命周期中发生的[意外布局偏移](/cls/#expected-vs.-unexpected-layout-shifts)。
+- **累积布局偏移 (CLS)：**在实验室环境中测量的[累积布局偏移](/cls/)可能会由于人为因素低于在 RUM 数据中观察到的 CLS。CLS 的定义为"*整个页面生命周期内*针对发生的每次意外布局偏移得出的所有单次布局偏移分数的总和。"然而，真实用户加载的页面生命周期通常会与虚拟性能测量工具加载的页面生命周期有很大不同。许多实验室工具只加载页面，而不进行交互。因此，这些工具只能捕获初始页面加载期间发生的布局偏移。相比之下，由 RUM 工具测量的 CLS 能够捕获整个页面生命周期中发生的[意外布局偏移](/cls/#expected-vs-unexpected-layout-shifts)。
 - **First Input Delay 首次输入延迟 (FID)：**[首次输入延迟](/fid/)无法在实验室环境中进行测量，因为该项指标需要用户与页面进行交互。因此，[Total Blocking Time 总阻塞时间](/tbt/) (TBT) 是我们推荐的 FID 实验室代理。 TBT 测量"First Contentful Paint 首次内容绘制和 Time to Interactive 可交互时间之间页面被阻塞而无法对用户输入作出响应的总时间"。虽然 FID 和 TBT 的计算方式不同，但这两项指标都能体现出引导进程中被阻塞的主线程。当主线程被阻塞时，浏览器就会对用户交互作出延迟响应。 FID 测量用户首次尝试与页面交互时发生的延迟（如果存在）。
 
 ### 工具集

@@ -23,7 +23,7 @@ If you are trying to improve the performance of an existing site, start by ident
 
 After you identify your key pages, it's time to analyze them. First, we'll focus on the timing milestones that best measure the user experience.
 
-Under the Audits panel in Chrome DevTools, you'll find [Lighthouse](https://developers.google.com/web/tools/lighthouse/). Run audits on each page in a [Guest window](https://support.google.com/chrome/answer/6130773?co=GENIE.Platform%3DDesktop&hl=en) to record these two times:
+Under the Audits panel in Chrome DevTools, you'll find [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/). Run audits on each page in a [Guest window](https://support.google.com/chrome/answer/6130773?co=GENIE.Platform%3DDesktop&hl=en) to record these two times:
 
 * [First Contentful Paint (FCP)](/fcp/)
 * [Time to Interactive (TTI)](/tti/)
@@ -292,7 +292,7 @@ Once you have a working website, check how you are doing on user-centric perform
 
 ### Budget for rule-based metrics
 
-Very effective rule-based metrics are [Lighthouse](https://developers.google.com/web/tools/lighthouse/) scores. Lighthouse grades your app in 5 categories and one of those is performance. Performance scores are calculated based on [5 different metrics](https://developers.google.com/web/tools/lighthouse/scoring#perf-audits), including First Contentful Paint and Time to Interactive.
+Very effective rule-based metrics are [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) scores. Lighthouse grades your app in 5 categories and one of those is performance. Performance scores are calculated based on [5 different metrics](https://developers.google.com/web/tools/lighthouse/scoring#perf-audits), including First Contentful Paint and Time to Interactive.
 
 When you try to build a great site, **set Lighthouse performance score budget to at least 85 (out of 100)**. Use [Lighthouse CI](https://github.com/ebidel/lighthouse-ci) to enforce it on pull-requests.
 

@@ -183,7 +183,7 @@ For this to work, the file name must exactly be `web-app-origin-association`.
 
 ## Demo
 
-To test PWAs as URL Handlers, be sure to [set the browser flag](#enabling-via-about:flags) as
+To test PWAs as URL Handlers, be sure to [set the browser flag](#enabling-via-aboutflags) as
 outlined above and then install the PWA at
 [https://mandymsft.github.io/pwa/](https://mandymsft.github.io/pwa/). By looking at its
 [web app manifest](https://github.com/mandymsft/pwa/blob/main/manifest.json), you can see that it

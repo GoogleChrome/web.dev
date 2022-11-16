@@ -60,7 +60,7 @@ The [Installation Prompt chapter](/learn/pwa/installation-prompt) explains how t
 
 {% Aside 'warning' %}
 The `appinstalled` event is available only in Chromium-based browsers, and it's part of an [incubator for the manifest spec](https://wicg.github.io/manifest-incubations/#onappinstalled-attribute)
-{% endAside %}.
+{% endAside %}
 
 ## Session transfer
 
@@ -149,7 +149,7 @@ The [`getInstalledRelatedApps()`](/get-installed-related-apps/) method allows yo
 Checking if a related app is installed already helps you to implement features such as hiding custom-installed prompts or redirecting the user directly to the installed app, instead of going to a general purpose website.
 To use the `getInstalledRelatedApps()` method, both the installed app and the website need to configure their connection with each other. Each app, depending on its platform, includes metadata to recognize the website and the website includes the expected installed app in the `related_applications` field in the manifest.
 
-Tools such as[BubbleWrap](https://github.com/GoogleChromeLabs/bubblewrap) or [PWA Builder](https://www.pwabuilder.com/), which allow you to publish your PWA to app stores, already add the required metadata so your website can use `getInstalledRelatedApps()` right away.
+Tools such as [BubbleWrap](https://github.com/GoogleChromeLabs/bubblewrap) or [PWA Builder](https://www.pwabuilder.com/), which allow you to publish your PWA to app stores, already add the required metadata so your website can use `getInstalledRelatedApps()` right away.
 To detect whether a PWA is already installed using `getInstalledRelatedApps()`, define `webapp` in the manifest `related_applications` field with the URL to your manifest:
 
 ```json

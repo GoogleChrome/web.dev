@@ -17,7 +17,7 @@ web_lighthouse:
 
 ## Lighthouse `robots.txt` 审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 可以标记无效的 `robots.txt` 文件：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 可以标记无效的 `robots.txt` 文件：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Lighthouse 审计显示无效的 robots.txt", width="800", height="203" %}</figure>
 
@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## 资源
 
-- [**`robots.txt` 无效**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [**`robots.txt` 无效**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [创建`robots.txt file`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Robots 元标签和 X-Robots-Tag HTTP 标头规范](https://developers.google.com/search/reference/robots_meta_tag)

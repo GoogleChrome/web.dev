@@ -19,7 +19,7 @@ the intruder just needs to figure out how to exploit the vulnerability on your s
 
 ## How this Lighthouse audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags front-end JavaScript libraries with known security vulnerabilities:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags front-end JavaScript libraries with known security vulnerabilities:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Lighthouse audit showing any front-end JavaScript libraries with known security vulnerabilities used by the page", width="800", height="190" %}
@@ -46,5 +46,5 @@ each library's vulnerabilities.
 
 ## Resources
 
-- [Source code for **Includes front-end JavaScript libraries with known security vulnerabilities** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [Source code for **Includes front-end JavaScript libraries with known security vulnerabilities** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all)

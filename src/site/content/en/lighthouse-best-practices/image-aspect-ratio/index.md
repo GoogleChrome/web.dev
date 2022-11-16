@@ -16,7 +16,7 @@ possibly creating an unpleasant user experience.
 
 ## How the Lighthouse image aspect ratio audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags any
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags any
 image with a rendered dimension more than a few pixels different from the expected dimension
 when rendered at its natural ratio:
 
@@ -67,7 +67,7 @@ post to learn how to serve images that are the right size for each user's device
 
 ## Resources
 
-- [Source code for **Displays images with incorrect aspect ratio** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
+- [Source code for **Displays images with incorrect aspect ratio** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/image-aspect-ratio.js)
 - [CSS Aspect Ratio](https://www.npmjs.com/package/css-aspect-ratio)
 - [Aspect Ratio Boxes](https://css-tricks.com/aspect-ratio-boxes/)
 - [Serve images with correct dimensions](/serve-images-with-correct-dimensions)

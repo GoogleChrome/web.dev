@@ -22,7 +22,7 @@ updated: 2020-06-10
 
 ## В каких случаях проверка сервис-воркера в Lighthouse завершается неудачей
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, которые не выполняют регистрацию сервис-воркера:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, которые не выполняют регистрацию сервис-воркера:
 
 <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Проверка Lighthouse показывает, что сайт не выполняет регистрацию сервис-воркера", width="800", height="95" %}</figure>
 
@@ -42,7 +42,7 @@ Lighthouse проверяет, возвращает ли [Chrome Remote Debuggin
 
 ## Ресурсы
 
-- [Исходный код проверки **Does not register a service worker that controls page and `start_url`**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
+- [Исходный код проверки **Does not register a service worker that controls page and `start_url`**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/service-worker.js)
 - [Сервис-воркеры: введение](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [Сервис-воркеры и Cache Storage API](/service-workers-cache-storage/)
 - [Что такое надежность сети и как ее измерить?](/network-connections-unreliable)

@@ -1,0 +1,110 @@
+---
+patternId: advanced-apps/contacts
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+    />
+    <title>How to access contacts from the address book</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
+    <style>
+      html {
+        box-sizing: border-box;
+        font-family: system-ui, sans-serif;
+        color-scheme: dark light;
+      }
+
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+      }
+
+      input {
+        display: block;
+        margin-block-end: 1rem;
+      }
+      own-window {
+        border: dashed red 2px;
+        padding: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to access contacts from the address book</h1>
+    <own-window>
+      <div>This demo needs to run in its own window, not in an iframe.</div>
+      <button type="button">Open in new window</button>
+    </own-window>
+
+    <p>Ship your order as a present to a friend.</p>
+    <button hidden type="button">Open address book</button>
+    <pre></pre>
+
+    <label> Name <input class="name" autocomplete="name"></label>
+
+    <label hidden>Address <input class="address" required></label>
+
+    <label>Street <input class="autofill" autocomplete="address-line1" required></label>
+
+    <label>City <input class="autofill" autocomplete="address-level2" required></label>
+
+    <label>State / Province / Region (optional) <input class="autofill" autocomplete="address-level1"></label>
+
+    <label>ZIP / Postal code (optional) <input class="autofill" autocomplete="postal-code"></label>
+
+    <label>Country <input class="autofill" autocomplete="country"></label>
+
+    <label>Email<input class="email" autocomplete="email"></label>
+
+    <label>Telephone<input class="tel" autocomplete="tel"></label>
+
+    {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+    {% include 'partials/script-loader.njk' %}
+    {% set apiScripts %}
+      loadScript('https://unpkg.com/own-window@1.0.3/dist/index.min.js', null);
+    {% endset %}
+    <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+
+    {% set script %}
+      const button = document.querySelector('button');
+      const name = document.querySelector('.name')
+      const address = document.querySelector('.address')
+      const email = document.querySelector('.email')
+      const tel = document.querySelector('.tel')
+      const pre = document.querySelector('pre')
+      const autofills = document.querySelectorAll('.autofill')
+
+      if ('contacts' in navigator) {
+        button.hidden = false;
+        for (const autofill of autofills) {
+          autofill.parentElement.style.display = 'none'
+        }
+        address.parentElement.style.display = 'block';
+        button.addEventListener('click', async () => {
+          const props = ['name', 'email', 'tel', 'address'];
+          const opts = {multiple: false};
+          try {
+            const [contact] = await navigator.contacts.select(props, opts);
+            name.value = contact.name;
+            address.value = contact.address;
+            tel.value = contact.tel
+            email.value = contact.email;
+          } catch (err) {
+            pre.textContent = `${err.name}: ${err.message}`
+          }
+        });
+      }
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

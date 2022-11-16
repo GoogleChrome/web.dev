@@ -119,7 +119,7 @@ CSSで最もエキサイティングな新しい分野の1つは、要素クエ�
 
 ```css
 .card {
-  contain: size layout;
+  container-type: inline-size;
 }
 
 @container (max-width: 850px) {
@@ -149,7 +149,7 @@ CSSで最もエキサイティングな新しい分野の1つは、要素クエ�
 
 ```css
 .product {
-  contain: layout inline-size;
+  container-type: inline-size;
 }
 
 @container (min-width: 350px) {

@@ -30,7 +30,7 @@ Summing up:
 
 Webpack is not the only tool that could help you make an app faster. Consider making your
 application [a Progressive Web App](/progressive-web-apps/) for even better experience and use
-automated profiling tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to get improvement suggestions.
+automated profiling tools like [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to get improvement suggestions.
 
 Don’t forget to read [webpack docs](https://webpack.js.org/guides/) – they have plenty of other
 useful information.

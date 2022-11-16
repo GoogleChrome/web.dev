@@ -20,7 +20,7 @@ the browser uses its local copy rather than getting it from the network.
 
 ## How the Lighthouse cache policy audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags all static resources that aren't cached:
 
 <figure>
@@ -143,6 +143,6 @@ See [Browser Caching](https://wordpress.org/support/article/optimization/#browse
 
 ## Resources
 
-- [Source code for **Serve static assets with an efficient cache policy** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
+- [Source code for **Serve static assets with an efficient cache policy** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [Cache-Control specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 - [Cache-Control (MDN)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)

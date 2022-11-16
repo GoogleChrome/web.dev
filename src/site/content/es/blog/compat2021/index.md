@@ -100,7 +100,7 @@ Vea a Rob Flack en su <a href="https://output.jsbin.com/xunosud">demostración d
 
 ### Propiedad  aspect-ratio de CSS
 
-La nueva propiedad [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) de CSS facilita el mantenimiento de una relación de ancho a alto constante para los elementos, lo que elimina la necesidad del conocido [truco `padding-top`](/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top):
+La nueva propiedad [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) de CSS facilita el mantenimiento de una relación de ancho a alto constante para los elementos, lo que elimina la necesidad del conocido [truco `padding-top`](/aspect-ratio/#the-old-hack-maintaining-aspect-ratio-with-padding-top):
 
 <div class="switcher">{% Compare 'worse', 'Using padding-top' %} ```css .container { width: 100%; padding-top: 56.25%; } ``` {% endCompare %}</div>
 <p data-md-type="paragraph">{% Compare 'better', 'Using aspect-ratio' %}</p>

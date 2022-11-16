@@ -68,7 +68,6 @@ const shows = require('./src/site/_collections/shows');
 const tags = require('./src/site/_collections/tags');
 
 // Filters
-const consoleDump = require('./src/site/_filters/console-dump');
 const {i18n} = require('./src/site/_filters/i18n');
 const {getDefaultUrl, getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
@@ -95,6 +94,12 @@ const navigation = require('./src/site/_filters/navigation');
 const {minifyJs} = require('./src/site/_filters/minify-js');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
 const {siteRender} = require('./src/site/_filters/site-render');
+const {
+  isUpcoming,
+  filterInUpcoming,
+  filterOutUpcoming,
+} = require('./src/site/_filters/is-upcoming');
+const {calendarLink} = require('./src/site/_filters/calendar-link');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
 const {purifyCss} = require('./src/site/_transforms/purify-css');
@@ -162,7 +167,6 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // FILTERS
   // ----------------------------------------------------------------------------
-  config.addFilter('consoleDump', consoleDump);
   config.addFilter('i18n', i18n);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('getDefaultUrl', getDefaultUrl);
@@ -193,6 +197,10 @@ module.exports = function (config) {
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addNunjucksAsyncFilter('minifyJs', minifyJs);
   config.addFilter('cspHash', cspHash);
+  config.addFilter('isUpcoming', isUpcoming);
+  config.addFilter('filterInUpcoming', filterInUpcoming);
+  config.addFilter('filterOutUpcoming', filterOutUpcoming);
+  config.addFilter('calendarLink', calendarLink);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
@@ -288,6 +296,11 @@ module.exports = function (config) {
       config.addPassthroughCopy(rewrite);
     }
   }
+
+  // Chrometober config
+  config.addPassthroughCopy({
+    'src/site/content/en/third_party/': 'third_party',
+  });
 
   return {
     dir: {

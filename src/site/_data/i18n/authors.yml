@@ -63,7 +63,7 @@ joemarini:
     en: Joe Marini
   description:
     en: Chrome Developer Advocate at Google
-    
+
 loreenalee:
   title:
     en: Loreena Lee
@@ -129,7 +129,7 @@ gskinnerdotcom:
     en: Sean Middleditch
   description:
     en: Agency
-    
+
 seanmiddleditch:
   title:
     en: Sean Middleditch
@@ -1054,6 +1054,60 @@ thomassteiner:
     ru: Том — Developer Advocate
     zh: Tom 是一名开发技术推广工程师
 
+pliao:
+  title:
+    en: Palances Liao
+    es: Palances Liao
+    ja: Palances Liao
+    ko: Palances Liao
+    pt: Palances Liao
+    ru: Palances Liao
+    zh: Palances Liao
+  description:
+    en: Palances is a Web Ecosystem Consultant
+    es: Palances es un Consultor de Ecosistemas Web
+    ja: Palances は Web エコシステム コンサルタントです。
+    ko: Palances는 웹 생태계 컨설턴트입니다.
+    pt: Palances é um Consultor de Ecossistemas Web
+    ru: Palances — консультант по веб-экосистеме
+    zh: Palances 是一名网络生态系统顾问
+
+conwayt:
+  title:
+    en: Tony Conway
+    es: Tony Conway
+    ja: Tony Conway
+    ko: Tony Conway
+    pt: Tony Conway
+    ru: Tony Conway
+    zh: Tony Conway
+  description:
+    en: Tony is a Web Ecosystem Consultant
+    es: Tony es un Consultor de Ecosistemas Web
+    ja: Tony は Web エコシステム コンサルタントです。
+    ko: Tony는 웹 생태계 컨설턴트입니다.
+    pt: Tony é um Consultor de Ecossistemas Web
+    ru: Tony — консультант по веб-экосистеме
+    zh: Tony 是一名网络生态系统顾问
+
+chuijun:
+  title:
+    en: Cecilia Cong
+    es: Cecilia Cong
+    ja: Cecilia Cong
+    ko: Cecilia Cong
+    pt: Cecilia Cong
+    ru: Cecilia Cong
+    zh: Cecilia Cong
+  description:
+    en: Cecilia is a Web Ecosystem Consultant
+    es: Cecilia es una Consultora de Ecosistemas Web
+    ja: Cecilia は Web エコシステム コンサルタントです。
+    ko: Cecilia는 웹 생태계 컨설턴트입니다.
+    pt: Cecilia é uma Consultora de Ecossistemas Web
+    ru: Cecilia — консультант по веб-экосистеме
+    zh: Cecilia 是一名网络生态系统顾问
+
 surma:
   title:
     en: Surma
@@ -1161,6 +1215,25 @@ philipwalton:
     pt: Engenheiro na empresa Google trabalhando na plataforma web
     ru: Инженер в компании Google, участвующий в разработке веб-платформы
     zh: 研究网络平台的 Google 工程师
+
+tunetheweb:
+  title:
+    en: Barry Pollard
+    es: Barry Pollard
+    ja: Barry Pollard
+    ko: Barry Pollard
+    pt: Barry Pollard
+    ru: Barry Pollard
+    zh: Barry Pollard
+  description:
+    en: Web Performance Developer Advocate for Google
+    es: Rendimiento web aesarrollador partidario para Google
+    ja: Google を対象とした Developer Advocate
+    ko: Google의 개발자 애드버킷
+    pt: Developer Advocate para o Google
+    ru: Developer Advocate по вопросам Google
+    zh: 负责 Google 的开发技术推广工程师
+
 
 ekharvey:
   title:
@@ -2548,23 +2621,23 @@ bpj:
     ru: Последние новости и статьи от Bart Jarochowski.
     zh: Bart Jarochowski 撰写我们的最新资讯、动态和故事。
 
-charistheodoulou:
+harrytheodoulou:
   title:
-    en: Charis Theodoulou
-    es: Charis Theodoulou
-    ja: Charis Theodoulou
-    ko: Charis Theodoulou
-    pt: Charis Theodoulou
-    ru: Charis Theodoulou
-    zh: Charis Theodoulou
+    en: Harry Theodoulou
+    es: Harry Theodoulou
+    ja: Harry Theodoulou
+    ko: Harry Theodoulou
+    pt: Harry Theodoulou
+    ru: Harry Theodoulou
+    zh: Harry Theodoulou
   description:
-    en: Our latest news, updates, and stories by Charis Theodoulou.
-    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Charis Theodoulou.
-    ja: Charis Theodoulou による最新のニュース、アップデート情報、記事などをご紹介します。
-    ko: Charis Theodoulou의 최신 뉴스, 업데이트 및 스토리.
-    pt: Nossas últimas notícias, atualizações e histórias por Charis Theodoulou.
-    ru: Последние новости и статьи от Charis Theodoulou.
-    zh: Charis Theodoulou 撰写我们的最新资讯、动态和故事。
+    en: Our latest news, updates, and stories by Harry Theodoulou.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Harry Theodoulou.
+    ja: Harry Theodoulou による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Harry Theodoulou의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Harry Theodoulou.
+    ru: Последние новости и статьи от Harry Theodoulou.
+    zh: Harry Theodoulou 撰写我们的最新资讯、动态和故事。
 
 natashakosoglov:
   title:
@@ -4116,7 +4189,7 @@ nikilmathew:
   description:
     en: Lead Software engineer at Mishipay
 
-jhey:
+jheyy:
   title:
     en: Jhey Tompkins
     es: Jhey Tompkins
@@ -4203,3 +4276,141 @@ alexeyrodionov:
   description:
     en: PWA developer. UI/UX engineer. Web platform advocate. PWA, Web Components, GraphQL evangelist. PWA Russian-speaking community organizer. Chromium contributor. Lead front-end developer at Mercury Development.
     ru: Разработчик PWA. UI/UX-инженер. Адвокат веб-платформы. Евангелист PWA, Web Components, GraphQL. Организатор русскоязычного сообщества PWA. Контрибьютор Chromium. Ведущий фронтенд-разработчик в Mercury Development.
+
+twifkak:
+  title:
+    en: Devin Mullins
+  description:
+    en: Software engineer at Google, signed exchanges integration lead in Search
+
+ruisantos:
+  title:
+    en: Rui Santos
+  description:
+    en: Senior Head of Product Strategy & Operations at Farfetch
+
+manuelgarcia:
+  title:
+    en: Manuel Garcia
+  description:
+    en: Senior Principal Engineer at Farfetch
+
+patriciacoutoneto:
+  title:
+    en: Patrícia Couto Neto
+  description:
+    en: Senior Analytics Manager
+
+steveworkman:
+  title:
+    en: steveworkman
+  description:
+    en: Lead Engineer at Maersk.com
+
+simonleparc:
+  title:
+    en: Simon Le Parc
+  description:
+    en: Senior Manager Software Development at GoDaddy
+
+dbaron:
+  title:
+    en: L. David Baron
+  description:
+    en: Software engineer at Google and contributor to Web standards
+
+bramus:
+  title:
+    en: Bramus
+    es: Bramus
+    ja: Bramus
+    ko: Bramus
+    pt: Bramus
+    ru: Bramus
+    zh: Bramus
+  description:
+    en: Developer Advocate for CSS, UI, and DevTools at Chrome
+    es: Desarrollador partidario para CSS, UI y DevTools en Chrome
+    ja: Chrome の CSS、UI、DevTools を対象とした Developer Advocate
+    ko: Chrome의 CSS, UI 및 DevTools 개발자 애드버킷
+    pt: Developer Advocate para CSS, UI e DevTools no Chrome
+    ru: Developer Advocate по вопросам CSS, UI и DevTools в команде Chrome
+    zh: Chrome 的 CSS、UI 和 DevTools 开发技术推广工程师
+
+kadirtopal:
+  title:
+    en: Kadir Topal
+  description:
+    en: Kadir is a product manager on the Web Developer Platform team.
+
+michellebarker:
+  title:
+    en: Michelle Barker
+  description:
+    en: Michelle is a senior front-end developer at Ada Mode.
+
+daviddarnes:
+  title:
+    en: David Darnes
+  description:
+    en: David is a senior front-end developer at Nordhealth.
+
+linhduong:
+  title:
+    en: Linh Duong
+  description:
+    en: Front-end Engineer at Rakuten Group, Inc.
+
+shogokashiwase:
+  title:
+    en: Shogo Kashiwase
+  description:
+    en: Designer at Rakuten Group, Inc.
+
+hayounglee:
+  title:
+    en: Hayoung Lee
+  description:
+    en: Front-end Engineer at Rakuten Group, Inc.
+
+ryunosukeakiba:
+  title:
+    en: Ryunosuke Akiba
+  description:
+    en: Creative Director at Rakuten Group, Inc.
+
+mmatuzo:
+  title:
+    en: Manuel Matuzović
+  description:
+    en: Front-end developer.
+
+estelleweyl:
+  title:
+    en: Estelle Weyl
+  description:
+    en: Open-source maintainer. Front-end engineer. Technical writer.
+
+davideast:
+  title:
+    en: David East
+  description:
+    en: Web Developer
+
+cariefisher:
+   title:
+      en: Carie Fisher
+   description:
+      en: Senior Accessibility Consultant and developer
+
+superhighfives:
+  title:
+    en: Charlie Gleason
+  description:
+    en: Designer and Developer
+
+sriramkrishnan:
+  title:
+    en: 'Sriram Krishnan'
+  description:
+    en: 'Tech Lead and Manager on YouTube Web'

@@ -4,7 +4,7 @@ title: Largest Contentful Paint 最大内容绘制 (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-10-19
 description: 本篇文章介绍了最大内容绘制 (LCP) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -120,7 +120,7 @@ LCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 实测工具
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
@@ -128,10 +128,13 @@ LCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 ### 实验室工具
 
 - [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
-- [灯塔](https://developers.google.com/web/tools/lighthouse/)
+- [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 
 ### 在 JavaScript 中测量 LCP
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 要在 JavaScript 中测量 LCP，您可以使用[最大内容绘制 API](https://wicg.github.io/largest-contentful-paint/) 。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听`largest-contentful-paint`条目并记录在控制台中。
 
@@ -169,7 +172,7 @@ import {getLCP} from 'web-vitals';
 getLCP(console.log);
 ```
 
-您可以参考[`getLCP()`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)，了解如何在 JavaScript 中测量 LCP 的完整示例。
+您可以参考[`getLCP()`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts)，了解如何在 JavaScript 中测量 LCP 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），LCP 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 

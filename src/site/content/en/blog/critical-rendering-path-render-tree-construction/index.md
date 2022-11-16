@@ -45,7 +45,7 @@ To construct the render tree, the browser roughly does the following:
 As a brief aside, note that `visibility: hidden` is different from `display: none`. The former makes the element invisible, but the element still occupies space in the layout (that is, it's rendered as an empty box), whereas the latter (`display: none`) removes the element entirely from the render tree such that the element is invisible and is not part of the layout.
 {% endAside %}
 
-The final output is a render that contains both the content and style information of all the visible content on the screen. **With the render tree in place, we can proceed to the "layout" stage.**
+The final output is a render tree that contains both the content and style information of all the visible content on the screen. **With the render tree in place, we can proceed to the "layout" stage.**
 
 Up to this point we've calculated which nodes should be visible and their computed styles, but we have not calculated their exact position and size within the [viewport](/web/fundamentals/design-and-ux/responsive/#set-the-viewport) of the device---that's the "layout" stage, also known as "reflow."
 

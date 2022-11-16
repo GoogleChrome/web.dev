@@ -66,7 +66,7 @@ To perform linting over the entire project (including external templates), use t
 
 ## Supplementing codelyzer
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is another tool you can use to enforce accessibility practices in your Angular application. The main difference between codelyzer and Lighthouse is when their checks get performed. Codelyzer statically analyzes the application at development time, without running it. This means that during development you can get direct feedback in your text editor or in the terminal. By contrast, Lighthouse actually runs your application and performs a bunch of checks using dynamic analysis.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is another tool you can use to enforce accessibility practices in your Angular application. The main difference between codelyzer and Lighthouse is when their checks get performed. Codelyzer statically analyzes the application at development time, without running it. This means that during development you can get direct feedback in your text editor or in the terminal. By contrast, Lighthouse actually runs your application and performs a bunch of checks using dynamic analysis.
 
 Both tools can be useful parts of your development flow. Lighthouse has better coverage given the checks it performs, while codelyzer allows you to iterate faster by getting constant feedback in your text editor.
 

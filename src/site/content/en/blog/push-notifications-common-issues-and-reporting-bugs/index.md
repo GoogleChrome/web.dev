@@ -6,6 +6,8 @@ authors:
   - mattgaunt
 date: 2017-03-30
 updated: 2019-06-15
+tags:
+  - notifications
 ---
 
 When you hit an issue with web push, it can be difficult to debug the issue or
@@ -26,22 +28,22 @@ each with its own set of common issues / problems:
   You should be getting a 201 HTTP code. If you aren't :
   - **Check for Authorization Errors:** If you receive an authorization
     error message see the
-    [Authorization Issues section](#authorization_issues).
+    [Authorization Issues section](#authorization-issues).
   - **Other API Errors:** If you receive a non-201 status code response,
-    see the [HTTP Status Codes section](#http_status_codes) for
+    see the [HTTP Status Codes section](#http-status-codes) for
     guidance on the cause of the issue.
 - **Receiving a Message**: If you're able to send a message successfully,
   but the message is not received on the browser:
   - **Check for Encryption Issues:** See the [Payload Encryption
-    Issue Section](#payload_encryption_issue).
+    Issue Section](#payload-encryption-issue).
   - **Check for Connection Issues:** If the problem is on Chrome, it
-    may be a connection. See [Connection Issues section](#connection_issue)
+    may be a connection. See [Connection Issues section](#connection-issue)
     for more info.
 
 If you aren't able to send and receive a push message and the relevant sections
 in this doc aren't helping debug the problem then you may have found a
 bug in the push mechanism itself. In this case, refer to the
-[Raising Bug Reports](#raising_bug_reports)
+[Raising Bug Reports](#raising-bug-reports)
 section to file a good bug report with all the necessary information to expedite
 the bug fixing process.
 
@@ -261,7 +263,7 @@ problem could be, please raise an issue against the browser you are having an
 issue with:
 
 For Chrome, you'd raise the issue here:
-[https://bugs.chromium.org/p/chromium/issues/list](https://bugs.chromium.org/p/chromium/issues/list)  
+[https://bugs.chromium.org/p/chromium/issues/list](https://bugs.chromium.org/p/chromium/issues/list)
 For Firefox, you should raise the issue on:
 [https://bugzilla.mozilla.org/](https://bugzilla.mozilla.org/)
 
@@ -277,4 +279,22 @@ To provide a good bug report, you should provide the following details:
 If you can provide a reproducible example, either source code or a hosted web
 site, it often speeds up diagnosing and solving the problem.
 
-## Feedback {: #feedback }
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* [How Push Works](/push-notifications-how-push-works/)
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* [Web Push Protocol](/push-notifications-web-push-protocol/)
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* [Push Notifications FAQ](/push-notifications-faq/)
+* Common Issues and Reporting Bugs
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)

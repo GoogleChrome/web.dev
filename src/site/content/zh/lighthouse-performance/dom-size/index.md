@@ -26,7 +26,7 @@ tags:
 
 ## Lighthouse DOM 大小审核为何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会报告页面的总 DOM 元素数量，页面的最大 DOM 深度及其最大子元素：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会报告页面的总 DOM 元素数量，页面的最大 DOM 深度及其最大子元素：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Lighthouse 避免 DOM 过大审核的截图", width="800", height="363" %}</figure>
 
@@ -61,5 +61,5 @@ Lighthouse 使用 DOM 树标记页面：
 
 ## 资源
 
-- [**避免 DOM 过大审核**的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [**避免 DOM 过大审核**的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/dom-size.js)
 - [减小样式计算的范围和复杂性](/reduce-the-scope-and-complexity-of-style-calculations/)

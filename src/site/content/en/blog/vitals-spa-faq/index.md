@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - yoavweiss
 date: 2021-09-14
-updated: 2022-05-11
+updated: 2022-07-18
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/FITOGeO0PDyPrBveixB7.jpeg
 alt: "Exterior view of the Walt Disney Concert Hall"
 tags:
@@ -129,7 +129,7 @@ page](https://en.wikipedia.org/wiki/Landing_page).
 You can check your site's score for different aggregation methods using
 [PageSpeed Insights](https://pagespeed.web.dev/) or
 the [Chrome User Experience Report
-API](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started),
+API](/chrome-ux-report-api/),
 which reports scores for both individual page URLs and the entire origin.
 
 Another way the SPA architecture can affect Core Web Vitals scores is for
@@ -148,7 +148,7 @@ with full page loads in an MPA. This can also lead to confusion because layout
 shifts that occur after a route transition will be attributed to the URL of the
 page when it was loaded, not the URL in the address bar at the time of the shift
 ([more details
-below](#if-core-web-vitals-scores-are-only-reported-for-an-spa's-landing-pages-how-can-i-debug-issues-that-occur-on-"pages"-after-a-route-transition)).
+below](#if-core-web-vitals-scores-are-only-reported-for-an-spa's-landing-pages-how-can-i-debug-issues-that-occur-on-pages-after-a-route-transition)).
 
 ### If SPA architectures improve the user experience, shouldn't that improvement be reflected in the metrics?
 
@@ -197,7 +197,7 @@ could account for some of the change.
 
 A quick way to check would be to test both an MPA and SPA version of one of your
 landing pages with
-[Lighthouse](https://developers.google.com/web/tools/lighthouse). If the
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/). If the
 Lighthouse score is lower on any of the Core Web Vitals metric for the SPA
 version, then it's likely that the load experience did get worse after the
 update.
@@ -216,7 +216,7 @@ expect to see their Core Web Vitals scores reflect that.
 
 Google tools that report field data for the Core Web Vitals metric (like Search
 Console and PageSpeed Insights) get their data from the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+Report](https://developer.chrome.com/docs/crux/)
 (CrUX). And CrUX aggregates data either by origin or by page URL (that is, the
 page URL at load time).
 
@@ -232,8 +232,8 @@ allow you to both debug individual issues that occur throughout the page
 lifecycle as well as aggregate by original page URL in order to match how Google
 tools measure and report on the metrics.
 
-For more details and best practices on this topic, see: [Debug Web Vitals in the
-field](/debug-web-vitals-in-the-field/).
+For more details and best practices on this topic, see: [Debug performance in the
+field](/debug-performance-in-the-field/).
 
 ### What is Google doing to ensure MPAs do not have an unfair advantage compared to SPAs?
 

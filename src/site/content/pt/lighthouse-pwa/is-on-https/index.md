@@ -18,7 +18,7 @@ Para obter mais informações sobre por que todos os sites devem ser protegidos 
 
 ## Como a auditoria Lighthouse HTTPS falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não estão em HTTPS:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que não estão em HTTPS:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FD2HDFl8SQCgRdhV4tzZ.png", alt="A auditoria do Lighthouse mostrando que a página não está em HTTPS", width="800", height="139" %}</figure>
 
@@ -36,7 +36,7 @@ Se sua página já está sendo executada em HTTPS, mas você está falhando nest
 
 ## Recursos
 
-- [Código-fonte para **Não use a auditoria do HTTPS**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/is-on-https.js)
+- [Código-fonte para **Não use a auditoria do HTTPS**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/is-on-https.js)
 - [Por que você deve sempre usar o HTTPS](/why-https-matters/)
 - [Como ativar o HTTPS em seus servidores](/enabling-https-on-your-servers/)
 - [Entenda os problemas de segurança com o Chrome DevTools](https://developer.chrome.com/docs/devtools/security/)

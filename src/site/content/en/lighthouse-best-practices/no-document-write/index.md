@@ -30,7 +30,7 @@ data from the network to be reparsed.
 
 ## How the Lighthouse `document.write()` audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags
 calls to `document.write()` that weren't blocked by Chrome:
 
 <figure>
@@ -63,7 +63,7 @@ ask the provider to support asynchronous loading.
 
 ## Resources
 
-- [Source code for **Uses `document.write()`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
+- [Source code for **Uses `document.write()`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-document-write.js)
 - [Intervening against `document.write()`](https://developer.chrome.com/blog/removing-document-write/)
 - [Parser blocking versus asynchronous JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)
 - [Speculative parsing](https://developer.mozilla.org/docs/Glossary/speculative_parsing)

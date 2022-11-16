@@ -18,7 +18,7 @@ updated: 2019-09-19
 
 ## Lighthouse 웹 앱 매니페스트 감사가 실패하는 방법
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 설치 가능성에 대한 최소 요구 사항을 충족하는 [웹 앱 매니페스트](/add-manifest/)가 없는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 설치 가능성에 대한 최소 요구 사항을 충족하는 [웹 앱 매니페스트](/add-manifest/)가 없는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="사용자가 홈 화면에서 웹 앱을 설치할 수 없음을 보여주는 Lighthouse 감사", width="800", height="98" %}</figure>
 
@@ -58,7 +58,7 @@ updated: 2019-09-19
 
 ## 참고 자료
 
-- [**웹 앱 매니페스트의 소스 코드가 설치 가능성 요구 사항** 감사를 충족하지 않음](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [**웹 앱 매니페스트의 소스 코드가 설치 가능성 요구 사항** 감사를 충족하지 않음](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [웹 앱 매니페스트 추가](/add-manifest/)
 - [설치에 필요한 사항 알아보기](/discover-installable)
 - [웹 앱 매니페스트](https://developer.mozilla.org/docs/Web/Manifest)

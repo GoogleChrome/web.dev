@@ -16,7 +16,7 @@ HTTP / 2 sirve los recursos de su página más rápido y con menos datos movién
 
 ## Cómo falla la auditoría de Lighthouse HTTP / 2
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) enumera todos los recursos que no se sirven a través de HTTP / 2:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) enumera todos los recursos que no se sirven a través de HTTP / 2:
 
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt = "La auditoría de Lighthouse muestra los recursos no servidos a través de HTTP / 2", width = "800", height = "191"%}</figure>
 
@@ -32,6 +32,6 @@ Para saber cómo habilitar HTTP / 2 en sus servidores, consulte [Configuración 
 
 ## Recursos
 
-- [Código fuente de **No usa HTTP / 2 para todas sus** auditorías de recursos](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
+- [Código fuente de **No usa HTTP / 2 para todas sus** auditorías de recursos](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-http2.js)
 - [Introducción a HTTP / 2](/performance-http2/)
 - [Preguntas frecuentes sobre HTTP / 2](https://http2.github.io/faq/)

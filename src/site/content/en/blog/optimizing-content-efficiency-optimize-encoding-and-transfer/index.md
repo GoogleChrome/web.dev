@@ -52,7 +52,7 @@ optimizing a simple text message format that was invented just for this example:
 1. Messages may contain arbitrary annotations, which are indicated by the "#" prefix.
    Annotations do not affect the meaning or any other behavior of the message.
 2. Messages may contain _headers_, which are key-value pairs (separated by ":")
-   that appear at the beginning at the message.
+   that appear at the beginning of the message.
 3. Messages carry text payloads.
 
 What can you do to reduce the size of the above message, which is currently

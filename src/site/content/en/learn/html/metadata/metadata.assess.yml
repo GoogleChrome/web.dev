@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of metadata
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: "The refresh pragma directive."
+    options:
+      - content: "Reloads the page."
+        rationale: "Correct!"
+      - content: "Redirects the visitor to another page."
+        rationale: "Try again."
+      - content: "Loads in additional content from another file."
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: "Open Graph meta tags."
+    options:
+      - content: "Allow you to link to charts."
+        rationale: "Try again"
+      - content: "Are required for all pages."
+        rationale: "Try again."
+      - content: "Are used to create social media cards for your pages."
+        rationale: "Correct!"

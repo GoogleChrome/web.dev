@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-10-19
 description: Este artigo apresenta a métrica Largest Contentful Paint (LCP) e explica como medi-la
 tags:
   - performance
@@ -120,7 +120,7 @@ A LCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 ### Ferramentas de campo
 
-- [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Relatório de Experiência do Usuário Chrome](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Console de Busca (relatório Core Web Vitals)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -128,10 +128,13 @@ A LCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 ### Ferramentas de laboratório
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Medição da LCP em JavaScript
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 Para medir o LCP em JavaScript, você pode usar a [API Largest Contentful Paint](https://wicg.github.io/largest-contentful-paint/). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que escuta as `largest-contentful-paint` e as registra no console.
 
@@ -169,7 +172,7 @@ import {getLCP} from 'web-vitals';
 getLCP(console.log);
 ```
 
-Para um exemplo completo de como medir a LCP em JavaScript, consulte [o código-fonte de `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts).
+Para um exemplo completo de como medir a LCP em JavaScript, consulte [o código-fonte de `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts).
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a LCP em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 

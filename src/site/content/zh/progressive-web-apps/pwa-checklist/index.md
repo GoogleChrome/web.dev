@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: 什么是优秀或出色的渐进式 Web 应用程序？
 tags:
   - progressive-web-apps
@@ -35,7 +35,7 @@ tags:
 
 为了让用户*使用*您的应用程序，速度至关重要。实际上，随着页面加载时间从 1 秒变为 10 秒，用户的跳出率会增加 123%。不是说只要完成 <code>load</code> 事件，就不再需要考虑性能。不能让用户对他们的交互（例如，点击按钮）是否已注册产生疑问。滚动和动画要让用户感觉平滑顺畅。性能会影响用户的整体体验，不论是用户如何看待您的应用程序，还是应用程序的实际表现，都会受到影响。
 
-虽然所有应用程序都有不同的需求，但 Lighthouse 中的性能审核基于 [RAIL 以用户为中心的性能模型](/rail/)，如果在这些审核中得到高分，则说明您的用户更有可能获得愉快的体验。您还可以使用 [PageSpeed Insights](https://pagespeed.web.dev/) 或 [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report/)来获取 Web 应用程序的实际性能数据。
+虽然所有应用程序都有不同的需求，但 Lighthouse 中的性能审核基于 [RAIL 以用户为中心的性能模型](/rail/)，如果在这些审核中得到高分，则说明您的用户更有可能获得愉快的体验。您还可以使用 [PageSpeed Insights](https://pagespeed.web.dev/) 或 [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)来获取 Web 应用程序的实际性能数据。
 
 #### 方法
 
@@ -181,7 +181,7 @@ Jeremy Keith 的[弹性 Web 设计](https://resilientwebdesign.com/)是非常好
 
 #### 方法
 
-W3C 的 [Web 可访问性简介](https://www.w3.org/WAI/fundamentals/accessibility-intro/)是非常好的入门资源。大多数可访问性测试必须手动完成。Lighthouse 中的[可访问性](/lighthouse-accessibility/)审核、[Axe](https://github.com/dequelabs/axe-core) 和[可访问性洞察](https://accessibilityinsights.io/)等工具可以帮助您自动执行一些可访问性功能测试。使用语义正确的元素（而不是重新创建）也很重要，例如 `a` 和 `button` 元素。这样可以确保在确实需要构建更高级的功能时，您仍可以满足用户的可访问预期（例如使用箭头与选项卡时）。[A11Y Nutrition Cards](https://accessibilityinsights.io/) 为一些常见组件提供了一些非常好的建议。
+W3C 的 [Web 可访问性简介](https://www.w3.org/WAI/fundamentals/accessibility-intro/)是非常好的入门资源。大多数可访问性测试必须手动完成。Lighthouse 中的[可访问性](https://developer.chrome.com/docs/lighthouse/accessibility/)审核、[Axe](https://github.com/dequelabs/axe-core) 和[可访问性洞察](https://accessibilityinsights.io/)等工具可以帮助您自动执行一些可访问性功能测试。使用语义正确的元素（而不是重新创建）也很重要，例如 `a` 和 `button` 元素。这样可以确保在确实需要构建更高级的功能时，您仍可以满足用户的可访问预期（例如使用箭头与选项卡时）。[A11Y Nutrition Cards](https://accessibilityinsights.io/) 为一些常见组件提供了一些非常好的建议。
 
 {% endDetails %}
 

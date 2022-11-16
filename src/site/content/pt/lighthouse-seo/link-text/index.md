@@ -14,7 +14,7 @@ O texto do link é a palavra ou frase clicável em um hiperlink. Quando ele tran
 
 ## Como a auditoria do Lighthouse de texto do link falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza links sem texto descritivo:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza links sem texto descritivo:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Auditoria do Lighthouse mostrando links sem texto descritivo", width="800", height="191" %}</figure>
 
@@ -61,5 +61,5 @@ Consulte a seção [Usar os links de maneira inteligente](https://support.google
 
 ## Recursos
 
-- [Código-fonte da auditoria **Os links não possuem texto descritivo**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [Código-fonte da auditoria **Os links não possuem texto descritivo**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [Guia de otimização de mecanismos de pesquisa (SEO) para iniciantes](https://support.google.com/webmasters/answer/7451184)

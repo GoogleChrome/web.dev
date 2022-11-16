@@ -21,7 +21,7 @@ Agregar `rel="noopener"` o `rel="noreferrer"` a sus `target="_blank"` evita esto
 
 ## Cómo fallar la auditoría de destino de origen cruzado de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) señala enlaces inseguros a destinos de origen cruzado:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) señala enlaces inseguros a destinos de origen cruzado:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Auditoría Lighthouse que muestra enlaces inseguros a destinos de origen cruzado", width="800", height="213" %}</figure>
 
@@ -51,6 +51,6 @@ Consulte la publicación [Compartir recursos de origen cruzado de forma segura](
 
 ## Recursos
 
-- [Código fuente para la auditoría **Enlaces a destinos de origen cruzado inseguros**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+- [Código fuente para la auditoría **Enlaces a destinos de origen cruzado inseguros**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [Comparta recursos de origen cruzado de forma segura](/cross-origin-resource-sharing/)
 - [Aislamiento del sitio para desarrolladores web](https://developers.google.com/web/updates/2018/07/site-isolation)

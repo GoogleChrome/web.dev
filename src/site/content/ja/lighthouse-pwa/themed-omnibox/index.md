@@ -18,7 +18,7 @@ updated: 2020-06-17
 
 ## Lighthouse によるテーマの色の監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、アドレスバーにテーマを適用しないページにフラグを立てます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)は、アドレスバーにテーマを適用しないページにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse 監査はページの色をテーマにしていないアドレスバーを表示します", width="800", height="98" %}</figure>
 
@@ -62,6 +62,6 @@ Webアプリマニフェストの`theme_color`プロパティにより、ユー�
 
 ## リソース
 
-- [監査の**アドレスバーのテーマカラーを設定しない**監査用のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)
+- [監査の**アドレスバーのテーマカラーを設定しない**監査用のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/themed-omnibox.js)
 - [Webアプリマニフェストを追加する](/add-manifest)
 - [Android向けのChrome 39で`theme-color`用のサポート](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android)

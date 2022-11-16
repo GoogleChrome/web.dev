@@ -12,7 +12,7 @@ As fontes geralmente são arquivos grandes que demoram um pouco para carregar. A
 
 ## Como falha a auditoria de exibição de fontes do Lighthouse
 
-[O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza todas as URLs de fonte que podem ocultar texto invisível:
+[O Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza todas as URLs de fonte que podem ocultar texto invisível:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="Uma captura de tela da auditoria Lighthouse Garanta que o texto permanece visível durante a carga de fontes de web", width="800", height="430" %}</figure>
 
@@ -67,7 +67,7 @@ Especifique `@font-display` ao [definir fontes personalizadas](https://devdocs.m
 
 ## Recursos
 
-- [Código-fonte para a auditoria **Garanta que o texto permanece visível durante a carga de fontes da web**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/font-display.js)
+- [Código-fonte para a auditoria **Garanta que o texto permanece visível durante a carga de fontes da web**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/font-display.js)
 - [Evite texto invisível durante o carregamento](/avoid-invisible-text)
 - [Controlando o desempenho da fonte com font-display](https://developers.google.com/web/updates/2016/02/font-display)
 - [Pré-carregue fontes da web para melhorar a velocidade de carregamento (codelab)](/codelab-preload-web-fonts/)

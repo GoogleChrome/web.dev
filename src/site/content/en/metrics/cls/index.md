@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-10-19
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it.
@@ -14,12 +14,6 @@ tags:
   - metrics
   - web-vitals
 ---
-
-{% Aside 'caution' %}
-  **Jun 1, 2021:** The implementation of CLS has changed.
-  To learn more about the reasons behind the change, check out [Evolving the
-  CLS metric](/evolving-cls).
-{% endAside %}
 
 {% Aside 'key-term' %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
@@ -75,7 +69,7 @@ measuring how often it's occurring for real users.
 ## What is CLS?
 
 CLS is a measure of the largest burst of _layout shift scores_ for every
-[unexpected](/cls/#expected-vs.-unexpected-layout-shifts) layout shift that
+[unexpected](/cls/#expected-vs-unexpected-layout-shifts) layout shift that
 occurs during the entire lifespan of a page.
 
 A _layout shift_ occurs any time a visible element changes its position from one
@@ -325,7 +319,7 @@ available in the following tools:
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
@@ -334,10 +328,13 @@ available in the following tools:
 ### Lab tools
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Measure CLS in JavaScript
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 To measure CLS in JavaScript, you can use the [Layout Instability
 API](https://github.com/WICG/layout-instability). The following example shows
@@ -392,7 +389,7 @@ new PerformanceObserver((entryList) => {
   This code shows the basic way to calculate and log CLS. However, accurately
   measuring CLS in a way that matches what is measured in the [Chrome User
   Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
   (CrUX) is more complicated. See below for details:
 
 {% endAside %}
@@ -411,7 +408,10 @@ the metric is calculated.
   cache](/bfcache/#impact-on-core-web-vitals), its CLS value should be reset to
   zero since users experience this as a distinct page visit.
 - The API does not report `layout-shift` entries for shifts that occur within
-  iframes, but to properly measure CLS you should consider them. Sub-frames can
+  iframes but the metric does as they are part of the user experience of the
+  page. This can
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure CLS you should consider them. Sub-frames can
   use the API to report their `layout-shift` entries to the parent frame for
   [aggregation](https://github.com/WICG/layout-instability#cumulative-scores).
 
@@ -435,15 +435,15 @@ Rather than memorizing and grappling with all of these cases yourself, developer
 measure CLS, which accounts for everything mentioned above:
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // Measure and log CLS in all situations
 // where it needs to be reported.
-getCLS(console.log);
+onCLS(console.log);
 ```
 
 You can refer to [the source code for
-`getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)
+`onCLS)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts)
 for a complete example of how to measure CLS in JavaScript.
 
 {% Aside %}

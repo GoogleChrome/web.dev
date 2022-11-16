@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-10-19
 description: En esta publicación se presenta la métrica First Contentful Paint (FCP) y se explica como medirla
 tags:
   - performance
@@ -39,17 +39,19 @@ FCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 ### Herramientas de campo
 
 - [PageSpeed Insights](https://pagespeed.web.dev/)
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [Search Console (informe de velocidad)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [Biblioteca de JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
 ### Herramientas de laboratorio
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Medir FCP en JavaScript
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 Para medir FCP en JavaScript, puede utilizar la [API de Paint Timing](https://w3c.github.io/paint-timing/). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que capta una entrada de `paint` con el nombre `first-contentful-paint` y la registra en la consola.
 
@@ -86,7 +88,7 @@ import {getFCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-Puede consultar [el código fuente de `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts) para obtener un ejemplo completo de cómo medir FCP en JavaScript.
+Puede consultar [el código fuente de `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts) para obtener un ejemplo completo de cómo medir FCP en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir LCP en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) `web-vitals` para obtener más información. {% endAside %}
 

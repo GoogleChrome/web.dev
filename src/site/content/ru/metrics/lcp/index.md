@@ -4,14 +4,14 @@ title: Скорость загрузки основного контента (LC
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-10-19
 description: В этой статье описывается метрика LCP (Скорость загрузки основного контента) и объясняются принципы ее измерения
 tags:
   - performance
   - metrics
 ---
 
-{% Aside %} Скорость загрузки основного контента (LCP)важный, ориентированный на пользователя показатель для измерения [воспринимаемой скорости загрузки,](/user-centric-performance-metrics/#types-of-metrics) так как он отмечает на шкале времени загрузки страницы момент вероятной загрузки основного контента. Низкий показатель LCP убеждает пользователя в [полезности](/user-centric-performance-metrics/#questions) страницы. {% endAside %}
+{% Aside %} Скорость загрузки основного контента (LCP) важный, ориентированный на пользователя показатель для измерения [воспринимаемой скорости загрузки,](/user-centric-performance-metrics/#types-of-metrics) так как он отмечает на шкале времени загрузки страницы момент вероятной загрузки основного контента. Низкий показатель LCP убеждает пользователя в [полезности](/user-centric-performance-metrics/#questions) страницы. {% endAside %}
 
 В прошлом веб-разработчикам было довольно сложно измерять время, за которое основной контент веб-страницы загружается и становится видимым для пользователей.
 
@@ -19,7 +19,7 @@ tags:
 
 Раньше рекомендовалось использовать такие показатели производительности, как [First Meaningful Paint : Время отрисовки основного контента (FMP)](/first-meaningful-paint/) и [Speed Index : Индекс скорости (SI)](/speed-index/) (оба показателя доступны в Lighthouse), чтобы помочь оценить восприятие пользователем страницы после начальной отрисовки. Но эти метрики достаточно сложны, запутаны и часто неверны. Это означает, что они всё еще не определяют точное время загрузки основного контента страницы.
 
-Чем проще, тем лучше. Основываясь на обсуждениях в группе [W3C Web Performance Working Group](https://www.w3.org/webperf/) и исследованиях, проведенных в Google, мы обнаружили, что более точный способ измерить время загрузки основного содержимого страницыэто зафиксировать время отрисовки самого большого элемента страницы.
+Чем проще, тем лучше. Основываясь на обсуждениях в группе [W3C Web Performance Working Group](https://www.w3.org/webperf/) и исследованиях, проведенных в Google, мы обнаружили, что более точный способ измерить время загрузки основного содержимого страницы это зафиксировать время отрисовки самого большого элемента страницы.
 
 ## Что такое LCP?
 
@@ -112,7 +112,7 @@ tags:
 
 В первом примере логотип Instagram загружается относительно рано и остается самым большим элементом, даже по мере отрисовки другого контента. В примере страницы результатов поиска Google самый большой элементэто абзац текста, который отображается до завершения загрузки любого логотипа или изображения. Так как все отдельные изображения меньше этого абзаца, он остается самым большим элементом на протяжении всего процесса загрузки.
 
-{% Aside %} На первом фрейме временной шкалы Instagram можно заметить, что вокруг логотипа камеры нет зеленой рамки. Это потому, что это элемент `<svg>`, а данные элементы в настоящее время не считаются кандидатами LCP. Первый кандидат LCPэто текст во втором фрейме. {% endAside %}
+{% Aside %} На первом фрейме временной шкалы Instagram можно заметить, что вокруг логотипа камеры нет зеленой рамки. Это потому, что это элемент `<svg>`, а данные элементы в настоящее время не считаются кандидатами LCP. Первый кандидат LCP это текст во втором фрейме. {% endAside %}
 
 ## Как измерить LCP
 
@@ -120,7 +120,7 @@ LCP можно измерить в [лабораторных](/user-centric-perf
 
 ### Инструменты для измерения в полевых условиях
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (отчет Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -128,10 +128,13 @@ LCP можно измерить в [лабораторных](/user-centric-perf
 ### Инструменты для измерения в лабораторных условиях
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Измерение LCP в JavaScript
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 Чтобы измерить LCP с помощью JavaScript, можно воспользоваться [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver), который прослушивает записи `largest-contentful-paint` и регистрирует их в консоли.
 
@@ -169,7 +172,7 @@ import {getLCP} from 'web-vitals';
 getLCP(console.log);
 ```
 
-Полный пример измерения LCP в JavaScript приводится в [исходном коде `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts).
+Полный пример измерения LCP в JavaScript приводится в [исходном коде `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить LCP в JavaScript. См. подробности в разделе  [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 

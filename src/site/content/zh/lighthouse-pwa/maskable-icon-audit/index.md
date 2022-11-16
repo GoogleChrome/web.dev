@@ -11,7 +11,7 @@ date: 2020-05-06
 
 ## Lighthouse 可屏蔽图标审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记没有可屏蔽图标支持的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记没有可屏蔽图标支持的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse Report UI 中的可屏蔽图标审计。", width="800", height="110" %}</figure>
 
@@ -51,7 +51,7 @@ date: 2020-05-06
 
 ## 资源
 
-- [**清单没有可屏蔽的图标**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [**清单没有可屏蔽的图标**审计源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [PWA 中具有可屏蔽图标的自适应图标支持](/maskable-icon/)
 - [Maskable.app Editor](https://maskable.app/editor)
 - [添加 Web 应用清单](/add-manifest/)

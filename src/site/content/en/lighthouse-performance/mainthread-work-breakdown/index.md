@@ -24,7 +24,7 @@ leading to a bad experience.
 
 ## How the Lighthouse main thread work audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that keep the main thread busy for longer than 4&nbsp;seconds
 during load:
 
@@ -81,6 +81,6 @@ as the page loads.
 
 ## Resources
 
-- [Source code for **Minimize main thread work** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
+- [Source code for **Minimize main thread work** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/mainthread-work-breakdown.js)
 - [Main thread (MDN)](https://developer.mozilla.org/docs/Glossary/Main_thread)
 - [Inside look at modern web browser (part 3)](https://developer.chrome.com/blog/inside-browser-part3/)

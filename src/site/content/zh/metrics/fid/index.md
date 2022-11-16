@@ -4,7 +4,7 @@ title: First Input Delay 首次输入延迟 (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: 这篇文章介绍了首次输入延迟 (FID) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -120,7 +120,7 @@ FID 是一个只能进行[实际](/user-centric-performance-metrics/#in-the-fiel
 
 ### 实测工具
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
@@ -160,7 +160,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-您可以参考[`getFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
+您可以参考[`getFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），FID 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 

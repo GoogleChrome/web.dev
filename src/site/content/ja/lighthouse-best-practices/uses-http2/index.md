@@ -12,7 +12,7 @@ HTTP/2は、ページのリソースをより高速に提供し、ネットワ�
 
 ## Lighthouse HTTP/2監査が失敗する理由
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)では、HTTP/2経由で提供されないすべてのリソースが表示されます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)では、HTTP/2経由で提供されないすべてのリソースが表示されます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Lighthouse監査は、HTTP/2経由提供されていないリソースを示しています ", width="800", height="191" %}</figure>
 
@@ -28,6 +28,6 @@ HTTP/2を経由でリソースを提供します。
 
 ## リソース
 
-- [**すべてのリソース監査にHTTP/2を使用していない**のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
+- [**すべてのリソース監査にHTTP/2を使用していない**のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-http2.js)
 - [HTTP/2の概要](/performance-http2/)
 - [HTTP/2のよくある質問](https://http2.github.io/faq/)

@@ -23,7 +23,7 @@ Después, el navegador debe realizar otra solicitud HTTP en la nueva ubicación 
 
 ## Cómo fallar la auditoría de redireccionamientos múltiples de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que tienen múltiples redireccionamientos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas que tienen múltiples redireccionamientos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 
@@ -43,6 +43,6 @@ Si está utilizando React Router, minimice el uso del componente `<Redirect>` pa
 
 ## Recursos
 
-- [Código fuente para la auditoría **Evitar redireccionamientos de varias páginas**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
+- [Código fuente para la auditoría **Evitar redireccionamientos de varias páginas**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js)
 - [Redirecciones en HTTP](https://developer.mozilla.org/docs/Web/HTTP/Redirections)
 - [Evitar los redireccionamientos de la página de destino](https://developers.google.com/speed/docs/insights/AvoidRedirects)

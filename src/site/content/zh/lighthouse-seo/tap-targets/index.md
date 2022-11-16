@@ -16,7 +16,7 @@ web_lighthouse:
 
 ## Lighthouse 点击目标审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会将点击目标太小或相距太近的页面标记出来：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会将点击目标太小或相距太近的页面标记出来：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="显示大小不合适的点击目标的 Lighthouse 审计", width="800", height="206" %}</figure>
 
@@ -54,4 +54,4 @@ web_lighthouse:
 ## 资源
 
 - [可访问的点击目标](/accessible-tap-targets)：有关如何确保您的点击目标可供所有用户访问的更多信息。
-- [**点击目标大小不当**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+- [**点击目标大小不当**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/tap-targets.js)

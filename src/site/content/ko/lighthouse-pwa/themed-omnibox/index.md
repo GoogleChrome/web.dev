@@ -18,7 +18,7 @@ updated: 2020-06-17
 
 ## Lighthouse 테마 색상 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 주소 표시줄에 테마를 적용하지 않은 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 주소 표시줄에 테마를 적용하지 않은 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="주소 표시줄을 표시하는 Lighthouse 감사는 페이지 색상을 테마로 하지 않습니다.", width="800", height="98" %}</figure>
 
@@ -62,6 +62,6 @@ Google의 [Android용 Chrome 39의 `theme-color` 지원](https://developers.goog
 
 ## 참고자료
 
-- [**주소 표시줄의 테마 색상을 설정하지 않음** 감사용 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)
+- [**주소 표시줄의 테마 색상을 설정하지 않음** 감사용 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/themed-omnibox.js)
 - [웹앱 매니페스트 추가](/add-manifest)
 - [Android용 Chrome 39의 `theme-color` 지원](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android)

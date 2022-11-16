@@ -4,7 +4,7 @@ title: Время ожидания до первого взаимодейств�
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: В этой статье описывается метрика FID (Время ожидания до первого взаимодействия с контентом) и объясняются принципы ее измерения
 tags:
   - performance
@@ -120,12 +120,14 @@ FIDэто показатель, который измеряет скорость
 
 ### Инструменты для измерения в полевых условиях
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (отчет Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
 ### Измерение FID в JavaScript
+
+{% BrowserCompat 'api.PerformanceEventTiming' %}
 
 Чтобы измерить FID с помощью JavaScript, можно воспользоваться [Event Timing API](https://wicg.github.io/event-timing). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver), который прослушивает записи [`first-input`](https://wicg.github.io/event-timing/#sec-performance-event-timing) и регистрирует их в консоли:
 
@@ -160,7 +162,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-Полный пример измерения FID в JavaScript приводится в [исходном коде `getFID()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts).
+Полный пример измерения FID в JavaScript приводится в [исходном коде `getFID()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить FID в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals` {% endAside %}
 

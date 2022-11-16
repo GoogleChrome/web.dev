@@ -22,7 +22,7 @@ Unused JavaScript can slow down your page load speed:
 
 ## How the unused JavaScript audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags every JavaScript file with more than 20 kibibytes of unused code:
 
 <figure>
@@ -97,7 +97,7 @@ plugins](https://wordpress.org/plugins/) loading unused JavaScript in your page.
 
 ## Resources
 
-* [Source code for the **Remove unused code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-javascript.js)
+* [Source code for the **Remove unused code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unused-javascript.js)
 * [Remove unused code](/remove-unused-code/)
 * [Adding interactivity with JavaScript][crp]
 * [Code Splitting][split]

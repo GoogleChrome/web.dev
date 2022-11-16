@@ -18,7 +18,7 @@ updated: 2019-09-19
 
 ## Почему не удается пройти аудит манифеста веб-приложения в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, у которых нет [манифеста веб-приложения](/add-manifest/), отвечающего минимальным требованиям для возможности установки приложения:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, у которых нет [манифеста веб-приложения](/add-manifest/), отвечающего минимальным требованиям для возможности установки приложения:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Результаты аудита Lighthouse, в которых сказано, что пользователю не удастся установить веб-приложение на начальный экран", width="800", height="98" %}</figure>
 
@@ -58,7 +58,7 @@ updated: 2019-09-19
 
 ## Ресурсы
 
-- [Исходный код аудита **Web app manifest does not meet the installability requirements**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [Исходный код аудита **Web app manifest does not meet the installability requirements**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [Добавление манифеста веб-приложения](/add-manifest/)
 - [Узнайте, что нужно, чтобы приложение поддерживало установку](/discover-installable)
 - [Манифест веб-приложения](https://developer.mozilla.org/docs/Web/Manifest)

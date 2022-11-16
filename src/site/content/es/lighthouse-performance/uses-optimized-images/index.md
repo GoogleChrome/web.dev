@@ -54,4 +54,4 @@ Considere usar un [complemento de WordPress para optimización de imágenes](htt
 
 ## Recursos
 
-- [Código fuente para la auditoría de **Codificación eficiente de imágenes**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
+- [Código fuente para la auditoría de **Codificación eficiente de imágenes**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-optimized-images.js)

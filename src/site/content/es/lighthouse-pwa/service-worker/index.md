@@ -22,7 +22,7 @@ Todos los navegadores principales, excepto Internet Explorer, son compatibles co
 
 ## Cómo fallar la auditoría del service worker de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no registran un service worker:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas que no registran un service worker:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Auditoría de Lighthouse que muestra que el sitio no registra un service worker", width="800", height="95" %}</figure>
 
@@ -42,7 +42,7 @@ El registro de un trabajador del servicio implica solo unas pocas líneas de có
 
 ## Recursos
 
-- [Código fuente para la auditoría **No registra un service worker que controla la página y el `start_url`**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
+- [Código fuente para la auditoría **No registra un service worker que controla la página y el `start_url`**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/service-worker.js)
 - [Service workers: una introducción](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [Service workers y la API de almacenamiento en caché](/service-workers-cache-storage/)
 - [¿Qué es la confiabilidad de la red y cómo se mide?](/network-connections-unreliable)

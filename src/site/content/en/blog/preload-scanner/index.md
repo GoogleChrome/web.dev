@@ -5,7 +5,7 @@ subhead: |
 authors:
   - jlwagner
 date: 2022-05-13
-updated: 2022-05-14
+updated: 2022-10-12
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ZYfhboCPqPWawQ5LzWKO.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/irM6kTXZoP0MmXGtHOSa.jpg
 alt: A close-up photograph of a screen with various bits of HTML markup shown in a text editor.
@@ -17,9 +17,9 @@ tags:
   - web-vitals
 ---
 
-One overlooked aspect of optimizing page speed involves knowing a bit about browser internals. Browsers make certain optimizations to improve performance in ways that we as developers can't&mdash;but only so long as we don't thwart those optimizations unintentionally.
+One overlooked aspect of optimizing page speed involves knowing a bit about browser internals. Browsers make certain optimizations to improve performance in ways that we as developers can't&mdash;but only so long as those optimizations aren't unintentionally thwarted.
 
-One internal browser optimization to understand is the browser preload scanner. In this post, we'll talk a bit about how the preload scanner works&mdash;and more importantly, how you can avoid getting in its way.
+One internal browser optimization to understand is the browser preload scanner. This post will cover how the preload scanner works&mdash;and more importantly, how you can avoid getting in its way.
 
 ## What's a preload scanner?
 
@@ -62,9 +62,9 @@ These are good reasons for why the browser _should_ block both parsing and rende
 
 ## How to tell when the preload scanner is working
 
-The preload scanner exists _because_ of blocked rendering and parsing. If these two performance issues never existed, the preload scanner wouldn't be very useful. The key to figuring out whether a web page benefits from the preload scanner depends on these blocking phenomena, and to do that, we can introduce an artificial delay for requests to find out where the preload scanner is working.
+The preload scanner exists _because_ of blocked rendering and parsing. If these two performance issues never existed, the preload scanner wouldn't be very useful. The key to figuring out whether a web page benefits from the preload scanner depends on these blocking phenomena. To do that, you can introduce an artificial delay for requests to find out where the preload scanner is working.
 
-Let's take [a page](https://preload-scanner-fights.glitch.me/artifically-delayed-requests.html) of basic text and images with a stylesheet. Because CSS files block both rendering and parsing, we can introduce an artificial delay of two seconds for the stylesheet through a proxy service. This delay makes it easier to see in the network waterfall where the preload scanner is working.
+Take [this page](https://preload-scanner-fights.glitch.me/artifically-delayed-requests.html) of basic text and images with a stylesheet as an example. Because CSS files block both rendering and parsing, you introduce an artificial delay of two seconds for the stylesheet through a proxy service. This delay makes it easier to see in the network waterfall where the preload scanner is working.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Gtw08XaoFETKEauBBbBl.png", alt="The WebPageTest network waterfall chart illustrates an artificial delay of 2 seconds imposed on the styleesheet.", width="800", height="219", loading="lazy" %}
@@ -94,7 +94,7 @@ Let's say you've got HTML in your `<head>` that includes some inline JavaScript 
 </script>
 ```
 
-Injected scripts are [`async`](https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-async) by default, so when this script is injected, it will behave as if the `async` attribute was applied to it. That means it will run as soon as possible and not block rendering. Sounds optimal, right? Yet, if we presume that this inline `<script>` comes after a `<link>` element that loads an external CSS file, we get a suboptimal result:
+Injected scripts are [`async`](https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-async) by default, so when this script is injected, it will behave as if the `async` attribute was applied to it. That means it will run as soon as possible and not block rendering. Sounds optimal, right? Yet, if you presume that this inline `<script>` comes after a `<link>` element that loads an external CSS file, you'll get a suboptimal result:
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/L9ltNSHa6D4FI6YPw1vF.png", alt="This WebPageTest chart shows the preload scan defeated when a script is injected.", width="800", height="219", loading="lazy" %}
@@ -112,7 +112,7 @@ Let's break down what happened here:
 
 This is suboptimal because the request for the script occurs only after the stylesheet has finished downloading. This delays the script from running as soon as possible. This could have the potential to affect a page's [Time to Interactive (TTI)](/tti/). By contrast, because the `<img>` element is discoverable in the server-provided markup, it's discovered by the preload scanner.
 
-So, what happens if we use a regular `<script>` tag with the `async` attribute as opposed to injecting the script into the DOM?
+So, what happens if you use a regular `<script>` tag with the `async` attribute as opposed to injecting the script into the DOM?
 
 ```html
 <script src="/yall.min.js" async></script>
@@ -236,16 +236,52 @@ That `rel=preload` hint is small, but it helps the browser discover the image so
 
 With the `rel=preload` hint, the LCP candidate is discovered sooner, lowering the LCP time. While that hint helps fix this issue, the better option may be to assess whether or not your image LCP candidate _has_ to be loaded from CSS. With an `<img>` tag, you'll have more control over loading an image that's appropriate for the viewport while allowing the preload scanner to discover it.
 
+## Inlining too many resources
+
+Inlining is a practice that places a resource inside of the HTML. You can inline stylesheets in `<style>` elements, scripts in `<script>` elements, and virtually any other resource using [base64 encoding](https://developer.mozilla.org/docs/Glossary/Base64).
+
+Inlining resources can be faster than downloading them because a separate request isn't issued for the resource. It's right in the document, and loads instantly. However, there are significant drawbacks:
+
+- If you're not caching your HTML&mdash;and you just can't if the HTML response is dynamic&mdash;the inlined resources are never cached. This affects performance because the inlined resources aren't reusable.
+- Even if you can cache HTML, inlined resources aren't shared between documents. This reduces caching efficiency compared to external files that can be cached and reused across an entire origin.
+- If you inline too much, you delay the preload scanner from discovering resources later in the document, because downloading that extra, inlined, content takes longer.
+
+Take [this page](https://preload-scanner-fights.glitch.me/inline-nothing.html) as an example. In certain conditions the LCP candidate is the image at the top of the page, and the CSS is in a separate file loaded by a `<link>` element. The page also uses four web fonts which are requested as separate files from the CSS resource.
+
+<figure>
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/uDCAZc9Vkl9phYrZk2vW.png", alt="A WebPageTest network waterfall chart of page with an external CSS file with four fonts referenced in it. The LCP candidate image is discovered by the preload scanner in due course.", width="800", height="347", loading="lazy" %}
+  <figcaption>
+    <strong>Fig. 12:</strong> A WebPageTest network waterfall chart of <a href="https://preload-scanner-fights.glitch.me/inline-nothing.html" rel="noopener">a web page</a> run on Chrome on a mobile device over a simulated 3G connection. The page's LCP candidate is an image loaded from an <code>&lt;img&gt;</code> element, but is discovered by the preload scanner because the CSS and the fonts required for the page load in separate resources, which doesn't delay the preload scanner from doing its job.
+  </figcaption>
+</figure>
+
+Now what happens if the CSS _and_ all the fonts are inlined as base64 resources?
+
+<figure>
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/frUPqxpkkouS0eUWWFVc.png", alt="A WebPageTest network waterfall chart of page with an external CSS file with four fonts referenced in it. The preload scanner is delayed significantly from discovering the LCP image .", width="800", height="297", loading="lazy" %}
+  <figcaption>
+    <strong>Fig. 13:</strong> A WebPageTest network waterfall chart of <a href="https://preload-scanner-fights.glitch.me/inline-everything.html" rel="noopener">a web page</a> run on Chrome on a mobile device over a simulated 3G connection. The page's LCP candidate is an image loaded from an <code>&lt;img&gt;</code> element, but the inlining of the CSS and its four font resources in the `<head>` delays the preload scanner from discovering the image until those resources are fully downloaded.
+  </figcaption>
+</figure>
+
+The impact of inlining yields negative consequences for LCP in this example&mdash;and for performance in general. The version of the page that doesn't inline anything paints the LCP image in about 3.5 seconds. The page that inlines everything doesn't paint the LCP image until just over 7 seconds.
+
+There's more at play here than just the preload scanner. Inlining fonts is not a great strategy because base64 is an inefficient format for binary resources. Another factor at play is that external font resources aren't downloaded unless they're determined necessary by the CSSOM. When those fonts are inlined as base64, they're downloaded whether they're needed for the current page or not.
+
+Could a preload improve things here? Sure. You _could_ preload the LCP image and reduce LCP time, but bloating your potentially uncacheable HTML with inlined resources has other negative performance consequences. [First Contentful Paint (FCP)](/fcp/) is also affected by this pattern. In the version of the page where nothing is inlined, FCP is roughly 2.7 seconds. In the version where everything is inlined, FCP is roughly 5.8 seconds.
+
+Be very careful with inlining stuff into HTML, especially base64-encoded resources. In general it is not recommended, except for very small resources. Inline as little as possible, because inlining too much is playing with fire.
+
 ## Rendering markup with client-side JavaScript
 
-There's no doubt about it: [JavaScript definitely affects page speed](https://almanac.httparchive.org/en/2021/performance#total-blocking-time-tbt). Not only do we depend on it to provide interactivity, but we've also had a tendency to rely on it to deliver content itself. This leads to a better developer experience in some ways; but benefits for developers don't always translate into benefits for users.
+There's no doubt about it: [JavaScript definitely affects page speed](https://almanac.httparchive.org/en/2021/performance#total-blocking-time-tbt). Not only do developers depend on it to provide interactivity, but there has also been a tendency to rely on it to deliver content itself. This leads to a better developer experience in some ways; but benefits for developers don't always translate into benefits for users.
 
 One pattern that can defeat the preload scanner is rendering markup with client-side JavaScript:
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ZhwXAzscucsECuG6XDRl.png", alt="A WebPageTest network waterfall showing a basic page with images and text rendered completely on the client in JavaScript. Because the markup is contained within JavaScript, the preload scanner can't detect any of the resources. All resources are additionally delayed due to the extra network and processing time that JavaScript frameworks require.", width="800", height="260", loading="lazy" %}
   <figcaption>
-    <strong>Fig. 12:</strong> A WebPageTest network waterfall chart of <a href="https://preload-scanner-fights.glitch.me/client-rendered.html" rel="noopener">a client-rendered web page</a> run on Chrome on a mobile device over a simulated 3G connection. Because the content is contained in JavaScript and relies on a framework to render, the image resource in the client-rendered markup is hidden from the preload scanner. The equivalent server-rendered experience is depicted in <a href="#fig-9">Fig. 9</a>.
+    <strong>Fig. 14:</strong> A WebPageTest network waterfall chart of <a href="https://preload-scanner-fights.glitch.me/client-rendered.html" rel="noopener">a client-rendered web page</a> run on Chrome on a mobile device over a simulated 3G connection. Because the content is contained in JavaScript and relies on a framework to render, the image resource in the client-rendered markup is hidden from the preload scanner. The equivalent server-rendered experience is depicted in <a href="#fig-9">Fig. 9</a>.
   </figcaption>
 </figure>
 
@@ -276,11 +312,11 @@ If, for whatever reason, you _can't_ avoid a pattern that negatively affects the
 
 ## Resources
 
-- [Script-injected "async scripts" considered harmful](https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/).
-- [How the Browser Pre-loader Makes Pages Load Faster](https://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/).
-- [Preload critical assets to improve loading speed](/preload-critical-assets/).
-- [Establish network connections early to improve perceived page speed](/preconnect-and-dns-prefetch/).
-- [Optimizing Largest Contentful Paint](/optimize-lcp/).
+- [Script-injected "async scripts" considered harmful](https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/)
+- [How the Browser Pre-loader Makes Pages Load Faster](https://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/)
+- [Preload critical assets to improve loading speed](/preload-critical-assets/)
+- [Establish network connections early to improve perceived page speed](/preconnect-and-dns-prefetch/)
+- [Optimizing Largest Contentful Paint](/optimize-lcp/)
 
 _Hero image from [Unsplash](https://unsplash.com/photos/oXlXu2qukGE), by [Mohammad Rahmani
 ](https://unsplash.com/@afgprogrammer)._

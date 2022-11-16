@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-10-19
 description: Esta publicación presenta la métrica de Largest Contentful Paint (LCP) y explica como medirla
 tags:
   - performance
@@ -60,7 +60,7 @@ Para todos los elementos, no se considera ningún margen, relleno o borde aplica
 
 {% Aside %} Determinar qué nodos de texto pertenecen a qué elementos a veces puede ser complicado, especialmente para elementos cuyos elementos secundarios incluyen elementos de estilos integrados en el código y nodos de texto sin formato, pero también elementos a nivel de bloque. El punto clave es que cada nodo de texto pertenece (y solo a) su elemento ancestro de nivel de bloque más cercano. En [términos de especificaciones](https://wicg.github.io/element-timing/#set-of-owned-text-nodes) : cada nodo de texto pertenece al elemento que genera su [bloque contenedor](https://developer.mozilla.org/docs/Web/CSS/Containing_block). {% endAside %}
 
-### ¿Cuándo se reporta largest contentful pain?
+### ¿Cuándo se reporta largest contentful paint?
 
 Las páginas web a menudo se cargan en etapas y, como resultado, es posible que el elemento más grande de la página cambie.
 
@@ -120,7 +120,7 @@ LCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 ### Herramientas de campo
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -128,10 +128,13 @@ LCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 ### Herramientas de laboratorio
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Cómo medir LCP en JavaScript
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 Para medir LCP en JavaScript, puede utilizar la [API de Largest Contentful Paint](https://wicg.github.io/largest-contentful-paint/). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que capte las entradas de `largest-contentful-paint` y las registre en la consola.
 
@@ -169,7 +172,7 @@ import {getLCP} from 'web-vitals';
 getLCP(console.log);
 ```
 
-Puede consultar [el código fuente de `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts) para obtener un ejemplo completo de cómo medir LCP en JavaScript.
+Puede consultar [el código fuente de `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts) para obtener un ejemplo completo de cómo medir LCP en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir LCP en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) `web-vitals` para obtener más información. {% endAside %}
 

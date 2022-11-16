@@ -5,6 +5,8 @@ authors:
   - mattgaunt
 date: 2016-06-30
 updated: 2019-05-31
+tags:
+  - notifications
 ---
 
 The first step is to get permission from the user to send them push messages and then we can
@@ -79,6 +81,10 @@ will take the following steps after calling `register()`:
 
 When `register()` does resolve, it returns a `ServiceWorkerRegistration`. We'll use this
 registration to access the [PushManager API](https://developer.mozilla.org/docs/Web/API/PushManager).
+
+### PushManager API browser compatibility
+
+{% BrowserCompat 'api.PushManager' %}
 
 ## Requesting permission
 
@@ -414,4 +420,22 @@ Unfortunately not. A user must register for push on each browser they wish to
 receive messages on. It's also worth noting that this will require
 the user granting permission on each device.
 
-#### Feedback {: #feedback }
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* [How Push Works](/push-notifications-how-push-works/)
+* Subscribing a User
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* [Web Push Protocol](/push-notifications-web-push-protocol/)
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* [Push Notifications FAQ](/push-notifications-faq/)
+* [Common Issues and Reporting Bugs](/push-notifications-common-issues-and-reporting-bugs/)
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)

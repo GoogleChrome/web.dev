@@ -4,10 +4,12 @@ authors:
   - mattgaunt
 date: 2016-06-30
 updated: 2019-05-30
+tags:
+  - notifications
 ---
 
 Before getting into the API, let's look at push from a high level, start to finish. Then as we
-step through individual topics or API's later on, you'll have an idea of how and why it's
+step through individual topics or APIs later on, you'll have an idea of how and why it's
 important.
 
 The three key steps to implementing push are:
@@ -31,6 +33,8 @@ A `PushSubscription` contains all the information we need to send a push message
 You can "kind of" think of this as an ID for that user's device.
 
 This is all done in JavaScript with the [Push API](https://developer.mozilla.org/docs/Web/API/Push_API).
+
+{% BrowserCompat 'api.PushEvent' %}
 
 Before subscribing a user you'll need to generate a set of
 "application server keys", which we'll cover later on.
@@ -59,7 +63,7 @@ Some questions you might be asking yourself:
 
 ### Who and what is the push service?
 
-A push service receives a network request, validates it and delivers a push message to the appropriate browser. If the browser is offline, the message is queued until the the browser comes online.
+A push service receives a network request, validates it and delivers a push message to the appropriate browser. If the browser is offline, the message is queued until the browser comes online.
 
 Each browser can use any push service they want, it's something developers have no control
 over. This isn't a problem because every push service expects the **same** API call. Meaning
@@ -147,6 +151,24 @@ can make analytics calls, cache pages offline and show notifications.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/DCOmdNQ0YXPfd082WUgz.svg", alt="When a push message is sent from a push service to a user's device, your service worker receives a push event", width="800", height="238" %}
 
-That's the whole flow for push messaging. Lets go through each step in more detail.
+That's the whole flow for push messaging.
 
-### Feedback {: #feedback }
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* How Push Works
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* [Web Push Protocol](/push-notifications-web-push-protocol/)
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* [Push Notifications FAQ](/push-notifications-faq/)
+* [Common Issues and Reporting Bugs](/push-notifications-common-issues-and-reporting-bugs/)
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)

@@ -4,11 +4,13 @@ authors:
   - mattgaunt
 date: 2016-06-30
 updated: 2019-06-14
+tags:
+  - notifications
 ---
 
 We're going to look at some common implementation patterns for web push.
 
-This will involve using a few different API's that are available in the service worker.
+This will involve using a few different APIs that are available in the service worker.
 
 ## Notification close event
 
@@ -396,7 +398,43 @@ but if you implement a `fetch` event listener, make sure you take
 advantage of it in your `push` event by caching the page and assets
 you'll need before showing your notification.
 
+## Browser compatibility
+
+### The `notificationclose` event
+
+{% BrowserCompat 'api.ServiceWorkerGlobalScope.notificationclose_event' %}
+
+### `Clients.openWindow()`
+
+{% BrowserCompat 'api.Clients.openWindow' %}
+
+### `ServiceWorkerRegistration.getNotifications()`
+
+{% BrowserCompat 'api.ServiceWorkerRegistration.getNotifications' %}
+
+### `clients.matchAll()`
+
+{% BrowserCompat 'api.Clients.matchAll' %}
+
 For more information, check out this [introduction to service workers
 post](/web/fundamentals/getting-started/primers/service-workers).
 
-## Feedback {: #feedback }
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* [How Push Works](/push-notifications-how-push-works/)
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* [Web Push Protocol](/push-notifications-web-push-protocol/)
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* Common Notification Patterns
+* [Push Notifications FAQ](/push-notifications-faq/)
+* [Common Issues and Reporting Bugs](/push-notifications-common-issues-and-reporting-bugs/)
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)

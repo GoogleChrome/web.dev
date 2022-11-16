@@ -44,4 +44,4 @@ JavaScript 파일을 축소하면 페이로드 크기와 스크립트 구문 분
 
 ## 리소스
 
-- [**Minify JavaScript** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-javascript.js)
+- [**Minify JavaScript** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unminified-javascript.js)

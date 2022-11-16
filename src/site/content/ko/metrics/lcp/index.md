@@ -4,7 +4,7 @@ title: Largest Contentful Paint(최대 콘텐츠풀 페인트, LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-10-13
 description: 이 게시물에서는 최대 콘텐츠풀 페인트(LCP) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -120,7 +120,7 @@ LCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### 현장 도구
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
@@ -128,10 +128,13 @@ LCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 ### 실험실 도구
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript에서 LCP 측정
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 JavaScript에서 LCP를 측정하려면 [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/)를 사용할 수 있습니다. 다음 예시에서는 `largest-contentful-paint` 항목을 수신 대기하고 콘솔에 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)를 작성하는 방법을 확인하실 수 있습니다.
 
@@ -169,7 +172,7 @@ import {getLCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-JavaScript에서 LCP를 측정하는 방법에 대한 전체 예제는 [`getLCP()`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)를 참조하세요.
+JavaScript에서 LCP를 측정하는 방법에 대한 전체 예제는 [`getLCP()`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 LCP를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 

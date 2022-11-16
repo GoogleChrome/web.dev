@@ -12,7 +12,7 @@
 {% set tocTitle = 'i18n.toc.on_this_page' | i18n(locale) %}
 
 {% if hero %}
-  {% Img src=hero, alt=alt or '', importance='high', class='hero-image', height='480', width='1600', sizes='100vw' %}
+  {% Img src=hero, alt=alt or '', fetchpriority='high', class='hero-image', height='480', width='1600', sizes='100vw' %}
 {% endif %}
 
 <div class="post wrapper" data-flush>
@@ -76,7 +76,7 @@
           </nav>
         {% endif %}
 
-        <h1 id="{{ safeTitle | slugify }}">{{ safeTitle }}</h1>
+        <h1>{{ safeTitle }}</h1>
         {% if subhead | length %}
           <p class="color-mid-text flow-space-base">
             {{ subhead | md | safe }}
@@ -118,14 +118,14 @@
         {% StackOverflow stack_overflow_tag %}
       {% endif %}
 
-      <div class="cluster gutter-base flow-space-size-2" role="list" aria-label="tags">
+      <nav class="cluster gutter-base flow-space-size-2" aria-label="tags">
         {% for tagKey in tags or [] %}
           {% if tagKey in collections.tags %}
             {% set tag = collections.tags[tagKey] %}
             <a class="pill" href="{{tag.url}}">{{tag.overrideTitle or tag.title | i18n(locale)}}</a>
           {% endif %}
         {% endfor %}
-      </div>
+      </nav>
 
       <div class="text-size-0 color-mid-text">
         <span>

@@ -20,49 +20,60 @@ const browsers = ['chrome', 'firefox', 'edge', 'safari'];
 
 /**
  * @param {import('@mdn/browser-compat-data/types').SimpleSupportStatement} support
- * @returns {string}
+ * @param {import('@mdn/browser-compat-data/types').StatusBlock} status
+ * @returns {{aria: string, compatProperty: string, icon: string}}}
  */
-const compatVersion = (support) => {
-  if (!support.version_removed && support.version_added === 'preview') {
-    return '\uD83D\uDC41'; // 👁 eye
-  } else if (
-    !support.version_removed &&
-    typeof support.version_added === 'string'
-  ) {
-    return support.version_added;
-  } else {
-    return '\u00D7'; // × small x
+function getInfoFromSupportStatement(support, status, locale) {
+  if (status && status.deprecated) {
+    return {
+      aria: i18n('i18n.browser_compat.deprecated', locale),
+      compatProperty: 'deprecated',
+      icon: '🗑',
+    };
   }
-};
 
-/**
- * @param {import('@mdn/browser-compat-data/types').SimpleSupportStatement} support
- * @returns {string}
- */
-const compatProperty = (support) => {
-  if (!support.version_removed && support.version_added === 'preview') {
-    return 'preview';
-  } else if (!support.version_removed && support.version_added) {
-    return 'yes';
-  } else {
-    return 'no';
-  }
-};
+  if (!support.version_removed) {
+    if (support.version_added === 'preview') {
+      return {
+        aria: i18n('i18n.browser_compat.preview', locale),
+        compatProperty: 'preview',
+        icon: '👁',
+      };
+    }
 
-/**
- * @param {import('@mdn/browser-compat-data/types').SimpleSupportStatement} support
- * @param {string} locale
- * @returns {string}
- */
-const compatAria = (support, locale) => {
-  if (!support.version_removed && support.version_added === 'preview') {
-    return i18n('i18n.browser_compat.preview', locale);
-  } else if (!support.version_removed && support.version_added) {
-    return i18n('i18n.browser_compat.supported', locale);
-  } else {
-    return i18n('i18n.browser_compat.not_supported', locale);
+    if (support.flags?.length > 0) {
+      return {
+        aria: i18n('i18n.browser_compat.flag', locale),
+        compatProperty: 'flag',
+        icon: '⚑',
+      };
+    }
+
+    if (typeof support.version_added === 'string') {
+      return {
+        aria: i18n('i18n.browser_compat.supported', locale),
+        compatProperty: 'yes',
+        icon: support.version_added,
+      };
+    }
+
+    // See https://github.com/GoogleChrome/web.dev/issues/8333
+    if (support.version_added === true) {
+      return {
+        aria: i18n('i18n.browser_compat.supported', locale),
+        compatProperty: 'yes',
+        icon: '✅',
+      };
+    }
   }
-};
+
+  return {
+    aria: i18n('i18n.browser_compat.not_supported', locale),
+    compatProperty: 'no',
+    icon: '×',
+  };
+}
+
 /**
  * A shortcode for embedding caniuse.com browser compatibility table.
  * @this {EleventyPage}
@@ -80,21 +91,27 @@ function BrowserCompat(feature) {
         ? data[feature].support[browser][0]
         : data[feature].support[browser];
 
+      const supportInfo = getInfoFromSupportStatement(
+        support,
+        data[feature].status,
+        locale,
+      );
+
       const isSupported = support.version_added && !support.version_removed;
 
       const ariaLabel = [
         browser,
         isSupported ? ` ${support.version_added}, ` : ', ',
-        compatAria(support, locale),
+        supportInfo.aria,
       ].join('');
 
       return `<span class="browser-compat__icon" data-browser="${browser}">
           <span class="visually-hidden">${ariaLabel}</span>
       </span>
       <span class="browser-compat__version"
-        data-compat="${compatProperty(support)}"
+        data-compat="${supportInfo.compatProperty}"
       >
-        ${compatVersion(support)}
+        ${supportInfo.icon}
       </span>
       `;
     });

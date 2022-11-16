@@ -14,7 +14,7 @@ updated: 2019-08-28
 
 ## Lighthouse 浏览器错误审核为何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记记录到控制台的所有浏览器错误：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记记录到控制台的所有浏览器错误：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="显示控制台中的浏览器错误的 Lighthouse 审核", width="800", height="247" %}</figure>
 
@@ -45,7 +45,7 @@ Chrome DevTools 提供了一些可帮助您跟踪错误原因的工具：
 
 ## 资源
 
-- [**将浏览器错误记录到控制台**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
+- [**将浏览器错误记录到控制台**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/errors-in-console.js)
 - [控制台概览](https://developer.chrome.com/docs/devtools/console/)
 - [堆栈溢出](https://stackoverflow.com/)
 - [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

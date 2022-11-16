@@ -11,7 +11,7 @@ date: 2020-05-06
 
 ## Lighthouse によるマスカブルアイコンの監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、マスカブルアイコンをサポートしていないページをフラグします。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、マスカブルアイコンをサポートしていないページをフラグします。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse レポートの UI に表示されているマスカブルアイコンの監査。", width="800", height="110" %}</figure>
 
@@ -51,7 +51,7 @@ date: 2020-05-06
 
 ## リソース
 
-- [**Manifest doesn't have a maskable icon (マニフェストにマスカブルアイコンがない)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [**Manifest doesn't have a maskable icon (マニフェストにマスカブルアイコンがない)** 監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [Adaptive icon support in PWAs with maskable icons (マスカブルアイコンを使用した PWA におけるアダプティブアイコンサポート)](/maskable-icon/)
 - [Maskable.app エディター](https://maskable.app/editor)
 - [Add a web app manifest (ウェブアプリのマニフェストを追加する)](/add-manifest/)

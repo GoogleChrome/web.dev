@@ -78,4 +78,4 @@ Content-Encoding: br
 
 ## 资源
 
-- [**启用文本压缩**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [**启用文本压缩**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/uses-text-compression.js)

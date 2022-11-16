@@ -30,7 +30,7 @@ JavaScript를 실행하는 데 시간이 오래 걸리면 여러 가지 방법�
 
 ## Lighthouse JavaScript 실행 시간 감사가 실패하는 방식
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 JavaScript 실행이 2초 이상 걸리면 경고를 표시합니다. 실행 시간이 3.5초를 초과하면 감사가 실패합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 JavaScript 실행이 2초 이상 걸리면 경고를 표시합니다. 실행 시간이 3.5초를 초과하면 감사가 실패합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="Lighthouse Reduce JavaScript 실행 시간 감사의 스크린샷", width="800", height="321" %}</figure>
 
@@ -44,4 +44,4 @@ Lighthouse는 실행 시간에 가장 큰 영향을 미치는 요인을 식별�
 
 ## 참고 자료
 
-[**JavaScript 실행 시간 감소** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[**JavaScript 실행 시간 감소** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/bootup-time.js)

@@ -178,7 +178,7 @@ Chrome, Firefox, Edge, Safari
 
 {% Aside 'gotchas' %}
 
-- `https:` Es un respaldo para Safari y `unsafe-inline` es un respaldo para versiones de navegador muy antiguas. `https:` y `unsafe-inline` no hacen que tu política sea menos segura porque serán ignorados por los navegadores que admiten `strict-dynamic`. Obtén más información en [Agregar alternativas para admitir Safari y navegadores más antiguos](/strict-csp/#step-4:-add-fallbacks-to-support-safari-and-older-browsers).
+- `https:` Es un respaldo para Safari y `unsafe-inline` es un respaldo para versiones de navegador muy antiguas. `https:` y `unsafe-inline` no hacen que tu política sea menos segura porque serán ignorados por los navegadores que admiten `strict-dynamic`. Obtén más información en [Agregar alternativas para admitir Safari y navegadores más antiguos](/strict-csp/#step-4-add-fallbacks-to-support-safari-and-older-browsers).
 - Safari aún *no* admite `strict-dynamic`. Pero un CSP estricto como en los ejemplos anteriores es más seguro que un CSP de lista de permitidos (y mucho más seguro que no usar ningún CSP) para todos sus usuarios. Incluso en Safari, un CSP estricto protege tu sitio de algunos tipos de ataques XSS, porque la presencia del CSP no permite ciertos patrones inseguros.
 
 {% endAside %}
@@ -189,7 +189,7 @@ Ver [más compatibilidades](https://developer.mozilla.org/docs/Web/HTTP/CSP#brow
 
 - La directiva de [`frame-ancestors`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) protege a tu sitio contra el clickjacking, un riesgo que surge si permites que los sitios que no son de confianza se incrusten al tuyo. Si prefieres una solución más simple, puedes usar [`X-Frame-Options`](#xfo) para bloquear la carga, pero `frame-ancestors` te brinda una configuración avanzada para permitir solo orígenes específicos como incrustadores.
 - Es posible que hayas utilizado [un CSP para asegurarte de que todos los recursos de su sitio se carguen a través de HTTPS](/fixing-mixed-content/#content-security-policy). Esto se ha vuelto menos relevante: hoy en día, la mayoría de los navegadores bloquean el [contenido mixto](/what-is-mixed-content/).
-- También puedes configurar un CSP en [report-only-mode (modo de solo informe)](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts).
+- También puedes configurar un CSP en [report-only-mode (modo de solo informe)](/strict-csp/#step-2-set-a-strict-csp-and-prepare-your-scripts).
 - Si no puedes configurar un CSP como cabecera del lado del servidor, también puedes configurarlo como una metaetiqueta. Ten en cuenta que no puedes usar el **report-only mode** para las metaetiquetas (aunque [esto puede cambiar](https://github.com/w3c/webappsec-csp/issues/277)).
 
 ### Aprende más
@@ -391,7 +391,7 @@ Cómo utilizar X-Frame-Options
 
 Todos los documentos que no están diseñados para ser incrustados deben usar la cabecera de `X-Frame-Options`.
 
-Puedes probar cómo las siguientes configuraciones afectan la carga de un iframe en [esta demostración](https://first-party-test.glitch.me/). Cambia el `X-Frame-Options` y haz clic en el botón de **Reload the iframe (Recargar el iframe)**.
+Puedes probar cómo las siguientes configuraciones afectan la carga de un iframe en [esta demostración](https://cross-origin-isolation.glitch.me/). Cambia el `X-Frame-Options` y haz clic en el botón de **Reload the iframe (Recargar el iframe)**.
 
 #### Protege tu sitio web de ser incrustado por otros sitios web
 
@@ -451,7 +451,7 @@ Cómo usar CORP
 
 Se recomienda que **todos** los recursos se sirvan con una de las siguientes tres cabeceras.
 
-Puedes probar cómo las siguientes configuraciones afectan la carga de recursos bajo un [`Cross-Origin-Embedder-Policy: require-corp`](#coep) en [esta demostración](https://first-party-test.glitch.me/?coep=require-corp&). Cambia el menú desplegable de **Cross-Origin-Resource-Policy** y haz clic en el botón **Reload the iframe (Recargar el iframe)** o **Reload the image (Recargar la imagen)** para ver el efecto.
+Puedes probar cómo las siguientes configuraciones afectan la carga de recursos bajo un [`Cross-Origin-Embedder-Policy: require-corp`](#coep) en [esta demostración](https://cross-origin-isolation.glitch.me/?coep=require-corp&). Cambia el menú desplegable de **Cross-Origin-Resource-Policy** y haz clic en el botón **Reload the iframe (Recargar el iframe)** o **Reload the image (Recargar la imagen)** para ver el efecto.
 
 #### Permitir que los recursos se carguen `cross-origin`
 
@@ -525,7 +525,7 @@ Cómo usar COOP
 
 ### Usos recomendados
 
-Puedes probar cómo las siguientes configuraciones afectan la comunicación con una ventana emergente de origen cruzado en [esta demostración](https://first-party-test.glitch.me/). Cambia el menú desplegable de **Cross-Origin-Opener-Policy** tanto para el documento como para la ventana emergente, haz clic en el botón **Open a popup (Abrir una ventana emergente)** y luego haz clic en **Send a postMessage (Enviar un postMessage)** para ver si el mensaje realmente se envió.
+Puedes probar cómo las siguientes configuraciones afectan la comunicación con una ventana emergente de origen cruzado en [esta demostración](https://cross-origin-isolation.glitch.me/). Cambia el menú desplegable de **Cross-Origin-Opener-Policy** tanto para el documento como para la ventana emergente, haz clic en el botón **Open a popup (Abrir una ventana emergente)** y luego haz clic en **Send a postMessage (Enviar un postMessage)** para ver si el mensaje realmente se envió.
 
 #### Aislar un documento de las ventanas de origen cruzado
 
@@ -649,7 +649,7 @@ Access-Control-Allow-Credentials: true
 - `Access-Control-Allow-Origin: https://example.com` indica que `https://example.com` puede acceder al contenido de la respuesta. Los recursos destinados a ser legibles por cualquier sitio pueden establecer esta cabecera en `*`, en tal caso el navegador solo requerirá que la petición se realice [sin credenciales](https://developer.mozilla.org/docs/Web/API/Request/credentials#value).
 - `Access-Control-Allow-Credentials: true` indica que las solicitudes que llevan credenciales (cookies) pueden cargar el recurso. De lo contrario, las solicitudes autenticadas se rechazarán incluso si el origen solicitante está presente en la cabecera de `Access-Control-Allow-Origin`.
 
-Puedes probar cómo la petición simple afecta la carga de recursos en un [`Cross-Origin-Embedder-Policy: require-corp`](#coep) en [esta demostración](https://first-party-test.glitch.me/?coep=require-corp&). Haz clic en la casilla de verificación **Cross-Origin Resource Sharing (Intercambio de recursos de origen cruzado)** y haz clic en el botón de **Reload the image (Volver a cargar la imagen)** para ver el efecto.
+Puedes probar cómo la petición simple afecta la carga de recursos en un [`Cross-Origin-Embedder-Policy: require-corp`](#coep) en [esta demostración](https://cross-origin-isolation.glitch.me/?coep=require-corp&). Haz clic en la casilla de verificación **Cross-Origin Resource Sharing (Intercambio de recursos de origen cruzado)** y haz clic en el botón de **Reload the image (Volver a cargar la imagen)** para ver el efecto.
 
 #### Petición preflighted
 
@@ -720,7 +720,7 @@ COEP toma un valor único de `require-corp`. Al enviar esta cabecera, puedes ind
 
 {% Img src="image/admin/MAhaVZdShm8tRntWieU4.png", alt="Cómo funciona COEP", width="800", height="410" %}
 
-Puedes probar cómo las siguientes configuraciones afectan la carga de recursos en [esta demostración](https://first-party-test.glitch.me/). Cambia el menú desplegable de **Cross-Origin-Embedder-Policy**, el menú desplegable de **Cross-Origin-Resource-Policy**, la casilla de verificación **Report Only** etc, para ver cómo afectan la carga de recursos. Además, abre [the reporting endpoint demo (la demostración del punto final de informes)](https://reporting-endpoint.glitch.me/) para ver si se informan los recursos bloqueados.
+Puedes probar cómo las siguientes configuraciones afectan la carga de recursos en [esta demostración](https://cross-origin-isolation.glitch.me/). Cambia el menú desplegable de **Cross-Origin-Embedder-Policy**, el menú desplegable de **Cross-Origin-Resource-Policy**, la casilla de verificación **Report Only** etc, para ver cómo afectan la carga de recursos. Además, abre [the reporting endpoint demo (la demostración del punto final de informes)](https://reporting-endpoint.glitch.me/) para ver si se informan los recursos bloqueados.
 
 #### Habilitar el aislamiento de origen cruzado
 

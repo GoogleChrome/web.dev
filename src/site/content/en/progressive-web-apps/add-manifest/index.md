@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2021-10-21
+updated: 2022-09-14
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -22,10 +22,11 @@ The web app manifest is a JSON file that tells the browser about your
 Progressive Web App and how it should behave when installed on the user's
 desktop or mobile device. A typical manifest file includes the app name, the
 icons the app should use, and the URL that should be opened when the
-app is launched.
+app is launched, among other things.
 
-Manifest files are [supported](https://developer.mozilla.org/docs/Web/Manifest#Browser_compatibility) in Chrome, Edge, Firefox, UC Browser, Opera,
-and the Samsung browser. Safari has partial support.
+Manifest files are [supported in most
+browsers](https://developer.mozilla.org/docs/Web/Manifest#Browser_compatibility)
+though support for individual members may vary quite a bit.
 
 ## Create the manifest file {: #create }
 
@@ -33,6 +34,8 @@ The manifest file can have any name, but is commonly named `manifest.json` and
 served from the root (your website's top-level directory). The specification
 suggests the extension should be `.webmanifest`, but browsers also support
 `.json` extensions, which may be easier for developers to understand.
+
+A typical manifest looks something like this:
 
 ```json
 {
@@ -55,6 +58,7 @@ suggests the extension should be `.webmanifest`, but browsers also support
       "sizes": "512x512"
     }
   ],
+  "id": "/?source=pwa",
   "start_url": "/?source=pwa",
   "background_color": "#3367D6",
   "display": "standalone",
@@ -105,8 +109,8 @@ Operating systems usually expect to have a title for each app window. This
 title is displayed in various window-switching surfaces such as
 <kbd>alt</kbd>+<kbd>tab</kbd>, overview mode, and the shelf window list.
 
-For PWAs running in standalone mode, Chromium will prepend the `short_name`
-(or, if `short_name` is not set, alternatively the `name`) to what is
+For PWAs running in standalone mode, Chromium prepends the `short_name`
+(or, if it's not available, the `name`) to what is
 specified in the `<title>` of the HTML document to prevent disguise attacks
 where standalone apps might try to be mistaken, for example, for operating
 system dialogs.
@@ -127,21 +131,25 @@ icons on Android, you'll also need to add `"purpose": "any maskable"` to the
 `icon` property.
 
 For Chromium, you must provide at least a 192x192 pixel icon, and a 512x512
-pixel icon. If only those two icon sizes are provided, Chrome will
-automatically scale the icons to fit the device. If you'd prefer to scale your
+pixel icon. If only those two icon sizes are provided, Chrome
+automatically scales the icons to fit the device. If you'd prefer to scale your
 own icons, and adjust them for pixel-perfection, provide icons in increments
 of 48dp.
 
 {% Aside %}
-Chromium-based browsers also support SVG icons that can be scaled arbitrarily
+Chromium-based browsers also support SVG icons which can be scaled arbitrarily
 without looking pixelated and that support advanced features like
-[being responsive to `prefers-color-scheme`](https://blog.tomayac.com/2021/07/21/dark-mode-web-app-manifest-app-icons/),
-with the important caveat that the icons do not update live, but remain in the
+[responsiveness to `prefers-color-scheme`](https://blog.tomayac.com/2021/07/21/dark-mode-web-app-manifest-app-icons/),
+with the caveat that the icons do not update live, but remain in the
 state they were in at install time.
 
-To be on the safe side, you should always specify a rasterized icon as a
+To use SVG icons safely, you should always specify a rasterized icon as a
 fallback for browsers that do not support SVG icons.
 {% endAside %}
+
+#### `id` {: #id }
+
+The `id` property allows you to explicitly define the identifier used for your application. Adding the `id` property to the manifest removes the dependency on the `start_url` or the location of the manifest, and makes it possible for them to be updated in the future. For more information, see [Uniquely identifying PWAs with the web app manifest id property](https://developer.chrome.com/blog/pwa-manifest-id/).
 
 #### `start_url` {: #start-url }
 
@@ -161,8 +169,9 @@ application is first launched on mobile.
 #### `display` {: #display }
 
 You can customize what browser UI is shown when your app is launched. For
-example, you can hide the address bar and browser chrome. Games can even
-be made to launch full screen.
+example, you can hide the address bar and browser
+user interface elements. Games can even
+be made to launch full screen. The `display` property takes one of the following values:
 
 <div class="table-wrapper">
   <table id="display-params">
@@ -185,7 +194,7 @@ be made to launch full screen.
         <td>
           Opens the web app to look and feel like a standalone
           app. The app runs in its own window, separate from the browser, and
-          hides standard browser UI elements like the URL bar.
+          hides standard browser UI elements such as the URL bar.
           <figure>
             {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="An example of a PWA window with standalone display.", width="800", height="196" %}
           </figure>
@@ -218,7 +227,7 @@ Web apps can choose how they are displayed by setting a `display` mode in their 
 [spec-defined fallback chain](https://w3c.github.io/manifest/#dfn-fallback-display-mode)
 (`"fullscreen"` → `"standalone"` → `"minimal-ui"` → `"browser"`). If they don't support a given
 mode, they fall back to the next display mode in the chain. This inflexible behavior can be
-problematic in rare cases, for example, a developer cannot request `"minimal-ui"` without being
+problematic in rare cases. For example, a developer cannot request `"minimal-ui"` without being
 forced back into the `"browser"` display mode when `"minimal-ui"` is not supported.
 Another problem is that the current behavior makes it impossible to introduce new display
 modes in a backward compatible way, since explorations like tabbed application mode don't have a
@@ -229,14 +238,9 @@ the `display` property. Its value is a sequence of strings that are considered i
 first supported display mode is applied. If none are supported, the browser falls back to evaluating
 the `display` field.
 
-In the example below, the display mode fallback chain would be as follows.
-(The details of `"window-control-overlay"` are out-of-scope for this article.)
-
-1. `"window-control-overlay"` (First, look at `display_override`.)
-1. `"minimal-ui"`
-1. `"standalone"` (When `display_override` is exhausted, evaluate `display`.)
-1. `"minimal-ui"` (Finally, use the `display` fallback chain.)
-1. `"browser"`
+Consider the example below. (The details of
+[`"window-control-overlay"`](/window-controls-overlay/) are out-of-scope for
+this article.)
 
 ```json
 {
@@ -244,6 +248,18 @@ In the example below, the display mode fallback chain would be as follows.
   "display": "standalone",
 }
 ```
+
+As stated, the browser will look at `display_override` first.
+
+1. `"window-control-overlay"`
+1. `"minimal-ui"`
+
+If neither option is available, it falls back to `display`. If `"standalone"` is
+not available, it resumes spec-defined fallabck chain from that point.
+
+1. `"standalone"`
+1. `"minimal-ui"`
+1. `"browser"`
 
 {% Aside %}
   The browser will not consider `display_override` unless `display` is also present.
@@ -258,9 +274,9 @@ your web app. Your `start_url` must reside within the `scope`.
 
 {% Aside 'caution' %}
 If the user clicks a link in your app that navigates outside of the
-`scope`, the link will open and render within the existing PWA window. If
+`scope`, the link opens and renders within the existing PWA window. If
 you want the link to open in a browser tab, you must add `target="_blank"`
-to the `<a>` tag. On Android, links with `target="_blank"` will open in a
+to the `<a>` tag. On Android, links with `target="_blank"` open in a
 [Chrome Custom Tab](https://developer.chrome.com/multidevice/android/customtabs).
 {% endAside %}
 
@@ -281,11 +297,15 @@ The `theme_color` sets the color of the tool bar, and may be reflected in
 the app's preview in task switchers. The `theme_color` should match the
 `meta` theme color specified in your document head.
 
+
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196" %}
+  <figcaption>
+    An example of a PWA window with custom theme_color.
+  </figcaption>
 </figure>
 
-As of Chromium&nbsp;93 and Safari&nbsp;15, you can adjust this color based on a
+As of Chromium&nbsp;93 and Safari&nbsp;15, you can adjust this color in a
 media query with the `media` attribute of the `meta` theme color element. The
 first one that matches will be picked. For example, you could have one color for
 light mode and another one for dark mode. At the time of writing, you can't
@@ -309,7 +329,7 @@ The `description` property describes the purpose of your app.
 
 #### `screenshots` {: #screenshots }
 
-The `screenshots` property is an array of image objects, representing your app
+The `screenshots` property is an array of image objects representing your app
 in common usage scenarios. Each object must include the `src`, a `sizes`
 property, and the `type` of image.
 
@@ -318,7 +338,7 @@ In Chrome, the image must respond to certain criteria:
 * Width and height must be at least 320px and at most 3840px.
 * The maximum dimension can't be more than 2.3 times as long as the minimum
   dimension.
-* Screenshots must have the same aspect ratio.
+* All screenshots must have the same aspect ratio.
 * Only JPEG and PNG image formats are supported.
 
 {% Aside 'gotchas' %}
@@ -346,8 +366,16 @@ include `crossorigin="use-credentials"` in the manifest tag.
 To verify your manifest is setup correctly, use the **Manifest** pane in the
 **Application** panel of Chrome DevTools.
 
+
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="The application panel in Chrome Devtools with the manifest tab selected.", width="800", height="601" %}
+  <figcaption>
+    Test your manifest in DevTools.
+  </figcaption>
+</figure>
+
+<figure>
+
 </figure>
 
 This pane provides a human-readable version of many of your manifest's
@@ -380,7 +408,5 @@ you can provide additional icons for pixel perfection.
 There are several additional properties that can be added to the web app
 manifest. Refer to the [MDN Web App Manifest documentation][mdn-manifest]
 for more information.
-You can learn more about `display_override` in the
-[explainer](https://github.com/WICG/display-override/blob/master/explainer.md).
 
 [mdn-manifest]: https://developer.mozilla.org/docs/Web/Manifest

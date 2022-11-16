@@ -1,0 +1,66 @@
+---
+patternId: clipboard/paste-files
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How to paste files</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
+    <style>
+      html {
+        box-sizing: border-box;
+        font-family: system-ui, sans-serif;
+        color-scheme: dark light;
+      }
+
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+      }
+
+      img {
+        height: auto;
+        max-width: 100%;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to paste files</h1>
+    <p>Hit <kbd>⌘</kbd> + <kbd>v</kbd> (for macOS) or <kbd>ctrl</kbd> + <kbd>v</kbd>
+      (for other operating systems) to paste image or text file(s) anywhere in this page.
+    </p>
+    {% set script %}
+      document.addEventListener('paste', async (e) => {
+        // Prevent the default behavior, so you can code your own logic.
+        e.preventDefault();
+        if (!e.clipboardData.files.length) {
+          return;
+        }
+        // Iterate over all pasted files.
+        Array.from(e.clipboardData.files).forEach(async (file) => {
+          // Add more checks here for MIME types you're interested in,
+          // such as `application/pdf`, `video/mp4`, etc.
+          if (file.type.startsWith('image/')) {
+            // For images, create an image and append it to the `body`.
+            const img = document.createElement('img');
+            const blob = URL.createObjectURL(file);
+            img.src = blob;
+            document.body.append(img);
+          } else if (file.type.startsWith('text/')) {
+            // For text files, read the contents and output it into a `textarea`.
+            const textarea = document.createElement('textarea');
+            textarea.value = await file.text();
+            document.body.append(textarea);
+          }
+        });
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

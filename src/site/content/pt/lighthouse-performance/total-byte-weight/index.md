@@ -18,7 +18,7 @@ Grandes cargas de rede são altamente correlacionadas com longos tempos de carre
 
 ## Como a auditoria de carga útil da rede Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) mostra o tamanho total em [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) de todos os recursos solicitados por sua página. As maiores solicitações são apresentadas primeiro:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) mostra o tamanho total em [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) de todos os recursos solicitados por sua página. As maiores solicitações são apresentadas primeiro:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Uma captura de tela da enorme auditoria de cargas úteis de rede do Lighthouse Avoid", width="800", height="518" %}</figure>
 
@@ -59,4 +59,4 @@ Considere mostrar trechos em suas listas de postagens (por exemplo, por meio da 
 
 ## Recursos
 
-[Código-fonte para auditoria **Evitar enormes cargas úteis de rede**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)
+[Código-fonte para auditoria **Evitar enormes cargas úteis de rede**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/total-byte-weight.js)

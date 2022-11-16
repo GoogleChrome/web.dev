@@ -16,7 +16,7 @@ La configuración de la metaetiqueta de la ventana gráfica te permite controlar
 
 ## Cómo falla la auditoría de metaetiqueta de la ventana gráfica de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas sin una metaetiqueta de ventana gráfica:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca páginas sin una metaetiqueta de ventana gráfica:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="La auditoría de Lighthouse muestra que a la página le falta una ventana gráfica", width="800", height="76" %}</figure>
 
@@ -52,6 +52,6 @@ Esto es lo que hace cada par clave-valor:
 
 ## Recursos
 
-- [Código fuente para la auditoria de **Tiene una etiqueta `<meta name="viewport">` con `width` o `initial-scale`**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/viewport.js)
+- [Código fuente para la auditoria de **Tiene una etiqueta `<meta name="viewport">` con `width` o `initial-scale`**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/viewport.js)
 - [Conceptos básicos del diseño web responsivo](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport)
 - [Uso de la metaetiqueta de la ventana gráfica para controlar el diseño en navegadores móviles](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag)
