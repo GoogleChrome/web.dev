@@ -29,11 +29,11 @@ _Interpolation_ is the process of creating "in-between" steps that smoothly tran
 } %}
 
 ## Transition properties
+{% BrowserCompat 'css.properties.transition-property' %}
 
 To use transitions in CSS, you can use the various transition properties or the `transition` shorthand property.
 
 ### transition-property
-{% BrowserCompat 'css.properties.transition-property' %}
 
 The [`transition-property`](https://developer.mozilla.org/docs/Web/CSS/transition-property) property specifies which style(s) to transition.
 
@@ -54,7 +54,6 @@ Optionally, you may use `transition-property: all` to indicate that every proper
 } %}
 
 ### transition-duration
-{% BrowserCompat 'css.properties.transition-duration' %}
 
 The [`transition-duration`](https://developer.mozilla.org/docs/Web/CSS/transition-duration) property is used to define the length of time that a transition will take to complete.
 
@@ -67,7 +66,6 @@ The [`transition-duration`](https://developer.mozilla.org/docs/Web/CSS/transitio
 `transition-duration` accepts time units, either in seconds (`s`) or milliseconds (`ms`) and defaults to `0s`.
 
 ### transition-timing-function
-{% BrowserCompat 'css.properties.transition-timing-function' %}
 
 Use the [`transition-timing-function`](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function) property to vary the speed of a CSS transition over the course of the `transition-duration`.
 
@@ -85,7 +83,6 @@ You can use [DevTools](https://developer.chrome.com/docs/devtools/css/animations
 {% Img src="image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/dRwKg0RIsy5wWVzkUFUA.png", alt="Chrome DevTools visual transition timing editor.", width="800", height="418" %}
 
 ### transition-delay
-{% BrowserCompat 'css.properties.transition-delay' %}
 
 Use the [`transition-delay`](https://developer.mozilla.org/docs/Web/CSS/transition-delay) property to specify the time at which a transition will start. If `transition-duration` is not specified, transitions will start instantly because the default value is `0s`. This property accepts a time unit, for example seconds (`s`) or milliseconds (`ms`).
 

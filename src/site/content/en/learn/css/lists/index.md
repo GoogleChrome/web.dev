@@ -71,13 +71,13 @@ And description lists are created with `<dl>`, however this list type does not u
 } %}
 
 ## List Styles
+{% BrowserCompat 'css.properties.list-style-position' %}
 
 Now that you know how to make a list, you can style them. The first CSS properties to discover are those that are applied to the entire list.
 
 There are three list-style properties you can use to style your example: `list-style-position`, `list-style-image`, and `list-style-type`.
 
 ### `list-style-position`
-{% BrowserCompat 'css.properties.list-style-position' %}
 
 [`list-style-position`](https://developer.mozilla.org/docs/Web/CSS/list-style-position) allows you to move your bullet point to either `inside` or `outside` the list-item's contents. The default `outside` means the bullet point is not included in the list items contents while `inside` moves the first element among the list item's contents.
 
@@ -90,7 +90,6 @@ There are three list-style properties you can use to style your example: `list-s
 } %}
 
 ### `list-style-image`
-{% BrowserCompat 'css.properties.list-style-image' %}
 
 [`list-style-image`](https://developer.mozilla.org/docs/Web/CSS/list-style-image) allows you to replace your list's bullet points with images. This enables you to set an image such as an `url` or `none` to make your bullets an image, svg or gif even. You can also use any media type or even a data URI.
 
@@ -107,7 +106,6 @@ This property is a bit limited in controlling the position, size, etc. of the bu
 {% endAside %}
 
 ### `list-style-type`
-{% BrowserCompat 'css.properties.list-style-type' %}
 
 The final option is to style the [`list-style-type`](https://developer.mozilla.org/docs/Web/CSS/list-style-type) which changes the bullet points to known style keywords, custom strings, emojis and more. You can view all of the possible list style types [here](https://developer.mozilla.org/docs/Web/CSS/list-style-type ).
 

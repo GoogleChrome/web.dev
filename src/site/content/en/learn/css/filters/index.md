@@ -135,6 +135,7 @@ If you pass a value greater than 100%, it will be capped at 100%.
 } %}
 
 ### `invert`
+{% Browser Compat 'css.types.filter-function.invert' %}
 
 Just like `grayscale`,
 you can pass `1` or `0` to the `invert()` function to turn it on or off.
