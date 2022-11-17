@@ -11,9 +11,9 @@ date: 2022-11-18
 authors:
   - alexandrawhite
   - rachelandrew
-hero: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
+hero: image/VbsHyyQopiec0718rMq2kTE1hke2/F6xN4wjE6Y9vgh1m1uCi.png
 alt: 'Learn Accessibility! Community highlight.'
-thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/8nibxhPpYh7CcJmZubSa.png
+thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/F6xN4wjE6Y9vgh1m1uCi.png
 tags:
   - blog
   - accessibility
