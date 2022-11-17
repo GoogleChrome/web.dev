@@ -31,7 +31,7 @@ Use the [`text-overflow`](https://developer.mozilla.org/docs/Web/CSS/text-overfl
 p {
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;   
+    white-space: nowrap;
 }
 ```
 
@@ -43,7 +43,7 @@ p {
 
 ## Using overflow properties
 
-Overflow properties are set on an element to control what happens when its children need more space than it has available. This can be intentional, like in an interactive map like Google Maps, where a user pans around a large image clipped to a specific size. It can also be unintentional like in a chat application where the user types a lengthy message that doesn’t fit in the text bubble. 
+Overflow properties are set on an element to control what happens when its children need more space than it has available. This can be intentional, like in an interactive map like Google Maps, where a user pans around a large image clipped to a specific size. It can also be unintentional like in a chat application where the user types a lengthy message that doesn’t fit in the text bubble.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -72,12 +72,9 @@ The `overflow-x` property controls overflow along the horizontal axis of the dev
 } %}
 
 ### Logical properties for scroll direction
+{% BrowserCompat 'css.properties.overflow-inline' %}
 
-The [`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/overflow-inline) and [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/overflow-block) properties set the overflow based on the document direction and writing mode. 
-
-{% Aside %}
-`overflow-inline` is currently only supported in Firefox 69+. See the support table on [MDN](https://developer.mozilla.org/docs/Web/CSS/overflow-inline#browser_compatibility).
-{% endAside %}
+The [`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/overflow-inline) and [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/overflow-block) properties set the overflow based on the document direction and writing mode.
 
 ### The `overflow` shorthand
 
@@ -104,7 +101,7 @@ Let's take a closer look at the [values and keywords](https://developer.mozilla.
 
 `overflow: clip`
 : Like `overflow: hidden`, the content with `overflow: clip` is clipped to the element's padding box. The difference between `clip` and `hidden` is that the `clip` keyword also forbids all scrolling, including programmatic scrolling.
- 
+
 `overflow: auto`
 : Finally, the value most commonly used, `overflow: auto`. This respects the user's preferences and shows scrollbars if needed, but hides them by default, and gives responsibility for scrolling to the user and browser.
 
@@ -120,11 +117,11 @@ Using the `overflow` property with a value other than `visible` creates a [block
 
 ## Scrolling and overflow
 
-Many of these `overflow` behaviors introduce a scrollbar, but there’s a few specific scroll behaviors and properties that can help you control scrolling on your overflow container. 
+Many of these `overflow` behaviors introduce a scrollbar, but there’s a few specific scroll behaviors and properties that can help you control scrolling on your overflow container.
 
 ### Scrolling and accessibility
 
-It's important to make sure that the scrollable area can accept focus so that a keyboard user can tab to the box, then use the arrow keys to scroll. 
+It's important to make sure that the scrollable area can accept focus so that a keyboard user can tab to the box, then use the arrow keys to scroll.
 
 To allow a scrolling box to accept focus add `tabindex="0"`, a name with the [`aria-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) attribute, and an appropriate `role` attribute. For example:
 
@@ -174,11 +171,12 @@ To create a root scroller, you can use something called *scroller promotion* by 
   %}
   <figcaption>
     The video shows a root scroller with bounce behavior and new styling features, <br>
-    compared to scrolling an implicit scroller with no enhanced scroll behavior. 
+    compared to scrolling an implicit scroller with no enhanced scroll behavior.
   </figcaption>
 </figure>
 
 ### scroll-behavior
+{% BrowserCompat 'css.properties.scroll-behavior' %}
 
 `scroll-behavior` allows you to opt into browser-controlled scrolling to elements. This allows you to specify how in-page navigation like `.scrollTo()` or links are handled.
 
@@ -199,6 +197,7 @@ This is especially useful when used with [prefers-reduced-motion](https://develo
 } %}
 
 ### overscroll-behavior
+{% BrowserCompat 'css.properties.overscroll-behavior' %}
 
 If you’ve ever reached the end of a modal overlay, then continued scrolling and had the page behind the overlay move, this is the scroll chaining, or bubbling up to the parent scroll container. The [`overscroll-behavior`](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) property allows you to prevent overflow scrolling leaking into a parent container (called scroll chaining).
 

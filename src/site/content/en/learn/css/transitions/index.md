@@ -2,7 +2,7 @@
 title: Transitions
 description: >
   In this module, learn how to define transitions between states of an element. Use transitions to improve user experience by providing visual feedback to user interaction.
-  
+
 audio:
   title: 'The CSS Podcast - 044: Transitions'
   src: https://traffic.libsyn.com/secure/thecsspodcast/TCP053_v1.mp3?dest-id=1891556
@@ -30,9 +30,10 @@ _Interpolation_ is the process of creating "in-between" steps that smoothly tran
 
 ## Transition properties
 
-To use transitions in CSS, you can use the various transition properties or the `transition` shorthand property. 
+To use transitions in CSS, you can use the various transition properties or the `transition` shorthand property.
 
 ### transition-property
+{% BrowserCompat 'css.properties.transition-property' %}
 
 The [`transition-property`](https://developer.mozilla.org/docs/Web/CSS/transition-property) property specifies which style(s) to transition.
 
@@ -53,6 +54,7 @@ Optionally, you may use `transition-property: all` to indicate that every proper
 } %}
 
 ### transition-duration
+{% BrowserCompat 'css.properties.transition-duration' %}
 
 The [`transition-duration`](https://developer.mozilla.org/docs/Web/CSS/transition-duration) property is used to define the length of time that a transition will take to complete.
 
@@ -65,6 +67,7 @@ The [`transition-duration`](https://developer.mozilla.org/docs/Web/CSS/transitio
 `transition-duration` accepts time units, either in seconds (`s`) or milliseconds (`ms`) and defaults to `0s`.
 
 ### transition-timing-function
+{% BrowserCompat 'css.properties.transition-timing-function' %}
 
 Use the [`transition-timing-function`](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function) property to vary the speed of a CSS transition over the course of the `transition-duration`.
 
@@ -82,6 +85,7 @@ You can use [DevTools](https://developer.chrome.com/docs/devtools/css/animations
 {% Img src="image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/dRwKg0RIsy5wWVzkUFUA.png", alt="Chrome DevTools visual transition timing editor.", width="800", height="418" %}
 
 ### transition-delay
+{% BrowserCompat 'css.properties.transition-delay' %}
 
 Use the [`transition-delay`](https://developer.mozilla.org/docs/Web/CSS/transition-delay) property to specify the time at which a transition will start. If `transition-duration` is not specified, transitions will start instantly because the default value is `0s`. This property accepts a time unit, for example seconds (`s`) or milliseconds (`ms`).
 
@@ -128,6 +132,7 @@ In general, it's only possible to transition elements that can have a "middle st
 Here are some common properties you can transition.
 
 ### Transform
+{% BrowserCompat 'css.properties.transform' %}
 
 The [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) CSS property is commonly transitioned because it is a GPU-accelerated property that results in smoother animation that also consumes less battery. This property lets you arbitrarily scale, rotate, translate, or skew an element.
 
@@ -205,7 +210,7 @@ By setting different `transition` properties on hover/focus, it's possible to cr
 
 .my-element:hover {
   background: blue;
-  
+
   /* This transition is applied on the "enter" transition */
   transition: background 150ms ease;
 }

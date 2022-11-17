@@ -31,9 +31,9 @@ How can you make sure search engines and browsers know about the translated vers
 You can add `<link>` elements in your site's  `<head>` describing the alternate versions.
 
 ```html
-<link rel="alternate" title="The form element" 
+<link rel="alternate" title="The form element"
   href="https://example.com/en/form" hreflang="en">
-<link rel="alternate" title="Das Formularelement" 
+<link rel="alternate" title="Das Formularelement"
   href="https://example.com/de/form" hreflang="de">
 ```
 
@@ -109,18 +109,18 @@ Learn more about [logical properties](/learn/css/logical-properties/).
 Say you have a form where the user should fill in their name.
 How would you add the field to your form?
 
-You could add one field for the first name and one for the surname. However, names are different 
-around the world: for example, some people don't have a surname—so how should they fill in the 
+You could add one field for the first name and one for the surname. However, names are different
+around the world: for example, some people don't have a surname—so how should they fill in the
 surname field?
 
-To make it quick and easy to enter names—and to ensure everybody can enter their name, whatever the 
+To make it quick and easy to enter names—and to ensure everybody can enter their name, whatever the
 format—use a single form field for names wherever possible.
 
 Learn more about [personal names](https://www.w3.org/International/questions/qa-personal-names).
 
 If you have a name with [non-Latin characters](/payment-and-address-form-best-practices/#unicode-matching),
-you may have encountered the issue that your name is reported as `invalid` in some forms. When you 
-build forms, make sure to allow all possible characters—and do not assume that a name only consists 
+you may have encountered the issue that your name is reported as `invalid` in some forms. When you
+build forms, make sure to allow all possible characters—and do not assume that a name only consists
 of Latin characters.
 
 ## Allow a variety of address formats
@@ -131,7 +131,7 @@ This address includes the street number, street, city, state, postal code, and c
 In your country, the address format may be totally different.
 How can you ensure everybody can enter their address in your form?
 
-One way is to use generic inputs. 
+One way is to use generic inputs.
 
 {% Codepen {
   user: 'web-dot-dev',

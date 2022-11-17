@@ -40,9 +40,9 @@ li {
 }
 ```
 
-There are two other types of lists. 
+There are two other types of lists.
 
-Ordered lists can be created with `<ol>`, in which case the list-item will display a number as the `::marker`. 
+Ordered lists can be created with `<ol>`, in which case the list-item will display a number as the `::marker`.
 
 ```html
 <ol>
@@ -77,10 +77,11 @@ Now that you know how to make a list, you can style them. The first CSS properti
 There are three list-style properties you can use to style your example: `list-style-position`, `list-style-image`, and `list-style-type`.
 
 ### `list-style-position`
+{% BrowserCompat 'css.properties.list-style-position' %}
 
 [`list-style-position`](https://developer.mozilla.org/docs/Web/CSS/list-style-position) allows you to move your bullet point to either `inside` or `outside` the list-item's contents. The default `outside` means the bullet point is not included in the list items contents while `inside` moves the first element among the list item's contents.
 
-{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/qVlpVCrwKwbGjEJdmqh0.jpg", alt="A list with both outside and inside ::marker which shows that outside (default value) is not in the list-item and inside is inside the list-item content box.", width="800", height="270" %}
+{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/qVlpVCrwKwbGjEJdmqh0.jpg", alt="A list with both outside and inside ::marker which shows that outside (default value) is not in the list-item and is inside the list-item content box.", width="800", height="270" %}
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -89,6 +90,7 @@ There are three list-style properties you can use to style your example: `list-s
 } %}
 
 ### `list-style-image`
+{% BrowserCompat 'css.properties.list-style-image' %}
 
 [`list-style-image`](https://developer.mozilla.org/docs/Web/CSS/list-style-image) allows you to replace your list's bullet points with images. This enables you to set an image such as an `url` or `none` to make your bullets an image, svg or gif even. You can also use any media type or even a data URI.
 
@@ -105,6 +107,7 @@ This property is a bit limited in controlling the position, size, etc. of the bu
 {% endAside %}
 
 ### `list-style-type`
+{% BrowserCompat 'css.properties.list-style-type' %}
 
 The final option is to style the [`list-style-type`](https://developer.mozilla.org/docs/Web/CSS/list-style-type) which changes the bullet points to known style keywords, custom strings, emojis and more. You can view all of the possible list style types [here](https://developer.mozilla.org/docs/Web/CSS/list-style-type ).
 
@@ -183,7 +186,7 @@ When you declare a list, each item is given a marker, despite there being no bul
 
 ### Marker Box
 
-In the CSS layout model, list item markers are represented by a marker box associated with each list item. The marker box is the container which typically contains the bullet or number. 
+In the CSS layout model, list item markers are represented by a marker box associated with each list item. The marker box is the container which typically contains the bullet or number.
 
 To style the marker box, you can use the `::marker` selector. This allows you to select just the marker instead of styling based on the entire list.
 
