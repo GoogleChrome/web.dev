@@ -7,7 +7,7 @@ authors:
 date: 2021-11-03
 ---
 
-In this module you learn how to style `<form>` elements, and how to match your other site styles. 
+In this module you learn how to style form controls, and how to match your other site styles. 
 
 {% Aside 'caution' %}
 Styling HTML form controls can be a challenge, 
@@ -64,7 +64,7 @@ you must also include the prefixed versions of `appearance`: `-moz-appearance` a
 
 You should also change the `font-size` to at least `1rem` 
 (which for most browsers has a default value of 16px) for your `<select>` element. 
-This prevents a page zoom on iOS Safari when a form control is focused.
+Doing so will prevent a page zoom on iOS Safari when the form control is focused.
 
 You can, of course, also change the element colors to match your brand colors. 
 After adding some more styles for spacing, `:hover`, and `:focus`, 
@@ -103,8 +103,10 @@ The appearance of `<input type="checkbox">` and `<input type="radio">` varies ac
 Open the [demo](https://codepen.io/web-dot-dev/pen/74d28931d0c0e9aacc89f62380f365e4) on various browsers to see the difference. 
 Let's see how to make sure that checkboxes and radio buttons match your brand and look the same cross-browser.
 
-You can't style `<input type="checkbox">` and `<input type="radio">` directly, 
-but there is a workaround. 
+In the past, developers could not style `<input type="checkbox">` and `<input type="radio">` controls directly. 
+[Checkboxes and radio buttons can be styled via their pseudo elements](https://www.scottohara.me/blog/2021/09/24/custom-radio-checkbox-again.html), now.
+Or the following replacement technique can be used to create custom styles for these elements.
+
 First, hide the default checkbox and radio button visually.
 
 ```css
@@ -115,16 +117,19 @@ input[type="checkbox"] {
 }
 ```
 
-Use `position: absolute` in combination with `opacity: 0` instead of `display: none` or `visibility: hidden` 
-to only hide the elements visually, 
-and to ensure they are still present in the 
-[accessibility tree](/the-accessibility-tree/). 
+It's important to use `position: absolute` in combination with `opacity: 0` instead of `display: none` or `visibility: hidden` 
+so that the controls are only visually hidden. This will ensure they are still exposed by the browser's 
+[accessibility tree](/the-accessibility-tree/). Note that further styling may be needed to ensure that the visually hidden
+form controls remain positioned "on top" of their replacement elements. Doing so will help ensure that hovering over one of these
+elements, when a screen reader is on, or when using touch devices with screen readers enabled, the visually hidden controls will
+be discoverable if exploring by touch, and the screen reader's visible focus indicator will generally appear in the location the controls
+are rendered on screen.
 
 To show your custom checkboxes and radio buttons, you have different options. 
-You use the `:before` CSS pseudo-element and the CSS `background` property, or use inline SVG images. 
+You use the `::before` CSS pseudo-element and the CSS `background` property, or use inline SVG images. 
 
 ```css
-input[type="radio"] + label:before {
+input[type="radio"] + label::before {
   content: "";
   width: 1em;
   height: 1em;
@@ -134,7 +139,7 @@ input[type="radio"] + label:before {
   margin-inline-end: 0.5em;
 }
 
-input[type="radio"]:checked + label:before {
+input[type="radio"]:checked + label::before {
   background: black;
 }
 ```
@@ -179,4 +184,5 @@ you might want to use workarounds until `accent-color` is supported in all platf
 
 - [Accent color](/accent-color/)
 - [Styling the `<select>` element](https://www.filamentgroup.com/lab/select-css.html)
+- [The Accessibility of Styled Form Controls](https://scottaohara.github.io/a11y_styled_form_controls/)
 - [Open UI](https://open-ui.org)
