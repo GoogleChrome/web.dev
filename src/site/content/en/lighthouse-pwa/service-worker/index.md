@@ -21,8 +21,8 @@ Learn more in the [Service workers and the Cache Storage API](/service-workers-c
 
 ## Browser compatibility
 
-All major browsers except Internet Explorer support service workers. See
-[Browser compatibility](https://developer.mozilla.org/docs/Web/API/ServiceWorker#Browser_compatibility).
+All major browsers support service workers.
+{% BrowserCompat 'api.ServiceWorker' %}
 
 ## How the Lighthouse service worker audit fails
 

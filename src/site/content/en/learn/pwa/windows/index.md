@@ -207,6 +207,7 @@ If the user or the operating system moves your PWA's window from one screen to a
 
 {% Aside %}
 You may also want to check the [Presentation API](https://developer.mozilla.org/docs/Web/API/Presentation_API) to display web content through large presentation devices such as projectors and network-connected televisions.
+{% BrowserCompat 'api.Presentation' %}
 {% endAside %}
 
 {% Glitch 'mlearn-pwa-windows-screens' %}

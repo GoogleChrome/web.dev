@@ -20,6 +20,7 @@ The [Payment Request API](https://www.w3.org/TR/payment-request/) brings to the
 web a built-in browser-based interface that allows users to enter required payment
 information easier than ever before. The API can also invoke platform-specific payment
 apps.
+{% BrowserCompat 'api.PaymentRequest' %}
 
 <figure style="width:300px; margin:auto;">
   <video controls autoplay loop muted>

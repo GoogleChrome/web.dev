@@ -10,6 +10,7 @@ date: 2022-01-10
 A key aspects of Progressive Web Apps is that they're reliable; they can load assets quickly, keeping users engaged and providing feedback immediately, even under poor network conditions. How is that possible? Thanks to the service worker `fetch` event.
 
 ## The fetch event
+{% BrowserCompat 'api.FetchEvent' %}
 
 The [`fetch`](https://developer.mozilla.org/docs/Web/API/FetchEvent) event lets us intercept every network request made by the PWA in the service worker's scope, for both same-origin and cross-origin requests. In addition to navigation and asset requests, fetching from an installed service worker allows page visits after a site's first load to be rendered without network calls.
 

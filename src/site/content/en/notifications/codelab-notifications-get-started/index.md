@@ -28,6 +28,7 @@ In this codelab, you'll use basic features of the
 * Request permission to send notifications
 * Send notifications
 * Experiment with notification options
+{% BrowserCompat 'api.Notification' %}
 
 ## Remix the sample app and view it in a new tab
 
