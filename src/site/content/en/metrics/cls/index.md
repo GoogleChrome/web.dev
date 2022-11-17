@@ -483,10 +483,6 @@ For a deep dive on how to improve CLS, see [Optimize
 CLS](/optimize-cls/) and [Debug layout shifts
 ](/debug-layout-shifts).
 
-## Browser support
-
-###
-
 ## Additional resources
 
 - Google Publisher Tag's guidance on
