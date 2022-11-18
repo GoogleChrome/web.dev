@@ -339,6 +339,16 @@ redirects:
     destination: https://developer.chrome.com/articles/periodic-background-sync/
   - source: /eyedropper
     destination: https://developer.chrome.com/articles/eyedropper/
+  - source: /mediastreamtrack-insertable-media-processing
+    destination:  https://developer.chrome.com/articles/mediastreamtrack-insertable-media-processing/
+  - source: /pwa-url-handler
+    destination: https://developer.chrome.com/articles/pwa-url-handler/
+  - source: /reporting-api-migration
+    destination: https://developer.chrome.com/articles/reporting-api-migration/
+  - source: /reporting-api
+    destination: https://developer.chrome.com/articles/reporting-api/
+  - source: /urlpattern
+    destination: https://developer.chrome.com/articles/urlpattern/
   - source: /contact-picker
     destination: https://developer.chrome.com/articles/contact-picker/
   - source: /multi-screen-window-placement
