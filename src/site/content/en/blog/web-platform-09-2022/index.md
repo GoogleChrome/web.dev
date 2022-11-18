@@ -43,7 +43,7 @@ Safari has landed support for the `subgrid` value of `grid-template-columns` and
 
 {% BrowserCompat 'css.properties.grid-template-columns.subgrid' %}
 
-Also in Safari for for grid layout is the ability to animate grid tracks. 
+Also, in Safari, for grid layout is the ability to animate grid tracks. 
 
 {% BrowserCompat 'css.properties.grid-template-columns.animation' %}
 

@@ -104,6 +104,8 @@ workers.
 
 ## Browser support
 
+{% BrowserCompat 'javascript.statements.import' %}
+
 ES modules in service workers are supported in Chrome and Edge starting with
 [version 91](https://chromestatus.com/feature/4609574738853888).
 
@@ -111,10 +113,6 @@ Safari added support in the
 [Technology Preview 122 Release](https://webkit.org/blog/11577/release-notes-for-safari-technology-preview-122/#:~:text=Added%20support%20for%20modules%20in%20Service%20Workers),
 and developers should expect to see this functionality released in the stable
 version of Safari in the future.
-
-Firefox does not currently support this functionality, and updates on their
-position can be found in this
-[GitHub issue](https://github.com/mozilla/standards-positions/issues/499).
 
 ## Example code
 

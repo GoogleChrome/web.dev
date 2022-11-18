@@ -73,7 +73,7 @@ above: convert bytes to characters, identify tokens, convert tokens to nodes,
 and build the DOM tree. This entire process can take some time, especially if
 we have a large amount of HTML to process.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/RHpJTxB4gBYuhzILaB7Y.png", alt="Tracing DOM construction in DevTools", width="766", height="180" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/XNtLYpXIK4zOXj9AgG5Y.png", alt="Tracing DOM construction in DevTools", width="766", height="180" %}
 
 {% Aside %}
 We're assuming that you have basic familiarity with Chrome DevTools - that

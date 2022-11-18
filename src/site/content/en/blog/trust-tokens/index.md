@@ -16,6 +16,15 @@ feedback:
   - api
 ---
 
+{% Aside %}
+
+This API [has been renamed](https://developer.chrome.com/blog/rename-trust-tokens/) Private State Tokens. 
+
+The developer.chrome.com article [Private State Tokens](https://developer.chrome.com/docs/privacy-sandbox/trust-tokens/) provides implementation status updates, and explains how to engage and share feedback.
+
+{% endAside %}
+
+
 {% Aside  'caution' %}
 **⚠️ Warning: you may need to update your app!**
 

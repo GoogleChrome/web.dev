@@ -5,12 +5,11 @@ authors:
   - petelepage
 description: The App Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2022-03-28
+updated: 2022-11-01
 tags:
   - blog
   - capabilities
   - progressive-web-apps
-  # - badging
   - notifications
 hero: image/admin/AFvb0uBtN7ZX9qToptEo.jpg
 alt: Neon sign with heart and zero
@@ -39,6 +38,8 @@ information, such as an unread count.
 Badges tend to be more user-friendly than notifications, and can be updated
 with a much higher frequency, since they don't interrupt the user. And,
 because they don't interrupt the user, they don't need the user's permission.
+
+{% BrowserCompat 'api.Navigator.setAppBadge' %}
 
 ### Possible use cases {: #use-cases }
 
@@ -194,6 +195,7 @@ it is to support them.
 ## Helpful links {: #helpful }
 
 * [Public explainer][explainer]
+* [Spec draft][spec]
 * [Badging API Demo][demo] | [Badging API Demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]

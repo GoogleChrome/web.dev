@@ -3,6 +3,8 @@ title: Speedy CSS Tip! Animated Loader
 subhead: Let's make an animated CSS loader with scoped custom properties and animation-timing-function
 date: 2022-09-22
 hero: image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/vzvc5Ep1blYUQMYYnAKT.jpg
+thumbnail: image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/vzvc5Ep1blYUQMYYnAKT.jpg
+alt: An hourglass sits lodged in some sand.
 authors:
   - jheyy
 tags: 
@@ -112,3 +114,4 @@ Done! 🎉
 Prefer this in [tweet form](https://twitter.com/jh3yy/status/1513599688662044684)? 🐦
 
 Stay Awesome! ʕ •ᴥ•ʔ
+

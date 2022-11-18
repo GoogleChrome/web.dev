@@ -169,4 +169,3 @@ function resizeAllParagraphsToMatchBlockWidth() {
 ```
 
 If you want to guarantee safety you should check out [FastDOM](https://github.com/wilsonpage/fastdom), which automatically batches your reads and writes for you, and should prevent you from triggering forced synchronous layouts or layout thrashing accidentally.
-å

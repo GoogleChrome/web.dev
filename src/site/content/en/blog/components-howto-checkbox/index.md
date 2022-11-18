@@ -160,7 +160,7 @@ connectedCallback() {
     this.setAttribute('tabindex', 0);
 ```
 
-A user may set a property on an instance of an element, before its prototype has been connected to this class. The `_upgradeProperty()` method will check for any instance properties and run them through the proper class setters. See the [lazy properties][https://developers.google.com/web/fundamentals/architecture/building-components/best-practices#lazy-properties] section for more details.
+A user may set a property on an instance of an element, before its prototype has been connected to this class. The `_upgradeProperty()` method will check for any instance properties and run them through the proper class setters. See the [lazy properties](/custom-elements-best-practices/#make-properties-lazy) section for more details.
 
 ```js
       this._upgradeProperty('checked');
@@ -189,7 +189,7 @@ A user may set a property on an instance of an element, before its prototype has
     }
 ```
 
-Properties and their corresponding attributes should mirror one another. The property setter for checked handles truthy/falsy values and reflects those to the state of the attribute. See the [avoid reentrancy][https://developers.google.com/web/fundamentals/architecture/building-components/best-practices#avoid-reentrancy] section for more details.
+Properties and their corresponding attributes should mirror one another. The property setter for checked handles truthy/falsy values and reflects those to the state of the attribute. See the [avoid reentrancy](/custom-elements-best-practices/#avoid-reentrancy-issues) section for more details.
 
 ```js
     set checked(value) {

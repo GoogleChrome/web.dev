@@ -1,44 +1,11 @@
-.measure-faq {
-  details {
-    border-inline: 1px solid var(--color-stroke);
-    padding-inline: 1rem;
-
-    summary {
-      color: inherit;
-
-      @include apply-utility('font', 'brand');
-
-      &::before {
-        border: 1px solid var(--color-stroke);
-
-        @include apply-utility('bg', 'core-bg');
-      }
-
-      &::after {
-        @include apply-utility('color', 'action-text');
-      }
-    }
-
-    &:first-of-type {
-      border-top-right-radius: $global-radius-large;
-      border-top-left-radius: $global-radius-large;
-    }
-
-    &:last-of-type {
-      border-bottom-right-radius: $global-radius-large;
-      border-bottom-left-radius: $global-radius-large;
-    }
-  }
+.measure__section {
+  padding-block: clamp(3.75rem, 3.21rem + 2.68vw, 5.625rem);
 }
 
-.measure-tool {
-  min-height: 280px;
-}
-
-.measure-steps {
-  --cluster-vertical-alignment: top;
-
-  .numbered-headers__heading {
-    flex: initial;
+@include media-query('lg') {
+  .measure__page-speed-hero {
+    .hero__content {
+      margin-block-start: get-space('size-4');
+    }
   }
 }

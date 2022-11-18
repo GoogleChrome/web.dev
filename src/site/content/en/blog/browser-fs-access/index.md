@@ -109,6 +109,8 @@ The File System Access API makes both operations, opening and saving, a lot simp
 It also enables *true saving*, that is, you can not only choose where to save a file,
 but also overwrite an existing file.
 
+{% BrowserCompat 'api.Window.showOpenFilePicker' %}
+
 {% Aside %}
   For a more thorough introduction to the File System Access API, see the article
   [The File System Access API: simplifying access to local files](/file-system-access/).
@@ -136,6 +138,8 @@ const openFile = async () => {
 
 Open a directory by calling
 `window.showDirectoryPicker()` that makes directories selectable in the file dialog box.
+
+{% BrowserCompat 'api.Window.showDirectoryPicker' %}
 
 ### Saving files
 

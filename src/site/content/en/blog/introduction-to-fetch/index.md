@@ -20,6 +20,8 @@ tags:
 simpler and cleaner API, avoiding callback hell and having to remember the complex API of
 XMLHttpRequest.
 
+{% BrowserCompat 'api.fetch' %}
+
 The [Fetch API](https://fetch.spec.whatwg.org/) has been available in the
 [Service Worker](https://w3c.github.io/ServiceWorker/) global
 scope since Chrome 40, but it'll be enabled in the window scope in Chrome 42.

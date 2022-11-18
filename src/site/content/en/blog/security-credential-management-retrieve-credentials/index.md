@@ -28,6 +28,8 @@ To enable auto sign-in:
 
 ### Get credential information
 
+{% BrowserCompat 'api.CredentialsContainer.get' %}
+
 To get credential information, invoke
 [`navigator.credentials.get()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get).
 Specify the type of credentials to request
@@ -303,6 +305,8 @@ To implement federated login:
 When a user taps on a federated login button,
 run the specific identity provider authentication flow with the
 [`FederatedCredential`](https://developer.mozilla.org/docs/Web/API/FederatedCredential).
+
+{% BrowserCompat 'api.FederatedCredential' %}
 
 For example, if the provider is Google, use the
 [Google Sign-In JavaScript library](/identity/sign-in/web/):

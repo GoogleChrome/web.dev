@@ -237,6 +237,5 @@ Keeping your PWA's cached assets up-to-date can be a challenge. While the stale 
 ##  Resources
 
 - [Fetch event on MDN](https://developer.mozilla.org/docs/Web/API/FetchEvent)
-- [Service Worker Cookbook](https://serviceworke.rs/)
 - [The Offline Cookbook](/offline-cookbook/)
 - [Cache Match on MDN](https://developer.mozilla.org/docs/Web/API/Cache/match)
