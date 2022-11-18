@@ -150,7 +150,6 @@ You can't add negative time values.
 
 ### `animation-timing-function`
 {% BrowserCompat 'css.properties.animation-timing-function' %}
-{% BrowserCompat 'css.properties.animation-iteration-count' %}
 
 To help recreate natural motion in animation,
 you can use timing functions that calculate the speed of an animation at each point.
