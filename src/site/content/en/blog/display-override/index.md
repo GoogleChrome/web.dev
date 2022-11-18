@@ -121,8 +121,7 @@ Browsers that do not support `display_override` fall back to the `display` prope
 
 ## Browser compatibility
 
-The `display_override` property is supported as of Chromium&nbsp;89. Other browsers support the
-`display` property, which caters to the majority of display mode use cases.
+{% BrowserCompat 'html.manifest.display_override' %}
 
 ## Useful links
 

@@ -22,7 +22,8 @@ feedback:
 
 {% Aside 'success' %}
 The Content Indexing API, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/),
-launched in Chrome&nbsp;84 for Android.
+launched in Chrome 84 for Android.
+{% BrowserCompat api.ContentIndex %}
 {% endAside %}
 
 ## What is the Content Indexing API? {: #what }

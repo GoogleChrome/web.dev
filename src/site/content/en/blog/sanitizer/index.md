@@ -268,6 +268,7 @@ WebKit: See the response on the [WebKit mailing list](https://lists.webkit.org/p
 
 ## How to enable the Sanitizer API
 
+{% BrowserCompat 'api.Sanitizer' %}
 
 ### Enabling via `about://flags` or CLI option
 

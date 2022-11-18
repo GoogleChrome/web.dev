@@ -27,6 +27,8 @@ there's a more straightforward way to do this with the new `aspect-ratio` proper
 
 ## Aspect ratio
 
+{% BrowserCompat 'css.properties.aspect-ratio' %}
+
 Aspect ratio is most commonly expressed as two integers and a colon in the dimensions of:
 width:height, or x:y. The most common aspect ratios for photography are 4:3 and 3:2, while video,
 and more recent consumer cameras, tend to have a 16:9 aspect ratio.

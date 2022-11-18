@@ -25,6 +25,13 @@ _This post highlights a community expert, as a part of [Learn Accessibility!](/l
 
 **Alexandra White**: How'd you get started with web accessibility?
 
+<figure data-float="right">
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/gAeaexQOr9TO1FaNvpqb.jpeg", alt="Olutimilehin Olushuyi's headshot.",
+  width="350", height="334"
+%}
+</figure>
+
 **Olutimilehin Olushuyi (Shuyi)**: Okay, so, it's a funny story. I'm a lawyer.
 I realized in my final year of school, I didn't want to practice law for the
 rest of my life. So, I tried to drop out of school, but my dean and "school
@@ -241,7 +248,7 @@ opposite things. What would you do in those cases?
 
 **Shuyi**: I thought about launching a business for freelance accessibility
 work. I went into a global web accessibility chat channel and asked for tips on
-how to get started. [Adrian Russell](https://adrianrussell.co.uk/) reached out
+how to get started. [Adrian Roselli](https://adrianroselli.com/) reached out
 and said, "Your clients will be relying on you to keep them compliant with laws
 which could have major consequences. Before you offer your services, know what
 region you have expertise in. Know what laws you're familiar with so that,

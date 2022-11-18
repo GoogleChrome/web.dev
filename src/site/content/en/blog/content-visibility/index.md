@@ -41,6 +41,8 @@ on-screen content. Pretty neat.
 
 ## Browser support {: #support }
 
+{% BrowserCompat 'css.properties.content-visibility' %}
+
 `content-visibility` relies on primitives within the [the CSS Containment
 Spec](http://drafts.csswg.org/css-contain/). While `content-visibility` is only
 supported in Chromium 85 for now (and deemed ["worth

@@ -93,17 +93,20 @@ degenerative conditions.
   12 men and 1 in 200 women are colorblind.
   ([Source](https://www.colourblindawareness.org/colour-blindness/))
 * _Tools include_: Screen reader software, screen magnification tools, Braille output devices.
-* _Pain points_: ​Digital products that do not work with screen reader software, mobile websites/apps without pinch to zoom, complex graphs and charts differentiated by colors alone, color contrasts that make it difficult to read text on the screen
+* _Pain points_: Digital products that do not work with screen reader software,
+  mobile websites/apps without pinch to zoom, complex graphs and charts differentiated
+  by colors alone, color contrasts that make it difficult to read text on the screen
 
 {% Aside 'important' %}
-Use lowercase when referring to a vision-loss condition or to a blind person who prefers lowercase. Capitalize for those who capitalize Blind when describing themselves.
+Use lowercase when referring to a vision-loss condition or to a blind person who prefers
+lowercase. Capitalize for those who capitalize Blind when describing themselves.
 {% endAside %}
 
 <blockquote>
   <p>"My vision has deteriorated rapidly over the last three years, and my phone's default font size ranges from large to mega-large. There are a decent amount of mobile apps that I can barely use because of their absurd font sizes."</p>
   <cite>Frank</cite>
 </blockquote>
-     
+
 Read a short [article in the New York Times](https://www.nytimes.com/2022/08/16/opinion/blindness-retinitis-pigmentosa.html)
 or watch a [video](https://youtu.be/X04HKyW-3hc) on what it means to be
 legally blind.
@@ -116,7 +119,7 @@ Mobility impairments
 {% endDetailsSummary %}
 
 [Mobility impairment](https://www.disabled-world.com/disability/types/mobility/)
-is a category of disability that includes people with various physical 
+is a category of disability that includes people with various physical
 disabilities. This type of disability includes upper or lower limb loss or
 disability, manual dexterity, and disability in coordination with different
 organs of the body.
@@ -130,8 +133,9 @@ organs of the body.
 </figure>
 
 * _Examples_: Arthritis, paralysis, amputees, seizure disorders.
-* _Prevalence_: 1 in 7 people have mobility issues. ([Source](https://www.cdc.gov/media/releases/2018/p0816-disability.html#:~:text=One%20in%204%20U.S.%20adults,affects%201%20in%207%20adults.))
-* _Tools include_: Adaptative switches, eye tracking devices, mouth/head sticks, speech input.
+* _Prevalence_: 1 in 7 people have mobility issues.
+  ([Source](https://www.cdc.gov/media/releases/2018/p0816-disability.html#:~:text=One%20in%204%20U.S.%20adults,affects%201%20in%207%20adults.))
+* _Tools include_: Adaptive switches, eye tracking devices, mouth/head sticks, speech input.
 * _Pain points_: Elements that are only designed to work with the use of a mouse.
 
 <blockquote>
@@ -215,7 +219,7 @@ when describing themselves.
 </blockquote>
 
 Read a short
-[article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html) 
+[article in the New York Times](https://www.nytimes.com/2022/08/30/opinion/face-blindness-prosopagnosia.html)
 or watch a [video](https://youtu.be/3-MzNPcEh6M) on face blindness
 (prosopagnosia).
 
@@ -239,7 +243,9 @@ can also result from or be worsened by genetic or environmental conditions or
 occur for unknown reasons.
 
 <figure data-float="right">
- {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6jKwFBXkliZ0wtJgr8tj.png", alt="A person in a green jacket with glasses.", width="183", height="320" %}
+ {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6jKwFBXkliZ0wtJgr8tj.png",
+  alt="A person in a green jacket with glasses.", width="183", height="320"
+ %}
 </figure>
 
 * _Examples_: Epilepsy, vertigo, dizziness, labyrinthitis, balance, and eye movement disorders.
@@ -303,10 +309,11 @@ or watch a [video](https://youtu.be/m0E_wMIwfSI) on stuttering and technology.
 
 {% endDetails %}
 
+### Additional beneficiaries of accessibility
+
 While the number of people with disabilities worldwide is large, it's important
-to remember that these numbers don’t include people who do not identify as
-having a disability but who could benefit from accessible digital products,
-including those who are:
+to remember that these numbers aren't inclusive of everyone that benefits from
+accessible digital spaces. This includes:
 
 * _Temporarily disabled_. It may mean someone has a broken wrist or is
   cognitively impaired due to medication.
@@ -322,13 +329,20 @@ including those who are:
   target size for buttons on their touch device due to an age-related hand
   tremor.
 * _Search engine optimization (SEO) bots_. SEO bots do not have senses like
-  sight and hearing and navigate by keyboard only, so they can also benefit from
-  accessible digital products.
+  sight and hearing and navigate by keyboard only. Your websites will be crawled more effectively when your site is accessible.
 
 ## Business impact
 
 People with disabilities make up almost a fourth of the world's population, but
 did you know that they also have a lot of spending power?
+
+<figure data-float="right">
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/mPFzo0YRdCd8slPOjDgE.png",
+  alt="A collection of coins, representing the lost revenue when disabled communities are ignored.",
+  width="218", height="130"
+%}
+</figure>
 
 According to the
 [American Institutes for Research (AIR)](https://www.researchgate.net/profile/Dahlia-Shaewitz/publication/324603094_A_Hidden_Market_The_Purchasing_Power_of_Working-Age_Adults_With_Disabilities_A_Hidden_Market_The_Purchasing_Power_of_Working-Age_Adults_With_Disabilities/links/5ad89016458515c60f5918f3/A-Hidden-Market-The-Purchasing-Power-of-Working-Age-Adults-With-Disabilities-A-Hidden-Market-The-Purchasing-Power-of-Working-Age-Adults-With-Disabilities.pdf),
@@ -343,11 +357,14 @@ larger network of family members, friends, communities, and institutions. This
 larger network often looks for and supports businesses that create accessible
 digital products. When you factor in the friends and family of the over 1.3
 billion people worldwide who identify as disabled, the disability market
-touches 53% of all consumers. It is the world's largest emerging market.
+touches 53% of all consumers. It's the world's largest emerging market.
 
 In addition to money and market shares, businesses focused on disability
 inclusion as part of an overall diversity strategy are [higher performing and
-more innovative](https://www.w3.org/WAI/business-case/). There are many examples of [everyday products](https://incl.ca/the-evolution-of-assistive-technology-into-everyday-products/) that evolved from technology developed by, or for, people with disabilities, including: 
+more innovative](https://www.w3.org/WAI/business-case/). There are many
+examples of [everyday products](https://incl.ca/the-evolution-of-assistive-technology-into-everyday-products/)
+that evolved from technology developed by, or for, people with disabilities,
+including: 
 
 * Telephones
 * Typewriters / keyboards

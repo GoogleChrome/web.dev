@@ -52,6 +52,10 @@ can limit these calculations to moments when the user interacts with their devic
 
 ## How to use the Idle Detection API {: #use }
 
+### Browser support
+
+{% BrowserCompat 'api.IdleDetector' %}
+
 ### Feature detection
 
 To check if the Idle Detection API is supported, use:
