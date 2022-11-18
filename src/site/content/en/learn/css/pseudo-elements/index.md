@@ -91,7 +91,7 @@ so elements such as `<img />`, `<video>` and `<input>` won't work.
 } %}
 
 {% Aside 'gotchas' %}
-`input[type="checkbox"]` is an exception. 
+`input[type="checkbox"]` is an exception.
 It is allowed to have pseudo-element children.
 {% endAside %}
 
@@ -256,6 +256,7 @@ As with other pseudo-elements, only a subset of CSS properties are allowed:
 - `text` properties
 
 ## `::placeholder`
+{% BrowserCompat 'css.selectors.placeholder' %}
 
 You can add a helper hint to form elements,
 such as `<input>` with a `placeholder` attribute.
@@ -287,6 +288,7 @@ Form elements must be labelled or they will be inaccessible.
 {% endAside %}
 
 ## `::cue`
+{% BrowserCompat 'css.selectors.cue' %}
 
 Last in this tour of pseudo-elements is the
 [`::cue`](https://developer.mozilla.org/docs/Web/CSS/::cue) pseudo-element.

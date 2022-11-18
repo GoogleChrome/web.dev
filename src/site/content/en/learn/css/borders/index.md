@@ -30,6 +30,8 @@ nearly any style that you can think of.
 
 The individual `border` properties provide a way to style the various parts of a border.
 
+{% BrowserCompat 'css.properties.border' %}
+
 ### Style
 
 For a border to appear,

@@ -26,6 +26,8 @@ Background layers are furthest from the user, rendered behind the contents of a 
 
 ## Background color
 
+{% BrowserCompat 'css.properties.background-color' %}
+
 One of the simplest effects you can apply to a background layer is setting the [color](/learn/css/color/). The initial value of `background-color` is `transparent`, which allows the contents of a parent to be visible. A valid color set on a background layer sits behind other things painted on that element.
 
 {% Codepen {
@@ -37,6 +39,8 @@ One of the simplest effects you can apply to a background layer is setting the [
 } %}
 
 ## Background images
+
+{% BrowserCompat 'css.properties.background-image' %}
 
 On top of the `background-color` layer, you can add a background image, using the `background-image` property. A `background-image` accepts the following:
 
@@ -71,6 +75,8 @@ Demo showing example of applying a background-image using gradient functions:
 
 ## Repeating background images
 
+{% BrowserCompat 'css.properties.background-repeat' %}
+
 By default, background images repeat horizontally and vertically to fill the entire space of the background layer.
 
 Change this by using the `background-repeat` property with one of the following values:
@@ -98,6 +104,8 @@ The following demo demonstrates these capabilities of the `background-repeat` pr
 } %}
 
 ## Background position
+
+{% BrowserCompat 'css.properties.background-position' %}
 
 You may have noticed when some images on the Web are styled with a `background-repeat: no-repeat` declaration, such images are displayed top left of their container.
 
@@ -268,6 +276,8 @@ check out [`background-position` on MDN](https://developer.mozilla.org/docs/Web/
 
 ## Background Size
 
+{% BrowserCompat 'css.properties.background-size' %}
+
 The `background-size` property sets the size of background images; By default background images are sized based on their intrinsic (actual) width, height, and aspect ratio.
 
 The `background-size` property uses CSS length and percentage values or specific keywords.  The property accepts up to two parameters corresponding to allowing you to change width and height of a background independently.
@@ -293,6 +303,8 @@ Demo demonstrating applying these keywords to `background-size`:
 } %}
 
 ## Background attachment
+
+{% BrowserCompat 'css.properties.background-attachment' %}
 
 The `background-attachment` property enables you to modify the fixed position behavior of background images (images part of a background layer) once the layer is visible on a screen.
 
@@ -331,6 +343,9 @@ The `local` keyword enables the position of background images to be fixed relati
 } %}
 
 ## Background origin
+
+{% BrowserCompat 'css.properties.background-origin' %}
+
 The `background-origin` property enables you to modify the area of backgrounds associated with a particular box. The values the property accepts correspond to the `border-box` , `padding-box`, and `content-box` regions of a box .
 
 Try these options out using the following demo:
@@ -345,8 +360,9 @@ Try these options out using the following demo:
 
 ## Background clip
 
-The `background-clip` property controls what is visually seen from a background layer regardless of the bounds created by the `background-origin` property.
+{% BrowserCompat 'css.properties.background-clip' %}
 
+The `background-clip` property controls what is visually seen from a background layer regardless of the bounds created by the `background-origin` property.
 
 Like `background-origin` the regions that can be specified are `border-box`, `padding-box`, and `content-box` corresponding to where a CSS background layer can be rendered. When these keywords are used, any rendering of the background further than the region specified will be cropped or clipped.
 
@@ -360,7 +376,9 @@ Like `background-origin` the regions that can be specified are `border-box`, `pa
 
 The `background-clip` property also accepts a `text` keyword that clips the background to be no further than the text within the content box.  For this effect to be evident in the actual text within a CSS box, the text must be partially or completely transparent.
 
-A relatively new property, at the time of this writing, Chrome and most browsers require the `-webkit-` prefix to use this property. For up-to-date information about the browsers that support this option for `background-clip`, [check out this compatibility table](https://caniuse.com/background-clip-text)
+A relatively new property, at the time of this writing, Chrome and most browsers require the `-webkit-` prefix to use this property.
+
+{% BrowserCompat 'css.properties.background-clip' %}
 
 {% Codepen {
   user: 'web-dot-dev',

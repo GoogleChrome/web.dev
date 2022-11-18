@@ -212,6 +212,7 @@ Unlike a physical keyboard, virtual keyboards can be tailored to match the expec
 {% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/xdbqHZ1fp2O8FpwXWQAH.mp4", controls=true, loop=true %}
 
 ### Input modes
+{% BrowserCompat 'html.global_attributes.inputmode' %}
 
 [The `inputmode` attribute](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode) gives you fine-grained control over virtual keyboards. For example, whereas there’s one `input` `type` with a value of `number`, you can use the `inputmode` attribute to differentiate between whole numbers and decimals.
 
@@ -240,6 +241,7 @@ If you’re asking for a number that includes decimal places, like a price, use 
 {% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/gr0tQXIZDgRNFcExwN8W.mp4", controls=true, loop=true %}
 
 ### Autocomplete
+{% BrowserCompat 'html.global_attributes.autocomplete' %}
 
 Nobody likes filling in forms. As a designer, you can improve the experience for your users by enabling them to automatically fill in form fields. [The `autocomplete` attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete) provides you with a host of options for improving contact forms, log-in forms, and checkout forms.
 

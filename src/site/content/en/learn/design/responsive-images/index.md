@@ -14,6 +14,7 @@ Fortunately, you can take measures in CSS to stop this from happening.
 ## Constrain your images
 
 In your stylesheet, you can declare that images should never be rendered at a size wider than their containing element using [`max-inline-size`](https://developer.mozilla.org/docs/Web/CSS/max-inline-size).
+{% BrowserCompat 'css.properties.max-inline-size' %}
 
 ```css
 img {
@@ -59,6 +60,7 @@ But then the browser might squash or stretch the image to make it fit your prefe
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/GNEkQTnMZTde5QB2mkvh.jpg", alt="Profile of a happy-looking handsome dog with a ball in its mouth, but the image is squashed.", width="800", height="400" %}
 
 To prevent that happening, use the [`object-fit`](https://developer.mozilla.org/docs/Web/CSS/object-fit) property.
+{% BrowserCompat 'css.properties.object-fit' %}
 
 An `object-fit` value of `contain` tells the browser to preserve the image's aspect ratio, even if that means leaving empty space above and below.
 
@@ -92,7 +94,10 @@ img {
 
 
 
-If the cropping at the top and bottom evenly is an issue, use  the [object-position](https://developer.mozilla.org/docs/Web/CSS/object-position) CSS property to adjust the focus of the crop. You can make sure the most important image content is still visible.
+If the cropping at the top and bottom evenly is an issue, use the [object-position](https://developer.mozilla.org/docs/Web/CSS/object-position) CSS property to adjust the focus of the crop.
+{% BrowserCompat 'css.properties.object-position' %}
+
+You can make sure the most important image content is still visible.
 
 ```css/5-5
 img {
@@ -105,7 +110,6 @@ img {
 ```
 
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/mZDZFob5QnBl5YmAHh2A.jpg", alt="Profile of a happy-looking handsome dog with a ball in its mouth; the image has only been cropped at the bottom.", width="800", height="400" %}
-
 
 ## Deliver your images
 
@@ -128,7 +132,7 @@ If you know the dimensions of the image you should include `width` and `height` 
 {% Video src="/video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4", controls=true, loop=true %}
 {% Video src="/video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4", controls=true, loop=true %}
  <figcaption>
-   The first video shows a layout without defined image dimensions. Notice how the text jumps once the images load. In the second video, image dimensions have been provided; space is left for the image so that once they load, the text doesn't jump around.  
+   The first video shows a layout without defined image dimensions. Notice how the text jumps once the images load. In the second video, image dimensions have been provided; space is left for the image so that once they load, the text doesn't jump around.
  </figcaption>
 </figure>
 

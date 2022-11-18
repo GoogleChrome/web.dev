@@ -32,6 +32,7 @@ If you want to log in later at the same site, your browser offers you the option
 {% endAside %}
 
 ## How does autofill work in the browser?
+{% BrowserCompat 'html.global_attributes.autocomplete' %}
 
 An address field can look very different on different sites.
 How does a browser know that it is an address field?

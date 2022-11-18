@@ -286,7 +286,6 @@ You can set which direction the timeline runs over your keyframes with
 ### `animation-delay`
 {% BrowserCompat 'css.properties.animation-delay' %}
 
-
 ```css
 .my-element {
 	animation-delay: 5s;
@@ -327,7 +326,6 @@ The default value is `running` and if you set it to `paused`, it will pause the 
 
 ### `animation-fill-mode`
 {% BrowserCompat 'css.properties.animation-fill-mode' %}
-
 
 The [animation-fill-mode](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode)
 property defines which values in your `@keyframes` timeline persist before the animation starts or after it ends.

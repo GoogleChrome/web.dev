@@ -56,9 +56,9 @@ and want them all to blend into each other.
 } %}
 
 The `mix-blend-mode` affects the entire element,
-including its pseudo elements.
+including its pseudo-elements.
 One use-case is in the initial example of a duotone image,
-which has color layers applied to the element through its pseudo elements.
+which has color layers applied to the element through its pseudo-elements.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -69,6 +69,16 @@ Blend modes fall into two categories: separable and non-separable.
 A separable blend mode considers each color component,
 such as RGB, individually.
 A non-separable blend mode considers all color components equally.
+
+## Browser compatibility
+
+### `mix-blend-mode`
+
+{% BrowserCompat 'css.properties.mix-blend-mode' %}
+
+### `background-blend-mode`
+
+{% BrowserCompat 'css.properties.background-blend-mode' %}
 
 ## Separable blend modes
 
@@ -332,7 +342,7 @@ and the luminosity of the backdrop color.
 
 ### Luminosity
 
-Lastly, `luminosity`is the inverse of `color`.
+Lastly, `luminosity` is the inverse of `color`.
 It creates a color with the luminosity of the source color and the hue and saturation of the backdrop color.
 
 ```css
@@ -347,6 +357,8 @@ It creates a color with the luminosity of the source color and the hue and satur
 } %}
 
 ## The `isolation` property
+
+{% BrowserCompat 'css.properties.isolation' %}
 
 If you set the [`isolation`](https://developer.mozilla.org/docs/Web/CSS/isolation)
 property to have a value of `isolate`,

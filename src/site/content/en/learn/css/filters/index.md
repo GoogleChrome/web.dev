@@ -33,10 +33,13 @@ that the text is still readable should the filter effect not be supported in a u
 For example, at the moment
 [`backdrop-filter`](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter)
 is not supported in Firefox,
-and so you should check that Firefox users aren't left with text they cannot easily read.
+and so you should check that Firefox users aren't left with text they cannot easily read:
+{% BrowserCompat 'css.properties.backdrop-filter' %}
 {% endAside %}
 
 ## The `filter` property
+
+{% BrowserCompat 'css.properties.filter' %}
 
 You can apply one or many of the following filters as a value for
 [`filter`](https://developer.mozilla.org/docs/Web/CSS/filter).
@@ -63,6 +66,8 @@ This needs to be a length unit, like `10px`. Percentages are not accepted.
 } %}
 
 ### `brightness`
+
+{% BrowserCompat 'css.types.filter-function.brightness' %}
 
 To increase or decrease the brightness of an element,
 use the brightness function.
@@ -91,6 +96,8 @@ To set 80% brightness with a decimal, write `0.8`.
 
 ### `contrast`
 
+{% BrowserCompat 'css.types.filter-function.contrast' %}
+
 Set a value between 0% and 100% to decrease or increase the contrast, respectively.
 
 ```css
@@ -106,6 +113,8 @@ Set a value between 0% and 100% to decrease or increase the contrast, respective
 } %}
 
 ### `grayscale`
+
+{% BrowserCompat 'css.types.filter-function.grayscale' %}
 
 You can apply a completely grayscale effect by using `1` as a value for `grayscale()`,
 or `0` to have a completely saturated element.
@@ -126,6 +135,7 @@ If you pass a value greater than 100%, it will be capped at 100%.
 } %}
 
 ### `invert`
+{% BrowserCompat 'css.types.filter-function.invert' %}
 
 Just like `grayscale`,
 you can pass `1` or `0` to the `invert()` function to turn it on or off.
@@ -148,6 +158,8 @@ the element will be completely inverted.
 
 ### `opacity`
 
+{% BrowserCompat 'css.types.filter-function.opacity' %}
+
 The `opacity()` filter works just like the `opacity` property,
 where you can pass a number or percentage to increase or reduce opacity.
 If you pass no arguments, the element is fully visible.
@@ -165,6 +177,8 @@ If you pass no arguments, the element is fully visible.
 } %}
 
 ### `saturate`
+
+{% BrowserCompat 'css.types.filter-function.saturate' %}
 
 The saturate filter is very similar to the `brightness` filter and accepts the same argument:
 number or percentage.
@@ -184,6 +198,8 @@ Instead of increasing or decreasing the brightness effect,
 } %}
 
 ### `sepia`
+
+{% BrowserCompat 'css.types.filter-function.sepia' %}
 
 You can add a sepia tone effect with this filter that works like `grayscale()`.
 The sepia tone is a photographic printing technique that converts black tones to brown tones to warm them up.
@@ -205,6 +221,8 @@ Passing no arguments adds a full sepia effect (equivalent to `sepia(100%)`).
 
 ### `hue-rotate`
 
+{% BrowserCompat 'css.types.filter-function.hue-rotate' %}
+
 You learned about how the hue in `hsl` references a rotation of the color wheel in the
 [colors lesson](/learn/css/color) and this filter works in a similar way.
 If you pass an angle, such as degrees or turns,
@@ -224,6 +242,8 @@ changing the part of the color wheel it references. If you pass no argument, it 
 } %}
 
 ### `drop-shadow`
+
+{% BrowserCompat 'css.types.filter-function.drop-shadow' %}
 
 You can apply a curve-hugging drop shadow like you would in a design tool,
 such as Photoshop with
@@ -249,6 +269,8 @@ Learn more about the different types of shadows in the [shadows](/learn/css/shad
 
 ### `url`
 
+{% BrowserCompat 'svg.elements.filter' %}
+
 The `url` filter allows you to apply an SVG filter from a linked SVG element or file.
 You can
 [read more about SVG filters here](https://developer.mozilla.org/docs/Web/SVG/Element/filter)
@@ -260,6 +282,8 @@ You can
 } %}
 
 ## Backdrop filter
+
+{% BrowserCompat 'css.properties.backdrop-filter' %}
 
 The [backdrop-filter](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter)
 property accepts all of the same filter function values as `filter`.

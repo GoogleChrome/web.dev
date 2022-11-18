@@ -274,6 +274,7 @@ In the demo below change the value of the third track.
 } %}
 
 ### The `minmax()` function
+{% BrowserCompat 'css.properties.grid-template-columns.minmax' %}
 
 This function means that you can set a minimum and a maximum size for a track.
 This can be quite useful.
@@ -293,6 +294,7 @@ deduct the size needed for any gaps,
 and share the rest out according to your fr units.
 
 ### `repeat()` notation
+{% BrowserCompat 'css.properties.grid-template-columns.repeat' %}
 
 If you want to create a 12 column track grid with equal columns,
 you could use the following CSS.
@@ -706,6 +708,7 @@ These can look a little confusing until you break down exactly how they go toget
 Whether you want to use them or prefer to use longhands is up to you.
 
 ### `grid-template`
+{% BrowserCompat 'css.properties.grid-template' %}
 
 The [`grid-template`](https://developer.mozilla.org/docs/Web/CSS/grid-template)
 property is a shorthand for `grid-template-rows`, `grid-template-columns` and `grid-template-areas`.
@@ -724,6 +727,7 @@ Column sizing is added after a `/`.
 ```
 
 ### `grid` property
+{% BrowserCompat 'css.properties.grid' %}
 
 The [`grid`](https://developer.mozilla.org/docs/Web/CSS/grid)
 shorthand can be used in exactly the same way as the `grid-template` shorthand.

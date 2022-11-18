@@ -47,6 +47,7 @@ There are plenty of options when it comes to shadows in CSS,
 each designed for a different use case.
 
 ## Box shadow
+{% BrowserCompat 'css.properties.box-shadow' %}
 
 The `box-shadow` property is for adding shadows to the box of an HTML element.
 It works on block elements and inline elements.
@@ -166,6 +167,7 @@ the shadow **won't** break out of that overflow either.
 } %}
 
 ## Text shadow
+{% BrowserCompat 'css.properties.text-shadow' %}
 
 The `text-shadow` property is very similar to the `box-shadow` property.
 It only works on text nodes.
@@ -223,6 +225,7 @@ and you can create some really cool text effects, such as 3D text.
 } %}
 
 ## Drop shadow
+{% BrowserCompat 'css.properties.drop-shadow' %}
 
 To achieve a drop shadow that follows any potential curves of an image,
 use the CSS `drop-shadow` filter.
