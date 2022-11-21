@@ -18,10 +18,7 @@ so they always wait for the listener to finish executing before scrolling the pa
 Passive event listeners solve this problem by letting you indicate
 that an event listener will never prevent scrolling.
 
-## Browser compatibility
-
-Most browsers support passive event listeners. See
-[Browser compatibility](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener#Browser_compatibility)
+{% BrowserCompat 'api.EventTarget.addEventListener' %}
 
 ## How the Lighthouse passive event listener audit fails
 

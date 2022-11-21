@@ -28,7 +28,7 @@ to help us improve!
 ## Identifying this type of hack
 
 The cloaked keywords and link hack automatically creates many pages with
-non-sensical text, links, and images. These pages sometimes contain basic
+nonsensical text, links, and images. These pages sometimes contain basic
 template elements from the original site, so at first glance, the pages might
 look like normal parts of your site until you read the content.
 
@@ -97,7 +97,7 @@ affecting your site, but it isn't required.
 Locate your `.htaccess` file on your site. If you're not sure where to find it
 and you're using a CMS like WordPress, Joomla, or Drupal, search for
 ".htaccess file location" in a search engine along with the name of your CMS.
-Depending on your site, you might see multiple `.htaccess` files. 
+Depending on your site, you might see multiple `.htaccess` files.
 Make a list of all of `.htaccess` file locations.
 
 {% Aside %}
@@ -136,7 +136,7 @@ help from a group of experienced webmasters in the
 #### Step 3
 
 Replace all `.htaccess` files with a clean or default version of the
-`.htaccess` file. You can usually find a default version of a `.htaccess` 
+`.htaccess` file. You can usually find a default version of a `.htaccess`
 file by searching for "default `.htaccess` file" and the name of your CMS.
 For sites with multiple `.htaccess` files, find a clean version of each one
 and perform the replacement.
@@ -267,7 +267,7 @@ to check if there's still hacked content on your site.
 Fixing vulnerabilities on your site is an essential final step for
 fixing your site. A recent study done found that 20% of hacked sites
 get hacked again within 1 day. Knowing exactly how your site was
-hacked is helpful. Read our 
+hacked is helpful. Read our
 [top ways websites get hacked by spammers](/secure/top-ways-websites-get-hacked-by-spammers/)
 guide to start your investigation. However, if you're unable to find out
 how your site was hacked, below is a checklist of things you can do

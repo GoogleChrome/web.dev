@@ -5,7 +5,7 @@ authors:
   - johyphenel
   - rachelandrew
 date: 2019-09-07
-updated: 2020-09-23
+updated: 2022-11-17
 description: >
   Find out how to fix mixed content errors on your website,
   in order to protect users and ensure that all of your content loads.
@@ -140,7 +140,8 @@ Response header:
 {% Aside %}
 The [report-uri](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) response header is being deprecated in favor of
 [report-to](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
-Browser support for `report-to` is currently limited to Chrome and Edge.
+{% BrowserCompat 'http.headers.Content-Security-Policy.report-to' %}
+
 You can provide both headers, in which case `report-uri` will be ignored if the browser supports `report-to`.
 {% endAside %}
 
@@ -172,6 +173,7 @@ or
 [Mixed Content Scan](https://github.com/bramus/mixed-content-scan).
 
 ### Upgrading insecure requests
+{% BrowserCompat 'http.headers.Upgrade-Insecure-Requests' %}
 
 Browsers are beginning to upgrade and block insecure requests.
 You can use CSP directives to force automatic upgrading or blocking of these assets.
@@ -205,33 +207,3 @@ attempting to upgrade requests that the browser currently does not.
 
 The `upgrade-insecure-requests` directive cascades into `<iframe>` documents,
 ensuring the entire page is protected.
-
-### Blocking all mixed content
-
-An alternative option for protecting users is the
-[`block-all-mixed-content`](https://www.w3.org/TR/mixed-content/#strict-checking) CSP directive.
-This directive instructs the browser to never load mixed content;
-all mixed content resource requests are blocked,
-including both active and passive mixed content.
-This option also cascades into `<iframe>` documents, ensuring the entire page is mixed content free.
-
-A page can opt itself into this behavior either by sending a
-`Content-Security-Policy` header with this directive:
-
-```markup
-Content-Security-Policy: block-all-mixed-content
-```
-
-Or by embedding that same directive inline in the document's `<head>`
-section using a `<meta>` element:
-
-```html
-<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
-```
-
-{% Aside %}
-If you set both `upgrade-insecure-requests` and `block-all-mixed-content`
-`upgrade-insecure-requests` will be evaluated and used first.
-The browser will not go on to block requests.
-Therefore you should use one or the other.
-{% endAside %}

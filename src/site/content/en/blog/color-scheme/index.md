@@ -46,11 +46,11 @@ At the same time, this feature prevents browsers from applying any transformatio
 
 #### `prefers-color-scheme`
 
-{% BrowserCompat css.at-rules.media.prefers-color-scheme %}
+{% BrowserCompat 'css.at-rules.media.prefers-color-scheme' %}
 
 #### `color-scheme`
 
-{% BrowserCompat css.properties.color-scheme %}
+{% BrowserCompat 'css.properties.color-scheme' %}
 
 ### The user agent stylesheet
 

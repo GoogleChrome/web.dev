@@ -56,6 +56,7 @@ So for any custom metrics you measure on your site, it's best to use one of the
 following APIs if possible.
 
 ### Performance Observer
+{% BrowserCompat 'api.PerformanceObserver' %}
 
 Understanding the PerformanceObserver API is critical to creating custom
 performance metrics because it's the mechanism by which you get data from all
@@ -193,6 +194,7 @@ try {
 ```
 
 ### Long Tasks API
+{% BrowserCompat 'api.PerformanceLongTaskTiming' %}
 
 The [Long Tasks API](https://w3c.github.io/longtasks/) is useful for knowing
 when the browser's main thread is blocked for long enough to affect frame rate
@@ -228,6 +230,7 @@ try {
 ```
 
 ### Element Timing API
+{% BrowserCompat 'api.PerformanceElementTiming' %}
 
 The [Largest Contentful Paint (LCP)](/lcp/) metric is
 useful for knowing when the largest image or text block was painted to the
@@ -385,6 +388,7 @@ try {
 ```
 
 ### Navigation Timing API
+{% BrowserCompat 'api.PerformanceNavigationTiming' %}
 
 The [Navigation Timing API](https://w3c.github.io/navigation-timing/) is similar
 to the Resource Timing API, but it reports only [navigation

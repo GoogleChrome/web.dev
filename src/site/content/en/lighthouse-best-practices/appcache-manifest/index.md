@@ -34,6 +34,7 @@ For example, this markup causes the audit to fail:
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## Use the Cache API instead of the Application Cache
+{% BrowserCompat 'api.Cache' %}
 
 To pass this audit,
 remove the manifest from your page,

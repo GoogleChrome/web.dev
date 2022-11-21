@@ -18,8 +18,8 @@ that aren't yet prioritizing fetch requests with `<link rel="preconnect">`:
 
 ## Browser compatibility
 
-`<link rel="preconnect">` is supported on most browsers. See
-[Browser compatibility](https://developer.mozilla.org/docs/Web/HTML/Link_types/preconnect#Browser_compatibility).
+`<link rel="preconnect">` is supported on most browsers.
+{% BrowserCompat 'html.elements.link.rel.preconnect' %}
 
 ## Improve page load speed with preconnect
 

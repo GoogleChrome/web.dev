@@ -4,7 +4,7 @@ title: Assess spam damage
 date: 2015-01-01
 updated: 2022-03-04
 description: >
-  FInd out what to do if your site has been hacked to host spam.
+  Find out what to do if your site has been hacked to host spam.
 tags:
   - security
 ---
