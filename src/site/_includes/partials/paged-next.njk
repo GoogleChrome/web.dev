@@ -3,8 +3,20 @@
 <div class="region">
   <div class="wrapper auto-grid">
     {% for element in paged.elements %}
+      {# Prerender the first item, for performance reasons #}
+      {% if loop.first %}
+        <script type="speculationrules">
+        {
+          "prerender": [
+            {
+              "source": "list",
+              "urls": ["{{ element.url }}"]
+            }
+          ]
+        }
+        </script>
+      {% endif %}
       {% set data = element.data %}
-
       {# The `alt` property fallsback onto the element's
       title in cases like authors or tags which do not have an alt. #}
       {{ postCard({
