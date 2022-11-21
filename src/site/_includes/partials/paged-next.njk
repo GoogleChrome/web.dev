@@ -5,16 +5,7 @@
     {% for element in paged.elements %}
       {# Prerender the first item, for performance reasons #}
       {% if loop.first %}
-        <script type="speculationrules">
-        {
-          "prerender": [
-            {
-              "source": "list",
-              "urls": ["{{ element.url }}"]
-            }
-          ]
-        }
-        </script>
+        {% Prerender element.url %}
       {% endif %}
       {% set data = element.data %}
       {# The `alt` property fallsback onto the element's
