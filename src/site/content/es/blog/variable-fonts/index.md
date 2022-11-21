@@ -450,6 +450,8 @@ body {
 
 Para los navegadores más antiguos, el texto con la clase `.super-bold` se renderizará en negrita normal, ya que esa es la única fuente en negrita que tenemos disponible. Cuando se tiene compatibilidad con fuentes variables, podemos usar 1000, el cual es el mayor peso posible.
 
+La regla `@supports` es incompatible con Internet Explorer; por ello, no verá nada en este navegador. Si eso fuera un problema, puede usar una de las [soluciones temporales tradicionales](https://stackoverflow.com/a/20541859/6255000) para conocer los navegadores viejos que sí puede usar.
+
 Si estas utilizando la API de Google Fonts, este se encargará de cargar las fuentes adecuadas para los navegadores de tus visitantes. Supongamos que consultas la fuente Oswald en un rango de peso de 200 a 700 de la siguiente manera:
 
 ```html
