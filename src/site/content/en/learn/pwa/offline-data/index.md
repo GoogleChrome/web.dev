@@ -193,17 +193,14 @@ If you register your offline-ready content using this API, the user will see the
 
 ## API Browser support
 
-### WebStorage
+### Web Storage
 {% BrowserCompat 'api.Window.localStorage' %}
 
-### FileSystem Access
+### File System Access
 {% BrowserCompat 'api.FileSystemHandle' %}
 
 ### Storage Manager
 {% BrowserCompat 'api.StorageManager' %}
-
-### Content Indexing
-{% BrowserCompat 'api.ContentIndex' %}
 
 ##  Resources
 
