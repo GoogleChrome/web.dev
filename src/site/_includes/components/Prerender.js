@@ -24,9 +24,12 @@ const {html} = require('common-tags');
  * @returns {string}
  */
 module.exports = (url) => {
-
   // Only prerender internal URLs
-  if (!url || url.toString().startsWith('http://') || url.toString().startsWith('https://')) {
+  if (
+    !url ||
+    url.toString().startsWith('http://') ||
+    url.toString().startsWith('https://')
+  ) {
     return;
   }
 
@@ -40,8 +43,8 @@ module.exports = (url) => {
           }
         ]
       }
-      </script>
-      <script>
+    </script>
+    <script>
       ga('send', 'event', {
         eventCategory: 'Site-Wide Custom Events',
         eventAction: 'Prerender attempt',
@@ -50,6 +53,6 @@ module.exports = (url) => {
         // Use a non-interaction event to avoid affecting bounce rate.
         nonInteraction: true,
       });
-      </script>
-    `;
-}
+    </script>
+  `;
+};
