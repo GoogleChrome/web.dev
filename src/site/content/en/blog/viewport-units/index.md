@@ -78,7 +78,7 @@ The new viewports also have units assigned to them:
 - Units representing the large viewport have the `lv` prefix. The units are `lvw`, `lvh`, `lvi`, `lvb`, `lvmin`, and `lvmax`.
 - Units representing the small viewport have the `sv` prefix. The units are `svw`, `svh`, `svi`, `svb`, `svmin`, and `svmax`.
 
-The sizes of these viewport-percentage units are fixed _(and therefore stable)_ unless the viewport itself is resized.
+The sizes of these viewport-percentage units are fixed (and therefore stable) unless the viewport itself is resized.
 
 <figure>
   {% Img src="image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/ScGKMyzS1WyS7ByoVvn8.png", alt="Two mobile browser visualizations positioned next to each other. One has an element sized to be 100svh and the other 100lvh.", width="800", height="450", class="screenshot" %}
