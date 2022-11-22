@@ -145,7 +145,7 @@ To reduce phishing within PWAs, some desktop browsers may have additional measur
 
 An experimental capability, known as *tabbed mode*​ will let your PWA have a tab-based design similar to a web browser. In this case, the user can have several tabs opened from the same PWA but all tied together in the same operating system window, as you can see in the following image:
 
-{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BaMO1jZ9N8yLbrcVMtH6.mp4",
+{% Video src="video/W3z1f5ZkBJSgL1V1IfloTIctbIF3/I0idt5S5IvAu5iy0WCq7.mp4",
 autoplay="true",
 loop="true",
 muted="true",
