@@ -33,22 +33,29 @@ module.exports = (url) => {
     return;
   }
 
+  // Only prerender if browser supports speculationrules
+  // and not in SaveData mode (Chrome should exclude SaveData
+  // browser anyway, but no harm double checking)
   return html`
-    <script type="speculationrules">
-      {
-        "prerender": [
-          {
-            "source": "list",
-            "urls": ["${url}"]
-          }
-        ]
-      }
-    </script>
     <script type="module">
       if (
         HTMLScriptElement.supports &&
-        HTMLScriptElement.supports('speculationrules')
+        HTMLScriptElement.supports('speculationrules') &&
+        !navigator?.connection?.saveData
       ) {
+        const specScript = document.createElement('script');
+        specScript.type = 'speculationrules';
+        const specRules = {
+          prerender: [
+            {
+              source: 'list',
+              urls: ['${url}'],
+            },
+          ],
+        };
+        specScript.textContent = JSON.stringify(specRules);
+        document.body.append(specScript);
+
         ga('send', 'event', {
           eventCategory: 'Site-Wide Custom Events',
           eventAction: 'Prerender attempt',
