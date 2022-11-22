@@ -375,6 +375,23 @@ redirects:
     destination: https://developer.chrome.com/articles/local-fonts/
   - source: /notification-triggers
     destination: https://developer.chrome.com/docs/web-platform/notification-triggers/
+  - source: /badging-api
+    destination:  https://developer.chrome.com/articles/badging-api
+  - source: /content-indexing-api
+    destination:  https://developer.chrome.com/articles/content-indexing-api
+  - source: /generic-sensor
+    destination:  https://developer.chrome.com/articles/generic-sensor
+  - source: /idle-detection
+    destination:  https://developer.chrome.com/articles/idle-detection
+  - source: /keyboard-lock
+    destination:  https://developer.chrome.com/articles/keyboard-lock
+  - source: /reporting-observer
+    destination:  https://developer.chrome.com/articles/reporting-observer
+  - source: /serial
+    destination:  https://developer.chrome.com/articles/serial
+  - source: /wake-lock
+    destination:  https://developer.chrome.com/articles/wake-lock
+
 
   # Redirect for Aurora
   - source: /aurora
