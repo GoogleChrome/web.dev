@@ -44,15 +44,20 @@ module.exports = (url) => {
         ]
       }
     </script>
-    <script>
-      ga('send', 'event', {
-        eventCategory: 'Site-Wide Custom Events',
-        eventAction: 'Prerender attempt',
-        eventValue: 1,
-        eventLabel: '${url}',
-        // Use a non-interaction event to avoid affecting bounce rate.
-        nonInteraction: true,
-      });
+    <script type="module">
+      if (
+        HTMLScriptElement.supports &&
+        HTMLScriptElement.supports('speculationrules')
+      ) {
+        ga('send', 'event', {
+          eventCategory: 'Site-Wide Custom Events',
+          eventAction: 'Prerender attempt',
+          eventValue: 1,
+          eventLabel: '${url}',
+          // Use a non-interaction event to avoid affecting bounce rate.
+          nonInteraction: true,
+        });
+      }
     </script>
   `;
 };

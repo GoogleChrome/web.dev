@@ -60,7 +60,7 @@ In [Testing web design color contrast](/testing-web-design-color-contrast/) get
 an overview of three tools and techniques to ensure your content is readable by
 everyone.
 
-In [Building the main navigation for a website](/website-navigation/) learn how to create accessible navigation using semantic HTML. 
+In [Building the main navigation for a website](/website-navigation/) learn how to create accessible navigation using semantic HTML.
 
 ## On the web
 
