@@ -6,7 +6,7 @@ subhead: >
 authors:
   - bramus
 description: >
-  Meet the new viewport units which come in handy on mobile.
+  New CSS units that account for mobile viewports with dynamic toolbars.
 date: 2022-11-29
 hero: image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/3ZKf0cQWs0eESL5WZzb0.png
 alt: Visualization of the small viewport (left) and large viewport (right).
