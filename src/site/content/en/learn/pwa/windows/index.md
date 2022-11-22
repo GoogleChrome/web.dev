@@ -148,8 +148,8 @@ An experimental capability, known as *tabbed mode*​ will let your PWA have a t
 {% Video src="video/W3z1f5ZkBJSgL1V1IfloTIctbIF3/I0idt5S5IvAu5iy0WCq7.mp4",
 autoplay="true",
 loop="true",
-muted="true",
-alt="Video showing the experimental tab-based design", width="800", height="519" %}
+muted="true"
+%}
 
 You can read more about this experimental capability at [Tabbed application mode for PWA](/tabbed-application-mode/).
 
