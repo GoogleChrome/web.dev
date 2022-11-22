@@ -65,8 +65,8 @@ When scrolling down these dynamic toolbars will retract. In this state, elements
 
 To solve this problem, the various states of the viewport have been specified at the CSS Working Group.
 
-- **Large viewport**: The viewport sized assuming any UA interfaces that are dynamically expanded and retracted to be **retracted**.
-- **Small Viewport**: The viewport sized assuming any UA interfaces that are dynamically expanded and retracted to be **expanded**.
+- **Large viewport**: The viewport sized assuming any UA interfaces that are dynamically expanded and retracted to be retracted.
+- **Small Viewport**: The viewport sized assuming any UA interfaces that are dynamically expanded and retracted to be expanded.
 
 <figure>
   {% Img src="image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/ZwgiN6CI2ERg04ntpnNG.png", alt="Visualizations of the large and small viewports.", width="800", height="450", class="screenshot" %}
