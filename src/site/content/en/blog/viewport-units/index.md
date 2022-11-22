@@ -2,7 +2,7 @@
 layout: post
 title: The Large, Small, and Dynamic Viewport units
 subhead: >
-  Meet the new viewport units which come in handy on mobile.
+  New CSS units that account for mobile viewports with dynamic toolbars.
 authors:
   - bramus
 description: >
