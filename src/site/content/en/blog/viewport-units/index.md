@@ -111,7 +111,7 @@ There‘s a few caveats to know about Viewport Units:
 
 - None of the viewport units take the size of scrollbars into account. On systems that have classic scrollbars enabled, an element sized to `100vw` will therefore be a little bit too wide. This is as [per specification](https://www.w3.org/TR/css-values-4/#viewport-relative-lengths:~:text=In%20all%20cases%2C%20scrollbars%20are%20assumed%20not%20to%20exist.).
 
-- The values for the dynamic viewport do not update at 60fps. In all browsers updating is throttled as the UA UI expands or retracts. Some browsers even debounce updating entirely depending on the gesture _(a slow scroll versus a swipe)_ used.
+- The values for the dynamic viewport do not update at 60fps. In all browsers updating is throttled as the UA UI expands or retracts. Some browsers even debounce updating entirely depending on the gesture (a slow scroll versus a swipe) used.
 
 - The on-screen keyboard (also known as the virtual keyboard) is not considered part of the UA UI. Therefore it does not affect the size of the viewport units. In Chrome [you can opt-in to a behavior where the presence of the virtual keyboard does affect the viewport units](https://developer.chrome.com/blog/viewport-resize-behavior/#opting-in-to-a-different-behavior).
 
