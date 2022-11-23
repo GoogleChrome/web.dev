@@ -58,7 +58,7 @@ with rules and limitations on who can publish and what can be published for thei
 These apps are typically shipped as a large, indivisible package, and every update needs re-packaging, re-signing, re-approval, and on-device re-installation.
 {% endAside %}
 
-A challenge for platform-sprecific apps is that they are not compatible with multiple platforms and devices,
+A challenge for platform-specific apps is that they are not compatible with multiple platforms and devices,
 so it's not easy, if even possible,
 to move an Android app to iOS or an iOS to Windows or ChromeOS without creating a new app from scratch.
 
