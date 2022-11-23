@@ -30,7 +30,7 @@ module.exports = (url) => {
     url.toString().startsWith('http://') ||
     url.toString().startsWith('https://')
   ) {
-    return;
+    return '';
   }
 
   // Only prerender if browser supports speculationrules
