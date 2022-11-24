@@ -578,3 +578,13 @@ redirects:
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/
   - source: /use-landmarks
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/
+
+# Redirects for blogs
+  - source: /blog/native-hardware-click-to-call
+    destination: /blog/click-to-call
+  - source: /blog/native-hardware-device-orientation
+    destination: /blog/device-orientation
+  - source: /blog/native-hardware-fullscreen
+    destination: /blog/fullscreen
+  - source: /blog/native-hardware-user-location
+    destination: /blog/user-location
