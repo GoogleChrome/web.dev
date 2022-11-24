@@ -54,13 +54,13 @@ Se nenhuma dessas opções funcionar para você, uma API de baixo nível pode se
 
 ## 🧲 Acessar sensores neste dispositivo {: #sensors}
 
-Use a [API Generic Sensor](/generic-sensor/) para ler os valores brutos dos sensores de movimento (por exemplo, acelerômetro ou giroscópio) e sensores ambientais (por exemplo, luz ambiente, magnetômetro). Se não estiver disponível, use os eventos [DeviceMotion e DeviceOrientation](https://developers.google.com/web/fundamentals/native-hardware/device-orientation) para obter acesso ao acelerômetro, giroscópio e bússola integrados em dispositivos móveis.
+Use a [API Generic Sensor](/generic-sensor/) para ler os valores brutos dos sensores de movimento (por exemplo, acelerômetro ou giroscópio) e sensores ambientais (por exemplo, luz ambiente, magnetômetro). Se não estiver disponível, use os eventos [DeviceMotion e DeviceOrientation](/device-orientation/) para obter acesso ao acelerômetro, giroscópio e bússola integrados em dispositivos móveis.
 
 Se não funcionar para você, uma API de baixo nível pode ser a solução. Confira [Descubra como se comunicar com seu dispositivo](#discover) para iniciar sua jornada.
 
 ## 🛰 Acesse as coordenadas GPS neste dispositivo {: #gps}
 
-Use a [API de geolocalização](/native-hardware-user-location/) para obter a latitude e longitude da posição atual do usuário neste dispositivo.
+Use a [API de geolocalização](/user-location/) para obter a latitude e longitude da posição atual do usuário neste dispositivo.
 
 Se não funcionar para você, uma API de baixo nível pode ser a solução. Confira [Descubra como se comunicar com seu dispositivo](#discover) para iniciar sua jornada.
 
