@@ -1,7 +1,7 @@
 ---
 layout: post
 title: User Location
-subhead: The Geolocation API lets you discover, with the user's consent, the user's location.
+subhead: The Geolocation API lets you discover the user's location, given their consent.
 description: >
   Most browsers and devices have access to the user's geographic location. Learn how to work with the user's location in your site and apps.
 authors:
@@ -409,8 +409,8 @@ Once you've got geolocation set up, you'll want to:
 You can do both from Chrome DevTools.
 
 1. [Open Chrome DevTools](/web/tools/chrome-devtools/#open).
-2. Press `Esc` to [Open the Console Drawer](/web/tools/chrome-devtools/console/#open_as_drawer).
-3. [Open the Console Drawer menu](/web/tools/chrome-devtools/settings#drawer-tabs)
+2. Press <kbd>Esc</kbd> to [Open the Console drawer](/web/tools/chrome-devtools/console/#open_as_drawer).
+3. [Open the Console drawer menu](/web/tools/chrome-devtools/settings#drawer-tabs)
 4. Click the **Sensors** option to show the Sensors tab.
 
 From here you can override the location to a preset major city,
