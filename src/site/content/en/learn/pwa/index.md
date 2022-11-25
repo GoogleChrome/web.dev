@@ -4,18 +4,18 @@ authors:
   - firt
 description: A course that breaks down every aspect of modern progressive web app development.
 date: 2021-11-03
-updated: 2022-02-23
+updated: 2022-05-16
 ---
 
 ## Welcome to Learn Progressive Web Apps!
 
 Welcome to Learn Progressive Web Apps!
 
-This course covers the fundamentals of Progressive Web App development into easy-to-understand pieces.
+This course covers the fundamentals of Progressive Web App development in easy-to-understand pieces.
 Over the following modules, you'll learn what a Progressive Web App is,
 how to create one or upgrade your existing web content,
 and how to add all the pieces for an offline, installable app.
-Use the menu pane by the "Learn PWA" logo to navigate the modules.
+Use the menu pane to navigate the modules. (The menu is at left on desktop or behind the hamburger menu on mobile.)
 
 You'll learn PWA fundamentals like the Web App Manifest,
 service workers, how to design with an app in mind,
