@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Large, Small, and Dynamic Viewport units
+title: The large, small, and dynamic viewport units
 subhead: >
   New CSS units that account for mobile viewports with dynamic toolbars.
 authors:
