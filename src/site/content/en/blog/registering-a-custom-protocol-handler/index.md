@@ -29,5 +29,3 @@ Clicking that link makes a `GET` request to `http://example.com/rph?q=web%2Bmyst
 It's worth noting that Firefox has had `navigator.registerProtocolHandler` implemented since FF3. One difference in Chrome's implementation is around custom protocols. Those need to be prefixed with "web+", as seen in the example above.  The following protocols do not need a "web+" prefix: "mailto", "mms", "nntp", "rtsp", "webcal".
 
 More information on this API can be found on the [MDN article](https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler).
-
-
