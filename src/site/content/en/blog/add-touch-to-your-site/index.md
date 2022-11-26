@@ -151,7 +151,7 @@ for users if they *want* to select the text in the element.
 So make sure you use it with caution and sparingly.
 
 ```css
-/* Example: dDisable selecting text on a paragraph element: *?
+/* Example: Disable selecting text on a paragraph element: */
 p.disable-text-selection {
   user-select: none;
 }
