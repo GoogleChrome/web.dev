@@ -155,6 +155,7 @@ So make sure you use it with caution and sparingly.
 p.disable-text-selection {
   user-select: none;
 }
+```
 
 ## Implement custom gestures
 
