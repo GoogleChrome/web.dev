@@ -18,12 +18,13 @@ description: >
   of Oculus Quest 2's multitasking feature. This article describes the experience and how to build,
   sideload, and test your PWA on the Oculus Quest 2.
 date: 2022-01-10
-updated: 2022-11-13
+updated: 2022-11-27
 tags:
   - blog
   - capabilities
   - progressive-web-apps
   - virtual-reality
+  - augmented-reality
   - webxr
 ---
 
@@ -514,6 +515,46 @@ from the Immersive Web Working Group's [WebXR Samples](https://immersive-web.git
 
 {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/nDm0rY5DvtyTbDgUqFTS.mp4" %}
 
+### Augmented/Mixed Reality (Passthrough)
+
+As announced at Meta Connect 2022, Meta Quest Browser
+[has added support](https://developer.oculus.com/documentation/web/webxr-mixed-reality/) for
+[WebXR Augmented Reality (AR)](/web-ar/), also known as Mixed Reality (MR), on Meta Quest 2 and Meta
+Quest Pro devices.
+
+Let's check a [slightly modified](https://a-frame-hello-world-ar.glitch.me) A-Frame
+[starter example](https://aframe.io/docs/1.3.0/introduction/#getting-started) with scaled-down
+models and hidden sky and plane for augmented reality.
+
+[A-Frame](https://aframe.io) is an open source web framework for building 3D/VR/AR experiences
+entirely out of declarative, reusable [custom HTML elements](/custom-elements-v1/) that is easy to
+read, understand, and copy-and-paste.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity scale="0.2 0.2 0.2">
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" hide-on-enter-ar></a-plane>
+        <a-sky color="#ECECEC" hide-on-enter-ar></a-sky>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
+```
+
+// TODO: add video
+
+Meta Quest 2 has monochrome cameras, so the passthrough is in grayscale, while Meta Quest Pro has
+color cameras.
+
 ## Conclusions
 
 PWAs on Oculus Quest&nbsp;2 are a lot of fun and very promising. The endless virtual canvas that
@@ -525,7 +566,7 @@ typing short texts.
 What I like the most about PWAs on the Oculus Quest&nbsp;2 is that they are just regular PWAs that
 can be used unchanged in a browser tab or through a thin APK wrapper without any platform-specific
 APIs. Targeting multiple platforms with the same code has never been easier. Here's to PWAs in VR
-and on the web. The future is bright!
+and AR on the web. The future is bright!
 
 ## Acknowledgements
 
