@@ -552,7 +552,7 @@ read, understand, and copy-and-paste.
 
 // TODO: add video
 
-Meta Quest 2 has monochrome cameras, so the passthrough is in grayscale, while Meta Quest Pro has
+Meta Quest&nbsp;2 has monochrome cameras, so the passthrough is in grayscale, while Meta Quest Pro has
 color cameras.
 
 ## Conclusions
