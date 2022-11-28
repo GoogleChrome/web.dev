@@ -527,7 +527,7 @@ Let's check a [slightly modified](https://a-frame-hello-world-ar.glitch.me) A-Fr
 models and hidden sky and plane for augmented reality.
 
 [A-Frame](https://aframe.io) is an open source web framework for building 3D/VR/AR experiences
-entirely out of declarative, reusable [custom HTML elements](/custom-elements-v1/) that is easy to
+entirely out of declarative, reusable [custom HTML elements](/custom-elements-v1/) that are easy to
 read, understand, and copy-and-paste.
 
 ```html
