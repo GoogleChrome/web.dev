@@ -151,7 +151,7 @@
         "title": "Update",
         "icon": "update.svg",
         "utilities": {
-          "main": "bg-primary-box-bg color-primary-box-text"
+          "main": "bg-state-update-bg color-state-update-text"
         }
       }
     }

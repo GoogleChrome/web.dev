@@ -123,7 +123,7 @@ function Aside(content, type = 'note') {
     case 'update':
       icon = 'update.svg';
       title = i18n(`i18n.common.${type}`, locale);
-      utilities.main = 'bg-primary-box-bg color-primary-box-text';
+      utilities.main = 'bg-state-update-bg color-state-update-text';
       break;
   }
 
