@@ -550,7 +550,7 @@ read, understand, and copy-and-paste.
 </html>
 ```
 
-// TODO: add video
+{% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/RmPUmnh57gDZ2bbGkOWR.mp4" %}
 
 Meta Quest&nbsp;2 has monochrome cameras, so the passthrough is in grayscale, while Meta Quest Pro has
 color cameras.
