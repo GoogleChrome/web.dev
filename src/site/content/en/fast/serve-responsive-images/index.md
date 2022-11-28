@@ -37,7 +37,9 @@ you're reducing that LCP candidate's [resource load time](/optimize-lcp/#3-reduc
 
 Lower resource load times will lower the load time for an LCP image, which will improve
 the page's LCP score. A lower LCP means users will perceive that your site is loading faster,
-particularly the largest piece of content visible in the viewport during page load.
+particularly the largest piece of content visible in the viewport during page load. Serving
+responsive images can also reduce bandwidth contention for other resources on the page,
+which can improve how fast your page loads in general.
 
 ## Resize images
 
