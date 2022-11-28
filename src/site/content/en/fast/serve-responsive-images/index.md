@@ -31,8 +31,8 @@ you're serving an appropriately sized image for the device. For smaller devices 
 as phones and tablets, this equates to reduced data usage as compared to devices
 with larger screens, such as laptops.
 
-The effects of this on performance go beyond faster loading times for images. For
-example, if your page's [LCP element](/lcp/#what-elements-are-considered) is an image,
+The effects of faster image loading also extends to how your page's [Largest Contentful Paint (LCP)](/lcp/).
+For example, if your page's [LCP element](/lcp/#what-elements-are-considered) is an image,
 you're reducing that LCP candidate's [resource load time](/optimize-lcp/#3-reduce-resource-load-time).
 
 Lower resource load times will lower the load time for an LCP image, which will improve
