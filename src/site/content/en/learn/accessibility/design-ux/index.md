@@ -1,5 +1,5 @@
 ---
-title: 'Design evaluation and testing'
+title: 'Design and User Experience'
 authors:
   - cariefisher
 description: How to perform accessible design evaluation and testing.
