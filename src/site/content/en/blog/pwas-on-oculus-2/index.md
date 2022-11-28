@@ -519,7 +519,7 @@ from the Immersive Web Working Group's [WebXR Samples](https://immersive-web.git
 
 As announced at Meta Connect 2022, Meta Quest Browser
 [has added support](https://developer.oculus.com/documentation/web/webxr-mixed-reality/) for
-[WebXR Augmented Reality (AR)](/web-ar/), also known as Mixed Reality (MR), on Meta Quest 2 and Meta
+[WebXR Augmented Reality (AR)](/web-ar/), also known as Mixed Reality (MR), on Meta Quest&nbsp;2 and Meta
 Quest Pro devices.
 
 Let's check a [slightly modified](https://a-frame-hello-world-ar.glitch.me) A-Frame
