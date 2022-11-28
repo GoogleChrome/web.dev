@@ -1,8 +1,8 @@
 ---
-title: 'Design evaluation and testing'
+title: 'Design and user experience'
 authors:
   - cariefisher
-description: How to perform accessible design evaluation and testing.
+description: Create accessible designs and evaluate your user's experience.
 date: 2022-09-21
 placeholder: true
 tags:
