@@ -42,7 +42,7 @@ module.exports = (url) => {
         "prerender": [
           {
             "source": "list",
-            "urls": ["${url}", "/test1/"]
+            "urls": ["${url}"]
           }
         ]
       }
