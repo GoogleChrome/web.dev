@@ -196,7 +196,7 @@ function logPrerenders() {
         .filter((rules) => rules.map((rule) => rule.source === 'list'))
         .map((rules) => rules.map((rule) => rule.urls))
         .flat()
-        .flat()
+        .flat(),
     );
 
     prerenderURLs.forEach((prerenderURL) => {
