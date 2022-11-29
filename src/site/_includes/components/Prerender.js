@@ -24,18 +24,13 @@ const {html} = require('common-tags');
  * @returns {string}
  */
 module.exports = (url) => {
+  const ORIGIN = 'https://web.dev';
+
   // Only prerender internal URLs
-  if (
-    !url ||
-    url.toString().startsWith('http://') ||
-    url.toString().startsWith('https://')
-  ) {
+  if (!url || new URL(url, ORIGIN).origin !== ORIGIN) {
     return '';
   }
 
-  // Only prerender if browser supports speculationrules
-  // and not in SaveData mode (Chrome should exclude SaveData
-  // browser anyway, but no harm double checking)
   return html`
     <script type="speculationrules">
       {
