@@ -186,7 +186,11 @@ function getPrerenderRules() {
 }
 
 function logPrerenders() {
-  const prerenderURLs = new Set(getPrerenderRules().map((r) => r.urls).flat())
+  const prerenderURLs = new Set(
+    getPrerenderRules()
+      .map((r) => r.urls)
+      .flat(),
+  );
 
   prerenderURLs.forEach((prerenderURL) => {
     ga('send', 'event', {
