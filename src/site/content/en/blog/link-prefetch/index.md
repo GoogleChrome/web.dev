@@ -49,8 +49,6 @@ eBay implemented prefetching for the first five results on a search page to spee
 
 Prefetching entire pages—while costly in terms of bandwidth—can greatly improve most performance metrics. [Time to First Byte (TTFB)](/ttfb/) will often be much lower, as the document request results in a cache hit. Because TTFB will be much lower, any other subsequent time-based metrics will often be much faster, including [Largest Contentful Paint (LCP)](/lcp/) and [First Contentful Paint (FCP)](/fcp/).
 
-[Cumulative Layout Shift (CLS)](/cls/) can also see signficiant improvements, especially in cases where web fonts are necessary to render text. Because the web fonts used by the page will be prefetched along with the HTML document, any font-related layout shifts will be eliminated, as the fonts responsible for the shift won't be network-bound, and will load instantly.
-
 ### Prefetching static assets
 
 Prefetch static assets, like scripts or stylesheets, when subsequent sections the user might visit can be predicted. This is especially useful when those assets are shared across many pages.
