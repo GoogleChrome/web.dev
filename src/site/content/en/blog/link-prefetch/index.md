@@ -47,7 +47,7 @@ For example, in a product listing page, you can prefetch the page for the most p
 eBay implemented prefetching for the first five results on a search page to speed up future pages loads and saw a positive impact on conversion rates.
 {% endAside %}
 
-Prefetching entire pages—while costly in terms of bandwidth—can greatly improve most performance metrics. [Time to First Byte (TTFB)](/ttfb/) will often be much lower, as the document request results in a cache hit. Because TTFB will be much lower, any other subsequent time-based metrics will often be much faster, including [Largest Contentful Paint (LCP)](/lcp/) and [First Contentful Paint (FCP)](/fcp/).
+While prefetching resources does use additional bandwidth, it can greatly improve most performance metrics. [Time to First Byte (TTFB)](/ttfb/) will often be much lower, as the document request results in a cache hit. Because TTFB will be much lower, any other subsequent time-based metrics will often be much faster, including [Largest Contentful Paint (LCP)](/lcp/) and [First Contentful Paint (FCP)](/fcp/).
 
 ### Prefetching static assets
 
