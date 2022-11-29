@@ -47,7 +47,7 @@ For example, in a product listing page, you can prefetch the page for the most p
 eBay implemented prefetching for the first five results on a search page to speed up future pages loads and saw a positive impact on conversion rates.
 {% endAside %}
 
-While prefetching resources does use additional bandwidth, it can greatly improve most performance metrics. [Time to First Byte (TTFB)](/ttfb/) will often be much lower, as the document request results in a cache hit. Because TTFB will be much lower, any other subsequent time-based metrics will often be much faster, including [Largest Contentful Paint (LCP)](/lcp/) and [First Contentful Paint (FCP)](/fcp/).
+While prefetching resources does use additional bandwidth, it can improve most performance metrics. [Time to First Byte (TTFB)](/ttfb/) will often be much lower, as the document request results in a cache hit. Because TTFB will be lower, subsequent time-based metrics will often be lower as well, including [Largest Contentful Paint (LCP)](/lcp/) and [First Contentful Paint (FCP)](/fcp/).
 
 ### Prefetching static assets
 
@@ -61,7 +61,6 @@ At the time of this writing, it is possible to share prefetched resources among 
 
 The effect of prefetching static assets on performance metrics depends on the resource being prefetched:
 
-- Prefetching web fonts can eliminate layout shifts. In cases where [`font-display: swap;` is used](/font-display/), the swap period for the font is eliminated, resulting in faster rendering of the text and eliminating layout shifts. If a future page uses the prefetched font and the page's LCP element is a block of text using a web font, LCP for that element will also be faster.
 - Prefetching images can significantly lower LCP times for LCP image elements.
 - Prefetching stylesheets can improve both FCP and LCP, as the network time to download the stylesheet will be eliminated. Since stylesheets are render blocking, they can reduce LCP when prefetched. In cases where the subsequent page's LCP element is a CSS background image requested via the `background-image` property, the image will also be prefetched as a dependent resource of the prefetched stylesheet.
 - Prefetching JavaScript will allow the processing of the prefetched script to occur much sooner than if it were required to be fetched by the network first during navigation. This can have an effect on responsiveness metrics such as [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/). In cases where markup is rendered on the client via JavaScript, LCP can be improved through reduced resource load delays, and client-side rendering of markup containing a page's LCP element can occur sooner.
