@@ -37,33 +37,14 @@ module.exports = (url) => {
   // and not in SaveData mode (Chrome should exclude SaveData
   // browser anyway, but no harm double checking)
   return html`
-    <script type="module">
-      if (
-        HTMLScriptElement.supports &&
-        HTMLScriptElement.supports('speculationrules') &&
-        !navigator?.connection?.saveData
-      ) {
-        const specScript = document.createElement('script');
-        specScript.type = 'speculationrules';
-        const specRules = {
-          prerender: [
-            {
-              source: 'list',
-              urls: ['${url}'],
-            },
-          ],
-        };
-        specScript.textContent = JSON.stringify(specRules);
-        document.body.append(specScript);
-
-        ga('send', 'event', {
-          eventCategory: 'Site-Wide Custom Events',
-          eventAction: 'Prerender attempt',
-          eventValue: 1,
-          eventLabel: '${url}',
-          // Use a non-interaction event to avoid affecting bounce rate.
-          nonInteraction: true,
-        });
+    <script type="speculationrules">
+      {
+        "prerender": [
+          {
+            "source": "list",
+            "urls": ["${url}", "/test1/"]
+          }
+        ]
       }
     </script>
   `;

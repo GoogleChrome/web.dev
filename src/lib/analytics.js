@@ -172,6 +172,49 @@ function getNavigationType() {
   return '(not set)';
 }
 
+function logPrerenders() {
+  try {
+    /* The below complicated bit of code basically checks it's in this format:
+     *
+     * <script type="speculationrules">
+     *   {
+     *     "prerender": [
+     *       {
+     *         "source": "list",
+     *        "urls": ["url1", url2]
+     *       }
+     *     ],
+     *   }
+     * </script>
+     *
+     * And then extracts the unique URLs
+     */
+    const prerenderURLs = new Set(
+      [...document.querySelectorAll('script[type="speculationrules"]')]
+        .map((script) => JSON.parse(script.innerHTML))
+        .map((json) => json.prerender)
+        .filter((rules) => rules.map((rule) => rule.source === 'list'))
+        .map((rules) => rules.map((rule) => rule.urls))
+        .flat()
+        .flat()
+    );
+
+    prerenderURLs.forEach((prerenderURL) => {
+      ga('send', 'event', {
+        eventCategory: 'Site-Wide Custom Events',
+        eventAction: 'Prerender attempt',
+        eventValue: 1,
+        eventLabel: prerenderURL,
+        // Use a non-interaction event to avoid affecting bounce rate.
+        nonInteraction: true,
+      });
+    });
+  } catch (err) {
+    console.warn('could not read speculationrules', err);
+    trackError(err, 'could not read speculationrules');
+  }
+}
+
 async function initAnalytics() {
   // If prerendering then only init once the page is activated
   await whenActivated;
@@ -213,6 +256,8 @@ async function initAnalytics() {
   onINP(sendToGoogleAnalytics);
   onLCP(sendToGoogleAnalytics);
   onTTFB(sendToGoogleAnalytics);
+
+  logPrerenders();
 }
 
 initAnalytics();
