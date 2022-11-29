@@ -181,9 +181,9 @@ function logPrerenders() {
      *     "prerender": [
      *       {
      *         "source": "list",
-     *        "urls": ["url1", url2]
+     *         "urls": ["url1", "url2"]
      *       }
-     *     ],
+     *     ]
      *   }
      * </script>
      *
