@@ -14,7 +14,7 @@ authors:
 
 date: 2019-12-05
 # Add an updated date to your post if you edit in the future.
-# updated: 2019-11-01
+updated: 2022-11-29
 
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -52,6 +52,14 @@ watch my CDS 2019 talk below.
 {% endAside %}
 
 {% YouTube '7Rrv9qFMWNM' %}
+
+## Why web workers?
+
+JavaScript is, by default, a single-threaded language that runs [tasks](/optimize-long-tasks/#what-is-a-task) on [the main thread](/optimize-long-tasks/#what-is-the-main-thread). However, web workers provide a sort of escape hatch from the main thread by allowing developers to spin up separate threads to handle work off of the main thread. While the scope of web workers is limited and doesn't offer direct access to the DOM, they can be hugely beneficial if there is considerable work that needs to be done that would otherwise overwhelm the main thread.
+
+Where [Core Web Vitals](/vitals/) are concerned, running work off the main thread can be beneficial. In particular, offloading work from the main thread to web workers can reduce contention for the main thread, which can improve important responsiveness metrics such as [Interaction to Next Paint (INP)](/inp/) and [First Input Delay (FID)](/fid/). When the main thread has less work to process, it can respond more quickly to user interactions.
+
+Less main thread work—especially during startup—also carries a potential benefit for [Largest Contentful Paint (LCP)](/lcp/) by reducing long tasks. Rendering an LCP element requires main thread time—either for rendering text or images, which are frequent and common LCP elements—and by reducing main thread work overall, you can ensure that your page's LCP element is less likely to be blocked by expensive work that a web worker could handle instead.
 
 ## Threading with web workers
 
