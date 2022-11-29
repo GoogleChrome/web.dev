@@ -66,11 +66,11 @@ lazy-loading iframes could lead to 2-3% median data savings, 1-2% [First
 Contentful Paint](/fcp/) reductions at the median, and 2% [First Input
 Delay](/fid/) (FID) improvements at the 95th percentile.
 
-Additionally, lazy-loading iframes can impart benefits to [Largst Contentful Paint (LCP)](/lcp/).
+Additionally, lazy-loading off-screen iframes can impart benefits to [Largest Contentful Paint (LCP)](/lcp/).
 [LCP candidates](/lcp/#what-elements-are-considered), such as images or text dependent on web fonts
 in order to render. Because iframes can often require a significant amount of bandwidth in
 order to load all of their subresources, lazy-loading offscreen iframes can significantly
-reduce bandwidth contention on network-constrained devices, leaving more bandwidth to lazy load
+reduce bandwidth contention on network-constrained devices, leaving more bandwidth to load
 resources which contribute to a page's LCP.
 
 ### How does built-in lazy-loading for iframes work?
