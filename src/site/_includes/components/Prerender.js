@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
+const {html, oneLine} = require('common-tags');
+const site = require('../../_data/site');
 
 /**
  * Prerender by adding Speculation Rules JSON
@@ -24,11 +25,12 @@ const {html} = require('common-tags');
  * @returns {string}
  */
 module.exports = (url) => {
-  const ORIGIN = 'https://web.dev';
-
   // Only prerender internal URLs
-  if (!url || new URL(url, ORIGIN).origin !== ORIGIN) {
-    return '';
+  if (!url || new URL(url, site.url).origin !== site.url) {
+    throw new Error(oneLine`
+      Cannot create prerender rule for URL: "${url}",
+      only same-origin prerendering is supported at this time.
+    `);
   }
 
   return html`

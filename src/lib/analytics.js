@@ -186,6 +186,18 @@ function getPrerenderRules() {
 }
 
 function logPrerenders() {
+  // Only log prerender attempts if supported
+  // and not in datasaver mode
+  if (
+    !(
+      HTMLScriptElement.supports &&
+      HTMLScriptElement.supports('speculationrules')
+    ) ||
+    (self.navigator && navigator.connection && navigator.connection.saveData)
+  ) {
+    return;
+  }
+
   const prerenderURLs = new Set(
     getPrerenderRules()
       .map((r) => r.urls)
@@ -195,9 +207,9 @@ function logPrerenders() {
   prerenderURLs.forEach((prerenderURL) => {
     ga('send', 'event', {
       eventCategory: 'Site-Wide Custom Events',
-      eventAction: 'Prerender attempt',
-      eventValue: 1,
+      eventAction: 'prerender_attempt',
       eventLabel: prerenderURL,
+      eventValue: 1,
       // Use a non-interaction event to avoid affecting bounce rate.
       nonInteraction: true,
     });
