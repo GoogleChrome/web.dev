@@ -29,7 +29,7 @@ it is case-sensitive when used as part of an [attribute selector](https://develo
 
 ```html
 <!-- the type attribute is case insensitive: these are equivalent –->
-<input type=”text”>
+<input type='text”>
 <input type=”TeXt”>
 
 <!-- the id attribute is case sensitive: they are not equivalent -–>
@@ -50,7 +50,7 @@ These three tags are equivalent:
 
 ```html
 <input required>
-<input required=””>
+<input required="">
 <input required=”required”>
 ```
 
