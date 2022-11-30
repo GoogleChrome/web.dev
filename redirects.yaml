@@ -391,7 +391,16 @@ redirects:
     destination:  https://developer.chrome.com/articles/serial/
   - source: /wake-lock
     destination:  https://developer.chrome.com/articles/wake-lock/
-
+  - source: /user-agent-client-hints
+    destination: https://developer.chrome.com/articles/user-agent-client-hints/
+  - source: /browser-fs-access
+    destination: https://developer.chrome.com/articles/browser-fs-access/
+  - source: /display-override
+    destination: https://developer.chrome.com/articles/display-override/
+  - source: /file-system-access
+    destination: https://developer.chrome.com/articles/file-system-access/
+  - source: /user-agent-client-hints
+    destination: https://developer.chrome.com/articles/user-agent-client-hints/
 
   # Redirect for Aurora
   - source: /aurora
