@@ -25,7 +25,7 @@ quoting is always recommended.
 
 While HTML is not case-sensitive, some attribute values are. Values that are part of the HTML specification are case-insensitive.
 Strings values that are defined, such as class and id names, are case-sensitive. If an attribute value is case-sensitive in HTML,
-it is case-sensitive when used as part of an [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) in CSS and in JavaScript; otherwise, it’s not.
+it is case-sensitive when used as part of an [attribute selector](https://developer.mozilla.org/docs/Web/CSS/Attribute_selectors) in CSS and in JavaScript; otherwise, it’s not.
 
 ```html
 <!-- the type attribute is case insensitive: these are equivalent –->
@@ -91,7 +91,7 @@ Because of this, it’s important to know which attributes are boolean versus en
 ## Global attributes
 
 Global attributes are attributes that can be set on any HTML element, including elements in the <head>. There are more than
-[30 global attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#list_of_global_attributes). While these can all, in theory, be added to any HTML element, some global attributes have no effect
+[30 global attributes](https://developer.mozilla.org/docs/Web/HTML/Global_attributes#list_of_global_attributes). While these can all, in theory, be added to any HTML element, some global attributes have no effect
 when set on some elements; for example, setting `hidden` on a `<meta>` as meta content is not displayed.
 
 ### `id`
@@ -176,8 +176,8 @@ The markup for the light switch image is:
 <img src="svg/switch2.svg" id="switch"
     alt="light switch" class="light" />
 ```
-The `id` attribute can be used as the parameter for the [`getElementById()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) method and, with a `#` prefix, as part of a
-parameter for the [`querySelector()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) and [`querySelectorAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorall) methods.
+The `id` attribute can be used as the parameter for the [`getElementById()`](https://developer.mozilla.org/docs/Web/API/Document/getElementById) method and, with a `#` prefix, as part of a
+parameter for the [`querySelector()`](https://developer.mozilla.org/docs/Web/API/Document/querySelector) and [`querySelectorAll()`](https://developer.mozilla.org/docs/Web/API/Document/querySelectorall) methods.
 
 ```js
 const switchViaID = document.getElementById("switch");
@@ -195,7 +195,7 @@ Our one JavaScript function makes use of this ability to target elements by thei
 ```
 ### <label>
 
-The [HTML <label> element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) has a `for` attribute that takes as its value the `id` of the form control with which it is associated.
+The [HTML <label> element](https://developer.mozilla.org/docs/Web/HTML/Element/label) has a `for` attribute that takes as its value the `id` of the form control with which it is associated.
 Creating an explicit label by including an `id` on every form control and pairing each with the label’s `for` attribute ensures
 that every form control has an associated label.
 
@@ -263,8 +263,8 @@ the accessible name:
 <h2 id=”about_heading”>What you'll learn</h2>
 ```
 
-There are over 50 `aria-*` states and properties that can be used to ensure accessibility. [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby), [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby),
-[`aria-details`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-details), and [`aria-owns`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-owns) take as their value a space-separated `id` reference list. [`aria-activedescendant`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-activedescendant), which
+There are over 50 `aria-*` states and properties that can be used to ensure accessibility. [`aria-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby), [`aria-describedby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-describedby),
+[`aria-details`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-details), and [`aria-owns`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-owns) take as their value a space-separated `id` reference list. [`aria-activedescendant`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-activedescendant), which
 identifies the currently focused descendant element, takes as its value a single `id` reference: that of the single element
 that has focus (only one element can be focused at a time).
 
@@ -275,7 +275,7 @@ has precedence; users will not hear the <label> text unless the `aria-labelledby
 {% EndAside %}
 
 #### CSS selectors
-In CSS, you can target each section using an id selector, such as `#feedback` or, for less [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity), a case-sensitive
+In CSS, you can target each section using an id selector, such as `#feedback` or, for less [specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity), a case-sensitive
 [attribute selector](https://web.dev/learn/css/selectors/#attribute-selector), `[id=”feedback”]`.
 
 ### `class`
@@ -286,7 +286,7 @@ of the case-sensitive classes for the element.
 {% Aside %}
 Elements can be selected with CSS selectors and DOM methods based on their element names, attributes, attribute values,
 position within the DOM tree, etc. Semantic HTML provides meaningful hooks, making the addition of class names often unnecessary.
-The unique difference between including a class name and using [`document.getElementsByClassName()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName) versus targeting elements
+The unique difference between including a class name and using [`document.getElementsByClassName()`](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName) versus targeting elements
 based on attributes and page structure with the more robust document.querySelectorAll() is that the former returns a live node list, the latter
 is static.
 {% EndAside %}
@@ -333,8 +333,8 @@ is included to add the custom element into the keyboard default tabbing order:
     </share-action>
 ```
 
-The [`role` of `button`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role) informs screen reader users that this element should behave like a button. JavaScript is used to ensure
-the button functionality promise is kept; including handling both [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) and [keydown](https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event) events as well as handling Enter and Space key keypresses.
+The [`role` of `button`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/button_role) informs screen reader users that this element should behave like a button. JavaScript is used to ensure
+the button functionality promise is kept; including handling both [click](https://developer.mozilla.org/docs/Web/API/Element/click_event) and [keydown](https://developer.mozilla.org/docs/Web/API/Element/keydown_event) events as well as handling Enter and Space key keypresses.
 
 Form controls, links, buttons, and [content editable](#contenteditable) elements are able to receive focus; when a keyboard user hits the tab key,
 focus moves to the next focusable element as if they had `tabindex=”0”` set. Other elements are not focusable by default. Adding the `tabindex`
@@ -358,15 +358,15 @@ your content. It is also difficult as a developer to manage and maintain. Focus 
 
 ### `role`
 
-The [`role` attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) is part of the [ARIA specification](https://w3c.github.io/aria/#introroles),
+The [`role` attribute](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles) is part of the [ARIA specification](https://w3c.github.io/aria/#introroles),
 rather than the [WHATWG HMTL specification](https://html.spec.whatwg.org/#global-attributes:attr-aria-role). The `role` attribute can
 be used to provide semantic meaning to content, enabling screen readers to inform site users of an object’s expected user interaction.
 
-There are a few common UI widgets, such as [comboboxes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/combobox_role),
-[menubars](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/menubar_role), [tablists](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tablist_role),
-and [treegrids](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/treegrid_role), that have no native HTML equivalent.
-For example, when creating a tabbed design pattern, the [`tab`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role), `tablist` and
-[`tabpanel`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tabpanel_role) roles can be used. Someone who can physically see
+There are a few common UI widgets, such as [comboboxes](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/combobox_role),
+[menubars](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/menubar_role), [tablists](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/tablist_role),
+and [treegrids](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/treegrid_role), that have no native HTML equivalent.
+For example, when creating a tabbed design pattern, the [`tab`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/tab_role), `tablist` and
+[`tabpanel`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/tabpanel_role) roles can be used. Someone who can physically see
 the user-interface has learned by experience how to navigate the widget and make different panels visible by clicking on associated tabs.
 Including the `tab` role with <button role=”tab”> when a group of buttons is used to show different panels lets the screen reader user know
 that the <button> that currently has focus can toggle a related panel into view rather than implementing typical button-like functionality.
@@ -394,7 +394,7 @@ These three opening tags are equivalent:
 If you include <style contenteditable=”false”>, the element is not editable (unless it’s by default editable, like a <textarea>).
 If the value is invalid, such as <style contenteditable=”😀”> or <style contenteditable=”contenteditable”>, the value defaults to `inherit`.
 
-To toggle between states, query the value of the [HTMLElement.isContentEditable](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable) readonly property.
+To toggle between states, query the value of the [HTMLElement.isContentEditable](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable) readonly property.
 
 ```js
 const editor = document.getElementById("myElement");
@@ -441,7 +441,7 @@ padding:10px;
 We’ve only touched the surface of HTML global attributes. There are even more attributes that apply to only one or a limited set of elements.
 Even with hundreds of defined attributes, you may have a need for an attribute that isn’t in the specification. HTML has you covered.
 
-You can create any custom attribute you want by adding the [`data-`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*) prefix. You can name your attribute anything that starts with `data-`
+You can create any custom attribute you want by adding the [`data-`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/data-*) prefix. You can name your attribute anything that starts with `data-`
 followed by any lowercase series of characters that don’t start with `xml` and don’t contain a colon (`:`).
 
 While HTML is forgiving and won’t break if you create unsupported attributes that don’t start with `data`, or even if you start
@@ -461,7 +461,7 @@ on the element in question.
   HAL and EVE could teach a fan to blow hot air.
 </p>
 ```
-You can use `getAttribute()` using the full attribute name, or you can take advantage of the simpler [`dataset`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) property.
+You can use `getAttribute()` using the full attribute name, or you can take advantage of the simpler [`dataset`](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset) property.
 ```javascript
 el.dataset[machingLearning]; // workshop
 e.dataset.machingLearning; // workshop
