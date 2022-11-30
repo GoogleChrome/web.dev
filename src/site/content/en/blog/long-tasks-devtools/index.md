@@ -4,6 +4,7 @@ subhead: Learn to diagnose costly work preventing user interaction.
 authors:
   - addyosmani
 date: 2019-05-29
+updated: 2022-11-30
 hero: image/admin/QvWXvBSXsRKtpGOcakb5.jpg
 alt: An hourglass with sand pouring through it
 description: |
@@ -26,6 +27,10 @@ A [Long Task](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) is Java
 While a web page is loading, Long Tasks can tie up the main thread and make the page unresponsive to user input even if it looks ready. Clicks and taps often don't work because event listeners, click handlers etc have not yet been attached.
 
 CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms? [The RAIL model](/rail/) suggests you process user input events in [50ms](/rail/#response-process-events-in-under-50ms) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
+
+{% Aside 'important' %}
+While the RAIL model suggests providing a visual response to user input within 100 ms, the [Interaction to Next Paint (INP)](/inp/) metric's thresholds allow for up to 200 ms in order to set more easily achievable expectations, especially for slower devices.
+{% endAside %}
 
 ## Are there Long Tasks in my page that could delay interactivity?
 
@@ -51,6 +56,6 @@ To discover what is causing a long task, select the gray **Task** bar. In the dr
 
 Large scripts are often a major cause of Long Tasks so consider [splitting them up](/reduce-javascript-payloads-with-code-splitting). Also keep an eye on third-party scripts; their Long Tasks can delay primary content from getting interactive.
 
-Break all your work into small chunks (that run in < 50ms) and run these chunks at the right place and time; the right place may even be off the main thread, in a worker. Phil Walton's [Idle Until Urgent](https://philipwalton.com/articles/idle-until-urgent/) is a good read on this topic.
+Break all your work into small chunks (that run in < 50ms) and run these chunks at the right place and time; the right place may even be off the main thread, in a worker. Phil Walton's [Idle Until Urgent](https://philipwalton.com/articles/idle-until-urgent/) is a good read on this topic. Jeremy Wagner also has [an article](/optimize-long-tasks/) with strategies for optimizing and breaking up long tasks in general.
 
 Keep your pages responsive. Minimizing Long Tasks is a great way to ensure your users have a delightful experience when they visit your site. For more on Long Tasks, check out [User-centric Performance Metrics](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_long_tasks).
