@@ -1,5 +1,8 @@
 # web.dev
 
+
+<img src="https://user-images.githubusercontent.com/2766281/204963653-d5889b35-04e8-4176-8e51-632a6d38cb67.svg" style="float:right" width="50" />
+
 [web.dev](https://web.dev) is the ultimate resource for developers of all
 backgrounds to learn, create, and solve on the web. It's meant to not only
 educate developers, but help them apply what they've learned to any site
@@ -136,7 +139,7 @@ If you need to debug the site's build process:
   alt="The Chrome inspect page showing the inspect button"
   src="https://user-images.githubusercontent.com/1066253/61085691-bf125a00-a3e5-11e9-9151-58bd8a50d404.png">
   
-### Linting your markdown, HTML, and CSS
+### Lint your markdown, HTML, and CSS
 
 ```bash
 npm run lint
