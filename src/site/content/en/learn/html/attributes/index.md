@@ -223,7 +223,7 @@ aren't required: this is called an "implicit" label. Labels let all users know w
 ```html
 <label>Send me a reminder</label> <input type="number" name="min"> before the workshop resumes</label>.
 ```
-{% EndAside %}
+{% endAside %}
 
 The association between `for` and `id` makes the information available to users of assistive technologies. In addition,
 clicking anywhere on a label gives focus to the associated element, extending the control's click area. This isn't just helpful
@@ -272,7 +272,7 @@ that has focus (only one element can be focused at a time).
 Using `aria-labelledby`, you can create a reverse association from a form control to multiple labels, including text not
 nested in a <label>, whether the text labels more than one form control or not. If a control has both `<label>` and `aria-labelledby`, the `aria-labelledby`
 has precedence; users will not hear the <label> text unless the `aria-labelledby` includes the id of the label.
-{% EndAside %}
+{% endAside %}
 
 #### CSS selectors
 In CSS, you can target each section using an id selector, such as `#feedback` or, for less [specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity), a case-sensitive
@@ -289,7 +289,7 @@ position within the DOM tree, etc. Semantic HTML provides meaningful hooks, maki
 The unique difference between including a class name and using [`document.getElementsByClassName()`](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName) versus targeting elements
 based on attributes and page structure with the more robust document.querySelectorAll() is that the former returns a live node list, the latter
 is static.
-{% EndAside %}
+{% endAside %}
 
 Building a sound semantic structure enables the targeting of elements based on their placement and function. Sound structure
 enables the use of descendant element selectors, relational selectors, and attribute selectors. As you learn about attributes

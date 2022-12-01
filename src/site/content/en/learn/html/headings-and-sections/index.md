@@ -202,7 +202,7 @@ This is the outline for the visible content of the machine learning workshop sit
 
 {% Aside %}
 This code snippet only includes the content of the `<body>`. The [`<!doctype>`, `<html>`, `<body>`, and meta-information](/learn/html/metadata/) were covered earlier.
-{% endAside%}
+{% endAside %}
 
 As no piece of content is a standalone, complete piece of content, `<section>` is more appropriate than `<article>`; while each has a heading, no section is worthy of a `<footer>`.
 
