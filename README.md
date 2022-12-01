@@ -1,17 +1,17 @@
 # web.dev
 
-![Continuous integration](https://github.com/GoogleChrome/web.dev/workflows/Continuous%20integration/badge.svg)
-
-web.dev is the ultimate resource for developers of all backgrounds to learn,
-create, and solve on the web. It's meant to not only educate developers, but
-help them apply what they've learned to any site they work on, be it personal or
-business.
+[web.dev](https://web.dev) is the ultimate resource for developers of all
+backgrounds to learn, create, and solve on the web. It's meant to not only
+educate developers, but help them apply what they've learned to any site
+they work on, be it personal or business.
 
 ## Found a bug? 👷‍♀️
 
-Thanks for letting us know! Please [file an issue](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=bug&template=bug_report.md&title=) and a team member should reply shortly.
+Thanks for letting us know! Please
+[file an Issue](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=bug&template=bug_report.md&title=)
+and a team member should reply shortly.
 
-## Authoring content ✍️
+## Author content ✍️
 
 Before you start, review the [web.dev handbook](https://web.dev/handbook)
 and familiarize yourself with the publishing process. When you're ready,
