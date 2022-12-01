@@ -47,7 +47,7 @@ domain name. When the protocol is written simply as `//`, it is an implicit prot
 Relative URLs do not include a protocol or domain name. They are "relative" to the current file. MLW is a single-page site,
 but this HTML series has several sections. In order to link from this page to the attributes lesson, a relative URL is used `<a href="../attributes/">Attributes</a>`.
 
-The second link is just a [link fragment identifier](/attributes/#link_fragment_identifier), and will link to the
+The second link is just a [link fragment identifier](learn/html/attributes/#link_fragment_identifier), and will link to the
 element with `id="teachers",` if there is one, on the current page. Browsers also support two "top of page" links: clicking
 on `<a href="#top">Top</a>` (case-insensitive) or simply `<a href="#">Top</a>` will scroll the user to the top of the page,
 unless there is an element with the id of `top` set in the same letter casing.
@@ -89,7 +89,7 @@ For secure sites (those served over `https`), it is possible to [create and run 
 
 When including links that are likely to open other installed applications, it's good to let the user know. Make sure the
 text between the opening and closing tags tells the user what type of link they're about to activate. CSS attribute selectors,
-such as [href^="mailto:"], [href^="tel:"], and [href$=".pdf"] can be used to target styles by application type.
+such as `[href^="mailto:"]`, `[href^="tel:"]`, and `[href$=".pdf"]` can be used to target styles by application type.
 
 ## Downloadable resources
 
@@ -102,15 +102,15 @@ creates. When `hal.svg` is optimized, SVGOMG's download link opening tag is simi
 <a href="blob:https://jakearchibald.github.io/944a5fc8-fdb3-458a-91ee-cdd5964b6646" download="hal.svg">
 ```
 
-There's also a demo of a [<canvas> that creates a downloadable PNG data URL](https://developer.mozilla.org/docs/Web/HTML/Element/a#using_the_download_attribute_to_save_a_canvas_as_a_png).
+There's also a demo of a [`<canvas>` that creates a downloadable PNG data URL](https://developer.mozilla.org/docs/Web/HTML/Element/a#using_the_download_attribute_to_save_a_canvas_as_a_png).
 
 To link to a downloadable resource, include the URL of the asset as the value of the href attribute and the suggested filename
 that can be used in the user's file system as the value of the `download` attribute.
 
 ## Browsing context
 
-The `target` attribute enables the defining of the browsing context for link navigation (and [form submission](form_section)).
-The four case-insensitive, underscore-prefixed keywords were discussed with the [`<base>`](/document-structure/#base) element. They include the default `_self`,
+The `target` attribute enables the defining of the browsing context for link navigation (and [form submission](/learn/html/forms).
+The four case-insensitive, underscore-prefixed keywords were discussed with the [`<base>`](/learn/html/document-structure/#base) element. They include the default `_self`,
 which is the current window, `_blank`, which opens the link in a new tab, `_parent`, which is the parent if the current link is nested
 in an object or iframe, and `_top`, which is the top-most ancestor, especially useful if the current link is deeply nested. `_top` and
 `_parent` are the same as `_self` if the link is not nested. The `target` attribute is not limited to these four key terms: any term

@@ -309,7 +309,7 @@ other at-rules.
 
 While `style` is indeed a global attribute, using it is not recommended. Rather, define styles in a separate file or files.
 That said, the `style` attribute can come in handy during development to enable quick styling such as for testing purposes. Then take the
-'solution' style and stick it in your linked [CSS](/learn/css/) file.
+'solution' style and stick it in your linked [CSS](/learn/css) file.
 
 ### `tabindex`
 The `tabindex` attribute can be added to any element to enable it to receive focus. The `tabindex` value defines whether it
@@ -378,7 +378,7 @@ into a semantic element's role.
 ### `contenteditable`
 
 An element with the `contenteditable` attribute set to `true` is editable, is focusable, and is added to the tab order as if
-`tabindex="0"` were set. Contenteditable is an enumerated attribute supporting the values `true` and `false`, with a default value of `inherit`
+`tabindex="0"` were set. `Contenteditable` is an enumerated attribute supporting the values `true` and `false`, with a default value of `inherit`
 if the attribute is not present or has an invalid value.
 
 These three opening tags are equivalent:
@@ -389,8 +389,8 @@ These three opening tags are equivalent:
 <style contenteditable="true">
 ```
 
-If you include <style contenteditable="false">, the element is not editable (unless it's by default editable, like a <textarea>).
-If the value is invalid, such as <style contenteditable="😀"> or <style contenteditable="contenteditable">, the value defaults to `inherit`.
+If you include `<style contenteditable="false">`, the element is not editable (unless it's by default editable, like a `<textarea>`).
+If the value is invalid, such as `<style contenteditable="😀">` or `<style contenteditable="contenteditable">`, the value defaults to `inherit`.
 
 To toggle between states, query the value of the [HTMLElement.isContentEditable](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable) readonly property.
 
