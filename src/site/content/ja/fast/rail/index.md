@@ -187,7 +187,7 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 - [Max Potential First Input Delay (最初の入力の最大潜在遅延)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)。メインスレッドのアイドル時間に基づいて、アプリがユーザー入力に応答するのにかかる時間を推定する。
 
-- [Does not use passive listeners to improve scrolling performance (スクロールパフォーマンスを向上させるためにパッシブリスナーを使用していない)](/uses-passive-event-listeners/)。
+- [Does not use passive listeners to improve scrolling performance (スクロールパフォーマンスを向上させるためにパッシブリスナーを使用していない)](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/)。
 
 - [Total Blocking Time (合計ブロッキング時間)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)。マウスをクリックしたり、画面をタップしたり、キーボードを押すといった、ユーザー入力への応答がブロックされる合計時間を測定する。
 
@@ -207,7 +207,7 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 - [Avoid chaining critical requests (重要なリクエストを連鎖させない)](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)。
 
-- [Does not use HTTP/2 for all of its resources (すべてのリソースにHTTP / 2を使用していない)](/uses-http2/)。
+- [Does not use HTTP/2 for all of its resources (すべてのリソースにHTTP / 2を使用していない)](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/)。
 
 - [Efficiently encode images (画像を効率的にエンコードしている)](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)。
 

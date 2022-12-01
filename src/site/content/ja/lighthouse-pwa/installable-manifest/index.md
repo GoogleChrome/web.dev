@@ -62,4 +62,4 @@ updated: 2019-09-19
 - [Add a web app manifest (ウェブアプリマニフェストを追加する)](/add-manifest/)
 - [Discover what it takes to be installable (インストール可能にする方法について)](/discover-installable)
 - [Web App Manifest (ウェブアプリマニフェスト)](https://developer.mozilla.org/docs/Web/Manifest)
-- [Does not use HTTPS (HTTPS を使用していない)](/is-on-https/)
+- [Does not use HTTPS (HTTPS を使用していない)](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)

@@ -187,7 +187,7 @@ tags:
 
 - [Максимальная потенциальная задержка первого ввода (First Input Delay)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). Оценивает, как долго ваше приложение будет реагировать на ввод данных пользователем, исходя из времени простоя основного потока.
 
-- [Не использует пассивные прослушиватели для повышения производительности прокрутки](/uses-passive-event-listeners/).
+- [Не использует пассивные прослушиватели для повышения производительности прокрутки](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/).
 
 - [Общее время блокировки (Total Blocking Time)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/). Измеряет общее время, в течение которого страница блокируется от ответа на действия пользователя, такие как щелчки мыши, касания экрана или нажатия клавиатуры.
 
@@ -207,7 +207,7 @@ tags:
 
 - [Избегайте цепочки критических запросов](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-- [Не использует HTTP/2 для всех своих ресурсов](/uses-http2/).
+- [Не использует HTTP/2 для всех своих ресурсов](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
 - [Эффективно кодируйте изображения](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 

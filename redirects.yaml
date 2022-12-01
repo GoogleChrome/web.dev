@@ -662,6 +662,44 @@ redirects:
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/
   - source: /use-landmarks
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/
+  
+  # Redirects for Lighthouse best practices content.
+  - source: /lighthouse-best-practices
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/
+  - source: /appcache-manifest
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/appcache-manifest/
+  - source: /charset
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/charset/
+  - source: /csp-xss
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/
+  - source: /deprecations
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/deprecations/
+  - source: /doctype
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/doctype/
+  - source: /errors-in-console
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/
+  - source: /external-anchors-use-rel-noopener
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/
+  - source: /geolocation-on-start
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/
+  - source: /image-aspect-ratio
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/
+  - source: /js-libraries
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/js-libraries/
+  - source: /is-on-https
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/
+  - source: /no-document-write
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/no-document-write/
+  - source: /no-vulnerable-libraries
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/no-vulnerable-libraries/
+  - source: /notification-on-start
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/notification-on-start/
+  - source: /password-inputs-can-be-pasted-into
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/password-inputs-can-be-pasted-into/
+  - source: /uses-http2
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/
+  - source: /uses-passive-event-listeners
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/
 
 # Redirects for blogs
   - source: /blog/native-hardware-click-to-call

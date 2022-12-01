@@ -62,4 +62,4 @@ updated: 2019-09-19
 - [添加 Web 应用清单](/add-manifest/)
 - [了解如何具备可安装性](/discover-installable)
 - [Web 应用清单](https://developer.mozilla.org/docs/Web/Manifest)
-- [不使用 HTTPS](/is-on-https/)
+- [不使用 HTTPS](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)

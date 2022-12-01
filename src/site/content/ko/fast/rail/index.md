@@ -187,7 +187,7 @@ RAIL 측정을 자동화하는 데 도움이 되는 몇 가지 도구가 있습�
 
 - [최대 잠재적 최초 입력 지연(FID)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/) . 기본 스레드 유휴 시간을 기반으로 앱이 사용자 입력에 응답하는 데 걸리는 시간을 추정합니다.
 
-- [스크롤 성능을 향상시키기 위해 소극적 수신기를 사용하지 않습니다](/uses-passive-event-listeners/) .
+- [스크롤 성능을 향상시키기 위해 소극적 수신기를 사용하지 않습니다](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/) .
 
 - [총 차단 시간](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/) . 마우스 클릭, 화면 탭 또는 키보드 누름과 같은 사용자 입력에 응답하지 못하도록 페이지가 차단된 총 시간을 측정합니다.
 
@@ -207,7 +207,7 @@ RAIL 측정을 자동화하는 데 도움이 되는 몇 가지 도구가 있습�
 
 - [중요한 요청의 연결을 피합니다](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-- [모든 해당 리소스에 대해 HTTP/2를 사용하지 않습니다](/uses-http2/).
+- [모든 해당 리소스에 대해 HTTP/2를 사용하지 않습니다](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
 - [이미지를 효율적으로 인코딩합니다](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 

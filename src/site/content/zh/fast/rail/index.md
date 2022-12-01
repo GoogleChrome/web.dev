@@ -185,7 +185,7 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 - [最大首次输入延迟时间](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)。根据主线程空闲时间估算应用响应用户输入所需的时间。
 
-- [不使用被动侦听器来提高滚动性能](/uses-passive-event-listeners/)。
+- [不使用被动侦听器来提高滚动性能](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/)。
 
 - [总阻塞时间](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)。测量阻止页面响应用户输入（例如鼠标点击、屏幕点击或按键）的总时间。
 
@@ -205,7 +205,7 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 - [避免链接关键请求](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)。
 
-- [不要为其所有资源使用 HTTP/2](/uses-http2/) 。
+- [不要为其所有资源使用 HTTP/2](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/) 。
 
 - [对图像进行高效编码](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)。
 

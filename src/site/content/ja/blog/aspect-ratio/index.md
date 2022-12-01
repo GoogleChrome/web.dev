@@ -166,7 +166,7 @@ img {
 
 ### ボーナスヒント: アスペクト比の画像属性
 
-画像のアスペクト比を設定するもう 1 つの方法は、[画像の属性](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)を使用することです。前もって画像のサイズがわかっている場合、これらのサイズをその `width` と `height` で設定するのが[ベストプラクティス](/image-aspect-ratio/#check-the-images-width-and-height-attributes-in-the-html)とされています。
+画像のアスペクト比を設定するもう 1 つの方法は、[画像の属性](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)を使用することです。前もって画像のサイズがわかっている場合、これらのサイズをその `width` と `height` で設定するのが[ベストプラクティス](https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/#check-the-images-width-and-height-attributes-in-the-html)とされています。
 
 上記の例では、サイズが 800 x 600px であることがわかっている場合、画像のマークアップは、`<img src="image.jpg" alt="..." width="800" height="600">` のようになります。送信される画像のアスペクト比がそれと同じでも、ピクセル値が必ずしも同じでない場合であっても、画像の属性値を使用して比率を設定し、スタイルで `width: 100%` にすることで、画像が適切なスペースを占有するようにすることができます。これらをまとめると、以下のようになります。
 

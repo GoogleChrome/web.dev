@@ -83,4 +83,4 @@ Check their respective sites for full details:
 - [Add a web app manifest](/add-manifest/)
 - [Discover what it takes to be installable](/discover-installable)
 - [Web App Manifest](https://developer.mozilla.org/docs/Web/Manifest)
-- [Does not use HTTPS](/is-on-https/)
+- [Does not use HTTPS](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)

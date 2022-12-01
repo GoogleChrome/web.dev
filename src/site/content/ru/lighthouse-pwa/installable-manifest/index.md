@@ -62,4 +62,4 @@ updated: 2019-09-19
 - [Добавление манифеста веб-приложения](/add-manifest/)
 - [Узнайте, что нужно, чтобы приложение поддерживало установку](/discover-installable)
 - [Манифест веб-приложения](https://developer.mozilla.org/docs/Web/Manifest)
-- Аудит [Does not use HTTPS](/is-on-https/)
+- Аудит [Does not use HTTPS](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)

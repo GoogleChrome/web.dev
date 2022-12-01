@@ -187,7 +187,7 @@ As seguintes auditorias são especialmente relevantes:
 
 - [Atraso de entrada com potencial máximo](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). Estima quanto tempo seu aplicativo levará para responder à entrada do usuário, com base no tempo ocioso da thread principal.
 
-- [Não usa ouvintes passivos para melhorar o desempenho de rolagem](/uses-passive-event-listeners/).
+- [Não usa ouvintes passivos para melhorar o desempenho de rolagem](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/).
 
 - [Tempo total de bloqueio](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/). Mede a quantidade total de tempo que uma página fica bloqueada para responder à entrada do usuário, como cliques do mouse, toques na tela ou pressionamentos de teclado.
 
@@ -207,7 +207,7 @@ As seguintes auditorias são especialmente relevantes:
 
 - [Evite encadear solicitações críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-- [Não usa HTTP/2 para todos os seus recursos](/uses-http2/).
+- [Não usa HTTP/2 para todos os seus recursos](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
 - [Codifique imagens de forma eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 

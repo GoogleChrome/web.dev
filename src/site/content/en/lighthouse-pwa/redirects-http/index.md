@@ -10,7 +10,7 @@ updated: 2020-06-10
 ---
 
 All sites should be protected with HTTPS.
-See the [Does not use HTTPS](/is-on-https) post to learn why
+See the [Does not use HTTPS](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/) post to learn why
 and how to set up HTTPS on your server.
 
 ## How the Lighthouse HTTP redirection audit fails
@@ -42,5 +42,5 @@ make sure that all unsecure HTTP traffic to your site is redirected to HTTPS:
 
 ## Resources
 - [Source code for **Does not redirect HTTP traffic to HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects-http.js)
-- [Does not use HTTPS](/is-on-https)
+- [Does not use HTTPS](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)
 - [Document does not have a valid `rel=canonical`](/canonical)

@@ -35,7 +35,6 @@ module.exports = function () {
 
   const lighthouse = [
     allPaths['lighthouse-pwa'],
-    allPaths['lighthouse-best-practices'],
     allPaths['lighthouse-seo'],
   ].filter(livePaths);
 

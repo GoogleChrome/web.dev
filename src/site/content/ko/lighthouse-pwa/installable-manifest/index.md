@@ -62,4 +62,4 @@ updated: 2019-09-19
 - [웹 앱 매니페스트 추가](/add-manifest/)
 - [설치에 필요한 사항 알아보기](/discover-installable)
 - [웹 앱 매니페스트](https://developer.mozilla.org/docs/Web/Manifest)
-- [HTTPS를 사용하지 않음](/is-on-https/)
+- [HTTPS를 사용하지 않음](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)

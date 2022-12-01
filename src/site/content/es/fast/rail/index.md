@@ -187,7 +187,7 @@ Las siguientes auditorías son especialmente relevantes:
 
 - [Max Potential First Input Delay (FID): Potencial máximo de la Demora de la primera entrada](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). Calcula cuánto tardará su aplicación en responder a la entrada del usuario, según el tiempo de inactividad del hilo principal.
 
-- [No utilizas oyentes pasivos para mejorar el rendimiento del desplazamiento](/uses-passive-event-listeners/).
+- [No utilizas oyentes pasivos para mejorar el rendimiento del desplazamiento](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/).
 
 - [Total Blocking Time (TBT): Tiempo total de bloqueo](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/). Mide la cantidad total de tiempo que una página está bloqueada para que no responda a la entrada del usuario, como los clics del mouse, los toques de la pantalla o las pulsaciones del teclado.
 
@@ -207,7 +207,7 @@ Las siguientes auditorías son especialmente relevantes:
 
 - [Evita encadenar solicitudes críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-- [No usas HTTP/2 para todos tus recursos](/uses-http2/).
+- [No usas HTTP/2 para todos tus recursos](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
 - [Codifica imágenes de manera eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 

@@ -314,7 +314,7 @@ The following audits are especially relevant:
   app will take to respond to user input, based on main thread idle time.
 
 * [Does not use passive listeners to improve scrolling
-  performance](/uses-passive-event-listeners/).
+  performance](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/).
 
 * [Total Blocking Time](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/).
   Measures the total amount of time that a page is blocked from responding to
@@ -346,7 +346,7 @@ The following audits are especially relevant:
 
 * [Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-* [Does not use HTTP/2 for all of its resources](/uses-http2/).
+* [Does not use HTTP/2 for all of its resources](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
 * [Efficiently encode images](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 

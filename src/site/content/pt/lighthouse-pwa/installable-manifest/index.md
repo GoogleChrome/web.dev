@@ -62,4 +62,4 @@ Outros navegadores têm critérios diferentes para instalação e para acionar o
 - [Adicionar um manifesto de aplicativo da web](/add-manifest/)
 - [Descubra o que é necessário para ser instalável](/discover-installable)
 - [Manifesto de aplicativo da web](https://developer.mozilla.org/docs/Web/Manifest)
-- [Não usa HTTPS](/is-on-https/)
+- [Não usa HTTPS](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)
