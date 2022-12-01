@@ -343,7 +343,6 @@ attribute to those elements enables them to receive focus when they would otherw
 If a document includes elements with a `tabindex` of `1` or more, they are included in a separate tab sequence. As you'll notice in the codepen,
 tabbing begins in a separate sequence, in order of lowest value to highest value, before going through those in the regular sequence in source order.
 
-
 <figure>
   {% Codepen {
     user: 'estelle',
