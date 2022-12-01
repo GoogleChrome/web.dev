@@ -29,12 +29,12 @@ it is case-sensitive when used as part of an [attribute selector](https://develo
 
 ```html
 <!-- the type attribute is case insensitive: these are equivalent –->
-<input type='text”>
-<input type=”TeXt”>
+<input type="text">
+<input type="TeXt">
 
 <!-- the id attribute is case sensitive: they are not equivalent -–>
-<div id=”myId”>
-<div id=”MyID”>
+<div id="myId">
+<div id="MyID">
 ```
 
 ## Boolean attributes
@@ -73,15 +73,15 @@ Note that in XML languages, like SVG, all attributes need to include a value, in
 
 Enumerated attributes are sometimes confused with boolean attributes. They are HTML attributes that have a limited set of predefined valid values.
 Like boolean attributes, they have a default value if the attribute is present but the value is missing. For example, if you include `<style contenteditable>`,
-it defaults to `<style contenteditable=”true”>`.
+it defaults to `<style contenteditable="true">`.
 
 Unlike boolean attributes, though, omitting the attribute doesn't mean it's false; a present attribute with a missing value
 isn't necessarily true; and the default for invalid values isn't necessarily the same as a null string. Continuing the example,
 `contenteditable` defaults to `inherit` if missing or invalid, and can be explicitly set to `false`.
 
-The default value depends on the attribute. Unlike boolean values, attributes aren't automatically “true” if present. If you
-include <style contenteditable=”false”>, the element is not editable. If the value is invalid, such as <style contenteditable=”😀”>,
-or, surprisingly, <style contenteditable=”contenteditable”>, the value is invalid and defaults to `inherit`.
+The default value depends on the attribute. Unlike boolean values, attributes aren't automatically "true" if present. If you
+include <style contenteditable="false">, the element is not editable. If the value is invalid, such as <style contenteditable="😀">,
+or, surprisingly, <style contenteditable="contenteditable">, the value is invalid and defaults to `inherit`.
 
 In most cases with enumerated attributes, missing and invalid values are the same. For example, if the `type` attribute on an `<input>`
 is missing, present but without a value, or has an invalid value, it defaults to `text`. While this behavior is common, it is not a rule.
@@ -161,7 +161,7 @@ links in the <nav>, the section with that fragment identifier scrolls into view.
 ```
 
 Comparing the fragment identifiers in the <nav> links, you'll note that each matches the `id` of a <section> in <main>.
-The browser gives us a free “top of page” link. Setting `href=”#top”`, case-insensitive, or simply `href=”#”`, will scroll
+The browser gives us a free "top of page" link. Setting `href="#top"`, case-insensitive, or simply `href="#"`, will scroll
 the user to the top of the page.
 
 The hash-mark separator in the `href` is not part of the fragment identifier. The fragment identifier is always the last
@@ -202,7 +202,7 @@ that every form control has an associated label.
 ```html
 <p>
   <label for="username">Username or email</label>
-  <input id="username" name=”username” autocomplete="email">
+  <input id="username" name="username" autocomplete="email">
 </p>
 <p>
   <label for="password">Password</label>
@@ -213,12 +213,12 @@ that every form control has an associated label.
 While each label can be associated with exactly one form control, a form control may have more than one associated label.
 
 ```html
-<label for="minutes">Send me a reminder</label> <input type="number" name="min" id="minutes"> <label for=”minutes”>before the workshop resumes</label>.
+<label for="minutes">Send me a reminder</label> <input type="number" name="min" id="minutes"> <label for="minutes">before the workshop resumes</label>.
 ```
 
 {% Aside %}
 If the form control is nested between the <label>'s opening and closing tags, the `for` and `id` attributes
-aren't required: this is called an “implicit” label. Labels let all users know what each form control is for.
+aren't required: this is called an "implicit" label. Labels let all users know what each form control is for.
 
 ```html
 <label>Send me a reminder</label> <input type="number" name="min"> before the workshop resumes</label>.
@@ -235,12 +235,12 @@ button.
 <legend>Question 5: Who is an aspiring load balancer?</legend>
 <ul>
 <li>
-<input type="radio" name="q5" value="blendan" id=”q5blendan”>
+<input type="radio" name="q5" value="blendan" id="q5blendan">
 <label for="q5blendan">Blendan Smooth</label>
 </li>
 <li>
 <input type="radio" name="q5" value="hoover" id="q5hoover">
-<label for=”q5hoover”>Hoover Sukhdeep</label>
+<label for="q5hoover">Hoover Sukhdeep</label>
 </li>
 	</ul>
 </fieldset>
@@ -276,7 +276,7 @@ has precedence; users will not hear the <label> text unless the `aria-labelledby
 
 #### CSS selectors
 In CSS, you can target each section using an id selector, such as `#feedback` or, for less [specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity), a case-sensitive
-[attribute selector](/learn/css/selectors/#attribute-selector), `[id=”feedback”]`.
+[attribute selector](/learn/css/selectors/#attribute-selector), `[id="feedback"]`.
 
 ### `class`
 The `class` attribute provides an additional way of targeting elements with CSS (and JavaScript), but serves no other purpose
@@ -310,7 +310,7 @@ other at-rules.
 
 While `style` is indeed a global attribute, using it is not recommended. Rather, define styles in a separate file or files.
 That said, the `style` attribute can come in handy during development to enable quick styling such as for testing purposes. Then take the
-‘solution' style and stick it in your linked [CSS](/learn/css/) file.
+'solution' style and stick it in your linked [CSS](/learn/css/) file.
 
 ### `tabindex`
 The `tabindex` attribute can be added to any element to enable it to receive focus. The `tabindex` value defines whether it
@@ -337,7 +337,7 @@ The [`role` of `button`](https://developer.mozilla.org/docs/Web/Accessibility/AR
 the button functionality promise is kept; including handling both [click](https://developer.mozilla.org/docs/Web/API/Element/click_event) and [keydown](https://developer.mozilla.org/docs/Web/API/Element/keydown_event) events as well as handling Enter and Space key keypresses.
 
 Form controls, links, buttons, and [content editable](#contenteditable) elements are able to receive focus; when a keyboard user hits the tab key,
-focus moves to the next focusable element as if they had `tabindex=”0”` set. Other elements are not focusable by default. Adding the `tabindex`
+focus moves to the next focusable element as if they had `tabindex="0"` set. Other elements are not focusable by default. Adding the `tabindex`
 attribute to those elements enables them to receive focus when they would otherwise not.
 
 If a document includes elements with a `tabindex` of `1` or more, they are included in a separate tab sequence. As you'll notice in the codepen,
@@ -368,10 +368,10 @@ and [treegrids](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/
 For example, when creating a tabbed design pattern, the [`tab`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/tab_role), `tablist` and
 [`tabpanel`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/tabpanel_role) roles can be used. Someone who can physically see
 the user-interface has learned by experience how to navigate the widget and make different panels visible by clicking on associated tabs.
-Including the `tab` role with <button role=”tab”> when a group of buttons is used to show different panels lets the screen reader user know
+Including the `tab` role with <button role="tab"> when a group of buttons is used to show different panels lets the screen reader user know
 that the <button> that currently has focus can toggle a related panel into view rather than implementing typical button-like functionality.
 
-The `role` attribute doesn't change browser behavior or alter keyboard or pointer device interactions—adding `role=”button”`to a <span>
+The `role` attribute doesn't change browser behavior or alter keyboard or pointer device interactions—adding `role="button"`to a <span>
 does not turn it into a <button>. This is why using semantic HTML elements for their intended purpose is recommended. However, when using
 the right element is not possible, the `role` attribute enables informing screen reader users when a non-semantic element has been retrofitted
 into a semantic element's role.
@@ -380,28 +380,28 @@ into a semantic element's role.
 ### `contenteditable`
 
 An element with the `contenteditable` attribute set to `true` is editable, is focusable, and is added to the tab order as if
-`tabindex=”0”` were set. Contenteditable is an enumerated attribute supporting the values `true` and `false`, with a default value of `inherit`
+`tabindex="0"` were set. Contenteditable is an enumerated attribute supporting the values `true` and `false`, with a default value of `inherit`
 if the attribute is not present or has an invalid value.
 
 These three opening tags are equivalent:
 
 ```html
 <style contenteditable>
-<style contenteditable=””>
-<style contenteditable=”true”>
+<style contenteditable="">
+<style contenteditable="true">
 ```
 
-If you include <style contenteditable=”false”>, the element is not editable (unless it's by default editable, like a <textarea>).
-If the value is invalid, such as <style contenteditable=”😀”> or <style contenteditable=”contenteditable”>, the value defaults to `inherit`.
+If you include <style contenteditable="false">, the element is not editable (unless it's by default editable, like a <textarea>).
+If the value is invalid, such as <style contenteditable="😀"> or <style contenteditable="contenteditable">, the value defaults to `inherit`.
 
 To toggle between states, query the value of the [HTMLElement.isContentEditable](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable) readonly property.
 
 ```js
 const editor = document.getElementById("myElement");
 if(editor.contentEditable) {
-    editor.setAttribute("contenteditable", “false);
+    editor.setAttribute("contenteditable", "false);
 } else {
-   editor.setAttribute("contenteditable", "”);
+   editor.setAttribute("contenteditable", "");
 }
 ```
 
@@ -455,17 +455,20 @@ on the element in question.
 
 ```html
 <blockquote data-machine-learning="workshop"
-   data-first-name=”Blendan” data-last-name=”Smooth”
-   data-formerly=”Margarita Maker” data-aspiring=”Load Balancer”
-   data-year-graduated=”2022”>
+   data-first-name="Blendan" data-last-name="Smooth"
+   data-formerly="Margarita Maker" data-aspiring="Load Balancer"
+   data-year-graduated="2022">
   HAL and EVE could teach a fan to blow hot air.
 </p>
 ```
+
 You can use `getAttribute()` using the full attribute name, or you can take advantage of the simpler [`dataset`](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset) property.
+
 ```javascript
 el.dataset[machingLearning]; // workshop
 e.dataset.machingLearning; // workshop
 ```
+
 The `dataset` property returns a `DOMStringMap` object of each element's `data-` attributes. There are several custom attributes
 on the `<blockquote>`. The dataset property means you don't need to know what those custom attributes are in order to access their
 names and values:
@@ -475,6 +478,7 @@ for (let key in el.dataset) {
     customObject[key] = el.dataset[key];
 }
 ```
+
 The attributes in this article are global, meaning they can be applied to any HTML element (though they don't all have an impact on
 those elements). Up next, we take a look at the two attributes from the intro image that we didn't address—`target` and `href`—and
 several other element-specific attributes as we take a deeper look into links.

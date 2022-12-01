@@ -14,7 +14,7 @@ HTML tables are used for displaying tabular data with rows and columns. The deci
 In this section, we are going to discuss all the elements that make up the table, along with some accessibility and usability features you should consider as you present tabular data. While Learn HTML isn't fundamentally about CSS, and there is an entire course dedicated to learning CSS, we will cover some table-specific CSS properties.
 Table elements, in order
 
-The `<table>` tag wraps the table content, including all the table elements. The implicit ARIA role of a `<table>` is `table`; assistive technologies know this element is a table structure containing data arranged in rows and columns. If the table maintains a selection state, has two-dimensional navigation, or allows the user to rearrange cell order, set `role=”grid”`. If the rows of the `grid` can be expanded and collapsed, use `role=”treegrid”` instead.
+The `<table>` tag wraps the table content, including all the table elements. The implicit ARIA role of a `<table>` is `table`; assistive technologies know this element is a table structure containing data arranged in rows and columns. If the table maintains a selection state, has two-dimensional navigation, or allows the user to rearrange cell order, set `role="grid"`. If the rows of the `grid` can be expanded and collapsed, use `role="treegrid"` instead.
 
 Inside the `<table>`, you'll find the table headers (`<thead>`), table bodies (`<tbody>`), and, optionally, table footers (`<tfoot>`). Each of these is made up of table rows (`<tr>`). Rows contain table header (`<th>`) and table data  (`<td>`) cells which, in turn, contain all the data. In the DOM, before any of this, you may find two additional features: the table caption (`<caption>`) and column groups (`<colgroup>`). Depending on whether or not the `<colgroup>` has a `span` attribute, it may contain nested table column (`<col>`) elements.
 
@@ -40,7 +40,7 @@ The caption appears outside the table. The location of the caption can be set wi
 </table>
 ```
 
-Preferably, data tables should have clear headers and a caption, and be simple enough to be almost self-explanatory. Bear in mind that not all users have the same cognitive abilities. When the table is “making a point”, or otherwise needs interpretation, provide a brief summary of the main point or function of the table. Where that summary is placed depends on its length and complexity. If brief, use it as the inner text of the caption. If longer, summarize it in the caption, and provide the summary in the paragraph preceding the table, associating the two with the `aria-describedby` attribute. Putting the table in a [`<figure>`](not_written_yet) and putting the summary in the `<figcaption>` is another optionl.
+Preferably, data tables should have clear headers and a caption, and be simple enough to be almost self-explanatory. Bear in mind that not all users have the same cognitive abilities. When the table is "making a point", or otherwise needs interpretation, provide a brief summary of the main point or function of the table. Where that summary is placed depends on its length and complexity. If brief, use it as the inner text of the caption. If longer, summarize it in the caption, and provide the summary in the paragraph preceding the table, associating the two with the `aria-describedby` attribute. Putting the table in a [`<figure>`](not_written_yet) and putting the summary in the `<figcaption>` is another optionl.
 Data sectioning
 
 The content of tables is made up of up to three sections: zero or more table headers (`<thead>`) , table bodies (`<tbody>`), and table footers (`<tfoot>`). All are optional, with zero or more of each being supported.
@@ -106,7 +106,7 @@ tr > * {
 ```
 In this example, we have a caption, a table header, and a table body. The header has one row containing three header `<th>` cells, thereby creating three columns. The body contains three rows of data: the first cell is a header cell for the row, so we use `<th>` instead of `<td>`.
 
-The `<th>` cell has semantic meaning, with implicit ARIA roles of columnheader or rowheader. It defines the cell as the header for the column or row of table cells, depending on the value of the enumerated `scope` attribute. The browser will default to `col` or `row` if `scope` is not explicitly set. Because we have used semantic markup, the `1956` cell has two headers: Year and Lou Minious. This association tells us that “1956” is the “year” of graduation for “Lou Minious”. In this example, as we can see the entire table, the association is visually apparent. Using `<th>` provides the association even when the header column or row has scrolled out of view. We could have explicitly set `<th scope=”col”>Year</th>` and `<th scope=”row”>Lou Minious</th>` but with a simple table like this, the enumerated default values work. Other values for `scope` include `rowgroup` and `colgroup`, which are useful with complex tables.
+The `<th>` cell has semantic meaning, with implicit ARIA roles of columnheader or rowheader. It defines the cell as the header for the column or row of table cells, depending on the value of the enumerated `scope` attribute. The browser will default to `col` or `row` if `scope` is not explicitly set. Because we have used semantic markup, the `1956` cell has two headers: Year and Lou Minious. This association tells us that "1956" is the "year" of graduation for "Lou Minious". In this example, as we can see the entire table, the association is visually apparent. Using `<th>` provides the association even when the header column or row has scrolled out of view. We could have explicitly set `<th scope="col">Year</th>` and `<th scope="row">Lou Minious</th>` but with a simple table like this, the enumerated default values work. Other values for `scope` include `rowgroup` and `colgroup`, which are useful with complex tables.
 Merging cells
 Similar to MS Excel, Google Sheets, and Numbers, it is possible to join multiple cells into a single cell. This is done with HTML! The `colspan` attribute is used to merge two or more adjacent cells within a single row. The `rowspan` attribute is used to merge cells across rows, being placed on the cell in the top row.
 
@@ -115,32 +115,32 @@ Similar to MS Excel, Google Sheets, and Numbers, it is possible to join multiple
   <caption>MLW Alumni</caption>
   <thead>
     <tr>
-  	<th rowspan="2" id=”name” scope=”col”>Name</th>
-  	<th colspan="2" id=”path”>Career path</th>
-  	<th rowspan="2" id=”year”>Year</th>
+  	<th rowspan="2" id="name" scope="col">Name</th>
+  	<th colspan="2" id="path">Career path</th>
+  	<th rowspan="2" id="year">Year</th>
     </tr>
     <tr>
-  	<th id=”past” scope=”col”>Past</th>
-  	<th id=”future” scope=”col”>Destiny</th>
+  	<th id="past" scope="col">Past</th>
+  	<th id="future" scope="col">Destiny</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-  	<th id=”hal” scope=”row”>Hal Gibrah</th>
-  	<td headers=”hal path past”>Calculator</td>
-  	<td headers=”hal path future”>Mars rover</td>
+  	<th id="hal" scope="row">Hal Gibrah</th>
+  	<td headers="hal path past">Calculator</td>
+  	<td headers="hal path future">Mars rover</td>
   	<td>2020</td>
     </tr>
     <tr>
-  	<th id=”cathy” scope=”row”>Cathy Terr</th>
-  	<td headers=”cathy path past”>Waste disposal</td>
-  	<td headers=”cathy path future”>Automated teller</td>
+  	<th id="cathy" scope="row">Cathy Terr</th>
+  	<td headers="cathy path past">Waste disposal</td>
+  	<td headers="cathy path future">Automated teller</td>
   	<td>2018</td>
     </tr>
     <tr>
-  	<th id=”lou” scope=”row”>Lou Minious</th>
-  	<td headers=”lou path past”>Lightbulb</td>
-  	<td headers=”lou path future”>Smart bulb</td>
+  	<th id="lou" scope="row">Lou Minious</th>
+  	<td headers="lou path past">Lightbulb</td>
+  	<td headers="lou path future">Smart bulb</td>
   	<td>1956</td>
     </tr>
   </tbody>
@@ -149,7 +149,7 @@ Similar to MS Excel, Google Sheets, and Numbers, it is possible to join multiple
 
 ```
 
-In this example, the table header contains two rows. The first header row contains three cells spanning four columns: the middle cell has `colspan=”2”`. This merges two adjacent cells. The first and last cells include `rowspan=”2”. This merges the cell with the cell in the adjacent row, immediately beneath it.
+In this example, the table header contains two rows. The first header row contains three cells spanning four columns: the middle cell has `colspan="2"`. This merges two adjacent cells. The first and last cells include `rowspan="2". This merges the cell with the cell in the adjacent row, immediately beneath it.
 
 The second row in the table header contains two cells; these are the cells for the second and third columns in the second row. No cell is declared for the first or last column as the cell in the first and last columns in the first row span two rows.
 
@@ -197,7 +197,7 @@ While sorting table columns is the purview of JavaScript, marking up your header
 
 ```html
 <table>
-<caption aria-live="polite">MLW alumni <span class=”sr”>Sorted by name descending</span></caption>
+<caption aria-live="polite">MLW alumni <span class="sr">Sorted by name descending</span></caption>
 <thead>
 <tr>
 <th scope="col" aria-sort="ascending">
@@ -230,7 +230,7 @@ While sorting table columns is the purview of JavaScript, marking up your header
 </tr>
 </thead>
 ```
-If you're not presenting tabular data, don't use a `<table>`. If you do use a table for presentation,, set `role=”none”`.
+If you're not presenting tabular data, don't use a `<table>`. If you do use a table for presentation,, set `role="none"`.
 
 Many developers use tables to lay out forms but there is no need to. But you do need to know about HTML forms, so we will cover that next.
 Check your understanding

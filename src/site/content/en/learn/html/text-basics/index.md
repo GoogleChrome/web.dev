@@ -26,7 +26,7 @@ Some user agent stylesheets include the following selectors, or similar, to styl
 h2, :is(article, aside, nav, section) h1 {}
 h3, :is(article, aside, nav, section) :is(article, aside, nav, section) h1 {}
 ```
-But the Accessibility Object Model, or AOM, still reports the level of the element correctly; in this case, “heading, level 1”. Note that the browser doesn't do this for other heading levels. That said, don't use heading level-based browser styling. Even though browsers don't support outlining, pretend they do; mark up your content headings as if they do. That will make your content make sense to search engines, screen readers, and future maintainers (which just might well be you).
+But the Accessibility Object Model, or AOM, still reports the level of the element correctly; in this case, "heading, level 1". Note that the browser doesn't do this for other heading levels. That said, don't use heading level-based browser styling. Even though browsers don't support outlining, pretend they do; mark up your content headings as if they do. That will make your content make sense to search engines, screen readers, and future maintainers (which just might well be you).
 
 Outside of headings, most structured text is made up of a series of paragraphs. In HTML, paragraphs are marked up with the `<p>` tag; the closing tag is optional but always advised.
 
@@ -47,8 +47,8 @@ The #about section has a heading and a few paragraphs:
 This section is not a landmark as it doesn't have an accessible name. To turn this into a `region`, which is a landmark role, you can use `aria-labelledby` to provide the accessible name:
 
 ```html
-<section id="about"  aria-labelledby=”about_heading”>
-<h2 id=”about_heading”>What you'll learn</h2>
+<section id="about"  aria-labelledby="about_heading">
+<h2 id="about_heading">What you'll learn</h2>
 ```
 Only create landmarks if and when appropriate. Having too many landmarks can quickly become disorienting for screen reader users.
 {% endAside%}
@@ -105,7 +105,7 @@ The citation element `<cite>` has no implicit role and should get its accessible
 To provide credit where credit is due when you can't make the content visible, there is the `cite` attribute which takes as its value the URL of the source document or message for the information quoted. This attribute is valid on both `<q>` and `<blockquote>`. While it's a URL, it is machine readable but not visible to the reader:
 
 ```html
-<blockquote cite=”https://loadbalancingtoday.com/mlw-workshop-review”>Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you!
+<blockquote cite="https://loadbalancingtoday.com/mlw-workshop-review">Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you!
 </blockquote>
 <p>--Blendan Smooth,<br>
 Former Margarita Maker, <br>
@@ -132,7 +132,7 @@ q::before {content: open-quote;}
 q::after {content: close-quote;}
 ```
 
-The [`lang` attribute](link to lang in article 1) is included to let the browser know that, while base language of the page was defined as English in the `<html lang=”en-US”> opening tag, this paragraph of text is in a different language. This helps voice controls such as Siri, Alexa, and voiceOver use French pronunciation. It also informs the browser what type of quotes to render.
+The [`lang` attribute](link to lang in article 1) is included to let the browser know that, while base language of the page was defined as English in the `<html lang="en-US"> opening tag, this paragraph of text is in a different language. This helps voice controls such as Siri, Alexa, and voiceOver use French pronunciation. It also informs the browser what type of quotes to render.
 
 
 
@@ -143,7 +143,7 @@ Like `<blockquote>`, the `<q>` element supports the `cite` attribute.
 ```
 
 HTML Entities
-You may have noticed the escape sequence or “entity”. Because the `< ` is used in HTML, you have to escape it using either `&lt;` or a less easy-to-remember encoding `&#x3C;`. There are four reserved entities in HTML: `<`, `>`, `&`, and `“`. Their character references are `&lt`, `&gt`, `&amp;` and `&quot;` respectively.
+You may have noticed the escape sequence or "entity". Because the `< ` is used in HTML, you have to escape it using either `&lt;` or a less easy-to-remember encoding `&#x3C;`. There are four reserved entities in HTML: `<`, `>`, `&`, and `"`. Their character references are `&lt`, `&gt`, `&amp;` and `&quot;` respectively.
 
 A few other entities you will often use are `&copy;`  for copyright (©),` &tm;` for Trademark (™), and `&nbsp;` for non-breaking space. Non-breaking spaces are useful when you want to include a space between two characters or words while preventing a line break from occurring there. There are over 2,000 named character references. But, if needed, every single character, including emojis, has an encoded equivalent that starts with `&#`.
 
@@ -159,9 +159,9 @@ The last sentence in this blockquote can also be written as:
 This has no&#x336;&#x33C;&#x356;&tcedil;&#x318;h&#x31D;&#x330;&#x329;&#x348;&#x317;i&#x319;&#x32A;n&#x34F;&#x329;&#x319;&#x34D;&#x331;&#x32B;&#x31C;&#x31F;g&#x322;&#x323;&#x345; &#x317;&#x330;&#x353;&#x332;&#x31E;&#x300;t&#x359;&#x300;o&#x31F;&#x316;&#x356;&#x339;&#x315; &#x353;&#x33C;&#x34E;&#x31D;&#x356;&#x32D;d&oacute;&#x32A;&#x320;&#x355;&#x31C; &#x34D;&#x331;&#x34E;&#x35A;&#x32F;&#x31F;&#x301;w&#x32E;&#x332;&#x339;&#x355;&#x348;&#x31F;&#x35E;&igrave;th&#x322; &#x330;&#x333;&#x32F;&#x32E;&#x347;
 ```
 
-There are a few unescaped characters and a few named character references in this code mess. Because the character set is UTF-8, the last few characters in the blockquote don't actually need to be escaped, as in this example. Only characters not supported by the character set need to be escaped. If needed, there are many tools to enable escaping various characters, or you can just ensure you include `<meta charset=”UTF-8”>` in the `<head>`.
+There are a few unescaped characters and a few named character references in this code mess. Because the character set is UTF-8, the last few characters in the blockquote don't actually need to be escaped, as in this example. Only characters not supported by the character set need to be escaped. If needed, there are many tools to enable escaping various characters, or you can just ensure you include `<meta charset="UTF-8">` in the `<head>`.
 
-Even when you specify the character set as UTF-8, you still have to escape the `<` when you want to print that character to the screen. Generally, you don't need to include the named character references for >, “, or &; but if you want to write a tutorial on HTML entities, you do need to write `&amp;lt;` when teaching someone how to code a `<`. 😀
+Even when you specify the character set as UTF-8, you still have to escape the `<` when you want to print that character to the screen. Generally, you don't need to include the named character references for >, ", or &; but if you want to write a tutorial on HTML entities, you do need to write `&amp;lt;` when teaching someone how to code a `<`. 😀
 
 Oh, and that smiley emoji is `&#x1F600;`, but this doc is declared as UTF-8, so it isn't escaped.
 Check your understanding

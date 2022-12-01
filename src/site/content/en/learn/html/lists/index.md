@@ -32,7 +32,7 @@ By default, each unordered list item is prefixed with a bullet. The unordered li
 
 Ordered lists
 
-The <ol> element is the parent element for ordered lists of items. The only children of an <ol> are one or more <li> elements, or list items. The “bullets” in this case, though, are numbers of a multitude of types. The type can be defined in CSS with the `list-style-type` property or via the `type` attribute.
+The <ol> element is the parent element for ordered lists of items. The only children of an <ol> are one or more <li> elements, or list items. The "bullets" in this case, though, are numbers of a multitude of types. The type can be defined in CSS with the `list-style-type` property or via the `type` attribute.
 
 ```html
 <ol>
@@ -155,7 +155,7 @@ Aspiring Nuclear Codes Handler
 Nesting lists within lists is also very common. While MLW doesn't have any nested lists, this site does. In the first chapter of this series, Overview of HTML, the main elements section has two subsections. In the table of contents, which is an unordered list, there is a nested unordered list with links to these two sections:
 
 ```html
-<ul role=”list”>
+<ul role="list">
     <li>
    	 <a href="#e">Elements</a>
    	 <ul>
@@ -181,14 +181,14 @@ Nesting lists within lists is also very common. While MLW doesn't have any neste
 
 As the only child of a `<ul>` is an `<li>`, a nested list is found nested in an `<li>`, never directly in an `<ol>` or `<ul>`.
 
-In this last example, you may have noticed that `role=”list”` is included on the `<ul>`. While the implicit role of both the `<ul>` and `<ol>` is `list`, removing the list appearance with CSS, including setting`display: grid` or `list-style-type: none` can lead VoiceOver (the iOS and MacOS screen reader) to remove the implicit semantics in Safari. This is a feature not a bug. Generally, you should not add the role attribute when using semantic elements as it isn't necessary. And you generally don't need to add one to a list either, unless the user really needs to know it is a list, such as when the user would benefit from knowing how many items are in the list.
+In this last example, you may have noticed that `role="list"` is included on the `<ul>`. While the implicit role of both the `<ul>` and `<ol>` is `list`, removing the list appearance with CSS, including setting`display: grid` or `list-style-type: none` can lead VoiceOver (the iOS and MacOS screen reader) to remove the implicit semantics in Safari. This is a feature not a bug. Generally, you should not add the role attribute when using semantic elements as it isn't necessary. And you generally don't need to add one to a list either, unless the user really needs to know it is a list, such as when the user would benefit from knowing how many items are in the list.
 Description lists
 
-A description list is a description list (`<dl>`) element containing a series of (zero or more) description terms (`<dt>`) and their description details (`<dd>`). The original names for these three elements were “definition list,” “definition term,” and “definition definition.” The name changed in the living standard.
+A description list is a description list (`<dl>`) element containing a series of (zero or more) description terms (`<dt>`) and their description details (`<dd>`). The original names for these three elements were "definition list," "definition term," and "definition definition." The name changed in the living standard.
 
 Similar to ordered and unordered lists, they can be nested. Unlike ordered and unordered lists, they are made up of key/value pairs. Similar to the `<ul>` and `<ol>`, the `<dl>` is the parent container. The `<dt>` and `<dd>` elements are the children of the `<dl>`.
 
-We can create a list of machines with their career history and aspirations. A description list of students, denoted by the `<dl>`, encloses a group of terms—in this case, the “terms” are student names—specified using the `<dt>` element, along with a description for each term— in this case, the career goals of each student—specified by the `<dd>` elements.
+We can create a list of machines with their career history and aspirations. A description list of students, denoted by the `<dl>`, encloses a group of terms—in this case, the "terms" are student names—specified using the `<dt>` element, along with a description for each term— in this case, the career goals of each student—specified by the `<dd>` elements.
 
 ```html
 <dl>
