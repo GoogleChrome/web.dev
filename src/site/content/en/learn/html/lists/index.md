@@ -89,7 +89,15 @@ The `start` attribute sets the starting value. The default is `1`.
    <li>Vacuum</li>
 </ol>
 ```
-https://codepen.io/estelle/pen/yLEJgEq
+
+<figure>
+  {% Codepen {
+    user: 'estelle',
+    id: 'yLEJgEq',
+    height: 585,
+    tab: 'result'
+  } %}
+</figure>
 
 Similar to `</ul>`, the closing `</ol>` is required.
 
@@ -123,7 +131,14 @@ an ordered list and has no meaning for unordered lists or menus. It overrides th
    <li>Vacuum</li>
 </ol>
 ```
-https://codepen.io/estelle/pen/poKbRpV
+<figure>
+  {% Codepen {
+    user: 'estelle',
+    id: 'poKbRpV',
+    height: 585,
+    tab: 'result'
+  } %}
+</figure>
 
 The `value` is the number of the list item within an ordered list. With subsequent list items, continue the numbering from the
 value set, unless that item also has a `value` attribute set. The value doesn't have to be in order; though if it isn't in order,

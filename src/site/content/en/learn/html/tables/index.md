@@ -320,7 +320,7 @@ span that is dynamically updated, and which is visible to screen reader users. A
 </tr>
 </thead>
 ```
-If you're not presenting tabular data, don't use a `<table>`. If you do use a table for presentation,, set `role="none"`.
+If you're not presenting tabular data, don't use a `<table>`. If you do use a table for presentation, set `role="none"`.
 
 Many developers use tables to lay out forms but there is no need to. But you do need to know about HTML forms, so we will cover that next.
 

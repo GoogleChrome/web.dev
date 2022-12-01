@@ -73,7 +73,7 @@ tutorial. Whether the table of contents navigation comes before or after the hea
 If your browser is wider than 80em, the Table of contents comes before the heading in the markup, and is similar to the following
 (the class names have been removed to simplify the markup):
 
-```
+```html
 <nav aria-label="On this page">
   <div>On this page</div>
   <div>
