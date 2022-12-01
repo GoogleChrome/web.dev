@@ -11,20 +11,20 @@ tags:
 
 HTML tables are used for displaying tabular data with rows and columns. The decision to use a `<table>` should be based on the content you are presenting and your users' needs in relation to that content. If data is being presented, compared, sorted, calculated, or cross-referenced, then `<table>` is probably the right choice. If you simply want to lay out non-tabular content neatly, such as a large group of thumbnail images, tables are not appropriate: instead, create a list of images and style the grid with CSS.
 
-In this section, we are going to discuss all the elements that make up the table, along with some accessibility and usability features you should consider as you present tabular data. While Learn HTML isn’t fundamentally about CSS, and there is an entire course dedicated to learning CSS, we will cover some table-specific CSS properties.
+In this section, we are going to discuss all the elements that make up the table, along with some accessibility and usability features you should consider as you present tabular data. While Learn HTML isn't fundamentally about CSS, and there is an entire course dedicated to learning CSS, we will cover some table-specific CSS properties.
 Table elements, in order
 
 The `<table>` tag wraps the table content, including all the table elements. The implicit ARIA role of a `<table>` is `table`; assistive technologies know this element is a table structure containing data arranged in rows and columns. If the table maintains a selection state, has two-dimensional navigation, or allows the user to rearrange cell order, set `role=”grid”`. If the rows of the `grid` can be expanded and collapsed, use `role=”treegrid”` instead.
 
-Inside the `<table>`, you’ll find the table headers (`<thead>`), table bodies (`<tbody>`), and, optionally, table footers (`<tfoot>`). Each of these is made up of table rows (`<tr>`). Rows contain table header (`<th>`) and table data  (`<td>`) cells which, in turn, contain all the data. In the DOM, before any of this, you may find two additional features: the table caption (`<caption>`) and column groups (`<colgroup>`). Depending on whether or not the `<colgroup>` has a `span` attribute, it may contain nested table column (`<col>`) elements.
+Inside the `<table>`, you'll find the table headers (`<thead>`), table bodies (`<tbody>`), and, optionally, table footers (`<tfoot>`). Each of these is made up of table rows (`<tr>`). Rows contain table header (`<th>`) and table data  (`<td>`) cells which, in turn, contain all the data. In the DOM, before any of this, you may find two additional features: the table caption (`<caption>`) and column groups (`<colgroup>`). Depending on whether or not the `<colgroup>` has a `span` attribute, it may contain nested table column (`<col>`) elements.
 
-The table’s children are, in order:
+The table's children are, in order:
 `<caption>` element
 `<colgroup>` elements
 `<thead>` elements
 `<tbody>` elements
 `<tfoot>` elements
-We’ll cover the `<table>` elements’ children, which are all optional but recommended, then take a look at rows, table header cells, and table data cells. The `<colgroup>` will be covered last.
+We'll cover the `<table>` elements' children, which are all optional but recommended, then take a look at rows, table header cells, and table data cells. The `<colgroup>` will be covered last.
 
 Table caption
 
@@ -45,7 +45,7 @@ Data sectioning
 
 The content of tables is made up of up to three sections: zero or more table headers (`<thead>`) , table bodies (`<tbody>`), and table footers (`<tfoot>`). All are optional, with zero or more of each being supported.
 
-These elements don’t help or hinder the accessibility of the table, but they are useful in terms of usability. They provide styling hooks. For example, the header contents can be made sticky, while the `<tbody>` contents can be made to scroll. Rows not nested in one of these three containing elements are implicitly wrapped in a `<tbody>`. All three share the same implicit role `rowgroup`. None of these three elements has any element-specific attributes.
+These elements don't help or hinder the accessibility of the table, but they are useful in terms of usability. They provide styling hooks. For example, the header contents can be made sticky, while the `<tbody>` contents can be made to scroll. Rows not nested in one of these three containing elements are implicitly wrapped in a `<tbody>`. All three share the same implicit role `rowgroup`. None of these three elements has any element-specific attributes.
 
 What we have so far:
 
@@ -64,9 +64,9 @@ Tables can be divided into table headers, bodies, and footers, but none of these
 
 User-agent stylesheets generally display the content in a `<th>` table header cell as centered and bold. These default styles, and all styling, are best controlled with CSS instead of the deprecated attributes that used to be available on individual cells, rows, and even the `<table>`.
 
-There were attributes to add padding between cells and within cells, for borders, and for text alignment. Cellpadding and cellspacing, which define the space between the content of a cell and its border, and between the borders of adjacent cells, should be set with the CSS border-collapse and border-spacing properties, respectively. `Border-spacing` will have no effect if `border-collapse: collapse` is set. If `border-collapse: separate;` is set, it’s possible to hide empty cells completely with `empty-cells: hide;`. To learn more about styling tables, here’s an interactive slidedeck of table-related CSS styles.
+There were attributes to add padding between cells and within cells, for borders, and for text alignment. Cellpadding and cellspacing, which define the space between the content of a cell and its border, and between the borders of adjacent cells, should be set with the CSS border-collapse and border-spacing properties, respectively. `Border-spacing` will have no effect if `border-collapse: collapse` is set. If `border-collapse: separate;` is set, it's possible to hide empty cells completely with `empty-cells: hide;`. To learn more about styling tables, here's an interactive slidedeck of table-related CSS styles.
 
-In the examples, we’ve added a border on the table and each individual cell with CSS to make some features more apparent:
+In the examples, we've added a border on the table and each individual cell with CSS to make some features more apparent:
 
 ```css
 table,
@@ -159,7 +159,7 @@ The `headers` attributes were possibly not necessary in such a simple use case, 
 
 The `headers` attribute is more commonly found on `<td>` elements, but is also valid on `<th>`.
 
-That said, complex table structures can be difficult for all users, not just screen reader users, to understand. Cognitively and in terms of screen reader support, simpler tables, with few to no spanned cells, even without adding scope and headers, are more easily understood. They’re also easier to manage!
+That said, complex table structures can be difficult for all users, not just screen reader users, to understand. Cognitively and in terms of screen reader support, simpler tables, with few to no spanned cells, even without adding scope and headers, are more easily understood. They're also easier to manage!
 Styling tables
 
 There are two relatively obscure elements that were briefly mentioned: the column group, `<colgroup>`, element and its only descendant, the empty `<col>` column element. The `<colgroup>` element is used to define groups of columns, or `<col>` elements, within a table.
@@ -179,9 +179,9 @@ The content outline order for a table is generally as follows, with `<table>` an
 
 Neither `<colgroup>` nor `<col>` has semantic meaning in terms of helping to make the table more accessible, but they do allow for limited column styling, including setting a width for the column with CSS.
 
-`<col>` styles will style a column as long as there are no `<td>` or `<th>` styles that override that styling. For example, when `<colspan>` is used to merge cells in some rows of a table but not all, you can’t be sure that a selector such as `tr > *:nth-child(8)`, which selects the 8th child of every row, will highlight the 8th column in full or will highlight the 8th column for several rows, but with a smattering of 9th and 10th column cells, depending on what row or column cells were merged.
+`<col>` styles will style a column as long as there are no `<td>` or `<th>` styles that override that styling. For example, when `<colspan>` is used to merge cells in some rows of a table but not all, you can't be sure that a selector such as `tr > *:nth-child(8)`, which selects the 8th child of every row, will highlight the 8th column in full or will highlight the 8th column for several rows, but with a smattering of 9th and 10th column cells, depending on what row or column cells were merged.
 
-Unfortunately, only a few properties are supported, the styles aren’t inherited into the cells, and the only way  of using the `<col>` element in targeting cells is with a complex selector including the `:has()` relational selector.
+Unfortunately, only a few properties are supported, the styles aren't inherited into the cells, and the only way  of using the `<col>` element in targeting cells is with a complex selector including the `:has()` relational selector.
 
 If both the `<table>` and the `<colgroup>` have a background color, the `background-color` of the `<colgroup>` will be on top. The order of drawing is: table, column groups, columns, rowgroups, rows, with cells last and on top, as shown in the schema of table layers. The `<td>` and `<th>` elements are not descendants of `<colgroup>` or `<col>` elements, and do not inherit their styling.
 
@@ -191,7 +191,7 @@ Tables are not responsive by default. Rather, they are sized according to their 
 
 Presenting data
 
-Table elements have semantic meanings that are used by assistive technologies to enable navigating throughthe rows and columns without getting ‘lost’. The `<table>` element should not be used for presentation. If you need a heading over a list, use a header and a list. If you want to lay out content in many columns, use multi-column layout. If you want to lay out content in a grid, use CSS grid. Only use a table for data. Think of it this way: if your data requires a spreadsheet in order to be presented at a meeting, use`<table>`. If you would like to  use the features available in presentation software like Keynote or Powerpoint, you probably need a description list.
+Table elements have semantic meanings that are used by assistive technologies to enable navigating through the rows and columns without getting 'lost'. The `<table>` element should not be used for presentation. If you need a heading over a list, use a header and a list. If you want to lay out content in many columns, use multi-column layout. If you want to lay out content in a grid, use CSS grid. Only use a table for data. Think of it this way: if your data requires a spreadsheet in order to be presented at a meeting, use`<table>`. If you would like to  use the features available in presentation software like Keynote or Powerpoint, you probably need a description list.
 
 While sorting table columns is the purview of JavaScript, marking up your headers to let users know the column is sortable is the purview of HTML. Let your users know the table columns are sortable with iconography showing ascending, descending, or unsorted. The column currently sorted should include the aria-sort attribute with the enumerated value of the sort direction. The `<caption>` can politely announce updates to sort order via aria-live and a span that is dynamically updated, and which is visible to screen reader users. As the column is sortable by clicking on the header content, the header content should be a `<button>`.
 
@@ -230,7 +230,7 @@ While sorting table columns is the purview of JavaScript, marking up your header
 </tr>
 </thead>
 ```
-If you’re not presenting tabular data, don’t use a `<table>`. If you do use a table for presentation,, set `role=”none”`.
+If you're not presenting tabular data, don't use a `<table>`. If you do use a table for presentation,, set `role=”none”`.
 
 Many developers use tables to lay out forms but there is no need to. But you do need to know about HTML forms, so we will cover that next.
 Check your understanding
