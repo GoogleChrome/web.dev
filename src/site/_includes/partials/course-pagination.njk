@@ -1,4 +1,5 @@
 {% from 'macros/icon.njk' import icon with context %}
+{% from 'macros/prerender.njk' import prerender with context %}
 
 {% macro preferredTitle(item) %}
   {%- set title = item.data.title or '' -%}
@@ -26,7 +27,7 @@
       {% if item.next %}
         {% set next = item.next %}
         {# Prerender the next page, for performance reasons #}
-        {% Prerender next.url %}
+        {{ prerender({ url: next.url }) }}
         <a class="preview-pagination__item flow" href="{{ next.url }}" data-dir="next">
           <div class="preview-pagination__meta cluster">
             {{ icon('arrow-forward', {label: 'next'}) }}

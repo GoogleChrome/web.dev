@@ -1,0 +1,18 @@
+{#
+  @typedef {string} param.url - The url for the prerendering.
+#}
+{% macro prerender(param) %}
+{% if param.url and not param.url.startsWith('http://') and not param.url.startsWith('https://') %}
+{% set apiScripts %}
+  {
+    "prerender": [
+      {
+        "source": "list",
+        "urls": ["{{ param.url }}"]
+      }
+    ]
+  }
+{% endset %}
+<script type="speculation-rules">{{ apiScripts | minifyJs | cspHash | safe }}</script>
+{% endif %}
+{% endmacro %}

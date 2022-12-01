@@ -55,7 +55,6 @@ const includeRaw = require('./src/site/_includes/components/includeRaw');
 const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
 const PathCard = require('./src/site/_includes/components/PathCard');
-const Prerender = require('./src/site/_includes/components/Prerender');
 const SignPosts = require('./src/site/_includes/components/SignPosts');
 const StackOverflow = require('./src/site/_includes/components/StackOverflow');
 const Tooltip = require('./src/site/_includes/components/Tooltip');
@@ -230,7 +229,6 @@ module.exports = function (config) {
   config.addShortcode('LanguageList', LanguageList);
   config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
-  config.addShortcode('Prerender', Prerender);
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('StackOverflow', StackOverflow);
   config.addShortcode('Tooltip', Tooltip);
