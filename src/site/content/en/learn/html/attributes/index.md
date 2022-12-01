@@ -423,6 +423,7 @@ style {
 Try changing the `color` of the` style` to something other than `inherit`. Then try changing the `style` to a `p` selector.
 Don't remove the display property or the style block will disappear.
 
+```css
 <style contenteditable>
 style {
  color: inherit;
@@ -433,6 +434,7 @@ font-family: monospace;
 padding:10px;
 }
 </style>
+```
 
 ## Custom attributes
 
