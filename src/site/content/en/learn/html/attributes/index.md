@@ -89,7 +89,7 @@ Because of this, it's important to know which attributes are boolean versus enum
 
 ## Global attributes
 
-Global attributes are attributes that can be set on any HTML element, including elements in the <head>. There are more than
+Global attributes are attributes that can be set on any HTML element, including elements in the `<head>`. There are more than
 [30 global attributes](https://developer.mozilla.org/docs/Web/HTML/Global_attributes#list_of_global_attributes). While these can all, in theory, be added to any HTML element, some global attributes have no effect
 when set on some elements; for example, setting `hidden` on a `<meta>` as meta content is not displayed.
 
@@ -137,7 +137,7 @@ four links in the navigation bar, the element linked to by the fragment identifi
 minus the #, scrolls into view.
 
 The `<main>` content of the machine learning workshop has four sections with ids. When the site visitor clicks on one of the
-links in the <nav>, the section with that fragment identifier scrolls into view. The markup is similar to:
+links in the `<nav>`, the section with that fragment identifier scrolls into view. The markup is similar to:
 
 
 ```html
@@ -159,7 +159,7 @@ links in the <nav>, the section with that fragment identifier scrolls into view.
 </section>
 ```
 
-Comparing the fragment identifiers in the <nav> links, you'll note that each matches the `id` of a <section> in <main>.
+Comparing the fragment identifiers in the `<nav>` links, you'll note that each matches the `id` of a `<section>` in `<main>`.
 The browser gives us a free "top of page" link. Setting `href="#top"`, case-insensitive, or simply `href="#"`, will scroll
 the user to the top of the page.
 
@@ -192,6 +192,7 @@ Our one JavaScript function makes use of this ability to target elements by thei
     });
 </script>
 ```
+
 ### `<label>`
 
 The [HTML `<label>` element](https://developer.mozilla.org/docs/Web/HTML/Element/label) has a `for` attribute that takes as its value the `id` of the form control with which it is associated.
@@ -216,7 +217,7 @@ While each label can be associated with exactly one form control, a form control
 ```
 
 {% Aside %}
-If the form control is nested between the <label>'s opening and closing tags, the `for` and `id` attributes
+If the form control is nested between the `<label>` opening and closing tags, the `for` and `id` attributes
 aren't required: this is called an "implicit" label. Labels let all users know what each form control is for.
 
 ```html
@@ -252,6 +253,7 @@ When including radio buttons, as the labels describe the value of the radio butt
 with the `<legend>` being the label, or question, for the entire set.
 
 #### Other accessibility uses
+
 The use of `id` in accessibility and usability is not limited to labels. In [introduction to text](/learn/html/text-basics), a `<section>`
 was converted into region landmark by referencing the `id` of an `<h2>` as the value of the `<section>`'s `aria-labelledby` to provide
 the accessible name:
@@ -268,15 +270,17 @@ that has focus (only one element can be focused at a time).
 
 {% Aside %}
 Using `aria-labelledby`, you can create a reverse association from a form control to multiple labels, including text not
-nested in a <label>, whether the text labels more than one form control or not. If a control has both `<label>` and `aria-labelledby`, the `aria-labelledby`
-has precedence; users will not hear the <label> text unless the `aria-labelledby` includes the id of the label.
+nested in a `<label>`, whether the text labels more than one form control or not. If a control has both `<label>` and `aria-labelledby`, the `aria-labelledby`
+has precedence; users will not hear the `<label>` text unless the `aria-labelledby` includes the id of the label.
 {% endAside %}
 
 #### CSS selectors
+
 In CSS, you can target each section using an id selector, such as `#feedback` or, for less [specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity), a case-sensitive
 [attribute selector](/learn/css/selectors/#attribute-selector), `[id="feedback"]`.
 
 ### `class`
+
 The `class` attribute provides an additional way of targeting elements with CSS (and JavaScript), but serves no other purpose
 in HTML (though frameworks and component libraries may use them). The class attribute takes as its value a space-separated list
 of the case-sensitive classes for the element.
@@ -297,12 +301,13 @@ shouldn't use the class attribute, it's just that most developers don't realize 
 Thus far, MLW has not used any classes. Can a site be launched without a single class name? We'll see.
 
 ### `style`
+
 The `style` attribute enables applying inline styles, which are styles applied to the single element on which the attribute is set.
 The `style` attribute takes as its value CSS property value pairs, with the value's syntax being the same as the contents of a
 CSS style block: properties are followed by a colon, just like in CSS, and semicolons end each declaration, coming after the value.
 
 The styles are only applied to the element on which the attribute is set, with descendants inheriting inherited property values if not
-overridden by other style declarations on nested elements or in <style> blocks or style sheets. As the value comprises the equivalent of the contents
+overridden by other style declarations on nested elements or in `<style>` blocks or style sheets. As the value comprises the equivalent of the contents
 of a single style block applied to that element only, it can't be used for generated content, to create keyframe animations, or to apply any
 other at-rules.
 
@@ -311,6 +316,7 @@ That said, the `style` attribute can come in handy during development to enable 
 'solution' style and stick it in your linked [CSS](/learn/css) file.
 
 ### `tabindex`
+
 The `tabindex` attribute can be added to any element to enable it to receive focus. The `tabindex` value defines whether it
 gets added to the tab order, and, optionally, into a non-default tabbing order.
 
@@ -319,7 +325,7 @@ of receiving focus, such as via JavaScript, but does not add the element to the 
 the element focusable and reachable via tabbing, adding it to the default tab order of the page in source code order. A value of `1`
 or more puts the element into a prioritized focus sequence and is not recommended.
 
-On this page, there is a share functionality using a <share-action> custom element acting as a <button>. The `tabindex` of zero
+On this page, there is a share functionality using a `<share-action>` custom element acting as a `<button>`. The `tabindex` of zero
 is included to add the custom element into the keyboard default tabbing order:
 
 ```html
@@ -365,11 +371,11 @@ and [treegrids](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/
 For example, when creating a tabbed design pattern, the [`tab`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/tab_role), `tablist` and
 [`tabpanel`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/tabpanel_role) roles can be used. Someone who can physically see
 the user-interface has learned by experience how to navigate the widget and make different panels visible by clicking on associated tabs.
-Including the `tab` role with <button role="tab"> when a group of buttons is used to show different panels lets the screen reader user know
-that the <button> that currently has focus can toggle a related panel into view rather than implementing typical button-like functionality.
+Including the `tab` role with `<button role="tab">` when a group of buttons is used to show different panels lets the screen reader user know
+that the `<button>` that currently has focus can toggle a related panel into view rather than implementing typical button-like functionality.
 
-The `role` attribute doesn't change browser behavior or alter keyboard or pointer device interactions—adding `role="button"`to a <span>
-does not turn it into a <button>. This is why using semantic HTML elements for their intended purpose is recommended. However, when using
+The `role` attribute doesn't change browser behavior or alter keyboard or pointer device interactions—adding `role="button"`to a `<span>`
+does not turn it into a `<button>`. This is why using semantic HTML elements for their intended purpose is recommended. However, when using
 the right element is not possible, the `role` attribute enables informing screen reader users when a non-semantic element has been retrofitted
 into a semantic element's role.
 
