@@ -29,17 +29,8 @@ To check your Node version, run `node -v` in your terminal.
 If you don't have Node, or if you need to upgrade, we recommend using the [Node
 Version Manager (nvm)](https://github.com/nvm-sh/nvm).
 
-### Clone the repo
-
-```bash
-git clone https://github.com/GoogleChrome/web.dev.git
-```
-
-### Change directory into the folder created
-
-```bash
-cd web.dev 
-```
+1. Clone the repo: `git clone https://github.com/GoogleChrome/web.dev.git`
+2. Change into the new directory: `cd web.dev`
 
 ### Install dependencies
 
