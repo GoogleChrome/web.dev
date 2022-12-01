@@ -126,6 +126,7 @@ On the machine learning workshop site, the navigation bar in the page header inc
       <a href="#feedback">Testimonials</a>
     </nav>
 ```
+
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/yBTmDlb9qs7ApkHh1xpB.png", alt="Navigation bar: register, about, instructors, testimonials", width="686", height="90" %}
 
 The href attribute provides the hyperlink that activating the link directs the user to. When a URL includes a hash mark (#)
@@ -424,7 +425,7 @@ style {
 </style>
 ```
 
-Try changing the `color` of the` style` to something other than `inherit`. Then try changing the `style` to a `p` selector.
+Try changing the `color` of the `style` to something other than `inherit`. Then try changing the `style` to a `p` selector.
 Don't remove the display property or the style block will disappear.
 
 ```css

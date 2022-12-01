@@ -160,19 +160,20 @@ hyperlink. The browser sends `POST` requests with the body `PING` to the URLs li
 
 ### User experience tips
 
-Always consider the user experience when writing HTML. Links should provide enough information about the linked resource
-so the user knows what they are clicking on. Within a block of text, ensure the appearance of your links differs enough
-from the surrounding text so that users can easily identify links from the rest of the content, ensuring that color alone
-is not the only means of differentiating between text and the surrounding content. Always include focus styles; this enables
-keyboard navigators to know where they are when tabbing through your content. The content between the opening `<a>` and closing `</a>`
-is the link's default accessible name and should inform the user of the link's destination or purpose. If the content of a link is an image,
-the `alt` description is the accessible name. Whether the accessible name comes from the `alt` attribute or a subset of words within a
-block of text, make sure it provides information about the link's destination. Link text should be  more descriptive than "click here"
-or "more information"; this is important for your screen reader users and your search engine results! Don't include interactive content,
-such as a `<button>` or `<input>`, inside a link. Don't nest a link within a `<button>` or `<label>` either. While the HTML page will still render,
-nesting focusable and clickable elements inside interactive elements creates a bad user experience. If the `href` attribute is present, pressing
-the Enter key while focused on the `<a>` element will activate it. Links are not limited to HTML. The `a` element can also be used within an
-SVG, forming a link with either the 'href' or 'xlink:href' attributes.
+* Always consider the user experience when writing HTML. Links should provide enough information about the linked resource
+so the user knows what they are clicking on.
+* Within a block of text, ensure the appearance of your links differs enough from the surrounding text so that users can
+easily identify links from the rest of the content, ensuring that color alone is not the only means of differentiating between
+text and the surrounding content.
+* Always include focus styles; this enables keyboard navigators to know where they are when tabbing through your content.
+* The content between the opening `<a>` and closing `</a>` is the link's default accessible name and should inform the user
+of the link's destination or purpose. If the content of a link is an image, the `alt` description is the accessible name.
+Whether the accessible name comes from the `alt` attribute or a subset of words within a block of text, make sure it provides
+information about the link's destination. Link text should be more descriptive than "click here" or "more information"; this is important for your screen reader users and your search engine results!
+* Don't include interactive content, such as a `<button>` or `<input>`, inside a link. Don't nest a link within a `<button>`
+or `<label>` either. While the HTML page will still render, nesting focusable and clickable elements inside interactive elements creates a bad user experience.
+* If the `href` attribute is present, pressing the Enter key while focused on the `<a>` element will activate it.
+* Links are not limited to HTML. The `a` element can also be used within an SVG, forming a link with either the 'href' or 'xlink:href' attributes.
 
 ## Links and JavaScript
 
