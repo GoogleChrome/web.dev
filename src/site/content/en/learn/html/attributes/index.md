@@ -80,8 +80,8 @@ isn't necessarily true; and the default for invalid values isn't necessarily the
 `contenteditable` defaults to `inherit` if missing or invalid, and can be explicitly set to `false`.
 
 The default value depends on the attribute. Unlike boolean values, attributes aren't automatically "true" if present. If you
-include <style contenteditable="false">, the element is not editable. If the value is invalid, such as <style contenteditable="😀">,
-or, surprisingly, <style contenteditable="contenteditable">, the value is invalid and defaults to `inherit`.
+include `<style contenteditable="false">`, the element is not editable. If the value is invalid, such as `<style contenteditable="😀">`,
+or, surprisingly, `<style contenteditable="contenteditable">`, the value is invalid and defaults to `inherit`.
 
 In most cases with enumerated attributes, missing and invalid values are the same. For example, if the `type` attribute on an `<input>`
 is missing, present but without a value, or has an invalid value, it defaults to `text`. While this behavior is common, it is not a rule.
@@ -192,9 +192,9 @@ Our one JavaScript function makes use of this ability to target elements by thei
     });
 </script>
 ```
-### <label>
+### `<label>`
 
-The [HTML <label> element](https://developer.mozilla.org/docs/Web/HTML/Element/label) has a `for` attribute that takes as its value the `id` of the form control with which it is associated.
+The [HTML `<label>` element](https://developer.mozilla.org/docs/Web/HTML/Element/label) has a `for` attribute that takes as its value the `id` of the form control with which it is associated.
 Creating an explicit label by including an `id` on every form control and pairing each with the label's `for` attribute ensures
 that every form control has an associated label.
 
@@ -252,7 +252,6 @@ When including radio buttons, as the labels describe the value of the radio butt
 with the `<legend>` being the label, or question, for the entire set.
 
 #### Other accessibility uses
-
 The use of `id` in accessibility and usability is not limited to labels. In [introduction to text](/learn/html/text-basics), a `<section>`
 was converted into region landmark by referencing the `id` of an `<h2>` as the value of the `<section>`'s `aria-labelledby` to provide
 the accessible name:
@@ -374,7 +373,6 @@ does not turn it into a <button>. This is why using semantic HTML elements for t
 the right element is not possible, the `role` attribute enables informing screen reader users when a non-semantic element has been retrofitted
 into a semantic element's role.
 
-<a id='contenteditable'></a>
 ### `contenteditable`
 
 An element with the `contenteditable` attribute set to `true` is editable, is focusable, and is added to the tab order as if
