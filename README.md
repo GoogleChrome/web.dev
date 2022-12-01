@@ -1,7 +1,7 @@
 # web.dev
 
 
-<img src="https://user-images.githubusercontent.com/2766281/204963653-d5889b35-04e8-4176-8e51-632a6d38cb67.svg" style="float:right" width="50" />
+<a href="https://web.dev"><img src="https://user-images.githubusercontent.com/2766281/204963653-d5889b35-04e8-4176-8e51-632a6d38cb67.svg" style="float:right" width="50" /></a>
 
 [web.dev](https://web.dev) is the ultimate resource for developers of all
 backgrounds to learn, create, and solve on the web. It's meant to not only
