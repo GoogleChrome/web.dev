@@ -13,18 +13,17 @@ Thanks for letting us know! Please [file an issue](https://github.com/GoogleChro
 
 ## Authoring content ✍️
 
-Before you start writing take a moment to look over the [web.dev
-handbook](https://web.dev/handbook) and familiarize yourself with the process.
-When you're ready, follow the steps in the
-[Quickstart](https://web.dev/handbook/quick-start/) to create your content
-proposal.
+Before you start, review the [web.dev handbook](https://web.dev/handbook)
+and familiarize yourself with the publishing process. When you're ready,
+follow the steps in the [Quick start guide](https://web.dev/handbook/quick-start/)
+to create your content proposal.
 
-## Building the site 🏗
+## Build the site 🏗
 
 You'll need a recent version of [Node](https://nodejs.org/): v14 (LTS) or higher.
-To check your node version run `node -v` in your terminal.
+To check your Node version, run `node -v` in your terminal.
 
-If you don't have node, or if you need to upgrade, we recommend using the [Node
+If you don't have Node, or if you need to upgrade, we recommend using the [Node
 Version Manager (nvm)](https://github.com/nvm-sh/nvm).
 
 ### Clone the repo
@@ -136,3 +135,9 @@ If you need to debug the site's build process:
   width="295"
   alt="The Chrome inspect page showing the inspect button"
   src="https://user-images.githubusercontent.com/1066253/61085691-bf125a00-a3e5-11e9-9151-58bd8a50d404.png">
+  
+### Linting your markdown, HTML, and CSS
+
+```bash
+npm run lint
+```
