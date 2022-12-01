@@ -61,7 +61,7 @@ The team started with the basics by using the [PRPL pattern](/apply-instant-load
 
 To lazy-load non-critical resources, they used their framework-level lazy-loading components to load below-the-fold fragments.
 
-To remove any JavaScript bundle bottlenecks, the team [reduced payloads via code splitting](/reduce-javascript-payloads-with-code-splitting). They used component- and route-based chunking to reduce main bundle size and **improve their loading time by 44%,** with TTI falling from 6 seconds to about 5 seconds and [First Meaningful Paint (FMP)](/first-meaningful-paint) from 4.1 seconds to 3.6 seconds.
+To remove any JavaScript bundle bottlenecks, the team [reduced payloads via code splitting](/reduce-javascript-payloads-with-code-splitting). They used component- and route-based chunking to reduce main bundle size and **improve their loading time by 44%,** with TTI falling from 6 seconds to about 5 seconds and [First Meaningful Paint (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) from 4.1 seconds to 3.6 seconds.
 
 <figure>
   {% Img src="image/admin/BHIhtRrQcc2Ec22vLYtT.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's build size before and after code splitting.", width="800", height="350" %}

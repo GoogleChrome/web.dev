@@ -90,7 +90,7 @@ different metrics:
 +   CLS improved 72%.
 +   Blocking JS requests reduced 100% and blocking CSS requests 80%.
 +   [Long tasks](/long-tasks-devtools/) reduced 72%.
-+   [First CPU Idle](/first-cpu-idle/) improved 25%.
++   [First CPU Idle](https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/) improved 25%.
 
 Over the same time frame, real user monitoring data (also known as [field
 data](/how-to-measure-speed/#lab-data-vs-field-data)) showed that

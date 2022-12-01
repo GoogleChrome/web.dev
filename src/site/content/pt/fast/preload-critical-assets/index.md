@@ -72,7 +72,7 @@ Se estiver usando a [abordagem crítica de CSS{/a0 , você dividirá seu CSS em 
 
 ### Pré-carregando arquivos JavaScript
 
-Como os navegadores não executam arquivos pré-carregados, o pré-carregamento é útil para separar a busca da [execuçãoo](/bootup-time), o que pode melhorar as métricas, como o tempo de interação. O pré-carregamento funciona melhor se você [dividir](/reduce-javascript-payloads-with-code-splitting) seus pacotes de JavaScript e pré-carregar apenas os blocos críticos.
+Como os navegadores não executam arquivos pré-carregados, o pré-carregamento é útil para separar a busca da [execuçãoo](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/), o que pode melhorar as métricas, como o tempo de interação. O pré-carregamento funciona melhor se você [dividir](/reduce-javascript-payloads-with-code-splitting) seus pacotes de JavaScript e pré-carregar apenas os blocos críticos.
 
 ## Como implementar rel=preload
 

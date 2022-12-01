@@ -23,7 +23,7 @@ tags:
 
 {% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="웹 글꼴은 중요 요청 체인에 나타납니다.", width="704", height="198" %}
 
-위의 감사에서 웹 글꼴은 중요한 요청 체인의 일부이며 마지막으로 가져옵니다. [**중요 요청 체인**](/critical-request-chains)은 브라우저에서 우선 순위를 지정하고 가져오는 리소스의 순서를 나타냅니다. 이 애플리케이션에서 웹 글꼴(Pacfico 및 Pacifico-Bold)은 [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) 규칙을 사용하여 지정되며 중요 요청 체인에서 브라우저가 가져온 마지막 리소스입니다. 일반적으로 웹 글꼴은 늦게 로드됩니다. 이는 중요 리소스(CSS, JS)가 다운로드될 때까지 로드되지 않음을 의미합니다.
+위의 감사에서 웹 글꼴은 중요한 요청 체인의 일부이며 마지막으로 가져옵니다. [**중요 요청 체인**](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)은 브라우저에서 우선 순위를 지정하고 가져오는 리소스의 순서를 나타냅니다. 이 애플리케이션에서 웹 글꼴(Pacfico 및 Pacifico-Bold)은 [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) 규칙을 사용하여 지정되며 중요 요청 체인에서 브라우저가 가져온 마지막 리소스입니다. 일반적으로 웹 글꼴은 늦게 로드됩니다. 이는 중요 리소스(CSS, JS)가 다운로드될 때까지 로드되지 않음을 의미합니다.
 
 다음은 애플리케이션에서 가져온 리소스의 순서입니다.
 

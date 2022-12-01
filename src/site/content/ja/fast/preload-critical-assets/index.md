@@ -64,7 +64,7 @@ HTMLドキュメントのheadに、`<link>`タグと`rel="preload"`を追加し�
 
 ### JavaScriptファイルのプリロード
 
-ブラウザはプリロードされたファイルを実行しないため、プリロードはフェッチをと[実行](/bootup-time)を分離するのに役立ち、Time to Interactiveなどの指標を改善できます。プリロードは、JavaScriptバンドルを[分割](/reduce-javascript-payloads-with-code-splitting)して、重要なチャンクのみをプリロードする場合に最適にです。
+ブラウザはプリロードされたファイルを実行しないため、プリロードはフェッチをと[実行](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)を分離するのに役立ち、Time to Interactiveなどの指標を改善できます。プリロードは、JavaScriptバンドルを[分割](/reduce-javascript-payloads-with-code-splitting)して、重要なチャンクのみをプリロードする場合に最適にです。
 
 ## rel=preloadを実装する方法
 

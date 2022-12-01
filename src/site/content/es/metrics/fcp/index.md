@@ -94,7 +94,7 @@ Puede consultar [el código fuente de `getFCP()`](https://github.com/GoogleChrom
 
 ## Cómo mejorar FCP
 
-Para aprender a mejorar FCP para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](/lighthouse-performance/#opportunities) específica que sugiera la auditoría.
+Para aprender a mejorar FCP para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) específica que sugiera la auditoría.
 
 Para saber cómo mejorar la FCP en general (para cualquier sitio), consulte las siguientes normas de rendimiento:
 
@@ -107,8 +107,8 @@ Para saber cómo mejorar la FCP en general (para cualquier sitio), consulte las 
 - [Precargar solicitudes clave](/uses-rel-preload/)
 - [Evitar cargas útiles de red enormes](/total-byte-weight/)
 - [Publicar activos estáticos con una política de caché eficiente](/uses-long-cache-ttl/)
-- [Evitar un tamaño de DOM excesivo](/dom-size/)
-- [Minimizar la profundidad de la solicitud crítica](/critical-request-chains/)
+- [Evitar un tamaño de DOM excesivo](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [Minimizar la profundidad de la solicitud crítica](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
 - [Asegurarse de que el texto permanezca visible durante la carga de la fuente web](/font-display/)
 - [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](/resource-summary/)
 

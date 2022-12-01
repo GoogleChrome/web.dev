@@ -37,7 +37,7 @@ mobile experiences and those who don't.
 ## Summary of impact by vertical
 
 All of the improvements below were observed after a 0.1 improvement in 4
-metrics: [First Meaningful Paint](/first-meaningful-paint/),
+metrics: [First Meaningful Paint](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/),
 [Estimated Input Latency](/estimated-input-latency/), Observed
 Load ([Avg. Page Load Time](https://support.google.com/analytics/answer/2383341)
 in Google Analytics), and Max Server Latency ([Time To First

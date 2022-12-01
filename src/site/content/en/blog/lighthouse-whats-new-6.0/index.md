@@ -95,7 +95,7 @@ Additionally, TBT correlates well with the field metric [First Input Delay](/fid
 
 ## Performance score update  {: #score }
 
-The [performance score in Lighthouse](/performance-scoring/) is calculated from a
+The [performance score in Lighthouse](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) is calculated from a
 weighted blend of multiple metrics to summarize a page's speed. The 6.0 performance score formula
 follows.
 

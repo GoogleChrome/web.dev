@@ -205,7 +205,7 @@ RAIL 측정을 자동화하는 데 도움이 되는 몇 가지 도구가 있습�
 
 - [이미지 크기를 적절하게 조정합니다](/uses-responsive-images/). 모바일 뷰포트에서 렌더링된 크기보다 훨씬 큰 이미지를 제공하면 안 됩니다.
 
-- [중요한 요청의 연결을 피합니다](/critical-request-chains/).
+- [중요한 요청의 연결을 피합니다](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
 - [모든 해당 리소스에 대해 HTTP/2를 사용하지 않습니다](/uses-http2/).
 
@@ -215,7 +215,7 @@ RAIL 측정을 자동화하는 데 도움이 되는 몇 가지 도구가 있습�
 
 - [거대한 네트워크 페이로드를 피합니다](/total-byte-weight/).
 
-- [과도한 DOM 크기를 피합니다](/dom-size/). 페이지를 렌더링하는 데 필요한 DOM 노드만 전달하여 네트워크 바이트를 줄입니다.
+- [과도한 DOM 크기를 피합니다](https://developer.chrome.com/docs/lighthouse/performance/dom-size/). 페이지를 렌더링하는 데 필요한 DOM 노드만 전달하여 네트워크 바이트를 줄입니다.
 
 ### WebPageTest
 

@@ -34,7 +34,6 @@ module.exports = function () {
   const frameworks = [allPaths['react'], allPaths['angular']].filter(livePaths);
 
   const lighthouse = [
-    allPaths['lighthouse-performance'],
     allPaths['lighthouse-pwa'],
     allPaths['lighthouse-best-practices'],
     allPaths['lighthouse-seo'],

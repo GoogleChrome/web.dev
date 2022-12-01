@@ -355,7 +355,7 @@ percentile of mobile users.
 
 To learn how to improve FID for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+[opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) the audit suggests.
 
 While FID is a field metric (and Lighthouse is a lab metric tool), the guidance
 for improving FID is the same as that for improving the lab metric [Total
@@ -366,7 +366,7 @@ additional guidance on individual performance techniques that can also improve
 FID, see:
 
 - [Reduce the impact of third-party code](/third-party-summary/)
-- [Reduce JavaScript execution time](/bootup-time/)
+- [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
 - [Minimize main thread work](/mainthread-work-breakdown/)
 - [Keep request counts low and transfer sizes small](/resource-summary/)
 

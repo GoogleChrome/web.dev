@@ -99,7 +99,7 @@ score](/interactive/#how-lighthouse-determines-your-tti-score).
 
 To learn how to improve TTI for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+[opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) the audit suggests.
 
 To learn how to improve TTI in general (for any site), refer to the following
 performance guides:
@@ -108,7 +108,7 @@ performance guides:
 * [Preconnect to required origins](/uses-rel-preconnect/)
 * [Preload key requests](/uses-rel-preload/)
 * [Reduce the impact of third-party code](/third-party-summary/)
-* [Minimize critical request depth](/critical-request-chains/)
-* [Reduce JavaScript execution time](/bootup-time/)
+* [Minimize critical request depth](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+* [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
 * [Minimize main thread work](/mainthread-work-breakdown/)
 * [Keep request counts low and transfer sizes small](/resource-summary/)

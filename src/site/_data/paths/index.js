@@ -5,7 +5,6 @@ const discoverable = require('./discoverable.json');
 const fast = require('./fast.json');
 const learnCoreWebVitals = require('./learn-core-web-vitals.json');
 const lighthouseBestPractices = require('./lighthouse-best-practices.json');
-const lighthousePerformance = require('./lighthouse-performance.json');
 const lighthousePwa = require('./lighthouse-pwa.json');
 const lighthouseSeo = require('./lighthouse-seo.json');
 const media = require('./media.json');
@@ -30,7 +29,6 @@ module.exports = {
   fast,
   'learn-core-web-vitals': learnCoreWebVitals,
   'lighthouse-best-practices': lighthouseBestPractices,
-  'lighthouse-performance': lighthousePerformance,
   'lighthouse-pwa': lighthousePwa,
   'lighthouse-seo': lighthouseSeo,
   identity,

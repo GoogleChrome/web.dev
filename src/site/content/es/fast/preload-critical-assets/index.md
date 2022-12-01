@@ -72,7 +72,7 @@ Si está utilizando el [enfoque CSS crítico](/extract-critical-css), dividirás
 
 ### Precarga de archivos JavaScript
 
-Debido a que los navegadores no ejecutan archivos precargados, la precarga es útil para separar la obtención de la [ejecución](/bootup-time), lo que puede mejorar métricas como Time to Interactive. La precarga funciona mejor si [divide](/reduce-javascript-payloads-with-code-splitting) sus paquetes de JavaScript y solo precarga fragmentos críticos.
+Debido a que los navegadores no ejecutan archivos precargados, la precarga es útil para separar la obtención de la [ejecución](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/), lo que puede mejorar métricas como Time to Interactive. La precarga funciona mejor si [divide](/reduce-javascript-payloads-with-code-splitting) sus paquetes de JavaScript y solo precarga fragmentos críticos.
 
 ## Cómo implementar rel=preload
 

@@ -170,7 +170,7 @@ Auditorias Farol relevantes:
 - [Adiar imagens fora da tela](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)
 - [Codifique imagens de forma eficiente](/uses-optimized-images/)
 - [Veicule imagens em formatos de última geração](https://developers.google.com/web/tools/lighthouse/audits/webp)
-- [Use formatos de vídeo para conteúdo animado](/efficient-animated-content/)
+- [Use formatos de vídeo para conteúdo animado](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)
 
 Fluxo de trabalho do Chrome DevTools:
 

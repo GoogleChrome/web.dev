@@ -219,8 +219,8 @@ To ensure consistency, Lighthouse added support for the Core Web Vitals:
 [FID](/fid/) since Lighthouse is a lab tool and FID can only be
 measured in the field) and [CLS](/cls/). Lighthouse also removed
 three old metrics: [First Meaningful
-Paint](/first-meaningful-paint/), [First CPU
-Idle](/first-cpu-idle/), and [Max Potential
+Paint](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/), [First CPU
+Idle](https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/), and [Max Potential
 FID](/lighthouse-max-potential-fid/). These removals are due to
 considerations like metric variability and newer metrics offering better
 reflections of the part of user experience that Lighthouse is trying to measure.

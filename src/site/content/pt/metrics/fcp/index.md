@@ -94,7 +94,7 @@ Para um exemplo completo de como medir a FCP em JavaScript, consulte [o código-
 
 ## Como melhorar a FCP
 
-Para aprender como melhorar a FCP para um site específico, você pode executar uma auditoria de desempenho do Lighthouse e prestar atenção a quaisquer [oportunidades](/lighthouse-performance/#opportunities) específicas ou [diagnósticos](/lighthouse-performance/#diagnostics) que a auditoria sugerir.
+Para aprender como melhorar a FCP para um site específico, você pode executar uma auditoria de desempenho do Lighthouse e prestar atenção a quaisquer [oportunidades](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) específicas ou [diagnósticos](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics) que a auditoria sugerir.
 
 Para saber como melhorar a FCP em geral (para qualquer site), consulte os seguintes guias de desempenho:
 
@@ -107,8 +107,8 @@ Para saber como melhorar a FCP em geral (para qualquer site), consulte os seguin
 - [Pré-carregue solicitações importantes](/uses-rel-preload/)
 - [Evite enormes cargas de rede](/total-byte-weight/)
 - [Sirva ativos estáticos com uma política de cache eficiente](/uses-long-cache-ttl/)
-- [Evite um tamanho excessivo do DOM](/dom-size/)
-- [Minimize a profundidade de solicitações críticas](/critical-request-chains/)
+- [Evite um tamanho excessivo do DOM](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [Minimize a profundidade de solicitações críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
 - [Certifique-se que o texto permanece visível durante o carregamento de webfonts](/font-display/)
 - [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](/resource-summary/)
 

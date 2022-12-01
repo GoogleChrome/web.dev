@@ -85,7 +85,7 @@ If you are using the [critical CSS approach](/extract-critical-css), you split y
 
 ### Preloading JavaScript files
 
-Because browsers don't execute preloaded files, preloading is useful to separate fetching from [execution](/bootup-time) which can improve metrics such as Time to Interactive. Preloading works best if you [split](/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles and only preload critical chunks.
+Because browsers don't execute preloaded files, preloading is useful to separate fetching from [execution](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/) which can improve metrics such as Time to Interactive. Preloading works best if you [split](/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles and only preload critical chunks.
 
 ## How to implement rel=preload
 

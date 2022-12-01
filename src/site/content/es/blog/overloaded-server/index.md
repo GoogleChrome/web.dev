@@ -170,7 +170,7 @@ Auditorías relevantes de Lighthouse:
 - [Aplazar las imágenes fuera de la pantalla](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)
 - [Codificación eficiente de imágenes](/uses-optimized-images/)
 - [Servir imágenes en formatos de última generación](https://developers.google.com/web/tools/lighthouse/audits/webp)
-- [Utilizar formatos de video para contenidos animados](/efficient-animated-content/)
+- [Utilizar formatos de video para contenidos animados](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)
 
 Flujo de trabajo de Chrome DevTools:
 

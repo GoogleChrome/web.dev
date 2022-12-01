@@ -20,7 +20,7 @@ Rather than measuring load with just one metric, you should time each moment dur
 
 {% Img src="image/admin/NGX9WC2BXTRY6FP5TTGl.png", alt="Image of feedback user is typically looking for", width="800", height="185" %}
 
-Traditional performance metrics like load time or DOMContentLoaded time are unreliable, since their occurrence may or may not correspond with these feedback milestones. So, [additional metrics](/lighthouse-performance/#metrics) have emerged that could be used to understand when a page delivers this feedback to its users:
+Traditional performance metrics like load time or DOMContentLoaded time are unreliable, since their occurrence may or may not correspond with these feedback milestones. So, [additional metrics](https://developer.chrome.com/docs/lighthouse/performance/#metrics) have emerged that could be used to understand when a page delivers this feedback to its users:
 
 {% Img src="image/admin/tz1aubGGvefskjcPfjBQ.png", alt="Image of speed metrics", width="800", height="654" %}
 

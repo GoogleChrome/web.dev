@@ -45,7 +45,7 @@ First open the sample app in the fullscreen view:
 {% Instruction 'remix', 'ol' %}
 {% Instruction 'preview', 'ol' %}
 
-Run a [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [performance audit](/lighthouse-performance) on the page to establish baseline performance:
+Run a [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [performance audit](https://developer.chrome.com/docs/lighthouse/performance/) on the page to establish baseline performance:
 
 {% Instruction 'devtools-lighthouse', 'ol' %}
 1. Click **Mobile**.

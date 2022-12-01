@@ -68,7 +68,7 @@ Além disso, o TBT se correlaciona bem com a métrica de campo [First Input Dela
 
 ## Atualização da pontuação de desempenho {: #score}
 
-A [pontuação de desempenho no Lighthouse](/performance-scoring/) é calculada a partir de uma combinação ponderada de várias métricas para resumir a velocidade de uma página. Segue-se a fórmula de pontuação de desempenho 6.0.
+A [pontuação de desempenho no Lighthouse](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) é calculada a partir de uma combinação ponderada de várias métricas para resumir a velocidade de uma página. Segue-se a fórmula de pontuação de desempenho 6.0.
 
 &lt;style&gt; .lh-table {min-width: unset; } .lh-table td {min-width: unset; } &lt;/style&gt;
 

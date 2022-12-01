@@ -24,7 +24,7 @@ In this post, you'll learn how to use [Lighthouse](https://developer.chrome.com/
 
 ## If you only have 5 minutes
 
-The Lighthouse [Performance audit](/lighthouse-performance) helps you discover opportunities to speed up page loads. Slow third-party scripts are likely to appear in the **Diagnostics** section under the **Reduce JavaScript execution time** and **Avoid enormous network payloads** audits.
+The Lighthouse [Performance audit](https://developer.chrome.com/docs/lighthouse/performance/) helps you discover opportunities to speed up page loads. Slow third-party scripts are likely to appear in the **Diagnostics** section under the **Reduce JavaScript execution time** and **Avoid enormous network payloads** audits.
 
 To run an audit:
 
@@ -50,7 +50,7 @@ The Lighthouse **Third-party usage** audit shows a list of the third-party provi
 
 ### Reduce JavaScript execution time
 
-The Lighthouse [Reduce JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
+The Lighthouse [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
 
 {% Img src="image/admin/O7vN1En6dtbL3Q8TbufC.png", alt="Screenshot showing that the 'Show third-party resources' checkbox is checked.", width="800", height="981" %}
 

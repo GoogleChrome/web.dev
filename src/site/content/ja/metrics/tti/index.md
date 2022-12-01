@@ -58,7 +58,7 @@ TTI は、[ラボ環境](/user-centric-performance-metrics/#in-the-lab)で測定
 
 ## TTI の改善方法
 
-特定のサイトについて TTI の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](/lighthouse-performance/#opportunities) (改善機会) に注目します。
+特定のサイトについて TTI の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) (改善機会) に注目します。
 
 TTI の (あらゆるサイトに共通する) 一般的な改善方法については、以下のパフォーマンス ガイドを参照してください。
 
@@ -66,7 +66,7 @@ TTI の (あらゆるサイトに共通する) 一般的な改善方法につい
 - [必要なオリジンに事前接続する](/uses-rel-preconnect/)
 - [キー リクエストを事前に読み込む](/uses-rel-preload/)
 - [サードパーティ製コードの影響を減らす](/third-party-summary/)
-- [クリティカルなリクエストの深さを最小化する](/critical-request-chains/)
-- [JavaScript の実行にかかる時間を短縮する](/bootup-time/)
+- [クリティカルなリクエストの深さを最小化する](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [JavaScript の実行にかかる時間を短縮する](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
 - [メイン スレッドの作業を最小限に抑える](/mainthread-work-breakdown/)
 - [リクエスト数を少なく、転送サイズを小さく維持する](/resource-summary/)

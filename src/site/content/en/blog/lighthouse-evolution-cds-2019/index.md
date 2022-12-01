@@ -48,16 +48,16 @@ to get started right away.
 
 Changes are coming to the Lighthouse Performance score version 6! In version 5
 (as of November 2019), Lighthouse has five metrics that are [weighted and
-blended](/performance-scoring/#weightings) to form the 0-100 Performance score:
+blended](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/#weightings) to form the 0-100 Performance score:
 [First Contentful Paint](/fcp/), [Speed Index](/speed-index/), [First Meaningful
-Paint](/first-meaningful-paint/), [Time to Interactive](/tti/), and
-[First CPU Idle](/first-cpu-idle/).
+Paint](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/), [Time to Interactive](/tti/), and
+[First CPU Idle](https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/).
 
 <figure>
   {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211" %}
 </figure>
 
-See [Lighthouse performance scoring](/performance-scoring/) for detailed
+See [Lighthouse performance scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) for detailed
 information.
 
 In Lighthouse version 6, new metrics, [Largest Contentful Paint (LCP)](/lcp/)

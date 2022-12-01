@@ -36,7 +36,7 @@ Sites use these scripts for various purposes, including:
 Third-party scripts can provide powerful functionality, but that's not the whole story. They also affect privacy, security, and page behavior⁠—and they can be particularly problematic for performance.
 
 ## Performance
-Any significant amount of [JavaScript can slow down performance](/bootup-time). But because third-party JavaScript is usually outside your control, it can bring additional issues.
+Any significant amount of [JavaScript can slow down performance](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/). But because third-party JavaScript is usually outside your control, it can bring additional issues.
 
 ### Network
 Setting up connections takes time, and sending too many requests to multiple servers causes slowdowns. That time is even longer for secure connections, which may involve DNS lookups, redirects, and several round trips to the final server that handles the user's request.

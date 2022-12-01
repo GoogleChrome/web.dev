@@ -64,7 +64,7 @@ HTML 문서의 헤드에 `rel="preload"`가 있는 `<link>` 태그를 추가하�
 
 ### JavaScript 파일 사전 로딩
 
-브라우저는 사전 로드된 파일을 실행하지 않으므로 사전 로딩은 [실행](/bootup-time)에서 가져오기를 분리하는 데 유용합니다. 이를 통해  Interactive 시간 같은 매트릭을 개선할 수 있습니다. JavaScript 번들을 [분할](/reduce-javascript-payloads-with-code-splitting)하고 중요한 청크만 미리 로드할 경우 사전 로딩이 가장 적합합니다.
+브라우저는 사전 로드된 파일을 실행하지 않으므로 사전 로딩은 [실행](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)에서 가져오기를 분리하는 데 유용합니다. 이를 통해  Interactive 시간 같은 매트릭을 개선할 수 있습니다. JavaScript 번들을 [분할](/reduce-javascript-payloads-with-code-splitting)하고 중요한 청크만 미리 로드할 경우 사전 로딩이 가장 적합합니다.
 
 ## rel=preload 구현 방법
 

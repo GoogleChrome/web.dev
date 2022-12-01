@@ -344,7 +344,7 @@ The following audits are especially relevant:
   images that are significantly larger than the size that's rendered in the
   mobile viewport.
 
-* [Avoid chaining critical requests](/critical-request-chains/).
+* [Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
 * [Does not use HTTP/2 for all of its resources](/uses-http2/).
 
@@ -354,7 +354,7 @@ The following audits are especially relevant:
 
 * [Avoid enormous network payloads](/total-byte-weight/).
 
-* [Avoid an excessive DOM size](/dom-size/). Reduce network bytes
+* [Avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/). Reduce network bytes
   by only shipping DOM nodes that are needed for rendering the page.
 
 ### WebPageTest

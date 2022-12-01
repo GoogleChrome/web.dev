@@ -205,7 +205,7 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 - [Properly size images (画像を適切なサイズにする)](/uses-responsive-images/)。モバイルビューポートでレンダリングされるサイズよりも大幅に大きい画像を提供してはいけません。
 
-- [Avoid chaining critical requests (重要なリクエストを連鎖させない)](/critical-request-chains/)。
+- [Avoid chaining critical requests (重要なリクエストを連鎖させない)](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)。
 
 - [Does not use HTTP/2 for all of its resources (すべてのリソースにHTTP / 2を使用していない)](/uses-http2/)。
 
@@ -215,7 +215,7 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 - [Avoid enormous network payloads (巨大なネットワークペイロードを避けている)](/total-byte-weight/)。
 
-- [Avoid an excessive DOM size (過度のDOMサイズを避けている)](/dom-size/)。ページのレンダリングに必要なDOMノードのみを渡すことにより、ネットワークバイトを削減します。
+- [Avoid an excessive DOM size (過度のDOMサイズを避けている)](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)。ページのレンダリングに必要なDOMノードのみを渡すことにより、ネットワークバイトを削減します。
 
 ### WebPageTest
 

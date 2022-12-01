@@ -205,7 +205,7 @@ As seguintes auditorias são especialmente relevantes:
 
 - [Tamanho adequado das imagens](/uses-responsive-images/). Não exiba imagens significativamente maiores do que o tamanho renderizado na janela de visualização móvel.
 
-- [Evite encadear solicitações críticas](/critical-request-chains/).
+- [Evite encadear solicitações críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
 - [Não usa HTTP/2 para todos os seus recursos](/uses-http2/).
 
@@ -215,7 +215,7 @@ As seguintes auditorias são especialmente relevantes:
 
 - [Evite enormes cargas de rede](/total-byte-weight/).
 
-- [Evite um tamanho excessivo de DOM](/dom-size/). Reduza os bytes da rede enviando apenas nós DOM necessários para renderizar a página.
+- [Evite um tamanho excessivo de DOM](https://developer.chrome.com/docs/lighthouse/performance/dom-size/). Reduza os bytes da rede enviando apenas nós DOM necessários para renderizar a página.
 
 ### WebPageTest
 

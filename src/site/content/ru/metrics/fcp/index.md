@@ -94,7 +94,7 @@ getFCP(console.log);
 
 ## Как улучшить показатель FCP
 
-Чтобы узнать, как улучшить FCP для конкретного сайта, можно запустить проверку производительности с помощью Lighthouse и обратить внимание на любые конкретные [возможности улучшения](/lighthouse-performance/#opportunities) или [диагностики](/lighthouse-performance/#diagnostics), предлагаемые проверкой.
+Чтобы узнать, как улучшить FCP для конкретного сайта, можно запустить проверку производительности с помощью Lighthouse и обратить внимание на любые конкретные [возможности улучшения](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) или [диагностики](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics), предлагаемые проверкой.
 
 Чтобы узнать, как улучшить FCP в целом (для любого сайта), обратитесь к следующим руководствам по производительности:
 
@@ -107,8 +107,8 @@ getFCP(console.log);
 - [Предварительная загрузка ключевых запросов](/uses-rel-preload/)
 - [Уход от огромных нагрузок на сеть](/total-byte-weight/)
 - [Обслуживание статических объектов сайта с помощью эффективной политики кеширования](/uses-long-cache-ttl/)
-- [Уход от чрезмерного размера DOM](/dom-size/)
-- [Минимизация глубины вложенности критических запросов](/critical-request-chains/)
+- [Уход от чрезмерного размера DOM](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [Минимизация глубины вложенности критических запросов](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
 - [Настройка показа текста во время загрузки веб-шрифтов](/font-display/)
 - [Поддержание малого количества запросов и объемов передаваемых данных](/resource-summary/)
 

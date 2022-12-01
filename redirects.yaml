@@ -474,6 +474,81 @@ redirects:
   - source: /patterns/advanced-apps/audio-effects
     destination: /patterns/media/audio-effects
 
+  # Redirects for Lighthouse performance content.
+  - source: /lighthouse-performance
+    destination: https://developer.chrome.com/docs/lighthouse/performance/
+  - source: /performance-scoring
+    destination: https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/
+  - source: /bootup-time
+    destination: https://developer.chrome.com/docs/lighthouse/performance/bootup-time/
+  - source: /critical-request-chains
+    destination: https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/
+  - source: /dom-size
+    destination: https://developer.chrome.com/docs/lighthouse/performance/dom-size/
+  - source: /efficient-animated-content
+    destination: https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/
+  - source: /first-contentful-paint
+    destination: https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/
+  - source: /first-cpu-idle
+    destination: https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/
+  - source: /first-meaningful-paint
+    destination: https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/
+  - source: /font-display
+    destination: https://developer.chrome.com/docs/lighthouse/performance/font-display/
+  - source: /interactive
+    destination: https://developer.chrome.com/docs/lighthouse/performance/interactive/
+  - source: /lighthouse-largest-contentful-paint
+    destination: https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/
+  - source: /lighthouse-max-potential-fid
+    destination: https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/
+  - source: /lighthouse-total-blocking-time
+    destination: https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/
+  - source: /mainthread-work-breakdown
+    destination: https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/
+  - source: /non-composited-animations
+    destination: https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/
+  - source: /offscreen-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/
+  - source: /redirects
+    destination: https://developer.chrome.com/docs/lighthouse/performance/redirects/
+  - source: /render-blocking-resources
+    destination: https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/
+  - source: /resource-summary
+    destination: https://developer.chrome.com/docs/lighthouse/performance/resource-summary/
+  - source: /speed-index
+    destination: https://developer.chrome.com/docs/lighthouse/performance/speed-index/
+  - source: /third-party-facades
+    destination: https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/
+  - source: /third-party-summary
+    destination: https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/
+  - source: /time-to-first-byte
+    destination: https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/
+  - source: /total-byte-weight
+    destination: https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/
+  - source: /unminified-css
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unminified-css/
+  - source: /unminified-javascript
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/
+  - source: /unused-css-rules
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/
+  - source: /user-timings
+    destination: https://developer.chrome.com/docs/lighthouse/performance/user-timings/
+  - source: /uses-long-cache-ttl
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/
+  - source: /uses-optimized-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/
+  - source: /uses-rel-preconnect
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/
+  - source: /uses-rel-preload
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/
+  - source: /uses-responsive-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/
+  - source: /uses-text-compression
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/
+  - source: /uses-webp-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/
+
+
   # Redirects for Lighthouse accessibility content.
   - source: /lighthouse-accessibility
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/

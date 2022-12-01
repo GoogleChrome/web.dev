@@ -102,11 +102,11 @@ TBT는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 측정�
 
 ## TBT를 개선하는 방법
 
-특정 사이트에 대한 TBT를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](/lighthouse-performance/#opportunities)를 주의 깊게 살펴보시기 바랍니다.
+특정 사이트에 대한 TBT를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](https://developer.chrome.com/docs/lighthouse/performance/#opportunities)를 주의 깊게 살펴보시기 바랍니다.
 
 모든 사이트에 대해 일반적으로 TBT를 개선하는 방법을 알아보려면 다음 성능 가이드를 참조하세요.
 
 - [타사 코드의 영향 줄이기](/third-party-summary/)
-- [JavaScript 실행 시간 단축](/bootup-time/)
+- [JavaScript 실행 시간 단축](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
 - [메인 스레드 작업 최소화](/mainthread-work-breakdown/)
 - [요청 수를 낮게 유지하고 전송 크기를 작게 유지](/resource-summary/)

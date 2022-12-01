@@ -203,7 +203,7 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 - [适当调整图像大小](/uses-responsive-images/)。不要提供明显大于移动视口中呈现的尺寸的图像。
 
-- [避免链接关键请求](/critical-request-chains/)。
+- [避免链接关键请求](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)。
 
 - [不要为其所有资源使用 HTTP/2](/uses-http2/) 。
 
@@ -213,7 +213,7 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 - [避免网络负载过大](/total-byte-weight/)。
 
-- [避免 DOM 大小过大](/dom-size/)。通过仅传送呈现页面所需的 DOM 节点来减少网络字节数量。
+- [避免 DOM 大小过大](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)。通过仅传送呈现页面所需的 DOM 节点来减少网络字节数量。
 
 ### WebPageTest 网页性能测试工具
 

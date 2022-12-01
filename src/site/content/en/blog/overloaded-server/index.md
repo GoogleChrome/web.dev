@@ -179,7 +179,7 @@ Relevant Lighthouse audits:
 *   [Defer offscreen images](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)
 *   [Efficiently encode images](/uses-optimized-images/)
 *   [Serve images in next-gen formats](https://developers.google.com/web/tools/lighthouse/audits/webp)
-*   [Use video formats for animated content](/efficient-animated-content/)
+*   [Use video formats for animated content](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)
 
 Chrome DevTools workflow:
 - [Log network activity](https://developer.chrome.com/docs/devtools/network/#load)

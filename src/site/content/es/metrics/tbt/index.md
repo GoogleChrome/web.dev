@@ -102,11 +102,11 @@ Para obtener más información sobre cómo la TBT de su página afecta a su punt
 
 ## Cómo mejorar TBT
 
-Para aprender a mejorar TBT para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](/lighthouse-performance/#opportunities) específica que sugiera la auditoría.
+Para aprender a mejorar TBT para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) específica que sugiera la auditoría.
 
 Para saber cómo mejorar la TBT en general (para cualquier sitio), consulte las siguientes normas de rendimiento:
 
 - [Reducir el impacto en el código de terceros](/third-party-summary/)
-- [Reducir el tiempo de ejecución de JavaScript](/bootup-time/)
+- [Reducir el tiempo de ejecución de JavaScript](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
 - [Minimizar el trabajo del subproceso principal](/mainthread-work-breakdown/)
 - [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](/resource-summary/)

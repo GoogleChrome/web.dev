@@ -102,11 +102,11 @@ TBT は、[ラボ環境](/user-centric-performance-metrics/#in-the-lab)で測定
 
 ## TBT の改善方法
 
-特定のサイトについて TBT の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](/lighthouse-performance/#opportunities) (改善機会) に注目します。
+特定のサイトについて TBT の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) (改善機会) に注目します。
 
 TBT の (あらゆるサイトに共通する) 一般的な改善方法については、以下のパフォーマンス ガイドを参照してください。
 
 - [サードパーティ製コードの影響を減らす](/third-party-summary/)
-- [JavaScript の実行にかかる時間を短縮する](/bootup-time/)
+- [JavaScript の実行にかかる時間を短縮する](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
 - [メイン スレッドの作業を最小限に抑える](/mainthread-work-breakdown/)
 - [リクエスト数を少なく、転送サイズを小さく維持する](/resource-summary/)

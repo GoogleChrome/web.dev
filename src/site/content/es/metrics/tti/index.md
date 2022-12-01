@@ -58,7 +58,7 @@ Para obtener más información sobre cómo la TTI de su página afecta a su punt
 
 ## Cómo mejorar TTI
 
-Para aprender a mejorar TTI para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](/lighthouse-performance/#opportunities) específica que sugiera la auditoría.
+Para aprender a mejorar TTI para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) específica que sugiera la auditoría.
 
 Para saber cómo mejorar la TTI en general (para cualquier sitio), consulte las siguientes normas de rendimiento:
 
@@ -66,7 +66,7 @@ Para saber cómo mejorar la TTI en general (para cualquier sitio), consulte las 
 - [Preconectar a los orígenes requeridos](/uses-rel-preconnect/)
 - [Precargar solicitudes clave](/uses-rel-preload/)
 - [Reducir el impacto en el código de terceros](/third-party-summary/)
-- [Minimizar la profundidad de la solicitud crítica](/critical-request-chains/)
-- [Reducir el tiempo de ejecución de JavaScript](/bootup-time/)
+- [Minimizar la profundidad de la solicitud crítica](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [Reducir el tiempo de ejecución de JavaScript](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
 - [Minimizar el trabajo del subproceso principal](/mainthread-work-breakdown/)
 - [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](/resource-summary/)

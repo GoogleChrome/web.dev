@@ -64,7 +64,7 @@ feedback:
 
 ### 预加载 JavaScript 文件
 
-由于浏览器不执行预加载的文件，因此预加载有助于将获取与[执行](/bootup-time)分开，这可以改善 Time to Interactive 等指标。如果您[拆分](/reduce-javascript-payloads-with-code-splitting) JavaScript 包并仅预加载关键块，则预加载效果最佳。
+由于浏览器不执行预加载的文件，因此预加载有助于将获取与[执行](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)分开，这可以改善 Time to Interactive 等指标。如果您[拆分](/reduce-javascript-payloads-with-code-splitting) JavaScript 包并仅预加载关键块，则预加载效果最佳。
 
 ## 如何实现 rel=preload
 
