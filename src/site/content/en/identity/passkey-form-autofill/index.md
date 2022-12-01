@@ -5,6 +5,7 @@ subhead: Create a sign in experience that leverages passkeys while still accommo
 authors:
   - agektmr
 date: 2022-10-12
+updated: 2022-12-01
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/n2fXJDSlefAg8EPLkqEr.jpg
 description: |
   Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses how  how a passwordless sign-in with passkeys should be designed while accommodating existing password users.
@@ -77,14 +78,6 @@ offer them to
 [create a passkey](/passkey-registration).
 
 {% endAside %}
-
-## Prerequisites
-
-{% BrowserCompat 'api.Credential' %}
-
-On Chrome on Android, you need the
-[Google Play services beta](https://developers.google.com/android/guides/beta-program)
-to authenticate with conditional UI.
 
 ## Authenticate with a passkey through form autofill
 
