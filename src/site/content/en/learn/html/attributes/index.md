@@ -16,7 +16,7 @@ providing information about and functionality for the element.
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/17yQeLEUX6s88IbDJreQ.png", alt="The opening tag, attributes, and closing tag, labelled on an HTML element", width="800", height="210" %}
 
-Attributes define the behavior, linkages, and functionality of elements. Some attributes are [global](#global-attributes), meaning they can appear
+Attributes define the behavior, linkages, and functionality of elements. Some attributes are global, meaning they can appear
 within any element's opening tag. Other attributes apply to several elements but not all, while other attributes are element-specific,
 relevant only to a single element. In HTML, all attributes except boolean, and to some extent enumerated attributes, require a value.
 
@@ -87,7 +87,6 @@ In most cases with enumerated attributes, missing and invalid values are the sam
 is missing, present but without a value, or has an invalid value, it defaults to `text`. While this behavior is common, it is not a rule.
 Because of this, it's important to know which attributes are boolean versus enumerated; omit values if possible so you don't get them wrong, and look up the value as needed.
 
-<a id='global-attributes'></a>
 ## Global attributes
 
 Global attributes are attributes that can be set on any HTML element, including elements in the <head>. There are more than

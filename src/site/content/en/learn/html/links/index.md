@@ -47,7 +47,7 @@ domain name. When the protocol is written simply as `//`, it is an implicit prot
 Relative URLs do not include a protocol or domain name. They are "relative" to the current file. MLW is a single-page site,
 but this HTML series has several sections. In order to link from this page to the attributes lesson, a relative URL is used `<a href="../attributes/">Attributes</a>`.
 
-The second link is just a [link fragment identifier](learn/html/attributes/#link_fragment_identifier), and will link to the
+The second link is just a [link fragment identifier](/attributes/#link_fragment_identifier), and will link to the
 element with `id="teachers",` if there is one, on the current page. Browsers also support two "top of page" links: clicking
 on `<a href="#top">Top</a>` (case-insensitive) or simply `<a href="#">Top</a>` will scroll the user to the top of the page,
 unless there is an element with the id of `top` set in the same letter casing.
@@ -108,7 +108,7 @@ that can be used in the user's file system as the value of the `download` attrib
 ## Browsing context
 
 The `target` attribute enables the defining of the browsing context for link navigation (and [form submission](form_section)).
-The four case-insensitive, underscore-prefixed keywords were discussed with the [`<base>`](/learn/html/document-structure/#base) element. They include the default `_self`,
+The four case-insensitive, underscore-prefixed keywords were discussed with the [`<base>`](/document-structure/#base) element. They include the default `_self`,
 which is the current window, `_blank`, which opens the link in a new tab, `_parent`, which is the parent if the current link is nested
 in an object or iframe, and `_top`, which is the top-most ancestor, especially useful if the current link is deeply nested. `_top` and
 `_parent` are the same as `_self` if the link is not nested. The `target` attribute is not limited to these four key terms: any term
@@ -145,7 +145,10 @@ attribute provides the language of the translations:
 
 If the French translation is a PDF, you can provide the type attribute with the PDF MIME type of the linked resource. While the
 MIME type is purely advisory, informing the user that a link will open a document of a different format is always a good idea.
+
+```html
 <a href="/fr.pdf" hreflang="fr-FR" rel="alternate" lang="fr-FR" type="application/x-pdf">atelier d'apprentissage mechanique (pdf).</a>
+```
 
 ## Tracking link clicks
 
