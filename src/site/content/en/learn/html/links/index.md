@@ -20,7 +20,7 @@ about W3 is linked directly or indirectly from this document too!
 
 The power of the web, and the `<a>` tag, have grown immensely since Tim Berners-Lee published this first explanation in August 1991.
 Links represent a connection between two resources, one of which is the current document. Links can be created by [`<a>`](https://developer.mozilla.org/docs/Web/HTML/Element/a),
-[`<area>`](https://developer.mozilla.org/docs/Web/HTML/Element/area),[`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form),
+[`<area>`](https://developer.mozilla.org/docs/Web/HTML/Element/area), [`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form),
 and [`<link>`](https://developer.mozilla.org/docs/Web/HTML/Element/link). You've learned about [`<link>`](/learn/html/document-structure/#other-uses-of-the-lesslinkgreater-element),
 and will discover [forms](/learn/html/forms) in a separate section. There is also an entire [form learn section](/learn/forms/form). In this session, you'll
 find out about the single-letter, not-so-simple `<a>` tag.
@@ -97,9 +97,11 @@ The `download` attribute should be included when the `href` points to a download
 attribute is the suggested filename for the resource to be saved in the user's local file system.
 SVGOMG, the SVG Optimizer, uses the `download` attribute to suggest a file name for the downloadable blob that the optimizer
 creates. When `hal.svg` is optimized, SVGOMG's download link opening tag is similar to:
+
 ```html
 <a href="blob:https://jakearchibald.github.io/944a5fc8-fdb3-458a-91ee-cdd5964b6646" download="hal.svg">
 ```
+
 There's also a demo of a [<canvas> that creates a downloadable PNG data URL](https://developer.mozilla.org/docs/Web/HTML/Element/a#using_the_download_attribute_to_save_a_canvas_as_a_png).
 
 To link to a downloadable resource, include the URL of the asset as the value of the href attribute and the suggested filename
