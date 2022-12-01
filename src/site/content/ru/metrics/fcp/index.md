@@ -98,18 +98,18 @@ getFCP(console.log);
 
 Чтобы узнать, как улучшить FCP в целом (для любого сайта), обратитесь к следующим руководствам по производительности:
 
-- [Устранение ресурсов, блокирующих рендеринг](/render-blocking-resources/)
-- [Минимизация CSS-кода](/unminified-css/)
-- [Удаление неиспользуемого CSS-кода](/unused-css-rules/)
-- [Предварительное подключение к нужным источникам](/uses-rel-preconnect/)
+- [Устранение ресурсов, блокирующих рендеринг](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [Минимизация CSS-кода](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [Удаление неиспользуемого CSS-кода](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [Предварительное подключение к нужным источникам](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [Уменьшение времени ответа сервера (TTFB)](/ttfb/)
-- [Уход от переадресации нескольких страниц](/redirects/)
-- [Предварительная загрузка ключевых запросов](/uses-rel-preload/)
-- [Уход от огромных нагрузок на сеть](/total-byte-weight/)
-- [Обслуживание статических объектов сайта с помощью эффективной политики кеширования](/uses-long-cache-ttl/)
+- [Уход от переадресации нескольких страниц](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [Предварительная загрузка ключевых запросов](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Уход от огромных нагрузок на сеть](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [Обслуживание статических объектов сайта с помощью эффективной политики кеширования](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
 - [Уход от чрезмерного размера DOM](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
 - [Минимизация глубины вложенности критических запросов](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
-- [Настройка показа текста во время загрузки веб-шрифтов](/font-display/)
-- [Поддержание малого количества запросов и объемов передаваемых данных](/resource-summary/)
+- [Настройка показа текста во время загрузки веб-шрифтов](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [Поддержание малого количества запросов и объемов передаваемых данных](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

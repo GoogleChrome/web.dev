@@ -36,7 +36,7 @@ Ao pré-carregar um determinado recurso, você está dizendo ao navegador que go
 
 <figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Captura de tela do painel Chrome DevTools Network após aplicar o pré-carregamento.", width="701", height="509" %} <figcaption> Neste exemplo, a fonte Pacifico é pré-carregada, portanto, o download ocorre em paralelo com a folha de estilo.</figcaption></figure>
 
-A cadeia de solicitação crítica representa a ordem dos recursos que são priorizados e buscados pelo navegador. O Lighthouse identifica os ativos que estão no terceiro nível dessa cadeia como descobertos posteriormente. Você pode usar a [**auditoria de solicitações de chave**](/uses-rel-preload) de pré-carregamento para identificar quais recursos pré-carregar.
+A cadeia de solicitação crítica representa a ordem dos recursos que são priorizados e buscados pelo navegador. O Lighthouse identifica os ativos que estão no terceiro nível dessa cadeia como descobertos posteriormente. Você pode usar a [**auditoria de solicitações de chave**](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/) de pré-carregamento para identificar quais recursos pré-carregar.
 
 {% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="A chave de pré-carregamento do farol solicita auditoria.", width="745", height="97" %}
 

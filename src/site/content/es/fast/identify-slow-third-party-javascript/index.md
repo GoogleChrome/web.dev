@@ -48,7 +48,7 @@ La auditoría [Reducir el tiempo de ejecución de JavaScript](https://developer.
 
 ### Evite cargas útiles de red enormes
 
-La auditoría [Evitar enormes cargas útiles de red](/total-byte-weight) de Lighthouse identifica las solicitudes de red, incluidas las de terceros, que pueden ralentizar el tiempo de carga de la página. La auditoría falla cuando su carga útil de red supera los 4,000 KB.
+La auditoría [Evitar enormes cargas útiles de red](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/) de Lighthouse identifica las solicitudes de red, incluidas las de terceros, que pueden ralentizar el tiempo de carga de la página. La auditoría falla cuando su carga útil de red supera los 4,000 KB.
 
 {% Img src="image/admin/9Pnoz73MLeNzooUQLuam.png", alt="Captura de pantalla de la auditoría de Chrome DevTools 'Evitar enormes cargas útiles de red'", width="799", height="631" %}
 

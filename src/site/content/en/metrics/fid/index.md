@@ -365,9 +365,9 @@ For a deep dive on how to improve FID, see [Optimize FID](/optimize-fid/). For
 additional guidance on individual performance techniques that can also improve
 FID, see:
 
-- [Reduce the impact of third-party code](/third-party-summary/)
+- [Reduce the impact of third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [Minimize main thread work](/mainthread-work-breakdown/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Minimize main thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [Keep request counts low and transfer sizes small](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

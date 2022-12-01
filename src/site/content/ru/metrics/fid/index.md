@@ -182,9 +182,9 @@ getFID(console.log);
 
 Подробные сведения о том, как улучшить FID, см. в статье [«Оптимизация FID»](/optimize-fid/). Дополнительные рекомендации по отдельным методам повышения производительности, которые также могут улучшить FID, смотрите в следующих статьях:
 
-- [Уменьшение влияния стороннего кода](/third-party-summary/)
+- [Уменьшение влияния стороннего кода](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [Уменьшение времени выполнения JavaScript](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [Минимизация работы основного потока](/mainthread-work-breakdown/)
-- [Поддержание малого количества запросов и объемов передаваемых данных](/resource-summary/)
+- [Минимизация работы основного потока](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [Поддержание малого количества запросов и объемов передаваемых данных](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

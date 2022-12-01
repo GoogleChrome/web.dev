@@ -177,7 +177,7 @@ Lighthouse has a variety of audits that flag potential image optimizations. Alte
 Relevant Lighthouse audits:
 *   [Properly size images](https://developers.google.com/web/tools/lighthouse/audits/oversized-images)
 *   [Defer offscreen images](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)
-*   [Efficiently encode images](/uses-optimized-images/)
+*   [Efficiently encode images](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)
 *   [Serve images in next-gen formats](https://developers.google.com/web/tools/lighthouse/audits/webp)
 *   [Use video formats for animated content](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)
 
@@ -212,7 +212,7 @@ Minification removes unnecessary characters from JavaScript and CSS.
 
 #### Diagnose
 
-Use the [Minify CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) and [Minify JavaScript](/unminified-javascript/) Lighthouse audits to identify resources that are in need of minification.
+Use the [Minify CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) and [Minify JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/) Lighthouse audits to identify resources that are in need of minification.
 
 #### Fix
 

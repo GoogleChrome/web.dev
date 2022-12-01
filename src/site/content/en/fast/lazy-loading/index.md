@@ -32,7 +32,7 @@ load time. Instead, these non-critical resources are loaded at the moment of
 need. Where images are concerned, "non-critical" is often synonymous with
 "off-screen". If you've used Lighthouse and examined some opportunities for
 improvement, you may have seen some guidance in this realm in the form of the
-[Defer offscreen images audit](/offscreen-images/):
+[Defer offscreen images audit](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/):
 
 <figure>
   {% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="A screenshot of the Defer offscreen images audit in Lighthouse.", width="800", height="102" %}

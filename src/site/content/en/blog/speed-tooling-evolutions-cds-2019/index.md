@@ -40,7 +40,7 @@ metric](/user-centric-performance-metrics/#in-the-lab)—[Total Blocking Time
 content element becomes visible in the viewport.
 
 Before Largest Contentful Paint, [First Meaningful Paint
-(FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) and [Speed Index (SI)](/speed-index/) served to
+(FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) and [Speed Index (SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) served to
 capture the loading experience after the initial paint, but these metrics are
 complex and often do not identify when the main content of the page has loaded.
 Research has shown that simply looking at when [the largest element on the

@@ -182,9 +182,9 @@ FID はユーザー環境で測定される指標ですが (Lighthouse はラボ
 
 FID の改善方法の詳細については、「[Optimize FID](/optimize-fid/) (FID を最適化する)」を参照してください。FID の改善にもつながる個別のパフォーマンス改善手法に関するその他のガイダンスについては、以下を参照してください。
 
-- [サードパーティ製コードの影響を減らす](/third-party-summary/)
+- [サードパーティ製コードの影響を減らす](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [JavaScript の実行にかかる時間を短縮する](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [メイン スレッドの作業を最小限に抑える](/mainthread-work-breakdown/)
-- [リクエスト数を少なく、転送サイズを小さく維持する](/resource-summary/)<br>
+- [メイン スレッドの作業を最小限に抑える](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [リクエスト数を少なく、転送サイズを小さく維持する](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)<br>
 
 {% include 'content/metrics/metrics-changelog.njk' %}

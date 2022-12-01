@@ -218,6 +218,6 @@ can help automate the process of making sure that you're following web font opti
 
 The following audits can help you make sure that your pages are continuing to follow web font optimization best practices over time:
 
-* [Preload key requests](/uses-rel-preload/)
-* [Uses inefficient cache policy on static assets](/uses-long-cache-ttl/)
-* [All text remains visible during WebFont loads](/font-display/)
+* [Preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+* [Uses inefficient cache policy on static assets](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+* [All text remains visible during WebFont loads](https://developer.chrome.com/docs/lighthouse/performance/font-display/)

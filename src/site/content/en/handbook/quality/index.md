@@ -132,7 +132,7 @@ Provide a way to measure success. How can developers test that they've followed 
 
 ### Be mindful of the development landscape
 
-*Canonical example: [Serve images in next-gen formats](/uses-webp-images/#webp-browser-support) makes it clear
+*Canonical example: [Serve images in next-gen formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/#webp-browser-support) makes it clear
 that WebP is not supported in all browsers*
 
 Acknowledge browser complexity. Clearly state browser support (e.g., link to the relevant feature page on [caniuse](https://www.caniuse.com/)) and provide workarounds for browser incompatibilities (e.g., polyfills).

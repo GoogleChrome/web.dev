@@ -56,7 +56,7 @@ The Lighthouse [Reduce JavaScript execution time](https://developer.chrome.com/d
 
 ### Avoid enormous network payloads
 
-The Lighthouse [Avoid enormous network payloads](/total-byte-weight) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
+The Lighthouse [Avoid enormous network payloads](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
 
 {% Img src="image/admin/9Pnoz73MLeNzooUQLuam.png", alt="Screenshot of the Chrome DevTools 'Avoid enormous network payloads' audit.", width="799", height="631" %}
 

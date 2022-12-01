@@ -143,6 +143,6 @@ font.load().then(function() {
 
 以下の監査を実施すれば、ウェブページでウェブフォントを最適化するためのベストプラクティスが長期に渡って実践されていることが保証されます。
 
-- [Preload key requests (キーリクエストをプリロードする)](/uses-rel-preload/)
-- [Uses inefficient cache policy on static assets (静的アセットに非効率的なキャッシュポリシーが使用されている)](/uses-long-cache-ttl/)
-- [All text remains visible during WebFont loads (WebFont の読み込み中もすべてのテキストが表示されたままになる)](/font-display/)
+- [Preload key requests (キーリクエストをプリロードする)](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Uses inefficient cache policy on static assets (静的アセットに非効率的なキャッシュポリシーが使用されている)](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [All text remains visible during WebFont loads (WebFont の読み込み中もすべてのテキストが表示されたままになる)](https://developer.chrome.com/docs/lighthouse/performance/font-display/)

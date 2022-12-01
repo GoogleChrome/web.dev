@@ -152,8 +152,8 @@ new PerformanceObserver((entryList) => {
 
 其他优化高 TTFB 时延和相关感知延迟的机会包括：
 
-- [避免多次重定向](/redirects/).
-- 提前向跨域资源源[建立连接 Preconnect](/uses-rel-preconnect/) 。
+- [避免多次重定向](https://developer.chrome.com/docs/lighthouse/performance/redirects/).
+- 提前向跨域资源源[建立连接 Preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) 。
 - 将源提交给[HSTS预加载列表](https://hstspreload.org/)，以消除 HTTP-HTTPS 重定向延迟。
 - [使用 HTTP/2](/uses-http2/) or [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3)。
 - 考虑[预测性预取](/predictive-prefetching/)，为没有指定[减少数据使用偏好](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data)的用户提供快速页面导航。

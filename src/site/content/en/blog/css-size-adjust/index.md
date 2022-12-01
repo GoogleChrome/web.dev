@@ -112,7 +112,7 @@ element and the issue is very noticeable.
 </figure>
 
 To improve font rendering, a great technique is [font
-swapping](/font-display/). Render a quick-loading
+swapping](https://developer.chrome.com/docs/lighthouse/performance/font-display/). Render a quick-loading
 system font to show the content first, then swap that with a web font when
 the web font finishes loading. This gives you the best of both worlds: the
 content is visible as soon as possible, and you get a nicely styled page without

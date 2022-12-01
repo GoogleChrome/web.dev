@@ -16,7 +16,7 @@ A porção de [imagens](http://beta.httparchive.org/reports/state-of-images?star
 
 ## O que é lazy-loading? {: #what }
 
-O lazy-loading, ou carregamento adiado, é uma técnica que não carrega recursos não críticos no momento que a página é carregada. Em vez disso, esses recursos não críticos são carregados no momento em que são necessários. No que diz respeito às imagens, "não crítico" costuma ser sinônimo de "fora da tela". Se você usou o Lighthouse e examinou algumas oportunidades para melhoria, pode ter visto alguma orientação neste domínio na forma da [auditoria para adiar imagens fora da tela](/offscreen-images/):
+O lazy-loading, ou carregamento adiado, é uma técnica que não carrega recursos não críticos no momento que a página é carregada. Em vez disso, esses recursos não críticos são carregados no momento em que são necessários. No que diz respeito às imagens, "não crítico" costuma ser sinônimo de "fora da tela". Se você usou o Lighthouse e examinou algumas oportunidades para melhoria, pode ter visto alguma orientação neste domínio na forma da [auditoria para adiar imagens fora da tela](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/):
 
 <figure>   {% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Uma captura de tela da auditoria Adiar imagens fora da tela, do Lighthouse.", width="800", height="102" %}   <figcaption>Uma das auditorias de desempenho do Lighthouse é identificar imagens fora da tela, que são candidatas ao carregamento lazy.</figcaption></figure>
 

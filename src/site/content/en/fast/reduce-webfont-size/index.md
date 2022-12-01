@@ -239,7 +239,7 @@ For best consistency and visual results, don't rely on font synthesis. Instead, 
 - **Subset your font resources:** many fonts can be subset, or split into multiple unicode-ranges to deliver just the glyphs that a particular page requires. This reduces the file size and improves the download speed of the resource. However, when defining the subsets, be careful to optimize for font re-use. For example, don't download a different but overlapping set of characters on each page. A
 good practice is to subset based on script: for example, Latin, and Cyrillic.
 - **Give precedence to `local()` in your `src` list:** listing `local('Font Name')` first in your `src` list ensures that HTTP requests aren't made for fonts that are already installed.
-- **Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)** to test for [text compression](/uses-text-compression/).
+- **Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)** to test for [text compression](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/).
 
 ## Effects on Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS)
 

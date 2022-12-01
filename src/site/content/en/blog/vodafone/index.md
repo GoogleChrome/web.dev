@@ -87,9 +87,9 @@ to their analytics provider.
 Vodafone made the following changes on the optimized page (version A):
 
 -  **Moved the rendering logic for a widget from client-side to server-side**, which resulted in
-   less [render-blocking JavaScript](/render-blocking-resources/)
+   less [render-blocking JavaScript](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
 -  **Server-side rendered** critical HTML
--  **Optimized images**, including [resizing](/uses-responsive-images/) the hero
+-  **Optimized images**, including [resizing](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/) the hero
    image, [optimizing SVG images](https://jakearchibald.github.io/svgomg/), using media queries to
    [avoid loading images](/browser-level-image-lazy-loading/) that weren't yet
    visible in the viewport, and [optimizing PNG images](/squoosh-v2/)

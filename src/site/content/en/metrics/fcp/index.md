@@ -166,18 +166,18 @@ performance audit and pay attention to any specific
 To learn how to improve FCP in general (for any site), refer to the following
 performance guides:
 
-- [Eliminate render-blocking resources](/render-blocking-resources/)
-- [Minify CSS](/unminified-css/)
-- [Remove unused CSS](/unused-css-rules/)
-- [Preconnect to required origins](/uses-rel-preconnect/)
+- [Eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [Minify CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [Remove unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [Preconnect to required origins](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [Reduce server response times (TTFB)](/ttfb/)
-- [Avoid multiple page redirects](/redirects/)
-- [Preload key requests](/uses-rel-preload/)
-- [Avoid enormous network payloads](/total-byte-weight/)
-- [Serve static assets with an efficient cache policy](/uses-long-cache-ttl/)
+- [Avoid multiple page redirects](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [Preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Avoid enormous network payloads](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [Serve static assets with an efficient cache policy](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
 - [Avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
 - [Minimize critical request depth](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
-- [Ensure text remains visible during webfont load](/font-display/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Ensure text remains visible during webfont load](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [Keep request counts low and transfer sizes small](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

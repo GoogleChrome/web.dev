@@ -205,7 +205,7 @@ Embora as Core Web Vitals sejam as métricas críticas para compreender e propor
 
 Essas outras Web Vitals geralmente servem como proxy ou métricas suplementares para as Core Web Vitals, para ajudar a capturar uma parte maior da experiência ou para ajudar no diagnóstico de um problema específico.
 
-Por exemplo, as métricas [Time to First Byte (TTFB)](/ttfb/), ou Tempo até primeiro byte e [First Contentful Paint (FCP)](/fcp/) são ambas aspectos vitais da experiência de *carregamento* e são úteis no diagnóstico de problemas com LCP ([tempos de resposta](/overloaded-server/) lentos do servidor ou [recursos bloqueadores da renderização](/render-blocking-resources/), respectivamente) .
+Por exemplo, as métricas [Time to First Byte (TTFB)](/ttfb/), ou Tempo até primeiro byte e [First Contentful Paint (FCP)](/fcp/) são ambas aspectos vitais da experiência de *carregamento* e são úteis no diagnóstico de problemas com LCP ([tempos de resposta](/overloaded-server/) lentos do servidor ou [recursos bloqueadores da renderização](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/), respectivamente) .
 
 Da mesma forma, métricas como [Total Blocking Time (TBT)](/tbt/) e [Time to Interactive (TTI)](/tti/), ou Tempo até a interatividade são medidas de laboratório que são vitais para detectar e diagnosticar possíveis *problemas de interatividade* que afetarão a FID. No entanto, elas não fazem parte do conjunto Core Web Vitals porque não são mensuráveis em campo, nem refletem um resultado [centrado no usuário.](/user-centric-performance-metrics/#how-metrics-are-measured)
 

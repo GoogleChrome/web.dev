@@ -154,8 +154,8 @@ Use the [Server-Timing API](https://developer.mozilla.org/docs/Web/HTTP/Headers/
 
 Other opportunities to improve high TTFB times and related perceptual delays include:
 
-- [Avoid multiple page redirects](/redirects/).
-- [Preconnect to required origins](/uses-rel-preconnect/) for cross-origin resources.
+- [Avoid multiple page redirects](https://developer.chrome.com/docs/lighthouse/performance/redirects/).
+- [Preconnect to required origins](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) for cross-origin resources.
 - Submit your origin to the [HSTS preload list](https://hstspreload.org/) to eliminate HTTP-to-HTTPS redirect latency.
 - [Use HTTP/2](/uses-http2/) or [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3).
 - Consider [predictive prefetching](/predictive-prefetching/) for fast page navigations for users who have not specified [a preference for reduced data usage](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data).

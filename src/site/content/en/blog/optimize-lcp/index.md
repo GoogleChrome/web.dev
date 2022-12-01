@@ -249,7 +249,7 @@ Another reason your LCP resource may not start loading as early as possible—ev
 
 The goal in this step is to ensure the LCP element can render _immediately_ after its resource has finished loading, no matter when that happens.
 
-The primary reason the LCP element _wouldn't_ be able to render immediately after its resource finishes loading is if rendering is [blocked](/render-blocking-resources/) for some other reason:
+The primary reason the LCP element _wouldn't_ be able to render immediately after its resource finishes loading is if rendering is [blocked](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/) for some other reason:
 
 - Rendering of the entire page is blocked due to stylesheets or synchronous scripts in the `<head>` that are still loading.
 - The LCP resource has finished loading, but the LCP element has not yet been added to the DOM (it's waiting for some JavaScript code to load).
@@ -275,7 +275,7 @@ In most cases, the best way to ensure the stylesheet does not block rendering of
 
 Some recommendations to reduce the size of the stylesheet are:
 
-- [Remove unused CSS](/unused-css-rules/): use Chrome DevTools to find CSS rules that aren't being used and can potentially be removed (or deferred).
+- [Remove unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/): use Chrome DevTools to find CSS rules that aren't being used and can potentially be removed (or deferred).
 - [Defer non-critical CSS](/defer-non-critical-css/): split your stylesheet out into styles that are required for initial page load and then styles that can be loaded lazily.
 - [Minify and compress CSS](/reduce-network-payloads-using-text-compression/): for styles that are critical, make sure you're reducing their [transfer size](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/transferSize) as much as possible.
 
@@ -338,9 +338,9 @@ The goal of this step is to reduce the time spent transferring the bytes of the 
 
 The LCP resource of a page (if it has one) will either be an image or a web font. The following guides go into great detail about how to reduce the size of both:
 
-- [Serve the optimal image size](/uses-responsive-images/)
-- [Use modern image formats](/uses-webp-images/)
-- [Compress images](/uses-optimized-images/)
+- [Serve the optimal image size](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)
+- [Use modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)
+- [Compress images](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)
 - [Reduce web font size](/reduce-webfont-size/)
 
 #### Reduce the distance the resource has to travel
@@ -361,9 +361,9 @@ If you've given your LCP resource a [high `fetchpriority`](/priority-hints/) and
 
 #### Eliminate the network time entirely
 
-The best way to reduce resource load times is to eliminate the network entirely from the process. If you serve your resources with an [efficient cache-control policy](/uses-long-cache-ttl/), then visitors who request those resources a second time will have them served from the cache—bringing the _resource load time_ to essentially zero!
+The best way to reduce resource load times is to eliminate the network entirely from the process. If you serve your resources with an [efficient cache-control policy](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/), then visitors who request those resources a second time will have them served from the cache—bringing the _resource load time_ to essentially zero!
 
-And if your LCP resource is a web font, in addition to [reducing web font size](/reduce-webfont-size/), you should also consider whether you need to block rendering on the web font resource load. If you set a [`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display) value of anything other than `auto` or `block`, then text will [always be visible during load](/font-display/), and LCP will not be blocked on an additional network request.
+And if your LCP resource is a web font, in addition to [reducing web font size](/reduce-webfont-size/), you should also consider whether you need to block rendering on the web font resource load. If you set a [`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display) value of anything other than `auto` or `block`, then text will [always be visible during load](https://developer.chrome.com/docs/lighthouse/performance/font-display/), and LCP will not be blocked on an additional network request.
 
 Finally, if your LCP resource is small, it may make sense to inline the resources as a [data URL](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs), which will also eliminate the additional network request. However, using data URLs [comes with caveats](https://calendar.perfplanet.com/2018/performance-anti-patterns-base64-encoding/) because then the resources cannot be cached and in some cases can lead to longer render delays because of the additional [decode cost](https://www.catchpoint.com/blog/data-uri).
 

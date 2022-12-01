@@ -168,7 +168,7 @@ Auditorías relevantes de Lighthouse:
 
 - [Dimensionar correctamente las imágenes](https://developers.google.com/web/tools/lighthouse/audits/oversized-images)
 - [Aplazar las imágenes fuera de la pantalla](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)
-- [Codificación eficiente de imágenes](/uses-optimized-images/)
+- [Codificación eficiente de imágenes](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)
 - [Servir imágenes en formatos de última generación](https://developers.google.com/web/tools/lighthouse/audits/webp)
 - [Utilizar formatos de video para contenidos animados](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)
 
@@ -205,7 +205,7 @@ La minificación elimina los caracteres innecesarios de JavaScript y CSS.
 
 #### Diagnosticar
 
-Utiliza las auditorías [Minificar CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) y [Minificar JavaScript](/unminified-javascript/) de Lighthouse para identificar los recursos que necesitan minificación.
+Utiliza las auditorías [Minificar CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) y [Minificar JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/) de Lighthouse para identificar los recursos que necesitan minificación.
 
 #### Reparar
 

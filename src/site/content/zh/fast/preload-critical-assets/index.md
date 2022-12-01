@@ -28,7 +28,7 @@ feedback:
 
 <figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="应用预加载后 Chrome DevTools Network 面板的屏幕截图。", width="701", height="509" %}<figcaption>在本例中，已预加载了 Pacifico 字体，所以下载会与样式表并行进行。</figcaption></figure>
 
-关键请求链代表着浏览器优先处理和获取的资源顺序。 Lighthouse 会将位于该链第三层的资产识别为后期发现的资产。您可以使用[**预加载关键请求**](/uses-rel-preload)审计来确定要预加载的资源。
+关键请求链代表着浏览器优先处理和获取的资源顺序。 Lighthouse 会将位于该链第三层的资产识别为后期发现的资产。您可以使用[**预加载关键请求**](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)审计来确定要预加载的资源。
 
 {% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse 的预加载关键请求审计。", width="745", height="97" %}
 

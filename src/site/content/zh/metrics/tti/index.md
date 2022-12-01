@@ -54,7 +54,7 @@ TTI 指标最好[在实验室中](/user-centric-performance-metrics/#in-the-lab)
 
 为了提供良好的用户体验，网站在**普通移动硬件**上进行测试时，应该努力将可交互时间控制在**5 秒**以内。
 
-有关页面 TTI 对灯塔性能分数影响的详细信息，请参阅[灯塔如何确定您的 TTI 分数](/interactive/#how-lighthouse-determines-your-tti-score)。
+有关页面 TTI 对灯塔性能分数影响的详细信息，请参阅[灯塔如何确定您的 TTI 分数](https://developer.chrome.com/docs/lighthouse/performance/interactive/#how-lighthouse-determines-your-tti-score)。
 
 ## 如何改进 TTI
 
@@ -62,11 +62,11 @@ TTI 指标最好[在实验室中](/user-centric-performance-metrics/#in-the-lab)
 
 如需了解改进 TTI 的常见方式（针对任何网站），请参阅以下性能指南：
 
-- [缩小 JavaScript](/unminified-javascript/)
-- [预连接到所需的来源](/uses-rel-preconnect/)
-- [预加载关键请求](/uses-rel-preload/)
-- [减少第三方代码的影响](/third-party-summary/)
+- [缩小 JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/)
+- [预连接到所需的来源](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
+- [预加载关键请求](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [减少第三方代码的影响](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [最小化关键请求深度](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
 - [减少 JavaScript 执行时间](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [最小化主线程工作](/mainthread-work-breakdown/)
-- [保持较低的请求数和较小的传输大小](/resource-summary/)
+- [最小化主线程工作](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [保持较低的请求数和较小的传输大小](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)

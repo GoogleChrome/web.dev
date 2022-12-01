@@ -54,7 +54,7 @@ TTI는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 가장 �
 
 우수한 사용자 경험을 제공하기 위해 사이트는 **평균 모바일 하드웨어**에서 테스트할 때 상호 작용까지의 시간이 **5초** 미만이 될 수 있도록 해야 합니다.
 
-페이지의 TTI가 Lighthouse 성능 점수에 미치는 영향에 대한 자세한 내용은 [Lighthouse가 TTI 점수를 결정하는 방법](/interactive/#how-lighthouse-determines-your-tti-score)을 참조하세요.
+페이지의 TTI가 Lighthouse 성능 점수에 미치는 영향에 대한 자세한 내용은 [Lighthouse가 TTI 점수를 결정하는 방법](https://developer.chrome.com/docs/lighthouse/performance/interactive/#how-lighthouse-determines-your-tti-score)을 참조하세요.
 
 ## TTI를 개선하는 방법
 
@@ -62,11 +62,11 @@ TTI는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 가장 �
 
 모든 사이트에 대해 일반적으로 TTI를 개선하는 방법을 알아보려면 다음 성능 가이드를 참조하세요.
 
-- [JavaScript 축소](/unminified-javascript/)
-- [필요한 원본에 사전 연결](/uses-rel-preconnect/)
-- [핵심 요청 사전 로드](/uses-rel-preload/)
-- [타사 코드의 영향 줄이기](/third-party-summary/)
+- [JavaScript 축소](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/)
+- [필요한 원본에 사전 연결](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
+- [핵심 요청 사전 로드](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [타사 코드의 영향 줄이기](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [크리티컬 요청 깊이 최소화](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
 - [JavaScript 실행 시간 단축](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [메인 스레드 작업 최소화](/mainthread-work-breakdown/)
-- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](/resource-summary/)
+- [메인 스레드 작업 최소화](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)

@@ -264,7 +264,7 @@ Embora a funcionalidade não esteja no Chrome atualmente, há um [issue aberto](
 
 ### O Lighthouse reconhece o lazy-loading no nível do navegador?
 
-As versões anteriores do Lighthouse ainda destacavam que páginas que usam `loading=lazy` nas imagens precisavam ter uma estratégia para carregar imagens fora da tela. [O Lighthouse 6.0](/lighthouse-whats-new-6.0/) e acima são melhores nas abordagens para lidar com lazy loading de imagens fora da tela que podem usar limites diferentes, permitindo que eles sejam aprovados na auditoria [Adiar imagens fora da tela.](/offscreen-images/)
+As versões anteriores do Lighthouse ainda destacavam que páginas que usam `loading=lazy` nas imagens precisavam ter uma estratégia para carregar imagens fora da tela. [O Lighthouse 6.0](/lighthouse-whats-new-6.0/) e acima são melhores nas abordagens para lidar com lazy loading de imagens fora da tela que podem usar limites diferentes, permitindo que eles sejam aprovados na auditoria [Adiar imagens fora da tela.](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/)
 
 ## Conclusão
 

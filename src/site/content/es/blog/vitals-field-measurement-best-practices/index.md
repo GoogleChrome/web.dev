@@ -111,7 +111,7 @@ El código de análisis siempre debe cargarse de forma asincrónica y sin bloque
 
 Todas las API utilizadas para medir las métricas de Core Web Vitals fueron diseñadas específicamente para soportar la carga asíncrona y diferida de scripts (a través de la marca [`buffered`](https://www.chromestatus.com/feature/5118272741572608)), por lo que no es necesario apresurarse para que sus scripts se carguen antes de tiempo.
 
-En el caso de que esté midiendo una métrica que no se puede calcular más adelante en la línea de tiempo de carga de la página, debe incluir *solo* el código que debe ejecutarse antes en el `<head>` de su documento (para que no sea una [solicitud de bloqueo de renderización](/render-blocking-resources/)) y diferir el resto. No cargue todos sus análisis de forma anticipada solo porque una sola métrica lo requiera.
+En el caso de que esté midiendo una métrica que no se puede calcular más adelante en la línea de tiempo de carga de la página, debe incluir *solo* el código que debe ejecutarse antes en el `<head>` de su documento (para que no sea una [solicitud de bloqueo de renderización](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)) y diferir el resto. No cargue todos sus análisis de forma anticipada solo porque una sola métrica lo requiera.
 
 ### No cree tareas largas
 

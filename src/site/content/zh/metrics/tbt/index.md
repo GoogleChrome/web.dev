@@ -84,7 +84,7 @@ TTI 会在主线程至少有五秒钟没有长任务时，认为页面具备"可
 
 ## 如何测量 TBT
 
-TBT 指标应该[在实验室中](/user-centric-performance-metrics/#in-the-lab)进行测量。测量 TBT的最佳方法是在您的网站上运行一次灯塔性能审计。有关使用详情，请参阅[灯塔中关于 TBT 的说明文档](/lighthouse-total-blocking-time)。
+TBT 指标应该[在实验室中](/user-centric-performance-metrics/#in-the-lab)进行测量。测量 TBT的最佳方法是在您的网站上运行一次灯塔性能审计。有关使用详情，请参阅[灯塔中关于 TBT 的说明文档](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)。
 
 ### 实验室工具
 
@@ -98,7 +98,7 @@ TBT 指标应该[在实验室中](/user-centric-performance-metrics/#in-the-lab)
 
 为了提供良好的用户体验，网站在**普通移动硬件**上进行测试时，应该努力将总阻塞时间控制在**300 毫秒**以内。
 
-有关页面 TBT 对灯塔性能分数影响的详细信息，请参阅[灯塔如何确定您的 TBT 分数](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
+有关页面 TBT 对灯塔性能分数影响的详细信息，请参阅[灯塔如何确定您的 TBT 分数](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
 
 ## 如何改进 TBT
 
@@ -106,7 +106,7 @@ TBT 指标应该[在实验室中](/user-centric-performance-metrics/#in-the-lab)
 
 如需了解改进 TBT 的常见方式（针对任何网站），请参阅以下性能指南：
 
-- [减少第三方代码的影响](/third-party-summary/)
+- [减少第三方代码的影响](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [减少 JavaScript 执行时间](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [最小化主线程工作](/mainthread-work-breakdown/)
-- [保持较低的请求数和较小的传输大小](/resource-summary/)
+- [最小化主线程工作](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [保持较低的请求数和较小的传输大小](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)

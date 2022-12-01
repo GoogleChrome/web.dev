@@ -28,7 +28,7 @@ Webページを開くと、ブラウザはすぐにサーバーからのHTMLフ�
 
 <figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="プリロードを適用した後のChrome DevToolsネットワークパネルのスクリーンショット。", width="701", height="509" %} <figcaption>この例では、Pacificoフォントがプリロードされているため、ダウンロードはスタイルシートと並行して行われます。</figcaption></figure>
 
-クリティカルリクエストチェーンは、ブラウザが優先順位を付けてフェッチするリソースの順序を表します。Lighthouseは、このチェーンの3番目のレベルにあるアセットを遅延検出と識別します。[**重要リクエストのプリロード**](/uses-rel-preload)監査を使用して、プリロードするリソースを特定できます。
+クリティカルリクエストチェーンは、ブラウザが優先順位を付けてフェッチするリソースの順序を表します。Lighthouseは、このチェーンの3番目のレベルにあるアセットを遅延検出と識別します。[**重要リクエストのプリロード**](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)監査を使用して、プリロードするリソースを特定できます。
 
 {% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouseの「重要なリクエストのプリロード」監査。", width="745", height="97" %}
 

@@ -137,7 +137,7 @@ across our public tooling.
 
 Website performance is especially prone to being dragged down
 by third party content
-(see [Eliminate render-blocking resources](/render-blocking-resources)).
+(see [Eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)).
 This is a particular problem for e-commerce, often due to trackers and widgets.
 
 Some ways to handle third party content with respect to performance:

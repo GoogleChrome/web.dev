@@ -79,7 +79,7 @@ To further improve FMP, the team used Lighthouse to find opportunities for and v
 
 #### Avoid multiple, costly round trips to any origin
 
-To mitigate overhead from DNS and TLS, Truebil used [`<link rel="preconnect">`](/uses-rel-preconnect) and `<link rel="dns-prefetch">`. This approach causes the browser to complete the TLS handshake as soon as possible on page load and pre-resolve cross-origin domain names, allowing for a secure, snappy user experience.
+To mitigate overhead from DNS and TLS, Truebil used [`<link rel="preconnect">`](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) and `<link rel="dns-prefetch">`. This approach causes the browser to complete the TLS handshake as soon as possible on page load and pre-resolve cross-origin domain names, allowing for a secure, snappy user experience.
 
 <figure>
   {% Img src="image/admin/e1taLW99INISJAsEP0xe.png", alt="Screenshots of Chrome DevTools showing the effect of rel=preconnect.", width="800", height="350" %}

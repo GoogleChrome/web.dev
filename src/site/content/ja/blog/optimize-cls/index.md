@@ -243,7 +243,7 @@ Web フォントのダウンロードとレンダリングが行われる場合�
 
 以下のツールを使用することで、この現象を最小限に抑えることができます。
 
-- <code>[font-display](/font-display/)</code> では、<code>auto</code>、<code>swap</code>、<code>block</code>、<code>fallback</code>、<code>optional</code> などの値を使用してカスタム フォントのレンダリング動作を修正することができます。残念ながら、これらの値 ([optional](http://crrev.com/749080) を除く) はすべて上に示したパターンのいずれかによるリレイアウトを引き起こしてしまう可能性があります。
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code> では、<code>auto</code>、<code>swap</code>、<code>block</code>、<code>fallback</code>、<code>optional</code> などの値を使用してカスタム フォントのレンダリング動作を修正することができます。残念ながら、これらの値 ([optional](http://crrev.com/749080) を除く) はすべて上に示したパターンのいずれかによるリレイアウトを引き起こしてしまう可能性があります。
 - [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) を使用すれば、必要なフォントの取得にかかる時間を短縮することができます。
 
 Chrome 83 の公開時点では、以下も方法もお勧めできます。

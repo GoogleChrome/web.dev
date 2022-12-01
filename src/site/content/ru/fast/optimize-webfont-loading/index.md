@@ -143,6 +143,6 @@ font.load().then(function() {
 
 С помощью указанных ниже аудитов можно периодически проверять, соответствуют ли ваши страницы рекомендациям по оптимизации веб-шрифтов.
 
-- [Preload key requests](/uses-rel-preload/)
-- [Uses inefficient cache policy on static assets](/uses-long-cache-ttl/)
-- [All text remains visible during WebFont loads](/font-display/)
+- [Preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Uses inefficient cache policy on static assets](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [All text remains visible during WebFont loads](https://developer.chrome.com/docs/lighthouse/performance/font-display/)

@@ -84,7 +84,7 @@ En el primer caso, tres tareas de 51 ms tendrían un TBT de **3 ms**. Mientras q
 
 ## Cómo medir TBT
 
-TBT es una métrica que debe medirse [en el laboratorio](/user-centric-performance-metrics/#in-the-lab) . La mejor manera de medir TBT es ejecutar una auditoría de desempeño Lighthouse en su sitio. Consulte la [documentación de Lighthouse sobre TBT](/lighthouse-total-blocking-time) para obtener información sobre su uso.
+TBT es una métrica que debe medirse [en el laboratorio](/user-centric-performance-metrics/#in-the-lab) . La mejor manera de medir TBT es ejecutar una auditoría de desempeño Lighthouse en su sitio. Consulte la [documentación de Lighthouse sobre TBT](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/) para obtener información sobre su uso.
 
 ### Herramientas de laboratorio
 
@@ -98,7 +98,7 @@ TBT es una métrica que debe medirse [en el laboratorio](/user-centric-performan
 
 Para ofrecer una buena experiencia de usuario, los sitios deben esforzarse por tener un Total Blocking Time inferior a **300 milisegundos** cuando se prueban en el hardware de un **dispositivo móvil promedio**.
 
-Para obtener más información sobre cómo la TBT de su página afecta a su puntuación de rendimiento de Lighthouse, consulte [Cómo determina Lighthouse su puntuación TBT](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
+Para obtener más información sobre cómo la TBT de su página afecta a su puntuación de rendimiento de Lighthouse, consulte [Cómo determina Lighthouse su puntuación TBT](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
 
 ## Cómo mejorar TBT
 
@@ -106,7 +106,7 @@ Para aprender a mejorar TBT para un sitio específico, puede ejecutar una audito
 
 Para saber cómo mejorar la TBT en general (para cualquier sitio), consulte las siguientes normas de rendimiento:
 
-- [Reducir el impacto en el código de terceros](/third-party-summary/)
+- [Reducir el impacto en el código de terceros](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [Reducir el tiempo de ejecución de JavaScript](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [Minimizar el trabajo del subproceso principal](/mainthread-work-breakdown/)
-- [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](/resource-summary/)
+- [Minimizar el trabajo del subproceso principal](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)

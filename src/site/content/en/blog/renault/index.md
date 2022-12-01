@@ -97,7 +97,7 @@ From a platform standpoint, performance has been a priority for years and includ
 +   Lazy-loading images, videos, and iframes using [`IntersectionObserver`](/lazy-loading-images/#images-inline-intersection-observer) and FPOs (small 1&nbsp;KB thumbnails).
 +   Removing blocking scripts and [adjusting transpilation to browser targets](/serve-modern-code-to-modern-browsers/#use-@babelpreset-env) to reduce JS file sizes (by avoiding unnecessary polyfills).
 +   [Reducing the size of the Google Tag Manager container](https://support.google.com/tagmanager/answer/2772488?hl=en) to load third-party scripts only where and when needed.
-+   [Reducing the number of custom fonts](/font-best-practices/#use-fewer-web-fonts), [using woff/woff2 formats with unicode-range](/font-best-practices/#best-practices-2), and  [`font-display:swap`](/font-display/#how-to-avoid-showing-invisible-text) to reduce font file sizes and show text as soon as possible even if custom fonts are not yet available.
++   [Reducing the number of custom fonts](/font-best-practices/#use-fewer-web-fonts), [using woff/woff2 formats with unicode-range](/font-best-practices/#best-practices-2), and  [`font-display:swap`](https://developer.chrome.com/docs/lighthouse/performance/font-display//#how-to-avoid-showing-invisible-text) to reduce font file sizes and show text as soon as possible even if custom fonts are not yet available.
 +   [Preloading hero images](/preload-responsive-images/) which are often LCP elements.
 
 The team is still working on future improvements such as:

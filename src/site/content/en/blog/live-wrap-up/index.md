@@ -221,7 +221,7 @@ measured in the field) and [CLS](/cls/). Lighthouse also removed
 three old metrics: [First Meaningful
 Paint](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/), [First CPU
 Idle](https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/), and [Max Potential
-FID](/lighthouse-max-potential-fid/). These removals are due to
+FID](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). These removals are due to
 considerations like metric variability and newer metrics offering better
 reflections of the part of user experience that Lighthouse is trying to measure.
 Additionally, Lighthouse also made some adjustments to how much each metric

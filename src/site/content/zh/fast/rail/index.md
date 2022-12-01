@@ -131,7 +131,7 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 - 请记住，尽管您的典型移动用户的设备可能声称它使用的是 2G、3G 或 4G 连接，但实际上，由于数据包丢失和网络差异，[有效连接速度](/adaptive-serving-based-on-network-quality/#how-it-works)通常要慢得多。
 
-- [消除阻塞渲染资源](/render-blocking-resources/)。
+- [消除阻塞渲染资源](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)。
 
 - 为了产生完整加载的感觉，您不必在 5 秒钟时间内加载所有内容。不妨考虑[延迟加载图像](/browser-level-image-lazy-loading/)、[代码拆分 JavaScript 包](/reduce-javascript-payloads-with-code-splitting/)以及 [web.dev 上建议的其他优化](/fast/)。
 
@@ -183,11 +183,11 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 **响应**
 
-- [最大首次输入延迟时间](/lighthouse-max-potential-fid/)。根据主线程空闲时间估算应用响应用户输入所需的时间。
+- [最大首次输入延迟时间](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)。根据主线程空闲时间估算应用响应用户输入所需的时间。
 
 - [不使用被动侦听器来提高滚动性能](/uses-passive-event-listeners/)。
 
-- [总阻塞时间](/lighthouse-total-blocking-time/)。测量阻止页面响应用户输入（例如鼠标点击、屏幕点击或按键）的总时间。
+- [总阻塞时间](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)。测量阻止页面响应用户输入（例如鼠标点击、屏幕点击或按键）的总时间。
 
 - [交互时间](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive)。测量用户何时可以稳定地与所有页面元素进行交互。
 
@@ -199,19 +199,19 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 - [消除阻塞渲染的资源](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)。
 
-- [延迟处理屏幕外图像](/offscreen-images/)。推迟加载屏幕外的图像，在需要时才加载。
+- [延迟处理屏幕外图像](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/)。推迟加载屏幕外的图像，在需要时才加载。
 
-- [适当调整图像大小](/uses-responsive-images/)。不要提供明显大于移动视口中呈现的尺寸的图像。
+- [适当调整图像大小](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)。不要提供明显大于移动视口中呈现的尺寸的图像。
 
 - [避免链接关键请求](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)。
 
 - [不要为其所有资源使用 HTTP/2](/uses-http2/) 。
 
-- [对图像进行高效编码](/uses-optimized-images/)。
+- [对图像进行高效编码](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)。
 
-- [启用文本压缩](/uses-text-compression/)。
+- [启用文本压缩](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/)。
 
-- [避免网络负载过大](/total-byte-weight/)。
+- [避免网络负载过大](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)。
 
 - [避免 DOM 大小过大](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)。通过仅传送呈现页面所需的 DOM 节点来减少网络字节数量。
 

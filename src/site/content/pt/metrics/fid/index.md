@@ -182,9 +182,9 @@ Embora o FID seja uma métrica de campo (e o Lighthouse seja uma ferramenta de m
 
 Para saber como melhorar a FID, veja [Otimize a FID](/optimize-fid/). Para obter orientações adicionais sobre técnicas de desempenho individual que também podem melhorar a FID, consulte:
 
-- [Reduza o impacto do código de terceiros](/third-party-summary/)
+- [Reduza o impacto do código de terceiros](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [Reduza o tempo de execução do JavaScript](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [Minimize o trabalho da thread principal](/mainthread-work-breakdown/)
-- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](/resource-summary/)
+- [Minimize o trabalho da thread principal](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

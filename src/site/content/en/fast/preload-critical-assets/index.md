@@ -39,7 +39,7 @@ By preloading a certain resource, you are telling the browser that you would lik
 <figcaption>In this example, Pacifico font is preloaded, so the download happens in parallel with the stylesheet.</figcaption>
 </figure>
 
-The critical request chain represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as late-discovered. You can use the [**Preload key requests**](/uses-rel-preload) audit to identify which resources to preload.
+The critical request chain represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as late-discovered. You can use the [**Preload key requests**](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/) audit to identify which resources to preload.
 
 {% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse's preload key requests audit.", width="745", height="97" %}
 

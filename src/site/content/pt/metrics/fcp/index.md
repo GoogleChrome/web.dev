@@ -98,18 +98,18 @@ Para aprender como melhorar a FCP para um site específico, você pode executar 
 
 Para saber como melhorar a FCP em geral (para qualquer site), consulte os seguintes guias de desempenho:
 
-- [Elimine recursos que causam bloqueio de renderização](/render-blocking-resources/)
-- [Minifique o CSS](/unminified-css/)
-- [Remova o CSS não utilizado](/unused-css-rules/)
-- [Pré-conecte a origens necessárias](/uses-rel-preconnect/)
+- [Elimine recursos que causam bloqueio de renderização](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [Minifique o CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [Remova o CSS não utilizado](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [Pré-conecte a origens necessárias](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [Reduza os tempos de resposta do servidor (TTFB)](/ttfb/)
-- [Evite múltiplos redirecionamentos de página](/redirects/)
-- [Pré-carregue solicitações importantes](/uses-rel-preload/)
-- [Evite enormes cargas de rede](/total-byte-weight/)
-- [Sirva ativos estáticos com uma política de cache eficiente](/uses-long-cache-ttl/)
+- [Evite múltiplos redirecionamentos de página](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [Pré-carregue solicitações importantes](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Evite enormes cargas de rede](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [Sirva ativos estáticos com uma política de cache eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
 - [Evite um tamanho excessivo do DOM](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
 - [Minimize a profundidade de solicitações críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
-- [Certifique-se que o texto permanece visível durante o carregamento de webfonts](/font-display/)
-- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](/resource-summary/)
+- [Certifique-se que o texto permanece visível durante o carregamento de webfonts](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

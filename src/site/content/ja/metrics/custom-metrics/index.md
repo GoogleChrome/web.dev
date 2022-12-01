@@ -133,7 +133,7 @@ try {
 
 [Long Tasks API](https://w3c.github.io/longtasks/)は、ブラウザのメインスレッドがフレームレートや入力遅延に影響を与えるのに十分な時間がブロックされているかどうかを知るのに役立ちます。現在、このAPIは、50ミリ秒 (ms) を超えて実行されるすべてのタスクを報告します。
 
-高価なコードを実行する（または大きなスクリプトをロードして実行する）必要があるときは、そのコードがメインスレッドをブロックしたかどうかを追跡すると便利です。実際、多くの高レベルのメトリックは、Long Tasks APIそのものを基に構築されています(such as [Time to Interactive (TTI)](/tti/) や [Total Blocking Time (TBT)など。](/lighthouse-total-blocking-time/))
+高価なコードを実行する（または大きなスクリプトをロードして実行する）必要があるときは、そのコードがメインスレッドをブロックしたかどうかを追跡すると便利です。実際、多くの高レベルのメトリックは、Long Tasks APIそのものを基に構築されています(such as [Time to Interactive (TTI)](/tti/) や [Total Blocking Time (TBT)など。](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/))
 
 長いタスクがいつ発生するかを判断するには、 [PerformanceObserver](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)を使って、`longtask`型のエントリを監視する登録を行います。
 

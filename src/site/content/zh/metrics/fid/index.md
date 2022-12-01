@@ -180,9 +180,9 @@ getFID(console.log);
 
 如需深入了解如何改进 FID，请参阅[优化 FID](/optimize-fid/)。有关其他能够改进 FID 的单个性能技巧的进一步指导，请参阅：
 
-- [减少第三方代码的影响](/third-party-summary/)
+- [减少第三方代码的影响](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [减少 JavaScript 执行时间](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [最小化主线程工作](/mainthread-work-breakdown/)
-- [保持较低的请求数和较小的传输大小](/resource-summary/)
+- [最小化主线程工作](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [保持较低的请求数和较小的传输大小](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

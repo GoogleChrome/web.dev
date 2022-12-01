@@ -143,6 +143,6 @@ font.load().then(function() {
 
 以下审计可以帮助您确保您的页面随着时间的推移继续遵循 Web 字体优化最佳实践：
 
-- [预加载密钥请求](/uses-rel-preload/)
-- [对静态资产使用低效的缓存策略](/uses-long-cache-ttl/)
-- [在 WebFont 加载期间所有文本保持可见](/font-display/)
+- [预加载密钥请求](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [对静态资产使用低效的缓存策略](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [在 WebFont 加载期间所有文本保持可见](https://developer.chrome.com/docs/lighthouse/performance/font-display/)

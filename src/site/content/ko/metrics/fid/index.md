@@ -182,9 +182,9 @@ FID는 필드 메트릭(Lighthouse는 실험실 메트릭 도구임)이지만 FI
 
 FID를 개선하는 방법에 대한 자세한 내용은 [FID 최적화](/optimize-fid/)를 참조하시기 바랍니다. FID를 개선할 수 있는 개별 성능 기술에 대한 추가 지침은 다음을 참조하세요.
 
-- [타사 코드의 영향 줄이기](/third-party-summary/)
+- [타사 코드의 영향 줄이기](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [JavaScript 실행 시간 단축](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [메인 스레드 작업 최소화](/mainthread-work-breakdown/)
-- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](/resource-summary/)
+- [메인 스레드 작업 최소화](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

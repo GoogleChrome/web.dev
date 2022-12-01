@@ -13,4 +13,4 @@ videos can be configured to look and feel like GIFs by including the `autoplay l
 muted playsinline` attributes on the `<video>` tag. In addition, to prevent
 layout shifts, make sure to set the `width` and `height` attributes. For
 instructions on converting GIFs to MP4, see [Create MPEG
-Videos](/efficient-animated-content/#create-mpeg-videos).
+Videos](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/#create-mpeg-videos).

@@ -237,7 +237,7 @@ origin over the last 28 days.
 performance issues, as it is collected in a controlled environment. The report
 shows the performance using metrics like[First Contentful
 Paint](/fcp/), [Largest Contentful Paint](/lcp/),
-[Speed Index](/speed-index/), [Cumulative Layout
+[Speed Index](https://developer.chrome.com/docs/lighthouse/performance/speed-index/), [Cumulative Layout
 Shift](/cls/), [Time to
 Interactive](/tti/), and [Total Blocking
 Time](/tbt/). Each metric is

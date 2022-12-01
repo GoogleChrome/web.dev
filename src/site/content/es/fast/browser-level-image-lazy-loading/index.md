@@ -266,7 +266,7 @@ Aunque la funcionalidad no está en Chrome actualmente, existe un [problema abie
 
 ### ¿Lighthouse reconoce la carga diferida a nivel del navegador?
 
-Las versiones anteriores de Lighthouse aún destacarían que las páginas que usan `loading=lazy` en imágenes requerían una estrategia para cargar imágenes fuera de la pantalla. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) y superior tienen un mejor factor en los enfoques para la carga diferida de imágenes fuera de la pantalla que pueden usar diferentes limites, lo que les permite pasar la auditoría de [diferir imágenes fuera de la pantalla](/offscreen-images/).
+Las versiones anteriores de Lighthouse aún destacarían que las páginas que usan `loading=lazy` en imágenes requerían una estrategia para cargar imágenes fuera de la pantalla. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) y superior tienen un mejor factor en los enfoques para la carga diferida de imágenes fuera de la pantalla que pueden usar diferentes limites, lo que les permite pasar la auditoría de [diferir imágenes fuera de la pantalla](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/).
 
 ## Conclusión
 

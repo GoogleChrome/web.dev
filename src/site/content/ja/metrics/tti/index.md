@@ -54,7 +54,7 @@ TTI は、[ラボ環境](/user-centric-performance-metrics/#in-the-lab)で測定
 
 優れたユーザー エクスペリエンスを提供するためには、**平均的なモバイル ハードウェア**でテストを行った場合に、Time to Interactive を **5 秒**以下に抑えるよう努力する必要があります。
 
-ページの TTI が Lighthouse のパフォーマンス スコアにどのような影響を及ぼすかについては、「[Lighthouse による TTI スコアの決定方法](/interactive/#how-lighthouse-determines-your-tti-score)」を参照してください。
+ページの TTI が Lighthouse のパフォーマンス スコアにどのような影響を及ぼすかについては、「[Lighthouse による TTI スコアの決定方法](https://developer.chrome.com/docs/lighthouse/performance/interactive/#how-lighthouse-determines-your-tti-score)」を参照してください。
 
 ## TTI の改善方法
 
@@ -62,11 +62,11 @@ TTI は、[ラボ環境](/user-centric-performance-metrics/#in-the-lab)で測定
 
 TTI の (あらゆるサイトに共通する) 一般的な改善方法については、以下のパフォーマンス ガイドを参照してください。
 
-- [JavaScript を圧縮する](/unminified-javascript/)
-- [必要なオリジンに事前接続する](/uses-rel-preconnect/)
-- [キー リクエストを事前に読み込む](/uses-rel-preload/)
-- [サードパーティ製コードの影響を減らす](/third-party-summary/)
+- [JavaScript を圧縮する](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/)
+- [必要なオリジンに事前接続する](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
+- [キー リクエストを事前に読み込む](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [サードパーティ製コードの影響を減らす](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
 - [クリティカルなリクエストの深さを最小化する](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
 - [JavaScript の実行にかかる時間を短縮する](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [メイン スレッドの作業を最小限に抑える](/mainthread-work-breakdown/)
-- [リクエスト数を少なく、転送サイズを小さく維持する](/resource-summary/)
+- [メイン スレッドの作業を最小限に抑える](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [リクエスト数を少なく、転送サイズを小さく維持する](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)

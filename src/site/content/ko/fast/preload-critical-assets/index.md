@@ -28,7 +28,7 @@ feedback:
 
 <figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="사전 로딩 적용 후 Chrome DevTools Network 패널에 대한 스크린샷.", width="701", height="509" %} <figcaption>이 예제에서는 Pacifico 글꼴이 미리 로드되어 있으므로 스타일시트를 사용하는 동시에 다운로드됩니다.</figcaption></figure>
 
-중요한 요청 체인은 브라우저에서 우선순위를 지정하고 가져오는 리소스의 순서를 나타냅니다. Lighthouse는 이 체인의 세 번째 수준에 있는 자산을 늦게 발견한 자산으로 식별합니다. [**사전 로드 키 요청**](/uses-rel-preload) 감사를 사용하여 사전 로드할 리소스를 식별할 수 있습니다.
+중요한 요청 체인은 브라우저에서 우선순위를 지정하고 가져오는 리소스의 순서를 나타냅니다. Lighthouse는 이 체인의 세 번째 수준에 있는 자산을 늦게 발견한 자산으로 식별합니다. [**사전 로드 키 요청**](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/) 감사를 사용하여 사전 로드할 리소스를 식별할 수 있습니다.
 
 {% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse의 사전 로드 키 요청 감사.", width="745", height="97" %}
 
