@@ -48,12 +48,7 @@ strategy and create goals focused on specific user groups.
 
 ### Incorporating disabilities
 
-<blockquote>
-  <p>"People are all different. I can only speak from my experience. When you meet one Deaf person, then you've met one Deaf person—not all of us."</p>
-  <cite>
-    Meryl Evans from the ID24 talk <a href="https://youtu.be/yrwKWtJdZ_c/">Deaf Tech: Travel Through Time from Past to Future</a>.
-  </cite>
-</blockquote>
+
 
 <figure data-float="right">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/SmtiiRRpAImfG7MI6ku4.png", alt="Disabilities may be permanent, temporary, or situational. These disabilities can affect touch, seeing, hearing, and speaking.", width="400", height="655" %}
@@ -66,7 +61,11 @@ add disabilities to existing user personas, or even create a persona spectrum to
 
 No matter how you incorporate people with disabilities into your personas, they should not be based on real people or stereotypes. And personas are never a substitute for user testing.
 
-
+{% Details %}
+{% DetailsSummary %}
+#### Persona: Jane Bennet
+Check out an example of a persona that supports specific use cases.
+{% endDetailsSummary %}
 
 <figure data-float="right">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/ysBmXtLrbxScFwocWF8f.png", alt="Jane Smith is tall with long dark hair, wearing a gray long sleeve shirt and jeans," width="249", height="601" %}
