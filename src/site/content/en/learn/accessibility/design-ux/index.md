@@ -51,7 +51,7 @@ strategy and create goals focused on specific user groups.
 <blockquote>
   <p>"People are all different. I can only speak from my experience. When you meet one Deaf person, then you've met one Deaf person—not all of us."</p>
   <cite>
-    Meryl Evans from the ID24 talk <a href=""https://youtu.be/yrwKWtJdZ_c/>""Deaf Tech: Travel Through Time from Past to Future"</a>.
+    Meryl Evans from the ID24 talk <a href="https://youtu.be/yrwKWtJdZ_c/">Deaf Tech: Travel Through Time from Past to Future"</a>.
   </cite>
 </blockquote>
 
