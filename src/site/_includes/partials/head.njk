@@ -45,13 +45,6 @@
 {# Include the GA object so we can start queuing events. #}
 {% include 'partials/analytics.njk' %}
 
-{% for item in inlineScripts %}
-  {% set inlineScript %}
-    {% includeRaw item %}
-  {% endset %}
-  <script>{{ inlineScript | minifyJs | cspHash | safe }}</script>
-{% endfor %}
-
 {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
 {% include 'partials/script-loader.njk' %}
 {% set apiScripts %}

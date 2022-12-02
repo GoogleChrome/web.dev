@@ -111,7 +111,7 @@
     "terser": "^5.9.0",
     "truncate-utf8-bytes": "^1.0.2",
     "unistore": "^3.4.1",
-    "web-vitals": "^3.0.4",
+    "web-vitals": "^3.1.0",
     "webdev-infra": "^1.0.32",
     "wicg-inert": "^3.0.1",
     "yaml-front-matter": "^4.0.0"
