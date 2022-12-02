@@ -132,6 +132,8 @@ enhanced capabilities and reliability, Progressive Web Apps allow what you
 build to be installed by _anyone, anywhere, on any device_ with a single
 codebase.
 
+<!--lint disable no-unescaped-template-tags-->
 {% from 'macros/prerender.njk' import prerender with context %}
 {# Prerender /progressive-web-apps/ as a test of prerendering #}
 {{ prerender('/progressive-web-apps/') }}
+<!--lint enable no-unescaped-template-tags-->
