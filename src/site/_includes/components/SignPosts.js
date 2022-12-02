@@ -33,7 +33,7 @@ function SignPosts(slug) {
     .map((pathName) => {
       return html`<a
         class="w-post-signpost__link"
-        href="/${paths[pathName].slug}"
+        href="/${paths[pathName].slug}/"
         >${i18n(paths[pathName].title, locale)}</a
       >`;
     })
