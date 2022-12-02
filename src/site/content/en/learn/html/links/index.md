@@ -192,4 +192,4 @@ them together to create lists of links (also known as navigation).
 
 ### Check your understanding
 
-{% Assessment 'metadata' %}
+{% Assessment 'links' %}

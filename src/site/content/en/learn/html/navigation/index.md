@@ -345,4 +345,4 @@ Up next, we will look at marking up data tables.
 
 ### Check your understanding
 
-{% Assessment 'metadata' %}
+{% Assessment 'navigation' %}

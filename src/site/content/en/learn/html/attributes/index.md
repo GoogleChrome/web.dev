@@ -490,4 +490,4 @@ several other element-specific attributes as we take a deeper look into links.
 
 ## Check your understanding
 
-{% Assessment 'metadata' %}
+{% Assessment 'attributes' %}

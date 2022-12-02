@@ -326,4 +326,4 @@ Many developers use tables to lay out forms but there is no need to. But you do 
 
 ### Check your understanding
 
-{% Assessment 'metadata' %}
+{% Assessment 'tables' %}

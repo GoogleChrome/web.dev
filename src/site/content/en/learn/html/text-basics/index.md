@@ -199,4 +199,4 @@ Oh, and that smiley emoji is `&#x1F600;`, but this doc is declared as UTF-8, so 
 
 ### Check your understanding
 
-{% Assessment 'metadata' %}
+{% Assessment 'text-basics' %}

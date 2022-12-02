@@ -290,4 +290,4 @@ Now that you have an understanding of [links](/learn/html/links) and lists, let'
 
 ### Check your understanding
 
-{% Assessment 'metadata' %}
+{% Assessment 'lists' %}
