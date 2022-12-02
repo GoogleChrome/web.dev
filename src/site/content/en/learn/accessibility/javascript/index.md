@@ -35,28 +35,43 @@ Don’t do this:
 Do this:
 `<button onclick="doAction()">Click me!</div>`
 
-[CodePen - Accessible JavaScript - Trigger event (React)]
+{% Codepen {
+user: 'cariefisher',
+id: 'MWXmJze'
+} %}
 
-If a non-semantic element is used for a trigger event, a keydown/keyup event must be added to detect the enter or space key press. Adding trigger events to non-semantic elements is often forgotten. Unfortunately, when it is forgotten, the result is a component only accessible via a mouse, and keyboard-only users are left without access to the associated actions.
+If a non-semantic element is used for a trigger event, a keydown/keyup event must be added to detect the enter or space key press.
+Adding trigger events to non-semantic elements is often forgotten. Unfortunately, when it is forgotten, the result is a component only accessible
+via a mouse, and keyboard-only users are left without access to the associated actions.
 Page titles
 
-As we learned in the Document module, the page title is essential for screen reader users. It tells users what page they are on and whether they have navigated to a new page.
+As we learned in the Document module, the page title is essential for screen reader users. It tells users what page they are on
+and whether they have navigated to a new page.
 
-If you use a JavaScript framework, you need to consider how you handle page titles, especially as single-page apps (SPA) that load from a singular index.html file, transitions, or routes (page change) will not involve a page reload. Each time a user loads a new page, the title won’t change by default.
+If you use a JavaScript framework, you need to consider how you handle page titles, especially as single-page apps (SPA) that load from
+a singular index.html file, transitions, or routes (page change) will not involve a page reload. Each time a user loads a new page,
+the title won’t change by default.
 
-For SPAs, the value of the document.title property can be added manually or by a helper package, depending on the JavaScript framework. Announcing the updated page titles to a screen reader user may take some additional work, but the good news is you’ve got options, such as dynamic content.
+For SPAs, the value of the document.title property can be added manually or by a helper package, depending on the JavaScript framework. Announcing
+the updated page titles to a screen reader user may take some additional work, but the good news is you’ve got options, such as dynamic content.
 Dynamic content
-One of the most powerful functionalities in JavaScript is its ability to add HTML and CSS to any element on the page. It allows developers to create more dynamic applications based on the actions or behaviors of the users.
+One of the most powerful functionalities in JavaScript is its ability to add HTML and CSS to any element on the page. It allows developers to
+create more dynamic applications based on the actions or behaviors of the users.
 
-For example, you need to send a message to users when they log in to your website or app. You want the message to stand out from the white background and relay the message: "You are now logged in."
+For example, you need to send a message to users when they log in to your website or app. You want the message to stand out from the
+white background and relay the message: "You are now logged in."
 
 You can use JavaScript to set `innerHTML` of content like this:
-document.querySelector("#banner").innerHTML = '<p>You are now logged in</p>';
+
+
+`document.querySelector("#banner").innerHTML = '<p>You are now logged in</p>';`
 
 And you can also apply CSS in a similar way:
-document.querySelector("#banner").setAttribute("style", "border-color:#0000ff;");
 
-With great power comes great responsibility. And unfortunately, JavaScript injection of HTML and CSS has historically been misused to create inaccessible content. Some common misuses are listed here:
+`document.querySelector("#banner").setAttribute("style", "border-color:#0000ff;");`
+
+With great power comes great responsibility. And unfortunately, JavaScript injection of HTML and CSS has historically been
+misused to create inaccessible content. Some common misuses are listed here:
 
 <table>
 <thead>
