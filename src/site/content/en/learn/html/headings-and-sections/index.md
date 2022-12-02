@@ -8,7 +8,7 @@ tags:
   - html
 ---
 
-In the last section you learned how, even if you don't know what the words on a page mean, when semantic elements provide the document with meaningful structure, others—the search engine, assistive technologies, a future maintainer, an offshore dev—will understand the outline of the document.
+In the last section you learned how, even if you don't know what the words on a page mean, when semantic elements provide the document with meaningful structure, others—the search engine, assistive technologies, a future maintainer, a new team member—will understand the outline of the document.
 
 In this section, you'll discover document structure; you'll recap the sectioning elements from the previous section; and mark up the outline for your application.
 
