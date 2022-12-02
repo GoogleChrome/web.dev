@@ -25,7 +25,7 @@
 
 <meta name="theme-color" content="#fff"/>
 
-{% if noindex or draft -%}
+{% if (noindex and noindex != "false") or draft -%}
   <meta name="robots" content="noindex" />
 {%- endif %}
 {% if offline %}
