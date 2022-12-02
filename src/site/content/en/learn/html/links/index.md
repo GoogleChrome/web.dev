@@ -128,16 +128,21 @@ the registration form in a new `reg` tab. Clicking on this link 15 more times wi
 
 The `rel` attribute controls what kinds of links the link creates, defining the relationship between the current document and the resource
 linked to in the hyperlink. The attribute's value must be a space-separated list on one or more of the [score of rel attribute values](https://developer.mozilla.org/docs/Web/HTML/Link_types) supported
-by the `<a>` tag. The `nofollow` keyword can be included if you don't want spiders to follow the link. The `external` value can be added to
+by the `<a>` tag.
+
+The `nofollow` keyword can be included if you don't want spiders to follow the link. The `external` value can be added to
 indicate that the link directs to an external URL and is not a page within the current domain. The `help` keyword indicates the hyperlink will
 provide context-sensitive help. Hovering over a link with this `rel` value will show a help cursor rather than the normal pointer cursor.
 Don't use this value just to get the help cursor; use the CSS [`cursor` property](https://developer.mozilla.org/docs/Web/CSS/cursor) instead. The `prev` and `next` values can
-be used on links pointing to the previous and next document in a series. Similar to [`<link rel="alternative">`](/learn/html/document-structure/#alternate-versions-of-the-site), the meaning
+be used on links pointing to the previous and next document in a series.
+
+Similar to [`<link rel="alternative">`](/learn/html/document-structure/#alternate-versions-of-the-site), the meaning
 of <a `rel="alternative"`> depends on other attributes. RSS feed alternatives will also include `type="application/rss+xml"`
 or `type="application/atom+xml`, alternative formats will include the `type` attribute, and translations will include the `hreflang` attribute.
 If the content between the opening and closing tags is in a language other than the main document language, include the `lang` attribute.
-If the language of the hyperlinked document is in a different language, include the `hreflang` attribute. In this example, we include the URL
-of the translated page as the value of the `href`, rel="alternate" to indicate that it's an alternative version of a site; the `hreflang`
+If the language of the hyperlinked document is in a different language, include the `hreflang` attribute.
+
+In this example, we include the URL of the translated page as the value of the `href`, rel="alternate" to indicate that it's an alternative version of a site; the `hreflang`
 attribute provides the language of the translations:
 
 ```html
