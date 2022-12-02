@@ -47,7 +47,7 @@ These units have good browser support.
 
 ## The need for new viewport units
 
-While the existing units work well on desktop, it’s a different story on mobile devices. There, the viewport size is influenced by the presence or absence of dynamic toolbars. There are user interfaces such as address bars and tab bars.
+While the existing units work well on desktop, it’s a different story on mobile devices. There, the viewport size is influenced by the presence or absence of dynamic toolbars. These are user interfaces such as address bars and tab bars.
 
 Although the viewport size can change, the `vw` and `vh` sizes do not. As a result, elements sized to be `100vh` tall will bleed out of the viewport.
 
