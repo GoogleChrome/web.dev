@@ -47,7 +47,7 @@ domain name. When the protocol is written simply as `//`, it is an implicit prot
 Relative URLs do not include a protocol or domain name. They are "relative" to the current file. MLW is a single-page site,
 but this HTML series has several sections. In order to link from this page to the attributes lesson, a relative URL is used `<a href="../attributes/">Attributes</a>`.
 
-The second link is just a [link fragment identifier](learn/html/attributes/#link_fragment_identifier), and will link to the
+The second link is just a [link fragment identifier](attributes/#link_fragment_identifier), and will link to the
 element with `id="teachers",` if there is one, on the current page. Browsers also support two "top of page" links: clicking
 on `<a href="#top">Top</a>` (case-insensitive) or simply `<a href="#">Top</a>` will scroll the user to the top of the page,
 unless there is an element with the id of `top` set in the same letter casing.
@@ -189,7 +189,5 @@ a.setAttribute('href', 'https://machinelearningworkshop.com/'); // change the at
 
 In this section, you have learned all about links. The next section covers lists, which we need to learn so we can group
 them together to create lists of links (also known as navigation).
-
-### Check your understanding
 
 {% Assessment 'links' %}

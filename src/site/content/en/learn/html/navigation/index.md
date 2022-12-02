@@ -10,7 +10,7 @@ tags:
 ---
 
 As you learned in [links](/learn/html/links), the `<a>` element with the `href` attribute creates links that users can follow by clicking or
-tapping. In [lists](/links/html/lists), you learned how to create lists of content. In this section, you will discover how to group lists of
+tapping. In [lists](/learn/html/lists), you learned how to create lists of content. In this section, you will discover how to group lists of
 links together to create navigation.
 
 There are several types of navigation and several ways to display them. Named anchors within text linking to other pages within
@@ -342,7 +342,5 @@ Google outside of web.dev, and external "how to connect" links.
 These three navigations in the `<footer>` are `<nav>`elements with an `aria-label`providing an accessible name for these landmark roles.
 All the navigations we've seen have been [links](/learn/html/links) nested in [lists](/learn/html/lists) within a nav. We've covered all you need to know to create your own navigations.
 Up next, we will look at marking up data tables.
-
-### Check your understanding
 
 {% Assessment 'navigation' %}

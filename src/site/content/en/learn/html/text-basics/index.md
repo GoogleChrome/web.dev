@@ -27,7 +27,7 @@ By default, browsers style `<h1>` the largest, `<h2>` slightly smaller, with eac
 by default. Interestingly, browsers by default also decrement the `<h1>` font size based on how many `<article>`, `<aside>`, `<nav>`, or
 `<section>` elements it is nested in.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ktRJF3DKyFHtfLifJXkn.png", alt="Nested H1 examples", width="342", height="648" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ktRJF3DKyFHtfLifJXkn.png", alt="Nested H1 examples", width="242", height="548" %}
 
 Some user agent stylesheets include the following selectors, or similar, to style nested `<h1>` elements as if they were
 of a less important level:
@@ -196,7 +196,5 @@ Generally, you don't need to include the named character references for >, ", or
 you do need to write `&amp;lt;` when teaching someone how to code a `<`. 😀
 
 Oh, and that smiley emoji is `&#x1F600;`, but this doc is declared as UTF-8, so it isn't escaped.
-
-### Check your understanding
 
 {% Assessment 'text-basics' %}

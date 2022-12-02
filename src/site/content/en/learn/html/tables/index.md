@@ -34,7 +34,7 @@ on whether or not the `<colgroup>` has a `span` attribute, it may contain nested
 The table's children are, in order:
 1. [`<caption>`](https://developer.mozilla.org/docs/Web/HTML/Element/caption) element
 2. [`<colgroup>`](https://developer.mozilla.org/docs/Web/HTML/Element/colgroup) elements
-3. [`<thead>`](https://developer.mozilla.org/docs/Web/HTML/Element/thread) elements
+3. [`<thead>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead) elements
 4. [`<tbody>`](https://developer.mozilla.org/docs/Web/HTML/Element/tbody) elements
 5. [`<tfoot>`](https://developer.mozilla.org/docs/Web/HTML/Element/tfoot) elements
 
@@ -323,7 +323,5 @@ span that is dynamically updated, and which is visible to screen reader users. A
 If you're not presenting tabular data, don't use a `<table>`. If you do use a table for presentation, set `role="none"`.
 
 Many developers use tables to lay out forms but there is no need to. But you do need to know about HTML forms, so we will cover that next.
-
-### Check your understanding
 
 {% Assessment 'tables' %}

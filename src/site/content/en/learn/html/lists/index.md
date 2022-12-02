@@ -17,7 +17,7 @@ HTML provides us with a few different ways to mark up lists. There are ordered l
 List items (`<li>`) are nested within ordered lists and unordered lists. Inside a description list, you'll find description terms (`<dt>`) and description
 details <dd>. We'll cover all of these here.
 
-In HTML forms, lists of <option> elements make up the content of <datalist>, <select>, and <optgroup> within a <select>. These are discussed in [HTML forms](/learn/forms).
+In HTML forms, lists of `<option>` elements make up the content of `<datalist>`, `<select>`, and `<optgroup>` within a `<select>`. These are discussed in [HTML forms](/learn/forms).
 
 In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually preceded
 by an ascending counter such as a number or letter. The bullets and numbering order can be controlled or reversed with HTML or CSS,
@@ -29,7 +29,7 @@ in a multiple-choice test. For all of these lists without bullets, it is appropr
 
 ### Unordered lists
 
-The <ul> element is the parent element for unordered lists of items. The only children of a <ul> are one or more `<li>` list
+The `<ul>` element is the parent element for unordered lists of items. The only children of a `<ul>` are one or more `<li>` list
 item elements. Let's create a list of machines. We use an unordered list because the order doesn't matter (don't tell them that):
 
 ```html
@@ -117,7 +117,7 @@ opening tag or the required list closing tag: `</ul>`, `</ol>`, `</menu>`. While
 best practices suggest you shouldn't close list items to save some bytes, do close your `<li>` tags. It makes your code easier to read and
 your future self will thank you. It's easier to close all elements than to remember which tags need to be closed and which have an optional closing tag.
 
-There is only one element-specific <li> attribute: `value`, an integer. The `value` is only useful on an `<li>` when the `<li>` is nested within
+There is only one element-specific `<li>` attribute: `value`, an integer. The `value` is only useful on an `<li>` when the `<li>` is nested within
 an ordered list and has no meaning for unordered lists or menus. It overrides the value of the `<ol>`'s start if there is a conflict.
 
 ```html
@@ -280,14 +280,12 @@ Most often you will encounter description lists with equal numbers of `<dt>` and
 aren't required to be matching term-to-description pairs; you can have multiple to one, or one to multiple, such as a dictionary term
 that has more than one definition.
 
-Each <dt> has at least one associated `<dd>`, and each `<dd>` has at least one associated `<dt>`. While it is possible to
+Each `<dt>` has at least one associated `<dd>`, and each `<dd>` has at least one associated `<dt>`. While it is possible to
 use the [adjacent sibling combinator](https://developer.mozilla.org/docs/Web/CSS/Adjacent_sibling_combinator) or the [`:has()` relational
 selector](https://developer.mozilla.org/docs/Web/CSS/:has) to target variable numbers of these elements with CSS, if required, you can include
 a `<div>` as the child of a `<dl>`, and the parent of one or more `<dt>` or `<dd>` elements (or both) are permitted. The `<dl>` can actually
 have a few other children: nesting a `<div>`, `<template>`, or `<script>` is allowed. None of the description list elements has any element-specific attributes.
 
 Now that you have an understanding of [links](/learn/html/links) and lists, let's put the two together to create [navigation](/learn/html/navigation).
-
-### Check your understanding
 
 {% Assessment 'lists' %}

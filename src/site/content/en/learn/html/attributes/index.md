@@ -488,6 +488,4 @@ The attributes in this article are global, meaning they can be applied to any HT
 those elements). Up next, we take a look at the two attributes from the intro image that we didn't address—`target` and `href`—and
 several other element-specific attributes as we take a deeper look into links.
 
-## Check your understanding
-
 {% Assessment 'attributes' %}
