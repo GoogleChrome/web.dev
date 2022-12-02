@@ -339,7 +339,7 @@ This page's footer contains three additional `<nav>` elements: the footer naviga
 with each being a link. The footer navigation includes how to contribute to web.dev on Github, other educational content provided by
 Google outside of web.dev, and external "how to connect" links.
 
-These three navigations in the <footer> are `<nav>`elements with an `aria-label`providing an accessible name for these landmark roles.
+These three navigations in the `<footer>` are `<nav>`elements with an `aria-label`providing an accessible name for these landmark roles.
 All the navigations we've seen have been [links](/learn/html/links) nested in [lists](/learn/html/lists) within a nav. We've covered all you need to know to create your own navigations.
 Up next, we will look at marking up data tables.
 

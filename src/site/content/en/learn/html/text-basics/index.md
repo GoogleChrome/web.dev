@@ -27,7 +27,7 @@ By default, browsers style `<h1>` the largest, `<h2>` slightly smaller, with eac
 by default. Interestingly, browsers by default also decrement the `<h1>` font size based on how many `<article>`, `<aside>`, `<nav>`, or
 `<section>` elements it is nested in.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ktRJF3DKyFHtfLifJXkn.png", alt="Nested H1 examples", width="542", height="848" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ktRJF3DKyFHtfLifJXkn.png", alt="Nested H1 examples", width="342", height="648" %}
 
 Some user agent stylesheets include the following selectors, or similar, to style nested `<h1>` elements as if they were
 of a less important level:

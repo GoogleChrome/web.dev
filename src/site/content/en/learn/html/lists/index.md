@@ -13,8 +13,8 @@ Lists are more common than you might think. If you've ever taken a programming c
 shopping list or a to-do list. Those are lists. Multiple-choice tests are generally numbered lists of questions: the multiple possible answers
 for each question are nested lists.
 
-HTML provides us with a few different ways to mark up lists. There are ordered lists (<ol>), unordered lists (<ul>), and description lists (<dl>).
-List items (<li>) are nested within ordered lists and unordered lists. Inside a description list, you'll find description terms (<dt>) and description
+HTML provides us with a few different ways to mark up lists. There are ordered lists (`<ol>`), unordered lists (`<ul>`), and description lists (`<dl>`).
+List items (`<li>`) are nested within ordered lists and unordered lists. Inside a description list, you'll find description terms (`<dt>`) and description
 details <dd>. We'll cover all of these here.
 
 In HTML forms, lists of <option> elements make up the content of <datalist>, <select>, and <optgroup> within a <select>. These are discussed in [HTML forms](/learn/forms).
@@ -29,21 +29,23 @@ in a multiple-choice test. For all of these lists without bullets, it is appropr
 
 ### Unordered lists
 
-The <ul> element is the parent element for unordered lists of items. The only children of a <ul> are one or more <li> list
+The <ul> element is the parent element for unordered lists of items. The only children of a <ul> are one or more `<li>` list
 item elements. Let's create a list of machines. We use an unordered list because the order doesn't matter (don't tell them that):
 
+```html
 <ul>
    <li>Blender</li>
    <li>Toaster</li>
    <li>Vacuum</li>
 </ul>
+```
 
 By default, each unordered list item is prefixed with a bullet. The unordered list has no element-specific attributes.
-You need to close out your lists with a </ul>.
+You need to close out your lists with a `</ul>`.
 
 ### Ordered lists
 
-The <ol> element is the parent element for ordered lists of items. The only children of an <ol> are one or more <li> elements, or list items.
+The <ol> element is the parent element for ordered lists of items. The only children of an `<ol>` are one or more `<li>` elements, or list items.
 The "bullets" in this case, though, are numbers of a multitude of types. The type can be defined in CSS with the `list-style-type` property
 or via the `type` attribute.
 
@@ -106,17 +108,17 @@ is one or more `<li>` elements.
 
 ### List items
 
-We've used the <li> element, but we have yet to introduce it formally. The <li> element can be a direct child of an unordered
-list (<ul>), an ordered list (<ol>), or a menu (<menu>). The <li> has to be nested as a child of one of these elements, and
+We've used the `<li>` element, but we have yet to introduce it formally. The `<li>` element can be a direct child of an unordered
+list (`<ul>`), an ordered list (`<ol>`), or a menu (<menu>). The `<li>` has to be nested as a child of one of these elements, and
 isn't valid anywhere else.
 
-Closing a list item isn't required by the specification as it will be implicitly closed when the browser encounters the next <li>
-opening tag or the required list closing tag: </ul>, </ol>, </menu>. While the spec doesn't require it, and some internal company
-best practices suggest you shouldn't close list items to save some bytes, do close your <li> tags. It makes your code easier to read and
+Closing a list item isn't required by the specification as it will be implicitly closed when the browser encounters the next `<li>`
+opening tag or the required list closing tag: `</ul>`, `</ol>`, `</menu>`. While the spec doesn't require it, and some internal company
+best practices suggest you shouldn't close list items to save some bytes, do close your `<li>` tags. It makes your code easier to read and
 your future self will thank you. It's easier to close all elements than to remember which tags need to be closed and which have an optional closing tag.
 
-There is only one element-specific <li> attribute: `value`, an integer. The `value` is only useful on an <li> when the <li> is nested within
-an ordered list and has no meaning for unordered lists or menus. It overrides the value of the <ol>'s start if there is a conflict.
+There is only one element-specific <li> attribute: `value`, an integer. The `value` is only useful on an `<li>` when the `<li>` is nested within
+an ordered list and has no meaning for unordered lists or menus. It overrides the value of the `<ol>`'s start if there is a conflict.
 
 ```html
 <ol start="4">
@@ -156,7 +158,7 @@ Thus far, we have looked at list items containing only text nodes. List items ca
 element found in the body that can be nested as a direct child of the <body>, including headings, thereby sectioning content.
 
 We have a few unordered lists in MLW. The teachers within the instructors section are a list, as are the student machines in the reviews
-section. The instructor <ul> has two <li>s: one for each teacher. Within each `<li>`, we have an image and a paragraph:
+section. The instructor `<ul>` has two `<li>`s: one for each teacher. Within each `<li>`, we have an image and a paragraph:
 
 ```html
 <ul>
