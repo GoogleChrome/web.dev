@@ -42,13 +42,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
 
-{# Include the GA object so we can start queuing events. #}
-{% include 'partials/analytics.njk' %}
-
 {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
 {% include 'partials/script-loader.njk' %}
-{% set apiScripts %}
-  loadScript('https://www.google-analytics.com/analytics.js', null);
-{% endset %}
-<script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
 
+{% include 'partials/analytics.njk' %}

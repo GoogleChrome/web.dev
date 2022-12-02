@@ -14,7 +14,7 @@ module.exports = {
   globals: {
     customElements: true,
     firebase: true,
-    ga: true,
+    gtag: true,
   },
   rules: {
     indent: [

@@ -22,6 +22,8 @@
  * it needs to read from localstorage and then modify its children.
  */
 
+import {logEvent} from '../../analytics';
+
 /**
  * @typedef {object} Course
  * @property {string[]} pages
@@ -116,11 +118,10 @@ class CourseLinks extends HTMLElement {
       Math.floor((newPages.length / children.length) * 10) * 10;
 
     // Fire analytics if there's been a 10%+ bucket jump.
-    if (ga && newPercent - oldPercent >= 10) {
-      ga('send', 'event', {
-        eventCategory: 'Course Events',
-        eventAction: `course: ${courseKey} progress`,
-        eventLabel: newPercent.toString(),
+    if (newPercent - oldPercent >= 10) {
+      logEvent(`course: ${courseKey} progress`, {
+        event_category: 'Course Events',
+        event_label: newPercent.toString(),
       });
     }
 
