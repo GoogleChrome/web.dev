@@ -117,7 +117,7 @@ If you're building a web app, consider using some of the many off-the-shelf web 
 
 *   Google vends its own Material design system as web components: [Material Web Components](https://github.com/material-components/material-components-web-components).
 *   The [Wired Elements](https://wiredjs.com/) are a cool set of web components that feature a sketchy, hand-drawn look.
-*   There are great special-purpose Web Components like [<model-viewer>](https://github.com/GoogleWebComponents/model-viewer), which you can drop into any app to add 3D content.
+*   There are great special-purpose Web Components like [`<model-viewer>`](https://github.com/GoogleWebComponents/model-viewer), which you can drop into any app to add 3D content.
 
 If you're developing a design system for your company, or you're vending a single component or library that you want to be usable in any environment, consider authoring your components using web components. You can use the built-in web components APIs, but they're pretty low-level, so there are a number of libraries available to make the process easier.
 

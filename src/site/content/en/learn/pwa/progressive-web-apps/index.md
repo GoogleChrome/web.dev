@@ -5,25 +5,27 @@ description: >
 authors:
   - firt
 date: 2021-11-03
+updated: 2022-05-16
 ---
 
-Progressive Web Apps (PWAs) are web apps that use progressive enhancement to provide users with a more reliable experience,
+A Progressive Web Apps (PWA) is a web apps that use progressive enhancement to provide users with a more reliable experience,
 use new capabilities to provide a more integrated experience, and can be installed.
 And, because it's a web app, it can reach anyone, anywhere, on any device, all with a single codebase.
-Once installed, a PWA looks like any other app, such as:
+Once installed, a PWA looks like any other app, specifically:
 
 - It has an icon on the home screen, app launcher, launchpad, or start menu.
 - It appears when you search for apps on the device.
 - It opens in a standalone window, wholly separated from a browser's user interface.
 - It has access to higher levels of integration with the OS, for example, URL handling or title bar customization.
-- It can work offline.
+- It works offline.
 
-## The Web Platform
+## The web platform
 
 The web is an incredible platform.
 Its mix of universality across devices and operating systems,
 its user-centered security model,
-and the fact that no single company controls its specification or implementation make it a powerful platform to deliver software.
+and the fact that no single company controls its specification or implementation make it a powerful platform
+for delivering software.
 
 Combined with the web's inherent linkability,
 it's possible to search across it and share what you've found with anyone, anywhere.
@@ -41,11 +43,11 @@ a hurdle that was impossible to overcome a few years ago.
 ## Platform-specific apps
 
 Platform-specific apps, on both mobile and desktop,
-are known for being rich and reliable. They're ever-present, on home screens and docks and taskbars.
+are known for being rich and reliable. They're ever-present, on home screens, docks, and taskbars.
 They work regardless of network connection, and launch in their own standalone experience.
 They can read and write files from the local file system,
 access hardware connected via USB, serial, or Bluetooth,
-and interact with data stored on your devices, like contacts and calendar events.
+and interact with data stored on your devices, such as contacts and calendar events.
 In platform-specific applications, you can take pictures, play songs listed on the home screen, or control media playback while in another app.
 These applications feel like part of the device they run on.
 
@@ -53,12 +55,11 @@ These applications feel like part of the device they run on.
 In modern mobile operating systems,
 platform-specific apps are installed mostly from app stores,
 with rules and limitations on who can publish and what can be published for their users.
-These apps are typically shipped as a large, indivisible package, and every update needs re-packaging, re-signing, re-approval,
-and on-device re-installation.
+These apps are typically shipped as a large, indivisible package, and every update needs re-packaging, re-signing, re-approval, and on-device re-installation.
 {% endAside %}
 
-On the challenge side, these apps are not compatible with multiple platforms and devices,
-so it's not an easy task, if even possible,
+A challenge for platform-specific apps is that they are not compatible with multiple platforms and devices,
+so it's not easy, if even possible,
 to move an Android app to iOS or an iOS to Windows or ChromeOS without creating a new app from scratch.
 
 ## Bringing the best of both worlds
@@ -99,14 +100,14 @@ A Progressive Web App includes features from both worlds.
 People tend to think of Progressive Web Apps as an app that the user can install from a browser instead of an app store.
 However, a PWA can be listed in many app stores today as an optional distribution channel,
 including Google Play Store (for Android and ChromeOS), Microsoft Store (for Windows 10 and 11),
-and Apple AppStore (for iOS, iPadOS, and macOS). For these cases, we must follow all store rules and requirements,
-but we will still keep some of the advantages of a PWA.
+and Apple AppStore (for iOS, iPadOS, and macOS). For these cases, you must follow all store rules and requirements,
+but you will still get some of the advantages of a PWA.
 {% endAside %}
 
 ## Adoption has its benefits
 
 Hulu, a video streaming service in the USA,
-created a Progressive Web App version of their experience to replace their desktop apps that had poor user reviews and poor usage.
+created a Progressive Web App version of their experience to replace their desktop apps which had poor user reviews and poor usage.
 As shared at [Google I/O 2019](https://blog.chromium.org/2019/05/google-io-2019-whats-new-with-chrome.html),
 one developer could research and implement this experience from their existing web application in two weeks.
 
@@ -158,8 +159,8 @@ owning iOS, iPadOS, macOS, and Safari.
 While Apple has never used the term PWA in public,
 they've been supporting the technologies to make a PWA installable and offline-capable since 2018 on Safari for iPhones and iPads.
 
-However, Apple's implementation of the PWA specs misses many features when compared to other browsers,
-in particular when compared to browsers powered by the Chromium engine.
+However, Apple's implementation of the PWA specs misses many features possessed by other browsers,
+in particular browsers powered by the Chromium engine.
 
 In the middle, we also have Firefox and its Gecko engine with implementations including more PWA specs on Android,
 and fewer installation capabilities on desktop.
@@ -189,13 +190,13 @@ and sometimes UX designers include screens that explain to the user how to insta
 
 You need to remember that a Progressive Web App is just a web app,
 so content and services are running on top of standard specs and protocols.
-Therefore, a PWA technically runs everywhere the Web runs; you don't need the platform to be compatible with any "PWA spec."
+Therefore, a PWA technically runs everywhere the web runs; you don't need the platform to be compatible with any "PWA spec."
 
 However, when we are talking about PWA and compatibility, typically, we are thinking about the capabilities to cross the boundaries of the browser and online-only contexts: icon installation and offline support.
 
 {% Aside %}
 A PWA should work everywhere, even when the icon installation or the offline support capabilities are unavailable.
-Always plan your PWA to work without capabilities offering fallback solutions and checking support.
+Always plan your PWA to work without capabilities by checking support and offering fallback solutions.
 {% endAside %}
 
 On top of the classic web platform support, let's check the support for basic app functionality, such as icon installation and offline capabilities.
@@ -252,7 +253,7 @@ Talking about mobile phones and tablets,
 a Progressive Web App is installable with offline capabilities using the following browsers and app stores:
 
 iOS and iPadOS
-: Safari (since iOS 11.3), AppStore (since iOS/iPadOS 14, with some limitations), Mobile Configuration for enterprise distribution.
+: Safari (since iOS 11.3), AppStore (since iOS/iPadOS 14, with some limitations), mobile configuration for enterprise distribution.
 
 Android
 : Firefox, Google Chrome, Samsung Internet, Microsoft Edge, Opera, Brave, Huawei Browser, Baidu, UCWeb, Play Store (from version 72 with Google Chrome installed, or browsers compatible with TWA), Galaxy Store, Managed Play iframe for enterprise distribution.

@@ -28,10 +28,8 @@ respective tabs. The tabs now function as headings.
 - [HowTo: Components on GitHub][howto-github]
 - [Tabs pattern in ARIA Authoring Practices 1.1][tabs-pattern]
 
-
-
-
 ## Demo
+
 [View live demo on GitHub](https://googlechromelabs.github.io/howto-components/howto-tabs/#demo)
 
 ## Example usage
@@ -54,7 +52,7 @@ respective tabs. The tabs now function as headings.
 If JavaScript does not run, the element will not match `:defined`. In that case this style adds spacing between tabs and previous panel.
 
 ```html
-    howto-tabs:not(:defined), howto-tab:not(:defined), howto-panel:not(:defined) {
+  howto-tabs:not(:defined), howto-tab:not(:defined), howto-panel:not(:defined) {
     display: block;
   }
 </style>
@@ -79,7 +77,6 @@ Define key codes to help with handling keyboard events.
 
 ```js
   const KEYCODE = {
-
     DOWN: 40,
     LEFT: 37,
     RIGHT: 39,
@@ -113,10 +110,11 @@ HowtoTabs is a container element for tabs and panels.
 All children of `<howto-tabs>` should be either `<howto-tab>` or `<howto-tabpanel>`. This element is stateless, meaning that no values are cached and therefore, changes during runtime work.
 
 ```js
-class HowtoTabs extends HTMLElement {
+  class HowtoTabs extends HTMLElement {
     constructor() {
-        super();
+      super();
 ```
+
 Event handlers that are not attached to this element need to be bound if they need access to `this`.
 
 ```js
@@ -126,7 +124,7 @@ Event handlers that are not attached to this element need to be bound if they ne
 Import the shared template to create the slots for tabs and panels.
 
 ```js
- this.shadowRoot.appendChild(template.content.cloneNode(true));
+      this.shadowRoot.appendChild(template.content.cloneNode(true));
 
       this._tabSlot = this.shadowRoot.querySelector('slot[name=tab]');
       this._panelSlot = this.shadowRoot.querySelector('slot[name=panel]');
@@ -171,7 +169,7 @@ Up until recently, `slotchange` events did not fire when an element was upgraded
 
 ```js
     disconnectedCallback() {
-              this.removeEventListener('keydown', this._onKeyDown);
+      this.removeEventListener('keydown', this._onKeyDown);
       this.removeEventListener('click', this._onClick);
     }
 ```
@@ -180,7 +178,6 @@ Up until recently, `slotchange` events did not fire when an element was upgraded
 
 ```js
     _onSlotChange() {
-
       this._linkPanels();
     }
 ```
@@ -189,7 +186,7 @@ Up until recently, `slotchange` events did not fire when an element was upgraded
 
 ```js
     _linkPanels() {
-        const tabs = this._allTabs();
+      const tabs = this._allTabs();
 ```
 
 Give each panel a `aria-labelledby` attribute that refers to the tab that controls it.
@@ -228,7 +225,7 @@ This is a method and not a getter, because a getter implies that it is cheap to 
 `_allTabs()` returns all the tabs in the tab panel.
 
 ```js
-   _allTabs() {
+    _allTabs() {
       return Array.from(this.querySelectorAll('howto-tab'));
     }
 ```
@@ -246,28 +243,29 @@ This is a method and not a getter, because a getter implies that it is cheap to 
 
 ```js
     _prevTab() {
-        const tabs = this._allTabs();
+      const tabs = this._allTabs();
 ```
 
-Use `findIndex()` to find the index of the currently selected element and subtracts one to get the index of the previous element.`
+Use `findIndex()` to find the index of the currently selected element and subtracts one to get the index of the previous element.
 
 ```js
-        let newIdx =
-        tabs.findIndex(tab => tab.selected) - 1;
+      let newIdx =
+      tabs.findIndex(tab => tab.selected) - 1;
 ```
 
 Add `tabs.length` to make sure the index is a positive number and get the modulus to wrap around if necessary.
 
 ```js
-        return tabs[(newIdx + tabs.length) % tabs.length];
+      return tabs[(newIdx + tabs.length) % tabs.length];
     }
 ```
 
 `_firstTab()` returns the first tab.
+
 ```js
     _firstTab() {
-        const tabs = this._allTabs();
-        return tabs[0];
+      const tabs = this._allTabs();
+      return tabs[0];
     }
 ```
 
@@ -275,8 +273,8 @@ Add `tabs.length` to make sure the index is a positive number and get the modulu
 
 ```js
     _lastTab() {
-        const tabs = this._allTabs();
-        return tabs[tabs.length - 1];
+      const tabs = this._allTabs();
+      return tabs[tabs.length - 1];
     }
 ```
 
@@ -284,9 +282,9 @@ Add `tabs.length` to make sure the index is a positive number and get the modulu
 
 ```js
     _nextTab() {
-        const tabs = this._allTabs();
-        let newIdx = tabs.findIndex(tab => tab.selected) + 1;
-        return tabs[newIdx % tabs.length];
+      const tabs = this._allTabs();
+      let newIdx = tabs.findIndex(tab => tab.selected) + 1;
+      return tabs[newIdx % tabs.length];
     }
 ```
 
@@ -294,11 +292,11 @@ Add `tabs.length` to make sure the index is a positive number and get the modulu
 
 ```js
     reset() {
-        const tabs = this._allTabs();
-        const panels = this._allPanels();
+      const tabs = this._allTabs();
+      const panels = this._allPanels();
 
-        tabs.forEach(tab => tab.selected = false);
-        panels.forEach(panel => panel.hidden = true);
+      tabs.forEach(tab => tab.selected = false);
+      panels.forEach(panel => panel.hidden = true);
     }
 ```
 
@@ -307,6 +305,7 @@ Add `tabs.length` to make sure the index is a positive number and get the modulu
 ```js
     _selectTab(newTab) {
 ```
+
 Deselect all tabs and hide all panels.
 
 ```js
@@ -476,7 +475,6 @@ Properties and their corresponding attributes should mirror one another. To this
 
 ```js
     attributeChangedCallback() {
-
       const value = this.hasAttribute('selected');
       this.setAttribute('aria-selected', value);
       this.setAttribute('tabindex', value ? 0 : -1);
@@ -502,7 +500,7 @@ Properties and their corresponding attributes should mirror one another. To this
   `HowtoPanel` is a panel for a `<howto-tabs>` tab panel.
 
   ```js
-   class HowtoPanel extends HTMLElement {
+  class HowtoPanel extends HTMLElement {
 
     constructor() {
       super();

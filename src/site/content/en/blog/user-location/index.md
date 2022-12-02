@@ -1,7 +1,7 @@
 ---
 layout: post
 title: User Location
-subhead: A new font specification that can significantly reduce font file sizes
+subhead: The Geolocation API lets you discover the user's location, given their consent.
 description: >
   Most browsers and devices have access to the user's geographic location. Learn how to work with the user's location in your site and apps.
 authors:
@@ -398,7 +398,7 @@ window.onload = function () {
 ## Emulate geolocation with Chrome DevTools {: #devtools }
 
 <figure>
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/oaYG0aQF2b5tRBD6WVnu.png", alt="The sensor drawer in DevTools.", width="800", height="454" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/eyujkgsO6S5KupD8L7Ev.png", alt="The sensor tab in DevTools.", width="800", height="485" %}
 </figure>
 
 Once you've got geolocation set up, you'll want to:
@@ -408,11 +408,10 @@ Once you've got geolocation set up, you'll want to:
 
 You can do both from Chrome DevTools.
 
-[Open Chrome DevTools](/web/tools/chrome-devtools/#open) and then
-[open the Console Drawer](/web/tools/chrome-devtools/console/#open_as_drawer).
-
-[Open the Console Drawer menu](/web/tools/chrome-devtools/settings#drawer-tabs)
-and click the **Sensors** option to show the Sensors Drawer.
+1. [Open Chrome DevTools](/web/tools/chrome-devtools/#open).
+2. Press <kbd>Esc</kbd> to [Open the Console drawer](/web/tools/chrome-devtools/console/#open_as_drawer).
+3. [Open the Console drawer menu](/web/tools/chrome-devtools/settings#drawer-tabs)
+4. Click the **Sensors** option to show the Sensors tab.
 
 From here you can override the location to a preset major city,
 enter a custom location, or disable geolocation by setting the override

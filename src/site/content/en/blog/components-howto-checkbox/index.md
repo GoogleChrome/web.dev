@@ -61,7 +61,7 @@ type="checkbox">` instead.
 
 [View live demo on GitHub](https://googlechromelabs.github.io/howto-components/howto-checkbox/#demo)
 
-## Example usage 
+## Example usage
 
 ```html
 <style>
@@ -87,11 +87,11 @@ type="checkbox">` instead.
 ```js
 (function() {
 ```
+
 Define key codes to help with handling keyboard events.
 
 ```js
   const KEYCODE = {
-
     SPACE: 32,
   };
 ```
@@ -130,7 +130,7 @@ Cloning contents from a `<template>` element is more performant than using inner
     </style>
   `;
 
-  
+
   class HowToCheckbox extends HTMLElement {
     static get observedAttributes() {
       return ['checked', 'disabled'];
@@ -141,7 +141,6 @@ The element's constructor is run anytime a new instance is created. Instances ar
 
 ```js
     constructor() {
-
       super();
       this.attachShadow({mode: 'open'});
       this.shadowRoot.appendChild(template.content.cloneNode(true));
@@ -151,13 +150,11 @@ The element's constructor is run anytime a new instance is created. Instances ar
 `connectedCallback()` fires when the element is inserted into the DOM. It's a good place to set the initial `role`, `tabindex`, internal state, and install event listeners.
 
 ```js
-connectedCallback() {
-
-    
-    if (!this.hasAttribute('role'))
-    this.setAttribute('role', 'checkbox');
-    if (!this.hasAttribute('tabindex'))
-    this.setAttribute('tabindex', 0);
+    connectedCallback() {
+      if (!this.hasAttribute('role'))
+        this.setAttribute('role', 'checkbox');
+      if (!this.hasAttribute('tabindex'))
+        this.setAttribute('tabindex', 0);
 ```
 
 A user may set a property on an instance of an element, before its prototype has been connected to this class. The `_upgradeProperty()` method will check for any instance properties and run them through the proper class setters. See the [lazy properties](/custom-elements-best-practices/#make-properties-lazy) section for more details.
@@ -183,7 +180,6 @@ A user may set a property on an instance of an element, before its prototype has
 
 ```js
     disconnectedCallback() {
-
       this.removeEventListener('keyup', this._onKeyUp);
       this.removeEventListener('click', this._onClick);
     }
@@ -193,7 +189,6 @@ Properties and their corresponding attributes should mirror one another. The pro
 
 ```js
     set checked(value) {
-
       const isChecked = Boolean(value);
       if (isChecked)
         this.setAttribute('checked', '');
@@ -222,7 +217,6 @@ Properties and their corresponding attributes should mirror one another. The pro
 
 ```js
     attributeChangedCallback(name, oldValue, newValue) {
-
       const hasValue = newValue !== null;
       switch (name) {
         case 'checked':
@@ -282,9 +276,7 @@ Any other key press is ignored and passed back to the browser.
 `_toggleChecked()` calls the checked setter and flips its state. Because `_toggleChecked()` is only caused by a user action, it will also dispatch a change event. This event bubbles in order to mimic the native behavior of `<input type=checkbox>`.
 
 ```js
-
     _toggleChecked() {
-
       if (this.disabled)
         return;
       this.checked = !this.checked;
@@ -297,7 +289,7 @@ Any other key press is ignored and passed back to the browser.
     }
   }
 
-  window.customElements.define('howto-checkbox', HowToCheckbox);
+  customElements.define('howto-checkbox', HowToCheckbox);
 })();
 ```
 

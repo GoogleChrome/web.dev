@@ -21,13 +21,12 @@ The element self-applies the role `tooltip` and sets `tabindex` to -1, as the
 tooltip itself can never be focused.
 
 ## Reference
+
 - [HowTo: Components on GitHub][howto-github]
 - [Tooltip pattern in ARIA Authoring Practices 1.1][tooltip-pattern]
 
-
-
-
 ## Demo
+
 [View live demo on GitHub](https://googlechromelabs.github.io/howto-components/howto-tooltip/#demo)
 
 ## Example usage
@@ -53,9 +52,10 @@ class HowtoTooltip extends HTMLElement {
 The constructor does work that needs to be executed exactly once.
 
 ```js
-constructor() {
+  constructor() {
     super();
 ```
+
 These functions are used in a bunch of places, and always need to bind the correct this reference, so do it once.
 
 ```js
@@ -67,8 +67,8 @@ These functions are used in a bunch of places, and always need to bind the corre
 `connectedCallback()` fires when the element is inserted into the DOM. It's a good place to set the initial role, tabindex, internal state, and install event listeners.
 
 ```js
-connectedCallback() {
-        if (!this.hasAttribute('role'))
+  connectedCallback() {
+    if (!this.hasAttribute('role'))
       this.setAttribute('role', 'tooltip');
 
     if (!this.hasAttribute('tabindex'))
@@ -122,7 +122,7 @@ Remove the existing listeners, so that they don't trigger even though there's no
   }
 }
 
-window.customElements.define('howto-tooltip', HowtoTooltip);
+customElements.define('howto-tooltip', HowtoTooltip);
 ```
 
 [howto-github]: https://github.com/GoogleChromeLabs/howto-components

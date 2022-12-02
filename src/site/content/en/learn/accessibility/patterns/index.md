@@ -1,8 +1,9 @@
 ---
-title: 'Pattern or component evaluation and testing'
+title: 'Patterns, components, and design systems'
 authors:
   - cariefisher
-description: How to write accessible pattern or component evaluation and testing.
+description: >
+  Evaluate patterns, components, and design systems for accessibility.
 date: 2022-09-21
 placeholder: true
 tags:

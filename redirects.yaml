@@ -342,11 +342,11 @@ redirects:
   - source: /cors-rfc1918-feedback
     destination: https://developer.chrome.com/articles/cors-rfc1918-feedback/
   - source: /file-handling
-    destination: https://developer.chrome.com/articles/file-handling
+    destination: https://developer.chrome.com/articles/file-handling/
   - source: /hid
-    destination: https://developer.chrome.com/articles/hid
+    destination: https://developer.chrome.com/articles/hid/
   - source: /isinputpending
-    destination: https://developer.chrome.com/articles/isinputpending
+    destination: https://developer.chrome.com/articles/isinputpending/
   - source: /webcodecs
     destination: https://developer.chrome.com/articles/webcodecs
   - source: /mediastreamtrack-insertable-media-processing
@@ -375,6 +375,32 @@ redirects:
     destination: https://developer.chrome.com/articles/local-fonts/
   - source: /notification-triggers
     destination: https://developer.chrome.com/docs/web-platform/notification-triggers/
+  - source: /badging-api
+    destination:  https://developer.chrome.com/articles/badging-api/
+  - source: /content-indexing-api
+    destination:  https://developer.chrome.com/articles/content-indexing-api/
+  - source: /generic-sensor
+    destination:  https://developer.chrome.com/articles/generic-sensor/
+  - source: /idle-detection
+    destination:  https://developer.chrome.com/articles/idle-detection/
+  - source: /keyboard-lock
+    destination:  https://developer.chrome.com/articles/keyboard-lock/
+  - source: /reporting-observer
+    destination:  https://developer.chrome.com/articles/reporting-observer/
+  - source: /serial
+    destination:  https://developer.chrome.com/articles/serial/
+  - source: /wake-lock
+    destination:  https://developer.chrome.com/articles/wake-lock/
+  - source: /user-agent-client-hints
+    destination: https://developer.chrome.com/articles/user-agent-client-hints/
+  - source: /browser-fs-access
+    destination: https://developer.chrome.com/articles/browser-fs-access/
+  - source: /display-override
+    destination: https://developer.chrome.com/articles/display-override/
+  - source: /file-system-access
+    destination: https://developer.chrome.com/articles/file-system-access/
+  - source: /user-agent-client-hints
+    destination: https://developer.chrome.com/articles/user-agent-client-hints/
 
   # Redirect for Aurora
   - source: /aurora
@@ -561,3 +587,13 @@ redirects:
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/
   - source: /use-landmarks
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/
+
+# Redirects for blogs
+  - source: /blog/native-hardware-click-to-call
+    destination: /blog/click-to-call
+  - source: /blog/native-hardware-device-orientation
+    destination: /blog/device-orientation
+  - source: /blog/native-hardware-fullscreen
+    destination: /blog/fullscreen
+  - source: /blog/native-hardware-user-location
+    destination: /blog/user-location

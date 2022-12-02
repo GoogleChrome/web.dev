@@ -213,7 +213,7 @@ await writer.abort();
 
 #### ReceiveStream
 
-A <code>[ReceiveStream](https://wicg.github.io/web-transport/#receivestream)</code> is initiated by the server. Obtaining a <code>ReceiveStream</code> is a two-step process for a web client. First, it calls the <code>receiveStreams()</code> method of a `WebTransport` instance, which returns a <code>ReadableStream</code>. Each chunk of that <code>ReadableStream</code>, is, in turn, a <code>ReceiveStream</code> that can be used to read <code>Uint8Array</code> instances sent by the server.
+A <code>[ReceiveStream](https://wicg.github.io/web-transport/#receivestream)</code> is initiated by the server. Obtaining a <code>ReceiveStream</code> is a two-step process for a web client. First, it calls the <code>incomingUnidirectionalStreams</code> attribute of a `WebTransport` instance, which returns a <code>ReadableStream</code>. Each chunk of that <code>ReadableStream</code>, is, in turn, a <code>ReceiveStream</code> that can be used to read <code>Uint8Array</code> instances sent by the server.
 
 ```js
 async function readFrom(receiveStream) {
@@ -228,7 +228,7 @@ async function readFrom(receiveStream) {
   }
 }
 
-const rs = transport.receiveStreams();
+const rs = transport.incomingUnidirectionalStreams;
 const reader = rs.getReader();
 while (true) {
   const {done, value} = await reader.read();
@@ -265,10 +265,10 @@ const stream = await transport.createBidirectionalStream();
 // stream.writable is a WritableStream
 ```
 
-You can listen for a `BidirectionalStream` created by the server with the `receiveBidirectionalStreams()` method of a `WebTransport` instance, which returns a `ReadableStream`. Each chunk of that `ReadableStream`, is, in turn, a `BidirectionalStream`.
+You can listen for a `BidirectionalStream` created by the server with the `incomingBidirectionalStreams` attribute of a `WebTransport` instance, which returns a `ReadableStream`. Each chunk of that `ReadableStream`, is, in turn, a `BidirectionalStream`.
 
 ```js
-const rs = transport.receiveBidrectionalStreams();
+const rs = transport.incomingBidirectionalStreams;
 const reader = rs.getReader();
 while (true) {
   const {done, value} = await reader.read();
