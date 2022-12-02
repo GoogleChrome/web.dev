@@ -34,7 +34,7 @@ on whether or not the `<colgroup>` has a `span` attribute, it may contain nested
 The table's children are, in order:
 1. [`<caption>`](https://developer.mozilla.org/docs/Web/HTML/Element/caption) element
 2. [`<colgroup>`](https://developer.mozilla.org/docs/Web/HTML/Element/colgroup) elements
-3. [`<thead>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead) elements
+3. [`<thead>`](https://developer.mozilla.org/docs/Web/HTML/Element/thead) elements
 4. [`<tbody>`](https://developer.mozilla.org/docs/Web/HTML/Element/tbody) elements
 5. [`<tfoot>`](https://developer.mozilla.org/docs/Web/HTML/Element/tfoot) elements
 
