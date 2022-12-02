@@ -150,50 +150,50 @@ An example accessibility heuristic review for the navigation and wayfinding chec
 </thead>
 <tbody>
   <tr>
-    <td><span style="font-weight:400;font-style:normal;text-decoration:none">Is there a clear, visible indicator set on all active elements as they receive focus?</span></td>
-    <td><span style="font-weight:700;font-style:normal;text-decoration:none">✔️</span></td>
+    <td><span>Is there a clear, visible indicator set on all active elements as they receive focus?</span></td>
+    <td><span>✔️</span></td>
     <td></td>
     <td></td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td><span style="font-weight:400;font-style:normal;text-decoration:none">Does the page have meaningful title text, with page-specific information going first?</span></td>
+    <td><span>Does the page have meaningful title text, with page-specific information going first?</span></td>
     <td></td>
     <td></td>
-    <td><span style="font-weight:700;font-style:normal;text-decoration:none">✔️</span></td>
+    <td><span>✔️</span></td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td><span style="font-weight:400;font-style:normal;text-decoration:none">Are the page title element and H1 the same or similar?</span></td>
+    <td><span>Are the page title element and H1 the same or similar?</span></td>
     <td></td>
-    <td><span style="font-weight:700;font-style:normal;text-decoration:none">✔️</span></td>
-    <td></td>
-    <td"></td>
-  </tr>
-  <tr>
-    <td><span style="font-weight:400;font-style:normal;text-decoration:none">Does the page have meaningful headings for each major section?</span></td>
-    <td></td>
-    <td><span style="font-weight:700;font-style:normal;text-decoration:none">✔️</span></td>
+    <td><span>✔️</span></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td><span style="font-weight:400;font-style:normal;text-decoration:none">Can the links’ purpose be defined from the link text alone or their immediate context?</span></td>
+    <td><span>Does the page have meaningful headings for each major section?</span></td>
     <td></td>
+    <td><span>✔️</span></td>
     <td></td>
-    <td></td>
-    <td><span style="font-weight:700;font-style:normal;text-decoration:none">✔️</span></td>
-  </tr>
-  <tr>
-    <td><span style="font-weight:400;font-style:normal;text-decoration:none">Is a “skip link” provided at the very top of the page, and is it revealed on focus?</span></td>
-    <td></td>
-    <td></td>
-    <td><span style="font-weight:700;font-style:normal;text-decoration:none">✔️</span></td>
     <td></td>
   </tr>
   <tr>
-    <td><span style="font-weight:400;font-style:normal;text-decoration:none">Does the organization of navigational elements facilitate wayfinding?</span></td>
-    <td><span style="font-weight:700;font-style:normal;text-decoration:none">✔️</span></td>
+    <td><span>Can the links’ purpose be defined from the link text alone or their immediate context?</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span>✔️</span></td>
+  </tr>
+  <tr>
+    <td><span>Is a “skip link” provided at the very top of the page, and is it revealed on focus?</span></td>
+    <td></td>
+    <td></td>
+    <td><span>✔️</span></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><span>Does the organization of navigational elements facilitate wayfinding?</span></td>
+    <td><span>✔️</span></td>
     <td></td>
     <td></td>
     <td></td>
