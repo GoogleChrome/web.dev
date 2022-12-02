@@ -31,7 +31,7 @@ If you are viewing this page on web.dev, you can spot a few navigational feature
 an "on this page" table of contents after the title, and a "Learn HTML" table of contents that, depending on the width of your screen,
 is either always displayed or made visible with the click of a menu button. The first element on the page is a hidden link to #main, which enables you to skip both the sidebar and breadcrumb links.
 
-### "Skip to content" link
+## "Skip to content" link
 
 The first element on the page is an internal link:
 
@@ -64,7 +64,7 @@ The link text reads "skip to main." This is the link's accessible name. This is 
 Like all link text, the accessible name should clearly indicate where the link takes the user. The link target should be the beginning of the
 page's main content. To test this, when the page loads, tab to the "Skip to main" link. Then press `Enter` to ensure it "jumps" to the main content.
 
-### Table of contents
+## Table of contents
 
 The skip-to-content link scrolls the main content into view. The first element is the `<h1>` heading with the title of this section.
 In this case, `<h1>Marking up navigation</h1>`. The main heading is followed by the tagline, a brief description of the contents of this
@@ -160,7 +160,7 @@ ontents on a wide screen. While users are accustomed to content being responsive
 increase their font size, they do not expect the tab order to change when they do so. Page layouts should be accessible, predictable,
 and consistent across a site. Here, the location of the table of contents is not predictable.
 
-### Page breadcrumbs
+## Page breadcrumbs
 
 Breadcrumbs provide secondary navigation to help users understand where they are on a website. They generally show the URL hierarchy
 of the current document and the location of the current page in the site structure. The site structure from a user perspective may differ
@@ -244,7 +244,7 @@ as to why this anti-pattern was used.
 The last element is a custom `<share-action>` element. Custom elements are discussed in section 15. While this custom element
 is not part of the breadcrumb, including an unrelated element in a `<nav>` is fine, as long as the inclusion is consistent on all pages.
 
-### Current page
+## Current page
 
 On this page, the current page, "Navigation", is not included in the breadcrumb. When the current page is included in a
 breadcrumb, the text should preferably not be a link, and `aria-current="page"` should be included on the current page's
@@ -274,7 +274,7 @@ Navigation
 Breadcrumbs are not for linear steps. For example, a list of the path the user followed to get to the current page or the
 list of steps followed up to this point in a recipe can be nested within a `<nav>`,  but should not be labeled as a breadcrumb.
 
-### Local navigation
+## Local navigation
 
 There is another navigational component on this page. If you are on a wide screen, there is a sidebar on the left with the
 "Learn HTML" logo, a search bar, and links to each of the 20 sections in Learn HTML. Each link contains the chapter number,
@@ -312,7 +312,7 @@ in each link, but CSS hides the checkbox from users who have not been to this pa
 When `display` is set to something other than `none`, the `role` informs assistive technology that the inline SVG is an image,
 and the `aria-label` acts as the `alt` attribute on an `<img>`would.
 
-### Global navigation
+## Global navigation
 
 Global navigation is the navigation section leading to the top-level pages of the website that is the same on every page of a site.
 A site's global navigation may also be made up of tabs that open nested lists of links that link to all the subsections of a site or other menus.
