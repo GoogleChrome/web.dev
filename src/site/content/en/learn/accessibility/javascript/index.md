@@ -112,10 +112,12 @@ Use hidden content on the page and toggle classes to hide and show content for d
 add content to your page, ensure it's simple and concise, and of course, accessible.
 
 ## Focus management
+
 In the module on [keyboard focus](/accessibility/focus), we covered focus order and indicator styles. Focus management is knowing
 when and where to trap the focus and when it shouldn't be trapped. Focus management is critical to keyboard-only users.
 
 ### Component level
+
 You can create keyboard traps when a component's focus is not properly managed. Keyboard traps occur when a keyboard-only
 user gets stuck in a component, or the focus is not maintained when it should be.
 
@@ -124,17 +126,25 @@ user encounters a modal, they should be able to tab between the actionable eleme
 of the modal without explicitly dismissing it. JavaScript is essential in properly trapping this focus.
 
 Don't do this:
-[CodePen example - Accessible JavaScript - Inaccessible modal pattern (React)]
+
+{% Codepen {
+user: 'cariefisher',
+id: 'rNYeEJX'
+} %}
 
 Do this:
-[CodePen - Accessible JavaScript - Accessible modal pattern (React)]
+
+{% Codepen {
+user: 'cariefisher',
+id: 'QWOEWNm'
+} %}
 
 ### Page level
 
 Similar to components, the focus needs to be maintained when a user navigates from page to page. This is especially true
-in single-page applications where there is no browser refresh, and all content is dynamically changed. Anytime a user clicks
-on a link to go to another page within your application, the focus is either kept in the same place or potentially placed
-somewhere else entirely.
+in single-page applications where there is [no browser refresh](https://marcysutton.com/prototype-testing-accessible-clientside-routing/),
+and all content is dynamically changed. Anytime a user clicks on a link to go to another page within your application,
+the focus is either kept in the same place or potentially placed somewhere else entirely.
 
 When transitioning between pages (or routing), the development team must decide where the focus goes when the page loads.
 There are multiple techniques to achieve this:
@@ -151,29 +161,44 @@ and may be context- or action-dependent.
 Another area where JavaScript is critical to accessibility is state management, or when a component or page’s current visual
 state is relayed to a low-vision, blind, or deafblind assistive technology user.
 
-Often, the state of a component or page is managed through ARIA attributes, as introduced to you in the ARIA and HTML module.
+Often, the state of a component or page is managed through ARIA attributes, as introduced to you in the [ARIA and HTML](/learn/accessibility/aria-html/) module.
 In this section, we review a few of the most common types of ARIA attributes used to help manage the state of an element.
-Component level
-Depending on your page content and what information your users need, there are many ARIA states to consider when relaying information
-about a component to the user.
+
+### Component level
+
+Depending on your page content and what information your users need, there are many [ARIA states](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes)
+to consider when relaying information about a component to the user.
 
 For example, you may use an aria-expanded attribute to tell the user whether a drop-down menu or list is expanded or collapsed.
-[CodePen - Accessible JavaScript - Aria-expanded]
+
+{% Codepen {
+user: 'cariefisher',
+id: 'KKemRoW'
+} %}
 
 Or you might use aria-pressed to indicate that a button has been pressed.
-[CodePen - Accessible JavaScript - Aria-pressed]
+
+{% Codepen {
+user: 'cariefisher',
+id: 'wvXejPv'
+} %}
 
 It’s important to be selective when applying ARIA attributes. Be sure to think through the user flow to understand what critical
 information needs to be conveyed to the user.
-Page level
-Developers often use a visually hidden area called the ARIA live region to announce changes on the screen and alert messages
+
+### Page level
+
+Developers often use a visually hidden area called the [ARIA live region](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) to announce changes on the screen and alert messages
 to assistive technology users. This area can be paired with JavaScript to notify users of dynamic changes to the page without requiring the entire page to reload.
 
-[CodePen - Accessible JavaScript - Aria-live]
+{% Codepen {
+user: 'cariefisher',
+id: 'eYKWvoK'
+} %}
 
-Historically, JavaScript has struggled to announce content in aria-live and alert regions due to its dynamic nature. Asynchronously
-adding content into the DOM makes it hard for assistive technologies to pick up the region and announce it. For the content to be properly read,
-the live or alert region must be in the DOM on load, and then the text can dynamically be swapped out.
+Historically, JavaScript has struggled to announce content in [aria-live](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-live) and alert
+regions due to its dynamic nature. Asynchronously adding content into the DOM makes it hard for assistive technologies to pick up the region and announce it.
+For the content to be properly read, the live or alert region must be in the DOM on load, and then the text can dynamically be swapped out.
 
 If you use a JavaScript framework, the good news is almost all of them have a "live announcer" package that does all the work
 for you and is fully accessible. There is no need to worry about creating your live region and dealing with the issues described in
@@ -181,10 +206,10 @@ the previous section.
 
 Here are some live packages for common JavaScript frameworks:
 
-* React-Aria-Live
-* React-A11y-Announcer
-* Angular Material Live Announcer
-* Vue-A11y-Utils
+* [React-Aria-Live](https://www.npmjs.com/package/react-aria-live)
+* [React-A11y-Announcer](https://github.com/thinkcompany/react-a11y-announcer)
+* [Angular Material Live Announcer](https://material.angular.io/cdk/a11y/overview#liveannouncer)
+* [Vue-A11y-Utils](https://jinjiang.dev/vue-a11y-utils/#vuelive-component)
 
 Modern JavaScript is a powerful language that allows web developers to create robust web applications. This sometimes leads
 to over-engineering and, by extension, inaccessible patterns. By following the JavaScript patterns and tips in this module, you
