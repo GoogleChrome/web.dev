@@ -49,9 +49,9 @@ strategy and create goals focused on specific user groups.
 ### Incorporating disabilities
 
 <blockquote>
-  <p>“People are all different. I can only speak from my experience. When you meet one Deaf person, then you've met one Deaf person—not all of us.”</p>
+  <p>"People are all different. I can only speak from my experience. When you meet one Deaf person, then you've met one Deaf person—not all of us."</p>
   <cite>
-    Meryl Evans from the ID24 talk <a href=""https://youtu.be/yrwKWtJdZ_c/>"“Deaf Tech: Travel Through Time from Past to Future”</a>.
+    Meryl Evans from the ID24 talk <a href=""https://youtu.be/yrwKWtJdZ_c/>""Deaf Tech: Travel Through Time from Past to Future"</a>.
   </cite>
 </blockquote>
 
@@ -64,8 +64,7 @@ Personas can be used as an inclusive design tool when you incorporate people wit
 to do this. You may create [disability-specific personas](https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility),
 add disabilities to existing user personas, or even create a persona spectrum to reflect the dynamic reality of situational, temporary, and permanent disabilities.
 
-No matter how you incorporate people with disabilities into your personas, they should not be based on real people or stereotypes.
-And personas are never a substitute for user testing.
+No matter how you incorporate people with disabilities into your personas, they should not be based on real people or stereotypes. And personas are never a substitute for user testing.
 
 {% Details %}
 {% DetailsSummary %}
