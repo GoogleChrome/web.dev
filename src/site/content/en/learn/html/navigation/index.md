@@ -3,7 +3,7 @@ title: 'Navigation'
 authors:
   - estelleweyl
 description: Navigation is a key element of any site of application, and it starts with HTML.
-date: 2022-09-08
+date: 2022-12-02
 placeholder: true
 tags:
   - html
@@ -125,7 +125,7 @@ When providing an accessible name on an element, don't include the name of the e
 For example, when using the `<nav>` element, don't include "navigation"; that information is included when using semantic elements.
 
 The links themselves are in an unordered list. While they don't have to be nested in a list, using a list enables screen reader users to know how many
-list items, and therefore links, are an individual list in a navigation. You can learn more about lists in [Lists: grouping information](/learn/html/lists/#grouping-information).
+list items, and therefore links, are an individual list in a navigation.
 
 ```html
 <nav aria-labelledby="tocTitle">

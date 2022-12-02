@@ -3,7 +3,7 @@ title: 'Text basics'
 authors:
   - estelleweyl
 description: How to format text using HTML.
-date: 2022-09-08
+date: 2022-12-02
 placeholder: true
 tags:
   - html
@@ -167,7 +167,7 @@ Like `<blockquote>`, the `<q>` element supports the `cite` attribute.
 
 ### HTML Entities
 
-You may have noticed the escape sequence or "entity". Because the `< ` is used in HTML, you have to escape it using either `&lt;` or a less easy-to-remember encoding `&#x3C;`. There are four reserved entities in HTML: `<`, `>`, `&`, and `"`. Their character references are `&lt`, `&gt`, `&amp;` and `&quot;` respectively.
+You may have noticed the escape sequence or "entity". Because the `<` is used in HTML, you have to escape it using either `&lt;` or a less easy-to-remember encoding `&#x3C;`. There are four reserved entities in HTML: `<`, `>`, `&`, and `"`. Their character references are `&lt`, `&gt`, `&amp;` and `&quot;` respectively.
 
 A few other entities you will often use are `&copy;`  for copyright (©),` &tm;` for Trademark (™), and `&nbsp;` for non-breaking space.
 Non-breaking spaces are useful when you want to include a space between two characters or words while preventing a line break from occurring there.

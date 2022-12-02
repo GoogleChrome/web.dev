@@ -3,7 +3,7 @@ title: 'Tables'
 authors:
   - estelleweyl
 description: Understanding how to use tables to mark up tabular data.
-date: 2022-09-08
+date: 2022-12-02
 placeholder: true
 tags:
   - html

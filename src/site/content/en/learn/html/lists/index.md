@@ -3,7 +3,7 @@ title: 'Lists'
 authors:
   - estelleweyl
 description: Lists and other ways of grouping your content.
-date: 2022-09-08
+date: 2022-12-02
 placeholder: true
 tags:
   - html
