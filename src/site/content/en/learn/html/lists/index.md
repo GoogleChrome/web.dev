@@ -155,7 +155,7 @@ providing [generated content](https://developer.mozilla.org/docs/Learn/CSS/Howto
 If the number is purely presentational, use CSS. If the numbering is important semantically, or otherwise has meaning, use these attributes.
 
 Thus far, we have looked at list items containing only text nodes. List items can contain all flow content, meaning any
-element found in the body that can be nested as a direct child of the <body>, including headings, thereby sectioning content.
+element found in the body that can be nested as a direct child of the `<body>`, including headings, thereby sectioning content.
 
 We have a few unordered lists in MLW. The teachers within the instructors section are a list, as are the student machines in the reviews
 section. The instructor `<ul>` has two `<li>`s: one for each teacher. Within each `<li>`, we have an image and a paragraph:
