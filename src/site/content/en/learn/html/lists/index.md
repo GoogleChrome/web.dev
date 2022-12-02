@@ -39,14 +39,12 @@ item elements. Let's create a list of machines. We use an unordered list because
    <li>Vacuum</li>
 </ul>
 ```
-```html
 <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/OeZKatnZZPbs7q0yuM2C.png" width="196" height="146" alt="Blender, toaster, vacuum">
-```
 
 By default, each unordered list item is prefixed with a bullet. The unordered list has no element-specific attributes.
 You need to close out your lists with a `</ul>`.
 
-### Ordered lists
+## Ordered lists
 
 The `<ol>` element is the parent element for ordered lists of items. The only children of an `<ol>` are one or more `<li>` elements, or list items.
 The "bullets" in this case, though, are numbers of a multitude of types. The type can be defined in CSS with the `list-style-type` property
