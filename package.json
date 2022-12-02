@@ -108,7 +108,7 @@
     "sass": "^1.32.11",
     "slugify": "^1.4.5",
     "striptags": "^3.2.0",
-    "terser": "^5.9.0",
+    "terser": "^5.14.2",
     "truncate-utf8-bytes": "^1.0.2",
     "unistore": "^3.4.1",
     "web-vitals": "^3.1.0",
