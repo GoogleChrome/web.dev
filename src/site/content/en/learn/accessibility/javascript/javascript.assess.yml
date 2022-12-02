@@ -1,0 +1,23 @@
+setLeader: Test your knowledge of ARIA and HTML
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: Which way is best to change an element's style with Javascript?
+    options:
+      - content: "Use Javascript to apply dynamic style directly within an HTML element."
+        rationale: "Incorrect. This leads to bloated JavaScript files and is inefficient."
+      - content: "Use JavaScript to toggle an element’s class, and add the style to your CSS stylesheet."
+        rationale: "Correct. Keep your style in the CSS stylesheet and use lightweight JavaScript to change the class name."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Can all JavaScript actions support keyboard users?
+    options:
+      - content: "Yes, but you may have to do some extra work."
+        rationale: "Correct. Semantic HTML supports keyboard users by default, but non-semantic elements with actions need additional JavaScript."
+      - content: "Yes, all actions automatically support keyboard users."
+        rationale: "Incorrect. Only semantic HTML automatically supports keyboard focus."
+      - content: "No, you can only support keyboard users with semantic HTML."
+        rationale: "Incorrect. All HTML elements can support keyboard users."
