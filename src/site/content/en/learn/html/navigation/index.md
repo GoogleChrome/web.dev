@@ -323,8 +323,8 @@ Global navigation provides a consistent means of traveling anywhere in the appli
 navigation at the top of the page. Yahoo! does. While all the main Yahoo! properties have different styles, the content for
 most sections are the same.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/p9q003xRDvYiTidnBEHf.png", alt="ALT_TEXT_HERE", width="800", height="31" %}
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/HyvinG9Tf5wR5qq1tM5s.png", alt="ALT_TEXT_HERE", width="800", height="35" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/p9q003xRDvYiTidnBEHf.png", alt="ALT_TEXT_HERE", width="600", height="31" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/HyvinG9Tf5wR5qq1tM5s.png", alt="ALT_TEXT_HERE", width="600", height="35" %}
 
 The content of the news and sports global navigation headers are the same, but the icon showing that the user is currently
 on sports does not have enough contrast to be accessible; even for visitors who don't have low vision. Both sections have a global

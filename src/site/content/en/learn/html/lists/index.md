@@ -45,7 +45,7 @@ You need to close out your lists with a `</ul>`.
 
 ### Ordered lists
 
-The <ol> element is the parent element for ordered lists of items. The only children of an `<ol>` are one or more `<li>` elements, or list items.
+The `<ol>` element is the parent element for ordered lists of items. The only children of an `<ol>` are one or more `<li>` elements, or list items.
 The "bullets" in this case, though, are numbers of a multitude of types. The type can be defined in CSS with the `list-style-type` property
 or via the `type` attribute.
 
@@ -109,7 +109,7 @@ is one or more `<li>` elements.
 ### List items
 
 We've used the `<li>` element, but we have yet to introduce it formally. The `<li>` element can be a direct child of an unordered
-list (`<ul>`), an ordered list (`<ol>`), or a menu (<menu>). The `<li>` has to be nested as a child of one of these elements, and
+list (`<ul>`), an ordered list (`<ol>`), or a menu (`<menu>`). The `<li>` has to be nested as a child of one of these elements, and
 isn't valid anywhere else.
 
 Closing a list item isn't required by the specification as it will be implicitly closed when the browser encounters the next `<li>`
