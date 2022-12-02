@@ -672,3 +672,5 @@ redirects:
     destination: /blog/fullscreen
   - source: /blog/native-hardware-user-location
     destination: /blog/user-location
+  - source: /speculative-prerendering/
+    destination: https://developer.chrome.com/blog/prerender-pages/
