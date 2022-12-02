@@ -244,7 +244,7 @@ as to why this anti-pattern was used.
 The last element is a custom `<share-action>` element. Custom elements are discussed in section 15. While this custom element
 is not part of the breadcrumb, including an unrelated element in a `<nav>` is fine, as long as the inclusion is consistent on all pages.
 
-## Current page
+### Current page
 
 On this page, the current page, "Navigation", is not included in the breadcrumb. When the current page is included in a
 breadcrumb, the text should preferably not be a link, and `aria-current="page"` should be included on the current page's
