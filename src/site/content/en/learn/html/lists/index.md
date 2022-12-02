@@ -15,7 +15,7 @@ for each question are nested lists.
 
 HTML provides us with a few different ways to mark up lists. There are ordered lists (`<ol>`), unordered lists (`<ul>`), and description lists (`<dl>`).
 List items (`<li>`) are nested within ordered lists and unordered lists. Inside a description list, you'll find description terms (`<dt>`) and description
-details <dd>. We'll cover all of these here.
+details `<dd>.` We'll cover all of these here.
 
 In HTML forms, lists of `<option>` elements make up the content of `<datalist>`, `<select>`, and `<optgroup>` within a `<select>`. These are discussed in [HTML forms](/learn/forms).
 
@@ -63,7 +63,7 @@ or via the `type` attribute.
 </ol> https://codepen.io/estelle/pen/OJEXLWK
 ```
 
-The <ol> has three element-specific attributes: `type`, `reversed`, and `start`.
+The `<ol>` has three element-specific attributes: `type`, `reversed`, and `start`.
 
 The enumerated `type` attribute sets the numbering type. There are five valid values for `type`, the default being `1` for
 numbers, but you can also use a, A, i, or I, for lower and upper case letters or roman numerals. The `list-style-type` property
