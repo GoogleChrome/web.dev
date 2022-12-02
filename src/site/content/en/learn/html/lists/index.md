@@ -32,6 +32,7 @@ in a multiple-choice test. For all of these lists without bullets, it is appropr
 The `<ul>` element is the parent element for unordered lists of items. The only children of a `<ul>` are one or more `<li>` list
 item elements. Let's create a list of machines. We use an unordered list because the order doesn't matter (don't tell them that):
 
+
 ```html
 <ul>
    <li>Blender</li>
@@ -39,6 +40,7 @@ item elements. Let's create a list of machines. We use an unordered list because
    <li>Vacuum</li>
 </ul>
 ```
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/OeZKatnZZPbs7q0yuM2C.png", alt="Blender, toaster, vacuum", width="196", height="146" %}
 
 By default, each unordered list item is prefixed with a bullet. The unordered list has no element-specific attributes.
 You need to close out your lists with a `</ul>`.
@@ -72,7 +74,7 @@ provides many more values.
 <figure>
   {% Codepen {
     user: 'estelle',
-    id: 'MWXegd0',
+    id: 'MWXegdO',
     height: 585,
     tab: 'result'
   } %}
