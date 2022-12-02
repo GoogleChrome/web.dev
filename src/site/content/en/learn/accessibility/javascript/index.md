@@ -40,21 +40,25 @@ user: 'cariefisher',
 id: 'MWXmJze'
 } %}
 
-If a non-semantic element is used for a trigger event, a keydown/keyup event must be added to detect the enter or space key press.
-Adding trigger events to non-semantic elements is often forgotten. Unfortunately, when it is forgotten, the result is a component only accessible
-via a mouse, and keyboard-only users are left without access to the associated actions.
-Page titles
+If a non-semantic element is used for a trigger event, a [keydown/keyup event](https://www.w3.org/WAI/ARIA/apg/example-index/button/button.html)
+must be added to detect the enter or space key press. Adding trigger events to non-semantic elements is often forgotten. Unfortunately,
+when it is forgotten, the result is a component only accessible via a mouse, and keyboard-only users are left without access to the associated actions.
 
-As we learned in the Document module, the page title is essential for screen reader users. It tells users what page they are on
+## Page titles
+
+As we learned in the [Document module](/accessibility/more-html/#page-title), the page title is essential for screen reader users. It tells users what page they are on
 and whether they have navigated to a new page.
 
-If you use a JavaScript framework, you need to consider how you handle page titles, especially as single-page apps (SPA) that load from
+If you use a JavaScript framework, you need to consider how you handle page titles, especially as [single-page apps](https://developer.mozilla.org/docs/Glossary/SPA) (SPA) that load from
 a singular index.html file, transitions, or routes (page change) will not involve a page reload. Each time a user loads a new page,
 the title won’t change by default.
 
-For SPAs, the value of the document.title property can be added manually or by a helper package, depending on the JavaScript framework. Announcing
-the updated page titles to a screen reader user may take some additional work, but the good news is you’ve got options, such as dynamic content.
-Dynamic content
+For SPAs, the value of the [document.title](https://developer.mozilla.org/docs/Web/API/Document/title) property can be
+added manually or by a helper package, depending on the JavaScript framework. Announcing the [updated page titles](https://hidde.blog/accessible-page-titles-in-a-single-page-app/)
+to a screen reader user may take some additional work, but the good news is you’ve got options, such as dynamic content.
+
+## Dynamic content
+
 One of the most powerful functionalities in JavaScript is its ability to add HTML and CSS to any element on the page. It allows developers to
 create more dynamic applications based on the actions or behaviors of the users.
 
@@ -62,7 +66,6 @@ For example, you need to send a message to users when they log in to your websit
 white background and relay the message: "You are now logged in."
 
 You can use JavaScript to set `innerHTML` of content like this:
-
 
 `document.querySelector("#banner").innerHTML = '<p>You are now logged in</p>';`
 
@@ -104,37 +107,55 @@ misused to create inaccessible content. Some common misuses are listed here:
 </tbody>
 </table>
 
-For CSS, ensure you are toggling CSS classes over adding inline styles, as this allows for reusability and simplicity. Use hidden content on the page and toggle classes to hide and show content for dynamic HTML. If you need to use JavaScript to dynamically add content to your page, ensure it's simple and concise, and of course, accessible.
-Focus management
-In the module on keyboard focus, we covered focus order and indicator styles. Focus management is knowing when and where to trap the focus and when it shouldn't be trapped. Focus management is critical to keyboard-only users.
-Component level
-You can create keyboard traps when a component's focus is not properly managed. Keyboard traps occur when a keyboard-only user gets stuck in a component, or the focus is not maintained when it should be.
+For CSS, ensure you are toggling CSS classes over adding inline styles, as this allows for reusability and simplicity.
+Use hidden content on the page and toggle classes to hide and show content for dynamic HTML. If you need to use JavaScript to dynamically
+add content to your page, ensure it's simple and concise, and of course, accessible.
 
-One of the most common patterns where users experience focus management issues is in a modal component. When a keyboard-only user encounters a modal, they should be able to tab between the actionable elements of the modal, but they should never be allowed outside of the modal without explicitly dismissing it. JavaScript is essential in properly trapping this focus.
+## Focus management
+In the module on [keyboard focus](/accessibility/focus), we covered focus order and indicator styles. Focus management is knowing
+when and where to trap the focus and when it shouldn't be trapped. Focus management is critical to keyboard-only users.
+
+### Component level
+You can create keyboard traps when a component's focus is not properly managed. Keyboard traps occur when a keyboard-only
+user gets stuck in a component, or the focus is not maintained when it should be.
+
+One of the most common patterns where users experience focus management issues is in a modal component. When a keyboard-only
+user encounters a modal, they should be able to tab between the actionable elements of the modal, but they should never be allowed outside
+of the modal without explicitly dismissing it. JavaScript is essential in properly trapping this focus.
 
 Don't do this:
 [CodePen example - Accessible JavaScript - Inaccessible modal pattern (React)]
 
 Do this:
 [CodePen - Accessible JavaScript - Accessible modal pattern (React)]
-Page level
-Similar to components, the focus needs to be maintained when a user navigates from page to page. Anytime a user clicks on a link to go to another page within your application, the focus is either kept in the same place or potentially placed somewhere else entirely.
 
-Similar to components, the focus needs to be maintained when a user navigates from page to page. This is especially true in single-page applications where there is no browser refresh, and all content is dynamically changed. Anytime a user clicks on a link to go to another page within your application, the focus is either kept in the same place or potentially placed somewhere else entirely.
+### Page level
 
-When transitioning between pages (or routing), the development team must decide where the focus goes when the page loads. There are multiple techniques to achieve this:
+Similar to components, the focus needs to be maintained when a user navigates from page to page. This is especially true
+in single-page applications where there is no browser refresh, and all content is dynamically changed. Anytime a user clicks
+on a link to go to another page within your application, the focus is either kept in the same place or potentially placed
+somewhere else entirely.
 
-Place focus on the main container with an aria-live announcement.
-Put the focus back to skip to the main content link.
-Move the focus to the top-level heading of a new page.
+When transitioning between pages (or routing), the development team must decide where the focus goes when the page loads.
+There are multiple techniques to achieve this:
 
-Where you decide to put the focus will depend on the framework you are using and the content you want to serve up to your users, and may be context- or action-dependent.
-State management
-Another area where JavaScript is critical to accessibility is state management, or when a component or page’s current visual state is relayed to a low-vision, blind, or deafblind assistive technology user.
+* Place focus on the main container with an aria-live announcement.
+* Put the focus back to skip to the main content link.
+* Move the focus to the top-level heading of a new page.
 
-Often, the state of a component or page is managed through ARIA attributes, as introduced to you in the ARIA and HTML module. In this section, we review a few of the most common types of ARIA attributes used to help manage the state of an element.
+Where you decide to put the focus will depend on the framework you are using and the content you want to serve up to your users,
+and may be context- or action-dependent.
+
+## State management
+
+Another area where JavaScript is critical to accessibility is state management, or when a component or page’s current visual
+state is relayed to a low-vision, blind, or deafblind assistive technology user.
+
+Often, the state of a component or page is managed through ARIA attributes, as introduced to you in the ARIA and HTML module.
+In this section, we review a few of the most common types of ARIA attributes used to help manage the state of an element.
 Component level
-Depending on your page content and what information your users need, there are many ARIA states to consider when relaying information about a component to the user.
+Depending on your page content and what information your users need, there are many ARIA states to consider when relaying information
+about a component to the user.
 
 For example, you may use an aria-expanded attribute to tell the user whether a drop-down menu or list is expanded or collapsed.
 [CodePen - Accessible JavaScript - Aria-expanded]
@@ -142,24 +163,31 @@ For example, you may use an aria-expanded attribute to tell the user whether a d
 Or you might use aria-pressed to indicate that a button has been pressed.
 [CodePen - Accessible JavaScript - Aria-pressed]
 
-It’s important to be selective when applying ARIA attributes. Be sure to think through the user flow to understand what critical information needs to be conveyed to the user.
+It’s important to be selective when applying ARIA attributes. Be sure to think through the user flow to understand what critical
+information needs to be conveyed to the user.
 Page level
-Developers often use a visually hidden area called the ARIA live region to announce changes on the screen and alert messages to assistive technology users. This area can be paired with JavaScript to notify users of dynamic changes to the page without requiring the entire page to reload.
+Developers often use a visually hidden area called the ARIA live region to announce changes on the screen and alert messages
+to assistive technology users. This area can be paired with JavaScript to notify users of dynamic changes to the page without requiring the entire page to reload.
 
 [CodePen - Accessible JavaScript - Aria-live]
 
-Historically, JavaScript has struggled to announce content in aria-live and alert regions due to its dynamic nature. Asynchronously adding content into the DOM makes it hard for assistive technologies to pick up the region and announce it. For the content to be properly read, the live or alert region must be in the DOM on load, and then the text can dynamically be swapped out.
+Historically, JavaScript has struggled to announce content in aria-live and alert regions due to its dynamic nature. Asynchronously
+adding content into the DOM makes it hard for assistive technologies to pick up the region and announce it. For the content to be properly read,
+the live or alert region must be in the DOM on load, and then the text can dynamically be swapped out.
 
-If you use a JavaScript framework, the good news is almost all of them have a "live announcer" package that does all the work for you and is fully accessible. There is no need to worry about creating your live region and dealing with the issues described in the previous section.
+If you use a JavaScript framework, the good news is almost all of them have a "live announcer" package that does all the work
+for you and is fully accessible. There is no need to worry about creating your live region and dealing with the issues described in
+the previous section.
 
 Here are some live packages for common JavaScript frameworks:
 
-React-Aria-Live
-React-A11y-Announcer
-Angular Material Live Announcer
-Vue-A11y-Utils
+* React-Aria-Live
+* React-A11y-Announcer
+* Angular Material Live Announcer
+* Vue-A11y-Utils
 
-
-Modern JavaScript is a powerful language that allows web developers to create robust web applications. This sometimes leads to over-engineering and, by extension, inaccessible patterns. By following the JavaScript patterns and tips in this module, you can make your apps more accessible to all users.
+Modern JavaScript is a powerful language that allows web developers to create robust web applications. This sometimes leads
+to over-engineering and, by extension, inaccessible patterns. By following the JavaScript patterns and tips in this module, you
+can make your apps more accessible to all users.
 
 {% Assessment 'javascript' %}
