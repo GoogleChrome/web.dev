@@ -9,6 +9,10 @@ tags:
   - blog
 ---
 
+{% Aside 'warning' %}
+This article describes an old version of Custom Elements (v0). If you're interested in using Custom Elements, check out our new article, "[Custom Elements v1 - Reusable Web Components](/custom-elements-v1/)". It covers everything in the newer Custom Elements v1 spec shipped in Chrome 53, Safari 10, and Firefox 63.
+{% endAside %}
+
 ## Introduction
 
 The web severely lacks expression. To see what I mean, take a peek at a "modern" web app like GMail:
@@ -17,7 +21,7 @@ The web severely lacks expression. To see what I mean, take a peek at a "modern"
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/xDJlKi0xvNl9gqZ6tDGB.png", alt="Gmail", width="800", height="470" %}
 </figure>
 
-There's nothing modern about `<div>` soup. And yet, this is how we build web apps. It's sad. 
+There's nothing modern about `<div>` soup. And yet, this is how we build web apps. It's sad.
 Shouldn't we demand more from our platform?
 
 ### Sexy markup. Let's make it a thing
@@ -48,8 +52,8 @@ just by examining its declarative backbone.
 
 ## Getting started
 
-[Custom Elements](http://w3c.github.io/webcomponents/spec/custom/)
-**allow web developers to define new types of HTML elements**. The spec is one of several new API primitives landing under the [Web Components](http://w3c.github.io/webcomponents/explainer/) umbrella, but it's quite possibly the most important. Web Components don't exist
+[Custom Elements](https://html.spec.whatwg.org/multipage/custom-elements.html)
+**allow web developers to define new types of HTML elements**. The spec is one of several new API primitives landing under the [Web Components](https://www.w3.org/TR/2012/WD-components-intro-20120522/) umbrella, but it's quite possibly the most important. Web Components don't exist
 without the features unlocked by custom elements:
 
 1. Define new HTML/DOM elements
@@ -73,7 +77,7 @@ compatibility when new tags are added to HTML.
 
 The second argument is an (optional) object describing the element's `prototype`.
 This is the place to add custom functionality (e.g. public properties and methods) to your elements.
-[More on that](#publicapi) later.
+[More on that](#adding-js-properties-and-methods) later.
 
 By default, custom elements inherit from `HTMLElement`. Thus, the previous example is equivalent to:
 
@@ -85,7 +89,7 @@ var XFoo = document.registerElement('x-foo', {
 
 A call to `document.registerElement('x-foo')` teaches the browser about the new element,
 and returns a constructor that you can use to create instances of `<x-foo>`.
-Alternatively, you can use the other [techniques of instantiating elements](#instantiating)
+Alternatively, you can use the other [techniques of instantiating elements](#instantiating-elements)
 if you don't want to use the constructor.
 
 {% Aside %}
@@ -142,12 +146,12 @@ var XFooExtended = document.registerElement('x-foo-extended', {
 });
 ```
 
-See [Adding JS properties and methods](#publicapi) below for more information on creating element prototypes.
+See [Adding JS properties and methods](#adding-js-properties-and-methods) below for more information on creating element prototypes.
 
 ### How elements are upgraded
 
 Have you ever wondered why the HTML parser doesn't throw a fit on non-standard tags?
-For example, it's perfectly happy if we declare `<randomtag>` on the page. According to the [HTML specification](http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#htmlunknownelement):
+For example, it's perfectly happy if we declare `<randomtag>` on the page. According to the [HTML specification](https://html.spec.whatwg.org/multipage/dom.html#htmlunknownelement):
 
 {% Aside %}
 The `HTMLUnknownElement` interface must be used for HTML elements that are not defined by this specification.
@@ -180,12 +184,10 @@ These are HTML elements that have a valid custom element name but haven't been r
 
 This table might help keep things straight:
 
-<table>
-  <thead><tr><th>Name</th><th>Inherits from</th><th>Examples</th></tr></thead>
-  <tr><td>Unresolved element</td><td>`HTMLElement`</td><td>`<x-tabs>`, `<my-element>`, `<my-awesome-app>`</td></tr>
-  <tr><td>Unknown element</td><td>`HTMLUnknownElement`</td><td>`<tabs>`, `<foo_bar>`
-</td></tr>
-</table>
+| Name                | Inherits from        | Examples                   |
+| ------------------- | -------------------- | -------------------------- |
+| Unresolved element  | `HTMLElement`        | `<x-tabs>`, `<my-element>` |
+| Unknown element     | `HTMLUnknownElement` | `<tabs>`, `<foo_bar>`      |
 
 {% Aside %}
 Think of unresolved elements as in limbo.
@@ -363,7 +365,7 @@ proto.createdCallback = function() {
 ```
 
 {% Aside %}
-People won't use your elements if 
+People won't use your elements if
 they're clunky. The lifecycle callbacks can help you be a good citizen!
 {% endAside %}
 
@@ -389,19 +391,19 @@ Instantiating this tag and inspecting in the DevTools (right-click, select Inspe
 
 ```html
 ▾<x-foo-with-markup>
-    **I'm an x-foo-with-markup!**
-    </x-foo-with-markup>
+  **I'm an x-foo-with-markup!**
+</x-foo-with-markup>
 ```
 
 ### Encapsulating the internals in Shadow DOM
 
-By itself, [Shadow DOM](/tutorials/webcomponents/shadowdom/) is a powerful tool for
+By itself, [Shadow DOM](/shadowdom/) is a powerful tool for
 encapsulating content. Use it in conjunction with custom elements and things get magical!
 
 Shadow DOM gives custom elements:
 
 1. A way to hide their guts, thus shielding users from gory implementation details.
-1. [Style encapsulation](/tutorials/webcomponents/shadowdom-201/)…fo' free.
+1. [Style encapsulation](/shadowdom-201/)…fo' free.
 
 Creating an element from Shadow DOM is like creating one that
 renders basic markup. The difference is in `createdCallback()`:
@@ -427,39 +429,39 @@ With the "Show Shadow DOM" setting enabled in the DevTools, you'll see a
 
 ```js
 ▾<x-foo-shadowdom>
-    ▾#shadow-root
-        **I'm in the element's Shadow DOM!**
-    </x-foo-shadowdom>
+  ▾#shadow-root
+    **I'm in the element's Shadow DOM!**
+</x-foo-shadowdom>
 ```
 
 That's the Shadow Root!
 
 ### Creating elements from a template
 
-[HTML Templates](http://www.whatwg.org/specs/web-apps/current-work/multipage/scripting-1.html#the-template-element) are another new API primitive that fits nicely into the world of custom elements.
+[HTML Templates](https://html.spec.whatwg.org/multipage/scripting.html#the-template-element) are another new API primitive that fits nicely into the world of custom elements.
 
 **Example:** registering an element created from a `<template>` and Shadow DOM:
 
 ```js
-    <template id="sdtemplate">
-      <style>
-        p { color: orange; }
-      </style>
-      <p>I'm in Shadow DOM. My markup was stamped from a <template&gt;.
-    </template>
+<template id="sdtemplate">
+  <style>
+    p { color: orange; }
+  </style>
+  <p>I'm in Shadow DOM. My markup was stamped from a <template&gt;.
+</template>
 
-    <script>
-    var proto = Object.create(HTMLElement.prototype, {
-      createdCallback: {
-        value: function() {
-          var t = document.querySelector('#sdtemplate');
-          var clone = document.importNode(t.content, true);
-          this.createShadowRoot().appendChild(clone);
-        }
+<script>
+  var proto = Object.create(HTMLElement.prototype, {
+    createdCallback: {
+      value: function() {
+        var t = document.querySelector('#sdtemplate');
+        var clone = document.importNode(t.content, true);
+        this.createShadowRoot().appendChild(clone);
       }
-    });
-    document.registerElement('x-foo-from-template', {prototype: proto});
-    </script>
+    }
+  });
+  document.registerElement('x-foo-from-template', {prototype: proto});
+</script>
 
 <template id="sdtemplate">
   <style>:host p { color: orange; }</style>
@@ -487,26 +489,26 @@ As with any HTML tag, users of your custom tag can style it with selectors:
 
 ```html
 <style>
-    app-panel {
+  app-panel {
     display: flex;
-    }
-    [is="x-item"] {
+  }
+  [is="x-item"] {
     transition: opacity 400ms ease-in-out;
     opacity: 0.3;
     flex: 1;
     text-align: center;
     border-radius: 50%;
-    }
-    [is="x-item"]:hover {
+  }
+  [is="x-item"]:hover {
     opacity: 1.0;
     background: rgb(255, 0, 255);
     color: white;
-    }
-    app-panel > [is="x-item"] {
+  }
+  app-panel > [is="x-item"] {
     padding: 5px;
     list-style: none;
     margin: 0 7px;
-    }
+  }
 </style>
 
 <app-panel>
@@ -519,7 +521,7 @@ As with any HTML tag, users of your custom tag can style it with selectors:
 ### Styling elements that use Shadow DOM
 
 The rabbit hole goes much _much_ deeper when you bring Shadow DOM into the mix.
-[Custom elements that use Shadow DOM](#shadowdom) inherit its great benefits.
+[Custom elements that use Shadow DOM](#encapsulating-the-internals-in-shadow-dom) inherit its great benefits.
 
 Shadow DOM infuses an element with style encapsulation. Styles defined in a Shadow Root don't
 leak out of the host and don't bleed in from the page. **In the case of a custom element, the element itself is the host.** The properties of style encapsulation also allow custom elements to
@@ -528,15 +530,15 @@ define default styles for themselves.
 Shadow DOM styling is a huge topic! If you want to learn more about it, I recommend a few of my other articles:
 
 - "[A Guide to Styling Elements](http://www.polymer-project.org/articles/styling-elements.html)" on [Polymer](http://www.polymer-project.org)'s documentation.
-- "[Shadow DOM 201: CSS & Styling](/tutorials/webcomponents/shadowdom-201/)" here on html5rocks.com
+- "[Shadow DOM 201: CSS & Styling](/shadowdom-201/)" here.
 
 ### FOUC prevention using :unresolved
 
 To mitigate [FOUC](http://en.wikipedia.org/wiki/Flash_of_unstyled_content), custom elements spec
-out a new CSS pseudo class, `:unresolved`. Use it to target [unresolved elements](#unresolvedels), 
-right up until the point where the browser invokes your `createdCallback()` (see [lifecycle methods](#lifecycle)).
+out a new CSS pseudo class, `:unresolved`. Use it to target [unresolved elements](#unresolved-elements),
+right up until the point where the browser invokes your `createdCallback()` (see [lifecycle methods](#lifecycle-callback-methods)).
 Once that happens, the element is no longer an unresolved element. The upgrade process is
-complete and the element has transformed into its definition. 
+complete and the element has transformed into its definition.
 
 {% Aside %}
 CSS `:unresolved` is supported natively in Chrome 29.
@@ -546,37 +548,37 @@ CSS `:unresolved` is supported natively in Chrome 29.
 
 ```html
 <style>
-    x-foo {
+  x-foo {
     opacity: 1;
     transition: opacity 300ms;
-    }
-    x-foo:unresolved {
+  }
+  x-foo:unresolved {
     opacity: 0;
-    }
+  }
 </style>
 ```
 
-Keep in mind that `:unresolved` only applies to [unresolved elements](#unresolvedels),
-not to elements that inherit from `HTMLUnknownElement` (see [How elements are upgraded](#upgrades)).
+Keep in mind that `:unresolved` only applies to [unresolved elements](#unresolved-elements),
+not to elements that inherit from `HTMLUnknownElement` (see [How elements are upgraded](#how-elements-are-upgraded)).
 
 ```html
 <style>
-    /* apply a dashed border to all unresolved elements */
-    :unresolved {
+  /* apply a dashed border to all unresolved elements */
+  :unresolved {
     border: 1px dashed red;
     display: inline-block;
-    }
-    /* x-panel's that are unresolved are red */
-    x-panel:unresolved {
+  }
+  /* x-panel's that are unresolved are red */
+  x-panel:unresolved {
     color: red;
-    }
-    /* once the definition of x-panel is registered, it becomes green */
-    x-panel {
+  }
+  /* once the definition of x-panel is registered, it becomes green */
+  x-panel {
     color: green;
     display: block;
     padding: 5px;
     display: block;
-    }
+  }
 </style>
 
 <panel>
@@ -586,8 +588,6 @@ not to elements that inherit from `HTMLUnknownElement` (see [How elements are up
 
 <x-panel>I'm red because I match x-panel:unresolved.</x-panel>
 ```
-
-For more on `:unresolved`, see Polymer's [A Guide to styling elements](http://www.polymer-project.org/articles/styling-elements.html#preventing-fouc).
 
 ## History and browser support
 
@@ -610,7 +610,7 @@ if (supportsCustomElements()) {
 ### Browser support
 
 `document.registerElement()` first started landing behind a flag in Chrome 27 and Firefox ~23. However, the specification has evolved quite a bit since then. Chrome 31 is the first to have
-true support for the updated spec. 
+true support for the updated spec.
 
 {% Aside %}
 Custom elements can be enabled in Chrome 31 under "Experimental Web Platform features" in `about:flags`.
@@ -629,12 +629,12 @@ It was the bees knees. You could use it to declaratively register new elements:
 </element>
 ```
 
-Unfortunately, there were too many timing issues with the [upgrade process](#upgrades),
+Unfortunately, there were too many timing issues with the [upgrade process](#how-elements-are-upgraded),
 corner cases, and Armageddon-like scenarios to work it all out. `<element>` had to be shelved. In August 2013, Dimitri Glazkov posted to [public-webapps](http://lists.w3.org/Archives/Public/public-webapps/2013JulSep/0287.html) announcing its removal, at least for now.
 
 It's worth noting that Polymer implements a declarative form of element registration
 with `<polymer-element>`. How? It uses `document.registerElement('polymer-element')` and
-the techniques I described in [Creating elements from a template](#fromtemplate).
+the techniques I described in [Creating elements from a template](#creating-elements-from-a-template).
 
 ## Conclusion
 
