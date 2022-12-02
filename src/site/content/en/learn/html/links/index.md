@@ -47,7 +47,7 @@ domain name. When the protocol is written simply as `//`, it is an implicit prot
 Relative URLs do not include a protocol or domain name. They are "relative" to the current file. MLW is a single-page site,
 but this HTML series has several sections. In order to link from this page to the attributes lesson, a relative URL is used `<a href="../attributes/">Attributes</a>`.
 
-The second link is just a [link fragment identifier](/html/attributes/#link_fragment_identifier), and will link to the
+The second link is just a [link fragment identifier](/learn/html/attributes/#link_fragment_identifier), and will link to the
 element with `id="teachers",` if there is one, on the current page. Browsers also support two "top of page" links: clicking
 on `<a href="#top">Top</a>` (case-insensitive) or simply `<a href="#">Top</a>` will scroll the user to the top of the page,
 unless there is an element with the id of `top` set in the same letter casing.
