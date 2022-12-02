@@ -3,7 +3,7 @@ title: 'Design and user experience'
 authors:
   - cariefisher
 description: Create accessible designs and evaluate your user's experience.
-date: 2022-09-21
+date: 2022-12-02
 placeholder: true
 tags:
   - accessibility
@@ -69,7 +69,7 @@ No matter how you incorporate people with disabilities into your personas, they 
 
 {% Details %}
 {% DetailsSummary %}
-#### Persona: Jane Bennet
+Persona: Jane Bennet
 Check out an example of a persona that supports specific use cases.
 {% endDetailsSummary %}
 
@@ -252,6 +252,7 @@ the design as the main focus.
    </figcaption>
  </figure>
 </div>
+
 
 These examples are from [Indeed.com’s accessibility annotations kit](https://www.figma.com/community/file/953682768192596304) for Figma.
 

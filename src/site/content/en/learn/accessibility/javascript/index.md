@@ -3,7 +3,7 @@ title: 'JavaScript'
 authors:
   - cariefisher
 description: Write accessible JavaScript.
-date: 2022-09-21
+date: 2022-12-02
 placeholder: true
 tags:
   - accessibility
@@ -176,7 +176,7 @@ user: 'cariefisher',
 id: 'KKemRoW'
 } %}
 
-Or you might use aria-pressed to indicate that a button has been pressed.
+Or you might use [aria-pressed](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-pressed) to indicate that a button has been pressed.
 
 {% Codepen {
 user: 'cariefisher',
