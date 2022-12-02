@@ -21,6 +21,9 @@ the possibilities of how people use and experience your designs are limitless.
 How can we address all of the potential user needs at once? Enter inclusive design. Inclusive design utilizes a human-centered
 approach that weaves together inclusivity, usability, and accessibility into one.
 
+<figure data-float="right">
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/BIEvBV4I6VLhOjTK50rT.png", alt="A venn diagram where accessibility, inclusivity, and usability all meet in the middle as inclusive design.", width="400", height="388" %}
+</figure>
 
 And unlike universal design, which focuses on a single design that as many people can use as possible, inclusive design principles
 center on designing for a specific individual or use case, and then extending that design to others.
@@ -101,7 +104,7 @@ disability simulator tools](https://sheribyrnehaber.medium.com/simulating-disabi
 demos, tutorials, and other content created by people with disabilities, and learning about their experiences first-hand.
 
 <blockquote>
-  <p>“I think we need to be completely honest that any simulation activity does not impact some of the most important understandings we want the sighted to know in their heart and their head—that blindness is not the characteristic that defines us, that the misunderstandings and low expectations about blindness are our biggest obstacle, that those misunderstandings create artificial barriers that prevent us from fully participating, and those false limitations build into something that holds us back.”</p>
+  <p>"I think we need to be completely honest that any simulation activity does not impact some of the most important understandings we want the sighted to know in their heart and their head—that blindness is not the characteristic that defines us, that the misunderstandings and low expectations about blindness are our biggest obstacle, that those misunderstandings create artificial barriers that prevent us from fully participating, and those false limitations build into something that holds us back."</p>
   <cite>
     <a href="https://nfb.org/sites/default/files/images/nfb/publications/bm/bm17/bm1704/bm170402.htm">Mark Riccobono</a>, President of the National Federation of the Blind
   </cite>
