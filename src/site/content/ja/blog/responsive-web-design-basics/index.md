@@ -59,7 +59,7 @@ tags:
 
 {% Aside 'caution' %}古いブラウザが属性を適切に解析できるようにするには、コンマを使用して属性を区切ります。{% endAside %}
 
-[`width`または`initial-scale` Lighthouse監査を含む`<meta name="viewport">`タグ](/viewport/)がない場合、HTMLドキュメントがビューポートメタタグを正しく使用していることを確認するプロセスを自動化するのに役立ちます。
+[`width`または`initial-scale` Lighthouse監査を含む`<meta name="viewport">`タグ](https://developer.chrome.com/docs/lighthouse/pwa/viewport/)がない場合、HTMLドキュメントがビューポートメタタグを正しく使用していることを確認するプロセスを自動化するのに役立ちます。
 
 ### アクセス可能なビューポートを確認する {: ＃accessible-viewport}
 

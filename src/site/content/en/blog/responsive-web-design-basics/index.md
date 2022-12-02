@@ -88,7 +88,7 @@ allows the page to take advantage of the full landscape width.
   use a comma to separate attributes.
 {% endAside %}
 
-The [Does not have a `<meta name="viewport">` tag with `width` or `initial-scale`](/viewport/)
+The [Does not have a `<meta name="viewport">` tag with `width` or `initial-scale`](https://developer.chrome.com/docs/lighthouse/pwa/viewport/)
 Lighthouse audit can help you automate the process of making sure that your HTML documents are using the viewport meta tag correctly.
 
 ### Ensure an accessible viewport {: #accessible-viewport }

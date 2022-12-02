@@ -246,7 +246,7 @@ codelabs:
 
 根据 [Android 辅助功能指南](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB)，触摸屏对象的推荐目标尺寸为 7-10 毫米。 Apple 界面指南建议 48x48 像素，W3C 建议[至少 44x44 CSS 像素](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)。在此基础上，为移动设备的输入元素和按钮添加（至少）大约 15 像素的内边距，在桌面设备上添加大约 10 像素的内边距。用真正的移动设备和真正的手指或拇指试试这个。您应该能够轻松点击每个输入和按钮。
 
-[点击目标的大小不合适](/tap-targets/)Lighthouse 审计可以帮助您自动化检测太小的输入元素的过程。
+[点击目标的大小不合适](https://developer.chrome.com/docs/lighthouse/seo/http-status-code/)Lighthouse 审计可以帮助您自动化检测太小的输入元素的过程。
 
 #### 拇指设计 {: #design-for-thumbs }
 
@@ -262,7 +262,7 @@ codelabs:
 
 这意味着您需要在移动设备上使用更大的像素尺寸：`16px` 的大小在 Chrome 桌面上是相当清晰的，但即使有良好的视力，在 Chrome for Android 上也难以阅读 `16px` 的文本。您可以使用[媒体查询](https://developers.google.com/web/fundamentals/design-and-ux/responsive#apply_media_queries_based_on_viewport_size)为不同的视口大小设置不同的字体像素大小。`20px` 在移动设备上是正确的——但您应该和视力不好的朋友或同事一起测试一下。
 
-[文档没有使用清晰的字体大小](/font-size/) Lighthouse 审计可以帮助您自动化检测太小文本的过程。
+[文档没有使用清晰的字体大小](https://developer.chrome.com/docs/lighthouse/seo/font-size/) Lighthouse 审计可以帮助您自动化检测太小文本的过程。
 
 ### 在输入之间提供足够的空间 {: #size-margins-correctly }
 

@@ -32,7 +32,7 @@ If Lighthouse doesn't receive the event within 10&nbsp;seconds, the audit fails.
 Once you've set up HTTPS,
 make sure that all unsecure HTTP traffic to your site is redirected to HTTPS:
 
-- Use [canonical links](/canonical) in the head of your HTML page
+- Use [canonical links](https://developer.chrome.com/docs/lighthouse/seo/canonical/) in the head of your HTML page
   to help search engines figure out the best way to get to the page.
 - Configure your server to redirect HTTP traffic to HTTPS:
   * [nginx](https://serverfault.com/questions/67316)
@@ -43,4 +43,4 @@ make sure that all unsecure HTTP traffic to your site is redirected to HTTPS:
 ## Resources
 - [Source code for **Does not redirect HTTP traffic to HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects-http.js)
 - [Does not use HTTPS](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)
-- [Document does not have a valid `rel=canonical`](/canonical)
+- [Document does not have a valid `rel=canonical`](https://developer.chrome.com/docs/lighthouse/seo/canonical/)

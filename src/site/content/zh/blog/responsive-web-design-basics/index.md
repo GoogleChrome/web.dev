@@ -59,7 +59,7 @@ tags:
 
 {% Aside '注意' %}为确保旧版浏览器可以正确解析属性，请使用逗号分隔属性。{% endAside %}
 
-[没有包含`width`或`initial-scale`的`<meta name="viewport">`标签](/viewport/) Lighthouse 审计可以帮助您自动确保您的 HTML 文档正确使用了可视区域元标签。
+[没有包含`width`或`initial-scale`的`<meta name="viewport">`标签](https://developer.chrome.com/docs/lighthouse/pwa/viewport/) Lighthouse 审计可以帮助您自动确保您的 HTML 文档正确使用了可视区域元标签。
 
 ### 确保可视区域的可访问性 {: #accessible-viewport }
 

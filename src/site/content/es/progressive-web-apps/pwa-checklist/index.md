@@ -201,7 +201,7 @@ Una de las mayores ventajas de la web es la posibilidad de encontrar sitios y ap
 
 #### Cómo
 
-Comience por asegurarse de que cada URL tiene un título y una meta descripción únicos y descriptivos. A continuación, puede utilizar [Google Search Console](https://search.google.com/search-console/about) y las [auditorías de optimización de motores de búsqueda](/lighthouse-seo/) en Lighthouse para ayudarle a depurar y solucionar los problemas de visibilidad de su PWA. También puede utilizar las herramientas de los webmasters de [Bing](https://www.bing.com/toolbox/webmaster) o [Yandex](https://webmaster.yandex.com/welcome/), y considerar la inclusión de [datos estructurados](https://goo.gle/search-gallery) mediante esquemas de [Schema.org](https://schema.org/) en su PWA.
+Comience por asegurarse de que cada URL tiene un título y una meta descripción únicos y descriptivos. A continuación, puede utilizar [Google Search Console](https://search.google.com/search-console/about) y las [auditorías de optimización de motores de búsqueda](https://developer.chrome.com/docs/lighthouse/seo/) en Lighthouse para ayudarle a depurar y solucionar los problemas de visibilidad de su PWA. También puede utilizar las herramientas de los webmasters de [Bing](https://www.bing.com/toolbox/webmaster) o [Yandex](https://webmaster.yandex.com/welcome/), y considerar la inclusión de [datos estructurados](https://goo.gle/search-gallery) mediante esquemas de [Schema.org](https://schema.org/) en su PWA.
 
 {% endDetails %}
 

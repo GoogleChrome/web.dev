@@ -33,10 +33,7 @@ module.exports = function () {
 
   const frameworks = [allPaths['react'], allPaths['angular']].filter(livePaths);
 
-  const lighthouse = [
-    allPaths['lighthouse-pwa'],
-    allPaths['lighthouse-seo'],
-  ].filter(livePaths);
+  const lighthouse = [allPaths['lighthouse-pwa']].filter(livePaths);
 
   const explorations = [allPaths['mini-apps']].filter(livePaths);
 

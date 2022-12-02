@@ -701,6 +701,34 @@ redirects:
   - source: /uses-passive-event-listeners
     destination: https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/
 
+  # Redirects for Lighthouse SEO content.
+  - source: /lighthouse-seo
+    destination: https://developer.chrome.com/docs/lighthouse/seo/
+  - source: /canonical
+    destination: https://developer.chrome.com/docs/lighthouse/seo/canonical/
+  - source: /font-size
+    destination: https://developer.chrome.com/docs/lighthouse/seo/font-size/
+  - source: /hreflang
+    destination: https://developer.chrome.com/docs/lighthouse/seo/hreflang/
+  - source: /http-status-code
+    destination: https://developer.chrome.com/docs/lighthouse/seo/http-status-code/
+  - source: /is-crawlable
+    destination: https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/
+  - source: /link-text
+    destination: https://developer.chrome.com/docs/lighthouse/seo/link-text/
+  - source: /meta-description
+    destination: https://developer.chrome.com/docs/lighthouse/seo/meta-description/
+  - source: /plugins
+    destination: https://developer.chrome.com/docs/lighthouse/seo/plugins/
+  - source: /robots-txt
+    destination: https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/
+  - source: /structured-data
+    destination: https://developer.chrome.com/docs/lighthouse/seo/structured-data/
+  - source: /tap-targets
+    destination: https://developer.chrome.com/docs/lighthouse/seo/tap-targets/
+  - source: /viewport
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/viewport/
+
 # Redirects for blogs
   - source: /blog/native-hardware-click-to-call
     destination: /blog/click-to-call

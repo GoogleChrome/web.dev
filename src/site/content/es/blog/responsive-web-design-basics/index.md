@@ -60,7 +60,7 @@ El uso del valor de la meta etiqueta de ventana gráfica  `width=device-width` i
 
 {% Aside 'caution' %} Para asegurarse de que los navegadores más antiguos puedan analizar correctamente los atributos, use una coma para separarlos. {% endAside %}
 
-La auditoría Lighthouse de [No tiene una etiqueta `<meta name="viewport">` con `width` o `initial-scale`](/viewport/) puede ayudarle a automatizar el proceso de asegurarse de que sus documentos HTML estén usando la meta etiqueta de ventana gráfica correctamente.
+La auditoría Lighthouse de [No tiene una etiqueta `<meta name="viewport">` con `width` o `initial-scale`](https://developer.chrome.com/docs/lighthouse/pwa/viewport/) puede ayudarle a automatizar el proceso de asegurarse de que sus documentos HTML estén usando la meta etiqueta de ventana gráfica correctamente.
 
 ### Asegurar una ventana gráfica accesible {: #access-viewport }
 

@@ -59,7 +59,7 @@ tags:
 
 {% Aside 'caution' %} 이전 브라우저에서 속성을 제대로 구문 분석할 수 있도록 쉼표를 사용하여 속성을 구분하세요. {% endAside %}
 
-[`width` 또는 `initial-scale`가 있는 `<meta name="viewport">` 태그가 없습니까](/viewport/) Lighthouse 감사는 HTML 문서가 뷰포트 메타 태그를 올바르게 사용하고 있는지 확인하는 프로세스를 자동화하는 데 도움을 줄 수 있습니다.
+[`width` 또는 `initial-scale`가 있는 `<meta name="viewport">` 태그가 없습니까](https://developer.chrome.com/docs/lighthouse/pwa/viewport/) Lighthouse 감사는 HTML 문서가 뷰포트 메타 태그를 올바르게 사용하고 있는지 확인하는 프로세스를 자동화하는 데 도움을 줄 수 있습니다.
 
 ### 액세스 가능한 뷰포트 확인 {: #accessible-viewport }
 

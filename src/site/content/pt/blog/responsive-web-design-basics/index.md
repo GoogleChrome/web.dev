@@ -59,7 +59,7 @@ Usando o valor meta viewport de `width=device-width` instrui a página a corresp
 
 {% Aside 'caution' %} Para garantir que os navegadores mais antigos possam analisar corretamente os atributos, use uma vírgula para separar os atributos. {% endAside %}
 
-A auditoria do Lighthouse [Não tem uma tag `<meta name="viewport">` com `width` ou `initial-scale`](/viewport/) pode ajudá-lo a automatizar o processo de certificar-se de que seus documentos HTML estão usando a meta tag viewport corretamente.
+A auditoria do Lighthouse [Não tem uma tag `<meta name="viewport">` com `width` ou `initial-scale`](https://developer.chrome.com/docs/lighthouse/pwa/viewport/) pode ajudá-lo a automatizar o processo de certificar-se de que seus documentos HTML estão usando a meta tag viewport corretamente.
 
 ### Garanta uma viewport acessível {: #accessible-viewport}
 
