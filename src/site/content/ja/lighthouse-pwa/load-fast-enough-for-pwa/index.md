@@ -20,7 +20,7 @@ updated: 2020-06-10
 
 下記の2つの主要な指標は、読み込み時間に対するユーザーの知覚に影響します。
 
-- [First Meaningful Paint（FMP）](/first-meaningful-paint)は、ページのメインとなるコンテンツが表示されるまでの時間を測定します
+- [First Meaningful Paint（FMP）](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/)は、ページのメインとなるコンテンツが表示されるまでの時間を測定します
 - [Time to Interactive（TTI）](/tti/)は、ページが操作可能になるまでの時間を測定します
 
 たとえば、ページが1秒後に完全に表示されたが、ユーザーが10秒以内でそのページを操作できない場合、ユーザーはページの読み込み時間を10秒と認識するかもしれません。

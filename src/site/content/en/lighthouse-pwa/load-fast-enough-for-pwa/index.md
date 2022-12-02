@@ -30,7 +30,7 @@ flags pages that don't load fast enough on mobile:
 
 Two main metrics affect how users perceive load time:
 
-- [First Meaningful Paint (FMP)](/first-meaningful-paint), which measures when the primary content of the page appears visually complete
+- [First Meaningful Paint (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/), which measures when the primary content of the page appears visually complete
 - [Time to Interactive (TTI)](/tti/), which measures when the page is fully interactive
 
 For example, if a page appears visually complete after 1&nbsp;second,

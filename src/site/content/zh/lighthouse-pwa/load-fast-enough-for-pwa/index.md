@@ -22,7 +22,7 @@ updated: 2020-06-10
 
 有两个主要指标影响了用户对加载时间的体验：
 
-- [首次有效绘制 (FMP)](/first-meaningful-paint) ，它衡量页面的主要内容何时看起来完整
+- [首次有效绘制 (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) ，它衡量页面的主要内容何时看起来完整
 - [交互用时 (TTI)](/tti/) ，衡量页面何时完全交互
 
 例如，如果一个页面在 1 秒后看起来完整，但用户在 10 秒内无法与其交互，则用户可能会认为页面加载时间为 10 秒。

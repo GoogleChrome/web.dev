@@ -68,7 +68,7 @@ Lighthouse 6.0은 보고서에 세 가지 새로운 메트릭을 도입합니다
 
 ## 실적 점수 업데이트 {: #score }
 
-Lighthouse의 [성능 점수](/performance-scoring/)는 페이지 속도를 요약하기 위해 여러 메트릭의 가중치 혼합에서 계산됩니다. 6.0 성능 점수 공식은 다음과 같습니다.
+Lighthouse의 [성능 점수](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)는 페이지 속도를 요약하기 위해 여러 메트릭의 가중치 혼합에서 계산됩니다. 6.0 성능 점수 공식은 다음과 같습니다.
 
 &lt;style&gt; .lh-table { min-width: unset; } .lh-table td { min-width: unset; } &lt;/style&gt;
 

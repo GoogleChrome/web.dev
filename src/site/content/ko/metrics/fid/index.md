@@ -176,15 +176,15 @@ FID 값에는 변동이 예상되므로, FID를 보고할 때는 값 분포를 �
 
 ## FID를 개선하는 방법
 
-특정 사이트에 대한 FID를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](/lighthouse-performance/#opportunities)를 주의 깊게 살펴보시기 바랍니다.
+특정 사이트에 대한 FID를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](https://developer.chrome.com/docs/lighthouse/performance/#opportunities)를 주의 깊게 살펴보시기 바랍니다.
 
 FID는 필드 메트릭(Lighthouse는 실험실 메트릭 도구임)이지만 FID 개선 지침은 [총 차단 시간(TBT)](/tbt/)을 개선하는 지침과 동일합니다.
 
 FID를 개선하는 방법에 대한 자세한 내용은 [FID 최적화](/optimize-fid/)를 참조하시기 바랍니다. FID를 개선할 수 있는 개별 성능 기술에 대한 추가 지침은 다음을 참조하세요.
 
-- [타사 코드의 영향 줄이기](/third-party-summary/)
-- [JavaScript 실행 시간 단축](/bootup-time/)
-- [메인 스레드 작업 최소화](/mainthread-work-breakdown/)
-- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](/resource-summary/)
+- [타사 코드의 영향 줄이기](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [JavaScript 실행 시간 단축](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [메인 스레드 작업 최소화](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

@@ -23,7 +23,7 @@ tags:
 
 {% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="关键请求链中的 web 字体。", width="704", height="198" %}
 
-在上方的审计中，web 字体是关键请求链的一部分，并且会最后获取。[**关键请求链**](/critical-request-chains)是指浏览器优先处理和获取资源的顺序。在此应用程序中，web 字体（Pacfico 和 Pacifico-Bold）通过 [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) 规则定义，并且是浏览器在关键请求链中获取的最后一个资源。Web 字体通常会延迟加载，即在下载关键资源（CSS、JS）之前不会加载它们。
+在上方的审计中，web 字体是关键请求链的一部分，并且会最后获取。[**关键请求链**](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)是指浏览器优先处理和获取资源的顺序。在此应用程序中，web 字体（Pacfico 和 Pacifico-Bold）通过 [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) 规则定义，并且是浏览器在关键请求链中获取的最后一个资源。Web 字体通常会延迟加载，即在下载关键资源（CSS、JS）之前不会加载它们。
 
 下面列出了应用程序获取资源的顺序：
 

@@ -264,7 +264,7 @@ iframe이 이러한 조건 중 하나라도 충족하면 Chrome은 이를 숨겨
 
 ### Lighthouse는 브라우저 수준의 지연 로딩을 인식합니까?
 
-Lighthouse의 이전 버전은 여전히 이미지에서 `loading=lazy`를 사용하는 페이지에 오프스크린 이미지를 로드하기 위한 전략이 필요하다는 점을 강조하여 나타냅니다. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) 이상은 서로 다른 임계값을 사용하여 [오프스크린 이미지 연기](/offscreen-images/) 감사를 통과할 수 있도록 하는 오프 스크린 이미지 지연 로드 접근 방식을 고려합니다.
+Lighthouse의 이전 버전은 여전히 이미지에서 `loading=lazy`를 사용하는 페이지에 오프스크린 이미지를 로드하기 위한 전략이 필요하다는 점을 강조하여 나타냅니다. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) 이상은 서로 다른 임계값을 사용하여 [오프스크린 이미지 연기](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/) 감사를 통과할 수 있도록 하는 오프 스크린 이미지 지연 로드 접근 방식을 고려합니다.
 
 ## 결론
 

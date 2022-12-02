@@ -242,7 +242,7 @@ La descarga y la renderización de fuentes web pueden provocar cambios en el dis
 
 Las siguientes herramientas pueden ayudarle a minimizar esto:
 
-- <code>[font-display](/font-display/)</code>  permite modificar el comportamiento de la renderización de fuentes personalizadas con valores como <code>auto</code> , <code>swap</code> , <code>block</code> , <code>fallback</code> y <code>optional</code>. Desafortunadamente, todos estos valores (excepto los [opcionales](http://crrev.com/749080)) pueden causar un rediseño de una de las formas anteriores.
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code>  permite modificar el comportamiento de la renderización de fuentes personalizadas con valores como <code>auto</code> , <code>swap</code> , <code>block</code> , <code>fallback</code> y <code>optional</code>. Desafortunadamente, todos estos valores (excepto los [opcionales](http://crrev.com/749080)) pueden causar un rediseño de una de las formas anteriores.
 - La [API para cargar fuentes](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) puede reducir el tiempo necesario para obtener las fuentes necesarias.
 
 A partir de Chrome 83, también puedo recomendar lo siguiente:

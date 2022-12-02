@@ -145,6 +145,6 @@ No debe almacenar fuentes mediante [`localStorage`](https://developer.mozilla.or
 
 Las siguientes auditorías pueden ayudarlo a asegurar que sus páginas sigan continuamente las mejores prácticas de optimización de fuentes web a lo largo del tiempo:
 
-- [Precargar las solicitudes de claves](/uses-rel-preload/)
-- [Utilizar una política de caché ineficiente en activos estáticos](/uses-long-cache-ttl/)
-- [Todo el texto permanece visible durante las cargas de fuentes web](/font-display/)
+- [Precargar las solicitudes de claves](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Utilizar una política de caché ineficiente en activos estáticos](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [Todo el texto permanece visible durante las cargas de fuentes web](https://developer.chrome.com/docs/lighthouse/performance/font-display/)

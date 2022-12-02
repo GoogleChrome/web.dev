@@ -18,7 +18,7 @@ La porción de [imágenes](http://beta.httparchive.org/reports/state-of-images?s
 
 ## ¿Qué es la carga diferida? {: #what }
 
-La carga diferida es una técnica que pospone la carga de recursos no críticos en el momento de la carga de la página. En vez de cargar de inmediato, estos recursos no críticos se cargan en el momento en que se necesitan. En lo que a imágenes se refiere, "no crítico" es a menudo sinónimo de "fuera de pantalla". Si ha utilizado Lighthouse y visualizó algunas oportunidades de mejora, es posible que haya visto alguna guía en este ámbito en la forma de la [Defer offscreen images audit (auditoría Diferir imágenes fuera de pantalla)](/offscreen-images/):
+La carga diferida es una técnica que pospone la carga de recursos no críticos en el momento de la carga de la página. En vez de cargar de inmediato, estos recursos no críticos se cargan en el momento en que se necesitan. En lo que a imágenes se refiere, "no crítico" es a menudo sinónimo de "fuera de pantalla". Si ha utilizado Lighthouse y visualizó algunas oportunidades de mejora, es posible que haya visto alguna guía en este ámbito en la forma de la [Defer offscreen images audit (auditoría Diferir imágenes fuera de pantalla)](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/):
 
 <figure>{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Una captura de pantalla de la auditoría de diferir imágenes fuera de pantalla en Lighthouse.", width="800", height="102" %}<figcaption> Una de las auditorías de rendimiento de Lighthouse es identificar imágenes fuera de pantalla, que son candidatas para la carga diferida.</figcaption></figure>
 

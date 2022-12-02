@@ -318,8 +318,8 @@ Stay tuned for part 2 where we discuss how to optimize runtime performance on hy
 [minimal analytics]: https://minimalanalytics.com
 [fetch connections]: https://fetch.spec.whatwg.org/#connections
 [google fonts]: https://fonts.google.com
-[fmp]: /first-meaningful-paint
-[tti]: /interactive
+[fmp]: https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/
+[tti]: https://developer.chrome.com/docs/lighthouse/performance/interactive/
 [code split]: /reduce-javascript-payloads-with-code-splitting/
 [preact]: /codelab-code-splitting
 [preload]:/preload-critical-assets

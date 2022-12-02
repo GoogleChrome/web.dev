@@ -133,7 +133,7 @@ try {
 
 La [API de Long Tasks (Tareas largas)](https://w3c.github.io/longtasks/) es útil para saber cuándo el hilo principal del navegador está bloqueado durante el tiempo suficiente para afectar la velocidad de fotogramas o la latencia de entrada. Actualmente, la API informará sobre cualquier tarea que se ejecute durante más de 50 milisegundos (ms).
 
-Siempre que necesites ejecutar un código costoso (o cargar y ejecutar scripts de gran tamaño), es útil realizar un seguimiento de si ese código bloqueó o no el hilo principal. De hecho, muchas métricas de nivel superior se construyen sobre la API de Long Tasks (como [Time to Interactive (TTI): Tiempo para interactividad](/tti/) y [Total Blocking Time (TBT): Tiempo total de bloqueo](/lighthouse-total-blocking-time/)).
+Siempre que necesites ejecutar un código costoso (o cargar y ejecutar scripts de gran tamaño), es útil realizar un seguimiento de si ese código bloqueó o no el hilo principal. De hecho, muchas métricas de nivel superior se construyen sobre la API de Long Tasks (como [Time to Interactive (TTI): Tiempo para interactividad](/tti/) y [Total Blocking Time (TBT): Tiempo total de bloqueo](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)).
 
 Para determinar cuándo ocurren las tareas largas, puedes usar [PerformanceObserver](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) y registrarlas para observar entradas de tipo `longtask`:
 

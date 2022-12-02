@@ -98,10 +98,10 @@ Here's the general approach they took:
   the main thread busy on a real device.
 - Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to determine the impact of
   the changes in [Max Potential First Input Delay (Max Potential
-  FID)](/lighthouse-max-potential-fid/).
+  FID)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/).
 
 {% Aside %} During this project Mercado Libre used [Max Potential
-FID](/lighthouse-max-potential-fid/) in Lighthouse because that was the tool's main
+FID](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/) in Lighthouse because that was the tool's main
 metric for measuring interactivity at that time. Lighthouse now recommends using [Total Blocking
 Time](/tbt/) instead. {% endAside %}
 

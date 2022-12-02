@@ -28,7 +28,7 @@ The Lighthouse report that is generated will show you the fetching sequence of r
 
 {% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Webfonts are present in the critical request chain.", width="704", height="198" %}
 
-In the above audit the web fonts are part of the critical request chain and fetched last. The [**critical request chain**](/critical-request-chains) represents the order of resources that are prioritized and fetched by the browser. In this application, the web fonts (Pacfico and Pacifico-Bold) are defined using the [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) rule and are the last resource fetched by the browser in the critical request chain. Typically, webfonts are lazy loaded which means that they are not loaded until the critical resources are downloaded (CSS, JS).
+In the above audit the web fonts are part of the critical request chain and fetched last. The [**critical request chain**](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/) represents the order of resources that are prioritized and fetched by the browser. In this application, the web fonts (Pacfico and Pacifico-Bold) are defined using the [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) rule and are the last resource fetched by the browser in the critical request chain. Typically, webfonts are lazy loaded which means that they are not loaded until the critical resources are downloaded (CSS, JS).
 
 Here is the sequence of the resources fetched in the application:
 

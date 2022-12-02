@@ -22,7 +22,7 @@ Muchos usuarios de su página visitan usando una conexión de red celular lenta.
 
 Dos métricas principales afectan la forma en que los usuarios perciben el tiempo de carga:
 
-- [First Meaningful Paint: Primer despliegue significativo (FMP)](/first-meaningful-paint), que mide cuándo el contenido principal de la página aparece visualmente completo
+- [First Meaningful Paint: Primer despliegue significativo (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/), que mide cuándo el contenido principal de la página aparece visualmente completo
 - [Time to Interactive: Tiempo de interacción (TTI)](/tti/), que mide cuándo la página es completamente interactiva
 
 Por ejemplo, si una página aparece visualmente completa después de 1 segundo, pero el usuario no puede interactuar con ella durante 10 segundos, es probable que los usuarios perciban que el tiempo de carga de la página es de 10 segundos.

@@ -23,7 +23,7 @@ One internal browser optimization to understand is the browser preload scanner. 
 
 ## What's a preload scanner?
 
-Every browser has a primary HTML parser that [tokenizes](https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization) raw markup and processes it into [an object model](https://developer.mozilla.org/docs/Web/API/Document_Object_Model). This all merrily goes on until the parser pauses when it finds a [blocking resource](/render-blocking-resources/), such as a stylesheet loaded with a `<link>` element, or script loaded with a `<script>` element without an `async` or `defer` attribute.
+Every browser has a primary HTML parser that [tokenizes](https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization) raw markup and processes it into [an object model](https://developer.mozilla.org/docs/Web/API/Document_Object_Model). This all merrily goes on until the parser pauses when it finds a [blocking resource](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/), such as a stylesheet loaded with a `<link>` element, or script loaded with a `<script>` element without an `async` or `defer` attribute.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mXRoJneD6CbMAqaTqNZW.svg", alt="HTML parser diagram.", width="333", height="450" %}

@@ -133,7 +133,7 @@ RAILのコンテキストにおいて、**目標**と**ガイドライン**と�
 
 - 通常のモバイルユーザーのデバイスは2G、3G、または4G接続であると主張される場合がありますが、実際の[実効接続速度](/adaptive-serving-based-on-network-quality/#how-it-works)はパケットの損失やネットワークの変動により、大幅に遅くなることがよくあります。
 
-- [レンダリングをブロックするリソースを排除する](/render-blocking-resources/)。
+- [レンダリングをブロックするリソースを排除する](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)。
 
 - 読み込みが完全に完了したという認識を生むために、すべてを5秒以内に読み込む必要はありません。[画像の遅延読み込み](/browser-level-image-lazy-loading/)、[JavaScriptのコード分割バンドル](/reduce-javascript-payloads-with-code-splitting/)、および[web.devで提案されているその他の最適化方法](/fast/)を検討してください。
 
@@ -185,11 +185,11 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 **応答**
 
-- [Max Potential First Input Delay (最初の入力の最大潜在遅延)](/lighthouse-max-potential-fid/)。メインスレッドのアイドル時間に基づいて、アプリがユーザー入力に応答するのにかかる時間を推定する。
+- [Max Potential First Input Delay (最初の入力の最大潜在遅延)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)。メインスレッドのアイドル時間に基づいて、アプリがユーザー入力に応答するのにかかる時間を推定する。
 
 - [Does not use passive listeners to improve scrolling performance (スクロールパフォーマンスを向上させるためにパッシブリスナーを使用していない)](/uses-passive-event-listeners/)。
 
-- [Total Blocking Time (合計ブロッキング時間)](/lighthouse-total-blocking-time/)。マウスをクリックしたり、画面をタップしたり、キーボードを押すといった、ユーザー入力への応答がブロックされる合計時間を測定する。
+- [Total Blocking Time (合計ブロッキング時間)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)。マウスをクリックしたり、画面をタップしたり、キーボードを押すといった、ユーザー入力への応答がブロックされる合計時間を測定する。
 
 - [Time To Interactive (インタラクティブになるまでの時間)](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive)。ユーザーがすべてのページ要素を絶えず操作できるようになるまでの時間を測定する。
 
@@ -201,21 +201,21 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 - [Eliminate render-blocking resources (レンダリングをブロックするリソースを排除する)](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)。
 
-- [Defer offscreen images (オフスクリーンの画像を延期する)](/offscreen-images/)。オフスクリーン画像の読み込みは、必要になるまで延期します。
+- [Defer offscreen images (オフスクリーンの画像を延期する)](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/)。オフスクリーン画像の読み込みは、必要になるまで延期します。
 
-- [Properly size images (画像を適切なサイズにする)](/uses-responsive-images/)。モバイルビューポートでレンダリングされるサイズよりも大幅に大きい画像を提供してはいけません。
+- [Properly size images (画像を適切なサイズにする)](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)。モバイルビューポートでレンダリングされるサイズよりも大幅に大きい画像を提供してはいけません。
 
-- [Avoid chaining critical requests (重要なリクエストを連鎖させない)](/critical-request-chains/)。
+- [Avoid chaining critical requests (重要なリクエストを連鎖させない)](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)。
 
 - [Does not use HTTP/2 for all of its resources (すべてのリソースにHTTP / 2を使用していない)](/uses-http2/)。
 
-- [Efficiently encode images (画像を効率的にエンコードしている)](/uses-optimized-images/)。
+- [Efficiently encode images (画像を効率的にエンコードしている)](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)。
 
-- [Enable text compression (テキスト圧縮を有効にしている)](/uses-text-compression/)。
+- [Enable text compression (テキスト圧縮を有効にしている)](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/)。
 
-- [Avoid enormous network payloads (巨大なネットワークペイロードを避けている)](/total-byte-weight/)。
+- [Avoid enormous network payloads (巨大なネットワークペイロードを避けている)](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)。
 
-- [Avoid an excessive DOM size (過度のDOMサイズを避けている)](/dom-size/)。ページのレンダリングに必要なDOMノードのみを渡すことにより、ネットワークバイトを削減します。
+- [Avoid an excessive DOM size (過度のDOMサイズを避けている)](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)。ページのレンダリングに必要なDOMノードのみを渡すことにより、ネットワークバイトを削減します。
 
 ### WebPageTest
 

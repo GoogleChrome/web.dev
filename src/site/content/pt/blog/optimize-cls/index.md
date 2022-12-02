@@ -315,7 +315,7 @@ Baixar e renderizar fontes da web pode causar mudanças de layout de duas maneir
 
 As seguintes ferramentas podem ajudá-lo a minimizar o problema:
 
-- <code>[font-display](/font-display/)</code> permite que você modifique o comportamento da renderização de fontes personalizadas usando valores como <code>auto</code> , <code>swap</code> , <code>block</code> , <code>fallback</code> e <code>optional</code>. Infelizmente, todos esses valores (exceto [opcional](http://crrev.com/749080)) podem causar uma alteração de layout de uma das maneiras acima.
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code> permite que você modifique o comportamento da renderização de fontes personalizadas usando valores como <code>auto</code> , <code>swap</code> , <code>block</code> , <code>fallback</code> e <code>optional</code>. Infelizmente, todos esses valores (exceto [opcional](http://crrev.com/749080)) podem causar uma alteração de layout de uma das maneiras acima.
 - A [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) pode reduzir o tempo necessário para obter as fontes necessárias.
 
 Em relação ao Chrome 83, posso recomendar também o seguinte:

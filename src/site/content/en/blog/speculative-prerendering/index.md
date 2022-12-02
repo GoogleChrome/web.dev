@@ -19,8 +19,8 @@ tags:
   - origin-trials
 ---
 
-Resource hints, such as [`preconnect`](/uses-rel-preconnect/),
-[`preload`](/uses-rel-preload/),
+Resource hints, such as [`preconnect`](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/),
+[`preload`](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/),
 [`prefetch`](/link-prefetch/), and
 [`prerender`](https://developer.mozilla.org/docs/Glossary/prerender), help
 the browser figure out which resources will the user need in the near future.

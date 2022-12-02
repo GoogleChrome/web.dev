@@ -98,7 +98,7 @@ tags:
 </video>
 ```
 
-如果视频 `src` 遭到损坏或不支持任何提供的视频格式，海报也可以作为备用。海报图像的唯一缺点是需要额外的文件请求，它会消耗一些带宽，并且需要进行渲染。有关详细信息，请参阅[有效的编码图像](/uses-optimized-images/)。
+如果视频 `src` 遭到损坏或不支持任何提供的视频格式，海报也可以作为备用。海报图像的唯一缺点是需要额外的文件请求，它会消耗一些带宽，并且需要进行渲染。有关详细信息，请参阅[有效的编码图像](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)。
 
 <div class="w-columns">{% Compare 'worse' %}<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="没有备用海报，只能看到视频未显示。", width="360", height="600" %}</figure>
 </div>
@@ -119,7 +119,7 @@ tags:
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome 截屏，横向：无样式的视频元素溢出视口。", width="800", height="450" %}<figcaption> Android Chrome 截屏，横向：无样式的视频元素溢出视口。</figcaption></figure>
 </div>
 
-您可以使用 CSS 控制视频尺寸。如果 CSS 不能满足您的所有需求，JavaScript 库和插件（如 [FitVids](http://fitvidsjs.com/) ，本文不做讨论）可以提供帮助，即便是来自 YouTube 和其他来源的视频，也是如此。不幸的是，这些资源会增加[网络负载大小](/total-byte-weight/)，从而对您的收入和用户的费用产生负面影响。
+您可以使用 CSS 控制视频尺寸。如果 CSS 不能满足您的所有需求，JavaScript 库和插件（如 [FitVids](http://fitvidsjs.com/) ，本文不做讨论）可以提供帮助，即便是来自 YouTube 和其他来源的视频，也是如此。不幸的是，这些资源会增加[网络负载大小](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)，从而对您的收入和用户的费用产生负面影响。
 
 对于本文介绍了这些简单用途，可利用 [CSS 媒体查询](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#css-media-queries)来根据视口尺寸指定元素的大小；`max-width: 100%` 就非常合适。
 

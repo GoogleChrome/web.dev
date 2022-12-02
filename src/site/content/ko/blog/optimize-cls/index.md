@@ -242,7 +242,7 @@ img {
 
 다음 도구를 사용하면 이를 최소화할 수 있습니다.
 
-- <code>[font-display](/font-display/)</code>를 사용하면 <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> 및 <code>optional</code>과 같은 값으로 커스텀 글꼴의 렌더링 동작을 수정할 수 있습니다. 하지만 [optional](http://crrev.com/749080)을 제외한 이 모든 값이 위와 같은 방식 중 하나로 레이아웃 재구성을 발생시킬 수 있습니다.
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code>를 사용하면 <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> 및 <code>optional</code>과 같은 값으로 커스텀 글꼴의 렌더링 동작을 수정할 수 있습니다. 하지만 [optional](http://crrev.com/749080)을 제외한 이 모든 값이 위와 같은 방식 중 하나로 레이아웃 재구성을 발생시킬 수 있습니다.
 - [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api)를 사용하면 필요한 글꼴을 가져오는 데 걸리는 시간을 줄일 수 있습니다.
 
 Chrome 83부터 다음과 같은 방식을 추천합니다.

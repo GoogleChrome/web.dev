@@ -133,7 +133,7 @@ Saiba que essas metas podem mudar com o tempo.
 
 - Lembre-se de que, embora o dispositivo de um usuário móvel típico possa alegar que está em uma conexão 2G, 3G ou 4G, na realidade a [velocidade efetiva da conexão](/adaptive-serving-based-on-network-quality/#how-it-works) costuma ser significativamente mais lenta, devido à perda de pacotes e à variação da rede.
 
-- [Elimine recursos de bloqueio de renderização](/render-blocking-resources/).
+- [Elimine recursos de bloqueio de renderização](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/).
 
 - Você não precisa carregar tudo em menos de 5 segundos para causar a impressão de um carregamento completo. Considere [imagens de carregamento lento](/browser-level-image-lazy-loading/), [pacotes JavaScript de divisão de código](/reduce-javascript-payloads-with-code-splitting/) e outras [otimizações sugeridas em web.dev](/fast/).
 
@@ -185,11 +185,11 @@ As seguintes auditorias são especialmente relevantes:
 
 **Resposta**
 
-- [Atraso de entrada com potencial máximo](/lighthouse-max-potential-fid/). Estima quanto tempo seu aplicativo levará para responder à entrada do usuário, com base no tempo ocioso da thread principal.
+- [Atraso de entrada com potencial máximo](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). Estima quanto tempo seu aplicativo levará para responder à entrada do usuário, com base no tempo ocioso da thread principal.
 
 - [Não usa ouvintes passivos para melhorar o desempenho de rolagem](/uses-passive-event-listeners/).
 
-- [Tempo total de bloqueio](/lighthouse-total-blocking-time/). Mede a quantidade total de tempo que uma página fica bloqueada para responder à entrada do usuário, como cliques do mouse, toques na tela ou pressionamentos de teclado.
+- [Tempo total de bloqueio](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/). Mede a quantidade total de tempo que uma página fica bloqueada para responder à entrada do usuário, como cliques do mouse, toques na tela ou pressionamentos de teclado.
 
 - [Tempo para interação](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive). Mede quando um usuário pode interagir de forma consistente com todos os elementos da página.
 
@@ -201,21 +201,21 @@ As seguintes auditorias são especialmente relevantes:
 
 - [Elimine recursos de bloqueio de renderização](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).
 
-- [Adie imagens fora da tela](/offscreen-images/). Adie o carregamento de imagens fora da tela até que sejam necessárias.
+- [Adie imagens fora da tela](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/). Adie o carregamento de imagens fora da tela até que sejam necessárias.
 
-- [Tamanho adequado das imagens](/uses-responsive-images/). Não exiba imagens significativamente maiores do que o tamanho renderizado na janela de visualização móvel.
+- [Tamanho adequado das imagens](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/). Não exiba imagens significativamente maiores do que o tamanho renderizado na janela de visualização móvel.
 
-- [Evite encadear solicitações críticas](/critical-request-chains/).
+- [Evite encadear solicitações críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
 - [Não usa HTTP/2 para todos os seus recursos](/uses-http2/).
 
-- [Codifique imagens de forma eficiente](/uses-optimized-images/).
+- [Codifique imagens de forma eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 
-- [Ative a compactação de texto](/uses-text-compression/).
+- [Ative a compactação de texto](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/).
 
-- [Evite enormes cargas de rede](/total-byte-weight/).
+- [Evite enormes cargas de rede](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/).
 
-- [Evite um tamanho excessivo de DOM](/dom-size/). Reduza os bytes da rede enviando apenas nós DOM necessários para renderizar a página.
+- [Evite um tamanho excessivo de DOM](https://developer.chrome.com/docs/lighthouse/performance/dom-size/). Reduza os bytes da rede enviando apenas nós DOM necessários para renderizar a página.
 
 ### WebPageTest
 
