@@ -73,7 +73,7 @@ Check out an example of a persona that supports specific use cases.
 {% endDetailsSummary %}
 
 <figure data-float="right">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/ysBmXtLrbxScFwocWF8f.png", alt="Jane Smith is tall with long dark hair, wearing a gray long sleeve shirt and jeans." width="249", height="601" %}
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/ysBmXtLrbxScFwocWF8f.png", alt="Jane Smith is tall with long dark hair, wearing a gray long sleeve shirt and jeans," width="249", height="601" %}
 </figure>
 
 * **Name**: Jane Bennet
