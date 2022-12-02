@@ -118,7 +118,7 @@ can cause the viewport to scroll horizontally.
 You should adjust this content to fit within the width of the viewport,
 so that the user does not need to scroll horizontally.
 
-The [Content is not sized correctly for the viewport](/content-width/)
+The [Content is not sized correctly for the viewport](https://developer.chrome.com/docs/lighthouse/pwa/content-width/)
 Lighthouse audit can help you automate the process of detecting overflowing content.
 
 ### Images {: #images }

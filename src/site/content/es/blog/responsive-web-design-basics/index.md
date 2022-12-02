@@ -78,7 +78,7 @@ Tanto en el escritorio como en los dispositivos móviles, los usuarios están ac
 
 Al desarrollar un sitio móvil con una meta etiqueta de ventana gráfica, es fácil crear accidentalmente contenido de página que no encaja del todo dentro de la ventana gráfica especificada. Por ejemplo, una imagen que se muestra con un ancho más grande que la ventana gráfica puede hacer que esta se desplace horizontalmente. Debe ajustar este contenido para que se ajuste al ancho de la ventana gráfica, de modo que el usuario no necesite desplazarse horizontalmente.
 
-La auditoría de Lighthouse del [Contenido no tiene el tamaño adecuado para la ventana gráfica](/content-width/) puede ayudarle a automatizar el proceso de detección del contenido desbordado.
+La auditoría de Lighthouse del [Contenido no tiene el tamaño adecuado para la ventana gráfica](https://developer.chrome.com/docs/lighthouse/pwa/content-width/) puede ayudarle a automatizar el proceso de detección del contenido desbordado.
 
 ### Imágenes {: #images }
 
