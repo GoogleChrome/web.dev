@@ -39,6 +39,7 @@ There are seven accessibility-focused [inclusive design principles](https://incl
 * *Add value*: Consider the purpose and significance of features and how they improve the experience for different users.
 
 ## Personas
+
 When developing a new design or feature, many teams rely on user [personas](https://www.nngroup.com/articles/persona/) to guide them through
 the process. Personas are fictitious characters that use your digital products, often based on quantitative and qualitative user research.
 
@@ -57,7 +58,7 @@ strategy and create goals focused on specific user groups.
 
 <figure data-float="right">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/SmtiiRRpAImfG7MI6ku4.png", alt="Disabilities may be permanent, temporary, or situational. These disabilities can affect touch, seeing, hearing, and speaking.", width="400", height="655" %}
-<figcaption>The Persona Spectrum from <a href="https://www.microsoft.com/design/inclusive/">Microsoft’s Inclusive 101 Toolkit</a>.</figcaption>
+<figcaption>The Persona Spectrum from <a href=https://www.microsoft.com/design/inclusive/>Microsoft’s Inclusive 101 Toolkit</a>.</figcaption>
 </figure>
 
 Personas can be used as an inclusive design tool when you incorporate people with disabilities into your personas. There are many different ways
@@ -96,6 +97,7 @@ This made it all the more of a blow when she was diagnosed with Young Onset Park
 {% endDetails %}
 
 ### Disability simulators
+
 Use extreme caution when using disability simulators to [emulate or supplement your personas](https://accessibility.blog.gov.uk/2019/02/11/using-persona-profiles-to-test-accessibility/).
 
 Disability simulators are a double-edged sword in that they can build sympathy or empathy—it can depend on the individual,
@@ -111,6 +113,7 @@ demos, tutorials, and other content created by people with disabilities, and lea
 </blockquote>
 
 ## Accessibility heuristics
+
 Consider adding [heuristics](https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/) into your workflow as you
 build your personas and designs. Heuristics are simple rules for interaction design, introduced in 1990 by Jakob Nielsen and Rolf Molich.
 These ten principles were developed based on years of experience in the field of usability engineering, and have been used in design and human-computer
@@ -206,6 +209,7 @@ up for each checkpoint. At this point, discussions can begin on how to remedy an
 to supporting digital accessibility.
 
 ## Accessibility annotations
+
 Before you hand off your design to the development team, you should consider adding [accessibility annotations](https://stephaniewalter.design/blog/a-designers-guide-to-documenting-accessibility-user-interactions/).
 Annotations, in general, are used to explain creative choices and describe different aspects of the design. Accessibility
 annotations focus on areas where developers can make more accessible programmatic choices with the guidance of the design team
