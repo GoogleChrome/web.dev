@@ -13,6 +13,6 @@
     ]
   }
 {% endset %}
-<script type="speculationrules">{{ apiScripts | minifyJs | cspHash | safe }}</script>
+<script type="speculationrules">{{ apiScripts | cspHash | safe }}</script>
 {% endif %}
 {% endmacro %}
