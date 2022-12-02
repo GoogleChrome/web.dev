@@ -192,29 +192,4 @@ them together to create lists of links (also known as navigation).
 
 ### Check your understanding
 
-setLeader: Test your knowledge of links.
-height: unset
-tabLabel: question
-questions:
-- type: multiple-choice
-  cardinality: "1"
-  correctAnswers: "1"
-  stem: What does the nofollow link do?
-  options:
-  - content: "Makes the link not clickable."
-    rationale: "Try again."
-  - content: "Asks spiders not to follow the link."
-    rationale: "Correct!"
-  - content: "Makes your visit to the site untrackable."
-    rationale: "Try again."
-- type: multiple-choice
-  cardinality: "1+"
-  correctAnswers: "1,2"
-  stem: Which links will take you to the top of the page?
-  options:
-  - content: "`#start`"
-    rationale: "Try again."
-  - content: "`#`"
-    rationale: "Correct!"
-  - content: "`#top`"
-    rationale: "Correct!"
+{% Assessment 'metadata' %}

@@ -345,27 +345,4 @@ Up next, we will look at marking up data tables.
 
 ### Check your understanding
 
-setLeader: Test your knowledge of navigation.
-height: unset
-tabLabel: question
-questions:
-- type: multiple-choice
-  cardinality: "1"
-  correctAnswers: "2"
-  stem: Which element is used t mark up the main navigation of a site?
-  options:
-  - content: "`<navigation>`"
-    rationale: "Try again."
-  - content: "`<breadcrumb>`"
-    rationale: "Try again."
-  - content: "`<nav>`"
-    rationale: "Correct!"
-- type: multiple-choice
-  cardinality: "1"
-  correctAnswers: "1"
-  stem: There can be multiple navigation elements on one page?
-  options:
-  - content: "False."
-    rationale: "Try again."
-  - content: "True."
-    rationale: "Correct!"
+{% Assessment 'metadata' %}

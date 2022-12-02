@@ -199,29 +199,4 @@ Oh, and that smiley emoji is `&#x1F600;`, but this doc is declared as UTF-8, so 
 
 ### Check your understanding
 
-setLeader: Test your knowledge of text in HTML.
-height: unset
-tabLabel: question
-questions:
-- type: multiple-choice
-  cardinality: "1"
-  correctAnswers: "1"
-  stem: How do you show a copyright symbol in HTML?
-  options:
-  - content: "`c`"
-    rationale: "Try again."
-  - content: "`&copy;`"
-    rationale: "Correct!"
-  - content: "`&copyright`."
-    rationale: "Try again."
-- type: multiple-choice
-  cardinality: "1"
-  correctAnswers: "0"
-  stem: Which element is used to indicate something is a quotation?
-  options:
-  - content: "`<blockquote>`"
-    rationale: "Correct"
-  - content: "`<quote>`"
-    rationale: "Try again."
-  - content: "`<cite>`"
-    rationale: "Try again. The `<cite>` element is used to indicate the source of a quote, not the quote itself."
+{% Assessment 'metadata' %}

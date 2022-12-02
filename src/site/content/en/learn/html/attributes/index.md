@@ -490,27 +490,4 @@ several other element-specific attributes as we take a deeper look into links.
 
 ## Check your understanding
 
-setLeader: Test your knowledge of attributes.
-height: unset
-tabLabel: question
-questions:
-- type: multiple-choice
-  cardinality: "1"
-  correctAnswers: "1"
-  stem: An `id` should be unique in the document.
-  options:
-  - content: "False"
-    rationale: "Try again."
-  - content: "True"
-    rationale: "Correct!"
-- type: multiple-choice
-  cardinality: "1"
-  correctAnswers: "0"
-  stem: Select the correctly formed custom attribute.
-  options:
-  - content: "`data-birthday`"
-    rationale: "Correct"
-  - content: "`birthday`"
-    rationale: "Try again."
-  - content: "`data:birthday`"
-    rationale: "Try again"
+{% Assessment 'metadata' %}

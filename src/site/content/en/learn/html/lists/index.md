@@ -290,29 +290,4 @@ Now that you have an understanding of [links](/learn/html/links) and lists, let'
 
 ### Check your understanding
 
-setLeader: Test your knowledge of lists.
-height: unset
-tabLabel: question
-questions:
-- type: multiple-choice
-  cardinality: "1"
-  correctAnswers: "1"
-  stem: Is it valid to include a `<h2>` inside a list item?
-  options:
-  - content: "No."
-    rationale: "Try again."
-  - content: "Yes."
-    rationale: "Correct!"
-- type: multiple-choice
-  cardinality: "1+"
-  correctAnswers: "1,2,3"
-  stem: Select the three elements that define types of list.
-  options:
-  - content: "`<il>`"
-    rationale: "Try again."
-  - content: "`<ol>`"
-    rationale: "Correct!"
-  - content: "`<ul>`"
-    rationale: "Correct!"
-  - content: "`<dl>`"
-    rationale: "Correct!"
+{% Assessment 'metadata' %}
