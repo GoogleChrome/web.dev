@@ -27,7 +27,7 @@ By default, ordered and unordered list items are prefixed with numbers or bullet
 you still want a list of items, like in navigation bars, a to-do list with checkboxes instead of bullets, or true and false questions
 in a multiple-choice test. For all of these lists without bullets, it is appropriate to use HTML list elements.
 
-### Unordered lists
+## Unordered lists
 
 The `<ul>` element is the parent element for unordered lists of items. The only children of a `<ul>` are one or more `<li>` list
 item elements. Let's create a list of machines. We use an unordered list because the order doesn't matter (don't tell them that):
@@ -106,7 +106,7 @@ Similar to `</ul>`, the closing `</ol>` is required.
 We can nest lists, but they have to be nested within a list item. Remember, the only element that can be a child of a `<ul>` or `<ol>`
 is one or more `<li>` elements.
 
-### List items
+## List items
 
 We've used the `<li>` element, but we have yet to introduce it formally. The `<li>` element can be a direct child of an unordered
 list (`<ul>`), an ordered list (`<ol>`), or a menu (`<menu>`). The `<li>` has to be nested as a child of one of these elements, and
@@ -244,7 +244,7 @@ can lead VoiceOver (the iOS and MacOS screen reader) to remove the implicit sema
 Generally, you should not add the role attribute when using semantic elements as it isn't necessary. And you generally don't need
 to add one to a list either, unless the user really needs to know it is a list, such as when the user would benefit from knowing how many items are in the list.
 
-### Description lists
+## Description lists
 
 A description list is a [description list](https://developer.mozilla.org/docs/Web/HTML/Element/dl) (`<dl>`) element containing
 a series of (zero or more) [description terms](https://developer.mozilla.org/docs/Web/HTML/Element/dt) (`<dt>`) and

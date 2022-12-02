@@ -160,7 +160,7 @@ Using `<th>` provides the association even when the header column or row has scr
 `<th scope="col">Year</th>` and `<th scope="row">Lou Minious</th>` but with a simple table like this, the enumerated default values work.
 Other values for `scope` include `rowgroup` and `colgroup`, which are useful with complex tables.
 
-#### Merging cells
+## Merging cells
 
 Similar to MS Excel, Google Sheets, and Numbers, it is possible to join multiple cells into a single cell. This is done with HTML!
 The `colspan` attribute is used to merge two or more adjacent cells within a single row. The `rowspan` attribute is used to merge cells across rows,
@@ -228,7 +228,7 @@ That said, complex table structures can be difficult for all users, not just scr
 and in terms of screen reader support, simpler tables, with few to no spanned cells, even without adding scope and headers, are more easily
 understood. They're also easier to manage!
 
-### Styling tables
+## Styling tables
 
 There are two relatively obscure elements that were briefly mentioned: the column group, [`<colgroup>`](https://developer.mozilla.org/docs/Web/HTML/Element/colgroup), element
 and its only descendant, the empty [`<col>`](https://developer.mozilla.org/docs/Web/HTML/Element/col) column element. The
@@ -271,7 +271,7 @@ Tables are not responsive by default. Rather, they are sized according to their 
 layout styling to effectively work across a variety of devices. If you are [changing the CSS display property for table elements](https://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html),
 include ARIA `role` attributes. While that may sound redundant, the CSS `display`property can affect the accessibility tree in some browsers.
 
-### Presenting data
+## Presenting data
 
 Table elements have semantic meanings that are used by assistive technologies to enable navigating through the rows and columns
 without getting 'lost'. The `<table>` element should not be used for presentation. If you need a heading over a list, use a [header](/learn/html/headings-and-sections/#headings-lessh1greater-lessh6greater)

@@ -15,7 +15,7 @@ in meaningful and visual ways, HTML provides a very similar set of semantic and 
 This section covers the main ways of marking up text, or text basics. We will then discuss attributes, before exploring
 additional ways of marking up text, such as lists, tables, and forms.
 
-### Headings, revisited
+## Headings, revisited
 
 There are six section heading elements, `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, and `<h6>`, with `<h1>` being most important
 and `<h6>` the least. For many years, developers were told that headings were used by browsers to outline documents.
@@ -67,7 +67,7 @@ This section is not a landmark as it doesn't have an accessible name. To turn th
 Only create landmarks if and when appropriate. Having too many landmarks can quickly become disorienting for screen reader users.
 {% endAside %}
 
-### Quotes and citations
+## Quotes and citations
 
 When marking up an article or blog post, you may want to include a quote or pull-quote, with or without a visible citation.
 There are elements for these three components: `<blockquote>`, `<q>`, and `<cite>` for a visible citation, or the `cite` attribute
@@ -165,7 +165,7 @@ Like `<blockquote>`, the `<q>` element supports the `cite` attribute.
 <p> HAL said, <q cite="https://youtube.com/clip/UgkxSc71fLmjI7tNSgy6o7tZ9GxhSz4S-MNh">I'm sorry &lt;NAME REDACTED, RIP&gt;, but I'm afraid I can't do that, </q></p>
 ```
 
-#### HTML Entities
+### HTML Entities
 
 You may have noticed the escape sequence or "entity". Because the `< ` is used in HTML, you have to escape it using either `&lt;` or a less easy-to-remember encoding `&#x3C;`. There are four reserved entities in HTML: `<`, `>`, `&`, and `"`. Their character references are `&lt`, `&gt`, `&amp;` and `&quot;` respectively.
 

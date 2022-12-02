@@ -194,7 +194,7 @@ Our one JavaScript function makes use of this ability to target elements by thei
 </script>
 ```
 
-### `<label>`
+#### `<label>`
 
 The [HTML `<label>` element](https://developer.mozilla.org/docs/Web/HTML/Element/label) has a `for` attribute that takes as its value the `id` of the form control with which it is associated.
 Creating an explicit label by including an `id` on every form control and pairing each with the label's `for` attribute ensures
@@ -275,7 +275,7 @@ nested in a `<label>`, whether the text labels more than one form control or not
 has precedence; users will not hear the `<label>` text unless the `aria-labelledby` includes the id of the label.
 {% endAside %}
 
-#### CSS selectors
+## CSS selectors
 
 In CSS, you can target each section using an id selector, such as `#feedback` or, for less [specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity), a case-sensitive
 [attribute selector](/learn/css/selectors/#attribute-selector), `[id="feedback"]`.
