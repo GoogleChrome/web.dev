@@ -58,7 +58,7 @@ strategy and create goals focused on specific user groups.
 
 <figure data-float="right">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/SmtiiRRpAImfG7MI6ku4.png", alt="Disabilities may be permanent, temporary, or situational. These disabilities can affect touch, seeing, hearing, and speaking.", width="400", height="655" %}
-<figcaption>The Persona Spectrum from <a href=https://www.microsoft.com/design/inclusive/>Microsoft’s Inclusive 101 Toolkit</a>.</figcaption>
+<figcaption>The Persona Spectrum from <a href="https://www.microsoft.com/design/inclusiv/">Microsoft’s Inclusive 101 Toolkit</a>.</figcaption>
 </figure>
 
 Personas can be used as an inclusive design tool when you incorporate people with disabilities into your personas. There are many different ways
