@@ -21,9 +21,6 @@ the possibilities of how people use and experience your designs are limitless.
 How can we address all of the potential user needs at once? Enter inclusive design. Inclusive design utilizes a human-centered
 approach that weaves together inclusivity, usability, and accessibility into one.
 
-<figure data-float="right">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/BIEvBV4I6VLhOjTK50rT.png", alt="A venn diagram where accessibility, inclusivity, and usability all meet in the middle as inclusive design.", width="400", height="388" %}
-</figure>
 
 And unlike universal design, which focuses on a single design that as many people can use as possible, inclusive design principles
 center on designing for a specific individual or use case, and then extending that design to others.
@@ -55,6 +52,10 @@ strategy and create goals focused on specific user groups.
   </cite>
 </blockquote>
 
+<figure data-float="right">
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/SmtiiRRpAImfG7MI6ku4.png", alt="Disabilities may be permanent, temporary, or situational. These disabilities can affect touch, seeing, hearing, and speaking.", width="400", height="655" %}
+<figcaption>The Persona Spectrum from <a href="https://www.microsoft.com/design/inclusive/">Microsoft’s Inclusive 101 Toolkit</a>.</figcaption>
+</figure>
 
 Personas can be used as an inclusive design tool when you incorporate people with disabilities into your personas. There are many different ways
 to do this. You may create [disability-specific personas](https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility),
