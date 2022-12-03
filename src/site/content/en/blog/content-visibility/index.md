@@ -4,8 +4,9 @@ subhead: Improve initial load time by skipping the rendering of offscreen conten
 authors:
   - una
   - vladimirlevin
+  - jlwagner
 date: 2020-08-05
-updated: 2021-03-09
+updated: 2022-12-05
 hero: image/admin/lrAkOWYTyGkK2BKXoF9y.jpg
 alt: Stylized photo of a half-hidden person.
 description: >
@@ -280,6 +281,14 @@ cached state. This makes the view quick to render when it becomes active again.
 In an experiment, Facebook engineers observed an up to 250ms improvement in
 navigation times when going back to previously cached views.
 {% endAside %}
+
+## Effects on Interaction to Next Paint (INP)
+
+[INP](/inp/) is a metric that evaluates a page's ability to be reliably responsive to user input. Responsiveness can be affected by any excessive amount of work that occurs on the main thread, including rendering work.
+
+Whenever you can reduce rendering work on any given page, you're giving the main thread an opportunity to respond to user inputs more quickly. This includes rendering work, and using the `content-visiblity` CSS property where appropriate can reduce rendering work—especially during startup, when most rendering and layout work is done.
+
+Reducing rendering work has a direct effect on INP. When users attempt to interact with a page that uses the `content-visibility` property properly to defer layout and rendering of offscreen elements, you're giving the main thread a chance to respond to critical user-visible work. This can improve your page's INP in some situations.
 
 ## Conclusion
 
