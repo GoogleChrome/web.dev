@@ -155,13 +155,12 @@ One of the most common patterns where users experience focus management issues i
 user encounters a modal, they should be able to tab between the actionable elements of the modal, but they should never be allowed outside
 of the modal without explicitly dismissing it. JavaScript is essential in properly trapping this focus.
 
-<div class="switcher">
 {% Compare 'worse' %}
 
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'ZERVJMz',
- height: 250,
+ height: 350,
  theme: 'auto',
  tab: 'result'
 } %}
@@ -173,13 +172,12 @@ of the modal without explicitly dismissing it. JavaScript is essential in proper
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'zYaydmv',
- height: 250,
+ height: 350,
  theme: 'auto',
  tab: 'result'
 } %}
 
 {% endCompare %}
-</div>
 
 ### Page level
 
