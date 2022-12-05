@@ -68,7 +68,7 @@ or via the `type` attribute.
   {% Codepen {
     user: 'estelle',
     id: 'OJEXLWK',
-    height: 585,
+    height: 585
   } %}
 </figure>
 
