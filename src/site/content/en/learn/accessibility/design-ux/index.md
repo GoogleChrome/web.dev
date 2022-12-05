@@ -91,8 +91,8 @@ Losing her fine motor skills to tremors is making it increasingly difficult for 
 the keyboard more and more to navigate the web. Jane has always been dedicated to her physical fitness. She loves road racing and BMX.
 This made it all the more of a blow when she was diagnosed with Young Onset Parkinson's disease last year.
 
-* **Goals**: use speech-to-text input to make adding code suggestions easier; find biking equipment online with minimal keystrokes.
-* **Frustrations**: websites lacking keyboard-only support; apps for design with small areas for touch interaction.
+**Goals**: use speech-to-text input to make adding code suggestions easier; find biking equipment online with minimal keystrokes.
+**Frustrations**: websites lacking keyboard-only support; apps for design with small areas for touch interaction.
 
 {% endDetails %}
 
