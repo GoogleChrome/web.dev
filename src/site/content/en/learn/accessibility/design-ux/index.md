@@ -254,6 +254,7 @@ the design as the main focus.
 </div>
 
 
+
 These examples are from [Indeed.com’s accessibility annotations kit](https://www.figma.com/community/file/953682768192596304) for Figma.
 
 </div>
