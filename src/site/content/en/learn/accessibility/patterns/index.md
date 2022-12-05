@@ -16,9 +16,12 @@ large design for a website, app, or other digital product into manageable pieces
 Like building a physical structure, it's important to build one piece at a time. First, the foundation, the structure, walls,
 windows, roof, and everything in between. Component-driven development tools allow us to do this for websites, apps, and other digital products.
 
-Some perks to component-driven development include breaking things down into manageable pieces, so there is less development time with
-these reusable components. It allows designers, frontend and backend developers, and QA to work simultaneously. And clients, designers, PMs, and
-more, like it because they can preview the build process and use a living style guide as a reference after the website has launched.
+Some perks to component-driven development include breaking things down into
+manageable pieces, so there is less development time with these reusable
+components. It allows designers, frontend and backend developers, and QA to
+work simultaneously. And clients, designers, PMs, and more, like it because
+they can preview the build process and use a living style guide as a reference
+after the website has launched.
 
 However, when we look at patterns, components, and design systems with accessibility in mind, some questions arise. How do you know
 which patterns are best when it comes to accessibility? Should you use an established pattern/library or create new ones? How do
@@ -55,38 +58,41 @@ Some great resources for accessible patterns, components, and design systems inc
 * [Gov.UK Design System](https://design-system.service.gov.uk/components/)
 * [Inclusive Components](https://inclusive-components.design/)
 * [MagentaA11y](https://www.magentaa11y.com/)
-* [U.S. Web Design System](https://designsystem.digital.gov/components/overview/)
+* [U.S. Web Design System (USWDS)](https://designsystem.digital.gov/components/overview/), created for the U.S. federal government
 * [List of accessible patterns from Smashing Magazine](https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-289/)
 
-For JavaScript frameworks, the following resources are fairly accessible out of the box or are easy to customize for accessibility:
+For JavaScript frameworks, the following resources are fairly accessible out of
+the box or are easy to customize for accessibility:
 
 * [When CSS Isn't Enough: JavaScript Requirements For Accessible Components](https://www.smashingmagazine.com/2021/06/css-javascript-requirements-accessible-components/)
 * React
   * [ReachUI](https://reach.tech/)
   * [Reakit](https://reakit.io/)
   * [Chakra](https://chakra-ui.com/)
-* Angular
-  * [Material Library](https://material.angular.io/cdk/a11y/overview)
-* Vue
-  * [Vuetensils](https://vuetensils.com/)
+* Angular: [Material library](https://material.angular.io/cdk/a11y/overview)
+* Vue: [Vuetensils](https://vuetensils.com/)
 
 However—and this cannot be stressed enough—you should never just copy/paste
 code and assume it will fit within your environment and automatically meet your
 user needs. This is true of all patterns, components, and design systems, even
 if labeled as fully accessible.
 
-All resources should be seen as a starting point but not plug-and-play. Be sure to test everything!
+All resources should be seen as a starting point. Be sure to test everything!
 
 ## Browsers and assistive technology (AT) support
 
-After researching a few base patterns, components, or a full design system that might work for your dev environment, you can
-move on to assistive technology support. One major type of AT you will want to focus on when evaluating patterns, components,
-and design systems is screen readers.
+After researching a few base patterns, components, or a full design system that
+might work for your dev environment, you can move on to assistive technology
+support. One major type of AT you will want to focus on when evaluating
+patterns, components, and design systems is screen readers.
 
-Screen readers were built with specific browsers in mind and will work best when paired with these browsers. We'll go into
-this topic in much more detail in the module on AT testing, but for pattern evaluation purposes, it is helpful to understand these combinations exist, so you know what you need in terms of support.
+Screen readers were built with specific browsers in mind and will work best
+when paired with these browsers. We'll go into this topic in much more detail
+in the module on AT testing, but for pattern evaluation purposes, it is helpful
+to understand these combinations exist, so you know what you need in terms of
+support.
 
-<div class="table-wrapper">
+<div class="table-wrapper with-heading-tint">
 <table>
 <thead>
   <tr>
@@ -144,6 +150,7 @@ this topic in much more detail in the module on AT testing, but for pattern eval
 </div>
 
 Browser support is generally complicated, and things get even trickier when you add AT devices and ARIA specifications to the mix.
+
 But it's not all bad news. Thankfully, great resources such as [HTML5 Accessibility](https://stevefaulkner.github.io/HTML5accessibility),
 [Accessibility Support](https://a11ysupport.io), and WCAG's [Custom Control Accessible Development Checklist](https://w3c.github.io/using-aria/#checklist)
 help us to better understand current browser and AT device support, and even when to use ARIA in the first place.
@@ -154,8 +161,9 @@ you make a more accessible decision regarding patterns, components, and design s
 
 ### Other considerations
 
-Once you have chosen a few accessible base patterns or components, and factored in browser and AT device support, you can move
-on to more specific contextual questions about the pattern, component, design system, and dev environment.
+Once you have chosen a few accessible base patterns or components, and factored
+in browser and AT device support, you can move on to more specific contextual
+questions about the pattern, component, design system, and dev environment.
 
 For example, if you are working in a management system (CMS) or have legacy
 code, there may be some limitations to which patterns you can use. Upon review,

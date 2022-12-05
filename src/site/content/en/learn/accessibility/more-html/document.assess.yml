@@ -3,7 +3,7 @@ tabLabel: question
 questions:
   - type: multiple-choice
     cardinality: "1"
-    correctAnswers: "2"
+    correctAnswers: "1"
     stem: Your site is a multi-language online textbook, where multiple languages are shown on one page. What's the best way to tell assistive technology the language of the copy?
     options:
       - content: "Don't worry about it, the AT can automatically read each language."

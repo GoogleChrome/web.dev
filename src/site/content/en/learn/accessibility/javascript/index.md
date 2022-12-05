@@ -100,7 +100,7 @@ With great power comes great responsibility. And unfortunately, JavaScript
 injection of HTML and CSS has historically been misused to create inaccessible
 content. Some common misuses are listed here:
 
-<div class="table-wrapper">
+<div class="table-wrapper with-heading-tint">
 <table>
 <thead>
   <tr>
@@ -162,7 +162,7 @@ of the modal without explicitly dismissing it. JavaScript is essential in proper
  id: 'ZERVJMz',
  height: 350,
  theme: 'auto',
- tab: 'result'
+ tab: 'js,result'
 } %}
 
 {% endCompare %}
@@ -174,7 +174,7 @@ of the modal without explicitly dismissing it. JavaScript is essential in proper
  id: 'zYaydmv',
  height: 350,
  theme: 'auto',
- tab: 'result'
+ tab: 'js,result'
 } %}
 
 {% endCompare %}
@@ -223,7 +223,7 @@ For example, you may use an aria-expanded attribute to tell the user whether a d
  id: 'oNyJeQZ',
  height: 300,
  theme: 'auto',
- tab: 'html, result'
+ tab: 'html,result'
 } %}
 
 Or you might use [`aria-pressed`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-pressed) to indicate that a button has been pressed.
@@ -250,9 +250,9 @@ changes to the page without requiring the entire page to reload.
 {% Codepen {
  user: 'web-dev-codepen-external',
  id: 'Yzvdxdr',
- height: 400,
+ height: 450,
  theme: 'auto',
- tab: 'html,result'
+ tab: 'result'
 } %}
 
 Historically, JavaScript has struggled to announce content in
