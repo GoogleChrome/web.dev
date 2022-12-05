@@ -3,8 +3,7 @@ title: 'JavaScript'
 authors:
   - cariefisher
 description: Write accessible JavaScript.
-date: 2022-12-02
-placeholder: true
+date: 2022-12-05
 tags:
   - accessibility
 ---

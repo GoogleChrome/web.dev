@@ -4,8 +4,7 @@ authors:
   - cariefisher
 description: >
   Evaluate patterns, components, and design systems for accessibility.
-date: 2022-12-02
-placeholder: true
+date: 2022-12-05
 tags:
   - accessibility
 ---

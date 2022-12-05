@@ -3,8 +3,7 @@ title: 'Design and user experience'
 authors:
   - cariefisher
 description: Create accessible designs and evaluate your user's experience.
-date: 2022-12-02
-placeholder: true
+date: 2022-12-05
 tags:
   - accessibility
 ---
