@@ -49,6 +49,6 @@ This course was written by [Carie Fisher](https://cariefisher.com/)
 ([Twitter](https://twitter.com/heyawhite)), and
 [Rachel Andrew](https://rachelandrew.co.uk/)
 ([Twitter](https://twitter.com/rachelandrew)). Special thanks to
-[Mark Steadman](https://twitter.com/Steady5063) for providing additonal support
+[Mark Steadman](https://twitter.com/Steady5063) for providing additional support
 for the [JavaScript module](/learn/accessibility/javascript/).
 {% endAside %}
