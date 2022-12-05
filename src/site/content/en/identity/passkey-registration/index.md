@@ -45,11 +45,11 @@ Before prompting the user to create a new passkey, check if:
 // Availability of `window.PublicKeyCredential` means WebAuthn is usable.
 if (window.PublicKeyCredential &&
     PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable &&
-    PublicKeyCredential.​​isConditionalMediationAvailable) {
+    PublicKeyCredential.isConditionalMediationAvailable) {
   // Check if user verifying platform authenticator is available.
   Promise.all([
     PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable(),
-    PublicKeyCredential.​​isConditionalMediationAvailable(),
+    PublicKeyCredential.isConditionalMediationAvailable(),
   ]).then(results => {
     if (results.every(r => r === true)) {
       // Call WebAuthn creation
@@ -78,8 +78,8 @@ const publicKeyCredentialCreationOptions = {
   pubKeyCredParams: [{alg: -7, type: "public-key"},{alg: -257, type: "public-key"}],
   excludeCredentials: [{
     id: *****,
-    type: 'public-key',
-    transports: ['internal'],
+    type: "public-key",
+    transports: ["internal"],
   }],
   authenticatorSelection: {
     authenticatorAttachment: "platform",
@@ -132,7 +132,7 @@ The key parameters here are:
     embedded into the platform device and the user will not be prompted to
     insert an external authenticator such as a USB security key.
 -   [`authenticatorSelection.requireResidentKey`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-residentkey):
-    Set it to `"true"`. Requiring a discoverable credential (resident key)
+    Set it to `true`. Requiring a discoverable credential (resident key)
     enables better sign-in experiences.
 -   [`excludeCredentials`](https://w3c.github.io/webauthn/#dom-publickeycredentialcreationoptions-excludecredentials):
     Prevent registering the same authenticator by providing a list of already
