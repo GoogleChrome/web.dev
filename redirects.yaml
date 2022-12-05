@@ -315,6 +315,8 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/launch-handler/
   - source: /gpu
     destination: https://developer.chrome.com/docs/web-platform/webgpu/
+  - source: /webgpu
+    destination: https://developer.chrome.com/docs/web-platform/webgpu/
   - source: /storage-foundation
     destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
   - source: /app-history-api
