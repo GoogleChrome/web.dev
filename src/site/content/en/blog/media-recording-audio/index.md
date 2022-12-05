@@ -133,7 +133,7 @@ ultimately to a speaker so that the user can hear it.
 One of the nodes that you can connect is an `AudioWorkletNode`. This node gives
 you the low-level capability for custom audio processing. The actual audio
 processing happens in the `process()` callback method in the `AudioWorkletProcessor`.
-This function is called to feed inputs and parameters and fetch outputs.
+Call this function to feed inputs and parameters and fetch outputs.
 
 Checkout [Enter Audio Worklet](https://developer.chrome.com/blog/audio-worklet/)
 to learn more.
