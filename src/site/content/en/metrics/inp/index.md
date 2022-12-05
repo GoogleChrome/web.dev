@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-09-20
+updated: 2022-12-06
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -201,32 +201,7 @@ Gathering INP metrics in the field will only work on browsers that [fully suppor
 
 ## How to improve INP
 
-If your website is reporting INP values that fall outside of the "good" threshold, you'll naturally want to figure out what you can do to improve. High INP values are usually indicative of a high reliance on JavaScript, or other non-JavaScript main thread work that may run concurrently with user interactions.
-
-### Improving INP during page startup
-
-INP can be a factor during page load, because users may attempt to interact with a page as it's fetching JavaScript to set up event handlers that provide the interactivity required for a page to work.
-
-{% Aside %}
-Per the HTTP Archive, [Total Blocking Time (TBT)](/tbt/) has [a much stronger correlation with INP than it does with FID](https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb). TBT is a lab metric, but if you're observing high TBT values in lab tools, that could be a signal that higher INP values in the field will be observed.
-{% endAside %}
-
-To improve responsiveness during page load, look into the following solutions:
-
-- Remove unused code using the [coverage tool](https://developer.chrome.com/docs/devtools/coverage/) in Chrome's DevTools.
-- [Find code-splitting opportunities](/reduce-javascript-payloads-with-code-splitting/) so you can lazy load JavaScript not needed during page load. The coverage tool can help with this.
-- [Identify slow third-party JavaScript](/identify-slow-third-party-javascript/) that you may be loading during startup.
-- Use the performance profiler to find [long tasks](/long-tasks-devtools/) that you can optimize.
-- Ensure you aren’t asking too much of the browser in terms of rendering work during startup. Avoid large component tree re-rendering, huge DOM sizes, large image decodes, computationally expensive [CSS animations](/animations-examples/), and so forth.
-
-### Improving INP after page startup
-
-Because INP is calculated from inputs sampled during the entire page lifecycle, it's probable that your site's INP could be influenced by what happens _after_ page startup. If that's the case for your website, here are a few areas to look into for solutions:
-
-- Use the [`postTask` API](https://github.com/WICG/scheduling-apis/blob/main/explainers/prioritized-post-task.md) to appropriately prioritize tasks.
-- [Schedule non-essential work when the browser is idle](https://philipwalton.com/articles/idle-until-urgent/) with [`requestIdleCallback`](https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback).
-- Use the performance profiler to assess discrete interactions (for example, toggling a mobile navigation menu) and find long tasks to optimize.
-- Audit third-party JavaScript in your website to see if it's affecting page responsiveness.
+A [full guide on optimizing INP](/optimize-inp/) is available to guide you through the process of identifying slow interactions in the field and using lab data to drill down and optimize them.
 
 ## CHANGELOG
 
