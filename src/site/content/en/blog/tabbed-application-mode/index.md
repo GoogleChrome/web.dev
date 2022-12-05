@@ -5,7 +5,7 @@ subhead: Work on more than one document at a time with tabs in your Progressive 
 authors:
   - thomassteiner
 date: 2021-02-25
-updated: 2022-10-18
+updated: 2022-12-05
 description: |
   Tabbed application mode allows Progressive Web App developers to add a tabbed document interface
   to their standalone PWAs.
@@ -62,11 +62,9 @@ Examples of sites that may use tabbed application mode include:
 
 Having documents in separate browser tabs comes with resource isolation for free, which is not
 possible using the web today. Developer-built tabs would not scale acceptably to hundreds of tabs
-like browser tabs do. Developer-built tabs could also not be dragged out of the window to split into
-a separate application window, or be dragged back in to combine them back into a single window.
-Browser affordances such as navigation history, "Copy this page URL", "Cast this tab" or "Open this
-page in a web browser" would be applied to the developer-built tabbed interface page, but not the
-currently selected document page.
+like browser tabs do. Browser affordances such as navigation history, "Copy this page URL", "Cast
+this tab" or "Open this page in a web browser" would be applied to the developer-built tabbed
+interface page, but not the currently selected document page.
 
 ### Differences to `"display": "browser"`
 
@@ -87,13 +85,13 @@ window.
 
 <div>
 
-| Step                                     | Status                     |
-| ---------------------------------------- | -------------------------- |
-| 1. Create explainer                      | [Completed][explainer]     |
-| 2. Create initial draft of specification | Not started                |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback)   |
-| 4. Origin trial                          | Not started                |
-| 5. Launch                                | Not started                |
+| Step                                     | Status                   |
+| ---------------------------------------- | ------------------------ |
+| 1. Create explainer                      | [Completed][explainer]   |
+| 2. Create initial draft of specification | Not started              |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
+| 4. Origin trial                          | Not started              |
+| 5. Launch                                | Not started              |
 
 </div>
 
@@ -176,20 +174,16 @@ A complete example to configure the behavior of an app with a tabbed interface m
 }
 ```
 
-### Trying tabbed application mode
+### Demo
 
-You can try tabbed application mode on ChromeOS devices running Chrome&nbsp;83 and up today:
+You can try tabbed application mode by setting a browser flag:
 
 1. Set the `#enable-desktop-pwas-tab-strip` flag.
-1. Install any web app that runs in `standalone` mode, for example,
-   [Excalidraw](https://excalidraw.com/).
-1. Pin the app icon to the shelf, right click the icon, and select "New tabbed window" from the
-   context menu.
-1. Open the app and interact with the tab strip.
+1. Install the app [tabbed-application-mode.glitch.me](https://tabbed-application-mode.glitch.me/)
+   ([source code](https://glitch.com/edit/#!/tabbed-application-mode?path=manifest.json)).
+1. Click the different links on the different tabs.
 
-The video below shows the current iteration of the feature in action.
-
-{% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/JwN0btyXFGiT9oPFh2qJ.webm", autoplay="true", loop="true", muted="true" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/piz5g2gsqkkQMNmgJ1db.png", alt="Screenshot of the tabbed application mode demo at https://tabbed-application-mode.glitch.me/.", width="800", height="706" %}
 
 ## Feedback
 
