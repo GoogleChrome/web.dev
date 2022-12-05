@@ -235,7 +235,7 @@ Screen readers will not "see" them, which is best practice: separators between b
 They must also have enough contrast against their background, the same as regular text.
 
 This version uses an unordered list and list items. An ordered list is preferable as ordered list items are enumerated.
-Also it is a list: `role="list" was added back in because some CSS display property values remove the semantics from some elements.
+Also it is a list: `role="list"` was added back in because some CSS display property values remove the semantics from some elements.
 
 Generally, the link to the home page in a breadcrumb should read "home" rather than be the site logo with the name of the site as
 the label. But as the breadcrumb is at the top of the document and is the only occurrence of the logo on the page, it makes sense
