@@ -327,12 +327,12 @@ The following audits are especially relevant:
 **Load**
 
 * [Does not register a service worker that controls page and
-  start_url](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/). A service worker can cache common
+  start_url](/service-worker/). A service worker can cache common
   resources on a user's device, reducing time spent fetching resources over the
   network.
 
 * [Page load is not fast enough on mobile
-  networks](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
+  networks](/load-fast-enough-for-pwa/).
 
 * [Eliminate render-blocking
   resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).

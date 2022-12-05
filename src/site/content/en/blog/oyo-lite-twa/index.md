@@ -107,7 +107,7 @@ so web content served in a TWA must provide that experience, including:
 - A unified look and feel (by providing, for example, a splash screen and app color)
 
 {% Aside %}
-Meeting the [Lighthouse requirements for a PWA](https://developer.chrome.com/docs/lighthouse/pwa/)
+Meeting the [Lighthouse requirements for a PWA](/lighthouse-pwa)
 is actually a prerequisite for TWAs.
 To learn more about building a PWA,
 see the [Installable collection](/installable).

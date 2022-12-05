@@ -31,7 +31,7 @@ Lighthouse generates a report for your page so you can see areas where you can
 improve SEO for your site.
 
 To learn how to fix issues flagged by Lighthouse, see the
-[SEO audits](https://developer.chrome.com/docs/lighthouse/seo/) collection.
+[SEO audits](/lighthouse-seo) collection.
 
 ## Next steps
 

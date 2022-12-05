@@ -207,7 +207,7 @@ possible.
 
 People are looking for critical health- and job-related information. It's
 important to ensure that your sites are discoverable by all search engines.
-The [Lighthouse SEO audits](https://developer.chrome.com/docs/lighthouse/seo/) can help you detect basic problems.
+The [Lighthouse SEO audits](/lighthouse-seo/) can help you detect basic problems.
 Follow the official blogs of search engines for the latest guidance and updates:
 [Google](https://webmasters.googleblog.com/),
 [Bing](https://blogs.bing.com/webmaster/),

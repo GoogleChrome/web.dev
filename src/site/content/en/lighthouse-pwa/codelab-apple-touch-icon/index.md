@@ -33,12 +33,12 @@ Open the example app in a new tab:
 
 1. Note the URL of your example app. It'll be something like `https://example.glitch.me`.
 
-Run a [Lighthouse PWA audit](https://developer.chrome.com/docs/lighthouse/pwa/) on your example app in Chrome DevTools:
+Run a [Lighthouse PWA audit](/lighthouse-pwa) on your example app in Chrome DevTools:
 
 {% Instruction 'audit-pwa', 'ol' %}
 
 In the **PWA Optimized** section, Lighthouse reports that the example app [doesn't provide a valid
-Apple touch icon](https://developer.chrome.com/docs/lighthouse/pwa/apple-touch-icon/).
+Apple touch icon](/apple-touch-icon).
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MTeobnXovn2UGJW1lhQ9.png", alt="Does not provide a valid apple-touch-icon", width="800", height="283" %}

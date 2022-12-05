@@ -59,7 +59,7 @@ Usando o valor meta viewport de `width=device-width` instrui a página a corresp
 
 {% Aside 'caution' %} Para garantir que os navegadores mais antigos possam analisar corretamente os atributos, use uma vírgula para separar os atributos. {% endAside %}
 
-A auditoria do Lighthouse [Não tem uma tag `<meta name="viewport">` com `width` ou `initial-scale`](https://developer.chrome.com/docs/lighthouse/pwa/viewport/) pode ajudá-lo a automatizar o processo de certificar-se de que seus documentos HTML estão usando a meta tag viewport corretamente.
+A auditoria do Lighthouse [Não tem uma tag `<meta name="viewport">` com `width` ou `initial-scale`](/viewport/) pode ajudá-lo a automatizar o processo de certificar-se de que seus documentos HTML estão usando a meta tag viewport corretamente.
 
 ### Garanta uma viewport acessível {: #accessible-viewport}
 
@@ -77,7 +77,7 @@ Tanto em desktops quanto em dispositivos móveis, os usuários estão acostumado
 
 Ao desenvolver um site para celular com uma meta tag viewport (que define as dimensões da janela de visualização), é fácil criar acidentalmente conteúdo de página que não cabe na janela de visualização especificada. Por exemplo, uma imagem exibida com uma largura maior do que a viewport pode fazer com que a janela de visualização role horizontalmente. Você deve ajustar esse conteúdo para caber na largura da janela de visualização, de modo que o usuário não precise rolar horizontalmente.
 
-A auditoria do Lighthouse [O conteúdo não está dimensionado corretamente para a viewport](https://developer.chrome.com/docs/lighthouse/pwa/content-width/) pode ajudá-lo a automatizar o processo de detecção de conteúdo que extrapola a janela de visualização.
+A auditoria do Lighthouse [O conteúdo não está dimensionado corretamente para a viewport](/content-width/) pode ajudá-lo a automatizar o processo de detecção de conteúdo que extrapola a janela de visualização.
 
 ### Imagens {: #images}
 

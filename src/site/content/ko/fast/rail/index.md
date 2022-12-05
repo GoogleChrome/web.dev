@@ -195,9 +195,9 @@ RAIL 측정을 자동화하는 데 도움이 되는 몇 가지 도구가 있습�
 
 **로드**
 
-- [페이지 및 start_url을 제어하는 서비스 작업자를 등록하지 않습니다](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/). 서비스 작업자는 사용자 장치의 공통 리소스를 캐시하여 네트워크를 통해 리소스를 가져오는 데 소요되는 시간을 줄일 수 있습니다.
+- [페이지 및 start_url을 제어하는 서비스 작업자를 등록하지 않습니다](/service-worker/). 서비스 작업자는 사용자 장치의 공통 리소스를 캐시하여 네트워크를 통해 리소스를 가져오는 데 소요되는 시간을 줄일 수 있습니다.
 
-- [모바일 네트워크에서 페이지 로드가 충분히 빠르지 않습니다](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
+- [모바일 네트워크에서 페이지 로드가 충분히 빠르지 않습니다](/load-fast-enough-for-pwa/).
 
 - [렌더링 차단 리소스를 제거합니다](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources) .
 

@@ -195,9 +195,9 @@ As seguintes auditorias são especialmente relevantes:
 
 **Carregamento**
 
-- [Não registra um trabalho de serviço que controla a página e start_url](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/). Um trabalho de serviço pode armazenar em cache recursos comuns no dispositivo de um usuário, reduzindo o tempo gasto na busca de recursos na rede.
+- [Não registra um trabalho de serviço que controla a página e start_url](/service-worker/). Um trabalho de serviço pode armazenar em cache recursos comuns no dispositivo de um usuário, reduzindo o tempo gasto na busca de recursos na rede.
 
-- [O carregamento da página não é rápido o suficiente em redes móveis](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
+- [O carregamento da página não é rápido o suficiente em redes móveis](/load-fast-enough-for-pwa/).
 
 - [Elimine recursos de bloqueio de renderização](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).
 

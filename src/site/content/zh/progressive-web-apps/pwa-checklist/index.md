@@ -201,7 +201,7 @@ Web 的最大优势之一是能够通过搜索发现网站和应用程序。实�
 
 #### 方法
 
-首先，确保每个 URL 具有唯一的描述性标题和元描述。然后，您可以使用 [Google Search Console](https://search.google.com/search-console/about) 和 Lighthouse 中的[搜索引擎优化审核](https://developer.chrome.com/docs/lighthouse/seo/)来帮助您调试和修复 PWA 的可发现性问题。您还可以使用 [Bing](https://www.bing.com/toolbox/webmaster) 或 [Yandex](https://webmaster.yandex.com/welcome/) 的网站管理员工具，并考虑在您的 PWA 中利用 [Schema.org](https://schema.org/) 中提供的架构来包含[结构化数据](https://goo.gle/search-gallery)。
+首先，确保每个 URL 具有唯一的描述性标题和元描述。然后，您可以使用 [Google Search Console](https://search.google.com/search-console/about) 和 Lighthouse 中的[搜索引擎优化审核](/lighthouse-seo/)来帮助您调试和修复 PWA 的可发现性问题。您还可以使用 [Bing](https://www.bing.com/toolbox/webmaster) 或 [Yandex](https://webmaster.yandex.com/welcome/) 的网站管理员工具，并考虑在您的 PWA 中利用 [Schema.org](https://schema.org/) 中提供的架构来包含[结构化数据](https://goo.gle/search-gallery)。
 
 {% endDetails %}
 

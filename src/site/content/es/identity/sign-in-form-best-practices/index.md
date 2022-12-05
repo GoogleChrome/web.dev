@@ -246,7 +246,7 @@ El tamaño y el relleno predeterminados para las entradas y los botones es demas
 
 Según la [Guía de accesibilidad de Android](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB), el tamaño objetivo recomendado para los objetos de la pantalla táctil es de 7 a 10 mm. Las pautas de la interfaz de Apple sugieren 48x48 px, y el W3C sugiere [al menos 44x44 píxeles CSS](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html). Sobre esa base, agregue (al menos) alrededor de 15 px de relleno a los elementos de entrada y botones para dispositivos móviles, y alrededor de 10 px en dispositivos de escritorio. Pruebe esto con un dispositivo móvil real y un dedo o pulgar real. Debería estar en capacidad de tocar cómodamente cada una de sus entradas y botones.
 
-La auditoría de Lighthouse [Los objetivos táctiles no tienen el tamaño adecuado](https://developer.chrome.com/docs/lighthouse/seo/http-status-code/) puede ayudarlo a automatizar el proceso de detección de elementos de entrada que son demasiado pequeños.
+La auditoría de Lighthouse [Los objetivos táctiles no tienen el tamaño adecuado](/tap-targets/) puede ayudarlo a automatizar el proceso de detección de elementos de entrada que son demasiado pequeños.
 
 #### Diseñe para pulgares {: #design-for-thumbs }
 
@@ -262,7 +262,7 @@ Los navegadores de diferentes plataformas dimensionan las fuentes de manera dife
 
 Esto significa que debe usar un tamaño de píxeles más grande en el dispositivo móvil: un tamaño de `16px` en Chrome para equipos de escritorio es bastante legible, pero incluso con una buena visión es difícil leer `16px` en Chrome para Android. Puede establecer diferentes tamaños de píxeles de fuente para diferentes tamaños de ventana gráfica mediante las [consultas de medios](https://developers.google.com/web/fundamentals/design-and-ux/responsive#apply_media_queries_based_on_viewport_size). Un tamaño de `20px` es adecuado en dispositivos móviles, pero debe probarlo con amigos o colegas que tengan problemas de visión.
 
-La auditoría de Lighthouse [El documento no usa tamaños de fuente legibles](https://developer.chrome.com/docs/lighthouse/seo/font-size/) puede ayudarlo a automatizar el proceso de detección de texto que es demasiado pequeño.
+La auditoría de Lighthouse [El documento no usa tamaños de fuente legibles](/font-size/) puede ayudarlo a automatizar el proceso de detección de texto que es demasiado pequeño.
 
 ### Proporcione suficiente espacio entre las entradas {: #size-margins-correctly }
 

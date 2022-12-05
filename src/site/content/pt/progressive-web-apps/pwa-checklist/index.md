@@ -203,7 +203,7 @@ Uma das maiores vantagens da web é a capacidade de descobrir sites e aplicativo
 
 #### Como
 
-Comece garantindo que cada URL tenha um título descritivo exclusivo e uma descrição meta. Em seguida, você pode usar o [Google Search Console](https://search.google.com/search-console/about) e as [auditorias de otimização de mecanismo de pesquisa](https://developer.chrome.com/docs/lighthouse/seo/) do Lighthouse para ajudar a depurar e corrigir problemas de descoberta em seu PWA. Você também pode usar as ferramentas para webmasters do [Bing](https://www.bing.com/toolbox/webmaster) ou [Yandex](https://webmaster.yandex.com/welcome/) e considerar a inclusão de [dados estruturados](https://goo.gle/search-gallery) por meio de esquemas do [Schema.org](https://schema.org/) em seu PWA.
+Comece garantindo que cada URL tenha um título descritivo exclusivo e uma descrição meta. Em seguida, você pode usar o [Google Search Console](https://search.google.com/search-console/about) e as [auditorias de otimização de mecanismo de pesquisa](/lighthouse-seo/) do Lighthouse para ajudar a depurar e corrigir problemas de descoberta em seu PWA. Você também pode usar as ferramentas para webmasters do [Bing](https://www.bing.com/toolbox/webmaster) ou [Yandex](https://webmaster.yandex.com/welcome/) e considerar a inclusão de [dados estruturados](https://goo.gle/search-gallery) por meio de esquemas do [Schema.org](https://schema.org/) em seu PWA.
 
 {% endDetails %}
 

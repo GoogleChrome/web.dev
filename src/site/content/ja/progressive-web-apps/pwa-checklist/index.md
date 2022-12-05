@@ -201,7 +201,7 @@ Web の最大の利点の1つは、検索を通じてサイトやアプリを発
 
 #### 方法
 
-まず、各 URL に一意の説明的なタイトルとメタ説明があることを確認します。次に、Lighthouse の [Google 検索コンソール](https://search.google.com/search-console/about)と[検索エンジン最適化監査](https://developer.chrome.com/docs/lighthouse/seo/)を使用して、PWA の検出可能性の問題をデバッグして修正することができます。[Bing](https://www.bing.com/toolbox/webmaster) や [Yandex](https://webmaster.yandex.com/welcome/) の Web マスターツールを使用して、[Schema.org](https://goo.gle/search-gallery) のスキーマを介して[構造化データ](https://schema.org/)をPWAに含めることを検討することもできます。
+まず、各 URL に一意の説明的なタイトルとメタ説明があることを確認します。次に、Lighthouse の [Google 検索コンソール](https://search.google.com/search-console/about)と[検索エンジン最適化監査](/lighthouse-seo/)を使用して、PWA の検出可能性の問題をデバッグして修正することができます。[Bing](https://www.bing.com/toolbox/webmaster) や [Yandex](https://webmaster.yandex.com/welcome/) の Web マスターツールを使用して、[Schema.org](https://goo.gle/search-gallery) のスキーマを介して[構造化データ](https://schema.org/)をPWAに含めることを検討することもできます。
 
 {% endDetails %}
 

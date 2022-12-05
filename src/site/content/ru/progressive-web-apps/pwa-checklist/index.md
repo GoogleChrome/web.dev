@@ -203,7 +203,7 @@ tags:
 
 #### Как
 
-Для начала убедитесь, что у каждого URL-адреса есть уникальный описательный заголовок и мета-описание. Затем вы можете использовать [Google Search Console](https://search.google.com/search-console/about) и [аудит поисковой оптимизации](https://developer.chrome.com/docs/lighthouse/seo/) в Lighthouse, чтобы отладить и исправить проблемы обнаружения своего PWA. Кроме того, вы можете использовать инструменты [Bing](https://www.bing.com/toolbox/webmaster) или [Яндекс](https://webmaster.yandex.com/welcome/) для веб-мастеров. Также рекомендуем вам включить в свое PWA [структурированные данные](https://goo.gle/search-gallery) с помощью схем со [Schema.org](https://schema.org/).
+Для начала убедитесь, что у каждого URL-адреса есть уникальный описательный заголовок и мета-описание. Затем вы можете использовать [Google Search Console](https://search.google.com/search-console/about) и [аудит поисковой оптимизации](/lighthouse-seo/) в Lighthouse, чтобы отладить и исправить проблемы обнаружения своего PWA. Кроме того, вы можете использовать инструменты [Bing](https://www.bing.com/toolbox/webmaster) или [Яндекс](https://webmaster.yandex.com/welcome/) для веб-мастеров. Также рекомендуем вам включить в свое PWA [структурированные данные](https://goo.gle/search-gallery) с помощью схем со [Schema.org](https://schema.org/).
 
 {% endDetails %}
 

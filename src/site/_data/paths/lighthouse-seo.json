@@ -1,0 +1,37 @@
+{
+  "slug": "lighthouse-seo",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/owTB2vcxeuTvfCUf9xhq.svg",
+  "title": "i18n.paths.lighthouse_seo.title",
+  "description": "i18n.paths.lighthouse_seo.description",
+  "overview": "i18n.paths.lighthouse_seo.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.lighthouse_seo.topics.make_sure_search_engines_understand_your_content",
+      "pathItems": [
+        "document-title",
+        "meta-description",
+        "link-text",
+        "hreflang",
+        "canonical"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_seo.topics.make_sure_search_engines_can_crawl_and_index_your_page",
+      "pathItems": [
+        "http-status-code",
+        "is-crawable",
+        "robots-txt",
+        "plugins"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_seo.topics.make_your_page_mobile_friendly",
+      "pathItems": [
+        "viewport",
+        "font-size",
+        "tap-targets"
+      ]
+    },
+    {"title": "i18n.paths.lighthouse_seo.topics.things_to_check_manually","pathItems": ["structured-data"]}
+  ]
+}
