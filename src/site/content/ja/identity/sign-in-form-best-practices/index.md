@@ -37,7 +37,7 @@ codelabs:
 - [各入力に `<label>` タグを付ける](#label) 。
 - 要素の属性を使って、[組み込みのブラウザ機能にアクセスする](#element-attributes) (`type` 、`name` 、`autocomplete` 、`required`)。
 - 入力の `name` と `id` 属性に、ページの読み込みやウェブサイトのデプロイ中に変更されない安定した値を指定する。
-- サインインを[独自の &lt;form&gt; 要素に配置する](#single-form)。
+- サインインを[独自の &lt;form&gt; 要素に配置する](#form)。
 - [フォームが正常に送信されることを確認する](#submission)。
 - サインアップフォームのパスワード入力と reset-password フォームの新しいパスワードに、[`autocomplete="new-password"`](#new-password) と [`id="new-password"`](#new-password) を使用する。
 - サインインパスワードの入力に、[`autocomplete="current-password"`](#current-password) と [`id="current-password"`](#current-password) を使用する。
@@ -65,7 +65,7 @@ codelabs:
 
 入力を `<div>` 要素でラップして、送信されてくる入力データを純粋に JavaScript だけで処理しようと考えることがあるかもしれません。多くの場合は、昔ながらの [`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form) 要素を使用する方がベターでしょう。これにより、スクリーンリーダーや他の支援デバイスがサイトにアクセスできるようになり、ブラウザのさまざまな組み込み機能が有効になり、古いブラウザーに対してベーシックで実用的なサインインを簡単に構築できるようになり、JavaScript が失敗した場合でも機能させることができます。
 
-{: #single-form } {% Aside 'gotchas' %} ウェブページ全体を 1 つのフォームでラップするというミスがよく見られます。これはブラウザーのパスワードマネージャーと自動入力機能にとって問題となる恐れがあります。フォームを必要とする UI コンポーネントごとに別の &lt;form&gt; を使用します。たとえば、同じページにサインイン機能と検索機能がある場合は、2 つのフォーム要素を使用する必要があります。{% endAside %}
+{% Aside 'gotchas' %} ウェブページ全体を 1 つのフォームでラップするというミスがよく見られます。これはブラウザーのパスワードマネージャーと自動入力機能にとって問題となる恐れがあります。フォームを必要とする UI コンポーネントごとに別の &lt;form&gt; を使用します。たとえば、同じページにサインイン機能と検索機能がある場合は、2 つのフォーム要素を使用する必要があります。{% endAside %}
 
 ### `<label>` を使用する {: #label }
 

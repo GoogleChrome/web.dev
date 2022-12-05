@@ -37,7 +37,7 @@ codelabs:
 -  [使用 `<label>` 标记每个输入](#label)。
 - 使用元素属性[访问内置浏览器功能](#element-attributes)：`type`、`name`、`autocomplete`、`required`。
 - 为输入 `name` 和 `id` 属性提供稳定的值，使其在页面加载或网站部署之间不会改变。
-- 将登录[放在它自己的 &lt;form&gt; 元素中](#single-form)。
+- 将登录[放在它自己的 &lt;form&gt; 元素中](#form)。
 - [确保成功提交表单](#submission)。
 - 将 [`autocomplete="new-password"`](#new-password) 和 [`id="new-password"`](#new-password) 用于注册表单中的输入密码，以及重置密码表单中的新密码。
 - 将 [`autocomplete="current-password"`](#current-password) 和 [`id="current-password"`](#current-password) 用于登录密码输入。
@@ -65,7 +65,7 @@ codelabs:
 
 您可能想将输入包装在 `<div>` 中并纯粹使用 JavaScript 处理输入数据提交。通常最好使用普通的旧 [`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form) 元素。这使屏幕阅读器和其他辅助设备可以访问您的站点，启用一系列内置浏览器功能，从而使得为旧浏览器构建基本功能登录变得更简单，并且即使 JavaScript 失败也仍然可以工作。
 
-{: #single-form } {% Aside 'gotchas' %} 一个常见的错误是将整个网页包装在一个表单中，这很容易导致浏览器密码管理器和自动填充出现问题。为每个需要表单的 UI 组件使用不同的 &lt;form&gt;。例如，如果您在同一页面上进行登录和搜索，则应使用两个表单元素。 {% endAside %}
+{% Aside 'gotchas' %} 一个常见的错误是将整个网页包装在一个表单中，这很容易导致浏览器密码管理器和自动填充出现问题。为每个需要表单的 UI 组件使用不同的 &lt;form&gt;。例如，如果您在同一页面上进行登录和搜索，则应使用两个表单元素。 {% endAside %}
 
 ### 使用`<label>` {: #label }
 
