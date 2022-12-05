@@ -32,7 +32,15 @@ pageSpeed:
             <h1 class="hero__title">{{ pageSpeed.title }}</h1>
             {{ pageSpeed.summary | md | safe }}
             <div class="cluster gutter-base flow-space-size-2">
-              <a class="button" data-type="primary" href="{{ pageSpeed.primaryButtonUrl }}">{{ pageSpeed.primaryButtonText }}</a>
+              <a class="button" 
+                data-type="primary"
+                data-category="web.dev"
+                data-label="measure, run audit"
+                data-action="click"
+                href="{{ pageSpeed.primaryButtonUrl }}"
+              >
+                {{ pageSpeed.primaryButtonText }}
+              </a>
               <a class="button" data-type="secondary" href="{{ pageSpeed.secondaryButtonUrl }}">{{ pageSpeed.secondaryButtonText }}</a>
             </div>
           </div>
