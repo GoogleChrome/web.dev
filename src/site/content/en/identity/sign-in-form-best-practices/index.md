@@ -466,7 +466,7 @@ mobile, and around 10 px on desktop. Try this out with a real mobile device and
 a real finger or thumb. You should comfortably be able to tap each of your
 inputs and buttons.
 
-The [Tap targets are not sized appropriately](/tap-targets/)
+The [Tap targets are not sized appropriately](https://developer.chrome.com/docs/lighthouse/seo/http-status-code/)
 Lighthouse audit can help you automate the process of detecting input elements
 that are too small.
 
@@ -501,7 +501,7 @@ queries](https://developers.google.com/web/fundamentals/design-and-ux/responsive
 `20px` is about right on mobile—but you should test this out with friends or
 colleagues who have low vision.
 
-The [Document doesn't use legible font sizes](/font-size/)
+The [Document doesn't use legible font sizes](https://developer.chrome.com/docs/lighthouse/seo/font-size/)
 Lighthouse audit can help you automate the process of detecting text that's too
 small.
 

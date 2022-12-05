@@ -361,7 +361,7 @@ client-side rendering.
 Start by ensuring that each URL has a unique, descriptive title and meta
 description. Then you can use the
 [Google Search Console](https://search.google.com/search-console/about)
-and the [Search Engine Optimization audits](/lighthouse-seo/) in Lighthouse to
+and the [Search Engine Optimization audits](https://developer.chrome.com/docs/lighthouse/seo/) in Lighthouse to
 help you debug and fix discoverability issues with your PWA. You can also use
 [Bing](https://www.bing.com/toolbox/webmaster)'s or
 [Yandex](https://webmaster.yandex.com/welcome/)'s webmaster tools, and

@@ -203,7 +203,7 @@ W3C의 [웹 접근성 개론](https://www.w3.org/WAI/fundamentals/accessibility-
 
 #### 방법
 
-각 URL에 고유하고 설명적인 제목과 메타 설명이 있는지 확인하는 것부터 시작하세요. 그런 다음 [Google Search Console](https://search.google.com/search-console/about) 및 Lighthouse의 [검색 엔진 최적화 감사](/lighthouse-seo/)를 사용하여 PWA의 검색 가능성 문제를 디버깅하고 수정할 수 있습니다. 또한 [Bing](https://www.bing.com/toolbox/webmaster) 또는 [Yandex](https://webmaster.yandex.com/welcome/)의 웹마스터 도구를 사용하고 PWA에서 [Schema.org](https://goo.gle/search-gallery)의 스키마를 통해 [구조화된 데이터](https://schema.org/)를 포함하는 것을 고려할 수 있습니다.
+각 URL에 고유하고 설명적인 제목과 메타 설명이 있는지 확인하는 것부터 시작하세요. 그런 다음 [Google Search Console](https://search.google.com/search-console/about) 및 Lighthouse의 [검색 엔진 최적화 감사](https://developer.chrome.com/docs/lighthouse/seo/)를 사용하여 PWA의 검색 가능성 문제를 디버깅하고 수정할 수 있습니다. 또한 [Bing](https://www.bing.com/toolbox/webmaster) 또는 [Yandex](https://webmaster.yandex.com/welcome/)의 웹마스터 도구를 사용하고 PWA에서 [Schema.org](https://goo.gle/search-gallery)의 스키마를 통해 [구조화된 데이터](https://schema.org/)를 포함하는 것을 고려할 수 있습니다.
 
 {% endDetails %}
 

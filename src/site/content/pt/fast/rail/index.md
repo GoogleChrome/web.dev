@@ -187,7 +187,7 @@ As seguintes auditorias são especialmente relevantes:
 
 - [Atraso de entrada com potencial máximo](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). Estima quanto tempo seu aplicativo levará para responder à entrada do usuário, com base no tempo ocioso da thread principal.
 
-- [Não usa ouvintes passivos para melhorar o desempenho de rolagem](/uses-passive-event-listeners/).
+- [Não usa ouvintes passivos para melhorar o desempenho de rolagem](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/).
 
 - [Tempo total de bloqueio](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/). Mede a quantidade total de tempo que uma página fica bloqueada para responder à entrada do usuário, como cliques do mouse, toques na tela ou pressionamentos de teclado.
 
@@ -195,9 +195,9 @@ As seguintes auditorias são especialmente relevantes:
 
 **Carregamento**
 
-- [Não registra um trabalho de serviço que controla a página e start_url](/service-worker/). Um trabalho de serviço pode armazenar em cache recursos comuns no dispositivo de um usuário, reduzindo o tempo gasto na busca de recursos na rede.
+- [Não registra um trabalho de serviço que controla a página e start_url](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/). Um trabalho de serviço pode armazenar em cache recursos comuns no dispositivo de um usuário, reduzindo o tempo gasto na busca de recursos na rede.
 
-- [O carregamento da página não é rápido o suficiente em redes móveis](/load-fast-enough-for-pwa/).
+- [O carregamento da página não é rápido o suficiente em redes móveis](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
 
 - [Elimine recursos de bloqueio de renderização](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).
 
@@ -207,7 +207,7 @@ As seguintes auditorias são especialmente relevantes:
 
 - [Evite encadear solicitações críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-- [Não usa HTTP/2 para todos os seus recursos](/uses-http2/).
+- [Não usa HTTP/2 para todos os seus recursos](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
 - [Codifique imagens de forma eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 

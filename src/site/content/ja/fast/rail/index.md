@@ -187,7 +187,7 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 - [Max Potential First Input Delay (最初の入力の最大潜在遅延)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)。メインスレッドのアイドル時間に基づいて、アプリがユーザー入力に応答するのにかかる時間を推定する。
 
-- [Does not use passive listeners to improve scrolling performance (スクロールパフォーマンスを向上させるためにパッシブリスナーを使用していない)](/uses-passive-event-listeners/)。
+- [Does not use passive listeners to improve scrolling performance (スクロールパフォーマンスを向上させるためにパッシブリスナーを使用していない)](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/)。
 
 - [Total Blocking Time (合計ブロッキング時間)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)。マウスをクリックしたり、画面をタップしたり、キーボードを押すといった、ユーザー入力への応答がブロックされる合計時間を測定する。
 
@@ -195,9 +195,9 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 **読み込み**
 
-- [Does not register a service worker that controls page and start_url (pageとstart_urlを制御するServiceWorkerを登録しない](/service-worker/)。Service Workerは、ユーザーのデバイスに共通のリソースをキャッシュして、ネットワーク経由でリソースをフェッチするために費やす時間を削減できます。
+- [Does not register a service worker that controls page and start_url (pageとstart_urlを制御するServiceWorkerを登録しない](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)。Service Workerは、ユーザーのデバイスに共通のリソースをキャッシュして、ネットワーク経由でリソースをフェッチするために費やす時間を削減できます。
 
-- [Page load is not fast enough on mobile networks (モバイルネットワークにおけるページの読み込み速度が十分でない)](/load-fast-enough-for-pwa/)。
+- [Page load is not fast enough on mobile networks (モバイルネットワークにおけるページの読み込み速度が十分でない)](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/)。
 
 - [Eliminate render-blocking resources (レンダリングをブロックするリソースを排除する)](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)。
 
@@ -207,7 +207,7 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 - [Avoid chaining critical requests (重要なリクエストを連鎖させない)](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)。
 
-- [Does not use HTTP/2 for all of its resources (すべてのリソースにHTTP / 2を使用していない)](/uses-http2/)。
+- [Does not use HTTP/2 for all of its resources (すべてのリソースにHTTP / 2を使用していない)](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/)。
 
 - [Efficiently encode images (画像を効率的にエンコードしている)](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)。
 

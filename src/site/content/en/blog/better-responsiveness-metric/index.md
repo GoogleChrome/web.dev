@@ -397,7 +397,7 @@ and `scroll`. Except for the scroll event, this is largely dependent on the devi
 scrolling: touch events are dispatched when scrolling with the finger on mobile devices, while wheel
 events occur when scrolling with a mouse wheel. The scroll events are fired after initial scrolling
 has completed. And in general, no DOM event blocks scrolling, unless the website uses [non-passive
-event listeners](/uses-passive-event-listeners/). So we think of scrolling as decoupled from DOM
+event listeners](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/). So we think of scrolling as decoupled from DOM
 Events altogether. What we want to measure is the time from when the user moves enough to produce a
 scroll gesture until the first frame that shows that scrolling happened.
 
