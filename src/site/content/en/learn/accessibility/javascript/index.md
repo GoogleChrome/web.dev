@@ -2,6 +2,7 @@
 title: 'JavaScript'
 authors:
   - cariefisher
+  - marksteadman
 description: Write accessible JavaScript.
 date: 2022-12-05
 tags:
@@ -213,5 +214,11 @@ Here are some live packages for common JavaScript frameworks:
 Modern JavaScript is a powerful language that allows web developers to create robust web applications. This sometimes leads
 to over-engineering and, by extension, inaccessible patterns. By following the JavaScript patterns and tips in this module, you
 can make your apps more accessible to all users.
+
+{% Aside %}
+Special thanks to [Mark Steadman](https://twitter.com/Steady5063) for providing
+additonal support on this module. Read more of his
+[accessibility articles](https://dev.to/steady5063).
+{% endAside %}
 
 {% Assessment 'javascript' %}
