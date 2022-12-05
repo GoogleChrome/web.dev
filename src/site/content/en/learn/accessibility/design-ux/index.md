@@ -227,13 +227,14 @@ process, from wireframes to high-fidelity mock-ups. They can include user
 flows, conditional states, and functionality. They often utilize symbols and
 labels to streamline the process and keep the design as the main focus.
 
-<div>
+The following design illustrations examples are from [Indeed.com's accessibility annotations kit](https://www.figma.com/community/file/953682768192596304) for Figma.
+
 <div class="auto-grid">
  <figure>
     {% Img
     src="image/VbsHyyQopiec0718rMq2kTE1hke2/C365JZBXSoqHkSq068sy.png",
-    alt="Design mock-up that illustrates visual modifications used for the various possible button states.",
-    width="260", height="172"
+    alt="Design illustration of visual modifications used for various possible button states.",
+    width="350", height="232"
     %}
    <figcaption>
      Action button design differs based on state: default, focus, hover, active, and disabled.
@@ -242,8 +243,8 @@ labels to streamline the process and keep the design as the main focus.
  <figure>
     {% Img
     src="image/VbsHyyQopiec0718rMq2kTE1hke2/sRwFc6CeeqXVbY8XT7k6.png",
-    alt="Design mock-up of three different icons used on a job posting card.",
-    width="260", height="172"
+    alt="Design illustration of three different icons used on a job posting card.",
+    width="350", height="232"
     %}
    <figcaption>
      Three icons have alt text highlighted. The icons for "save job" and "not interested" act as buttons, therefore the alt text is critical to understanding action. The icon next to "Apply with your Indeed resume" is purely decorative and therefore doesn't need alt text.
@@ -252,19 +253,13 @@ labels to streamline the process and keep the design as the main focus.
  <figure>
     {% Img
     src="image/VbsHyyQopiec0718rMq2kTE1hke2/Xvw23qkfel5KeqQoh7cE.png",
-    alt="Design mock-up illustrating the relationship the form labels should have on their related inputs for month and year. ",
-    width="260", height="172"
+    alt="Illustration of the relationship the form labels should have on their related inputs for month and year. ",
+    width="350", height="232"
     %}
    <figcaption>
      Multiple input labels can be associated with each input, to help users understand context.
    </figcaption>
  </figure>
-</div>
-
-
-
-These examples are from [Indeed.com's accessibility annotations kit](https://www.figma.com/community/file/953682768192596304) for Figma.
-
 </div>
 
 Depending on your design program, you should have multiple
