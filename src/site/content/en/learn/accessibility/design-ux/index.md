@@ -156,14 +156,14 @@ checkpoint could look like the following:
 </thead>
 <tbody>
   <tr>
-    <td>Is there a clear, visible indicator set on all active elements as they receive focus?</td>
+    <td>Is a clear, visible indicator set on all active elements as they receive focus?</td>
     <td><span role="img" aria-label="yes">&#9989;</span></td>
     <td></td>
     <td></td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td>Does the page have meaningful title text, with page-specific information going first?</td>
+    <td>Does the page have meaningful title text, with page-specific information first?</td>
     <td></td>
     <td></td>
     <td><span role="img" aria-label="yes">&#9989;</span></td>
@@ -177,21 +177,21 @@ checkpoint could look like the following:
     <td></td>
   </tr>
   <tr>
-    <td>Does the page have meaningful headings for each major section?</td>
+    <td>Are there meaningful headings for each major section?</td>
     <td></td>
     <td><span role="img" aria-label="yes">&#9989;</span></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td>Can the links' purpose be defined from the link text alone or their immediate context?</td>
+    <td>Is the links' purpose defined from the link text alone or its immediate context?</td>
     <td></td>
     <td></td>
     <td></td>
     <td><span role="img" aria-label="yes">&#9989;</span></td>
   </tr>
   <tr>
-    <td>Is a “skip link” provided at the very top of the page, and is it revealed on focus?</td>
+    <td>Is a skip link provided at the very top of the page and is it revealed on focus?</td>
     <td></td>
     <td></td>
     <td><span role="img" aria-label="yes">&#9989;</span></td>
@@ -210,7 +210,7 @@ checkpoint could look like the following:
 
 After everyone on the team looks at the page or component and conducts their
 accessibility heuristic review, the totals are tallied up for each checkpoint.
-At this point, discussions can begin on how to remedy any found issues or
+At this point, you can decide how to remedy any found issues or
 correct any omissions that are paramount to supporting digital accessibility.
 
 ## Accessibility annotations
@@ -222,9 +222,10 @@ different aspects of the design. Accessibility annotations focus on areas where
 developers can make more accessible programmatic choices with the guidance of
 the design team or an accessibility-focused specialist.
 
-Accessibility annotations can be applied during any stage of the design process, from wireframes to high-fidelity mock-ups. They can
-include user flows, conditional states, and functionality. They often utilize symbols and labels to streamline the process and keep
-the design as the main focus.
+Accessibility annotations can be applied during any stage of the design
+process, from wireframes to high-fidelity mock-ups. They can include user
+flows, conditional states, and functionality. They often utilize symbols and
+labels to streamline the process and keep the design as the main focus.
 
 <div>
 <div class="auto-grid">
@@ -241,11 +242,11 @@ the design as the main focus.
  <figure>
     {% Img
     src="image/VbsHyyQopiec0718rMq2kTE1hke2/sRwFc6CeeqXVbY8XT7k6.png",
-    alt="Design mock-up of three different icons used on a job posting card. Two of the icons are actionable and require alt text, but one is decorative and should be hidden from a screen reader user using an accepted coding method.",
+    alt="Design mock-up of three different icons used on a job posting card.",
     width="260", height="172"
     %}
    <figcaption>
-     Three icons have alt text highlighted. The icons for “save job” and “not interested” act as buttons, therefore the alt text is critical to understanding action. The icon next to “Apply with your Indeed resume” is purely decorative and therefore doesn't need alt text.
+     Three icons have alt text highlighted. The icons for "save job" and "not interested" act as buttons, therefore the alt text is critical to understanding action. The icon next to "Apply with your Indeed resume" is purely decorative and therefore doesn't need alt text.
    </figcaption>
  </figure>
  <figure>
