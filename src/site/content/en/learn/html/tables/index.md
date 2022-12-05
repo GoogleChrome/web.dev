@@ -201,8 +201,6 @@ being placed on the cell in the top row.
     </tr>
   </tbody>
 </table>
-
-
 ```
 
 In this example, the table header contains two rows. The first header row contains three cells spanning four columns: the middle cell
