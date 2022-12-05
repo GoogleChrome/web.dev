@@ -30,13 +30,13 @@ center on designing for a specific individual or use case, and then extending th
 
 There are seven accessibility-focused [inclusive design principles](https://inclusivedesignprinciples.org):
 
-* *Provide comparable experience*: Ensure your interface provides an equal experience for all, so people can accomplish tasks in a way that suits their needs without undermining the quality of the content.
-* *Consider the situation*: Make sure your interface delivers a valuable experience to people, regardless of their circumstances.
-* *Be consistent*: Use familiar conventions and apply them in a logical manner.
-* *Give control*: Ensure people can access and interact with content in their preferred way.
-* *Offer choice*: Consider providing different ways for people to complete tasks, especially those that are complex or non-standard.
-* *Prioritize content*: Help users focus on core tasks, features, and information by arranging these elements in the preferred order within the content and layout.
-* *Add value*: Consider the purpose and significance of features and how they improve the experience for different users.
+1. *Provide comparable experience*: Ensure your interface provides an equal experience for all, so people can accomplish tasks in a way that suits their needs without undermining the quality of the content.
+1. *Consider the situation*: Make sure your interface delivers a valuable experience to people, regardless of their circumstances.
+1. *Be consistent*: Use familiar conventions and apply them in a logical manner.
+1. *Give control*: Ensure people can access and interact with content in their preferred way.
+1. *Offer choice*: Consider providing different ways for people to complete tasks, especially those that are complex or non-standard.
+1. *Prioritize content*: Help users focus on core tasks, features, and information by arranging these elements in the preferred order within the content and layout.
+1. *Add value*: Consider the purpose and significance of features and how they improve the experience for different users.
 
 ## Personas
 
@@ -125,16 +125,16 @@ of the design process. That's a huge impact that can be made before even one lin
 
 Similar to the original set of heuristics, there are ten accessibility heuristics to consider when planning your design.
 
-* *Interaction methods and modalities*: Users can efficiently interact with the system using the input method of their choosing (such as a mouse, keyboard, touch, etc.).
-* *Navigation and wayfinding*: Users can easily navigate, find content, and determine where they are at all times within the system.
-* *Structure and semantics*: Users can make sense of the structure of the content on each page and understand how to operate within the system.
-* *Error prevention and states*: Interactive controls have persistent, meaningful instructions to help prevent mistakes, and provide users with clear error states which indicate what the problems are and how to fix them whenever errors are returned.
-* *Contrast and legibility*: Users can easily distinguish and read text and other meaningful information.
-* *Language and readability*: Users can easily read and understand the content.
-* *Predictability and consistency*: Users can predict each element’s purpose. It’s clear how each element relates to the system as a whole.
-* *Timing and preservation*: Users are given enough time to complete their tasks and do not lose information if their time (i.e., a session) runs out.
-* *Movement and flashing*: Users can stop elements on the page that move, flash, or are animated. Users should not be distracted or otherwise harmed by these elements.
-* *Visual and auditory alternatives*: Users can access text-based alternatives for any visual or auditory content which conveys information.
+1. Interaction methods and modalities*: Users can efficiently interact with the system using the input method of their choosing (such as a mouse, keyboard, touch, etc.).
+1. Navigation and wayfinding*: Users can easily navigate, find content, and determine where they are at all times within the system.
+1. Structure and semantics*: Users can make sense of the structure of the content on each page and understand how to operate within the system.
+1. Error prevention and states*: Interactive controls have persistent, meaningful instructions to help prevent mistakes, and provide users with clear error states which indicate what the problems are and how to fix them whenever errors are returned.
+1. Contrast and legibility*: Users can easily distinguish and read text and other meaningful information.
+1. Language and readability*: Users can easily read and understand the content.
+1. Predictability and consistency*: Users can predict each element’s purpose. It’s clear how each element relates to the system as a whole.
+1. Timing and preservation*: Users are given enough time to complete their tasks and do not lose information if their time (i.e., a session) runs out.
+1. Movement and flashing*: Users can stop elements on the page that move, flash, or are animated. Users should not be distracted or otherwise harmed by these elements.
+1. Visual and auditory alternatives*: Users can access text-based alternatives for any visual or auditory content which conveys information.
 
 Once you have a basic understanding of these accessibility heuristics, you can apply it to a persona or design using the accessibility
 heuristics worksheet and by following the instructions provided. This exercise is more enlightening when you gather multiple perspectives.
