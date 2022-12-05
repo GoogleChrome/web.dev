@@ -81,7 +81,7 @@ Not every interaction can be attributed to a specific element. This is due to an
 
 When this code runs and you interact with a page, the console may report something similar to the following:
 
-```
+```text
 INP
 248
 pointerdown
