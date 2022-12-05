@@ -533,6 +533,8 @@ redirects:
     destination: https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/
   - source: /unused-css-rules
     destination: https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/
+  - source: /unused-javascript
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/
   - source: /user-timings
     destination: https://developer.chrome.com/docs/lighthouse/performance/user-timings/
   - source: /uses-long-cache-ttl
