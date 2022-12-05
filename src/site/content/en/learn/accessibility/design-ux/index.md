@@ -12,7 +12,7 @@ Think about your favorite website or app—what makes it your favorite? Now, thi
 do you not like about it? How users interact with your design and their experience on your website and app can vary.
 
 That experience can change based on the time of day, the type of device used, if they've had enough sleep the night before,
-if they are unwell, if they’re using assistive technology, and so much more. With close to eight billion people worldwide,
+if they are unwell, if they're using assistive technology, and so much more. With close to eight billion people worldwide,
 the possibilities of how people use and experience your designs are limitless.
 
 ## Inclusive design
@@ -48,17 +48,17 @@ strategy and create goals focused on specific user groups.
 
 ### Incorporating disabilities
 
+<figure data-float="right">
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/SmtiiRRpAImfG7MI6ku4.png", alt="Disabilities may be permanent, temporary, or situational. These disabilities can affect touch, seeing, hearing, and speaking.", width="350", height="573" %}
+<figcaption>The Persona Spectrum from <a href="https://www.microsoft.com/design/inclusive/">Microsoft's Inclusive 101 Toolkit</a>.</figcaption>
+</figure>
+
 <blockquote>
   <p>"People are all different. I can only speak from my experience. When you meet one Deaf person, then you've met one Deaf person—not all of us."</p>
   <cite>
     Meryl Evans from the ID24 talk <a href="https://youtu.be/yrwKWtJdZ_c/">Deaf Tech: Travel Through Time from Past to Future</a>.
   </cite>
 </blockquote>
-
-<figure data-float="right">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/SmtiiRRpAImfG7MI6ku4.png", alt="Disabilities may be permanent, temporary, or situational. These disabilities can affect touch, seeing, hearing, and speaking.", width="400", height="655" %}
-<figcaption>The Persona Spectrum from <a href="https://www.microsoft.com/design/inclusive/">Microsoft’s Inclusive 101 Toolkit</a>.</figcaption>
-</figure>
 
 Personas can be used as an inclusive design tool when you incorporate people with disabilities into your personas. There are many different ways
 to do this. You may create [disability-specific personas](https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility),
@@ -76,11 +76,11 @@ Check out an example of a persona that supports specific use cases.
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/ysBmXtLrbxScFwocWF8f.png", alt="Jane Smith is tall with long dark hair, wearing a gray long sleeve shirt and jeans", width="249", height="601" %}
 </figure>
 
-**Name**: Jane Bennet
-**Age**: 57 years old
-**Location**: Essex, United Kingdom
-**Occupation**: UX engineer
-**Disability**: Hand tremor from Young Onset Parkinson's disease (YOPD)
+* **Name**: Jane Bennet
+* **Age**: 57 years old
+* **Location**: Essex, United Kingdom
+* **Occupation**: UX engineer
+* **Disability**: Hand tremor from Young Onset Parkinson's disease (YOPD)
 
 Jane is a UX engineer for a well-known company. The pages she designs and builds are vital to keeping her company's site relevant.
 She has a lot of team members who she supports throughout the day. She's the queen of putting out technical fires, and everyone's go-to
@@ -90,8 +90,8 @@ Losing her fine motor skills to tremors is making it increasingly difficult for 
 the keyboard more and more to navigate the web. Jane has always been dedicated to her physical fitness. She loves road racing and BMX.
 This made it all the more of a blow when she was diagnosed with Young Onset Parkinson's disease last year.
 
-**Goals**: use speech-to-text input to make adding code suggestions easier; find biking equipment online with minimal keystrokes.
-**Frustrations**: websites lacking keyboard-only support; apps for design with small areas for touch interaction.
+* **Goals**: use speech-to-text input to make adding code suggestions easier; find biking equipment online with minimal keystrokes.
+* **Frustrations**: websites lacking keyboard-only support; apps for design with small areas for touch interaction.
 
 {% endDetails %}
 
@@ -105,7 +105,7 @@ disability simulator tools](https://sheribyrnehaber.medium.com/simulating-disabi
 demos, tutorials, and other content created by people with disabilities, and learning about their experiences first-hand.
 
 <blockquote>
-  <p>"I think we need to be completely honest that any simulation activity does not impact some of the most important understandings we want the sighted to know in their heart and their head—that blindness is not the characteristic that defines us, that the misunderstandings and low expectations about blindness are our biggest obstacle, that those misunderstandings create artificial barriers that prevent us from fully participating, and those false limitations build into something that holds us back."</p>
+  <p>"I think we need to be completely honest that any simulation activity does not impact some of the most important understandings we want the sighted to know in their heart and their head. Blindness is not the characteristic that defines us, that the misunderstandings and low expectations about blindness are our biggest obstacle.</p><p>Those misunderstandings create artificial barriers that prevent us from fully participating, and those false limitations build into something that holds us back."</p>
   <cite>
     <a href="https://nfb.org/sites/default/files/images/nfb/publications/bm/bm17/bm1704/bm170402.htm">Mark Riccobono</a>, President of the National Federation of the Blind
   </cite>
@@ -124,95 +124,103 @@ of the design process. That's a huge impact that can be made before even one lin
 
 Similar to the original set of heuristics, there are ten accessibility heuristics to consider when planning your design.
 
-1. Interaction methods and modalities*: Users can efficiently interact with the system using the input method of their choosing (such as a mouse, keyboard, touch, etc.).
-1. Navigation and wayfinding*: Users can easily navigate, find content, and determine where they are at all times within the system.
-1. Structure and semantics*: Users can make sense of the structure of the content on each page and understand how to operate within the system.
-1. Error prevention and states*: Interactive controls have persistent, meaningful instructions to help prevent mistakes, and provide users with clear error states which indicate what the problems are and how to fix them whenever errors are returned.
-1. Contrast and legibility*: Users can easily distinguish and read text and other meaningful information.
-1. Language and readability*: Users can easily read and understand the content.
-1. Predictability and consistency*: Users can predict each element’s purpose. It’s clear how each element relates to the system as a whole.
-1. Timing and preservation*: Users are given enough time to complete their tasks and do not lose information if their time (i.e., a session) runs out.
-1. Movement and flashing*: Users can stop elements on the page that move, flash, or are animated. Users should not be distracted or otherwise harmed by these elements.
-1. Visual and auditory alternatives*: Users can access text-based alternatives for any visual or auditory content which conveys information.
+1. *Interaction methods and modalities*: Users can efficiently interact with the system using the input method of their choosing (such as a mouse, keyboard, touch, etc.).
+1. *Navigation and wayfinding*: Users can easily navigate, find content, and determine where they are at all times within the system.
+1. *Structure and semantics*: Users can make sense of the structure of the content on each page and understand how to operate within the system.
+1. *Error prevention and states*: Interactive controls have persistent, meaningful instructions to help prevent mistakes, and provide users with clear error states which indicate what the problems are and how to fix them whenever errors are returned.
+1. *Contrast and legibility*: Users can easily distinguish and read text and other meaningful information.
+1. *Language and readability*: Users can easily read and understand the content.
+1. *Predictability and consistency*: Users can predict each element's purpose. It's clear how each element relates to the system as a whole.
+1. *Timing and preservation*: Users are given enough time to complete their tasks and do not lose information if their time (i.e., a session) runs out.
+1. *Movement and flashing*: Users can stop elements on the page that move, flash, or are animated. Users should not be distracted or otherwise harmed by these elements.
+1. *Visual and auditory alternatives*: Users can access text-based alternatives for any visual or auditory content which conveys information.
 
-Once you have a basic understanding of these accessibility heuristics, you can apply it to a persona or design using the accessibility
-heuristics worksheet and by following the instructions provided. This exercise is more enlightening when you gather multiple perspectives.
+Once you have a basic understanding of these accessibility heuristics, you can
+apply it to a persona or design using the accessibility heuristics worksheet
+and by following the instructions provided. This exercise is more enlightening
+when you gather multiple perspectives.
 
-An example accessibility heuristic review for the navigation and wayfinding checkpoint could look like the following:
+An example accessibility heuristic review for the navigation and wayfinding
+checkpoint could look like the following:
 
+<div class="table-wrapper scrollbar">
 <table>
 <thead>
   <tr>
-    <th><span style="font-weight:bold">Checkpoints for navigation and wayfinding</span></th>
-    <th><span style="font-weight:bold">Excels (+2 pt)</span></th>
-    <th><span style="font-weight:bold">Passes (+1 pt)</span></th>
-    <th><span style="font-weight:bold">Fails (-1 pt)</span></th>
-    <th><span style="font-weight:bold">N/A (0 pt)</span></th>
+    <th>Checkpoints for navigation and wayfinding</th>
+    <th>Excels (+2 pt)</th>
+    <th>Passes (+1 pt)</th>
+    <th>Fails (-1 pt)</th>
+    <th>N/A (0 pt)</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td><span>Is there a clear, visible indicator set on all active elements as they receive focus?</span></td>
-    <td><span>✔️</span></td>
+    <td>Is there a clear, visible indicator set on all active elements as they receive focus?</td>
+    <td><span role="img" aria-label="yes">&#9989;</span></td>
     <td></td>
     <td></td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td><span>Does the page have meaningful title text, with page-specific information going first?</span></td>
+    <td>Does the page have meaningful title text, with page-specific information going first?</td>
     <td></td>
     <td></td>
-    <td><span>✔️</span></td>
+    <td><span role="img" aria-label="yes">&#9989;</span></td>
     <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td><span>Are the page title element and H1 the same or similar?</span></td>
+    <td>Are the page title element and H1 the same or similar?</td>
     <td></td>
-    <td><span>✔️</span></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><span>Does the page have meaningful headings for each major section?</span></td>
-    <td></td>
-    <td><span>✔️</span></td>
+    <td><span role="img" aria-label="yes">&#9989;</span></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td><span>Can the links’ purpose be defined from the link text alone or their immediate context?</span></td>
+    <td>Does the page have meaningful headings for each major section?</td>
     <td></td>
+    <td><span role="img" aria-label="yes">&#9989;</span></td>
     <td></td>
-    <td></td>
-    <td><span>✔️</span></td>
-  </tr>
-  <tr>
-    <td><span>Is a “skip link” provided at the very top of the page, and is it revealed on focus?</span></td>
-    <td></td>
-    <td></td>
-    <td><span>✔️</span></td>
     <td></td>
   </tr>
   <tr>
-    <td><span>Does the organization of navigational elements facilitate wayfinding?</span></td>
-    <td><span>✔️</span></td>
+    <td>Can the links' purpose be defined from the link text alone or their immediate context?</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span role="img" aria-label="yes">&#9989;</span></td>
+  </tr>
+  <tr>
+    <td>Is a “skip link” provided at the very top of the page, and is it revealed on focus?</td>
+    <td></td>
+    <td></td>
+    <td><span role="img" aria-label="yes">&#9989;</span></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Does the organization of navigational elements facilitate wayfinding?</td>
+    <td><span role="img" aria-label="yes">&#9989;</span></td>
     <td></td>
     <td></td>
     <td></td>
   </tr>
 </tbody>
 </table>
+</div>
 
-After everyone on the team looks at the page or component and conducts their accessibility heuristic review, the totals are tallied
-up for each checkpoint. At this point, discussions can begin on how to remedy any found issues or correct any omissions that are paramount
-to supporting digital accessibility.
+After everyone on the team looks at the page or component and conducts their
+accessibility heuristic review, the totals are tallied up for each checkpoint.
+At this point, discussions can begin on how to remedy any found issues or
+correct any omissions that are paramount to supporting digital accessibility.
 
 ## Accessibility annotations
 
-Before you hand off your design to the development team, you should consider adding [accessibility annotations](https://stephaniewalter.design/blog/a-designers-guide-to-documenting-accessibility-user-interactions/).
-Annotations, in general, are used to explain creative choices and describe different aspects of the design. Accessibility
-annotations focus on areas where developers can make more accessible programmatic choices with the guidance of the design team
-or an accessibility-focused specialist.
+Before you hand off your design to the development team, you should consider
+adding [accessibility annotations](https://stephaniewalter.design/blog/a-designers-guide-to-documenting-accessibility-user-interactions/).
+Annotations, in general, are used to explain creative choices and describe
+different aspects of the design. Accessibility annotations focus on areas where
+developers can make more accessible programmatic choices with the guidance of
+the design team or an accessibility-focused specialist.
 
 Accessibility annotations can be applied during any stage of the design process, from wireframes to high-fidelity mock-ups. They can
 include user flows, conditional states, and functionality. They often utilize symbols and labels to streamline the process and keep
@@ -237,7 +245,7 @@ the design as the main focus.
     width="260", height="172"
     %}
    <figcaption>
-     Three icons have alt text highlighted. The icons for “save job” and “not interested” act as buttons, therefore the alt text is critical to understanding action. The icon next to “Apply with your Indeed resume” is purely decorative and therefore doesn’t need alt text.
+     Three icons have alt text highlighted. The icons for “save job” and “not interested” act as buttons, therefore the alt text is critical to understanding action. The icon next to “Apply with your Indeed resume” is purely decorative and therefore doesn't need alt text.
    </figcaption>
  </figure>
  <figure>
@@ -254,12 +262,14 @@ the design as the main focus.
 
 
 
-These examples are from [Indeed.com’s accessibility annotations kit](https://www.figma.com/community/file/953682768192596304) for Figma.
+These examples are from [Indeed.com's accessibility annotations kit](https://www.figma.com/community/file/953682768192596304) for Figma.
 
 </div>
 
-Depending on your design program, you should have multiple [accessibility annotation starter kits](https://www.figma.com/community/tag/a11y/popular)
-to choose from. Or, if you prefer, you can create your own set. In either case, you should decide which information needs to be communicated to
+Depending on your design program, you should have multiple
+[accessibility annotation starter kits](https://www.figma.com/community/tag/a11y/popular)
+to choose from. Or, if you prefer, you can create your own set. In either case,
+you should decide which information needs to be communicated to
 the hand-off team and what format works best.
 
 Some areas to consider for accessibility annotations include:
