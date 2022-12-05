@@ -183,7 +183,7 @@ You can try tabbed application mode by setting a browser flag:
    ([source code](https://glitch.com/edit/#!/tabbed-application-mode?path=manifest.json)).
 1. Click the different links on the different tabs.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/piz5g2gsqkkQMNmgJ1db.png", alt="Screenshot of the tabbed application mode demo at https://tabbed-application-mode.glitch.me/.", width="800", height="706" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/piz5g2gsqkkQMNmgJ1db.png", alt="Screenshot of the tabbed application mode demo at tabbed-application-mode.glitch.me.", width="800", height="706" %}
 
 ## Feedback
 
