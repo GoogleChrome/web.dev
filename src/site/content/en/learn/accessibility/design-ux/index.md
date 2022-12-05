@@ -73,7 +73,7 @@ Check out an example of a persona that supports specific use cases.
 {% endDetailsSummary %}
 
 <figure data-float="right">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/ysBmXtLrbxScFwocWF8f.png", alt="Jane Smith is tall with long dark hair, wearing a gray long sleeve shirt and jeans", width="249", height="601" %}
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/ysBmXtLrbxScFwocWF8f.png", alt="Jane Smith is tall with long dark hair, wearing a gray long sleeve shirt and jeans", width="150", height="362" %}
 </figure>
 
 * **Name**: Jane Bennet
@@ -81,17 +81,17 @@ Check out an example of a persona that supports specific use cases.
 * **Location**: Essex, United Kingdom
 * **Occupation**: UX engineer
 * **Disability**: Hand tremor from Young Onset Parkinson's disease (YOPD)
+* **Goals**: use speech-to-text input to make adding code suggestions easier; find biking equipment online with minimal keystrokes.
+* **Frustrations**: websites lacking keyboard-only support; apps for design with small areas for touch interaction.
 
-Jane is a UX engineer for a well-known company. The pages she designs and builds are vital to keeping her company's site relevant.
-She has a lot of team members who she supports throughout the day. She's the queen of putting out technical fires, and everyone's go-to
-in the department when anything goes down unexpectedly.
+As a UX engineer, Jane designs and builds pages that are vital to keeping her
+company's site relevant. She supports a lot of team members throughout the day.
+She's the queen of putting out technical fires, and everyone's go-to in the
+department when anything goes down unexpectedly.
 
 Losing her fine motor skills to tremors is making it increasingly difficult for her to use a mouse. She's been steadily relying on
 the keyboard more and more to navigate the web. Jane has always been dedicated to her physical fitness. She loves road racing and BMX.
 This made it all the more of a blow when she was diagnosed with Young Onset Parkinson's disease last year.
-
-* **Goals**: use speech-to-text input to make adding code suggestions easier; find biking equipment online with minimal keystrokes.
-* **Frustrations**: websites lacking keyboard-only support; apps for design with small areas for touch interaction.
 
 {% endDetails %}
 
