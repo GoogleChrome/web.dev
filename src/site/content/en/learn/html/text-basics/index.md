@@ -157,7 +157,7 @@ q::before {content: open-quote;}
 q::after {content: close-quote;}
 ```
 
-The `lang` attribute is included to let the browser know that, while base language of the page was defined as English in the `<html lang="en-US"> opening tag, this paragraph of text is in a different language. This helps voice controls such as Siri, Alexa, and voiceOver use French pronunciation. It also informs the browser what type of quotes to render.
+The `lang` attribute is included to let the browser know that, while base language of the page was defined as English in the `<html lang="en-US">` opening tag, this paragraph of text is in a different language. This helps voice controls such as Siri, Alexa, and voiceOver use French pronunciation. It also informs the browser what type of quotes to render.
 
 Like `<blockquote>`, the `<q>` element supports the `cite` attribute.
 
