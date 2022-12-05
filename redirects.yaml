@@ -686,8 +686,6 @@ redirects:
     destination: https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/
   - source: /js-libraries
     destination: https://developer.chrome.com/docs/lighthouse/best-practices/js-libraries/
-  - source: /is-on-https
-    destination: https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/
   - source: /no-document-write
     destination: https://developer.chrome.com/docs/lighthouse/best-practices/no-document-write/
   - source: /no-vulnerable-libraries
@@ -726,8 +724,44 @@ redirects:
     destination: https://developer.chrome.com/docs/lighthouse/seo/structured-data/
   - source: /tap-targets
     destination: https://developer.chrome.com/docs/lighthouse/seo/tap-targets/
+
+  # Redirects for Lighthouse PWA content.
+  - source: /lighthouse-pwa
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/
+  - source: /apple-touch-icon
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/apple-touch-icon/
+  - source: /content-width
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/content-width/
+  - source: /installable-manifest
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/
+  - source: /is-on-https
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/
+  - source: /load-fast-enough-for-pwa
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/
+  - source: /maskable-icon-audit
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/
+  - source: /offline-start-url
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/offline-start-url/
+  - source: /pwa-cross-browser
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/pwa-cross-browser/
+  - source: /pwa-each-page-has-url
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/pwa-each-page-has-url/
+  - source: /pwa-page-transitions
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/pwa-page-transitions/
+  - source: /redirects-http
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/redirects-http/
+  - source: /service-worker
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/service-worker/
+  - source: /splash-screen
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/
+  - source: /themed-omnibox
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/
   - source: /viewport
     destination: https://developer.chrome.com/docs/lighthouse/pwa/viewport/
+  - source: /without-javascript
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/without-javascript/
+  - source: /works-offline
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/works-offline/
 
 # Redirects for blogs
   - source: /blog/native-hardware-click-to-call

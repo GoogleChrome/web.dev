@@ -77,7 +77,7 @@ tags:
 
 メタビューポートタグを使用してモバイルサイトを開発する場合、指定したビューポートに完全に収まらないページコンテンツを誤って作成してしまう可能性があります。たとえば、ビューポートよりも広い幅で画像が表示されると、ビューポートが水平方向にスクロールする可能性があります。ユーザーがページを水平方向にスクロールする必要がないように、コンテンツをビューポートの幅内に収まるように調整する必要があります。
 
-Lighthouse の [Content is not sized correctly for the viewport](/content-width/) 監査は、オーバーフローするコンテンツを検出するプロセスを自動化するのに役立ちます。
+Lighthouse の [Content is not sized correctly for the viewport](https://developer.chrome.com/docs/lighthouse/pwa/content-width/) 監査は、オーバーフローするコンテンツを検出するプロセスを自動化するのに役立ちます。
 
 ### 画像 {: #images}
 

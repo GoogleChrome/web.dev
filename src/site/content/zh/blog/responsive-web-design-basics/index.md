@@ -77,7 +77,7 @@ tags:
 
 在开发带有元可视区域标签的移动端网站时，很容易意外创建尺寸与指定可视区域不太匹配的页面内容。例如，若显示图像的宽度大于可视区域宽度，就可能会导致可视区域水平滚动。您应该调整内容来匹配可视区域的宽度，使用户无需进行水平滚动。
 
-[内容尺寸与可视区域不匹配](/content-width/)的 Lighthouse 审计可以帮助您自动检测溢出内容。
+[内容尺寸与可视区域不匹配](https://developer.chrome.com/docs/lighthouse/pwa/content-width/)的 Lighthouse 审计可以帮助您自动检测溢出内容。
 
 ### 图像 {: #images }
 
