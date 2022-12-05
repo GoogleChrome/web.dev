@@ -195,9 +195,9 @@ RAILの評価を自動化するのに役立つツールはいくつかありま�
 
 **読み込み**
 
-- [Does not register a service worker that controls page and start_url (pageとstart_urlを制御するServiceWorkerを登録しない](/service-worker/)。Service Workerは、ユーザーのデバイスに共通のリソースをキャッシュして、ネットワーク経由でリソースをフェッチするために費やす時間を削減できます。
+- [Does not register a service worker that controls page and start_url (pageとstart_urlを制御するServiceWorkerを登録しない](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)。Service Workerは、ユーザーのデバイスに共通のリソースをキャッシュして、ネットワーク経由でリソースをフェッチするために費やす時間を削減できます。
 
-- [Page load is not fast enough on mobile networks (モバイルネットワークにおけるページの読み込み速度が十分でない)](/load-fast-enough-for-pwa/)。
+- [Page load is not fast enough on mobile networks (モバイルネットワークにおけるページの読み込み速度が十分でない)](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/)。
 
 - [Eliminate render-blocking resources (レンダリングをブロックするリソースを排除する)](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)。
 

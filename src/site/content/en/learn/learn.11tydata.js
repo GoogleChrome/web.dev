@@ -33,11 +33,6 @@ module.exports = function () {
 
   const frameworks = [allPaths['react'], allPaths['angular']].filter(livePaths);
 
-  const lighthouse = [
-    allPaths['lighthouse-pwa'],
-    allPaths['lighthouse-seo'],
-  ].filter(livePaths);
-
   const explorations = [allPaths['mini-apps']].filter(livePaths);
 
   return {
@@ -46,7 +41,6 @@ module.exports = function () {
       performance,
       build_excellent,
       frameworks,
-      lighthouse,
       explorations,
     },
   };

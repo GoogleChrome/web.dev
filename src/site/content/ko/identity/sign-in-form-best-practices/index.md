@@ -246,7 +246,7 @@ codelabs:
 
 [Android 접근성 지침](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB)에 따르면 터치스크린 개체의 권장 대상 크기는 7–10mm입니다. Apple 인터페이스 지침은 48x48 픽셀을 제안하고 W3C는 [최소 44x44 CSS 픽셀](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)을 제안합니다. 이를 기반으로 모바일의 경우 입력 요소 및 버튼에 약 15픽셀, 데스크톱에서 약 10픽셀의 패딩을 추가합니다. 실제 모바일 장치와 실제 손가락 또는 엄지 손가락으로 이것을 시도하십시오. 각 입력과 버튼을 편안하게 누를 수 있어야 합니다.
 
-[탭 대상의 크기가 적절하지 않습니다.](/tap-targets/) Lighthouse 감사는 너무 작은 입력 요소를 감지하는 프로세스를 자동화하는 데 도움이 될 수 있습니다.
+[탭 대상의 크기가 적절하지 않습니다.](https://developer.chrome.com/docs/lighthouse/seo/http-status-code/) Lighthouse 감사는 너무 작은 입력 요소를 감지하는 프로세스를 자동화하는 데 도움이 될 수 있습니다.
 
 #### 엄지손가락을 위한 디자인 {: #design-for-thumbs }
 
@@ -262,7 +262,7 @@ codelabs:
 
 즉, 모바일에서는 더 큰 픽셀 크기를 사용해야 합니다. `16px`는 꽤 읽을 수 있지만 시력이 좋아도 Android용 Chrome에서는 `16px` [미디어 쿼리](https://developers.google.com/web/fundamentals/design-and-ux/responsive#apply_media_queries_based_on_viewport_size)를 사용하여 다양한 표시 영역 크기에 대해 다른 글꼴 픽셀 크기를 설정할 수 있습니다. `20px`가 적당하지만 시력이 좋지 않은 친구나 동료와 함께 테스트해야 합니다.
 
-[문서에서 읽을 수 있는 글꼴 크기를 사용하지 않습니다.](/font-size/) Lighthouse 감사를 사용하면 너무 작은 텍스트를 감지하는 프로세스를 자동화할 수 있습니다.
+[문서에서 읽을 수 있는 글꼴 크기를 사용하지 않습니다.](https://developer.chrome.com/docs/lighthouse/seo/font-size/) Lighthouse 감사를 사용하면 너무 작은 텍스트를 감지하는 프로세스를 자동화할 수 있습니다.
 
 ### 입력 사이에 충분한 공간 제공 {: #size-margins-correctly }
 
