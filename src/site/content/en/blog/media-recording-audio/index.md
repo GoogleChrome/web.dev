@@ -6,7 +6,7 @@ description: >
 authors:
   - paulkinlan
 date: 2016-08-23
-updated: 2021-01-26
+updated: 2022-12-05
 ---
 
 Many browsers now have the ability to access video and audio input from the
@@ -130,30 +130,43 @@ Web Audio API is a simple API that takes input sources and connects those
 sources to nodes which can process the audio data (adjust Gain etc.) and
 ultimately to a speaker so that the user can hear it.
 
-One of the nodes that you can connect is a `ScriptProcessorNode`. This node will
-emit an `onaudioprocess` event every time the audio buffer is filled and you
-need to process it. At this point, you could save the data into your own buffer
-for later use.
+One of the nodes that you can connect is an `AudioWorkletNode`. This node gives
+you the low-level capability for custom audio processing. The actual audio
+processing happens in the `process()` callback method in the `AudioWorkletProcessor`.
+This function is called to feed inputs and parameters and fetch outputs.
+
+Checkout [Enter Audio Worklet](https://developer.chrome.com/blog/audio-worklet/)
+to learn more.
 
 ```html
 <script>
-  const handleSuccess = function(stream) {
+  const handleSuccess = async function(stream) {
     const context = new AudioContext();
     const source = context.createMediaStreamSource(stream);
-    const processor = context.createScriptProcessor(1024, 1, 1);
 
-    source.connect(processor);
-    processor.connect(context.destination);
+    await context.audioWorklet.addModule("processor.js");
+    const worklet = new AudioWorkletNode(context, "worklet-processor");
 
-    processor.onaudioprocess = function(e) {
-      // Do something with the data, e.g. convert it to WAV
-      console.log(e.inputBuffer);
-    };
+    source.connect(worklet);
+    worklet.connect(context.destination);
   };
 
   navigator.mediaDevices.getUserMedia({ audio: true, video: false })
       .then(handleSuccess);
 </script>
+```
+
+```js
+// processor.js
+class WorkletProcessor extends AudioWorkletProcessor {
+  process(inputs, outputs, parameters) {
+    // Do something with the data, e.g. convert it to WAV
+    console.log(inputs);
+    return true;
+  }
+}
+
+registerProcessor("worklet-processor", WorkletProcessor);
 ```
 
 The data that is held in the buffers is the raw data from the microphone and
