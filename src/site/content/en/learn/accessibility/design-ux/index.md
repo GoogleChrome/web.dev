@@ -77,11 +77,11 @@ Check out an example of a persona that supports specific use cases.
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/ysBmXtLrbxScFwocWF8f.png", alt="Jane Smith is tall with long dark hair, wearing a gray long sleeve shirt and jeans", width="249", height="601" %}
 </figure>
 
-* **Name**: Jane Bennet
-* **Age**: 57 years old
-* **Location**: Essex, United Kingdom
-* **Occupation**: UX engineer
-* **Disability**: Hand tremor from Young Onset Parkinson's disease (YOPD)
+**Name**: Jane Bennet
+**Age**: 57 years old
+**Location**: Essex, United Kingdom
+**Occupation**: UX engineer
+**Disability**: Hand tremor from Young Onset Parkinson's disease (YOPD)
 
 Jane is a UX engineer for a well-known company. The pages she designs and builds are vital to keeping her company's site relevant.
 She has a lot of team members who she supports throughout the day. She's the queen of putting out technical fires, and everyone's go-to
