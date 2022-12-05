@@ -55,14 +55,22 @@ or via the `type` attribute.
    <li>Blender</li>
    <li>Toaster</li>
    <li>Vacuum</li>
-</ol> https://codepen.io/estelle/pen/OJEXLWK
+</ol>
 
 <ol type="A">
    <li>Blender</li>
    <li>Toaster</li>
    <li>Vacuum</li>
-</ol> https://codepen.io/estelle/pen/OJEXLWK
+</ol>
 ```
+
+<figure>
+  {% Codepen {
+    user: 'estelle',
+    id: 'OJEXLWK',
+    height: 585,
+  } %}
+</figure>
 
 The `<ol>` has three element-specific attributes: `type`, `reversed`, and `start`.
 
