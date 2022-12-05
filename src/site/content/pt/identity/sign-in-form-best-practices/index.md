@@ -37,7 +37,7 @@ Aqui está um exemplo de um formulário de login simples que demonstra todas as 
 - [Rotule cada entrada com um `<label>`](#label).
 - Use atributos de elemento para [acessar os recursos integrados do navegador](#element-attributes) : `type`, `name`, `autocomplete`, `required`.
 - Dê ao `name` entrada e aos `id` valores estáveis que não mudam entre carregamentos de página ou implantações de site.
-- Coloque o login [em seu próprio elemento &lt;form&gt;](#single-form).
+- Coloque o login [em seu próprio elemento &lt;form&gt;](#form).
 - [Garanta o envio bem-sucedido do formulário](#submission).
 - Use [`autocomplete="new-password"`](#new-password) e [`id="new-password"`](#new-password) para a entrada de senha em um formulário de inscrição e para a nova senha em um formulário de redefinição de senha.
 - Use [`autocomplete="current-password"`](#current-password) e [`id="current-password"`](#current-password) para inserir a senha de login.
@@ -65,7 +65,7 @@ Use elementos construídos para o trabalho: `<form>`, `<label>` e `<button>`. Is
 
 Você pode ficar tentado a envolver as entradas em um `<div>` e lidar com o envio de dados de entrada puramente com JavaScript. Geralmente é melhor usar um elemento [`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form). Isso torna seu site acessível para leitores de tela e outros dispositivos de assistência, permite uma variedade de recursos integrados do navegador, torna mais simples construir login funcional básico para navegadores mais antigos e ainda pode funcionar mesmo se o JavaScript falhar.
 
-{: # single-form} {% Aside 'gotchas' %} Um erro comum é embrulhar uma página da web inteira em um único formulário, mas isso pode causar problemas para gerenciadores de senhas do navegador e preenchimento automático. Use um &lt;form&gt; diferente para cada componente de IU que precisa de um formulário. Por exemplo, se você fizer login e pesquisar na mesma página, deverá usar dois elementos de formulário. {% endAside %}
+{% Aside 'gotchas' %} Um erro comum é embrulhar uma página da web inteira em um único formulário, mas isso pode causar problemas para gerenciadores de senhas do navegador e preenchimento automático. Use um &lt;form&gt; diferente para cada componente de IU que precisa de um formulário. Por exemplo, se você fizer login e pesquisar na mesma página, deverá usar dois elementos de formulário. {% endAside %}
 
 ### Use `<label>` {: #label}
 

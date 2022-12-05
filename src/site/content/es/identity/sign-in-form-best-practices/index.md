@@ -37,7 +37,7 @@ El siguiente es un ejemplo de un formulario de inicio de sesión simple que mues
 - [Etiquete cada entrada con una `<label>`](#label).
 - Utilice los atributos de los elementos para [acceder a las funciones integradas del navegador](#element-attributes): `type`, `name`, `autocomplete`, `required`.
 - Otórgueles a los atributos de entrada `name` e `id` valores que no cambien entre cargas de página o implementaciones de sitios web.
-- Coloque el inicio de sesión [en su propio elemento &lt;form&gt;](#single-form).
+- Coloque el inicio de sesión [en su propio elemento &lt;form&gt;](#form).
 - [Asegure el envío exitoso del formulario](#submission).
 - Utilice [`autocomplete="new-password"`](#new-password) e [`id="new-password"`](#new-password) para ingresar la contraseña en un formulario de registro y para la nueva contraseña en un formulario de restablecimiento de contraseña.
 - Utilice [`autocomplete="current-password"`](#current-password) e [`id="current-password"`](#current-password) para ingresar la contraseña de inicio de sesión.
@@ -65,7 +65,7 @@ Utilice elementos creados para el trabajo: `<form>`, `<label>` y `<button>`. Est
 
 Es posible que tenga la tentación de agrupar las entradas en un `<div>` y manejar el envío de datos de entrada únicamente con JavaScript. Por lo general, es mejor usar un elemento plano [`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form) a la antigua. Esto hace que su sitio sea accesible para lectores de pantalla y otros dispositivos de asistencia, habilita una variedad de funciones integradas del navegador, simplifica la creación de un inicio de sesión funcional básico para navegadores más antiguos y aún puede funcionar incluso si JavaScript falla.
 
-{: #single-form } {% Aside 'gotchas' %} Un error común es agrupar una página web completa en un solo formulario, pero esto puede causar problemas a los administradores de contraseñas del navegador y a la función autocompletar. Utilice un elemento &lt;form&gt; diferente para cada componente de la interfaz de usuario que necesite un formulario. Por ejemplo, si tiene un inicio de sesión y un espacio de búsqueda en la misma página, debe usar dos elementos de formulario. {% endAside %}
+{% Aside 'gotchas' %} Un error común es agrupar una página web completa en un solo formulario, pero esto puede causar problemas a los administradores de contraseñas del navegador y a la función autocompletar. Utilice un elemento &lt;form&gt; diferente para cada componente de la interfaz de usuario que necesite un formulario. Por ejemplo, si tiene un inicio de sesión y un espacio de búsqueda en la misma página, debe usar dos elementos de formulario. {% endAside %}
 
 ### Utilice `<label>` {: #label }
 

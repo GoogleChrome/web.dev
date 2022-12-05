@@ -37,7 +37,7 @@ codelabs:
 - [각 입력에`<label>` 레이블을 지정하십시오](#label).
 - 요소 속성을 사용하여 [내장 브라우저 기능(](#element-attributes)`type`, `name`, `autocomplete`, `required`)에 액세스합니다.
 - 입력 `name` 및 `id` 속성은 페이지 로드나 웹사이트 배포 간에 변하지 않는 안정적인 값을 부여합니다.
-- [자체 &lt;form&gt; 요소에](#single-form) 로그인을 넣습니다.
+- [자체 &lt;form&gt; 요소에](#form) 로그인을 넣습니다.
 - [성공적인 양식 제출을 확인하십시오](#submission) .
 - 로그인 양식의 비밀번호 입력과 재설정 비밀번호 형식의 새 비밀번호 입력에는 [`autocomplete="new-password"`](#new-password) 및 [`id="new-password"`](#new-password)를 사용합니다.
 - 로그인 비밀번호 입력에 [`autocomplete="current-password"`](#current-password) 및 [`id="current-password"`](#current-password)를 사용합니다.
@@ -65,7 +65,7 @@ codelabs:
 
 `<div>`로 래핑하고 순수 자바스크립트로 입력 데이터 제출을 처리하고 싶을 수 있습니다. [`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form) 요소를 사용하는 것이 좋습니다. 이렇게 하면 화면 판독기 및 기타 보조 장치에서 사이트에 액세스할 수 있고, 다양한 내장 브라우저 기능이 활성화되고, 이전 브라우저를 위한 기본 기능 로그인을 더 간단하게 구축할 수 있으며, JavaScript가 실패하더라도 계속 작동할 수 있습니다.
 
-{: #single-form } {% Aside 'gotchas' %} 일반적인 실수는 전체 웹페이지를 단일 형식으로 래핑하는 것이지만 이는 브라우저 비밀번호 관리자 및 자동 완성에 문제를 일으킬 수 있습니다. 양식이 필요한 각 UI 구성 요소에 대해 다른 &lt;form&gt;을 사용합니다. 예를 들어 동일한 페이지에서 로그인과 검색이 있는 경우 두 개의 양식 요소를 사용해야 합니다. {% endAside %}
+{% Aside 'gotchas' %} 일반적인 실수는 전체 웹페이지를 단일 형식으로 래핑하는 것이지만 이는 브라우저 비밀번호 관리자 및 자동 완성에 문제를 일으킬 수 있습니다. 양식이 필요한 각 UI 구성 요소에 대해 다른 &lt;form&gt;을 사용합니다. 예를 들어 동일한 페이지에서 로그인과 검색이 있는 경우 두 개의 양식 요소를 사용해야 합니다. {% endAside %}
 
 ### `<label>` 사용 {: #label }
 
