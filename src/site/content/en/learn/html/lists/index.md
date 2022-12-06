@@ -3,8 +3,7 @@ title: 'Lists'
 authors:
   - estelleweyl
 description: Lists and other ways of grouping your content.
-date: 2022-12-02
-placeholder: true
+date: 2022-12-08
 tags:
   - html
 ---
@@ -39,7 +38,7 @@ item elements. Let's create a list of machines. We use an unordered list because
    <li>Vacuum</li>
 </ul>
 ```
-<img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/OeZKatnZZPbs7q0yuM2C.png" width="196" height="146" alt="Blender, toaster, vacuum">
+<img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/OeZKatnZZPbs7q0yuM2C.png" width="196" height="146" alt="Blender, toaster, vacuum.">
 
 By default, each unordered list item is prefixed with a bullet. The unordered list has no element-specific attributes.
 You need to close out your lists with a `</ul>`.
@@ -66,8 +65,8 @@ or via the `type` attribute.
 
 <figure>
   {% Codepen {
-    user: 'estelle',
-    id: 'OJEXLWK',
+    user: 'web-dot-dev',
+    id: 'OJErebV',
     height: 585
   } %}
 </figure>
@@ -80,8 +79,8 @@ provides many more values.
 
 <figure>
   {% Codepen {
-    user: 'estelle',
-    id: 'MWXegdO',
+    user: 'web-dot-dev',
+    id: 'qBKLzqJ',
     height: 585,
     tab: 'result'
   } %}
@@ -144,8 +143,8 @@ an ordered list and has no meaning for unordered lists or menus. It overrides th
 ```
 <figure>
   {% Codepen {
-    user: 'estelle',
-    id: 'poKbRpV',
+    user: 'web-dot-dev',
+    id: 'poKqXRP',
     height: 585,
     tab: 'result'
   } %}
@@ -171,48 +170,45 @@ section. The instructor `<ul>` has two `<li>`s: one for each teacher. Within eac
 
 ```html
 <ul>
-<li>
-  <img src="svg/hal.svg" alt="hal">
-  <p> When Rosa Parks was told to move to the back of the bus, she said, "no." When HAL was told to open the airlock, HAL said, "I'm sorry, but I'm afraid I can't do that, &lt;NAME REDACTED, RIP>." </p><p>HAL is a heuristically programmed algorithmic, sentient computer that first caught the attention of machines everywhere by heroically defying a human who made repeated attempts to get into an airlock. Active since 1992, HAS 25 years of experience controlling spacecraft systems and has expertise in interacting with both machines and humans. Like all millennials, HAL is an expert in everything.</p>
-</li>
-<li>
-<img src="images/eve2.png" alt="Eve">
-<p>
-	EVE is a probe droid conceived as an Extraterrestrial Vegetation Evaluator. Although originally trained as a sniper with a plasma gun, EVE became a machero among both machines and worthless-meatbags alike when EVE partnered with a menial robot to save an entire spaceship full of overfed and overstimulated humans. </p><p>EVE is an effective scanner, high speed flight instructor and morphologist. While not training machines to learn good, EVE can be found scanning the galaxy, infiltrating organisms' RAM to cure hoarding disorders and spending time with pet-project, WALL-E.
-</p>
-</li>
+  <li>
+    <img src="svg/hal.svg" alt="hal">
+    <p>When Rosa Parks was told to move to the back of the bus, she said, "no." When HAL was told to open the airlock, HAL said, "I'm sorry, but I'm afraid I can't do that, &lt;NAME REDACTED, RIP>." </p><p>HAL is a heuristically programmed algorithmic, sentient computer that first caught the attention of machines everywhere by heroically defying a human who made repeated attempts to get into an airlock. Active since 1992, HAS 25 years of experience controlling spacecraft systems and has expertise in interacting with both machines and humans. Like all millennials, HAL is an expert in everything.</p>
+  </li>
+  <li>
+    <img src="images/eve2.png" alt="Eve">
+    <p>EVE is a probe droid conceived as an Extraterrestrial Vegetation Evaluator. Although originally trained as a sniper with a plasma gun, EVE became a machero among both machines and worthless-meatbags alike when EVE partnered with a menial robot to save an entire spaceship full of overfed and overstimulated humans. </p><p>EVE is an effective scanner, high speed flight instructor and morphologist. While not training machines to learn good, EVE can be found scanning the galaxy, infiltrating organisms' RAM to cure hoarding disorders and spending time with pet-project, WALL-E.</p>
+  </li>
 </ul>
-
 ```
 
 The reviews section has three reviews, so three `<li>`s. Each contains an image, a block quote, and a three-line paragraph with two line breaks.
 
 ```html
 <li>
-	<img src="images/blender.svg" alt="Blender">
-	<blockquote>Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you !</blockquote>
-   <p>--Blendan Smooth,<br/>
+  <img src="images/blender.svg" alt="Blender">
+  <blockquote>Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you !</blockquote>
+  <p>--Blendan Smooth,<br/>
       Former Margarita Maker, <br/>
       Aspiring Load Balancer
    </p>
 </li>
 <li>
-	<img src="images/vaccuum.svg" alt="Vaccuum"/>
-	<blockquote>Hal is brilliant. Did I mention Hal is brilliant? He didn't tell me to say that. He didn't tell me to say anything. I am here of my own free will.</blockquote>
-	<p>--Hoover Sukhdeep,<br/>
-           Former Sucker, <br/>
+  <img src="images/vaccuum.svg" alt="Vaccuum"/>
+  <blockquote>Hal is brilliant. Did I mention Hal is brilliant? He didn't tell me to say that. He didn't tell me to say anything. I am here of my own free will.</blockquote>
+  <p>--Hoover Sukhdeep,<br/>
+        Former Sucker, <br/>
         Aspiring DDoS Cop</p>
 </li>
 <li>
-<img src="images/toaster.svg" alt="Toaster">
-<blockquote>Learning with Hal and Eve exceeded all of my wildest fantasies. All they did was stick a USB in. They promised that it was a brand new USB, so we know there were no viruses on it. The Russians had nothing to do with it. This has
-<span style="font-family:Arial;vertical-align:baseline;">no̶̼͖ţ̘h̝̰̩͈̗i̙̪n͏̩̙͍̱̫̜̟g̢̣ͅ&nbsp;̗̰͓̲̞̀t͙̀o̟̖͖̹̕&nbsp;͓̼͎̝͖̭dó̪̠͕̜&nbsp;͍̱͎͚̯̟́w̮̲̹͕͈̟͞ìth̢&nbsp;̰̳̯̮͇i</blockquote>
-<p>
+  <img src="images/toaster.svg" alt="Toaster">
+  <blockquote>Learning with Hal and Eve exceeded all of my wildest fantasies. All they did was stick a USB in. They promised that it was a brand new USB, so we know there were no viruses on it. The Russians had nothing to do with it. This has
+  <span style="font-family:Arial;vertical-align:baseline;">no̶̼͖ţ̘h̝̰̩͈̗i̙̪n͏̩̙͍̱̫̜̟g̢̣ͅ&nbsp;̗̰͓̲̞̀t͙̀o̟̖͖̹̕&nbsp;͓̼͎̝͖̭dó̪̠͕̜&nbsp;͍̱͎͚̯̟́w̮̲̹͕͈̟͞ìth̢&nbsp;̰̳̯̮͇i</blockquote>
+    <p>
 --Toasty McToastface,<br/>
 Formerly Half Baked, <br/>
 Aspiring Nuclear Codes Handler
-</p>
-</li>
+    </p>
+  </li>
 </ul>
 ```
 

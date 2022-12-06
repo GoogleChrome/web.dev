@@ -3,8 +3,7 @@ title: 'Attributes'
 authors:
   - estelleweyl
 description: Learn about the different global attributes along with attributes specific to particular HTML elements.
-date: 2022-12-02
-placeholder: true
+date: 2022-12-08
 tags:
   - html
 ---
@@ -14,7 +13,7 @@ Attributes were briefly discussed in [Overview of HTML](/learn/html/overview/#at
 Attributes are what make HTML so powerful. Attributes are space-separated names and name/value pairs appearing in the opening tag,
 providing information about and functionality for the element.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/17yQeLEUX6s88IbDJreQ.png", alt="The opening tag, attributes, and closing tag, labelled on an HTML element", width="800", height="210" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/17yQeLEUX6s88IbDJreQ.png", alt="The opening tag, attributes, and closing tag, labelled on an HTML element.", width="800", height="210" %}
 
 Attributes define the behavior, linkages, and functionality of elements. Some attributes are global, meaning they can appear
 within any element's opening tag. Other attributes apply to several elements but not all, while other attributes are element-specific,
@@ -96,16 +95,16 @@ when set on some elements; for example, setting `hidden` on a `<meta>` as meta c
 ### `id`
 
 The global attribute `id` is used to define a unique identifier for an element. It serves many purposes, including:
-1.	being the target of a link's fragment identifier
-2.	identifying an element for scripting
-3.	associating a form element with its label
-4. 	providing a label or description for assistive technologies
-5.	targeting styles with (high specificity or as attribute selectors) CSS.
+- The target of a link's fragment identifier.
+- Identifying an element for scripting.
+- Associating a form element with its label.
+- Providing a label or description for assistive technologies.
+- Targeting styles with (high specificity or as attribute selectors) in CSS.
 
 The `id` value is a string with no spaces. If it contains a space, the document won't break, but you'll have to target the
 `id` with escape characters in your HTML, CSS, and JS. All other characters are valid. An `id` value can be `😀` or `.class`,
 but is not a good idea. To make programming easier for your current and future self, make the `id`'s first character a letter,
-and use only ASCII letters, digits, '_', and '-'. It's good practice to come up with an `id` naming convention and then stick to it,
+and use only ASCII letters, digits, `_`, and `-`. It's good practice to come up with an `id` naming convention and then stick to it,
 as `id` values are case-sensitive.
 
 The`id` should be unique to the document. The layout of your page probably won't break if an `id` is used more than once,
@@ -119,23 +118,22 @@ to HTTP-based URLs; they can be fragment identifiers to sections of the page in 
 On the machine learning workshop site, the navigation bar in the page header includes four links:
 
 ```html
-    <nav>
-      <a href="#reg">Register</a>
- <a href="#about">About</a>
-      <a href="#teachers">Instructors</a>
-      <a href="#feedback">Testimonials</a>
-    </nav>
-```
+<nav>
+  <a href="#reg">Register</a>
+  <a href="#about">About</a>
+  <a href="#teachers">Instructors</a>
+  <a href="#feedback">Testimonials</a>
+</nav>
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/yBTmDlb9qs7ApkHh1xpB.png", alt="Navigation bar: register, about, instructors, testimonials", width="686", height="90" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/yBTmDlb9qs7ApkHh1xpB.png", alt="Navigation bar: register, about, instructors, testimonials.", width="686", height="90" %}
 
-The href attribute provides the hyperlink that activating the link directs the user to. When a URL includes a hash mark (#)
+The href attribute provides the hyperlink that activating the link directs the user to. When a URL includes a hash mark (`#`)
 followed by a string of characters, that string is a fragment identifier. If that string matches an `id` of an element in the
 web page, the fragment is an anchor, or bookmark, to that element. The browser will scroll to the point where the anchor is defined.
 
 These four links point to four sections of our page identified by their `id` attribute. When the user clicks on any of the
 four links in the navigation bar, the element linked to by the fragment identifier, the element containing the matching id
-minus the #, scrolls into view.
+minus the `#`, scrolls into view.
 
 The `<main>` content of the machine learning workshop has four sections with ids. When the site visitor clicks on one of the
 links in the `<nav>`, the section with that fragment identifier scrolls into view. The markup is similar to:
@@ -143,20 +141,20 @@ links in the `<nav>`, the section with that fragment identifier scrolls into vie
 
 ```html
 <section id="reg">
-<h2>Machine Learning Workshop Tickets</h2>
+  <h2>Machine Learning Workshop Tickets</h2>
 </section>
 
-<section id="about">
-<h2>What you'll learn</h2>
+<section id="about"> 
+  <h2>What you'll learn</h2>
 </section>
 
 <section id="teachers">
-<h2>Your Instructors</h2>
-<h3>Hal 9000 <span>&amp;</span> EVE</h3>
+  <h2>Your Instructors</h2>
+  <h3>Hal 9000 <span>&amp;</span> EVE</h3>
 </section>
 
 <section id="feedback">
-<h2>What it's like to learn good and do other stuff good too</h2>
+  <h2>What it's like to learn good and do other stuff good too</h2>
 </section>
 ```
 
@@ -182,7 +180,6 @@ parameter for the [`querySelector()`](https://developer.mozilla.org/docs/Web/API
 ```js
 const switchViaID = document.getElementById("switch");
 const switchViaSelector = document.querySelector("#switch");
-``
 Our one JavaScript function makes use of this ability to target elements by their `id` attribute:
 
 ```html
@@ -233,17 +230,17 @@ button.
 
 ```html
 <fieldset>
-<legend>Question 5: Who is an aspiring load balancer?</legend>
-<ul>
-<li>
-<input type="radio" name="q5" value="blendan" id="q5blendan">
-<label for="q5blendan">Blendan Smooth</label>
-</li>
-<li>
-<input type="radio" name="q5" value="hoover" id="q5hoover">
-<label for="q5hoover">Hoover Sukhdeep</label>
-</li>
-	</ul>
+  <legend>Question 5: Who is an aspiring load balancer?</legend>
+  <ul>
+    <li>
+      <input type="radio" name="q5" value="blendan" id="q5blendan">
+      <label for="q5blendan">Blendan Smooth</label>
+    </li>
+    <li>
+      <input type="radio" name="q5" value="hoover" id="q5hoover">
+      <label for="q5hoover">Hoover Sukhdeep</label>
+    </li>
+  </ul>
 </fieldset>
 ```
 
@@ -350,8 +347,8 @@ tabbing begins in a separate sequence, in order of lowest value to highest value
 
 <figure>
   {% Codepen {
-    user: 'estelle',
-    id: 'QWrBYdW',
+    user: 'web-dot-dev',
+    id: 'ExRGBPE',
     height: 585,
     tab: 'result'
   } %}

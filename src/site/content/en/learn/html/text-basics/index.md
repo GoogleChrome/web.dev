@@ -3,8 +3,7 @@ title: 'Text basics'
 authors:
   - estelleweyl
 description: How to format text using HTML.
-date: 2022-12-02
-placeholder: true
+date: 2022-12-08
 tags:
   - html
 ---
@@ -27,7 +26,7 @@ By default, browsers style `<h1>` the largest, `<h2>` slightly smaller, with eac
 by default. Interestingly, browsers by default also decrement the `<h1>` font size based on how many `<article>`, `<aside>`, `<nav>`, or
 `<section>` elements it is nested in.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ktRJF3DKyFHtfLifJXkn.png", alt="Nested H1 examples", width="242", height="548" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ktRJF3DKyFHtfLifJXkn.png", alt="Nested H1 examples.", width="242", height="548" %}
 
 Some user agent stylesheets include the following selectors, or similar, to style nested `<h1>` elements as if they were
 of a less important level:
@@ -194,7 +193,7 @@ by the character set need to be escaped. If needed, there are [many tools](https
 or you can just ensure you include [`<meta charset="UTF-8">`](/learn/html/document-structure/#character-encoding) in the `<head>`.
 
 Even when you specify the character set as UTF-8, you still have to escape the `<` when you want to print that character to the screen.
-Generally, you don't need to include the named character references for >, ", or &; but if you want to write a tutorial on HTML entities,
+Generally, you don't need to include the named character references for `>`, `"`, or `&`; but if you want to write a tutorial on HTML entities,
 you do need to write `&amp;lt;` when teaching someone how to code a `<`. 😀
 
 Oh, and that smiley emoji is `&#x1F600;`, but this doc is declared as UTF-8, so it isn't escaped.
