@@ -63,9 +63,6 @@ or via the `type` attribute.
   </figure>
   <figure>
     <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GUQggsTUFRrEpZVxU0x9.png" alt="Blender, toaster, vacuum, in an ordered, numbered list.">
-    <figcaption>
-      An ordered, numbered list.
-    </figcaption>
   </figure>
 </div>
 
