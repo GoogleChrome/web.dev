@@ -222,26 +222,26 @@ unordered list with links to these two sections:
 
 ```html
 <ul role="list">
-    <li>
-   	 <a href="#e">Elements</a>
-   	 <ul>
-   		 <li>
-   			 <a href="#nr">Non-replaced elements</a>
-   		 </li>
-   		 <li>
-   			 <a href="#rave">Replaced and void elements</a>
-   		 </li>
-   	 </ul>
-    </li>
-    <li>
-   	 <a href="#a">Attributes</a>
-    </li>
-    <li>
-   	 <a href="#aoe">Appearance of elements</a>
-    </li>
-    <li>
-   	 <a href="#e2">Element, attributes, and JavaScript</a>
-    </li>
+  <li>
+    <a href="#e">Elements</a>
+    <ul>
+      <li>
+        <a href="#nr">Non-replaced elements</a>
+      </li>
+      <li>
+        <a href="#rave">Replaced and void elements</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#a">Attributes</a>
+  </li>
+  <li>
+    <a href="#aoe">Appearance of elements</a>
+  </li>
+  <li>
+    <a href="#e2">Element, attributes, and JavaScript</a>
+  </li>
 </ul>
 ```
 

@@ -285,38 +285,38 @@ span that is dynamically updated, and which is visible to screen reader users. A
 
 ```html
 <table>
-<caption aria-live="polite">MLW alumni <span class="sr">Sorted by name descending</span></caption>
-<thead>
-<tr>
-<th scope="col" aria-sort="ascending">
-  <button type="button">
-  	<span>Name</span>
-  	<svg aria-hidden="true">
-		<use href="#downArrow"></use>
-</svg>
-	</div>
-  </button>
-</th>
-<th scope="col">
-  <button type="button">
-  	<span>Destiny</span>
-  	<svg aria-hidden="true">
-		<use href="#sortMe"></use>
-</svg>
-	</div>
-  </button>
-</th>
-<th scope="col">
-  <button type="button">
-  	<span>Year</span>
-  	<svg aria-hidden="true">
-		<use href="#sortMe"></use>
-</svg>
-	</div>
-  </button>
-</th>
-</tr>
-</thead>
+  <caption aria-live="polite">MLW alumni <span class="sr">Sorted by name descending</span></caption>
+  <thead>
+  <tr>
+    <th scope="col" aria-sort="ascending">
+      <button type="button">
+        <span>Name</span>
+        <svg aria-hidden="true">
+          <use href="#downArrow"></use>
+        </svg>
+        </div>
+      </button>
+    </th>
+    <th scope="col">
+      <button type="button">
+        <span>Destiny</span>
+        <svg aria-hidden="true">
+          <use href="#sortMe"></use>
+        </svg>
+        </div>
+      </button>
+    </th>
+    <th scope="col">
+      <button type="button">
+        <span>Year</span>
+        <svg aria-hidden="true">
+          <use href="#sortMe"></use>
+        </svg>
+        </div>
+      </button>
+    </th>
+  </tr>
+  </thead>
 ```
 If you're not presenting tabular data, don't use a `<table>`. If you do use a table for presentation, set `role="none"`.
 

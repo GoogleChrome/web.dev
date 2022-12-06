@@ -57,7 +57,6 @@ The #about section has a heading and a few paragraphs:
 </section>
 ```
 
-{% Aside %}
 This section is not a landmark as it doesn't have an accessible name. To turn this into a `region`, which is a landmark role, you can use `aria-labelledby` to provide the accessible name:
 
 ```html
@@ -65,7 +64,6 @@ This section is not a landmark as it doesn't have an accessible name. To turn th
 <h2 id="about_heading">What you'll learn</h2>
 ```
 Only create landmarks if and when appropriate. Having too many landmarks can quickly become disorienting for screen reader users.
-{% endAside %}
 
 ## Quotes and citations
 
