@@ -33,13 +33,13 @@ item elements. Let's create a list of machines. We use an unordered list because
 
 <div class="switcher">
   <figure>
-    <code>
+    <code-html>
       <ul>
         <li>Blender</li>
         <li>Toaster</li>
         <li>Vacuum</li>
       </ul>
-    </code>
+    </code-html>
   </figure>
   <figure>
     <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/fLffpFWfFQHTc3pbNBbk.png" alt="Blender, toaster, vacuum, listed with bullet points.">
@@ -57,13 +57,13 @@ or via the `type` attribute.
 
 <div class="switcher">
   <figure>
-    <code>
+    <code-html>
       <ol>
         <li>Blender</li>
         <li>Toaster</li>
         <li>Vacuum</li>
       </ol>
-    </code>
+    </code-html>
   </figure>
   <figure>
     <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GUQggsTUFRrEpZVxU0x9.png" alt="Blender, toaster, vacuum, in an ordered, numbered list.">
@@ -75,13 +75,13 @@ or via the `type` attribute.
 
 <div class="switcher">
   <figure>
-    <code>
+    <code-html>
       <ol type="A">
         <li>Blender</li>
         <li>Toaster</li>
         <li>Vacuum</li>
       </ol>
-    </code>
+    </code-html>
   </figure>
   <figure>
     <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/u51WOjaphYQxv2Fd7dK9.png" alt="Blender, toaster, vacuum, in an ordered, lettered list.">
@@ -162,13 +162,13 @@ an ordered list and has no meaning for unordered lists or menus. It overrides th
 
 <div class="switcher">
   <figure>
-    <code>
+    <code-html>
       <ol start="4">
         <li value="7">Blender</li>
         <li value="29">Toaster</li>
         <li>Vacuum</li>
       </ol>
-    </code>
+    </code-html>
   </figure>
   <figure>
     <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/pwVGJoGtlHPqZGrf6QiK.png" alt="Value-set ordered list.">
@@ -180,13 +180,13 @@ an ordered list and has no meaning for unordered lists or menus. It overrides th
 
 <div class="switcher">
   <figure>
-    <code>
+    <code-html>
       <ol type="A" start="33">
         <li value="7">Blender</li>
         <li value="29">Toaster</li>
         <li>Vacuum</li>
       </ol>
-    </code>
+    </code-html>
   </figure>
   <figure>
     <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/JBpz7xcPb3hfTPs87Guc.png" alt="Value-set ordered list.">
