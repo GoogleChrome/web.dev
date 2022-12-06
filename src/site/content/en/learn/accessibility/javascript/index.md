@@ -286,10 +286,10 @@ with the issues described in the previous section.
 
 Here are some live packages for common JavaScript frameworks:
 
-* [react-aria-Live](https://www.npmjs.com/package/react-aria-live)
-* [react-a11y-announcer](https://github.com/thinkcompany/react-a11y-announcer)
-* [Angular Material `LiveAnnouncer`](https://material.angular.io/cdk/a11y/overview#liveannouncer)
-* [vue-a11y-utils](https://jinjiang.dev/vue-a11y-utils/#vuelive-component)
+* React: [react-aria-live](https://www.npmjs.com/package/react-aria-live) and 
+  [react-a11y-announcer](https://github.com/thinkcompany/react-a11y-announcer)
+* Angular: [`LiveAnnouncer`](https://material.angular.io/cdk/a11y/overview#liveannouncer)
+* Vue: [vue-a11y-utils](https://jinjiang.dev/vue-a11y-utils/#vuelive-component)
 
 Modern JavaScript is a powerful language that allows web developers to create
 robust web applications. This sometimes leads to over-engineering and, by
