@@ -3,8 +3,7 @@ title: 'Navigation'
 authors:
   - estelleweyl
 description: Navigation is a key element of any site of application, and it starts with HTML.
-date: 2022-12-02
-placeholder: true
+date: 2022-12-08
 tags:
   - html
 ---
@@ -25,7 +24,7 @@ Always make sure users can navigate to any page on your site with the fewest num
 is intuitive and not overwhelming. That said, there are no specific requirements for navigational elements. [MachineLearningWorkshop.com](https://machinelearningworkshop.com),
 being a single-page website, has a local navigation bar in the top right; this is where multi-page sites often put their global navigation.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/La9US0lz2juPUVWESfTw.png", alt="The front page of machinelearningworkshop.com, including the navigation bar at top-right", width="600", height="223" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/La9US0lz2juPUVWESfTw.png", alt="The front page of machinelearningworkshop.com, including the navigation bar at top-right.", width="600", height="223" %}
 
 If you are viewing this page on web.dev, you can spot a few navigational features. There is a breadcrumb above the title,
 an "on this page" table of contents after the title, and a "Learn HTML" table of contents that, depending on the width of your screen,
@@ -49,7 +48,7 @@ a landmark `<main>` with an `id` of `main`:
 You may never have seen the link on this site, even if you have read through all the previous sections.
 It is only displayed when it has focus:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ieTOzelKA243HJj195b5.png", alt="Skip to Main button", width="680", height="300" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ieTOzelKA243HJj195b5.png", alt="Skip to Main button.", width="680", height="300" %}
 
 For improved usability and accessibility, it's important to let users bypass the blocks of content that are repeated on every page.
 The skip link is included so when a keyboard user hits `tab` on load, they can quickly skip to the main content of the site—avoiding
@@ -182,7 +181,7 @@ const sections = url.hostname + url.pathname.split('/');
 
 The sections of the breadcrumb show the path from the current page back to the home page, showing each level in-between.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/DNpEzCXqogU6qfJWduLo.png", alt="ALT_TEXT_HERE", width="300", height="75" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/DNpEzCXqogU6qfJWduLo.png", alt="Breadcrumbs indicating the path to the current page.", width="300", height="75" %}
 
 Every Learn HTML module page has the same breadcrumb navigation, displaying the hierarchy of the `HTML` lessons within the
 `learn` section of `web.dev`. The code is similar to the following, with classes and SVG details removed for clarity:
@@ -258,18 +257,17 @@ Should the design change, an alternative version of the breadcrumb could be used
     <ol role="list">
  	<li>
           <a href="/">Home</a>
-</li>
-<li>
-    <a href="/learn/">Learn</a></li>
-<li>
-    <a href="/learn/html">Learn HTML!</a>
-</li>
-<li aria-current="page">
-Navigation
-</li>
+        </li>
+        <li>
+          <a href="/learn/">Learn</a></li>
+        <li>
+          <a href="/learn/html">Learn HTML!</a>
+        </li>
+        <li aria-current="page">
+          Navigation
+        </li>
     </ol>
 </nav>
-```
 
 Breadcrumbs are not for linear steps. For example, a list of the path the user followed to get to the current page or the
 list of steps followed up to this point in a recipe can be nested within a `<nav>`,  but should not be labeled as a breadcrumb.

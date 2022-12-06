@@ -3,8 +3,7 @@ title: 'Tables'
 authors:
   - estelleweyl
 description: Understanding how to use tables to mark up tabular data.
-date: 2022-12-02
-placeholder: true
+date: 2022-12-08
 tags:
   - html
 ---
@@ -204,7 +203,7 @@ being placed on the cell in the top row.
 ```
 
 In this example, the table header contains two rows. The first header row contains three cells spanning four columns: the middle cell
-has `colspan="2"`. This merges two adjacent cells. The first and last cells include `rowspan="2". This merges the cell with the cell
+has `colspan="2"`. This merges two adjacent cells. The first and last cells include `rowspan="2"`. This merges the cell with the cell
 in the adjacent row, immediately beneath it.
 
 The second row in the table header contains two cells; these are the cells for the second and third columns in the second row.

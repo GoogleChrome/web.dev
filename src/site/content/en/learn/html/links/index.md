@@ -3,8 +3,7 @@ title: 'Links'
 authors:
   - estelleweyl
 description: Everything you need to know about links.
-date: 2022-12-02
-placeholder: true
+date: 2022-12-08
 tags:
   - html
 ---
@@ -12,7 +11,7 @@ tags:
 In the introduction to the attributes section, you saw an example showing how attributes are added to the opening tag.
 The example used the `<a>` tag, but neither the element nor the specific attributes introduced in that example were discussed:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/17yQeLEUX6s88IbDJreQ.png", alt="The opening tag, attributes, and closing tag, labelled on an HTML element", width="800", height="210" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/17yQeLEUX6s88IbDJreQ.png", alt="The opening tag, attributes, and closing tag, labelled on an HTML element.", width="800", height="210" %}
 
 The `<a>` anchor tag, along with the `href` attribute, create a hyperlink. Links are the backbone of the internet. The [first web page](http://info.cern.ch/hypertext/WWW/TheProject.html)
 contained 25 links, reading "Everything there is online about W3 is linked directly or indirectly to this document." In all likelihood, everything there is online
