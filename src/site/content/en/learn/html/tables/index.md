@@ -147,6 +147,9 @@ tr > * {
   </tbody>
 </table>
 ```
+
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/asjy7h46GucIvXXyoYBP.png", alt="A three column table discussing MLQ alumni.", width="506", height="286" %}
+
 In this example, we have a caption, a table header, and a table body. The header has one row containing three header `<th>` cells,
 thereby creating three columns. The body contains three rows of data: the first cell is a header cell for the row, so we use `<th>` instead of `<td>`.
 
@@ -202,6 +205,8 @@ being placed on the cell in the top row.
 </table>
 ```
 
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lqQSJCZxqvjhjAKqAKrr.png", alt="A four column merged cell table.", width="740", height="332" %}
+
 In this example, the table header contains two rows. The first header row contains three cells spanning four columns: the middle cell
 has `colspan="2"`. This merges two adjacent cells. The first and last cells include `rowspan="2"`. This merges the cell with the cell
 in the adjacent row, immediately beneath it.
@@ -256,6 +261,8 @@ but with a smattering of 9th and 10th column cells, depending on what row or col
 
 Unfortunately, only a few properties are supported, the styles aren't inherited into the cells, and the only way  of using the `<col>`
 element in targeting cells is with a complex selector including the [`:has()` relational selector](https://developer.mozilla.org/docs/Web/CSS/:has).
+
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/UJ6y8w7K3tReIJegOTSC.png", alt="Layered rendering of the elements used to design HTML tables.", width="518", height="403" %}
 
 If both the `<table>` and the `<colgroup>` have a background color, the `background-color` of the `<colgroup>` will be on top.
 The order of drawing is: table, column groups, columns, rowgroups, rows, with cells last and on top, as shown in the [schema of table
