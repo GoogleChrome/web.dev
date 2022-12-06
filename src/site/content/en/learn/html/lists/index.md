@@ -40,7 +40,7 @@ item elements. Let's create a list of machines. We use an unordered list because
     </ul>
   </figure>
   <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/fLffpFWfFQHTc3pbNBbk.png", alt="Blender, toaster, vacuum, listed with bullet points.">
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/fLffpFWfFQHTc3pbNBbk.png", alt="Blender, toaster, vacuum, listed with bullet points.", width="212", height="142">
   </figure>
 </div>
 
@@ -62,7 +62,7 @@ or via the `type` attribute.
     </ol>
   </figure>
   <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GUQggsTUFRrEpZVxU0x9.png", alt="Blender, toaster, vacuum, in an ordered, numbered list.">
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GUQggsTUFRrEpZVxU0x9.png", alt="Blender, toaster, vacuum, in an ordered, numbered list.", width="212", height="142">
   </figure>
 </div>
 
@@ -75,7 +75,7 @@ or via the `type` attribute.
     </ol>
   </figure>
   <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/u51WOjaphYQxv2Fd7dK9.png", alt="Blender, toaster, vacuum, in an ordered, lettered list.">
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/u51WOjaphYQxv2Fd7dK9.png", alt="Blender, toaster, vacuum, in an ordered, lettered list.", width="212", height="142">
   </figure>
 </div>
 
@@ -117,7 +117,7 @@ The `start` attribute sets the starting value. The default is `1`.
     </ol>
   </figure>
   <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ks0SEWQPeIll4UwknFSM.png", alt="Blender, toaster, vacuum, in an reverse ordered, numbered list.">
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ks0SEWQPeIll4UwknFSM.png", alt="Blender, toaster, vacuum, in an reverse ordered, numbered list, width="212", height="142">
   </figure>
 </div>
 
@@ -158,7 +158,7 @@ an ordered list and has no meaning for unordered lists or menus. It overrides th
     </ol>
   </figure>
   <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/pwVGJoGtlHPqZGrf6QiK.png", alt="Value-set ordered list.">
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/pwVGJoGtlHPqZGrf6QiK.png", alt="Value-set ordered list.", width="212", height="142">
   </figure>
 </div>
 
@@ -173,7 +173,7 @@ an ordered list and has no meaning for unordered lists or menus. It overrides th
     </code-html>
   </figure>
   <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/JBpz7xcPb3hfTPs87Guc.png", alt="Value-set ordered list.">
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/JBpz7xcPb3hfTPs87Guc.png", alt="Value-set ordered list.", width="212", height="142">
   </figure>
 </div>
 
