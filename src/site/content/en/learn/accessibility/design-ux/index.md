@@ -21,7 +21,11 @@ How can we address all of the potential user needs at once? Enter inclusive desi
 approach that weaves together inclusivity, usability, and accessibility into one.
 
 <figure data-float="right">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/BIEvBV4I6VLhOjTK50rT.png", alt="A venn diagram where accessibility, inclusivity, and usability all meet in the middle as inclusive design.", width="400", height="388" %}
+{% Img
+  src="image/VbsHyyQopiec0718rMq2kTE1hke2/VqMZDtfUQpH0At8n2PF8.png",
+  alt="A venn diagram where accessibility, inclusivity, and usability all meet in the middle as inclusive design.",
+  width="400", height="390"
+%}
 </figure>
 
 And unlike universal design, which focuses on a single design that as many people can use as possible, inclusive design principles
