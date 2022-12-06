@@ -121,7 +121,7 @@ El siguiente nivel de optimización de CHR, en términos generales, es ajustar l
 
 ### Auditoria inicial
 
-La mayoría de las CDN proporcionarán análisis de caché. Además, herramientas como [WebPageTest](https://webpagetest.org/) y [Lighthouse](/uses-long-cache-ttl/) también se pueden utilizar para verificar rápidamente que todos los recursos estáticos de una página se almacenen en caché durante el período de tiempo correcto. Esto se logra al verificar los encabezados de caché HTTP de cada recurso. El almacenamiento en caché de un recurso mediante el uso del tiempo de vida (TTL) máximo apropiado evitará búsquedas de origen innecesarias en el futuro y, por lo tanto, aumentará la CHR.
+La mayoría de las CDN proporcionarán análisis de caché. Además, herramientas como [WebPageTest](https://webpagetest.org/) y [Lighthouse](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/) también se pueden utilizar para verificar rápidamente que todos los recursos estáticos de una página se almacenen en caché durante el período de tiempo correcto. Esto se logra al verificar los encabezados de caché HTTP de cada recurso. El almacenamiento en caché de un recurso mediante el uso del tiempo de vida (TTL) máximo apropiado evitará búsquedas de origen innecesarias en el futuro y, por lo tanto, aumentará la CHR.
 
 Como mínimo, uno de estos encabezados generalmente debe configurarse para que una CDE almacene un recurso en caché:
 

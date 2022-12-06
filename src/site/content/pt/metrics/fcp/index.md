@@ -94,22 +94,22 @@ Para um exemplo completo de como medir a FCP em JavaScript, consulte [o código-
 
 ## Como melhorar a FCP
 
-Para aprender como melhorar a FCP para um site específico, você pode executar uma auditoria de desempenho do Lighthouse e prestar atenção a quaisquer [oportunidades](/lighthouse-performance/#opportunities) específicas ou [diagnósticos](/lighthouse-performance/#diagnostics) que a auditoria sugerir.
+Para aprender como melhorar a FCP para um site específico, você pode executar uma auditoria de desempenho do Lighthouse e prestar atenção a quaisquer [oportunidades](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) específicas ou [diagnósticos](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics) que a auditoria sugerir.
 
 Para saber como melhorar a FCP em geral (para qualquer site), consulte os seguintes guias de desempenho:
 
-- [Elimine recursos que causam bloqueio de renderização](/render-blocking-resources/)
-- [Minifique o CSS](/unminified-css/)
-- [Remova o CSS não utilizado](/unused-css-rules/)
-- [Pré-conecte a origens necessárias](/uses-rel-preconnect/)
+- [Elimine recursos que causam bloqueio de renderização](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [Minifique o CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [Remova o CSS não utilizado](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [Pré-conecte a origens necessárias](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [Reduza os tempos de resposta do servidor (TTFB)](/ttfb/)
-- [Evite múltiplos redirecionamentos de página](/redirects/)
-- [Pré-carregue solicitações importantes](/uses-rel-preload/)
-- [Evite enormes cargas de rede](/total-byte-weight/)
-- [Sirva ativos estáticos com uma política de cache eficiente](/uses-long-cache-ttl/)
-- [Evite um tamanho excessivo do DOM](/dom-size/)
-- [Minimize a profundidade de solicitações críticas](/critical-request-chains/)
-- [Certifique-se que o texto permanece visível durante o carregamento de webfonts](/font-display/)
-- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](/resource-summary/)
+- [Evite múltiplos redirecionamentos de página](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [Pré-carregue solicitações importantes](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Evite enormes cargas de rede](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [Sirva ativos estáticos com uma política de cache eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [Evite um tamanho excessivo do DOM](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [Minimize a profundidade de solicitações críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [Certifique-se que o texto permanece visível durante o carregamento de webfonts](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

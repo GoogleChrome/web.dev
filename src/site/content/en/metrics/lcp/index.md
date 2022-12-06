@@ -35,7 +35,7 @@ If a page shows a splash screen or displays a loading indicator, this moment is
 not very relevant to the user.
 
 In the past we've recommended performance metrics like [First Meaningful Paint
-(FMP)](/first-meaningful-paint/) and [Speed Index (SI)](/speed-index/) (both
+(FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) and [Speed Index (SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) (both
 available in Lighthouse) to help capture more of the loading experience after
 the initial paint, but these metrics are complex, hard to explain, and often
 wrong&mdash;meaning they still do not identify when the main content of the page

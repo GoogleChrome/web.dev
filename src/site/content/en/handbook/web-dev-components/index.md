@@ -173,6 +173,20 @@ Use the codelab aside to link to an associated codelab.
   [Using Imagemin with Grunt](#)
 {% endAside %}
 
+### Update asides
+
+```text
+{% raw %}&#123;% Aside 'update' %&#125;
+Use the update aside in select cases where updates concerning a developing 
+situation around a certain API or metric can be effectively communicated.
+&#123;% endAside %&#125;{% endraw %}
+```
+
+{% Aside 'update' %}
+Use the update aside in select cases where updates concerning a developing 
+situation around a certain API or metric can be effectively communicated.
+{% endAside %}
+
 ## Banners
 
 ### Default banners

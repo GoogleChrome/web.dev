@@ -64,7 +64,7 @@ From a user perspective the most important metrics are:
 +   **[First Contentful Paint (FCP)](/fcp/):**
     The time the user stares at a blank screen. This is
     when most users bounce, as they don't see progress.
-+   **[First Meaningful Paint (FMP)](/first-meaningful-paint):**
++   **[First Meaningful Paint (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/):**
     When the user begins to see the main content they came for. This
     is often the hero image, but for a landing page it may even be a call to
     action such as a **Buy** button, since the user may have arrived with a clear

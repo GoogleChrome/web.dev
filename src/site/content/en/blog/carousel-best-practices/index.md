@@ -54,7 +54,7 @@ a carousel or elsewhere.
     can contribute to CLS. On pages with autoplaying carousels, this has the
     potential to cause infinite CLS. This type of CLS typically isn't apparent
     to the human eye, which makes the issue easy to overlook. To avoid this
-    issue, [avoid using non-composited animations](/non-composited-animations/)
+    issue, [avoid using non-composited animations](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)
     in your carousel (for example, during slide transitions).
 
 

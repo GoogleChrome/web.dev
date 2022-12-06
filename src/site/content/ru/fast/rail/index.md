@@ -133,7 +133,7 @@ tags:
 
 - Имейте в виду, что хотя мобильное устройство среднестатистического пользователя может сообщать о своем подключении к 2G, 3G или 4G, в действительности [эффективная скорость соединения](/adaptive-serving-based-on-network-quality/#how-it-works) часто значительно ниже из-за потери пакетов и непостоянства сети.
 
-- [Устраняйте ресурсы, блокирующие рендеринг](/render-blocking-resources/).
+- [Устраняйте ресурсы, блокирующие рендеринг](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/).
 
 - Для создания ощущения полной загрузки не обязательно загружать все ресурсы за 5 секунд. Применяйте [отложенную загрузку изображений](/browser-level-image-lazy-loading/), [разделение кода JavaScript](/reduce-javascript-payloads-with-code-splitting/) и другие [оптимизации, предлагаемые на web.dev](/fast/).
 
@@ -185,37 +185,37 @@ tags:
 
 **Response**
 
-- [Максимальная потенциальная задержка первого ввода (First Input Delay)](/lighthouse-max-potential-fid/). Оценивает, как долго ваше приложение будет реагировать на ввод данных пользователем, исходя из времени простоя основного потока.
+- [Максимальная потенциальная задержка первого ввода (First Input Delay)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). Оценивает, как долго ваше приложение будет реагировать на ввод данных пользователем, исходя из времени простоя основного потока.
 
-- [Не использует пассивные прослушиватели для повышения производительности прокрутки](/uses-passive-event-listeners/).
+- [Не использует пассивные прослушиватели для повышения производительности прокрутки](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/).
 
-- [Общее время блокировки (Total Blocking Time)](/lighthouse-total-blocking-time/). Измеряет общее время, в течение которого страница блокируется от ответа на действия пользователя, такие как щелчки мыши, касания экрана или нажатия клавиатуры.
+- [Общее время блокировки (Total Blocking Time)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/). Измеряет общее время, в течение которого страница блокируется от ответа на действия пользователя, такие как щелчки мыши, касания экрана или нажатия клавиатуры.
 
 - [Время до интерактивности (Time To Interactive)](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive). Определяет момент времени, когда пользователь сможет стабильно взаимодействовать со всеми элементами страницы.
 
 **Load**
 
-- [Не регистрирует сервис-воркер, который управляет страницей и start_url](/service-worker/). Сервис-воркер может кешировать общие ресурсы на устройстве пользователя, сокращая время, затрачиваемое на получение ресурсов по сети.
+- [Не регистрирует сервис-воркер, который управляет страницей и start_url](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/). Сервис-воркер может кешировать общие ресурсы на устройстве пользователя, сокращая время, затрачиваемое на получение ресурсов по сети.
 
-- [Загрузка страницы в мобильных сетях происходит недостаточно быстро](/load-fast-enough-for-pwa/).
+- [Загрузка страницы в мобильных сетях происходит недостаточно быстро](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
 
 - [Устраняйте ресурсы, блокирующие рендеринг](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).
 
-- [Отложите закадровые изображения](/offscreen-images/). Отложите загрузку закадровых изображений до тех пор, пока они не понадобятся.
+- [Отложите закадровые изображения](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/). Отложите загрузку закадровых изображений до тех пор, пока они не понадобятся.
 
-- [Правильно масштабируйте изображения](/uses-responsive-images/). Не показывайте изображения, размер которых значительно превышает размер, отображаемый в мобильной области просмотра.
+- [Правильно масштабируйте изображения](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/). Не показывайте изображения, размер которых значительно превышает размер, отображаемый в мобильной области просмотра.
 
-- [Избегайте цепочки критических запросов](/critical-request-chains/).
+- [Избегайте цепочки критических запросов](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-- [Не использует HTTP/2 для всех своих ресурсов](/uses-http2/).
+- [Не использует HTTP/2 для всех своих ресурсов](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
-- [Эффективно кодируйте изображения](/uses-optimized-images/).
+- [Эффективно кодируйте изображения](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 
-- [Включите сжатие текста](/uses-text-compression/).
+- [Включите сжатие текста](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/).
 
-- [Избегайте чрезмерных нагрузок на сеть](/total-byte-weight/).
+- [Избегайте чрезмерных нагрузок на сеть](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/).
 
-- [Избегайте чрезмерного размера DOM](/dom-size/). Уменьшите количество сетевых байтов, доставив только те узлы DOM, которые необходимы для рендеринга страницы.
+- [Избегайте чрезмерного размера DOM](https://developer.chrome.com/docs/lighthouse/performance/dom-size/). Уменьшите количество сетевых байтов, доставив только те узлы DOM, которые необходимы для рендеринга страницы.
 
 ### WebPageTest
 

@@ -94,7 +94,7 @@ can support all of your site's requirements.
 [collection]: /react#nextjs
 [prerendering]: https://developers.googleblog.com/2019/08/the-speed-benefit-of-amp-prerendering.html
 [tags]: https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml/#html-tags
-[blockers]: /render-blocking-resources
+[blockers]: https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/
 [why]: https://blog.amp.dev/2017/01/13/why-amp-caches-exist/
 [how]: https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached/#how-does-my-amp-page-get-cached?
 [amp-script]: https://amp.dev/documentation/components/amp-script/

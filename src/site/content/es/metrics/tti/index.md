@@ -54,19 +54,19 @@ TTI es una métrica que se mide mejor [en el laboratorio](/user-centric-performa
 
 Para ofrecer una buena experiencia de usuario, los sitios deben esforzarse por tener un Time to Interactive inferior a **5 segundos** cuando se prueban en el **hardware de un dispositivo móvil promedio**.
 
-Para obtener más información sobre cómo la TTI de su página afecta a su puntuación de rendimiento de Lighthouse, consulte [Cómo determina Lighthouse su puntuación TTI](/interactive/#how-lighthouse-determines-your-tti-score).
+Para obtener más información sobre cómo la TTI de su página afecta a su puntuación de rendimiento de Lighthouse, consulte [Cómo determina Lighthouse su puntuación TTI](https://developer.chrome.com/docs/lighthouse/performance/interactive/#how-lighthouse-determines-your-tti-score).
 
 ## Cómo mejorar TTI
 
-Para aprender a mejorar TTI para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](/lighthouse-performance/#opportunities) específica que sugiera la auditoría.
+Para aprender a mejorar TTI para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) específica que sugiera la auditoría.
 
 Para saber cómo mejorar la TTI en general (para cualquier sitio), consulte las siguientes normas de rendimiento:
 
-- [Minificar JavaScript](/unminified-javascript/)
-- [Preconectar a los orígenes requeridos](/uses-rel-preconnect/)
-- [Precargar solicitudes clave](/uses-rel-preload/)
-- [Reducir el impacto en el código de terceros](/third-party-summary/)
-- [Minimizar la profundidad de la solicitud crítica](/critical-request-chains/)
-- [Reducir el tiempo de ejecución de JavaScript](/bootup-time/)
-- [Minimizar el trabajo del subproceso principal](/mainthread-work-breakdown/)
-- [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](/resource-summary/)
+- [Minificar JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/)
+- [Preconectar a los orígenes requeridos](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
+- [Precargar solicitudes clave](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Reducir el impacto en el código de terceros](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [Minimizar la profundidad de la solicitud crítica](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [Reducir el tiempo de ejecución de JavaScript](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [Minimizar el trabajo del subproceso principal](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)

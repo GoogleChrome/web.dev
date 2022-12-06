@@ -141,7 +141,7 @@ Lembre-se de que os anúncios são um dos [maiores](/optimize-cls/#ads-embeds-an
 
 As animações que não são compostas podem se apresentar com baixa qualidade em dispositivos de baixo custo se tarefas pesadas de JavaScript estão mantendo o thread principal ocupado. Essas animações podem introduzir mudanças de layout.
 
-Se o Chrome descobrir que uma animação não pode ser composta, ele a reporta a uma leitura do Lighthouse DevTools, permitindo listar quais elementos com animações não foram compostos e por qual motivo. Você pode encontrá-los na auditoria [Evitar animações não compostas.](/non-composited-animations/)
+Se o Chrome descobrir que uma animação não pode ser composta, ele a reporta a uma leitura do Lighthouse DevTools, permitindo listar quais elementos com animações não foram compostos e por qual motivo. Você pode encontrá-los na auditoria [Evitar animações não compostas.](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)
 
 <figure>{% Img src = "image/1L2RBhCLSnXjCnSlevaDjy3vba73/heGuYXKeMrUftMvfrDU7.png", alt = "Auditoria para evitar animações não compostas", width = "800", height = "528"%}</figure>
 
@@ -179,11 +179,11 @@ Em seguida, podemos executar o Lighthouse novamente. Desta vez, podemos ver que 
 
 É comum usar recursos de terceiros para incorporar vídeos, postagens de mídia social ou widgets em páginas. Por padrão, a maioria das incorporações carrega rapidamente e pode vir com cargas caras que impactam negativamente a experiência do usuário. Isso é um desperdício se o terceiro não for crítico (por exemplo, se o usuário precisar rolar antes de vê-lo).
 
-Um padrão para melhorar o desempenho de tais widgets é [carregá-los lentamente na interação do usuário](https://addyosmani.com/blog/import-on-interaction/). Isso pode ser feito renderizando uma visualização leve do widget (uma fachada) e apenas carregar a versão completa se um usuário interagir com ela. O Lighthouse tem uma auditoria que recomendará recursos de terceiros que podem ser [carregados lentamente com uma fachada](/third-party-facades/), como incorporações de vídeo do YouTube.
+Um padrão para melhorar o desempenho de tais widgets é [carregá-los lentamente na interação do usuário](https://addyosmani.com/blog/import-on-interaction/). Isso pode ser feito renderizando uma visualização leve do widget (uma fachada) e apenas carregar a versão completa se um usuário interagir com ela. O Lighthouse tem uma auditoria que recomendará recursos de terceiros que podem ser [carregados lentamente com uma fachada](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/), como incorporações de vídeo do YouTube.
 
 <figure>{% Img src = "image/1L2RBhCLSnXjCnSlevaDjy3vba73/iciXy3oVlPH7VuwN7toy.png", alt = "Auditoria destacando que alguns recursos caros de terceiros podem ser substituídos", width = "800", height = "483"%}</figure>
 
-Como um lembrete, o Lighthouse [destacará o código de terceiros](/third-party-summary/) que bloqueia o thread principal por mais de 250ms. Isso pode revelar todos os tipos de scripts de terceiros (incluindo aqueles criados pelo Google) que podem valer a pena adiar ou carregar lentamente se o que eles renderizam exigir rolagem para visualizá-lo.
+Como um lembrete, o Lighthouse [destacará o código de terceiros](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/) que bloqueia o thread principal por mais de 250ms. Isso pode revelar todos os tipos de scripts de terceiros (incluindo aqueles criados pelo Google) que podem valer a pena adiar ou carregar lentamente se o que eles renderizam exigir rolagem para visualizá-lo.
 
 <figure>{% Img src = "image/1L2RBhCLSnXjCnSlevaDjy3vba73/K0Oxmu1XEN2P3NQIknyH.png", alt = "Reduza o custo da auditoria de JavaScript de terceiros", width = "800", height = "556"%}</figure>
 

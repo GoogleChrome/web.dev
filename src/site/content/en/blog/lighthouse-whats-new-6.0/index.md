@@ -95,7 +95,7 @@ Additionally, TBT correlates well with the field metric [First Input Delay](/fid
 
 ## Performance score update  {: #score }
 
-The [performance score in Lighthouse](/performance-scoring/) is calculated from a
+The [performance score in Lighthouse](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) is calculated from a
 weighted blend of multiple metrics to summarize a page's speed. The 6.0 performance score formula
 follows.
 
@@ -302,7 +302,7 @@ a new audit to check if your manifest.json supports this new format.
 
 ### Charset declaration {: #charset }
 
-The [meta charset element](/charset/) declares what character encoding should be used
+The [meta charset element](https://developer.chrome.com/docs/lighthouse/best-practices/charset/) declares what character encoding should be used
 to interpret an HTML document. If this element is missing, or if it is declared late in the
 document, browsers employ a number of heuristics to guess which encoding should be used. If a
 browser guesses incorrectly, and a late meta charset element is found, the parser generally throws

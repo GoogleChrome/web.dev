@@ -176,15 +176,15 @@ FID 値にはばらつきが予想されるため、FID をレポートする際
 
 ## FID の改善方法
 
-特定のサイトについて FID の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](/lighthouse-performance/#opportunities) (改善機会) に注目します。
+特定のサイトについて FID の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) (改善機会) に注目します。
 
 FID はユーザー環境で測定される指標ですが (Lighthouse はラボ環境で使用するメトリック ツールです)、FID を改善するためのガイダンスは、ラボ環境での指標である [Total Blocking Time (TBT)](/tbt/) を改善するためのガイダンスと同じです。
 
 FID の改善方法の詳細については、「[Optimize FID](/optimize-fid/) (FID を最適化する)」を参照してください。FID の改善にもつながる個別のパフォーマンス改善手法に関するその他のガイダンスについては、以下を参照してください。
 
-- [サードパーティ製コードの影響を減らす](/third-party-summary/)
-- [JavaScript の実行にかかる時間を短縮する](/bootup-time/)
-- [メイン スレッドの作業を最小限に抑える](/mainthread-work-breakdown/)
-- [リクエスト数を少なく、転送サイズを小さく維持する](/resource-summary/)<br>
+- [サードパーティ製コードの影響を減らす](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [JavaScript の実行にかかる時間を短縮する](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [メイン スレッドの作業を最小限に抑える](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [リクエスト数を少なく、転送サイズを小さく維持する](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)<br>
 
 {% include 'content/metrics/metrics-changelog.njk' %}

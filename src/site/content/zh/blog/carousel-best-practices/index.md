@@ -33,7 +33,7 @@ tags:
 
 - **CLS (Cumulative Layout Shift)**
 
-    数量惊人的轮播使用低质量的非合成动画，而导致 CLS 增加。在自动播放轮播的页面上，这可能导致无限的 CLS。这种类型的 CLS 通常对人眼来说并不明显，使得问题很容易被忽视。为避免此问题，请在轮播中[避免使用非合成动画](/non-composited-animations/)（例如，在幻灯片切换期间）。
+    数量惊人的轮播使用低质量的非合成动画，而导致 CLS 增加。在自动播放轮播的页面上，这可能导致无限的 CLS。这种类型的 CLS 通常对人眼来说并不明显，使得问题很容易被忽视。为避免此问题，请在轮播中[避免使用非合成动画](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)（例如，在幻灯片切换期间）。
 
 ## 性能最佳实践
 

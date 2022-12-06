@@ -17,7 +17,7 @@ tags:
 
 [load](https://developer.mozilla.org/docs/Web/Events/load) や [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) のような古い指標は、ユーザーが画面上で見ているものとは必ずしも一致しないため、 適切ではありません。また、[First Contentful Paint (視覚コンテンツの初期表示時間、FCP)](/fcp/) のようなユーザーを中心とした新しいパフォーマンス指標は、読み込みエクスペリエンスのごく初期の部分しかキャプチャできません。特にページにスプラッシュ スクリーンや読み込みインジケーターなどが表示されている場合には、この瞬間的な出来事はユーザーにとってあまり意味がありません。
 
-過去には、初期表示後の読み込みエクスペリエンスを把握するために [First Meaningful Paint (意味のある視覚コンテンツの初期表示時間、FMP)](/first-meaningful-paint/) や [Speed Index (スピード インデックス、SI)](/speed-index/) といったパフォーマンス指標を推奨してきました。しかしながら、これらの指標は複雑で説明が難しく、間違っている場合も多かったため、これらを使用してページのメイン コンテンツがいつ読み込まれたかを特定することはできませんでした。
+過去には、初期表示後の読み込みエクスペリエンスを把握するために [First Meaningful Paint (意味のある視覚コンテンツの初期表示時間、FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) や [Speed Index (スピード インデックス、SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) といったパフォーマンス指標を推奨してきました。しかしながら、これらの指標は複雑で説明が難しく、間違っている場合も多かったため、これらを使用してページのメイン コンテンツがいつ読み込まれたかを特定することはできませんでした。
 
 物事には、シンプルな方が好ましい場合があります。[W3C Web Performance ワーキング グループ](https://www.w3.org/webperf/)での議論や Google が実施した調査によると、ページのメイン コンテンツの読み込みタイミングをより正確に測定するためには、最も大きい要素がレンダリングされるタイミングの測定が重要であることが分かりました。
 

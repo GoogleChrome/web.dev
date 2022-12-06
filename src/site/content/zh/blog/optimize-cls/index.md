@@ -242,7 +242,7 @@ img {
 
 以下工具可以帮助您最大程度地减少这种情况：
 
-- <code>[font-display](/font-display/)</code>使您能够通过使用<code>auto</code>、<code>swap</code>、<code>block</code>、<code>fallback</code>和<code>optional</code>值来修改自定义字体的渲染行为。遗憾的是，所有这些值（除 [optional](http://crrev.com/749080) 外）都可能通过上述某种方式导致重排。
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code>使您能够通过使用<code>auto</code>、<code>swap</code>、<code>block</code>、<code>fallback</code>和<code>optional</code>值来修改自定义字体的渲染行为。遗憾的是，所有这些值（除 [optional](http://crrev.com/749080) 外）都可能通过上述某种方式导致重排。
 - [字体加载 API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) 可以减少获取必要字体所需的时间。
 
 从 Chrome 83 开始，我还会推荐以下做法：

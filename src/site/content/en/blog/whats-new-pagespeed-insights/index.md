@@ -237,11 +237,11 @@ origin over the last 28 days.
 performance issues, as it is collected in a controlled environment. The report
 shows the performance using metrics like[First Contentful
 Paint](/fcp/), [Largest Contentful Paint](/lcp/),
-[Speed Index](/speed-index/), [Cumulative Layout
+[Speed Index](https://developer.chrome.com/docs/lighthouse/performance/speed-index/), [Cumulative Layout
 Shift](/cls/), [Time to
 Interactive](/tti/), and [Total Blocking
 Time](/tbt/). Each metric is
-[scored](/performance-scoring/) and labeled with an icon
+[scored](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) and labeled with an icon
 indicating Good, Needs improvement, or Poor. This section provides a good
 indication of performance bottlenecks pre-release and can help to diagnose
 problems, but may not capture real-world issues.

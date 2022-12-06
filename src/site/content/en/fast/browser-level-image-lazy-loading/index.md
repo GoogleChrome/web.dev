@@ -316,7 +316,7 @@ All images and iframes are immediately loaded if the page is printed. See [issue
 
 ### Does Lighthouse recognize browser-level lazy-loading?
 
-Earlier versions of Lighthouse would still highlight that pages using `loading=lazy` on images required a strategy for loading offscreen images. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) and above better factor in approaches for offscreen image lazy-loading that may use different thresholds, allowing them to pass the [Defer offscreen images](/offscreen-images/) audit.
+Earlier versions of Lighthouse would still highlight that pages using `loading=lazy` on images required a strategy for loading offscreen images. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) and above better factor in approaches for offscreen image lazy-loading that may use different thresholds, allowing them to pass the [Defer offscreen images](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/) audit.
 
 ## Conclusion
 

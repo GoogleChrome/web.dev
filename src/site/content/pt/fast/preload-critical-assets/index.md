@@ -36,7 +36,7 @@ Ao pré-carregar um determinado recurso, você está dizendo ao navegador que go
 
 <figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Captura de tela do painel Chrome DevTools Network após aplicar o pré-carregamento.", width="701", height="509" %} <figcaption> Neste exemplo, a fonte Pacifico é pré-carregada, portanto, o download ocorre em paralelo com a folha de estilo.</figcaption></figure>
 
-A cadeia de solicitação crítica representa a ordem dos recursos que são priorizados e buscados pelo navegador. O Lighthouse identifica os ativos que estão no terceiro nível dessa cadeia como descobertos posteriormente. Você pode usar a [**auditoria de solicitações de chave**](/uses-rel-preload) de pré-carregamento para identificar quais recursos pré-carregar.
+A cadeia de solicitação crítica representa a ordem dos recursos que são priorizados e buscados pelo navegador. O Lighthouse identifica os ativos que estão no terceiro nível dessa cadeia como descobertos posteriormente. Você pode usar a [**auditoria de solicitações de chave**](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/) de pré-carregamento para identificar quais recursos pré-carregar.
 
 {% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="A chave de pré-carregamento do farol solicita auditoria.", width="745", height="97" %}
 
@@ -72,7 +72,7 @@ Se estiver usando a [abordagem crítica de CSS{/a0 , você dividirá seu CSS em 
 
 ### Pré-carregando arquivos JavaScript
 
-Como os navegadores não executam arquivos pré-carregados, o pré-carregamento é útil para separar a busca da [execuçãoo](/bootup-time), o que pode melhorar as métricas, como o tempo de interação. O pré-carregamento funciona melhor se você [dividir](/reduce-javascript-payloads-with-code-splitting) seus pacotes de JavaScript e pré-carregar apenas os blocos críticos.
+Como os navegadores não executam arquivos pré-carregados, o pré-carregamento é útil para separar a busca da [execuçãoo](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/), o que pode melhorar as métricas, como o tempo de interação. O pré-carregamento funciona melhor se você [dividir](/reduce-javascript-payloads-with-code-splitting) seus pacotes de JavaScript e pré-carregar apenas os blocos críticos.
 
 ## Como implementar rel=preload
 

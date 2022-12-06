@@ -93,22 +93,22 @@ hardware**.
 
 For details on how your page's TTI affects your Lighthouse performance score,
 see [How Lighthouse determines your TTI
-score](/interactive/#how-lighthouse-determines-your-tti-score).
+score](https://developer.chrome.com/docs/lighthouse/performance/interactive/#how-lighthouse-determines-your-tti-score).
 
 ## How to improve TTI
 
 To learn how to improve TTI for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+[opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) the audit suggests.
 
 To learn how to improve TTI in general (for any site), refer to the following
 performance guides:
 
-* [Minify JavaScript](/unminified-javascript/)
-* [Preconnect to required origins](/uses-rel-preconnect/)
-* [Preload key requests](/uses-rel-preload/)
-* [Reduce the impact of third-party code](/third-party-summary/)
-* [Minimize critical request depth](/critical-request-chains/)
-* [Reduce JavaScript execution time](/bootup-time/)
-* [Minimize main thread work](/mainthread-work-breakdown/)
-* [Keep request counts low and transfer sizes small](/resource-summary/)
+* [Minify JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/e.com/docs/lighthouse/performance/unminified-javascript/)
+* [Preconnect to required origins](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
+* [Preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+* [Reduce the impact of third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+* [Minimize critical request depth](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+* [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+* [Minimize main thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+* [Keep request counts low and transfer sizes small](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)

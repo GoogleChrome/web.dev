@@ -16,7 +16,7 @@ tags:
 
 ## 지연 로드란? {: #what }
 
-지연 로드는 페이지 로드 시 중요하지 않은 리소스의 로드를 연기하는 기술입니다. 대신 이러한 중요하지 않은 리소스는 필요한 순간에 로드됩니다. 이미지와 관련하여 "비중요"는 종종 "오프스크린"과 거의 같은 의미를 갖습니다. 여러분이 Lighthouse를 사용하며 몇 가지 개선 가능성을 조사했다면 [오프스크린 이미지 지연 감사](/offscreen-images/) 형식으로 이 영역에 있는 몇 가지 지침을 보았을 것입니다.
+지연 로드는 페이지 로드 시 중요하지 않은 리소스의 로드를 연기하는 기술입니다. 대신 이러한 중요하지 않은 리소스는 필요한 순간에 로드됩니다. 이미지와 관련하여 "비중요"는 종종 "오프스크린"과 거의 같은 의미를 갖습니다. 여러분이 Lighthouse를 사용하며 몇 가지 개선 가능성을 조사했다면 [오프스크린 이미지 지연 감사](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/) 형식으로 이 영역에 있는 몇 가지 지침을 보았을 것입니다.
 
 <figure>{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Lighthouse의 오프스크린 이미지 지연 감사의 스크린샷.", width="800", height="102" %} <figcaption>Lighthouse의 성능 감사 중 하나는 지연 로드 후보인 오프스크린 이미지를 식별하는 것입니다.</figcaption></figure>
 

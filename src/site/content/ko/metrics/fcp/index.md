@@ -94,22 +94,22 @@ JavaScript에서 FCP를 측정하는 방법에 대한 전체 예제는 [`getFCP(
 
 ## FCP를 개선하는 방법
 
-특정 사이트에 대한 FCP를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](/lighthouse-performance/#opportunities) 또는 [진단](/lighthouse-performance/#diagnostics)을 주의 깊게 살펴보시기 바랍니다.
+특정 사이트에 대한 FCP를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) 또는 [진단](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics)을 주의 깊게 살펴보시기 바랍니다.
 
 모든 사이트에서 일반적으로 FCP를 개선하는 방법을 알아보려면 다음 성능 가이드를 참조하세요.
 
-- [렌더링 차단 리소스 제거](/render-blocking-resources/)
-- [CSS 축소](/unminified-css/)
-- [사용하지 않는 CSS 제거](/unused-css-rules/)
-- [필요한 원본에 사전 연결](/uses-rel-preconnect/)
+- [렌더링 차단 리소스 제거](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [CSS 축소](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [사용하지 않는 CSS 제거](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [필요한 원본에 사전 연결](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [서버 응답 시간 단축(TTFB)](/ttfb/)
-- [여러 페이지 리디렉션 방지](/redirects/)
-- [핵심 요청 사전 로드](/uses-rel-preload/)
-- [막대한 네트워크 페이로드 방지](/total-byte-weight/)
-- [효율적인 캐시 정책으로 정적 자산 제공](/uses-long-cache-ttl/)
-- [과도한 DOM 크기 방지](/dom-size/)
-- [크리티컬 요청 깊이 최소화](/critical-request-chains/)
-- [웹폰트 로드 중에 텍스트가 계속 표시되는지 확인](/font-display/)
-- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](/resource-summary/)
+- [여러 페이지 리디렉션 방지](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [핵심 요청 사전 로드](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [막대한 네트워크 페이로드 방지](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [효율적인 캐시 정책으로 정적 자산 제공](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [과도한 DOM 크기 방지](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [크리티컬 요청 깊이 최소화](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [웹폰트 로드 중에 텍스트가 계속 표시되는지 확인](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

@@ -315,6 +315,8 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/launch-handler/
   - source: /gpu
     destination: https://developer.chrome.com/docs/web-platform/webgpu/
+  - source: /webgpu
+    destination: https://developer.chrome.com/docs/web-platform/webgpu/
   - source: /storage-foundation
     destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
   - source: /app-history-api
@@ -391,7 +393,16 @@ redirects:
     destination:  https://developer.chrome.com/articles/serial/
   - source: /wake-lock
     destination:  https://developer.chrome.com/articles/wake-lock/
-
+  - source: /user-agent-client-hints
+    destination: https://developer.chrome.com/articles/user-agent-client-hints/
+  - source: /browser-fs-access
+    destination: https://developer.chrome.com/articles/browser-fs-access/
+  - source: /display-override
+    destination: https://developer.chrome.com/articles/display-override/
+  - source: /file-system-access
+    destination: https://developer.chrome.com/articles/file-system-access/
+  - source: /user-agent-client-hints
+    destination: https://developer.chrome.com/articles/user-agent-client-hints/
 
   # Redirect for Aurora
   - source: /aurora
@@ -464,6 +475,83 @@ redirects:
     destination: /patterns/media/audio-effects/demo.html
   - source: /patterns/advanced-apps/audio-effects
     destination: /patterns/media/audio-effects
+
+  # Redirects for Lighthouse performance content.
+  - source: /lighthouse-performance
+    destination: https://developer.chrome.com/docs/lighthouse/performance/
+  - source: /performance-scoring
+    destination: https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/
+  - source: /bootup-time
+    destination: https://developer.chrome.com/docs/lighthouse/performance/bootup-time/
+  - source: /critical-request-chains
+    destination: https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/
+  - source: /dom-size
+    destination: https://developer.chrome.com/docs/lighthouse/performance/dom-size/
+  - source: /efficient-animated-content
+    destination: https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/
+  - source: /first-contentful-paint
+    destination: https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/
+  - source: /first-cpu-idle
+    destination: https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/
+  - source: /first-meaningful-paint
+    destination: https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/
+  - source: /font-display
+    destination: https://developer.chrome.com/docs/lighthouse/performance/font-display/
+  - source: /interactive
+    destination: https://developer.chrome.com/docs/lighthouse/performance/interactive/
+  - source: /lighthouse-largest-contentful-paint
+    destination: https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/
+  - source: /lighthouse-max-potential-fid
+    destination: https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/
+  - source: /lighthouse-total-blocking-time
+    destination: https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/
+  - source: /mainthread-work-breakdown
+    destination: https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/
+  - source: /non-composited-animations
+    destination: https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/
+  - source: /offscreen-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/
+  - source: /redirects
+    destination: https://developer.chrome.com/docs/lighthouse/performance/redirects/
+  - source: /render-blocking-resources
+    destination: https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/
+  - source: /resource-summary
+    destination: https://developer.chrome.com/docs/lighthouse/performance/resource-summary/
+  - source: /speed-index
+    destination: https://developer.chrome.com/docs/lighthouse/performance/speed-index/
+  - source: /third-party-facades
+    destination: https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/
+  - source: /third-party-summary
+    destination: https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/
+  - source: /time-to-first-byte
+    destination: https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/
+  - source: /total-byte-weight
+    destination: https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/
+  - source: /unminified-css
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unminified-css/
+  - source: /unminified-javascript
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/
+  - source: /unused-css-rules
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/
+  - source: /unused-javascript
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/
+  - source: /user-timings
+    destination: https://developer.chrome.com/docs/lighthouse/performance/user-timings/
+  - source: /uses-long-cache-ttl
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/
+  - source: /uses-optimized-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/
+  - source: /uses-rel-preconnect
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/
+  - source: /uses-rel-preload
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/
+  - source: /uses-responsive-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/
+  - source: /uses-text-compression
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/
+  - source: /uses-webp-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/
+
 
   # Redirects for Lighthouse accessibility content.
   - source: /lighthouse-accessibility
@@ -578,6 +666,106 @@ redirects:
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/
   - source: /use-landmarks
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/
+  
+  # Redirects for Lighthouse best practices content.
+  - source: /lighthouse-best-practices
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/
+  - source: /appcache-manifest
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/appcache-manifest/
+  - source: /charset
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/charset/
+  - source: /csp-xss
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/
+  - source: /deprecations
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/deprecations/
+  - source: /doctype
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/doctype/
+  - source: /errors-in-console
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/
+  - source: /external-anchors-use-rel-noopener
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/
+  - source: /geolocation-on-start
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/
+  - source: /image-aspect-ratio
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/
+  - source: /js-libraries
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/js-libraries/
+  - source: /no-document-write
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/no-document-write/
+  - source: /no-vulnerable-libraries
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/no-vulnerable-libraries/
+  - source: /notification-on-start
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/notification-on-start/
+  - source: /password-inputs-can-be-pasted-into
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/password-inputs-can-be-pasted-into/
+  - source: /uses-http2
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/
+  - source: /uses-passive-event-listeners
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/
+
+  # Redirects for Lighthouse SEO content.
+  - source: /lighthouse-seo
+    destination: https://developer.chrome.com/docs/lighthouse/seo/
+  - source: /canonical
+    destination: https://developer.chrome.com/docs/lighthouse/seo/canonical/
+  - source: /font-size
+    destination: https://developer.chrome.com/docs/lighthouse/seo/font-size/
+  - source: /hreflang
+    destination: https://developer.chrome.com/docs/lighthouse/seo/hreflang/
+  - source: /http-status-code
+    destination: https://developer.chrome.com/docs/lighthouse/seo/http-status-code/
+  - source: /is-crawlable
+    destination: https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/
+  - source: /link-text
+    destination: https://developer.chrome.com/docs/lighthouse/seo/link-text/
+  - source: /meta-description
+    destination: https://developer.chrome.com/docs/lighthouse/seo/meta-description/
+  - source: /plugins
+    destination: https://developer.chrome.com/docs/lighthouse/seo/plugins/
+  - source: /robots-txt
+    destination: https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/
+  - source: /structured-data
+    destination: https://developer.chrome.com/docs/lighthouse/seo/structured-data/
+  - source: /tap-targets
+    destination: https://developer.chrome.com/docs/lighthouse/seo/tap-targets/
+
+  # Redirects for Lighthouse PWA content.
+  - source: /lighthouse-pwa
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/
+  - source: /apple-touch-icon
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/apple-touch-icon/
+  - source: /content-width
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/content-width/
+  - source: /installable-manifest
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/
+  - source: /is-on-https
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/
+  - source: /load-fast-enough-for-pwa
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/
+  - source: /maskable-icon-audit
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/
+  - source: /offline-start-url
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/offline-start-url/
+  - source: /pwa-cross-browser
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/pwa-cross-browser/
+  - source: /pwa-each-page-has-url
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/pwa-each-page-has-url/
+  - source: /pwa-page-transitions
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/pwa-page-transitions/
+  - source: /redirects-http
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/redirects-http/
+  - source: /service-worker
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/service-worker/
+  - source: /splash-screen
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/
+  - source: /themed-omnibox
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/
+  - source: /viewport
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/viewport/
+  - source: /without-javascript
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/without-javascript/
+  - source: /works-offline
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/works-offline/
 
 # Redirects for blogs
   - source: /blog/native-hardware-click-to-call
@@ -588,3 +776,5 @@ redirects:
     destination: /blog/fullscreen
   - source: /blog/native-hardware-user-location
     destination: /blog/user-location
+  - source: /speculative-prerendering/
+    destination: https://developer.chrome.com/blog/prerender-pages/

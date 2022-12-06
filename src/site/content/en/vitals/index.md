@@ -329,7 +329,7 @@ For example, the metrics [Time to First Byte (TTFB)](/ttfb/) and
 [First Contentful Paint (FCP)](/fcp/) are both vital aspects of the _loading_
 experience, and are both useful in diagnosing issues with LCP (slow [server
 response times](/overloaded-server/) or [render-blocking
-resources](/render-blocking-resources/), respectively).
+resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/), respectively).
 
 Similarly, metrics like [Total Blocking Time (TBT)](/tbt/) and [Time to
 Interactive (TTI)](/tti/) are lab metrics that are vital in catching and

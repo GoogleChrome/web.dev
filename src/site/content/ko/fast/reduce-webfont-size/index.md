@@ -225,4 +225,4 @@ WebFont 최적화는 전체 성능 전략의 중요한 부분입니다. 각 글�
 - **글꼴 리소스의** 하위 집합: 많은 글꼴이 하위 집합이 되거나 여러 유니코드 범위로 분할되어 특정 페이지에 필요한 글리프만 제공할 수 있습니다. 이렇게 하면 파일 크기가 줄어들고 리소스의 다운로드 속도가 향상됩니다. 그러나 하위 집합을 정의할 때 글꼴 재사용을 위해 최적화하도록 주의하십시오. 예를 들어, 각 페이지에 서로 다르지만 겹치는 문자 집합을 다운로드하지 마십시오. 예를 들어 라틴어 및 키릴 자모와 같은 스크립트를 기반으로 하위 집합을 지정하는 것이 좋습니다.
 - **각 브라우저에 최적화된 글꼴 형식** 제공: 각 글꼴을 WOFF 2.0, WOFF, EOT 및 TTF 형식으로 제공합니다. EOT 및 TTF 형식은 기본적으로 압축되지 않으므로 GZIP 압축을 적용해야 합니다.
 - **`src` 목록에서 `local()`에 우선 순위 부여:** 목록 `local('글꼴 이름')` 처음에 `src` 요청이 이미 설치된 글꼴에 대해 HTTP 요청이 이뤄지지 않았음을 확인합니다.
-- **[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)를 사용하여** [텍스트 압축](/uses-text-compression/)을 테스트합니다.
+- **[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)를 사용하여** [텍스트 압축](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/)을 테스트합니다.

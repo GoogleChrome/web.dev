@@ -136,6 +136,18 @@
   content: 'code';
 }
 
+.w-aside--update {
+  color: $UPDATE_ASIDE_COLOR;
+}
+
+.w-aside--update::after {
+  background-color: $UPDATE_ASIDE_COLOR;
+}
+
+.w-aside--update::before {
+  content: 'update';
+}
+
 // We use descendant selectors here (instead of BEM) because the content inside
 // of an aside will likely be coming from markdown.
 .w-aside a,

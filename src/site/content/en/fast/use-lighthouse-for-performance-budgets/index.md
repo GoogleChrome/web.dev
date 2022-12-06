@@ -16,6 +16,16 @@ tags:
 
 [Lighthouse](https://github.com/GoogleChrome/lighthouse) now supports performance budgets. This feature, [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets), can be set up in under five minutes and provides feedback on performance metrics and the size and quantity of page resources.
 
+{% Aside 'important' %}
+While Lighthouse is an excellent tool for identifying performance improvement
+opportunities, it can't be stressed enough that Lighthouse is a tool that relies
+on [lab data](/lab-and-field-data-differences/#lab-data). While lab data is an
+integral part of any performance improvement effort, comparing and contrasting
+that data with [field data](/lab-and-field-data-differences/#field-data) collected
+from your website's actual users is key. Doing so will help you understand how the
+changes you make to your website affect real users.
+{% endAside %}
+
 ## Install Lighthouse
 
 LightWallet is available in the command line version of Lighthouse v5+.

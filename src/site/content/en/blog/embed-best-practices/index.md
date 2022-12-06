@@ -45,7 +45,7 @@ Third-party embeds are typically loaded in [`<iframe>`](https://developer.mozill
 
 Many popular embeds include over 100&nbsp;KB of JavaScript, sometimes even going up to 2&nbsp;MB. They take more time to load and keep the main thread busy when executing. Performance monitoring tools such as [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/) help to [measure the impact of third-party embeds on performance](/identify-slow-third-party-javascript/).
 
-[Reduce the impact of third-party code](/third-party-summary/) Lighthouse audit shows the list of third-party providers a page uses, with size and main-thread blocking time. The audit is available through Chrome DevTools under the Lighthouse tab.
+[Reduce the impact of third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/) Lighthouse audit shows the list of third-party providers a page uses, with size and main-thread blocking time. The audit is available through Chrome DevTools under the Lighthouse tab.
 
 It is a good practice to periodically audit the performance impact of your embeds and third-party code because embed source code may change. You can use this opportunity to remove any redundant code.
 
@@ -181,7 +181,7 @@ While interactive embeds add value to the page, many users may not interact with
   </figure>
 </div>
 
-A [facade](/third-party-facades/) is a static element that looks similar to the actual embedded third-party but is not functional and, therefore, much less taxing on the page load. Following are a few strategies to load such embeds optimally while still providing some value to the user.
+A [facade](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/) is a static element that looks similar to the actual embedded third-party but is not functional and, therefore, much less taxing on the page load. Following are a few strategies to load such embeds optimally while still providing some value to the user.
 
 #### Use static images as facades
 

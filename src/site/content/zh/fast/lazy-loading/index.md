@@ -16,7 +16,7 @@ tags:
 
 ## 什么是延迟加载？{: #what }
 
-延迟加载是一种在页面加载时推迟加载非关键资源的技术。相反，只会在需要时加载这些非关键资源。就图像而言，“非关键”就是指“屏幕外”。如果您使用过 Lighthouse 并检查了一些改进的机会，您可能已经在[推迟屏幕外图像审计](/offscreen-images/)中看到了这方面的部分指南：
+延迟加载是一种在页面加载时推迟加载非关键资源的技术。相反，只会在需要时加载这些非关键资源。就图像而言，“非关键”就是指“屏幕外”。如果您使用过 Lighthouse 并检查了一些改进的机会，您可能已经在[推迟屏幕外图像审计](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/)中看到了这方面的部分指南：
 
 <figure>{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Lighthouse 中推迟屏幕外图像审计的屏幕截图。", width="800", height="102" %}<figcaption> Lighthouse 的性能审计之一是识别屏幕外图像，这是延迟加载的候选对象。</figcaption></figure>
 

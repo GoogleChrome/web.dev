@@ -172,6 +172,50 @@ function getNavigationType() {
   return '(not set)';
 }
 
+function getPrerenderRules() {
+  return [...document.querySelectorAll('script[type=speculationrules]')]
+    .map((s) => {
+      try {
+        return JSON.parse(s.textContent).prerender;
+      } catch {
+        // Ignore parse errors.
+      }
+    })
+    .flat() // Remove scripts with errors or no prerender rules.
+    .filter((rule) => rule && rule.source === 'list');
+}
+
+function logPrerenders() {
+  // Only log prerender attempts if supported
+  // and not in datasaver mode
+  if (
+    !(
+      HTMLScriptElement.supports &&
+      HTMLScriptElement.supports('speculationrules')
+    ) ||
+    (self.navigator && navigator.connection && navigator.connection.saveData)
+  ) {
+    return;
+  }
+
+  const prerenderURLs = new Set(
+    getPrerenderRules()
+      .map((r) => r.urls)
+      .flat(),
+  );
+
+  prerenderURLs.forEach((prerenderURL) => {
+    ga('send', 'event', {
+      eventCategory: 'Site-Wide Custom Events',
+      eventAction: 'prerender_attempt',
+      eventLabel: prerenderURL,
+      eventValue: 1,
+      // Use a non-interaction event to avoid affecting bounce rate.
+      nonInteraction: true,
+    });
+  });
+}
+
 async function initAnalytics() {
   // If prerendering then only init once the page is activated
   await whenActivated;
@@ -213,6 +257,8 @@ async function initAnalytics() {
   onINP(sendToGoogleAnalytics);
   onLCP(sendToGoogleAnalytics);
   onTTFB(sendToGoogleAnalytics);
+
+  logPrerenders();
 }
 
 initAnalytics();

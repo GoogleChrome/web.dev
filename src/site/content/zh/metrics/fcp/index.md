@@ -96,22 +96,22 @@ getFCP(console.log);
 
 ## 如何改进 FCP
 
-要了解如何改进某个特定网站的 FCP，您可以运行一次灯塔性能审计，并留心查看审计建议的各种具体[机会](/lighthouse-performance/#opportunities)或[诊断](/lighthouse-performance/#diagnostics)。
+要了解如何改进某个特定网站的 FCP，您可以运行一次灯塔性能审计，并留心查看审计建议的各种具体[机会](https://developer.chrome.com/docs/lighthouse/performance/#opportunities)或[诊断](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics)。
 
 要了解改进 FCP 的常见方式（针对任何网站），请参阅以下性能指南：
 
-- [消除阻塞渲染的资源](/render-blocking-resources/)
-- [缩小 CSS](/unminified-css/)
-- [移除未使用的 CSS](/unused-css-rules/)
-- [预连接到所需的来源](/uses-rel-preconnect/)
+- [消除阻塞渲染的资源](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [缩小 CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [移除未使用的 CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [预连接到所需的来源](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [减少服务器响应时间 (TTFB)](/ttfb/)
-- [避免多个页面重定向](/redirects/)
-- [预加载关键请求](/uses-rel-preload/)
-- [避免巨大的网络负载](/total-byte-weight/)
-- [使用高效的缓存策略服务静态资产](/uses-long-cache-ttl/)
-- [避免 DOM 过大](/dom-size/)
-- [最小化关键请求深度](/critical-request-chains/)
-- [确保文本在网页字体加载期间保持可见](/font-display/)
-- [保持较低的请求数和较小的传输大小](/resource-summary/)
+- [避免多个页面重定向](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [预加载关键请求](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [避免巨大的网络负载](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [使用高效的缓存策略服务静态资产](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [避免 DOM 过大](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [最小化关键请求深度](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [确保文本在网页字体加载期间保持可见](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [保持较低的请求数和较小的传输大小](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

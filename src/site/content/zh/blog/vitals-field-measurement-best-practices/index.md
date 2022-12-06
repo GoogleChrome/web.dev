@@ -111,7 +111,7 @@ getLCP(sendToAnalytics);
 
 用于测量核心 Web 指标的所有 API 都是特别为支持异步和延迟脚本加载（通过[`buffered`](https://www.chromestatus.com/feature/5118272741572608)标志）而设计的，因此无需急于提前加载脚本。
 
-如果您测量的指标无法在页面加载时间轴的后期进行计算，您应该*只*将需要提前运行的代码内联到`<head>`中（这样就不是一个[阻塞渲染请求](/render-blocking-resources/)）并延迟加载其余的代码。不要仅仅因为单项指标的需要而提前加载所有分析代码。
+如果您测量的指标无法在页面加载时间轴的后期进行计算，您应该*只*将需要提前运行的代码内联到`<head>`中（这样就不是一个[阻塞渲染请求](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)）并延迟加载其余的代码。不要仅仅因为单项指标的需要而提前加载所有分析代码。
 
 ### 不要创建长任务
 

@@ -276,7 +276,7 @@ async function saveSettings () {
       await yieldToMain();
 
       // Extend the deadline:
-      deadline += 50;
+      deadline = performance.now() + 50;
 
       // Stop the execution of the current loop and
       // move onto the next iteration:
