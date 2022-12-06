@@ -263,7 +263,7 @@ boots."
 There are many ways to check an element's accessible name, including inspecting the accessibility tree using [Chrome DevTools](https://developer.chrome.com/blog/full-accessibility-tree/) or testing it with a screen reader.
 
 {% Aside %}
-Coming soon: read more about screen reader testing in module 17 on Assistive Technology.
+Coming soon: read more about screen reader testing in the Assistive Technology module.
 {% endAside %}
 
 ## ARIA in HTML

@@ -25,8 +25,9 @@ large part of keyboard accessibility is centered around
 [focus](/focus). Focus refers to which element on the screen
 currently receives input from the keyboard.
 
-For this module, we’ll concentrate on HTML structure and CSS styling for
-keyboard and focusable elements. The JavaScript module will include more
+In this module, we concentrate on HTML structure and CSS styling for
+keyboard and focusable elements. The
+[JavaScript module](/learn/accessibility/javascript/) includes more
 information on focus management and keystrokes for interactive elements.
 
 ## Focus order
