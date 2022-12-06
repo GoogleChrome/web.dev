@@ -31,14 +31,20 @@ in a multiple-choice test. For all of these lists without bullets, it is appropr
 The `<ul>` element is the parent element for unordered lists of items. The only children of a `<ul>` are one or more `<li>` list
 item elements. Let's create a list of machines. We use an unordered list because the order doesn't matter (don't tell them that):
 
-```html
-<ul>
-   <li>Blender</li>
-   <li>Toaster</li>
-   <li>Vacuum</li>
-</ul>
-```
-<img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/OeZKatnZZPbs7q0yuM2C.png" width="196" height="146" alt="Blender, toaster, vacuum.">
+<div class="switcher">
+  <figure>
+    <code>
+      <ul>
+        <li>Blender</li>
+        <li>Toaster</li>
+        <li>Vacuum</li>
+      </ul>
+    </code>
+  </figure>
+  <figure>
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/fLffpFWfFQHTc3pbNBbk.png" alt="Blender, toaster, vacuum, listed with bullet points.">
+  </figure>
+</div>
 
 By default, each unordered list item is prefixed with a bullet. The unordered list has no element-specific attributes.
 You need to close out your lists with a `</ul>`.
@@ -49,19 +55,38 @@ The `<ol>` element is the parent element for ordered lists of items. The only ch
 The "bullets" in this case, though, are numbers of a multitude of types. The type can be defined in CSS with the `list-style-type` property
 or via the `type` attribute.
 
-```html
-<ol>
-   <li>Blender</li>
-   <li>Toaster</li>
-   <li>Vacuum</li>
-</ol>
+<div class="switcher">
+  <figure>
+    <code>
+      <ol>
+        <li>Blender</li>
+        <li>Toaster</li>
+        <li>Vacuum</li>
+      </ol>
+    </code>
+  </figure>
+  <figure>
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GUQggsTUFRrEpZVxU0x9.png" alt="Blender, toaster, vacuum, in an ordered, numbered list.">
+    <figcaption>
+      An ordered, numbered list.
+    </figcaption>
+  </figure>
+</div>
 
-<ol type="A">
-   <li>Blender</li>
-   <li>Toaster</li>
-   <li>Vacuum</li>
-</ol>
-```
+<div class="switcher">
+  <figure>
+    <code>
+      <ol type="A">
+        <li>Blender</li>
+        <li>Toaster</li>
+        <li>Vacuum</li>
+      </ol>
+    </code>
+  </figure>
+  <figure>
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/u51WOjaphYQxv2Fd7dK9.png" alt="Blender, toaster, vacuum, in an ordered, lettered list.">
+  </figure>
+</div>
 
 <figure>
   {% Codepen {
@@ -92,13 +117,20 @@ documentation where the numeric type is important,   as with legal documents, fo
 The boolean `reversed` attribute, if included, will reverse the order of the numbers, going from largest number to the lowest.
 The `start` attribute sets the starting value. The default is `1`.
 
-```html
-<ol reversed start="6">
-   <li>Blender</li>
-   <li>Toaster</li>
-   <li>Vacuum</li>
-</ol>
-```
+<div class="switcher">
+  <figure>
+    <code>
+      <ol reversed start="6">
+        <li>Blender</li>
+        <li>Toaster</li>
+        <li>Vacuum</li>
+      </ol>
+    </code>
+  </figure>
+  <figure>
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ks0SEWQPeIll4UwknFSM.png" alt="Blender, toaster, vacuum, in an reverse ordered, numbered list.">
+  </figure>
+</div>
 
 <figure>
   {% Codepen {
@@ -128,19 +160,42 @@ your future self will thank you. It's easier to close all elements than to remem
 There is only one element-specific `<li>` attribute: `value`, an integer. The `value` is only useful on an `<li>` when the `<li>` is nested within
 an ordered list and has no meaning for unordered lists or menus. It overrides the value of the `<ol>`'s start if there is a conflict.
 
-```html
-<ol start="4">
-   <li value="7">Blender</li>
-   <li value="29">Toaster</li>
-   <li>Vacuum</li>
-</ol>
+<div class="switcher">
+  <figure>
+    <code>
+      <ol start="4">
+        <li value="7">Blender</li>
+        <li value="29">Toaster</li>
+        <li>Vacuum</li>
+      </ol>
+    </code>
+  </figure>
+  <figure>
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/pwVGJoGtlHPqZGrf6QiK.png" alt="Value-set ordered list.">
+    <figcaption>
+      A value-set list.
+    </figcaption>
+  </figure>
+</div>
 
-<ol type="A" start="33">
-   <li value="7">Blender</li>
-   <li value="29">Toaster</li>
-   <li>Vacuum</li>
-</ol>
-```
+<div class="switcher">
+  <figure>
+    <code>
+      <ol type="A" start="33">
+        <li value="7">Blender</li>
+        <li value="29">Toaster</li>
+        <li>Vacuum</li>
+      </ol>
+    </code>
+  </figure>
+  <figure>
+    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/JBpz7xcPb3hfTPs87Guc.png" alt="Value-set ordered list.">
+    <figcaption>
+      A value-set list.
+    </figcaption>
+  </figure>
+</div>
+
 <figure>
   {% Codepen {
     user: 'web-dot-dev',
