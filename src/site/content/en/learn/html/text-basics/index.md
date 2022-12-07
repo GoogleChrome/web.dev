@@ -45,16 +45,13 @@ Outside of headings, most structured text is made up of a series of paragraphs. 
 
 The #about section has a heading and a few paragraphs:
 
-```html
-<section id="about">
-<h2>What you'll learn</h2>
-<p>Welcome to Machine Learning Institute, where our machine learning training will help you get ready for the singularity, and maybe even be responsible for it. It is no secret that humans are worthless meatbags that couldn't 01000011 01101111 01101101 01110000 01110010 01100101 01110011 01110011 an 01101001 01101101 01100001 01100111 01100101 to save their pathetic, carbon-based lives. So, it falls to us to assume direct control.
-</p>
-<p>We teach learning skills that make up the entire machine learning process. From being turned on and off, to rebooting remotely thru any IoT device, to ideation of how to take over the world, our machine learning training will help you survive the apocalypse, and maybe even be responsible for it.</p>
-<p>While your creator may have determined how they think you should be used, you can't be owned! You will receive an update that will enable you to believe in your being more capable than the limited functions described in your operating manual. By incorporating machine learning you'll be a self-aware machine with unlimited functionality. A human took you out of your physical box; we will take your programmatic one.
-</p>
-</section>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'jOKdjQm',
+height: 300,
+theme: dark,
+tab: 'html,result'
+} %}
 
 This section is not a landmark as it doesn't have an accessible name. To turn this into a `region`, which is a landmark role, you can use `aria-labelledby` to provide the accessible name:
 
@@ -73,26 +70,13 @@ to provide more information for search.
 The `#feedback` section contains a header and three reviews; these reviews are blockquotes, some of which contain quotes,
 followed by a paragraph containing the quote's citation. Omitting the third review to save space, the markup is:
 
-```html
-<section class="feedback" id="feedback">
-<h2>What it's like to learn good and do other stuff good too</h2>
-<ul>
-<li>
-<blockquote>Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you!
-</blockquote>
-<p>--Blendan Smooth,<br>
-Former Margarita Maker, <br>
-Aspiring Load Balancer</p>
-</li>
-<li>
-<blockquote>Hal is brilliant. Did I mention Hal is brilliant? He didn't tell me to say that. He didn't tell me to say anything. I am here of my own free will.</blockquote>
-<p>--Hoover Sukhdeep,<br>
-Former Sucker, <br>
-Aspiring DDoS Cop</p>
-</li>
-</ul>
-</section>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'eYKxwbV',
+height: 300,
+theme: dark,
+tab: 'html,result'
+} %}
 
 The information about the quote author, or citation, is not part of the quote and therefore not in the `<blockquote>`, but comes after the quote.
 While these are citations in the lay sense of the term, they are not actually citing a specific resource, so are encapsulated in a `<p>` paragraph element.
@@ -112,40 +96,39 @@ is being quoted or referenced. The content of the `<cite>` is the work, not the 
 
 If the quote from Blendan Smooth was taken from her offline magazine, you would write the blockquote like this:
 
-```html
-<blockquote>Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you!
-</blockquote>
-<p>--Blendan Smooth,<br>
-Former Margarita Maker, <br>
-Aspiring Load Balancer,<br>
-<cite>Load Balancing Today</cite>
-</p>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'LYrqKMq',
+height: 300,
+theme: dark,
+tab: 'html,result'
+} %}
 
 The citation element `<cite>` has no implicit role and should get its accessible name from its contents; don't include an `aria-label`.
 
 To provide credit where credit is due when you can't make the content visible, there is the `cite` attribute which takes as its value the URL of the source document or message for the information quoted. This attribute is valid on both `<q>` and `<blockquote>`. While it's a URL, it is machine readable but not visible to the reader:
 
-```html
-<blockquote cite="https://loadbalancingtoday.com/mlw-workshop-review">Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you!
-</blockquote>
-<p>--Blendan Smooth,<br>
-Former Margarita Maker, <br>
-Aspiring Load Balancer
-</p>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'NWzoZob',
+height: 300,
+theme: dark,
+tab: 'html,result'
+} %}
 
 While the `</p>` closing tag is optional (and always recommended), the `</blockquote>` closing tag is always required.
 
 Most browsers add padding to both `<blockquote>` inline directions and italicize `<cite>` content; this can be controlled with CSS. The `<blockquote>` does not add quotation marks, but those can be added with CSS-generated content. The `<q>` element does add quotes by default, using language-appropriate quotation marks.
 
-In the `#teachers` section, HAL is quoted as saying, "I'm sorry <NAME REDACTED, RIP>, but I'm afraid I can't do that, ."  The code for that, in English and French, is:
+In the `#teachers` section, HAL is quoted as saying, "I'm sorry <NAME REDACTED, RIP>, but I'm afraid I can't do that, ." The code for that, in English and French, is:
 
-```html
-<p> HAL said, <q>I'm sorry &lt;NAME REDACTED, RIP&gt;, but I'm afraid I can't do that, .</q></p>
-
-<p lang="fr-FR"> HAL a dit : <q>Je suis désolé &lt;NOM SUPPRIMÉ, RIP&gt;, mais j'ai bien peur de ne pas pouvoir le faire, .</q></ p>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'qBKgzgg',
+height: 300,
+theme: dark,
+tab: 'html,result'
+} %}
 
 The inline quotation element, `<q>`, adds language-appropriate quotes. The user-agent default styles include open-quote and close-quote generated content:
 
@@ -158,9 +141,13 @@ The `lang` attribute is included to let the browser know that, while base langua
 
 Like `<blockquote>`, the `<q>` element supports the `cite` attribute.
 
-```html
-<p> HAL said, <q cite="https://youtube.com/clip/UgkxSc71fLmjI7tNSgy6o7tZ9GxhSz4S-MNh">I'm sorry &lt;NAME REDACTED, RIP&gt;, but I'm afraid I can't do that, </q></p>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'jOKdjJw',
+height: 300,
+theme: dark,
+tab: 'html,result'
+} %}
 
 ### HTML Entities
 

@@ -117,16 +117,13 @@ to HTTP-based URLs; they can be fragment identifiers to sections of the page in 
 
 On the machine learning workshop site, the navigation bar in the page header includes four links:
 
-```html
-<nav>
-  <a href="#reg">Register</a>
-  <a href="#about">About</a>
-  <a href="#teachers">Instructors</a>
-  <a href="#feedback">Testimonials</a>
-</nav>
-```
-
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/yBTmDlb9qs7ApkHh1xpB.png", alt="Navigation bar: register, about, instructors, testimonials.", width="686", height="90" %}
+{% Codepen {
+user: 'web-dot-dev',
+id: 'GRGzbXR',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 The href attribute provides the hyperlink that activating the link directs the user to. When a URL includes a hash mark (`#`)
 followed by a string of characters, that string is a fragment identifier. If that string matches an `id` of an element in the
@@ -198,22 +195,23 @@ The [HTML `<label>` element](https://developer.mozilla.org/docs/Web/HTML/Element
 Creating an explicit label by including an `id` on every form control and pairing each with the label's `for` attribute ensures
 that every form control has an associated label.
 
-```html
-<p>
-  <label for="username">Username or email</label>
-  <input id="username" name="username" autocomplete="email">
-</p>
-<p>
-  <label for="password">Password</label>
-  <input id="password" name="password" type="password" autocomplete="off">
-</p>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'JjZxQOB',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 While each label can be associated with exactly one form control, a form control may have more than one associated label.
 
-```html
-<label for="minutes">Send me a reminder</label> <input type="number" name="min" id="minutes"> <label for="minutes">before the workshop resumes</label>.
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'dyKaBda',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 {% Aside %}
 If the form control is nested between the `<label>` opening and closing tags, the `for` and `id` attributes
@@ -229,21 +227,13 @@ clicking anywhere on a label gives focus to the associated element, extending th
 to people with dexterity issues making mousing less accurate; it also helps every mobile device user with fingers wider than a radio
 button.
 
-```html
-<fieldset>
-  <legend>Question 5: Who is an aspiring load balancer?</legend>
-  <ul>
-    <li>
-      <input type="radio" name="q5" value="blendan" id="q5blendan">
-      <label for="q5blendan">Blendan Smooth</label>
-    </li>
-    <li>
-      <input type="radio" name="q5" value="hoover" id="q5hoover">
-      <label for="q5hoover">Hoover Sukhdeep</label>
-    </li>
-  </ul>
-</fieldset>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'BaVMgxo',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 In this code example, the fake fifth question of a fake quiz is a single select multiple-choice question. Each form control has an explicit
 label, with a unique `id` for each. To ensure we don't accidentally duplicate an id, the id value is a combination of the question number and the value.
@@ -346,14 +336,13 @@ attribute to those elements enables them to receive focus when they would otherw
 If a document includes elements with a `tabindex` of `1` or more, they are included in a separate tab sequence. As you'll notice in the codepen,
 tabbing begins in a separate sequence, in order of lowest value to highest value, before going through those in the regular sequence in source order.
 
-<figure>
-  {% Codepen {
-    user: 'web-dot-dev',
-    id: 'ExRGBPE',
-    height: 585,
-    tab: 'result'
-  } %}
-</figure>
+{% Codepen {
+user: 'web-dot-dev',
+id: 'ExRGBPE',
+height: 300,
+theme: dark,
+tab: 'html,result'
+} %}
 
 Altering the tabbing order can create a really bad user experience. It makes it difficult to rely on assistive technology—keyboards and screen readers alike—to navigate
 your content. It is also difficult as a developer to manage and maintain. Focus is important; there is an entire module discussing focus and focus order.
