@@ -195,6 +195,10 @@ scrolling, and dragging as accurately as possible. So we're introducing the conc
 
 #### Interaction types
 
+{% Aside 'important' %}
+This content in this section was written during a time when Interaction to Next Paint (INP) was still being developed. The [current metric](/inp/) _only_ considers keyboard, mouse, and touch events, and does _not_ consider hover or scrolling when calculating INP.
+{% endAside %}
+
 The following table lists the four interactions we want to define along with the DOM events that
 they're associated with. Note that this is not quite the same as the set of all events that are
 dispatched when such user interaction occurs. For instance, when a user scrolls, a scroll event is
@@ -393,7 +397,7 @@ and `scroll`. Except for the scroll event, this is largely dependent on the devi
 scrolling: touch events are dispatched when scrolling with the finger on mobile devices, while wheel
 events occur when scrolling with a mouse wheel. The scroll events are fired after initial scrolling
 has completed. And in general, no DOM event blocks scrolling, unless the website uses [non-passive
-event listeners](/uses-passive-event-listeners/). So we think of scrolling as decoupled from DOM
+event listeners](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/). So we think of scrolling as decoupled from DOM
 Events altogether. What we want to measure is the time from when the user moves enough to produce a
 scroll gesture until the first frame that shows that scrolling happened.
 

@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-10-19
 description: Este artigo apresenta a métrica Largest Contentful Paint (LCP) e explica como medi-la
 tags:
   - performance
@@ -17,7 +17,7 @@ Historicamente, tem sido um desafio para os desenvolvedores web medir a rapidez 
 
 Métricas mais antigas, como [load](https://developer.mozilla.org/docs/Web/Events/load) ou [DOMContentLoaded,](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) não são boas porque não correspondem necessariamente ao que o usuário vê na tela. E as métricas de desempenho mais novas e centradas no usuário, como a [First Contentful Paint (FCP),](/fcp/) capturam apenas o início da experiência de carregamento. Se uma página mostra uma tela inicial ou exibe um indicador de carregamento, este momento não é muito relevante para o usuário.
 
-No passado, recomendamos métricas de desempenho como [First Meaningful Paint (FMP)](/first-meaningful-paint/) e [Speed Index (SI)](/speed-index/) (ambas disponíveis no Lighthouse) para ajudar a capturar mais aspectos da experiência de carregamento após a renderização inicial, mas essas métricas são complexas, difíceis de explicar e muitas vezes incorretas, o que significa que ainda não identificam quando o conteúdo principal da página foi carregado.
+No passado, recomendamos métricas de desempenho como [First Meaningful Paint (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) e [Speed Index (SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) (ambas disponíveis no Lighthouse) para ajudar a capturar mais aspectos da experiência de carregamento após a renderização inicial, mas essas métricas são complexas, difíceis de explicar e muitas vezes incorretas, o que significa que ainda não identificam quando o conteúdo principal da página foi carregado.
 
 Às vezes, o mais simples é o melhor. Com base em discussões no [W3C Web Performance Working Group](https://www.w3.org/webperf/) e em pesquisas feitas no Google, descobrimos que uma maneira mais precisa de medir quando o conteúdo principal de uma página é carregado é verificar quando o maior elemento foi renderizado.
 
@@ -120,7 +120,7 @@ A LCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 ### Ferramentas de campo
 
-- [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Relatório de Experiência do Usuário Chrome](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Console de Busca (relatório Core Web Vitals)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -129,9 +129,12 @@ A LCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Medição da LCP em JavaScript
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 Para medir o LCP em JavaScript, você pode usar a [API Largest Contentful Paint](https://wicg.github.io/largest-contentful-paint/). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que escuta as `largest-contentful-paint` e as registra no console.
 
@@ -169,7 +172,7 @@ import {getLCP} from 'web-vitals';
 getLCP(console.log);
 ```
 
-Para um exemplo completo de como medir a LCP em JavaScript, consulte [o código-fonte de `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts).
+Para um exemplo completo de como medir a LCP em JavaScript, consulte [o código-fonte de `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts).
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a LCP em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 

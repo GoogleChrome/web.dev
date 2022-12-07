@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: Este artigo apresenta a métrica First Input Delay (FID) e explica como medi-la
 tags:
   - performance
@@ -120,12 +120,14 @@ A FID é uma métrica que só pode ser medida [em campo](/user-centric-performan
 
 ### Ferramentas de campo
 
-- [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Relatório de experiência do usuário Chrome](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Console de Busca (relatório Core Web Vitals)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
 ### Medição da FID em JavaScript
+
+{% BrowserCompat 'api.PerformanceEventTiming' %}
 
 Para medir a FID em JavaScript, você pode usar a [API Event Timing](https://wicg.github.io/event-timing). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que escuta as entradas [`first-input`](https://wicg.github.io/event-timing/#sec-performance-event-timing) e as registra no console:
 
@@ -160,7 +162,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-Para um exemplo completo de como medir a FID em JavaScript, consulte [o código-fonte de `getFID()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts).
+Para um exemplo completo de como medir a FID em JavaScript, consulte [o código-fonte de `getFID()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts).
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a FID em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 
@@ -174,15 +176,15 @@ Isto vale mesmo se você segmentar seus relatórios por categoria ou tipo de dis
 
 ## Como melhorar a FID
 
-Para aprender como melhorar a FID para um site específico, você pode executar uma auditoria de desempenho do Lighthouse e prestar atenção a quaisquer [oportunidades](/lighthouse-performance/#opportunities) específicas que a auditoria sugerir.
+Para aprender como melhorar a FID para um site específico, você pode executar uma auditoria de desempenho do Lighthouse e prestar atenção a quaisquer [oportunidades](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) específicas que a auditoria sugerir.
 
 Embora o FID seja uma métrica de campo (e o Lighthouse seja uma ferramenta de métrica de laboratório), a orientação para melhorar a FID é a mesma indicada para melhorar a métrica de laboratório [Total Blocking Time (TBT)](/tbt/).
 
 Para saber como melhorar a FID, veja [Otimize a FID](/optimize-fid/). Para obter orientações adicionais sobre técnicas de desempenho individual que também podem melhorar a FID, consulte:
 
-- [Reduza o impacto do código de terceiros](/third-party-summary/)
-- [Reduza o tempo de execução do JavaScript](/bootup-time/)
-- [Minimize o trabalho da thread principal](/mainthread-work-breakdown/)
-- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](/resource-summary/)
+- [Reduza o impacto do código de terceiros](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [Reduza o tempo de execução do JavaScript](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [Minimize o trabalho da thread principal](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

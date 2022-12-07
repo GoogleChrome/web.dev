@@ -350,6 +350,6 @@ Service Worker 可用于完成许多有用的任务，其中包括本文前面�
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome 开发者工具中的 LCP", width="800", height="509" %}
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)提供在域级聚合下的真实 LCP 值
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)提供在域级聚合下的真实 LCP 值
 
 *感谢 Philip Walton、Katie Hempenius、Kayce Basques 和 Ilya Grigorik 的审阅。*

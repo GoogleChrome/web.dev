@@ -84,7 +84,7 @@ before they become major issues.
   and [Caching best
   practices](https://jakearchibald.com/2016/caching-best-practices/) for
   specific recommendations. The [Serve static assets with an efficient cache
-  policy](/uses-long-cache-ttl/) audit in Lighthouse can help you
+  policy](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/) audit in Lighthouse can help you
   quickly detect resources that aren't being cached. Keep in mind that different
   types of resources will have different freshness requirements and will
   therefore require different caching strategies.
@@ -207,7 +207,7 @@ possible.
 
 People are looking for critical health- and job-related information. It's
 important to ensure that your sites are discoverable by all search engines.
-The [Lighthouse SEO audits](/lighthouse-seo/) can help you detect basic problems.
+The [Lighthouse SEO audits](https://developer.chrome.com/docs/lighthouse/seo/) can help you detect basic problems.
 Follow the official blogs of search engines for the latest guidance and updates:
 [Google](https://webmasters.googleblog.com/),
 [Bing](https://blogs.bing.com/webmaster/),
@@ -253,7 +253,7 @@ performance impact of reduced bandwidth.
 * Run [WebPageTest](https://webpagetest.org/easy) or
   [Lighthouse](https://developers.google.com/web/tools/lighthouse/#get-started)
   to discover your top performance improvement opportunities.
-* [Enable text compression](/uses-text-compression/) to reduce
+* [Enable text compression](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/) to reduce
   the network size of text resources. This is often an easy performance win that
   requires minimal technical investment.
 * Read [Fixing website speed

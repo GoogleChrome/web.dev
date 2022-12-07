@@ -7,7 +7,7 @@ date: 2018-11-18
 description: Al utilizar los elementos correctos para los títulos y los landmark, puedes mejorar la experiencia de navegación para los usuarios de tecnología de asistencia
 ---
 
-{% include 'content/lighthouse-accessibility/why-headings.njk' %}
+{% include 'content/why-headings.njk' %}
 
 ## Utiliza encabezados para delinear la página
 

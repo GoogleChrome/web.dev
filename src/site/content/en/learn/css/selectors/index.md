@@ -65,6 +65,7 @@ The most straightforward group of selectors target HTML elements plus
 classes, IDs, and other attributes which may be added to an HTML tag.
 
 ### Universal selector
+{% BrowserCompat 'css.selectors.universal' %}
 
 A [universal selector](https://developer.mozilla.org/docs/Web/CSS/Universal_selectors)—also known as a wildcard—matches any element.
 
@@ -77,6 +78,7 @@ A [universal selector](https://developer.mozilla.org/docs/Web/CSS/Universal_sele
 This rule causes every HTML element on the page to have hotpink text.
 
 ### Type selector
+{% BrowserCompat 'css.selectors.type' %}
 
 A [type selector](https://developer.mozilla.org/docs/Web/CSS/Type_selectors)
 matches a HTML element directly.
@@ -90,6 +92,7 @@ section {
 This rule causes every `<section>` element to have `2em` of `padding` on all sides.
 
 ### Class selector
+{% BrowserCompat 'css.selectors.class' %}
 
 A HTML element can have one or more items defined in their `class` attribute.
 The
@@ -133,6 +136,7 @@ You can read more [in the specification](https://www.w3.org/TR/CSS21/syndata.htm
 {% endAside %}
 
 ### ID selector
+{% BrowserCompat 'css.selectors.id' %}
 
 An HTML element with an `id` attribute should be the only element on a page with that ID value.
 You select elements with an
@@ -162,6 +166,7 @@ avoid applying styles with the `id` selector as it means you can't re-use those 
 {% endAside %}
 
 ### Attribute selector
+{% BrowserCompat 'css.selectors.attribute' %}
 
 You can look for elements that have a certain HTML attribute,
 or have a certain value for an HTML attribute,

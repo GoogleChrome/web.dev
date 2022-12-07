@@ -40,7 +40,7 @@ tags:
 
 브라우저가 서버에서 콘텐츠를 수신하는 데 시간이 오래 걸릴수록 화면에 무엇이든 렌더링하는 데 더 오래 걸립니다. 더 빠른 서버 응답 시간은 LCP를 포함한 모든 단일 페이지 로드 메트릭을 직접적으로 향상시킵니다.
 
-가장 먼저 해야 할 것은 서버에서 콘텐츠를 처리하는 방법과 위치를 개선하는 것입니다. [**Time to First Byte**](/ttfb/)(최초 바이트까지의 시간, TTBT)로 서버 응답 시간을 측정하세요. 다음과 같이 다양한 방식으로 TTBT를 개선할 수 있습니다.
+가장 먼저 해야 할 것은 서버에서 콘텐츠를 처리하는 방법과 위치를 개선하는 것입니다. [**Time to First Byte**](/ttfb/)(최초 바이트까지의 시간, TTFB)로 서버 응답 시간을 측정하세요. 다음과 같이 다양한 방식으로 TTFB를 개선할 수 있습니다.
 
 - 서버 최적화
 - 사용자를 가까운 CDN으로 라우팅
@@ -437,6 +437,6 @@ LCP를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도�
 
   {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools의 LCP", width="800", height="509" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) 는 원본 수준에서 집계된 실제 LCP 값을 제공합니다.
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) 는 원본 수준에서 집계된 실제 LCP 값을 제공합니다.
 
 _Philip Walton, Katie Hempenius, Kayce Basques, Ilya Grigorik의 리뷰에 감사드립니다._

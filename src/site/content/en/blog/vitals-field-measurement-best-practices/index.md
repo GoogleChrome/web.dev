@@ -67,7 +67,7 @@ The following code sample shows how easy it can be to track these metrics in
 code and send them to an analytics service.
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics({name, value, id}) {
   const body = JSON.stringify({name, value, id});
@@ -76,9 +76,9 @@ function sendToAnalytics({name, value, id}) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 ## Avoid averages
@@ -255,7 +255,7 @@ there's no need to rush to get your scripts loaded early.
 In the event that you're measuring a metric that cannot be computed later in the
 page load timeline, you should inline _only_ the code that needs to run early
 into the `<head>` of your document (so it's not a [render-blocking
-request](/render-blocking-resources/)) and defer the rest. Do not load all your
+request](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)) and defer the rest. Do not load all your
 analytics early just because a single metric requires it.
 
 ### Do not create long tasks

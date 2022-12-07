@@ -1,0 +1,5 @@
+.content-center {
+  display: grid;
+  place-content: center;
+  gap: 1ch;
+}

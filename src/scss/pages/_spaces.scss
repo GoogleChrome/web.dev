@@ -3,6 +3,7 @@
   --blue-2: #3c82ff;
   --blue-3: #3fc4ff;
   --color-transparent-img-mask: transparent;
+  --auto-grid-min-item-size: 310px;
 
   audio {
     width: 250px;
@@ -94,23 +95,11 @@
     }
   }
 
-  // See more link
-
-  #see-more-upcoming-label {
-    grid-column: 1 / span 3;
-  }
-
-  #see-more-upcoming:checked ~ .card.hidden{
-    display: block;
-  }
-
-  #see-more-upcoming:checked + #see-more-upcoming-label {
-    display: none;
-  }
 
   // Avatars
 
   .avatars {
+    overflow: hidden;
     padding-inline-end: 0;
     text-align: right;
     white-space: nowrap;
@@ -138,9 +127,21 @@
     }
   }
 
+  img.avatar {
+    --avatar-offset: -0.3;
+  }
+
+  // Set a bigger avatar offset if there are 5 or 6 hosts, so that they fit.
+  img.avatar:first-child:nth-last-child(5),
+  img.avatar:first-child:nth-last-child(5) ~ img.avatar,
+  img.avatar:first-child:nth-last-child(6),
+  img.avatar:first-child:nth-last-child(6) ~ img.avatar {
+    --avatar-offset: -0.5;
+  }
+
   img.avatar + img.avatar,
   .card .avatar + .avatar {
-    margin-left: calc(var(--avatar-size) * -0.5);
+    margin-left: calc(var(--avatar-size) * var(--avatar-offset));
   }
 
   // Hosts

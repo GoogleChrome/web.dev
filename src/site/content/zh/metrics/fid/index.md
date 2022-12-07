@@ -4,7 +4,7 @@ title: First Input Delay 首次输入延迟 (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: 这篇文章介绍了首次输入延迟 (FID) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -120,7 +120,7 @@ FID 是一个只能进行[实际](/user-centric-performance-metrics/#in-the-fiel
 
 ### 实测工具
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
@@ -160,7 +160,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-您可以参考[`getFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
+您可以参考[`getFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），FID 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 
@@ -174,15 +174,15 @@ getFID(console.log);
 
 ## 如何改进 FID
 
-要了解如何改进某个特定网站的 FID，您可以运行一次灯塔性能审计，并留心查看审计建议的各种具体[机会](/lighthouse-performance/#opportunities)。
+要了解如何改进某个特定网站的 FID，您可以运行一次灯塔性能审计，并留心查看审计建议的各种具体[机会](https://developer.chrome.com/docs/lighthouse/performance/#opportunities)。
 
 虽然 FID 是一项实际指标（而灯塔是一个实验室指标工具），但改进 FID 的指导方向与改进[总阻塞时间 (TBT)](/tbt/)这项实验室指标的指导方向相同。
 
 如需深入了解如何改进 FID，请参阅[优化 FID](/optimize-fid/)。有关其他能够改进 FID 的单个性能技巧的进一步指导，请参阅：
 
-- [减少第三方代码的影响](/third-party-summary/)
-- [减少 JavaScript 执行时间](/bootup-time/)
-- [最小化主线程工作](/mainthread-work-breakdown/)
-- [保持较低的请求数和较小的传输大小](/resource-summary/)
+- [减少第三方代码的影响](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [减少 JavaScript 执行时间](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [最小化主线程工作](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [保持较低的请求数和较小的传输大小](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

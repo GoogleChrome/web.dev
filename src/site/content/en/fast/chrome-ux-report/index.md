@@ -8,17 +8,19 @@ description: |
   user experience data on millions of websites. Unlike lab data, CrUX data
   actually comes from opted-in users in the field.
 date: 2020-07-13
+updated: 2022-07-18
 tags:
   - performance
+  - chrome-ux-report
 ---
 
-The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (informally known as CrUX) is a public dataset of real user experience data on millions of websites. Unlike lab data, CrUX data actually comes from [opted-in users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) in the field. It measures the [Core Web Vitals](/vitals/) metrics, including Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS), as well as diagnostic metrics like Time to First Byte (TTFB) and First Contentful Paint (FCP).
+The [Chrome UX Report](https://developer.chrome.com/docs/crux/) (informally known as CrUX) is a public dataset of real user experience data on millions of websites. Unlike lab data, CrUX data actually comes from [opted-in users](https://developer.chrome.com/docs/crux/methodology/#user-eligibility) in the field. It measures the [Core Web Vitals](/vitals/) metrics, including Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS), as well as diagnostic metrics like Time to First Byte (TTFB) and First Contentful Paint (FCP).
 
 The dataset also contains qualitative dimensions
 about the user experience, for example, the device and connection types, which
 enables drilling down into user experiences grouped by similar technologies.
 See the
-[CrUX documentation](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)
+[CrUX documentation](https://developer.chrome.com/docs/crux/methodology/#metrics)
 for the full list of metrics.
 
 Using this data, developers are able to understand the wide distribution of real
@@ -34,7 +36,7 @@ ranging in complexity. For quick and easy analysis of website performance, the [
 [PageSpeed Insights](https://pagespeed.web.dev/)
 are the recommended tools. [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report)
 trades some of the simplicity of the analysis for the power of customization
-and more granular insights. And the [API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference) enables the integration of high-level data with other applications.
+and more granular insights. And the [API](https://developer.chrome.com/docs/crux/api/) enables the integration of high-level data with other applications.
 
 ### CrUX Dashboard
 

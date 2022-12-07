@@ -4,7 +4,7 @@ title: First Input Delay(최초 입력 지연, FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: 이 게시물에서는 최초 입력 지연(FID) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -120,12 +120,14 @@ FID는 실제 사용자가 페이지와 상호 작용해야 하므로 [사이트
 
 ### 현장 도구
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
 
 ### JavaScript에서 FID 측정
+
+{% BrowserCompat 'api.PerformanceEventTiming' %}
 
 JavaScript에서 FID를 측정하려면 [Event Timing API](https://wicg.github.io/event-timing)를 사용할 수 있습니다. 다음 예시에서는 [`PerformanceObserver`](https://wicg.github.io/event-timing/#sec-performance-event-timing)를 작성해 [`first-input`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 항목을 수신 대기하고 콘솔에 기록하는 방법을 확인하실 수 있습니다.
 
@@ -160,7 +162,7 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-JavaScript에서 FID를 측정하는 방법에 대한 전체 예제는 [`getFID)`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)를 참조하세요.
+JavaScript에서 FID를 측정하는 방법에 대한 전체 예제는 [`getFID)`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 FID를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 
@@ -174,15 +176,15 @@ FID 값에는 변동이 예상되므로, FID를 보고할 때는 값 분포를 �
 
 ## FID를 개선하는 방법
 
-특정 사이트에 대한 FID를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](/lighthouse-performance/#opportunities)를 주의 깊게 살펴보시기 바랍니다.
+특정 사이트에 대한 FID를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](https://developer.chrome.com/docs/lighthouse/performance/#opportunities)를 주의 깊게 살펴보시기 바랍니다.
 
 FID는 필드 메트릭(Lighthouse는 실험실 메트릭 도구임)이지만 FID 개선 지침은 [총 차단 시간(TBT)](/tbt/)을 개선하는 지침과 동일합니다.
 
 FID를 개선하는 방법에 대한 자세한 내용은 [FID 최적화](/optimize-fid/)를 참조하시기 바랍니다. FID를 개선할 수 있는 개별 성능 기술에 대한 추가 지침은 다음을 참조하세요.
 
-- [타사 코드의 영향 줄이기](/third-party-summary/)
-- [JavaScript 실행 시간 단축](/bootup-time/)
-- [메인 스레드 작업 최소화](/mainthread-work-breakdown/)
-- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](/resource-summary/)
+- [타사 코드의 영향 줄이기](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [JavaScript 실행 시간 단축](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [메인 스레드 작업 최소화](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [요청 수를 낮게 유지하고 전송 크기를 작게 유지](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

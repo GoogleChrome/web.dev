@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-10-19
 description: В этой статье описывается метрика CLS (Совокупное смещение макета) и объясняются принципы ее измерения
 tags:
   - performance
@@ -36,7 +36,7 @@ tags:
 
 ## Что такое CLS?
 
-CLSэто показатель по временному окну с максимальными *оценками смещения макета* для каждого [неожиданного](/cls/#expected-vs.-unexpected-layout-shifts) смещения макета, которые происходят в течение всего времени жизни страницы.
+CLS — это показатель по временному окну с максимальными *оценками смещения макета* для каждого [неожиданного](/cls/#expected-vs-unexpected-layout-shifts) смещения макета, которые происходят в течение всего времени жизни страницы.
 
 *Смещение макета* происходит каждый раз, когда видимый элемент меняет свое положение от одного отрисованного фрейма к другому (см. ниже подробные сведения о том, как рассчитываются [оценки смещения макета](#layout-shift-score)).
 
@@ -161,7 +161,7 @@ CLS можно измерить в [лабораторных](/user-centric-perf
 
 ### Инструменты для измерения в полевых условиях
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (отчет Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -170,9 +170,12 @@ CLS можно измерить в [лабораторных](/user-centric-perf
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Измерение CLS в JavaScript
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 Чтобы измерить CLS с помощью JavaScript, можно воспользоваться [Layout Instability API (API нестабильности макета)](https://github.com/WICG/layout-instability). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) который прослушивает неожиданные записи смещений макета `layout-shift`, группирует их в сеансы и регистрирует максимальное значение сеанса при каждом его изменении.
 
@@ -219,7 +222,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-Этот код показывает основной способ вычисления и регистрации CLS. Однако точно измерить CLS таким образом, чтобы метрика соответствовала измерениям в [отчете Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX), довольно сложно. Подробности см. ниже:
+Этот код показывает основной способ вычисления и регистрации CLS. Однако точно измерить CLS таким образом, чтобы метрика соответствовала измерениям в [отчете Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX), довольно сложно. Подробности см. ниже:
 
 {% endAside %}
 
@@ -250,7 +253,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-Полный пример измерения CLS в JavaScript приводится в [исходном коде `getCLS()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts).
+Полный пример измерения CLS в JavaScript приводится в [исходном коде `getCLS()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить CLS в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 

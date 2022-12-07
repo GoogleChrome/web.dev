@@ -49,7 +49,7 @@ Trusted Types 要求您在将数据传递给上述接收器函数之前对其进
 {% Compare 'worse' %}
 
 ```javascript
-anElement.innerHTML  = location.href;
+anElement.innerHTML = location.href;
 ```
 
 {% CompareCaption %} 启用 Trusted Types 后，浏览器会抛出 *TypeError*，并阻止将 DOM XSS 接收器与字符串一起使用。{% endCompareCaption %}
@@ -166,7 +166,7 @@ DOMPurify [支持 Trusted Types](https://github.com/cure53/DOMPurify#what-about-
 ```javascript/2
 if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
   const escapeHTMLPolicy = trustedTypes.createPolicy('myEscapePolicy', {
-    createHTML: string => string.replace(/\</g, '<')
+    createHTML: string => string.replace(/\</g, '&lt;')
   });
 }
 ```
@@ -178,7 +178,7 @@ if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
 ```javascript
 const escaped = escapeHTMLPolicy.createHTML('<img src=x onerror=alert(1)>');
 console.log(escaped instanceof TrustedHTML);  // true
-el.innerHTML = escaped;  // '<img src=x onerror=alert(1)>'
+el.innerHTML = escaped;  // '&lt;img src=x onerror=alert(1)>'
 ```
 
 {% Aside %} 虽然传递给 `trustedTypes.createPolicy()` 的 JavaScript 函数 `createHTML()` 返回一个字符串，但 `createPolicy()` 返回一个策略对象，该对象将返回值包装为正确的类型 - 在本例中为 `TrustedHTML`。 {% endAside %}

@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: |
   What makes a good, or great Progressive Web App?
 tags:
@@ -57,7 +57,7 @@ Lighthouse are based on the
 and scoring high on those audits will make it more likely that your users have
 an enjoyable experience. You can also use
 [PageSpeed Insights](https://pagespeed.web.dev/)
-or the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/)
+or the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 to get real-world performance data for your web app.
 
 #### How
@@ -321,7 +321,7 @@ making your PWA accessible, you ensure it's usable for everyone.
 
 W3C's [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
 is a good place to start. A majority of accessibility testing
-must be done manually. Tools like the [Accessibility](/lighthouse-accessibility/)
+must be done manually. Tools like the [Accessibility](https://developer.chrome.com/docs/lighthouse/accessibility/)
 audits in Lighthouse, [axe](https://github.com/dequelabs/axe-core), and
 [Accessibility Insights](https://accessibilityinsights.io/) can help you
 automate some accessibility testing. It's also important to use semantically
@@ -361,7 +361,7 @@ client-side rendering.
 Start by ensuring that each URL has a unique, descriptive title and meta
 description. Then you can use the
 [Google Search Console](https://search.google.com/search-console/about)
-and the [Search Engine Optimization audits](/lighthouse-seo/) in Lighthouse to
+and the [Search Engine Optimization audits](https://developer.chrome.com/docs/lighthouse/seo/) in Lighthouse to
 help you debug and fix discoverability issues with your PWA. You can also use
 [Bing](https://www.bing.com/toolbox/webmaster)'s or
 [Yandex](https://webmaster.yandex.com/welcome/)'s webmaster tools, and

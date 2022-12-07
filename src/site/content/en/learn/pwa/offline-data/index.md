@@ -191,6 +191,17 @@ If you register your offline-ready content using this API, the user will see the
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/b1o5a6iCgjqOVMVfcbuj.png", alt="The Content Indexing API results available in Chrome for Android.", width="800", height="1480" %}
 {% endAside %}
 
+## API Browser support
+
+### Web Storage
+{% BrowserCompat 'api.Window.localStorage' %}
+
+### File System Access
+{% BrowserCompat 'api.FileSystemHandle' %}
+
+### Storage Manager
+{% BrowserCompat 'api.StorageManager' %}
+
 ##  Resources
 
 - [Storage on the Web](/storage-for-the-web/)

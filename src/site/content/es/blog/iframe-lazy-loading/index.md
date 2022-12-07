@@ -5,7 +5,7 @@ subhead: "¡Llegó la carga diferida incorporada al navegador para iframes!"
 authors:
   - addyosmani
 date: 2020-07-24
-updated: 2022-07-12
+updated: 2022-08-15
 hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: Esquema del teléfono con carga de imagen y recursos
 description: Esta publicación cubre el atributo loading y cómo se puede utilizar para controlar la carga de los iframes.
@@ -46,7 +46,7 @@ Según la investigación de Chrome sobre [iframes fuera de pantalla de carga dif
 
 ### ¿Cómo funciona la carga diferida incorporada para iframes?
 
-El atributo `loading` permite que un navegador difiera la carga de iframes e imágenes fuera de la pantalla hasta que los usuarios se desplacen cerca de ellos. `loading` admite tres valores:
+El atributo `loading` permite que un navegador difiera la carga de iframes e imágenes fuera de la pantalla hasta que los usuarios se desplacen cerca de ellos. `loading` admite dos valores:
 
 - `lazy`: es un buen candidato para la carga diferida.
 - `eager`: no es un buen candidato para la carga diferida. Cargue de inmediato.

@@ -1,0 +1,29 @@
+{
+  "name": "How to create app shortcuts",
+  "short_name": "App shortcuts",
+  "start_url": "../demo.html",
+  "icons": [
+    {
+      "src": "../icons/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Feel blue",
+      "short_name": "Blue",
+      "description": "Open a blue webpage",
+      "url": "../blue.html",
+      "icons": [{ "src": "../icons/blue.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Feel red",
+      "short_name": "Red",
+      "description": "Open a red webpage",
+      "url": "../red.html",
+      "icons": [{ "src": "../icons/red.png", "sizes": "192x192" }]
+    }
+  ],
+  "display": "standalone"
+}

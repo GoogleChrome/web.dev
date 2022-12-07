@@ -315,7 +315,7 @@ Baixar e renderizar fontes da web pode causar mudanças de layout de duas maneir
 
 As seguintes ferramentas podem ajudá-lo a minimizar o problema:
 
-- <code>[font-display](/font-display/)</code> permite que você modifique o comportamento da renderização de fontes personalizadas usando valores como <code>auto</code> , <code>swap</code> , <code>block</code> , <code>fallback</code> e <code>optional</code>. Infelizmente, todos esses valores (exceto [opcional](http://crrev.com/749080)) podem causar uma alteração de layout de uma das maneiras acima.
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code> permite que você modifique o comportamento da renderização de fontes personalizadas usando valores como <code>auto</code> , <code>swap</code> , <code>block</code> , <code>fallback</code> e <code>optional</code>. Infelizmente, todos esses valores (exceto [opcional](http://crrev.com/749080)) podem causar uma alteração de layout de uma das maneiras acima.
 - A [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) pode reduzir o tempo necessário para obter as fontes necessárias.
 
 Em relação ao Chrome 83, posso recomendar também o seguinte:
@@ -331,7 +331,7 @@ Leia [Impedindo o deslocamento de layout e flashes de texto invisível (FOIT) ao
 
 Mudanças nos valores das propriedades CSS podem exigir que o navegador reaja a essas alterações. Uma série de valores provocam um novo layout, renderização e composições, como `box-shadow` ,`box-sizing`. Diversas propriedades CSS podem ser alteradas de maneira menos onerosa.
 
-Para saber mais sobre quais propriedades CSS causam alterações no layout, veja [Gatilhos CSS](https://csstriggers.com/) e [Animações de alto desempenho](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
+Para saber mais sobre quais propriedades CSS causam alterações no layout, veja [Animações de alto desempenho](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
 
 ### Ferramentas de desenvolvimento 🔧
 

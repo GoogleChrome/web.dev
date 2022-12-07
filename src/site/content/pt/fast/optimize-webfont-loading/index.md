@@ -145,6 +145,6 @@ O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) pode ajud
 
 As auditorias a seguir podem ajudá-lo a garantir que suas páginas continuem a seguir as práticas recomendadas de otimização de fontes da web ao longo do tempo:
 
-- [Solicitações de chave de pré-carregamento](/uses-rel-preload/)
-- [Usa política de cache ineficiente em ativos estáticos](/uses-long-cache-ttl/)
-- [Todo o texto permanece visível durante o carregamento do WebFont](/font-display/)
+- [Solicitações de chave de pré-carregamento](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Usa política de cache ineficiente em ativos estáticos](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [Todo o texto permanece visível durante o carregamento do WebFont](https://developer.chrome.com/docs/lighthouse/performance/font-display/)

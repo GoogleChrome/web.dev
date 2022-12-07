@@ -12,7 +12,7 @@ tags:
 
 You want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between a "native" feel or a clunky, unpolished one.
 
-This is the first in a series of articles covering rendering performance optimization in the browser. To kick things off, we'll cover why smooth animation is difficult and what needs to happen to achieve it, as well as a few easy best practices. Many of these ideas were originally presented in "Jank Busters," a talk Nat Duca and I gave at Google I/O talk ([video](https://www.youtube.com/watch?v=hAzhayTnhEI&amp;feature=plcp), [slides](http://www.jankfree.com/jank-busters-io/index.html#1)) this year.
+This is the first in a series of articles covering rendering performance optimization in the browser. To kick things off, we'll cover why smooth animation is difficult and what needs to happen to achieve it, as well as a few easy best practices. Many of these ideas were originally presented in "Jank Busters," a talk Nat Duca and I gave at Google I/O talk ([video](https://www.youtube.com/watch?v=hAzhayTnhEI&amp;feature=plcp)) this year.
 
 ## Introducing V-sync
 
@@ -153,11 +153,8 @@ short (<15ms).
 
 Lastly, vsync'd animation doesn't only apply to simple UI animations -- it applies to Canvas2D animation, WebGL animation, and even scrolling on static pages. In the next article in this series we'll dig into scrolling performance with these concepts in mind.
 
-For more on hunting down jank on the web, see [jankfree.com](http://www.jankfree.com/).
-
 Happy animating!
 
 ## References
 
-- [jankfree.com](http://www.jankfree.com/) for Jank Busters I/O talk, slides, and other info
 - [Using requestAnimationFrame for drag events](http://blog.digitalbackcountry.com/2012/05/using-requestanimationframe-to-optimize-dragging-events/)

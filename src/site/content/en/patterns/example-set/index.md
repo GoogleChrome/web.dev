@@ -1,13 +1,13 @@
 ---
 layout: pattern-set
-title: Example PatternSet
+title: Example Pattern Set
 description: Example set of patterns
 hero: image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg
 draft: true
 noindex: true
 ---
 
-## Oveview
+## Overview
 
 Code pattern is a snippet of code, representing a solution to a typical problem.
 Patterns are organized as follows: "/patterns/PatternSuite/PatternSet/PatternName"
@@ -68,5 +68,5 @@ displaying "style.css" is labeled **CSS**.
 
 If `layout: demo` is specified, as it is in the default example pattern, then the demo HTML will be assembled by including "body.html" from this folder, as well as:
 
-- "*.css" files get included in the `<head>` of the demo.
-- "*.js" files get included at the end of the body of the demo.
+- "\*.css" files get included in the `<head>` of the demo.
+- "\*.js" files get included at the end of the body of the demo.

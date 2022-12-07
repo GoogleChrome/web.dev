@@ -47,7 +47,7 @@ Google cree que los Core Web Vitals son fundamentales para todas las experiencia
 
 #### Herramientas en el campo para medir los Core Web Vitals
 
-El [Chrome User Experience Report (Informe de experiencia del usuario de Chrome)](https://developers.google.com/web/tools/chrome-user-experience-report) recopila datos de medición de usuarios reales y anónimos para cada Core Web Vital. Estos datos permiten a los propietarios de sitios evaluar rápidamente su rendimiento sin tener que instrumentar manualmente los análisis en sus páginas, y potencian herramientas como [PageSpeed Insights](https://pagespeed.web.dev/) y el [informe de Core Web Vitals](https://support.google.com/webmasters/answer/9205520) de la Search Console.
+El [Chrome User Experience Report (Informe de experiencia del usuario de Chrome)](https://developer.chrome.com/docs/crux/) recopila datos de medición de usuarios reales y anónimos para cada Core Web Vital. Estos datos permiten a los propietarios de sitios evaluar rápidamente su rendimiento sin tener que instrumentar manualmente los análisis en sus páginas, y potencian herramientas como [PageSpeed Insights](https://pagespeed.web.dev/) y el [informe de Core Web Vitals](https://support.google.com/webmasters/answer/9205520) de la Search Console.
 
 <div class="table-wrapper">
   <table>
@@ -58,7 +58,7 @@ El [Chrome User Experience Report (Informe de experiencia del usuario de Chrome)
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a></td>
+      <td><a href="https://developer.chrome.com/docs/crux/">Chrome User Experience Report</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -205,7 +205,7 @@ Si bien los Core Web Vitals son las métricas críticas para comprender y brinda
 
 Estos otros Web Vitals a menudo sirven como métricas proxy o suplementarias para los Core Web Vitals, para ayudar a capturar una mayor parte de la experiencia o para ayudar a diagnosticar un problema específico.
 
-Por ejemplo, las métricas [Time to First Byte (TTFB)](/ttfb/) y [First Contentful Paint (FCP)](/fcp/) son aspectos vitales de la *experiencia de carga* y son útiles para diagnosticar problemas con LCP ([tiempos de respuesta del servidor](/overloaded-server/) lentos o [recursos de bloqueo de renderizado](/render-blocking-resources/), respectivamente).
+Por ejemplo, las métricas [Time to First Byte (TTFB)](/ttfb/) y [First Contentful Paint (FCP)](/fcp/) son aspectos vitales de la *experiencia de carga* y son útiles para diagnosticar problemas con LCP ([tiempos de respuesta del servidor](/overloaded-server/) lentos o [recursos de bloqueo de renderizado](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/), respectivamente).
 
 De manera similar, métricas como [Total Blocking Time (TBT)](/tbt/) y [Time to Interactive (TTI)](/tti/) son métricas de laboratorio que son vitales para detectar y diagnosticar posibles *problemas de interactividad* que afectarán a la FID. Sin embargo, no forman parte del conjunto Core Web Vitals porque no se pueden medir en el campo ni reflejan un resultado [centrado en el usuario.](/user-centric-performance-metrics/#how-metrics-are-measured)
 

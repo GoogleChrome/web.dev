@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-08-17
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -252,13 +252,15 @@ user to interact with your page. You can measure FID with the following tools.
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Measure FID in JavaScript
+
+{% BrowserCompat 'api.PerformanceEventTiming' %}
 
 To measure FID in JavaScript, you can use the [Event Timing
 API](https://wicg.github.io/event-timing). The following example shows how to
@@ -303,23 +305,25 @@ the metric is calculated.
   the [back/forward cache](/bfcache/#impact-on-core-web-vitals), but FID should
   be measured in these cases since users experience them as distinct page
   visits.
-- The API does not report inputs that occur within iframes, but to properly
-  measure FID you should consider them. Sub-frames can use the API to report
-  their `first-input` entries to the parent frame for aggregation.
+- The API does not report inputs that occur within iframes but the metric does
+  as they are part of the user experience of the page. This can
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure FID you should consider them. Sub-frames can use the API
+  to report their `first-input` entries to the parent frame for aggregation.
 
 Rather than memorizing all these subtle differences, developers can use the
 [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
 measure FID, which handles these differences for you (where possible):
 
 ```js
-import {getFID} from 'web-vitals';
+import {onFID} from 'web-vitals';
 
 // Measure and log FID as soon as it's available.
-getFID(console.log);
+onFID(console.log);
 ```
 
 You can refer to [the source code for
-`getFID)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)
+`onFID)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts)
 for a complete example of how to measure FID in JavaScript.
 
 {% Aside %}
@@ -351,7 +355,7 @@ percentile of mobile users.
 
 To learn how to improve FID for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+[opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) the audit suggests.
 
 While FID is a field metric (and Lighthouse is a lab metric tool), the guidance
 for improving FID is the same as that for improving the lab metric [Total
@@ -361,9 +365,9 @@ For a deep dive on how to improve FID, see [Optimize FID](/optimize-fid/). For
 additional guidance on individual performance techniques that can also improve
 FID, see:
 
-- [Reduce the impact of third-party code](/third-party-summary/)
-- [Reduce JavaScript execution time](/bootup-time/)
-- [Minimize main thread work](/mainthread-work-breakdown/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Reduce the impact of third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [Minimize main thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [Keep request counts low and transfer sizes small](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

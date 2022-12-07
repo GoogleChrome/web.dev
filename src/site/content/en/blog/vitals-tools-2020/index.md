@@ -5,6 +5,7 @@ authors:
   - addyosmani
   - egsweeny
 date: 2020-05-28
+updated: 2022-07-18
 description: |
   Read about the newly announced Core Web Vitals measurement support across popular web developer tools like Lighthouse, PageSpeed Insights, Chrome UX Report, and many others.
 hero: image/admin/wNtXgv1OE2OETdiSzi8l.png
@@ -16,7 +17,7 @@ tags:
   - performance
 ---
 
-The recently announced [Web Vitals](/vitals/) initiative provides unified guidance about quality signals that are essential for all sites to deliver a great user experience on the web. We're happy to announce that **all of Google's popular tools for web developers now support measurement of Core Web Vitals**, helping you more easily diagnose and fix user experience issues. This includes [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://pagespeed.web.dev/), [Chrome DevTools](https://developer.chrome.com/docs/devtools/), [Search Console](https://search.google.com/search-console/about), [web.dev's measure tool](/measure/), the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) and a new (!) [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API.
+The recently announced [Web Vitals](/vitals/) initiative provides unified guidance about quality signals that are essential for all sites to deliver a great user experience on the web. We're happy to announce that **all of Google's popular tools for web developers now support measurement of Core Web Vitals**, helping you more easily diagnose and fix user experience issues. This includes [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://pagespeed.web.dev/), [Chrome DevTools](https://developer.chrome.com/docs/devtools/), [Search Console](https://search.google.com/search-console/about), [web.dev's measure tool](/measure/), the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) and a new (!) [Chrome UX Report](https://developer.chrome.com/docs/crux/) API.
 
 With Google Search now including Core Web Vitals as the foundation for evaluating [page experience](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html), it's important that these metrics are as available and actionable as possible.
 
@@ -74,7 +75,7 @@ While [Search Console](https://search.google.com/search-console/) provides site 
 
 ### CrUX
 
-The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) is a public dataset of real user experience data on millions of websites. It measures field versions of all the Core Web Vitals. Unlike lab data, CrUX data comes from [opted-in users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) in the field. Using this data, developers are able to understand the distribution of real-world user experiences on their own or even competitors' websites. Even if you don't have RUM on your site, CrUX can provide a quick and easy way to assess your Core Web Vitals. The [CrUX dataset on BigQuery](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started) includes fine-grained performance data for all Core Web Vitals and is available in monthly snapshots at the origin-level.
+The [Chrome UX Report](https://developer.chrome.com/docs/crux/) (CrUX) is a public dataset of real user experience data on millions of websites. It measures field versions of all the Core Web Vitals. Unlike lab data, CrUX data comes from [opted-in users](https://developer.chrome.com/docs/crux/methodology/#user-eligibility) in the field. Using this data, developers are able to understand the distribution of real-world user experiences on their own or even competitors' websites. Even if you don't have RUM on your site, CrUX can provide a quick and easy way to assess your Core Web Vitals. The [CrUX dataset on BigQuery](https://developer.chrome.com/docs/crux/bigquery/) includes fine-grained performance data for all Core Web Vitals and is available in monthly snapshots at the origin-level.
 
 The only way to truly know how your site performs for your users is to actually measure its performance in the field as those users are loading and interacting with it. This type of measurement is commonly referred to as Real User Monitoring—or RUM for short. Even if you don't have RUM on your site, CrUX can provide a quick and easy way to assess your Core Web Vitals.
 
@@ -89,7 +90,7 @@ Today we're happy to announce the [CrUX API](http://developers.google.com/web/to
 
 Developers can query for an origin or URL and segment results by different form factors. The API updates daily and summarizes the previous 28 days worth of data (unlike the BigQuery dataset, which is aggregated monthly). The API also has the same relaxed public API quotas we place on our other API, the PageSpeed Insights API (25,000 requests per day).
 
-Below is a [demo](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started) using the CrUX API to visualize the Core Web Vitals metrics with distributions for **good**, **needs improvement**, and **poor**:
+Below is a demo using the [CrUX API](https://developer.chrome.com/docs/crux/api/) to visualize the Core Web Vitals metrics with distributions for **good**, **needs improvement**, and **poor**:
 
 <figure>
   {% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Chrome User Experience Report API demo showing Core Web Vitals metrics", width="800", height="523" %}

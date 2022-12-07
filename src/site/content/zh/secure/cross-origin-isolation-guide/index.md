@@ -61,7 +61,7 @@ tags:
     ```
 3. 一旦标头开始传播，您注册的端点就应该能够开始收集弃用报告。
 
-请在此处查看执行示例：[https://first-party-test.glitch.me](https://first-party-test.glitch.me)。
+请在此处查看执行示例：[https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me)。
 
 {% endDetails %}
 

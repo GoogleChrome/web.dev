@@ -1,0 +1,12 @@
+setLeader: Test your knowledge of patterns
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Do accessible components always stay accessible for users?
+    options:
+      - content: "Yes, you can use these components without additional work."
+        rationale: "While a resource built for accessibility is more likely to work automatically than others, it’s essential that you still perform accessibility testing to ensure these components work for your users."
+      - content: "No, you must test your components first."
+        rationale: "Even components and patterns designed for accessibility should be tested. It's possible it could be inaccessible in combination with other existing components."

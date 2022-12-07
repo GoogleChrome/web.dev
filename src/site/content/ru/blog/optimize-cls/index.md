@@ -242,7 +242,7 @@ img {
 
 Эти побочные эффекты могут помочь минимизировать следующие инструменты:
 
-- свойство <code>[font-display](/font-display/)</code> позволяет изменять поведение визуализации пользовательских шрифтов, оно имеет пять значений <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> и <code>optional</code>. К сожалению, все эти значения (кроме [optional](http://crrev.com/749080)) могут вызвать перекомпоновку одним из вышеуказанных способов.
+- свойство <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code> позволяет изменять поведение визуализации пользовательских шрифтов, оно имеет пять значений <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> и <code>optional</code>. К сожалению, все эти значения (кроме [optional](http://crrev.com/749080)) могут вызвать перекомпоновку одним из вышеуказанных способов.
 - [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) (API загрузки шрифтов) может сократить время, необходимое для получения необходимых шрифтов.
 
 Что касается Chrome 83, я также могу порекомендовать следующее:

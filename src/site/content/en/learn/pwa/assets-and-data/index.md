@@ -95,7 +95,7 @@ In your PWA, you are in charge of all the decisions. You can choose the best app
 Some decisions to make are:
 
 * Precaching: pick the assets you'd like to install on the first load; those should include the HTML and the minimal assets to render the app. When using precache keep in mind you are using the device's space and network. Be conscious and responsible when downloading assets and caching them.
-* Cache as needed: used to add assets to the cache when they are requested. Typically these are assets that can change independently of your app version, like images or content. See the [caching](learn/pwa/caching) section for different strategies on how to cache as needed.
+* Cache as needed: used to add assets to the cache when they are requested. Typically these are assets that can change independently of your app version, like images or content. See the [caching](/learn/pwa/caching) section for different strategies on how to cache as needed.
 * APIs and web services: API calls can be cached; or, instead of caching the API responses, you can store their data in IndexedDB.
 
 {% Aside 'gotchas' %}

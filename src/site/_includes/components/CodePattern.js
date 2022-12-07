@@ -40,11 +40,23 @@ module.exports = (patternId, height) => {
     .map((asset) => {
       const type = prismTypes.includes(asset.type) ? asset.type : 'text';
       assetLines.push(asset.content.split('\n').length);
+
+      // Jake says:
+      // Because Prism outputs preformatted code, it will often contain blank
+      // lines, eg if the source contains blank lines. Unfortunately the
+      // markdown parser sees that as "the HTML has ended, process as markdown".
+      // This results in lots of malformed HTML that may appear fine in dev,
+      // but may appear differently once the minifier has chewed through it.
+      // To avoid this, 'blank lines' (which in markdown-speak can include
+      // whitespace) are replaced with an empty span, followed by any
+      // whitespace. The span is not an empty line in markdown-speak, so it
+      // continues to defer to HTML source.
       const content = Prism.highlight(
         asset.content,
         Prism.languages[type],
         type,
-      );
+      ).replace(/^(\s*?)$/gm, '<span></span>$1');
+
       return `<web-tab title="${asset.type}" data-label="${asset.type}">
           <pre><code class="language-${asset.type}">${content}</code></pre>
         </web-tab>`;

@@ -7,6 +7,7 @@ authors:
   - aranhacarlos
   - joanbaca
 date: 2020-09-21
+updated: 2022-07-18
 hero: image/admin/YTkCg2CmNZVG1djjVnvu.jpg
 thumbnail: image/admin/dSiMshQ9MRT9zgDybdmJ.jpg
 description: Summary of the work done by Mercado Libre's frontend architecture team to optimize FID, using TBT as a proxy metric.
@@ -62,7 +63,7 @@ milliseconds:
 </picture>
 
 While Mercado Libre's site was performing well in most sections, they found in the [Chrome User
-Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) that
+Experience Report](https://developer.chrome.com/docs/crux/) that
 product detail pages had a poor FID. Based on that information, they decided to focus their efforts
 on improving the interactivity for product pages in the site.
 
@@ -97,10 +98,10 @@ Here's the general approach they took:
   the main thread busy on a real device.
 - Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to determine the impact of
   the changes in [Max Potential First Input Delay (Max Potential
-  FID)](/lighthouse-max-potential-fid/).
+  FID)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/).
 
 {% Aside %} During this project Mercado Libre used [Max Potential
-FID](/lighthouse-max-potential-fid/) in Lighthouse because that was the tool's main
+FID](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/) in Lighthouse because that was the tool's main
 metric for measuring interactivity at that time. Lighthouse now recommends using [Total Blocking
 Time](/tbt/) instead. {% endAside %}
 
@@ -247,7 +248,7 @@ While laboratory testing tools like WebPageTest and Lighthouse are great for ite
 during development, the true goal is to improve the experience for real users.
 
 The [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report) provides user
+Report](https://developer.chrome.com/docs/crux/) provides user
 experience metrics for how real-world Chrome users experience popular destinations on the web. The
 data from the report can be obtained by [running queries in
 BigQuery](/chrome-ux-report-bigquery/),

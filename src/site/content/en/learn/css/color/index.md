@@ -176,6 +176,7 @@ Both saturation and lightness are defined with percentages.
 [The angle type](https://developer.mozilla.org/docs/Web/CSS/angle)
 in CSS is great for defining hue because it represents the angle of the color wheel really well.
 This type accepts degrees, turns, radians and gradians.
+{% BrowserCompat 'css.types.angle' %}
 {% endAside %}
 
 <figure>

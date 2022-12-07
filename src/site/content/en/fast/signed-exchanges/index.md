@@ -8,7 +8,7 @@ authors:
   - katiehempenius
   - twifkak
 date: 2020-10-14
-updated: 2022-06-09
+updated: 2022-09-03
 hero: image/admin/6ll3P8MYWxvtb1ZjXIzb.jpg
 alt: A pile of envelopes.
 description: |
@@ -53,9 +53,9 @@ making content truly portable.
 
 An SXG is encapsulated in a [binary-encoded](https://cbor.io/) file that has two
 primary components: an HTTP exchange and a
-[signature](https://developer.mozilla.org/docs/Glossary/Signature/Security).
-The HTTP exchange consists of a request URL, content negotiation information,
-and an HTTP response.
+[signature](https://developer.mozilla.org/docs/Glossary/Signature/Security)
+that covers the exchange. The HTTP exchange consists of a request URL, content
+negotiation information, and an HTTP response.
 
 {% Details %}
 {% DetailsSummary %}
@@ -117,6 +117,13 @@ SXG may be valid for at most 7 days. Find more information on
 the signature header in the [Signed HTTP Exchanges
 spec](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#section-3.1).
 
+#### Support for server-side personalization
+
+An SXG containing a `Vary: Cookie` header will be shown only to users who don't
+have cookies for the signed request URL. If your site presents different HTML
+to its logged-in users, you can use this feature to take advantage of SXGs
+without altering that experience. See details on [server-side personalization
+with Dynamic SXG](/blog/sxg-desktop/#support-for-server-side-personalization).
 
 ### Web Packaging
 
@@ -153,6 +160,8 @@ Several global brands and sites have already benefited from Signed Exchanges. As
 - Narcity **improved LCP by 41%**
 - Paper Magazine noticed a **27% increase in Sessions per user** 
 - MLT Blog **decreased Page Load time by 21%**
+
+[Cloudflare found](https://blog.cloudflare.com/automatic-signed-exchanges-desktop-android/) that SXG **improved TTFB for 98% of sites** it tested, and **improved LCP for 85% of sites**, with a median improvement of over 20% in SXG-eligible page loads.
 
 {% Aside %}
 SXG enables [cross-origin prefetching](https://developer.chrome.com/blog/cross-origin-prefetch/) because it allows prefetch requests via an SXG cache server operated by the referrer, ensuring that the user's potentially identifying information is not revealed to the origin server until they navigate. This technique is available to any site that wishes to make its outlinks faster or more resilient to limited network access.
@@ -237,6 +246,24 @@ a general-purpose tool.
 
 ### General-purpose SXG tooling
 
+#### sxg-rs HTTP server
+
+The [sxg-rs
+http\_server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md)
+acts as a [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) for
+serving SXGs. For requests from SXG crawlers, `http_server` will sign the
+responses from the backend and respond with an SXG. For installation
+instructions, see [the
+README](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md).
+
+#### Web Packager Server
+
+The [Web Packager
+Server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md),
+`webpkgserver`, is an alternative to sxg-rs http\_server, written in Go. For
+instructions on setting up the Web Packager server, see [How to set up signed
+exchanges using Web Packager](/signed-exchanges-webpackager).
+
 #### Web Packager CLI
 
 The [Web Packager CLI](https://github.com/google/webpackager) generates a SXG
@@ -252,17 +279,6 @@ webpackager \
 Once the SXG file has been generated, upload it to your server and serve it with
 the `application/signed-exchange;v=b3` MIME type. In addition, you will need to
 serve the SXG certificate as `application/cert-chain+cbor`.
-
-#### Web Packager Server
-
-The [Web Packager
-Server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md),
-`webpkgserver`, acts as a [reverse
-proxy](https://en.wikipedia.org/wiki/Reverse_proxy) for serving SXGs. Given a
-URL, `webpkgserver` will fetch the URL's contents, package them as an SXG, and
-serve the SXG in response. For instructions on setting up the Web Packager
-server, see [How to set up signed exchanges using Web
-Packager](/signed-exchanges-webpackager).
 
 ### SXG libraries
 
@@ -297,6 +313,10 @@ Accept: /(^|,)\s\*application\/signed-exchange\s\*;\s\*v=[[:alnum:]\_-]+\s\*(,|$
 SXG can deliver superior performance when used with caching or prefetching. However, for content that is loaded directly from the origin server without the benefit of these optimizations, text/html delivers better performance than SXG. Serving content as SXG allows crawlers and other intermediaries to cache SXGs for faster delivery to users.
 {% endAside %}
 
+### Update cache API
+
+The Google SXG Cache has an API that site owners can use to remove SXGs from the cache before they've expired due to `Cache-Control: max-age`. See the [update cache API reference](https://github.com/google/webpackager/blob/main/docs/update_cache_api.md) for details.
+
 ### Linking to SXG
 
 Any site can cache, serve, and prefetch SXGs of the pages that it links to, where available, using the <link> and <a> tags:
@@ -324,14 +344,6 @@ You may see additional page speed improvement due to the prefetch surfaces and c
 - SXGs can be shown to users with cookies for your site.
 - SXG also prefetches subresources for your pages, such as JavaScript, CSS, fonts, and images, when specified using a `Link` header.
 - In the near future, SXG prefetching from Google Search will be available on more search result types.
-
-## Roadmap
-
-We are continuing to invest in SXG with new features and capabilities. Here is a preview of some improvements coming over the next few months, which address common limitations for sites looking to implement SXG.
-
-### Update Cache API
-
-The Google SXG Cache will soon launch an API that site owners can use to remove SXGs from the cache. This can help ensure freshness in cases where `max-age` isn't enough.
 
 ## Conclusion
  

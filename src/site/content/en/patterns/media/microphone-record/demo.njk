@@ -1,0 +1,122 @@
+---
+patternId: media/microphone-record
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎙️</text></svg>"
+    />
+    <title>How to record audio from the user's microphone</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+      button {
+        display: block;
+        margin-bottom: 4px;
+      }
+      pre {
+        color: red;
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to record audio from the user's microphone</h1>
+    <button id="startMicrophoneButton">Start using microphone</button>
+    <button id="stopMicrophoneButton" disabled>Stop using microphone</button>
+    <button id="startRecordButton" disabled>Start recording</button>
+    <button id="stopRecordButton" disabled>Stop recording</button>
+    <pre id="logs"></pre>
+    {% set script %}
+      const startMicrophoneButton = document.querySelector('#startMicrophoneButton');
+      const stopMicrophoneButton = document.querySelector('#stopMicrophoneButton');
+      const startRecordButton = document.querySelector('#startRecordButton');
+      const stopRecordButton = document.querySelector('#stopRecordButton');
+
+      let stream;
+      let recorder;
+
+      startMicrophoneButton.addEventListener("click", async () => {
+        // Prompt the user to use their microphone.
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        recorder = new MediaRecorder(stream);
+  
+        stopMicrophoneButton.disabled = false;
+        startRecordButton.disabled = false;
+        log("Your microphone audio is being used.");
+      });
+
+      stopMicrophoneButton.addEventListener("click", () => {
+        // Stop the stream.
+        stream.getTracks().forEach(track => track.stop());
+
+        startRecordButton.disabled = true;
+        stopRecordButton.disabled = true;
+        log("Your microphone audio is not used anymore.");
+      });
+
+      startRecordButton.addEventListener("click", async () => {
+        // Prompt the user to choose where to save the recording file.
+        const suggestedName = "microphone-recording.webm";
+        const handle = await window.showSaveFilePicker({ suggestedName });
+        const writable = await handle.createWritable();
+
+        // Start recording.
+        recorder.start();
+        recorder.addEventListener("dataavailable", async (event) => {
+          // Write chunks to the file.
+          await writable.write(event.data);
+          if (recorder.state === "inactive") {
+            // Close the file when the recording stops.
+            await writable.close();
+          }
+        });
+
+        stopRecordButton.disabled = false;
+        log("Your microphone audio is being recorded locally.");
+      });
+
+      stopRecordButton.addEventListener("click", () => {
+        // Stop the recording.
+        recorder.stop();
+
+        stopRecordButton.disabled = true;
+        log("Your microphone audio has been successfully recorded locally.");
+      });
+
+      /* Utils */
+
+      function log(text) {
+        document.querySelector('#logs').textContent += `${text}\r\n`;
+      }
+
+      window.onunhandledrejection = (event) => {
+        log(`> ${event.reason}`);
+      };
+      window.onerror = (error) => {
+        log(`> ${error}`);
+      };
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

@@ -177,7 +177,7 @@ they will immediately lay out on this grid. You can see this in action in the de
   id: 'NWdbrzr'
 } %}
 
-The Chrome Grid dev tools can help you to understand the various parts of the grid.
+The [grid overlay in Chrome DevTools](https://developer.chrome.com/docs/devtools/css/grid/) can help you understand the various parts of the grid.
 
 Open the [demo](https://codepen.io/web-dot-dev/full/NWdbrzr) in Chrome.
 Inspect the element with the grey background, which has an ID of `container`.
@@ -274,6 +274,7 @@ In the demo below change the value of the third track.
 } %}
 
 ### The `minmax()` function
+{% BrowserCompat 'css.properties.grid-template-columns.minmax' %}
 
 This function means that you can set a minimum and a maximum size for a track.
 This can be quite useful.
@@ -293,6 +294,7 @@ deduct the size needed for any gaps,
 and share the rest out according to your fr units.
 
 ### `repeat()` notation
+{% BrowserCompat 'css.properties.grid-template-columns.repeat' %}
 
 If you want to create a 12 column track grid with equal columns,
 you could use the following CSS.
@@ -492,7 +494,7 @@ To place your item set the start and end lines of the grid area that it should b
 }
 ```
 
-Chrome DevTools can give you a visual guide to the lines in order to check where your item is placed.
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/css/grid/) can give you a visual guide to the lines in order to check where your item is placed.
 
 The line numbering follows the writing mode and direction of the component.
 In the next demo change the writing mode or direction
@@ -706,6 +708,7 @@ These can look a little confusing until you break down exactly how they go toget
 Whether you want to use them or prefer to use longhands is up to you.
 
 ### `grid-template`
+{% BrowserCompat 'css.properties.grid-template' %}
 
 The [`grid-template`](https://developer.mozilla.org/docs/Web/CSS/grid-template)
 property is a shorthand for `grid-template-rows`, `grid-template-columns` and `grid-template-areas`.
@@ -724,6 +727,7 @@ Column sizing is added after a `/`.
 ```
 
 ### `grid` property
+{% BrowserCompat 'css.properties.grid' %}
 
 The [`grid`](https://developer.mozilla.org/docs/Web/CSS/grid)
 shorthand can be used in exactly the same way as the `grid-template` shorthand.
@@ -818,4 +822,5 @@ To find out more, take a look at the following resources.
 - [MDN CSS Grid Layout](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Creating a Grid Container](https://www.smashingmagazine.com/2020/01/understanding-css-grid-container/)
+- [Inspect CSS grid in Chrome DevTools](https://developer.chrome.com/docs/devtools/css/grid/)
 - [A comprehensive collection of grid learning material](https://gridbyexample.com/)

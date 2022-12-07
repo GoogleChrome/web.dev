@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: 優れたまたは素晴らしいプログレッシブ Web アプリとは？
 tags:
   - progressive-web-apps
@@ -35,7 +35,7 @@ tags:
 
 ユーザーにアプリを*使用*させるには、速度が重要です。実際、ページの読み込み時間が 1 秒から 10 秒になると、ユーザーがバウンスする確率は 123％ 増加します。パフォーマンスは `load` イベントに限られたことではありません。ユーザーが、ボタンのクリックなどの操作が届いているかどうかを考えるようなことがあってはいけません。スクロールとアニメーションはスムーズに感じられなければなりません。パフォーマンスは、アプリケーションに対するユーザーの認識から実際の実行まで、エクスペリエンス全体に影響を及ぼします。
 
-アプリケーションごとにニーズは異なりますが、Lighthouse のパフォーマンス監査は、[RAIL ユーザー中心のパフォーマンスモデル](/rail/)に基づいており、これらの監査で高いスコアを得られれば、ユーザーが楽しい体験を得る可能性が高くなります。また、[PageSpeed Insights](https://pagespeed.web.dev/) や [Chrome ユーザーエクスペリエンスレポート](https://developers.google.com/web/tools/chrome-user-experience-report/)を使用して、Web アプリの実際のパフォーマンスデータを取得することもできます。
+アプリケーションごとにニーズは異なりますが、Lighthouse のパフォーマンス監査は、[RAIL ユーザー中心のパフォーマンスモデル](/rail/)に基づいており、これらの監査で高いスコアを得られれば、ユーザーが楽しい体験を得る可能性が高くなります。また、[PageSpeed Insights](https://pagespeed.web.dev/) や [Chrome ユーザーエクスペリエンスレポート](https://developer.chrome.com/docs/crux/)を使用して、Web アプリの実際のパフォーマンスデータを取得することもできます。
 
 #### 方法
 
@@ -181,7 +181,7 @@ Service Worker の `install` イベント中に、後で使用するためのカ
 
 #### 方法
 
-W3C の『[Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)』は最適な出発点です。アクセシビリティテストの大部分は手動で行う必要があります。Lighthouse の[アクセシビリティ](https://github.com/dequelabs/axe-core)監査、[axe](https://accessibilityinsights.io/)、[Accessibility Insights](/lighthouse-accessibility/) などのツールは、アクセシビリティテストを自動化するのに役立ちます。また、`a` や `button` 要素のように、意味的に正しい要素を独自に再作成せずに使用することも重要です。そうすることで、より高度な機能を構築する必要がある場合に、アクセシビリティへの期待を確実に満たすことができます（矢印とタブのどちらをいつ使用するかなど）。[A11Y Nutrition Cards](https://accessibilityinsights.io/) には、いくつかの一般的なコンポーネントについて、これに関する優れたアドバイスをていきょうしています。
+W3C の『[Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)』は最適な出発点です。アクセシビリティテストの大部分は手動で行う必要があります。Lighthouse の[アクセシビリティ](https://github.com/dequelabs/axe-core)監査、[axe](https://accessibilityinsights.io/)、[Accessibility Insights](https://developer.chrome.com/docs/lighthouse/accessibility/) などのツールは、アクセシビリティテストを自動化するのに役立ちます。また、`a` や `button` 要素のように、意味的に正しい要素を独自に再作成せずに使用することも重要です。そうすることで、より高度な機能を構築する必要がある場合に、アクセシビリティへの期待を確実に満たすことができます（矢印とタブのどちらをいつ使用するかなど）。[A11Y Nutrition Cards](https://accessibilityinsights.io/) には、いくつかの一般的なコンポーネントについて、これに関する優れたアドバイスをていきょうしています。
 
 {% endDetails %}
 
@@ -201,7 +201,7 @@ Web の最大の利点の1つは、検索を通じてサイトやアプリを発
 
 #### 方法
 
-まず、各 URL に一意の説明的なタイトルとメタ説明があることを確認します。次に、Lighthouse の [Google 検索コンソール](https://search.google.com/search-console/about)と[検索エンジン最適化監査](/lighthouse-seo/)を使用して、PWA の検出可能性の問題をデバッグして修正することができます。[Bing](https://www.bing.com/toolbox/webmaster) や [Yandex](https://webmaster.yandex.com/welcome/) の Web マスターツールを使用して、[Schema.org](https://goo.gle/search-gallery) のスキーマを介して[構造化データ](https://schema.org/)をPWAに含めることを検討することもできます。
+まず、各 URL に一意の説明的なタイトルとメタ説明があることを確認します。次に、Lighthouse の [Google 検索コンソール](https://search.google.com/search-console/about)と[検索エンジン最適化監査](https://developer.chrome.com/docs/lighthouse/seo/)を使用して、PWA の検出可能性の問題をデバッグして修正することができます。[Bing](https://www.bing.com/toolbox/webmaster) や [Yandex](https://webmaster.yandex.com/welcome/) の Web マスターツールを使用して、[Schema.org](https://goo.gle/search-gallery) のスキーマを介して[構造化データ](https://schema.org/)をPWAに含めることを検討することもできます。
 
 {% endDetails %}
 

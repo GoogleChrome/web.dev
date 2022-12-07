@@ -62,7 +62,7 @@ service worker:
 ```javascript
 const SW_VERSION = '1.0.0';
 
-addEventListener('message', (event) => {
+self.addEventListener('message', (event) => {
   if (event.data.type === 'GET_VERSION') {
     event.ports[0].postMessage(SW_VERSION);
   }
@@ -103,6 +103,7 @@ Differences:
 </figure>
 
 ### Broadcast Channel API {: #broadcast-channel-api }
+{% BrowserCompat 'api.BroadcastChannel' %}
 
 The [Broadcast Channel API](https://developer.mozilla.org/docs/Web/API/Broadcast_Channel_API)
 allows basic communication between browsing contexts via [BroadcastChannel
@@ -147,6 +148,7 @@ and Edge, but other browsers, like Safari, [don't support it
 yet](https://caniuse.com/?search=broadcastchannel).
 
 ### Client API {: #channel-api }
+{% BrowserCompat 'api.Client' %}
 
 The [Client API](https://developer.mozilla.org/docs/Web/API/Client) allows you to obtain a
 reference to all the [`WindowClient`](https://developer.mozilla.org/docs/Web/API/WindowClient) objects representing the active tabs that the service worker is controlling.
@@ -212,6 +214,7 @@ HTTP 203](https://www.youtube.com/watch?v=9UNwHmagedE&feature=youtu.be&t=697) to
 {% endAside %}
 
 ### Message Channel {: #message-channel }
+{% BrowserCompat 'api.MessageChannel' %}
 
 [Message Channel](https://developer.mozilla.org/docs/Web/API/Channel_Messaging_API) requires
 defining and passing a port from one context to another to establish a **two-way** communication
@@ -267,6 +270,7 @@ to cache from one context to the other. In this section we'll explore two APIs t
 scenarios: lack of connectivity and long downloads.
 
 #### Background Sync {: #background-sync }
+{% BrowserCompat 'api.SyncManager' %}
 
 A chat app might want to make sure that messages are never lost due to bad connectivity. The
 [Background Sync API](https://developer.chrome.com/blog/background-sync/) lets you
@@ -312,6 +316,7 @@ Sync](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/
 %}
 
 #### Background Fetch {: #background-fetch }
+{% BrowserCompat 'api.BackgroundFetchManager' %}
 
 For relatively short bits of work like sending a message, or a list of URLs to cache, the options
 explored so far are a good choice. If the task takes too long the browser will kill the service

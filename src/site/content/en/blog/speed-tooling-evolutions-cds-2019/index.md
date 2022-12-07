@@ -4,6 +4,7 @@ subhead: New performance metrics, updates to PageSpeed Insights and Chrome User 
 authors:
   - egsweeny
 date: 2019-12-16
+updated: 2022-07-18
 description: |
   Read about the latest developments in speed tooling including new performance metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX), and insights from Web Almanac analysis of the web ecosystem.
 hero: image/admin/lWKSX0b7pvSUX1BDd3IH.jpg
@@ -39,7 +40,7 @@ metric](/user-centric-performance-metrics/#in-the-lab)—[Total Blocking Time
 content element becomes visible in the viewport.
 
 Before Largest Contentful Paint, [First Meaningful Paint
-(FMP)](/first-meaningful-paint/) and [Speed Index (SI)](/speed-index/) served to
+(FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) and [Speed Index (SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) served to
 capture the loading experience after the initial paint, but these metrics are
 complex and often do not identify when the main content of the page has loaded.
 Research has shown that simply looking at when [the largest element on the
@@ -85,17 +86,15 @@ movement of content can be very frustrating and this new metric helps you
 address that problem by measuring how often it's occurring for your users.
 
 <figure>
-  <video autoplay controls loop muted
-   
-    poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
-    width="658" height="510">
-    <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm"
-      type="video/webm; codecs=vp8">
-    <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
+    {% Video
+      src=["../web-dev-assets/layout-instability-api/layout-instability2.webm", "../web-dev-assets/layout-instability-api/layout-instability2.mp4"],
+      poster="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/rlKRnotLRXcqmirMCkIa.png",
+      width=658,
+      height=510,
+      autoplay=true,
+      controls=true,
+      loop=true,
+      muted=true %}
   <figcaption>
     A screencast illustrating how layout instability can negatively affect
     users.
@@ -113,14 +112,14 @@ a page feels usable.
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wB1bqc1tymL2uPuDgqpP.png", alt="In Lighthouse v6 First Contentful Paint, Speed Index, and Largest Contentful Paint are the main load performance metrics; Time To Interactive, First Input Delay, Max Potential First Input Delay, and Total Blocking Time are the main interactivity metrics; And Cumulative Layout Shift is the main predictability metric.", width="800", height="375" %}
 </figure>
 
-Check out [Lighthouse performance scoring](/performance-scoring/) and the new
+Check out [Lighthouse performance scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) and the new
 [web.dev metrics collection](/metrics/) to learn more.
 
 ## Field data (CrUX) thresholds adjusted in PageSpeed Insights
 
 Over the past year we have been analyzing [web performance from the
 field](/user-centric-performance-metrics/#in-the-field) via [Chrome User
-Experience](https://developers.google.com/web/tools/chrome-user-experience-report)
+Experience](https://developer.chrome.com/docs/crux/)
 (CrUX) data. With insights from that data we reassessed the thresholds that we
 use to label a website "slow", "moderate", or "fast" in field performance.
 

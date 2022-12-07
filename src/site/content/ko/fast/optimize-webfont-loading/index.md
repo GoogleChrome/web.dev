@@ -145,6 +145,6 @@ font.load().then(function() {
 
 다음 감사는 페이지가 시간이 지남에 따라 웹 글꼴 최적화 모범 사례를 계속 따르고 있는지 확인하는 데 도움이 될 수 있습니다.
 
-- [키 요청 미리 로드](/uses-rel-preload/)
-- [정적 자산에 비효율적인 캐시 정책 사용](/uses-long-cache-ttl/)
-- [WebFont가 로드되는 동안 모든 텍스트 계속 표시](/font-display/)
+- [키 요청 미리 로드](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [정적 자산에 비효율적인 캐시 정책 사용](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [WebFont가 로드되는 동안 모든 텍스트 계속 표시](https://developer.chrome.com/docs/lighthouse/performance/font-display/)

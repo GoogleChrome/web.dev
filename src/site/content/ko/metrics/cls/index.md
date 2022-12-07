@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-10-13
 description: 이 게시물에서는 누적 레이아웃 이동(CLS) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -36,7 +36,7 @@ tags:
 
 ## CLS란 무엇인가요?
 
-CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](/cls/#expected-vs.-unexpected-layout-shifts) 레이아웃 이동에 대해 가장 큰 *레이아웃 이동 점수* 버스트를 뜻합니다.
+CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](/cls/#expected-vs-unexpected-layout-shifts) 레이아웃 이동에 대해 가장 큰 *레이아웃 이동 점수* 버스트를 뜻합니다.
 
 *레이아웃 이동*은 시각적 요소가 렌더링된 프레임에서 다음 프레임으로 위치를 변경할 때마다 발생합니다. 개별 [레이아웃 이동 점수](#layout-shift-score) 계산 방법에 대한 자세한 내용은 아래를 참조하세요.
 
@@ -161,7 +161,7 @@ CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### 현장 도구
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
@@ -170,9 +170,12 @@ CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript에서 CLS 측정
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 JavaScript에서 CLS를 측정하려면 [Layout Instability API를](https://github.com/WICG/layout-instability) 사용할 수 있습니다. 다음 예시에서는 예기치 않은 `layout-shift` 항목을 수신 대기하고, 세션으로 그룹화하고, 변경될 때마다 최대 세션 값을 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 를 생성하는 방법을 보여줍니다.
 
@@ -219,7 +222,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-이 코드는 CLS를 계산하고 기록하는 기본적인 방법을 보여줍니다. 그러나 [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)(CrUX)에서 측정된 것과 일치하는 방식으로 CLS를 정확하게 측정하는 것은 보다 복잡한 문제입니다. 자세한 내용은 아래를 참조하세요.
+이 코드는 CLS를 계산하고 기록하는 기본적인 방법을 보여줍니다. 그러나 [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)(CrUX)에서 측정된 것과 일치하는 방식으로 CLS를 정확하게 측정하는 것은 보다 복잡한 문제입니다. 자세한 내용은 아래를 참조하세요.
 
 {% endAside %}
 
@@ -250,7 +253,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`getCLS)` 의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)를 참조하세요.
+JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`getCLS)` 의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 CLS를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 

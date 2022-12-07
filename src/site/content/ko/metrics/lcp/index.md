@@ -4,7 +4,7 @@ title: Largest Contentful Paint(최대 콘텐츠풀 페인트, LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-10-13
 description: 이 게시물에서는 최대 콘텐츠풀 페인트(LCP) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -17,7 +17,7 @@ tags:
 
 [load](https://developer.mozilla.org/docs/Web/Events/load) 또는 [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded)와 같은 오래된 메트릭은 사용자가 화면에서 보는 것과 반드시 일치하지는 않기 때문에 적절하다고 볼 수 없습니다. 또한, [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/) 와 같은 새로운 사용자 중심 성능 메트릭은 로딩 경험의 시작 부분만을 포착합니다. 페이지에 시작 화면이 표시되거나 로딩 표시기를 표시되는 순간은 사용자와 큰 관련이 있다고 볼 수 없습니다.
 
-이전에는 초기 페인트 후의 더 많은 로딩 경험을 포착할 수 있도록 Lighthouse에서 사용 가능한 [First Meaningful Paint(유의미한 최초 페인트, FMP)](/first-meaningful-paint/) 및 [Speed Index(속도 인덱스, SI)](/speed-index/)와 같은 성능 메트릭을 권장했지만 이러한 메트릭은 복잡하고 설명하기 어려우며, 잘못된 경우도 많습니다. 즉 페이지의 메인 콘텐츠가 로드된 시점을 식별하지 못한다는 것입니다.
+이전에는 초기 페인트 후의 더 많은 로딩 경험을 포착할 수 있도록 Lighthouse에서 사용 가능한 [First Meaningful Paint(유의미한 최초 페인트, FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) 및 [Speed Index(속도 인덱스, SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/)와 같은 성능 메트릭을 권장했지만 이러한 메트릭은 복잡하고 설명하기 어려우며, 잘못된 경우도 많습니다. 즉 페이지의 메인 콘텐츠가 로드된 시점을 식별하지 못한다는 것입니다.
 
 때로는 단순한 방법이 가장 효과적입니다. [W3C Web Performance Working Group](https://www.w3.org/webperf/)의 토론과 Google에서 수행한 연구에 따르면, 페이지의 메인 콘텐츠가 로드되는 시기를 측정하는 보다 정확한 방법은 가장 큰 요소가 렌더링된 시기를 확인하는 것입니다.
 
@@ -120,7 +120,7 @@ LCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### 현장 도구
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
@@ -129,9 +129,12 @@ LCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript에서 LCP 측정
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 JavaScript에서 LCP를 측정하려면 [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/)를 사용할 수 있습니다. 다음 예시에서는 `largest-contentful-paint` 항목을 수신 대기하고 콘솔에 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)를 작성하는 방법을 확인하실 수 있습니다.
 
@@ -169,7 +172,7 @@ import {getLCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-JavaScript에서 LCP를 측정하는 방법에 대한 전체 예제는 [`getLCP()`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)를 참조하세요.
+JavaScript에서 LCP를 측정하는 방법에 대한 전체 예제는 [`getLCP()`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 LCP를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 

@@ -360,7 +360,7 @@ While the transition timing function can be picked from built-in linear
 and exponential ones (as above), you can also specify your own value
 curve via an array of values using the `setValueCurveAtTime` function.
 
-##Applying a simple filter effect to a sound
+## Applying a simple filter effect to a sound
 
 <figure>
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/NqA6kYKPeryYyb6Zrj57.png", alt="An audio graph with a BiquadFilterNode", width="464", height="145" %}

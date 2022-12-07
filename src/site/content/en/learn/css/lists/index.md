@@ -40,9 +40,9 @@ li {
 }
 ```
 
-There are two other types of lists. 
+There are two other types of lists.
 
-Ordered lists can be created with `<ol>`, in which case the list-item will display a number as the `::marker`. 
+Ordered lists can be created with `<ol>`, in which case the list-item will display a number as the `::marker`.
 
 ```html
 <ol>
@@ -71,6 +71,7 @@ And description lists are created with `<dl>`, however this list type does not u
 } %}
 
 ## List Styles
+{% BrowserCompat 'css.properties.list-style-position' %}
 
 Now that you know how to make a list, you can style them. The first CSS properties to discover are those that are applied to the entire list.
 
@@ -80,7 +81,7 @@ There are three list-style properties you can use to style your example: `list-s
 
 [`list-style-position`](https://developer.mozilla.org/docs/Web/CSS/list-style-position) allows you to move your bullet point to either `inside` or `outside` the list-item's contents. The default `outside` means the bullet point is not included in the list items contents while `inside` moves the first element among the list item's contents.
 
-{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/qVlpVCrwKwbGjEJdmqh0.jpg", alt="A list with both outside and inside ::marker which shows that outside (default value) is not in the list-item and inside is inside the list-item content box.", width="800", height="270" %}
+{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/qVlpVCrwKwbGjEJdmqh0.jpg", alt="A list with both outside and inside ::marker which shows that outside (default value) is not in the list-item and is inside the list-item content box.", width="800", height="270" %}
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -101,7 +102,7 @@ Let's look at how we can add an image of each of our grocery items as the `list-
 } %}
 
 {% Aside %}
-This property is a bit limited in controlling the position, size, etc. of the bullets, so we recommend using the [`::marker`](#::marker-pseudo) property for a more customizable approach.
+This property is a bit limited in controlling the position, size, etc. of the bullets, so we recommend using the [`::marker`](#marker-pseudo) property for a more customizable approach.
 {% endAside %}
 
 ### `list-style-type`
@@ -183,7 +184,7 @@ When you declare a list, each item is given a marker, despite there being no bul
 
 ### Marker Box
 
-In the CSS layout model, list item markers are represented by a marker box associated with each list item. The marker box is the container which typically contains the bullet or number. 
+In the CSS layout model, list item markers are represented by a marker box associated with each list item. The marker box is the container which typically contains the bullet or number.
 
 To style the marker box, you can use the `::marker` selector. This allows you to select just the marker instead of styling based on the entire list.
 

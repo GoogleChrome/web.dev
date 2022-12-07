@@ -202,7 +202,7 @@ override fun isReadyToPay(callback: IsReadyToPayServiceCallback?) {
 
 ## 第 3 步：让客户付款
 
-商家调用`show()` [启动支付应用，](/life-of-a-payment-transaction#step-4:-the-browser-launches-the-payment-app)以便客户进行支付。支付应用通过 Android Intent `PAY`调用，并在 Intent 参数中包含交易信息。
+商家调用`show()` [启动支付应用，](/life-of-a-payment-transaction#launch)以便客户进行支付。支付应用通过 Android Intent `PAY`调用，并在 Intent 参数中包含交易信息。
 
 支付应用使用`methodName`和`details`响应，这两个响应是支付应用特定的并且对浏览器不透明。浏览器会通过 JSON 反序列化将`details`字符串转换为商家的 JavaScript 对象，但除此之外并不会强制执行任何有效性。浏览器不会修改`details`；该参数的值将直接传递给商家。
 

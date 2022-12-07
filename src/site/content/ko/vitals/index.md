@@ -47,7 +47,7 @@ Google은 Core Web Vitals가 모든 웹 경험에 필수적이라고 생각하�
 
 #### Core Web Vitals를 측정하기 위한 필드 도구
 
-[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)는 각 Core Web Vital에 대해 익명으로 실제 사용자 측정 데이터를 수집합니다. 사이트 소유자는 페이지에 대해 분석 도구를 사용할 필요 없이, 이 데이터를 활용해 신속하게 성능을 평가하고 [PageSpeed Insights](https://pagespeed.web.dev/) 및 Search Console의 [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520) 같은 도구를 지원할 수 있습니다.
+[Chrome User Experience Report](https://developer.chrome.com/docs/crux/)는 각 Core Web Vital에 대해 익명으로 실제 사용자 측정 데이터를 수집합니다. 사이트 소유자는 페이지에 대해 분석 도구를 사용할 필요 없이, 이 데이터를 활용해 신속하게 성능을 평가하고 [PageSpeed Insights](https://pagespeed.web.dev/) 및 Search Console의 [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520) 같은 도구를 지원할 수 있습니다.
 
 <div class="table-wrapper">
   <table>
@@ -58,7 +58,7 @@ Google은 Core Web Vitals가 모든 웹 경험에 필수적이라고 생각하�
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a></td>
+      <td><a href="https://developer.chrome.com/docs/crux/">Chrome User Experience Report</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -205,7 +205,7 @@ Core Web Vitals는 우수한 사용자 경험을 이해하고 제공하는 데 �
 
 이러한 기타 Web Vitals 메트릭은 경험의 더 큰 부분을 포착하고, 특정 문제의 진단을 지원하는 등 주로 Core Web Vitals를 대체하거나 보완하는 역할을 합니다.
 
-예를 들어, [Time to First Byte(최초 바이트까지의 시간, TTFB)](/ttfb/) 및 [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/) 메트릭은 모두 *로딩* 경험에 중요한 요소이며 LCP와 함께 문제(각각 느린 [서버 응답 시간](/overloaded-server/) 또는 [렌더링 차단 리소스](/render-blocking-resources/) 문제)를 진단하는 데 유용합니다.
+예를 들어, [Time to First Byte(최초 바이트까지의 시간, TTFB)](/ttfb/) 및 [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/) 메트릭은 모두 *로딩* 경험에 중요한 요소이며 LCP와 함께 문제(각각 느린 [서버 응답 시간](/overloaded-server/) 또는 [렌더링 차단 리소스](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/) 문제)를 진단하는 데 유용합니다.
 
 마찬가지로, [총 차단 시간(TBT)](/tbt/) 및 [Time to Interactive(상호 작용까지의 시간, TTI)](/tti/)와 같은 메트릭은 FID에 영향을 줄 잠재적인 *상호 작용* 문제를 파악하고 진단하는 데 필수적인 실험실 메트릭입니다. 그러나 필드에서 측정할 수 없고 [사용자 중심](/user-centric-performance-metrics/#how-metrics-are-measured) 결과를 반영하지도 않기 때문에 Core Web Vitals 세트에 속하지는 않습니다.
 

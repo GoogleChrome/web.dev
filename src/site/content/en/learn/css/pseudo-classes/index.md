@@ -39,6 +39,7 @@ rather than generally style parts of that element.
 The following pseudo-classes apply due to an interaction a user has with your page.
 
 ### `:hover`
+{% BrowserCompat 'css.selectors.hover' %}
 
 If a user has a pointing device like a mouse or trackpad,
 and they place it over an element,
@@ -53,6 +54,7 @@ This is a useful way to hint that an element can be interacted with.
 } %}
 
 ### `:active`
+{% BrowserCompat 'css.selectors.active' %}
 
 This state is triggered when an element is actively being interacted with—
 such as a click—before click is released.
@@ -66,6 +68,7 @@ this state is when the click starts and hasn't yet been released.
 } %}
 
 ### `:focus`, `:focus-within`, and `:focus-visible`
+{% BrowserCompat 'css.selectors.focus' %}
 
 If an element can receive focus—like a `<button>`—
 you can react to that state with the
@@ -120,6 +123,7 @@ button:focus-visible {
 } %}
 
 ### `:target`
+{% BrowserCompat 'css.selectors.target' %}
 
 The [`:target`](https://developer.mozilla.org/docs/Web/CSS/:target)
 pseudo-class selects an element that has an `id` matching a URL fragment.
@@ -150,10 +154,12 @@ such as the main content on a website, via a skip link.
 ## Historic states
 
 ### `:link`
+{% BrowserCompat 'css.selectors.link' %}
 
 The [`:link`](https://developer.mozilla.org/docs/Web/CSS/:link)
 pseudo-class can be applied to any `<a>` element that has a `href` value that **hasn't been** visited yet.
-`:visited`
+
+### `:visited`
 
 You can style a link that's already been visited by the user using the
 [`:visited`](https://developer.mozilla.org/docs/Web/CSS/:visited) pseudo-class.
@@ -195,6 +201,7 @@ The following pseudo-classes can select form elements,
 in the various states that these elements might be in during interaction with them.
 
 ### `:disabled` and `:enabled`
+{% BrowserCompat 'css.selectors.disabled' %}
 
 If a form element,
 such as a `<button>` is disabled by the browser,
@@ -212,6 +219,7 @@ therefore you might not find yourself reaching for this pseudo-class.
 } %}
 
 ### `:checked` and `:indeterminate`
+{% BrowserCompat 'css.selectors.checked' %}
 
 The [`:checked`](https://developer.mozilla.org/docs/Web/CSS/:checked)
 pseudo-class is available when a supporting form element,
@@ -243,6 +251,7 @@ The `<progress>` element also has an indeterminate state that can be styled.
 A common use case is to give it a striped appearance to indicate it's unknown how much more is needed.
 
 ### `:placeholder-shown`
+{% BrowserCompat 'css.selectors.placeholder-shown' %}
 
 If a form field has a `placeholder` attribute and **no value**,
 the [`:placeholder-shown`](https://developer.mozilla.org/docs/Web/CSS/:placeholder-shown)
@@ -252,6 +261,7 @@ whether it has a `placeholder` or not,
 this state will no longer apply.
 
 ### Validation states
+{% BrowserCompat 'css.selectors.valid' %}
 
 You can respond to HTML form validation with pseudo-classes such as
 [`:valid`](https://developer.mozilla.org/docs/Web/CSS/:valid),
@@ -298,6 +308,7 @@ along with text changes and icon changes to visually signify change
 There is a group of pseudo-classes that select items based on where they are in the document.
 
 ### `first-child` and `last-child`
+{% BrowserCompat 'css.selectors.first-child' %}
 
 If you want to find the first or last item,
 you can use
@@ -311,6 +322,7 @@ These pseudo-classes will return either the first or last element in a group of 
 } %}
 
 ### `only-child`
+{% BrowserCompat 'css.selectors.only-child' %}
 
 You can also select elements that have no siblings,
 with the
@@ -322,6 +334,7 @@ with the
 } %}
 
 ### `:first-of-type` and `:last-of-type`
+{% BrowserCompat 'css.selectors.first-of-type' %}
 
 You can select the
 [`:first-of-type`](https://developer.mozilla.org/docs/Web/CSS/:first-of-type) and
@@ -364,6 +377,7 @@ so with this rule, it will be colored red.
 } %}
 
 ### `nth-child` and `nth-of-type`
+{% BrowserCompat 'css.selectors.nth-child' %}
 
 You're not limited to first and last children and types either.
 The [`nth-child`](https://developer.mozilla.org/docs/Web/CSS/:nth-child) and
@@ -409,6 +423,7 @@ You can play around with this sort of selector on this
 [quantity selector tool](https://quantityqueries.com).
 
 ### `only-of-type`
+{% BrowserCompat 'css.selectors.only-of-type' %}
 
 Lastly, you can find the only element of a certain type in a group of siblings with
 [`:only-of-type`](https://developer.mozilla.org/docs/Web/CSS/:only-of-type).
@@ -427,6 +442,7 @@ It can sometimes be useful to identify completely empty elements,
 and there is a pseudo-class for that too.
 
 ### `:empty`
+{% BrowserCompat 'css.selectors.empty' %}
 
 If an element has no children, the
 [`:empty`](https://developer.mozilla.org/docs/Web/CSS/:empty) pseudo-class applies to them.
@@ -473,6 +489,7 @@ With `:empty`, you can find that and hide it.
 Some pseudo-classes help you to write more compact CSS.
 
 ### `:is()`
+{% BrowserCompat 'css.selectors.is' %}
 
 If you want to find all of the `h2`, `li` and `img` child elements in a `.post` element,
 you might think to write a selector list like this:
@@ -502,6 +519,7 @@ If there's an error in the passed selectors in an `:is` pseudo-class,
 it will ignore the invalid selector, but use those which are valid.
 
 ### `:not()`
+{% BrowserCompat 'css.selectors.not' %}
 
 You can also exclude items with the
 [`:not()`](https://developer.mozilla.org/docs/Web/CSS/:not) pseudo-class.

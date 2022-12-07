@@ -8,7 +8,7 @@ authors:
   - mathiasbynens
   - tunetheweb
 date: 2019-08-06
-updated: 2022-07-12
+updated: 2022-10-18
 hero: image/admin/F6VE4QkpCsomiJilTFNG.png
 alt: Phone outline with loading image and assets
 description: |
@@ -234,9 +234,8 @@ It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome 
 
 ### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
-Only images that are below the device viewport by the [calculated
-distance](#distance-from-viewport-thresholds) load lazily. All images above the viewport, regardless of
-whether they're immediately visible, load normally.
+Using `loading="lazy"` _may_ prevent them being loaded when they are not visible but within the [calculated
+-distance](#distance-from-viewport-thresholds). For example, Chrome, Safari and Firefox do not load images using `display: none;` styling—either on the image element or on a parent element. However, other techniques to hide images—such as using `opacity:0` styling—will still result in the images being loaded. Always test your implementation thoroughly to ensure it's acting as intended.
 
 ### What if I'm already using a third-party library or a script to lazy-load images?
 
@@ -317,7 +316,7 @@ All images and iframes are immediately loaded if the page is printed. See [issue
 
 ### Does Lighthouse recognize browser-level lazy-loading?
 
-Earlier versions of Lighthouse would still highlight that pages using `loading=lazy` on images required a strategy for loading offscreen images. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) and above better factor in approaches for offscreen image lazy-loading that may use different thresholds, allowing them to pass the [Defer offscreen images](/offscreen-images/) audit.
+Earlier versions of Lighthouse would still highlight that pages using `loading=lazy` on images required a strategy for loading offscreen images. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) and above better factor in approaches for offscreen image lazy-loading that may use different thresholds, allowing them to pass the [Defer offscreen images](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/) audit.
 
 ## Conclusion
 

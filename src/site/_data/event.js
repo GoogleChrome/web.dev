@@ -561,7 +561,7 @@ const qAndAs = [
   {
     category: 'Web Vitals',
     question: '#webdevLIVE how do you get field values and how do you get lab values for core web vitals?',
-    answer: 'For field data you can look at <a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a> data, available in tools like <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a>, <a href="https://web.dev/chrome-ux-report-data-studio-dashboard/">DataStudio</a>  and the <a href="https://developers.google.com/web/tools/chrome-user-experience-report/api/reference">CrUX API</a>. For lab data, you can use Lighthouse (either in the <a href="https://developers.google.com/web/tools/lighthouse#devtools">Lighthouse panel in DevTools</a>, via the <a href="https://developers.google.com/web/tools/lighthouse#cli">CLI</a>, or in <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a>).',
+    answer: 'For field data you can look at <a href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a> data, available in tools like <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a>, <a href="https://web.dev/chrome-ux-report-data-studio-dashboard/">DataStudio</a>  and the <a href="https://developer.chrome.com/docs/crux/api/">CrUX API</a>. For lab data, you can use Lighthouse (either in the <a href="https://developers.google.com/web/tools/lighthouse#devtools">Lighthouse panel in DevTools</a>, via the <a href="https://developers.google.com/web/tools/lighthouse#cli">CLI</a>, or in <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a>).',
   },
   {
     category: 'Web Vitals',

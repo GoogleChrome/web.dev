@@ -74,7 +74,7 @@ height="248" %}
 New user preference media features, give you the ability to style web
 experiences that align with the user's own specific preferences and needs. This
 means that preference media features allow you to adapt your user experiences to
-your user's experiences
+your user's experiences.
 
 These user preference media features include:
 
@@ -135,7 +135,7 @@ the new theme within the media query.
 autoplay=true, muted=true, playsinline=true, loop=true, controls=true %}
 
 To make it easier to test some of these preference queries out, you can use
-DevTools for emulation instead of opening up your system preferences each time.
+[DevTools for emulation](https://developer.chrome.com/docs/devtools/rendering/emulate-css/) instead of opening up your system preferences each time.
 
 {% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/ol6pVXJLT44wAkRADAcq.mp4",
 autoplay=true, muted=true, playsinline=true, loop=true, controls=true %}
@@ -182,7 +182,7 @@ Youtube play screen with a paused video at 100% screen brightness using dark
 theme for the app UI vs a light theme.
 
 You should always provide a dark theme experience for your users whenever
-possible
+possible.
 
 ## Responsive to the container
 
@@ -219,7 +219,7 @@ information rather than the viewport and user agent.
 
 ```css
 .card {
-  contain: size layout;
+  container-type: inline-size;
 }
 
 @container (max-width: 850px) {
@@ -262,7 +262,7 @@ flow into their space, and re-layout the grid when that space is too compressed
 
 ```css
 .product {
-  contain: layout inline-size;
+  container-type: inline-size;
 }
 
 @container (min-width: 350px) {
@@ -315,6 +315,9 @@ These demos are now available to play with behind a flag in Chrome Canary. Go to
 `about://flags` in Canary and turn on the `#enable-container-queries` flag.
 This will enable support for `@container`, `inline-size` and `block-size` values
 for the `contain` property, and the LayoutNG Grid implementation.
+
+The flag also enables the corresponding Chrome DevTools features.
+Learn how to [inspect and debug container queries in DevTools](https://developer.chrome.com/docs/devtools/css/container-queries/).
 
 ### Scoped styles
 

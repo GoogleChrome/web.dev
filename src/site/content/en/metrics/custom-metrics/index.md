@@ -56,6 +56,7 @@ So for any custom metrics you measure on your site, it's best to use one of the
 following APIs if possible.
 
 ### Performance Observer
+{% BrowserCompat 'api.PerformanceObserver' %}
 
 Understanding the PerformanceObserver API is critical to creating custom
 performance metrics because it's the mechanism by which you get data from all
@@ -193,6 +194,7 @@ try {
 ```
 
 ### Long Tasks API
+{% BrowserCompat 'api.PerformanceLongTaskTiming' %}
 
 The [Long Tasks API](https://w3c.github.io/longtasks/) is useful for knowing
 when the browser's main thread is blocked for long enough to affect frame rate
@@ -203,7 +205,7 @@ Anytime you need to run expensive code (or load and execute large scripts) it's
 useful to track whether or not that code blocked the main thread. In fact, many
 higher-level metrics are built on top of the Long Tasks API themselves (such as
 [Time to Interactive (TTI)](/tti/) and [Total Blocking Time
-(TBT)](/lighthouse-total-blocking-time/)).
+(TBT)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)).
 
 To determine when long tasks happen, you can use
 [PerformanceObserver](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
@@ -228,6 +230,7 @@ try {
 ```
 
 ### Element Timing API
+{% BrowserCompat 'api.PerformanceElementTiming' %}
 
 The [Largest Contentful Paint (LCP)](/lcp/) metric is
 useful for knowing when the largest image or text block was painted to the
@@ -385,6 +388,7 @@ try {
 ```
 
 ### Navigation Timing API
+{% BrowserCompat 'api.PerformanceNavigationTiming' %}
 
 The [Navigation Timing API](https://w3c.github.io/navigation-timing/) is similar
 to the Resource Timing API, but it reports only [navigation

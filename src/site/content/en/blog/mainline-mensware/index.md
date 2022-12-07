@@ -2,7 +2,7 @@
 layout: post
 title: Mainline Menswear implements PWA and sees a 55% conversion rate uplift
 authors:
-  - charistheodoulou
+  - harrytheodoulou
   - natashakosoglov
   - thomassteiner
 description: >

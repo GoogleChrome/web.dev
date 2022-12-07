@@ -131,7 +131,7 @@ try {
 
 [긴 작업 API](https://w3c.github.io/longtasks/)는 브라우저의 메인 스레드가 프레임 속도나 입력 대기 시간에 영향을 줄 만큼 충분히 오랫동안 차단되는 경우 이를 파악하는 데 유용합니다. 현재, 이 API는 50밀리초(ms) 이상 실행되는 모든 작업을 보고합니다.
 
-값비싼 코드를 실행해야 할 때(또는 대용량 스크립트를 로드하고 실행해야 할 때) 해당 코드가 메인 스레드를 차단했는지 여부를 추적하는 것이 유용합니다. 실제로 많은 상위 수준의 메트릭이 긴 작업 API 자체를 기반으로 구축됩니다(예: [상호 작용까지의 시간(TTI)](/tti/) 및 [전체 차단 시간(TBT)](/lighthouse-total-blocking-time/)).
+값비싼 코드를 실행해야 할 때(또는 대용량 스크립트를 로드하고 실행해야 할 때) 해당 코드가 메인 스레드를 차단했는지 여부를 추적하는 것이 유용합니다. 실제로 많은 상위 수준의 메트릭이 긴 작업 API 자체를 기반으로 구축됩니다(예: [상호 작용까지의 시간(TTI)](/tti/) 및 [전체 차단 시간(TBT)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)).
 
 긴 작업이 언제 발생하는지 확인하려면 [PerformanceObserver](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)를 사용하고 `longtask` 유형의 항목을 관찰하도록 등록할 수 있습니다.
 

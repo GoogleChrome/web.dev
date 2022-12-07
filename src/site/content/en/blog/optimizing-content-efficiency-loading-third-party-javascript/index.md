@@ -7,7 +7,7 @@ authors:
 description: >
   Third-party scripts provide a wide range of useful functionality, making the web more dynamic. Learn how to optimize the loading of third-party scripts to reduce their impact on performance.
 date: 2018-02-28
-updated: 2018-10-31
+updated: 2022-08-18
 ---
 
 You've optimized all of your code, but your site still loads too slowly. Who's
@@ -467,9 +467,8 @@ a site.
 
 Self-hosting third-party scripts may be an option if you would like more control
 over a script’s loading story. For example, if you wanted to reduce DNS or
-round-trip times, improve HTTP caching headers or take advantage of advanced
-techniques like HTTP/2 server push. Self-hosting may be a viable consideration
-if a script is considered critical.
+round-trip times, or improve HTTP caching headers. Self-hosting may be a viable
+consideration if a script is considered critical.
 
 Self-hosting can come with a number of big caveats:
 

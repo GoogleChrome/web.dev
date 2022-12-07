@@ -3,7 +3,7 @@ title: Web Vitals 측정 시작하기
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: LCP, FID 및 CLS라는 라벨이 붙은 스톱워치가 오버레이된 월별 그래프
 description: 실제 환경과 실험실 환경 모두에서 사이트의 Web Vitals를 측정하는 방법을 알아보세요.
@@ -21,7 +21,7 @@ tags:
 
 ### 시작하기
 
-RUM 설정이 없는 경우 다음 도구를 사용하여 사이트의 실제 성능에 대한 데이터를 빠르게 제공할 수 있습니다. 이러한 도구는 모두 동일한 기본 데이터 세트([Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report))를 기반으로 하지만 사용 사례가 약간 다릅니다.
+RUM 설정이 없는 경우 다음 도구를 사용하여 사이트의 실제 성능에 대한 데이터를 빠르게 제공할 수 있습니다. 이러한 도구는 모두 동일한 기본 데이터 세트([Chrome User Experience Report](https://developer.chrome.com/docs/crux/))를 기반으로 하지만 사용 사례가 약간 다릅니다.
 
 - **PageSpeed Insights(PSI)** : [PageSpeed Insights](https://pagespeed.web.dev/)는 지난 28일 동안 집계된 페이지 수준 및 원본 수준 성능에 대해 보고하며 성능 개선 방법을 제안합니다. 사이트의 Web Vitals 측정 및 개선을 하나로 시작하고 싶다면 PSI를 사용하여 사이트를 감사하는 것이 좋습니다. PSI는 [웹](https://pagespeed.web.dev/) 또는 [API](https://developers.google.com/speed/docs/insights/v5/get-started)를 통해 이용할 수 있습니다.
 - **Search Console** : [Search Console](https://search.google.com/search-console/welcome)은 페이지별로 성능 데이터를 보고합니다. 따라서 개선이 필요한 특정 페이지를 식별하는 데 적합합니다. PageSpeed Insights와 달리 Search Console 보고에는 과거 성능 데이터 내역이 포함됩니다. Search Console은 본인이 소유하고 있으며 소유권이 확인된 사이트에서만 사용할 수 있습니다.
@@ -71,7 +71,7 @@ Google은 Web Vitals에 대해 중앙값 또는 평균과 같은 통계가 아�
 
 RUM 데이터와 실험실 데이터 사이에는 항상 불일치가 있습니다. 특히 네트워크 조건, 장치 유형 또는 실험실 환경의 위치가 사용자의 환경과 크게 다른 경우에는 더욱 그렇습니다. 그러나 Web Vitals 메트릭에 대한 실험실 데이터를 수집할 때는 특히 유의해야 할 특정 고려 사항이 몇 가지 있습니다.
 
-- **Cumulative Layout Shift(누적 레이아웃 이동, CLS):** 실험실 환경에서 측정된 [누적 레이아웃 이동](/cls/)은 RUM 데이터에서 관찰된 CLS보다 인위적으로 낮을 수 있습니다. CLS는 *"페이지의 전체 수명 동안* 발생하는 예기치 않은 모든 레이아웃 전환에 대한 개별 레이아웃 전환 점수의 합계"로 정의됩니다. 그러나 페이지의 수명은 일반적으로 실제 사용자가 로드하는지, 인위적인 성능 측정 도구에 의해 로드되는지에 따라 크게 달라집니다. 대부분의 실험실 도구는 페이지만 로드하고 상호 작용하지 않으므로, 결과적으로 초기 페이지 로드 중에 발생하는 레이아웃 이동만 포착하게 됩니다. 그러나 RUM 도구로 측정한 CLS는 페이지의 전체 수명 동안 발생하는 [예기치 않은 레이아웃의 변화](/cls/#expected-vs.-unexpected-layout-shifts)를 모두 포착합니다.
+- **Cumulative Layout Shift(누적 레이아웃 이동, CLS):** 실험실 환경에서 측정된 [누적 레이아웃 이동](/cls/)은 RUM 데이터에서 관찰된 CLS보다 인위적으로 낮을 수 있습니다. CLS는 *"페이지의 전체 수명 동안* 발생하는 예기치 않은 모든 레이아웃 전환에 대한 개별 레이아웃 전환 점수의 합계"로 정의됩니다. 그러나 페이지의 수명은 일반적으로 실제 사용자가 로드하는지, 인위적인 성능 측정 도구에 의해 로드되는지에 따라 크게 달라집니다. 대부분의 실험실 도구는 페이지만 로드하고 상호 작용하지 않으므로, 결과적으로 초기 페이지 로드 중에 발생하는 레이아웃 이동만 포착하게 됩니다. 그러나 RUM 도구로 측정한 CLS는 페이지의 전체 수명 동안 발생하는 [예기치 않은 레이아웃의 변화](/cls/#expected-vs-unexpected-layout-shifts)를 모두 포착합니다.
 - **First Input Delay(최초 입력 지연, FID):** [최초 입력 지연](/fid/) 은 페이지에 대한 사용자 상호 작용이 필요하기 때문에 실험실 환경에서 측정할 수 없습니다. 이로 인해 실험실에서는 FID를 대체해 [Total Blocking Time](/tbt/)(총 차단 시간, TBT)을 사용하도록 권장됩니다. TBT는 "First Contentful Paint(최초 콘텐츠풀 페인트, FCP)와 Time to Interactive(상호 작용까지의 시간, TTI) 사이에서 페이지가 사용자 입력에 응답하지 못하도록 차단되는 총 시간"을 측정합니다. FID와 TBT는 다르게 계산되지만 둘 다 부트스트랩 프로세스 동안 차단된 메인 스레드를 반영하며, 메인 스레드가 차단되는 경우 브라우저에서는 사용자 상호 작용에 대한 응답이 지연됩니다. FID는 가능한 경우 사용자가 페이지와 처음 상호작용을 시도할 때 발생하는 지연을 측정합니다.
 
 ### 도구

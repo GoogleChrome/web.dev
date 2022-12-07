@@ -41,7 +41,7 @@ This command will:
 * Create a [service worker](/precaching-with-the-angular-service-worker) with a default caching configuration.
 * Create a [manifest file](/add-manifest), which tells the browser how your app should behave when installed on the user's device.
 * Add a link to the manifest file in `index.html`.
-* Add the [`theme-color`](/themed-omnibox) `<meta>` tag to `index.html`.
+* Add the [`theme-color`](https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/) `<meta>` tag to `index.html`.
 * Create app icons in the `src/assets` directory.
 
 By default, your service worker should be registered within a few seconds of the first page load. If it isn't, consider modifying the [`registrationStrategy`](https://angular.io/api/service-worker/SwRegistrationOptions).

@@ -42,13 +42,13 @@ and the browser may be blocked from rendering text until the resource is fetched
 {% Img src="image/admin/NgSTa9SirmikQAq1G5fN.png", alt="Font critical rendering path", width="800", height="303" %}
 
 1. The browser requests the HTML document.
-1. The browser begins parsing the HTML response and constructing the DOM.
-1. The browser discovers CSS, JS, and other resources and dispatches requests.
-1. The browser constructs the CSSOM after all of the CSS content is received and combines it with
+2. The browser begins parsing the HTML response and constructing the DOM.
+3. The browser discovers CSS, JS, and other resources and dispatches requests.
+4. The browser constructs the CSSOM after all of the CSS content is received and combines it with
 the DOM tree to construct the render tree.
     - Font requests are dispatched after the render tree indicates which font variants are needed to
     render the specified text on the page.
-1. The browser performs layout and paints content to the screen.
+5. The browser performs layout and paints content to the screen.
     - If the font is not yet available, the browser may not render any text pixels.
     - After the font is available, the browser paints the text pixels.
 
@@ -76,6 +76,8 @@ You still need to consider how browsers behave when rendering text that uses a `
 In the post [Avoid invisible text during font loading](/avoid-invisible-text/) you can see that default browser behavior is not consistent.
 However, you can tell modern browsers how you want them to behave by using
 [`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display).
+
+{% BrowserCompat 'css.at-rules.font-face.font-display' %}
 
 Similar to the existing font timeout behaviors that some browsers implement,
 `font-display` segments the lifetime of a font download into three major periods:
@@ -138,6 +140,8 @@ The [Font Loading API](https://www.w3.org/TR/css-font-loading/) provides a scrip
 track their download progress, and override their default lazyload behavior.
 For example, if you're sure that a particular font variant is required,
 you can define it and tell the browser to initiate an immediate fetch of the font resource:
+
+{% BrowserCompat 'api.FontFace' %}
 
 ```javascript
 var font = new FontFace("Awesome Font", "url(/fonts/awesome.woff2)", {
@@ -214,6 +218,6 @@ can help automate the process of making sure that you're following web font opti
 
 The following audits can help you make sure that your pages are continuing to follow web font optimization best practices over time:
 
-* [Preload key requests](/uses-rel-preload/)
-* [Uses inefficient cache policy on static assets](/uses-long-cache-ttl/)
-* [All text remains visible during WebFont loads](/font-display/)
+* [Preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+* [Uses inefficient cache policy on static assets](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+* [All text remains visible during WebFont loads](https://developer.chrome.com/docs/lighthouse/performance/font-display/)

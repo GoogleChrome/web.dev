@@ -116,7 +116,7 @@ Similar tools are available for
 
 Remember to keep a record of results before you make changes. For network requests, that can be as
 simple as a screenshot — you can also
-[save profile data](/web/tools/chrome-devtools/evaluate-performance/timeline-tool#save_and_load_recordings) as a JSON file. There's more information below about [how to save and share test results](#save_the_results).
+[save profile data](/web/tools/chrome-devtools/evaluate-performance/timeline-tool#save_and_load_recordings) as a JSON file. There's more information below about [how to save and share test results](#save-the-results).
 
 Before you begin auditing network usage, make sure to
 [disable the browser cache](/web/tools/chrome-devtools/network-performance/#emulate)

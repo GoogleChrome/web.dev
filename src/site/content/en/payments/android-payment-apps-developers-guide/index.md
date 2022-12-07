@@ -20,6 +20,7 @@ The [Payment Request API](https://www.w3.org/TR/payment-request/) brings to the
 web a built-in browser-based interface that allows users to enter required payment
 information easier than ever before. The API can also invoke platform-specific payment
 apps.
+{% BrowserCompat 'api.PaymentRequest' %}
 
 <figure style="width:300px; margin:auto;">
   <video controls autoplay loop muted>
@@ -251,7 +252,7 @@ to verify that the calling package has the right signature.
 ## Step 3: Let a customer make payment
 
 The merchant calls `show()` to [launch the payment
-app](/life-of-a-payment-transaction#step-4:-the-browser-launches-the-payment-app)
+app](/life-of-a-payment-transaction#launch)
 so the customer can make a payment. The payment app is invoked via an Android
 intent `PAY` with transaction information in the intent parameters.
 

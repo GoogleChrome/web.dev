@@ -1,14 +1,13 @@
 ---
 title: User preference media features client hints headers
 subhead:
-  The `Sec-CH-Prefers-Color-Scheme` client hint header allows sites to obtain the user's color
-  scheme preferences optionally at request time, allowing servers to inline the right CSS and
-  therefore avoid a flash of incorrect color theme.
+  A set of client hint headers allows sites to obtain the user's media preferences optionally
+  at request time, allowing servers to inline the right CSS for performance reasons.
 authors:
   - thomassteiner
   - beaufortfrancois
 date: 2021-08-02
-updated: 2021-12-14
+updated: 2022-09-30
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/8O1JKZ6YxdA0IIuYtECB.jpg
 alt: Sun and moon
 tags:
@@ -42,7 +41,7 @@ ideally at request time, so that the initial HTML payload already has the right 
 Additionally, and specifically for `prefers-color-scheme`, sites by all means want to avoid a
 [flash of inaccurate color theme](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/).
 
-The `Sec-CH-Prefers-Color-Scheme` client hint header is the first of a
+The `Sec-CH-Prefers-Color-Scheme` and the `Sec-CH-Prefers-Reduced-Motion` client hint headers are the first of a
 [series of user preference media features client hints headers](https://wicg.github.io/user-preference-media-features-headers/)
 that aims to solve this issue.
 
@@ -70,7 +69,7 @@ avoid jarring user-visible switches.
 ### Client hint syntax
 
 User preference media features consist of a name (like `prefers-reduced-motion`) and allowed values
-(like `no-preference` or `reduce`. Each client hint header field is represented as
+(like `no-preference` or `reduce`). Each client hint header field is represented as
 [Structured Headers for HTTP](https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-15)
 object containing an
 [item](https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-15#section-3.3) whose value
@@ -94,7 +93,7 @@ respectively.
 {% Aside %} While the
 [User Preference Media Features Client Hints Headers](https://wicg.github.io/user-preference-media-features-headers/)
 proposal defines a set of client hints, Chromium at the time of writing only supports
-`Sec-CH-Prefers-Color-Scheme`. {% endAside %}
+`Sec-CH-Prefers-Color-Scheme` and `Sec-CH-Prefers-Reduced-Motion`. {% endAside %}
 
 The list of the client hints is modeled after the
 [user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences) in
@@ -112,6 +111,7 @@ The list of the client hints is modeled after the
 ## Browser support
 
 The `Sec-CH-Prefers-Color-Scheme` client hint header is supported on Chromium&nbsp;93.
+The `Sec-CH-Prefers-Reduced-Motion` client hint header is supported on Chromium&nbsp;108.
 Other vendors' feedback, namely [WebKit's](https://lists.webkit.org/pipermail/webkit-dev/2021-May/031856.html)
 and [Mozilla's](https://github.com/mozilla/standards-positions/issues/526), is pending.
 
@@ -123,6 +123,11 @@ the inlined CSS changes according to the user's preferred color scheme.
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/pKAKyrN18CjhAYUNpJyk.png", alt="Sec-CH-Prefers-Color-Scheme: dark", width="800", height="541" %}
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/6Xujcgyveo0QY0E3LQOF.png", alt="Sec-CH-Prefers-Color-Scheme: light", width="800", height="541" %}
+
+## Demo of `Sec-CH-Prefers-Reduced-Motion`
+
+Try the [demo](https://sec-ch-prefers-reduced-motion.glitch.me/) in Chromium&nbsp;108 and notice how
+the inlined CSS changes according to the user's motion preferences.
 
 ## How it works
 
@@ -188,8 +193,10 @@ of Client Hint Reliability likewise apply to this proposal.
 
 - [Spec draft](https://wicg.github.io/user-preference-media-features-headers/)
 - [Explainer](https://github.com/WICG/user-preference-media-features-headers#readme)
-- [Chrome Status entry](https://chromestatus.com/feature/5642300464037888)
-- [Chromium bug](https://crbug.com/1207897)
+- [Sec-CH-Prefers-Color-Scheme - Chrome Status entry](https://chromestatus.com/feature/5642300464037888)
+- [Sec-CH-Prefers-Color-Scheme - Chromium bug](https://crbug.com/1207897)
+- [Sec-CH-Prefers-Reduced-Motion - Chrome Status entry](https://chromestatus.com/feature/5141804190531584)
+- [Sec-CH-Prefers-Reduced-Motion - Chromium bug](https://crbug.com/1361871)
 - [WebKit thread](https://lists.webkit.org/pipermail/webkit-dev/2021-May/031856.html)
 - [Mozilla Standards Position](https://github.com/mozilla/standards-positions/issues/526)
 - [Client Hints](https://datatracker.ietf.org/doc/html/rfc8942)

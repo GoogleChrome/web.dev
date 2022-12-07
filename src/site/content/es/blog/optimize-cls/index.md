@@ -242,7 +242,7 @@ La descarga y la renderización de fuentes web pueden provocar cambios en el dis
 
 Las siguientes herramientas pueden ayudarle a minimizar esto:
 
-- <code>[font-display](/font-display/)</code>  permite modificar el comportamiento de la renderización de fuentes personalizadas con valores como <code>auto</code> , <code>swap</code> , <code>block</code> , <code>fallback</code> y <code>optional</code>. Desafortunadamente, todos estos valores (excepto los [opcionales](http://crrev.com/749080)) pueden causar un rediseño de una de las formas anteriores.
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code>  permite modificar el comportamiento de la renderización de fuentes personalizadas con valores como <code>auto</code> , <code>swap</code> , <code>block</code> , <code>fallback</code> y <code>optional</code>. Desafortunadamente, todos estos valores (excepto los [opcionales](http://crrev.com/749080)) pueden causar un rediseño de una de las formas anteriores.
 - La [API para cargar fuentes](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) puede reducir el tiempo necesario para obtener las fuentes necesarias.
 
 A partir de Chrome 83, también puedo recomendar lo siguiente:
@@ -258,7 +258,7 @@ Lea [Cómo prevenir cambios de diseño y destellos del texto invisible (FOIT) ca
 
 Los cambios en los valores de las propiedades CSS pueden hacer que el navegador reaccione a estos cambios. Un número de valores desencadenan el rediseño, el despliegue y la composición, como `box-shadow` y `box-sizing`. Varias propiedades de CSS se pueden cambiar de una manera menos costosa.
 
-Para obtener más información sobre las propiedades de CSS que activan el diseño, consulte [Activadores de CSS](https://csstriggers.com/) y [animaciones de alto rendimiento](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
+Para obtener más información sobre las propiedades de CSS que activan el diseño, consulte [animaciones de alto rendimiento](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
 
 ### Herramientas para desarrolladores 🔧
 

@@ -13,11 +13,13 @@ tags:
 The [Geolocation API](http://dev.w3.org/geo/api/) lets you find out where the user is and keep tabs on them as they move around, always with the user's consent. This functionality could be used as part of user queries, e.g. to guide someone to a destination point. It could also be used for "geo-tagging" some content the user has created, e.g. to mark where a photo was taken. The API is device-agnostic; it doesn't care how the browser determines location, so long as clients can request and receive location data in a standard way. The underlying mechanism might be via GPS, wifi, or simply asking the user to enter their location manually. Since any of these lookups is going to take some time, the API is asynchronous; you pass it a callback method whenever you request a location.
 
 The example here is a trip meter showing the initial location and maintaining a display of the distance they have travelled since the page was loaded.
-  
+
 ## Step 1. Check for Compatibility
 
+{% BrowserCompat 'api.Geolocation' %}
+
 You can easily check for compatibility by testing for the presence of the geolocation object:
-  
+
 ```js
 // check for Geolocation support
 if (navigator.geolocation) {
@@ -107,7 +109,7 @@ navigator.geolocation.watchPosition(function(position) {
 document.getElementById('currentLat').innerHTML = position.coords.latitude;
 document.getElementById('currentLon').innerHTML = position.coords.longitude;
 });
-``` 
+```
 
 ## Step 6. Show Distance Travelled
 
@@ -121,7 +123,7 @@ document.getElementById('distance').innerHTML =
     calculateDistance(startPos.coords.latitude, startPos.coords.longitude,
                     position.coords.latitude, position.coords.longitude);
 });
-``` 
+```
 
 The `calculateDistance()` function performs a geometric algorithm to determine
 the distance between two co-ordinates. The Javascript implementation is adapted from [a script provided by Moveable Type](http://www.movable-type.co.uk/scripts/latlong.html)
@@ -131,11 +133,11 @@ under a [Creative Commons license](http://creativecommons.org/licenses/by/3.0/):
 function calculateDistance(lat1, lon1, lat2, lon2) {
 var R = 6371; // km
 var dLat = (lat2 - lat1).toRad();
-var dLon = (lon2 - lon1).toRad(); 
+var dLon = (lon2 - lon1).toRad();
 var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
-        Math.sin(dLon / 2) * Math.sin(dLon / 2); 
-var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); 
+        Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 var d = R * c;
 return d;
 }

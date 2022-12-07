@@ -202,7 +202,7 @@ override fun isReadyToPay(callback: IsReadyToPayServiceCallback?) {
 
 ## 3단계: 고객이 결제하도록 하기
 
-판매자는 `show()`를 호출하여 고객이 결제할 수 있도록 [결제 앱을 시작](/life-of-a-payment-transaction#step-4:-the-browser-launches-the-payment-app)합니다. 결제 앱은 인텐트 매개 변수에 있는 거래 정보와 함께 Android 인텐트 `PAY`를 통해 호출됩니다.
+판매자는 `show()`를 호출하여 고객이 결제할 수 있도록 [결제 앱을 시작](/life-of-a-payment-transaction#launch)합니다. 결제 앱은 인텐트 매개 변수에 있는 거래 정보와 함께 Android 인텐트 `PAY`를 통해 호출됩니다.
 
 결제 앱은 결제 앱에 종속되어 있고 브라우저에 노출되지 않는 `methodName` 및 `details`로 응답합니다. 브라우저는 `details` 문자열을 JSON 역직렬화를 통해 판매자의 JavaScript 개체로 변환하지만, 그 이상의 유효성은 적용하지 않습니다. 브라우저는 `details` 수정하지 않으며 해당 매개변수의 값은 판매자에게 직접 전달됩니다.
 

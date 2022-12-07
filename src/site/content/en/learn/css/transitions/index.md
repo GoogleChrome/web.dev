@@ -2,7 +2,7 @@
 title: Transitions
 description: >
   In this module, learn how to define transitions between states of an element. Use transitions to improve user experience by providing visual feedback to user interaction.
-  
+
 audio:
   title: 'The CSS Podcast - 044: Transitions'
   src: https://traffic.libsyn.com/secure/thecsspodcast/TCP053_v1.mp3?dest-id=1891556
@@ -29,8 +29,9 @@ _Interpolation_ is the process of creating "in-between" steps that smoothly tran
 } %}
 
 ## Transition properties
+{% BrowserCompat 'css.properties.transition-property' %}
 
-To use transitions in CSS, you can use the various transition properties or the `transition` shorthand property. 
+To use transitions in CSS, you can use the various transition properties or the `transition` shorthand property.
 
 ### transition-property
 
@@ -128,6 +129,7 @@ In general, it's only possible to transition elements that can have a "middle st
 Here are some common properties you can transition.
 
 ### Transform
+{% BrowserCompat 'css.properties.transform' %}
 
 The [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) CSS property is commonly transitioned because it is a GPU-accelerated property that results in smoother animation that also consumes less battery. This property lets you arbitrarily scale, rotate, translate, or skew an element.
 
@@ -181,12 +183,12 @@ Your CSS must include a change of state *and* an event that triggers that state 
 
 Below is a list of some pseudo-classes and events that can trigger state changes in your elements.
 
-* [`:hover`](/learn/css/pseudo-classes/#:hover): matches if the cursor is over the element.
-* [`:focus`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible): matches if the element is focused.
-* [`:focus-within`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible ) : matches if the element or any of its descendants are
+* [`:hover`](/learn/css/pseudo-classes/#hover): matches if the cursor is over the element.
+* [`:focus`](/learn/css/pseudo-classes/#focus,-focus-within,-and-focus-visible): matches if the element is focused.
+* [`:focus-within`](/learn/css/pseudo-classes/#focus,-focus-within,-and-focus-visible) : matches if the element or any of its descendants are
     focused.
-* [`:target`](/learn/css/pseudo-classes/#:target): matches when the current URL's [fragment](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#fragment) matches the element's id.
-* [`:active`](/learn/css/pseudo-classes/#:active):  matches when the element is being activated (typically when the
+* [`:target`](/learn/css/pseudo-classes/#target): matches when the current URL's [fragment](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#fragment) matches the element's id.
+* [`:active`](/learn/css/pseudo-classes/#active):  matches when the element is being activated (typically when the
     mouse is pressed over it).
 * `class` change from JavaScript: when an element's CSS `class` changes via
     JavaScript, CSS will transition eligible properties that have changed.
@@ -205,7 +207,7 @@ By setting different `transition` properties on hover/focus, it's possible to cr
 
 .my-element:hover {
   background: blue;
-  
+
   /* This transition is applied on the "enter" transition */
   transition: background 150ms ease;
 }

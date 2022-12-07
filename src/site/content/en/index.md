@@ -13,10 +13,10 @@ intro:
   imageHeight: '240'
 featureCard:
   theme: 'light'
-  title: "See what's new for the web at Google IO"
-  eyebrow: 'Event'
-  url: 'https://io.google/2022/products/web/'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/leNmaxWbgSav9BvKHEQM.jpg'
+  title: 'Celebrate Chrometober with web tricks and treats.'
+  eyebrow: 'Featured'
+  url: 'https://web.dev/chrometober-2022'
+  background: 'https://web-dev.imgix.net/image/HodOHWjMnbNw56hvNASHWSgZyAf2/AwSceHfK5B3n1z1XSx1Z.gif'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
@@ -29,18 +29,6 @@ promoPanel:
   imageHeight: '483'
 pickedCaseStudyUrl: '/mishipay/'
 pickedCaseStudyTheme: 'light'
-pageSpeed:
-  eyebrow: 'PageSpeed Insights'
-  title: 'Measure performance with PageSpeed Insights'
-  summary: |
-    PageSpeed Insights is a tool for measuring the performance and Core Web Vitals of a page with lab and field data.
-  image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/6Ye3EKc6quNaopPrigno.png'
-  imageWidth: '546'
-  imageHeight: '421'
-  primaryButtonText: 'Try PageSpeed Insights'
-  primaryButtonUrl: 'https://pagespeed.web.dev/'
-  secondaryButtonText: 'Learn more'
-  secondaryButtonUrl: 'https://developers.google.com/speed/docs/insights/v5/about?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI#faq'
 courses:
   title: 'Featured courses'
   summary: 'Explore our structured learning paths to discover everything you need to know about building for the modern web.'

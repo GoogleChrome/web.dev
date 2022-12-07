@@ -1,0 +1,67 @@
+---
+patternId: clipboard/paste-text
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+    />
+    <title>How to paste text</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+
+      button {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to paste text</h1>
+    <p>
+      <button type="button">Paste</button>
+    </p>
+    <textarea></textarea>
+
+    {% set script %}
+      const pasteButton = document.querySelector('button');
+
+      pasteButton.addEventListener('click', async () => {
+        try {
+          const text = await navigator.clipboard.readText()
+          document.querySelector('textarea').value += text;
+          console.log('Text pasted.');
+        } catch (error) {
+          console.log('Failed to read clipboard. Using execCommand instead.');
+          document.querySelector('textarea').focus();
+          const result = document.execCommand('paste')
+          console.log('document.execCommand result: ', result);
+        }
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

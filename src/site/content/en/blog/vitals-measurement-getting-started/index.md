@@ -3,7 +3,7 @@ title: Getting started with measuring Web Vitals
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: Monthly graph overlayed with stopwatches labeled LCP, FID, and CLS.
 description: |
@@ -23,7 +23,7 @@ Collecting data on your site's Web Vitals is the first step towards improving th
 
 ### Getting started
 
-If you don't have a RUM setup, the following tools will quickly provide you with data about the real-world performance of your site. These tools are all based on the same underlying data set (the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)), but have slightly different use cases:
+If you don't have a RUM setup, the following tools will quickly provide you with data about the real-world performance of your site. These tools are all based on the same underlying data set (the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)), but have slightly different use cases:
 
 * **PageSpeed Insights (PSI)**: [PageSpeed Insights](https://pagespeed.web.dev/) reports on the aggregate page-level and origin-level performance over the past 28 days. In addition, it provides suggestions on how to improve performance. If you're looking for a single action to take in order to get started with measuring and improving your site's Web Vitals, we recommend using PSI to audit your site. PSI is available on the [web](https://pagespeed.web.dev/) and as an [API](https://developers.google.com/speed/docs/insights/v5/get-started).
 * **Search Console**: [Search Console](https://search.google.com/search-console/welcome) reports performance data on a per-page basis. This makes it well-suited for identifying specific pages that need improvement. Unlike PageSpeed Insights, Search Console reporting includes historical performance data. Search Console can only be used with sites that you own and have verified ownership of.
@@ -75,7 +75,7 @@ With regards to Web Vitals, Google uses the percentage of "good" experiences, ra
 
 There will always be discrepancies between RUM data and lab data - particularly if the network conditions, device type, or location of the lab environment differs significantly from that of users. However, when it comes to collecting lab data on Web Vitals metrics in particular, there are a couple specific considerations that are important to note:
 
-* **Cumulative Layout Shift (CLS):** The [Cumulative Layout Shift](/cls/) measured in lab environments can be artificially lower than the CLS observed in RUM data. CLS is defined as the "sum total of all individual layout shift scores for every unexpected layout shift that occurs _during the entire lifespan of the page_." However, the lifespan of a page is typically very different depending on whether it is being loaded by a real user or a synthetic performance measurement tool. Many lab tools only load the page - they don't interact with it. As a result, they only capture layout shifts that occur during initial page load. By contrast, the CLS measured by RUM tools captures [unexpected layout shifts](/cls/#expected-vs.-unexpected-layout-shifts) that occur throughout the entire lifespan of the page.
+* **Cumulative Layout Shift (CLS):** The [Cumulative Layout Shift](/cls/) measured in lab environments can be artificially lower than the CLS observed in RUM data. CLS is defined as the "sum total of all individual layout shift scores for every unexpected layout shift that occurs _during the entire lifespan of the page_." However, the lifespan of a page is typically very different depending on whether it is being loaded by a real user or a synthetic performance measurement tool. Many lab tools only load the page - they don't interact with it. As a result, they only capture layout shifts that occur during initial page load. By contrast, the CLS measured by RUM tools captures [unexpected layout shifts](/cls/#expected-vs-unexpected-layout-shifts) that occur throughout the entire lifespan of the page.
 *  **First Input Delay (FID):** [First Input Delay](/fid/) can't be measured in lab environments because it requires user interactions with the page. As a result, [Total Blocking Time](/tbt/) (TBT) is the recommended lab proxy for FID. TBT measures the "total amount of time between First Contentful Paint and Time to Interactive during which the page is blocked from responding to user input". Although FID and TBT are calculated differently, they are both reflections of a blocked main thread during the bootstrap process. When the main thread is blocked, the browser is delayed in responding to user interactions. FID measures the delay, if any, that occurs the first time a user tries to interact with a page.
 
 ### Tooling

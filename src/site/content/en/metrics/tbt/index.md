@@ -116,7 +116,7 @@ value in the second case quantifies the worse experience.
 TBT is a metric that should be measured [in the
 lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TBT is to run a
 Lighthouse performance audit on your site. See the [Lighthouse documentation on
-TBT](/lighthouse-total-blocking-time) for usage details.
+TBT](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/) for usage details.
 
 ### Lab tools
 
@@ -139,18 +139,18 @@ hardware**.
 
 For details on how your page's TBT affects your Lighthouse performance score,
 see [How Lighthouse determines your TBT
-score](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
+score](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
 
 ## How to improve TBT
 
 To learn how to improve TBT for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+[opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) the audit suggests.
 
 To learn how to improve TBT in general (for any site), refer to the following
 performance guides:
 
-- [Reduce the impact of third-party code](/third-party-summary/)
-- [Reduce JavaScript execution time](/bootup-time/)
-- [Minimize main thread work](/mainthread-work-breakdown/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Reduce the impact of third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [Minimize main thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [Keep request counts low and transfer sizes small](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)

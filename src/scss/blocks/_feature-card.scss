@@ -71,6 +71,14 @@
 /// so this treatment helps that and is removed for larger
 /// viewports
 .feature-card[data-treatment='illustration'] {
+  &[data-theme="dark"] {
+    --color-img-mask: 255, 255, 255;
+  }
+
+  &[data-theme="light"] {
+    --color-img-mask: 0, 0, 0;
+  }
+
   &::before {
     content: '';
     display: block;
@@ -80,9 +88,9 @@
     inset: auto 0 0 0;
     background: linear-gradient(
       0deg,
-      rgb(255 255 255 / 100%) 10%,
-      rgb(255 255 255 / 70%) 70%,
-      rgb(255 255 255 / 0%) 100%
+      rgba(var(--color-img-mask), 70%),
+      rgba(var(--color-img-mask),  60%),
+      rgba(var(--color-img-mask), 0%)
     );
     border-radius: $global-radius-large;
     z-index: 1;

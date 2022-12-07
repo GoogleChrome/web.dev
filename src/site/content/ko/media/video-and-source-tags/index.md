@@ -6,7 +6,7 @@ authors:
   - joemedley
   - derekherman
 description: 웹용 비디오 파일을 제대로 준비하고, 정확한 치수와 해상도를 주고, 다양한 브라우저를 위해 별도의 WebM 및 MP4 파일도 생성하셨네요. 그렇지만 모두가 보려면 웹 페이지에 추가해야 합니다.
-date: 2014-14-15
+date: 2014-02-15
 updated: 2021-07-05
 tags:
   - media
@@ -98,7 +98,7 @@ tags:
 </video>
 ```
 
-`src`가 손상되었거나 제공된 비디오 형식이 지원되지 않는 경우 포스터가 대체될 수도 있습니다. 포스터 이미지의 유일한 단점은 일부 대역폭을 소비하고 렌더링이 필요한 추가 파일 요청입니다. 자세한 내용은 [이미지를 효율적으로 인코딩](/uses-optimized-images/)을 참조하십시오.
+`src`가 손상되었거나 제공된 비디오 형식이 지원되지 않는 경우 포스터가 대체될 수도 있습니다. 포스터 이미지의 유일한 단점은 일부 대역폭을 소비하고 렌더링이 필요한 추가 파일 요청입니다. 자세한 내용은 [이미지를 효율적으로 인코딩](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)을 참조하십시오.
 
 <div class="w-columns">{% Compare 'worse' %}<figure data-float="left"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="대체 포스터가 없으면 동영상이 깨져 보입니다.", width="360", height="600" %}</figure>
 </div>
@@ -119,7 +119,7 @@ tags:
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome 스크린샷, 가로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 초과합니다.", width="800", height="450" %}<figcaption> Android Chrome 스크린샷, 가로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 넘습니다.</figcaption></figure>
 </div>
 
-CSS를 사용하여 비디오 크기를 제어할 수 있습니다. CSS가 모든 요구 사항을 충족하지 못하는 경우 YouTube 및 기타 소스의 비디오에 대해서도 [FitVids](http://fitvidsjs.com/)(이 기사의 범위를 벗어남)와 같은 JavaScript 라이브러리 및 플러그인이 도움이 될 수 있습니다. 불행히도 이러한 리소스는 [네트워크 페이로드 크기](/total-byte-weight/)를 증가시켜 수익과 부정적인 결과를 초래하고 사용자에게는 많은 비용이 발생할 수 있습니다.
+CSS를 사용하여 비디오 크기를 제어할 수 있습니다. CSS가 모든 요구 사항을 충족하지 못하는 경우 YouTube 및 기타 소스의 비디오에 대해서도 [FitVids](http://fitvidsjs.com/)(이 기사의 범위를 벗어남)와 같은 JavaScript 라이브러리 및 플러그인이 도움이 될 수 있습니다. 불행히도 이러한 리소스는 [네트워크 페이로드 크기](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)를 증가시켜 수익과 부정적인 결과를 초래하고 사용자에게는 많은 비용이 발생할 수 있습니다.
 
 여기에서 설명하는 것과 같은 간단한 용도의 경우 [CSS 미디어 쿼리](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#css-media-queries)를 사용하여 뷰포트 크기에 따라 요소의 크기를 지정합니다. `max-width: 100%`를 사용하세요.
 

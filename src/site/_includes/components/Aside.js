@@ -119,6 +119,12 @@ function Aside(content, type = 'note') {
       icon = 'celebration.svg';
       title = i18n(`i18n.common.${type}`, locale);
       break;
+
+    case 'update':
+      icon = 'update.svg';
+      title = i18n(`i18n.common.${type}`, locale);
+      utilities.main = 'bg-state-update-bg color-state-update-text';
+      break;
   }
 
   // Make sure that we don't insert multiple newlines when this component is

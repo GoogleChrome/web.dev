@@ -23,7 +23,7 @@ tags:
 
 {% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Веб-шрифты присутствуют в цепочке критических запросов.", width="704", height="198" %}
 
-В приведенной выше проверке веб-шрифты являются частью цепочки критических запросов и загружаются последними. [**Цепочка критических запросов**](/critical-request-chains) представляет собой порядок выборки ресурсов браузером. В данном приложении веб-шрифты (Pacfico и Pacifico-Bold) определены с помощью правила [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) и являются последним ресурсом, получаемым браузером в цепочке критических запросов. Обычно веб-шрифты загружаются в отложенном режиме, а это означает, что они не загрузятся, пока не будут загружены критические ресурсы (CSS, JS).
+В приведенной выше проверке веб-шрифты являются частью цепочки критических запросов и загружаются последними. [**Цепочка критических запросов**](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/) представляет собой порядок выборки ресурсов браузером. В данном приложении веб-шрифты (Pacfico и Pacifico-Bold) определены с помощью правила [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) и являются последним ресурсом, получаемым браузером в цепочке критических запросов. Обычно веб-шрифты загружаются в отложенном режиме, а это означает, что они не загрузятся, пока не будут загружены критические ресурсы (CSS, JS).
 
 Вот последовательность ресурсов, загружаемых в приложении:
 

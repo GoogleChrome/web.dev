@@ -42,7 +42,7 @@ whole package of codecs instead of multiple tools. Squoosh CLI does just that.
 
 {% YouTube 'FUqn8eOxCP4' %}
 
-You can install the beta version of the Squoosh CLI by running `npm -i @squoosh/cli` or run it 
+You can install the beta version of the Squoosh CLI by running `npm i @squoosh/cli` or run it 
 directly using `npx @squoosh/cli [parameters]`.
 
 The Squoosh CLI is written in Node and makes use of the exact same WebAssembly modules the PWA 

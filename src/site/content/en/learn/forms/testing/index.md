@@ -5,6 +5,7 @@ description: >
 authors:
   - michaelscharnagl
 date: 2021-11-03
+updated: 2022-07-18
 ---
 
 In previous modules, you learned how to build a form,
@@ -30,7 +31,7 @@ Do you have more devices you can test on? Test your form on all of them.
 The more different devices, browsers, browser versions, and operating systems you can test on, the better!
 
 You can also use a test service to test your form on lots of different browsers,
-different browser versions, different devices, and different operating systems. 
+different browser versions, different devices, and different operating systems.
 [BrowserStack](https://www.browserstack.com) offers free test accounts for open source projects,
 to enable testing on different browsers, devices and operating systems.
 
@@ -150,7 +151,7 @@ to build your own monitoring tool:
 explains how to do this.
 
 PSI includes data from the
-[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) dataset,
+[Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX) dataset,
 if available for the given URL.
 This way, you can also see field data directly in the report.
 
@@ -185,7 +186,7 @@ How many fill out the form and move to the next page?
 You get answers to these questions by using analytics tools.
 
 {% Aside %}
-Monitoring the real-world experience of your users is sometimes called Real User Monitoring 
+Monitoring the real-world experience of your users is sometimes called Real User Monitoring
 (RUM).
 
 RUM collects performance metrics directly from the end user's browser.

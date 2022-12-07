@@ -5,7 +5,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2021-06-04
+updated: 2022-08-17
 hero: image/admin/iVHsQYbBj8qNYZeSZKwK.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -419,19 +419,52 @@ At the moment Chrome only supports WebOTP API calls from cross-origin iframes
 that have **no more than one** unique origin in its ancestor chain. In the
 following scenarios:
 
-* `a.com` -> `b.com`
-* `a.com` -> `b.com` -> `b.com`
-* `a.com` -> `a.com` -> `b.com`
-* `a.com` -> `b.com` -> `c.com`
+<ul>
+  <li>`a.com` -> `b.com`</li>
+  <li>`a.com` -> `b.com` -> `b.com`</li>
+  <li>`a.com` -> `a.com` -> `b.com`</li>
+  <li>`a.com` -> `b.com` -> `c.com`</li>
+</ul>
 
 using WebOTP in `b.com` is supported but using it in `c.com` is not.
 
 Note that the following scenario is also not supported because of lack of demand
 and UX complexities.
 
-* `a.com` -> `b.com` -> `a.com` (calls WebOTP API)
+<ul>
+  <li>`a.com` -> `b.com` -> `a.com` (calls WebOTP API)</li>
+</ul>
 
 {% endAside %}
+
+## Use WebOTP on desktop
+
+In Chrome, WebOTP supports listening for SMSes received on other devices to
+assist users in completing phone number verification on desktop.
+
+<figure>
+{% Video
+  src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/iUUGcawm8LJpGH3PFxNZ.mp4",
+  autoplay="true",
+  controls="true",
+  loop="true",
+  muted="true",
+  preload="auto"
+%}
+  <figcaption>
+    WebOTP API on desktop.
+  </figcaption>
+</figure>
+
+This capability requires the user to sign-in to the same Google account on both
+desktop Chrome and Android Chrome.
+
+All developers have to do is to implement WebOTP API on their desktop website,
+the same way they do on their mobile website, but no special tricks are
+required.
+
+Learn more details at [Verify a phone number on desktop using WebOTP
+API](https://developer.chrome.com/blog/cross-device-webotp/).
 
 ## FAQ
 
@@ -490,3 +523,12 @@ and let us know where and how you're using it.
 {% Aside %}
 Find more questions at [the FAQ section in the explainer](https://github.com/WICG/WebOTP/blob/master/FAQ.md).
 {% endAside %}
+
+## Resources {: #resources }
+
+* [SMS OTP form best practices](/sms-otp-form/)
+* [Verify a phone number on desktop using WebOTP
+  API](https://developer.chrome.com/blog/cross-device-webotp/)
+* [Fill OTP forms within cross-origin iframes with WebOTP API](/web-otp-iframe/)
+* [Yahoo! JAPAN's password-free authentication reduced inquiries by 25%, sped up
+  sign-in time by 2.6x](/yahoo-japan-identity-case-study/)

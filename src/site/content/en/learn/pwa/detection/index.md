@@ -104,6 +104,7 @@ On iOS and iPadOS, there is no navigation or URL transfer between the browser an
 When a user opens the installed icon, no storage is shared with Safari. If your PWA needs a login, the user will need to log in again. If the app was added to the home screen several times, for each PWA instance, the user has a different session.
 
 ## Related applications
+{% BrowserCompat 'html.manifest.related_applications' %}
 
 A website indicates a relationship with an app via the manifest. To do so, use the [`related_applications` member](https://developer.mozilla.org/docs/Web/Manifest/related_applications) of the Web App Manifest spec.
 The `related_applications` key is an array of objects that represent each related application. Each entry contains `platform`, `url`, and an optional `id`.

@@ -22,7 +22,7 @@ anyone, anywhere. Whenever you go to a website, it's up-to-date, and your
 experience with that site can be as ephemeral or as permanent as you'd like. Web
 applications can reach _anyone, anywhere, on any device_ with a single codebase.
 
-Platform-specific applications, are known for being incredibly rich and reliable. They're
+Platform-specific applications are known for being incredibly rich and reliable. They're
 ever-present, on home screens, docks, and taskbars. They work regardless of
 network connection. They launch in their own standalone experience. They can
 read and write files from the local file system, access hardware connected via
@@ -131,3 +131,9 @@ experience your users will love. Using the latest web features to bring
 enhanced capabilities and reliability, Progressive Web Apps allow what you
 build to be installed by _anyone, anywhere, on any device_ with a single
 codebase.
+
+<!--lint disable no-unescaped-template-tags-->
+{% from 'macros/prerender.njk' import prerender with context %}
+{# Prerender /progressive-web-apps/ as a test of prerendering #}
+{{ prerender('/progressive-web-apps/') }}
+<!--lint enable no-unescaped-template-tags-->

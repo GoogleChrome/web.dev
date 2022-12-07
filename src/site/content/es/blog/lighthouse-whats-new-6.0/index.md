@@ -68,7 +68,7 @@ Además, TBT se correlaciona bien con la métrica de campo [Demora de la primera
 
 ## Actualización de la puntuación de rendimiento {: #score }
 
-La [puntuación de rendimiento en Lighthouse](/performance-scoring/) se calcula a partir de una combinación ponderada de varias métricas para resumir la velocidad de una página. A continuación, se muestra la fórmula de puntuación de rendimiento de la versión 6.0.
+La [puntuación de rendimiento en Lighthouse](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) se calcula a partir de una combinación ponderada de varias métricas para resumir la velocidad de una página. A continuación, se muestra la fórmula de puntuación de rendimiento de la versión 6.0.
 
 &lt;style&gt; .lh-table { min-width: unset; } .lh-table td { min-width: unset; } &lt;/style&gt;
 
@@ -216,7 +216,7 @@ Lighthouse utiliza la maravillosa biblioteca [axe-core](https://github.com/deque
 
 ### Declaración de juego de caracteres {: #charset }
 
-El [elemento meta juego de caracteres](/charset/) declara qué codificación de caracteres debe usarse para interpretar un documento HTML. Si falta este elemento, o si se declara de forma tardía en el documento, los navegadores emplean una serie de heurísticas para adivinar qué codificación se debe utilizar. Si un navegador adivina incorrectamente y se encuentra un elemento de metacaracteres de forma tardía, el analizador generalmente descarta todo el trabajo realizado hasta el momento y comienza de nuevo, lo que genera malas experiencias para el usuario. Esta nueva auditoría verifica que la página tenga una codificación de caracteres válida y que esté definida al principio y al principio.
+El [elemento meta juego de caracteres](https://developer.chrome.com/docs/lighthouse/best-practices/charset/) declara qué codificación de caracteres debe usarse para interpretar un documento HTML. Si falta este elemento, o si se declara de forma tardía en el documento, los navegadores emplean una serie de heurísticas para adivinar qué codificación se debe utilizar. Si un navegador adivina incorrectamente y se encuentra un elemento de metacaracteres de forma tardía, el analizador generalmente descarta todo el trabajo realizado hasta el momento y comienza de nuevo, lo que genera malas experiencias para el usuario. Esta nueva auditoría verifica que la página tenga una codificación de caracteres válida y que esté definida al principio y al principio.
 
 ## Lighthouse CI {: #ci }
 

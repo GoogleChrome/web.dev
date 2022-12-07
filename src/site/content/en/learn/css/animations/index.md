@@ -55,6 +55,7 @@ width="800",
 height="440" %}
 
 ### `@keyframes`
+{% BrowserCompat 'css.at-rules.keyframes' %}
 
 Now you know what a keyframe is,
 that knowledge should help you understand how the CSS
@@ -127,11 +128,13 @@ This means you have 2 positions inside your keyframes rule to represent the chan
 } %}
 
 ## The `animation` properties
+{% BrowserCompat 'css.properties.animation' %}
 
 To use your `@keyframes` in a CSS rule, define various animation properties _or_, use the
 [`animation`](https://developer.mozilla.org/docs/Web/CSS/animation) shorthand property.
 
 ### `animation-duration`
+{% BrowserCompat 'css.properties.animation-duration' %}
 
 ```css
 .my-element {
@@ -146,12 +149,14 @@ but it'll be too quick for you to see.
 You can't add negative time values.
 
 ### `animation-timing-function`
+{% BrowserCompat 'css.properties.animation-timing-function' %}
 
 To help recreate natural motion in animation,
 you can use timing functions that calculate the speed of an animation at each point.
 Calculated values are often *curved*,
 making the animation run at variable speeds over the course of `animation-duration`,
 and if a value is calculated beyond that of the value defined in `@keyframes`, make the element appear to bounce.
+
 
 There are several keywords available as presets in CSS, which are used as the value for
 [animation-timing-function](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function):
@@ -226,6 +231,7 @@ which means it ends one step earlier than `end`.
 } %}
 
 ### `animation-iteration-count`
+{% BrowserCompat 'css.properties.animation-iteration-count' %}
 
 ```css
 .my-element {
@@ -256,6 +262,7 @@ which is how the "pulser" demo from the start of this lesson works.
 } %}
 
 ### `animation-direction`
+{% BrowserCompat 'css.properties.animation-direction' %}
 
 ```css
 .my-element {
@@ -277,6 +284,7 @@ You can set which direction the timeline runs over your keyframes with
 } %}
 
 ### `animation-delay`
+{% BrowserCompat 'css.properties.animation-delay' %}
 
 ```css
 .my-element {
@@ -298,6 +306,7 @@ For example, if your animation is 10 seconds long and you set `animation-delay` 
 } %}
 
 ### `animation-play-state`
+{% BrowserCompat 'css.properties.animation-play-state' %}
 
 ```css
 .my-element:hover {
@@ -316,6 +325,7 @@ The default value is `running` and if you set it to `paused`, it will pause the 
 } %}
 
 ### `animation-fill-mode`
+{% BrowserCompat 'css.properties.animation-fill-mode' %}
 
 The [animation-fill-mode](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode)
 property defines which values in your `@keyframes` timeline persist before the animation starts or after it ends.

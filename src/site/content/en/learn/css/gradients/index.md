@@ -41,6 +41,7 @@ CSS gradients allow you to create anything from a smooth gradient between two co
 right up to impressive artwork by mixing and repeating multiple gradients.
 
 ## Linear gradient
+{% BrowserCompat 'css.types.image.gradient.linear-gradient' %}
 
 The [`linear-gradient()`](https://developer.mozilla.org/docs/Web/CSS/linear-gradient())
 function generates an image of two or more colors, progressively.
@@ -107,6 +108,7 @@ and you can layer gradients on top of each other by separating each gradient wit
 } %}
 
 ## Radial gradient
+{% BrowserCompat 'css.types.image.gradient.radial-gradient' %}
 
 To create a gradient that radiates in a circular fashion, the
 [`radial-gradient()`](https://developer.mozilla.org/docs/Web/CSS/radial-gradient())
@@ -150,6 +152,7 @@ Likewise, you can add as many `radial-gradients` as you like too.
 } %}
 
 ## Conic gradient
+{% BrowserCompat 'css.types.image.gradient.conic-gradient' %}
 
 A conic gradient has a center point in your box and starts from the top (by default),
 and goes around in a 360 degree circle.

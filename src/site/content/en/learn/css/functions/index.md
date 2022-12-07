@@ -157,6 +157,7 @@ Like many other programming languages,
 CSS provides useful mathematical functions to assist with various types of calculation.
 
 ### calc()
+{% BrowserCompat 'css.types.calc' %}
 
 The [`calc()`](https://developer.mozilla.org/docs/Web/CSS/calc())
 function takes a single mathematical expression as its parameter.
@@ -192,6 +193,7 @@ The `calc()` function can be nested inside another `calc()` function.
 You can also pass custom properties in a `var()` function as part of an expression.
 
 ### `min()` and `max()`
+{% BrowserCompat 'css.types.min' %}
 
 The [`min()`](https://developer.mozilla.org/docs/Web/CSS/min())
 function returns the smallest computed value of the one or more passed arguments.
@@ -216,6 +218,7 @@ We cover units like `vw` and `vh` in the [sizing](/learn/css/sizing) units modul
 {% endAside %}
 
 ### clamp()
+{% BrowserCompat 'css.types.clamp' %}
 
 The [`clamp()`](https://developer.mozilla.org/docs/Web/CSS/clamp())
 function takes three arguments: the minimum size,
@@ -280,6 +283,7 @@ which skew, resize and even change the depth of an element.
 All of the following functions are used with the `transform` property.
 
 ### Rotation
+{% BrowserCompat 'css.types.transform-function.rotate' %}
 
 You can rotate an element using the
 [`rotate()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/rotate())
@@ -304,6 +308,9 @@ You can pass degree, turn and radian units to determine the level of rotation.
 
 The [`rotate3d()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/rotate3d())
 function takes four arguments.
+
+{% BrowserCompat 'css.types.transform-function.rotate3d' %}
+
 The first 3 arguments are numbers, which define the X, Y and Z coordinates.
 The fourth argument is the rotation which,
 like the other rotation functions, accepts degrees, angle and turns.
@@ -320,6 +327,7 @@ like the other rotation functions, accepts degrees, angle and turns.
 } %}
 
 ### Scale
+{% BrowserCompat 'css.types.transform-function.scale' %}
 
 You can change the scaling of an element with `transform` and the
 [`scale()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scale()) function.
@@ -349,6 +357,7 @@ Also like the `rotate` function, there is a
 This is similar to `scale()`, but it takes three arguments: the X, Y and Z scale factor.
 
 ### Translate
+{% BrowserCompat 'css.types.transform-function.translate' %}
 
 The [`translate()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/translate())
 functions move an element while it maintains its position in the document flow.
@@ -377,6 +386,7 @@ You can also use
 which allows you to define the X, Y and Z translation in one function.
 
 ### Skewing
+{% BrowserCompat 'css.types.transform-function.skew' %}
 
 You can skew an element, using the
 [`skew()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/skew())
@@ -400,6 +410,7 @@ You can also use
 } %}
 
 ### Perspective
+{% BrowserCompat 'css.properties.perspective' %}
 
 Lastly, you can use the
 [`perspective`](https://developer.mozilla.org/docs/Web/CSS/perspective) property

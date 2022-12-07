@@ -162,7 +162,7 @@ always make sure the visual difference between the default state and the focus s
 
 {% Aside %}
 If you want to remove the default `:focus` styles but still show focus indicators for keyboard users,
-you can use the [`:focus-visible`](/style-focus/#use-:focus-visible-to-selectively-show-a-focus-indicator) CSS pseudo-class.
+you can use the [`:focus-visible`](/style-focus/#use-focus-visible-to-selectively-show-a-focus-indicator) CSS pseudo-class.
 {% endAside %}
 
 Learn more about

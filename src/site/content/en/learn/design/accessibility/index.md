@@ -1,7 +1,7 @@
 ---
 title: Accessibility
 description: >
-  Ensure that your website is available to everyone. 
+  Ensure that your website is available to everyone.
 authors:
   - adactio
 date: 2021-12-23
@@ -106,6 +106,7 @@ Select the option to increase contrast.
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/WRYeXsiJVP4nP1b8xAOr.png", alt="Increase contrast in system preferences.", width="780", height="602" %}
 
 There's a media feature to detect if someone has enabled high contrast mode. The [`prefers-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast) media feature can be queried for three values: `no-preference`, `less`, and `more`. You can use this information to adjust your site's color palette.
+{% BrowserCompat 'css.at-rules.media.prefers-contrast' %}
 
 {% Codepen {
  user: 'web-dot-dev',
@@ -203,6 +204,7 @@ Learn more about the problems caused by [content reordering](/content-reordering
 Animation and motion are wonderful ways to bring web designs to life. But for some people these movements can be very disorienting and even cause nausea.
 
 There's a feature query that communicates whether the user would prefer less motion. It's called [`prefers-reduced-motion`](/prefers-reduced-motion/). Include it wherever you are using CSS transitions or animations.
+{% BrowserCompat 'css.at-rules.media.prefers-reduced-motion' %}
 
 ```css
 a:hover {
@@ -216,7 +218,7 @@ a:hover {
 }
 ```
 
-The `prefers-reduced-motion` media query is specifically for movement on the screen. If you are using transitions on an element's color that shouldn't be affected by `prefers-reduced-motion`. It's also ok to transition opacity and crossfade. Reduced motion doesn't have to mean no animation.
+The `prefers-reduced-motion` media query is specifically for movement on the screen. If you are using transitions on an element's color that shouldn't be affected by `prefers-reduced-motion`. It's also ok to transition opacity and cross-fade. Reduced motion doesn't have to mean no animation.
 
 ## Voice
 
@@ -354,7 +356,7 @@ ARIA stands for Accessible Rich Internet Applications. Its vocabulary allows you
 
 If you need to create interface elements that aren't yet available as HTML elements, [familiarize yourself with ARIA](https://developer.mozilla.org/docs/Learn/Accessibility/WAI-ARIA_basics).
 
-The more bespoke functionality you add with JavaScript, the more you'll need to understand ARIA. If you stick with native HTML elements, you may not need any ARIA. 
+The more bespoke functionality you add with JavaScript, the more you'll need to understand ARIA. If you stick with native HTML elements, you may not need any ARIA.
 
 If it's at all possible, test with real users of screen readers. Not only will this give you a better understanding of how they navigate the web, it will also take the guesswork out of designing with accessibility in mind.
 

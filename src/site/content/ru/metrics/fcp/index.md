@@ -4,7 +4,7 @@ title: Первая отрисовка контента (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-10-19
 description: В этой статье описывается метрика FCP (Первая отрисовка контента) и объясняются принципы ее измерения
 tags:
   - performance
@@ -39,7 +39,7 @@ FCP можно измерить в [лабораторных](/user-centric-perf
 ### Инструменты для измерения в полевых условиях
 
 - [PageSpeed Insights](https://pagespeed.web.dev/)
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [Search Console (отчет о скорости загрузки)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
@@ -50,6 +50,8 @@ FCP можно измерить в [лабораторных](/user-centric-perf
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Измерение FCP в JavaScript
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 Чтобы измерить FCP в JavaScript, можно воспользоваться [Paint Timing API](https://w3c.github.io/paint-timing/). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver), который прослушивает записи `paint` с именем `first-contentful-paint` и регистрирует их в консоли.
 
@@ -86,28 +88,28 @@ import {getFCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-Полный пример измерения FCP в JavaScript приводится в [исходном коде `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts).
+Полный пример измерения FCP в JavaScript приводится в [исходном коде `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить FCP в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 
 ## Как улучшить показатель FCP
 
-Чтобы узнать, как улучшить FCP для конкретного сайта, можно запустить проверку производительности с помощью Lighthouse и обратить внимание на любые конкретные [возможности улучшения](/lighthouse-performance/#opportunities) или [диагностики](/lighthouse-performance/#diagnostics), предлагаемые проверкой.
+Чтобы узнать, как улучшить FCP для конкретного сайта, можно запустить проверку производительности с помощью Lighthouse и обратить внимание на любые конкретные [возможности улучшения](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) или [диагностики](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics), предлагаемые проверкой.
 
 Чтобы узнать, как улучшить FCP в целом (для любого сайта), обратитесь к следующим руководствам по производительности:
 
-- [Устранение ресурсов, блокирующих рендеринг](/render-blocking-resources/)
-- [Минимизация CSS-кода](/unminified-css/)
-- [Удаление неиспользуемого CSS-кода](/unused-css-rules/)
-- [Предварительное подключение к нужным источникам](/uses-rel-preconnect/)
+- [Устранение ресурсов, блокирующих рендеринг](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [Минимизация CSS-кода](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [Удаление неиспользуемого CSS-кода](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [Предварительное подключение к нужным источникам](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [Уменьшение времени ответа сервера (TTFB)](/ttfb/)
-- [Уход от переадресации нескольких страниц](/redirects/)
-- [Предварительная загрузка ключевых запросов](/uses-rel-preload/)
-- [Уход от огромных нагрузок на сеть](/total-byte-weight/)
-- [Обслуживание статических объектов сайта с помощью эффективной политики кеширования](/uses-long-cache-ttl/)
-- [Уход от чрезмерного размера DOM](/dom-size/)
-- [Минимизация глубины вложенности критических запросов](/critical-request-chains/)
-- [Настройка показа текста во время загрузки веб-шрифтов](/font-display/)
-- [Поддержание малого количества запросов и объемов передаваемых данных](/resource-summary/)
+- [Уход от переадресации нескольких страниц](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [Предварительная загрузка ключевых запросов](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Уход от огромных нагрузок на сеть](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [Обслуживание статических объектов сайта с помощью эффективной политики кеширования](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [Уход от чрезмерного размера DOM](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [Минимизация глубины вложенности критических запросов](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [Настройка показа текста во время загрузки веб-шрифтов](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [Поддержание малого количества запросов и объемов передаваемых данных](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

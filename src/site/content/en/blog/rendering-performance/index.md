@@ -6,7 +6,7 @@ subhead: |
 authors:
   - paullewis
 date: 2015-03-20
-updated: 2018-08-17 
+updated: 2018-08-17
 description: |
   Users notice if sites and apps don't run well, so optimizing rendering performance is crucial!
 tags:
@@ -107,7 +107,7 @@ browser jumps to just do compositing.
 This final version is the cheapest and most desirable for high pressure points
 in an app's lifecycle, like animations or scrolling.
 
-Note: If you want to know which of the three versions above changing any given CSS property will trigger head to [CSS Triggers](https://csstriggers.com). And if you want the fast track to high performance animations, read the section on [changing compositor-only properties](/stick-to-compositor-only-properties-and-manage-layer-count/).
+Note: If you want the fast track to high performance animations, read the section on [changing compositor-only properties](/stick-to-compositor-only-properties-and-manage-layer-count/).
 
 Performance is the art of avoiding work, and making any work you do as
 efficient as possible. In many cases it's about working with the browser, not
@@ -134,7 +134,7 @@ rendering pipeline and uncover patterns that make it easy to build
 performant apps.
 
 This is a free course offered through [Udacity](https://www.udacity.com)
-    
+
 
 [Take Course](https://www.udacity.com/course/browser-rendering-optimization--ud860)
 

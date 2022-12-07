@@ -47,7 +47,7 @@ If you want to remove the default `:focus` styles but still show focus indicator
 you can use the `:focus-visible` CSS pseudo-class.
 
 Learn more about
-[`:focus-visible`](/style-focus/#use-:focus-visible-to-selectively-show-a-focus-indicator).
+[`:focus-visible`](/style-focus/#use-focus-visible-to-selectively-show-a-focus-indicator).
 {% endAside %}
 
 ## Help users navigate your form

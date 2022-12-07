@@ -9,6 +9,7 @@ description: |
 hero: image/admin/QDCTiiyXE11bYSZMP3Yt.jpg
 alt: A wall with a bunch of image frames in different sizes.
 date: 2019-09-30
+updated: 2022-09-27
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
@@ -144,7 +145,7 @@ Preloading your responsive images can speed them up in theory, but what does it 
 
 To answer that I created two copies of a [demo PWA shop](https://github.com/GoogleChromeLabs/sample-pie-shop): [one that does not preload images](https://20190710t144416-dot-pie-shop-app.appspot.com/apparel), and [one that preloads some of them](https://20190710t132936-dot-pie-shop-app.appspot.com/apparel). Since the site lazy loads images using JavaScript, it's likely to benefit from preloading the ones that will be in the initial viewport.
 
-That gave me the following results for [no preload](https://www.webpagetest.org/result/190710_VM_30b9d4c993a1e60befba17e1261ba1ca/) and for [image preload](https://www.webpagetest.org/result/190710_7B_a99e792121760f81a270b4b9c847797b/). Looking at the raw numbers we see that [Start Render](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/getting-started.md#start-render) stayed the same, [Speed Index](/speed-index/) slightly improved (273 ms, as images arrive faster, but don't take up a huge chunk of the pixel area), but the real metric which captures the difference is the [Last Painted Hero](https://github.com/WPO-Foundation/webpagetest/blob/master/docs/Metrics/HeroElements.md) metric, which improved by 1.2 seconds. 🎉🎉
+That gave me the following results for [no preload](https://www.webpagetest.org/result/190710_VM_30b9d4c993a1e60befba17e1261ba1ca/) and for [image preload](https://www.webpagetest.org/result/190710_7B_a99e792121760f81a270b4b9c847797b/). Looking at the raw numbers we see that [Start Render](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/getting-started.md#start-render) stayed the same, [Speed Index](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) slightly improved (273 ms, as images arrive faster, but don't take up a huge chunk of the pixel area), but the real metric which captures the difference is the [Last Painted Hero](https://github.com/WPO-Foundation/webpagetest/blob/master/docs/Metrics/HeroElements.md) metric, which improved by 1.2 seconds. 🎉🎉
 
 Of course, nothing captures the visual difference quite like a filmstrip comparison:
 <figure>
@@ -185,6 +186,12 @@ Because responsive preload has no notion of "order" or "first match", the breakp
 <link rel="preload" href="medium_cat.jpg" as="image" media="(min-width: 400.1px) and (max-width: 800px)">
 <link rel="preload" href="large_cat.jpg" as="image" media="(min-width: 800.1px)">
 ```
+
+## Effects on Largest Contentful Paint (LCP)
+
+Since images can be [candidates for Largest Contentful Paint (LCP)](/lcp/#what-elements-are-considered), preloading them may improve your website's LCP. Using the techniques above, you can also ensure that your responsive images will load more quickly.
+
+Regardless of whether the image you're preloading is responsive, be aware that preloads work especially well when the image resource isn't discoverable in the initial markup payload. For websites that send complete markup from the server, you may not realize a huge benefit. However, if your website renders markup on the client&mdash;which sidesteps the browser's [preload scanner](/preload-scanner/)&mdash;there's an opportunity on the table to preload potential LCP images to improve performance.
 
 ## Summary
 

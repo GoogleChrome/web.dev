@@ -1,32 +1,12 @@
 name: Presubmit
-on:
-  pull_request:
-    types: [labeled, opened, reopened, synchronize]
+
+on: pull_request
+
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    outputs:
-      isPresubmit: ${{ steps.presubmit.outputs.isPresubmit }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: npm ci --prefix .github/actions/presubmit
-
-      - name: Check if presubmit
-        id: presubmit
-        uses: ./.github/actions/presubmit
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, '$-presubmit') }}
-
   presubmit:
-    needs: check
-    if: ${{ needs.check.outputs.isPresubmit == 'true' }}
     runs-on: ubuntu-latest
     env:
-      NODE_OPTIONS: --max_old_space_size=4096
+      NODE_OPTIONS: --max_old_space_size=8192
     steps:
       - name: Checkout
         uses: actions/checkout@v3

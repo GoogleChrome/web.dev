@@ -37,7 +37,7 @@ mobile experiences and those who don't.
 ## Summary of impact by vertical
 
 All of the improvements below were observed after a 0.1 improvement in 4
-metrics: [First Meaningful Paint](/first-meaningful-paint/),
+metrics: [First Meaningful Paint](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/),
 [Estimated Input Latency](/estimated-input-latency/), Observed
 Load ([Avg. Page Load Time](https://support.google.com/analytics/answer/2383341)
 in Google Analytics), and Max Server Latency ([Time To First
@@ -103,4 +103,4 @@ revenue-related metrics drawn from each brand's analytics tool.
 
 For more information, read the full [Milliseconds Make Millions][report] report.
 
-[report]: https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html
+[report]: https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Milliseconds_Make_Millions_report.pdf

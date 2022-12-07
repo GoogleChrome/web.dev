@@ -57,7 +57,7 @@ Another good practice is to find a good time to check for updates and apply them
 * When background events are triggered, such as when your PWA receives a push notification or a background sync fires. You can update your cache then and your users will have the asset's new version the next time they open the app.
 
 {% Aside 'warning' %}
-When checking for updates, make sure you don't interrupt the loading process and impact your app's performance. Do not wait for an update check before rendering the app as it will harm your user experience and reflect on your [core web vitals](/web-vitals). If you need to udate part of your app frequently, use the [stale while revalidate](/learn/pwa/serving/#stale-while-revalidate) caching strategy.
+When checking for updates, make sure you don't interrupt the loading process and impact your app's performance. Do not wait for an update check before rendering the app as it will harm your user experience and reflect on your [core web vitals](/web-vitals). If you need to update part of your app frequently, use the [stale while revalidate](/learn/pwa/serving/#stale-while-revalidate) caching strategy.
 {% endAside %}
 
 ### Live updates

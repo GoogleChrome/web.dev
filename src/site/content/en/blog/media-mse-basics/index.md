@@ -251,7 +251,7 @@ returns. If you're trying to do this in Safari, it won't work without a
 {% Aside %}
 Note: Just to help things fit on the screen, from here to the end I'm only going
 to show part of the example we're building. If you want to see it in context,
-[jump to the end](#the_final_version).
+[jump to the end](#the-final-version).
 {% endAside %}
 
 ```js

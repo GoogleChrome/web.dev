@@ -42,6 +42,16 @@ by allowing you to opt your page in to theme-specific defaults of the user agent
 such as, for example, form controls, scroll bars, as well as CSS system colors.
 At the same time, this feature prevents browsers from applying any transformations on their own.
 
+### Browser support
+
+#### `prefers-color-scheme`
+
+{% BrowserCompat 'css.at-rules.media.prefers-color-scheme' %}
+
+#### `color-scheme`
+
+{% BrowserCompat 'css.properties.color-scheme' %}
+
 ### The user agent stylesheet
 
 Before I continue, let me briefly describe what a user agent stylesheet is.

@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: |2
 
   무엇이 좋은 또는 훌륭한 프로그레시브 웹 앱을 만드는가?
@@ -37,7 +37,7 @@ tags:
 
 사용자가 앱을 *사용*하도록 하려면 속도가 중요합니다. 실제로 페이지 로드 시간이 1초에서 10초로 늘어나면 사용자가 이탈할 확률은 123% 증가합니다. 성능은 `load` 이벤트에서 그치지 않습니다. 사용자는 버튼 클릭과 같은 상호 작용이 입력되었는지 여부를 궁금해해서는 안 됩니다. 스크롤과 애니메이션이 부드럽게 느껴져야 합니다. 성능은 사용자가 애플리케이션을 인식하는 방식에서 실질적인 성능에 이르기까지 전체 경험에 영향을 줍니다.
 
-모든 응용 프로그램의 요구 사항은 다르지만 Lighthouse의 성능 감사는 [RAIL 사용자 중심 성능 모델을](/rail/) 기반으로 하며 이러한 감사에서 높은 점수를 받으면 사용자가 즐거운 경험을 할 가능성이 높아집니다. [PageSpeed Insights](https://pagespeed.web.dev/) 또는 [Chrome 사용자 경험 보고서](https://developers.google.com/web/tools/chrome-user-experience-report/)를 사용하여 웹 앱에 대한 실제 성능 데이터를 얻을 수도 있습니다.
+모든 응용 프로그램의 요구 사항은 다르지만 Lighthouse의 성능 감사는 [RAIL 사용자 중심 성능 모델을](/rail/) 기반으로 하며 이러한 감사에서 높은 점수를 받으면 사용자가 즐거운 경험을 할 가능성이 높아집니다. [PageSpeed Insights](https://pagespeed.web.dev/) 또는 [Chrome 사용자 경험 보고서](https://developer.chrome.com/docs/crux/)를 사용하여 웹 앱에 대한 실제 성능 데이터를 얻을 수도 있습니다.
 
 #### 방법
 
@@ -183,7 +183,7 @@ Jeremy Keith의 [탄력적인 웹 디자인](https://resilientwebdesign.com/)은
 
 #### 방법
 
-W3C의 [웹 접근성 개론](https://www.w3.org/WAI/fundamentals/accessibility-intro/)은 시작하기에 좋은 곳입니다. 접근성 테스트의 대부분은 수동으로 수행해야 합니다. Lighthouse의 [접근성](https://github.com/dequelabs/axe-core) 감사, [axe](https://accessibilityinsights.io/) 및 [Accessibility Insights](/lighthouse-accessibility/)와 같은 도구를 사용하면 일부 접근성 테스트를 자동화할 수 있습니다.  `a`나 `button`과 같은 요소를 스스로 재창조하는 대신 의미적으로 올바른 요소를 사용하는 것도 중요합니다. 이렇게 하면 더 고급 기능을 구축해야 할 때 접근성 기대치를 충족할 수 있습니다(예: 화살표와 탭을 사용해야 하는 경우). [A11Y 영양 카드](https://accessibilityinsights.io/)에는 몇 가지 일반적인 구성 요소에 대한 훌륭한 조언이 있습니다.
+W3C의 [웹 접근성 개론](https://www.w3.org/WAI/fundamentals/accessibility-intro/)은 시작하기에 좋은 곳입니다. 접근성 테스트의 대부분은 수동으로 수행해야 합니다. Lighthouse의 [접근성](https://github.com/dequelabs/axe-core) 감사, [axe](https://accessibilityinsights.io/) 및 [Accessibility Insights](https://developer.chrome.com/docs/lighthouse/accessibility/)와 같은 도구를 사용하면 일부 접근성 테스트를 자동화할 수 있습니다.  `a`나 `button`과 같은 요소를 스스로 재창조하는 대신 의미적으로 올바른 요소를 사용하는 것도 중요합니다. 이렇게 하면 더 고급 기능을 구축해야 할 때 접근성 기대치를 충족할 수 있습니다(예: 화살표와 탭을 사용해야 하는 경우). [A11Y 영양 카드](https://accessibilityinsights.io/)에는 몇 가지 일반적인 구성 요소에 대한 훌륭한 조언이 있습니다.
 
 {% endDetails %}
 
@@ -203,7 +203,7 @@ W3C의 [웹 접근성 개론](https://www.w3.org/WAI/fundamentals/accessibility-
 
 #### 방법
 
-각 URL에 고유하고 설명적인 제목과 메타 설명이 있는지 확인하는 것부터 시작하세요. 그런 다음 [Google Search Console](https://search.google.com/search-console/about) 및 Lighthouse의 [검색 엔진 최적화 감사](/lighthouse-seo/)를 사용하여 PWA의 검색 가능성 문제를 디버깅하고 수정할 수 있습니다. 또한 [Bing](https://www.bing.com/toolbox/webmaster) 또는 [Yandex](https://webmaster.yandex.com/welcome/)의 웹마스터 도구를 사용하고 PWA에서 [Schema.org](https://goo.gle/search-gallery)의 스키마를 통해 [구조화된 데이터](https://schema.org/)를 포함하는 것을 고려할 수 있습니다.
+각 URL에 고유하고 설명적인 제목과 메타 설명이 있는지 확인하는 것부터 시작하세요. 그런 다음 [Google Search Console](https://search.google.com/search-console/about) 및 Lighthouse의 [검색 엔진 최적화 감사](https://developer.chrome.com/docs/lighthouse/seo/)를 사용하여 PWA의 검색 가능성 문제를 디버깅하고 수정할 수 있습니다. 또한 [Bing](https://www.bing.com/toolbox/webmaster) 또는 [Yandex](https://webmaster.yandex.com/welcome/)의 웹마스터 도구를 사용하고 PWA에서 [Schema.org](https://goo.gle/search-gallery)의 스키마를 통해 [구조화된 데이터](https://schema.org/)를 포함하는 것을 고려할 수 있습니다.
 
 {% endDetails %}
 

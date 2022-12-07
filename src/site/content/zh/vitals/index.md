@@ -47,7 +47,7 @@ Google 认为核心 Web 指标对一切网络体验都至关重要。因此，Go
 
 #### 核心 Web 指标的实测工具
 
-[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)为每项核心 Web 指标收集匿名的真实用户测量数据。这些数据既能使网站所有者快速进行性能评估，而无需在页面上进行手动检测分析，也能同时为[PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)和搜索控制台的[核心 Web 指标报告](https://support.google.com/webmasters/answer/9205520)等工具提供支持。
+[Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)为每项核心 Web 指标收集匿名的真实用户测量数据。这些数据既能使网站所有者快速进行性能评估，而无需在页面上进行手动检测分析，也能同时为[PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)和搜索控制台的[核心 Web 指标报告](https://support.google.com/webmasters/answer/9205520)等工具提供支持。
 
 <div class="table-wrapper">
   <table>
@@ -58,7 +58,7 @@ Google 认为核心 Web 指标对一切网络体验都至关重要。因此，Go
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome 用户体验报告</a></td>
+      <td><a href="https://developer.chrome.com/docs/crux/">Chrome 用户体验报告</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -205,7 +205,7 @@ getLCP(sendToAnalytics);
 
 其他 Web 指标通常用作核心 Web 指标的代理或补充指标，有助于获取范围更广的体验或帮助诊断特定的问题。
 
-例如，[Time to First Byte 首字节时间 (TTFB)](/ttfb/)和[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)指标都是*加载*体验的重要方面，并且在诊断 LCP 问题方面（分别为[服务器响应时间](/overloaded-server/)过长或[阻塞渲染资源](/render-blocking-resources/)）都十分有用。
+例如，[Time to First Byte 首字节时间 (TTFB)](/ttfb/)和[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)指标都是*加载*体验的重要方面，并且在诊断 LCP 问题方面（分别为[服务器响应时间](/overloaded-server/)过长或[阻塞渲染资源](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)）都十分有用。
 
 同样，[总阻塞时间 (TBT)](/tbt/)和[Time to Interactive 可交互时间 (TTI)](/tti/)等指标是实验室指标，对于捕获和诊断会对 FID 产生影响的潜在*交互性*问题至关重要。然而，这些指标不是核心 Web 指标的一部分，因为它们无法进行实际测量，也不反映以[用户为中心](/user-centric-performance-metrics/#how-metrics-are-measured)的结果。
 

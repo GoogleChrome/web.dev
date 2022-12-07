@@ -41,7 +41,7 @@ La sección "Métricas" del informe Lighthouse incluye versiones de laboratorio 
 
 <figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PLMoiQpi12jT7BJUvlOJ.png", alt="Web Vitals lane in the devtools performance panel", width="800", height="476" %} <figcaption> La nueva opción Web Vitals en el panel DevTools Performance muestra una pista que resalta los momentos métricos, como Layout Shift (LS) o cambio de diseño que se muestra arriba.</figcaption></figure>
 
-[Las métricas de campo](/vitals-field-measurement-best-practices/), como las que se encuentran en [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) o [RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic), no tienen esta limitación y son un complemento valioso para los datos de laboratorio, ya que reflejan la experiencia que tienen los usuarios reales. Los datos de campo no pueden ofrecer el tipo de información de diagnóstico que se obtiene en el laboratorio, por lo que ambos van de la mano.
+[Las métricas de campo](/vitals-field-measurement-best-practices/), como las que se encuentran en [Chrome UX Report](https://developer.chrome.com/docs/crux/) o [RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic), no tienen esta limitación y son un complemento valioso para los datos de laboratorio, ya que reflejan la experiencia que tienen los usuarios reales. Los datos de campo no pueden ofrecer el tipo de información de diagnóstico que se obtiene en el laboratorio, por lo que ambos van de la mano.
 
 ## Identificar dónde se puede mejorar en Web Vitals
 
@@ -142,7 +142,7 @@ Recuerda que los anuncios son una de las [mayores](/optimize-cls/#ads-embeds-and
 
 Las animaciones que no están compuestas pueden presentarse como basura en dispositivos de gama baja si las tareas pesadas de JavaScript mantienen ocupado el hilo principal. Estas animaciones pueden introducir cambios de diseño.
 
-Si Chrome descubre que una animación no se pudo componer, la informa a una traza de DevTools que Lighthouse lee, lo que le permite enumerar qué elementos con animaciones no se compusieron y por qué motivo. Puedes encontrarlos en la auditoría [Evitar animaciones no compuestas.](/non-composited-animations/)
+Si Chrome descubre que una animación no se pudo componer, la informa a una traza de DevTools que Lighthouse lee, lo que le permite enumerar qué elementos con animaciones no se compusieron y por qué motivo. Puedes encontrarlos en la auditoría [Evitar animaciones no compuestas.](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)
 
 <figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/heGuYXKeMrUftMvfrDU7.png", alt="Audit for avoiding non-composited animations", width="800", height="528" %}</figure>
 
@@ -180,11 +180,11 @@ A continuación, podemos volver a ejecutar Lighthouse. Esta vez podemos ver que 
 
 Es común usar recursos de terceros para incrustar videos, publicaciones en redes sociales o widgets en páginas. De forma predeterminada, la mayoría de las incrustaciones se cargan con entusiasmo de inmediato y pueden tener costosas cargas útiles que impactan negativamente en la experiencia del usuario. Esto es un desperdicio si el tercero no es crítico (por ejemplo, si el usuario necesita desplazarse antes de verlo).
 
-Un patrón para mejorar el rendimiento de dichos widgets es [cargarlos de forma diferida cuando el usuario interactúa con ellos](https://addyosmani.com/blog/import-on-interaction/). Esto se puede hacer renderizando una vista previa ligera del widget (una fachada) y solo se carga la versión completa si un usuario interactúa con él. Lighthouse tiene una auditoría que recomienda recursos de terceros que pueden [cargarse de forma diferida con una fachada](/third-party-facades/), como incrustaciones de videos de YouTube.
+Un patrón para mejorar el rendimiento de dichos widgets es [cargarlos de forma diferida cuando el usuario interactúa con ellos](https://addyosmani.com/blog/import-on-interaction/). Esto se puede hacer renderizando una vista previa ligera del widget (una fachada) y solo se carga la versión completa si un usuario interactúa con él. Lighthouse tiene una auditoría que recomienda recursos de terceros que pueden [cargarse de forma diferida con una fachada](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/), como incrustaciones de videos de YouTube.
 
 <figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iciXy3oVlPH7VuwN7toy.png", alt="Audit highlighting that some costly third party resources can be replaced", width="800", height="483" %}</figure>
 
-Como recordatorio, Lighthouse [resaltará el código de terceros](/third-party-summary/) que bloquea el hilo principal durante más de 250 ms. Esto puede mostrar todo tipo de scripts de terceros (incluidos los creados por Google) que puede valer la pena diferir o cargar con retraso si lo que renderizan requiere desplazarse para verlo.
+Como recordatorio, Lighthouse [resaltará el código de terceros](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/) que bloquea el hilo principal durante más de 250 ms. Esto puede mostrar todo tipo de scripts de terceros (incluidos los creados por Google) que puede valer la pena diferir o cargar con retraso si lo que renderizan requiere desplazarse para verlo.
 
 <figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K0Oxmu1XEN2P3NQIknyH.png", alt="Reduce the cost of third-party JavaScript audit", width="800", height="556" %}</figure>
 

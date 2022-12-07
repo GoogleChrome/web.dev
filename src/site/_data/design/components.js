@@ -52,7 +52,7 @@ module.exports = {
 
     // Parses out the component name from the last segment in its path
     const getComponentName = (componentPath) => {
-      const pathParts = componentPath.split('/').filter((x) => x.length);
+      const pathParts = componentPath.split(path.sep).filter((x) => x.length);
       return pathParts[pathParts.length - 1];
     };
 

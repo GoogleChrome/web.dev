@@ -23,7 +23,7 @@ tags:
 
 {% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Webフォントがクリティカルリクエストチェーンに存在します。", width="704", height="198" %}
 
-上記の監査では、Webフォントはクリティカルリクエストチェーンの一部であり、最後にフェッチされています。[**クリティカルリクエストチェーン**](/critical-request-chains)は、ブラウザが優先順位を付けてフェッチするリソースの順序を表します。このアプリケーションでは、Webフォント（PacficoとPacifico-Bold）は、[@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face)ルールで定義されており、クリティカルリクエストチェーンでブラウザがフェッチする最後のリソースとなっています。通常、Webフォントは遅延読み込みされるため、クリティカルリソース（CSS、JS）がダウンロードされるまで読み込まれません。
+上記の監査では、Webフォントはクリティカルリクエストチェーンの一部であり、最後にフェッチされています。[**クリティカルリクエストチェーン**](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)は、ブラウザが優先順位を付けてフェッチするリソースの順序を表します。このアプリケーションでは、Webフォント（PacficoとPacifico-Bold）は、[@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face)ルールで定義されており、クリティカルリクエストチェーンでブラウザがフェッチする最後のリソースとなっています。通常、Webフォントは遅延読み込みされるため、クリティカルリソース（CSS、JS）がダウンロードされるまで読み込まれません。
 
 アプリケーションでフェッチされたリソースの順序は次のとおりです。
 

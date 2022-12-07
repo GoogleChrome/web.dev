@@ -143,9 +143,16 @@ To reduce phishing within PWAs, some desktop browsers may have additional measur
 
 ### Tabbed mode
 
-An experimental capability, known as *tabbed mode*​ will let your PWA have a tab-based design similar to a web browser. In this case, the user can have several tabs opened from the same PWA but all tied together in the same operating system window, as you can see in the following image:
+An experimental capability, known as *tabbed mode*​ will let your PWA have a tab-based design similar to a web browser. In this case, the user can have several tabs opened from the same PWA but all tied together in the same operating system window, as you can see in the following video:
 
-<video autoplay="" loop="" muted=""><source src="https://storage.googleapis.com/web-dev-uploads/video/8WbTDNrhLsU0El80frMBGE4eMCD3/JwN0btyXFGiT9oPFh2qJ.webm" type="video/webm"></video>
+{% Video src="video/W3z1f5ZkBJSgL1V1IfloTIctbIF3/b1SL9QwJcgRXrVDeLKmK.mp4",
+loop="true",
+muted="true",
+playsinline="true",
+controls="true",
+poster="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/emg7quu4DyvYwlyzgDE1.png"
+%}
+
 You can read more about this experimental capability at [Tabbed application mode for PWA](/tabbed-application-mode/).
 
 {% Aside %}
@@ -207,6 +214,7 @@ If the user or the operating system moves your PWA's window from one screen to a
 
 {% Aside %}
 You may also want to check the [Presentation API](https://developer.mozilla.org/docs/Web/API/Presentation_API) to display web content through large presentation devices such as projectors and network-connected televisions.
+{% BrowserCompat 'api.Presentation' %}
 {% endAside %}
 
 {% Glitch 'mlearn-pwa-windows-screens' %}

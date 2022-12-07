@@ -102,7 +102,7 @@ Rob Flack의 <a href="https://output.jsbin.com/xunosud">고정 테이블 헤더 
 
 ### CSS aspect-ratio 속성
 
-새로운 [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) CSS 속성을 사용하면 요소에 대한 일관된 너비 대 높이 비율을 쉽게 유지할 수 있으므로 잘 알려진 다음과 같은 [`padding-top` hack](/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top)이 필요하지 않습니다.
+새로운 [`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) CSS 속성을 사용하면 요소에 대한 일관된 너비 대 높이 비율을 쉽게 유지할 수 있으므로 잘 알려진 다음과 같은 [`padding-top` hack](/aspect-ratio/#the-old-hack-maintaining-aspect-ratio-with-padding-top)이 필요하지 않습니다.
 
 <div class="switcher">{% Compare 'worse', 'Using padding-top' %} ```css .container {width: 100%; padding-top: 56.25%; } ``` {% endCompare %}</div>
 <p data-md-type="paragraph">{% Compare 'better', 'Using aspect-ratio' %}</p>
