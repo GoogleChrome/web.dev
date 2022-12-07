@@ -32,7 +32,7 @@ questions:
   - type: multiple-choice
     cardinality: "1+"
     correctAnswers: "0,3,4"
-    stem: Which of the following psuedo-classes are due to a user-interaction?
+    stem: Which of the following pseudo-classes are due to a user-interaction?
     options:
       - content: "`:hover`"
         rationale: "🎉"
