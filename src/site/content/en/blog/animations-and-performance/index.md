@@ -25,7 +25,7 @@ Animating properties is not free, and some properties are cheaper to animate tha
 
 Where you can, you should avoid animating properties that trigger layout or paint. For most modern browsers, this means limiting animations to `opacity` or `transform`, both of which the browser can highly optimize; it doesn’t matter if the animation is handled by JavaScript or CSS.
 
-You can find a full guide on creating [High Performance Animations on HTML5 Rocks](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
+Read a full guide on creating [high performance animations](/animations-guide/).
 
 ### Using the `will-change` property
 
