@@ -82,14 +82,13 @@ None of these three elements has any element-specific attributes.
 
 What we have so far:
 
-```html
-<table>
-  <caption>MLW Students</caption>
-  <thead></thead>
-  <tbody></tbody>
-  <tfoot></tfoot>
-</table>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'qBKggrr',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 The `<tfoot>` element was originally specified to come right after the `<thead>` and before the `<tbody>` for accessibility reasons,
 which is why you may come across this non-intuitive source order in legacy codebases.
@@ -113,44 +112,13 @@ interactive slidedeck of [table-related CSS styles](https://estelle.github.io/CS
 
 In the examples, we've added a border on the table and each individual cell with CSS to make some features more apparent:
 
-```css
-table,
-tr > * {
-  border: 1px solid;
-}
-```
-
-```html
-<table>
-  <caption>MLW Alumni</caption>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Destiny</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Hal Gibrah</th>
-      <td>Calculator</td>
-      <td>2020</td>
-    </tr>
-    <tr>
-      <th>Cathy Terr</th>
-      <td>Waste disposal</td>
-      <td>2018</td>
-    </tr>
-    <tr>
-      <th>Lou Minious</th>
-      <td>Lightbulb</td>
-      <td>1956</td>
-    </tr>
-  </tbody>
-</table>
-```
-
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/asjy7h46GucIvXXyoYBP.png", alt="A three column table discussing MLQ alumni.", width="506", height="286" %}
+{% Codepen {
+user: 'web-dot-dev',
+id: 'oNymmWw',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 In this example, we have a caption, a table header, and a table body. The header has one row containing three header `<th>` cells,
 thereby creating three columns. The body contains three rows of data: the first cell is a header cell for the row, so we use `<th>` instead of `<td>`.
@@ -170,44 +138,13 @@ Similar to MS Excel, Google Sheets, and Numbers, it is possible to join multiple
 The `colspan` attribute is used to merge two or more adjacent cells within a single row. The `rowspan` attribute is used to merge cells across rows,
 being placed on the cell in the top row.
 
-```html
-<table>
-  <caption>MLW Alumni</caption>
-  <thead>
-    <tr>
-  	<th rowspan="2" id="name" scope="col">Name</th>
-  	<th colspan="2" id="path">Career path</th>
-  	<th rowspan="2" id="year">Year</th>
-    </tr>
-    <tr>
-  	<th id="past" scope="col">Past</th>
-  	<th id="future" scope="col">Destiny</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-  	<th id="hal" scope="row">Hal Gibrah</th>
-  	<td headers="hal path past">Calculator</td>
-  	<td headers="hal path future">Mars rover</td>
-  	<td>2020</td>
-    </tr>
-    <tr>
-  	<th id="cathy" scope="row">Cathy Terr</th>
-  	<td headers="cathy path past">Waste disposal</td>
-  	<td headers="cathy path future">Automated teller</td>
-  	<td>2018</td>
-    </tr>
-    <tr>
-  	<th id="lou" scope="row">Lou Minious</th>
-  	<td headers="lou path past">Lightbulb</td>
-  	<td headers="lou path future">Smart bulb</td>
-  	<td>1956</td>
-    </tr>
-  </tbody>
-</table>
-```
-
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lqQSJCZxqvjhjAKqAKrr.png", alt="A four column merged cell table.", width="740", height="332" %}
+{% Codepen {
+user: 'web-dot-dev',
+id: 'GRGzzEd',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 In this example, the table header contains two rows. The first header row contains three cells spanning four columns: the middle cell
 has `colspan="2"`. This merges two adjacent cells. The first and last cells include `rowspan="2"`. This merges the cell with the cell
@@ -291,41 +228,14 @@ include the [aria-sort](https://developer.mozilla.org/docs/Web/Accessibility/ARI
 The `<caption>` can politely announce updates to sort order via [aria-live](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-live) and a
 span that is dynamically updated, and which is visible to screen reader users. As the column is sortable by clicking on the header content, the header content should be a `<button>`.
 
-```html
-<table>
-  <caption aria-live="polite">MLW alumni <span class="sr">Sorted by name descending</span></caption>
-  <thead>
-  <tr>
-    <th scope="col" aria-sort="ascending">
-      <button type="button">
-        <span>Name</span>
-        <svg aria-hidden="true">
-          <use href="#downArrow"></use>
-        </svg>
-        </div>
-      </button>
-    </th>
-    <th scope="col">
-      <button type="button">
-        <span>Destiny</span>
-        <svg aria-hidden="true">
-          <use href="#sortMe"></use>
-        </svg>
-        </div>
-      </button>
-    </th>
-    <th scope="col">
-      <button type="button">
-        <span>Year</span>
-        <svg aria-hidden="true">
-          <use href="#sortMe"></use>
-        </svg>
-        </div>
-      </button>
-    </th>
-  </tr>
-  </thead>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'XWYOOed',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
+
 If you're not presenting tabular data, don't use a `<table>`. If you do use a table for presentation, set `role="none"`.
 
 Many developers use tables to lay out forms but there is no need to. But you do need to know about HTML forms, so we will cover that next.
