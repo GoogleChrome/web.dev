@@ -418,12 +418,12 @@ Don't remove the display property or the style block will disappear.
 ```css
 <style contenteditable>
 style {
- color: inherit;
- display:block;
-border: 1px solid;
-font: inherit;
-font-family: monospace;
-padding:10px;
+   color: inherit;
+   display:block;
+   border: 1px solid;
+  font: inherit;
+  font-family: monospace;
+  padding:10px;
 }
 </style>
 ```
