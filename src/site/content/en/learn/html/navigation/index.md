@@ -187,28 +187,28 @@ Every Learn HTML module page has the same breadcrumb navigation, displaying the 
 `learn` section of `web.dev`. The code is similar to the following, with classes and SVG details removed for clarity:
 
 ```html
- <nav aria-label="breadcrumbs">
-    <ul role="list">
- 	<li>
-        <a href="/">
-<svg aria-label="web.dev" role="img">
-   	   <use href="#webDevLogo" />
-</svg>
-   </a>
-</li>
-<li>
-    <a href="/learn/">Learn</a></li>
-<li>
-    <a href="/learn/html">Learn HTML!</a>
-</li>
-    </ul>
-    <share-action authors="@estellevw" data-action="click" data-category="web.dev" data-icon="share" data-label="share, twitter" role="button" tabindex="0">
-<svg aria-label="share" role="img">
-<use href="#shareIcon" />
+<nav aria-label="breadcrumbs">
+  <ul role="list">
+    <li>
+      <a href="/">
+        <svg aria-label="web.dev" role="img">
+          <use href="#webDevLogo" />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="/learn/">Learn</a>
+    </li>
+    <li>
+      <a href="/learn/html">Learn HTML!</a>
+    </li>
+  </ul>
+  <share-action authors="@estellevw" data-action="click" data-category="web.dev" data-icon="share" data-label="share, twitter" role="button" tabindex="0">
+    <svg aria-label="share" role="img">
+      <use href="#shareIcon" />
     </svg>
-<span>Share</span>
-    </share-action>
-   </nav>
+    <span>Share</span>
+  </share-action>
 </nav>
 ```
 
@@ -253,21 +253,23 @@ icon or other symbol.
 Should the design change, an alternative version of the breadcrumb could be used:
 
 ```html
- <nav aria-label="breadcrumbs">
-    <ol role="list">
- 	<li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/learn/">Learn</a></li>
-        <li>
-          <a href="/learn/html">Learn HTML!</a>
-        </li>
-        <li aria-current="page">
-          Navigation
-        </li>
-    </ol>
+<nav aria-label="breadcrumbs">
+  <ol role="list">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/learn/">Learn</a>
+    </li>
+    <li>
+      <a href="/learn/html">Learn HTML!</a>
+    </li>
+    <li aria-current="page">
+      Navigation
+    </li>
+  </ol>
 </nav>
+```
 
 Breadcrumbs are not for linear steps. For example, a list of the path the user followed to get to the current page or the
 list of steps followed up to this point in a recipe can be nested within a `<nav>`,  but should not be labeled as a breadcrumb.
@@ -286,13 +288,13 @@ The link to this document, section 010, has a slightly different appearance from
 
 ```html
 <li>
-<a aria-current="page" href="/learn/html/navigation/" data-complete="true">
-<span>010</span>
-<span>Navigation</span>
-<svg aria-label="Check" role="img">
-	<use href="#checkmark" />
-</svg>
-</a>
+  <a aria-current="page" href="/learn/html/navigation/" data-complete="true">
+    <span>010</span>
+    <span>Navigation</span>
+    <svg aria-label="Check" role="img">
+      <use href="#checkmark" />
+    </svg>
+  </a>
 </li>
 ```
 

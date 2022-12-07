@@ -319,11 +319,11 @@ is included to add the custom element into the keyboard default tabbing order:
 
 ```html
 <share-action authors="@estellevw" data-action="click" data-category="web.dev" data-icon="share" data-label="share, twitter" role="button" tabindex="0">
-<svg aria-label="share" role="img" xmlns="http://www.w3.org/2000/svg">
-<use href="#shareIcon" />
-    </svg>
-<span>Share</span>
-    </share-action>
+  <svg aria-label="share" role="img" xmlns="http://www.w3.org/2000/svg">
+    <use href="#shareIcon" />
+  </svg>
+  <span>Share</span>
+</share-action>
 ```
 
 The [`role` of `button`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/button_role) informs screen reader users that this element should behave like a button. JavaScript is used to ensure

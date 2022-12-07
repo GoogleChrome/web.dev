@@ -233,14 +233,13 @@ We can create a list of machines with their career history and aspirations. A de
 encloses a group of terms—in this case, the "terms" are student names—specified using the `<dt>` element, along with a description
 for each term— in this case, the career goals of each student—specified by the `<dd>` elements.
 
-```html
-<dl>
-  <dt>Blendan Smooth</dt>
-  <dd>Originally a margarita maker, they are now an aspiring load balancer.</dd>
-  <dt>Toasty McToastface</dt>
-  <dd>Formerly partially to fully baked, they are now an aspiring nuclear codes handler.</dd>
-</dl>
-```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'abKXeNM',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 This description list is not actually part of the MLW page. Description lists are not just for terms and definitions, which is
 why the names of the elements were made more general.
