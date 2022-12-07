@@ -40,7 +40,7 @@ item elements. Let's create a list of machines. We use an unordered list because
     </ul>
   </figure>
   <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/fLffpFWfFQHTc3pbNBbk.png", alt="Blender, toaster, vacuum, listed with bullet points.", width="212", height="142">
+    <img src="https://web-dev.imgix.net/image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/fLffpFWfFQHTc3pbNBbk.png", alt="Blender, toaster, vacuum, listed with bullet points.", width="212", height="142">
   </figure>
 </div>
 
