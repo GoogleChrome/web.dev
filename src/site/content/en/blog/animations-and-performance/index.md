@@ -25,7 +25,7 @@ Animating properties is not free, and some properties are cheaper to animate tha
 
 Where you can, you should avoid animating properties that trigger layout or paint. For most modern browsers, this means limiting animations to `opacity` or `transform`, both of which the browser can highly optimize; it doesn’t matter if the animation is handled by JavaScript or CSS.
 
-For a full list of the work triggered by individual CSS properties, see [CSS Triggers](https://csstriggers.com). You can find a full guide on creating [High Performance Animations on HTML5 Rocks](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
+You can find a full guide on creating [High Performance Animations on HTML5 Rocks](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
 
 ### Using the `will-change` property
 
@@ -52,5 +52,3 @@ There are many pages and comments threads around the web that discuss the relati
 * Other changes to transforms and opacity can, in many cases, also be handled by the compositor thread.
 
 * If any animation triggers paint, layout, or both, the "main thread" will be required to do work. This is true for both CSS- and JavaScript-based animations, and the overhead of layout or paint will likely dwarf any work associated with CSS or JavaScript execution, rendering the question moot.
-
-For more information about which work is triggered by animating a given property, see [CSS Triggers](https://csstriggers.com).
