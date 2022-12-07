@@ -124,6 +124,7 @@ On the machine learning workshop site, the navigation bar in the page header inc
   <a href="#teachers">Instructors</a>
   <a href="#feedback">Testimonials</a>
 </nav>
+```
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/yBTmDlb9qs7ApkHh1xpB.png", alt="Navigation bar: register, about, instructors, testimonials.", width="686", height="90" %}
 
@@ -144,7 +145,7 @@ links in the `<nav>`, the section with that fragment identifier scrolls into vie
   <h2>Machine Learning Workshop Tickets</h2>
 </section>
 
-<section id="about"> 
+<section id="about">
   <h2>What you'll learn</h2>
 </section>
 

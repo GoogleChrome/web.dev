@@ -31,18 +31,13 @@ in a multiple-choice test. For all of these lists without bullets, it is appropr
 The `<ul>` element is the parent element for unordered lists of items. The only children of a `<ul>` are one or more `<li>` list
 item elements. Let's create a list of machines. We use an unordered list because the order doesn't matter (don't tell them that):
 
-<div class="switcher">
-  <figure>
-      <ul>
-      <li>Blender</li>
-      <li>Toaster</li>
-      <li>Vacuum</li>
-    </ul>
-  </figure>
-  <figure>
-    <img src="https://web-dev.imgix.net/image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/fLffpFWfFQHTc3pbNBbk.png", alt="Blender, toaster, vacuum, listed with bullet points.", width="212", height="142">
-  </figure>
-</div>
+{% Codepen {
+user: 'web-dot-dev',
+id: 'gOKqqyq',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 By default, each unordered list item is prefixed with a bullet. The unordered list has no element-specific attributes.
 You need to close out your lists with a `</ul>`.
@@ -53,39 +48,21 @@ The `<ol>` element is the parent element for ordered lists of items. The only ch
 The "bullets" in this case, though, are numbers of a multitude of types. The type can be defined in CSS with the `list-style-type` property
 or via the `type` attribute.
 
-<div class="switcher">
-  <figure>
-    <ol>
-      <li>Blender</li>
-      <li>Toaster</li>
-      <li>Vacuum</li>
-    </ol>
-  </figure>
-  <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GUQggsTUFRrEpZVxU0x9.png", alt="Blender, toaster, vacuum, in an ordered, numbered list.", width="212", height="142">
-  </figure>
-</div>
+{% Codepen {
+user: 'web-dot-dev',
+id: 'dyKaaEe',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
-<div class="switcher">
-  <figure>
-    <ol type="A">
-      <li>Blender</li>
-      <li>Toaster</li>
-      <li>Vacuum</li>
-    </ol>
-  </figure>
-  <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/u51WOjaphYQxv2Fd7dK9.png", alt="Blender, toaster, vacuum, in an ordered, lettered list.", width="212", height="142">
-  </figure>
-</div>
-
-<figure>
-  {% Codepen {
-    user: 'web-dot-dev',
-    id: 'OJErebV',
-    height: 585
-  } %}
-</figure>
+{% Codepen {
+user: 'web-dot-dev',
+id: 'jOKddgP',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 The `<ol>` has three element-specific attributes: `type`, `reversed`, and `start`.
 
@@ -93,14 +70,13 @@ The enumerated `type` attribute sets the numbering type. There are five valid va
 numbers, but you can also use a, A, i, or I, for lower and upper case letters or roman numerals. The `list-style-type` property
 provides many more values.
 
-<figure>
-  {% Codepen {
-    user: 'web-dot-dev',
-    id: 'qBKLzqJ',
-    height: 585,
-    tab: 'result'
-  } %}
-</figure>
+{% Codepen {
+user: 'estelle',
+id: 'MWXegdO',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 While, as noted in the codepen, the `list-style-type` property overrides the value of the `type` attribute, when writing
 documentation where the numeric type is important,   as with legal documents, for example, you need to include the `type`.
@@ -108,27 +84,13 @@ documentation where the numeric type is important,   as with legal documents, fo
 The boolean `reversed` attribute, if included, will reverse the order of the numbers, going from largest number to the lowest.
 The `start` attribute sets the starting value. The default is `1`.
 
-<div class="switcher">
-  <figure>
-    <ol reversed start="6">
-      <li>Blender</li>
-      <li>Toaster</li>
-      <li>Vacuum</li>
-    </ol>
-  </figure>
-  <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ks0SEWQPeIll4UwknFSM.png", alt="Blender, toaster, vacuum, in an reverse ordered, numbered list, width="212", height="142">
-  </figure>
-</div>
-
-<figure>
-  {% Codepen {
-    user: 'estelle',
-    id: 'yLEJgEq',
-    height: 585,
-    tab: 'result'
-  } %}
-</figure>
+{% Codepen {
+user: 'web-dot-dev',
+id: 'yLEZwyJ',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 Similar to `</ul>`, the closing `</ol>` is required.
 
@@ -149,42 +111,13 @@ your future self will thank you. It's easier to close all elements than to remem
 There is only one element-specific `<li>` attribute: `value`, an integer. The `value` is only useful on an `<li>` when the `<li>` is nested within
 an ordered list and has no meaning for unordered lists or menus. It overrides the value of the `<ol>`'s start if there is a conflict.
 
-<div class="switcher">
-  <figure>
-    <ol start="4">
-      <li value="7">Blender</li>
-      <li value="29">Toaster</li>
-      <li>Vacuum</li>
-    </ol>
-  </figure>
-  <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/pwVGJoGtlHPqZGrf6QiK.png", alt="Value-set ordered list.", width="212", height="142">
-  </figure>
-</div>
-
-<div class="switcher">
-  <figure>
-    <code-html>
-      <ol type="A" start="33">
-        <li value="7">Blender</li>
-        <li value="29">Toaster</li>
-        <li>Vacuum</li>
-      </ol>
-    </code-html>
-  </figure>
-  <figure>
-    <img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/JBpz7xcPb3hfTPs87Guc.png", alt="Value-set ordered list.", width="212", height="142">
-  </figure>
-</div>
-
-<figure>
-  {% Codepen {
-    user: 'web-dot-dev',
-    id: 'poKqXRP',
-    height: 585,
-    tab: 'result'
-  } %}
-</figure>
+{% Codepen {
+user: 'web-dot-dev',
+id: 'WNyPmrv',
+height: 300,
+theme: 'dark',
+tab: 'html,result'
+} %}
 
 The `value` is the number of the list item within an ordered list. With subsequent list items, continue the numbering from the
 value set, unless that item also has a `value` attribute set. The value doesn't have to be in order; though if it isn't in order,
