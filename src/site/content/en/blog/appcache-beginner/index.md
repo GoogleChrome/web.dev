@@ -103,7 +103,7 @@ There are a couple of things to note:
 - The `CACHE MANIFEST` string is the first line and is required.
 - Files can be from another domain
 - Some browsers place restrictions on the amount of storage quota available
-to your app. In Chrome for example, AppCache uses a [shared pool](https://developers.google.com/chrome/whitepapers/storage#table) of TEMPORARY
+to your app. In Chrome for example, AppCache uses a [shared pool](https://developer.chrome.com/docs/apps/offline_storage/#table) of TEMPORARY
 storage that other offline APIs can share. If you are writing an app for the [Chrome Web Store](http://code.google.com/chrome/apps/docs/developers_guide.html), using the `unlimitedStorage` removes that restriction.
 - If the manifest itself returns a 404 or 410, the cache is deleted.
 - If the manifest or a resource specified in it fails to download,
@@ -160,7 +160,7 @@ the second is the fallback used if the network request fails or errors. Both URI
 These sections can be listed in any order and each section can appear more than one in a single manifest.
 {% endAside %}
 
-The following manifest defines a "catch-all" page (offline.html) that will be displayed when the user 
+The following manifest defines a "catch-all" page (offline.html) that will be displayed when the user
 tries to access the root of the site while offline. It also declares that all other resources (e.g. those on remote a site)
 require an internet connection.
 
@@ -176,7 +176,7 @@ css/style.css
 FALLBACK:
 / /offline.html
 
-# All other resources (e.g. sites) require the user to be online. 
+# All other resources (e.g. sites) require the user to be online.
 NETWORK:
 *
 

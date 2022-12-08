@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Dance Tonite in WebVR
-description: | 
-    Dance Tonite is an ever-changing VR collaboration with the band LCD Soundsystem and their fans. Built in WebVR, the project works across platforms–with and without VR–giving users a different role into the experience depending on their device. Project creators Jonathan Puckey, Moniker and Google’s Data Arts Team’s creative decisions and advanced optimization techniques enabled high-quality performance–close to 60FPS for 3DoF and 90FPS for 6DoF–and a compelling user experience across all platforms using a single codebase. 
+description: |
+    Dance Tonite is an ever-changing VR collaboration with the band LCD Soundsystem and their fans. Built in WebVR, the project works across platforms–with and without VR–giving users a different role into the experience depending on their device. Project creators Jonathan Puckey, Moniker and Google’s Data Arts Team’s creative decisions and advanced optimization techniques enabled high-quality performance–close to 60FPS for 3DoF and 90FPS for 6DoF–and a compelling user experience across all platforms using a single codebase.
 date: 2017-08-22
 updated: 2017-08-22
 tags:
@@ -19,7 +19,7 @@ always struck a chord with me. Our collaboration resulted in
 with [LCD Soundsystem](https://lcdsoundsystem.com/) and their fans. Here is
 how we did it.
 
-## The concept 
+## The concept
 
 We began with developing a series of prototypes using WebVR, an open standard
 that makes it possible to enter VR by visiting a website using your browser. The
@@ -92,7 +92,7 @@ rotation. An orb looks the same no matter how it is rotated, but a cone really
 points in the direction that it is looking and looks different from the front
 than the back.
 
-### 3. Loop pedal for movement 
+### 3. Loop pedal for movement
 
 We wanted to show large groups of recorded people dancing and moving with each
 other. To do so live wouldn’t be feasible, since VR devices aren’t out in large
@@ -268,7 +268,7 @@ interpolatedPosition.set(
 
 For orientation, we do a spherical linear interpolation (slerp) between
 keyframes. Orientation is stored as
-[Quaternions](https://en.wikipedia.org/wiki/Quaternion). 
+[Quaternions](https://en.wikipedia.org/wiki/Quaternion).
 
 ```js
 const quaternion = getQuaternion(previous, performanceIndex, limbIndex);
@@ -290,7 +290,7 @@ always a bit off. Sometimes a fraction of a ms too early, sometimes a fraction
 too late.
 
 This leads to stutters in our beautiful dance recordings, which we want to avoid
-at all costs. To remedy this, we implemented our 
+at all costs. To remedy this, we implemented our
 [own timer in JavaScript](https://github.com/puckey/dance-tonite/blob/master/src/audio.js#L89).
 This way we can be certain that the amount of time changing between frames is
 exactly the amount of time that has passed since the last frame. Whenever our
@@ -343,7 +343,7 @@ tick: (interval = 3000) => {
         settings.minCullDistance,
         settings.cullDistance - settings.roomDepth
         );
-    } 
+    }
     // if the FPS is higher than 56, increase the cull distance
     else if (fps > 56) {
         settings.cullDistance = Math.min(
@@ -355,7 +355,7 @@ tick: (interval = 3000) => {
 
     // gradually increase the cull distance to the new setting
     cullDistance = cullDistance * 0.95 + settings.cullDistance * 0.05;
-    
+
     // mask the edge of the cull distance with fog
     viewer.fog.near = cullDistance - settings.roomDepth;
     viewer.fog.far = cullDistance;
@@ -433,7 +433,7 @@ quite easily with just a few tweaks. When the objects come closer to the ground,
 we have the textures become darker and smaller. When they move up, we make the
 textures more transparent and larger.
 
-To create them, we used 
+To create them, we used
 [this texture](https://github.com/puckey/dance-tonite/blob/master/src/props/shadow.png)
 with a soft white to black gradient (with no alpha transparency). We set the
 material as transparent and use subtractive blending. This helps them blend
@@ -534,8 +534,8 @@ us watch each new submission in VR and publish new playlists from any device.
 
 ### 7. Service Workers
 
-[Service workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)
-are a fairly recent innovation that help manage the caching of web site
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+are a fairly recent innovation that help manage the caching of website
 assets. In our case, service workers load our content lightning fast for
 return visitors and even allow the site to work offline. These are important
 features since many of our visitors will be on mobile connections of varying
@@ -547,7 +547,7 @@ that handles most of the heavy lifting for you. In the configuration below,
 we generate a service worker that will automatically cache all our static
 files. It will pull the latest playlist file from the network, if available,
 since the playlist will be updating all the time. All the recording json
-files should pull from the cache if available, because these will never change. 
+files should pull from the cache if available, because these will never change.
 
 ```js
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
@@ -576,11 +576,11 @@ config.plugins.push(
 ```
 
 Currently, the plugin doesn’t handle progressively loaded media assets like our
-music files, so we worked around that by setting the Cloud Storage 
+music files, so we worked around that by setting the Cloud Storage
 `Cache-Control` header on these files to `public, max-age=31536000` so
 that the browser will cache the file for up to one year.
 
-## Conclusion 
+## Conclusion
 
 We’re excited to see how performers will add to this experience and use it as a
 tool for creative expression using motion. We’ve released all the code open

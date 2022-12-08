@@ -14,7 +14,7 @@ tags:
 
 ---
 
-[WebAssembly](https://developers.google.com/web/updates/2018/03/emscripting-a-c-library) (wasm) is often
+[WebAssembly](/emscripting-a-c-library/) (wasm) is often
 framed as either a performance primitive or a way to run your existing C++
 codebase on the web. With [squoosh.app](https://squoosh.app), we wanted to show
 that there is at least a third perspective for wasm: making use of the huge
@@ -164,7 +164,7 @@ but that file can be quite overwhelming. Here's a list of the Emscripten flags
 that I think are most important for web developers:
 
 * `--bind` enables
-  [embind](https://developers.google.com/web/updates/2018/08/embind).
+  [embind](/embind/).
 * `-s STRICT=1` drops support for all deprecated build options. This ensures
   that your code builds in a forward compatible manner.
 * `-s ALLOW_MEMORY_GROWTH=1` allows memory to be automatically grown if

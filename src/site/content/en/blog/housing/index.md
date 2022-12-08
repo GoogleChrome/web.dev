@@ -50,7 +50,7 @@ was fast, efficient, and reliable. The result was a mobile web experience
 that is fast, uses less data, and re-engages users in multiple ways. With the
 new PWA, Housing.com saw conversion rates rise 38% and the bounce rate fall
 by over 40%.
- 
+
 Most Indian users reach the Internet via 2G and 3G networks, so a fast user
 experience is essential. To decrease load times, Housing.com added Service
 Workers and streamlined their site to help consumers quickly find what
@@ -59,7 +59,7 @@ previous searches, all while offline. “High-end smartphones are not that
 prevalent in our target user base,” says Vivek Jain, Housing.com CPTO.
 “With our new PWA, we could get past our users’ hesitance to download
 our app in their low-end devices, yet give them a wonderful experience.”
- 
+
 The new strategy proved effective. Page-load performance increased by
 over 30%, and average time-per-session increased 10% across all browsers.
 “Understanding the network limitations of our users and the importance
@@ -69,9 +69,9 @@ experience is something that defines state-of-the-art applications.”
 
 ## Related resources
 
-* [Service Workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)
-* [Add to Home Screen](https://developers.google.com/web/fundamentals/app-install-banners)
-* [Push Notifications](https://developers.google.com/web/fundamentals/push-notifications)
+* [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+* [Add to Home Screen](/customize-install/)
+* [Push Notifications](/notifications/)
 
 ### Codelabs
 

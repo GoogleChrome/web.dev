@@ -586,7 +586,7 @@ requests.
 [video preload attribute]: /video-and-source-tags/#preload
 [chrome64]: https://developers.google.com/web/updates/2017/12/chrome-63-64-media-updates#media-preload-defaults-metadata
 [datasaver]: https://support.google.com/chrome/answer/2392284
-[covered]: https://developers.google.com/web/updates/2016/03/link-rel-preload
+[covered]: https://developer.chrome.com/blog/link-rel-preload/
 [articles]: https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/
 [link preload]: https://w3c.github.io/preload/
 [cache]: /storage-for-the-web/#eviction
@@ -599,7 +599,7 @@ requests.
 [jw-player]: https://developer.jwplayer.com/
 [video-js]: http://videojs.com/
 [network-info-sample]: https://googlechrome.github.io/samples/network-information/
-[fast-light]: https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data
+[fast-light]: /optimizing-content-efficiency-save-data/
 [mse-basics]: https://developer.mozilla.org/docs/Web/API/Media_Source_Extensions_API
 [preload]: /video-and-source-tags/#preload
 [thats-a-known-fact]: https://www.digitaltrends.com/web/buffer-rage/

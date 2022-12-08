@@ -28,10 +28,10 @@ process for reviewing an existing site for accessibility.
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/VTpzSPKYo1nyBxd0aR8n.svg", alt="Keyboard icon.", width="24", height="24", class="float-right" %}
 </figure>
 
-For users who either cannot or choose not to use a mouse, keyboard navigation is 
-their primary means of reaching everything on screen. This audience includes 
-users with motor impairments, such as Repetitive Stress Injury (RSI) or 
-paralysis, as well as screen reader users. For a good keyboarding experience 
+For users who either cannot or choose not to use a mouse, keyboard navigation is
+their primary means of reaching everything on screen. This audience includes
+users with motor impairments, such as Repetitive Stress Injury (RSI) or
+paralysis, as well as screen reader users. For a good keyboarding experience
 aim to have a logical tab order and easily discernable focus styles.
 
 ### Key points
@@ -68,7 +68,7 @@ already announce these headings, so there’s no need to make them focusable.
 - If new content is added to the page, try to make sure that the user’s focus is
 directed to that content so they can take action on it. See [Managing Focus at
 the Page
-Level](https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex#managing_focus_at_the_page_level)
+Level](/using-tabindex/#managing-focus-at-the-page-level)
 for examples.
 
 - Beware of completely trapping focus at any point. Watch out for autocomplete
@@ -77,7 +77,7 @@ specific situations, such as displaying a modal, when you don't want the user
 interacting with the rest of the page - but you should aim to provide a
 keyboard-accessible method of escaping the modal as well. See the guide on
 [Modals and Keyboard
-Traps](https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex#modals_and_keyboard_traps)
+Traps](/using-tabindex/#modals-and-keyboard-traps)
 for an example.
 
 ### Just because something is focusable doesn’t mean it’s usable
@@ -95,7 +95,7 @@ window that has yet to be displayed. Leaving these elements in the DOM can lead
 to a confusing keyboarding experience, especially for screen readers which will
 announce the offscreen content as if it’s part of the page. See [Handling
 Offscreen
-Content](https://developers.google.com/web/fundamentals/accessibility/focus/dom-order-matters#offscreen_content)
+Content](/dom-order-matters/#offscreen-content)
 for tips on how to deal with these elements.
 
 ## Try it with a screen reader
@@ -120,7 +120,7 @@ value of the `alt` attribute to an empty string, e.g., `alt=""`.
 
 - Check all controls for a label. For custom controls this may require the use
 of `aria-label` or `aria-labelledby`. See [ARIA Labels and
-Relationships](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/aria-labels-and-relationships)
+Relationships](/aria-labels-and-relationships/)
 for examples.
 
 - Check all custom controls for an appropriate `role` and any required ARIA
@@ -143,7 +143,7 @@ reader access.
 - If content _should_ be hidden from a screen reader, for instance, if it’s
 offscreen or just presentational, make sure that content is set to
 `aria-hidden="true"`. Take a look at the guide on [Hiding
-content](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/hiding-and-updating-content#aria-hidden)
+content](/hiding-and-updating-content/#aria-hidden)
 for further explanation.
 
 ### Familiarity with even one screen reader goes a long way
@@ -218,7 +218,7 @@ such as those defined by `<main>` or `<nav>` elements. These elements have
 implicit landmark roles. You can also use the ARIA `role` attribute to
 explicitly define regions on the page, e.g., `<div role="search">`. See [the
 guide on headings and
-landmarks](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/navigating-content)
+landmarks](/navigating-content/)
 for more examples.
 
 - Avoid `role="application"` unless you have prior experience working with it.
@@ -296,5 +296,5 @@ your site. Remember, good accessibility equals good UX!
 ### Additional Resources
 
 - [Web Accessibility by Google](https://bit.ly/web-a11y)
-- [Accessibility Fundamentals](https://developers.google.com/web/fundamentals/accessibility/)
+- [Accessibility Fundamentals](/accessibility/)
 - [A11ycasts](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
