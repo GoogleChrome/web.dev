@@ -12,7 +12,7 @@ subhead: >
 description: >
   One of a series of interviews with people working in accessibility.
   This time, we spoke with accessibility expert, Elisa Bandy.
-date: 2022-12-08
+date: 2022-12-13
 tags:
   - blog
   - accessibility
@@ -293,7 +293,6 @@ use my mouse, so I used a keyboard for multiple weeks. It was so frustrating.
 These sorts of exercises can really help put you in the position of a disabled
 person trying to navigate a world of able-bodied people.
 
-
 ### Simulators, while useful, are not equivalent to a disability
 
 **Alexandra**: Obviously the experience that I have, or any developer would
@@ -323,11 +322,12 @@ two people have the same viewpoint on accessibility and disabilities. You
 cannot do everything 100%&mdash;but that doesn't mean you shouldn't try. You
 won't ever be perfect, but strive for it anyway.
 
-You may get critical feedback, someone may say, "Hey, your product is not accessible!" Even after you've done so much work, even after you thought that you did everything. 
+You may get critical feedback, someone may say, "Hey, your product is not
+accessible!"
 
-**Alexandra**: Simulators support a different learning style, to build empathy
-by interacting with your product facing some of the problems that disabled
-people may face, but that's not the same as experiencing your product with the
+**Alexandra**: Simulators support a different learning style, demonstrating
+your product while facing some of the problems that disabled people may
+experience. But, that's not the same as experiencing your product with the
 accessibility tools they use every day.
 
 **Elisa**: Do I get mildly annoyed when people turn the sound off and read
