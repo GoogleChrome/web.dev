@@ -19,7 +19,7 @@ alt: Artistic image of microphone and pop filter
 ---
 
 You reached this article probably because you're developing an app that uses the
-[Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API) 
+[Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API)
 and experienced unexpected glitches such as popping noises from
 the output, or you are hearing something unexpected. You might already be
 involved in a [crbug.com](https://crbug.com) discussion and a Chrome engineer
@@ -188,7 +188,7 @@ between each callback varies significantly.
 * Increase the system audio callback buffer size by adjusting the
   [`latencyHint`](https://webaudio.github.io/web-audio-api/#dom-audiocontextoptions-latencyhint)
   option.
-* If you find a problem, [file an issue on crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWebAudio) 
+* If you find a problem, [file an issue on crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWebAudio)
   with the tracing data.
 
 ## Use the Web Audio DevTools extension
@@ -214,7 +214,7 @@ graph visualizer, and performance monitor.
 
 Since a page can have multiple `BaseAudioContext` objects, this drop-down menu allows you
 choosing the context you want to inspect. You can also manually trigger garbage
-collection by clicking the trash can icon on the left. 
+collection by clicking the trash can icon on the left.
 
 ### Property Inspector
 
@@ -233,7 +233,7 @@ inspector.
 The status bar at the bottom is only active when the selected `BaseAudioContext`
 is an `AudioContext`, which runs in real-time. This bar shows the instantaneous
 audio stream quality of a selected `AudioContext` and is updated every second. It
-provides the following information: 
+provides the following information:
 
 * **Callback interval** (ms): Displays the weighted mean/variance of callback
   interval. Ideally the mean should be stable and the variance should be close
@@ -269,7 +269,7 @@ or the extension. Then do not be afraid to
 Photo by Jonathan Velasquez on [Unsplash](https://unsplash.com/photos/c1ZN57GfDB0)
 
 [cr-file-a-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWebAudio
-[webfu-audio-worklet-dp]: https://developers.google.com/web/updates/2018/06/audio-worklet-design-pattern#webaudio_powerhouse_audio_worklet_and_sharedarraybuffer
+[webfu-audio-worklet-dp]: https://developer.chrome.com/blog/audio-worklet-design-pattern/#webaudio-powerhouse-audio-worklet-and-sharedarraybuffer
 [aud-dev-client-proto]: https://github.com/GoogleChromeLabs/audio-device-client-prototype
 [cr-audio-worklet-thr]: https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/modules/webaudio/audio_worklet_thread.h
 [chromium-tracing]: https://www.chromium.org/developers/how-tos/trace-event-profiling-tool

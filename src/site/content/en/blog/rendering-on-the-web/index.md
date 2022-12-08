@@ -359,12 +359,11 @@ Sebastian Markbåge
 
 
 
-[First Paint]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint
-[First Contentful Paint]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint
-[Time to Interactive]: https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive
+[First Paint]: /user-centric-performance-metrics/
+[First Contentful Paint]: /fcp/
+[Time to Interactive]: https://developer.chrome.com/docs/lighthouse/performance/interactive/
 [Time to First Byte]: https://en.wikipedia.org/wiki/Time_to_first_byte
-[third-party JS]: https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/
-
+[third-party JS]: /optimizing-content-efficiency-loading-third-party-javascript/
 [JS costs]: https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4
 [budget]: https://medium.com/@addyosmani/start-performance-budgeting-dabde04cf6a3
 [Netflix]: https://medium.com/dev-channel/a-netflix-web-performance-case-study-c0bcde26a9d9
@@ -384,17 +383,16 @@ Sebastian Markbåge
 [component caching]: https://medium.com/@reactcomponentcaching/speedier-server-side-rendering-in-react-16-with-component-caching-e8aa677929b1
 [memoization]: https://speakerdeck.com/maxnajim/hastening-react-ssr-with-component-memoization-and-templatization
 [HTML caching]: https://freecontent.manning.com/caching-in-react/
-[PWA]: https://developers.google.com/web/progressive-web-apps/
-[service worker]: https://developers.google.com/web/fundamentals/primers/service-workers/
-[service workers]: https://developers.google.com/web/fundamentals/primers/service-workers/
+[PWA]: /progressive-web-apps/
+[service worker]: https://developer.chrome.com/docs/workbox/service-worker-overview/
+[service workers]: https://developer.chrome.com/docs/workbox/service-worker-overview/
 [tight JavaScript budget]: https://mobile.twitter.com/HenrikJoreteg/status/1039744716210950144
 [RTTs]: https://en.wikipedia.org/wiki/Round-trip_delay_time
 [HTTP/2 Server Push]: https://www.smashingmagazine.com/2017/04/guide-http2-server-push/
-[PRPL]: https://developers.google.com/web/fundamentals/performance/prpl-pattern/
-[aggressive code-splitting]: https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting/
-[Application Shell caching]: https://developers.google.com/web/updates/2015/11/app-shell
+[PRPL]: /apply-instant-loading-with-prpl/
+[aggressive code-splitting]: /reduce-javascript-payloads-with-code-splitting/
+[Application Shell caching]: https://developer.chrome.com/blog/app-shell/
 [(re)hydration]: https://docs.electrode.io/guides/general/server-side-data-hydration
 [incrementally]: https://www.emberjs.com/blog/2017/10/10/glimmer-progress-report.html
-
 [Streaming server rendering]: https://zeit.co/blog/streaming-server-rendering-at-spectrum
 [renderToNodeStream()]: https://reactjs.org/docs/react-dom-server.html#rendertonodestream

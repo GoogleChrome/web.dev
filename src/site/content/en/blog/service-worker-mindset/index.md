@@ -43,7 +43,7 @@ In the [Service Workies](https://serviceworkies.com) game we cover the many deta
 
 {% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/MhBc1XtdrEGOQn8iXtKZ.mp4",
 autoplay="true",
-controls="true", 
+controls="true",
 loop="true",
 muted="true",
 alt="a new service worker replacing an old one", width="800", height="460" %}
@@ -58,7 +58,7 @@ Having a service worker on your site gives you incredible benefits. Your site ca
 
 - work flawlessly even when the user is offline
 - gain massive performance improvements through [caching](https://developer.mozilla.org/docs/Web/API/Cache)
-- use [push notifications](https://developers.google.com/web/fundamentals/push-notifications/)
+- use [push notifications](/notifications/)
 - be installed as a [PWA](/progressive-web-apps/)
 
 With as much as service workers can do, they are limited by design. They can't do anything synchronous or in the same thread as your site. So that means no access to:
@@ -67,7 +67,7 @@ With as much as service workers can do, they are limited by design. They can't d
 - the DOM
 - the window
 
-The good news is there are a handful of ways your page can communicate with its service worker, including direct [`postMessage`](https://developer.mozilla.org/docs/Web/API/Client/postMessage), one-to-one [Message Channels](https://developer.mozilla.org/docs/Web/API/MessageChannel) and one-to-many [Broadcast Channels](https://developers.google.com/web/updates/2016/09/broadcastchannel).
+The good news is there are a handful of ways your page can communicate with its service worker, including direct [`postMessage`](https://developer.mozilla.org/docs/Web/API/Client/postMessage), one-to-one [Message Channels](https://developer.mozilla.org/docs/Web/API/MessageChannel) and one-to-many [Broadcast Channels](https://developer.chrome.com/blog/broadcastchannel).
 
 {% Aside 'note' %}
 Think of your service worker as something that lives outside of your page. You can talk to it, but it can't access your page directly.
@@ -79,9 +79,9 @@ An active service worker goes on living even after a user leaves your site or cl
 
 In [Service Workies](https://serviceworkies.com) we visualize this concept with Kolohe (a friendly service worker) intercepting and handling requests.
 
-{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BeJWEOe4TPoMzdBTFVWI.mp4", 
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BeJWEOe4TPoMzdBTFVWI.mp4",
 autoplay="true",
-controls="true", 
+controls="true",
 loop="true",
 muted="true",
 alt="service worker intercepting http requests", width="800", height="605" %}
@@ -215,7 +215,7 @@ If you want to understand all this by [playing a game](https://gedd.ski/post/mas
 
 {% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ammLWAa5Kc13D5CgstvK.mp4",
 autoplay="true",
-controls="true", 
+controls="true",
 loop="true",
 muted="true",
 alt="preview of the Service Workies game", width="800", height="519" %}

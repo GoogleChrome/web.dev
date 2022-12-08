@@ -335,5 +335,5 @@ improved the API.
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
 [poisson]: https://en.wikipedia.org/wiki/Poisson_point_process
 [security-error]: https://developer.mozilla.org/docs/Web/API/DOMException#securityerror
-[site-isolation]: https://developers.google.com/web/updates/2018/07/site-isolation
+[site-isolation]: https://developer.chrome.com/blog/site-isolation/
 [webperfs]: https://www.w3.org/community/webperfs/

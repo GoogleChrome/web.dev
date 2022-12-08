@@ -27,7 +27,7 @@ Solving a performance problem is like solving a crime. You need to carefully exa
 
 ## V8 CSI: Oz
 
-The amazing wizards building [Find Your Way to Oz](http://www.findyourwaytooz.com/) approached the V8 team with a performance problem they couldn't solve on their own. Occasionally Oz would freeze, causing jank. The Oz developers had done some initial investigation using the [Timeline Panel](https://developers.google.com/chrome-developer-tools/docs/timeline) in [Chrome DevTools](https://developers.google.com/chrome-developer-tools/). Looking at memory usage they encountered the dreaded [saw tooth](http://en.wikipedia.org/wiki/Sawtooth_wave) graph. Once per second the garbage collector was collecting 10MB of garbage and the garbage collection pauses corresponded with the jank. Similar to the following screenshot from the Timeline in Chrome Devtools:
+The amazing wizards building [Find Your Way to Oz](http://www.findyourwaytooz.com/) approached the V8 team with a performance problem they couldn't solve on their own. Occasionally Oz would freeze, causing jank. The Oz developers had done some initial investigation using the [Timeline Panel](https://developer.chrome.com/docs/devtools/evaluate-performance/performance-reference) in [Chrome DevTools](https://developer.chrome.com/docs/devtools/). Looking at memory usage they encountered the dreaded [saw tooth](http://en.wikipedia.org/wiki/Sawtooth_wave) graph. Once per second the garbage collector was collecting 10MB of garbage and the garbage collection pauses corresponded with the jank. Similar to the following screenshot from the Timeline in Chrome Devtools:
 
 <figure>
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/zYrtkDoYJZOYGuSg7WVb.png", alt="Devtools timeline", width="467", height="81" %}
@@ -37,7 +37,7 @@ The V8 detectives, Jakob and Yang took up the case. What took place was a long b
 
 ## Evidence
 
-The first step is to collect and study the initial evidence. 
+The first step is to collect and study the initial evidence.
 
 ### What type of application are we looking at?
 
@@ -65,13 +65,13 @@ In V8 the young memory space is divided into two equally sized contiguous blocks
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/pR8BlH788T0cNWdO8Yls.png", alt="V8 young memory", width="545", height="346" %}
 </figure>
 
-At this point the from space and to space are swapped. What was the to space and is now the from space, is scanned from beginning to end and any objects which are still alive are copied into the to space or are promoted to the old generation heap. If you want details, I suggest you read about [Cheney's Algorithm](http://en.wikipedia.org/wiki/Cheney&#39;s_algorithm). 
+At this point the from space and to space are swapped. What was the to space and is now the from space, is scanned from beginning to end and any objects which are still alive are copied into the to space or are promoted to the old generation heap. If you want details, I suggest you read about [Cheney's Algorithm](http://en.wikipedia.org/wiki/Cheney&#39;s_algorithm).
 
-Intuitively you should understand that every time an object is allocated either implicitly or explicitly (via a call to new, [], or {}) your application is moving closer and closer to a garbage collection and the dreaded application pause. 
+Intuitively you should understand that every time an object is allocated either implicitly or explicitly (via a call to new, [], or {}) your application is moving closer and closer to a garbage collection and the dreaded application pause.
 
 ### Is 10MB/sec of garbage expected for this application?
 
-In short, no. The developer is not doing anything to expect 10MB/sec of garbage. 
+In short, no. The developer is not doing anything to expect 10MB/sec of garbage.
 
 ## Suspects
 
@@ -109,11 +109,11 @@ Storing a double precision number to a property. A HeapNumber object must be cre
 sprite.position.x += 0.5 * (dt);
 ```
 
-In optimized code, every time x is assigned a freshly computed value, a seemingly innocuous statement, a new HeapNumber object is implicitly allocated, bringing us closer to a garbage collection pause. 
+In optimized code, every time x is assigned a freshly computed value, a seemingly innocuous statement, a new HeapNumber object is implicitly allocated, bringing us closer to a garbage collection pause.
 
 Note that by using a [typed array](http://www.khronos.org/registry/typedarray/specs/latest/) (or a regular array which only has held doubles) you can avoid this specific problem entirely as the storage for the double precision number is allocated only once and repeatedly changing the value does not require new storage to be allocated.
 
-Suspect #4 is a possibility. 
+Suspect #4 is a possibility.
 
 ## Forensics
 
@@ -158,7 +158,7 @@ ticks  total  nonlib   name
   1    0.4%    0.4%  LazyCompile: ~main demo.js:30
 ```
 
-You can see demo.js had three functions: opt, unopt, and main. Optimized functions have an asterisk (*) next to their names. Observe that the function opt is optimized and unopt is unoptimized. 
+You can see demo.js had three functions: opt, unopt, and main. Optimized functions have an asterisk (*) next to their names. Observe that the function opt is optimized and unopt is unoptimized.
 
 Another important tool in the V8 detective's tool bag is plot-timer-event. It can be executed like so:
 
