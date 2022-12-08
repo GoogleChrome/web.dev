@@ -51,7 +51,7 @@ Prior to version 16, Safari on macOS supported a [proprietary version of push no
 
 ## Further reading
 
-- [Push notifications overview](https://web.dev/push-notifications-overview/)
+- [Push notifications overview](/push-notifications-overview/)
 - [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)
 
 ## Acknowledgements
