@@ -381,4 +381,5 @@ Google has created an accessible documentation course:
 [Tech Writing for Accessibility](https://developers.google.com/tech-writing/accessibility). 
 
 Follow Google's Accessibility team on Twitter at
-[@GoogleAccess](https://twitter.com/googleaccess).
+[@GoogleAccess](https://twitter.com/googleaccess) and the Chrome team at
+[@ChromiumDev](https://twitter.com/ChromiumDev).
