@@ -1,7 +1,7 @@
 ---
 title: Optimize Interaction to Next Paint
 subhead: |
-  A step-by-step guide on how to break down LCP and identify key areas to improve.
+  Learn how to optimize for the Interaction to Next Paint metric.
 authors:
   - jlwagner
   - philipwalton
