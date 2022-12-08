@@ -375,9 +375,9 @@ users can navigate your content.
 <hr />
 
 Learn more about [Google's accessibility initiatives and research](https://www.google.com/accessibility/initiatives-research/).
-Accessibility is critical for development and documentation. In addition to the
-web development resources at [Learn Accessibility](/learn/accessibility/),
-Google has created an accessible documentation course:
+In addition to the web development resources at
+[Learn Accessibility](/learn/accessibility/), Google has created an accessible
+documentation course:
 [Tech Writing for Accessibility](https://developers.google.com/tech-writing/accessibility). 
 
 Follow Google's Accessibility team on Twitter at
