@@ -217,7 +217,12 @@ textBox.addEventListener('keydown', (keyboardEvent) => {
 The following visualization should help explain why deferring any non-critical updates until after the next frame can reduce the processing time and thus the overall interaction latency.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/MN6LranaUtJMlGZEA66T.png", alt="A depiction of a keyboard interaction and subsequent tasks in two scenarios. In the top figure, the render-critical task and all subsequent background tasks run synchronously until the opportunity to present a frame has arrived. In the bottom figure, the render-critical work runs first, then yields to the main thread to present a new frame sooner. The background tasks run thereafter.", width="770", height="495" %}
+  <a href="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Me4oU1cqMPOqEaEg2XAP.svg" rel="noopener">
+    {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/MN6LranaUtJMlGZEA66T.png", alt="A depiction of a keyboard interaction and subsequent tasks in two scenarios. In the top figure, the render-critical task and all subsequent background tasks run synchronously until the opportunity to present a frame has arrived. In the bottom figure, the render-critical work runs first, then yields to the main thread to present a new frame sooner. The background tasks run thereafter.", width="770", height="495" %}
+  </a>
+  <figcaption>
+    Click the above figure to see a high-resolution version.
+  </figcaption>
 </figure>
 
 While admittedly the use of `setTimeout()` inside of a call to `requestAnimationFrame()` in the previous code example is a bit esoteric, it is an effective and cross-browser way to ensure that the non-critical code does not block the next frame.
