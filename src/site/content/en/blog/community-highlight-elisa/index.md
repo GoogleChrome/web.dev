@@ -211,9 +211,9 @@ transcripts, and other alternative media types support equal access to media.
 accessibility. How would you help engineers learn accessibility patterns?
 
 **Elisa**: I work closely with an engineer who's interested in accessibility.
-Learning this stuff is a process, so I'll hand her a bug and show her how I
-would fix it. Then, I walk her through the best practice. She may look at other
-docs and see they recommended one approach, but it doesn't work for XYZ reasons.
+I'll hand her a bug and show her how I would fix it. Then, I walk her through
+the best practice. She may look at other docs and see they recommended one
+approach, but it doesn't work for XYZ reasons.
 
 The thing about web accessibility is that there's not a lot of concrete code
 examples, because no two people build the same feature in the same way. So you
@@ -270,11 +270,9 @@ can confirm that it isn't discernible at all.
 To support screen reader users, there's no better way to understand it than to
 actually use a screen reader. Read tutorials first, that's key. Some people get
 frustrated when they just turn it on and try messing around with
-it&mdash;that's a bad way to learn how to use them. There's plenty of tutorials
-for common screen readers and how to navigate the web. And, commit to using it.
-You need more than 5 or 10 or 20 minutes. Use it for an hour&mdash;that really
-helps to build empathy and reveal the frustration that the people who rely on
-these tools face every day.
+it&mdash;that's a bad way to learn how to use them. You need more than 5 or 10
+or 20 minutes. Use it for an hour at minimum to reveal some of the frustrations
+users face who rely on this technology.
 
 {% Aside %}
 
@@ -323,21 +321,21 @@ matter what you do, you're going to mess something up. That's not something to
 get discouraged about because no two people have the same disability needs. No
 two people have the same viewpoint on accessibility and disabilities. You
 cannot do everything 100%&mdash;but that doesn't mean you shouldn't try. You
-won't ever be perfect, but strive for it anyway. You may get critical feedback,
-someone may say, "Hey, your product is not accessible!" Even after you've done
-so much work, even after you thought that you did everything, you missed
-something. 
+won't ever be perfect, but strive for it anyway.
 
-**Alexandra**: It's different learning styles, to build empathy by interacting
-with disabled people versus experiencing the tools they use hands-on with your
-own product.
+You may get critical feedback, someone may say, "Hey, your product is not accessible!" Even after you've done so much work, even after you thought that you did everything. 
+
+**Alexandra**: Simulators support a different learning style, to build empathy
+by interacting with your product facing some of the problems that disabled
+people may face, but that's not the same as experiencing your product with the
+accessibility tools they use every day.
 
 **Elisa**: Do I get mildly annoyed when people turn the sound off and read
-captions and then they suddenly realize, oh, these automatically generated
-captions are terrible? Yeah. Okay. That's not how I experienced this. Some
-disabled people will see a person emulating their experience and complaining
-about the tools, but ultimately they don't have to live with that reality. It's
-frustrating, I really get that.
+captions and then suddenly realize, oh, these automatically generated
+captions are terrible? Yeah. That's not how I experience captions. Some
+disabled people see a person emulate their experience and complain
+about the tools, without actively needing those tools. That's frustrating,
+I really get that.
 
 But I also don't want to be the person who has to sit there and describe my
 experience as a deaf person over and over and over and over and over again.
@@ -348,9 +346,7 @@ That said, the "experiences" like blind restaurant dining and wine tasting,
 those make me mad. That's like cosplaying a disability. But in the interests of
 trying to understand how your users use a feature or how readers read the page?
 That's fine. In fact, that's the minimum. Put yourself in their shoes for an
-hour and figure out how these things actually work. It really does matter. Some
-people will always say, "Oh it doesn't matter, I added alt text, it should be
-obvious." But no, it's not always.
+hour and figure out how these things actually work. It really does matter.
 
 Figure out how people navigate on your site. You may wonder, "Why can't I just
 put a banner warning at the top that all the links open in a new tab?" Well,
