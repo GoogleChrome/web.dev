@@ -688,7 +688,7 @@ shows up on lock screens.
 [handle "play" and "pause" media events]: https://web.dev/media-session#play_pause
 [fullscreen api]: https://fullscreen.spec.whatwg.org/
 [screen orientation api]: https://w3c.github.io/screen-orientation/
-[media queries]: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+[media queries]: https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries
 [device orientation api]: https://w3c.github.io/deviceorientation/spec-source-orientation.html
 [page visibility api]: https://www.w3.org/TR/page-visibility/
 [intersection observer api]: https://web.dev/intersectionobserver

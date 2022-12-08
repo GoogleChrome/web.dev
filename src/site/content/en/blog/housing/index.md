@@ -69,7 +69,7 @@ experience is something that defines state-of-the-art applications.”
 
 ## Related resources
 
-* [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+* [Service Workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)
 * [Add to Home Screen](/customize-install/)
 * [Push Notifications](/notifications/)
 

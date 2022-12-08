@@ -233,7 +233,7 @@ Check out the [app shortcuts sample] and its [source].
 [scope]: /add-manifest/#scope
 [web app manifest]: /learn/pwa/web-app-manifest/
 [web app manifest icons]: /add-manifest/#icons
-[mdn-shortcuts]: https://developer.mozilla.org/en-US/docs/Web/Manifest/shortcuts
+[mdn-shortcuts]: https://developer.mozilla.org/=/docs/Web/Manifest/shortcuts
 [spec]: https://w3c.github.io/manifest/#shortcuts-member
 [app shortcuts sample]: https://app-shortcuts.glitch.me
 [source]: https://glitch.com/edit/#!/app-shortcuts

@@ -379,8 +379,7 @@ Sebastian Markbåge
 [Navi]: https://frontarm.com/navi/
 [Jekyll]: https://jekyllrb.com
 [Metalsmith]: https://metalsmith.io
-[Progressive Enhancement]: https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement
-
+[Progressive Enhancement]: https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement
 [significant compute overhead]: https://medium.com/airbnb-engineering/operationalizing-node-js-for-server-side-rendering-c5ba718acfc9
 [component caching]: https://medium.com/@reactcomponentcaching/speedier-server-side-rendering-in-react-16-with-component-caching-e8aa677929b1
 [memoization]: https://speakerdeck.com/maxnajim/hastening-react-ssr-with-component-memoization-and-templatization

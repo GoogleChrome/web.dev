@@ -534,7 +534,7 @@ us watch each new submission in VR and publish new playlists from any device.
 
 ### 7. Service Workers
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+[Service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)
 are a fairly recent innovation that help manage the caching of website
 assets. In our case, service workers load our content lightning fast for
 return visitors and even allow the site to work offline. These are important
