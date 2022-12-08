@@ -5,12 +5,16 @@ authors:
   - robdodson
 date: 2018-11-18
 description: |
-  Many different users rely on the keyboard to navigate applications—from
-  users with temporary and permanent motor impairments to users who use keyboard
-  shortcuts to be more efficient and productive. Having a good keyboard
+  Many users rely on the keyboard to navigate applications. From users
+  with temporary and permanent motor impairments to users who use keyboard
+  shortcuts to be more efficient and productive. Designing a keyboard
   navigation strategy for your application creates a better experience for
   everyone.
 ---
+
+{% Aside 'update' %}
+If you're interested in this topic, we recommend two Learn Accessbility modules: [Keyboard focus](/learn/accessibility/focus/) and [Content structure](/learn/accessibility/structure/).
+{% endAside %}
 
 Many different users rely on the keyboard to navigate applications—from users
 with temporary and permanent motor impairments to users who use keyboard
@@ -85,7 +89,8 @@ The code for these two examples is compared below:
 ```
 
 **Illogical tab order**
-```html/0
+
+```html
 <button style="float: right">Kiwi</button>
 <button>Peach</button>
 <button>Coconut</button>

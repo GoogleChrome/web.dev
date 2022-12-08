@@ -127,3 +127,9 @@ for standardized HTML alternatives.
 Sometimes you may find an element that doesn't have a counterpart in HTML.
 That's okay! Read on to learn how to add keyboard support to custom interactive
 controls using `tabindex`.
+
+{% Aside 'update' %}
+If you're interested in this topic, we recommend you also read
+[Content structure](/learn/accessibility/structure/) and
+[ARIA and HTML](/learn/accessibility/aria-html/) from Learn Accessibility.
+{% endAside %}

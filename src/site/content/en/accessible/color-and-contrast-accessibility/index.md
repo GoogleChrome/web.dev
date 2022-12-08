@@ -14,14 +14,20 @@ tags:
   - accessibility
 ---
 
+{% Aside 'update' %}
+If you're interested in this topic, we recommend you also read the
+[Learn Accessibility Color and contrast module](/learn/accessibility/color-contrast/),
+with more detailed implementation suggestions in the
+[Learn CSS Color module](/learn/css/color/)
+{% endAside %}
+
 If you have good vision, it's easy to assume that everyone perceives colors,
 or text legibility, the same way you do—but of course that's not the case.
 
-As you might imagine,
-some color combinations that are easy for some people to read are difficult or impossible for others.
-This usually comes down to color contrast,
-the relationship between the foreground and background colors' luminance.
-When the colors are similar, the contrast ratio is low;
+As you might imagine, some color combinations that are easy for some people to
+read are difficult or impossible for others. This usually comes down to color
+contrast, the relationship between the foreground and background colors'
+luminance. When the colors are similar, the contrast ratio is low;
 when they are different, the contrast ratio is high.
 
 The [WebAIM guidelines](https://webaim.org/standards/wcag/) recommend an AA (minimum) contrast ratio of 4.5:1 for all text.

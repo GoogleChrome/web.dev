@@ -10,6 +10,12 @@ description: |
   diverse range of users possible.
 ---
 
+{% Aside 'update' %}
+In 2022, we published [Learn Accessibility!](/learn/accessibility/) for beginner and advanced web developers. You can go through the series for a general understanding of accessibility practices and testing, or you can use it as a reference for specific subjects.
+
+If you're interested in this topic, we recommend [What is digital accessibility, and why does it matter?](/learn/accessibility/why/)
+{% endAside %}
+
 An accessible site is one whose content can be accessed regardless of any user's
 impairments and whose functionality can also be operated by the most diverse
 range of users possible.
@@ -81,3 +87,7 @@ improve readability or prevent headaches.
 
 Now that you have a high level understanding of accessibility, it's time to dive
 in to more specific details, starting with keyboard access.
+
+{% Aside 'codelab' %}
+Check out [Keyboard focus](https://web.dev/learn/accessibility/focus/) to understand and enhance keyboard navigation order and style.
+{% endAside %}
