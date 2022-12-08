@@ -89,5 +89,5 @@ Now that you have a high level understanding of accessibility, it's time to dive
 in to more specific details, starting with keyboard access.
 
 {% Aside 'codelab' %}
-Check out [Keyboard focus](https://web.dev/learn/accessibility/focus/) to understand and enhance keyboard navigation order and style.
+Check out [Keyboard focus](/learn/accessibility/focus/) to understand and enhance keyboard navigation order and style.
 {% endAside %}
