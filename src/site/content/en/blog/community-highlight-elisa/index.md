@@ -27,7 +27,7 @@ Learn more about [Google's accessibility initiatives and research](https://www.g
 
 **Alexandra White**: I'm lucky to call you a colleague. How would you introduce yourself and your job here?
 
-<figure data-float="left">
+<figure data-float="right">
 {% Img
 src="image/VbsHyyQopiec0718rMq2kTE1hke2/3wmp0figIYM6Y7IIvMhu.png",
 alt="Elisa Bandy, Google technical writer.",
@@ -101,6 +101,12 @@ very important for internal documentation. Maybe a ChromeVox bug gets bumped up
 a little higher than a VoiceOver bug or a NVDA bug.
 
 {% Aside 'codelab' %}
+
+<figure data-float="right">
+  <a href="/learn/accessibility/design-ux/" alt="Take the Design and user experience module.">
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/iJa4aaLGjRE7bN5A9CeX.png", alt="", width="198", height="132" %}
+</a>
+</figure>
 
 Personas also offer a quick and inexpensive way to test and prioritize the
 features your users rely on in your development process. Take the Learn
