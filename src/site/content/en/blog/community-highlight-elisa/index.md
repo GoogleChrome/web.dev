@@ -151,9 +151,9 @@ even that was fairly easy to resolve.
 
 **Elisa**: When I first joined accessibility engineering, it was only 20% of my
 time. Some people didn't understand why we were focusing on accessibility.
-Someone said, "Only 1% of the population is disabled." I stood my ground&mdash;we
-needed to do it because it was the right thing to do. And, it was my time, I'll
-dedicate it how I see fit.
+Someone said, "Only 1% of the population is disabled." I stood my
+ground&mdash;we needed to do it because it was the right thing to do. And, it
+was my time, I'll dedicate it how I see fit.
 
 Of course, it's hard to hear from anyone that disabled people don't matter,
 that it's too small a group.
