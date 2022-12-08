@@ -31,7 +31,7 @@ Learn more about [Google's accessibility initiatives and research](https://www.g
 {% Img
 src="image/VbsHyyQopiec0718rMq2kTE1hke2/3wmp0figIYM6Y7IIvMhu.png",
 alt="Elisa Bandy, Google technical writer.",
-width="350", height="497"
+width="300", height="426"
 %}
 </figure>
 
