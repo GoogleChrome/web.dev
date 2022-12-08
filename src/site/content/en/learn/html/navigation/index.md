@@ -70,6 +70,8 @@ The skip-to-content link scrolls the main content into view. The first element i
 In this case, `<h1>Marking up navigation</h1>`. The main heading is followed by the tagline, a brief description of the contents of this
 tutorial. Whether the table of contents navigation comes before or after the heading in the codebase depends on the width of your browser.
 
+<img width="446" alt="On narrow screens, the table of contents is hidden behind an on this page button that toggles the navigations visibility" src="https://user-images.githubusercontent.com/69888/206536942-8785da6d-75c6-4ec6-a9dd-becae39aef04.png"><img width="236" alt="On wide screens, the table of contents is always visible, with the link to the current section being hilighted in blue" src="https://user-images.githubusercontent.com/69888/206537392-c8c6ead4-6db6-4250-9e9d-c0fa49f8dcae.png">
+
 If your browser is wider than 80em, the Table of contents comes before the heading in the markup, and is similar to the following
 (the class names have been removed to simplify the markup):
 
@@ -284,6 +286,8 @@ the section title, and a checkmark to the right on sections that you have alread
 If you are visiting this site on a tablet or mobile device, or otherwise have a narrower screen, when you load this page, the sidebar is hidden. You can make it visible via the hamburger menu in the top navigation bar (yes, the header is a custom <web-header> element with `role="navigation"` set).
 
 The main difference between the permanent local navigation on wide screens and the local navigation on narrower screens that can be made to appear and disappear, is the display of the close button on the version that can be hidden. This icon is hidden on wide screens with `display: none;`.
+
+<img width="365" alt="The local navigation is showing a checkmark next to the name of this chapter." src="https://user-images.githubusercontent.com/69888/206536031-766ca97e-673f-453c-b325-dda93491bee3.png">
 
 The link to this document, section 010, has a slightly different appearance from the other links in the local navigation to indicate to sighted users that this is the current page. This visual difference is created with CSS. The current page is also identified with the `aria-current="page"` attribute. This informs assistive technologies that it is a link to the current page. The HTML for this list item within this local navigation is similar to:
 
