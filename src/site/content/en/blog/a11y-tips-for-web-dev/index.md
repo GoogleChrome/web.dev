@@ -163,7 +163,7 @@ to help them with reading text, so it's important to ensure text alternatives ex
   or flash, which can cause [issues](http://www.w3.org/TR/WCAG20/#seizure)
   for some users.
 
-  The [`prefers-reduced-motion`](/articles/prefers-reduced-motion/#too-much-motion-in-real-life-and-on-the-web)
+  The [`prefers-reduced-motion`](/prefers-reduced-motion/#too-much-motion-in-real-life-and-on-the-web)
   CSS media query allows you to limit animations
   and autoplaying videos for users who prefer reduced motion:
 
