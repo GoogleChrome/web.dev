@@ -64,7 +64,7 @@ users are left without access to the associated actions.
 
 ## Page titles
 
-As we learned in the [Document module](/accessibility/more-html/),
+As we learned in the [Document module](/learn/accessibility/more-html),
 the page title is essential for screen reader users. It tells users what page
 they are on and whether they have navigated to a new page.
 
@@ -151,7 +151,7 @@ concise, and of course, accessible.
 
 ## Focus management
 
-In the [Keyboard focus module](/accessibility/focus), we covered focus order
+In the [Keyboard focus module](/learn/accessibility/focus), we covered focus order
 and indicator styles. Focus management is knowing when and where to trap the
 focus and when it shouldn't be trapped. Focus management is critical for
 keyboard-only users.
@@ -286,7 +286,7 @@ with the issues described in the previous section.
 
 Here are some live packages for common JavaScript frameworks:
 
-* React: [react-aria-live](https://www.npmjs.com/package/react-aria-live) and 
+* React: [react-aria-live](https://www.npmjs.com/package/react-aria-live) and
   [react-a11y-announcer](https://github.com/thinkcompany/react-a11y-announcer)
 * Angular: [`LiveAnnouncer`](https://material.angular.io/cdk/a11y/overview#liveannouncer)
 * Vue: [vue-a11y-utils](https://jinjiang.dev/vue-a11y-utils/#vuelive-component)
