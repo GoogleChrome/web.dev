@@ -24,12 +24,12 @@ and provides both explanations and alternatives.
 
 ### Avoid easy, simple, and fast
 
-Don't descibe tasks as easy, simple, or fast. These are often subjective bias
-based on the writer's knoweldge and resources. It's possible the reader will
+Don't describe tasks as easy, simple, or fast. These are often subjective bias
+based on the writer's knowledge and resources. It's possible the reader will
 see a description of a task as "easy" and feel badly if they don't find it
-easy to complete. 
+easy to complete.
 
-You can descibe certain things as "less complex" when compared to other
+You can describe certain things as "less complex" when compared to other
 versions. But, for the most part, if you believe something is "simple," the
 example should speak for itself instead of needing extra validation.
 
@@ -60,7 +60,7 @@ Refer to guidance from external sources to learn more about plain language:
    guidance to meet U.S. laws and requirements on communication.
 *  [Plainenglish.co.uk](http://www.plainenglish.co.uk/free-guides.html) offers
    guidance from the British government.
-   
+
 While we primarily write content in English, there may be times when content is
 written in other languages. "Plain language" rules can apply to all languages.
 
