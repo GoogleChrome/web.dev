@@ -24,7 +24,7 @@ Always make sure users can navigate to any page on your site with the fewest num
 is intuitive and not overwhelming. That said, there are no specific requirements for navigational elements. [MachineLearningWorkshop.com](https://machinelearningworkshop.com),
 being a single-page website, has a local navigation bar in the top right; this is where multi-page sites often put their global navigation.
 
-{% Img src="https://user-images.githubusercontent.com/69888/206528359-b3999b58-3cd1-479e-81f8-f35e25543b7b.png", alt="The front page of this page, including the breadcrumbs at top, a button to show the table of contents for this page, and the local navigations for the series.", width="600", height="223" %}
+{% Img src="https://user-images.githubusercontent.com/69888/206528359-b3999b58-3cd1-479e-81f8-f35e25543b7b.png", alt="The front page of this page, including the breadcrumbs at top, a button to show the table of contents for this page, and the local navigations for the series.", width="600", height="628" %}
 
 If you are viewing this page on web.dev, you can spot a few navigational features. There is a breadcrumb above the title,
 an "on this page" table of contents after the title, and a "Learn HTML" table of contents that, depending on the width of your screen,
