@@ -24,11 +24,12 @@ Always make sure users can navigate to any page on your site with the fewest num
 is intuitive and not overwhelming. That said, there are no specific requirements for navigational elements. [MachineLearningWorkshop.com](https://machinelearningworkshop.com),
 being a single-page website, has a local navigation bar in the top right; this is where multi-page sites often put their global navigation.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/La9US0lz2juPUVWESfTw.png", alt="The front page of machinelearningworkshop.com, including the navigation bar at top-right.", width="600", height="223" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/6Te041GdOLBpwp0cuUT0.png", alt="The front page of this page, including the breadcrumbs at top, a button to show the table of contents for this page, and the local navigations for the series.", width="600", height="628" %}
 
 If you are viewing this page on web.dev, you can spot a few navigational features. There is a breadcrumb above the title,
 an "on this page" table of contents after the title, and a "Learn HTML" table of contents that, depending on the width of your screen,
 is either always displayed or made visible with the click of a menu button. The first element on the page is a hidden link to #main, which enables you to skip both the sidebar and breadcrumb links.
+
 
 ## "Skip to content" link
 
@@ -68,6 +69,8 @@ page's main content. To test this, when the page loads, tab to the "Skip to main
 The skip-to-content link scrolls the main content into view. The first element is the `<h1>` heading with the title of this section.
 In this case, `<h1>Marking up navigation</h1>`. The main heading is followed by the tagline, a brief description of the contents of this
 tutorial. Whether the table of contents navigation comes before or after the heading in the codebase depends on the width of your browser.
+
+<img width="446" alt="On narrow screens, the table of contents is hidden behind an on this page button that toggles the navigations visibility" src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/8FNr1lp9jbtoM2weXceV.png"><img width="236" alt="On wide screens, the table of contents is always visible, with the link to the current section being highlighted in blue" src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ThkLoScjUq2V6M1b4WSj.png">
 
 If your browser is wider than 80em, the Table of contents comes before the heading in the markup, and is similar to the following
 (the class names have been removed to simplify the markup):
@@ -283,6 +286,8 @@ the section title, and a checkmark to the right on sections that you have alread
 If you are visiting this site on a tablet or mobile device, or otherwise have a narrower screen, when you load this page, the sidebar is hidden. You can make it visible via the hamburger menu in the top navigation bar (yes, the header is a custom <web-header> element with `role="navigation"` set).
 
 The main difference between the permanent local navigation on wide screens and the local navigation on narrower screens that can be made to appear and disappear, is the display of the close button on the version that can be hidden. This icon is hidden on wide screens with `display: none;`.
+
+<img width="365" alt="The local navigation is showing a checkmark next to the name of this chapter." src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/MHQ1i1NnGKx2N0ovmzxy.png">
 
 The link to this document, section 010, has a slightly different appearance from the other links in the local navigation to indicate to sighted users that this is the current page. This visual difference is created with CSS. The current page is also identified with the `aria-current="page"` attribute. This informs assistive technologies that it is a link to the current page. The HTML for this list item within this local navigation is similar to:
 
