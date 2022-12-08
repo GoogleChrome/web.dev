@@ -54,11 +54,13 @@ The caption appears outside the table. The location of the caption can be set wi
 better practice than using the deprecated `align` attribute. This can set the caption to the top and bottom. The left and right
 side positioning, with `inline-start` and `inline-end`, are not yet fully supported. Top is the default browser presentation.
 
-```html
-<table>
-  <caption>MLW Students</caption>
-</table>
-```
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'yLEZRyW',
+  height: 300,
+  theme: 'dark',
+  tab: 'html,result'
+} %}
 
 Preferably, data tables should have clear headers and a caption, and be simple enough to be almost self-explanatory. Bear in mind that
 not all users have the same cognitive abilities. When the table is "making a point", or otherwise needs interpretation, provide a
