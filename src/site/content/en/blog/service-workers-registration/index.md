@@ -78,7 +78,7 @@ site.
 The solution is to control start of the service worker by choosing when to call
 `navigator.serviceWorker.register()`. A simple rule of thumb would be to delay
 registration until after the [`load
-even`](https://developer.mozilla.org//docs/Web/API/GlobalEventHandlers/onload)
+event`](https://developer.mozilla.org//docs/Web/API/GlobalEventHandlers/onload)
 fires on `window`, like so:
 
 ```js
