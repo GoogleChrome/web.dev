@@ -298,7 +298,7 @@ controls (like ones created using [Custom
 Elements](/custom-elements-v1/)
 or out of simple divs and spans). For these kinds of controls you'll need to use
 the [`aria-label` and `aria-labelledby`
-attributes](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/aria-labels-and-relationships#labels).
+attributes](/blog/aria-labels-and-relationships/#labels).
 
 ### Automated testing
 
