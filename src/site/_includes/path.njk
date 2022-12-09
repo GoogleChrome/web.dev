@@ -81,7 +81,16 @@ eleventyComputed:
   </div>
 </div>
 
-<hr/>
+<hr />
+
+{% if coursename !== "" %}
+  <div class="banner bg-state-bad-bg color-core-text" role="banner">
+    <div class="banner__content flow">
+      We've introduced a structured learning paths to discover everything you need to know about building for the modern web.
+      <a href="{{paths[pathName].course}}">{{paths[pathName].coursename}}</a>
+    </div>
+  </div>
+{% endif %}
 
 {% for topic in topics %}
   <div class="path__topic">
