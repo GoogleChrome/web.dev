@@ -6,7 +6,7 @@ banner:
   title: 'Guidance from Chrome Developer Relations'
   summary: |
     We want to help you build beautiful, accessible, fast, and secure websites that work cross-browser, and for all of your users. This site is our home for content to help you on that journey, written by members of the Chrome team, and external experts.
-  image: 'image/VbAJIREinuYvovrBzzvEyZOpw5w1/yqsykCBpsiVTwcs286tS.png'
+  image: 'image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/R8GB4ZvgVvy4gimaqrXs.png'
   imageWidth: '546'
   imageHeight: '421'
 intro:

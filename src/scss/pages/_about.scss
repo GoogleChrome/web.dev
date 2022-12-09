@@ -26,10 +26,10 @@
   .authors {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    @include media-query('md') {
-      grid-template-columns: repeat(2, 1fr);
+    @include media-query('lg') {
+      grid-template-columns: repeat(3, 1fr);
     }
 
     @include media-query('xs') {
