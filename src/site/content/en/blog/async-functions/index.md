@@ -256,9 +256,8 @@ The above takes 1000ms to complete, whereas:
 async function parallel() {
   const wait1 = wait(500); // Start a 500ms timer asynchronously…
   const wait2 = wait(500); // …meaning this timer happens in parallel.
-  await wait1; // Wait 500ms for the first timer…
-  await wait2; // …by which time this timer has already finished.
-  return "done!";
+  await Promise.all([wait1, wait2]); // Wait for both timers in parallel.
+  return 'done!';
 }
 ```
 
@@ -273,14 +272,19 @@ correct order.
 _Deep breath_ - here's how that looks with promises:
 
 ```js
+function markHandled(promise) {
+  promise.catch(() => {});
+  return promise;
+}
+
 function logInOrder(urls) {
   // fetch all the URLs
-  const textPromises = urls.map(url => {
-    return fetch(url).then(response => response.text());
+  const textPromises = urls.map((url) => {
+    return markHandled(fetch(url).then((response) => response.text()));
   });
 
   // log them in order
-  textPromises.reduce((chain, textPromise) => {
+  return textPromises.reduce((chain, textPromise) => {
     return chain.then(() => textPromise).then((text) => console.log(text));
   }, Promise.resolve());
 }
@@ -314,12 +318,19 @@ performs the fetches in parallel. Thankfully there's an ideal middle-ground.
 {% Compare 'better', 'Recomm ended - nice and parallel' %}
 
 ```js
+function markHandled(promise) {
+  promise.catch(() => {});
+  return promise;
+}
+
 async function logInOrder(urls) {
   // fetch all the URLs in parallel
-  const textPromises = urls.map(async (url) => {
-    const response = await fetch(url);
-    return response.text();
-  });
+  const textPromises = urls
+    .map(async (url) => {
+      const response = await fetch(url);
+      return response.text();
+    })
+    .map((promise) => markHandled(promise));
 
   // log them in sequence
   for (const textPromise of textPromises) {
@@ -334,6 +345,24 @@ In this example, the URLs are fetched and read in parallel, but the "smart"
 {% endCompareCaption %}
 
 {% endCompare %}
+
+{% Aside 'important' %}
+`markHandled` is used to avoid "unhandled promise rejections". If a promise rejects, and it was never given a rejection handler (e.g. via `.catch(handler)`), it's known as an "unhandled rejection". These are logged to the console, and also trigger [a global event](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event).
+
+The gotcha when handling a bunch of promises in sequence, is if one of them rejects, the function ends and the remaining promises are never handled. `markHandled` is used to prevent this, by attaching rejection handlers to all of the promises.
+{% endAside %}
+
+{% Aside %}
+The `for` loop in the previous example could make use of another JavaScript feature, [for await...of](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for-await...of).
+
+```js
+for await (const text of textPromises) {
+  console.log(await text);
+}
+```
+
+This automatically `await`s the next item in the iterable (the `textPromises` array in this case). It awaits at the start of each turn through the loop, so the performance is the same as `await`ing within the loop.
+{% endAside %}
 
 ### Browser support workaround: generators
 
