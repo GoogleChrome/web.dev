@@ -9,6 +9,7 @@
   }
 }
 
+
 .about__teams {
   border-block-start: 1px solid var(--color-stroke);
 
@@ -26,6 +27,21 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
+
+    @include media-query('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-query('xs') {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @include media-query('xs') {
+    .authors {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 }
 
@@ -42,65 +58,36 @@
   }
 }
 
-.about__article {
-  text-align: center;
-  max-width: 28rem;
-
-  > img {
-    margin-inline: auto;
-  }
-
-  p {
-    @include apply-utility('color', 'mid-text');
-  }
-}
-
 .about__coupled-column {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @include media-query('xs') {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   h5 {
     margin: 0.5em;
   }
 
 
-  > div:first-child {
+  div:first-child {
     border-right: 1px solid #D2D3D7;
     padding-right: get-space('size-2');
-  }
 
-  > div:last-child {
-    padding-left: get-space('size-2');
-  }
-}
-
-@include media-query('md') {
-  .about__pod {
-    --cluster-horizontal-alignment: start;
-    text-align: left;
-
-    h2,
-    p {
-      margin-inline-start: 0;
+    @include media-query('xs') {
+      border-right: 0;
+      padding-right: 0;
     }
   }
 
-  .about__pod-columns {
-    grid-template-columns: 20rem 1fr;
-  }
+  div:last-child {
+    padding-left: get-space('size-2');
 
-  .about__columns {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    column-gap: get-space('size-2');
-  }
-
-  .about__article {
-    text-align: left;
-
-    > img {
-      margin-inline-end: 0;
+    @include media-query('xs') {
+      border-top: 1px solid #D2D3D7;
+      margin-top: get-space('size-2');
+      padding: 2.5em 0 0;
     }
   }
 }
