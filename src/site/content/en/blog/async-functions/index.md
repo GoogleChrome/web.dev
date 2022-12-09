@@ -347,13 +347,21 @@ In this example, the URLs are fetched and read in parallel, but the "smart"
 {% endCompare %}
 
 {% Aside 'important' %}
-`markHandled` is used to avoid "unhandled promise rejections". If a promise rejects, and it was never given a rejection handler (e.g. via `.catch(handler)`), it's known as an "unhandled rejection". These are logged to the console, and also trigger [a global event](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event).
+`markHandled` is used to avoid "unhandled promise rejections". If a promise
+rejects, and it was never given a rejection handler (e.g. via
+`.catch(handler)`), it's known as an "unhandled rejection". These are logged to
+the console, and also trigger [a global
+event](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event).
 
-The gotcha when handling a bunch of promises in sequence, is if one of them rejects, the function ends and the remaining promises are never handled. `markHandled` is used to prevent this, by attaching rejection handlers to all of the promises.
+The gotcha when handling a bunch of promises in sequence, is if one of them
+rejects, the function ends and the remaining promises are never handled.
+`markHandled` is used to prevent this, by attaching rejection handlers to all of
+the promises.
 {% endAside %}
 
-{% Aside %}
-The `for` loop in the previous example could make use of another JavaScript feature, [for await...of](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for-await...of).
+{% Aside %} The `for` loop in the previous example could make use of another
+JavaScript feature, [for
+await…of](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for-await...of).
 
 ```js
 for await (const text of textPromises) {
@@ -361,8 +369,9 @@ for await (const text of textPromises) {
 }
 ```
 
-This automatically `await`s the next item in the iterable (the `textPromises` array in this case). It awaits at the start of each turn through the loop, so the performance is the same as `await`ing within the loop.
-{% endAside %}
+This automatically `await`s the next item in the iterable (the `textPromises`
+array in this case). It awaits at the start of each turn through the loop, so
+the performance is the same as `await`ing within the loop. {% endAside %}
 
 ### Browser support workaround: generators
 
