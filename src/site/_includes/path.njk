@@ -82,7 +82,14 @@ eleventyComputed:
 </div>
 
 {% if coursename !== "" %}
- {% include 'partials/course-fyi.njk' %}
+<div class="course-fyi>
+<div class="wrapper pad-block-size-1">
+  <div class="prose">
+  {{paths[pathName].courseFYI}}
+  <a href="{{paths[pathName].course}}">{{paths[pathName].coursename}}</a>
+  </div>
+</div>
+</div>
   {% else %}
   <hr />
 {% endif %}
