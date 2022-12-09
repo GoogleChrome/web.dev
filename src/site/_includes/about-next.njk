@@ -66,7 +66,7 @@ externalScripts:
               <div class="card__content flow">
                 <h3 class="card__heading text-size-3">
                   {% if data.homepage %}
-                    <a href="{{ data.homepage }}">{{ data.title | i18n(locale) }}</a>
+                    <a target="_blank" href="{{ data.homepage }}">{{ data.title | i18n(locale) }}</a>
                   {% else %}
                     {{ data.title | i18n(locale) }}
                   {% endif %}

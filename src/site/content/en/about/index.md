@@ -24,27 +24,27 @@ theTeam:
     - name: paulkinlan
       role: DevRel Lead
     - name: rachelandrew
-      role: DevRel Lead
+      role: Content Lead
     - name: rowan_m
-      role: DevRel Lead
+      role: SPPI Lead
     - name: andreban
-      role: DevRel Lead
+      role: Infrastructure Lead
     - name: philipwalton
-      role: DevRel Lead
+      role: Performance Lead
     - name: una
-      role: DevRel Lead
+      role: Lorem ipsum
     - name: alispivak
-      role: DevRel Lead
+      role: Lorem ipsum
     - name: petelepage
-      role: DevRel Lead
+      role: Lorem ipsum
     - name: ewagasperowicz
-      role: DevRel Lead
+      role: Lorem ipsum
   primaryButtonText: 'See our authors'
-  primaryButtonUrl: '#'
+  primaryButtonUrl: '/authors/'
 developers:
   title: 'Making the web better for tomorrow'
   summary: |
-    We hope web.dev helps you to create high quality web experiences today, however the Chrome team is also working to make the web better tomorrow. If you want to learn more about what we are doing, and offer feedback on the features we are developing and contributing to, check out <a target="_blank" href="https://developer.chrome.com/">Chrome Developers</a>.
+    We hope web.dev helps you to create high quality web experiences today, however the Chrome team is also working to make the web better tomorrow. If you want to learn more about what we are doing, and offer feedback on the features we are developing and contributing to, check out <a href="https://developer.chrome.com/">Chrome Developers</a>.
   primaryButtonText: 'Chrome Developers'
   primaryButtonUrl: 'https://developer.chrome.com/'
 coupledColumn:
@@ -55,5 +55,5 @@ coupledColumn:
   - icon: 'icons/edit.svg'
     title: 'Want to contribute?' 
     summary: |
-      We feature articles and larger sections of content from external authors. If you would like to pitch an article, <a target="_blank" href="https://rachelandrew.co.uk/">contact Rachel Andrew</a> with an outline of your idea.
+      We feature articles and larger sections of content from external authors. If you would like to pitch an article, <a href="mailto:rachelandrew@google.com">contact Rachel Andrew</a> with an outline of your idea.
 ---
