@@ -778,3 +778,5 @@ redirects:
     destination: /blog/user-location
   - source: /speculative-prerendering/
     destination: https://developer.chrome.com/blog/prerender-pages/
+  - source: /blog/javascript-async-functions
+    destination: /blog/async-functions
