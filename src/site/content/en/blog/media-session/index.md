@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-11-02
+updated: 2022-11-09
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -44,8 +44,8 @@ The Media session API provides several benefits and capabilities:
 - Media notifications are customized on mobile, desktop, and paired wearable device.
 - The [media hub] is available on desktop.
 - Lock screen media controls are available on [ChromeOS][chromeos] and mobile.
-- Picture-in-Picture window controls are available for both [audio playback]
-  and [video conferencing].
+- Picture-in-Picture window controls are available for [audio playback],
+  [video conferencing], and [presenting slides].
 - Assistant integration on mobile is available.
 
 {% BrowserCompat 'api.MediaSession' %}
@@ -178,6 +178,9 @@ const actionHandlers = [
   ['togglemicrophone', () => { /* ... */ }],
   ['togglecamera',     () => { /* ... */ }],
   ['hangup',           () => { /* ... */ }],
+  /* Presenting slides actions */
+  ['previousslide', () => { /* ... */ }],
+  ['nextslide',     () => { /* ... */ }],
 ];
 
 for (const [action, handler] of actionHandlers) {
@@ -409,7 +412,7 @@ navigator.mediaSession.setPositionState(null);
 When the user puts their video call into a Picture-in-Picture window, the
 browser may display controls for the microphone and camera, and for hanging up.
 When the user clicks those, the website handles them through the video
-conferencing actions below.
+conferencing actions below. For an example, see the [Video Conferencing sample].
 
 <figure>
   {% Img
@@ -476,6 +479,40 @@ navigator.mediaSession.setActionHandler('hangup', () => {
 });
 ```
 
+## Presenting slides actions {: #presenting-slides-actions }
+
+When the user puts their slides presentation into a Picture-in-Picture window,
+the browser may display controls for navigating through slides. When the user
+clicks those, the website handles them through the Media Session API. For an
+example, see the [Presenting Slides sample].
+
+{% Aside %}
+At the time of writing, presenting slides actions are available only in
+Chrome&nbsp;110 on desktop.
+{% endAside %}
+
+### Previous slide
+
+The `"previousslide"` action indicates that the user wants to go back to the
+previous slide when presenting slides.
+
+```js
+navigator.mediaSession.setActionHandler('previousslide', () => {
+  // Show previous slide.
+});
+```
+
+### Next slide
+
+The `"nextslide"` action indicates that the user wants to go to the next slide
+when presenting slides.
+
+```js
+navigator.mediaSession.setActionHandler('nextslide', () => {
+  // Show next slide.
+});
+```
+
 ## Samples
 
 Check out some [Media Session samples] featuring [Blender Foundation] and
@@ -510,3 +547,6 @@ Check out some [Media Session samples] featuring [Blender Foundation] and
 [jan morgenstern's work]: http://www.wavemage.com/category/music/
 [audio playback]: https://developers.google.com/web/updates/2018/10/watch-video-using-picture-in-picture#show_canvas_element_in_picture-in-picture_window
 [video conferencing]: #video-conferencing-actions
+[video conferencing sample]: https://googlechrome.github.io/samples/media-session/video-conferencing.html
+[presenting slides sample]: https://googlechrome.github.io/samples/media-session/slides.html
+[presenting slides]: #presenting-slides-actions
