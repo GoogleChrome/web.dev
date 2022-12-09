@@ -9,7 +9,6 @@
   }
 }
 
-
 .about__teams {
   border-block-start: 1px solid var(--color-stroke);
 
@@ -50,7 +49,7 @@
     max-width: 75ch;
   }
   .button {
-    margin-top: 40px;
+    margin-top: 2.5em;
   }
 
   .headline__title {
@@ -70,9 +69,8 @@
     margin: 0.5em;
   }
 
-
   div:first-child {
-    border-right: 1px solid #D2D3D7;
+    border-right: 1px solid get-utility-value('color', 'stroke');
     padding-right: get-space('size-2');
 
     @include media-query('xs') {
@@ -85,7 +83,7 @@
     padding-left: get-space('size-2');
 
     @include media-query('xs') {
-      border-top: 1px solid #D2D3D7;
+      border-top: 1px solid get-utility-value('color', 'stroke');
       margin-top: get-space('size-2');
       padding: 2.5em 0 0;
     }
