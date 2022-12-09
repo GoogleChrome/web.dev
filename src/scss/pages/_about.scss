@@ -1,50 +1,44 @@
-.about__columns {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: #{get-space('size-2')} #{$global-gutter};
-}
-
-.about__pod {
-  --cluster-horizontal-alignment: center;
-
-  padding: $global-gutter;
-  border-radius: $global-radius-large;
-  box-shadow: 2px 14px 24px rgba(0, 0, 0, 0.1);
-  max-width: 68rem;
-  margin-inline: auto;
-  text-align: center;
-
-  @include apply-utility('bg', 'core-bg');
-
-  p {
-    max-width: 45ch;
-  }
-
-  h2,
-  p {
-    margin-inline: auto;
-  }
-
-  a,
-  a:visited {
-    @include apply-utility('font', 'brand');
-    @include apply-utility('color', 'action-text');
-  }
-
-  > svg {
-    display: block;
+@include media-query('lg') {
+  .about {
+    .hero__title {
+      margin-bottom: 20px;
+    }
+    .hero__content {
+      margin-block-start: get-space('size-4');
+    }
   }
 }
 
-.about__pod-columns {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-block-start: get-space('base');
-  gap: $global-gutter;
+.about__teams {
+  border-block-start: 1px solid var(--color-stroke);
 
-  img {
-    margin-inline: auto;
+  .card {
+    padding-block: get-space('size-1');
+  }
+
+  .card > img {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+  }
+
+  .authors {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.about__developers {
+  p {
+    max-width: 75ch;
+  }
+  .button {
+    margin-top: 40px;
+  }
+
+  .headline__title {
+    margin-top: 1.5em;
   }
 }
 
@@ -61,24 +55,22 @@
   }
 }
 
-.about__pairs {
-  dd {
-    margin: 0;
+.about__coupled-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-    @include apply-utility('color', 'mid-text');
+  h5 {
+    margin: 0.5em;
   }
 
-  dd + dt {
-    border-block-start: 1px solid var(--color-stroke);
-    margin-block-start: get-space('size-1');
-    padding-block-start: get-space('size-1');
+
+  > div:first-child {
+    border-right: 1px solid #D2D3D7;
+    padding-right: get-space('size-2');
   }
 
-  a,
-  a:visited {
-    font-weight: normal;
-    @include apply-utility('font', 'brand');
-    @include apply-utility('color', 'action-text');
+  > div:last-child {
+    padding-left: get-space('size-2');
   }
 }
 

@@ -9,64 +9,110 @@ externalScripts:
 {% from 'macros/icon.njk' import icon, svg with context %}
 
 <div class="about">
-
-  {# Intro and pods start #}
-  <div class="region bg-mid-bg">
-    <div class="wrapper flow">
-      <header class="headline all-center flow">
-        <h1 class="headline__title">{{ intro.title }}</h1>
-        {{ intro.summary | md | safe }}
-        <div class="headline__action all-center flow-space-size-2">
-          <h2 class="text-size-3">{{ intro.sectionHeading }}</h2>
+  <section class="bg-mid-bg hero">
+    <div class="wrapper">
+      <div class="hero__columns switcher" data-direction="rev">
+        <div class="flow">
+          {% Img
+            src=banner.image,
+            width="546",
+            height="421",
+            alt=banner.title,
+            loading="lazy",
+            class="hero__decor"
+          %}
         </div>
-      </header>
-      <div class="flow gap-top-size-2 flow-space-size-1">
-        {% for item in pods %}
-        <article class="about__pod">
-          {{ svg('../../images/' + item.brand , {label: item.alt}) }}
-          <div class="about__pod-columns">
-            <div>
-              {% Img src=item.decor.src, alt="", width=item.decor.width, height=item.decor.height %}
-            </div>
-            <div class="flow flow-space-base">
-              <h2 class="text-size-3">{{ item.title }}</h2>
-              <p class="color-mid-text">{{ item.summary }}</p>
-              <div class="cluster flow-space-size-1">
-                {% for action in item.actions %}
-                  <a href="{{ action.url }}">{{ action.text }}</a>
-                {% endfor %}
-              </div>
-            </div>
+        <div>
+          <span aria-hidden="true" class="hero__eyebrow">{{ banner.eyebrow }}</span>
+          <div class="hero__content flow gap-top-size-5">
+            <h1 class="hero__title">{{ banner.title }}</h1>
+            <div class="color-mid-text">{{ banner.summary }}</div>
           </div>
-        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Intro start #}
+  <section class="about__intro region bg-core-bg">
+    <div class="wrapper flow" data-size='extra-narrow'>
+        <h1 class="headline__title">{{ intro.title }}</h1>
+        {% for paragraph in intro.summary %}  
+          <p class="color-mid-text">{{ paragraph.paragraph | safe }}</p>
+        {% endfor %}
+    </div>
+  </section>
+  {# Intro end #}
+  
+  {# The teams start #}
+  <section class="about__teams region bg-core-bg">
+    <div class="wrapper flow all-center">
+      <h1 class="headline__title"> {{ theTeam.title }} </h1>
+      <p class="color-mid-text"> {{ theTeam.subTitle }} </p>
+      <div class="authors gap-top-size-2">
+        {% for author in theTeam.authors %}  
+          {% set data = collections.authors[author.name] %}
+
+          {% if data %}
+            <article class="card all-center">
+              {% Img
+                src=data.image,
+                width="192",
+                height="192",
+                alt=data.title | i18n(locale),
+                decoding="async",
+                loading="lazy"
+              %}
+              <div class="card__content flow">
+                <h3 class="card__heading text-size-3">
+                  {% if data.homepage %}
+                    <a href="{{ data.homepage }}">{{ data.title | i18n(locale) }}</a>
+                  {% else %}
+                    {{ data.title | i18n(locale) }}
+                  {% endif %}
+                </h3>
+                <p>{{ author.role }}</p>
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div>
+        <a class="button gap-top-size-2" target="_blank" data-type="primary" href="{{ theTeam.primaryButtonUrl }}">
+          {{ theTeam.primaryButtonText }}
+        </a>
+      </div>
+    </div>
+  </section>
+  {# The teams end #}
+
+  {# Chrome developers start #}
+  <section class="about__developers region bg-mid-bg">
+    <div class="wrapper flow all-center">
+      <div> {% include "icons/chrome.svg" %} </div>
+
+      <h1 class="headline__title">{{ developers.title }}</h1>
+      <p>{{ developers.summary | safe }}</p>
+      <div>
+        <a class="button" data-type="primary" href="{{ developers.primaryButtonUrl }}">{{ developers.primaryButtonText }}</a>
+      </div>
+    </div>
+  </section>
+  {# Chrome developers end #}
+
+  {# Coupled Column start #}
+  <section class="region bg-core-bg">
+    <div class="wrapper flow all-center">
+      <div class="about__coupled-column"> 
+        {% for column in coupledColumn %}
+          <div>
+            {% include column.icon %}
+            <h5>{{ column.title }}</h5>
+            <p class="color-mid-text">{{ column.summary | safe }}</p>
+          </div>
         {% endfor %}
       </div>
     </div>
-  </div>
-  {# Intro and pods end #}
-
-  {# Other resources start #}
-  <div class="region hidden-yes">
-    <div class="wrapper" data-size="narrow">
-      <div class="about__columns">
-        <article class="about__article flow">
-          {% Img src=otherResources.decor.src, alt="", width=otherResources.decor.width, height=otherResources.decor.height %}
-          <h2>{{ otherResources.title }}</h2>
-          {{ otherResources.summary | md | safe }}
-        </article>
-        <dl class="about__pairs">
-          {% for item in otherResources.pairs %}
-            <dt>
-              <a href="{{ item.url }}">{{ item.title }}</a>
-            </dt>
-            <dd>{{ item.summary }}</dd>
-          {% endfor %}
-        </dl>
-      </div>
-    </div>
-  </div>
-  {# Other resources end #}
-
-  {% include 'partials/subscribe.njk' %}
-
+  </section>
+  {# Coupled Column end #}
 </div>
