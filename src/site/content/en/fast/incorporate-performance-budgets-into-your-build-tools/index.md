@@ -23,7 +23,7 @@ how to choose one that best fits your needs and current setup. 🕵️‍♀️
 
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is an auditing tool that tests sites in a few key areas—performance, accessibility, best practices and how well your site performs as a progressive web application.
 
-The [command line version](https://developers.google.com/web/tools/lighthouse/#cli) of Lighthouse (v5+) supports setting [performance budgets](https://developers.google.com/web/tools/lighthouse/audits/budgets) based on:
+The [command line version](https://developer.chrome.com/docs/lighthouse/overview/#cli) of Lighthouse (v5+) supports setting [performance budgets](/use-lighthouse-for-performance-budgets/) based on:
 
 - resource size
 - resource count
@@ -173,7 +173,7 @@ If the scores for a pull request on GitHub fall below the threshold you've set, 
   </figcaption>
 </figure>
 
-If you find your pull request blocked by a poor Lighthouse score, run an audit with [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) or in [Dev Tools](https://developers.google.com/web/tools/lighthouse/#devtools). It generates a report with details about bottlenecks and hints for simple optimizations.
+If you find your pull request blocked by a poor Lighthouse score, run an audit with [Lighthouse CLI](https://developer.chrome.com/docs/lighthouse/overview/#cli) or in [Dev Tools](https://developer.chrome.com/docs/lighthouse/overview/#devtools). It generates a report with details about bottlenecks and hints for simple optimizations.
 
 ## Summary
 

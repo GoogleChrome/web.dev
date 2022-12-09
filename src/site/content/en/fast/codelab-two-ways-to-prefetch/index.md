@@ -202,5 +202,5 @@ To navigate to the product page, click **Buy now**. Take a look at the **Network
 The `style-product.css` file is retrieved from the "prefetch cache" and it took only 12 ms to load.
 
 {% Aside %}
-When using HTTP `Link` header, you can decide whether to prefetch depending on the network conditions based on the information available in [client hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/).
+When using HTTP `Link` header, you can decide whether to prefetch depending on the network conditions based on the information available in [client hints](/performance-optimizing-content-efficiency-client-hints//).
 {% endAside %}

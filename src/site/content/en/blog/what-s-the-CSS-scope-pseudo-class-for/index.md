@@ -14,7 +14,7 @@ tags:
 
 > A pseudo-class which represents any element that is in the contextual reference element set. This is is a (potentially empty) explicitly-specified set of elements, such as that specified by the `querySelector()`, or the parent element of a `<style scoped>` element, which is used to "scope" a selector so that it only matches within a subtree.
 
-An example of using this is within a `<style scoped>` ([more info](https://developers.google.com/web/updates/2012/03/A-New-Experimental-Feature-style-scoped)):
+An example of using this is within a `<style scoped>` ([more info](https://developer.chrome.com/blog/a-new-experimental-feature-style-scoped)):
 
 ```html
 <style>

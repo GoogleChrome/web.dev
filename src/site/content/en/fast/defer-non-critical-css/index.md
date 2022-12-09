@@ -12,7 +12,7 @@ tags:
   - performance
 ---
 
-CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources):
+CSS files are [render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/):
 they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles
 take longer to render.
 

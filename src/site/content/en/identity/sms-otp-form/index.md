@@ -147,7 +147,7 @@ Optional attributes:
 * [`pattern`](https://developer.mozilla.org/docs/Web/HTML/Attributes/pattern)
   specifies the format that the entered OTP must match. Use regular expressions to specify
   the matching pattern, for example, `\d{6}` constrains the OTP to a six digit string. Learn more about the
-  `pattern` attribute in [Use JavaScript for more complex real-time validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation)
+  `pattern` attribute in [Use JavaScript for more complex real-time validation](/learn/forms/javascript/#ensure-users-are-notified-about-errors-in-real-time)
 
 * [`required`](https://developer.mozilla.org/docs/Web/HTML/Attributes/required)
   indicates that a field is required.

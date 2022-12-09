@@ -117,7 +117,7 @@ A `MediaStream` can be attached to a video element by setting the [`srcObject` a
 The `MediaStreamTrack` is actively using the camera, which takes resources, and keeps the camera open and camera light on. When you are no longer using a track, make sure to call `track.stop()` so that the camera can be closed.
 {% endAside %}
 
-`getUserMedia` can also be used [as an input node for the Web Audio API](https://developers.google.com/web/updates/2012/09/Live-Web-Audio-Input-Enabled):
+`getUserMedia` can also be used [as an input node for the Web Audio API](https://developer.chrome.com/blog/live-web-audio-input-enabled/):
 
 ```js
 // Cope with browser differences.
@@ -185,7 +185,7 @@ Setting a disallowed constraint value gives a `DOMException` or an `Overconstrai
 
 #### Screen and tab capture
 
-Chrome apps also make it possible to share a live video of a single browser tab or the entire desktop through [`chrome.tabCapture`](https://developer.chrome.com/dev/extensions/tabCapture) and [`chrome.desktopCapture`](https://developer.chrome.com/extensions/desktopCapture) APIs. (For a demo and more information, see [Screensharing with WebRTC](https://developers.google.com/web/updates/2012/12/Screensharing-with-WebRTC). The article is a few years old, but it's still interesting.)
+Chrome apps also make it possible to share a live video of a single browser tab or the entire desktop through [`chrome.tabCapture`](https://developer.chrome.com/dev/extensions/tabCapture) and [`chrome.desktopCapture`](https://developer.chrome.com/extensions/desktopCapture) APIs. (For a demo and more information, see [Screensharing with WebRTC](https://developer.chrome.com/blog/screensharing-with-webrtc). The article is a few years old, but it's still interesting.)
 
 It's also possible to use screen capture as a `MediaStream` source in Chrome using the experimental `chromeMediaSource` constraint. Note that screen capture requires HTTPS and should only be used for development due to it being enabled through a command-line flag as explained in this [post](https://groups.google.com/forum/#!msg/discuss-webrtc/TPQVKZnsF5g/Hlpy8kqaLnEJ).
 

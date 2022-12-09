@@ -161,7 +161,7 @@ bring up a "debug" option which will launch a version of the [Chrome DevTools](h
 you to play around with.
 
 Ghostlab makes this possible via the bundled [Weinre](http://people.apache.org/~pmuellr/weinre/docs/latest/) remote web inspector, which
-lets you debug scripts and tweak styles on connected devices. Similar to the [remote debugging](https://developers.google.com/chrome-developer-tools/docs/remote-debugging) experience available for Chrome for Android, you can select elements, run some
+lets you debug scripts and tweak styles on connected devices. Similar to the [remote debugging](https://developer.chrome.com/docs/devtools/remote-debugging/) experience available for Chrome for Android, you can select elements, run some
 performance profiling and debug scripts.
 
 All in all, I was impressed with how quickly I was able to use Ghostlab for

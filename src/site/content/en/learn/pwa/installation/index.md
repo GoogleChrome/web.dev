@@ -197,7 +197,7 @@ Some app catalogs and stores have technical or business requirements that before
 ## Resources
 
 - [What does it take to be installable](/install-criteria/)
-- [WebAPKs on Android](https://developers.google.com/web/fundamentals/integration/webapks)
+- [WebAPKs on Android](/webapks/)
 - [Patterns for promoting PWA installation](/promote-install/)
 - [Using a PWA in your Android app](/using-a-pwa-in-your-android-app/)
 - [List your Progressive Web App in Google Play](https://chromeos.dev/en/publish/pwa-in-play)

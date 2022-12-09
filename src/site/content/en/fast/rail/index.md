@@ -271,7 +271,7 @@ The following DevTools features are especially relevant:
   to measure whether your animations truly run smoothly.
 
 * [Monitor CPU usage, JS heap size, DOM nodes, layouts per second, and
-  more](https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor)
+  more](https://developer.chrome.com/blog/new-in-devtools-64/#perf-monitor)
   in real-time with the **Performance Monitor**.
 
 * [Visualize network
@@ -321,7 +321,7 @@ The following audits are especially relevant:
   user input, such as mouse clicks, screen taps, or keyboard presses.
 
 * [Time To
-  Interactive](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive).
+  Interactive](https://developer.chrome.com/docs/lighthouse/performance/interactive/).
   Measures when a user can consistently interact with all page elements.
 
 **Load**
@@ -335,7 +335,7 @@ The following audits are especially relevant:
   networks](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
 
 * [Eliminate render-blocking
-  resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).
+  resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/).
 
 * [Defer offscreen images](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/). Defer the loading
   of offscreen images until they're needed.
