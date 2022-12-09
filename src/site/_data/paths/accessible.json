@@ -6,6 +6,7 @@
   "overview": "i18n.paths.accessible.overview",
   "course": "/learn/accessibility/",
   "coursename": "i18n.courses.learn_accessibility.title",
+  "courseFYI": "i18n.courses.learn_accessibility.fyi",
   "topics": [
     {
       "title": "i18n.paths.accessible.topics.understand_the_diverse_needs_of_users",

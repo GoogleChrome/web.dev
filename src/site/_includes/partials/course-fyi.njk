@@ -1,0 +1,15 @@
+{% from 'macros/icon.njk' import svg with context %}
+{%- set courseData = courses[projectKey] -%}
+
+<div class="course-fyi>
+<div class="wrapper pad-block-size-1">
+  <div class="prose">
+    <h2 id="{{ courseData.title | i18n(locale) | slug }}" class="text-size-2">
+      {{ courseData.title | i18n(locale) }}
+      <a href="#{{ courseData.title | i18n(locale) | slug }}" aria-hidden="true" class="color-mid-text">#</a>
+    </h2>
+    <p>{{ course.meta.fyi | i18n(locale) }}</p>
+    <a class="button" data-type="primary" href="{{ courseData.title | i18n(locale) | slug }}">Learn more</a>
+  </div>
+</div>
+</div>
