@@ -348,7 +348,7 @@ In this example, the URLs are fetched and read in parallel, but the "smart"
 
 {% Aside 'important' %}
 `markHandled` is used to avoid "unhandled promise rejections". If a promise
-rejects, and it was never given a rejection handler (e.g. via
+rejects, and it was never given a rejection handler (for example, via
 `.catch(handler)`), it's known as an "unhandled rejection". These are logged to
 the console, and also trigger [a global
 event](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event).
