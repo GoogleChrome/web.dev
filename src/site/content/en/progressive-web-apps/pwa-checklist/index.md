@@ -280,7 +280,7 @@ for users.
 After determining which features your users expect to work offline, you'll
 need to make your content available and adaptable to offline contexts. In
 addition, you can use
-[IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb),
+[IndexedDB](/indexeddb/),
 an in-browser NoSQL storage system, to store and retrieve data, and
 [background sync](https://developer.chrome.com/blog/background-sync/)
 to allow users to take actions while offline and defer server communications
@@ -431,7 +431,7 @@ in-context rationale to the user for why you need that permission.
 
 #### How
 
-The [Permission UX](https://developers.google.com/web/fundamentals/push-notifications/permission-ux)
+The [Permission UX](/push-notifications-permissions-ux/)
 article and UX Planet's
 [The Right Ways to Ask Users for Permissions](https://uxplanet.org/mobile-ux-design-the-right-ways-to-ask-users-for-permissions-6cdd9ab25c27)
 are good resources to understand how to design permission prompts that, while

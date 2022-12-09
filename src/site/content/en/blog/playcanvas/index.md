@@ -18,7 +18,7 @@ tags:
 Website designers are familiar with the idea of responsive design, building a
 website to work across different devices, such as mobile phones, tablets and
 computers and different screen resolutions and pixel ratios.
-[WebVR](https://developers.google.com/web/fundamentals/vr/) introduces new challenges to the idea of
+[WebVR](https://developer.chrome.com/blog/ar-for-the-web/) introduces new challenges to the idea of
 responsive design.
 
 We can categorize a WebVR experience by two metrics - the level of immersion and

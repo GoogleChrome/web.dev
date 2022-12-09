@@ -43,7 +43,7 @@ The modal overlay should be aligned to the viewport, so set its `position` to `f
 }
 ```
 
-It has an initial `opacity` of 0, so it's hidden from view, but then it also needs `pointer-events` set to `none` so that clicks and touches pass through. Without that, it blocks all interactions, rendering the whole page unresponsive. Finally, because it animates its `opacity` and `transform`, those need to be marked as changing with `will-change` (see also [Using the will-change property](https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance#using-the-will-change-property)).
+It has an initial `opacity` of 0, so it's hidden from view, but then it also needs `pointer-events` set to `none` so that clicks and touches pass through. Without that, it blocks all interactions, rendering the whole page unresponsive. Finally, because it animates its `opacity` and `transform`, those need to be marked as changing with `will-change` (see also [Using the will-change property](/animations-and-performance/#using-the-will-change-property)).
 
 When the view is visible, it needs to accept interactions and have an `opacity` of 1:
 
@@ -61,7 +61,7 @@ modal.classList.add('visible');
 ```
 
 At this point, the modal view appears without any animation, so you can now add that in
-(see also [Custom Easing](https://developers.google.com/web/fundamentals/design-and-ux/animations/custom-easing)):
+(see also [Custom Easing](/custom-easing/)):
 
 ```css
 .modal {

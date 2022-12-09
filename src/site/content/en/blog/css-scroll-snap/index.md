@@ -266,7 +266,7 @@ scrolling, they can be used together and complement each other.
 
 ### Overscroll behavior
 
-[Overscroll behavior API](https://developers.google.com/web/updates/2017/11/overscroll-behavior) controls how
+[Overscroll behavior API](https://developer.chrome.com/blog/overscroll-behavior/) controls how
 scroll is chained across multiple elements and it is not affected by scroll
 snap.
 

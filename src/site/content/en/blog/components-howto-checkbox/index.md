@@ -295,5 +295,5 @@ Any other key press is ignored and passed back to the browser.
 
 [howto-github]: https://github.com/GoogleChromeLabs/howto-components
 [checkbox-pattern]: https://www.w3.org/TR/wai-aria-practices-1.1/#checkbox
-[what-aria]: https://developers.google.com/web/fundamentals/accessibility/semantics-aria/#what_can_aria_do
-[using-tabindex]: https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex
+[what-aria]: /semantics-aria/#what-can-aria-do
+[using-tabindex]: /using-tabindex/

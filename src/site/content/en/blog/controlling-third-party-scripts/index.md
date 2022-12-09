@@ -32,7 +32,7 @@ the conversation often quickly moves to performance problems,
 losing sight of the foundations of what the "core" role of these tags are.
 They provide a wide range of useful functionality,
 making the web
-[more dynamic, interactive, and interconnected](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript).
+[more dynamic, interactive, and interconnected](/optimizing-content-efficiency-loading-third-party-javascript/).
 However, third-party tags can be added by different teams across the organization
 and are often forgotten about over time.
 People move on, contracts expire, or the results are yielded,

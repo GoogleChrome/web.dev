@@ -194,7 +194,7 @@ FT.com](https://medium.com/ft-product-technology/a-faster-ft-com-10e7c077dc1c).
 For cases where the test page (let's say a product detail page) is mostly linked
 out from a different page (let's say the homepage),
 [prefetching](/link-prefetch/) or
-[prerendering](https://developers.google.com/web/updates/2018/07/nostate-prefetch)
+[prerendering](https://developer.chrome.com/blog/nostate-prefetch)
 the product page directly from the homepage for the test group will speed up the
 subsequent load of the page. Note that in this case the A/B test split (step 4)
 is done on the homepage. In addition, all of this may slow down the first page

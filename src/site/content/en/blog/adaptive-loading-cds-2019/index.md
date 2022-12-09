@@ -69,12 +69,12 @@ The [`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/We
 
 ### `NetworkInformation.saveData`
 
-The [`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data) property is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %}
+The [`navigator.connection.saveData`](/optimizing-content-efficiency-save-data/) property is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %}
 
 There are two places where you can make a decision about what to serve to users:
 the client and the server. On the client, you have the JavaScript APIs noted
 above. On the server, you can use [client
-hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints)
+hints](/performance-optimizing-content-efficiency-client-hints/)
 to get insight into the user's device capabilities and the network they're
 connected to.
 

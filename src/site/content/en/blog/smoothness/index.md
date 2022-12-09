@@ -90,7 +90,7 @@ doing so, even if those costs aren't immediately apparent. Animations should be
 defined in terms of composite property changes wherever possible.
 
 Defining [declarative CSS animations or using Web
-Animations](https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript),
+Animations](/css-vs-javascript/),
 and ensuring you [animate composite
 properties](https://developer.chrome.com/blog/hardware-accelerated-animations/),
 is a great first step to ensuring smooth and efficient animations. But still,
@@ -347,7 +347,7 @@ user.
 
 Or, a game which leverages `<canvas>` (perhaps even using techniques like
 [offscreen
-canvas](https://developers.google.com/web/updates/2018/08/offscreen-canvas) to
+canvas](https://developer.chrome.com/blog/offscreen-canvas/) to
 ensure a steady frame rate) may technically be perfectly smooth in terms of
 animation frames, all while failing to load high quality game assets into the
 scene or exhibiting rendering artifacts.

@@ -17,7 +17,7 @@ feedback:
 ---
 
 The traditional way of getting access to the system clipboard was via
-[`document.execCommand()`](https://developers.google.com/web/updates/2015/04/cut-and-copy-commands)
+[`document.execCommand()`](https://developer.chrome.com/blog/cut-and-copy-commands/)
 for clipboard interactions. Though widely supported, this method of cutting and
 pasting came at a cost: clipboard access was synchronous, and could only read
 and write to the DOM.
@@ -322,7 +322,7 @@ requesting permission, but reading from the clipboard always requires
 permission.
 
 Permissions for copy and paste have been added to the
-[Permissions API](https://developers.google.com/web/updates/2015/04/permissions-api-for-the-web).
+[Permissions API](https://developer.chrome.com/blog/permissions-api-for-the-web/).
 The `clipboard-write` permission is granted automatically to pages when they are
 the active tab. The `clipboard-read` permission must be requested, which you can
 do by trying to read data from the clipboard. The code below shows the latter:

@@ -33,7 +33,7 @@ When designing a highly interactive touch application, you will discover that th
 Our goal was to make Build feel natural on touch devices, not just adding touch input to the original desktop implementation, but make it feel as it was really intended for touch. We ended up with two variations of the UI, one for desktops and tablets with large screens and one for mobile devices with smaller screens. When possible, it's best to use a single implementation and have a fluid transition between modes. In our case, we determined that there was such a significant difference in experience between these two modes that we decided to rely on a specific breakpoint. The two versions have a lot of features in common and we tried to do most things with just one code implementation, but some aspects of the UI work differently between the two.
 
 We use user-agent data to detect mobile devices and then we check the viewport size to decide if the small screen mobile UI should be used. It's a bit hard to choose a breakpoint for what a "large screen" should be, because it's hard to get a reliable value of the physical screen size.  Fortunately, in our case, it doesn't really matter if we display the small screen UI on a touch device with a large screen, because the tool will still work fine, just that some of the buttons may feel a little bit too large.  In the end, we set the breakpoint to 1000 pixels; if you load the site from a window wider than 1000 pixels (in landscape mode), you'll get the large screen version.
- 
+
 Let's talk a little bit about the two screen sizes and experiences:
 
 ### Large screen, with mouse and touch support
@@ -72,19 +72,19 @@ On the small screen devices, we need to give the content as much screen real est
 
 ## WebGL Performance and Support
 
-Modern touch devices have quite powerful GPUs, but they are still far from their desktop counterparts, so we knew we would have some challenges with performance, especially in the Explore 3D mode where we need to render a lot of creations at the same time. 
+Modern touch devices have quite powerful GPUs, but they are still far from their desktop counterparts, so we knew we would have some challenges with performance, especially in the Explore 3D mode where we need to render a lot of creations at the same time.
 
-Creatively, we wanted to add a couple of new types of bricks with complex shapes and even transparency -- features that are typically very heavy on the GPU. However, we had to be backwards-compatible and continue supporting creations from the first version, so we couldn't set any new restrictions, such as significantly reducing the total number of bricks in the creations. 
+Creatively, we wanted to add a couple of new types of bricks with complex shapes and even transparency -- features that are typically very heavy on the GPU. However, we had to be backwards-compatible and continue supporting creations from the first version, so we couldn't set any new restrictions, such as significantly reducing the total number of bricks in the creations.
 
 In the first version of Build we had a maximum limit of bricks that could be used in one creation. There was a "brick-meter" indicating how many bricks that were left. In the new implementation we had some of the new bricks to affect the brick-meter more than the standard bricks, thus slightly reducing the total maximum number of bricks. This was one way to include new bricks while still maintaining decent performance.
 
-In Explore 3D mode there is quite a lot going on at the same time; loading of base plate textures, loading creations, animating and rendering creations, and so on.  This requires a lot from both GPU and CPU, so we did a lot of [frame profiling](https://developers.google.com/chrome-developer-tools/docs/tips-and-tricks#timeline-frames-mode) in Chrome DevTools to optimize these parts as much as possible. On mobile devices we decided to zoom a bit closer to the creations so that we don't have to render as many creations at the same time.
+In Explore 3D mode there is quite a lot going on at the same time; loading of base plate textures, loading creations, animating and rendering creations, and so on.  This requires a lot from both GPU and CPU, so we did a lot of [frame profiling](https://developer.chrome.com/docs/devtools/evaluate-performance/performance-reference/#scripting_events) in Chrome DevTools to optimize these parts as much as possible. On mobile devices we decided to zoom a bit closer to the creations so that we don't have to render as many creations at the same time.
 
 Some devices had us revisit and simplify some of the WebGL shaders, but we always found a way to solve it and move forward.
 
 ### Supporting non-WebGL devices
 
-We wanted the site to be somewhat usable even if the visitor's device doesn't support WebGL. Sometimes there are ways to represent the 3D in a simplified way using a canvas solution or CSS3D features. Unfortunately we didn't find a good enough solution to replicate Build and Explore 3D features without using WebGL. 
+We wanted the site to be somewhat usable even if the visitor's device doesn't support WebGL. Sometimes there are ways to represent the 3D in a simplified way using a canvas solution or CSS3D features. Unfortunately we didn't find a good enough solution to replicate Build and Explore 3D features without using WebGL.
 
 For consistency, the visual style of the creations must be the same across all platforms.  We could have potentially tried for a [2.5D](http://en.wikipedia.org/wiki/2.5D) solution, but this would ave made the creations look different in some ways. We also had to consider how to make sure creations built with the first version of Build with Chrome would look the same and run as smoothly in the new version of the site as they did in the first one.
 
@@ -94,13 +94,13 @@ Keeping fallback versions for WebGL solutions is sometimes just not possible.  T
 
 ## Asset Management
 
-In 2013, Google introduced a new version of Google Maps with the most significant UI changes since its launch. So we decided to redesign Build with Chrome to fit in with the new Google Maps UI, and in doing so took other factors into the redesign. The new design is relatively flat with clean solid colors and simple shapes. This enabled us to use pure CSS on a lot of the UI elements, minimizing the use of images. 
+In 2013, Google introduced a new version of Google Maps with the most significant UI changes since its launch. So we decided to redesign Build with Chrome to fit in with the new Google Maps UI, and in doing so took other factors into the redesign. The new design is relatively flat with clean solid colors and simple shapes. This enabled us to use pure CSS on a lot of the UI elements, minimizing the use of images.
 
 In Explore we need to load a lot of images; thumbnail images for the creations, map textures for the baseplates and finally the actual 3d creations. We take extra care to make sure that there is no memory leakage when we're constantly loading new images.
 
 The 3D creations are stored in a custom file format packaged as a PNG image. Keeping the 3D creations data stored as an image enabled us to basically pass the data directly to the shaders rendering the creations.
 
-For all user generated images the design allowed us to use the same image sizes to all platforms, thus minimizing storage and bandwidth usage. 
+For all user generated images the design allowed us to use the same image sizes to all platforms, thus minimizing storage and bandwidth usage.
 
 
 ## Managing Screen Orientation
@@ -131,11 +131,11 @@ In the Explore 3D mode we wanted the same navigation as the standard Google Maps
 
 A good practice is to avoid heavy computing, such as updating or rendering the 3D in the event handlers. Instead, store the touch input in a variable and react on the input in the requestAnimationFrame render loop. This also makes it easier to have a mouse implementation at the same time, you just store the corresponding mouse values in the same variables.
 
-Start by initializing an object to store the input in and add the touchstart event listener. In each event handler we call event.preventDefault(). This is to keep the browser from continuing to process the touch event, which could cause some unexpected behaviour such as scrolling or scaling the entire page. 
+Start by initializing an object to store the input in and add the touchstart event listener. In each event handler we call event.preventDefault(). This is to keep the browser from continuing to process the touch event, which could cause some unexpected behaviour such as scrolling or scaling the entire page.
 
 ```js
 var input = {dragStartX:0, dragStartY:0, dragX:0, dragY:0, dragDX:0, dragDY:0, dragging:false};
-plateContainer.addEventListener('touchstart', onTouchStart); 
+plateContainer.addEventListener('touchstart', onTouchStart);
 
 function onTouchStart(event) {
   event.preventDefault();
@@ -187,7 +187,7 @@ function handleDragging(x ,y ){
 }
 
 function handleDragStop(){
-  if(input.dragging) {  
+  if(input.dragging) {
     input.dragging = false;
     input.dragDX = 0;
     input.dragDY = 0;
@@ -242,7 +242,7 @@ function handleGestureStart(x1, y1, x2, y2){
   var dy = y2 - y1;
   input.touchStartDistance=Math.sqrt(dx*dx+dy*dy);
   input.touchStartAngle=Math.atan2(dy,dx);
-  //we also store the current scale and rotation of the actual object we are affecting. This is needed to support incremental rotation/scaling. We can't assume that an object is always the same scale when gesture starts. 
+  //we also store the current scale and rotation of the actual object we are affecting. This is needed to support incremental rotation/scaling. We can't assume that an object is always the same scale when gesture starts.
   input.startScale=currentScale;
   input.startAngle=currentRotation;
 }
@@ -280,7 +280,7 @@ function handleGesture(x1, y1, x2, y2){
 }
 ```
 
-You could potentially use the distance change between each touchmove event in a similar way as the example with dragging, but that approach is often more useful when you want a continuous movement. 
+You could potentially use the distance change between each touchmove event in a similar way as the example with dragging, but that approach is often more useful when you want a continuous movement.
 
 ```js
 function onAnimationFrame() {
@@ -296,18 +296,18 @@ function onAnimationFrame() {
 }
 ```
 
-You could also enable dragging of the object while doing the pinch and rotate gestures if you want to. In that case you would use the center point between the two fingers as the input to the dragging handler. 
+You could also enable dragging of the object while doing the pinch and rotate gestures if you want to. In that case you would use the center point between the two fingers as the input to the dragging handler.
 
 **Embedded example:**
 Rotating and scaling an object in 2D.  Similar to how the map in Explore is implemented: [http://cdpn.io/izloq](http://cdpn.io/izloq)
 
 ### Mouse and Touch Support on the Same Hardware
 
-Today there are several laptop computers, like the Chromebook Pixel, that support both mouse and touch input. This may cause some unexpected behaviors if you are not careful. 
+Today there are several laptop computers, like the Chromebook Pixel, that support both mouse and touch input. This may cause some unexpected behaviors if you are not careful.
 
-One important thing is that you should not just detect touch support and then ignore mouse input, but instead support both at the same time. 
+One important thing is that you should not just detect touch support and then ignore mouse input, but instead support both at the same time.
 
-If you are not using `event.preventDefault()` in your touch event handlers there will also be some emulated mouse events fired, in order to keep most non-touch optimized sites still working. As an example, for a single tap on the screen these events may be fired in a rapid sequence and in this order: 
+If you are not using `event.preventDefault()` in your touch event handlers there will also be some emulated mouse events fired, in order to keep most non-touch optimized sites still working. As an example, for a single tap on the screen these events may be fired in a rapid sequence and in this order:
 
 1. touchstart
 1. touchmove
@@ -330,7 +330,7 @@ Remember that when using this feature it is up to you to make the site readable 
 
 ### Mouse, Touch and Keyboard Input
 
-In Explore 3D mode we wanted there to be three ways to navigate the map: mouse (dragging), touch (dragging, pinch to zoom and rotate) and keyboard (navigate with arrow keys). All of these navigation methods work slightly differently, but we used the same approach on all of them; setting variables in event handlers and act on that in the requestAnimationFrame loop. 
+In Explore 3D mode we wanted there to be three ways to navigate the map: mouse (dragging), touch (dragging, pinch to zoom and rotate) and keyboard (navigate with arrow keys). All of these navigation methods work slightly differently, but we used the same approach on all of them; setting variables in event handlers and act on that in the requestAnimationFrame loop.
 The requestAnimationFrame loop doesn't have to know which method is used to navigate.
 
 As an example, we could set the movement of the map (dragDX and dragDY) with all three input methods. Here is the keyboard implementation:
@@ -355,7 +355,7 @@ function handleKeyInput(){
     input.dragDX = -5; //37 arrow left
   } else if(input.keyCodes.k39){
     input.dragDX = 5; //39 arrow right
-  } 
+  }
   if(input.keyCodes.k38){
     input.dragDY = -5; //38 arrow up
   } else if(input.keyCodes.k40){
@@ -365,7 +365,7 @@ function handleKeyInput(){
 
 function onAnimationFrame() {
   requestAnimationFrame( onAnimationFrame );
-  //because keydown events are not fired every frame we need to process the keyboard state first   
+  //because keydown events are not fired every frame we need to process the keyboard state first
   handleKeyInput();
   //implement animations based on what is stored in input
    /*

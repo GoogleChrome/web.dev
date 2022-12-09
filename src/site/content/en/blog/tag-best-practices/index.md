@@ -108,7 +108,7 @@ in some cases, also cause layout shifts.
 *   In most situations, if an element is inserted into the page, the browser
     must recalculate the size and position of each item on the page—this process
     is known as
-    [layout](https://developers.google.com/web/updates/2018/09/inside-browser-part3#layout).
+    [layout](https://developer.chrome.com/blog/inside-browser-part3/#layout).
     The performance impact of a single layout is minimal, but when it occurs
     excessively it can become a source of performance issues. The impact of this
     phenomenon is larger on lower-end devices and pages with a high number of
@@ -123,19 +123,19 @@ in some cases, also cause layout shifts.
 If you're adding or changing visible content on a page, keep in mind that search
 engines will need to be able to fetch and process the JavaScript used. For
 Google, you can [verify rendering of a
-page](https://developers.google.com/search/docs/advanced/javascript/dynamic-rendering#verify)
+page](https://developers.google.com/search/docs/crawling-indexing/javascript/dynamic-rendering#verify)
 for Search; other search engines may have similar testing tools available.
 {% endAside %}
 
 ### Consider using Custom Templates
 
-[Custom templates](https://developers.google.com/tag-manager/templates) support
+[Custom templates](https://developers.google.com/tag-platform/tag-manager/templates) support
 some of the same operations as Custom HTML tags but are built upon a sandboxed
 version of JavaScript that provides
 [APIs](https://developers.google.com/tag-manager/templates/api) for common use
 cases like script injection and pixel injection. As the name implies, they allow
 a template to be created, by a power user who can build this with performance in
-mind. The template can then be used by less technical users. This is often safer
+mind. Less technical users can then use the template. This is often safer
 than providing full Custom HTML access.
 
 Due to the greater restrictions imposed on custom templates, these tags are much

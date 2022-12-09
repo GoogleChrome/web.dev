@@ -46,7 +46,7 @@ concerned about their customers leaving their website.
 
 ## Solution
 Matterport's philosophy is to keep things push-button simple and delight their
-customers. Using the [WebVR API](https://developers.google.com/web/fundamentals/vr/) support in Chrome 56,
+customers. Using the [WebVR API](https://developer.chrome.com/blog/ar-for-the-web/) support in Chrome 56,
 Matterport was able to create [virtual reality that can be experienced directly
 from a mobile web browser](https://matterport.com/virtual-reality/webvr/), with
 no apps to download. This experience is currently limited to Daydream but will

@@ -138,9 +138,9 @@ so you need to consider other methods if you have background images to lazy-load
 Unlike `<img>` elements which load regardless
 of their visibility, image loading behavior in CSS is done with more
 speculation. When [the document and CSS object
-models](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model)
+models](/critical-rendering-path-constructing-the-object-model/)
 and [render
-tree](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction)
+tree](/critical-rendering-path-render-tree-construction/)
 are built, the browser examines how CSS is applied to a document before
 requesting external resources. If the browser has determined a CSS rule
 involving an external resource doesn't apply to the document as it's currently

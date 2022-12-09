@@ -171,7 +171,7 @@ improvements are better than no improvements at all.
 Lastly, you should always be [measuring the performance impact](/user-centric-performance-metrics/)
 of the code you write. While it's true that small writes to IndexedDB will perform better than large
 writes, this only matters if the writes to IndexedDB that your application is doing actually lead to
-[long tasks](https://developers.google.com/web/updates/2017/06/user-centric-performance-metrics#long_tasks)
+[long tasks](/user-centric-performance-metrics/#custom-metrics)
 that block the main thread and degrade the user experience. It's important to measure so you
 understand what you're optimizing for.
 

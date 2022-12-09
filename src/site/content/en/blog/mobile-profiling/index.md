@@ -50,10 +50,10 @@ therefore scrolling matters.
 
 ## Managing Performance
 
-Chrome ships with a great [set of developer tools.](https://developers.google.com/chrome-developer-tools/docs/overview)
+Chrome ships with a great [set of developer tools.](Xhttps://developer.chrome.com/docs/devtools/)
 This article teaches you how to use these tools to profile your mobile site. If you’re already familiar with Chrome DevTools, great! If not, check these great tutorials:
 
-- [Profiling long paint times](http://updates.html5rocks.com/2013/02/Profiling-Long-Paint-Times-with-DevTools-Continuous-Painting-Mode)
+- [Profiling long paint times](https://developer.chrome.com/blog/profiling-long-paint-times-with-devtools-continuous-painting-mode)
 - [DevTools Tips and Tricks](http://www.igvita.com/slides/2012/devtools-tips-and-tricks/#1)
 - more…
 
@@ -193,7 +193,7 @@ desktop Chrome’s  __about:tracing__.
 
 Now that we've reviewed what remote Chrome DevTools can do, let's cover how
 to get started in your remote debugging session. If you haven’t used them
-before,[read detailed instructions on how to get started](https://developers.google.com/chrome-developer-tools/docs/remote-debugging). If you’ve already
+before,[read detailed instructions on how to get started](https://developer.chrome.com/docs/devtools/remote-debugging/). If you’ve already
 used them, but have forgotten exactly how to use them, I’ve listed shortened
 instructions here as well.
 
@@ -214,7 +214,7 @@ communication through adb.
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/cpkkGI3jIGPBo3WCaUFZ.png", alt="Enable USB Debugging", width="800", height="450" %}
 </figure>
 
-The option for enabling USB debugging can be found in Android Settings. [Enable it](https://developers.google.com/chrome-developer-tools/docs/remote-debugging#enable-usb-debugging).
+The option for enabling USB debugging can be found in Android Settings. [Enable it](https://developer.chrome.com/docs/devtools/remote-debugging/#troubleshooting).
 
 ### 3. Connect to the device
 
@@ -227,7 +227,7 @@ following prompt:
 </figure>
 
 If you will be doing remote debug sessions frequently,
-I recommend checking ‘Always allow from this computer’. 
+I recommend checking ‘Always allow from this computer’.
 
 ### 4. Verify that your device is properly connected
 
@@ -253,7 +253,7 @@ adb forward tcp:9222 localabstract:chrome_devtools_remote
 
 creates a bridge between your desktop machine and your Android device via adb.
 If you run into any issues getting to this point, read over the detailed setup
-instructions [here](https://developers.google.com/chrome-developer-tools/docs/remote-debugging).
+instructions [here](https://developer.chrome.com/docs/devtools/remote-debugging/).
 
 ### 7. Verifying you're good to go
 
@@ -265,7 +265,7 @@ desktop and navigating to [http://localhost:9222](http://localhost:9222). If you
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/3vu176K580FJNGlxX99G.png", alt="Inspectable pages.", width="800", height="333" %}
 </figure>
 
-read over the detailed setup instructions [here](https://developers.google.com/chrome-developer-tools/docs/remote-debugging).
+Read over the detailed setup instructions [here](https://developer.chrome.com/docs/devtools/remote-debugging/).
 
 ## Conclusion
 

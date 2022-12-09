@@ -44,7 +44,7 @@ browsers have restricted usage of some of their features&mdash;such as
 [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
 or [high resolution timer](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)&mdash;to
 pages with [cross-origin
-isolation](/cross-origin-isolation-guide/). 
+isolation](/cross-origin-isolation-guide/).
 
 Modern web browsers enforce [Cross-Origin Embedder Policy
 (COEP)](https://developer.chrome.com/blog/coep-credentialless-origin-trial/). This ensures cross-origin
@@ -102,7 +102,7 @@ by the user, and some by intermediaries.
 <figure data-size="full">
   {% Img
      class="screenshot",
-     src="image/VbsHyyQopiec0718rMq2kTE1hke2/8yvhAw0SiJi62V5yIrT3.png", 
+     src="image/VbsHyyQopiec0718rMq2kTE1hke2/8yvhAw0SiJi62V5yIrT3.png",
      alt="There are often multiple layers of cache between the browser and server.",
      width="800", height="712"
   %}
@@ -116,7 +116,7 @@ by the user, and some by intermediaries.
 Many users regularly use locally-configured proxies, whether for access
 purposes (such as sharing a metered connection), virus inspection, or for data
 loss prevention (DLP) purposes. The intermediary cache is performing [TLS
-interception](https://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_interception). 
+interception](https://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_interception).
 
 An intermediary cache is often installed on a company employee's workstations.
 Web browsers are configured to trust the local proxy's certificates.
@@ -172,7 +172,7 @@ not. As of 2022, Firefox does split the cache, while Chrome and Safari don't.
 Chrome  [may split the
 cache](https://docs.google.com/document/d/1lvbiy4n-GM5I56Ncw304sgvY5Td32R6KHitjRXvkZ6U/edit#) in the future. Note that these attacks are different and
 complementary to [splitting it per the top-level
-origin](https://developers.google.com/web/updates/2020/10/http-cache-partitioning).
+origin](https://developer.chrome.com/blog/http-cache-partitioning).
 
 Even if this problem can be mitigated for web browsers, the problem will
 remain in local proxy caches. Therefore, we still suggest you follow the

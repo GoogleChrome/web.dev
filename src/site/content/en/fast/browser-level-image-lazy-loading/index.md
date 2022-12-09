@@ -52,7 +52,7 @@ Previously, there were two ways to defer the loading of off-screen images:
 - Using the [Intersection Observer
   API](https://developer.chrome.com/blog/intersectionobserver/)
 - Using `scroll`, `resize`, or `orientationchange` [event
-  handlers](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way)
+  handlers](/lazy-loading-images/)
 
 Either option can let developers include lazy-loading functionality, and many developers have built
 third-party libraries to provide abstractions that are even easier to use. With lazy-loading

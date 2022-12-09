@@ -95,7 +95,7 @@ The [Scale on web case studies][scale] use the following pattern:
 * The tools they used
 * Overall business results
 
-The [BookMyShow case study](https://developers.google.com/web/showcase/2017/bookmyshow)
+The [BookMyShow case study](/bookmyshow/)
 demonstrates another common organization:
 
 * Challenge

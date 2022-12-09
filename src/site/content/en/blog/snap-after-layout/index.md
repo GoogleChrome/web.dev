@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-[CSS Scroll Snap](https://developers.google.com/web/updates/2018/07/css-scroll-snap)
+[CSS Scroll Snap](/css-scroll-snap/)
 allows web developers to create well-controlled scroll experiences by declaring
 scroll snapping positions. One shortcoming of the current implementation is that
 scroll snapping does not work well when the layout changes, such as when the viewport is
@@ -174,7 +174,7 @@ UI](https://codepen.io/argyleink/pen/RwPWqKe) for visuals.
 ## Future work
 All re-snapping scroll effects are currently instant; a potential follow-up is
 to support re-snapping with [smooth scrolling
-effects](https://developers.google.com/web/updates/2016/02/smooth-scrolling-in-chrome-49).
+effects](https://developer.chrome.com/blog/smooth-scrolling-in-chrome-49/).
 See the [specification issue](https://github.com/w3c/csswg-drafts/issues/4609)
 for details.
 

@@ -286,7 +286,7 @@ it _looks_ interactive, and this cannot be measured with TBT or TTI.
 #### TBT and TTI do not consider tap delay
 
 If a site is not optimized for mobile viewing, browsers will [add a 300&nbsp;ms
-delay](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away)
+delay](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/)
 after any tap before running event handlers. They do this because they need to
 determine whether the user is trying to double-tap to zoom before they can fire
 mouse or click events.
@@ -297,7 +297,7 @@ Task](https://w3c.github.io/longtasks/), it doesn't affect a page's TBT or TTI.
 This means a page may have poor FID despite having very good TBT and TTI scores.
 
 {% Aside %}
-To avoid the tab delay issue on a page, always specify a [mobile viewport](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away).
+To avoid the tab delay issue on a page, always specify a [mobile viewport](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/).
 {% endAside %}
 
 #### Effects of cache state and bfcache on FID
