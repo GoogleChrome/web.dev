@@ -70,7 +70,14 @@ The skip-to-content link scrolls the main content into view. The first element i
 In this case, `<h1>Marking up navigation</h1>`. The main heading is followed by the tagline, a brief description of the contents of this
 tutorial. Whether the table of contents navigation comes before or after the heading in the codebase depends on the width of your browser.
 
-<img width="446" alt="On narrow screens, the table of contents is hidden behind an on this page button that toggles the navigations visibility" src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/8FNr1lp9jbtoM2weXceV.png"><img width="236" alt="On wide screens, the table of contents is always visible, with the link to the current section being highlighted in blue" src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ThkLoScjUq2V6M1b4WSj.png">
+<figure>
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/8FNr1lp9jbtoM2weXceV.png", alt="On narrow screens, the table of contents is hidden behind an on this page button that toggles the navigations visibility.", width="446", height="300", style="max-width: 300px; margin: 0 auto;" %}
+  <figcaption>On narrow screens, the table of contents is hidden behind an on this page button that toggles the navigations visibility.</figcaption>
+</figure>
+<figure>
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ThkLoScjUq2V6M1b4WSj.png", alt="On wide screens, the table of contents is always visible, with the link to the current section being highlighted in blue.", width="236", height="300", style="max-width: 400px; margin: 0 auto;" %}
+  <figcaption>On wide screens, the table of contents is always visible, with the link to the current section being highlighted in blue.</figcaption>
+</figure>
 
 If your browser is wider than 80em, the Table of contents comes before the heading in the markup, and is similar to the following
 (the class names have been removed to simplify the markup):
@@ -287,7 +294,7 @@ If you are visiting this site on a tablet or mobile device, or otherwise have a 
 
 The main difference between the permanent local navigation on wide screens and the local navigation on narrower screens that can be made to appear and disappear, is the display of the close button on the version that can be hidden. This icon is hidden on wide screens with `display: none;`.
 
-<img width="365" alt="The local navigation is showing a checkmark next to the name of this chapter." src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/MHQ1i1NnGKx2N0ovmzxy.png">
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/MHQ1i1NnGKx2N0ovmzxy.png", alt="The local navigation is showing a checkmark next to the name of this chapter.", width="365", height="75", style="max-width: 300px; margin: 0 auto;" %}
 
 The link to this document, section 010, has a slightly different appearance from the other links in the local navigation to indicate to sighted users that this is the current page. This visual difference is created with CSS. The current page is also identified with the `aria-current="page"` attribute. This informs assistive technologies that it is a link to the current page. The HTML for this list item within this local navigation is similar to:
 
@@ -329,6 +336,7 @@ navigation at the top of the page. Yahoo! does. While all the main Yahoo! proper
 most sections are the same.
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/p9q003xRDvYiTidnBEHf.png", alt="A well-contrasted navigation header, with a white picker on a black background.", width="600", height="31" %}
+
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/HyvinG9Tf5wR5qq1tM5s.png", alt="A poorly-contrasted navigation header, with a black picker on a grey background.", width="600", height="35" %}
 
 The content of the news and sports global navigation headers are the same, but the icon showing that the user is currently
