@@ -19,11 +19,9 @@ tags:
   - community
 ---
 
-_This post highlights a community expert, as a part of [Learn Accessibility!](/learn/accessibility/)_
-
-{% Aside %}
-Learn more about [Google's accessibility initiatives and research](https://www.google.com/accessibility/initiatives-research/).
-{% endAside %}
+_This post highlights a community expert, as a part of
+[Learn Accessibility!](/learn/accessibility/) Learn more about
+[Google's accessibility initiatives and research](https://www.google.com/accessibility/initiatives-research/)._
 
 **Alexandra White**: I'm lucky to call you a colleague. How would you introduce yourself and your job here?
 
