@@ -150,7 +150,7 @@ If wired, check out these APIs in this specific order:
 1. With [WebHID], understanding HID reports and report descriptors through
    [collections] is key to your comprehension of this device. This can be
    challenging without vendor documentation for this device. Tools like
-   [Wireshark] can help you reverse-engineering it. You can also use the [HID
+   [Wireshark] can help you reverse-engineer it. You can also use the [HID
    Explorer web app] for dumping HID devices info into a human-readable format.
 
 2. With [Web Serial], without vendor documentation for this device and what
