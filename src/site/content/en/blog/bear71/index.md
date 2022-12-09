@@ -17,7 +17,7 @@ tags:
 
 ### TL;DR
 
-[WebVR is an API](https://developers.google.com/web/fundamentals/vr/) built into browsers that combines
+[WebVR is an API](https://developer.chrome.com/blog/ar-for-the-web/) built into browsers that combines
 stereo rendering with real-time head tracking, enabling a quick and easy way to
 enjoy VR content online. With WebVR, content creators can create immersive VR
 content that lives online and runs on a wide range of VR hardware.

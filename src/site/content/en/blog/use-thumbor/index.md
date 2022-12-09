@@ -166,7 +166,7 @@ These methods are just a few of Thumbor's many cropping and resizing options. To
 
 ### File Formats
 
-The [format](https://thumbor.readthedocs.io/en/latest/format.html) filter converts images to `jpeg`, `webp`, `gif`, or `png`. Keep in mind that if you're optimizing for performance you should [use either JPEG or WebP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization) as PNG and GIF files tend to be significantly larger and do not compress as well.
+The [format](https://thumbor.readthedocs.io/en/latest/format.html) filter converts images to `jpeg`, `webp`, `gif`, or `png`. Keep in mind that if you're optimizing for performance you should [use either JPEG or WebP](/fast/#optimize-your-images) as PNG and GIF files tend to be significantly larger and do not compress as well.
 
 Try it now:
 

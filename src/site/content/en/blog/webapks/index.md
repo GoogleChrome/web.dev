@@ -73,7 +73,7 @@ will open this site.
 ### Using `scope` to restrict intent filters
 
 If you don't want your Progressive Web App to handle all URLs within your site,
-you can add the [`scope`](https://developers.google.com/web/fundamentals/web-app-manifest/#scope) property to
+you can add the [`scope`](/add-manifest/#scope) property to
 your web app manifest. The `scope` property tells Android to only open your web
 app if the URL matches the `origin` + `scope`. It gives you control over which
 URLs will be handled by your app, and which should be opened in the browser.
@@ -161,7 +161,7 @@ Information on how a WebAPK is updated has moved to
 What icons are used to generate the splash screen? :
 
 : We recommend you provide at least two icons:
-[192px and 512px](https://developers.google.com/web/fundamentals/web-app-manifest/#splash-screen) for the splash screen.
+[192px and 512px](/add-manifest/#splash-screen) for the splash screen.
 We heard from you that icons
 on the splash screen were too small. WebAPKs generated in Chrome 71 or later
 will show a larger icon on the splash screen. No action is required, as

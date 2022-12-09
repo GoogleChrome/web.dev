@@ -11,7 +11,7 @@ tags:
 ---
 
 {% Aside 'warning' %}
-This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article at developers.google.com, "[Shadow DOM v1: self-contained web components](https://developers.google.com/web/fundamentals/primers/shadowdom/)". It covers everything in the newer Shadow DOM v1 spec shipping in Chrome 53, Opera, and Safari 10.
+This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article, "[Shadow DOM v1: self-contained web components](/shadowdom-v1/)". It covers everything in the newer Shadow DOM v1 spec shipping in Chrome 53, Opera, and Safari 10.
 {% endAside %}
 
 This article discusses more of the amazing things you can do with Shadow DOM! It builds on the concepts discussed in [Shadow DOM 101](https://www.html5rocks.com/tutorials/webcomponents/shadowdom/)

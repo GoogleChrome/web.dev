@@ -392,7 +392,7 @@ try {
 
 The [Navigation Timing API](https://w3c.github.io/navigation-timing/) is similar
 to the Resource Timing API, but it reports only [navigation
-requests](https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading#first_what_are_navigation_requests).
+requests](https://developer.chrome.com/docs/workbox/caching-strategies-overview).
 The `navigation` entry type is also similar to the `resource` entry type, but it
 contains some [additional
 information](https://w3c.github.io/navigation-timing/#sec-PerformanceNavigationTiming)
@@ -489,4 +489,4 @@ try {
 }
 ```
 
-[devtools]: https://developers.google.com/web/updates/2018/04/devtools#tabs
+[devtools]: https://developer.chrome.com/blog/new-in-devtools-67/#tabs

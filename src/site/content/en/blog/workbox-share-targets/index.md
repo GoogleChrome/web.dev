@@ -21,7 +21,7 @@ feedback:
 ---
 
 The [Web Share Target API](/web-share-target/) lets you display
-your [Progressive Web App](https://developers.google.com/web/progressive-web-apps/checklist) in a
+your [Progressive Web App](/pwa-checklist/) in a
 user's system-level share [sheet] after it's been installed. While it works great if you have a server
 available to receive the request, it's much harder to get working if you don't.
 

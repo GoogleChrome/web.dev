@@ -48,7 +48,7 @@ maintaining its own service.
 
 ## Applying PRPL to a MPA
 
-The [PRPL pattern](https://developers.google.com/web/fundamentals/performance/prpl-pattern/) (**Preload**
+The [PRPL pattern](/apply-instant-loading-with-prpl/) (**Preload**
 critical resources, **Render** initial route, **Pre-cache** remaining routes,
 **Lazy-load** remaining routes) provides web developers with a set of rails to
 guide the structure of a PWA, with a particular emphasis on a quick time to

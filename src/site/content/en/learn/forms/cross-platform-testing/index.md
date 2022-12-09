@@ -145,7 +145,7 @@ You can simulate slow connections and different network types with
 [DevTools](https://developer.chrome.com/docs/devtools/device-mode/#network).
 
 Learn more about
-[testing with low bandwidth and high latency](https://developers.google.com/web/fundamentals/performance/poor-connectivity#testing).
+[testing with low bandwidth and high latency](/performance-poor-connectivity/#testing).
 
 ## Help users use your form when they are on the go
 
@@ -175,5 +175,5 @@ Learn more about
 ## Resources
 
 - [WebPageTest](https://webpagetest.org/easy): Website Performance and Optimization Tests
-- [Testing with low bandwidth and high latency](https://developers.google.com/web/fundamentals/performance/poor-connectivity#testing)
+- [Testing with low bandwidth and high latency](/performance-poor-connectivity/#testing)
 - [Sharing test results](/performance-audit-share/)

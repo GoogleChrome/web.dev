@@ -64,9 +64,9 @@ needing to consider state outside of the subtree. Knowing which bits of content
 decisions for page rendering.
 
 There are four types of [CSS
-containment](https://developers.google.com/web/updates/2016/06/css-containment),
+containment](/css-containment/),
 each a potential value for the `contain` CSS property, which can be combined
-together in a space-separated list of values:
+in a space-separated list of values:
 
 - `size`: Size containment on an element ensures that the element's box can be
   laid out without needing to examine its descendants. This means we can
@@ -90,7 +90,7 @@ together in a space-separated list of values:
 It may be hard to figure out which containment values to use, since browser
 optimizations may only kick in when an appropriate set is specified. You can
 play around with the values to see [what works
-best](https://developers.google.com/web/updates/2016/06/css-containment), or you
+best](/css-containment/), or you
 can use another CSS property called `content-visibility` to apply the needed
 containment automatically. `content-visibility` ensures that you get the largest
 performance gains the browser can provide with minimal effort from you as a
@@ -102,9 +102,9 @@ that provides immediate performance improvements. An element that has
 the element is off-screen (and not otherwise relevant to the user—relevant
 elements would be the ones that have focus or selection in their subtree), it
 also gains `size` containment (and it stops
-[painting](https://developers.google.com/web/updates/2018/09/inside-browser-part3#paint)
+[painting](https://developer.chrome.com/blog/inside-browser-part3/#paint)
 and
-[hit-testing](https://developers.google.com/web/updates/2018/09/inside-browser-part4#finding_the_event_target)
+[hit-testing](https://developer.chrome.com/blog/inside-browser-part4/#finding-the-event-target)
 its contents).
 
 What does this mean? In short, if the element is off-screen its descendants are

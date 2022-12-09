@@ -22,7 +22,7 @@ path to a fully accessible and more polished site.
 
 In this lesson, we'll build on that work and get you thinking about other
 accessibility factors, such as how to build websites to support [users like
-Victor Tsaran](https://developers.google.com/web/fundamentals/accessibility/#understanding-users-diversity),
+Victor Tsaran](/accessibility/#understanding-users-diversity),
 who can't see the screen.
 
 First, we'll get some background on *assistive technology*, the general term for
@@ -136,7 +136,7 @@ in a generated voice. The user can control what is read by moving the cursor to
 a relevant area with the keyboard.
 
 We asked [Victor
-Tsaran](https://developers.google.com/web/fundamentals/accessibility/#understanding-users-diversity)
+Tsaran](/accessibility/#understanding-users-diversity)
 to explain how, as a blind person, he accesses the web using a the built-in
 screen reader on OS X, called VoiceOver. See [this
 video](https://www.youtube.com/watch?v=QW_dUs9D1oQ) of Victor using VoiceOver.

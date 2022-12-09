@@ -15,8 +15,8 @@ tags:
 
 ---
 
-In my last [wasm article](https://developers.google.com/web/updates/2018/03/emscripting-a-c-library), I talked
-about how to compile a C library to wasm so you can use it on the web. One thing
+In my last [wasm article](/emscripting-a-c-library/), I talked
+about how to compile a C library to wasm so that you can use it on the web. One thing
 that stood out to me (and to many readers) is the crude and slightly awkward way
 you have to manually declare which functions of your wasm module you are using.
 To refresh your mind, this is the code snippet I am talking about:
@@ -98,7 +98,7 @@ name conflicts in bigger projects.
 
 To compile this file, we can use the same setup (or, if you want, the same
 Docker image) as in the [previous
-article](https://developers.google.com/web/updates/2018/03/emscripting-a-c-library). To use embind,
+article](/emscripting-a-c-library). To use embind,
 we add the `--bind` flag:
 
 

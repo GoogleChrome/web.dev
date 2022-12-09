@@ -124,7 +124,7 @@ on React's lifecycle.
 React 16 provides its performance trace via the
 [User Timing API](https://developer.mozilla.org/docs/Web/API/User_Timing_API),
 which you can visualize from the
-[Timings section](https://developers.google.com/web/updates/2018/04/devtools#tabs)
+[Timings section](https://developer.chrome.com/blog/new-in-devtools-67/#tabs)
 of Chrome DevTools. AirSHIFT used the Timings section to find
 unnecessary logic running in React lifecycle events.
 

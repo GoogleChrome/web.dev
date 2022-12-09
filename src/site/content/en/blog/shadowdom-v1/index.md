@@ -25,7 +25,7 @@ there's no telling if it will conflict with an existing name used by the page.
 [Subtle bugs](http://www.2ality.com/2012/08/ids-are-global.html) creep up,
 CSS specificity becomes a huge issue (`!important` all the things!), style
 selectors grow out of control, and
-[performance can suffer](https://developers.google.com/web/updates/2016/06/css-containment). The list
+[performance can suffer](https://developer.chrome.com/blog/css-containment). The list
 goes on.
 
 **Shadow DOM fixes CSS and DOM**. It introduces **scoped styles** to the web
@@ -48,7 +48,7 @@ Shadow DOM is one of the three Web Component standards:
 [Custom elements](/custom-elements-v1/).
 [HTML Imports](https://www.html5rocks.com/en/tutorials/webcomponents/imports/)
 used to be part of the list but now are considered
-[deprecated](https://developers.google.com/web/updates/2018/09/chrome-70-deps-rems#deprecate_html_imports).
+[deprecated](https://developer.chrome.com/blog/chrome-70-deps-rems/#deprecate-html-imports).
 
 You don't have to author web components that use shadow DOM. But when you do,
 you take advantage of its benefits (CSS scoping, DOM encapsulation,
@@ -1036,7 +1036,7 @@ debugging shadow DOM.
 ### Use CSS containment
 
 Typically, a web component's layout/style/paint is fairly self-contained. Use
-[CSS containment](https://developers.google.com/web/updates/2016/06/css-containment) in `:host` for a perf
+[CSS containment](https://developer.chrome.com/blog/css-containment) in `:host` for a perf
 win:
 
 ```html

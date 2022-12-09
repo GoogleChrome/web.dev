@@ -43,7 +43,7 @@ Their native app also posed problems as it required heavy data and memory usage
 to be effective. “People were using the native app and were happy with it, but
 their main concerns were the data usage and the memory it consumes,” says Anish
 Tripathi, Vice President of Design. “And if they uninstalled the app and tried
-using the mobile browser, it didn’t work the same way.” 
+using the mobile browser, it didn’t work the same way.”
 
 ## Solution
 
@@ -62,7 +62,7 @@ reliable, and engaging experiences just like the native app.
 The PWA is optimized for speed. The goal for the app—which took only **10
 months** to build—was created to enable checkout within **30 seconds**. They
 were also excited to use the
-“[**add to home screen**](https://developers.google.com/web/fundamentals/app-install-banners/)” feature
+“[**add to home screen**](/customize-install/)” feature
 to provide a native-app like experience. Their PWA application is only about
 440KB — **54 times smaller** than the Android app and **180 times smaller**
 than the iOS app. BookMyShow also took advantage of service workers to deliver

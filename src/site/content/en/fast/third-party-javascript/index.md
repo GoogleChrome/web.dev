@@ -44,8 +44,8 @@ Setting up connections takes time, and sending too many requests to multiple ser
 Third-party scripts often add to network overhead with things such as:
 - Firing additional network requests
 - Pulling in unoptimized images and videos
-- Insufficient [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching), which forces frequent fetching of network resources
-- Insufficient [server compression](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer) of resources
+- Insufficient [HTTP caching](/http-cache/), which forces frequent fetching of network resources
+- Insufficient [server compression](/optimizing-content-efficiency-optimize-encoding-and-transfer/) of resources
 - Multiple instances of frameworks and libraries pulled in by different third-party embeds
 
 ### Rendering
@@ -58,7 +58,7 @@ The __critical rendering path__ includes all resources that the browser needs to
 If a third party has server issues and fails to deliver a resource, rendering is blocked until the request times out, which can be anywhere from 10 to 80 seconds. You can test and simulate this problem with [WebPageTest Single-Point-of-Failure tests](https://css-tricks.com/use-webpagetest-api/#single-point-of-failure).
 
 {% Aside %}
-[A/B testing scripts](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/#ab_test_smaller_samples_of_users) can also often delay rendering. Most of them block content display until they complete processing—which can be true even for asynchronous A/B testing scripts.
+[A/B testing scripts](h/optimizing-content-efficiency-loading-third-party-javascript/#ab-test-smaller-samples-of-users) can also often delay rendering. Most of them block content display until they complete processing—which can be true even for asynchronous A/B testing scripts.
 {% endAside %}
 
 ## What to do about it

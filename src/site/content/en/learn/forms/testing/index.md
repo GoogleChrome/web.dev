@@ -94,7 +94,7 @@ best practice, and accessibility issues.
 There are different ways to use
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/).
 One option is to run it directly in
-[DevTools](https://developers.google.com/web/tools/lighthouse#devtools).
+[DevTools](https://developer.chrome.com/docs/lighthouse/overview/#devtools).
 Open the URL with your form in Chrome,
 [open DevTools](https://developer.chrome.com/docs/devtools/shortcuts/#open),
 switch to the Lighthouse tab, and run the audit.

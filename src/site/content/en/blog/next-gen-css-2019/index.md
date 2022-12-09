@@ -157,7 +157,7 @@ Try tabbing through the focusable elements in the demo below. You'll notice that
 
 Here are the new queries we think developers will be most excited about:
 
-*   [prefers-reduced-motion](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
+*   [prefers-reduced-motion](/prefers-reduced-motion/)
 *   [prefers-color-scheme](/prefers-color-scheme/)
 *   [prefers-contrast](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast)
 *   [prefers-reduced-transparency](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency)

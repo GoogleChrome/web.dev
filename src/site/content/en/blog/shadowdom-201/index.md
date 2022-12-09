@@ -11,7 +11,7 @@ tags:
 ---
 
 {% Aside 'warning' %}
-This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article at developers.google.com, "[Shadow DOM v1: self-contained web components](https://developers.google.com/web/fundamentals/primers/shadowdom/)". It covers everything in the newer Shadow DOM v1 spec shipping in Chrome 53, Opera, and Safari 10.
+This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article, "[Shadow DOM v1: self-contained web components](/shadowdom-v1/)". It covers everything in the newer Shadow DOM v1 spec shipping in Chrome 53, Opera, and Safari 10.
 {% endAside %}
 
 This article discusses more of the amazing things you can do with Shadow DOM.
@@ -40,7 +40,7 @@ CSS styles defined inside Shadow DOM are scoped to the ShadowRoot. This means st
 <div><h3>Light DOM</div>
 <script>
 var root = document.querySelector('div').createShadowRoot();
-root.innerHTML = '<style>h3{ color: red; }</style>' + 
+root.innerHTML = '<style>h3{ color: red; }</style>' +
                     '<h3>Shadow DOM';
 </script>
 ```
@@ -63,9 +63,9 @@ The `:host` allows you to select and style the element hosting a shadow tree:
 <script>
 var button = document.querySelector('button');
 var root = button.createShadowRoot();
-root.innerHTML = '<style>' + 
+root.innerHTML = '<style>' +
     ':host { text-transform: uppercase; }' +
-    '</style>' + 
+    '</style>' +
     '<content></content>';
 </script>
 ```
@@ -75,13 +75,13 @@ rules defined in the element, but lower specificity than a `style` attribute
 defined on the host element.  This allows users to override your styling from the outside.
 `:host` also only works in the context of a ShadowRoot so you can't use it outside of Shadow DOM.
 
-The functional form of `:host(<selector>)` allows you to target the host element if it matches a `<selector>`. 
+The functional form of `:host(<selector>)` allows you to target the host element if it matches a `<selector>`.
 
 **Example** - match only if the element itself has the class `.different` (e.g. `<x-foo class="different"></x-foo>`):
 
 ```css
 :host(.different) {
-    ...  
+    ...
 }
 ```
 
@@ -136,11 +136,11 @@ Another use for `:host` is if you're creating a theming library and want to
 support styling many types of host elements from within the same Shadow DOM.
 
 ```css
-:host(x-foo) { 
+:host(x-foo) {
     /* Applies if the host is a <x-foo> element.*/
 }
 
-:host(x-foo:host) { 
+:host(x-foo:host) {
     /* Same as above. Applies if the host is a <x-foo> element. */
 }
 
@@ -175,7 +175,7 @@ For example, if an element is hosting a shadow root, you can write `#host::shado
 <script>
     var host = document.querySelector('div');
     var root = host.createShadowRoot();
-    root.innerHTML = "<span>Shadow DOM</span>" + 
+    root.innerHTML = "<span>Shadow DOM</span>" +
                     "<content></content>";
 </script>
 ```
@@ -298,7 +298,7 @@ its slider thumb blue:
 <script>
 var root = document.querySelector('#host').createShadowRoot();
 root.innerHTML = '<div>' +
-                    '<div pseudo="x-slider-thumb"></div>' + 
+                    '<div pseudo="x-slider-thumb"></div>' +
                     '</div>';
 </script>
 ```
@@ -345,10 +345,10 @@ works beautifully! The whole picture looks like this:
 <div id="host">Host node</div>
 <script>
 var root = document.querySelector('#host').createShadowRoot();
-root.innerHTML = '<style>' + 
-    'button {' + 
-        'color: var(--button-text-color, pink);' + 
-        'font-family: var(--button-font);' + 
+root.innerHTML = '<style>' +
+    'button {' +
+        'color: var(--button-text-color, pink);' +
+        'font-family: var(--button-font);' +
     '}' +
     '</style>' +
     '<content></content>';
@@ -382,8 +382,8 @@ Below is a demo that shows how the shadow tree is affected by changing `resetSty
 <script>
 var root = document.querySelector('div').createShadowRoot();
 root.resetStyleInheritance = <span id="code-resetStyleInheritance">false</span>;
-root.innerHTML = '<style>h3{ color: red; }</style>' + 
-                 '<h3>Shadow DOM</h3>' + 
+root.innerHTML = '<style>h3{ color: red; }</style>' +
+                 '<h3>Shadow DOM</h3>' +
                  '<content select="h3"></content>';
 </script>
 </pre>
