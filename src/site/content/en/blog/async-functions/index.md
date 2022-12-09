@@ -315,7 +315,7 @@ performs the fetches in parallel. Thankfully there's an ideal middle-ground.
 
 {% endCompare %}
 
-{% Compare 'better', 'Recomm ended - nice and parallel' %}
+{% Compare 'better', 'Recommended - nice and parallel' %}
 
 ```js
 function markHandled(promise) {
