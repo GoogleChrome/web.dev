@@ -51,11 +51,11 @@ Let’s get started by looking at optimizing one of the costliest resources in a
 modern app – JavaScript.
 
 * [Decrease Front-end
-  Size](/web/fundamentals/performance/webpack/decrease-frontend-size)
+  Size](/decrease-frontend-size)
 * [Make Use of Long-term
-  Caching](/web/fundamentals/performance/webpack/use-long-term-caching)
+  Caching](/use-long-term-caching)
 * [Monitor and analyze the
-  app](/web/fundamentals/performance/webpack/monitor-and-analyze)
+  app](/monitor-and-analyze)
 * [Conclusions](/webpack-conclusion/)
 
 
