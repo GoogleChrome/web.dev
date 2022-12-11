@@ -35,7 +35,7 @@ those updates and will continue accumulating those API changes.
 
 {% Aside 'note' %}
 If you want to subscribe to further upcoming changes to
-Chrome's Web Payments implementation,  join the [Public Payment Request
+Chrome's Web Payments implementation, join the [Public Payment Request
 Announcements
 group](https://groups.google.com/a/chromium.org/forum/#!forum/paymentrequest).
 
