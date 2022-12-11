@@ -289,16 +289,18 @@ a fan of creating prototypes like this, here's a more condensed version of the s
 
 ```js
 var XFoo = document.registerElement('x-foo', {
-    prototype: Object.create(HTMLElement.prototype, {
+  prototype: Object.create(HTMLElement.prototype, {
     bar: {
-        get: function() { return 5; }
+      get: function () {
+        return 5;
+      }
     },
     foo: {
-        value: function() {
+      value: function () {
         alert('foo() called');
-        }
+      }
     }
-    })
+  })
 });
 ```
 
@@ -358,9 +360,9 @@ on the element:
 
 ```js
 proto.createdCallback = function() {
-    this.addEventListener('click', function(e) {
+  this.addEventListener('click', function(e) {
     alert('Thanks!');
-    });
+  });
 };
 ```
 
