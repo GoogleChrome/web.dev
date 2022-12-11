@@ -152,7 +152,7 @@ the [postcss](https://postcss.org/) CSS transformer. The build experience is com
 [`create-react-app`](https://reactjs.org/docs/create-a-new-react-app.html), where developers, if
 they explicitly choose not to, never touch the build parameters. The resulting processed files
 are finally signed, encrypted, and packaged in one or several (sub)packages that then get uploaded
-to the servers of the super app providers. Subpackages are meant for lazy-loading, so a mini app
+to the servers of the super app providers. Subpackages are meant for lazy loading, so a mini app
 does not have to be downloaded all at once. The packaging details are meant to be private and are
 not documented, but some package formats like WeChat's `wxapkg` format have been
 [reverse-engineered](https://github.com/sjatsh/unwxapkg).
