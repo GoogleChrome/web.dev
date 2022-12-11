@@ -18,7 +18,7 @@ HTML Imports are deprecated and was [removed](https://www.chromestatus.com/featu
 
 Think about how you load different types of resources on the web. For JS, we have `<script src>`. For CSS, your go-to is probably `<link rel="stylesheet">`. For images it's `<img>`. Video has `<video>`. Audio, `<audio>`… Get to the point! The majority of the web's content has a simple and declarative way to load itself. Not so for HTML. Here's your options:
 
-1. **`<iframe>`** - tried and true but heavy weight. An iframe's content lives entirely in a separate context than your page. While that's mostly a great feature, it creates additional challenges (shrink wrapping the size of the frame to its content is tough, insanely frustrating to script into/out of, nearly impossible to style).
+1. **`<iframe>`** - tried and true but heavy weight. An iframe's content lives entirely in a separate context than your page. While that's mostly a great feature, it creates additional challenges (shrink wrapping the size of the frame to its content is tough, extremely frustrating to script into/out of, nearly impossible to style).
 -  **AJAX** - [I love `xhr.responseType="document"`](http://ericbidelman.tumblr.com/post/31140607367/mashups-using-cors-and-responsetype-document), but you're saying I need JS to load HTML? That doesn't seem right.
 - **CrazyHacks&#8482;** - embedded in strings, hidden as comments (e.g. `<script type="text/html">`). Yuck!
 
@@ -253,7 +253,7 @@ Rules of JavaScript in an import:
 
 - Script in the import is executed in the context of the window that contains the importing `document`. So `window.document` refers to the main page document. This has two useful corollaries:
     - functions defined in an import end up on `window`.
-    - you don't have to do anything crazy like append the import's `<script>` blocks to the main page. Again, script gets executed.
+    - you don't have to do anything difficult like append the import's `<script>` blocks to the main page. Again, script gets executed.
 - Imports do not block parsing of the main page. However, scripts inside them are processed in order. This means you get defer-like behavior while maintaining proper script order. More on this below.
 
 ## Delivering Web Components

@@ -141,7 +141,7 @@ to enable `Save-Data` savings for your users.\_
    - A search application may return fewer results at a time, limit the number of
      media-heavy results, or reduce the number of dependencies required to render
      the page.
-   - A news-oriented site may surface fewer stories, omit less popular categories,
+   - A news-oriented site may show fewer stories, omit less popular categories,
      or provide smaller media previews.
 3. Provide server logic to check for the `Save-Data` request header and consider
    providing an alternate, lighter page response when it is enabled &mdash; e.g.,

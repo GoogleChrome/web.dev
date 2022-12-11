@@ -342,7 +342,7 @@ with it. Lighthouse has an audit that will recommend third-party resources which
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iciXy3oVlPH7VuwN7toy.png", alt="Audit highlighting that some costly third party resources can be replaced", width="800", height="483" %}
 </figure>
 
-As a reminder, Lighthouse will [highlight third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/) that blocks the main thread for over 250ms. This can surface all kinds of third-party scripts (including ones authored by Google) that may be worth better deferring or lazy-loading if what they render requires scrolling to view it.
+As a reminder, Lighthouse will [highlight third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/) that blocks the main thread for over 250ms. This can expose all kinds of third-party scripts (including ones authored by Google) that may be worth better deferring or lazy-loading if what they render requires scrolling to view it.
 
 <figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K0Oxmu1XEN2P3NQIknyH.png", alt="Reduce the cost of third-party JavaScript audit", width="800", height="556" %}
