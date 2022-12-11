@@ -41,7 +41,7 @@ discussion, any device that reports `window.devicePixelRatio` greater
 than 1 can be considered high DPI, since that means that CSS pixels
 aren't the same as device pixels, and that images are being scaled up.
 
-Here a summary:
+Here's a summary:
 
 - Use CSS/SVG rather than raster imagery if possible.
 - Use images optimized for high density displays by default.
