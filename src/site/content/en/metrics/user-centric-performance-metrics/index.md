@@ -145,7 +145,7 @@ page.
   page starts loading to when the largest text block or image element is
   rendered on the screen. _([lab](#in-the-lab), [field](#in-the-field))_
 - **[First Input Delay (FID)](/fid/):** measures the time from when a user first
-  interacts with your site (i.e. when they click a link, tap a button, or use a
+  interacts with your site (when they click a link, tap a button, or use a
   custom, JavaScript-powered control) to the time when the browser is actually
   able to respond to that interaction. _([field](#in-the-field))_
 - **[Interaction to Next Paint (INP)](/inp/)**: measures the latency of every
