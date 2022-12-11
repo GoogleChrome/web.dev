@@ -186,7 +186,7 @@ The `links` attribute returns an `HTMLCollection` matching `a` and `area` elemen
 ```js
 let a = document.links[0]; // obtain the first link in the document
 
-a.href = newpage.html'; // change the destination URL of the link
+a.href = 'newpage.html'; // change the destination URL of the link
 a.protocol = 'ftp'; // change just the scheme part of the URL
 a.setAttribute('href', 'https://machinelearningworkshop.com/'); // change the attribute content directly
 ```
