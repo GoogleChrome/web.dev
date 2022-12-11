@@ -95,7 +95,7 @@ googleAnalytics.initialize({
 ```
 
 What if the user drops out of the page due to being offline, before an internet connection comes
-back? Even though this normally puts the service worker to sleep (i.e. it's unable to send the data
+back? Even though this normally puts the service worker to sleep (because it's unable to send the data
 when the connection comes back), the Workbox Google Analytics module uses the [Background Sync
 API](https://developer.chrome.com/blog/background-sync/), which sends the analytics
 data later when the connection comes back, even if the user closes the tab or browser.

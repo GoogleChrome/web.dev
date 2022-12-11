@@ -23,7 +23,7 @@ different solution.
 
 ## For video that doesn't autoplay {: #video-no-autoplay }
 
-For videos where playback is initiated by the user (i.e., videos that _don't_
+For videos where playback is initiated by the user (that is, videos that _don't_
 autoplay), specifying the [`preload`
 attribute](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-preload)
 on the `<video>` element may be desirable:

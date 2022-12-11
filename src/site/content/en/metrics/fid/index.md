@@ -47,7 +47,7 @@ your site's interactivity and responsiveness.
 
 ## What is FID?
 
-FID measures the time from when a user first interacts with a page (i.e. when
+FID measures the time from when a user first interacts with a page (that is, when
 they click a link, tap on a button, or use a custom, JavaScript-powered control)
 to the time when the browser is actually able to begin processing event handlers
 in response to that interaction.
@@ -128,7 +128,7 @@ how this can happen, FCP and TTI have been added to the timeline:
 
 You may have noticed that there's a fair amount of time (including three [long
 tasks](/custom-metrics/#long-tasks-api)) between FCP and TTI, if a user tries to
-interact with the page during that time (e.g. click on a link), there will be a
+interact with the page during that time (for example, by clicking on a link), there will be a
 delay between when the click is received and when the main thread is able to
 respond.
 

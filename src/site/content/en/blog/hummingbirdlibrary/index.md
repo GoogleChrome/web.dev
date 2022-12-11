@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/0kLA0cAAnqvRRct6qNHc.png", alt="Layout screenshot", width="800", height="1570" %}
 </figure>
 
-### TL;DR
+### Summary
 
 [Hummingbird Library](http://hummingbirdlibrary.com/): A refreshingly new
 frontend to Hummingbird, a popular anime watch-tracker and discovery site.

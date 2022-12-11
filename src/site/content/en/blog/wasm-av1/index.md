@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Extending the browser with WebAssembly 
+title: Extending the browser with WebAssembly
 subhead: WebAssembly lets us extend the browser with new features. This article shows how to port the AV1 video decoder and play AV1 video in any modern browser.
 date: 2018-08-22
 updated: 2018-08-22
@@ -19,7 +19,7 @@ tags:
 One of the best things about [WebAssembly](https://webassembly.org/) is the
 ability experiment with new capabilities and implement new ideas before the
 browser ships those features natively (if at all). You can think of using
-WebAssembly this way as a high-performance polyfill mechanism, where you 
+WebAssembly this way as a high-performance polyfill mechanism, where you
 write your feature in C/C++ or Rust rather than JavaScript.
 
 With a plethora of existing code available for porting, it's possible to do
@@ -31,7 +31,7 @@ browser and tips to help with building a test harness to debug the wrapper.
 Full source code for the example here is available at
 [github.com/GoogleChromeLabs/wasm-av1](https://github.com/GoogleChromeLabs/wasm-av1) for reference.
 
-**TL;DR:** Download one of these two 24fps test 
+Download one of these two 24fps test
 [video](http://alex-wasm.appspot.com/av1/video/big_buck_bunny_360p24.ivf)
 [files](http://alex-wasm.appspot.com/av1/video/elephants_dream_360p24.ivf)
 and try them on our built [demo](http://alex-wasm.appspot.com/av1/index.html).
@@ -359,7 +359,7 @@ as this:
 void
 AVX_Decoder_run(AVX_Decoder *ad) {
     ...
-    // Try to decode an image from the compressed stream, and buffer 
+    // Try to decode an image from the compressed stream, and buffer
     while (ad->ad_NumBuffered < NUM_FRAMES_BUFFERED) {
         ad->ad_Image = aom_codec_get_frame(&ad->ad_Codec,
                                            &ad->ad_Iterator);

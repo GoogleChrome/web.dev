@@ -34,7 +34,7 @@ But having both an installable web app and a platform-specific app can be confus
 - **Storage constraints:** installing a new app might mean deleting others, or cleaning up space, by removing valuable content. This is especially disadvantageous for users on low-end devices.
 - **Available bandwidth:** downloading an app can be a costly and slow process, even more so for users on slow connections and expensive data plans.
 - **Friction:** leaving a website and moving to a store to download an app creates additional friction and delays a user action that could be performed directly in the web.
-- **Update cycle:** making changes in platform-specific apps might require going through an app review process, which can slow down changes and experiments (e.g. A/B tests).
+- **Update cycle:** making changes in platform-specific apps might require going through an app review process, which can slow down changes and experiments (A/B tests, for example).
 
 In some cases, the percentage of users who won't download your platform-specific app might be large, for example: those that think that they won't use the app very often, or can't justify spending several megabytes of storage or data. You can determine the size of this segment in several ways, for example by using an analytics setup to track the percentage of "mobile web only" users.
 

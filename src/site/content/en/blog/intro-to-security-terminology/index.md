@@ -1,5 +1,5 @@
 ---
-title: Important Security Terminology 
+title: Important Security Terminology
 subhead: Two of the hurdles developers face when migrating to HTTPS are concepts and terminology. This guide provides a brief overview of both.
 date: 2015-03-27
 updated: 2018-09-20
@@ -11,9 +11,9 @@ tags:
   - blog
 ---
 
-## TL;DR
+## Summary
 
-* Public/private keys are used to sign and decrypt messages between the browser and the server.
+* Used public/private keys to sign and decrypt messages between the browser and the server.
 * A certificate authority (CA) is an organization that vouches for the mapping between the public keys and public DNS names (such as "www.foobar.com").
 * A certificate signing request (CSR) is a data format that bundles a public key together with some metadata about the entity that owns the key
 

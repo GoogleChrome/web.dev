@@ -134,8 +134,8 @@ self.addEventListener('message', (event) => {
 ```
 
 The `{type : 'MSG_ID'}` attribute is not absolutely required, but it is one way to allow the page to
-send different types of instructions to the service worker (i.e. 'to prefetch' vs. 'to clear
-storage').  The service worker can branch into different execution paths based on this flag.
+send different types of instructions to the service worker (that is, 'to prefetch' vs. 'to clear
+storage'). The service worker can branch into different execution paths based on this flag.
 
 If the operation was successful, the user will be able to get the benefits from it but, if not, it won't alter the main user flow. For example, when 1-800-Flowers.com attempts to precache, the page doesn't need to know whether the service worker succeeded. If it does, then the user will enjoy a faster navigation. If it doesn't the page still needs to navigate to the new page. It's just going to take a little longer.
 

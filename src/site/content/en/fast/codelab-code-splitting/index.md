@@ -275,7 +275,7 @@ method recommended by your framework/library to lazy load specific modules.
 ### Preloading and prefetching
 
 Where possible, take advantage of browser hints such as `<link rel="preload">`
-or `<link rel="prefetch">` in order to try and load critical modules even
+or `<link rel="prefetch">` to try and load critical modules even
 sooner. webpack supports both hints through the use of magic comments in import
 statements. This is explained in more detail in the
 [Preload critical chunks](/preload-critical-assets) guide.

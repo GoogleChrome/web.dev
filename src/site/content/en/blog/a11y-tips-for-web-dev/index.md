@@ -193,7 +193,7 @@ to spread awareness of best practices in your team:
 
 ## Are your UI components accessible?
 
-**Summary (tl;dr)**
+**Summary**
 
 When auditing your page's UI components for accessibility, ask yourself:
 

@@ -14,7 +14,7 @@ tags:
   - performance
 ---
 
-**tl;dr: Long Tasks can keep the main thread busy, delaying user interaction. Chrome DevTools can now visualize Long Tasks, making it easier to see tasks to optimize.**
+**Long Tasks can keep the main thread busy, delaying user interaction. Chrome DevTools can now visualize Long Tasks, making it easier to see tasks to optimize.**
 
 If you use Lighthouse to audit your pages, you may be familiar with [Time to Interactive](/tti/), a metric representing when users can interact with your page and get a response. But did you know Long (JavaScript) Tasks can contribute heavily to a poor TTI?
 

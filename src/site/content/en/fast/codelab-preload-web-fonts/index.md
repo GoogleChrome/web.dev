@@ -35,7 +35,7 @@ Here is the sequence of the resources fetched in the application:
 {% Img src="image/admin/9oBNjZORrBj6X8RVlr9t.png", alt="Webfonts are lazy loaded.", width="583", height="256" %}
 
 ## Preloading Web fonts
-In order to avoid FOUT, you can preload web fonts that are required immediately. Add the `Link` element for this application at the head of the document:
+To avoid FOUT, you can preload web fonts that are required immediately. Add the `Link` element for this application at the head of the document:
 
 ```html
 <head>

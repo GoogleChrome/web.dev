@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/eCdqV3lXBTovQQ3GiRUN.png", alt="0h h1 screenshot", width="800", height="1570" %}
 </figure>
 
-### TL;DR
+### Summary
 
 [0h h1](http://0hh1.com/) is a fun (and addictive) game that just feels right
 on mobile.

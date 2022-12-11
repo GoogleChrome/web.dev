@@ -234,7 +234,7 @@ which is the highlight color of selected items. These are just two of
 [many options](https://www.w3.org/wiki/CSS/Properties/color/keywords#System_Colors).
 
 All color keywords are case-insensitive,
-however you will often see system colors with capitalization in order to differentiate them from standard color keywords.
+however you will often see system colors with capitalization to differentiate them from standard color keywords.
 {% endAside %}
 
 ## Where to use color in CSS rules

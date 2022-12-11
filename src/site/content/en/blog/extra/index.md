@@ -13,8 +13,6 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZHSG0xBO6pjC1TJeuWeY.gif", alt="eXtra detail.", width="582", height="1000" %}
 </figure>
 
-## TL;DR
-
 United eXtra Electronics grows eCommerce sales by 100% with Web Push Notifications
 
 ## Results
