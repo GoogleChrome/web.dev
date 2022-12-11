@@ -98,7 +98,7 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 ```
 
 A `<video>` element with these attributes plays automatically, loops endlessly,
-plays no audio, and plays inline (i.e., not full screen), all the hallmark
+plays no audio, and plays inline (that is, not full screen), all the hallmark
 behaviors expected of animated GIFs! 🎉
 
 Finally, the `<video>` element requires one or more `<source>` child elements
