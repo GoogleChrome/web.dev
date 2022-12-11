@@ -20,7 +20,7 @@ describes the content, and the other describes the style rules that need to be
 applied to the document. How do we merge the two and get the browser to render
 pixels on the screen?
 
-### Summart {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 - The DOM and CSSOM trees combine to form the render tree.
 - Render tree contains only the nodes required to render the page.
