@@ -13,8 +13,6 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/s676oANZk4tBdMozz4s3.png", alt="Madeon adventure machine detail", width="800", height="1570" %}
 </figure>
 
-### TL;DR 
-
 [Madeon Adventure Machine](http://www.madeon.fr/adventuremachine/) is a clever
 promotion for Madeon's new album that is a fun drum machine.
 

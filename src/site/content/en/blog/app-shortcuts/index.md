@@ -32,7 +32,7 @@ enhance users' productivity as well as increase their engagement with the web
 app.
 
 The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
-(Windows) or dock (macOS) on the user's desktop, or long pressing the app's
+(Windows) or dock (macOS) on the user's desktop, or touch & holding the app's
 launcher icon on Android.
 
 <div class="w-columns" >

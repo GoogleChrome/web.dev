@@ -10,7 +10,7 @@ tags:
   - case-study
 ---
 
-## TL;DR 
+## Summary
 
 Google+ goes completely responsive.
 

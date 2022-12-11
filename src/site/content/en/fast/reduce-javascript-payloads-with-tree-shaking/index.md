@@ -77,7 +77,7 @@ The behavior that drives this app is separated into vendor (i.e., [Preact](https
 <figure class="w-caption">
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/oreVh5rQcXxIDenvQxE7.png", alt="A screenshot of two application code bundles (or chunks) shown in the network panel of Chrome's DevTools.", width="800", height="282" %}
   <figcaption>
-    The app's two JavaScript bundles. These are are uncompressed sizes.
+    The app's two JavaScript bundles. These are uncompressed sizes.
   </figcaption>
 </figure>
 

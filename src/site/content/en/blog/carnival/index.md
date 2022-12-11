@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/P3Ur4zVpuoycct8dKsRy.png", alt="Carnival detail", width="800", height="450" %}
 </figure>
 
-### TL;DR
+### Summary
 
 **Carnival Cruise Line provides personalized, engaging communication service for
 its customers with push notifications.**

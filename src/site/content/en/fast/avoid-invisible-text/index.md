@@ -123,7 +123,7 @@ There are three parts to this approach:
     couple lines of JavaScript code, thanks to the [FontFaceObserver](https://github.com/bramstein/fontfaceobserver) library.
 +  Update page styling to use the custom font.
 
-Here are the changes you can expect to make in order to implement this:
+Here are the changes you can expect to make to implement this:
 
 +  Refactor your CSS to not use a custom font on initial page load.
 +  Add a script to your page. This script detects when the custom font is

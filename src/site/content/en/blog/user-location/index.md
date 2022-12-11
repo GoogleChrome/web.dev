@@ -22,7 +22,7 @@ You need to be aware of many things when using the Geolocation API. This guide w
 As of Chrome 50, the [Geolocation API only works on secure contexts (HTTPS)](/web/updates/2016/04/geolocation-on-secure-contexts-only). If your site is hosted on a non-secure origin (such as `HTTP`), any requests for the user's location **no longer** function.
 {% endAside %}
 
-### TL;DR
+### Summary
 
 - Use geolocation when it benefits the user.
 - Ask for permission as a clear response to a user gesture.

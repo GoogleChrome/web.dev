@@ -21,7 +21,7 @@ a specific location.
 Not all browsers use the same coordinate system, and they may report different values under identical situations. This has improved over time, but be sure to test your situation.
 {% endAside %}
 
-##TL;DR
+## Summary
 
 - Detect which side of the device is up and how the device is rotating.
 - Learn when and how to respond to motion and orientation events.

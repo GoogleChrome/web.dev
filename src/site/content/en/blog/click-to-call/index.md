@@ -12,7 +12,7 @@ updated: 2019-07-26
 On devices with phone capabilities, make it easy for users to directly connect
 with you by simply tapping a phone number, more commonly known as click to call.
 
-## TL;DR
+## Summary
 
 - Wrap all phone numbers in hyperlinks with the <code>tel:</code> schema.
 - Always use the international dialing format.

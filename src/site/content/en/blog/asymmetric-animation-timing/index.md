@@ -13,7 +13,6 @@ tags:
 
 Asymmetric animation timing improves the user experience by allowing you to express personality while at the same time respond quickly to user interactions. It also provides contrast to the feel, which makes the interface more visually appealing.
 
-## TL;DR
 * Use asymmetric animation timing to add personality and contrast to your work.
 * Always favor the user's interaction; use shorter durations when responding to taps or clicks, and reserve longer durations for times when you aren't.
 

@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/jqr5aH5HOZmNBzN3YEg0.png", alt="Voot Lite logo", width="800", height="500" %}
 </figure>
 
-### TL;DR
+### Summary
 
 Voot.com launches their media Progressive Web App in India. Within days of
 implementation, session time per user increased by 39% and daily views per user

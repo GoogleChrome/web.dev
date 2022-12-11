@@ -15,7 +15,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/JBaM0M3E1sG5xURP28m7.png", alt="Svgomg screenshot", width="800", height="1570" %}
 </figure>
 
-### TL;DR
+### Summary
 
 [SVGOMG](https://jakearchibald.github.io/svgomg/): A beautiful, material,
 responsive frontend for SVGO.

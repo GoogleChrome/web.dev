@@ -354,7 +354,7 @@ browser:
 
 ## Using ES Modules with Babel
 
-In order to have separate `@babel/preset-env` settings for the two versions of
+To have separate `@babel/preset-env` settings for the two versions of
 the application, remove the `.babelrc` file. Babel settings can be added to the
 webpack configuration by specifying two different compilation formats for each
 version of the application.

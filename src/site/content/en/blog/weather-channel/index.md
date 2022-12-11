@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Weather Channel
-description: | 
+description: |
     The Weather Company, an IBM Business, serves an average of 40 billion forecast requests every day, helping people plan their daily lives and make better decisions based on weather.
 date: 2016-11-09
 updated: 2017-02-15
@@ -15,7 +15,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/lkfmhjIvUfvE9XFQfHmD.png", alt="Weather channel detail", width="582", height="1000" %}
 </figure>
 
-### TL;DR
+### Summary
 
 **The Weather Channel sees mobile web success with Progressive Web App,
 launching in 62 languages to 178 countries.**
@@ -78,7 +78,7 @@ a Progressive Web App (PWA). Given the complexity of its U.S. site, Weather
 turned to its international sites first and have now rolled out progressive web
 apps in 178 countries, serving 62 languages. After upgrading their site to a
 PWA, they saw a 80% improvement in load time.
- 
+
 The Weather Channel has a global audience, so being able to provide a PWA
 experience with the most reliable weather information to people across the world
 in their local language has been key in growing that user base. On a technical

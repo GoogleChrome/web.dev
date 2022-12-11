@@ -12,7 +12,7 @@ tags:
 
 ---
 
-## TL;DR
+## Summary
 [WebAuthn](https://www.w3.org/TR/webauthn/) helps increase security by bringing
 public-key credential based authentication to the Web, and is soon to be
 supported in Chrome, Firefox and Edge ([with the updated

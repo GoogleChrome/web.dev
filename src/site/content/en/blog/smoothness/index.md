@@ -352,7 +352,7 @@ ensure a steady frame rate) may technically be perfectly smooth in terms of
 animation frames, all while failing to load high quality game assets into the
 scene or exhibiting rendering artifacts.
 
-And of course, a site can just have some really lame animations 🙂
+And of course, a site can just have some really bad animations 🙂
 
 <img
 src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Under-Construction-Bulldozer.gif"

@@ -13,7 +13,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
 ---
 
-## TL;DR
+## Summary
 
 Shadow DOM removes the brittleness of building web apps. The brittleness
 comes from the global nature of HTML, CSS, and JS. Over the years we've

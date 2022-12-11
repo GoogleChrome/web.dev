@@ -15,7 +15,7 @@ tags:
 
 [View the site](https://try.matterport.com/virtual-reality/webvr/)
 
-### TL;DR
+### Summary
 By adding WebVR support, Matterport makes it easier to explore real-world
 places in immersive virtual reality. With no apps to download, WebVR will reduce
 drop-offs and enable partners to retain the user on their own website. [WebVR is

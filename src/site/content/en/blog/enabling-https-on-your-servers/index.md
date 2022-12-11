@@ -13,7 +13,7 @@ tags:
 
 ---
 
-## TL;DR
+## Summary
 
 * Create a 2048-bit RSA public/private key pair.
 * Generate a certificate signing request (CSR) that embeds your public key.

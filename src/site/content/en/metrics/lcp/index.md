@@ -104,7 +104,7 @@ Images that occupy the entire viewport are not considered LCP candidates.
 {% endAside %}
 
 Note, restricting the elements to this limited set was intentional in order to
-keep things simple in the beginning. Additional elements (e.g. `<svg>`,
+keep things simple in the beginning. Additional elements (like `<svg>` or
 `<video>`) may be added in the future as more research is conducted.
 
 ### How is an element's size determined?

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Creating a Lightsaber with Polymer 
+title: Creating a Lightsaber with Polymer
 description: How to set up a high FPS WebGL project with Polymer.
 date: 2015-12-15
 updated: 2015-12-15
@@ -14,10 +14,10 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/YRCKrwla0CFh3rleFYH7.png", alt="Lightsaber screenshot", width="340", height="507" %}
 </figure>
 
-### TL;DR
+### Summary
 
 How we used Polymer to create a high-performance WebGL mobile controlled
-Lightsaber that is modular and configurable. We review some of the key details
+Lightsaber that is modular and configurable. We review some key details
 of our project [https://lightsaber.withgoogle.com/](https://lightsaber.withgoogle.com/)
 to help you save time when creating your own next time you run into a pack of
 angry Stormtroopers.
@@ -56,13 +56,13 @@ a regular HTML file but has some magic inside:
 </dom-module>
 ```
 
-So there are many choices out there nowadays when you want to create 
-a HTML5 based application. APIs, Frameworks, Libraries, Game Engines etc. 
-Despite all the choices it is difficult to get a setup that is a good mix 
-between control over high performance of graphics and clean modular 
-structure and scalability. We found that Polymer could help us keep the 
-project organized while still allowing for low-level performance 
-optimizations, and we carefully crafted the way we broke down our project 
+So there are many choices out there nowadays when you want to create
+a HTML5 based application. APIs, Frameworks, Libraries, Game Engines etc.
+Despite all the choices it is difficult to get a setup that is a good mix
+between control over high performance of graphics and clean modular
+structure and scalability. We found that Polymer could help us keep the
+project organized while still allowing for low-level performance
+optimizations, and we carefully crafted the way we broke down our project
 into components to best leverage Polymer's capabilities.
 
 Note: For more general information on Polymer you should have a look on their site [https://www.polymer-project.org/](https://www.polymer-project.org/) and go through their tour.
@@ -70,11 +70,11 @@ Note: For more general information on Polymer you should have a look on their si
 
 ## Modularity with Polymer
 
-[Polymer](https://www.polymer-project.org) is a library that allows a 
-lot of power over how your project is built from reusable custom elements. 
-It allows you to use standalone, fully functional modules contained in a 
-single HTML file. They contain not only the structure (HTML markup) but also 
-inline styles and logic. 
+[Polymer](https://www.polymer-project.org) is a library that allows a
+lot of power over how your project is built from reusable custom elements.
+It allows you to use standalone, fully functional modules contained in a
+single HTML file. They contain not only the structure (HTML markup) but also
+inline styles and logic.
 
 Have a look at the example below:
 
@@ -106,8 +106,8 @@ Have a look at the example below:
 </dom-module>
 ```
 
-But on a larger project it might be helpful to separate these three logical 
-components (HTML, CSS, JS) and only merge them at compile time. So one thing 
+But on a larger project it might be helpful to separate these three logical
+components (HTML, CSS, JS) and only merge them at compile time. So one thing
 we did was give each element in the project its own separate folder:
 
 ```shell
@@ -182,8 +182,8 @@ src/elements/
         `-- sw-t
 ```
 
-And each element's folder has the same internal structure with separate 
-directories and files for logic (coffee files), styles (scss files) and 
+And each element's folder has the same internal structure with separate
+directories and files for logic (coffee files), styles (scss files) and
 template (jade file).
 
 Here's an example `sw-ui-logo` element:
@@ -217,27 +217,27 @@ dom-module(id='sw-ui-logo')
     script(src='scripts/sw-ui-logo.js')
 ```
 
-You can see how things are organised in a clean way by including styles 
-and logic from separate files. To include our styles in our Polymer 
-elements we use Jade’s `include` statement, so we have actual inline CSS 
-file contents after compilation. The `sw-ui-logo.js` script element will 
+You can see how things are organised in a clean way by including styles
+and logic from separate files. To include our styles in our Polymer
+elements we use Jade’s `include` statement, so we have actual inline CSS
+file contents after compilation. The `sw-ui-logo.js` script element will
 execute at runtime.
 
 ## Modular Dependencies with Bower
 
-Normally we keep libraries and other dependencies at the project level. 
-However in the setup above you will notice a `bower.json` that is in the 
-element’s folder: element level dependencies. The idea behind this approach 
-is that in a situation where you have lots of elements with different 
-dependencies we can make sure to load only those dependencies that are 
-actually used. And if you remove an element, you don’t need to remember to 
-remove its dependency because you also will have removed the `bower.json` file 
-that declares these dependencies. Each element independently loads the 
+Normally we keep libraries and other dependencies at the project level.
+However in the setup above you will notice a `bower.json` that is in the
+element’s folder: element level dependencies. The idea behind this approach
+is that in a situation where you have lots of elements with different
+dependencies we can make sure to load only those dependencies that are
+actually used. And if you remove an element, you don’t need to remember to
+remove its dependency because you also will have removed the `bower.json` file
+that declares these dependencies. Each element independently loads the
 dependencies that relate to it.
 
-However, to avoid a duplication of dependencies we include a `.bowerrc` file 
-in each element’s folder as well. This tells bower where to store 
-dependencies so we can ensure there is only one at the end in the same 
+However, to avoid a duplication of dependencies we include a `.bowerrc` file
+in each element’s folder as well. This tells bower where to store
+dependencies so we can ensure there is only one at the end in the same
 directory:
 
 ```json
@@ -246,15 +246,15 @@ directory:
 }
 ```
 
-This way if multiple elements declare `THREE.js` as a dependency, once 
-bower installs it for the first element and starts parsing the second one, 
-it will realise that this dependency is already installed and will not 
-re-download or duplicate it. Similarly, it will keep that dependency 
-files as long as there's at least one element that still defines it in 
+This way if multiple elements declare `THREE.js` as a dependency, once
+bower installs it for the first element and starts parsing the second one,
+it will realise that this dependency is already installed and will not
+re-download or duplicate it. Similarly, it will keep that dependency
+files as long as there's at least one element that still defines it in
 its `bower.json`.
 
-A bash script finds all `bower.json` files in the nested elements structure. 
-Then it enters these directories one by one and executes `bower install` in 
+A bash script finds all `bower.json` files in the nested elements structure.
+Then it enters these directories one by one and executes `bower install` in
 each of them:
 
 ```shell
@@ -269,9 +269,9 @@ done
 
 ## Quick New Element Template
 
-It takes a bit of time each time you want to create a new element: generating 
-the folder and basic file structure with the correct names. So we use 
-[Slush](http://slushjs.github.io/) to write a simple element generator. 
+It takes a bit of time each time you want to create a new element: generating
+the folder and basic file structure with the correct names. So we use
+[Slush](http://slushjs.github.io/) to write a simple element generator.
 
 You can call the script from command line:
 
@@ -281,7 +281,7 @@ $ slush element path/to/your/element-name
 
 And the new element is created, including all the file structure and contents.
 
-We defined templates for the element files, e.g. the `.jade` file template 
+We defined templates for the element files, e.g. the `.jade` file template
 looks as follows:
 
 ```js
@@ -303,7 +303,7 @@ The Slush generator replaces the variables with actual element paths and names.
 
 ## Using Gulp to Build Elements
 
-Gulp keeps the build process under control. And in our structure, to build 
+Gulp keeps the build process under control. And in our structure, to build
 the elements we need Gulp to follow the following steps:
 
 1. Compile the elements' `.coffee` files to `.js`
@@ -332,7 +332,7 @@ gulp.task('elements-coffee', function () {
 });
 ```
 
-For the steps 2 and 3 we use gulp and a compass plugin to compile `scss` to 
+For the steps 2 and 3 we use gulp and a compass plugin to compile `scss` to
 `.css` and `.jade` to `.html`, in a similar approach to 2 above.
 
 ## Including Polymer Elements
@@ -363,60 +363,60 @@ To actually include the Polymer elements we use HTML imports.
 
 ## Optimising Polymer elements for production
 
-A large project can end up having a lot of Polymer elements. In our 
-project, we have more than fifty. If you consider each element having a 
-separate `.js` file and some having libraries referenced, it becomes more than 
-100 separate files. This means a lot of requests the browser needs to make, 
-with performance loss. Similarly to a concatenate and minify process we 
-would apply to an Angular build, we “vulcanize” the Polymer project at the 
+A large project can end up having a lot of Polymer elements. In our
+project, we have more than fifty. If you consider each element having a
+separate `.js` file and some having libraries referenced, it becomes more than
+100 separate files. This means a lot of requests the browser needs to make,
+with performance loss. Similarly to a concatenate and minify process we
+would apply to an Angular build, we “vulcanize” the Polymer project at the
 end for production.
 
-[Vulcanize](https://github.com/polymer/vulcanize) is a Polymer tool that 
-flattens the dependency tree into a single html file, reducing the 
-number of requests. This is especially great for browsers that do not 
+[Vulcanize](https://github.com/polymer/vulcanize) is a Polymer tool that
+flattens the dependency tree into a single html file, reducing the
+number of requests. This is especially great for browsers that do not
 support web components natively.
 
 ## CSP (Content Security Policy) and Polymer
 
-When developing secure web applications you need to implement CSP. 
-[CSP](http://www.html5rocks.com/tutorials/security/content-security-policy/) 
-is a set of rules that prevent cross-site scripting (XSS) attacks: 
-execution of scripts from unsafe sources, or executing inline scripts 
+When developing secure web applications you need to implement CSP.
+[CSP](http://www.html5rocks.com/tutorials/security/content-security-policy/)
+is a set of rules that prevent cross-site scripting (XSS) attacks:
+execution of scripts from unsafe sources, or executing inline scripts
 from HTML files.
 
-Now the one, optimized, concatenated and minified `.html` file generated 
-by Vulcanize has all the JavaScript code inline in a non CSP compliant 
-format. To address this we use a tool called 
+Now the one, optimized, concatenated and minified `.html` file generated
+by Vulcanize has all the JavaScript code inline in a non CSP compliant
+format. To address this we use a tool called
 [Crisper](https://github.com/PolymerLabs/crisper).
 
-Crisper splits inline scripts from an HTML file and puts them into a single, 
-external JavaScript file for CSP compliance. So we pass the vulcanized 
-HTML file through Crisper and end up with two files: `elements.html` and 
-`elements.js`. Inside `elements.html` it also takes care of loading the 
+Crisper splits inline scripts from an HTML file and puts them into a single,
+external JavaScript file for CSP compliance. So we pass the vulcanized
+HTML file through Crisper and end up with two files: `elements.html` and
+`elements.js`. Inside `elements.html` it also takes care of loading the
 generated `elements.js`.
 
 ## Application Logical Structure
 
-In Polymer, elements can be anything from a non-visual utility to small, 
-standalone and reusable UI elements (like buttons) to bigger modules like 
+In Polymer, elements can be anything from a non-visual utility to small,
+standalone and reusable UI elements (like buttons) to bigger modules like
 "pages" and even composing full applications.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/vTgWkbNs1rgYp9Np0Wh8.png", alt="A top-level logical structure of the application", width="800", height="819" %}
   <figcaption>
-    A top-level logical structure of our application represented with 
+    A top-level logical structure of our application represented with
     Polymer elements.
   </figcaption>
 </figure>
 
 ## Postprocessing with Polymer and Parent-child Architecture
 
-In any 3D graphics pipeline, there is always a last step where effects 
-are added on top of the whole picture as a kind of overlay. This is the 
-post-processing step, and involves effects like glows, god-rays, 
-depth of field, bokeh, blurs etc. The effects are combined and applied to 
-different elements according to how the scene is built. In THREE.js we 
-could create a custom shader for the post-processing in JavaScript or 
+In any 3D graphics pipeline, there is always a last step where effects
+are added on top of the whole picture as a kind of overlay. This is the
+post-processing step, and involves effects like glows, god-rays,
+depth of field, bokeh, blurs etc. The effects are combined and applied to
+different elements according to how the scene is built. In THREE.js we
+could create a custom shader for the post-processing in JavaScript or
 we can do this with Polymer, thanks to its parent-child structure.
 
 If you look at our post-processor's element HTML  code:
@@ -435,7 +435,7 @@ If you look at our post-processor's element HTML  code:
 ```
 
 
-We specify the effects as nested Polymer elements under a common class. Then, 
+We specify the effects as nested Polymer elements under a common class. Then,
 in `sw-experience-postprocessor.js` we do this:
 
 ```js
@@ -443,12 +443,12 @@ effects = @querySelectorAll '.effect'
 @composer.addPass effect.getPass() for effect in effects
 ```
 
-We use the HTML feature and JavaScript's `querySelectorAll` to find all 
-effects nested as HTML elements within the post processor, in the order 
+We use the HTML feature and JavaScript's `querySelectorAll` to find all
+effects nested as HTML elements within the post processor, in the order
 they were specified in. We then iterate over them and add them to the composer.
 
-Now, let's say we want to remove the DOF (Depth of Field) effect and 
-change the order of bloom and vignette effects. All we need to do is edit 
+Now, let's say we want to remove the DOF (Depth of Field) effect and
+change the order of bloom and vignette effects. All we need to do is edit
 the post-processor's definition  to something like:
 
 ```html
@@ -467,9 +467,9 @@ and the scene will just run, without changing a single line of actual code.
 
 ## Render loop and update loop in Polymer
 
-With Polymer we can also approach rendering and engine updates elegantly. 
-We created a `timer` element that uses `requestAnimationFrame` and computes 
-values like current time (`t`) and delta time - time elapsed from the 
+With Polymer we can also approach rendering and engine updates elegantly.
+We created a `timer` element that uses `requestAnimationFrame` and computes
+values like current time (`t`) and delta time - time elapsed from the
 last frame (`dt`):
 
 ```js
@@ -507,7 +507,7 @@ Polymer
     if window.performance then performance.now() else new Date().getTime()
 ```
 
-Then, we use data binding to bind the `t` and `dt` properties to our 
+Then, we use data binding to bind the `t` and `dt` properties to our
 engine (`experience.jade`):
 
 ```js
@@ -522,7 +522,7 @@ sw-experience-engine(
 )
 ```
 
-And we listen to changes of `t` and `dt` in the engine and whenever the 
+And we listen to changes of `t` and `dt` in the engine and whenever the
 values change, the `_update` function will be called:
 
 ```js
@@ -546,8 +546,8 @@ Polymer
     @_renderer.render dt, t
 ```
 
-If you're hungry for FPS though, you might want to remove Polymer's data 
-binding in render loop to save couple milliseconds required to notify 
+If you're hungry for FPS though, you might want to remove Polymer's data
+binding in render loop to save couple milliseconds required to notify
 elements about the changes. We implemented custom observers as follows:
 
 `sw-timer.coffee`:
@@ -571,47 +571,47 @@ _update: ->
     # ...
 ```
 
-The `addUpdateListener` function accepts a callback and saves it in its 
-callbacks array. Then, in the update loop, we iterate over every callback and 
-we execute it with `dt` and `t` arguments directly, bypassing data binding or 
-event firing. Once a callback is no longer meant to be active, we added a 
+The `addUpdateListener` function accepts a callback and saves it in its
+callbacks array. Then, in the update loop, we iterate over every callback and
+we execute it with `dt` and `t` arguments directly, bypassing data binding or
+event firing. Once a callback is no longer meant to be active, we added a
 `removeUpdateListener` function that lets you remove an earlier added callback.
 
 ## A Lightsaber in THREE.js
 
-THREE.js abstracts away the low level detail of WebGL and allows us to focus 
-on the problem. And our problem is fighting Stormtroopers and we need a 
+THREE.js abstracts away the low level detail of WebGL and allows us to focus
+on the problem. And our problem is fighting Stormtroopers and we need a
 weapon. So let's build a lightsaber.
 
-The glowy blade is what differentiates a lightsaber from any old 
-two-handed weapon. It is mainly made of two parts: the beam and the trail 
-which is seen when moving it. We built it with a bright cylinder shape 
+The glowy blade is what differentiates a lightsaber from any old
+two-handed weapon. It is mainly made of two parts: the beam and the trail
+which is seen when moving it. We built it with a bright cylinder shape
 and a dynamic trail that follows it as the player moves.
 
 ## The Blade
 
-The blade is made up of two sub blades. An inner and an outer one. 
+The blade is made up of two sub blades. An inner and an outer one.
 Both are THREE.js meshes with their respective materials.
 
 ### The Inner blade
 
-For the inner blade we used a custom material with a custom shader. We 
-take a line created by two points and project the line between these two 
-points on a plane. This plane is basically what you control when you 
-fight with your mobile, it gives the sense of depth and orientation 
+For the inner blade we used a custom material with a custom shader. We
+take a line created by two points and project the line between these two
+points on a plane. This plane is basically what you control when you
+fight with your mobile, it gives the sense of depth and orientation
 to the saber.
 
-To create the feeling of a round glowing object we look at the 
-orthogonal point distance of any point on the plane from the main 
-line joining the two points A and B as below. The closer a point is to 
+To create the feeling of a round glowing object we look at the
+orthogonal point distance of any point on the plane from the main
+line joining the two points A and B as below. The closer a point is to
 the main axis the brighter it is.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/02As068k80BDnrl4UmQ0.jpg", alt="Inner blade glow", width="358", height="490" %}
 </figure>
 
-The source below shows how we compute a `vFactor` to control the intensity 
-in the vertex shader to then use it to blend with the scene in the 
+The source below shows how we compute a `vFactor` to control the intensity
+in the vertex shader to then use it to blend with the scene in the
 fragment shader.
 
 ```js
@@ -635,7 +635,7 @@ THREE.LaserShader = {
     "uniform vec3 uPointA;",
     "uniform vec3 uPointB;",
     "uniform float uMultiplier;",
-    "uniform float uNearPlaneValue;",   
+    "uniform float uNearPlaneValue;",
     "varying float vFactor;",
 
     "float getDistanceFromAB(vec2 a, vec2 b, vec2 p) {",
@@ -682,7 +682,7 @@ THREE.LaserShader = {
 
     "uniform vec3 uColor;",
     "uniform vec3 uCoreColor;",
-    "uniform float uCoreOpacity;",    
+    "uniform float uCoreOpacity;",
     "uniform float uLowerBound;",
     "uniform float uUpperBound;",
     "uniform float uTransitionPower;",
@@ -706,10 +706,10 @@ THREE.LaserShader = {
 
 ### The Outer Blade Glow
 
-For the outer glow we render to a separate renderbuffer and use a 
-post-processing bloom effect and blend with the final image to get the 
-desired glow. The image below shows the three different regions that you 
-need to have if you want a decent saber. Namely the white core, the middle 
+For the outer glow we render to a separate renderbuffer and use a
+post-processing bloom effect and blend with the final image to get the
+desired glow. The image below shows the three different regions that you
+need to have if you want a decent saber. Namely the white core, the middle
 blue-ish glow and the outer glow.
 
 <figure>
@@ -718,13 +718,13 @@ blue-ish glow and the outer glow.
 
 ## Lightsaber Trail
 
-The trail of the lightsaber is key to the full effect as the original seen 
+The trail of the lightsaber is key to the full effect as the original seen
 in the Star Wars series. We made the trail with a fan of triangles generated
-dynamically based on the movement of the lightsaber. These fans are then 
-passed to the postprocessor for further visual enhancement. To create the 
-fan geometry we have a line segment and based on its previous transform 
-and current transform we generate a new triangle in the mesh, dropping 
-off the tail portion after a certain length. 
+dynamically based on the movement of the lightsaber. These fans are then
+passed to the postprocessor for further visual enhancement. To create the
+fan geometry we have a line segment and based on its previous transform
+and current transform we generate a new triangle in the mesh, dropping
+off the tail portion after a certain length.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/hisAQfh9ipXYdO6I7mTZ.jpg", alt="Lightsaber trail left", width="422", height="500" %}
@@ -734,8 +734,8 @@ off the tail portion after a certain length.
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/qFA751S77W0gChiF5ukv.jpg", alt="Lightsaber trail right", width="681", height="500" %}
 </figure>
 
-Once we have a mesh we assign a simple material to it, and pass it to the 
-postprocessor to create a smooth effect. We use the same bloom effect that 
+Once we have a mesh we assign a simple material to it, and pass it to the
+postprocessor to create a smooth effect. We use the same bloom effect that
 we applied to the outer blade glow and get a smooth trail as you can see:
 
 <figure>
@@ -744,11 +744,11 @@ we applied to the outer blade glow and get a smooth trail as you can see:
 
 ### Glow around the trail
 
-For the final piece to be complete we had to handle glow around the actual 
-trail, which could be created in a number of ways. Our solution that we 
-don’t go into detail here, for performance reasons was to create a custom 
-shader for this buffer that creates a smooth edge around a clamp of the 
-renderbuffer. We then combine this output in the final render, here you can 
+For the final piece to be complete we had to handle glow around the actual
+trail, which could be created in a number of ways. Our solution that we
+don’t go into detail here, for performance reasons was to create a custom
+shader for this buffer that creates a smooth edge around a clamp of the
+renderbuffer. We then combine this output in the final render, here you can
 see the glow that surrounds the trail:
 
 <figure>
@@ -757,14 +757,14 @@ see the glow that surrounds the trail:
 
 ## Conclusion
 
-Polymer is a powerful library and concept (same as WebComponents are in 
-general). It is only up to you what you make with it. It can be anything from 
-a simple UI button to a full-sized WebGL application. In the previous chapters 
-we have shown you some tips and tricks for how to efficiently use Polymer 
-in production and how to structure more complex modules that also perform 
-well. We also showed you how to achieve a nice looking lightsaber in WebGL. 
-So if you combine all that, remember to Vulcanize your Polymer elements 
-before deploying to production server and if you don't forget to use Crisper 
+Polymer is a powerful library and concept (same as WebComponents are in
+general). It is only up to you what you make with it. It can be anything from
+a simple UI button to a full-sized WebGL application. In the previous chapters
+we have shown you some tips and tricks for how to efficiently use Polymer
+in production and how to structure more complex modules that also perform
+well. We also showed you how to achieve a nice looking lightsaber in WebGL.
+So if you combine all that, remember to Vulcanize your Polymer elements
+before deploying to production server and if you don't forget to use Crisper
 if you want to stay CSP compliant, may the force be with you!
 
 <figure>
