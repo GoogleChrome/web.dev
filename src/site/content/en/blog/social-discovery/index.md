@@ -16,7 +16,7 @@ your site by providing previews with richer information than would otherwise
 be available.
 
 
-### TL;DR
+### Summary
 - Use schema.org microdata to provide page title, description, and an image for Google+.
 - Use Open Graph Protocol (OGP) to provide page title, description, and an image for Facebook.
 - Use Twitter Cards to provide page title, description, an image, and a Twitter id for Twitter.

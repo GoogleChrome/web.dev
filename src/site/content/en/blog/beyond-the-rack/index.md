@@ -17,15 +17,13 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/3odtSs9WBTjfum9Kw3vC.jpg", alt="Beyond the rack detail", width="800", height="1352" %}
 </figure>
 
-### TL;DR
-
 [Beyond the Rack](https://www.beyondtherack.com) re-engages users on the
 mobile web, increasing revenue per visit by 26% with push notifications.
 
 {% Blockquote 'Richard Cohene, VP Marketing, Beyond the Rack' %}
 Push notifications allowed us to bring one of the most compelling
 capabilities from our native app to our mobile site. We see a direct 20%
-click through rate from push notifications—having another channel to reach
+click-through rate from push notifications—having another channel to reach
 our users is a game changer.
 {% endBlockquote %}
 

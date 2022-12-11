@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/hS4ACHeICoiD8BKEw9vM.png", alt="Hacker news reader screenshot", width="800", height="1570" %}
 </figure>
 
-### TL;DR
+### Summary
 
 [Hacker News Reader](http://hn.premii.com/): An amazing optimized reader
 for Hacker News.

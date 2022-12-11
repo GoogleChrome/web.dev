@@ -14,8 +14,6 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/dfJkZa3kECiS8vVo5u4i.png", alt="Flipkart site", width="800", height="1428" %}
 </figure>
 
-### TL;DR
-
 Flipkart, India’s largest e-commerce site, decided to combine their web
 presence and native app into a Progressive Web Application that has resulted
 in a 70% increase in conversions.

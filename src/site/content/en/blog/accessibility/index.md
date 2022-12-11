@@ -20,9 +20,10 @@ Rather than a direct transcription of the video course, it is meant to be a more
 concise treatment of accessibility principles and practices, using the course's
 original content as a base.
 
-## TL;DR
+## Summary
+
 - Learn what accessibility means and how it applies to web development.
-- Learn how to make web sites accessible and usable for everyone.
+- Learn how to make websites accessible and usable for everyone.
 - Learn how to include basic accessibility with minimal development impact.
 - Learn what HTML features are available and how to use them to improve
   accessibility.

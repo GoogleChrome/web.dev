@@ -10,7 +10,7 @@ tags:
   - case-study
 ---
 
-### TL;DR
+## Summary
 
 **Alibaba.com increases conversions on the mobile web by 76% with
 Progressive Web App.**
@@ -28,7 +28,7 @@ Progressive Web App.**
 Alibaba.com is the world’s largest online business-to-business (B2B) trading
 platform, serving 200+ countries and regions. After upgrading their site to a
 Progressive Web App (PWA), they saw a 76 percent increase in total
-conversions across browsers. 
+conversions across browsers.
 
 
 ## Challenge
@@ -38,7 +38,7 @@ success. The mobile web is their primary platform for discovery on mobile, so
 they’ve always focused on design and functionality. They found it difficult
 to build an engaging experience for the mobile web, however. They looked at
 the mobile web as a platform to shift non-app users to the app, but many
-preferred to stay within a browser. 
+preferred to stay within a browser.
 
 {% Blockquote 'Zou Yu, director of Alibaba.com’s mobile team' %}
 Users consider having to download an app to browse or complete a

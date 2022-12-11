@@ -36,7 +36,7 @@ weight is images. That's a great opportunity for optimization!
   </figcaption>
 </figure>
 
-## tl;dr
+## Summary
 * Don't save images larger than their display size.
 * Save multiple sizes for each image and use the
 [`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-srcset)

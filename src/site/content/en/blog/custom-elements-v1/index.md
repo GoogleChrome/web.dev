@@ -9,9 +9,6 @@ date: 2017-08-14
 updated: 2019-09-05
 ---
 
-
-## TL;DR
-
 With [Custom Elements][spec], web developers can **create new HTML tags**,
 beef-up existing HTML tags, or extend the components other developers have
 authored. The API is the foundation of [web

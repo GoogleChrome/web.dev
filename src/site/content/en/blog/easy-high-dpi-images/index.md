@@ -12,7 +12,7 @@ Displays with high pixel density are quickly becoming the norm. Content
 creators need to adapt to this fact. This is a short guide on how to
 serve high quality images on the web today, without polyfills,
 JavaScript, CSS hacks, and browser features that aren't quite implemented
-yet. In a word: without drastic changes to your workflow. 
+yet. In a word: without drastic changes to your workflow.
 
 There are many responsive image proposals today, many of which involve
 significant changes for the web developer. The standards-track `srcset`
@@ -41,7 +41,7 @@ discussion, any device that reports `window.devicePixelRatio` greater
 than 1 can be considered high DPI, since that means that CSS pixels
 aren't the same as device pixels, and that images are being scaled up.
 
-Here a summary in **tl;dr** format:
+Here a summary:
 
 - Use CSS/SVG rather than raster imagery if possible.
 - Use images optimized for high density displays by default.

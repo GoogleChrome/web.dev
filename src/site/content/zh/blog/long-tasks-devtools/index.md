@@ -12,7 +12,7 @@ tags:
   - performance
 ---
 
-**tl;dr: 长任务会使主线程保持忙碌，延迟用户交互。Chrome DevTools 现在可以将长任务可视化，从而更容易查看要优化的任务。**
+**长任务会使主线程保持忙碌，延迟用户交互。Chrome DevTools 现在可以将长任务可视化，从而更容易查看要优化的任务。**
 
 如果您使用 Lighthouse 来审计自己的页面，那么可能熟悉 [Time to Interactive](/tti/) ，这是一个表示用户何时可以与您的页面交互并获得响应的指标。但是您知道长 (JavaScript) 任务会导致 TTI 表现不佳吗？
 

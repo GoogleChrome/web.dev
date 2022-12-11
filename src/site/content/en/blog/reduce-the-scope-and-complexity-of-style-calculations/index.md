@@ -6,7 +6,7 @@ subhead: |
 authors:
   - paullewis
 date: 2015-03-20
-updated: 2018-08-17 
+updated: 2018-08-17
 description: |
   JavaScript is often the trigger for visual changes. Sometimes that's directly through style manipulations, and sometimes it's calculations that will result in visual changes, like searching or sorting some data. Badly-timed or long-running JavaScript can be a common cause of performance issues, and you should look to minimize its impact where you can.
 tags:
@@ -14,9 +14,9 @@ tags:
 
 ---
 
-Changing the DOM, through adding and removing elements, changing attributes, 
-classes, or through animation, will all cause the browser to recalculate 
-element styles and, in many cases, layout (or reflow) the page, or parts of 
+Changing the DOM, through adding and removing elements, changing attributes,
+classes, or through animation, will all cause the browser to recalculate
+element styles and, in many cases, layout (or reflow) the page, or parts of
 it. This process is called __computed style calculation__.
 
 The first part of computing styles is to create a set of matching selectors, which is essentially the browser figuring out which classes, pseudo-selectors and IDs apply to any given element.
@@ -29,7 +29,7 @@ Roughly 50% of the time used to calculate the computed style for an element is u
 Rune Lillesveen, Opera / [Style Invalidation in Blink](https://docs.google.com/document/d/1vEW86DaeVs4uQzNFI5R-_xS9TcS1Cs_EUsHRSgCHGu8/view)
 {% endAside %}
 
-### TL;DR
+### Summary
 
 * Reduce the complexity of your selectors; use a class-centric methodology like BEM.
 * Reduce the number of elements on which style calculation must be calculated.

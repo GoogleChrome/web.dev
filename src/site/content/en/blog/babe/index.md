@@ -13,7 +13,8 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/jalFicttU5q4B9S88RJg.gif", alt="BaBe detail", width="582", height="1000" %}
 </figure>
 
-### TL;DR 
+## Summary
+
 BaBe’s cross-browser Progressive Web App rivals performance of native app.
 
 ### Results
@@ -43,7 +44,7 @@ use of low-end devices. Together these hindered their inability to scale.
 They built a Progressive Web App ([https://app.babe.co.id](https://app.babe.co.id)) to combine the best
 of their app with the broad reach of the web. It leverages new, open web APIs
 to offer a mobile-web experience that loads quickly, uses less data, and
-re-engages users in multiple ways. 
+re-engages users in multiple ways.
 
 After implementing their Progressive Web App, they saw it perform slightly
 faster than their native app in testing. They also noticed that engagement was

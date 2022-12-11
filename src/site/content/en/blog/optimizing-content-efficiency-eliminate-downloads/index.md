@@ -8,7 +8,7 @@ date: 2014-03-31
 updated: 2018-08-17
 ---
 
-### TL;DR {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 - Inventory your own assets and third-party assets on your pages.
 - Measure the performance of each asset: its value and its technical performance.

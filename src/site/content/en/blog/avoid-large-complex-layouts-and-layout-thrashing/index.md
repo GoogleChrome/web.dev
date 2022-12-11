@@ -6,7 +6,7 @@ subhead: |
 authors:
   - paullewis
 date: 2015-03-20
-updated: 2018-08-17 
+updated: 2018-08-17
 description: |
   Layout is where the browser figures out the geometric information for elements - their size and location in the page. Each element will have explicit or implicit sizing information based on the CSS that was used, the contents of the element, or a parent element. The process is called Layout in Chrome.
 tags:
@@ -14,11 +14,11 @@ tags:
 
 ---
 
-Layout is where the browser figures out the geometric information for 
-elements: their size and location in the page. Each element will have 
-explicit or implicit sizing information based on the CSS that was used, the 
-contents of the element, or a parent element. The process is called Layout 
-in Chrome, Opera, Safari, and Internet Explorer. In Firefox it’s called 
+Layout is where the browser figures out the geometric information for
+elements: their size and location in the page. Each element will have
+explicit or implicit sizing information based on the CSS that was used, the
+contents of the element, or a parent element. The process is called Layout
+in Chrome, Opera, Safari, and Internet Explorer. In Firefox it’s called
 Reflow, but effectively the process is the same.
 
 Similarly to style calculations, the immediate concerns for layout cost are:
@@ -26,7 +26,7 @@ Similarly to style calculations, the immediate concerns for layout cost are:
 1. The number of elements that require layout.
 1. The complexity of those layouts.
 
-## TL;DR 
+## Summary
 
 * Layout is normally scoped to the whole document.
 * The number of DOM elements will affect performance; you should avoid triggering layout wherever possible.

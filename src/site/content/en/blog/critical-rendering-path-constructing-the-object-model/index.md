@@ -13,7 +13,7 @@ Before the browser can render the page, it needs to construct the DOM and
 CSSOM trees. As a result, we need to ensure that we deliver both the HTML and
 CSS to the browser as quickly as possible.
 
-### TL;DR {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 - Bytes → characters → tokens → nodes → object model.
 - HTML markup is transformed into a Document Object Model (DOM); CSS markup is

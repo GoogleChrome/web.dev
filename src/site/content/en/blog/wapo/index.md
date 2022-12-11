@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/rTadjNpxkUGJHDs5t0MU.gif", alt="Washington Post detail", width="559", height="1000" %}
 </figure>
 
-### TL;DR
+### Summary
 
 AMP helps the Washington Post increase returning users from mobile search by 23%
 
