@@ -14,7 +14,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/RKMo1BHS0YOcGjlcNqv8.png", alt="Art Session detail", width="800", height="1428" %}
 </figure>
 
-## Summary
+### Summary
 
 Six artists were invited to paint, design, and sculpt in VR. This is the
 process for how we recorded their sessions, converted the data, and presented
