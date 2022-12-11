@@ -170,8 +170,8 @@ page.
   _([lab](#in-the-lab), [field](#in-the-field))_
 
 While this list includes metrics measuring many of the various aspects of
-performance relevant to users, it does not include everything (e.g. runtime
-responsiveness and smoothness are not currently covered).
+performance relevant to users, it does not include everything. For example, runtime
+responsiveness and smoothness are not currently covered.
 
 In some cases, new metrics will be introduced to cover missing areas, but in
 other cases the best metrics are ones specifically tailored to your site.

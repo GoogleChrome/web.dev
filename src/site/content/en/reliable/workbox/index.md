@@ -152,7 +152,7 @@ See the [documentation of the options](https://goo.gl/gVo87N) for details.
 If you have an existing service worker and want to try out Workbox's runtime
 libraries,
 [import Workbox from its official CDN](https://developer.chrome.com/docs/workbox/modules/workbox-sw/#using-workbox-sw-via-cdn)
-and start using it for runtime caching right away. Please note that this use
+and start using it for runtime caching right away. This use
 case means that you won't be able to take advantage of precaching (which
 requires build-time integration), but it's great for prototyping and trying out
 different caching strategies on the fly.

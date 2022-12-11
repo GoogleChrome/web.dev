@@ -1,7 +1,7 @@
 ---
 title: Social discovery
 subhead: You can influence the way your site appears when shared via social media by adding a few lines of code to each page. This can help bring more people to your site by providing previews with richer information than would otherwise be available.
-date: 2014-10-07 
+date: 2014-10-07
 updated: 2018-09-20
 authors:
   - agektmr
@@ -100,7 +100,7 @@ metadata to social sites, typical `itemprop` values are `name`, `description`,
 and `image`.
 
 ### Validate rich snippets
-In order to validate rich snippets on Google+, you can use tools such as:
+To validate rich snippets on Google+, you can use tools such as:
 
 * [Structured Data Testing Tool](https://www.google.com/webmasters/tools/richsnippets) - Webmaster Tools
 
@@ -186,7 +186,7 @@ official Open Graph Protocol site.
 * [ogp.me](http://ogp.me/)
 
 ### Validate rich snippets
-In order to validate your markup on Facebook, you can use tools such as:
+To validate your markup on Facebook, you can use tools such as:
 
 * [Debugger](https://developers.facebook.com/tools/debug/)
 
@@ -198,7 +198,7 @@ your web page. By adding the appropriate metadata, Tweets with links to your
 page will have a card added that includes the rich detail you've added.
 
 ### Use `twitter:` namespaced meta tags to describe metadata
-In order to get a Twitter Card working, [your domain must be
+To get a Twitter Card working, [your domain must be
 approved](https://cards-dev.twitter.com/validator) and must
 contain a meta tag that has `twitter:card` as the `name` attribute instead of
 `property` attribute.
@@ -245,7 +245,7 @@ To learn more about Twitter Cards, visit:
 * [Twitter's developer site](https://dev.twitter.com/cards)
 
 ### Validate rich snippets
-In order to validate your markup, Twitter provides:
+To validate your markup, Twitter provides:
 
 * [Card Validator](https://cards-dev.twitter.com/validator)
 

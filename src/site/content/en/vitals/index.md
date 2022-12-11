@@ -32,7 +32,7 @@ Google has provided a number of tools over the years to measure and report on
 performance. Some developers are experts at using these tools, while others have
 found the abundance of both tools and metrics challenging to keep up with.
 
-Site owners should not have to be performance gurus in order to understand the
+Site owners should not have to be performance experts to understand the
 quality of experience they are delivering to their users. The Web Vitals
 initiative aims to simplify the landscape, and help sites focus on the metrics
 that matter most, the **Core Web Vitals**.

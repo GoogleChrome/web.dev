@@ -32,10 +32,10 @@ it can also create a performance bottleneck in the critical rendering path and d
 
 ### The default behavior
 
-Lazy loading of fonts carries an important hidden implication that may delay text rendering:
-the browser must [construct the render tree](/critical-rendering-path-render-tree-construction/),
+Lazy loading of fonts carries an important hidden implication that may delay text rendering.
+The browser must [construct the render tree](/critical-rendering-path-render-tree-construction/),
 which is dependent on the DOM and CSSOM trees,
-before it knows which font resources it needs in order to render the text.
+before it knows which font resources it needs to render the text.
 As a result, font requests are delayed well after other critical resources,
 and the browser may be blocked from rendering text until the resource is fetched.
 
