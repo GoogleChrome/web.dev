@@ -451,7 +451,7 @@ on the element in question.
    data-formerly="Margarita Maker" data-aspiring="Load Balancer"
    data-year-graduated="2022">
   HAL and EVE could teach a fan to blow hot air.
-</p>
+</blockquote>
 ```
 
 You can use `getAttribute()` using the full attribute name, or you can take advantage of the simpler [`dataset`](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset) property.
