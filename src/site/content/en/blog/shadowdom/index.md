@@ -10,7 +10,7 @@ tags:
 ---
 
 {% Aside 'warning' %}
-This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article, "[Shadow DOM v1: self-contained web components](/shadowdom-v1/)". It covers everything in the newer Shadow DOM v1 spec shipping in Chrome 53, Opera, and Safari 10.
+This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article, "[Shadow DOM v1: self-contained web components](/shadowdom-v1/)". It covers everything in the newer Shadow DOM v1 spec shipped in Chrome 53, Safari 10, and Firefox 63.
 {% endAside %}
 
 ## Introduction
@@ -53,13 +53,11 @@ DOM changes, your styles and scripts might break in unpredictable
 ways.
 {% endAside %}
 
-Web Components is comprised of four
-parts:
+Web Components is comprised of three parts:
 
-1. [Templates](https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/templates/index.html)
-1. [Shadow DOM](http://www.w3.org/TR/shadow-dom/)
-1. [Custom Elements](https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/custom/index.html)
-1. [Packaging](https://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html#external-custom-elements-and-decorators)
+1. [Templates](https://html.spec.whatwg.org/multipage/scripting.html#the-template-element)
+1. [Shadow DOM](https://www.w3.org/TR/shadow-dom/)
+1. [Custom Elements](https://html.spec.whatwg.org/multipage/custom-elements.html)
 
 
 **Shadow DOM** addresses the DOM tree encapsulation problem. The
@@ -268,11 +266,11 @@ shadow.appendChild(clone);
 
 {% Aside %}
 Templates, like Shadow DOM, are an emerging
-standard. The `<template>` element is available in [many modern browsers](http://caniuse.com/#search=template). You can also populate a shadow root using familiar
+standard. The `<template>` element is available in [many modern browsers](https://caniuse.com/template). You can also populate a shadow root using familiar
 properties and methods like `innerHTML`, `appendChild`, `getElementById`,
 and so on. This article is focused on Shadow DOM, so we won’t go
 further into how the template element works here. If you want to learn
-more about `<template>`, see [HTML's New Template Tag](https://www.html5rocks.com/tutorials/webcomponents/template/).
+more about `<template>`, see [HTML's New Template Tag](/webcomponents-template/).
 {% endAside %}
 
 Now that we have set up a shadow root, the name tag is rendered
@@ -497,7 +495,7 @@ island vacation (you know… with hammocks made out of Red Vines.) You
 set up your document this way:
 
 
-``html
+```html
 <div class="dateRangePicker">
   <label for="start">Start:</label>
   <input type="date" name="startDate" id="start">
@@ -536,5 +534,4 @@ one shadow host, or nested shadows for encapsulation, or architect
 your page using Model-Driven Views (MDV) and Shadow DOM. And Web
 Components are more than just Shadow DOM.
 
-We explain those in later posts. Now,
-follow [Web Components on Google+](https://plus.google.com/103330502635338602217/posts).
+We explain those in later posts.
