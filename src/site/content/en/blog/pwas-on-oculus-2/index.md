@@ -335,7 +335,7 @@ bubblewrap build
 ```
 
 This will output a file called `app-release-signed.apk`. This file can be installed on the device
-or published to the Meta Quest Store, Google Play Store or any other Android app distribution
+or published to the Meta Quest Store, Google Play Store or any of the other Android app distribution
 platforms.
 
 {% Aside 'note' %}
