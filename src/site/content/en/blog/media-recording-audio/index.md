@@ -135,7 +135,7 @@ you the low-level capability for custom audio processing. The actual audio
 processing happens in the `process()` callback method in the `AudioWorkletProcessor`.
 Call this function to feed inputs and parameters and fetch outputs.
 
-Checkout [Enter Audio Worklet](https://developer.chrome.com/blog/audio-worklet/)
+Check out [Enter Audio Worklet](https://developer.chrome.com/blog/audio-worklet/)
 to learn more.
 
 ```html
