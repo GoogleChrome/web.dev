@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const data = require('../content/en/learn/learn.11tydata.js')();
+const data = require('../content/en/explore/explore.11tydata.js')();
 
 // =============================================================================
 // POST HOST
