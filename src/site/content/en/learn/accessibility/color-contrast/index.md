@@ -170,7 +170,9 @@ color blindness might look like.
 
 The color contrast formula uses the
 [relative luminance](https://www.w3.org/TR/WCAG/#dfn-relative-luminance) of
-colors to help determine contrast, which can range from 1 to 21. This formula is often shortened to `[color value]:1`. For example, pure black against pure white has the largest color contrast ratio at `21:1`.
+colors to help determine contrast, which can range from 1 to 21. This formula
+is often shortened to `[color value]:1`. For example, pure black against pure
+white has the largest color contrast ratio at `21:1`.
 
 ```text
 (L1 + 0.05) / (L2 + 0.05)
