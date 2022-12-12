@@ -10,7 +10,7 @@ tags:
 ---
 
 {% Aside 'warning' %}
-This article describes an old version of Custom Elements (v0). If you're interested in using Custom Elements, check out our new article, "[Custom Elements v1 - Reusable Web Components](/custom-elements-v1/)". It covers everything in the newer Custom Elements v1 spec shipped in Chrome 53, Safari 10, and Firefox 63.
+This article describes an old version of Custom Elements (v0). If you're interested in using Custom Elements, check out our new article, "[Custom Elements v1 - Reusable Web Components](/custom-elements-v1/)." It covers everything in the newer Custom Elements v1 spec shipped in Chrome 53, Safari 10, and Firefox 63.
 {% endAside %}
 
 ## Introduction
