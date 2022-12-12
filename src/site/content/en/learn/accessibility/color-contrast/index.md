@@ -180,7 +180,13 @@ L1 is the relative luminance of the lighter color
 L2 is the relative luminance of the darker colors
 ```
 
-Regular-sized text, including images of text, must have a color contrast ratio of `4.5:1` to pass the minimum WCAG requirements for color. While large-sized text and essential icons must have a color contrast ratio of `3:1`. Large-sized text is characterized by being at least 18pt / 24px or 14pt / 18.5px bolded. Logos and decorative elements are exempt from these color contrast requirements.
+Regular-sized text, including images of text, must have a color contrast ratio
+of `4.5:1` to pass the
+[minimum WCAG requirements for color](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
+Large-sized text and essential icons must have a color contrast ratio of `3:1`.
+Large-sized text is characterized by being at least 18pt / 24px or 14pt /
+18.5px bolded. Logos and decorative elements are exempt from these color
+contrast requirements.
 
 Thankfully, no advanced math is required as there are a lot of tools that will
 do the color contrast calculations for you. Tools like
