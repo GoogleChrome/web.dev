@@ -60,7 +60,7 @@ window.customElements.define('app-drawer', class extends HTMLElement {...});
 Example usage:
 
 ```html
-    <app-drawer></app-drawer>
+<app-drawer></app-drawer>
 ```
 
 It's important to remember that using a custom element is no different than
@@ -82,54 +82,54 @@ create a **public JavaScript API** for your tag.
 ```js
 class AppDrawer extends HTMLElement {
 
-    // A getter/setter for an open property.
-    get open() {
+  // A getter/setter for an open property.
+  get open() {
     return this.hasAttribute('open');
-    }
+  }
 
-    set open(val) {
+  set open(val) {
     // Reflect the value of the open property as an HTML attribute.
     if (val) {
-        this.setAttribute('open', '');
+      this.setAttribute('open', '');
     } else {
-        this.removeAttribute('open');
+      this.removeAttribute('open');
     }
     this.toggleDrawer();
-    }
+  }
 
-    // A getter/setter for a disabled property.
-    get disabled() {
+  // A getter/setter for a disabled property.
+  get disabled() {
     return this.hasAttribute('disabled');
-    }
+  }
 
-    set disabled(val) {
+  set disabled(val) {
     // Reflect the value of the disabled property as an HTML attribute.
     if (val) {
-        this.setAttribute('disabled', '');
+      this.setAttribute('disabled', '');
     } else {
-        this.removeAttribute('disabled');
+      this.removeAttribute('disabled');
     }
-    }
+  }
 
-    // Can define constructor arguments if you wish.
-    constructor() {
+  // Can define constructor arguments if you wish.
+  constructor() {
     // If you define a constructor, always call super() first!
     // This is specific to CE and required by the spec.
     super();
 
     // Setup a click listener on <app-drawer> itself.
     this.addEventListener('click', e => {
-        // Don't toggle the drawer if it's disabled.
-        if (this.disabled) {
+      // Don't toggle the drawer if it's disabled.
+      if (this.disabled) {
         return;
-        }
-        this.toggleDrawer();
+      }
+      this.toggleDrawer();
     });
-    }
+  }
 
-    toggleDrawer() {
-    ...
-    }
+  toggleDrawer() {
+    // ...
+  }
 }
 
 customElements.define('app-drawer', AppDrawer);
@@ -238,19 +238,22 @@ removed from the DOM (e.g. the user calls `el.remove()`).
 
 ```js
 class AppDrawer extends HTMLElement {
-    constructor() {
+  constructor() {
     super(); // always call super() first in the constructor.
-    ...
-    }
-    connectedCallback() {
-    ...
-    }
-    disconnectedCallback() {
-    ...
-    }
-    attributeChangedCallback(attrName, oldVal, newVal) {
-    ...
-    }
+    // ...
+  }
+
+  connectedCallback() {
+    // ...
+  }
+
+  disconnectedCallback() {
+    // ...
+  }
+
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    // ...
+  }
 }
 ```
 
@@ -294,8 +297,8 @@ and/or prevent user interaction when it's disabled:
 
 ```css
 app-drawer[disabled] {
-    opacity: 0.5;
-    pointer-events: none;
+  opacity: 0.5;
+  pointer-events: none;
 }
 ```
 
@@ -306,17 +309,17 @@ behavior by reflecting the value to an attribute of the same name:
 
 ```js
 get disabled() {
-    return this.hasAttribute('disabled');
+  return this.hasAttribute('disabled');
 }
 
 set disabled(val) {
-    // Reflect the value of `disabled` as an attribute.
-    if (val) {
+  // Reflect the value of `disabled` as an attribute.
+  if (val) {
     this.setAttribute('disabled', '');
-    } else {
+  } else {
     this.removeAttribute('disabled');
-    }
-    this.toggleDrawer();
+  }
+  this.toggleDrawer();
 }
 ```
 
@@ -335,36 +338,36 @@ to attributes listed in the `observedAttributes` array.
 
 ```js
 class AppDrawer extends HTMLElement {
-    ...
+  // ...
 
-    static get observedAttributes() {
+  static get observedAttributes() {
     return ['disabled', 'open'];
-    }
+  }
 
-    get disabled() {
+  get disabled() {
     return this.hasAttribute('disabled');
-    }
+  }
 
-    set disabled(val) {
+  set disabled(val) {
     if (val) {
-        this.setAttribute('disabled', '');
+      this.setAttribute('disabled', '');
     } else {
-        this.removeAttribute('disabled');
+      this.removeAttribute('disabled');
     }
-    }
+  }
 
-    // Only called for the disabled and open attributes due to observedAttributes
-    attributeChangedCallback(name, oldValue, newValue) {
+  // Only called for the disabled and open attributes due to observedAttributes
+  attributeChangedCallback(name, oldValue, newValue) {
     // When the drawer is disabled, update keyboard/screen reader behavior.
     if (this.disabled) {
-        this.setAttribute('tabindex', '-1');
-        this.setAttribute('aria-disabled', 'true');
+      this.setAttribute('tabindex', '-1');
+      this.setAttribute('aria-disabled', 'true');
     } else {
-        this.setAttribute('tabindex', '0');
-        this.setAttribute('aria-disabled', 'false');
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-disabled', 'false');
     }
     // TODO: also react to the open attribute changing.
-    }
+  }
 }
 ```
 
@@ -397,7 +400,7 @@ element becomes defined.
 
 ```js
 customElements.whenDefined('app-drawer').then(() => {
-    console.log('app-drawer defined');
+  console.log('app-drawer defined');
 });
 ```
 
@@ -407,9 +410,9 @@ customElements.whenDefined('app-drawer').then(() => {
 
 ```html
 <share-buttons>
-    <social-button type="twitter"><a href="...">Twitter</a></social-button>
-    <social-button type="fb"><a href="...">Facebook</a></social-button>
-    <social-button type="plus"><a href="...">G+</a></social-button>
+  <social-button type="twitter"><a href="...">Twitter</a></social-button>
+  <social-button type="fb"><a href="...">Facebook</a></social-button>
+  <social-button type="plus"><a href="...">G+</a></social-button>
 </share-buttons>
 ```
 
@@ -417,13 +420,13 @@ customElements.whenDefined('app-drawer').then(() => {
 // Fetch all the children of <share-buttons> that are not defined yet.
 let undefinedButtons = buttons.querySelectorAll(':not(:defined)');
 
-let promises = [...undefinedButtons].map(socialButton => {
-    return customElements.whenDefined(socialButton.localName);
+let promises = [...undefinedButtons].map((socialButton) => {
+  return customElements.whenDefined(socialButton.localName);
 });
 
 // Wait for all the social-buttons to be upgraded.
 Promise.all(promises).then(() => {
-    // All social-button children are ready.
+  // All social-button children are ready.
 });
 ```
 
@@ -445,10 +448,10 @@ element code. [Reactions](#reactions) come in handy for this.
 
 ```js
 customElements.define('x-foo-with-markup', class extends HTMLElement {
-    connectedCallback() {
+  connectedCallback() {
     this.innerHTML = "<b>I'm an x-foo-with-markup!</b>";
-    }
-    ...
+  }
+  // ...
 });
 ```
 
@@ -456,7 +459,7 @@ Declaring this tag will produce:
 
 ```html
 <x-foo-with-markup>
-    <b>I'm an x-foo-with-markup!</b>
+  <b>I'm an x-foo-with-markup!</b>
 </x-foo-with-markup>
 ```
 
@@ -477,7 +480,7 @@ Declaring this tag will produce:
 <script>
   const supportsCustomElementsV1 = 'customElements' in window;
 
-  if(supportsCustomElementsV1) {
+  if (supportsCustomElementsV1) {
     customElements.define('x-foo-with-markup', class extends HTMLElement {
       connectedCallback() {
         this.innerHTML = "<b>I'm an x-foo-with-markup!</b>";
@@ -520,20 +523,20 @@ To use Shadow DOM in a custom element, call `this.attachShadow` inside your
 ```js
 let tmpl = document.createElement('template');
 tmpl.innerHTML = `
-    <style>:host { ... }</style> <!-- look ma, scoped styles -->
-    <b>I'm in shadow dom!</b>
-    <slot></slot>
+  <style>:host { ... }</style> <!-- look ma, scoped styles -->
+  <b>I'm in shadow dom!</b>
+  <slot></slot>
 `;
 
 customElements.define('x-foo-shadowdom', class extends HTMLElement {
-    constructor() {
+  constructor() {
     super(); // always call super() first in the constructor.
 
     // Attach a shadow root to the element.
     let shadowRoot = this.attachShadow({mode: 'open'});
     shadowRoot.appendChild(tmpl.content.cloneNode(true));
-    }
-    ...
+  }
+  // ...
 });
 ```
 
@@ -549,14 +552,14 @@ Example usage:
 
 ```html
 <x-foo-shadowdom>
-    <p><b>User's</b> custom text</p>
+  <p><b>User's</b> custom text</p>
 </x-foo-shadowdom>
 
 <!-- renders as -->
 <x-foo-shadowdom>
-    #shadow-root
-    <b>I'm in shadow dom!</b>
-    <slot></slot> <!-- slotted content appears here -->
+  #shadow-root
+  <b>I'm in shadow dom!</b>
+  <slot></slot> <!-- slotted content appears here -->
 </x-foo-shadowdom>
 ```
 
@@ -614,25 +617,25 @@ structure of a custom element**.
 
 ```html
 <template id="x-foo-from-template">
-    <style>
+  <style>
     p { color: green; }
-    </style>
-    <p>I'm in Shadow DOM. My markup was stamped from a &lt;template&gt;.</p>
+  </style>
+  <p>I'm in Shadow DOM. My markup was stamped from a &lt;template&gt;.</p>
 </template>
 
 <script>
-    let tmpl = document.querySelector('#x-foo-from-template');
-    // If your code is inside of an HTML Import you'll need to change the above line to:
-    // let tmpl = document.currentScript.ownerDocument.querySelector('#x-foo-from-template');
+  let tmpl = document.querySelector('#x-foo-from-template');
+  // If your code is inside of an HTML Import you'll need to change the above line to:
+  // let tmpl = document.currentScript.ownerDocument.querySelector('#x-foo-from-template');
 
-    customElements.define('x-foo-from-template', class extends HTMLElement {
+  customElements.define('x-foo-from-template', class extends HTMLElement {
     constructor() {
-        super(); // always call super() first in the constructor.
-        let shadowRoot = this.attachShadow({mode: 'open'});
-        shadowRoot.appendChild(tmpl.content.cloneNode(true));
+      super(); // always call super() first in the constructor.
+      let shadowRoot = this.attachShadow({mode: 'open'});
+      shadowRoot.appendChild(tmpl.content.cloneNode(true));
     }
-    ...
-    });
+    // ...
+  });
 </script>
 ```
 
@@ -666,7 +669,7 @@ on:
 <script>
   const supportsCustomElementsV1 = 'customElements' in window;
 
-  if(supportsCustomElementsV1) {
+  if (supportsCustomElementsV1) {
     customElements.define('x-foo-from-template', class extends HTMLElement {
       constructor() {
         super();
@@ -691,32 +694,32 @@ your custom element from their page. These are called "user-defined styles".
 ```html
 <!-- user-defined styling -->
 <style>
-    app-drawer {
+  app-drawer {
     display: flex;
-    }
-    panel-item {
+  }
+  panel-item {
     transition: opacity 400ms ease-in-out;
     opacity: 0.3;
     flex: 1;
     text-align: center;
     border-radius: 50%;
-    }
-    panel-item:hover {
+  }
+  panel-item:hover {
     opacity: 1.0;
     background: rgb(255, 0, 255);
     color: white;
-    }
-    app-panel > panel-item {
+  }
+  app-panel > panel-item {
     padding: 5px;
     list-style: none;
     margin: 0 7px;
-    }
+  }
 </style>
 
 <app-drawer>
-    <panel-item>Do</panel-item>
-    <panel-item>Re</panel-item>
-    <panel-item>Mi</panel-item>
+  <panel-item>Do</panel-item>
+  <panel-item>Re</panel-item>
+  <panel-item>Mi</panel-item>
 </app-drawer>
 ```
 
@@ -736,11 +739,11 @@ components and fading them in when they become defined.
 
 ```css
 app-drawer:not(:defined) {
-    /* Pre-style, give layout, replicate app-drawer's eventual styles, etc. */
-    display: inline-block;
-    height: 100vh;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+  /* Pre-style, give layout, replicate app-drawer's eventual styles, etc. */
+  display: inline-block;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 ```
 
@@ -760,20 +763,20 @@ Extending another custom element is done by extending its class definition.
 
 ```js
 class FancyDrawer extends AppDrawer {
-    constructor() {
+  constructor() {
     super(); // always call super() first in the constructor. This also calls the extended class' constructor.
-    ...
-    }
+    // ...
+  }
 
-    toggleDrawer() {
+  toggleDrawer() {
     // Possibly different toggle implementation?
     // Use ES2015 if you need to call the parent method.
     // super.toggleDrawer()
-    }
+  }
 
-    anotherMethod() {
-    ...
-    }
+  anotherMethod() {
+    // ...
+  }
 }
 
 customElements.define('fancy-app-drawer', FancyDrawer);
@@ -811,13 +814,13 @@ Similarly, an element that extends `<img>` needs to extend `HTMLImageElement`.
 // See https://html.spec.whatwg.org/multipage/indices.html#element-interfaces
 // for the list of other DOM interfaces.
 class FancyButton extends HTMLButtonElement {
-    constructor() {
+  constructor() {
     super(); // always call super() first in the constructor.
     this.addEventListener('click', e => this.drawRipple(e.offsetX, e.offsetY));
-    }
+  }
 
-    // Material design ripple animation.
-    drawRipple(x, y) {
+  // Material design ripple animation.
+  drawRipple(x, y) {
     let div = document.createElement('div');
     div.classList.add('ripple');
     this.appendChild(div);
@@ -825,8 +828,8 @@ class FancyButton extends HTMLButtonElement {
     div.style.left = `${x - div.clientWidth/2}px`;
     div.style.backgroundColor = 'currentColor';
     div.classList.add('run');
-    div.addEventListener('transitionend', e => div.remove());
-    }
+    div.addEventListener('transitionend', (e) => div.remove());
+  }
 }
 
 customElements.define('fancy-button', FancyButton, {extends: 'button'});
@@ -874,9 +877,9 @@ document.body.appendChild(button);
 or use the `new` operator:
 
 ```js
-    let button = new FancyButton();
-    button.textContent = 'Fancy button!';
-    button.disabled = true;
+let button = new FancyButton();
+button.textContent = 'Fancy button!';
+button.disabled = true;
 ```
 
 Here's another example that extends `<img>`.
@@ -886,10 +889,10 @@ Here's another example that extends `<img>`.
 
 ```js
 customElements.define('bigger-img', class extends Image {
-    // Give img default size if users don't specify.
-    constructor(width=50, height=50) {
+  // Give img default size if users don't specify.
+  constructor(width=50, height=50) {
     super(width * 10, height * 10);
-    }
+  }
 }, {extends: 'img'});
 ```
 
@@ -978,7 +981,7 @@ Example
 
 ```js
 customElements.whenDefined('app-drawer').then(() => {
-    console.log('ready!');
+  console.log('ready!');
 });
 ```
 
@@ -1042,17 +1045,17 @@ Usage:
 
 <!-- Load a custom element definitions in `waitFor` and return a promise -->
 <script type="module">
-    function loadScript(src) {
+  function loadScript(src) {
     return new Promise(function(resolve, reject) {
-        const script = document.createElement('script');
-        script.src = src;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
     });
-    }
+  }
 
-    WebComponents.waitFor(() => {
+  WebComponents.waitFor(() => {
     // At this point we are guaranteed that all required polyfills have
     // loaded, and can use web components APIs.
     // Next, load element definitions that call `customElements.define`.
@@ -1060,7 +1063,7 @@ Usage:
     // polyfill to wait until all definitions are loaded and then upgrade
     // the document in one batch, for better performance.
     return loadScript('my-element.js');
-    });
+  });
 </script>
 ```
 {% Aside %}
