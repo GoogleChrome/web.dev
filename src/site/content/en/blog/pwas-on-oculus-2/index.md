@@ -423,7 +423,7 @@ in the companion mobile app. Before you can put your device in developer mode, y
 (or have created) a developer organization in the Oculus Developer Center.
 {% endAside %}
 
-After creating the APK file, developers can sideload it to the Meta Quest device using the ADB via
+After creating the APK file, you can sideload it to the Meta Quest device using the ADB via
 USB or Wi-Fi:
 
 ```bash
