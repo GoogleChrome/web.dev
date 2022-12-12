@@ -10,7 +10,6 @@
   font-size: get-size('size-0');
   text-decoration: none;
 
-  @include apply-utility('bg', 'mid-bg');
   @include apply-utility('color', 'action-text');
 
   svg {
