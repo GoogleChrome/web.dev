@@ -38,7 +38,7 @@ theTeam:
     - name: petelepage
       role: Lorem ipsum
     - name: ewagasperowicz
-      role: Lorem ipsum
+      role: Tech Lead
   primaryButtonText: 'See our authors'
   primaryButtonUrl: '/authors/'
 developers:
