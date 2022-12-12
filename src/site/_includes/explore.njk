@@ -15,7 +15,7 @@ pageScripts:
     <div class="wrapper">
       <div class="headline all-center flow">
         <h1 class="headline__title">{{ title }}</h1>
-        <p>{{ 'i18n.learn.header' | i18n(locale) }}</p>
+        <p>{{ 'i18n.explore.header' | i18n(locale) }}</p>
       </div>
     </div>
   </header>
@@ -24,11 +24,11 @@ pageScripts:
   {# Collections start #}
   <div class="wrapper explore__collections">
     <div class="pad-block-size-1 repel">
-      <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.collections' | i18n(locale) }}</h2>
+      <h2 id="{{ 'i18n.explore.collections' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.explore.collections' | i18n(locale) }}</h2>
 
       {% set filterItems = [] %}
       {% for category, paths in learn %}
-        {% set i18nKey = 'i18n.learn.' + category %}
+        {% set i18nKey = 'i18n.explore.' + category %}
         {% set filterItems = (filterItems.push({title: i18nKey | i18n(locale), id: i18nKey | i18n(locale) | slug}), filterItems) %}
       {% endfor %}
       <web-learn-filter all="{{'i18n.common.all' | i18n(locale)}}" filters="{{filterItems | dump}}"></web-learn-filter>
@@ -37,10 +37,10 @@ pageScripts:
 
   <div id="learn__collections">
     {% for category, paths in learn %}
-      {% set i18nKey = 'i18n.learn.' + category %}
+      {% set i18nKey = 'i18n.explore.' + category %}
       <div id="{{ i18nKey | i18n(locale) | slug }}" class="explore__collection">
         <div class="wrapper flow">
-          <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="text-size-2">{{ i18nKey | i18n(locale) }}</h2>
+          <h2 id="{{ 'i18n.explore.collections' | i18n(locale) | slug }}" class="text-size-2">{{ i18nKey | i18n(locale) }}</h2>
           <div class="auto-grid gap-top-size-2">
             {% for path in paths %}
               <a href="/{{ path.slug }}" class="card">
