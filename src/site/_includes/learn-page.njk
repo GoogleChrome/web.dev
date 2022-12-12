@@ -2,8 +2,7 @@
 layout: default-next
 title: Learn
 description: |
-  Learn best practices for the modern web and hone your skills with hands-on
-  codelabs.
+  Explore our growing collection of courses on key web design and development subjects. An industry expert has written each course, helped by members of the Chrome team. Follow the modules sequentially, or dip into the topics you most want to learn about.
 pageScripts:
   - '/js/learn.js'
 ---
@@ -11,7 +10,7 @@ pageScripts:
 
 <div class="learn wide-card-index">
   {# Hero starts #}
-  <header class="region">
+  <header class="region bg-mid-bg learn__hero">
     <div class="wrapper">
       <div class="headline all-center flow">
         <h1 class="headline__title">{{ title }}</h1>
@@ -22,58 +21,31 @@ pageScripts:
   {# Hero ends #}
 
   {# Courses start #}
-  <div class="wrapper">
-    <h2 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.courses' | i18n(locale) }}</h2>
-  </div>
-  <div class="bg-mid-bg region gap-top-size-1">
-    <div class="wrapper">
-      {% include "partials/course-cards-next.njk" %}
+  <div class="region">
+    <div class="wrapper learn__collection">
+      {% set coursesArr = helpers.values(courses) %}
+      {% for course in coursesArr|sort(true, false, 'meta.date') %}
+      {% if course.meta and not course.meta.draft %}
+          <div>
+            <a href="{{ course.meta.url }}" class="card" data-style="branded">
+              <h3 class="visually-hidden">{{ course.meta.title }}</h3>
+              <div class="card__header repel">
+                <p class="color-mid-text">Course</p>
+                <div class="counter">
+                  {% set pages = collections.all | navigation(course.toc) %}
+                  <span class="counter__content" aria-label="{{ pages.list.length }} {{ 'i18n.learn.resources' | i18n(locale) }}">{{ pages.list.length }}</span>
+                  {{ icon('mortarboard') }}
+                </div>
+              </div>
+              <img src="{{ course.meta.card }}" alt="{{ course.meta.title }} branding" />
+              <div class="card__content flow">
+                <p class="text-size-1">{{ course.meta.description | i18n(locale) }}</p>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
   {# Courses end #}
-
-
-  {# Collections start #}
-  <div class="wrapper">
-    <div class="pad-block-size-1 repel">
-      <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.collections' | i18n(locale) }}</h2>
-
-      {% set filterItems = [] %}
-      {% for category, paths in learn %}
-        {% set i18nKey = 'i18n.learn.' + category %}
-        {% set filterItems = (filterItems.push({title: i18nKey | i18n(locale), id: i18nKey | i18n(locale) | slug}), filterItems) %}
-      {% endfor %}
-      <web-learn-filter all="{{'i18n.common.all' | i18n(locale)}}" filters="{{filterItems | dump}}"></web-learn-filter>
-    </div>
-  </div>
-
-  <div id="learn__collections">
-    {% for category, paths in learn %}
-      {% set i18nKey = 'i18n.learn.' + category %}
-      <div id="{{ i18nKey | i18n(locale) | slug }}" class="learn__collection">
-        <div class="wrapper flow">
-          <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="text-size-2">{{ i18nKey | i18n(locale) }}</h2>
-          <div class="auto-grid gap-top-size-2">
-            {% for path in paths %}
-              <a href="/{{ path.slug }}" class="card">
-                <div class="card__header repel">
-                  <p class="color-mid-text">Collection</p>
-                  <div class="counter" data-layout="flush">
-                    <span class="counter__content">{{ path.topics.length }}</span>
-                    {% include 'icons/mortarboard.svg' %}
-                  </div>
-                </div>
-                <img src="{{ path.cover | imgix }}" alt="{{ path.title | i18n(locale) }}" />
-                <div class="card__content flow">
-                  <h3 class="card__heading text-size-2">{{ path.title | i18n(locale) }}</h3>
-                  <p class="text-size-0">{{ path.description | i18n(locale) }}</p>
-                </div>
-              </a>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-  {# Collections end #}
 </div>

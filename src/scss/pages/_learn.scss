@@ -1,14 +1,16 @@
-.learn {
-  .learn__collection {
-    border-block-start: 1px solid var(--color-stroke);
-    padding-block: get-space('size-1');
-  }
+.learn__collection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  .auto-grid {
-    padding-block-end: get-space('size-2');
+  a {
+    min-height: 410px;
+    margin-top: 0.9em;
+    margin-bottom: 0.9em;
   }
+}
 
-  .pill {
-    min-width: 4rem;
+.learn__hero {
+  p {
+    max-width: 74ch;
   }
 }
