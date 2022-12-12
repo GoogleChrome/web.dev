@@ -392,9 +392,7 @@ Meta Quest devices.
 
 You can choose the **Meta Quest** option to use the Oculus Platform Utility.
 
-// TODO: replace by 1.png
-
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/sWjB34HjwjatCMUz39Q3.png", alt="PWABuilder packaging options.", width="683", height="512" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/nmHjO4Tbr01psSEfaaOO.png", alt="PWABuilder packaging options.", width="800", height="600" %}
 
 {% Aside 'note' %}
 Pro tip: PWABuilder uses a slightly modified version of Oculus Platform Utility that generates much smaller
@@ -405,9 +403,7 @@ APK files by
 You can choose the **Android** option to use the Bubblewrap and select the **Meta Quest compatible**
 checkbox.
 
-// TODO: replace by 2.png
-
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/sWjB34HjwjatCMUz39Q3.png", alt="Packaging PWAs with PWABuilder using Bubblewrap.", width="683", height="512" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/jLnuUwLBi73HGXiv3XUy.png", alt="Packaging PWAs with PWABuilder using Bubblewrap.", width="800", height="600" %}
 
 {% Aside 'note' %}
 Pro tip: since PWABuilder is a PWA itself that works everywhere there is a browser, you can open it
