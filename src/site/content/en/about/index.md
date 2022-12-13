@@ -12,39 +12,39 @@ banner:
 intro:
   title: 'On this site'
   summary:
-    - paragraph: Explore our archive of content, covering subjects across the web development stack. You’ll find the latest news and content on our <a href="/blog/">blog</a>, and you can discover content by groups on the explore page.
-    - paragraph: For complete courses on key web development topics, check out <a href="/learn/">Learn</a>. Industry experts have developed these courses to take you right through a subject. They are structured to allow you to just dip into one or two modules of interest too.
-    - paragraph: Want some grab and go code? Our <a href="/patterns/">Patterns</a> break down common web development requirements, whether you want to understand how to approach a certain UI component, or need to know how to copy an image to the <a href="/patterns/clipboard/">clipboard</a>, you’ll find a solution there.
+    - paragraph: Explore our archive of content, covering subjects across the web development stack. Find the latest news and content on our <a href="/blog/">blog</a>, and discover content by groups on the <a href="/explore">explore</a> page.
+    - paragraph: For complete courses on key web development topics, check out <a href="/learn/">Learn</a>. Developed by industry experts, these courses take you right through a subject. They are structured to allow you to just dip into one or two modules of interest too.
+    - paragraph: Want some grab and go code? Our <a href="/patterns/">Patterns</a> break down common web development requirements. Whether you want to understand how to approach a certain UI component, or need to know how to copy an image to the <a href="/patterns/clipboard/">clipboard</a>, you’ll find a solution there.
     - paragraph: To help you make a case for work on UI or Performance, we have <a href="/tags/case-study/">case studies</a>. Find out how other companies have used metrics such as Core Web Vitals to see real results. And, if that’s quite enough reading for one day we also have a great archive of <a href="/podcasts/">podcasts</a> and other <a href="/shows/">shows</a>, plus recordings of our <a href="/spaces/">Twitter Space</a> sessions with members of the Chrome team.
     - paragraph: We believe that a web with multiple browser engines is important, and that web sites and applications should work well no matter which browser your visitors use. We know that you care about that too, and so content on this site should have cross-browser status clearly explained. You’ll see that many articles have a component showing browser support—the data comes from our friends at MDN, via the Browser Compat Data project that powers the data on MDN pages.
 theTeam:
   title: 'The team'
-  subTitle: 'Lorem ipsum dolor sit amet consectetur.'
+  subTitle: 'This site is brought to you by the Chrome DevRel team led by:'
   authors:
     - name: paulkinlan
-      role: DevRel Lead
+      role: DevRel lead
     - name: rachelandrew
-      role: Content Lead
+      role: Content lead
     - name: rowan_m
-      role: SPPI Lead
+      role: SPPI lead
     - name: andreban
-      role: Infrastructure Lead
+      role: Infrastructure lead
     - name: philipwalton
       role: Performance Lead
     - name: una
-      role: Lorem ipsum
+      role: CSS and UI lead
     - name: alispivak
-      role: Lorem ipsum
+      role: Chrome extensions lead
     - name: petelepage
-      role: Lorem ipsum
+      role: Advanced apps lead
     - name: ewagasperowicz
-      role: Tech Lead
+      role: Tech lead
   primaryButtonText: 'See our authors'
   primaryButtonUrl: '/authors/'
 developers:
   title: 'Making the web better for tomorrow'
   summary: |
-    We hope web.dev helps you to create high quality web experiences today, however the Chrome team is also working to make the web better tomorrow. If you want to learn more about what we are doing, and offer feedback on the features we are developing and contributing to, check out <a href="https://developer.chrome.com/">Chrome Developers</a>.
+    We hope web.dev helps you to create high quality web experiences today. The Chrome team is also working to make the web better tomorrow. If you want to learn more about what we are doing, and offer feedback on the features we are developing and contributing to, check out <a href="https://developer.chrome.com/">Chrome Developers</a>.
   primaryButtonText: 'Chrome Developers'
   primaryButtonUrl: 'https://developer.chrome.com/'
 coupledColumn:
