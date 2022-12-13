@@ -121,6 +121,12 @@ Event handlers that are not attached to this element need to be bound if they ne
       this._onSlotChange = this._onSlotChange.bind(this);
 ```
 
+For progressive enhancement, the markup should alternate between tabs and panels. Elements that reorder their children tend to not work well with frameworks. Instead shadow DOM is used to reorder the elements by using slots.
+
+```js
+      this.attachShadow({ mode: 'open' });
+```
+
 Import the shared template to create the slots for tabs and panels.
 
 ```js
@@ -144,7 +150,7 @@ This element needs to react to new children as it links up tabs and panel semant
     connectedCallback() {
 ```
 
-The element needs to do some manual input event handling to allow switching with arrow keys and Home/End.
+The element needs to do some manual input event handling to allow switching with arrow keys and <kbd>Home</kbd> / <kbd>End</kbd>.
 
 ```js
       this.addEventListener('keydown', this._onKeyDown);
@@ -161,11 +167,11 @@ Up until recently, `slotchange` events did not fire when an element was upgraded
         customElements.whenDefined('howto-tab'),
         customElements.whenDefined('howto-panel'),
       ])
-        .then(_ => this._linkPanels());
+        .then(() => this._linkPanels());
     }
 ```
 
-`disconnectedCallback()` removes the event listeners that connectedCallback added.
+`disconnectedCallback()` removes the event listeners that `connectedCallback()` added.
 
 ```js
     disconnectedCallback() {
@@ -182,7 +188,7 @@ Up until recently, `slotchange` events did not fire when an element was upgraded
     }
 ```
 
-`linkPanels()` links up tabs with their adjacent panels using aria-controls and `aria-labelledby`. Additionally, the method makes sure only one tab is active.
+`_linkPanels()` links up tabs with their adjacent panels using aria-controls and `aria-labelledby`. Additionally, the method makes sure only one tab is active.
 
 ```js
     _linkPanels() {
@@ -192,7 +198,7 @@ Up until recently, `slotchange` events did not fire when an element was upgraded
 Give each panel a `aria-labelledby` attribute that refers to the tab that controls it.
 
 ```js
-      tabs.forEach(tab => {
+      tabs.forEach((tab) => {
         const panel = tab.nextElementSibling;
         if (panel.tagName.toLowerCase() !== 'howto-panel') {
           console.error(`Tab #${tab.id} is not a` +
@@ -206,6 +212,13 @@ Give each panel a `aria-labelledby` attribute that refers to the tab that contro
 ```
 
 The element checks if any of the tabs have been marked as selected. If not, the first tab is now selected.
+
+```js
+      const selectedTab =
+        tabs.find((tab) => tab.selected) || tabs[0];
+```
+
+Next, switch to the selected tab. `_selectTab()` takes care of marking all other tabs as deselected and hiding all other panels.
 
 ```js
       this._selectTab(selectedTab);
@@ -249,8 +262,7 @@ This is a method and not a getter, because a getter implies that it is cheap to 
 Use `findIndex()` to find the index of the currently selected element and subtracts one to get the index of the previous element.
 
 ```js
-      let newIdx =
-      tabs.findIndex(tab => tab.selected) - 1;
+      let newIdx = tabs.findIndex((tab) => tab.selected) - 1;
 ```
 
 Add `tabs.length` to make sure the index is a positive number and get the modulus to wrap around if necessary.
@@ -278,12 +290,12 @@ Add `tabs.length` to make sure the index is a positive number and get the modulu
     }
 ```
 
-`_lastTab()` returns the last tab.
+`_nextTab()` gets the tab that comes after the currently selected one, wrapping around when reaching the last tab.
 
 ```js
     _nextTab() {
       const tabs = this._allTabs();
-      let newIdx = tabs.findIndex(tab => tab.selected) + 1;
+      let newIdx = tabs.findIndex((tab) => tab.selected) + 1;
       return tabs[newIdx % tabs.length];
     }
 ```
@@ -295,8 +307,8 @@ Add `tabs.length` to make sure the index is a positive number and get the modulu
       const tabs = this._allTabs();
       const panels = this._allPanels();
 
-      tabs.forEach(tab => tab.selected = false);
-      panels.forEach(panel => panel.hidden = true);
+      tabs.forEach((tab) => tab.selected = false);
+      panels.forEach((panel) => panel.hidden = true);
     }
 ```
 
@@ -413,6 +425,7 @@ If it was on a tab element, though, select that tab.
       this._selectTab(event.target);
     }
   }
+
   customElements.define('howto-tabs', HowtoTabs);
 ```
 
@@ -422,7 +435,7 @@ If it was on a tab element, though, select that tab.
   let howtoTabCounter = 0;
 ```
 
-`HowtoTabsTab` is a tab for a `<howto-tabs>` tab panel. `<howto-tab>` should always be used with role=heading in the markup so that the semantics remain useable when JavaScript is failing.
+`HowtoTab` is a tab for a `<howto-tabs>` tab panel. `<howto-tab>` should always be used with `role="heading"` in the markup so that the semantics remain useable when JavaScript is failing.
 
 A `<howto-tab>` declares which `<howto-panel>` it belongs to by using that panel’s ID as the value for the aria-controls attribute.
 
@@ -492,6 +505,7 @@ Properties and their corresponding attributes should mirror one another. To this
       return this.hasAttribute('selected');
     }
   }
+
   customElements.define('howto-tab', HowtoTab);
 
   let howtoPanelCounter = 0;
@@ -512,6 +526,7 @@ Properties and their corresponding attributes should mirror one another. To this
         this.id = `howto-panel-generated-${howtoPanelCounter++}`;
     }
   }
+
   customElements.define('howto-panel', HowtoPanel);
 })();
 ```
