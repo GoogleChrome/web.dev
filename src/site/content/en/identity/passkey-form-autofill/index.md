@@ -23,7 +23,7 @@ create a unified experience.
 
 ## Why use form autofill to sign-in with a passkey?
 
-With a passkey, a user can sign in to a website just by using fingerprint, face
+With a passkey, a user can sign in to a website just by using fingerprint, face,
 or device PIN.
 
 In an ideal world, there would be no password users and the authentication flow
