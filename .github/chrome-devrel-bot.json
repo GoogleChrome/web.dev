@@ -10,7 +10,8 @@
           "heyawhite",
           "jpmedley",
           "mihajlija",
-          "sofiayem"
+          "sofiayem",
+          "AaronForinton"
         ],
         "paths" : [
           "src/site/content/**/*.md"
@@ -21,20 +22,11 @@
         "teams" : [],
         "users" : [
           "PaulKinlan",
-          "jeffposnick",
+          "matthiasrohmer",
           "devnook"
         ],
         "paths" : [
-          "*.js",
-          "*.json",
-          "*.css",
-          "*.scss",
-          "*.html",
-          "*.htm",
-          "*.njk",
-          "*.toml",
-          "*.sh",
-          "src/site/content/en/newsletter/"
+          "*",
         ]
       },
       {
@@ -42,14 +34,15 @@
         "teams" : [],
         "users" : [
           "PaulKinlan",
-          "jeffposnick",
+          "matthiasrohmer",
           "devnook",
           "malchata",
           "rachelandrew",
           "heyawhite",
           "jpmedley",
           "mihajlija",
-          "sofiayem"
+          "sofiayem",
+          "AaronForinton"
         ],
         "paths" : [
           "src/site/_data/**.yml",
