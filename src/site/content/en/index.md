@@ -13,7 +13,7 @@ intro:
   imageHeight: '240'
 featureCard:
   theme: 'light'
-  title: 'Celebrate Chrometober with web tricks and treats.'
+  title: "Watch the progress we made together on the web."
   eyebrow: 'Featured'
   url: 'https://web.dev/chrometober-2022'
   background: 'https://web-dev.imgix.net/image/HodOHWjMnbNw56hvNASHWSgZyAf2/AwSceHfK5B3n1z1XSx1Z.gif'
