@@ -13,7 +13,7 @@ intro:
   imageHeight: '240'
 featureCard:
   theme: 'light'
-  title: "Watch the progress we made together on the web."
+  title: 'Watch the progress we made together on the web.'
   eyebrow: 'Featured'
   url: 'https://web.dev/chrometober-2022'
   background: 'https://web-dev.imgix.net/video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/bWZrtZalxeD5ot7YGZUH.mp4'
