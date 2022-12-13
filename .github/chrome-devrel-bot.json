@@ -26,7 +26,15 @@
           "devnook"
         ],
         "paths" : [
-          "*",
+          "*.js",
+          "*.json",
+          "*.css",
+          "*.scss",
+          "*.html",
+          "*.htm",
+          "*.njk",
+          "*.toml",
+          "*.sh"
         ]
       },
       {
