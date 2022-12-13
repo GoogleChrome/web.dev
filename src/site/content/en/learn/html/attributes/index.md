@@ -459,8 +459,8 @@ on the element in question.
 You can use `getAttribute()` using the full attribute name, or you can take advantage of the simpler [`dataset`](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset) property.
 
 ```javascript
-el.dataset[machingLearning]; // workshop
-e.dataset.machingLearning; // workshop
+el.dataset[machineLearning]; // workshop
+e.dataset.machineLearning; // workshop
 ```
 
 The `dataset` property returns a `DOMStringMap` object of each element's `data-` attributes. There are several custom attributes
