@@ -13,10 +13,10 @@ intro:
   imageHeight: '240'
 featureCard:
   theme: 'light'
-  title: 'Celebrate Chrometober with web tricks and treats.'
+  title: "Watch the progress we made together on the web."
   eyebrow: 'Featured'
   url: 'https://web.dev/chrometober-2022'
-  background: 'https://web-dev.imgix.net/image/HodOHWjMnbNw56hvNASHWSgZyAf2/AwSceHfK5B3n1z1XSx1Z.gif'
+  background: 'https://web-dev.imgix.net/image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/h0drvXqke8DLfGaga7VP.gif'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'

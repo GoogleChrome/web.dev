@@ -13,10 +13,10 @@ intro:
   imageHeight: '210'
 featureCard:
   theme: 'light'
-  title: "Check out what's new for the web platform at Google IO"
-  eyebrow: 'Event'
+  title: "Watch the progress we made together on the web."
+  eyebrow: 'Featured'
   url: 'https://io.google/2022/products/web/'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/leNmaxWbgSav9BvKHEQM.jpg'
+  background: 'https://web-dev.imgix.net/image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/h0drvXqke8DLfGaga7VP.gif'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
