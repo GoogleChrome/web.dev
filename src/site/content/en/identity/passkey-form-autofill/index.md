@@ -82,7 +82,7 @@ The four components in a passkey authentication flow are:
 the user:
 
 * **Backend**: Your backend server that holds the accounts database storing the public key and other metadata about the passkey.
-* **Frontend**: Your frontend server which communicates with the browser and sends 
+* **Frontend**: Your frontend which communicates with the browser and sends 
   fetch requests to the backend.
 * **Browser**: The user's browser which is running your Javascript.
 * **Authenticator**: The user's authenticator which creates and stores the 
