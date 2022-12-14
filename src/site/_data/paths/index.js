@@ -24,7 +24,7 @@ module.exports = {
   devices,
   discoverable,
   fast,
-  'collection': learnCoreWebVitals,
+  collection: learnCoreWebVitals,
   identity,
   media,
   metrics,
