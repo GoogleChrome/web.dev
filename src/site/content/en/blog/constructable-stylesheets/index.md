@@ -16,10 +16,6 @@ tags:
 way to create and distribute reusable styles when using [Shadow
 DOM](/shadowdom-v1/).
 
-{% Aside %}
-Constructable Stylesheets are available in Chromium and Firefox
-{% endAside %}
-
 {% BrowserCompat 'api.CSSStyleSheet.CSSStyleSheet' %}
 
 It has always been possible to create stylesheets using JavaScript. However, the
