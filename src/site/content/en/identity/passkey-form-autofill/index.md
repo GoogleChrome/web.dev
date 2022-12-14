@@ -100,7 +100,7 @@ the user:
 1. As soon as a user lands on the frontend, it requests a challenge from the 
    backend to authenticate with a passkey and calls 
    `navigator.credentials.get()` to initiate authenticating with a passkey. 
-   This returns a promise.
+   This returns a `Promise`.
 1. When the user puts the cursor in the sign-in field, the browser displays a 
    password autofill dialog including passkeys. An authentication dialog appears 
    if the user selects a passkey.
@@ -170,7 +170,7 @@ Fetch a challenge from the RP server that is required to call
 
 ArrayBuffer values transferred from the server such as `challenge`, `user.id`
 and credential `id` for `excludeCredentials` need to be encoded on transmission.
-Make sure to decode them on the RP front-end before passing the values to the WebAuthn
+Make sure to decode them on the RP frontend before passing the values to the WebAuthn
 API call. We recommend using Base64URL encode.
 
 {% endAside %}
@@ -209,7 +209,7 @@ Remember to specify `mediation: 'conditional'` to make the request conditional.
 
 The WebAuthn call here will be pending and the promise won't be resolved until
 the user interacts with the autofill input element and completes the
-authentication flow. The RP front-end can use
+authentication flow. The RP frontend can use
 [`AbortController`](https://developer.mozilla.org/docs/Web/API/AbortController)
 to abort the WebAuthn call.
 
@@ -220,7 +220,7 @@ to abort the WebAuthn call.
 After the user selects an account and consents using the device's screen lock,
 the promise is resolved returning a
 [`PublicKeyCredential`](https://w3c.github.io/webauthn/#authenticatorassertionresponse)
-object to the RP front-end.
+object to the RP frontend.
 
 A promise can be rejected due to several different reasons. You need to handle the errors accordingly,
 depending on the `Error` object's `name` property:
