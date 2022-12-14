@@ -16,7 +16,9 @@ featureCard:
   title: "Watch the progress we made together on the web."
   eyebrow: 'Featured'
   url: 'https://io.google/2022/products/web/'
-  background: 'https://web-dev.imgix.net/image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lIta9ZJEALbfAzJzmiNl.mp4'
+  background: ''
+  video: 'https://web-dev.imgix.net/video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lIta9ZJEALbfAzJzmiNl.mp4'
+  alt: ''
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
