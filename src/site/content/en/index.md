@@ -14,11 +14,11 @@ intro:
 featureCard:
   theme: 'light'
   title: 'Watch the progress we made together on the web.'
-  eyebrow: 'Featured'
+  eyebrow: ''
   url: 'https://web.dev/chrometober-2022'
   background: ''
   video: 'https://web-dev.imgix.net/video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lIta9ZJEALbfAzJzmiNl.mp4'
-  alt: ''
+  alt: 'Chrome icon rolls past a title: 2022 Year in Review'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
