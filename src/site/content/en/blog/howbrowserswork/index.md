@@ -70,7 +70,7 @@ The browser's main components are:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/PgPX6ZMyKSwF6kB8zIhB.png", alt="Browser components", width="500", height="339" %}
-  <figcaption>Figure : Browser components</figcaption>
+  <figcaption>Figure 1: Browser components</figcaption>
 </figure>
 
 It is important to note that browsers such as Chrome run multiple instances of the rendering engine: one for each tab. Each tab runs in a separate process.
@@ -97,7 +97,7 @@ After that, this is the basic flow of the rendering engine:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/bPlYx9xODQH4X1KuUNpc.png", alt="Rendering engine basic flow", width="600", height="66" %}
-  <figcaption>Figure : Rendering engine basic flow</figcaption>
+  <figcaption>Figure 2: Rendering engine basic flow</figcaption>
 </figure>
 
 The rendering engine will start parsing the HTML document and convert elements to [DOM](#dom) nodes in a tree called the "content tree". The engine will parse the style data, both in external CSS files and in style elements. Styling information together with visual instructions in the HTML will be used to create another tree: the [render tree](#render-tree-construction).
@@ -117,12 +117,12 @@ Parts of the content will be parsed and displayed, while the process continues w
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/S9TJhnMX1cu1vrYuQRqM.png", alt="WebKit main flow.", width="624", height="289" %}
-  <figcaption>Figure : WebKit main flow</figcaption>
+  <figcaption>Figure 3: WebKit main flow</figcaption>
 </figure>
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/Tbif2mUJCUVyPdyXntZk.jpg", alt="Mozilla's Gecko rendering engine main flow.", width="624", height="290" %}
-  <figcaption>Figure : Mozilla's Gecko rendering engine main flow</figcaption>
+  <figcaption>Figure 4: Mozilla's Gecko rendering engine main flow</figcaption>
 </figure>
 
 From figures 3 and 4 you can see that although WebKit and Gecko use slightly different terminology, the flow is basically the same.
@@ -145,7 +145,7 @@ For example, parsing the expression `2 + 3 - 1` could return this tree:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/xNQUG9emGd8FzuOpumP7.png", alt="Mathematical expression tree node.", width="400", height="155" %}
-  <figcaption>Figure : mathematical expression tree node</figcaption>
+  <figcaption>Figure 5: mathematical expression tree node</figcaption>
 </figure>
 
 ### Grammars
@@ -169,7 +169,7 @@ The lexer knows how to strip irrelevant characters like white spaces and line br
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/TfY1qPDNbZS8iBnlAO4b.png", alt="From source document to parse trees", width="101", height="300" %}
-  <figcaption>Figure : from source document to parse trees</figcaption>
+  <figcaption>Figure 6: from source document to parse trees</figcaption>
 </figure>
 
 The parsing process is iterative. The parser will usually ask the lexer for a new token and try to match the token with one of the syntax rules.  If a rule is matched, a node corresponding to the token will be added to the parse tree and the parser will ask for another token.
@@ -182,7 +182,7 @@ In many cases the parse tree is not the final product. Parsing is often used in 
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/VhoUBTyHWNnnZJiIfRAo.png", alt="Compilation flow", width="104", height="400" %}
-  <figcaption>Figure : compilation flow</figcaption>
+  <figcaption>Figure 7: compilation flow</figcaption>
 </figure>
 
 ### Parsing example
@@ -357,7 +357,7 @@ This markup would be translated to the following DOM tree:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/DNtfwOq9UaC3TrEj3D9h.png", alt="DOM tree of the example markup", width="400", height="219" %}
-  <figcaption>Figure : DOM tree of the example markup</figcaption>
+  <figcaption>Figure 8: DOM tree of the example markup</figcaption>
 </figure>
 
 
@@ -390,7 +390,7 @@ The tokenizer recognizes the token, gives it to the tree constructor, and consum
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/YYYp1GgcD0riUliWJdiX.png", alt="HTML parsing flow (taken from HTML5 spec)", width="308", height="400" %}
-  <figcaption>Figure : HTML parsing flow (taken from HTML5 spec)</figcaption>
+  <figcaption>Figure 9: HTML parsing flow (taken from HTML5 spec)</figcaption>
 </figure>
 
 ### The tokenization algorithm
@@ -427,7 +427,7 @@ The `</html>` input will be treated like the previous case.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/52SA8fqorIKP6h22JHUR.png", alt="Tokenizing the example input", width="627", height="387" %}
-  <figcaption>Figure : Tokenizing the example input</figcaption>
+  <figcaption>Figure 10: Tokenizing the example input</figcaption>
 </figure>
 
 #### Tree construction algorithm
@@ -465,7 +465,7 @@ Receiving the end of file token will end the parsing.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/Q8vtwKMnnvYf48eeY95Y.gif", alt="Tree construction of example HTML.", width="532", height="769" %}
-  <figcaption>Figure : tree construction of example html</figcaption>
+  <figcaption>Figure 11: tree construction of example html</figcaption>
 </figure>
 
 ### Actions when the parsing is finished
@@ -699,7 +699,7 @@ In both cases each CSS file is parsed into a StyleSheet object. Each object cont
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/vBMlouM57RHDG29Ukzhi.png", alt="Parsing CSS.", width="500", height="393" %}
-  <figcaption>Figure : parsing CSS</figcaption>
+  <figcaption>Figure 12: parsing CSS</figcaption>
 </figure>
 
 ## The order of processing scripts and style sheets
@@ -809,7 +809,7 @@ A placeholder frame is where they should have been.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/937hKTBHU2FAEyMRdi5z.png", alt="The render tree and the corresponding DOM tree.", width="731", height="396" %}
-  <figcaption>Figure : The render tree and the corresponding DOM tree. The "Viewport" is the initial containing block. In WebKit it will be the "RenderView" object</figcaption>
+  <figcaption>Figure 13: The render tree and the corresponding DOM tree. The "Viewport" is the initial containing block. In WebKit it will be the "RenderView" object</figcaption>
 </figure>
 
 #### The flow of constructing the tree
@@ -881,7 +881,7 @@ WebKit also has style objects but they are not stored in a tree like the style c
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/qnms42muTKM1KVUarpVH.png", alt="Firefox style context tree.", width="640", height="407" %}
-  <figcaption>Figure : Firefox style context tree.</figcaption>
+  <figcaption>Figure 14: Firefox style context tree.</figcaption>
 </figure>
 
 The style contexts contain end values. The values are computed by applying all the matching rules in the correct order and performing manipulations that transform them from logical to concrete values. For example, if the logical value is a percentage of the screen it will be calculated and transformed to absolute units.
@@ -896,6 +896,7 @@ Lets say we already computed this rule tree:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/RwZNIJLCLZqbH2c9eXXg.png", alt="Computed rule tree", width="400", height="261" %}
+  <figcaption>Figure 15: Computed rule tree.</figcaption>
 </figure>
 
 Suppose we need to match rules for another element in the content tree, and find out the matched rules (in the correct order) are B-E-I. We already have this path in the tree because we already computed path  A-B-E-I-L. We will now have less work to do.
@@ -962,14 +963,14 @@ The resulting rule tree will look like this (the nodes are marked with the node 
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/zJM11a5O0t2C91bXl8wS.png", alt="The rule tree", width="500", height="294" %}
-  <figcaption>Figure : The rule tree</figcaption>
+  <figcaption>Figure 16: The rule tree</figcaption>
 </figure>
 
 The context tree will look like this (node name: rule node they point to):
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/3QoZ4kD7dDBR6HYobs4w.png", alt="The context tree.", width="400", height="305" %}
-  <figcaption>Figure : The context tree</figcaption>
+  <figcaption>Figure 17: The context tree</figcaption>
 </figure>
 
 Suppose we parse the HTML and get to the second `<div>` tag. We need to create a style context for this node and fill its style structs.
@@ -1173,7 +1174,7 @@ Incremental layout is triggered (asynchronously) when renderers are dirty. For e
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/pjIcQqbVvJPryLtHpefc.png", alt="Incremental layout.", width="326", height="341" %}
-  <figcaption>Figure : Incremental layout - only dirty renderers and their children are laid out (<a href="#3_6">3.6</a>)</figcaption>
+  <figcaption>Figure 18: Incremental layout - only dirty renderers and their children are laid out (<a href="#3_6">3.6</a>)</figcaption>
 </figure>
 
 ### Asynchronous and Synchronous layout
@@ -1333,7 +1334,7 @@ Each box has a content area (e.g. text, an image, etc.) and optional surrounding
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/KbqHxGe3HMLM5BbXMcP8.jpg", alt="CSS2 box model", width="509", height="348" %}
-  <figcaption>Figure : CSS2 box model</figcaption>
+  <figcaption>Figure 19: CSS2 box model</figcaption>
 </figure>
 
 Each  node generates 0…n such boxes.
@@ -1382,14 +1383,14 @@ Block box: forms a block - has its own rectangle in the browser window.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/fvhwoy1W1Se7IY4XyiXp.png", alt="Block box.", width="150", height="127" %}
-  <figcaption>Figure : Block box</figcaption>
+  <figcaption>Figure 20: Block box</figcaption>
 </figure>
 
 Inline box: does not have its own block, but is inside a containing block.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/srPz5klZnpr6j5edpV45.png", alt="Inline boxes.", width="300", height="233" %}
-  <figcaption>Figure : Inline boxes</figcaption>
+  <figcaption>Figure 21: Inline boxes</figcaption>
 </figure>
 
 Blocks are formatted vertically one after the other.
@@ -1397,7 +1398,7 @@ Inlines are formatted horizontally.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/8i6bZtuslRR3kJdsST6p.png", alt="Block and Inline formatting.", width="350", height="324" %}
-  <figcaption>Figure : Block and Inline formatting</figcaption>
+  <figcaption>Figure 22: Block and Inline formatting</figcaption>
 </figure>
 
 Inline boxes are put inside lines or "line boxes".
@@ -1407,7 +1408,7 @@ This is usually what happens in a paragraph.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/xChsrrYLPU7MfekdR7zS.png", alt="Lines.", width="400", height="277" %}
-  <figcaption>Figure : Lines</figcaption>
+  <figcaption>Figure 23: Lines</figcaption>
 </figure>
 
 ### Positioning
@@ -1418,7 +1419,7 @@ Relative positioning - positioned like usual and then moved by the required delt
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/C1rUmDaOa8kGRx1PSdUu.png", alt="Relative positioning.", width="500", height="261" %}
-  <figcaption>Figure : Relative positioning</figcaption>
+  <figcaption>Figure 24: Relative positioning</figcaption>
 </figure>
 
 #### Floats
@@ -1437,7 +1438,7 @@ Will look like:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/ozqqfqboQ0IJJWlv5xXx.png", alt="Float.", width="444", height="203" %}
-  <figcaption>Figure : Float</figcaption>
+  <figcaption>Figure 25: Float</figcaption>
 </figure>
 
 #### Absolute and fixed
@@ -1448,7 +1449,7 @@ In fixed, the container is the viewport.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/0xwOrAiWm2kpuCecsRv1.png", alt="Fixed positioning.", width="500", height="343" %}
-  <figcaption>Figure : Fixed positioning</figcaption>
+  <figcaption>Figure 26: Fixed positioning</figcaption>
 </figure>
 
 {% Aside %}
@@ -1492,7 +1493,7 @@ The result will be this:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/EXneyo5lwaJ6g09BuCo6.png", alt="Fixed positioning.", width="254", height="227" %}
-  <figcaption>Figure : Fixed positioning</figcaption>
+  <figcaption>Figure 27: Fixed positioning</figcaption>
 </figure>
 
 Although the red div precedes the green one in the markup, and would have been painted before in the regular flow, the z-index property is higher, so it is more forward in the stack held by the root box.
