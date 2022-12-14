@@ -170,7 +170,7 @@ Fetch a challenge from the RP server that is required to call
 
 ArrayBuffer values transferred from the server such as `challenge`, `user.id`
 and credential `id` for `excludeCredentials` need to be encoded on transmission.
-Don't forget to decode them on the RP front-end before passing to the WebAuthn
+Make sure to decode them on the RP front-end before passing the values to the WebAuthn
 API call. We recommend using Base64URL encode.
 
 {% endAside %}
@@ -200,7 +200,7 @@ const credential = await navigator.credentials.get({
 
 * **[`rpId`](https://w3c.github.io/webauthn/#dom-publickeycredentialrequestoptions-rpid)**:
   An RP ID is a domain and a website can specify either its domain or a
-  registrable suffix. This must match the rp.id used when the passkey was
+  registrable suffix. This value must match the rp.id used when the passkey was
   created.
 
 Remember to specify `mediation: 'conditional'` to make the request conditional.
@@ -222,7 +222,7 @@ the promise is resolved returning a
 [`PublicKeyCredential`](https://w3c.github.io/webauthn/#authenticatorassertionresponse)
 object to the RP front-end.
 
-If the promise is rejected, there could be a few reasons. Treat them accordingly
+A promise can be rejected due to several different reasons. You need to handle the errors accordingly,
 depending on the `Error` object's `name` property:
 
 * **`NotAllowedError`**: The user has canceled the operation.
@@ -236,13 +236,13 @@ The public key credential object contains the following properties:
 * **[`rawId`](https://w3c.github.io/webauthn/#credential-id)**: An 
   ArrayBuffer version of the credential ID.
 * **[`response.clientDataJSON`](https://w3c.github.io/webauthn/#client-data)**: 
-  An ArrayBuffer of client data. This contains information such as the challenge 
+  An ArrayBuffer of client data. This field contains information such as the challenge 
   and the origin that the RP server will need to verify.
 * **[`response.authenticatorData`](https://w3c.github.io/webauthn/#dom-authenticatorassertionresponse-authenticatordata)**: 
-  An ArrayBuffer of authenticator data. This contains information such as the RP 
+  An ArrayBuffer of authenticator data. This field contains information such as the RP 
   ID.
 * **[`response.signature`](https://w3c.github.io/webauthn/#dom-authenticatorassertionresponse-signature)**: 
-  An ArrayBuffer of the signature. This is the core of the credential and needs 
+  An ArrayBuffer of the signature. This value is the core of the credential and needs 
   to be verified on the server.
 * **[`response.userHandle`](https://w3c.github.io/webauthn/#dom-authenticatorassertionresponse-userhandle)**: 
   An ArrayBuffer that contained the user ID that was set at creation time. This 
@@ -255,15 +255,15 @@ The public key credential object contains the following properties:
   in](https://developers.google.com/identity/passkeys/use-cases#sign-in-with-a-phone). 
   If the user needed to use a phone to sign-in, consider prompting them to 
   [create a passkey](/passkey-registration) on the local device.
-* **`type`**: This is always `"public-key"`.
+* **`type`**: This field is always set to `"public-key"`.
 
-If you use a library to handle the public key credential object on the RP 
-server, we recommend sending the entire object to the server after encoding it 
+If you use a library to handle the public-key credential object on the RP 
+server, we recommend that you send the entire object to the server after encoding it 
 partially with base64url.
 
 ### Verify the signature
 
-Upon receiving the public key credential on the server, pass it to the FIDO 
+When you receive the public key credential on the server, pass it to the FIDO 
 library to process the object.
 
 Look up the matching credential ID with the
