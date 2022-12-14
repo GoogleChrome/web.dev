@@ -14,7 +14,7 @@ tags:
   - css
 ---
 
-La forma en que escribes tus estilos y creas diseños puede tener un gran impacto en [Core Web Vitals](/learn-core-web-vitals/). Esto es particularmente cierto para el [Cumulative Layout Shift (CLS): Cambio Acumulativo del diseño](/cls) y [Largest Contentful Paint (LCP): Despliegue del contenido más extenso](/lcp).
+La forma en que escribes tus estilos y creas diseños puede tener un gran impacto en [Core Web Vitals](/collection/). Esto es particularmente cierto para el [Cumulative Layout Shift (CLS): Cambio Acumulativo del diseño](/cls) y [Largest Contentful Paint (LCP): Despliegue del contenido más extenso](/lcp).
 
 Este artículo cubre técnicas relacionadas con CSS para optimizar Web Vitals. Estas optimizaciones se desglosan mediante diferentes aspectos de una página: diseño, imágenes, fuentes, animaciones y carga. A lo largo del camino, exploraremos la mejora de una [página de ejemplo](https://codepen.io/una/pen/vYyLKvY):
 
@@ -261,4 +261,4 @@ Las hojas de estilo bloquean el renderizado. Esto significa que el navegador enc
 
 ## Conclusión
 
-Aunque todavía hay espacio para mejoras adicionales (por ejemplo, usar la [compresión de imágenes](/use-imagemin-to-compress-images/) para servir imágenes más rápido), estos cambios han mejorado significativamente las Web Vitals de este sitio. Si este fuera un sitio real, el siguiente paso sería [recopilar datos de rendimiento de usuarios reales](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data) para evaluar si está [cumpliendo con los umbrales de Web Vitals para la mayoría de los usuarios](/vitals-measurement-getting-started/#data-interpretation). Para obtener más información sobre Web Vitals, consulta [Aprende Core Web Vitals](/learn-core-web-vitals/).
+Aunque todavía hay espacio para mejoras adicionales (por ejemplo, usar la [compresión de imágenes](/use-imagemin-to-compress-images/) para servir imágenes más rápido), estos cambios han mejorado significativamente las Web Vitals de este sitio. Si este fuera un sitio real, el siguiente paso sería [recopilar datos de rendimiento de usuarios reales](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data) para evaluar si está [cumpliendo con los umbrales de Web Vitals para la mayoría de los usuarios](/vitals-measurement-getting-started/#data-interpretation). Para obtener más información sobre Web Vitals, consulta [Aprende Core Web Vitals](/collection/).

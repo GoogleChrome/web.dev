@@ -141,7 +141,7 @@ tags:
 
 ## 例: レイアウトシフトを防止する
 
-`aspect-ratio` のもう 1 つの優れた機能は、プレースホルダースペースを作成して、[累積レイアウトシフト](/cls/)を防止し、より優れた[ウェブバイタル](/learn-core-web-vitals/)を提供できることです。この最初の例では、[Unsplash](https://source.unsplash.com/) などの API からアセットを読み込むと、メディアの読み込みが終了したときにレイアウトシフトが作成されます。
+`aspect-ratio` のもう 1 つの優れた機能は、プレースホルダースペースを作成して、[累積レイアウトシフト](/cls/)を防止し、より優れた[ウェブバイタル](/collection/)を提供できることです。この最初の例では、[Unsplash](https://source.unsplash.com/) などの API からアセットを読み込むと、メディアの読み込みが終了したときにレイアウトシフトが作成されます。
 
 <figure>
   <video controls autoplay loop muted playsinline>
