@@ -78,7 +78,7 @@ them to [create a passkey](/passkey-registration).
 To authenticate with a passkey, you use [the WebAuthn 
 API](https://w3c.github.io/webauthn/).
 
-In a passkey authentication flow, four participants are involved in addition to 
+The four components in a passkey authentication flow are:
 the user:
 
 * **Backend**: Your accounts database or backend server that stores the public 
