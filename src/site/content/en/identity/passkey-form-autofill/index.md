@@ -26,7 +26,7 @@ create a unified experience.
 With a passkey, a user can sign in to a website just by using fingerprint, face,
 or device PIN.
 
-In an ideal world, there would be no password users and the authentication flow
+Ideally, there would be no password users and the authentication flow
 could be as simple as a single sign-in button. When the user taps the button, an
 account selector dialog pops up, the user can pick an account, unlock the screen
 to verify and sign in.
@@ -81,10 +81,9 @@ API](https://w3c.github.io/webauthn/).
 The four components in a passkey authentication flow are:
 the user:
 
-* **Backend**: Your accounts database or backend server that stores the public 
-  key and other metadata about the passkey.
-* **Frontend**: Your frontend server which communicates with it and serves 
-  requests.
+* **Backend**: Your backend server that holds the accounts database storing the public key and other metadata about the passkey.
+* **Frontend**: Your frontend server which communicates with the browser and sends 
+  fetch requests to the backend.
 * **Browser**: The user's browser which is running your Javascript.
 * **Authenticator**: The user's authenticator which creates and stores the 
   passkey. This may be on the same device as the browser (e.g. when using 
