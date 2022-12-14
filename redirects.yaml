@@ -466,7 +466,9 @@ redirects:
 
   # Redirects for outdated usage of "Web Vitals"
   - source: /learn-web-vitals/
-    destination: /learn-core-web-vitals/
+    destination: /collection/
+  - source: /learn-core-web-vitals/
+    destination: /collection/
   - source: /debug-web-vitals-in-the-field/
     destination: /debug-performance-in-the-field/
 

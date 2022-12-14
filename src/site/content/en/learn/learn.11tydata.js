@@ -13,7 +13,7 @@ module.exports = function () {
   // const web_dev_basics = [allPaths['web-dev-basics-one']];
 
   const performance = [
-    allPaths['learn-core-web-vitals'],
+    allPaths['collection'],
     allPaths['metrics'],
     allPaths['fast'],
   ];

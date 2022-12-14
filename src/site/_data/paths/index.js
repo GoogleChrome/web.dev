@@ -3,7 +3,7 @@ const angular = require('./angular.json');
 const devices = require('./devices.json');
 const discoverable = require('./discoverable.json');
 const fast = require('./fast.json');
-const learnCoreWebVitals = require('./learn-core-web-vitals.json');
+const learnCoreWebVitals = require('./collection.json');
 const media = require('./media.json');
 const metrics = require('./metrics.json');
 const notifications = require('./notifications.json');
@@ -24,7 +24,7 @@ module.exports = {
   devices,
   discoverable,
   fast,
-  'learn-core-web-vitals': learnCoreWebVitals,
+  'collection': learnCoreWebVitals,
   identity,
   media,
   metrics,

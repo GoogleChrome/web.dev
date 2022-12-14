@@ -1,19 +1,19 @@
 {
-    "slug": "learn-core-web-vitals",
+    "slug": "collection",
     "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg",
-    "title": "i18n.paths.learn_core_web_vitals.title",
-    "description": "i18n.paths.learn_core_web_vitals.description",
-    "overview": "i18n.paths.learn_core_web_vitals.overview",
+    "title": "i18n.paths.collection.title",
+    "description": "i18n.paths.collection.description",
+    "overview": "i18n.paths.collection.overview",
     "topics": [
         {
-            "title": "i18n.paths.learn_core_web_vitals.topics.overview",
+            "title": "i18n.paths.collection.topics.overview",
             "pathItems": [
                 "vitals",
                 "vitals-business-impact"
             ]
         },
         {
-            "title": "i18n.paths.learn_core_web_vitals.topics.core_web_vitals_metrics",
+            "title": "i18n.paths.collection.topics.core_web_vitals_metrics",
             "pathItems": [
                 "lcp",
                 "fid",
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "title": "i18n.paths.learn_core_web_vitals.topics.measure_core_web_vitals",
+            "title": "i18n.paths.collection.topics.measure_core_web_vitals",
             "pathItems": [
                 "vitals-measurement-getting-started",
                 "vitals-tools",
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "title": "i18n.paths.learn_core_web_vitals.topics.debug_core_web_vitals",
+            "title": "i18n.paths.collection.topics.debug_core_web_vitals",
             "pathItems": [
                 "lab-and-field-data-differences",
                 "crux-and-rum-differences",
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "title": "i18n.paths.learn_core_web_vitals.topics.improve_core_web_vitals",
+            "title": "i18n.paths.collection.topics.improve_core_web_vitals",
             "pathItems": [
                 "optimize-lcp",
                 "optimize-fid",
@@ -48,7 +48,7 @@
             ]
         },
         {
-            "title": "i18n.paths.learn_core_web_vitals.topics.best_practices",
+            "title": "i18n.paths.collection.topics.best_practices",
             "pathItems": [
                 {
                     "title": "UX patterns optimized for Core Web Vitals",
