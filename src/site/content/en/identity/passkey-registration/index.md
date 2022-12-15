@@ -51,10 +51,10 @@ API](https://w3c.github.io/webauthn/).
 On a passkey registration flow, four participants are involved in addition to 
 the user:
 
-* **Backend**: Your accounts database or backend server that stores the public 
-  key and other metadata about the passkey.
-* **Frontend**: Your frontend server which communicates with it and serves 
-  requests.
+* **Backend**: Your backend server that holds the accounts database storing the
+  public key and other metadata about the passkey.
+* **Frontend**: Your frontend which communicates with the browser and sends 
+  fetch requests to the backend.
 * **Browser**: The user's browser which is running your Javascript.
 * **Authenticator**: The user's authenticator which creates and stores the 
   passkey. This may be on the same device as the browser (e.g. when using 

@@ -81,7 +81,8 @@ API](https://w3c.github.io/webauthn/).
 The four components in a passkey authentication flow are:
 the user:
 
-* **Backend**: Your backend server that holds the accounts database storing the public key and other metadata about the passkey.
+* **Backend**: Your backend server that holds the accounts database storing the
+  public key and other metadata about the passkey.
 * **Frontend**: Your frontend which communicates with the browser and sends 
   fetch requests to the backend.
 * **Browser**: The user's browser which is running your Javascript.
