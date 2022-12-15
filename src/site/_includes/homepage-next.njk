@@ -26,7 +26,15 @@ externalScripts:
           <a class="feature-card" href="{{ featureCard.url }}" data-theme="{{ featureCard.theme }}" data-treatment="illustration">
             <span class="feature-card__eyebrow">{{ featureCard.eyebrow }}</span>
             <h3 class="{{ 'visually-hidden' if featureCard.hiddenTitle else 'feature-card__title' }}" style="width: 230px;">{{ featureCard.title }}</h3>
-            <img fetchpriority="high" class="feature-card__background" alt="" aria-hidden="true" src="{{ featureCard.background }}" />
+            {% if featureCard.video %}
+              <video autoplay loop muted playsinline
+                class="feature-card__background"
+                aria-label="{{ featureCard.alt }}">
+                <source src="{{ featureCard.video }}" type="video/mp4;">
+              </video>
+            {% elif featureCard.background %}
+              <img fetchpriority="high" class="feature-card__background" alt="{{ featureCard.alt }}" aria-hidden="true" src="{{ featureCard.background }}" />
+            {% endif %}
           </a>
           {% include "partials/picked-case-study.njk" %}
         </div>
