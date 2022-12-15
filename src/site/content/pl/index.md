@@ -15,7 +15,7 @@ featureCard:
   theme: 'light'
   title: "Watch the progress we made together on the web."
   eyebrow: ''
-  url: 'https://io.google/2022/products/web/'
+  url: 'https://www.youtube.com/watch?v=W9O4CuSUKb8'
   background: ''
   video: 'https://web-dev.imgix.net/video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lIta9ZJEALbfAzJzmiNl.mp4'
   alt: 'Chrome icon rolls past a title: 2022 Year in Review'
