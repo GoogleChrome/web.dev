@@ -22,21 +22,20 @@ website or an app just by using their fingerprint, face or device PIN.
 
 {% Aside %}
 
-To learn basic concepts of passkeys, please read [Passwordless login with passkeys](https://developers.google.com/identity/passkeys) first.
+To learn basic concepts of passkeys, check out [Passwordless login with passkeys](https://developers.google.com/identity/passkeys) first.
 
 {% endAside %}
 
-To let users sign in with a passkey, it first needs to be created, associated
-with a user account and its public key stored on your server.
+A passkey has to be created, associated with a user account and have its public key be stored on your server before a user can sign in with it.
 
 ## How it works
 
-When a user signs in using a password, or a passkey from another device (i.e.
+A user can be asked to create a passkey in one of the following situations:
+* When a user signs in using a password, or a passkey from another device (that is,
 the
 [`authenticatorAttachment`](/passkey-form-autofill/#:~:text=authenticationattachment)
-is `cross-platform`), that is a good opportunity to ask the user to create a
-passkey. A dedicated page where users can manage their passkeys is also a good
-place to create a new passkey as well.
+is `cross-platform`). 
+* On a dedicated page where users can manage their passkeys.
 
 <figure>
   {%
@@ -48,8 +47,7 @@ place to create a new passkey as well.
 To create a passkey, you use [the WebAuthn 
 API](https://w3c.github.io/webauthn/).
 
-On a passkey registration flow, four participants are involved in addition to 
-the user:
+The four components of the passkey registration flow are:
 
 * **Backend**: Your backend server that holds the accounts database storing the
   public key and other metadata about the passkey.
@@ -57,7 +55,7 @@ the user:
   fetch requests to the backend.
 * **Browser**: The user's browser which is running your Javascript.
 * **Authenticator**: The user's authenticator which creates and stores the 
-  passkey. This may be on the same device as the browser (e.g. when using 
+  passkey. This may be on the same device as the browser (for example, when using 
   Windows Hello) or on another device, like a phone.
 
 <figure class="screenshot">
@@ -67,15 +65,16 @@ the user:
   %}
 </figure>
 
-1. A user signs in to the website. (We cover a use case that adds a new passkey 
-   to an existing user account).
-1. After the user is signed in, the user requests to create a passkey on the 
-   frontend. e.g. by pressing a "Create a passkey" button.
-1. The frontend requests information to create a passkey such as user 
-   information, a challenge, and the credential IDs to exclude, from the 
-   backend.
+The journey to add a new passkey to an existing user account is as follows:
+
+1. A user signs in to the website. 
+1. Once the user is signed in, they request to create a passkey on the 
+   frontend, for example, by pressing a "Create a passkey" button.
+1. The frontend requests information from the 
+   backend to create a passkey, such as user 
+   information, a challenge, and the credential IDs to exclude.
 1. The frontend calls `navigator.credentials.create()` to create a passkey. 
-   This returns a promise.
+   This call returns a promise.
 1. A passkey is created after the user consents using the device's screen lock. 
    The promise is resolved and a public key credential is returned to the 
    frontend.
@@ -122,8 +121,8 @@ if (window.PublicKeyCredential &&
 }  
 ```
 
-Without all the conditions met, passkeys are not supported on this browser. 
-"Create a new passkey" button shouldn't be displayed.
+Until all the conditions have been met, passkeys will not be supported on this browser. 
+The "Create a new passkey" button shouldn't be displayed until then.
 
 ### Fetch important information from the backend
 
@@ -137,16 +136,16 @@ When the user clicks the button, fetch important information to call
   advanced topic not covered here. Absent attestation, it can be set to `new 
   Uint8Array([0])`, but never do this during sign-in.
 * **[`user.id`](https://w3c.github.io/webauthn/#dom-publickeycredentialuserentity-id)**: 
-   A user's unique ID. This must be an ArrayBuffer which does not include 
-  personally identifying information, e.g., e-mail addresses or usernames. A 
+   A user's unique ID. This value must be an ArrayBuffer which does not include 
+  personally identifying information, for example, e-mail addresses or usernames. A 
   random, 16-byte value generated per account will work well.
 * **[`user.name`](https://w3c.github.io/webauthn/#dom-publickeycredentialentity-name)**: 
-  This should be a unique identifier for the account that the user will 
+  This field should hold a unique identifier for the account that the user will 
   recognise, like their email address or username. This will be displayed in the 
   account selector. (If using a username, use the same value as in password 
   authentication.)
 * **[`user.displayName`](https://w3c.github.io/webauthn/#dom-publickeycredentialuserentity-displayname)**: 
-  This is an optional, more friendly name for the account. It need not be unique 
+  This field is an optional, more user-friendly name for the account. It need not be unique 
   and could be the user's chosen name. If your site does not have a suitable 
   value to include here, pass an empty string. This may be displayed on the 
   account selector depending on the browser.
@@ -215,7 +214,7 @@ The parameters not explained above are:
 * **[`rp.name`](https://w3c.github.io/webauthn/#dom-publickeycredentialentity-name)**: 
   The RP's name.
 * **[`pubKeyCredParams`](https://w3c.github.io/webauthn/#dom-publickeycredentialcreationoptions-pubkeycredparams)**: 
-  This specifies the RP's supported public-key algorithms. We recommend setting 
+  This field specifies the RP's supported public-key algorithms. We recommend setting 
   it to `[{alg: -7, type: "public-key"},{alg: -257, type: "public-key"}]`. 
   This specifies support for ECDSA with P-256 and RSA PKCS\#1 and supporting 
   these gives complete coverage.
@@ -224,7 +223,7 @@ The parameters not explained above are:
   embedded into the platform device, and the user will not be prompted to insert 
   e.g. a USB security key.
 * **[`authenticatorSelection.requireResidentKey`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-residentkey)**: 
-  Set it to a boolean "true". Requiring a discoverable credential (resident key) 
+  Set it to a boolean "true". A discoverable credential (resident key) 
   stores user information to the passkey and lets users select the account upon 
   authentication.
 
@@ -243,8 +242,7 @@ the promise is resolved returning a
 [PublicKeyCredential](https://w3c.github.io/webauthn/#authenticatorattestationresponse) 
 object to the frontend.
 
-If the promise is rejected, there could be a few reasons. Treat them accordingly 
-depending on the `Error` object's `name` property:
+The promise can be rejected for different reasons. You can handle these errors by checking the `Error` object's `name` property:
 
 * **`InvalidStateError`**: A passkey already exists on the device. No error
   dialog will be shown to the user and the site should not treat this as an
@@ -257,7 +255,7 @@ The public key credential object contains the following properties:
 
 * **[`id`](https://w3c.github.io/webauthn/#credential-id)**: A Base64URL encoded
   ID of the created passkey. This ID helps the browser to determine whether a
-  matching passkey is in the device upon authentication. This needs to be stored
+  matching passkey is in the device upon authentication. This value needs to be stored
   in the database on the backend.
 * **[`rawId`](https://w3c.github.io/webauthn/#credential-id)**: An ArrayBuffer
   version of the credential ID.
@@ -269,7 +267,7 @@ The public key credential object contains the following properties:
 * **[`authenticatorAttachment`](https://w3c.github.io/webauthn/#enumdef-authenticatorattachment)**:
   Returns `"platform"` when this credential is created on a passkey capable
   device.
-* **`type`**: This is always `"public-key"`.
+* **`type`**: This field is always set to `"public-key"`.
 
 If you use a library to handle the public key credential object on the backend,
 we recommend sending the entire object to the backend after encoding it
@@ -296,20 +294,20 @@ library to process the object.
 
 {% Aside %}
 
-We recommend using a server side library or a solution instead of writing your
-own code to process a public key credential. [You can find open source libraries
-here](https://github.com/herrjemand/awesome-webauthn).
+We recommend using a server-side library or a solution instead of writing your
+own code to process a public-key credential. Check out [open-source libraries
+](https://github.com/herrjemand/awesome-webauthn) to process public-key credentials.
 
 {% endAside %}
 
-Then store the information retrieved from the credential to the database for
-future use. Here are typical properties to save:
+You can then store the information retrieved from the credential to the database for
+future use. The following list includes some typical properties to save:
 
 * **Credential ID (Primary key)**
 * **User ID**
 * **Public key**
 
-The public key credential also includes the following interesting information
+The public-key credential also includes the following information
 that you may want to save in the database:
 
 * **[Backup Eligibility
