@@ -10,10 +10,18 @@
 }
 
 .collection__topics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
-    margin-top: 60px;
+    margin-top: 40px;
+
+    @include media-query('md') {
+        display: grid;
+        grid-gap: 30px;
+        margin-top: 60px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card  {
+        margin-top: 25px;
+    }
 
     .card > img {
         height: 220px;
@@ -25,28 +33,15 @@
     }
 
     .item1 {
-        grid-row: 1 / span 2;
+        @include media-query('md') {
+            grid-row: 1 / span 2;
+        }
     }
-    
+
     .item2 {
         grid-column: 2 / span 2;
-        display: flex;
-        flex-flow: row-reverse;
-        gap: 30px;
         background-color: $WEB_EXTENDED_TERTIARY_COLOR;
 
-        img, > div {
-            width: 50%;
-        }
-
-        svg {
-            fill: $WHITE;
-        }
-
-        p, span, h4 {
-            color:  $WHITE;
-        }
-        
         &:hover,
         &:focus,
         &:active {
@@ -55,20 +50,14 @@
     }
     
     .item4 {
-        grid-column: 3 / span 1;
-        grid-row: 2 / span 2;
+        @include media-query('md') {
+            grid-column: 3 / span 1;
+            grid-row: 2 / span 2;
+        }
     }
 
     .item5 {
         background-color: $CYAN_900;
-
-        svg {
-            fill: $WHITE;
-        }
-
-        p, span, h4 {
-            color:  $WHITE;
-        }
         
         &:hover,
         &:focus,
@@ -76,15 +65,40 @@
             background-color: rgba($CYAN_900, .9);
         }
     }
-    
+
     .item7 {
         grid-column: 1 / span 2;
-        display: flex;
-        flex-flow: row-reverse;
-        gap: 30px;
+    }
 
-        img, > div {
-            width: 50%;
+    .item2,
+    .item5 {
+        svg {
+            fill: $WHITE;
+        }
+
+        p, span, h4 {
+            color:  $WHITE;
+        }
+    }
+
+    .item2,
+    .item7 {
+        .card__eyebrow {
+            margin-top: 25px;
+        }
+
+        @include media-query('md') {
+            display: flex;
+            flex-flow: row-reverse;
+            gap: 30px;
+    
+            img, > div {
+                width: 50%;
+            }
+
+            .card__eyebrow {
+                margin-top: 0;
+            }
         }
     }
 }
@@ -110,7 +124,15 @@
     }
 
     h4 {
-        font-size: 1.75em;
+        font-size: 1.25em;
+
+        @include media-query('md') {
+            font-size: 1.5em;
+        }
+
+        @include media-query('lg') {
+            font-size: 1.75em;
+        }      
     }
 
     p {
