@@ -24,8 +24,13 @@
     }
 
     .card > img {
+        width: 100%;
         height: 220px;
         border-radius: 5px;
+
+        @include media-query('md') {
+            width: auto;
+        }
     }
 
     .card, p {
@@ -33,6 +38,10 @@
     }
 
     .item1 {
+        .card__eyebrow {
+            margin-top: 25px;
+        }
+
         @include media-query('md') {
             grid-row: 1 / span 2;
         }
@@ -50,6 +59,10 @@
     }
     
     .item4 {
+        .card__eyebrow {
+            margin-top: 25px;
+        }
+
         @include media-query('md') {
             grid-column: 3 / span 1;
             grid-row: 2 / span 2;
@@ -87,12 +100,28 @@
             margin-top: 25px;
         }
 
+        .content {
+            padding-right: 0;
+        }
+
+        @include media-query('lg') {
+            .content {
+                padding-right: 25px;
+            }
+        }
+
         @include media-query('md') {
             display: flex;
             flex-flow: row-reverse;
+            align-items: center;
             gap: 30px;
+
+            .content {
+                width: 50%;
+                padding-right: 0;
+            }
     
-            img, > div {
+            img {
                 width: 50%;
             }
 
@@ -110,7 +139,7 @@
     }
 
     .card__content {
-        margin: 20px 0;
+        margin: 25px 0;
     }
 
     svg {
@@ -124,22 +153,18 @@
     }
 
     h4 {
-        font-size: 1.25em;
+        font-size: 1.25rem;
 
         @include media-query('md') {
-            font-size: 1.5em;
+            font-size: 1.5rem;
         }
 
         @include media-query('lg') {
-            font-size: 1.75em;
+            font-size: 1.75rem;
         }      
     }
 
     p {
-        margin-top: 10px;
-    }
-
-    .verticalTopic .card__eyebrow {
-        margin-top: 25px;
+        margin-top: 15px;
     }
 }
