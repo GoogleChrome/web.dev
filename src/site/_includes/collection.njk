@@ -34,7 +34,7 @@ eleventyComputed:
   </div>
 </header>
 
-<div class="path">
+<div class="collection">
 {% if path.draft and site.env === 'dev' %}
   <div class="banner bg-state-bad-bg color-core-text" role="banner">
     <div class="banner__content flow">
@@ -93,7 +93,7 @@ eleventyComputed:
 </div>
 
 {% if cards %}
-  <div class="collection">
+  <div class="collection__cards">
     <div class="region wrapper">
       <h5> On this topic </h5>
       <div class="collection__topics" aria-label="topics">
