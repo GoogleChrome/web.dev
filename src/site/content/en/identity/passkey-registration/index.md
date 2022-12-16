@@ -133,8 +133,7 @@ When the user clicks the button, fetch important information to call
   A server-generated challenge in ArrayBuffer for this registration. This is 
   required but unused during registration unless doing 
   [attestation](https://developer.mozilla.org/docs/Web/API/Web_Authentication_API/Attestation_and_Assertion)—an 
-  advanced topic not covered here. Absent attestation, it can be set to `new 
-  Uint8Array([0])`, but never do this during sign-in.
+  advanced topic not covered here.
 * **[`user.id`](https://w3c.github.io/webauthn/#dom-publickeycredentialuserentity-id)**: 
    A user's unique ID. This value must be an ArrayBuffer which does not include 
   personally identifying information, for example, e-mail addresses or usernames. A 
