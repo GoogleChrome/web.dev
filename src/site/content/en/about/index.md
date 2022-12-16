@@ -51,7 +51,7 @@ coupledColumn:
   - icon: 'icons/spotted.svg'
     title: 'Spotted an error?' 
     summary: |
-      Please <a href="">raise an issue</a> with information about the page and what’s wrong, and we’ll take a look.
+      Please <a href="https://github.com/GoogleChrome/web.dev/issues">raise an issue</a> with information about the page and what’s wrong, and we’ll take a look.
   - icon: 'icons/edit.svg'
     title: 'Want to contribute?' 
     summary: |
