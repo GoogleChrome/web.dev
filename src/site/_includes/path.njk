@@ -7,7 +7,7 @@ eleventyComputed:
   hero: "{{paths[pathName].cover}}"
 ---
 
-{% from 'macros/icon.njk' import svg with context %}
+{% from 'macros/icon.njk' import icon, svg with context %}
 {% set path = paths[pathName] %}
 {% set topics = path.topics | removeDrafts %}
 
@@ -34,6 +34,7 @@ eleventyComputed:
   </div>
 </header>
 
+<div class="path">
 {% if path.draft and site.env === 'dev' %}
   <div class="banner bg-state-bad-bg color-core-text" role="banner">
     <div class="banner__content flow">
@@ -81,7 +82,7 @@ eleventyComputed:
   </div>
 </div>
 
-<hr/>
+<hr />
 
 {% for topic in topics %}
   <div class="path__topic">
@@ -89,4 +90,37 @@ eleventyComputed:
   </div>
 {% endfor %}
 
-{{ content | safe }}
+<div class="collection">
+  <div class="region wrapper">
+    <h5> On this topic </h5>
+    <div class="collection__topics" aria-label="topics">
+      {% for topic in cards %}
+        <a
+          href="{{ topic.url }}"
+          class="card {{ topic.cssClass }}"
+          data-category="web.dev"
+          data-label="Topic: {{topic.title}}"
+          data-action="click"
+          role="listitem"
+        >
+          {% if topic.thumbnail %}
+            {% Img src=topic.thumbnail, alt="{{ topic.title }}", width="370", height="220" %}
+          {% endif %}
+
+          <div class="content">
+            <div class="card__eyebrow flow">
+              {{ icon(topic.eyebrow.icon) }}
+              <span class="text-size-0 color-mid-text">{{ topic.eyebrow.text }}</span>
+            </div>
+
+            <div class="card__content flow">
+              <h4 class="card__heading">{{ topic.title }}</h4>
+              <p class="text-size-1 color-mid-text">{{ topic.description }}</p>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
