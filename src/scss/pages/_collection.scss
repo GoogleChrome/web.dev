@@ -1,0 +1,123 @@
+@import '../../styles/settings/colors';
+
+.collection {
+    border-top: 1px solid var(--color-stroke);
+    margin-top: 30px;
+
+    .wrapper {
+        padding-top: 2.5rem;
+    }
+}
+
+.collection__topics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 60px;
+
+    .card > img {
+        height: 220px;
+        border-radius: 5px;
+    }
+
+    .card, p {
+        max-width: 100%;
+    }
+
+    .item1 {
+        grid-row: 1 / span 2;
+    }
+    
+    .item2 {
+        grid-column: 2 / span 2;
+        display: flex;
+        flex-flow: row-reverse;
+        gap: 30px;
+        background-color: $WEB_EXTENDED_TERTIARY_COLOR;
+
+        img, > div {
+            width: 50%;
+        }
+
+        svg {
+            fill: $WHITE;
+        }
+
+        p, span, h4 {
+            color:  $WHITE;
+        }
+        
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: rgba($WEB_EXTENDED_TERTIARY_COLOR, .9);
+        }
+    }
+    
+    .item4 {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 2;
+    }
+
+    .item5 {
+        background-color: $CYAN_900;
+
+        svg {
+            fill: $WHITE;
+        }
+
+        p, span, h4 {
+            color:  $WHITE;
+        }
+        
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: rgba($CYAN_900, .9);
+        }
+    }
+    
+    .item7 {
+        grid-column: 1 / span 2;
+        display: flex;
+        flex-flow: row-reverse;
+        gap: 30px;
+
+        img, > div {
+            width: 50%;
+        }
+    }
+}
+
+.collection__topics {
+    .card__eyebrow {
+        align-items: center;
+        display: flex;
+    }
+
+    .card__content {
+        margin: 20px 0;
+    }
+
+    svg {
+        fill: var(--color-mid-text);
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    span {
+        margin-top: 0;
+    }
+
+    h4 {
+        font-size: 1.75em;
+    }
+
+    p {
+        margin-top: 10px;
+    }
+
+    .verticalTopic .card__eyebrow {
+        margin-top: 25px;
+    }
+}
