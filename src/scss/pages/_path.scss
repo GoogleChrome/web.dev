@@ -21,7 +21,6 @@
   }
 }
 
-
 .collection {
     border-top: 1px solid var(--color-stroke);
     margin-top: 30px;
@@ -37,7 +36,7 @@
     @include media-query('md') {
         display: grid;
         grid-gap: 30px;
-        margin-top: 50px;
+        margin-top: 60px;
         grid-template-columns: repeat(3, 1fr);
     }
 
