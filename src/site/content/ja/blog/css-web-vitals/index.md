@@ -14,7 +14,7 @@ tags:
   - css
 ---
 
-スタイルの記述方法とレイアウトの作成方法は、[Core Web Vitals](/collection/)に大きな影響を与える可能性があります。これは、[Cumulative Layout Shift (CLS)](/cls)と[Largest Contentful Paint (LCP)](/lcp)に特に当てはまります。
+スタイルの記述方法とレイアウトの作成方法は、[Core Web Vitals](/learn-core-web-vitals/)に大きな影響を与える可能性があります。これは、[Cumulative Layout Shift (CLS)](/cls)と[Largest Contentful Paint (LCP)](/lcp)に特に当てはまります。
 
 この記事では、Web Vitalsを最適化するためのCSS関連の手法について説明します。これらの最適化はページのさまざまな要素 (レイアウト、画像、フォント、アニメーション、読み込み) によって分類されます。その中で、[サンプルページ](https://codepen.io/una/pen/vYyLKvY)の改良について探ります。
 
@@ -261,4 +261,4 @@ Lighthouseの「合成されていないアニメーションの回避」監査�
 
 ## まとめ
 
-さらなる改善の余地はまだありますが (たとえば、[画像圧縮](/use-imagemin-to-compress-images/)を使用して画像をより迅速に配信する)、これらの変更により、このサイトのWeb Vitalsが大幅に改善されました。これが実際のサイトである場合、次のステップは、[実際のユーザーからパフォーマンスデータを収集](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)して、[ほとんどのユーザーのWeb Vitalsのしきい値を満たしている](/vitals-measurement-getting-started/#data-interpretation)かどうかを評価することです。Web Vitalsの詳細については、[Web Vitalsの詳細](/collection/)を参照してください。
+さらなる改善の余地はまだありますが (たとえば、[画像圧縮](/use-imagemin-to-compress-images/)を使用して画像をより迅速に配信する)、これらの変更により、このサイトのWeb Vitalsが大幅に改善されました。これが実際のサイトである場合、次のステップは、[実際のユーザーからパフォーマンスデータを収集](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)して、[ほとんどのユーザーのWeb Vitalsのしきい値を満たしている](/vitals-measurement-getting-started/#data-interpretation)かどうかを評価することです。Web Vitalsの詳細については、[Web Vitalsの詳細](/learn-core-web-vitals/)を参照してください。

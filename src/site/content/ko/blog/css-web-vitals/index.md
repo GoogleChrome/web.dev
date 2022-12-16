@@ -14,7 +14,7 @@ tags:
   - css
 ---
 
-스타일을 작성하고 레이아웃을 작성하는 방식은 [핵심 성능 향상](/collection/)에 큰 영향을 미칠 수 있습니다. [이는 CLS(Cumulative Layout Shift)](/cls) 및 [LCP(Large Contentful Paint)](/lcp)에 특히 해당됩니다.
+스타일을 작성하고 레이아웃을 작성하는 방식은 [핵심 성능 향상](/learn-core-web-vitals/)에 큰 영향을 미칠 수 있습니다. [이는 CLS(Cumulative Layout Shift)](/cls) 및 [LCP(Large Contentful Paint)](/lcp)에 특히 해당됩니다.
 
 이 문서에서는 Web Vitals를 최적화하기 위한 CSS 관련 기술을 다룹니다. 이러한 최적화는 페이지의 다양한 측면(레이아웃, 이미지, 글꼴, 애니메이션, 로딩)으로 분류됩니다. 그 과정에서 [예제 페이지](https://codepen.io/una/pen/vYyLKvY)를 개선하는 방법을 살펴보겠습니다.
 
@@ -261,4 +261,4 @@ Lighthouse의 "비합성 애니메이션 방지" 감사는 성능이 저하된 *
 
 ## 결론
 
-추가 개선의 여지가 있지만(예: [이미지 압축](/use-imagemin-to-compress-images/)을 사용하여 이미지를 더 빠르게 전달) 이러한 변경으로 인해 이 사이트의 Web Vital이 크게 향상되었습니다. 이것이 실제 사이트인 경우 다음 단계는 [실제 사용자로부터 성능 데이터를 수집](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)하여 [대부분의 사용자에 대한 Web Vitals 임계값을 충족](/vitals-measurement-getting-started/#data-interpretation)하는지 평가하는 것입니다. Web Vitals에 대한 자세한 내용은 [Web Vitals 학습](/collection/)을 참조하십시오.
+추가 개선의 여지가 있지만(예: [이미지 압축](/use-imagemin-to-compress-images/)을 사용하여 이미지를 더 빠르게 전달) 이러한 변경으로 인해 이 사이트의 Web Vital이 크게 향상되었습니다. 이것이 실제 사이트인 경우 다음 단계는 [실제 사용자로부터 성능 데이터를 수집](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)하여 [대부분의 사용자에 대한 Web Vitals 임계값을 충족](/vitals-measurement-getting-started/#data-interpretation)하는지 평가하는 것입니다. Web Vitals에 대한 자세한 내용은 [Web Vitals 학습](/learn-core-web-vitals/)을 참조하십시오.

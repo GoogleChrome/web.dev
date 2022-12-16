@@ -211,7 +211,7 @@ with children that you want to maintain a 1:1 aspect ratio, such as a grid of sp
 ## Example: preventing layout shift
 
 Another great feature of `aspect-ratio` is that it can create placeholder space to prevent
-[Cumulative Layout Shift](/cls/) and deliver better [Web Vitals](/collection/). In this first
+[Cumulative Layout Shift](/cls/) and deliver better [Web Vitals](/learn-core-web-vitals/). In this first
 example, loading an asset from an API such as [Unsplash](https://source.unsplash.com/) creates a
 layout shift when the media is finished loading.
 

@@ -14,7 +14,7 @@ tags:
   - css
 ---
 
-您编写样式和构建布局的方式会对 [Core Web Vitals](/collection/) 产生重大影响。对于[累积布局偏移 (CLS)](/cls) 和[最大内容绘制 (LCP)](/lcp) 尤其如此。
+您编写样式和构建布局的方式会对 [Core Web Vitals](/learn-core-web-vitals/) 产生重大影响。对于[累积布局偏移 (CLS)](/cls) 和[最大内容绘制 (LCP)](/lcp) 尤其如此。
 
 本文介绍用于优化 Web Vitals 的 CSS 相关技术。这些优化按页面的不同方面进行细分：布局、图像、字体、动画和加载。在此过程中，我们将探索改进[示例页面](https://codepen.io/una/pen/vYyLKvY)：
 
@@ -261,4 +261,4 @@ Lighthouse“避免非合成动画”审计仅识别性能不佳的 *CSS 动画*
 
 ## 结论
 
-尽管仍有进一步改进的空间（例如，使用[图像压缩](/use-imagemin-to-compress-images/)来更快地传送图像），但这些更改已显着改善了该站点的 Web Vitals。如果这是一个真实站点，下一步将是[从真实用户那里收集性能数据，](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)以评估它是否[满足大多数用户的 Web Vitals 阈值](/vitals-measurement-getting-started/#data-interpretation)。有关 Web Vitals 的更多信息，请参阅[了解 Web Vitals](/collection/)。
+尽管仍有进一步改进的空间（例如，使用[图像压缩](/use-imagemin-to-compress-images/)来更快地传送图像），但这些更改已显着改善了该站点的 Web Vitals。如果这是一个真实站点，下一步将是[从真实用户那里收集性能数据，](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)以评估它是否[满足大多数用户的 Web Vitals 阈值](/vitals-measurement-getting-started/#data-interpretation)。有关 Web Vitals 的更多信息，请参阅[了解 Web Vitals](/learn-core-web-vitals/)。
