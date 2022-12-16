@@ -36,7 +36,7 @@ describe('getPaths', function () {
     const post = {
       fileSlug: 'lcp',
     };
-    const expected = ['collection', 'metrics'];
+    const expected = ['learn-core-web-vitals', 'metrics'];
     const actual = getPaths(post);
     assert.deepStrictEqual(actual, expected);
   });
