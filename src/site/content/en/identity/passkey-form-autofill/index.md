@@ -81,7 +81,8 @@ API](https://w3c.github.io/webauthn/).
 The four components in a passkey authentication flow are:
 the user:
 
-* **Backend**: Your backend server that holds the accounts database storing the public key and other metadata about the passkey.
+* **Backend**: Your backend server that holds the accounts database storing the
+  public key and other metadata about the passkey.
 * **Frontend**: Your frontend which communicates with the browser and sends 
   fetch requests to the backend.
 * **Browser**: The user's browser which is running your Javascript.
@@ -248,7 +249,7 @@ The public key credential object contains the following properties:
   value can be used, instead of the credential ID, if the server needs to pick 
   the ID values that it uses, or if the backend wishes to avoid creating an 
   index on credential IDs.
-* **[`authenticationAttachment`](https://w3c.github.io/webauthn/#enumdef-authenticatorattachment)**: 
+* **[`authenticatorAttachment`](https://w3c.github.io/webauthn/#enumdef-authenticatorattachment)**: 
   Returns `platform` when this credential came from the local device. 
   Otherwise `cross-platform`, notably when [the user used a phone to sign 
   in](https://developers.google.com/identity/passkeys/use-cases#sign-in-with-a-phone). 
@@ -283,3 +284,7 @@ Once the credential is verified with a matching public key, sign the user in.
 
 * [Create a passkey for passwordless logins](/passkey-registration/)
 * [Passkeys](https://www.imperialviolet.org/2022/09/22/passkeys.html)
+* [Apple document: Authenticating a User Through a Web
+  Service](https://developer.apple.com/documentation/authenticationservices/authenticating_a_user_through_a_web_service)
+* [Google document: Passwordless login with
+  passkeys](https://developers.google.com/identity/passkeys/)
