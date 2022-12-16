@@ -1,5 +1,9 @@
 @import '../../styles/settings/colors';
 
+hr {
+    max-width: 100%;
+}
+
 .collection {
     border-top: 1px solid var(--color-stroke);
     margin-top: 30px;
