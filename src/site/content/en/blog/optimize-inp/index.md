@@ -237,8 +237,10 @@ The unfortunate fact is that presentation delays are something you have the leas
 
 1. Don't abuse [`requestAnimationFrame()`](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame) for work not related to rendering. `requestAnimationFrame()` callbacks are run during the rendering phase of the event loop, and must complete before the next frame can be presented. If you're using `requestAnimationFrame()` to do work that doesn't involve changes to the user interface, understand that you could be delaying the next frame.
 2. Be careful with `async` and `await` and your assumptions around how they work. Just because you're using these features (or Promises in general) doesn't mean that the work they do won't block rendering. It's entirely possible that an `async` function—even if it _does_ break the work in a callback into a separate task—can still block rendering if the browser chooses to run it before the next frame is presented. This is why it's important to [keep all tasks short](/optimize-long-tasks/).
-3. Be careful with observer callbacks, such as those used by [`IntersectionObserver`](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API) or [`ResizeObserver`](https://developer.mozilla.org/docs/Web/API/ResizeObserver). These callbacks are run prior to rendering, and may delay presentation of the next frame if the work in them is expensive, as with event callbacks, defer any logic not needed for the very next frame.
+3. Be careful with [`ResizeObserver`](https://developer.mozilla.org/docs/Web/API/ResizeObserver) observer callbacks. Such callbacks are run prior to rendering, and may delay presentation of the next frame if the work in them is expensive, as with event callbacks, defer any logic not needed for the very next frame.
+
 ## When interactions overlap
+
 It's also important to understand how interactions can overlap. For example, if there are many interactions within a short period, it's possible that the processing time or presentation delay for one interaction can be a source of input delay for a subsequent interaction.
 
 <figure>
