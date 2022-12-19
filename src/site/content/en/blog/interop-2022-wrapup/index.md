@@ -50,7 +50,7 @@ In this post, learn about the progress made during 2022. In addition to these he
 
 ## Subgrid
 
-At the beginning of 2022, the only browser supporting the `subgrid` value for `grid-template-rows` and `grid-template-columns` was Firefox. During 2023 Safari has landed support, and the feature is under development in Chrome. It's going to miss the end of year deadline for interoperability, but it's on the way.
+At the beginning of 2022, the only browser supporting the `subgrid` value for `grid-template-rows` and `grid-template-columns` was Firefox. During 2022 Safari has landed support, and the feature is under development in Chrome. It's going to miss the end of year deadline for interoperability, but it's on the way.
 
 {% BrowserCompat 'css.properties.grid-template-columns.subgrid' %}
 
