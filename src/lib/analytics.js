@@ -174,8 +174,9 @@ function addPageShowEventListener() {
      */
     (e) => {
       if (e.persisted) {
-        gtag('set', {[dimensions.NAVIGATION_TYPE]: 'back-forward-cache'});
-        logEvent('pageview');
+        logEvent('pageview', {
+          [dimensions.NAVIGATION_TYPE]: 'back-forward-cache',
+        });
       }
     },
   );
