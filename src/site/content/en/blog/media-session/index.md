@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2022-11-09
+updated: 2022-12-19
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -486,11 +486,6 @@ the browser may display controls for navigating through slides. When the user
 clicks those, the website handles them through the Media Session API. For an
 example, see the [Presenting Slides sample].
 
-{% Aside %}
-At the time of writing, presenting slides actions are available only in
-Chrome&nbsp;110 on desktop.
-{% endAside %}
-
 ### Previous slide
 
 The `"previousslide"` action indicates that the user wants to go back to the
@@ -502,6 +497,8 @@ navigator.mediaSession.setActionHandler('previousslide', () => {
 });
 ```
 
+% BrowserCompat 'api.MediaSession.setActionHandler.previousslide_type' %}
+
 ### Next slide
 
 The `"nextslide"` action indicates that the user wants to go to the next slide
@@ -512,6 +509,8 @@ navigator.mediaSession.setActionHandler('nextslide', () => {
   // Show next slide.
 });
 ```
+
+% BrowserCompat 'api.MediaSession.setActionHandler.nextslide_type' %}
 
 ## Samples
 
