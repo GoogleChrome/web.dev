@@ -38,10 +38,7 @@ export async function logEvent(name, params) {
  */
 export function logError(error, message = '', fatal = false) {
   const description = message ? `${message} (${error.message})` : error.message;
-  logEvent('error', {
-    error_description: description,
-    error_fatal: fatal,
-  });
+  logEvent('exception', {description, fatal});
 }
 
 /**
