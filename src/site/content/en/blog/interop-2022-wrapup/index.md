@@ -38,7 +38,7 @@ In this post, learn about the progress made during 2022. In addition to these he
 
 ## Cascade layers
 
-[Cascade layers](https://developer.mozilla.org//docs/Learn/CSS/Building_blocks/Cascade_layers) let you manage the cascade by grouping selectors into layers. It's the kind of feature that only becomes useful when it is supported everywhere. All major engines now support cascade layers, and the scores across all browsers reflect how interoperable the feature is, with just a few tests left to pass for Firefox.
+[Cascade layers](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Cascade_layers) let you manage the cascade by grouping selectors into layers. It's the kind of feature that only becomes useful when it is supported everywhere. All major engines now support cascade layers, and the scores across all browsers reflect how interoperable the feature is, with just a few tests left to pass for Firefox.
 
 {% BrowserCompat 'css.at-rules.layer' %}
 
