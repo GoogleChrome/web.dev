@@ -22,8 +22,6 @@
  * it needs to read from localstorage and then modify its children.
  */
 
-import {logEvent} from '../../analytics';
-
 /**
  * @typedef {object} Course
  * @property {string[]} pages
@@ -119,7 +117,13 @@ class CourseLinks extends HTMLElement {
 
     // Fire analytics if there's been a 10%+ bucket jump.
     if (newPercent - oldPercent >= 10) {
-      logEvent(`course: ${courseKey} progress`, {
+      // TODO: ideally, no code would directly call the `gtag()` function,
+      // instead, code should import functions from the analytics.js module
+      // so it can ensure everything is properly initialized before any
+      // data is sent to GA. Also, it doesn't make sense to include
+      // non-critical logic in a script that is inlined, so this should be
+      // refactored for that reason as well.
+      gtag('event', `course: ${courseKey} progress`, {
         event_category: 'Course Events',
         event_label: newPercent.toString(),
       });
