@@ -5,7 +5,7 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "2"
-    stem: Which element is used t mark up the main navigation of a site?
+    stem: Which element is used to mark up the main navigation of a site?
     options:
       - content: "`<navigation>`"
         rationale: "Try again."
