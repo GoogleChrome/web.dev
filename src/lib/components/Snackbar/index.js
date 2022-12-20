@@ -61,16 +61,15 @@ class Snackbar extends BaseElement {
   get cookiesTemplate() {
     return html`
       <div class="web-snackbar__label" role="status">
-        We serve cookies on this site to analyze traffic, remember your
-        preferences, and optimize your experience.
-      </div>
-      <div class="web-snackbar__actions cluster gutter-base">
+        Web.dev uses cookies from Google to deliver and enhance the quality of
+        its services and to analyze traffic.
         <a
           href="https://policies.google.com/technologies/cookies"
           class="button"
-          >More details</a
         >
-        <button @click=${this.action} class="button">OK</button>
+          Learn more
+        </a>
+        <button @click=${this.action} class="button">OK, Got it</button>
       </div>
     `;
   }

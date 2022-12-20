@@ -15,6 +15,8 @@ module.exports = {
     customElements: true,
     firebase: true,
     gtag: true,
+    loadScript: true,
+    dataLayer: true,
   },
   rules: {
     indent: [

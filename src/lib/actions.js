@@ -4,6 +4,8 @@ import {runPsi} from './psi-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
 import cookies from 'js-cookie';
+import {ids} from 'webdev_analytics';
+import {isProd} from 'webdev_config';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -199,4 +201,27 @@ export const setLanguage = store.action((state, language) => {
   return {
     currentLanguage: language,
   };
+});
+
+export const loadAnalyticsScript = store.action(() => {
+  const {g4ScriptLoaded} = store.getState();
+  let gtag;
+  if (!g4ScriptLoaded) {
+    if (isProd) {
+      window.dataLayer = window.dataLayer || [];
+      gtag = function () {
+        dataLayer.push(arguments);
+      };
+      gtag('js', new Date());
+      loadScript(
+        `https://www.googletagmanager.com/gtag/js?id=${ids.GA4}`,
+        null,
+      );
+      return {
+        g4ScriptLoaded: true,
+      };
+    } else {
+      gtag = console.info;
+    }
+  }
 });
