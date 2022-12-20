@@ -21,6 +21,13 @@
       </a>
       <a
         class="site-header__link"
+        href="/explore/" data-category="Site-Wide Custom Events"
+        data-label="Tab: Explore"
+        {% if page.url === '/explore/' %}aria-current="page"{% endif %}>
+          {{ 'i18n.header.explore' | i18n(locale) }}
+      </a>
+      <a
+        class="site-header__link"
         href="/measure/"
         data-category="Site-Wide Custom Events"
         data-label="Tab: Measure"
