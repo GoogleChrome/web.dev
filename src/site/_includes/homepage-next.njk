@@ -51,7 +51,7 @@ externalScripts:
         <h2 class="headline__title">{{ news.title }}</h2>
         <p>{{ news.subTitle }}</p>
       </div>
-      <div class="homepage__case-studies switcher gap-top-size-2">
+      <div class="homepage__case-studies gap-top-size-2">
       {% set cardCount = 0 %}
       {% for item in collections['case-study'] | reverse %}
         {# See https://github.com/GoogleChrome/web.dev/issues/8121 #}
