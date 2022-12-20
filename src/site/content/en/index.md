@@ -11,6 +11,7 @@ intro:
   image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/zrBPJq27O4Hs8haszVnK.svg'
   imageWidth: '333'
   imageHeight: '240'
+
 featuredCard:
   eyebrow: 'Featured'
   title: 'Celebrate Chrometober with web tricks and treats'
@@ -18,10 +19,13 @@ featuredCard:
   url: 'https://www.youtube.com/watch?v=W9O4CuSUKb8'
   alt: 'Celebrate Chrometober with web tricks and treats'
   theme: 'light'
+
 pickedCaseStudyUrl: '/mishipay/'
+
 news:
   title: Web platform news
   subTitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
 learns:
   - category: CSS and UI
     cards: 
