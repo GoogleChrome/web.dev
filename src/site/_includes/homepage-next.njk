@@ -106,15 +106,15 @@ externalScripts:
   </div>
 
   <div id="learn__collections">
-  {% for learn in learns %}
-    <div class="homepage__collection" id="{{ learn.category | slug }}">
+  {% for theme in themes %}
+    <div class="homepage__collection" id="{{ theme.category | slug }}">
       <div class="region wrapper">
-        <h5> {{ learn.category }} </h5>
+        <h5> {{ theme.category }} </h5>
         <div class="collection-cards" aria-label="topics">
-          {% for topic in learn.cards %}
+          {% for topic in theme.cards %}
             <a
               {% if topic.url %} href="{{ topic.url }}" {% endif %}
-              class="card {% if topic.cssClass %}{{ topic.cssClass }}{% endif %}"
+              class="card {% if topic.cardType %}card-{{topic.cardType}}{% endif %}{% if topic.row %} row-{{topic.row}}{% endif %}{% if topic.column %} col-{{topic.column}}{% endif %}{% if topic.theme %} bg-{{topic.theme}}{% endif %}"
               data-category="web.dev"
               data-label="Topic: {{topic.title}}"
               data-action="click"

@@ -26,7 +26,7 @@ news:
   title: Web platform news
   subTitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-learns:
+themes:
   - category: CSS and UI
     cards: 
       - title: Thinking on ways to solve cafe wall illusion
@@ -35,14 +35,16 @@ learns:
         eyebrow:
           icon: featured
           text: Featured
-        cssClass: 'card-vertical'
+        cardType: vertical
       - title: 'The CSS Podcast: Media query range syntax'
         description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.
         thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/VwL892KEz6bakZMlq10D.png
         eyebrow:
           icon: podcast
           text: Podcast
-        cssClass: 'card-horizontal col-2 bg-tertiary'
+        cardType: horizontal
+        theme: tertiary
+        column: '2'
       - title: Meet the Chrome team
         description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
         eyebrow:
@@ -54,13 +56,15 @@ learns:
         eyebrow:
           icon: blog
           text: Blog
-        cssClass: 'card-vertical row-2 col-3'
+        cardType: vertical
+        column: '3'
+        row: '2'
       - title: Aspect ratio image card
         description: With the aspect-ratioproperty, as you resize the card, the green visual block maintains this 16 x 9 aspect ratio.
         eyebrow:
           icon: pattern
           text: Pattern
-        cssClass: 'bg-quaternary'
+        theme: quaternary
       - title: Take our CSS course
         description: Let’s gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.
         eyebrow:
@@ -72,7 +76,8 @@ learns:
         eyebrow:
           icon: blog
           text: Case study
-        cssClass: 'card-horizontal col-1'
+        cardType: horizontal
+        column: 1
       - title: Lorem ipsum dolor sit amet
         description: Mauris eu consequat ligula, eget facilisis erat. Fusce volutpat felis magna, sodales pharetra ante maximus vel.
         eyebrow:
@@ -87,7 +92,9 @@ learns:
         eyebrow:
           icon: featured
           text: Featured
-        cssClass: 'card-vertical col-1 bg-dark'
+        cardType: vertical
+        column: '1'
+        theme: dark
       - title: Aspect ratio image card
         description: With the aspect-ratioproperty, as you resize the card, the green visual block maintains this 16 x 9 aspect ratio.
         eyebrow:
@@ -108,7 +115,7 @@ learns:
         eyebrow:
           icon: podcast
           text: Podcast
-        cssClass: 'bg-tertiary'
+        theme: tertiary
 
   - category: Web Apps
     cards: 
@@ -119,7 +126,8 @@ learns:
           icon: featured
           text: Featured
         url: 'https://web.dev/clipchamp/'
-        cssClass: 'card-vertical col-1'
+        cardType: vertical
+        column: '1'
       - title: Meet the Chrome team
         description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
         eyebrow:
@@ -137,7 +145,9 @@ learns:
           icon: pattern
           text: Patern
         url: 'https://web.dev/new-patterns-for-amazing-apps/'
-        cssClass: 'card-horizontal col-2 bg-blue'
+        cardType: horizontal
+        column: '2'
+        theme: blue
 
   - category: Accessibility
     cards: 
@@ -148,7 +158,9 @@ learns:
           icon: blog
           text: Blog
         url: 'https://web.dev/a11y-tips-for-web-dev/'
-        cssClass: 'card-vertical col-1 bg-pink'
+        cardType: vertical
+        column: '1'
+        theme: pink
       - title: Take our CSS coruse
         description: Let’s gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.
         eyebrow:
@@ -171,14 +183,17 @@ learns:
           icon: featured
           text: Featured
         url: 'https://web.dev/accessible-angular-with-codelyzer/'
-        cssClass: 'card-vertical col-3 row-2'
+        cardType: vertical
+        column: '3'
+        row: '2'
       - title: Introducing Learn Accessibility
         description: The next in our series to help get you up to speed with modern web development.
         thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/nFqdA46fdMGU9sMJktqI.png
         eyebrow:
           icon: mortarboard
           text: Learn
-        cssClass: 'card-horizontal col-1'
+        cardType: horizontal
+        column: '1'
 
   - category: Payments and Identity
     cards: 
@@ -189,7 +204,7 @@ learns:
           icon: featured
           text: Featured
         url: https://web.dev/payment-and-address-form-best-practices/
-        cssClass: 'card-vertical'
+        cardType: vertical
       - title: Empowering payment apps with Web Payments
         description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.
         thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/m3Fi5SqLzrq8rYbOELxm.png
@@ -197,13 +212,14 @@ learns:
           icon: podcast
           text: Podcast
         url: https://web.dev/empowering-payment-apps-with-web-payments/
-        cssClass: 'card-horizontal col-2'
+        cardType: horizontal
+        column: '2'
       - title: Meet the Chrome team
         description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
         eyebrow:
           icon: event
           text: Event
-        cssClass: 'bg-dark'
+        theme: dark
       - title: Lorem ipsum dolor sit amet
         description: Mauris eu consequat ligula, eget facilisis erat. Fusce volutpat felis magna, sodales pharetra ante maximus vel.
         eyebrow:
@@ -226,7 +242,9 @@ learns:
           icon: blog
           text: Blog
         url: https://web.dev/setting-up-a-payment-method/
-        cssClass: 'card-vertical col-3 row-3'
+        cardType: vertical
+        row: '3'
+        column: '3'
       - title: Web Payments overview
         description: Learn more about Web Payments and how they work.
         thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/HnOjEdC3jd3ozeEFFWvb.png
@@ -234,7 +252,8 @@ learns:
           icon: blog
           text: Case Study
         url: https://web.dev/web-payments-overview/
-        cssClass: 'card-horizontal bg-quaternary'
+        cardType: horizontal
+        theme: quaternary
 
   - category: Ecosystem
     cards: 
@@ -244,7 +263,8 @@ learns:
         eyebrow:
           icon: featured
           text: Featured
-        cssClass: 'card-vertical bg-blue'
+        cardType: vertical
+        theme: blue
       - title: Aspect ratio image card
         description: With the aspect-ratioproperty, as you resize the card, the green visual block maintains this 16 x 9 aspect ratio.
         eyebrow:
@@ -265,7 +285,7 @@ learns:
         eyebrow:
           icon: podcast
           text: Podcast
-        cssClass: 'bg-pink'
+        theme: pink
 
 developers:
   title: 'Check out new web platform features from Chrome'
