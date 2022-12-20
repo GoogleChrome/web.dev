@@ -22,28 +22,26 @@ pageScripts:
 
   {# Courses start #}
   <div class="region">
-    <div class="wrapper learn__collection">
+    <div class="wrapper auto-grid learn__collection">
       {% set coursesArr = helpers.values(courses) %}
       {% for course in coursesArr|sort(true, false, 'meta.date') %}
       {% if course.meta and not course.meta.draft %}
-          <div>
-            <a href="{{ course.meta.url }}" class="card" data-style="branded">
-              <h3 class="visually-hidden">{{ course.meta.title }}</h3>
-              <div class="card__header repel">
-                <p class="color-mid-text">Course</p>
-                <div class="counter">
-                  {% set pages = collections.all | navigation(course.toc) %}
-                  <span class="counter__content" aria-label="{{ pages.list.length }} {{ 'i18n.learn.resources' | i18n(locale) }}">{{ pages.list.length }}</span>
-                  {{ icon('mortarboard') }}
-                </div>
-              </div>
-              <img src="{{ course.meta.card }}" alt="{{ course.meta.title }} branding" />
-              <div class="card__content flow">
-                <p class="text-size-1">{{ course.meta.description | i18n(locale) }}</p>
-              </div>
-            </a>
+        <a href="{{ course.meta.url }}" class="card" data-style="branded">
+          <h3 class="visually-hidden">{{ course.meta.title }}</h3>
+          <div class="card__header repel">
+            <p class="color-mid-text">Course</p>
+            <div class="counter">
+              {% set pages = collections.all | navigation(course.toc) %}
+              <span class="counter__content" aria-label="{{ pages.list.length }} {{ 'i18n.learn.resources' | i18n(locale) }}">{{ pages.list.length }}</span>
+              {{ icon('mortarboard') }}
+            </div>
           </div>
-        {% endif %}
+          <img src="{{ course.meta.card }}" alt="{{ course.meta.title }} branding" />
+          <div class="card__content flow">
+            <p class="text-size-1">{{ course.meta.description | i18n(locale) }}</p>
+          </div>
+        </a>
+      {% endif %}
       {% endfor %}
     </div>
   </div>

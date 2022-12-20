@@ -1,11 +1,7 @@
 .learn__collection {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  a {
-    min-height: 410px;
-    margin-top: 0.9em;
-    margin-bottom: 0.9em;
+  .card[data-style=branded] {
+    min-height: 25.625rem;
+    max-width: 37rem;
   }
 }
 
