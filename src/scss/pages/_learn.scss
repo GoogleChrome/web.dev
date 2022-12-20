@@ -1,14 +1,13 @@
-.learn {
-  .learn__collection {
-    border-block-start: 1px solid var(--color-stroke);
-    padding-block: get-space('size-1');
+.learn__collection {
+  .card[data-style=branded] {
+    min-height: 25.625rem;
+    max-width: 37rem;
+    min-width: auto;
   }
+}
 
-  .auto-grid {
-    padding-block-end: get-space('size-2');
-  }
-
-  .pill {
-    min-width: 4rem;
+.learn__hero {
+  p {
+    max-width: 74ch;
   }
 }
