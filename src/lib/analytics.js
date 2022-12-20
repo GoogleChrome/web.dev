@@ -251,7 +251,7 @@ function logPrerenders() {
       HTMLScriptElement.supports &&
       HTMLScriptElement.supports('speculationrules')
     ) ||
-    (self.navigator && navigator.connection && navigator.connection.saveData)
+    navigator.connection?.saveData
   ) {
     return;
   }

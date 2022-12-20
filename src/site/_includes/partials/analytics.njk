@@ -1,0 +1,10 @@
+{% set analyticsScript %}
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+{% if (site.env != 'prod') %}
+  {# In development, log debug events to the console instead of sending them to GA #}
+  window.gtag = console.debug;
+{% endif %}
+{% endset %}
+<script>{{ analyticsScript | minifyJs | cspHash | safe }}</script>

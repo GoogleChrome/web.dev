@@ -21,6 +21,15 @@ web-snackbar {
     justify-content: center;
   }
 
+  .button--action {
+    background: get-color('core-primary-glare');
+    color: get-color('shades-charcoal');
+  }
+
+  a {
+    color: get-color('core-primary-glare');
+  }
+
   @include media-query('md') {
     inset: auto auto $global-gutter $global-gutter;
     border-radius: $global-radius-large;

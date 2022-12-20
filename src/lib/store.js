@@ -49,7 +49,8 @@ const initialState = {
   // cookie policy.
   // We automatically accept cookies in dev and test environments so the cookie
   // banner doesn't interfere with tests.
-  userAcceptsCookies: !isProd,
+  // cookiePreference: isProd ? null : 'accepts',
+  cookiePreference: null,
 
   // Handle hiding/showing the snackbar.
   showingSnackbar: false,

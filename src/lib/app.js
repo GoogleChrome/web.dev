@@ -13,8 +13,8 @@ import removeServiceWorkers from './utils/sw-remove';
 // See .unsupported-notice in _page-header.scss
 document.body.classList.remove('unresolved');
 
-function onGlobalStateChanged({userAcceptsCookies}) {
-  if (userAcceptsCookies) {
+function onGlobalStateChanged({cookiePreference}) {
+  if (cookiePreference === 'accepts') {
     loadAnalyticsScript();
   }
 }
