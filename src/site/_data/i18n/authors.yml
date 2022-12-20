@@ -4420,3 +4420,9 @@ sriramkrishnan:
     en: 'Sriram Krishnan'
   description:
     en: 'Tech Lead and Manager on YouTube Web'
+
+alispivak:
+  title:
+    en: 'Ali Spivak'
+  description:
+    en: 'Member of Chrome DevRel, lead for Extensions.'
