@@ -29,7 +29,10 @@ const isProd = process.env.ELEVENTY_ENV === 'prod';
 const buildVirtualJSON = require('./src/build/virtual-json');
 const virtualImports = {
   webdev_analytics: {
-    id: isProd ? site.analytics.ids.prod : site.analytics.ids.staging,
+    ids: {
+      UA: site.analytics.ids.ua,
+      GA4: site.analytics.ids.ga4,
+    },
     dimensions: site.analytics.dimensions,
     version: site.analytics.version,
   },
