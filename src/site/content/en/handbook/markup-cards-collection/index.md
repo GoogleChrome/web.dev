@@ -6,7 +6,7 @@ description: |
   A sample usage of cards on the collection page for web.dev
 ---
 
-The content and layout of cards are flexible, the content creator can change the content and adjust the design, and position of a card by using YAML properties.
+The content and layout of cards are flexible, you can change the content, and adjust the design and position of a card by using YAML properties.
 
 The collection of cards offers a grid-based layout system, with rows and columns. The content creator can adjust the position card by specifying the card layout, vertical and horizontal, to avoid unwanted gaps. However, the rendering of a grid-based layout could create some gaps if we do not determine the column and row.
 
