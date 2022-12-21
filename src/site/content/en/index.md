@@ -22,9 +22,14 @@ featuredCard:
 
 pickedCaseStudyUrl: '/mishipay/'
 
-news:
+platformNews:
   title: Web platform news
   subTitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  pickedLeft:
+    url: '/submit-your-proposals-for-interop-2023/'
+    description: We are thrilled at the progress of Interop 2022 that we’ve made together and are excited to announce that Interop 2023 is happening!
+  pickedRight: 
+    url: '/rakuten/'
 
 themes:
   - category: CSS and UI

@@ -48,33 +48,35 @@ externalScripts:
   <div class="homepage__section bg-mid-bg">
     <div class="wrapper">
       <div class="headline all-center flow">
-        <h2 class="headline__title">{{ news.title }}</h2>
-        <p>{{ news.subTitle }}</p>
+        <h2 class="headline__title">{{ platformNews.title }}</h2>
+        <p>{{ platformNews.subTitle }}</p>
       </div>
-      <div class="homepage__case-studies gap-top-size-2">
+      <div class="homepage__news gap-top-size-2">
       {% set cardCount = 0 %}
-      {% for item in collections['case-study'] | reverse %}
-        {# See https://github.com/GoogleChrome/web.dev/issues/8121 #}
-        {% if item.data.lang === 'en' %}
+      {% set pickedLeft = platformNews.pickedLeft %}
+      {% set pickedRight = platformNews.pickedRight %}
+      {% set items = [pickedLeft, pickedRight] %}
+
+      {% for item in items %}
+        {% if item.url %}
+          {% set post = item.url | findByUrl %}
+        {% endif %}
+
+        {% if post.data.lang === 'en' %}
           {% if cardCount <= 1 %}
-            {% if item.data.hero %}
-              {% if not item.data.alt %}
-                {% set alt = '' %}
-              {% else %}
-                {% set alt = item.data.alt %}
-              {% endif %}
+            {% if post.data.hero %}
               <article class="card">
-                <a href="{{ item.url }}" aria-hidden="true">
-                  {% Img src=item.data.thumbnail or item.data.hero, alt=item.data.alt, width="570", height="330", class="card__hero" %}
+                <a href="{{ post.url }}" aria-hidden="true">
+                  {% Img src=item.thumbnail or post.data.thumbnail or post.data.hero, alt=post.data.alt or '', width="570", height="330", class="card__hero" %}
                 </a>
                 <div class="card__content flow">
                   <h3 class="card__heading text-size-3">
-                    <a href="{{ item.url }}">{{ item.data.title }}</a>
+                    <a href="{{ post.url }}">{{ item.title or post.data.title }}</a>
                   </h3>
-                  <p>{{ item.data.description }}</p>
+                  <p>{{ item.description or post.data.description }}</p>
                 </div>
                 <div class="card__tags cluster gap-top-size-1" aria-label="tags for this case study">
-                  {% for tagKey in item.data.tags or [] %}
+                  {% for tagKey in post.data.tags or [] %}
                     {% if tagKey in collections.tags %}
                       {% set tag = collections.tags[tagKey] %}
                       <a class="pill" href="{{ tag.url }}">{{ tag.overrideTitle or tag.title | i18n(locale) }}</a>

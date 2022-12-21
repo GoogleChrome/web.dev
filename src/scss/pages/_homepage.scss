@@ -14,7 +14,10 @@
 
   .headline__title {
     max-width: 100%;
-    margin-top: 50px;
+
+    @include media-query('md') {
+      margin-top: 50px;
+    }
   }
 
   .cluster {
@@ -38,13 +41,27 @@
   fill: var(--color-mid-text);
 }
 
-.homepage__case-studies {
+.homepage__news {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 2fr;
   grid-column-gap: 30px;
   max-width: 70rem;
   margin: auto;
+
+  .card {
+    justify-self: center;
+    margin-bottom: 30px;
+  }
+
+  @include media-query('md') {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+
+    .card {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .homepage .repel {
