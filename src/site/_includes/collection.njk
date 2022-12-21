@@ -7,7 +7,7 @@ eleventyComputed:
   hero: "{{paths[pathName].cover}}"
 ---
 
-{% from 'macros/icon.njk' import svg with context %}
+{% from 'macros/icon.njk' import icon, svg with context %}
 {% set path = paths[pathName] %}
 {% set topics = path.topics | removeDrafts %}
 
@@ -34,6 +34,7 @@ eleventyComputed:
   </div>
 </header>
 
+<div class="collection">
 {% if path.draft and site.env === 'dev' %}
   <div class="banner bg-state-bad-bg color-core-text" role="banner">
     <div class="banner__content flow">
@@ -81,10 +82,24 @@ eleventyComputed:
   </div>
 </div>
 
-<hr/>
+<hr />
 
+<div class="pad-block-size-1">
 {% for topic in topics %}
   <div class="path__topic">
     {% include 'partials/topic.njk' %}
   </div>
 {% endfor %}
+</div>
+
+{% if cards %}
+  <div class="collection__cards">
+    <div class="region wrapper">
+      <h5> On this topic </h5>
+      <div class="collection__layout" aria-label="topics">
+        {% include 'partials/cards-collection.njk' %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+</div>
