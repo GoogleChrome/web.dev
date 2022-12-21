@@ -3,9 +3,9 @@ title: 'How is digital accessibility measured?'
 authors:
   - cariefisher
 description: >
-  Introduction to measuring accessibility of digital products so that
-  everyone, including people with disabilities, can still interact in
-  a meaningful and equal way.
+  Introduction to accessibility measurement, which ensures everyone,
+  including people with disabilities, can still interact with your website
+  in a meaningful and equal way.
 date: 2022-09-30
 tags:
   - accessibility
@@ -40,9 +40,7 @@ _[accessibility audit](https://www.w3.org/WAI/test-evaluate/)_.
 An accessibility audit uses various methodologies, techniques, and tools,
 including design, automated, manual, and assistive technology (AT) testing.
 
-Perform an accessibility audit to capture the baseline accessibility compliance of a digital product. But, running it once at the start of a project is not enough to determine if a product is accessible. You should run this audit multiple times throughout the software product lifecycle to check for changes in the level of conformance, against a set of pre-determined accessibility checkpoints or guidelines. 
-
-We'll cover how to conduct an accessibility audit in the foundational conformance testing module, coming soon.
+Perform an accessibility audit to capture the baseline accessibility compliance of a digital product. But, running it once at the start of a project is not enough to determine if a product is accessible. You should run this audit multiple times throughout the software product lifecycle to check for changes in the level of conformance, against a set of pre-determined accessibility checkpoints or guidelines.
 
 ## Web Content Accessibility Guidelines (WCAG) {:#wcag}
 
