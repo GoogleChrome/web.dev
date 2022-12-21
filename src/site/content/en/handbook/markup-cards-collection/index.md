@@ -49,7 +49,7 @@ cards:
 
 ### Adding vertical card
 
-The vertical card will represent a blog post, so the title, thumbnail, etc, will be automatically pulled from a real blog post, no need to specify the title, description, or thumbnail. However, the title, description, and thumbnail are able to be overridden.
+The vertical card represents a blog post, so the title, thumbnail, and description will be automatically pulled from the post specified in the `url`. However, the title, description, and thumbnail are able to be overridden by adding these properties.
 
 This type of card will consume two rows of the grid system. The rendering of a grid-based layout could create some gaps if we do not determine the column and row. For a horizontal card layout, you can determine row and column to specify the position using the YAML property `row` and `column`.
 
