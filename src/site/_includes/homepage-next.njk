@@ -98,8 +98,8 @@ externalScripts:
       <h2 id="themes" class="text-size-3"> Themes </h2>
 
       {% set filterItems = [] %}
-      {% for learn in learns %}
-        {% set filterItems = (filterItems.push({title: learn.category, id: learn.category | slug }), filterItems) %}
+      {% for theme in themes %}
+        {% set filterItems = (filterItems.push({title: theme.category, id: theme.category | slug }), filterItems) %}
       {% endfor %}
       <web-learn-filter all="all" filters="{{filterItems | dump}}"></web-learn-filter>
     </div>
@@ -110,34 +110,10 @@ externalScripts:
     <div class="homepage__collection" id="{{ theme.category | slug }}">
       <div class="region wrapper">
         <h5> {{ theme.category }} </h5>
-        <div class="collection-cards" aria-label="topics">
-          {% for topic in theme.cards %}
-            <a
-              {% if topic.url %} href="{{ topic.url }}" {% endif %}
-              class="card {% if topic.cardType %}card-{{topic.cardType}}{% endif %}{% if topic.row %} row-{{topic.row}}{% endif %}{% if topic.column %} col-{{topic.column}}{% endif %}{% if topic.theme %} bg-{{topic.theme}}{% endif %}"
-              data-category="web.dev"
-              data-label="Topic: {{topic.title}}"
-              data-action="click"
-              role="listitem"
-            >
-              {% if topic.thumbnail %}
-                {% Img src=topic.thumbnail, alt=topic.title, width="370", height="220" %}
-              {% endif %}
-
-              <div class="content">
-                <div class="card__eyebrow flow">
-                  {{ icon(topic.eyebrow.icon) }}
-                  <span class="text-size-0 color-mid-text">{{ topic.eyebrow.text }}</span>
-                </div>
-
-                <div class="card__content flow">
-                  <h4 class="card__heading">{{ topic.title }}</h4>
-                  <p class="text-size-1 color-mid-text">{{ topic.description }}</p>
-                </div>
-              </div>
-            </a>
-          {% endfor %}
-        </div>
+          <div class="collection__layout" aria-label="topics">
+            {% set cards = theme.cards %}
+            {% include 'partials/cards-collection.njk' %}
+          </div>
       </div>
     </div>
   {% endfor %}

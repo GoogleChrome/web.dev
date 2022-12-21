@@ -56,7 +56,7 @@
       border-radius: 5px;
 
       @include media-query('md') {
-          width: auto;
+          width: 100%;
       }
   }
 

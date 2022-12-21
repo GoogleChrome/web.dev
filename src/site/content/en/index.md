@@ -29,34 +29,32 @@ news:
 themes:
   - category: CSS and UI
     cards: 
-      - title: Thinking on ways to solve cafe wall illusion
-        description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna nunc non finibus erat ullamcorper sit amet.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/MqeKXDtUPO7zszzpRXcF.png
+      - url: /new-patterns-july-2022/
         eyebrow:
           icon: featured
           text: Featured
-        cardType: vertical
+        cardLayout: 'vertical'
       - title: 'The CSS Podcast: Media query range syntax'
         description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.
         thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/VwL892KEz6bakZMlq10D.png
         eyebrow:
           icon: podcast
           text: Podcast
-        cardType: horizontal
-        theme: tertiary
+        cardLayout: 'horizontal'
+        theme: 'tertiary'
         column: '2'
+        url: /https://pod.link/thecsspodcast/
       - title: Meet the Chrome team
         description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
         eyebrow:
           icon: event
           text: Event
-      - title: How Terra improved user engagement thanks to Dark Mode
-        description: By displaying a dark theme to users that prefer dark mode on their devices, Terra reduced the bounce rate by 60%.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/DUMO47sKvnXAt3QDS2o3.png
+        url: /meet-the-team/
+      - url: /terra-dark-mode/
         eyebrow:
           icon: blog
           text: Blog
-        cardType: vertical
+        cardLayout: 'vertical'
         column: '3'
         row: '2'
       - title: Aspect ratio image card
@@ -64,20 +62,20 @@ themes:
         eyebrow:
           icon: pattern
           text: Pattern
-        theme: quaternary
-      - title: Take our CSS course
+        theme: 'quaternary'
+        url: /patterns/layout/aspect-ratio-image-card/
+      - title: Take our CSS coruse
         description: Let’s gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.
         eyebrow:
           icon: mortarboard
           text: Learn
-      - title: Building Chrometober!
-        description: How the scrolling book came to life for sharing fun and frightening tips and tricks this Chrometober.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/nUJKrjf9HvSrIJWe5xtm.png
+        url: /learn/css/
+      - url: /building-chrometober/
         eyebrow:
           icon: blog
           text: Case study
-        cardType: horizontal
-        column: 1
+        cardLayout: 'horizontal'
+        column: '1'
       - title: Lorem ipsum dolor sit amet
         description: Mauris eu consequat ligula, eget facilisis erat. Fusce volutpat felis magna, sodales pharetra ante maximus vel.
         eyebrow:
@@ -86,79 +84,74 @@ themes:
 
   - category: Performance
     cards: 
-      - title: Thinking on ways to solve cafe wall illusion
-        description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna nunc non finibus erat ullamcorper sit amet.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/plEqDPxVvYVmgb5H6cTf.png
+      - url: /crux-and-rum-differences/
         eyebrow:
           icon: featured
           text: Featured
-        cardType: vertical
+        cardLayout: vertical
         column: '1'
         theme: dark
       - title: Aspect ratio image card
         description: With the aspect-ratioproperty, as you resize the card, the green visual block maintains this 16 x 9 aspect ratio.
         eyebrow:
           icon: pattern
-          text: Event
+          text: Pattern
+        url: /patterns/layout/aspect-ratio-image-card/
       - title: Take our CSS coruse
         description: Let’s gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.
         eyebrow:
           icon: mortarboard
-          text: Blog
-      - title: Meet the Chrome team
+          text: Learn
+        url: /learn/css/
+      - title: Meet the Chrome team/
         description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
         eyebrow:
           icon: event
           text: Event
+        url: /meet-the-team/
       - title: 'The CSS Podcast: Media query range syntax'
         description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.
         eyebrow:
           icon: podcast
           text: Podcast
         theme: tertiary
+        url: /https://pod.link/thecsspodcast/
 
   - category: Web Apps
     cards: 
-      - title: "Clipchamp's video editor PWA installs see a 97% monthly growth"
-        description: How PWAs, WebAssembly, and ChromeOS are helping a web-based video editor deliver better performance.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/lWFxzVsH8WSrmw2cTuGv.png
+      - url: /clipchamp/
         eyebrow:
           icon: featured
           text: Featured
-        url: 'https://web.dev/clipchamp/'
-        cardType: vertical
+        cardLayout: vertical
         column: '1'
       - title: Meet the Chrome team
         description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
         eyebrow:
           icon: event
           text: Event
+        url: /meet-the-team/
       - title: 'The CSS Podcast: Media query range syntax'
         description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.
         eyebrow:
           icon: podcast
           text: Podcast
-      - title: New patterns for amazing apps
-        description: Dive into a fantastic collection of new patterns for amazing apps.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/XpABUj0hwEWyUGL0bsmR.png
+        url: /https://pod.link/thecsspodcast/
+      - url: /new-patterns-for-amazing-apps/
         eyebrow:
           icon: pattern
           text: Patern
-        url: 'https://web.dev/new-patterns-for-amazing-apps/'
-        cardType: horizontal
+        cardLayout: horizontal
         column: '2'
         theme: blue
 
   - category: Accessibility
     cards: 
-      - title: Accessibility tips for web developers
-        description: Improving accessibility makes your site more useable for everyone.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/8BuoBCIYVRMIiGqG3LC7.png
+      - url: /a11y-tips-for-web-dev/
         eyebrow:
           icon: blog
           text: Blog
-        url: 'https://web.dev/a11y-tips-for-web-dev/'
-        cardType: vertical
+        cardLayout: vertical
         column: '1'
         theme: pink
       - title: Take our CSS coruse
@@ -166,24 +159,24 @@ themes:
         eyebrow:
           icon: mortarboard
           text: Learn
+        url: /learn/css/
       - title: Meet the Chrome team
         description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
         eyebrow:
           icon: event
           text: Event
+        url: /meet-the-team/
       - title: Aspect ratio image card
         description: With the aspect-ratioproperty, as you resize the card, the green visual block maintains this 16 x 9 aspect ratio.
         eyebrow:
           icon: pattern
           text: Pattern
-      - title: Audit your Angular app's accessibility with codelyzer
-        description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna nunc non finibus erat ullamcorper sit amet.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/78TWhIRMpL90RmYLk3Ar.png
+        url: /patterns/layout/aspect-ratio-image-card/
+      - url: /accessible-angular-with-codelyzer/
         eyebrow:
           icon: featured
           text: Featured
-        url: 'https://web.dev/accessible-angular-with-codelyzer/'
-        cardType: vertical
+        cardLayout: vertical
         column: '3'
         row: '2'
       - title: Introducing Learn Accessibility
@@ -192,27 +185,23 @@ themes:
         eyebrow:
           icon: mortarboard
           text: Learn
-        cardType: horizontal
+        cardLayout: horizontal
         column: '1'
+        url: /learn/accessibility/
 
   - category: Payments and Identity
     cards: 
-      - title: Payment and address form best practices
-        description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/4pyNYNeDwtlPIWBFA05y.png
+      - url: /payment-and-address-form-best-practices/
         eyebrow:
           icon: featured
           text: Featured
-        url: https://web.dev/payment-and-address-form-best-practices/
-        cardType: vertical
-      - title: Empowering payment apps with Web Payments
-        description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.
+        cardLayout: vertical
+      - url: /empowering-payment-apps-with-web-payments/
         thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/m3Fi5SqLzrq8rYbOELxm.png
         eyebrow:
           icon: podcast
           text: Podcast
-        url: https://web.dev/empowering-payment-apps-with-web-payments/
-        cardType: horizontal
+        cardLayout: horizontal
         column: '2'
       - title: Meet the Chrome team
         description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
@@ -220,6 +209,7 @@ themes:
           icon: event
           text: Event
         theme: dark
+        url: /meet-the-team/
       - title: Lorem ipsum dolor sit amet
         description: Mauris eu consequat ligula, eget facilisis erat. Fusce volutpat felis magna, sodales pharetra ante maximus vel.
         eyebrow:
@@ -230,62 +220,61 @@ themes:
         eyebrow:
           icon: pattern
           text: Pattern
-      - title: Take our CSS course
+        url: /patterns/layout/aspect-ratio-image-card/
+      - title: Take our CSS coruse
         description: Let’s gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.
         eyebrow:
           icon: mortarboard
           text: Learn
-      - title: Setting up a payment method
-        description: A payment transaction using Web Payments starts with the discovery of your payment app.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/7xVewdpZn9XUbwiFXo3t.png
+        url: /learn/css/
+      - url: /setting-up-a-payment-method/
         eyebrow:
           icon: blog
           text: Blog
-        url: https://web.dev/setting-up-a-payment-method/
-        cardType: vertical
+        cardLayout: vertical
         row: '3'
         column: '3'
-      - title: Web Payments overview
-        description: Learn more about Web Payments and how they work.
+      - url: /web-payments-overview/
         thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/HnOjEdC3jd3ozeEFFWvb.png
         eyebrow:
           icon: blog
           text: Case Study
-        url: https://web.dev/web-payments-overview/
-        cardType: horizontal
+        cardLayout: horizontal
         theme: quaternary
 
   - category: Ecosystem
     cards: 
-      - title: Advancing the web framework ecosystem
-        description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna nunc non finibus erat ullamcorper sit amet.
-        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/eYxYkESUD20wan7zUYFu.png
+      - url: /advancing-framework-ecosystem-cds-2019/
         eyebrow:
           icon: featured
           text: Featured
-        cardType: vertical
+        cardLayout: vertical
         theme: blue
       - title: Aspect ratio image card
         description: With the aspect-ratioproperty, as you resize the card, the green visual block maintains this 16 x 9 aspect ratio.
         eyebrow:
           icon: pattern
           text: Pattern
-      - title: Take our CSS course
+        url: /patterns/layout/aspect-ratio-image-card/
+      - title: Take our CSS coruse
         description: Let’s gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.
         eyebrow:
           icon: mortarboard
           text: Learn
+        url: /learn/css/
       - title: Meet the Chrome team
         description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
         eyebrow:
           icon: event
           text: Event
+        url: /meet-the-team/
       - title: 'The CSS Podcast: Media query range syntax'
         description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.
         eyebrow:
           icon: podcast
           text: Podcast
         theme: pink
+        url: /https://pod.link/thecsspodcast/
 
 developers:
   title: 'Check out new web platform features from Chrome'
