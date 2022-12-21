@@ -151,10 +151,11 @@ concise, and of course, accessible.
 
 ## Focus management
 
-In the [Keyboard focus module](/learn/accessibility/focus), we'll covered focus order
-and indicator styles. Focus management is knowing when and where to trap the
-focus and when it shouldn't be trapped. Focus management is critical for
-keyboard-only users.
+In the [Keyboard focus module](/learn/accessibility/focus), we covered focus
+order and indicator styles. Focus management is knowing when and where to trap
+the focus and when it shouldn't be trapped.
+
+Focus management is critical for keyboard-only users.
 
 ### Component level
 
@@ -195,7 +196,8 @@ JavaScript is essential to properly trapping this focus.
 ### Page level
 
 Focus must also be maintained when a user navigates from page-to-page. This is
-especially true in SPAs, where there is [no browser refresh](https://marcysutton.com/prototype-testing-accessible-clientside-routing/),
+especially true in SPAs, where there is
+[no browser refresh](https://marcysutton.com/prototype-testing-accessible-clientside-routing/),
 and all content dynamically changes. Anytime a user clicks on a link to go
 to another page within your application, the focus is either kept in the same
 place or potentially placed somewhere else entirely.
