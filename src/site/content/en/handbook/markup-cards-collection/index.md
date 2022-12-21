@@ -30,7 +30,7 @@ YAML properties available for displying a layout of cards on collection template
 
 ### Adding default card
 
-This type of card the content creator probably needs to specific `title` and `description` YAML properties to display the content of the card. `url` property is needed if you want this card to be able to naviagate to somewhere.
+This type of card requires a `title` and `description` YAML properties to display the content of the card. The `url` property is needed to link to another page.
 
 
 {% raw %}
