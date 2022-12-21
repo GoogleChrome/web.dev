@@ -1,6 +1,6 @@
 ---
 layout: handbook
-title: Sample card layouts on the collection page
+title: Add cards to the collection page
 date: 2019-06-26
 description: |
   A sample usage of cards on the collection page for web.dev
