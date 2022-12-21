@@ -12,7 +12,7 @@ The collection of cards offers a grid-based layout system, with rows and columns
 
 See [the sample collection of cards](/handbook/content-types/example-collection/) post.
 
-YAML properties available for displying a layout of cards on collection template:
+YAML properties available for displaying a layout of cards on a collection page:
 - `title` - the title of the card.
 - `description` - the description of the card.
 - `thumbnail` - the thumbnail of the card.
