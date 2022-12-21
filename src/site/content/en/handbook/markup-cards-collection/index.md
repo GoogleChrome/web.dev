@@ -10,7 +10,7 @@ The content and layout of cards are flexible, the content creator can change the
 
 The collection of cards offers a grid-based layout system, with rows and columns. The content creator can adjust the position card by specifying the card layout, vertical and horizontal, to avoid unwanted gaps. However, the rendering of a grid-based layout could create some gaps if we do not determine the column and row.
 
-See [the sample collection of cards](/example-collection/) post.
+See [the sample collection of cards](/handbook/content-types/example-collection/) post.
 
 YAML properties available for displying a layout of cards on collection template:
 - `title` - the title of the card.
@@ -36,7 +36,6 @@ This type of card the content creator probably needs to specific `title` and `de
 {% raw %}
 ```yaml
 ---
-…
 cards:
   - title: 'Meet the Chrome team'
     description: 'We are meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.'
@@ -44,7 +43,6 @@ cards:
       icon: 'event'
       text: 'Event'
     url: /meet-the-team
-…
 ---
 ```
 {% endraw %}
@@ -58,15 +56,13 @@ This type of card will consume two rows of the grid system. The rendering of a g
 {% raw %}
 ```yaml
 ---
-…
 cards:
   - url: /terra-dark-mode/
     eyebrow:
-      icon: 'featured'
-      text: 'Featured'
+      icon: 'blog'
+      text: 'Blog'
     cardLayout: 'vertical'
     column: '3'
-…
 ---
 ```
 {% endraw %}
@@ -80,18 +76,16 @@ This type of card will consume two columns of the grid system. The rendering of 
 {% raw %}
 ```yaml
 ---
-…
 cards:
   - url: /terra-dark-mode/
     thumbnail: 'image/SZHNhsfjU9RbCestTGZU6N7JEWs1/VwL892KEz6bakZMlq10D.png'
     eyebrow:
-      icon: 'blog'
-      text: 'Blog'
+      icon: 'featured'
+      text: 'Featured'
     url: /meet-the-team
     cardLayout: 'horizontal'
     column: '2'
     row: '2'
-…
 ---
 ```
 {% endraw %}
