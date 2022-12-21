@@ -96,33 +96,8 @@ eleventyComputed:
   <div class="collection__cards">
     <div class="region wrapper">
       <h5> On this topic </h5>
-      <div class="collection__topics" aria-label="topics">
-        {% for topic in cards %}
-          <a
-            {% if topic.url %} href="{{ topic.url }}" {% endif %}
-            class="card {% if topic.cssClass %}{{ topic.cssClass }}{% endif %}"
-            data-category="web.dev"
-            data-label="Topic: {{topic.title}}"
-            data-action="click"
-            role="listitem"
-          >
-            {% if topic.thumbnail %}
-              {% Img src=topic.thumbnail, alt="{{ topic.title }}", width="370", height="220" %}
-            {% endif %}
-
-            <div class="content">
-              <div class="card__eyebrow flow">
-                {{ icon(topic.eyebrow.icon) }}
-                <span class="text-size-0 color-mid-text">{{ topic.eyebrow.text }}</span>
-              </div>
-
-              <div class="card__content flow">
-                <h4 class="card__heading color-core-text">{{ topic.title }}</h4>
-                <p class="text-size-1 color-mid-text">{{ topic.description }}</p>
-              </div>
-            </div>
-          </a>
-        {% endfor %}
+      <div class="collection__layout" aria-label="topics">
+        {% include 'partials/cards-collection.njk' %}
       </div>
     </div>
   </div>
