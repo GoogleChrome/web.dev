@@ -2,7 +2,8 @@
 title: 'Color and contrast'
 authors:
   - cariefisher
-description: How to create accessible color palettes with appropriate contrast.
+description: >
+  Build accessible color palettes with appropriate contrast.
 date: 2022-09-30
 tags:
   - accessibility
