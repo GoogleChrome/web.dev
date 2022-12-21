@@ -228,6 +228,7 @@ themes:
           text: Learn
         url: /learn/css/
       - url: /setting-up-a-payment-method/
+        thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/7xVewdpZn9XUbwiFXo3t.png
         eyebrow:
           icon: blog
           text: Blog
