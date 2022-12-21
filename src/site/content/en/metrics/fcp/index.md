@@ -169,6 +169,7 @@ performance guides:
 - [Eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
 - [Minify CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
 - [Remove unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [Remove unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)
 - [Preconnect to required origins](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [Reduce server response times (TTFB)](/ttfb/)
 - [Avoid multiple page redirects](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
