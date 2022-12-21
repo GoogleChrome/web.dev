@@ -40,7 +40,12 @@ _[accessibility audit](https://www.w3.org/WAI/test-evaluate/)_.
 An accessibility audit uses various methodologies, techniques, and tools,
 including design, automated, manual, and assistive technology (AT) testing.
 
-Perform an accessibility audit to capture the baseline accessibility compliance of a digital product. But, running it once at the start of a project is not enough to determine if a product is accessible. You should run this audit multiple times throughout the software product lifecycle to check for changes in the level of conformance, against a set of pre-determined accessibility checkpoints or guidelines.
+Perform an accessibility audit to capture the baseline accessibility compliance
+of a digital product. But, running it once at the start of a project is not
+enough to determine if a product is accessible. You should run this audit
+multiple times throughout the software product lifecycle to check for changes
+in the level of conformance, against a set of pre-determined accessibility
+checkpoints or guidelines.
 
 ## Web Content Accessibility Guidelines (WCAG) {:#wcag}
 
