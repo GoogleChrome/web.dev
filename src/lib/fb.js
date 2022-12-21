@@ -16,7 +16,7 @@ import {firebaseConfig} from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
 
-import {trackError} from './analytics';
+import {logError} from './analytics';
 
 let isInitialized = false;
 
@@ -195,7 +195,7 @@ export async function saveUserUrl(url, auditedOn = null) {
     // Note: We don't plan to do anything here. If we can't write to Firebase, we can still
     // try to invoke Lighthouse with the new URL.
     console.warn('could not write URL to Firestore', err);
-    trackError(err, 'write URL');
+    logError(err, 'write URL');
   }
 
   return auditedOn;
@@ -216,7 +216,7 @@ export async function signIn() {
     user = res.user;
   } catch (err) {
     console.error('signIn error', err);
-    trackError(err, 'signIn');
+    logError(err, 'signIn');
   }
 
   return user;
@@ -232,6 +232,6 @@ export async function signOut() {
     await authSignOut(getAuth());
   } catch (err) {
     console.error('signOut error', err);
-    trackError(err, 'signOut');
+    logError(err, 'signOut');
   }
 }

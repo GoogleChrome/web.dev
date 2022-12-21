@@ -30,13 +30,15 @@ class Snackbar extends BaseElement {
       animatable: {type: Boolean, reflect: true},
       stacked: {type: Boolean, reflect: true},
       type: {type: String},
-      action: {type: Object}, // action is a Function
+      onAccept: {type: Object}, // onAccept is a Function
+      onReject: {type: Object}, // onReject is a Function
     };
   }
 
   constructor() {
     super();
-    this.action = null;
+    this.onAccept = null;
+    this.onReject = null;
     this.type = null;
   }
 
@@ -61,16 +63,19 @@ class Snackbar extends BaseElement {
   get cookiesTemplate() {
     return html`
       <div class="web-snackbar__label" role="status">
-        We serve cookies on this site to analyze traffic, remember your
-        preferences, and optimize your experience.
+        web.dev uses cookies to deliver and enhance the quality of its services
+        and to analyze traffic. If you agree, cookies are also used to serve
+        advertising and to personalize the content and advertisements that you
+        see.
+        <a href="https://policies.google.com/technologies/cookies">
+          Learn more.
+        </a>
       </div>
       <div class="web-snackbar__actions cluster gutter-base">
-        <a
-          href="https://policies.google.com/technologies/cookies"
-          class="button"
-          >More details</a
-        >
-        <button @click=${this.action} class="button">OK</button>
+        <button @click=${this.onAccept} class="button button--action">
+          Agree
+        </button>
+        <button @click=${this.onReject} class="button">No thanks</button>
       </div>
     `;
   }

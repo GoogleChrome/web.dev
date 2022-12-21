@@ -1,5 +1,6 @@
 import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
+import {logEvent} from '../../analytics';
 
 /**
  * Element that renders an assessment question shell.
@@ -90,10 +91,9 @@ export class AssessmentQuestion extends BaseElement {
 
       // Send an Analytics event manually. We don't want to pipe through the IDs all the way down
       // to each individual option.
-      ga('send', 'event', {
-        eventCategory: 'Self-assessments',
-        eventAction: 'click',
-        eventLabel: `${this.id}-response-${responseIndex}-option-${optionIndex}`,
+      logEvent('click', {
+        event_category: 'Self-assessments',
+        event_label: `${this.id}-response-${responseIndex}-option-${optionIndex}`,
       });
     });
   }
