@@ -1,8 +1,8 @@
 ---
-title: Content security policy 
+title: Content security policy
 subhead: Content Security Policy can significantly reduce the risk and impact of cross-site scripting attacks in modern browsers.
 date: 2012-06-15
-updated: 2020-06-19 
+updated: 2020-06-19
 authors:
   - mikewest
   - joemedley
@@ -34,7 +34,7 @@ Guys. We'd obviously like to prevent that if possible.
 This overview highlights a defense that can significantly reduce the risk and
 impact of XSS attacks in modern browsers: Content Security Policy (CSP).
 
-## TL;DR 
+## Summary
 * Use allowlists to tell the client what's allowed and what isn't.
 * Learn what directives are available.
 * Learn the keywords they take.
@@ -541,7 +541,7 @@ overwrites the default for that specific type of resource.
 ## The future
 
 
-Content Security Policy Level 2 is a 
+Content Security Policy Level 2 is a
 [Candidate Recommendation](https://www.w3.org/TR/CSP2/). The W3C's Web Application Security Working Group
 has already begun work on the specification's next iteration,
 [Content Security Policy Level 3](https://www.w3.org/TR/CSP3/).

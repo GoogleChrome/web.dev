@@ -135,7 +135,7 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 ```
 
 A `<video>` element using these attributes will play automatically, loop
-endlessly, play no audio, and play inline (i.e., not fullscreen), all the
+endlessly, play no audio, and play inline (that is, not fullscreen), all the
 behaviors expected of animated GIFs! 🎉
 
 ## Specify your sources

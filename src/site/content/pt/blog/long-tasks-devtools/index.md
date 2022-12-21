@@ -14,7 +14,7 @@ tags:
   - performance
 ---
 
-**tl;dr: Tarefas longas podem manter o thread principal ocupado, atrasando a interação do usuário. O Chrome DevTools agora pode visualizar tarefas longas, facilitando a visualização das tarefas a serem otimizadas.**
+**Tarefas longas podem manter o thread principal ocupado, atrasando a interação do usuário. O Chrome DevTools agora pode visualizar tarefas longas, facilitando a visualização das tarefas a serem otimizadas.**
 
 Se você usa o Lighthouse para auditar suas páginas, pode estar familiarizado com o [Time to Interactive](/tti/), uma métrica que representa quando os usuários podem interagir com sua página e obter uma resposta. Mas você sabia que Tarefas Longas (JavaScript) podem contribuir muito para um TTI ruim?
 

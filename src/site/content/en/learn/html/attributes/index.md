@@ -402,12 +402,14 @@ Global attributes can be applied to all elements, even `<style>` elements. You c
 ```css
 <style contenteditable>
 style {
-   color: inherit;
-   display:block;
-   border: 1px solid;
+  color: inherit;
+  display:block;
+  border: 1px solid;
   font: inherit;
   font-family: monospace;
-  padding:10px;
+  padding:1em;
+  border-radius: 1em;
+  white-space: pre;
 }
 </style>
 ```
@@ -415,18 +417,18 @@ style {
 Try changing the `color` of the `style` to something other than `inherit`. Then try changing the `style` to a `p` selector.
 Don't remove the display property or the style block will disappear.
 
-```css
 <style contenteditable>
 style {
-   color: inherit;
-   display:block;
-   border: 1px solid;
+  color: inherit;
+  display:block;
+  border: 1px solid;
   font: inherit;
   font-family: monospace;
-  padding:10px;
+  padding: 1em;
+  border-radius: 1em;
+  white-space: pre;
 }
 </style>
-```
 
 ## Custom attributes
 
@@ -457,8 +459,8 @@ on the element in question.
 You can use `getAttribute()` using the full attribute name, or you can take advantage of the simpler [`dataset`](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset) property.
 
 ```javascript
-el.dataset[machingLearning]; // workshop
-e.dataset.machingLearning; // workshop
+el.dataset[machineLearning]; // workshop
+e.dataset.machineLearning; // workshop
 ```
 
 The `dataset` property returns a `DOMStringMap` object of each element's `data-` attributes. There are several custom attributes

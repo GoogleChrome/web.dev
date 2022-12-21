@@ -924,5 +924,5 @@ section below.
 
 ## Community remixes
 
-- [@devnook](https://twitter.com/devnook), [@rob_dodson](https://twitter.com/rob_dodson), and [@DasSurma](https://twitter.com/DasSurma) with Web Components: [article](https://developers.google.com/web/fundamentals/web-components/examples/howto-tabs).
+- [@devnook](https://twitter.com/devnook), [@rob_dodson](https://twitter.com/rob_dodson), and [@DasSurma](https://twitter.com/DasSurma) with Web Components: [article](/components-howto-tabs/).
 - [@jhvanderschee](https://twitter.com/jhvanderschee) with buttons: [Codepen](https://codepen.io/joosts/pen/PoKdZYP).

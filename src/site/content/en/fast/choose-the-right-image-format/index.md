@@ -82,7 +82,7 @@ What's the point? Well, the more device pixels there are, the finer the detail o
 </figure>
 
 High DPI (HiDPI) screens produce beautiful results, but there is one obvious tradeoff:
-image assets require more detail in order to take advantage of the higher device pixel counts.
+image assets require more detail to take advantage of the higher device pixel counts.
 The good news is, vector images are ideally suited for this task,
 as they can be rendered at any resolution with sharp results&mdash;
 you might incur a higher processing cost to render the finer detail,
@@ -202,7 +202,7 @@ In terms of older image formats, consider the following:
     If you need to convey a custom look (for branding or other reasons), use a web font instead.
 1. **Are you optimizing a photo, screenshot, or a similar image asset? Use JPEG, lossy WebP, or lossy AVIF.**
     * JPEG uses a combination of lossy and lossless optimization to reduce filesize of the image asset. Try several JPEG quality levels to find the best quality versus filesize tradeoff for your asset.
-    * Lossy WebP or lossy AVIF may be acceptable JPEG alternatives, but be aware that WebP's lossy mode in particular discards some chroma information in order to achieve smaller images. This means that select colors may not be the same as an equivalent JPEG.
+    * Lossy WebP or lossy AVIF may be acceptable JPEG alternatives, but be aware that WebP's lossy mode in particular discards some chroma information to achieve smaller images. This means that select colors may not be the same as an equivalent JPEG.
 
 Finally, note that if you are using a WebView to render content in your platform-specific application,
 then you have full control of the client and can use WebP exclusively!

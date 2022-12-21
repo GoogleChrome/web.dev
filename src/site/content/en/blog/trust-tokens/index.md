@@ -18,7 +18,7 @@ feedback:
 
 {% Aside %}
 
-This API [has been renamed](https://developer.chrome.com/blog/rename-trust-tokens/) Private State Tokens. 
+This API [has been renamed](https://developer.chrome.com/blog/rename-trust-tokens/) Private State Tokens.
 
 The developer.chrome.com article [Private State Tokens](https://developer.chrome.com/docs/privacy-sandbox/trust-tokens/) provides implementation status updates, and explains how to engage and share feedback.
 
@@ -54,7 +54,7 @@ The Trust Token API enables trust of a user in one context to be conveyed to ano
 identifying the user or linking the two identities.
 
 You can try out the API with our [demo](https://trust-token-demo.glitch.me), and
-[inspect tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token) in the
+[inspect tokens](https://developer.chrome.com/blog/new-in-devtools-89/#trust-token) in the
 Chrome DevTools **Network** and **Application** tabs.
 
 <figure>

@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/seSymQNOS9N7GIcPjpia.gif", alt="Konga detail.", width="582", height="1000" %}
 </figure>
 
-### TL;DR
+### Summary
 
 Konga cuts data usage 92% with new Progressive Web App
 
@@ -41,7 +41,7 @@ ability to grow. They developed a native app, so users on mobile could work
 offline and re-engage. The cost of Internet access is still high, however,
 while per-capita income is relatively very low. Current and potential
 customers are very data-sensitive, and many hesitated to use data or space
-to download Konga’s native app. 
+to download Konga’s native app.
 
 ## Solution
 
@@ -49,14 +49,14 @@ Konga wanted to provide all of their web users with the benefits of their app,
 including performance, the ability to work offline, and re-engage without the
 data cost. They built a Progressive Web App to leverage new, open web APIs and
 offer a mobile web experience that is fast, uses less data, and re-engages
-users in multiple ways. 
+users in multiple ways.
 
 With nearly two-thirds of Nigerian users reaching the Internet via 2G
 networks, a fast user experience was essential. To decrease load times,
 Konga added service workers and streamlined the site to help consumers quickly
 reach the products they’re looking for. Users can continue to browse
 categories, review previous searches, and even check out by calling to
-order—all while offline. 
+order—all while offline.
 
 Tracking data usage to initial load and to complete first transaction were two
 key measurements for Konga. Compared with their native app, their Progressive

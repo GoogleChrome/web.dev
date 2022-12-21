@@ -380,7 +380,7 @@ impaired, or when playing the audio is not a viable option.
 [Efficiently encode images]: https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/
 [FitVids]: http://fitvidsjs.com/
 [network payload sizes]: https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/
-[CSS media queries]: https://developers.google.com/web/fundamentals/design-and-ux/responsive/#css-media-queries
+[CSS media queries]: /responsive-web-design-basics/#media-queries
 [proposed by John Surdakowski]: http://avexdesigns.com/responsive-youtube-embed/
 [aspect ratio]: https://www.google.com/search?q=aspect+ratio&oq=aspect+ratio&aqs=chrome..69i57j35i39j0l6.1896j0j7&sourceid=chrome&ie=UTF-8
 [Try it]: https://googlesamples.github.io/web-fundamentals/fundamentals/media/responsive_embed.html

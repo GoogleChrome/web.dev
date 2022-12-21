@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Adsy.me 
+title: Adsy.me
 date: 2015-05-04
 updated: 2020-07-24
 tags:
@@ -12,10 +12,10 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/OBheS2foH6xlJh06O5fG.png", alt="Adsy.me detail", width="800", height="1570" %}
 </figure>
 
-### TL;DR
+## Summary
 
 [Adsy.me](http://adsy.me/) is a super quick and easy way to build mobile
-micro sites.
+microsites.
 
 ### What we like?
 

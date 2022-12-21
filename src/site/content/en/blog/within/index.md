@@ -18,7 +18,7 @@ tags:
 [View the site](https://vr.with.in/)
 
 Within ([https://with.in/](https://with.in/)) is a platform for storytelling in
-virtual reality. So when the team heard about [WebVR](https://developers.google.com/web/fundamentals/vr/) in
+virtual reality. So when the team heard about [WebVR](https://developer.chrome.com/blog/ar-for-the-web/) in
 2015 we were immediately interested in its potential. Today, that interest
 manifests into a unique subdomain of our Web platform,
 [https://vr.with.in/](https://vr.with.in/). Anyone with a VR-enabled browser can
@@ -148,7 +148,7 @@ developers working in WebVR.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/Y6dc1N4jMEWDuDHw5wkM.png", alt="Hiero output (Bitmap PNG and .fnt file)", width="455", height="448" %}
-  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/65AI0E525qSn0YhBPsXD.png", alt="Hiero output (Bitmap PNG and .fnt file)", width="512", height="512" %} 
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/65AI0E525qSn0YhBPsXD.png", alt="Hiero output (Bitmap PNG and .fnt file)", width="512", height="512" %}
   <figcaption>Hiero output (Bitmap PNG and .fnt file)</figcaption>
 </figure>
 

@@ -150,7 +150,7 @@ If wired, check out these APIs in this specific order:
 1. With [WebHID], understanding HID reports and report descriptors through
    [collections] is key to your comprehension of this device. This can be
    challenging without vendor documentation for this device. Tools like
-   [Wireshark] can help you reverse-engineering it. You can also use the [HID
+   [Wireshark] can help you reverse-engineer it. You can also use the [HID
    Explorer web app] for dumping HID devices info into a human-readable format.
 
 2. With [Web Serial], without vendor documentation for this device and what
@@ -180,7 +180,7 @@ Photo by [Darya Tryfanava] on [Unsplash].
 [MediaDevices.getUserMedia()]: https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia
 [capturing audio and video]: https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 [control the camera's pan, tilt, and zoom]: /camera-pan-tilt-zoom/
-[brightness and contrast]: https://developers.google.com/web/updates/2016/12/imagecapture
+[brightness and contrast]: https://developer.chrome.com/blog/imagecapture/
 [take still images]: https://beaufortfrancois.github.io/sandbox/image-capture/playground
 [Web Audio]: https://developer.mozilla.org/docs/Web/API/Web_Audio_API
 [how to profile the performance of Web Audio apps]: /profiling-web-audio-apps-in-chrome/
@@ -194,7 +194,7 @@ Photo by [Darya Tryfanava] on [Unsplash].
 [Geolocation API]: https://developers.google.com/web/fundamentals/native-hardware/user-location
 [Battery API]: https://developer.mozilla.org/docs/Web/API/Battery_Status_API
 [Remote Playback API]: https://www.chromestatus.com/feature/5778318691401728
-[Presentation API]: https://developers.google.com/web/updates/2018/04/present-web-pages-to-secondary-attached-displays
+[Presentation API]: https://developer.chrome.com/blog/present-web-pages-to-secondary-attached-displays/
 [Fetch API]: https://developer.mozilla.org/docs/Web/API/Fetch_API
 [WebSockets]: https://developer.mozilla.org/docs/Web/API/WebSockets_API
 [WebTransport]: /webtransport/

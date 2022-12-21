@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/HoshsCcUEWn1hcatIaQO.gif", alt="Net-a-porter detail", width="700", height="1257" %}
 </figure>
 
-### TL;DR
+### Summary
 
 [Net-A-Porter](https://www.net-a-porter.com/) saves development time with
 Google's Polymer Library
@@ -33,42 +33,42 @@ through use of structured data.
 
 ## About NET-A-PORTER
 
-Launched in June 2000, NET-A-PORTER is a global leader in online 
-luxury fashion, featuring collections from over 350 of the world’s most 
-sought-after designers. 
+Launched in June 2000, NET-A-PORTER is a global leader in online
+luxury fashion, featuring collections from over 350 of the world’s most
+sought-after designers.
 
-Behind the company’s online storefront, the company’s engineering 
-team works hard to deliver and maintain net-a-porter.com and its 
-network of websites and apps, which includes two fashion magazines 
+Behind the company’s online storefront, the company’s engineering
+team works hard to deliver and maintain net-a-porter.com and its
+network of websites and apps, which includes two fashion magazines
 and a social network.
 
-When thinking about their web properties, the NET-A-PORTER engineers 
+When thinking about their web properties, the NET-A-PORTER engineers
 see each page on a site not as a page, but as a collection of components.
 
-A product page, for example, might include a pricing component that indicates 
+A product page, for example, might include a pricing component that indicates
 savings during a sale, a carousel component with links to related products,
-an interactive component showcasing complete outfits that feature products, 
+an interactive component showcasing complete outfits that feature products,
 a dropdown component for adding a product to a wishlist, and more.
 
 ## A component-based approach
 
 In early 2016, the NET-A-PORTER engineering team decided to evaluate how
-the company could take components and apply them to the way they write 
-code for their web properties. Because of the many pages and sub-properties 
-that fall under NET-A-PORTER - and the different teams that manage those 
-pages - the engineers knew it didn’t make sense to start from scratch with 
-a new technology that would require getting rid of their existing stack. An 
-ideal solution would let them layer on new components and add to pages as 
-additional components were created. Components would need to be able to 
-communicate with different backend services independently, and would also 
+the company could take components and apply them to the way they write
+code for their web properties. Because of the many pages and sub-properties
+that fall under NET-A-PORTER - and the different teams that manage those
+pages - the engineers knew it didn’t make sense to start from scratch with
+a new technology that would require getting rid of their existing stack. An
+ideal solution would let them layer on new components and add to pages as
+additional components were created. Components would need to be able to
+communicate with different backend services independently, and would also
 need to surface structured data about the product to web crawlers.
 
 ## Tests and success with Polymer
 
 After evaluating a number of solutions, NET-A-PORTER chose to test Google’s
-Polymer library. An initial experiment with Polymer was completed so quickly 
-and successfully that the NET-A-PORTER engineers decided to move forward 
-and introduce Polymer into the organization’s overall website development 
+Polymer library. An initial experiment with Polymer was completed so quickly
+and successfully that the NET-A-PORTER engineers decided to move forward
+and introduce Polymer into the organization’s overall website development
 planning almost immediately.
 
 Robin Glen and Matthew Green, engineers on the team, shared:
@@ -96,30 +96,30 @@ And there were SEO benefits, too. Glen says that the:
 > team's continuous integration scheme.
 
 By making the up-front investment in designing and building components,
-the NET-A-PORTER team is seeing dramatic long-term efficiency gains: 
-new pages and features are simpler and faster to create and launch, and 
-it’s easier to integrate stakeholder feedback and design tweaks into the 
+the NET-A-PORTER team is seeing dramatic long-term efficiency gains:
+new pages and features are simpler and faster to create and launch, and
+it’s easier to integrate stakeholder feedback and design tweaks into the
 engineering process.
 
 ## The future of Polymer
 
 The team is thrilled with how Polymer has enabled its web development.
-Glen says, 
+Glen says,
 
-> As soon as we saw how we could reuse components by 
-putting them together in different ways, we got excited. We started to 
-wonder if there were further ways in which we could exploit components 
+> As soon as we saw how we could reuse components by
+putting them together in different ways, we got excited. We started to
+wonder if there were further ways in which we could exploit components
 within the business.
 
 
-Glen feels there is much more to explore with Polymer. He says, 
+Glen feels there is much more to explore with Polymer. He says,
 
-> This is just the beginning of our Polymer journey. We are currently improving 
-the delivery and maintainability of existing components, while working 
-towards expanding the use of Polymer to more NET-A-PORTER pages. We 
-are working towards documenting our approach with a publicly available 
-NET-A-PORTER component style guide. Polymer has also been very useful 
-for internal tooling. We recently built a set of graphing components and 
+> This is just the beginning of our Polymer journey. We are currently improving
+the delivery and maintainability of existing components, while working
+towards expanding the use of Polymer to more NET-A-PORTER pages. We
+are working towards documenting our approach with a publicly available
+NET-A-PORTER component style guide. Polymer has also been very useful
+for internal tooling. We recently built a set of graphing components and
 re-platformed our entire monitoring service to use Polymer.
 
 

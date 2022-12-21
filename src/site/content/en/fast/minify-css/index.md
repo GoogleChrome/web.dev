@@ -175,7 +175,7 @@ The report doesn't show "Minify CSS" as "Opportunity" anymore, and has now moved
 
 {% Img src="image/admin/zegn2qIHYYK58w1GhgYd.png", alt="Lighthouse Passed Audits for optimized page.", width="800", height="163" %}
 
-Since CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), if you apply minification on sites that use large CSS files, you can see improvements on metrics like [First Contentful Paint](/fcp/).
+Since CSS files are [render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources), if you apply minification on sites that use large CSS files, you can see improvements on metrics like [First Contentful Paint](/fcp/).
 
 ## Next steps and resources
 

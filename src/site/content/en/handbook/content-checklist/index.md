@@ -30,7 +30,7 @@ web developers, it's probably not a good fit for web.dev.
 
 ### The content is about techniques or APIs that are available cross-browser {: #support }
 
-If the content is about an API in origin trial, or only available in Chrome, it is likely that 
+If the content is about an API in origin trial, or only available in Chrome, it is likely that
 [developer.chrome.com](https://developer.chrome.com/) is the better location.
 
 ### The guidance is usable {: #usable }
@@ -53,7 +53,7 @@ as much as possible. For example, a single page of content should not try to be 
 tutorial and an explainer.
 
 Reference documentation pages are not allowed on web.dev. Reference
-documentation is better suited for [MDN](https://developer.mozilla.org/), 
+documentation is better suited for [MDN](https://developer.mozilla.org/),
 or our [web platform documentation](https://developer.chrome.com/docs/web-platform/) section.
 
 ### The content is unique {: #unique }
@@ -307,10 +307,10 @@ the following strategies can be used to explain the idea more effectively:
 ### Browser compatibility is mentioned near the start of the content {: #compatibility }
 
 When content is focused around specific web platform features or APIs,
-make sure that the browser compatibility of the APIs is specifically mentioned by including the 
+make sure that the browser compatibility of the APIs is specifically mentioned by including the
 [BrowserCompat component](/handbook/web-dev-components/#browsercompat).
 
-If a solid polyfill is available to complete support in all three engines, 
+If a solid polyfill is available to complete support in all three engines,
 include details along with the BrowserCompat component.
 
 If the post refers to a number of APIs, or CSS properties, add the component for those features near the first mention of them.
@@ -485,7 +485,7 @@ All GIFs should be converted to animated videos to improve performance. See
 and [Videos hosted on web.dev](/handbook/markup-media/#video-hosted-on-web.dev)
 
 [divio]: https://documentation.divio.com/introduction/#the-secret
-[unload]: https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event
+[unload]: https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event
 [paragraphs]: https://www.riosalado.edu/web/oer/WRKDEV100-20012_INTER_0000_v1/lessons/Mod02_WritingEffectiveParagraphs.shtml
 [spelling]: https://developers.google.com/style/spelling
 [divio]: https://documentation.divio.com/introduction/#the-secret

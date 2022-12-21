@@ -207,7 +207,7 @@ We know that large resources can slow down web page loads. They can cost our use
 they can have a big impact on their data plans, so it's really important to be mindful of this.
 
 Lighthouse was able to detect that we had an issue with some of our network payloads using the
-[Enormous network payload](https://developers.google.com/web/tools/lighthouse/audits/network-payloads)
+[Enormous network payload](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight)
 audit.
 
 <figure>
@@ -294,7 +294,7 @@ process can take anywhere between five and ten times longer. This is what delays
 so it's important for us to try trimming this down.
 
 To help you discover these issues with your app, we introduced a new
-[JavaScript boot-up time audit](https://developers.google.com/web/tools/lighthouse/audits/bootup) to Lighthouse.
+[JavaScript boot-up time audit](https://developer.chrome.com/docs/lighthouse/performance/bootup-time) to Lighthouse.
 
 <figure>
  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/KDj3tb1r3VrmPbrDo1kr.png", alt="JavaScript boot up time", width="800", height="223" %}
@@ -583,7 +583,7 @@ important things, like our hero images.
 
 In the case of our Oodle app, this actually led to one practical place where we could optimize.
 
-<figure>    
+<figure>
     {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/IZtNqC7SDTVYQol6OOTF.png", alt="Set priority for the initially visible content", width="587", height="334" %}
   <figcaption>
     <strong>Fig. 21.</strong> Set priority for the initially visible content

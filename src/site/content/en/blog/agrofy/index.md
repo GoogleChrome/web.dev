@@ -66,7 +66,7 @@ and [FCP](/fcp/). Specific optimizations included:
     with `loading="lazy"`.
 +   [Server-side rendering](/rendering-on-the-web/)
     of
-    [critical rendering path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)
+    [critical rendering path](/critical-rendering-path/)
     content.
 +   [Preloading and preconnecting](/fast/#optimize-your-resource-delivery)
     critical resources to minimize handshake times.

@@ -13,7 +13,7 @@ tags:
 
 ---
 
-## TL;DR
+## Summary
 
 * Create a 2048-bit RSA public/private key pair.
 * Generate a certificate signing request (CSR) that embeds your public key.
@@ -236,7 +236,7 @@ broken page. And remember, it's perfectly OK to include HTTPS resources in an
 HTTP page.
 
 {% Aside 'key-term'%}
-See [Fixing Mixed Content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/fixing-mixed-content)
+See [Fixing Mixed Content](/fixing-mixed-content/)
 for more details about ways to fix and prevent mixed content.
 {% endAside %}
 
@@ -246,7 +246,7 @@ downgraded from HTTPS to HTTP.
 These problems happen when your pages include fully-qualified, intrasite URLs
 that use the *http://* scheme.
 
-{% Compare 'worse' %} 
+{% Compare 'worse' %}
 We recommend you avoid using fully qualified intrasite URLs.
 {% endCompare%}
 

@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/lPPoed8IvWxrkP7y7K6J.png", alt="Merry Pixmas screenshot", width="800", height="1570" %}
 </figure>
 
-### TL;DR 
+### Summary
 
 [Merry Pixmas](http://merrypixmas.com): Christmas fun with 3D CSS Transforms.
 
@@ -64,7 +64,7 @@ transforms & HTML is much easier than any other primitive shape. However
 the interaction and animations took us a little trial and error to smooth out.
 
 What surprised us most was the smoothness and browser performance of the 3D
-on mobile platforms, particularly in the lesser known Android devices. 
+on mobile platforms, particularly in the lesser known Android devices.
 
 ### If you could have any API to improve your app, what would it be?
 

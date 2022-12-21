@@ -369,7 +369,7 @@ Styles specified this way are also highly optimized: if the same stylesheet is p
 Declarative Shadow Roots, it is only loaded and parsed once. The browser uses a single backing
 `CSSStyleSheet` that is shared by all of the shadow roots, eliminating duplicate memory overhead.
 
-[Constructable Stylesheets](https://developers.google.com/web/updates/2019/02/constructable-stylesheets)
+[Constructable Stylesheets](/constructable-stylesheets)
 are not supported in Declarative Shadow DOM. This is because there is currently no way to serialize
 constructable stylesheets in HTML, and no way to refer to them when populating `adoptedStyleSheets`.
 

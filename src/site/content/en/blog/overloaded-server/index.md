@@ -75,7 +75,7 @@ Although [service workers](https://developer.chrome.com/docs/workbox/service-wor
 
 #### Diagnose
 
-Run [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and look at the [Serve static assets with an efficient cache policy](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) audit to view a list of resources with a short to medium [time to live](https://en.wikipedia.org/wiki/Time_to_live) (TTL). For each listed resource, consider if the TTL should be increased. As a rough guideline:
+Run [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and look at the [Serve static assets with an efficient cache policy](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl) audit to view a list of resources with a short to medium [time to live](https://en.wikipedia.org/wiki/Time_to_live) (TTL). For each listed resource, consider if the TTL should be increased. As a rough guideline:
 *   Static resources should be cached with a long TTL (1 year).
 *   Dynamic resources should be cached with a short TTL (3 hours).
 
@@ -88,7 +88,7 @@ Instructions:
 *   [Apache](http://httpd.apache.org/docs/current/mod/mod_expires.html)
 *   [Microsoft](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/staticcontent/clientcache)
 
-Note: The `max-age` directive is just one of many caching directives. There are many other directives and headers that will affect the caching behavior of your application. For a more in-depth explanation of caching strategy it is highly recommended that you read [HTTP Caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
+Note: The `max-age` directive is just one of many caching directives. There are many other directives and headers that will affect the caching behavior of your application. For a more in-depth explanation of caching strategy it is highly recommended that you read [HTTP Caching](/http-cache/).
 
 
 ### Graceful Degradation
@@ -136,7 +136,7 @@ The decision to scale compute resources should be made carefully. Although it is
 
 #### Diagnose
 
-A high [Time To First Byte](/ttfb/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developers.google.com/web/tools/lighthouse/audits/ttfb) audit.
+A high [Time To First Byte](/ttfb/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte) audit.
 
 To investigate further, use a monitoring tool to assess CPU usage. If current or anticipated CPU usage exceeds 80% you should consider increasing your servers.
 
@@ -153,7 +153,7 @@ Text-based resources should be compressed using gzip or brotli. Gzip can reduce 
 
 #### Diagnose
 
-Use the Lighthouse [Enable text compression](https://developers.google.com/web/tools/lighthouse/audits/text-compression) audit to identify resources that should be compressed.
+Use the Lighthouse [Enable text compression](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression) audit to identify resources that should be compressed.
 
 #### Fix
 
@@ -175,10 +175,10 @@ Enable compression by updating your server configuration. Instructions:
 Lighthouse has a variety of audits that flag potential image optimizations. Alternatively, another strategy is to use DevTools to identify the largest image files - these images will likely be good candidates for optimization.
 
 Relevant Lighthouse audits:
-*   [Properly size images](https://developers.google.com/web/tools/lighthouse/audits/oversized-images)
-*   [Defer offscreen images](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)
+*   [Properly size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images)
+*   [Defer offscreen images](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/)
 *   [Efficiently encode images](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)
-*   [Serve images in next-gen formats](https://developers.google.com/web/tools/lighthouse/audits/webp)
+*   [Serve images in next-gen formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images)
 *   [Use video formats for animated content](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)
 
 Chrome DevTools workflow:
@@ -212,7 +212,7 @@ Minification removes unnecessary characters from JavaScript and CSS.
 
 #### Diagnose
 
-Use the [Minify CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) and [Minify JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/) Lighthouse audits to identify resources that are in need of minification.
+Use the [Minify CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/) and [Minify JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/) Lighthouse audits to identify resources that are in need of minification.
 
 #### Fix
 

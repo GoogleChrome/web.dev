@@ -3,7 +3,7 @@ title: Accessibility
 subhead: Improving accessibility for web pages
 date: 2016-06-26
 updated: 2019-06-08
-authors: 
+authors:
   - megginkearney
   - dgash
   - aliceboxhall
@@ -20,9 +20,10 @@ Rather than a direct transcription of the video course, it is meant to be a more
 concise treatment of accessibility principles and practices, using the course's
 original content as a base.
 
-## TL;DR
+## Summary
+
 - Learn what accessibility means and how it applies to web development.
-- Learn how to make web sites accessible and usable for everyone.
+- Learn how to make websites accessible and usable for everyone.
 - Learn how to include basic accessibility with minimal development impact.
 - Learn what HTML features are available and how to use them to improve
   accessibility.
@@ -227,7 +228,7 @@ surgery or maybe just has to read something from across the room might have used
 one of those accommodations I mentioned. So I think it's pretty easy for
 developers to have some empathy for low-vision users.
 
-Oh, and I shouldn't forget to mention people with poor color vision - 
+Oh, and I shouldn't forget to mention people with poor color vision -
 about 9% of males have some form of color vision deficiency! Plus about 1% of
 females. They may have trouble distinguishing red and green, or yellow and blue.
 Think about that the next time you design form validation.
@@ -366,7 +367,7 @@ areas:
    make sure that we express our user interface in a robust way that works with
    a variety of assistive technologies.
 
- - [**Styling**](https://developers.google.com/web/fundamentals/accessibility/accessible-styles): We'll consider visual
+ - [**Styling**](/accessible/#create-a-design-and-css-that-supports-users-with-different-needs): We'll consider visual
    design and look at some techniques for making the visual elements of the
    interface as flexible and usable as possible.
 

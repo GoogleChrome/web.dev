@@ -35,7 +35,7 @@ frame, for each of those screen refreshes.
 
 
 Each of those frames has a budget of just over 16ms (1 second / 60 = 16.66ms).
-In reality, however, the browser has housekeeping work to do, so all of your
+In reality, however, the browser has maintenance work to do, so all of your
 work needs to be completed inside **10ms**. When you fail to meet this
 budget the frame rate drops, and the content judders on screen. This is often
 referred to as **jank**, and it negatively impacts the user's experience.

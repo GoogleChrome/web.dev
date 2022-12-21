@@ -6,7 +6,7 @@ subhead: |
 authors:
   - paullewis
 date: 2015-03-20
-updated: 2018-08-17 
+updated: 2018-08-17
 description: |
   Input handlers are a potential cause of performance problems in your apps, as they can block frames from completing, and can cause additional and unnecessary layout work.
 tags:
@@ -18,7 +18,7 @@ Input handlers are a potential cause of performance problems in your apps, as
 they can block frames from completing, and can cause additional and unnecessary
 layout work.
 
-## TL;DR
+## Summary
 
 * Avoid long-running input handlers; they can block scrolling.
 * Do not make style changes in input handlers.

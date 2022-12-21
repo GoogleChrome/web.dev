@@ -74,7 +74,7 @@ To enable request blocking:
 A **Request blocking** tab will appear in the DevTools drawer. You can manage which requests have been blocked there.
 
 To measure the impact of third-party scripts:
-1. Measure how long your page takes to load using the **Network** panel. To emulate real-world conditions, turn on [network throttling](https://developer.chrome.com/docs/devtools/network/#throttle) and [CPU throttling](https://developers.google.com/web/updates/2017/07/devtools-release-notes#throttling). (On faster connections and desktop hardware, the impact of expensive scripts may not be as representative as it would be on a mobile phone.)
+1. Measure how long your page takes to load using the **Network** panel. To emulate real-world conditions, turn on [network throttling](https://developer.chrome.com/docs/devtools/network/#throttle) and [CPU throttling](https://developer.chrome.com/blog/new-in-devtools-61/#throttling). (On faster connections and desktop hardware, the impact of expensive scripts may not be as representative as it would be on a mobile phone.)
 1. Block the URLs or domains responsible for third-party scripts you believe are an issue.
 1. Reload the page and re-measure how long it takes to load without the blocked third-party scripts.
 

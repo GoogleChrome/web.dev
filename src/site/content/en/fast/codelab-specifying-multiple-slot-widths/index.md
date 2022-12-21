@@ -38,7 +38,7 @@ width" on screens 481–1024px wide, and 800px on screens wider than 1024px. The
 widths match the widths specified in the CSS.
 
 The ability to specify multiple slot widths accommodates page layouts that use
-different styling (i.e. image widths) for different viewport sizes.
+different styling (that is, image widths) for different viewport sizes.
 
 ## How to specify multiple slot widths
 

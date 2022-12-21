@@ -3,8 +3,8 @@ layout: post
 title: Webpack
 subhead: |
   Bundling for modern web applications
-date: 2018-02-08 
-updated: 2018-08-17 
+date: 2018-02-08
+updated: 2018-08-17
 authors:
   - addyosmani
 description: |
@@ -16,8 +16,8 @@ tags:
 
 Modern web applications often use a **bundling tool** to create a production
 "bundle" of files (scripts, stylesheets, etc.) that is
-[optimized](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization),
-[minified](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer)
+[optimized](/optimizing-content-efficiency-javascript-startup-optimization/),
+[minified](/optimizing-content-efficiency-optimize-encoding-and-transfer/)
 and can be downloaded in less time by your users. In **Web Performance
 Optimization with webpack**, we will walk through how to effectively optimize
 site resources using [webpack](https://webpack.js.org/). This can help users
@@ -29,7 +29,7 @@ load and interact with your sites more quickly.
 
 webpack is one of the most popular bundling tools in use today. Taking advantage
 of its features for optimizing modern code,
-[code-splitting](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching#lazy-loading)
+[code-splitting](/use-long-term-caching/#lazy-load-code-that-you-dont-need-right-now)
 scripts into critical and non-critical pieces and stripping out unused code (to
 name but a few optimizations) can ensure your app has a minimal network and
 processing cost.
@@ -51,11 +51,11 @@ Let’s get started by looking at optimizing one of the costliest resources in a
 modern app – JavaScript.
 
 * [Decrease Front-end
-  Size](/web/fundamentals/performance/webpack/decrease-frontend-size)
+  Size](/decrease-frontend-size)
 * [Make Use of Long-term
-  Caching](/web/fundamentals/performance/webpack/use-long-term-caching)
+  Caching](/use-long-term-caching)
 * [Monitor and analyze the
-  app](/web/fundamentals/performance/webpack/monitor-and-analyze)
-* [Conclusions](https://developers.google.com//web/fundamentals/performance/webpack/conclusion)
+  app](/monitor-and-analyze)
+* [Conclusions](/webpack-conclusion/)
 
 

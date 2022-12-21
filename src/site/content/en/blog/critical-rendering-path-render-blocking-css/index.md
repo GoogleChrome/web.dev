@@ -15,7 +15,7 @@ possible, and use media types and queries to unblock rendering.
 
 In the [render tree construction](/critical-rendering-path-render-tree-construction/) we saw that the critical rendering path requires both the DOM and the CSSOM to construct the render tree. This creates an important performance implication: **both HTML and CSS are render blocking resources.** The HTML is obvious, since without the DOM we would not have anything to render, but the CSS requirement may be less obvious. What would happen if we try to render a typical page without blocking rendering on CSS?
 
-### TL;DR {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 - By default, CSS is treated as a render blocking resource.
 - Media types and media queries allow us to mark some CSS resources as non-render blocking.

@@ -253,7 +253,7 @@ There are two attributes that can reduce the blocking nature of JavaScript downl
 To include MLW's JavaScript in an external file, you could write:
 
 ```html
-<script href="js/switch.js" defer>
+<script src="js/switch.js" defer>
 ```
 Adding the [`defer`](https://developer.mozilla.org/docs/Learn/JavaScript/First_steps/What_is_JavaScript#script_loading_strategies) attribute defers the execution of the script until after everything is rendered, preventing the script from harming performance. The `async` and `defer` attributes are only valid on external scripts.
 

@@ -33,13 +33,13 @@ changing the image is usually referred to as art direction.  See
 examples.
 
 ## Responsive Images
- 
+
  <a href="https://www.udacity.com/course/responsive-images--ud882">
    <figure>
    {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/TpGoiZpVMoyjWi0BBJb7.png", alt="Udacity Course Screenshot", width="360", height="220", class="float-right" %}
    </figure>
 </a>
-  
+
 Did you know that images account for more than 60% of the bytes on average needed to load a web page?
 
 In this course you will learn how to work with images on the modern web, so
@@ -63,7 +63,7 @@ images that work across devices is no different than for desktop, and only
 requires a few minor tweaks to create a good experience.
 
 
-### TL;DR
+### Summary
 
 - Use relative sizes for images to prevent them from accidentally overflowing
   the container.
@@ -265,7 +265,7 @@ span the full width of the viewport, while on larger screens, it should only
 take a small proportion.
 
 ```html
-<img src="400.png" 
+<img src="400.png"
      sizes="(min-width: 600px) 25vw, (min-width: 500px) 50vw, 100vw"
      srcset="100.png 100w, 200.png 200w, 400.png 400w,
              800.png 800w, 1600.png 1600w, 2000.png 2000w" alt="an example image">
@@ -537,7 +537,7 @@ even more powerful, enabling conditional image loading based on screen
 resolution, viewport size, and more.
 
 
-### TL;DR
+### Summary
 - Use the best image for the characteristics of the display, consider screen
   size, device resolution, and page layout.
 - Change the `background-image` property in CSS for high DPI displays using
@@ -613,13 +613,13 @@ fallback image for when `image-set()` is not supported; for example:
   width: 128px;
   height: 128px;
   background-image: url(icon1x.png);
-  background-image: -webkit-image-set(  
-    url(icon1x.png) 1x,  
-    url(icon2x.png) 2x  
-  );  
-  background-image: image-set(  
-    url(icon1x.png) 1x,  
-    url(icon2x.png) 2x  
+  background-image: -webkit-image-set(
+    url(icon1x.png) 1x,
+    url(icon2x.png) 2x
+  );
+  background-image: image-set(
+    url(icon1x.png) 1x,
+    url(icon2x.png) 2x
   );
 }
 ```
@@ -660,8 +660,8 @@ doesn't support resolution-specific media queries.
   background-image: url(icon1x.png);
 }
 
-@media (min-resolution: 2dppx), /* Standard syntax */ 
-(-webkit-min-device-pixel-ratio: 2)  /* Safari & Android Browser */ 
+@media (min-resolution: 2dppx), /* Standard syntax */
+(-webkit-min-device-pixel-ratio: 2)  /* Safari & Android Browser */
 {
   .sample {
     background-size: contain;
@@ -693,7 +693,7 @@ When adding icons to your page, use SVG icons where possible or in some
 cases, unicode characters.
 
 
-### TL;DR
+### Summary
 - Use SVG or unicode for icons instead of raster images.
 
 
@@ -732,10 +732,10 @@ raster images:
 
 
 ```html
-With SVG icons, you can either add icons using inline SVG, like 
+With SVG icons, you can either add icons using inline SVG, like
 this checkmark:
-  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
-       xmlns:xlink="http://www.w3.org/1999/xlink" 
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
        width="32" height="32" viewBox="0 0 32 32">
     <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z" fill="#000000"></path>
   </svg>
@@ -797,7 +797,7 @@ the less competition there is for client's bandwidth and the faster the
 browser can download and display all the assets.
 
 
-### TL;DR
+### Summary
 - Don't just randomly choose an image format&mdash;understand the different
   formats available and use the format best suited.
 - Include image optimization and compression tools into your workflow to reduce
@@ -888,7 +888,7 @@ correct part.
 }
 
 .gmail {
-  background-position: -150px -210px; 
+  background-position: -150px -210px;
 }
 
 .maps {

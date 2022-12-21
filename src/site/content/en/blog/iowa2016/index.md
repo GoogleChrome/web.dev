@@ -16,7 +16,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/PH9aWtLr0RVrB4hwowlq.jpg", alt="Iowa home", width="500", height="983" %}
 </figure>
 
-### TL;DR
+### Summary
 
 Learn how we built a single page app using web components, Polymer, and material design and launched it into production on Google.com.
 
@@ -26,7 +26,7 @@ Learn how we built a single page app using web components, Polymer, and material
 - 450ms faster first paint for return users thanks to service worker caching
 - 84% of visitors supported Service Worker
 - Add to homescreen saves were up +900% compared to 2015.
-- 3.8% users went offline but continued to generate 11k pageviews!
+- 3.8% users went offline but continued to generate 11k page views!
 - 50% of signed in users enabled notifications.
 - 536k notifications were sent to users (12% brought them back).
 - 99% of users' browsers supported the web components polyfills

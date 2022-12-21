@@ -29,7 +29,7 @@ define advanced CSS custom properties with syntax, default values, and inheritan
 [Properties and Values API](/at-property/).
 
 It also introduces paint, layout, and animation
-[worklets](https://developers.google.com/web/updates/2018/10/animation-worklet), which open up a
+[worklets](https://developer.chrome.com/blog/animation-worklet), which open up a
 world of possibilities, by making it easier for authors to hook into the styling and layout process
 of the browser's rendering engine.
 

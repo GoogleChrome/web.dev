@@ -346,7 +346,7 @@ One initial thought would be to use the `pointerdown` and `pointerup` events and
 cover all of the durations that we're interested in. Sadly, this is not the case, as this [edge
 case](https://output.jsbin.com/buyiyew/quiet) shows. Try opening this site on mobile, or with mobile
 emulation, and tapping where it says "Click me". This site triggers the [browser tap
-delay](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). It can be seen
+delay](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). It can be seen
 that the `pointerdown`, `pointerup`, and `touchend` are dispatched quickly, whereas the `mousedown`,
 `mouseup`, and `click` wait for the delay before being dispatched. This means that if we only looked
 at `pointerdown` and `pointerup` then we'd miss the duration from the synthetic events, which is

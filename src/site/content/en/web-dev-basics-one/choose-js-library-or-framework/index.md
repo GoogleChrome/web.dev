@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Choose a JavaScript library or framework
-description: Understand the decisions around using a JavaScript library or framework. 
+description: Understand the decisions around using a JavaScript library or framework.
 authors:
   - umarhansa
 date: 2022-05-23
@@ -11,18 +11,18 @@ This article shares insights on how you might pick a library or framework to use
 
 ## What are JavaScript libraries and frameworks
 
-What is a JavaScript library? In its simplest form, a JavaScript library is prewritten code that you can call in your project's code to achieve a specific task. 
+What is a JavaScript library? In its simplest form, a JavaScript library is prewritten code that you can call in your project's code to achieve a specific task.
 
 This post mainly mentions "libraries". However, many of the discussions are also applicable to frameworks. Basically, the difference between the two can be summarized as follows:
 
 -  For a library, your application code calls the library code.
 -  For a framework, your application code is called by the framework.
 
-The following practical examples help to illustrate the differences. 
+The following practical examples help to illustrate the differences.
 
 ### Example call to a JavaScript library
 
-A JavaScript library performs a specific task and then returns control to your application. When you use a library, you control the application flow and choose when to call the library. 
+A JavaScript library performs a specific task and then returns control to your application. When you use a library, you control the application flow and choose when to call the library.
 
 In the following example, application code imports a method from the [lodash](https://lodash.com/) library. After the function completes, control is returned to your application.
 
@@ -35,7 +35,7 @@ When the [`lodash.capitalize`](https://www.npmjs.com/package/lodash.capitalize) 
 
 ### Example use of a JavaScript Framework
 
-A JavaScript framework is a predefined code template within which you construct your application's behavior. That is, when you use a framework, the framework controls the application flow. To use a framework, you write your custom application code, and then the framework calls your application code. 
+A JavaScript framework is a predefined code template within which you construct your application's behavior. That is, when you use a framework, the framework controls the application flow. To use a framework, you write your custom application code, and then the framework calls your application code.
 
 The following example shows a code snippet that uses the [Preact](https://preactjs.com/) JavaScript framework:
 
@@ -81,7 +81,7 @@ There are some non client-side JavaScript environments, such as on the server (r
 
 ## Performance
 
-The performance effect of a JavaScript library on a client-side web application should not be ignored. A large JavaScript library can disrupt the loading performance of your page;  remember, [milliseconds make millions](/milliseconds-make-millions/). 
+The performance effect of a JavaScript library on a client-side web application should not be ignored. A large JavaScript library can disrupt the loading performance of your page;  remember, [milliseconds make millions](/milliseconds-make-millions/).
 
 {% Aside %}
 Many JavaScript libraries are open source, and the efforts of the library maintainers cannot be overstated—open source is not easy.
@@ -95,7 +95,7 @@ When evaluating or using a JavaScript library or framework, consider the followi
 
 -  Given a large JavaScript library, consider using a smaller alternative. For example, [date-fns](https://date-fns.org/) offers a lot of functionality at a more reasonable size than some other options.
 -  Following on from the previous date-fns example, import only the functions that you need, such as: `import { format } from 'date-fns'`. Be sure to combine this approach with [tree shaking](/reduce-javascript-payloads-with-tree-shaking/), so that a minimal JavaScript payload is built and sent to your users.
--  Use performance testing tools such as [Lighthouse](https://developers.google.com/web/tools/lighthouse) to observe the performance effect of using a certain JavaScript library. If a library adds a one-second delay to your page load time (don't forget to [throttle](https://developer.mozilla.org/docs/Glossary/Network_throttling) your network and CPU during testing), then you may need to reevaluate your library of choice. In addition to checking page load, be sure to profile any web page behavior that invokes code from the library in question—page load performance does not tell the full story.
+-  Use performance testing tools such as [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to observe the performance effect of using a certain JavaScript library. If a library adds a one-second delay to your page load time (don't forget to [throttle](https://developer.mozilla.org/docs/Glossary/Network_throttling) your network and CPU during testing), then you may need to reevaluate your library of choice. In addition to checking page load, be sure to profile any web page behavior that invokes code from the library in question—page load performance does not tell the full story.
 -  If comments are welcomed by the library author, then submit your performance observations, suggestions, and even contributions to the project. This is where the open source community shines! If you decide to make a contribution, then you may need to check with your employer first.
 -  Use an automated bundle tracking tool, such as [bundlesize](https://github.com/siddharthkp/bundlesize), to watch for unexpectedly large updates to a library. It's common that a JavaScript library will grow over time. Feature additions, bug fixes, edge cases, and others, can all add to the file size of a library. Once you/your team have agreed to use a library, updating the library may be less of an issue and could raise little-to-no questions. This is where it's helpful to rely on automation.
 -  Look at your requirements for a library and evaluate whether or not the web platform offers the same functionality natively. For example, the web platform already offers a [color picker](https://codepen.io/una/pen/BLxjoo), which removes the need to use a third-party JavaScript library to implement the same functionality.
@@ -104,7 +104,7 @@ When evaluating or using a JavaScript library or framework, consider the followi
 
 Using a third-party module carries some inherent security risks. A malicious package within your web application codebase can compromise the security of both your development team and your users.
 
-Consider a library published to the NPM ecosystem. Such a package may be legitimate. However, over time, the package can be compromised. 
+Consider a library published to the NPM ecosystem. Such a package may be legitimate. However, over time, the package can be compromised.
 
 Here are some security tips to consider when using or evaluating third-party code:
 
@@ -116,7 +116,7 @@ Here are some security tips to consider when using or evaluating third-party cod
 
 ## Accessibility
 
-You may be wondering how software libraries are related to web accessibility. While a software library can be used in different environments, in the context of a client-side JavaScript-based library, [web accessibility](/accessible/) is of high importance. 
+You may be wondering how software libraries are related to web accessibility. While a software library can be used in different environments, in the context of a client-side JavaScript-based library, [web accessibility](/accessible/) is of high importance.
 
 A client-side JavaScript-based library (or framework, for that matter) can increase or decrease the accessibility of your website. Consider a third-party JavaScript library that adds an image slider to a page. If the image slider does not account for web accessibility, you as the web developer may overlook such an important feature, and release a product that misses critical features, such as the slider being keyboard navigable!
 
@@ -134,7 +134,7 @@ It's reasonable to expect that some level of involvement is needed from you, the
 
 -  For any missing features, you can implement such features within your codebase, even while continuing to use the library in question.
 -  With the support of your employer, you can contribute such a missing feature to the library, if the library author allows for such a contribution.
--  You can open up a dialogue with the library author. For example, are these specific accessibility features on your roadmap? Do you agree they belong in the library? 
+-  You can open up a dialogue with the library author. For example, are these specific accessibility features on your roadmap? Do you agree they belong in the library?
 -  For popular use cases, you can explore alternative library options that are more accessible; they may exist but are harder to find.
 -  In the extreme case, you may need to ditch a library entirely and implement your features from scratch. This can happen when a library or framework has a degraded accessibility experience on initial use, and you need to undo a lot of what the library or framework is supposedly giving you for free.
 
@@ -163,7 +163,7 @@ When you pick a library or framework, pay attention to how updates are handled, 
 Library authors and maintainers invest huge amounts of time supporting web developers. It's not always practical for a library author to provide updates in the ways previously discussed. For example, independent library authors who work on open source may not even receive the financial support they need to keep up with the demands of the project. </th>
 {% endAside %}
 
-## Licensing 
+## Licensing
 
 {% Aside 'warning' %}
 This is not legal advice.
@@ -177,7 +177,7 @@ When in doubt, consider seeking professional legal advice or defer to the legal 
 
 ## Community
 
-A library or framework that has a large community of users/contributors can be beneficial, but this isn't a guarantee. In general, the more users a library or framework has, the more likely it is to benefit. Consider the following pros and cons to participation in a development community: 
+A library or framework that has a large community of users/contributors can be beneficial, but this isn't a guarantee. In general, the more users a library or framework has, the more likely it is to benefit. Consider the following pros and cons to participation in a development community:
 
 Pros:
 
@@ -223,4 +223,4 @@ There are other aspects of libraries and frameworks that you may wish to conside
 -  **Tests:** does the project have a test suite? Does the project website use badges or indicators which the test suite is passing against the latest commit?
 -  **Compatibility:** does the library work well with other libraries and/or frameworks you are currently using?
 -  **Cost:** what is the cost of a framework? Is it open-source or available for purchase?
--  **Vanity metrics:** this should be low down in your criteria list, or even ignored entirely, but you may wish to consider project "votes", social media accounts that represent the project, and/or how many open bugs/issues there are on the project page. 
+-  **Vanity metrics:** this should be low down in your criteria list, or even ignored entirely, but you may wish to consider project "votes", social media accounts that represent the project, and/or how many open bugs/issues there are on the project page.

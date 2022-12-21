@@ -38,7 +38,7 @@ misleading. There are several ways to deal with this:
 -   Gather multiple metrics and try to narrow and filter afterwards on
     what might be relevant for the task at hand.
 -   Abstract metrics into an overall score, as for example
-    [Lighthouse does](https://developers.google.com/web/tools/lighthouse/v3/scoring#perf).
+    [Lighthouse does](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring).
     This can be especially useful for non-technical staff and other
     stakeholders, but is probably insufficient for deeper technical analysis.
 -   Try to find the one metric which is most relevant as a predictor for
@@ -78,7 +78,7 @@ faster, so analytics may see more bounces even if there aren't more happening.
 ### Solution
 
 This can be eased by measuring
-[real page abandonment](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#load_abandonment) instead.
+[real page abandonment](/user-centric-performance-metrics/) instead.
 
 ## Decreasing relative conversions
 
@@ -174,7 +174,7 @@ Some ways to handle third party content with respect to performance:
 </figure>
 
 Learn more in
-[Loading Third-Party JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/).
+[Loading Third-Party JavaScript](/optimizing-content-efficiency-loading-third-party-javascript/).
 
 ## Performance Culture
 

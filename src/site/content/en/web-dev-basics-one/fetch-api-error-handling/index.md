@@ -1,19 +1,19 @@
 ---
 layout: post
 title: Implement error handling when using the Fetch API
-description: Catching errors when working with the Fetch API. 
+description: Catching errors when working with the Fetch API.
 authors:
   - umarhansa
 date: 2022-05-23
 ---
 
-This article demonstrates some error handling approaches when working with the [Fetch API](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api). The Fetch API lets you make a request to a remote network resource. When you make a remote network call, your web page becomes subject to a variety of potential network errors. 
+This article demonstrates some error handling approaches when working with the [Fetch API](/learn/pwa/serving/). The Fetch API lets you make a request to a remote network resource. When you make a remote network call, your web page becomes subject to a variety of potential network errors.
 
-The following sections describe potential errors and describe how to write code that provides a sensible level of functionality that is resilient to errors and unexpected network conditions. Resilient code keeps your users happy and maintains a standard level of service for your website. 
+The following sections describe potential errors and describe how to write code that provides a sensible level of functionality that is resilient to errors and unexpected network conditions. Resilient code keeps your users happy and maintains a standard level of service for your website.
 
 ## Anticipate potential network errors
 
-This section describes a scenario in which the user creates a new video named   
+This section describes a scenario in which the user creates a new video named
 `"My Travels.mp4"` and then attempts to upload the video to a video-sharing website.
 
 When working with Fetch, it's easy to consider the [happy path](https://en.wikipedia.org/wiki/Happy_path) where the user successfully uploads the video. However, there are other paths that are not as smooth, but for which web developers must plan. Such (unhappy) paths can happen due to user error, through unexpected environmental conditions, or because of a bug on the video-sharing website.
@@ -119,7 +119,7 @@ These examples can and do happen in the real world. You may have encountered suc
 
 ## Handle errors with the Fetch API
 
-Note that the following code examples use [top-level `await`](https://v8.dev/features/top-level-await) ([browser support](https://caniuse.com/mdn-javascript_operators_await_top_level)) because this feature can simplify your code. 
+Note that the following code examples use [top-level `await`](https://v8.dev/features/top-level-await) ([browser support](https://caniuse.com/mdn-javascript_operators_await_top_level)) because this feature can simplify your code.
 
 ### When the Fetch API throws errors
 
@@ -132,7 +132,7 @@ This example uses a [`try`/`catch` block](https://developer.mozilla.org/docs/Web
 
 ```js
 try {
-  const response = await fetch('https://website');  
+  const response = await fetch('https://website');
 } catch (error) {
   // TypeError: Failed to fetch
   console.log('There was an error', error);
@@ -155,7 +155,7 @@ To check that the HTTP status code was successful, you can use any of the follow
 let response;
 
 try {
-  response = await fetch('https://httpbin.org/status/429');  
+  response = await fetch('https://httpbin.org/status/429');
 } catch (error) {
   console.log('There was an error', error);
 }
@@ -186,7 +186,7 @@ try {
   json = await response.json();
 } catch (error) {
   if (error instanceof SyntaxError) {
-    // Unexpected token < in JSON 
+    // Unexpected token < in JSON
     console.log('There was a SyntaxError', error);
   } else {
     console.log('There was an error', error);

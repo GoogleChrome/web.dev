@@ -1,6 +1,6 @@
 import './abort-controller-polyfill';
 import {addPageToContentIndex} from '../content-indexing';
-import {trackError} from '../analytics';
+import {logError} from '../analytics';
 
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
@@ -205,7 +205,7 @@ export function route(url) {
       scrollToHashOrTop(u.hash);
       addPageToContentIndex(u.href).catch((error) => {
         console.warn('could not index page', u.href, error);
-        trackError(error, 'Content Indexing error');
+        logError(error, 'Content Indexing error');
       });
     }
   });

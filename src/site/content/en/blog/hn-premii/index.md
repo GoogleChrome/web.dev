@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/hS4ACHeICoiD8BKEw9vM.png", alt="Hacker news reader screenshot", width="800", height="1570" %}
 </figure>
 
-### TL;DR
+### Summary
 
 [Hacker News Reader](http://hn.premii.com/): An amazing optimized reader
 for Hacker News.
@@ -24,9 +24,9 @@ A beautiful and highly optimized reading experience for Hacker News, this
 app works well and looks great across mobile, tablet and desktop. It's fast
 and testing it on mobile you will see some silky smooth transitions. It has
 a really nice use of theme-color for integration into Android and it's
-installable as it uses the 
+installable as it uses the
 [Web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/simplified-app-installs).
-Once installed it looks and feels like a native HN news reader app.
+Once installed it looks and feels like a native HN newsreader app.
 
 ### Possible Improvements
 

@@ -168,6 +168,25 @@ module.exports = (locale, page, renderData = {}) => {
     `;
   }
 
+  function renderPageMeta() {
+    // Ensure multiple metadata are always reported the same way.
+    const sortAndDedupe = (list) => {
+      return list && [...new Set(list.sort())].join();
+    };
+
+    const authors = sortAndDedupe(pageData.authors);
+    const paths = sortAndDedupe(pageData.postToPaths[page.fileSlug]);
+    const tags = sortAndDedupe(
+      pageData.tags?.filter((t) => !['post', 'blog'].includes(t)),
+    );
+
+    return html`
+      ${authors && `<meta name="authors" content="${authors}" />`}
+      ${paths && `<meta name="paths" content="${paths}" />`}
+      ${tags && `<meta name="tags" content="${tags}" />`}
+    `;
+  }
+
   // prettier-ignore
   return html`
     <title>${strip(pageData.title
@@ -182,5 +201,6 @@ module.exports = (locale, page, renderData = {}) => {
     ${renderFacebookMeta()}
     ${renderTwitterMeta()}
     ${renderRSS()}
+    ${renderPageMeta()}
   `;
 };
