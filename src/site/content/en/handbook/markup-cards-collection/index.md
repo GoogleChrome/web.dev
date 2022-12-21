@@ -1,6 +1,6 @@
 ---
 layout: handbook
-title: Sample cards on the collection page
+title: Sample card layouts on the collection page
 date: 2019-06-26
 description: |
   A sample usage of cards on the collection page for web.dev
@@ -35,16 +35,16 @@ YAML properties available for displying a layout of cards on collection template
 This type of card needs to specific `title`, `description`, and `thumbnail` YAML properties to display the content of the card.
 
 {% raw %}
-```
+```yaml
 ---
 …
 cards:
   - title: 'The CSS Podcast: Media query range syntax'
-    description: Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.
-    thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/VwL892KEz6bakZMlq10D.png
+    description: 'Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.'
+    thumbnail: 'image/SZHNhsfjU9RbCestTGZU6N7JEWs1/VwL892KEz6bakZMlq10D.png'
     eyebrow:
-      icon: podcast
-      text: Podcast
+      icon: 'podcast'
+      text: 'Podcast'
     cardLayout: 'horizontal'
     theme: 'tertiary'
     column: '2'
@@ -54,19 +54,19 @@ cards:
 ```
 {% endraw %}
 
-### Adding feature post card
+### Adding featured post card
 
 This card will represent a featured post in specific tag, so the title, thumbnail, etc, will autometically pulled from a real blog post, no need to specify title, description, thumbnail.
 
 {% raw %}
-```
+```yaml
 ---
 …
 cards:
   - featuredCollection: 'animations' 
     eyebrow:
-      icon: featured
-      text: Featured
+      icon: 'featured'
+      text: 'Featured'
     cardLayout: 'vertical'
 … 
 --- 
@@ -78,14 +78,14 @@ cards:
 This card will represent a blog post, so the title, thumbnail, etc, will autometically pulled from a real blog post, no need to specify title, description, thumbnail.
 
 {% raw %}
-```
+```yaml
 ---
 …
 cards:
   - blogUrl: /terra-dark-mode/
     eyebrow:
-      icon: blog
-      text: Blog
+      icon: 'blog'
+      text: 'Blog'
     cardLayout: 'vertical'
     column: '3'
 …  
@@ -100,15 +100,15 @@ No need to add `cardLayout` property for a default card layout.
 
 ### Adding default card layout
 {% raw %}
-```
+```yaml
 ---
 …
 cards:
-  - title: Meet the Chrome team
-    description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
+  - title: 'Meet the Chrome team'
+    description: 'We are meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.'
     eyebrow:
-      icon: event
-      text: Event
+      icon: 'event'
+      text: 'Event'
     url: /meet-the-team
 …
 ---
@@ -120,16 +120,16 @@ cards:
 This type of card will consume two rows of the grid system. Since the rendering of a grid-based layout could create some gaps if we do not determine the column and row. For a vertical card layout, you can determind row and column to specific the position using YAML property `row` and `column`.
 
 {% raw %}
-```
+```yaml
 ---
 …
 cards:
-  - title: Meet the Chrome team
-    description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
-    thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/VwL892KEz6bakZMlq10D.png
+  - title: 'Meet the Chrome team'
+    description: 'We are meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.'
+    thumbnail: 'image/SZHNhsfjU9RbCestTGZU6N7JEWs1/VwL892KEz6bakZMlq10D.png'
     eyebrow:
-      icon: event
-      text: Event
+      icon: 'event'
+      text: 'Event'
     url: /meet-the-team
     cardLayout: 'vertical'
     column: '3'
@@ -144,16 +144,16 @@ cards:
 This type of card will consume two columns of the grid system. Since the rendering of a grid-based layout could create some gaps if we do not determine the column and row. For a horizontal card layout, you can determine the start column of displaying this card using YAML property `column`
 
 {% raw %}
-```
+```yaml
 ---
 …
 cards:
-  - title: Meet the Chrome team
-    description: We're meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.
-    thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/VwL892KEz6bakZMlq10D.png
+  - title: 'Meet the Chrome team'
+    description: 'We are meeting you where you are. Join us at upcoming web conferences in your region or catch up on past events.'
+    thumbnail: 'image/SZHNhsfjU9RbCestTGZU6N7JEWs1/VwL892KEz6bakZMlq10D.png'
     eyebrow:
-      icon: event
-      text: Event
+      icon: 'event'
+      text: 'Event'
     url: /meet-the-team
     cardLayout: 'horizontal'
     column: '2'
