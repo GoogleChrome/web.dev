@@ -454,7 +454,7 @@ Sometimes, a page has more and less important parts:
   article than about ads. Here, the text is more important than ads.
 
 In such cases, improve the initial loading performance by downloading only the
-most important stuff first, and lazy-loading the remaining parts later. Use [the
+most important stuff first, and lazy loading the remaining parts later. Use [the
 `import()` function](https://webpack.js.org/api/module-methods/#import-) and
 [code-splitting](https://webpack.js.org/guides/code-splitting/) for this:
 

@@ -158,7 +158,7 @@ Page({
 Note the data binding of the `item.mode` to the `mode` attribute, the `src` to the `src` attribute,
 and the three event handlers `onTap`, `onError`, and `onLoad` to the functions of the same name. As
 shown [before](/mini-app-devtools/#custom-elements-under-the-hood), the `<image>` tag internally gets converted into a
-`<div>` with a placeholder of the image's final dimensions, optional lazy-loading, a default source,
+`<div>` with a placeholder of the image's final dimensions, optional lazy loading, a default source,
 etc.
 
 The available configuration options of the component are all listed in the

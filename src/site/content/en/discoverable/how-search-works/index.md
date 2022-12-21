@@ -86,4 +86,4 @@ Optimization.' By making sure search engines can find and automatically
 understand your content, you are improving the visibility of your site for
 relevant searches. This can result in more interested users coming to your site.
 Audit your site with Lighthouse and check the SEO results to see how well search
-engines can surface your content.
+engines can make users aware of your content.

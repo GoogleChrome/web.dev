@@ -54,7 +54,7 @@ Real-time communication with sockets feeds Javascript on the client and Javascri
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/HpmPCTvFFVK2vkUxbGsv.png", alt="Technitone Server Diagram", width="751", height="923" %}
 </figure>
 
-We use Node for every aspect of the server. It's a static web server and our socket server all in one. [Express](http://expressjs.com/) is what we ended up using, it's a full web server built entirely on Node. It's super scalable, highly customizable, and handles the low-level server aspects for you (just like Apache or Windows Server would). Then you, as the developer, only have to focus on building your application. 
+We use Node for every aspect of the server. It's a static web server and our socket server all in one. [Express](http://expressjs.com/) is what we ended up using, it's a full web server built entirely on Node. It's super scalable, highly customizable, and handles the low-level server aspects for you (just like Apache or Windows Server would). Then you, as the developer, only have to focus on building your application.
 
 ### Multi-User Demo (ok, it's really just a screenshot)
 
@@ -102,7 +102,7 @@ Now we just start listening for incoming connections from the HTML page.
  <!-- Create our socket and connect to the server -->
  var sock = io.connect('http://localhost:8888');
  sock.on("connect", handleConnect);
- 
+
  function handleConnect() {
  	//Send a event to the server.
  	sock.emit('someEventFromClient', 'someData');
@@ -112,7 +112,7 @@ Now we just start listening for incoming connections from the HTML page.
 ## Sound check
 
 A big unknown was the effort entailed with using the Web Audio API. Our initial findings confirmed that [Digital Signal Processing](http://en.wikipedia.org/wiki/Digital_Signal_Processing) (DSP) is very complex, and we were likely in way over our heads. Second realization: [Chris Rogers](http://chromium.googlecode.com/svn/trunk/samples/audio/index.html) has already done the heavy lifting in the API.
-Technitone isn't using any really crazy math or audioholicism; this functionality is easily accessible to interested developers. We really just needed to brush up on some terminology and [read the docs](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html). Our advice? Don't skim them. Read them. Start at the top and end at the bottom. They are peppered with diagrams and photos, and it's really cool stuff.
+Technitone isn't using any really complex math or audioholicism; this functionality is easily accessible to interested developers. We really just needed to brush up on some terminology and [read the docs](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html). Our advice? Don't skim them. Read them. Start at the top and end at the bottom. They are peppered with diagrams and photos, and it's really cool stuff.
 
 If this is the first you've heard of the Web Audio API, or don't know what it can do, hit up Chris Rogers' [demos](http://chromium.googlecode.com/svn/trunk/samples/audio/index.html). Looking for inspiration? You'll definitely find it there.
 
@@ -339,7 +339,7 @@ context.bufferData(context.ELEMENT_ARRAY_BUFFER, this.indices, context.STATIC_DR
 …and call the draw method
 
 ```js
-// Draw the triangles based off the order: [0,1,2, 0,2,3]. 
+// Draw the triangles based off the order: [0,1,2, 0,2,3].
 // Draws two triangles with two shared points (a square).
 context.drawElements(context.TRIANGLES, 6, context.UNSIGNED_SHORT, 0);
 ```
@@ -395,7 +395,7 @@ We used absolute positioning to place each region in its correct location and ad
 }
   .illo.color-primary, .illo.color-secondary {
     position: absolute;
-    height:   100%;  
+    height:   100%;
   }
   .illo.color-primary {
     width:                350px;
@@ -440,7 +440,7 @@ This creates an architecture that is lightweight, flexible and scalable.
 
 ```js
 function createPotion() {
-	
+
 	var primaryColor = $('.picker.color-primary > li.selected').css('background-color');
 	var secondaryColor = $('.picker.color-secondary > li.selected').css('background-color');
 	console.log(primaryColor, secondaryColor);
@@ -468,7 +468,7 @@ function parseColor(value) {
 }
 
 // blend two rgb arrays into a single value
-function mixColors(primary, secondary) {		
+function mixColors(primary, secondary) {
 
 	var r = Math.round( (primary[0] * .5) + (secondary[0] * .5) );
 	var g = Math.round( (primary[1] * .5) + (secondary[1] * .5) );

@@ -36,10 +36,10 @@ concerns on your site.
 
 ## Why is this useful?
 
-It is crucial to build web sites that provide every user, regardless of their
+It is crucial to build websites that provide every user, regardless of their
 impairment or restriction, the capability to access its content. Using auditing
 libraries such as `react-axe` and `eslint-plugin-jsx-a11y` during the
-development of your React application will automatically surface any
+development of your React application will automatically expose any
 accessibility issues as they pop up.
 
 ## Use eslint-plugin-jsx-a11y

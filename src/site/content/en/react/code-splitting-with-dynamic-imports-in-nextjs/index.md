@@ -134,7 +134,7 @@ when you press the button:
 _number_ starts from 1. {% endAside %}
 
 In real-world applications, components are often [much
-larger](https://bundlephobia.com/result?p=moment@2.24.0), and lazy-loading them
+larger](https://bundlephobia.com/result?p=moment@2.24.0), and lazy loading them
 can trim your initial JavaScript payload by hundreds of kilobytes.
 
 ## Dynamic imports with custom loading indicator

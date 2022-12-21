@@ -20,7 +20,7 @@ tags:
 
 * Deferring script loading
 
-* Lazy-loading non-critical resources
+* Lazy loading non-critical resources
 
 * Preconnecting to required origins
 
@@ -107,7 +107,7 @@ Scripts with the `defer` attribute execute in the order in which they were speci
 
 ## Lazy-load third-party resources
 
-All resources that are below the fold are good candidates for [lazy-loading](/efficiently-load-third-party-javascript/#lazy-load-third-party-resources).
+All resources that are below the fold are good candidates for [lazy loading](/efficiently-load-third-party-javascript/#lazy-load-third-party-resources).
 
 The sample app has a YouTube video embedded in an [iframe](https://developer.mozilla.org/docs/Web/HTML/Element/iframe). To check out how many requests the page makes and which come from the embedded YouTube iframe:
 
@@ -133,7 +133,7 @@ The new sorting reveals that there are additional requests to Google domains. In
 
 By waiting to lazy-load the video until a user scrolls down to that section of the page, you cut the number of requests the page initially makes. This approach saves users' data and speeds up the initial load.
 
-One way to implement lazy-loading is by using the [Intersection Observer](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API), a browser API that notifies you when an element enters or exits the browser's viewport.
+One way to implement lazy loading is by using the [Intersection Observer](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API), a browser API that notifies you when an element enters or exits the browser's viewport.
 
 ### Step 1: Prevent video from loading initially
 
