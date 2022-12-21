@@ -3,7 +3,7 @@ layout: handbook
 title: Add cards to the collection page
 date: 2019-06-26
 description: |
-  A sample usage of cards on the collection page for web.dev
+  How to add cards to the collection page for web.dev
 ---
 
 The content and layout of cards are flexible, you can change the content, and adjust the design and position of a card by using YAML properties.
