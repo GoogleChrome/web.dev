@@ -25,6 +25,9 @@ overview:
   ru: Контент на вашем сайте должен быть доступен для всех. В этом разделе вы узнаете, как сделать доступ к сайту удобным для пользователей независимо от их контекста, а также от различных ситуативных, временных или постоянных ограничений.
   zh: 所有用户都应该能够访问您的内容。在此部分中，您将了解如何在考虑用户所处境况以及他们在任何情况下的、暂时性或永久性残疾的同时，为您的用户提供一种健全的体验。
 
+courseIntro:
+  en: Follow a structured learning paths to discover everything you need to know about building accessibly for the modern web.
+
 topics:
   understand_the_diverse_needs_of_users:
     en: Understand the diverse needs of users

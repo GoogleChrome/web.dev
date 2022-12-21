@@ -82,19 +82,6 @@ eleventyComputed:
   </div>
 </div>
 
-{% if coursename !== "" %}
-<div class="course-fyi">
-<div class="wrapper pad-block-size-1">
-  <div class="prose">
-  {{paths[pathName].courseFYI}}
-  <a href="{{paths[pathName].course}}">{{paths[pathName].coursename}}</a>
-  </div>
-</div>
-</div>
-  {% else %}
-  <hr />
-{% endif %}
-
 <div class="pad-block-size-1">
 {% for topic in topics %}
   <div class="path__topic">
@@ -114,3 +101,19 @@ eleventyComputed:
   </div>
 {% endif %}
 </div>
+
+{% if coursename !== "" %}
+<div class="course-fyi">
+<div class="wrapper">
+  <div class="pad-block-size-1 flow">
+    <h3>Learn web development</h3>
+    <p>{{path.coursefyi | i18n(locale) | safe}}</p>
+    <a class="button" data-type="primary" href="{{path.course}}">
+      {{path.coursename | i18n(locale) | safe}}
+    </a>
+    </div>
+    </div>
+</div>
+  {% else %}
+  <hr />
+{% endif %}

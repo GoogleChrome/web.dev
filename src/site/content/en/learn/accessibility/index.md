@@ -2,7 +2,9 @@
 title: Learn Accessibility
 authors:
   - cariefisher
-description: An evergreen accessibility course and reference to level up your web development.
+description: >
+  An evergreen accessibility course and reference to level up your web
+  development.
 date: 2022-09-30
 tags:
   - accessibility
