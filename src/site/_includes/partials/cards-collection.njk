@@ -1,32 +1,32 @@
 {% if cards %}
-  {% for topic in cards %}
+  {% for card in cards %}
     {% set featured = null %}
-    {% if topic.url %}
-      {% set featured = topic.url | findByUrl %}
+    {% if card.url %}
+      {% set featured = card.url | findByUrl %}
     {% endif %}
     <a
-      {% if featured %} href="{{ featured.url }}" {% else %} href="{{ topic.url }}" {% endif %}
-      class="card {% if topic.cardLayout %}card-{{topic.cardLayout}}{% endif %}{% if topic.row %} row-{{topic.row}}{% endif %}{% if topic.column %} col-{{topic.column}}{% endif %}{% if topic.theme %} bg-{{topic.theme}}{% endif %}"
+      {% if featured or card.url %} href="{{ featured.url or card.url }}" {% endif %}
+      class="card {% if card.cardLayout %}card-{{card.cardLayout}}{% endif %}{% if card.row %} row-{{card.row}}{% endif %}{% if card.column %} col-{{card.column}}{% endif %}{% if card.theme %} bg-{{card.theme}}{% endif %}"
       data-category="web.dev"
-      data-label="Topic: {{topic.title or featured.data.title }}"
+      data-label="Topic: {{card.title or featured.data.title }}"
       data-action="click"
       role="listitem"
     >
-      {% set thumbnail = topic.thumbnail or featured.data.thumbnail or featured.data.hero %}
-      {% set alt = featured.data.alt or topic.title %}
+      {% set thumbnail = card.thumbnail or featured.data.thumbnail or featured.data.hero %}
+      {% set alt = featured.data.alt or card.title %}
       {% if thumbnail %}
         {% Img src=thumbnail, alt=alt, width="370", height="220" %}
       {% endif %}
 
       <div class="content">
         <div class="card__eyebrow flow">
-          {{ icon(topic.eyebrow.icon) }}
-          <span class="text-size-0 color-mid-text">{{ topic.eyebrow.text }}</span>
+          {{ icon(card.eyebrow.icon) }}
+          <span class="text-size-0 color-mid-text">{{ card.eyebrow.text }}</span>
         </div>
 
         <div class="card__content flow">
-          <h4 class="card__heading color-core-text">{{ topic.title or featured.data.title }}</h4>
-          <p class="text-size-1 color-mid-text">{{ topic.description or featured.data.description }}</p>
+          <h4 class="card__heading color-core-text">{{ card.title or featured.data.title }}</h4>
+          <p class="text-size-1 color-mid-text">{{ card.description or featured.data.description }}</p>
         </div>
       </div>
     </a>
