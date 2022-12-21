@@ -16,7 +16,7 @@ goodies because it plays such an integral part in today's complex web apps.
 
 Turns out our old friend got a huge makeover but many folks
 are unaware of its new features. [XMLHttpRequest Level 2](http://dev.w3.org/2006/webapi/XMLHttpRequest-2/)
-introduces a slew of new capabilities which put an end to crazy hacks in our web apps;
+introduces a slew of new capabilities which put an end to complicated hacks in our web apps;
 things like cross-origin requests, uploading progress events,
 and support for uploading/downloading binary data. These allow AJAX
 to work in concert with many of the bleeding edge HTML5 APIs such as [File System API](https://www.html5rocks.com/tutorials/file/filesystem/),
@@ -71,7 +71,7 @@ Instead, let's leverage `XMLHttpRequest`'s new
 the browser what format we want the data returned as.
 
 
-xhr.**responseType** 
+xhr.**responseType**
 : Before sending a request, set the `xhr.responseType`
 to "text", "arraybuffer", "blob", or "document", depending on your data needs.
 Note, setting `xhr.responseType = ''` (or omitting) will default

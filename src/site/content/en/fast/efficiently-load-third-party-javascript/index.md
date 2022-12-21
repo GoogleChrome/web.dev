@@ -29,7 +29,7 @@ This post explains how to optimize the loading process of third-party scripts wi
 
 2. Establishing early connections to required origins
 
-3. Lazy-loading
+3. Lazy loading
 
 4. Optimizing how you serve third-party scripts
 
@@ -111,7 +111,7 @@ The `preconnect` hint is best used for only the most critical connections; for l
 
 ## Lazy-load third-party resources
 
-Embedded third-party resources can be a big contributor to slow page speed when constructed poorly. If they aren't critical or are below the fold (that is, if users have to scroll to view them), lazy-loading is a good way to improve page speed and paint metrics. This way, users will get the main page content faster and have a better experience.
+Embedded third-party resources can be a big contributor to slow page speed when constructed poorly. If they aren't critical or are below the fold (that is, if users have to scroll to view them), lazy loading is a good way to improve page speed and paint metrics. This way, users will get the main page content faster and have a better experience.
 
 <figure data-float="left">
 {% Img src="image/admin/uzPZzkgzfrv2Oy3UQPrN.png", alt="A diagram of a webpage shown on a mobile device with scrollable content extending beyond the screen. The content that's below-the-fold is desaturated because it's not loaded yet.", width="366", height="438" %}
@@ -119,17 +119,17 @@ Embedded third-party resources can be a big contributor to slow page speed when 
 
 One effective approach is to lazy-load third-party content after the main page content loads. Ads are a good candidate for this approach.
 
-Ads are an important source of income for many sites, but users come for the content. By lazy-loading ads and delivering the main content faster, you can increase the overall viewability percentage of an ad. For example, MediaVine switched to [lazy-loading ads](https://www.mediavine.com/lazy-loading-ads-mediavine-ads-load-200-faster/) and saw a 200% improvement in page load speed. DoubleClick have guidance on how to lazy-load ads in their [official documentation](https://support.google.com/dfp_premium/answer/4578089#lazyloading).
+Ads are an important source of income for many sites, but users come for the content. By lazy loading ads and delivering the main content faster, you can increase the overall viewability percentage of an ad. For example, MediaVine switched to [lazy-loading ads](https://www.mediavine.com/lazy-loading-ads-mediavine-ads-load-200-faster/) and saw a 200% improvement in page load speed. DoubleClick have guidance on how to lazy-load ads in their [official documentation](https://support.google.com/dfp_premium/answer/4578089#lazyloading).
 
 An alternative approach is to load third-party content only when users scroll down to that section of the page.
 
-[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/) is a browser API that efficiently detects when an element enters or exits the browser's viewport and it can be used to implement this technique. [lazysizes](/use-lazysizes-to-lazyload-images/) is a popular JavaScript library for lazy-loading images and [`iframes`](http://afarkas.github.io/lazysizes/#examples). It supports YouTube embeds and [widgets](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). It also has [optional support](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) for IntersectionObserver.
+[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/) is a browser API that efficiently detects when an element enters or exits the browser's viewport and it can be used to implement this technique. [lazysizes](/use-lazysizes-to-lazyload-images/) is a popular JavaScript library for lazy loading images and [`iframes`](http://afarkas.github.io/lazysizes/#examples). It supports YouTube embeds and [widgets](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). It also has [optional support](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) for IntersectionObserver.
 
 {% Aside 'caution' %}
-Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all.
+Be careful when lazy loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all.
 {% endAside %}
 
-Using the [`loading` attribute for lazy-loading images and iframes](/browser-level-image-lazy-loading/) is a great alternative to JavaScript techniques, and it has recently become available in Chrome 76!
+Using the [`loading` attribute for lazy loading images and iframes](/browser-level-image-lazy-loading/) is a great alternative to JavaScript techniques, and it has recently become available in Chrome 76!
 
 ## Optimize how you serve third-party scripts
 

@@ -102,7 +102,7 @@ In contrast, this graph shows the results of using the server in the US. While t
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/t5u9aStKeVDgRVuj0lgJ.png", alt="ALT_TEXT_HERE", width="500", height="156" %}
 </figure>
 
-Finally, this graph shows the results of avoiding latency by having the server send out dummy data. While it doesn't perform quite as well as using the Japanese server, it's clear that the input intervals remain relatively stable at around 100ms.
+Finally, this graph shows the results of avoiding latency by having the server send out placeholder data. While it doesn't perform quite as well as using the Japanese server, it's clear that the input intervals remain relatively stable at around 100ms.
 
 ### A bug?
 
@@ -224,7 +224,7 @@ The tracing process itself takes up resources, naturally, so inserting `console.
 
 ### Performance adjuster
 
-Due to the nature of the Internet, the game will likely be played on systems with widely varying specs. [Find Your Way to Oz](http://www.findyourwaytooz.com/), released in early February, uses a class called `[IFLAutomaticPerformanceAdjust](https://code.google.com/p/oz-experiment/source/browse/project/develop/coffee/ifl/IFLAutomaticPerformanceAdjust.coffee)` to scale back effects according to fluctuations in frame rate, helping to ensure smooth playback. World Wide Maze builds on the same `IFLAutomaticPerformanceAdjust` class and scales back effects in the following order to make gameplay as smooth as possible: 
+Due to the nature of the Internet, the game will likely be played on systems with widely varying specs. [Find Your Way to Oz](http://www.findyourwaytooz.com/), released in early February, uses a class called `[IFLAutomaticPerformanceAdjust](https://code.google.com/p/oz-experiment/source/browse/project/develop/coffee/ifl/IFLAutomaticPerformanceAdjust.coffee)` to scale back effects according to fluctuations in frame rate, helping to ensure smooth playback. World Wide Maze builds on the same `IFLAutomaticPerformanceAdjust` class and scales back effects in the following order to make gameplay as smooth as possible:
 
 1. If frame rate falls below 45 fps, environment maps stop updating.
 1. If it still falls below 40 fps, rendering resolution is reduced to 70% (50% of surface ratio).
@@ -289,7 +289,7 @@ define ->
 
 The class defined above (hoge.coffee) can be used as follows:
 
-```js 
+```js
 define ['hoge'], (Hoge) ->
   class Moge
     constructor: ->

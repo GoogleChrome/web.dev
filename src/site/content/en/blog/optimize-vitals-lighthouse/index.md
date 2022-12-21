@@ -161,7 +161,7 @@ background? Yes.
 Any image flagged as the LCP image whether via CSS background or `<img>` is a candidate if it's
 discovered at a waterfall depth of three or more.
 
-### Lazy-loading offscreen images and avoiding this for LCP
+### Lazy loading offscreen images and avoiding this for LCP
 
 Offscreen images that are not critical to the initial user experience can be [lazy-loaded](/browser-level-image-lazy-loading/). This is a technique that defers downloading an image until a user scrolls near it, which can reduce network contention for critical assets and in some cases improve LCP. The ["Defer offscreen images"](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/) audit can help here:
 
@@ -169,10 +169,10 @@ Offscreen images that are not critical to the initial user experience can be [la
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vW6EwUnp51g0QVAkUyN9.png", alt="Defer offscreen images", width="800", height="317" %}
 </figure>
 
-Critical above-the-fold images, such as the Largest Contentful Paint image, should not be lazy-loaded. Doing so can [delay the LCP image loading](/lcp-lazy-loading/). Lighthouse will highlight if an LCP image is being incorrectly lazy-loaded via the "Largest Contentful Paint image was lazily loaded" audit:
+Critical above-the-fold images, such as the Largest Contentful Paint image, should not be lazy loaded. Doing so can [delay the LCP image loading](/lcp-lazy-loading/). Lighthouse will highlight if an LCP image is being incorrectly lazy-loaded via the "Largest Contentful Paint image was lazily loaded" audit:
 
 <figure>
-  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/VKmCrIG748sCCoByrBV8.png", alt="Avoid lazy-loading LCP images", width="800", height="226" %}
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/VKmCrIG748sCCoByrBV8.png", alt="Avoid lazy loading LCP images", width="800", height="226" %}
 </figure>
 
 ### Identify CLS contributions
@@ -342,7 +342,7 @@ with it. Lighthouse has an audit that will recommend third-party resources which
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iciXy3oVlPH7VuwN7toy.png", alt="Audit highlighting that some costly third party resources can be replaced", width="800", height="483" %}
 </figure>
 
-As a reminder, Lighthouse will [highlight third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/) that blocks the main thread for over 250ms. This can surface all kinds of third-party scripts (including ones authored by Google) that may be worth better deferring or lazy-loading if what they render requires scrolling to view it.
+As a reminder, Lighthouse will [highlight third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/) that blocks the main thread for over 250ms. This can expose all kinds of third-party scripts (including ones authored by Google) that may be worth better deferring or lazy loading if what they render requires scrolling to view it.
 
 <figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K0Oxmu1XEN2P3NQIknyH.png", alt="Reduce the cost of third-party JavaScript audit", width="800", height="556" %}

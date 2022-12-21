@@ -65,7 +65,7 @@ What happens if I scroll and I happen to move the mouse at the same time? It's p
   <figcaption>Chrome's DevTools showing expensive frames</figcaption>
 </figure>
 
-In the image above you can see that DevTools is registering the paint work when I hover on one of the blocks. I've gone with some crazy heavy styles in my demo to make the point, and so I'm pushing up to and occasionally through my frame budget. The last thing I want is to have to do this paint work unnecessarily, and especially so during a scroll when there's other work to be done!
+In the image above you can see that DevTools is registering the paint work when I hover on one of the blocks. I've gone with some super heavy styles in my demo to make the point, and so I'm pushing up to and occasionally through my frame budget. The last thing I want is to have to do this paint work unnecessarily, and especially so during a scroll when there's other work to be done!
 
 So how can we stop this from happening? As it happens the fix is pretty simple to implement. The trick here is to attach a `scroll` handler that will disable hover effects and set a timer for enabling them again. That means we are guaranteeing that when you scroll we won't need to perform any expensive interaction paints. When you've stopped for long enough we figure it's safe to switch them back on again.
 

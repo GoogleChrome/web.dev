@@ -218,7 +218,7 @@ Be aware that these targets may change over time.
   resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/).
 
 * You don't have to load everything in under 5 seconds to produce the perception
-  of a complete load. Consider [lazy-loading
+  of a complete load. Consider [lazy loading
   images](/browser-level-image-lazy-loading/), [code-splitting JavaScript
   bundles](/reduce-javascript-payloads-with-code-splitting/), and
   other [optimizations suggested on web.dev](/fast/).

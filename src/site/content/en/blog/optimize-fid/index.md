@@ -171,7 +171,7 @@ To cut down on unused JavaScript:
 - Defer any non-critical JavaScript, including third-party scripts, using `async` or `defer`
 
 **Code-splitting** is the concept of splitting a single large JavaScript bundle into smaller chunks
-that can be conditionally loaded (also known as lazy-loading).
+that can be conditionally loaded (also known as lazy loading).
 [Most newer browsers support dynamic import syntax](https://caniuse.com/#feat=es6-module-dynamic-import),
 which allows for module fetching on demand:
 
