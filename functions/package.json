@@ -16,8 +16,8 @@
   "dependencies": {
     "@google-cloud/firestore": "^5.0.1",
     "@google-cloud/secret-manager": "^3.10.1",
-    "firebase-admin": "^9.8.0",
-    "firebase-functions": "^3.14.1",
+    "firebase-admin": "^11.4.1",
+    "firebase-functions": "^3.24.1",
     "node-fetch": "^3.1.1"
   },
   "devDependencies": {
