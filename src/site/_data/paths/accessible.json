@@ -5,7 +5,7 @@
   "description": "i18n.paths.accessible.description",
   "overview": "i18n.paths.accessible.overview",
   "coursefyi": "i18n.paths.accessible.courseIntro",
-  "coursename": "i18n.courses.learn_accessibility.title",
+  "coursename": "i18n.course.learn_accessibility.title",
   "course": "/learn/accessibility/",
   "topics": [
     {

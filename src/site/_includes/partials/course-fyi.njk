@@ -1,15 +1,16 @@
 {% from 'macros/icon.njk' import svg with context %}
 {%- set courseData = courses[projectKey] -%}
+{% set path = paths[pathName] %}
+{% set topics = path.topics | removeDrafts %}
 
-<div class="course-fyi>
-<div class="wrapper pad-block-size-1">
-  <div class="prose">
-    <h2 id="{{ courseData.title | i18n(locale) | slug }}" class="text-size-2">
-      {{ courseData.title | i18n(locale) }}
-      <a href="#{{ courseData.title | i18n(locale) | slug }}" aria-hidden="true" class="color-mid-text">#</a>
-    </h2>
-    <p>{{ course.meta.fyi | i18n(locale) }}</p>
-    <a class="button" data-type="primary" href="{{ courseData.title | i18n(locale) | slug }}">Learn more</a>
-  </div>
-</div>
+<div class="course-fyi">
+<div class="wrapper">
+  <div class="pad-block-size-1 flow">
+    <h3>Learn web development</h3>
+    <p>{{path.coursefyi | i18n(locale) | safe}}</p>
+    <a class="button" data-type="primary" href="{{path.course}}">
+      {{path.coursename | i18n(locale) | safe}}
+    </a>
+    </div>
+    </div>
 </div>
