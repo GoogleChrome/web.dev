@@ -105,14 +105,18 @@ eleventyComputed:
 {% if coursename !== "" %}
 <div class="course-fyi">
 <div class="wrapper">
-  <div class="pad-block-size-1 flow">
-    <h3>Learn web development</h3>
-    <p>{{path.coursefyi | i18n(locale) | safe}}</p>
-    <a class="button" data-type="primary" href="{{path.courseurl}}">
-      {{path.coursename | i18n(locale) | safe}}
-    </a>
+  <div class="sidebar" data-direction="rtl">
+    <div class="pad-block-size-1 flow">
+      <h3>Learn web development</h3>
+      <p>{{path.coursefyi | i18n(locale) | safe}}</p>
     </div>
+    <div class="pad-block-size-2">
+      <a class="button" data-type="primary" href="{{path.courseurl}}">
+        {{path.coursename | i18n(locale) | safe}}
+      </a>
     </div>
+  </div>
+</div>
 </div>
   {% else %}
   <hr />
