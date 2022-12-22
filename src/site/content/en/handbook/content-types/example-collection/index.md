@@ -2,7 +2,8 @@
 layout: collection
 override:tags: []
 date: 2022-12-21
-pathName: example-collection
+title: Sample Collection Template
+pathName: learn-core-web-vitals
 cards:
   - url: /new-patterns-july-2022/
     eyebrow:
@@ -56,4 +57,4 @@ cards:
     eyebrow:
       icon: news
       text: What's new
---- 
+---
