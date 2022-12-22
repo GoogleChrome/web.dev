@@ -174,7 +174,7 @@ function addPageShowEventListener() {
      */
     (e) => {
       if (e.persisted) {
-        logEvent('pageview', {
+        logEvent('page_view', {
           [dimensions.NAVIGATION_TYPE]: 'back-forward-cache',
         });
       }
