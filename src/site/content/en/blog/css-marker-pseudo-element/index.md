@@ -55,6 +55,7 @@ Which results in the following unsurprising rendering:
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-plain-list?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -85,6 +86,7 @@ li::before {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-before-example?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -114,6 +116,7 @@ dd {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-definition-list?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -134,6 +137,7 @@ li {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-list-style-type?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -154,6 +158,7 @@ li:first-child::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-style-introduction?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -220,6 +225,7 @@ Focused results between marker and list item
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-style-vs-list-style-type?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -249,6 +255,7 @@ li::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-change-all?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -264,6 +271,7 @@ li:last-child::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-change-one?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -281,6 +289,7 @@ li::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-inline-svg?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -299,6 +308,7 @@ li::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-numbered-lists?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
