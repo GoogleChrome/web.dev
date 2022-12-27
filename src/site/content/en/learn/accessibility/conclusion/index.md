@@ -18,6 +18,8 @@ terminology or refreshed your memory in our
 [glossary](/learn/accessibility/glossary/). We hope you feel confident applying
 this knowledge to your websites and web applications.
 
+## Additional resources
+
 To continue building your accessibility knowledge, we recommend the following
 resources:
 
@@ -35,6 +37,8 @@ resources:
     * [Write inclusive documentation](https://developers.google.com/style/inclusive-documentation)
 
 More resources can be found throughout the modules, as related to each topic.
+
+## Community highlights
 
 We conducted several interviews with accessibility practitioners in 2022. Read about their journey to accessibility and best practices:
 
