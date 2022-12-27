@@ -312,7 +312,7 @@ There are many different patterns we may consider to add additional link informa
 
 ## Issue 3: Decorative image
 
-In our automated testing module, Lighthouse was unable to pick up on the inline SVG that acts as the main splash image on our demo page—but the screen reader found it and announces it as "image" without additional information. This is true, even without explicitly adding the `role=”img”` attribute to the SVG.
+In our automated testing module, Lighthouse was unable to pick up on the inline SVG that acts as the main splash image on our demo page—but the screen reader found it and announces it as "image" without additional information. This is true, even without explicitly adding the `role="img"` attribute to the SVG.
 
 ```html
 <div class="section-right">
