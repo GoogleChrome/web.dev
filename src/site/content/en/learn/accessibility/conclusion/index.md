@@ -15,8 +15,8 @@ Congratulations, you've made it through Learn Accessibility! At this point,
 you've learned a lot of best practices for accessibility and gone through
 multiple rounds of accessibility testing. You may have learned some new
 terminology or refreshed your memory in our
-[glossary](https://web.dev/learn/accessibility/glossary/). We hope you feel
-confident applying this knowledge to your websites and web applications.
+[glossary](/learn/accessibility/glossary/). We hope you feel confident applying
+this knowledge to your websites and web applications.
 
 To continue building your accessibility knowledge, we recommend the following
 resources:
