@@ -6,7 +6,7 @@ authors:
   - rachelandrew
   - marksteadman
 description: Further resources to help you take your next steps.
-date: 2023-01-10
+date: 2023-01-12
 tags:
   - accessibility
 ---
@@ -15,8 +15,10 @@ Congratulations, you've made it through Learn Accessibility! At this point,
 you've learned a lot of best practices for accessibility and gone through
 multiple rounds of accessibility testing. You may have learned some new
 terminology or refreshed your memory in our
-[glossary](/learn/accessibility/glossary/). We hope you feel confident applying
-this knowledge to your websites and web applications.
+[glossary](/learn/accessibility/glossary/).
+
+We hope you are confident applying these lessons to your websites and web
+applications.
 
 ## Additional resources
 
@@ -42,10 +44,18 @@ More resources can be found throughout the modules, as related to each topic.
 
 We conducted several interviews with accessibility practitioners in 2022. Read about their journey to accessibility and best practices:
 
-* [Melanie Sumner](/community-highlight-melanie/) told us about her journey into engineering, accessible design, Ember.js, and the importance of funding these efforts.
-* [Olutimilehin Olushuyi](/community-highlight-shuyi/) told us about his transition from the law to web development, building accessible community, and creating accessible layouts.
-* [Albert Kim](/community-highlight-albert-kim/) told us about mental health  awareness, building for invisible disabilities, the  COGA Accessibility Community Group, and more practical wisdom.
-* [Elisa Bandy](/community-highlight-elisa/) told us about her work for Google's internal documentation, how to prioritize use cases, and building expertise.
+* [Melanie Sumner](/community-highlight-melanie/) told us about her journey
+  into engineering, accessible design, Ember.js, and the importance of funding
+  these efforts.
+* [Olutimilehin Olushuyi](/community-highlight-shuyi/) told us about his
+  transition from the law to web development, building accessible community,
+  and creating accessible layouts.
+* [Albert Kim](/community-highlight-albert-kim/) told us about mental health 
+  awareness, building for invisible disabilities, the  COGA Accessibility
+  Community Group, and more practical wisdom.
+* [Elisa Bandy](/community-highlight-elisa/) told us about her work for
+  Google's internal documentation, how to prioritize use cases, and building
+  expertise.
 
 ## Brought to you by
 

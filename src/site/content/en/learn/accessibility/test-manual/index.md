@@ -29,16 +29,17 @@ Each automated testing tool can have distinct accessibility rulesets and use the
 Pros of manual accessibility tests:
 
 * Reasonably straightforward and quick to run
-* Do not require a lot of extra tooling or expertise
 * Catch a higher percentage of issues than automated tests alone
+* Little tooling and expertise needed for success
 
 Cons of manual accessibility tests:
 
-* Are more complex and time-consuming than automated tests
-* They may be difficult to repeat at scale
+* More complex and time-consuming than automated tests
+* May be difficult to repeat at scale
 * Require more accessibility expertise to run tests and interpret the results
 
-Let's compare what accessibility can currently be detected by an automated tool, versus elements and details that won't be detected.
+Let's compare what accessibility can currently be detected by an automated
+tool, versus elements and details that won't be detected.
 
 <div class="table-wrapper scrollbar">
   <table data-alignment="top" >
@@ -202,7 +203,7 @@ You should see the first keyboard issue right away—or rather, you shouldn't se
   }
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution"  id="issue-1-solution"  style="display:block;font-weight:strong;">
 <figure data-float="left">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
 </figure> <strong>Let's fix it.</strong>
@@ -227,7 +228,7 @@ from the natural focus order by a negative tabindex.
 <input type="email" placeholder="Enter your e-mail address" aria-hidden="true" tabindex="-1" required>
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution"  id="issue-2-solution"  style="display:block;font-weight:strong;">
 <figure data-float="left">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
 </figure> <strong>Let's fix it.</strong>
@@ -252,7 +253,7 @@ paragraphs on the different medical conditions.
 For our page to be accessible, links must stand out from the surrounding text
 and include a non-color style change on mouse hover and keyboard focus.
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution"  id="issue-3-solution"  style="display:block;font-weight:strong;">
 <figure data-float="left">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
 </figure> <strong>Let's fix it.</strong>
@@ -285,7 +286,7 @@ One option is to change the link color to match the other elements on the page. 
 
 Another missed color contrast issue is the social media icons. In the [color and contrast](/learn/accessibility/color-contrast/#calculate-color-contrast) module, you learned that essential icons need to meet a 3:1 color contrast against the background. However, in the demo, the social media icons have a contrast ratio of 1.3:1.
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution"  id="issue-4-solution" style="display:block;font-weight:strong;">
 <figure data-float="left">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
 </figure> <strong>Let's fix it.</strong>
@@ -318,7 +319,7 @@ p.bullet {
 }
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution"  id="issue-5-solution" style="display:block;font-weight:strong;">
 <figure data-float="left">
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
 </figure> <strong>Let's fix it.</strong>
