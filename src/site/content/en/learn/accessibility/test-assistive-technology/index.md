@@ -403,7 +403,7 @@ To fix this issue, replace the text placeholder with a look-alike label element.
 
 ## Test complete
 
-Congratulations! You can completed all of the testing for this demo. You can use what you’ve learned to review the accessibility of your own websites and apps.
+Congratulations! You can completed all of the testing for this demo. You can use what you've learned to review the accessibility of your own websites and apps.
 
 The goal of all of this accessibility testing is to address as many possible
 issues a user may encounter. However, that does not mean your website or app
