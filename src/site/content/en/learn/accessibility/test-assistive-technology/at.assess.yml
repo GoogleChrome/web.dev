@@ -1,0 +1,25 @@
+setLeader: Test your knowledge of automated accessibility testing
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: What's the best screen reader to use for testing accessibility?
+    options:
+      - content: "JAWS"
+        rationale: "While JAWS is one of the most popular screen readers, it's not necessarily the best choice."
+      - content: "VoiceOver"
+        rationale: "VoiceOver is a tool for MacOS and iOS users. If you're using a Windows PC, you would want to use a different tool."
+      - content: "Orca"
+        rationale: "Orca is for Linux Firefox users, which may mean you need to use a different tool."
+      - content: "There isn't one"
+        rationale: "Each screen reader is built for a specific device, operating system, or browser, so what's best for you depends on how you're testing. If you have analytics or research which tells you more about your users who use screen readers, it can be beneficial to test with the same screen readers they're using."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: What is the purpose of testing with assistive technology?
+    options:
+      - content: "To experience the same thing as people who use assistive technology."
+        rationale: "Your cannot truly emulate the experience of someone who uses AT. One test in one situation will not be the same as other experiences."
+      - content: "To test for flaws in your website or app."
+        rationale: "Accessibility testing helps developers find and fix problems that AT users may experience on their website or app."

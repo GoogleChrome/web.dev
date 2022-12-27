@@ -257,7 +257,9 @@ Headings and landmarks are one of the primary ways people navigate using screen 
 
 If you have updated everything correctly, there should not be any visual changes, but your screen reader experience will have dramatically improved.
 
-<span class="solution" style="display:block;font-weight:strong;">
+{% YouTube "o8gWVi97cMg" %}
+
+<span id="issue-1-solution" class="solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -273,3 +275,139 @@ Heading example: `<h1>Join the Club</h1>`
 
 If you have updated everything correctly, there should not be any visual changes, but your screen reader experience will have dramatically improved.
 
+{% YouTube "FfM3qvEWHjk" %}
+
+## Issue 2: Link context {: #link-context}
+
+It's important to give content to screen reader users about the purpose of a link and if they are redirecting them to a new location outside of the website or app.
+
+In our demo, we fixed most of the links when we updated the active image alternative text, but there are a few additional links about the various rare diseases that could use additional context—especially since they redirect to a new location.
+
+```html
+<a href="https://rarediseases.org/rare-diseases/maple-syrup-urine-disease">
+  Maple syrup urine disease (MSUD)
+</a>
+```
+
+{% YouTube "kk7LNdtfYMM" %}
+
+<span id="issue-2-solution" class="solution" style="display:block;font-weight:strong;">
+  <figure data-float="left">
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
+  </figure> <strong>Let's fix it.</strong>
+</span>
+
+To fix this issue for screen reader users, we update the code to add more information, without affecting the visuals element. Or, to help even more people such as those with reading and cognitive disorders, we may choose to add additional visual text instead.
+
+There are many different patterns we may consider to add additional link information. Based on our simple environment that supports just one language, an ARIA label is a straightforward option in this situation. You may notice that the ARIA label overrides the original link text, so make sure to include that information in your update.
+
+```html
+<a href="https://rarediseases.org/rare-diseases/maple-syrup-urine-disease"
+  aria-label="Learn more about Maple syrup urine disease on the Rare Diseases website.">
+  Maple syrup urine disease (MSUD)
+</a>
+```
+
+{% YouTube "Ezr7cMdCQlE" %}
+
+## Issue 3: Decorative image
+
+In our automated testing module, Lighthouse was unable to pick up on the inline SVG that acts as the main splash image on our demo page—but the screen reader found it and announces it as "image" without additional information. This is true, even without explicitly adding the `role=”img”` attribute to the SVG.
+
+```html
+<div class="section-right">
+  <svg>...</svg>
+</div>
+```
+
+{% YouTube "TKHHTGghrHs" %}
+
+<span id="issue-3-solution" class="solution" style="display:block;font-weight:strong;">
+  <figure data-float="left">
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
+  </figure> <strong>Let's fix it.</strong>
+</span>
+
+To fix this issue, we first need to decide if the image is [informative](/learn/accessibility/images/#informative-images) or [decorative](/learn/accessibility/images/#decorative-images). Based on that choice, we need to add the appropriate image alternative text (informative image) or hide the image from screen reader users (decorative).
+
+We weighed the pros and cons of how best to categorize the image and decided it was decorative, which means we want to add or modify the code to hide the image. A quick method is to add a `role="presentation"` to the SVG image directly. This sends a signal to the screen reader to skip over this image and not list it in the images group.
+
+```html
+<div class="section-right">
+  <svg role="presentation">...</svg>
+</div>
+```
+
+{% YouTube "KqTf8Pl2lMU" %}
+
+### Issue 4: Bullet decoration {: #bullet-decoration}
+
+You may have noticed that the screen reader reads the CSS bullet image under the rare diseases sections. While not the traditional type of image we discussed in the Images module, it still needs to be modified as it disrupts the flow of the content and could distract or confuse a screen reader user.
+
+```html
+<p class="bullet">...</p>
+```
+
+{% YouTube "sDR2w-HGHOo" %}
+
+<span id="issue-4-solution" class="solution" style="display:block;font-weight:strong;">
+  <figure data-float="left">
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
+  </figure> <strong>Let's fix it.</strong>
+</span>
+
+Much like the decorative image example above, you can add a `role="presentation"` to the HTML with the bullet class to hide it from the screen reader. Similarly, a `role="none"` would work. Just be sure not to use `aria-hidden: true` or you will hide all of the paragraph information from screen reader users.
+
+```html
+<p class="bullet" role="none">...</p>
+```
+
+### Issue 5: Form field
+
+In the [Forms](/learn/accessibility/forms/) module, we learned that all form
+fields must also have a visual and programmatic label. This label must remain
+visible at all times.
+
+In our demo, we're missing both a visual and programmatic label on our newsletter sign-up email field. There is a text placeholder element, but this does not replace the label as it's not visually persistent and is not fully compatible with all screen readers.
+
+```html
+<form>
+  <div class="form-group">
+    <input type="email" placeholder="Enter your e-mail address" required>
+    <button type="submit">Subscribe</button>
+  </div>
+</form>
+```
+
+{% YouTube "7hncAhi4UUk" %}
+
+<span id="issue-5-solution" class="solution" style="display:block;font-weight:strong;">
+  <figure data-float="left">
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
+  </figure> <strong>Let's fix it.</strong>
+</span>
+
+To fix this issue, replace the text placeholder with a look-alike label element. That label element is programmatically connected to the form field and movement was added with JavaScript to keep the label visible even when content is added to the field.
+
+```html
+<form>
+  <div class="form-group">
+    <input type="email" required id="youremail" name="youremail" type="text">
+    <label for="youremail">Enter your e-mail address</label>
+    <button type="submit" aria-label="Subscribe to our newsletter">Subscribe</button>
+  </div>
+</form>
+```
+
+{% YouTube "hNbDfcmdi_A" %}
+
+## Test complete
+
+Congratulations! You can completed all of the testing for this demo. You can use what you’ve learned to review the accessibility of your own websites and apps.
+
+The goal of all of this accessibility testing is to address as many possible
+issues a user may encounter. However, that does not mean your website or app
+will be perfectly accessible when you're done. You'll find the most success by
+designing your website or app with accessibility throughoutthe process, and incorporating these tests with your other pre-launch testing.
+
+{% Assessment 'at' %}

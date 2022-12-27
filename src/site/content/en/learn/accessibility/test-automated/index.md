@@ -180,7 +180,7 @@ In our demo, the newsletter subscribe button fails:
 <button role="list" type="submit" tabindex="1">Subscribe</button>
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-1-solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -201,7 +201,7 @@ applied to it. In this case, the role can be removed completely.
 <input type="email" placeholder="Enter your e-mail address" aria-hidden="true" tabindex="-1" required>
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-2-solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -224,7 +224,7 @@ users who rely on screen readers.
 <button role="list" type="submit" tabindex="1">Subscribe</button>
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-3-solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -246,7 +246,7 @@ Image elements are missing [alt] attributes. Informative elements should aim for
 </a>
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-4-solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -272,7 +272,7 @@ navigation experience for screen reader users.
 <a href="#!"><svg><path>...</path></svg></a>
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-5-solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -320,7 +320,7 @@ Two examples were reported.
   </figure>
 </div>
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-6-solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -382,7 +382,7 @@ List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements. S
 </div>
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-7-solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -411,7 +411,7 @@ creates frustrating experiences for users who rely on assistive technologies.
 <button type="submit" tabindex="1">Subscribe</button>
 ```
 
-<span class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-8-solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
