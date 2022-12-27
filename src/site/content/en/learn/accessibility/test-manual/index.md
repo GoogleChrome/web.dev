@@ -8,15 +8,20 @@ tags:
   - accessibility
 ---
 
+{% Aside %}
 This module on manual accessibility testing is a continuation of the previous
 module, [automated accessibility testing](/learn/accessibility/test-automated/).
 If you have not gone through the exercises in that module yet, we encourage you
 to do so. This module starts where the previous one left off, focusing on
 manual accessibility testing tools and techniques.
+{% endAside %}
 
 ## Manual testing basics
 
-Manual accessibility testing utilizes keyboard, visual, and cognitive tests, tools, and techniques to find issues that automated tooling cannot. As automated tooling does not cover all of the success criteria identified in WCAG, it's _vital_ that you do not run automated accessibility tests and then stop testing!
+Manual accessibility testing uses keyboard, visual, and cognitive tests, tools,
+and techniques to find issues that automated tooling cannot. As automated
+tooling does not cover all of the success criteria identified in WCAG, it's
+_vital_ that you do not run automated accessibility tests and then stop testing!
 
 As technology advances, [more tests could be covered by automated tooling alone](https://a11y-automation.dev/violations), but today, both manual and assistive technology checks need to be added to your testing protocols to cover all of the applicable WCAG checkpoints.
 
