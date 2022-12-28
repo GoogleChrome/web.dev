@@ -26,7 +26,10 @@ startMicrophoneButton.addEventListener("click", async () => {
   const context = new AudioContext();
   const source = context.createMediaStreamSource(stream);
 
+  // Load and execute the module script.
   await context.audioWorklet.addModule("processor.js");
+  // Create an AudioWorkletNode. The name of the processor is the
+  // one passed to registerProcessor() in the module script.
   const processor = new AudioWorkletNode(context, "processor");
 
   source.connect(processor).connect(context.destination);
@@ -43,6 +46,9 @@ stopMicrophoneButton.addEventListener("click", () => {
 
 ```js
 // processor.js
+// This file is evaluated in the audio rendering thread
+// upon context.audioWorklet.addModule() call.
+
 class Processor extends AudioWorkletProcessor {
   process([input], [output]) {
     // Copy inputs to outputs.

@@ -1,3 +1,6 @@
+// This file is evaluated in the audio rendering thread
+// upon context.audioWorklet.addModule() call.
+
 class WorkletProcessor extends AudioWorkletProcessor {
   process([input], [output]) {
     // Copy inputs to outputs.
@@ -6,4 +9,4 @@ class WorkletProcessor extends AudioWorkletProcessor {
   }
 }
 
-registerProcessor("worklet-processor", WorkletProcessor);
+registerProcessor("processor", WorkletProcessor);
