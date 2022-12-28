@@ -25,15 +25,16 @@ applications.
 To continue building your accessibility knowledge, we recommend the following
 resources:
 
-* [Accessibility on MDN](https://developer.mozilla.org/docs/Web/Accessibility)
+* [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI)
 * [Web Content Accessibility Guidelines (WCAG) from the W3C](https://www.w3.org/WAI/standards-guidelines/)
+* [WCAG Quick Reference Guide](https://www.w3.org/WAI/WCAG21/quickref)
+* [Accessibility on MDN](https://developer.mozilla.org/docs/Web/Accessibility)
 * [Deque University Digital Accessibility Courses & Accessibility Reference Library](https://dequeuniversity.com/)
 * [Global web accessibility laws](https://www.w3.org/WAI/policies/)
 * [A11y talks](https://a11ytalks.com/)
 * [List of accessible patterns from Smashing Magazine](https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-289/)
 * [How to fund accessibility work](https://pleasefunda11y.com/)
 * [A11y automation tracker](https://a11y-automation.dev/)
-* [A11y style guide](https://a11y-style-guide.com/style-guide/)
 * Google developer documentation style guide
     * [Write accessible documentation](https://developers.google.com/style/accessibility)
     * [Write inclusive documentation](https://developers.google.com/style/inclusive-documentation)
