@@ -401,13 +401,17 @@ To fix this issue, replace the text placeholder with a look-alike label element.
 
 {% YouTube "hNbDfcmdi_A" %}
 
-## Test complete
+## Wrap up
 
-Congratulations! You can completed all of the testing for this demo. You can use what you've learned to review the accessibility of your own websites and apps.
+Congratulations! You have completed all of the testing for this demo. You can look at all of these changes in the [updated Codepen for this demo](https://codepen.io/cariefisher/pen/jOpErYa/9fb2041ec9e121fc06d76b793b9818a1).
+
+Now, you can use what you've learned to review the accessibility of your own
+websites and apps.
 
 The goal of all of this accessibility testing is to address as many possible
 issues a user may encounter. However, that does not mean your website or app
 will be perfectly accessible when you're done. You'll find the most success by
-designing your website or app with accessibility throughoutthe process, and incorporating these tests with your other pre-launch testing.
+designing your website or app with accessibility throughoutthe process, and
+incorporating these tests with your other pre-launch testing.
 
 {% Assessment 'at' %}
