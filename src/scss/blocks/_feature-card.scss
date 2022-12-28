@@ -12,7 +12,12 @@
     color: get-color('shades-dark');
   }
 
-  > img {
+  > :not(img) {
+    z-index: 1;
+  }
+
+  > img,
+  > video {
     position: absolute;
     inset: 0 0 0 0;
     width: 100%;
@@ -22,9 +27,6 @@
     z-index: 0;
   }
 
-  > :not(img) {
-    z-index: 1;
-  }
 }
 
 .feature-card__eyebrow {

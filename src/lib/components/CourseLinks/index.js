@@ -116,11 +116,16 @@ class CourseLinks extends HTMLElement {
       Math.floor((newPages.length / children.length) * 10) * 10;
 
     // Fire analytics if there's been a 10%+ bucket jump.
-    if (ga && newPercent - oldPercent >= 10) {
-      ga('send', 'event', {
-        eventCategory: 'Course Events',
-        eventAction: `course: ${courseKey} progress`,
-        eventLabel: newPercent.toString(),
+    if (newPercent - oldPercent >= 10) {
+      // TODO: ideally, no code would directly call the `gtag()` function,
+      // instead, code should import functions from the analytics.js module
+      // so it can ensure everything is properly initialized before any
+      // data is sent to GA. Also, it doesn't make sense to include
+      // non-critical logic in a script that is inlined, so this should be
+      // refactored for that reason as well.
+      gtag('event', `course: ${courseKey} progress`, {
+        event_category: 'Course Events',
+        event_label: newPercent.toString(),
       });
     }
 

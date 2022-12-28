@@ -1,0 +1,67 @@
+---
+layout: default-next
+title: Explore
+description: |
+  Learn best practices for the modern web and hone your skills with hands-on
+  codelabs.
+pageScripts:
+  - '/js/explore.js'
+---
+{% from 'macros/icon.njk' import icon with context %}
+
+<div class="wide-card-index">
+  {# Hero starts #}
+  <header class="region bg-mid-bg">
+    <div class="wrapper">
+      <div class="headline all-center flow">
+        <h1 class="headline__title">{{ title }}</h1>
+        <p>{{ 'i18n.explore.header' | i18n(locale) }}</p>
+      </div>
+    </div>
+  </header>
+  {# Hero ends #}
+
+  {# Collections start #}
+  <div class="wrapper explore__collections">
+    <div class="pad-block-size-1 repel">
+      <h2 id="{{ 'i18n.explore.collections' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.explore.collections' | i18n(locale) }}</h2>
+
+      {% set filterItems = [] %}
+      {% for category, paths in learn %}
+        {% set i18nKey = 'i18n.explore.' + category %}
+        {% set filterItems = (filterItems.push({title: i18nKey | i18n(locale), id: i18nKey | i18n(locale) | slug}), filterItems) %}
+      {% endfor %}
+      <web-learn-filter all="{{'i18n.common.all' | i18n(locale)}}" filters="{{filterItems | dump}}"></web-learn-filter>
+    </div>
+  </div>
+
+  <div id="learn__collections">
+    {% for category, paths in learn %}
+      {% set i18nKey = 'i18n.explore.' + category %}
+      <div id="{{ i18nKey | i18n(locale) | slug }}" class="explore__collection">
+        <div class="wrapper flow">
+          <h2 id="{{ 'i18n.explore.collections' | i18n(locale) | slug }}" class="text-size-2">{{ i18nKey | i18n(locale) }}</h2>
+          <div class="auto-grid gap-top-size-2">
+            {% for path in paths %}
+              <a href="/{{ path.slug }}" class="card">
+                <div class="card__header repel">
+                  <p class="color-mid-text">Collection</p>
+                  <div class="counter" data-layout="flush">
+                    <span class="counter__content">{{ path.topics.length }}</span>
+                    {% include 'icons/mortarboard.svg' %}
+                  </div>
+                </div>
+                <img src="{{ path.cover | imgix }}" alt="{{ path.title | i18n(locale) }}" />
+                <div class="card__content flow">
+                  <h3 class="card__heading text-size-3">{{ path.title | i18n(locale) }}</h3>
+                  <p class="text-size-1">{{ path.description | i18n(locale) }}</p>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {# Collections end #}
+</div>

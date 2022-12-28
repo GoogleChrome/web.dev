@@ -40,7 +40,7 @@ guide you through the process of creating:
 1. A camera
 1. An object or two (with materials)
 
-You can, of course, do some crazy things, and my hope is that you will
+You can, of course, do some cool things, and my hope is that you will
 go on to do that and start to experiment with 3D in your browser.
 
 ## 2. Support

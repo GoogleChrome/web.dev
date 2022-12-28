@@ -96,11 +96,11 @@ but [content model](http://www.w3.org/TR/html5-diff/#content-model) children. It
 
 ```html
 <table>
-<tr>
+  <tr>
     <template id="cells-to-repeat">
-    <td>some content</td>
+      <td>some content</td>
     </template>
-</tr>
+  </tr>
 </table>
 ```
 
@@ -131,31 +131,32 @@ runs when the button is pressed, stamping out the template.
 <button onclick="useIt()">Use me</button>
 <div id="container"></div>
 <script>
-    function useIt() {
+  function useIt() {
     var content = document.querySelector('template').content;
     // Update something in the template DOM.
     var span = content.querySelector('span');
     span.textContent = parseInt(span.textContent) + 1;
     document.querySelector('#container').appendChild(
-        document.importNode(content, true));
-    }
+      document.importNode(content, true)
+    );
+  }
 </script>
 
 <template>
-    <div>Template used: <span>0</span></div>
-    <script>alert('Thanks!')</script>
+  <div>Template used: <span>0</span></div>
+  <script>alert('Thanks!')</script>
 </template>
 ```
 
 ### Example: Creating Shadow DOM from a template
 
-Most people attach [Shadow DOM](https://www.html5rocks.com/tutorials/webcomponents/shadowdom/) to a host by setting a string of markup to `.innerHTML`:
+Most people attach [Shadow DOM](/shadowdom/) to a host by setting a string of markup to `.innerHTML`:
 
 ```html
 <div id="host"></div>
 <script>
-    var shadow = document.querySelector('#host').createShadowRoot();
-    shadow.innerHTML = '<span>Host node</span>';
+  var shadow = document.querySelector('#host').createShadowRoot();
+  shadow.innerHTML = '<span>Host node</span>';
 </script>
 ```
 
@@ -170,7 +171,7 @@ content to a shadow root:
 ```html
 <template>
 <style>
-    :host {
+  :host {
     background: #f8f8f8;
     padding: 10px;
     transition: all 400ms ease-in-out;
@@ -178,52 +179,52 @@ content to a shadow root:
     border-radius: 5px;
     width: 450px;
     max-width: 100%;
-    }
-    :host(:hover) {
+  }
+  :host(:hover) {
     background: #ccc;
-    }
-    div {
+  }
+  div {
     position: relative;
-    }
-    header {
+  }
+  header {
     padding: 5px;
     border-bottom: 1px solid #aaa;
-    }
-    h3 {
+  }
+  h3 {
     margin: 0 !important;
-    }
-    textarea {
+  }
+  textarea {
     font-family: inherit;
     width: 100%;
     height: 100px;
     box-sizing: border-box;
     border: 1px solid #aaa;
-    }
-    footer {
+  }
+  footer {
     position: absolute;
     bottom: 10px;
     right: 5px;
-    }
+  }
 </style>
 <div>
-    <header>
+  <header>
     <h3>Add a Comment
-    </header>
-    <content select="p"></content>
-    <textarea></textarea>
-    <footer>
+  </header>
+  <content select="p"></content>
+  <textarea></textarea>
+  <footer>
     <button>Post</button>
-    </footer>
+  </footer>
 </div>
 </template>
 
 <div id="host">
-    <p>Instructions go here</p>
+  <p>Instructions go here</p>
 </div>
 
 <script>
-    var shadow = document.querySelector('#host').createShadowRoot();
-    shadow.appendChild(document.querySelector('template').content);
+  var shadow = document.querySelector('#host').createShadowRoot();
+  shadow.appendChild(document.querySelector('template').content);
 </script>
 ```
 
@@ -242,11 +243,11 @@ The only time a template renders is when it goes live.
 
     ```html
     <template>
-        <ul>
+      <ul>
         <template>
-            <li>Stuff</li>
+          <li>Stuff</li>
         </template>
-        </ul>
+      </ul>
     </template>
     ```
 
@@ -267,8 +268,8 @@ DOM and hide it from view using the `hidden` attribute or `display:none`.
 
 ```html
 <div id="mytemplate" hidden>
-    <img src="logo.png">
-    <div class="comment"></div>
+  <img src="logo.png">
+  <div class="comment"></div>
 </div>
 ```
 
@@ -294,8 +295,8 @@ For example:
 
 ```html
 <script id="mytemplate" type="text/x-handlebars-template">
-    <img src="logo.png">
-    <div class="comment"></div>
+  <img src="logo.png">
+  <div class="comment"></div>
 </script>
 ```
 
@@ -315,16 +316,14 @@ being added to the platform. Obvious win, right? A library popularized fetching 
 with CSS selectors and standards later adopted it. It doesn't always work that way, but I *love* when it does.
 
 I think `<template>` is a similar case. It standardizes the way we do client-side
-templating, but more importantly, it removes the need for our crazy 2008 hacks.
+templating, but more importantly, it removes the need for our 2008 hacks.
 Making the entire web authoring process more sane, more maintainable, and more
-full featured is always a good thing in my book.
+full-featured is always a good thing in my book.
 
 ## Additional resources
 
 - [WhatWG Specification][spec-link]
-- [Introduction to Web Components](http://w3c.github.io/webcomponents/explainer/#template-section)
+- [Introduction to Web Components](https://www.w3.org/TR/2012/WD-components-intro-20120522/#template-section)
 - [&lt;web>components&lt;/web>](http://html5-demos.appspot.com/static/webcomponents/index.html) ([video](http://www.youtube.com/watch?v=eJZx9c6YL8k)) - a fantastically comprehensive presentation by yours truly.
 
-[spec-link]: http://www.whatwg.org/specs/web-apps/current-work/multipage/scripting-1.html#the-template-element
-
-
+[spec-link]: https://html.spec.whatwg.org/multipage/scripting.html#the-template-element

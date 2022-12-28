@@ -304,7 +304,7 @@ To recap, here's the following things you'll want to take away from this post:
 - The browser preload scanner is a secondary HTML parser that scans ahead of the primary one if it's blocked to opportunistically discover resources it can fetch sooner.
 - Resources that aren't present in markup provided by the server on the initial navigation request can't be discovered by the preload scanner. Ways the preload scanner can be defeated may include (but are not limited to):
   - Injecting resources into the DOM with JavaScript, be they scripts, images, stylesheets, or anything else that would be better off in the initial markup payload from the server.
-  - Lazy-loading above-the-fold images or iframes using a JavaScript solution.
+  - Lazy loading above-the-fold images or iframes using a JavaScript solution.
   - Rendering markup on the client that may contain references to document subresources using JavaScript.
 - The preload scanner only scans HTML. It does not examine the contents of other resources&mdash;particularly CSS&mdash;that may include references to important assets, including LCP candidates.
 
