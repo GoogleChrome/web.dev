@@ -190,9 +190,13 @@ So far, we have run automated tests on our demo webpage and found and remediated
 
 ### Step 1
 
-Visit the updated [CodePen demo](https://codepen.io/cariefisher/pen/VwdOaqp/ee094599b3e692a0434c65b5cb7baccb2d50c601e6b897), which has all the automated accessibility updates applied.
-View it in [debug mode](https://blog.codepen.io/documentation/debug-view/#getting-to-debug-view-3).
-This is important, as it removes the `<iframe>` which surrounds the demo webpage, which may interfere with some testing tools.
+Our updated [CodePen demo](https://codepen.io/web-dot-dev/pen/PoBZgrW) has all
+of the automated accessibility updates applied.
+
+View it in [debug mode](https://cdpn.io/pen/debug/PoBZgrW) to proceed with the
+next tests. This is important, as it removes the `<iframe>` which surrounds the
+demo webpage, which may interfere with some testing tools. Learn more about
+[CodePen's debug mode](https://blog.codepen.io/documentation/debug-view/#getting-to-debug-view-3).
 
 ### Step 2
 
@@ -357,6 +361,9 @@ It's possible you'll find more accessibility issues in your manual checks than w
 ## Next step
 
 Way to go! You have gotten through the automated and manual testing modules.
+You can view our [updated CodePen](https://codepen.io/web-dot-dev/pen/eYjZdve),
+which has all the automated and manual accessibility fixes applied.
+
 Now, head over to the last testing module focused on
 [assistive technology testing](/learn/accessibility/test-assistive-technology/).
 

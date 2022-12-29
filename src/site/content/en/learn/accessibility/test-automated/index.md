@@ -125,10 +125,11 @@ into your testing workflow. We'll use the Chrome extension for this demo.
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/amnpKDgfwnlIa02HYMU1.png", alt="Medical Mystery Club website, outside of the iframe.", width="400", height="283" %}
 </figure>
 
-Visit the [CodePen demo](https://codepen.io/cariefisher/pen/KKebGwO/0d8ee1c7f9f8ac38482d50c601e6b897).
-View it in [debug mode](https://blog.codepen.io/documentation/debug-view/#getting-to-debug-view-3).
-This is important, as it removes the `<iframe>` which surrounds the demo
-webpage, which may interfere with some testing tools.
+We have built a [demo in CodePen]https://codepen.io/web-dot-dev/pen/yLqOaEP). 
+View it in [debug mode](https://cdpn.io/pen/debug/yLqOaEP) to proceed with the
+next tests. This is important, as it removes the `<iframe>` which surrounds the
+demo webpage, which may interfere with some testing tools. Learn more about
+[CodePen's debug mode](https://blog.codepen.io/documentation/debug-view/#getting-to-debug-view-3).
 
 ### Step 3
 
@@ -280,7 +281,7 @@ navigation experience for screen reader users.
 
 All of the actionable images on the page must include information about where the link will send users. One method to remediate this issue is to add alternative text to the image about the purpose like you did on the logo image in the example above. This works great for an image using a `<img>` tag, but `<svg>` tags cannot use this method.
 
-For the social media icons, which use `<svg>` tags, you can use a [different alternative description pattern](https://codepen.io/cariefisher/pen/QWpjded) targeting SVGs, add the information between the `<a>` and `<svg>` tags and then hide it visually from users, add a supported ARIA, or other options. Depending on your environment and code restrictions, one method might be preferable over another. Let's use the simplest pattern option with the most assistive technology coverage, which is adding a `role="img"` to the `<svg>` tag and including a `<title>` element.
+For the social media icons, which use `<svg>` tags, you can use a [different alternative description pattern](https://codepen.io/web-dot-dev/pen/poZyEZd) targeting SVGs, add the information between the `<a>` and `<svg>` tags and then hide it visually from users, add a supported ARIA, or other options. Depending on your environment and code restrictions, one method might be preferable over another. Let's use the simplest pattern option with the most assistive technology coverage, which is adding a `role="img"` to the `<svg>` tag and including a `<title>` element.
 
 ```html
 <a href="#!">
@@ -432,6 +433,9 @@ Now that you've fixed all the automated accessibility issues, open up a new debu
   src="image/VbsHyyQopiec0718rMq2kTE1hke2/gcjuv10swXP62s1oT37d.png", alt="The lighthouse score is now 100, which means you addressed all Lighthouse issues.", width="800", height="421"
 %}
 </figure>
+
+We've applied all of these automated accessibility updates to a new
+[CodePen](https://codepen.io/web-dot-dev/pen/PoBZgrW).
 
 ## Next step
 
