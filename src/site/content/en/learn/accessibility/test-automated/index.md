@@ -125,7 +125,7 @@ into your testing workflow. We'll use the Chrome extension for this demo.
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/amnpKDgfwnlIa02HYMU1.png", alt="Medical Mystery Club website, outside of the iframe.", width="400", height="283" %}
 </figure>
 
-We have built a [demo in CodePen]https://codepen.io/web-dot-dev/pen/yLqOaEP). 
+We have built a [demo in CodePen](https://codepen.io/web-dot-dev/pen/yLqOaEP). 
 View it in [debug mode](https://cdpn.io/pen/debug/yLqOaEP) to proceed with the
 next tests. This is important, as it removes the `<iframe>` which surrounds the
 demo webpage, which may interfere with some testing tools. Learn more about
