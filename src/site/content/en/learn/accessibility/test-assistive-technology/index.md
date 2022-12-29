@@ -242,7 +242,13 @@ To test our demo, we used a Safari on a laptop running MacOS and capture sound. 
 
 ### Step 1
 
-Visit the updated [CodePen demo](https://codepen.io/cariefisher/pen/ExpxRmw), which has all the automated and manual accessibility updates applied. View it in [debug mode](https://blog.codepen.io/documentation/debug-view/#getting-to-debug-view-3). This is important, as it removes the `<iframe>` which surrounds the demo webpage, which may interfere with some testing tools.
+Visit the updated [CodePen](https://codepen.io/web-dot-dev/pen/eYjZdve), which
+has all the automated and manual accessibility updates applied.
+
+View it in [debug mode](https://cdpn.io/pen/debug/eYjZdve) to proceed with the
+next tests. This is important, as it removes the `<iframe>` which surrounds the
+demo webpage, which may interfere with some testing tools. Learn more about
+[CodePen's debug mode](https://blog.codepen.io/documentation/debug-view/#getting-to-debug-view-3).
 
 ### Step 2
 
@@ -403,7 +409,7 @@ To fix this issue, replace the text placeholder with a look-alike label element.
 
 ## Wrap up
 
-Congratulations! You have completed all of the testing for this demo. You can look at all of these changes in the [updated Codepen for this demo](https://codepen.io/cariefisher/pen/jOpErYa/9fb2041ec9e121fc06d76b793b9818a1).
+Congratulations! You have completed all of the testing for this demo. You can look at all of these changes in the [updated Codepen for this demo](https://codepen.io/web-dot-dev/pen/PoBZgrW).
 
 Now, you can use what you've learned to review the accessibility of your own
 websites and apps.
