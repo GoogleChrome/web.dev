@@ -89,3 +89,10 @@ src/scss/_themes.scss
 # Eleventy
 # We generate our own .eleventyignore file dynamically during builds
 .eleventyignore
+
+# Browser logos
+# They are fetched from npm
+src/images/icons/chrome.svg
+src/images/icons/edge.svg
+src/images/icons/firefox.svg
+src/images/icons/safari.svg

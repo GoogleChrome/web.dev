@@ -17,6 +17,7 @@
 const gulp = require('gulp');
 const convertDesignThemes = require('./gulp-tasks/convert-design-themes.js');
 const convertDesignTokens = require('./gulp-tasks/convert-design-tokens.js');
+const copyBrowserLogos = require('./gulp-tasks/copy-browser-logos.js');
 const copyDefaultLocale = require('./gulp-tasks/copy-default-locale.js');
 const copyFonts = require('./gulp-tasks/copy-fonts.js');
 const copyGlobalImages = require('./gulp-tasks/copy-global-images.js');
@@ -24,6 +25,7 @@ const copyMisc = require('./gulp-tasks/copy-misc.js');
 const sassTask = require('./gulp-tasks/sass.js');
 const writeVersion = require('./gulp-tasks/write-version.js');
 
+gulp.task('copy-browser-logos', copyBrowserLogos);
 gulp.task('convert-design-themes', convertDesignThemes);
 gulp.task('convert-design-tokens', convertDesignTokens);
 gulp.task('copy-misc', copyMisc);
@@ -36,6 +38,7 @@ gulp.task(
     convertDesignThemes,
     convertDesignTokens,
     gulp.parallel(
+      copyBrowserLogos,
       copyGlobalImages,
       copyMisc,
       copyFonts,
@@ -46,6 +49,11 @@ gulp.task(
 );
 
 gulp.task('watch', () => {
+  gulp.watch(
+    './node_modules/@browser-logos/**/*',
+    {ignoreInitial: true},
+    copyBrowserLogos,
+  );
   gulp.watch('./src/images/**/*', {ignoreInitial: true}, copyGlobalImages);
   gulp.watch('./src/misc/**/*', {ignoreInitial: true}, copyMisc);
   gulp.watch('./src/styles/**/*.scss', {ignoreInitial: true}, sassTask);

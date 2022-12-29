@@ -119,6 +119,10 @@
   "devDependencies": {
     "@actions/core": "^1.9.1",
     "@actions/github": "^5.0.0",
+    "@browser-logos/chrome": "^2.0.0",
+    "@browser-logos/edge": "^2.0.5",
+    "@browser-logos/firefox": "^3.0.9",
+    "@browser-logos/safari": "^2.1.0",
     "@percy/cli": "^1.0.0-beta.71",
     "@percy/puppeteer": "^2.0.0",
     "@types/chai": "^4.3.0",
