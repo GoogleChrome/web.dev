@@ -48,7 +48,7 @@ is added to a non-semantic element, such as a generic `<div>`.
 
 {% Compare 'better' %}
 ```html
-<button onclick="doAction()">Click me!</div>
+<button onclick="doAction()">Click me!</button>
 ```
 {% endCompare %}
 </div>
