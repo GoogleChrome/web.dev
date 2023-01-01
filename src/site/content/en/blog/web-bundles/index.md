@@ -118,8 +118,10 @@ specification built in [Go](https://golang.org/).
 1. Install `go/bundle`.
 
    ```bash
-   go get -u github.com/WICG/webpackage/go/bundle/cmd/...
+   go install github.com/WICG/webpackage/go/bundle/cmd/...@latest
    ```
+   -   This will install the command at $GOPATH/bin or $HOME/go/bin depending on if $GOPATH 
+       is set.
 
 1. Clone the [preact-todomvc](https://github.com/developit/preact-todomvc) repository and build
    the web app to get ready to bundle the resources.
@@ -134,7 +136,7 @@ specification built in [Go](https://golang.org/).
 2. Use the `gen-bundle` command to build a `.wbn` file.
 
     ```bash
-    gen-bundle -dir build -baseURL https://preact-todom.vc/ -primaryURL https://preact-todom.vc/ -o todomvc.wbn
+    ~/go/bin/gen-bundle -dir build -baseURL https://preact-todom.vc/ -primaryURL https://preact-todom.vc/ -o todomvc.wbn
     ```
 
 Congratulations! TodoMVC is now a Web Bundle.
@@ -181,7 +183,7 @@ Everything magically works.
   </figcaption>
 </figure>
 
-You could also try out other sample web bundles:
+You could also try out other sample web bundles (these no longer seem to work on Android Chrome):
 
 - [web.dev.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/web.dev.wbn) is a
    snapshot of the entire web.dev site, as of 2019 October 15.
