@@ -103,7 +103,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.64.0",
     "rollup-plugin-istanbul": "^3.0.0",
-    "rollup-plugin-postcss": "^2.9.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.11",
     "slugify": "^1.4.5",
