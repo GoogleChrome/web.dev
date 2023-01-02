@@ -190,7 +190,7 @@ Photo by [Darya Tryfanava] on [Unsplash].
 [File System Access API]: /file-system-access/
 [File API]: https://developer.mozilla.org/docs/Web/API/File/Using_files_from_web_applications
 [Generic Sensor API]: /generic-sensor/
-[DeviceMotion and DeviceOrientation]: https://developers.google.com/web/fundamentals/native-hardware/device-orientation
+[DeviceMotion and DeviceOrientation]: /device-orientation/
 [Geolocation API]: https://developers.google.com/web/fundamentals/native-hardware/user-location
 [Battery API]: https://developer.mozilla.org/docs/Web/API/Battery_Status_API
 [Remote Playback API]: https://www.chromestatus.com/feature/5778318691401728
