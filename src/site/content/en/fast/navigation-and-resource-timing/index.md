@@ -87,7 +87,7 @@ Another contributing factor to loading performance is connection negotiation, wh
 - `secureConnectionStart` marks when the client begins TLS negotiation.
 - `connectEnd` is when the connection to the web server has been established.
 
-Measuring total connection time is similar to measuring total DNS lookup time: you subtract the start timing from the end timing. However, there's an additional `secureConnectionStart` property that may be `0` if HTTPS isn't used or [if the connection is persistent](https://en.wikipedia.org/wiki/HTTP_persistent_connection). If you want measure TLS negotiation time, you'll need to keep that in mind:
+Measuring total connection time is similar to measuring total DNS lookup time: you subtract the start timing from the end timing. However, there's an additional `secureConnectionStart` property that may be `0` if HTTPS isn't used or [if the connection is persistent](https://en.wikipedia.org/wiki/HTTP_persistent_connection). If you want to measure TLS negotiation time, you'll need to keep that in mind:
 
 ```javascript
 // Quantifying total connection time
