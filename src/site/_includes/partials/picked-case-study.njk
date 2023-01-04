@@ -11,7 +11,7 @@
   {% if featureCard and featureCard.video %}
   {% Img src=pickedItem.data.hero, alt="", width="570", height="330", class="feature-card__background", fetchpriority="high"%}
   {% else %}
-  {% Img src=pickedItem.data.hero, alt="", width="570", height="330", class="feature-card__background" %}
+  {% Img src=pickedItem.data.hero, alt="", width="570", height="330", class="feature-card__background", loading="eager" %}
   {% endif %}
 </a>
 {% endif %}
