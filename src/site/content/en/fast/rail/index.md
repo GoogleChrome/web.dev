@@ -123,6 +123,10 @@ processing time:
   <figcaption>How idle tasks affect input response budget.</figcaption>
 </figure>
 
+{% Aside 'important' %}
+The 50 millisecond threshold for responding to interactions is great when conditions are ideal. For users on hardware with less memory and processing power, this threshold can be very difficult to achieve. This is why the [Interaction to Next Paint (INP)](/inp/) metric's "good" threshold is set to 200 milliseconds or less.
+{% endAside %}
+
 ## Animation: produce a frame in 10&nbsp;ms
 
 **Goals**:
