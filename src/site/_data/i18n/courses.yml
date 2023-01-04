@@ -92,3 +92,30 @@ learn_html:
     en: Learn HTML!
   description:
     en: "This HTML course for web developers provides a solid overview for developers, from novice to expert level HTML."
+
+learn_images:
+  title:
+    en: Learn Images!
+  description:
+    en: "A course about HTML images to help you improve your web developer expertise."
+images_and_performance:
+  title:
+    en: Images and performance
+  description:
+    en: "Learn how images can impact the performance of your site."
+image_formats:
+  title:
+    en: Image formats and compression
+  description:
+    en: "A detailed explanation of the different image formats and compression types."
+responsive_images:
+  title:
+    en: Responsive images
+  description:
+    en: "A modern approach to responsive image use."
+image_workflows:
+  title:
+    en: High performance image workflows
+  description:
+    en: "How to integrate the advice from this course into your workflow, CMS, CDN, and automation tools."
+    

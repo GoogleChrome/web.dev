@@ -1,0 +1,22 @@
+- url: /learn/images
+  sections:
+  - title: i18n.courses.images_and_performance.title
+  - url: /learn/images/history
+  - url: /learn/images/performance-issues
+  - title: i18n.courses.image_formats.title
+  - url: /learn/images/vector-images
+  - url: /learn/images/raster-images
+  - url: /learn/images/gif
+  - url: /learn/images/png
+  - url: /learn/images/jpeg
+  - url: /learn/images/webp
+  - url: /learn/images/avif
+  - title: i18n.courses.responsive_images.title
+  - url: /learn/images/responsive-images
+  - url: /learn/images/descriptive
+  - url: /learn/images/prescriptive
+  - title: i18n.courses.image_workflows.title
+  - url: /learn/images/automating
+  - url: /learn/images/cms
+  - url: /learn/images/cdn
+  
