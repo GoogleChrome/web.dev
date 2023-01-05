@@ -49,7 +49,7 @@ This is much like using a `label` element, with some key differences.
 
  1. `aria-labelledby` may be used on any element, not just labelable elements.
  1. While a `label` element refers to the thing it labels, the relationship is
-    reversed in the the case of `aria-labelledby` &mdash; the thing being
+    reversed in the case of `aria-labelledby` &mdash; the thing being
     labeled refers to the thing that labels it.
  1. Only one label element may be associated with a labelable element, but
     `aria-labelledby` can take a list of IDREFs to compose a label from multiple

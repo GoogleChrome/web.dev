@@ -196,7 +196,7 @@ convolverNode.buffer = impulseResponseAudioBuffer;
 /**
  * The delay effect needs some special routing.
  * Unlike most effects, this one takes the sound data out
- * of the the flow, reinserts it after a specified time (while
+ * of the flow, reinserts it after a specified time (while
  * looping it back into itself for another iteration).
  * You should add an AudioGainNode to quieten the
  * delayed sound...just so things don't get crazy :)

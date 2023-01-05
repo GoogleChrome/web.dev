@@ -167,7 +167,7 @@ Once you've confirmed that the problem exists, you can get help identifying the 
 
 The Profiler panel provides both a CPU profiler and a Heap profiler. Heap profiling works by taking a snapshot of the object graph. Before a snapshot is taken both the young and old generations are garbage collected. In other words, you will only see values which were alive when the snapshot was taken.
 
-There is too much functionality in the the Heap profiler to cover sufficiently in this article, but [detailed documentation](https://developer.chrome.com/devtools/docs/javascript-memory-profiling) can be found on the Chrome Developers site. We'll focus here on the Heap Allocation profiler.
+There is too much functionality in the Heap profiler to cover sufficiently in this article, but [detailed documentation](https://developer.chrome.com/devtools/docs/javascript-memory-profiling) can be found on the Chrome Developers site. We'll focus here on the Heap Allocation profiler.
 
 #### Using the Heap Allocation Profiler
 
