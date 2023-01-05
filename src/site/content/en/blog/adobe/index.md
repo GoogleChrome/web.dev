@@ -203,7 +203,7 @@ This section discusses future concepts not yet implemented in any browser.
 
 Leveraging the CSSOM is probably the most powerful and flexible way of implementing things like paging and responsive layout, but Adobe has been working with text and desktop publishing tools long enough to know that designers and developers are also going to want an easier way to get relatively generic paging capabilities. Therefore we are working on a proposal called CSS Page Templates which allows paging behavior to be defined entirely declaratively.
 
-Let's take a look at a common use case for CSS Page Templates. The code snippet below shows the use of CSS to create two named flows: "article-flow" and "timeline-flow." Additionally it defines a third selector called "combined-articles" inside of which the the two flows will be contained. The simple inclusion of the `overflow-style` property inside the "combined-articles" selector indicates that the content should automatically be paged along the x axis, or horizontally:
+Let's take a look at a common use case for CSS Page Templates. The code snippet below shows the use of CSS to create two named flows: "article-flow" and "timeline-flow." Additionally it defines a third selector called "combined-articles" inside of which the two flows will be contained. The simple inclusion of the `overflow-style` property inside the "combined-articles" selector indicates that the content should automatically be paged along the x axis, or horizontally:
 
 ```html
 <style>

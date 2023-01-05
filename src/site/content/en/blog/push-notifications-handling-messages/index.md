@@ -32,7 +32,7 @@ self.addEventListener('push', function(event) {
 The weirdest bit of this code to most developers who are new to service workers is the `self`
 variable. `self` is commonly used in Web Workers, which a service worker is. `self` refers to
 the global scope, kind of like `window` in a web page. But for web workers and service workers,
-`self` refers to the the worker itself.
+`self` refers to the worker itself.
 
 In the example above, `self.addEventListener()` can be thought of as adding an event listener to
 the service worker itself.

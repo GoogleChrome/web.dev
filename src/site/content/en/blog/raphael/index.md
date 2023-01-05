@@ -35,7 +35,7 @@ giving the desired coordinates and radius. Finally, I used the attribute functio
 (attr) to assign colors to the objects.
 
 Each SVG object can have attributes
-assigned to it for things like the the color, rotation, stroke color and size,
+assigned to it for things like the color, rotation, stroke color and size,
 etc. You can find a detailed list of assignable attributes [here](http://raphaeljs.com/reference.html#attr).
 
 ```js
