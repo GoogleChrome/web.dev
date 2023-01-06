@@ -13,9 +13,9 @@
       role="listitem"
     >
       {% set thumbnail = card.thumbnail or featured.data.thumbnail or featured.data.hero %}
-      {% set alt = featured.data.alt or card.title %}
-      {% if thumbnail %}
-        {% Img src=thumbnail, alt=alt, width="370", height="220" %}
+      {% set alt = featured.data.alt or card.title or '' %}
+      {% if (card.cardLayout == 'vertical' or card.cardLayout == 'horizontal') %}
+        {% if thumbnail %} {% Img src=thumbnail, alt=alt, width="370", height="220" %} {% endif %}
       {% endif %}
 
       <div class="content">
