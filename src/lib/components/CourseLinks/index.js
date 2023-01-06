@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 /**
  * @fileoverview A custom element to track the user's progress using
- * localstorage, and report progress using analytics.
+ * localstorage, which is used to marks sections as ticked in the course
+ * table of contents.
  *
  * We inline this element into the head of the document to avoid FOUC because
  * it needs to read from localstorage and then modify its children.
@@ -61,8 +62,7 @@ class CourseLinks extends HTMLElement {
 
   /**
    * Called when the element's children are first parsed.
-   * This will set attributes on the children so they render correctly
-   * and will track the user's progress in GA.
+   * This will set attributes on the children so they render correctly.
    */
   onSlotChange = () => {
     const children = Array.from(this.querySelectorAll('a'));
@@ -85,7 +85,7 @@ class CourseLinks extends HTMLElement {
   };
 
   /**
-   * Update the user's progress in localstorage and fire analytics.
+   * Update the user's progress in localstorage.
    * @param {Element[]} children
    * @param {string} currentUrl
    * @param {Course} course
@@ -101,33 +101,10 @@ class CourseLinks extends HTMLElement {
     const newPages = Array.from(oldPages);
 
     // Bucket the user's progress into increments of 10.
-    // For each 10%+ bucket jump, fire an analytics event.
-    // e.g. If there are 21 modules, and the user is on the 10th module, and
-    // clicks three more modules, the events will look like
-    // this:
-    // Math.floor((10/21) * 10) * 10 == 40
-    // Math.floor((11/21) * 10) * 10 == 50 (fire analytics event)
-    // Math.floor((12/21) * 10) * 10 == 50
-    // Math.floor((13/21) * 10) * 10 == 60 (fire analytics event)
-    // Note we're using integers to represent percents instead of decimals to
-    // avoid issues with floating point arithmetic.
-    const oldPercent = parseInt(course.percent, 10);
+    // Currently not used, but used to be used for analytics tracking
+    // and may be useful in future so keeping for now.
     const newPercent =
       Math.floor((newPages.length / children.length) * 10) * 10;
-
-    // Fire analytics if there's been a 10%+ bucket jump.
-    if (newPercent - oldPercent >= 10) {
-      // TODO: ideally, no code would directly call the `gtag()` function,
-      // instead, code should import functions from the analytics.js module
-      // so it can ensure everything is properly initialized before any
-      // data is sent to GA. Also, it doesn't make sense to include
-      // non-critical logic in a script that is inlined, so this should be
-      // refactored for that reason as well.
-      gtag('event', `course: ${courseKey} progress`, {
-        event_category: 'Course Events',
-        event_label: newPercent.toString(),
-      });
-    }
 
     // Write everything back to localstorage using the data-course-key
     // to identify which course it came from.
