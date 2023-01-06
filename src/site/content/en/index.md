@@ -5,8 +5,8 @@ intro:
   eyebrow: 'Brought to you by the Chrome DevRel team'
   title: "Building a better web, together"
   summary: |
-    Guidance to build modern web experiences that work on any browser
-  buttonText: 'Learn more'
+    Guidance to build modern web experiences that work on any browser.
+  buttonText: 'About web.dev'
   buttonUrl: '/about/'
   image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/zrBPJq27O4Hs8haszVnK.svg'
   imageWidth: '333'
@@ -14,10 +14,11 @@ intro:
 
 featuredCard:
   eyebrow: 'Featured'
-  title: 'Celebrate Chrometober with web tricks and treats'
-  background: 'image/SZHNhsfjU9RbCestTGZU6N7JEWs1/8JNKYwBSBG5CtMo2KxkB.png'
+  title: 'Watch the progress we made together on the web.'
+  background: ''
   url: 'https://www.youtube.com/watch?v=W9O4CuSUKb8'
-  alt: 'Celebrate Chrometober with web tricks and treats'
+  video: 'https://web-dev.imgix.net/video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lIta9ZJEALbfAzJzmiNl.mp4'
+  alt: 'Chrome icon rolls past a title: 2022 Year in Review.'
   theme: 'light'
 
 pickedCaseStudyUrl: '/mishipay/'
