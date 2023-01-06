@@ -65,6 +65,8 @@ For more details on how INP is measured, read the ["What's in an interaction?"](
 
 ### What's a good INP value?
 
+Pinning labels such as "good" or "poor" on a responsiveness metric is difficult. On one hand, you want to encourage development practices that prioritize good responsiveness. On the other hand, you must account for the fact that there's considerable variability in the capabilities of devices people use to set achievable development expectations.
+
 To ensure you're delivering user experiences with good responsiveness, a good threshold to measure is the **75th percentile** of page loads recorded in the field, segmented across mobile and desktop devices:
 
 - An INP below or at **200 milliseconds** means that your page has **good responsiveness**.
