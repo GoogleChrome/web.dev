@@ -319,7 +319,7 @@ If your site keeps user state—especially any sensitive user information—that
 data needs to be updated or cleared after a page is restored from bfcache.
 
 For example, if a user navigates to a checkout page and then updates their
-shopping cart, a back navigation could potentially surface out-of-date
+shopping cart, a back navigation could potentially expose out-of-date
 information if a stale page is restored from bfcache.
 
 Another, more critical example is if a user signs out of a site on a public

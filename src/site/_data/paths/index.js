@@ -4,7 +4,6 @@ const devices = require('./devices.json');
 const discoverable = require('./discoverable.json');
 const fast = require('./fast.json');
 const learnCoreWebVitals = require('./learn-core-web-vitals.json');
-const exampleCollection = require('./example-collection.json');
 const media = require('./media.json');
 const metrics = require('./metrics.json');
 const notifications = require('./notifications.json');
@@ -25,7 +24,6 @@ module.exports = {
   devices,
   discoverable,
   fast,
-  'example-collection': exampleCollection,
   'learn-core-web-vitals': learnCoreWebVitals,
   identity,
   media,

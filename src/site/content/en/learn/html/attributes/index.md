@@ -163,6 +163,11 @@ the user to the top of the page.
 The hash-mark separator in the `href` is not part of the fragment identifier. The fragment identifier is always the last
 part of the URL and is not sent to the server.
 
+#### CSS selectors
+
+In CSS, you can target each section using an id selector, such as `#feedback` or, for less [specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity), a case-sensitive
+[attribute selector](/learn/css/selectors/#attribute-selector), `[id="feedback"]`.
+
 #### Scripting
 
 On MLW.com, there is an easter egg for mouse users only. Clicking the light switch toggles the page on and off.
@@ -262,11 +267,6 @@ Using `aria-labelledby`, you can create a reverse association from a form contro
 nested in a `<label>`, whether the text labels more than one form control or not. If a control has both `<label>` and `aria-labelledby`, the `aria-labelledby`
 has precedence; users will not hear the `<label>` text unless the `aria-labelledby` includes the id of the label.
 {% endAside %}
-
-## CSS selectors
-
-In CSS, you can target each section using an id selector, such as `#feedback` or, for less [specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity), a case-sensitive
-[attribute selector](/learn/css/selectors/#attribute-selector), `[id="feedback"]`.
 
 ### `class`
 

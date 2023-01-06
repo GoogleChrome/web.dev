@@ -2,7 +2,9 @@
 title: 'Typography'
 authors:
   - cariefisher
-description: How to create accessible typography.
+description: >
+  Pick the right typefaces, font sizes, and structure your copy with
+  an accessible layout.
 date: 2022-09-30
 tags:
   - accessibility

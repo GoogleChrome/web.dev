@@ -70,7 +70,7 @@ above 75% to attract higher-value advertising
 
 ### Optimizing CLS
 
-Advertisements often load late (sometimes consciously through lazy-loading),
+Advertisements often load late (sometimes consciously through lazy loading),
 and their real size is often not known in advance due to multisize and fluid ad placements.
 
 The problem can be divided into two—ads above and below the fold.
@@ -92,7 +92,7 @@ and CSS media rules used to reserve space.
 * A banner that is loaded at the time a user scrolls over it can introduce additional content jumps.
 
 To maintain a good page experience and high ad viewability,
-Netzwelt implemented lazy-loading and reserved space for the size of the lowest common denominator.
+Netzwelt implemented lazy loading and reserved space for the size of the lowest common denominator.
 In a multisize zone the banners requested in the sizes 300x250 to 300x600, reserved 250px in height.
 This eliminated layout shifts for the smaller sizes; and reduced them massively for larger banners.
 This approach is not optimal, but it is a start and a good compromise.
@@ -158,7 +158,7 @@ Besides these optimizations, Netzwelt followed other best practices:
 
 * Separated CSS for critical rendering path and put it in the header.
 * Preloaded the most important fonts, scripts, and images.
-* Avoided lazy-loading images above the fold.
+* Avoided lazy loading images above the fold.
 * Used `font-display="swap"`.
 
 ## GDPR Consent and Core Web Vitals

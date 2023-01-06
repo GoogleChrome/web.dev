@@ -257,7 +257,7 @@ Examples:
 * [Extending Workbox](/extending-workbox/)
 * [Workers overview](/workers-overview/)
 * [Building a Stories component](/building-a-stories-component/)
-* [Browser-level lazy-loading for CMSs](/browser-level-lazy-loading-for-cmss/)
+* [Browser-level lazy loading for CMSs](/browser-level-lazy-loading-for-cmss/)
 * [Measuring offline usage](/measuring-offline-usage/)
 
 Note that some of these examples use the generic term "post" or "article".

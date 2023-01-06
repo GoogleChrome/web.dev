@@ -27,7 +27,7 @@ installed to home screen.
 ### Possible Improvements
 
 The load time (see WebPageTest score) on mobile 3G could be significantly
-improved if the the precaching of all beats and loops was removed or done in
+improved if the precaching of all beats and loops was removed or done in
 a smarter way. Gzip compression on assets is missing and and easy fix, and
 the touch targets are slightly too small for smaller screens.
 

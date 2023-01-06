@@ -40,21 +40,16 @@ module.exports = {
   gitlocalize: 'https://gitlocalize.com/repo/6062/',
   analytics: {
     ids: {
-      prod: 'UA-126406676-2',
-      // TODO (robdodson): These properties exist in GA but we don't use them.
-      // Adding a note to inject these into pages when we create a fancier
-      // staging environment.
-      staging: 'UA-126406676-3',
-      notFound: 'UA-126406676-4',
+      ga4: 'G-18JR3Q8PJ8',
+      ua: 'UA-126406676-2',
     },
     dimensions: {
-      SIGNED_IN: 'dimension1',
-      TRACKING_VERSION: 'dimension5',
+      MEASUREMENT_VERSION: 'dimension5',
       NAVIGATION_TYPE: 'dimension6',
       COLOR_SCHEME_PREFERENCE: 'dimension7',
       WEB_VITALS_DEBUG: 'dimension8',
     },
-    version: 14,
+    version: 15,
   },
   firebase: {
     prod: {

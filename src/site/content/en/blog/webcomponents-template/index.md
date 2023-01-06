@@ -316,9 +316,9 @@ being added to the platform. Obvious win, right? A library popularized fetching 
 with CSS selectors and standards later adopted it. It doesn't always work that way, but I *love* when it does.
 
 I think `<template>` is a similar case. It standardizes the way we do client-side
-templating, but more importantly, it removes the need for our crazy 2008 hacks.
+templating, but more importantly, it removes the need for our 2008 hacks.
 Making the entire web authoring process more sane, more maintainable, and more
-full featured is always a good thing in my book.
+full-featured is always a good thing in my book.
 
 ## Additional resources
 

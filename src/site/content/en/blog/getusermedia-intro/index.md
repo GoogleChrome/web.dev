@@ -251,7 +251,7 @@ For more configurations, see the [constraints API](http://dev.w3.org/2011/webrtc
 
 ### Selecting a media source
 
-In Chrome 30 or later, `getUserMedia()` also supports selecting the the video/audio source
+In Chrome 30 or later, `getUserMedia()` also supports selecting the video/audio source
 using the `MediaStreamTrack.getSources()` API.
 
 In this example, the last microphone and camera that's found is selected as the
