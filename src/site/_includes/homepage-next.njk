@@ -33,7 +33,7 @@ externalScripts:
                 <source src="{{ featuredCard.video }}" type="video/mp4;">
               </video>
             {% elif featuredCard.background %}
-            {% Img src="image/SZHNhsfjU9RbCestTGZU6N7JEWs1/8JNKYwBSBG5CtMo2KxkB.png", alt=featuredCard.alt, width="800", height="434", class="feature-card__background" %}
+            {% Img src=featuredCard.background, alt=featuredCard.alt, width="800", height="434", class="feature-card__background", fetchpriority="high" %}
             {% endif %}
           </a>
 
