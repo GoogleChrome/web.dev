@@ -63,7 +63,7 @@ An interaction's latency consists of the single longest [duration](https://w3c.g
 For more details on how INP is measured, read the ["What's in an interaction?"](#whats-in-an-interaction) section.
 {% endAside %}
 
-### What's a good INP value?
+### What is a good INP score?
 
 Pinning labels such as "good" or "poor" on a responsiveness metric is difficult. On one hand, you want to encourage development practices that prioritize good responsiveness. On the other hand, you must account for the fact that there's considerable variability in the capabilities of devices people use to set achievable development expectations.
 
