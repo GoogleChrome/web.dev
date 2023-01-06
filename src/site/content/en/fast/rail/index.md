@@ -304,7 +304,7 @@ The following DevTools features are especially relevant:
 ### Lighthouse
 
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is available in
-Chrome DevTools,  at [https://pagespeed.web.dev/](PageSpeed Insights), as a
+Chrome DevTools,  at [PageSpeed Insights](https://pagespeed.web.dev/), as a
 Chrome Extension, as a Node.js module, and within WebPageTest. You give it a
 URL, it simulates a mid-range device with a slow 3G connection, runs a series of
 audits on the page, and then gives you a report on load performance, as well as
