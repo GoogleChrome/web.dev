@@ -32,11 +32,11 @@ These communities are good starting points:
 * [StopBadware.org](https://www.stopbadware.org) offers
 [articles](https://www.stopbadware.org/common-hacks) and
 [tools](https://www.stopbadware.org/hacked-sites-resources).
-* [Google Webmaster Central](http://www.google.com/webmasters/)'s discussion
+* [Google Search Central](https://developers.google.com/search)'s discussion
 forum has a special subforum for
-[Malware and hacked sites](http://productforums.google.com/forum/#!categories/webmasters/malware--hacked-sites).
+[Malware and hacked sites](https://support.google.com/webmasters/threads?hl=en&thread_filter=(category:security_malware_hacked)).
 Most responses come from highly engaged members and the community's
-[Top Contributors](https://sites.google.com/site/webmasterhelpforum/en/bionic-posters).
+[Product Experts](https://productexperts.withgoogle.com/).
 
 
 ## Determine if this is something you can handle yourself
