@@ -2,7 +2,7 @@
   "slug": "fast",
   "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/fjFJRFnHXiem8yF0GGQ9.svg",
   "title": "i18n.paths.fast.title",
-  "updated": "November 10, 2022",
+  "updated": "January 6, 2023",
   "description": "i18n.paths.fast.description",
   "overview": "i18n.paths.fast.overview",
     "topics": [
@@ -12,8 +12,18 @@
         "why-speed-matters",
         "what-is-speed",
         "how-to-measure-speed",
-        "how-to-stay-fast",
-        "rail"
+        "how-to-stay-fast"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.core_web_vitals",
+      "pathItems": [
+        "vitals",
+        "user-centric-performance-metrics",
+        "defining-core-web-vitals-thresholds",
+        "lcp",
+        "cls",
+        "fid"
       ]
     },
     {
@@ -116,7 +126,9 @@
         "chrome-ux-report-data-studio-dashboard",
         "chrome-ux-report-pagespeed-insights",
         "chrome-ux-report-bigquery",
-        "chrome-ux-report-api"
+        "chrome-ux-report-api",
+        "lab-and-field-data-differences",
+        "crux-and-rum-differences"
       ]
     },
     {

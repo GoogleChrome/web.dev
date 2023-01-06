@@ -4,6 +4,7 @@ title: Measure performance with the RAIL model
 description: |
   RAIL model enables designers and developers to reliably target the performance optimization work that has the highest impact on user experience. Learn what goals and guidelines the RAIL model sets out and which tools you can use to achieve them.
 date: 2020-06-10
+updated: 2023-01-06
 tags:
   - performance
   - animations
@@ -20,6 +21,10 @@ tags:
 thinking about performance. The model breaks down the user's experience into key
 actions (for example, tap, scroll, load) and helps you define performance goals
 for each of them.
+
+{% Aside 'important' %}
+[Core Web Vitals](/vitals/) is a newer initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web. It is the recommended approach for defining performance goals over RAIL, and has [different thresholds](/defining-core-web-vitals-thresholds/) than those detailed here.
+{% endAside %}
 
 RAIL stands for four distinct aspects of web app life cycle: response,
 animation, idle, and load. Users have different performance expectations for
@@ -122,10 +127,6 @@ processing time:
   {% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="Diagram showing how input received during an idle task is queued, reducing available input processing time to 50ms", width="800", height="400" %}
   <figcaption>How idle tasks affect input response budget.</figcaption>
 </figure>
-
-{% Aside 'important' %}
-The 50 millisecond threshold for responding to interactions is great when conditions are ideal. For users on hardware with less memory and processing power, this threshold can be very difficult to achieve. This is why the [Interaction to Next Paint (INP)](/inp/) metric's "good" threshold is set to 200 milliseconds or less.
-{% endAside %}
 
 ## Animation: produce a frame in 10&nbsp;ms
 
@@ -303,7 +304,7 @@ The following DevTools features are especially relevant:
 ### Lighthouse
 
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is available in
-Chrome DevTools,  at [web.dev/measure](/measure/), as a
+Chrome DevTools,  at [https://pagespeed.web.dev/](PageSpeed Insights), as a
 Chrome Extension, as a Node.js module, and within WebPageTest. You give it a
 URL, it simulates a mid-range device with a slow 3G connection, runs a series of
 audits on the page, and then gives you a report on load performance, as well as
