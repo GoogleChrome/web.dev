@@ -1,3 +1,5 @@
+@import '../../styles/settings/colors';
+
 .homepage {
   // Creates a pencil line for the one case where there's a border
   hr {
@@ -9,134 +11,67 @@
   hr + * {
     --flow-space: unset;
   }
+
+  .headline__title {
+    max-width: 100%;
+
+    @include media-query('md') {
+      margin-top: 50px;
+    }
+  }
+
+  .cluster {
+    gap: 0.5rem 0.8rem;
+
+    .pill {
+      padding: 0.5rem 0.8rem;
+    }
+  }
+
+  web-subscribe {
+    border-top: none;
+  }
 }
 
 .homepage__section {
   padding-block: get-space('size-3');
 }
 
+.homepage__developers svg {
+  fill: var(--color-mid-text);
+}
+
+.homepage__news {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 2fr;
+  grid-column-gap: 30px;
+  max-width: 70rem;
+  margin: auto;
+
+  .card {
+    justify-self: center;
+    margin-bottom: 30px;
+  }
+
+  @include media-query('md') {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+
+    .card {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .homepage .repel {
   --repel-vertical-alignment: stretch;
 }
 
-.homepage__case-studies {
-  --switcher-vertical-alignment: stretch;
+.homepage__collection {
+  border-top: 1px solid var(--color-stroke);
 
-  max-width: 70rem;
-  margin-inline: auto;
-
-  > * {
-    max-width: unset;
-  }
-}
-
-/// Specific cards for shows and podcasts
-.homepage__shows {
-  display: flex;
-  flex-direction: column;
-  gap: $global-gutter;
-
-  &:link,
-  &:visited {
-    color: get-color('shades-light');
-  }
-}
-
-.homepage__show {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-  border: 0;
-  overflow: hidden;
-  aspect-ratio: 0.84;
-  min-height: 400px;
-  max-width: 100%;
-  padding: $global-gutter;
-  border-radius: $global-radius-large;
-  text-decoration: none;
-
-  > img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    transition: transform $global-transition-movement;
-  }
-
-  .flow {
-    position: relative;
-    z-index: 1;
-  }
-
-  /// Assures the focus ring isn't clipped
-  &:focus {
-    z-index: 1;
-  }
-
-  &:hover,
-  &:focus {
-    > img {
-      transform: scale(1.05);
-    }
-  }
-}
-
-/// Code patterns section
-.homepage__patterns {
-  --cluster-horizontal-alignment: center;
-  --cluster-vertical-alignment: stretch;
-
-  .card {
-    border: none;
-    font-size: 0.9em;
-    max-width: 25rem;
-    padding: get-space('size-1');
-
-    @include apply-utility('bg', 'mid-bg');
-
-    img {
-      background-color: transparent;
-    }
-  }
-}
-
-@include media-query('md') {
-  .homepage__shows {
-    width: max-content;
-    margin-inline: auto;
-  }
-
-  .homepage__show {
-    max-width: 40rem;
-    min-height: 500px;
-  }
-}
-
-/// Specific overrides for the page-speed hero that are not consistent
-/// with the main hero pattern
-@include media-query('lg') {
-  .homepage__shows {
-    flex-direction: row;
-    gap: 0;
-    width: unset;
-    max-width: 75rem;
-  }
-
-  .homepage__show {
-    max-width: unset;
-    width: 50%;
-
-    &:first-child {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    &:last-child {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
+  .wrapper {
+      padding-top: 2.5rem;
   }
 }
