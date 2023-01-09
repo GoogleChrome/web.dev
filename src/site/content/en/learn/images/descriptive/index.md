@@ -311,9 +311,7 @@ eleventyConfig.addAsyncShortcode("respimg", imageShortcode);
 You could then use this shortcode in place of the default image syntax:
 
 ```javascript
-{%
- respimg "img/butterfly.jpg", "Alt attribute.", "(min-width: 30em) 800px, 80vw"
-%}
+{% respimg "img/butterfly.jpg", "Alt attribute.", "(min-width: 30em) 800px, 80vw" %}
 ```
 
 If configured to output multiple encodings, as above, the generated markup will be a `<picture>` element containing corresponding
