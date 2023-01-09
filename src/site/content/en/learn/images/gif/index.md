@@ -21,7 +21,7 @@ algorithm, if you're curious. The finer details of how this algorithm works are 
 works a bit like "Uglifying" JavaScript, where repeated strings of characters throughout the file are saved to a sort of internal dictionary,
 so they can be referenced rather than repeated every time they appear.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/Tw0sKLdMUWoyESIhTCOd.png", alt="Visualization of the gif reference using a four-by-four grid", width="800", height="873" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/AWgIX677XevD9J0ZUBo3.png", alt="Visualization of the gif reference using a four-by-four grid", width="800", height="873" %}
 
 Granted, the [algorithm isn't quite as simple](https://giflib.sourceforge.net/whatsinagif/lzw_image_data.html) as a paint-by-number. It steps
 again through the generated table of color codes to find repeated sequences of pixel colors and creates a second table of referencable codes. At no
@@ -36,7 +36,7 @@ transparent pixel will reference the index of a transparent “color” in the c
 The practice of reducing a range of values to a smaller, approximated set of output values is called _quantization_, a term you'll be seeing a lot
 when learning about image encodings. The results of this palette quantization are usually obvious:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/PjWX2BD4QXqj3efvX7MP.png", alt="Static gif example", width="786", height="798" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/PjWX2BD4QXqj3efvX7MP.png", alt="Static gif example", width="393", height="399" %}
 
 To better understand this process, think back to the raster image grid you were able to recreate from my description.
 
@@ -44,7 +44,7 @@ To better understand this process, think back to the raster image grid you were 
 
 This time around, add a little more detail to that original image: a few more pixels, one of which is a slightly darker shade of blue:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/tlhrZgd7HxTBaVguWa8d.png", alt="Blue to red horizontal boxes in a two-by-four configuration, with one blue box shaded darker than the others", width="652", height="204" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/m9BkyRb7yy1zLBlvlHka.png", alt="Blue to red horizontal boxes in a two-by-four configuration, with one blue box shaded darker than the others", width="752", height="400" %}
 
 Absent any compression—so to speak—you could describe this grid as:
 
@@ -79,8 +79,6 @@ You've rendered the image exactly as I've encoded it, based on our shared unders
 
 Now, in this exaggerated example, reducing three colors to two makes for an obvious difference in quality. Across a larger and
 more detailed image the effects might not be quite as noticeable, but they would still be visible.
-
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/Zrt3c8Pot1y3GFou1JFz.png", alt="Pink flowers on a green background", width="800", height="573" %}
 
 When encoded as a GIF, subtle gradients like shadows become mottled, with individual pixels standing out from their surroundings:
 

@@ -139,7 +139,7 @@ tab: 'html,css,result'
 The `type` attribute allows you to use the `<picture>` element's single-request decision engine to only serve image formats
 to browsers that support them.
 
-As you learned in [Image Formats and Compression](#), an encoding that the browser can't parse won't even be recognizable as
+As you learned in [Image Formats and Compression](/avif/#browser-support/), an encoding that the browser can't parse won't even be recognizable as
 image data.
 
 Before the introduction of the `<picture>` element, the most viable front-end solutions for serving new image formats required

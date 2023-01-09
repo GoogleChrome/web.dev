@@ -28,7 +28,7 @@ requests possible, based on the information the browser has at hand.
 
 To enable browsers to make these choices, `srcset` allows you to provide the browser with a list of potential sources for populating a single
 `<img>`, while `sizes` allows you to provide the browser with information about how that `<img>` will be rendered. You'll learn how to use
-these in the next module.
+these in the [next module](/descriptive/).
 
 ## Prescriptive syntaxes
 
@@ -42,9 +42,9 @@ want to display versions of the same image content with different aspect ratios,
 or make sure only browsers with support for a specific encoding receive specific sources.
 
 In these cases, you want explicit control over which source is shown, and when. These are assurances that `srcset` and `sizes` can't give us,
-by design. To get that control, we'll need to use the `<picture>` element.
+by design. To get that control, we'll need to use the [`<picture>` element](/prescriptive/).
 
-# Descriptive syntaxes with `srcset` and `sizes`
+## Descriptive syntaxes with `srcset` and `sizes`
 
 In this module, you'll learn how to give the browser a choice of images so that it can make the best decisions about what to display. `srcset`
 isn't a method for swapping image sources at specific breakpoints, and it isn't meant to swap one image for another. These syntaxes allow the
@@ -77,7 +77,7 @@ double the logical resolution. Any device prior to the iPhone 4 had a DPR of 1: 
 If you view that `400px`-wide image on a display with a DPR of `2`, each logical pixel is being rendered across four of the
 display's physical pixels: two horizontal and two vertical. The image doesn't benefit from the high-density display—it will look the
 same as it would on a display with a DPR of `1`. Of course, anything “drawn” by the browser's rendering engine—text, CSS shapes, or SVGs,
-for example—will be drawn to suit the higher-density display. But as you learned from [Image Formats and Compression], raster images are fixed
+for example—will be drawn to suit the higher-density display. But as you learned from [Image Formats and Compression](/raster-images/), raster images are fixed
 grids of pixels. While it may not always be glaringly obvious, a raster image upscaled to suit a higher-density display will look
 low-resolution compared to the surrounding page.
 
@@ -144,7 +144,7 @@ The deliberately vague resource selection algorithm used by `srcset`/`sizes` lea
 images with bandwidth dips, or based on a preference to minimize data usage, without us taking on responsibility for how, or when, or at
 what threshold. There's no sense in taking on responsibilities—and additional work—that the browser is better equipped to handle for you.
 
-### Describing widths with `w`
+## Describing widths with `w`
 
 `srcset` accepts a second type of descriptor for image source candidates. It's a far more powerful one—and for our purposes, a
 great deal easier to understand. Rather than flagging a candidate as having the appropriate dimensions for a given display density,
@@ -194,7 +194,7 @@ image occupy 80% of the viewport,” but “this image will end up occupying 80%
 
 {% Codepen {
 user: 'web-dot-dev',
-id: 'MWBbqeg?editors=1100',
+id: 'PoBWLYP',
 height: 300,
 theme: dark,
 tab: 'html,css,result'
@@ -244,7 +244,7 @@ mix-and-match CSS units—for example, an image that occupies the full width of 
 	alt="...">
 ```
 
-### Describing breakpoints
+## Describing breakpoints
 
 If you've spent much time working with responsive layouts, you've likely noticed something missing from these examples:
 the space an image occupies in a layout is very likely to change across our layout's breakpoints. In that case, you need
