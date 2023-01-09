@@ -40,7 +40,7 @@ when learning about image encodings. The results of this palette quantization ar
 
 To better understand this process, think back to the raster image grid you were able to recreate from my description.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/tlhrZgd7HxTBaVguWa8d.png", alt="Blue to red horizontal boxes", width="652", height="204" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/pwUWoFFo7MVq58e05NnK.png", alt="Three horizontal blue boxes followed by one red box", width="652", height="204" %}
 
 This time around, add a little more detail to that original image: a few more pixels, one of which is a slightly darker shade of blue:
 
