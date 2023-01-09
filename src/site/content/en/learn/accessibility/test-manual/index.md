@@ -11,7 +11,7 @@ tags:
 {% Aside %}
 This module on manual accessibility testing is a continuation of the previous
 module, [automated accessibility testing](/learn/accessibility/test-automated/).
-If you have not gone through the exercises in that module yet, we encourage you
+If you have not yet completed the exercises in that module, we encourage you
 to do so. This module starts where the previous one left off, focusing on
 manual accessibility testing tools and techniques.
 {% endAside %}
@@ -43,8 +43,8 @@ Cons of manual accessibility tests:
 * May be difficult to repeat at scale
 * Require more accessibility expertise to run tests and interpret the results
 
-Let's compare what accessibility can currently be detected by an automated
-tool, versus elements and details that won't be detected.
+Let's compare what accessibility elements and details can currently be detected by an automated
+tool, versus those that won't be detected.
 
 <div class="table-wrapper scrollbar">
   <table data-alignment="top" >
@@ -65,8 +65,23 @@ tool, versus elements and details that won't be detected.
       </tr>
       <tr>
         <td>Headings, lists, and landmarks exist</td>
-        <td><a href="/learn/accessibility/structure">Headings, lists, and landmarks</a> are correctly marked-up and all elements are accounted for
-</td>
+        <td><a href="/learn/accessibility/structure">Headings, lists, and landmarks</a> are correctly marked-up and all elements are accounted for</td>
+      </tr>
+      <tr>
+        <td>ARIA is present</td>
+        <td><a href="/learn/accessibility/aria-html/">ARIA</a> is being used appropriately and applied to the correct element(s)</td>
+      </tr>
+      <tr>
+        <td>Identifying keyboard-focusable elements</td>
+        <td>Which elements are missing <a href="/learn/accessibility/focus/">keyboard focus</a>, the focus order makes logical sense, and the focus indicator is visible</td>
+      </tr>
+      <tr>
+        <td>iFrame title detection</td>
+        <td><a href="learn/accessibility/more-html/">iFrame</a>, the focus order makes logical sense, and the focus indicator is visible </td>
+      </tr>
+      <tr>
+        <td>Video element is present</td>
+        <td>Video element has appropriate <a href="/learn/accessibility/motion/">alternative media</a> present (such as captions and transcripts)</td>
       </tr>
     </tbody>
   </table>
@@ -75,11 +90,11 @@ tool, versus elements and details that won't be detected.
 ## Types of manual tests
 
 There are many manual tools and techniques to consider when looking at your
-webpage or app for digital accessibility. The three biggest focus areas in
+web page or app for digital accessibility. The three biggest focus areas in
 manual testing are keyboard functionality, visually-focused reviews, and
 general content checks.
 
-We will cover each of these topics on a high level in this module, but the
+We will cover each of these topics at a high level in this module, but the
 following tests are not meant to be an exhaustive list of all the manual tests
 you can or should run. We encourage you to start with a
 [manual accessibility checklist](https://www.ibm.com/able/toolkit/verify/manual)
@@ -88,10 +103,10 @@ for your specific digital product and team needs.
 
 {% Aside %}
 
-Some organizations consider assistive technology (AT) checks part of the manual
+Some organizations consider assistive technology (AT) checks to be part of the manual
 testing process as there are a lot of overlaps. In this course, we break AT
 testing into a separate module, as it's more advanced than other manual tests
-and deserves a deeper and separate focus. 
+and deserves a deeper and separate focus.
 
 {% endAside %}
 
@@ -102,12 +117,12 @@ to a lack of keyboard support. As we learned in the [keyboard focus](/learn/acce
 
 Keyboard tests answer questions such as:
 
-* Does the webpage or feature require a mouse to function?
+* Does the web page or feature require a mouse to function?
 * Is the tabbing order logical and intuitive?
 * Is the keyboard focus indicator always visible?
-* Can you get stuck in an element that shouldn't trap your focus?
-* Can you navigate behind or around an element that should be trapping the focus (e.g., modal pop-up)?
-* When closing an element that received focus, did the focus return to a logical place?
+* Can you get stuck in an element that shouldn't trap focus?
+* Can you navigate behind or around an element that should be trapping focus?
+* When closing an element that received focus, did the focus indicator return to a logical place?
 
 While the impact of keyboard functionality is huge, the testing procedure is quite simple. All you need to do is set aside your mouse or install a [small JavaScript package](https://github.com/marcysutton/no-mouse-days) and test your website using only your keyboard. The following commands are essential for keyboard testing.
 
@@ -130,7 +145,7 @@ While the impact of keyboard functionality is huge, the testing procedure is qui
       </tr>
       <tr>
         <td>Arrows</td>
-        <td>Cycles through related controls</td>
+        <td>Cycle through related controls</td>
       </tr>
       <tr>
         <td>Spacebar</td>
@@ -142,7 +157,7 @@ While the impact of keyboard functionality is huge, the testing procedure is qui
       </tr>
       <tr>
         <td>Enter</td>
-        <td>Trigger specific controls</td>
+        <td>Triggers specific controls</td>
       </tr>
       <tr>
         <td>Escape</td>
@@ -156,10 +171,10 @@ While the impact of keyboard functionality is huge, the testing procedure is qui
 
 Visual checks focus on visual elements of the page and utilize tools such as screen magnification or browser zoom to review the website or app for accessibility.
 
-Visual can tell you:
+Visual checks can tell you:
 
 * Are there color contrast issues that an automated tool could not pick up, such as text on top of a gradient or image?
-* Are any elements that look like headings, lists, and other structural elements but are not coded as such?
+* Are there any elements that look like headings, lists, and other structural elements but are not coded as such?
 * Are navigation links and form inputs consistent throughout the website or app?
 * Is there any flashing, strobing, or animation that exceeds the recommendations?
 * Does the content have proper spacing? For letters, words, lines, and paragraphs?
@@ -182,11 +197,11 @@ Content checks answer questions such as:
 * Are there any changes to the language within a page?
 * Is [plain language](https://www.w3.org/WAI/GL/WCAG3/2021/how-tos/clear-words/) being used and are all acronyms spelled out when first referenced?
 
-Some content chacks can be automated, in part. For example, you could write a JavaScript linter that checks for "Click here" and suggests you make a change. However, these custom solutions often still need a human to change the copy to something contextual.
+Some content checks can be automated, in part. For example, you could write a JavaScript linter that checks for "Click here" and suggests you make a change. However, these custom solutions often still need a human to change the copy to something contextual.
 
 ## Demo: Manual test
 
-So far, we have run automated tests on our demo webpage and found and remediated eight different issue types. We are now ready to run manual checks to see if we can discover even more accessibility issues.
+So far, we have run automated tests on our demo web page and found and remediated eight different issue types. We are now ready to run manual checks to see if we can discover even more accessibility issues.
 
 ### Step 1
 
@@ -195,7 +210,7 @@ of the automated accessibility updates applied.
 
 View it in [debug mode](https://cdpn.io/pen/debug/PoBZgrW) to proceed with the
 next tests. This is important, as it removes the `<iframe>` which surrounds the
-demo webpage, which may interfere with some testing tools. Learn more about
+demo web page, which may interfere with some testing tools. Learn more about
 [CodePen's debug mode](https://blog.codepen.io/documentation/debug-view/#getting-to-debug-view-3).
 
 ### Step 2
@@ -253,11 +268,11 @@ Since we would like people to use this field to sign-up for our newsletter, all 
 
 Once keyboard focus has been checked, we move on to visual and content checks.
 
-#### Issue 3: link color contrast {: #link-color-contrast}
+#### Issue 3: Link color contrast {: #link-color-contrast}
 
 As you went through the keyboard tests by tabbing up and down the demo page,
 you probably noticed the keyboard focused on three visually hidden links in the
-paragraphs on the different medical conditions.
+paragraphs about the different medical conditions.
 
 For our page to be accessible, links must stand out from the surrounding text
 and include a non-color style change on mouse hover and keyboard focus.
@@ -301,7 +316,7 @@ Another missed color contrast issue is the social media icons. In the [color and
 </figure> <strong>Let's fix it.</strong>
 </span>
 
-To meet the 3:1 color contrast requirements, the social media icons were changed to a darker gray.
+To meet the 3:1 color contrast requirements, the social media icons are changed to a darker gray.
 
 <figure class="screenshot">
   {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/E02bbVtKS9QCkQi8PvCc.png", alt="A screenshot of the demo with the color analyzer showing failing icon color contrast.", width="800", height="570"
@@ -356,11 +371,11 @@ p.bullet {
 
 Once you've identified and fixed all the manual accessibility issues outlined in the previous steps, your page should look similar to our screenshot.
 
-It's possible you'll find more accessibility issues in your manual checks than we covered in this module. We'll discover many of these issues in the next module.
+It's possible that you'll find more accessibility issues in your manual checks than we covered in this module. We'll discover many of these issues in the next module.
 
 ## Next step
 
-Way to go! You have gotten through the automated and manual testing modules.
+Way to go! You have completed the automated and manual testing modules.
 You can view our [updated CodePen](https://codepen.io/web-dot-dev/pen/eYjZdve),
 which has all the automated and manual accessibility fixes applied.
 

@@ -16,7 +16,7 @@ how to measure color contrast, when JavaScript is essential, amongst other topic
 In the remaining modules, we shift gears from designing and building to testing
 for accessibility. We'll utilize a three-step testing process that includes
 automated, manual, and assistive technology testing tools and techniques. We'll
-use the same demo throughout these testing modules to progress the webpage from
+use the same demo throughout these testing modules to progress the web page from
 inaccessible to accessible.
 
 Each test—automated, manual, and assistive tech—is critical to achieving the
@@ -124,7 +124,7 @@ into your testing workflow. We'll use the Chrome extension for this demo.
 We have built a [demo in CodePen](https://codepen.io/web-dot-dev/pen/yLqOaEP).
 View it in [debug mode](https://cdpn.io/pen/debug/yLqOaEP) to proceed with the
 next tests. This is important, as it removes the `<iframe>` which surrounds the
-demo webpage, which may interfere with some testing tools. Learn more about
+demo web page, which may interfere with some testing tools. Learn more about
 [CodePen's debug mode](https://blog.codepen.io/documentation/debug-view/#getting-to-debug-view-3).
 
 ### Step 3
@@ -146,7 +146,7 @@ is calculated by the number of issues, issue types, and the impact on users of
 the issues detected.
 
 Beyond a score, the Lighthouse report includes detailed information about what
-issues it detected and links to resources to learn more about remediating them.
+issues it has detected and links to resources to learn more about remedying them.
 The report also includes tests that are passed or not applicable and a list of
 additional items to check manually.
 
@@ -164,7 +164,7 @@ rulesets, your test results may vary.
 
 ### Step 5
 
-Let's go through an example of each automated accessibility issue discovered
+Now, 's go through an example of each automated accessibility issue discovered
 and fix the relevant styles and markup.
 
 #### Issue 1: ARIA roles {: #aria-roles}
@@ -202,9 +202,10 @@ applied to it. In this case, the role can be removed completely.
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
+  </figure> <strong>Let's fix it.</strong>
 </span>
 
-The input field had an `aria-hidden="true"` attribute applied to it. Adding this attribute hides the element and everything nested under it from assistive tech. In this case, you should remove this attribute from the input to allow people using assistive technology to access and enter information into the form field.
+The input field had an `aria-hidden="true"` attribute applied to it. Adding this attribute hides the element (and everything nested under it) from assistive tech. In this case, you should remove this attribute from the input to allow people using assistive technology to access and enter information into the form field.
 
 ```html
 <input type="email" placeholder="Enter your e-mail address" tabindex="-1" required>
@@ -227,7 +228,7 @@ users who rely on screen readers.
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-When you removed the inaccurate ARIA role from the button element in [issue 1](#aria-roles), the word "Subscribe" becomes the accessible button name. This functionality is built into the semantic HTML button element. There are additional pattern options to consider for more complex situations.
+When you remove the inaccurate ARIA role from the button element in [issue 1](#aria-roles), the word "Subscribe" becomes the accessible button name. This functionality is built into the semantic HTML button element. There are additional pattern options to consider for more complex situations.
 
 ```html
 <button type="submit" tabindex="1">Subscribe</button>
@@ -275,7 +276,7 @@ navigation experience for screen reader users.
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-All of the actionable images on the page must include information about where the link will send users. One method to remediate this issue is to add alternative text to the image about the purpose like you did on the logo image in the example above. This works great for an image using a `<img>` tag, but `<svg>` tags cannot use this method.
+All of the actionable images on the page must include information about where the link will send users. One method to remedy this issue is to add alternative text to the image about the purpose, as you did on the logo image in the example above. This works great for an image using a `<img>` tag, but `<svg>` tags cannot use this method.
 
 For the social media icons, which use `<svg>` tags, you can use a [different alternative description pattern](https://codepen.io/web-dot-dev/pen/poZyEZd) targeting SVGs, add the information between the `<a>` and `<svg>` tags and then hide it visually from users, add a supported ARIA, or other options. Depending on your environment and code restrictions, one method might be preferable over another. Let's use the simplest pattern option with the most assistive technology coverage, which is adding a `role="img"` to the `<svg>` tag and including a `<title>` element.
 
@@ -323,7 +324,7 @@ Two examples were reported.
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-There are many color contrast issues detected on the webpage. As you learned in
+There are many color contrast issues detected on the web page. As you learned in
 the [color and contrast](/learn/accessibility/color-contrast/) module,
 regular-sized text (less than 18pt / 24px) has a color contrast requirement of
 4.5:1, while large-sized text (at least 18pt / 24px or 14pt / 18.5px bold) and
@@ -349,7 +350,7 @@ the 4.5:1 color contrast requirements.
       {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png", alt="The teal has been fixed and no longer fails.", width="320", height="228" %}
   </a>
 
-   The club name, `<div class="club-name">Medical Mysteries Club</div>` , has been given a color value of `#008576` and the background remaind `#ffffff`. The updated color contrast ratio is 4.5:1.
+   The club name, `<div class="club-name">Medical Mysteries Club</div>` , has been given a color value of `#008576` and the background remains `#ffffff`. The updated color contrast ratio is 4.5:1.
 
    <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png">View full size screenshot</a>.
   </figure>
@@ -364,7 +365,7 @@ the 4.5:1 color contrast requirements.
   </figure>
 </div>
 
-#### Issue type #7 - list structure  {: #list-structure }
+#### Issue #7 - list structure  {: #list-structure }
 
 List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements. Screen readers require list items (`<li>`) to be contained within a parent `<ul>` or `<ol>` to be announced properly.
   [Learn more about list rules](https://dequeuniversity.com/rules/axe/4.4/listitem).
@@ -397,7 +398,7 @@ We used a CSS class in this demo to simulate the unordered list instead of using
 </ul>
 ```
 
-#### Issue type #8 - tabindex  {: #tabindex }
+#### Issue #8 - tabindex  {: #tabindex }
 
 Some elements have a [tabindex] value greater than 0. A value greater than 0
 implies an explicit navigation ordering. Although technically valid, this often
@@ -414,7 +415,7 @@ creates frustrating experiences for users who rely on assistive technologies.
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-Unless there is a specific reason to disrupt the natural tabbing order on a webpage, there is no need to have a positive integer on a tabindex attribute. To keep the natural tabbing order, we can either change the tabindex to `0` or remove the attribute altogether.
+Unless there is a specific reason to disrupt the natural tabbing order on a web page, there is no need to have a positive integer on a tabindex attribute. To keep the natural tabbing order, we can either change the tabindex to `0` or remove the attribute altogether.
 
 ```html
 <button type="submit">Subscribe</button>
@@ -435,7 +436,7 @@ We've applied all of these automated accessibility updates to a new
 
 ## Next step
 
-Great job. You have accomplished a lot already, but we aren't done yet! Next,
+Great job. You have accomplished a lot already, but we haven't finished yet! Next,
 we'll move on to manual checks, as detailed in the
 [manual accessibility testing](/learn/accessibility/test-manual/) module.
 
