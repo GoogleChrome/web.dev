@@ -47,14 +47,14 @@ it and to the left of it, starting with 1.
 
 Now, say we're starting with the following real image data:
 
-```
+```text
 111151111
 122456389
 ```
 
 Using our predictive model to determine the contents of a 2x9 grid, we would get the following result:
 
-```
+```text
 111111111
 123456789
 ```
@@ -63,7 +63,7 @@ Our data is a good fit for the predictive algorithm we've invented—the predict
 Not a perfect fit, of course—the actual data has several blocks that are different from the predicted data. So, the encoding
 we send includes not just the prediction method to use, but a diff of any blocks that should differ from their predicted values:
 
-```
+```text
 _ _ _ _ +4 _ _ _ _
 _ _ -1 _ _ _ -4 _ _
 ```

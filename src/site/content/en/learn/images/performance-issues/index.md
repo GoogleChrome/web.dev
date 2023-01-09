@@ -48,7 +48,7 @@ the associated image request will be deferred until the browser determines that 
 priority as any other image on the page.
 
 The [experimental](https://caniuse.com/mdn-html_elements_img_fetchpriority) 'fetchpriority' attribute is intended to give
-developers [finer-grained control over the priority of assets](https://web.dev/priority-hints/), allowing you to flag resources
+developers [finer-grained control over the priority of assets](/priority-hints/), allowing you to flag resources
 as 'high' and 'low' priority relative to resources of the same type. The use cases for 'fetchpriority' are similar to the 'loading'
 attribute, though much more broad. For example, you might use 'fetchpriority="low"' on an image only revealed following user interaction
 (whether that image falls within the user's viewport or not) in order to prioritize visible images elsewhere on the page, or 'fetchpriority="high"'
@@ -68,7 +68,7 @@ on the user's direct experience of an individual page—a set of technical measu
 
 ### Cumulative Layout Shift
 
-_[Cumulative Layout Shift](https://web.dev/cls/) (CLS)_ is a measure of visual stability. It is a metric for capturing how much
+_[Cumulative Layout Shift](/cls/) (CLS)_ is a measure of visual stability. It is a metric for capturing how much
 the layout of the content on a page shifts as assets are loaded and the page is rendered. Anyone that has spent a significant amount
 of time using the web has lost their place in a long run of text due to a page “jumping” as a delayed webfont or image source is suddenly
 rendered—or had an interactive element suddenly moved away from your pointer. A high CLS is a nuisance at best, and cause of

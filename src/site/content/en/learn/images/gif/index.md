@@ -57,7 +57,7 @@ Using something akin to GIF's lossless data compression and color indexing, you 
 > C: #000085
 > Row one, columns one through three are A. Row one, column four is B. Row two, column one is A. Row two, column two is C. Row two, column three is A. Row two, column four is B.
 
-This manages to condense the pixel-by-pixel description in a few places (“columns one through three are...”), and saves a
+This manages to condense the pixel-by-pixel description in a few places (“columns one through three are…”), and saves a
 few characters by defining the repeated colors in a dictionary, of sorts, up front. There's no change to the visual fidelity.
 The information has been compressed without any loss.
 

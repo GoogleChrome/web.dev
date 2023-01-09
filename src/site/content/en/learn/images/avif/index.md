@@ -50,6 +50,6 @@ it seemed. Remember, `img` only supported a single source file, and was hyper-op
 in fact, that we couldn't intercept that request via JavaScript. Until recently, the only viable option was to serve all users the brand
 new type of image, and request one of the “legacy” formats when the browser fired an error—incurring a second file transfer after the first one was wasted.
 
-For that reason and more, `img` as it had existed for decades had to change. In the next module, [Responsive Images](responsive-images), you'll learn about the
+For that reason and more, `img` as it had existed for decades had to change. In the next module, [Responsive Images](/learn/images/responsive-images/), you'll learn about the
 features introduced to the HTML specification to address these issues and how to use them in your day-to-day work.
 

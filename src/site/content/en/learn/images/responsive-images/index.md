@@ -8,7 +8,7 @@ tags:
   - images
 ---
 
-[Responsive image](https://web.dev/learn/design/responsive-images/) markup can be divided into two scenarios: situations
+[Responsive image](/learn/design/responsive-images/) markup can be divided into two scenarios: situations
 where the goal is the most efficient possible images, and situations where you need explicit control over what image source
 the browser selects. You can think of these as _descriptive_ and _prescriptive_ syntaxes, respectively.
 
