@@ -51,7 +51,6 @@ turn a single uploaded file into a viable `srcset` attribute without the need fo
       	https://res.cloudinary.com/demo/image/upload/w_800/sample.jpg 800w,
       	https://res.cloudinary.com/demo/image/upload/w_600/sample.jpg 600w"
   alt="…">
-
 ```
 
 We're able to manually specify our desired level of compression using what should now be a familiar syntax: `q_`, short

@@ -238,7 +238,7 @@ the same reasoning doesn't apply if those requests are _initiated_ client-side. 
 for example, allows you to fully defer image requests until after the layout has been established, allowing JavaScript to generate our
 `sizes` values for us—a huge convenience for you, and a guarantee of the most efficient possible requests for your users. Keep in mind,
 however, that this approach does mean sacrificing the reliability of server-rendered markup and the speed optimizations built into browsers,
-and initiating these requests only after the page has been rendered will have an outsized [negative impact on your LCP score](#).
+and initiating these requests only after the page has been rendered will have an outsized [negative impact on your LCP score](/performance-issues/).
 
 Of course, if you're already depending on a client-side rendering framework such as React or Vue, that's a debt you'll already be
 incurring—and in those cases, using Lazysizes means your `sizes` attributes can be almost completely abstracted away. Better still:
@@ -248,7 +248,7 @@ Lazysizes will effectively become a polyfill for that newly standardized browser
 ## Site Generators, frameworks, and CMSs
 
 While certainly an improvement over manually saving alternate cuts of each image and hand-optimizing them through a tool like
-[Squoosh.app](), automating image compression as a step in the development process has some limitations. For one, you may not
+[Squoosh.app](Squoosh.app), automating image compression as a step in the development process has some limitations. For one, you may not
 always have full control over the images used throughout a site—most user-facing images on the web are _content_ concerns more
 than development concerns, uploaded by users or editors, rather than living in a repository alongside development assets like
 JavaScript and stylesheets.
@@ -279,7 +279,6 @@ when [invoked as part of a shortcode for displaying images](https://www.aleksand
 this plugin will output HTML according to the configuration options passed along to Sharp.
 
 ```javascript
-
 const Image = require("@11ty/eleventy-img");
 module.exports = function(eleventyConfig) {
 
@@ -311,7 +310,7 @@ eleventyConfig.addAsyncShortcode("respimg", imageShortcode);
 
 This shortcode could then be used in place of the default image syntax:
 
-```markdown
+```javascript
 {% respimg "img/butterfly.jpg", "Alt attribute.", "(min-width: 30em) 800px, 80vw" %}
 ```
 
