@@ -178,7 +178,7 @@ images and logos are very likely to be found "above the fold."
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/KrYcABGs7oYi9oHHZPJW.png", alt="LCP highlighted in the console of a web.dev page", width="800", height="407" %}
 
-There are a few steps you can take to avoid LCP delays: first, never specify `loading=”lazy”` on an "above the fold" image,
+There are a few steps you can take to avoid LCP delays: first, never specify `loading="lazy"` on an "above the fold" image,
 as delaying the request until after the page has been rendered will likely have a massive negative impact on your LCP score.
 Second, using `fetchpriority="high"` can inform the browser that the transfer of this image should be prioritized above images elsewhere on the page.
 

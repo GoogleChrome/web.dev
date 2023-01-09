@@ -60,7 +60,7 @@ modifying, and editing images in batches, competing on speed, efficiency, and re
 you to apply encoding and compression settings to whole directories of images at once, without the need to open image editing
 software, and in a way that preserves your original image sources should those settings need to be adjusted on the fly. They're
 intended to run in a range of contexts, from your local development environment to the web server itself—for example, the
-compression-focused [ImageMin](https://web.dev/use-imagemin-to-compress-images/) for Node.js can be extended to suit specific
+compression-focused [ImageMin](/use-imagemin-to-compress-images/) for Node.js can be extended to suit specific
 applications through an array of [plugins](https://www.npmjs.com/search?q=keywords:imageminplugin), while the cross-platform
 [ImageMagick](https://imagemagick.org/) and the Node.js based [Sharp](https://sharp.pixelplumbing.com/) come with a staggering
 number of features right out of the box.
@@ -71,7 +71,7 @@ with as little overhead as possible.
 
 ## Local development tools and workflows
 
-[Task-runners and bundlers like Grunt, Gulp, or Webpack](https://web.dev/use-imagemin-to-compress-images/) can be used to optimize
+[Task-runners and bundlers like Grunt, Gulp, or Webpack](/use-imagemin-to-compress-images/) can be used to optimize
 image assets alongside other common performance-related tasks, such as minification of CSS and JavaScript. To illustrate, let's
 take a relatively simple use case: a directory in your project contains a dozen photographic images, meant to be used on a public-facing
 website.
@@ -174,9 +174,7 @@ Populating `srcset` attributes will typically be a straightforward manual proces
 information about the configuration you've already done when generating your sources. In the tasks above, we've established
 the file names and width information that our attribute will follow:
 
-```
-srcset="filename-1000.jpg 1000w, filename-800.jpg 800w, filename-400.jpg 400w"
-```
+`srcset="filename-1000.jpg 1000w, filename-800.jpg 800w, filename-400.jpg 400w"`
 
 Remember that the contents of the `srcset` attribute are descriptive, not prescriptive. There's no harm in overloading an
 `srcset` attribute, so long as the aspect ratio of every source is consistent. An `srcset` attribute can contain the URI
@@ -204,7 +202,7 @@ and `srcset` are all ignored in these browsers, we'll want to specify a default 
 Because scaling an image downwards is _visually_ seamless and JPEG encoding is universally supported, the largest JPEG is a sensible
 choice.
 
-```
+```html
 <picture>
   <source type="image/webp" srcset="filename-1000.webp 1000w, filename-800.webp 800w, filename-400.webp 400w">
   <img src="filename-1000.jpg" srcset="filename-1000.jpg 1000w, filename-800.jpg 800w, filename-400.jpg 400w" sizes="…" alt="…">

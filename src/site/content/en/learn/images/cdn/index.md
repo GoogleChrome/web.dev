@@ -14,7 +14,7 @@ on the other nodes of the CDN network around the world. When a user requests a f
 closest to that user, reducing latency. The distributed nature of CDNs also provides redundancy in the event of network outages or
 hardware failure, and load balancing to mitigate spikes in traffic.
 
-An [image CDN](https://web.dev/image-cdns/) can provide all these benefits, with one key difference: the ability to transform and
+An [image CDN](/image-cdns/) can provide all these benefits, with one key difference: the ability to transform and
 optimize the contents of an image based on strings the URL used to access it.
 
 A user will upload a canonical, high-resolution image to the provider, which will generate a URL used to access it:
