@@ -11,7 +11,7 @@ tags:
 # High-performance image workflows
 
 All of the syntaxes in this course—from the [encoding of image data](#formats-and-compression) to the information-dense
-markup that powers [responsive images](/responsive-images/)—are methods for machines to communicate with machines. You have
+markup that powers [responsive images](/learn/images/responsive-images/)—are methods for machines to communicate with machines. You have
 discovered a number of ways for a client browser to communicate its needs to a server, and a server to respond in kind.
 Responsive image markup (`srcset` and `sizes`, in particular) manage to describe a shocking amount of information in relatively
 few characters. For better or worse, that brevity is by design: making these syntaxes less terse, and so easier for developers to
@@ -42,7 +42,7 @@ settings and re-saving alternate sources for every image asset destined for a pr
 bottleneck in your daily work.
 
 As you learned in [Image Formats and Compression](#), the most efficient encoding for an image will always be dictated by
-its content, and as you learned in [Responsive Images](/responsive-images/), the alternate sizes you'll need for your image sources will be
+its content, and as you learned in [Responsive Images](/learn/images/responsive-images/), the alternate sizes you'll need for your image sources will be
 dictated by the position those images occupy in the page layout. In a modern workflow, you'll approach these decisions
 holistically rather than individually—determining a set of sensible defaults for images, to best suit the contexts in which
 they're meant to be used.
@@ -209,7 +209,7 @@ choice.
 </picture>
 ```
 
-`sizes` can be a little more difficult to deal with. As you've [learned](/responsive-images/), `sizes` is necessarily contextual—you can't
+`sizes` can be a little more difficult to deal with. As you've [learned](/learn/images/responsive-images/), `sizes` is necessarily contextual—you can't
 populate the attribute without knowing the amount of space the image is meant to occupy in the rendered layout. For the most efficient
 possible requests, an accurate `sizes` attribute needs to be in our markup at the time those requests are made by the end user, long
 before the styles that govern the page layout have been requested. Omitting `sizes` altogether is not only a violation of the HTML
@@ -238,7 +238,7 @@ the same reasoning doesn't apply if those requests are _initiated_ client-side. 
 for example, allows you to fully defer image requests until after the layout has been established, allowing JavaScript to generate our
 `sizes` values for us—a huge convenience for you, and a guarantee of the most efficient possible requests for your users. Keep in mind,
 however, that this approach does mean sacrificing the reliability of server-rendered markup and the speed optimizations built into browsers,
-and initiating these requests only after the page has been rendered will have an outsized [negative impact on your LCP score](/performance-issues/).
+and initiating these requests only after the page has been rendered will have an outsized [negative impact on your LCP score](/learn/images/performance-issues/).
 
 Of course, if you're already depending on a client-side rendering framework such as React or Vue, that's a debt you'll already be
 incurring—and in those cases, using Lazysizes means your `sizes` attributes can be almost completely abstracted away. Better still:

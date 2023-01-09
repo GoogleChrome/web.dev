@@ -28,7 +28,7 @@ requests possible, based on the information the browser has at hand.
 
 To enable browsers to make these choices, `srcset` allows you to provide the browser with a list of potential sources for populating a single
 `<img>`, while `sizes` allows you to provide the browser with information about how that `<img>` will be rendered. You'll learn how to use
-these in the [next module](/descriptive/).
+these in the [next module](/learn/images/descriptive/).
 
 ## Prescriptive syntaxes
 
@@ -42,7 +42,7 @@ want to display versions of the same image content with different aspect ratios,
 or make sure only browsers with support for a specific encoding receive specific sources.
 
 In these cases, you want explicit control over which source is shown, and when. These are assurances that `srcset` and `sizes` can't give us,
-by design. To get that control, we'll need to use the [`<picture>` element](/prescriptive/).
+by design. To get that control, we'll need to use the [`<picture>` element](/learn/images/prescriptive/).
 
 ## Descriptive syntaxes with `srcset` and `sizes`
 
@@ -77,7 +77,7 @@ double the logical resolution. Any device prior to the iPhone 4 had a DPR of 1: 
 If you view that `400px`-wide image on a display with a DPR of `2`, each logical pixel is being rendered across four of the
 display's physical pixels: two horizontal and two vertical. The image doesn't benefit from the high-density display—it will look the
 same as it would on a display with a DPR of `1`. Of course, anything “drawn” by the browser's rendering engine—text, CSS shapes, or SVGs,
-for example—will be drawn to suit the higher-density display. But as you learned from [Image Formats and Compression](/raster-images/), raster images are fixed
+for example—will be drawn to suit the higher-density display. But as you learned from [Image Formats and Compression](/learn/images/raster-images/), raster images are fixed
 grids of pixels. While it may not always be glaringly obvious, a raster image upscaled to suit a higher-density display will look
 low-resolution compared to the surrounding page.
 

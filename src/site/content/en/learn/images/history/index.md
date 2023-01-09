@@ -35,7 +35,7 @@ hundred pixels wide and three hundred pixels tall, it was a case of specifying a
 Alongside a flexible layout and use of CSS media queries, "flexible images and media" are one of the three defining facets
 of [responsive web design](/learn/design/). To make an image flexible, developers began using CSS to set `max-width: 100%` on the image
 (or all images, site-wide) to tell the browser's rendering engine to prevent an image from ever overflowing its parent container by
-scaling it down. Visually, this works perfectly–downscaling a [raster image](/raster-images/) is visually seamless. With a line or two of CSS,
+scaling it down. Visually, this works perfectly–downscaling a [raster image](/learn/images/raster-images/) is visually seamless. With a line or two of CSS,
 a scaled-down image will always look as though we've specified an image source that was meant to be displayed at that size.
 When rendering engines are given more image data than necessary for the space the image occupies in a layout, they are able
 to make informed decisions about how to render the reduced image, and can do so without introducing any visual artifacts or blurring.
