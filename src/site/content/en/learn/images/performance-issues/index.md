@@ -20,10 +20,10 @@ In this section, discover key performance metrics that relate to images, and how
 
 While you're about to learn a number of ways to ensure your image requests are as small and efficient as possible, the fastest image request
 will always be the one that never gets made. So, right up front, I want to share what may be the most impactful change you can make to the way
-you deliver image assets to your users: the `loading=”lazy”` attribute.
+you deliver image assets to your users: the `loading="lazy"` attribute.
 
 ```html
-<img src="image.jpg" loading=”lazy” alt="…">
+<img src="image.jpg" loading="lazy" alt="…">
 ```
 
 This attribute ensures that requests for images aren't made until they fall close to the user's viewport, deferring them from the initial
@@ -33,7 +33,7 @@ Simple as it may be in practice, using this attribute can have a huge positive i
 the user's viewport will never be requested, and no bandwidth will be wasted on images that the user will never see.
 
 There's a catch, however: deferring those requests means not taking advantage of browsers' hyper-optimized processes for requesting
-images as early as possible. If `loading=”lazy”` is used on `img` elements toward the top of the layout—and thus more likely
+images as early as possible. If `loading="lazy"` is used on `img` elements toward the top of the layout—and thus more likely
 to be in the user's viewport when the page is first loaded—these images can feel significantly slower to the end user.
 
 ## Priority hints
