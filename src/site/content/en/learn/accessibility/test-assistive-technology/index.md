@@ -27,13 +27,13 @@ We encourage you to use multiple types of ATs in your overall testing workflow.
 
 In this module, we focus on one of the most popular digital ATs, screen readers. A screen reader is a piece of software that reads the underlying code of a website or app. It then converts that information into speech or Braille output for the user.
 
-Screen readers are essential for people who are blind and deafblind, but they also could benefit people with low-vision, reading disorders, or cognitive disabilities.
+Screen readers are essential for people who are blind and deafblind, but they also could benefit people with low vision, reading disorders, or cognitive disabilities.
 
 ### Browser compatibility
 
 There are multiple screen reader options available. The [most popular screen readers](https://webaim.org/projects/screenreadersurvey9) today are JAWS, NVDA, and VoiceOver for desktop computers and VoiceOver and Talkback for mobile devices.
 
-Depending on your operating system (OS), favorite browser, and what device you are using it on, one screen reader may stand out as the best option. Most screen readers are  built with specific hardware and web browsers in mind. When you use a screen reader with a browser it was not calibrated for, you may encounter more "bugs" or unexpected behavior. Screen readers work best when used in the following combinations. 
+Depending on your operating system (OS), favorite browser, and what device you are using it on, one screen reader may stand out as the best option. Most screen readers are  built with specific hardware and web browsers in mind. When you use a screen reader with a browser it was not calibrated for, you may encounter more "bugs" or unexpected behavior. Screen readers work best when used in the following combinations.
 
 <div class="table-wrapper scrollbar">
   <table>
@@ -89,7 +89,7 @@ Depending on your operating system (OS), favorite browser, and what device you a
   </table>
 </div>
 
-### Screen reader commands 
+### Screen reader commands
 
 Once you have the proper set-up for your screen reader software for your desktop or mobile device, you should look at the screen reader documentation (linked in the table above) and run through some [essential screen reader commands](https://dequeuniversity.com/screenreaders) to get yourself familiar with the technology. If you have used a screen reader before, consider trying out a new one!
 
@@ -186,7 +186,7 @@ If you need to further understand the user experience of people using screen rea
       <tr>
         <td>Within Tables
 </td>
-        <td>NDVA + Alt + ↓ ↑ ← → 
+        <td>NDVA + Alt + ↓ ↑ ← →
 </td>
         <td>VO + ↓ ↑ ← →
 </td>
@@ -252,7 +252,7 @@ demo webpage, which may interfere with some testing tools. Learn more about
 
 ### Step 2
 
-Activate the screen reader of your choice and go to the demo page. You may consider navigating through the entire page from top to bottom before focusing on specific issues. 
+Activate the screen reader of your choice and go to the demo page. You may consider navigating through the entire page from top to bottom before focusing on specific issues.
 
 #### Issue 1: Content structure {: #content-structure}
 
@@ -271,7 +271,7 @@ If you have updated everything correctly, there should not be any visual changes
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-Some inaccessible elements can't be observed by just looking at the site. You may remember the importance of heading levels and semantic HTML from the [Content structure](/learn/accessibility/structure) module. A piece of content may look like a heading, but the content is actually wrapped in a stylized `<div>`. 
+Some inaccessible elements can't be observed by just looking at the site. You may remember the importance of heading levels and semantic HTML from the [Content structure](/learn/accessibility/structure) module. A piece of content may look like a heading, but the content is actually wrapped in a stylized `<div>`.
 
 To fix the issue with headings and landmarks, you must first identify each element that should be marked up as such and update the related HTML. Be sure to update the related CSS as well.
 

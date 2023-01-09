@@ -8,17 +8,16 @@ tags:
   - accessibility
 ---
 
-So far in this course, you learned about the individual, business, and legal
-aspects of digital accessibility, and the basics of digital accessibility
-conformance. You dove into specific topics related to inclusive design and
-coding, including when to use ARIA vs. HTML, how to measure color contrast,
-when JavaScript is essential, amongst other topics.
+So far in this course, you have learned about the individual, business, and legal aspects of digital
+accessibility, and the basics of digital accessibility conformance. You have explored specific
+topics related to inclusive design and coding, including when to use ARIA versus HTML,
+how to measure color contrast, when JavaScript is essential, amongst other topics.
 
 In the remaining modules, we shift gears from designing and building to testing
 for accessibility. We'll utilize a three-step testing process that includes
 automated, manual, and assistive technology testing tools and techniques. We'll
 use the same demo throughout these testing modules to progress the webpage from
-inaccessible to accessible. 
+inaccessible to accessible.
 
 Each test—automated, manual, and assistive tech—is critical to achieving the
 most accessible product possible.
@@ -27,15 +26,12 @@ Our tests rely on the Web Content Accessibility Guidelines (WCAG) 2.1
 [conformance level A and AA](https://www.w3.org/TR/WCAG21/#cc1) as our
 standards. Remember that your industry, product type, local/country laws and
 policies, or overall accessibility goals will dictate which guidelines to
-follow and levels to meet. If no specific standard is required for your
+follow and levels to meet. If you don't require a specific standard for your
 project, the recommendation is to follow the latest version of WCAG.
-
-{% Aside %}
 Refer back to "[How is digital accessibility measured?](/learn/accessibility/measure/)"
 for general information on accessibility audits, conformance types/levels,
 [WCAG](/learn/accessibility/glossary/#wcag), and
-[POUR](/learn/accessibility/glossary/#pour). 
-{% endAside %}
+[POUR](/learn/accessibility/glossary/#pour).
 
 As you now know, accessibility conformance is _not_ the full story when it
 comes to supporting people with disabilities. But, it's a good starting point
@@ -56,7 +52,7 @@ Pros of automated accessibility tests:
 * Just a few steps to run and very quick results
 * Little accessibility knowledge is required to run the tests or understand the results
 
-Cons of automated accessibility tests: 
+Cons of automated accessibility tests:
 
 * Automated tools don't catch all of the accessibility errors in your product
 * Reported false positives (an issue is reported that isn't a true WCAG violation)
@@ -125,7 +121,7 @@ into your testing workflow. We'll use the Chrome extension for this demo.
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/amnpKDgfwnlIa02HYMU1.png", alt="Medical Mystery Club website, outside of the iframe.", width="400", height="283" %}
 </figure>
 
-We have built a [demo in CodePen](https://codepen.io/web-dot-dev/pen/yLqOaEP). 
+We have built a [demo in CodePen](https://codepen.io/web-dot-dev/pen/yLqOaEP).
 View it in [debug mode](https://cdpn.io/pen/debug/yLqOaEP) to proceed with the
 next tests. This is important, as it removes the `<iframe>` which surrounds the
 demo webpage, which may interfere with some testing tools. Learn more about
@@ -137,7 +133,7 @@ demo webpage, which may interfere with some testing tools. Learn more about
 
 <figure class="screenshot">
   {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/yv8fIyUnFaW0yPGJgohj.png", alt="Medical Mystery Club website, with the Lighthouse report DevTools panel open.", width="800", height="421" %}
-</figure>  
+</figure>
 
 ### Step 4
 
@@ -164,7 +160,7 @@ rulesets, your test results may vary.
 
 <figure class="screenshot">
   {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/5SUhDMXiDYw43kt5ss3J.png", alt="The Medical Mysteries Club website received a 62 for the Lighthouse score in our December 2022 test.", width="800", height="421" %}
-</figure> 
+</figure>
 
 ### Step 5
 
@@ -305,18 +301,18 @@ Two examples were reported.
     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3Aeg1osulNGB1EVtGu8r.png" alt="View full size screenshot.">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/3Aeg1osulNGB1EVtGu8r.png", alt="Lighthouse score for reported club name. The teal value contrast ratio is too low.", width="320", height="228" %}
   </a>
-  
+
    The club name, `<div class="club-name">Medical Mysteries Club</div>` , has a color hex value of  `#01aa9d` and the background hex value is `#ffffff`. The color contrast ratio is 2.9:1.
-   
+
    <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3Aeg1osulNGB1EVtGu8r.png">View full size screenshot</a>.
   </figure>
   <figure class="screenshot">
     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/86Iongt2UcohbzEar4Pm.png" alt="View full size screenshot.">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/86Iongt2UcohbzEar4Pm.png", alt="Lighthouse score for mermaid syndrome copy. The grey value contrast ratio is too low.", width="320", height="228" %}
     </a>
-    
+
     `<b>Mermaid syndrome</b>` has a text hex value of `#7c7c7c`, while the background's hex color is `#ffffff`. The color contrast ratio is 4.2:1.
-    
+
      <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/86Iongt2UcohbzEar4Pm.png">View full size screenshot</a>.
   </figure>
 </div>
@@ -352,18 +348,18 @@ the 4.5:1 color contrast requirements.
     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png" alt="View full size screenshot.">
       {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png", alt="The teal has been fixed and no longer fails.", width="320", height="228" %}
   </a>
-   
+
    The club name, `<div class="club-name">Medical Mysteries Club</div>` , has been given a color value of `#008576` and the background remaind `#ffffff`. The updated color contrast ratio is 4.5:1.
-   
+
    <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png">View full size screenshot</a>.
   </figure>
   <figure class="screenshot">
     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3DgVWG6oIRRVTGYmZP3c.png" alt="View full size screenshot.">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/3DgVWG6oIRRVTGYmZP3c.png", alt="The grey has been fixed and no longer fails.", width="320", height="228" %}
     </a>
-   
+
     `<b>Mermaid syndrome</b>` now has a color value of `#767676` and the background remains `#ffffff`. The color contrast ratio is 4.5:1.
-    
+
     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3DgVWG6oIRRVTGYmZP3c.png">View full size screenshot</a>.
   </figure>
 </div>
