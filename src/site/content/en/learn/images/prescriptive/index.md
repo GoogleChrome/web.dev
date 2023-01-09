@@ -96,7 +96,7 @@ sources as well.
 Of course, an image with proportions that can vary depending on the selected `<source>` element raises a performance issue:
 `<img>` only supports a single`width` and `height` attribute, but [omitting those attributes can lead to a measurably worse user experience](#).
 In order to account for this, a [relatively recent](https://github.com/whatwg/html/pull/5894)—but
-[well supported](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#browser_compatibility)—addition to the HTML
+[well supported](https://developer.mozilla.org/docs/Web/HTML/Element/source#browser_compatibility)—addition to the HTML
 specification allows for use of `height` and `width` attributes on `<source>` elements. These work to reduce layout shifts just as well
 as they do on `<img>`, with the appropriate space reserved in your layout for whatever `<source>` element is selected.
 
