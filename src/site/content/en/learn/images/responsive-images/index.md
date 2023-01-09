@@ -19,7 +19,7 @@ which allows for explicit control over source selection based on factors like vi
 ## Descriptive syntaxes
 
 A descriptive syntax provides the browser with information about image sources and how they'll be used, but ultimately leaves
-the decision making to the browser. This is by far the more common scenario; for the vast majority of images you won't _want_ granular
+the decision-making to the browser. This is by far the more common scenario; for the vast majority of images you won't _want_ granular
 control over browser behavior. Browsers have far more information at their disposal than web developers do, and can make complex decisions
 based on this information. You can't predict users' browsing contexts accurately—there's too much about their hardware, preferences, and connection
 speeds that you can't know. At best, you can make educated guesses, but can't know for _certain_ how each user experiences the web. The
@@ -33,7 +33,7 @@ these in the [next module](/descriptive/).
 ## Prescriptive syntaxes
 
 With a prescriptive syntax, you tell the browser what to do—what source to select, based on specific criteria you've defined. While this use case isn't as
-common as “just load the most efficient asset to render this image,” it allows us to provide usage instructions to the browser to account for
+common as "just load the most efficient asset to render this image," it allows us to provide usage instructions to the browser to account for
 information it doesn't have prior to the transfer of assets, such as the content of the sources or their formats.
 
 While `srcset`/`sizes` provide you with a syntax for passing information along to the user's browser and allowing it to make decisions about

@@ -308,10 +308,12 @@ eleventyConfig.addAsyncShortcode("respimg", imageShortcode);
 };
 ```
 
-This shortcode could then be used in place of the default image syntax:
+You could then use this shortcode in place of the default image syntax:
 
 ```javascript
-{% respimg "img/butterfly.jpg", "Alt attribute.", "(min-width: 30em) 800px, 80vw" %}
+{%
+ respimg "img/butterfly.jpg", "Alt attribute.", "(min-width: 30em) 800px, 80vw"
+%}
 ```
 
 If configured to output multiple encodings, as above, the generated markup will be a `<picture>` element containing corresponding
@@ -336,7 +338,7 @@ library to re-save image assets. It then allows you to then `import` your images
   import imageDefault from 'img/butterfly.jpg?sizes[]=400,sizes[]=800,sizes[]=1000';
 ````
 
-These imported images can then be used through abstractions like [React's Image component](https://reactnative.dev/docs/image),
+You can then use these imported images through abstractions like [React's Image component](https://reactnative.dev/docs/image),
 or to populate your responsive image markup directly:
 
 ```html
