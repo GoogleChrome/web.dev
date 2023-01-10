@@ -346,7 +346,6 @@ Two examples were reported.
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/3Aeg1osulNGB1EVtGu8r.png", alt="Lighthouse score for reported club name. The teal value contrast ratio is too low.", width="320", height="228" %}
   </a>
 
-   The club name, <code><div class="club-name">Medical Mysteries Club</div></code> , has a color hex value of  <code>#01aa9d</code> and the background hex value is <code>#ffffff</code>. The color contrast ratio is 2.9:1.
   <figcaption>
    The club name, <code><div class="club-name">Medical Mysteries Club</div></code> , has a color hex value of <code>#01aa9d</code> and the background hex value is <code>#ffffff</code>. The color contrast ratio is 2.9:1.
 
