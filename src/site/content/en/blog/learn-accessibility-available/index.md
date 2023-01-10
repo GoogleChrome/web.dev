@@ -5,7 +5,7 @@ subhead: >
   All modules in this course are now available.
 description: >
   We launched the final modules for Learn Accessibility, which means you
-  can now take this course from end-to-end.
+  can now take this course from start to finish.
 date: 2023-01-17
 authors:
   - alexandrawhite
@@ -22,15 +22,15 @@ available. Written by [Carie Fisher](https://twitter.com/cariefisher), these
 courses take you through the essentials for building accessible websites and
 web apps.
 
-You can read them in whatever order you'd like. The final modules on testing,
-published today, walk you through a culmination of all of your knowledge:
+You can read them in whatever order you'd like. The final modules on testing
+walk you through a culmination of all of your knowledge:
 
 * [Automated testing](/learn/accessibility/test-automated)
 * [Manual accessibility testing](/learn/accessibility/test-manual)
 * [Assistive technology testing](/learn/accessibility/test-assistive-technology)
 
 The last new module will teach you how to make your
-[forms more accessible](/learn/accessibility/forms). This is a great compliment
+[forms more accessible](/learn/accessibility/forms). This is a great complement
 to [Learn Forms](/learn/forms/).
 
 And that's not all. We had four community spotlights with people working on
@@ -40,9 +40,9 @@ accessibility:
   into engineering, accessible design, Ember.js, and the importance of funding
   these efforts.
 * [Olutimilehin Olushuyi](/community-highlight-shuyi/) told us about his move
-  from the law to web development, building accessible community, and creating
+  from the law to web development, building accessible communities, and creating
   accessible layouts.
-* [Albert Kim](/community-highlight-albert-kim/) told us about mental health 
+* [Albert Kim](/community-highlight-albert-kim/) told us about mental health
   awareness, building for invisible disabilities, the COGA Accessibility
   Community Group, and more practical wisdom.
 * [Elisa Bandy](/community-highlight-elisa/) told us about her work for
