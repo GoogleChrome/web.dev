@@ -9,7 +9,7 @@ questions:
       - content: "JAWS"
         rationale: "While JAWS is one of the most popular screen readers, it's not necessarily the best choice."
       - content: "VoiceOver"
-        rationale: "VoiceOver is a tool for MacOS and iOS users. If you're using a Windows PC, you would want to use a different tool."
+        rationale: "VoiceOver is a tool for MacOS and iOS users. If you're using a Windows PC, you will need to use a different tool."
       - content: "Orca"
         rationale: "Orca is for Linux Firefox users, which may mean you need to use a different tool."
       - content: "There isn't one"

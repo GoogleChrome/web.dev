@@ -33,7 +33,7 @@ Screen readers are essential for people who are blind and deafblind, but they al
 
 There are multiple screen reader options available. The [most popular screen readers](https://webaim.org/projects/screenreadersurvey9) today are JAWS, NVDA, and VoiceOver for desktop computers and VoiceOver and Talkback for mobile devices.
 
-Depending on your operating system (OS), favorite browser, and what device you are using it on, one screen reader may stand out as the best option. Most screen readers are  built with specific hardware and web browsers in mind. When you use a screen reader with a browser it was not calibrated for, you may encounter more "bugs" or unexpected behavior. Screen readers work best when used in the following combinations.
+Depending on your operating system (OS), favorite browser, and the device that you use, one screen reader may stand out as the best option. Most screen readers are  built with specific hardware and web browsers in mind. When you use a screen reader with a browser it was not calibrated for, you may encounter more "bugs" or unexpected behavior. Screen readers work best when used in the following combinations.
 
 <div class="table-wrapper scrollbar">
   <table>
@@ -91,11 +91,11 @@ Depending on your operating system (OS), favorite browser, and what device you a
 
 ### Screen reader commands
 
-Once you have the proper set-up for your screen reader software for your desktop or mobile device, you should look at the screen reader documentation (linked in the table above) and run through some [essential screen reader commands](https://dequeuniversity.com/screenreaders) to get yourself familiar with the technology. If you have used a screen reader before, consider trying out a new one!
+Once you have the proper set-up for your screen reader software for your desktop or mobile device, you should look at the screen reader documentation (linked in the preceding table) and run through some [essential screen reader commands](https://dequeuniversity.com/screenreaders) to familiarize yourself with the technology. If you have used a screen reader before, consider trying out a new one!
 
-When using a screen reader for accessibility testing, your goal is to detect problems in your code which interfere with the usage of your website or app, not to emulate the experience of a screen reader user. As such, there is a lot you can do with some foundational knowledge, a few screen reader commands, and a bit—or a lot—of practice.
+When using a screen reader for accessibility testing, your goal is to detect problems in your code that interfere with the usage of your website or app, not to emulate the experience of a screen reader user. As such, there is a lot you can do with some foundational knowledge, a few screen reader commands, and a bit—or a lot—of practice.
 
-If you need to further understand the user experience of people using screen readers and other ATs, you can hire many organizations and individuals to gain this valuable insight. Remember that using an AT to test code against a set of rules and asking users about their experience often yields different results. Both are important aspects to create fully inclusive products.
+If you need to further understand the user experience of people using screen readers and other ATs, you can engage with many organizations and individuals to gain this valuable insight. Remember that using an AT to test code against a set of rules and asking users about their experience often yields different results. Both are important aspects to create fully inclusive products.
 
 #### Key commands for desktop screen readers
 
@@ -285,9 +285,9 @@ If you have updated everything correctly, there should not be any visual changes
 
 ## Issue 2: Link context {: #link-context}
 
-It's important to give content to screen reader users about the purpose of a link and if they are redirecting them to a new location outside of the website or app.
+It's important to give content to screen reader users about the purpose of a link and if the link is redirecting them to a new location outside of the website or app.
 
-In our demo, we fixed most of the links when we updated the active image alternative text, but there are a few additional links about the various rare diseases that could use additional context—especially since they redirect to a new location.
+In our demo, we fixed most of the links when we updated the active image alternative text, but there are a few additional links about the various rare diseases that could benefit from additional context—especially since they redirect to a new location.
 
 ```html
 <a href="https://rarediseases.org/rare-diseases/maple-syrup-urine-disease">
@@ -318,7 +318,7 @@ There are many different patterns we may consider to add additional link informa
 
 ## Issue 3: Decorative image
 
-In our automated testing module, Lighthouse was unable to pick up on the inline SVG that acts as the main splash image on our demo page—but the screen reader found it and announces it as "image" without additional information. This is true, even without explicitly adding the `role="img"` attribute to the SVG.
+In our automated testing module, Lighthouse was unable to pick up on the inline SVG that acts as the main splash image on our demo page—but the screen reader finds it and announces it as "image" without additional information. This is true, even without explicitly adding the `role="img"` attribute to the SVG.
 
 ```html
 <div class="section-right">
@@ -334,7 +334,7 @@ In our automated testing module, Lighthouse was unable to pick up on the inline 
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-To fix this issue, we first need to decide if the image is [informative](/learn/accessibility/images/#informative-images) or [decorative](/learn/accessibility/images/#decorative-images). Based on that choice, we need to add the appropriate image alternative text (informative image) or hide the image from screen reader users (decorative).
+To fix this issue, we first need to decide if the image is [informative](/learn/accessibility/images/#informative-images) or [decorative](/learn/accessibility/images/#decorative-images). Based on that decision, we need to add the appropriate image alternative text (informative image) or hide the image from screen reader users (decorative).
 
 We weighed the pros and cons of how best to categorize the image and decided it was decorative, which means we want to add or modify the code to hide the image. A quick method is to add a `role="presentation"` to the SVG image directly. This sends a signal to the screen reader to skip over this image and not list it in the images group.
 
@@ -362,7 +362,7 @@ You may have noticed that the screen reader reads the CSS bullet image under the
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-Much like the decorative image example above, you can add a `role="presentation"` to the HTML with the bullet class to hide it from the screen reader. Similarly, a `role="none"` would work. Just be sure not to use `aria-hidden: true` or you will hide all of the paragraph information from screen reader users.
+Much like the decorative image example discussed earlier, you can add a `role="presentation"` to the HTML with the bullet class to hide it from the screen reader. Similarly, a `role="none"` would work. Just be sure not to use `aria-hidden: true` or you will hide all of the paragraph information from screen reader users.
 
 ```html
 <p class="bullet" role="none">...</p>
@@ -415,9 +415,9 @@ Now, you can use what you've learned to review the accessibility of your own
 websites and apps.
 
 The goal of all of this accessibility testing is to address as many possible
-issues a user may encounter. However, that does not mean your website or app
-will be perfectly accessible when you're done. You'll find the most success by
-designing your website or app with accessibility throughoutthe process, and
+issues that a user may potentially encounter. However, this does not mean that your website or app
+will be perfectly accessible when you're finished. You'll find the most success by
+designing your website or app with accessibility throughout the process, and
 incorporating these tests with your other pre-launch testing.
 
 {% Assessment 'at' %}
