@@ -44,8 +44,7 @@ choose from.
 The default recommendation is to use established HTML patterns instead of
 building something custom with ARIA, as certain features and
 functionalities—such as field states, properties, and values—are inherently
-built into the HTML elements, while with custom ARIA elements, you have to add
-these manually.
+built into the HTML elements, while you have to add custom ARIA manually.
 
 {% Aside %}
 
@@ -80,14 +79,14 @@ these custom form fields as accessible as possible.
 </div>
 
 
-In addition to choosing the most accessible form filed patterns, where
+In addition to choosing the most accessible form field patterns, where
 applicable, you should also add
 [HTML autocomplete attributes](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete)
 to your fields. Adding autocomplete attributes allows a more fine-grained
 [definition or identification of purpose](https://www.w3.org/TR/WCAG21/#input-purposes)
 to user agents and assistive technologies (AT).
 
-The autocomplete attributes allow users to personalize visual presentations,
+Autocomplete attributes allow users to personalize visual presentations,
 such as showing a birthday cake icon in a field with the birthday autocomplete
 attribute (`bday`) assigned to it. More generally, autocomplete attributes make
 filling out forms easier and quicker. This is especially helpful for people
@@ -172,7 +171,6 @@ plan to support.
  tab: 'html, result'
 } %}
 
-
 ## Errors
 
 When creating accessible forms, there's a lot you can do to prevent users from
@@ -209,7 +207,7 @@ confirms that they have resolved all errors and successfully submitted the form.
 
 {% Codepen {
  user: 'web-dev-codepen-external',
- id: 'bjJYWR',
+ id: 'abjJYWR',
  height: 400,
  theme: 'auto',
  tab: 'html, result'
@@ -226,3 +224,5 @@ and [Redundant Entry](https://www.w3.org/TR/WCAG22/#redundant-entry) to be
 aware of for future projects.
 
 {% endAside %}
+
+{% Assessment 'forms' %}
