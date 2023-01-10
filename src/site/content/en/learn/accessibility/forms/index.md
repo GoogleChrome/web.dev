@@ -82,7 +82,7 @@ these custom form fields as accessible as possible.
 
 In addition to choosing the most accessible form filed patterns, where
 applicable, you should also add
-[HTML autocomplete attributes](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete
+[HTML autocomplete attributes](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete)
 to your fields. Adding autocomplete attributes allows a more fine-grained
 [definition or identification of purpose](https://www.w3.org/TR/WCAG21/#input-purposes)
 to user agents and assistive technologies (AT).
