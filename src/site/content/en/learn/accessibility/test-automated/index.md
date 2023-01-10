@@ -8,10 +8,11 @@ tags:
   - accessibility
 ---
 
-So far in this course, you have learned about the individual, business, and legal aspects of digital
-accessibility, and the basics of digital accessibility conformance. You have explored specific
-topics related to inclusive design and coding, including when to use ARIA versus HTML,
-how to measure color contrast, when JavaScript is essential, amongst other topics.
+So far in this course, you have learned about the individual, business, and
+legal aspects of digital accessibility, and the basics of digital accessibility
+conformance. You have explored specific topics related to inclusive design and
+coding, including when to use ARIA versus HTML, how to measure color contrast,
+when JavaScript is essential, amongst other topics.
 
 In the remaining modules, we shift gears from designing and building to testing
 for accessibility. We'll utilize a three-step testing process that includes
@@ -129,10 +130,16 @@ demo web page, which may interfere with some testing tools. Learn more about
 
 ### Step 3
 
-[Open Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) and navigate to the Lighthouse tab. Uncheck all of the category options except for "Accessibility." Keep the mode as the default and choose the device type you're running the tests on.
+[Open Chrome DevTools](https://developer.chrome.com/docs/devtools/open/) and
+navigate to the Lighthouse tab. Uncheck all of the category options except for
+"Accessibility." Keep the mode as the default and choose the device type you're
+running the tests on.
 
 <figure class="screenshot">
-  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/yv8fIyUnFaW0yPGJgohj.png", alt="Medical Mystery Club website, with the Lighthouse report DevTools panel open.", width="800", height="421" %}
+  {% Img
+    src="image/VbsHyyQopiec0718rMq2kTE1hke2/yv8fIyUnFaW0yPGJgohj.png",
+    alt="Medical Mystery Club website, with the Lighthouse report DevTools panel open.", width="800", height="421"
+  %}
 </figure>
 
 ### Step 4
@@ -146,9 +153,9 @@ is calculated by the number of issues, issue types, and the impact on users of
 the issues detected.
 
 Beyond a score, the Lighthouse report includes detailed information about what
-issues it has detected and links to resources to learn more about remedying them.
-The report also includes tests that are passed or not applicable and a list of
-additional items to check manually.
+issues it has detected and links to resources to learn more about remedying
+them. The report also includes tests that are passed or not applicable and a
+list of additional items to check manually.
 
 {% Aside %}
 
@@ -159,17 +166,24 @@ rulesets, your test results may vary.
 {% endAside %}
 
 <figure class="screenshot">
-  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/5SUhDMXiDYw43kt5ss3J.png", alt="The Medical Mysteries Club website received a 62 for the Lighthouse score in our December 2022 test.", width="800", height="421" %}
+  {% Img
+    src="image/VbsHyyQopiec0718rMq2kTE1hke2/5SUhDMXiDYw43kt5ss3J.png",
+    alt="The Medical Mysteries Club website received a 62 for the Lighthouse score in our December 2022 test.", width="800", height="421"
+  %}
 </figure>
 
 ### Step 5
 
-Now, 's go through an example of each automated accessibility issue discovered
-and fix the relevant styles and markup.
+Now, let's go through an example of each automated accessibility issue
+discovered and fix the relevant styles and markup.
 
 #### Issue 1: ARIA roles {: #aria-roles}
 
-"Elements with an ARIA [role] that require children to contain a specific [role] are missing some or all of those required children. Some ARIA parent roles must contain specific child roles to perform their intended accessibility functions." [Learn more about ARIA role rules](https://dequeuniversity.com/rules/axe/4.4/aria-required-children).
+The first issue states: "Elements with an ARIA [role] that require children to
+contain a specific [role] are missing some or all of those required children.
+Some ARIA parent roles must contain specific child roles to perform their
+intended accessibility functions."
+[Learn more about ARIA role rules](https://dequeuniversity.com/rules/axe/4.4/aria-required-children).
 
 In our demo, the newsletter subscribe button fails:
 
@@ -192,7 +206,10 @@ applied to it. In this case, the role can be removed completely.
 
 #### Issue 2: ARIA hidden {: #aria-hidden}
 
-"`[aria-hidden="true"]` elements contain focusable descendants. Focusable descendants within an `[aria-hidden="true"]` element prevent those interactive elements from being available to users of assistive technologies like screen readers." [Learn more about aria-hidden rules](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).
+"`[aria-hidden="true"]` elements contain focusable descendants. Focusable
+descendants within an `[aria-hidden="true"]` element prevent those interactive
+elements from being available to users of assistive technologies like screen
+readers." [Learn more about aria-hidden rules](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).
 
 ```html
 <input type="email" placeholder="Enter your e-mail address" aria-hidden="true" tabindex="-1" required>
@@ -205,7 +222,11 @@ applied to it. In this case, the role can be removed completely.
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-The input field had an `aria-hidden="true"` attribute applied to it. Adding this attribute hides the element (and everything nested under it) from assistive tech. In this case, you should remove this attribute from the input to allow people using assistive technology to access and enter information into the form field.
+The input field had an `aria-hidden="true"` attribute applied to it. Adding
+this attribute hides the element (and everything nested under it) from
+assistive tech. In this case, you should remove this attribute from the input
+to allow people using assistive technology to access and enter information into
+the form field.
 
 ```html
 <input type="email" placeholder="Enter your e-mail address" tabindex="-1" required>
@@ -228,7 +249,10 @@ users who rely on screen readers.
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-When you remove the inaccurate ARIA role from the button element in [issue 1](#aria-roles), the word "Subscribe" becomes the accessible button name. This functionality is built into the semantic HTML button element. There are additional pattern options to consider for more complex situations.
+When you remove the inaccurate ARIA role from the button element in
+[issue 1](#aria-roles), the word "Subscribe" becomes the accessible button
+name. This functionality is built into the semantic HTML button element. There
+are additional pattern options to consider for more complex situations.
 
 ```html
 <button type="submit" tabindex="1">Subscribe</button>
@@ -236,7 +260,10 @@ When you remove the inaccurate ARIA role from the button element in [issue 1](#a
 
 #### Issue 4: Image alt attributes {: #image-alt-attributes}
 
-Image elements are missing [alt] attributes. Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about image alternative text rules](https://dequeuniversity.com/rules/axe/4.4/image-alt).
+Image elements are missing `[alt]` attributes. Informative elements should aim
+for short, descriptive alternate text. Decorative elements can be ignored with
+an empty alt attribute. [Learn more about image alternative text
+rules](https://dequeuniversity.com/rules/axe/4.4/image-alt).
 
 ```html
 <a href="index.html">
@@ -281,9 +308,20 @@ navigation experience for screen reader users.
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-All of the actionable images on the page must include information about where the link will send users. One method to remedy this issue is to add alternative text to the image about the purpose, as you did on the logo image in the example above. This works great for an image using a `<img>` tag, but `<svg>` tags cannot use this method.
+All of the actionable images on the page must include information about where
+the link will send users. One method to remedy this issue is to add alternative
+text to the image about the purpose, as you did on the logo image in the
+example above. This works great for an image using a `<img>` tag, but `<svg>`
+tags cannot use this method.
 
-For the social media icons, which use `<svg>` tags, you can use a [different alternative description pattern](https://codepen.io/web-dot-dev/pen/poZyEZd) targeting SVGs, add the information between the `<a>` and `<svg>` tags and then hide it visually from users, add a supported ARIA, or other options. Depending on your environment and code restrictions, one method might be preferable over another. Let's use the simplest pattern option with the most assistive technology coverage, which is adding a `role="img"` to the `<svg>` tag and including a `<title>` element.
+For the social media icons, which use `<svg>` tags, you can use a
+[different alternative description pattern](https://codepen.io/web-dot-dev/pen/poZyEZd)
+targeting SVGs, add the information between the `<a>` and `<svg>` tags and then
+hide it visually from users, add a supported ARIA, or other options. Depending
+on your environment and code restrictions, one method might be preferable over
+another. Let's use the simplest pattern option with the most assistive
+technology coverage, which is adding a `role="img"` to the `<svg>` tag and
+including a `<title>` element.
 
 ```html
 <a href="#!">
@@ -309,17 +347,22 @@ Two examples were reported.
   </a>
 
    The club name, <code><div class="club-name">Medical Mysteries Club</div></code> , has a color hex value of  <code>#01aa9d</code> and the background hex value is <code>#ffffff</code>. The color contrast ratio is 2.9:1.
+  <figcaption>
+   The club name, <code><div class="club-name">Medical Mysteries Club</div></code> , has a color hex value of <code>#01aa9d</code> and the background hex value is <code>#ffffff</code>. The color contrast ratio is 2.9:1.
 
    <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3Aeg1osulNGB1EVtGu8r.png">View full size screenshot</a>.
+  </figcaption>
   </figure>
+  
   <figure class="screenshot">
     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/86Iongt2UcohbzEar4Pm.png" alt="View full size screenshot.">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/86Iongt2UcohbzEar4Pm.png", alt="Lighthouse score for mermaid syndrome copy. The grey value contrast ratio is too low.", width="320", height="228" %}
     </a>
-
-    <code><b>Mermaid syndrome</b></code> has a text hex value of <code>#7c7c7c</code>, while the background's hex color is <code>#ffffff</code>. The color contrast ratio is 4.2:1.
-
-     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/86Iongt2UcohbzEar4Pm.png">View full size screenshot</a>.
+    <figcaption>
+      <code><b>Mermaid syndrome</b></code> has a text hex value of <code>#7c7c7c</code>, while the background's hex color is <code>#ffffff</code>. The color contrast ratio is 4.2:1.
+      
+      <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/86Iongt2UcohbzEar4Pm.png">View full size screenshot</a>.
+    </figcaption>
   </figure>
 </div>
 
@@ -354,19 +397,22 @@ the 4.5:1 color contrast requirements.
     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png" alt="View full size screenshot.">
       {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png", alt="The teal has been fixed and no longer fails.", width="320", height="228" %}
   </a>
-
-   The club name, <code><div class="club-name">Medical Mysteries Club</div></code> , has been given a color value of <code>#008576</code> and the background remains <code>#ffffff</code>. The updated color contrast ratio is 4.5:1.
-
-   <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png">View full size screenshot</a>.
+  <figcaption>
+    The club name, <code><div class="club-name">Medical Mysteries Club</div></code> , has been given a color value of <code>#008576</code> and the background remains <code>#ffffff</code>. The updated color contrast ratio is 4.5:1.
+    
+    <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png">View full size screenshot</a>.
+  </figcaption>
   </figure>
   <figure class="screenshot">
     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3DgVWG6oIRRVTGYmZP3c.png" alt="View full size screenshot.">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/3DgVWG6oIRRVTGYmZP3c.png", alt="The grey has been fixed and no longer fails.", width="320", height="228" %}
     </a>
-
-    <code><b>Mermaid syndrome</b></code> now has a color value of <code>#767676</code> and the background remains <code>#ffffff</code>. The color contrast ratio is 4.5:1.
-
-    <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3DgVWG6oIRRVTGYmZP3c.png">View full size screenshot</a>.
+    
+    <figcaption>
+      <code><b>Mermaid syndrome</b></code> now has a color value of <code>#767676</code> and the background remains <code>#ffffff</code>. The color contrast ratio is 4.5:1.
+      
+      <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3DgVWG6oIRRVTGYmZP3c.png">View full size screenshot</a>.
+    </figcaption>
   </figure>
 </div>
 
