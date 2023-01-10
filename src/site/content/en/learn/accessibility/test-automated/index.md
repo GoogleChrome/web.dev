@@ -250,7 +250,12 @@ Image elements are missing [alt] attributes. Informative elements should aim for
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-Since the logo image is also a link, you know from the [image module](/learn/accessibility/images/) that it is called an actionable image and requires alternative text information about the purpose of the image. Normally, the first image on the page is a logo, so you can reasonably assume your AT users will know this, and you may decide not to add this additional contextual information to your image description.
+Since the logo image is also a link, you know from the
+[image module](/learn/accessibility/images/) that it is called an actionable
+image and requires alternative text information about the purpose of the image.
+Normally, the first image on the page is a logo, so you can reasonably assume
+your AT users will know this, and you may decide not to add this additional
+contextual information to your image description.
 
 ```html
 <a href="index.html">
@@ -303,7 +308,7 @@ Two examples were reported.
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/3Aeg1osulNGB1EVtGu8r.png", alt="Lighthouse score for reported club name. The teal value contrast ratio is too low.", width="320", height="228" %}
   </a>
 
-   The club name, `<div class="club-name">Medical Mysteries Club</div>` , has a color hex value of  `#01aa9d` and the background hex value is `#ffffff`. The color contrast ratio is 2.9:1.
+   The club name, <code><div class="club-name">Medical Mysteries Club</div></code> , has a color hex value of  <code>#01aa9d</code> and the background hex value is <code>#ffffff</code>. The color contrast ratio is 2.9:1.
 
    <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3Aeg1osulNGB1EVtGu8r.png">View full size screenshot</a>.
   </figure>
@@ -312,7 +317,7 @@ Two examples were reported.
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/86Iongt2UcohbzEar4Pm.png", alt="Lighthouse score for mermaid syndrome copy. The grey value contrast ratio is too low.", width="320", height="228" %}
     </a>
 
-    `<b>Mermaid syndrome</b>` has a text hex value of `#7c7c7c`, while the background's hex color is `#ffffff`. The color contrast ratio is 4.2:1.
+    <code><b>Mermaid syndrome</b></code> has a text hex value of <code>#7c7c7c</code>, while the background's hex color is <code>#ffffff</code>. The color contrast ratio is 4.2:1.
 
      <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/86Iongt2UcohbzEar4Pm.png">View full size screenshot</a>.
   </figure>
@@ -350,7 +355,7 @@ the 4.5:1 color contrast requirements.
       {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png", alt="The teal has been fixed and no longer fails.", width="320", height="228" %}
   </a>
 
-   The club name, `<div class="club-name">Medical Mysteries Club</div>` , has been given a color value of `#008576` and the background remains `#ffffff`. The updated color contrast ratio is 4.5:1.
+   The club name, <code><div class="club-name">Medical Mysteries Club</div></code> , has been given a color value of <code>#008576</code> and the background remains <code>#ffffff</code>. The updated color contrast ratio is 4.5:1.
 
    <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/2JyEvvfRBNFr7YdPipLf.png">View full size screenshot</a>.
   </figure>
@@ -367,8 +372,11 @@ the 4.5:1 color contrast requirements.
 
 #### Issue #7 - list structure  {: #list-structure }
 
-List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements. Screen readers require list items (`<li>`) to be contained within a parent `<ul>` or `<ol>` to be announced properly.
-  [Learn more about list rules](https://dequeuniversity.com/rules/axe/4.4/listitem).
+List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements.
+Screen readers require list items (`<li>`) to be contained within a parent
+`<ul>` or `<ol>` to be announced properly.
+
+[Learn more about list rules](https://dequeuniversity.com/rules/axe/4.4/listitem).
 
 ```html
 <div class="ul">
@@ -386,7 +394,10 @@ List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements. S
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-We used a CSS class in this demo to simulate the unordered list instead of using a `<ul>` tag. When we wrote this code improperly, we removed the inherent semantic HTML features built into this tag. By replacing the class with a real `<ul>` tag and modifying the related CSS, we resolve this accessibility issue.
+We used a CSS class in this demo to simulate the unordered list instead of
+using a `<ul>` tag. When we wrote this code improperly, we removed the inherent
+semantic HTML features built into this tag. By replacing the class with a real
+`<ul>` tag and modifying the related CSS, we resolve this accessibility issue.
 
 ```html
 <ul>
@@ -415,7 +426,10 @@ creates frustrating experiences for users who rely on assistive technologies.
   </figure> <strong>Let's fix it.</strong>
 </span>
 
-Unless there is a specific reason to disrupt the natural tabbing order on a web page, there is no need to have a positive integer on a tabindex attribute. To keep the natural tabbing order, we can either change the tabindex to `0` or remove the attribute altogether.
+Unless there is a specific reason to disrupt the natural tabbing order on a web
+page, there is no need to have a positive integer on a tabindex attribute. To
+keep the natural tabbing order, we can either change the tabindex to `0` or
+remove the attribute altogether.
 
 ```html
 <button type="submit">Subscribe</button>
@@ -423,7 +437,9 @@ Unless there is a specific reason to disrupt the natural tabbing order on a web 
 
 ### Step 6
 
-Now that you've fixed all the automated accessibility issues, open up a new debug mode page. Run the Lighthouse accessibility audit again. Your score should be much better than on the first run.
+Now that you've fixed all the automated accessibility issues, open up a new
+debug mode page. Run the Lighthouse accessibility audit again. Your score
+should be much better than on the first run.
 
 <figure class="screenshot">
 {% Img
