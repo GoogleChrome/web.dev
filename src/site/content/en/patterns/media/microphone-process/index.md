@@ -52,7 +52,7 @@ stopMicrophoneButton.addEventListener("click", () => {
 class Processor extends AudioWorkletProcessor {
   process([input], [output]) {
     // Copy inputs to outputs.
-    input[0].forEach((sample, i) => output[0][i] = sample);
+    output[0].set(input[0]);
     return true;
   }
 }
