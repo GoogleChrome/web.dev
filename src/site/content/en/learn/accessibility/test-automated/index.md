@@ -365,6 +365,7 @@ the 4.5:1 color contrast requirements.
     </a>
 
     `<b>Mermaid syndrome</b>` now has a color value of `#767676` and the background remains `#ffffff`. The color contrast ratio is 4.5:1.
+    <code><b>Mermaid syndrome</b></code> now has a color value of <code>#767676</code> and the background remains <code>#ffffff</code>. The color contrast ratio is 4.5:1.
 
     <a href="https://web-dev.imgix.net/image/VbsHyyQopiec0718rMq2kTE1hke2/3DgVWG6oIRRVTGYmZP3c.png">View full size screenshot</a>.
   </figure>
