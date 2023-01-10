@@ -83,8 +83,8 @@ Deferring non-critical resources is another way to effectively boost the relativ
 
 To summarize, you should follow these best practices to ensure that the LCP resource is loaded early, and at high priority:
 
-- **Add `fetchpriority="high"` to the `<img>` tag of your LCP image.** If the LCP resource is loaded via a` <link rel="preload">` tag, fear not because you can also set `fetchpriority="high"` on that!\
-- **Never set `loading="lazy"` on the `<img>` tag of your LCP image.** Doing this will deprioritize your image and delay when it starts loading.\
+- **Add `fetchpriority="high"` to the `<img>` tag of your LCP image.** If the LCP resource is loaded via a` <link rel="preload">` tag, fear not because you can also set `fetchpriority="high"` on that!
+- **Never set `loading="lazy"` on the `<img>` tag of your LCP image.** Doing this will deprioritize your image and delay when it starts loading.
 - **Defer non-critical resources when possible.** Either by moving them to the end of your document, or loading them asynchronously via script.
 
 ### Use a CDN to optimize document and resource TTFB
