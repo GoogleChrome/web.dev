@@ -108,7 +108,7 @@ followed by _"it's elegant and beautiful."_
 Apple in their
 [Dark Mode developer documentation](https://developer.apple.com/documentation/appkit/supporting_dark_mode_in_your_interface)
 explicitly writes: _"The choice of whether to enable a light or dark appearance
-is an aesthetic one for most users, and might not relate to ambient lighting conditions."_
+is an aesthetic one for most users, and might not relate to ambient lighting conditions."._
 
 {% Aside 'note' %}
 Read up more on
