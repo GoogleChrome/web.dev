@@ -457,6 +457,8 @@ quam sem.
     a massa sit amet ullamcorper.
   </p>
   <cite>
+    by Jon Doe
+  </cite>
 </pullquote>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
