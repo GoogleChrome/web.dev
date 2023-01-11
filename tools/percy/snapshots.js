@@ -9,11 +9,15 @@ const pagesToTest = [
   },
   {
     url: '/handbook/content-types/example-landing-page/',
-    name: 'Landing page',
+    name: 'Landing page example',
   },
   {
     url: '/handbook/content-types/example-collection/',
-    name: 'Collection page',
+    name: 'Collection page example',
+  },
+  {
+    url: '/handbook/content-types/example-post/',
+    name: 'Post example',
   },
 ];
 
