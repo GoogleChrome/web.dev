@@ -226,7 +226,7 @@ Sometimes it's not possible to remove the functionality, and there is no
 library to sanitize the value and create a Trusted Type for you.
 In those cases, create a Trusted Type object yourself.
 
-For that, first create a [policy](https://w3c.github.io/webappsec-trusted-types/dist/spec/#policies-hdr). Policies are factories for Trusted Types that enforce certain security rules on their input:
+For that, first create a [policy](https://w3c.github.io/trusted-types/dist/spec/#policies-hdr). Policies are factories for Trusted Types that enforce certain security rules on their input:
 
 ```javascript/2
 if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
@@ -255,7 +255,7 @@ wraps the return value in a correct type - in this case `TrustedHTML`.
 
 #### Use a default policy
 Sometimes you can't change the offending code. For example, this is the case if you're loading a third-party library from a CDN. In that case, use a
-[default policy](https://w3c.github.io/webappsec-trusted-types/dist/spec/#default-policy-hdr):
+[default policy](https://w3c.github.io/trusted-types/dist/spec/#default-policy-hdr):
 
 ```javascript
 if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
@@ -285,11 +285,11 @@ Content-Security-Policy: require-trusted-types-for 'script'; report-uri //my-csp
 
 Voila! Now, no matter how complex your web application is, the only thing that
 can introduce a DOM XSS vulnerability, is the code in one of your policies - and
-you can lock that down even more by [limiting policy creation](https://w3c.github.io/webappsec-trusted-types/dist/spec/#trusted-types-csp-directive).
+you can lock that down even more by [limiting policy creation](https://w3c.github.io/trusted-types/dist/spec//#trusted-types-csp-directive).
 
 ## Further reading
 
 - [Trusted Types GitHub](https://github.com/w3c/webappsec-trusted-types)
-- [W3C specification draft](https://w3c.github.io/webappsec-trusted-types/dist/spec/)
+- [W3C specification draft](https://w3c.github.io/trusted-types/dist/spec/)
 - [FAQ](https://github.com/w3c/webappsec-trusted-types/wiki/FAQ)
 - [Integrations](https://github.com/w3c/webappsec-trusted-types/wiki/Integrations)
