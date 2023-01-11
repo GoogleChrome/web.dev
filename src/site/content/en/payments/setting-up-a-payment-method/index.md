@@ -402,11 +402,10 @@ Request API displays a browser-provided UI called the "Payment Request UI". This
 UI allows users to choose a payment app. After pressing the **Continue** button
 in the Payment Request UI, the selected payment app is launched.
 
-<figure style="width:300px; margin:auto;">
-  <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/8T37CEyLisAjwW39dRwB.mp4", autoplay="true", loop="true", muted="true"
+  %}
   <figcaption>
     Payment Request UI intervenes before launching the payment app.
   </figcaption>
@@ -418,11 +417,10 @@ the browser can delegate fulfillment of that information to payment apps and
 launch a payment app directly without showing the Payment Request UI when
 `show()` is called.
 
-<figure style="width:300px; margin:auto;">
-  <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/VOKIj5Tqfi2bNPCjtkyi.mp4", autoplay="true", loop="true", muted="true"
+  %}
   <figcaption>
     Skip the Payment Request UI and launch the payment app directly.
   </figcaption>
