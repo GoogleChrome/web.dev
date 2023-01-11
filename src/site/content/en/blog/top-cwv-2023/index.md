@@ -45,7 +45,7 @@ Our first set of recommendations are for [Largest Contentful Paint (LCP)](/lcp/)
 
 ### Ensure the LCP resource is discoverable from the HTML source
 
-According to the [2022 Web Almanac](https://almanac.httparchive.org/en/2022/) by HTTP Archive, [72%](https://almanac.httparchive.org/en/2022/performance#fig-8) of mobile pages have an image as their LCP element, which means that for most sites to ensure their LCP is good, they'll need to ensure those images can load quickly.
+According to the [2022 Web Almanac](https://almanac.httparchive.org/en/2022/) by HTTP Archive, [72%](https://almanac.httparchive.org/en/2022/performance#fig-8) of mobile pages have an image as their LCP element, which means that for most sites to have a "good" LCP, they'll need to ensure those images can load quickly.
 
 What may not be obvious to many developers is that the time it takes to load an image is just one part of the challenge. Another critical part is the time *before* an image starts loading, and HTTP Archive data suggests that's actually where many sites get tripped up.
 
@@ -85,7 +85,7 @@ To summarize, you should follow these best practices to ensure that the LCP reso
 
 - **Add `fetchpriority="high"` to the `<img>` tag of your LCP image.** If the LCP resource is loaded via a` <link rel="preload">` tag, fear not because you can also set `fetchpriority="high"` on that!
 - **Never set `loading="lazy"` on the `<img>` tag of your LCP image.** Doing this will deprioritize your image and delay when it starts loading.
-- **Defer non-critical resources when possible.** Either by moving them to the end of your document, or loading them asynchronously via script.
+- **Defer non-critical resources when possible.** Either by moving them to the end of your document, using native lazy-loading for [images](/browser-level-image-lazy-loading/) or [iframes](/iframe-lazy-loading/), or loading them asynchronously via JavaScript.
 
 ### Use a CDN to optimize document and resource TTFB
 
@@ -98,7 +98,7 @@ This time is known as [Time to First Byte (TTFB)](/ttfb/), and the best way to r
 - Serve your content as geographically close to your users as possible
 - Cache that content so recently-requested content can be served again quickly.
 
-The best way to do both of these things is to [use a CDN](/content-delivery-networks/). CDNs distribute your resources to [edge servers](https://en.wikipedia.org/wiki/Edge_computing), which are spread across the globe, thus limiting the distance those resources have to travel over the wire to your users. CDNs also usually have fine-grained caching controls that can be customized and optimized for your site's needs.
+The best way to do both of these things is to [use a CDN](/content-delivery-networks/). CDNs distribute your resources to edge servers, which are spread across the globe, thus limiting the distance those resources have to travel over the wire to your users. CDNs also usually have fine-grained caching controls that can be customized and optimized for your site's needs.
 
 Many developers are familiar with using a CDN to host static assets, but CDNs can serve and cache HTML documents as well, even those that are dynamically generated.
 
@@ -106,7 +106,7 @@ According to the Web Almanac, only [29%](https://almanac.httparchive.org/en/2022
 
 Some tips for configuring your CDNs are:
 
-- Consider increasing how long content is cached for (e.g. is it actually critical that content is always fresh? Or can it be a few minutes stale?).
+- Consider increasing how long content is cached for (for example, is it actually critical that content is always fresh? Or can it be a few minutes stale?).
 - Consider maybe even caching content indefinitely, and then purging the cache if/when you make an update.
 - Explore whether you can move dynamic logic currently running on your origin server to the [edge](https://en.wikipedia.org/wiki/Edge_computing) (a feature of most modern CDNs).
 
@@ -136,17 +136,23 @@ Despite this, [a significant number of websites](https://almanac.httparchive.org
 
 Site owners should check that their pages are [eligible for the bfcache](/bfcache/#optimize-your-pages-for-bfcache) and work on any reasons why they are not. Chrome already [has a bfcache tester in DevTools](/bfcache/#test-to-ensure-your-pages-are-cacheable) and this year we plan to enhance tooling here with [a new Lighthouse audit performing a similar test](https://github.com/GoogleChrome/lighthouse/issues/13960) and [an API to measure this in the field](https://chromestatus.com/feature/5684908759449600).
 
-While we have included the bfcache in the CLS section, as we saw the biggest gains there so far, the bfcache will also improve the other Core Web Vitals, i.e. with 0 LCP and much improved FID and INP. It is one of [a number of instant navigations](https://calendar.perfplanet.com/2022/fast-is-good-instant-is-better/) available to drastically improve page navigations.
+While we have included the bfcache in the CLS section, as we saw the biggest gains there so far, the bfcache will generally also improve other Core Web Vitals too. It is one of [a number of instant navigations](https://calendar.perfplanet.com/2022/fast-is-good-instant-is-better/) available to drastically improve page navigations.
 
 ### Avoid animations/transitions that use layout-inducing CSS properties
 
-Another common source of layout shifts is when elements are animated. For example, cookie banners or other notification banners can push content out of their way, and will cause a layout shift if they do.
+Another common source of layout shifts is when elements are animated. For example, cookie banners or other notification banners that slide in from the top or bottom are often a contributor to CLS. This is particularly problematic when these banners push other content out of the way, but even when they don't, animating them can still impact CLS.
 
-While HTTP Archive data can't conclusively connect animations to layout shifts, the data does show that pages that animate any CSS property that *could* affect layout are 15% less likely to have "good" CLS than pages overall. Some properties are associated with worse CLS than others. For instance, pages that animate `margin` or `border` widths have "poor" CLS at almost twice the rate that pages are assessed as poor overall.
+While HTTP Archive data can't conclusively connect animations to layout shifts, the data does show that pages that animate any CSS property that *could* affect layout are 15% less likely to have "good" CLS than pages overall. Some properties are associated with worse CLS than others. For instance, pages that animate `margin` or `border` widths have "poor" CLS at almost twice the rate that pages overall are assessed as poor.
 
-If an element must change its location or the area it takes up, the easiest way to avoid these shifts is to pull the animations outside of the normal document flow. The most common way is to **use animations that don't affect layout**, like `transform`. Animating with `transform` can have the added benefit of [improving page performance overall](/animations-guide/) by moving more animation work onto the GPU and off the main thread. A page could also remove the element itself from the document flow, like with `position: absolute` or `fixed`, though animating some properties (like `top`) could still trigger a layout shift on the element itself.
+This is perhaps not surprising, because any time you transition or animate *any* layout-inducing CSS property, it will result in [layout shifts](/cls/#layout-shifts-in-detail), and if those layout shifts are not within 500 milliseconds of a user interaction, they will impact CLS.
 
-The Lighthouse audit [Avoid non-composited animations](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/) will warn when a page animates potentially slow CSS properties, a large number of which can cause layout shifts.
+What may be surprising to some developers is that this is true even in cases where the element is taken outside of the normal document flow. For example, absolutely positioned elements that animate `top` or `left` will cause layout shifts, even if they aren't pushing other content around. However, if instead of animating `top` or `left` you animate `transform:translateX()` or `transform:translateY()`, it won't cause the browser to update page layout and thus won't produce any layout shifts.
+
+Preferring animation of CSS properties that can be updated on the browser's compositor thread has long been [a performance best practice](/animations-guide/) because it moves that work onto the GPU and off the main thread. And in addition to it being a general performance best practice, it can also help improve CLS.
+
+As a general rule, never animate or transition any CSS property that requires the browser to update the page layout, unless you're doing it in response to a user tap or key press (though [not `hover`](/cls/#user-initiated-layout-shifts)). And whenever possible, prefer transitions and animations using the CSS [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) property.
+
+The Lighthouse audit [Avoid non-composited animations](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/) will warn when a page animates potentially slow CSS properties.
 
 ## First Input Delay (FID)
 
@@ -160,9 +166,11 @@ Tasks are any piece of discrete work that the browser does. Tasks include render
 
 Per the Web Almanac, there's [plenty of evidence](https://almanac.httparchive.org/en/2022/javascript#long-tasksblocking-time) to suggest that developers could be doing more to avoid or break up long tasks. While breaking up long tasks may not be as low of an effort as other recommendations in this article, it's less effort than other techniques not offered in this article.
 
-While you should always strive to do as little work as possible in JavaScript, you can help the main thread quite a bit by [breaking up long tasks into smaller ones](/optimize-long-tasks/). You can accomplish this by **[yielding to the main thread](/optimize-long-tasks/#use-asyncawait-to-create-yield-points)** often so that rendering updates and other user interactions can occur more quickly.
+While you should always strive to do as little work as possible in JavaScript, you can help the main thread quite a bit by [breaking up long tasks into smaller ones](/optimize-long-tasks/). You can accomplish this by [yielding to the main thread](/optimize-long-tasks/#use-asyncawait-to-create-yield-points) often so that rendering updates and other user interactions can occur more quickly.
 
-Another option is to consider using APIs such as `isInputPending` and the Scheduler API. [`isInputPending`](/optimize-long-tasks/#yield-only-when-necessary) is a function that returns a boolean value that indicates whether a user input is pending. If it returns true, you can yield to the main thread so it can handle the pending user input. [The Scheduler API](/optimize-long-tasks/#a-dedicated-scheduler-api) is a more advanced approach, which allows you to schedule work based on a system of priorities that take into account whether the work being done is user-visible or backgrounded.
+Another option is to consider using APIs such as [`isInputPending`](/optimize-long-tasks/#yield-only-when-necessary) and the [Scheduler API](/optimize-long-tasks/#a-dedicated-scheduler-api). `isInputPending` is a function that returns a boolean value that indicates whether a user input is pending. If it returns `true`, you can yield to the main thread so it can handle the pending user input.
+
+The Scheduler API is a more advanced approach, which allows you to schedule work based on a system of priorities that take into account whether the work being done is user-visible or backgrounded.
 
 By breaking up long tasks, you're giving the browser more opportunities to fit in critical user-visible work, such as dealing with interactions and any resulting rendering updates.
 
@@ -188,7 +196,7 @@ Optimizing rendering work isn't a straightforward process, and it often depends 
 
 ## Conclusion
 
-Improving page performance can seem like a daunting task, especially when you consider that there is a mountain of guidance across the web to consider. By focusing on these recommendations, however, you can approach the problem with focus and purpose, and hopefully move the needle for your website's Core Web Vitals in 2023.
+Improving page performance can seem like a daunting task, especially given that there is a mountain of guidance across the web to consider. By focusing on these recommendations, however, you can approach the problem with focus and purpose, and hopefully move the needle for your website's Core Web Vitals.
 
 Based on careful analysis of the state of the web, these recommendations represent the subset of best practices that we believe are the *most effective* ways to improve Core Web Vitals performance. If you find that some or all of this guidance doesn't apply to your specific situation, there's always more you can do. Check out these optimization guides for each of the metrics discussed in this article for more information:
 
@@ -198,6 +206,5 @@ Based on careful analysis of the state of the web, these recommendations represe
 - [Optimize INP](/optimize-inp/)
 
 Here's to a new year, and a faster web for all! May your sites be fast for your users in all the ways that matter most.
-
 
 _Photo by [Devin Avery](https://unsplash.com/@devintavery)_
