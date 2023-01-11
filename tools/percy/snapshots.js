@@ -23,7 +23,7 @@ const pagesToTest = [
 
 // A script to navigate our app and take snapshots with Percy.
 (async () => {
-  const browser = await puppeteer.launch({
+  const browser = await puppeteer.launch( {
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
