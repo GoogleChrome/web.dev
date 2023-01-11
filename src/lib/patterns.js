@@ -27,7 +27,9 @@ const matter = require('gray-matter');
 
 const stripDot = /^\./;
 const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
-const files = glob.sync(path.join(basePath, '**', 'index.md'));
+const files = glob.sync(
+  path.join(basePath, '**', 'index.md').replace(/\\/g, '/'),
+);
 
 /** @type {CodePatternSets} */
 const allPatternSets = {};
