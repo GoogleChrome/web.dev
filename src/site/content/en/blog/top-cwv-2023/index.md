@@ -45,7 +45,7 @@ Our first set of recommendations are for [Largest Contentful Paint (LCP)](/lcp/)
 
 ### Ensure the LCP resource is discoverable from the HTML source
 
-According to the [2022 Web Almanac](https://almanac.httparchive.org/en/2022/) by HTTP Archive, [72%](https://almanac.httparchive.org/en/2022/performance#fig-8) of mobile pages have an image as their LCP element, which means that for most sites to have a "good" LCP, they'll need to ensure those images can load quickly.
+According to the [2022 Web Almanac](https://almanac.httparchive.org/en/2022/) by HTTP Archive, [72%](https://almanac.httparchive.org/en/2022/performance#fig-8) of mobile pages have an image as their LCP element, which means that for most sites to optimize their LCP, they'll need to ensure those images can load quickly.
 
 What may not be obvious to many developers is that the time it takes to load an image is just one part of the challenge. Another critical part is the time *before* an image starts loading, and HTTP Archive data suggests that's actually where many sites get tripped up.
 
