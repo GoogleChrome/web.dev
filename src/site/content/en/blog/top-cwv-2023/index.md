@@ -198,7 +198,9 @@ Optimizing rendering work isn't a straightforward process, and it often depends 
 
 Improving page performance can seem like a daunting task, especially given that there is a mountain of guidance across the web to consider. By focusing on these recommendations, however, you can approach the problem with focus and purpose, and hopefully move the needle for your website's Core Web Vitals.
 
-Based on careful analysis of the state of the web, these recommendations represent the subset of best practices that we believe are the *most effective* ways to improve Core Web Vitals performance. If you find that some or all of this guidance doesn't apply to your specific situation, there's always more you can do. Check out these optimization guides for each of the metrics discussed in this article for more information:
+While the recommendations listed here are by no means exhaustive, we do believe—based on careful analysis of the state of the web—that these recommendations are the most effective ways that sites can improve their Core Web Vitals performance in 2023.
+
+If you'd like to go beyond the recommendations listed here, check out these optimization guides for more information:
 
 - [Optimize LCP](/optimize-lcp/)
 - [Optimize CLS](/optimize-cls/)
