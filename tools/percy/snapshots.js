@@ -19,6 +19,10 @@ const pagesToTest = [
     url: '/handbook/content-types/example-post/',
     name: 'Post example',
   },
+  {
+    url: '/handbook/content-types/example-collection/',
+    name: 'Collection page',
+  },
 ];
 
 // A script to navigate our app and take snapshots with Percy.
