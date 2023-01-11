@@ -23,6 +23,11 @@ redirects:
   - source: /subscribe
     destination: /newsletter
 
+  # Test post
+
+  - source: /test-post
+    destination: /handbook/content-types/example-post
+
   # Pre-v1 redirects
 
   - source: /fast/using-lighthouse-ci-to-set-a-performance-budget
