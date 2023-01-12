@@ -6,7 +6,6 @@ import {html} from 'lit';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {BaseElement} from '../BaseElement';
 import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
-import 'focus-visible';
 
 /**
  * An Algolia search box.

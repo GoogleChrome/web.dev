@@ -1,7 +1,6 @@
 import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
 import {generateIdSalt} from '../../utils/generate-salt';
-import 'focus-visible';
 
 /**
  * Element that renders a radio group or checkbox group.
