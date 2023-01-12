@@ -3,7 +3,9 @@ layout: post
 title: Minify and compress network payloads
 authors:
   - houssein
+  - jlwagner
 date: 2018-11-05
+updated: 2023-01-13
 description: |
   There are two useful techniques that can be used to improve the performance of
   your web page, minification and data compression. Incorporating both of these
@@ -118,7 +120,7 @@ Use express.js to compress assets with [gzip](/codelab-text-compression) and [Br
 
 ## Static compression
 
-Static compression  involves compressing and saving assets ahead of time. This
+Static compression involves compressing and saving assets ahead of time. This
 can make the build process take longer, especially if high compression levels
 are used, but ensures that no delays happen when the browser fetches the
 compressed resource.
@@ -156,3 +158,35 @@ const app = express();
 
 app.use(express.static('public'));
 </pre>
+
+## Effects on Core Web Vitals
+
+Depending the type of resource, both compression and minification can have a variety of effects on Core Web Vitals. Since both minification and compression reduce the payload size of the delivered resource, it's important to understand what Core Web Vitals are affected by these performance optimizations.
+
+### CSS
+
+When CSS resources are compressed and minified, a number of performance improvements may be observed in your Core Web Vitals metrics.
+
+- Where [First Contentful Paint (FCP)](/fcp/) is concerned, making your CSS as small as it can possibly be means that the browser will take less time to download the resource. This means that parsing of CSS can occur sooner, which should move up the rendering step.
+- Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, it largely depends. If your LCP resource is specified in a CSS `background-image` property, making your CSS smaller means that the potential LCP resource can be discovered more quickly. However, LCP candidates that come from a CSS `background-image` property are not always optimal for LCP, as external CSS resources [don't benefit from the browser preload scanner](/preload-scanner/#css-background-images). If you can't move an LCP image out of CSS and into your HTML, then you should be preloading that image resource.
+
+### JavaScript
+
+JavaScript is a bit tricky, as it depends on what your JavaScript resources are providing for your website.
+
+- If your JavaScript is providing interactivity for your website, minification and compression will ensure that your website's [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/) metrics may be improved during startup. However, it's also important that you're only serving the JavaScript that a given page needs, otherwise you may risk delays in responding to user inputs during that crucial startup period.
+- If your JavaScript is providing markup for a page, then the situation changes. As always, smaller payloads will download faster. In the case of JavaScript, reducing resource load time means you're going to arrive at the parsing, compiling, and execution steps sooner. This may result in faster LCP times if the client-rendered markup contains the page's LCP element. Beyond that, you should try to avoid rendering markup on the client, as [it defeats the preload scanner](/preload-scanner/#rendering-markup-with-client-side-javascript). If you can't avoid client-rendering of markup, then you should preload that render-critical piece of JavaScript so that it can arrive to the browser as fast as it possibly can.
+
+### SVG images
+
+Raster image types are inherently compressed, be it lossy or lessless formats. However, SVG—being a vector image format and text-based—can benefit from compression and minification in the same way that other text-based resources can.
+
+The primary benefit of compression and minifying SVG images depends on whether the SVG image is the LCP element for the given page. If this is the case, you could expect to see lower LCP times.
+
+### Caveats on dynamic versus static compression
+
+Dynamic compression means that the resource is compressed on the server at the time of the request. The inherent nature of this type of compression is that this process takes time on the server to complete, which can delay the resource's [Time to First Byte](/ttfb/). This delay means that—depending on the compression algorithm and level—dynamic compression could actually _delay_ the resource download time.
+
+For static assets such as CSS, JavaScript, and images, you should try to avoid dynamic compression. Static compression is an alternative compression method where the resource is compressed ahead of time and stored on disk, which means that there's no server time involved in compressing the resource at the time of the request. It's the best of both worlds: you get reduced resource payloads, without any of the delays that come with dynamic compression.
+
+The only exception to this rule is with dynamically generated HTML. This is HTML that changes based on the user, such as HTML payloads generated for authenticated users. You can't statically compress this type of markup. However, if you're running a website that doesn't perform personalization of markup on the server, you can safely compress it statically.
