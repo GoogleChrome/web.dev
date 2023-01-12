@@ -28,12 +28,12 @@ platformNews:
   subTitle: Keep up to date with the latest news from the major browser engines.
   pickedLeft:
     url: '/interop-2022-wrapup/'
-  pickedRight: 
+  pickedRight:
     url: '/web-platform-12-2022/'
 
 themes:
   - category: CSS and UI
-    cards: 
+    cards:
       - url: /new-patterns-july-2022/
         eyebrow:
           icon: featured
@@ -86,8 +86,8 @@ themes:
         description: Make an animated gradient text effect with scoped custom properties and background-clip.
 
   - category: Performance
-    cards: 
-      - url: /optimize-inp/
+    cards:
+      - url: /top-cwv-2023/
         eyebrow:
           icon: featured
           text: Featured
@@ -106,13 +106,13 @@ themes:
         eyebrow:
           icon: blog
           text: Case Study
-      - url: /optimize-long-tasks/
+      - url: /optimize-inp/
         eyebrow:
           icon: blog
           text: Blog
 
   - category: Web Apps
-    cards: 
+    cards:
       - url: /learn/pwa/
         eyebrow:
           icon: featured
@@ -139,7 +139,7 @@ themes:
         theme: blue
 
   - category: Accessibility
-    cards: 
+    cards:
       - url: /community-highlight-elisa/
         eyebrow:
           icon: blog
@@ -165,7 +165,7 @@ themes:
           text: Blog
 
   - category: Payments and Identity
-    cards: 
+    cards:
       - url: /payment-and-address-form-best-practices/
         eyebrow:
           icon: featured
@@ -178,7 +178,7 @@ themes:
       - url: /passkey-form-autofill/
         eyebrow:
           icon: blog
-          text: Blog 
+          text: Blog
       - url: /web-payments-overview/
         thumbnail: image/SZHNhsfjU9RbCestTGZU6N7JEWs1/HnOjEdC3jd3ozeEFFWvb.png
         eyebrow:
@@ -189,7 +189,7 @@ themes:
         column: '2'
 
   - category: Ecosystem and community
-    cards: 
+    cards:
       - url: /advancing-framework-ecosystem-cds-2019/
         eyebrow:
           icon: featured
