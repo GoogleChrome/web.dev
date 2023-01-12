@@ -202,17 +202,16 @@ payment details](#reflect-the-updated-payment-details).
 
 ## Inform the merchant of a shipping address change {: #shipping-address-changes }
 
-Payment apps can provide the customer's shipping address to the merchant as part
-of the result of a payment transaction.
+Payment apps can provide a customer's shipping address to the merchant as part
+of a payment transaction.
 
 This is useful for merchants because they can delegate the address collection to
 payment apps. And, because the address data will be provided in [the standard
 data format](https://w3c.github.io/payment-request/#dom-addressinit), the
 merchant can expect to receive shipping addresses in consistent structure.
 
-This is beneficial for customers as well because once they register their
-address information to their favorite payment app, they can reuse it in
-different shops.
+Additionally, customers can register their address information with their
+preferred payment app and reuse it for different merchants.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0ytdyaEC7tkPkBTv5rIu.png", alt="Shipping address picker UI", width="800", height="1600", class="w-screenshot" %}
