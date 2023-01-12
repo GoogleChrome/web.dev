@@ -2,8 +2,8 @@
 title: 'Image formats: JPEG'
 authors:
   - matmarquis
-description: To do
-date: 2023-01-10
+description: Learn about the most common image format on the web. 
+date: 2023-01-16
 tags:
   - images
 ---
@@ -20,7 +20,7 @@ It may sound like an academic distinction on paper: “GIF uses a grid made up o
 In practice, this use of blocks rather than pixels means JPEG is well suited to a much more common use case for images: the kind of subtle, layered
 gradients that make up a real world photograph.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/TFKgf2FgDGkoyg7wnVai.png", alt="Horizontal alignment of green blocks going from light to dark", width="800", height="67" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/TFKgf2FgDGkoyg7wnVai.png", alt="Horizontal alignment of green blocks going from light to dark.", width="800", height="67" %}
 
 Describing even a very simple single-pixel gradient using GIF-style encoding would be extremely verbose:
 
@@ -28,7 +28,7 @@ Describing even a very simple single-pixel gradient using GIF-style encoding wou
 
 Describing a gradient using JPEG-style encoding is much, much more efficient:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ttnejYz6sQKRpzv1v8cl.png", alt="An eight-by-sixteen grid of green blocks ranging in hue from light to dark", width="800", height="402" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ttnejYz6sQKRpzv1v8cl.png", alt="An eight-by-sixteen grid of green blocks ranging in hue from light to dark.", width="800", height="402" %}
 
 > Block one is #00CC00. Block two is a gradient from #00CC00 to #005500.
 
@@ -66,7 +66,7 @@ we compare the original image source and our JPEG side-by-side, but only when we
 With that said, JPEG isn't perfect. As crafty as JPEG is about sneaking compression past us, it can become glaringly obvious if taken too far.
 In fact, if you've spent much time on the web—particularly in days long past—you may have noticed the result of JPEG compression taken too far:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ar5QsCECxAJLdAHFlwNd.png", alt="A highly compressed image of flowers containing many visual artifacts", width="800", height="637" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ar5QsCECxAJLdAHFlwNd.png", alt="A highly compressed image of flowers containing many visual artifacts.", width="800", height="637" %}
 
 Compressing image data too aggressively means the level of detail is reduced further than our psycho-visual systems would naturally
 ignore, so the illusion is broken. It becomes obvious that detail is missing. Because JPEG operates in terms of blocks, the seams between
@@ -79,7 +79,7 @@ bottom as the transfer progresses, while progressive JPEG breaks rendering into 
 top-to-bottom—with each scan increasing the quality of the image. The entire image appears immediately, albeit blurry,
 and grows clearer as the transfer continues.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/iLfUCvVpxOSRAOqhbYCc.gif", alt="Gif showing the superior load speed of a progressive JPEG compared to a regular JPEG", width="800", height="446" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/iLfUCvVpxOSRAOqhbYCc.gif", alt="Gif showing the superior load speed of a progressive JPEG compared to a regular JPEG.", width="800", height="446" %}
 
 It seems like a strictly technical difference on paper, but there's a huge perceptual benefit: by delivering a full-size version of
 the image right away instead of empty space, PJPEG can _feel_ faster than a baseline JPEG to the end user. In addition, except for the smallest images,
@@ -104,7 +104,7 @@ To understand how this compression setting works, let's use a common web-based t
 and configuring image outputs, with configuration options ranging from a 0-100 global “quality” slider, to the ability to fine-tune
 details of chrominance vs. luminance resampling. The lower the “quality” number, the higher the compression, and the smaller the resulting file will be.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/17U3oSBnmzOXCvFPu0dV.png", alt="The Squoosh settings panel, with the quality slider highlighted", width="800", height="783" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/17U3oSBnmzOXCvFPu0dV.png", alt="The Squoosh settings panel, with the quality slider highlighted.", width="800", height="783" %}
 
 Here, with the “quality” set to 60, the file size is reduced by 79%. Don't be fooled by the implications of this label: differences in
 quality across most of the scale will be imperceptible to the human eye, even when performing a side-by-side comparison.
@@ -113,7 +113,7 @@ To convert your source image to a progressive JPEG, simply tick the box labeled 
 Some of these configuration options are almost certainly a deeper dive than the average web project will require, but they can
 provide you with a closer look at how the things you've learned about JPEG encoding impact file size and quality in real world use cases.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/2jknUAL72eJKef8m2tPP.png", alt="The Squoosh settings panel, with the progressive rendering setting highlighted", width="800", height="781" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/2jknUAL72eJKef8m2tPP.png", alt="The Squoosh settings panel, with the progressive rendering setting highlighted.", width="800", height="781" %}
 
 There is not much to it in practical terms, despite how complicated we now know JPEG to be internally. Squoosh is just one of _countless_
 methods of saving optimized JPEGs, all of which use a similar method of determining the compression level: a single integer between 0 and 100.

@@ -2,8 +2,8 @@
 title: 'Image formats: GIF'
 authors:
   - matmarquis
-description: To do
-date: 2023-01-10
+description: Understand the GIF image format, along with an explanation of how image encoding works. 
+date: 2023-01-16
 tags:
   - images
 ---
@@ -21,7 +21,7 @@ algorithm, if you're curious. The finer details of how this algorithm works are 
 works a bit like "Uglifying" JavaScript, where repeated strings of characters throughout the file are saved to a sort of internal dictionary,
 so they can be referenced rather than repeated every time they appear.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/AWgIX677XevD9J0ZUBo3.png", alt="Visualization of the gif reference using a four-by-four grid", width="800", height="873" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/AWgIX677XevD9J0ZUBo3.png", alt="Visualization of the gif reference using a four-by-four grid.", width="800", height="873" %}
 
 Granted, the [algorithm isn't quite as simple](https://giflib.sourceforge.net/whatsinagif/lzw_image_data.html) as a paint-by-number. It steps
 again through the generated table of color codes to find repeated sequences of pixel colors and creates a second table of referencable codes. At no

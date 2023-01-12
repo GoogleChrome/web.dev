@@ -2,8 +2,8 @@
 title: 'Vector images'
 authors:
   - matmarquis
-description: To do
-date: 2023-01-10
+description: Learn about SVG, the vector image format used on the web. 
+date: 2023-01-16
 tags:
   - images
 ---

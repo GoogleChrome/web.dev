@@ -2,8 +2,8 @@
 title: 'Responsive images'
 authors:
   - matmarquis
-description: To do
-date: 2023-01-10
+description: A deep dive into responsive images.
+date: 2023-01-16
 tags:
   - images
 ---

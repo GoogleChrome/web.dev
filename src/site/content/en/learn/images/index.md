@@ -3,7 +3,7 @@ title: Learn Images
 authors:
   - matmarquis
 description: An in-depth course on images for the web.
-date: 2023-01-10
+date: 2023-01-16
 ---
 
 TO DO: intro

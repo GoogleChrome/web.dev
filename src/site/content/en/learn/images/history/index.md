@@ -2,8 +2,8 @@
 title: 'A brief history of images on the web'
 authors:
   - matmarquis
-description: A history of images on the web, starting with `<img>` back in 1993
-date: 2023-01-10
+description: A history of images on the web, starting with the image element in 1993
+date: 2023-01-16
 tags:
   - images
 ---
@@ -102,7 +102,7 @@ of course. A huge, high resolution image source rendered on a small, low density
 but feel far slower. The user will be left bearing all the performance costs of that massive, 4000px-wide image source, to no benefit.
 
 For a long time, `<img>` largely did one thing— it "got image data and put it on the screen." It did that reasonably well, for certain,
-but `img` wasn't up to the task of accommodating the radical shifts in browsing context we were experiencing. While responsive web design
+but `<img>` wasn't up to the task of accommodating the radical shifts in browsing context we were experiencing. While responsive web design
 became a mainstream development practice, browsers optimized the performance of `img` for nearly twenty years—but for all but the most privileged
 users, the image _content_ of pages was inefficient from the outset. No matter how quickly the browser managed to request, parse, and render
 an image source, that asset would likely be far bigger than the user needed.

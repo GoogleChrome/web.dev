@@ -2,8 +2,8 @@
 title: 'Descriptive syntaxes'
 authors:
   - matmarquis
-description: To do
-date: 2023-01-10
+description: Using srcset and sizes to provide the browser with information about image sources and how they'll be used.
+date: 2023-01-16
 tags:
   - images
 ---
@@ -41,7 +41,7 @@ of compression for each individual image destined for use on a project—nor wou
 settings and re-saving alternate sources for every image asset destined for a production website would introduce a huge
 bottleneck in your daily work.
 
-As you learned in [Image Formats and Compression](#), the most efficient encoding for an image will always be dictated by
+As you learned in the modules covering Image Formats and Compression, the most efficient encoding for an image will always be dictated by
 its content, and as you learned in [Responsive Images](/learn/images/responsive-images/), the alternate sizes you'll need for your image sources will be
 dictated by the position those images occupy in the page layout. In a modern workflow, you'll approach these decisions
 holistically rather than individually—determining a set of sensible defaults for images, to best suit the contexts in which

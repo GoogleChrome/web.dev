@@ -2,8 +2,8 @@
 title: 'Image formats: PNG'
 authors:
   - matmarquis
-description: To do
-date: 2023-01-10
+description: Find out when PNG is the best image format to choose.
+date: 2023-01-16
 tags:
   - images
 ---
@@ -18,7 +18,7 @@ PNG and GIF both support transparency, though with a major difference. GIF treat
 pixel is either an opaque color, or fully transparent. PNG supports “alpha channel” transparency, meaning that each pixel
 can be set to a level of transparency between 0 (fully transparent) and 255 (fully opaque).
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/PKQ634IdtXzy63TdlfpC.png", alt="Two pink flowers showing two levels of transparency", width="800", height="399" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/PKQ634IdtXzy63TdlfpC.png", alt="Two pink flowers showing two levels of transparency.", width="800", height="399" %}
 
 In practical terms, the lack of substantial quantization and lossless compression mean that saving an image as a PNG will
 never result in a drop in visual quality. However, this almost invariably results in excessively large file sizes compared to
@@ -34,7 +34,7 @@ Much like GIF, PNG was designed to solve use cases that are frequently better se
 For that reason, you'll sometimes see PNG used as the fallback version of UI elements in the vanishingly small number of browsers that don't
 support SVG, though these are increasingly rare.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GhNCZEadcuq93fPfuiQJ.png", alt="Png and svg comparison", width="800", height="598" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GhNCZEadcuq93fPfuiQJ.png", alt="Png and svg comparison.", width="800", height="598" %}
 
 In practical terms, PNG is a sound choice for maintaining a manageable-sized “canonical” version of a source image, saved in your
 local development environment or committed to a project repository in case future versions of that image need to be edited or re-saved

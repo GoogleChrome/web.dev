@@ -2,8 +2,8 @@
 title: 'Image formats: AVIF'
 authors:
   - matmarquis
-description: To do
-date: 2023-01-10
+description: AV1 Image File Format (AVIF) is an encoding based on the open source AV1 video codec. 
+date: 2023-01-16
 tags:
   - images
 ---
@@ -22,7 +22,7 @@ encoding standards.
 Though tooling is relatively limited, you can and should [start experimenting with AVIF](https://jakearchibald.com/2020/avif-has-landed/)
 today, as one of the encodings offered by Squoosh:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/TkVWHUuKwH9qauQJDNpI.png", alt="A Squoosh screenshot showing AVIF compression settings", width="800", height="547" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/TkVWHUuKwH9qauQJDNpI.png", alt="A Squoosh screenshot showing AVIF compression settings.", width="800", height="547" %}
 
 ## Browser support
 
@@ -45,11 +45,11 @@ upon failing, will discard it without rendering anything at all. An image source
 huge point of failure for our content, and for the web at large—a broken image and wasted bandwidth to a huge number of users around
 the world. You shouldn't sacrifice a more resilient web for the sake of a more performant one.
 
-For a long time, our single-minded friend `img` made it exceptionally difficult to use any new image format, no matter how promising
-it seemed. Remember, `img` only supported a single source file, and was hyper-optimized to transfer that file quickly—so quickly,
+For a long time, our single-minded friend `<img>` made it exceptionally difficult to use any new image format, no matter how promising
+it seemed. Remember, `<img>` only supported a single source file, and was hyper-optimized to transfer that file quickly—so quickly,
 in fact, that we couldn't intercept that request via JavaScript. Until recently, the only viable option was to serve all users the brand
 new type of image, and request one of the “legacy” formats when the browser fired an error—incurring a second file transfer after the first one was wasted.
 
-For that reason and more, `img` as it had existed for decades had to change. In the next module, [Responsive Images](/learn/images/responsive-images/), you'll learn about the
+For that reason and more, `<img>` as it had existed for decades had to change. In the next module, [Responsive Images](/learn/images/responsive-images/), you'll learn about the
 features introduced to the HTML specification to address these issues and how to use them in your day-to-day work.
 

@@ -2,13 +2,11 @@
 title: 'Prescriptive syntaxes'
 authors:
   - matmarquis
-description: To do
-date: 2023-01-10
+description: Find out about the picture element.
+date: 2023-01-16
 tags:
   - images
 ---
-
-# Prescriptive syntaxes with the `<picture>` element
 
 The `<picture>` element doesn't render anything on its own, but instead acts as a decision engine for an inner `<img>` element,
 telling it what to render. `<picture>` follows a precedent already set by the `<audio>` and `<video>` elements: a wrapper element
@@ -34,17 +32,17 @@ responsive images. `srcset` and `sizes` are designed to work invisibly, seamless
 There are times, however, where you want to alter sources across breakpoints to better highlight the content, the same way you adapt page layouts.
 For example: a full-width header image with a small central focus may work well on a large viewport:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/HWZtREfRzpcy7tvolvkn.png", alt="A header width image of a periwinkle flower surrounded by leaves and stems", width="800", height="286" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/HWZtREfRzpcy7tvolvkn.png", alt="A header width image of a periwinkle flower surrounded by leaves and stems.", width="800", height="286" %}
 
 But when scaled down to suit small viewports, the central focus of the image might be lost:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/7W8AmfGV4jEPD6mp6Kfk.png", alt="A header width image of a periwinkle flower scaled down", width="400", height="143" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/7W8AmfGV4jEPD6mp6Kfk.png", alt="A header width image of a periwinkle flower scaled down.", width="400", height="143" %}
 
 The _subject_ of these image sources are the same, but in order to better focus on that subject visually, you'll want the
 proportions of the image source to change across breakpoints. For example, a tighter zoom on the center of the image, and
 some of the detail at the edges cropped out:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/q9IrCVku2h0B4YfHzI3h.png", alt="ALT_TEXT_HERE", width="400", height="315" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/q9IrCVku2h0B4YfHzI3h.png", alt="A zoomed in crop of the periwinkle flower.", width="400", height="315" %}
 
 That sort of “cropping” can be achieved through CSS, but would leave a user requesting all the data that makes up that image,
 even though they might never end up seeing it.

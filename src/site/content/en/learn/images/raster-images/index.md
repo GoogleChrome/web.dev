@@ -2,8 +2,8 @@
 title: 'Raster images'
 authors:
   - matmarquis
-description: To do
-date: 2023-01-10
+description: Discover raster images, such as JPEG, GIF, PNG, and WebP.
+date: 2023-01-16
 tags:
   - images
 ---
@@ -41,7 +41,7 @@ using our shared standard for our “pixel” grid and colors:
 
 Using this textual information, you'd be able to perfectly recreate the image I have on my sheet of graph paper.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/pwUWoFFo7MVq58e05NnK.png", alt="Three horizontal blue boxes followed by one red box", width="652", height="204" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/pwUWoFFo7MVq58e05NnK.png", alt="Three horizontal blue boxes followed by one red box.", width="652", height="204" %}
 
 Differences in image formats and the way they're encoded as data can be loosely thought of as the way this information has been formatted.
 For example, the information I've sent you could be just as readily expressed as:
