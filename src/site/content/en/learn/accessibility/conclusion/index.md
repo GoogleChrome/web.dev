@@ -6,7 +6,7 @@ authors:
   - rachelandrew
   - marksteadman
 description: Further resources to help you take your next steps.
-date: 2023-01-12
+date: 2023-01-10
 tags:
   - accessibility
 ---
@@ -61,3 +61,8 @@ We conducted several interviews with accessibility practitioners in 2022. Read a
 ## Brought to you by
 
 {% include 'partials/authors-stack.njk' %}
+
+### Special thanks
+
+Thank you to Aaron Forinton for supporting the publication of several modules
+and assessments.

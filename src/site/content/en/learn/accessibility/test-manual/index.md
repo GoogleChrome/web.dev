@@ -3,7 +3,7 @@ title: 'Manual accessibility testing'
 authors:
   - cariefisher
 description: How to manually test for accessibility.
-date: 2023-01-12
+date: 2023-01-10
 tags:
   - accessibility
 ---

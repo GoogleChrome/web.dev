@@ -51,5 +51,5 @@ This course was written by [Carie Fisher](https://cariefisher.com/)
 ([Twitter](https://twitter.com/rachelandrew)). Special thanks to
 [Mark Steadman](https://twitter.com/Steady5063) for providing additional support
 for the [JavaScript module](/learn/accessibility/javascript/), and 
-Aaron Forinton for supporting the publication process.
+[Aaron Forinton](https://github.com/aaronforinton) for supporting the publication process.
 {% endAside %}
