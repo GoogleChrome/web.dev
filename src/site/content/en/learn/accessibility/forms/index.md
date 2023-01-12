@@ -15,7 +15,7 @@ sometimes a CAPTCHA.
 
 Forms are considered one of the most difficult elements to get right from an
 accessibility perspective, as they require knowledge of all the elements we
-have already covered plus additional rules specific just to forms. With some
+have already covered, as well as additional rules specific just to forms. With some
 understanding and time, you can make an accessible form to suit you and your
 users.
 
@@ -38,7 +38,7 @@ that course with additional accessibility-specific form content.
 
 The backbone of forms is fields. Fields are small interactive patterns, such as
 an input or radio button element, that allow users to enter content or make a
-choice. There are a [wide variety of field fields](/learn/forms/fields) to
+choice. There is a [wide variety of form fields](/learn/forms/fields) to
 choose from. 
 
 The default recommendation is to use established HTML patterns instead of
@@ -174,7 +174,7 @@ plan to support.
 ## Errors
 
 When creating accessible forms, there's a lot you can do to prevent users from
-making form errors. In the previous sections, we covered clearly marking-up
+making form errors. Earlier in this module, we covered clearly marking-up
 fields, creating identifying labels, and adding detailed descriptions whenever
 possible. But no matter how clear you think your form is, eventually, a user
 will make a mistake.
@@ -198,7 +198,7 @@ Whenever possible, offer the user a detailed suggestion on how to fix the
 error. There are two attributes available to notify users of errors.
 
 * You can use the HTML [required](https://developer.mozilla.org/docs/Web/HTML/Attributes/required) attribute. The browser will supply a generic error message based on the filed validation parameters.
-* Use the [aria-required](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-required) attribute to share a customized error message to ATs. Only ATs will receive the message unless you add additional code to make the message visible to all users. 
+* Or you can use the [aria-required](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-required) attribute to share a customized error message to ATs. Only ATs will receive the message unless you add additional code to make the message visible to all users. 
 
 Once a user thinks all of the errors have been resolved, allow them to resubmit
 the form and provide feedback about the results of their submission. An error
