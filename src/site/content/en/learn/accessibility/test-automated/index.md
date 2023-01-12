@@ -191,7 +191,7 @@ In our demo, the newsletter subscribe button fails:
 <button role="list" type="submit" tabindex="1">Subscribe</button>
 ```
 
-<span class="solution" id="issue-1-solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-1-solution" style="display:block;font-weight:strong; margin-top: var(--flow-space, 1em);">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -206,31 +206,31 @@ applied to it. In this case, the role can be removed completely.
 
 #### Issue 2: ARIA hidden {: #aria-hidden}
 
-"`[aria-hidden="true"]` elements contain focusable descendants. Focusable
+`"[aria-hidden="true"]` elements contain focusable descendants. Focusable
 descendants within an `[aria-hidden="true"]` element prevent those interactive
 elements from being available to users of assistive technologies like screen
-readers." [Learn more about aria-hidden rules](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).
+readers. [Learn more about `aria-hidden` rules](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).
 
 ```html
 <input type="email" placeholder="Enter your e-mail address" aria-hidden="true" tabindex="-1" required>
 ```
 
-<span class="solution" id="issue-2-solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-2-solution" style="display:block;font-weight:strong; margin-top: var(--flow-space, 1em);">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
-  </figure> <strong>Let's fix it.</strong>
   </figure> <strong>Let's fix it.</strong>
 </span>
 
 The input field had an `aria-hidden="true"` attribute applied to it. Adding
 this attribute hides the element (and everything nested under it) from
-assistive tech. In this case, you should remove this attribute from the input
-to allow people using assistive technology to access and enter information into
-the form field.
+assistive tech.
 
 ```html
 <input type="email" placeholder="Enter your e-mail address" tabindex="-1" required>
 ```
+
+In this case, you should remove this attribute from the input to allow people
+using assistive technology to access and enter information into the form field.
 
 #### Issue 3: Button name {: #button-name}
 
@@ -243,7 +243,7 @@ users who rely on screen readers.
 <button role="list" type="submit" tabindex="1">Subscribe</button>
 ```
 
-<span class="solution" id="issue-3-solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-3-solution" style="display:block;font-weight:strong; margin-top: var(--flow-space, 1em);">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -271,7 +271,7 @@ rules](https://dequeuniversity.com/rules/axe/4.4/image-alt).
 </a>
 ```
 
-<span class="solution" id="issue-4-solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-4-solution" style="display:block;font-weight:strong; margin-top: var(--flow-space, 1em);">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -302,7 +302,7 @@ navigation experience for screen reader users.
 <a href="#!"><svg><path>...</path></svg></a>
 ```
 
-<span class="solution" id="issue-5-solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-5-solution" style="display:block;font-weight:strong; margin-top: var(--flow-space, 1em);">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -365,7 +365,7 @@ Two examples were reported.
   </figure>
 </div>
 
-<span class="solution" id="issue-6-solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-6-solution" style="display:block;font-weight:strong; margin-top: var(--flow-space, 1em);">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -433,7 +433,7 @@ Screen readers require list items (`<li>`) to be contained within a parent
 </div>
 ```
 
-<span class="solution" id="issue-7-solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-7-solution" style="display:block;font-weight:strong; margin-top: var(--flow-space, 1em);">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -465,7 +465,7 @@ creates frustrating experiences for users who rely on assistive technologies.
 <button type="submit" tabindex="1">Subscribe</button>
 ```
 
-<span class="solution" id="issue-8-solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-8-solution" style="display:block;font-weight:strong; margin-top: var(--flow-space, 1em);">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
