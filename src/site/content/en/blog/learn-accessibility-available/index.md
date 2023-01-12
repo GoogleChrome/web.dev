@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Learn Accessibility! is complete
+title: Learn Accessibility! is now available
 subhead: >
-  All modules in this course are now available.
+  All modules have been published.
 description: >
   We launched the final modules for Learn Accessibility, which means you
   can now take this course from start to finish.
