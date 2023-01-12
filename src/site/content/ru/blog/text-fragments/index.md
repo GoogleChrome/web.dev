@@ -164,7 +164,7 @@ URL {
 - [Link to Text Fragment для Mozilla Firefox](https://addons.mozilla.org/firefox/addon/link-to-text-fragment/)
 - [Link to Text Fragment для Apple Safari](https://apps.apple.com/app/link-to-text-fragment/id1532224396)
 
-<figure>Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption> Расширение браузера <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">Link to Text Fragment</a>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption> Расширение браузера <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">Link to Text Fragment</a>.</figcaption></figure>
 
 ### Несколько фрагментов текста в одном URL
 
