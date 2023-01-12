@@ -59,7 +59,7 @@ As a general rule, if your LCP element is an image, the image's URL should alway
 
 - **Prefer server-side rendering (SSR) over client-side rendering (CSR),** as SSR implies that the full page markup (including the image) is present in the HTML source. CSR solutions require JavaScript to run before the image can be discovered.
 
-- **If your image needs to be referenced from an external CSS or JS file, you can still include it in the HTML source via a `<link rel="preload">` tag.** Note that resources referenced by inline styles are usually not discoverable by the browser's [preload scanner](/preload-scanner/), so even though they're found in the HTML source, discovery of them might still be blocked on the loading of other resources, so preloading can help in these cases.
+- **If your image needs to be referenced from an external CSS or JS file, you can still include it in the HTML source via a `<link rel="preload">` tag.** Note that images referenced by inline styles are not discoverable by the browser's [preload scanner](/preload-scanner/), so even though they're found in the HTML source, discovery of them might still be blocked on the loading of other resources, so preloading can help in these cases.
 
 To help you understand if your LCP image has discoverability problems, Lighthouse will be releasing a [new audit](https://github.com/GoogleChrome/lighthouse/issues/13738) in version 10.0 (expected January 2023).
 
