@@ -3,7 +3,7 @@ title: 'Assistive Technology testing'
 authors:
   - cariefisher
 description: How to test with Assistive Technology (AT).
-date: 2023-01-10
+date: 2023-01-12
 tags:
   - accessibility
 ---

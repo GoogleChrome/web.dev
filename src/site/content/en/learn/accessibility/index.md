@@ -4,6 +4,7 @@ authors:
   - cariefisher
 description: An evergreen accessibility course and reference to level up your web development.
 date: 2022-09-30
+updated: 2023-01-12
 tags:
   - accessibility
 ---

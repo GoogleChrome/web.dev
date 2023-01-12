@@ -3,7 +3,7 @@ title: 'Automated accessibility testing'
 authors:
   - cariefisher
 description: How to perform automated accessibility testing.
-date: 2023-01-10
+date: 2023-01-12
 tags:
   - accessibility
 ---

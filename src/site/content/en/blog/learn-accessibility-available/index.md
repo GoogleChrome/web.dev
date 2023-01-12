@@ -6,7 +6,7 @@ subhead: >
 description: >
   We launched the final modules for Learn Accessibility, which means you
   can now take this course from start to finish.
-date: 2023-01-10
+date: 2023-01-12
 authors:
   - alexandrawhite
 hero: image/VbsHyyQopiec0718rMq2kTE1hke2/47JeuiQdxypVbW87NnSB.svg
