@@ -26,9 +26,7 @@ _vital_ that you do not run automated accessibility tests and then stop testing!
 As technology advances, [more tests could be covered by automated tooling alone](https://a11y-automation.dev/violations), but today, both manual and assistive technology checks need to be added to your testing protocols to cover all of the applicable WCAG checkpoints.
 
 {% Aside %}
-
 Each automated testing tool can have distinct accessibility rulesets and use them in different ways. The actual percentage of WCAG checkpoints covered will vary by tool and the content being tested.
-
 {% endAside %}
 
 Pros of manual accessibility tests:
@@ -43,8 +41,8 @@ Cons of manual accessibility tests:
 * May be difficult to repeat at scale
 * Require more accessibility expertise to run tests and interpret the results
 
-Let's compare what accessibility elements and details can currently be detected by an automated
-tool, versus those that won't be detected.
+Let's compare what accessibility elements and details can currently be detected
+by an automated tool, versus those that won't be detected.
 
 <div class="table-wrapper scrollbar">
   <table data-alignment="top" >
@@ -86,6 +84,7 @@ tool, versus those that won't be detected.
     </tbody>
   </table>
 </div>
+<br>
 
 ## Types of manual tests
 
@@ -102,12 +101,10 @@ from a reputable source and develop your own focused manual testing checklist
 for your specific digital product and team needs.
 
 {% Aside %}
-
-Some organizations consider assistive technology (AT) checks to be part of the manual
-testing process as there are a lot of overlaps. In this course, we break AT
-testing into a separate module, as it's more advanced than other manual tests
+Some organizations consider assistive technology (AT) checks to be part of the
+manual testing process as there are a lot of overlaps. In this course, we break
+AT testing into a separate module, as it's more advanced than other manual tests
 and deserves a deeper and separate focus.
-
 {% endAside %}
 
 ### Keyboard checks
@@ -383,3 +380,4 @@ Now, head over to the last testing module focused on
 [assistive technology testing](/learn/accessibility/test-assistive-technology/).
 
 {% Assessment 'manual' %}
+ %}
