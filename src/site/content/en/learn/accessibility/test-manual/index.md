@@ -227,10 +227,10 @@ You should see the first keyboard issue right away—or rather, you shouldn't se
   }
 ```
 
-<span class="solution"  id="issue-1-solution"  style="display:block;font-weight:strong;">
-<figure data-float="left">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
-</figure> <strong>Let's fix it.</strong>
+<span class="solution" id="issue-1-solution" style="display:block;font-weight:strong; margin:1em 0;">
+  <figure data-float="left">
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
+  </figure> <strong>Let's fix it.</strong>
 </span>
 
 As you learned in the [Keyboard focus module](/learn/accessibility/focus/#focus-indicator), you need to remove this line of code to allow web browsers to add a visible focus for users. You can go one step further and create a focus indicator styled to meet the aesthetics of your digital product.
@@ -252,10 +252,10 @@ from the natural focus order by a negative tabindex.
 <input type="email" placeholder="Enter your e-mail address" aria-hidden="true" tabindex="-1" required>
 ```
 
-<span class="solution"  id="issue-2-solution"  style="display:block;font-weight:strong;">
-<figure data-float="left">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
-</figure> <strong>Let's fix it.</strong>
+<span class="solution" id="issue-2-solution" style="display:block;font-weight:strong; margin:1em 0;">
+  <figure data-float="left">
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
+  </figure> <strong>Let's fix it.</strong>
 </span>
 
 Since we would like people to use this field to sign-up for our newsletter, all we need to do is remove the negative tabindex or set it to zero to allow the input to become keyboard focusable again.
@@ -277,10 +277,10 @@ paragraphs about the different medical conditions.
 For our page to be accessible, links must stand out from the surrounding text
 and include a non-color style change on mouse hover and keyboard focus.
 
-<span class="solution"  id="issue-3-solution"  style="display:block;font-weight:strong;">
-<figure data-float="left">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
-</figure> <strong>Let's fix it.</strong>
+<span class="solution" id="issue-3-solution" style="display:block;font-weight:strong; margin:1em 0;">
+  <figure data-float="left">
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
+  </figure> <strong>Let's fix it.</strong>
 </span>
 
 A quick solution is to add an underline to the links inside the paragraphs to make them stand out. This would solve the accessibility issue, but it might not suit the overall design aesthetics you hope to achieve.
@@ -310,10 +310,10 @@ One option is to change the link color to match the other elements on the page. 
 
 Another missed color contrast issue is the social media icons. In the [color and contrast](/learn/accessibility/color-contrast/#calculate-color-contrast) module, you learned that essential icons need to meet a 3:1 color contrast against the background. However, in the demo, the social media icons have a contrast ratio of 1.3:1.
 
-<span class="solution"  id="issue-4-solution" style="display:block;font-weight:strong;">
-<figure data-float="left">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
-</figure> <strong>Let's fix it.</strong>
+<span class="solution" id="issue-4-solution" style="display:block;font-weight:strong; margin:1em 0;">
+  <figure data-float="left">
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
+  </figure> <strong>Let's fix it.</strong>
 </span>
 
 To meet the 3:1 color contrast requirements, the social media icons are changed to a darker gray.
@@ -343,10 +343,10 @@ p.bullet {
 }
 ```
 
-<span class="solution"  id="issue-5-solution" style="display:block;font-weight:strong;">
-<figure data-float="left">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
-</figure> <strong>Let's fix it.</strong>
+<span class="solution" id="issue-5-solution" style="display:block;font-weight:strong; margin:1em 0;">
+  <figure data-float="left">
+    {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
+  </figure> <strong>Let's fix it.</strong>
 </span>
 
 To reset the text alignment in the demo, you can update the code to

@@ -265,14 +265,12 @@ Headings and landmarks are one of the primary ways people navigate using screen 
 
 If you have updated everything correctly, there should not be any visual changes, but your screen reader experience will have dramatically improved.
 
-
 <figure>
   {% YouTube "o8gWVi97cMg" %}
   <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
 </figure>
 
-
-<span id="issue-1-solution" class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-1-solution" style="display:block;font-weight:strong; margin:1em 0;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -293,7 +291,6 @@ If you have updated everything correctly, there should not be any visual changes
   <figcaption>Now that we've fixed the content structure, listen to the screen reader navigate through the demo again.</figcaption>
 </figure>
 
-
 ## Issue 2: Link context {: #link-context}
 
 It's important to give content to screen reader users about the purpose of a link and if the link is redirecting them to a new location outside of the website or app.
@@ -311,7 +308,7 @@ In our demo, we fixed most of the links when we updated the active image alterna
   <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
 </figure>
 
-<span id="issue-2-solution" class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-2-solution" style="display:block;font-weight:strong; margin:1em 0;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -348,7 +345,7 @@ In our automated testing module, Lighthouse was unable to pick up on the inline 
   <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
 </figure>
 
-<span id="issue-3-solution" class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-3-solution" style="display:block;font-weight:strong; margin:1em 0;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -385,7 +382,7 @@ the flow of the content and could distract or confuse a screen reader user.
   <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
 </figure>
 
-<span id="issue-4-solution" class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-4-solution" style="display:block;font-weight:strong; margin:1em 0;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
@@ -419,7 +416,7 @@ In our demo, we're missing both a visual and programmatic label on our newslette
   <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
 </figure>
 
-<span id="issue-5-solution" class="solution" style="display:block;font-weight:strong;">
+<span class="solution" id="issue-5-solution" style="display:block;font-weight:strong; margin:1em 0;">
   <figure data-float="left">
     {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/dNzbda0Lx1XUeCadVLMH.svg", alt="", width="28", height="28"%}
   </figure> <strong>Let's fix it.</strong>
