@@ -254,6 +254,8 @@ demo webpage, which may interfere with some testing tools. Learn more about
 
 Activate the screen reader of your choice and go to the demo page. You may consider navigating through the entire page from top to bottom before focusing on specific issues.
 
+We've recorded the our screen reader for each issue, before and after the fixes are applied to the demo. We encourage you to run through the demo with your own screen reader.
+
 #### Issue 1: Content structure {: #content-structure}
 
 Headings and landmarks are one of the primary ways people navigate using screen readers. If these are not present, a screen reader user has to read the entire page to understand the context. This can take a lot of time and cause frustration. If you try to navigate by either element in the demo, you will quickly discover that they do not exist.
@@ -263,7 +265,12 @@ Headings and landmarks are one of the primary ways people navigate using screen 
 
 If you have updated everything correctly, there should not be any visual changes, but your screen reader experience will have dramatically improved.
 
-{% YouTube "o8gWVi97cMg" %}
+
+<figure>
+  {% YouTube "o8gWVi97cMg" %}
+  <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
+</figure>
+
 
 <span id="issue-1-solution" class="solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
@@ -281,7 +288,11 @@ Heading example: `<h1>Join the Club</h1>`
 
 If you have updated everything correctly, there should not be any visual changes, but your screen reader experience will have dramatically improved.
 
-{% YouTube "FfM3qvEWHjk" %}
+<figure>
+  {% YouTube "FfM3qvEWHjk" %}
+  <figcaption>Now that we've fixed the content structure, listen to the screen reader navigate through the demo again.</figcaption>
+</figure>
+
 
 ## Issue 2: Link context {: #link-context}
 
@@ -295,7 +306,10 @@ In our demo, we fixed most of the links when we updated the active image alterna
 </a>
 ```
 
-{% YouTube "kk7LNdtfYMM" %}
+<figure>
+  {% YouTube "kk7LNdtfYMM" %}
+  <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
+</figure>
 
 <span id="issue-2-solution" class="solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
@@ -314,7 +328,10 @@ There are many different patterns we may consider to add additional link informa
 </a>
 ```
 
-{% YouTube "Ezr7cMdCQlE" %}
+<figure>
+  {% YouTube "Ezr7cMdCQlE" %}
+  <figcaption>Now that we've fixed the link context, listen to the screen reader navigate through the demo again.</figcaption>
+</figure>
 
 ## Issue 3: Decorative image
 
@@ -326,7 +343,10 @@ In our automated testing module, Lighthouse was unable to pick up on the inline 
 </div>
 ```
 
-{% YouTube "TKHHTGghrHs" %}
+<figure>
+  {% YouTube "TKHHTGghrHs" %}
+  <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
+</figure>
 
 <span id="issue-3-solution" class="solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
@@ -344,17 +364,26 @@ We weighed the pros and cons of how best to categorize the image and decided it 
 </div>
 ```
 
-{% YouTube "KqTf8Pl2lMU" %}
+<figure>
+  {% YouTube "KqTf8Pl2lMU" %}
+  <figcaption>Now that we've fixed the decorative image, listen to the screen reader navigate through the demo.</figcaption>
+</figure>
 
 ### Issue 4: Bullet decoration {: #bullet-decoration}
 
-You may have noticed that the screen reader reads the CSS bullet image under the rare diseases sections. While not the traditional type of image we discussed in the Images module, it still needs to be modified as it disrupts the flow of the content and could distract or confuse a screen reader user.
+You may have noticed that the screen reader reads the CSS bullet image under
+the rare diseases sections. While not the traditional type of image we
+discussed in the Images module, the image still must be modified as it disrupts
+the flow of the content and could distract or confuse a screen reader user.
 
 ```html
 <p class="bullet">...</p>
 ```
 
-{% YouTube "sDR2w-HGHOo" %}
+<figure>
+  {% YouTube "sDR2w-HGHOo" %}
+  <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
+</figure>
 
 <span id="issue-4-solution" class="solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
@@ -385,7 +414,10 @@ In our demo, we're missing both a visual and programmatic label on our newslette
 </form>
 ```
 
-{% YouTube "7hncAhi4UUk" %}
+<figure>
+  {% YouTube "7hncAhi4UUk" %}
+  <figcaption>Listen to the screen reader navigate through this issue.</figcaption>
+</figure>
 
 <span id="issue-5-solution" class="solution" style="display:block;font-weight:strong;">
   <figure data-float="left">
@@ -405,7 +437,10 @@ To fix this issue, replace the text placeholder with a look-alike label element.
 </form>
 ```
 
-{% YouTube "hNbDfcmdi_A" %}
+<figure>
+  {% YouTube "hNbDfcmdi_A" %}
+  <figcaption>Now that we've fixed the form, listen to the screen reader navigate through the demo.</figcaption>
+</figure>
 
 ## Wrap up
 
