@@ -363,9 +363,9 @@ p.bullet {
 ### Step 4
 
 <figure class="screenshot">
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/9O3rKmEIy3u1gqn3HfYT.png", alt="Medical Mysteries Club demo site.", width="800", height="570" %}
+{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/9O3rKmEIy3u1gqn3HfYT.png", alt="Screenshot of the Medical Mysteries Club demo site.", width="800", height="570" %}
 <figcaption>
-  All manual issues have now been addressed in this screenshot.
+  All manual issues have now been addressed in the demo, as shown in this image.
 </figcaption>
 </figure>
 
