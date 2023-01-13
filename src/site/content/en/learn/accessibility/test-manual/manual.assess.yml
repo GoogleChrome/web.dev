@@ -1,0 +1,16 @@
+setLeader: Test your knowledge of manual accessibility testing
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: What elements need to meet WCAG color contrast standards?
+    options:
+      - content: "Icons"
+        rationale: "Icons need to meet color contrast standards, but they're not the only option."
+      - content: "Headings"
+        rationale: "Headings need to meet color contrast standards, but they're not the only option."
+      - content: "Body text"
+        rationale: "Body text needs to meet color contrast standards, but that's not the only option."
+      - content: "All of the above"
+        rationale: "Every element should meet contrast standards written by WCAG."

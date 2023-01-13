@@ -82,7 +82,7 @@ title, so be sure to limit your total page title characters.
 The page language attribute ([`lang`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang)) sets the default language for the entire page. This attribute is added to the [`<html>`](https://developer.mozilla.org/docs/Web/HTML/Element/html) tag. A valid language attribute should be added to every page as it signals the AT to which language it should use.
 
 It's recommended that you use two-character
-[ISO language codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
+[ISO language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 for greater AT coverage, as many of them do not support
 [extended language codes](https://webaim.org/techniques/language/).
 
@@ -106,11 +106,43 @@ digital product and a frustrated user.
 {% endCompare %}
 </div>
 
+The lang attribute can only have one language associated with it. This means
+the `<html>` attribute can only have one language, even if there are multiple
+languages on the page. Set `lang` to the primary language of the page.
+
+<div class="switcher">
+{% Compare 'worse' %}
+```html
+<html lang="ar,en,fr,pt">...</html>
+```
+
+{% CompareCaption %}
+Multiple languages are not supported.
+{% endCompareCaption %}
+{% endCompare %}
+
+{% Compare 'better' %}
+```html
+<html lang="ar">...</html>
+```
+
+{% CompareCaption %}
+Set only the page's primary language. In this case, the language is Arabic.
+{% endCompareCaption %}
+{% endCompare %}
+</div>
+
 ### Section language
 
 You can also use the language attribute ([lang](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang)) for language switches in the content itself. The same basic rules apply as the full-page language attribute, except you add it to the appropriate in-page element instead of on the `<html>` tag.
 
-Remember that the language you add to the `<html>` element cascades down to all the contained elements, so always set the primary language of the page top-level `lang` attribute first. Then for any in-page elements written in a different language, add that lang attribute to the appropriate wrapper element. Doing this will override the top-level language setting until that element is closed.
+Remember that the language you add to the `<html>` element cascades down to all
+the contained elements, so always set the primary language of the page
+top-level `lang` attribute first.
+
+For any in-page elements written in a different language, add that `lang`
+attribute to the appropriate wrapper element. This will override the
+top-level language setting until that element is closed.
 
 <div class="switcher">
 {% Compare 'worse' %}
