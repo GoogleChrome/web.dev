@@ -13,6 +13,14 @@ import removeServiceWorkers from './utils/sw-remove';
 // See .unsupported-notice in _page-header.scss
 document.body.classList.remove('unresolved');
 
+
+// Although discouraged (especially for longer videos), some video clips may have
+// autoplace enabled. Disable it when prefers-reduced-motion is set, and ensure
+// controls are set once disabled.
+if ( matchMedia('(prefers-reduced-motion)').matches ) {
+  document.querySelectorAll('video[autoplay]').forEach(b=>{b.removeAttribute('autoplay');b.setAttribute('controls', '')});
+}
+
 function onGlobalStateChanged({cookiePreference}) {
   if (cookiePreference === 'accepts') {
     loadAnalyticsScript();
