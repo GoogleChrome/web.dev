@@ -17,7 +17,6 @@
 /* eslint lit-a11y/click-events-have-key-events: 0 */
 
 import {BaseStateElement} from '../BaseStateElement';
-import 'wicg-inert';
 import {closeNavigationDrawer} from '../../actions';
 
 export const NAVIGATION_DRAWER_TYPE = {
