@@ -42,7 +42,7 @@ an array variable. Each element in the array comprises two components,
 
 For `supportedMethods`, the merchant needs to specify a [Payment Method
 Identifier](/setting-up-a-payment-method/#step-1-provide-the-payment-method-identifier)
-such as `https://bobpay.xyz/pay`. The existence and content of `data` depends on
+such as `https://bobbucks.dev/pay`. The existence and content of `data` depends on
 the content of `supportedMethods` and payment app provider's design.
 
 Both pieces of information should be provided by the payment app provider.
@@ -50,7 +50,7 @@ Both pieces of information should be provided by the payment app provider.
 ```javascript
 // Supported payment methods
 const paymentMethods = [{
-  supportedMethods: 'https://bobpay.xyz/pay',
+  supportedMethods: 'https://bobbucks.dev/pay',
   data: {
     ... // Optional parameters defined by the payment app provider.
   }

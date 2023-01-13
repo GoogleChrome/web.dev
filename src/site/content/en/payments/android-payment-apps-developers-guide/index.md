@@ -280,7 +280,7 @@ To support multiple payment methods, add a `<meta-data>` tag with a
 
   <meta-data
     android:name="org.chromium.default_payment_method_name"
-    android:value="https://bobpay.xyz/pay" />
+    android:value="https://bobbucks.dev/pay" />
   <meta-data
     android:name="org.chromium.payment_method_names"
     android:resource="@array/method_names" />
@@ -415,7 +415,7 @@ The activity can send its response back through `setResult` with `RESULT_OK`.
 
 ```kotlin
 setResult(Activity.RESULT_OK, Intent().apply {
-  putExtra("methodName", "https://bobpay.xyz/pay")
+  putExtra("methodName", "https://bobbucks.dev/pay")
   putExtra("details", "{\"token\": \"put-some-data-here\"}")
 })
 finish()

@@ -349,7 +349,7 @@ propagated to the payment app's service worker as a property of
 
 ```js
 const request = new PaymentRequest([{
-  supportedMethods: 'https://bobpay.xyz/pay',
+  supportedMethods: 'https://bobbucks.dev/pay',
   data: { transactionId: '****' }
 }], {
   displayItems: [{

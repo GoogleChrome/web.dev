@@ -66,7 +66,7 @@ object. This object includes important information about the transaction:
 
 ```js
 const request = new PaymentRequest([{
-  supportedMethods: 'https://bobpay.xyz/pay',
+  supportedMethods: 'https://bobbucks.dev/pay',
   data: {
     transactionId: '****'
   }
