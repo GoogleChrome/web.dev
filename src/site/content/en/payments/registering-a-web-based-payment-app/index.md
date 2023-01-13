@@ -136,9 +136,8 @@ to the service worker that handles payments.
 
 ## Next steps
 
-You learned how to register a service worker, set payment instruments for a
-web-based payment app. The next step is to learn how the service worker can
-orchestrate a payment transaction at runtime.
+The next step is to learn how the service worker can orchestrate a payment
+transaction at runtime.
 
 * [Orchestrating payment transactions with a service
   worker](/orchestrating-payment-transactions)
