@@ -114,28 +114,33 @@ export const requestFetchReports = store.action((_, url, startDate) => {
  * This is used when we open the navigation drawer or show a modal dialog.
  */
 const disablePage = () => {
-  /** @type {HTMLElement|object} */
-  const main = document.querySelector('main') || {};
-  /** @type {HTMLElement|object} */
-  const footer = document.querySelector('.w-footer') || {};
+  // Setting the majority of the page as inert can have a significant perf hit when
+  // trying to animate e.g. the navigation drawer, so do it in the frame after this.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const main = document.querySelector('main');
+      const footer = document.querySelector('footer');
 
-  document.body.classList.add('overflow-hidden');
-  main.inert = true;
-  footer.inert = true;
+      if (main) main.inert = true;
+      if (footer) footer.inert = true;
+    });
+  });
 };
 
 /**
  * Uninert the page so scrolling and pointer events work again.
  */
 const enablePage = () => {
-  /** @type {HTMLElement|object} */
-  const main = document.querySelector('main') || {};
-  /** @type {HTMLElement|object} */
-  const footer = document.querySelector('.w-footer') || {};
+  // Similar to disablePage(), go inert in the next frame to avoid the perf hit.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const main = document.querySelector('main');
+      const footer = document.querySelector('footer');
 
-  document.body.classList.remove('overflow-hidden');
-  main.inert = false;
-  footer.inert = false;
+      if (main) main.inert = false;
+      if (footer) footer.inert = false;
+    });
+  });
 };
 
 export const openNavigationDrawer = store.action(() => {
