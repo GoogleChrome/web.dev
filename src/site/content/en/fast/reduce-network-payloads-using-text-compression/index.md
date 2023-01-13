@@ -167,19 +167,18 @@ Depending the type of resource, both compression and minification can have a var
 
 When CSS resources are compressed and minified, a number of performance improvements may be observed in your Core Web Vitals metrics.
 
-- Where [First Contentful Paint (FCP)](/fcp/) is concerned, making your CSS as small as it can possibly be means that the browser will take less time to download the resource. This means that parsing of CSS can occur sooner, which should move up the rendering step.
-- Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, it largely depends. If your LCP resource is specified in a CSS `background-image` property, making your CSS smaller means that the potential LCP resource can be discovered more quickly. However, LCP candidates that come from a CSS `background-image` property are not always optimal for LCP, as external CSS resources [don't benefit from the browser preload scanner](/preload-scanner/#css-background-images). If you can't move an LCP image out of CSS and into your HTML, then you should be preloading that image resource.
+CSS is render-blocking so the quicker it can be downloaded and parsed, the quicker these renders can happen which can help both [First Contentful Paint (FCP)](/fcp/) and [Largest Contentful Paint (LCP)](/lcp/).
 
 ### JavaScript
 
-JavaScript is a bit tricky, as it depends on what your JavaScript resources are providing for your website.
+Compressing and minifying JavaScript can have positive impacts on your website:
 
-- If your JavaScript is providing interactivity for your website, minification and compression will ensure that your website's [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/) metrics may be improved during startup. However, it's also important that you're only serving the JavaScript that a given page needs, otherwise you may risk delays in responding to user inputs during that crucial startup period.
-- If your JavaScript is providing markup for a page, then the situation changes. As always, smaller payloads will download faster. In the case of JavaScript, reducing resource load time means you're going to arrive at the parsing, compiling, and execution steps sooner. This may result in faster LCP times if the client-rendered markup contains the page's LCP element. Beyond that, you should try to avoid rendering markup on the client, as [it defeats the preload scanner](/preload-scanner/#rendering-markup-with-client-side-javascript). If you can't avoid client-rendering of markup, then you should preload that render-critical piece of JavaScript so that it can arrive to the browser as fast as it possibly can.
+- Making the JavaScript resources smaller allows the JavaScript to download faster, allowing it to be to be processed earlier, allowing your page to become interactive earlier. However, it's also important that you're only serving the JavaScript that a given page needs, otherwise you may risk delays in responding to user inputs during that crucial startup period.
+- If your JavaScript is providing markup for a page, then it is especially critical to allow this to happen as fast as possible. As always, smaller payloads will download faster. In the case of JavaScript, reducing resource load time means you're going to arrive at the parsing, compiling, and execution steps sooner. This may result in faster LCP times if the client-rendered markup contains the page's LCP element. Beyond that, you should try to avoid rendering markup on the client, as [it defeats the preload scanner](/preload-scanner/#rendering-markup-with-client-side-javascript).
 
 ### SVG images
 
-Raster image types are inherently compressed, be it lossy or lessless formats. However, SVG—being a vector image format and text-based—can benefit from compression and minification in the same way that other text-based resources can.
+Raster image types are inherently compressed, be it lossy or lessless formats. However, SVG—being a vector image format and text-based—benefits greatly from compression and minification in the same way that other text-based resources can.
 
 The primary benefit of compression and minifying SVG images depends on whether the SVG image is the LCP element for the given page. If this is the case, you could expect to see lower LCP times.
 
