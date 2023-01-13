@@ -18,9 +18,11 @@ feedback:
 
 {% Aside 'warning' %}
 
-Shipping and address support in [the Payment Request API is removed from the
-specification](https://github.com/w3c/payment-request/pull/955) and is planned
-to be removed in web-based payment apps.
+Shipping and address support in [the Payment Request API was once removed from
+the specification](https://github.com/w3c/payment-request/pull/955) and from
+Chrome, but is [being reverted](https://github.com/w3c/payment-request/pull/996)
+in the spec. Thus, we've reverted the documentation about shipping and address as
+well.
 
 {% endAside %}
 
