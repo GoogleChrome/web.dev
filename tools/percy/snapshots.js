@@ -29,7 +29,11 @@ const pagesToTest = [
   },
   {
     url: '/handbook/content-types/example-pattern-set/',
-    name: 'Pattern-set example',
+    name: 'Pattern-set page example',
+  },
+  {
+    url: '/handbook/content-types/example-pattern/',
+    name: 'Pattern page example',
   },
 ];
 
