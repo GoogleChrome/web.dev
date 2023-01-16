@@ -88,7 +88,7 @@ However, if specific pages of a site are marked as indexable but others are not,
 
 #### Devices
 
-CrUX segments data by mobile, desktop, and tablet - though many tools concentrate on the first two and may not surface tablet data, or may include it within mobile or desktop. The performance characteristics on mobile versus desktop can be quite different—both in terms of the content delivered, and in the capabilities of the devices viewing them.
+CrUX segments data by mobile, desktop, and tablet - though many tools concentrate on the first two and may not expose tablet data, or may include it within mobile or desktop. The performance characteristics on mobile versus desktop can be quite different—both in terms of the content delivered, and in the capabilities of the devices viewing them.
 
 RUM data will allow segmenting traffic similarly, but often shows consolidated data by default. RUM may only allow segmenting by device type (for example, mobile) or browser (for example, Chrome) easily, but not both to only see mobile Chrome traffic. When comparing to CrUX data, ensure you are comparing like-for-like by filtering by device type _and_ the Chrome browser.
 

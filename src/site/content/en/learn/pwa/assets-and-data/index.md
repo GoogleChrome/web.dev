@@ -25,7 +25,7 @@ A Progressive Web App is a website, so all its assets are the same as on the web
 - Data in JSON or other formats.
 
 By default, websites download assets over the network,
-[starting with HTML](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)
+[starting with HTML](/critical-rendering-path/)
 and continuing to the rest of the resources.
 
 Managing those resources to load fast and be available offline has been a challenge for the web.

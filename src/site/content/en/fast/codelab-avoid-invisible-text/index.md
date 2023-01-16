@@ -118,7 +118,7 @@ Promise.all([
 document.documentElement.classList.add("fonts-loaded");
 ```
 
-This adds the `fonts-loaded` class to the document's root element (i.e. the
+This adds the `fonts-loaded` class to the document's root element (the
 `<html>` tag) once both fonts have loaded.
 
 #### ✔️Check-in

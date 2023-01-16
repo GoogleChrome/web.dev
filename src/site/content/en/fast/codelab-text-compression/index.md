@@ -350,8 +350,8 @@ now created. Open the Glitch Console to take a look at what's inside the
 final `public/` directory that's served by the Node server.
 
 {% Aside %}
-The `public/` directory is included in the `.gitignore` file. Directories that
-contain build files are usually included here in order to be ignored by Git, and
+The `git.ignore` file includes the `public/` directory. Directories that
+contain build files are usually included here.
 Glitch also hides these files from the editor tree.
 {% endAside %}
 

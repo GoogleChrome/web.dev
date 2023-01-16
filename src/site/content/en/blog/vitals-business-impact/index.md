@@ -189,7 +189,7 @@ The above results were achieved by grabbing low hanging fruit such as:
       </tr>
       <tr>
         <td>Compression</td>
-        <td>Lazy-loading non-critical JS</td>
+        <td>Lazy loading non-critical JS</td>
         <td></td>
       </tr>
       <tr>

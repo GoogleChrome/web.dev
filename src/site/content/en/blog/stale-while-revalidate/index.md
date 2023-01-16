@@ -31,7 +31,7 @@ and [Firefox 68](https://bugzilla.mozilla.org/show_bug.cgi?id=1536511).
 
 Browsers that don't support `stale-while-revalidate` will silently ignore that
 configuration value, and use
-[`max-age`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#max-age),
+[`max-age`](/http-cache/#versioned-urls),
 as I'll explain shortly…
 
 ## What's it mean?
@@ -122,7 +122,7 @@ the cache with fresher content, without blocking on a network response.
 
 If you've heard of `stale-while-revalidate` chances are that it was in the
 context of
-[recipes](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#stale-while-revalidate)
+[recipes](offline-cookbook/#stale-while-revalidate)
 used within a [service worker](/service-workers-cache-storage/).
 
 Using stale-while-revalidate via a `Cache-Control` header shares some

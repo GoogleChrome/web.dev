@@ -8,7 +8,7 @@ tags:
   - html
 ---
 
-In the last section you learned how, even if you don't know what the words on a page mean, when semantic elements provide the document with meaningful structure, others—the search engine, assistive technologies, a future maintainer, an offshore dev—will understand the outline of the document.
+In the last section you learned how, even if you don't know what the words on a page mean, when semantic elements provide the document with meaningful structure, others—the search engine, assistive technologies, a future maintainer, a new team member—will understand the outline of the document.
 
 In this section, you'll discover document structure; you'll recap the sectioning elements from the previous section; and mark up the outline for your application.
 
@@ -174,9 +174,7 @@ A `<section>` isn't a landmark unless it has an accessible name; if it has an ac
 
 There are six section heading elements: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, and `<h6>`.  Each represents one of the six levels of section headings, with `<h1>` being the highest or most important section level, and `<h6>` the lowest.
 
-When a heading is nested in a document banner `<header>`, it is the heading for the application or site. When nested in `<main>`, whether or not it is nested within a `<header>` in `<main>`, it is the header for that page, not the whole site. When nested in an `<article>` or `<section>`, it is the header for that subsection of the page. It is recommended to use heading levels similarly to heading levels in a text editor: starting with a `<h1>` as the main heading, with `<h2>` as headings for sub-sections, and `<h3>` if those sub-sections have sections; avoid skipping heading levels. There is a good [article on section headings](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements) here.
-
-Some screen reader users do access headings to understand a page's content. Originally, headings were supposed to outline a document, just as MS Word or Google Docs can produce an outline based on headings, but browsers never implemented this structure. While browsers do display nested headings at increasingly smaller font sizes as shown in the following example, they don't actually support outlining.
+When a heading is nested in a document banner `<header>`, it is the heading for the application or site. When nested in `<main>`, whether or not it is nested within a `<header>` in `<main>`, it is the header for that page, not the whole site. When nested in an `<article>` or `<section>`, it is the header for that subsection of the page. 
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -185,6 +183,10 @@ Some screen reader users do access headings to understand a page's content. Orig
   theme: 'dark',
   tab: 'html,result'
 } %}
+
+It is recommended to use heading levels similarly to heading levels in a text editor: starting with a `<h1>` as the main heading, with `<h2>` as headings for sub-sections, and `<h3>` if those sub-sections have sections; avoid skipping heading levels. There is a good [article on section headings](https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements) here.
+
+Some screen reader users do access headings to understand a page's content. Originally, headings were supposed to outline a document, just as MS Word or Google Docs can produce an outline based on headings, but browsers never implemented this structure. While browsers do display nested headings at increasingly smaller font sizes as shown in the following example, they don't actually support outlining.
 
 You now have enough knowledge to outline MachineLearningWorkshop.com:
 
@@ -202,7 +204,7 @@ This is the outline for the visible content of the machine learning workshop sit
 
 {% Aside %}
 This code snippet only includes the content of the `<body>`. The [`<!doctype>`, `<html>`, `<body>`, and meta-information](/learn/html/metadata/) were covered earlier.
-{% endAside%}
+{% endAside %}
 
 As no piece of content is a standalone, complete piece of content, `<section>` is more appropriate than `<article>`; while each has a heading, no section is worthy of a `<footer>`.
 

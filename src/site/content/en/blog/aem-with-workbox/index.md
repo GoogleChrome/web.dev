@@ -39,7 +39,7 @@ At its core, a service worker is just a script that your browser runs independen
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4izQ6TMiE9PHdRTor7b2.png", alt="Workbox Logo", width="200", height="47", style="max-width: 200px; margin: 0 auto;" %}
 
-Service workers can be hard to write from scratch. Workbox was created to make it easier. Workbox is a set of libraries to help you write and manage [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) and caching with the [Cache Storage API](/cache-api-quick-guide/). Service workers and the Cache Storage API, when used together, control how assets (HTML, CSS, JS, images, etc.) are requested from the network or cache, even allowing you to return cached content when offline. With Workbox, you can quickly set up and manage both, and more, with production-ready code.
+Service workers can be hard to write from scratch. Workbox was created to make it easier. Workbox is a set of libraries to help you write and manage [service workers](https://developer.chrome.com/docs/workbox/service-worker-overview/) and caching with the [Cache Storage API](/cache-api-quick-guide/). Service workers and the Cache Storage API, when used together, control how assets (HTML, CSS, JS, images, etc.) are requested from the network or cache, even allowing you to return cached content when offline. With Workbox, you can quickly set up and manage both, and more, with production-ready code.
 
 ## Upgrading an AEM site to a PWA
 
@@ -64,7 +64,7 @@ The [web app manifest](/add-manifest/) is a JSON file that contains properties t
 <figure>
   {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/mhq0Kyzn88zfryTFpQgU.png", alt="Configuring the manifest in the installable experience dialog box.", width="800", height="634" %}
 </figure>
-The start URL is the entry point of your PWA. When a user taps on the the PWA icon on their phone, they will be accessing the startup URL. The display mode configures whether the app is a windowed or fullscreen experience. You can also specify the screen orientation of the application. The theme color is the color of the window and toolbar while the background color is the color of the splash screen when the application is launched. The icon is the image that is shown on the devices home screen or application drawer when the application is installed on the device. The configuration shown in the image generates the manifest JSON shown below.
+The start URL is the entry point of your PWA. When a user taps on the PWA icon on their phone, they will be accessing the startup URL. The display mode configures whether the app is a windowed or fullscreen experience. You can also specify the screen orientation of the application. The theme color is the color of the window and toolbar while the background color is the color of the splash screen when the application is launched. The icon is the image that is shown on the devices home screen or application drawer when the application is installed on the device. The configuration shown in the image generates the manifest JSON shown below.
 
 ```json
 {
@@ -145,12 +145,12 @@ Progressive Web Apps provide an app-like experience for your website, that uses 
 ## References
 
 * [WKND Tutorial](https://experienceleague.adobe.com/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html)
-* [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers)
+* [Service Workers](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 * [Cache API](/cache-api-quick-guide/)
 * [Web application manifest](/add-manifest/)
 * [Adaptive icon support in PWAs with maskable icons](/maskable-icon/)
-* Learn more about Adobe Experience Manager Sites: [https://business.adobe.com/products/experience-manager/sites/aem-sites](https://business.adobe.com/products/experience-manager/sites/aem-sites)
-* Learn more about Workbox: [https://developers.google.com/web/tools/workbox/guides/get-started](https://developers.google.com/web/tools/workbox/guides/get-started)
-* Workbox Caching strategies: [https://developers.google.com/web/tools/workbox/modules/workbox-strategies](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
+* [Learn more about Adobe Experience Manager Sites](https://business.adobe.com/products/experience-manager/sites/aem-sites)
+* [Learn more about Workbox:](https://developer.chrome.com/docs/workbox/the-ways-of-workbox/)
+* [Workbox Caching strategies:](https://developer.chrome.com/docs/workbox/different-architectures/)
 * Learn more about [Progressive Web Apps](/progressive-web-apps/)
 

@@ -4,6 +4,7 @@ authors:
   - cariefisher
 description: An evergreen accessibility course and reference to level up your web development.
 date: 2022-09-30
+updated: 2023-01-12
 tags:
   - accessibility
 ---
@@ -42,5 +43,14 @@ Here's what you'll learn:
 So, are you ready to learn accessibility? [Let's get started](/learn/accessibility/why).
 
 {% Aside %}
-This course was written by [Carie Fisher](https://twitter.com/cariefisher), with input and review from [Alexandra White](https://twitter.com/heyawhite) and [Rachel Andrew](https://twitter.com/rachelandrew).
+This course was written by [Carie Fisher](https://cariefisher.com/)
+([Twitter](https://twitter.com/cariefisher) and
+[LinkedIn](https://linkedin.com/in/cariefisher)), with input and review from
+[Alexandra White](https://heyawhite.com)
+([Twitter](https://twitter.com/heyawhite)), and
+[Rachel Andrew](https://rachelandrew.co.uk/)
+([Twitter](https://twitter.com/rachelandrew)). Special thanks to
+[Mark Steadman](https://twitter.com/Steady5063) for providing additional support
+for the [JavaScript module](/learn/accessibility/javascript/), and 
+[Aaron Forinton](https://github.com/aaronforinton) for supporting the publication process.
 {% endAside %}

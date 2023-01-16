@@ -184,7 +184,7 @@ Our blog will need a place to write and read new posts. To demonstrate working w
 
 Let’s get this set up:
 
-1. In your browser (for these steps, Chrome is recommended) open up [this](https://docs.google.com/spreadsheet/ccc?key=0AhcraNy3sgspdDhuQ2pvN21JVW9NeVA0M1h4eGo3RGc#gid=0) Google Docs Spreadsheet. It contains sample post data under the following fields: 
+1. In your browser (for these steps, Chrome is recommended) open up [this](https://docs.google.com/spreadsheet/ccc?key=0AhcraNy3sgspdDhuQ2pvN21JVW9NeVA0M1h4eGo3RGc#gid=0) Google Docs Spreadsheet. It contains sample post data under the following fields:
 
     - ID
     - Title
@@ -670,7 +670,7 @@ Success!
 If you get stuck, a pre-built version of polymer-blog is available for you to check out [https://github.com/addyosmani/polymer-blog](https://github.com/addyosmani/polymer-blog).
 
 {% Aside %}
-The most common issues users run into with Yeoman, Grunt and Bower are related to not having the sufficient administrator permissions. Please ensure you’ve followed the [recommended](https://gist.github.com/isaacs/579814) installation steps for Node and NPM.
+The most common issues users run into with Yeoman, Grunt and Bower are related to not having the sufficient administrator permissions. Ensure you’ve followed the [recommended](https://gist.github.com/isaacs/579814) installation steps for Node and NPM.
 {% endAside %}
 
 ### What more do we have in store?

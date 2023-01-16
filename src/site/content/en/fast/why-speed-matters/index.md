@@ -88,7 +88,7 @@ Users may experience more problems as page resources slowly trickle in.
 </figure>
 
 Performance is a foundational aspect of good user experiences.
-When sites ship a lot of code, browsers must use megabytes of the user's data plan in order to download the code.
+When sites ship a lot of code, browsers must use megabytes of the user's data plan to download it.
 Mobile devices have limited CPU power and memory.
 They often get overwhelmed with what we might consider a small amount of unoptimized code.
 This creates poor performance which leads to unresponsiveness.

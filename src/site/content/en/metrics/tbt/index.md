@@ -38,7 +38,7 @@ because the browser cannot interrupt a task that's in progress. So in the event
 that a user _does_ interact with the page in the middle of a long task, the
 browser must wait for the task to finish before it can respond.
 
-If the task is long enough (e.g. anything above 50 ms), it's likely that the
+If the task is long enough (anything above 50 ms), it's likely that the
 user will notice the delay and perceive the page as sluggish or janky.
 
 The _blocking time_ of a given long task is its duration in excess of 50 ms. And

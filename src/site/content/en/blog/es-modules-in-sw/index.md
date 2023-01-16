@@ -45,7 +45,7 @@ variables.
 Scripts imported via ES modules can trigger the service worker
 [update](/service-worker-lifecycle/#updates)
 flow if their contents change, matching the
-[behavior](https://developers.google.com/web/updates/2019/09/fresher-sw#checks_for_updates_to_imported_scripts)
+[behavior](https://developer.chrome.com/blog/fresher-sw/#checks-for-updates-to-imported-scripts)
 of
 <code>[importScripts()](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts)</code>.
 
@@ -61,7 +61,7 @@ using the `import()` method. Inside of a service worker, only the static
 syntax is currently supported.
 
 This limitation is analogous to a
-[similar restriction](https://developers.google.com/web/updates/2018/10/tweaks-to-addAll-importScripts)
+[similar restriction](https://developer.chrome.com/blog/tweeks-to-addAll-importScripts/)
 placed on `importScripts()` usage. Dynamic calls to `importScripts()` do not
 work inside of a service worker, and all `importScripts()` calls, which are
 inherently synchronous, must complete before the service worker completes its

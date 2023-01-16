@@ -356,7 +356,7 @@ measure precisely how much extra money your PWA generated.
 [ten-things-we-know]: https://www.google.com/about/philosophy.html
 [horror-movie]: https://blog.hubspot.com/marketing/mobile-website-load-faster
 [deloitte-study]: https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html
-[lighthouse]: https://developers.google.com/web/tools/lighthouse
+[lighthouse]: https://developer.chrome.com/docs/lighthouse/overview/
 [perf-budget-ci]: /incorporate-performance-budgets-into-your-build-tools/
 [value-of-speed]: /value-of-speed/
 [ebay-speed]: /shopping-for-speed-on-ebay/
@@ -372,8 +372,8 @@ measure precisely how much extra money your PWA generated.
 [twg-purchase]: https://www.thinkwithgoogle.com/data/smartphone-mobile-app-and-site-purchase-data/
 [twg-trivago]: https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/case-studies/trivago-embrace-progressive-web-apps-as-the-future-of-mobile/
 [twg-notifications]: https://www.thinkwithgoogle.com/data/smartphone-user-notification-preferences/
-[not-ux-bp]: https://developers.google.com/web/fundamentals/push-notifications/permission-ux
-[dgc-web-push]: https://developers.google.com/web/fundamentals/push-notifications/
+[not-ux-bp]: /push-notifications-permissions-ux/
+[dgc-web-push]: /notifications/
 [carrefour-45x]: https://useinsider.com/case-studies/carrefour/
 [cache-resources]: /service-workers-cache-storage/
 [mdn-web-push]: https://developer.mozilla.org/docs/Web/API/Push_API/Best_Practices

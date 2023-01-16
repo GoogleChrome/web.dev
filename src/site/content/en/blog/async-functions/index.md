@@ -1,5 +1,5 @@
 ---
-title: "Async functions: making promises friendly"
+title: 'Async functions: making promises friendly'
 subhead: >
   Async functions allow you to write promise-based code as if it were synchronous.
 description: >
@@ -25,8 +25,7 @@ Async functions work like this:
 async function myFirstAsyncFunction() {
   try {
     const fulfilledValue = await promise;
-  }
-  catch (rejectedValue) {
+  } catch (rejectedValue) {
     // …
   }
 }
@@ -54,10 +53,11 @@ using promises:
 ```js
 function logFetch(url) {
   return fetch(url)
-    .then(response => response.text())
-    .then(text => {
+    .then((response) => response.text())
+    .then((text) => {
       console.log(text);
-    }).catch(err => {
+    })
+    .catch((err) => {
       console.error('fetch failed', err);
     });
 }
@@ -70,8 +70,7 @@ async function logFetch(url) {
   try {
     const response = await fetch(url);
     console.log(await response.text());
-  }
-  catch (err) {
+  } catch (err) {
     console.log('fetch failed', err);
   }
 }
@@ -87,14 +86,14 @@ safely `await` non-platform promises, such as those created by promise polyfills
 
 ## Async return values
 
-Async functions *always* return a promise, whether you use `await` or not. That
+Async functions _always_ return a promise, whether you use `await` or not. That
 promise resolves with whatever the async function returns, or rejects with
 whatever the async function throws. So with:
 
 ```js
 // wait ms milliseconds
 function wait(ms) {
-  return new Promise(r => setTimeout(r, ms));
+  return new Promise((r) => setTimeout(r, ms));
 }
 
 async function hello() {
@@ -103,7 +102,7 @@ async function hello() {
 }
 ```
 
-…calling `hello()` returns a promise that *fulfills* with `"world"`.
+…calling `hello()` returns a promise that _fulfills_ with `"world"`.
 
 ```js
 async function foo() {
@@ -112,7 +111,7 @@ async function foo() {
 }
 ```
 
-…calling `foo()` returns a promise that *rejects* with `Error('bar')`.
+…calling `foo()` returns a promise that _rejects_ with `Error('bar')`.
 
 ## Example: streaming a response
 
@@ -127,7 +126,7 @@ Here it is with promises:
 
 ```js
 function getResponseSize(url) {
-  return fetch(url).then(response => {
+  return fetch(url).then((response) => {
     const reader = response.body.getReader();
     let total = 0;
 
@@ -139,14 +138,14 @@ function getResponseSize(url) {
       console.log('Received chunk', value);
 
       return reader.read().then(processResult);
-    })
+    });
   });
 }
 ```
 
 Check me out, Jake "wielder of promises" Archibald. See how I'm calling
 `processResult()` inside itself to set up an asynchronous loop? Writing that made
-me feel *very smart*. But like most "smart" code, you have to stare at it for
+me feel _very smart_. But like most "smart" code, you have to stare at it for
 ages to figure out what it's doing, like one of those magic-eye pictures from
 the 90's.
 
@@ -191,7 +190,7 @@ used with other function syntax:
 
 ```js
 // map some URLs to json-promises
-const jsonPromises = urls.map(async url => {
+const jsonPromises = urls.map(async (url) => {
   const response = await fetch(url);
   return response.json();
 });
@@ -247,7 +246,7 @@ opportunity to do things in parallel.
 async function series() {
   await wait(500); // Wait 500ms…
   await wait(500); // …then wait another 500ms.
-  return "done!";
+  return 'done!';
 }
 ```
 
@@ -257,9 +256,8 @@ The above takes 1000ms to complete, whereas:
 async function parallel() {
   const wait1 = wait(500); // Start a 500ms timer asynchronously…
   const wait2 = wait(500); // …meaning this timer happens in parallel.
-  await wait1; // Wait 500ms for the first timer…
-  await wait2; // …by which time this timer has already finished.
-  return "done!";
+  await Promise.all([wait1, wait2]); // Wait for both timers in parallel.
+  return 'done!';
 }
 ```
 
@@ -271,28 +269,32 @@ Let's look at a practical example.
 Say you wanted to fetch a series of URLs and log them as soon as possible, in the
 correct order.
 
-*Deep breath* - here's how that looks with promises:
+_Deep breath_ - here's how that looks with promises:
 
 ```js
+function markHandled(promise) {
+  promise.catch(() => {});
+  return promise;
+}
+
 function logInOrder(urls) {
   // fetch all the URLs
-  const textPromises = urls.map(url => {
-    return fetch(url).then(response => response.text());
+  const textPromises = urls.map((url) => {
+    return markHandled(fetch(url).then((response) => response.text()));
   });
 
   // log them in order
-  textPromises.reduce((chain, textPromise) => {
-    return chain.then(() => textPromise)
-      .then(text => console.log(text));
+  return textPromises.reduce((chain, textPromise) => {
+    return chain.then(() => textPromise).then((text) => console.log(text));
   }, Promise.resolve());
 }
 ```
 
-Yeah, that's right, I'm using `reduce` to chain a sequence of promises. I'm *so
-smart*. But this is a bit of *so smart* coding you're better off without.
+Yeah, that's right, I'm using `reduce` to chain a sequence of promises. I'm _so
+smart_. But this is a bit of _so smart_ coding you're better off without.
 
 However, when converting the above to an async function, it's tempting to go
-*too sequential*:
+_too sequential_:
 
 {% Compare 'worse', 'Not recommended - too sequential' %}
 
@@ -313,29 +315,62 @@ performs the fetches in parallel. Thankfully there's an ideal middle-ground.
 
 {% endCompare %}
 
-{% Compare 'better', 'Recomm ended - nice and parallel' %}
+{% Compare 'better', 'Recommended - nice and parallel' %}
 
 ```js
+function markHandled(...promises) {
+  Promise.allSettled(promises);
+}
+
 async function logInOrder(urls) {
   // fetch all the URLs in parallel
-  const textPromises = urls.map(async url => {
+  const textPromises = urls.map(async (url) => {
     const response = await fetch(url);
     return response.text();
   });
+
+  markHandled(...textPromises);
 
   // log them in sequence
   for (const textPromise of textPromises) {
     console.log(await textPromise);
   }
 }
-
 ```
+
 {% CompareCaption %}
 In this example, the URLs are fetched and read in parallel, but the "smart"
 `reduce` bit is replaced with a standard, boring, readable for-loop.
 {% endCompareCaption %}
 
 {% endCompare %}
+
+{% Aside 'important' %}
+`markHandled` is used to avoid "unhandled promise rejections". If a promise
+rejects, and it was never given a rejection handler (for example, via
+`.catch(handler)`), it's known as an "unhandled rejection". These are logged to
+the console, and also trigger [a global
+event](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event).
+
+The gotcha when handling a bunch of promises in sequence, is if one of them
+rejects, the function ends and the remaining promises are never handled.
+`markHandled` is used to prevent this, by attaching rejection handlers to all of
+the promises.
+{% endAside %}
+
+{% Aside %} The `for` loop in the previous example could make use of another
+JavaScript feature, [for
+await…of](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for-await...of).
+
+```js
+for await (const text of textPromises) {
+  console.log(await text);
+}
+```
+
+This automatically `await`s the next item in the iterable (the `textPromises`
+array in this case). It awaits at the start of each turn through the loop, so
+the performance is the same as `await`ing within the loop. {% endAside %}
 
 ### Browser support workaround: generators
 
@@ -345,15 +380,16 @@ If you're targeting browsers that support generators (which includes
 
 [Babel](https://babeljs.io/) will do this for you,
 [here's an example via the Babel REPL](https://goo.gl/0Cg1Sq)
+
 - note how similar the transpiled code is. This transformation is part of
-[Babel's es2017 preset](http://babeljs.io/docs/plugins/preset-es2017/).
+  [Babel's es2017 preset](http://babeljs.io/docs/plugins/preset-es2017/).
 
 {% Aside %}
 Babel REPL is fun to say. Try it.
 {% endAside %}
 
 I recommend the transpiling approach, because you can just turn it off once your
-target browsers support async functions, but if you *really* don't want to use a
+target browsers support async functions, but if you _really_ don't want to use a
 transpiler, you can take
 [Babel's polyfill](https://gist.github.com/jakearchibald/edbc78f73f7df4f7f3182b3c7e522d25)
 and use it yourself. Instead of:
@@ -369,7 +405,7 @@ async function slowEcho(val) {
 and write:
 
 ```js
-const slowEcho = createAsyncFunction(function*(val) {
+const slowEcho = createAsyncFunction(function* (val) {
   yield wait(1000);
   return val;
 });
@@ -383,7 +419,7 @@ and use `yield` instead of `await`. Other than that it works the same.
 If you're targeting older browsers, Babel can also transpile generators,
 allowing you to use async functions all the way down to IE8. To do this you need
 [Babel's es2017 preset](http://babeljs.io/docs/plugins/preset-es2017/)
-*and* the [es2015 preset](http://babeljs.io/docs/plugins/preset-es2015/).
+_and_ the [es2015 preset](http://babeljs.io/docs/plugins/preset-es2015/).
 
 The [output is not as pretty](https://goo.gl/jlXboV), so watch out for
 code-bloat.
@@ -392,7 +428,7 @@ code-bloat.
 
 Once async functions land across all browsers, use them on every
 promise-returning function! Not only do they make your code tidier, but it makes
-sure that function will *always* return a promise.
+sure that function will _always_ return a promise.
 
 I got really excited about async functions [back in
 2014](https://jakearchibald.com/2014/es7-async-functions/), and

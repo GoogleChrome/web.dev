@@ -14,7 +14,7 @@ tags:
 
 > A pseudo-class which represents any element that is in the contextual reference element set. This is is a (potentially empty) explicitly-specified set of elements, such as that specified by the `querySelector()`, or the parent element of a `<style scoped>` element, which is used to "scope" a selector so that it only matches within a subtree.
 
-An example of using this is within a `<style scoped>` ([more info](https://developers.google.com/web/updates/2012/03/A-New-Experimental-Feature-style-scoped)):
+An example of using this is within a `<style scoped>` ([more info](https://developer.chrome.com/blog/a-new-experimental-feature-style-scoped)):
 
 ```html
 <style>
@@ -71,7 +71,7 @@ You're probably aware of the `Element` version of `querySelector()` and `querySe
 ```
 
 
-When these are called, the browser returns a `NodeList` that's filtered to only include the set of nodes that a.) match the selector and b.) which are also descendants of the context element. So in the the second example, the browser finds all `a` elements, then filters out the ones not in the `scope` element. This works, but it can lead to some bizarre behavior if you're not careful. Read on.
+When these are called, the browser returns a `NodeList` that's filtered to only include the set of nodes that a.) match the selector and b.) which are also descendants of the context element. So in the second example, the browser finds all `a` elements, then filters out the ones not in the `scope` element. This works, but it can lead to some bizarre behavior if you're not careful. Read on.
 
 ## When querySelector goes wrong
 

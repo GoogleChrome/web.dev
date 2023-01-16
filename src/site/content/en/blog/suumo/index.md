@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/VFyNSzxuxA1BmBagsWhN.gif", alt="Suumo site", width="582", height="1000" %}
 </figure>
 
-### TL;DR
+### Summary
 
 Japan's top real estate site supercharges new listings with web Push
 Notifications and sees a 31% open rate for notifications.
@@ -27,7 +27,7 @@ Notifications and sees a 31% open rate for notifications.
 
 ## About Suumo
 
-SUUMO is Japan’s top real estate site, serving nearly 11% of the country’s 
+SUUMO is Japan’s top real estate site, serving nearly 11% of the country’s
 population. Fourteen million unique users, many on smartphones, search for
 new homes on SUUMO every month.
 
@@ -40,7 +40,7 @@ however, to build an engaging experience on the web that was as fast as their
 mobile app. The resulting high bounce and low retention rates prompted the
 company to encourage users to download their native app. Actually getting
 people to download and re-engage with the app, though, was challenging and
-costly. 
+costly.
 
 ## Solution
 
@@ -54,8 +54,8 @@ landing page by 75%.
 The real estate site also implemented Push Notifications for mobile web
 users on Android, to alert them instantly to new property listings. They
 understood the value of Push Notifications, thanks to their native app
-experience. The new strategy delivered a 31% open rate. 
+experience. The new strategy delivered a 31% open rate.
 
 “We finally have a way to retain users on the mobile web,” says Dai
 Shibayama, manager of the Smart Device Division, Recruit Sumai Company Ltd.,
-which operates the SUUMO portal site. “This has been a game changer for us!” 
+which operates the SUUMO portal site. “This has been a game changer for us!”

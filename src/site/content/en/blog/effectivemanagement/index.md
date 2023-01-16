@@ -26,7 +26,7 @@ The Gmail team was facing a serious problem. Anecdotes of Gmail tabs consuming m
 
 ## Memory Management Basics
 
-Before you can effectively manage memory in JavaScript you must understand the fundamentals. This section will cover primitive types, the object graph, and provide definitions for memory bloat in general and a memory leak in JavaScript. Memory in JavaScript can be conceptualized as a graph and because of this [Graph theory](http://en.wikipedia.org/wiki/Graph_theory) plays a part in JavaScript memory management and the [Heap Profiler](https://developers.google.com/chrome-developer-tools/docs/heap-profiling)</a>.
+Before you can effectively manage memory in JavaScript you must understand the fundamentals. This section will cover primitive types, the object graph, and provide definitions for memory bloat in general and a memory leak in JavaScript. Memory in JavaScript can be conceptualized as a graph and because of this [Graph theory](http://en.wikipedia.org/wiki/Graph_theory) plays a part in JavaScript memory management and the [Heap Profiler](https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots/)</a>.
 
 ### Primitive Types
 
@@ -42,7 +42,7 @@ There is only one container type: the Object. In JavaScript the Object is an <a 
 
 ### What About Arrays?
 
-An Array in JavaScript is actually an Object that has numeric keys. This is a simplification, because JavaScript runtimes will optimize Array-like Objects and represent them under the hood as arrays. 
+An Array in JavaScript is actually an Object that has numeric keys. This is a simplification, because JavaScript runtimes will optimize Array-like Objects and represent them under the hood as arrays.
 
 #### Terminology
 
@@ -97,9 +97,9 @@ To help further understand how garbage collection happens, let's take a look at 
 
 ### Generational Collector
 
-V8 uses a two generation collector. The age of an value is defined as the number of bytes allocated since it was allocated. In practice, the age of an value is often approximated by the number of young generation collections that it survived. After a value is sufficiently old it is tenured into the old generation. 
+V8 uses a two generation collector. The age of an value is defined as the number of bytes allocated since it was allocated. In practice, the age of an value is often approximated by the number of young generation collections that it survived. After a value is sufficiently old it is tenured into the old generation.
 
-In practice, freshly allocated values do not live long. A study of Smalltalk programs, showed that only 7% of values survive after a young generation collection. Similar studies across runtimes found that on average between, 90% and 70%  of freshly allocated values are never tenured into the old generation. 
+In practice, freshly allocated values do not live long. A study of Smalltalk programs, showed that only 7% of values survive after a young generation collection. Similar studies across runtimes found that on average between, 90% and 70%  of freshly allocated values are never tenured into the old generation.
 
 ### Young Generation
 
@@ -127,14 +127,14 @@ Over the past year, numerous features and bug fixes have made their way into the
 
 #### Field Data and performance.memory API
 
-As of Chrome 22, the [performance.memory API](http://docs.webplatform.org/wiki/apis/timing/properties/memory) is enabled by default.  For long-running applications like Gmail, data from real users is invaluable. This information allows us to distinguish between power users-- those who spend 8-16 hours a day on Gmail, receiving hundreds of messages a day-- from more average users who spend a few minutes a day in Gmail, receiving a dozen or so messages a week.  
+As of Chrome 22, the [performance.memory API](http://docs.webplatform.org/wiki/apis/timing/properties/memory) is enabled by default.  For long-running applications like Gmail, data from real users is invaluable. This information allows us to distinguish between power users-- those who spend 8-16 hours a day on Gmail, receiving hundreds of messages a day-- from more average users who spend a few minutes a day in Gmail, receiving a dozen or so messages a week.
 
 This API returns three pieces of data:
 
 1. jsHeapSizeLimit - The amount of memory (in bytes) that the JavaScript heap is limited to.
 1. totalJSHeapSize - The amount of memory (in bytes) that the JavaScript heap has allocated including free space.
 1. usedJSHeapSize - The amount of memory (in bytes) currently being used.
- 
+
 One thing to keep in mind is that the API returns memory values for the entire Chrome process. Although it is not the default mode, under certain circumstances, Chrome may open multiple tabs in the same renderer process. This means that the values returned by performance.memory may contain the memory footprint of other browser tabs in addition to the one containing your app.
 
 #### Measuring Memory At Scale
@@ -155,7 +155,7 @@ The DevTools Timeline panel is an ideal candidate for proving that the problem e
 
 #### Proving a problem exists
 
-Start by identifying a sequence of actions you suspect to be leaking memory. Start recording the timeline, and perform the sequence of actions.  Use the trash can button at the bottom to force a full garbage collection.  If, after a few iterations, you see a [sawtooth](http://en.wikipedia.org/wiki/Sawtooth_wave) shaped graph, you are allocating lots of shortly lived objects. But if the sequence of actions is not expected to result in any retained memory, and the DOM node count does not drop down back to the baseline where you began, you have good reason to suspect there is a leak. 
+Start by identifying a sequence of actions you suspect to be leaking memory. Start recording the timeline, and perform the sequence of actions.  Use the trash can button at the bottom to force a full garbage collection.  If, after a few iterations, you see a [sawtooth](http://en.wikipedia.org/wiki/Sawtooth_wave) shaped graph, you are allocating lots of shortly lived objects. But if the sequence of actions is not expected to result in any retained memory, and the DOM node count does not drop down back to the baseline where you began, you have good reason to suspect there is a leak.
 
 <figure>
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/eSh0rNSTOPQOiz9jadTw.png", alt="Sawtooth shaped graph", width="565", height="347" %}
@@ -167,7 +167,7 @@ Once you've confirmed that the problem exists, you can get help identifying the 
 
 The Profiler panel provides both a CPU profiler and a Heap profiler. Heap profiling works by taking a snapshot of the object graph. Before a snapshot is taken both the young and old generations are garbage collected. In other words, you will only see values which were alive when the snapshot was taken.
 
-There is too much functionality in the the Heap profiler to cover sufficiently in this article, but [detailed documentation](https://developer.chrome.com/devtools/docs/javascript-memory-profiling) can be found on the Chrome Developers site. We'll focus here on the Heap Allocation profiler.
+There is too much functionality in the Heap profiler to cover sufficiently in this article, but [detailed documentation](https://developer.chrome.com/devtools/docs/javascript-memory-profiling) can be found on the Chrome Developers site. We'll focus here on the Heap Allocation profiler.
 
 #### Using the Heap Allocation Profiler
 
@@ -201,8 +201,8 @@ Ask yourself these questions:
     It's possible that you are using too much memory which contrary to popular belief has a net negative on overall application performance. It's hard to know exactly what the right number is, but, be sure to verify that any extra caching your page is using has a measurable performance impact.
 1. Is my page leak free?
     If your page has memory leaks it can not only impact your page's performance but other tabs as well. Use the object tracker to help narrow in on any leaks.
-1. How frequently is my page GCing? 
-    You can see any GC pause using [Timeline panel](https://developers.google.com/chrome-developer-tools/docs/timeline) in [Chrome Developer Tools](https://developers.google.com/chrome-developer-tools/). If your page is GCing frequently, chances are you are allocating too frequently, churning through your young generation memory. 
+1. How frequently is my page GCing?
+    You can see any GC pause using [Timeline panel](https://developer.chrome.com/docs/devtools/evaluate-performance/performance-reference/) in [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/). If your page is GCing frequently, chances are you are allocating too frequently, churning through your young generation memory.
 
 ## Conclusion
 

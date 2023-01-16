@@ -24,7 +24,7 @@ over the coming year.
 ## Lighthouse now supports Performance Budgeting
 
 
-[LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets)
+[LightWallet](/use-lighthouse-for-performance-budgets/)
 is a new feature in Lighthouse that adds support for [performance
 budgets](/fast#set-performance-budgets). Performance budgets establish
 standards for the performance of your site. More importantly, they make it is
@@ -36,24 +36,24 @@ easy to identify and fix performance regressions before they ship.
 
 LightWallet is available in the newest version of the Lighthouse CLI and only
 takes a couple minutes to set up. These[
-instructions](https://developers.google.com/web/tools/lighthouse/audits/budgets)
+instructions](/use-lighthouse-for-performance-budgets/)
 provide more information.
 
 Unsure what your budgets should be? Try our experimental [Performance Budget
 Calculator](https://bit.ly/perf-budget-calculator) which can generate a
 LightWallet compatible budget configuration.
 
-## Browser-level image and iframe lazy-loading comes to the web
+## Browser-level image and iframe lazy loading comes to the web
 
 Web pages often contain a large number of images, which contribute to
 data-usage, [page-bloat](https://httparchive.org/reports/state-of-images) and
 slower page loads. Many of these images are offscreen, requiring a user to
 scroll in order to view them.
 
-Until now, you've needed to solve lazy-loading images using a JavaScript
+Until now, you've needed to solve lazy loading images using a JavaScript
 library but that may soon change. This summer, Chrome will be launching support
 for the [loading](https://addyosmani.com/blog/lazy-loading/) attribute which
-brings standardized `<img>` and `<iframe>` lazy-loading to the web.
+brings standardized `<img>` and `<iframe>` lazy loading to the web.
 
 <figure>
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5W51sHaRUB0NEuN0MaFh.png", alt="Browser-level lazy-loading highlighting offscreen content being loaded on-demand", width="800", height="450" %}
@@ -81,7 +81,7 @@ try out [this demo](https://mathiasbynens.be/demo/img-loading-lazy) in Chrome
 `about://flags/#enable-lazy-frame-loading` flags turned on.
 
 A [write-up](https://addyosmani.com/blog/lazy-loading/) on the
-lazy-loading feature is available with more details.
+lazy loading feature is available with more details.
 
 ## Google Fonts now supports font-display as a query parameter
 

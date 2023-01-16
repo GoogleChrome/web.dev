@@ -200,7 +200,7 @@ Here are some resources for developers migrating from AppCache to service worker
 
 - [Service Workers: an Introduction](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [The Service Worker Lifecycle](/service-worker-lifecycle/)
-- [Progressive Web Apps Training](https://developers.google.com/web/ilt/pwa)
+- [Progressive Web Apps Training](/learn/pwa/)
 - [Network Reliability](/reliable/)
 
 ### Tools

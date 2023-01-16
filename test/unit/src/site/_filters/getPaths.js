@@ -34,9 +34,9 @@ describe('getPaths', function () {
 
   it('returns all path names the post belongs to if more than 1', function () {
     const post = {
-      fileSlug: 'is-on-https',
+      fileSlug: 'lcp',
     };
-    const expected = ['lighthouse-best-practices', 'lighthouse-pwa'];
+    const expected = ['learn-core-web-vitals', 'metrics'];
     const actual = getPaths(post);
     assert.deepStrictEqual(actual, expected);
   });

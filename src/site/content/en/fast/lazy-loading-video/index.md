@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Lazy-loading video
+title: Lazy loading video
 authors:
   - jlwagner
   - rachelandrew
 date: 2019-08-16
 updated: 2022-08-15
 description: |
-  This post explains lazy-loading and the options available to you when lazy-loading video.
+  This post explains lazy loading and the options available to you when lazy loading video.
 tags:
   - performance
 feedback:
@@ -23,7 +23,7 @@ different solution.
 
 ## For video that doesn't autoplay {: #video-no-autoplay }
 
-For videos where playback is initiated by the user (i.e., videos that _don't_
+For videos where playback is initiated by the user (that is, videos that _don't_
 autoplay), specifying the [`preload`
 attribute](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-preload)
 on the `<video>` element may be desirable:
@@ -93,7 +93,7 @@ The `autoplay`, `muted`, and `loop` attributes are self-explanatory.
 [`playsinline` is necessary for autoplaying to occur in
 iOS](https://webkit.org/blog/6784/new-video-policies-for-ios/). Now you have a
 serviceable video-as-GIF replacement that works across platforms. But how to go
-about lazy-loading it? To start, modify your `<video>` markup accordingly:
+about lazy loading it? To start, modify your `<video>` markup accordingly:
 
 ```html
 <video class="lazy" autoplay muted loop playsinline width="610" height="254" poster="one-does-not-simply.jpg">
@@ -108,7 +108,7 @@ which lets you specify a placeholder to occupy the `<video>` element's space
 until the video is lazy-loaded. As with the [`<img>` lazy-loading examples](/lazy-loading-images/),
  stash the video URL in the `data-src` attribute on each `<source>`
 element. From there, use JavaScript code similar to the
-Intersection Observer-based image lazy-loading examples:
+Intersection Observer-based image lazy loading examples:
 
 ```javascript
 document.addEventListener("DOMContentLoaded", function() {
@@ -149,7 +149,7 @@ Using this method, you have a video solution that emulates animated GIF behavior
 but doesn't incur the same intensive data usage as animated GIFs do,
 and you can lazy-load that content.
 
-## Lazy-loading libraries {: #libraries }
+## Lazy loading libraries {: #libraries }
 
 The following libraries can help you to lazy-load video:
 
@@ -159,10 +159,10 @@ that use Intersection Observer only. As such, they are highly performant, but
 will need to be polyfilled before you can use them on older browsers.
 - [yall.js](https://github.com/malchata/yall.js) is a library that uses
 Intersection Observer and falls back to event handlers. It can also lazy load video `poster` images using a `data-poster` attribute.
-- If you need a React-specific lazy-loading library, you might consider
+- If you need a React-specific lazy loading library, you might consider
 [react-lazyload](https://github.com/jasonslyvia/react-lazyload). While it
 doesn't use Intersection Observer, it _does_ provide a familiar method of lazy
 loading images for those accustomed to developing applications with React.
 
-Each of these lazy-loading libraries is well documented, with plenty of markup
-patterns for your various lazy-loading endeavors.
+Each of these lazy loading libraries is well documented, with plenty of markup
+patterns for your various lazy loading endeavors.

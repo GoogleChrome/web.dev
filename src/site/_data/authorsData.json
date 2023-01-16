@@ -299,6 +299,10 @@
     "twitter": "devnook",
     "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/K5zWxdTH5JagItd1w8Vm.jpeg"
   },
+  "alispivak": {
+    "twitter": "alispivak",
+    "image": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/epjaUBZaBUz4esC6C7n5.png"
+  },
   "alexdanilo": {
     "twitter": "alexanderdanilo",
     "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/3EIOmsgE36khub8NbZgE.jpeg"
@@ -1712,6 +1716,12 @@
     "country": "US",
     "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/eurEFMIkwaNmX7HpnGJg.png"
   },
+  "marksteadman": {
+    "homepage": "https://dev.to/steady5063",
+    "twitter": "Steady5063",
+    "country": "US",
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/zyOtFQPQnT8ZGKdo14EG.jpeg"
+  },
   "superhighfives": {
     "homepage": "https://charliegleason.com",
     "twitter": "superhighfives",
@@ -1721,5 +1731,10 @@
   "sriramkrishnan": {
     "country": "US",
     "image": "image/1L2RBhCLSnXjCnSlevaDjy3vba73/6anAlrMu2HmIplZiOguG.jpeg"
+  },
+  "aaronforinton": {
+    "country": "UK",
+    "image": "image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/uiiy89r72VrVR9lgrDb5.jpeg",
+    "github": "https://github.com/aaronforinton"
   }
 }

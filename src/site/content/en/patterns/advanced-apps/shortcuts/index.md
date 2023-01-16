@@ -23,7 +23,7 @@ App shortcuts help users quickly start common or recommended tasks within your w
 
 ### Define app shortcuts in the web app manifest
 
-The app shortcuts menu is invoked by right-clicking the app icon in the taskbar (Windows) or dock (macOS) on the user's desktop, or by long pressing the app's launcher icon on Android.
+The app shortcuts menu is invoked by right-clicking the app icon in the taskbar (Windows) or dock (macOS) on the user's desktop, or by touch & holding the app's launcher icon on Android.
 
 <div class="w-columns" >
   <figure>

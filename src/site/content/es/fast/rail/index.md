@@ -187,7 +187,7 @@ Las siguientes auditorías son especialmente relevantes:
 
 - [Max Potential First Input Delay (FID): Potencial máximo de la Demora de la primera entrada](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). Calcula cuánto tardará su aplicación en responder a la entrada del usuario, según el tiempo de inactividad del hilo principal.
 
-- [No utilizas oyentes pasivos para mejorar el rendimiento del desplazamiento](/uses-passive-event-listeners/).
+- [No utilizas oyentes pasivos para mejorar el rendimiento del desplazamiento](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/).
 
 - [Total Blocking Time (TBT): Tiempo total de bloqueo](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/). Mide la cantidad total de tiempo que una página está bloqueada para que no responda a la entrada del usuario, como los clics del mouse, los toques de la pantalla o las pulsaciones del teclado.
 
@@ -195,9 +195,9 @@ Las siguientes auditorías son especialmente relevantes:
 
 **Carga**
 
-- [No registras un service worker que controla la página y start_url](/service-worker/). Un service worker puede almacenar en caché recursos comunes en el dispositivo de un usuario, lo que reduce el tiempo dedicado a buscar recursos en la red.
+- [No registras un service worker que controla la página y start_url](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/). Un service worker puede almacenar en caché recursos comunes en el dispositivo de un usuario, lo que reduce el tiempo dedicado a buscar recursos en la red.
 
-- [La carga de la página no es lo suficientemente rápida en las redes móviles](/load-fast-enough-for-pwa/).
+- [La carga de la página no es lo suficientemente rápida en las redes móviles](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
 
 - [Elimina los recursos que bloquean la renderización](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).
 
@@ -207,7 +207,7 @@ Las siguientes auditorías son especialmente relevantes:
 
 - [Evita encadenar solicitudes críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-- [No usas HTTP/2 para todos tus recursos](/uses-http2/).
+- [No usas HTTP/2 para todos tus recursos](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
 - [Codifica imágenes de manera eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 

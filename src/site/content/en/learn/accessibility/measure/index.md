@@ -3,9 +3,9 @@ title: 'How is digital accessibility measured?'
 authors:
   - cariefisher
 description: >
-  Introduction to measuring accessibility of digital products so that
-  everyone, including people with disabilities, can still interact in
-  a meaningful and equal way.
+  Introduction to accessibility measurement, which ensures everyone,
+  including people with disabilities, can still interact with your website
+  in a meaningful and equal way.
 date: 2022-09-30
 tags:
   - accessibility
@@ -40,9 +40,12 @@ _[accessibility audit](https://www.w3.org/WAI/test-evaluate/)_.
 An accessibility audit uses various methodologies, techniques, and tools,
 including design, automated, manual, and assistive technology (AT) testing.
 
-Perform an accessibility audit to capture the baseline accessibility compliance of a digital product. But, running it once at the start of a project is not enough to determine if a product is accessible. You should run this audit multiple times throughout the software product lifecycle to check for changes in the level of conformance, against a set of pre-determined accessibility checkpoints or guidelines. 
-
-We'll cover how to conduct an accessibility audit in the foundational conformance testing module, coming soon.
+Perform an accessibility audit to capture the baseline accessibility compliance
+of a digital product. But, running it once at the start of a project is not
+enough to determine if a product is accessible. You should run this audit
+multiple times throughout the software product lifecycle to check for changes
+in the level of conformance, against a set of pre-determined accessibility
+checkpoints or guidelines.
 
 ## Web Content Accessibility Guidelines (WCAG) {:#wcag}
 
@@ -68,7 +71,7 @@ conformance testing. The
 [first draft of WCAG](https://www.w3.org/TR/WAI-WEBCONTENT/) was released in
 1999. The current version is [WCAG 2.1](https://www.w3.org/TR/WCAG21/),
 released in June 2018, while [WCAG 2.2](https://www.w3.org/TR/WCAG22/) is
-scheduled for late 2022. A completely revamped version of the guidelines,
+scheduled for 2023. A completely revamped version of the guidelines,
 [WCAG 3.0](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/), is
 being drafted for a future release, but is not expected to be a completed W3C
 standard for a few more years.

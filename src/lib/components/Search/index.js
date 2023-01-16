@@ -6,7 +6,7 @@ import {html} from 'lit';
 import {BaseStateElement} from '../BaseStateElement';
 import {store} from '../../store';
 import {debounce} from '../../utils/debounce';
-import {trackError} from '../../analytics';
+import {logError} from '../../analytics';
 import 'focus-visible';
 
 let algoliaIndexPromise;
@@ -280,7 +280,7 @@ class Search extends BaseStateElement {
     } catch (err) {
       console.error(err);
       console.error(err.debugData);
-      trackError(err, 'search');
+      logError(err, 'search');
     }
   }
 
@@ -320,7 +320,7 @@ class Search extends BaseStateElement {
   onFocusIn() {
     loadAlgoliaLibrary().catch((err) => {
       console.error('failed to load Algolia', err);
-      trackError(err, 'algolia load');
+      logError(err, 'algolia load');
     });
     this.expanded = true;
 

@@ -1,5 +1,5 @@
 ---
-title: Make use of long-term caching 
+title: Make use of long-term caching
 subhead: |
   How webpack helps with asset caching
 date: 2018-02-08
@@ -12,7 +12,7 @@ tags:
   - blog
 ---
 
-The next thing (after [optimizing the app size](https://developers.google.com/web/fundamentals/performance/webpack/decrease-frontend-size)) that
+The next thing (after [optimizing the app size](/decrease-frontend-size/) that
 improves the app loading time is caching. Use it to keep parts of the app on the
 client and avoid re-downloading them every time.
 
@@ -128,7 +128,7 @@ To extract dependencies into a separate chunk, perform three steps:
       }
     };
     ```
-    
+
     When webpack builds the app, it replaces [`[name]`](https://webpack.js.org/configuration/output/#output-filename)
     with a name of a chunk. If we don't add the `[name]` part, we'll have
     to differentiate between chunks by their hash – which is pretty hard!
@@ -166,7 +166,7 @@ To extract dependencies into a separate chunk, perform three steps:
       }
     };
     ```
-    
+
     This option enables smart code splitting. With it, webpack would extract the vendor code if
     it gets larger than 30 kB (before minification and gzip). It would also extract the common code –
     this is useful if your build produces several bundles (e.g.
@@ -454,7 +454,7 @@ Sometimes, a page has more and less important parts:
   article than about ads. Here, the text is more important than ads.
 
 In such cases, improve the initial loading performance by downloading only the
-most important stuff first, and lazy-loading the remaining parts later. Use [the
+most important stuff first, and lazy loading the remaining parts later. Use [the
 `import()` function](https://webpack.js.org/api/module-methods/#import-) and
 [code-splitting](https://webpack.js.org/guides/code-splitting/) for this:
 

@@ -6,7 +6,7 @@ subhead: |
 authors:
   - paullewis
 date: 2015-03-20
-updated: 2018-08-17 
+updated: 2018-08-17
 description: |
   Compositing is where the painted parts of the page are put together for displaying on screen.
 tags:
@@ -14,12 +14,12 @@ tags:
 
 ---
 
-Compositing is where the painted parts of the page are put together for 
+Compositing is where the painted parts of the page are put together for
 displaying on screen.
 
 There are two key factors in this area that affect page performance: the number of compositor layers that need to be managed, and the properties that you use for animations.
 
-### TL;DR
+### Summary
 
 * Stick to transform and opacity changes for your animations.
 * Promote moving elements with `will-change` or `translateZ`.

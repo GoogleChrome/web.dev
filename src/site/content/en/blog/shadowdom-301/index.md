@@ -11,11 +11,11 @@ tags:
 ---
 
 {% Aside 'warning' %}
-This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article at developers.google.com, "[Shadow DOM v1: self-contained web components](https://developers.google.com/web/fundamentals/primers/shadowdom/)". It covers everything in the newer Shadow DOM v1 spec shipping in Chrome 53, Opera, and Safari 10.
+This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article, "[Shadow DOM v1: self-contained web components](/shadowdom-v1/)". It covers everything in the newer Shadow DOM v1 spec shipped in Chrome 53, Safari 10, and Firefox 63.
 {% endAside %}
 
-This article discusses more of the amazing things you can do with Shadow DOM! It builds on the concepts discussed in [Shadow DOM 101](https://www.html5rocks.com/tutorials/webcomponents/shadowdom/)
-and [Shadow DOM 201](https://www.html5rocks.com/tutorials/webcomponents/shadowdom-201/).
+This article discusses more of the amazing things you can do with Shadow DOM! It builds on the concepts discussed in [Shadow DOM 101](/shadowdom/)
+and [Shadow DOM 201](/shadowdom-201/).
 
 {% Aside %}
 In Chrome, turn on the "Enable experimental Web Platform features" in about:flags to experiment with everything covered in this article.
@@ -33,13 +33,12 @@ Let's see what happens if we try to attach multiple shadow roots to a host:
 ```html
 <div id="example1">Light DOM</div>
 <script>
-var container = document.querySelector('#example1');
-var root1 = container.createShadowRoot();
-var root2 = container.createShadowRoot();
-root1.innerHTML = '<div>Root 1 FTW</div>';
-root2.innerHTML = '<div>Root 2 FTW</div>';
+  var container = document.querySelector('#example1');
+  var root1 = container.createShadowRoot();
+  var root2 = container.createShadowRoot();
+  root1.innerHTML = '<div>Root 1 FTW</div>';
+  root2.innerHTML = '<div>Root 2 FTW</div>';
 </script>
-</pre>
 ```
 
 {% Aside %}
@@ -65,7 +64,7 @@ rendering party? Enter shadow insertion points.
 
 ### Shadow Insertion Points
 
-"Shadow insertion points" (`<shadow>`) are similar to normal [insertion points](https://www.html5rocks.com/tutorials/webcomponents/shadowdom/#toc-separation-separate) (`<content>`) in that they're placeholders. However, instead of being placeholders for a host's *content*, they're hosts for other *shadow trees*.
+"Shadow insertion points" (`<shadow>`) are similar to normal [insertion points](/shadowdom/#step-2-separate-content-from-presentation) (`<content>`) in that they're placeholders. However, instead of being placeholders for a host's *content*, they're hosts for other *shadow trees*.
 It's Shadow DOM Inception!
 
 As you can probably imagine, things get more complicated the further you drill down
@@ -108,7 +107,7 @@ Sometimes it's useful to know the older shadow tree being rendered at a `<shadow
 
 ## Obtaining a host's shadow root
 
-If an element is hosting Shadow DOM you can access its [youngest shadow root](#youngest-tree)
+If an element is hosting Shadow DOM you can access its [youngest shadow root](#using-multiple-shadow-roots)
 using `.shadowRoot`:
 
 ```js
@@ -164,7 +163,7 @@ root2.appendChild(shadow);
 </script>
 ```
 
-This example is nearly identical to the one in the [previous section](#toc-shadow-insertion).
+This example is nearly identical to the one in the [previous section](#shadow-insertion-points).
 The only difference is that now I'm using `select` to pull out the newly added `<span>`.
 
 ## Working with insertion points
@@ -256,22 +255,22 @@ a node is distributed into by calling its `.getDestinationInsertionPoints()`:
 
 ```html
 <div id="host">
-    <h2>Light DOM
+  <h2>Light DOM
 </div>
 
 <script>
-    var container = document.querySelector('div');
+  var container = document.querySelector('div');
 
-    var root1 = container.createShadowRoot();
-    var root2 = container.createShadowRoot();
-    root1.innerHTML = '<content select="h2"></content>';
-    root2.innerHTML = '<shadow></shadow>';
+  var root1 = container.createShadowRoot();
+  var root2 = container.createShadowRoot();
+  root1.innerHTML = '<content select="h2"></content>';
+  root2.innerHTML = '<shadow></shadow>';
 
-    var h2 = document.querySelector('#host h2');
-    var insertionPoints = h2.getDestinationInsertionPoints();
-    [].forEach.call(insertionPoints, function(contentEl) {
+  var h2 = document.querySelector('#host h2');
+  var insertionPoints = h2.getDestinationInsertionPoints();
+  [].forEach.call(insertionPoints, function(contentEl) {
     console.log(contentEl);
-    });
+  });
 </script>
 ```
 
@@ -344,6 +343,5 @@ I hope you'll agree that **Shadow DOM is incredibly powerful**. For the first ti
 Shadow DOM is certainly complex beast, but it's a beast worth adding to the web platform.
 Spend some time with it. Learn it. Ask questions.
 
-If you want to learn more, see Dominic's intro article [Shadow DOM 101](https://www.html5rocks.com/tutorials/webcomponents/shadowdom/)
-and my [Shadow DOM 201: CSS &amp; Styling](https://www.html5rocks.com/tutorials/webcomponents/shadowdom-201/) article.
-
+If you want to learn more, see Dominic's intro article [Shadow DOM 101](/shadowdom/)
+and my [Shadow DOM 201: CSS &amp; Styling](/shadowdom-201/) article.

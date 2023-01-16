@@ -187,7 +187,7 @@ frontend server that simply echoed the cookie value back to the client. The serv
 network request to this endpoint and read the response to get the cookie values.
 
 With the release of the
-[Cookie Store API](https://developers.google.com/web/updates/2018/09/asynchronous-access-to-http-cookies),
+[Cookie Store API](https://developer.chrome.com/blog/asynchronous-access-to-http-cookies/),
 this workaround should no longer be necessary for browsers that support it, as it provides
 asynchronous access to browser cookies and can be used directly by the service worker.
 

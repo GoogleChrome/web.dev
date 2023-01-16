@@ -10,7 +10,7 @@ externalScripts:
 
 <div class="homepage">
   {# Hero starts #}
-  <header class="hero">
+  <header class="hero bg-core-bg">
     <div class="wrapper">
       <div class="hero__columns switcher">
         <div>
@@ -23,11 +23,20 @@ externalScripts:
           </div>
         </div>
         <div class="flow">
-          <a class="feature-card" href="{{ featureCard.url }}" data-theme="{{ featureCard.theme }}" data-treatment="illustration">
-            <span class="feature-card__eyebrow">{{ featureCard.eyebrow }}</span>
-            <h3 class="{{ 'visually-hidden' if featureCard.hiddenTitle else 'feature-card__title' }}" style="width: 230px;">{{ featureCard.title }}</h3>
-            <img fetchpriority="high" class="feature-card__background" alt="" aria-hidden="true" src="{{ featureCard.background }}" />
+          <a class="feature-card" href="{{ featuredCard.url }}" data-theme="{{ featuredCard.theme }}" data-treatment="illustration">
+            <span class="feature-card__eyebrow">{{ featuredCard.eyebrow }}</span>
+            <h3 class="feature-card__title">{{ featuredCard.title }}</h3>
+            {% if featuredCard.video %}
+              <video autoplay loop muted playsinline
+                class="feature-card__background"
+                aria-label="{{ featuredCard.alt }}">
+                <source src="{{ featuredCard.video }}" type="video/mp4;">
+              </video>
+            {% elif featuredCard.background %}
+            {% Img src=featuredCard.background, alt=featuredCard.alt, width="800", height="434", class="feature-card__background", fetchpriority="high" %}
+            {% endif %}
           </a>
+
           {% include "partials/picked-case-study.njk" %}
         </div>
       </div>
@@ -35,85 +44,39 @@ externalScripts:
   </header>
   {# Hero ends #}
 
-  {# Promo panel starts #}
-  {# {% if promoPanel %}
-    <article class="hero" data-type="promo">
-      <div class="wrapper">
-        <div class="hero__columns switcher" data-direction="rev">
-          <div>
-            <span aria-hidden="true" class="hero__eyebrow">{{ promoPanel.eyebrow }}</span>
-            <div class="hero__content flow">
-              <h2 class="hero__title">{{ promoPanel.title }}</h2>
-              <p>{{ promoPanel.summary }}</p>
-              <div class="cluster gutter-base flow-space-size-2">
-                <a class="button" data-type="primary" href="{{ promoPanel.primaryButtonUrl }}">{{ promoPanel.primaryButtonText }}</a>
-                <a class="button" data-type="secondary" href="{{ promoPanel.secondaryButtonUrl }}">{{ promoPanel.secondaryButtonText }}</a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <img fetchpriority="high" src="{{ promoPanel.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ promoPanel.imageWidth }}" height="{{ promoPanel.imageHeight }}" />
-          </div>
-        </div>
-      </div>
-    </article>
-  {% endif %} #}
-  {# Promo panel ends #}
-
-  {# Optional divider between promo (if both enabled) #}
-  {# <hr /> #}
-
-  {# Courses start #}
-  <div class="homepage__section">
-    <div class="wrapper">
-      <div class="headline all-center flow">
-        <h2 class="headline__title">{{ courses.title }}</h2>
-        <p>{{ courses.summary }}</p>
-        <div class="headline__action">
-          <a href="/learn">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
-        </div>
-      </div>
-      <div class="gap-top-size-2">
-        {% include "partials/course-cards-next.njk" %}
-      </div>
-    </div>
-  </div>
-  {# Courses end #}
-
-  {# Case studies start #}
+  {# Web Platform News start #}
   <div class="homepage__section bg-mid-bg">
     <div class="wrapper">
       <div class="headline all-center flow">
-        <h2 class="headline__title">{{ caseStudies.title }}</h2>
-        <p>{{ caseStudies.summary }}</p>
-        <div class="headline__action">
-          <a href="/tags/case-study/">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
-        </div>
+        <h2 class="headline__title">{{ platformNews.title }}</h2>
+        <p>{{ platformNews.subTitle }}</p>
       </div>
-      <div class="homepage__case-studies switcher gap-top-size-2">
+      <div class="homepage__news gap-top-size-2">
       {% set cardCount = 0 %}
-      {% for item in collections['case-study'] | reverse %}
-        {# See https://github.com/GoogleChrome/web.dev/issues/8121 #}
-        {% if item.data.lang === 'en' %}
+      {% set pickedLeft = platformNews.pickedLeft %}
+      {% set pickedRight = platformNews.pickedRight %}
+      {% set items = [pickedLeft, pickedRight] %}
+
+      {% for item in items %}
+        {% if item.url %}
+          {% set post = item.url | findByUrl %}
+        {% endif %}
+
+        {% if post.data.lang === 'en' %}
           {% if cardCount <= 1 %}
-            {% if item.data.hero %}
-              {% if not item.data.alt %}
-                {% set alt = '' %}
-              {% else %}
-                {% set alt = item.data.alt %}
-              {% endif %}
+            {% if post.data.hero %}
               <article class="card">
-                <a href="{{ item.url }}" aria-hidden="true">
-                  {% Img src=item.data.thumbnail or item.data.hero, alt=item.data.alt, width="570", height="330", class="card__hero" %}
+                <a href="{{ post.url }}" aria-hidden="true">
+                  {% Img src=item.thumbnail or post.data.thumbnail or post.data.hero, alt=post.data.alt or '', width="570", height="330", class="card__hero" %}
                 </a>
                 <div class="card__content flow">
                   <h3 class="card__heading text-size-3">
-                    <a href="{{ item.url }}">{{ item.data.title }}</a>
+                    <a href="{{ post.url }}">{{ item.title or post.data.title }}</a>
                   </h3>
-                  <p>{{ item.data.description }}</p>
+                  <p>{{ item.description or post.data.description }}</p>
                 </div>
                 <div class="card__tags cluster gap-top-size-1" aria-label="tags for this case study">
-                  {% for tagKey in item.data.tags or [] %}
+                  {% for tagKey in post.data.tags or [] %}
                     {% if tagKey in collections.tags %}
                       {% set tag = collections.tags[tagKey] %}
                       <a class="pill" href="{{ tag.url }}">{{ tag.overrideTitle or tag.title | i18n(locale) }}</a>
@@ -129,69 +92,49 @@ externalScripts:
       </div>
     </div>
   </div>
-  {# Case studies end #}
+  {# Web Platform News end #}
 
-  {# Patterns start #}
-  <div class="homepage__section bg-core-bg">
-    <div class="wrapper">
-      <div class="headline all-center flow">
-        <h2 class="headline__title">{{ patterns.title }}</h2>
-        <p>{{ patterns.summary }}</p>
-        <div class="headline__action">
-          <a href="/patterns/">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
-        </div>
-      </div>
-      <div class="homepage__patterns cluster gap-top-size-3">
-        {% for setId, set in patterns.sets %}
-          {% if (site.env == 'prod' and set.draft) or set.suite %}
-            {# Don't display draft suite cards in prod, and don't display
-              sets that have a parent suite #}
-          {% else %}
-          <a href="/patterns/{{ set.id }}" class="card">
-            {% Img src=set.hero, alt=set.title, width="354", height="240", params={fit: 'center', h: '240', w: '354'} %}
-            <div class="card__content flow gap-top-size-2">
-              <h3 class="card__heading text-size-3">{{ set.title }}</h3>
-              <p class="color-mid-text">{{ set.description }}</p>
-            </div>
-          </a>
-          {% endif %}
-        {% endfor %}
-      </div>
+  {# Themes start #}
+  <div class="wrapper">
+    <div class="pad-block-size-1 repel">
+      <h2 id="themes" class="text-size-3"> Themes </h2>
+
+      {% set filterItems = [] %}
+      {% for theme in themes %}
+        {% set filterItems = (filterItems.push({title: theme.category, id: theme.category | slug }), filterItems) %}
+      {% endfor %}
+      <web-learn-filter all="all" filters="{{filterItems | dump}}"></web-learn-filter>
     </div>
   </div>
-  {# Patterns end #}
 
-  {# Podcasts start #}
-  <div class="homepage__section bg-core-bg">
-    <div class="wrapper">
-      <div class="headline all-center flow">
-        <h2 class="headline__title">{{ podcasts.title }}</h2>
-        <p>{{ podcasts.summary }}</p>
-        <div class="headline__action">
-          <a href="/podcasts/">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
-        </div>
-      </div>
-      <div class="homepage__shows gap-top-size-3">
-        <a class="homepage__show" href="/shows/designing-in-the-browser/">
-          {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/XXZm5qRstbVipZB9op3U.jpg", alt="Designer Vs Developer artwork", width="800", height="947", loading="lazy", class="homepage__show-bg" %}
-          <div class="flow t-color-shades-light-bright">
-            <p>Show</p>
-            <h3 class="text-size-4">Designing in the browser</h3>
-            <p>Designing in the Browser explores the intersection of design and front-end development, teaching you how to build beautiful UIs with modern web standards in mind.</p>
+  <div id="learn__collections">
+  {% for theme in themes %}
+    <div class="homepage__collection" id="{{ theme.category | slug }}">
+      <div class="region wrapper">
+        <h5> {{ theme.category }} </h5>
+          <div class="collection__layout" aria-label="topics">
+            {% set cards = theme.cards %}
+            {% include 'partials/cards-collection.njk' %}
           </div>
-        </a>
-        <a class="homepage__show" href="https://pod.link/thecsspodcast">
-          {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ipfeeYVWUsDER4LRnUkf.jpg", alt="Designer Vs Developer artwork", width="800", height="947", loading="lazy", class="homepage__show-bg" %}
-          <div class="flow t-color-shades-light-bright">
-            <p>Podcast</p>
-            <h3 class="text-size-4">The CSS Podcast</h3>
-            <p>Cascading Style Sheets (CSS) is the web’s core styling language. For web developers, It’s one of the quickest technologies to get started.</p>
-          </div>
-        </a>
       </div>
     </div>
+  {% endfor %}
   </div>
-  {# Podcasts end #}
+  {# Themes end #}
+
+  {# Chrome developers start #}
+  <section class="homepage__developers region bg-mid-bg">
+    <div class="wrapper flow all-center">
+      <div> {% include "icons/chrome.svg" %} </div>
+
+      <h1 class="headline__title">{{ developers.title }}</h1>
+      <p class="color-mid-text">{{ developers.summary | safe }}</p>
+      <div>
+        <a class="button gap-top-size-1" data-type="primary" href="{{ developers.primaryButtonUrl }}">{{ developers.primaryButtonText }}</a>
+      </div>
+    </div>
+  </section>
+  {# Chrome developers end #}
 
   {% include 'partials/subscribe.njk' %}
 </div>

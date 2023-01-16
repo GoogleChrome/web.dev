@@ -227,7 +227,7 @@ async function saveSettings () {
       // There's a pending user input. Yield here:
       await yieldToMain();
     } else {
-      // Shift the the task out of the queue:
+      // Shift the task out of the queue:
       const task = tasks.shift();
 
       // Run the task:
@@ -283,7 +283,7 @@ async function saveSettings () {
       continue;
     }
 
-    // Shift the the task out of the queue:
+    // Shift the task out of the queue:
     const task = tasks.shift();
 
     // Run the task:

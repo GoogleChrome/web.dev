@@ -32,7 +32,7 @@ A workflow for improving Core Web Vitals for your website will be explored in th
 
 While lab tools are invaluable, [the data they provide isn't always predictive of how a website performs for real users](https://discuss.httparchive.org/t/lighthouse-scores-as-predictors-of-page-level-crux-data/2232).
 
-For example, Lighthouse runs tests with simulated throttling in a simulated desktop or mobile environment. While such simulations of slower network and device conditions often help surface user experience problems better than native network and device conditions, [they're just a single slice](/lab-and-field-data-differences/) of the large variety in network conditions and device capabilities across a website's entire user base.
+For example, Lighthouse runs tests with simulated throttling in a simulated desktop or mobile environment. While such simulations of slower network and device conditions often help draw attention to user experience problems better than native network and device conditions, [they're just a single slice](/lab-and-field-data-differences/) of the large variety in network conditions and device capabilities across a website's entire user base.
 
 {% Aside %}
 To learn more about how simulated throttling works and how it differs from other types of throttling, [this bit of Lighthouse documentation](https://github.com/GoogleChrome/lighthouse/blob/master/docs/throttling.md#network-throttling) is your time.

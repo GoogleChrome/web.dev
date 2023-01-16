@@ -376,7 +376,7 @@ Read [Prevent layout shifting and flashes of invisible text (FOIT) by preloading
 
 Changes to CSS property values can require the browser to react to these changes. A number of values trigger re-layout, paint and composite such as `box-shadow` and `box-sizing`. A number of CSS properties can be changed in a less costly manner.
 
-To learn more about what CSS properties trigger layout, see [CSS Triggers](https://csstriggers.com/) and [High-performance animations](/animations-guide/).
+To learn more about what CSS properties trigger layout see [High-performance animations](/animations-guide/).
 
 ### bfcache
 

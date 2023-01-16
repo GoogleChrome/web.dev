@@ -331,7 +331,7 @@ Leia [Impedindo o deslocamento de layout e flashes de texto invisível (FOIT) ao
 
 Mudanças nos valores das propriedades CSS podem exigir que o navegador reaja a essas alterações. Uma série de valores provocam um novo layout, renderização e composições, como `box-shadow` ,`box-sizing`. Diversas propriedades CSS podem ser alteradas de maneira menos onerosa.
 
-Para saber mais sobre quais propriedades CSS causam alterações no layout, veja [Gatilhos CSS](https://csstriggers.com/) e [Animações de alto desempenho](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
+Para saber mais sobre quais propriedades CSS causam alterações no layout, veja [Animações de alto desempenho](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
 
 ### Ferramentas de desenvolvimento 🔧
 

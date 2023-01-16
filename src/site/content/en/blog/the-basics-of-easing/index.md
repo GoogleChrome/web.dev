@@ -15,7 +15,7 @@ tags:
 
 Nothing in nature moves linearly from one point to another. In reality, things tend to accelerate or decelerate as they move. Our brains are wired to expect this kind of motion, so when animating, you should use this to your advantage. Natural motion makes your users feel more comfortable with your apps, which in turn leads to a better overall experience.
 
-### TL;DR
+### Summary
 * Easing makes your animations feel more natural.
 * Choose ease-out animations for UI elements.
 * Avoid ease-in or ease-in-out animations unless you can keep them short; they tend to feel sluggish to end users.
@@ -48,7 +48,7 @@ Animations without any kind of easing are referred to as **linear**. A graph of 
 
 As time moves along, the value increases in equal amounts. With linear motion, things tend to feel robotic and unnatural, and this is something that users find jarring. Generally speaking, you should avoid linear motion.
 
-Whether you’re coding your animations using CSS or JavaScript, you’ll find that there is always an option for linear motion. 
+Whether you’re coding your animations using CSS or JavaScript, you’ll find that there is always an option for linear motion.
 
 [See a linear animation](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/animations/box-move-linear.html)
 
@@ -79,7 +79,7 @@ There are many ways to achieve an ease out effect, but the simplest is the `ease
 ```css
 transition: transform 500ms ease-out;
 ```
-    
+
 
 
 ## Ease-in animations
@@ -101,7 +101,7 @@ To use an ease-in animation, similarly to ease-out and linear animations, you ca
 ```css
 transition: transform 500ms ease-in;
 ```
-    
+
 
 ## Ease-in-out animations
 

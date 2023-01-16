@@ -15,7 +15,7 @@ block DOM construction and delay when the page is rendered. To deliver optimal
 performance, make your JavaScript async and eliminate any unnecessary JavaScript
 from the critical rendering path.
 
-### TL;DR {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 - JavaScript can query and modify the DOM and the CSSOM.
 - JavaScript execution blocks on the CSSOM.

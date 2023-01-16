@@ -1,14 +1,10 @@
 {% set analyticsScript %}
-window.ga =
-  window.ga ||
-  function () {
-    (ga.q = ga.q || []).push(arguments);
-  };
-ga.l = +new Date();
-ga('create', '{{ site.analytics.ids.prod }}');
-ga('set', 'transport', 'beacon');
-ga('set', 'anonymizeIp', true);
-ga('set', 'page', window.location.pathname);
-ga('set', '{{ site.analytics.dimensions.TRACKING_VERSION }}', '{{ site.analytics.version}}');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+{% if (site.env != 'prod') %}
+  {# In development, log debug events to the console instead of sending them to GA #}
+  window.gtag = console.debug;
+{% endif %}
 {% endset %}
 <script>{{ analyticsScript | minifyJs | cspHash | safe }}</script>

@@ -93,7 +93,7 @@ can follow to ask questions and listen for product announcements.
 
 ## See it in action
 
-In order to get more acquainted with the available data, walk through
+To get more acquainted with the available data, walk through
 step-by-step guides for using BigQuery, Data Studio Dashboard, and PageSpeed
 Insights:
 

@@ -11,17 +11,17 @@ tags:
 ---
 
 {% Aside 'warning' %}
-This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article at developers.google.com, "[Shadow DOM v1: self-contained web components](https://developers.google.com/web/fundamentals/primers/shadowdom/)". It covers everything in the newer Shadow DOM v1 spec shipping in Chrome 53, Opera, and Safari 10.
+This article describes an old version of Shadow DOM (v0). If you're interested in using Shadow DOM, check out our new article, "[Shadow DOM v1: self-contained web components](/shadowdom-v1/)". It covers everything in the newer Shadow DOM v1 spec shipped in Chrome 53, Safari 10, and Firefox 63.
 {% endAside %}
 
 This article discusses more of the amazing things you can do with Shadow DOM.
-It builds on the concepts discussed in [Shadow DOM 101](https://www.html5rocks.com/tutorials/webcomponents/shadowdom/).
+It builds on the concepts discussed in [Shadow DOM 101](/shadowdom/).
 If you're looking for an introduction, see that article.
 
 ## Introduction
 
-Let's face it. There's nothing sexy about unstyled markup. Lucky for us, [the brilliant folks behind Web Components](http://w3c.github.io/webcomponents/explainer/#acknowledgements)
-foresaw this and didn't leave us hanging. The [CSS Scoping Module](http://dev.w3.org/csswg/css-scoping/) defines many options for styling content in a shadow tree.
+Let's face it. There's nothing sexy about unstyled markup. Lucky for us, [the brilliant folks behind Web Components](https://www.w3.org/TR/2012/WD-components-intro-20120522/#acknowledgements)
+foresaw this and didn't leave us hanging. The [CSS Scoping Module](https://drafts.csswg.org/css-scoping/) defines many options for styling content in a shadow tree.
 
 {% Aside %}
 In Chrome, turn on the "Enable experimental Web Platform features" in about:flags to experiment with everything covered in this article.
@@ -29,7 +29,7 @@ In Chrome, turn on the "Enable experimental Web Platform features" in about:flag
 
 ## Style encapsulation
 
-One of the core features of Shadow DOM is the [shadow boundary](http://w3c.github.io/webcomponents/spec/shadow/#shadow-trees). It has a lot of nice properties,
+One of the core features of Shadow DOM is the [shadow boundary](https://dom.spec.whatwg.org/#shadow-trees). It has a lot of nice properties,
 but one of the best is that it provides style encapsulation for free. Stated another way:
 
 {% Aside %}
@@ -37,11 +37,17 @@ CSS styles defined inside Shadow DOM are scoped to the ShadowRoot. This means st
 {% endAside %}
 
 ```html
-<div><h3>Light DOM</div>
+<div><h3>Light DOM</h3></div>
 <script>
 var root = document.querySelector('div').createShadowRoot();
-root.innerHTML = '<style>h3{ color: red; }</style>' + 
-                    '<h3>Shadow DOM';
+root.innerHTML = `
+  <style>
+    h3 {
+      color: red;
+    }
+  </style>
+  <h3>Shadow DOM</h3>
+`;
 </script>
 ```
 
@@ -63,10 +69,14 @@ The `:host` allows you to select and style the element hosting a shadow tree:
 <script>
 var button = document.querySelector('button');
 var root = button.createShadowRoot();
-root.innerHTML = '<style>' + 
-    ':host { text-transform: uppercase; }' +
-    '</style>' + 
-    '<content></content>';
+root.innerHTML = `
+  <style>
+    :host {
+      text-transform: uppercase;
+    }
+  </style>
+  <content></content>
+`;
 </script>
 ```
 
@@ -75,34 +85,34 @@ rules defined in the element, but lower specificity than a `style` attribute
 defined on the host element.  This allows users to override your styling from the outside.
 `:host` also only works in the context of a ShadowRoot so you can't use it outside of Shadow DOM.
 
-The functional form of `:host(<selector>)` allows you to target the host element if it matches a `<selector>`. 
+The functional form of `:host(<selector>)` allows you to target the host element if it matches a `<selector>`.
 
 **Example** - match only if the element itself has the class `.different` (e.g. `<x-foo class="different"></x-foo>`):
 
 ```css
 :host(.different) {
-    ...  
+    ...
 }
 ```
 
 ### Reacting to user states
 
-A common use case for `:host` is when you're creating a [Custom Element](https://www.html5rocks.com/tutorials/webcomponents/customelements/) and want to react to different user states (:hover, :focus, :active, etc.).
+A common use case for `:host` is when you're creating a [Custom Element](/customelements/) and want to react to different user states (:hover, :focus, :active, etc.).
 
 ```html
 <style>
-:host {
+  :host {
     opacity: 0.4;
     transition: opacity 420ms ease-in-out;
-}
-:host(:hover) {
+  }
+  :host(:hover) {
     opacity: 1;
-}
-:host(:active) {
+  }
+  :host(:active) {
     position: relative;
     top: 3px;
     left: 3px;
-}
+  }
 </style>
 ```
 
@@ -115,7 +125,7 @@ many people do theming by applying a class to `<html>` or `<body>`:
 
 ```html
 <body class="different">
-    <x-foo></x-foo>
+  <x-foo></x-foo>
 </body>
 ```
 
@@ -123,7 +133,7 @@ You can `:host-context(.different)` to style `<x-foo>` when it's a descendant of
 
 ```css
 :host-context(.different) {
-    color: red;
+  color: red;
 }
 ```
 
@@ -136,15 +146,15 @@ Another use for `:host` is if you're creating a theming library and want to
 support styling many types of host elements from within the same Shadow DOM.
 
 ```css
-:host(x-foo) { 
+:host(x-foo) {
     /* Applies if the host is a <x-foo> element.*/
 }
 
-:host(x-foo:host) { 
+:host(x-foo:host) {
     /* Same as above. Applies if the host is a <x-foo> element. */
 }
 
-:host(div) {  {
+:host(div) {
     /* Applies if the host element is a <div>. */
 }
 ```
@@ -163,20 +173,22 @@ For example, if an element is hosting a shadow root, you can write `#host::shado
 
 ```html
 <style>
-    #host::shadow span {
+  #host::shadow span {
     color: red;
-    }
+  }
 </style>
 
 <div id="host">
-    <span>Light DOM</span>
+  <span>Light DOM</span>
 </div>
 
 <script>
-    var host = document.querySelector('div');
-    var root = host.createShadowRoot();
-    root.innerHTML = "<span>Shadow DOM</span>" + 
-                    "<content></content>";
+  var host = document.querySelector('div');
+  var root = host.createShadowRoot();
+  root.innerHTML = `
+    <span>Shadow DOM</span>
+    <content></content>
+  `;
 </script>
 ```
 
@@ -192,7 +204,7 @@ x-tabs::shadow x-panel::shadow h2 {
 
 The `/deep/` combinator is similar to `::shadow`, but more powerful. It completely ignores all shadow boundaries and crosses into any number of shadow trees. Put simply, `/deep/` allows you to drill into an element's guts and target any node.
 
-The `/deep/` combinator is particularly useful in the world of Custom Elements where it's common to have multiple levels of Shadow DOM. Prime examples are nesting a bunch of custom elements (each hosting their own shadow tree) or creating an element that inherits from another using [`<shadow>`](https://www.html5rocks.com/tutorials/webcomponents/shadowdom-301/#toc-shadow-insertion).
+The `/deep/` combinator is particularly useful in the world of Custom Elements where it's common to have multiple levels of Shadow DOM. Prime examples are nesting a bunch of custom elements (each hosting their own shadow tree) or creating an element that inherits from another using [`<shadow>`](/shadowdom-301/#shadow-insertion-points).
 
 **Example** (custom elements) -  select all `<x-panel>` elements that are descendants of
 `<x-tabs>`, anywhere in the tree:
@@ -213,7 +225,7 @@ body /deep/ .library-theme {
 
 ### Working with querySelector()
 
-Just like [`.shadowRoot`](https://www.html5rocks.com/tutorials/webcomponents/shadowdom-301/#toc-get-shadowroot) opens
+Just like [`.shadowRoot`](/shadowdom-301/#obtaining-a-hosts-shadow-root) opens
 shadow trees up for DOM traversal, the combinators open shadow trees for selector traversal.
 Instead of writing a nested chain of madness, you can write a single statement:
 
@@ -235,7 +247,7 @@ uses Shadow DOM can be styled. Great examples are the `<input>` types and `<vide
 
 ```css
 video /deep/ input[type="range"] {
-    background: hotpink;
+  background: hotpink;
 }
 ```
 
@@ -263,22 +275,22 @@ body /deep/ .library-theme {
 
 ### Using custom pseudo elements
 
-Both [WebKit](http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css?format=txt) and
-[Firefox](https://developer.mozilla.org/docs/CSS/CSS_Reference/Mozilla_Extensions#Pseudo-elements_and_pseudo-classes) define pseudo elements for styling internal pieces of native browser elements. A good example
-is the `input[type=range]`. You can style the slider thumb <span style="color:blue">blue</span> by targeting `::-webkit-slider-thumb`:
+Both [WebKit](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css?format=txt) and
+[Firefox](https://developer.mozilla.org/docs/Web/CSS/Mozilla_Extensions#pseudo-elements_and_pseudo-classes) define pseudo elements for styling internal pieces of native browser elements. A good example
+is the `input[type=range]`. You can style the slider thumb `<span style="color:blue">blue</span>` by targeting `::-webkit-slider-thumb`:
 
 ```css
 input[type=range].custom::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background-color: blue;
-    width: 10px;
-    height: 40px;
+  -webkit-appearance: none;
+  background-color: blue;
+  width: 10px;
+  height: 40px;
 }
 ```
 
 Similar to how browsers provide styling hooks into some internals,
 authors of Shadow DOM content can designate certain elements as styleable by
-outsiders. This is done through [custom pseudo elements](http://www.w3.org/TR/shadow-dom/#custom-pseudo-elements).
+outsiders. This is done through [custom pseudo elements](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Custom-Pseudo-Elements.md).
 
 You can designate an element as a custom pseudo element by using the `pseudo` attribute.
 Its value, or name, needs to be prefixed with "x-". Doing so creates
@@ -290,16 +302,18 @@ its slider thumb blue:
 
 ```html
 <style>
-    #host::x-slider-thumb {
+  #host::x-slider-thumb {
     background-color: blue;
-    }
+  }
 </style>
 <div id="host"></div>
 <script>
-var root = document.querySelector('#host').createShadowRoot();
-root.innerHTML = '<div>' +
-                    '<div pseudo="x-slider-thumb"></div>' + 
-                    '</div>';
+  var root = document.querySelector('#host').createShadowRoot();
+  root.innerHTML = `
+    <div>
+      <div pseudo="x-slider-thumb"></div>' +
+    </div>
+  `;
 </script>
 ```
 
@@ -311,14 +325,14 @@ but loosened for custom pseudo element definitions.
 
 ### Using CSS Variables
 
-A powerful way to create theming hooks will be through [CSS Variables](http://dev.w3.org/csswg/css-variables/). Essentially, creating "style placeholders" for other users to fill in.
+A powerful way to create theming hooks will be through [CSS Variables](https://drafts.csswg.org/css-variables/). Essentially, creating "style placeholders" for other users to fill in.
 
 Imagine a custom element author who marks out variable placeholders in their Shadow DOM. One for styling an internal button's font and another for its color:
 
 ```css
 button {
-    color: var(--button-text-color, pink); /* default color will be pink */
-    font-family: var(--button-font);
+  color: var(--button-text-color, pink); /* default color will be pink */
+  font-family: var(--button-font);
 }
 ```
 
@@ -327,8 +341,8 @@ to match the super cool Comic Sans theme of their own page:
 
 ```css
 #host {
-    --button-text-color: green;
-    --button-font: "Comic Sans MS", "Comic Sans", cursive;
+  --button-text-color: green;
+  --button-font: "Comic Sans MS", "Comic Sans", cursive;
 }
 ```
 
@@ -337,26 +351,28 @@ works beautifully! The whole picture looks like this:
 
 ```html
 <style>
-    #host {
+  #host {
     --button-text-color: green;
     --button-font: "Comic Sans MS", "Comic Sans", cursive;
-    }
+  }
 </style>
 <div id="host">Host node</div>
 <script>
-var root = document.querySelector('#host').createShadowRoot();
-root.innerHTML = '<style>' + 
-    'button {' + 
-        'color: var(--button-text-color, pink);' + 
-        'font-family: var(--button-font);' + 
-    '}' +
-    '</style>' +
-    '<content></content>';
+  var root = document.querySelector('#host').createShadowRoot();
+  root.innerHTML = `
+    <style>
+      button {
+        color: var(--button-text-color, pink);
+        font-family: var(--button-font);
+      }
+    </style>
+    <content></content>
+  `;
 </script>
 ```
 
 {% Aside %}
-I've already mentioned [Custom Elements](https://www.html5rocks.com//tutorials/webcomponents/customelements/) a few times in this article. For now, just know that Shadow DOM forms their structural foundation
+I've already mentioned [Custom Elements](/customelements/) a few times in this article. For now, just know that Shadow DOM forms their structural foundation
 by providing styling and DOM encapsulation. The concepts here pertain to styling Custom Elements.
 {% endAside %}
 
@@ -375,18 +391,23 @@ Think of it as a way to start fresh when creating a new component.
 Below is a demo that shows how the shadow tree is affected by changing `resetStyleInheritance`:
 
 ```html
-`<div>
+<div>
   <h3>Light DOM</h3>
 </div>
 
 <script>
-var root = document.querySelector('div').createShadowRoot();
-root.resetStyleInheritance = <span id="code-resetStyleInheritance">false</span>;
-root.innerHTML = '<style>h3{ color: red; }</style>' + 
-                 '<h3>Shadow DOM</h3>' + 
-                 '<content select="h3"></content>';
+  var root = document.querySelector('div').createShadowRoot();
+  root.resetStyleInheritance = <span id="code-resetStyleInheritance">false</span>;
+  root.innerHTML = `
+    <style>
+      h3 {
+        color: red;
+      }
+    </style>
+    <h3>Shadow DOM</h3>
+    <content select="h3"></content>
+  `;
 </script>
-</pre>
 
 <div class="demoarea" style="width:225px;">
   <div id="style-ex-inheritance"><h3 class="border">Light DOM</div>
@@ -396,19 +417,16 @@ root.innerHTML = '<style>h3{ color: red; }</style>' +
 </div>
 
 <script>
-(function() {
-var container = document.querySelector('#style-ex-inheritance');
-var root = container.createShadowRoot();
-//root.resetStyleInheritance = false;
-root.innerHTML = '<style>h3{ color: red; }</style><h3>Shadow DOM<content select="h3"></content>';
+  var container = document.querySelector('#style-ex-inheritance');
+  var root = container.createShadowRoot();
+  //root.resetStyleInheritance = false;
+  root.innerHTML = '<style>h3{ color: red; }</style><h3>Shadow DOM<content select="h3"></content>';
 
-document.querySelector('#demo-resetStyleInheritance').addEventListener('click', function(e) {
-  root.resetStyleInheritance = !root.resetStyleInheritance;
-  e.target.textContent = 'resetStyleInheritance=' + root.resetStyleInheritance;
-  document.querySelector('#code-resetStyleInheritance').textContent = root.resetStyleInheritance;
-});
-
-})();
+  document.querySelector('#demo-resetStyleInheritance').addEventListener('click', function(e) {
+    root.resetStyleInheritance = !root.resetStyleInheritance;
+    e.target.textContent = 'resetStyleInheritance=' + root.resetStyleInheritance;
+    document.querySelector('#code-resetStyleInheritance').textContent = root.resetStyleInheritance;
+  });
 </script>
 ```
 
@@ -427,7 +445,7 @@ If you're unsure about which properties inherit in CSS, check out [this handy li
 
 ## Styling distributed nodes
 
-Distributed nodes are elements that render at an [insertion point](https://www.html5rocks.com/tutorials/webcomponents/shadowdom-301/#toc-distributed-nodes) (a `<content>` element). The `<content>` element allows you to select nodes from the Light DOM and render them at predefined locations in your Shadow DOM. They're not logically in the Shadow DOM; they're still children of the host element. Insertion points are just a rendering thing.
+Distributed nodes are elements that render at an [insertion point](/shadowdom-301/#elementgetdistributednodes) (a `<content>` element). The `<content>` element allows you to select nodes from the Light DOM and render them at predefined locations in your Shadow DOM. They're not logically in the Shadow DOM; they're still children of the host element. Insertion points are just a rendering thing.
 
 Distributed nodes retain styles from the main document. That is, style rules
 from the main page continue to apply to the elements, even when they render at an insertion point.
@@ -447,29 +465,30 @@ Let's see an example:
 
 ```html
 <div>
-    <h3>Light DOM
-    <section>
+  <h3>Light DOM</h3>
+  <section>
     <div>I'm not underlined</div>
     <p>I'm underlined in Shadow DOM!</p>
-    </section>
+  </section>
 </div>
 
 <script>
 var div = document.querySelector('div');
 var root = div.createShadowRoot();
-root.innerHTML = '\
-    <style>\
-        h3 { color: red; }\
-        content[select="h3"]::content > h3 {\
-        color: green;\
-        }\
-        ::content section p {\
-        text-decoration: underline;\
-        }\
-    </style>\
-    <h3>Shadow DOM\
-    <content select="h3"></content>\
-    <content select="section"></content>';
+root.innerHTML = `
+  <style>
+    h3 { color: red; }
+      content[select="h3"]::content > h3 {
+      color: green;
+    }
+    ::content section p {
+      text-decoration: underline;
+    }
+  </style>
+  <h3>Shadow DOM</h3>
+  <content select="h3"></content>
+  <content select="section"></content>
+`;
 </script>
 ```
 

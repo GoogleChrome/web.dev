@@ -59,7 +59,7 @@ tags:
 
 {% Aside 'caution' %}古いブラウザが属性を適切に解析できるようにするには、コンマを使用して属性を区切ります。{% endAside %}
 
-[`width`または`initial-scale` Lighthouse監査を含む`<meta name="viewport">`タグ](/viewport/)がない場合、HTMLドキュメントがビューポートメタタグを正しく使用していることを確認するプロセスを自動化するのに役立ちます。
+[`width`または`initial-scale` Lighthouse監査を含む`<meta name="viewport">`タグ](https://developer.chrome.com/docs/lighthouse/pwa/viewport/)がない場合、HTMLドキュメントがビューポートメタタグを正しく使用していることを確認するプロセスを自動化するのに役立ちます。
 
 ### アクセス可能なビューポートを確認する {: ＃accessible-viewport}
 
@@ -77,7 +77,7 @@ tags:
 
 メタビューポートタグを使用してモバイルサイトを開発する場合、指定したビューポートに完全に収まらないページコンテンツを誤って作成してしまう可能性があります。たとえば、ビューポートよりも広い幅で画像が表示されると、ビューポートが水平方向にスクロールする可能性があります。ユーザーがページを水平方向にスクロールする必要がないように、コンテンツをビューポートの幅内に収まるように調整する必要があります。
 
-Lighthouse の [Content is not sized correctly for the viewport](/content-width/) 監査は、オーバーフローするコンテンツを検出するプロセスを自動化するのに役立ちます。
+Lighthouse の [Content is not sized correctly for the viewport](https://developer.chrome.com/docs/lighthouse/pwa/content-width/) 監査は、オーバーフローするコンテンツを検出するプロセスを自動化するのに役立ちます。
 
 ### 画像 {: #images}
 

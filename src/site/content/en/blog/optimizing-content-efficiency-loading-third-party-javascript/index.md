@@ -510,9 +510,9 @@ for the majority of users while still making split-testing possible.
 ### Lazy-load Third Party Resources
 
 Embedded third-party resources (such as ads or videos) can be a big contributor
-to slow page speed when constructed poorly. Lazy-loading can be used to only
+to slow page speed when constructed poorly. Lazy loading can be used to only
 load embedded resources when necessary. For example, serving an ad in the footer
-only when a user scrolls down the page. Another pattern is lazy-loading content
+only when a user scrolls down the page. Another pattern is lazy loading content
 after the main page content loads but before a user might otherwise interact
 with the page.
 
@@ -522,9 +522,9 @@ can be lazily loaded in.", width="767", height="340" %}
 
 {% Aside %}
 [LazySizes](https://github.com/aFarkas/lazysizes) is a popular JavaScript
-library for lazy-loading images and[iframes](http://afarkas.github.io/lazysizes/#examples). It supports YouTube
+library for lazy loading images and[iframes](http://afarkas.github.io/lazysizes/#examples). It supports YouTube
 embeds and[widgets](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks).
-Care does need to be taken when lazy-loading any resources as this technique is
+Care does need to be taken when lazy loading any resources as this technique is
 often powered by JavaScript and can be subject to issues on flaky network
 connections.
 {% endAside %}
@@ -534,7 +534,7 @@ If used properly, lazy loading can increase the overall viewability percentage
 of an ad. For example, Mediavine switched to[lazy-loading ads](https://www.mediavine.com/lazy-loading-ads-mediavine-ads-load-200-faster/)
 and saw a 200% improvement in page load speed.
 
-#### Efficient lazy-loading with Intersection Observer
+#### Efficient lazy loading with Intersection Observer
 
 Historically, solutions for detecting if an element is visible in the viewport
 (in order to lazy-load its content) have been error-prone, often causing the
@@ -548,7 +548,7 @@ efficient.
 
 [IntersectionObserver](/web/updates/2016/04/intersectionobserver) is a browser
 API that allows us to efficiently detect when an observed element enters or
-exits the browser's viewport. Learn more about how to use it for [lazy-loading resources](https://deanhume.com/home/blogpost/lazy-loading-images-using-intersection-observer/10163).
+exits the browser's viewport. Learn more about how to use it for [lazy loading resources](https://deanhume.com/home/blogpost/lazy-loading-images-using-intersection-observer/10163).
 LazySizes also has[optional support](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)
 for IntersectionObserver.
 

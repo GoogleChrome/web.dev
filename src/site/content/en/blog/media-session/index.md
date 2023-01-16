@@ -508,5 +508,5 @@ Check out some [Media Session samples] featuring [Blender Foundation] and
 [web audio api]: /web/updates/2012/02/HTML5-audio-and-the-Web-Audio-API-are-BFFs
 [blender foundation]: http://www.blender.org/
 [jan morgenstern's work]: http://www.wavemage.com/category/music/
-[audio playback]: https://developers.google.com/web/updates/2018/10/watch-video-using-picture-in-picture#show_canvas_element_in_picture-in-picture_window
+[audio playback]: https://developer.chrome.com/blog/watch-video-using-picture-in-picture/#show-canvas-element-in-picture-in-picture-window
 [video conferencing]: #video-conferencing-actions

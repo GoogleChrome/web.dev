@@ -49,7 +49,7 @@ const initialState = {
   // cookie policy.
   // We automatically accept cookies in dev and test environments so the cookie
   // banner doesn't interfere with tests.
-  userAcceptsCookies: !isProd,
+  cookiePreference: isProd ? null : 'accepts',
 
   // Handle hiding/showing the snackbar.
   showingSnackbar: false,
@@ -61,6 +61,7 @@ const initialState = {
   // Data for the current web.dev/LIVE event.
   eventDays: [],
   activeEventDay: null, // livestream shown for this day
+  g4ScriptLoaded: false,
 };
 
 let store;

@@ -60,8 +60,8 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
   </figcaption>
 </figure>
 
-When your reader views a page that meets those requirements, i.e. they're on a
-secure connection and the cookie is less than a month old, then their browser
+When your reader views a page that meets those requirements—they're on a
+secure connection and the cookie is less than a month old—their browser
 will send this header in its request:
 
 ```text
@@ -114,7 +114,7 @@ longer than needed.
 If you go back to that same selection of sites you were looking at before, you
 probably noticed that there were cookies present for a variety of domains, not
 just the one you were currently visiting. Cookies that match the domain of the
-current site, i.e. what's displayed in the browser's address bar, are referred
+current site, that is, what's displayed in the browser's address bar, are referred
 to as **first-party** cookies. Similarly, cookies from domains other than the
 current site are referred to as **third-party** cookies. This isn't an absolute
 label but is relative to the user's context; the same cookie can be either

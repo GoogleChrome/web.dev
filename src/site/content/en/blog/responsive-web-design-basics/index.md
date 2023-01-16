@@ -88,7 +88,7 @@ allows the page to take advantage of the full landscape width.
   use a comma to separate attributes.
 {% endAside %}
 
-The [Does not have a `<meta name="viewport">` tag with `width` or `initial-scale`](/viewport/)
+The [Does not have a `<meta name="viewport">` tag with `width` or `initial-scale`](https://developer.chrome.com/docs/lighthouse/pwa/viewport/)
 Lighthouse audit can help you automate the process of making sure that your HTML documents are using the viewport meta tag correctly.
 
 ### Ensure an accessible viewport {: #accessible-viewport }
@@ -118,7 +118,7 @@ can cause the viewport to scroll horizontally.
 You should adjust this content to fit within the width of the viewport,
 so that the user does not need to scroll horizontally.
 
-The [Content is not sized correctly for the viewport](/content-width/)
+The [Content is not sized correctly for the viewport](https://developer.chrome.com/docs/lighthouse/pwa/content-width/)
 Lighthouse audit can help you automate the process of detecting overflowing content.
 
 ### Images {: #images }
@@ -274,7 +274,7 @@ Alternatively, you could include print styles within your main stylesheet using 
 {% Aside 'note' %}
 It is also possible to include separate stylesheets in your main CSS file using the `@import` syntax,
 `@import url(print.css) print;`, however this use is not recommended for performance reasons.
-See [Avoid CSS imports](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/page-speed-rules-and-recommendations#avoid_css_imports) for more details.
+See [Avoid CSS imports](/critical-rendering-path-page-speed-rules-and-recommendations/#avoid-css-imports) for more details.
 {% endAside %}
 
 For responsive web design, we are typically querying the _features_ of the device

@@ -31,5 +31,5 @@ Here's what you'll learn:
 So, are you ready to learn HTML? [Let's get started](/learn/html/overview/).
 
 {% Aside %}
-This course was written by [Estelle Weyl](https://twitter.com/estellevw), with input and review from [Rachel Andrew](https://twitter.com/rachelandrew), and [Jhey Tompkins](https://twitter.com/jh3yy).
+This course was written by [Estelle Weyl](https://front-end.social/@estelle), with input and review from [Rachel Andrew](https://twitter.com/rachelandrew), and [Jhey Tompkins](https://twitter.com/jh3yy).
 {% endAside %}

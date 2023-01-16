@@ -128,7 +128,7 @@ Preloading ensures more important resources are fetched and downloaded sooner
 by the browser.
 
 Aside from splitting and loading different JavaScript chunks on demand,
-Lighthouse also provides an audit for lazy-loading non-critical images.
+Lighthouse also provides an audit for lazy loading non-critical images.
 
 {% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse: Defer offscreen images audit", width="800", height="90" %}
 

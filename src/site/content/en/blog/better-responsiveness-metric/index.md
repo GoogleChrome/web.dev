@@ -346,7 +346,7 @@ One initial thought would be to use the `pointerdown` and `pointerup` events and
 cover all of the durations that we're interested in. Sadly, this is not the case, as this [edge
 case](https://output.jsbin.com/buyiyew/quiet) shows. Try opening this site on mobile, or with mobile
 emulation, and tapping where it says "Click me". This site triggers the [browser tap
-delay](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). It can be seen
+delay](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). It can be seen
 that the `pointerdown`, `pointerup`, and `touchend` are dispatched quickly, whereas the `mousedown`,
 `mouseup`, and `click` wait for the delay before being dispatched. This means that if we only looked
 at `pointerdown` and `pointerup` then we'd miss the duration from the synthetic events, which is
@@ -397,7 +397,7 @@ and `scroll`. Except for the scroll event, this is largely dependent on the devi
 scrolling: touch events are dispatched when scrolling with the finger on mobile devices, while wheel
 events occur when scrolling with a mouse wheel. The scroll events are fired after initial scrolling
 has completed. And in general, no DOM event blocks scrolling, unless the website uses [non-passive
-event listeners](/uses-passive-event-listeners/). So we think of scrolling as decoupled from DOM
+event listeners](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/). So we think of scrolling as decoupled from DOM
 Events altogether. What we want to measure is the time from when the user moves enough to produce a
 scroll gesture until the first frame that shows that scrolling happened.
 

@@ -13,7 +13,7 @@ Before the browser can render the page, it needs to construct the DOM and
 CSSOM trees. As a result, we need to ensure that we deliver both the HTML and
 CSS to the browser as quickly as possible.
 
-### TL;DR {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 - Bytes → characters → tokens → nodes → object model.
 - HTML markup is transformed into a Document Object Model (DOM); CSS markup is
@@ -73,7 +73,8 @@ above: convert bytes to characters, identify tokens, convert tokens to nodes,
 and build the DOM tree. This entire process can take some time, especially if
 we have a large amount of HTML to process.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/XNtLYpXIK4zOXj9AgG5Y.png", alt="Tracing DOM construction in DevTools", width="766", height="180" %}
+
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/RHpJTxB4gBYuhzILaB7Y.png", alt="Tracing DOM construction in DevTools", width="766", height="180" %}
 
 {% Aside %}
 We're assuming that you have basic familiarity with Chrome DevTools - that

@@ -5,7 +5,7 @@ subhead: Seamless reusable styles.
 authors:
   - developit
 date: 2019-02-08
-updated: 2022-02-23
+updated: 2022-12-14
 description: Constructable Stylesheets provide a seamless way to create and distribute styles to documents or shadow roots without worrying about FOUC.
 tags:
   - blog
@@ -16,13 +16,7 @@ tags:
 way to create and distribute reusable styles when using [Shadow
 DOM](/shadowdom-v1/).
 
-{% Aside %}
-Constructable Stylesheets are available in Chromium
-(versions 73 and higher), and in Firefox from version 75 behind the
-`layout.css.constructable-stylesheets.enabled` flag.
-{% endAside %}
-
-{% BrowserCompat 'api.CSSStyleSheet' %}
+{% BrowserCompat 'api.CSSStyleSheet.CSSStyleSheet' %}
 
 It has always been possible to create stylesheets using JavaScript. However, the
 process has historically been to create a `<style>` element using

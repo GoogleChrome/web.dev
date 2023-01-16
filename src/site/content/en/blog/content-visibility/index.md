@@ -4,8 +4,9 @@ subhead: Improve initial load time by skipping the rendering of offscreen conten
 authors:
   - una
   - vladimirlevin
+  - jlwagner
 date: 2020-08-05
-updated: 2021-03-09
+updated: 2022-12-05
 hero: image/admin/lrAkOWYTyGkK2BKXoF9y.jpg
 alt: Stylized photo of a half-hidden person.
 description: >
@@ -63,9 +64,9 @@ needing to consider state outside of the subtree. Knowing which bits of content
 decisions for page rendering.
 
 There are four types of [CSS
-containment](https://developers.google.com/web/updates/2016/06/css-containment),
+containment](/css-containment/),
 each a potential value for the `contain` CSS property, which can be combined
-together in a space-separated list of values:
+in a space-separated list of values:
 
 - `size`: Size containment on an element ensures that the element's box can be
   laid out without needing to examine its descendants. This means we can
@@ -89,7 +90,7 @@ together in a space-separated list of values:
 It may be hard to figure out which containment values to use, since browser
 optimizations may only kick in when an appropriate set is specified. You can
 play around with the values to see [what works
-best](https://developers.google.com/web/updates/2016/06/css-containment), or you
+best](/css-containment/), or you
 can use another CSS property called `content-visibility` to apply the needed
 containment automatically. `content-visibility` ensures that you get the largest
 performance gains the browser can provide with minimal effort from you as a
@@ -101,9 +102,9 @@ that provides immediate performance improvements. An element that has
 the element is off-screen (and not otherwise relevant to the user—relevant
 elements would be the ones that have focus or selection in their subtree), it
 also gains `size` containment (and it stops
-[painting](https://developers.google.com/web/updates/2018/09/inside-browser-part3#paint)
+[painting](https://developer.chrome.com/blog/inside-browser-part3/#paint)
 and
-[hit-testing](https://developers.google.com/web/updates/2018/09/inside-browser-part4#finding_the_event_target)
+[hit-testing](https://developer.chrome.com/blog/inside-browser-part4/#finding-the-event-target)
 its contents).
 
 What does this mean? In short, if the element is off-screen its descendants are
@@ -280,6 +281,14 @@ cached state. This makes the view quick to render when it becomes active again.
 In an experiment, Facebook engineers observed an up to 250ms improvement in
 navigation times when going back to previously cached views.
 {% endAside %}
+
+## Effects on Interaction to Next Paint (INP)
+
+[INP](/inp/) is a metric that evaluates a page's ability to be reliably responsive to user input. Responsiveness can be affected by any excessive amount of work that occurs on the main thread, including rendering work.
+
+Whenever you can reduce rendering work on any given page, you're giving the main thread an opportunity to respond to user inputs more quickly. This includes rendering work, and using the `content-visiblity` CSS property where appropriate can reduce rendering work—especially during startup, when most rendering and layout work is done.
+
+Reducing rendering work has a direct effect on INP. When users attempt to interact with a page that uses the `content-visibility` property properly to defer layout and rendering of offscreen elements, you're giving the main thread a chance to respond to critical user-visible work. This can improve your page's INP in some situations.
 
 ## Conclusion
 

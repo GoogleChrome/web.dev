@@ -73,7 +73,7 @@ properties:
 - A **value** (optional)
 - A **state** (optional)
 
-An element's **role** describes its type, i.e. "button," "input," or even just
+An element's **role** describes its type, for example, "button," "input," or even just
 "group" for things like `div` and `span` elements.
 
 An element's **name** is its computed label. Screen readers typically announce

@@ -222,11 +222,11 @@ module.exports = {
 },
 ```
 
-The following arguments are used in the plugin array:
+The plugin array uses the following arguments:
 +  `asset`: The target asset name.
-+  `[file]` is replaced with the original asset file name
-+  `test`: All assets that match this RegExp (i.e. javascript assets ending in
-   `.js`) are processed
++  `[file]` is replaced with the original asset file name.
++  `test`: All assets that match this RegExp (that is, JavaScript assets ending in
+   `.js`) are processed.
 
 For example, `main.js` would be renamed to `main.js.br`.
 

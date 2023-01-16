@@ -25,7 +25,7 @@ modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules). The s
 can then be applied to documents or [shadow
 roots](https://developer.mozilla.org/docs/Web/API/ShadowRoot) in the same manner as
 [constructable
-stylesheets](https://developers.google.com/web/updates/2019/02/constructable-stylesheets). This can
+stylesheets](/constructable-stylesheets/). This can
 be more convenient and [more
 performant](https://dandclark.github.io/json-css-module-notes/#css-module-performancememory-examples)
 than other ways of importing and applying CSS.
@@ -43,7 +43,7 @@ bug](https://bugs.webkit.org/show_bug.cgi?id=227967), respectively.
 - Familiarity with [JavaScript
   modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules).
 - Familiarity with [constructable
-  stylesheets](https://developers.google.com/web/updates/2019/02/constructable-stylesheets).
+  stylesheets](/constructable-stylesheets/).
 
 ## Using CSS module scripts
 
@@ -56,7 +56,7 @@ shadowRoot.adoptedStyleSheets = [sheet];
 ```
 
 The default export of a CSS module script is a [constructable
-stylesheet](https://developers.google.com/web/updates/2019/02/constructable-stylesheets) whose
+stylesheet](/constructable-stylesheets/) whose
 contents are those of the imported file. Like any other constructable stylesheet, it is applied to
 documents or shadow roots using
 [`adoptedStyleSheets`](https://wicg.github.io/construct-stylesheets/#using-constructed-stylesheets).

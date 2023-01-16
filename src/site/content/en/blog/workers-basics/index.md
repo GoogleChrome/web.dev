@@ -1,5 +1,5 @@
 ---
-title: Introducing WebSockets - Bringing Sockets to the Web
+title: The Basics of Web Workers
 authors:
   - malteubl
   - agektmr

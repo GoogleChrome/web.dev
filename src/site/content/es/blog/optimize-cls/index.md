@@ -258,7 +258,7 @@ Lea [Cómo prevenir cambios de diseño y destellos del texto invisible (FOIT) ca
 
 Los cambios en los valores de las propiedades CSS pueden hacer que el navegador reaccione a estos cambios. Un número de valores desencadenan el rediseño, el despliegue y la composición, como `box-shadow` y `box-sizing`. Varias propiedades de CSS se pueden cambiar de una manera menos costosa.
 
-Para obtener más información sobre las propiedades de CSS que activan el diseño, consulte [Activadores de CSS](https://csstriggers.com/) y [animaciones de alto rendimiento](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
+Para obtener más información sobre las propiedades de CSS que activan el diseño, consulte [animaciones de alto rendimiento](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
 
 ### Herramientas para desarrolladores 🔧
 

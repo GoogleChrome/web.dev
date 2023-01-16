@@ -20,7 +20,7 @@ Service Worker Navigation Preload is [now supported by all major browser engines
 
 {% BrowserCompat 'api.NavigationPreloadManager' %}
 
-## TL;DR
+## Summary
 
 * In some situations, [service worker boot-up time can delay a network response](#the-problem).
 * Available in the three major browser engines, [navigation preload](#the-solution) fixes this by allowing you to make the request in parallel with service worker boot-up.

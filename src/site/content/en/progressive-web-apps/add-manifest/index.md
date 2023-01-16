@@ -82,12 +82,14 @@ A typical manifest looks something like this:
     {
       "src": "/images/screenshot1.png",
       "type": "image/png",
-      "sizes": "540x720"
+      "sizes": "540x720",
+      "form_factor": "narrow"
     },
     {
       "src": "/images/screenshot2.jpg",
       "type": "image/jpg",
-      "sizes": "540x720"
+      "sizes": "720x540",
+      "form_factor": "wide"
     }
   ]
 }
@@ -328,20 +330,25 @@ The `description` property describes the purpose of your app.
 
 The `screenshots` property is an array of image objects representing your app
 in common usage scenarios. Each object must include the `src`, a `sizes`
-property, and the `type` of image.
+property, and the `type` of image.  The `form_factor` property is optional.
+You can set it either to `"wide"` for screenshots applicable to wide screens
+only or `"narrow"` for narrow screenshots. You should only use it when the
+layout varies by screen size.
 
 In Chrome, the image must respond to certain criteria:
 
 * Width and height must be at least 320px and at most 3840px.
 * The maximum dimension can't be more than 2.3 times as long as the minimum
   dimension.
-* All screenshots must have the same aspect ratio.
-* Only JPEG and PNG image formats are supported.
+* All screenshots matching the appropriate form factor must have the same
+  aspect ratio.
 
-{% Aside 'gotchas' %}
-The `description` and `screenshots` properties are currently used only in Chrome
-for Android when a user wants to install your app.
-{% endAside %}
+<figure>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/5SlCnibmZHqkXdGVgPZY.jpeg", alt="Screenshots of richer installation UI on desktop and mobile", width="800", height="386" %}
+  <figcaption>
+    Richer installation UI on desktop and mobile.
+  </figcaption>
+</figure>
 
 ## Add the web app manifest to your pages {: #link-manifest }
 

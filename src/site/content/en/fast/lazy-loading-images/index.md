@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Lazy-loading images
+title: Lazy loading images
 authors:
   - jlwagner
   - rachelandrew
 date: 2019-08-16
 updated: 2022-08-11
 description: |
-  This post explains lazy-loading and the options available to you when lazy-loading images.
+  This post explains lazy loading and the options available to you when lazy loading images.
 tags:
   - performance
   - images
@@ -20,16 +20,16 @@ or as CSS background images. In this post you will find out how to lazy-load bot
 
 ## Inline images {: #images-inline }
 
-The most common lazy-loading candidates are images as used in `<img>` elements.
-With inline images we have three options for lazy-loading,
+The most common lazy loading candidates are images as used in `<img>` elements.
+With inline images we have three options for lazy loading,
 which may be used in combination for the best compatibility across browsers:
 
-- [Using browser-level lazy-loading](#images-inline-browser-level)
+- [Using browser-level lazy loading](#images-inline-browser-level)
 - [Using Intersection Observer](#images-inline-intersection-observer)
 
-### Using browser-level lazy-loading {: #images-inline-browser-level }
+### Using browser-level lazy loading {: #images-inline-browser-level }
 
-Chrome and Firefox both support lazy-loading with the `loading` attribute.
+Chrome and Firefox both support lazy loading with the `loading` attribute.
 This attribute can be added to `<img>` elements, and also to `<iframe>` elements.
 A value of `lazy` tells the browser to load the image immediately if it is in the viewport,
 and to fetch other images when the user scrolls near them.
@@ -43,23 +43,23 @@ and to fetch other images when the user scrolls near them.
 See the `loading` field of MDN's
 [browser compatibility](https://developer.mozilla.org/docs/Web/HTML/Element/img#Browser_compatibility)
 table for details of browser support.
-If the browser does not support lazy-loading then the attribute will be ignored
+If the browser does not support lazy loading then the attribute will be ignored
 and images will load immediately, as normal.
 
 For most websites, adding this attribute to inline images will be a performance boost
 and save users loading images that they may not ever scroll to.
-If you have large numbers of images and want to be sure that users of browsers without support for lazy-loading benefit
+If you have large numbers of images and want to be sure that users of browsers without support for lazy loading benefit
 you will need to combine this with one of the methods explained next.
 
-To learn more, check out [Browser-level lazy-loading for the web](/browser-level-image-lazy-loading/).
+To learn more, check out [Browser-level lazy loading for the web](/browser-level-image-lazy-loading/).
 
 ### Using Intersection Observer {: #images-inline-intersection-observer }
 
-To polyfill lazy-loading of `<img>` elements, we use JavaScript to check if they're in the
+To polyfill lazy loading of `<img>` elements, we use JavaScript to check if they're in the
 viewport. If they are, their `src` (and sometimes `srcset`) attributes are
 populated with URLs to the desired image content.
 
-If you've written lazy-loading code before, you may have accomplished your task
+If you've written lazy loading code before, you may have accomplished your task
 by using event handlers such as `scroll` or `resize`. While this approach is the
 most compatible across browsers, modern browsers offer a more performant and
 efficient way to do the work of checking element visibility via [the
@@ -125,22 +125,22 @@ viewport.
 } %}
 
 Intersection Observer is available in all modern browsers.
-Therefore using it as a polyfill for `loading="lazy"` will ensure that lazy-loading is available for most visitors.
+Therefore using it as a polyfill for `loading="lazy"` will ensure that lazy loading is available for most visitors.
 
 ## Images in CSS {: #images-css }
 
 While `<img>` tags are the most common way of using images on web pages, images
 can also be invoked via the CSS
 [`background-image`](https://developer.mozilla.org/docs/Web/CSS/background-image)
-property (and other properties). Browser-level lazy-loading does not apply to CSS background images,
+property (and other properties). Browser-level lazy loading does not apply to CSS background images,
 so you need to consider other methods if you have background images to lazy-load.
 
 Unlike `<img>` elements which load regardless
 of their visibility, image loading behavior in CSS is done with more
 speculation. When [the document and CSS object
-models](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model)
+models](/critical-rendering-path-constructing-the-object-model/)
 and [render
-tree](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction)
+tree](/critical-rendering-path-render-tree-construction/)
 are built, the browser examines how CSS is applied to a document before
 requesting external resources. If the browser has determined a CSS rule
 involving an external resource doesn't apply to the document as it's currently
@@ -162,7 +162,7 @@ large hero background image:
 ```
 
 The `div.lazy-background` element would normally contain the hero background
-image invoked by some CSS. In this lazy-loading example, however, you can isolate
+image invoked by some CSS. In this lazy loading example, however, you can isolate
 the `div.lazy-background` element's `background-image` property via a `visible`
 class added to the element when it's in the viewport:
 
@@ -219,7 +219,7 @@ Even using browser-level lazy loading to lazy load an in-viewport image can back
 
 _Never_ lazy load images that are visible in the viewport during startup. It's a pattern that will affect your site's LCP negatively, and therefore the user experience. If you need an image at startup, load it at startup as quickly as possible by not lazy loading it!
 
-## Lazy-loading libraries {: #libraries }
+## Lazy loading libraries {: #libraries }
 
 You should use browser-level lazy loading whenever possible, but if you find yourself in a situation where that isn't an option&mdash;such as a significant group of users still reliant on older browsers&mdash;the following libraries can be used to lazy-load images:
 
@@ -233,13 +233,13 @@ Observer (which you can polyfill), and can be extended with [a number of
 plugins](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo) to
 do things like lazy-load video. [Find out more about using lazysizes](/use-lazysizes-to-lazyload-images/).
 - [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) is a
-  lightweight option for lazy-loading images, background images, videos, iframes,
+  lightweight option for lazy loading images, background images, videos, iframes,
   and scripts. It leverages Intersection Observer, supports responsive images, and
   enables browser-level lazy loading.
 - [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a another lightweight
 option that uses Intersection Observer only. As such, it's highly performant,
 but will need to be polyfilled before you can use it on older browsers.
-- If you need a React-specific lazy-loading library, consider
+- If you need a React-specific lazy loading library, consider
 [react-lazyload](https://github.com/jasonslyvia/react-lazyload). While it
 doesn't use Intersection Observer, it _does_ provide a familiar method of lazy
 loading images for those accustomed to developing applications with React.

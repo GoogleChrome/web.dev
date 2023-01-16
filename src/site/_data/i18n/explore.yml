@@ -1,0 +1,68 @@
+header:
+  en: "Explore our structured learning paths to discover everything you need to know about building for the modern web."
+  es: "Explore nuestras rutas de aprendizaje estructuradas para descubrir todo lo que necesita saber sobre cómo crear para la Web moderna."
+  ja: "体系的なラーニングパスを経由することにより、最新の Web 環境の構築に必要なすべての知識を学ぶことができます。"
+  ko: "잘 짜여진 학습 경로를 따라 최신 웹 구축에 대해 알아야 할 모든 사항을 찾아보세요."
+  pt: "Explore nossos caminhos de aprendizagem estruturados para descobrir tudo o que você precisa saber sobre como criar para a web moderna."
+  ru: "Ознакомьтесь с нашими структурированными курсами, которые научат вас всему необходимому для создания современных сайтов."
+  zh: "探索我们的结构化学习路径，发掘您为现代网络构建时的所有须知事项。"
+
+resources:
+  en: resources
+  es: recursos
+  ja: 件のリソース
+  ko: 리소스
+  pt: recursos
+  ru: (ресурсы)
+  zh: 个资源
+
+performance:
+  en: Performance
+  es: Performance
+  ja: パフォーマンス
+  ko: 성능
+  pt: Desempenho
+  ru: Производительность
+  zh: 性能
+
+build_excellent:
+  en: Build excellent websites
+  es: Crea sitios web excelentes
+  ja: 優れた Web サイトを構築する
+  ko: 우수한 웹사이트 구축
+  pt: Crie sites excelentes
+  ru: Создание качественных сайтов
+  zh: 构建优秀的网站
+
+frameworks:
+  en: Frameworks
+  es: Frameworks
+  ja: フレームワーク
+  ko: 프레임워크
+  pt: Frameworks
+  ru: Фреймворки
+  zh: 框架
+
+lighthouse:
+  en: Lighthouse
+  es: Lighthouse
+  ja: Lighthouse
+  ko: Lighthouse
+  pt: Lighthouse
+  ru: Lighthouse
+  zh: Lighthouse
+
+explorations:
+  en: Explorations
+  es: Exploraciones
+  ja: 探求
+  ko: 탐색
+  pt: Explorações
+  ru: Дополнительно
+  zh: 探索
+
+collections:
+  en: Collections
+
+web_dev_basics:
+  en: Web Dev Basics

@@ -59,7 +59,7 @@ tags:
 
 {% Aside '注意' %}为确保旧版浏览器可以正确解析属性，请使用逗号分隔属性。{% endAside %}
 
-[没有包含`width`或`initial-scale`的`<meta name="viewport">`标签](/viewport/) Lighthouse 审计可以帮助您自动确保您的 HTML 文档正确使用了可视区域元标签。
+[没有包含`width`或`initial-scale`的`<meta name="viewport">`标签](https://developer.chrome.com/docs/lighthouse/pwa/viewport/) Lighthouse 审计可以帮助您自动确保您的 HTML 文档正确使用了可视区域元标签。
 
 ### 确保可视区域的可访问性 {: #accessible-viewport }
 
@@ -77,7 +77,7 @@ tags:
 
 在开发带有元可视区域标签的移动端网站时，很容易意外创建尺寸与指定可视区域不太匹配的页面内容。例如，若显示图像的宽度大于可视区域宽度，就可能会导致可视区域水平滚动。您应该调整内容来匹配可视区域的宽度，使用户无需进行水平滚动。
 
-[内容尺寸与可视区域不匹配](/content-width/)的 Lighthouse 审计可以帮助您自动检测溢出内容。
+[内容尺寸与可视区域不匹配](https://developer.chrome.com/docs/lighthouse/pwa/content-width/)的 Lighthouse 审计可以帮助您自动检测溢出内容。
 
 ### 图像 {: #images }
 

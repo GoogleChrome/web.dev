@@ -32,7 +32,7 @@ enhance users' productivity as well as increase their engagement with the web
 app.
 
 The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
-(Windows) or dock (macOS) on the user's desktop, or long pressing the app's
+(Windows) or dock (macOS) on the user's desktop, or touch & holding the app's
 launcher icon on Android.
 
 <div class="w-columns" >
@@ -233,7 +233,7 @@ Check out the [app shortcuts sample] and its [source].
 [scope]: /add-manifest/#scope
 [web app manifest]: /learn/pwa/web-app-manifest/
 [web app manifest icons]: /add-manifest/#icons
-[mdn-shortcuts]: https://developer.mozilla.org/en-US/docs/Web/Manifest/shortcuts
+[mdn-shortcuts]: https://developer.mozilla.org/docs/Web/Manifest/shortcuts
 [spec]: https://w3c.github.io/manifest/#shortcuts-member
 [app shortcuts sample]: https://app-shortcuts.glitch.me
 [source]: https://glitch.com/edit/#!/app-shortcuts

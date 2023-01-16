@@ -4403,6 +4403,12 @@ cariefisher:
    description:
       en: Senior Accessibility Consultant and developer
 
+marksteadman:
+   title:
+      en: Mark Steadman
+   description:
+      en: Principal Accessibility Engineer
+
 superhighfives:
   title:
     en: Charlie Gleason
@@ -4414,3 +4420,16 @@ sriramkrishnan:
     en: 'Sriram Krishnan'
   description:
     en: 'Tech Lead and Manager on YouTube Web'
+
+alispivak:
+  title:
+    en: 'Ali Spivak'
+  description:
+    en: 'Member of Chrome DevRel, lead for Extensions.'
+
+aaronforinton:
+  title:
+    en: 'Aaron Forinton'
+  description:
+    en: 'Technical Writer'
+

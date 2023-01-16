@@ -230,5 +230,5 @@ great resource on what publishers actually need. We also want to thank [Jason
 Miller](https://twitter.com/_developit) for the amazing preact-todomvc and his
 restless effort on making the framework better.
 
-[exchanges]: https://developers.google.com/web/updates/2018/11/signed-exchanges
+[exchanges]: https://developer.chrome.com/blog/signed-exchanges/
 [go/bundle]: https://github.com/WICG/webpackage/tree/master/go/bundle

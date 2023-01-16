@@ -3,7 +3,7 @@
  */
 
 import {BaseElement} from '../BaseElement';
-import {trackError, trackEvent} from '../../analytics';
+import {logError, logEvent} from '../../analytics';
 
 const pTagSelector = '.subscribe__error__message';
 const hiddenClass = 'hidden-yes';
@@ -110,7 +110,7 @@ class Subscribe extends BaseElement {
 
     this.subscribeError.classList.toggle(hiddenClass, false);
 
-    trackError(error, 'Email form failed to submit because');
+    logError(error, 'Email form failed to submit because');
   }
 
   onSubmit(e) {
@@ -144,10 +144,9 @@ class Subscribe extends BaseElement {
     this.subscribeMessage.textContent = `Thank you! You're all signed up.`;
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
-    trackEvent({
-      category: 'web.dev',
-      action: 'submit',
-      label: 'subscribe, newsletter',
+    logEvent('submit', {
+      event_category: 'web.dev',
+      event_label: 'subscribe, newsletter',
     });
   }
 }

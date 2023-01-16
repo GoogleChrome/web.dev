@@ -50,7 +50,7 @@ local storage (like IndexedDB) are available.
 After retrieving a document, the crawler hands the content to the search engine
 to add it to the index. The search engine now renders and analyzes the content
 to understand it. Rendering means displaying the page as a browser would
-([with some limitations](https://developers.google.com/search/docs/guides/rendering)).
+([with some limitations](https://developers.google.com/search/docs/crawling-indexing/javascript/fix-search-javascript)).
 
 Search engines look at keywords, the title, links, headings, text, and many
 other things. These are called **signals** which describe the content and
@@ -86,4 +86,4 @@ Optimization.' By making sure search engines can find and automatically
 understand your content, you are improving the visibility of your site for
 relevant searches. This can result in more interested users coming to your site.
 Audit your site with Lighthouse and check the SEO results to see how well search
-engines can surface your content.
+engines can make users aware of your content.
