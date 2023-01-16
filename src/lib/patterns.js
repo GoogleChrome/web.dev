@@ -24,11 +24,18 @@ const glob = require('fast-glob');
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const {forceForwardSlash} = require('./utils/path');
 
 const stripDot = /^\./;
-const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
+const contentRoot = path.join(__dirname, '../../src/site/content/en');
+const basePath = path.join(contentRoot, 'patterns');
+const globBasePath = path.join(
+  contentRoot,
+  '{patterns,handbook/content-types/example-pattern}',
+);
+
 const files = glob.sync(
-  path.join(basePath, '**', 'index.md').replace(/\\/g, '/'),
+  forceForwardSlash(path.join(globBasePath, '**', 'index.md')),
 );
 
 /** @type {CodePatternSets} */
@@ -60,7 +67,10 @@ const allPatterns = files.reduce((patterns, file) => {
     return patterns;
   }
 
-  const assetsPaths = glob.sync(path.join(path.dirname(file), 'assets', '*'));
+  const assetsPaths = glob.sync(
+    forceForwardSlash(path.join(path.dirname(file), 'assets', '*')),
+  );
+
   /** @type {CodePatternAssets} */
   const assets = assetsPaths.reduce((out, assetPath) => {
     // Ignore images.
