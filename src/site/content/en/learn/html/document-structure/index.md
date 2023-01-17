@@ -38,11 +38,11 @@ Nested between the opening and closing `<html>` tags, we find the two children: 
 
 ```html
 <!DOCTYPE html>
-  <html lang="en-US">
-    <head>
-    </head>
-    <body>
-    </body>
+<html lang="en-US">
+  <head>
+  </head>
+  <body>
+  </body>
 </html>
 ```
 
@@ -61,7 +61,7 @@ The [default encoding](https://html.spec.whatwg.org/multipage/parsing.html#docum
 To set the character encoding to UTF-8, include:
 
 ```html
-<meta charset="utf-8">
+<meta charset="utf-8" />
 ```
 
 By declaring `UTF-8` (case-insensitive), you can even include emojis in your title (but please don't).
@@ -81,14 +81,14 @@ Your home page and all additional pages should each have a unique title. The con
 The other meta tag that should be considered essential is the [viewport](/learn/design/intro/#a-meta-element-for-viewport) meta tag, which helps site responsiveness, enabling content to render well by default, no matter the viewport width. While the [viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) has been around since June 2007, when the first iPhone came out, it's only recently been [documented in a specification](https://drafts.csswg.org/css-device-adapt/#viewport-meta).  As it enables controlling a viewport's size and scale, and prevents the site's content from being sized down to fit a 960px site onto a 320px screen, it is definitely recommended.
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 
 ```
 
 The preceding code means "make the site responsive, starting by making the width of the content the width of the screen". In addition to `width`, you can set zoom and scalability, but they both default to accessible values. If you want to be explicit, include:
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
 ```
 
 Viewport is part of the [Lighthouse accessibility audit](/meta-viewport/); your site will pass if it is scalable and has no maximum size set.
@@ -99,13 +99,13 @@ So far, the outline for our HTML file is:
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Machine Learning Workshop</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
   </head>
   <body>
-
-   </body>
+    
+  </body>
 </html>
 ```
 
@@ -142,9 +142,9 @@ While cascade layers are still fairly new and you might not spot the `@import` i
 
 ```html
 <style>
-:root {
-  --theme-color: #226DAA;
-}
+  :root {
+    --theme-color: #226DAA;
+  }
 </style>
 ```
 
@@ -157,12 +157,12 @@ Styles, either via `<link>` or `<style>`, or both, should go in the head. They w
 Then there's the one way of including styles you'll never use in the `<head>` of your document: inline styles. You'll probably never use inline styles in the head because the user agents' style sheets hide the head by default. But if you want to make a CSS editor without JavaScript, for example, so  you can test your page's custom elements, you can make the head visible with `display: block`,  and then hide everything in the head, and then with an inline `style` attribute, make a content-editable style block visible.
 
 ```html
-<style contenteditable style="display: block; font-family: monospace; white-space: pre; ">
+<style contenteditable style="display: block; font-family: monospace; white-space: pre;">
   head { display: block; }
   head * { display: none; }
   :root {
-  --theme-color: #226DAA;
- }
+    --theme-color: #226DAA;
+  }
 </style>
 ```
 
@@ -181,14 +181,14 @@ Use the `<link>` tag, with the `rel="icon"` attribute/value pair to identify the
 If you don't declare a favicon, the browser will look for a file named `favicon.ico` in the top-level directory (the website's root folder). With `<link>`, you can use a different file name and location:
 
 ```html
-<link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="/images/mlwicon.png"/>
+<link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="/images/mlwicon.png" />
 ```
 
 The preceding code says "use the `mlwicon.png` as the icon for scenarios where a 16px, 32px, or 48px makes sense." The sizes attribute accepts the value of `any` for scalable icons or a space-separated list of square `widthXheight` values; where the width and height values are 16, 32, 48, or greater in that geometric sequence, the pixel unit is omitted, and the X is case-insensitive.
 
 ```html
-<link rel="apple-touch-icon" sizes="180x180" href="/images/mlwicon.png"/>
-<link rel="mask-icon" href="/images/mlwicon.svg" color="#226DAA"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/mlwicon.png" />
+<link rel="mask-icon" href="/images/mlwicon.svg" color="#226DAA" />
 ```
 
 There are two special non-standard kind of icons for Safari browser: `apple-touch-icon` for iOS devices and `mask-icon` for pinned tabs on macOS. `apple-touch-icon` is applied only when the user adds a site to home screen: you can specify multiple icons with different `sizes` for different devices. `mask-icon` will only be used if the user pins the tab in desktop Safari: the icon itself should be a monochrome SVG, and the `color` attribute fills the icon with needed color.
@@ -203,7 +203,7 @@ Let's pretend we have versions of the site translated into French and Brazilian 
 
 ```html
 <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />
-<link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR />
+<link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR" />
 ```
 
 When using `alternate` for a translation, the `hreflang` attribute must be set.
@@ -211,7 +211,7 @@ When using `alternate` for a translation, the `hreflang` attribute must be set.
 The alternate value is for more than just translations. For example, the `type` attribute can define the alternate URI for an RSS feed when the `type` attribute is set to `application/rss+xml` or `application/atom+xml`. Let's link to a pretend PDF version of the site.
 
 ```html
-<link rel="alternate" type="application/x-pdf" href="https://machinelearningworkshop.com/mlw.pdf">
+<link rel="alternate" type="application/x-pdf" href="https://machinelearningworkshop.com/mlw.pdf" />
 ```
 
 If the `rel` value is `alternate style sheet`, it defines an [alternate stylesheet](https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets) and the `title` attribute must be set giving that alternate style a name.
@@ -223,7 +223,7 @@ If you create several translations or versions of Machine Learning Workshop, sea
 Include the canonical URL on all of your translated pages, and on the home page, indicating our preferred URL:
 
 ```html
-<link rel="canonical" href="https://www.machinelearning.com"/>
+<link rel="canonical" href="https://www.machinelearning.com" />
 ```
 
 The `rel="canonical"` canonical link is most often used for cross-posting with publications and blogging platforms to credit the original source; when a site syndicates content, it should include the canonical link to the original source.
@@ -238,9 +238,9 @@ You will be including a tiny bit of JavaScript to create an [Easter egg](https:/
 
 ```html
 <script>
-document.getElementById('switch').addEventListener('click', function(){
-  document.body.classList.toggle('black');
-});
+  document.getElementById('switch').addEventListener('click', function() {
+    document.body.classList.toggle('black');
+  });
 </script>
 ```
 
@@ -253,7 +253,7 @@ There are two attributes that can reduce the blocking nature of JavaScript downl
 To include MLW's JavaScript in an external file, you could write:
 
 ```html
-<script src="js/switch.js" defer>
+<script src="js/switch.js" defer></script>
 ```
 Adding the [`defer`](https://developer.mozilla.org/docs/Learn/JavaScript/First_steps/What_is_JavaScript#script_loading_strategies) attribute defers the execution of the script until after everything is rendered, preventing the script from harming performance. The `async` and `defer` attributes are only valid on external scripts.
 
@@ -266,7 +266,7 @@ The `target` attribute, valid on `<base>` as well as on links and forms, sets wh
 Most developers add the `target` attribute to the few, if any, links they want to open in a new window on the links or form themselves, rather than using `<base>`.
 
 ```html
-<base target="_top" href="https://machinelearningworkshop.com">
+<base target="_top" href="https://machinelearningworkshop.com" />
 ```
 
 If our website found itself nested within an iframe on a site like Yummly, including the `<base>` element would mean when a user clicks on any links within our document, the link will load popped out of the iframe, taking up the whole browser window.
@@ -281,19 +281,19 @@ The code now looks like this:
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	  <meta charset="utf-8">
-      <title>Machine Learning Workshop</title>
-      <meta name="viewport" content="width=device-width">
-      <link rel="stylesheet" src="css/styles.css">
-      <link rel="icon" type="image/png" href="/images/favicon.png"/>
-      <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />
-      <link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR />
-      <link rel="canonical" href="https://www.machinelearning.com"/>
+    <meta charset="utf-8" />
+    <title>Machine Learning Workshop</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" src="css/styles.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />
+    <link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR" />
+    <link rel="canonical" href="https://www.machinelearning.com" />
   </head>
   <body>
-
-	<!-- <script defer src="scripts/lightswitch.js"></script>-->
-   </body>
+    
+    <!-- <script defer src="scripts/lightswitch.js"></script>-->
+  </body>
 </html>
 ```
 
