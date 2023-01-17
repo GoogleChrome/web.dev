@@ -202,10 +202,10 @@ So far, we have run automated tests on our demo web page and found and remediate
 
 ### Step 1
 
-Our updated [CodePen demo](https://codepen.io/web-dot-dev/pen/PoBZgrW) has all
+Our updated [CodePen demo](https://codepen.io/web-dot-dev/pen/NWBaMzb) has all
 of the automated accessibility updates applied.
 
-View it in [debug mode](https://cdpn.io/pen/debug/PoBZgrW) to proceed with the
+View it in [debug mode](https://cdpn.io/pen/debug/NWBaMzb) to proceed with the
 next tests. This is important, as it removes the `<iframe>` which surrounds the
 demo web page, which may interfere with some testing tools. Learn more about
 [CodePen's debug mode](https://blog.codepen.io/documentation/debug-view/#getting-to-debug-view-3).
