@@ -164,7 +164,7 @@ top-level language setting until that element is closed.
   <body>...
     <div>
       <p>While traveling in Estonia this summer, I often asked,
-        <span lang="ee">"Kas sa räägid inglise keelt?"</span>
+        <span lang="et">"Kas sa räägid inglise keelt?"</span>
         when I met someone new.</p>
     </div>
   </body>
