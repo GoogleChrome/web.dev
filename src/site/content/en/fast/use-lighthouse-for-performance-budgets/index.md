@@ -14,7 +14,7 @@ tags:
   - performance
 ---
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouse) now supports performance budgets. This feature, [LightWallet](/use-lighthouse-for-performance-budgets/), can be set up in under five minutes and provides feedback on performance metrics and the size and quantity of page resources.
+[Lighthouse](https://github.com/GoogleChrome/lighthouse) now supports performance budgets. This feature, known as LightWallet, can be set up in under five minutes and provides feedback on performance metrics and the size and quantity of page resources.
 
 {% Aside 'important' %}
 While Lighthouse is an excellent tool for identifying performance improvement
