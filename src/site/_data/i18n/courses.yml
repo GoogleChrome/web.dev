@@ -92,3 +92,9 @@ learn_html:
     en: Learn HTML!
   description:
     en: "This HTML course for web developers provides a solid overview for developers, from novice to expert level HTML."
+
+example:
+  title:
+    en: Example course
+  description:
+    en: This page is used for visual testing of the courses layout and also showcases it's capabilities"
