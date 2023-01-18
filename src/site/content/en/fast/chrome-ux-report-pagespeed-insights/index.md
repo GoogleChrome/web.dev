@@ -54,7 +54,7 @@ In the real-user experiences section, metrics are grouped by [Core Web Vitals](/
 - **FCP** measures the time until the page displays something in the
  foreground, like some text or a logo.
 - **INP** is an experimental metric that measures the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below.
-- **TTFB** is an experimental metric that measures the the time between the request for a resource and when the first byte of a response begins to arrive.
+- **TTFB** is an experimental metric that measures the time between the request for a resource and when the first byte of a response begins to arrive.
 
 ### Metric thresholds
 

@@ -69,7 +69,7 @@ The thing that I love about CSS3 3D transformations is that it ties so beautiful
 
 To animate elements that have a 3D perspective applied is easy.  Simply set the "transition" style to be "transform", attach a duration and an animation function.  From then on, any change to the "tranform" style will be animated.
 
-We have re-factored the previous examples to use document styles, rather than inline styles. Not only does it clear the example up, it allows the sample to take advantage of the the `:hover` pseudo selector.  By using the `:hover` selector, transitions can be initiated by simply moving the mouse over the element. Awesome!
+We have re-factored the previous examples to use document styles, rather than inline styles. Not only does it clear the example up, it allows the sample to take advantage of the `:hover` pseudo selector.  By using the `:hover` selector, transitions can be initiated by simply moving the mouse over the element. Awesome!
 
 ## Summary
 

@@ -1,0 +1,31 @@
+setLeader: Test your knowledge of automated accessibility testing
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,2,3"
+    stem: What kind of testing should you do to ensure that your site is accessible?
+    options:
+      - content: "Automated testing"
+        rationale: "You can quickly find some accessibility errors with automated testing tools, such as Lighthouse."
+      - content: "Manual testing"
+        rationale: "Some accessibility testing must be done manually, as AI has not yet learned every aspect of accessibility."
+      - content: "User testing"
+        rationale: "The best way to know if disabled users can use your product is to talk and test with disabled people. Not all people experience their disability in the same way, so we encourage you to have a diverse population of testers."
+      - content: "Assistive technology testing"
+        rationale: "If you have a lot of experience with AT, you may be able to address any of these issues in manual testing. For most developers, separate AT testing is critical to ensuring AT users can use your website or app with their chosen AT."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,3,4"
+    stem: What errors are caught in automated testing?
+    options:
+      - content: "ARIA errors"
+        rationale: "Incorrect ARIA usage is often caught in automated testing. This is not related to the copy itself, just the usage of the attributes."
+      - content: "Inclusive language"
+        rationale: "While it's possible to build a linter which catches certain words, context is important for inclusive language. Some instances may be missed."
+      - content: "Descriptive form labels"
+        rationale: "Automated testing can determine if form labels exist but not if the form labels are properly descriptive."
+      - content: "Missing alt text"
+        rationale: "Automated testing can catch if there is no alt text."
+      - content: "Color contrast issues"
+        rationale: "Automated testing is one of the best ways to catch color contrast errors. Colors may not look problemantic but still fail testing."

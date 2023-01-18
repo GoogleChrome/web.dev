@@ -131,11 +131,10 @@ they can authenticate, choose shipping address and options, and authorize the
 payment. We'll cover how to write the frontend code in *Handling payments on the
 payment frontend* (coming soon).
 
-<figure style="width:300px; margin:auto;">
-  <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/kM6NP47k4Xzl4tHWISCm.mp4", autoplay="true", loop="true", muted="true"
+  %}
   <figcaption>
     Checkout flow with a web-based payment app.
   </figcaption>
@@ -174,8 +173,9 @@ self.addEventListener('paymentrequest', async e => {
 …
 ```
 
-{% Aside %}
-Use a convenient `PromiseResolver` polyfill to resolve a promise at arbitrary timing.
+You can use a convenient `PromiseResolver` polyfill to resolve a promise at
+arbitrary timing.
+
 ```js
 class PromiseResolver {
   constructor() {
@@ -189,15 +189,15 @@ class PromiseResolver {
   get reject() { return this.reject_ }
 }
 ```
-{% endAside %}
 
 {% Aside %}
+
 For security reasons, the frontend page opened in the payment handler window
 must have valid HTTPS certificates and no [mixed
-content](/what-is-mixed-content/);
-otherwise the payment request will be cancelled by Chrome. Learn more at
-[Debugging a web-based payment
+content](/what-is-mixed-content/); otherwise the payment request will be
+cancelled by Chrome. Learn more at [Debugging a web-based payment
 app](/registering-a-web-based-payment-app/#debugging-a-web-based-payment-app).
+
 {% endAside %}
 
 ## Exchange information with the frontend {: #exchange-information }

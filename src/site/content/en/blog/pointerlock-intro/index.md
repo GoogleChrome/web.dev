@@ -17,7 +17,7 @@ The [Pointer Lock API](https://developer.mozilla.org/docs/API/Pointer_Lock_API) 
 - Get access to raw mouse data including relative mouse movements
 - Route all mouse events to a specific element
 
-As a side effect of enabling pointer lock, the mouse cursor is hidden allowing you to choose to draw an application-specific pointer if you desire, or leave the mouse pointer hidden so that the user can move the frame with the mouse. Relative mouse movement is the mouse pointer position's delta from the previous frame regardless of absolute position.  For example, if the the mouse pointer moved from (640, 480) to (520, 490) the relative movement was (-120, 10). See below for an interactive example showing raw mouse position deltas.
+As a side effect of enabling pointer lock, the mouse cursor is hidden allowing you to choose to draw an application-specific pointer if you desire, or leave the mouse pointer hidden so that the user can move the frame with the mouse. Relative mouse movement is the mouse pointer position's delta from the previous frame regardless of absolute position.  For example, if the mouse pointer moved from (640, 480) to (520, 490) the relative movement was (-120, 10). See below for an interactive example showing raw mouse position deltas.
 
 This tutorial covers two topics: the nuts and bolts of activating and processing pointer lock events, and implementing the first-person shooter control scheme. That's right, when you're finished reading this article you will know how to use pointer lock and implement Quake-style controls for your very own browser game!
 

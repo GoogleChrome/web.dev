@@ -71,7 +71,7 @@ conformance testing. The
 [first draft of WCAG](https://www.w3.org/TR/WAI-WEBCONTENT/) was released in
 1999. The current version is [WCAG 2.1](https://www.w3.org/TR/WCAG21/),
 released in June 2018, while [WCAG 2.2](https://www.w3.org/TR/WCAG22/) is
-scheduled for late 2022. A completely revamped version of the guidelines,
+scheduled for 2023. A completely revamped version of the guidelines,
 [WCAG 3.0](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/), is
 being drafted for a future release, but is not expected to be a completed W3C
 standard for a few more years.

@@ -7,11 +7,27 @@
       <span class="tooltip__content" id="menu-button-toolip">Open menu</span>
     </button>
     <a href="/" class="site-header__brand brand">
-      {{ svg('../../images/lockup.svg', {label: 'web.dev'}) }}
+      {{ svg('../../images/logo.svg', {label: 'web.dev'}) }}
     </a>
   </div>
   <web-navigation-drawer type="standard">
     <nav class="site-header__nav" aria-label="main navigation" data-drawer-container>
+      <a
+        class="site-header__link"
+        href="/about/"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: About" 
+        {% if page.url === '/about/' %}aria-current="page"{% endif %}>
+        {{ 'i18n.header.about' | i18n(locale) }}
+      </a>
+      <a
+        class="site-header__link"
+        href="/blog/"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: Blog"
+        {% if page.url === '/blog/' %}aria-current="page"{% endif %}>
+        {{ 'i18n.header.blog' | i18n(locale) }}
+      </a>
       <a
         class="site-header__link"
         href="/learn/" data-category="Site-Wide Custom Events"
@@ -28,19 +44,11 @@
       </a>
       <a
         class="site-header__link"
-        href="/measure/"
+        href="/patterns/"
         data-category="Site-Wide Custom Events"
-        data-label="Tab: Measure"
-        {% if page.url === '/measure/' %}aria-current="page"{% endif %}>
-        {{ 'i18n.header.measure' | i18n(locale) }}
-      </a>
-      <a
-        class="site-header__link"
-        href="/blog/"
-        data-category="Site-Wide Custom Events"
-        data-label="Tab: Blog"
-        {% if page.url === '/blog/' %}aria-current="page"{% endif %}>
-        {{ 'i18n.header.blog' | i18n(locale) }}
+        data-label="Tab: Patterns"
+        {% if page.url === '/patterns/' %}aria-current="page"{% endif %}>
+        {{ 'i18n.header.patterns' | i18n(locale) }}
       </a>
       <a
         class="site-header__link"
@@ -49,13 +57,6 @@
         data-label="Tab: Case Studies"
         {% if page.url === '/tags/case-study/' %}aria-current="page"{% endif %}>
         {{ 'i18n.header.case_studies' | i18n(locale) }}
-      </a>
-      <a
-        class="site-header__link"
-        href="/about/"
-        data-category="Site-Wide Custom Events"
-        data-label="Tab: About" {% if page.url === '/about/' %}aria-current="page"{% endif %}>
-        {{ 'i18n.header.about' | i18n(locale) }}
       </a>
       <button class="icon-button tooltip color-core-text md:hidden-yes" data-drawer-close-button>
         {{ icon('close') }}

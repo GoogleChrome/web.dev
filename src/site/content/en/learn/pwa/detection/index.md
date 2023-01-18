@@ -82,7 +82,7 @@ On mobile browsers, your current navigation stays in the browser when you instal
 
 ### Detecting the transfer
 
-To detect the the transfer between browser and window, you can use a media query:
+To detect the transfer between browser and window, you can use a media query:
 
 ```js
 window.addEventListener('DOMContentLoaded', () => {

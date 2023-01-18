@@ -46,7 +46,7 @@ Informing the browser of your intention is as simple as adding a `<link>` tag to
 
 {% Img src="image/admin/988BgvmiVEAp2YVKt2jq.png", alt="A diagram showing how the download doesn't start for a while after the connection is established.", width="800", height="539" %}
 
-You can speed up the load time by 100–500 ms by establishing early connections to important third-party origins. These numbers might seem small, but they make a difference in how [users perceive web page performance](/rail/#focus-on-the-user).
+You can speed up the load time by 100–500 ms by establishing early connections to important third-party origins. These numbers might seem small, but they make a difference in how [users perceive web page performance](/user-centric-performance-metrics/).
 
 {% Aside %}
 chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/1090874825286000640) by almost 1 s by pre-connecting to important origins.

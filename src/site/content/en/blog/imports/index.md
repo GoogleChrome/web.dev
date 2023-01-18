@@ -350,7 +350,7 @@ elements.html
 
 This import defines (and registers) two elements, `<say-hi>` and `<shadow-element>`. The first shows a basic custom element that registers itself inside the import. The second example shows how to implement a custom element that creates Shadow DOM from a `<template>`, then registers itself.
 
-The best part about registering custom elements inside an HTML import is that the the importer simply declares your element on their page. No wiring needed.
+The best part about registering custom elements inside an HTML import is that the importer simply declares your element on their page. No wiring needed.
 
 ```html
 index.html
