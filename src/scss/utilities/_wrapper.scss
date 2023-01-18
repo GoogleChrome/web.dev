@@ -18,10 +18,10 @@
 .wrapper[data-size='extra-narrow'] {
   width: 46rem; // For no clamp support
   width: clamp(16rem, 95vw, 46rem);
-  padding-inline: 0;
+  padding-inline: $global-gutter;
 
-  @include media-query('xs') {
-    padding-inline: $global-gutter;
+  @include media-query('lg') {
+    padding-inline: 0;
   }
 }
 

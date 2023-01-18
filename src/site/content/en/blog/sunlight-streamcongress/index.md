@@ -96,7 +96,7 @@ Enter EventSource, also called Server-Sent Events. The specification compares fa
 
 - A similar, simple JavaScript API on the browser side.
 - The open connection is HTTP-based, not dropping to the low level of TCP.
-- Automatic reconnection when the the connection is closed.
+- Automatic reconnection when the connection is closed.
 
 ### Going Back to Cramp
 

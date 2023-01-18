@@ -318,19 +318,18 @@ performs the fetches in parallel. Thankfully there's an ideal middle-ground.
 {% Compare 'better', 'Recommended - nice and parallel' %}
 
 ```js
-function markHandled(promise) {
-  promise.catch(() => {});
-  return promise;
+function markHandled(...promises) {
+  Promise.allSettled(promises);
 }
 
 async function logInOrder(urls) {
   // fetch all the URLs in parallel
-  const textPromises = urls
-    .map(async (url) => {
-      const response = await fetch(url);
-      return response.text();
-    })
-    .map((promise) => markHandled(promise));
+  const textPromises = urls.map(async (url) => {
+    const response = await fetch(url);
+    return response.text();
+  });
+
+  markHandled(...textPromises);
 
   // log them in sequence
   for (const textPromise of textPromises) {

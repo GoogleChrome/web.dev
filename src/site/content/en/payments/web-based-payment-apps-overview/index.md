@@ -26,11 +26,10 @@ apps](/android-payment-apps-developers-guide/).
 
 ## Benefits of web-based payment apps
 
-<figure style="width:300px; margin:auto;">
-  <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/8T37CEyLisAjwW39dRwB.mp4", autoplay="true", loop="true", muted="true"
+  %}
   <figcaption>
     Checkout flow with a web-based payment app.
   </figcaption>

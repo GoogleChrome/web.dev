@@ -12,10 +12,18 @@ explore:
   es: Explorar
   ja: 探検
   ko: 탐구하다
-  pl: Eksploruj
   pt: Explorar
   ru: Исследовать
   zh: 探索
+
+patterns:
+  en: Patterns
+  es: patronas
+  ja: パターン
+  ko: 패턴
+  pt: padrões
+  ru: узоры
+  zh: 模式
 
 measure:
   en: Measure

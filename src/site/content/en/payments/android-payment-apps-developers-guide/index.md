@@ -22,11 +22,10 @@ information easier than ever before. The API can also invoke platform-specific p
 apps.
 {% BrowserCompat 'api.PaymentRequest' %}
 
-<figure style="width:300px; margin:auto;">
-  <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/hzMuAwPAGpNmgxHpaHAq.mp4", autoplay="true", loop="true"
+  %}
   <figcaption>Checkout flow with platform-specific Google Pay app that uses Web Payments.
   </figcaption>
 </figure>

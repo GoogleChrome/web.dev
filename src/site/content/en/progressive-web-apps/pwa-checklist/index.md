@@ -53,7 +53,7 @@ application to how it actually performs.
 
 While all applications have different needs, the performance audits in
 Lighthouse are based on the
-[RAIL user-centric performance model](/rail/),
+[Core Web Vitals](/vitals/),
 and scoring high on those audits will make it more likely that your users have
 an enjoyable experience. You can also use
 [PageSpeed Insights](https://pagespeed.web.dev/)

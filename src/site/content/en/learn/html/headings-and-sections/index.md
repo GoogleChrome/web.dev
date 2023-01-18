@@ -16,7 +16,7 @@ Choosing the right elements for the job as you code means you won't have to refa
 
 Now that you [understand markup semantics](/learn/html/semantic-html/)  and are aware of why choosing the right element is important, once you learn about all the different elements, you will generally pick the right element without much, if any, additional effort.
 
-## Site header
+## Site `<header>`
 
 Let's build a site header. You'll start with non-semantic markup, and work your way to a good solution so that you can learn the benefits of the HTML section and heading elements along the way.
 
@@ -85,7 +85,7 @@ Using `</nav>` and `</header>` closing tags removes the need for comments to ide
 
 You have written a header with very little HTML and no classes or ids. When using semantic HTML, you don't need to.
 
-### Site footer
+## Site `<footer>`
 
 Let's code the site footer.
 
@@ -114,7 +114,7 @@ Footers are often where you will find contact information, wrapped in `<address>
 </footer>
 ```
 
-### Document structure
+## Document structure
 
 This module starts with the `<header>` and `<footer>`, because they are unique in only sometimes being landmark, or "sectioning", elements. Let's cover the "full time" sectioning element by discussing the most common page layouts:
 
@@ -170,7 +170,7 @@ Going back to the Jacinda Ardern example, on the home page of the newspaper, the
 
 A `<section>` isn't a landmark unless it has an accessible name; if it has an accessible name, the implicit role is `region`. [Landmark roles](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles#landmark_roles) should be used sparingly, to identify larger overall sections of the document. Using too many landmark roles can create "noise" in screen readers, making it difficult to understand the overall layout of the page, if your `<main>` contains two or three important sub-sections, including an accessible name for each `<section>` could be beneficial.
 
-### Headings: `<h1>`-`<h6>`
+## Headings: `<h1>`-`<h6>`
 
 There are six section heading elements: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, and `<h6>`.  Each represents one of the six levels of section headings, with `<h1>` being the highest or most important section level, and `<h6>` the lowest.
 

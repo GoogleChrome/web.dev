@@ -6,7 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2020-08-31
-updated: 2021-09-14
+updated: 2023-01-12
 description: |
   Once a web-based payment app is registered, it's ready to accept payment requests from merchants. This article teaches you how to orchestrate a payment transaction from a service worker during runtime.
 tags:
@@ -18,9 +18,11 @@ feedback:
 
 {% Aside 'warning' %}
 
-Shipping and address support in [the Payment Request API is removed from the
-specification](https://github.com/w3c/payment-request/pull/955) and is no longer
-functional in web-based payment apps.
+Shipping and address support in [the Payment Request API was once removed from
+the specification](https://github.com/w3c/payment-request/pull/955) and from
+Chrome, but is [being reverted](https://github.com/w3c/payment-request/pull/996)
+in the spec. Thus, we've reverted the documentation about shipping and address as
+well.
 
 {% endAside %}
 
@@ -31,7 +33,7 @@ explains how a payment app can pass information about the payment method,
 shipping address, or contact information to the merchant using a service worker.
 
 <figure>
-  {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/4XRuSFGyEE2Cjwrmu0jb.png", alt="Handling optional payment information with a service worker", width="800", height="1344" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kDteyNFNEVnJQyTPw5p8.png", alt="Handling optional payment information with a service worker", width="800", height="2335", class="w-screenshot" %}
   <figcaption>
     Handling optional payment information with a service worker
   </figcaption>
@@ -200,13 +202,270 @@ object.
 Use the object to update the UI on the frontend. See [Reflect the updated
 payment details](#reflect-the-updated-payment-details).
 
+## Inform the merchant of a shipping address change {: #shipping-address-changes }
+
+Payment apps can provide a customer's shipping address to the merchant as part
+of a payment transaction.
+
+This is useful for merchants because they can delegate the address collection to
+payment apps. And, because the address data will be provided in [the standard
+data format](https://w3c.github.io/payment-request/#dom-addressinit), the
+merchant can expect to receive shipping addresses in consistent structure.
+
+Additionally, customers can register their address information with their
+preferred payment app and reuse it for different merchants.
+
+<figure class="w-figure" style="width:300px; margin:auto;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0ytdyaEC7tkPkBTv5rIu.png", alt="Shipping address picker UI", width="800", height="1600", class="w-screenshot" %}
+  <figcaption class="w-figcaption">
+    Shipping address picker UI
+  </figcaption>
+</figure>
+
+Payment apps can provide a UI to edit a shipping address or to select
+pre-registered address information for the customer on a payment transaction.
+When a shipping address is determined temporarily, the payment app can let the
+merchant know of the redacted address information. This provides merchants with
+multiple benefits:
+
+* A merchant can determine whether the customer meets the regional restriction
+  to ship the item (for example, domestic only).
+* A merchant can change the list of shipping options based on the region of the
+  shipping address (For example, international regular or express).
+* A merchant can apply the new shipping cost based on the address and update the
+  total price.
+
+With the Payment Handler API, the payment app can send a "shipping address
+change" event to the merchant from the service worker to notify the new shipping
+address. The service worker should invoke
+[`PaymentRequestEvent.changeShippingAddress()`](https://w3c.github.io/payment-handler/#dom-paymentrequestevent-changeshippingaddress)
+with the [new address
+object](https://www.w3.org/TR/payment-request/#dom-addressinit).
+
+<figure class="w-figure">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aVv5d9OEcEjH1Z6nUQKb.png", alt="Inform the merchant of a shipping address change", width="800", height="675", class="w-screenshot" %}
+  <figcaption class="w-figcaption">
+    Inform the merchant of a shipping address change
+  </figcaption>
+</figure>
+
+{% Label %}
+[payment handler] service-worker.js
+{% endLabel %}
+
+```js
+...
+// Received a message from the frontend
+self.addEventListener('message', async e => {
+  let details;
+  try {
+    switch (e.data.type) {
+      …
+      case 'SHIPPING_ADDRESS_CHANGED':
+        const newAddress = e.data.shippingAddress;
+        details =
+          await payment_request_event.changeShippingAddress(newAddress);
+      …
+```
+
+{% Aside 'key-term' %}
+**Redacted address**. Informing the full shipping address to the merchant in
+this case is not necessary and risks customers' privacy. The merchant only
+receives the parts of the address that they need to determine the shipping cost.
+Specifically, the browser will clear the `organization`, `phone`, `recipient`,
+`addressLine` fields from the payment app provided address before raising the
+`shippingaddresschange` event in the merchant's DOM.
+{% endAside %}
+
+The merchant will receive a `shippingaddresschange` event from the Payment
+Request API so they can respond with the updated [`PaymentDetailsUpdate`](https://w3c.github.io/payment-request/#paymentdetailsupdate-dictionary).
+
+{% Label %}
+[merchant]
+{% endLabel %}
+
+```js
+request.addEventListener('shippingaddresschange', e => {
+  // Read the updated shipping address and update the request.
+  const addr = request.shippingAddress;
+  const details = getPaymentDetailsFromShippingAddress(addr);
+  // `updateWith()` sends back updated payment details
+  e.updateWith(details);
+});
+```
+
+When the merchant responds, the promise
+[`PaymentRequestEvent.changeShippingAddress()`](https://w3c.github.io/payment-handler/#dom-paymentrequestevent-changeshippingaddress)
+returned will resolve with a
+[`PaymentRequestDetailsUpdate`](https://w3c.github.io/payment-handler/#the-paymentrequestdetailsupdate)
+object.
+
+{% Label %}
+[payment handler] service-worker.js
+{% endLabel %}
+
+```js
+…
+        // Notify the merchant of the shipping address change
+        details = await payment_request_event.changeShippingAddress(newAddress);
+        // Provided the new payment details,
+        // send a message back to the frontend to update the UI
+        postMessage('UPDATE_REQUEST', details);
+        break;
+…
+```
+
+Use the object to update the UI on the frontend. See [Reflect the updated
+payment details](#reflect-the-updated-payment-details).
+
+## Inform the merchant of a shipping option change
+
+Shipping options are delivery methods merchants use to ship purchased items to a customer. Typical shipping options include:
+* Free shipping
+* Express shipping
+* International shipping
+* Premium international shipping
+
+Each comes with its own cost. Usually faster methods/options are more expensive.
+
+Merchants using the Payment Request API can delegate this selection to a payment
+app. The payment app can use the information to construct a UI and let the
+customer pick a shipping option.
+
+<figure class="w-figure" style="width:300px; margin:auto;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VkHwTharTqX7oFK62RkA.png", alt="Shipping option picker UI", width="800", height="1600", class="w-screenshot" %}
+  <figcaption class="w-figcaption">
+    Shipping option picker UI
+  </figcaption>
+</figure>
+
+The list of shipping options specified in the merchant's Payment Request API is
+propagated to the payment app's service worker as a property of
+`PaymentRequestEvent`.
+
+{% Label %}
+[merchant]
+{% endLabel %}
+
+```js
+const request = new PaymentRequest([{
+  supportedMethods: 'https://bobpay.xyz/pay',
+  data: { transactionId: '****' }
+}], {
+  displayItems: [{
+    label: 'Anvil L/S Crew Neck - Grey M x1',
+    amount: { currency: 'USD', value: '22.15' }
+  }],
+  shippingOptions: [{
+    id: 'standard',
+    label: 'Standard',
+    amount: { value: '0.00', currency: 'USD' },
+    selected: true
+  }, {
+    id: 'express',
+    label: 'Express',
+    amount: { value: '5.00', currency: 'USD' }
+  }],
+  total: {
+    label: 'Total due',
+    amount: { currency: 'USD', value : '22.15' }
+  }
+}, {  requestShipping: true });
+```
+
+The payment app can let the merchant know which shipping option the customer
+picked. This is important for both the merchant and the customer because
+changing the shipping option changes the total price as well. The merchant needs
+to be informed of the latest price for the payment verification later and the
+customer also needs to be aware of the change.
+
+With the Payment Handler API, the payment app can send a "shipping option
+change" event to the merchant from the service worker. The service worker should
+invoke
+[`PaymentRequestEvent.changeShippingOption()`](https://w3c.github.io/payment-handler/#dom-paymentrequestevent-changeshippingoption)
+with the new shipping option ID.
+
+<figure class="w-figure">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mERzHqvPGrjKWu29m5q1.png", alt="Inform the merchant of a shipping option change", width="800", height="667", class="w-screenshot" %}
+  <figcaption class="w-figcaption">
+    Inform the merchant of a shipping option change
+  </figcaption>
+</figure>
+
+{% Label %}
+[payment handler] service-worker.js
+{% endLabel %}
+
+```js
+…
+// Received a message from the frontend
+self.addEventListener('message', async e => {
+  let details;
+  try {
+    switch (e.data.type) {
+      …
+      case 'SHIPPING_OPTION_CHANGED':
+        const newOption = e.data.shippingOptionId;
+        details =
+          await payment_request_event.changeShippingOption(newOption);
+      …
+```
+
+The merchant will receive a `shippingoptionchange` event from the Payment
+Request API. The merchant should use the information to update the total price
+and then respond with the updated
+[`PaymentDetailsUpdate`](https://w3c.github.io/payment-request/#paymentdetailsupdate-dictionary).
+
+{% Label %}
+[merchant]
+{% endLabel %}
+
+```js
+request.addEventListener('shippingoptionchange', e => {
+  // selected shipping option
+  const shippingOption = request.shippingOption;
+  const newTotal = {
+    currency: 'USD',
+    label: 'Total due',
+    value: calculateNewTotal(shippingOption),
+  };
+  // `updateWith()` sends back updated payment details
+  e.updateWith({ total: newTotal });
+});
+```
+
+When the merchant responds, the promise that
+[`PaymentRequestEvent.changeShippingOption()`](https://w3c.github.io/payment-handler/#dom-paymentrequestevent-changeshippingoption)
+returned will resolve with a
+[`PaymentRequestDetailsUpdate`](https://w3c.github.io/payment-handler/#the-paymentrequestdetailsupdate)
+object.
+
+{% Label %}
+[payment handler] service-worker.js
+{% endLabel %}
+
+```js
+…
+        // Notify the merchant of the shipping option change
+        details = await payment_request_event.changeShippingOption(newOption);
+        // Provided the new payment details,
+        // send a message back to the frontend to update the UI
+        postMessage('UPDATE_REQUEST', details);
+        break;
+…
+```
+
+Use the object to update the UI on the frontend. See [Reflect the updated
+payment details](#reflect-the-updated-payment-details).
+
 ## Reflect the updated payment details {: #reflect-the-updated-payment-details }
 
 Once the merchant finishes updating the payment details, the promises returned
-from `.changePaymentMethod()`, will resolve with a
+from `.changePaymentMethod()`, `.changeShippingAddress()` and
+`.changeShippingOption()` will resolve with a common
 [`PaymentRequestDetailsUpdate`](https://w3c.github.io/payment-handler/#the-paymentrequestdetailsupdate)
-object. The payment handler can use the result to reflect updated total price in
-the UI.
+object. The payment handler can use the result to reflect updated total price
+and shipping options to the UI.
 
 {% Aside %}
  The `PaymentRequestDetailsUpdate` object is passed from the merchant and it
@@ -216,11 +475,23 @@ the UI.
  provide a JavaScript library to control the information, or both.
 {% endAside %}
 
-Merchants may return errors if the payment method is not acceptable. Use the
-following properties to reflect the error status:
+Merchants may return errors for a few reasons:
+
+* The payment method is not acceptable.
+* The shipping address is outside of their supported regions.
+* The shipping address contains invalid information.
+* The shipping option is not selectable for the provided shipping address or
+  some other reason.
+
+Use the following properties to reflect the error status:
 
 * **`error`**: Human readable error string. This is the best string to display
   to customers.
+* **`shippingAddressErrors`**:
+  [`AddressErrors`](https://www.w3.org/TR/payment-request/#dom-addresserrors)
+  object that contains in-detail error string per address property. This is
+  useful if you want to open a form that lets the customer edit their address
+  and you need to point them directly to the invalid fields.
 * **`paymentMethodErrors`**: Payment-method-specific error object. You can ask
   merchants to provide a structured error, but the Web Payments spec authors
   recommend keeping it a simple string.

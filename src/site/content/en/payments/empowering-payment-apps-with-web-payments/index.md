@@ -43,11 +43,10 @@ of billing data for every purchase. See a demo below of how Google Pay leverages
 Web Payments to build a seamless flow. The same can be achieved by any other
 payment app:
 
-<figure style="width:300px; margin:auto;">
-  <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/hzMuAwPAGpNmgxHpaHAq.mp4", autoplay="true", loop="true"
+  %}
   <figcaption>Checkout flow with Google Pay and Web Payments.
   </figcaption>
 </figure>
@@ -220,11 +219,10 @@ In the video above, Google Pay is a platform-specific payment app.
 * The web-based route is ideal for web services that have a large number of
   customers with their card on file.
 
-<figure style="width:300px; margin:auto;">
-  <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/kM6NP47k4Xzl4tHWISCm.mp4", autoplay="true", loop="true"
+  %}
   <figcaption>
     Checkout flow with a web-based payment app.
   </figcaption>

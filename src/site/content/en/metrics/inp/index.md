@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-12-06
+updated: 2023-01-05
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -63,7 +63,7 @@ An interaction's latency consists of the single longest [duration](https://w3c.g
 For more details on how INP is measured, read the ["What's in an interaction?"](#whats-in-an-interaction) section.
 {% endAside %}
 
-## What's a "good" INP value?
+### What is a good INP score?
 
 Pinning labels such as "good" or "poor" on a responsiveness metric is difficult. On one hand, you want to encourage development practices that prioritize good responsiveness. On the other hand, you must account for the fact that there's considerable variability in the capabilities of devices people use to set achievable development expectations.
 
@@ -101,7 +101,7 @@ To ensure you're delivering user experiences with good responsiveness, a good th
 Since INP is experimental, the guidance around thresholds may change over time as it is fine-tuned. [The CHANGELOG at the end of this article](#changelog) will be updated to reflect any changes.
 {% endAside %}
 
-## What's in an interaction?
+### What's in an interaction?
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Ng0j5yaGYZX9Bm3VQ70c.svg", alt="A diagram depicting an interaction on the main thread. The user makes an input while blocking tasks run. The input is delayed until those tasks complete, after which the pointerup, mouseup, and click event handlers run, then rendering and painting work is kicked off until the next frame is presented.", width="736", height="193.81333333333" %}
@@ -136,7 +136,7 @@ Interactions may consist of two parts, each with multiple events. For example, a
 
 INP is calculated when the user leaves the page, resulting in a single value that is representative of the page's overall responsiveness throughout the entire page's lifecycle. **A low INP means that a page is reliably responsive to user input.**
 
-## How is INP different from First Input Delay (FID)?
+### How is INP different from First Input Delay (FID)?
 
 Where INP considers _all_ page interactions, [First Input Delay (FID)](/fid/) only accounts for the _first_ interaction. It also only measures the first interaction's _input delay_, not the time it takes to run event handlers, or the delay in presenting the next frame.
 
@@ -144,7 +144,7 @@ Given that FID is also a [load responsiveness metric](/user-centric-performance-
 
 INP is more than about first impressions. By sampling all interactions, responsiveness can be assessed comprehensively, making INP a more reliable indicator of overall responsiveness than FID.
 
-## What if no INP value is reported?
+### What if no INP value is reported?
 
 It's possible that a page can return no INP value. This can happen for a number of reasons:
 

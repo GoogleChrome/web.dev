@@ -71,7 +71,7 @@ You're probably aware of the `Element` version of `querySelector()` and `querySe
 ```
 
 
-When these are called, the browser returns a `NodeList` that's filtered to only include the set of nodes that a.) match the selector and b.) which are also descendants of the context element. So in the the second example, the browser finds all `a` elements, then filters out the ones not in the `scope` element. This works, but it can lead to some bizarre behavior if you're not careful. Read on.
+When these are called, the browser returns a `NodeList` that's filtered to only include the set of nodes that a.) match the selector and b.) which are also descendants of the context element. So in the second example, the browser finds all `a` elements, then filters out the ones not in the `scope` element. This works, but it can lead to some bizarre behavior if you're not careful. Read on.
 
 ## When querySelector goes wrong
 

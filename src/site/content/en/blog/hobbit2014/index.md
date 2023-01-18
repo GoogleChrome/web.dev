@@ -92,7 +92,7 @@ When two players are matched up for a battle a signaling service is used to get 
 
 There are several third-party libraries you can use for the signaling service and that also simplifies setting up WebRTC. Some options are  [PeerJS](http://peerjs.com/), [SimpleWebRTC](http://simplewebrtc.com/), and [PubNub WebRTC SDK](https://github.com/pubnub/webrtc). PubNub uses a hosted server solution and for this project we wanted to host on the Google Cloud Platform. The other two libraries use node.js servers that we could have installed on Google Compute Engine but we would also have to make sure it could handle thousands of concurrent users, something we already knew the Channel API can do.
 
-One of the the main advantages of using the Google Cloud Platform in this case is scaling. Scaling the resources needed for an AppEngine project is easily handled through the Google Developers Console and no extra work is needed to scale the signaling service when using  the Channels API. 
+One of the main advantages of using the Google Cloud Platform in this case is scaling. Scaling the resources needed for an AppEngine project is easily handled through the Google Developers Console and no extra work is needed to scale the signaling service when using  the Channels API. 
 
 There were some concerns about latency and how robust the Channels API is but we had previously used it for the CubeSlam project and it had proven to work for millions of users in that project so we decided to use it again.
 
