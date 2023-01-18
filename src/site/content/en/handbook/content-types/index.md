@@ -20,7 +20,7 @@ description: |
 **Examples:**
 * [Creating WebP images with the command line](/codelab-serve-images-webp)
 * [Minify and compress network payloads with gzip](/reduce-network-payloads-using-text-compression)
-*
+
 ## Collection
 
 **Examples:**
