@@ -6,6 +6,16 @@ description: |
   The content types available to use on web.dev.
 ---
 
+## Collection
+
+**Examples:**
+* [Example collection](/handbook/content-types/example-collection)
+
+## Landing page
+
+**Examples:**
+* [Example landing page](/handbook/content-types/example-landing-page)
+
 ## Posts
 **Format:** Primarily informational with instructions included as appropriate
 
@@ -25,6 +35,7 @@ description: |
 **[Template](https://github.com/GoogleChrome/web.dev/tree/master/src/site/_drafts/_template-post)**
 
 **Examples:**
+* [Example post](/handbook/content-types/example-post)
 * [Are long JavaScript tasks delaying your Time to Interactive?](/long-tasks-devtools)
 * [Code splitting with React.lazy and Suspense](/code-splitting-suspense)
 
