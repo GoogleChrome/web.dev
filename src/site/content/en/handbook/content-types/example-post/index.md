@@ -59,6 +59,8 @@ alt: A description of the hero image for screen reader users.
 tags:
   - accessibility
   - ux
+
+excludeFromTags: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
