@@ -75,9 +75,10 @@ const individual = (items, lang, indexedOnly = false) => {
   let paginated = [];
 
   for (const item of items) {
-    const elements = indexedOnly
-      ? item.elements.filter((element) => element.data.noindex !== true)
-      : item.elements;
+    let elements = item.elements;
+    if (indexedOnly) {
+      elements = elements.filter((element) => element.data.noindex !== true);
+    }
 
     if (elements.length > 0) {
       paginated = paginated.concat(
