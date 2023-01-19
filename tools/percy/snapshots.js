@@ -8,69 +8,16 @@ const pagesToTest = [
     name: 'Home page',
   },
   {
-    url: '/learn/',
-    name: 'Learn page',
-    navPage: true,
+    url: '/handbook/content-types/example-landing-page/',
+    name: 'Landing page example',
   },
   {
-    url: '/accessible/',
-    name: 'Collection page',
+    url: '/handbook/content-types/example-collection/',
+    name: 'Collection page example',
   },
   {
-    url: '/measure/',
-    name: 'Measure page',
-    navPage: true,
-  },
-  {
-    url: '/blog/',
-    name: 'Blog page',
-    navPage: true,
-  },
-  {
-    url: '/test-post/',
-    name: 'Post page',
-  },
-  {
-    url: '/about/',
-    name: 'About page',
-    navPage: true,
-  },
-  {
-    url: '/codelab-avoid-invisible-text/',
-    name: 'Codelab page',
-  },
-  {
-    url: '/handbook/web-dev-components/',
-    name: 'Components page',
-  },
-  {
-    url: '/authors/',
-    name: 'Authors page',
-  },
-  {
-    url: '/authors/mgechev/',
-    name: 'Author page',
-  },
-  {
-    url: '/tags/',
-    name: 'Tags page',
-  },
-  {
-    url: '/shows/',
-    name: 'Shows page',
-  },
-  {
-    url: '/podcasts/',
-    name: 'Podcasts page',
-  },
-  {
-    url: '/newsletter/',
-    name: 'Newsletter page',
-  },
-  {
-    url: '/live/',
-    name: 'Live page',
-    navPage: true,
+    url: '/handbook/content-types/example-post/',
+    name: 'Post example',
   },
 ];
 

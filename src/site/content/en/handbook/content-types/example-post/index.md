@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /handbook/content-types/example-post
 title: An example blog post used for screenshot testing.
 subhead: |
   A catchy subhead that previews the content and is a bit wordy to test what
@@ -56,9 +57,10 @@ alt: A description of the hero image for screen reader users.
 #     alt: Provide an alt for your thumbnail.
 
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
   - accessibility
   - ux
+
+excludeFromTags: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
@@ -457,6 +459,8 @@ quam sem.
     a massa sit amet ullamcorper.
   </p>
   <cite>
+    by Jon Doe
+  </cite>
 </pullquote>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa

@@ -666,7 +666,7 @@ redirects:
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/
   - source: /use-landmarks
     destination: https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/
-  
+
   # Redirects for Lighthouse best practices content.
   - source: /lighthouse-best-practices
     destination: https://developer.chrome.com/docs/lighthouse/best-practices/
