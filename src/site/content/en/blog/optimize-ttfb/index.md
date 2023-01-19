@@ -38,16 +38,16 @@ It's recommended that your server responds to navigation requests quickly enough
 </figure>
 
 {% Aside 'important' %}
-TTFB is not a Core Web Vitals metric, so it's not absolutely necessary that sites meet the "good" TTFB threshold, provided that it doesn't impede their ability to score well on the metrics that matter.
+<p>TTFB is not a Core Web Vitals metric, so it's not absolutely necessary that sites meet the "good" TTFB threshold, provided that it doesn't impede their ability to score well on the metrics that matter.<p>
 
-Websites vary in how they deliver content. A low TTFB is crucial for getting markup out to the client as soon as possible. However, if a website delivers the initial markup quickly, but that markup then requires JavaScript to populate it with meaningful content—as is the the case with Single Page Applications (SPAs)—then achieving the lowest possible TTFB is especially important so that the client-rendering of markup can occur sooner.
+<p>Websites vary in how they deliver content. A low TTFB is crucial for getting markup out to the client as soon as possible. However, if a website delivers the initial markup quickly, but that markup then requires JavaScript to populate it with meaningful content—as is the the case with Single Page Applications (SPAs)—then achieving the lowest possible TTFB is especially important so that the client-rendering of markup can occur sooner.<p>
 
-Conversely, a server-rendered site that does not require as much client-side work may have a slightly lower TTFB, but good FCP and LCP values. This is why the TTFB thresholds are a “rough guide”, and will need to be weighed against how your site delivers its core content.
+<p>Conversely, a server-rendered site that does not require as much client-side work may have a slightly lower TTFB, but good FCP and LCP values. This is why the TTFB thresholds are a “rough guide”, and will need to be weighed against how your site delivers its core content.<p>
 {% endAside %}
 
 ## How to Measure TTFB
 
-Before you can optimize TTFB, you need to observe how it affects your website's users. You should rely on [field data](/lab-and-field-data-differences/#field-data) as a primary source of observing not just TTFB, but every meaningful performance metric. To find out how to measure TTFB in both the lab and the field, [consult the TTFB metric page](/ttfb/#how-to-measure-ttfb).
+Before you can optimize TTFB, you need to observe how it affects your website's users. You should rely on [field data](/lab-and-field-data-differences/#field-data) as a primary source of observing TTFB as it affected by redirects, whereas lab-based tools are often measured using the final URL therefore missing this extra delay. To find out how to measure TTFB in both the lab and the field, [consult the TTFB metric page](/ttfb/#how-to-measure-ttfb).
 
 ### Understanding high TTFB with `Server-Timing`
 
@@ -176,7 +176,9 @@ There are two types of redirects:
 - **Same-origin redirects**, where the redirect occurs entirely on your website.
 - **Cross-origin redirects**, where the redirect occurs initially on another origin—such as from a social media URL shortening service, for example—before arriving at your website.
 
-You want to focus on eliminating same-origin redirects, as this is something you will have direct control over. This would involve checking links on your website to see if any of them result in a 302 or 301 response code. When it comes to cross-origin redirects, there's nothing you can really do to fix that source of added latency.
+You want to focus on eliminating same-origin redirects, as this is something you will have direct control over. This would involve checking links on your website to see if any of them result in a 302 or 301 response code.
+
+Cross-origin redirects are trickier as these are often outside of your control, but try to avoid multiple redirects where possible - for example, by using multiple link shorteners when sharing links.
 
 Another important source of redirect time can come from HTTP-to-HTTPS redirects. One way you can get around this is to use the [`Strict-Transport-Security` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) (HSTS), which will enforce HTTPS on the first visit to an origin, and then will tell the browser to immediately access the origin through the HTTPS scheme on future visits.
 
@@ -188,7 +190,7 @@ Be **very careful** when implementing HSTS, as setting too aggressive a policy w
 
 ### Stream markup to the browser
 
-Browsers are optimized to deliver markup efficiently through streaming, meaning that markup is handled in chunks as it arrives from the server. This is crucial where large markup payloads are concerned, as it means the browser can parse that large chunk of markup incrementally, as opposed to waiting for the entire response to arrive before parsing can begin.
+Browsers are optimized to process markup efficiently when it is streamed, meaning that markup is handled in chunks as it arrives from the server. This is crucial where large markup payloads are concerned, as it means the browser can parse that the chunks of markup incrementally, as opposed to waiting for the entire response to arrive before parsing can begin.
 
 Though browsers are great at streaming markup, it's crucial to do all that you can to keep that stream flowing so those initial bits of markup are on their way as soon as possible. If the back end is holding things up, that's a problem. Because back end stacks are numerous, it would be beyond the scope of this guide to cover every single stack and the issues that could arise in each specific one.
 
@@ -198,7 +200,7 @@ React, for example—and other frameworks that can [render markup on demand on t
 Not every JavaScript runtime can take advantage of streaming server-side rendering. Newer JavaScript runtimes such as [Deno](https://deno.land/) support this out of the box, but older versions of [Node.js](https://nodejs.org/) may not support it. Check to see if this is the case for you, and see what you can do to upgrade or switch your runtime for better server-side rendering performance.
 {% endAside %}
 
-Another way to ensure markup is streamed to the browser is to rely on [static rendering](/rendering-on-the-web/#static-rendering) which generates HTML files during build time. While this approach isn't suitable for every page on every website—such as those requiring a dynamic response as part of the user experience—it can be beneficial for those pages that don't require markup to be personalized to a specific user.
+Another way to ensure markup is streamed to the browser quickly is to rely on [static rendering](/rendering-on-the-web/#static-rendering) which generates HTML files during build time. With the full file available immediately, web servers can start sending the file immediately and the inherit nature of HTTP will result in streaming markup. While this approach isn't suitable for every page on every website—such as those requiring a dynamic response as part of the user experience—it can be beneficial for those pages that don't require markup to be personalized to a specific user.
 
 ### Use a service worker
 
@@ -222,7 +224,7 @@ If your website doesn't do a lot of processing on the back end to prepare markup
 
 ## Conclusion
 
-Since there are so many combinations of back-end application stacks, there's no one article that can encapsulate _everything_ you can do to lower your website's TTFB. However, these are some options you can explore to try and get things going just a little bit faster on the server side of things.
+Since there are so many combinations of backend application stacks, there's no one article that can encapsulate _everything_ you can do to lower your website's TTFB. However, these are some options you can explore to try and get things going just a little bit faster on the server side of things.
 
 As with optimizing every metric, the approach is largely similar: measure your TTFB in the field, use lab tools to drill down into the causes, and then apply optimizations where possible. Not every single technique here may be viable for your situation, but some will be. As always, you'll need to keep a close eye on your field data, and make adjustments as needed to ensure the fastest possible user experience.
 
