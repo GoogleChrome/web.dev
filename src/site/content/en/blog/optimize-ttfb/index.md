@@ -51,13 +51,13 @@ Before you can optimize TTFB, you need to observe how it affects your website's 
 
 ### Understanding high TTFB with `Server-Timing`
 
-The [`Server-Timing` response header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing) can be used in your application back end to measure distinct back end processes that could contribute to high latency. The header value's structure is flexible, accepting, at minimum, a handle that you define. Optional values include a duration value (via `dur`), as well as an optional human-readable description (via `desc`).
+The [`Server-Timing` response header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing) can be used in your application backend to measure distinct backend processes that could contribute to high latency. The header value's structure is flexible, accepting, at minimum, a handle that you define. Optional values include a duration value (via `dur`), as well as an optional human-readable description (via `desc`).
 
 {% Aside %}
-If measuring back end latency with `Server-Timing` is not feasible, then a suitable alternative may be to rely on [Application Performance Monitoring (APM)](https://en.wikipedia.org/wiki/Application_performance_management) to detect and diagnose back end performance problems.
+If measuring backend latency with `Server-Timing` is not feasible, then a suitable alternative may be to rely on [Application Performance Monitoring (APM)](https://en.wikipedia.org/wiki/Application_performance_management) to detect and diagnose backend performance problems.
 {% endAside %}
 
-`Serving-Timing` can be used to measure many application back end processes, but there are some that you may want to pay special attention to:
+`Serving-Timing` can be used to measure many application backend processes, but there are some that you may want to pay special attention to:
 
 - Database queries
 - Server-side rendering time, if applicable
@@ -71,7 +71,7 @@ All parts of a `Server-Timing` entry are colon-separated, and multiple entries c
 Server-Timing: db;desc="Database";dur=121.3, ssr;desc="Server-side Rendering";dur=212.2
 ```
 
-The header can be set using your application back end's language of choice. In PHP, for example, you could set the header like so:
+The header can be set using your application backend's language of choice. In PHP, for example, you could set the header like so:
 
 ```php
 <?php
@@ -123,7 +123,7 @@ Once you've determined that you have a problematic TTFB by analyzing the data av
 
 ## Ways to optimize TTFB
 
-The most challenging aspect of optimizing TTFB is that, while the web's frontend stack will always be HTML, CSS, and JavaScript, back end stacks can vary significantly. There are numerous backend stacks and database products that each have their own optimization techniques. Therefore, this guide will focus on what applies to most architectures, rather than focusing solely on stack-specific guidance.
+The most challenging aspect of optimizing TTFB is that, while the web's frontend stack will always be HTML, CSS, and JavaScript, backend stacks can vary significantly. There are numerous backend stacks and database products that each have their own optimization techniques. Therefore, this guide will focus on what applies to most architectures, rather than focusing solely on stack-specific guidance.
 
 ### Platform-specific guidance
 
@@ -214,12 +214,12 @@ The [Service Worker API](https://developer.mozilla.org/docs/Web/API/Service_Work
 
 ### Use `103 Early Hints` for render-critical resources
 
-No matter how well your application back end is optimized, there could still be a significant amount of work the server needs to do in order to prepare a response, including expensive (yet necessary) database work that delays the navigation response from arriving as quickly as it could. The potential effect of this is that some subsequent render-critical resources could be delayed, such as CSS or—in some cases—JavaScript that renders markup on the client.
+No matter how well your application backend is optimized, there could still be a significant amount of work the server needs to do in order to prepare a response, including expensive (yet necessary) database work that delays the navigation response from arriving as quickly as it could. The potential effect of this is that some subsequent render-critical resources could be delayed, such as CSS or—in some cases—JavaScript that renders markup on the client.
 
 [The `103 Early Hints` header](https://developer.chrome.com/blog/early-hints/) is an early response code that the server can send to the browser while the backend is busy preparing markup. This header can be used to hint to the browser that there are render-critical resources the page should begin downloading while the markup is being prepared. For [supporting browsers](https://caniuse.com/mdn-http_status_103), the effect can be faster document rendering (CSS) and quicker availability of core page functionality (JavaScript).
 
 {% Aside %}
-If your website doesn't do a lot of processing on the back end to prepare markup—for example, static sites—then `103 Early Hints` probably won't help much. It tends to work best for sites that involve considerable backend time before markup can be sent to the user.
+If your website doesn't do a lot of processing on the backend to prepare markup—for example, static sites—then `103 Early Hints` probably won't help much. It tends to work best for sites that involve considerable backend time before markup can be sent to the user.
 {% endAside %}
 
 ## Conclusion
