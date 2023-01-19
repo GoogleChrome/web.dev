@@ -114,7 +114,7 @@ interface.
 To call the `show()` method, you must add a [user
 activation](https://developer.chrome.com/blog/user-activation/).
 This means the call must be inside an event listener, such as
-`click`. Note that Chrome [enforces this constraint since version
+`click`. Note that Chrome [enforces this constraint from version
 102](https://chromestatus.com/feature/5948593429020672).
 
 {% endAside %}

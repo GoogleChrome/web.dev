@@ -27,14 +27,13 @@ address and contact information. This provides multiple benefits:
   format](https://w3c.github.io/payment-request/#paymentaddress-interface).
 * Submitting an incorrect address is less likely.
 
-This functionality can be deferred to a payment app to offer a unified payment
-experience and it's called *delegation*.
+Browsers can defer the collection of shipping address and contact information to
+a payment app to provide a unified payment experience. This functionality is
+called *delegation*.
 
 Whenever possible, Chrome delegates the collection of a customer's shipping
 address and contact information to the invoked Android payment app. The
-delegation reduces the friction during checkout because the user's installed
-payment apps usually have more accurate information about their shipping address
-and contact details.
+delegation reduces the friction during checkout.
 
 The merchant website can dynamically update the shipping options and total price
 depending on the customer's choice of the shipping address and the shipping
@@ -58,14 +57,18 @@ app](/android-payment-apps-developers-guide/) in advance.
 To add delegation support to an already existing Android payment app,
 implement the following steps:
 
-1.  Declare supported delegations.
-2.  Parse `PAY` intent extras for required payment options.
-3.  Provide required information in payment response.
-4.  [Optional] Support dynamic flow:
-    1.  Notify the merchant about changes in the user selected payment method,
-        shipping address, or shipping option.
-    2.  Receive updated payment details from the merchant (for example, the
-        adjusted total amount based on the selected shipping option's cost).
+1.  [Declare supported delegations](#declare-supported-delegations).
+2.  [Parse `PAY` intent extras for required payment
+     options](#parse-pay-intent-extras-for-required-payment-options).
+3.  [Provide required information in payment
+     response](#provide-required-information-in-a-payment-response).
+4.  [[Optional] Support dynamic flow](#optional-support-dynamic-flow):
+    1.  [Notify the merchant about changes in the user selected payment method,
+        shipping address, or shipping
+        option](#notify-the-merchant-about-changes-in-the-user-selected-payment-method-shipping-address-or-shipping-option).
+    2.  [Receive updated payment details from the merchant (for example, the
+        adjusted total amount based on the selected shipping option's
+        cost)](#receive-updated-payment-details-from-the-merchant).
 
 ## Declare supported delegations
 

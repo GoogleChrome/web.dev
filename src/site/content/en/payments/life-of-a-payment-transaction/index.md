@@ -244,9 +244,9 @@ into a form and they can store their shipping address in their preferred payment
 apps, rather than on multiple different merchant websites.
 
 If a customer updates their shipping address in a payment app after the
-transaction has been initiated, a shipping address change event will be emitted
-to the merchant. This helps the merchant determine the shipping cost based on
-the new address, update the total price, and return it back to the payment app.
+transaction has been initiated, a `'shippingaddresschange'` event will be sent
+to the merchant. This event helps the merchant determine the shipping cost based
+on the new address, update the total price, and return it to the payment app.
 
 ```js
 request.addEventListener('shippingaddresschange', e => {
@@ -272,12 +272,12 @@ that choice to the payment app. The shipping options are displayed as a list of
 prices and service names the customer can select from. For example:
 
 * Standard shipping - Free
-* Express shipping - $5
+* Express shipping - 5 USD
 
-When a customer updates the shipping option in a payment app, a shipping option
-change event will be emitted to the merchant. The merchant can then determine
-the shipping cost, update the total price, and return it back to the payment
-app.
+When a customer updates the shipping option in a payment app, a
+`'shippingoptionchange'` event will be sent to the merchant. The merchant can
+then determine the shipping cost, update the total price, and return it to the
+payment app.
 
 ```js
 request.addEventListener('shippingoptionchange', e => {
@@ -287,7 +287,7 @@ request.addEventListener('shippingoptionchange', e => {
 });
 ```
 
-The merchant can modify the shipping options dynamically based on the customer's
+The merchant can dynamically modify the shipping options based on the customer's
 shipping address as well. This is useful when a merchant wants to offer
 different sets of shipping options for domestic and international customers.
 
