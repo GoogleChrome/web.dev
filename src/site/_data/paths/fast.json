@@ -87,7 +87,8 @@
         "preload-critical-assets",
         "preconnect-and-dns-prefetch",
         "link-prefetch",
-        "fast-playback-with-preload"
+        "fast-playback-with-preload",
+        "optimize-ttfb"
       ]
     },
     {
