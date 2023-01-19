@@ -4,7 +4,7 @@ subhead: |
   Learn how to optimize for the Time to First Byte metric.
 authors:
   - jlwagner
-date: 2023-01-18
+date: 2023-01-19
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/IuvYBfNBVKH7qU3872qg.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/OBITO4G8MUJMILC7IFE0.jpg
 alt: A picture of several racks of servers, with white text superimposed on it that reads "Optimize Time to First Byte".
