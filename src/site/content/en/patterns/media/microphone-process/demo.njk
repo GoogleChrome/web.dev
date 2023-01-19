@@ -1,0 +1,96 @@
+---
+patternId: media/microphone-process
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎙️</text></svg>"
+    />
+    <title>How to process audio from the user's microphone</title>
+    {# Include the GA object so we can start queuing events. #}
+    {% include 'partials/analytics.njk' %}
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+      button {
+        display: block;
+        margin-bottom: 4px;
+      }
+      pre {
+        color: red;
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to process audio from the user's microphone</h1>
+    <button id="startMicrophoneButton">Start using microphone</button>
+    <button id="stopMicrophoneButton" disabled>Stop using microphone</button>
+    <pre id="logs"></pre>
+    {% set script %}
+      const startMicrophoneButton = document.querySelector('#startMicrophoneButton');
+      const stopMicrophoneButton = document.querySelector('#stopMicrophoneButton');
+
+      let stream;
+
+      startMicrophoneButton.addEventListener("click", async () => {
+        // Prompt the user to use their microphone.
+        stream = await navigator.mediaDevices.getUserMedia({
+          audio: true,
+        });
+        const context = new AudioContext();
+        const source = context.createMediaStreamSource(stream);
+
+        // Load and execute the module script.
+        await context.audioWorklet.addModule("processor.js");
+        // Create an AudioWorkletNode. The name of the processor is the
+        // one passed to registerProcessor() in the module script.
+        const processor = new AudioWorkletNode(context, "processor");
+
+        source.connect(processor).connect(context.destination);
+
+        stopMicrophoneButton.disabled = false;
+        log("Your microphone audio is being used.");
+      });
+
+      stopMicrophoneButton.addEventListener("click", () => {
+        // Stop the stream.
+        stream.getTracks().forEach(track => track.stop());
+
+        log("Your microphone audio is not used anymore.");
+      });
+
+      /* Utils */
+
+      function log(text) {
+        document.querySelector('#logs').textContent += `${text}\r\n`;
+      }
+
+      window.onunhandledrejection = (event) => {
+        log(`> ${event.reason}`);
+      };
+      window.onerror = (error) => {
+        log(`> ${error}`);
+      };
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>
