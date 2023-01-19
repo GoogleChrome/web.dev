@@ -192,7 +192,7 @@ Be **very careful** when implementing HSTS, as setting too aggressive a policy w
 
 Browsers are optimized to process markup efficiently when it is streamed, meaning that markup is handled in chunks as it arrives from the server. This is crucial where large markup payloads are concerned, as it means the browser can parse that the chunks of markup incrementally, as opposed to waiting for the entire response to arrive before parsing can begin.
 
-Though browsers are great at streaming markup, it's crucial to do all that you can to keep that stream flowing so those initial bits of markup are on their way as soon as possible. If the back end is holding things up, that's a problem. Because back end stacks are numerous, it would be beyond the scope of this guide to cover every single stack and the issues that could arise in each specific one.
+Though browsers are great at handling streaming markup, it's crucial to do all that you can to keep that stream flowing so those initial bits of markup are on their way as soon as possible. If the backend is holding things up, that's a problem. Because backend stacks are numerous, it would be beyond the scope of this guide to cover every single stack and the issues that could arise in each specific one.
 
 React, for example—and other frameworks that can [render markup on demand on the server](/rendering-on-the-web/#server-rendering)—have used a synchronous approach to server-side rendering. However, newer versions of React have implemented [server methods for streaming markup](https://reactjs.org/docs/react-dom-server.html#overview) as it is being rendered. This means you don't have to wait for a React server API method to render the entire response before it's sent.
 
