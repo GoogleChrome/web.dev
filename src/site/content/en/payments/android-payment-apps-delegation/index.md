@@ -208,7 +208,7 @@ To do so the following parameters must be specified as Intent extras:
 * `shippingOptionId` - The identifier of the user-selected shipping option. This
   should be a non-empty string when `paymentOptions.requestShipping` is true.
 
-###  Payment response validation
+###  Validate payment response
 
 If the activity result of a payment response received from the invoked payment
 app is set to `RESULT_OK`, then Chrome will check for required additional
@@ -225,7 +225,7 @@ messages:
 'Payment app returned invalid response. Missing field "shipping option".'
 ```
 
-Below is an example of a valid response:
+The following code sample is an example of a valid response:
 
 ```kotlin
 fun Intent.populateRequestedPaymentOptions() {
