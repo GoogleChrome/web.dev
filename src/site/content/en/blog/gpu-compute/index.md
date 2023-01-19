@@ -386,7 +386,7 @@ const shaderModule = device.createShaderModule({
     @group(0) @binding(2) var<storage, read_write> resultMatrix : Matrix;
 
     @compute @workgroup_size(8, 8)
-    fn main(@builtin(global_invocation_id) global_id : vec3u>) {
+    fn main(@builtin(global_invocation_id) global_id : vec3u) {
       // Guard against out-of-bounds work group sizes
       if (global_id.x >= u32(firstMatrix.size.x) || global_id.y >= u32(secondMatrix.size.y)) {
         return;
