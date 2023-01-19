@@ -5,7 +5,7 @@ authors:
   - jlwagner
   - tunetheweb
 date: 2021-10-26
-updated: 2022-10-19
+updated: 2023-01-19
 description: |
   This post introduces the Time to First Byte (TTFB) metric and explains
   how to measure it.
@@ -141,24 +141,4 @@ TTFB for cross-origin requests will not be measurable in the field if cross-orig
 
 ## How to improve TTFB
 
-Improving TTFB is largely dependent on your hosting provider and backend application stack. High TTFB values could be due to one or more of the following problems:
-
-- Hosting services with inadequate infrastructure to handle high traffic loads
-- Web servers with insufficient memory that can lead to [thrashing](https://en.wikipedia.org/wiki/Memory_paging#Thrashing)
-- Unoptimized database tables
-- Suboptimal database server configuration
-
-Minimizing TTFB is often done by choosing a suitable hosting provider with infrastructure to ensure high uptime and responsiveness. This&mdash;in combination with a CDN&mdash;can help.
-
-{% Aside %}
-Use the [Server-Timing API](https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing) to gather additional field data on the performance of application backend processes. This can help identify opportunities for improvements that might otherwise go unnoticed.
-{% endAside %}
-
-Other opportunities to improve high TTFB times and related perceptual delays include:
-
-- [Avoid multiple page redirects](https://developer.chrome.com/docs/lighthouse/performance/redirects/).
-- [Preconnect to required origins](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) for cross-origin resources.
-- Submit your origin to the [HSTS preload list](https://hstspreload.org/) to eliminate HTTP-to-HTTPS redirect latency.
-- [Use HTTP/2](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/) or [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3).
-- Consider [predictive prefetching](/predictive-prefetching/) for fast page navigations for users who have not specified [a preference for reduced data usage](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data).
-- Use server-side generation (SSG) for markup instead of SSR where possible and appropriate.
+An in-depth guide on [optimizing TTFB](/optimize-ttfb/) has been published to give you more guidance on improving your website's TTFB.
