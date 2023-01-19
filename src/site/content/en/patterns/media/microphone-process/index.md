@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to process audio from the user's microphone
-date: 2022-10-19
+date: 2023-01-19
 authors:
   - beaufortfrancois
 description: >
