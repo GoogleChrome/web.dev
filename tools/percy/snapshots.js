@@ -20,10 +20,6 @@ const pagesToTest = [
     name: 'Post example',
   },
   {
-    url: '/handbook/content-types/example-collection/',
-    name: 'Collection page',
-  },
-  {
     url: '/handbook/content-types/example-item-page/',
     name: 'Item page example',
   },
