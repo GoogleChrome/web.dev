@@ -14,7 +14,7 @@ You've optimized all of your code, but your site still loads too slowly. Who's
 the culprit?
 
 Often, performance problems slowing pages down are due to third-party scripts:
-ads, analytics, trackers, social-media buttons, and so on.
+ads, analytics, trackers, social media buttons, and so on.
 
 Third-party scripts provide a wide range of useful functionality, making the web
 more dynamic, interactive, and interconnected. These scripts may be crucial to
@@ -44,9 +44,9 @@ interactive.
 
 Examples of third-party scripts include:
 
-- Social sharing buttons (e.g Twitter, Facebook, G+)
+- Social sharing buttons (Twitter, Facebook, G+)
 
-- Video player embeds (e.g YouTube, Vimeo)
+- Video player embeds (YouTube, Vimeo)
 
 - Advertising iframes
 
@@ -54,7 +54,7 @@ Examples of third-party scripts include:
 
 - A/B testing scripts for experiments
 
-- Helper libraries (e.g date formatting, animation, functional libraries etc)
+- Helper libraries (such as date formatting, animation, or functional libraries)
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/OmUCDlDPThYWSHrbkLz0.jpeg", alt="example of a youtube video embed", width="800", height="267" %}
 
@@ -116,7 +116,7 @@ These issues can include:
   if their servers respond slowly, even if the embed is using async or defer.
 
 Context is important and the solution to costly third-parties can depend on your
-site and ability to configure how third-party code is being loaded. Thankfully a
+site and your ability to configure how you load third-party code. Thankfully, a
 number of solutions and tools exist to find and fix issues with third-party
 resources.
 
