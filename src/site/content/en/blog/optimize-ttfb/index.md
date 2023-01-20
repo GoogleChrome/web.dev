@@ -38,11 +38,9 @@ It's recommended that your server responds to navigation requests quickly enough
 </figure>
 
 {% Aside 'important' %}
-<p>TTFB is not a Core Web Vitals metric, so it's not absolutely necessary that sites meet the "good" TTFB threshold, provided that it doesn't impede their ability to score well on the metrics that matter.<p>
-
+<p>TTFB is not a [Core Web Vitals](/vitals/) metric, so it's not absolutely necessary that sites meet the "good" TTFB threshold, provided that it doesn't impede their ability to score well on the metrics that matter.<p>
 <p>Websites vary in how they deliver content. A low TTFB is crucial for getting markup out to the client as soon as possible. However, if a website delivers the initial markup quickly, but that markup then requires JavaScript to populate it with meaningful content—as is the the case with Single Page Applications (SPAs)—then achieving the lowest possible TTFB is especially important so that the client-rendering of markup can occur sooner.<p>
-
-<p>Conversely, a server-rendered site that does not require as much client-side work may have a slightly lower TTFB, but good FCP and LCP values. This is why the TTFB thresholds are a “rough guide”, and will need to be weighed against how your site delivers its core content.<p>
+<p>Conversely, a server-rendered site that does not require as much client-side work could have a higher TTFB, but better FCP and LCP values than an entirely client-rendered experience. This is why the TTFB thresholds are a “rough guide”, and will need to be weighed against how your site delivers its core content.<p>
 {% endAside %}
 
 ## How to Measure TTFB
