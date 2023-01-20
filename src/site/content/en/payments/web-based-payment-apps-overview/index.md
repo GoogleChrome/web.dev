@@ -92,10 +92,9 @@ if used in a top-level document, with only a few exceptions:
 * `window.open()` is disabled.
 
 {% Aside 'caution' %}
-Payment Handler API is only supported in Chrome as of July 2020. However, since
-Chromium based browsers already have the implementation, some of them may expose
-the API in the future. Also, [Mozilla recently announced it's implementing the
-API](https://groups.google.com/g/mozilla.dev.platform/c/gBQp1URD1lE/m/Fswh-5-ZBgAJ).
+Payment Handler API is only supported in Chrome as of January 2023. However,
+since Chromium based browsers already have the implementation, some of them may
+expose the API in the future.
 {% endAside %}
 
 ### WebAuthn support
