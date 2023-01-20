@@ -20,14 +20,6 @@ const pagesToTest = [
     name: 'Post example',
   },
   {
-    url: '/handbook/content-types/example-collection/',
-    name: 'Collection page example',
-  },
-  {
-    url: '/handbook/content-types/example-post/',
-    name: 'Post example',
-  },
-  {
     url: '/handbook/content-types/example-pattern-set/',
     name: 'Pattern-set page example',
   },
