@@ -7,7 +7,7 @@ authors:
 description: >
   Third-party scripts provide a wide range of useful functionality, making the web more dynamic. Learn how to optimize the loading of third-party scripts to reduce their impact on performance.
 date: 2018-02-28
-updated: 2022-08-18
+updated: 2023-01-20
 ---
 
 You've optimized all of your code, but your site still loads too slowly. Who's
