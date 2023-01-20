@@ -107,7 +107,7 @@ These issues can include:
 
 - Excessive DOM elements or expensive CSS selectors.
 
-- Including multiple third party embeds can lead to multiple frameworks and
+- Including multiple third-party embeds can lead to multiple frameworks and
   libraries being pulled in several times. This is wasteful and exacerbates the
   performance issues.
 
@@ -117,7 +117,7 @@ These issues can include:
 
 Context is important and the solution to costly third-parties can depend on your
 site and ability to configure how third-party code is being loaded. Thankfully a
-number of solutions and tools exist to find and fix issues with third party
+number of solutions and tools exist to find and fix issues with third-party
 resources.
 
 ## How do you identify third-party script on a page?
@@ -141,7 +141,7 @@ can also be useful for visualizing how much content comes from third-party
 origins. It breaks this down by both total bytes and the number of requests:
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/xl16aV7c9rVOd28JwC70.png", alt="content breakdown by domain (first view).
-Shows the percentage of requests and bytes for each third party", width="800", height="456" %}
+Shows the percentage of requests and bytes for each third-party", width="800", height="456" %}
 
 When you see a problematic script, figure out what the script does and ask
 yourself whether the script is really that necessary. Do an A/B test to balance
@@ -154,7 +154,7 @@ metrics.
 
 The Lighthouse [JavaScript boot-up time audit](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/) highlights scripts that have a
 costly script parse, compile or evaluation time. This can be useful for
-discovering CPU-intensive third party scripts.
+discovering CPU-intensive third-party scripts.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/MigUKr6en9egqep32LmP.png", alt="Lighthouse showing support for script
 evaluating and parsing", width="800", height="523" %}
@@ -194,7 +194,7 @@ will see a drawer starting with
 Navigate to the “Bottom-up” tab.
 
 Here, you can use the "Group by product" option in the Bottom-Up tab to group
-third-parties by the time they spent. This helps identify which third party
+third-parties by the time they spent. This helps identify which third-party
 products were the most costly. The [Network panel](https://umaar.com/dev-tips/143-network-products/) also supports an option
 to highlight requests by product.
 
@@ -355,7 +355,7 @@ after script fetch and HTML parsing is done.", width="800", height="447" %}
 
 _Credit: Growing with the web_
 
-In general, you should always use `async` or `defer` for third party scripts
+In general, you should always use `async` or `defer` for third-party scripts
 (unless the script does something necessary for the critical rendering path):
 
 - Use `async` if it's important to have the script run earlier in the loading
@@ -485,7 +485,7 @@ of your user base (e.g 10% vs 100%), ideally attempting to decide whether they
 belong in a test sample on the server-side. This improves the loading experience
 for the majority of users while still making split-testing possible.
 
-### Lazy-load Third Party Resources
+### Lazy load Third-Party Resources
 
 Embedded third-party resources (such as ads or videos) can be a big contributor
 to slow page speed when constructed poorly. Lazy loading can be used to only
