@@ -172,7 +172,7 @@ payloads", width="800", height="477" %}
 ### Chrome DevTools Network Request Blocking
 
 Chrome DevTools allows you to see how your page behaves when a particular
-script, stylesheet or other resource isn’t available. This is done with [network request blocking]/https://developer.chrome.com/blog/new-in-devtools-59/#block-requests), a
+script, stylesheet or other resource isn’t available. This is done with [network request blocking](https://developer.chrome.com/blog/new-in-devtools-59/#block-requests), a
 feature that can help measure the impact of blocking (dropping) specific
 third-party resources from your page.
 
