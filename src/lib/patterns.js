@@ -27,22 +27,37 @@ const matter = require('gray-matter');
 const {forceForwardSlash} = require('./utils/path');
 
 const stripDot = /^\./;
-const contentRoot = path.join(__dirname, '../../src/site/content/en');
-const basePath = path.join(contentRoot, 'patterns');
-const globBasePath = path.join(
-  contentRoot,
-  '{patterns,handbook/content-types/example-pattern}',
-);
 
-const files = glob.sync(
-  forceForwardSlash(path.join(globBasePath, '**', 'index.md')),
+const contentRoot = path.join(
+  __dirname,
+  '..',
+  '..',
+  'src',
+  'site',
+  'content',
+  'en',
 );
+const basePath = path.join(contentRoot, 'patterns');
+
+const patternPaths = [
+  path.join(contentRoot, 'patterns', '**', 'index.md'),
+  path.join(
+    contentRoot,
+    'handbook',
+    'content-types',
+    'example-pattern',
+    '**',
+    'index.md',
+  ),
+];
+
+const patterns = glob.sync(patternPaths.map((path) => forceForwardSlash(path)));
 
 /** @type {CodePatternSets} */
 const allPatternSets = {};
 
 /** @type {CodePatterns} */
-const allPatterns = files.reduce((patterns, file) => {
+const allPatterns = patterns.reduce((patterns, file) => {
   const id = path.relative(basePath, path.dirname(file));
   const fileContents = matter(fs.readFileSync(file, 'utf-8'));
   const suite = path.dirname(id);

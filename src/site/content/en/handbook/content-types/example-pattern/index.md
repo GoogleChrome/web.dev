@@ -10,8 +10,7 @@ authors:
   - thomassteiner
 height: 800
 static:
-  - assets/fugu.png
-  - assets/fugu.svg
+  - assets/example.svg
 ---
 
 The pattern layout supports the full range of markdown elements/blocks as demonstrated in
