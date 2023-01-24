@@ -29,6 +29,7 @@ function buildTree(toc, map) {
       // EleventyCollection items always end in a trailing slash so we need
       // to ensure our urls have it if we want to use them as keys.
       item.url = join(entry.url, '/');
+
       // This has to happen before calling buildTree so the correct order is maintained.
       map.set(item.url, item);
     }
