@@ -24,7 +24,6 @@ const glob = require('fast-glob');
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
-const {forceForwardSlash} = require('./utils/path');
 
 const stripDot = /^\./;
 
@@ -51,7 +50,7 @@ const patternPaths = [
   ),
 ];
 
-const patterns = glob.sync(patternPaths.map((path) => forceForwardSlash(path)));
+const patterns = glob.sync(patternPaths);
 
 /** @type {CodePatternSets} */
 const allPatternSets = {};
@@ -82,9 +81,7 @@ const allPatterns = patterns.reduce((patterns, file) => {
     return patterns;
   }
 
-  const assetsPaths = glob.sync(
-    forceForwardSlash(path.join(path.dirname(file), 'assets', '*')),
-  );
+  const assetsPaths = glob.sync(path.join(path.dirname(file), 'assets', '*'));
 
   /** @type {CodePatternAssets} */
   const assets = assetsPaths.reduce((out, assetPath) => {
