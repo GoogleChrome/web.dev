@@ -113,8 +113,8 @@ if (window.PublicKeyCredential &&
   Promise.all([  
     PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable(),  
     PublicKeyCredential.​​isConditionalMediationAvailable(),  
-  ]).then(results =&gt; {  
-    if (results.every(r =&gt; r === true)) {  
+  ]).then(results => {  
+    if (results.every(r => r === true)) {  
       // Display "Create a new passkey" button  
     }  
   });  
