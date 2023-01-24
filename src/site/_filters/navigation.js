@@ -1,5 +1,4 @@
 const {join} = require('path');
-const {forceForwardSlash} = require('../../lib/utils/path');
 
 /**
  * Turns the toc into an array of NavigationItems.
@@ -29,7 +28,7 @@ function buildTree(toc, map) {
     if (entry.url) {
       // EleventyCollection items always end in a trailing slash so we need
       // to ensure our urls have it if we want to use them as keys.
-      item.url = forceForwardSlash(join(entry.url, '/'));
+      item.url = join(entry.url, '/');
       // This has to happen before calling buildTree so the correct order is maintained.
       map.set(item.url, item);
     }
