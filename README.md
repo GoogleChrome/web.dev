@@ -29,7 +29,7 @@ Version Manager (nvm)](https://github.com/nvm-sh/nvm).
 
 ### Clone the repo
 
-```bash
+`` `bash
 git clone https://github.com/GoogleChrome/web.dev.git
 ```
 
