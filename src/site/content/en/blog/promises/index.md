@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Promises: An introduction"
+title: "JavaScript Promises: an introduction"
 subhead: >
   Promises simplify deferred and asynchronous computations. A promise represents
   an operation that hasn't completed yet.
@@ -7,6 +7,7 @@ description: >
   Promises simplify deferred and asynchronous computations. A promise represents
   an operation that hasn't completed yet.
 date: 2013-12-16
+updated: 2021-01-18
 tags:
   - javascript
 authors:
@@ -38,6 +39,15 @@ At this point you fall into one of these categories:
 * You knew about this already and you scoff at those who are jumping up and
   down like it's news to them. Take a moment to bask in your own superiority,
   then head straight to the [API reference](#promise-api-reference).
+
+## Browser support and polyfill
+
+{% BrowserCompat 'javascript.builtins.Promise' %}
+
+To bring browsers that lack a complete promises implementation up to spec
+compliance, or add promises to other browsers and Node.js, check out
+[the polyfill](https://github.com/jakearchibald/ES6-Promises#readme)
+(2k gzipped).
 
 ## What's all the fuss about? {: #whats-all-the-fuss-about }
 
@@ -253,20 +263,6 @@ This is happening already with
 [Web MIDI](https://webaudio.github.io/web-midi-api/#widl-Navigator-requestMIDIAccess-Promise-MIDIOptions-options),
 [Streams](https://github.com/whatwg/streams#basereadablestream), and more.
 
-
-## Browser support &amp; polyfill
-
-There are already implementations of promises in browsers today.
-
-As of Chrome 32, Opera 19, Firefox 29, Safari 8 &amp; Microsoft Edge,
-promises are enabled by default.
-
-To bring browsers that lack a complete promises implementation up to spec
-compliance, or add promises to other browsers and Node.js, check out
-[the polyfill](https://github.com/jakearchibald/ES6-Promises#readme)
-(2k gzipped).
-
-
 ## Compatibility with other libraries
 
 The JavaScript promises API will treat anything with a `then()` method as
@@ -390,6 +386,7 @@ less I have to see the infuriating camel-casing of `XMLHttpRequest`, the happier
 transform values or run additional async actions one after another.
 
 ### Transforming values
+
 You can transform values simply by returning the new value:
 
 ```js
@@ -415,7 +412,7 @@ get('story.json').then(function(response) {
 
 The response is JSON, but we're currently receiving it as plain text. We
 could alter our get function to use the JSON
-[`responseType`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#responseType),
+[`responseType`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest#responseType),
 but we could also solve it in promises land:
 
 ```js
@@ -559,13 +556,14 @@ above as a flowchart (because I love flowcharts):
 
 <div style="position: relative; padding-top: 93%;">
   <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden"
-   src="/promises/promise-flow.svg" frameborder="0" allowtransparency="true"></iframe>
+   src="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/simQvoUExWisIW0XxToH.svg" | imgix }}" frameborder="0" allowtransparency="true"></iframe>
 </div>
 
 Follow the blue lines for promises that fulfill, or the red for ones that
 reject.
 
 ### JavaScript exceptions and promises
+
 Rejections happen when a promise is explicitly rejected, but also implicitly
 if an error is thrown in the constructor callback:
 
@@ -724,6 +722,7 @@ they download, which is basically how Pulp Fiction was written. This isn't
 Pulp Fiction, so let's fix it.
 
 ### Creating a sequence
+
 We want to turn our `chapterUrls` array into a sequence of promises. We can do that using `then()`:
 
 ```js
@@ -756,7 +755,7 @@ There's also `Promise.reject(val)`, which creates a promise that rejects with
 the value you give it (or undefined).
 
 We can tidy up the above code using
-[`array.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce):
+[`array.reduce`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce):
 
 ```js
 // Loop through our chapter urls
@@ -813,8 +812,8 @@ getJSON('story.json').then(function(story) {
 And there we have it, a fully async version of the sync version. But we can do
 better. At the moment our page is downloading like this:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.mp4" type="video/mp4; codecs=h264">
   </video>
@@ -870,8 +869,8 @@ Depending on connection, this can be seconds faster than loading one-by-one,
 and it's less code than our first try. The chapters can download in whatever
 order, but they appear on screen in the right order.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.mp4" type="video/mp4; codecs=h264">
   </video>
@@ -925,8 +924,8 @@ getJSON('story.json')
 And there we go, the best of both! It takes the same amount of time to deliver
 all the content, but the user gets the first bit of content sooner.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.mp4" type="video/mp4; codecs=h264">
   </video>
@@ -944,259 +943,18 @@ isn't the end of the story for promises, when combined with other ES6 features
 they get even easier.
 
 
-## Bonus round: promises and generators
+## Bonus round: expanded capabilities
 
-
-This next bit involves a whole bunch of new ES6 features, but it's not something
-you need to understand to use promises in your code today. Treat it like a movie
-trailer for some upcoming blockbuster features.
-
-ES6 also gives us
-[generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#Generators),
-which allow functions to exit at a particular point, like "return", but
-later resume from the same point and state, for example:
-
-```js
-function *addGenerator() {
-  var i = 0;
-  while (true) {
-    i += yield i;
-  }
-}
-```
-
-Notice the star before the function name. This makes it a generator. The `yield`
-keyword is our return/resume point. We can use it like this:
-
-```js
-var adder = addGenerator();
-adder.next().value; // 0
-adder.next(5).value; // 5
-adder.next(5).value; // 10
-adder.next(5).value; // 15
-adder.next(50).value; // 65
-```
-
-But what does this mean for promises? Well, you can use this return/resume
-behaviour to write async code that looks like (and is as easy to follow as)
-synchronous code. Don't worry too much about understanding it line-for-line, but
-here's a helper function that lets us use `yield` to wait for promises to
-settle:
-
-```js
-function spawn(generatorFunc) {
-  function continuer(verb, arg) {
-    var result;
-    try {
-      result = generator[verb](arg);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-    if (result.done) {
-      return result.value;
-    } else {
-      return Promise.resolve(result.value)
-      .then(onFulfilled, onRejected);
-    }
-  }
-  var generator = generatorFunc();
-  var onFulfilled = continuer.bind(continuer, "next");
-  var onRejected = continuer.bind(continuer, "throw");
-  return onFulfilled();
-}
-```
-
-… which I pretty much
-[lifted verbatim from Q](https://github.com/kriskowal/q/blob/db9220d714b16b96a05e9a037fa44ce581715e41/q.js#L500),
-but adapted for JavaScript promises. With this, we can take our final
-best-case chapter example, mix it with a load of new ES6 goodness, and turn
-it into:
-
-```js
-spawn(function *() {
-  try {
-    // 'yield' effectively does an async wait,
-    // returning the result of the promise
-    let story = yield getJSON('story.json');
-    addHtmlToPage(story.heading);
-
-    // Map our array of chapter urls to
-    // an array of chapter json promises.
-    // This makes sure they all download in parallel.
-    let chapterPromises = story.chapterUrls.map(getJSON);
-
-    for (let chapterPromise of chapterPromises) {
-      // Wait for each chapter to be ready, then add it to the page
-      let chapter = yield chapterPromise;
-      addHtmlToPage(chapter.html);
-    }
-
-    addTextToPage("All done");
-  }
-  catch (err) {
-    // try/catch just works, rejected promises are thrown here
-    addTextToPage("Argh, broken: " + err.message);
-  }
-  document.querySelector('.spinner').style.display = 'none';
-})
-```
-
-{% Glitch {
-  id: 'promises-async-generator-example',
-  height: 480
-} %}
-
-This works exactly as before but is so much easier to read. This works in Chrome
-and Opera today, and works in Microsoft Edge by going to `about:flags` and
-turning on the **Enable experimental JavaScript features** setting. This will be
-enabled by default in an upcoming version.
-
-This throws together a lot of new ES6 stuff: promises, generators, let, for-of.
-When we yield a promise, the spawn helper waits for the promise to resolve and
-returns the final value. If the promise rejects, spawn causes our yield
-statement to throw an exception, which we can catch with normal JavaScript
-try/catch. Amazingly simple async coding!
-
-This pattern is so useful, it's coming to ES7 in the form of
-[async functions](https://jakearchibald.com/2014/es7-async-functions/). It's
-pretty much the same as above, but no need for a `spawn` method.
-
-## Promise API reference {: #promise-api-reference }
-
-All methods work in Chrome, Opera, Firefox, Microsoft Edge, and Safari
-unless otherwise noted. The
-[polyfill](https://github.com/jakearchibald/ES6-Promises#readme) provides
-the below for all browsers.
-
-### Static Methods
-
-<div class="w-table-wrapper">
-<table>
-<thead>
-<tr>
-<th>Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><code>Promise.resolve(promise);</code></td>
-  <td>Returns promise (only if <code>promise.constructor == Promise</code>)</td>
-</tr>
-<tr>
-  <td><code>Promise.resolve(thenable);</code></td>
-  <td>
-    Make a new promise from the thenable. A thenable is promise-like in as
-    far as it has a `then()` method.
-  </td>
-</tr>
-<tr>
-  <td><code>Promise.resolve(obj);</code></td>
-  <td>Make a promise that fulfills to <code>obj</code>. in this situation.</td>
-</tr>
-<tr>
-  <td><code>Promise.reject(obj);</code></td>
-  <td>
-    Make a promise that rejects to <code>obj</code>. For consistency and
-    debugging (e.g. stack traces), <code>obj</code> should be an
-    <code>instanceof Error</code>.
-  </td>
-</tr>
-<tr>
-  <td><code>Promise.all(array);</code></td>
-  <td>
-    Make a promise that fulfills when every item in the array fulfills, and
-    rejects if (and when) any item rejects. Each array item is passed to
-    <code>Promise.resolve</code>, so the array can be a mixture of
-    promise-like objects and other objects. The fulfillment value is
-    an array (in order) of fulfillment values. The rejection value is
-    the first rejection value.
-  </td>
-</tr>
-<tr>
-  <td><code>Promise.race(array);</code></td>
-  <td>
-    Make a Promise that fulfills as soon as any item fulfills, or rejects as
-    soon as any item rejects, whichever happens first.
-  </td>
-</tr>
-</tbody>
-</table>
-</div>
-
-Note: I'm unconvinced of `Promise.race`'s usefulness; I'd rather have an
-opposite of `Promise.all` that only rejects if all items reject.
-
-### Constructor
-
-<div class="w-table-wrapper">
-<table>
-<thead>
-<tr>
-<th>Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><code>new Promise(function(resolve, reject) {});</code></td>
-  <td>
-    <p>
-      <code>resolve(thenable)</code><br>
-      Your promise will be fulfilled/rejected with the outcome of
-      <code>thenable</code>
-    </p>
-    <p>
-      <code>resolve(obj)</code><br>
-      Your promise is fulfilled with <code>obj</code>
-    </p>
-    <p>
-      <code>reject(obj)</code><br>
-      Your promise is rejected with <code>obj</code>. For consistency and
-      debugging (e.g., stack traces), obj should be an <code>instanceof
-      Error</code>.  Any errors thrown in the constructor callback will be
-      implicitly passed to <code>reject()</code>.
-    </p>
-  </td>
-</tr>
-</tbody>
-</table>
-</div>
-
-### Instance Methods
-
-<div class="w-table-wrapper">
-<table>
-<thead>
-<tr>
-<th>Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><code>promise.then(onFulfilled, onRejected)</code></td>
-  <td>
-    <code>onFulfilled</code> is called when/if "promise" resolves.
-    <code>onRejected</code> is called when/if "promise" rejects. Both are
-    optional, if either/both are omitted the next
-    <code>onFulfilled</code>/<code>onRejected</code> in the chain is called.
-    Both callbacks have a single parameter, the fulfillment value or
-    rejection reason. <code>then()</code> returns a new promise equivalent to
-    the value you return from <code>onFulfilled</code>/<code>onRejected</code>
-    after being passed through <code>Promise.resolve</code>. If an error is
-    thrown in the callback, the returned promise rejects with that error.
-  </td>
-</tr>
-<tr>
-  <td><code>promise.catch(onRejected)</code></td>
-  <td>Sugar for <code>promise.then(undefined, onRejected)</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="clearfix"></div>
+Since I originally wrote this article, the ability to use Promises has expanded
+greatly. Since Chrome 55, async functions have allowed promise-based code to be
+written as if it were synchronous, but without blocking the main thread. You can
+read more about that in [my async functions article](/async-functions). There's
+widespread support for both Promises and async functions in the major browsers.
+You can find the details in MDN's
+[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+and [async
+function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function)
+reference.
 
 Many thanks to Anne van Kesteren, Domenic Denicola, Tom Ashworth, Remy Sharp,
 Addy Osmani, Arthur Evans, and Yutaka Hirano who proofread this and made

@@ -1,0 +1,190 @@
+{% from 'macros/tag-chips.njk' import tagChips with context %}
+{% from 'macros/authors.njk' import authorsMacro with context %}
+
+{#
+  Grab the ToC contents for headings ToC. This powers the list of headings
+  that appears on the right-hand side of the page. Unfortunately our use of
+  the word 'toc' is a bit overloaded :P
+#}
+{% set tocContents %}
+  {{- content | toc | safe -}}
+{% endset %}
+{% set tocTitle = 'i18n.toc.on_this_page' | i18n(locale) %}
+
+{% if hero %}
+  {% Img src=hero, alt=alt or '', fetchpriority='high', class='hero-image', height='480', width='1600', sizes='100vw' %}
+{% endif %}
+
+<div class="post wrapper" data-flush>
+  {% if path === undefined  %}
+    {% set postPaths = page | getPaths %}
+    {# Use first found path as a default path. #}
+    {% set path = paths[postPaths[0]] %}
+  {% endif %}
+  {% set safeTitle = title | trim | md({linkify: false}) | safe %}
+
+  <div class="sidebar region flex-align-start flex-dir-rev flex-wrap-no">
+    {% include 'partials/toc-side.njk' %}
+    {#
+      TODO: The legacy rollout task can be removed
+      when the design system has been full rolled-out across the site
+    #}
+    <article class="prose legacy-rollout">
+      <header class="flow gap-bottom-size-3">
+        {% if 'blog' in tags or crumbs %}
+          <nav class="breadcrumbs" aria-label="breadcrumbs">
+            <ul class="breadcrumbs__list" role="list">
+              <li>
+                <a
+                  class="gc-analytics-event"
+                  data-category="web.dev"
+                  data-label="post, home breadcrumb"
+                  data-action="click"
+                  href="/"
+                >
+                  {{site.titleVariation}}
+                </a>
+              </li>
+              {% if 'blog' in tags %}
+              <li>
+                <a
+                  class="gc-analytics-event"
+                  data-category="web.dev"
+                  data-label="post, path breadcrumb"
+                  data-action="click"
+                  href="/blog"
+                >
+                  {{ 'i18n.search.all_articles' | i18n(locale) }}
+                </a>
+              </li>
+              {% elif crumbs %}
+                {% for crumb in crumbs %}
+                  <li>
+                    <a
+                      class="gc-analytics-event"
+                      data-category="web.dev"
+                      data-label="post, path breadcrumb"
+                      data-action="click"
+                      href="{{crumb[1]}}"
+                    >
+                      {{crumb[0]}}
+                    </a>
+                  </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </nav>
+        {% endif %}
+
+        <h1>{{ safeTitle }}</h1>
+        {% if subhead | length %}
+          <p class="color-mid-text flow-space-base">
+            {{ subhead | md | safe }}
+          </p>
+        {% endif %}
+
+        {% if date %}
+          <div class="flow-space-size-1 color-mid-text text-size-0">
+            <time>{{date | prettyDate}}</time>
+            {% if updated %} — {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
+          </div>
+        {% endif %}
+
+        {% set languageListHtml %}{% LanguageList page.url, lang %}{% endset %}
+        {% if languageListHtml %}
+        <div class="flow">
+          {{ languageListHtml | safe }}
+        </div>
+        {% endif %}
+
+        {% SignPosts page.fileSlug %}
+
+        {% if authors %}
+          {{ authorsMacro() }}
+        {% endif %}
+      </header>
+
+      {% if draft and site.env === 'dev' %}
+        <div class="banner bg-state-warn-bg color-core-text">
+          <p><strong>{{ 'i18n.post.is_draft' | i18n(locale) }}</strong></p>
+        </div>
+      {% endif %}
+
+      {% include 'partials/toc-inner.njk' %}
+
+      {{ content | safe }}
+
+      {% if stack_overflow_tag %}
+        {% StackOverflow stack_overflow_tag %}
+      {% endif %}
+
+      <nav class="cluster gutter-base flow-space-size-2" aria-label="tags">
+        {% for tagKey in tags or [] %}
+          {% if tagKey in collections.tags %}
+            {% set tag = collections.tags[tagKey] %}
+            <a class="pill" href="{{tag.url}}">{{tag.overrideTitle or tag.title | i18n(locale)}}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+
+      <div class="text-size-0 color-mid-text">
+        <span>
+          {% if updated %}
+          {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
+          {% else %}
+          {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
+          {% endif %}
+        </span>
+        —
+        <a
+          href="{{ page.inputPath | githubLink }}"
+        >
+          {{ 'i18n.post.improve_article' | i18n(locale) }}
+        </a>
+      </div>
+
+      {% if codelabs %}
+        <div class="flow-space-size-2">
+          {% CodelabsCallout codelabs, lang %}
+        </div>
+      {% endif %}
+
+      {% if 'blog' in tags %}
+        {% set backUrl = '/blog' %}
+        {% set backLabel = 'Return to all articles' %}
+      {% elif path %}
+        {% set backUrl = '/' + path.slug %}
+        {% set backLabel = 'Return to all articles' %}
+      {% endif %}
+
+      {% if backLabel and backUrl %}
+        <div class="flow-space-size-2">
+          <a href="{{ backUrl }}" class="button" data-type="secondary">
+            {% include 'icons/arrow-back.svg' %}
+            <span>{{ backLabel }}</span>
+          </a>
+        </div>
+      {% endif %}
+      <div class="docked-actions flow flow-space-base">
+        <div>
+          <share-action class="gc-analytics-event fab"
+            authors="{{ authors | expandAuthors(collections.authors, lang) }}"
+            data-category="web.dev"
+            data-label="share"
+            data-action="click"
+            data-type="primary"
+            data-icon="share"
+            tabindex="0"
+            role="button"
+          >
+            {% include "icons/share.svg" %}
+            <span class="fab__label">{{ 'i18n.common.share' | i18n(locale) }}</span>
+          </share-action>
+        </div>
+        <div>
+          {% include 'partials/subscribe-action.njk' %}
+        </div>
+      </div>
+    </article>
+  </div>
+</div>

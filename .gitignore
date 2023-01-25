@@ -69,10 +69,6 @@ typings/
 # build artifacts
 dist
 
-# deploy scripts
-devsite.js
-local-devsite.js
-
 # DS_Store
 .DS_Store
 
@@ -82,6 +78,14 @@ entrypoint.hashmanifest.json
 .vscode
 
 # Temporary files
+.cache
 .tmp
+.cache
 .firebase
 firebase.json
+src/scss/_tokens.scss
+src/scss/_themes.scss
+
+# Eleventy
+# We generate our own .eleventyignore file dynamically during builds
+.eleventyignore

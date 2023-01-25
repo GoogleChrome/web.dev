@@ -1,24 +1,78 @@
 title:
   en: Safe and secure
+  es: Seguro y protegido
+  ja: 安全とセキュリティ
+  ko: 안전한 보안 환경
+  pt: Seguro e protegido
+  ru: Безопасность и надежность
+  zh: 安全且可靠
 
 description:
   en: Ensure your site and your users' data is secure.
+  es: Asegúrese de que su sitio web y los datos de sus usuarios están seguros.
+  ja: あなたのサイトとユーザーのデータを確実にセキュリティで保護しましょう。
+  ko: 사이트와 사용자 데이터를 안전하게 지키세요.
+  pt: Garanta que seu site e os dados de seus usuários estejam seguros.
+  ru: Обеспечьте безопасность своего сайта и пользовательских данных.
+  zh: 确保您的网站和用户数据安全。
 
 overview:
   en: Every website is vulnerable to attack—not just those handling sensitive data. In this section you'll learn simple techniques to keep your users, your content and your business secure.
+  es: Todos los sitios web son vulnerables a ataques, no solo los que manejan datos confidenciales. En esta sección aprenderá técnicas sencillas para mantener seguros a sus usuarios, su contenido y su empresa.
+  ja: 機密データを扱う Web サイトだけでなく、あらゆる Web サイトが攻撃に対する脆弱性を抱えています。このセクションでは、ユーザー、コンテンツ、ビジネスを安全に保つために有効となる簡単なテクニックをご紹介します。
+  ko: 민감한 데이터를 처리하는 웹사이트뿐만 아니라 모든 웹사이트가 공격에 취약합니다. 이 섹션에서는 사용자, 콘텐츠 및 비즈니스를 안전하게 보호하는 간단한 기술을 알아봅니다.
+  pt: Cada site é vulnerável a ataques – não apenas aqueles que lidam com dados confidenciais. Nesta seção, você aprenderá técnicas simples para manter seus usuários, seu conteúdo e sua empresa seguros.
+  ru: Любые сайты подвержены атакам — даже те, которые не обрабатывают конфиденциальную информацию. В этом разделе вы узнаете простые методы, которые помогут защитить ваших пользователей, ваш контент и ваш бизнес.
+  zh: 不仅那些处理敏感数据的网站容易受到攻击，其实每个网站都容易受到攻击。在本部分中，您将了解能够保持您的用户、内容和业务安全的简单技术。
 
 topics:
   understand_security_basics:
     en: Understand security basics
+    es: Comprenda los conceptos básicos de seguridad
+    ja: セキュリティの基礎を理解する
+    ko: 보안 기초 이해하기
+    pt: Compreenda os fundamentos da segurança
+    ru: Понимание основ безопасности
+    zh: 了解安全基础知识
 
   secure_connections_with_https:
     en: Secure connections with HTTPS
+    es: Conexiones seguras con HTTPS
+    ja: HTTPS を利用した安全な接続
+    ko: HTTPS를 통한 보안 연결
+    pt: Conexões seguras com HTTPS
+    ru: Безопасные соединения с использованием HTTPS
+    zh: 使用 HTTPS 进行安全连接
 
   prevent_info_leaks:
     en: Prevent info leaks
+    es: Prevención de filtraciones de información
+    ja: 情報漏洩を防ぐ
+    ko: 정보 유출 방지
+    pt: Prevenção de vazamentos de informações
+    ru: Предотвращение утечек информации
+    zh: 防止信息泄露
 
   protect_websites_from_xss:
     en: Protect websites from XSS
+    es: Protege los sitios web de ataques XSS
+    ja: XSS から Web サイトを保護する
+    ko: XSS로부터 웹사이트 보호
+    pt: Proteja os sites de ataques XSS
+    ru: Защита сайтов от XSS-атак
+    zh: 保护网站免受 XSS 攻击
 
   protect_users_from_tracking:
     en: Protect users from tracking
+    es: Protege a los usuarios del rastreo
+    ja: トラッキングからユーザーを保護する
+    ko: 추적으로부터 사용자 보호
+    pt: Proteja os usuários de rastreamento
+    ru: Защита пользователей от отслеживания
+    zh: 保护用户免受跟踪
+
+  monitor_security_violations_deprecations:
+    en: Monitor security violations and deprecations
+
+  help_ive_been_hacked:
+    en: Help! I've been hacked

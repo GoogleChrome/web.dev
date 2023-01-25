@@ -35,11 +35,11 @@ differences lie in configurations that allow content to be shown appropriately
 for augmented reality. If you're not familiar with the basic concepts of WebXR,
 you should read my earlier posts on the WebXR Device API, or at least be
 familiar with the topics covered therein. You should know how to [request and
-enter a session](https://web.dev/vr-comes-to-the-web/) and you should know how
-to run [a frame loop](https://web.dev/vr-comes-to-the-web-pt-ii).
+enter a session](/vr-comes-to-the-web/) and you should know how
+to run [a frame loop](/vr-comes-to-the-web-pt-ii).
 
 For information on hit testing, see the companion article [Positioning virtual
-objects in real-world views](https://web.dev/ar-hit-test). The code in this
+objects in real-world views](/ar-hit-test). The code in this
 article is based on the Immersive AR Session sample
 ([demo](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html)
 [source](https://github.com/immersive-web/webxr-samples/blob/master/immersive-vr-session.html)) from
@@ -192,7 +192,7 @@ right, up, and backward, respectively.
 
 The coordinates returned by `XRFrame.getViewerPose()` depend on the requested
 [reference space
-type](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace#Reference_space_types).
+type](https://developer.mozilla.org/docs/Web/API/XRReferenceSpace#Reference_space_types).
 More about that when we get to the frame loop. Right now we need to select a
 reference type that's appropriate for augmented reality. Again, this uses my
 convenience property.

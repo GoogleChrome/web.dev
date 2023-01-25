@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Custom bullets with CSS ::marker
-subhead: It is now trivial to customize the color, size or type of number or bullet when using a <ul> or <ol>. 
+subhead: It is now trivial to customize the color, size or type of number or bullet when using a <ul> or <ol>.
 authors:
   - adamargyle
   - loirooriol
@@ -16,22 +17,24 @@ thumbnail: image/admin/jbdOq0tGGzobMtaBsajn.png
 alt: Showing the anatomy of a single list item by putting separate boxes around the bullet and the text
 feedback:
   - api
---- 
+---
 
 Thanks to Igalia, sponsored by Bloomberg, we can finally put our hacks away for styling lists. See!
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="marker-fun.png">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384" %}
+  <figcaption>
     <a href="https://glitch.com/edit/#!/marker-fun-example">View Source</a>
   </figcaption>
 </figure>
 
-Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we can change the content and some of the styles of bullets and numbers. 
+Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we can change the content and some of the styles of bullets and numbers.
 
-## Browser compatibilty
+## Browser compatibility
 
-`::marker` is supported in Firefox for desktop and Android, desktop Safari and iOS Safari (but only the `color` and `font-*` properties, see [Bug 204163](https://bugs.webkit.org/show_bug.cgi?id=204163)), and Chromium-based desktop and Android browsers. See MDN's [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#Browser_compatibility) table for updates.
+`::marker` is supported in Firefox for desktop and Android, desktop Safari and iOS Safari (but only the `color` and `font-*` properties, see [Bug 204163](https://bugs.webkit.org/show_bug.cgi?id=204163)), and Chromium-based desktop and Android browsers.
+
+{% BrowserCompat 'css.selectors.marker' %}
 
 ## Pseudo-elements
 Consider the following essential HTML unordered list:
@@ -52,11 +55,12 @@ Which results in the following unsurprising rendering:
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-plain-list?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
-The dot at the beginning of each `<li>` item is free! The browser is drawing and creating a generated marker box for you. 
+The dot at the beginning of each `<li>` item is free! The browser is drawing and creating a generated marker box for you.
 
 Today we're excited to talk about the `::marker` pseudo-element, which gives the ability to style the bullet element that browsers create for you.
 
@@ -82,6 +86,7 @@ li::before {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-before-example?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -111,6 +116,7 @@ dd {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-definition-list?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -131,6 +137,7 @@ li {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-list-style-type?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -151,6 +158,7 @@ li:first-child::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-style-introduction?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -171,13 +179,13 @@ That said, you can't use every CSS property on a `::marker`. The list of which p
 - `font-*`
 - `content`
 - `unicode-bidi`
-- `white-space` 
+- `white-space`
 
 Changing the contents of a `::marker` is done with `content` as opposed to `list-style-type`. In this next example the first item is styled using `list-style-type` and the second with `::marker`. The properties in the first case apply to the entire list item, not just the marker, which means that the text is animating as well as the marker. When using `::marker` we can target just the marker box and not the text.
 
 Also, note how the disallowed `background` property has no effect.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'List Styles' %}
 ```css
 li:nth-child(1) {
@@ -217,6 +225,7 @@ Focused results between marker and list item
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-style-vs-list-style-type?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -246,6 +255,7 @@ li::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-change-all?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -261,6 +271,7 @@ li:last-child::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-change-one?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -278,16 +289,17 @@ li::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-inline-svg?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
-**Changing numbered lists**  
-What about an `<ol>` though? The marker on an ordered list item is a number and not a bullet by default. In CSS these are called [Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters), and they're quite powerful. They even have properties to set and reset where the number starts and ends, or switching them to roman numerals. Can we style that? Yep, and we can even use the marker content value to build our own numbering presentation.
+**Changing numbered lists**
+What about an `<ol>` though? The marker on an ordered list item is a number and not a bullet by default. In CSS these are called [Counters](https://developer.mozilla.org/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters), and they're quite powerful. They even have properties to set and reset where the number starts and ends, or switching them to roman numerals. Can we style that? Yep, and we can even use the marker content value to build our own numbering presentation.
 
 ```css
 li::marker {
-  content: counter(list-item) "› "; 
+  content: counter(list-item) "› ";
   color: hotpink;
 }
 ```
@@ -296,6 +308,7 @@ li::marker {
   <iframe
     src="https://glitch.com/embed/#!/embed/marker-numbered-lists?path=style.css&previewSize=100"
     alt="List Demo on Glitch"
+    loading="lazy"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -303,8 +316,8 @@ li::marker {
 ### Debugging
 Chrome DevTools is ready to help you inspect, debug and modify the styles applying to `::marker` pseudo elements.
 
-<figure class="w-figure">
-  <img class="w-screenshot" style="max-inline-size: 480px" src='./devtools.png' alt="DevTools open and showing styles from the user agent and the user styles">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools open and showing styles from the user agent and the user styles", width="776", height="574", style="max-inline-size: 480px" %}
 </figure>
 
 ### Future Pseudo-element styling
@@ -312,6 +325,6 @@ You can find out more about ::marker from:
 
 - [CSS Lists, Markers and Counters](https://www.smashingmagazine.com/2019/07/css-lists-markers-counters/) from [Smashing Magazine](https://www.smashingmagazine.com/)
 - [Counting With CSS Counters and CSS Grid](https://css-tricks.com/counting-css-counters-css-grid/) from [CSS-Tricks](https://css-tricks.com/)
-- [Using CSS Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) from [MDN](https://developer.mozilla.org/)
+- [Using CSS Counters](https://developer.mozilla.org/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) from [MDN](https://developer.mozilla.org/)
 
 It's great to get access to something which has been hard to style. You might wish that you could style other automatically generated elements. You might be frustrated with `<details>` or the search input autocomplete indicator, things that are not implemented in the same way across browsers. One way to share what you need is by creating a want at [https://webwewant.fyi](https://webwewant.fyi).

@@ -22,9 +22,9 @@ Before diving into semantics, it's helpful to understand another term:
 **affordances**. An affordance is any object that offers, or affords, its user
 the opportunity to perform an action. A classic example is the teapot:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/EXqR31Kq3mosH6jv6jiG.png", alt="", width="640", height="446" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A teapot's handle is a natural affordance.
   </figcaption>
 </figure>
@@ -73,8 +73,8 @@ properties:
 - A **value** (optional)
 - A **state** (optional)
 
-An element's **role** describes its type, i.e. "button," "input," or even just
-"group" for things like `div`'s and `span`'s.
+An element's **role** describes its type, for example, "button," "input," or even just
+"group" for things like `div` and `span` elements.
 
 An element's **name** is its computed label. Screen readers typically announce
 an element's name followed by its role, e.g. "Sign Up, button." The algorithm
@@ -95,7 +95,7 @@ _collapsed_ state, depending on if it's open or closed.
 
 For each node in the DOM, the browser determines if the
 node is semantically "interesting" and adds it to [the accessibility
-tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree).
+tree](/the-accessibility-tree/).
 When assistive technology, like a screen reader, is providing an alternative UI
 to the user, it is often doing so by walking this accessibility tree.
 
@@ -103,12 +103,12 @@ to the user, it is often doing so by walking this accessibility tree.
 Browsers will often remove semantically uninteresting nodes like `div` and
 `span` from the accessibility tree, especially if they're just being used to
 position their children with CSS. For instance, if you have a `button` nested
-inside of 5 `div`'s, the browser may prune out some of the `div`'s in the middle
+inside of 5 `div` elements, the browser may prune out some of the `div` elements in the middle
 to cut down on noise.
 {% endAside %}
 
 Using Chrome's DevTools you can [inspect an element's semantic
-properties](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
+properties](https://developer.chrome.com/docs/devtools/accessibility/reference/#pane)
 and explore its position in the accessibility tree.
 
 ## Next steps
@@ -116,4 +116,4 @@ and explore its position in the accessibility tree.
 Once you know a bit about semantics and how they aid screen reader navigation,
 you can't help but look at the pages you build differently. In the next section,
 we'll take a step back and consider how the entire outline of a page can be
-conveyed using effective headings and landmarks.
+conveyed using effective [headings and landmarks](/headings-and-landmarks/).

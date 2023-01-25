@@ -1,0 +1,40 @@
+{
+  "title": "Cards",
+  "context": {
+    "title": "Blibli's PWA generates 10x more revenue per user than their previous mobile website",
+    "summary": "How Blibli achieved a 42% reduction in bounce rate, an 8x improvement in mobile conversion rate, and 2.5x more pages per session.",
+    "url": "#",
+    "date": "Jun 15, 2021",
+    "img": {
+      "src": "https://web-dev.imgix.net/image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/nO8c2UEgQRXsoYVp3tZO.png?auto=format&w=1600",
+      "alt": "Images of the BliBli app."
+    },
+    "authors": [
+      {
+        "name": "Collin Dion Agata",
+        "url": "https://web.dev/authors/collindionagata/",
+        "image": "https://web-dev.imgix.net/image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ZpE2N6yjkaqQNcSiaxvR.jpeg?fit=crop&h=64&w=64&auto=format&dpr=2&q=50"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "name": "multiple-authors",
+      "title": "Multiple Authors",
+      "context": {
+        "authors": [
+          {
+            "name": "Collin Dion Agata",
+            "url": "https://web.dev/authors/collindionagata/",
+            "image": "https://web-dev.imgix.net/image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ZpE2N6yjkaqQNcSiaxvR.jpeg?fit=crop&h=64&w=64&auto=format&dpr=2&q=50"
+          },
+          {
+            "name": "Swetha Gopalakrishnan",
+            "url": "https://web.dev/authors/swethagopalakrishnan/",
+            "image": "https://web-dev.imgix.net/image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/Mpe7GGUwnUsy9Gx7UxZK.jpg?fit=crop&h=64&w=64&auto=format&dpr=2&q=50"
+          }
+        ]
+      }
+    }
+  ]
+}

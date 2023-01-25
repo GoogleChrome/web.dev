@@ -1,0 +1,12 @@
+{
+  "title": "With a visually hidden heading",
+  "context": {
+    "title": "Learn CSS",
+    "summary": "Let’s gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.",
+    "url": "#",
+    "img": {
+      "src": "https://web.dev/images/courses/css/card.svg",
+      "alt": "Illustration"
+    }
+  }
+}

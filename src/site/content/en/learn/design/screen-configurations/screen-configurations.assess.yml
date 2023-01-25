@@ -1,0 +1,31 @@
+setLeader: Test your knowledge of screen configurations
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: |
+      Which media query targets a foldable device in a split landscape mode?
+    options:
+      - content: "`@media (horizontal-viewport-segments: 2) and (vertical-viewport-segments: 1)`"
+        rationale: "Screen configured with 2 columns and 1 row, split landscape."
+      - content: "`@media (vertical-viewport-segments: 2) and (horizontal-viewport-segments: 1)`"
+        rationale: "2 rows and 1 column, split portrait."
+      - content: "`@media (vertical-viewport-segments: 2) and (horizontal-viewport-segments: 2)`"
+        rationale: "2 rows and 2 columns, split 4 ways."
+      - content: "`@media (vertical-viewport-segments: 1) and (horizontal-viewport-segments: 1)`"
+        rationale: "Single cell, no splits."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: |
+      What are environment variables? Eg `env(safe-area-inset-top)`
+    options:
+      - content: "Variables about the weather the user is in."
+        rationale: "Wrong environment, these CSS variables aren't about the physical world environment the user is in."
+      - content: "Custom build time variables."
+        rationale: "While build time, compiled way, variables are useful, they are not the same as the environment variables specced."
+      - content: "Variables containing browser specific attributes for use in adjusting a site to that browser and device."
+        rationale: "It's a way for the browser and an author to collaborate on unique viewport contexts or browser impacting attributes."
+      - content: "Variables which have gone green and are safer for the environment."
+        rationale: "CSS and it's variables can't impact world polution less."

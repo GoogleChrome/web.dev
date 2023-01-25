@@ -1,2 +1,11 @@
-table_of_contents:
-  en: Table of contents
+on_this_page:
+  en: On this page
+  es: En esta página
+  ja: このページ内
+  ko: 이 페이지에서
+  pt: Nesta página
+  ru: Содержание
+  zh: 本页内容
+
+toc:
+  en: Table of Contents

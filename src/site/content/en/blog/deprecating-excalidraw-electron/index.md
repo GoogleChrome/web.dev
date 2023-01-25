@@ -12,7 +12,7 @@ description: |
 authors:
   - thomassteiner
 date: 2021-01-07
-updated: 2021-01-27
+updated: 2021-11-30
 canonical: https://blog.excalidraw.com/deprecating-excalidraw-electron/
 hero: image/admin/qfK9zbKBQalqq5zdr1P1.jpg
 alt: |
@@ -112,24 +112,24 @@ Excalidraw Desktop so far is basically the Excalidraw web app bundled as an
 [`.asar`](https://github.com/electron/asar) file with an added **About Excalidraw** window. The look
 and feel of the application is almost identical to the web version.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/oR9usELiRYTSu8V7i7vj.png", alt="The Excalidraw Desktop application running in an Electron wrapper.", width="800", height="601" %}
-  <figcaption class="w-figcaption">Excalidraw Desktop is almost indistinguishable from the web version</figcaption>
+  <figcaption>Excalidraw Desktop is almost indistinguishable from the web version</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/y9d4nWR3p0VjvHcnP0iq.png", alt="The Excalidraw Desktop 'About' window displaying the version of the Electron wrapper and the web app.", width="400", height="330" %}
-  <figcaption class="w-figcaption">The <strong>About Excalibur</strong> menu providing insights into the versions</figcaption>
+  <figcaption>The <strong>About Excalibur</strong> menu providing insights into the versions</figcaption>
 </figure>
 
 On macOS, there is now a system-level menu at the top of the application, but since none of the menu
-actions—apart from **Close Window** and **About Excalidraw**—are hooked up to to anything, the menu
+actions—apart from **Close Window** and **About Excalidraw**—are hooked up to anything, the menu
 is, in its current state, pretty useless. Meanwhile, all actions can of course be performed via the
 regular Excalidraw toolbars and the context menu.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/akQQgmMKo66quqeVDdAH.png", alt="The Excalidraw Desktop menu bar on macOS with the 'File', 'Close Window' menu item selected.", width="736", height="138" %}
-  <figcaption class="w-figcaption">The menu bar of Excalidraw Desktop on macOS</figcaption>
+  <figcaption>The menu bar of Excalidraw Desktop on macOS</figcaption>
 </figure>
 
 We use [electron-builder](https://github.com/electron-userland/electron-builder), which supports
@@ -174,21 +174,21 @@ outline why we think we do not need Electron.
 
 Excalidraw today is an [installable](/installable/) Progressive Web App with a
 [service worker](https://excalidraw.com/service-worker.js) and a
-[Web App Manifest](https://excalidraw.com/manifest.json). It caches all its resources in two caches,
+[web app manifest](https://excalidraw.com/manifest.json). It caches all its resources in two caches,
 one for fonts and font-related CSS, and one for everything else.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/tTo7miHIREZRySv8aoBd.png", alt="Chrome DevTools Application tab showing the two Excalidraw caches.", width="800", height="569" %}
-  <figcaption class="w-figcaption">Excalidraw's cache contents</figcaption>
+  <figcaption>Excalidraw's cache contents</figcaption>
 </figure>
 
 This means the application is fully offline-capable and can run without a network connection.
 Chromium-based browsers on both desktop and mobile prompt the user to install the app.
 You can see the installation prompt in the screenshot below.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/be3EQLezj3776w6SHLPi.png", alt="Excalidraw prompting the user to install the app in Chrome on macOS.", width="400", height="258" %}
-  <figcaption class="w-figcaption">The Excalidraw install dialog in Chrome</figcaption>
+  <figcaption>The Excalidraw install dialog in Chrome</figcaption>
 </figure>
 
 Excalidraw is configured to run as a standalone application, so when you install it, you get an app
@@ -196,14 +196,14 @@ that runs in its own window. It is fully integrated in the operating system's mu
 gets its own app icon on the home screen, Dock, or task bar; depending on the platform where you install
 it.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/MbMgQlGSBeNcX7Y362jV.png", alt="Excalidraw running in its own window.", width="800", height="584" %}
-  <figcaption class="w-figcaption">The Excalidraw PWA in a standalone window</figcaption>
+  <figcaption>The Excalidraw PWA in a standalone window</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/7ncf98ZQZcg4g3UP2s7F.png", alt="Excalidraw icon on the macOS Dock.", width="400", height="167" %}
-  <figcaption class="w-figcaption">The Excalidraw icon on the macOS Dock</figcaption>
+  <figcaption>The Excalidraw icon on the macOS Dock</figcaption>
 </figure>
 
 ### File system access
@@ -228,9 +228,9 @@ individual objects can be copied and pasted in `image/png` and `image/svg+xml` f
 an easy integration with other platform-specific tools like [Inkscape](https://inkscape.org/) or web-based
 tools like [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/90gLbYTtkKtDfun4fiRM.png", alt="Excalidraw context menu showing the 'copy to clipboard as SVG' and 'copy to clipboard as PNG' menu items.", width="800", height="746" %}
-  <figcaption class="w-figcaption">The Excalidraw context menu offering clipboard actions</figcaption>
+  <figcaption>The Excalidraw context menu offering clipboard actions</figcaption>
 </figure>
 
 ### File handling
@@ -259,7 +259,7 @@ enhancement strategy, we enjoy the latest and greatest wherever possible, but wi
 behind. Best viewed in _any_ browser.
 
 Electron has served us well, but in 2020 and beyond, we can live without it. Oh, and for that
-objective of [@vjeux](https://github/com/vjeux): since the Android Play Store now accepts PWAs in a
+objective of [@vjeux](https://github.com/vjeux): since the Android Play Store now accepts PWAs in a
 container format called [Trusted Web Activity](/using-a-pwa-in-your-android-app/) and
 since the
 [Microsoft Store supports PWAs](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-edgehtml/microsoft-store),

@@ -20,12 +20,12 @@ feedback:
   first.
 {% endAside %}
 
-[`Workbox`](https://developers.google.com/web/tools/workbox/) is built into
+[`Workbox`](https://developer.chrome.com/docs/workbox/) is built into
 Create React App (CRA) with a default configuration that precaches all the
 static assets in your application with every build.
 
-<figure class="w-figure w-figure--inline-right">
-  <img src="./service-workers.png" width="300" alt="Requests/responses with service worker">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3s4l29dJ6ch6QBmTvVg3.png", alt="Requests/responses with service worker", width="800", height="1224" %}
 </figure>
 
 ## Why is this useful?
@@ -40,7 +40,7 @@ ability to surface content when the user is offline.
 
 **Workbox** is a collection of tools that allow you create and maintain service
 workers. In CRA, the
-[`workbox-webpack-plugin`](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
+[`workbox-webpack-plugin`](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/)
 is already included into the production build and only needs to be enabled in
 the `src/index.js` file in order to register a new service worker with every
 build:
@@ -75,7 +75,7 @@ You'll notice that instead of showing the payload size, the `Size` column shows
 a `(from ServiceWorker)` message to indicate that these resources were retrieved
 from the service worker.
 
-<img class="w-screenshot w-screenshot--filled" src="./network-requests-sw.png" alt="Network requests with a service worker">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N7YbiAIT88s8wPUriwo0.png", alt="Network requests with a service worker", width="800", height="450" %}
 
 Since the service worker caches all static assets, try to use the application
 while offline:
@@ -106,7 +106,7 @@ single `workbox.config.js` file.
 {% Aside %}
 For more details on all the caching strategies that a service worker can use,
 take a look at the
-[Offline Cookbook](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/).
+[Offline Cookbook](/offline-cookbook/).
 {% endAside %}
 
 ## Handling a cache-first strategy

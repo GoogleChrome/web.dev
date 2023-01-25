@@ -7,41 +7,47 @@ on:
     branches:
       - main
     paths:
-      - 'src/**.js'
-      - 'shared/**.js'
-      - '!src/site/_data/countries.js'
-      - 'package.json'
-      - '**.njk'
       - '**.scss'
+      - 'package.json'
+      - 'src/component-library/**'
+      - 'src/fonts/**'
+      - 'src/build/**.js'
+      - 'src/**.js'
+      - '!src/site/_collections/**.js'
+      - '!src/site/_data/**.js'
+      - '!src/site/content/**.js'
+      - 'shared/**.js'
+      - 'src/site/content/en/handbook/content-types/**'
+
   pull_request:
     paths:
-      - 'src/**.js'
-      - 'shared/**.js'
-      - '!src/site/_data/countries.js'
-      - 'package.json'
-      - '**.njk'
+      - '.github/workflows/percy-workflow.yml'
       - '**.scss'
+      - 'package.json'
+      - 'src/component-library/**'
+      - 'src/fonts/**'
+      - 'src/build/**.js'
+      - 'src/**.js'
+      - '!src/site/_collections/**.js'
+      - '!src/site/_data/**.js'
+      - '!src/site/content/**.js'
+      - 'shared/**.js'
+      - 'src/site/content/en/handbook/content-types/**'
 
 jobs:
   percy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1.0.0
-      - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v2
         with:
-          node-version: '14.x'
-      - name: Cache node_modules
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          fetch-depth: 1
+
       - name: Install
         run: npm ci
+
       - name: Percy
         env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: npm run percy

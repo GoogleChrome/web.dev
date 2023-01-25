@@ -29,7 +29,7 @@ The instructions here assume that you're already familiar with
 service workers and the basics of requesting notification permission and sending notifications.
 If you need a refresher on notifications, see the
 [Get started with the Notifications API](/codelab-notifications-get-started)
-codelab. To learn more about service workers, see Matt Gaunt's [Introduction to service workers](https://developers.google.com/web/fundamentals/primers/service-workers).
+codelab. To learn more about service workers, see Matt Gaunt's [Introduction to service workers](https://developer.chrome.com/docs/workbox/service-worker-overview/).
 
 ## Remix the sample app and view it in a new tab
 
@@ -74,7 +74,7 @@ Now let's take a look at the sample app's code in the embedded Glitch on this pa
 1.  In the embedded Glitch, open `public/service-worker.js`.
 
     As the name suggests, you'll add code to the app to register this file as a
-    [service worker](https://developers.google.com/web/fundamentals/primers/service-workers).
+    [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/).
 
     Although the file is not yet in use by the app, it contains some starting code that will print a message to the console when the service worker is activated.
 
@@ -105,7 +105,7 @@ For the purposes of this codelab, you'll build an app that you can play with and
     }
     ```
 
-    Note that `registerServiceWorker` uses the [`async function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) declaration to make handling promises more convenient. This lets you `await` the resolved value of a `Promise`. For example, the function above awaits the outcome of registering a service worker before updating the UI. See [`await` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) for more information.
+    Note that `registerServiceWorker` uses the [`async function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) declaration to make handling promises more convenient. This lets you `await` the resolved value of a `Promise`. For example, the function above awaits the outcome of registering a service worker before updating the UI. See [`await` on MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) for more information.
 
 1.  Now that the user can register a service worker, you can get a reference to the service worker registration object. In `public/index.js`, replace the `getRegistration` function with the following code:
 
@@ -117,7 +117,7 @@ For the purposes of this codelab, you'll build an app that you can play with and
     ```
 
     The function above uses the
-    [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+    [Service Worker API](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)
     to get the current service worker registration, if it exists.
     It makes getting a reference to the service worker registration a bit more convenient.
 
@@ -174,9 +174,9 @@ Here's what that code is doing:
 
 *   `sendNotification` is an asynchronous function, so you can use `await` to get a reference to the service worker registration.
 
-*   The service worker's `postMessage` method sends data from the app to the service worker. See the [MDN documentation on  postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage) for more information.
+*   The service worker's `postMessage` method sends data from the app to the service worker. See the [MDN documentation on  postMessage](https://developer.mozilla.org/docs/Web/API/Worker/postMessage) for more information.
 
-*   The code checks for the presence of the `navigator.serviceWorker.controller` property before trying to access the `postMessage` function. `navigator.serviceWorker.controller` will be `null` if there is no active service worker, or if the page has been force refreshed (`Shift+`**Reload**). See the [ServiceWorker controller documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/controller) for more information.
+*   The code checks for the presence of the `navigator.serviceWorker.controller` property before trying to access the `postMessage` function. `navigator.serviceWorker.controller` will be `null` if there is no active service worker, or if the page has been force refreshed (`Shift+`**Reload**). See the [ServiceWorker controller documentation on MDN](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controller) for more information.
 
 ## Handle notifications in the service worker
 

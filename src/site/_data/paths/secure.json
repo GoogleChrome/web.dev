@@ -1,6 +1,6 @@
 {
   "slug": "secure",
-  "cover": "/images/collections/secure.svg",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/gVpSImYQruckFe6Srvxv.svg",
   "title": "i18n.paths.secure.title",
   "updated": "May 24, 2018",
   "description": "i18n.paths.secure.description",
@@ -11,13 +11,15 @@
       "pathItems": [
         "security-not-scary",
         "security-attacks",
-        "same-site-same-origin"
+        "same-site-same-origin",
+        "security-headers"
       ]
     },
     {
       "title": "i18n.paths.secure.topics.secure_connections_with_https",
       "pathItems": [
         "why-https-matters",
+        "enable-https",
         "what-is-mixed-content",
         "fixing-mixed-content",
         "when-to-use-local-https",
@@ -37,7 +39,7 @@
     },
     {
       "title": "i18n.paths.secure.topics.protect_websites_from_xss",
-      "pathItems": ["trusted-types"]
+      "pathItems": ["trusted-types", "strict-csp"]
     },
     {
       "title": "i18n.paths.secure.topics.protect_users_from_tracking",
@@ -45,12 +47,41 @@
         "digging-into-the-privacy-sandbox",
         "samesite-cookies-explained",
         "samesite-cookie-recipes",
+        "first-party-cookie-recipes",
         "referrer-best-practices",
         "trust-tokens",
-        "conversion-measurement",
-        "using-conversion-measurement",
         "user-agent-client-hints",
-        "schemeful-samesite"
+        "schemeful-samesite",
+        "floc"
+      ]
+    },
+    {
+      "title": "i18n.paths.secure.topics.monitor_security_violations_deprecations",
+      "pathItems": [
+        "reporting-api",
+        "reporting-api-migration",
+        "network-error-logging"
+      ]
+    },
+    {
+      "title": "i18n.paths.secure.topics.help_ive_been_hacked",
+      "pathItems": [
+        "hacked",
+        "how-do-i-know-if-my-site-was-hacked",
+        "top-ways-sites-get-hacked-by-spammers",
+        "build-a-support-team",
+        "quarantine-your-site",
+        "use-search-console",
+        "assess-spam-damage",
+        "fixing-the-japanese-kayword-hack",
+        "fixing-the-gibberish-hack",
+        "fixing-the-cloaked-keywords-hack",
+        "hacked-with-malware",
+        "identify-the-vulnerability",
+        "clean-and-maintain-your-site",
+        "request-a-review",
+        "glossary-for-hacked-sites",
+        "faq-for-hacked-sites"
       ]
     }
   ]

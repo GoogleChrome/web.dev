@@ -1,0 +1,29 @@
+web-subscribe {
+  display: block;
+  padding: get-space('size-3') 0;
+  border-block-start: 1px solid var(--color-stroke);
+
+  .wrapper {
+    max-width: 50rem;
+  }
+
+  form .cluster {
+    flex-wrap: nowrap;
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  // See https://github.com/GoogleChrome/web.dev/issues/7638#issuecomment-1087607518
+  input:not([type]),
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  textarea,
+  select {
+    max-width: unset;
+  }
+
+  .g-recaptcha {
+    height: 78px;
+  }
+}

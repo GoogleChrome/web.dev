@@ -1,9 +1,9 @@
 {
   "slug": "metrics",
-  "cover": "/images/collections/metrics.svg",
+  "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HEYcHDKWo6u5S9Cq4etF.svg",
   "title": "i18n.paths.metrics.title",
-  "description": "i18n.paths.metrics.description",
   "overview": "i18n.paths.metrics.overview",
+  "description": "i18n.paths.metrics.description",
   "topics": [
     {
       "title": "i18n.paths.metrics.topics.introduction",
@@ -14,12 +14,14 @@
     {
       "title": "i18n.paths.metrics.topics.important_metrics_to_measure",
       "pathItems": [
+        "ttfb",
         "fcp",
         "lcp",
         "fid",
         "tti",
         "tbt",
-        "cls"
+        "cls",
+        "inp"
       ]
     },
     {

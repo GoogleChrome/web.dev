@@ -1,0 +1,54 @@
+setLeader: Test your knowledge of functions
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: CSS functions can be identified by which characters?
+    options:
+      - content: "`[]`"
+        rationale: "These characters are for arrays in Javascript."
+      - content: "`{}`"
+        rationale: "These characters wrap rules in CSS."
+      - content: "`()`"
+        rationale: "Functions use these characters to wrap arguments yep!"
+      - content: "`::`"
+        rationale: "These characters are for pseudo-elements in CSS."
+      - content: "`:`"
+        rationale: "These characters are for pseudo-classes in CSS."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: CSS has built in math functions?
+    options:
+      - content: "True"
+        rationale: "There's a lot of them, and more being added to specs and
+        browsers!"
+      - content: "False"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: "A `calc()` function can be placed inside of another `calc()` like `font-size: calc(10px + calc(5px * 3));`"
+    options:
+      - content: "True"
+        rationale: "🎉"
+      - content: "False"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,2,4,5"
+    stem: Which of the following are CSS shape functions?
+    options:
+      - content: "`ellipse()`"
+        rationale: "🎉"
+      - content: "`square()`"
+        rationale: "Try again!"
+      - content: "`circle()`"
+        rationale: "🎉"
+      - content: "`rect()`"
+        rationale: "Try again!"
+      - content: "`inset()`"
+        rationale: "🎉"
+      - content: "`polygon()`"
+        rationale: "🎉"

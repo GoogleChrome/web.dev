@@ -6,6 +6,7 @@ subhead: |
 authors:
   - sahel
 date: 2020-07-17
+updated: 2021-09-14
 description: |
   Learn how to modify your Android payment app to provide the user's selected shipping address as well as contact information when the merchant has requested them via the Payment Request API.
 tags:
@@ -21,19 +22,18 @@ rate.
 That's why the Payment Request API supports a feature to request shipping
 address and contact information. This provides multiple benefits:
 
-* Users can pick the right address with just a few taps.    
+* Users can pick the right address with just a few taps.
 * The address is always returned in [the standardized
-  format](https://w3c.github.io/payment-request/#paymentaddress-interface).    
+  format](https://w3c.github.io/payment-request/#paymentaddress-interface).
 * Submitting an incorrect address is less likely.
 
-This functionality can be deferred to a payment app to offer a unified payment
-experience and it's called *delegation*.
+Browsers can defer the collection of shipping address and contact information to
+a payment app to provide a unified payment experience. This functionality is
+called *delegation*.
 
 Whenever possible, Chrome delegates the collection of a customer's shipping
 address and contact information to the invoked Android payment app. The
-delegation reduces the friction during checkout because the user's installed
-payment apps usually have more accurate information about their shipping address
-and contact details.
+delegation reduces the friction during checkout.
 
 The merchant website can dynamically update the shipping options and total price
 depending on the customer's choice of the shipping address and the shipping
@@ -51,20 +51,24 @@ option.
 
 {% Aside %}
 Learn how to implement an [Android payment
-app](https://web.dev/android-payment-apps-developers-guide/) in advance.
+app](/android-payment-apps-developers-guide/) in advance.
 {% endAside %}
 
 To add delegation support to an already existing Android payment app,
 implement the following steps:
 
-1.  Declare supported delegations.
-2.  Parse `PAY` intent extras for required payment options.
-3.  Provide required information in payment response.
-4.  [Optional] Support dynamic flow:
-    1.  Notify the merchant about changes in the user selected payment method,
-        shipping address, or shipping option.
-    2.  Receive updated payment details from the merchant (for example, the
-        adjusted total amount based on the selected shipping option's cost).
+1.  [Declare supported delegations](#declare-supported-delegations).
+2.  [Parse `PAY` intent extras for required payment
+     options](#parse-pay-intent-extras-for-required-payment-options).
+3.  [Provide required information in payment
+     response](#provide-required-information-in-a-payment-response).
+4.  [[Optional] Support dynamic flow](#optional-support-dynamic-flow):
+    1.  [Notify the merchant about changes in the user selected payment method,
+        shipping address, or shipping
+        option](#notify-the-merchant-about-changes-in-the-user-selected-payment-method-shipping-address-or-shipping-option).
+    2.  [Receive updated payment details from the merchant (for example, the
+        adjusted total amount based on the selected shipping option's
+        cost)](#receive-updated-payment-details-from-the-merchant).
 
 ## Declare supported delegations
 
@@ -83,7 +87,7 @@ app. Declare the supported delegations as a `<meta-data>` in your app's
 </activity>
 ```
 
-`<resource>` must be a list of strings chosen from the following valid values: 
+`<resource>` must be a list of strings chosen from the following valid values:
 
 ```json
 [ "payerName", "payerEmail", "payerPhone", "shippingAddress" ]
@@ -201,13 +205,13 @@ To do so the following parameters must be specified as Intent extras:
     * `recipient`
     * `region`
     * `sortingCode`
-    * `addressLine`  
+    * `addressLine`
   All keys other than the `addressLine` have string values. The `addressLine`
   is an array of strings.
 * `shippingOptionId` - The identifier of the user-selected shipping option. This
   should be a non-empty string when `paymentOptions.requestShipping` is true.
 
-###  Payment response validation
+###  Validate payment response
 
 If the activity result of a payment response received from the invoked payment
 app is set to `RESULT_OK`, then Chrome will check for required additional
@@ -224,7 +228,7 @@ messages:
 'Payment app returned invalid response. Missing field "shipping option".'
 ```
 
-Below is an example of a valid response:
+The following code sample is an example of a valid response:
 
 ```kotlin
 fun Intent.populateRequestedPaymentOptions() {
@@ -306,12 +310,18 @@ interface IPaymentDetailsUpdateService {
 
 ```kotlin
 private fun bind() {
-    val intent = Intent()
-    intent.setClassName(
-        callingPackageName,
-        "org.chromium.components.payments.PaymentDetailsUpdateService")
-    intent.action = IPaymentDetailsUpdateService::class.java.name
-    isBound = bindService(intent, connection, Context.BIND_AUTO_CREATE)
+    // The action is introduced in Chrome version 92, which supports the service in Chrome
+    // and other browsers (e.g., WebLayer).
+    val newIntent = Intent("org.chromium.intent.action.UPDATE_PAYMENT_DETAILS")
+        .setPackage(callingBrowserPackage)
+    if (packageManager.resolveService(newIntent, PackageManager.GET_RESOLVED_FILTER) == null) {
+        // Fallback to Chrome-only approach.
+        newIntent.setClassName(
+            callingBrowserPackage,
+            "org.chromium.components.payments.PaymentDetailsUpdateService")
+        newIntent.action = IPaymentDetailsUpdateService::class.java.name
+    }
+    isBound = bindService(newIntent, connection, Context.BIND_AUTO_CREATE)
 }
 
 private val connection = object : ServiceConnection {
@@ -335,7 +345,7 @@ The `callingPackageName` used for the service's start intent can have one of the
 following values depending on the browser that has initiated the payment
 request.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -372,6 +382,12 @@ request.
         <td>Chromium</td>
         <td>
           <code>"org.chromium.chrome"</code>
+        </td>
+      </tr>
+      <tr>
+        <td>Google Quick Search Box (a WebLayer embedder)</td>
+        <td>
+          <code>"com.google.android.googlequicksearchbox"</code>
         </td>
       </tr>
     </tbody>

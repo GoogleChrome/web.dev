@@ -1,0 +1,14 @@
+setLeader: Test your knowledge of document accessibility.
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: Your site is a multi-language online textbook, where multiple languages are shown on one page. What's the best way to tell assistive technology the language of the copy?
+    options:
+      - content: "Don't worry about it, the AT can automatically read each language."
+        rationale: "While some AT may have language detection skills, you can't guarantee the AT will guess correctly."
+      - content: 'Include all languages in the `<html>` element. For example `<html lang="en,lt,pl,pt">`'
+        rationale: 'The `lang` attribute can only have one language associated with it.'
+      - content: 'Set a primary `lang` for the `<html>`, and additional languages on any element which has content in a different language.'
+        rationale: 'The AT will primarily rely on the `<html>` language attribute to read the document. If you have multi-language text, make sure to add a `lang` attribute to the corresponding element (such as a section or paragraph) with the correct two letter ISO code.'

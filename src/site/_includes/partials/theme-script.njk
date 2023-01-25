@@ -1,0 +1,18 @@
+{% set inlineScript %}
+  // A global function that the theme toggle can use to apply the current theme.
+  window.applyThemeSetting = function(override) {
+    const browserSetting = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const currentSetting = override || localStorage.getItem('user-color-scheme') || browserSetting;
+    const currentAttribute = document.documentElement.getAttribute('data-user-theme');
+
+    if (currentSetting) {
+      if (currentSetting !== currentAttribute) {
+        document.documentElement.setAttribute('data-user-theme', currentSetting);
+      }
+      const lhRoot = document.querySelector('web-lighthouse-viewer article.lh-root');
+      lhRoot && lhRoot.classList.toggle('lh-dark', currentSetting === 'dark');
+    }
+  };
+window.applyThemeSetting();
+{% endset %}
+<script>{{ inlineScript | minifyJs | cspHash | safe }}</script>

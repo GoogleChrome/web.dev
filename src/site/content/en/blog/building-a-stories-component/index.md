@@ -24,12 +24,12 @@ In this post I want to share thinking on building a Stories component for
 the web that is responsive, supports keyboard navigation, and works across
 browsers.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-desktop-demo.mp4">
   </video>
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges-stories.glitch.me/">Demo</a>
   </figcaption>
 </figure>
@@ -51,12 +51,11 @@ time. By tapping on the right side of the device, a user skips ahead to that fri
 next story. By swiping right, a user skips ahead to a different friend.
 A Story component is fairly similar to a carousel, but allows navigating a
 multi-dimensional array as opposed to a single-dimensional array. It's as if there's a carousel inside
-each carousel. 🤯 
+each carousel. 🤯
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./carousel-of-carousels.png" 
-       alt="Visualized multi-dimensional array using cards. Left to right is a stack of purple borders cards, and inside each card is 1-many cyan bordered cards. List in a list.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yVm8NC0TiAsl6hcDxys.png", alt="Visualized multi-dimensional array using cards. Left to right is a stack of purple borders cards, and inside each card is 1-many cyan bordered cards. List in a list.", width="716", height="255" %}
+  <figcaption>
     <span style="width: 1rem; height: 1rem; background: #EB00FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 1st carousel of friends
     <br><span style="width: 1rem; height: 1rem; background: #00D8FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 2nd "stacked" carousel of stories
     <br>👍 List in a list, aka: a multi-dimensional array
@@ -99,23 +98,23 @@ Our primary `.stories` component wrapper is a mobile-first horizontal scrollview
 }
 ```
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-overflow-columns.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-overflow-columns.mp4">
   </video>
-  <figcaption class="w-figcaption">
-    Using Chrome DevTools' 
-    <a href="https://developers.google.com/web/tools/chrome-devtools/device-mode">Device Mode</a>
+  <figcaption>
+    Using Chrome DevTools'
+    <a href="https://developer.chrome.com/docs/devtools/device-mode/">Device Mode</a>
     to highlight the columns created by Grid
   </figcaption>
 </figure>
 
 Let's breakdown that `grid` layout:
 
-* We explicitly fill the viewport on mobile with `100vh` and `100vw` and constrain the size on desktop 
+* We explicitly fill the viewport on mobile with `100vh` and `100vw` and constrain the size on desktop
 * `/` separates our row and column templates
-* `auto-flow` translates to [`grid-auto-flow: column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
+* `auto-flow` translates to [`grid-auto-flow: column`](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow)
 * The autoflow template is `100%`, which in this case is whatever the scroll window width is
 
 {% Aside %}
@@ -129,18 +128,18 @@ Instagram Stories example, each column will be a friend's story. We want friends
 stories to continue outside of the viewport so we have somewhere to scroll to.
 Grid will make however many columns it needs to layout your HTML for each friend
 story, creating a dynamic and responsive scrolling container for us. Grid
-enabled us to centralize the whole effect. 
+enabled us to centralize the whole effect.
 
 #### Stacking
 
 For each friend we need their stories in a pagination-ready state.
-In preparation for animation and other fun patterns, I chose a stack. 
+In preparation for animation and other fun patterns, I chose a stack.
 When I say stack, I mean like you're looking down on a
 sandwich, not like you're looking from the side.
 
 With CSS grid, we can define a single-cell grid (i.e. a square), where the rows
 and columns share an alias (`[story]`), and then each child gets assigned to that
-aliased single-cell space: 
+aliased single-cell space:
 
 
 ```css/1-2
@@ -169,23 +168,23 @@ needed to be told to fill it!
 ### CSS Scroll Snap Points {: #scroll-snap-points}
 
 The [CSS Scroll Snap Points spec](https://www.w3.org/TR/css-scroll-snap-1/) makes it
-a cinch to lock elements into the viewport on scroll. Before these CSS properties existed, 
+a cinch to lock elements into the viewport on scroll. Before these CSS properties existed,
 you had to use JavaScript, and it was… tricky, to say the least. Check out
 [Introducing CSS Scroll Snap Points](https://css-tricks.com/introducing-css-scroll-snap-points/)
-by Sarah Drasner for a great breakdown of how to use them. 
+by Sarah Drasner for a great breakdown of how to use them.
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/scroll-snap-example.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Horizontal scrolling without and with <code>scroll-snap-points</code> styles.
     Without it, users can free scroll as normal. With it, the browser rests gently on each item.
   </figcaption>
 </figure>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'parent' %}
 ```css/4-5
 .stories {
@@ -232,7 +231,7 @@ I chose Scroll Snap Points for a few reasons:
   here on out.
 * **Ease of implementation**. Scroll Snap Points are practically built for the
   touch-centric horizontal-pagination use case.
-* **Free native inertia**. Every platform will scroll and rest in its style, as opposed to 
+* **Free platform-style inertia**. Every platform will scroll and rest in its style, as opposed to
   normalized inertia which can have an uncanny scrolling and resting style.
 
 ## Cross-browser compatibility {: #compatibility }
@@ -240,9 +239,9 @@ I chose Scroll Snap Points for a few reasons:
 <!-- TODO(kayce): Clear up what browsers were tested on what operating systems. -->
 
 We tested on Opera, Firefox, Safari, and Chrome, plus Android and iOS. Here's
-a brief rundown of the web features where we found differences in capabilities and support. 
+a brief rundown of the web features where we found differences in capabilities and support.
 
-{% Aside 'success' %} 
+{% Aside 'success' %}
   All of the features chosen were supported and none were buggy.
 {% endAside %}
 
@@ -282,7 +281,7 @@ interested.
 
 Have you ever been scrolling through a modal when all of a sudden you
 start scrolling the content behind the modal?
-[`overscroll-behavior`](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) 
+[`overscroll-behavior`](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior)
 lets the developer trap that scroll and never let it
 leave. It's nice for all sorts of occasions. My Stories component uses it
 to prevent additional swipes and scrolling gestures from leaving the
@@ -320,14 +319,14 @@ element.scrollIntoView({
 ```
 
 Safari was the only browser not to support `behavior: 'smooth'` here. Check out
-[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility)
+[Browser compatibility](https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView#Browser_compatibility)
 for updates.
 
 ## Hands-on
 
-Now that you know how I did it, how would you?! Let's diversify our 
-approaches and learn all the ways to build on the web. Create a [Glitch](https://glitch.com), 
-[tweet me](https://twitter.com/argyleink) your version, and I'll add it to 
+Now that you know how I did it, how would you?! Let's diversify our
+approaches and learn all the ways to build on the web. Create a [Glitch](https://glitch.com),
+[tweet me](https://twitter.com/argyleink) your version, and I'll add it to
 the [Community remixes](#community-remixes) section below.
 
 ## Community remixes {: #remixes }

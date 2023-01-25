@@ -14,7 +14,7 @@ description: |
   dramatically increase user engagement and keep file size low.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - twa
+  # - twa
   - case-study
 ---
 
@@ -35,7 +35,7 @@ because of concerns about storage space.
 To reduce the Android app's footprint on users' devices
 while keeping the benefits of the Android experience,
 the team decided to turn to
-[Trusted Web Activities (TWAs)](https://developers.google.com/web/updates/2019/02/using-twa).
+[Trusted Web Activities (TWAs)](https://developer.chrome.com/docs/android/trusted-web-activity/).
 
 ## What's a TWA?
 Before Chrome 72, Android developers who wanted to display web content in
@@ -46,7 +46,7 @@ it's not as fast as Chrome and doesn't include all of Chrome's APIs and features
 So, if you wanted behavior that WebView's rendering engine didn't support,
 you had to build your own browser around it—which isn't exactly trivial!
 
-[Trusted Web Activities (TWAs)](https://developers.google.com/web/updates/2019/02/using-twa)
+[Trusted Web Activities (TWAs)](https://developer.chrome.com/docs/android/trusted-web-activity/)
 address those limitations by showing web content directly in Chrome.
 Breaking down the TWA name helps explain its features:
 - An _activity_ is one screen or view in an Android app's user interface.
@@ -80,7 +80,7 @@ of the platform-specific and web app worlds:
 Running in Chrome also has a number of handy perks.
 For example, TWAs share Chrome's storage,
 including cookies, passwords, and anything stored using the
-[Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
+[Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API).
 One benefit of this setup is that users stay logged in
 across the browser and the TWA app.
 
@@ -107,7 +107,7 @@ so web content served in a TWA must provide that experience, including:
 - A unified look and feel (by providing, for example, a splash screen and app color)
 
 {% Aside %}
-Meeting the [Lighthouse requirements for a PWA](/lighthouse-pwa)
+Meeting the [Lighthouse requirements for a PWA](https://developer.chrome.com/docs/lighthouse/pwa/)
 is actually a prerequisite for TWAs.
 To learn more about building a PWA,
 see the [Installable collection](/installable).
@@ -129,12 +129,12 @@ Here's what the OYO team did:
 * Created a custom splash screen.
 
 And here's the result:
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.mp4" type="video/mp4; codecs=h264">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     OYO Lite in action.
   </figcaption>
 </figure>
@@ -173,6 +173,6 @@ They can be a great fit for many projects currently built as platform-specific a
 from shopping carts and checkout flows to FAQs and contact forms.
 
 Check out these links to get started with TWAs:
-- [Using Trusted Web Activities](https://developers.google.com/web/updates/2019/02/using-twa)
+- [Using Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/)
 - [Taking Chrome Full Screen with Trusted Web Activities (YouTube)](https://youtu.be/6lHBw3F4cWs)
 - [A complete guide to Trusted Web Activity (TWA): OYO case study](https://medium.com/@ankitjainaj/3dd327d7afc5)

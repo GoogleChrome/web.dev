@@ -1,0 +1,58 @@
+:root {
+    --placeholder-primary: #eeeeee;
+    --placeholder-secondary: #cccccc;
+}
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    width: 100%;
+    max-width: 650px;
+    margin: 1em 0em;
+}
+.item {
+    display: grid;
+    gap: .5em;
+    width: 200px;
+}
+.text-container {
+    font-size: 1em;
+    height: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
+.image-container {
+    width: 200px;
+    height: 200px;;
+    animation: placeholder ease-in-out 2s infinite;
+}
+.image-container img {
+    width: 100%;
+}
+@keyframes placeholder {
+    0% {
+        background-color: var(--placeholder-primary);
+    }
+    50% {
+        background-color: var(--placeholder-secondary);
+    }
+    100% {
+        background-color: var(--placeholder-primary);
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+.item.loaded .image-container {
+    animation: none;
+}
+.item.loaded .image-container img{
+    animation: fadeIn linear .5s;
+}

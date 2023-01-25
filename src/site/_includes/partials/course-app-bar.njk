@@ -1,0 +1,28 @@
+{% from 'macros/icon.njk' import icon, svg with context %}
+<nav class="breadcrumbs pad-inline-size-1" aria-label="breadcrumbs">
+  <div class="repel">
+    <ul class="breadcrumbs__list" role="list">
+      <li>
+        <a href="/">{{ svg('../../images/lockup.svg', {label: 'web.dev', className: 'breadcrumbs__brand'}) }}</a>
+      </li>
+      <li>
+        <a href="/learn/">{{ 'i18n.header.learn' | i18n(locale) }}</a>
+      </li>
+      <li>
+        <a href="/learn/{{ projectKey }}">{{ courseData.meta.title | i18n(locale) }}</a>
+      </li>
+    </ul>
+    <share-action class="gc-analytics-event breadcrumbs__share"
+      authors="{{ authors | expandAuthors(collections.authors, lang) }}"
+      data-category="web.dev"
+      data-label="share"
+      data-action="click"
+      data-icon="share"
+      tabindex="0"
+      role="button"
+    >
+      {{ icon('share') }}
+      <span>{{ 'i18n.common.share' | i18n(locale) }}</span>
+    </share-action>
+  </div>
+</nav>

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: >
   JD.ID improves their mobile conversion rate by 53% with caching strategies,
   installation, and push notifications
@@ -30,7 +31,7 @@ network-independent experience for their [Progressive Web App
 ](/pwa)(PWA). With this enhanced experience, JD.ID was able to
 increase its overall mobile conversion rate (mCVR) by 53%, its mCVR for
 installed users by 200%, and its daily active users by 26%, putting it on course
-to becoming the most popular and trusted e-commerce company in the country.  
+to becoming the most popular and trusted e-commerce company in the country.
 
 {% Img src="image/admin/0nJBxHM0wbQKuAVnCAEX.jpg", alt="Screenshots of a user installing the JD.ID PWA", width="800", height="480" %}
 
@@ -45,12 +46,12 @@ best practices](/pwa-checklist/) to help build an app-like UX on
 its website to enhance engagement, with a focus on [network
 resilience](/reliable/) for dependability.
 
-## The approach 
+## The approach
 
 ### Caching strategies
 
 To mitigate network issues and improve user experience, the JD.ID team used
-[Workbox](https://developers.google.com/web/tools/workbox) to ensure its PWA
+[Workbox](https://developer.chrome.com/docs/workbox/) to ensure its PWA
 performed well even when the user was offline or on a bad network. Workbox made
 it easier to execute their PWA caching strategy, which consisted of 3 parts:
 
@@ -87,7 +88,7 @@ The JD.ID team [created an offline fallback
 page](/offline-fallback-page/) to provide users with a consistent
 experience and enhance the branding for the website. They also added a [web app
 manifest](/add-manifest/) which enables users to easily install
-the web app on their mobile device. 
+the web app on their mobile device.
 
 {% Img src="image/admin/bE0afj8wH2XUmZdKH28R.jpg", alt="A screenshot of the offline fallback page", width="800", height="480" %}
 
@@ -102,7 +103,7 @@ applying them specifically during product sale promotional events.
 
 ## Overall business results
 
-<div class="w-columns">
+<div class="switcher">
   <ul>
     <li>Overall mobile conversion rate (mCVR) improved 53%</li>
     <li>mCVR for users who installed the JD.ID PWA improved 200%</li>
@@ -111,10 +112,8 @@ applying them specifically during product sale promotional events.
       re-enagement from push notifications
     </li>
   </ul>
-  <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="impact.png"
-        alt="The impact statistics.">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6cgF8sQt5IH2XcISQsk.png", alt="The impact statistics.", width="800", height="870" %}
   </figure>
 </div>
 

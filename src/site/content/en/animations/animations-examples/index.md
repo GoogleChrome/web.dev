@@ -38,9 +38,9 @@ To understand how it was created and how well it performs you can use Chrome Dev
 With the animation running, open the Performance tab in Chrome DevTools and record a few seconds of the animation.
 You should see in the Summary that the browser is not doing any Layout or Paint operations when running this animation.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/r1h4gb24ZiYXAfI7Mskh.jpg", alt="Summary in DevTools", width="724", height="416" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The summary after profiling the wizard animation.
   </figcaption>
 </figure>
@@ -50,9 +50,9 @@ inspect any of the moving elements in Chrome DevTools.
 You can use the **Animations Panel** to locate the various animated elements,
 clicking on any element will highlight it in the DOM.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/sPoemcfld1jfUkSFhv3o.jpg", alt="The Animations Panel showing the various parts of our animation.", width="800", height="349" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Viewing and selecting items in the Chrome DevTools Animation Panel.
   </figcaption>
 </figure>
@@ -61,11 +61,9 @@ For example select the triangle,
 and watch how the box of the element transforms during its journey into the air,
 as it spins, and then returns to the start position.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/triangle.mp4" type="video/webm">
-  </video>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/STzIqse0ekWT49oJbwX5.mp4", controls=true, autoplay=true, loop=true, muted=true %}
+  <figcaption>
     Video showing how we can track the path of the triangle in Chrome DevTools.
   </figcaption>
 </figure>
@@ -166,9 +164,9 @@ in the waterfall you should see that there are no entries for **Recalculate Styl
 You now know that this animation does not cause style recalculation,
 and therefore layout and paint operations.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/68jWlrbNhgmS07vrXMCO.jpg", alt="details of the animation in the Firefox Waterfall", width="800", height="354" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The Firefox DevTools Waterfall.
   </figcaption>
 </figure>
@@ -223,11 +221,9 @@ Another way to see which properties are being animated is to select the **Animat
 You will then see a visualization of the animations being used,
 and the properties that are being animated.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/animation-circle-firefox-devtools.mp4" type="video/webm">
-  </video>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/FuxnywlwqojS8YVMCmKC.mp4", controls=true, autoplay=true, loop=true, muted=true %}
+  <figcaption>
     With the ::before pseudo-element selected we can see which properties are animating.
   </figcaption>
 </figure>
@@ -285,17 +281,15 @@ The complexity comes from animating a large number of elements.
 Open Chrome DevTools and select one of the elements with a class of `plane`.
 The sphere is made up of a set of rotating planes and spokes.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/3d-sphere-plane.mp4" type="video/webm">
-  </video>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8lA3linRM6SqufzlUlJR.mp4", controls=true, autoplay=true, loop=true, muted=true %}
+  <figcaption>
     The plane appears to be rotating.
   </figcaption>
 </figure>
 
 {% Aside %}
-The [DOM Search Tool](https://developers.google.com/web/tools/chrome-devtools/dom#search)
+The [DOM Search Tool](https://developer.chrome.com/docs/devtools/dom/#search)
 in Chrome DevTools can make it easier to find an element that you want to inspect.
 {% endAside %}
 
@@ -334,11 +328,9 @@ The dots can be found nested inside the `plane` and `spoke` elements,
 they use an animation which uses transform to scale and translate them.
 This creates the pulsing effect.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/3d-sphere-dot.mp4" type="video/webm">
-  </video>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/JoLi8L3VW9nUG25sEvkZ.mp4", controls=true, autoplay=true, loop=true, muted=true %}
+  <figcaption>
     The dot rotates with the sphere and pulses.
   </figcaption>
 </figure>

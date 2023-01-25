@@ -7,7 +7,7 @@ description: |
 authors:
   - beaufortfrancois
 date: 2021-02-12
-updated: 2021-02-12
+updated: 2022-01-20
 hero: image/admin/vAnNpGQruw5EUXxob47V.jpg
 alt: A woman sitting in front of a wooden desk photo.
 tags:
@@ -100,7 +100,7 @@ current position on this device.
 If it doesn't work for you, a low-level API may be the solution. Check out
 [Discover how to communicate with your device] to start your journey.
 
-## 🔋 Check the battery on this device {: #batttery }
+## 🔋 Check the battery on this device {: #battery }
 
 Use the [Battery API] to get host information about the battery charge level and
 be notified when the battery level or charging status change.
@@ -150,7 +150,8 @@ If wired, check out these APIs in this specific order:
 1. With [WebHID], understanding HID reports and report descriptors through
    [collections] is key to your comprehension of this device. This can be
    challenging without vendor documentation for this device. Tools like
-   [Wireshark] can help you reverse-engineering it.
+   [Wireshark] can help you reverse-engineer it. You can also use the [HID
+   Explorer web app] for dumping HID devices info into a human-readable format.
 
 2. With [Web Serial], without vendor documentation for this device and what
    commands this device supports, it's hard but still possible with lucky
@@ -173,29 +174,29 @@ Thanks to [Reilly Grant], [Thomas Steiner], and [Kayce Basques] for reviewing th
 Photo by [Darya Tryfanava] on [Unsplash].
 
 
-[Keyboard]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
-[Pointer]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events
+[Keyboard]: https://developer.mozilla.org/docs/Web/API/KeyboardEvent
+[Pointer]: https://developer.mozilla.org/docs/Web/API/Pointer_events
 [Gamepad API]: /gamepad/
-[MediaDevices.getUserMedia()]: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+[MediaDevices.getUserMedia()]: https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia
 [capturing audio and video]: https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 [control the camera's pan, tilt, and zoom]: /camera-pan-tilt-zoom/
-[brightness and contrast]: https://developers.google.com/web/updates/2016/12/imagecapture
+[brightness and contrast]: https://developer.chrome.com/blog/imagecapture/
 [take still images]: https://beaufortfrancois.github.io/sandbox/image-capture/playground
-[Web Audio]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+[Web Audio]: https://developer.mozilla.org/docs/Web/API/Web_Audio_API
 [how to profile the performance of Web Audio apps]: /profiling-web-audio-apps-in-chrome/
-[window.print()]: https://developer.mozilla.org/en-US/docs/Web/API/Window/print
+[window.print()]: https://developer.mozilla.org/docs/Web/API/Window/print
 [WebAuthn]: https://webauthn.io/
-[Build your first WebAuthn app]: https://codelabs.developers.google.com/codelabs/webauthn-reauth/
+[Build your first WebAuthn app]: https://developers.google.com/codelabs/webauthn-reauth
 [File System Access API]: /file-system-access/
-[File API]: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
+[File API]: https://developer.mozilla.org/docs/Web/API/File/Using_files_from_web_applications
 [Generic Sensor API]: /generic-sensor/
-[DeviceMotion and DeviceOrientation]: https://developers.google.com/web/fundamentals/native-hardware/device-orientation
+[DeviceMotion and DeviceOrientation]: /device-orientation/
 [Geolocation API]: https://developers.google.com/web/fundamentals/native-hardware/user-location
-[Battery API]: https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
+[Battery API]: https://developer.mozilla.org/docs/Web/API/Battery_Status_API
 [Remote Playback API]: https://www.chromestatus.com/feature/5778318691401728
-[Presentation API]: https://developers.google.com/web/updates/2018/04/present-web-pages-to-secondary-attached-displays
-[Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-[WebSockets]: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+[Presentation API]: https://developer.chrome.com/blog/present-web-pages-to-secondary-attached-displays/
+[Fetch API]: https://developer.mozilla.org/docs/Web/API/Fetch_API
+[WebSockets]: https://developer.mozilla.org/docs/Web/API/WebSockets_API
 [WebTransport]: /webtransport/
 [WebRTC]: /webrtc-standard-announcement/
 [Web NFC]: /nfc
@@ -207,6 +208,7 @@ Photo by [Darya Tryfanava] on [Unsplash].
 [WebHID]: /hid/
 [collections]: https://webhid-collections.glitch.me/
 [Wireshark]: https://gitlab.com/wireshark/wireshark/-/wikis/CaptureSetup/USB
+[HID Explorer web app]: https://nondebug.github.io/webhid-explorer/
 [Web Serial]: /serial/
 [Serial Terminal web app]: https://googlechromelabs.github.io/serial-terminal/
 [WebUSB]: /usb/

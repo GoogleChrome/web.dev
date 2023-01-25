@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-10-19
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -26,8 +26,8 @@ Historically, it's been a challenge for web developers to measure how quickly
 the main content of a web page loads and is visible to users.
 
 Older metrics like
-[load](https://developer.mozilla.org/en-US/docs/Web/Events/load) or
-[DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)
+[load](https://developer.mozilla.org/docs/Web/Events/load) or
+[DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded)
 are not good because they don't necessarily correspond to what the user sees on
 their screen. And newer, user-centric performance metrics like [First Contentful
 Paint (FCP)](/fcp/) only capture the very beginning of the loading experience.
@@ -35,7 +35,7 @@ If a page shows a splash screen or displays a loading indicator, this moment is
 not very relevant to the user.
 
 In the past we've recommended performance metrics like [First Meaningful Paint
-(FMP)](/first-meaningful-paint/) and [Speed Index (SI)](/speed-index/) (both
+(FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) and [Speed Index (SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) (both
 available in Lighthouse) to help capture more of the loading experience after
 the initial paint, but these metrics are complex, hard to explain, and often
 wrong&mdash;meaning they still do not identify when the main content of the page
@@ -50,23 +50,32 @@ of a page is loaded is to look at when the largest element was rendered.
 
 The Largest Contentful Paint (LCP) metric reports the render time of the largest
 [image or text block](#what-elements-are-considered) visible within the
-viewport.
-
-<picture>
-  <source srcset="../vitals/lcp_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="../vitals/lcp_4x3.svg"
-      alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0
-            seconds and anything in between needs improvement">
-</picture>
+viewport, relative to when the page [first started
+loading](https://w3c.github.io/hr-time/#timeorigin-attribute).
 
 ### What is a good LCP score?
 
 To provide a good user experience, sites should strive to have Largest
-Contentful Paint occur within the first **2.5 seconds** of the page starting to
-load. To ensure you're hitting this target for most of your users, a good
-threshold to measure is the **75th percentile** of page loads, segmented across
-mobile and desktop devices.
+Contentful Paint of **2.5 seconds** or less. To ensure you're hitting this
+target for most of your users, a good threshold to measure is the **75th
+percentile** of page loads, segmented across mobile and desktop devices.
+
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/8ZW8LQsagLih1ZZoOmMR.svg",
+        alt="Good LCP values are 2.5 seconds or less, poor values are greater than 4.0 seconds, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,
@@ -84,14 +93,18 @@ considered for Largest Contentful Paint are:
 * `<image>` elements inside an `<svg>` element
 * `<video>` elements (the poster image is used)
 * An element with a background image loaded via the
-  [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) function
+  [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) function
   (as opposed to a
-  [CSS gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
-* [Block-level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
+  [CSS gradient](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
+* [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
 
+{% Aside 'important' %}
+Images that occupy the entire viewport are not considered LCP candidates.
+{% endAside %}
+
 Note, restricting the elements to this limited set was intentional in order to
-keep things simple in the beginning. Additional elements (e.g. `<svg>`,
+keep things simple in the beginning. Additional elements (like `<svg>` or
 `<video>`) may be added in the future as more research is conducted.
 
 ### How is an element's size determined?
@@ -99,11 +112,11 @@ keep things simple in the beginning. Additional elements (e.g. `<svg>`,
 The size of the element reported for Largest Contentful Paint is typically the
 size that's visible to the user within the viewport. If the element extends
 outside of the viewport, or if any of the element is clipped or has non-visible
-[overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow), those
+[overflow](https://developer.mozilla.org/docs/Web/CSS/overflow), those
 portions do not count toward the element's size.
 
 For image elements that have been resized from their [intrinsic
-size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size), the
+size](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size), the
 size that gets reported is either the visible size or the intrinsic size,
 whichever is smaller. For example, images that are shrunk down to a much
 smaller than their intrinsic size will only report the size they're displayed
@@ -124,7 +137,7 @@ considered.
   In [spec
   terms](https://wicg.github.io/element-timing/#set-of-owned-text-nodes):
   each text node belongs to the element that generates its [containing
-  block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block).
+  block](https://developer.mozilla.org/docs/Web/CSS/Containing_block).
 {% endAside %}
 
 ### When is largest contentful paint reported?
@@ -133,11 +146,11 @@ Web pages often load in stages, and as a result, it's possible that the largest
 element on the page might change.
 
 To handle this potential for change, the browser dispatches a
-[`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
+[`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
 of type `largest-contentful-paint` identifying the largest contentful element
 as soon as the browser has painted the first frame. But then, after rendering
 subsequent frames, it will dispatch another
-[`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
+[`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
 any time the largest contentful element changes.
 
 For example, on a page with text and a hero image the browser may initially just
@@ -151,7 +164,7 @@ It's important to note that an element can only be considered the largest
 contentful element once it has rendered and is visible to the user. Images that
 have not yet loaded are not considered "rendered". Neither are text nodes using
 web fonts during the [font block
-period](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#The_font_display_timeline).
+period](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display#The_font_display_timeline).
 In such cases a smaller element may be reported as the largest contentful
 element, but as soon as the larger element finishes rendering, it'll be
 reported via another  `PerformanceEntry` object.
@@ -171,7 +184,7 @@ contentful element unless a larger element is rendered.
   `largest-contentful-paint` entry to be dispatched. However, due to popular UI
   patterns such as image carousels that often removed DOM elements, the metric
   was updated to more accurately reflect what users experience. See the
-  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/master/docs/speed/metrics_changelog/2020_11_lcp.md)
+  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/2020_11_lcp.md)
   for more details.
 {% endAside %}
 
@@ -183,23 +196,27 @@ For analysis purposes, you should only report the most recently dispatched
 `PerformanceEntry` to your analytics service.
 
 {% Aside 'caution' %}
-  Since users can open pages in a background tab, it's possible that the largest
-  contentful paint will not happen until the user focuses the tab, which can be
-  much later than when they first loaded it.
+  Since users can open pages in a background tab, it's possible that
+  `largest-contentful-paint` entries will not be dispatched until the user
+  focuses the tab, which can be much later than when they first loaded it.
+
+  Google tools that measure LCP do not report this metric if the page was
+  loaded in the background, as it does not reflect the user-perceived load time.
 {% endAside %}
+
 
 #### Load time vs. render time
 
 For security reasons, the render timestamp of images is not exposed for
 cross-origin images that lack the
-[`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
+[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin)
 header. Instead, only their load time is exposed (since this is already exposed
 via many other web APIs).
 
 The [usage example](#measure-lcp-in-javascript)
 below shows how to handle elements whose render time is not available. But,
 when possible, it's always recommended to set the
-[`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
+[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin)
 header, so your metrics will be more accurate.
 
 ### How are element layout and size changes handled?
@@ -213,9 +230,6 @@ This means images that are initially rendered off-screen and then transition
 on-screen may not be reported. It also means elements initially rendered in the
 viewport that then get pushed down, out of view will still report their
 initial, in-viewport size.
-
-However, (as mentioned above) an element will be removed from consideration if
-it's removed from the DOM or if its associated image resource changes.
 
 ### Examples
 
@@ -262,24 +276,27 @@ available in the following tools:
 ### Field tools
 
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+  Report](https://developer.chrome.com/docs/crux/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Lab tools
 
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Measure LCP in JavaScript
 
+{% BrowserCompat 'api.LargestContentfulPaint' %}
+
 To measure LCP in JavaScript, you can use the [Largest Contentful Paint
 API](https://wicg.github.io/largest-contentful-paint/). The following example
 shows how to create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 that listens for `largest-contentful-paint` entries and logs them to the
 console.
 
@@ -318,23 +335,27 @@ the metric is calculated.
   restored from the [back/forward cache](/bfcache/#impact-on-core-web-vitals),
   but LCP should be measured in these cases since users experience them as
   distinct page visits.
-- The API does not consider elements within iframes, but to properly measure LCP
-  you should consider them. Sub-frames can use the API to report their
-  `largest-contentful-paint` entries to the parent frame for aggregation.
+- The API does not consider elements within iframes but the metric does as they
+  are part of the user experience of the page. In pages with an LCP within an
+  iframe—for example a poster image on an embedded video—this will
+  [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
+  To properly measure LCP you should consider them. Sub-frames can use the API
+  to report their `largest-contentful-paint` entries to the parent frame for
+  aggregation.
 
 Rather than memorizing all these subtle differences, developers can use the
 [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
 measure LCP, which handles these differences for you (where possible):
 
 ```js
-import {getLCP} from 'web-vitals';
+import {onLCP} from 'web-vitals';
 
 // Measure and log LCP as soon as it's available.
-getLCP(console.log);
+onLCP(console.log);
 ```
 
 You can refer to [the source code for
-`getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)
+`onLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onLCP.ts)
 for a complete example of how to measure LCP in JavaScript.
 
 {% Aside %}
@@ -368,7 +389,7 @@ performance techniques that can also improve LCP, see:
 * [Apply instant loading with the PRPL
   pattern](/apply-instant-loading-with-prpl)
 * [Optimizing the Critical Rendering
-  Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+  Path](/critical-rendering-path/)
 * [Optimize your CSS](/fast#optimize-your-css)
 * [Optimize your Images](/fast#optimize-your-images)
 * [Optimize web Fonts](/fast#optimize-web-fonts)

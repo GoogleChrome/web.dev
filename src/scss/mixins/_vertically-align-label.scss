@@ -1,0 +1,13 @@
+/// VERTICALLY ALIGN LABEL
+/// Adds a pseudo-element to help vertically align
+/// text labels in buttons/block-like links without
+/// using magic numbers
+/// More: https://ishadeed.com/article/button-label-alignment/
+@mixin vertically-align-label() {
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 1ex;
+  }
+}

@@ -1,0 +1,12 @@
+setLeader: Test your knowledge of micro layouts.
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: Grid and flexbox are both useful for micro layouts?
+    options:
+      - content: "True"
+        rationale: "🎉"
+      - content: "False"
+        rationale: "🎉 Grid and flexbox are both very useful, even for the 'tiniest' of layouts."

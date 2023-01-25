@@ -47,8 +47,8 @@ There are a few different ways to create a `clip-path`, in this post we will tak
 
 ## Browser compatibility
 
-Other than the box values as explained later in the post,
-the various values of `clip-path` demonstrated have [excellent browser support](https://caniuse.com/#feat=css-clip-path).
+{% BrowserCompat 'css.properties.clip-path' %}
+
 For legacy browsers a fallback may be to allow the browser to ignore the `clip-path` property and show the unclipped image.
 If this is a problem you could test for `clip-path` in a feature query and offer an alternate layout for unsupporting browsers.
 
@@ -83,10 +83,10 @@ The `clip-path` property does not require the element to be floated.
 
 The full list of basic shapes is:
 
-- [`inset()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#inset)
-- [`circle()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#circle)
-- [`ellipse()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#ellipse)
-- [`polygon()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#polygon)
+- [`inset()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#inset)
+- [`circle()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#circle)
+- [`ellipse()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#ellipse)
+- [`polygon()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#polygon)
 
 ### `inset()`
 
@@ -130,8 +130,8 @@ Be aware with all of these values that the shape will be clipped by the margin b
 If you create a circle on an image,
 and that shape would extend outside of the natural size of the image, you will get a flat edge.
 
-<figure class="w-figure">
-  <img class="w-screenshot" style="max-inline-size: 480px" src='./flat-edges.jpg' alt="A clipped circle with flat edges">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sQPOF6oaR31kjSVGzztu.jpg", alt="A clipped circle with flat edges", width="800", height="427",style="max-inline-size: 480px" %}
   <figcaption>The image used earlier now has <code>circle(50%)</code> applied. As the image is not square, we hit the margin box at the top and bottom and the circle is clipped.</figcaption>
 </figure>
 
@@ -171,7 +171,7 @@ then copy and paste the code into your own project.
 
 ## Shapes from box values
 
-Also defined in CSS Shapes are shapes from [box values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/From_box_values).
+Also defined in CSS Shapes are shapes from [box values](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/From_box_values).
 These relate to the CSS Box Model -- the content box, padding box, border box,
 and margin box with keyword values of `content-box`, `border-box`, `padding-box`, and `margin-box`.
 

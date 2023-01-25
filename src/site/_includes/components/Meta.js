@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-const {generateSrc} = require('./Img');
+const {html} = require('common-tags');
+const {generateImgixSrc} = require('./Img');
 const site = require('../../_data/site');
 const strip = require('../../_filters/strip');
-const {html} = require('common-tags');
+const {getTranslatedUrls} = require('../../_filters/urls');
+const {findByUrl} = require('../../_filters/find-by-url');
 
-module.exports = (locale, page, collections, renderData = {}) => {
+const i18nRegex = /i18n\/\w+\//;
+
+module.exports = (locale, page, renderData = {}) => {
   const forbiddenCharacters = [{searchValue: /"/g, replaceValue: '&quot;'}];
   const pageData = {
-    ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
+    ...findByUrl(page.url)?.data,
     ...renderData,
     page,
   };
@@ -56,18 +59,11 @@ module.exports = (locale, page, collections, renderData = {}) => {
     let thumbnail = social.thumbnail || social.hero;
     const alt = social.alt || site.name;
 
-    // If the page doesn't have social media images, a hero, or a thumbnail,
-    // fallback to using the site's default thumbnail.
-    // Return a full path to the image using our image CDN.
-    if (!thumbnail) {
-      thumbnail = new URL(site.thumbnail, site.imageCdn);
-    } else {
-      thumbnail = new URL(generateSrc(thumbnail));
-    }
-    thumbnail.searchParams.set('auto', 'format');
-    thumbnail.searchParams.set('fit', 'max');
-    thumbnail.searchParams.set('w', 1200);
-    thumbnail = thumbnail.toString();
+    thumbnail = generateImgixSrc(thumbnail || site.thumbnail, {
+      fit: 'max',
+      w: 1200,
+      fm: 'auto',
+    });
 
     return {title, description, thumbnail, alt};
   }
@@ -130,8 +126,31 @@ module.exports = (locale, page, collections, renderData = {}) => {
     `;
   }
 
+  function renderHreflangMeta() {
+    if (!pageUrl) {
+      // This can happen when a page is not intended to be included in the final
+      // output, e.g. has a permalink: false.
+      return;
+    }
+    const url = pageUrl.startsWith('/i18n/')
+      ? pageUrl.replace(i18nRegex, '')
+      : pageUrl;
+
+    // Find i18n equivalents of the current url and check if they exist.
+    const langhrefs = getTranslatedUrls(pageUrl).map((langhref) => {
+      const href = new URL(langhref[1], site.url).href;
+      return `<link rel="alternate" hreflang="${langhref[0]}" href="${href}" />`;
+    });
+    // If some i18n equivalents are found, add also the default language (en).
+    if (langhrefs.length) {
+      const enHref = new URL(url, site.url).href;
+      langhrefs.push(`<link rel="alternate" hreflang="en" href="${enHref}" />`);
+    }
+    return langhrefs.join('\n');
+  }
+
   function renderCanonicalMeta() {
-    return html` <link rel="canonical" href="${canonical}" /> `;
+    return html` <link rel="canonical" href="${canonical}" />`;
   }
 
   function renderRSS() {
@@ -149,6 +168,25 @@ module.exports = (locale, page, collections, renderData = {}) => {
     `;
   }
 
+  function renderPageMeta() {
+    // Ensure multiple metadata are always reported the same way.
+    const sortAndDedupe = (list) => {
+      return list && [...new Set(list.sort())].join();
+    };
+
+    const authors = sortAndDedupe(pageData.authors);
+    const paths = sortAndDedupe(pageData.postToPaths[page.fileSlug]);
+    const tags = sortAndDedupe(
+      pageData.tags?.filter((t) => !['post', 'blog'].includes(t)),
+    );
+
+    return html`
+      ${authors && `<meta name="authors" content="${authors}" />`}
+      ${paths && `<meta name="paths" content="${paths}" />`}
+      ${tags && `<meta name="tags" content="${tags}" />`}
+    `;
+  }
+
   // prettier-ignore
   return html`
     <title>${strip(pageData.title
@@ -158,9 +196,11 @@ module.exports = (locale, page, collections, renderData = {}) => {
       || (pageData.path && pageData.path.description), forbiddenCharacters)}" />
 
     ${renderCanonicalMeta()}
+    ${renderHreflangMeta()}
     ${renderGoogleMeta()}
     ${renderFacebookMeta()}
     ${renderTwitterMeta()}
     ${renderRSS()}
+    ${renderPageMeta()}
   `;
 };

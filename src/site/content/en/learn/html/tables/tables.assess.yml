@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of tables.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: Which element is used to mark up cells that are headings?
+    options:
+      - content: "`<header>`"
+        rationale: "Try again."
+      - content: "`<caption>`"
+        rationale: "Try again."
+      - content: "`<th>`"
+        rationale: "Correct!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Which information is likely to be suitable for layout with a table?
+    options:
+      - content: "Some scientific terms and their description."
+        rationale: "Try again, this is better suited to a `<dl>`."
+      - content: "A spreadsheet of information detailing students and their grades over 3 semesters."
+        rationale: "Correct!"
+      - content: "Ingredients for a recipe."
+        rationale: "Try again, this is better suited to a `<ul>`."

@@ -1,59 +1,91 @@
 ---
-layout: default
+layout: default-next
 permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
 show_banner: false
 pageScripts:
   - '/js/content.js'
 ---
+{% if path === undefined  %}
+  {% set postPaths = page | getPaths %}
+  {# Use first found path as a default path. #}
+  {% set path = paths[postPaths[0]] %}
+{% endif %}
+<web-codelab class="web-codelab" glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}"{% endif %} {% if site.percy === 'true' %}snapshot{% endif %}>
+  <div class="web-codelab__instructions">
+    <article class="prose">
+      <header class="flow gap-bottom-size-3">
 
-<div class="codelab-landing-page">
-  {% if path === undefined  %}
-    {% set postPaths = page | getPaths %}
-    {# Use first found path as a default path. #}
-    {% set path = paths[postPaths[0]] %}
-  {% endif %}
-  <web-codelab glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}"{% endif %} {% if site.env === 'test' %}testmode{% endif %}>
-    <div class="web-codelab__instructions">
-      <h1 class="w-headline w-headline--two web-codelab__headline">{{ title }}</h1>
-      {% if date %}
-        <div class="w-author__published">
-          <time>{{date | prettyDate}}</time>
-          {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
-        </div>
-      {% endif %}
+        <h1 id="{{ title | slugify }}">{{ title }}</h1>
+        {% if subhead | length %}
+          <p class="color-mid-text flow-space-base">
+            {{ subhead | md | safe }}
+          </p>
+        {% endif %}
 
-      {% if authors %}
-        <div class="w-authors w-mt--xl w-pt--sm">
-          {% for author in authors %}
-            {% Author {
-              id: author,
-              author: collections.authors[author],
-              showSocialMedia: true
-              }
-            %}
-          {% endfor %}
-        </div>
-      {% endif %}
+        {% if date %}
+          <div class="flow-space-size-1 color-mid-text text-size-0">
+            <time>{{date | prettyDate}}</time>
+            {% if updated %} — {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
+          </div>
+        {% endif %}
+
+        {% SignPosts page.fileSlug %}
+
+        {% if authors %}
+          <div class="cluster flow-space-size-2">
+            {% for author in authors %}
+              {% Author {
+                id: authorKey,
+                author: collections.authors[author],
+                showSocialMedia: true,
+                locale: locale
+                }
+              %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </header>
 
       {% if draft and site.env === 'dev' %}
-        <div class="w-banner w-banner--warning w-banner--body">
-          🚨 This post is a draft! 🚨
+        <div class="banner bg-state-warn-bg color-core-text">
+          <p><strong>{{ 'i18n.post.is_draft' | i18n(locale) }}</strong></p>
         </div>
       {% endif %}
 
       {{ content | safe }}
+
+      <div class="text-size-0 color-mid-text">
+        <span>
+          {% if updated %}
+            {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
+          {% else %}
+            {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
+          {% endif %}
+        </span>
+        —
+        <a
+          href="{{ page.inputPath | githubLink }}"
+        >
+          {{ 'i18n.post.improve_article' | i18n(locale) }}
+        </a>
+      </div>
+
       {% if related_post %}
-        {% ArticleNavigation {
-          back: '/' + related_post,
-          backLabel: 'Return to article'
-        } %}
+        {% set backUrl = '/' + related_post %}
+        {% set backLabel = 'Return to article' %}
       {% elif path %}
-        {% ArticleNavigation {
-          back: '/' + path.slug,
-          backLabel: 'Return to all articles',
-          path: page
-        } %}
+        {% set backUrl = '/' + path.slug %}
+        {% set backLabel = 'Return to all articles' %}
       {% endif %}
-    </div>
-  </web-codelab>
-</div>
+
+      {% if backLabel and backUrl %}
+        <div class="flow-space-size-2">
+          <a href="{{ backUrl }}" class="button" data-type="secondary">
+            {% include 'icons/arrow-back.svg' %}
+            <span>{{ backLabel }}</span>
+          </a>
+        </div>
+      {% endif %}
+    </article>
+  </div>
+</web-codelab>

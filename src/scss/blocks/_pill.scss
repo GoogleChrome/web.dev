@@ -1,0 +1,40 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/pill
+.pill {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: get-size('size-0');
+  line-height: 1;
+  padding: 0.35rem 0.6rem;
+  border-radius: 2em;
+  border: 1px solid var(--color-stroke);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+
+  @include apply-utility('font', 'brand');
+  @include apply-utility('color', 'core-text');
+
+  &:hover,
+  &[data-state='active'],
+  &[aria-current='page'] {
+    border-color: get-utility-value('bg', 'action-bg-primary');
+
+    @include apply-utility('color', 'action-text-primary');
+    @include apply-utility('bg', 'action-bg-primary');
+  }
+}
+
+.pill[data-inactive] {
+  cursor: default;
+
+  &:hover,
+  &[data-state='active'],
+  &[aria-current='page'] {
+    background: transparent;
+    border-color: var(--color-stroke);
+    @include apply-utility('color', 'core-text');
+  }
+}

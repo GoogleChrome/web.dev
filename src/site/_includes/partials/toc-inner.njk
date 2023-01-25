@@ -1,12 +1,16 @@
-{# This is used inline with body contents as the TOC on small screens. #}
+{#
+  This is used inline with body contents as the TOC on small screens.
+  Set `tocTitle` to ovverride default title of ToC.
+#}
 {% if tocContents %}
   {% from 'macros/icon.njk' import icon with context %}
 
-  <details class="course-toc toc flow display-block lg:display-none" data-type="inner" role="navigation" aria-label="Table of contents">
-    <summary class="display-inline-flex align-center user-select-none">
-      <div class="course-toc__heading font-google-sans weight-medium">{{ 'i18n.toc.table_of_contents' | i18n(locale) }}</div>
-      <span class="toc__icon">{{ icon('arrow-right') }}</span>
-    </summary>
-    <div class="toc__wrapper flow-recursive">{{ tocContents | safe }}</div>
-  </details>
+  <div class="xl:hidden-yes flow-space-size-1">
+    <details data-type="inner" role="navigation" aria-label="{{ tocTitle if tocTitle else 'i18n.toc.toc' | i18n(locale) }}">
+      <summary>
+        {{ tocTitle if tocTitle else 'i18n.toc.toc' | i18n(locale) }}
+      </summary>
+      <div class="toc">{{ tocContents | safe }}</div>
+    </details>
+  </div>
 {% endif %}

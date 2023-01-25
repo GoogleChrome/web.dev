@@ -36,10 +36,10 @@ concerns on your site.
 
 ## Why is this useful?
 
-It is crucial to build web sites that provide every user, regardless of their
+It is crucial to build websites that provide every user, regardless of their
 impairment or restriction, the capability to access its content. Using auditing
 libraries such as `react-axe` and `eslint-plugin-jsx-a11y` during the
-development of your React application will automatically surface any
+development of your React application will automatically expose any
 accessibility issues as they pop up.
 
 ## Use eslint-plugin-jsx-a11y
@@ -131,7 +131,7 @@ if (process.env.NODE_ENV !== 'production') {
 ```
 
 A
-[dynamic import](https://developers.google.com/web/updates/2017/11/dynamic-import)
+[dynamic import](https://v8.dev/features/dynamic-import)
 is used here to only load the library when it is not in production mode before
 rendering and booting up the root `App` component. This ensures that it is not
 unnecessarily included in the final production bundle.
@@ -139,7 +139,7 @@ unnecessarily included in the final production bundle.
 Now when you run the application during development, issues are surfaced
 directly to the Chrome DevTools console.
 
-<img class="w-screenshot w-screenshot--filled" src="./react-axe-devtools.png" alt="React Axe in Chrome DevTools">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7kiPTpXD47VBf83n6mqz.png", alt="React Axe in Chrome DevTools", width="800", height="430" %}
 
 A severity level is also assigned for each violation. These levels are:
 

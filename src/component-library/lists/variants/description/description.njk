@@ -1,0 +1,9 @@
+<dl>
+  {% for item in data.items %}
+  <dt>{{ item.key }}</dt>
+  {% for value in item.values %}
+  <dd>{{ value }}</dd>
+  {% endfor %}
+  <!--prettier-ignore-->
+  {% endfor %}
+</dl>

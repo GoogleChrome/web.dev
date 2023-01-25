@@ -38,10 +38,12 @@ Code:
 
 ```js
 window.addEventListener('beforeinstallprompt', (event) => {
+  // Prevent the mini-infobar from appearing on mobile.
+  event.preventDefault();
   console.log('👍', 'beforeinstallprompt', event);
   // Stash the event so it can be triggered later.
   window.deferredPrompt = event;
-  // Remove the 'hidden' class from the install button container
+  // Remove the 'hidden' class from the install button container.
   divInstall.classList.toggle('hidden', false);
 });
 ```
@@ -109,4 +111,4 @@ Congratulations, you app is now installable!
 Here are some additional things that you can do:
 
 +  [Detect if your app is launched from the home screen](/customize-install/#detect-mode)
-+  [Show the native app install prompt instead](https://developers.google.com/web/fundamentals/app-install-banners/native)
++  [Show the operating system's app install prompt instead](https://developer.chrome.com/blog/app-install-banners-native/)

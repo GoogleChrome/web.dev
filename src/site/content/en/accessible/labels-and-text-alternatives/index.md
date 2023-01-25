@@ -34,16 +34,16 @@ It's easy to check an element's accessible name using Chrome's DevTools:
    behind a `»` symbol.
 1. In the **Computed Properties** dropdown, look for the **Name** property.
 
-<figure class="w-figure">
-  {% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %}
+  <figcaption>
     DevTools accessibility pane showing the computed name for a button.
   </figcaption>
 </figure>
 
 {% Aside %}
 To learn more, check out the [DevTools Accessibility
-Reference](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference).
+Reference](https://developer.chrome.com/docs/devtools/accessibility/reference/).
 {% endAside %}
 
 Whether you're looking at an `img` with `alt` text or an `input` with a
@@ -56,7 +56,7 @@ There are different ways to add an accessible name to an element,
 depending on its type. The following table lists the most common element types
 that need accessible names and links to explanations for how to add them.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -142,7 +142,7 @@ that need accessible names and links to explanations for how to add them.
 ## Label documents and frames
 
 Every page should have a
-[`title`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+[`title`](https://developer.mozilla.org/docs/Web/HTML/Element/title)
 element that briefly explains what the page is about. The `title` element gives
 the page its accessible name. When a screen reader enters the page, this is the
 first text that is announced.
@@ -180,7 +180,7 @@ lets the user decide if they wish to enter the frame or bypass it.
 ## Include text alternatives for images and objects
 
 An `img` should always be accompanied by an
-[`alt`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes)
+[`alt`](https://developer.mozilla.org/docs/Web/HTML/Element/img#Attributes)
 attribute to give the image its accessible name. If the image fails to load, the
 `alt` text is used as a placeholder so users have a sense of what the image was
 trying to convey.
@@ -296,9 +296,9 @@ This is especially helpful for screen readers that offer shortcuts to list all
 of the links on the page. If links are full of repetitive filler text, these
 shortcuts become much less useful:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="VoiceOver's links menu filled with the word 'here'.", width="519", height="469" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of VoiceOver, a screen reader for macOS, showing the navigate by
     links menu.
   </figcaption>
@@ -330,8 +330,8 @@ When the checkbox has been labeled correctly, the screen reader can report that
 the element has a role of checkbox, is in a checked state, and is named "Receive
 promotional offers?" like in the VoiceOver example below:
 
-<figure class="w-figure">
-  {% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="VoiceOver text output showing 'Receive promotional offers?'", width="640", height="174", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="VoiceOver text output showing 'Receive promotional offers?'", width="640", height="174" %}
 </figure>
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment 'self-assessment' %}

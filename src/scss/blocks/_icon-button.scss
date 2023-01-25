@@ -1,0 +1,26 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/icon-button
+.icon-button {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  color: currentColor;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+
+  svg {
+    display: block;
+    width: 1em;
+    height: 1em;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    fill: currentColor;
+  }
+
+  &:hover svg {
+    filter: invert(0.2);
+  }
+}

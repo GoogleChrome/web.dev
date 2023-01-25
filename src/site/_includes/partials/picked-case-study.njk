@@ -1,0 +1,17 @@
+{% set pickedItem = null %}
+
+{% if pickedCaseStudyUrl %}
+  {% set pickedItem = pickedCaseStudyUrl | findByUrl %}
+{% endif %}
+
+{% if pickedItem %}
+<a class="feature-card" href="{{ pickedItem.url }}" data-treatment="bg-image">
+  <span class="feature-card__eyebrow">Case study</span>
+  <h3 class="feature-card__title">{{ pickedItem.data.title }}</h3>
+  {% if featuredCard.video %}
+  {% Img src=pickedItem.data.hero, alt="", width="570", height="330", class="feature-card__background", fetchpriority="high"%}
+  {% else %}
+  {% Img src=pickedItem.data.hero, alt="", width="570", height="330", class="feature-card__background", loading="eager" %}
+  {% endif %}
+</a>
+{% endif %}

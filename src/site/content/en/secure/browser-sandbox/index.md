@@ -13,13 +13,13 @@ description: |
 To defend against attacks, a developer needs to mitigate vulnerabilities and add
 security features to an application. Luckily, on the web, the browser provides
 many security features. Some are available for developers to opt-in, and some
-are turned on by default to protect users. 
+are turned on by default to protect users.
 
-## The idea of a "sandbox"  
+## The idea of a "sandbox"
 
-<figure class="w-figure w-figure--inline-right">
-  <img src="./sandbox.png" alt="browser as a sandbox">
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kPXwa8wRoJ5DGw97Mx3D.png", alt="browser as a sandbox", width="719", height="403" %}
+  <figcaption>
     Figure: Browser as a sandbox
   </figcaption>
 </figure>
@@ -43,7 +43,7 @@ would probably click on it without asking questions like "What kind of
 JavaScript will this site download?".
 
 The browser sandbox is the key feature that makes browsing on the web
-frictionless by making it safer to run arbitrary code. 
+frictionless by making it safer to run arbitrary code.
 
 ## Make it secure by design
 
@@ -53,7 +53,7 @@ security? Absolutely yes!
 First of all, sandbox features are not the perfect shield. Even though browser
 engineers work hard, browsers could have vulnerabilities and attackers are
 always trying to bypass the sandbox (such as with
-[Spectre Attack](https://developers.google.com/web/updates/2018/02/meltdown-spectre)).
+[Spectre Attack](https://developer.chrome.com/blog/meltdown-spectre/)).
 
 The sandbox could sometimes get in a way of creating a great web experience. For
 example, a browser may block a fetch request to an image hosted on a different

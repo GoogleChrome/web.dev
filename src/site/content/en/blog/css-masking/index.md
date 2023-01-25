@@ -22,7 +22,7 @@ feedback:
 
 When you [clip an element](/css-clipping) using the `clip-path` property the clipped area becomes invisible.
 If instead you want to make part of the image opaque or apply some other effect to it, then you need to use masking.
-This post explains how to use the [`mask-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image) property in CSS,
+This post explains how to use the [`mask-image`](https://developer.mozilla.org/docs/Web/CSS/mask-image) property in CSS,
 which lets you specify an image to use as a mask layer.
 This gives you three options. You can use an image file as your mask, an SVG, or a gradient.
 
@@ -31,6 +31,8 @@ This gives you three options. You can use an image file as your mask, an SVG, or
 Most browsers only have partial support for the standard CSS masking property.
 You will need to use the `-webkit-` prefix in addition to the standard property in order to achieve the best browser compatibility.
 See [Can I use CSS Masks?](https://caniuse.com/#feat=css-masks) for full browser support information.
+
+{% BrowserCompat 'css.properties.mask-image' %}
 
 While browser support using the prefixed property is good,
 when using masking to make text on top of an image visible take care of what will happen if masking is unavailable.
@@ -66,7 +68,7 @@ The third image has a white star on a background with a gradient transparency.
 </div>
 
 In this example I am also using the `mask-size` property with a value of `cover`.
-This property works in the same way as [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size).
+This property works in the same way as [`background-size`](https://developer.mozilla.org/docs/Web/CSS/background-size).
 You can use the keywords `cover` and `contain` or you can give the background a size using any valid length unit, or a percentage.
 
 You can also repeat your mask just as you might repeat a background image,
@@ -104,8 +106,8 @@ The first is to have a `<mask>` element inside the SVG and reference the ID of t
 }
 ```
 
-<figure class="w-figure">
-  <img class="w-screenshot" style="max-inline-size: 480px" src='./svg-mask.jpg' alt="An example of using an SVG mask">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="An example of using an SVG mask", width="699", height="490" %}
 </figure>
 
 The advantage of this approach is that the mask could be applied to any HTML element, not just an image.

@@ -1,0 +1,16 @@
+<a href="{{ data.url }}" class="card" data-style="branded">
+  <div class="card__header repel">
+    <p class="color-mid-text">{{ data.header.text }}</p> 
+    <div class="counter {{ data.header.counter.utilities }}">
+      <span class="counter__content">{{ data.header.counter.count }}</span>
+      {% include data.header.counter.icon %}
+    </div>
+  </div>
+  <img src="{{ data.img.src }}" alt="{{ data.img.alt }}" />
+  <div class="card__content flow">
+    <h3 class="visually-hidden">{{ data.title }}</h3>
+    <img class="card__logo" src="{{ data.logo }}" alt="" aria-hidden="true" />
+    <p class="text-size-0">{{ data.summary }}</p>
+  </div>
+</a>
+

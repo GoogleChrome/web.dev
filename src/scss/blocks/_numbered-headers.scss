@@ -1,0 +1,55 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/numbered-headers
+.numbered-headers {
+  counter-reset: numbered-headers;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: get-space('size-1');
+}
+
+.numbered-headers__step {
+  counter-increment: numbered-headers;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: clamp(16rem, 100%, 30rem);
+}
+
+/// The heading is a wrapper element which makes the horizontal
+/// view (using cluster) easier to achieve
+.numbered-headers__heading {
+  --gutter: 1em;
+  flex: auto;
+
+  &::before {
+    content: counter(numbered-headers);
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 2em;
+    height: 2em;
+    font-size: get-size('size-2');
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    margin-bottom: 1em;
+
+    @include apply-utility('weight', 'bold');
+    @include apply-utility('bg', 'mid-bg');
+  }
+}
+
+.numbered-headers__heading.cluster::before {
+  margin: 0;
+}
+
+@include media-query('lg') {
+  .numbered-headers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .numbered-headers__step {
+    width: unset;
+  }
+}

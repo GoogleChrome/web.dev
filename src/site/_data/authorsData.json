@@ -1,150 +1,411 @@
 {
+  "danristic": {
+    "homepage": "http://www.danristic.com/",
+    "twitter": "dristic101",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/b6v4qq26t6NWHAIm0SbV.png"
+  },
+  "gman": {
+    "homepage": "http://games.greggman.com/game/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/1BBm3UlHXE5rTYgdFr7e.png"
+  },
+  "dominiccooney": {
+    "homepage": "http://dcooney.com/",
+    "twitter": "coonsta",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/LZY3l6Yk6Nfj2whuB15r.png"
+  },
+  "zgoddard": {
+    "homepage": "http://gradientstudios.com/",
+    "twitter": "ZofGames",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/eYqcqTbc2Lgfn9013boG.png"
+  },
+  "tomwiltzius": {
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/pfj6ogyKu63pn6IOoJEA.png"
+  },
+  "coltmcanlis": {
+    "homepage": "http://mainroach.blogspot.com/",
+    "twitter": "duhroach",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/YT88zCOqYHewnehPUatW.png"
+  },
+  "marcinwichary": {
+    "homepage": "http://www.aresluna.org/",
+    "twitter": "mwichary",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/xUepvN9NAbPTBl8gZNkS.png"
+  },
+  "razvancaliman": {
+    "homepage": "http://razvancaliman.com/",
+    "twitter": "razvancaliman",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/7dpZJ4nTkOOGSpZdJqeR.png"
+  },
+  "christiancantrell": {
+    "homepage": "http://www.livingdigitally.net/",
+    "twitter": "cantrell",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/YguFULnqX68vwQFm3kXi.png"
+  },
+  "jameswilliams": {
+    "homepage": "http://jameswilliams.be/",
+    "twitter": "ecspike",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/XAcwYmIIXpwKmGY5oUsy.png"
+  },
+  "joemarini": {
+    "twitter": "joemarini",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/HWikKThV8CDipPIInN3c.png"
+  },
+  "loreenalee": {
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/CvudF1XU7va8GySmmbqU.png"
+  },
+  "malteubl": {
+    "homepage": "http://nonblocking.io/",
+    "twitter": "cramforce",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/bealJ5BxlwRxOGhya1PK.png"
+  },
+  "raymondcamden": {
+    "homepage": "http://www.raymondcamden.com/",
+    "twitter": "cfjedimaster",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/1AfrcGQyX3BBB6hK6VGM.png"
+  },
+  "brianford": {
+    "homepage": "http://briantford.com/",
+    "twitter": "briantford",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/L4fwOAEyX6GidNzg9kOo.png"
+  },
+  "tjvantoll": {
+    "homepage": "http://tjvantoll.com/",
+    "twitter": "tjvantoll",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/OVtLm4LBwpG4NHlgIOvh.png"
+  },
+  "bradfrost": {
+    "homepage": "http://http//bradfrostweb.com/",
+    "twitter": "brad_frost",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/Ng7L8xiEtfwItM990PhT.png"
+  },
+  "lillithompson": {
+    "twitter": "lillithompson",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/WiYHLt4y5HHcWvKPN017.png"
+  },
+  "saqoosha": {
+    "homepage": "http://saqoo.sh/a",
+    "twitter": "Saqoosha",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/kZHW6d3oVitJH5CRRbFT.png"
+  },
+  "adriangould": {
+    "homepage": "http://pagodagames.com/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0JlbM6fxB53uDHeSAs1U.png"
+  },
+  "adammark": {
+    "homepage": "http://www.adammark.net/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/QXPmWhi88BVfaVcS72d4.png"
+  },
+  "gskinnerdotcom": {
+    "homepage": "http://gskinner.com/",
+    "twitter": "gskinner",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZtebgoAmedmaAWsHNMgS.png"
+  },
+  "seanmiddleditch": {
+    "homepage": "http://sonargame.com/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/IVLI2l2RjFbHDB9MJOg3.png"
+  },
+  "justingitlin": {
+    "homepage": "http://legworkstudio.com/",
+    "twitter": "legwork",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ARaEfdMejcNWtPLqyf3O.png"
+  },
+  "activetheory": {
+    "homepage": "http://activetheory.net/",
+    "twitter": "active_theory",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/gNL5Xc8KIWX7RlLfccdz.png"
+  },
+  "luigimontanez": {
+    "homepage": "http://sunlightlabs.com/",
+    "twitter": "LuigiMontanez",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/glvD0KI05d9PTHfzRWRw.png"
+  },
+  "michaeldewey": {
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/HHHUxL7iukuBbyuVMnqR.png"
+  },
+  "oskareriksson": {
+    "homepage": "http://www.dinahmoe.com/",
+    "twitter": "_oskareriksson",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/1d8l0y8VlzSZJslyjG61.png"
+  },
+  "fredchasen": {
+    "homepage": "http://www.fchasen.com/",
+    "twitter": "fredjc",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZIZgvlAA5NnDA5EQexpB.png"
+  },
+  "plan8": {
+    "homepage": "http://plan8.se/",
+    "twitter": "Plan8_Music",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZIZgvlAA5NnDA5EQexpB.png"
+  },
+  "unit9com": {
+    "homepage": "http://unit9.com/",
+    "twitter": "unit9",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/cyO3s1wDVx9DcPfFLTfT.png"
+  },
+  "geoffblair": {
+    "homepage": "http://www.lostdecadegames.com/",
+    "twitter": "geoffblair",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/gSUNYY4W3dJE9tYlp4ZG.png"
+  },
+  "matthackett": {
+    "homepage": "http://www.lostdecadegames.com/",
+    "twitter": "richtaur",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/UH9IVsVygWpMOqtPsVrQ.png"
+  },
+  "christophergammon": {
+    "homepage": "http://www.cjgammon.com/",
+    "twitter": "cjgammon",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/tRs6b787z7gcczj3sZt8.png"
+  },
+  "ericrk": {
+    "homepage": "http://allthecodes.tumblr.com/",
+    "twitter": "ericrkarlSF",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/9iO5gZZ7T89hpyTaKn0x.png"
+  },
+  "thomasreynolds": {
+    "homepage": "http://awardwinningfjords.com/",
+    "twitter": "tdreyno",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/9a6bZAoux8hlKtPGQdG5.png"
+  },
+  "einaroberg": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "inear",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/A5LlokBwOGhxuOd2g0g0.png"
+  },
+  "danielisaksson": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "northkingdom",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/rOydjtEeVxCf2G0gLuKA.png"
+  },
+  "michaelchang": {
+    "homepage": "http://ghost-hack.com/",
+    "twitter": "mflux",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZgEOjGWE13Mq77PmQuy2.png"
+  },
+  "hakimelhattab": {
+    "homepage": "http://hakim.se/experiments",
+    "twitter": "hakimel",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/cNfAWdx2YLptERfhfevM.png"
+  },
+  "hanseklund": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "boolhaze",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/E6s2qr8J7nxIfGwuGHVk.png"
+  },
+  "derekdetweiler": {
+    "homepage": "http://gopherwoodstudios.com/",
+    "twitter": "gopherwood",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/7vUD1Qw3zif8kJidsFXr.png"
+  },
+  "johnmccutchan": {
+    "homepage": "http://www.johnmccutchan.com/",
+    "twitter": "johnmccutchan",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/hYFvb82T2jrdglYrC0o9.png"
+  },
+  "wesleyhales": {
+    "homepage": "http://wesleyhales.com/",
+    "twitter": "wesleyhales",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/Gfvo39bDqZMSOQmQ9WRc.png"
+  },
+  "mahemoff": {
+    "homepage": "http://mahemoff.com/",
+    "twitter": "mahemoff",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/8qXOF2DbhYTGnJG5qHXh.png"
+  },
+  "taligarsiel": {
+    "homepage": "http://taligarsiel.com/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/V3imNwHh9VNaDmFpXRnC.png"
+  },
+  "paulirish": {
+    "homepage": "https://www.paulirish.com/",
+    "twitter": "paul_irish",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/pkfFfQq25tFjXgFQw1rF.png"
+  },
+  "mdeal": {
+    "homepage": "https://galactic.ink/",
+    "twitter": "mudcube",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/OAJG3V813un1iXuy451G.png"
+  },
+  "smus": {
+    "homepage": "https://smus.com/",
+    "twitter": "borismus",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/qjz6fGVI9DfXFbR2n4KC.png"
+  },
+  "danielmoore": {
+    "homepage": "https://blog.danielx.net/",
+    "twitter": "STRd6",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/oHvCdFmgZrWSnqFWK2Qz.png"
+  },
+  "davidtong": {
+    "homepage": "http://ww25.davidtong.me/?subid1=20220505-1958-5384-b7d2-32bce5bbc6f8",
+    "twitter": "davidalism",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/oateRfgAPbjgAOQYLcCZ.png"
+  },
+  "jeremychone": {
+    "homepage": "https://britesnow.com",
+    "twitter": "jeremychone",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/bnjbSoWQdzP3AEYOyZnW.png"
+  },
+  "ernestd": {
+    "twitter": "edr",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/CoDoVg4PZ64aeUGLbr9i.png"
+  },
+  "chriswilson": {
+    "homepage": "https://cwilso.com/",
+    "twitter": "cwilso",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/RudCxfjPZlFSFeFRaYuG.png"
+  },
+  "sethladd": {
+    "homepage": "https://sethladd.com/",
+    "twitter": "sethladd",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/G0iRvLgivtwPq5cEdk8g.jpeg"
+  },
+  "mustafa": {
+    "homepage": "http://www.designtoday.info/",
+    "twitter": "mustafa_x",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/zL9KZGMmN6NIfAxwSMfx.jpeg"
+  },
+  "mco": {
+    "homepage": "https://about.me/marc1",
+    "twitter": "marcacohen",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/4VNx2OZc6ngQf50LNQz0.jpeg"
+  },
+  "iamakulov": {
+    "homepage": "https://iamakulov.com/",
+    "github": "iamakulov",
+    "twitter": "iamakulov",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wGLbfEs3xyBlmA4lqviX.jpg"
+  },
+  "pbakaus": {
+    "homepage": "https://paulbakaus.com/",
+    "twitter": "pbakaus",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/dmZ5xayLJVUioaNSvtmB.jpeg"
+  },
+  "paulkinlan": {
+    "homepage": "https://paul.kinlan.me/",
+    "twitter": "paul_kinlan",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0O1ZGr2P0l9oTKabyUK5.jpeg"
+  },
+  "dalecurtis": {
+    "github": "https://github.com/dalecurtis",
+    "twitter": "dalecurtis",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/htLpTCWkW3Z6kcuo1Hef.jpeg"
+  },
+  "mscales": {
+    "twitter": "wibblymat",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/z8HZkmZsSLmcKCj0c89W.jpeg"
+  },
+  "ewagasperowicz": {
+    "twitter": "devnook",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/K5zWxdTH5JagItd1w8Vm.jpeg"
+  },
+  "alispivak": {
+    "twitter": "alispivak",
+    "image": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/epjaUBZaBUz4esC6C7n5.png"
+  },
+  "alexdanilo": {
+    "twitter": "alexanderdanilo",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/3EIOmsgE36khub8NbZgE.jpeg"
+  },
+  "taylorsavage": {
+    "twitter": "taylorthesavage",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/rGy547i80kDDHCjlAOdD.jpeg"
+  },
+  "umarhansa": {
+    "country": "UK",
+    "homepage": "https://umaar.com",
+    "twitter": "umaar",
+    "github": "umaar",
+    "image": "image/eHjLPdOn1XcKYDm76GytojNeEkZ2/C0zDh9w4i3wZ8oOunJvR.jpg"
+  },
+  "ilmariheikkinen": {
+    "homepage": "http://fhtr.org/",
+    "twitter": "ilmarihei",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/7cfol9s4qh9MOWWhNosR.jpeg"
+  },
+  "mikewest": {
+    "homepage": "https://mikewest.org/",
+    "twitter": "mikewest",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/lXPOi8zfvtTDXy2kSHVh.jpeg"
+  },
+  "samthorogood": {
+    "homepage": "https://whistlr.info/",
+    "twitter": "samthor",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/lnlpPLdWVs9KlivW4K8A.jpeg"
+  },
+  "aliceboxhall": {
+    "twitter": "sundress",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/X7V1IaSbxjs1E7w8BBrH.jpeg"
+  },
+  "eligrey": {
+    "homepage": "https://eligrey.com/",
+    "twitter": "sephr",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/KCVBACTJTdRvr20r751u.jpeg"
+  },
   "jakearchibald": {
-    "name": {
-      "given": "Jake",
-      "family": "Archibald"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "UK",
     "homepage": "https://jakearchibald.com/",
     "twitter": "jaffathecake",
-    "descriptions": {
-      "en": "Human boy working on web standards at Google"
-    },
     "image": "image/admin/Cprm03kLbFXkxbzGLI6x.jpg"
   },
   "aaronkrajeski": {
-    "name": {
-      "given": "Aaron",
-      "family": "Krajeski"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "country": "Canada",
     "homepage": "http://aaronk.is//",
     "twitter": "_mysteryDate",
     "github": "mysteryDate",
-    "descriptions": {
-      "en": "Overly concerned with glowing rectangles"
-    },
     "image": "image/admin/1v5F1SOBl46ZghbHQMle.svg"
   },
   "felixarntz": {
-    "name": {
-      "given": "Felix",
-      "family": "Arntz"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "US",
     "homepage": "https://felix-arntz.me",
     "twitter": "felixarntz",
-    "description": {
-      "en": "Developer Programs Engineer at Google, contributing to the CMS ecosystem"
-    },
     "image": "image/admin/rAUzMzFAA67M36n66uVT.jpg"
   },
+  "amandabaker": {
+    "github": "amandabaker",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/nr8opTnZn8ZFfrXzfGkV.png"
+  },
   "kaycebasques": {
-    "name": {
-      "given": "Kayce",
-      "family": "Basques"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "US",
+    "homepage": "https://kayce.basqu.es/",
     "twitter": "kaycebasques",
     "github": "kaycebasques",
     "glitch": "kaycebasques",
-    "descriptions": {
-      "en": "Technical Writer, Chrome DevTools & Lighthouse"
-    },
     "image": "image/admin/7GdPR4YDRHSS6llepBOd.jpg"
   },
   "johyphenel": {
-    "name": {
-      "given": "Jo-el van",
-      "family": "Bergen"
-    },
     "twitter": "johyphenel",
     "image": "image/admin/Qfxylpir4hHF23rUgEQP.jpg"
   },
   "sgomes": {
-    "name": {
-      "given": "Sérgio",
-      "family": "Gomes"
-    },
     "twitter": "sergiomdgomes",
     "image": "image/admin/qexUlvBmj0edRQSlsdGL.jpg"
   },
   "beaufortfrancois": {
-    "name": {
-      "given": "François",
-      "family": "Beaufort"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "FR",
     "github": "beaufortfrancois",
-    "descriptions": {
-      "en": "Dives into Chromium source code"
-    },
     "image": "image/admin/mXjY3z3JmrispGtu9yn6.jpg"
   },
+  "cwallez": {
+    "country": "FR",
+    "twitter": "DaKangz",
+    "github": "Kangz",
+    "image": "image/vvhSqZboQoZZN9wBvoXq72wzGAf1/mYkUaoNpythq50oIFiQh.jpeg"
+  },
   "mathiasbynens": {
-    "name": {
-      "given": "Mathias",
-      "family": "Bynens"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "V8"
-    },
     "country": "DE",
     "homepage": "https://mathiasbynens.be/",
     "twitter": "mathias",
     "github": "mathiasbynens",
-    "descriptions": {
-      "en": "V8 JavaScript whisperer"
-    },
     "image": "image/admin/BTQ1idSEo72TlNRJKmLf.jpg"
   },
   "hongchanchoi": {
-    "name": {
-      "given": "Hongchan",
-      "family": "Choi"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "twitter": "hochsays",
     "github": "hoch",
     "homepage": "https://hoch.io/",
-    "descriptions": {
-      "en": "Software Engineer working on Chromium"
-    },
     "image": "image/admin/YbudG6EUF3JjB7u1iLey.jpg"
   },
   "robdodson": {
-    "name": {
-      "given": "Rob",
-      "family": "Dodson"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "US",
     "homepage": "https://robdodson.me",
     "twitter": "rob_dodson",
@@ -153,60 +414,23 @@
     "image": "image/admin/1Yk1TThRpbQr08rC9tmL.jpg"
   },
   "samdutton": {
-    "name": {
-      "given": "Sam",
-      "family": "Dutton"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "UK",
     "twitter": "sw12",
     "github": "samdutton",
-    "descriptions": {
-      "en": "Sam is a Developer Advocate"
-    },
     "image": "image/admin/wPss4TJX9IJ1CJza7iFY.jpg"
   },
   "arthurevans": {
-    "name": {
-      "given": "Arthur",
-      "family": "Evans"
-    },
     "twitter": "devdocdude",
     "github": "arthurevans",
-    "descriptions": {
-      "en": "Arthur is a Tech Writer"
-    },
     "image": "image/admin/e0IbHjXAuzFNqSnnZMcp.jpg"
   },
   "exterkamp": {
-    "name": {
-      "given": "Shane",
-      "family": "Exterkamp"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "country": "US",
     "twitter": "shane_exterkamp",
     "github": "exterkamp",
-    "descriptions": {
-      "en": "Shane is a SWE on Lighthouse"
-    },
     "image": "image/admin/yPytekIqH5VnoqMx3jj2.jpg"
   },
   "sfourault": {
-    "name": {
-      "given": "Sébastien",
-      "family": "Fourault"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Mobile Solutions Consultant"
-    },
     "twitter": "SebFourault",
     "github": "krustydaclown",
     "homepage": "https://medium.com/@sebFourault",
@@ -214,74 +438,26 @@
     "image": "image/admin/zZ07PO3CHP6zwPpnDI03.jpg"
   },
   "tomgreenaway": {
-    "name": {
-      "given": "Tom",
-      "family": "Greenaway"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "AU",
     "github": "tcmg",
     "twitter": "tcmg",
-    "descriptions": {
-      "en": "Tom is the Games Lead for the Chrome & Web Developer Relations team at Google"
-    },
     "image": "image/admin/A1EASC3dUKSf0lHijPyh.jpg"
   },
   "ilyagrigorik": {
-    "name": {
-      "given": "Ilya",
-      "family": "Grigorik"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "twitter": "igrigorik",
     "github": "igrigorik",
     "image": "image/admin/ZkKPT8vEyGOWvy60ML7R.jpg"
   },
   "yigu": {
-    "name": {
-      "given": "Yi",
-      "family": "Gu"
-    },
     "twitter": "yigsgu",
     "github": "yi-gu",
-    "descriptions": {
-      "en": "Software Engineer working on Chromium"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "country": "Canada",
     "image": "image/admin/1jsaXAFfmWcyGObF0MF3.jpg"
   },
   "alsan": {
-    "name": {
-      "given": "Kaan",
-      "family": "Alsan"
-    },
-    "descriptions": {
-      "en": "Former Software Engineer Intern working on Chromium"
-    },
-    "org": {
-      "name": "University of Waterloo"
-    },
     "image": "image/admin/4PTUuazRuGaWSV1LbAOz.jpg"
   },
   "katiehempenius": {
-    "name": {
-      "given": "Katie",
-      "family": "Hempenius"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "USA",
     "homepage": "https://katiehempenius.com/",
     "twitter": "katiehempenius",
@@ -290,251 +466,123 @@
     "image": "image/admin/fZo7BJGec2MNRt6cWpeh.jpg"
   },
   "mihajlija": {
-    "name": {
-      "given": "Milica",
-      "family": "Mihajlija"
-    },
     "homepage": "https://mihajlija.github.io/",
     "twitter": "bibydigital",
     "github": "mihajlija",
     "image": "image/admin/WkMOiDtaDgiAA2YkRZ5H.jpg"
   },
   "mustafakurtuldu": {
-    "name": {
-      "given": "Mustafa",
-      "family": "Kurtuldu"
-    },
     "homepage": "https://www.designtoday.info/",
     "twitter": "mustafa_x",
     "github": "mustafa-x",
     "image": "image/admin/0MyqDvMQmaxVodxo5kr9.jpg"
   },
   "agektmr": {
-    "name": {
-      "given": "Eiji",
-      "family": "Kitamura"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "JP",
     "homepage": "https://blog.agektmr.com",
     "twitter": "agektmr",
     "github": "agektmr",
-    "descriptions": {
-      "en": "Developer Advocate in Tokyo"
-    },
     "image": "image/admin/Mh9DRmQhjlroJM9JDqsu.jpg"
   },
   "kosamari": {
-    "name": {
-      "given": "Mariko",
-      "family": "Kosaka"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "US",
     "homepage": "https://kosamari.com/",
     "twitter": "kosamari",
     "github": "kosamari",
     "glitch": "kosamari",
-    "descriptions": {
-      "en": "Mariko is a drawsplainer"
-    },
     "image": "image/admin/TaVHIb4KixCUF6XheH7z.jpg"
   },
   "petelepage": {
-    "name": {
-      "given": "Pete",
-      "family": "LePage"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "US",
     "homepage": "https://petelepage.com",
     "twitter": "petele",
     "github": "petele",
     "glitch": "petele",
-    "descriptions": {
-      "en": "Developer Advocate on the web team at Google, taking the sharp edges off new stuff & helping make the web better for developers! (he/him)"
-    },
-    "image": "image/admin/Dm82FiGUflujPwt38U5P.jpg"
+    "image": "image/0g2WvpbGRGdVs0aAPc6ObG7gkud2/3rFbsLsMMk1VveHfBRSu.jpg"
   },
   "pjmclachlan": {
-    "name": {
-      "given": "Penny",
-      "family": "McLachlan"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "country": "CA",
     "twitter": "b1tr0t",
-    "descriptions": {
-      "en": "Penny is a Product Manager on the Chrome Web Platform team responsible for Chrome permissions, notifications, and progressive web apps."
-    },
-    "image": "image/admin/Y7BI31UZhmuEqgrPpXOJ.jpg"
+    "github": "b1tr0t",
+    "image": "image/0g2WvpbGRGdVs0aAPc6ObG7gkud2/moQSH93u2pALgA65WrsK.jpg"
   },
   "developit": {
-    "name": {
-      "given": "Jason",
-      "family": "Miller"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "US",
     "homepage": "https://jasonformat.com",
     "twitter": "_developit",
     "github": "developit",
-    "descriptions": {
-      "en": "Jason is a Web DevRel focused on speed and the JS ecosystem."
-    },
     "image": "image/admin/bPCYfhUgxdCpXhKAWc9X.jpg"
   },
   "addyosmani": {
-    "name": {
-      "given": "Addy",
-      "family": "Osmani"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "country": "USA",
     "twitter": "addyosmani",
     "github": "addyosmani",
-    "descriptions": {
-      "en": "Eng Manager working on Chrome and Web Platform"
-    },
-    "image": "image/admin/tiRsxAul7QYidjbx2Nwo.jpg"
+    "image": "image/1L2RBhCLSnXjCnSlevaDjy3vba73/LJyNTOzyWbowv2mrlzPS.jpeg"
   },
   "jeffposnick": {
-    "name": {
-      "given": "Jeff",
-      "family": "Posnick"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "US",
-    "homepage": "https://twitter.com/jeffposnick",
+    "homepage": "https://jeffy.info/",
     "twitter": "jeffposnick",
     "github": "jeffposnick",
     "glitch": "jeffposnick",
-    "descriptions": {
-      "en": "Web DevRel @ Google"
-    },
-    "image": "image/admin/uskKSRCW1HyOTCjtdMdo.jpg"
+    "image": "image/FNkVSAX8UDTTQWQkKftSgGe9clO2/aNrmVViMdqMvdXZn0NHA.jpg"
   },
   "pozdnyakov": {
-    "name": {
-      "given": "Mikhail",
-      "family": "Pozdnyakov"
-    },
-    "descriptions": {
-      "en": "Mikhail is an Engineer at Intel"
-    },
     "image": "image/admin/l2RwV8N49BBwJax77Op4.jpg"
   },
   "demianrenzulli": {
-    "name": {
-      "given": "Demian",
-      "family": "Renzulli"
-    },
     "twitter": "drenzulli",
     "github": "demianrenzulli",
     "glitch": "demianrenzulli",
     "image": "image/admin/EuTrT82fyivFn16L0vD9.jpg"
   },
   "alexshalamov": {
-    "name": {
-      "given": "Alex",
-      "family": "Shalamov"
-    },
-    "descriptions": {
-      "en": "Alex is an Engineer at Intel"
-    },
     "image": "image/admin/1v5F1SOBl46ZghbHQMle.svg"
   },
   "rsolomakhin": {
-    "name": {
-      "given": "Rouslan",
-      "family": "Solomakhin"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "country": "USA",
     "twitter": "rsolomakhin",
     "image": "image/admin/ShZR6Eo34U1LJkBEIgk7.jpg"
   },
   "thomassteiner": {
-    "name": {
-      "given": "Thomas",
-      "family": "Steiner"
-    },
     "homepage": "https://blog.tomayac.com/",
     "twitter": "tomayac",
     "github": "tomayac",
     "glitch": "tomayac",
-    "descriptions": {
-      "en": "Tom is a Developer Advocate"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "DE",
     "image": "image/admin/8PLpVmFef6mj72MVWeiN.jpg"
   },
+  "pliao": {
+    "country": "US",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/2FRO4kPII2vh8tfjLtsw.jpg"
+  },
+  "conwayt": {
+    "country": "UK",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/JcsexdcJ6OkCV9UUYW7X.jpg"
+  },
+  "chuijun": {
+    "country": "CN",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/JISOQ86K4Eo8akasdS5S.png"
+  },
   "surma": {
-    "name": {
-      "given": "Surma",
-      "family": ""
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "UK",
     "twitter": "DasSurma",
     "image": "image/admin/MPQ3Co9Ej7Uka4cgPePh.jpg"
   },
   "samthor": {
-    "name": {
-      "given": "Sam",
-      "family": "Thorogood"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "AU",
     "homepage": "https://whistlr.info/",
     "twitter": "samthor",
     "github": "samthor",
     "glitch": "samthor",
-    "descriptions": {
-      "en": "¯‍\\‍_‍(‍ツ‍)‍_‍/‍¯"
-    },
     "image": "image/admin/XQIDJD6narW2eA4d141g.jpg"
   },
+  "stephenstchur": {
+    "country": "US",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/117HjdRQMScu0EouANUl.jpg"
+  },
   "rachelandrew": {
-    "name": {
-      "given": "Rachel",
-      "family": "Andrew"
-    },
-    "country": "GB",
+    "country": "UK",
     "homepage": "https://rachelandrew.co.uk/",
     "twitter": "rachelandrew",
     "github": "rachelandrew",
@@ -542,217 +590,92 @@
     "image": "image/admin/dUAN2DEXHRT6G6iPrIby.jpg"
   },
   "rviscomi": {
-    "name": {
-      "given": "Rick",
-      "family": "Viscomi"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "USA",
     "twitter": "rick_viscomi",
     "github": "rviscomi",
-    "glitch": "rviscomi",
     "image": "image/admin/oWRqaR6XXwIdNXPLpUMn.jpg"
   },
   "philipwalton": {
-    "name": {
-      "given": "Philip",
-      "family": "Walton"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "USA",
     "homepage": "https://philipwalton.com",
     "twitter": "philwalton",
     "github": "philipwalton",
-    "descriptions": {
-      "en": "Engineer at Google working on the Web Platform"
-    },
     "image": "image/admin/ovBM8MF9rYDxVVHUVlcG.jpg"
   },
+  "tunetheweb": {
+    "country": "Ireland",
+    "homepage": "https://www.tunetheweb.com",
+    "twitter": "tunetheweb",
+    "github": "tunetheweb",
+    "image": "image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/FzCdsVVLfgdqxfgs6BDc.jpeg"
+  },
   "ekharvey": {
-    "name": {
-      "given": "Lizzi",
-      "family": "Harvey"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "twitter": "HarveyLizzi",
     "github": "ekharvey",
     "glitch": "ekharvey",
-    "descriptions": {
-      "en": "Lizzi is a Tech Writer at Google"
-    },
     "image": "image/admin/qAnatGOMJMeJhHbHwbWp.jpg"
   },
   "houssein": {
-    "name": {
-      "given": "Houssein",
-      "family": "Djirdeh"
-    },
     "homepage": "https://houssein.me/",
     "twitter": "hdjirdeh",
     "github": "housseindjirdeh",
     "glitch": "housseindjirdeh",
-    "image": "image/admin/BibySYHD7JweNcHZCCOe.jpg"
+    "image": "image/admin/BibySYHD7JweNcHZCCOe.jpg",
+    "country": "US"
   },
   "megginkearney": {
-    "name": {
-      "given": "Meggin",
-      "family": "Kearney"
-    },
     "twitter": "megginkearney",
-    "descriptions": {
-      "en": "Meggin is a Tech Writer"
-    },
     "image": "image/admin/1sJM27b1jwZmcKa6yJEf.jpg"
   },
   "dgash": {
-    "name": {
-      "given": "Dave",
-      "family": "Gash"
-    },
-    "descriptions": {
-      "en": "Dave is a Tech Writer"
-    },
     "image": "image/admin/SVZgPh6bWnji4cQyL38l.jpg"
   },
   "mdiblasio": {
-    "name": {
-      "given": "Michael",
-      "family": "DiBlasio"
-    },
     "github": "mdiblasio",
     "glitch": "mdiblasio",
     "image": "image/admin/CO9R6GSKlH794WHxbpQD.jpg"
   },
-  "jeremywagner": {
-    "name": {
-      "given": "Jeremy",
-      "family": "Wagner"
-    },
-    "github": "malchata",
-    "twitter": "malchata",
-    "image": "image/admin/VUpz95xT3Znav1EP6ikP.jpg"
-  },
   "gmimani": {
-    "name": {
-      "given": "Garima",
-      "family": "Mimani"
-    },
     "github": "garimamimani",
     "glitch": "garimamimani",
     "image": "image/admin/obrDCmQVA55Oc4bBX5ek.jpg"
   },
   "martinsplitt": {
-    "name": {
-      "given": "Martin",
-      "family": "Splitt"
-    },
     "github": "AVGP",
     "twitter": "g33konaut",
     "glitch": "AVGP",
     "image": "image/admin/HoAwoSaHr3yneJoSxKYc.jpg"
   },
   "uskay": {
-    "name": {
-      "given": "Yusuke",
-      "family": "Utsunomiya"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Mobile Solutions Consultant"
-    },
     "country": "JP",
     "homepage": "https://blog.uskay.io/",
     "twitter": "uskay",
-    "descriptions": {
-      "en": "Tech consultant for Web, Chrome & AMP"
-    },
     "image": "image/admin/ztcrpMPYTd84oPTN4GdY.jpg"
   },
   "jormears": {
-    "name": {
-      "given": "Jordon",
-      "family": "Mears‎"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Earth"
-    },
     "country": "USA",
     "homepage": "https://www.finefrog.com/",
-    "descriptions": {
-      "en": "Jordon is a Tech Lead Manager working on Google Earth."
-    },
     "image": "image/admin/NjW9TEPrICgYcmSWgliA.jpg"
   },
   "martinschierle": {
-    "name": {
-      "given": "Martin",
-      "family": "Schierle"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Technical Solutions"
-    },
     "country": "DE",
     "twitter": "martinschierle",
     "github": "martinschierle",
     "image": "image/admin/DheRfImH6FxRNajMslIk.jpg"
   },
   "joemedley": {
-    "name": {
-      "given": "Joe",
-      "family": "Medley"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "US",
     "github": "jpmedley",
     "twitter": "medleyjp",
-    "descriptions": {
-      "en": "If an API's not documented it doesn't exist"
-    },
     "image": "image/admin/ynJFmvKEbD9diZZsTdkD.jpg"
   },
   "egsweeny": {
-    "name": {
-      "given": "Elizabeth",
-      "family": "Sweeny"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Product Manager"
-    },
     "country": "US",
     "github": "egsweeny",
     "twitter": "egsweeny",
-    "descriptions": {
-      "en": "Product manager for developer tools on the web platform in Chrome."
-    },
     "image": "image/admin/IyB0bE6NGAvhRJkD6wRz.jpg"
   },
   "rowan_m": {
-    "name": {
-      "given": "Rowan",
-      "family": "Merewood"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
-    "descriptions": {
-      "en": "Developer Advocate for Chrome and web"
-    },
     "country": "UK",
     "twitter": "rowan_m",
     "github": "rowan-m",
@@ -760,43 +683,24 @@
     "image": "image/admin/TASwqsVceW68MrM7bjt8.jpg"
   },
   "adamargyle": {
-    "name": {
-      "given": "Adam",
-      "family": "Argyle"
-    },
-    "descriptions": {
-      "en": "Developer Advocate for Chrome"
-    },
     "homepage": "https://nerdy.dev",
     "github": "argyleink",
     "twitter": "argyleink",
     "glitch": "argyleink",
     "image": "image/admin/jdQIxAJrGuFOtwmuDfIn.jpg"
   },
+  "emmatwersky": {
+    "homepage": "https://twerske.dev",
+    "github": "twerske",
+    "twitter": "twerske",
+    "image": "image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/9oW5Nx95erxvoGHcKHL6.jpg"
+  },
   "lunalu": {
-    "name": {
-      "given": "Luna",
-      "family": "Lu"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "country": "Canada",
     "github": "loonybear",
-    "descriptions": {
-      "en": "Build and enforce guardrails for the web."
-    },
     "image": "image/admin/NTv1ih4WoIEUdRA0psCk.jpg"
   },
   "geddski": {
-    "name": {
-      "given": "Dave",
-      "family": "Geddes"
-    },
-    "descriptions": {
-      "en": "Founder at Mastery Games"
-    },
     "homepage": "https://gedd.ski/",
     "country": "US",
     "twitter": "geddski",
@@ -804,86 +708,35 @@
     "image": "image/admin/aU4CRVGbOgg8uSRuLAfh.jpg"
   },
   "danyao": {
-    "name": {
-      "given": "Danyao",
-      "family": "Wang"
-    },
-    "descriptions": {
-      "en": ""
-    },
     "country": "US",
     "twitter": "danyaowang",
     "image": "image/admin/usgKL78gSEe0uJ7AE2rT.jpg"
   },
   "linahansson": {
-    "name": {
-      "given": "Lina",
-      "family": "Hansson"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Platform Sales"
-    },
     "country": "Sweden",
     "homepage": "https://digies.se",
     "twitter": "LinaCHansson",
-    "descriptions": {
-      "en": "Lina is a Conversion Specialist at Google, focused on mobile CRO and site speed."
-    },
     "image": "image/admin/8xXS5zjREzCNIpHX3F4h.jpg"
   },
   "bojanpavic": {
-    "name": {
-      "given": "Bojan",
-      "family": "Pavic"
-    },
     "github": "bojanpavic",
     "image": "image/admin/vxFF9sBge4qdpMqaKC0Z.jpg"
   },
   "ansteychris": {
-    "name": {
-      "given": "Chris",
-      "family": "Anstey"
-    },
+    "github": "ansteychris",
     "image": "image/admin/n9o3c8Qxz0uUprZnlsRk.jpg"
   },
   "mfriesenhahn": {
-    "name": {
-      "given": "Michael",
-      "family": "Friesenhahn"
-    },
     "country": "US",
     "github": "mfriesenhahn",
-    "descriptions": {
-      "en": "Michael is a Tech Writer"
-    },
     "image": "image/admin/z1OxoDh8QIp4q9l3wOCO.jpg"
   },
   "hbatra": {
-    "name": {
-      "given": "Harleen",
-      "family": "Batra"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Marketing"
-    },
     "country": "US",
     "twitter": "harleenkbatra",
-    "descriptions": {
-      "en": "Harleen is a Developer Marketing Manager"
-    },
     "image": "image/admin/msXgnzpR066rwvDz772V.jpg"
   },
   "mgechev": {
-    "name": {
-      "given": "Minko",
-      "family": "Gechev"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Programs Engineer for Angular"
-    },
     "country": "US",
     "homepage": "https://blog.mgechev.com/",
     "twitter": "mgechev",
@@ -892,28 +745,12 @@
     "image": "image/admin/OPpZ9x8KCVcxvqgdWXM5.jpg"
   },
   "sfluin": {
-    "name": {
-      "given": "Stephen",
-      "family": "Fluin"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Advocate for Angular"
-    },
     "country": "US",
     "twitter": "stephenfluin",
     "github": "stephenfluin",
     "image": "image/admin/s111dYyDIM2JRjTQbbu1.jpg"
   },
   "mohamedzamakhan": {
-    "name": {
-      "given": "Zama Khan",
-      "family": "Mohammed"
-    },
-    "org": {
-      "name": "Tekzenit, Inc.",
-      "unit": "Software Engineering"
-    },
     "country": "USA",
     "homepage": "https://blog.mgechev.com/",
     "twitter": "mohamedzamakhan",
@@ -921,10 +758,6 @@
     "image": "image/admin/GFORxGF2V01nQ1p4lJ3E.jpg"
   },
   "dougsillars": {
-    "name": {
-      "given": "Doug",
-      "family": "Sillars"
-    },
     "github": "Dougsillars",
     "twitter": "dougsillars",
     "country": "US",
@@ -932,256 +765,102 @@
     "image": "image/admin/pl93DWDPXm3Jkz7V0Lnt.jpg"
   },
   "samrichard": {
-    "name": {
-      "given": "Sam",
-      "family": "Richard"
-    },
     "twitter": "snugug",
     "github": "snugug",
     "glitch": "snugug",
-    "org": {
-      "name": "Chrome OS",
-      "unit": "Developer Relations"
-    },
     "homepage": "https://snugug.com",
     "image": "image/admin/5kuER6QRWs54zbYIJ4zS.jpg"
   },
   "yoavweiss": {
-    "name": {
-      "given": "Yoav",
-      "family": "Weiss"
-    },
     "twitter": "yoavweiss",
     "github": "yoavweiss",
     "image": "image/admin/FOIxDKJfuHssXMNzezIt.jpg"
   },
   "katejeffreys": {
-    "name": {
-      "given": "Kate",
-      "family": "Jeffreys"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Web Developer Relations"
-    },
     "country": "US",
-    "descriptions": {
-      "en": "Technical Writer at Google"
-    },
     "image": "image/admin/InS6CReujIoGmjKuOTaA.jpg"
   },
   "jimper": {
-    "name": {
-      "given": "Jonathon",
-      "family": "Imperiosi"
-    },
     "github": "jimper",
-    "org": {
-      "name": "Google",
-      "unit": "Ads Developer Relations"
-    },
     "country": "JP",
     "image": "image/admin/9HsIJu89Pj0CqvED7rsc.jpg"
   },
   "robhazan": {
-    "name": {
-      "given": "Rob",
-      "family": "Hazan"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Product Manager"
-    },
     "image": "image/admin/kqqjE2pJsDjyakfSPtsT.jpg"
   },
   "gernberg": {
-    "name": {
-      "given": "Gustav",
-      "family": "Ernberg von Heijne"
-    },
     "github": "gernberg",
     "country": "SE",
-    "org": {
-      "name": "Google",
-      "unit": "Technical Solutions Consultant"
-    },
     "image": "image/admin/pXu2oWi0XOi9mzoNTtOG.jpg"
   },
   "thebengeu": {
-    "name": {
-      "given": "Beng",
-      "family": "Eu"
-    },
     "twitter": "thebengeu",
     "github": "thebengeu",
     "glitch": "thebengeu",
-    "org": {
-      "name": "Google",
-      "unit": "AdSpeed"
-    },
     "country": "US",
-    "descriptions": {
-      "en": "AdSpeed tech lead at Google"
-    },
     "image": "image/admin/JcKHWSuhVrG1uuxlLaUq.jpg"
   },
   "yosuke_furukawa": {
-    "name": {
-      "given": "Yosuke",
-      "family": "Furukawa"
-    },
-    "org": {
-      "name": "Recruit Technologies",
-      "unit": "Software Engineering"
-    },
     "country": "JP",
     "twitter": "yosuke_furukawa",
     "image": "image/admin/XCKP6ZnBZIezAB5ReAfk.jpg"
   },
   "satoshi_arai": {
-    "name": {
-      "given": "Satoshi",
-      "family": "Arai"
-    },
-    "org": {
-      "name": "Recruit Technologies",
-      "unit": "Software Engineering"
-    },
     "country": "JP",
     "image": "image/admin/bSMJWJHcRvGcRhnwVxs7.jpg"
   },
   "kento_tsuji": {
-    "name": {
-      "given": "Kento",
-      "family": "Tsuji"
-    },
-    "org": {
-      "name": "Recruit Technologies",
-      "unit": "Software Engineering"
-    },
     "country": "JP",
     "twitter": "maxmellon_9039",
     "image": "image/admin/6IoGBLrEZkQnm0JfMV0O.jpg"
   },
   "ajain": {
-    "name": {
-      "given": "Ankit",
-      "family": "Jain"
-    },
     "twitter": "AnkitJainOAJ",
     "image": "image/admin/IZc31j5Pp3h5rm00jpKO.jpg"
   },
   "kenjibaheux": {
-    "name": {
-      "given": "Kenji",
-      "family": "Baheux"
-    },
     "twitter": "KenjiBaheux",
     "image": "image/admin/I92nHj8yNfMgjnpIsvL6.jpg"
   },
   "una": {
-    "name": {
-      "given": "Una",
-      "family": "Kravets"
-    },
-    "descriptions": {
-      "en": "Developer Advocate for Material Design"
-    },
     "homepage": "https://una.im/",
     "github": "una",
     "twitter": "una",
     "image": "image/admin/c4bzyDkOZ9MhBaqp0HfW.jpg"
   },
   "phillipkriegel": {
-    "name": {
-      "given": "Phillip",
-      "family": "Kriegel"
-    },
     "homepage": "https://www.philkrie.me/",
     "github": "philkrie",
-    "descriptions": {
-      "en": "Phillip is a Specialist Engineer"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Global Business"
-    },
     "country": "US",
     "image": "image/admin/1v5F1SOBl46ZghbHQMle.svg"
   },
   "tigeroakes": {
-    "name": {
-      "given": "Tiger",
-      "family": "Oakes"
-    },
-    "org": {
-      "name": "Mozilla",
-      "unit": "Student Worker"
-    },
     "country": "CA",
     "homepage": "https://tigeroakes.com/",
     "twitter": "Not_Woods",
     "github": "NotWoods",
-    "descriptions": {
-      "en": "Developer working on Firefox Preview"
-    },
     "image": "image/admin/xxIhAVCPO90YG4I5LFYI.jpg"
   },
   "kumagi": {
-    "name": {
-      "given": "Hiroki",
-      "family": "Kumazaki"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Software engineering"
-    },
     "country": "JP",
     "twitter": "kumagi",
     "github": "kumagi",
     "image": "image/admin/Y780bmlJiHhk6UwxgOFF.jpg"
   },
   "andreban": {
-    "name": {
-      "given": "André",
-      "family": "Cipriani Bandarra"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "country": "UK",
     "homepage": "https://bandarra.me/",
     "twitter": "andreban",
     "github": "andreban",
-    "descriptions": {
-      "en": "Andre is a Developer Advocate"
-    },
     "image": "image/admin/XVGMhdOgHJhch3EBcw89.jpg"
   },
   "koto": {
-    "name": {
-      "given": "Krzysztof",
-      "family": "Kotowicz"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Information Security Engineering"
-    },
     "country": "CH",
     "twitter": "kkotowicz",
     "github": "koto",
     "image": "image/admin/1v5F1SOBl46ZghbHQMle.svg"
   },
   "lwe": {
-    "name": {
-      "given": "Lukas",
-      "family": "Weichselbaum"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Information Security Engineering"
-    },
     "country": "CH",
     "twitter": "we1x",
     "github": "lweichselbaum",
@@ -1189,720 +868,327 @@
     "image": "image/admin/SR3DdHwfeqxp5k9ojcr6.jpg"
   },
   "dgrogan": {
-    "name": {
-      "given": "David",
-      "family": "Grogan"
-    },
     "country": "US",
     "github": "davidsgrogan",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/qPVct6hKRbw1YO0qVMcc.jpg"
   },
   "ulan": {
-    "name": {
-      "given": "Ulan",
-      "family": "Degenbaev"
-    },
     "twitter": "ulandev",
     "github": "ulan",
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "image": "image/admin/PmkU3edj6n65Zh0bjaX7.jpg"
   },
   "domenic": {
-    "name": {
-      "given": "Domenic",
-      "family": "Denicola"
-    },
     "twitter": "domenic",
     "github": "domenic",
     "image": "image/admin/HXHbHrl9qxcxCQK90yIc.jpg"
   },
   "cjamcl": {
-    "name": {
-      "given": "Connor",
-      "family": "Clark"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Connor is a software engineer working on Lighthouse"
-    },
     "country": "US",
     "twitter": "cjamcl",
     "github": "connorjclark",
     "image": "image/admin/JDJv4ZTKpDobwrJ8MSkZ.jpg"
   },
   "paullewis": {
-    "name": {
-      "given": "Paul",
-      "family": "Lewis"
-    },
     "twitter": "aerotwist",
     "country": "UK",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/FqkHLK1y5d0ob6JJAQkR.jpg"
   },
-  "patrickkettner": {
-    "name": {
-      "given": "Patrick",
-      "family": "Kettner"
-    },
-    "twitter": "patrickkettner",
+  "patmeenan": {
+    "twitter": "patmeenan",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
-    "image": "image/admin/ODlAdqZG7UsfQlYO7D37.jpg"
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ownYNba1FYga5v97gKRF.jpg"
   },
   "sebabenz": {
-    "name": {
-      "given": "Sebastian",
-      "family": "Benz"
-    },
     "twitter": "sebabenz",
     "country": "DE",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/zqFXVJ377ZsIuPQ0X2vT.jpg"
   },
   "syg": {
-    "name": {
-      "given": "Shu-yu",
-      "family": "Guo"
-    },
     "twitter": "_shu",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/KxIs73yjsWwzEPHQaHEA.jpg"
   },
+  "nabeelalshamma": {
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/gZlM5s1kj09oCG5h2buz.jpeg",
+    "github": "alshamma",
+    "linkedin": "https://www.linkedin.com/in/alshamma/"
+  },
   "nattestad": {
-    "name": {
-      "given": "Thomas",
-      "family": "Nattestad"
-    },
     "twitter": "fractorious",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/UyUsatSDE2wdnfy3KHzO.jpg"
   },
   "maudn": {
-    "name": {
-      "given": "Maud",
-      "family": "Nalpas"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
-    "description": {
-      "en": "Developer Advocate for Chrome and web"
-    },
     "country": "DE",
     "twitter": "maudnals",
     "github": "maudnals",
-    "image": "image/admin/F620GZorjY0JjKas3p3J.jpg"
+    "image": "image/O2RNUyVSLubjvENAT3e7JSdqSOx1/9ORwve80jFiyYnPvNcWF.jpg"
   },
   "morss": {
-    "name": {
-      "given": "Ben",
-      "family": "Morss"
-    },
     "twitter": "benmorss",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/Gxnm3F1zP1MFz2OrkjUp.jpg"
   },
   "ericbidelman": {
-    "name": {
-      "given": "Eric",
-      "family": "Bidelman"
-    },
     "twitter": "ebidel",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/ACrLFM1rLlaY2fzUTeXl.jpg"
   },
   "jungkees": {
-    "name": {
-      "given": "Jungkee",
-      "family": "Song"
-    },
-    "org": {
-      "name": "Microsoft",
-      "unit": "Edge"
-    },
     "country": "US",
     "twitter": "jungkees",
     "github": "jungkees",
-    "descriptions": {
-      "en": "PM on the Microsoft Edge team"
-    },
     "image": "image/admin/n1MFAKkwQLIbMeIvdkQ2.jpg"
   },
   "leszeks": {
-    "name": {
-      "given": "Leszek",
-      "family": "Swirski"
-    },
     "twitter": "leszekswirski",
     "country": "DE",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/80dslyGUB46JmerKVfYJ.jpg"
   },
   "nainar": {
-    "name": {
-      "given": "Naina",
-      "family": "Raisinghani"
-    },
     "twitter": "nainar92",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/vOxj6s4xPFGnL5YGBMym.jpg"
   },
   "crystallambert": {
-    "name": {
-      "given": "Crystal",
-      "family": "Lambert"
-    },
     "twitter": "CrystalOnScript",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/M7O2yjRx7UKFowqrf5bk.jpg"
   },
   "dalmaer": {
-    "name": {
-      "given": "Dion",
-      "family": "Almaer"
-    },
     "twitter": "dalmaer",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/jF8K7dz0XSobNkNDGWKp.jpg"
   },
   "bmcquade": {
-    "name": {
-      "given": "Bryan",
-      "family": "McQuade"
-    },
     "twitter": "bryanmcquade",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/KVeCLO473nZtAEMzDpo6.jpg"
   },
   "drott": {
-    "name": {
-      "given": "Dominik",
-      "family": "Röttsches"
-    },
     "country": "FI",
     "github": "drott",
     "twitter": "abrax5",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/xb7jK8lMyvbHQrBJzlxv.jpg"
   },
   "yaraki": {
-    "name": {
-      "given": "Yuichi",
-      "family": "Araki"
-    },
     "twitter": "yuichi_araki",
     "github": "yaraki",
     "country": "JP",
-    "descriptions": {
-      "en": "Developer Programs Engineer at Google"
-    },
     "image": "image/admin/IjxUTn7SuYE9pHLSZteN.jpg"
   },
   "kevinellis": {
-    "name": {
-      "given": "Kevin",
-      "family": "Ellis"
-    },
-    "descriptions": {
-      "en": "Software Engineer on the web platform."
-    },
     "image": "image/admin/IQ4fOKz2TfwgCfiF4AZv.jpg"
   },
   "robertnyman": {
-    "name": {
-      "given": "Robert",
-      "family": "Nyman"
-    },
-    "org": {
-      "name": "Google"
-    },
     "twitter": "robertnyman",
     "github": "robnyman",
     "country": "SE",
     "homepage": "https://robertnyman.com/",
-    "descriptions": {
-      "en": "Developer advocate on the web team at Google."
-    },
     "image": "image/admin/fbCJc4uifsZ4d5KolJ7j.jpg"
   },
+  "foolip": {
+    "github": "foolip",
+    "twitter": "foolip",
+    "homepage": "https://foolip.org/",
+    "image": "image/i1D3fea4SShlOWR9GvCYL83Xw822/PAm8xSnqRZyu7qaDzyTO.jpg"
+  },
   "olgademidova": {
-    "name": {
-      "given": "Olga",
-      "family": "Demidova"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Ads Marketing EMEA"
-    },
-    "descriptions": {
-      "en": "Product Marketing Manager"
-    },
     "country": "UK",
     "image": "image/admin/ECEeCqjirRT1455x3AQj.jpg"
   },
   "gilbertococchi": {
-    "name": {
-      "given": "Gilberto",
-      "family": "Cocchi"
-    },
-    "org": {
-      "name": "Google"
-    },
     "twitter": "gilberto_cocchi",
     "github": "gilbertococchi",
     "image": "image/admin/4CxwBoPk1E2KKHDkdY1s.jpg"
   },
   "antonkarlovskiy": {
-    "name": {
-      "given": "Anton",
-      "family": "Karlovskiy"
-    },
     "twitter": "antonkarlovskiy",
     "github": "anton-karlovskiy",
     "glitch": "anton-karlovskiy",
     "image": "image/admin/IkUjDRwWBvgvkMuXmlad.jpg"
   },
   "rkochman": {
-    "name": {
-      "given": "Rob",
-      "family": "Kochman"
-    },
     "twitter": "rkochman",
     "github": "rkochman",
     "glitch": "rkochman",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/2TCATL7dglEFzZZWnXo0.jpg"
   },
   "jonchen": {
-    "name": {
-      "given": "Jonathan",
-      "family": "Chen"
-    },
     "twitter": "jonchenn",
     "github": "jonchenn",
     "glitch": "jonchenn",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
-    "descriptions": {
-      "en": "Web Ecosystem Consultant"
-    },
     "image": "image/admin/DSWao9z2Qq584d9kbjit.jpg"
   },
   "msdikla": {
-    "name": {
-      "given": "Dikla",
-      "family": "Cohen"
-    },
-    "org": {
-      "name": "Google"
-    },
     "country": "UK",
     "twitter": "diklla",
     "github": "diklla",
     "image": "image/admin/b9zEc84wlzbNww2MKoBL.jpg"
   },
   "bpj": {
-    "name": {
-      "given": "Bart",
-      "family": "Jarochowski"
-    },
-    "org": {
-      "name": "Google"
-    },
     "country": "KR",
     "twitter": "maranag",
     "github": "maranag",
     "image": "image/admin/ChOBe0OzPT7siDgFmjC9.jpg"
   },
+  "harrytheodoulou": {
+    "twitter": "harryTheo_",
+    "country": "UK",
+    "homepage": "https://www.harrytheo.com/",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/RDHNBibB1P7yeOIrw0JX.jpg"
+  },
+  "natashakosoglov": {
+    "linkedin": "https://uk.linkedin.com/in/natashakosoglov",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/ccGMk9IszZxs7LbBum7s.png"
+  },
   "mattreynolds": {
-    "name": {
-      "given": "Matt",
-      "family": "Reynolds"
-    },
-    "org": {
-      "name": "Google"
-    },
     "country": "US",
-    "descriptions": {
-      "en": "Matt is a software developer"
-    },
     "image": "image/admin/g2zwlKdDpsMMPtgkx3Gb.jpg"
   },
+  "joriktangelder": {
+    "country": "NL",
+    "twitter": "jorikdelaporik",
+    "github": "jtangelder",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/1P2utnbQKi02S0iz4GUz.jpg",
+    "homepage": "https://jorik.dev/"
+  },
   "sahel": {
-    "name": {
-      "given": "Sahel",
-      "family": "Sharify"
-    },
     "github": "sahel-sh",
     "country": "CA",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/X2tDP3SQzVCQ8dVLmMMI.jpg"
   },
   "loirooriol": {
-    "name": {
-      "given": "Oriol",
-      "family": "Brufau"
-    },
     "github": "Loirooriol",
     "image": "image/admin/uedrGuXN8MZ0tg11zsmK.jpg"
   },
   "joelriley": {
-    "name": {
-      "given": "Joel",
-      "family": "Riley"
-    },
     "github": "j0000el",
     "twitter": "j0000el",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/ecKzFuXSShBZ0BOyQmgS.jpg"
   },
   "douglasparker": {
-    "name": {
-      "given": "Douglas",
-      "family": "Parker"
-    },
     "github": "dgp1130",
     "twitter": "develwoutacause",
     "country": "US",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/32FlxFjSQeesv2IgBva4.jpg"
   },
   "vladimirlevin": {
-    "name": {
-      "given": "Vladimir",
-      "family": "Levin"
-    },
     "country": "CA",
-    "org": {
-      "name": "Google"
-    },
     "image": "image/admin/dmYne3aSCS1fj5ZfL8If.jpg"
   },
   "rreverser": {
-    "name": {
-      "given": "Ingvar",
-      "family": "Stepanyan"
-    },
     "country": "UK",
-    "org": {
-      "name": "Google",
-      "unit": "Developer Relations"
-    },
     "twitter": "RReverser",
     "github": "RReverser",
     "homepage": "https://rreverser.com/",
-    "description": {
-      "en": "WebAssembly Advocadoer"
-    },
     "image": "image/admin/Ma3ckXmLV7aj1rVgVT1I.jpg"
   },
   "masonfreed": {
-    "name": {
-      "given": "Mason",
-      "family": "Freed"
-    },
     "twitter": "Mfreed777",
     "github": "mfreed7",
-    "description": {
-      "en": "Developer on the Chrome team"
-    },
     "image": "image/admin/t7E3inN3orEPpDUXSkXR.jpg"
   },
   "roeln": {
-    "name": {
-      "given": "Roel",
-      "family": "Nieskens"
-    },
     "twitter": "pixelambacht",
     "github": "roeln",
     "homepage": "https://pixelambacht.nl/",
     "image": "image/admin/sJXQNtqZbfnddKBtKZo1.jpg"
   },
   "dcrossland": {
-    "name": {
-      "given": "Dave",
-      "family": "Crossland"
-    },
     "twitter": "davelab6",
     "github": "davelab6",
     "image": "image/admin/Yw6cuEYfVm8eOqiRFtml.jpg"
   },
   "aaronleventhal": {
-    "name": {
-      "given": "Aaron",
-      "family": "Leventhal"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome Browser Accessibility"
-    },
     "country": "US",
-    "description": {
-      "en": "Software Engineer"
-    },
     "twitter": "aaronlev",
     "image": "image/admin/VU5wtCAkiSbrzkXznpwT.jpg"
   },
   "joanbaca": {
-    "name": {
-      "given": "Joan",
-      "family": "Baca"
-    },
     "twitter": "joan_baka",
     "image": "image/admin/ckrFgScrH3fYr2CZ1kMg.jpg"
   },
   "aranhacarlos": {
-    "name": {
-      "given": "Carlos",
-      "family": "Aranha"
-    },
     "github": "aranhacarlos",
     "image": "image/admin/lO32XQupcXe0oJfcPX2Q.jpg"
   },
   "scottfriesen": {
-    "name": {
-      "given": "Scott",
-      "family": "Friesen"
-    },
     "github": "scott-friesen",
     "image": "image/admin/D4T7yi0PpYUsSRf38KKc.jpg"
   },
   "bartekn": {
-    "name": {
-      "given": "Bartek",
-      "family": "Nowierski"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome Browser"
-    },
-    "description": {
-      "en": "Chrome Software Engineer"
-    },
     "image": "image/admin/T5PegmVyKW3nxjuHZF14.jpg"
   },
   "djuffin": {
-    "name": {
-      "given": "Eugene",
-      "family": "Zemtsov"
-    },
     "github": "djuffin",
     "image": "image/admin/MWYHP293xzaBdw30G3Ts.jpg"
   },
   "giesau": {
-    "name": {
-      "given": "Stephan",
-      "family": "Giesau"
-    },
     "image": "image/admin/smQwRPUSvlFH6IDe3TNX.jpg"
   },
   "mattgaunt": {
-    "name": {
-      "given": "Matt",
-      "family": "Gaunt"
-    },
     "image": "image/admin/yGv3dhfUhHvSpDA3bNYW.jpg"
   },
   "reillyg": {
-    "name": {
-      "given": "Reilly",
-      "family": "Grant"
-    },
     "twitter": "reillyeon",
     "github": "reillyeon",
-    "description": {
-      "en": "Software Engineer on Google Chrome focusing on hardware APIs"
-    },
     "image": "image/admin/C7kO2T8Q8jSZxU9xj3AC.jpg"
   },
   "nateschloss": {
-    "name": {
-      "given": "Nate",
-      "family": "Schloss"
-    },
     "github": "n8schloss",
     "twitter": "n8schloss",
     "image": "image/admin/BS9rSjcVynuKi2SX5Whu.jpg"
   },
   "andrewcomminos": {
-    "name": {
-      "given": "Andrew",
-      "family": "Comminos"
-    },
     "github": "acomminos",
     "twitter": "acomminos",
     "image": "image/admin/ykAIcNpbomeiulF6Kw7P.jpg"
   },
   "bingler": {
-    "name": {
-      "given": "Steven",
-      "family": "Bingler"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
-    "descriptions": {
-      "en": "Software engineer on Chrome's Privacy Sandbox."
-    },
     "country": "US",
     "github": "sbingler",
     "image": "image/admin/32OlQmcgfam3csi9SBGI.jpg"
   },
   "andrewguan": {
-    "name": {
-      "given": "Andrew",
-      "family": "Guan"
-    },
     "github": "AndrewKGuan",
-    "image": "image/admin/1v5F1SOBl46ZghbHQMle.svg"
+    "image": "image/HFWAhol3apcfNfuFxGZfjtLt2Yq2/oXpI60ZHNBOBos8bGJRn.jpeg"
   },
   "sorenbalko": {
-    "name": {
-      "given": "Sören",
-      "family": "Balko"
-    },
-    "description": {
-      "en": "CTO at Clipchamp"
-    },
     "linkedin": "https://www.linkedin.com/in/sbalko/",
     "github": "sbalko",
     "image": "image/admin/H0Zvzmn5QMsTdTySkkpx.jpg"
   },
   "rezakazemi": {
-    "name": {
-      "given": "Reza",
-      "family": "Kazemi"
-    },
-    "descriptions": {
-      "en": "Product Manager at Corel"
-    },
-    "org": {
-      "name": "Corel",
-      "unit": "Online Graphics"
-    },
     "image": "image/admin/eXpk44oNMpOnNPLrMOMm.jpg"
   },
   "antoinebisch": {
-    "name": {
-      "given": "Antoine",
-      "family": "Bisch"
-    },
-    "github": "antoinebisch",
     "country": "UK",
-    "org": {
-      "name": "Google"
-    },
-    "descriptions": {
-      "en": "Web Ecosystem Consultant"
-    },
+    "linkedin": "https://www.linkedin.com/in/antoinebisch/",
+    "github": "antoinebisch",
+    "twitter": "AntoineBisch",
     "image": "image/admin/xCDa34tJbhKRgr8pj5BJ.jpg"
   },
   "anniesullie": {
-    "name": {
-      "given": "Annie",
-      "family": "Sullivan"
-    },
     "github": "anniesullie",
     "twitter": "anniesullie",
     "homepage": "https://anniesullie.com",
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "image": "image/admin/Elo3rfkiDHm148ov4IZU.jpg"
   },
   "mmocny": {
-    "name": {
-      "given": "Michal",
-      "family": "Mocny"
-    },
     "github": "mmocny",
     "twitter": "mmocny",
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
     "image": "image/admin/urYfROhm806fvOPRMsRg.jpg"
   },
   "huib": {
-    "name": {
-      "given": "Huib",
-      "family": "Kleinhout"
-    },
     "github": "huibk",
     "twitter": "HKleinhout",
-    "org": {
-      "name": "Google",
-      "unit": "Cloud"
-    },
     "image": "image/admin/ljpewM8syhxW7SBleO58.jpg"
   },
   "sisidovski": {
-    "name": {
-      "given": "Shunya",
-      "family": "Shishido"
-    },
-    "org": {
-      "name": "Google"
-    },
-    "descriptions": {
-      "en": "Web Ecosystem Consultant"
-    },
     "country": "JP",
     "github": "sisidovski",
     "twitter": "sisidovski",
@@ -1910,29 +1196,545 @@
     "image": "image/iEYkFAI5LNQv7oLlIBv9DuB265a2/hrfeVegJxVUofxsDxkbh.jpg"
   },
   "gladenjoy": {
-    "name": {
-      "given": "Tomoki",
-      "family": "Kiraku"
-    },
-    "org": {
-      "name": "Yahoo Japan Corporation"
-    },
     "country": "JP",
     "twitter": "gladenjoy",
     "image": "image/iEYkFAI5LNQv7oLlIBv9DuB265a2/o8ixW7QKSWR02r9ZUOFP.jpg"
   },
   "alonko": {
-    "name": {
-      "given": "Alon",
-      "family": "Kochba"
-    },
     "github": "alonkochba",
     "twitter": "alonkochba",
-    "org": {
-      "name": "Wix",
-      "unit": "Infrastructure"
-    },
     "country": "IL",
     "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/9zVJ5KLkDStLNSz2ZxPE.jpg"
+  },
+  "choudhuryashish": {
+    "linkedin": "https://www.linkedin.com/in/choudhuryashish/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/urBoPCVFLFNYxcA4rWBO.jpg"
+  },
+  "dinakarchandolu": {
+    "linkedin": "https://www.linkedin.com/in/dinakarchandolu/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/E0gT4HrFyUImA5COXOme.jpg"
+  },
+  "abhimanyuraibahadur": {
+    "linkedin": "https://www.linkedin.com/in/abhimanyuraibahadur/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/D36izBJ4CpCDjAxWhUe6.jpg"
+  },
+  "dhilipvenkateshuvarajan": {
+    "linkedin": "https://www.linkedin.com/in/dhilip-venkatesh-uvarajan-16914624/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/5FvsHblPdOVKpC5Pdru2.jpg"
+  },
+  "safwans": {
+    "linkedin": "https://www.linkedin.com/in/safwansamla/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/lR8Vo8IDNt6AnLSVvObk.jpg"
+  },
+  "andybell": {
+    "homepage": "https://piccalil.li/",
+    "github": "andy-piccalilli",
+    "twitter": "piccalilli_",
+    "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/KgpVYUM3YJiVTASm4RTB.jpeg"
+  },
+  "ajara": {
+    "country": "US",
+    "twitter": "tropicadri",
+    "github": "tropicadri",
+    "image": "image/SeARmcA1EicLXagFnVOe0ou9cqK2/fSWKElF58iFEzXGkfOj9.jpg"
+  },
+  "jbrockmeyer": {
+    "twitter": "jan_brockmeyer",
+    "github": "jabro86",
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OKm64vE60MFeWq62TFBh.jpg"
+  },
+  "jcolin": {
+    "twitter": "jee_colin",
+    "github": "jeremycolin",
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/IycLA5UeiU6yGAlwrkQ0.jpg"
+  },
+  "hbsong": {
+    "twitter": "HongboSong",
+    "github": "debugtive0517",
+    "image": "image/MZfwZ8oVW8U6tzo5CXffcER0jR83/ieAP4AO0so7own9kFVW4.png"
+  },
+  "adamskret": {
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/nsG8CdUek2tyhCd6cCGf.jpg"
+  },
+  "rafałfilipek": {
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/hpg1RLMvmCAx9V7d0vVv.jpg"
+  },
+  "marcinsierakowski": {
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/8yggAIdGCA6AlONdxH4F.png"
+  },
+  "jiwoong": {
+    "twitter": "jiwoong",
+    "github": "jimoong",
+    "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/i3fyhkDpmO6VM1opsETS.jpg"
+  },
+  "christianliebel": {
+    "country": "DE",
+    "homepage": "https://christianliebel.com/",
+    "twitter": "christianliebel",
+    "github": "christianliebel",
+    "glitch": "christianliebel",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/pguQ0oykD0nNu9jM5OcP.jpeg"
+  },
+  "mgiuca": {
+    "twitter": "mgiuca",
+    "github": "mgiuca",
+    "country": "AU",
+    "image": "image/26V1DWN36MZr3mUo8ChSBlCpzp43/9gFKixjZHcpFPVcOX9Av.jpg"
+  },
+  "swethagopalakrishnan": {
+    "twitter": "swetha_go",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/Mpe7GGUwnUsy9Gx7UxZK.jpg"
+  },
+  "saurabhrajpal": {
+    "twitter": "saurabhrajpal",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/pgfTCNTb5C2ThMcZCzPQ.jpg"
+  },
+  "arturjanc": {
+    "github": "arturjanc",
+    "twitter": "arturjanc",
+    "image": "image/YLflGBAPWecgtKJLqCJHSzHqe2J2/hwvmzV4b6VQpTNrNF3wK.jpg"
+  },
+  "mkazi": {
+    "country": "USA",
+    "github": "minhaz",
+    "twitter": "_mkazi_",
+    "image": "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/JIhb3g9F2oAg2t3PJ5Y2.jpeg"
+  },
+  "cmp": {
+    "github": "chasephillips",
+    "country": "US"
+  },
+  "collindionagata": {
+    "country": "ID",
+    "twitter": "CollinDion",
+    "linkedin": "collin-dion-agata",
+    "image": "image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ZpE2N6yjkaqQNcSiaxvR.jpeg"
+  },
+  "chrisboakes": {
+    "github": "chrisboakes",
+    "linkedin": "https://www.linkedin.com/in/chris-boakes",
+    "twitter": "cboakes",
+    "country": "UK",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/eIgvuUcq2LknyiDixzOJ.jpeg"
+  },
+  "jaikk": {
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/BKGlQ9PreNrLEV74mhKX.jpg"
+  },
+  "wtc": {
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/tyVCzJx2Qe2hCSwXzhrk.jpeg"
+  },
+  "shubhie": {
+    "github": "spanicker",
+    "twitter": "shubhie",
+    "country": "US",
+    "image": "image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/sInJ1hYQTzeVJUGaOjlk.jpeg"
+  },
+  "npm": {
+    "github": "npm1",
+    "twitter": "NicPenaM",
+    "image": "image/kns0INkO77RkiEStzHWYrugyWj32/SCSIEb0Qtv6tPWel5tfd.jpeg"
+  },
+  "derekherman": {
+    "country": "US",
+    "github": "derekherman",
+    "twitter": "derekherman",
+    "image": "image/8L1ESx211yWBm8uNAgqvUc2GwNk1/Co3mEQ34Z8eAw6lPGx5o.jpg"
+  },
+  "dero": {
+    "country": "CZ",
+    "github": "dero",
+    "twitter": "dero_name",
+    "image": "image/8L1ESx211yWBm8uNAgqvUc2GwNk1/wj3d5QqXh3gIUuR7Ob7w.jpg"
+  },
+  "jarhar": {
+    "github": "josepharhar",
+    "twitter": "josepharhar",
+    "image": "image/ahMMPwVRwAdp0gFdY0zZnncYdsm1/3i0rkOVNKJImIy1UWvyC.jpeg"
+  },
+  "majido": {
+    "github": "majido",
+    "twitter": "majido",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/0uSIZyBE7DIwZ3bGnPgz.jpg"
+  },
+  "flackr": {
+    "twitter": "flackrw",
+    "github": "flackr",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OoCXp829hcVrzCEmjzSd.jpg"
+  },
+  "dandclark": {
+    "twitter": "dandclark1",
+    "github": "dandclark",
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/lYPo8w4ZwA465hg323uT.jpg"
+  },
+  "cambickel": {
+    "twitter": "camdenbickel",
+    "github": "camden",
+    "homepage": "https://cambickel.com",
+    "country": "US",
+    "image": "image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/qTCSbuHdDVtzqMKnDUJx.jpg"
+  },
+  "michaelscharnagl": {
+    "twitter": "justmarkup",
+    "homepage": "https://justmarkup.com",
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OZvyDgCkUQAIA87UJV7A.jpg"
+  },
+  "leenasohoni": {
+    "country": "Singapore",
+    "twitter": "leena_sohoni",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/VXCjCzLEGWApTkZkNZkR.JPG"
+  },
+  "jackjey": {
+    "github": "JackJey",
+    "image": "image/PV7xjXdOKHP8LWt9XhstsToJeK82/O5CMzBRhiNQelJ5Rkzv0.jpg"
+  },
+  "tcoustillac": {
+    "github": "tcoustil",
+    "homepage": "https://www.linkedin.com/in/tcoustillac/",
+    "country": "FR",
+    "image": "image/16kgsueJSCPH4556d9XWWWENbk12/N6sroCi4an6S9ak9XttX.jpg"
+  },
+  "jlwagner": {
+    "github": "malchata",
+    "twitter": "malchata",
+    "linkedin": "https://www.linkedin.com/in/malchata/",
+    "homepage": "https://jlwagner.net/",
+    "country": "US",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YROiiX412sAFeV58NStI.jpg"
+  },
+  "cédricbazureau": {
+    "github": "cbazureau",
+    "homepage": "https://cedric.bazureau.com/",
+    "country": "FR",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/vGr2SOy8UdaSj4LvhcxH.jpg"
+  },
+  "adactio": {
+    "github": "adactio",
+    "twitter": "adactio",
+    "homepage": "https://adactio.com/",
+    "country": "UK",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/rM22MifxkT2kdFSUjioP.jpeg"
+  },
+  "firt": {
+    "github": "firtman",
+    "twitter": "firt",
+    "homepage": "https://firt.dev",
+    "country": "AR",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/TJnzoAklhouTpv6YVNn8.jpeg"
+  },
+  "patrickbrosset": {
+    "twitter": "patrickbrosset",
+    "github": "captainbrosset",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/9qyg3BRTavzYs9eFNS0F.jpeg"
+  },
+  "karaerickson": {
+    "image": "image/IypihH3o5cSpEMVp5i08dp69otp2/Az2VaHZ4nQ6ovvTvzCD3.jpeg"
+  },
+  "alexcastle": {
+    "image": "image/IypihH3o5cSpEMVp5i08dp69otp2/ofc2dLwuNURvRIMvTdIv.jpeg"
+  },
+  "behdadb": {
+    "country": "Canada",
+    "github": "behdadb",
+    "image": "image/nM10iAStORWg0YlDbPc2czmpRRr2/yNf8CJMxm2ZigCktK56g.jpg"
+  },
+  "jonross": {
+    "country": "Canada",
+    "github": "jonrossca",
+    "image": "image/nM10iAStORWg0YlDbPc2czmpRRr2/js2VCA8TRNRK2nYwhQFG.jpg"
+  },
+  "bckenny": {
+    "country": "US",
+    "twitter": "brendankenny",
+    "github": "brendankenny",
+    "image": "image/MtjnObpuceYe3ijODN3a79WrxLU2/sWOfAs4f2WyQMMF9xt1A.jpg"
+  },
+  "alexandrawhite": {
+    "country": "US",
+    "github": "heyawhite",
+    "twitter": "heyawhite",
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/zTnfwJRcRiKepGLRlu7t.jpeg"
+  },
+  "svenmay": {
+    "country": "DE",
+    "github": "Svenmay",
+    "image": "image/dB6B4Sr8kaaT0KZujRBFC303oFR2/FAG5C2RsJyDw1Ap2DGBw.jpg"
+  },
+  "denisstasyev": {
+    "country": "RU",
+    "github": "denisstasyev",
+    "image": "image/dB6B4Sr8kaaT0KZujRBFC303oFR2/GcmQMuJs1yvVmFILU3Xw.jpg"
+  },
+  "lozandier": {
+    "twitter": "KevinLozandier",
+    "github": "lozandier",
+    "linkedin": "KevinLozandier",
+    "country": "US",
+    "image": "image/bMU6K5O6Yce7QrxAoaF3hsleaRM2/juyWJB261DOLBT16GyMa.png"
+  },
+  "mobtec": {
+    "twitter": "mobtec",
+    "linkedin": "guilhermems",
+    "country": "BR",
+    "image": "image/26V1DWN36MZr3mUo8ChSBlCpzp43/wYWiAqwJid6lXBpotD6h.jpeg"
+  },
+  "maurizioparadisi": {
+    "country": "IT",
+    "linkedin": "https://www.linkedin.com/in/maurizio-paradisi-74422a79",
+    "image": "image/JsqezhaeRldmuGd4UREN7n3ydds2/sv3bdC9e1dS95RsYAk2Y.jpg"
+  },
+  "anshusharma": {
+    "country": "IN",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/oNcJwYe68di724tSCBj8.png",
+    "linkedin": "anshusharma1983"
+  },
+  "sumitgugnani": {
+    "country": "IN",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/dDPYVsbbwF8sz0ZM5bBg.png",
+    "linkedin": "sumit-gugnani-a187203"
+  },
+  "prashantmishra": {
+    "country": "IN",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/vTeW4U9wTuLr8QmYoGxX.png",
+    "github": "prash-mi"
+  },
+  "joshuagrossberg": {
+    "country": "US",
+    "linkedin": "https://www.linkedin.com/in/joshua-grossberg-148b7a14",
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/ghjO05jRwr6p0GPCA8sQ.jpg"
+  },
+  "nsull": {
+    "country": "US",
+    "twitter": "stubbornella",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/gjyoj6pRzTfjLXfU7589.jpeg"
+  },
+  "danielasy": {
+    "country": "BR",
+    "github": "danielasy",
+    "linkedin": "https://www.linkedin.com/in/danielayassuda/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/GglXoaMdqB9PTnUieTSH.jpg"
+  },
+  "arthursonzogni": {
+    "country": "FR",
+    "twitter": "arthursonzogni",
+    "github": "ArthurSonzogni",
+    "homepage": "https://arthursonzogni.com/",
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/McVMXjWzmTFo66lqFLms.jpg"
+  },
+  "chrispalmer": {
+    "country": "US",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/7OUAnF3abartcOzqxQqi.jpeg"
+  },
+  "abeyad": {
+    "country": "US",
+    "twitter": "alibeyad",
+    "github": "abeyad",
+    "image": "image/BLBNCWcM57UxCqJ0LsNECuVCaxD2/GR8cNgtWyPyXDqI4d61Q.jpeg"
+  },
+  "karldubost": {
+    "github": "karlcow",
+    "homepage": "https://www.otsukare.info",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/dsNUPCYy6gvrU9EEAhaI.jpeg"
+  },
+  "sdenaro": {
+    "country": "US",
+    "homepage": "https://salvatore.denaro.nyc/",
+    "twitter": "sdenaro",
+    "github": "sdenaro",
+    "image": "image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/96HCLa4Ee5rbhnPvuP9i.png"
+  },
+  "kbalasub": {
+    "country": "US",
+    "github": "kbalasub",
+    "image": "image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/uuTVpUzvfaPnpX6UjL8t.jpeg"
+  },
+  "monikajanota": {
+    "country": "PL",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/FQzvy4BexCKN6Ip51wsg.jpg"
+  },
+  "patrickhlauke": {
+    "github": "patrickhlauke",
+    "country": "UK",
+    "homepage": "https://www.splintered.co.uk/"
+  },
+  "kevinkiklee": {
+    "country": "US",
+    "twitter": "kevinkiklee",
+    "github": "kevinkiklee",
+    "glitch": "kevinkiklee",
+    "image": "image/hVf1flv5Jdag8OQKYqOcJgWUvtz1/8bRRaZVXzJKCDu0RlK1Y.jpg"
+  },
+  "nikilmathew": {
+    "twitter": "nikil_mathew",
+    "linkedin": "https://www.linkedin.com/in/nikilmat/",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/mc2N7pSjT8K7WBi8PR6L.jpeg"
+  },
+  "jheyy": {
+    "country": "UK",
+    "twitter": "jh3yy",
+    "github": "jh3y",
+    "linkedin": "https://www.linkedin.com/in/jheytompkins/",
+    "homepage": "https://jhey.dev/links",
+    "image": "image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/JjwUlxDMTmjyFEvBC8wG.jpeg"
+  },
+  "patrickkettner": {
+    "country": "US",
+    "twitter": "patrickkettner",
+    "github": "patrickkettner",
+    "homepage": "https://patrickkettner.com/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/O2raVJadIJBVue1fK85Z.png"
+  },
+  "andreabreanna": {
+    "country": "US",
+    "twitter": "andreabreannany",
+    "linkedin": "https://www.linkedin.com/in/andreabreanna/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8X4Jxtq931g6qIBH5fNK.jpg"
+  },
+  "yuyaito": {
+    "country": "JP",
+    "twitter": "bang_yy",
+    "image": "image/YLflGBAPWecgtKJLqCJHSzHqe2J2/2oSWqurqXEqx9jzuAqyn.jpeg"
+  },
+  "keenyeeliau": {
+    "image": "image/Or7Bgsqru3MxJHvMtp68LKOjxkH3/UbfmJ8kJwfT9FVLHjX3r.jpeg",
+    "github": "kyliau"
+  },
+  "jimmymooney": {
+    "homepage": "https://www.jimmymooney.com/",
+    "twitter": "jimmy0x52",
+    "github": "jimmy0x52",
+    "linkedin": "https://www.linkedin.com/in/jimmymooney/",
+    "country": "US",
+    "image": "image/Xyvh8LLq27V5yRjH5iS1dbf64pE2/M2E7ke6rO6ZpIabYeizX.jpg"
+  },
+  "alexeyrodionov": {
+    "twitter": "alexey_rodionov",
+    "github": "FluorescentHallucinogen",
+    "linkedin": "https://linkedin.com/in/alexey-rodionov",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/n6mW0LtLb2NtYAoQSCx7.png"
+  },
+  "twifkak": {
+    "twitter": "twifkak",
+    "github": "twifkak",
+    "image": "image/rULxC7pPw3PFS4o9xr7v8isFmCv1/fDaDWpuKLKDm4mjnt0jV.jpg"
+  },
+  "ruisantos": {
+    "twitter": "ruijssantos",
+    "linkedin": "https://www.linkedin.com/in/ruijssantos/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/AVrqFlCqg3j6Rp03tPco.jpg"
+  },
+  "manuelgarcia": {
+    "homepage": "https://farfetchtechblog.com/en/blog/authors/manuel-garcia/",
+    "twitter": "corrosion_pt",
+    "github": "soulcorrosion",
+    "linkedin": "https://www.linkedin.com/in/manuel-garcia-12b6928/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/KZ5GI42sni0kphabO7ut.jpg"
+  },
+  "patriciacoutoneto": {
+    "linkedin": "https://www.linkedin.com/in/pccneto",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/rZFsmMBh2R3d0MCV6gLE.jpg"
+  },
+  "steveworkman": {
+    "twitter": "steveworkman",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/ZQJOeFPFZCQrWmWfFGeH.jpeg"
+  },
+  "simonleparc": {
+    "twitter": "sleparc",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/u9LOvMuiDIAoW5aKZgsQ.jpg"
+  },
+  "dbaron": {
+    "country": "US",
+    "twitter": "davidbaron",
+    "github": "dbaron",
+    "linkedin": "https://www.linkedin.com/in/ldavidbaron/",
+    "homepage": "https://dbaron.org/",
+    "image": "image/ORyRmnnHXAbyJZvAGcyoT2oKi2o2/1Npv2NPkO3ht3vWAqkGv.jpg"
+  },
+  "bramus": {
+    "homepage": "https://www.bram.us/",
+    "twitter": "bramus",
+    "github": "bramus",
+    "country": "BE",
+    "image": "image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/CQMqvg5UkY4weDnJij3b.jpeg"
+  },
+  "kadirtopal": {
+    "country": "US",
+    "twitter": "atopal",
+    "image": "image/HodOHWjMnbNw56hvNASHWSgZyAf2/locu2HN2Xf0XCE3kqoLl.jpeg"
+  },
+  "michellebarker": {
+    "country": "GB",
+    "twitter": "michebarks",
+    "homepage": "https://css-irl.info/",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/TXk0tkZHdsVgSI0XlYMo.jpeg"
+  },
+  "daviddarnes": {
+    "country": "UK",
+    "twitter": "DavidDarnes",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/D4RF9eRlpsL0byFo3nTu.jpeg"
+  },
+  "linhduong": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/49yMNi8zYI3ufLHlPL2S.png",
+    "github": "duongkhlinh"
+  },
+  "shogokashiwase": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/65uId5WZmSmGVf4iNFjS.png"
+  },
+  "hayounglee": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mrDD7FK1dMWyzJCD4EBy.png"
+  },
+  "ryunosukeakiba": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/x1WXJeBxlPZftTHVnSmP.png"
+  },
+  "mmatuzo": {
+    "country": "AT",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/X3PNOGXB6wYGEqGEjoWd.jpeg",
+    "twitter": "mmatuzo"
+  },
+  "estelleweyl": {
+    "country": "US",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/tdK5bAeVqsW0WEJNyvUg.jpeg",
+    "twitter": "estellevw"
+  },
+  "davideast": {
+    "homepage": "https://davidea.st",
+    "twitter": "_davideast",
+    "image": "image/vS06HQ1YTsbMKSFTIPl2iogUQP73/S8CN1AfcJpoUJvYqrfeT.jpeg"
+  },
+  "cariefisher": {
+    "homepage": "https://cariefisher.com/",
+    "twitter": "cariefisher",
+    "country": "US",
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/eurEFMIkwaNmX7HpnGJg.png"
+  },
+  "marksteadman": {
+    "homepage": "https://dev.to/steady5063",
+    "twitter": "Steady5063",
+    "country": "US",
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/zyOtFQPQnT8ZGKdo14EG.jpeg"
+  },
+  "superhighfives": {
+    "homepage": "https://charliegleason.com",
+    "twitter": "superhighfives",
+    "image": "image/vS06HQ1YTsbMKSFTIPl2iogUQP73/yFI6NAn66sh1FZF5yfFK.jpg",
+    "github": "https://github.com/superhighfives"
+  },
+  "sriramkrishnan": {
+    "country": "US",
+    "image": "image/1L2RBhCLSnXjCnSlevaDjy3vba73/6anAlrMu2HmIplZiOguG.jpeg"
+  },
+  "aaronforinton": {
+    "country": "UK",
+    "image": "image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/uiiy89r72VrVR9lgrDb5.jpeg",
+    "github": "https://github.com/aaronforinton"
   }
 }

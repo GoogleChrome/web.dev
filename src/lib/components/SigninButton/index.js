@@ -1,4 +1,4 @@
-import {html} from 'lit-element';
+import {html, nothing} from 'lit';
 import {signIn} from '../../fb';
 import {BaseStateElement} from '../BaseStateElement';
 import './_styles.scss';
@@ -14,8 +14,7 @@ class SigninButton extends BaseStateElement {
 
   render() {
     if (this.isSignedIn) {
-      // lit-element ignores "" (prior to 2.2.2), so return an empty template.
-      return html``;
+      return nothing;
     }
 
     // We don't set "disabled" attribute on the <button> based on this, because

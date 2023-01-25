@@ -1,0 +1,13 @@
+{
+  "title": "With Icon Image",
+  "context": {
+    "content": "Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.",
+    "img": {
+      "src": "https://web.dev/images/icons/performance.svg",
+      "alt": "A spedometer"
+    },
+    "utilities": {
+      "main": "bg-state-info-bg color-core-text"
+    }
+  }
+}

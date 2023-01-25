@@ -1,0 +1,18 @@
+{
+  "title": "Description list",
+  "context": {
+    "items": [
+      {
+        "key": "First Term",
+        "values": ["This is the definition of the first term."]
+      },
+      {
+        "key": "Second Term",
+        "values": [
+          "This is one definition of the second term.",
+          "This is another definition of the second term."
+        ]
+      }
+    ]
+  }
+}

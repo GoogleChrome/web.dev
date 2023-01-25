@@ -1,0 +1,22 @@
+---
+layout: default-next
+---
+<div class="landing-page">
+  {# Hero starts #}
+  <header class="region bg-mid-bg">
+    <div class="wrapper">
+      <div class="headline all-center flow">
+        <h2 class="headline__title">{{ title }}</h2>
+        <p>{{ description }}</p>
+        {% if headlineAction %}
+          <div class="headline__action">
+            <a href="{{ headlineAction.url }}">{{ headlineAction.text }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+  {# Hero ends #}
+
+  {{ content | safe }}
+</div>

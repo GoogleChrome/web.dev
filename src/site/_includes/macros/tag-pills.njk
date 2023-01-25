@@ -1,0 +1,11 @@
+{#
+  @param {string[]} tags - An array of tag keys to display.
+#}
+{% macro tagPills(tags) %}
+  {% for tagKey in tags or [] %}
+    {% if tagKey in collections.tags %}
+      {% set tag = collections.tags[tagKey] %}
+      <a class="pill" href="{{ tag.url }}">{{ tag.overrideTitle or tag.title | i18n(locale) }}</a>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}

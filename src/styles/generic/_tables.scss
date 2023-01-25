@@ -11,30 +11,6 @@
 //
 // =============================================================================
 
-.w-table-wrapper {
-  @extend %scrollbar;
-  margin: 32px 0;
-  overflow: auto;
-  background: linear-gradient(to right, #fff 30%, rgba(255, 255, 255, 0)),
-  linear-gradient(to right, rgba(255, 255, 255, 0), #fff 70%) 0 100%,
-  radial-gradient(
-    farthest-side at 0% 50%,
-    rgba(0, 0, 0, .2),
-    rgba(0, 0, 0, 0)
-  ),
-  radial-gradient(
-    farthest-side at 100% 50%,
-    rgba(0, 0, 0, .2),
-    rgba(0, 0, 0, 0)
-  )
-  0 100%;
-  background-repeat: no-repeat;
-  background-color: #fff;
-  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
-  background-position: 0 0, 100%, 0 0, 100%;
-  background-attachment: local, local, scroll, scroll;
-}
-
 table {
   border-collapse: collapse;
   font-size: inherit; // DevSite override
@@ -73,10 +49,6 @@ th {
 td {
   line-height: 1.5;
   padding: 16px 24px 16px 0;
-}
-
-.w-table--top-align td {
-  vertical-align: top;
 }
 
 caption {

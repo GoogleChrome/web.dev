@@ -48,6 +48,14 @@ Add **one** of the following labels to the PR:
 
 Contact the web.dev content lead if you don't know what label to use.
 
+## Presubmit
+
+Pull requests must have the presubmit workflow run in order to ensure that they do not
+break the site. The workflow only runs when the `$-presubmit` label is added to the PR.
+
+When a PR us ready to be merged in, add the `$-presubmit` label and wait to see if the
+workflow passes.
+
 ## Don't merge the PR until you're 100% certain that it's OK to merge
 
 Once a PR is merged, the new or updated content is deployed to the site

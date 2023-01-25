@@ -1,0 +1,60 @@
+{% from 'macros/tag-pills.njk' import tagPills with context %}
+
+{#
+  @typedef {string} param.title - The title of the card, like a show's name or a post's title.
+  @typedef {string} param.subhead - A description or short summary.
+  @typedef {string} param.url - The url for the page the card is previewing.
+  @typedef {string|null} param.thumbnail - An relevant image to be displayed in the card.
+  @typedef {string|null} param.alt - Alt text for image. If no thumbnail is provided, this can be null.
+  @typedef {string[]|null} param.authors - An array of author ids for the authors who wrote the post.
+  @typedef {string[]|null} param.tags - An array of tag ids for the tags relevant to the post.
+  @typedef {Date|null} param.date - Date for when a post was created.
+  @typedef {Date|null} param.updated - Date for when a post was updated.
+  @typedef {boolean|null} param.draft - Conditional if the card is for a draft post. This puts a pill on the card that says "DRAFT".
+  @typedef {'round'|'square'} [imageType] - Defines shape of page's hero. Defailts to 'square'.
+#}
+{% macro postCard(param, imageType = 'square') %}
+
+<article class="card">
+  {% if param.draft %}
+    <div class="card__header cluster flex-justify-end">
+      <p class="pill">DRAFT</p>
+    </div>
+  {% endif %}
+
+  {% if param.thumbnail %}
+    {% if imageType == 'round' %}
+      <a href="{{ param.url }}" aria-hidden="true" class="avatar gap-inline-auto" data-size="large">
+        {% Img src=param.thumbnail, alt=param.alt, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
+      </a>
+    {% else %}
+      <a href="{{ param.url }}" aria-hidden="true">
+        {% Img src=param.thumbnail, alt=param.alt, width="570", height="330", class="card__hero" %}
+      </a>
+    {% endif %}
+  {% endif %}
+
+  <div class="card__content flow">
+    <h2 class="card__heading text-size-3">
+      <a href="{{ param.url }}">{{ param.title }}</a>
+    </h2>
+    <p>{{ param.subhead | md | safe }}</p>
+  </div>
+
+  {% if param.authors %}
+    <div class="gap-top-size-1">
+      {% if param.date %}
+        {% AuthorsDate authors=param.authors, date=param.date, updated=param.updated, locale=locale %}
+      {% else %}
+        {% AuthorsDate authors=param.authors, locale=locale %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if param.tags %}
+    <div class="card__tags cluster gap-top-base" aria-label="tags for this post">
+      {{ tagPills(param.tags) }}
+    </div>
+  {% endif %}
+</article>
+{% endmacro %}

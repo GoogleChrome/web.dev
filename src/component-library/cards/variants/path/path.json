@@ -1,0 +1,12 @@
+{
+  "title": "Path Card",
+  "context": {
+    "title": "Web Vitals",
+    "summary": "Essential metrics for a healthy site.",
+    "url": "#",
+    "img": {
+      "src": "https://web-dev.imgix.net/image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg",
+      "alt": "Illustration"
+    }
+  }
+}

@@ -6,6 +6,7 @@ authors:
 subhead: |
   How Next.js speeds up navigations with route prefetching and how to customize it.
 date: 2019-11-08
+updated: 2022-08-12
 feedback:
   - api
 ---
@@ -20,8 +21,8 @@ In [Next.js](https://nextjs.org/), you don't need to set up routing manually.
 Next.js uses file-system-based routing, which lets you just create files and folders
 inside the `./pages/` directory:
 
-<figure class="w-figure">
-<img class="w-screenshot" src="./pages-directory.png" alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cwpyvEgBCIbkqrbsbL0.png", alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.", width="376", height="348" %}
 </figure>
 
 To link to different pages, use the
@@ -68,10 +69,10 @@ downloaded too:
 ## How automatic prefetching works
 
 Next.js prefetches only links that appear in the viewport and uses the [Intersection
-Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API)
 to detect them. It also disables prefetching when the network connection is slow
 or when users have
-[`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data)
+[`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data)
 turned on. Based on these checks, Next.js dynamically injects [`<link
 rel="preload">`](/preload-critical-assets/) tags to download components for
 subsequent navigations.
@@ -86,10 +87,10 @@ check the `README.md` in Glitch examples. {% endAside %}
 {% Aside %} Because `<link rel="preload">` requests resources with high
 priority, the browser expects them to be used right away, which triggers
 Console warnings. [Priority
-hints](https://developers.google.com/web/updates/2019/02/priority-hints) will
+hints](/priority-hints/) will
 soon become available in Chrome, which will allow Next.js to indicate lower
 priority for resources that are not needed immediately with `<link rel="preload"
-importance="low">`. {% endAside %}
+fetchpriority="low">`. {% endAside %}
 
 ## Avoid unnecessary prefetching
 
@@ -121,7 +122,7 @@ downloaded, but `pineapple-pizza.js` is not:
 
 The `<Link>` component is suitable for most use cases, but you can also build
 your own component to do routing. Next.js makes this easy for you with the
-router API available in [`next/router`](https://nextjs.org/docs/api-reference/next/router#userouter). 
+router API available in [`next/router`](https://nextjs.org/docs/api-reference/next/router#userouter).
 If you want to do something (for example, submit a form) before navigating to a new
 route, you can define that in your custom routing code.
 
@@ -178,8 +179,7 @@ downloaded and `pineapple-pizza.js` is not:
 When you click on either link, the **Console** logs "Having fun with Next.js."
 and navigates to the new route:
 
-![DevTools Console displaying the message 'Having fun with
-Next.js.'](console.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/goiEqi3SIWJBUqsk7j6H.png", alt="DevTools Console displaying the message 'Having fun with Next.js.'", width="800", height="690" %}
 
 ## Conclusion
 

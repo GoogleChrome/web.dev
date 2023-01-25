@@ -1,19 +1,54 @@
 title:
   en: Metrics
+  es: Métricas
+  ja: 指標
+  ko: 메트릭
+  pt: Métricas
+  ru: Показатели
+  zh: 指标
 
 description:
   en: Measuring performance and user experience.
+  es: Medir el rendimiento y la experiencia del usuario.
+  ja: パフォーマンスとユーザーエクスペリエンスの測定。
+  ko: 성능 및 사용자 경험 측정.
+  pt: Medição do desempenho e da experiência do usuário.
+  ru: Измерение производительности и удобства использования
+  zh: 衡量性能和用户体验。
 
 overview:
   en: User-centric performance metrics are a critical tool in understanding and improving the experience of your site in a way that benefits real users.
+  es: Las métricas de rendimiento centradas en el usuario son una herramienta fundamental para comprender y mejorar la experiencia de su sitio web de una manera que beneficie a los usuarios reales.
+  ja: ユーザーを中心としたパフォーマンス指標は、実際のユーザーにとって有益となる方法でサイトのユーザーエクスペリエンスを理解し、改善を行う場合に必須となるツールです。
+  ko: 사용자 중심의 성능 메트릭은 실제 사용자에게 도움이 되는 방식으로 사이트 경험을 이해하고 개선하는 데 중요한 도구입니다.
+  pt: As métricas de desempenho centradas no usuário são uma ferramenta crítica para entender e melhorar a experiência do seu site de uma maneira que beneficie os usuários reais.
+  ru: Ориентированные на пользователей показатели производительности — это важный инструмент для понимания и улучшения вашего сайта с точки зрения удобства для реальных пользователей.
+  zh: 以用户为中心的性能指标是了解和改善您的网站体验的一大重要工具，这些指标将使真实用户受益。
 
 topics:
   introduction:
     en: Introduction
+    es: Introducción
+    ja: はじめに
+    ko: 소개
+    pt: Introdução
+    ru: Введение
+    zh: 介绍
 
-  important_metrics_to_measure :
+  important_metrics_to_measure:
     en: Important metrics to measure
+    es: Métricas importantes para medir
+    ja: 測定を実施する重要な指標
+    ko: 측정할 중요 메트릭
+    pt: Métricas importantes para medir
+    ru: Главные показатели для отслеживания
+    zh: 需要衡量的重要指标
 
   define_your_own_metrics:
     en: Define your own metrics
-
+    es: Defina sus propias métricas
+    ja: 独自の指標を定義する
+    ko: 고유한 메트릭 정의
+    pt: Defina suas próprias métricas
+    ru: Определение собственных показателей
+    zh: 定义您自己的指标

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-next
 title: Podcasts
 description: |
   Level up your web development skills by listening to podcasts from Google
@@ -8,67 +8,41 @@ description: |
   build with best practices in mind.
 date: 2020-04-06
 ---
-<div class="podcast-landing-page">
-  <header class="w-masthead-about">
-    <div class="w-masthead-about__container">
-      <div class="w-masthead-about__left">
-        <h1 class="w-headline--two w-font-weight--medium w-mt--non">
-          Podcasts
-        </h1>
-        <p>
-          Level up your web development skills by listening to podcasts from
-          Google Developers. Our podcasts highlight the latest in modern web
-          development with pro-tips, insights, and techniques to help you learn
-          what's new and how to build with best practices in mind.
-        </p>
-      </div>
-      <div class="w-masthead-about__right">
-        <img class="w-masthead-about__image" src="/images/headers/about.svg" alt="">
+
+<div class="wide-card-index">
+
+  {# Hero starts #}
+  <header class="region bg-mid-bg">
+    <div class="wrapper">
+      <div class="headline all-center flow">
+        <h1 class="headline__title">{{ title }}</h1>
+        <p>{{ description }}</p>
       </div>
     </div>
   </header>
+  {# Hero ends #}
 
-  <section>
-    <div class="w-layout-container w-pb--non">
-      <header class="w-text--center">
-        <h2 class="w-headline--two-faded w-mt--non">
-          Featured podcasts
-        </h2>
-      </header>
-    </div>
+  {# Cards #}
+  <div class="region wrapper" data-size="narrow">
+    <nav class="auto-grid" aria-label="podcasts">
+      {% for podcast in podcasts %}
+        <a
+          href="{{ podcast.url }}"
+          class="card"
+          data-category="web.dev"
+          data-label="Podcasts: {{podcast.title}}"
+          data-action="click"
+          role="listitem"
+        >
+          <img src="{{ podcast.thumbnail }}" alt="" loading="lazy" width="100%" height="240" />
+          <div class="card__content flow">
+            <h2 class="card__heading text-size-2">{{ podcast.title }}</h2>
+            <p class="text-size-0">{{ podcast.description }}</p>
+          </div>
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
+  {# Cards end #}
 
-    <div class="w-grid w-pb--std">
-      <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--two" role="list">
-        {% for podcast in podcasts %}
-          <a
-            href="{{ podcast.url }}"
-            class="w-card gc-analytics-event"
-            data-category="web.dev"
-            data-label="Podcasts: {{podcast.title}}"
-            data-action="click"
-            role="listitem"
-          >
-            <div class="w-path-card">
-              <div class="w-path-card__cover">
-                <img
-                  class="w-path-card__cover-image w-path-card__cover-image--fill"
-                  src="{{ podcast.thumbnail }}"
-                  alt=""
-                  loading="lazy"
-                  width="100%"
-                  height="240"
-                />
-              </div>
-              <div class="w-path-card__desc">
-                <h2 class="w-path-card__headline">{{ podcast.title }}</h2>
-                <p class="w-path-card__subhead">
-                  {{ podcast.description }}
-                </p>
-              </div>
-            </div>
-          </a>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
 </div>

@@ -5,7 +5,7 @@ subhead:
 authors:
   - beaufortfrancois
 date: 2020-10-05
-updated: 2020-11-18
+updated: 2021-03-22
 hero: image/admin/wbcUb7ooaR1nCeYnSiCV.jpg
 thumbnail: image/admin/eBugU3Spjq9df1qb5l0b.jpg
 alt: Five persons in a conference room photo.
@@ -52,9 +52,9 @@ To request camera PTZ access, call `navigator.mediaDevices.getUserMedia()` with
 the PTZ constraints as shown below. This will prompt the user to grant both
 regular camera and camera with PTZ permissions.
 
-<figure class="w-figure">
-  {% Img src="image/admin/WmkzmVeiplCoh3HesJS5.jpg", alt="Screenshot of a camera PTZ user prompt in Chrome for macOS.", width="800", height="382", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Camera PTZ user prompt.</figcaption>
+<figure>
+  {% Img src="image/admin/WmkzmVeiplCoh3HesJS5.jpg", alt="Screenshot of a camera PTZ user prompt in Chrome for macOS.", width="800", height="382" %}
+  <figcaption>Camera PTZ user prompt.</figcaption>
 </figure>
 
 The returned promise will resolve with a [`MediaStream`] object used to show the
@@ -106,11 +106,17 @@ try {
 
 To know whether a Chromium-based browser supports PTZ for a camera, go to the
 internal `about://media-internals` page and check out the "Pan-Tilt-Zoom" column
-in the "Video Capture" tab.
+in the "Video Capture" tab; "pan tilt" and "zoom" respectively mean the camera supports
+the "PanTilt (Absolute)" and "Zoom (Absolute)" [UVC controls]. The "PanTilt (Relative)"
+and "Zoom (Relative)" UVC controls are not supported in Chromium-based browsers.
 
-<figure class="w-figure">
-  {% Img src="image/admin/TbU7mM3pfq0bNTkgiOnZ.jpg", alt="Screenshot of the internal page in Chrome OS to debug PTZ camera support.", width="800", height="500", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Internal page to debug PTZ camera support.</figcaption>
+<figure>
+  {% Img
+    src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/4EDS8fYYifXAUY6SBaiV.png",
+    alt="Screenshot of the internal page in ChromeOS to debug PTZ camera support.",
+    width="800",
+    height="481" %}
+  <figcaption>Internal page to debug PTZ camera support.</figcaption>
 </figure>
 
 ### Control camera PTZ {: #control }
@@ -124,11 +130,11 @@ capabilities and the ranges or allowed values. Correspondingly,
 Pan, tilt, and zoom capabilities and settings are available only if supported by
 the camera and the user has granted PTZ permission to the camera.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/camera-pan-tilt-zoom/ptz_h264.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">Controlling Camera PTZ.</figcaption>
+  <figcaption>Controlling Camera PTZ.</figcaption>
 </figure>
 
 Call `videoTrack.applyConstraints()` with the appropriate [PTZ advanced
@@ -137,7 +143,7 @@ The returned promise will resolve if successful. Otherwise it will reject if
 either:
 - the camera with PTZ permission is not granted.
 - the camera hardware does not support the PTZ constraint.
-- the page is not visible to the user. Use the [Page Visibilty API] to detect
+- the page is not visible to the user. Use the [Page Visibility API] to detect
   page visibility changes.
 
 ```js
@@ -202,6 +208,40 @@ API is primarily gated by the same permission model as the [Media Capture and
 Streams API]. In response to a user prompt, the website is allowed to control
 camera PTZ only when the page is visible to the user.
 
+## Browser compatibility
+
+### MediaStream API
+
+{% BrowserCompat 'api.MediaStream' %}
+
+### Permissions API
+
+{% BrowserCompat 'api.Permissions' %}
+
+### Page Visibility API
+
+{% BrowserCompat 'api.Document.visibilityState' %}
+
+### `MediaDevices.getUserMedia()`
+
+{% BrowserCompat 'api.MediaDevices.getUserMedia' %}
+
+### `MediaDevices.getSupportedConstraints()`
+
+{% BrowserCompat 'api.MediaDevices.getSupportedConstraints' %}
+
+### `MediaStreamTrack.applyConstraints()`
+
+{% BrowserCompat 'api.MediaStreamTrack.applyConstraints' %}
+
+### `MediaStreamTrack.getCapabilities()`
+
+{% BrowserCompat 'api.MediaStreamTrack.getCapabilities' %}
+
+### `MediaStreamTrack.getSettings()`
+
+{% BrowserCompat 'api.MediaStreamTrack.getSettings' %}
+
 ## Helpful links {: #helpful }
 
 - [PTZ Explainer](https://github.com/w3c/mediacapture-image/blob/master/ptz-explainer.md)
@@ -217,11 +257,12 @@ Thanks to [Rijubrata Bhaumik] and [Eero Häkkinen] at Intel for their work on th
 spec and the implementation.
 Hero image by [Christina @ wocintechchat.com] on [Unsplash].
 
-[mandatory constraints]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints#Specifying_a_range_of_values:~:text=mandatory
-[`MediaStream`]: https://developer.mozilla.org/en-US/docs/Web/API/MediaStream
-[Permissions API]: https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API
+[mandatory constraints]: https://developer.mozilla.org/docs/Web/API/Media_Streams_API/Constraints#Specifying_a_range_of_values:~:text=mandatory
+[`MediaStream`]: https://developer.mozilla.org/docs/Web/API/MediaStream
+[Permissions API]: https://developer.mozilla.org/docs/Web/API/Permissions_API
+[UVC controls]: https://www.usb.org/document-library/video-class-v15-document-set
 [PTZ advanced constraints]: https://bugs.chromium.org/p/chromium/issues/detail?id=1126045
-[Page Visibilty API]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
+[Page Visibility API]: https://developer.mozilla.org/docs/Web/API/Page_Visibility_API
 [demo]: https://ptz.glitch.me/
 [check out the source code]: https://glitch.com/edit/#!/ptz?path=public%2Fscript.js
 [run Chrome with the switch]: https://www.chromium.org/developers/how-tos/run-chromium-with-flags

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Agrofy: A 70% improvement in LCP correlated to a 76% reduction in load abandonment"
 subhead: By using real user monitoring tools and focusing on improving Core Web Vitals in refactoring their app, they also improved CLS by 72%, as well as application responsiveness.
 authors:
@@ -20,26 +21,26 @@ America's agribusiness market. They match up buyers and sellers of farm
 machines, land, equipment, and financial services. In Q3 2020 a 4-person
 development team at Agrofy spent a month optimizing their website because they
 hypothesized that improved performance would lead to reduced bounce rates. They
-specifically focused on improving [LCP](https://web.dev/lcp/), which is one of
-the [Core Web Vitals](https://web.dev/vitals/#core-web-vitals). These
+specifically focused on improving [LCP](/lcp/), which is one of
+the [Core Web Vitals](/vitals/#core-web-vitals). These
 performance optimizations led to a 70% improvement in LCP, which correlated to a
-76% reduction in load abandonment (from 3.8% to 0.9%).  
+76% reduction in load abandonment (from 3.8% to 0.9%).
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">70<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower LCP</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">70<sub>%</sub></p>
+    <p>Lower LCP</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">76<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower load abandonment</p>
+  <div class="stats__item">
+    <p class="stats__figure">76<sub>%</sub></p>
+    <p>Lower load abandonment</p>
   </div>
 </div>
 
 ## Problem
 
-While studying their business metrics, a development team at Agrofy noticed 
-that their bounce rates seemed higher than industry benchmarks. Technical 
+While studying their business metrics, a development team at Agrofy noticed
+that their bounce rates seemed higher than industry benchmarks. Technical
 debt was also increasing in the website codebase.
 
 ## Solution
@@ -52,22 +53,22 @@ The Agrofy team pitched their executives and got buy-in to:
 
 The migration took 2 months. Aside from the 4-person development team mentioned
 earlier, this migration also involved product and UX specialists and a software
-architect.  
+architect.
 The optimization project took the 4-person development team 1 month. They
-focused on LCP, [CLS](https://web.dev/cls/) (another Core Web Vitals metric),
-and [FCP](https://web.dev/fcp/). Specific optimizations included:
+focused on LCP, [CLS](/cls/) (another Core Web Vitals metric),
+and [FCP](/fcp/). Specific optimizations included:
 
 +   Lazy loading all non-visible elements with the
-    [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
+    [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API).
 +   Delivering static resources faster with a [content delivery
-    network](https://web.dev/content-delivery-networks/).
-+   [Lazy loading images](https://web.dev/browser-level-image-lazy-loading/)
+    network](/content-delivery-networks/).
++   [Lazy loading images](/browser-level-image-lazy-loading/)
     with `loading="lazy"`.
-+   [Server-side rendering](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
++   [Server-side rendering](/rendering-on-the-web/)
     of
-    [critical rendering path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)
+    [critical rendering path](/critical-rendering-path/)
     content.
-+   [Preloading and preconnecting](https://web.dev/fast/#optimize-your-resource-delivery)
++   [Preloading and preconnecting](/fast/#optimize-your-resource-delivery)
     critical resources to minimize handshake times.
 +   Using real user monitoring (RUM) tools to identify which product detail
     pages were experiencing lots of layout shifts and then make adjustments to
@@ -75,7 +76,7 @@ and [FCP](https://web.dev/fcp/). Specific optimizations included:
 
 Check out the
 [Agrofy engineering blog post](https://mollar-luciano.medium.com/how-agrofy-optimised-core-web-vitals-and-improved-business-metrics-2f73311bca)
-for more technical details.  
+for more technical details.
 
 After enabling the new codebase on 20% of traffic, they launched the new site to
 all visitors in early September 2020.
@@ -88,18 +89,18 @@ different metrics:
 +   LCP improved 70%.
 +   CLS improved 72%.
 +   Blocking JS requests reduced 100% and blocking CSS requests 80%.
-+   [Long tasks](https://web.dev/long-tasks-devtools/) reduced 72%.
-+   [First CPU Idle](https://web.dev/first-cpu-idle/) improved 25%.
++   [Long tasks](/long-tasks-devtools/) reduced 72%.
++   [First CPU Idle](https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/) improved 25%.
 
 Over the same time frame, real user monitoring data (also known as [field
-data](https://web.dev/how-to-measure-speed/#lab-data-vs-field-data)) showed that
+data](/how-to-measure-speed/#lab-data-vs-field-data)) showed that
 the load abandonment rate on product detail pages dropped 76%, from 3.8% to
 0.9%:
 
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2lMYiXdjh5aLr4UIMVJF.png", alt="A graph showing load abandonment rate decrease of 76% on the product details page after performance optimizations.", width="800", height="461" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Load abandonment rate trend on product detail page.
   </figcaption>
 </figure>

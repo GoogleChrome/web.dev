@@ -32,23 +32,23 @@ it can also create a performance bottleneck in the critical rendering path and d
 
 ### The default behavior
 
-Lazy loading of fonts carries an important hidden implication that may delay text rendering:
-the browser must [construct the render tree](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction),
+Lazy loading of fonts carries an important hidden implication that may delay text rendering.
+The browser must [construct the render tree](/critical-rendering-path-render-tree-construction/),
 which is dependent on the DOM and CSSOM trees,
-before it knows which font resources it needs in order to render the text.
+before it knows which font resources it needs to render the text.
 As a result, font requests are delayed well after other critical resources,
 and the browser may be blocked from rendering text until the resource is fetched.
 
 {% Img src="image/admin/NgSTa9SirmikQAq1G5fN.png", alt="Font critical rendering path", width="800", height="303" %}
 
 1. The browser requests the HTML document.
-1. The browser begins parsing the HTML response and constructing the DOM.
-1. The browser discovers CSS, JS, and other resources and dispatches requests.
-1. The browser constructs the CSSOM after all of the CSS content is received and combines it with
+2. The browser begins parsing the HTML response and constructing the DOM.
+3. The browser discovers CSS, JS, and other resources and dispatches requests.
+4. The browser constructs the CSSOM after all of the CSS content is received and combines it with
 the DOM tree to construct the render tree.
     - Font requests are dispatched after the render tree indicates which font variants are needed to
     render the specified text on the page.
-1. The browser performs layout and paints content to the screen.
+5. The browser performs layout and paints content to the screen.
     - If the font is not yet available, the browser may not render any text pixels.
     - After the font is available, the browser paints the text pixels.
 
@@ -63,7 +63,7 @@ you can prevent blank pages and layout shifts due to font loading.
 ### Preload your WebFont resources
 
 If there's a high probability that your page will need a specific WebFont hosted at a URL you know in advance,
-you can take advantage of [resource prioritization](https://developers.google.com/web/fundamentals/performance/resource-prioritization).
+you can take advantage of [resource prioritization](/prioritize-resources/).
 Using `<link rel="preload">` will trigger a request for the WebFont early in the critical rendering path,
 without having to wait for the CSSOM to be created.
 
@@ -75,7 +75,9 @@ You still need to consider how browsers behave when rendering text that uses a `
 
 In the post [Avoid invisible text during font loading](/avoid-invisible-text/) you can see that default browser behavior is not consistent.
 However, you can tell modern browsers how you want them to behave by using
-[`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+[`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display).
+
+{% BrowserCompat 'css.at-rules.font-face.font-display' %}
 
 Similar to the existing font timeout behaviors that some browsers implement,
 `font-display` segments the lifetime of a font download into three major periods:
@@ -123,9 +125,9 @@ To work with the `font-display` property, add it to your `@font-face` rules:
 
 For more information on preloading fonts, and the `font-display` property, see the following posts:
 
-- [Avoid invisible text during font loading](https://web.dev/avoid-invisible-text/)
-- [Controlling font performance using font-display](https://developers.google.com/web/updates/2016/02/font-display)
-- [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](https://web.dev/preload-optional-fonts/)
+- [Avoid invisible text during font loading](/avoid-invisible-text/)
+- [Controlling font performance using font-display](https://developer.chrome.com/blog/font-display/)
+- [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](/preload-optional-fonts/)
 
 ### The Font Loading API
 
@@ -138,6 +140,8 @@ The [Font Loading API](https://www.w3.org/TR/css-font-loading/) provides a scrip
 track their download progress, and override their default lazyload behavior.
 For example, if you're sure that a particular font variant is required,
 you can define it and tell the browser to initiate an immediate fetch of the font resource:
+
+{% BrowserCompat 'api.FontFace' %}
 
 ```javascript
 var font = new FontFace("Awesome Font", "url(/fonts/awesome.woff2)", {
@@ -185,14 +189,14 @@ albeit with even more overhead from an additional JavaScript dependency.
 
 Font resources are, typically, static resources that don't see frequent updates.
 As a result, they are ideally suited for a long max-age expiry&mdash;
-ensure that you specify both a [conditional ETag header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#validating-cached-responses-with-etags),
-and an [optimal Cache-Control policy](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control) for all font resources.
+ensure that you specify both a [conditional ETag header](/http-cache/),
+and an [optimal Cache-Control policy](/http-cache/) for all font resources.
 
-If your web application uses a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/),
-serving font resources with a [cache-first strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network) is appropriate for most use cases.
+If your web application uses a [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/),
+serving font resources with a [cache-first strategy](/offline-cookbook/#cache-then-network) is appropriate for most use cases.
 
-You should not store fonts using [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-or [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API);
+You should not store fonts using [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage)
+or [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API);
 each of those has its own set of performance issues.
 The browser's HTTP cache provides the best and most robust mechanism to deliver font resources to the browser.
 
@@ -209,11 +213,11 @@ worker, a cache-first strategy is appropriate.
 
 ## Automated testing for WebFont loading behavior with Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 can help automate the process of making sure that you're following web font optimization best practices.
 
 The following audits can help you make sure that your pages are continuing to follow web font optimization best practices over time:
 
-* [Preload key requests](https://web.dev/uses-rel-preload/)
-* [Uses inefficient cache policy on static assets](https://web.dev/uses-long-cache-ttl/)
-* [All text remains visible during WebFont loads](https://web.dev/font-display/)
+* [Preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+* [Uses inefficient cache policy on static assets](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+* [All text remains visible during WebFont loads](https://developer.chrome.com/docs/lighthouse/performance/font-display/)

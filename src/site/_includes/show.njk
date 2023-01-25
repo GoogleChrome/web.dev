@@ -1,0 +1,24 @@
+---
+layout: default-next
+---
+{% set data = paged.data %}
+<div class="post wrapper region" data-flush>
+  <article class="prose legacy-rollout">
+    <header class="flow gap-bottom-size-2">
+      <h1>{{ data.title }}</h1>
+      <div class="flow-space-base color-mid-text text-size-0">
+        <time>{{ data.date | prettyDate }}</time>
+      </div>
+    </header>
+
+    {% YouTube data.videoId %}
+    <p>{{ data.description | md({linkify: true, breaks: true}) | safe }}</p>
+    <p>
+      <a href="{{ data.parent.url }}" class="button" data-type="secondary">
+        {% include 'icons/arrow-back.svg' %}
+        <span>{{ 'i18n.shows.all_episodes' | i18n(locale) }}</span>
+      </a>
+    </p>
+    
+  </article>
+</div>

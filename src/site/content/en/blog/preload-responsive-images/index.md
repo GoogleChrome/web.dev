@@ -9,6 +9,7 @@ description: |
 hero: image/admin/QDCTiiyXE11bYSZMP3Yt.jpg
 alt: A wall with a bunch of image frames in different sizes.
 date: 2019-09-30
+updated: 2022-09-27
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
@@ -39,11 +40,11 @@ Suppose you're browsing the web on a screen that's 300 pixels wide, and the page
 
 Responsive images and preload have been available for the last few years, but at the same time something was missing: there was no way to preload responsive images. [Starting in Chrome 73](https://developers.google.com/web/updates/2019/03/nic73#more), the browser can preload the right variant of responsive images specified in `srcset` before it discovers the `img` tag!
 
-Depending on your site's structure, that could mean significantly faster image display! We ran tests on a site that uses Javascript to lazy-load responsive images. Preloading resulted in images loading 1.2 seconds faster.
+Depending on your site's structure, that could mean significantly faster image display! We ran tests on a site that uses JavaScript to lazy-load responsive images. Preloading resulted in images loading 1.2 seconds faster.
 
 {% Aside %}
 
-Responsive images are [supported in all modern browsers](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility) while preloading them is [supported only in Chromium-based browsers](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility).
+Responsive images are [supported in all modern browsers](https://developer.mozilla.org/docs/Web/HTML/Element/img#Browser_compatibility) while preloading them is [supported only in Chromium-based browsers](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility).
 
 {% endAside %}
 
@@ -83,17 +84,17 @@ You can inspect this issue on a website with a dynamically-loaded image gallery:
 
 1. Reload the page.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/cyocwRmB3XlfY26vUZ5h.png", alt="Screenshot of Chrome DevTools Network panel.", width="800", height="481" %}
-<figcaption class="w-figcaption">This waterfall shows that the images only start loading after the browser has finished running the script, introducing unnecessary delay to the time the image is initially displayed to the user.</figcaption>
+<figcaption>This waterfall shows that the images only start loading after the browser has finished running the script, introducing unnecessary delay to the time the image is initially displayed to the user.</figcaption>
 </figure>
 
 Using `preload` helps here because the image starts loading ahead of time and is likely to already be there when the browser needs to display it.
 
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/rIRdFypLWf1ljMaXCVCs.png", alt="Screenshot of Chrome DevTools Network panel.", width="800", height="481" %}
-<figcaption class="w-figcaption">This waterfall shows that the first image started loading at the same time as the script, avoiding unnecessary delays and resulting in faster displaying images.</figcaption>
+<figcaption>This waterfall shows that the first image started loading at the same time as the script, avoiding unnecessary delays and resulting in faster displaying images.</figcaption>
 </figure>
 
 To see the difference that preloading makes, you can inspect the same dynamically-loaded image gallery but [with preloaded first image](https://responsive-preload.glitch.me/preload.html) by following the steps from the first example.
@@ -104,7 +105,7 @@ An alternative way to avoid the problem would be to use a markup-based carousel 
 
 ### Preloading background images using image-set
 
-If you have different background images for different screen densities, you can specify them in your CSS with the `image-set` syntax. The browser can then choose which one to display based on the screen's [DPR](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio).
+If you have different background images for different screen densities, you can specify them in your CSS with the `image-set` syntax. The browser can then choose which one to display based on the screen's [DPR](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio).
 
 ```css
 background-image: image-set( "cat.png" 1x, "cat-2x.png" 2x);
@@ -112,7 +113,7 @@ background-image: image-set( "cat.png" 1x, "cat-2x.png" 2x);
 
 {% Aside %}
 
-The above syntax ignores the fact that vendor prefixes are needed for this feature in both Chromium and WebKit based browsers. If you're planning to use this feature, you should consider using [Autoprefixer](https://github.com/postcss/autoprefixer) to address that automatically.
+The above syntax ignores the fact that vendor prefixes are needed for this feature in both Chromium and WebKit based browsers. If you're planning to use this feature, you should consider using [Autoprefixer](https://github.com/postcss/autoprefixer) ([available as an online tool](https://goonlinetools.com/autoprefixer/)) to address that automatically.
 
 {% endAside %}
 
@@ -120,9 +121,9 @@ The problem with CSS background images is that they are discovered by the browse
 
 You can inspect this issue on an example website with [responsive background image](https://responsive-preload.glitch.me/background_no_preload.html).
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/7sjFt1RsoEOKn5zlS5zb.png", alt="Screenshot of Chrome DevTools Network panel.", width="800", height="451" %}
-<figcaption class="w-figcaption">In this example, the image download doesn't start until the CSS is fully downloaded, resulting in unnecessary lag to the image's display.</figcaption>
+<figcaption>In this example, the image download doesn't start until the CSS is fully downloaded, resulting in unnecessary lag to the image's display.</figcaption>
 </figure>
 
 Responsive image preloading provides a simple and hack-free way to load those images faster.
@@ -133,9 +134,9 @@ Responsive image preloading provides a simple and hack-free way to load those im
 
 You can inspect how the previous example behaves with [preloaded responsive background image](https://responsive-preload.glitch.me/background_preload.html).
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/dOI6EmChfahBujnZOke7.png", alt="Screenshot of Chrome DevTools Network panel.", width="800", height="439" %}
-<figcaption class="w-figcaption">Here the image and CSS start downloading at the same time, avoiding delays and resulting in a faster loading image.</figcaption>
+<figcaption>Here the image and CSS start downloading at the same time, avoiding delays and resulting in a faster loading image.</figcaption>
 </figure>
 
 ## Preloading responsive images in action
@@ -144,17 +145,17 @@ Preloading your responsive images can speed them up in theory, but what does it 
 
 To answer that I created two copies of a [demo PWA shop](https://github.com/GoogleChromeLabs/sample-pie-shop): [one that does not preload images](https://20190710t144416-dot-pie-shop-app.appspot.com/apparel), and [one that preloads some of them](https://20190710t132936-dot-pie-shop-app.appspot.com/apparel). Since the site lazy loads images using JavaScript, it's likely to benefit from preloading the ones that will be in the initial viewport.
 
-That gave me the following results for [no preload](https://www.webpagetest.org/result/190710_VM_30b9d4c993a1e60befba17e1261ba1ca/) and for [image preload](https://www.webpagetest.org/result/190710_7B_a99e792121760f81a270b4b9c847797b/). Looking at the raw numbers we see that [Start Render](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Quick%20Start%20Guide.md#start-render) stayed the same, [Speed Index](/speed-index/) slightly improved (273 ms, as images arrive faster, but don't take up a huge chunk of the pixel area), but the real metric which captures the difference is the [Last Painted Hero](https://github.com/WPO-Foundation/webpagetest/blob/master/docs/Metrics/HeroElements.md) metric, which improved by 1.2 seconds. 🎉🎉
+That gave me the following results for [no preload](https://www.webpagetest.org/result/190710_VM_30b9d4c993a1e60befba17e1261ba1ca/) and for [image preload](https://www.webpagetest.org/result/190710_7B_a99e792121760f81a270b4b9c847797b/). Looking at the raw numbers we see that [Start Render](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/getting-started.md#start-render) stayed the same, [Speed Index](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) slightly improved (273 ms, as images arrive faster, but don't take up a huge chunk of the pixel area), but the real metric which captures the difference is the [Last Painted Hero](https://github.com/WPO-Foundation/webpagetest/blob/master/docs/Metrics/HeroElements.md) metric, which improved by 1.2 seconds. 🎉🎉
 
 Of course, nothing captures the visual difference quite like a filmstrip comparison:
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/sXyZOvsNoAY0K2NRqT4U.png", alt="Screenshot of WebPageTest filmstrip comparison showing preloaded images are displayed about 1.5 seconds faster.", width="800", height="328" %}
-<figcaption class="w-figcaption">The filmstrip shows that images arrive significantly faster when preloaded, resulting in a hugely-improved user experience.</figcaption>
+<figcaption>The filmstrip shows that images arrive significantly faster when preloaded, resulting in a hugely-improved user experience.</figcaption>
 </figure>
 
 ## Preload and `<picture>`?
 
-If you're familiar with responsive images, you may be wondering "What about [`<picture>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)?".
+If you're familiar with responsive images, you may be wondering "What about [`<picture>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture)?".
 
 The Web Performance Working Group is talking about adding a preload equivalent for `srcset` and `sizes`, but not the `<picture>` element, which tackles the ["art direction"](/codelab-art-direction/) use-case.
 
@@ -170,9 +171,9 @@ Given the following scenario:
 
 ```html
 <picture>
-    <source src="small_cat.jpg" media="(max-width: 400px)">
-    <source src="medium_cat.jpg" media="(max-width: 800px)">
-    <img src="huge_cat.jpg">
+    <source srcset="small_cat.jpg" media="(max-width: 400px)">
+    <source srcset="medium_cat.jpg" media="(max-width: 800px)">
+    <img src="large_cat.jpg">
 </picture>
 ```
 
@@ -185,6 +186,12 @@ Because responsive preload has no notion of "order" or "first match", the breakp
 <link rel="preload" href="medium_cat.jpg" as="image" media="(min-width: 400.1px) and (max-width: 800px)">
 <link rel="preload" href="large_cat.jpg" as="image" media="(min-width: 800.1px)">
 ```
+
+## Effects on Largest Contentful Paint (LCP)
+
+Since images can be [candidates for Largest Contentful Paint (LCP)](/lcp/#what-elements-are-considered), preloading them may improve your website's LCP. Using the techniques above, you can also ensure that your responsive images will load more quickly.
+
+Regardless of whether the image you're preloading is responsive, be aware that preloads work especially well when the image resource isn't discoverable in the initial markup payload. For websites that send complete markup from the server, you may not realize a huge benefit. However, if your website renders markup on the client&mdash;which sidesteps the browser's [preload scanner](/preload-scanner/)&mdash;there's an opportunity on the table to preload potential LCP images to improve performance.
 
 ## Summary
 

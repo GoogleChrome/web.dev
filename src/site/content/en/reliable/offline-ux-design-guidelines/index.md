@@ -6,11 +6,10 @@ authors:
   - mustafakurtuldu
   - thomassteiner
 date: 2016-11-10
-updated: 2020-10-29
+updated: 2022-06-13
 tags:
   - progressive-web-apps
   - ux
-  - capabilities
   - network
   - offline
 ---
@@ -23,8 +22,8 @@ The quality of a network connection can be affected by a number of factors such 
 - Poor coverage of a provider.
 - Extreme weather conditions.
 - Power outages.
-- Entering into permanent "dead zones" such as buildings with walls that block network connections.
-- Entering into temporary "dead zones" like when traveling on a train and going through a tunnel.
+- Entering into permanent "dead zones" such as in buildings with walls that block network connections.
+- Entering into temporary "dead zones" such as when traveling on a train and going through a tunnel.
 - Time-boxed internet connections such as those in airports or hotels.
 - Cultural practices that require limited or no internet access at specific times or days.
 
@@ -53,21 +52,17 @@ current state of the application. For example, a notification could say:
 > You seem to have a bad network connection. Not to worry! Messages will be sent when the
 > network is restored.
 
-<figure class="w-figure" style="display: inline-block; max-width: 45%;">
-  <img src="emojoy-toast-message.png"
-       alt="The Emojoy emoji messaging app informing the user when a change in state occurs."
-  >
-  <figcaption class="w-figcaption">
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/roxoXuJ9x7qUHFVWMgXZ.png", alt="The Emojoy emoji messaging app informing the user when a change in state occurs.", width="335", height="601" %}
+  <figcaption>
     Clearly inform the user when a change in state occurs as soon as possible.
   </figcaption>
 </figure>
 
-<figure class="w-figure" style="display: inline-block; max-width: 45%;">
-  <img src="io-toast-message.png"
-       alt="The I/O 2016 app informing the user when a change in state occurs."
-  >
-  <figcaption class="w-figcaption">
-    The Google I/O app used a material design "toast" to let the user know when they were offline.
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GvE07BeSsnTyxnRbkZhz.png", alt="The I/O 2016 app informing the user when a change in state occurs.", width="335", height="601" %}
+  <figcaption>
+    The Google I/O app used a "toast" to let the user know when they were offline.
   </figcaption>
 </figure>
 
@@ -87,43 +82,35 @@ at work here</a>.
 One example of this would be [Chrome Platform Status](https://chromestatus.com)
 which posts a note to the user when the app has been updated.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="weather-app.png"
-      alt="An example weather app."
-  >
-  <figcaption class="w-figcaption">
-    Some apps, like the weather app, need to auto-update, as old data
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ikam7evJEVSicAnVxvWA.png", alt="An example weather app.", width="324", height="598" %}
+  <figcaption>
+    Some apps, such as the weather app, need to auto-update because old data
     is not useful.
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="chrome-status-app-updated.png"
-      alt="Chrome Status uses a toast"
-  >
-  <figcaption class="w-figcaption">
-    Apps like Chrome Status let the user know
-    when content has been updated via a toast notification.
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5TtIkRCPsuxAOajX8LPF.png", alt="Chrome Status uses a toast", width="336", height="598" %}
+  <figcaption>
+    Apps such as Chrome Status let the user know
+    when content has been updated via a toast.
   </figcaption>
 </figure>
 
 You may also show the last time the app was updated at all times in a prominent space. This would
 be useful for a currency converter app, for example.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="material-money-rates-out-of-date.png"
-       alt="The Material Money app being out-of-date."
-  >
-  <figcaption class="w-figcaption">
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nK4V7aUvmLvaNJgF1S2I.png", alt="The Material Money app being out-of-date.", width="324", height="598" %}
+  <figcaption>
     Material Money caches rates…
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="material-money-rates-updated.png"
-       alt="Material money has been updated"
-  >
-  <figcaption class="w-figcaption">
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wqaFuHzeAC2wR0D3pt7R.png", alt="Material money has been updated", width="324", height="598" %}
+  <figcaption>
     …and notifies the user when the app has been updated.
   </figcaption>
 </figure>
@@ -132,20 +119,16 @@ Applications such as news apps could show a simple tap-to-update notification
 informing the user of new content. Auto-updating would cause users to lose
 their place.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-normal.png"
-       alt="An example news app, Tailpiece in its normal state"
-  >
-  <figcaption class="w-figcaption">
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="An example news app, Tailpiece in its normal state", width="360", height="665" %}
+  <figcaption>
     Tailpiece, an online newspaper, will auto-download the latest news…
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-tap-to-update.png"
-       alt="Example news app, Tailpiece when its ready to be updated"
-  >
-  <figcaption class="w-figcaption">
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WNIMNF14cSF29fntl1Lc.png", alt="Example news app, Tailpiece when its ready to be updated", width="360", height="665" %}
+  <figcaption>
     …but allow users to refresh manually so they do not lose their place in an article.
   </figcaption>
 </figure>
@@ -153,7 +136,7 @@ their place.
 ### Update the UI to reflect the current contextual state
 
 Each bit of UI may have its own context and functionality that will change depending on if it
-requires a successful connection. One example would be an e-commerce site that can be browsed
+requires a successful connection. One example would be an e&#8209;commerce site that can be browsed
 offline. The Buy button and pricing would be disabled until a connection is reestablished.
 
 Other forms of contextual states could include data. For example, the financial application
@@ -182,20 +165,16 @@ user could read today's news without a connection, perhaps downloading the text 
 images. Also, adapt to the user's behavior. For example, if the sports section is what they typically view,
 make that the priority download.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-offline.png"
-       alt="Tailpiece informs the user that they are offline with various design widgets"
-  >
-  <figcaption class="w-figcaption">
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/M39yiHQYpXacVII6d7zX.png", alt="Tailpiece informs the user that they are offline with various design widgets.", width="360", height="665" %}
+  <figcaption>
     If the device is offline, Tailpiece will notify the user with a status message…
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-offline-sidebar.png"
-       alt="Tailpiece has a visual indicator that shows what sections are ready for offline use."
-  >
-  <figcaption class="w-figcaption">
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KpkzjYNoCWquWKXTvM28.png", alt="Tailpiece has a visual indicator that shows what sections are ready for offline use.", width="360", height="665" %}
+  <figcaption>
     …letting them know that they can at least partially still use the app.
   </figcaption>
 </figure>
@@ -215,25 +194,21 @@ about an operation through a message at the bottom of the screen such as, for ex
 been synced or a data file has downloaded.
 
 Again think of the language you are using to make sure it is fit for your audience. Ensure the
-messaging is given the same in all instances where it's used. The term offline is generally
+messaging is the same in all instances where it's used. The term offline is generally
 misunderstood by a non-technical audience so use action-based language that your audience can relate
 to.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="io-offline-ready.png"
-       alt="I/O app offline"
-  >
-  <figcaption class="w-figcaption">
-    The Google I/O 2016 app notifies the user when
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fNOute6xBzFcDUNMeXDe.png", alt="I/O app offline.", width="360", height="664" %}
+  <figcaption>
+    The Google I/O 2016 app notified the user when
     the app is ready for offline use…
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="chome-offline.png"
-       alt="Chrome Status site is offline"
-  >
-  <figcaption class="w-figcaption">
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Od6jUnazP8n7CMe18G2C.png", alt="Chrome Status site is offline.", width="360", height="664" %}
+  <figcaption>
     …and so does the Chrome Platform Status site, which includes information about the occupied storage.
   </figcaption>
 </figure>
@@ -304,19 +279,19 @@ current state of the app.
 
 <div class="w-columns">
 {% Compare 'worse' %}
-  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-    <img src="service-worker-ready.png" alt="A service worker icon is a bad example">
-    <figcaption class="w-figcaption">
+  <figure style="display: inline-block; max-width: 45%;">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MaYiuInHsZ2mbPQcbD4l.png", alt="A service worker icon is a bad example.", width="350", height="149" %}
+    <figcaption>
       Avoid terms that aren't intelligible to non-technical users.
     </figcaption>
   </figure>
 {% endCompare %}
 
 {% Compare 'better' %}
-  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-    <img src="download.png" alt="A download icon is a good example">
-    <figcaption class="w-figcaption">
-      Use language and imagery that describes the action.
+  <figure style="display: inline-block; max-width: 45%;">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIjYKLFK5DbrDJDJeDqu.png", alt="A download icon is a good example.", width="350", height="149" %}
+    <figcaption>
+      Use language and imagery that describe the action.
     </figcaption>
   </figure>
 {% endCompare %}
@@ -326,7 +301,7 @@ current state of the app.
 
 Use language, color, and visual components to demonstrate a change of state or current status.
 Solely using color to demonstrate state may not be noticed by the user and may be inaccessible to
-users who suffer from visual disabilities. Also, the instinct for designers is to use grayed UI
+users with visual disabilities. Also, the instinct for designers is to use grayed UI
 to represent offline, but this can have a loaded meaning on the web. Grayed UI such as input elements
 on a form also means that an element is disabled. This can cause confusion if you *only*
 use color to depict state.
@@ -336,19 +311,19 @@ with color, labels, and UI components.
 
 <div class="w-columns">
 {% Compare 'worse' %}
-  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-    <img src="accessibility_color8_dont.png" alt="A bad example only using color.">
-    <figcaption class="w-figcaption">
-      Use color as the sole means to describe what is happening.
+  <figure style="display: inline-block; max-width: 45%;">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uj28SN1ZepiIvya4YTe1.png", alt="A bad example only using color.", width="720", height="368" %}
+    <figcaption>
+      Avoid using color as the sole means to describe what is happening.
     </figcaption>
   </figure>
 {% endCompare %}
 
 {% Compare 'better' %}
-  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-    <img src="accessibility_color7_do.png" alt="A good example that uses color and text to show an error.">
-    <figcaption class="w-figcaption">
-      Use a mixture of design elements to convey meaning
+  <figure style="display: inline-block; max-width: 45%;">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/s78eC2GBEkDQouqhBYMO.png", alt="A good example that uses color and text to show an error.", width="720", height="368" %}
+    <figcaption>
+      Use a mixture of design elements to convey meaning.
     </figcaption>
   </figure>
 {% endCompare %}
@@ -369,7 +344,7 @@ actions may be interpreted as saving for offline rather than demonstrating a net
 of the action you are trying to convey rather than presenting the user with an abstract concept. For
 example, save or download data would be action-based.
 
-<img src="download-icons-examples.png" alt="Various icon examples that convey offline">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/h2FFD3nLIOdSzWg5H5kO.png", alt="Various icon examples that convey offline", width="700", height="299" %}
 
 Offline can mean a number of things depending on the context, such as download, export, pin, etc.
 For more inspiration checkout the
@@ -384,15 +359,15 @@ example would be to pulsate the wireframe content giving the app the feeling tha
 loading. This reassures the user that something is happening and helps prevent resubmissions or
 refreshes of your app.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-skel-article.png" alt="A skeleton layout example">
-  <figcaption class="w-figcaption">
-    Skeleton placeholder layout is shown during the download of the article…
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUIrcbblhHe5YPSrrwRy.png", alt="A skeleton layout example.", width="360", height="665" %}
+  <figcaption>
+    A skeleton placeholder layout is shown during the download of the article…
   </figcaption>
 </figure>
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-normal.png" alt="A loaded article example">
-  <figcaption class="w-figcaption">
+<figure style="display: inline-block; max-width: 45%;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="A loaded article example.", width="360", height="665" %}
+  <figcaption>
     …that gets replaced with the real contents once the download finishes.
   </figcaption>
 </figure>
@@ -431,15 +406,15 @@ with things that are familiar, e.g downloading for later use is the same as offl
 
 When designing for unstable network connections, remember these guidelines:
 
-- Think how you design for the success, failure, and instability of a network connection.
+- Design for the success, failure, and instability of a network connection.
 - Data may be expensive, so be considerate to the user.
 - For most users globally, the tech environment is almost exclusively mobile.
-- Low-end devices are commonplace, with limited storage, memory and processing power, and small
+- Low-end devices are commonplace, with limited storage, memory, and processing power, and small
   displays and lower touchscreen quality. Make sure performance is a part of your design process.
 - Allow users to browse your application when they are offline.
 - Inform users of their current state and of changes in states.
 - Try to provide offline by default if your app doesn't require much data.
 - If the app is data-heavy, educate users about how they can download for offline use.
 - Make experiences transferable between devices.
-- Utilize language, icons, imagery, typography, and color to express ideas to the user collectively.
+- Use language, icons, imagery, typography, and color together to express ideas to the user.
 - Provide reassurance and feedback to help the user.

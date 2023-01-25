@@ -43,7 +43,8 @@ const rule = require('unified-lint-rule');
 const map = require('unist-util-map');
 const toList = require('unist-util-to-list-of-char');
 
-const punctuations = '！!~～.。,，·?？';
+// nb. We removed "~" here because it flagged strikethrough content.
+const punctuations = '！!～.。,，·?？';
 
 /* eslint-disable require-jsdoc */
 class Traveler {

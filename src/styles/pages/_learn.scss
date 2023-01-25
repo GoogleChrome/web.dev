@@ -1,6 +1,11 @@
 .w-learn-heading {
   // Pad the heading a bit so it lines up with the card padding for the
   // learning paths.
-  margin-top: 0;
-  padding-left: 32px;
+  margin: 0 32px;
 };
+
+.w-learn__collections-heading {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 32px;
+}

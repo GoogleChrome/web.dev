@@ -1,0 +1,40 @@
+{% from 'macros/icon.njk' import icon with context %}
+
+{% macro preferredTitle(item) %}
+  {%- set title = item.data.title or '' -%}
+  {%- if item.title -%}
+    {%- set title = item.title | i18n(locale) -%}
+  {%- endif -%}
+  {{- title -}}
+{% endmacro %}
+
+<h2 class="visually-hidden">Next and previous lessons</h2>
+<nav class="preview-pagination gap-top-size-2" aria-label="pagination">
+  {% for item in pageNavigation.list %}
+    {% if item.url === page.url %}
+      {% if item.prev %}
+        {% set prev = item.prev %}
+        <a class="preview-pagination__item flow" href="{{ prev.url }}" data-dir="prev">
+          <div class="preview-pagination__meta cluster">
+            {{ icon('arrow-back', {label: 'previous'}) }}
+            <span>{{ 'i18n.common.prev' | i18n(locale) }}</span>
+            <span>{{ prev.counter }}</span>
+          </div>
+          <h3 class="preview-pagination__heading">{{ preferredTitle(prev) }}</h3>
+        </a>
+      {% endif %}
+      {% if item.next %}
+        {% set next = item.next %}
+        <a class="preview-pagination__item flow" href="{{ next.url }}" data-dir="next">
+          <div class="preview-pagination__meta cluster">
+            {{ icon('arrow-forward', {label: 'next'}) }}
+            <span>{{ 'i18n.common.next' | i18n(locale) }}</span>
+            <span>{{ next.counter }}</span>
+          </div>
+          <h3 class="preview-pagination__heading">{{ preferredTitle(next) }}</h3>
+          <p>{{ next.data.description }}</p>
+        </a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</nav>

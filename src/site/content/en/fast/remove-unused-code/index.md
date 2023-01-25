@@ -7,6 +7,7 @@ subhead: |
 authors:
   - houssein
 date: 2018-11-05
+updated: 2022-08-29
 description: |
   Registries like npm have transformed the JavaScript world for the better by
   allowing anyone to easily download and use over half a million public
@@ -22,7 +23,15 @@ Registries like [npm](https://docs.npmjs.com/getting-started/what-is-npm) have
 transformed the JavaScript world for the better by allowing anyone to easily
 download and use over _half a million_ public packages. But we often include
 libraries we're not fully utilizing. To fix this issue, **analyze your bundle**
-to detect unused code. Then remove **unused** and **unneeded** libraries.
+to detect unused code. Then remove **unused** and **unnecessary** libraries.
+
+## Impact on Core Web Vitals
+
+By removing unused code, you can improve your website's [Core Web Vitals](/vitals/). [Largest Contentful Paint](/lcp/), for example, can be affected by unused code by increased bandwidth contention caused by larger than necessary assets. LCP can also be affected if large JavaScript assets that render markup solely on the client [contain references to LCP candidates](/preload-scanner/#rendering-markup-with-client-side-javascript) by [delaying when these resources can load](/optimize-lcp/#1-eliminate-resource-load-delay).
+
+Other metrics such as [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/) can also be affected by unused code, because even unused JavaScript must be downloaded, parsed, compiled, and then executed. The unused code can introduce unnecessary delays in resource load time, memory usage, and main thread activity that contribute to poor page responsiveness.
+
+This guide will help you get a handle on your project's unused code by showing you how to analyze your project's codebase, and offer strategies for pruning unused code from the JavaScript assets you ship to your users in production.
 
 ## Analyze your bundle
 
@@ -31,19 +40,19 @@ DevTools makes it easy to see the size of all network requests:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-page', 'ol' %}
 
-{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Network panel with bundle request", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Network panel with bundle request", width="800", height="169" %}
 
-The [Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
+The [Coverage](https://developer.chrome.com/docs/devtools/coverage/)
 tab in DevTools will also tell you how much CSS and JS code in your application
 is unused.
 
-{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Code Coverage in DevTools", width="800", height="562", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Code Coverage in DevTools", width="800", height="562" %}
 
 By specifying a full Lighthouse configuration through its Node CLI, an "Unused
 JavaScript" audit can also be used to trace how much unused code is being
 shipped with your application.
 
-{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse Unused JS Audit", width="800", height="347", class="w-screenshot" %}
+{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse Unused JS Audit", width="800", height="347" %}
 
 If you happen to be using [webpack](https://webpack.js.org/) as your bundler,
 [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
@@ -103,7 +112,7 @@ that automatically remove unused code from popular libraries](https://github.com
 [Remove unused code.](/codelab-remove-unused-code)
 {% endAside %}
 
-## Remove unneeded libraries
+## Remove unnecessary libraries
 
 Not all libraries can be easily broken down into parts and selectively imported.
 In these scenarios, consider if the library could be removed entirely. Building

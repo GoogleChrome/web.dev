@@ -1,8 +1,8 @@
 {
   "slug": "handbook",
-  "cover": "/images/collections/handbook.svg",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/Tb9AWhihdixMZTA3taHV.svg",
   "title": "i18n.paths.handbook.title",
-  "updated": "Jun 24, 2019",
+  "updated": "Oct 11, 2021",
   "description": "i18n.paths.handbook.description",
   "overview": "i18n.paths.handbook.overview",
   "topics": [
@@ -10,6 +10,7 @@
       "title": "i18n.paths.handbook.topics.content_process",
       "pathItems": [
         "handbook/quick-start",
+        "handbook/writing-blog-posts",
         "handbook/content-checklist",
         "handbook/third-party-contributions"
       ]
@@ -38,6 +39,7 @@
       "pathItems": [
         "handbook/author-profile",
         "handbook/markup-post-codelab",
+        "handbook/markup-cards-collection",
         "handbook/web-dev-components",
         "handbook/markup-media",
         "handbook/markup-code",
@@ -50,7 +52,8 @@
       "title": "i18n.paths.handbook.topics.content_infrastructure",
       "pathItems": [
         "handbook/resolving-glitch-issues",
-        "handbook/redirects"
+        "handbook/redirects",
+        "handbook/adding-a-course"
       ]
     }
   ]

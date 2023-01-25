@@ -2,17 +2,18 @@
 layout: handbook
 title: Grammar, mechanics, and usage
 date: 2019-06-26
+updated: 2021-06-04
 description: |
   A list of grammar, mechanics, and usage rules for web.dev, followed by a list of style and usage references.
 ---
 
 <style>
-  img[src*="icon"] {
+  .icon {
     max-width: 32px;
     vertical-align: middle;
   }
 
-  img[src*="bordered"] {
+  .icon.bordered {
     border: 1px solid #949494;
     border-radius: 5px;
   }
@@ -231,11 +232,11 @@ When referring to a button with an icon but no label, use the name of the button
 
 <div class="w-columns">
 {% Compare 'worse' %}
-Click ![Fullscreen icon](fullscreen.png#_icon).
+Click {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/exITm071mGTWssT5c3Qh.png", alt="Fullscreen icon", width="96", height="96", class="icon" %}.
 {% endCompare %}
 
 {% Compare 'better' %}
-Click **Fullscreen** ![Fullscreen icon](fullscreen.png#_icon_bordered).
+Click **Fullscreen** {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/exITm071mGTWssT5c3Qh.png", alt="Fullscreen icon", width="96", height="96", class="icon bordered" %}.
 {% endCompare %}
 </div>
 
@@ -256,6 +257,19 @@ To copy, press `Control+C` (or `Command+C` on Mac).
 </div>
 
 Use _pane_ to refer to the content areas associated with tabs—unless you're referring to an area in DevTools; then use _panel_.
+
+Use `about://` instead of `chrome://` for built-in URLs in web.dev articles. This generalizes these URLs to all Chromium forks. Typing `about://` in such a browser will be rewritten to a browser-specific scheme. For example typing `about://` in Microsoft Edge will be rewritten to `edge://`.
+For more background on this rule, see the article [How to set browser flags in Chromium](https://developer.chrome.com/blog/browser-flags/).
+
+<div class="w-columns">
+{% Compare 'worse' %}
+`chrome://`
+{% endCompare %}
+
+{% Compare 'better' %}
+`about://`
+{% endCompare %}
+</div>
 
 ## Units
 Use _KB_ for kilobytes, _kb_ for kilobits.

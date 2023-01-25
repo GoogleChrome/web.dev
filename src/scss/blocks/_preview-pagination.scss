@@ -1,0 +1,59 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/preview-pagination
+.preview-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid get-utility-value('color', 'stroke');
+
+  svg {
+    fill: get-utility-value('color', 'mid-text');
+  }
+
+  p {
+    @include apply-utility('color', 'mid-text');
+  }
+}
+
+.preview-pagination__item {
+  display: block;
+  flex-grow: 1;
+  padding: $global-gutter-narrow $global-gutter $global-gutter $global-gutter;
+  min-width: 16rem;
+
+  text-decoration: none;
+
+  &[data-dir='prev'] {
+    flex-basis: 40%;
+  }
+
+  &[data-dir='next'] {
+    flex-basis: 60%;
+  }
+
+  /// Beats the specificity of the :link global style
+  &:link,
+  &:visited {
+    color: currentColor;
+  }
+}
+
+.preview-pagination__item + .preview-pagination__item {
+  outline: 1px solid get-utility-value('color', 'stroke');
+}
+
+.preview-pagination__meta {
+  --gutter: #{$global-gutter-narrow};
+
+  text-transform: uppercase;
+  font-size: get-size('size-0');
+
+  @include apply-utility('font', 'mono');
+
+  [data-dir='next'] & {
+    @include apply-utility('color', 'action-text');
+  }
+}
+
+.preview-pagination__heading {
+  --flow-space: #{get-space('base')};
+}

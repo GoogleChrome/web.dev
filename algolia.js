@@ -18,52 +18,157 @@ require('dotenv').config();
 
 const algoliasearch = require('algoliasearch');
 const fs = require('fs');
-const log = require('fancy-log');
+const path = require('path');
+const truncateUTF8Bytes = require('truncate-utf8-bytes');
 
-const raw = fs.readFileSync('dist/algolia.json', 'utf-8');
-const indexed = JSON.parse(raw);
+const {sizeOfJSONInBytes} = require('./shared/sizeOfJSONInBytes');
+const {defaultLocale, supportedLocales} = require('./shared/locale');
 
-// Revision will look like "YYYYMMDDHHMM".
-const revision = new Date().toISOString().substring(0, 16).replace(/\D/g, '');
-const primaryIndexName = 'webdev';
-const deployIndexName = `webdev_deploy_${revision}`;
+const maxChunkSizeInBytes = 10000000; // 10,000,000
+const maxChunkSizeInMB = maxChunkSizeInBytes / 1000000;
+// This limit is set by our current Algolia plan (with some headroom).
+// The restriction applies to the size of the JSON serialization of each item.
+// See https://support.algolia.com/hc/en-us/articles/4406981897617-Is-there-a-size-limit-for-my-index-records-#:~:text=The%20record%20size%20limit%20is%20based%20on%20the%20size%20of%20this%20final%20JSON%20file.
+const maxItemSizeInBytes = 9000;
 
-async function index() {
-  if (!process.env.ALGOLIA_APP || !process.env.ALGOLIA_KEY) {
-    console.warn('Missing Algolia environment variables, skipping indexing.');
-    return;
+/**
+ * If needed, trims size of an AlgoliaItem so that its JSON serialization is
+ * under the byte limit.
+ *
+ * @param {AlgoliaItem} item
+ * @return {AlgoliaItem}
+ */
+const trimBytes = (item) => {
+  const currentSizeInBytes = sizeOfJSONInBytes(item);
+
+  // If the item is too big, trim the content before returning it.
+  if (currentSizeInBytes > maxItemSizeInBytes) {
+    const bytesToRemove = currentSizeInBytes - maxItemSizeInBytes;
+    const contentSizeInBytes = sizeOfJSONInBytes(item.content);
+
+    item.content = truncateUTF8Bytes(
+      item.content,
+      contentSizeInBytes - bytesToRemove,
+    );
   }
 
-  const client = algoliasearch(
-    process.env.ALGOLIA_APP,
-    process.env.ALGOLIA_KEY,
-  );
+  return item;
+};
 
-  const primaryIndex = client.initIndex(primaryIndexName); // nb. not actually used, just forces init
-  const deployIndex = client.initIndex(deployIndexName);
+/**
+ * Chunks array of AlgoliaItem into array of array of AlgoliaItems smaller than 10 MB.
+ *
+ * @param {AlgoliaItem[]} arr
+ * @return {AlgoliaItem[][]}
+ */
+const chunkAlgolia = (arr) => {
+  const chunked = [];
+  let tempSizeInBytes = 0;
+  let temp = [];
+  for (const arrItem of arr) {
+    const currentSizeInBytes = sizeOfJSONInBytes(arrItem);
 
-  log(
-    `Indexing ${indexed.length} articles with temporary index ${deployIndex.indexName}...`,
-  );
+    if (currentSizeInBytes >= maxChunkSizeInBytes) {
+      throw new Error(
+        `${path.join(
+          arrItem.locale || '',
+          arrItem.url || '',
+        )} is >= than ${maxChunkSizeInMB} MB`,
+      );
+    } else if (tempSizeInBytes + currentSizeInBytes < maxChunkSizeInBytes) {
+      temp.push(arrItem);
+      tempSizeInBytes += currentSizeInBytes;
+    } else {
+      chunked.push(temp);
+      temp = [arrItem];
+      tempSizeInBytes = currentSizeInBytes;
+    }
+  }
+  chunked.push(temp);
+  return chunked;
+};
 
-  // TODO(samthor): This is from https://www.algolia.com/doc/api-reference/api-methods/replace-all-objects/#examples,
-  // are there more things that should be copied?
-  const scope = ['settings', 'synonyms', 'rules'];
-  await client.copyIndex(primaryIndex.indexName, deployIndex.indexName, {
-    scope,
+async function index() {
+  const indexedOn = new Date();
+
+  const raw = fs.readFileSync('dist/pages.json', 'utf-8');
+  /** @type {AlgoliaItem[]} */
+  const pagesData = JSON.parse(raw);
+
+  /** @type {{ [url: string]: string[]}} */
+  const urlToLocale = pagesData.reduce((urlLocalesDict, {url, locale}) => {
+    if (urlLocalesDict[url]) {
+      urlLocalesDict[url].push(locale);
+    } else {
+      urlLocalesDict[url] = [locale];
+    }
+
+    return urlLocalesDict;
+  }, {});
+
+  const algoliaData = pagesData.map((/** @type {AlgoliaItem} */ item) => {
+    if (item.locale === defaultLocale) {
+      const locales = urlToLocale[item.url];
+      item.locales = [
+        item.locale,
+        ...supportedLocales.filter((i) => locales.indexOf(i) === -1),
+      ];
+    } else {
+      item.locales = [item.locale];
+    }
+    item.indexedOn = indexedOn.getTime();
+    return trimBytes(item);
   });
 
-  // TODO(samthor): Batch uploads so that we don't send more than 10mb.
-  // As of September 2019, the JSON itself is only ~70k. \shrug/
-  await deployIndex.saveObjects(indexed);
-  log(`Indexed, replacing existing index ${primaryIndex.indexName}`);
+  // Skip indexing unless the environment is configured.
+  if (!process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY) {
+    throw new Error(
+      'Missing Algolia environment variables, skipping indexing.',
+    );
+  } else {
+    const chunkedAlgoliaData = chunkAlgolia(algoliaData);
+    const postsCount = algoliaData.length;
 
-  // Move our temporary deploy index on-top of the primary index, atomically.
-  await client.moveIndex(deployIndex.indexName, primaryIndex.indexName);
-  log('Done!');
+    // @ts-ignore
+    const client = algoliasearch(
+      process.env.ALGOLIA_APP_ID,
+      process.env.ALGOLIA_API_KEY,
+    );
+    const index = client.initIndex('prod_web_dev');
+
+    console.log(
+      `Indexing ${postsCount} articles amongst ${chunkedAlgoliaData.length} chunk(s).`,
+    );
+
+    // When indexing data we mark these two fields as fields that can be filtered by.
+    await index.setSettings({
+      searchableAttributes: ['title', 'content', 'description'],
+      attributesForFaceting: ['locales', 'tags'],
+      customRanking: ['desc(priority)'],
+    });
+
+    // Update the Algolia index with new data
+    for (let i = 0; i < chunkedAlgoliaData.length; i++) {
+      await index.saveObjects(chunkedAlgoliaData[i], {
+        autoGenerateObjectIDIfNotExist: true,
+      });
+    }
+
+    console.log('Updated algolia data.');
+
+    console.log('Deleting old data no longer in pages.json.');
+    await index.deleteBy({
+      filters: `indexedOn < ${indexedOn.getTime()}`,
+    });
+    console.log('Deleted old data.');
+    console.log('Done!');
+  }
 }
 
-index().catch((err) => {
-  log.error(err);
-  throw err;
-});
+module.exports = {
+  chunkAlgolia,
+  index,
+  maxChunkSizeInBytes,
+  maxItemSizeInBytes,
+  trimBytes,
+};

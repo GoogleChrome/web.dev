@@ -1,0 +1,28 @@
+setLeader: Test your knowledge of the picture element
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: "Where the `srcset` attribute gives ________ to the browser, the `<picture>` element gives ________."
+    options:
+      - content: "suggestions, commands"
+        rationale: "The picture element provides control, making it great for art direction."
+      - content: "commands, suggestions"
+        rationale: "Oops, you got it backwards."
+  - type: multiple-choice
+    cardinality: "2+"
+    correctAnswers: "0,1,2,3"
+    stem: "Some capabilities of the `<picture>` element are:"
+    options:
+      - content: "Alternative cropping"
+        rationale: "eg: landscape images or portrait images depending on the viewport."
+      - content: "Alternative formats"
+        rationale: "eg: smaller and easier to download `avif` or `webp` files if possible."
+      - content: "Alternative sizes"
+        rationale: "eg: larger images for larger monitors."
+      - content: "Alternative densities"
+        rationale: "eg: providing rich pixel quality for HD screens."
+      - content: "Alternative ratios"
+        rationale: "Picture element does not have ratio features."

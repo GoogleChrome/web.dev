@@ -1,5 +1,5 @@
-import {html} from 'lit-element';
-import {until} from 'lit-html/directives/until';
+import {html} from 'lit';
+import {until} from 'lit/directives/until.js';
 import {BaseElement} from '../BaseElement';
 import {signIn, signOut} from '../../fb';
 import './_styles.scss';
@@ -103,12 +103,8 @@ class ProfileSwitcher extends BaseElement {
             />
           </div>
           <div class="w-profile-dialog__details">
-            <div class="w-profile-dialog__name">
-              ${this.user.displayName}
-            </div>
-            <div class="w-profile-dialog__email">
-              ${this.user.email}
-            </div>
+            <div class="w-profile-dialog__name">${this.user.displayName}</div>
+            <div class="w-profile-dialog__email">${this.user.email}</div>
             <a
               class="w-profile-dialog__privacy"
               href="https://myaccount.google.com/privacypolicy"

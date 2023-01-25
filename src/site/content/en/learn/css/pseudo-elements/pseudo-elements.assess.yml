@@ -1,0 +1,33 @@
+setLeader: Test your knowledge of pseudo-elements
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,4,5"
+    stem: Which of the following are not pseudo-elements?
+    options:
+      - content: "`::before`"
+        rationale: "Don't forget to add `content: '';`."
+      - content: "`::first-paragraph`"
+        rationale: "This doesn't exist in CSS."
+      - content: "`::after`"
+        rationale: "Don't forget to add `content: '';`."
+      - content: "`::marker`"
+        rationale: "This is the bullet element when you use a list element or
+        display type."
+      - content: "`::pencil`"
+        rationale: "This doesn't exist in CSS."
+      - content: "`:active`"
+        rationale: "This is a pseudo-class not a pseudo-element."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Pseudo-elements can be found in an HTML file.
+    options:
+      - content: "True"
+        rationale: "While DevTools may show pseudo-elements in the Elements
+        panel, pseudo-elements won't be found in the HTML, they're owned by the
+        browser."
+      - content: "False"
+        rationale: "They can be targeted by CSS but won't be found in the HTML."

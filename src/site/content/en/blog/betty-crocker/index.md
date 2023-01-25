@@ -1,4 +1,5 @@
 ---
+layout: post
 title: |
   Wake Lock API case study: 300% increase in purchase intent indicators on BettyCrocker.com
 subhead: |
@@ -17,7 +18,7 @@ description: |
 tags:
   - blog
   - case-study
-  - wake-lock
+  # - wake-lock
   - capabilities
 ---
 For nearly a century, Betty Crocker has been America's source for modern cooking instruction
@@ -60,8 +61,8 @@ than having to touch the screen with messy hands or even your nose when the scre
 Betty Crocker asked themselves how they could port the killer feature of their iOS/Android apps
 over to the web app.
 This is when they learned about
-[Project Fugu](https://developers.google.com/web/updates/capabilities) and the
-[Wake Lock API](https://web.dev/wakelock/).
+[Project Fugu](https://developer.chrome.com/blog/capabilities/) and the
+[Wake Lock API](/wakelock/).
 
 {% Img src="image/admin/Yoj65m20XpoPdaL8ejAv.jpg", alt="A person kneading dough on a kitchen table covered in flour", width="800", height="533" %}
 
@@ -128,19 +129,19 @@ the three sites do have a shared code base,
 so they were able to implement the component once, and deploy it everywhere,
 as shown in the screenshots below.
 
-<figure class="w-figure">
-  {% Img src="image/admin/I9y4AIPEK9P4V0JFn4y1.png", alt="BettyCrocker.com wake lock toggle", width="600", height="170", class="w-screenshot" %}
-  <figcaption class="w-figcaption">BettyCrocker.com wake lock toggle.</figcaption>
+<figure>
+  {% Img src="image/admin/I9y4AIPEK9P4V0JFn4y1.png", alt="BettyCrocker.com wake lock toggle", width="600", height="170" %}
+  <figcaption>BettyCrocker.com wake lock toggle.</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/PXS7bnWxYiLKtmLekulr.png", alt="Pillsbury.com wake lock toggle", width="600", height="152", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Pillsbury.com wake lock toggle.</figcaption>
+<figure>
+  {% Img src="image/admin/PXS7bnWxYiLKtmLekulr.png", alt="Pillsbury.com wake lock toggle", width="600", height="152" %}
+  <figcaption>Pillsbury.com wake lock toggle.</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/S5NQabO9qJTwlidx2eZo.png", alt="Tablespoon.com wake lock toggle", width="600", height="152", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Tablespoon.com wake lock toggle.</figcaption>
+<figure>
+  {% Img src="image/admin/S5NQabO9qJTwlidx2eZo.png", alt="Tablespoon.com wake lock toggle", width="600", height="152" %}
+  <figcaption>Tablespoon.com wake lock toggle.</figcaption>
 </figure>
 
 When developing the component based on the new site's modernized framework,
@@ -318,18 +319,18 @@ BettyCrocker.com reported the following metrics:
   than for those not using the wake lock feature.
 - Indicators of purchase intent were about 300% higher for wake lock users compared to all users.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">3.1<sub class="w-stat__sub">×</sub></p>
-    <p class="w-stat__desc">Longer session duration</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">3.1<sub>×</sub></p>
+    <p>Longer session duration</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">50<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower bounce rate</p>
+  <div class="stats__item">
+    <p class="stats__figure">50<sub>%</sub></p>
+    <p>Lower bounce rate</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">300<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher purchase intent indicators</p>
+  <div class="stats__item">
+    <p class="stats__figure">300<sub>%</sub></p>
+    <p>Higher purchase intent indicators</p>
   </div>
 </div>
 
@@ -346,7 +347,7 @@ Other examples are boarding pass or ticket apps that need to keep the screen on
 until the barcode has been scanned, kiosk-style apps that keep the screen on continuously,
 or web-based presentation apps that prevent the screen from sleeping during a presentation.
 
-We have compiled [everything you need to know about the Wake Lock API](https://web.dev/wakelock/)
+We have compiled [everything you need to know about the Wake Lock API](/wakelock/)
 in a comprehensive article on this very site.
 Happy reading, and happy cooking!
 

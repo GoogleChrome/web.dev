@@ -1,0 +1,15 @@
+{#
+  @param {CodePattern} pattern - Code Pattern object.
+#}
+{% macro codePattern(pattern) %}
+  {% Details %}
+    {% DetailsSummary 'h3' %}
+      {{pattern.title}}
+    {% endDetailsSummary %}
+    {% CodePattern pattern.id %}
+    {% if pattern.description %}
+      <p class="code-patterns__description">{{ pattern.description | safe }}</p>
+    {% endif %}
+    <p class="code-patterns__more"><a href="/patterns/{{pattern.id}}">Learn more</a></p>
+  {% endDetails %}
+{% endmacro %}

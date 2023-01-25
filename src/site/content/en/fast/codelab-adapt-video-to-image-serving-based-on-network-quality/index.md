@@ -20,14 +20,16 @@ quality. This page's background video will load only when users are on a fast
 network. On slower networks, an image will load instead.
 
 The
-[Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation)
+[Network Information API](https://developer.mozilla.org/docs/Web/API/NetworkInformation)
 enables you to access information about the user's connection quality. You will
 use its `effectiveType` property to decide when to serve a video and when to
 serve an image. `effectiveType` can be `'slow-2g'`, `'2g'`, `'3g'`, or `'4g'`.
 
+{% BrowserCompat 'api.NetworkInformation' %}
+
 ## Step 1: Check connection type
 
-The `index.html` file contains a `<video>` tag to display the background video (line 22). The code in `script.js` loads the video by setting the video tag's `src` attribute. (The video loading code is described in more detail in [Step 2](/codelab-adapt-video-to-image-serving-based-on-network-quality#step-2:-load-video).)
+The `index.html` file contains a `<video>` tag to display the background video (line 22). The code in `script.js` loads the video by setting the video tag's `src` attribute. (The video loading code is described in more detail in [Step 2](/codelab-adapt-video-to-image-serving-based-on-network-quality/#step-2-load-video).)
 
 To load the video conditionally, first check if the Network Information API is available; if it is, check the connection type.
 
@@ -85,7 +87,7 @@ Here's how the video loading code works: the `<video>` tag doesn't download or d
 <video id="coverVideo" autoplay loop muted data-src="https://cdn.glitch.com/b6491350-b058-4eb6-aa6c-55c93122073e%2FMatrix%2C%20Console%2C%20Hacking%2C%20Code.mp4?1551464245607"></video>
 ```
 
-[Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) allow you to store extra information on standard HTML elements. A data element can be named anything, as long as it starts with "data-".
+[Data attributes](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes) allow you to store extra information on standard HTML elements. A data element can be named anything, as long as it starts with "data-".
 
 To actually display the video on the page, you need to get the value from `data-src` and set it as the video element's `src` attribute.
 
@@ -152,11 +154,11 @@ To test it yourself:
 {% Instruction 'devtools-network', 'ol' %}
 1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
 
-{% Img src="image/admin/um0BRQOmsqGgZzWeLDHY.png", alt="DevTools Network tab with Fast 3G throttling option highlighted", width="723", height="198", class="w-screenshot" %}
+{% Img src="image/admin/um0BRQOmsqGgZzWeLDHY.png", alt="DevTools Network tab with Fast 3G throttling option highlighted", width="723", height="198" %}
 
 Now reload the page with Fast 3G still enabled. The app loads an image in the background instead of the video:
 
-{% Img src="image/admin/wtQs6oCU8c5q23SQOnHo.png", alt="Matrix-like image background with 'NETWORK INFORMATION' text overlay", width="800", height="456", class="w-screenshot" %}
+{% Img src="image/admin/wtQs6oCU8c5q23SQOnHo.png", alt="Matrix-like image background with 'NETWORK INFORMATION' text overlay", width="800", height="456" %}
 
 ## Extra Credit: Respond to changes
 
@@ -186,7 +188,7 @@ displayNetworkInfo();
 
 Here's the final state of the [app on Glitch](https://glitch.com/~adaptive-serving-netinfo).
 
-{% Img src="image/admin/0cTTeeAMgl5lD1PKRjy2.png", alt="Matrix-like video background with 'NETWORK INFORMATION 4g' text overlay", width="800", height="447", class="w-screenshot" %}
+{% Img src="image/admin/0cTTeeAMgl5lD1PKRjy2.png", alt="Matrix-like video background with 'NETWORK INFORMATION 4g' text overlay", width="800", height="447" %}
 
 To test it again:
 
@@ -197,4 +199,4 @@ To test it again:
 
 The app will update the network information to **3g**:
 
-{% Img src="image/admin/WRp4ceBiuDQZoWmuaZx4.png", alt="Matrix-like video background with 'NETWORK INFORMATION 3g' text overlay", width="800", height="447", class="w-screenshot" %}
+{% Img src="image/admin/WRp4ceBiuDQZoWmuaZx4.png", alt="Matrix-like video background with 'NETWORK INFORMATION 3g' text overlay", width="800", height="447" %}

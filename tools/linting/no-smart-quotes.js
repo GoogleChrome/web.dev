@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,12 +23,13 @@ module.exports = rule('remark-lint:no-smart-quotes', noSmartQuotes);
 const reason = 'No smart quotes or apostrophes. Use a straight quote or apostrophe instead.';
 
 /**
- * Walk the AST for the markdown file and find any smart quotes or apostrophes.
+ * Walk the AST for the markdown file and find any smart quotes or
+ *   apostrophes in code blocks.
  * @param {*} tree An AST of the markdown file.
  * @param {*} file The markdown file.
  */
 function noSmartQuotes(tree, file) {
-  visit(tree, 'text', visitor);
+  visit(tree, ['code', 'inlineCode'], visitor);
 
   /* eslint-disable require-jsdoc */
   function visitor(node) {

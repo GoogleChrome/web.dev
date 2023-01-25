@@ -1,0 +1,42 @@
+setLeader: Test your knowledge of validating forms
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What attribute do you use to make form controls mandatory?
+    options:
+      - content: "`required`"
+        rationale: "🎉"
+      - content: "`needed`"
+        rationale: "Try again!"
+      - content: "`essential`"
+        rationale: "Try again!"
+      - content: "`obligatory`"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: Is it possible to define your own error messages?
+    options:
+      - content: "Yes, with the `message` HTML attribute."
+        rationale: "Try again!"
+      - content: "No"
+        rationale: "It is possible, try again!"
+      - content: "Yes, with the `:invalid` CSS pseudo element."
+        rationale: "Try again!"
+      - content: "Yes, with the Constraint Validation API."
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: 'An `<input>` with `type="email"` and the `required` attribute can be submitted:'
+    options:
+      - content: "If it's not empty."
+        rationale: "Try again!"
+      - content: "If its value is a valid email address."
+        rationale: "🎉"
+      - content: "In every case."
+        rationale: "Try again!"
+      - content: "If its value contains the word email."
+        rationale: "Try again!"

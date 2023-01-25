@@ -42,8 +42,9 @@ web-snackbar {
     align-items: center;
   }
 
-  .web-snackbar__action {
-    font-size: .875rem;
+  .web-snackbar__action,
+  .web-snackbar__action:link {
+    font-size: 0.875rem;
     color: $WEB_SECONDARY_COLOR;
     height: auto;
   }

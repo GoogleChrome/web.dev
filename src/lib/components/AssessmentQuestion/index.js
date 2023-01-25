@@ -1,6 +1,6 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
-import './_styles.scss';
+import {logEvent} from '../../analytics';
 
 /**
  * Element that renders an assessment question shell.
@@ -44,13 +44,14 @@ export class AssessmentQuestion extends BaseElement {
       <div class="web-question__content" style="${heightStyle}">
         ${this.prerenderedChildren}
       </div>
-      <div class="web-question__footer">
-        <span></span>
+      <hr />
+      <div class="web-question__footer gap-top-size-1 ta-right">
         <button
           @click="${this.onSubmit}"
-          class="w-button w-button--primary web-assessment__button web-question__cta gc-analytics-event"
+          class="button web-assessment__button web-question__cta gc-analytics-event"
           data-category="Self-assessments"
           data-label="CTA, ${this.id}"
+          data-type="primary"
           ?disabled="${this.state === 'unanswered'}"
         >
           ${this.ctaLabel}
@@ -90,10 +91,9 @@ export class AssessmentQuestion extends BaseElement {
 
       // Send an Analytics event manually. We don't want to pipe through the IDs all the way down
       // to each individual option.
-      ga('send', 'event', {
-        eventCategory: 'Self-assessments',
-        eventAction: 'click',
-        eventLabel: `${this.id}-response-${responseIndex}-option-${optionIndex}`,
+      logEvent('click', {
+        event_category: 'Self-assessments',
+        event_label: `${this.id}-response-${responseIndex}-option-${optionIndex}`,
       });
     });
   }

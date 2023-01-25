@@ -3,13 +3,14 @@ layout: post
 title: Replace animated GIFs with video for faster page loads
 authors:
   - houssein
+  - jlwagner
 description: |
   Have you ever seen an animated GIF on a service like Imgur or Gfycat,
   inspected it in your dev tools, only to find out that GIF was really a video?
   There's a good reason for that. Animated GIFs can be downright huge! By
   converting large GIFs to videos, you can save big on users' bandwidth.
 date: 2018-11-05
-updated: 2019-08-29
+updated: 2022-07-18
 codelabs:
   - codelab-replace-gifs-with-video
 tags:
@@ -22,7 +23,7 @@ Have you ever seen an animated GIF on a service like Imgur or Gfycat, inspected
 it in your dev tools, only to find out that GIF was really a video? There's a
 good reason for that. Animated GIFs can be downright _huge_.
 
-{% Img src="image/admin/3UZ0b9dDotVIXWQT5Auk.png", alt="DevTools network panel showing a 13.7 MB gif.", width="800", height="155", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/3UZ0b9dDotVIXWQT5Auk.png", alt="DevTools network panel showing a 13.7 MB gif.", width="800", height="155" %}
 
 Thankfully, this is one of those areas of loading performance where you can do
 relatively little work to realize huge gains! **By converting large GIFs to
@@ -36,7 +37,7 @@ Lighthouse and check the report.
 If you have any GIFs that can be converted, you should see a suggestion to "Use
 video formats for animated content":
 
-{% Img src="image/admin/KOSr9IivnkyaFk6RJ5u1.png", alt="A failing Lighthouse audit, use video formats for animated content.", width="800", height="173", class="w-screenshot" %}
+{% Img src="image/admin/KOSr9IivnkyaFk6RJ5u1.png", alt="A failing Lighthouse audit, use video formats for animated content.", width="800", height="173" %}
 
 ## Create MPEG videos
 
@@ -77,7 +78,7 @@ ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm
 
 The cost savings between a GIF and a video can be pretty significant.
 
-{% Img src="image/admin/LWzvOWaOdMnNLTPWjayt.png", alt="File size comparison showing 3.7 MB for the gif, 551 KB for the mp4 and 341 KB for the webm.", width="800", height="188", class="w-screenshot" %}
+{% Img src="image/admin/LWzvOWaOdMnNLTPWjayt.png", alt="File size comparison showing 3.7 MB for the gif, 551 KB for the mp4 and 341 KB for the webm.", width="800", height="188" %}
 
 In this example, the initial GIF is 3.7 MB, compared to the MP4 version, which
 is 551 KB, and the WebM version, which is only 341 KB!
@@ -97,7 +98,7 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 ```
 
 A `<video>` element with these attributes plays automatically, loops endlessly,
-plays no audio, and plays inline (i.e., not full screen), all the hallmark
+plays no audio, and plays inline (that is, not full screen), all the hallmark
 behaviors expected of animated GIFs! 🎉
 
 Finally, the `<video>` element requires one or more `<source>` child elements
@@ -122,3 +123,9 @@ Browsers don't speculate about which `<source>` is optimal, so the order of
 browser supports WebM, browsers will skip the WebM `<source>` and use the MPEG-4
 instead. If you prefer a WebM `<source>` be used first, specify it first!
 {% endAside %}
+
+## Effect on Largest Contentful Paint (LCP)
+
+It should be noted that while `<img>` elements are candidates for LCP, `<video>` elements without a [`poster` image](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) are not [LCP candidates](/lcp/#what-elements-are-considered). The solution in the case of emulating animated GIFs is _not_ to add `poster` attribute to your `<video>` elements, because that image will go unused.
+
+What does this mean for your website? The recommendation is to stick with using a `<video>` instead of an animated GIF, but with the understanding that such media will not be a candidate for LCP, and the next largest candidate will be used instead. As GIFs and `<video>`s are typically larger and so slower to download, moving to a different LCP candidate will likely even improve the site's LCP.

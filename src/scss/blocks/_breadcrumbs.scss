@@ -1,0 +1,60 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/breadcrumbs
+.breadcrumbs {
+  a {
+    color: currentColor;
+    overflow: hidden; // Prevents the selected SVG from highlighting on click
+  }
+
+  a svg {
+    display: block;
+    width: 120px;
+    height: auto;
+
+    // This is the text within the SVG
+    .brand-primary {
+      fill: get-utility-value('color', 'mid-text');
+    }
+
+    /// We're hiding the text (see _brand.scss), so shrink the svg to adjust
+    @include media-query('xs') {
+      margin-inline-end: -95px;
+    }
+  }
+}
+
+.breadcrumbs__list {
+  margin: 0 -1em;
+  overflow-x: auto;
+  padding: 1em;
+  -webkit-overflow-scrolling: touch;
+
+  &,
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0 $global-gutter-narrow;
+  }
+
+  li {
+    flex: none;
+
+    @include apply-utility('color', 'mid-text');
+  }
+
+  li + li::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+    opacity: 0.8;
+  }
+
+  a:hover {
+    background: transparent;
+    text-decoration: none;
+  }
+}

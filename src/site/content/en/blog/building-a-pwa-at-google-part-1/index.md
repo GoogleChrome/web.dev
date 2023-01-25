@@ -29,9 +29,9 @@ means a complete overview of PWAs. The aim is to share learnings from our team's
 For this first post we'll cover a little background information first and then dive into all the
 stuff we learned about service workers.
 
-{% Aside %}  
+{% Aside %}
 Bulletin was shut down in 2019 due to lack of product/market fit. We still learned a lot about PWAs
-along the way!  
+along the way!
 {% endAside %}
 
 ## Background {: #background }
@@ -44,7 +44,7 @@ Before we delve into the development process, let's examine why building a PWA w
 option for this project:
 
 * **Ability to iterate quickly**. Especially valuable since Bulletin would be piloted in
-  multiple markets. 
+  multiple markets.
 * **Single code base**. Our users were roughly evenly split between Android and iOS. A PWA meant
   we could build a single web app that would work on both platforms. This increased the velocity
   and impact of the team.
@@ -63,16 +63,16 @@ framework will work.
 ## What we learned about service workers {: #lessons-learned }
 
 You can't have a PWA without a [service
-worker](https://developers.google.com/web/fundamentals/primers/service-workers/). Service workers
+worker](https://developer.chrome.com/docs/workbox/service-worker-overview/). Service workers
 give you a lot of power, such as advanced caching strategies, offline capabilities, background sync,
 etc. While service workers do add some complexity, we found that their benefits outweighed the added
-complexity. 
+complexity.
 
 ### Generate it if you can {: #generate }
 
 Avoid writing a service worker script by hand. Writing service workers by hand requires manually
 managing cached resources and rewriting logic that is common to most service workers libraries, such
-as [Workbox](https://developers.google.com/web/tools/workbox/).
+as [Workbox](https://developer.chrome.com/docs/workbox/).
 
 Having said that, due to our internal tech stack we could not use a library to generate and manage
 our service worker. Our learnings below will at times reflect that. Go to [Pitfalls for
@@ -92,7 +92,7 @@ state](#global-state).
 
 ### Avoid accessing IndexedDB during initialization {: #idb }
 
-Don't read [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) when
+Don't read [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) when
 initializing your service worker script, or else you can get into this undesired situation:
 
 1. User has web app with IndexedDB (IDB) version N
@@ -125,7 +125,7 @@ Because service workers exist in a different context, many symbols you might exp
 present. A lot of our code ran in both a `window` context, as well as a service worker context (such
 as logging, flags, syncing, etc.). Code needs to be defensive about the services it uses, such as
 local storage or cookies. You can use
-[`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis)
+[`globalThis`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/globalThis)
 to refer to the global object in a manner which will work across all contexts. Also use data stored
 in global variables sparingly, as there is no guarantee as to when the script will be terminated and
 the state evicted.
@@ -142,13 +142,13 @@ disable the memory cache. In order to cover more browsers, we opted for a differ
 including a flag to disable caching in our service worker which is enabled by default on developer
 builds. This ensures that devs always get their most recent changes without any caching issues. It's
 important to include the `Cache-Control: no-cache` header as well to [prevent the browser from
-caching any assets](https://web.dev/http-cache/#unversioned-urls).
+caching any assets](/http-cache/#unversioned-urls).
 
 ### Lighthouse {: #lighthouse }
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) provides a number of debugging
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) provides a number of debugging
 tools useful for PWAs. It scans a site and generates reports covering PWAs, performance,
-accessibility, SEO, and other best practices.  
+accessibility, SEO, and other best practices.
 We recommend [running Lighthouse on continuous
 integration](https://github.com/GoogleChrome/lighthouse-ci) to alert you if you break one of the
 criteria to be a PWA. This actually happened to us once, where the service worker wasn't installing
@@ -187,7 +187,7 @@ frontend server that simply echoed the cookie value back to the client. The serv
 network request to this endpoint and read the response to get the cookie values.
 
 With the release of the
-[Cookie Store API](https://developers.google.com/web/updates/2018/09/asynchronous-access-to-http-cookies),
+[Cookie Store API](https://developer.chrome.com/blog/asynchronous-access-to-http-cookies/),
 this workaround should no longer be necessary for browsers that support it, as it provides
 asynchronous access to browser cookies and can be used directly by the service worker.
 
@@ -202,7 +202,7 @@ worker script has changed in some way, so we had to ensure the service worker sc
 changed in some way when a cached file changed. We did this manually by embedding a hash of the
 static resource fileset within our service worker script, so every release produced a distinct
 service worker JavaScript file. Service worker libraries like
-[Workbox](https://developers.google.com/web/tools/workbox/) automate this process for you.
+[Workbox](https://developer.chrome.com/docs/workbox/) automate this process for you.
 
 ### Unit testing {: #unit-testing }
 

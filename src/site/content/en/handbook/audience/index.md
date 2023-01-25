@@ -3,7 +3,7 @@ layout: handbook
 title: Audience
 date: 2019-06-26
 description: |
-  Definitions of the the key personas for web.dev and advice about how to write for them.
+  Definitions of the key personas for web.dev and advice about how to write for them.
 ---
 
 When you're writing for web.dev, it's important to consider the persona or personas you're writing for. Keeping your audience in mind helps you make good writing decisions, like how much background information to include or whether you need to define a key term. Those considerations help ensure that your readers can learn or accomplish something.
@@ -50,7 +50,7 @@ Emily works as a software engineer. In her free time, she likes experimenting wi
 ### New developer (Jaimie)
 Jaimie first took a web development class at their local community college and is now a computer science student at a California state university. They are applying for internships to gain more hands-on experience, and they want to learn about the latest web development technologies to become a more competitive candidate.
 
-* **Prior knowledge:** Jaimie has taken several college-level computer science courses, but they've only covered the basics of HTML, CSS, and vanilla Javascript.
+* **Prior knowledge:** Jaimie has taken several college-level computer science courses, but they've only covered the basics of HTML, CSS, and vanilla JavaScript.
 * **Entry point:** Whether directed to the page through searching or at the recommendation of a friend or instructor, Jaimie arrives at the "Getting Started" collection (forthcoming) on web.dev.
 * **Goal:** Learn about the most recent web development tools and best practices to create a personal site from scratch to apply for industry jobs.
 

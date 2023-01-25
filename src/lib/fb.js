@@ -1,37 +1,37 @@
+import {initializeApp} from 'firebase/app';
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut as authSignOut,
+} from 'firebase/auth';
+import {
+  getFirestore,
+  doc,
+  runTransaction,
+  onSnapshot,
+} from 'firebase/firestore';
+
 import {firebaseConfig} from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
-import * as firebaseLoader from './utils/firebase-loader';
-const {loadFirebase} = firebaseLoader;
-import {trackError} from './analytics';
 
-const firebasePromise = loadFirebase('app', 'auth', 'performance').then(
-  () => window.firebase,
-);
-firebasePromise.then(initialize).catch((err) => {
-  console.error('failed to load Firebase', err);
-  trackError(err, 'firebase load');
-});
+import {logError} from './analytics';
 
-const firestorePromiseLoader = (() => {
-  let p;
-  return () => {
-    if (p) {
-      return p;
-    }
-    // We don't have to block on the top-level Promise, as the scripts run
-    // in-order of being added to the page (async=false).
-    p = loadFirebase('firestore').then(() => {
-      const firestore = window.firebase.firestore();
-      return firestore;
-    });
-    return p;
-  };
-})();
+let isInitialized = false;
 
-function initialize(firebase) {
-  firebase.initializeApp(firebaseConfig);
-  firebase.performance(); // initialize performance monitoring
+export function initialize() {
+  // Initialization is run lazily (only when clicking signIn or signOut)
+  // because not all pages use the sign-in components, and the Firebase
+  // auth code creates a connection to an IndexedDB database that it doesn't
+  // close, preventing any pages that run the code form being eligible for
+  // bfcache in Chrome (which hurts performance).
+  // See: https://github.com/GoogleChrome/web.dev/pull/7155/
+  if (isInitialized) {
+    return;
+  }
+
+  initializeApp(firebaseConfig);
 
   let firestoreUserUnsubscribe = () => {};
   let lastSavedUrl = null;
@@ -90,7 +90,7 @@ function initialize(firebase) {
   };
 
   // Listen for the user's signed in state and update the store.
-  firebase.auth().onAuthStateChanged((user) => {
+  getAuth().onAuthStateChanged((user) => {
     store.setState({checkingSignedInState: false});
     firestoreUserUnsubscribe();
 
@@ -113,16 +113,9 @@ function initialize(firebase) {
       let internalUnsubscribe = null;
       let unsubscribed = false;
 
-      userRef()
-        .then((ref) => {
-          if (!unsubscribed) {
-            internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
-          }
-        })
-        .catch((err) => {
-          console.warn('failed to load Firestore library', err);
-          trackError(err, 'firestore load');
-        });
+      if (!unsubscribed) {
+        internalUnsubscribe = onSnapshot(userRef(), onUserSnapshot);
+      }
 
       return () => {
         unsubscribed = true;
@@ -133,21 +126,23 @@ function initialize(firebase) {
       };
     })();
   });
+
+  isInitialized = true;
 }
 
 /**
  * Gets the Firestore reference to the user's document.
  *
- * @return {Promise<Object>}
+ * @return {import('firebase/firestore').DocumentReference<import('firebase/firestore').DocumentData> | null}
  */
-async function userRef() {
+function userRef() {
   const state = store.getState();
   if (!state.user) {
     return null;
   }
 
-  const firestore = await firestorePromiseLoader();
-  return firestore.collection('users').doc(state.user.uid);
+  const firestore = getFirestore();
+  return doc(firestore, 'users', state.user.uid);
 }
 
 /**
@@ -158,14 +153,14 @@ async function userRef() {
  * @return {Promise<Date>} the earliest audit seen for this URL
  */
 export async function saveUserUrl(url, auditedOn = null) {
-  const ref = await userRef();
+  const ref = userRef();
   if (!ref) {
     return null; // not signed in so user has never seen this site
   }
 
   // This must exist, as userRef() forces Firestore to be loaded.
-  const firestore = await firestorePromiseLoader();
-  const p = firestore.runTransaction(async (transaction) => {
+  const firestore = getFirestore();
+  const p = runTransaction(firestore, async (transaction) => {
     const snapshot = await transaction.get(ref);
     const data = snapshot.data() || {};
 
@@ -200,7 +195,7 @@ export async function saveUserUrl(url, auditedOn = null) {
     // Note: We don't plan to do anything here. If we can't write to Firebase, we can still
     // try to invoke Lighthouse with the new URL.
     console.warn('could not write URL to Firestore', err);
-    trackError(err, 'write URL');
+    logError(err, 'write URL');
   }
 
   return auditedOn;
@@ -214,13 +209,14 @@ export async function saveUserUrl(url, auditedOn = null) {
 export async function signIn() {
   let user = null;
   try {
-    await firebasePromise;
-    const provider = new firebase.auth.GoogleAuthProvider();
-    const res = await firebase.auth().signInWithPopup(provider);
+    // Run the initialization code (if it hasn't already been initialized).
+    initialize();
+    const provider = new GoogleAuthProvider();
+    const res = await signInWithPopup(getAuth(), provider);
     user = res.user;
   } catch (err) {
     console.error('signIn error', err);
-    trackError(err, 'signIn');
+    logError(err, 'signIn');
   }
 
   return user;
@@ -231,10 +227,11 @@ export async function signIn() {
  */
 export async function signOut() {
   try {
-    await firebasePromise;
-    await firebase.auth().signOut();
+    // Run the initialization code (if it hasn't already been initialized).
+    initialize();
+    await authSignOut(getAuth());
   } catch (err) {
     console.error('signOut error', err);
-    trackError(err, 'signOut');
+    logError(err, 'signOut');
   }
 }

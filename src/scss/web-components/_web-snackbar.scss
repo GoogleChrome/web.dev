@@ -1,0 +1,42 @@
+web-snackbar {
+  --flow-space: #{get-space('size-1')};
+  visibility: hidden;
+  display: block;
+  padding: $global-gutter;
+  background: get-color('shades-dim');
+  color: get-color('shades-light');
+  outline: 1px solid var(--color-stroke);
+  width: 100%;
+  position: fixed;
+  inset: auto auto 0 0;
+  z-index: 99;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+
+  .button {
+    padding: 0.8rem 1rem;
+    background: get-color('shades-charcoal');
+    color: get-color('core-primary-glare');
+    min-width: 6rem;
+    justify-content: center;
+  }
+
+  .button--action {
+    background: get-color('core-primary-glare');
+    color: get-color('shades-charcoal');
+  }
+
+  a {
+    color: get-color('core-primary-glare');
+  }
+
+  @include media-query('md') {
+    inset: auto auto $global-gutter $global-gutter;
+    border-radius: $global-radius-large;
+    max-width: 30rem;
+  }
+
+  &[open] {
+    visibility: visible;
+  }
+}

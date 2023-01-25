@@ -1,0 +1,183 @@
+/// SITE HEADER
+/// The main, global header that is on each page
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4rem;
+  padding: 0 $global-gutter;
+  border-bottom: 1px solid get-utility-value('color', 'stroke');
+  line-height: 1;
+
+  @include apply-utility('font', 'brand');
+}
+
+.site-header__brand {
+  display: block;
+  width: 140px;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.site-header__link {
+  display: inline-block;
+  padding: 1.5em $global-gutter-narrow;
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    @include apply-utility('color', 'mid-text');
+  }
+
+  &:hover {
+    @include apply-utility('bg', 'mid-bg');
+  }
+
+  &[aria-current='page'] {
+    @include apply-utility('color', 'core-text');
+  }
+
+  &:only-of-type {
+    padding-inline: 0.8em;
+  }
+}
+
+.site-header__nav {
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 4.5rem 0 0 0;
+  min-width: 16rem;
+
+  a {
+    display: block;
+  }
+}
+
+.site-header__actions {
+  --gutter: 0.5rem;
+}
+
+.site-header__search {
+  position: relative;
+  min-width: 2.5rem;
+  z-index: 99;
+
+  .web-search__input-wrapper:not([aria-expanded='true']) {
+    display: none;
+  }
+
+  .web-search__input-wrapper {
+    position: absolute;
+    inset: -0.8rem 0 auto auto;
+
+    input {
+      padding-block: 0.5rem;
+    }
+  }
+
+  web-search-results {
+    position: absolute;
+    inset: 2.8rem 1rem auto auto;
+  }
+
+  .web-search-popout {
+    height: unset;
+    max-height: 16rem;
+    line-height: 1.4;
+    border: 1px solid get-utility-value('color', 'stroke');
+    border-radius: $global-radius-base;
+    padding: 0;
+    z-index: 99;
+
+    @include apply-utility('bg', 'core-bg');
+
+    a {
+      color: currentColor;
+    }
+
+    .web-search-popout__heading {
+      padding: $global-gutter-narrow;
+
+      @include apply-utility('bg', 'core-bg');
+    }
+  }
+}
+
+.site-header web-search[expanded] .web-search__input-wrapper,
+.site-header web-search-results {
+  width: clamp(16rem, 40vw, 25rem);
+}
+
+.site-header .cluster {
+  flex-wrap: nowrap;
+}
+
+.site-header [data-drawer-close-button] {
+  position: absolute;
+  z-index: 1;
+  inset: $global-gutter-narrow $global-gutter auto auto;
+}
+
+.site-header web-navigation-drawer:not([open]) {
+  [data-drawer-close-button] {
+    display: none;
+  }
+}
+
+@include media-query('md') {
+  .site-header web-navigation-drawer {
+    transition: opacity 100ms;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .site-header[class*='expanded'] web-navigation-drawer {
+    opacity: 0;
+    pointer-events: none !important;
+  }
+
+  .site-header__nav {
+    display: flex;
+    height: unset;
+    min-width: unset;
+    padding: unset;
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  .site-header web-navigation-drawer[animating] [data-drawer-container] {
+    transition: none;
+  }
+
+  .site-header web-navigation-drawer[type='standard'] {
+    position: static;
+    pointer-events: auto;
+    top: 0;
+    width: auto;
+
+    [data-drawer-container] {
+      box-shadow: none;
+      transform: none;
+    }
+  }
+}
+
+@include media-query('lg') {
+  /// Although the nav is centered, via flexbox, it doesn't look
+  /// optically centered, thanks to elements that vertically follow
+  /// it. This transform creates that optical adjustment
+  .site-header web-navigation-drawer[type='standard'] [data-drawer-container] {
+    transform: translateX(-1.75rem);
+  }
+
+  .site-header__link {
+    padding: 1.5em 2em;
+  }
+}

@@ -1,0 +1,17 @@
+{% set currentPage = (paged.index or 0) + 1 %}
+
+<nav class="pagination" aria-label="pagination">
+  <div class="pagination__container">
+    {% if paged.index > 0 %}
+      <a class="button" href="{{ paged.href }}{% if paged.index != 1 %}{{ paged.index }}{% endif %}">{{ 'i18n.common.prev' | i18n(locale) }}</a>
+    {% endif %}
+  </div>
+  <div class="pagination__status" role="presentation" aria-hidden="true">
+    Page {{ currentPage }} of {{ paged.pages }}
+  </div>
+  <div class="pagination__container">
+    {% if currentPage < paged.pages %}
+      <a class="button" href="{{ paged.href }}{{ paged.index + 2 }}">{{ 'i18n.common.next' | i18n(locale) }}</a>
+    {% endif %}
+  </div>
+</nav>

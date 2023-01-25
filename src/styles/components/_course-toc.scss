@@ -1,8 +1,11 @@
 .course-toc {
   --flow-space: #{px-to-rem(12px)};
 
-  width: 240px;
   max-width: 100%;
+
+  &[data-type='inner'] {
+    width: 80ch;
+  }
 
   // These styles are unique to the toc that's pinned to the side of the screen.
   &[data-type='side'] {
@@ -16,29 +19,42 @@
     flex-shrink: 0;
     order: 1;
     overflow-y: auto;
+    overscroll-behavior: contain; // sass-lint:disable-line no-misspelled-properties
     padding: 0 get-size(300);
     position: sticky;
-    // TODO: Move these into variables
     // The sticky top position needs to equal the height of the app-bar on
     // desktop + the top margin of the content element.
-    top: calc(64px + 24px);
-    height: calc(100vh - 64px - 24px);
+    top: calc(var(--app-bar-height) + var(--course-content-margin));
+    width: 240px;
+    max-height: calc(100vh - var(--app-bar-height) - (var(--course-content-margin) * 2));
   }
 
   > summary {
+    list-style: none;
     transition: background-color $TRANSITION_SPEED;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 3px;
+    padding-left: 4px;
+    background-color: $GREY_200;
 
+    &::marker,
     &::-webkit-details-marker {
       display: none;
     }
   }
 
   > summary:hover {
-    background-color: $GREY_200;
+    background-color: $GREY_300;
+    cursor: pointer;
   }
 
   &__heading {
     font-size: px-to-rem(14px);
+  }
+
+  .w-scroll-spy__active {
+    font-weight: 700;
   }
 }
 

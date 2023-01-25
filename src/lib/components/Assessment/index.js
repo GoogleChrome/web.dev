@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-import {html} from 'lit-element';
-import {render} from 'lit-html';
+import {html} from 'lit';
 import {BaseModalElement} from '../BaseModalElement';
-import './_styles.scss';
 
 /**
  * Element that renders a self-assessment callout.
@@ -64,20 +62,9 @@ export class Assessment extends BaseModalElement {
     }
 
     return html`
-      <div class="w-callout__header web-assessment__header">
-        <h2 class="w-callout__lockup web-assessment__lockup">
-          Check your understanding
-        </h2>
+      <div class="web-assessment__header flow flow-space-size-0">
+        <h2 class="web-assessment__lockup">Check your understanding</h2>
         ${this.setLeader}
-        <button
-          @click="${this.onCloseClick}"
-          class="w-button--icon w-button--round web-assessment__close"
-          data-icon="close"
-        >
-          <span role="tooltip" class="w-tooltip">
-            Close
-          </span>
-        </button>
       </div>
       ${this.prerenderedChildren}
     `;
@@ -90,7 +77,7 @@ export class Assessment extends BaseModalElement {
     // (display: none used to remove it from the tab order when closed on mobile.)
     this.inert = false;
     // Render the launcher that appears in closed state on mobile.
-    this.renderLauncher();
+    // this.renderLauncher();
     // Listen to reset requests from child question components.
     this.addEventListener('request-assessment-reset', this.reset);
 
@@ -124,34 +111,6 @@ export class Assessment extends BaseModalElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     this.breakpoint_.removeListener(this.onAssessmentResize);
-  }
-
-  renderLauncher() {
-    const launcher = document.createElement('div');
-    const contentTemplate = (setLeader) => html`
-      <div class="w-callout__header web-assessment__header">
-        <h2 class="w-callout__lockup web-assessment__lockup">
-          Check your understanding
-        </h2>
-        <div class="w-callout__blurb web-assessment__set-leader">
-          ${setLeader}
-        </div>
-      </div>
-      <button
-        @click="${this.onOpenClick}"
-        class="w-button w-button--primary web-assessment__button web-assessment__open"
-      >
-        Open quiz
-      </button>
-    `;
-    // lit-element prevents children from being duplicated,
-    // so grab setLeader text content.
-    const text = this.setLeader[0] ? this.setLeader[0].textContent : '';
-    const content = contentTemplate(text);
-
-    render(content, launcher);
-    launcher.className = 'web-assessment__launcher';
-    this.before(launcher);
   }
 
   onOpenClick() {

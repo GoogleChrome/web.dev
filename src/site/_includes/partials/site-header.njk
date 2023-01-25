@@ -1,0 +1,73 @@
+{% from 'macros/icon.njk' import icon, svg with context %}
+
+<web-header role="banner" class="site-header">
+  <div class="cluster gutter-base">
+    <button class="icon-button tooltip color-core-text md:hidden-yes" aria-labelledby="menu-button-toolip" data-open-drawer-button data-alignment="right">
+      {% include "icons/menu.svg" %}
+      <span class="tooltip__content" id="menu-button-toolip">Open menu</span>
+    </button>
+    <a href="/" class="site-header__brand brand">
+      {{ svg('../../images/logo.svg', {label: 'web.dev'}) }}
+    </a>
+  </div>
+  <web-navigation-drawer type="standard">
+    <nav class="site-header__nav" aria-label="main navigation" data-drawer-container>
+      <a
+        class="site-header__link"
+        href="/about/"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: About" 
+        {% if page.url === '/about/' %}aria-current="page"{% endif %}>
+        {{ 'i18n.header.about' | i18n(locale) }}
+      </a>
+      <a
+        class="site-header__link"
+        href="/blog/"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: Blog"
+        {% if page.url === '/blog/' %}aria-current="page"{% endif %}>
+        {{ 'i18n.header.blog' | i18n(locale) }}
+      </a>
+      <a
+        class="site-header__link"
+        href="/learn/" data-category="Site-Wide Custom Events"
+        data-label="Tab: Learn"
+        {% if page.url === '/learn/' %}aria-current="page"{% endif %}>
+          {{ 'i18n.header.learn' | i18n(locale) }}
+      </a>
+      <a
+        class="site-header__link"
+        href="/explore/" data-category="Site-Wide Custom Events"
+        data-label="Tab: Explore"
+        {% if page.url === '/explore/' %}aria-current="page"{% endif %}>
+          {{ 'i18n.header.explore' | i18n(locale) }}
+      </a>
+      <a
+        class="site-header__link"
+        href="/patterns/"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: Patterns"
+        {% if page.url === '/patterns/' %}aria-current="page"{% endif %}>
+        {{ 'i18n.header.patterns' | i18n(locale) }}
+      </a>
+      <a
+        class="site-header__link"
+        href="/tags/case-study/"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: Case Studies"
+        {% if page.url === '/tags/case-study/' %}aria-current="page"{% endif %}>
+        {{ 'i18n.header.case_studies' | i18n(locale) }}
+      </a>
+      <button class="icon-button tooltip color-core-text md:hidden-yes" data-drawer-close-button>
+        {{ icon('close') }}
+        <span class="tooltip__content">{{ 'i18n.common.close' | i18n(locale) }}</span>
+      </button>
+    </nav>
+  </web-navigation-drawer>
+  <div class="site-header__actions cluster">
+    <div class="site-header__search">
+      <web-search results-id="search-main-results" i18n="{{ i18n.search | dump }}"></web-search>
+      <web-search-results id="search-main-results"></web-search-results>
+    </div>
+  </div>
+</web-header>

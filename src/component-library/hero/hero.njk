@@ -1,0 +1,24 @@
+<header class="hero">
+  <div class="wrapper">
+    <div class="hero__columns switcher">
+      <div>
+        <span aria-hidden="true" class="hero__eyebrow">{{ data.eyebrow }}</span>
+        <div class="hero__content flow">
+          <img src="{{ data.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ data.imageWidth }}" height="{{ data.imageHeight }}" />
+          <h1 class="hero__title">{{ data.title }}</h1>
+          {{ data.summary | md | safe }}
+          <a class="button" data-type="primary" href="{{ data.buttonUrl }}">{{ data.buttonText }}</a>
+        </div>
+      </div>
+      <div class="flow">
+        {% for item in data.featureCards %}
+        <a class="feature-card" href="{{ item.url }}" data-theme="{{ item.theme }}">
+          <span class="feature-card__eyebrow">{{ item.eyebrow }}</span>
+          <h3 class="{{ 'visually-hidden' if item.hiddenTitle else 'feature-card__title' }}">{{ item.title }}</h3>
+          <img class="feature-card__background" alt="" aria-hidden="true" src="{{ item.background }}" />
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</header>

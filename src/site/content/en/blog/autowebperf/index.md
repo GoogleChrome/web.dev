@@ -5,7 +5,7 @@ subhead: >
 description: >
   A new modular tool that enables automatic gathering of performance data from multiple sources.
 date: 2020-12-09
-updated: 2021-01-08
+updated: 2022-07-18
 authors:
   - jonchen
   - gilbertococchi
@@ -23,19 +23,19 @@ tags:
 [AutoWebPerf](https://github.com/GoogleChromeLabs/AutoWebPerf) (AWP) is a
 modular tool that enables automatic gathering of performance data from multiple
 sources. Currently there are [many tools
-available](https://web.dev/vitals-tools/) to measure website performance for
+available](/vitals-tools/) to measure website performance for
 different scopes ([lab and
-field](https://web.dev/how-to-measure-speed/#lab-data-vs-field-data)), such as
+field](/how-to-measure-speed/#lab-data-vs-field-data)), such as
 Chrome UX Report, PageSpeed Insights, or WebPageTest. AWP offers integration
 with various audit tools with a simple setup so you can continuously monitor the
 site performance in one place.
 
-The release of [Web Vitals](https://web.dev/vitals/) guidance means that close
+The release of [Web Vitals](/vitals/) guidance means that close
 and active monitoring of web pages is becoming increasingly important. The
 engineers behind this tool have been doing performance audits for years and they
 created AWP to automate a manual, recurring, and time consuming part of their
 daily activities. Today, AWP has reached a level of maturity and it's ready to
-be shared broadly so anyone can benefit from the automation it brings. 
+be shared broadly so anyone can benefit from the automation it brings.
 
 The tool is accessible on the
 [AutoWebPerf](https://github.com/GoogleChromeLabs/AutoWebPerf) public repository
@@ -47,16 +47,16 @@ Although several tools and APIs are available to monitor the performance of web
 pages, most of them expose data measured at a specific time. To adequately
 monitor a website and maintain good performance of key pages, it's recommended
 to continuously take measurements of [Core Web
-Vitals](https://web.dev/vitals/#core-web-vitals) over time and observe trends.
+Vitals](/vitals/#core-web-vitals) over time and observe trends.
 
 AWP makes that easier by providing an engine and pre-built API integrations
 which can be programmatically configured to automate recurrent queries to
 various performance monitoring APIs.
 
 For example, with AWP, you can set a daily test on your home page to capture the
-field data from [CrUX API](https://web.dev/chrome-ux-report-api/) and lab data
+field data from [CrUX API](/chrome-ux-report-api/) and lab data
 from a
-[Lighthouse report from PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+[Lighthouse report from PageSpeed Insights](https://pagespeed.web.dev/).
 This data can be written and stored over time, for example, in [Google
 Sheets](https://www.google.co.uk/sheets/about/) and then visualised in the
 [Data Studio dashboard](https://datastudio.google.com/c/u/0/navigation/reporting).
@@ -66,11 +66,11 @@ results in Data Studio](#data-studio) below for more details).
 
 ## Architecture overview
 
-AWP is a modular-based library with three different types of modules: 
+AWP is a modular-based library with three different types of modules:
 
 * the **engine**
 * **connector** modules
-* **gatherer** modules 
+* **gatherer** modules
 
 The engine takes a list of tests from a connector (for example, from a
 local CSV file), runs performance audits through selected gatherers (such as
@@ -82,8 +82,8 @@ Google Sheets).
 AWP comes with a number of pre-implemented gatherers and connectors:
 
 * Pre-implemented gatherers:
-  * [CrUX API](https://web.dev/chrome-ux-report-api/)
-  * [CrUX BigQuery](https://web.dev/chrome-ux-report-bigquery/)
+  * [CrUX API](/chrome-ux-report-api/)
+  * [CrUX BigQuery](/chrome-ux-report-bigquery/)
   * [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started)
   * [WebPageTest API](https://www.webpagetest.org/getkey.php)
 * Pre-implemented connectors:
@@ -94,9 +94,9 @@ AWP comes with a number of pre-implemented gatherers and connectors:
 ## Automating audits with AWP
 
 AWP automates the performance audits via your preferred audit platforms such as
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),
+[PageSpeed Insights](https://pagespeed.web.dev/),
 [WebPageTest](https://webpagetest.org/), or
-[CrUX API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference).
+[CrUX API](https://developer.chrome.com/docs/crux/api/).
 AWP offers the flexibility to choose where to load the list of tests, and where
 to write the results to.
 
@@ -126,14 +126,14 @@ like below:
 ```
 
 The command below reads the list of audit tests from the local JSON file, runs
-audits on a local machine, then outputs results to a local CSV file: 
+audits on a local machine, then outputs results to a local CSV file:
 
 ```shell
 PSI_APIKEY=<YOUR_KEY> ./awp run json:tests.json csv:output.csv
 ```
 
 To run audits every day as a background service continuously, you can use the
-command below instead: 
+command below instead:
 
 ```shell
 PSI_APIKEY=<YOUR_KEY> ./awp continue json:tests.json csv:output.csv
@@ -167,9 +167,8 @@ regressions in the layout stability for certain pages. In this scenario, you
 would want to prioritize the efforts to analyze the underlying issues of these
 pages.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="data-studio.png" 
-       alt="A screenshot of Core Web Vitals results in Data Studio.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cpi7NkLvKyvf2xYzFwAn.png", alt="A screenshot of Core Web Vitals results in Data Studio.", width="800", height="904" %}
 </figure>
 
 To simplify the end-to-end process from data collection to visualization, you

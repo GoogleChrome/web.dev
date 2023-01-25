@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Scroll snapping after layout changes"
 subhead: |
   Starting in Chrome 81, you no longer need to add event listeners to force
@@ -18,7 +19,7 @@ feedback:
   - api
 ---
 
-[CSS Scroll Snap](https://developers.google.com/web/updates/2018/07/css-scroll-snap)
+[CSS Scroll Snap](/css-scroll-snap/)
 allows web developers to create well-controlled scroll experiences by declaring
 scroll snapping positions. One shortcoming of the current implementation is that
 scroll snapping does not work well when the layout changes, such as when the viewport is
@@ -52,21 +53,21 @@ overcome the issues of imprecise scrolling. In other words, scroll snapping:
 
 Paginated articles and image carousels are two common use cases for scroll
 snaps.
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/MzdzDJ2j4jJtfAYgg9e6.png", alt="Example of CSS scroll snap.", width="800", height="356" %}
-  <figcaption class="w-figcaption">Example of CSS scroll snap. At the end of
+  <figcaption>Example of CSS scroll snap. At the end of
     scrolling an image's horizontal center is aligned with the horizontal center
     of the scroll container.
   </figcaption>
 </figure>
 
 ### Shortcomings
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/resizing-breaks-snap-positions.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/resizing-breaks-snap-positions.mp4" type="video/mp4;">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     Snap positions get lost when resizing a window.
   </figcaption>
 </figure>
@@ -87,10 +88,10 @@ consider these shortcomings when trying to make a dynamic experience that
 supports actions such as adding, removing, or moving content.
 
 A common fix for this is to add listeners that execute a programmatic scroll via
-Javascript to force snapping to execute whenever any of these mentioned layout
+JavaScript to force snapping to execute whenever any of these mentioned layout
 changes happen. This workaround can be ineffective when the user expects the
 scroller to snap back to the same content as before. Any further handling with
-Javascript seems to almost defeat the purpose of this CSS feature.
+JavaScript seems to almost defeat the purpose of this CSS feature.
 
 ## Built-in support for re-snapping after layout changes in Chrome 81
 The mentioned shortcomings no longer exist in Chrome 81: scrollers will remain
@@ -101,10 +102,10 @@ layout change, then the scroller will try to snap back to it. Pay attention to
 what happens when the layout changes in the following
 [example](https://codepen.io/argyleink/full/YzXyOaX).
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Snap position lost' %}
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-lost.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-lost.mp4" type="video/mp4;">
   </video>
@@ -120,8 +121,8 @@ scroll snap position was lost.
 {% endCompare %}
 
 {% Compare 'better', 'Snap position preserved' %}
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-preserved.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-preserved.mp4" type="video/mp4;">
   </video>
@@ -159,12 +160,12 @@ lines of CSS:
 Want to learn more? See the following [demo chat
 UI](https://codepen.io/argyleink/pen/RwPWqKe) for visuals.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/scroll-snap-bottom.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/scroll-snap-bottom.mp4" type="video/mp4;">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Adding a new message triggers re-snap which makes it stick to the bottom in
     Chrome 81.
   </figcaption>
@@ -173,7 +174,7 @@ UI](https://codepen.io/argyleink/pen/RwPWqKe) for visuals.
 ## Future work
 All re-snapping scroll effects are currently instant; a potential follow-up is
 to support re-snapping with [smooth scrolling
-effects](https://developers.google.com/web/updates/2016/02/smooth-scrolling-in-chrome-49).
+effects](https://developer.chrome.com/blog/smooth-scrolling-in-chrome-49/).
 See the [specification issue](https://github.com/w3c/csswg-drafts/issues/4609)
 for details.
 

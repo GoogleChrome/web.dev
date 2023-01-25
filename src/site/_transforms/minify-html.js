@@ -14,24 +14,33 @@
  * limitations under the License.
  */
 
-const minify = require('html-minifier').minify;
+const htmlMinifier = require('@minify-html/node');
+const path = require('path');
+const {URL} = require('url');
+const stagingUrls =
+  require('../../../tools/lhci/lighthouserc').ci.collect.url.map((url) =>
+    path.join('dist', new URL(url).pathname, 'index.html'),
+  );
+
+const isProd = process.env.ELEVENTY_ENV === 'prod';
+const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
 const minifyHtml = (content, outputPath) => {
-  if (outputPath && outputPath.endsWith('.html')) {
+  if (
+    (isProd && outputPath && outputPath.endsWith('.html')) ||
+    (isStaging && stagingUrls.includes(outputPath))
+  ) {
     try {
-      content = minify(content, {
-        removeAttributeQuotes: true,
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        removeComments: true,
-        sortClassName: true,
-        sortAttributes: true,
-        html5: true,
-        decodeEntities: true,
-      });
-      return content;
+      content = htmlMinifier
+        .minify(Buffer.from(content, 'utf8'), {
+          // See https://docs.rs/minify-html/latest/minify_html/struct.Cfg.html
+          do_not_minify_doctype: true,
+          ensure_spec_compliant_unquoted_attribute_values: true,
+          keep_spaces_between_attributes: true,
+        })
+        .toString('utf-8');
     } catch (err) {
-      console.warn('Could not minify html for', outputPath);
+      console.warn(err, 'while minifying', outputPath);
     }
   }
 

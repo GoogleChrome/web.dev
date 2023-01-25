@@ -12,7 +12,7 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
+  # - angular
   - performance
 feedback:
   - api
@@ -55,12 +55,14 @@ Now serve the application and look at the **Network** panel in Chrome DevTools:
 
 You should see that the router downloaded `nyan-nyan-module.js` and `about-about-module.js` in the background when you opened the application:
 
-<figure class="w-figure w-figure--fullbleed">
-<video controls loop muted poster="https://storage.googleapis.com/web-dev-angular/preloading/poster.png">
-  <source src="https://storage.googleapis.com/web-dev-angular/preloading/preload-all.webm" type="video/webm; codecs=vp8">
-  <source src="https://storage.googleapis.com/web-dev-angular/preloading/preload-all.mp4" type="video/mp4; codecs=h264">
-</video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure>
+{% Video
+  src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/TVi6LCasiwZI1hxJrBOL.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/e9h6JBVl8TUGMWOSAWyC.mp4"],
+  controls="true",
+  loop="true",
+  muted="true"
+%}
+ <figcaption>
     The PreloadAllModules strategy in action.
   </figcaption>
 </figure>
@@ -72,7 +74,7 @@ The router also registered the modules' route declarations so that when you navi
 
 `PreloadAllModules` is useful in a lot of cases. When you have dozens of modules, however, its aggressive preloading can really increase network usage. Also, since the router needs to register the routes in all the preloaded modules, it can cause intensive computations in the UI thread and lead to sluggish user experience.
 
-The [quicklink](https://github.com/GoogleChromeLabs/quicklink) library provides a better strategy for larger apps. It uses the [IntersectionObserver](https://developers.google.com/web/updates/2019/02/intersectionobserver-v2) API to preload only modules associated with links that are currently visible on the page.
+The [quicklink](https://github.com/GoogleChromeLabs/quicklink) library provides a better strategy for larger apps. It uses the [IntersectionObserver](/intersectionobserver-v2/) API to preload only modules associated with links that are currently visible on the page.
 
 You can add quicklink to an Angular app by using the [ngx-quicklink](https://www.npmjs.com/package/ngx-quicklink) package. Start by installing the package from npm:
 
@@ -102,12 +104,14 @@ export class AppModule {}
 
 Now when you open the application again, you'll notice that the router only preloads `nyan-nyan-module.js` since the button in the center of the page has a router link to it. And when you open the side navigation, you'll notice that the router then preloads the "About" route:
 
-<figure class="w-figure w-figure--fullbleed">
-<video controls loop muted poster="https://storage.googleapis.com/web-dev-angular/preloading/poster.png">
-  <source src="https://storage.googleapis.com/web-dev-angular/preloading/ngx-quicklink.webm" type="video/webm; codecs=vp8">
-  <source src="https://storage.googleapis.com/web-dev-angular/preloading/ngx-quicklink.mp4" type="video/mp4; codecs=h264">
-</video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure>
+{% Video
+  src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/dfZkoiQyNh4fUj4DJjrc.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/SkNp99W1Bv2tsaRgOwoe.mp4"],
+  controls="true",
+  loop="true",
+  muted="true"
+%}
+ <figcaption>
     A demo of the quicklink preloading strategy.
   </figcaption>
 </figure>

@@ -38,7 +38,7 @@ web app loading at a fast enough speed when they have a network connection that
 might be less than ideal. Will returning users have the same experience
 interacting with your web app when they're on a cellular connection as they do
 when they're on wi-fi? And what about users who have a high-latency, or
-"[lie-fi](https://developers.google.com/web/fundamentals/performance/poor-connectivity/#lie-fi)"
+"[lie-fi](/performance-poor-connectivity/#what-is-lie-fi)"
 connection. Will your web app be reliably fast even in those scenarios?
 
 It's not enough to  be fast under the best circumstances. Your users will view
@@ -48,8 +48,8 @@ conditions.
 ## Reliable is achievable
 
 The good news is that the modern web platform provides technologies—such as
-[service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) and the
-[Cache Storage API](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage)—that
+[service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) and the
+[Cache Storage API](https://developer.mozilla.org/docs/Web/API/CacheStorage)—that
 can serve as the building blocks for creating reliable web applications. They
 allow you to write code which sits between your web app and the network. In
 many cases, you can bypass the network entirely, and instead use previously
@@ -63,12 +63,12 @@ service worker you implement really does help your web app avoid the network?
 How do you prevent a small change to your caching strategy from breaking your
 carefully crafted offline experience?
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) provides one
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) provides one
 specific test that is of particular interest when building a reliable web app:
 **Responds with a 200 OK while offline**:
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./responds-200-offline.png" alt="Lighthouse's progressive web app report showing a passing responds with a 200 when offline audit.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5bc5TNicZiBgDdWkgAXg.png", alt="Lighthouse's progressive web app report showing a passing responds with a 200 when offline audit.", width="800", height="253" %}
 </figure>
 
 {% Aside %}

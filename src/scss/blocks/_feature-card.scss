@@ -1,0 +1,106 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/feature-card
+.feature-card {
+  position: relative;
+  aspect-ratio: 16/9;
+  justify-content: space-between;
+
+  @include card-base-styles();
+
+  &:link,
+  &:visited {
+    color: get-color('shades-dark');
+  }
+
+  > :not(img) {
+    z-index: 1;
+  }
+
+  > img,
+  > video {
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $global-radius-large;
+    z-index: 0;
+  }
+
+}
+
+.feature-card__eyebrow {
+  font-size: get-size('base');
+}
+
+.feature-card__title {
+  font-size: get-size('size-2');
+  margin-block-start: get-space('size-1');
+  max-width: 18rem;
+  line-height: 1.4;
+}
+
+/// EXCEPTIONS
+
+/// Light text version
+.feature-card[data-theme='light'] {
+  &:link,
+  &:visited {
+    color: get-color('shades-light-bright');
+  }
+}
+
+.feature-card[data-treatment='bg-image'] {
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 60%));
+    border-radius: $global-radius-large;
+  }
+
+  &:link,
+  &:visited {
+    color: get-color('shades-light-bright');
+  }
+}
+
+/// These cards have content flow issues on small viewports,
+/// so this treatment helps that and is removed for larger
+/// viewports
+.feature-card[data-treatment='illustration'] {
+  &[data-theme="dark"] {
+    --color-img-mask: 255, 255, 255;
+  }
+
+  &[data-theme="light"] {
+    --color-img-mask: 0, 0, 0;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(
+      0deg,
+      rgba(var(--color-img-mask), 70%),
+      rgba(var(--color-img-mask),  60%),
+      rgba(var(--color-img-mask), 0%)
+    );
+    border-radius: $global-radius-large;
+    z-index: 1;
+  }
+}
+
+@include media-query('md') {
+  .feature-card[data-treatment='illustration']::before {
+    display: none;
+  }
+}

@@ -1,0 +1,20 @@
+setLeader: Test your knowledge of margin collapsing
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: | 
+      If two elements stacked on top of each other both have 20px of top margin
+      and 30px of bottom margin, how much space will there be between them?
+    options:
+      - content: "10px"
+        rationale: "Try again!"
+      - content: "20px"
+        rationale: "Not quite"
+      - content: "30px"
+        rationale: "CSS will take the larger of the margin spaces between
+        elements yep!"
+      - content: "40px"
+        rationale: "Try again!"

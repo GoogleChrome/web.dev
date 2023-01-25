@@ -47,7 +47,7 @@ module.exports = (data) => {
   if (data.permalink) {
     return data.permalink.replace(
       /^\/{{lang}}/,
-      localization ? '/i18n/{{lang}}' : '/',
+      localization ? '/i18n/{{lang}}' : '',
     );
   }
 

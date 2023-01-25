@@ -54,4 +54,6 @@ body:not(.unresolved) .w-unsupported-notice {
 .w-unsupported-notice {
   // Hide this element for 5s once it is on the DOM.
   animation: unsupported-appear 5s;
+  height: 72px;
+  overflow: visible;
 }

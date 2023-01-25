@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Chromium lands Flexbox `gap`
 subhead: The CSS `gap` property is here for Chromium's CSS Flexbox and Multi-Column layout engines.
 authors:
@@ -13,13 +14,6 @@ feedback:
   - api
 ---
 
-### Browser compatibility
-
-At the time of writing `gap` is supported in desktop Firefox 63, Firefox for Android 63,
-and Chromium 84 (desktop and Android). See
-[Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/gap#Browser_compatibility)
-for updates.
-
 ## CSS Gap
 
 {% Aside 'key-term' %}
@@ -33,17 +27,21 @@ adjust for the different `writing-mode` or `direction` values that you set for y
 international users. This significantly eases the burden of spacing challenges for
 the component and CSS author. **Less code scaling further.**
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/gap-i18n.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/gap-i18n.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Gap demonstrating localization support, as it handles changes to direction and writing-mode:
     <a href="https://codepen.io/argyleink/pen/MWaoZJM">Codepen</a> |
     <a href="https://twitter.com/argyleink/status/1254794309263491072?s=20">Tweet</a>
   </figcaption>
 </figure>
+
+### Browser compatibility
+
+{% BrowserCompat 'css.properties.gap' %}
 
 ### Usage
 `gap` accepts any CSS [length](https://drafts.csswg.org/css-values-4/#lengths)
@@ -64,7 +62,7 @@ or [percentage](https://www.w3.org/TR/css-values-3/#percentages) as a value.
 
 Gap can be passed 1 length, which will be used for both row and column.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Shorthand' %}
 ```css
 .grid {
@@ -95,7 +93,7 @@ Set both rows and columns **together** at once
 
 Gap can be passed 2 lengths, which will be used for row and column.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Shorthand' %}
 ```css
 .grid {
@@ -132,7 +130,7 @@ of a dynamically layed-out and wrapping set of children.
 ### Previous Attempts
 The following are patterns that folks have used to get gap-like spacing.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'pseudo-class selectors' %}
 ```css
 .layout > :not(:last-child) {
@@ -189,9 +187,9 @@ consistent. No new selectors, no new media queries, just space.
 With these updates come changes to Chromium DevTools, notice how the **Styles**
 pane handles `grid-gap` and `gap` now 👍
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/7ZxgySczxUR1qxuD8cbC.png", alt="An office with two people working at a table.", width="400", height="273" %}
-  <figcaption class="w-figcaption">Devtools shows the both <code>grid-gap<code> and <code>gap</code>, with <code>gap</code> shown used below <code>grid-gap</code> as to let the cascade use the latest syntax.</figcaption>
+  <figcaption>Devtools shows the both <code>grid-gap<code> and <code>gap</code>, with <code>gap</code> shown used below <code>grid-gap</code> as to let the cascade use the latest syntax.</figcaption>
 </figure>
 
 DevTools supports both `grid-gap` and `gap`, this is because `gap` is essentially
@@ -204,12 +202,12 @@ spaced, intrinsic layouts. In the video and following code sample below, Grid
 cannot achieve the layout that Flexbox can. Grid must have equal rows and columns,
 even if they're intrinsically assigned.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/flex-gap-v1.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/flex-gap-v1.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     <a href="https://twitter.com/argyleink/status/1255201934241198081?s=20">Tweet</a>
   </figcaption>
 </figure>

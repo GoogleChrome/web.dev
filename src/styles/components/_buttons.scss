@@ -148,7 +148,10 @@
 }
 
 // A button with only an icon.
-.w-button--icon {
+// The --svg variant is similar except it doesn't use Material Icons font.
+// Instead it expects an svg icon inside of the button.
+.w-button--icon,
+.w-button--svg {
   @include base-button();
   color: $GREY_700;
   height: 3rem;
@@ -160,23 +163,28 @@
 
 @include hover() {
   .w-button--icon:hover,
-  .w-button--icon:focus {
+  .w-button--svg:hover,
+  .w-button--icon:focus,
+  .w-button--svg:focus {
     background: $GREY_100;
     color: $GREY_900;
   }
 }
 
-.w-button--icon:active {
+.w-button--icon:active,
+.w-button--svg:active {
   background: $GREY_200;
 }
 
 // This replaces the default focus outline so the outline matches the shape of the button.
-.w-button--icon:focus {
+.w-button--icon:focus,
+.w-button--svg:focus {
   box-shadow: 0 0 0 1px $FOCUS_COLOR;
   outline: none;
 }
 
-.js-focus-visible .w-button--icon:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
+.js-focus-visible .w-button--icon:focus:not(.focus-visible), // sass-lint:disable-line class-name-format
+.js-focus-visible .w-button--svg:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
   box-shadow: none;
 }
 
@@ -194,7 +202,7 @@
   height: 24px;
   margin-right: 16px;
   // To prevent screen readers from reading icon names.
-  speak: none;
+  speak: never;
   width: 24px;
 }
 

@@ -1,0 +1,82 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/carousel
+.carousel {
+  .icon-button {
+    display: none;
+    height: 36px;
+    width: 36px;
+
+    &:focus-visible {
+      outline: none;
+
+      > svg {
+        border-radius: 100%;
+        border: 2px solid var(--color-focus-ring);
+        height: 36px;
+        padding: 4px;
+        width: 36px;
+      }
+    }
+
+    &:not(:hover) {
+      @include apply-utility('color', 'mid-text');
+    }
+
+    > svg {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.carousel__track {
+  /// Allows inner hover states to show
+  padding: 1rem 0.5rem;
+  justify-content: flex-start;
+
+  /// TODO: this is being set because child items have this as a max width
+  /// in terms of a brand card context. It’s not ideal though because things
+  /// might change. These direct children of the carousel track should size fluidly
+  /// based on the child content
+  > * {
+    max-width: 25rem;
+  }
+
+  /// Adds some small invisible space so child element’s hover states can be seen.
+  /// Scroll snaps to the start of the item, so this is currently concealed, which is suboptimal
+  /// This trick creates that space on the first item to prevent hidden hover states.
+  > *:first-child {
+    display: flex;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 0.5rem;
+    }
+  }
+
+  // Makes the content of each carousel item, fill the item.
+  // E.G cards will all be the same height in a carousel
+  > * > * {
+    height: 100%;
+  }
+}
+
+@include media-query('md') {
+  .carousel {
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    gap: $global-gutter-narrow;
+    align-items: center;
+
+    .icon-button {
+      display: inline-block;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .carousel__track {
+    scroll-behavior: smooth;
+  }
+}

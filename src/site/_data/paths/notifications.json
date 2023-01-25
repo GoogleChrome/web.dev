@@ -1,5 +1,4 @@
 {
-  "draft": true,
   "slug": "notifications",
   "cover": "",
   "title": "i18n.paths.notifications.title",
@@ -10,7 +9,25 @@
     {
       "title": "i18n.paths.notifications.topics.notifications",
       "pathItems": [
-        "codelab-notifications-get-started"
+        "push-notifications-overview",
+        "push-notifications-how-push-works",
+        "push-notifications-subscribing-a-user",
+        "push-notifications-permissions-ux",
+        "sending-messages-with-web-push-libraries",
+        "push-notifications-web-push-protocol",
+        "push-notifications-handling-messages",
+        "push-notifications-display-a-notification",
+        "push-notifications-notification-behaviour",
+        "push-notifications-common-notification-patterns",
+        "push-notifications-faq",
+        "push-notifications-common-issues-and-reporting-bugs"
+      ]
+    },
+    {
+      "title": "i18n.paths.notifications.topics.codelabs",
+      "pathItems": [
+        "push-notifications-client-codelab",
+        "push-notifications-server-codelab"
       ]
     }
   ]

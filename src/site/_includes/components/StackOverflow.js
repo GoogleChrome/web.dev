@@ -15,18 +15,15 @@
  */
 
 const {html} = require('common-tags');
+const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 
-module.exports = (tag) => {
-  return html`
-    <div class="w-aside w-aside--note">
-      Have a question about using this feature? You can get help by
-      <a href="https://stackoverflow.com/questions/ask?tags=${tag}"
-        >asking a question on Stack Overflow</a
-      >, or
-      <a href="https://stackoverflow.com/search?q=%5B${tag}%5D+is%3Aquestion"
-        >browsing a list of questions</a
-      >
-      asked by other developers.
-    </div>
-  `;
-};
+function StackOverflow(tag) {
+  const locale = getLocaleFromPath(this.page && this.page.filePathStem);
+  const text = i18n(`i18n.stackoverflow.ask_question`, locale).replace(
+    /<TAG>/g,
+    tag,
+  );
+  return html` <div class="w-aside w-aside--note">${text}</div> `;
+}
+
+module.exports = StackOverflow;

@@ -4,6 +4,7 @@ subhead: How we used code splitting, code inlining, and server-side rendering in
 authors:
   - surma
 date: 2019-09-23
+updated: 2021-05-19
 hero: image/admin/14VzGmCgR470nlhPy3Fv.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
@@ -17,7 +18,6 @@ tags:
   - memory
 ---
 
-
 At Google I/O 2019 Mariko, Jake, and I shipped [PROXX], a modern Minesweeper-clone for the web. Something that sets PROXX apart is the focus on accessibility (you can play it with a screenreader!) and the ability to run as well on a feature phone as on a high-end desktop device. Feature phones are constrained in multiple ways:
 
 * Weak CPUs
@@ -27,15 +27,16 @@ At Google I/O 2019 Mariko, Jake, and I shipped [PROXX], a modern Minesweeper-clo
 
 But they run a modern browser and are very affordable. For this reason, feature phones are making a resurgence in emerging markets. Their price point allows a whole new audience, who previously couldn't afford it, to come online and make use of the modern web. **[For 2019 it is projected that around 400 million feature phones will be sold in India alone][400mil]**, so users on feature phones might become a significant portion of your audience. In addition to that, connection speeds akin to 2G are the norm in emerging markets. How did we manage to make PROXX work well under feature phone conditions?
 
-<figure class="w-figure">
-  <video controls loop muted
-    preload="metadata"
-    class="w-screenshot"
-    poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/social_supercut_poster.jpg"
-      src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/social_supercut_x264.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure>
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/0Z2YqHWp5ToNzqlU40ng.mp4",
+    preload="metadata",
+       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FuAyD4tBgrjLsbXuFs5l.jpg",
+    controls=true,
+    loop=true,
+    muted=true
+  %}
+  <figcaption>
     PROXX gameplay.
   </figcaption>
 </figure>
@@ -56,27 +57,23 @@ Testing your loading performance on a _real_ device is critical. If you don't ha
 
 That being said, we're going to focus on 2G in this article because PROXX is explicitly targeting feature phones and emerging markets in its target audience. Once WebPageTest has run its test, you get a waterfall (similar to what you see in DevTools) as well as a filmstrip at the top. The film strip shows what your user sees while your app is loading. On 2G, the loading experience of the unoptimized version of PROXX is pretty bad:
 
-<figure class="w-figure">
-  <video controls muted
-    preload="metadata"
-    class="w-screenshot"
-    poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/stupid-proxx-load-poster.jpg"
-      src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/stupid-proxx-load.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure>
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/BXNCRVkyZeVHPWJ9WGcI.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CuprSULvVI7IKyS35eCA.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata" %}
+  <figcaption>
     The filmstrip video shows what the user sees when PROXX is loading on a real, low-end device over an emulated 2G connection.
   </figcaption>
 </figure>
 
 When loaded over 3G, the user sees 4 seconds of white nothingness. **Over 2G the user sees absolutely nothing for over 8 seconds.** If you read [why performance matters] you know that we have now lost a good portion of our potential users due to impatience. The user needs to download all of the 62 KB of JavaScript for anything to appear on screen. The silver lining in this scenario is that the second anything appears on screen it is also interactive. Or is it?
 
-<figure class="w-figure">
-  <picture>
-    <source srcset="proxx-first-render.webp" type="image/webp">
-    <img src="proxx-first-render.jpg">
-  </picture>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CwGKJEpvyPw9UmvJf3su.webp", alt="", width="800", height="450" %}
+  <figcaption>
 
 The [First Meaningful Paint][FMP] in the unoptimized version of PROXX is _technically_ [interactive][TTI] but useless to the user.
 
@@ -92,11 +89,9 @@ Now that we know _what_ the user sees, we need to figure out the _why_. For this
 1. There are multiple, multi-colored thin lines.
 2. JavaScript files form a chain. For example, the second resource only starts loading once the first resource is finished, and the third resource only starts when the second resource is finished.
 
-<figure class="w-figure">
-  <picture>
-    <img src="waterfall_opt.png">
-  </picture>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Vcd5JU5MJNr0IHyMMtAU.png", alt="", width="800", height="345" %}
+  <figcaption>
     The waterfall gives insight into which resources are loading when and how long they take.
   </figcaption>
 </figure>
@@ -109,7 +104,7 @@ Each thin line (`dns`, `connect`, `ssl`) stands for the creation of a new HTTP c
 - Request #5: The font styles from `fonts.googleapis.com`
 - Request #8: Google Analytics
 - Request #9: A font file from `fonts.gstatic.com`
-- Request #14: The Web App Manifest
+- Request #14: The web app manifest
 
 The new connection for `index.html` is unavoidable. The browser _has_ to create a connection to our server to get the contents. The new connection for Google Analytics could be avoided by inlining something like [Minimal Analytics], but Google Analytics is not blocking our app from rendering or becoming interactive, so we don't really care about how fast it loads. Ideally, Google Analytics should be loaded in idle time, when everything else has already loaded. That way it won't take up bandwidth or processing power during the initial load. The new connection for the web app manifest is [prescribed by the fetch spec][fetch connections], as the manifest has to be loaded over a non-credentialed connection. Again, the web app manifest doesn't block our app from rendering or becoming interactive, so we don't need to care that much.
 
@@ -120,21 +115,21 @@ The two fonts and their styles, however, are a problem as they block rendering a
 {% endAside %}
 
 ### Parallelizing loads
+
 Looking at the waterfall, we can see that once the first JavaScript file is done loading, new files start loading immediately. This is typical for module dependencies. Our main module probably has static imports, so the JavaScript cannot run until those imports are loaded. The important thing to realize here is that these kinds of dependencies are known at build time. We can make use of `<link rel="preload">` tags to make sure all dependencies start loading the second we receive our HTML.
 
 ### Results
 
 Let's take a look at what our changes have achieved. It's important to not change any other variables in our test setup that could skew the results, so we will be using [WebPageTest's simple setup][wpt simple] for the rest of this article and look at the filmstrip:
 
-<figure class="w-figure">
-  <video controls muted
-    preload="metadata"
-    class="w-screenshot"
-    poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/preload-proxx-load-poster.jpg"
-      src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/preload-proxx-load.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure>
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/v76UWV9zidMILuFlLpaX.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjJ410ZPSr99njy4KMoh.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata" %}
+  <figcaption>
     We use WebPageTest's filmstrip to see what our changes have achieved.
   </figcaption>
 </figure>
@@ -159,15 +154,14 @@ There are many ways to implement a prerenderer. In PROXX we chose to use [Puppet
 
 With this in place, we can expect an improvement for our FMP. We still need to load and execute the same amount of JavaScript as before, so we shouldn't expect TTI to change much. If anything, our `index.html` has gotten bigger and might push back our TTI a bit. There's only one way to find out: running WebPageTest.
 
-<figure class="w-figure">
-  <video controls muted
-    preload="metadata"
-    class="w-screenshot"
-    poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load-poster.jpg"
-      src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure>
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/kkHfcTZnTgdSAuWlYFfj.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzm3LUZs6FPr7hxZsWO8.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata" %}
+  <figcaption>
     The filmstrip shows a clear improvement for our FMP metric. TTI is mostly unaffected.
   </figcaption>
 </figure>
@@ -176,13 +170,11 @@ With this in place, we can expect an improvement for our FMP. We still need to l
 
 ## Inlining
 
-Another metric that both DevTools and WebPageTest give us is [Time To First Byte (TTFB)][ttfb]. This is the time it takes from the first byte of the request being sent to the first byte of the response being received. This time is also often called a Round Trip Time (RTT), although technically there is a difference between these two numbers: RTT does not include the processing time of the request on the server side. [DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#timing-preview) and WebPageTest visualize TTFB with a light color within the request/response block.
+Another metric that both DevTools and WebPageTest give us is [Time To First Byte (TTFB)][ttfb]. This is the time it takes from the first byte of the request being sent to the first byte of the response being received. This time is also often called a Round Trip Time (RTT), although technically there is a difference between these two numbers: RTT does not include the processing time of the request on the server side. [DevTools](https://developer.chrome.com/docs/devtools/network/reference/#timing-preview) and WebPageTest visualize TTFB with a light color within the request/response block.
 
-<figure class="w-figure">
-  <picture>
-    <img src="ttfb.svg">
-  </picture>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J86O71iJ9OPjlginvwrp.svg", alt="", width="800", height="171" %}
+  <figcaption>
     The light section of a request signifies the request is waiting to receive the first byte of the response.
   </figcaption>
 </figure>
@@ -197,15 +189,14 @@ Our critical CSS is already inlined thanks to CSS Modules and our Puppeteer-base
   **Note:** In this step we also subset our font files to contain only the glyphs that we need for our landing page. I am not going to go into detail on this step as it is not easily abstracted and sometimes not even practical. We still load the full font files lazily, but they are not needed for the initial render.
 {% endAside %}
 
-<figure class="w-figure">
-  <video controls muted
-    preload="metadata"
-    class="w-screenshot"
-    poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load-poster.jpg"
-      src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure>
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/kkHfcTZnTgdSAuWlYFfj.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzm3LUZs6FPr7hxZsWO8.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata" %}
+  <figcaption>
     With the inlining of our JavaScript we have reduced our TTI from 8.5s to 7.2s.
   </figcaption>
 </figure>
@@ -216,23 +207,18 @@ This shaved 1 second off our TTI. We have now reached the point where our `index
 
 Yes, our `index.html` contains everything that is needed to become interactive. But on closer inspection it turns out it also contains everything else. Our `index.html` is around 43 KB. Let's put that in relation to what the user can interact with at the start: We have a form to configure the game containing a couple of components, a start button and probably some code to persist and load user settings. That's pretty much it. 43 KB seems like a lot.
 
-<figure class="w-figure">
-  <picture>
-    <source srcset="proxx-loaded.webp" type="image/webp">
-    <img src="proxx-loaded.jpg">
-  </picture>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PDjREt9PrWz9oqayT3CE.webp", alt="", width="800", height="450" %}
+  <figcaption>
     The landing page of PROXX. Only critical components are used here.
   </figcaption>
 </figure>
 
 To understand where our bundle size is coming from we can use a [source map explorer] or a similar tool to break down what the bundle consists of. As predicted, our bundle contains the game logic, the rendering engine, the win screen, the lose screen and a bunch of utilities. Only a small subset of these modules are needed for the landing page. Moving everything that is not strictly required for interactivity into a lazily-loaded module will decrease TTI _significantly_.
 
-<figure class="w-figure">
-  <picture>
-    <img src="sourcemap.svg">
-  </picture>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4j3GRcHylDnIuwhH8iKT.svg", alt="", width="700", height="700" %}
+  <figcaption>
     Analyzing the contents of PROXX's `index.html` shows a lot of unneeded resources. Critical resources are highlighted.
   </figcaption>
 </figure>
@@ -282,15 +268,14 @@ return (
 
 With all of this in place, we reduced our `index.html` to a mere 20 KB, less than half of the original size. What effect does this have on FMP and TTI? WebPageTest will tell!
 
-<figure class="w-figure">
-  <video controls muted
-    preload="metadata"
-    class="w-screenshot"
-    poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/optimized-proxx-load-poster.jpg"
-     src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/optimized-proxx-load.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure>
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/byNSMGzFX0aSXRBmI1HM.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d2y6ZrlYkcfHTsmaP4m5.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata" %}
+  <figcaption>
     The filmstrip confirms: Our TTI is now at 5.4s. A drastic improvement from our original 11s.
   </figcaption>
 </figure>
@@ -298,6 +283,7 @@ With all of this in place, we reduced our `index.html` to a mere 20 KB, less tha
 Our FMP and TTI are only 100ms apart, as it is only a matter of parsing and executing the inlined JavaScript. After just 5.4s on 2G, the app is completely interactive. All the other, less essential modules are loaded in the background.
 
 ## More Sleight of Hand
+
 If you look at our list of critical modules above, you'll see that the rendering engine is not part of the critical modules. Of course, the game cannot start until we have our rendering engine to render the game. We could disable the "Start" button until our rendering engine is ready to start the game, but in our experience the user usually takes long enough to configure their game settings that this isn't necessary. Most of the time the rendering engine and the other remaining modules are done loading by the time the user presses "Start". In the rare case that the user is quicker than their network connection, we show a simple loading screen that waits for the remaining modules to finish.
 
 ## Conclusion
@@ -320,23 +306,22 @@ Stay tuned for part 2 where we discuss how to optimize runtime performance on hy
 [parcel]: https://parceljs.org
 [phil walton]: https://twitter.com/philwalton
 [iuu]: https://philipwalton.com/articles/idle-until-urgent/
-[why performance matters]: https://developers.google.com/web/fundamentals/performance/why-performance-matters/
+[why performance matters]: /why-speed-matters/
 [jeremy wagner]: https://twitter.com/malchata
 [webpagetest]: https://webpagetest.org
 [wpt simple]: https://webpagetest.org/easy
 [preact]: https://preactjs.com
 [source map explorer]: https://npm.im/source-map-explorer
-[rendering]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web
+[rendering]: /rendering-on-the-web/
 [puppeteer]: https://pptr.dev
 [css modules]: https://github.com/css-modules/css-modules
 [minimal analytics]: https://minimalanalytics.com
 [fetch connections]: https://fetch.spec.whatwg.org/#connections
 [google fonts]: https://fonts.google.com
-[fmp]: /first-meaningful-paint
-[tti]: /interactive
+[fmp]: https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/
+[tti]: https://developer.chrome.com/docs/lighthouse/performance/interactive/
 [code split]: /reduce-javascript-payloads-with-code-splitting/
 [preact]: /codelab-code-splitting
 [preload]:/preload-critical-assets
 [400mil]: https://www.counterpointresearch.com/more-than-a-billion-feature-phones-to-be-sold-over-next-three-years/
-[ttfb]: /time-to-first-byte
-
+[ttfb]: /ttfb/

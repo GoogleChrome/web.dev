@@ -1,13 +1,27 @@
 ---
 layout: base
+pageScripts:
+  - '/js/course.js'
+inlineScripts:
+  - '../../lib/components/CourseLinks/index.js'
+CSS_ORIGIN: 'next'
 ---
 
+{% from 'macros/audio-fab.njk' import audioFab %}
+{% from 'macros/audio-player.njk' import audioPlayer %}
+
 {#
-  Grab the navigation data for the course. The projectKey is defined in the
-  11tydata.js file at the root of the course in /learn/[course].
+  Grab the data for the course using the projectKey defined in the 11tydata.js
+  file at the root of the course in /learn/[course]
 #}
-{% set navigationToC = courses[projectKey].toc %}
-{% set pageNavigation = collections.all | navigation(navigationToC) %}
+{% set courseData = courses[projectKey] %}
+{% set courseTitle = courseData.meta.title | i18n(locale) %}
+
+{#
+  Grab the navigation data for the course. These are the links that will appear
+  in the navigation drawer as well as in various places around the course.
+#}
+{% set pageNavigation = collections.all | navigation(courseData.toc) %}
 
 {#
   Grab the ToC contents for headings ToC. This powers the list of headings
@@ -15,74 +29,59 @@ layout: base
   the word 'toc' is a bit overloaded :P
 #}
 {% set tocContents %}
-  {{- content | courseToc | safe -}}
+  {{- content | toc | safe -}}
 {% endset %}
+{% set tocTitle = 'i18n.toc.on_this_page' | i18n(locale) %}
 
-<a class="skip-link w-button" href="#main">Skip to main</a>
+<a class="skip-link button" data-type="primary" href="#main">Skip to main</a>
 
-<div class="course-layout">
-  <nav class="course-nav scrollbar" aria-label="primary navigation">
-    <ul>
-      {#
-        TODO: This does not yet support walking the recursive navigation tree
-        and rendering section headings. It should be easy enough to add that
-        using a macro similar to the one shown here for rendering unlimited
-        child levels.
-        https://www.11ty.dev/docs/plugins/navigation/#copy-and-paste-templates
-      #}
-      {% for item in pageNavigation -%}
-        <li {% if item.url === page.url %} data-active aria-current="page" {% endif %}>
-          <a href="{{ item.url }}">{{ item.page.data.title }}</a>
-        </li>
-      {%- endfor %}
-    </ul>
-  </nav>
+<div class="course">
+  {% include 'partials/header-course.njk' %}
 
-  <div class="course-body">
-    <nav class="course-app-bar app-bar" aria-label="breadcrumbs">
-      <ul class="app-bar__list">
-        <li class="app-bar__item">
-          <a href="/">web.dev</a>
-        </li>
-        <li class="app-bar__item">
-          <a href="/learn/">Learn</a>
-        </li>
-        <li class="app-bar__item">
-          <a href="/learn/css/">Learn CSS!</a>
-        </li>
-      </ul>
-      <button class="w-ml--auto">Share</button>
-    </nav>
+  <div class="sidebar">
 
-    <div class="course-content">
-
-      {% include 'partials/toc-side.njk' %}
-
-      <main id="main">
-        {% include 'partials/toc-inner.njk' %}
-        {{ content | safe }}
-      </main>
+    <div class="course__sidebar">
+      {% include 'partials/navigation-drawer-course.njk' %}
     </div>
 
-    <nav class="course-pagination" aria-label="pagination">
-      {% for item in pageNavigation %}
-        {% if item.url === page.url %}
-          {% if item.prev %}
-            {% set prev = item.prev %}
-            <a href="{{ prev.url }}" class="course-pagination-control">
-              {{ prev.page.data.title }}
-            </a>
-          {% endif %}
-          {% if item.next %}
-            {% set next = item.next %}
-            <a href="{{ next.url }}" class="course-pagination-control">
-              {{ next.page.data.title }}
-            </a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    </nav>
+    <div class="course__main">
+      {% include 'partials/course-app-bar.njk' %}
+      <div class="sticky-observer"></div>
+      <div class="gap-top-size-2">
+        <div class="sidebar flex-align-start flex-dir-rev flex-wrap-no">
+          {% include 'partials/toc-side.njk' %}
+          <main id="main">
+            <div class="prose">
+              <div class="course__intro flow">
+                {% for item in pageNavigation.list %}
+                  {% if item.url === page.url %}
+                    <div class="eyebrow">{{ item.counter }}</div>
+                  {% endif %}
+                {% endfor %}
+                <h1>{{ title | md | safe }}</h1>
+                {% if description %}
+                <div class="color-mid-text unstyled-code">
+                  {# If authors use backticks in their description markdown we don't #}
+                  {# want the code to have any border or background color. #}
+                  {{ description | md | safe }}
+                </div>
+                {% endif %}
+                {% include 'partials/toc-inner.njk' %}
+              </div>
+            </div>
+            <div class="prose gap-top-size-2">
+              {% if audio %}
+                {% include 'partials/course-audio.njk' %}
+              {% endif %}
+              {{ content | safe }}
+            </div>
+          </main>
+        </div>
+      </div>
 
-    {% include 'partials/footer.njk' %}
+      {% include 'partials/course-pagination.njk' %}
+
+      {% include 'partials/site-footer.njk' %}
+    </div>
   </div>
 </div>

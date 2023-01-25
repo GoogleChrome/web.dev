@@ -1,0 +1,13 @@
+<ul class="stats {{ data.utilities }}">
+  {% for item in data.items %}
+  <div class="stats__item">
+    <p class="stats__figure">
+      {{ item.stat }}
+      {% if item.sub %}
+      <sub>{{ item.sub }}</sub>
+      {% endif %}
+    </p>
+    <p>{{ item.desc }}</p>
+  </div>
+  {% endfor %}
+</ul>

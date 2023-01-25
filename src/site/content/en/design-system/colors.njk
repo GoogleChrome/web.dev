@@ -1,0 +1,115 @@
+---
+permalink: '/design-system/colors/index.html'
+title: 'Colors'
+---
+
+{% extends "design-system.njk" %}{% set title = 'Colors' %}{% set summary %}
+You can either use colors directly, using a Sass function or CSS Custom
+Property, or more preferably, use the theme mechanism which abstracts color
+design tokens into usage contexts to help you work with light and dark mode.
+
+{% endset %}
+{% block inner %}
+<nav class="cluster" aria-label="table of contents">
+  <a href="#design-tokens">Design tokens</a>
+  <a href="#theme-usage">Theme usage</a>
+</nav>
+
+<h2 id="design-tokens">Design tokens</h2>
+<p>Colors that are set with design tokens, which are located here: <code>src/site/_data/design/tokens.json</code>.</p>
+{% for group in design.tokens.colors %}
+  {% if group.group != 'Backgrounds' %}
+  <h3>{{ group.group }}</h3>
+  <div class="table-wrapper breakout scrollbar">
+    <table>
+      <thead>
+        <tr>
+          <th>Name and codes</th>
+          <th>Sass function</th>
+          <th>Custom Property</th> 
+          <th>Color Utility Class</th>
+          <th>BG Utility Class</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for color in group.items %}
+          <tr>
+            <td>
+              <div class="cluster flex-align-center gutter-base" style="flex-wrap: nowrap">
+                <div class="design-system__swatch" style="background: {{ color.value }}" role="presentation"></div>
+                <div>
+                  <h4>{{ color.name }}</h4>
+                  <p class="color-mid-text font-mono text-base">{{ color.value }}</p>
+                </div>
+              </div>
+            </td>
+            <td><code>get-color('{{ group.group | slug }}-{{ color.name | slug }}')</code></td>
+            <td><code>var('--color-{{ group.group | slug }}-{{ color.name | slug }}')</code></td>
+            <td><code>.t-color-{{ group.group | slug }}-{{ color.name | slug }}</code></td>
+            <td><code>.t-bg-{{ group.group | slug }}-{{ color.name | slug }}</code></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+{% endfor %}
+
+<h2 id="theme-usage">Theme usage</h2>
+<p>Colors that are set with themes (dark/light), which are located here: <code>src/site/_data/design/themes.js</code>.</p>
+<p>Go ahead and <a href="#theme-toggle">toggle the current theme</a> to see how they change.</p>
+<h3>Backgrounds</h3>
+
+<div class="table-wrapper breakout scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Utility class</th>
+        <th>Sass mixin</th>
+        <th>Sass function</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for background in design.themes.backgroundUtilities %}
+        <tr>
+          <td>
+            <div class="design-system__swatch {{ background.utilityClass }}" role="presentation"></div>
+          </td>
+          <td><code>{{ background.utilityClass }}</code></td>
+          <td><code>{{ background.sassMixin }}</code></td>
+          <td><code>{{ background.sassFunction }}</code></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h3>Text Colors</h3>
+
+<div class="table-wrapper breakout scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Utility class</th>
+        <th>Sass mixin</th>
+        <th>Sass function</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for text in design.themes.textUtilities %}
+        <tr>
+          <td>
+            <div class="font-mono {{ text.utilityClass }}" role="presentation">Sample</div>
+          </td>
+          <td><code>{{ text.utilityClass }}</code></td>
+          <td><code>{{ text.sassMixin }}</code></td>
+          <td><code>{{ text.sassFunction }}</code></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

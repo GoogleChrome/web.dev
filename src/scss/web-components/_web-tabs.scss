@@ -1,0 +1,66 @@
+/// To change the active color, set a Custom Property value for
+/// --tabs-active-color and it will override the default, which is
+/// the primary color
+web-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+web-tabs:not(:defined) {
+  display: none;
+}
+
+.web-tabs__tablist {
+  display: flex;
+  scrollbar-width: 0;
+
+  @include overflow-shadow(#{get-utility-value('bg', 'core-bg')});
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.web-tabs__tab {
+  position: relative;
+
+  // Lets them grow, stops them shrinking and lets them pick their own size
+  flex: 1 0 auto;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+
+  // A rare occasion to break from the sizing scale because size-0 is just a bit
+  // too small in this context
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 0.03ch;
+  border-bottom: 2px solid var(--color-stroke);
+
+  @include apply-utility('color', 'mid-text');
+  @include apply-utility('font', 'brand');
+
+  &:hover {
+    @include apply-utility('bg', 'highlight-interact-bg');
+  }
+}
+
+.web-tabs__tab[aria-selected='true'] {
+  border-color: var(
+    --tabs-active-color,
+    #{get-utility-value('color', 'action-text')}
+  );
+
+  @include apply-utility('color', 'core-text');
+}
+
+.web-tabs__panel {
+  height: 100%;
+  overflow: auto;
+
+  code, pre {
+    height: 100%;
+  }
+}

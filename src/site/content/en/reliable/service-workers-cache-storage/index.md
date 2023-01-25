@@ -19,9 +19,9 @@ when loading versioned URLs that you've previously visited. On its own, the HTTP
 cache is not enough.
 
 Fortunately, two newer tools are available to help turn the tide in your favor:
-[service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+[service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)
 and the
-[Cache Storage API](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage).
+[Cache Storage API](https://developer.mozilla.org/docs/Web/API/CacheStorage).
 Since they're so often used together, it's worth learning about them both at the
 same time.
 
@@ -46,6 +46,7 @@ having to worry about the network. That entails using the other piece of the
 puzzle: the Cache Storage API.
 
 ## The Cache Storage API
+{% BrowserCompat 'api.CacheStorage' %}
 
 The Cache Storage  API opens up a whole new range of possibilities, by giving
 developers complete control over the contents of the cache. Instead of relying
@@ -94,12 +95,12 @@ Check out [The Cache API: A quick guide](/cache-api-quick-guide/) to learn more.
 
 There are some things to keep in mind about the API's design:
 
-+  [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request)
++  [`Request`](https://developer.mozilla.org/docs/Web/API/Request)
     objects are used as the unique keys when reading and writing to these
     caches. As a convenience, you can pass in a URL string like
     `'https://example.com/index.html'` as the key instead of an actual
     `Request` object, and the API will automatically handle that for you.
-+  [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response)
++  [`Response`](https://developer.mozilla.org/docs/Web/API/Response)
     objects are used as the values in these caches.
 +  The `Cache-Control` header on a given `Response` is effectively ignored
     when caching data. There are no automatic, built-in expiration or freshness
@@ -107,7 +108,7 @@ There are some things to keep in mind about the API's design:
     code explicitly removes it. (There are libraries to simplify cache
     maintenance on your behalf. They'll be covered later on in this series.)
 +  Unlike with older, synchronous APIs such as
-    [`LocalStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage),
+    [`LocalStorage`](https://developer.mozilla.org/docs/Web/API/Storage/LocalStorage),
     all Cache Storage API operations are asynchronous.
 
 ## A quick detour: promises and async/await
@@ -116,9 +117,9 @@ Service workers and the Cache Storage API use
 [asynchronous programming concepts](https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)).
 In particular, they rely heavily on promises to represent the future result of
 async operations. You should familiarize yourself with
-[promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise),
+[promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise),
 and the related
-[`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+[`async`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function)/[`await`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await)
 syntax, before diving in.
 
 {% Aside 'codelab' %}
@@ -132,7 +133,7 @@ workers and the Cache Storage API are effectively lower-level building blocks,
 with a number of edge cases and "gotchas". There are some higher-level tools
 that can help smooth the difficult bits of those APIs, and provide all you need
 to build a production-ready service worker. The next guide covers one such tool:
-[Workbox](https://developers.google.com/web/tools/workbox/).
+[Workbox](https://developer.chrome.com/docs/workbox/).
 
 {% Aside 'success' %}
 Learn while having fun. Check out the new [Service Workies game!](https://serviceworkies.com/).

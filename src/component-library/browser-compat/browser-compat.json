@@ -1,0 +1,55 @@
+{
+  "title": "Browser compatibility table",
+  "summary": "A decorated list of browsers and their in-context support with data source link.",
+  "keyLinks": [
+    {
+      "label": "Sass File",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/blocks/_browser-compat.scss"
+    }
+  ],
+  "context": {
+    "label": "Browser support:",
+    "link": {
+      "text": "Source",
+      "url": "https://developer.mozilla.org/docs/Web/API/BackgroundFetchEvent#browser_compatibility"
+    },
+    "items": [
+      {
+        "label": "Chrome 74, Supported",
+        "name": "Chrome 74",
+        "image": "chrome.svg",
+        "indicator": {
+          "content": "74",
+          "utilities": "bg-state-good-bg color-state-good-text"
+        }
+      },
+      {
+        "label": "Firefox, Not supported",
+        "name": "Firefox",
+        "image": "firefox.svg",
+        "indicator": {
+          "content": "×",
+          "utilities": "bg-state-bad-bg color-state-bad-text"
+        }
+      },
+      {
+        "label": "Edge 79, Supported",
+        "name": "Edge 79",
+        "image": "edge.svg",
+        "indicator": {
+          "content": "79",
+          "utilities": "bg-state-good-bg color-state-good-text"
+        }
+      },
+      {
+        "label": "Safari, Not supported",
+        "name": "Safari",
+        "image": "safari.svg",
+        "indicator": {
+          "content": "✕",
+          "utilities": "bg-state-bad-bg color-state-bad-text"
+        }
+      }
+    ]
+  }
+}

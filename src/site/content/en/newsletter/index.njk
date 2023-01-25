@@ -1,22 +1,33 @@
 ---
-layout: default
+layout: default-next
 title: Newsletter
-permalink: /{{lang}}{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Stay up to date with the latest about web platform.
 date: 2020-03-13
+eleventyComputed:
+  noindex: "{{ paged.index > 0 }}"
+pageScripts:
+  - '/js/newsletter.js'
+externalScripts:
+  - 'https://www.google.com/recaptcha/api.js'
 pagination:
   data: collections.newsletters
   size: 1
   alias: paged
+  addAllPagesToCollections: true
 ---
-<div class="newsletter-landing-page">
-  <div class="w-layout-container">
-    {% include 'partials/subscribe.njk' %}
-  </div>
-  <hr>
-  <div class="w-layout-container">
-    <h2 class="w-headline--two w-mt--l w-mb--std w-text--center">Past Editions</h2>
-    <p class="w-text--center">Read past editions of the monthly newsletter for web developers.</p>
-  </div>
-  {% include 'partials/paged.njk' %}
+<div class="landing-page">
+  {% include 'partials/subscribe.njk' %}
+
+  {# Hero starts #}
+  <header class="region bg-mid-bg">
+    <div class="wrapper">
+      <div class="headline all-center flow">
+        <h2 class="headline__title">Past Editions</h2>
+        <p>Read past editions of the monthly newsletter for web developers.</p>
+      </div>
+    </div>
+  </header>
+  {# Hero ends #}
+
+  {% include 'partials/paged-next.njk' %}
 </div>

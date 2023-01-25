@@ -13,7 +13,7 @@ alt: A diagram of a webpage featuring text, a video, a map, a chat widget, and s
 tags:
   - blog
   - performance
-  - third-party
+  # - third-party
 ---
 
 Third-party JavaScript generally refers to scripts embedded in your website that are:
@@ -29,16 +29,14 @@ Sites use these scripts for various purposes, including:
 - A/B testing scripts for experiments
 - Helper libraries (like date formatting, animation, and functional libraries)
 
-<figure class="w-figure w-figure--fullbleed">
-  <video autoplay loop muted playsinline>
-    <source src="./third-party-examples.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/uLXJ72jZAlzK56ctPwXd.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}
 </figure>
 
 Third-party scripts can provide powerful functionality, but that's not the whole story. They also affect privacy, security, and page behavior⁠—and they can be particularly problematic for performance.
 
 ## Performance
-Any significant amount of [JavaScript can slow down performance](/bootup-time). But because third-party JavaScript is usually outside your control, it can bring additional issues.
+Any significant amount of [JavaScript can slow down performance](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/). But because third-party JavaScript is usually outside your control, it can bring additional issues.
 
 ### Network
 Setting up connections takes time, and sending too many requests to multiple servers causes slowdowns. That time is even longer for secure connections, which may involve DNS lookups, redirects, and several round trips to the final server that handles the user's request.
@@ -46,8 +44,8 @@ Setting up connections takes time, and sending too many requests to multiple ser
 Third-party scripts often add to network overhead with things such as:
 - Firing additional network requests
 - Pulling in unoptimized images and videos
-- Insufficient [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching), which forces frequent fetching of network resources
-- Insufficient [server compression](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer) of resources
+- Insufficient [HTTP caching](/http-cache/), which forces frequent fetching of network resources
+- Insufficient [server compression](/optimizing-content-efficiency-optimize-encoding-and-transfer/) of resources
 - Multiple instances of frameworks and libraries pulled in by different third-party embeds
 
 ### Rendering
@@ -60,7 +58,7 @@ The __critical rendering path__ includes all resources that the browser needs to
 If a third party has server issues and fails to deliver a resource, rendering is blocked until the request times out, which can be anywhere from 10 to 80 seconds. You can test and simulate this problem with [WebPageTest Single-Point-of-Failure tests](https://css-tricks.com/use-webpagetest-api/#single-point-of-failure).
 
 {% Aside %}
-[A/B testing scripts](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/#ab_test_smaller_samples_of_users) can also often delay rendering. Most of them block content display until they complete processing—which can be true even for asynchronous A/B testing scripts.
+[A/B testing scripts](h/optimizing-content-efficiency-loading-third-party-javascript/#ab-test-smaller-samples-of-users) can also often delay rendering. Most of them block content display until they complete processing—which can be true even for asynchronous A/B testing scripts.
 {% endAside %}
 
 ## What to do about it

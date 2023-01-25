@@ -14,7 +14,7 @@ description: |
   Portals to improve user experience across your site.
 tags:
   - blog
-  - portals
+  # - portals
   - ux
 feedback:
   - api
@@ -30,12 +30,12 @@ site.
 
 See Portals in action:
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_vp9.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_h264.mp4" type="video/mp4; codecs=h264">
   </video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
+ <figcaption>
     Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
   </figcaption>
 </figure>
@@ -56,7 +56,7 @@ they also come with features to navigate to their content.
 Seeing is believing:
 please first check out what we showcased at Chrome Dev Summit 2018:
 
-{% YouTube 'Ai4aZ9Jbsys', '1081' %}
+{% YouTube id='Ai4aZ9Jbsys', startTime='1081' %}
 
 With classic navigations, users have to wait with a blank screen
 until the browser finishes rendering the destination.
@@ -67,11 +67,11 @@ Before Portals, we could have rendered another page using an `<iframe>`. We coul
 
 ## Try out Portals
 
-### Enabling via chrome://flags {: #enable-flags }
+### Enabling via about://flags {: #enable-flags }
 
 Try out Portals in Chrome 85 and later versions by flipping an experimental flag:
-- Enable the `chrome://flags/#enable-portals` flag for same-origin navigations.
-- For testing out cross-origin navigations, enable the `chrome://flags/#enable-portals-cross-origin` flag in addition.
+- Enable the `about://flags/#enable-portals` flag for same-origin navigations.
+- For testing out cross-origin navigations, enable the `about://flags/#enable-portals-cross-origin` flag in addition.
 
 During this early phase of the Portals experiment,
 we also recommend using a completely separate user data directory for your tests
@@ -80,7 +80,7 @@ by setting the
 command line flag.
 Once Portals are enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
 
-{% Img src="image/admin/aUrrqhzMxaEX865Fk5zX.png", alt="A screenshot of the DevTools console showing the HTMLPortalElement", width="800", height="252", class="w-screenshot" %}
+{% Img src="image/admin/aUrrqhzMxaEX865Fk5zX.png", alt="A screenshot of the DevTools console showing the HTMLPortalElement", width="800", height="252" %}
 
 ## Implement Portals
 
@@ -106,7 +106,7 @@ portal.addEventListener('load', (evt) => {
 
 It's that simple. Try this code in the DevTools console, the wikipedia page should open up.
 
-{% Img src="image/admin/rp6i8ngGJkvooXJ9WmLK.gif", alt="A gif of preview portal style demo", width="800", height="557", class="w-screenshot" %}
+{% Img src="image/admin/rp6i8ngGJkvooXJ9WmLK.gif", alt="A gif of preview portal style demo", width="800", height="557" %}
 
 If you wanted to build something like we showed at Chrome Dev Summit which works just like the demo above,
 the following snippet will be of interest.
@@ -185,7 +185,7 @@ Be sure you access it with Chrome 85 or later versions and turn on the [experime
 1. Click on the preview.
 1. The preview will be activated after an animation.
 
-{% Img src="image/admin/Y4Vv6v3DAAC32IsiWS7g.gif", alt="A gif of using the glitch demo of using Portals", width="800", height="547", class="w-screenshot" %}
+{% Img src="image/admin/Y4Vv6v3DAAC32IsiWS7g.gif", alt="A gif of using the glitch demo of using Portals", width="800", height="547" %}
 
 ## Check out the spec
 

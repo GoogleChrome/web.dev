@@ -1,0 +1,176 @@
+{
+  "slug": "web-dev-basics-one",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/9K5gvnLRtD0yyiJM2r0c.svg",
+  "title": "i18n.paths.web-dev-basics-one.title",
+  "updated": "February 1, 2022",
+  "description": "i18n.paths.web-dev-basics-one.description",
+  "overview": "i18n.paths.web-dev-basics-one.overview",
+  "draft": true,
+  "topics": [
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.web",
+      "pathItems": [
+        {
+          "title": "Web development basics",
+          "url": "#"
+        },
+        {
+          "title": "The role of HTML, CSS, and JavaScript on a web page",
+          "url": "https://developer.mozilla.org/docs/Learn/Getting_started_with_the_web/The_web_and_web_standards"
+        },
+        {
+          "title": "The importance of accessibility",
+          "url": "/what-is-accessibility"
+        },
+        {
+          "title": "The value of web security and privacy",
+          "url": "/security-not-scary"
+        },
+        {
+          "title": "Preview the capabilities of the modern web platform",
+          "url": "https://codelabs.developers.google.com/codelabs/web-capabilities"
+        }
+      ]
+    },
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.html",
+      "pathItems": [
+        {
+          "title": "Introduction to HTML",
+          "url": "#"
+        },
+        {
+          "title": "Write and preview HTML code with a code editor",
+          "url": "#"
+        },
+        {
+          "title": "Learn basic HTML elements",
+          "url": "#"
+        },
+        {
+          "title": "Structure an HTML web page",
+          "url": "#"
+        },
+        {
+          "title": "Accessible HTML with semantic tags",
+          "url": "https://www.youtube.com/watch?v=g2tzEil5TL0"
+        },
+        {
+          "title": "Learn additional HTML elements",
+          "url": "additional-html-elements"
+        },
+        {
+          "title": "Embed media content with video and audio tags",
+          "url": "https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content"
+        }
+      ]
+    },
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.css",
+      "pathItems": [
+        {
+          "title": "An introduction to CSS",
+          "url": "#"
+        },
+        {
+          "title": "Write CSS selectors and apply styles to a web page",
+          "url": "#"
+        },
+        {
+          "title": "Style text to improve legibility",
+          "url": "#"
+        },
+        {
+          "title": "Create simple page layouts using the box model",
+          "url": "#"
+        },
+        {
+          "title": "Create layouts with Flexbox",
+          "url": "/learn/css/flexbox"
+        },
+        {
+          "title": "Create layouts with Grid",
+          "url": "/learn/css/grid"
+        },
+        {
+          "title": "Simple page layouts with Flexbox and Grid",
+          "url": "https://www.youtube.com/watch?v=qm0IfG1GyZU"
+        },
+        {
+          "title": "Choose and set color themes",
+          "url": "/learn/css/color"
+        }
+      ]
+    },
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.javascript",
+      "pathItems": [
+        {
+          "title": "Introduction to JavaScript",
+          "url": "#"
+        },
+        {
+          "title": "Learn about different data types, variables, operators and conditional statements",
+          "url": "#"
+        },
+        {
+          "title": "Organize and store data in arrays using Array methods",
+          "url": "#"
+        },
+        {
+          "title": "Control the flow of a program with loops",
+          "url": "#"
+        },
+        {
+          "title": "Control the flow of a program with functions",
+          "url": "#"
+        },
+        {
+          "title": "Understand global and local variable scoping",
+          "url": "#"
+        },
+        {
+          "title": "Use objects to model real-world items",
+          "url": "#"
+        },
+        {
+          "title": "Use classes to model real-world items",
+          "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes"
+        }
+      ]
+    },
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.dom",
+      "pathItems": [
+        {
+          "title": "An introduction to DOM manipulation",
+          "url": "#"
+        },
+        {
+          "title": "Access the DOM",
+          "url": "https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction"
+        },
+        {
+          "title": "Access the DOM and read information on a web page",
+          "url": "#"
+        },
+        {
+          "title": "Manipulate and insert content on a web page",
+          "url": "#"
+        },
+        {
+          "title": "The basics of cross-site Scripting (XSS)",
+          "url": "#"
+        },
+        {
+          "title": "Listen for web page events",
+          "url": "https://developer.mozilla.org/docs/Web/Events/Event_handlers"
+        },
+        {
+          "title": "Interact with the DOM in response to web page events",
+          "url": "#"
+        }
+      ]
+    }
+  ]
+}

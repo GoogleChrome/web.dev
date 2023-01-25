@@ -12,11 +12,11 @@ tags:
   - performance
 ---
 
-CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources):
+CSS files are [render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/):
 they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles
 take longer to render.
 
-In this guide, you'll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [First Contentful Paint (FCP)](/first-contentful-paint).
+In this guide, you'll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](/critical-rendering-path/), and improving [First Contentful Paint (FCP)](/fcp/).
 
 ## Loading CSS in a suboptimal way
 
@@ -42,8 +42,8 @@ The report shows the **First Contentful Paint** metric with a value of "1s", and
 the opportunity **Eliminate render-blocking resources**, pointing to the
 **style.css** file:
 
-<figure class="w-figure">
-  {% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="Lighthouse report for unoptimized page, showing FCP of '1s' and 'Eliminate blocking resources' under 'Opportunities'", width="800", height="640", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="Lighthouse report for unoptimized page, showing FCP of '1s' and 'Eliminate blocking resources' under 'Opportunities'", width="800", height="640" %}
 </figure>
 
 {% Aside %}
@@ -64,7 +64,7 @@ In the resulting trace, you'll see that the **FCP** marker is placed immediately
 after the CSS finishes loading:
 
 <figure>
-  {% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="DevTools performance trace for unoptimized page, showing FCP starting after CSS loads.", width="800", height="352", class="w-screenshot" %}
+  {% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="DevTools performance trace for unoptimized page, showing FCP starting after CSS loads.", width="800", height="352" %}
 </figure>
 
 This means that the browser needs to wait for all CSS to load and get processed
@@ -73,15 +73,15 @@ before painting a single pixel on the screen.
 ## Optimize
 
 To optimize this page, you need to know which classes are considered "critical".
-You'll use the [Coverage Tool](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) for that:
+You'll use the [Coverage Tool](https://developer.chrome.com/docs/devtools/css/reference/#coverage) for that:
 
-1. In DevTools, open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu), by pressing `Control+Shift+P` or `Command+Shift+P` (Mac).
+1. In DevTools, open the [Command Menu](https://developer.chrome.com/docs/devtools/command-menu/), by pressing `Control+Shift+P` or `Command+Shift+P` (Mac).
 1. Type "Coverage" and select **Show Coverage**.
 1. Click the **Reload** button, to reload the page and start capturing the
    coverage.
 
-<figure class="w-figure">
-  {% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="Coverage for CSS file, showing 55.9% unused bytes.", width="800", height="82", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="Coverage for CSS file, showing 55.9% unused bytes.", width="800", height="82" %}
 </figure>
 
 
@@ -144,8 +144,8 @@ page](https://defer-css-optimized.glitch.me/).
 The **FCP** marker appears before the page requests the CSS, which means the
 browser doesn't need to wait for the CSS to load before rendering the page:
 
-<figure class="w-figure">
-  {% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="DevTools performance trace for unoptimized page, showing FCP starting before CSS loads.", width="800", height="389", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="DevTools performance trace for unoptimized page, showing FCP starting before CSS loads.", width="800", height="389" %}
 </figure>
 
 As a final step, run Lighthouse on the optimized page.
@@ -153,15 +153,15 @@ As a final step, run Lighthouse on the optimized page.
 In the report you'll see that the FCP page has been reduced by **0.2s** (a 20%
 improvement!):
 
-<figure class="w-figure">
-  {% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="Lighthouse report, showing an FCP value of '0.8s'.", width="800", height="324", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="Lighthouse report, showing an FCP value of '0.8s'.", width="800", height="324" %}
 </figure>
 
 The **Eliminate render-blocking resources** suggestion is no longer under
 **Opportunities**, and now belongs to the **Passed Audits** section:
 
-<figure class="w-figure">
-  {% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="Lighthouse report, showing 'Eliminate blocing resources' on the 'Passed Audits' section.", width="800", height="237", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="Lighthouse report, showing 'Eliminate blocing resources' on the 'Passed Audits' section.", width="800", height="237" %}
 </figure>
 
 ## Next steps & references

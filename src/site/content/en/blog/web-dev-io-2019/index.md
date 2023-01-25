@@ -26,8 +26,8 @@ plan to ship in the coming months, but we hope you like this new visual style ðŸ
 
 ## Improved Lighthouse support
 
-<figure class="w-figure w-figure--inline-right">
-  <img src="/images/collections/lighthouse-performance.svg" alt="" width="200">
+<figure data-float="right">
+  {% Img src="image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/wpGZrgY08B0x6jbLnWPU.svg", alt="Lighthouse performance cover", width="330", height="220" %}
 </figure>
 
 In the Learn section, we've rolled out
@@ -48,7 +48,7 @@ Not that long ago, our team used to produce a site called
 folks coming together to share their collective excitement about what was
 possible on the web.
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/4CTdRl9npyxrlqZHxbdJ.png", alt="The HTML5Rocks logo.", width="280", height="280" %}
 </figure>
 

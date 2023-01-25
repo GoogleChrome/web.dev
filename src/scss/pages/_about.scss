@@ -1,0 +1,84 @@
+@include media-query('lg') {
+  .about {
+    .hero__title {
+      margin-bottom: 20px;
+    }
+    .hero__content {
+      margin-block-start: get-space('size-4');
+    }
+  }
+}
+
+.about__teams {
+  border-block-start: 1px solid var(--color-stroke);
+
+  .card {
+    padding-block: get-space('size-1');
+  }
+
+  .card > img {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+  }
+
+  .authors {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+
+    @include media-query('lg') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-query('xs') {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.about__developers {
+  p {
+    max-width: 75ch;
+  }
+  .button {
+    margin-top: 2.5em;
+  }
+
+  .headline__title {
+    margin-top: 1.5em;
+  }
+}
+
+.about__coupled-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include media-query('xs') {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  h5 {
+    margin: 0.5em;
+  }
+
+  div:first-child {
+    border-right: 1px solid get-utility-value('color', 'stroke');
+    padding-right: get-space('size-2');
+
+    @include media-query('xs') {
+      border-right: 0;
+      padding-right: 0;
+    }
+  }
+
+  div:last-child {
+    padding-left: get-space('size-2');
+
+    @include media-query('xs') {
+      border-top: 1px solid get-utility-value('color', 'stroke');
+      margin-top: get-space('size-2');
+      padding: 2.5em 0 0;
+    }
+  }
+}

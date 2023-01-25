@@ -4,6 +4,7 @@ subhead: The story of what shipped, how the impact was measured, and the tradeof
 authors:
   - jeffposnick
 date: 2019-06-20
+updated: 2021-10-29
 hero: image/admin/SEsw9jtfge6PSYNqTkUl.jpg
 alt: An illustration of a service worker interacting with a cache.
 description: |
@@ -79,7 +80,7 @@ users to enter their search query immediately.
 The results won't be available until there's an Internet connection, but the
 service worker allows the search to be deferred and sent to Google's servers as
 soon as the device goes back online using the
-[background sync API](https://developers.google.com/web/updates/2015/12/background-sync).
+[background sync API](https://developer.chrome.com/blog/background-sync/).
 
 ### Smarter JavaScript caching and serving
 
@@ -155,7 +156,7 @@ network request for the results page's HTML.
 
 The single, most crucial feature that allowed the Google Search team to move
 ahead with their service worker launch is
-[navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload).
+[navigation preload](https://developer.chrome.com/blog/navigation-preload/).
 Using navigation preload is a key performance win for any service worker that
 needs to use a response from the network to satisfy navigation requests. It
 provides a hint to the browser to start making the navigation request
@@ -171,7 +172,7 @@ The Search team also needed to avoid using a service worker on low-end mobile
 devices where the service worker boot time could exceed the navigation request.
 Since there's no hard-and-fast rule for what constitutes a "low-end" device,
 they came up with the heuristic of
-[checking the total RAM](https://developers.google.com/web/updates/2017/12/device-memory)
+[checking the total RAM](https://developer.chrome.com/blog/device-memory/)
 installed on the device. Anything less than 2 gigabytes of memory fell into
 their low-end device category, where service worker startup time would be unacceptable.
 
@@ -185,7 +186,7 @@ This left the Search team with multiple pieces of criteria that they could use
 to determine whether or not to use a service worker: if a user comes to the
 Google Search page using a browser that supports navigation preload, and has at
 least 2 gigabytes of RAM, and enough free storage space, then a
-[service worker is registered](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#the_first_service_worker).
+[service worker is registered](/service-worker-lifecycle/#the-first-service-worker).
 Browsers or devices that don't meet that criteria won't end up with a service
 worker, but they'll still see the same Google Search experience as they always
 have.
@@ -250,7 +251,7 @@ all of whom live under a common URL.
 
 Users can sign in to Google Search using their Google Accounts, and their search
 results experience may be customized based on their particular account data.
-Logged in users are identified by specific [browser cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies),
+Logged in users are identified by specific [browser cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies),
 which is a venerable and widely-supported standard.
 
 One downside of using browser cookies, though, is that they are not exposed
@@ -274,7 +275,7 @@ Rather than wait for experimental APIs to launch and provide direct access to
 the browser's cookies inside of a service worker, the Google Search team went
 with a stop-gap solution: whenever a page controlled by the service worker is
 loaded, the page reads the relevant cookies and uses
-[`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage)
+[`postMessage()`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
 to send them to the service worker.
 
 The service worker then checks the current cookie value against the value
@@ -363,20 +364,20 @@ received by the endpoint that dynamically generates the service worker script.
 
 Additionally, an ETag header is set on the service worker script's HTTP
 response, ensuring that when an update check is made after 25 minutes has
-passed, the server can respond efficiently with an [HTTP 304](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304)
+passed, the server can respond efficiently with an [HTTP 304](https://developer.mozilla.org/docs/Web/HTTP/Status/304)
 response if there haven't been any updates to the service worker deployed in the
 interim.
 
 While some interactions within the Google Search web app use single page
 app-style navigations (i.e. via the
-[History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API#Adding_and_modifying_history_entries)),
+[History API](https://developer.mozilla.org/docs/Web/API/History_API#Adding_and_modifying_history_entries)),
 for the most part, Google Search is a traditional web app that uses "real"
 navigations. This comes into play when the team decided that it would be
 effective to use two options that accelerate the service worker update
 lifecycle:
-[`clients.claim()`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#clientsclaim)
+[`clients.claim()`](/service-worker-lifecycle/#clientsclaim)
 and
-[`skipWaiting()`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase).
+[`skipWaiting()`](/service-worker-lifecycle/#skip-the-waiting-phase).
 Clicking around Google Search's interface generally ends up navigating to new
 HTML documents. Calling `skipWaiting` ensures that an updated service worker
 gets a chance to handle those new navigation requests immediately after
@@ -394,7 +395,7 @@ as frequently as possible, by
 If you're building a single page app that users will might keep open for a long
 period of time, using `skipWaiting()` is probably not the right choice for
 you—you
-[risk running into cache inconsistencies](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase)
+[risk running into cache inconsistencies](/service-worker-lifecycle/#skip-the-waiting-phase)
 if you allow the new service worker to activate while there are long-lived
 clients.
 
@@ -446,10 +447,10 @@ based on the experience using service workers in the Google I/O web app.
 
 ## Non-goals
 
-While many in the web development community associate service workers with [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/),
+While many in the web development community associate service workers with [Progressive Web Apps](/progressive-web-apps/),
 building a "Google Search PWA" was not an initial goal of the team. The Google
 Search web app doesn't currently provide metadata via a
-[web app manifest](https://developers.google.com/web/fundamentals/web-app-manifest/),
+[web app manifest](/add-manifest/),
 nor does it encourage users to go through the
 [Add to Home Screen flow](https://developers.google.com/web/fundamentals/app-install-banners/).
 The Search team is currently satisfied with users coming to their web app via
@@ -466,3 +467,5 @@ service worker implementation, and for sharing the background material that went
 into writing this article. Particular thanks goes to Philippe Golle, Rajesh
 Jagannathan, R. Samuel Klatchko, Andy Martone, Leonardo Peña, Rachel Shearer,
 Greg Terrono, and Clay Woolam.
+
+_Update (Oct. 2021): Since this article was originally published, the Google Search team has reevaluated the benefits and tradeoffs of their current service worker architecture. The service worker described above is being retired. As the Google Search web infrastructure evolves, the team may revisit their service worker design._

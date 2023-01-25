@@ -4,7 +4,7 @@ title: Time to Interactive (TTI)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-15
+updated: 2022-05-11
 description: |
   This post introduces the Time to Interactive (TTI) metric and explains
   how to measure it
@@ -29,7 +29,7 @@ loading to when its main sub-resources have loaded and it is capable of reliably
 responding to user input quickly.
 
 To calculate TTI based on a [performance
-trace](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)
+trace](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/)
 of a web page, follow these steps:
 
 1. Start at [First Contentful Paint (FCP)](/fcp/).
@@ -71,18 +71,18 @@ interactive.
 TTI is a metric that's best measured [in the
 lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TTI is to run a
 Lighthouse performance audit on your site. See the [Lighthouse documentation on
-TTI](/interactive/) for usage details.
+TTI](/tti/) for usage details.
 
 ### Lab tools
 
-* [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 * [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %}
   While it's possible to measure TTI in the field, it's not recommended, as user
   interaction can affect your page's TTI in ways that lead to lots of variance
   in your reports. To understand a page's interactivity in the field, you should
-  measure [First Input Delay (FID)](/fid/).
+  measure [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/).
 {% endAside %}
 
 ## What is a good TTI score?
@@ -93,22 +93,22 @@ hardware**.
 
 For details on how your page's TTI affects your Lighthouse performance score,
 see [How Lighthouse determines your TTI
-score](/interactive/#how-lighthouse-determines-your-tti-score).
+score](https://developer.chrome.com/docs/lighthouse/performance/interactive/#how-lighthouse-determines-your-tti-score).
 
 ## How to improve TTI
 
 To learn how to improve TTI for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+[opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) the audit suggests.
 
 To learn how to improve TTI in general (for any site), refer to the following
 performance guides:
 
-* [Minify JavaScript](/unminified-javascript/)
-* [Preconnect to required origins](/uses-rel-preconnect/)
-* [Preload key requests](/uses-rel-preload/)
-* [Reduce the impact of third-party code](/third-party-summary/)
-* [Minimize critical request depth](/critical-request-chains/)
-* [Reduce JavaScript execution time](/bootup-time/)
-* [Minimize main thread work](/mainthread-work-breakdown/)
-* [Keep request counts low and transfer sizes small](/resource-summary/)
+* [Minify JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/e.com/docs/lighthouse/performance/unminified-javascript/)
+* [Preconnect to required origins](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
+* [Preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+* [Reduce the impact of third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+* [Minimize critical request depth](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+* [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+* [Minimize main thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+* [Keep request counts low and transfer sizes small](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)

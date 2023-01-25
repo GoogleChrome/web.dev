@@ -1,0 +1,32 @@
+{
+  "noindex": true,
+  "CSS_ORIGIN": "next",
+  "sideLinks": [
+    {
+      "text": "Welcome",
+      "url": "/design-system/"
+    },
+    {
+      "text": "Colors",
+      "url": "/design-system/colors/"
+    },
+    {
+      "text": "Typography",
+      "url": "/design-system/typography/"
+    },
+    {
+      "text": "Spacing",
+      "url": "/design-system/spacing/"
+    }
+  ],
+  "cssLinks": [
+    {
+      "text": "Utilities",
+      "url": "/design-system/css-utilities/"
+    },
+    {
+      "text": "Compositions",
+      "url": "/design-system/css-compositions/"
+    }
+  ]
+}

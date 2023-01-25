@@ -49,7 +49,7 @@ offline support. The player takes a content ID as input, talks to the ZDF API,
 and plays back the associated video.
 
 This is where one of the web's most powerful features comes to the rescue:
-[service workers](https://web.dev/service-worker-mindset/).
+[service workers](/service-worker-mindset/).
 
 The service worker can intercept the various requests done by the player and
 respond with the data from IndexedDB. This transparently adds offline
@@ -74,14 +74,12 @@ install the app as soon as they want to download their first video. This is a
 good point in time to prompt for install because the user has expressed a clear intention to
 use the app offline.
 
-<figure class="w-figure">
-  <div class="w-columns">
-    <img src="./custom-prompt-before.jpg"
-         alt="Custom invitation to install.">
-    <img src="./custom-prompt-after.jpg"
-         alt="Custom install prompt being triggered when downloading a video for offline consumption.">
+<figure>
+  <div class="switcher">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sj4J2JMlYdgf4BrhaRsT.jpg", alt="Custom invitation to install.", width="800", height="1595" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FT4Xt5xpjCp57C8BwLtn.jpg", alt="Custom install prompt being triggered when downloading a video for offline consumption.", width="800", height="1595" %}
   </div>
-  <figcaption class="w-figcaption">Custom install prompt being triggered when downloading a video for offline consumption.</figcaption>
+  <figcaption>Custom install prompt being triggered when downloading a video for offline consumption.</figcaption>
 </figure>
 
 ## Building an offline page to access downloads
@@ -91,14 +89,12 @@ page that is not available in offline mode, a special page is shown instead that
 lists all videos that have previously been downloaded or (in case no content has
 been downloaded yet) a short explanation of the offline feature.
 
-<figure class="w-figure">
-  <div class="w-columns">
-    <img src="./online-page.png"
-         alt="Offline page showing all content available for watching offline.">
-    <img src="./offline-page.png"
-         alt="Offline page showing that no content is available for watching offline.">
+<figure>
+  <div class="switcher">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FcWDhtuSSpHg04krFqUD.png", alt="Offline page showing all content available for watching offline.", width="800", height="1418" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PUvFyyaVfhh7PFyXDwCo.png", alt="Offline page showing that no content is available for watching offline.", width="800", height="1423" %}
   </div>
-  <figcaption class="w-figcaption">Offline page showing all content available for watching offline.</figcaption>
+  <figcaption>Offline page showing all content available for watching offline.</figcaption>
 </figure>
 
 ## Using frame loading rate for adaptive features

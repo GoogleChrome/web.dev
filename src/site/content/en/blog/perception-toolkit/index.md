@@ -10,7 +10,7 @@ description: |
   Wouldn't it be great if users could search your site using their camera?
 tags:
   - blog
-  - visual-search
+  # - visual-search
 feedback:
   - api
 ---
@@ -58,11 +58,9 @@ then show and hide cards based on the information provided in the data. Try this
 for yourself using our [artifact-map
 demo](https://github.com/GoogleChromeLabs/perception-toolkit/tree/master/demo/artifact-map).
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="found-target.png"
-       alt="The default interface is available by using just the linked data." class="screenshot"
-       width="300">
-  <figcaption class="w-figcaption w-figcaption--center">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UD5t3RD9HZ7OIHVaAg31.png", alt="The default interface is available by using just the linked data.", width="300", height="518" %}
+  <figcaption>
     The default interface.
   </figcaption>
 </figure>
@@ -99,7 +97,7 @@ The file itself looks something like this:
 ## The user experience
 
 What if you want more than the default user experience? The toolkit gives you
-livecycle events, Card and Button objects for crafting the user experience
+lifecycle events, Card and Button objects for crafting the user experience
 around those events, and an easy way to style the cards. I'm going to show a
 little of this with code based losely on our [Getting
 Started](https://perceptiontoolkit.dev/getting-started/) guide.

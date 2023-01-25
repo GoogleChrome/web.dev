@@ -4,6 +4,7 @@ title: Measure performance with the RAIL model
 description: |
   RAIL model enables designers and developers to reliably target the performance optimization work that has the highest impact on user experience. Learn what goals and guidelines the RAIL model sets out and which tools you can use to achieve them.
 date: 2020-06-10
+updated: 2023-01-06
 tags:
   - performance
   - animations
@@ -21,15 +22,19 @@ thinking about performance. The model breaks down the user's experience into key
 actions (for example, tap, scroll, load) and helps you define performance goals
 for each of them.
 
+{% Aside 'important' %}
+[Core Web Vitals](/vitals/) is a newer initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web. It is the recommended approach for defining performance goals over RAIL, and has [different thresholds](/defining-core-web-vitals-thresholds/) than those detailed here.
+{% endAside %}
+
 RAIL stands for four distinct aspects of web app life cycle: response,
 animation, idle, and load. Users have different performance expectations for
 each of these contexts, so performance goals are defined based on the context
 and [UX research on how users perceive
 delays](https://www.nngroup.com/articles/response-times-3-important-limits/).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="The 4 parts of the RAIL performance model: response, animation, idle, and load.", width="800", height="290" %}
-  <figcaption class="w-figcaption">The 4 parts of the RAIL performance model
+  <figcaption>The 4 parts of the RAIL performance model
 </figcaption>
 </figure>
 
@@ -39,7 +44,7 @@ delays](https://www.nngroup.com/articles/response-times-3-important-limits/).
 Make users the focal point of your performance effort. The table below describes
 key metrics of how users perceive performance delays:
 
-<table class="w-table-wrapper">
+<table class="table-wrapper">
   <thead>
   User perception of performance delays
   </thead>
@@ -118,9 +123,9 @@ actual input handling. This effect is visualized in the diagram below which
 shows how input received during an idle task is queued, reducing the available
 processing time:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="Diagram showing how input received during an idle task is queued, reducing available input processing time to 50ms", width="800", height="400" %}
-  <figcaption class="w-figcaption">How idle tasks affect input response budget.</figcaption>
+  <figcaption>How idle tasks affect input response budget.</figcaption>
 </figure>
 
 ## Animation: produce a frame in 10&nbsp;ms
@@ -142,7 +147,7 @@ processing time:
   your chances of hitting 60&nbsp;fps.
 
 * See [Rendering
-  Performance](https://developers.google.com/web/fundamentals/performance/rendering)
+  Performance](/rendering-performance/)
   for various animation optimization strategies.
 
 {% Aside %} Recognize all the types of animations. Animations aren't just fancy
@@ -165,7 +170,7 @@ input within 50&nbsp;ms.
 
 * Use idle time to complete deferred work. For example, for the initial page
   load, load as little data as possible, then use [idle
-  time](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
+  time](https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback)
   to load the rest.
 
 * Perform work during idle time in 50&nbsp;ms or less. Any longer, and you risk
@@ -185,9 +190,9 @@ viewability](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/re
 
 * Optimize for fast loading performance relative to the device and network
   capabilities of your users. Currently, a good target for first loads is to
-  load the page and be [interactive](https://web.dev/interactive/) in [5 seconds
+  load the page and be [interactive](/tti/) in [5 seconds
   or less on mid-range mobile devices with slow 3G
-  connections](https://web.dev/performance-budgets-101/#establish-a-baseline).
+  connections](/performance-budgets-101/#establish-a-baseline).
 
 * For subsequent loads, a good target is to load the page in under 2 seconds.
 
@@ -201,8 +206,8 @@ Be aware that these targets may change over time.
 
 * Test your load performance on the mobile devices and network connections that
   are common among your users. You can use [Chrome User Experience
-  Report](https://web.dev/chrome-ux-report/) to find out the [connection
-  distribution](https://web.dev/chrome-ux-report-data-studio-dashboard/#using-the-dashboard)
+  Report](/chrome-ux-report/) to find out the [connection
+  distribution](/chrome-ux-report-data-studio-dashboard/#using-the-dashboard)
   of your users. If the data is not available for your site, [The Mobile Economy
   2019](https://www.gsma.com/mobileeconomy/) suggests that a good global
   baseline is a mid-range Android phone, such as a Moto G4, and a slow 3G
@@ -211,25 +216,28 @@ Be aware that these targets may change over time.
 
 * Keep in mind that although your typical mobile user's device might claim that
   it's on a 2G, 3G, or 4G connection, in reality the [effective connection
-  speed](https://web.dev/adaptive-serving-based-on-network-quality/#how-it-works)
+  speed](/adaptive-serving-based-on-network-quality/#how-it-works)
   is often significantly slower, due to packet loss and network variance.
 
 * [Eliminate render blocking
-  resources](https://web.dev/render-blocking-resources/).
+  resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/).
 
 * You don't have to load everything in under 5 seconds to produce the perception
-  of a complete load. Consider [lazy-loading
-  images](https://web.dev/native-lazy-loading/), [code-splitting JavaScript
-  bundles](https://web.dev/reduce-javascript-payloads-with-code-splitting/), and
-  other [optimizations suggested on web.dev](https://web.dev/fast/).
+  of a complete load. Consider [lazy loading
+  images](/browser-level-image-lazy-loading/), [code-splitting JavaScript
+  bundles](/reduce-javascript-payloads-with-code-splitting/), and
+  other [optimizations suggested on web.dev](/fast/).
 
-{% Aside %} Recognize the factors that affect page load performance:
-
-* Network speed and latency
-* Hardware (slower CPUs, for example)
-* Cache eviction
-* Differences in L2/L3 caching
-* Parsing JavaScript {% endAside %}
+{% Aside %}
+<p>Recognize the factors that affect page load performance:</p>
+<ul>
+<li>Network speed and latency</li>
+<li>Hardware (slower CPUs, for example)</li>
+<li>Cache eviction</li>
+<li>Differences in L2/L3 caching</li>
+<li>Parsing JavaScript</li>
+</ul>
+{% endAside %}
 
 ## Tools for measuring RAIL
 
@@ -239,64 +247,64 @@ prefer.
 
 ### Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 provides in-depth analysis on everything that happens while your page loads or
 runs. See [Get Started With Analyzing Runtime
-Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)
+Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 to get familiar with the **Performance** panel UI.
 
 The following DevTools features are especially relevant:
 
 * [Throttle your
-  CPU](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#cpu-throttle)
+  CPU](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#cpu-throttle)
   to simulate a less-powerful device.
 
 * [Throttle the
-  network](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network-throttle)
+  network](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network-throttle)
   to simulate slower connections.
 
 * [View main thread
-  activity](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main)
+  activity](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#main)
   to view every event that occurred on the main thread while you were recording.
 
 * [View main thread activities in a
-  table](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#activities)
+  table](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#activities)
   to sort activities based on which ones took up the most time.
 
 * [Analyze frames per second
-  (FPS)](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#fps)
+  (FPS)](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#fps)
   to measure whether your animations truly run smoothly.
 
 * [Monitor CPU usage, JS heap size, DOM nodes, layouts per second, and
-  more](https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor)
+  more](https://developer.chrome.com/blog/new-in-devtools-64/#perf-monitor)
   in real-time with the **Performance Monitor**.
 
 * [Visualize network
-  requests](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network)
+  requests](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network)
   that occurred while you were recording with the **Network** section.
 
 * [Capture screenshots while
-  recording](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#screenshots)
+  recording](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#screenshots)
   to play back exactly how the page looked while the page loaded, or an
   animation fired, and so on.
 
 * [View
-  interactions](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#interactions)
+  interactions](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#interactions)
   to quickly identify what happened on a page after a user interacted with it.
 
 * [Find scroll performance issues in
-  real-time](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#scrolling-performance-issues)
+  real-time](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#scrolling-performance-issues)
   by highlighting the page whenever a potentially problematic listener fires.
 
 * [View paint events in
-  real-time](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-flashing)
+  real-time](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-flashing)
   to identify costly paint events that may be harming the performance of your
   animations.
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) is available in
-Chrome DevTools,  at [web.dev/measure](https://web.dev/measure/), as a
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is available in
+Chrome DevTools,  at [PageSpeed Insights](https://pagespeed.web.dev/), as a
 Chrome Extension, as a Node.js module, and within WebPageTest. You give it a
 URL, it simulates a mid-range device with a slow 3G connection, runs a series of
 audits on the page, and then gives you a report on load performance, as well as
@@ -307,51 +315,51 @@ The following audits are especially relevant:
 **Response**
 
 * [Max Potential First Input
-  Delay](https://web.dev/lighthouse-max-potential-fid/). Estimates how long your
+  Delay](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). Estimates how long your
   app will take to respond to user input, based on main thread idle time.
 
 * [Does not use passive listeners to improve scrolling
-  performance](https://web.dev/uses-passive-event-listeners/).
+  performance](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/).
 
-* [Total Blocking Time](https://web.dev/lighthouse-total-blocking-time/).
+* [Total Blocking Time](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/).
   Measures the total amount of time that a page is blocked from responding to
   user input, such as mouse clicks, screen taps, or keyboard presses.
 
 * [Time To
-  Interactive](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive).
+  Interactive](https://developer.chrome.com/docs/lighthouse/performance/interactive/).
   Measures when a user can consistently interact with all page elements.
 
 **Load**
 
 * [Does not register a service worker that controls page and
-  start_url](https://web.dev/service-worker/). A service worker can cache common
+  start_url](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/). A service worker can cache common
   resources on a user's device, reducing time spent fetching resources over the
   network.
 
 * [Page load is not fast enough on mobile
-  networks](https://web.dev/load-fast-enough-for-pwa/).
+  networks](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
 
 * [Eliminate render-blocking
-  resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).
+  resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/).
 
-* [Defer offscreen images](https://web.dev/offscreen-images/). Defer the loading
+* [Defer offscreen images](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/). Defer the loading
   of offscreen images until they're needed.
 
-* [Properly size images](https://web.dev/uses-responsive-images/). Don't serve
+* [Properly size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/). Don't serve
   images that are significantly larger than the size that's rendered in the
   mobile viewport.
 
-* [Avoid chaining critical requests](https://web.dev/critical-request-chains/).
+* [Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-* [Does not use HTTP/2 for all of its resources](https://web.dev/uses-http2/).
+* [Does not use HTTP/2 for all of its resources](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
-* [Efficiently encode images](https://web.dev/uses-optimized-images/).
+* [Efficiently encode images](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 
-* [Enable text compression](https://web.dev/uses-text-compression/).
+* [Enable text compression](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/).
 
-* [Avoid enormous network payloads](https://web.dev/total-byte-weight/).
+* [Avoid enormous network payloads](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/).
 
-* [Avoid an excessive DOM size](https://web.dev/dom-size/). Reduce network bytes
+* [Avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/). Reduce network bytes
   by only shipping DOM nodes that are needed for rendering the page.
 
 ### WebPageTest

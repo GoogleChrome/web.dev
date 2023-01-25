@@ -22,6 +22,7 @@
   box-sizing: border-box;
   color: $GREY_900;
   display: block;
+  font: inherit;
   font-size: 14px;
   height: 32px;
   line-height: 30px;
@@ -56,5 +57,10 @@
       0 5px 5px -3px rgba($BLACK, .2),
       0 8px 10px 1px rgba($BLACK, .14),
       0 3px 14px 2px rgba($BLACK, .12);
+  }
+
+  &.w-chip__active {
+    background-color: rgba($BLACK, .16);
+    border: 1px solid rgba($GREY_900, .43);
   }
 }

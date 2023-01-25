@@ -30,4 +30,14 @@ module.exports = [
       and more.`,
     thumbnail: '/images/podcasts/state-of-the-web.jpg',
   },
+  {
+    title: 'Search Off The Record',
+    url: 'https://search-off-the-record.libsyn.com/',
+    description: `Search Off the Record takes you behind the scenes of Google Search
+      and its inner workings. The folks from the Search Relations
+      team will give you background info on the decision-making behind launches, 
+      and the projects Google Search teams are working on. They will share fun stories
+      as well as their working life at Google and discussions in the SEO community.`,
+    thumbnail: '/images/podcasts/search-off-the-record.jpg',
+  },
 ];

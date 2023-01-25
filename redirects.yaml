@@ -13,241 +13,772 @@
 # "/foo/index.html", the static file will always win.
 
 redirects:
+  # Policies
 
-# Policies
+  - source: /policies
+    destination: https://policies.google.com/
 
-- source: /policies
-  destination: https://policies.google.com/
+  # Newsletter
 
-# Newsletter
+  - source: /subscribe
+    destination: /newsletter
 
-- source: /subscribe
-  destination: /newsletter
+  # Pre-v1 redirects
 
-# Pre-v1 redirects
+  - source: /fast/using-lighthouse-ci-to-set-a-performance-budget
+    destination: /fast/using-lighthouse-bot-to-set-a-performance-budget
 
-- source: /fast/using-lighthouse-ci-to-set-a-performance-budget
-  destination: /fast/using-lighthouse-bot-to-set-a-performance-budget
+  - source: /fast/defer-unused-css
+    destination: /fast/defer-non-critical-css
 
-- source: /fast/defer-unused-css
-  destination: /fast/defer-non-critical-css
+  # Pre-v1 codelabs
 
-# Pre-v1 codelabs
+  - source: /reliable/http-cache/codelab-http-cache
+    destination: /codelab-http-cache
 
-- source: /reliable/http-cache/codelab-http-cache
-  destination: /codelab-http-cache
+  - source: /fast/serve-images-webp/codelab-serve-images-webp
+    destination: /codelab-serve-images-webp
 
-- source: /fast/serve-images-webp/codelab-serve-images-webp
-  destination: /codelab-serve-images-webp
+  - source: /security
+    destination: /secure
 
-- source: /fast/remove-unused-code/codelab-remove-unused-code
-  destination: /codelab-remove-unused-code
+  - source: /fast/remove-unused-code/codelab-remove-unused-code
+    destination: /codelab-remove-unused-code
 
-- source: /fast/serve-responsive-images/codelab-art-direction
-  destination: /codelab-art-direction
+  - source: /fast/serve-responsive-images/codelab-art-direction
+    destination: /codelab-art-direction
 
-- source: /fast/serve-responsive-images/codelab-art-direction
-  destination: /codelab-art-direction
+  - source: /fast/serve-responsive-images/codelab-art-direction
+    destination: /codelab-art-direction
 
-- source: /secure/same-origin-policy/codelab-same-origin-fetch
-  destination: /codelab-same-origin-fetch
+  - source: /secure/same-origin-policy/codelab-same-origin-fetch
+    destination: /codelab-same-origin-fetch
 
-- source: /secure/same-origin-policy/codelab-same-origin-iframe
-  destination: /codelab-same-origin-iframe
+  - source: /secure/same-origin-policy/codelab-same-origin-iframe
+    destination: /codelab-same-origin-iframe
 
-- source: /fast/avoid-invisible-text/codelab-avoid-invisible-text
-  destination: /codelab-avoid-invisible-text
+  - source: /fast/avoid-invisible-text/codelab-avoid-invisible-text
+    destination: /codelab-avoid-invisible-text
 
-- source: /fast/preload-critical-assets/codelab-preload-web-fonts
-  destination: /codelab-preload-web-fonts
+  - source: /fast/preload-critical-assets/codelab-preload-web-fonts
+    destination: /codelab-preload-web-fonts
 
-- source: /fast/serve-responsive-images/codelab-density-descriptors
-  destination: /codelab-density-descriptors
+  - source: /fast/serve-responsive-images/codelab-density-descriptors
+    destination: /codelab-density-descriptors
 
-- source: /discoverable/fix-http-status-codes/codelab-fix-sneaky-404
-  destination: /codelab-fix-sneaky-404
+  - source: /discoverable/fix-http-status-codes/codelab-fix-sneaky-404
+    destination: /codelab-fix-sneaky-404
 
-- source: /installable/discover-installable/codelab-make-installable
-  destination: /codelab-make-installable
+  - source: /installable/discover-installable/codelab-make-installable
+    destination: /codelab-make-installable
 
-- source: /fast/use-imagemin-to-compress-images/codelab-imagemin-gulp
-  destination: /codelab-imagemin-gulp
+  - source: /fast/use-imagemin-to-compress-images/codelab-imagemin-gulp
+    destination: /codelab-imagemin-gulp
 
-- source: /fast/use-imagemin-to-compress-images/codelab-imagemin-grunt
-  destination: /codelab-imagemin-grunt
+  - source: /fast/use-imagemin-to-compress-images/codelab-imagemin-grunt
+    destination: /codelab-imagemin-grunt
 
-- source: /fast/preload-critical-assets/codelab-preload-critical-assets
-  destination: /codelab-preload-critical-assets
+  - source: /fast/preload-critical-assets/codelab-preload-critical-assets
+    destination: /codelab-preload-critical-assets
 
-- source: /fast/replace-gifs-with-videos/codelab-replace-gifs-with-video
-  destination: /codelab-replace-gifs-with-video
+  - source: /fast/replace-gifs-with-videos/codelab-replace-gifs-with-video
+    destination: /codelab-replace-gifs-with-video
 
-- source: /fast/use-imagemin-to-compress-images/codelab-imagemin-webpack
-  destination: /codelab-imagemin-webpack
+  - source: /fast/use-imagemin-to-compress-images/codelab-imagemin-webpack
+    destination: /codelab-imagemin-webpack
 
-- source: /reliable/service-workers-cache-storage/codelab-service-workers
-  destination: /codelab-service-workers
+  - source: /reliable/service-workers-cache-storage/codelab-service-workers
+    destination: /codelab-service-workers
 
-- source: /fast/serve-modern-code-to-modern-browsers/codelab-serve-modern-code
-  destination: /codelab-serve-modern-code
+  - source: /fast/serve-modern-code-to-modern-browsers/codelab-serve-modern-code
+    destination: /codelab-serve-modern-code
 
-- source: /fast/serve-responsive-images/codelab-specifying-multiple-slot-widths
-  destination: /codelab-specifying-multiple-slot-widths
+  - source: /fast/serve-responsive-images/codelab-specifying-multiple-slot-widths
+    destination: /codelab-specifying-multiple-slot-widths
 
-- source: /fast/reduce-javascript-payloads-with-code-splitting/codelab-code-splitting
-  destination: /codelab-code-splitting
+  - source: /fast/reduce-javascript-payloads-with-code-splitting/codelab-code-splitting
+    destination: /codelab-code-splitting
 
-- source: /reliable/identify-resources-via-network-panel/codelab-explore-network-panel
-  destination: /codelab-explore-network-panel
+  - source: /reliable/identify-resources-via-network-panel/codelab-explore-network-panel
+    destination: /codelab-explore-network-panel
 
-- source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression
-  destination: /codelab-text-compression
+  - source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression
+    destination: /codelab-text-compression
 
-- source: /fast/use-lazysizes-to-lazyload-images/codelab-use-lazysizes-to-lazyload-images
-  destination: /codelab-use-lazysizes-to-lazyload-images
+  - source: /fast/use-lazysizes-to-lazyload-images/codelab-use-lazysizes-to-lazyload-images
+    destination: /codelab-use-lazysizes-to-lazyload-images
 
-- source: /fast/serve-images-with-correct-dimensions/codelab-serve-images-correct-dimensions
-  destination: /codelab-serve-images-correct-dimensions
+  - source: /fast/serve-images-with-correct-dimensions/codelab-serve-images-correct-dimensions
+    destination: /codelab-serve-images-correct-dimensions
 
-- source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli
-  destination: /codelab-text-compression-brotli
+  - source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli
+    destination: /codelab-text-compression-brotli
 
-- source: /fast/incorporate-performance-budgets-into-your-build-tools/codelab-setting-performance-budgets-with-webpack
-  destination: /codelab-setting-performance-budgets-with-webpack
+  - source: /fast/incorporate-performance-budgets-into-your-build-tools/codelab-setting-performance-budgets-with-webpack
+    destination: /codelab-setting-performance-budgets-with-webpack
 
-# Redirect all pre-v1 paths to the project root.
-# Before: web.dev/fast/remove-unused-code
-# After: web.dev/remove-unused-code
+  # Redirect all pre-v1 paths to the project root.
+  # Before: web.dev/fast/remove-unused-code
+  # After: web.dev/remove-unused-code
 
-- source: /accessible/:part
-  destination: /:part
+  - source: /accessible/:part
+    destination: /:part
 
-- source: /discoverable/:part
-  destination: /:part
+  - source: /discoverable/:part
+    destination: /:part
 
-- source: /fast/:part
-  destination: /:part
+  - source: /fast/:part
+    destination: /:part
 
-- source: /installable/:part
-  destination: /:part
+  - source: /installable/:part
+    destination: /:part
 
-- source: /reliable/:part
-  destination: /:part
+  - source: /reliable/:part
+    destination: /:part
 
-- source: /secure/:part
-  destination: /:part
+  - source: /secure/:part
+    destination: /:part
 
-# Some Google search results indexed the page with `en/`, so we'll redirect it for now
-- source: /en/:part
-  destination: /:part
+  # Some Google search results indexed the page with `en/`, so we'll redirect it for now
+  - source: /en/:part
+    destination: /:part
 
-# Redirect duplicative /discoverable URLs to /lighthouse-seo
+  # Redirect duplicative /discoverable URLs to /lighthouse-seo
 
-- source: /write-descriptive-text
-  destination: /lighthouse-seo
+  - source: /write-descriptive-text
+    destination: /lighthouse-seo
 
-- source: /tell-search-translated-pages-equal
-  destination: /hreflang
+  - source: /tell-search-translated-pages-equal
+    destination: /hreflang
 
-- source: /tell-search-engine-canonical-url
-  destination: /canonical
+  - source: /tell-search-engine-canonical-url
+    destination: /canonical
 
-- source: /remove-code-blocking-indexing
-  destination: /is-crawlable
+  - source: /remove-code-blocking-indexing
+    destination: /is-crawlable
+  - source: /is-crawable
+    destination: /is-crawlable
 
-- source: /fix-http-status-codes
-  destination: /http-status-code
+  - source: /fix-http-status-codes
+    destination: /http-status-code
 
-- source: /remove-browser-plugins
-  destination: /plugins
+  - source: /remove-browser-plugins
+    destination: /plugins
 
-- source: /fix-robot-errors
-  destination: /robots-txt
+  - source: /fix-robot-errors
+    destination: /robots-txt
 
-- source: /fix-small-fonts
-  destination: /font-size
+  - source: /fix-small-fonts
+    destination: /font-size
 
-- source: /fix-viewport-tag
-  destination: /viewport
+  - source: /fix-viewport-tag
+    destination: /viewport
 
-# Redirect older metrics docs
+  # Redirect older metrics docs
 
-- source: /layout-instability-api
-  destination: /cls
+  - source: /layout-instability-api
+    destination: /cls
 
-- source: /largest-contentful-paint
-  destination: /lcp
+  - source: /largest-contentful-paint
+    destination: /lcp
 
-- source: /web-vitals
-  destination: /vitals
+  - source: /web-vitals
+    destination: /vitals
 
-# Redirects Progressive Web App content
+  - source: /si
+    destination: /speed-index
 
-- source: /pwa
-  destination: /progressive-web-apps/
+  # Redirects Progressive Web App content
 
-- source: /installable
-  destination: /progressive-web-apps/#installable
+  - source: /pwa
+    destination: /progressive-web-apps/
 
-- source: /discover-installable
-  destination: /progressive-web-apps/#installable
+  - source: /installable
+    destination: /progressive-web-apps/#make-it-installable
 
-# Redirect for spec name changes
+  - source: /discover-installable
+    destination: /progressive-web-apps/#make-it-installable
 
-- source: /sms-receiver-api-announcement
-  destination: /web-otp
+  - source: /progressive-web-apps/#installable
+    destination: /progressive-web-apps/#make-it-installable
 
-# Redirect /payments content
+  - source: /push-notifications/
+    destination: /push-notifications-overview/
 
-- source: /android-payment-apps-overview
-  destination: /android-payment-app-developers-guide
+  # Redirect for spec name changes
 
-# Redirect for misconfigured Lighthouse report
+  - source: /sms-receiver-api-announcement
+    destination: /web-otp
 
-- source: /image-size-responsive
-  destination: /image-aspect-ratio
+  # Redirect /payments content
 
-# Redirects for Handbook refactors
+  - source: /android-payment-apps-overview
+    destination: /android-payment-app-developers-guide
 
-- source: /handbook/tags
-  destination: /handbook/yaml-front-matter/#tags
+  - source: /payment-request-basic-card-deprecation
+    destination: https://chromestatus.com/feature/5730051011117056
 
-# Redirect to unified clipobard article
+  # Redirect for misconfigured Lighthouse report
 
-- source: /image-support-for-async-clipboard
-  destination: /async-clipboard
+  - source: /image-size-responsive
+    destination: /image-aspect-ratio
 
-# Redirect for renamed Native File System API
-- source: /native-file-system
-  destination: /file-system-access
-- source: /browser-nativefs
-  destination: /browser-fs-access
+  # Redirect for misconfigured Lighthouse report
 
-# Redirect to follow consistent Fugu API naming scheme
+  # Redirects for Handbook refactors
 
-- source: /wakelock
-  destination: /wake-lock
+  - source: /handbook/tags
+    destination: /handbook/yaml-front-matter/#tags
 
-# Redirects for performance content
+  # Redirect to unified clipobard article
 
-- source: /native-lazy-loading
-  destination: /browser-level-image-lazy-loading
+  - source: /image-support-for-async-clipboard
+    destination: /async-clipboard
 
-# Redirects for vanity URLs
-- source: /scale-on-web
-  destination: /tags/scale-on-web
+  # Redirect for renamed Native File System API
+  - source: /native-file-system
+    destination: /file-system-access
+  - source: /browser-nativefs
+    destination: /browser-fs-access
 
-# Redirect for the renamed WebTransport API.
-- source: /quictransport
-  destination: /webtransport
+  # Redirect to follow consistent Fugu API naming scheme
 
-# Redirect for consolidated Lighthouse audit for a11y names.
-- source: /aria-toggle-field-name
-  destination: /aria-name
-- source: /aria-input-field-name
-  destination: /aria-name
+  - source: /wakelock
+    destination: /wake-lock
 
-# Temporary redirect for CORS-RFC1918 guidance on DevTools.
-# Remove once the actual article is published.
-- source: /cors-rfc1918-guide
-  destination: /cors-rfc1918-feedback
+  # Redirects for performance content
+
+  - source: /native-lazy-loading
+    destination: /browser-level-image-lazy-loading
+
+  # Redirects for vanity URLs
+  - source: /scale-on-web
+    destination: /tags/scale-on-web
+
+  # Redirect for the renamed WebTransport API.
+  - source: /quictransport
+    destination: /webtransport
+
+  # Redirect for consolidated Lighthouse audit for a11y names.
+  - source: /aria-toggle-field-name
+    destination: /aria-name
+  - source: /aria-input-field-name
+    destination: /aria-name
+
+  # Temporary redirect for CORS-RFC1918 guidance on DevTools.
+  # Remove once the actual article is published.
+  - source: /cors-rfc1918-guide
+    destination: /cors-rfc1918-feedback
+
+  # Redirect for style guide alignment
+  - source: /debugging-layout-shifts
+    destination: /debug-layout-shifts
+
+  # Vanity urls for Learn CSS course
+  - source: /learncss
+    destination: /learn/css
+
+  - source: /learnCSS
+    destination: /learn/css
+
+  # Changes for upcoming video...
+  - source: /whats-new-web-vitals-2021
+    destination: /vitals
+    type: 302
+
+  # Redirect for security headers quick reference.
+  - source: /security-headers-cheat-sheet
+    destination: /security-headers
+
+  # Redirects for Media content
+  - source: /media-cheat-sheet
+    destination: /media-conversion
+  - source: /media-eme-basics
+    destination: /media-eme
+  - source: /capturing-images
+    destination: /media-capturing-images
+
+  # Redirects to https://developer.chrome.com/.
+  - source: /browser-flags
+    destination: https://developer.chrome.com/blog/browser-flags/
+  - source: /third-party-origin-trials
+    destination: https://developer.chrome.com/blog/third-party-origin-trials/
+  - source: /fugu-status
+    destination: https://developer.chrome.com/blog/fugu-status/
+  - source: /conversion-measurement
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
+  - source: /using-conversion-measurement
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
+  - source: /origin-trials
+    destination: https://developer.chrome.com/docs/web-platform/origin-trials/
+  - source: /launch-handler
+    destination: https://developer.chrome.com/docs/web-platform/launch-handler/
+  - source: /gpu
+    destination: https://developer.chrome.com/docs/web-platform/webgpu/
+  - source: /webgpu
+    destination: https://developer.chrome.com/docs/web-platform/webgpu/
+  - source: /storage-foundation
+    destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
+  - source: /app-history-api
+    destination: https://developer.chrome.com/docs/web-platform/navigation-api/
+  - source: /fetch-upload-streaming
+    destination: https://developer.chrome.com/articles/fetch-streaming-requests/
+  - source: /compute-pressure
+    destination: https://developer.chrome.com/docs/web-platform/compute-pressure/
+  - source: /declarative-link-capturing
+    destination: https://developer.chrome.com/docs/web-platform/declarative-link-capturing/
+  - source: /handwriting-recognition
+    destination: https://developer.chrome.com/docs/web-platform/handwriting-recognition/
+  - source: /virtualkeyboard
+    destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
+  - source: /workingoffthegrid
+    destination: https://developer.chrome.com/docs/workbox/service-worker-overview/
+  - source: /bluetooth
+    destination: https://developer.chrome.com/articles/bluetooth/
+  - source: /usb
+    destination: https://developer.chrome.com/articles/usb/
+  - source: /periodic-background-sync
+    destination: https://developer.chrome.com/articles/periodic-background-sync/
+  - source: /eyedropper
+    destination: https://developer.chrome.com/articles/eyedropper/
+  - source: /cors-rfc1918-feedback
+    destination: https://developer.chrome.com/articles/cors-rfc1918-feedback/
+  - source: /file-handling
+    destination: https://developer.chrome.com/articles/file-handling/
+  - source: /hid
+    destination: https://developer.chrome.com/articles/hid/
+  - source: /isinputpending
+    destination: https://developer.chrome.com/articles/isinputpending/
+  - source: /webcodecs
+    destination: https://developer.chrome.com/articles/webcodecs
+  - source: /mediastreamtrack-insertable-media-processing
+    destination:  https://developer.chrome.com/articles/mediastreamtrack-insertable-media-processing/
+  - source: /pwa-url-handler
+    destination: https://developer.chrome.com/articles/pwa-url-handler/
+  - source: /reporting-api-migration
+    destination: https://developer.chrome.com/articles/reporting-api-migration/
+  - source: /reporting-api
+    destination: https://developer.chrome.com/articles/reporting-api/
+  - source: /urlpattern
+    destination: https://developer.chrome.com/articles/urlpattern/
+  - source: /contact-picker
+    destination: https://developer.chrome.com/articles/contact-picker/
+  - source: /multi-screen-window-placement
+    destination: https://developer.chrome.com/articles/multi-screen-window-placement/
+  - source: /shape-detection
+    destination: https://developer.chrome.com/articles/shape-detection/
+  - source: /url-protocol-handler
+    destination: https://developer.chrome.com/articles/url-protocol-handler/
+  - source: /websocketstream
+    destination: https://developer.chrome.com/articles/websocketstream/
+  - source: /web-share-target
+    destination: https://developer.chrome.com/articles/web-share-target/
+  - source: /local-fonts
+    destination: https://developer.chrome.com/articles/local-fonts/
+  - source: /notification-triggers
+    destination: https://developer.chrome.com/docs/web-platform/notification-triggers/
+  - source: /badging-api
+    destination:  https://developer.chrome.com/articles/badging-api/
+  - source: /content-indexing-api
+    destination:  https://developer.chrome.com/articles/content-indexing-api/
+  - source: /generic-sensor
+    destination:  https://developer.chrome.com/articles/generic-sensor/
+  - source: /idle-detection
+    destination:  https://developer.chrome.com/articles/idle-detection/
+  - source: /keyboard-lock
+    destination:  https://developer.chrome.com/articles/keyboard-lock/
+  - source: /reporting-observer
+    destination:  https://developer.chrome.com/articles/reporting-observer/
+  - source: /serial
+    destination:  https://developer.chrome.com/articles/serial/
+  - source: /wake-lock
+    destination:  https://developer.chrome.com/articles/wake-lock/
+  - source: /user-agent-client-hints
+    destination: https://developer.chrome.com/articles/user-agent-client-hints/
+  - source: /browser-fs-access
+    destination: https://developer.chrome.com/articles/browser-fs-access/
+  - source: /display-override
+    destination: https://developer.chrome.com/articles/display-override/
+  - source: /file-system-access
+    destination: https://developer.chrome.com/articles/file-system-access/
+  - source: /user-agent-client-hints
+    destination: https://developer.chrome.com/articles/user-agent-client-hints/
+
+  # Redirect for Aurora
+  - source: /aurora
+    destination: https://developer.chrome.com/blog/introducing-aurora/
+  - source: /introducing-aurora
+    destination: https://developer.chrome.com/blog/introducing-aurora/
+  - source: /inp-in-frameworks
+    destination: https://developer.chrome.com/blog/inp-in-frameworks/
+  - source: /script-component
+    destination: https://developer.chrome.com/blog/script-component/
+  - source: /image-component
+    destination: https://developer.chrome.com/blog/image-component/
+  - source: /aurora-resource-inlining
+    destination: https://developer.chrome.com/blog/aurora-resource-inlining/
+  - source: /conformance
+    destination: https://developer.chrome.com/blog/conformance/
+  - source: /tags/aurora-project
+    destination: https://developer.chrome.com/tags/aurora-project/
+
+  # Design system
+  - source: /design-system/component/action
+    destination: /design-system/component/fab
+
+  # web.dev LIVE 2020 event
+  - source: /live
+    destination: /shows/web-dev-live-day-1
+
+  # Redirects old vitals tooling workflow doc to the updated doc
+  - source: /vitals-tools-workflow
+    destination: /vitals-tools
+
+  # Redirects Extending Workbox post to the Using Plugins doc on d.c.c.
+  - source: /extending-workbox
+    destination: https://developer.chrome.com/docs/workbox/using-plugins/
+
+  # Redirects lazysizes post to the browser-level lazy loading post
+  - source: /use-lazysizes-to-lazyload-images
+    destination: /browser-level-image-lazy-loading/
+
+  # Redirects an old performance guides to more recent documentation
+  - source: /performance-get-started/
+    destination: /fast/
+  - source: /performance-get-started-graphicalcontent-4/
+    destination: /choose-the-right-image-format/
+  - source: /performance-get-started-httpcaching-6/
+    destination: /http-cache/
+  - source: /performance-get-started-httprequests-5/
+    destination: /optimizing-content-efficiency-eliminate-downloads/
+  - source: /performance-get-started-textcontent-3/
+    destination: /optimizing-content-efficiency-optimize-encoding-and-transfer/
+  - source: /performance-get-started-wrapup-7/
+    destination: /fast/
+  - source: /speed-txt-compression/
+    destination: /reduce-network-payloads-using-text-compression/
+  - source: /webperformance-basics/
+    destination: /navigation-and-resource-timing/
+
+  # Redirects scrolling performance post to the Intersection Observer post
+  - source: /speed-scrolling/
+    destination: /intersectionobserver/
+
+  # Redirects for outdated usage of "Web Vitals"
+  - source: /learn-web-vitals/
+    destination: /learn-core-web-vitals/
+  - source: /debug-web-vitals-in-the-field/
+    destination: /debug-performance-in-the-field/
+
+  # Redirects for patterns
+  - source: /patterns/advanced-apps/audio-effects/demo.html
+    destination: /patterns/media/audio-effects/demo.html
+  - source: /patterns/advanced-apps/audio-effects
+    destination: /patterns/media/audio-effects
+
+  # Redirects for Lighthouse performance content.
+  - source: /lighthouse-performance
+    destination: https://developer.chrome.com/docs/lighthouse/performance/
+  - source: /performance-scoring
+    destination: https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/
+  - source: /bootup-time
+    destination: https://developer.chrome.com/docs/lighthouse/performance/bootup-time/
+  - source: /critical-request-chains
+    destination: https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/
+  - source: /dom-size
+    destination: https://developer.chrome.com/docs/lighthouse/performance/dom-size/
+  - source: /efficient-animated-content
+    destination: https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/
+  - source: /first-contentful-paint
+    destination: https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/
+  - source: /first-cpu-idle
+    destination: https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/
+  - source: /first-meaningful-paint
+    destination: https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/
+  - source: /font-display
+    destination: https://developer.chrome.com/docs/lighthouse/performance/font-display/
+  - source: /interactive
+    destination: https://developer.chrome.com/docs/lighthouse/performance/interactive/
+  - source: /lighthouse-largest-contentful-paint
+    destination: https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/
+  - source: /lighthouse-max-potential-fid
+    destination: https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/
+  - source: /lighthouse-total-blocking-time
+    destination: https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/
+  - source: /mainthread-work-breakdown
+    destination: https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/
+  - source: /non-composited-animations
+    destination: https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/
+  - source: /offscreen-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/
+  - source: /redirects
+    destination: https://developer.chrome.com/docs/lighthouse/performance/redirects/
+  - source: /render-blocking-resources
+    destination: https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/
+  - source: /resource-summary
+    destination: https://developer.chrome.com/docs/lighthouse/performance/resource-summary/
+  - source: /speed-index
+    destination: https://developer.chrome.com/docs/lighthouse/performance/speed-index/
+  - source: /third-party-facades
+    destination: https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/
+  - source: /third-party-summary
+    destination: https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/
+  - source: /time-to-first-byte
+    destination: https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/
+  - source: /total-byte-weight
+    destination: https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/
+  - source: /unminified-css
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unminified-css/
+  - source: /unminified-javascript
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/
+  - source: /unused-css-rules
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/
+  - source: /unused-javascript
+    destination: https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/
+  - source: /user-timings
+    destination: https://developer.chrome.com/docs/lighthouse/performance/user-timings/
+  - source: /uses-long-cache-ttl
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/
+  - source: /uses-optimized-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/
+  - source: /uses-rel-preconnect
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/
+  - source: /uses-rel-preload
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/
+  - source: /uses-responsive-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/
+  - source: /uses-text-compression
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/
+  - source: /uses-webp-images
+    destination: https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/
+
+
+  # Redirects for Lighthouse accessibility content.
+  - source: /lighthouse-accessibility
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/
+  - source: /accessibility-scoring
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/scoring/
+  # Redirects accessibility audits, now deferring to axe docs.
+  - source: /accesskeys
+    destination: https://dequeuniversity.com/rules/axe/4.4/accesskeys
+  - source: /bypass
+    destination: https://dequeuniversity.com/rules/axe/4.4/bypass
+  - source: /duplicate-id-active
+    destination: https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active
+  - source: /heading-order
+    destination: https://dequeuniversity.com/rules/axe/4.4/heading-order
+  - source: /tabindex
+    destination: https://dequeuniversity.com/rules/axe/4.4/tabindex
+  - source: /aria-allowed-attr
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr
+  - source: /aria-hidden-body
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body
+  - source: /aria-hidden-focus
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus
+  - source: /aria-required-attr
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-required-attr
+  - source: /aria-required-children
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-required-children
+  - source: /aria-required-parent
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-required-parent
+  - source: /aria-roles
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-roles
+  - source: /aria-valid-attr-value
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value
+  - source: /aria-valid-attr
+    destination: https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr
+  - source: /duplicate-id-aria
+    destination: https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria
+  - source: /button-name
+    destination: https://dequeuniversity.com/rules/axe/4.4/button-name
+  - source: /document-title
+    destination: https://dequeuniversity.com/rules/axe/4.4/document-title
+  - source: /form-field-multiple-labels
+    destination: https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels
+  - source: /frame-title
+    destination: https://dequeuniversity.com/rules/axe/4.4/frame-title
+  - source: /image-alt
+    destination: https://dequeuniversity.com/rules/axe/4.4/image-alt
+  - source: /input-image-alt
+    destination: https://dequeuniversity.com/rules/axe/4.4/input-image-alt
+  - source: /label
+    destination: https://dequeuniversity.com/rules/axe/4.4/label
+  - source: /link-name
+    destination: https://dequeuniversity.com/rules/axe/4.4/link-name
+  - source: /object-alt
+    destination: https://dequeuniversity.com/rules/axe/4.4/object-alt
+  - source: /color-contrast
+    destination: https://dequeuniversity.com/rules/axe/4.4/color-contrast
+  - source: /definition-list
+    destination: https://dequeuniversity.com/rules/axe/4.4/definition-list
+  - source: /dlitem
+    destination: https://dequeuniversity.com/rules/axe/4.4/dlitem
+  - source: /list
+    destination: https://dequeuniversity.com/rules/axe/4.4/list
+  - source: /listitem
+    destination: https://dequeuniversity.com/rules/axe/4.4/listitem
+  - source: /layout-table
+    destination: https://dequeuniversity.com/rules/axe/3.5/layout-table
+  - source: /td-headers-attr
+    destination: https://dequeuniversity.com/rules/axe/4.4/td-headers-attr
+  - source: /th-has-data-cells
+    destination: https://dequeuniversity.com/rules/axe/4.4/th-has-data-cells
+  - source: /meta-refresh
+    destination: https://dequeuniversity.com/rules/axe/4.4/meta-refresh
+  - source: /meta-viewport
+    destination: https://dequeuniversity.com/rules/axe/4.4/meta-viewport
+  - source: /audio-caption
+    destination: https://dequeuniversity.com/rules/axe/3.5/audio-caption
+  - source: /video-caption
+    destination: https://dequeuniversity.com/rules/axe/4.4/video-caption
+  - source: /video-description
+    destination: https://dequeuniversity.com/rules/axe/3.3/video-description
+  - source: /html-has-lang
+    destination: https://dequeuniversity.com/rules/axe/4.4/html-has-lang
+  - source: /html-lang-valid
+    destination: https://dequeuniversity.com/rules/axe/4.4/html-lang-valid
+  - source: /valid-lang
+    destination: https://dequeuniversity.com/rules/axe/4.4/valid-lang
+  - source: /aria-name
+    destination: https://dequeuniversity.com/rules/axe/4.4
+  - source: /duplicate-id
+    destination: https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active
+  - source: /heading-levels
+    destination: https://dequeuniversity.com/rules/axe/4.4/heading-order
+  # "Manual" Lighthouse accessibility audits, separate from axe docs.
+  - source: /logical-tab-order
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order/
+  - source: /focusable-controls
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls/
+  - source: /interactive-element-affordance
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/interactive-element-affordance/
+  - source: /managed-focus
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/managed-focus/
+  - source: /focus-traps
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps/
+  - source: /custom-controls-labels
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/custom-controls-labels/
+  - source: /custom-control-roles
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/custom-control-roles/
+  - source: /visual-order-follows-dom
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/visual-order-follows-dom/
+  - source: /offscreen-content-hidden
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/
+  - source: /use-landmarks
+    destination: https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/
+
+  # Redirects for Lighthouse best practices content.
+  - source: /lighthouse-best-practices
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/
+  - source: /appcache-manifest
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/appcache-manifest/
+  - source: /charset
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/charset/
+  - source: /csp-xss
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/
+  - source: /deprecations
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/deprecations/
+  - source: /doctype
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/doctype/
+  - source: /errors-in-console
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/
+  - source: /external-anchors-use-rel-noopener
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/
+  - source: /geolocation-on-start
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/
+  - source: /image-aspect-ratio
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/
+  - source: /js-libraries
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/js-libraries/
+  - source: /no-document-write
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/no-document-write/
+  - source: /no-vulnerable-libraries
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/no-vulnerable-libraries/
+  - source: /notification-on-start
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/notification-on-start/
+  - source: /password-inputs-can-be-pasted-into
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/password-inputs-can-be-pasted-into/
+  - source: /uses-http2
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/
+  - source: /uses-passive-event-listeners
+    destination: https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/
+
+  # Redirects for Lighthouse SEO content.
+  - source: /lighthouse-seo
+    destination: https://developer.chrome.com/docs/lighthouse/seo/
+  - source: /canonical
+    destination: https://developer.chrome.com/docs/lighthouse/seo/canonical/
+  - source: /font-size
+    destination: https://developer.chrome.com/docs/lighthouse/seo/font-size/
+  - source: /hreflang
+    destination: https://developer.chrome.com/docs/lighthouse/seo/hreflang/
+  - source: /http-status-code
+    destination: https://developer.chrome.com/docs/lighthouse/seo/http-status-code/
+  - source: /is-crawlable
+    destination: https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/
+  - source: /link-text
+    destination: https://developer.chrome.com/docs/lighthouse/seo/link-text/
+  - source: /meta-description
+    destination: https://developer.chrome.com/docs/lighthouse/seo/meta-description/
+  - source: /plugins
+    destination: https://developer.chrome.com/docs/lighthouse/seo/plugins/
+  - source: /robots-txt
+    destination: https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/
+  - source: /structured-data
+    destination: https://developer.chrome.com/docs/lighthouse/seo/structured-data/
+  - source: /tap-targets
+    destination: https://developer.chrome.com/docs/lighthouse/seo/tap-targets/
+
+  # Redirects for Lighthouse PWA content.
+  - source: /lighthouse-pwa
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/
+  - source: /apple-touch-icon
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/apple-touch-icon/
+  - source: /content-width
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/content-width/
+  - source: /installable-manifest
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/
+  - source: /is-on-https
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/
+  - source: /load-fast-enough-for-pwa
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/
+  - source: /maskable-icon-audit
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/
+  - source: /offline-start-url
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/offline-start-url/
+  - source: /pwa-cross-browser
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/pwa-cross-browser/
+  - source: /pwa-each-page-has-url
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/pwa-each-page-has-url/
+  - source: /pwa-page-transitions
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/pwa-page-transitions/
+  - source: /redirects-http
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/redirects-http/
+  - source: /service-worker
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/service-worker/
+  - source: /splash-screen
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/
+  - source: /themed-omnibox
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/
+  - source: /viewport
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/viewport/
+  - source: /without-javascript
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/without-javascript/
+  - source: /works-offline
+    destination: https://developer.chrome.com/docs/lighthouse/pwa/works-offline/
+
+# Redirects for blogs
+  - source: /blog/native-hardware-click-to-call
+    destination: /blog/click-to-call
+  - source: /blog/native-hardware-device-orientation
+    destination: /blog/device-orientation
+  - source: /blog/native-hardware-fullscreen
+    destination: /blog/fullscreen
+  - source: /blog/native-hardware-user-location
+    destination: /blog/user-location
+  - source: /speculative-prerendering/
+    destination: https://developer.chrome.com/blog/prerender-pages/
+  - source: /blog/javascript-async-functions
+    destination: /blog/async-functions
+  - source: /blog/enabling-https-on-your-servers
+    destination: /secure/enable-https

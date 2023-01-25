@@ -1,36 +1,108 @@
 title:
   en: Progressive Web Apps
+  es: Aplicaciones web progresivas
+  ja: プログレッシブウェブアプリ
+  ko: 프로그레시브 웹 앱
+  pt: Aplicações Web Progressivas
+  ru: Прогрессивные веб-приложения
+  zh: 渐进式 Web 应用
 
 description:
   en: Websites that took all the right vitamins.
+  es: Sitios web que cuentan con todos los elementos que se necesitan.
+  ja: すべてのビタミンを正しく摂取した Web サイト。
+  ko: 살아 생동하는 데 필요한 요소를 모두 갖춘 웹사이트.
+  pt: Sites que tomaram todas as vitaminas certas.
+  ru: Сайты, которые принимали правильные витамины.
+  zh: 采用所有正确组成要素的网站。
 
 overview:
-  en: In this collection, you'll learn what makes a Progressive Web App special, how they can affect your business, and how to build them.
+  en: <p>In this collection, you'll learn what makes a Progressive Web App special, how they can affect your business, and how to build them.</p><p>For a course that breaks down every aspect of modern progressive web app development, check out <a href="/learn/pwa/">Learn PWA</a>.</p>
+  es: En esta colección, aprenderá qué hace especial a una aplicación web progresiva, cómo pueden afectar a su empresa y cómo crearlas.
+  ja: このコレクションでは、プログレッシブウェブアプリの特徴、ビジネスに与える影響、構築方法について説明します。
+  ko: 이 컬렉션에서는 프로그레시브 웹 앱을 특별하게 만드는 요소, 이것이 비즈니스에 미치는 영향과 구축 방법을 알아봅니다.
+  pt: Nesta coleção, você aprenderá o que torna especial uma Aplicação Web Progressiva, como elas podem afetar sua empresa e como construí-las.
+  ru: В этой серии вы узнаете об уникальных особенностях прогрессивных веб-приложений, об их преимуществах для бизнеса и о процессе их создания.
+  zh: 在本系列文章中，您将了解渐进式 Web 应用的特点、这些特点对您业务的影响，以及如何构建这些特点。
 
 topics:
   introduction:
     en: Introduction
+    es: Introducción
+    ja: はじめに
+    ko: 소개
+    pt: Introdução
+    ru: Введение
+    zh: 介绍
 
   make_it_installable:
     en: Make it installable
+    es: Haga que pueda instalarse
+    ja: インストール可能にする
+    ko: 설치 가능하게 만들기
+    pt: Faça com que seja instalável
+    ru: Обеспечение возможности установки
+    zh: 使其可安装
 
   provide_an_installable_experience:
     en: Provide an installable experience
+    es: Proporcione una experiencia que pueda instalarse
+    ja: インストール可能なエクスペリエンスを提供する
+    ko: 설치 가능한 경험 제공
+    pt: Forneça uma experiência instalável
+    ru: Как обеспечить возможность установки
+    zh: 提供可安装的体验
 
   codelabs:
     en: Codelabs
+    es: Codelabs
+    ja: Codelabs
+    ko: Codelabs
+    pt: Codelabs
+    ru: Проекты Codelabs
+    zh: 代码实验室
 
   create_an_app_like_user_experience:
     en: Create an app-like user experience
+    es: Cree una experiencia de usuario similar a la de una aplicación
+    ja: アプリのようなユーザーエクスペリエンスを作り上げる
+    ko: 앱과 같은 사용자 경험 만들기
+    pt: Crie uma experiência de usuário semelhante à de uma aplicação
+    ru: Создание интерфейса, имитирующего приложение
+    zh: 创造应用式用户体验
 
   pwa_exclusive_features:
     en: PWA-exclusive features
+    es: Funciones exclusivas de la PWA
+    ja: PWA 限定の機能
+    ko: PWA 전용 기능
+    pt: Recursos exclusivos das PWA
+    ru: Функции, эксклюзивные для PWA
+    zh: PWA 独有的功能
 
   more_ways_to_improve_your_user_experience:
     en: More ways to improve your user experience
+    es: Más formas de mejorar la experiencia del usuario
+    ja: その他のユーザーエクスペリエンス改善方法
+    ko: 사용자 경험을 개선하는 더 많은 방법
+    pt: Mais maneiras de melhorar sua experiência de usuário
+    ru: Дополнительные способы повысить удобство пользователя
+    zh: 更多改善您的用户体验的方法
 
   advanced_topics:
     en: Advanced topics
+    es: Temas avanzados
+    ja: 高度なトピック
+    ko: 고급 주제
+    pt: Tópicos avançados
+    ru: Продвинутые темы
+    zh: 高级主题
 
   case_studies:
     en: Case studies
+    es: Estudios de caso
+    ja: ケーススタディ
+    ko: 사례 연구
+    pt: Estudos de caso
+    ru: Разборы конкретных случаев
+    zh: 案例研究

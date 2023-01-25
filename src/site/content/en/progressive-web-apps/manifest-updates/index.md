@@ -4,8 +4,10 @@ title: How Chrome handles updates to the web app manifest
 subhead: What it takes to change icons, shortcuts, colors, and other metadata for your PWA
 authors:
   - petelepage
+  - ajara
+  - beaufortfrancois
 date: 2020-10-14
-updated: 2020-10-14
+updated: 2021-10-26
 description: What it takes to change icons, shortcuts, colors, and other metadata in your web app manifest for your PWA.
 tags:
   - progressive-web-apps
@@ -20,8 +22,8 @@ comment in [issue #4038](https://github.com/GoogleChrome/web.dev/issues/4038).
 When a PWA is installed, the browser uses information from the web app
 manifest for the app name, the icons the app should use, and the URL that
 should be opened when the app is launched. But what if you need to update
-your app name, or provide new icons? When and how are those changes reflected
-in the browser?
+app shortcuts or try a new theme color? When and how are those changes
+reflected in the browser?
 
 {% Aside 'caution' %}
 Do not change the name or location of your web app manifest file, doing so
@@ -41,23 +43,26 @@ compare it against the local copy.
 
 If select properties in the manifest have changed (see list below), Chrome
 queues the new manifest, and after all windows have been closed, installs it.
-Once installed, all fields from the new manifest (except `name`, `short_name`
-and `start_url`) are updated. If the PWA has been added to the dock on macOS,
-the icon will not update until the PWA is launched from the dock again.
+Once installed, all fields from the new manifest (except `name`, `short_name`,
+and `icons`) are updated.
 
 ### Which properties will trigger an update? {: #cr-desktop-trigger }
 
 * `display` (see below)
-* `icons`
 * `scope`
 * `shortcuts`
+* `start_url`
 * `theme_color`
-* Pixel changes to primary icon file
-* Pixel changes to splash icon file
+* `file_handlers`
 
 {% Aside 'caution' %}
-Changes to `name`, `short_name`, and `start_url` are **not** currently
-supported on desktop Chrome, though work is underway to support them.
+Changes to `name`, `short_name` and `icons` are **not**
+currently supported on desktop Chrome, though work is underway to support them.
+{% endAside %}
+
+{% Aside 'caution' %}
+Changes to the `start_url` require the manifest `id` to be set.
+[More info](https://developer.chrome.com/blog/pwa-manifest-id/)
 {% endAside %}
 
 <!-- CrBug for name/shortname https://crbug.com/1088338 -->
@@ -73,15 +78,17 @@ preference is always respected.
 
 ### Testing manifest updates {: #cr-desktop-test }
 
-The `chrome://internals/web-app` page (available in Chrome 85 or later),
+The `chrome://web-app-internals` page (available in Chrome 85 or later),
 includes detailed information about all of the PWAs installed on the device,
 and can help you understand when the manifest was last updated, how often
 it's updated, and more.
 
-To manually force Chrome to check for an updated manifest, restart Chrome
-(use `chrome://restart`), this resets the timer so that Chrome will check for
-an updated manifest when the PWA is next launched. Then launch the PWA.
-After closing the PWA, it should be updated with the new manifest properties.
+To manually force Chrome to check for an updated manifest, you can either launch
+Chrome with the [command line flag][flag] `--disable-manifest-update-throttle`
+or restart Chrome (use `about://restart`), this resets the timer so that Chrome
+will check for an updated manifest when the PWA is next launched. Then launch
+the PWA. After closing the PWA, it should be updated with the new manifest
+properties.
 
 ### References {: #cr-desktop-ref }
 
@@ -104,25 +111,24 @@ used.
 
 * `background_color`
 * `display`
-* `icons`
-* `name`
 * `orientation`
 * `scope`
 * `shortcuts`
-* `short_name`
 * `start_url`
 * `theme_color`
 * `web_share_target`
-* `maskable` value of primary icon has changed
-* File hash changes to the primary icon file
-* File hash changes to the splash icon file
 
 If Chrome is unable to get an updated manifest from the server, it may
 increase the time between checks to 30 days.
 
+{% Aside 'caution' %}
+Changes to `name`, `short_name` and `icons` are **not** currently supported
+on Android Chrome, though work is underway to support them.
+{% endAside %}
+
 ### Testing manifest updates {: #cr-android-test }
 
-The `chrome://webapks` page includes detailed information about all of the
+The `about://webapks` page includes detailed information about all of the
 PWAs installed on the device, and can tell you when the manifest was last
 updated, how often it's updated, and more.
 
@@ -132,7 +138,7 @@ local manifest do the following:
 1. Plug in the device and ensure it's connected to WiFi.
 2. Use the Android task manager to shut down the PWA, then use the App panel
    in Android settings to force stop the PWA.
-3. In Chrome, open `chrome://webapks` and click the "Update" button for the
+3. In Chrome, open `about://webapks` and click the "Update" button for the
    PWA. "Update Status" should change to "Pending".
 4. Launch the PWA, and verify it's loaded properly.
 5. Use the Android task manager to shut down the PWA, then use the App panel
@@ -145,5 +151,6 @@ The PWA usually updates within a few minutes, once the update has completed,
 
 * [`UpdateReason` enum][update-enum] for Chrome on Android
 
+[flag]: https://www.chromium.org/developers/how-tos/run-chromium-with-flags
 [updatable-manifest-doc]: https://docs.google.com/document/d/1twU_yAoTDp4seZMmqrDzJFQtrM7Z60jXHkXjMIO2VpM/preview
 [update-enum]: https://cs.chromium.org/chromium/src/chrome/browser/android/webapk/webapk.proto?l=35

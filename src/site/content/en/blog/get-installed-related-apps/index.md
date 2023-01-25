@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Is your app installed? getInstalledRelatedApps() will tell you!"
 subhead: |
   The `getInstalledRelatedApps()` method allows your website to check whether
@@ -10,7 +11,7 @@ description: |
   to check whether your iOS/Android/desktop app or PWA is installed on the
   user's device.
 date: 2018-12-20
-updated: 2021-02-23
+updated: 2021-09-16
 tags:
   - blog
   - capabilities
@@ -22,9 +23,9 @@ feedback:
 
 ## What is the getInstalledRelatedApps() API? {: #what }
 
-<figure class="w-figure w-figure--inline-right">
-  <img src="getinstalled-cropped.jpg" class="w-screenshot" width="550">
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vjamv2uyz6NxBPxPIm11.jpg", alt="", width="550", height="486" %}
+  <figcaption>
     A website using <code>getInstalledRelatedApps()</code> to determine if its
     Android app is already installed.
   </figcaption>
@@ -43,16 +44,14 @@ For example, if your app is already installed:
 * Not [promoting the installation](/customize-install/) of your PWA if your
   other app is already installed.
 
-<div class="w-clearfix"></div>
-
 To use the `getInstalledRelatedApps()` API, you need to tell your app about
 your site, then tell your site about your app. Once you've defined the
 relationship between the two, you can check if the app is installed.
 
 ### Supported app types you can check
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>App type</th>
@@ -417,6 +416,7 @@ browser vendors how critical it is to support them.
 ## Helpful links {: #helpful }
 
 * [Public explainer for `getInstalledRelatedApps()` API][explainer]
+* [Spec draft][spec]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: [`Mobile>WebAPKs`](https://chromestatus.com/features#component%3A%20Mobile%3EWebAPKs)
@@ -429,7 +429,8 @@ for testing Windows apps, and Rayan Kanso for help with the Chrome details.
 [spec]: https://wicg.github.io/get-installed-related-apps/spec/
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=895854
 [cr-status]: https://www.chromestatus.com/feature/5695378309513216
-[explainer]: https://github.com/WICG/get-installed-related-apps/blob/master/EXPLAINER.md
+[explainer]: https://github.com/WICG/get-installed-related-apps/blob/main/EXPLAINER.md
+[spec]: https://wicg.github.io/get-installed-related-apps/spec/
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-get-installed-related-apps-api/1602
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Mobile%3EWebAPKs
 [cr-dev-twitter]: https://twitter.com/chromiumdev

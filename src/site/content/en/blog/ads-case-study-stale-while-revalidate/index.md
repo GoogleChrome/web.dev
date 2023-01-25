@@ -1,4 +1,5 @@
 ---
+layout: post
 title: How Google improved ads performance with stale-while-revalidate
 subhead: |
     Find out how loading third-party resources faster can increase revenue.
@@ -16,19 +17,19 @@ tags:
   - blog
   - case-study
   - performance
-  - ads
+  # - ads
 ---
 
 This case study highlights how improving the performance of third-party resources can boost business metrics. While a [previous study](/fast-ads-matter/#fast-ads-make-you-more-money) measured the cost of added ads latency, this study demonstrates the value of a real-world performance improvement:
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">0.5<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Revenue lift for publishers</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">0.5<sub>%</sub></p>
+    <p>Revenue lift for publishers</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">2<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increase in early ad script loads</p>
+  <div class="stats__item">
+    <p class="stats__figure">2<sub>%</sub></p>
+    <p>Increase in early ad script loads</p>
   </div>
 </div>
 
@@ -66,9 +67,9 @@ Chrome rolled out `stale-while-revalidate` in version 75 to 99% of all traffic, 
 - 2% increase in early ad script loads (<500ms from the start of page load).
 - 1.1% increase in successful ad script loads overall.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ZRKz2IHKdGNTDM3WdsvX.svg", alt="Percentage point change in number of ad script loads vs. Time from page load start to ad script load (ms)", width="800", height="600" %}
-  <figcaption class="w-figcaption">Source: Google Internal Data, June to July 2019.</figcaption>
+  <figcaption>Source: Google Internal Data, June to July 2019.</figcaption>
 </figure>
 
 As shown in the chart above, the results of this experiment can be attributed to an increase in successful ad script loads, with a majority occurring early in the page load process.

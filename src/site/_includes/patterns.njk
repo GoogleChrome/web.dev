@@ -1,0 +1,29 @@
+---
+layout: landing-page
+eleventyComputed:
+  noindex: "{{ paged.index > 0 }}"
+---
+{% from 'macros/post-card.njk' import postCard with context %}
+
+<div class="region">
+  <div class="wrapper auto-grid">
+    {% for setId, set in patterns.sets %}
+      {% if (site.env == 'prod' and set.draft) or set.suite %}
+        {# Don't display draft suite cards in prod, and don't display
+          sets that have a parent suite #}
+      {% else %}
+        {{ postCard(
+          {
+            title: set.title,
+            subhead: set.description,
+            url: '/patterns/' + set.id,
+            thumbnail: set.thumbnail or set.hero or null,
+            alt: set.title + ' cover'
+          },
+          'square'
+        ) }}
+
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

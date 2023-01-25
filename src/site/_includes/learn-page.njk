@@ -1,0 +1,49 @@
+---
+layout: default-next
+title: Learn
+description: |
+  Explore our growing collection of courses on key web design and development subjects. An industry expert has written each course, helped by members of the Chrome team. Follow the modules sequentially, or dip into the topics you most want to learn about.
+pageScripts:
+  - '/js/learn.js'
+---
+{% from 'macros/icon.njk' import icon with context %}
+
+<div class="learn wide-card-index">
+  {# Hero starts #}
+  <header class="region bg-mid-bg learn__hero">
+    <div class="wrapper">
+      <div class="headline all-center flow">
+        <h1 class="headline__title">{{ title }}</h1>
+        <p>{{ 'i18n.learn.header' | i18n(locale) }}</p>
+      </div>
+    </div>
+  </header>
+  {# Hero ends #}
+
+  {# Courses start #}
+  <div class="region">
+    <div class="wrapper auto-grid learn__collection">
+      {% set coursesArr = helpers.values(courses) %}
+      {% for course in coursesArr|sort(true, false, 'meta.date') %}
+      {% if course.meta and not course.meta.draft %}
+        <a href="{{ course.meta.url }}" class="card" data-style="branded">
+          <h3 class="visually-hidden">{{ course.meta.title }}</h3>
+          <div class="card__header repel">
+            <p class="color-mid-text">Course</p>
+            <div class="counter">
+              {% set pages = collections.all | navigation(course.toc) %}
+              <span class="counter__content" aria-label="{{ pages.list.length }} {{ 'i18n.learn.resources' | i18n(locale) }}">{{ pages.list.length }}</span>
+              {{ icon('mortarboard') }}
+            </div>
+          </div>
+          <img src="{{ course.meta.card }}" alt="{{ course.meta.title }} branding" />
+          <div class="card__content flow">
+            <p class="text-size-1">{{ course.meta.description | i18n(locale) }}</p>
+          </div>
+        </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {# Courses end #}
+</div>

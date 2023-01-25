@@ -11,7 +11,7 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
+  # - angular
   - performance
 feedback:
   - api
@@ -23,7 +23,7 @@ One important metric is the size of the JavaScript shipped with your application
 
 ## Calculate your performance budget
 
-You can use [this online budget calculator](https://bit.ly/perf-budget-calculator) to estimate how much JavaScript your app can afford to load, depending on the [Time to Interactive](/interactive) you're aiming for.
+You can use [this online budget calculator](https://bit.ly/perf-budget-calculator) to estimate how much JavaScript your app can afford to load, depending on the [Time to Interactive](/tti/) you're aiming for.
 
 {% Img src="image/admin/TWPRBRI7ja8d33unYYK6.png", alt="Budget calculator", width="800", height="524" %}
 

@@ -8,7 +8,7 @@ description: |
   open web ecosystem. However, this means additional work of ensuring that all
   of the code you write is supported in each browser that you plan to target. If
   you want to use new JavaScript language features, you need to transpile these
-  features to backwards-compatible formats.  
+  features to backwards-compatible formats.
 date: 2018-11-05
 updated: 2020-06-23
 codelabs:
@@ -52,10 +52,9 @@ informed decision.
 
 ## Use @babel/preset-env
 
-Transpiling code usually results in a file that is larger than the
-original larger file sizes than their original forms. By minimizing the amount of
-compilation that you do you can reduce the size of your bundles to improve the
-performance of a web page.
+Transpiling code usually results in a file that is larger in file size than
+their original forms. By minimizing the amount of compilation that you do you
+can reduce the size of your bundles to improve the performance of a web page.
 
 Instead of including specific plugins to selectively compile certain language
 features you are using, Babel provides a number of presets that bundles plugins
@@ -115,7 +114,7 @@ them based on the target browsers specified. Although this works well, an entire
 syntax features is transformed when a targeted browser contains a bug with just a single feature.
 This often results in more transformed code than is necessary.
 
-Originally developed as a [separate preset](https://github.com/babel/preset-modules), the 
+Originally developed as a [separate preset](https://github.com/babel/preset-modules), the
 [bugfixes option](https://babeljs.io/docs/en/babel-preset-env#bugfixes) in `@babel/preset-env`
 solves this problem by converting modern syntax that is broken in some browsers to the closest
 equivalent syntax that is not broken in those browsers. The result is nearly identical modern code
@@ -147,7 +146,7 @@ also use them with `@babel/preset-env` to only target browsers that support
 them.
 
 
-Instead of querying for specific browser versions or market share, consider 
+Instead of querying for specific browser versions or market share, consider
 specifying `"esmodules" : true` inside your `.babelrc` file's `targets` field.
 
 ```json

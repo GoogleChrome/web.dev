@@ -25,7 +25,7 @@ Web apps are slow, and JavaScript is among the most expensive resources that you
 
 {% Img src="image/admin/Ex1RhD84fTzpNwYM6Ocy.png", alt="Slow web apps are stressful.", width="800", height="438" %}
 
-Lazy-loading is an efficient technique to reduce the bytes of JavaScript that you're transferring over the wire. You can use several techniques to lazy-load JavaScript, including:
+Lazy loading is an efficient technique to reduce the bytes of JavaScript that you're transferring over the wire. You can use several techniques to lazy-load JavaScript, including:
 
 - Component-level code splitting
 - Route-level code splitting

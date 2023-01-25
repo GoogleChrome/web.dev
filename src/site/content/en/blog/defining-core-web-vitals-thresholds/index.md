@@ -1,11 +1,12 @@
 ---
+layout: post
 title: Defining the Core Web Vitals metrics thresholds
 subhead: The research and methodology behind Core Web Vitals thresholds
 authors:
   - bmcquade
 description: The research and methodology behind Core Web Vitals thresholds
 date: 2020-05-21
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: The research and methodology behind Core Web Vitals thresholds
 tags:
@@ -36,16 +37,18 @@ content.
 Each Core Web Vitals metric has associated thresholds, which categorize
 performance as either "good", "needs improvement", or "poor":
 
-<div class="w-stack w-stack--center w-stack--md">
-  <img src="/vitals/lcp_ux.svg" width="400px" height="350px"
-       alt="Largest Contentful Paint threshold recommendations">
-  <img src="/vitals/fid_ux.svg" width="400px" height="350px"
-       alt="First Input Delay threshold recommendations">
-  <img src="/vitals/cls_ux.svg" width="400px" height="350px"
-       alt="Cumulative Layout Shift threshold recommendations">
+<style>
+  .cluster > img {
+    max-width: 30%;
+  }
+</style>
+<div class="cluster">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift threshold recommendations", width="400", height="350" %}
 </div>
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>
@@ -71,7 +74,8 @@ performance as either "good", "needs improvement", or "poor":
       <td>>0.25</td>
       <td>75</td>
     </tr>
-</table>
+  </table>
+</div>
 
 Additionally, to classify the overall performance of a page or site, we use the
 75th percentile value of all page views to that page or site. In other words, if
@@ -133,7 +137,7 @@ reasonable LCP "good" threshold for Core Web Vitals.
 
 When evaluating candidate Core Web Vitals "good" thresholds, we verify that
 those thresholds are achievable, based on data from the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+Report](https://developer.chrome.com/docs/crux/)
 (CrUX). To confirm that a threshold is achievable, we require that at least 10%
 of [origins](/same-site-same-origin/#origin) currently meet the "good"
 threshold. Additionally, to ensure that well-optimized sites are not
@@ -229,7 +233,7 @@ meet our candidate LCP "good" thresholds.
 
 **% of CrUX origins classified as "good" (for candidate LCP thresholds)**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>
@@ -275,7 +279,7 @@ met by most origins:
 
 **% of CrUX origins classified as "poor" (for candidate LCP thresholds)**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>
@@ -368,7 +372,7 @@ the 100ms FID "good" threshold at the 75th percentile:
 
 **% of CrUX origins classified as "good" for FID 100ms threshold**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th></th>
@@ -415,7 +419,7 @@ below.
 
 **% of CrUX origins classified as "good" (for candidate CLS thresholds)**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>
@@ -456,7 +460,7 @@ identify a threshold met by most origins:
 
 **% of CrUX origins classified as "poor" (for candidate CLS thresholds)**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>

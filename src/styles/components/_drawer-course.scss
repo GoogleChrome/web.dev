@@ -1,0 +1,148 @@
+.drawer-course {
+
+  &__contents {
+    background-color: $WHITE;
+    border-right: 1px solid $GREY_300;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 90vw;
+    width: 360px;
+  }
+
+  &__header {
+    background-image: var(--course-background);
+    background-position: top right;
+    background-repeat: no-repeat;
+    display: grid;
+    // The width of the first column ensures that the left edge of the
+    // logo stays left aligned with the page titles in the course-links
+    // section.
+    grid-template-columns: 3.25rem 1fr;
+    height: 144px;
+    padding: 24px 16px 0;
+  }
+
+  &__title {
+    height: 40px;
+    margin: auto 0 20px;
+
+    > svg {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &__heading {
+    display: block;
+    min-height: 48px;
+    padding: 16px 24px;
+  }
+
+  web-search {
+    display: block;
+    height: 48px;
+    padding: 0 var(--flow-space);
+
+    .web-search__input-wrapper {
+      display: flex;
+    }
+
+    .web-search__open-btn,
+    .web-search__close-btn,
+    &[expanded] .web-search__close-btn {
+      display: none;
+    }
+  }
+
+  .web-search-popout {
+    height: 100%;
+    padding-top: 0
+  }
+
+  &__scroll {
+    flex: 1;
+    overflow: auto;
+    // sass-lint:disable no-misspelled-properties
+    overscroll-behavior: contain;
+    position: relative;
+  }
+
+  &__links {
+    display: block; // this is a custom element so it needs display: block;
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__link {
+    --counter-color: #{$GREY_700};
+    --check-display: none;
+    @include apply-utility('weight', 'medium');
+    align-items: baseline;
+    color: $PRIMARY_TEXT_COLOR;
+    display: flex;
+    min-height: 48px;
+    padding: 16px 24px;
+    padding-left: calc(var(--nest-indent, 0) * 12px + 24px);
+
+    &:hover {
+      background-color: rgba($GREY_800, .03);
+      text-decoration: none;
+    }
+
+    &[data-complete] {
+      --check-display: block;
+      color: $GREY_700;
+
+      > [data-badge]::after {
+        content: '';
+      }
+    }
+
+    &[data-active] {
+      --counter-color: #{$WEB_PRIMARY_COLOR};
+      background: $BLUE_50;
+      color: $WEB_PRIMARY_COLOR;
+    }
+  }
+
+  &__link-counter {
+    color: var(--counter-color);
+    background-color: inherit;
+    font-size: px-to-rem(11px);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__link-title {
+    font-size: px-to-rem(14px);
+    line-height: 1.5;
+
+    &::after {
+      display: inline-block;
+      height: 0.5em;
+      margin-left: 0.6em;
+    }
+
+    &[data-badge]::after {
+      @include apply-utility('font', 'mono');
+      font-weight: 700;
+      color: $WEB_PRIMARY_COLOR;
+      content: attr(data-badge);
+      font-size: px-to-rem(11px);
+      line-height: px-to-rem(16px);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__link-check {
+    display: var(--check-display);
+    height: px-to-rem(14px);
+    margin-right: 16px;
+  }
+}

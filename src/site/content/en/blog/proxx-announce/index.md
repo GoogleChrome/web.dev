@@ -12,7 +12,7 @@ description: |
   the device is.
 tags:
   - blog
-  - PROXX
+  # - PROXX
   - games
 ---
 
@@ -24,12 +24,12 @@ works on all kinds of devices—from desktop all the way to feature phones.
 Users can play the game using a mouse, keyboard, d-pad even with a screen
 reader.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
 <video controls autoplay loop muted poster="https://storage.googleapis.com/webfundamentals-assets/proxx-announce-blogpost/poster.jpg">
   <source src="https://storage.googleapis.com/webfundamentals-assets/proxx-announce-blogpost/kaios_vp8.webm" type="video/webm; codecs=vp8">
   <source src="https://storage.googleapis.com/webfundamentals-assets/proxx-announce-blogpost/kaios_x264.mp4" type="video/mp4; codecs=h264">
 </video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
+ <figcaption>
     PROXX on a feature phone.
   </figcaption>
 </figure>
@@ -43,14 +43,13 @@ application:
 - **Accessible**: mouse, keyboard, touch, d-pad, screen readers
 - **Performant**:
   - Less than 25kb of initial payload
-  - Less than 5 seconds TTI ([time to interactive](/interactive))
+  - Less than 5 seconds TTI ([time to interactive](/tti/))
     on slow 3G
   - Consistent 60fps animation
 
-<figure class="w-figure w-figure--fullbleed">
-  <img class="w-screenshot" src="pixelbook.jpg"
-       alt="A pixelbook running PROXX" class="screenshot">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure data-size="full">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ka9f7OrsFGjsulY1QoYe.jpg", alt="A pixelbook running PROXX", width="800", height="445" %}
+  <figcaption>
     PROXX on a pixelbook.
   </figcaption>
 </figure>
@@ -75,7 +74,7 @@ to HTML and saved as index.html
 ## Canvas for animation, (invisible) DOM For accessibility
 
 We render the game graphics in a canvas using
-[WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API). One canvas
+[WebGL](https://developer.mozilla.org/docs/Web/API/WebGL_API). One canvas
 is responsible for the background animation and another one canvas for the game
 grid on top. We also have an HTML table with buttons for accessibility reasons,
 that is on top of both of these canvases, but is made invisible (opacity: 0).
@@ -106,10 +105,9 @@ highly responsive on these phones as well. Since feature phones come with
 different input interface (d-pad and number keys, no touchscreen), we also
 implemented key-based interface.
 
-<figure class="w-figure w-figure--fullbleed">
-  <img src="featurephone.jpg"
-       alt="A man playing PROXX on a yellow feature phone" class="screenshot">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure data-size="full">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zk0lWvjbZ0V2Shz53d42.jpg", alt="A man playing PROXX on a yellow feature phone", width="800", height="512" %}
+  <figcaption>
     PROXX on a feature phone.
   </figcaption>
 </figure>

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Top tips for web performance
 subhead: Use srcset to automatically choose the right image size.
 authors:
@@ -7,13 +8,13 @@ date: 2019-06-24
 description: Use srcset to automatically choose the right image size.
 tags:
   - blog
-  - top tips
+  # - top tips
   - images
   - performance
-  - responsive design
-  - responsive images
-  - srcset
-  - sizes
+  # - responsive design
+  # - responsive images
+  # - srcset
+  # - sizes
 codelabs:
   - codelab-art-direction
   - codelab-density-descriptors
@@ -28,17 +29,17 @@ According to [HTTP Archive](https://httparchive.org/reports/state-of-images), a
 typical mobile web page weighs over 2.6 MB, and more than two thirds of that
 weight is images. That's a great opportunity for optimization!
 
-<figure class="w-figure">
-  <img src="http-archive.svg">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8A7JasX5JOADmB1XkjMC.svg", alt="", width="700", height="320" %}
+  <figcaption>
     <a href="https://mobile.httparchive.org/">Average mobile page bytes by content type</a>
   </figcaption>
 </figure>
 
-## tl;dr
+## Summary
 * Don't save images larger than their display size.
 * Save multiple sizes for each image and use the
-[`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset)
+[`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-srcset)
 attribute to enable the browser to choose the smallest.
 The `w` value tells the browser the width of each version:
 
@@ -62,14 +63,14 @@ Take a look at the images below.
 They appear nearly identical, but the file size of one is more than 10 times
 larger than the other.
 
-<div class="w-columns">
-  <figure class="w-figure">
-    {% Img src="image/admin/IHpM8DG6qiNlRcbfxnt8.jpg", alt="Little Puss and Lias: two ten week old tabby kittens.", width="800", height="534", class="w-screenshot" %}
-    <figcaption class="w-figcaption">Saved width 1000 px, file size 184 KB</figcaption>
+<div class="switcher">
+  <figure>
+    {% Img src="image/admin/IHpM8DG6qiNlRcbfxnt8.jpg", alt="Little Puss and Lias: two ten week old tabby kittens.", width="800", height="534" %}
+    <figcaption>Saved width 1000 px, file size 184 KB</figcaption>
   </figure>
-  <figure class="w-figure">
-    {% Img src="image/admin/XThwdsYxfx6KHkMxgbYI.jpg", alt="Little Puss and Lias: two ten week old tabby kittens.", width="300", height="200", class="w-screenshot" %}
-    <figcaption class="w-figcaption">Saved width 300 px, file size 16 KB</figcaption>
+  <figure>
+    {% Img src="image/admin/XThwdsYxfx6KHkMxgbYI.jpg", alt="Little Puss and Lias: two ten week old tabby kittens.", width="300", height="200" %}
+    <figcaption>Saved width 300 px, file size 16 KB</figcaption>
   </figure>
 </div>
 
@@ -109,7 +110,7 @@ tell the browser the width of each version:
 ```
 
 The `w` values show the width of each image in pixels. For example,
-`small.jpg 500w` tells the browser that <a href="small.jpg">small.jpg</a> is 500
+`small.jpg 500w` tells the browser that <a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg' | imgix }}">small.jpg</a> is 500
 pixels wide. This enables the browser to choose the smallest possible image,
 depending on the screen type and the viewport size—without having to
 download images to check their size.
@@ -127,10 +128,7 @@ Then use the Network panel of your browser tools to check which image was used.
 (You'll need to do that in an Incognito or Private window, otherwise the
 original image file will be cached.)
 
-<img
-  src="small.jpg"
-  srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
-  alt="Lias and Little Puss: two ten week old grey tabby kittens">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg", alt="Lias and Little Puss: two ten week old grey tabby kittens", width="500", height="334" %}
 
 ## How can I create multiple image sizes?
 
@@ -170,8 +168,7 @@ delivered to browsers that support WebP, without changing the `.jpg` file
 extension.
 {% endAside %}
 
-<img class="w-screenshot" src="devtools-headers-for-cloudinary-image.png" alt="Chrome
-DevTools showing WebP content-type header for file served by Cloudinary">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y0ra5DLlntYoLV46uU1f.png", alt="Chrome DevTools showing WebP content-type header for file served by Cloudinary", width="800", height="146" %}
 
 
 ## What if the image doesn't look right at different sizes?

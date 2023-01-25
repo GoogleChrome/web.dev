@@ -1,0 +1,15 @@
+/// AVATAR UTILITY
+/// Info: https://web.dev/design-system/css-utilities/#avatar
+.avatar,
+.avatar > img {
+  width: var(--avatar-size, 65px);
+  height: var(--avatar-size, 65px);
+  object-fit: cover;
+  flex: none;
+  border-radius: 50%;
+}
+
+.avatar[data-size='large'],
+.avatar[data-size='large'] > img {
+  --avatar-size: 192px;
+}

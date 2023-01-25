@@ -15,7 +15,7 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - forms
-  - web-components
+  # - web-components
 ---
 
 
@@ -25,7 +25,7 @@ However, it can be difficult to replicate the features of built-in HTML form con
 
 *   The input is automatically added to the form's list of controls.
 *   The input's value is automatically submitted with the form.
-*   The input participates in [form validation](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation). You can style the input using the `:valid` and `:invalid` pseudoclasses.
+*   The input participates in [form validation](https://developer.mozilla.org/docs/Learn/HTML/Forms/Form_validation). You can style the input using the `:valid` and `:invalid` pseudoclasses.
 *   The input is notified when the form is reset, when the form is reloaded, or when the browser tries to autofill form entries.
 
 Custom form controls typically have few of these features. Developers can work around some of the limitations in JavaScript, like adding a hidden `<input>` to a form to participate in form submission. But other features just can't be replicated in JavaScript alone.
@@ -37,14 +37,14 @@ Two new web features make it easier to build custom form controls, and remove th
 
 These two features can be used to create new kinds of controls that work better.
 
-{% Aside %}Building custom form controls is an advanced topic. This article assumes a certain knowledge of forms and form controls. When building a custom form control, there are many factors to consider, especially making sure that your controls are accessible to all users. To learn more about forms, go to the [MDN guide on forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms).{% endAside %}
+{% Aside %}Building custom form controls is an advanced topic. This article assumes a certain knowledge of forms and form controls. When building a custom form control, there are many factors to consider, especially making sure that your controls are accessible to all users. To learn more about forms, go to the [MDN guide on forms](https://developer.mozilla.org/docs/Learn/HTML/Forms).{% endAside %}
 
 ## Event-based API
 
 The `formdata` event is a low-level API that lets any JavaScript code participate in form submission. The mechanism works like this:
 
 1.  You add a `formdata` event listener to the form you want to interact with.
-1.  When a user clicks the submit button, the form fires a `formdata` event, which includes a [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object that holds all of the data being submitted.
+1.  When a user clicks the submit button, the form fires a `formdata` event, which includes a [`FormData`](https://developer.mozilla.org/docs/Web/API/FormData) object that holds all of the data being submitted.
 1.  Each `formdata` listener gets a chance to add to or modify the data before the form is submitted.
 
 Here's an example of sending a single value in a `formdata` event listener:
@@ -54,7 +54,7 @@ const form = document.querySelector('form');
 // FormData event is sent on <form> submission, before transmission.
 // The event has a formData property
 form.addEventListener('formdata', ({formData}) => {
-  // https://developer.mozilla.org/en-US/docs/Web/API/FormData
+  // https://developer.mozilla.org/docs/Web/API/FormData
   formData.append('my-input', myInputValue);
 });
 ```
@@ -66,6 +66,10 @@ Try this out using our example on Glitch. Be sure to run it on Chrome 77 or late
   path: 'index.html',
   previewSize: 0
 } %}
+
+## Browser compatibility
+
+{% BrowserCompat 'api.FormData' %}
 
 ## Form-associated custom elements
 
@@ -82,7 +86,7 @@ Standardized form controls participate in many parts of the form lifecycle besid
 
 That's a lot of features! This article won't touch on all of them, but will describe the basics needed to integrate your custom element with a form.
 
-{% Aside %}This section assumes a basic familiarity with custom elements. For an introduction to custom elements, see [Custom Elements v1: Reusable Web Components](https://developers.google.com/web/fundamentals/web-components/customelements) on Web Fundamentals.{% endAside %}
+{% Aside %}This section assumes a basic familiarity with custom elements. For an introduction to custom elements, see [Custom Elements v1: Reusable Web Components](/custom-elements-v1/) on Web Fundamentals.{% endAside %}
 
 ### Defining a form-associated custom element
 
@@ -148,8 +152,8 @@ The `attachInternals()` method returns an `ElementInternals` object that provide
 The `setFormValue()` method can take one of three types of values:
 
 *   A string value.
-*   A [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object.
-*   A [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object. You can use a `FormData` object to pass multiple values (for example, a credit card input control might pass a card number, expiration date, and verification code).
+*   A [`File`](https://developer.mozilla.org/docs/Web/API/File) object.
+*   A [`FormData`](https://developer.mozilla.org/docs/Web/API/FormData) object. You can use a `FormData` object to pass multiple values (for example, a credit card input control might pass a card number, expiration date, and verification code).
 
 To set a simple value:
 

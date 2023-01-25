@@ -1,0 +1,38 @@
+web-copy-code {
+  position: relative;
+  display: block;
+
+  &:active,
+  &:focus,
+  &:hover {
+    .web-copy-code__button {
+      opacity: 1;
+    }
+  }
+
+  .web-copy-code__button {
+    // We should use these classes in the web component itself
+    @extend .fab;
+    @extend .tooltip;
+
+    position: absolute;
+    inset: 0.5rem 0.5rem auto auto;
+    overflow: visible;
+    opacity: 0;
+
+    &::before {
+      display: block;
+      width: 1.25em;
+      height: 1.25em;
+
+      /// This needs to be removed in favour of an SVG in the web component itself and should have the following CSS:
+      /// fill: get-utility-value('color', 'mid-text');
+      content: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768"><path fill="gray" d="M607.5 672v-448.5h-351v448.5h351zM607.5 160.5q25.5 0 45 18.75t19.5 44.25v448.5q0 25.5-19.5 45t-45 19.5h-351q-25.5 0-45-19.5t-19.5-45v-448.5q0-25.5 19.5-44.25t45-18.75h351zM511.5 31.5v64.5h-384v448.5h-63v-448.5q0-25.5 18.75-45t44.25-19.5h384z"></path></svg>');
+    }
+
+    // We should use these classes in the web component itself
+    [role='tooltip'] {
+      @extend .tooltip__content;
+    }
+  }
+}

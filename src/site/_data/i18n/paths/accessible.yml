@@ -1,21 +1,63 @@
 title:
   en: Accessible to all
+  es: Accesible para todos
+  ja: すべてのユーザーをアクセス可能に
+  ko: 누구나 이용 가능
+  pt: Acessível a todos
+  ru: Доступность для всех
+  zh: 让所有人都能访问
 
 description:
   en: Build a site that works for all of your users.
+  es: Crea un sitio que funcione para todos sus usuarios.
+  ja: すべてのユーザーにとってアクセスが可能なサイトを構築しましょう。
+  ko: 모든 사용자에게 적합한 사이트를 구축하세요.
+  pt: Crie um site que funcione para todos os seus usuários.
+  ru: Создайте сайт, который подойдет для всех ваших пользователей.
+  zh: 构建一个适用于所有用户的网站。
 
 overview:
   en: All users should be able to access your content. In this section you'll learn how to provide a robust experience to your users that accounts for their context and any situational, temporary, or permanent disabilities.
+  es: Todos los usuarios deben poder acceder a su contenido. En esta sección aprenderá cómo proporcionar una experiencia sólida a sus usuarios, teniendo en cuenta su contexto y cualquier situación de discapacidad, temporal o permanente.
+  ja: すべてのユーザーがコンテンツにアクセスできるようにする必要があります。このセクションでは、ユーザーの文脈や、状況に起因する障害、一時的な障害、永続的な障害を考慮に入れ、ユーザーに対して安定したエクスペリエンスを提供する方法について説明します。
+  ko: 모든 사용자가 콘텐츠에 액세스할 수 있어야 합니다. 이 섹션에서는 컨텍스트와 모든 상황적, 일시적 또는 영구적 장애를 고려하여 사용자에게 강력한 경험을 제공하는 방법을 알아봅니다.
+  pt: Todos os usuários devem poder acessar seu conteúdo. Nesta seção, você aprenderá como fornecer uma experiência robusta para seus usuários, considerando seu contexto e quaisquer deficiências situacionais, temporárias ou permanentes.
+  ru: Контент на вашем сайте должен быть доступен для всех. В этом разделе вы узнаете, как сделать доступ к сайту удобным для пользователей независимо от их контекста, а также от различных ситуативных, временных или постоянных ограничений.
+  zh: 所有用户都应该能够访问您的内容。在此部分中，您将了解如何在考虑用户所处境况以及他们在任何情况下的、暂时性或永久性残疾的同时，为您的用户提供一种健全的体验。
 
 topics:
   understand_the_diverse_needs_of_users:
     en: Understand the diverse needs of users
+    es: Comprender las diversas necesidades de los usuarios
+    ja: ユーザーの多様なニーズを理解する
+    ko: 사용자의 다양한 요구 이해
+    pt: Entender as diversas necessidades dos usuários
+    ru: Понимание разнообразных потребностей пользователей
+    zh: 了解用户的多样化需求
 
   make_your_site_keyboard_accessible:
     en: Make your site keyboard accessible
+    es: Habilite el acceso a su sitio web con el teclado
+    ja: サイトをキーボードで操作できるようにする
+    ko: 사이트 키보드에 접근성 부여
+    pt: Torne o teclado do seu site acessível
+    ru: Адаптация сайта для управления с помощью клавиатуры
+    zh: 使您的网站能够通过键盘进行访问
 
   understand_semantics_and_basic_screen_reader_support:
     en: Understand semantics and basic screen reader support
+    es: Comprender la semántica y la compatibilidad básica con lectores de pantalla
+    ja: セマンティクスと基本的なスクリーンリーダーのサポートについて理解する
+    ko: 의미 체계 및 기본적인 화면 읽기 프로그램 지원 이해하기
+    pt: Entenda a semântica e o suporte básico ao leitor de tela
+    ru: Понимание семантики и реализации базовой поддержки программ чтения с экрана
+    zh: 了解语义学和基本的屏幕阅读器支持
 
   create_a_design_and_css_that_supports_users_with_different_needs:
     en: Create a design and CSS that supports users with different needs
+    es: Cree un diseño y un CSS que de soporte a los usuarios con diferentes necesidades
+    ja: さまざまなニーズを持ったユーザーに対応するデザインおよび CSS を作成する
+    ko: 다양한 요구 사항을 가진 사용자를 지원하는 디자인 및 CSS 생성
+    pt: Crie um design e CSS que ofereça suporte a usuários com necessidades diferentes
+    ru: Создание дизайна и CSS-стилей с учетом различных потребностей пользователей
+    zh: 创建一套为有不同需求的用户提供支持的设计和 CSS

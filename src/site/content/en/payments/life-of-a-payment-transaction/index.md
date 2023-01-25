@@ -32,27 +32,21 @@ The process involves 6 steps:
 2. The merchant shows a payment button.
 3. The customer presses the payment button.
 
-    ![A diagram of a cheese shop website with a BobPay (payment app)
-    button.](123.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/NQIh5tt5wsQFC5yKLCaU.svg", alt="A diagram of a cheese shop website with a BobPay (payment app) button.", width="786", height="298" %}
 
 4. The browser launches the payment app.
 
-    ![A diagram of the cheese shop website with BobPay app launched in a modal.
-    The modal shows shipping options and total cost.](4.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IHztIcfJKeWDUIkugTkb.svg", alt="A diagram of the cheese shop website with BobPay app launched in a modal. The modal shows shipping options and total cost.", width="671", height="366" %}
 
 5. If the customer changes any details (such as shipping options or their
    address), the merchant updates the transaction details reflecting the change.
 
-    ![A diagram showing the customer choosing a different shipping option in
-    BobPay app modal. A second diagram showing the merchant updating the total
-    cost displayed in BobPay.](5.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BR9Od63aOdG9CaaD1z7K.svg", alt="A diagram showing the customer choosing a different shipping option in BobPay app modal. A second diagram showing the merchant updating the total cost displayed in BobPay.", width="777", height="702" %}
 
 6. After the customer confirms the purchase, the merchant validates the payment
    and completes the transaction.
 
-    ![A diagram showing the customer pressing the "Pay" button in BobPay,
-    followed by a diagram of the cheese shop page showing "Payment
-    accepted".](6.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Q6VqimbOxJ3ZXHvB8ry.svg", alt="A diagram showing the customer pressing the \"Pay\" button in BobPay, followed by a diagram of the cheese shop page showing \"Payment accepted\".", width="778", height="708" %}
 
 ## Step 1: The merchant initiates a payment transaction
 
@@ -246,13 +240,13 @@ request.addEventListener('paymentmethodchange', e => {
 
 A payment app can optionally provide the customer's shipping address. This is
 convenient for customers because they don't have to manually enter any details
-into a form and they can store their shipping address in their prefered payment
+into a form and they can store their shipping address in their preferred payment
 apps, rather than on multiple different merchant websites.
 
 If a customer updates their shipping address in a payment app after the
-transaction has been initiated, a shipping address change event will be emitted
-to the merchant. This helps the merchant determine the shipping cost based on
-the new address, update the total price, and return it back to the payment app.
+transaction has been initiated, a `'shippingaddresschange'` event will be sent
+to the merchant. This event helps the merchant determine the shipping cost based
+on the new address, update the total price, and return it to the payment app.
 
 ```js
 request.addEventListener('shippingaddresschange', e => {
@@ -278,12 +272,12 @@ that choice to the payment app. The shipping options are displayed as a list of
 prices and service names the customer can select from. For example:
 
 * Standard shipping - Free
-* Express shipping - $5
+* Express shipping - 5 USD
 
-When a customer updates the shipping option in a payment app, a shipping option
-change event will be emitted to the merchant. The merchant can then determine
-the shipping cost, update the total price, and return it back to the payment
-app.
+When a customer updates the shipping option in a payment app, a
+`'shippingoptionchange'` event will be sent to the merchant. The merchant can
+then determine the shipping cost, update the total price, and return it to the
+payment app.
 
 ```js
 request.addEventListener('shippingoptionchange', e => {
@@ -293,7 +287,7 @@ request.addEventListener('shippingoptionchange', e => {
 });
 ```
 
-The merchant can modify the shipping options dynamically based on the customer's
+The merchant can dynamically modify the shipping options based on the customer's
 shipping address as well. This is useful when a merchant wants to offer
 different sets of shipping options for domestic and international customers.
 

@@ -1,0 +1,15 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/fixed-width-img
+.fixed-width-img {
+  // This ensures images are scaled to the exact size specified by the
+  // width attribute, preventing HiDPI screenshots from being blurry:
+  //  <img src="800x500.png" width="400" class="fixed-width-img" alt="" />
+  box-sizing: content-box;
+  margin-inline: auto;
+}
+
+/// Figures often force media to fill them, so this rule prevents that
+/// if a width attribute is present
+figure > .fixed-width-img[width] {
+  width: unset;
+}

@@ -1,12 +1,12 @@
 ---
-layout: post 
-title: "Imperative caching guide" 
+layout: post
+title: "Imperative caching guide"
 authors:
   - demianrenzulli
-  - andrewguan 
+  - andrewguan
 date: 2020-12-08
-description: | 
-  How to communicate window and service worker to perform tasks related to performance, caching and offline. 
+description: |
+  How to communicate window and service worker to perform tasks related to performance, caching and offline.
 tags:
   - service-worker
   - performance
@@ -17,19 +17,17 @@ Some websites might need to communicate to the service worker without the need o
 informed about the result. Here are some examples:
 
 - A page sends the service worker a list of URLs [to
-  prefetch](https://web.dev/instant-navigation-experiences/), so that, when the user clicks on a
+  prefetch](/instant-navigation-experiences/), so that, when the user clicks on a
   link the document or page subresources are already available in the cache, making subsequent
-  navigation much faster. 
+  navigation much faster.
 - The page asks the service worker to retrieve and cache a set of top articles, to have them
   available for offline purposes.
 
 Delegating these types of non-critical tasks to the service worker has the benefit of freeing up the
 main thread for better handling more pressing tasks such as responding to user interactions.
 
-<figure class="w-figure">
-  <img src="imperative-caching-diagram-1.png"
-       width="565"
-       alt="Diagram of a page requesting resources to cache to a service worker.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gCpdKiIbSDZBMJEJE2tZ.png", alt="Diagram of a page requesting resources to cache to a service worker.", width="565", height="264" %}
 </figure>
 
 In this guide we'll explore how to implement a **one-way** communication technique from the page to
@@ -46,13 +44,11 @@ use cases **imperative caching**.
 ## Production case {: #production-case }
 
 1-800-Flowers.com implemented **imperative caching** (prefetching) with service workers via
-[`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage) to prefetch the
+[`postMessage()`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage) to prefetch the
 top items in category pages to speed up subsequent navigation to product detail pages.
 
-<figure class="w-figure">
-  <img src="1-800-flowers-logo.png"
-       width="400"
-       alt="Logo of 1-800 Flowers.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eNMKYuaKnlYu0N3IIhI5.png", alt="Logo of 1-800 Flowers.", width="400", height="203" %}
 </figure>
 
 They use a mixed approach to decide which items to prefetch:
@@ -60,17 +56,15 @@ They use a mixed approach to decide which items to prefetch:
 - At page load time they ask the servicer worker to retrieve the JSON data for the top 9 items, and
   add the resulting response objects to the cache.
 - For the remaining items, they listen to the [`mouseover`
-  ](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event) event, so that, when a
+  ](https://developer.mozilla.org/docs/Web/API/Element/mouseover_event) event, so that, when a
   user moves the cursor on top of an item, they can trigger a fetch for the resource on "demand".
 
-They use the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) to store JSON
+They use the [Cache API](https://developer.mozilla.org/docs/Web/API/Cache) to store JSON
 responses:
 
-<figure class="w-figure">
-  <img src="1-800-flowers-prefetching.png"
-       width="728"
-       alt="Logo of 1-800 Flowers.">
-   <figcaption class="w-figcaption">Prefetching JSON product data from product listing pages in 1-800Flowers.com.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FH4clAbGShyIdhj4jWdL.png", alt="Logo of 1-800 Flowers.", width="728", height="287" %}
+   <figcaption>Prefetching JSON product data from product listing pages in 1-800Flowers.com.</figcaption>
 </figure>
 
 When the user clicks on an item, the JSON data associated with it can be picked up from the cache,
@@ -78,8 +72,8 @@ without the need of going to the network, making the navigation faster.
 
 ## Using Workbox {: #using-workbox }
 
-[Workbox](https://developers.google.com/web/tools/workbox) provides an easy way to send messages to
-a service worker, via the [`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) package, a set of modules
+[Workbox](https://developer.chrome.com/docs/workbox/) provides an easy way to send messages to
+a service worker, via the [`workbox-window`](https://developer.chrome.com/docs/workbox/modules/workbox-window/) package, a set of modules
 that are intended to run in the window context. They're a complement to the other Workbox packages
 that run in the service worker.
 
@@ -98,7 +92,7 @@ registration, checking for activation, or thinking about the underlying communic
 wb.messageSW({"type": "PREFETCH", "payload": {"urls": ["/data1.json", "data2.json"]}}); });
 ```
 
-The service worker implements a [`message`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
+The service worker implements a [`message`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
 listen to these messages. It can optionally return a response, although, in cases like these, it's
 not necessary:
 
@@ -128,7 +122,7 @@ navigator.serviceWorker.controller.postMessage({
   payload: 'some data to perform the task',
 });
 ```
-The service worker implements a [`message`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
+The service worker implements a [`message`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
 listen to these messages.
 
 ```javascript
@@ -139,9 +133,9 @@ self.addEventListener('message', (event) => {
 });
 ```
 
-The `{type : ‘MSG_ID'}` attribute is not absolutely required, but it is one way to allow the page to
-send different types of instructions to the service worker (i.e. 'to prefetch' vs. 'to clear
-storage').  The service worker can branch into different execution paths based on this flag.
+The `{type : 'MSG_ID'}` attribute is not absolutely required, but it is one way to allow the page to
+send different types of instructions to the service worker (that is, 'to prefetch' vs. 'to clear
+storage'). The service worker can branch into different execution paths based on this flag.
 
 If the operation was successful, the user will be able to get the benefits from it but, if not, it won't alter the main user flow. For example, when 1-800-Flowers.com attempts to precache, the page doesn't need to know whether the service worker succeeded. If it does, then the user will enjoy a faster navigation. If it doesn't the page still needs to navigate to the new page. It's just going to take a little longer.
 
@@ -150,13 +144,13 @@ If the operation was successful, the user will be able to get the benefits from 
 One of the most common applications of **imperative caching** is **prefetching**, meaning fetching
 resources for a given URL, before the user moves to it, in order to speed up navigation.
 
-There are different ways of implementing prefetching in sites: 
+There are different ways of implementing prefetching in sites:
 
-- Using [Link prefetch tags](https://web.dev/link-prefetch/) in pages: resources are kept in the
+- Using [Link prefetch tags](/link-prefetch/) in pages: resources are kept in the
   browser cache for five minutes, after which the normal `Cache-Control` rules for the resource
-  apply. 
+  apply.
 - Complementing the previous technique with [a runtime caching strategy in the service
-  worker](https://web.dev/instant-navigation-experiences/) to extend the lifetime of the prefetch
+  worker](/instant-navigation-experiences/) to extend the lifetime of the prefetch
   resource beyond this limit.
 
 For relatively simple prefetching scenarios, like prefetching documents, or specific assets (JS,
@@ -176,7 +170,7 @@ Delegating these types of operations to the service worker has the following adv
 
 ### Prefetch product detail pages {: #prefetch-product-detail-pages }
 
-First use [`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage) on
+First use [`postMessage()`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage) on
 the service worker interface and pass an array of URLs to cache:
 
 ```javascript
@@ -191,7 +185,7 @@ navigator.serviceWorker.controller.postMessage({
 });
 ```
 
-In the service worker, implement a [`message`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
+In the service worker, implement a [`message`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
 intercept and process messages sent by any active tab:
 
 ```javascript
@@ -272,7 +266,7 @@ handling. The sky's the limit.
 immediately needed, so it needs to be applied thoughtfully; only prefetch resources when you are
 confident that users will need them. Avoid prefetching when users are on slow connections.
 You can detect that with the [Network Information
-API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API). {% endAside %}
+API](https://developer.mozilla.org/docs/Web/API/Network_Information_API). {% endAside %}
 
 ## Conclusion {: #conclusion }
 

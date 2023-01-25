@@ -88,16 +88,16 @@ class Counter extends Component {
 export default Counter;
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DDreycxzclMP8IiUplyO.png", alt="The Preact kbone template demo app opened in WeChat DevTools. Inspecting the DOM structure shows a significant overhead compared to the web app.", width="800", height="664" %}
-  <figcaption class="w-figure">
+  <figcaption>
    The Preact kbone template demo app opened in WeChat DevTools. Note the complex DOM structure and how the plus and minus buttons are actually not <code>&lt;button&gt;</code> elements.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rerYiCnwc92DP7pM7WPc.png", alt="The Preact kbone template demo app opened in the web browser. Inspecting the DOM structure shows the to-be-expected markup based on the Preact component code.", width="800", height="496" %}
-  <figcaption class="w-figure">
+  <figcaption>
    The Preact kbone template demo app opened in the web browser. Note the DOM structure.
   </figcaption>
 </figure>
@@ -108,14 +108,14 @@ The [kbone-ui](https://wechat-miniprogram.github.io/kbone/docs/ui/intro/) projec
 ([open source on GitHub](https://github.com/wechat-miniprogram/kbone-ui)) is a UI framework that
 facilitates both mini app development as well as Vue.js development with kbone. The kbone-ui
 components emulate the look and feel of
-[WeChat's "native" mini app components](https://developers.weixin.qq.com/miniprogram/dev/component/)
+[WeChat's built-in mini app components](https://developers.weixin.qq.com/miniprogram/dev/component/)
 (also see [Components](/mini-app-components/) above). A
 [demo](https://wechat-miniprogram.github.io/kboneui/ui/#/) that runs directly in the browser lets
 you explore the available components.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wEA4Hr2JyVfKgdHnpb5o.png", alt="Demo of the kbone-ui framework showing form-related components like radio buttons, switches, inputs, and labels.", width="320", height="438" %}
-  <figcaption class="w-figure">
+  <figcaption>
    The kbone-ui demo showing form-related components.
   </figcaption>
 </figure>
@@ -131,9 +131,9 @@ WeChat mini apps styled with WXSS (see [Styling](/mini-app-markup-styling-and-sc
 [weui.js](https://github.com/weui/weui.js/) for web apps, and
 [react-weui](https://github.com/weui/react-weui/) for WeChat React components.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V0xswCD3MJltrxALmy8n.png", alt="Demo of the WeUI framework showing form-related components, namely switches.", width="450", height="395" %}
-  <figcaption class="w-figure">
+  <figcaption>
    The WeUI demo app showing switches.
   </figcaption>
 </figure>
@@ -189,9 +189,9 @@ render(<my-counter />, "body");
 ([open source on GitHub](https://github.com/Tencent/omi#omiu)) developed based on Omi, which outputs
 custom elements of standard web components.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eoNhik827CE4TfaT9ZaV.png", alt="Demo of the Omiu framework showing form-related components, namely switches.", width="800", height="939" %}
-  <figcaption class="w-figure">
+  <figcaption>
    The Omiu demo app showing switches.
   </figcaption>
 </figure>
@@ -240,9 +240,9 @@ optimized frontend tools and framework design concepts and ideas, mostly from Vu
 </script>
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ooxZuXzVY9aHXmha36vM.png", alt="WePY 'getting started' documentation page showing the first steps to get going.", width="800", height="505" %}
-  <figcaption class="w-figure">
+  <figcaption>
    WePY "getting started" documentation.
   </figcaption>
 </figure>
@@ -255,9 +255,9 @@ injected directly into web apps and mini apps. A
 [demo](http://wechatfe.github.io/vconsole/demo.html) showcases the opportunities. The vConsole
 includes tabs for logs, system, network, elements, and storage.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ow6FfaoI7fMCJDN1819t.png", alt="vConsole demo app. The vConsole opens at the bottom and has tabs for logs, system, network, elements, and storage.", width="800", height="505" %}
-  <figcaption class="w-figure">
+  <figcaption>
    vConsole demo app showing the elements explorer.
   </figcaption>
 </figure>
@@ -273,16 +273,16 @@ weweb. In my experiments, this did not work reliably for current mini apps, most
 the project has not seen updates recently leading its compiler to miss changes in the
 WeChat platform.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jU9Od9IDqFlmuYzAtirn.png", alt="Documentation of the Hera mini app framework listing the WeChat APIs that it supports like `wx.request`, `wx.uploadFile`, etc.", width="800", height="505" %}
-  <figcaption class="w-figure">
+  <figcaption>
    Hera mini app framework documentation showing the list of supported WeChat APIs.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/C7ZpPrFE4geW0dylRpZ2.png", alt="The weweb demo mini app compiled with weweb to run in the browser showing form elements.", width="300", height="429" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The weweb demo mini app compiled with weweb to run in the browser.
   </figcaption>
 </figure>

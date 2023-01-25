@@ -42,7 +42,7 @@ synchronized with every other person using the application. 🐈
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-app', 'ol' %}
 
-{% Img src="image/admin/GnvBzXKQwy2az8Gyxl6D.png", alt="Original bundle size of 992 KB", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/admin/GnvBzXKQwy2az8Gyxl6D.png", alt="Original bundle size of 992 KB", width="800", height="169" %}
 
 Almost 1 MB worth of JavaScript is being shipped to load this simple application!
 
@@ -131,7 +131,7 @@ Not as cute as seeing some kittens 🐱, but incredibly helpful nonetheless.
 Hovering over any of the packages shows its size represented in three
 different ways:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

@@ -23,8 +23,7 @@ a,
     text-decoration: underline;
   }
 
-  &:focus,
-  &:active {
+  &:focus {
     outline: 1px solid $FOCUS_COLOR;
   }
 }

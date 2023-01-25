@@ -1,0 +1,54 @@
+setLeader: Test your knowledge of images
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: "Styles must be added for images to fit within the viewport."
+    options:
+      - content: "True"
+        rationale: "Images without containment will be as large as their natural size."
+      - content: "False"
+        rationale: "Styles are required."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,3"
+    stem: "When an image's height and width have been forced into an unnatural aspect ratio, 
+      which styles can help adjust how the image fits into these proportions?"
+    options:
+      - content: "`object-fit`"
+        rationale: "Specify how the image fits with keywords like `contain` and `cover`."
+      - content: "`image-fit`"
+        rationale: "This property doesn't exist, I made it up."
+      - content: "`fit-image`"
+        rationale: "This property doesn't exist, I made it up."
+      - content: "`aspect-ratio`"
+        rationale: "This may cause or solve an unnatural image ratio."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "Putting `height` and `width` on your images prevents CSS from being able to style it differently."
+    options:
+      - content: "True"
+        rationale: "Think of them more like hints than rules."
+      - content: "False"
+        rationale: "CSS has a large amount of dynamic options for sizing images, even if height and width are inline on the tag."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "The `srcset` attribute doesn't _______ the `src` attribute, it _______ it."
+    options:
+      - content: "complement, replaces"
+        rationale: "`srcset` definitely doesn't replace the `src` attribute."
+      - content: "replace, complements"
+        rationale: "It provides additional options for the browser to choose from, if it's capable."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "Missing `alt` on an image is the same as an empty `alt`."
+    options:
+      - content: "True"
+        rationale: "An empty `alt` attribute conveys to a screen reader that this image is presentational"
+      - content: "False"
+        rationale: "Missing `alt` signals nothing to a screen reader."

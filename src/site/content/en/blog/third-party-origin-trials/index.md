@@ -17,7 +17,7 @@ tags:
 feature.
 
 Origin trials are usually only available on a first-party basis: they only work for a single
-registered [origin](https://web.dev/same-site-same-origin/#origin). If a developer wants to test an
+registered [origin](/same-site-same-origin/#origin). If a developer wants to test an
 experimental feature on other origins where their content is embedded, those origins all need to be
 registered for the origin trial, each with a unique trial token. This is not a scalable approach for
 testing scripts that are embedded across a number of sites.
@@ -25,7 +25,7 @@ testing scripts that are embedded across a number of sites.
 Third-party origin trials make it possible for providers of embedded content to try out a new
 feature across multiple sites.
 
-![Diagram showing how third-party origin trials enable a single registration token to be used across multiple origins](with-and-without.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3lDDKsr313oJfWuEMckG.png", alt="Diagram showing how third-party origin trials enable a single registration token to be used across multiple origins", width="800", height="400" %}
 
 Third-party origin trials don't make sense for all features. Chrome will only make the third-party
 origin trial option available for features where embedding code on third-party sites is a common use
@@ -69,9 +69,9 @@ on progress with third-party origin trials.
 1. If review is required, you'll be notified by email when the review is complete and your
    third-party token is ready.
 
-   <figure class="w-figure">
+   <figure>
      {% Img src="image/admin/RKAubZHAdOh7HIdQgDkQ.png", alt="Chrome origin trials registration page for the Conversion Measurement API, with third-party matching checkbox selected.", width="800", height="618" %}
-     <figcaption class="w-figcaption">Registration page for the Conversion Measurement trial.</figcaption>
+     <figcaption>Registration page for the Conversion Measurement trial.</figcaption>
    </figure>
 
 ## How to provide feedback

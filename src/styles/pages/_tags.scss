@@ -1,5 +1,6 @@
 @import '../tools/breakpoints';
 
+$ICON_SIZE: 32px;
 $IMAGE_WIDTH: 340px;
 
 .w-tags-page-header__headline {
@@ -14,6 +15,11 @@ $IMAGE_WIDTH: 340px;
   margin-bottom: 9px;
   max-width: calc(#{$IMAGE_WIDTH} * calc(2/3));
   height: auto;
+}
+
+.w-tags-page__rss {
+  display: inline-block;
+  margin: calc(#{$ICON_SIZE} / 4);
 }
 
 @include bp(sm) {

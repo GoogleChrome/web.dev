@@ -36,13 +36,13 @@ Although it may seem non-intuitive, using a CDN to deliver resources (even uncac
 When a CDN is used to deliver resources from the origin, a new connection is established between the client and a nearby CDN server. The remainder of the journey (in other words, the data transfer between the CDN server and origin) occurs over the CDN's network - which often includes existing, persistent connections with the origin. The benefits of this are twofold: terminating the new connection as close to the user as possible eliminates unnecessary connection setup costs (establishing a new connection is expensive and requires multiple roundtrips); using a pre-warmed connection allows data to be immediately transferred at the maximum possible throughput.
 
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/M9kzM7J7FenUyO7E9MF0.png", alt="Comparison of connection setup with and without a CDN", width="800", height="512" %}
 </figure>
 
 Some CDNs improve upon this even further by routing traffic to the origin through multiple CDN servers spread across the Internet. Connections between CDN servers occur over reliable and highly optimized routes, rather than routes determined by the [Border Gateway Protocol (BGP)](https://en.wikipedia.org/wiki/Border_Gateway_Protocol). Although BGP is the internet's de facto routing protocol, its routing decisions are not always performance-oriented. Therefore, BGP-determined routes are likely to be less performant than the finely-tuned routes between CDN servers.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ZLMPFySQgBkpWvgujuJP.png", alt="Comparison of connection setup with and without a CDN", width="800", height="449" %}
 </figure>
 
@@ -107,7 +107,7 @@ At a high-level, a CDN's performance strategy can be thought of in terms of the 
 
 As a result of this tradeoff, some CDNs use a tiered approach to caching: PoPs located close to users (also known as "edge caches") are supplemented with central PoPs that have higher cache hit ratios. When an edge cache can't find a resource, it will look to a central PoP for the resource. This approach trades slightly greater latency for a higher likelihood that the resource can be served from a CDN cache - though not necessarily an edge cache.
 
-The tradeoff between minimizing latency and minimizing cache hit ratio is a spectrum. No particular approach is universally better; however, depending on the nature of your site and its user base, you may find that one of these approaches delivers significantly better performance than the other.
+The tradeoff between minimizing latency and maximizing cache hit ratio is a spectrum. No particular approach is universally better; however, depending on the nature of your site and its user base, you may find that one of these approaches delivers significantly better performance than the other.
 
 It's also worth noting that CDN performance can vary significantly depending on geography, time of day, and even current events. Although it's always a good idea to do your own research on a CDN's performance, it can be difficult to predict the exact performance you'll get from a CDN.
 
@@ -139,7 +139,7 @@ The next level of CHR optimization, broadly speaking, is to fine tune your CDN s
 
 ### Initial audit
 
-Most CDNs will provide cache analytics. In addition, tools like [WebPageTest](https://webpagetest.org/) and [Lighthouse](https://web.dev/uses-long-cache-ttl/) can also be used to quickly verify that all of a page's static resources are being cached for the correct length of time. This is accomplished by checking the HTTP Cache headers of each resource. Caching a resource using the maximum appropriate Time To Live (TTL) will avoid unnecessary origin fetches in the future and therefore increase CHR.
+Most CDNs will provide cache analytics. In addition, tools like [WebPageTest](https://webpagetest.org/) and [Lighthouse](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/) can also be used to quickly verify that all of a page's static resources are being cached for the correct length of time. This is accomplished by checking the HTTP Cache headers of each resource. Caching a resource using the maximum appropriate Time To Live (TTL) will avoid unnecessary origin fetches in the future and therefore increase CHR.
 
 At a minimum, one of these headers typically needs to be set in order for a resource to be cached by a CDN:
 
@@ -147,9 +147,9 @@ At a minimum, one of these headers typically needs to be set in order for a reso
 *   `Cache-Control: s-maxage=`
 *   `Expires`
 
-In addition, although it does not impact if or how a resource is cached by a CDN, it is good practice to also set the [`Cache-Control: immutable`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Revalidation_and_reloading) directive.`Cache-Control: immutable` indicates that a resource "will not be updated during its freshness lifetime". As a result, the browser will not revalidate the resource when serving it from the browser cache, thereby eliminating an unnecessary server request. Unfortunately, this directive is only [supported](https://caniuse.com/#feat=mdn-http_headers_cache-control_immutable) by Firefox and Safari - it is not supported by Chromium-based browsers. This [issue](https://bugs.chromium.org/p/chromium/issues/detail?id=611416) tracks Chromium support for `Cache-Control: immutable`. Starring this issue can help encourage support for this feature.
+In addition, although it does not impact if or how a resource is cached by a CDN, it is good practice to also set the [`Cache-Control: immutable`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Revalidation_and_reloading) directive.`Cache-Control: immutable` indicates that a resource "will not be updated during its freshness lifetime". As a result, the browser will not revalidate the resource when serving it from the browser cache, thereby eliminating an unnecessary server request. Unfortunately, this directive is only [supported](https://caniuse.com/#feat=mdn-http_headers_cache-control_immutable) by Firefox and Safari - it is not supported by Chromium-based browsers. This [issue](https://bugs.chromium.org/p/chromium/issues/detail?id=611416) tracks Chromium support for `Cache-Control: immutable`. Starring this issue can help encourage support for this feature.
 
-For a more detailed explanation of HTTP caching, refer to [Prevent unnecessary network requests with the HTTP Cache](https://web.dev/http-cache/).
+For a more detailed explanation of HTTP caching, refer to [Prevent unnecessary network requests with the HTTP Cache](/http-cache/).
 
 
 ### Fine tuning
@@ -173,14 +173,14 @@ By default, CDNs take query params into consideration when caching a resource. H
 
 #### Vary
 
-The [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) response header informs caches that the server response corresponding to a particular URL can vary depending on the headers set on the request (for example, the [Accept-Language](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) or [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) request headers). As a result, it instructs a CDN to cache these responses separately. The Vary header is not widely supported by CDNs and may result in an otherwise cacheable resource not being served from a cache.
+The [Vary](https://developer.mozilla.org/docs/Web/HTTP/Headers/Vary) response header informs caches that the server response corresponding to a particular URL can vary depending on the headers set on the request (for example, the [Accept-Language](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Language) or [Accept-Encoding](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding) request headers). As a result, it instructs a CDN to cache these responses separately. The Vary header is not widely supported by CDNs and may result in an otherwise cacheable resource not being served from a cache.
 
 Although the Vary header can be a useful tool, inappropriate usage hurts CHR. In addition, if you do use `Vary`, normalizing request headers will help improve CHR. For example, without normalization the request headers `Accept-Language: en-US` and `Accept-Language: en-US,en;q=0.9` would result in two separate cache entries, even though their contents would likely be identical.
 
 
 #### Cookies
 
-Cookies are set on requests via the [`Cookie`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie) header; they are set on responses via the `Set-Cookie` header. Unnecessary use of [`Set-Cookie`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) header should be avoided given that caches will typically not cache server responses containing this header.
+Cookies are set on requests via the [`Cookie`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cookie) header; they are set on responses via the `Set-Cookie` header. Unnecessary use of [`Set-Cookie`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie) header should be avoided given that caches will typically not cache server responses containing this header.
 
 
 ## Performance features
@@ -220,7 +220,7 @@ TLS 1.3 is the newest version of [Transport Layer Security (TLS)](https://en.wik
 
 TLS 1.3 shortens the TLS handshake from two roundtrips to one. For connections using HTTP/1 or HTTP/2, shortening the TLS handshake to one roundtrip effectively reduces connection setup time by 33%.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/FnCSj1W23jXaiOWCp0Bw.png", alt="Comparison of the TLS 1.2 and TLS 1.3 handshakes", width="800", height="448" %}
 </figure>
 
@@ -259,7 +259,7 @@ Although switching your CDN instance to HTTP/2 is largely a matter of flipping a
 
     HTTP/2 introduced multiplexing, a feature that allows a single connection to be used to transmit multiple streams of data simultaneously. However, with HTTP/2, a single dropped packet blocks all streams on a connection (a phenomena known as a head-of-line blocking). With HTTP/3, a dropped packet only blocks a single stream. This improvement is largely the result of HTTP/3 using [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) (HTTP/3 uses UDP via [QUIC](https://en.wikipedia.org/wiki/QUIC)) rather than [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). This makes HTTP/3 particularly useful for data transfer over congested or lossy networks.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/B7YKfqGG4eS2toSoTDdS.png", alt="Diagram showing the differences in data transmission between HTTP/1, HTTP/2, and HTTP/3", width="800", height="449" %}
 </figure>
 
@@ -267,7 +267,7 @@ Although switching your CDN instance to HTTP/2 is largely a matter of flipping a
 
     HTTP/3 uses TLS 1.3 and therefore shares its performance benefits: establishing a new connection only requires a single round-trip and resuming an existing connection does not require any roundtrips.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/7ffDEjblsisTNsfkynt6.png", alt="Comparison of connection resumption between TLS 1.2, TLS 1.3, TLS 1.3 0-RTT, and HTTP/3", width="800", height="400" %}
 </figure>
 

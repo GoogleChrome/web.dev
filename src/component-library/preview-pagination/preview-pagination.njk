@@ -1,0 +1,31 @@
+<h2 class="visually-hidden">{{ title }}</h2>
+<nav class="preview-pagination" aria-label="pagination">
+  {% if data.prev %}
+    <a class="preview-pagination__item flow" href="{{ data.prev.url }}" data-dir="prev">
+      <div class="preview-pagination__meta cluster">
+        {% include "icons/arrow-back.svg" %}
+        {% for item in data.prev.meta %}
+          <span>{{ item}}</span> 
+        {% endfor %}
+      </div>
+      <h3 class="preview-pagination__heading">{{ data.prev.title }}</h3>
+      {% if data.prev.description %}
+        <p>{{ data.prev.description }}</p>
+      {% endif %}
+    </a>
+  {% endif %}
+  {% if data.next %}
+    <a class="preview-pagination__item flow" href="{{ data.next.url }}" data-dir="next">
+      <div class="preview-pagination__meta cluster">
+        {% include "icons/arrow-forward.svg" %}
+        {% for item in data.next.meta %}
+          <span>{{ item}}</span> 
+        {% endfor %}
+      </div>
+      <h3 class="preview-pagination__heading">{{ data.next.title }}</h3>
+      {% if data.next.description %}
+        <p>{{ data.next.description }}</p>
+      {% endif %}
+    </a>
+  {% endif %}
+</nav>

@@ -23,10 +23,10 @@ If you are trying to improve the performance of an existing site, start by ident
 
 After you identify your key pages, it's time to analyze them. First, we'll focus on the timing milestones that best measure the user experience.
 
-Under the Audits panel in Chrome DevTools, you'll find [Lighthouse](https://developers.google.com/web/tools/lighthouse/). Run audits on each page in a [Guest window](https://support.google.com/chrome/answer/6130773?co=GENIE.Platform%3DDesktop&hl=en) to record these two times:
+Under the Audits panel in Chrome DevTools, you'll find [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/). Run audits on each page in a [Guest window](https://support.google.com/chrome/answer/6130773?co=GENIE.Platform%3DDesktop&hl=en) to record these two times:
 
-* [First Contentful Paint (FCP)](/first-contentful-paint)
-* [Time to Interactive (TTI)](/interactive)
+* [First Contentful Paint (FCP)](/fcp/)
+* [Time to Interactive (TTI)](/tti/)
 
 {% Aside %}
 Using a Guest window gives you a clean testing environment without any Chrome
@@ -35,9 +35,9 @@ extensions that could interfere with the audit.
 
 {% Img src="image/admin/VUtkCadH9vjnKSzGzd0S.png", alt="Lighthouse panel in Chrome DevTools", width="800", height="637" %}
 
-Let's take a highly specialized search engine, doggos.io, as an example. Doggos.io aims to index all dog-related things on the internet, and its most important pages are the home and results pages. Here are the FCP and TTI numbers measured for the site on desktop and mobile.
+Let's take a highly specialized search engine, Doggos.com, as an example. Doggos.com aims to index all dog-related things on the internet, and its most important pages are the home and results pages. Here are the FCP and TTI numbers measured for the site on desktop and mobile.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -58,11 +58,11 @@ Let's take a highly specialized search engine, doggos.io, as an example. Doggos.
         <td>6,690 ms</td>
       </tr>
     </tbody>
-    <caption>Desktop analysis of doggos.io</caption>
+    <caption>Desktop analysis of Doggos.com</caption>
   </table>
 </div>
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -83,7 +83,7 @@ Let's take a highly specialized search engine, doggos.io, as an example. Doggos.
         <td>7,870 ms</td>
       </tr>
     </tbody>
-    <caption>Mobile analysis of doggos.io</caption>
+    <caption>Mobile analysis of Doggos.com</caption>
   </table>
 </div>
 
@@ -97,7 +97,7 @@ If you are not sure which sites to look at, here are a few tools to try:
 2. [Alexa's similar sites](https://www.alexa.com/find-similar-sites) feature
 3. [SimilarWeb](https://www.similarweb.com)
 
-{% Img src="image/admin/EzpGvSgVJYC2y3rsnHRk.png", alt="Screenshot of Google search with the related keyword", width="775", height="336", class="w-screenshot" %}
+{% Img src="image/admin/EzpGvSgVJYC2y3rsnHRk.png", alt="Screenshot of Google search with the related keyword", width="775", height="336" %}
 
 
 For a realistic picture, try to **find 10 or so competitors**.
@@ -108,7 +108,7 @@ Our niche search engine in this example has a handful of competitors and we'll f
 
 Create a chart with FCP and TTI times for all the similar websites and highlight the fastest in the bunch. A chart like this one gives you a clearer picture of how your website is doing compared to the competition.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -124,7 +124,7 @@ Create a chart with FCP and TTI times for all the similar websites and highlight
         <td bgcolor="yellow"><strong>3,150 ms<strong></td>
       </tr>
       <tr>
-        <td>doggos.io</td>
+        <td>Doggos.com</td>
         <td>1,800 ms</td>
         <td>6,500 ms</td>
       </tr>
@@ -139,21 +139,21 @@ Create a chart with FCP and TTI times for all the similar websites and highlight
         <td>7,040 ms</td>
       </tr>
     </tbody>
-    <caption>Competitive analysis of doggos.io on 3G network</caption>
+    <caption>Competitive analysis of Doggos.com on 3G network</caption>
   </table>
 </div>
 
 <figure>
-  {% Img src="image/admin/Mfzr0dmMxHij9KrJraHD.jpg", alt="Doggo at a computer", width="800", height="600", class="w-screenshot" %}
+  {% Img src="image/admin/Mfzr0dmMxHij9KrJraHD.jpg", alt="Doggo at a computer", width="800", height="600" %}
   <figcaption>
-    Doggos.io seems to be doing okay on the FCP metric but seriously lagging behind in TTI
+    Doggos.com seems to be doing okay on the FCP metric but seriously lagging behind in TTI
   </figcaption>
 </figure>
 
 
 There's room for improvement and a good guideline for that is the [20% rule](https://www.smashingmagazine.com/2015/09/why-performance-matters-the-perception-of-time/#the-need-for-performance-optimization-the-20-rule). Research states that users recognize a difference in response times when it's greater than 20%. This means that if you want to be noticeably better than the best comparable site, you have to **be at least 20% faster**.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -174,15 +174,15 @@ There's room for improvement and a good guideline for that is the [20% rule](htt
         <td>2,520 ms</td>
       </tr>
     </tbody>
-    <caption>Performance budget that would get doggos.com ahead of the competition</caption>
+    <caption>Performance budget that would get Doggos.com ahead of the competition</caption>
   </table>
 </div>
 
 If you are trying to optimize an existing site that goal may seem impossible to reach. This is not a sign for you to give up. Start with small steps and set a budget at 20% faster than your current speed. Keep optimizing from there.
 
-For doggos.io, a revised budget could look like this.
+For Doggos.com, a revised budget could look like this.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -208,7 +208,7 @@ For doggos.io, a revised budget could look like this.
         <td>2,520 ms</td>
       </tr>
     </tbody>
-    <caption>Revised doggos.io performance budget</caption>
+    <caption>Revised Doggos.com performance budget</caption>
   </table>
 </div>
 
@@ -221,13 +221,13 @@ A solid performance budget combines different types of metrics. We've already de
 
 ### Budget for quantity-based metrics
 
-Whatever total page weight number you come up with, try to **deliver** under 170 KB of **[critical-path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) resources** (compressed/minified). This guarantees your website will be fast even on [inexpensive devices and slow 3G](https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/).
+Whatever total page weight number you come up with, try to **deliver** under 170 KB of **[critical-path](/critical-rendering-path/) resources** (compressed/minified). This guarantees your website will be fast even on [inexpensive devices and slow 3G](https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/).
 
 You can have a bigger budget for the desktop experience, but don't go wild. The median page weight on both desktop and mobile is over 1MB according to the [HTTP Archive](https://httparchive.org/reports/page-weight) data for the last year. To get a performant website you have to aim well below these median numbers.
 
 Here are a few examples based on TTI budgets:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -284,7 +284,7 @@ Here are a few examples based on TTI budgets:
   The recommended sizes are for the critical-path resources.
 {% endAside %}
 
-Defining a budget based on quantity metrics is a tricky business. An e-commerce website with loads of product photos is very different from a news portal which is mostly text. If you have ads or analytics on your site, that increases the amount of Javascript you're shipping.
+Defining a budget based on quantity metrics is a tricky business. An e-commerce website with loads of product photos is very different from a news portal which is mostly text. If you have ads or analytics on your site, that increases the amount of JavaScript you're shipping.
 
 Use the table above as a starting point and adjust based on the type of content you are working with. Define what your pages will include, review your research and take an educated guess for individual asset sizes. For example, if you are building a website with a lot of images, put stricter limits to JS size.
 
@@ -292,7 +292,7 @@ Once you have a working website, check how you are doing on user-centric perform
 
 ### Budget for rule-based metrics
 
-Very effective rule-based metrics are [Lighthouse](https://developers.google.com/web/tools/lighthouse/) scores. Lighthouse grades your app in 5 categories and one of those is performance. Performance scores are calculated based on [5 different metrics](https://developers.google.com/web/tools/lighthouse/scoring#perf-audits), including First Contentful Paint and Time to Interactive.
+Very effective rule-based metrics are [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) scores. Lighthouse grades your app in 5 categories and one of those is performance. Performance scores are calculated based on [5 different metrics](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/#perf-audits), including First Contentful Paint and Time to Interactive.
 
 When you try to build a great site, **set Lighthouse performance score budget to at least 85 (out of 100)**. Use [Lighthouse CI](https://github.com/ebidel/lighthouse-ci) to enforce it on pull-requests.
 
@@ -300,11 +300,11 @@ When you try to build a great site, **set Lighthouse performance score budget to
 
 Ask yourself what level of interaction you expect on your site. If it's a news website, users' primary goal is to read content so you should focus on rendering quickly and keeping FCP low. Doggos.com visitors want to click on relevant links as soon as possible, so the top priority is low TTI.
 
-Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors' websites, through the [Chrome User Experience report](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) dashboard.
+Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors' websites, through the [Chrome User Experience report](/chrome-ux-report-data-studio-dashboard/) dashboard.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ycZwOrFNzjdjquriM9rJ.png", alt="Device distribution data from Chrome User Experience report", width="800", height="530" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Device distribution data from Chrome User Experience report
   </figcaption>
 </figure>

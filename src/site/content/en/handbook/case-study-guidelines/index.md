@@ -95,7 +95,7 @@ The [Scale on web case studies][scale] use the following pattern:
 * The tools they used
 * Overall business results
 
-The [BookMyShow case study](https://developers.google.com/web/showcase/2017/bookmyshow)
+The [BookMyShow case study](/bookmyshow/)
 demonstrates another common organization:
 
 * Challenge
@@ -116,6 +116,18 @@ we've produced to date, in terms of aligning with the case study guidelines.
 You can check out [all of our case studies](/tags/case-study/) for more ideas,
 but be aware that they may not follow the case study guidelines as
 closely as the [Scale on web case studies][scale] do.
+
+## Deliverables {: #deliverables }
+
+When submitting the first draft of your case study, please submit it as a Google
+Doc. This helps to ensure that editorial feedback is communicated in a
+consistent way in a format that is familiar for Googlers.
+
+While not _strictly_ necessary, it helps to streamline the process if source
+files for figures can be provided. However, if the person responsible for
+writing the case study doesn't have domain knowledge in using image editors,
+the technical writing team is capable of extracting images from Google Docs if
+necessary.
 
 [five]: https://www.workfront.com/blog/project-management-101-the-5-ws-and-1-h-that-should-be-asked-of-every-project
 [scale]: /tags/scale-on-web/

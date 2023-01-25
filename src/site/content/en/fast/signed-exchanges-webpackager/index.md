@@ -16,10 +16,10 @@ tags:
   - performance
 ---
 
-A [signed exchange (SXG)](/signed-exchanges) is a delivery mechanism that makes it 
-possible to authenticate the origin of a resource independently of how it was delivered. 
+A [signed exchange (SXG)](/signed-exchanges) is a delivery mechanism that makes it
+possible to authenticate the origin of a resource independently of how it was delivered.
 The following instructions explain how to set up Signed Exchanges using
-[Web Packager](https://github.com/google/webpackager). Instructions are included for 
+[Web Packager](https://github.com/google/webpackager). Instructions are included for
 both self-signed and `CanSignHttpExchanges` certificates.
 
 
@@ -86,7 +86,7 @@ used with signed exchanges.
     identifier](https://access.redhat.com/documentation/en-us/red_hat_certificate_system/9/html/administration_guide/standard_x.509_v3_certificate_extensions)
     for the `CanSignHttpExchanges` extension). In addition, the `-extfile` flag also
     defines `example.com` as a [Subject Alternative
-    Name](https://en.wikipedia.org/wiki/Subject_Alternative_Name). 
+    Name](https://en.wikipedia.org/wiki/Subject_Alternative_Name).
 
     If you are curious about the contents of `cert.pem`, you can view them using the
     following command:
@@ -178,7 +178,7 @@ used with signed exchanges.
         like this: `CertURLBase = 'https://mysite.com/'`. However, for local
         testing, `CertURLBase = 'data:'` can be used to instruct `webpkgserver`
         to use a [data
-        URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)
+        URL](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)
         to inline the certificate in the `cert-url` field. For local testing,
         this is the most conveninent way to serve the SXG certificate.
     *   Change the line `Domain = 'example.org'` to reflect the domain that you
@@ -192,7 +192,7 @@ used with signed exchanges.
     **Optional**
 
     If you want to enable or disable [subresource
-    preloading](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md),
+    preloading](https://github.com/WICG/webpackage/blob/main/explainers/signed-exchange-subresource-substitution.md),
     the following `webpkgserver.toml` configuration options are relevant:
 
     *   To have `webpkgserver` insert directives for preloading stylesheet
@@ -215,7 +215,7 @@ used with signed exchanges.
         `#KeepNonSXGPreloads (default = false)` to `KeepNonSXGPreloads = true`.
         Keep in mind that enabling this option may make the SXG ineligible for
         the Google SXG cache per these
-        [requirements](https://github.com/google/webpackager/blob/master/docs/cache_requirements.md).
+        [requirements](https://github.com/google/webpackager/blob/main/docs/cache_requirements.md).
 
 4. Start `webpkgserver`.
 
@@ -264,7 +264,7 @@ used with signed exchanges.
     indicated the location of the SXG certificate.
 
 
-6. Open the DevTools **Network** tab, then visit the following URL: 
+6. Open the DevTools **Network** tab, then visit the following URL:
    `http://localhost:8080/priv/doc/https://example.com`.
 
    This makes a request to the `webpackager` instance running at
@@ -317,6 +317,12 @@ used with signed exchanges.
 *  You have a `CanSignHttpExchanges` certificate. This
      [page](https://github.com/google/webpackager/wiki/Certificate-Authorities)
      lists the CAs that offer this type of certificate.
+   
+*  If you don't have a certificate, then you can configure your webpkgserver to
+   automatically retrieve certificates from your CA. You can follow the
+   directions for what goes in `webpkgserver.toml` in this
+   [page](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#configuration).
+
 *  Although not a requirement, it is strongly recommended that you run
    `webpkgserver` behind an edge server. If you do not use an edge server, you
    will need to configure the `TLS.PEMFile` and `TLS.KeyFile` options in
@@ -340,7 +346,13 @@ used with signed exchanges.
    a file format that is commonly used as a "container" for storing multiple
    certificates.
 
-2. Open `webpkgserver.toml` with the editor of your choice and make the
+2. Create a fresh `webpkgsever.toml` file by copying the example.
+
+    ```shell
+    cp ./webpkgserver.example.toml ./webpkgserver.toml
+    ```
+
+3. Open `webpkgserver.toml` with the editor of your choice and make the
    following changes:
     *   Change the line `PEMFile = cert.pem` to reflect the location of the PEM
         file containing your full certificate chain.
@@ -348,9 +360,9 @@ used with signed exchanges.
         private key corresponding to your PEM File.
     *   Change the line `Domain = 'example.org'` to reflect your site.
     *   (Optional) To have `webpkgserver` auto-renew the SXG certificate every
-        90 days, configure the options in the `[SXG.ACME]` section of
+        90 days (45 days for Google), configure the options in the `[SXG.ACME]` section of
         `webpkgserver.toml`. This option only applies to sites with a DigiCert
-        ACME account setup.
+        or Google ACME account setup.
 
 3.  Configure your edge server to forward traffic to the `webpkgserver`
     instance.
@@ -360,7 +372,7 @@ used with signed exchanges.
     the SXG certificate (which are served by the `/webpkg/cert/` endpoint). The
     URL rewriting rules for each of these request types varies slightly. For
     more information, see [Running behind front end edge
-    server](https://github.com/google/webpackager/blob/master/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
+    server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
 
     **Note:**
 

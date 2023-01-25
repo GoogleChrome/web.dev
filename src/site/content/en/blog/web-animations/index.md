@@ -11,7 +11,7 @@ description: Wrangling your web animations is about to get much easier.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - animations
-  - chrome84
+  - chrome-84
   - javascript
 feedback:
   - api
@@ -24,9 +24,9 @@ The [Web Animations API](https://www.w3.org/TR/web-animations-1/) is a tool that
 
 While [Firefox](https://platform-status.mozilla.org/#web-animations) and [Safari](https://webkit.org/status/#specification-web-animations) have already implemented the full set of spec [features](https://caniuse.com/#feat=web-animation), Chromium 84 brings a slew of previously unsupported features to [Chrome and Edge](https://developer.microsoft.com/en-us/microsoft-edge/status/webanimationsjavascriptapi/) enabling cross-browser interoperability.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src='./waapi-timeline.png' alt="The Web Animations API first hit Chromium in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mdsjLgrX6rngEnBZo5Nu.png", alt="The Web Animations API first hit Chromium in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.", width="800", height="374" %}
+  <figcaption>
     The long history of the Web Animations API in Chromium.
   </figcaption>
 </figure>
@@ -50,8 +50,8 @@ would look like [this](https://codepen.io/una/pen/abvYXJX) in JavaScript:
 
 ```js
 const openAnimation = [
-  { transform: 'scale(0)' }, 
-  { transform: 'scale(1)' }, 
+  { transform: 'scale(0)' },
+  { transform: 'scale(1)' },
 ];
 ```
 
@@ -93,7 +93,7 @@ However, with the update, the Web Animations API is no longer restricted to anim
   height: 480
 } %}
 
-You first `"get"` the keyframes for the transition to determine where we are transitioning from. Then, you create two new opacity animations, enabling the   cross fade effect. Once the cross-fade completes, you delete the copy. 
+You first `"get"` the keyframes for the transition to determine where we are transitioning from. Then, you create two new opacity animations, enabling the   cross fade effect. Once the cross-fade completes, you delete the copy.
 
 ## Orchestrating animations with promises
 
@@ -102,13 +102,13 @@ In Chromium 84, you now have two methods that can be used with promises: `animat
 - `animation.ready` enables you to wait for pending changes to take effect (i.e. switching between playback control methods such as play and pause).
 - `animation.finished` provides a means of executing custom JavaScript code when an animation is complete.
 
-Let's continue with our example, and create an orchestrated animation chain with `animation.finished`. Here, you have a vertical transformation (`scaleY`), followed by a horizontal transformation (`scaleX`), followed by an opacity change on a child element: 
+Let's continue with our example, and create an orchestrated animation chain with `animation.finished`. Here, you have a vertical transformation (`scaleY`), followed by a horizontal transformation (`scaleX`), followed by an opacity change on a child element:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/modal-open.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Applying transformations and opacity to an opening modal element. <a href="https://codepen.io/una/pen/dyYKJMz">See Demo on Codepen</a>
   </figcaption>
 </figure>
@@ -124,15 +124,15 @@ Within CSS, this would be cumbersome to recreate, especially when applying uniqu
 
 ### Example: Play, pause, and reverse
 
-What can open, should close! Luckily, since [Chromium 39](https://developers.google.com/web/updates/2014/12/web-animation-playback), the Web Animations API has provided us the ability to play, pause, and reverse our animations.
+What can open, should close! Luckily, since [Chromium 39](https://developer.chrome.com/blog/web-animation-playback/), the Web Animations API has provided us the ability to play, pause, and reverse our animations.
 
 You can take the above animation, and give it a smooth, reversed animation when clicking the button again using `.reverse()`. This way, you can create a smoother and more contextual interaction for our modal.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/modal-reverse.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     An example of a modal opening and closing upon button click. <a href="https://glitch.com/~waapi-promises">See Demo on Glitch </a>
   </figcaption>
 </figure>
@@ -147,20 +147,20 @@ What you can do is create two play-pending animations (`openModal`, and an inlin
 
 ### Example: Dynamic interactions with partial keyframes
 
-<figure class="w-figure">
-<video controls autoplay loop muted class="w-screenshot">
+<figure>
+<video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/retargetting.mp4">
-  </video>  <figcaption class="w-figcaption">
+  </video>  <figcaption>
     Retargeting example, where a mouse click adjusts the animation to a new location. <a href="https://glitch.com/~waapi-retargetting">See Demo on Glitch </a>
   </figcaption>
 </figure>
 
 ```js
-selector.animate([{transform: `translate(${x}px, ${y}px)`}], 
+selector.animate([{transform: `translate(${x}px, ${y}px)`}],
     {duration: 1000, fill: 'forwards'});
 ```
 
-In this example, there is only one keyframe, and no specified start position. This is an example of using **partial keyframes**. The mouse handler does a few things here: it sets a new end location and triggers a new animation. The new start position is inferred from the current underlying position. 
+In this example, there is only one keyframe, and no specified start position. This is an example of using **partial keyframes**. The mouse handler does a few things here: it sets a new end location and triggers a new animation. The new start position is inferred from the current underlying position.
 
 New transitions can be triggered while existing ones are still running. This means that the current transition is interrupted, and a new one is created.
 
@@ -168,11 +168,11 @@ New transitions can be triggered while existing ones are still running. This mea
 
 When creating animations based on events, such as on `'mousemove'`, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced in Chromium 83, enabling automated cleanup, where finished animations are flagged as replaceable and automatically removed if replaced by another finished animation. Consider the following example:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/comet-trail.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
   A comet trail animates when the mouse moves. <a href="https://glitch.com/~waapi-replaced">See Demo on Glitch</a>
   </figcaption>
 </figure>
@@ -210,10 +210,10 @@ With the Web Animations API, you can now set the composite mode of your animatio
 
 When you composite animations, a developer can write short, distinct effects and see them combined together. In the example below, we are applying a rotation and scale keyframe to each box, with the only adjustment being the composite mode, added as an option:
 
-<figure class="w-figure">
-<video controls autoplay loop muted class="w-screenshot">
+<figure>
+<video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/replace-add-accumulate.mp4">
-  </video>  <figcaption class="w-figcaption">
+  </video>  <figcaption>
     A demo showing the default, add, and accumulate composite modes. <a href="https://glitch.com/~waapi-composite-demos">See Demo on Glitch</a>
   </figcaption>
 </figure>
@@ -222,11 +222,11 @@ In the default `'replace'` composite mode, the final animation replaces the tran
 
 Let's take a look at a UI element example:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/dropdown.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
   A bouncy dropdown menu which has two composited animations applied to it. <a href="https://glitch.com/~waapi-composited">See Demo on Glitch</a>
   </figcaption>
 </figure>

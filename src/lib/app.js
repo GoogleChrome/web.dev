@@ -6,21 +6,27 @@
  */
 
 import {store} from './store';
-import {localStorage} from './utils/storage';
+import {loadAnalyticsScript} from './actions';
 import removeServiceWorkers from './utils/sw-remove';
 
 // This hides a legacy browser warning that can appear on the /measure page
 // See .unsupported-notice in _page-header.scss
 document.body.classList.remove('unresolved');
 
-// Configures global page state (loading, signed in).
-function onGlobalStateChanged({isSignedIn}) {
-  document.body.classList.toggle('lh-signedin', isSignedIn);
+// Although discouraged (especially for longer videos), some video clips may have
+// autoplay enabled. Disable it when prefers-reduced-motion is set, and ensure
+// controls are enabled.
+if (matchMedia('(prefers-reduced-motion)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach((b) => {
+    b.removeAttribute('autoplay');
+    b.setAttribute('controls', '');
+  });
+}
 
-  // Cache whether the user was signed in, to help prevent FOUC in future and
-  // for Analytics, as this can be read synchronosly and Firebase's auth takes
-  // ~ms to arrive.
-  localStorage['webdev_isSignedIn'] = isSignedIn ? 'probably' : '';
+function onGlobalStateChanged({cookiePreference}) {
+  if (cookiePreference === 'accepts') {
+    loadAnalyticsScript();
+  }
 }
 store.subscribe(onGlobalStateChanged);
 onGlobalStateChanged(store.getState());

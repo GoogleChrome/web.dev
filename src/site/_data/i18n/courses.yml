@@ -1,0 +1,94 @@
+learn_css:
+  title:
+    en: Learn CSS!
+    es: ¡Aprenda CSS!
+    ja: CSS を学びましょう！
+    ko: CSS를 배우세요!
+    pt: Aprenda CSS!
+    ru: Изучаем CSS!
+    zh: 学习 CSS！
+  description:
+    en: "Let’s gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index."
+    es: "Dividamos alegremente los aspectos complejos de CSS en episodios digeribles que abarquen todo, desde la accesibilidad hasta el z-índex."
+    ja: "アクセシビリティから z-index に至るまで、CSS の難解な部分を分かりやすいエピソードに分けて楽しく解説していきます。"
+    ko: "CSS의 복잡한 측면을 접근성부터 z-인덱스까지 모든 부분을 다룬 부담 없는 다양한 에피소드로 즐겁게 꾸며 보겠습니다."
+    pt: "Vamos dividir aspectos complexos do CSS em episódios digeríveis cobrindo tudo, desde a acessibilidade até o z-index."
+    ru: "Разбор сложных аспектов CSS в рамках коротких эпизодов, охватывающих все темы, начиная с доступности и заканчивая z-index."
+    zh: "我们来愉快地将 CSS 的种种复杂方面拆解成可消化吸收的知识点，涵盖从无障碍功能到 z-index 的所有内容。"
+learn_forms:
+  title:
+    en: Learn Forms!
+    es: '¡Aprenda formularios!'
+    ja: Forms について学びましょう！
+    ko: 양식을 배우세요!
+    pt: Aprenda formulários!
+    ru: Изучаем формы!
+    zh: 学习表单！
+  description:
+    en: "A course about HTML forms to help you improve your web developer expertise."
+    ko: "[할 일]: ..."
+get_started_with_forms:
+  title:
+    en: Get started with forms
+  description:
+    en: "to do."
+general_best_practice:
+  title:
+    en: General best practice
+  description:
+    en: "to do."
+testing_monitoring:
+  title:
+    en: Testing and monitoring
+  description:
+    en: "to do."
+elements_attributes:
+  title:
+    en: Elements and attributes
+  description:
+    en: "to do."
+styling:
+  title:
+    en: CSS
+  description:
+    en: "to do."
+javascript:
+  title:
+    en: JavaScript
+  description:
+    en: "to do."
+form_types:
+  title:
+    en: Specific form types
+  description:
+    en: "to do."
+
+wrap_up:
+  title:
+    en: Wrap up
+  description:
+    en: "Title for the section with the conclusion of the course"
+
+learn_design:
+  title:
+    en: Learn Responsive Design!
+  description:
+    en: "Let's explore all aspects of responsive design, learning how to make sites that look great and work well for everyone."
+
+learn_pwa:
+  title:
+    en: Learn PWA!
+  description:
+    en: "A course that breaks down every aspect of modern progressive web app development."
+
+learn_accessibility:
+   title:
+    en: Learn Accessibility
+   description:
+    en: "Discover how to make your websites and web apps more accessible."
+
+learn_html:
+  title:
+    en: Learn HTML!
+  description:
+    en: "This HTML course for web developers provides a solid overview for developers, from novice to expert level HTML."

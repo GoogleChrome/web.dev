@@ -4,7 +4,7 @@ title: How to provide your own in-app install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2021-02-09
+updated: 2021-05-19
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless, in-app
   install experience for your users.
@@ -22,10 +22,9 @@ other installed app.
 In addition to the [browser provided install experience](/promote-install/#browser-promotion),
 it's possible to provide your own custom install flow, directly within your app.
 
-<figure class="w-figure w-figure--inline-right">
-  <img src="spotify-custom-install.png"
-       alt="Install App button provided in the Spotify PWA">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Install App button provided in the Spotify PWA", width="491", height="550" %}
+  <figcaption>
     "Install App" button provided in the Spotify PWA
   </figcaption>
 </figure>
@@ -54,7 +53,7 @@ in-app install flow:
 
 {% Aside %}
   The `beforeinstallprompt` event, and the `appinstalled` event have been moved
-  from the Web App Manifest spec to their own
+  from the web app manifest spec to their own
   [incubator](https://github.com/WICG/beforeinstallprompt). The Chrome team
   remains committed to supporting them, and has no plans to remove or deprecate
   support. Google's Web DevRel team continues to recommend using them to provide a customized
@@ -177,7 +176,7 @@ To track if the user changes between `standalone`, and `browser tab`, listen for
 changes to the `display-mode` media query.
 
 ```js
-window.matchMedia('(display-mode: standalone)').addEventListener((evt) => {
+window.matchMedia('(display-mode: standalone)').addEventListener('change', (evt) => {
   let displayMode = 'browser';
   if (evt.matches) {
     displayMode = 'standalone';

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Accessibility tips for web developers
 subhead: Improving accessibility makes your site more useable for everyone.
 description: |
@@ -38,7 +39,7 @@ Moreover, sites should be usable by the broadest group of users,
 including those with disabilities.
 Here's a sample of just a few disabilities your users may have:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -162,7 +163,7 @@ to help them with reading text, so it's important to ensure text alternatives ex
   or flash, which can cause [issues](http://www.w3.org/TR/WCAG20/#seizure)
   for some users.
 
-  The [`prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion#too_much_motion_in_real_life_and_on_the_web)
+  The [`prefers-reduced-motion`](/prefers-reduced-motion/#too-much-motion-in-real-life-and-on-the-web)
   CSS media query allows you to limit animations
   and autoplaying videos for users who prefer reduced motion:
 
@@ -192,7 +193,7 @@ to spread awareness of best practices in your team:
 
 ## Are your UI components accessible?
 
-**Summary (tl;dr)**
+**Summary**
 
 When auditing your page's UI components for accessibility, ask yourself:
 
@@ -267,9 +268,9 @@ First, ensure that you have a sensible focus target for each component.
 For example, a complex component like a menu may be one focus target within a page
 but should then manage focus within itself so that the active menu item always takes focus.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/8zpJMaaY0DuAHdugbSr3.png", alt="A screenshot of a menu and submenu that requires focus management.", width="800", height="377" %}
-  <figcaption class="w-figcaption">Managing focus within a complex element.</figcaption>
+  <figcaption>Managing focus within a complex element.</figcaption>
 </figure>
 
 ### Using tabindex
@@ -289,7 +290,7 @@ Also ensure that focus is always visible, whether by allowing the default focus 
 
 {% Aside %}
 You may also be interested in the roving `tabindex` or `aria-activedescendant` approaches,
-[covered over on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets#Technique_1_Roving_tabindex).
+[covered over on MDN](https://developer.mozilla.org/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets#Technique_1_Roving_tabindex).
 {% endAside %}
 
 ### Using autofocus
@@ -300,7 +301,7 @@ when the page is loaded.
 [all web form controls](https://html.spec.whatwg.org/multipage/forms.html#association-of-controls-and-forms),
 including buttons.
 To autofocus elements in your own custom UI components,
-call the [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.focus) method,
+call the [`focus()`](https://developer.mozilla.org/docs/Web/API/HTMLElement.focus) method,
 supported on all HTML elements that can be focused
 (for example, `document.querySelector('myButton').focus()`).
 
@@ -333,8 +334,8 @@ to automate running keyboard accessibility tests for toggling UI states.
 [WalkMe Engineering](https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032)
 has a great guide on this I recommend reading.
 
-<figure class="w-figure">
-  {% Img src="image/admin/3lZosaL1YXafLn4ZRINl.gif", alt="WalkMe state toggle test.", width="441", height="400", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/3lZosaL1YXafLn4ZRINl.gif", alt="WalkMe state toggle test.", width="441", height="400" %}
 </figure>
 
 ```js
@@ -402,9 +403,9 @@ By binding these attributes to the relevant properties on your custom component,
 you can allow users of assistive technology to interact with the element,
 change its value, and even cause the element's visual presentation to change accordingly.
 
-<figure class="w-figure">
-  {% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56", class="w-screenshot" %}
-  <figcaption class="w-figcaption">A range slider component.</figcaption>
+<figure>
+  {% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56" %}
+  <figcaption>A range slider component.</figcaption>
 </figure>
 
 ```html
@@ -421,9 +422,9 @@ provide labels and values for each slice
 so users who have visual impairments can understand the information
 even if they can't tell where the slices begin and end:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/4DlbNfCX7AYYrPSpQg4L.png", alt="A pie chart with labels and values to ensure accessibility.", width="500", height="442" %}
-  <figcaption class="w-figcaption">An accessible pie chart. (From the <a href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Informational_Graphic_Contrast_(Minimum)" rel="noopener">W3C Web Accessibility Initiative</a>.)</figcaption>
+  <figcaption>An accessible pie chart. (From the <a href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Informational_Graphic_Contrast_(Minimum)" rel="noopener">W3C Web Accessibility Initiative</a>.)</figcaption>
 </figure>
 
 ### Is there sufficient contrast between text and images and their background?
@@ -452,7 +453,7 @@ debugging the accessibility of your visual components.
   for your framework or browser of choice.
   [Axe Puppeteer](https://www.deque.com/blog/axe-and-attest-integration-puppeteer/)
   can be used for writing automated accessibility tests.
-- The [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+- The [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
   Accessibility audits provide helpful insights for discovering common accessibility issues.
   The accessibility score is a weighted average of all accessibility audits
   based on [Axe user impact assessments](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md).
@@ -464,7 +465,7 @@ debugging the accessibility of your visual components.
   Tenon has strong integration support across build tools, browsers (via extensions), and even text editors.
 - There are many library- and framework-specific tools
   for highlighting accessibility issues with components.
-  For example, [web.dev](https://web.dev/accessibility-auditing-react/)
+  For example, [web.dev](/accessibility-auditing-react/)
   explains how to use [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
   to highlight accessibility issues for React components in your editor:
 
@@ -480,7 +481,7 @@ debugging the accessibility of your visual components.
   or [Windows Automation API Testing Tools](http://msdn.microsoft.com/en-us/library/windows/desktop/dd373661(v=vs.85).aspx)
   and [AccProbe](http://accessibility.linuxfoundation.org/a11yweb/util/accprobe/) (Windows).
   You can also see the full accessibility tree that Chrome creates
-  by navigating to `chrome://accessibility`.
+  by navigating to `about://accessibility`.
 - The best way to test for screen reader support on a Mac is using the VoiceOver utility.
   Use `⌘F5` to enable or disable it, `Ctrl+Option ←→` to move through the page,
   and `Ctrl+Shift+Option + ↑↓` to move up and down the accessibility tree.

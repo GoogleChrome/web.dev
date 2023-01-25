@@ -26,15 +26,15 @@ Many HIIT trainings use HIIT timers, for example, this [30&nbsp;minute online se
 from [The Body Coach TV](https://www.youtube.com/user/thebodycoach1) YouTube channel.
 
 <div class="w-columns">
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tUl2jNm2bFqGBAFF5s63.png", alt="HIIT training online session with green high intensity timer.", width="800", height="450" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Active period.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMUgX3WJ4ZfQX38zHP75.png", alt="HIIT training online session with red low intensity timer.", width="800", height="450" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Resting period.
     </figcaption>
   </figure>
@@ -55,23 +55,23 @@ It is a responsive app with a navbar, a tabbar, and three pages:
 
 The following screenshots give an impression of the application.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9RYkQ17tlEy79NlAIFfP.svg", alt="HIIT Time example app in portrait mode.", width="800", height="450" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     HIIT Time "Workout" tab in portrait mode.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SNHMWFvHtCYHEfC9SHPl.svg", alt="HIIT Time example app in landscape mode.", width="800", height="450" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     HIIT Time "Workout" tab in landscape mode.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/f7uqTk1PNMVaHob7FDzA.svg", alt="HIIT Time example app showing management of a timer.", width="800", height="450" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     HIIT Time timer management.
   </figcaption>
 </figure>
@@ -85,9 +85,9 @@ A final iframe pointing to `about:blank` serves for dynamically created in-app p
 timers or creating new ones.
 I call this pattern multi-page single-page app (MPSPA).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rv14TNs1kU0bpW5kv5bq.png", alt="Chrome DevTools view of the HTML structure of the app showing that it consists of six iframes: one for the navbar, one for the tabbar, and three grouped ones for each page of the app, with a final placeholder iframe for dynamic pages.", width="800", height="244" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The app consists of six iframes.
   </figcaption>
 </figure>
@@ -130,9 +130,9 @@ they work well together with lit-html, as you can see in the listing below.
 </div>
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Toz6JmkCQVt7WLscSnlP.png", alt="Three buttons and a progress ring.", width="300", height="244" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Rendered section of the page corresponding to the mark-up above.
   </figcaption>
 </figure>
@@ -161,9 +161,9 @@ const page = new Page({
 });
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y82LVHSxUVAehgQlDbsb.png", alt="In-app page realized as an iframe.", width="500", height="272" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Navigation happens from iframe to iframe.
   </figcaption>
 </figure>
@@ -202,9 +202,9 @@ select {
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/z3Op4O7OM5NQ1zz8Uah8.png", alt="HIIT Time app preferences page showing a form in grid layout.", width="500", height="312" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Every page is its own world. Styling happens directly with the element names.
   </figcaption>
 </figure>

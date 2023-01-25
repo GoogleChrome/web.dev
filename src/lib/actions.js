@@ -1,10 +1,11 @@
 import {store} from './store';
-import {saveUserUrl} from './fb';
-import {runLighthouse, fetchReports} from './lighthouse-service';
+import {fetchReports} from './lighthouse-service';
+import {runPsi} from './psi-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
 import cookies from 'js-cookie';
-import {trackEvent} from './analytics';
+import {ids} from 'webdev_analytics';
+import {isProd} from 'webdev_config';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -21,12 +22,8 @@ export const clearSignedInState = store.action(() => {
   }
 });
 
-export const requestRunLighthouse = store.action((state, url) => {
+export const requestRunPSI = store.action((state, url) => {
   const p = (async () => {
-    if (state.activeLighthouseUrl) {
-      return null; // there's an active run, nothing will happen
-    }
-
     // Only write the user's URL preference to `activeLighthouseUrl` here before running
     // Lighthouse. The `userUrl` field inside state is not "safe" in that it can be replaced by
     // Firestore at any point. This ensures that results are never approportioned to the wrong URL.
@@ -34,48 +31,36 @@ export const requestRunLighthouse = store.action((state, url) => {
       activeLighthouseUrl: url,
       lighthouseError: null,
     });
-
-    const run = await runLighthouse(url, state.isSignedIn);
-    const auditedOn = new Date(run.auditedOn);
+    const run = await runPsi(url);
     state = store.getState(); // might change during runLighthouse
-
-    // Don't just replace last run for signed in users to avoid double rendering / outdated
-    // sparkline data. Instead, call fetchReports() to repopulate the graphs with the latest data.
-    // Yes, this means that signed-in users have two network requests.
-
-    const firstSeenUrl = await saveUserUrl(url, auditedOn); // write to Firestore and get first seen
-
-    // nb. use firstSeenUrl as state.userUrlSeen is updated from a Firebase snapshot which
-    // usually has not arrived by now (since it's updated right above)
-    const runs = await fetchReports(url, firstSeenUrl);
-
     return {
       userUrl: url,
       activeLighthouseUrl: null,
       lighthouseResult: {
         url,
-        runs,
+        run,
       },
     };
   })();
 
   return p.catch((err) => {
-    console.warn('failed to run Lighthouse', url, err);
-
-    const update = {
-      lighthouseError: err.toString(),
-      activeLighthouseUrl: null,
-    };
-
-    // If the previous result was for a different URL, clear it so there's not confusion about
-    // what the error is being shown for.
-    const {lighthouseResult} = store.getState();
-    if (lighthouseResult && lighthouseResult.url !== url) {
-      update.lighthouseResult = null;
-    }
-
-    return update;
+    const errMsg = err.name === 'FetchError' ? err.name : err.toString();
+    console.warn('failed to run PSI', url, errMsg);
+    return setLighthouseError(errMsg);
   });
+});
+
+export const setLighthouseError = store.action((_, errMsg) => {
+  const update = {
+    lighthouseError: errMsg,
+    activeLighthouseUrl: null,
+  };
+  const {activeLighthouseUrl, lighthouseResult} = store.getState();
+  if (lighthouseResult && lighthouseResult.url !== activeLighthouseUrl) {
+    update.lighthouseResult = null;
+  }
+  store.setState(update);
+  return update;
 });
 
 export const requestFetchReports = store.action((_, url, startDate) => {
@@ -124,64 +109,94 @@ export const requestFetchReports = store.action((_, url, startDate) => {
   });
 });
 
-export const expandSideNav = store.action(() => {
-  openModal();
-  return {isSideNavExpanded: true};
+/**
+ * Inert the page so scrolling and pointer events are disabled.
+ * This is used when we open the navigation drawer or show a modal dialog.
+ */
+const disablePage = () => {
+  /** @type {HTMLElement|object} */
+  const main = document.querySelector('main') || {};
+  /** @type {HTMLElement|object} */
+  const footer = document.querySelector('.w-footer') || {};
+
+  document.body.classList.add('overflow-hidden');
+  main.inert = true;
+  footer.inert = true;
+};
+
+/**
+ * Uninert the page so scrolling and pointer events work again.
+ */
+const enablePage = () => {
+  /** @type {HTMLElement|object} */
+  const main = document.querySelector('main') || {};
+  /** @type {HTMLElement|object} */
+  const footer = document.querySelector('.w-footer') || {};
+
+  document.body.classList.remove('overflow-hidden');
+  main.inert = false;
+  footer.inert = false;
+};
+
+export const openNavigationDrawer = store.action(() => {
+  disablePage();
+  return {isNavigationDrawerOpen: true};
 });
 
-export const collapseSideNav = store.action(() => {
-  closeModal();
-  return {isSideNavExpanded: false};
+export const closeNavigationDrawer = store.action(() => {
+  enablePage();
+  return {isNavigationDrawerOpen: false};
 });
 
 export const openModal = store.action(() => {
-  const main = document.querySelector('main');
-  /** @type import('./components/Header').Header */
-  const header = document.querySelector('web-header');
-  /** @type {HTMLElement} */
-  const footer = document.querySelector('.w-footer');
-
-  document.documentElement.classList.add('web-modal__overflow-hidden');
-  main.inert = true;
-  header.inert = true;
-  footer.inert = true;
+  disablePage();
   return {isModalOpen: true};
 });
 
 export const closeModal = store.action(() => {
-  const main = document.querySelector('main');
-  /** @type import('./components/Header').Header */
-  const header = document.querySelector('web-header');
-  /** @type {HTMLElement} */
-  const footer = document.querySelector('.w-footer');
-
-  document.documentElement.classList.remove('web-modal__overflow-hidden');
-  main.inert = false;
-  header.inert = false;
-  footer.inert = false;
+  enablePage();
   return {isModalOpen: false};
 });
 
-export const checkIfUserAcceptsCookies = store.action(
-  ({userAcceptsCookies}) => {
-    if (userAcceptsCookies) {
-      return;
-    }
+export const checkIfUserAcceptsCookies = store.action(({cookiePreference}) => {
+  if (cookiePreference) {
+    return;
+  }
 
-    if (localStorage['web-accepts-cookies']) {
-      return {
-        userAcceptsCookies: true,
-      };
-    }
+  // If set, this will be either the string '1' or '0' based on whether
+  // the user has accepted or rejected the use of cookies.
+  // If not set it means the user has not made a choice (or cleared storage).
+  const storedWebAcceptsCookiesValue = localStorage['web-accepts-cookies'];
 
-    return {showingSnackbar: true, snackbarType: 'cookies'};
-  },
-);
+  if (typeof storedWebAcceptsCookiesValue === 'string') {
+    cookiePreference =
+      storedWebAcceptsCookiesValue === '1' ? 'accepts' : 'rejects';
+  } else {
+    cookiePreference = null;
+  }
+
+  // Only show the cookie snack-bar if the user hasn't set a preference.
+  const showingSnackbar = cookiePreference === null;
+
+  return {cookiePreference, showingSnackbar, snackbarType: 'cookies'};
+});
 
 export const setUserAcceptsCookies = store.action(() => {
   localStorage['web-accepts-cookies'] = '1';
   return {
-    userAcceptsCookies: true,
+    cookiePreference: 'accepts',
+    showingSnackbar: false,
+    // Note we don't set the snackbarType to null because that would cause the
+    // snackbar to re-render and break the animation.
+    // Instead, snackbarType is allowed to stick around and future updates can
+    // overwrite it.
+  };
+});
+
+export const setUserRejectsCookies = store.action(() => {
+  localStorage['web-accepts-cookies'] = '0';
+  return {
+    cookiePreference: 'rejects',
     showingSnackbar: false,
     // Note we don't set the snackbarType to null because that would cause the
     // snackbar to re-render and break the animation.
@@ -207,28 +222,12 @@ export const setLanguage = store.action((state, language) => {
   };
 });
 
-export const closeToC = store.action(() => {
-  trackEvent({
-    category: 'Site-Wide Custom Events',
-    action: 'click',
-    label: 'ToC',
-    value: 0,
-  });
-  document.querySelector('main').classList.remove('w-toc-open');
-  return {
-    isTocOpened: false,
-  };
-});
-
-export const openToC = store.action(() => {
-  trackEvent({
-    category: 'Site-Wide Custom Events',
-    action: 'click',
-    label: 'ToC',
-    value: 1,
-  });
-  document.querySelector('main').classList.add('w-toc-open');
-  return {
-    isTocOpened: true,
-  };
+export const loadAnalyticsScript = store.action(() => {
+  const {g4ScriptLoaded} = store.getState();
+  if (!g4ScriptLoaded && isProd) {
+    loadScript(`https://www.googletagmanager.com/gtag/js?id=${ids.GA4}`, null);
+    return {
+      g4ScriptLoaded: true,
+    };
+  }
 });

@@ -12,7 +12,7 @@ description: |
   payment app. Learn how to set up a payment method and get your payment app
   ready for merchants and customers to make payments.
 date: 2020-05-25
-updated: 2020-07-17
+updated: 2021-09-14
 tags:
   - payments
 feedback:
@@ -42,10 +42,8 @@ Every payment app needs to provide the following:
   provided by a third party)
 - Web app manifest
 
-<figure class="w-figure">
-  <img src="diagram_direct.png"
-       alt="Diagram: How a browser discovers the payment app from a URL-based payment
-method identifier">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kvLIMUysDNEG3IfPxKz6.png", alt="Diagram: How a browser discovers the payment app from a URL-based payment method identifier", width="800", height="587" %}
 </figure>
 
 The discovery process starts when a merchant initiates a transaction:
@@ -71,7 +69,7 @@ is a URL-based string. For example, Google Pay's identifier is
 `https://google.com/pay`. Payment app developers can pick any URL as a payment
 method identifier as long as they have control over it and can serve arbitrary
 content. In this article, we'll use
-[`https://bobpay.xyz/pay`](https://bobpay.xyz/pay) as the payment method
+[`https://bobbucks.dev/pay`](https://bobbucks.dev/pay) as the payment method
 identifier.
 
 {% Aside %}
@@ -89,7 +87,7 @@ for the `supportedMethods` property. For example:
 
 ```js
 const request = new PaymentRequest([{
-  supportedMethods: 'https://bobpay.xyz/pay'
+  supportedMethods: 'https://bobbucks.dev/pay'
 }], {
   total: {
     label: 'total',
@@ -117,7 +115,7 @@ manifest body.
 A payment method manifest has two fields, `default_applications` and
 `supported_origins`.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -153,7 +151,7 @@ A payment method manifest file should look like this:
 
 ```json
 {
-  "default_applications": ["https://bobpay.xyz/manifest.json"],
+  "default_applications": ["https://bobbucks.dev/manifest.json"],
   "supported_origins": [
     "https://alicepay.friendsofalice.example"
   ]
@@ -174,26 +172,25 @@ that points to another URL where the browser can fetch the payment method
 manifest. This is useful when a payment method manifest is hosted at a different
 server or when the payment app is served by a third party.
 
-![How a browser discovers the payment app from a URL-based payment method
-identifier with redirects](diagram_indirect.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YDqz1ppLkjHd9HYgXYH.png", alt="How a browser discovers the payment app from a URL-based payment method identifier with redirects", width="800", height="698" %}
 
 Configure the payment method server to respond with a HTTP `Link` header with
 the `rel="payment-method-manifest"` attribute and the [payment method
 manifest](https://w3c.github.io/payment-method-manifest/) URL.
 
-For example, if the manifest is at `https://bobpay.xyz/payment-manifest.json`,
+For example, if the manifest is at `https://bobbucks.dev/payment-manifest.json`,
 the response header would include:
 
 ```http
-Link: <https://bobpay.xyz/payment-manifest.json>; rel="payment-method-manifest"
+Link: <https://bobbucks.dev/payment-manifest.json>; rel="payment-method-manifest"
 ```
 
 The URL can be a fully-qualified domain name or a relative path. Inspect
-`https://bobpay.xyz/pay/` for network traffic to see an example. You may use a
+`https://bobbucks.dev/pay/` for network traffic to see an example. You may use a
 `curl` command as well:
 
 ```shell
-curl --include https://bobpay.xyz/pay
+curl --include https://bobbucks.dev/pay
 ```
 
 {% Aside %}
@@ -203,9 +200,9 @@ documentation](https://github.com/w3c/payment-request-info/wiki/PaymentMethodPra
 
 ## Step 3: Serve a web app manifest
 
-A [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) is
+A [web app manifest](https://developer.mozilla.org/docs/Web/Manifest) is
 used to define a web app as the name suggests. It's a widely used manifest file
-to [define a Progressive Web App (PWA)](https://web.dev/add-manifest/).
+to [define a Progressive Web App (PWA)](/add-manifest/).
 
 Typical web app manifest would look like this:
 
@@ -233,14 +230,6 @@ Typical web app manifest would look like this:
     "scope": "/",
     "use_cache": false
   },
-  "payment": {
-    "supported_delegations": [
-      "shippingAddress",
-      "payerName",
-      "payerEmail",
-      "payerPhone"
-    ]
-  },
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#3f51b5",
@@ -264,7 +253,7 @@ Typical web app manifest would look like this:
 The information described in a web app manifest is also used to define how a
 payment app appears in the Payment Request UI.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -293,7 +282,7 @@ payment app appears in the Payment Request UI.
       </tr>
       <tr>
         <td>
-          <code><a href="https://developer.mozilla.org/docs/Web/Manifest/serviceworker">serviceworker</a></code>
+          <code><a href="https://developer.mozilla.org/docs/Web/API/Service_Worker_API">serviceworker</a></code>
         </td>
         <td>
         Used to detect the service worker that runs as the web-based payment
@@ -325,7 +314,7 @@ payment app appears in the Payment Request UI.
         </td>
         <td>
         Used to detect the app that acts as the OS-provided payment app.
-        Find more details at <a href="/native-payment-apps-overview">Android
+        Find more details at <a href="/android-payment-apps-developers-guide/">Android
         payment apps developer guide</a>.
         </td>
       </tr>
@@ -337,25 +326,14 @@ payment app appears in the Payment Request UI.
         Used to determine which payment app to launch when both an OS-provided payment app and a web-based payment app are available.
         </td>
       </tr>
-      <tr>
-        <td>
-          <code><a href="https://github.com/sahel-sh/shipping-contact-delegation/blob/master/Explainer.md#edit-just-in-time-jit-installation">payment.supported_delegations</a></code>
-        </td>
-        <td>
-        A string array used to determine the additional information that the
-        payment app can provide. <code>shippingAddress</code>, <code>payerName</code>, <code>payerEmail</code>,
-        and <code>payerPhone</code> are valid values.
-        </td>
-      </tr>
     </tbody>
     <caption>Important web app manifest fields</caption>
   </table>
 </div>
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./web-app-manifest.png"
-       alt="Payment app with an icon.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lyP2t7T5R5bVzqh0LUTx.png", alt="Payment app with an icon.", width="800", height="237" %}
+  <figcaption>
     Payment app label and icon.
   </figcaption>
 </figure>
@@ -416,18 +394,19 @@ advance. [It can be registered just-in-time](#jit-register).
 
 
 ## Understanding the special optimizations
-### How browsers can skip the Payment Request UI and launch a payment app directly
-In Chrome, when `show()` method of `PaymentRequest` is called, the Payment Request API displays a
-browser-provided UI called the "Payment Request UI". This UI allows users to
-choose a payment app, shipping options and delivery address, and payer's contact
-information. After pressing the **Continue** button in the Payment Request UI, the selected payment app is launched.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">
+### How browsers can skip the Payment Request UI and launch a payment app directly
+
+In Chrome, when `show()` method of `PaymentRequest` is called, the Payment
+Request API displays a browser-provided UI called the "Payment Request UI". This
+UI allows users to choose a payment app. After pressing the **Continue** button
+in the Payment Request UI, the selected payment app is launched.
+
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/8T37CEyLisAjwW39dRwB.mp4", autoplay="true", loop="true", muted="true"
+  %}
+  <figcaption>
     Payment Request UI intervenes before launching the payment app.
   </figcaption>
 </figure>
@@ -438,12 +417,11 @@ the browser can delegate fulfillment of that information to payment apps and
 launch a payment app directly without showing the Payment Request UI when
 `show()` is called.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/VOKIj5Tqfi2bNPCjtkyi.mp4", autoplay="true", loop="true", muted="true"
+  %}
+  <figcaption>
     Skip the Payment Request UI and launch the payment app directly.
   </figcaption>
 </figure>
@@ -452,8 +430,6 @@ To launch a payment app directly, the following conditions must be met:
 - `show()` is triggered with a user gesture (for example, a mouse click).
 - There is only a single payment app that:
     - Supports the requested payment method identifier.
-    - Can fulfill all the delegated requirements (such as shipping address,
-      payer's phone number, or payer's name).
 
 {% Aside %}
 Safari currently only supports Apple Pay so it always launches the app directly,
@@ -461,6 +437,7 @@ skipping the Payment Request UI.
 {% endAside %}
 
 ### When is a web-based payment app registered just-in-time (JIT)? {: #jit-register}
+
 Web-based payment apps can be launched without the user's explicit prior visit
 to the payment app website and registering the service worker. The service
 worker can be registered just-in-time when the user chooses to pay with the

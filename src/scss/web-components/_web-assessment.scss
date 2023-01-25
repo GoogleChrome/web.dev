@@ -1,0 +1,41 @@
+web-assessment,
+.web-assessment__launcher {
+  --gutter: 0.5rem;
+
+  display: block;
+  padding: $global-gutter;
+  border-radius: $global-radius-large;
+  border: 1px solid var(--color-stroke);
+
+  @include apply-utility('bg', 'mid-bg');
+  @include apply-utility('color', 'state-good-text');
+}
+
+web-assessment {
+  a {
+    color: currentColor;
+    text-decoration-color: currentColor;
+  }
+
+  a:focus {
+    outline-color: currentColor;
+  }
+
+  .web-tabs__tablist {
+    background: none;
+  }
+
+  [data-role='stimulus'] {
+    margin-block: get-space('size-1');
+  }
+}
+
+.web-assessment__content {
+  margin-top: get-space('size-1');
+
+  @include apply-utility('color', 'core-text');
+}
+
+.web-question__content {
+  padding: get-space('size-1') 0 0;
+}

@@ -24,12 +24,11 @@ gives you an overview of the available tools and suggestions on when to use each
 
 ## Find basic SEO issues with Lighthouse
 
-Use [Lighthouse](https://developers.google.com/web/tools/lighthouse) for your first investigation.
+Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) for your first investigation.
 It comes with a bunch of [SEO audits](/pass-lighthouse-seo-audit/).
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse.png" 
-       alt="A screenshot of SEO audits in Lighthouse.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/c6SfL83IXMmBArczs9Le.png", alt="A screenshot of SEO audits in Lighthouse.", width="800", height="74" %}
 </figure>
 
 The Lighthouse SEO audits are very basic first checks for a single page of your website. They catch
@@ -65,18 +64,16 @@ These testing tools provide you with multiple helpful pieces of information, lik
 +   An overview of the resources loaded and explanations of why resources can't be loaded
 +   Console log messages and JavaScript errors with stack traces
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="mobile-friendly-test.png" 
-       alt="A screenshot of the Mobile-Friendly Test.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HxpuDusVnyVm21QSD20b.png", alt="A screenshot of the Mobile-Friendly Test.", width="800", height="492" %}
 </figure>
 
 The Google Search Console [URL Inspection
 Tool](https://support.google.com/webmasters/answer/9012289) can also give you detailed
 information about the status of a page.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="url-inspection-tool.png" 
-       alt="A screenshot of the URL Inspection Tool.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jyUDvp0zvkpUEgDjEULN.png", alt="A screenshot of the URL Inspection Tool.", width="800", height="590" %}
 </figure>
 
 Here you can find out:
@@ -106,9 +103,8 @@ Console](https://search.google.com/search-console/about) is where you need to go
 The [Coverage report](https://support.google.com/webmasters/answer/7440203) shows you which
 pages of your website are indexed and which ones have problems.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="coverage.png" 
-       alt="A screenshot of the Coverage report.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A1KZQbjh96n9uv48fBCT.png", alt="A screenshot of the Coverage report.", width="754", height="567" %}
 </figure>
 
 ### Core Web Vitals report
@@ -117,9 +113,8 @@ The [Core Web Vitals report](https://support.google.com/webmasters/answer/920552
 get an overview of how the pages of your website are performing in terms of the [Core Web
 Vitals](/vitals/#core-web-vitals).
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="core-web-vitals.png" 
-       alt="A screenshot of the Core Web Vitals report.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LL7U1EcPCyuDcmjPD13c.png", alt="A screenshot of the Core Web Vitals report.", width="744", height="596" %}
 </figure>
 
 ## Make these tools part of your developer tooling

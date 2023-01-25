@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+    />
+    <title>How to use multiple screens</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <script>
+      function randomBackgroundColor() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        var bgColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+        document.body.style.backgroundColor = bgColor;
+      }
+      randomBackgroundColor();
+    </script>
+  </body>
+</html>

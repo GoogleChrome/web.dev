@@ -13,61 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const yaml = require('js-yaml');
+const fs = require('fs');
+const path = require('path');
+
 /** @type AuthorsData */
 const authorsData = require('../_data/authorsData.json');
-const {livePosts} = require('../_filters/live-posts');
-const setdefault = require('../_utils/setdefault');
+const authorsYaml = yaml.safeLoad(
+  fs.readFileSync(
+    path.join(__dirname, '..', '_data', 'i18n', 'authors.yml'),
+    'utf-8',
+  ),
+);
+const {isLive} = require('../_filters/is-live');
+const {sortByUpdated} = require('../_utils/sort-by-updated');
 
 /** @type Authors */
 let processedCollection;
 const PLACEHOLDER_IMG = 'image/admin/1v5F1SOBl46ZghbHQMle.svg';
 
 /**
- * Generate map the posts by author's username/key
- *
- * @param {Array<{ data: { authors: any[] }}>} posts
- * @return {Map<string, Array<Object>>} Map of posts by author's username/key
- */
-const findAuthorsPosts = (posts) => {
-  const authorsMap = new Map();
-  posts.forEach((post) => {
-    const authors = post.data.authors || [];
-    authors.forEach((author) => {
-      const postsByAuthor = setdefault(authorsMap, author, []);
-      postsByAuthor.push(post);
-      authorsMap.set(author, postsByAuthor);
-    });
-  });
-  return authorsMap;
-};
-
-/**
- * @param {AuthorsItem} author to update
- * @param {any[]} allAuthorPosts posts including drafts
- * @return {boolean} whether this author is allowed here
- */
-const maybeUpdateAuthorHref = (author, allAuthorPosts) => {
-  if (author.elements.length !== 0) {
-    return true;
-  }
-
-  if (author.twitter) {
-    author.href = `https://twitter.com/${author.twitter}`;
-    return true;
-  }
-
-  // If the author has scheduled or draft posts, don't complain.
-  if (allAuthorPosts.length !== 0) {
-    return true;
-  }
-
-  return false;
-};
-
-/**
  * Returns all authors with their posts.
  *
- * @param {any} [collections] Eleventy collection object
+ * @param {EleventyCollectionObject} [collections] Eleventy collection object
  * @return {Authors}
  */
 module.exports = (collections) => {
@@ -75,71 +43,68 @@ module.exports = (collections) => {
     return processedCollection;
   }
 
-  let allPosts = [];
-
-  if (collections) {
-    // Find all posts, sort and key by author. Don't yet filter to live posts.
-    allPosts = collections
-      .getFilteredByGlob('**/*.md')
-      .sort((a, b) => b.date - a.date);
-  }
-
-  const authorsPosts = findAuthorsPosts(allPosts);
-
   /** @type Authors */
   const authors = {};
 
-  /** @type {!Array<string>} */
-  const invalidAuthors = [];
-
-  Object.keys(authorsData).forEach((key) => {
-    const authorData = authorsData[key];
-    // Get all authors but filter later.
-    const allAuthorPosts = authorsPosts.get(key) || [];
+  Object.keys(authorsYaml).forEach((key) => {
+    const authorData = authorsData[key] || {};
     const href = `/authors/${key}/`;
-    // Generate the author's name out of valid given/family parts. This
-    // allows our authors to just have a single name.
-    const title = [authorData.name.given, authorData.name.family]
-      .filter((s) => s && s.length)
-      .join(' ');
-    const description =
-      authorData.descriptions && authorData.descriptions.en
-        ? authorData.descriptions.en
-        : `Our latest news, updates, and stories by ${title}.`;
+    let elements = [];
+    let date, updated;
+    const image = authorData.image || PLACEHOLDER_IMG;
+
+    // Get posts
+    if (collections) {
+      elements = collections
+        .getFilteredByGlob('**/*.md')
+        .filter(
+          (item) =>
+            isLive(item) &&
+            !item.data.excludeFromAuthors &&
+            (item.data.authors || []).includes(key),
+        )
+        .sort(sortByUpdated);
+    }
+
+    // Limit posts for percy
+    if (process.env.PERCY) {
+      elements = elements.slice(-6);
+    }
+
+    // Set created on date and updated date to be used for indexing to detect updates
+    if (elements.length > 0) {
+      date = elements.slice(-1).pop().data.date;
+      const tempUpdated = elements.slice(0, 1).pop().data.date;
+      if (date !== tempUpdated) {
+        updated = tempUpdated;
+      }
+    }
+
     /** @type AuthorsItem */
     const author = {
       ...authorData,
       data: {
-        subhead: description,
-        title,
+        date,
+        hero: image,
+        updated,
       },
-      description,
-      elements: allAuthorPosts.filter(livePosts),
+      description: `i18n.authors.${key}.description`,
+      elements,
       href,
+      image,
       key,
-      title,
+      title: `i18n.authors.${key}.title`,
       url: href,
     };
 
-    // Update the author's href to be their Twitter profile, if they have no
-    // live posts on the site.
-    if (!maybeUpdateAuthorHref(author, allAuthorPosts)) {
-      // If they have no Twitter profile or posts (even draft ones), the
-      // author probably shouldn't be here.
-      invalidAuthors.push(key);
+    // If author has no posts, point to their Twitter
+    if (author.elements.length === 0 && author.twitter) {
+      author.href = `https://twitter.com/${author.twitter}`;
     }
 
-    if (!author.image) {
-      author.image = PLACEHOLDER_IMG;
+    if (author.elements.length > 0 || !collections || author.twitter) {
+      authors[author.key] = author;
     }
-    author.data.hero = author.image;
-    author.data.alt = author.title;
-
-    if (process.env.PERCY) {
-      author.elements = author.elements.slice(-6);
-    }
-
-    authors[key] = author;
   });
 
   if (collections) {

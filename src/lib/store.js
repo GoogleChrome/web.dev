@@ -38,7 +38,7 @@ const initialState = {
   currentUrl: window.location.pathname,
   currentLanguage: document.documentElement.getAttribute('lang'),
   isOffline: Boolean(getMeta('offline')),
-  isSideNavExpanded: false,
+  isNavigationDrawerOpen: false,
   isModalOpen: false,
   isSearchExpanded: false,
 
@@ -49,13 +49,11 @@ const initialState = {
   // cookie policy.
   // We automatically accept cookies in dev and test environments so the cookie
   // banner doesn't interfere with tests.
-  userAcceptsCookies: !isProd,
+  cookiePreference: isProd ? null : 'accepts',
 
   // Handle hiding/showing the snackbar.
   showingSnackbar: false,
   snackbarType: null,
-
-  userPreferredLanguage: '',
 
   // Used to override the current time for web.dev/LIVE testing.
   timeOffset,
@@ -63,6 +61,7 @@ const initialState = {
   // Data for the current web.dev/LIVE event.
   eventDays: [],
   activeEventDay: null, // livestream shown for this day
+  g4ScriptLoaded: false,
 };
 
 let store;

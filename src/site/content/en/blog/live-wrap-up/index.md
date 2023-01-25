@@ -51,7 +51,7 @@ Vitals](/vitals/#core-web-vitals) metrics as its foundation.
 The three pillars of the 2020 Core Web Vitals are loading, interactivity, and visual stability of
 page content, which are captured by the following metrics:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/kzOdl2pRyEEPEQI0U2lQ.png", alt="An illustration of the Core Web Vitals.", width="800", height="232" %}
 </figure>
 
@@ -74,7 +74,7 @@ of your web development project, taking on a key role in handling your developer
 lifecycle.
 
 We have all seen unwieldy build config files, so to help web developers _and_ tooling authors
-conquer the complexity of the web, we built [tooling.report](https://web.dev/introducing-tooling-report). It's a website
+conquer the complexity of the web, we built [tooling.report](/introducing-tooling-report). It's a website
 that helps you choose the right build tool for your next project, decide if migrating from one tool
 to another is worth it, or figure out how to incorporate best practices into your tooling
 configuration and code base.
@@ -83,8 +83,8 @@ We designed a suite of tests to determine which build tools allow you to follow
 web development best practices. We worked with the build tool authors to
 make sure we used their tools correctly and represented them fairly.
 
-<figure class="w-figure">
-  {% Img src="image/admin/awFmvfMqFv3gvbpIICJY.png", alt="A screenshot of the tooling.report UI.", width="800", height="316", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/awFmvfMqFv3gvbpIICJY.png", alt="A screenshot of the tooling.report UI.", width="800", height="316" %}
 </figure>
 
 The initial release of tooling.report covers webpack v4, Rollup v2, Parcel v2, and Browserify with Gulp,
@@ -140,7 +140,7 @@ learn more.
 
 Chrome wants you to be free to create the highest quality web apps that give you the biggest reach
 to users across devices. Combining the installability and reliability of PWAs, with the
-[capabilities project](/fugu-status/) (Project Fugu), Chrome is focusing on three
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) (Project Fugu), Chrome is focusing on three
 things to close the gap between platform-specific apps and the web, to help you build and deliver great
 experiences.
 
@@ -181,14 +181,14 @@ One of the most powerful features of Chrome DevTools is its ability to spot issu
 bring them to the developer's attention. This is most pertinent as we move into the next phase of a
 [privacy-first web](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html).
 To reduce notification fatigue and clutter in the Console, Chrome DevTools launched the [Issues
-tab](https://developers.google.com/web/tools/chrome-devtools/issues) which focuses on three types of
+tab](https://developer.chrome.com/docs/devtools/issues/) which focuses on three types of
 critical issues to start with: [cookie problems](/samesite-cookies-explained),
-[mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content),
+[mixed content](/what-is-mixed-content/),
 and [COEP issues](/coop-coep/). Watch the web.dev LIVE session on [finding and fixing
 problems with the Issues tab](https://youtu.be/1TbkSxQb4bI) to get started.
 
-<figure class="w-figure">
-  {% Img src="image/admin/G7AmzK1btOMBUPEhnFhV.png", alt="A screenshot of the Issues tab.", width="800", height="535", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/admin/G7AmzK1btOMBUPEhnFhV.png", alt="A screenshot of the Issues tab.", width="800", height="535" %}
 </figure>
 
 Moreover, with the [Core Web Vitals](/vitals/#core-web-vitals) becoming one of the
@@ -203,14 +203,13 @@ emulate blurred vision and other types of vision deficiencies. You
 can learn more about this and many other features in the [What's new in
 DevTools](https://youtu.be/6yrJZHqJe2k) session.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="emulator.png"
-       alt="A screenshot of the vision deficiencies emulator.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3gTvVdPvTN3IUyhSN8gn.png", alt="A screenshot of the vision deficiencies emulator.", width="800", height="509" %}
 </figure>
 
 ### Lighthouse 6.0: New metrics, Core Web Vitals lab measurements, an updated Performance score, and new audits
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source automated tool
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is an open-source automated tool
 that helps developers improve their site's performance. In its latest version, the Lighthouse team
 focused on providing insights based on metrics that give you a balanced view of the quality of your
 user experience against critical dimensions.
@@ -220,9 +219,9 @@ To ensure consistency, Lighthouse added support for the Core Web Vitals:
 [FID](/fid/) since Lighthouse is a lab tool and FID can only be
 measured in the field) and [CLS](/cls/). Lighthouse also removed
 three old metrics: [First Meaningful
-Paint](/first-meaningful-paint/), [First CPU
-Idle](/first-cpu-idle/), and [Max Potential
-FID](/lighthouse-max-potential-fid/). These removals are due to
+Paint](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/), [First CPU
+Idle](https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/), and [Max Potential
+FID](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). These removals are due to
 considerations like metric variability and newer metrics offering better
 reflections of the part of user experience that Lighthouse is trying to measure.
 Additionally, Lighthouse also made some adjustments to how much each metric
@@ -237,9 +236,8 @@ And finally, Lighthouse added a bunch of [new
 audits](/lighthouse-whats-new-6.0/#new-audits), with a focus on JavaScript analysis
 and accessibility.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="audits.png"
-       alt="A list of the new audits.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qAVFUVHR7Ad0tm05J1d3.png", alt="A list of the new audits.", width="800", height="450" %}
 </figure>
 
 Learn more by watching the [What's new in speed tooling](https://youtu.be/yDHfrhCGFQw)

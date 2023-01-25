@@ -1,0 +1,53 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/ellipsis
+
+details.ellipsis {
+  border-block: 0;
+  padding-inline: 0;
+}
+
+details.ellipsis summary::before,
+details.ellipsis summary::after {
+  display: none;
+}
+
+details.ellipsis summary {
+  list-style: none;
+  max-width: 800px;
+  font-size: 1em;
+  color: var(--color-mid-text);
+
+  .ellipsis__full {
+    text-overflow: ellipsis;
+    white-space: break-all;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @include media-query('md') {
+    display: flex;
+
+    .ellipsis__full {
+      white-space: nowrap;
+      display: block;
+    }
+
+    .ellipsis__more {
+      white-space: nowrap;
+      font-weight: 500;
+    }
+  }
+}
+
+details.ellipsis[open] .ellipsis__full {
+  text-overflow: initial;
+  white-space: normal;
+  display: block;
+}
+
+details.ellipsis[open] .ellipsis__more {
+  display: none;
+}

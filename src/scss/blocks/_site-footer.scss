@@ -1,0 +1,45 @@
+/// SITE FOOTER
+/// The main, global footer that is on each page
+.site-footer {
+  padding: $global-gutter;
+  border-block-start: 1px solid get-utility-value('color', 'stroke');
+
+  /// There's a few lists, so we set globally
+  ul {
+    padding: 0;
+  }
+
+  li a,
+  li a:visited,
+  theme-toggle {
+    font-size: get-size('size-0');
+    @include apply-utility('color', 'mid-text');
+
+    &:not(:hover) {
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+.site-footer__primary-nav {
+  --auto-grid-placement: auto-fit;
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+}
+
+.site-footer__brand-nav {
+  border-block: 1px solid get-utility-value('color', 'stroke');
+  padding: get-space('base') 0;
+  margin: get-space('size-1') 0;
+
+  img {
+    display: block;
+    background: transparent;
+  }
+}

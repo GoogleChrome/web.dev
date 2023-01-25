@@ -35,7 +35,7 @@ There are a number of ways you can convert GIFs to video; this guide uses
 **[FFmpeg](https://www.ffmpeg.org/)**. It's already installed in the Glitch VM,
 and, if you want, you can follow [these instructions to install it on your
 local
-machine](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/#converting_animated_gifs_to_video)
+machine](/replace-gifs-with-videos/#create-mpeg-videos)
 as well.
 
 ## Open the console
@@ -135,7 +135,7 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 ```
 
 A `<video>` element using these attributes will play automatically, loop
-endlessly, play no audio, and play inline (i.e., not fullscreen), all the
+endlessly, play no audio, and play inline (that is, not fullscreen), all the
 behaviors expected of animated GIFs! 🎉
 
 ## Specify your sources

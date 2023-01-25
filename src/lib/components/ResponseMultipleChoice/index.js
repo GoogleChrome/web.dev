@@ -1,6 +1,5 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseResponseElement} from '../BaseResponseElement';
-import './_styles.scss';
 import {generateIdSalt} from '../../utils/generate-salt';
 
 export class ResponseMultipleChoice extends BaseResponseElement {
@@ -125,7 +124,7 @@ export class ResponseMultipleChoice extends BaseResponseElement {
     } else {
       flag.textContent = 'Incorrect';
     }
-    content.prepend(flag);
+    content.append(flag);
     rationale.className = 'web-response__option-rationale';
     content.append(rationale);
 

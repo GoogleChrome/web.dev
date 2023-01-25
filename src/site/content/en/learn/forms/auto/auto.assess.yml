@@ -1,0 +1,16 @@
+setLeader: Test your knowledge of autofill
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0,1,2,3"
+    stem: Based on which attributes is autofill offered?
+    options:
+      - content: "The `name` attribute."
+        rationale: "Correct, browsers offer autofill based on this attribute among others."
+      - content: "The `type` attribute"
+        rationale: "Correct, browsers offer autofill based on this attribute among others."
+      - content: "The `autocomplete` attribute"
+        rationale: "Correct, browsers offer autofill based on this attribute among others."
+      - content: "All of the above"
+        rationale: "Correct, all the mentioned attributes help browsers offering autofill."

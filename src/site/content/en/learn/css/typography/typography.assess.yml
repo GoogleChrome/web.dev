@@ -1,0 +1,57 @@
+setLeader: Test your knowledge of typography on the web
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,4"
+    stem: Which of the following keywords can be used as a `font-family` generic fallback?
+    options:
+      - content: "`serif`"
+        rationale: "Correct!"
+      - content: "`monospace`"
+        rationale: "Correct!"
+      - content: "`italic`"
+        rationale: "Try again. `italic` is a valid keyword for `font-style`, not `font-family`."
+      - content: "`sci-fi`"
+        rationale: "Try again. `fantasy` is a valid generic fallback for `font-family`, though."
+      - content: "`sans-serif`"
+        rationale: "Correct!"
+      - content: "`helvetica`"
+        rationale: "Try again. `\"Helvetica\"` is not a generic keyword, but instead refers to a specific font family."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: Which statement is used to convert the first letter of each word to uppercase? e.g. `This is a sentence.` ➡ `This Is A Sentence.`
+    options:
+      - content: "`text-capitalize: true;`"
+        rationale: "Try again."
+      - content: "`text-case: capitalize;`"
+        rationale: "Try again."
+      - content: "`text-transform: capitalize;`"
+        rationale: "Correct!"
+      - content: "`font-style: capitals;`"
+        rationale: "Try again."
+      - content: "`font-variant: capitalize;`"
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "True or False: Use `text-orientation` to align text to the left, right, or center."
+    options:
+      - content: "True"
+        rationale: "Try again. [`text-orientation`](#change-the-orientation-of-text) changes the rotation of letters in a line."
+      - content: "False"
+        rationale: "Correct! [`text-orientation`](#change-the-orientation-of-text) changes the rotation of letters in a line. Use `text-align` to align text to the left, right, or center (and [more!](#change-text-alignment))."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: Which CSS property can be used to change the space between lines of text?
+    options:
+      - content: "`line-spacing`"
+        rationale: "Try again."
+      - content: "`leading`"
+        rationale: "Try again. [Leading](https://en.wikipedia.org/wiki/Leading) is the correct term for the space between lines in typography, but it's not a valid CSS property."
+      - content: "`baseline-distance`"
+        rationale: "Try again."
+      - content: "`line-height`"
+        rationale: "Correct!"

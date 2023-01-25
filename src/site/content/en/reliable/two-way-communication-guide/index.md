@@ -1,12 +1,12 @@
 ---
-layout: post 
-title: "Two-way communication with service workers" 
+layout: post
+title: "Two-way communication with service workers"
 authors:
   - demianrenzulli
-  - andrewguan 
+  - andrewguan
 date: 2020-12-08
-description: | 
-    How establish a two-way communication channel between the page and the service worker. 
+description: |
+    How establish a two-way communication channel between the page and the service worker.
 tags:
   - service-worker
   - offline
@@ -16,20 +16,18 @@ In some cases, a web app might need to establish a **two-way** communication cha
 page and the service worker.
 
 For example: in a podcast PWA one could build a feature to let the user [download episodes for
-offline consumption](https://web.dev/app-like-pwas/#proactive-background-downloading) and allow the
+offline consumption](/app-like-pwas/#proactive-background-downloading) and allow the
 service worker to keep the page regularly informed about the progress, so the [main
-thread](https://developer.mozilla.org/en-US/docs/Glossary/Main_thread) can update the UI.
+thread](https://developer.mozilla.org/docs/Glossary/Main_thread) can update the UI.
 
 In this guide we'll explore the different ways of implementing a **two-way** communication between
-the [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) and [service
-worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) context, by exploring
-different APIs, the [Workbox library](https://developers.google.com/web/tools/workbox), as well as
+the [Window](https://developer.mozilla.org/docs/Web/API/Window) and [service
+worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) context, by exploring
+different APIs, the [Workbox library](https://developer.chrome.com/docs/workbox/), as well as
 some advanced cases.
 
-<figure class="w-figure">
-  <img src="two-way-communication-diagram.png"
-       width="800"
-       alt="Diagram showing a service worker and the page exchanging messages.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HIbZyXbQNijm1S4eQlEv.png", alt="Diagram showing a service worker and the page exchanging messages.", width="800", height="310" %}
 </figure>
 
 {% Aside %}
@@ -41,20 +39,20 @@ some advanced cases.
 
 ## Using Workbox {: #using-workbox }
 
-[`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) is a set of
-modules of the [Workbox library](https://developers.google.com/web/tools/workbox) that are intended
+[`workbox-window`](https://developer.chrome.com/docs/workbox/modules/workbox-window/) is a set of
+modules of the [Workbox library](https://developer.chrome.com/docs/workbox/) that are intended
 to run in the window context. The [`Workbox`
-](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-window.Workbox) class provides a `messageSW()` method to send a message to the instance's registered service worker and
+](https://developer.chrome.com/docs/workbox/reference/workbox-window/#type-Workbox) class provides a `messageSW()` method to send a message to the instance's registered service worker and
 await a response.
 
 The following page code creates a new `Workbox` instance and sends a message to the service worker
 to obtain its version:
 
 ```javascript
-const wb = new Workbox('/sw.js'); 
-wb.register(); 
+const wb = new Workbox('/sw.js');
+wb.register();
 
-const swVersion = await wb.messageSW({type: 'GET_VERSION'}); 
+const swVersion = await wb.messageSW({type: 'GET_VERSION'});
 console.log('Service Worker version:', swVersion);
 ```
 
@@ -64,7 +62,7 @@ service worker:
 ```javascript
 const SW_VERSION = '1.0.0';
 
-addEventListener('message', (event) => {
+self.addEventListener('message', (event) => {
   if (event.data.type === 'GET_VERSION') {
     event.ports[0].postMessage(SW_VERSION);
   }
@@ -72,14 +70,12 @@ addEventListener('message', (event) => {
 ```
 
 Under the hood the library uses a browser API that we'll review in the next section: [Message
-Channel](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API), but abstracts many
+Channel](https://developer.mozilla.org/docs/Web/API/Channel_Messaging_API), but abstracts many
 implementation details, making it easier to use, while leveraging the [wide browser
 support](https://caniuse.com/mdn-api_messagechannel_port1) this API has.
 
-<figure class="w-figure">
-  <img src="workbox-window-diagram.png"
-       width="700"
-       alt="Diagram showing two-way communication between page and service worker, using Workbox Window.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DxyWzq96JQCU3hADZiN8.png", alt="Diagram showing two-way communication between page and service worker, using Workbox Window.", width="700", height="410" %}
 </figure>
 
 ## Using Browser APIs {: #using-browser-apis }
@@ -102,23 +98,22 @@ Differences:
   object instantiated on each side.
 - Browser support varies among them.
 
-<figure class="w-figure">
-  <img src="communication-apis.png"
-       width="600"
-       alt="Diagram showing two-way communication between page and service worker, and the available browser APIs.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nPYcdQbxAezigMiuoLJg.png", alt="Diagram showing two-way communication between page and service worker, and the available browser APIs.", width="600", height="273" %}
 </figure>
 
 ### Broadcast Channel API {: #broadcast-channel-api }
+{% BrowserCompat 'api.BroadcastChannel' %}
 
-The [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
+The [Broadcast Channel API](https://developer.mozilla.org/docs/Web/API/Broadcast_Channel_API)
 allows basic communication between browsing contexts via [BroadcastChannel
-objects](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel). 
+objects](https://developer.mozilla.org/docs/Web/API/BroadcastChannel).
 
 To implement it, first, each context has to instantiate a `BroadcastChannel` object with the same ID
 and send and receive messages from it:
 
 ```javascript
-const broadcast = new BroadcastChannel('channel-123'); 
+const broadcast = new BroadcastChannel('channel-123');
 ```
 
 The BroadcastChannel object exposes a `postMessage()` interface to send a message to any listening
@@ -144,10 +139,8 @@ broadcast.onmessage = (event) => {
 As seen, there's no explicit reference to a particular context, so there's no need of obtaining a
 reference first to the service worker or any particular client.
 
-<figure class="w-figure">
-  <img src="broadcast-channel.png"
-       width="700"
-       alt="Diagram showing two-way communication between page and service worker, using a Broadcast Channel object.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uWl3NVD3rxbSoA0JxvuN.png", alt="Diagram showing two-way communication between page and service worker, using a Broadcast Channel object.", width="700", height="355" %}
 </figure>
 
 The disadvantage is that, at the moment of this writing, the API has support from Chrome, Firefox
@@ -155,9 +148,10 @@ and Edge, but other browsers, like Safari, [don't support it
 yet](https://caniuse.com/?search=broadcastchannel).
 
 ### Client API {: #channel-api }
+{% BrowserCompat 'api.Client' %}
 
-The [Client API](https://developer.mozilla.org/en-US/docs/Web/API/Client) allows you to obtain a
-reference to all the [`WindowClient`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient) objects representing the active tabs that the service worker is controlling.
+The [Client API](https://developer.mozilla.org/docs/Web/API/Client) allows you to obtain a
+reference to all the [`WindowClient`](https://developer.mozilla.org/docs/Web/API/WindowClient) objects representing the active tabs that the service worker is controlling.
 
 Since the page is controlled by a single service worker, it listens to and sends messages to the
 active service worker directly via the `serviceWorker` interface:
@@ -188,10 +182,10 @@ self.addEventListener('message', (event) => {
 ```
 
 To communicate back with any of its clients, the service worker obtains an array of
-[`WindowClient`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient) objects by executing
+[`WindowClient`](https://developer.mozilla.org/docs/Web/API/WindowClient) objects by executing
 methods such as
-[`Clients.matchAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/matchAll) and
-[`Clients.get()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/get). Then it can
+[`Clients.matchAll()`](https://developer.mozilla.org/docs/Web/API/Clients/matchAll) and
+[`Clients.get()`](https://developer.mozilla.org/docs/Web/API/Clients/get). Then it can
 `postMessage()` any of them:
 
 ```javascript
@@ -204,10 +198,8 @@ self.clients.matchAll(options).then(function (clients) {
 });
 ```
 
-<figure class="w-figure">
-  <img src="client-api.png"
-       width="500"
-       alt="Diagram showing a service worker communicating with an array of clients.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/oApyHsmljr1KkBW85Wv9.png", alt="Diagram showing a service worker communicating with an array of clients.", width="500", height="348" %}
 </figure>
 
 `Client API` is a good option to communicate easily with all the active tabs from a service worker
@@ -222,12 +214,13 @@ HTTP 203](https://www.youtube.com/watch?v=9UNwHmagedE&feature=youtu.be&t=697) to
 {% endAside %}
 
 ### Message Channel {: #message-channel }
+{% BrowserCompat 'api.MessageChannel' %}
 
-[Message Channel](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API) requires
+[Message Channel](https://developer.mozilla.org/docs/Web/API/Channel_Messaging_API) requires
 defining and passing a port from one context to another to establish a **two-way** communication
 channel.
 
-To initialize the channel, the page instantiates a [`MessageChannel`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/MessageChannel) object and uses it
+To initialize the channel, the page instantiates a [`MessageChannel`](https://developer.mozilla.org/docs/Web/API/MessageChannel/MessageChannel) object and uses it
 to send a port to the registered service worker. The page also implements an `onmessage` listener on
 it to receive messages from the other context:
 
@@ -245,10 +238,8 @@ messageChannel.port1.onmessage = (event) => {
 };
 ```
 
-<figure class="w-figure">
-  <img src="message-channel.png"
-       width="600"
-       alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/THMp68FKAah5qYIsiFOk.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="600", height="344" %}
 </figure>
 
 The service worker receives the port, saves a reference to it and uses it to send a message to the other
@@ -279,11 +270,12 @@ to cache from one context to the other. In this section we'll explore two APIs t
 scenarios: lack of connectivity and long downloads.
 
 #### Background Sync {: #background-sync }
+{% BrowserCompat 'api.SyncManager' %}
 
 A chat app might want to make sure that messages are never lost due to bad connectivity. The
-[Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync) lets you
+[Background Sync API](https://developer.chrome.com/blog/background-sync/) lets you
 defer actions to be retried when the user has stable connectivity. This is useful for ensuring that
-whatever the user wants to send, is actually sent. 
+whatever the user wants to send, is actually sent.
 
 Instead of the `postMessage()` interface, the page registers a `sync`:
 
@@ -305,7 +297,7 @@ self.addEventListener('sync', function (event) {
 
 The function `doSomeStuff()` should return a promise indicating the success/failure of whatever it's
 trying to do. If it fulfills, the sync is complete. If it fails, another sync will be scheduled to
-retry. Retry syncs also wait for connectivity, and employ an exponential back-off. 
+retry. Retry syncs also wait for connectivity, and employ an exponential back-off.
 
 Once the operation has been performed, the service worker can then communicate back with the page to
 update the UI, by using any of the communication APIs explored earlier.
@@ -314,26 +306,25 @@ Google search uses Background Sync to persist failed queries due to bad connecti
 them later when the user is online. Once the operation is performed, they communicate the result to
 the user via a web push notification:
 
-<figure class="w-figure">
-  <img src="google-search-background-sync.png"
-       width="700"
-       alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eMbvk9IRoaAggs8t5CbF.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="700", height="381" %}
 </figure>
 
 {% Aside %} Check out [Resilient search experiences
-](https://web.dev/resilient-search-experiences/) to learn how to implement this feature using [Workbox Background
-Sync](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync). {% endAside
+](/resilient-search-experiences/) to learn how to implement this feature using [Workbox Background
+Sync](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/). {% endAside
 %}
 
 #### Background Fetch {: #background-fetch }
+{% BrowserCompat 'api.BackgroundFetchManager' %}
 
 For relatively short bits of work like sending a message, or a list of URLs to cache, the options
 explored so far are a good choice. If the task takes too long the browser will kill the service
-worker, otherwise it's a risk to the user's privacy and battery. 
+worker, otherwise it's a risk to the user's privacy and battery.
 
-The [Background Fetch API](https://developers.google.com/web/updates/2018/12/background-fetch)
+The [Background Fetch API](https://developer.chrome.com/blog/background-fetch/)
 allows you to offload a long task to a service worker, like downloading movies, podcasts, or levels
-of a game. 
+of a game.
 
 To communicate to the service worker from the page, use `backgroundFetch.fetch`, instead of
 `postMessage()`:
@@ -373,16 +364,14 @@ bgFetch.addEventListener('progress', () => {
 });
 ```
 
-<figure class="w-figure">
-  <img src="podcast-pwa.png"
-       width="700"
-       alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
-    <figcaption class="w-figcaption">The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ii1koJyCl0drJyewTIxV.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="700", height="434" %}
+    <figcaption>The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).
     </figcaption>
 </figure>
 
 {% Aside %} Check out the [Background Fetch
-guide](https://developers.google.com/web/updates/2018/12/background-fetch), which includes an
+guide](https://developer.chrome.com/blog/background-fetch/), which includes an
 [example podcast app](https://bgfetch-http203.glitch.me/) along with its [Glitch
 code](https://glitch.com/edit/#!/bgfetch-http203). {% endAside %}
 

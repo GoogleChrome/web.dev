@@ -1,9 +1,11 @@
 ---
+layout: post
 title: How Truebil made the web its channel of growth
 subhead: A startup's story of building a best-in-class web experience.
 authors:
   - hbatra
 date: 2019-08-16
+updated: 2021-11-30
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
 hero: image/admin/fRR1RuZTZdMm95ibKQu4.png
@@ -17,8 +19,8 @@ description: |
   engagement by optimizing their web app for speed and reliability.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - reliable
-  - e-commerce
+  # - reliable
+  # - e-commerce
   - case-study
   - performance
   - progressive-web-apps
@@ -45,7 +47,7 @@ An in-house team took four months to develop Truebil Lite using React, Django, a
 
 ### Optimize for fast first load and navigations
 
-Using [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to guide performance optimizations, the team adopted a performance-first culture while implementing new features. Truebil was able to significantly improve user experience by prioritizing the [First Contentful Paint](/first-contentful-paint) and [Time to Interactive (TTI)](/interactive) metrics and optimizing for fast first loads, repeat visits, and smooth navigation. The team achieved those results by setting performance budgets and using a variety of techniques to achieve them.
+Using [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to guide performance optimizations, the team adopted a performance-first culture while implementing new features. Truebil was able to significantly improve user experience by prioritizing the [First Contentful Paint](/fcp/) and [Time to Interactive (TTI)](/tti/) metrics and optimizing for fast first loads, repeat visits, and smooth navigation. The team achieved those results by setting performance budgets and using a variety of techniques to achieve them.
 
 #### Set performance budgets
 
@@ -57,40 +59,40 @@ The team set strict milestone-based budgets for TTI with the goal of keeping it 
 
 The team started with the basics by using the [PRPL pattern](/apply-instant-loading-with-prpl) to precache and optimize JavaScript payloads and by moving to HTTP/2 to serve critical JavaScript bundles.
 
-To lazy-load non-critical resources, they used their framework-level lazy-loading components to load below-the-fold fragments.
+To lazy load non-critical resources, they used their framework-level lazy loading components to load below-the-fold fragments.
 
-To remove any JavaScript bundle bottlenecks, the team [reduced payloads via code splitting](/reduce-javascript-payloads-with-code-splitting). They used component- and route-based chunking to to reduce main bundle size and **improve their loading time by 44%,** with TTI falling from 6 seconds to about 5 seconds and [First Meaningful Paint (FMP)](/first-meaningful-paint) from 4.1 seconds to 3.6 seconds.
+To remove any JavaScript bundle bottlenecks, the team [reduced payloads via code splitting](/reduce-javascript-payloads-with-code-splitting). They used component- and route-based chunking to reduce main bundle size and **improve their loading time by 44%,** with TTI falling from 6 seconds to about 5 seconds and [First Meaningful Paint (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) from 4.1 seconds to 3.6 seconds.
 
-<figure class="w-figure">
-  {% Img src="image/admin/BHIhtRrQcc2Ec22vLYtT.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's build size before and after code splitting.", width="800", height="350", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Impact of reducing chunk size.</figcaption>
+<figure>
+  {% Img src="image/admin/BHIhtRrQcc2Ec22vLYtT.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's build size before and after code splitting.", width="800", height="350" %}
+  <figcaption>Impact of reducing chunk size.</figcaption>
 </figure>
 
 #### Inline critical CSS
 
 To further improve FMP, the team used Lighthouse to find opportunities for and validate the impact of performance optimizations. Lighthouse indicated that reducing render blocking CSS would have the biggest effect, so Truebil inlined all critical CSS and [deferred non-critical CSS](/defer-non-critical-css). This technique **reduced FMP by around 2 seconds**.
 
-<figure class="w-figure">
-  {% Img src="image/admin/GnQDJz27SuLuLgdvM6Q3.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's time to First Meaningful Paint before and after inlining CSS.", width="800", height="496", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Impact of inlining critical CSS.</figcaption>
+<figure>
+  {% Img src="image/admin/GnQDJz27SuLuLgdvM6Q3.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's time to First Meaningful Paint before and after inlining CSS.", width="800", height="496" %}
+  <figcaption>Impact of inlining critical CSS.</figcaption>
 </figure>
 
 #### Avoid multiple, costly round trips to any origin
 
-To mitigate overhead from DNS and TLS, Truebil used [`<link rel="preconnect">`](/uses-rel-preconnect) and `<link rel="dns-prefetch">`. This approach causes the browser to complete the TLS handshake as soon as possible on page load and pre-resolve cross-origin domain names, allowing for a secure, snappy user experience.
+To mitigate overhead from DNS and TLS, Truebil used [`<link rel="preconnect">`](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) and `<link rel="dns-prefetch">`. This approach causes the browser to complete the TLS handshake as soon as possible on page load and pre-resolve cross-origin domain names, allowing for a secure, snappy user experience.
 
-<figure class="w-figure">
-  {% Img src="image/admin/e1taLW99INISJAsEP0xe.png", alt="Screenshots of Chrome DevTools showing the effect of rel=preconnect.", width="800", height="350", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Impact of adding <code>&#60;link rel=preconnect&#62;</code>.</figcaption>
+<figure>
+  {% Img src="image/admin/e1taLW99INISJAsEP0xe.png", alt="Screenshots of Chrome DevTools showing the effect of rel=preconnect.", width="800", height="350" %}
+  <figcaption>Impact of adding <code>&#60;link rel=preconnect&#62;</code>.</figcaption>
 </figure>
 
 #### Dynamically prefetch the next page
 
 By analyzing their data, the team identified the most common user journeys that they could optimize for. In these cases, the app dynamically downloads the next page resource by using `<link rel=prefetch>` to ensure smooth navigation for users. While the team manually identifies the links to prefetch, they use webpack to bundle the JS for those links.
 
-<figure class="w-figure">
-  {% Img src="image/admin/fuxD2hQlNcTPKUHMQpN2.png", alt="Screenshots of the Truebil Lit app and Chrome DevTools showing that network requests aren't needed on common navigations because the assets have already been prefetched.", width="800", height="1006", class="w-screenshot" %}
-  <figcaption class="w-figcaption">The effect of prefetching assets for common user journeys.</figcaption>
+<figure>
+  {% Img src="image/admin/fuxD2hQlNcTPKUHMQpN2.png", alt="Screenshots of the Truebil Lit app and Chrome DevTools showing that network requests aren't needed on common navigations because the assets have already been prefetched.", width="800", height="1006" %}
+  <figcaption>The effect of prefetching assets for common user journeys.</figcaption>
 </figure>
 
 #### Optimize images and fonts
@@ -123,9 +125,9 @@ Even though a large part of Truebil's content is highly dynamic—cars can be ad
 
 Using [service workers](/service-workers-cache-storage/), the team was able to cache both static data and the dynamic data that a user has already interacted with so that the user can view it offline. To make sure users know that content might change when they come back online, the team changed the UI to grayscale to indicate offline mode. Browsing product pages is a critical part of the Truebil user journey. Users who have visited the PWA at least once can browse listings and product pages that they have visited before but won't be able to see any updates to the listing or the product.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/XMJug442wdtUbxe86r2h.png", alt="A screenshot of the Truebil Lite app in offline mode.", width="800", height="384" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Truebil Lite in offline mode.
   </figcaption>
 </figure>
@@ -166,7 +168,7 @@ For users who had interacted with the app for a while, the team used highly cont
 
 Finally, the team built in a non-intrusive banner with a notification-like design that's triggered at specific events, such as opening a listing page or after the user has spent a set amount of time spent in the app:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/5UN2g9g7NWq85CMVoRYf.png", alt="A screenshot of Truebil Lite's time-based installation prompt banner.", width="452", height="868" %}
 </figure>
 
@@ -177,21 +179,21 @@ Because of these improvements, Truebil's conversion and engagement rates have gr
   <cite>Rakesh Raman, Co-Founder and Chief of Product & Data Science at Truebil</cite>
 </blockquote>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">44<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Improvement in loading time</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">44<sub>%</sub></p>
+    <p>Improvement in loading time</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">26<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Longer user sessions</p>
+  <div class="stats__item">
+    <p class="stats__figure">26<sub>%</sub></p>
+    <p>Longer user sessions</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">61<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increase in conversions</p>
+  <div class="stats__item">
+    <p class="stats__figure">61<sub>%</sub></p>
+    <p>Increase in conversions</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">80<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increase in revenue-to-marketing spend</p>
+  <div class="stats__item">
+    <p class="stats__figure">80<sub>%</sub></p>
+    <p>Increase in revenue-to-marketing spend</p>
   </div>
 </div>

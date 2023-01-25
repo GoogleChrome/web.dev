@@ -10,18 +10,20 @@ description: |
   guide, learn how to create your own custom CrUX Dashboard to track an origin's
   user experience.
 date: 2020-06-22
+updated: 2022-07-18
 tags:
   - performance
   - blog
+  - chrome-ux-report
 ---
 
 [Data Studio](https://marketingplatform.google.com/about/data-studio/) is a
 powerful data visualization tool that enables you to build dashboards on top of
-big data sources, like the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/)
+big data sources, like the [Chrome UX Report](https://developer.chrome.com/docs/crux/)
 (CrUX). In this guide, learn how to create your own custom CrUX Dashboard to
 track an origin's user experience trends.
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598" %}
 
 The CrUX Dashboard is built with a Data Studio feature called [Community
 Connectors](https://developers.google.com/datastudio/connector/).
@@ -39,19 +41,19 @@ This will take you to the CrUX community connector page where you can provide
 the origin for which the dashboard will be generated. Note that first-time
 users may need to complete permission or marketing preference prompts.
 
-{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="CrUX Dashboard connector", width="800", height="484", class="w-screenshot" %}
+{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="CrUX Dashboard connector", width="800", height="484" %}
 
 The text input field only accepts origins, not full URLs. For example:
 
 {% Compare 'better', 'Origin (Supported)' %}
 ```text
-https://developers.google.com
+https://web.dev
 ```
 {% endCompare %}
 
 {% Compare 'worse', 'URL (Not supported)' %}
 ```text
-https://developers.google.com/web/tools/chrome-user-experience-report/
+https://web.dev/chrome-ux-report-data-studio-dashboard/
 ```
 {% endCompare %}
 
@@ -70,7 +72,7 @@ If your origin is not included in the CrUX dataset, you may get an error message
 like the one below. There are over 4 million origins in the dataset, but the one
 you want may not have sufficient data to be included.
 
-{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="CrUX Dashboard error message", width="800", height="409", class="w-screenshot" %}
+{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="CrUX Dashboard error message", width="800", height="409" %}
 
 If the origin exists, you'll be taken to the schema page for the dashboard.
 This shows you all of the fields that are included: each effective connection
@@ -79,7 +81,7 @@ performance for each metric, and of course the name of the origin. There's
 nothing you need to do or change on this page, just click **Create Report** to
 continue.
 
-{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="CrUX Dashboard schema", width="800", height="403", class="w-screenshot" %}
+{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="CrUX Dashboard schema", width="800", height="403" %}
 
 ## Using the dashboard
 
@@ -102,7 +104,7 @@ is released on the second Tuesday of June.
 The first page is an overview of the origin's monthly
 [Core Web Vitals](/vitals/) performance. These are the most important UX metrics that Google recommends you focus on.
 
-{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="CrUX Dashboard Core Web Vitals overview", width="800", height="906", class="w-screenshot" %}
+{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="CrUX Dashboard Core Web Vitals overview", width="800", height="906" %}
 
 Use the Core Web Vitals page to understand how the origin is experienced by
 desktop and phone users. By default, the most recent month at the time you
@@ -113,15 +115,15 @@ Note that tablet is omitted from these charts by default, but if needed you
 could remove the **No Tablet** filter in the bar chart configuration, shown
 below.
 
-{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="Editing the CrUX Dashboard to show tablets on the Core Web Vitals page", width="800", height="288", class="w-screenshot" %}
+{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="Editing the CrUX Dashboard to show tablets on the Core Web Vitals page", width="800", height="288" %}
 
 ### Metric performance
 
 After the Core Web Vitals page, you'll find standalone pages for all
-[metrics](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)
+[metrics](https://developer.chrome.com/docs/crux/methodology/#metrics)
 in the CrUX dataset.
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard LCP page", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard LCP page", width="800", height="598" %}
 
 Atop each page is the **Device** filter, which you can use to restrict the form
 factors included in the experience data. For example, you can drill down
@@ -181,7 +183,7 @@ public BigQuery dataset and are able to provide millisecond-precision values.
 
 ### User demographics
 
-There are two [dimensions](https://developers.google.com/web/tools/chrome-user-experience-report/#dimensions)
+There are two [dimensions](https://developer.chrome.com/docs/crux/methodology/#dimensions)
 included on the user demographic pages: devices and effective connection
 types (ECTs). These pages illustrate the distribution of page views across the
 entire origin for users in each demographic.
@@ -190,7 +192,7 @@ The device distribution page shows you the breakdown of phone, desktop, and
 tablet users over time. Many origins tend to have little to no tablet data so
 you'll often see "0%" hanging off the edge of the chart.
 
-{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="CrUX Dashboard device page", width="800", height="603", class="w-screenshot" %}
+{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="CrUX Dashboard device page", width="800", height="603" %}
 
 Similarly, the ECT distribution page shows you the breakdown of 4G, 3G, 2G,
 slow 2G, and offline experiences.

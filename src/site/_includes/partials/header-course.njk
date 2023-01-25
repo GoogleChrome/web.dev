@@ -1,0 +1,10 @@
+{% from 'macros/icon.njk' import icon, svg with context %}
+
+<web-header class="cluster gutter-base" role="navigation" style="--course-background: url('{{ courseData.meta.background }}')">
+  <button data-open-drawer-button class="icon-button tooltip" data-alignment="right">
+    {{ icon('menu') }}
+    <span class="tooltip__content">{{ 'i18n.header.open_menu' | i18n(locale) }}</span>
+  </button>
+
+  <p class="font-brand text-size-2 color-mid-text">{{ courseData.meta.title | i18n(locale) }}</p>
+</web-header>

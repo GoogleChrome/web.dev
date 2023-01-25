@@ -1,62 +1,67 @@
-.course-layout {
-  display: flex;
-  flex-direction: column;
-  @include bp(md) {
-    flex-direction: row;
-  }
-}
-
-.course-nav {
-  background-color: pink;
-  @include bp(md) {
-    align-self: flex-start;
-    border-right: 1px solid $GREY_300;
-    flex: 0 0 360px;
-    height: 100vh;
-    overflow-y: auto;
-    padding: 24px 16px;
-    position: sticky;
-    top: 0;
-  }
-}
-
-.course-body {
-  flex: 1;
-  min-width: 0;
-}
-
-.course-app-bar {
-  background-color: lightgreen;
+:root {
+  // This margin is also used by the app-bar to set its position sticky top.
+  --course-content-margin: 24px;
 }
 
 .course-content {
-  display: flex;
-  margin: 24px auto;
+  margin: var(--course-content-margin) auto;
   max-width: 1080px;
 }
 
 .course-content > main {
-  flex-grow: 1;
+  margin: 0 24px;
+  max-width: 80ch;
   min-width: 0;
-  margin: 0 36px;
   padding: 0;
 }
 
-.course-pagination {
-  display: flex;
+.course-index {
+  @include apply-utility('weight', 'medium');
+  color: $GREY_700;
+  font-size: 11px;
 }
 
-.course-pagination-control {
-  border-top: 1px solid $GREY_300;
-  display: block;
-  padding: 24px;
+// Give the heading, subheading, and copy paragraphs the same fluid text
+// treatment that we use on developer.chrome.com
+.course-headline {
+  @include apply-utility('font', 'google-sans');
+  @include apply-utility('weight', 'regular');
+  @include flex-font((24px 32px), (32px 40px), (36px 44px));
+  // annoying workaround because our headings self-define margins
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
 
-  &:first-of-type {
-    flex: 4;
-    border-right: 1px solid $GREY_300;
+.course-description {
+  @include apply-utility('font', 'google-sans');
+  @include apply-utility('weight', 'regular');
+  @include flex-font((16px 28px), (18px 28px), (18px 28px));
+  color: $GREY_800;
+  font-style: italic;
+  max-width: 60ch;
+}
+
+.course-copy {
+  margin-top: 50px;
+  @include bp(xl) {
+    margin-top: 64px;
   }
 
-  &:last-of-type  {
-    flex: 6;
+  p {
+    @include flex-font((16px 32px), (18px 32px), (18px 32px));
+  }
+
+  // Course pages have 24px of margin on smaller screens, whereas
+  // blog pages have 32px. The general pre style assumes 32px of margin and
+  // sets itself to -32px to be full bleed on smaller screens, but this causes
+  // overflow on course pages.
+  // We should just make all of the pages use 24px, but we can save that work
+  // for our upcoming CSS refresh. For now, this is a little patch to prevent
+  // pre's from overflowing the course pages.
+  pre,
+  pre[class*='language-'] {
+    @include bp(sm) {
+      margin: 32px -24px;
+    }
   }
 }

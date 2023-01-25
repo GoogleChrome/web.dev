@@ -1,0 +1,27 @@
+setLeader: Test your knowledge of resource optimization
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: When is it appropriate to lazy load an image?
+    options:
+      - content: When the image is offscreen during initial page load.
+        rationale: |
+          Images that are offscreen during page load aren't initially needed
+          and so can be lazy loaded to improve performance.
+      - content: When the image is a PNG or JPG.
+        rationale: |
+          Improve performance by lazy loading all images—not just PNGs and
+          JPGs—that aren't needed when the page loads.
+      - content: When the image has a `lazyload` class.
+        rationale: |
+          The `lazyload` class is something _you_ add to tell
+          lazysizes which images to lazy load.
+          You can't use the class to determine
+          which images you _should_ lazy load.
+      - content: When the image is larger than 10&nbsp;KB.
+        rationale: |
+          Lazy load any image that may improve performance
+          without hurting user experience, regardless of how big the file is.

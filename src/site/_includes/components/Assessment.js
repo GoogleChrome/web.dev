@@ -22,15 +22,13 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const site = require('../../_data/site');
-const {generateSrc} = require('./Img');
+const {generateImgixSrc} = require('./Img');
 
 // Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
   if (assessment.setLeader && assessment.questions.length > 1) {
     return html`
-      <div class="w-callout__blurb web-assessment__set-leader">
-        ${assessment.setLeader}
-      </div>
+      <div class="web-assessment__set-leader">${assessment.setLeader}</div>
     `;
   }
 }
@@ -74,23 +72,11 @@ function questionTemplate(question, assessment) {
     ? `question-height="${assessment.height}"`
     : '';
 
-  const content = html`
+  return html`
     <web-question ${height} data-label="${assessment.tabLabel}">
       ${stimulus} ${responsesTemplate(question)}
     </web-question>
   `;
-  const $ = cheerio.load(content);
-  $('img').each(function () {
-    // @ts-ignore
-    const oldSrc = $(this).attr('src');
-    if (/image\/(.*)\/(.*)\.([a-z]{1,4})$/.test(oldSrc)) {
-      const src = generateSrc(oldSrc);
-      // @ts-ignore
-      $(this).attr('src', src);
-    }
-  });
-
-  return html`${$.html()}`;
 }
 
 // If a question has no components,
@@ -184,9 +170,7 @@ function optionContentTemplate(option) {
     return;
   }
   return html`
-    <span data-role="option">
-      ${md.renderInline(option.content)}
-    </span>
+    <span data-role="option">${md.renderInline(option.content)}</span>
   `;
 }
 
@@ -197,28 +181,26 @@ function rationaleTemplate(option) {
     return;
   }
   return html`
-    <div data-role="rationale">
-      ${md.render(option.rationale)}
-    </div>
+    <div data-role="rationale">${md.render(option.rationale)}</div>
   `;
 }
 
-// Gets the assessment object from the YAML file passed in the shortcode
-// and passes it to the template functions above.
-module.exports = (page, targetAssessment) => {
-  if (!page) {
-    throw new Error(
-      `Can't create Assessment component without the page argument.`,
-    );
-  }
-
+/**
+ * Gets the assessment object from the YAML file passed in the shortcode
+ * and passes it to the template functions above.
+ * @this {EleventyPage}
+ * @param {TargetAssessment} targetAssessment
+ * @returns
+ */
+module.exports = function (targetAssessment) {
   if (!targetAssessment) {
     throw new Error(`
       Can't create Assessment component without a target assessment.
       Pass the file name, without ".assess.yml", of the desired assessment as a string.
     `);
   }
-  const filePath = page.filePathStem.replace(/index$/, '');
+
+  const filePath = this.page.filePathStem.replace(/index$/, '');
   const source = path.join(
     site.contentDir,
     filePath,
@@ -228,9 +210,22 @@ module.exports = (page, targetAssessment) => {
   const assessment = yaml.safeLoad(data);
 
   // prettier-ignore
-  return html`
-    <web-assessment class="w-callout unresolved ${assessment.questions.length === 1 && 'web-assessment--singleton'}" aria-label="Check your understanding">
+  const content = html`
+    <web-assessment aria-label="Check your understanding">
       ${headerTemplate(assessment)} ${contentTemplate(assessment)}
     </web-assessment>
   `;
+
+  const $ = cheerio.load(content);
+  $('img').each(function () {
+    // @ts-ignore
+    const oldSrc = $(this).attr('src');
+    if (/image\/(.*)\/(.*)\.([a-z]{1,4})$/.test(oldSrc)) {
+      const src = generateImgixSrc(oldSrc);
+      // @ts-ignore
+      $(this).attr('src', src);
+    }
+  });
+
+  return html`${$.html()}`;
 };

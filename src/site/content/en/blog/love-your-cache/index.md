@@ -78,10 +78,9 @@ nearly got the [web.dev/live](/live) site stuck!)
 For a bit of background, a really common reason for "stale cache" is actually
 the 1999-era default for caching. It relies on the `Last-Modified` header:
 
-<figure class="w-figure">
-  <img src="./cache.png" width="954" height="408"
-      alt="Diagram showing how long different assets are cached by a user's browser" />
-  <figcaption class="w-figcaption">Assets generated at different times (in gray) will be cached for
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z6ApNGczaZ4ikhLEBkT4.png", alt="Diagram showing how long different assets are cached by a user's browser", width="800", height="342" %}
+  <figcaption>Assets generated at different times (in gray) will be cached for
 different times, so a 2nd load can get a combination of cached and fresh assets</figcaption>
 </figure>
 
@@ -118,7 +117,7 @@ Instead of `max-age=0,must-revalidate`, you could also specify `no-cache`: this
 is equivalent. However, `no-cache` is a confusing name, because it could be
 interpreted as "never cache this file"—even though that's not the case. For some
 heavy reading, see
-[Cache-Control on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Directives).
+[Cache-Control on MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Directives).
 {% endAside %}
 
 This validation process is relatively cheap in terms of bytes transferred—if a

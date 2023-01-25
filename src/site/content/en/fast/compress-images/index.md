@@ -3,6 +3,7 @@ layout: post
 title: Choose the correct level of compression
 authors:
   - ilyagrigorik
+  - jlwagner
 description: |
   Many images can be heavily compressed, giving excellent performance improvements. This post helps you to choose the right level of compression to maintain the look of images while getting the best performance.
 date: 2018-08-30
@@ -99,7 +100,7 @@ This can be an important constraint for large images and devices which do not ha
 &mdash;for example, low-end mobile devices.
 {% endAside %}
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
 <table>
 <thead>
   <tr>
@@ -149,7 +150,7 @@ What if you reduce the palette to 256 colors?
 Then you would only need 8 bits in total for the RGB channels and immediately save two bytes per pixel&mdash;that's 50% compression savings over the original 4 bytes per pixel format!
 
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ssek7uXzhs67joEbp0P8.png", alt="Compression artifacts", width="612", height="266" %}
   <figcaption>Left to right (PNG): 32-bit (16M colors), 7-bit (128 colors), 5-bit (32 colors).</figcaption>
 </figure>
@@ -229,6 +230,14 @@ quality 90 JPEG will produce a very different result than a quality 90 WebP.
 In fact, even quality levels for the same image format may produce visibly different output based on implementation of the compressor!
 {% endAside %}
 
+## Effects of image compression on Core Web Vitals
+
+Because images are often candidates for [Largest Contentful Paint](/lcp/), reducing the resource load time of an image can translate into better LCP in both [the lab](/lab-and-field-data-differences/#lab-data) and in [the field](/lab-and-field-data-differences/#field-data).
+
+When playing with compression settings on raster image formats, be sure to experiment with WebP and AVIF formats to see if you can deliver the same image in a small footprint as compared to older formats.
+
+You want to be careful not to _overcompress_ raster images, though. A good solution is to use an image optimization CDN to find the best compression settings for you, but an alternative may be to use tools like [Butteraugli](https://github.com/google/butteraugli) to estimate visual differences so that you don't encode images _too_ aggressively and lose too much quality.
+
 ## Image optimization checklist
 
 Some tips and techniques to keep in mind as you work on optimizing your images:
@@ -238,7 +247,7 @@ which makes them a perfect fit for the multi-device and high-resolution world.
 * **Minify and compress SVG assets:** XML markup produced by most drawing applications
 often contains unnecessary metadata which can be removed;
 Ensure that your servers are configured to apply GZIP compression for SVG assets.
-* **Prefer WebP over older raster formats**: [WebP images](/serve-images-webp/) will usually be far smaller than older images.
+* **Prefer WebP or AVIF over older raster formats**: [WebP](/serve-images-webp/) and [AVIF images](/compress-images-avif/) will usually be far smaller than older image formats.
 * **Pick best raster image format:** determine your functional requirements and [select the one that suits each particular asset](/choose-the-right-image-format/).
 * **Experiment with optimal quality settings for raster formats:** don't be afraid to dial down the "quality" settings,
 the results are often very good and byte savings are significant.

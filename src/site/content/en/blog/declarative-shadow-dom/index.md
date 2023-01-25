@@ -3,7 +3,7 @@ title: Declarative Shadow DOM
 subhead: |
   A new way to implement and use Shadow DOM directly in HTML.
 date: 2020-09-30
-updated: 2020-12-15
+updated: 2021-04-14
 hero: image/admin/IIPe5m8edvp0XMPpzrz9.jpg
 alt: decorative shadow dome
 authors:
@@ -27,11 +27,11 @@ Declarative Shadow DOM is a proposed web platform feature that the Chrome team i
 feedback on. Try it out using the [experimental flag](#detection-support) or [polyfill](#polyfill).
 {% endAside %}
 
-[Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom)
+[Shadow DOM](/shadowdom-v1/)
 is one of the three Web Components standards, rounded out by
-[HTML templates](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots)
+[HTML templates](https://developer.mozilla.org/docs/Web/Web_Components/Using_templates_and_slots)
 and
-[Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).
+[Custom Elements](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements).
 Shadow DOM provides a way to scope CSS styles to a specific DOM subtree and isolate that subtree
 from the rest of the document. The `<slot>` element gives us a way to control where the children
 of a Custom Element should be inserted within its Shadow Tree. These features combined enable a
@@ -53,7 +53,7 @@ important part of delivering a reasonable experience to visitors who may not be 
 JavaScript.
 
 The justifications for
-[Server-Side Rendering](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
+[Server-Side Rendering](/rendering-on-the-web/)
 (SSR) vary from project to project. Some websites must provide fully functional server-rendered
 HTML in order to meet accessibility guidelines, others choose to deliver a baseline no-JavaScript
 experience as a way to guarantee good performance on slow connections or devices.
@@ -123,7 +123,7 @@ Passing the `includeShadowRoots:true` option serializes the entire subtree of an
 `<template shadowroot>` syntax.
 
 In order to preserve encapsulation semantics, any
-[closed shadow roots](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode) within an
+[closed shadow roots](https://developer.mozilla.org/docs/Web/API/ShadowRoot/mode) within an
 element will not be serialized by default. To include closed shadow roots in the serialized HTML,
 an array of references to those shadow roots can be passed via a new `closedRoots` option:
 
@@ -253,7 +253,7 @@ be identical. Finally, the impact of repeated similar shadow roots on network tr
 relatively small due to the effects of compression.
 
 In the future, it might be possible to revisit shared shadow roots. If the DOM gains support for
-[built-in templating](https://w3c.github.io/webcomponents/proposals/Template-Instantiation.html),
+[built-in templating](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md),
 Declarative Shadow Roots could be treated as templates that are instantiated in order to construct
 the shadow root for a given element. The current Declarative Shadow DOM design allows for this
 possibility to exist in the future by limiting shadow root association to a single element.
@@ -369,16 +369,72 @@ Styles specified this way are also highly optimized: if the same stylesheet is p
 Declarative Shadow Roots, it is only loaded and parsed once. The browser uses a single backing
 `CSSStyleSheet` that is shared by all of the shadow roots, eliminating duplicate memory overhead.
 
-[Constructable Stylesheets](https://developers.google.com/web/updates/2019/02/constructable-stylesheets)
+[Constructable Stylesheets](/constructable-stylesheets)
 are not supported in Declarative Shadow DOM. This is because there is currently no way to serialize
 constructable stylesheets in HTML, and no way to refer to them when populating `adoptedStyleSheets`.
 
+## Avoiding the flash of unstyled content {: #fouc }
+
+One potential issue in browsers that do not yet support Declarative Shadow DOM
+is avoiding "flash of unstyled content" (FOUC), where the raw contents are shown
+for Custom Elements that have not yet been upgraded. Prior to Declarative Shadow
+DOM, one common technique for avoiding FOUC was to apply a `display:none` style
+rule to Custom Elements that haven't been loaded yet, since these have not had
+their shadow root attached and populated. In this way, content is not displayed
+until it is "ready":
+
+```html
+<style>
+  x-foo:not(:defined) > * {
+    display: none;
+  }
+</style>
+```
+
+With the introduction of Declarative Shadow DOM, Custom Elements can be rendered
+or authored in HTML such that their shadow content is in-place and ready before the
+client-side component implementation is loaded:
+
+```html
+<x-foo>
+  <template shadowroot="open">
+    <style>h2 { color: blue; }</style>
+    <h2>shadow content</h2>
+  </template>
+</x-foo>
+```
+
+In this case, the `display:none` "FOUC" rule would prevent the declarative
+shadow root's content from showing. However, removing that rule would cause
+browsers without Declarative Shadow DOM support to show incorrect or unstyled
+content until the Declarative Shadow DOM [polyfill](#polyfill) loads and
+converts the shadow root template into a real shadow root.
+
+Fortunately, this can be solved in CSS by modifying the FOUC style rule. In
+browsers that support Declarative Shadow DOM, the `<template shadowroot>`
+element is immediately converted into a shadow root, leaving no `<template>`
+element in the DOM tree. Browsers that don't support Declarative Shadow DOM
+preserve the `<template>` element, which we can use to prevent FOUC:
+
+```html
+<style>
+  x-foo:not(:defined) > template[shadowroot] ~ *  {
+    display: none;
+  }
+</style>
+```
+
+Instead of hiding the not-yet-defined Custom Element, the revised "FOUC" rule
+hides its _children_ when they follow a `<template shadowroot>` element. Once
+the Custom Element is defined, the rule no longer matches. The rule is ignored
+in browsers that support Declarative Shadow DOM because the
+`<template shadowroot>` child is removed during HTML parsing.
+
 ## Feature detection and browser support {: #detection-support }
 
-The Chrome team is tentatively looking at un-flagging Declarative Shadow DOM in Chrome&nbsp;88.
-In the meantime, it can be enabled using the **Experimental Web Platform Features** flag in
-Chrome&nbsp;85. Navigate to `chrome://flags/#enable-experimental-web-platform-features` to
-find that setting.
+Declarative Shadow DOM is available in Chrome&nbsp;90 and Edge&nbsp;91. It can also be enabled
+using the **Experimental Web Platform Features** flag in Chrome&nbsp;85. Navigate to
+`about://flags/#enable-experimental-web-platform-features` to find that setting.
 
 As a new web platform API, Declarative Shadow DOM does not yet have widespread support across all
 browsers. Browser support can be detected by checking for the existence of a `shadowroot` property
@@ -400,12 +456,15 @@ on their parent element. This process can be done once the document is ready, or
 specific events like Custom Element lifecycles.
 
 ```js
-document.querySelectorAll('template[shadowroot]').forEach(template => {
-  const mode = template.getAttribute('shadowroot');
-  const shadowRoot = template.parentNode.attachShadow({ mode });
-  shadowRoot.appendChild(template.content);
-  template.remove();
-});
+(function attachShadowRoots(root) {
+  root.querySelectorAll("template[shadowroot]").forEach(template => {
+    const mode = template.getAttribute("shadowroot");
+    const shadowRoot = template.parentNode.attachShadow({ mode });
+    shadowRoot.appendChild(template.content);
+    template.remove();
+    attachShadowRoots(shadowRoot);
+  });
+})(document);
 ```
 
 ## Further Reading {: #further-reading }

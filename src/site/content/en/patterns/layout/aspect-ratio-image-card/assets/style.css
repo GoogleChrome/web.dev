@@ -1,0 +1,15 @@
+.parent {
+  display: grid;
+  place-items: center;
+}
+
+.visual {
+  aspect-ratio: 16 / 9;
+}
+
+.card {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}

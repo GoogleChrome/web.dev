@@ -1,0 +1,53 @@
+devtools:
+  en: DevTools
+
+network:
+  en: Network
+  ru: Сеть
+
+elements:
+  en: Elements
+  ru: Элементы
+
+console:
+  en: Console
+  ru: Консоль
+
+sources:
+  en: Sources
+  ru: Источники
+  
+performance:
+  en: Performance
+  ru: Производительность
+
+memory:
+  en: memory
+  ru: память
+
+application:
+  en: Application
+  ru: Приложение
+
+security:
+  en: Security
+  ru: Защита
+
+lighthouse:
+  en: Lighthouse
+
+disable_cache:
+  en: Select the **Disable cache** checkbox.
+  ru: Установите флажок **Отключить кеш**.
+
+reload_page:
+  en: Reload the page.
+  ru: Перезагрузите страницу.
+
+devtools_click:
+  en: Click the **$0** tab.
+  ru: Перейдите на вкладку **$0**.
+
+devtools_shared:
+  en: Press \`Control+Shift+J\` (or \`Command+Option+J\` on Mac) to open DevTools.
+  ru: Откройте DevTools, нажав `Control+Shift+J` (или `Command+Option+J`, если у вас Mac).

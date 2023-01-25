@@ -1,0 +1,40 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/fab
+.fab {
+  position: relative;
+  padding: 0.8em 1em 0.8em 0.8em;
+  border-radius: 3em;
+  flex: none;
+
+  @include button-base-styles();
+
+  /// Ensures the hover state doesn't overflow;
+  &::after {
+    border-radius: 3em;
+  }
+}
+
+.fab__label {
+  text-transform: uppercase;
+  // By default (small viewport), the
+  // label is hidden
+  @extend .visually-hidden;
+
+  // If this isn't a icon only context,
+  // show the label where there is more space
+  @include media-query('md') {
+    .fab:not([data-icon-only]) & {
+      height: auto;
+      position: initial;
+      width: auto;
+    }
+  }
+}
+
+/// Docked state
+.fab[data-docked] {
+  position: fixed;
+  bottom: $global-gutter;
+  right: $global-gutter;
+  z-index: 10;
+}

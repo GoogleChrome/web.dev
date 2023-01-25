@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-10-19
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
@@ -41,6 +41,30 @@ Paint (FCP) and _[Largest Contentful Paint (LCP)](/lcp/)_
 &mdash;which aims to measure when the page's main contents have finished
 loading.
 
+### What is a good FCP score?
+
+To provide a good user experience, sites should strive to have a First
+Contentful Paint of **1.8 seconds** or less. To ensure you're hitting this
+target for most of your users, a good threshold to measure is the **75th
+percentile** of page loads, segmented across mobile and desktop devices.
+
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg",
+        alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
+
 ## How to measure FCP
 
 FCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
@@ -49,25 +73,27 @@ available in the following tools:
 
 ### Field tools
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [Search Console (Speed
   Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Lab tools
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Measure FCP in JavaScript
+
+{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 To measure FCP in JavaScript, you can use the [Paint Timing
 API](https://w3c.github.io/paint-timing/). The following example shows how to
 create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 that listens for a `paint` entry with the name `first-contentful-paint` and logs
 it to the console.
 
@@ -113,14 +139,14 @@ Rather than memorizing all these subtle differences, developers can use the
 measure FCP, which handles these differences for you (where possible):
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // Measure and log FCP as soon as it's available.
-getFCP(console.log);
+onFCP(console.log);
 ```
 
 You can refer to [the source code for
-`getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)
+`onFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts)
 for a complete example of how to measure FCP in JavaScript.
 
 {% Aside %}
@@ -134,24 +160,25 @@ for a complete example of how to measure FCP in JavaScript.
 
 To learn how to improve FCP for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance/#opportunities) or
-[diagnostics](/lighthouse-performance/#diagnostics) the audit suggests.
+[opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) or
+[diagnostics](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics) the audit suggests.
 
 To learn how to improve FCP in general (for any site), refer to the following
 performance guides:
 
-- [Eliminate render-blocking resources](/render-blocking-resources/)
-- [Minify CSS](/unminified-css/)
-- [Remove unused CSS](/unused-css-rules/)
-- [Preconnect to required origins](/uses-rel-preconnect/)
-- [Reduce server response times (TTFB)](/time-to-first-byte/)
-- [Avoid multiple page redirects](/redirects/)
-- [Preload key requests](/uses-rel-preload/)
-- [Avoid enormous network payloads](/total-byte-weight/)
-- [Serve static assets with an efficient cache policy](/uses-long-cache-ttl/)
-- [Avoid an excessive DOM size](/dom-size/)
-- [Minimize critical request depth](/critical-request-chains/)
-- [Ensure text remains visible during webfont load](/font-display/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [Minify CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [Remove unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [Remove unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)
+- [Preconnect to required origins](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
+- [Reduce server response times (TTFB)](/ttfb/)
+- [Avoid multiple page redirects](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [Preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Avoid enormous network payloads](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [Serve static assets with an efficient cache policy](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [Avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [Minimize critical request depth](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [Ensure text remains visible during webfont load](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [Keep request counts low and transfer sizes small](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

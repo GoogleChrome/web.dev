@@ -1,0 +1,15 @@
+<nav class="pagination" aria-label="Pagination {{ data.statusText }}">
+  <div class="pagination__container">
+  {% if data.prev %}
+    <a class="button" href="#">{{ data.prev }}</a>
+  {% endif %}
+  </div>
+  <div class="pagination__status" role="presentation" aria-hidden="true">
+    {{ data.statusText }}
+  </div>
+  <div class="pagination__container">
+  {% if data.next %}
+    <a class="button" href="#">{{ data.next }}</a>
+  {% endif %}
+  </div>
+</nav>

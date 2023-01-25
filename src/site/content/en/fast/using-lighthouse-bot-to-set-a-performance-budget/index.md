@@ -14,10 +14,10 @@ tags:
 You've done hard work to get fast, now make sure you stay fast by automating
 performance testing with [Lighthouse Bot](https://github.com/ebidel/lighthousebot).
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) grades your app
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) grades your app
 in 5 categories, and one of those is performance. While you could try to remember to
-monitor performance changes with [DevTools](https://developers.google.com/web/tools/lighthouse/#devtools)
-or [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) every
+monitor performance changes with [DevTools](https://developer.chrome.com/docs/lighthouse/overview/#devtools)
+or [Lighthouse CLI](https://developer.chrome.com/docs/lighthouse/overview/#cli) every
 time you edit your code, you don't have to do that. Tools can do the tedious
 stuff for you. [Travis CI](https://travis-ci.com/) is a great service that
 automatically runs tests for your app in the cloud every time you push new code.
@@ -28,9 +28,9 @@ that you won't accidentally downgrade performance without noticing. You can
 so that it won't allow merging pull-requests if the Lighthouse scores fall below
 the threshold you've set (e.g. < 96/100).
 
-<figure class="w-figure">
-  {% Img src="image/admin/LIEdWOuIGubFE0JgBM5Y.png", alt="Failing Lighthouse Bot checks on GitHub", width="800", height="360", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Lighthouse Bot checks on GitHub.</figcaption>
+<figure>
+  {% Img src="image/admin/LIEdWOuIGubFE0JgBM5Y.png", alt="Failing Lighthouse Bot checks on GitHub", width="800", height="360" %}
+  <figcaption>Lighthouse Bot checks on GitHub.</figcaption>
 </figure>
 
 {% Aside %}
@@ -137,7 +137,7 @@ Now it's your turn to **push the example app to your own GitHub repository**.
 If you haven't already, run the following command:
 
 ```bash
-git push origin master
+git push origin main
 ```
 
 Click on your repo under Settings in Travis to see your project's Travis
@@ -155,7 +155,9 @@ Firebase, you have to authorize it. How do you do that? With a Firebase token.
 
 To generate the token run this command:
 
-<pre class="devsite-terminal devsite-click-to-copy">firebase login:ci</pre>
+```bash
+firebase login:ci
+```
 
 It will open a new tab in a browser window so that Firebase can verify you.
 After that, look back at the console, and you'll see your freshly minted token.
@@ -163,7 +165,7 @@ Copy it and go back to Travis.
 
 In your project's Travis dashboard, go to **More options** > **Settings** > **Environment variables**.
 
-{% Img src="image/admin/uU7MBc5NdBDZch3ZE3Zd.png", alt="", width="789", height="233", class="w-screenshot" %}
+{% Img src="image/admin/uU7MBc5NdBDZch3ZE3Zd.png", alt="", width="789", height="233" %}
 
 Paste the token in the value field, name the variable `FIREBASE_TOKEN`, and add it.
 
@@ -189,7 +191,7 @@ It just needs an invitation to your repo.
 
 On GitHub, go to your project's settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
 
-{% Img src="image/admin/H2aLCOr36UDwm5Yk1k9r.png", alt="Lighthouse bot collaborator status", width="800", height="298", class="w-screenshot" %}
+{% Img src="image/admin/H2aLCOr36UDwm5Yk1k9r.png", alt="Lighthouse bot collaborator status", width="800", height="298" %}
 
 Approving these requests is a manual process so they don't always happen
 instantly. Before you start testing, make sure lighthousebot has approved its
@@ -200,7 +202,7 @@ and you'll get a Lighthouse Bot key in your inbox. 📬
 
 On Travis, add this key as an environment variable and name it `LIGHTHOUSE_API_KEY`:
 
-{% Img src="image/admin/0XCrRSbUg1Sdca8k9xK9.jpg", alt="", width="800", height="127", class="w-screenshot" %}
+{% Img src="image/admin/0XCrRSbUg1Sdca8k9xK9.jpg", alt="", width="800", height="127" %}
 
 {% Aside %}
 You can reuse this same key for other projects.
@@ -248,21 +250,21 @@ the app that bring the performance score below 95:
 
 ### Make a pull request to trigger Lighthouse Bot test on Travis
 
-Lighthouse Bot will only test pull requests, so if you push to the master branch
+Lighthouse Bot will only test pull requests, so if you push to the main branch
 now, you'll just get "This script can only be run on Travis PR requests" in your
 Travis log.
 
 To trigger the Lighthouse Bot test:
 
 1. Checkout a new branch
-2. Push it to Github
+2. Push it to GitHub
 3. Make a pull request
 
 Hang tight on that pull request page and wait for Lighthouse Bot to sing! 🎤
 
-{% Img src="image/admin/SmWHb70YqVfagXI3f03D.png", alt="Passing Lighthouse scores", width="586", height="329", class="w-screenshot" %}
+{% Img src="image/admin/SmWHb70YqVfagXI3f03D.png", alt="Passing Lighthouse scores", width="586", height="329" %}
 
-{% Img src="image/admin/ZrPGH5OGEY5Y4e9ntUBK.png", alt="Passing Github checks", width="462", height="189", class="w-screenshot" %}
+{% Img src="image/admin/ZrPGH5OGEY5Y4e9ntUBK.png", alt="Passing GitHub checks", width="462", height="189" %}
 
 The performance score is great, the app is under budget, and the check has passed!
 

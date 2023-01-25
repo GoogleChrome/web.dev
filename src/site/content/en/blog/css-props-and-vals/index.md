@@ -17,13 +17,13 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - houdini
   - css
-  - Chrome78
+  - chrome-78
 feedback:
   - api
 ---
 
 CSS custom properties, also known as [CSS
-variables](https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care),
+variables](https://developer.chrome.com/blog/css-variables-why-should-you-care/),
 let you define your own properties in CSS and use their values throughout your
 CSS. While incredibly useful today, they have shortcomings that can make them
 hard to work with: they can take any value so they may be accidentally
@@ -107,7 +107,7 @@ Initial value of the custom property.
 Taking a closer look at `syntax`. There are a number of [valid
 options](https://drafts.css-houdini.org/css-properties-values-api/#supported-names)
 ranging from numbers to colors to
-[`<custom-ident>`](https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident)
+[`<custom-ident>`](https://developer.mozilla.org/docs/Web/CSS/custom-ident)
 types. These syntaxes can also be modified by using the following values
 
 * Appending `+` signifies that it accepts a space-separated list of values of
@@ -193,9 +193,9 @@ in action and play around with it yourself.
 
 ## Conclusion
 
-Houdini [is on its way](http://ishoudinireadyyet.com/) to browsers, and with it,
+Houdini [is on its way](http://ishoudinireadyyet.com) to browsers, and with it,
 entirely new ways of working with and extending CSS. With the [Paint
-API](https://developers.google.com/web/updates/2018/01/paintapi) already shipped
+API](https://developer.chrome.com/blog/paintapi) already shipped
 and now Custom Props and Vals, our creative toolbox is expanding, allowing us to
 define typed CSS properties and use them to create and animate new and exciting
 designs. There's more on the way, too, in the [Houdini issue

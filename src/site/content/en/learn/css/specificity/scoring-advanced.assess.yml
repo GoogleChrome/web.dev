@@ -1,0 +1,21 @@
+setLeader: Test your knowledge of specificity scoring
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Which of the following selectors is worth **21 points**?
+    options:
+      - content: "`article > section`"
+        rationale: "Elements are worth 1 point, there are 2 elements in the
+        selector, making this worth **2 points**."
+      - content: "`article.card.dark`"
+        rationale: "Elements are worth 1 point, classes are worth 10 points, and
+        with 2 classes and 1 element, that makes this selector worth **21
+        points**."
+      - content: "`article:hover a[href]`"
+        rationale: "Elements are worth 1 point, pseudo-classes and attributes
+        are worth 10 points, there are 2 points for the elements, and 20 points
+        for the attributes and classes, makes this selector worth **22
+        points**."

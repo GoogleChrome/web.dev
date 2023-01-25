@@ -116,8 +116,8 @@ built-in password-management features.
       <input id="email" name="email" type="email" autocomplete="username" required autofocus>
     </section>
     <section>        
-      <label for="current-password">Password</label>
-      <input id="password" name="password" type="password" autocomplete="new-password" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
     </section>
     <button id="sign-in">Sign in</button>
   </form>
@@ -133,10 +133,8 @@ built-in password-management features.
    Notice how the keyboard is optimized for typing an email address. For example, the `@` and `.` characters might be shown on the primary keyboard, and the 
    operating system might show stored emails above the keyboard. All of this happens because the `type="email"` attribute is applied to an `<input>` element.
 
-  <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" 
-         src="email-keyboard.png" 
-         alt="The default email keyboard on iOS.">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dUtDcvYy1RMzEYBi7Ce0.png", alt="The default email keyboard on iOS.", width="800", height="1504" %}
   </figure>
 
 4. Type some text into the password input. 

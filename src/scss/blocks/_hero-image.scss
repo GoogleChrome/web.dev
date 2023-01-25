@@ -1,0 +1,9 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/hero-image
+.hero-image {
+  width: 100%;
+  max-width: 100rem;
+  max-height: 30rem;
+  object-fit: cover;
+  margin-inline: auto;
+}

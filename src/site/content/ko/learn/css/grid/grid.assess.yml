@@ -1,0 +1,95 @@
+setLeader: Test your knowledge of grid
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,2,3,5,6"
+    stem: Which of the following are CSS grid terms?
+    options:
+      - content: "lines"
+        rationale: "The grid is divided by these horizontal and vertically
+        running separators."
+      - content: "circles"
+        rationale: "Sorry, no concepts of circles in CSS grid."
+      - content: "cells"
+        rationale: "A single intersection of a row and a column creates a grid cell."
+      - content: "areas"
+        rationale: "Multiple cells together."
+      - content: "trains"
+        rationale: "Sorry, no concepts of trains in CSS grid."
+      - content: "gaps"
+        rationale: "The space between cells."
+      - content: "tracks"
+        rationale: "A single row or a column is a track in the grid."
+  - type: multiple-choice
+    stimulus: |
+      ```css
+      main {
+        display: grid;
+      }
+      ```
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What is the default layout direction of a grid?
+    options:
+      - content: Rows
+        rationale: "Without any columns defined, grid children lay out in the
+        block direction as they normally would."
+      - content: Columns
+        rationale: "If `grid-auto-flow: column` was present, than a grid would
+        layout as columns."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What is the difference between `auto-fit` and `auto-fill`?
+    options:
+      - content: "`auto-fit` will stretch cells to fit the container, where
+      `auto-fill` won't."
+        rationale: "`auto-fill` places as many items into the template as
+        possible, without stretching. Fit **makes** them fit."
+      - content: "`auto-fit` will stretch a container to fit the children, where
+      `auto-fill` makes the children fit to the container."
+        rationale: "This is not how these properties behave."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What is `min-content`?
+    options:
+      - content: "Same as 0%"
+        rationale: "0% is a relative value of the parent box, while
+        `min-content` is relative to the words and images in the box."
+      - content: "The smallest letter"
+        rationale: "While there is a smallest letter, letters are not what
+        `min-content` is refering to."
+      - content: "The longest word or image."
+        rationale: "In the phrase 'CSS is awesome', the word awesome would be
+        the `min-content`."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What is `max-content`?
+    options:
+      - content: "The longest sentence or biggest image."
+        rationale: "This is the maximum size the content of the box is asking
+        for or has specified. It's a sentence as it's widest or an image at it's
+        widest."
+      - content: "The longest letter."
+        rationale: "While there is a longest letter, letters are not what
+        `max-content` is refering to."
+      - content: "The longest word."
+        rationale: "The longest word is `min-content`."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What is auto-placement?
+    options:
+      - content: "When grid takes the child items and places them in the best
+      order based on browser heuristics."
+        rationale: "No browser will change your content order, only your own
+        styles will do that."
+      - content: "When grid child items have been given a `grid-area` and are
+      placed on that cell."
+        rationale: "That's explicit placement not auto placement."
+      - content: "When unassigned grid items are placed next in a layout
+      template."
+        rationale: "Grid items without an explicit area will be placed in the next available grid cell"

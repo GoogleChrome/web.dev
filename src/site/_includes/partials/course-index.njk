@@ -1,0 +1,20 @@
+{%- set courseData = courses[projectKey] -%}
+{%- set pageNavigation = collections.all | navigation(courseData.toc) -%}
+{%- for item in pageNavigation.list -%}
+  {#- Skip the first item so we don't show an entry for the current page. -#}
+  {%- if not loop.first -%}
+      {%- set title = item.data.title or '' -%}
+      {%- if item.title -%}
+        {%- set title = item.title | i18n(locale) -%}
+      {%- endif -%}
+      {%- if not item.data.placeholder -%}
+        <h3><a href="{{ item.url }}">{{ title }}</a></h3>
+        <p>{{ item.data.description }}</p>
+      {%- endif -%}
+      {# Don't link to placeholder items #}
+      {%- if item.data.placeholder -%}
+        <h3>{{ title }}</h3>
+        <p>{{ item.data.description }}</p>
+      {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

@@ -8,13 +8,13 @@ date: 2020-03-11
 description: How to get and serve SXG files using nginx, and the challenges of subresource prefetching.
 tags:
   - blog
-  - SXG
-  - nginx
+  # - SXG
+  # - nginx
 feedback:
   - api
 ---
 
-As a [Signed HTTP Exchanges (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges) distributor, you can deliver SXG files on behalf of the original content creators. Web browsers that support SXG will display such SXG files as if they were delivered from the original content creators. This enables you to implement cross-site preloading without violating privacy. This guide shows you how to distribute SXG properly.
+As a [Signed HTTP Exchanges (SXG)](https://developer.chrome.com/blog/signed-exchanges) distributor, you can deliver SXG files on behalf of the original content creators. Web browsers that support SXG will display such SXG files as if they were delivered from the original content creators. This enables you to implement cross-site preloading without violating privacy. This guide shows you how to distribute SXG properly.
 
 ## Cross-browser support
 
@@ -84,7 +84,7 @@ If the distributor wants to serve `app.js.sxg` from their own service and tries 
 {% Img src="image/admin/IRRFoXyhnmwVXwiDgeny.png", alt="An attempt to link the reference to app.js in distributor.test/index.html.sxg to distributor.test/app.js causes a signature mismatch.", width="592", height="258" %}
 
 To solve this problem, there's an experimental SXG subresource prefetching feature in Chrome now.
-You can enable it at: `chrome://flags/#enable-sxg-subresource-prefetching`.
+You can enable it at: `about://flags/#enable-sxg-subresource-prefetching`.
 To use subresource prefetching the following conditions must be met:
 
 - The publisher must embed a response header entry in SXG, such as: `link: <https://website.test/app.js>;rel="preload";as="script",<https://website.test/app.js>;rel="allowed-alt-sxg";header-integrity="sha256-h6GuCtTXe2nITIHHpJM+xCxcKrYDpOFcIXjihE4asxk="`. This specifies the subresource that can be substituted with the SXG's specific integrity hash.

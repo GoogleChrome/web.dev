@@ -26,14 +26,14 @@ Specifically, for the same physical distance that you move the mouse, the
 pointer on screen travels further if the distance was traveled faster.
 
 Operating systems enable mouse acceleration by default. For some [first-party
-perspective] games, commonly first party shooters (FPS), raw mouse input data is
-used to control camera rotation without an acceleration adjustment. The same
+perspective] games, commonly first-person shooters (FPS), raw mouse input data
+is used to control camera rotation without an acceleration adjustment. The same
 physical motion, slow or fast, results in the same rotation. This results in a
 better gaming experience and higher accuracy according to professional gamers.
 
-<figure class="w-figure">
-  {% Img src="image/admin/4x9YZ7nC3SJMN9FI46zN.png", alt="Screenshot of the pointer motion control in Windows 10 settings.", width="800", height="260", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Pointer motion control in Windows 10 settings.</figcaption>
+<figure>
+  {% Img src="image/admin/4x9YZ7nC3SJMN9FI46zN.png", alt="Screenshot of the pointer motion control in Windows 10 settings.", width="800", height="260" %}
+  <figcaption>Pointer motion control in Windows 10 settings.</figcaption>
 </figure>
 
 Starting in Chrome 88, web apps can switch back and forth between accelerated
@@ -42,6 +42,8 @@ API].
 
 Web-based gaming platforms such as [Google Stadia] and [Nvidia GeForce Now]
 already use these new capabilities to please FPS gamers.
+
+{% BrowserCompat 'api.Element.requestPointerLock' %}
 
 ## Using the API {: #use }
 
@@ -139,7 +141,7 @@ See MDN's [Browser compatibility] table for updates.
 
 ### Operating system support {: #os-support }
 
-Disabling OS-level adjustment for mouse acceleration is supported on Chrome OS,
+Disabling OS-level adjustment for mouse acceleration is supported on ChromeOS,
 macOS Catalina 10.15.1, and Windows. Linux will follow.
 
 ## Sample  {: #sample }
@@ -170,7 +172,7 @@ Thanks to [James Hollyer], [Thomas Steiner], [Joe Medley], [Kayce Basques], and
 [Google Stadia]: https://en.wikipedia.org/wiki/Google_Stadia
 [Nvidia GeForce Now]: https://en.wikipedia.org/wiki/GeForce_Now
 [well supported across browsers]: https://caniuse.com/?search=pointerlock
-[Browser compatibility]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API#Browser_compatibility
+[Browser compatibility]: https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API#Browser_compatibility
 [sample]: https://unadjusted-movement.glitch.me/
 [check out the source code]: https://glitch.com/edit/#!/unadjusted-movement?path=script.js
 [James Hollyer]: https://github.com/jameshollyergoogle

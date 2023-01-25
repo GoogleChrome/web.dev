@@ -18,12 +18,15 @@
  * @fileoverview A Snackbar container for handling Redux state and actions.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
-import {setUserAcceptsCookies, checkIfUserAcceptsCookies} from '../../actions';
+import {
+  setUserAcceptsCookies,
+  setUserRejectsCookies,
+  checkIfUserAcceptsCookies,
+} from '../../actions';
 import '../Snackbar';
-import './_styles.scss';
 
 class SnackbarContainer extends BaseElement {
   static get properties() {
@@ -58,7 +61,7 @@ class SnackbarContainer extends BaseElement {
   }
 
   onBeforeInstallPrompt(e) {
-    if (!this.acceptedCookies) {
+    if (!this.cookiePreference) {
       e.preventDefault();
     }
   }
@@ -67,15 +70,17 @@ class SnackbarContainer extends BaseElement {
     const state = store.getState();
     this.open = state.showingSnackbar;
     this.type = state.snackbarType;
-    this.acceptedCookies = state.userAcceptsCookies;
+    this.cookiePreference = state.cookiePreference;
   }
 
   render() {
-    let action;
+    let onAccept;
+    let onReject;
     let isStacked;
     switch (this.type) {
       case 'cookies':
-        action = setUserAcceptsCookies;
+        onAccept = setUserAcceptsCookies;
+        onReject = setUserRejectsCookies;
         isStacked = true;
         break;
       default:
@@ -84,10 +89,11 @@ class SnackbarContainer extends BaseElement {
 
     return html`
       <web-snackbar
-        .type=${this.type}
-        .open=${this.open}
-        .stacked=${isStacked}
-        .action="${action}"
+        .type="${this.type}"
+        .open="${this.open}"
+        .stacked="${isStacked}"
+        .onAccept="${onAccept}"
+        .onReject="${onReject}"
       ></web-snackbar>
     `;
   }

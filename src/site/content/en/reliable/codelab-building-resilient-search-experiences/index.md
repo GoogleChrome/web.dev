@@ -13,8 +13,8 @@ related_post: resilient-search-experiences
 
 This codelab shows you how to implement a resilient search experience with Workbox. The demo app it uses contains a search box that calls a server endpoint, and redirects the user to a basic HTML page.
 
-{% Aside %} 
-This codelab uses [Chrome DevTools](https://www.google.com/chrome/). Download Chrome if you don't already have it. 
+{% Aside %}
+This codelab uses [Chrome DevTools](https://www.google.com/chrome/). Download Chrome if you don't already have it.
 {% endAside %}
 
 ## Measure
@@ -28,7 +28,7 @@ In the new tab that just opened, check how the website behaves when going offlin
 
 {% Instruction 'devtools-network', 'ol' %}
 1. Open Chrome DevTools and select the Network panel.
-1. In the [Throttling drop-down list](https://developers.google.com/web/tools/chrome-devtools/network/reference#throttling), select **Offline**.
+1. In the [Throttling drop-down list](https://developer.chrome.com/docs/devtools/network/reference/#throttling), select **Offline**.
 1. In the demo app enter a search query, then click the **Search** button.
 
 The standard browser error page is shown:
@@ -37,20 +37,20 @@ The standard browser error page is shown:
 
 ## Provide a fallback response
 
-The service worker contains the code to add the offline page to the [precache list](https://developers.google.com/web/tools/workbox/modules/workbox-precaching#explanation_of_the_precache_list), so it can always be cached at the service worker `install` event.
+The service worker contains the code to add the offline page to the [precache list](https://developer.chrome.com/docs/workbox/modules/workbox-precaching/#explanation-of-the-precache-list), so it can always be cached at the service worker `install` event.
 
 Usually you would need to instruct Workbox to add this file to the precache list at build time, by integrating the library with your build tool of choice (e.g. [webpack](https://webpack.js.org/) or [gulp](https://gulpjs.com/)).
 
 For simplicity, we've already done it for you. The following code at `public/sw.js` does that:
 
 ```javascript
-const FALLBACK_HTML_URL = ‘/index_offline.html’;
+const FALLBACK_HTML_URL = '/index_offline.html';
 …
 workbox.precaching.precacheAndRoute([FALLBACK_HTML_URL]);
 ```
 
-{% Aside %} 
-To learn more about how to integrate Workbox with build tools, check out the [webpack Workbox plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) and the [Gulp Workbox plugin](https://developers.google.com/web/tools/workbox/guides/codelabs/gulp).
+{% Aside %}
+To learn more about how to integrate Workbox with build tools, check out the [webpack Workbox plugin](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/) and the [Gulp Workbox plugin](https://developers.google.com/codelabs/workbox-lab#0).
 {% endAside %}
 
 Next, add code to use the offline page as a fallback response:
@@ -79,7 +79,7 @@ workbox.routing.setCatchHandler(({event}) => {
 
 The code does the following:
 
-- Defines a default [Network Only strategy](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_only) that will apply to all requests.
+- Defines a default [Network Only strategy](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#network-only) that will apply to all requests.
 - Declares a global error handler, by calling `workbox.routing.setCatchHandler()` to manage failed requests. When requests are for documents, a fallback offline HTML page will be returned.
 
 To test this functionality:
@@ -119,7 +119,7 @@ The code does the following:
 
 ## Persist offline queries and retry when back online
 
-Next, implement [Workbox Background Sync](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync) to persist offline queries, so they can be retried when the browser detects that connectivity has returned.
+Next, implement [Workbox Background Sync](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/) to persist offline queries, so they can be retried when the browser detects that connectivity has returned.
 
 1. Open `public/sw.js` for edit.
 1. Add the following code at the end of the file:
@@ -147,12 +147,12 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin('offlineQueryQueue', {
 
 The code does the following:
 
-- `workbox.backgroundSync.Plugin` contains the logic to add failed requests to a queue so they can be retried later. These requests will be persisted in [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+- `workbox.backgroundSync.Plugin` contains the logic to add failed requests to a queue so they can be retried later. These requests will be persisted in [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API).
 - `maxRetentionTime` indicates the amount of time a request may be retried. In this case we have chosen 60 minutes (after which it will be discarded).
-- `onSync` is the most important part of this code. This callback will be called when connection is back so that queued requests are retrieved and then fetched from the network. 
+- `onSync` is the most important part of this code. This callback will be called when connection is back so that queued requests are retrieved and then fetched from the network.
 - The network response is added to the `offline-search-responses` cache, appending the `&notification=true` query param, so that this cache entry can be picked up when a user clicks on the notification.
 
-To integrate background sync with your service, define a [NetworkOnly](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_only) strategy for requests to the search URL (`/search_action`) and pass the previously defined `bgSyncPlugin`. Add the following code to the bottom of `public/sw.js`:
+To integrate background sync with your service, define a [NetworkOnly](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#network-only) strategy for requests to the search URL (`/search_action`) and pass the previously defined `bgSyncPlugin`. Add the following code to the bottom of `public/sw.js`:
 
 ```javascript
 const matchSearchUrl = ({url}) => {
@@ -170,7 +170,7 @@ workbox.routing.registerRoute(
 
 This tells Workbox to always go to the network, and, when requests fail, use the background sync logic.
 
-Next, add the following code to the bottom of `public/sw.js` to define a caching strategy for requests coming from notifications. Use a [CacheFirst](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network) strategy, so they can be served from the cache.
+Next, add the following code to the bottom of `public/sw.js` to define a caching strategy for requests coming from notifications. Use a [CacheFirst](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network) strategy, so they can be served from the cache.
 
 ```javascript
 const matchNotificationUrl = ({url}) => {

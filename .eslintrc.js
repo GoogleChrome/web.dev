@@ -3,7 +3,7 @@ module.exports = {
   env: {
     es6: true,
     node: true,
-    mocha: true,
+    mocha: false,
     browser: true,
   },
   parser: 'babel-eslint',
@@ -14,7 +14,9 @@ module.exports = {
   globals: {
     customElements: true,
     firebase: true,
-    ga: true,
+    gtag: true,
+    loadScript: true,
+    dataLayer: true,
   },
   rules: {
     indent: [

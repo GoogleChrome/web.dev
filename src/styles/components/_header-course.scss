@@ -1,0 +1,18 @@
+.header-course {
+  background-image: var(--course-background);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 136px;
+  position: sticky;
+  top: 0;
+
+  &__title {
+    height: 30px;
+    margin-left: 32px;
+
+    > svg {
+      height: 100%;
+      width: auto;
+    }
+  }
+}

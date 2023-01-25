@@ -5,7 +5,7 @@ authors:
   - johyphenel
   - rachelandrew
 date: 2019-09-07
-updated: 2020-09-23
+updated: 2022-11-17
 description: >
   Find out how to fix mixed content errors on your website,
   in order to protect users and ensure that all of your content loads.
@@ -38,18 +38,14 @@ you can find a number of examples and see how the problems are reported in Chrom
 The example of [passive mixed content](https://passive-mixed-content.glitch.me/) will give the following warnings.
 If the browser is able to find the content at an `https` URL it automatically upgrades it, then shows a message.
 
-<figure class="w-figure">
-  <img class="w-screenshot"
-      src="passive-mixed-content.jpg"
-      alt="Chrome DevTools showing the warnings displayed when mixed content is detected and upgraded">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Chrome DevTools showing the warnings displayed when mixed content is detected and upgraded", width="800", height="294" %}
 </figure>
 
 [Active mixed content](https://active-mixed-content.glitch.me/) is blocked and displays a warning.
 
-<figure class="w-figure">
-  <img class="w-screenshot"
-      src="active-mixed-content.jpg"
-      alt="Chrome DevTools showing the warnings displayed when active mixed content is blocked">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Chrome DevTools showing the warnings displayed when active mixed content is blocked", width="800", height="304" %}
 </figure>
 
 If you find warnings like these for `http://` URLs on your site,
@@ -113,7 +109,7 @@ to instruct the browser to notify you about mixed content and ensure that your p
 
 ### Content security policy
 
-[Content security policy](https://developers.google.com/web/fundamentals/security/csp/) (CSP)
+[Content security policy](/csp/) (CSP)
 is a multi-purpose browser feature that you can use to manage mixed content at scale.
 The CSP reporting mechanism can be used to track mixed content on your site,
 and provide enforcement policies to protect users by upgrading or blocking mixed content.
@@ -142,9 +138,10 @@ Response header:
 `Content-Security-Policy-Report-Only: default-src https: 'unsafe-inline' 'unsafe-eval'; report-uri https://example.com/reportingEndpoint`
 
 {% Aside %}
-The [report-uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) response header is being deprecated in favor of
-[report-to](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
-Browser support for `report-to` is currently limited to Chrome and Edge.
+The [report-uri](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) response header is being deprecated in favor of
+[report-to](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
+{% BrowserCompat 'http.headers.Content-Security-Policy.report-to' %}
+
 You can provide both headers, in which case `report-uri` will be ignored if the browser supports `report-to`.
 {% endAside %}
 
@@ -163,7 +160,7 @@ The two caveats to this are:
 So if you have pages that don't get much traffic,
 it might be some time before you get reports for your entire site.
 
-The [Content security policy](https://developers.google.com/web/fundamentals/security/csp/)
+The [Content security policy](/csp/)
 guide has more information and an example endpoint.
 
 ### Alternatives to reporting with CSP
@@ -176,6 +173,7 @@ or
 [Mixed Content Scan](https://github.com/bramus/mixed-content-scan).
 
 ### Upgrading insecure requests
+{% BrowserCompat 'http.headers.Upgrade-Insecure-Requests' %}
 
 Browsers are beginning to upgrade and block insecure requests.
 You can use CSP directives to force automatic upgrading or blocking of these assets.
@@ -209,33 +207,3 @@ attempting to upgrade requests that the browser currently does not.
 
 The `upgrade-insecure-requests` directive cascades into `<iframe>` documents,
 ensuring the entire page is protected.
-
-### Blocking all mixed content
-
-An alternative option for protecting users is the
-[`block-all-mixed-content`](https://www.w3.org/TR/mixed-content/#strict-checking) CSP directive.
-This directive instructs the browser to never load mixed content;
-all mixed content resource requests are blocked,
-including both active and passive mixed content.
-This option also cascades into `<iframe>` documents, ensuring the entire page is mixed content free.
-
-A page can opt itself into this behavior either by sending a
-`Content-Security-Policy` header with this directive:
-
-```markup
-Content-Security-Policy: block-all-mixed-content
-```
-
-Or by embedding that same directive inline in the document's `<head>`
-section using a `<meta>` element:
-
-```html
-<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
-```
-
-{% Aside %}
-If you set both `upgrade-insecure-requests` and `block-all-mixed-content`
-`upgrade-insecure-requests` will be evaluated and used first.
-The browser will not go on to block requests.
-Therefore you should use one or the other.
-{% endAside %}

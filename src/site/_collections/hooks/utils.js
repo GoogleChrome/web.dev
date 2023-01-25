@@ -18,23 +18,27 @@
  * Reusable hooks for authors and tags
  */
 
+const {PAGINATION_COUNT} = require('../../_utils/constants');
 const addPagination = require('../../_utils/add-pagination');
 const filterByLang = require('../../_filters/filter-by-lang');
 
 /**
- * @param {AuthorsItem[]|TagsItem[]} items
- * @return {TODO[]}
+ * @param {VirtualCollectionItem[]} items
+ * @return {VirtualCollectionItem[]}
  */
 const feed = (items) => {
   const filteredFeed = [];
 
-  if (process.env.ELEVENTY_ENV !== 'prod') {
+  if (!['prod', 'staging'].includes(process.env.ELEVENTY_ENV)) {
     return filteredFeed;
   }
 
   for (const item of items) {
     if (item.elements.length > 0) {
-      filteredFeed.push(item);
+      filteredFeed.push({
+        ...item,
+        elements: item.elements.slice(0, PAGINATION_COUNT),
+      });
     }
   }
 
@@ -42,7 +46,7 @@ const feed = (items) => {
 };
 
 /**
- * @param {AuthorsItem[]|TagsItem[]} items
+ * @param {VirtualCollectionItem[]} items
  * @param {string} href
  * @param {string[]} testItems
  * @return {Paginated[]}
@@ -62,17 +66,23 @@ const index = (items, href, testItems) => {
 };
 
 /**
- * @param {AuthorsItem[]|TagsItem[]} items
+ * @param {VirtualCollectionItem[]} items
  * @param {string} lang
+ * @param {boolean} indexedOnly
  * @return {Paginated[]}
  */
-const individual = (items, lang) => {
+const individual = (items, lang, indexedOnly = false) => {
   let paginated = [];
 
   for (const item of items) {
-    if (item.elements.length > 0) {
+    let elements = item.elements;
+    if (indexedOnly) {
+      elements = elements.filter((element) => element.data.noindex !== true);
+    }
+
+    if (elements.length > 0) {
       paginated = paginated.concat(
-        addPagination(filterByLang(item.elements, lang), item),
+        addPagination(filterByLang(elements, lang), item),
       );
     }
   }

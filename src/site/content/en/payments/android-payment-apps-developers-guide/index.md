@@ -20,13 +20,13 @@ The [Payment Request API](https://www.w3.org/TR/payment-request/) brings to the
 web a built-in browser-based interface that allows users to enter required payment
 information easier than ever before. The API can also invoke platform-specific payment
 apps.
+{% BrowserCompat 'api.PaymentRequest' %}
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">Checkout flow with platform-specific Google Pay app that uses Web Payments</a>.
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/hzMuAwPAGpNmgxHpaHAq.mp4", autoplay="true", loop="true"
+  %}
+  <figcaption>Checkout flow with platform-specific Google Pay app that uses Web Payments.
   </figcaption>
 </figure>
 
@@ -147,84 +147,6 @@ class SampleIsReadyToPayService : Service() {
 }
 ```
 
-### Parameters
-
-Pass the following parameters to `onBind` as Intent extras:
-
-* `methodNames`
-* `methodData`
-* `topLevelOrigin`
-* `topLevelCertificateChain`
-* `topLevelCertificateChain`
-* `paymentRequestOrigin`
-
-```kotlin
-override fun onBind(intent: Intent?): IBinder? {
-  val extras: Bundle? = intent?.extras
-  // …
-}
-```
-
-#### `methodNames`
-
-The names of the methods being queried. The elements are the keys in the
-`methodData` dictionary, and indicate the methods that the payment app supports.
-
-```kotlin
-val methodNames: List<String>? = extras.getStringArrayList("methodNames")
-```
-
-#### `methodData`
-
-A mapping from each entry of `methodNames` to the
-[`methodData`](https://w3c.github.io/payment-request/#declaring-multiple-ways-of-paying).
-
-```kotlin
-val methodData: Bundle? = extras.getBundle("methodData")
-```
-
-#### `topLevelOrigin`
-
-The merchant's origin without the scheme (the scheme-less origin of the
-top-level browsing context). For example, `https://mystore.com/checkout` will be
-passed as `mystore.com`.
-
-```kotlin
-val topLevelOrigin: String? = extras.getString("topLevelOrigin")
-```
-
-#### `topLevelCertificateChain`
-
-The merchant's certificate chain (the certificate chain of the top-level
-browsing context). Null for localhost and file on disk, which are both secure
-contexts without SSL certificates. The certificate chain is necessary because a
-payment app might have different trust requirements for websites.
-
-```kotlin
-val topLevelCertificateChain: Array<Parcelable>? =
-    extras.getParcelableArray("topLevelCertificateChain")
-```
-
-Each `Parcelable` is a `Bundle` with a `"certificate"` key and a byte array
-value.
-
-```kotlin
-val list: List<ByteArray>? = topLevelCertificateChain?.mapNotNull { p ->
-  (p as Bundle).getByteArray("certificate")
-}
-```
-
-#### `paymentRequestOrigin`
-
-The schemeless origin of the iframe browsing context that invoked the `new
-PaymentRequest(methodData, details, options)` constructor in JavaScript. If the
-constructor was invoked from the top-level context, then the value of this
-parameter equals the value of `topLevelOrigin` parameter.
-
-```kotlin
-val paymentRequestOrigin: String? = extras.getString("paymentRequestOrigin")
-```
-
 ### Response
 
 The service can send its response via `handleIsReadyToPay(Boolean)` method.
@@ -251,7 +173,7 @@ to verify that the calling package has the right signature.
 ## Step 3: Let a customer make payment
 
 The merchant calls `show()` to [launch the payment
-app](/life-of-a-payment-transaction#step-4:-the-browser-launches-the-payment-app)
+app](/life-of-a-payment-transaction#launch)
 so the customer can make a payment. The payment app is invoked via an Android
 intent `PAY` with transaction information in the intent parameters.
 
@@ -280,7 +202,7 @@ To support multiple payment methods, add a `<meta-data>` tag with a
 
   <meta-data
     android:name="org.chromium.default_payment_method_name"
-    android:value="https://bobpay.xyz/pay" />
+    android:value="https://bobbucks.dev/pay" />
   <meta-data
     android:name="org.chromium.payment_method_names"
     android:resource="@array/method_names" />
@@ -415,7 +337,7 @@ The activity can send its response back through `setResult` with `RESULT_OK`.
 
 ```kotlin
 setResult(Activity.RESULT_OK, Intent().apply {
-  putExtra("methodName", "https://bobpay.xyz/pay")
+  putExtra("methodName", "https://bobbucks.dev/pay")
   putExtra("details", "{\"token\": \"put-some-data-here\"}")
 })
 finish()

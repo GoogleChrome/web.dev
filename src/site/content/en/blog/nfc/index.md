@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2021-02-23
+updated: 2022-01-27
 hero: image/admin/TqG3qb5MiLGNTnAgKtqO.jpg
 thumbnail: image/admin/8tWkeYbKLxSd2YgTUSGv.jpg
 alt: A photo of NFC tags
@@ -20,7 +20,7 @@ stack_overflow_tag: webnfc
 ---
 
 {% Aside 'success' %}
-Web NFC, part of the [capabilities project](/fugu-status/), launched in
+Web NFC, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/), launched in
 Chrome&nbsp;89 for Android.
 {% endAside %}
 
@@ -35,9 +35,9 @@ in close proximity to the user's device (usually 5-10 cm, 2-4 inches).
 The current scope is limited to NFC Data Exchange Format (NDEF), a lightweight
 binary message format that works across different tag formats.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/jWmCabXZCB6zNwQIR90I.png", alt="Phone powering up an NFC tag to exchange data", width="800", height="489" %}
-  <figcaption class="w-figcaption">Diagram of an NFC operation</figcaption>
+  <figcaption>Diagram of an NFC operation</figcaption>
 </figure>
 
 ## Suggested use cases {: #use-cases }
@@ -52,19 +52,20 @@ Examples of sites that may use Web NFC include:
   when the user touches their device to an NFC card near the exhibit.
 - Inventory management sites can read or write data to the NFC tag on a
   container to update information on its contents.
-- Conference sites can use it to scan NFC badges during the event.
+- Conference sites can use it to scan NFC badges during the event and make sure
+  they are locked to prevent further changes to the information written on them.
 - Sites can use it for sharing initial secrets needed for device or service
   provisioning scenarios and also to deploy configuration data in operational
   mode.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/zTEXhIx9nDWtbKrIPN0x.png", alt="Phone scanning several NFC tags", width="800", height="383" %}
-  <figcaption class="w-figcaption">NFC inventory management illustrated</figcaption>
+  <figcaption>NFC inventory management illustrated</figcaption>
 </figure>
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
@@ -96,9 +97,9 @@ An NFC tag is a passive NFC device, meaning that is powered by magnetic
 induction when an active NFC device (.e.g a phone) is in proximity. NFC tags
 come in many forms and fashions, as stickers, credit cards, arm wrists, etc.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/uUBxSkSc3MJBG8Lw52fV.jpg", alt="Photo of a transparent NFC tag", width="800", height="450" %}
-  <figcaption class="w-figcaption">A transparent NFC tag</figcaption>
+  <figcaption>A transparent NFC tag</figcaption>
 </figure>
 
 The `NDEFReader` object is the entry point in Web NFC that exposes functionality
@@ -117,9 +118,9 @@ Web NFC supports the following NFC Forum standardized record types: empty, text,
 URL, smart poster, MIME type, absolute URL, external type, unknown, and local
 type.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/50clBWSJbKkyumsxrioB.png", alt="Diagram of an NDEF message", width="800", height="243" %}
-  <figcaption class="w-figcaption">Diagram of an NDEF message</figcaption>
+  <figcaption>Diagram of an NDEF message</figcaption>
 </figure>
 
 ### Scan NFC tags {: #scan }
@@ -128,8 +129,9 @@ To scan NFC tags, first instantiate a new `NDEFReader` object. Calling `scan()`
 returns a promise. The [user may be prompted] if access was not previously
 granted. The promise will resolve if the following conditions are all met:
 
-- User has allowed the website to interact with NFC devices when they tap their
-  phone.
+- It was only called in response to a user gesture such as a touch gesture or
+  mouse click.
+- The user has allowed the website to interact with NFC devices.
 - The user's phone supports NFC.
 - The user has enabled NFC on their phone.
 
@@ -198,8 +200,9 @@ To write NFC tags, first instantiate a new `NDEFReader` object. Calling
 previously granted. At this point, an NDEF message is "prepared" and promise
 will resolve if the following conditions are all met:
 
-- User has allowed the website to interact with NFC devices when they tap their
-  phone.
+- It was only called in response to a user gesture such as a touch gesture or
+  mouse click.
+- The user has allowed the website to interact with NFC devices.
 - The user's phone supports NFC.
 - The user has enabled NFC on their phone.
 - User has tapped an NFC tag and an NDEF message has been successfully written.
@@ -263,9 +266,61 @@ const ndef = new NDEFReader();
 ndef.write("Writing data on an empty NFC tag is fun!", { overwrite: false })
 .then(() => {
   console.log("Message written.");
-}).catch(_ => {
+}).catch(error => {
   console.log(`Write failed :-( try again: ${error}.`);
 });
+```
+
+### Make NFC tags read-only {: #make-read-only }
+
+To prevent malicious users from overwriting an NFC tag's content, it is possible to
+make NFC tags permanently read-only. This operation is a one-way process and
+cannot be reversed. Once an NFC tag has been made read-only, it can't be written
+to anymore.
+
+To make NFC tags read-only, first instantiate a new `NDEFReader` object. Calling
+`makeReadOnly()` returns a promise. The [user may be prompted] if access was not
+previously granted. The promise will resolve if the following conditions are all
+met:
+
+- It was only called in response to a user gesture such as a touch gesture or
+  mouse click.
+- The user has allowed the website to interact with NFC devices.
+- The user's phone supports NFC.
+- The user has enabled NFC on their phone.
+- The user has tapped an NFC tag and the NFC tag has been successfully made read-only.
+
+```js
+const ndef = new NDEFReader();
+ndef.makeReadOnly()
+.then(() => {
+  console.log("NFC tag has been made permanently read-only.");
+}).catch(error => {
+  console.log(`Operation failed: ${error}`);
+});
+```
+
+Here's how to make an NFC tag permanently read-only after writing to it.
+
+```js
+const ndef = new NDEFReader();
+try {
+  await ndef.write("Hello world");
+  console.log("Message written.");
+  await ndef.makeReadOnly();
+  console.log("NFC tag has been made permanently read-only after writing to it.");
+} catch (error) {
+  console.log(`Operation failed: ${error}`);
+}
+```
+
+As `makeReadOnly()` is available on Android in Chrome&nbsp;100 or later, check
+if this feature is supported with the following:
+
+```js
+if ("NDEFReader" in window && "makeReadOnly" in NDEFReader.prototype) {
+  // makeReadOnly() is supported.
+}
 ```
 
 ### Security and permissions {: #security-and-permissions }
@@ -278,15 +333,16 @@ Because NFC expands the domain of information potentially available to malicious
 websites, the availability of NFC is restricted to maximize users' awareness and
 control over NFC use.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/PjUcOk4zbtOFJLXfSeSD.png", alt="Screenshot of a Web NFC prompt on a website", width="800", height="407" %}
-  <figcaption class="w-figcaption">Web NFC user prompt</figcaption>
+  <figcaption>Web NFC user prompt</figcaption>
 </figure>
 
 Web NFC is only available to top-level frames and secure browsing contexts (HTTPS
 only). Origins must first request the `"nfc"` [permission] while handling a
-user gesture (e.g a button click). The NDEFReader `scan()` and `write()` methods
-trigger a user prompt, if access was not previously granted.
+user gesture (e.g a button click). The `NDEFReader` `scan()`, `write()`, and
+`makeReadOnly()` methods trigger a user prompt, if access was not previously
+granted.
 
 ```js
   document.querySelector("#scanButton").onclick = async () => {
@@ -362,8 +418,8 @@ if (nfcPermissionStatus.state === "granted") {
 
 Using the <code>[AbortController]</code> primitive makes it easy to abort NFC
 operations. The example below shows you how to pass the `signal` of an
-`AbortController` through the options of NDEFReader `scan()` and `write()`
-methods and abort both NFC operations at the same time.
+`AbortController` through the options of NDEFReader `scan()`, `makeReadOnly()`,
+`write()` methods and abort both NFC operations at the same time.
 
 ```js
 const abortController = new AbortController();
@@ -375,6 +431,7 @@ const ndef = new NDEFReader();
 await ndef.scan({ signal: abortController.signal });
 
 await ndef.write("Hello world", { signal: abortController.signal });
+await ndef.makeReadOnly({ signal: abortController.signal });
 
 document.querySelector("#abortButton").onclick = event => {
   abortController.abort();
@@ -742,11 +799,11 @@ Try out the [official sample] and check out some cool Web NFC demos:
 - [Intel RSP Sensor NFC]
 - [Media MEMO]
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/web-nfc-cards-demo.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Web NFC cards demo at Chrome Dev Summit 2019
   </figcaption>
 </figure>
@@ -809,10 +866,10 @@ contributors deserve special recognition!
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=520391
 [cr-status]: https://www.chromestatus.com/feature/6261030015467520
-[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/master/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/main/docs/security/permissions-for-powerful-web-platform-features.md
 [Permissions API]: https://www.w3.org/TR/permissions/
-[AbortController]: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
-[Page Visibility API]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
+[AbortController]: https://developer.mozilla.org/docs/Web/API/AbortController
+[Page Visibility API]: https://developer.mozilla.org/docs/Web/API/Page_Visibility_API
 [user may be prompted]: #security-and-permissions
 [permission]: https://w3c.github.io/permissions/
 [folks at Intel]: https://github.com/w3c/web-nfc/graphs/contributors
@@ -827,4 +884,4 @@ contributors deserve special recognition!
 [material.io]: https://material.io/resources/icons/?icon=nfc&style=baseline
 [appropriately]: https://w3c.github.io/web-nfc/#data-mapping
 [custom local type records]: https://w3c.github.io/web-nfc/#smart-poster-record
-[DataView]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
+[DataView]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView

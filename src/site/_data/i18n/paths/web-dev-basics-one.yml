@@ -1,0 +1,25 @@
+title:
+  en: Web Dev Basics One
+
+description:
+  en: Here's a brief description.
+
+overview:
+  en: This is a longer overview. To see the full course <a href="#">click here</a>.
+
+topics:
+  web:
+    en: Develop on the web
+
+  html:
+    en: Write semantic HTML
+
+  css:
+    en: Styling with CSS
+
+  javascript:
+    en: Program with JavaScript
+
+  dom:
+    en: Manipulate web pages with the Document Object Model (DOM)
+

@@ -14,8 +14,8 @@ tags:
   - blog
   - javascript
   - modules
-  - commonjs
-  - tree-shaking
+  # - commonjs
+  # - tree-shaking
 ---
 
 In this post, we'll look into what CommonJS is and why it's making your JavaScript bundles larger than necessary.
@@ -47,7 +47,7 @@ Later on, another module can import and use some or all of these functions:
 
 ```javascript
 // index.js
-const { add } = require(‘./utils');
+const { add } = require('./utils.js');
 console.log(add(1, 2));
 ```
 
@@ -87,7 +87,7 @@ $ cd dist && ls -lah
 
 Notice that **the bundle is 625KB**. If we look into the output, we'll find all the functions from `utils.js` plus a lot of modules from [`lodash`](https://lodash.com/)**. Although we do not use `lodash` in `index.js` it's part of the output**, which adds a lot of extra weight to our production assets.
 
-Now let us change the module format to [ECMAScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) and try again. This time, `utils.js` would look like this:
+Now let us change the module format to [ECMAScript modules](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import) and try again. This time, `utils.js` would look like this:
 
 ```javascript
 export const add = (a, b) => a + b;
@@ -103,7 +103,7 @@ export const max = arr => maxBy(arr);
 And `index.js` would import from `utils.js` using ECMAScript module syntax:
 
 ```javascript
-import { add } from './utils';
+import { add } from './utils.js';
 
 console.log(add(1, 2));
 ```
@@ -135,7 +135,7 @@ export const subtract = (a, b) => a - b;
 
 ```javascript
 // index.js
-import { add } from ‘./utils';
+import { add } from './utils.js';
 const subtract = (a, b) => a - b;
 
 console.log(add(1, 2));

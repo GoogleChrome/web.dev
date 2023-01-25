@@ -7,13 +7,14 @@ authors:
 description: Follow 5 centering techniques as they go through a series of tests to see which one is the most resilient to change.
 date: 2020-12-16
 hero: image/admin/uz0bDoJvK4kbtjozekGA.png
+alt: An element centered on a page.
 thumbnail: image/admin/4NFENgpVrXHi2O42mv0K.png
 codelabs: codelab-centering-in-css
 tags:
   - blog
   - css
   - layout
-  - internationalization
+  - intl
 ---
 
 Centering in CSS is a notorious challenge, fraught with jokes and mockery. 2020
@@ -26,7 +27,7 @@ If you prefer video, here's a YouTube version of this post:
 
 ## The challenge
 
-**There are difference types of centering.** From differing use cases, number of things
+**There are different types of centering.** From differing use cases, number of things
 to center, etc. In order to demonstrate a rationale behind "a winning" centering technique, I
 created The Resilience Ringer. It's a series of stress tests for each centering
 strategy to balance within and you to observe their performance.
@@ -60,9 +61,9 @@ various language modes and directions. Trustworthy and resilient center, a safe 
 I've provided some visual color hinting to help you keep some meta information
 in context:
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./legend.png" alt="">
-  <figcaption class="w-figcaption"></figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438" %}
+  <figcaption></figcaption>
 </figure>
 
 - A pink border indicates ownership of centering styles
@@ -77,8 +78,8 @@ Resilience Crown 👸.
 
 ### 1. Content Center
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/content-center-ringer-cycle.mp4">
   </video>
   <figcaption>
@@ -105,7 +106,7 @@ it's a solid centering technique for groups of elements meant to be read.
 }
 ```
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Content is centered even under constrained space and overflow
 - Centering edits and maintenance are all in one spot
@@ -130,8 +131,8 @@ can also benefit from `place-content` and `place-item`
 
 ### 2. Gentle Flex
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gentle-flex-ringer-cycle.mp4">
   </video>
 </figure>
@@ -156,7 +157,7 @@ centering. As gently as possible, all items are stacked, centered, and spaced.
 }
 ```
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Only handles alignment, direction, and distribution
 - Edits and maintenance are all in one spot
@@ -180,8 +181,8 @@ centering. As gently as possible, all items are stacked, centered, and spaced.
 
 ### 3. Autobot
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/autobot-ringer-cycle.mp4">
   </video>
 </figure>
@@ -205,7 +206,7 @@ are styled with auto margins. There's something nostalgic and wonderful about
 }
 ```
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Fun trick
 - Quick and dirty
@@ -226,8 +227,8 @@ are styled with auto margins. There's something nostalgic and wonderful about
 
 ### 4. Fluffy Center
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/fluffy-center-ringer-cycle.mp4">
   </video>
 </figure>
@@ -248,7 +249,7 @@ border!?
 }
 ```
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Protects content
 - Atomic
@@ -270,8 +271,8 @@ more.
 
 ### 5. Pop & Plop
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/popnplop-ringer-cycle.mp4">
   </video>
 </figure>
@@ -288,7 +289,7 @@ plopping it on top of other stuff. It's a classic and handy overlay centering
 technique that's flexible and dynamic to content size. Sometimes you just need
 to plop UI on top of other UI.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Useful
 - Reliable

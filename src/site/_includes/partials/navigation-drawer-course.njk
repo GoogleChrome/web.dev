@@ -1,0 +1,81 @@
+{% from 'macros/icon.njk' import icon, svg with context %}
+
+{% macro renderItem(item, depth) %}
+  {%- if item.title -%}
+    {%- set title = (item.title | i18n(locale)) or '' -%}
+  {%- else -%}
+    {%- set title = item.data.title or '' -%}
+  {%- endif -%}
+
+  {% if item.url %}
+    {# The isNew flag is used to display a 'NEW' badge next to content. #}
+    {% set isNew = false %}
+    {% set isPlaceholder= false %}
+    {# Check to make sure the content was published after the course's #}
+    {# initial launch date (so everything doesn't say 'NEW' when we #}
+    {# first launch a course). #}
+    {% if item.data.date > courseData.meta.date %}
+      {# Only show the 'NEW' badge if content is less than thirty days old. #}
+      {% set isNew = item.data.date | isNewContent %}
+    {% endif %}
+    {% if item.data.placeholder %}
+      {# Set disabled style #}
+      {% set isDisabledClass = 'is-placeholder' %}
+    {% endif %}
+    <a class="repel {{isDisabledClass}}" {% if item.url == page.url %}aria-current="page"{% endif %} {% if item.data.placeholder != true %} href="{{ item.url }}" {% endif %}>
+      <span class="cluster">
+        <span class="stack-nav__meta">{{ item.counter }}</span>
+        <span>{{ title }}</span>
+      </span>
+      <span class="cluster">
+        {% if isNew %}
+          <span class="stack-nav__meta tt-upper color-action-text">{{ 'i18n.common.new' | i18n(locale) }}</span>
+        {% endif %}
+        {% if item.data.placeholder %}
+          <span class="stack-nav__meta tt-upper color-action-text">{{ 'Coming Soon' }}</span>
+        {% endif %}
+        {{ icon('done') }}
+      </span>
+    </a>
+  {% elif title %}
+    {# This is just a heading for children. #}
+    <h3 class="stack-nav__heading">{{ title }}</h3>
+  {% endif %}
+
+  {# Renders any nested children. #}
+  {% for c in item.children %}
+    {{ renderItem(c, depth + 1) }}
+  {% endfor %}
+{% endmacro %}
+
+<web-navigation-drawer type="standard">
+  <nav data-drawer-container class="course__drawer flow">
+    <div class="course__header" style="--course-background: url('{{ courseData.meta.background }}')">
+      <button data-drawer-close-button class="icon-button tooltip gap-top-base color-dark-text" data-alignment="right">
+        {{ icon('close') }}
+        <span class="tooltip__content">{{ 'i18n.common.close' | i18n(locale) }}</span>
+      </button>
+
+      <div class="course__side-title">
+        {% if courseData.meta.logo %}
+          {# The course logo is stored in src/images, but the svg macro uses
+          Nunjuck's include syntax. So we need to give it a relative path from
+          src/site/_includes to src/images. #}
+          {% set logo = helpers.join('../..', courseData.meta.logo) %}
+          {{ svg(logo, {label: courseData.meta.title | i18n(locale)}) }}
+        {% endif %}
+      </div>
+    </div>
+    <web-search class="course__search" results-id="search-course-results" tag="{{ searchTag }}" i18n="{{ i18n.search | dump }}"></web-search>
+    <div class="over-scroll">
+      <course-links data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+        <ul class="stack-nav">
+        {% for item in pageNavigation.tree %}
+          <li>{{ renderItem(item, 0) }}</li>
+        {% endfor %}
+        </ul>
+      </course-links>
+    </div>
+    <web-course-search-results class="course__search-results" id="search-course-results"></web-course-search-results>
+  </nav>
+</web-navigation-drawer>

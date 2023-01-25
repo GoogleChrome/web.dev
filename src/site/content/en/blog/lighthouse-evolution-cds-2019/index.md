@@ -17,7 +17,7 @@ tags:
 In the [Speed Tooling Evolutions](https://youtu.be/iaWLXf1FgI0) talk at Chrome
 Developer Summit (CDS), Paul Irish and I presented the newest products and
 features coming from Google that can help you build and maintain an exceptionally fast experience for all your users. At the center of that story
-are additions to the [Lighthouse](https://developers.google.com/web/tools/lighthouse) family of performance monitoring tools.
+are additions to the [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) family of performance monitoring tools.
 
 ## Lighthouse CI alpha release
 
@@ -31,9 +31,8 @@ server for visual diffing and basic category score history. Existing
 seamlessly alongside the new expressive syntax for asserting *any* Lighthouse
 audit or category result.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-ci.png" alt="Lighthouse CI report."
-       width="400">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xvyxLU5J0bap6s0LdrD3.png", alt="Lighthouse CI report.", width="400", height="356" %}
 </figure>
 
 Lighthouse CI supports [Travis CI](https://travis-ci.com/), [Circle
@@ -49,16 +48,16 @@ to get started right away.
 
 Changes are coming to the Lighthouse Performance score version 6! In version 5
 (as of November 2019), Lighthouse has five metrics that are [weighted and
-blended](/performance-scoring/#weightings) to form the 0-100 Performance score:
-[First Contentful Paint](/fcp/), [Speed Index](/speed-index/), [First Meaningful
-Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
-[First CPU Idle](/first-cpu-idle/).
+blended](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/#weightings) to form the 0-100 Performance score:
+[First Contentful Paint](/fcp/), [Speed Index](https://developer.chrome.com/docs/lighthouse/performance/speed-index/), [First Meaningful
+Paint](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/), [Time to Interactive](/tti/), and
+[First CPU Idle](https://developer.chrome.com/docs/lighthouse/performance/first-cpu-idle/).
 
-<figure class="w-figure">
-  {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211" %}
 </figure>
 
-See [Lighthouse performance scoring](https://web.dev/performance-scoring/) for detailed
+See [Lighthouse performance scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) for detailed
 information.
 
 In Lighthouse version 6, new metrics, [Largest Contentful Paint (LCP)](/lcp/)
@@ -101,9 +100,8 @@ Packs](https://github.com/GoogleChrome/lighthouse-stack-packs) add customized
 recommendations, curated by community experts (like you!), on top of Lighthouse
 report core audits.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-stack-packs.png"
-       alt="Lighthouse report recommendation for deferring offscreen images in React applications.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qdhyyYLFj0avPPHgx8in.png", alt="Lighthouse report recommendation for deferring offscreen images in React applications.", width="800", height="194" %}
 </figure>
 
 At the moment, there are Stack Packs for Angular, WordPress, Magento, React, and
@@ -113,7 +111,7 @@ or [contact the Lighthouse team](https://github.com/GoogleChrome/lighthouse-stac
 
 ## Coming soon: Lighthouse plugins as Chrome Extensions
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/pPFz27fWWNVyT42ptr7a.png", alt="Lighthouse plugin icon.", width="250", height="220" %}
 </figure>
 
@@ -130,9 +128,9 @@ only work in [Lighthouse
 CLI](https://developers.google.com/web/tools/lighthouse#cli), but the goal is to
 enable running them in the DevTools **Audits** panel too.
 
-<figure class="w-figure">
-  {% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)</figcaption>
+<figure>
+  {% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753" %}
+  <figcaption>Community Plugins in DevTools Audits panel (beta)</figcaption>
 </figure>
 
 When users install Lighthouse plugin extensions from the [Chrome Web

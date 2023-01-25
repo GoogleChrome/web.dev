@@ -14,7 +14,7 @@ updated: 2021-01-25
 tags:
   - blog
   - capabilities
-  - hid
+  # - hid
   - games
   - devices
 hero: image/admin/8TCwHOfb8SUWaVEtCx6j.jpg
@@ -22,7 +22,7 @@ alt: A generic game controller
 ---
 
 {% Aside 'success' %}
-The [WebHID API](/hid), part of the [capabilities project](/fugu-status/),
+The [WebHID API](/hid), part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/),
 launched in Chrome&nbsp;89.
 {% endAside %}
 
@@ -115,7 +115,7 @@ getting started with HID.
 
 ## Acknowledgements {: #acknowledgements }
 
-Thank you to [Pete LePage](https://web.dev/authors/petelepage/) and [Kayce
+Thank you to [Pete LePage](/authors/petelepage/) and [Kayce
 Basques](https://github.com/kaycebasques) for reviews of this article.
 
 <span>Photo by <a

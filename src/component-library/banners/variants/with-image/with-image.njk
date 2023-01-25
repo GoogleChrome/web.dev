@@ -1,0 +1,12 @@
+<div class="banner {{ data.utilities.main }}" role="banner">
+  <div class="banner__content flex-align-start cluster">
+    <img class="banner__img" src="{{ data.img.src }}" alt="{{ data.img.alt }}" />
+    <div class="flow">
+      {{ data.content | md | safe }}
+    </div>
+  </div>
+  <div class="banner__actions cluster">
+    <button class="button {{ data.utilities.button }}">Action 1</button>
+    <button class="button {{ data.utilities.button }}">Action 2</button>
+  </div>
+</div>

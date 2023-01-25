@@ -1,0 +1,64 @@
+setLeader: Test your knowledge of responsive media queries.
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Media queries only exist for screen size?
+    options:
+      - content: "true"
+        rationale: "Try again! Media queries for things like print, dark and light system preference, and many more."
+      - content: "false"
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Screens are the only place web content is consumed or displayed?
+    options:
+      - content: "true"
+        rationale: "Try again! A website may be printed onto paper, crawled by search engine spiders, read aloud by screen reader technologies, or even read to users by bots via an assistant."
+      - content: "false"
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: The default media type is?
+    options:
+      - content: "`screen`"
+        rationale: "Try again! `screen` is not the default type."
+      - content: "`none`"
+        rationale: "Try again! `none` is not a valid media type."
+      - content: "`all`"
+        rationale: "🎉"
+      - content: "`some`"
+        rationale: "Try again! `some` is not a valid media type."
+      - content: "`landscape`"
+        rationale: "Try again! `landscape` is not a valid media type."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What would you use to prevent the browser from scaling a design on mobile?
+    options:
+      - content: "`width: 100%`"
+        rationale: "Try again!"
+      - content: "`font-size: 200%`"
+        rationale: "Try again!"
+      - content: '`<meta name="viewport" content="width=device-width, initial-scale=1">`'
+        rationale: "🎉"
+      - content: "Media Queries"
+        rationale: "Try again!"
+      - content: "HTML5"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: Which media query applies when the browser window is *above* `720px`.
+    options:
+      - content: "`@media (width: 720px)`"
+        rationale: "Try again! This media query is only when the browser window is equal to `720px`."
+      - content: "`@media (max-width: 720px)`"
+        rationale: "Try again! This media query is for when the browser window is below `720px`."
+      - content: "`@media (min-width: 720px)`"
+        rationale: "🎉 You can read this as the browser window is at least `720px`."
+      - content: "`@media (clamp-width: 720px)`"
+        rationale: "Try again! `clamp-width` is not a valid media query feature condition."

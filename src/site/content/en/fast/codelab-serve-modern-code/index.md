@@ -40,25 +40,25 @@ optimizations:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-app', 'ol' %}
 
-{% Img src="image/admin/WOLgtkSsnLlAVqXXkvS2.png", alt="Original bundle size request", width="717", height="127", class="w-screenshot" %}
+{% Img src="image/admin/WOLgtkSsnLlAVqXXkvS2.png", alt="Original bundle size request", width="717", height="127" %}
 
 Over 80 KB is used for this application! Time to find out if parts of the bundle
 aren't being used:
 
 {% Instruction 'devtools-command', 'ol' %}
 <!--lint disable code-block-style-->
-    {% Img src="image/admin/bUJOV2XobvxF0LrIvML4.png", alt="Command Menu", width="800", height="170", class="w-screenshot" %}
+    {% Img src="image/admin/bUJOV2XobvxF0LrIvML4.png", alt="Command Menu", width="800", height="170" %}
 
 1. Enter `Show Coverage` and hit `Enter` to display the **Coverage** tab.
 1. In the **Coverage** tab, click **Reload** to reload the
 application while capturing coverage.
 
-    {% Img src="image/admin/MVS59W0Ei307x4Ab3FvU.png", alt="Reload app with code coverage", width="800", height="363", class="w-screenshot" %}
+    {% Img src="image/admin/MVS59W0Ei307x4Ab3FvU.png", alt="Reload app with code coverage", width="800", height="363" %}
 
 1. Take a look at how much code was used versus how much was loaded for
 the main bundle:
 
-    {% Img src="image/admin/YaXfH1OcPENdyMeBBrqK.png", alt="Code coverage of bundle", width="800", height="77", class="w-screenshot" %}
+    {% Img src="image/admin/YaXfH1OcPENdyMeBBrqK.png", alt="Code coverage of bundle", width="800", height="77" %}
 <!--lint enable code-block-style-->
 Over half the bundle (44 KB) is not even utilized. This is because a lot of the
 code within consists of polyfills to ensure that the application works in older
@@ -76,15 +76,15 @@ of supporting these features.
 <!-- note "..." is used in the url for "For…of loop" -->
 The following ES2015 features are used in the application:
 
-+  [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-+  [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-+  [For…of loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-+  [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)
++  [Arrow functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
++  [Template literals](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Template_literals)
++  [For…of loop](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...of)
++  [Destructuring assignment](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)
 <!-- lint enable no-repeat-punctuation -->
 
 The following ES2017 feature is used as well:
 
-+  [Async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
++  [Async functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function)
 
 Feel free to dive into the source code in `src/index.js` to see how all of this
 is used.
@@ -97,7 +97,7 @@ understand. It does this in two ways:
 
 + **Polyfills** are included to emulate newer ES2015+ functions so that their APIs
 can be used even if it is not supported by the browser. Here is an example of a
-[polyfill](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#Polyfill)
+[polyfill](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#Polyfill)
 of the `Array.includes` method.
 + **Plugins** are used to transform ES2015 code (or later) into older ES5 syntax.
 Since these are syntax related changes (such as arrow functions), they cannot be emulated with polyfills.
@@ -206,7 +206,7 @@ of the editor.
 Babel logs a number of details to the console about the compilation process,
 including all the target environments that the code has been compiled for.
 
-{% Img src="image/admin/X6nauvGqKuyWoBekgCbw.png", alt="Targeted browsers", width="464", height="457", class="w-screenshot" %}
+{% Img src="image/admin/X6nauvGqKuyWoBekgCbw.png", alt="Targeted browsers", width="464", height="457" %}
 
 Notice how discontinued browsers, such as Internet Explorer, are included in
 this list. This is a problem because unsupported browsers won't have newer
@@ -216,14 +216,14 @@ browser to access your site.
 
 Babel also logs a list of transform plugins used:
 
-{% Img src="image/admin/clNXHWSfeD2RKDkIrJo8.png", alt="List of plugins used", width="800", height="604", class="w-screenshot" %}
+{% Img src="image/admin/clNXHWSfeD2RKDkIrJo8.png", alt="List of plugins used", width="800", height="604" %}
 
 That's a pretty long list! These are all the plugins that Babel needs to use to
 transform any ES2015+ syntax to older syntax for all the targeted browsers.
 
 However, Babel doesn't show any specific polyfills that are used:
 
-{% Img src="image/admin/xPhc2usfwfIJkoK4EubY.png", alt="No polyfills added", width="800", height="38", class="w-screenshot" %}
+{% Img src="image/admin/xPhc2usfwfIJkoK4EubY.png", alt="No polyfills added", width="800", height="38" %}
 
 This is because the entire `@babel/polyfill` is being imported directly.
 
@@ -250,7 +250,7 @@ the target browsers, add a `useBuiltIns: 'entry'` to the configuration.
 
 Reload the application. You can now see all the specific polyfills included:
 
-{% Img src="image/admin/VQHDI6qG94zbTiorG3aT.gif", alt="List of polyfills imported", width="800", height="465", class="w-screenshot" %}
+{% Img src="image/admin/VQHDI6qG94zbTiorG3aT.gif", alt="List of polyfills imported", width="800", height="465" %}
 
 Although only needed polyfills for `"last 2 versions"` is now included, it is still a super long list! This is because
 polyfills needed for the target browsers for _every_ newer feature is still included. Change the value of the attribute to `usage`
@@ -282,11 +282,11 @@ import "@babel/polyfill";
 
 Now only the required polyfills needed for the application are included.
 
-{% Img src="image/admin/ir2qkYhxoJDWoQUhD8KD.png", alt="List of polyfills automatically included", width="800", height="114", class="w-screenshot" %}
+{% Img src="image/admin/ir2qkYhxoJDWoQUhD8KD.png", alt="List of polyfills automatically included", width="800", height="114" %}
 
 The application bundle size is reduced significantly.
 
-{% Img src="image/admin/6cIW1H9dYz38h3jp9QpK.png", alt="Bundle size reduced to 30.1 KB", width="796", height="135", class="w-screenshot" %}
+{% Img src="image/admin/6cIW1H9dYz38h3jp9QpK.png", alt="Bundle size reduced to 30.1 KB", width="796", height="135" %}
 
 ## Narrowing the list of supported browsers
 
@@ -312,7 +312,7 @@ to the following:
 
 Take a look at the details for the fetched bundle.
 
-{% Img src="image/admin/LQrCZtEqujASX2KBR9ku.png", alt="Bundle size of 30.0 KB", width="793", height="131", class="w-screenshot" %}
+{% Img src="image/admin/LQrCZtEqujASX2KBR9ku.png", alt="Bundle size of 30.0 KB", width="793", height="131" %}
 
 Since the application is so small, there really isn't much of a difference with
 these changes. However, using a browser market share percentage (such as
@@ -354,7 +354,7 @@ browser:
 
 ## Using ES Modules with Babel
 
-In order to have separate `@babel/preset-env` settings for the two versions of
+To have separate `@babel/preset-env` settings for the two versions of
 the application, remove the `.babelrc` file. Babel settings can be added to the
 webpack configuration by specifying two different compilation formats for each
 version of the application.
@@ -549,7 +549,7 @@ Add the following to `src/index.js` at the end of the file:
 Now load the application in a browser that supports modules, such as the latest
 version of Chrome.
 
-{% Img src="image/admin/7DHv0rPqfFE14Qp7OtqJ.png", alt="5.2 KB module fetched over network for newer browsers", width="800", height="100", class="w-screenshot" %}
+{% Img src="image/admin/7DHv0rPqfFE14Qp7OtqJ.png", alt="5.2 KB module fetched over network for newer browsers", width="800", height="100" %}
 
 Only the module is fetched, with a much smaller bundle size due to it being
 largely untranspiled! The other script element is completely ignored by the
@@ -560,7 +560,7 @@ script with all the needed polyfills and transforms are be fetched. Here is a
 screenshot for all the requests made on an older version of Chrome (version
 38).
 
-{% Img src="image/admin/xapbFvWftJjVdsekOAFJ.png", alt="30 KB script fetched for older browsers", width="800", height="324", class="w-screenshot" %}
+{% Img src="image/admin/xapbFvWftJjVdsekOAFJ.png", alt="30 KB script fetched for older browsers", width="800", height="324" %}
 
 ## Conclusion
 

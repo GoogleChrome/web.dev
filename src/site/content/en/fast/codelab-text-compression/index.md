@@ -45,7 +45,7 @@ Now take a look at how large this application is:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-app', 'ol' %}
 
-{% Img src="image/admin/Zzm8kiE2W29yGEZC7C2u.png", alt="Original bundle size in Network panel", width="800", height="186", class="w-screenshot" %}
+{% Img src="image/admin/Zzm8kiE2W29yGEZC7C2u.png", alt="Original bundle size in Network panel", width="800", height="186" %}
 
 Although a lot of progress was made in the ["Remove unused code"](/remove-unused-code)
 codelab to trim this bundle size down, 225 KB is still quite large.
@@ -109,7 +109,7 @@ To get an idea of what the minified code looks like, go ahead and click
 `main.bundle.js` while still in the DevTools **Network** panel. Now click the
 **Response** tab.
 
-{% Img src="image/admin/uti2q15O2MtiEsegYoV9.png", alt="Minified response", width="800", height="249", class="w-screenshot" %}
+{% Img src="image/admin/uti2q15O2MtiEsegYoV9.png", alt="Minified response", width="800", height="249" %}
 
 The code in its final form, minified and mangled, is shown in the response body.
 To find out how large the bundle may have been if it was not minified, open
@@ -125,7 +125,7 @@ module.exports = {
 Reload the application and take a look at the bundle size again through the
 DevTools **Network** panel
 
-{% Img src="image/admin/H0lINRmM2gF6NHnzmkGM.png", alt="Bundle size of 767 KB", width="700", height="129", class="w-screenshot" %}
+{% Img src="image/admin/H0lINRmM2gF6NHnzmkGM.png", alt="Bundle size of 767 KB", width="700", height="129" %}
 
 That's a pretty big difference! 😅
 
@@ -171,7 +171,7 @@ compression algorithm. Unlike minification which ends up providing perfectly
 valid code, compressed code needs to be _decompressed_ before being used.
 
 With every HTTP request and response, browsers and web servers can add
-[headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) to include
+[headers](https://developer.mozilla.org/docs/Web/HTTP/Headers) to include
 additional information about the asset being fetched or received. This can be
 seen in the `Headers` tab within the DevTools Network panel where three types
 are shown:
@@ -185,7 +185,7 @@ are shown:
 
 Take a look at the `accept-encoding` header in the `Request Headers`.
 
-{% Img src="image/admin/shmaD9cmjjFMITKL0TAW.png", alt="Accept encoding header", width="800", height="361", class="w-screenshot" %}
+{% Img src="image/admin/shmaD9cmjjFMITKL0TAW.png", alt="Accept encoding header", width="800", height="361" %}
 
 `accept-encoding` is used by the browser to specify which content
 encoding formats, or compression algorithms, it supports. There are many
@@ -279,12 +279,12 @@ app.use(express.static('public'));
 
 Now reload the app and take a look at the bundle size in the **Network** panel.
 
-{% Img src="image/admin/MMtTKWPKfht8RYd8BMYF.png", alt="Bundle size with dynamic compression", width="800", height="161", class="w-screenshot" %}
+{% Img src="image/admin/MMtTKWPKfht8RYd8BMYF.png", alt="Bundle size with dynamic compression", width="800", height="161" %}
 
 From 225 KB to 61.6 KB! In the `Response Headers` now, a `content-encoding`
 header shows that the server is sending down this file encoded with `gzip`.
 
-{% Img src="image/admin/523FjNSQOK95lGzg0B6D.png", alt="Content encoding header", width="800", height="470", class="w-screenshot" %}
+{% Img src="image/admin/523FjNSQOK95lGzg0B6D.png", alt="Content encoding header", width="800", height="470" %}
 
 ## Static compression
 
@@ -350,8 +350,8 @@ now created. Open the Glitch Console to take a look at what's inside the
 final `public/` directory that's served by the Node server.
 
 {% Aside %}
-The `public/` directory is included in the `.gitignore` file. Directories that
-contain build files are usually included here in order to be ignored by Git, and
+The `git.ignore` file includes the `public/` directory. Directories that
+contain build files are usually included here.
 Glitch also hides these files from the editor tree.
 {% endAside %}
 
@@ -365,7 +365,7 @@ cd public
 ls
 ```
 
-{% Img src="image/admin/YQwCT87xMfMwWiH63lTS.png", alt="Final outputted files in public directory", width="800", height="188", class="w-screenshot" %}
+{% Img src="image/admin/YQwCT87xMfMwWiH63lTS.png", alt="Final outputted files in public directory", width="800", height="188" %}
 
 The gzipped version of the bundle, `main.bundle.js.gz`, is now saved here as
 well. `CompressionPlugin` also compresses `index.html` by default.
@@ -403,7 +403,7 @@ that may be next.
 
 Once the app reloads, take a look at the `Network` panel once more.
 
-{% Img src="image/admin/b7xYRsSdNhWX5Lc8zE51.png", alt="Bundle size reduction with static compression", width="800", height="176", class="w-screenshot" %}
+{% Img src="image/admin/b7xYRsSdNhWX5Lc8zE51.png", alt="Bundle size reduction with static compression", width="800", height="176" %}
 
 Just like before, a significant reduction in bundle size!
 

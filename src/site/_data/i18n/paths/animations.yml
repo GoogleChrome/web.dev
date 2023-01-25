@@ -1,18 +1,54 @@
 title:
   en: Animations
+  es: Animaciones
+  ja: アニメーション
+  ko: 애니메이션
+  pt: Animações
+  ru: Анимации
+  zh: 动画
 
 description:
   en: Techniques for developing high-performance animations.
+  es: Técnicas para desarrollar animaciones de alto rendimiento.
+  ja: 優れたパフォーマンスを発揮するアニメーションを作成するための技術。
+  ko: 고성능 애니메이션을 개발하기 위한 기술.
+  pt: Técnicas para desenvolvimento de animações de alto desempenho.
+  ru: Приемы для создания высокопроизводительных анимаций.
+  zh: 开发高性能动画的技术。
 
 overview:
   en: A curated collection of high-quality resources that will help you understand why some animations are slow, and how to build and debug your own animations with CSS or JavaScript.
+  es: Una colección seleccionada de recursos de alta calidad que le ayudarán a comprender por qué algunas animaciones son lentas, y cómo crear y depurar sus propias animaciones con CSS o JavaScript.
+  ja: 一部のアニメーションの動作が遅い理由や、CSS や JavaScript を活用した独自のアニメーションの開発方法やデバッグの実施方法の理解に役立つ質の高いリソースを厳選したコレクションです。
+  ko: 일부 애니메이션이 느린 이유와 CSS 또는 JavaScript를 사용하여 애니메이션을 빌드하고 디버그하는 방법을 이해하는 데 도움이 되는 선별된 고품격 리소스 모음입니다.
+  pt: Uma coleção organizada de recursos de alta qualidade que vão lhe ajudar a entender por que algumas animações são lentas e como criar e depurar suas próprias animações com CSS ou JavaScript.
+  ru: Коллекция специально отобранных высококачественных ресурсов, которые расскажут вам, в чём причина медленной отрисовки некоторых анимаций и как можно создавать и отлаживать собственные анимации с помощью CSS или JavaScript.
+  zh: 一个精选高质量资源集合，能够帮助您了解某些动画运行缓慢的原因，以及如何使用 CSS 或 JavaScript 构建和调试您自己的动画。
 
 topics:
   how_browsers_render_animations:
     en: How browsers render animations
+    es: Cómo los navegadores renderizan animaciones
+    ja: ブラウザーがアニメーションをレンダリングする際の仕組み
+    ko: 브라우저에서 애니메이션을 렌더링하는 방법
+    pt: Como os navegadores renderizam animações
+    ru: Как происходит отрисовка анимации в браузере
+    zh: 浏览器呈现动画的方式
 
   build_animations_with_css:
     en: Build animations with CSS
+    es: Crea animaciones con CSS
+    ja: CSS を使用してアニメーションを作成する
+    ko: CSS로 애니메이션 빌드
+    pt: Crie animações com CSS
+    ru: Создание анимаций с помощью CSS
+    zh: 使用 CSS 构建动画
 
   build_animations_with_javascript:
     en: Build animations with JavaScript
+    es: Crea animaciones con JavaScript
+    ja: JavaScript を使用してアニメーションを作成する
+    ko: JavaScript로 애니메이션 빌드
+    pt: Crie animações com JavaScript
+    ru: Создание анимаций с помощью JavaScript
+    zh: 使用 JavaScript 构建动画

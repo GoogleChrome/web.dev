@@ -1,0 +1,9 @@
+{
+  "title": "Feature Card",
+  "context": {
+    "title": "Making their web app installable resulted in increased traffic",
+    "eyebrow": "Web vitals",
+    "url": "#",
+    "background": "/images/feature-cards/web-vitals-feature.png"
+  }
+}

@@ -1,0 +1,39 @@
+{#
+  @typedef {Array.<string>} BreadcrumbLink - 2-el array with a title and
+    an url for a breadcrumb link.
+#}
+
+{#
+  Displays breadcrumbs element.
+  @param {Array.<BreadcrumbLink>} crumbs
+#}
+{% macro breadcrumbs(crumbs) %}
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+    <ul class="breadcrumbs__list" role="list">
+      <li>
+        <a
+          class="gc-analytics-event"
+          data-category="web.dev"
+          data-label="post, home breadcrumb"
+          data-action="click"
+          href="/"
+        >
+          {{site.titleVariation}}
+        </a>
+      </li>
+      {% for crumb in crumbs %}
+        <li>
+          <a
+            class="gc-analytics-event"
+            data-category="web.dev"
+            data-label="post, path breadcrumb"
+            data-action="click"
+            href="{{crumb[1]}}"
+          >
+            {{crumb[0]}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endmacro %}

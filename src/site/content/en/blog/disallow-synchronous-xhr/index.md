@@ -15,7 +15,7 @@ hero: image/admin/DF5rqLYGcuCpQZv1vXKS.jpg
 alt: Roadblock barricades
 tags:
   - blog
-  - deprecation
+  # - deprecation
 ---
 
 It's common for a page or app to have unsubmitted analytics or other data at the
@@ -54,7 +54,7 @@ experience, unload is unreliable on modern browsers and risks data loss if
 something goes wrong. Specifically, unload events [often don't fire on mobile
 browsers](https://www.igvita.com/2015/11/20/dont-lose-user-and-app-state-use-page-visibility/)
 because there are [many ways to
-close](https://developers.google.com/web/updates/2018/07/page-lifecycle-api) a
+close](https://developer.chrome.com/blog/page-lifecycle-api/) a
 tab or browser on mobile operating systems without the `unload` event firing.
 With `XMLHttpRequest()`, using small payloads was a choice. Now it's a
 requirement. Both of its alternatives have an upload limit of 64&nbsp;KB per
@@ -62,7 +62,7 @@ context, as required by the specification.
 
 ### Fetch keepalive
 
-The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+The [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API)
 provides a robust means of dealing with server interactions and [a consistent
 interface](https://fetch.spec.whatwg.org/#preface) for use across different
 platform APIs. Among its options is `keepalive`, which ensures that a request
@@ -85,7 +85,7 @@ way of the page's unloading, I chose not to do anything with it.
 
 ### SendBeacon()
 
-[`SendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
+[`SendBeacon()`](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
 actually uses the Fetch API under the hood, which is why it has the same
 64&nbsp;KB payload limitation and why it also ensures that a request continues
 after a page unload. Its primary advantage is its simplicity. It lets you
@@ -100,7 +100,7 @@ window.addEventListener('unload', {
 ## Conclusion
 
 With the [increased availability of
-`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Browser_compatibility)
+`fetch()`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Browser_compatibility)
 across browsers, `XMLHttpRequest()` will hopefully be removed
 from the web platform at some point. Browser vendors agree it should be removed, but it will
 take time. Deprecating one of its worst use cases is a first step that improves

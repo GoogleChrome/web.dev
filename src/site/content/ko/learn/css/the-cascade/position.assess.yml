@@ -1,0 +1,46 @@
+setLeader: Test your knowledge of the cascade
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    stimulus: |
+      If you have the following HTML on your page:
+
+      ```html
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <link rel="stylesheet" href="styles.css" />
+        </head>
+        <body>
+          <button>I am a button</button>
+          <style>
+            button {
+              background: pink;
+            }
+          </style>
+        </body>
+      </html>
+      ```
+
+      Inside `styles.css`, is the following CSS rule:
+
+      ```css
+      button {
+        background: yellow;
+      }
+      ```
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What color is the button's background?
+    options:
+      - content: pink
+        rationale: | 
+          The embedded `<style>` origin is further down the page than the
+          `<link>` tag, so while the specificity of `button` is the same, the
+          **position** of the style rule makes it win.
+      - content: yellow
+        rationale: | 
+          To the HTML document, the yellow button background may have been read
+          first, but a newer rule of the same specificity was discovered later,
+          making this rule not apply to the button.

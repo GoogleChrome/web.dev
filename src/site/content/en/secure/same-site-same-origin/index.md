@@ -4,7 +4,7 @@ title: Understanding "same-site" and "same-origin"
 authors:
   - agektmr
 date: 2020-04-15
-updated: 2020-06-10
+updated: 2022-06-09
 description: |
   "same-site" and "same-origin" are frequently cited but often misunderstood
   terms. This article helps you understand what they are and how they are
@@ -23,13 +23,13 @@ iframes.
 {% Img src="image/admin/PX5HrIMPlgcbzYac3FHV.png", alt="Origin", width="680", height="100" %}
 
 "Origin" is a combination of a
-[scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol)
+[scheme](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol)
 (also known as the
-[protocol](https://developer.mozilla.org/en-US/docs/Glossary/Protocol), for
-example [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) or
-[HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS)),
+[protocol](https://developer.mozilla.org/docs/Glossary/Protocol), for
+example [HTTP](https://developer.mozilla.org/docs/Glossary/HTTP) or
+[HTTPS](https://developer.mozilla.org/docs/Glossary/HTTPS)),
 [hostname](https://en.wikipedia.org/wiki/Hostname), and
-[port](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port)
+[port](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port)
 (if specified). For example, given a URL of `https://www.example.com:443/foo` ,
 the "origin" is `https://www.example.com:443`.
 
@@ -37,7 +37,7 @@ the "origin" is `https://www.example.com:443`.
 Websites that have the combination of the same scheme, hostname, and port are
 considered "same-origin". Everything else is considered "cross-origin".
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -110,7 +110,7 @@ is the effective TLD and the part of the domain just before it.
 Websites that have the same eTLD+1 are considered "same-site". Websites that
 have a different eTLD+1 are "cross-site".
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -162,7 +162,7 @@ same-site](/schemeful-samesite/)" referring to the stricter definition. In that
 case, `http://www.example.com` and `https://www.example.com` are considered
 cross-site because the schemes don't match.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -203,10 +203,11 @@ cross-site because the schemes don't match.
 
 ## How to check if a request is "same-site", "same-origin", or "cross-site"
 
-Chrome sends requests along with a `Sec-Fetch-Site` HTTP header. No other
-browsers support `Sec-Fetch-Site` as of April 2020. This is part of a larger [Fetch Metadata
-Request Headers](https://www.w3.org/TR/fetch-metadata/)
-proposal. The header will have one of the following values:
+All modern browsers ([except
+Safari](https://bugs.webkit.org/show_bug.cgi?id=238265)) send requests along
+with a [`Sec-Fetch-Site` HTTP
+header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site). The
+header has one of the following values:
 
 * `cross-site`
 * `same-site`
@@ -216,3 +217,18 @@ proposal. The header will have one of the following values:
 By examining the value of `Sec-Fetch-Site`, you can determine if the request is
 "same-site", "same-origin", or "cross-site" ("schemeful-same-site" is not
 captured in `Sec-Fetch-Site`).
+
+{% Aside 'important' %}
+
+You can reasonably trust the value of `Sec-Fetch-Site` header because:
+<ul>
+  <li>[HTTP headers starting with `Sec-` can not be modified by
+   JavaScript](https://www.w3.org/TR/fetch-metadata/#sec-prefix).</li>
+  <li>These headers are always set by the browser.</li>
+</ul>
+
+Even if a server receives a manipulated value for the `Sec-Fetch-Site`
+header, sent by a random HTTP client, no user or browser will be
+harmed by breaking the same-origin policy.
+
+{% endAside %}

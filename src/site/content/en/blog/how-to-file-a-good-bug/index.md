@@ -8,7 +8,7 @@ authors:
   - robertnyman
   - petelepage
 date: 2020-06-15
-updated: 2020-06-15
+updated: 2022-02-22
 description: |
   Telling browser vendors about issues you find in their browser,
   on a specific device or platform is an integral part of making
@@ -41,7 +41,7 @@ Edge, possibly using a tool like [BrowserStack](https://www.browserstack.com/).
 
 If possible, check that the page isn't intentionally behaving differently due to
 user agent sniffing. In Chrome DevTools, try [setting the `User-Agent` string
-to another browser](https://developers.google.com/web/tools/chrome-devtools/device-mode/override-user-agent).
+to another browser](https://developer.chrome.com/docs/devtools/device-mode/override-user-agent/).
 
 ### Did it break in a recent release?
 
@@ -97,8 +97,8 @@ bug getting fixed.
 
 Here are a few tips for minimizing a test case:
 
-* Download the web page, add 
-  [`<base href="https://original.url">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
+* Download the web page, add
+  [`<base href="https://original.url">`](https://developer.mozilla.org/docs/Web/HTML/Element/base)
   and verify that the bug exists locally. This may require a live HTTPS server if the
   URL uses HTTPS.
 * Test the local files on the latest builds of as many browsers as you can.
@@ -152,20 +152,20 @@ What steps will reproduce the problem?
 3. Click Install on the browser modal install confirmation.
 ```
 
-And finally, describe the *actual*, and *expected* result.
+And finally, describe the *expected*, and *actual* result.
 
 ```text
-What is the actual result? In the console:
-0. INSTALL: Available (logged when `beforeinstallprompt` event fired)
-1. INSTALL: Success (logged when `appinstalled` event fired)
-2. INSTALL_PROMPT_RESPONSE: {outcome: "accepted", platform: "web"}
-   (logged when beforeinstallprompt.prompt()` resolves)
-
 What is the expected result? In the console:
 0. INSTALL: Available (logged when `beforeinstallprompt` event fired)
 1. INSTALL_PROMPT_RESPONSE: {outcome: "accepted", platform: "web"}
    (logged when beforeinstallprompt.prompt()` resolves)
 2. INSTALL: Success (logged when `appinstalled` event fired)
+
+What is the actual result? In the console:
+0. INSTALL: Available (logged when `beforeinstallprompt` event fired)
+1. INSTALL: Success (logged when `appinstalled` event fired)
+2. INSTALL_PROMPT_RESPONSE: {outcome: "accepted", platform: "web"}
+   (logged when beforeinstallprompt.prompt()` resolves)
 ```
 
 For more information, check out [Bug report writing guidelines][mdn-bug-report]
@@ -194,5 +194,5 @@ reproducing the issue, they may reach out.
 [cr-bug]: https://crbug.com/
 [moz-bug]: https://bugzilla.mozilla.org/
 [wk-bug]: https://bugs.webkit.org/
-[mdn-bug-report]: https://developer.mozilla.org/en-US/docs/Mozilla/QA/Bug_writing_guidelines
-[mdn-reduced-testcase]: https://developer.mozilla.org/en-US/docs/Mozilla/QA/Reducing_testcases
+[mdn-bug-report]: https://developer.mozilla.org/docs/Mozilla/QA/Bug_writing_guidelines
+[mdn-reduced-testcase]: https://developer.mozilla.org/docs/Mozilla/QA/Reducing_testcases

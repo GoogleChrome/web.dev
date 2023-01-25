@@ -84,7 +84,7 @@ before they become major issues.
   and [Caching best
   practices](https://jakearchibald.com/2016/caching-best-practices/) for
   specific recommendations. The [Serve static assets with an efficient cache
-  policy](/uses-long-cache-ttl/) audit in Lighthouse can help you
+  policy](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/) audit in Lighthouse can help you
   quickly detect resources that aren't being cached. Keep in mind that different
   types of resources will have different freshness requirements and will
   therefore require different caching strategies.
@@ -124,7 +124,7 @@ everyone.
   team member (product managers, engineers, designers, QA, and so on) can
   contribute.
 * Do an [Accessibility
-  Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review)
+  Review](/how-to-review/)
   to determine what's working well, and what needs improvement.
   The [WAVE browser extensions](https://wave.webaim.org/extension/) can help
   guide you through a manual accessibility audit of your site.
@@ -158,7 +158,7 @@ protect this sensitive user data at all costs and convince people that their
 information](https://en.wikipedia.org/wiki/Personal_data) (PII) is safe.
 
 * Understand [why all websites should be protected with
-  HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https),
+  HTTPS](/why-https-matters/),
   not just those that handle sensitive PII data.
 * Switch to a hosting provider that uses HTTPS by default, or use [Let's
   Encrypt](https://letsencrypt.org/getting-started/) or similar services to
@@ -201,13 +201,13 @@ possible.
 * Ensure that your forms are
   [efficient](https://www.smashingmagazine.com/2017/06/designing-efficient-web-forms/)
   and
-  [well-designed](https://developers.google.com/web/fundamentals/design-and-ux/input/forms).
+  [well-designed](/learn/forms/).
 
 ### SEO {: #seo }
 
 People are looking for critical health- and job-related information. It's
 important to ensure that your sites are discoverable by all search engines.
-The [Lighthouse SEO audits](/lighthouse-seo/) can help you detect basic problems.
+The [Lighthouse SEO audits](https://developer.chrome.com/docs/lighthouse/seo/) can help you detect basic problems.
 Follow the official blogs of search engines for the latest guidance and updates:
 [Google](https://webmasters.googleblog.com/),
 [Bing](https://blogs.bing.com/webmaster/),
@@ -253,15 +253,15 @@ performance impact of reduced bandwidth.
 * Run [WebPageTest](https://webpagetest.org/easy) or
   [Lighthouse](https://developers.google.com/web/tools/lighthouse/#get-started)
   to discover your top performance improvement opportunities.
-* [Enable text compression](/uses-text-compression/) to reduce
+* [Enable text compression](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/) to reduce
   the network size of text resources. This is often an easy performance win that
   requires minimal technical investment.
 * Read [Fixing website speed
   cross-functionally](/fixing-website-speed-cross-functionally/)
   to learn how to collaborate with and get buy-in from other departments.
-* [Use standardized lazy-loading for images](/native-lazy-loading/) to
+* [Use standardized lazy-loading for images](/browser-level-image-lazy-loading/) to
   minimize requests for images that people may never actually see. [Browser
-  compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
+  compatibility](https://developer.mozilla.org/docs/Web/HTML/Element/img#Browser_compatibility)
   is not 100% but the feature can be treated as a progressive enhancement. In
   other words, if a certain browser doesn't support standardized lazy-loading, the
   image should load as it normally does.
@@ -284,7 +284,7 @@ performance impact of reduced bandwidth.
 * If feature releases are deprioritized, this might be the perfect time to clean
   up. Remove tags from your tag managers, clean up bloated CSS and JS, and
   remove deprecated features or code. The
-  [Coverage tab](https://developers.google.com/web/tools/chrome-devtools/coverage)
+  [Coverage tab](https://developer.chrome.com/docs/devtools/coverage/)
   in Chrome DevTools and the
   [`Coverage`](https://pptr.dev/#?product=Puppeteer&version=v2.1.1&show=api-class-coverage) class
   in Puppeteer can help you detect unused code.

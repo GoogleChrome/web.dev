@@ -14,7 +14,7 @@ authors:
 
 date: 2019-12-05
 # Add an updated date to your post if you edit in the future.
-# updated: 2019-11-01
+updated: 2022-11-29
 
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -42,7 +42,7 @@ from hyper-constrained feature phones to high-powered,
 high-refresh-rate flagship machines.
 
 If we want sophisticated web apps to reliably meet performance guidelines
-like the [RAIL model](https://developers.google.com/web/fundamentals/performance/rail)—which
+like the [Core Web Vitals](/vitals/)—which
 is based on empirical data about human perception and psychology—we
 need ways to execute our code **off the main thread (OMT)**.
 
@@ -52,6 +52,14 @@ watch my CDS 2019 talk below.
 {% endAside %}
 
 {% YouTube '7Rrv9qFMWNM' %}
+
+## Why web workers?
+
+JavaScript is, by default, a single-threaded language that runs [tasks](/optimize-long-tasks/#what-is-a-task) on [the main thread](/optimize-long-tasks/#what-is-the-main-thread). However, web workers provide a sort of escape hatch from the main thread by allowing developers to spin up separate threads to handle work off of the main thread. While the scope of web workers is limited and doesn't offer direct access to the DOM, they can be hugely beneficial if there is considerable work that needs to be done that would otherwise overwhelm the main thread.
+
+Where [Core Web Vitals](/vitals/) are concerned, running work off the main thread can be beneficial. In particular, offloading work from the main thread to web workers can reduce contention for the main thread, which can improve important responsiveness metrics such as [Interaction to Next Paint (INP)](/inp/) and [First Input Delay (FID)](/fid/). When the main thread has less work to process, it can respond more quickly to user interactions.
+
+Less main thread work—especially during startup—also carries a potential benefit for [Largest Contentful Paint (LCP)](/lcp/) by reducing long tasks. Rendering an LCP element requires main thread time—either for rendering text or images, which are frequent and common LCP elements—and by reducing main thread work overall, you can ensure that your page's LCP element is less likely to be blocked by expensive work that a web worker could handle instead.
 
 ## Threading with web workers
 
@@ -70,7 +78,7 @@ but unlike OS threading they can't share variables.
 
 {% Aside %}
 Don't confuse web workers with [service workers](/service-workers-cache-storage)
-or [worklets](https://developer.mozilla.org/en-US/docs/Web/API/Worklet).
+or [worklets](https://developer.mozilla.org/docs/Web/API/Worklet).
 While the names are similar, the functionality and uses are different.
 {% endAside %}
 
@@ -82,7 +90,7 @@ const worker = new Worker("./worker.js");
 ```
 
 Communicate with the web worker by sending messages via the
-[`postMessage` API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+[`postMessage` API](https://developer.mozilla.org/docs/Web/API/Window/postMessage).
 Pass the message value as a parameter in the `postMessage` call
 and then add a message event listener to the worker:
 
@@ -174,9 +182,9 @@ except that every function returns a promise for a value rather than the value i
 ## What code should you move to a web worker?
 
 Web workers don't have access to the DOM and many APIs
-like [WebUSB](https://developer.mozilla.org/en-US/docs/Web/API/USB),
-[WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API), or
-[Web Audio](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API),
+like [WebUSB](https://developer.mozilla.org/docs/Web/API/USB),
+[WebRTC](https://developer.mozilla.org/docs/Web/API/WebRTC_API), or
+[Web Audio](https://developer.mozilla.org/docs/Web/API/Web_Audio_API),
 so you can't put pieces of your app that rely on such access in a worker.
 Still, every small piece of code moved to a worker buys more headroom
 on the main thread for stuff that _has_ to be there—like updating the user interface.
@@ -223,12 +231,12 @@ the UI is frozen for six seconds after the user interacts with it.
 There's no feedback, and the user has to wait for the full six seconds
 before being able to do something else.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.mp4" type="video/mp4; codecs=h264">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     UI response time in the <strong>non-OMT</strong> version of PROXX.
   </figcaption>
 </figure>
@@ -242,12 +250,12 @@ The user therefore knows that something is happening
 and can continue playing as the UI updates,
 making the game feel considerably better.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.mp4" type="video/mp4; codecs=h264">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     UI response time in the <strong>OMT</strong> version of PROXX.
   </figcaption>
 </figure>
@@ -290,7 +298,7 @@ There's more detail in the talk, but, in general,
 you shouldn't break your performance budget
 if your object's stringified JSON representation is less than 10&nbsp;KB.
 If you need to copy larger objects, consider using
-[ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
+[ArrayBuffer](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
 or [WebAssembly](https://webassembly.org/).
 You can read more about this issue in
 [this blog post about `postMessage` performance](https://dassur.ma/things/is-postmessage-slow).
@@ -315,10 +323,10 @@ Also, OMT has secondary benefits:
 
 *   It moves JavaScript execution costs to a separate thread.
 *   It moves _parsing_ costs, meaning UI might boot up faster.
-    That might reduce [First Contentful Paint](/first-contentful-paint)
-    or even [Time to Interactive](/interactive),
+    That might reduce [First Contentful Paint](/fcp/)
+    or even [Time to Interactive](/tti/),
     which can in turn increase your
-    [Lighthouse](https://developers.google.com/web/tools/lighthouse) score.
+    [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) score.
 
 Web workers don't have to be scary.
 Tools like Comlink are taking the work out of workers

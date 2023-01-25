@@ -6,12 +6,17 @@ hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2020-07-21
+updated: 2022-08-17
 tags:
   - metrics
   - performance
   - web-vitals
 ---
+
+{% Aside %}
+**New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
+implementations of common UX patterns optimized for Core Web Vitals.
+{% endAside %}
 
 Optimizing for quality of user experience is key to the long-term success of any
 site on the web. Whether you're a business owner, marketer, or developer, Web
@@ -27,7 +32,7 @@ Google has provided a number of tools over the years to measure and report on
 performance. Some developers are experts at using these tools, while others have
 found the abundance of both tools and metrics challenging to keep up with.
 
-Site owners should not have to be performance gurus in order to understand the
+Site owners should not have to be performance experts to understand the
 quality of experience they are delivering to their users. The Web Vitals
 initiative aims to simplify the landscape, and help sites focus on the metrics
 that matter most, the **Core Web Vitals**.
@@ -48,24 +53,20 @@ over time. The current set for 2020 focuses on three aspects of the user
 experience—_loading_, _interactivity_, and _visual stability_—and includes the
 following metrics (and their respective thresholds):
 
-<div class="w-stack w-stack--center w-stack--md">
-  <img src="lcp_ux.svg" width="400px" height="350px"
-       alt="Largest Contentful Paint threshold recommendations">
-  <img src="fid_ux.svg" width="400px" height="350px"
-       alt="First Input Delay threshold recommendations">
-  <img src="cls_ux.svg" width="400px" height="350px"
-       alt="Cumulative Layout Shift threshold recommendations">
+<div class="auto-grid" style="--auto-grid-min-item-size: 200px;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift threshold recommendations", width="400", height="350" %}
 </div>
 
 - **[Largest Contentful Paint (LCP)](/lcp/)**: measures _loading_ performance.
   To provide a good user experience, LCP should occur within **2.5 seconds** of
   when the page first starts loading.
 - **[First Input Delay (FID)](/fid/)**: measures _interactivity_. To provide a
-  good user experience, pages should have a FID of less than **100
-  milliseconds**.
+  good user experience, pages should have a FID of **100 milliseconds** or less.
 - **[Cumulative Layout Shift (CLS)](/cls/)**: measures _visual stability_. To
-  provide a good user experience, pages should maintain a CLS of less than
-  **0.1.**
+  provide a good user experience, pages should maintain a CLS of **0.1.** or
+  less.
 
 For each of the above metrics, to ensure you're hitting the recommended target
 for most of your users, a good threshold to measure is the **75th percentile**
@@ -76,9 +77,9 @@ it meets the recommended targets at the 75th percentile for all of the above
 three metrics.
 
 {% Aside %}
-  To learn more about the research and methodology behind these recommendations,
-  see: [Defining the Core Web Vitals metrics
-  thresholds](/defining-core-web-vitals-thresholds/)
+To learn more about the research and methodology behind these recommendations,
+see: [Defining the Core Web Vitals metrics
+thresholds](/defining-core-web-vitals-thresholds/)
 {% endAside %}
 
 ### Tools to measure and report Core Web Vitals
@@ -91,15 +92,15 @@ Core Web Vitals.
 #### Field tools to measure Core Web Vitals
 
 The [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+Report](https://developer.chrome.com/docs/crux/)
 collects anonymized, real user measurement data for each Core Web Vital. This
 data enables site owners to quickly assess their performance without requiring
 them to manually instrument analytics on their pages, and powers tools like
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),
+[PageSpeed Insights](https://pagespeed.web.dev/),
 and Search Console's [Core Web Vitals
 report](https://support.google.com/webmasters/answer/9205520).
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <td>&nbsp;</td>
@@ -108,7 +109,7 @@ report](https://support.google.com/webmasters/answer/9205520).
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">
+      <td><a href="https://developer.chrome.com/docs/crux/">
         Chrome User Experience Report</a></td>
       <td>✔</td>
       <td>✔</td>
@@ -132,9 +133,9 @@ report](https://support.google.com/webmasters/answer/9205520).
 </div>
 
 {% Aside %}
-  For guidance on how to use these tools, and which tool is right for your use
-  case, see: [Getting started with measuring Web
-  Vitals](/vitals-measurement-getting-started/)
+For guidance on how to use these tools, and which tool is right for your use
+case, see: [Getting started with measuring Web
+Vitals](/vitals-measurement-getting-started/)
 {% endAside %}
 
 The data provided by Chrome User Experience Report offers a quick way to assess
@@ -147,6 +148,10 @@ own real-user monitoring.
 
 Each of the Core Web Vitals can be measured in JavaScript using standard web
 APIs.
+
+{% Aside %}
+Note that the Core Web Vitals measured in JavaScript using public APIs may differ from the Core Web Vitals reported by CrUX. Read [this article](/crux-and-rum-differences/) for more info.
+{% endAside %}
 
 The easiest way to measure all the Core Web Vitals is to use the
 [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library, a
@@ -161,18 +166,18 @@ documentation for complete
 [API](https://github.com/GoogleChrome/web-vitals#api) details):
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
   // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
   (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
-      fetch('/analytics', {body, method: 'POST', keepalive: true});
+    fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 Once you've configured your site to use the
@@ -201,7 +206,7 @@ measure each of these metrics and display them to users as they browse the web.
 This extension can be helpful in understanding the performance of your own
 sites, your competitor's sites, and the web at large.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -237,10 +242,10 @@ underlying web APIs can refer to these metric guides for implementation details:
 - [Measure CLS in JavaScript](/cls/#measure-cls-in-javascript)
 
 {% Aside %}
-  For additional guidance on how to measure these metrics using popular
-  analytics services (or your own in-house analytics tools), see: [Best
-  practices for measuring Web Vitals in the
-  field](/vitals-field-measurement-best-practices/)
+For additional guidance on how to measure these metrics using popular
+analytics services (or your own in-house analytics tools), see: [Best
+practices for measuring Web Vitals in the
+field](/vitals-field-measurement-best-practices/)
 {% endAside %}
 
 #### Lab tools to measure Core Web Vitals
@@ -255,7 +260,7 @@ catch performance regressions before they happen.
 The following tools can be used to measure the Core Web Vitals in a lab
 environment:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -267,14 +272,14 @@ environment:
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">
+        <td><a href="https://developer.chrome.com/docs/devtools/">
           Chrome DevTools</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse">
+        <td><a href="https://developer.chrome.com/docs/lighthouse/overview/">
           Lighthouse</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
@@ -285,11 +290,11 @@ environment:
 </div>
 
 {% Aside %}
-  Tools like Lighthouse that load pages in a simulated environment without a
-  user cannot measure FID (there is no user input). However, the Total Blocking
-  Time (TBT) metric is lab-measurable and is an excellent proxy for FID.
-  Performance optimizations that improve TBT in the lab should improve FID in
-  the field (see performance recommendations below).
+Tools like Lighthouse that load pages in a simulated environment without a
+user cannot measure FID (there is no user input). However, the Total Blocking
+Time (TBT) metric is lab-measurable and is an excellent proxy for FID.
+Performance optimizations that improve TBT in the lab should improve FID in
+the field (see performance recommendations below).
 {% endAside %}
 
 While lab measurement is an essential part of delivering great experiences, it
@@ -320,11 +325,11 @@ These other Web Vitals often serve as proxy or supplemental metrics for the Core
 Web Vitals, to help capture a larger part of the experience or to aid in
 diagnosing a specific issue.
 
-For example, the metrics [Time to First Byte (TTFB)](/time-to-first-byte/) and
+For example, the metrics [Time to First Byte (TTFB)](/ttfb/) and
 [First Contentful Paint (FCP)](/fcp/) are both vital aspects of the _loading_
 experience, and are both useful in diagnosing issues with LCP (slow [server
 response times](/overloaded-server/) or [render-blocking
-resources](/render-blocking-resources/), respectively).
+resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/), respectively).
 
 Similarly, metrics like [Total Blocking Time (TBT)](/tbt/) and [Time to
 Interactive (TTI)](/tti/) are lab metrics that are vital in catching and

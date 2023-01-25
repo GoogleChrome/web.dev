@@ -4,6 +4,7 @@ title: User-centric performance metrics
 authors:
   - philipwalton
 date: 2019-11-08
+updated: 2022-05-11
 description: |
   User-centric performance metrics are a critical tool in understanding and
   improving the experience of your site in a way that benefits real
@@ -38,7 +39,7 @@ useful.
 ## Defining metrics
 
 Historically, web performance has been measured with the
-<code>[load](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)</code>
+<code>[load](https://developer.mozilla.org/docs/Web/API/Window/load_event)</code>
 event. However, even though <code>load</code> is a well-defined moment in a
 page's lifecycle, that moment doesn't necessarily correspond with anything the
 user cares about.
@@ -137,32 +138,40 @@ page.
 
 ## Important metrics to measure
 
-- **[First contentful paint (FCP)](/fcp/):** measures the time from when the
+- **[First Contentful Paint (FCP)](/fcp/):** measures the time from when the
   page starts loading to when any part of the page's content is rendered on the
   screen. _([lab](#in-the-lab), [field](#in-the-field))_
-- **[Largest contentful paint (LCP)](/lcp/):** measures the time from when the
+- **[Largest Contentful Paint (LCP)](/lcp/):** measures the time from when the
   page starts loading to when the largest text block or image element is
   rendered on the screen. _([lab](#in-the-lab), [field](#in-the-field))_
-- **[First input delay (FID)](/fid/):** measures the time from when a user first
-  interacts with your site (i.e. when they click a link, tap a button, or use a
+- **[First Input Delay (FID)](/fid/):** measures the time from when a user first
+  interacts with your site (when they click a link, tap a button, or use a
   custom, JavaScript-powered control) to the time when the browser is actually
   able to respond to that interaction. _([field](#in-the-field))_
+- **[Interaction to Next Paint (INP)](/inp/)**: measures the latency of every
+  tap, click, or keyboard interaction made with the page, and&mdash;based on the
+  number of interactions&mdash;selects the worst interaction latency of the page
+  (or close to the highest) as a single, representative value to describe a
+  page's overall responsiveness. _([lab](#in-the-lab), [field](#in-the-field))_
 - **[Time to Interactive (TTI)](/tti/):** measures the time from when the page
   starts loading to when it's visually rendered, its initial scripts (if any)
   have loaded, and it's capable of reliably responding to user input quickly.
   _([lab](#in-the-lab))_
-- **[Total blocking time (TBT)](/tbt/):** measures the total amount of time
+- **[Total Blocking Time (TBT)](/tbt/):** measures the total amount of time
   between FCP and TTI where the main thread was blocked for long enough to
   prevent input responsiveness. _([lab](#in-the-lab))_
-- **[Cumulative layout shift (CLS)](/cls/):** measures the cumulative score of
+- **[Cumulative Layout Shift (CLS)](/cls/):** measures the cumulative score of
   all unexpected layout shifts that occur between when the page starts loading
   and when its [lifecycle
-  state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
+  state](https://developer.chrome.com/blog/page-lifecycle-api/)
   changes to hidden. _([lab](#in-the-lab), [field](#in-the-field))_
+- **[Time to First Byte (TTFB)](/ttfb/)**: measures the time it takes for the
+  network to respond to a user request with the first byte of a resource.
+  _([lab](#in-the-lab), [field](#in-the-field))_
 
 While this list includes metrics measuring many of the various aspects of
-performance relevant to users, it does not include everything (e.g. runtime
-responsiveness and smoothness are not currently covered).
+performance relevant to users, it does not include everything. For example, runtime
+responsiveness and smoothness are not currently covered.
 
 In some cases, new metrics will be introduced to cover missing areas, but in
 other cases the best metrics are ones specifically tailored to your site.

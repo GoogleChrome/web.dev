@@ -43,7 +43,7 @@ export const config = { amp: 'hybrid' };
 const Home = () => (
   <p>This is the home page</p>
 );
-  
+
 export default Home;
 ```
 
@@ -54,14 +54,12 @@ export default Home;
 1. Add `?amp=1` to the end of the URL. The page looks the same, but if you look in the
    Console you'll see that the AMP version of the page is being rendered.
 
-<figure class="w-figure">
-  <img src="hybrid.png" class="w-screenshot-filled"
-       alt="The live page and a message in the Chrome DevTools Console stating that the page is 
-            powered by AMP.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ybkMSvzPYUoIpgU4eA1E.png", alt="The live page and a message in the Chrome DevTools Console stating that the page is powered by AMP.", width="800", height="376" %}
 </figure>
 
 Since the page only has a single `<p>` tag, there's no visible difference between the
-main page and its AMP version. 
+main page and its AMP version.
 
 #### How to conditionally serve AMP components
 
@@ -94,17 +92,14 @@ depending on which version of the page was requested.
 
 1. Load the main version of the page:
 
-   <figure class="w-figure">
-     <img src="main.png" class="w-screenshot-filled"
-          alt="A screenshot of the main version of the page.">
+   <figure>
+     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iXgDaiqLkqLY8kYoKSl7.png", alt="A screenshot of the main version of the page.", width="800", height="637" %}
    </figure>
 
 1. Add `?amp=1` to the end of the URL again to load the AMP version of the page:
 
-   <figure class="w-figure">
-     <img src="amp.png" class="w-screenshot-filled"
-          alt="A screenshot of the AMP version of the page that is displaying different text
-               than the main version.">
+   <figure>
+     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kWIKm1ADltg2B2444bLR.png", alt="A screenshot of the AMP version of the page that is displaying different text than the main version.", width="800", height="637" %}
    </figure>
 
 1. Try rendering AMP's replacement of the image tag, `amp-img`:
@@ -149,21 +144,17 @@ depending on which version of the page was requested.
    specified by width and height. Check out [Layout & media queries][layout] to learn more about
    the supported layouts of AMP elements, and [amp-img] to learn more about that element's
    optimizations.
-    
+
 1. View the main version of the page again.
 
-   <figure class="w-figure">
-     <img src="mainimg.png" class="w-screenshot-filled"
-          alt="A screenshot showing that the image in the main version of the
-               page overflows the viewport.">
+   <figure>
+     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/307bH0fcWyCUBhK47CUg.png", alt="A screenshot showing that the image in the main version of the page overflows the viewport.", width="800", height="637" %}
    </figure>
 
 1. View the AMP version of the page again.
 
-   <figure class="w-figure">
-     <img src="ampimg.png" class="w-screenshot-filled"
-          alt="A screenshot showing that the image in the AMP version of the page has been
-               automatically resized to fit the viewport.">
+   <figure>
+     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rTuu0WR9Rj6o07eLFFb4.png", alt="A screenshot showing that the image in the AMP version of the page has been automatically resized to fit the viewport.", width="800", height="637" %}
    </figure>
 
 ### How to create AMP-only pages {: #amponly }
@@ -181,7 +172,7 @@ to users and search engines at all times.
    const Home = () => (
      <p>This is an AMP-only page</p>
    );
-     
+
    export default Home;
    ```
 

@@ -17,8 +17,14 @@
 const {html} = require('common-tags');
 const paths = require('../../_data/paths');
 const postToPaths = require('../../_data/postToPaths');
+const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 
-module.exports = (slug) => {
+/**
+ * @this {EleventyPage}
+ */
+function SignPosts(slug) {
+  const locale = getLocaleFromPath(this.page && this.page.filePathStem);
+
   const postPaths = postToPaths[slug];
   if (!postPaths) {
     return '';
@@ -27,16 +33,20 @@ module.exports = (slug) => {
     .map((pathName) => {
       return html`<a
         class="w-post-signpost__link"
-        href="/${paths[pathName].slug}"
-        >${paths[pathName].title}</a
+        href="/${paths[pathName].slug}/"
+        >${i18n(paths[pathName].title, locale)}</a
       >`;
     })
     .join(html`<span class="w-post-signpost__divider">|</span>`);
 
   return html`
     <div class="w-layout-container--narrow w-post-signpost">
-      <span class="w-post-signpost__title">Appears in:</span>
+      <span class="w-post-signpost__title">
+        ${i18n('i18n.post.appears_in', locale)}:
+      </span>
       ${aTags}
     </div>
   `;
-};
+}
+
+module.exports = SignPosts;

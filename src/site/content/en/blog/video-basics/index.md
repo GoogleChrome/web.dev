@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Going beyond images with basic video for the web
 subhead: Learn basic video. Increase engagement.
 authors:
@@ -11,7 +12,7 @@ description: |
 tags:
   - media
   - blog
-  - video
+  # - video
 ---
 
 Are you thinking about adding video to your website? As devices and network
@@ -63,11 +64,11 @@ This references three separate source files. The browser starts at the top, and
 picks the first format and codec that it can use. In the video world, the file
 format, usually called the container, can be saved with different codecs, each
 with different attributes. ([More on this
-here](https://developers.google.com/web/fundamentals/media/manipulating/applications).)
+here](/media-application-basics/).)
 In the example above, the first choice is the WebM format ([which can be encoded
 with VP8 or VP9 codecs](https://www.webmproject.org/about/)), and is supported
 (at the time of writing) by 78% of [global
-users](https://caniuse.com/#search=webm). The second choice is the the H.265
+users](https://caniuse.com/#search=webm). The second choice is the H.265
 codec of mp4, which is supported on [iOS and newer
 Macs](https://caniuse.com/#search=h265). These codecs are newer and have
 improved data compression, while delivering the same quality video as older
@@ -79,7 +80,7 @@ users](https://caniuse.com/#search=h264),
 but is an older format, and as such, is generally a lot larger than WebM or H.265
 videos. In one example, you can see the difference for a two minute movie:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -156,14 +157,14 @@ window before the video starts playing:
 <video src="myVideo.mp4" poster="/image/myVideoImage.jpg">
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/g25bdsYqmAWM39KhjGTj.png", alt="A video without a poster shows a black screen before it starts.", width="478", height="269" %}
 </figure>
 {% Compare 'worse', 'No poster image' %}
   A video without a poster shows a black screen before it starts.
 {% endCompare %}
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/QVLwk1zEOzqllD8eY3pc.png", alt="A video with a poster is much more engaging.", width="478", height="269" %}
 </figure>
 {% Compare 'better', 'With a poster image' %}
@@ -193,7 +194,7 @@ further reduces the size of the video file being delivered to the customer.
 As with containers and codecs, removing the audio file, also called demuxing, is
 also beyond the scope of this article. You can find instructions in the [Media
 Manipulation Cheat
-Sheet](https://developers.google.com/web/fundamentals/media/manipulating/cheatsheet#demux_split_audio_and_video).
+Sheet](/media-conversion/#demux-separate-the-audio-and-video-streams).
 
 ## loop
 

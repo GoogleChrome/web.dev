@@ -11,6 +11,7 @@ This post is about how to get sample apps to work right in your post and follow 
 web.dev uses [Glitch](https://glitch.com/) to embed web-based sample apps and development environments in its posts and codelabs. Glitch is handy because it lets you demonstrate both frontend and backend code.
 
 ## Create a new Glitch
+
 1. If you aren't already a member of the web.dev Glitch team, ask your content reviewer to be added.
 1. Once you're on the team, remix the [Hello Webpage template](https://glitch.com/~web-dev-hello-webpage) or [Hello Express template](https://glitch.com/~web-dev-hello-express), depending on which is closest to what you're trying to build.
 1. Replace the automatically generated title for your Glitch with a descriptive name that hasn't already been used elsewhere on web.dev.
@@ -19,6 +20,7 @@ web.dev uses [Glitch](https://glitch.com/) to embed web-based sample apps and de
 1. Add the Glitch to the [web.dev team page](https://glitch.com/@webdev).
 
 ## Authoring tips
+
 Make all Glitch code [accessible](/handbook/inclusion-and-accessibility#create-accessible-code-blocks).
 
 [Be mindful of the development landscape](/handbook/quality/#be-mindful-of-the-development-landscape) when selecting tools and frameworks.
@@ -27,7 +29,7 @@ Make sure the `README` for your Glitch links back to web.dev. Here's a template 
 
 ```text
 # [Your Article Name]
-This example is part of the [name of article](link/to/article) post on [web.dev](https://web.dev).
+This example is part of the [name of article](link/to/article) post on [web.dev](/).
 ```
 
 Use the license headers for HTML, CSS, and JS files:

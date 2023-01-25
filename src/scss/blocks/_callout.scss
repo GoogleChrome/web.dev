@@ -1,0 +1,80 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/callout
+.callout {
+  --repel-vertical-alignment: flex-end;
+
+  padding: $global-gutter;
+  border-radius: $global-radius-large;
+
+  @include apply-utility('bg', 'mid-bg'); // For if no BG utility is added
+
+  .stack-nav {
+    margin-block: 0;
+  }
+}
+
+/// We add the .callout because this often finds itself in contexts
+/// such as prose, so we need a quick specificity boost
+.callout .callout__title {
+  --flow-space: #{get-space('base')};
+  font-size: get-size('size-3');
+}
+
+.callout__content {
+  max-width: 20rem;
+
+  p {
+    --flow-space: 0.2rem;
+  }
+}
+
+.callout__links {
+  justify-content: end;
+}
+
+.callout__links [role='list'] {
+  margin-block: 0;
+  padding: 0;
+  max-width: 22rem;
+
+  li {
+    padding-inline: 0;
+  }
+
+  li::before {
+    display: none;
+  }
+
+  /// We don't use .repel because we want to hook into global link styles
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    color: currentColor;
+    text-decoration-color: currentColor;
+
+    &:focus {
+      outline-color: currentColor;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: none;
+    }
+
+    svg {
+      flex-shrink: 0;
+      transform: translateY(0.2ex); // Optical adjustment
+    }
+  }
+}
+
+.callout__branding {
+  @include apply-utility('font', 'brand');
+
+  svg {
+    flex-shrink: 0;
+    transform: translateY(-0.2ex); // Optical adjustment
+  }
+}

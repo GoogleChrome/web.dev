@@ -1,0 +1,60 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/status-list
+.status-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-inline-start: 25px;
+  }
+
+  li + li {
+    margin-block-start: 0.5em;
+  }
+
+  a {
+    color: currentColor;
+  }
+
+  /// The cross is the default icon
+  li::before,
+  li::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: get-utility-value('color', 'state-bad-text');
+    position: absolute;
+    inset: 50% 0 0 0;
+  }
+
+  li::before {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  li::after {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  /// The default state, by proxy, is good, but it results in simpler
+  /// code if we start with a cross, then modify that to become a checkmark
+  &:not([data-state='bad']) {
+    li::before,
+    li::after {
+      background: get-utility-value('color', 'state-good-text');
+    }
+
+    /// These rather magic numbers convert that cross alignment
+    /// to a check alignment instead
+    li::before {
+      width: 9px;
+      transform: rotate(45deg);
+      inset: 16px 0 0 -2px;
+    }
+
+    li::after {
+      inset: 50% 0 0 3px;
+    }
+  }
+}

@@ -75,7 +75,7 @@ This is an example of a detached window. The popup window was closed, but our co
 to it that prevents the browser from being able to destroy it and reclaim that memory.
 
 When a page calls `window.open()` to create a new browser window or tab, a
-[`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) object is returned that
+[`Window`](https://developer.mozilla.org/docs/Web/API/Window) object is returned that
 represents the window or tab. Even after such a window has been closed or the user has navigated it
 away, the `Window` object returned from `window.open()` can still be used to access information
 about it. This is one type of detached window: because JavaScript code can still potentially access
@@ -83,12 +83,12 @@ properties on the closed `Window` object, it must be kept in memory. If the wind
 JavaScript objects or iframes, that memory can't be reclaimed until there are no remaining
 JavaScript references to the window's properties.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline width="878" class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline width="878">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-window.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Using Chrome DevTools to demonstrate how it's possible to retain a document after a window has
     been closed.
   </figcaption>
@@ -101,12 +101,12 @@ iframe's `contentWindow` or `contentDocument` even if the iframe is removed from
 changes, which prevents the document from being garbage collected since its properties can still be
 accessed.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline width="615" class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline width="615">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-iframe.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-iframe.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Demonstration of how an event handler can retain an iframe's document, even after navigating the
     iframe to a different URL.
   </figcaption>
@@ -152,12 +152,12 @@ clean up any references to the document. The `nextSlide()` function is still "li
 bound as a click handler in our main page, and the fact that `nextSlide` contains a reference to
 `notesWindow` means the window is still referenced and can't be garbage collected.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/animation.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/animation.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Illustration of how references to a window prevent it from being garbage collected once closed.
   </figcaption>
 </figure>
@@ -216,17 +216,15 @@ prevent the inspected objects from being garbage collected. To that end, it's us
 tools that specifically avoid introducing this possibility.
 
 A great place to start debugging memory problems is to
-[take a heap snapshot](https://developers.google.com/web/tools/chrome-devtools/memory-problems#discover_detached_dom_tree_memory_leaks_with_heap_snapshots).
+[take a heap snapshot](https://developer.chrome.com/docs/devtools/memory-problems/#discover_detached_dom_tree_memory_leaks_with_heap_snapshots).
 This provides a point-in-time view into the memory currently used by an application - all the
 objects that have been created but not yet garbage-collected. Heap snapshots contain useful
 information about objects, including their size and a list of the variables and closures that
 reference them.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./heap-snapshot.png" width="762"
-       alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain
-       a large object.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4tBcZ7lZEqkmonijrOGa.png", alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain a large object.", width="762", height="419" %}
+  <figcaption>
     A heap snapshot showing the references that retain a large object.
   </figcaption>
 </figure>
@@ -235,12 +233,12 @@ To record a heap snapshot, head over to the **Memory** tab in Chrome DevTools an
 Snapshot** in the list of available profiling types. Once the recording has finished, the
 **Summary** view shows current objects in-memory, grouped by constructor.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline width="640" class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline width="640">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/take-heap-snapshot.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/take-heap-snapshot.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Demonstration of taking a heap snapshot in Chrome DevTools.
   </figcaption>
 </figure>
@@ -262,12 +260,9 @@ Heap snapshots provide a high level of detail and are excellent for figuring out
 but taking a heap snapshot is a manual process. Another way to check for memory leaks is to obtain
 the currently used JavaScript heap size from the [`performance.memory` API][performance-memory-api]:
 
-<figure class="w-figure">
-  <img src="./performance-memory.png"
-       class="w-screenshot"
-       alt="A screenshot of a section of the Chrome DevTools user interface."
-       width="621">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIypz58ucRgAnnNu1LwR.png", alt="A screenshot of a section of the Chrome DevTools user interface.", width="621", height="394" %}
+  <figcaption>
     Checking the used JS heap size in DevTools as a popup is created, closed and unreferenced.
   </figcaption>
 </figure>
@@ -353,7 +348,7 @@ both cases, the browser fires an `pagehide` event to signal that the document is
 {% Aside 'caution' %}
 There's another event called`unload` which is similar to`pagehide` but is considered harmful and
 should be avoided as much as possible. See
-[Legacy lifecycle APIs to avoid: the unload event](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event)
+[Legacy lifecycle APIs to avoid: the unload event](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event)
 for details.
 {% endAside %}
 
@@ -404,9 +399,9 @@ let timer = setInterval(() => {
 
 {% Aside %}
 `WeakRef` is a new feature of the JavaScript language,
-[available in desktop Firefox since version 79](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility)
+[available in desktop Firefox since version 79](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility)
 and
-[Chromium-based browsers since version 84](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility).
+[Chromium-based browsers since version 84](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility).
 Since it's not yet widely-supported, this solution is better suited to tracking down and debugging
 issues rather than fixing them for production.
 {% endAside %}
@@ -537,10 +532,10 @@ Hopefully some of the suggestions in this article help with finding and fixing m
 have another technique for debugging detached windows or this article helped uncover leaks in your
 app, I'd love to know! You can find me on Twitter [@\_developit](https://twitter.com/_developit).
 
-[performance-memory-api]: https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory
-[performance-measurememory]: https://web.dev/monitor-total-page-memory-usage/
-[postmessage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+[performance-memory-api]: https://developer.mozilla.org/docs/Web/API/Performance/memory
+[performance-measurememory]: /monitor-total-page-memory-usage/
+[postmessage]: https://developer.mozilla.org/docs/Web/API/Window/postMessage
 [finalizationregistry]: https://v8.dev/features/weak-references#:~:text=FinalizationRegistry
-[weakref]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef
-[noopener]: https://developer.mozilla.org/en-US/docs/Web/API/Window/open#noopener
-[rel-noopener]: https://web.dev/external-anchors-use-rel-noopener/
+[weakref]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef
+[noopener]: https://developer.mozilla.org/docs/Web/API/Window/open#noopener
+[rel-noopener]: https://developer.chrome.com/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/

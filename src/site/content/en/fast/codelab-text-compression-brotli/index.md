@@ -73,7 +73,9 @@ You can determine which compression algorithm is used via the `Content-Encoding`
 field in the Chrome Developer Tools Network tab (`Command+Option+I` or
 `Ctrl+Alt+I`):
 
-{% Img src="image/admin/ZddI1FFjEckeO8mabgYl.png", alt="Network panel", width="800", height="136", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/ZddI1FFjEckeO8mabgYl.png", alt="Network panel", width="800", height="136" %}
+</figure>
 
 ## Enabling Brotli
 
@@ -134,19 +136,21 @@ var shrinkRay = require('shrink-ray');
 
 And add it as a middleware before `express.static` is mounted:
 
-```js/6
+```js/4
 //...
 var app = express();
 
-app.use(express.static('public'));
-
 // compress all requests
 app.use(shrinkRay());
+
+app.use(express.static('public'));
 ```
 
 Now reload the app, and take a look at the bundle size in the Network panel:
 
-{% Img src="image/admin/KXDWBC6aH4o6MVJvBu8X.png", alt="Bundle size with dynamic Brotli compression", width="724", height="97", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/KXDWBC6aH4o6MVJvBu8X.png", alt="Bundle size with dynamic Brotli compression", width="724", height="97" %}
+</figure>
 
 You can now see `brotli` is applied from `bz` in the `Content-Encoding` header.
 `main.bundle.js` is reduced from **225 KB to 53.1 KB**! This is ~14% smaller
@@ -205,24 +209,24 @@ var BrotliPlugin = require('brotli-webpack-plugin');
 
 And include it within the plugins array:
 
-<pre>
+```js/4-7
 module.exports = {
   // ...
   plugins: [
     // ...
-    <strong>new BrotliPlugin({
+    new BrotliPlugin({
       asset: '[file].br',
       test: /\.(js)$/
-    })</strong>
+    })
   ]
 },
-</pre>
+```
 
-The following arguments are used in the plugin array:
+The plugin array uses the following arguments:
 +  `asset`: The target asset name.
-+  `[file]` is replaced with the original asset file name
-+  `test`: All assets that match this RegExp (i.e. javascript assets ending in
-   `.js`) are processed
++  `[file]` is replaced with the original asset file name.
++  `test`: All assets that match this RegExp (that is, JavaScript assets ending in
+   `.js`) are processed.
 
 For example, `main.js` would be renamed to `main.js.br`.
 
@@ -240,7 +244,9 @@ cd public
 ls -lh
 ```
 
-{% Img src="image/admin/GOlRrAhdDWO7yi7Bm1Pg.png", alt="Bundle size with static Brotli compression", width="489", height="133", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/GOlRrAhdDWO7yi7Bm1Pg.png", alt="Bundle size with static Brotli compression", width="489", height="133" %}
+</figure>
 
 The brotli compressed version of the bundle, `main.bundle.js.br`, is now saved
 here as well and is **~76% smaller in size** (225 KB vs. 53 KB) than
@@ -250,20 +256,20 @@ Next, tell the server to send these brotli-compressed files whenever their
 original JS versions are being requested. This can be done by defining a new
 route in `server.js` before the files are served with `express.static`.
 
-<pre>
+```js/4-9
 var express = require('express');
 
 var app = express();
 
-<strong>app.get('*.js', (req, res, next) => {
+app.get('*.js', (req, res, next) => {
   req.url = req.url + '.br';
   res.set('Content-Encoding', 'br');
   res.set('Content-Type', 'application/javascript; charset=UTF-8');
   next();
-});</strong>
+});
 
 app.use(express.static('public'));
-</pre>
+```
 
 `app.get` is used to tell the server how to respond to a `GET` request for a
 specific endpoint. A callback function is then used to define how to handle this
@@ -299,10 +305,11 @@ app.get('*.js', (req, res, next) => {
 app.use(express.static('public'));
 ```
 
-
 Once the app reloads, take a look at the Network panel once more.
 
-{% Img src="image/admin/2rJrkqLzWt3MT4XxNsYn.png", alt="Bundle size of 53.1 KB (from 225KB)", width="724", height="97", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/2rJrkqLzWt3MT4XxNsYn.png", alt="Bundle size of 53.1 KB (from 225KB)", width="724", height="97" %}
+</figure>
 
 Success! You have used Brotli compression to further compress your assets!
 

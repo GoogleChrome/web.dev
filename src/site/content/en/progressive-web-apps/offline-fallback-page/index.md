@@ -5,7 +5,7 @@ authors:
   - thomassteiner
   - petelepage
 date: 2020-09-24
-updated: 2021-02-22
+updated: 2022-06-15
 description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
@@ -18,30 +18,30 @@ Slack, or launch Zoom. You might not get anything particularly meaningful or eve
 be unable to achieve what you wanted to achieve, but at least you get _something_ and the app is in
 control.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-apps-wrapper">
+<figure role="group" aria-labelledby="fig-apps-wrapper">
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-assistant" style="display: inline-block">
-    <img src="assistant.jpg" alt="Google Assistant mobile app while offline." width="200">
-    <figcaption class="w-figcaption" id="fig-assistant">
+  <figure role="group" aria-labelledby="fig-assistant" style="display: inline-block">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="Google Assistant mobile app while offline.", width="621", height="1344" %}
+    <figcaption id="fig-assistant">
       Google Assistant.
     </figcaption>
   </figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-slack" style="display: inline-block">
-    <img src="slack.jpg" alt="Slack mobile app while offline." width="200">
-    <figcaption class="w-figcaption" id="fig-slack">
+  <figure role="group" aria-labelledby="fig-slack" style="display: inline-block">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="Slack mobile app while offline.", width="621", height="1344" %}
+    <figcaption id="fig-slack">
       Slack.
     </figcaption>
   </figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-zoom" style="display: inline-block">
-    <img src="zoom.jpg" alt="Zoom mobile app while offline." width="200">
-    <figcaption class="w-figcaption" id="fig-zoom">
+  <figure role="group" aria-labelledby="fig-zoom" style="display: inline-block">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="Zoom mobile app while offline.", width="621", height="1344" %}
+    <figcaption id="fig-zoom">
       Zoom.
     </figcaption>
   </figure>
 
-  <figcaption class="w-figcaption" id="fig-apps-wrapper">
+  <figcaption id="fig-apps-wrapper">
     With platform-specific apps, even when you do not have a network connection, you never get nothing.
   </figcaption>
 
@@ -50,23 +50,23 @@ control.
 In contrast, on the Web, traditionally you get nothing when you are offline. Chrome gives you
 the [offline dino game](https://www.blog.google/products/chrome/chrome-dino/), but that is it.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper">
+<figure role="group" aria-labelledby="fig-offline-wrapper">
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">
-    <img src="chrome-ios.png" alt="Google Chrome mobile app showing the offline dino game." width="200">
-    <figcaption class="w-figcaption" id="fig-chrome-ios">
+  <figure role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="Google Chrome mobile app showing the offline dino game.", width="800", height="1731" %}
+    <figcaption id="fig-chrome-ios">
       Google Chrome for iOS.
     </figcaption>
   </figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome" style="display: inline-block">
-    <img src="chrome.png" alt="Google Chrome desktop app showing the offline dino game." width="500">
-    <figcaption class="w-figcaption" id="fig-chrome">
+  <figure role="group" aria-labelledby="fig-chrome" style="display: inline-block">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="Google Chrome desktop app showing the offline dino game.", width="800", height="607" %}
+    <figcaption id="fig-chrome">
       Google Chrome for macOS.
     </figcaption>
   </figure>
 
-  <figcaption class="w-figcaption" id="fig-offline-wrapper">
+  <figcaption id="fig-offline-wrapper">
     On the Web, when you do not have a network connection, by default you get nothing.
   </figcaption>
 
@@ -81,9 +81,9 @@ that the user is currently offline, but it can just as well be a more creative s
 example, the famous [trivago offline maze game](https://www.trivago.com/offline) with a manual
 **Reconnect** button and an automatic reconnection attempt countdown.
 
-<figure class="w-figure">
-    <img src="trivago.png" alt="The trivago offline page with the trivago offline maze." width="500">
-    <figcaption class="w-figcaption">
+<figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="The trivago offline page with the trivago offline maze.", width="800", height="616" %}
+    <figcaption>
       The trivago offline maze.
     </figcaption>
   </figure>
@@ -91,7 +91,7 @@ example, the famous [trivago offline maze game](https://www.trivago.com/offline)
 ### Registering the service worker
 
 The way to make this happen is through a service worker. You can register a service worker
-from your main page like in the code sample below. Usually you do this once
+from your main page as in the code sample below. Usually you do this once
 your app has loaded.
 
 ```js
@@ -106,7 +106,7 @@ window.addEventListener("load", () => {
 
 The contents of the actual service worker file may seem a little involved at first sight, but the
 comments in the sample below should clear things up. The core idea is to pre-cache a file named
-`offline.html` that gets only served on _failing_ navigation requests, and to let the browser handle
+`offline.html` that only gets served on _failing_ navigation requests, and to let the browser handle
 all other cases:
 
 ```js
@@ -125,6 +125,9 @@ Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
 
 // Incrementing OFFLINE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
+// This variable is intentionally declared and unused.
+// Add a comment for your linter if you want:
+// eslint-disable-next-line no-unused-vars
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = "offline";
 // Customize this with a different URL if needed.
@@ -134,9 +137,9 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
-      // Setting {cache: 'reload'} in the new request will ensure that the
-      // response isn't fulfilled from the HTTP cache; i.e., it will be from
-      // the network.
+      // Setting {cache: 'reload'} in the new request ensures that the
+      // response isn't fulfilled from the HTTP cache; i.e., it will be
+      // from the network.
       await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
     })()
   );
@@ -160,13 +163,14 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  // We only want to call event.respondWith() if this is a navigation request
+  // Only call event.respondWith() if this is a navigation request
   // for an HTML page.
   if (event.request.mode === "navigate") {
     event.respondWith(
       (async () => {
         try {
-          // First, try to use the navigation preload response if it's supported.
+          // First, try to use the navigation preload response if it's
+          // supported.
           const preloadResponse = await event.preloadResponse;
           if (preloadResponse) {
             return preloadResponse;
@@ -176,8 +180,8 @@ self.addEventListener("fetch", (event) => {
           const networkResponse = await fetch(event.request);
           return networkResponse;
         } catch (error) {
-          // catch is only triggered if an exception is thrown, which is likely
-          // due to a network error.
+          // catch is only triggered if an exception is thrown, which is
+          // likely due to a network error.
           // If fetch() returns a valid HTTP response with a response code in
           // the 4xx or 5xx range, the catch() will NOT be called.
           console.log("Fetch failed; returning offline page instead.", error);
@@ -190,11 +194,12 @@ self.addEventListener("fetch", (event) => {
     );
   }
 
-  // If our if() condition is false, then this fetch handler won't intercept the
-  // request. If there are any other fetch handlers registered, they will get a
-  // chance to call event.respondWith(). If no fetch handlers call
-  // event.respondWith(), the request will be handled by the browser as if there
-  // were no service worker involvement.
+  // If our if() condition is false, then this fetch handler won't
+  // intercept the request. If there are any other fetch handlers
+  // registered, they will get a chance to call event.respondWith().
+  // If no fetch handlers call event.respondWith(), the request
+  // will be handled by the browser as if there were no service
+  // worker involvement.
 });
 ```
 
@@ -203,7 +208,7 @@ self.addEventListener("fetch", (event) => {
 The `offline.html` file is where you can get creative and adapt it to your needs and add your
 branding. The example below shows the bare minimum of what is possible.
 It demonstrates both manual reload based on a button press as well as automatic reload
-based on the [`online` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event)
+based on the [`online` event](https://developer.mozilla.org/docs/Web/API/Window/online_event)
 and regular server polling.
 
 {% Aside 'gotchas' %} You need to cache all resources required by your offline page. One
@@ -253,7 +258,7 @@ do in the example below. {% endAside %}
       document.querySelector("button").addEventListener("click", () => {
         window.location.reload();
       });
-      
+
       // Listen to changes in the network state, reload when online.
       // This handles the case when the device is completely offline.
       window.addEventListener('online', () => {
@@ -302,14 +307,14 @@ Glitch.
 ### Side note on making your app installable
 
 Now that your site has an offline fallback page, you might wonder about next steps. To make
-your app installable, you need to add a [Web App Manifest](/add-manifest/) and optionally come up
+your app installable, you need to add a [web app manifest](/add-manifest/) and optionally come up
 with an [install strategy](/define-install-strategy/).
 
 ### Side note on serving an offline fallback page with Workbox.js
 
-You may have heard of [Workbox.js](https://developers.google.com/web/tools/workbox).
-Workbox.js is a set of JavaScript libraries for adding offline support to web apps. If you prefer to
-write less service worker code yourself, you can use the Workbox.js recipe for an
-[offline page only](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only).
+You may have heard of [Workbox](https://developer.chrome.com/docs/workbox/).
+Workbox is a set of JavaScript libraries for adding offline support to web apps. If you prefer to
+write less service worker code yourself, you can use the Workbox recipe for an
+[offline page only](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only).
 
 Up next, learn [how to define an install strategy](/define-install-strategy/) for your app.

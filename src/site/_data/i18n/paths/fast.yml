@@ -1,45 +1,144 @@
 title:
   en: Fast load times
+  es: Tiempos de carga rápidos
+  ja: 読み込み時間の高速化
+  ko: 빠른 로드 시간
+  pt: Tempos de carregamento rápidos
+  ru: Ускорение загрузки
+  zh: 快速加载
 
 description:
   en: Techniques for improving site performance.
+  es: Técnicas para mejorar el rendimiento del sitio.
+  ja: サイトのパフォーマンスを改善するための技術。
+  ko: 사이트 성능을 높이기 위한 기술.
+  pt: Técnicas para melhorar o desempenho do site.
+  ru: Приемы для повышения производительности сайта.
+  zh: 提升网站性能的技术。
 
 overview:
   en: When you're building a modern web experience, it's important to measure, optimize, and monitor if you're to get fast and stay fast. Performance plays a significant role in the success of any online venture, as high performing sites engage and retain users better than poorly performing ones. Sites should focus on optimizing for user-centric happiness metrics. Tools like Lighthouse (baked into web.dev!) highlight these metrics and help you take the right steps toward improving your performance. To "stay fast", set and enforce performance budgets to help your team work within the constraints needed to continue loading fast and keeping users happy after your site has launched.
+  es: Cuando se crea una experiencia web moderna, es importante medir, optimizar y monitorear si se quiere ser rápido y mantenerse rápido. El rendimiento juega un papel importante en el éxito de cualquier empresa en línea, ya que los sitios de alto rendimiento atraen y retienen a los usuarios mejor que los de bajo rendimiento. Los sitios deben centrarse en optimizar las métricas de felicidad centradas en el usuario. Herramientas como Lighthouse (¡integrada en web.dev!) destacan estas métricas le ayudan a tomar las medidas adecuadas para mejorar su rendimiento. Para "mantenerse rápido", establezca y haga cumplir presupuestos de rendimiento para ayudar a su equipo a trabajar dentro de las limitaciones necesarias para seguir cargando rápido y mantener a los usuarios contentos después del lanzamiento de su sitio.
+  ja: 最新の Web エクスペリエンスを構築する際に高速化を行い、高速化を維持するためには、測定、最適化、監視が重要となります。パフォーマンスの高いサイトではパフォーマンスの低いサイトに比べてユーザーの活動がより活発になり、そしてその活動がより長く維持されるようになるため、Web ベンチャーが成功を収めるためにはパフォーマンスが重要な役割を果たします。サイトは、ユーザーの満足度を中心とした指標に重点を置いて最適化が行われる必要があります。これらの指標を確認し、パフォーマンスを向上させるために必要な正しい手順を進めるためには、(web.dev に組み込まれている) Lighthouse などのツールが役に立ちます。"高速化を維持する" ためには、パフォーマンスバジェットを設定して適用し、高速化した読み込み速度やユーザーにとっての高い使用感を維持していくために必要な制約の中でサイトの公開後もチームが作業を行うようにしましょう。
+  ko: 최신 웹 경험을 구축할 때는 속도를 높이고 빠르게 유지할 수 있는지 측정하고 이를 최적화 및 모니터링하는 것이 중요합니다. 성능이 저조한 사이트보다 성능이 좋은 사이트가 사용자를 더 잘 유도하고 유지하기 때문에 성능은 모든 온라인 도전의 성공에 중요한 역할을 합니다. 사용자 중심의 만족도 메트릭을 최적화하는 데 사이트 개발의 중점을 두어야 합니다. Lighthouse와 같은 도구(web.dev에 포함됨!)는 이러한 메트릭을 중요하게 부각시키고 성능 향상을 위한 올바른 단계를 거치도록 도움을 줍니다. "빠르게 유지"하려면 사이트가 시작된 후에도 계속 빠르게 로드하고 사용자를 만족스럽게 유지하는 데 필요한 제약 조건 내에서 팀이 작업할 수 있도록 성능 예산을 수립하고 실행하세요.
+  pt: Quando voce está criando uma experiência web moderna, é importante medir, otimizar e monitorar se você deseja ter velocidade e mantê-la. O desempenho tem um papel significativo no sucesso de qualquer empreendimento online, pois sites de alto desempenho envolvem e retêm melhor os usuários que os de baixo desempenho. Os sites devem se concentrar na otimização de métricas de felicidade centradas no usuário. Ferramentas como Lighthouse (incorporada ao web.dev!) destacam essas métricas e ajudam você a tomar as medidas certas para melhorar seu desempenho. Para "permanecer rápido", defina e imponha orçamentos de desempenho para ajudar sua equipe a trabalhar dentro das restrições necessárias para continuar carregando rapidamente e mantendo seus usuários satisfeitos depois do lançamento do seu site.
+  ru: При создании современного веб-проекта необходимо уделять много внимания измерениям, оптимизации и мониторингу, чтобы обеспечить высокую скорость работы. Производительность играет важную роль в успехе любого онлайн-проекта, так как высокопроизводительные сайты лучше привлекают и удерживают внимание пользователей. Разработчикам сайтов следует сосредоточиться на повышении показателей пользовательского счастья. Такие инструменты, как Lighthouse (доступен на web.dev), выделяют эти показатели и помогают предпринять нужные шаги для улучшения результата. Чтобы сайт оставался быстрым, установите бюджеты производительности и следите за их соблюдением, чтобы ваша команда не выходила за рамки допустимого времени загрузки страниц и ваши пользователи оставались удовлетворенными, после того как сайт будет запущен.
+  zh: 在构建现代网络体验时，如果您希望获得快速的体验并加以维持，那么对网站进行衡量、优化和监控就显得至关重要。性能对于任何线上项目的成功都起着重要作用，因为高性能网站比性能欠佳的网站更能吸引和留住用户。网站应该专注于优化以用户为中心的幸福指标。Lighthouse（已内置在 web.dev 中！）等工具可以突出这些指标，并帮助您采取正确的步骤来提高性能。若想“维持快速的体验”，请设置并执行性能预算来帮助您的团队在所需的限制条件内工作，从而在您的网站推出后继续提供快速的加载体验并让用户满意。
 
 topics:
   introduction:
     en: Introduction
+    es: Introducción
+    ja: はじめに
+    ko: 소개
+    pt: Introdução
+    ru: Введение
+    zh: 介绍
+
+  core_web_vitals:
+    en: Core Web Vitals
+    es: Core Web Vitals
+    ja: Core Web Vitals
+    ko: Core Web Vitals
+    pt: Core Web Vitals
+    ru: Core Web Vitals
+    zh: Core Web Vitals
 
   set_performance_budgets:
     en: Set performance budgets
+    es: Definir los presupuestos de rendimiento
+    ja: パフォーマンスバジェットを設定する
+    ko: 성능 예산 수립
+    pt: Defina orçamentos de desempenho
+    ru: Установка бюджетов производительности
+    zh: 设置性能预算
 
   optimize_your_images:
     en: Optimize your images
+    es: Optimizar sus imágenes
+    ja: 画像を最適化する
+    ko: 이미지 최적화
+    pt: Otimize suas imagens
+    ru: Оптимизация изображений
+    zh: 优化图片
 
   lazy_load_images_and_video:
     en: Lazy-load images and video
+    es: Carga diferida de imágenes y videos
+    ja: 画像や動画の遅延読み込みを設定する
+    ko: 이미지 및 비디오 지연 로드
+    pt: Use carregamento adiado (lazy loading) de imagens e vídeos
+    ru: Отложенная загрузка изображений и видео
+    zh: 延迟加载图片和视频
 
   optimize_your_javascript:
     en: Optimize your JavaScript
+    es: Optimizar su JavaScript
+    ja: JavaScript を最適化する
+    ko: JavaScript 최적화
+    pt: Otimize seu JavaScript
+    ru: Оптимизация JavaScript-кода
+    zh: 优化 JavaScript
 
   optimize_your_resource_delivery:
     en: Optimize your resource delivery
+    es: Optimizar la entrega de recursos
+    ja: リソースの配信を最適化する
+    ko: 리소스 전달 최적화
+    pt: Otimize a entrega de recursos
+    ru: Оптимизация доставки ресурсов
+    zh: 优化资源交付
 
   optimize_your_css:
     en: Optimize your CSS
+    es: Optimizar su CSS
+    ja: CSS を最適化する
+    ko: CSS 최적화
+    pt: Otimize seu CSS
+    ru: Оптимизация CSS
+    zh: 优化 CSS
 
   optimize_your_third_party_resources:
     en: Optimize your third-party resources
+    es: Optimizar recursos de terceros
+    ja: サードパーティ製リソースを最適化する
+    ko: 타사 리소스 최적화
+    pt: Otimize recursos de terceiros
+    ru: Оптимизация сторонних ресурсов
+    zh: 优化第三方资源
 
   optimize_webfonts:
     en: Optimize WebFonts
+    es: Optimizar WebFonts
+    ja: Web フォントを最適化する
+    ko: WebFonts 최적화
+    pt: Otimize WebFonts
+    ru: Оптимизация веб-шрифтов
+    zh: 优化网络字体
 
   optimize_for_network_quality:
     en: Optimize for network quality
+    es: Optimizar la calidad de la red
+    ja: ネットワーク品質の最適化
+    ko: 네트워크 품질 최적화
+    pt: Otimize visando a qualidade da rede
+    ru: Оптимизация с учетом качества соединения
+    zh: 针对网络质量优化
 
   measure_performance_in_the_field:
     en: Measure performance in the field
+    es: Medir el rendimiento en el campo
+    ja: 実際のユーザー環境でパフォーマンスを測定する
+    ko: 현장에서 성능 측정
+    pt: Meça o desempenho em campo
+    ru: Измерение производительности в полевых условиях
+    zh: 对性能进行实测
 
   build_a_performance_culture:
     en: Build a performance culture
+    es: Crea una cultura del rendimiento
+    ja: パフォーマンス文化を築き上げる
+    ko: 성과를 장려하는 문화 수립
+    pt: Construa uma cultura de desempenho
+    ru: Создание культуры производительности
+    zh: 建立性能文化

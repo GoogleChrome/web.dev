@@ -1,0 +1,27 @@
+setLeader: Test your knowledge of gradients
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: What is the *minimum* number of colors required to create a gradient?
+    options:
+      - content: "1"
+        rationale: "Try again!"
+      - content: "2"
+        rationale: "They could be the same color and appear solid, but yes, at
+        least 2 colors are required."
+      - content: "3"
+        rationale: "Try again!"
+      - content: "4"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: Elements can have multiple gradients as a background?
+    options:
+      - content: "True"
+        rationale: "The `background-image` property allows many gradients, just
+        separate them with a comma."
+      - content: "False"
+        rationale: "Oh, but they can!"

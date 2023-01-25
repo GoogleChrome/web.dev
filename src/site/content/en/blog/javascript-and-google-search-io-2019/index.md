@@ -12,7 +12,7 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - seo
-  - discoverability
+  # - discoverability
   - javascript
 ---
 
@@ -34,9 +34,9 @@ In this post we'll focus on best practices for making JavaScript web apps discov
 
 This year we announced the much-awaited [new evergreen Googlebot](https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/q6RSuwuwLT7mcgE9Joqp.png", alt="Googlebot holding the Chrome logo", width="400", height="401" %}
-  <figcaption class="w-figcaption">Googlebot is now running a modern Chromium rendering engine.</figcaption>
+  <figcaption>Googlebot is now running a modern Chromium rendering engine.</figcaption>
 </figure>
 
 Googlebot now uses a modern Chromium engine to render websites for Google Search. On top of that, we will test newer versions of Chromium to _keep_ Googlebot updated, usually within a few weeks of each stable Chrome release. This announcement is big news for web developers and SEOs because it marks the arrival of [1000+ new features](https://caniuse.com/#compare=chrome+41,chrome+74)—such as ES6+, `IntersectionObserver`, and Web Components v1—in Googlebot.
@@ -45,9 +45,9 @@ Googlebot now uses a modern Chromium engine to render websites for Google Search
 
 Googlebot is a pipeline with several components. Let's take a look to understand how Googlebot indexes pages for Google Search.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img src="image/admin/zu4wDqHHxpU0dbwSajqA.png", alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content.", width="800", height="446" %}
-  <figcaption class="w-figcaption">Googlebot's pipeline for crawling, rendering, and indexing a page.</figcaption>
+  <figcaption>Googlebot's pipeline for crawling, rendering, and indexing a page.</figcaption>
 </figure>
 
 The process works like this:
@@ -111,12 +111,12 @@ The default rendering strategy for single-page apps today is client-side renderi
 
 Let's look at a web app that shows a collection of cat images and uses JavaScript to render entirely in the browser.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/lzijYVwo1DPX3Fa2liXk.png", alt="A code box showing HTML that loads some scripts. A screenshot of a web page on mobile that shows placeholder images while loading the actual content.", width="800", height="447" %}
-  <figcaption class="w-figcaption">The rendering strategy influences the performance and robustness of your web apps.</figcaption>
+  <figcaption>The rendering strategy influences the performance and robustness of your web apps.</figcaption>
 </figure>
 
-If you're free to choose your rendering strategy, consider server-side rendering or pre-rendering. They execute JavaScript on the server to generate the initial HTML content, which can improve performance for both users and crawlers. These strategies allow the browser to start rendering HTML as it arrives over the network, making the page load faster.  The [rendering session at I/O](https://www.youtube.com/watch?v=k-A2VfuUROg)  or [the blog post about rendering on the web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) shows how server-side rendering and hydration can improve the performance and user experience of web apps and provides more code examples for these strategies.
+If you're free to choose your rendering strategy, consider server-side rendering or pre-rendering. They execute JavaScript on the server to generate the initial HTML content, which can improve performance for both users and crawlers. These strategies allow the browser to start rendering HTML as it arrives over the network, making the page load faster.  The [rendering session at I/O](https://www.youtube.com/watch?v=k-A2VfuUROg)  or [the blog post about rendering on the web](/rendering-on-the-web/) shows how server-side rendering and hydration can improve the performance and user experience of web apps and provides more code examples for these strategies.
 
 If you're looking for a workaround to help crawlers that don't execute JavaScript—or if you can't make changes to your frontend codebase—consider [dynamic rendering](https://developers.google.com/search/docs/guides/dynamic-rendering), which you can try out in [this codelab](https://codelabs.developers.google.com/codelabs/dynamic-rendering). Note, though, that you won't get the user experience or performance benefits that you would with server-side rendering or pre-rendering because dynamic rendering only serves static HTML to crawlers. That makes it a stop-gap rather than a long-term strategy.
 
@@ -126,29 +126,29 @@ While most pages generally work fine with Googlebot, we recommend testing your p
 
 The easiest way to do a quick check of a page is the [Mobile-Friendly Test](https://g.co/mobilefriendly). Besides showing you issues with mobile-friendliness, it also gives you a screenshot of the above-the-fold content and the rendered HTML as Googlebot sees it.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/15IgtDchchBvLsVyzmG2.png", alt="The mobile-friendly test shows the rendered HTML Googlebot sees after rendering the page", width="800", height="414" %}
-  <figcaption class="w-figcaption">The mobile-friendly test shows you the rendered HTML Googlebot uses.</figcaption>
+  <figcaption>The mobile-friendly test shows you the rendered HTML Googlebot uses.</figcaption>
 </figure>
 
 You can also find out if there are resource loading issues or JavaScript errors.
 
-<figure class="w-figure">
-  {% Img src="image/admin/22ttektRnHrbGT0zvbHK.png", alt="The Mobile-Friendly Test shows JavaScript errors and a stack trace.", width="800", height="414", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/22ttektRnHrbGT0zvbHK.png", alt="The Mobile-Friendly Test shows JavaScript errors and a stack trace.", width="800", height="414" %}
 </figure>
 
 It's recommended to verify your domain in [Google Search Console](https://g.co/searchconsole) so you can use the URL inspection tool to find out more about the crawling and indexing state of a URL, receive messages when Search Console detects issues and find out more details of how your site performs in Google Search.
 
-<figure class="w-figure">
-  {% Img src="image/admin/JYsPy8FXL3E86gCzekQ3.png", alt="The URL inspection tool showing a page that is indexed with information on discovery, crawling and indexing for one URL", width="800", height="655", class="w-screenshot" %}
-  <figcaption class="w-figcaption">The URL Inspection Tool in Search Console shows the status of a page in crawling, rendering, and indexing.</figcaption>
+<figure>
+  {% Img src="image/admin/JYsPy8FXL3E86gCzekQ3.png", alt="The URL inspection tool showing a page that is indexed with information on discovery, crawling and indexing for one URL", width="800", height="655" %}
+  <figcaption>The URL Inspection Tool in Search Console shows the status of a page in crawling, rendering, and indexing.</figcaption>
 </figure>
 
 For general SEO tips and guidance, you can use the SEO audits in Lighthouse. To integrate SEO audits into your testing suite, use the [Lighthouse CLI](https://github.com/GoogleChrome/lighthouse/tree/master/lighthouse-cli) or the [Lighthouse CI bot](https://github.com/GoogleChromeLabs/lighthousebot).
 
-<figure class="w-figure">
-  {% Img src="image/admin/ctch0ql8UQZiaKaWy34u.png", alt="A lighthouse SEO report with a score of 44 and warnings about mobile-friendliness as well as warnings about content best practices", width="800", height="443", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Lighthouse shows general SEO recommendations for a page.</figcaption>
+<figure>
+  {% Img src="image/admin/ctch0ql8UQZiaKaWy34u.png", alt="A lighthouse SEO report with a score of 44 and warnings about mobile-friendliness as well as warnings about content best practices", width="800", height="443" %}
+  <figcaption>Lighthouse shows general SEO recommendations for a page.</figcaption>
 </figure>
 
 These tools help you identify, debug, and fix issues with pages in Google Search and should be part of your development routine.

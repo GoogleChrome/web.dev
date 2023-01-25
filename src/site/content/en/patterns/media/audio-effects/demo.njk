@@ -1,0 +1,55 @@
+---
+patternId: media/audio-effects
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔉</text></svg>"
+    />
+    <title>How to add effects to audio</title>
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to add effects to audio</h1>
+    <button type="button">Press to hear audio effect</button>
+    {% set script %}
+      const button = document.querySelector('button');
+      button.addEventListener('click', () => {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioCtx.createOscillator();
+        oscillator.type = 'sine';
+        // Value is in hertz.
+        oscillator.frequency.setValueAtTime(420, audioCtx.currentTime);
+        const biquadFilter = audioCtx.createBiquadFilter();
+        biquadFilter.type = 'lowpass';
+        biquadFilter.frequency.setValueAtTime(200, audioCtx.currentTime + 1);
+        oscillator.connect(biquadFilter);
+        biquadFilter.connect(audioCtx.destination);
+        oscillator.start();
+        oscillator.stop(2);
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

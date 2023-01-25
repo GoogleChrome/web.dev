@@ -39,9 +39,7 @@ based on their network and hardware constraints, specifically:
 * Progressively adding high-end-only features, if a user's network and hardware
   can handle it.
 
-By optimizing for specific hardware and network constraints you enable every
-user to get the best possible experience for their device. Tailoring the
-experience to users' constraints can include:
+By optimizing for specific hardware and network constraints you enable every user to get the best possible experience for their device. Tailoring the experience to users' constraints can include:
 
 * Serving low-quality images and videos on slow networks.
 
@@ -53,27 +51,30 @@ experience to users' constraints can include:
 
 * Loading non-critical JavaScript for interactivity only on fast CPUs.
 
-## How to implement adaptive loading
+## Browser support and how to implement adaptive loading
 
-The signals you can use for adaptive loading are:
+The signals you can use for adaptive loading are listed below. Browser support is also included for each signal:
 
-* Network—for fine-tuning data transfer to use less bandwidth (via
-  [`navigator.connection.effectiveType`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType)).
-  You can also leverage the user's Data Saver preferences (via
-  [`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data#detecting_the_save-data_setting)).
+### `Navigator.deviceMemory`
 
-* Memory—for reducing memory consumption on low-end devices (via
-  [`navigator.deviceMemory`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory)).
+The [`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory) property is used to reduce memory consumption on low-end devices. {% BrowserCompat 'api.Navigator.deviceMemory' %}
 
-* CPU core count—for limiting costly JavaScript execution and reducing CPU
-  intensive logic when a device can't handle it well (via
-  [`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
+### `Navigator.hardwareConcurrency`
 
+The [`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency) property is the CPU core count. It is used to limit costly JavaScript execution and reduce CPU intensive logic when a device can't handle it well. {% BrowserCompat 'api.Navigator.hardwareConcurrency' %}
+
+### `NetworkInformation.effectiveType`
+
+The [`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType) property is used to fine-tune data transfer to use less bandwidth. {% BrowserCompat 'api.NetworkInformation.effectiveType' %}
+
+### `NetworkInformation.saveData`
+
+The [`navigator.connection.saveData`](/optimizing-content-efficiency-save-data/) property is used to leverage the user's Data Saver preferences. {% BrowserCompat 'http.headers.Save-Data' %}
 
 There are two places where you can make a decision about what to serve to users:
 the client and the server. On the client, you have the JavaScript APIs noted
 above. On the server, you can use [client
-hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints)
+hints](/performance-optimizing-content-efficiency-client-hints/)
 to get insight into the user's device capabilities and the network they're
 connected to.
 
@@ -106,10 +107,10 @@ network effective type changes.
 
 React Adaptive Loading Hooks & Utilities are implemented using web platform APIs
 ([Network
-Information](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API),
-[Device Memory](https://developers.google.com/web/updates/2017/12/device-memory)
+Information](https://developer.mozilla.org/docs/Web/API/Network_Information_API),
+[Device Memory](https://developer.chrome.com/blog/device-memory/)
 and [Hardware
-Concurrency](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
+Concurrency](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
 You can use the same APIs to apply adaptive loading concepts to other frameworks
 and libraries, such as
 [Angular](https://netbasal.com/connection-aware-components-in-angular-3a66bb0bab6f),
@@ -141,11 +142,11 @@ opening your DevTools **Network** panel and looking at the difference in the amo
 of data transferred as you scroll while Save Data is disabled versus when it's
 enabled.
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+  <figure>
+    <video controls autoplay loop muted>
       <source src="https://storage.googleapis.com/web-dev-assets/adaptive-loading-cds-2019/twitter-save-data.mp4" type="video/mp4">
     </video>
-     <figcaption class="w-figcaption">
+     <figcaption>
       A screencast comparing scrolling the Twitter timeline with Data Saver on and off. With Data Saver on, only image previews are loaded and videos don't autoplay.
     </figcaption>
   </figure>
@@ -161,9 +162,7 @@ implemented with [React.lazy() and Suspense](/code-splitting-suspense/) on a
 [demo eBay product
 page](https://github.com/GoogleChromeLabs/adaptive-loading/tree/master/react-ebay-network-aware-code-splitting).
 
-![A diagram of modules shipped for a product page on low-end and high-end
-devices: both versions include "image viewer", while the high-end version
-includes additional "zoom" and "carousel" modules.](adaptive-code-splitting.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gdXBknVxIdd8FcSvIrxw.png", alt="A diagram of modules shipped for a product page on low-end and high-end devices: both versions include \"image viewer\", while the high-end version includes additional \"zoom\" and \"carousel\" modules.", width="800", height="446" %}
 
 Tinder is using a number of adaptive loading patterns in its
 [web](https://medium.com/@addyosmani/a-tinder-progressive-web-app-performance-case-study-78919d98ece0)
@@ -174,12 +173,8 @@ and limit loading the next image in the carousel to loading images one at a time
 as users swipe. After implementing these optimizations, they've seen significant
 improvements in average swipe count in countries such as Indonesia.
 
-<figure class="w-figure">
-  <img src="tinder.png" style="max-width: 75%"
-       alt="A screenshot of two versions of Tinder chat: with autoplaying video and
-            with a video with play button overlay. A screenshot of a Tinder profile with
-            caption 'Limit carousel images on Data Saver or 3G'.
-            A code snippet for prefetching in-viewport videos only on 4G.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N1xJkEMQ9rE513TNm8va.png", alt="A screenshot of two versions of Tinder chat: with autoplaying video and with a video with play button overlay. A screenshot of a Tinder profile with caption 'Limit carousel images on Data Saver or 3G'. A code snippet for prefetching in-viewport videos only on 4G.", width="800", height="445", style="max-width: 75%" %}
 </figure>
 
 ### Adaptive loading at Facebook

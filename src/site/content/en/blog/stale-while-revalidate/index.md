@@ -9,8 +9,8 @@ hero: image/admin/skgQgcT3q8fdBGGNL3o1.jpg
 alt: A photograph of a half-painted wall.
 tags:
   - blog
-  - speed
-  - caching
+  # - speed
+  # - caching
 feedback:
   - api
 ---
@@ -31,7 +31,7 @@ and [Firefox 68](https://bugzilla.mozilla.org/show_bug.cgi?id=1536511).
 
 Browsers that don't support `stale-while-revalidate` will silently ignore that
 configuration value, and use
-[`max-age`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#max-age),
+[`max-age`](/http-cache/#versioned-urls),
 as I'll explain shortly…
 
 ## What's it mean?
@@ -40,7 +40,7 @@ Let's break down `stale-while-revalidate` into two parts: the idea that a cached
 response might be stale, and the process of revalidation.
 
 First, how does the browser know whether a cached response is "stale"? A
-[`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)
+[`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)
 response header that contains `stale-while-revalidate` should also contain
 `max-age`, and the number of seconds specified via `max-age` is what determines
 staleness. Any cached response newer than `max-age` is considered fresh, and
@@ -51,7 +51,7 @@ fulfill a browser's request. From the perspective of `stale-while-revalidate`,
 there's nothing to do in this scenario.
 
 But if the cached response is stale, then another age-based check is performed:
-is the age of the cached response within the window of time covered by the
+is the age of the cached response within the additional time window provided by the
 `stale-while-revalidate` setting?
 
 If the age of a stale response falls into this window, then it will be used to
@@ -122,7 +122,7 @@ the cache with fresher content, without blocking on a network response.
 
 If you've heard of `stale-while-revalidate` chances are that it was in the
 context of
-[recipes](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#stale-while-revalidate)
+[recipes](offline-cookbook/#stale-while-revalidate)
 used within a [service worker](/service-workers-cache-storage/).
 
 Using stale-while-revalidate via a `Cache-Control` header shares some
@@ -137,11 +137,11 @@ whether to implement a service worker-based approach, or just rely on the
 * You're already using a service worker in your web app.
 * You need fine-grained control over the contents of your caches, and want to
   implement something like a least-recently used expiration policy. Workbox's
-  [Cache Expiration](https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration)
+  [Cache Expiration](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/)
   module can help with this.
 * You want to be notified when a stale response changes in the background during
   the revalidation step. Workbox's
-  [Broadcast Cache Update](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)
+  [Broadcast Cache Update](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/)
   module can help with this.
 * You need this `stale-while-revalidate` behavior in all modern browsers.
 
@@ -158,7 +158,7 @@ If you're using a service worker and also have `stale-while-revalidate` enabled
 for some responses via a `Cache-Control` header, then the service worker will,
 in general, have "first crack" at responding to a request. If the service worker
 decides not to respond, or if in the process of generating a response it makes a
-network request using [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API),
+network request using [`fetch()`](https://developer.mozilla.org/docs/Web/API/Fetch_API),
 then the behavior configured via the `Cache-Control` header will end up going
 into effect.
 

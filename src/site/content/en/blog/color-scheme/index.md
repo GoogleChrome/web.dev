@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-04-08
-updated: 2020-06-16
+updated: 2021-10-19
 hero: image/admin/rOe3wxcy28m5DCKcHv7E.jpg
 alt: Pigeons on a wall with a sharp black and white contrast in the background.
 description: |
@@ -17,10 +17,10 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - css
-  - dark-mode
-  - dark-theme
-  - prefers-color-scheme
-  - color-scheme
+  # - dark-mode
+  # - dark-theme
+  # - prefers-color-scheme
+  # - color-scheme
 feedback:
   - api
 ---
@@ -29,7 +29,7 @@ feedback:
 ### The `prefers-color-scheme` user preference media feature
 
 The
-[`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+[`prefers-color-scheme`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme)
 user preference media feature gives developers full control over their pages' appearances.
 If you are unfamiliar with it, please read my article
 [`prefers-color-scheme`: Hello darkness, my old friend](/prefers-color-scheme/),
@@ -41,6 +41,16 @@ They both make your life as a developer easier
 by allowing you to opt your page in to theme-specific defaults of the user agent stylesheet,
 such as, for example, form controls, scroll bars, as well as CSS system colors.
 At the same time, this feature prevents browsers from applying any transformations on their own.
+
+### Browser support
+
+#### `prefers-color-scheme`
+
+{% BrowserCompat 'css.at-rules.media.prefers-color-scheme' %}
+
+#### `color-scheme`
+
+{% BrowserCompat 'css.properties.color-scheme' %}
 
 ### The user agent stylesheet
 
@@ -148,14 +158,6 @@ The following values are currently supported:
 In this list, `light` represents a light color scheme,
 with light background colors and dark foreground colors,
 whereas `dark` represents the opposite, with dark background colors and light foreground colors.
-
-{% Aside 'warning' %}
-  Previously, the specification allowed an additional value `light only`
-  that indicated that the element had to be rendered with a light color scheme if possible,
-  even if the user's preference is for a different color scheme.
-  Authors *should not* use this value, and should instead ensure their page renders well
-  with whatever color scheme the user prefers.
-{% endAside %}
 
 For all elements, rendering with a color scheme should cause the colors used
 in all browser-provided UI for the element to match with the intent of the color scheme.
@@ -275,10 +277,9 @@ based on whether dark mode is enabled, following the rules
 in the developer-provided inline stylesheet on the page.
 It is either `gainsboro` or `darkslategray`.
 
-<figure class="w-figure">
-  <img src="light-styles.png" class="w-screenshot w-screenshot--filled"
-       alt="A page in light mode.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kSgOIiGRqjw2PvRlVCaV.png", alt="A page in light mode.", width="800", height="322" %}
+  <figcaption>
     <strong>Light mode:</strong> Styles specified by the developer and the user agent.
     The text is black and the background is white as per the user agent stylesheet.
     The <code>&lt;fieldset&gt;</code> element's <code>background-color</code> is <code>gainsboro</code>
@@ -286,10 +287,9 @@ It is either `gainsboro` or `darkslategray`.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  <img src="dark-styles.png" class="w-screenshot w-screenshot--filled"
-       alt="A page in dark mode.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qqkHz83kerktbDIGCJeG.png", alt="A page in dark mode.", width="800", height="322" %}
+  <figcaption>
     <strong>Dark mode:</strong> Styles specified by the developer and the user agent.
     The text is white and the background is black as per the user agent stylesheet.
     The <code>&lt;fieldset&gt;</code> element's <code>background-color</code> is <code>darkslategray</code>
@@ -303,10 +303,9 @@ Its `color` is set to the
 system color, and its `background-color` and the four `border-color`s are set to the system color
 [`ButtonFace`](https://drafts.csswg.org/css-color/#valdef-system-color-buttonface).
 
-<figure class="w-figure">
-  <img src="light-buttonface.png" class="w-screenshot w-screenshot--filled"
-       alt="A light mode page that uses the ButtonFace property.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lSNFROIe1P94DlhoVtoV.png", alt="A light mode page that uses the ButtonFace property.", width="800", height="322" %}
+  <figcaption>
     <strong>Light mode:</strong> The <code>background-color</code> and the various
     <code>border-color</code>s are set to the <a href="https://drafts.csswg.org/css-color/#valdef-system-color-buttonface">ButtonFace</a>
     system color.
@@ -320,20 +319,18 @@ since the user agent updates `ButtonFace` dynamically based on the color scheme.
 The same applies for the `<button>` element's `color`
 that is set to the corresponding system color `ButtonText`.
 
-<figure class="w-figure">
-  <img src="light-computed.png" class="w-screenshot w-screenshot--filled"
-       alt="Showing that the computed color values match ButtonFace.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IogmyIzUhokJgnnxUkPi.png", alt="Showing that the computed color values match ButtonFace.", width="800", height="322" %}
+  <figcaption>
     <strong>Light mode:</strong> The computed values of the <code>border-top-color</code>
     and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
     in the user agent stylesheet are now <code>rgba(0, 0, 0, 0.847)</code>.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  <img src="dark-computed.png" class="w-screenshot w-screenshot--filled"
-       alt="Showing that the computed color values still match ButtonFace while in dark mode.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3sU1uZyt3zNhEgw3gpZJ.png", alt="Showing that the computed color values still match ButtonFace while in dark mode.", width="800", height="322" %}
+  <figcaption>
     <strong>Dark mode:</strong> The computed values of the <code>border-top-color</code>
     and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
     in the user agent stylesheet are now <code>rgba(255, 255, 255, 0.847)</code>.
@@ -349,19 +346,17 @@ The demo *deliberately* shows the WCAG&nbsp;AA and WCAG&nbsp;AAA
 with the link colors mentioned in the
 [warning above](#using-color-scheme-in-practice).
 
-<figure class="w-figure">
-  <img src="demo-light.png" class="w-screenshot w-screenshot--filled"
-       alt="The demo while in light mode.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bqXapQKcNbyE3uwEOELO.png", alt="The demo while in light mode.", width="800", height="982" %}
+  <figcaption>
     The <a href="https://color-scheme-demo.glitch.me/">demo</a>
     toggled to <code>color-scheme: light</code>.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  <img src="demo-dark.png" class="w-screenshot w-screenshot--filled"
-       alt="The demo while in dark mode.">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9G4hFdtSSwPLOm57zedD.png", alt="The demo while in dark mode.", width="800", height="982" %}
+  <figcaption>
     The <a href="https://color-scheme-demo.glitch.me/">demo</a>
     toggled to <code>color-scheme: dark</code>.
     Note the WCAG&nbsp;AA and WCAG&nbsp;AAA

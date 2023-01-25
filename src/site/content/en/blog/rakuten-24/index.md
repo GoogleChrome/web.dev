@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Rakuten 24’s investment in PWA increases user retention by 450%
 subhead: >
   Making their web app installable resulted in increased traffic, visitor retention,
@@ -24,9 +25,9 @@ one of the largest e-commerce companies in Japan. It provides a wide selection
 of everyday items including grocery, medicine, healthcare, kitchen utensils, and
 more. The team's main goal over the last year was to improve mobile customer
 retention and re-engagement. By making their web app
-[installable](https://web.dev/define-install-strategy/), they saw a 450% jump in
+[installable](/define-install-strategy/), they saw a 450% jump in
 visitor retention rate as compared to the previous mobile web flow over a
-1-month timeframe. 
+1-month timeframe.
 
 ## Highlighting the opportunity {: #opportunity }
 
@@ -46,8 +47,8 @@ identified the following areas of opportunities:
 ### Installability {: #installability }
 
 To capture the two opportunities identified above, Rakuten 24 decided to build
-[Progressive Web App](https://web.dev/pwa) (PWA) features on an incremental
-basis, starting with [installability](https://web.dev/define-install-strategy/).
+[Progressive Web App](/pwa) (PWA) features on an incremental
+basis, starting with [installability](/define-install-strategy/).
 Implementing installability resulted in increased traffic, visitor retention,
 sales per customer, and conversions.
 
@@ -67,32 +68,31 @@ For users who weren't able to install the PWA from the banner, they created a
 (linked from the banner) with instructions on how to install the PWA manually on
 both Android and iOS devices.
 
-<figure class="w-figure">
-  <img src="a2hs.png"
-       alt="Screenshots of the custom installation instructions.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/APDhzk6SjyxQTgxVidFR.png", alt="Screenshots of the custom installation instructions.", width="800", height="480" %}
 </figure>
 
 ### Workbox for service workers {: #workbox }
 
 The Rakuten 24 team used
-[Workbox](https://developers.google.com/web/tools/workbox) (the
-[workbox-webpack-plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
+[Workbox](https://developer.chrome.com/docs/workbox/) (the
+[workbox-webpack-plugin](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/)
 to be precise) to ensure their PWA worked well even when the user was offline or
 on a bad network.  Workbox's APIs for controlling
-[the cache](https://web.dev/service-workers-cache-storage/#the-cache-storage-api)
+[the cache](/service-workers-cache-storage/#the-cache-storage-api)
 worked significantly better than Rakuten 24's previous in-house script.
 Moreover, with workbox-webpack-plugin (and Babel), was able to automate the
 process of supporting a wider range of browsers. To further build network
 resilience, they implemented a
 [cache-first strategy](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker)
 for their CSS and JS assets, and used
-[stale-while-revalidate](https://web.dev/stale-while-revalidate/) for their
+[stale-while-revalidate](/stale-while-revalidate/) for their
 images that don't change frequently.
 
 ## Overall business results {: #results }
 
-<div class="w-columns">
-  <div>
+<div class="switcher">
+  <div class="flow">
     <p>
       By implementing installability, Rakuten 24 was able to increase visit frequency
       per user by 310% compared to the rest of their web users. It also saw a 450%
@@ -100,18 +100,13 @@ images that don't change frequently.
       increase in sales per customer, and a 200% increase in conversion rate. All of
       the improvements were observed over a 1-month timeframe.
     </p>
-    <div class="w-aside w-aside--note">
+    {% Aside %}
       All stats represent users that installed the Rakuten 24 PWA, compared to
       web users who did not.
-    </div>
+    {% endAside %}
   </div>
-  <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="impact.png"
-        alt="310% increase in visit frequency per user. 
-             450% increase in visitor retention rate.
-             150% increase in sales per customer.
-             200% increase in conversion rate.">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l49plmwrrFO3V953MQZD.png", alt="310% increase in visit frequency per user.  450% increase in visitor retention rate. 150% increase in sales per customer.200% increase in conversion rate.", width="800", height="1074" %}
   </figure>
 </div>
 
@@ -119,10 +114,10 @@ images that don't change frequently.
 
 * **Brand Awareness:** Since users can directly access Rakuten 24 from
   their home screen, it helped both users and Rakuten separate Rakuten 24
-  from Rakuten-Ichiba. 
+  from Rakuten-Ichiba.
 * **Efficiency:** Rakuten 24 was able to drive these results without
   spending significant time and money building platform-specific apps for iOS
-  and Android. 
+  and Android.
 
 <blockquote>
   <p style="font-style: italic; font-size: 1.5rem;">
@@ -135,10 +130,10 @@ images that don't change frequently.
   <cite>Masashi Watanabe, General Manager, Group Marketing Department, Rakuten Inc.</cite>
 </blockquote>
 
-{% Aside %}  
+{% Aside %}
   Previously the concept of installability was known as _add to homescreen_
-  (A2HS).  
+  (A2HS).
 {% endAside %}
 
-Check out the [Scale on web case studies](https://web.dev/scale-on-web) page for
+Check out the [Scale on web case studies](/scale-on-web) page for
 more success stories from India and Asia.

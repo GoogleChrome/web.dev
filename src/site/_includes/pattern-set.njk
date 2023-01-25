@@ -1,0 +1,137 @@
+---
+layout: default-next
+pageScripts:
+  - '/js/content.js'
+---
+
+{#
+  This page displays a set (or a suite of sets) of code patterns.
+  Code patterns are organized as follows:
+  /patterns/ -> PatternSuites -> PatternSets -> Patterns
+#}
+
+{% from 'macros/code-pattern.njk' import codePattern with context %}
+
+
+{% set tocTitle = "On this page" %}
+
+{% if page.url %}
+  {% set patternSetId = page.url | getRelativePath('/patterns/') %}
+{% else %}
+  {% set patternSetId = '' %}
+{% endif %}
+
+{% if patternSetId %}
+  {% set patternSet = patterns.sets[patternSetId] %}
+{% else %}
+  {% set patternSet = null %}
+{% endif %}
+
+{% if patternSet.suite %}
+  {# This is a page for a PatternSet.
+    patternSuite variable is set to the parent of the current set. #}
+  {% set patternSuite = patterns.sets[patternSet.suite] %}
+  {% set currentPatternSet = patternSet %}
+{% else %}
+  {# This is a page for a PatternSuite.
+    There is no current pattern set selected. #}
+  {% set patternSuite = patterns.sets[patternSetId] %}
+  {% set currentPatternSet = null %}
+{% endif %}
+
+{% set tocContents %}
+  <div class="toc">
+    <ul class="toc__list">
+      <li class="toc__listitem">
+        <a href="/patterns/{{patternSuite.id}}" class="toc__anchor {{ "toc__active" if not currentPatternSet }}">All</a>
+      </li>
+      {% for setId, set in patterns.sets %}
+        {% if set.suite == patternSuite.id %}
+          <li class="toc__listitem">
+            <a href="/patterns/{{set.id}}" class="toc__anchor {{ "toc__active" if setId == currentPatternSet.id }}">{{set.title}}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endset %}
+
+
+<section class="wrapper">
+  {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
+  {% set allPatternsName = 'i18n.patterns.all_patterns' | i18n(locale) %}
+  {% set crumbs = [
+    [allPatternsName, '/patterns/'],
+    [patternSuite.title, '/patterns/' + patternSuite.id]
+  ] %}
+  {{ breadcrumbs(crumbs) }}
+</section>
+
+<header class="hero bg-core-bg">
+  <div class="wrapper">
+    <div class="hero__content--split">
+      <div>
+        <h1 class="text-size-6">{{ patternSuite.title }}</h1>
+        <p>{{ patternSuite.description }}</p>
+      </div>
+      <div class="all-center">
+        {% Img
+          height=220,
+          width=330,
+          src=patternSuite.hero,
+          alt="Collection cover image",
+          decoding="async",
+          class="hero__content__img"
+        %}
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="sidebar region flex-align-start flex-dir-rev flex-wrap-no">
+    {% include 'partials/toc-side.njk' %}
+
+    <div class="flow">
+      {% include 'partials/toc-inner.njk' %}
+      {# Show patterns from current set (if set) or from the whole suite #}
+      {% if currentPatternSet %}
+        <h2>{{ currentPatternSet.title }}</h2>
+        {{ content | safe }}
+        {% for patternId, pattern in patterns.patterns %}
+          {% if pattern.set == currentPatternSet.id %}
+            {{ codePattern(pattern) }}
+          {% endif %}
+        {% endfor %}
+
+      {% else %}
+
+        {# Patterns in PatternSets that belong to the current suite #}
+        {% for patternSetId, patternSet in patterns.sets %}
+          {% if patternSet.suite == patternSuite.id %}
+            <h2>{{ patternSet.title }}</h2>
+            {{ patternSet.rawContent | siteRender | safe }}
+            {% for patternId, pattern in patterns.patterns %}
+              {% if pattern.set == patternSetId %}
+                {{ codePattern(pattern) }}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+
+        {# Patterns that belong directly to the pattern suite #}
+        {% set first = true %}
+        {% for patternId, pattern in patterns.patterns %}
+          {% if pattern.set == patternSuite.id %}
+            {% if first %}
+              {{ content | safe }}
+            {% endif %}
+            {% set first = false %}
+            {{ codePattern(pattern) }}
+          {% endif %}
+        {% endfor %}
+
+      {% endif %}
+    </div>
+  </div>
+</div>

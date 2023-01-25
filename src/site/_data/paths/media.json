@@ -1,8 +1,8 @@
 {
   "slug": "media",
-  "cover": "/images/collections/media.svg",
+  "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6hi0spZGVaFnsPVEt1P0.svg",
   "title": "i18n.paths.media.title",
-  "updated": "June 19, 2020",
+  "updated": "March 3, 2021",
   "description": "i18n.paths.media.description",
   "overview": "i18n.paths.media.overview",
   "topics": [
@@ -12,7 +12,7 @@
         "media-experience",
         "media-file-basics",
         "media-application-basics",
-        "media-cheat-sheet"
+        "media-streaming-basics"
       ]
     },
     {
@@ -21,7 +21,9 @@
         "prepare-media",
         "containers-and-codecs",
         "bitrate",
-        "resolution"
+        "resolution",
+        "media-conversion",
+        "media-encryption"
       ]
     },
     {
@@ -30,7 +32,10 @@
         "add-media",
         "video-and-source-tags",
         "media-accessibility",
-        "fast-playback-with-preload"
+        "media-frameworks",
+        "pwa-with-offline-streaming",
+        "fast-playback-with-preload",
+        "debug-playback-errors"
       ]
     }
   ]

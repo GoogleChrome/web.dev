@@ -1,0 +1,36 @@
+.author {
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+}
+
+.author__links {
+  --gutter: 0 1em;
+  --flow-space: 0.3em;
+
+  padding: 0;
+  font-size: 0.9em;
+
+  a {
+    color: currentColor;
+  }
+}
+
+.author__name {
+  font-style: normal;
+
+  a:not(:hover) {
+    text-decoration: none;
+  }
+}
+
+.author__bio {
+  --flow-space: 0.1em;
+  font-size: 0.9em;
+
+  @include apply-utility('color', 'mid-text');
+}
+
+.author__bio + .author__links {
+  --flow-space: 0.8em;
+}

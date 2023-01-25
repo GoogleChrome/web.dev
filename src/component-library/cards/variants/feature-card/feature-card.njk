@@ -1,0 +1,5 @@
+<a class="feature-card" href="{{ data.url }}" {% if data.theme %}data-theme="{{ data.theme }}"{% endif %}>
+  <span class="feature-card__eyebrow">{{ data.eyebrow }}</span>
+  <h3 class="{{ 'visually-hidden' if data.hiddenTitle else 'feature-card__title' }}">{{ data.title }}</h3>
+  <img class="feature-card__background" loading="lazy" alt="" aria-hidden="true" src="{{ data.background }}" />
+</a>

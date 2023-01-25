@@ -1,18 +1,18 @@
 ---
 layout: post
-title: Lazy-loading best practices
+title: Lazy loading best practices
 authors:
-  - jeremywagner
+  - jlwagner
   - rachelandrew
 date: 2019-08-16
 updated: 2020-06-11
 description: |
-  This post details how to navigate the potential pitfalls of lazy-loading.
+  This post details how to navigate the potential pitfalls of lazy loading.
 tags:
   - performance
 ---
 
-While lazy-loading images and video have positive and measurable performance
+While lazy loading images and video have positive and measurable performance
 benefits, it's not a task to be taken lightly. If you get it wrong, there could
 be unintended consequences. As such, it's important to keep the following
 concerns in mind.
@@ -24,7 +24,7 @@ JavaScript, but you need to resist this temptation. Anything resting above the
 fold shouldn't be lazy-loaded. Such resources should be considered critical
 assets, and thus should be loaded normally.
 
-Lazy-loading delays the loading of resources until after the DOM is interactive
+Lazy loading delays the loading of resources until after the DOM is interactive
 when scripts have finished loading and begin execution. For images below the
 fold, this is fine, but critical resources above the fold should be loaded with
 the standard `<img>` element so they're displayed as soon as possible.
@@ -37,12 +37,12 @@ inventory of your page's critical assets, and load those images in typical
 fashion.
 
 Additionally, you may not want to be so strict about the fold line as the
-threshold for triggering lazy-loading. It may be more ideal for your purposes to
+threshold for triggering lazy loading. It may be more ideal for your purposes to
 establish a buffer zone some distance below the fold so that images begin
 loading well before the user scrolls them into the viewport. For example, the
 Intersection Observer API allows you to specify a `rootMargin` property in an
 options object when you create a new `IntersectionObserver` instance. This
-effectively gives elements a buffer, which triggers lazy-loading behavior before
+effectively gives elements a buffer, which triggers lazy loading behavior before
 the element is in the viewport:
 
 ```javascript
@@ -66,7 +66,7 @@ To achieve this same effect in browsers that don't support Intersection Observe,
 
 ## Layout shifting and placeholders {: #wrong-layout-shifting }
 
-Lazy-loading media can cause [shifting in the layout](/cls) if placeholders aren't used.
+Lazy loading media can cause [shifting in the layout](/cls) if placeholders aren't used.
 These changes can be disorienting for users and trigger expensive DOM layout
 operations that consume system resources and contribute to jank. At a minimum,
 consider using a solid color placeholder occupying the same dimensions as the
@@ -89,7 +89,7 @@ main thread, causing the user interface to be unresponsive for a short period of
 time while decoding occurs. [Asynchronously decoding images using the `decode`
 method](https://medium.com/dailyjs/image-loading-with-image-decode-b03652e7d2d2)
 prior to inserting them into the DOM can cut down on this sort of jank, but
-beware: It's not available everywhere yet, and it adds complexity to lazy-loading logic.
+beware: It's not available everywhere yet, and it adds complexity to lazy loading logic.
 If you want to use it, you'll need to check for it. Below shows
 how you might use `Image.decode()` with a fallback:
 
@@ -111,7 +111,7 @@ if ("decode" in newImage) {
 Check out [this CodePen link](https://codepen.io/malchata/pen/WzeZGW) to see
 code similar to this example in action. If most of your images are fairly small,
 this may not do much for you, but it can certainly help cut down on jank when
-lazy-loading large images and inserting them into the DOM.
+lazy loading large images and inserting them into the DOM.
 
 ## When stuff doesn't load {: #wrong-loading-failure }
 
@@ -126,7 +126,7 @@ altogether. By the time the user lazy-loads the image, the resource is
 unavailable, and thus fails.
 
 While these are relatively rare occurrences, it may behoove you to have a backup
-plan if lazy-loading fails. For images, such a solution may look something like
+plan if lazy loading fails. For images, such a solution may look something like
 this:
 
 ```javascript

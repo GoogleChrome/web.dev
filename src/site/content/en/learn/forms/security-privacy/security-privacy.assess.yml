@@ -1,0 +1,30 @@
+setLeader: Test your knowledge of security and privacy
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What is the preferred method to transfer personal data using forms?
+    options:
+      - content: "A `POST` request."
+        rationale: "🎉"
+      - content: "A carrier pigeon."
+        rationale: "Try again!"
+      - content: "A `GET` request."
+        rationale: "Try again!"
+      - content: "HTTPS"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "3"
+    correctAnswers: "0,1,2"
+    stem: How can you prevent spam?
+    options:
+      - content: "CAPTCHAS"
+        rationale: "🎉"
+      - content: "A Honeypot form field."
+        rationale: "🎉"
+      - content: "Spam services."
+        rationale: "🎉"
+      - content: "Only serve vegetarian forms."
+        rationale: "Try again!"
+

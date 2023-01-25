@@ -8,13 +8,13 @@ description: How to generate a TLS certificate with SXG extensions, install tool
 date: 2020-03-11
 tags:
   - blog
-  - SXG
-  - nginx
+  # - SXG
+  # - nginx
 feedback:
   - api
 ---
 
-[Signed HTTP Exchanges (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges) is a new web technology that makes it easier for users to tell content creators apart from content distributors. This guide shows you how to set up SXG.
+[Signed HTTP Exchanges (SXG)](https://developer.chrome.com/blog/signed-exchanges/) is a new web technology that makes it easier for users to tell content creators apart from content distributors. This guide shows you how to set up SXG.
 
 ## Cross-browser support
 
@@ -72,9 +72,9 @@ Make sure that:
 - The **Include the CanSignHttpExchanges extension in the certificate** checkbox is enabled,
   which is found under Additional Certificate Options.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="sxg-check.png"/>
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kFWTZFXNvwkHnwRu7y8Q.png", alt="", width="718", height="133" %}
+  <figcaption>
     The <b>Include the CanSignHttpExchanges extension in the certificate</b> checkbox.
   </figcaption>
 </figure>
@@ -87,7 +87,7 @@ This guide assumes that the filename of the certificate you got from DigiCert is
 The SXG format is complex and hard to generate without using tools.
 You can use one of the following options to generate SXG:
 
-- The [gen-signedexchange](https://github.com/WICG/webpackage/tree/master/go/signedexchange) tool written in Go.
+- The [gen-signedexchange](https://github.com/WICG/webpackage/tree/main/go/signedexchange) tool written in Go.
 - The [`libsxg` library](https://github.com/google/libsxg) written in C.
 
 This guide uses `libsxg`.
@@ -119,15 +119,16 @@ sudo make install
 ```
 
 ## Step 3: Install `nginx` plugin
+
 The `nginx` plugin allows you to generate SXG dynamically instead of statically generating them prior to serving.
 
 ### Option 1: Install the plugin from a Debian package {: #step-3-option-1 }
 
-The [SXG module for `nginx`](https://github.com/kumagi/nginx-sxg-module) is distributed on GitHub.
+The [SXG module for `nginx`](https://github.com/google/nginx-sxg-module) is distributed on GitHub.
 On Debian-based systems, you can install it as a binary package:
 
 ```bash
-sudo apt install -y nginx
+sudo apt install -y nginx=1.15.9-0
 wget https://github.com/google/nginx-sxg-module/releases/download/v0.1/libnginx-mod-http-sxg-filter_1.15.9-0ubuntu1.1_amd64.deb
 sudo dpkg -i libnginx-mod-http-sxg-filter_1.15.9-0ubuntu1.1_amd64.deb
 ```
@@ -154,6 +155,7 @@ This guide assumes that you install it to `/opt/nginx`.
 ## Step 4: Configure the `nginx` plugin to work with SXG
 
 ### Option 1: Configure an installed-from-Debian `nginx` module
+
 Follow these instructions if you used [Step 3, Option 1](#step-3-option-1) earlier.
 
 Delivering SXG content requires HTTPS. You can get an SSL/TLS certificate from DigiCert, Let's Encrypt, and other services. Note that you CANNOT use an SXG certificate for SSL or vice versa, therefore you will need two certificates. The configuration file in `/etc/nginx/nginx.conf` should look similar to the following, assuming that you put the SSL key/certificate pair in `/path/to/ssl/` and the SXG key/certificate pair in `/path/to/sxg/`:
@@ -265,7 +267,7 @@ server {
 
 ## Step 6: Test
 
-Use the [dump-signedexchange tool](https://github.com/WICG/webpackage/tree/master/go/signedexchange)
+Use the [dump-signedexchange tool](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
 to test that the SXGs being served are correct, ensure that no errors are reported, and verify that the headers
 and body are as expected.
 

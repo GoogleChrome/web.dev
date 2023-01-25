@@ -1,0 +1,30 @@
+/// WRAPPER UTILITY
+/// Info: https://web.dev/design-system/css-utilities/#wrapper
+
+.wrapper {
+  margin-inline: auto;
+  width: 85rem; // For no clamp support
+  width: clamp(16rem, 95vw, 85rem);
+  padding-inline: $global-gutter;
+  position: relative;
+}
+
+.wrapper[data-size='narrow'] {
+  width: 62rem; // For no clamp support
+  width: clamp(16rem, 95vw, 62rem);
+  padding-inline: 0;
+}
+
+.wrapper[data-size='extra-narrow'] {
+  width: 46rem; // For no clamp support
+  width: clamp(16rem, 95vw, 46rem);
+  padding-inline: $global-gutter;
+
+  @include media-query('lg') {
+    padding-inline: 0;
+  }
+}
+
+.wrapper[data-flush] {
+  padding-inline: 0;
+}

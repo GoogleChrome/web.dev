@@ -6,6 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2020-08-31
+updated: 2023-01-12
 description: |
   Once a web-based payment app is registered, it's ready to accept payment requests from merchants. This article teaches you how to orchestrate a payment transaction from a service worker during runtime.
 tags:
@@ -15,16 +16,25 @@ feedback:
   - api
 ---
 
+{% Aside 'warning' %}
+
+Shipping and address support in [the Payment Request API was once removed from
+the specification](https://github.com/w3c/payment-request/pull/955) and from
+Chrome, but is [being reverted](https://github.com/w3c/payment-request/pull/996)
+in the spec. Thus, we've reverted the documentation about shipping and address as
+well.
+
+{% endAside %}
+
 Once [a web-based payment app receives a payment request and initiates a payment
 transaction](/orchestrating-payment-transactions), the service worker will act
 as the hub for communication between the merchant and the payment app. This post
 explains how a payment app can pass information about the payment method,
 shipping address, or contact information to the merchant using a service worker.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./diagram.png"
-       alt="Handling optional payment information with a service worker">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kDteyNFNEVnJQyTPw5p8.png", alt="Handling optional payment information with a service worker", width="800", height="2335", class="w-screenshot" %}
+  <figcaption>
     Handling optional payment information with a service worker
   </figcaption>
 </figure>
@@ -32,7 +42,7 @@ shipping address, or contact information to the merchant using a service worker.
 ## Inform the merchant of a payment method change {: #payment-method-changes }
 Payment apps can support multiple payment instruments with different payment methods.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -75,10 +85,9 @@ methods (Credit Card Issuer 1 and Bank X). On a payment transaction, the payment
 app can let the customer pick one of the payment instruments and use it to pay
 for the merchant.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <img class="w-screenshot" src="./paymentmethodchanged-ss.png"
-       alt="Payment method picker UI">
-  <figcaption class="w-figcaption">
+<figure style="width:300px; margin:auto;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yZYmEL3y1e2cPaLNz34K.png", alt="Payment method picker UI", width="800", height="1600" %}
+  <figcaption>
     Payment method picker UI
   </figcaption>
 </figure>
@@ -94,10 +103,9 @@ identifier. The service worker should invoke
 `PaymentRequestEvent.changePaymentMethod()` with the new payment method
 information.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./paymentmethodchanged.png"
-       alt="Inform the merchant of a payment method change">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ogXzkcdinU3RNC9cMzN0.png", alt="Inform the merchant of a payment method change", width="800", height="659" %}
+  <figcaption>
     Inform the merchant of a payment method change
   </figcaption>
 </figure>
@@ -196,21 +204,19 @@ payment details](#reflect-the-updated-payment-details).
 
 ## Inform the merchant of a shipping address change {: #shipping-address-changes }
 
-Payment apps can provide the customer's shipping address to the merchant as part
-of the result of a payment transaction.
+Payment apps can provide a customer's shipping address to the merchant as part
+of a payment transaction.
 
 This is useful for merchants because they can delegate the address collection to
 payment apps. And, because the address data will be provided in [the standard
 data format](https://w3c.github.io/payment-request/#dom-addressinit), the
 merchant can expect to receive shipping addresses in consistent structure.
 
-This is beneficial for customers as well because once they register their
-address information to their favorite payment app, they can reuse it in
-different shops.
+Additionally, customers can register their address information with their
+preferred payment app and reuse it for different merchants.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
-  <img class="w-screenshot" src="./shippingaddresschanged-ss.png"
-       alt="Shipping address picker UI">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0ytdyaEC7tkPkBTv5rIu.png", alt="Shipping address picker UI", width="800", height="1600", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Shipping address picker UI
   </figcaption>
@@ -237,8 +243,7 @@ with the [new address
 object](https://www.w3.org/TR/payment-request/#dom-addressinit).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./shippingaddresschanged.png"
-       alt="Inform the merchant of a shipping address change">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aVv5d9OEcEjH1Z6nUQKb.png", alt="Inform the merchant of a shipping address change", width="800", height="675", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Inform the merchant of a shipping address change
   </figcaption>
@@ -328,8 +333,7 @@ app. The payment app can use the information to construct a UI and let the
 customer pick a shipping option.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
-  <img class="w-screenshot" src="./shippingoptionchanged-ss.png"
-       alt="Shipping option picker UI">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VkHwTharTqX7oFK62RkA.png", alt="Shipping option picker UI", width="800", height="1600", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Shipping option picker UI
   </figcaption>
@@ -345,7 +349,7 @@ propagated to the payment app's service worker as a property of
 
 ```js
 const request = new PaymentRequest([{
-  supportedMethods: 'https://bobpay.xyz/pay',
+  supportedMethods: 'https://bobbucks.dev/pay',
   data: { transactionId: '****' }
 }], {
   displayItems: [{
@@ -382,8 +386,7 @@ invoke
 with the new shipping option ID.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./shippingoptionchanged.png"
-       alt="Inform the merchant of a shipping option change">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mERzHqvPGrjKWu29m5q1.png", alt="Inform the merchant of a shipping option change", width="800", height="667", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Inform the merchant of a shipping option change
   </figcaption>
@@ -490,10 +493,8 @@ Use the following properties to reflect the error status:
   useful if you want to open a form that lets the customer edit their address
   and you need to point them directly to the invalid fields.
 * **`paymentMethodErrors`**: Payment-method-specific error object. You can ask
-  merchants to provide a structured error like
-  [`BasicCardErrors`](https://www.w3.org/TR/payment-method-basic-card/#dom-basiccarderrors)
-  for basic-card, but the Web Payments spec authors recommend keeping it a
-  simple string.
+  merchants to provide a structured error, but the Web Payments spec authors
+  recommend keeping it a simple string.
 
 ## Sample code
 
@@ -531,11 +532,3 @@ To try it out:
 3. Press **Add a payment button**.
 4. Enter `https://paymenthandler-demo.glitch.me` to the **Payment Method Identifier** field.
 5. Press **Pay** button next to the field.
-
-## Next steps
-
-In this article, we learned how to handle optional information on the service
-worker. The final step for building a web-based payment app is to learn how to
-build the frontend.
-
-* Handling payments on the payment frontend (coming soon)

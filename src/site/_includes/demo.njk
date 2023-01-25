@@ -1,0 +1,44 @@
+{# A file to display a standalone demo for a CodePattern #}
+{% set pattern = patterns.patterns[patternId] %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+  {% include 'partials/script-loader.njk' %}
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    figure {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    figure > img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  </style>
+  {% for assetName, asset in pattern.assets %}
+    {% if asset.type == 'css' %}
+      <style>{{ asset.content | safe }}</style>
+    {% endif %}
+  {% endfor %}
+</head>
+<body>
+  {{ content | safe }}
+  {{ pattern.assets['body.html'].content | safe }}
+  {% for assetName, asset in pattern.assets %}
+    {% if asset.type == 'js' %}
+      <script>{{ asset.content | minifyJs | cspHash | safe }}</script>
+    {% endif %}
+  {% endfor %}
+</body>
+</html>

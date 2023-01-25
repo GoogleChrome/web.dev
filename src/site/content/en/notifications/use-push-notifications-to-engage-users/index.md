@@ -20,23 +20,23 @@ Notifications present small chunks of information to a user. Web apps can use no
 
 The look-and-feel of notifications varies between platforms. For example:
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./predicaments-android.png" alt="">
-  <figcaption class="w-figcaption">A notification on an Android device.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3wEi4F7iuNrg2kL85aMI.png", alt="", width="800", height="209" %}
+  <figcaption>A notification on an Android device.</figcaption>
 </figure>
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./predicaments-macbook.png" alt="">
-  <figcaption class="w-figcaption">A notification on a MacBook.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ho6Nf5CcftL4AmLzoHZ8.png", alt="", width="675", height="124" %}
+  <figcaption>A notification on a MacBook.</figcaption>
 </figure>
 
-Traditionally, web browsers had to initiate the exchange of information between server and client by making a request. [Web push technology](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), on the other hand, lets you configure your server to send notifications when it makes sense for your app. A push service creates unique URLs for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.
+Traditionally, web browsers had to initiate the exchange of information between server and client by making a request. [Web push technology](https://developer.mozilla.org/docs/Web/API/Push_API), on the other hand, lets you configure your server to send notifications when it makes sense for your app. A push service creates unique URLs for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.
 
 Push notifications can help users to get the most out of your app by prompting them to re-open it and use it based on the latest information.
 
 ## Creating and sending notifications
 
-Create notifications using the [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API). A `Notification` object has a `title` string and an `options` object. For example:
+Create notifications using the [Notifications API](https://developer.mozilla.org/docs/Web/API/Notifications_API). A `Notification` object has a `title` string and an `options` object. For example:
 
 ```js
 let title = 'Hi!';
@@ -69,7 +69,7 @@ Bring up the permission prompt **in response to a user gesture** and **when the 
 
 The real power of notifications comes from the combination of service workers and push technology:
 
-*   [Service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can run in the background and display notifications even when your app isn't visible on screen.
+*   [Service workers](https://developer.chrome.com/docs/workbox/service-worker-overview/) can run in the background and display notifications even when your app isn't visible on screen.
 
 *   Push technology lets you configure your server to send notifications when it makes sense for your app. A push service creates unique URLs for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.
 

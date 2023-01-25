@@ -1,0 +1,28 @@
+<article class="card">
+  <img src="{{ data.img.src }}" alt="{{ data.img.alt }}" />
+  <div class="card__content flow">
+    <h3 class="card__heading text-size-3">
+      <a href="{{ data.url }}">{{ data.title }}</a>
+    </h3>
+    <p>{{ data.summary }}</p>
+    {% if data.authors %}
+      <div class="cluster gutter-base">
+        <div class="card__avatars cluster" aria-hidden="true">
+          {% for author in data.authors %}
+          <a class="avatar" href="{{ author.url }}">
+            <img src="{{ author.image }}" alt="Image of {{ author.name }}" />
+          </a>
+          {% endfor %}
+        </div>
+        <ul class="card__authors flow-space-base cluster" aria-label="authors" role="list">
+          {% for author in data.authors %}
+          <li>
+            <a href="{{ author.url }}">{{ author.name }}</a>{% if not loop.last %},{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+  <a class="card__action" href="{{ href.data.url }}">More</a>
+</article>

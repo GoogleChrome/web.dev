@@ -1,0 +1,65 @@
+{
+  "title": "Button",
+  "sort": "source",
+  "keyLinks": [
+    {
+      "label": "Sass file",
+      "url": "https://github.com/GoogleChrome/web.dev/blob/main/src/scss/blocks/_button.scss"
+    }
+  ],
+  "context": {
+    "text": "A button"
+  },
+  "variants": [
+    {
+      "name": "primary",
+      "title": "Primary",
+      "context": {
+        "text": "A primary button",
+        "type": "primary"
+      }
+    },
+    {
+      "name": "secondary",
+      "title": "Secondary",
+      "context": {
+        "text": "A secondary button",
+        "type": "secondary"
+      }
+    },
+    {
+      "name": "clear",
+      "title": "Clear",
+      "context": {
+        "text": "A clear button",
+        "type": "clear"
+      }
+    },
+    {
+      "name": "disabled",
+      "title": "Disabled",
+      "context": {
+        "text": "A disabled button",
+        "type": "secondary",
+        "attribute": "disabled"
+      }
+    },
+    {
+      "name": "with-icon",
+      "title": "With Icon",
+      "context": {
+        "text": "A button with an icon",
+        "icon": "plus.svg"
+      }
+    },
+    {
+      "name": "primary-with-icon",
+      "title": "Primary With Icon",
+      "context": {
+        "text": "A primary button with an icon",
+        "icon": "plus.svg",
+        "type": "primary"
+      }
+    }
+  ]
+}

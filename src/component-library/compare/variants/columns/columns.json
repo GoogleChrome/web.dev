@@ -1,0 +1,17 @@
+{
+  "title": "In columns",
+  "context": {
+    "items": [
+      {
+        "type": "worse",
+        "label": "Don’t",
+        "code": "```Bad code example```"
+      },
+      {
+        "type": "better",
+        "label": "Do",
+        "code": "```good code example```"
+      }
+    ]
+  }
+}

@@ -28,13 +28,13 @@ To follow along or play with these demos on your own, check out the Glitch embed
 
 ## 01. Super Centered: `place-items: center`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/01-place-items-center.mp4'>
   </video>
 </figure>
 
-For the  first 'single-line' layout, let's solve the biggest mystery in all of the CSS land: centering things. I want you to know that it's easier than you think with [`place-items: center`](https://developer.mozilla.org/en-US/docs/Web/CSS/place-items).
+For the  first 'single-line' layout, let's solve the biggest mystery in all of the CSS land: centering things. I want you to know that it's easier than you think with [`place-items: center`](https://developer.mozilla.org/docs/Web/CSS/place-items).
 
 First specify `grid` as the `display` method, and then write `place-items: center` on the same element. `place-items` is a shorthand to set both `align-items` and `justify-items` at once. By setting it to `center`, both `align-items` and `justify-items` are set to  `center`.
 
@@ -49,8 +49,8 @@ This enables the content to be perfectly centered within the parent, regardless 
 
 ## 02. The Deconstructed Pancake: `flex: <grow> <shrink> <baseWidth>`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-1.mp4'>
   </video>
 </figure>
@@ -59,7 +59,7 @@ Next we have the deconstructed pancake! This is a common layout for marketing si
 
 By using Flexbox for this effect, you won't need media queries to adjust the placement of these elements when the screen resizes.
 
-The [`flex`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
+The [`flex`](https://developer.mozilla.org/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
 
 Because of this, if you want your boxes to fill out to their `<flex-basis>` size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`. In this case, your `<flex-basis>` is `150px` so it looks like:
 
@@ -84,8 +84,8 @@ If you *do* want the boxes to stretch and fill the space as they wrap to the nex
   flex: 1 1 150px;
 }
 ```
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-2.mp4'>
   </video>
 </figure>
@@ -94,13 +94,13 @@ Now, as you increase or decrease the screen size,  these flex items both shrink 
 
 ## 03. Sidebar Says: `grid-template-columns: minmax(<min>, <max>) …)`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/03-sidebar-says.mp4'>
   </video>
 </figure>
 
-This demo takes advantage of the [minmax](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) function for grid layouts. What we're doing here is setting the minimum sidebar size to be `150px`, but on larger screens, letting that stretch out to `25%`. The sidebar will always take up `25%` of its parent's horizontal space until that `25%` becomes smaller than `150px`.
+This demo takes advantage of the [minmax](https://developer.mozilla.org/docs/Web/CSS/minmax) function for grid layouts. What we're doing here is setting the minimum sidebar size to be `150px`, but on larger screens, letting that stretch out to `25%`. The sidebar will always take up `25%` of its parent's horizontal space until that `25%` becomes smaller than `150px`.
 
 Add this as a value of grid-template-columns with the following value:
 `minmax(150px, 25%) 1fr`. The item in the first column (the sidebar in this case) gets a `minmax` of `150px` at `25%`, and the second item (the `main` section here) takes up the rest of the space as a single `1fr` track.
@@ -114,13 +114,13 @@ Add this as a value of grid-template-columns with the following value:
 
 ## 04. Pancake Stack: `grid-template-rows: auto 1fr auto`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/04-pancake-stack.mp4'>
   </video>
 </figure>
 
-Unlike the Deconstructed Pancake, this example does not wrap its children when the screen size changes. Commonly referred to as a [sticky footer](https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Sticky_footers), this layout is often used for both websites and apps, across mobile applications (the footer is commonly a toolbar), and websites (single page applications often use this global layout).
+Unlike the Deconstructed Pancake, this example does not wrap its children when the screen size changes. Commonly referred to as a [sticky footer](https://developer.mozilla.org/docs/Web/CSS/Layout_cookbook/Sticky_footers), this layout is often used for both websites and apps, across mobile applications (the footer is commonly a toolbar), and websites (single page applications often use this global layout).
 
 Adding `display: grid` to the component will give you a single column grid, however the main area will only be as tall as the content with the footer below it.
 
@@ -137,8 +137,8 @@ This sets the header and footer content to automatically take the size of its ch
 
 ## 05. Classic Holy Grail Layout: `grid-template: auto 1fr auto / auto 1fr auto`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/05-holy-grail.mp4'>
   </video>
 </figure>
@@ -160,8 +160,8 @@ As in the last example, where the header and footer had auto-sized content, here
 
 ## 06. 12-Span Grid: `grid-template-columns: repeat(12, 1fr)`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-1.mp4'>
   </video>
 </figure>
@@ -181,8 +181,8 @@ Next we have another classic: the 12-span grid. You can quickly write grids in C
 
 Now you have a 12 column track grid, we can place our children on the grid. One way to do this would be to place them using grid lines. For example, `grid-column: 1 / 13` would span all the way from the first line to the last (13th) and span 12 columns. `grid-column: 1 / 5;` would span the first four.
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-2.mp4'>
   </video>
 </figure>
@@ -197,8 +197,8 @@ Another way to write this is by using the `span` keyword. With `span`, you set t
 
 ## 07. RAM (Repeat, Auto, MinMax): `grid-template-columns(auto-fit, minmax(<base>, 1fr))`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-1.mp4'>
   </video>
 </figure>
@@ -218,8 +218,8 @@ You are using repeat again, but this time, using the `auto-fit` keyword instead 
 
 With `auto-fit`, the boxes will stretch as their horizontal size exceeds 150px to fill the entire remaining space. However, if you change this to `auto-fill`, they will not stretch when their base size in the minmax function is exceeded:
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-2.mp4'>
   </video>
 </figure>
@@ -233,8 +233,8 @@ With `auto-fit`, the boxes will stretch as their horizontal size exceeds 150px t
 
 ## 08. Line Up: `justify-content: space-between`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/08-lineup.mp4'>
   </video>
 </figure>
@@ -253,8 +253,8 @@ This places the title, description, and image block in a vertical column inside 
 
 ## 09. Clamping My Style: `clamp(<min>, <actual>, <max>)`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/09-clamping.mp4'>
   </video>
 </figure>
@@ -265,7 +265,7 @@ This sets an absolute min and max size, and an actual size. With values, that ca
 
 ```css/1
 .parent {
-  width: clamp(23ch, 50%, 46ch);
+  width: clamp(23ch, 60%, 46ch);
 }
 ```
 
@@ -279,8 +279,8 @@ This is a great technique to ensure legibility with a minimum and maximum size v
 
 ## 10. Respect for Aspect: `aspect-ratio: <width> / <height>`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/10-aspectratio.mp4'>
   </video>
 </figure>

@@ -1,0 +1,17 @@
+/// The skip link is visually hidden when it is not focused.
+/// It exists so when a user hits tab on load, they can quickly
+/// skip to the main content of the site—avoiding navigation etc
+.skip-link {
+  z-index: 11;
+  width: max-content;
+  inset: $global-gutter-narrow auto auto $global-gutter;
+  position: absolute;
+  flex: none;
+
+  /// Please avoid using @extend where possible
+  /// In this context, it's fine because this
+  /// skip link needs parity with the visually hidden util
+  &:not(:focus) {
+    @extend .visually-hidden;
+  }
+}

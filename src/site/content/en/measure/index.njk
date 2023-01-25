@@ -1,164 +1,71 @@
 ---
-layout: default
-title: Measure
+layout: default-next
+title: Measure page quality
 description: |
-  See how well your website performs. Then, get tips to improve your user
-  experience.
-date: 2018-11-05
+  Test your pages in a lab environment powered by PageSpeed Insights. Then get tips and recommendations to improve your user experience. For field performance, see the [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) tool.
+date: 2021-10-13
 pageScripts:
   - '/js/measure.js'
+pageSpeed:
+  eyebrow: 'PageSpeed Insights'
+  title: 'Measure performance with PageSpeed Insights'
+  summary: |
+    PageSpeed Insights is a tool for measuring the performance and Core Web Vitals of a page with lab and field data.
+  image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/6Ye3EKc6quNaopPrigno.png'
+  imageWidth: '546'
+  imageHeight: '421'
+  primaryButtonText: 'Try PageSpeed Insights'
+  primaryButtonUrl: 'https://pagespeed.web.dev/'
+  secondaryButtonText: 'Learn more'
+  secondaryButtonUrl: 'https://developers.google.com/speed/docs/insights/v5/about?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI#faq'
 ---
-{# *-landing-page classes are a holdover from devsite. #} {# It would be great
-to remove them as part of the v1 migration. #}
-<div class="profile-landing-page">
-
-  <div class="w-layout-container--large w-mb--std">
-    <header class="w-page-header">
-      <h1 class="w-page-header__headline">{{ title }}</h1>
-      <p class="w-page-header__copy">
-        See how well your website performs. Then, get tips to improve your user
-        experience.
-        <span data-lh-signin="hide">
-          Sign in to track your progress over time.
-        </span>
-      </p>
-      <web-signin-button></web-signin-button>
-      <p class="w-page-header__copy w-unsupported-notice">
-        Sorry, the measure tool does not work with legacy browsers or with
-        JavaScript disabled. Please try again using an up-to-date version of
-        Edge, Firefox, Safari, or Chrome.
-      </p>
-    </header>
-  </div>
-
-  <div class="w-measure-results">
-    <div class="w-layout-container">
-      <web-url-chooser-container></web-url-chooser-container>
-      <web-lighthouse-scores-container></web-lighthouse-scores-container>
+<section>
+  <article class="bg-core-bg hero measure__page-speed-hero">
+    <div class="wrapper">
+      <div class="hero__columns switcher" data-direction="rev">
+        <div class="flow">
+          <img src="{{ pageSpeed.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ pageSpeed.imageWidth }}" height="{{ pageSpeed.imageHeight }}" />
+        </div>
+        <div>
+          <span aria-hidden="true" class="hero__eyebrow">{{ pageSpeed.eyebrow }}</span>
+          <div class="hero__content flow gap-top-size-5">
+            <h1 class="hero__title">{{ pageSpeed.title }}</h1>
+            {{ pageSpeed.summary | md | safe }}
+            <div class="cluster gutter-base flow-space-size-2">
+              <a class="button" 
+                data-type="primary"
+                data-category="web.dev"
+                data-label="measure, run audit"
+                data-action="click"
+                href="{{ pageSpeed.primaryButtonUrl }}"
+              >
+                {{ pageSpeed.primaryButtonText }}
+              </a>
+              <a class="button" data-type="secondary" href="{{ pageSpeed.secondaryButtonUrl }}">{{ pageSpeed.secondaryButtonText }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </article>
+</section>
+
+<section class="bg-mid-bg measure__section gap-top-size-1">
+  <div class="wrapper all-center flow">
+    <h2 class="no-link w-headline--two w-font-weight--medium">The measure tool is moving to PageSpeed Insights</h2>
+
+    <p class="color-mid-text">
+      If you've been to this page before, you probably expected to see a field where you can input
+      a URL and get performance diagnostics for that page. This tool has been removed because of
+      the significant overlap it has with PageSpeed Insights.
+    </p>
+
+    <p class="color-mid-text">
+      Going forward, <a href="https://pagespeed.web.dev/">PageSpeed Insights</a> will be what you need.
+      It will give you detailed <a href="https://web.dev/lab-and-field-data-differences/#lab-data">lab</a>
+      insights into your website's performance, but also <a href="https://web.dev/lab-and-field-data-differences/#field-data">field</a>
+      data insights, which is important as it allows you to assess your website's user experience from the
+      perspective of your website's actual users.
+    </p>
   </div>
-
-  <div class="w-layout-container w-mt--std">
-    <section class="w-numbered-headers">
-      <div class="w-measure-steps">
-        <div class="w-measure-step">
-          <h3 class="w-numbered-header w-numbered-header--vertical">
-            Run tests on your site
-          </h3>
-          <div>
-            Enter your site's URL to see how well it performs across all audits.
-          </div>
-        </div>
-
-        <div class="w-measure-step">
-          <h3 class="w-numbered-header w-numbered-header--vertical">
-            Look at what matters
-          </h3>
-          <div>
-            See your site's performance across the areas you care about.
-          </div>
-        </div>
-
-        <div class="w-measure-step">
-          <h3 class="w-numbered-header w-numbered-header--vertical">
-            Get tips for improving
-          </h3>
-          <div>
-            Each test comes with helpful steps to improve your site's results.
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="w-layout-container">
-    <section class="w-text--center">
-      <h2 class="no-link w-headline--two w-font-weight--medium">
-        How your site is measured
-      </h2>
-      <div class="w-mb--l">
-        When you measure your site, web.dev uses
-        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>,
-        an open-source, automated tool for improving the quality of web pages.
-        Lighthouse will audit your site in the following categories:
-      </div>
-
-      <div class="w-measure-categories w-mb--xl">
-        <!-- PERFORMANCE -->
-        <div class="w-measure-category">
-          <img
-            src="/images/icons/performance.svg"
-            aria-describedby="lh-category-performance-title"
-          />
-          <div
-            class="w-headline--three w-mt--std"
-            id="lh-category-performance-title"
-          >
-            Performance
-          </div>
-          <div>
-            Audits for metrics like first paint and time to interactive to
-            determine lag.
-          </div>
-        </div>
-
-        <!-- BEST PRACTICES -->
-        <div class="w-measure-category">
-          <img
-            src="/images/icons/best_practices.svg"
-            aria-describedby="lh-category-best-practices-title"
-          />
-          <div
-            class="w-headline--three w-mt--std"
-            id="lh-category-best-practices-title"
-          >
-            Best Practices
-          </div>
-          <div>
-            Looks for everything from HTTPS usage to correct image aspect
-            ratios.
-          </div>
-        </div>
-
-        <!-- SEO -->
-        <div class="w-measure-category">
-          <img src="/images/icons/seo.svg" aria-describedby="lh-category-seo-title" />
-          <div class="w-headline--three w-mt--std" id="lh-category-seo-title">
-            SEO
-          </div>
-          <div>
-            Checks for best practices to ensure your site is discoverable.
-          </div>
-        </div>
-
-        <!-- ACCESSIBILITY -->
-        <div class="w-measure-category">
-          <img
-            src="/images/icons/a11y.svg"
-            aria-describedby="lh-category-accessibility-title"
-          />
-          <div
-            class="w-headline--three w-mt--std"
-            id="lh-category-accessibility-title"
-          >
-            Accessibility
-          </div>
-          <div>
-            Checks for common issues that may prevent users from accessing your
-            content.
-          </div>
-        </div>
-      </div>
-
-      <div>
-        All tests are run using a simulated mobile device, throttled to a fast
-        3G network &amp; 4x CPU slowdown.
-      </div>
-    </section>
-  </div>
-
-</div>
-
-<code id="guide-audit-mapping" style="display: none;">
-  {{ collections.postsWithLighthouse | postsLighthouseJson | dump | safe }}
-</code>
+</section>

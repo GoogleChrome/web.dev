@@ -29,14 +29,15 @@ const isProd = process.env.ELEVENTY_ENV === 'prod';
 const buildVirtualJSON = require('./src/build/virtual-json');
 const virtualImports = {
   webdev_analytics: {
-    id: isProd ? site.analytics.ids.prod : site.analytics.ids.staging,
+    ids: {
+      UA: site.analytics.ids.ua,
+      GA4: site.analytics.ids.ga4,
+    },
     dimensions: site.analytics.dimensions,
     version: site.analytics.version,
   },
   webdev_config: {
     isProd,
-    env: process.env.ELEVENTY_ENV || 'dev',
-    version: 'v' + new Date().toISOString().replace(/[\D]/g, '').slice(0, 12),
     firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
   },
 };
@@ -52,6 +53,7 @@ const pages = fs.readdirSync(pagesDir, 'utf-8').map((p) => join(pagesDir, p));
 const plugins = [
   virtual(buildVirtualJSON(virtualImports)),
   nodeResolve(),
+  // @ts-ignore
   commonjs(),
 ];
 const devConfig = {
@@ -91,7 +93,7 @@ const productionConfig = {
 const testConfig = {
   input: 'test/unit/src/lib/index.js',
   output: {
-    dir: 'dist/test',
+    dir: '.tmp/test',
     format: 'iife',
     name: 'test',
   },
@@ -111,10 +113,12 @@ const testConfig = {
  * Learn more @ https://rollupjs.org/guide/en/
  */
 export default () => {
-  if (process.env.ELEVENTY_ENV === 'prod') {
-    return productionConfig;
-  } else if (process.env.ELEVENTY_ENV === 'test') {
-    return testConfig;
+  switch (process.env.ELEVENTY_ENV) {
+    case 'prod':
+      return productionConfig;
+    case 'test':
+      return testConfig;
+    default:
+      return devConfig;
   }
-  return devConfig;
 };

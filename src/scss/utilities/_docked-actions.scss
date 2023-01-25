@@ -1,0 +1,7 @@
+/// Docks share/subscribe actions to the block end and inline end
+.docked-actions {
+  inset: auto $global-gutter $global-gutter auto;
+  position: fixed;
+  text-align: end;
+  z-index: 1;
+}

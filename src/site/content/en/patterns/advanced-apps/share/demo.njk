@@ -1,0 +1,116 @@
+---
+patternId: advanced-apps/share
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to let the user share the website they are on</title>
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+
+      img,
+      video {
+        height: auto;
+        max-width: 100%;
+      }
+
+      button {
+        display: flex;
+      }
+
+      button > span {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        background-size: 1em;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        button > span {
+          filter: invert();
+        }
+      }
+
+      .share {
+        background-image: url('share.svg');
+      }
+
+      .sharemac {
+        background-image: url('sharemac.svg');
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to let the user share the website they are on</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at libero
+      eget ante congue molestie. Integer varius enim leo. Duis est nisi,
+      ullamcorper et posuere eu, mattis sed lorem. Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit. In at suscipit erat, et sollicitudin lorem.
+    </p>
+    <img src="https://placekitten.com/400/300" width=400 height=300>
+    <p>
+      In euismod ornare scelerisque. Nunc imperdiet augue ac porttitor
+      porttitor. Pellentesque habitant morbi tristique senectus et netus et
+      malesuada fames ac turpis egestas. Curabitur eget pretium elit, et
+      interdum quam.
+    </p>
+    <hr />
+    <button type="button"><span class="icon"></span>Share</button>
+    {% set script %}
+      const IS_MAC = /Mac|iPhone/.test(navigator.platform);
+      const IS_WINDOWS = /Win/.test(navigator.platform);
+
+      const button = document.querySelector('button');
+      const icon = button.querySelector('.icon');
+      const canonical = document.querySelector('link[rel="canconical"]');
+
+      icon.classList.add(`share${IS_MAC? 'mac' : (IS_WINDOWS? 'windows' : '')}`);
+
+      button.addEventListener('click', async () => {
+        const title = document.title;
+        const text = document.title;
+        const url = canonical?.href || location.href;
+        if ('share' in navigator) {
+          try {
+            await navigator.share({
+              url,
+              text,
+              title,
+            });
+            return;
+          } catch (err) {
+            if (err.name !== "AbortError") {
+              console.error(err.name, err.message);
+            }
+          }
+        }
+        const shareURL = new URL('https://twitter.com/intent/tweet');
+        const params = new URLSearchParams();
+        params.append('text', text);
+        params.append('url', url);
+        shareURL.search = params;
+        window.open(shareURL, '_blank', 'popup,noreferrer,noopener');
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

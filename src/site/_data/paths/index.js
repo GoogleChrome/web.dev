@@ -3,12 +3,7 @@ const angular = require('./angular.json');
 const devices = require('./devices.json');
 const discoverable = require('./discoverable.json');
 const fast = require('./fast.json');
-const learnWebVitals = require('./learn-web-vitals.json');
-const lighthouseAccessibility = require('./lighthouse-accessibility.json');
-const lighthouseBestPractices = require('./lighthouse-best-practices.json');
-const lighthousePerformance = require('./lighthouse-performance.json');
-const lighthousePwa = require('./lighthouse-pwa.json');
-const lighthouseSeo = require('./lighthouse-seo.json');
+const learnCoreWebVitals = require('./learn-core-web-vitals.json');
 const media = require('./media.json');
 const metrics = require('./metrics.json');
 const notifications = require('./notifications.json');
@@ -19,6 +14,8 @@ const react = require('./react.json');
 const reliable = require('./reliable.json');
 const secure = require('./secure.json');
 const animations = require('./animations.json');
+const identity = require('./identity.json');
+const webDevBasicsOne = require('./web-dev-basics-one.json');
 
 module.exports = {
   accessible,
@@ -27,12 +24,8 @@ module.exports = {
   devices,
   discoverable,
   fast,
-  'learn-web-vitals': learnWebVitals,
-  'lighthouse-accessibility': lighthouseAccessibility,
-  'lighthouse-best-practices': lighthouseBestPractices,
-  'lighthouse-performance': lighthousePerformance,
-  'lighthouse-pwa': lighthousePwa,
-  'lighthouse-seo': lighthouseSeo,
+  'learn-core-web-vitals': learnCoreWebVitals,
+  identity,
   media,
   metrics,
   notifications,
@@ -42,4 +35,5 @@ module.exports = {
   reliable,
   secure,
   'mini-apps': miniApps,
+  'web-dev-basics-one': webDevBasicsOne,
 };

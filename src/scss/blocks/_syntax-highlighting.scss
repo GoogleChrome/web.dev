@@ -1,0 +1,88 @@
+/// PATTERN LIBRARY LOCATION 
+/// https://web.dev/design-system/pattern/code-blocks
+.token {
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    @include apply-utility('color', 'mid-text');
+  }
+
+  &.punctuation,
+  &.string,
+  &.atrule,
+  &.attr-value {
+    @include apply-utility('color', 'syntax-primary');
+  }
+
+  &.property,
+  &.tag {
+    @include apply-utility('color', 'syntax-quaternary');
+  }
+
+  &.boolean,
+  &.number {
+    @include apply-utility('color', 'syntax-primary-glare');
+  }
+
+  &.selector,
+  &.attr-name,
+  &.attr-value .punctuation:first-child,
+  &.keyword,
+  &.regex,
+  &.important {
+    @include apply-utility('color', 'syntax-tertiary');
+  }
+
+  &.operator,
+  &.entity,
+  &.url,
+  .language-css &.string {
+    @include apply-utility('color', 'syntax-secondary');
+  }
+
+  &.entity {
+    cursor: help;
+  }
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.highlight-line-active,
+.highlight-line-add,
+.highlight-line-active *,
+.highlight-line-add * {
+  @include apply-utility('weight', 'medium');
+  @include apply-utility('color', 'core-text');
+}
+
+.highlight-line-active {
+  @include apply-utility('bg', 'state-warn-bg');
+
+  &,
+  .token {
+    @include apply-utility('color', 'state-warn-text');
+  }
+}
+
+.highlight-line-add {
+  text-decoration: none;
+
+  @include apply-utility('bg', 'state-good-bg');
+
+  &,
+  .token {
+    @include apply-utility('color', 'state-good-text');
+  }
+}
+
+.highlight-line-remove {
+  @include apply-utility('bg', 'state-bad-bg');
+
+  &,
+  .token {
+    @include apply-utility('color', 'state-bad-text');
+  }
+}

@@ -1,29 +1,114 @@
+contribute:
+  en: Contribute
+  pt: Contribua
+
 file_a_bug:
   en: File a bug
+  es: Presentar un error
+  ja: バグを報告する
+  ko: 버그 신고
+  pt: Registrar um bug
+  ru: Сообщить об ошибке
+  zh: 提交错误
 
 view_source:
   en: View source
+  es: Ver fuente
+  ja: ソースを表示する
+  ko: 소스 보기
+  pt: Visualizar código-fonte
+  ru: Просмотреть исходный код
+  zh: 查看源代码
 
-updates:
-  en: Updates
+related_content:
+  en: Related content
+  es: Contenido relevante
+  ja: 関連性のあるコンテンツ
+  ko: 관련된 콘텐츠
+  pt: Conteúdo relacionado
+  ru: Дополнительная информация
+  zh: 相关内容
+
+chrome_updates:
+  en: Chrome updates
+  es: Chrome Actualizaciones
+  ja: Chrome のアップデート
+  ko: Chrome 업데이트
+  pt: Atualizações do Chrome
+  ru: Новости Chrome
+  zh: Chrome 动态
 
 web_fundamentals:
   en: Web Fundamentals
+  es: Web Fundamentals
+  ja: Web Fundamentals
+  ko: 웹 기초
+  pt: Web Fundamentals
+  ru: Web Fundamentals
+  zh: 网站开发基础
 
 case_studies:
   en: Case studies
+  es: Case studies
+  ja: ケーススタディ
+  ko: 사례 연구
+  pt: Estudos de caso
+  ru: Разборы конкретных случаев
+  zh: 案例研究
 
 podcasts:
   en: Podcasts
+  es: Podcasts
+  ja: ポッドキャスト
+  ko: 팟캐스트
+  pt: Podcasts
+  ru: Подкасты
+  zh: 播客
 
 connect:
   en: Connect
+  es: Conectar
+  ja: 接続する
+  ko: 연결
+  pt: Conectar
+  ru: Соцсети
+  zh: 连接
 
 all_products:
   en: All products
+  es: Todos los productos
+  ja: すべての製品
+  ko: 전체 제품
+  pt: Todos os produtos
+  ru: Все продукты
+  zh: 所有产品
 
 terms_and_privacy:
   en: Terms & Privacy
+  es: Condiciones y privacidad
+  ja: 利用規約とプライバシーポリシー
+  ko: 약관 및 개인정보 보호
+  pt: Termos e privacidade
+  ru: Условия и конфиденциальность
+  zh: 条款和隐私权
 
 community_guidelines:
   en: Community Guidelines
+  es: Principios de la Comunidad
+  ja: コミュニティガイドライン
+  ko: 커뮤니티 가이드라인
+  pt: Diretrizes da comunidade
+  ru: Правила сообщества
+  zh: 社区准则
+
+shows:
+  en: Shows
+  es: Shows
+  ja: ショー
+  ko: 쇼
+  pt: Shows
+  ru: Шоу
+  zh: 节目
+
+developer_chrome_com:
+  en: developer.chrome.com

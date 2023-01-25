@@ -38,9 +38,9 @@ very small subset of the entire list and the "window" of visible content _moves_
 when the user continues to scroll. This improves both the rendering and
 scrolling performance of the list.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./window-diagram.jpg" alt="Window of content in a virtualized list">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="Window of content in a virtualized list", width="578", height="525" %}
+  <figcaption>
     Moving "window" of content in a virtualized list
   </figcaption>
 </figure>
@@ -167,9 +167,9 @@ an example.
 or grids. In this context, the "window" of visible content changes as the user
 scrolls horizontally **and** vertically.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./window-diagram-grid.jpg" alt="Moving window of content in a virtualized grid is two-dimensional">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="Moving window of content in a virtualized grid is two-dimensional", width="739", height="516" %}
+  <figcaption>
     Moving "window" of content in a virtualized grid is two-dimensional
   </figcaption>
 </figure>
@@ -207,9 +207,9 @@ calculations and DOM mutations slower.
 
 The following diagram might help summarize this:
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./difference-in-scrolling.jpg" alt="Difference in scrolling between a regular and virtualized list">
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="Difference in scrolling between a regular and virtualized list", width="800", height="531" %}
+  <figcaption>
     Difference in scrolling between a regular and virtualized list
   </figcaption>
 </figure>
@@ -390,7 +390,7 @@ application, follow these steps:
 
 1. Measure rendering and scrolling performance. This
    [article](https://addyosmani.com/blog/react-window/) shows how the [FPS
-   meter](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#analyze_frames_per_second)
+   meter](https://developer.chrome.com/docs/devtools/evaluate-performance/#analyze_frames_per_second)
    in Chrome DevTools can be used to explore how efficiently items are rendered
    on a list.
 2. Include `react-window` for any long lists or grids that are affecting

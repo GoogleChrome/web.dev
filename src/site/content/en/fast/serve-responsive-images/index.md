@@ -8,6 +8,7 @@ description: |
   needed. Instead of a "one-size-fits-all" approach to images, serve different
   image sizes to different devices.
 date: 2018-11-05
+updated: 2022-11-29
 codelabs:
   - codelab-specifying-multiple-slot-widths
   - codelab-art-direction
@@ -19,6 +20,26 @@ tags:
 Serving desktop-sized images to mobile devices can use 2–4x more data than
 needed. Instead of a "one-size-fits-all" approach to images, serve different
 image sizes to different devices.
+
+## Responsive images and Core Web Vitals
+
+When you serve responsive images, you're evaluating the display capabilities of
+the user's device and choosing one of a set of image candidates that are optimal
+for display based on those criteria. The result&mdash;as stated previously&mdash;is
+rather than delivering too much image data to devices that won't benefit from it,
+you're serving an appropriately sized image for the device. For smaller devices such
+as phones and tablets, this equates to reduced data usage as compared to devices
+with larger screens, such as laptops.
+
+The effects of faster image loading can also extend to your page's [Largest Contentful Paint (LCP)](/lcp/).
+For example, if your page's [LCP element](/lcp/#what-elements-are-considered) is an image,
+you're reducing that LCP candidate's [resource load time](/optimize-lcp/#3-reduce-resource-load-time).
+
+Lower resource load times will lower the load time for an LCP image, which will improve
+the page's LCP score. A lower LCP means users will perceive that your site is loading faster,
+particularly the largest piece of content visible in the viewport during page load. Serving
+responsive images can also reduce bandwidth contention for other resources on the page,
+which can improve how fast your page loads in general.
 
 ## Resize images
 
@@ -89,7 +110,7 @@ images.
 Specify multiple image versions and the browser will choose the best one to
 use:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -113,10 +134,10 @@ use:
 
 
 The `<img>` tag's
-[`src`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-src),
-[`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset),
+[`src`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-src),
+[`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-srcset),
 and
-[`sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes)
+[`sizes`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-sizes)
 attributes all interact to achieve this end result.
 
 ### The "src" attribute
@@ -155,7 +176,7 @@ Use the `w` unit (instead of `px`) to write width descriptors. For example, a
 You don't need to know about density descriptors to serve different image sizes.
 However, if you're curious about how density descriptors work, check out the
 [Resolution Switching code lab](/codelab-density-descriptors).
-Density descriptors are used to serve different images based on the_ device's
+Density descriptors are used to serve different images based on the device's
 [pixel density](https://en.wikipedia.org/wiki/Pixel_density).
 
 ### The "sizes" attribute
@@ -197,7 +218,7 @@ to learn how to do this.
 
 In addition to all the extra credit already listed (images are complex!), you
 can also use these same concepts for
-[art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
+[art direction](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
 Art direction is the practice of serving completely different looking images
 (rather than different versions of the same image) to different viewports. You
 can learn more in the [Art Direction code lab](/codelab-art-direction).

@@ -12,14 +12,14 @@ description: |
 tags:
   - blog
   - security
-  - fetch-metadata
+  # - fetch-metadata
 feedback:
   - api
 ---
 
 ## Why should you care about isolating your web resources?
 
-Many web applications are vulnerable to [cross-origin](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) attacks like [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), timing attacks, [cross-origin information leaks](https://arxiv.org/pdf/1908.02204.pdf) or speculative execution side-channel ([Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre)) attacks.
+Many web applications are vulnerable to [cross-origin](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) attacks like [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), timing attacks, [cross-origin information leaks](https://arxiv.org/pdf/1908.02204.pdf) or speculative execution side-channel ([Spectre](https://developer.chrome.com/blog/meltdown-spectre/)) attacks.
 
 [Fetch Metadata](https://www.w3.org/TR/fetch-metadata/) request headers allow you to deploy a strong defense-in-depth mechanism—a Resource Isolation Policy—to protect your application against these common cross-origin attacks.
 
@@ -27,8 +27,9 @@ It is common for resources exposed by a given web application to only be loaded 
 
 ## Browser compatibility {: #compatibility }
 
-Fetch Metadata request headers are supported as of Chrome 76 and in other Chromium-based browsers, and are under development in Firefox.
-See [Browser compatibility](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site#Browser_compatibility) for up-to-date browser support information.
+Fetch Metadata request headers are supported as of Firefox 90 and as of Chrome 76 in all Chromium-based browsers.
+
+{% BrowserCompat 'http.headers.sec-fetch-site' %}
 
 ## Background
 
@@ -72,7 +73,9 @@ Malicious cross-site requests can be rejected by the server because of the addit
 
 ### `Sec-Fetch-Site`
 
-`Sec-Fetch-Site` tells the server which [site](https://web.dev/same-site-same-origin) sent the request. The browser sets this value to one of the following:
+{% BrowserCompat 'http.headers.Sec-Fetch-Site' %}
+
+`Sec-Fetch-Site` tells the server which [site](/same-site-same-origin) sent the request. The browser sets this value to one of the following:
 
  - `same-origin`, if the request was made by your own application (e.g. `site.example`)
  - `same-site`, if the request was made by a subdomain of your site (e.g. `bar.site.example`)
@@ -81,9 +84,13 @@ Malicious cross-site requests can be rejected by the server because of the addit
 
 ### `Sec-Fetch-Mode`
 
+{% BrowserCompat 'http.headers.Sec-Fetch-Mode' %}
+
 `Sec-Fetch-Mode` indicates the [mode](https://developer.mozilla.org/docs/Web/API/Request/mode) of the request. This roughly corresponds to the type of the request and allows you to distinguish resource loads from navigation requests. For example, a destination of `navigate` indicates a top-level navigation request while `no-cors` indicates resource requests like loading an image.
 
 ### `Sec-Fetch-Dest`
+
+{% BrowserCompat 'http.headers.Sec-Fetch-Dest' %}
 
 `Sec-Fetch-Dest` exposes a request's [destination](https://developer.mozilla.org/docs/Web/API/Request/destination) (e.g. if a `script` or an `img` tag caused a resource to be requested by the browser).
 
@@ -109,7 +116,7 @@ if not req['sec-fetch-site']:
  ```
 
 {% Aside 'caution' %}
-Since Fetch Metadata is only supported in Chromium-based browsers,
+Since Fetch Metadata is not supported in all browsers,
 it should be used as a
 [defense-in-depth protection](https://static.googleusercontent.com/media/landing.google.com/en//sre/static/pdf/Building_Secure_and_Reliable_Systems.pdf#page=181)
 and not as your primary line of defense.
@@ -144,7 +151,7 @@ if req['sec-fetch-mode'] == 'navigate' and req.method == 'GET'
     return True  # Allow this request
 ```
 {% Aside 'gotchas' %}
-The logic above protects your application's endpoints from being used as resources by other websites, but will permit top-level navigation and embedding (e.g. loading in an <iframe>). To further improve security, you can use Fetch Metadata headers to restrict cross-site navigations to only an allowed set of pages.
+The logic above protects your application's endpoints from being used as resources by other websites, but will permit top-level navigation and embedding (e.g. loading in an `<iframe>`). To further improve security, you can use Fetch Metadata headers to restrict cross-site navigations to only an allowed set of pages.
 {% endAside %}
 
 
@@ -214,6 +221,7 @@ It's recommended that you test your policy in a side-effect free way by first en
 From our experience of rolling out a Fetch Metadata Resource Isolation Policy at Google, most applications are by default compatible with such a policy and rarely require exempting endpoints to allow cross-site traffic.
 
 ### Enforcing a Resource Isolation Policy
+
 After you've checked that your policy doesn't impact legitimate production traffic, you're ready to enforce restrictions, guaranteeing that other sites will not be able to request your resources and protecting your users from cross-site attacks.
 
 {% Aside 'caution' %}
@@ -227,4 +235,4 @@ Make sure that you reject invalid requests before running authentication checks 
 - [Fetch Metadata Playground](https://secmetadata.appspot.com/)
 - [Google I/O talk: Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf) (Slides)
 
-{% YouTube 'DDtM9caQ97I', '1856' %}
+{% YouTube id='DDtM9caQ97I', startTime='1856' %}

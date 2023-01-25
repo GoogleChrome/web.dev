@@ -1,0 +1,13 @@
+<button 
+  class="button"
+  {% if data.type %}data-type="{{ data.type }}"{% endif %}
+  {% if data.attribute %}{{ data.attribute }}{% endif %}
+>
+  {% if data.icon %}
+    {% include "icons/" ~ data.icon %}
+    <span>{{ data.text }}</span>
+  {% else %}
+  {{ data.text }}
+  {% endif %}
+  
+</button>

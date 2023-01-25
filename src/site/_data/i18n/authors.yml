@@ -1,0 +1,4435 @@
+danristic:
+  title:
+    en: Dan Ristic
+  description:
+    en: Developer at PubNub
+
+gman:
+  title:
+    en: Gregg Tavares
+  description:
+    en: Software Engineer at Google
+
+dominiccooney:
+  title:
+    en: Dominic Cooney
+  description:
+    en: Software Engineer at Google
+
+zgoddard:
+  title:
+    en: Z Goddard
+  description:
+    en: Game Developer at Gradient Studios, Inc.
+
+tomwiltzius:
+  title:
+    en: Tom Wiltzius
+  description:
+    en: Chrome Product Manager at Google
+
+coltmcanlis:
+  title:
+    en: Colt McAnlis
+  description:
+    en: Developer Relations at Google
+
+marcinwichary:
+  title:
+    en: Marcin Wichary
+  description:
+    en: Sr. User Experience Designer at Google
+
+razvancaliman:
+  title:
+    en: Razvan Caliman
+  description:
+    en: Web Platform Adobe
+
+christiancantrell:
+  title:
+    en: Christian Cantrell
+  description:
+    en: Web Platform Adobe
+
+jameswilliams:
+  title:
+    en: James Williams
+  description:
+    en: Independent Developer
+
+joemarini:
+  title:
+    en: Joe Marini
+  description:
+    en: Chrome Developer Advocate at Google
+
+loreenalee:
+  title:
+    en: Loreena Lee
+  description:
+    en: Software Engineer at Google
+
+malteubl:
+  title:
+    en: Malte Ubl
+  description:
+    en: Customer Solutions Engineering at Google
+
+raymondcamden:
+  title:
+    en: Raymond Camden
+  description:
+    en: Developer Relations at Adobe
+
+brianford:
+  title:
+    en: Brian Ford
+  description:
+    en: Software Engineer Intern at Google
+
+tjvantoll:
+  title:
+    en: TJ VanToll
+  description:
+    en: Web Develope at Liquid Web
+
+bradfrost:
+  title:
+    en: Brian Ford
+  description:
+    en: Front-end designer at R/GA
+
+lillithompson:
+  title:
+    en: Lilli Thompson
+  description:
+    en: Game Developer
+
+saqoosha:
+  title:
+    en: Saqoosha
+  description:
+    en: Programmer at Katamari Inc.
+
+adriangould:
+  title:
+    en: Adrian Gould
+  description:
+    en: Programmer, Designer at Pagoda Software
+
+adammark:
+  title:
+    en: Adam Mark
+  description:
+    en: Programmer, Designer at Pagoda Software
+
+gskinnerdotcom:
+  title:
+    en: Sean Middleditch
+  description:
+    en: Agency
+
+seanmiddleditch:
+  title:
+    en: Sean Middleditch
+  description:
+    en: Developer at Subsonic LLC
+
+justingitlin:
+  title:
+    en: Justin Gitlin
+  description:
+    en: Agency/Developer at Legwork/Mode Set
+
+activetheory:
+  title:
+    en: Active Theory
+  description:
+    en: Creative Development
+
+luigimontanez:
+  title:
+    en: Luigi Montanez
+  description:
+    en: Software Developer at Sunlight Labs
+
+michaeldewey:
+  title:
+    en: Mike Dewey
+  description:
+    en: Muro at deviantART
+
+oskareriksson:
+  title:
+    en: Oskar Eriksson
+  description:
+    en: Technical Director at Dinahmoe
+
+fredchasen:
+  title:
+    en: Fred Chasen
+  description:
+    en: Lead Developer at Tool Of North America
+
+plan8:
+  title:
+    en: Plan 8
+  description:
+    en: Audio Agency
+
+unit9com:
+  title:
+    en: unit9 com
+  description:
+    en: Production Company
+
+geoffblair:
+  title:
+    en: Geoff Blair
+  description:
+    en: Programmer, Designer at Lost Decade Games
+
+matthackett:
+  title:
+    en: Matt Hackett
+  description:
+    en: Programmer, Designer at Lost Decade Games
+
+christophergammon:
+  title:
+    en: Christopher Gammon
+  description:
+    en: Web Platform Adobe
+
+ericrk:
+  title:
+    en: Eric Karl
+  description:
+    en: Developer at Munkadoo Games LLC
+
+thomasreynolds:
+  title:
+    en: Thomas Reynolds
+  description:
+    en: Agency Instrument
+
+einaroberg:
+  title:
+    en: Einar Öberg
+  description:
+    en: Developer at North Kingdom
+
+danielisaksson:
+  title:
+    en: Daniel Isaksson
+  description:
+    en: Technical Director at North Kingdom
+
+michaelchang:
+  title:
+    en: Michael Chang
+  description:
+    en: Developer
+
+hakimelhattab:
+  title:
+    en: Hakim El Hattab
+  description:
+    en: Senior Interactive Developer
+
+hanseklund:
+  title:
+    en: Hans Eklund
+  description:
+    en: Technical Director at North Kingdom
+
+derekdetweiler:
+  title:
+    en: Derek Detweiler
+  description:
+    en: Game Designer at Gopherwood Studios
+
+johnmccutchan:
+  title:
+    en: John McCutchan
+  description:
+    en: Developer Relations at Google
+
+wesleyhales:
+  title:
+    en: Wesley Hales
+  description:
+    en: Senior Developer at Red Hat
+
+mahemoff:
+  title:
+    en: Michael Mahemoff
+  description:
+    en: Freelance Web Developer
+
+taligarsiel:
+  title:
+    en: Tali Garsiel
+  description:
+    en: Developer at Incapsula
+
+paulirish:
+  title:
+    en: Paul Irish
+  description:
+    en: Developer Relations at Google
+
+mdeal:
+  title:
+    en: Michael Deal
+  description:
+    en: New Product Development at Orange Honey
+
+smus:
+  title:
+    en: Boris Smus
+  description:
+    en: Google Developer Relations
+
+danielmoore:
+  title:
+    en: Daniel X. Moore
+  description:
+    en: Pixel Relations at STRd6
+
+davidtong:
+  title:
+    en: David Tong
+  description:
+    en: Box.net
+
+jeremychone:
+  title:
+    en: Jeremy Chone
+  description:
+    en: Developer
+
+ernestd:
+  title:
+    en: Ernest Delgado
+  description:
+    en: Google Developer Relations
+
+chriswilson:
+  title:
+    en: Chris Wilson
+  description:
+    en: Google Developer Relations
+
+sethladd:
+  title:
+    en: Seth Ladd
+  description:
+    en: Seth is a contributor to web.dev
+
+mustafa:
+  title:
+    en: Mustafa Kurtuldu
+  description:
+    en: Design Advocate at Google • Material Design, UX & Design Sprints
+
+mco:
+  title:
+    en: Marc Cohen
+  description:
+    en: Eng Manager, Web Developer Relations
+
+iamakulov:
+  title:
+    en: Ivan Akulov
+  description:
+    en: Contracting software engineer · Blogging, open source, performance, UX
+
+pbakaus:
+  title:
+    en: Paul Bakaus
+  description:
+    en: Open Web Developer Advocate at Google • Tools, Performance, Animation, UX
+
+paulkinlan:
+  title:
+    en: Paul Kinlan
+  description:
+    en: Paul is a Developer Advocate
+
+dalecurtis:
+  title:
+    en: Dale Curtis
+  description:
+    en: Dale is a Senior Software Engineer
+
+mscales:
+  title:
+    en: Mat Scales
+  description:
+    en: Mat is a contributor to web.dev
+
+ewagasperowicz:
+  title:
+    en: Ewa Gasperowicz
+  description:
+    en: Ewa is a contributor to web.dev
+
+alexdanilo:
+  title:
+    en: Alex Danilo
+  description:
+    en: Alex is a contributor to web.dev
+
+taylorsavage:
+  title:
+    en: Taylor Savage
+  description:
+    en: Taylor is a PM on the Chrome Team, focusing on Web Components and Polymer.
+
+umarhansa:
+  title:
+    en: Umar Hansa
+  description:
+    en: Umar is a front-end web developer
+
+ilmariheikkinen:
+  title:
+    en: Ilmari Heikkinen
+  description:
+    en: Ilmari is a contributor to web.dev
+
+mikewest:
+  title:
+    en: Mike West
+  description:
+    en: Mike is a contributor to web.dev
+
+samthorogood:
+  title:
+    en: Sam Thorogood
+  description:
+    en: Evangelises Chrome and the mobile web in the Developer Relations team at Google.
+
+aliceboxhall:
+  title:
+    en: Alice Boxhall
+  description:
+    en: Alice is a contributor to web.dev
+
+eligrey:
+  title:
+    en: Eli Grey
+  description:
+    en: Eli is a Developer
+
+jakearchibald:
+  title:
+    en: Jake Archibald
+    es: Jake Archibald
+    ja: Jake Archibald
+    ko: Jake Archibald
+    pt: Jake Archibald
+    ru: Jake Archibald
+    zh: Jake Archibald
+  description:
+    en: Human boy working on web standards at Google
+    es: Chico humano que trabaja en los estándares de la web en Google
+    ja: Google で Web 標準に取り組むヒューマンボーイ
+    ko: Google에서 웹 표준 작업을 하는 인간적인 청년
+    pt: Garoto humano trabalhando nos padrões da web na empresa Google
+    ru: Разработчик веб-стандартов в компании Google
+    zh: 在 Google 研究网络标准的大男孩
+
+aaronkrajeski:
+  title:
+    en: Aaron Krajeski
+    es: Aaron Krajeski
+    ja: Aaron Krajeski
+    ko: Aaron Krajeski
+    pt: Aaron Krajeski
+    ru: Aaron Krajeski
+    zh: Aaron Krajeski
+  description:
+    en: Overly concerned with glowing rectangles
+    es: Demasiado preocupado por los rectángulos brillantes
+    ja: 四角く光る画面に過度に関心がある人
+    ko: 빛나는 직사각형에 지나치게 관심을 가진 사람
+    pt: Excessivamente preocupado com retângulos brilhantes
+    ru: Проявляет повышенный интерес к светящимся прямоугольникам
+    zh: 全身心研究发光的矩形
+
+felixarntz:
+  title:
+    en: Felix Arntz
+    es: Felix Arntz
+    ja: Felix Arntz
+    ko: Felix Arntz
+    pt: Felix Arntz
+    ru: Felix Arntz
+    zh: Felix Arntz
+  description:
+    en: Developer Programs Engineer at Google, contributing to the CMS ecosystem
+    es: Ingeniero de programas para desarrolladores en Google, contribuyendo al ecosistema CMS
+    ja: CMS エコシステムに貢献する Google の開発者プログラムエンジニア
+    ko: CMS 생태계에 기여하는 Google의 개발자 프로그램 엔지니어
+    pt: Engenheiro de programas de desenvolvedor no Google, contribuindo para o ecossistema CMS
+    ru: Developer Programs Engineer в компании Google. Участвует в развитии экосистемы CMS
+    zh: Google 的开发者计划工程师，也是 CMS 生态系统的贡献者
+
+amandabaker:
+  title:
+    en: Amanda Baker
+    es: Amanda Baker
+    ja: Amanda Baker
+    ko: Amanda Baker
+    pt: Amanda Baker
+    ru: Amanda Baker
+    zh: Amanda Baker
+  description:
+    en: Software Engineer on the Microsoft Edge team
+    es: Ingeniero de software en el equipo de Microsoft Edge
+    ja: Microsoft Edge チームに所属するソフトウェアエンジニア
+    ko: Microsoft Edge 팀의 소프트웨어 엔지니어
+    pt: Engenheira de software na equipe Microsoft Edge
+    ru: Инженер-программист в команде Microsoft Edge
+    zh: Microsoft Edge 团队的软件工程师
+
+kaycebasques:
+  title:
+    en: Kayce Basques
+    es: Kayce Basques
+    ja: Kayce Basques
+    ko: Kayce Basques
+    pt: Kayce Basques
+    ru: Kayce Basques
+    zh: Kayce Basques
+  description:
+    en: Technical Writer, Chrome DevTools & Lighthouse
+    es: Escritor técnico, Chrome DevTools y Lighthouse
+    ja: Chrome DevTools や Lighthouse を対象としたテクニカルライター
+    ko: 테크니컬라이터, Chrome DevTools 및 Lighthouse
+    pt: Escritora técnica, Chrome DevTools & Lighthouse
+    ru: Технический писатель, специализирующийся на Chrome DevTools и Lighthouse
+    zh: Chrome DevTools 与 Lighthouse 技术撰稿人
+
+johyphenel:
+  title:
+    en: Jo-el van Bergen
+    es: Jo-el van Bergen
+    ja: Jo-el van Bergen
+    ko: Jo-el van Bergen
+    pt: Jo-el van Bergen
+    ru: Jo-el van Bergen
+    zh: Jo-el van Bergen
+  description:
+    en: Our latest news, updates, and stories by Jo-el van Bergen.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Jo-el van Bergen.
+    ja: Jo-el van Bergen による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Jo-el van Bergen의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Jo-el van Bergen.
+    ru: Последние новости и статьи от Jo-el van Bergen.
+    zh: Jo-el van Bergen 撰写我们的最新资讯、动态和故事。
+
+sgomes:
+  title:
+    en: Sérgio Gomes
+    es: Sérgio Gomes
+    ja: Sérgio Gomes
+    ko: Sérgio Gomes
+    pt: Sérgio Gomes
+    ru: Sérgio Gomes
+    zh: Sérgio Gomes
+  description:
+    en: Our latest news, updates, and stories by Sérgio Gomes.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Sérgio Gomes.
+    ja: Sérgio Gomes による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Sérgio Gomes의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Sérgio Gomes.
+    ru: Последние новости и статьи от Sérgio Gomes.
+    zh: Sérgio Gomes 撰写我们的最新资讯、动态和故事。
+
+beaufortfrancois:
+  title:
+    en: François Beaufort
+    es: François Beaufort
+    ja: François Beaufort
+    ko: François Beaufort
+    pt: François Beaufort
+    ru: François Beaufort
+    zh: François Beaufort
+  description:
+    en: Dives into Chromium source code
+    es: Se sumerge en el código fuente de Chromium
+    ja: Chromium のソースコードを深掘りする人
+    ko: Chromium 소스 코드 심층 해부
+    pt: Mergulha no código-fonte do Chromium
+    ru: Исследователь исходного кода Chromium
+    zh: 潜心研究 Chromium 源代码
+
+cwallez:
+  title:
+    en: Corentin Wallez
+    es: Corentin Wallez
+    ja: Corentin Wallez
+    ko: Corentin Wallez
+    pt: Corentin Wallez
+    ru: Corentin Wallez
+    zh: Corentin Wallez
+  description:
+    en: Graphics plumber at Google
+    es: Técnico de gráficos en Google
+    ja: Google のグラフィクス配管工
+    ko: Google의 그래픽 배관공
+    pt: Encanador gráfico na empresa Google
+    ru: Графический инженер в компании Google
+    zh: Google 的图形“水管工”
+
+mathiasbynens:
+  title:
+    en: Mathias Bynens
+    es: Mathias Bynens
+    ja: Mathias Bynens
+    ko: Mathias Bynens
+    pt: Mathias Bynens
+    ru: Mathias Bynens
+    zh: Mathias Bynens
+  description:
+    en: V8 JavaScript whisperer
+    es: Escritor sobre JavaScript V8
+    ja: V8 JavaScript エンジンについてささやく人
+    ko: V8 JavaScript 가이드
+    pt: Encantador do V8 JavaScript
+    ru: Эксперт по вопросам V8 JavaScript
+    zh: V8 JavaScript 网络标准爱好者
+
+hongchanchoi:
+  title:
+    en: Hongchan Choi
+    es: Hongchan Choi
+    ja: Hongchan Choi
+    ko: Hongchan Choi
+    pt: Hongchan Choi
+    ru: Hongchan Choi
+    zh: Hongchan Choi
+  description:
+    en: Software Engineer working on Chromium
+    es: Ingeniero de software que trabaja en Chromium
+    ja: Chromium の開発に取り組むソフトウェアエンジニア
+    ko: Chromium 작업을 하는 소프트웨어 엔지니어
+    pt: Engenheiro de software trabalhando no Chromium
+    ru: Инженер-программист, работающий над Chromium
+    zh: 研究 Chromium 的软件工程师
+
+robdodson:
+  title:
+    en: Rob Dodson
+    es: Rob Dodson
+    ja: Rob Dodson
+    ko: Rob Dodson
+    pt: Rob Dodson
+    ru: Rob Dodson
+    zh: Rob Dodson
+  description:
+    en: Googler working on web stuff. I help build web.dev!
+    es: Empleado de Google que trabaja en la web. ¡Ayuda a construir web.dev!
+    ja: Web 関連技術に取り組む Googler。web.dev の構築をお手伝いします！
+    ko: 웹 작업을 하는 구글러입니다. web.dev 구축을 도와드립니다!
+    pt: Googler que trabalha com coisas da web. Eu ajudo a construir a web.dev!
+    ru: Разработчик веб-технологий в компании Google. Участвует в работе над web.dev.
+    zh: 研究网络相关内容的 Google 员工。我帮助搭建了 web.dev！
+
+samdutton:
+  title:
+    en: Sam Dutton
+    es: Sam Dutton
+    ja: Sam Dutton
+    ko: Sam Dutton
+    pt: Sam Dutton
+    ru: Sam Dutton
+    zh: Sam Dutton
+  description:
+    en: Sam is a Developer Advocate
+    es: Sam es un Desarrollador partidario
+    ja: Sam は Developer Advocate です
+    ko: Sam은 개발자 애드버킷입니다.
+    pt: Sam é um Developer Advocate
+    ru: Сэм — Developer Advocate
+    zh: Sam 是一名开发技术推广工程师
+
+arthurevans:
+  title:
+    en: Arthur Evans
+    es: Arthur Evans
+    ja: Arthur Evans
+    ko: Arthur Evans
+    pt: Arthur Evans
+    ru: Arthur Evans
+    zh: Arthur Evans
+  description:
+    en: Arthur is a Tech Writer
+    es: Arthur es un escritor técnico
+    ja: Arthur はテクニカルライターです
+    ko: Arthur는 테크니컬라이터입니다.
+    pt: Arthur é um escritor técnico
+    ru: Артур — технический писатель
+    zh: Arthur 是一名技术撰稿人
+
+exterkamp:
+  title:
+    en: Shane Exterkamp
+    es: Shane Exterkamp
+    ja: Shane Exterkamp
+    ko: Shane Exterkamp
+    pt: Shane Exterkamp
+    ru: Shane Exterkamp
+    zh: Shane Exterkamp
+  description:
+    en: Shane is a SWE on Lighthouse
+    es: Shane es un Ingeniero de software en Lighthouse
+    ja: Shane は Lighthouse の開発に取り組むソフトウェアエンジニアです
+    ko: Shane은 Lighthouse의 SWE입니다.
+    pt: Shane é engenheiro de software na empresa Lighthouse
+    ru: Шейн — инженер-программист в команде Lighthouse
+    zh: Shane 是一名负责 Lighthouse 的软件工程师
+
+sfourault:
+  title:
+    en: Sébastien Fourault
+    es: Sébastien Fourault
+    ja: Sébastien Fourault
+    ko: Sébastien Fourault
+    pt: Sébastien Fourault
+    ru: Sébastien Fourault
+    zh: Sébastien Fourault
+  description:
+    en: Our latest news, updates, and stories by Sébastien Fourault.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Sébastien Fourault.
+    ja: Sébastien Fourault による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Sébastien Fourault의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Sébastien Fourault.
+    ru: Последние новости и статьи от Sébastien Fourault.
+    zh: Sébastien Fourault 撰写我们的最新资讯、动态和故事。
+
+tomgreenaway:
+  title:
+    en: Tom Greenaway
+    es: Tom Greenaway
+    ja: Tom Greenaway
+    ko: Tom Greenaway
+    pt: Tom Greenaway
+    ru: Tom Greenaway
+    zh: Tom Greenaway
+  description:
+    en: Tom is the Games Lead for the Chrome & Web Developer Relations team at Google
+    es: Tom es el Jefe de juegos en el Equipo de relaciones para desarrolladores web y de Chrome
+    ja: Tom は Google の Chrome & Web Developer Relations チームのゲームリーダーです。
+    ko: Tom은 Google의 Chrome 및 웹 개발자 관계 팀에서 게임 책임자를 맡고 있습니다.
+    pt: Tom é o líder de jogos na equipe Chrome & Web Developer Relations na empresa Google
+    ru: Том — руководитель по вопросам веб-игр в команде, отвечающей за разработку Chrome и взаимодействие с веб-разработчиками в компании Google
+    zh: Tom 是 Google 的 Chrome 和网站开发者关系团队的游戏主管
+
+ilyagrigorik:
+  title:
+    en: Ilya Grigorik
+    es: Ilya Grigorik
+    ja: Ilya Grigorik
+    ko: Ilya Grigorik
+    pt: Ilya Grigorik
+    ru: Ilya Grigorik
+    zh: Ilya Grigorik
+  description:
+    en: Our latest news, updates, and stories by Ilya Grigorik.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Ilya Grigorik.
+    ja: Ilya Grigorik による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Ilya Grigorik의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Ilya Grigorik.
+    ru: Последние новости и статьи от Ilya Grigorik.
+    zh: Ilya Grigorik 撰写我们的最新资讯、动态和故事。
+
+yigu:
+  title:
+    en: Yi Gu
+    es: Yi Gu
+    ja: Yi Gu
+    ko: Yi Gu
+    pt: Yi Gu
+    ru: Yi Gu
+    zh: Yi Gu
+  description:
+    en: Software Engineer working on Chromium
+    es: Ingeniero de software que trabaja en Chromium
+    ja: Chromium の開発に取り組むソフトウェアエンジニア
+    ko: Chromium 작업을 하는 소프트웨어 엔지니어
+    pt: Engenheiro de software trabalhando no Chromium
+    ru: Инженер-программист, работающий над Chromium
+    zh: 研究 Chromium 的软件工程师
+
+alsan:
+  title:
+    en: Kaan Alsan
+    es: Kaan Alsan
+    ja: Kaan Alsan
+    ko: Kaan Alsan
+    pt: Kaan Alsan
+    ru: Kaan Alsan
+    zh: Kaan Alsan
+  description:
+    en: Former Software Engineer Intern working on Chromium
+    es: Experimentado pasante como Ingeniero de software que trabaja en Chromium
+    ja: Chromium の開発に取り組む元ソフトウェアエンジニアインターン
+    ko: Chromium 작업을 하는 이전 소프트웨어 엔지니어 인턴
+    pt: Ex-estagiário de engenharia de software trabalhando no Chromium
+    ru: Инженер-программист, участвовал в разработке Chromium в качестве стажера
+    zh: 研究 Chromium 的前软件工程师实习生
+
+katiehempenius:
+  title:
+    en: Katie Hempenius
+    es: Katie Hempenius
+    ja: Katie Hempenius
+    ko: Katie Hempenius
+    pt: Katie Hempenius
+    ru: Katie Hempenius
+    zh: Katie Hempenius
+  description:
+    en: Our latest news, updates, and stories by Katie Hempenius.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Katie Hempenius.
+    ja: Katie Hempenius による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Katie Hempenius의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Katie Hempenius.
+    ru: Последние новости и статьи от Katie Hempenius.
+    zh: Katie Hempenius 撰写我们的最新资讯、动态和故事。
+
+mihajlija:
+  title:
+    en: Milica Mihajlija
+    es: Milica Mihajlija
+    ja: Milica Mihajlija
+    ko: Milica Mihajlija
+    pt: Milica Mihajlija
+    ru: Milica Mihajlija
+    zh: Milica Mihajlija
+  description:
+    en: Our latest news, updates, and stories by Milica Mihajlija.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Milica Mihajlija.
+    ja: Milica Mihajlija による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Milica Mihajlija의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Milica Mihajlija.
+    ru: Последние новости и статьи от Milica Mihajlija.
+    zh: Milica Mihajlija 撰写我们的最新资讯、动态和故事。
+
+mustafakurtuldu:
+  title:
+    en: Mustafa Kurtuldu
+    es: Mustafa Kurtuldu
+    ja: Mustafa Kurtuldu
+    ko: Mustafa Kurtuldu
+    pt: Mustafa Kurtuldu
+    ru: Mustafa Kurtuldu
+    zh: Mustafa Kurtuldu
+  description:
+    en: Our latest news, updates, and stories by Mustafa Kurtuldu.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Mustafa Kurtuldu.
+    ja: Mustafa Kurtuldu による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Mustafa Kurtuldu의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Mustafa Kurtuldu.
+    ru: Последние новости и статьи от Mustafa Kurtuldu.
+    zh: Mustafa Kurtuldu 撰写我们的最新资讯、动态和故事。
+
+agektmr:
+  title:
+    en: Eiji Kitamura
+    es: Eiji Kitamura
+    ja: えーじ
+    ko: Eiji Kitamura
+    pt: Eiji Kitamura
+    ru: Eiji Kitamura
+    zh: Eiji Kitamura
+  description:
+    en: Developer Advocate in Tokyo
+    es: Desarrollador partidario en Tokio
+    ja: 東京を拠点に活動するデベロッパー アドボケート
+    ko: 도쿄의 개발자 애드버킷
+    pt: Developer Advocate em Tóquio
+    ru: Developer Advocate в Токио
+    zh: 东京的开发技术推广工程师
+
+kosamari:
+  title:
+    en: Mariko Kosaka
+    es: Mariko Kosaka
+    ja: Mariko Kosaka
+    ko: Mariko Kosaka
+    pt: Mariko Kosaka
+    ru: Mariko Kosaka
+    zh: Mariko Kosaka
+  description:
+    en: Mariko is a drawsplainer
+    es: Mariko es una persona que explica cosas mediante dibujos
+    ja: 'Mariko はドロウスプレイナー (drawsplainer: イラストで説明する人) です'
+    ko: Mariko는 드로스플레이너입니다.
+    pt: Mariko é uma pessoa que explica coisas usando desenhos
+    ru: Марико — иллюстратор
+    zh: Mariko 是一名思维导图画师
+
+petelepage:
+  title:
+    en: Pete LePage
+    es: Pete LePage
+    ja: Pete LePage
+    ko: Pete LePage
+    pt: Pete LePage
+    ru: Pete LePage
+    zh: Pete LePage
+  description:
+    en: Developer Advocate on the web team at Google, taking the sharp edges off new stuff & helping make the web better for developers! (he/him)
+    es: Desarrollador partidario en el equipo web de Google, su objetivo es eliminar las imperfecciones de los productos nuevos y ayuda a mejorar la web para los desarrolladores. (él)
+    ja: Google の Web チームの Developer Advocate であり、新しい技術から尖った部分を取り除き、Web を開発者にとってより良いものにするサポートをしています (私については He/Him を使って言及してください)。
+    ko: Google 웹 팀의 개발자 애드버킷으로, 새로운 기능을 최대한 활용하고 개발자를 위해 더 나은 웹을 만드는 데 도움을 줍니다! (그가/그를)
+    pt: Developer Advocate na equipe web do Google, removendo as pontas afiadas das novidades e ajudando a deixar a web melhor para os desenvolvedores! (he/him)
+    ru: Developer Advocate в команде разработки веб-технологий компании Google. Доступно рассказывает про новые технологии и помогает облегчить работу веб-разработчикам.
+    zh: Google 网络团队的开发技术推广工程师，致力于打磨新事物的棱角并努力为开发者提供更好的网络环境！（他）
+
+pjmclachlan:
+  title:
+    en: Penny McLachlan
+    es: Penny McLachlan
+    ja: Penny McLachlan
+    ko: Penny McLachlan
+    pt: Penny McLachlan
+    ru: Penny McLachlan
+    zh: Penny McLachlan
+  description:
+    en: Penny is a Product Manager on the Chrome Web Platform team responsible for Chrome permissions, notifications, and progressive web apps.
+    es: Penny es Gerente de productos en el equipo de la plataforma web de Chrome, responsable de los permisos, las notificaciones y las aplicaciones web progresivas de Chrome.
+    ja: Penny は Chrome Web プラットフォームチームのプロダクトマネージャーとして Chrome のアクセス権、通知、プログレッシブウェブアプリを担当しています。
+    ko: Penny는 Chrome 권한, 알림 및 프로그레시브 웹 앱을 담당하는 Chrome 웹 플랫폼 팀의 제품 관리자입니다.
+    pt: Penny é gerente de produtos da equipe da plataforma da web do Chrome, responsável pelas permissões, notificações e aplicações web progressivas do Chrome.
+    ru: Пенни — менеджер по продукту в команде веб-платформы Chrome. Она отвечает за поддержку разрешений, уведомлений и прогрессивных веб-приложений в Chrome.
+    zh: Penny 是 Chrome 网络平台团队的产品经理，负责 Chrome 权限、通知和渐进式 Web 应用。
+
+developit:
+  title:
+    en: Jason Miller
+    es: Jason Miller
+    ja: Jason Miller
+    ko: Jason Miller
+    pt: Jason Miller
+    ru: Jason Miller
+    zh: Jason Miller
+  description:
+    en: Jason is a Web DevRel focused on speed and the JS ecosystem.
+    es: Jason es un Web DevRel centrado en la velocidad y en el ecosistema de JS.
+    ja: Jason は、スピードと JS のエコシステムに関心を持つ Web DevRel チームのメンバーです。
+    ko: Jason은 속도와 JS 생태계에 중점을 둔 Web DevRel입니다.
+    pt: Jason é Web DevRel focado na velocidade e no ecossistema JS.
+    ru: Джейсон — DevRel по вопросам веб-технологий, специализирующийся на оптимизации скорости и экосистеме JS.
+    zh: Jason 是网络开发者关系团队成员，专注于速度和 JS 生态系统。
+
+addyosmani:
+  title:
+    en: Addy Osmani
+    es: Addy Osmani
+    ja: Addy Osmani
+    ko: Addy Osmani
+    pt: Addy Osmani
+    ru: Addy Osmani
+    zh: Addy Osmani
+  description:
+    en: Eng Manager working on Chrome and Web Platform
+    es: Gerente de ingeniería que trabaja en Chrome y en la plataforma web
+    ja: Chrome と Web プラットフォームの開発に取り組むエンジニアリングマネージャー
+    ko: Chrome 및 웹 플랫폼 작업을 하는 엔지니어링 관리자
+    pt: Gerente de engenharia trabalhando no Chrome e na plataforma Web
+    ru: Менеджер по разработке, работающий над Chrome и веб-платформой
+    zh: Eng Manager 研究 Chrome 和网络平台
+
+jeffposnick:
+  title:
+    en: Jeff Posnick
+    es: Jeff Posnick
+    ja: Jeff Posnick
+    ko: Jeff Posnick
+    pt: Jeff Posnick
+    ru: Jeff Posnick
+    zh: Jeff Posnick
+  description:
+    en: Web DevRel @ Google
+    es: Web DevRel @ Google
+    ja: Web DevRel @ Google
+    ko: Google의 Web DevRel
+    pt: Web DevRel @ Google
+    ru: DevRel по вопросам веб-технологий в компании Google
+    zh: Google 的网络开发者关系团队成员
+
+pozdnyakov:
+  title:
+    en: Mikhail Pozdnyakov
+    es: Mikhail Pozdnyakov
+    ja: Mikhail Pozdnyakov
+    ko: Mikhail Pozdnyakov
+    pt: Mikhail Pozdnyakov
+    ru: Mikhail Pozdnyakov
+    zh: Mikhail Pozdnyakov
+  description:
+    en: Mikhail is an Engineer at Intel
+    es: Mikhail es un ingeniero en Intel
+    ja: Mikhail は Intel のエンジニアです
+    ko: Mikhail은 Intel의 엔지니어입니다.
+    pt: Mikhail é engenheiro na Intel
+    ru: Михаил — инженер в компании Intel
+    zh: Mikhail 是 Intel 的一名工程师
+
+demianrenzulli:
+  title:
+    en: Demian Renzulli
+    es: Demian Renzulli
+    ja: Demian Renzulli
+    ko: Demian Renzulli
+    pt: Demian Renzulli
+    ru: Demian Renzulli
+    zh: Demian Renzulli
+  description:
+    en: Our latest news, updates, and stories by Demian Renzulli.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Demian Renzulli.
+    ja: Demian Renzulli による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Demian Renzulli의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Demian Renzulli.
+    ru: Последние новости и статьи от Demian Renzulli.
+    zh: Demian Renzulli 撰写我们的最新资讯、动态和故事。
+
+alexshalamov:
+  title:
+    en: Alex Shalamov
+    es: Alex Shalamov
+    ja: Alex Shalamov
+    ko: Alex Shalamov
+    pt: Alex Shalamov
+    ru: Alex Shalamov
+    zh: Alex Shalamov
+  description:
+    en: Alex is an Engineer at Intel
+    es: Alex es un ingeniero en Intel
+    ja: Alex は Intel のエンジニアです
+    ko: Alex는 Intel의 엔지니어입니다.
+    pt: Alex é engenheiro na Intel
+    ru: Алекс — инженер в компании Intel
+    zh: Alex 是 Intel 的一名工程师
+
+rsolomakhin:
+  title:
+    en: Rouslan Solomakhin
+    es: Rouslan Solomakhin
+    ja: Rouslan Solomakhin
+    ko: Rouslan Solomakhin
+    pt: Rouslan Solomakhin
+    ru: Rouslan Solomakhin
+    zh: Rouslan Solomakhin
+  description:
+    en: Our latest news, updates, and stories by Rouslan Solomakhin.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Rouslan Solomakhin.
+    ja: Rouslan Solomakhin による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Rouslan Solomakhin의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Rouslan Solomakhin.
+    ru: Последние новости и статьи от Rouslan Solomakhin.
+    zh: Rouslan Solomakhin 撰写我们的最新资讯、动态和故事。
+
+thomassteiner:
+  title:
+    en: Thomas Steiner
+    es: Thomas Steiner
+    ja: Thomas Steiner
+    ko: Thomas Steiner
+    pt: Thomas Steiner
+    ru: Thomas Steiner
+    zh: Thomas Steiner
+  description:
+    en: Tom is a Developer Advocate
+    es: Tom es un Desarrollador partidario
+    ja: Tom は Developer Advocate です
+    ko: Tom은 개발자 애드버킷입니다.
+    pt: Tom é um Developer Advocate
+    ru: Том — Developer Advocate
+    zh: Tom 是一名开发技术推广工程师
+
+pliao:
+  title:
+    en: Palances Liao
+    es: Palances Liao
+    ja: Palances Liao
+    ko: Palances Liao
+    pt: Palances Liao
+    ru: Palances Liao
+    zh: Palances Liao
+  description:
+    en: Palances is a Web Ecosystem Consultant
+    es: Palances es un Consultor de Ecosistemas Web
+    ja: Palances は Web エコシステム コンサルタントです。
+    ko: Palances는 웹 생태계 컨설턴트입니다.
+    pt: Palances é um Consultor de Ecossistemas Web
+    ru: Palances — консультант по веб-экосистеме
+    zh: Palances 是一名网络生态系统顾问
+
+conwayt:
+  title:
+    en: Tony Conway
+    es: Tony Conway
+    ja: Tony Conway
+    ko: Tony Conway
+    pt: Tony Conway
+    ru: Tony Conway
+    zh: Tony Conway
+  description:
+    en: Tony is a Web Ecosystem Consultant
+    es: Tony es un Consultor de Ecosistemas Web
+    ja: Tony は Web エコシステム コンサルタントです。
+    ko: Tony는 웹 생태계 컨설턴트입니다.
+    pt: Tony é um Consultor de Ecossistemas Web
+    ru: Tony — консультант по веб-экосистеме
+    zh: Tony 是一名网络生态系统顾问
+
+chuijun:
+  title:
+    en: Cecilia Cong
+    es: Cecilia Cong
+    ja: Cecilia Cong
+    ko: Cecilia Cong
+    pt: Cecilia Cong
+    ru: Cecilia Cong
+    zh: Cecilia Cong
+  description:
+    en: Cecilia is a Web Ecosystem Consultant
+    es: Cecilia es una Consultora de Ecosistemas Web
+    ja: Cecilia は Web エコシステム コンサルタントです。
+    ko: Cecilia는 웹 생태계 컨설턴트입니다.
+    pt: Cecilia é uma Consultora de Ecossistemas Web
+    ru: Cecilia — консультант по веб-экосистеме
+    zh: Cecilia 是一名网络生态系统顾问
+
+surma:
+  title:
+    en: Surma
+    es: Surma
+    ja: Surma
+    ko: Surma
+    pt: Surma
+    ru: Surma
+    zh: Surma
+  description:
+    en: Our latest news, updates, and stories by Surma.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Surma.
+    ja: Surma による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Surma의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Surma.
+    ru: Последние новости и статьи от Surma.
+    zh: Surma 撰写我们的最新资讯、动态和故事。
+
+stephenstchur:
+  title:
+    en: Stephen Stchur
+    es: Stephen Stchur
+    ja: Stephen Stchur
+    ko: Stephen Stchur
+    pt: Stephen Stchur
+    ru: Stephen Stchur
+    zh: Stephen Stchur
+  description:
+    en: Our latest news, updates, and stories by Stephen Stchur.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Stephen Stchur.
+    ja: Stephen Stchur による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Stephen Stchur의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Stephen Stchur.
+    ru: Последние новости и статьи от Stephen Stchur.
+    zh: Stephen Stchur 撰写我们的最新资讯、动态和故事。
+
+samthor:
+  title:
+    en: Sam Thorogood
+    es: Sam Thorogood
+    ja: Sam Thorogood
+    ko: Sam Thorogood
+    pt: Sam Thorogood
+    ru: Sam Thorogood
+    zh: Sam Thorogood
+  description:
+    en: ¯‍\‍_‍(‍ツ‍)‍_‍/‍¯
+    es: '¯‍\‍_‍(‍ツ‍)‍_‍/‍¯'
+    ja: '¯‍\‍_‍(‍ツ‍)‍_‍/‍¯'
+    ko: '¯‍\‍_‍(‍ツ‍)‍_‍/‍¯'
+    pt: '¯‍\‍_‍(‍ツ‍)‍_‍/‍¯'
+    ru: '¯‍\‍_‍(‍ツ‍)‍_‍/‍¯'
+    zh: '¯‍\‍_‍(‍ツ‍)‍_‍/‍¯'
+
+rachelandrew:
+  title:
+    en: Rachel Andrew
+    es: Rachel Andrew
+    ja: Rachel Andrew
+    ko: Rachel Andrew
+    pt: Rachel Andrew
+    ru: Rachel Andrew
+    zh: Rachel Andrew
+  description:
+    en: Technical writer at Google. Content lead for web.dev.
+    es: Escritor y editor independiente. Es un especialista invitado en el grupo de trabajo de CSS.
+    ja: フリーランスのライター兼編集者。CSS ワーキンググループ招待エキスパート。
+    ko: 프리랜서 작가이자 편집자. CSS 작업 그룹에 초대된 전문가.
+    pt: Escritor e editor freelancer. Especialista convidada do grupo de trabalho CSS.
+    ru: Независимая писательница и редактор. Приглашенный эксперт рабочей группы CSS.
+    zh: 自由撰稿人兼编辑。CSS 工作组特邀专家。
+
+rviscomi:
+  title:
+    en: Rick Viscomi
+    es: Rick Viscomi
+    ja: Rick Viscomi
+    ko: Rick Viscomi
+    pt: Rick Viscomi
+    ru: Rick Viscomi
+    zh: Rick Viscomi
+  description:
+    en: Our latest news, updates, and stories by Rick Viscomi.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Rick Viscomi.
+    ja: Rick Viscomi による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Rick Viscomi의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Rick Viscomi.
+    ru: Последние новости и статьи от Rick Viscomi.
+    zh: Rick Viscomi 撰写我们的最新资讯、动态和故事。
+
+philipwalton:
+  title:
+    en: Philip Walton
+    es: Philip Walton
+    ja: Philip Walton
+    ko: Philip Walton
+    pt: Philip Walton
+    ru: Philip Walton
+    zh: Philip Walton
+  description:
+    en: Engineer at Google working on the Web Platform
+    es: Ingeniero en Google, trabaja en la plataforma web
+    ja: Google で Web プラットフォームの開発に取り組むエンジニア
+    ko: 웹 플랫폼 작업을 하는 Google 엔지니어
+    pt: Engenheiro na empresa Google trabalhando na plataforma web
+    ru: Инженер в компании Google, участвующий в разработке веб-платформы
+    zh: 研究网络平台的 Google 工程师
+
+tunetheweb:
+  title:
+    en: Barry Pollard
+    es: Barry Pollard
+    ja: Barry Pollard
+    ko: Barry Pollard
+    pt: Barry Pollard
+    ru: Barry Pollard
+    zh: Barry Pollard
+  description:
+    en: Web Performance Developer Advocate for Google
+    es: Rendimiento web aesarrollador partidario para Google
+    ja: Google を対象とした Developer Advocate
+    ko: Google의 개발자 애드버킷
+    pt: Developer Advocate para o Google
+    ru: Developer Advocate по вопросам Google
+    zh: 负责 Google 的开发技术推广工程师
+
+
+ekharvey:
+  title:
+    en: Lizzi Harvey
+    es: Lizzi Harvey
+    ja: Lizzi Harvey
+    ko: Lizzi Harvey
+    pt: Lizzi Harvey
+    ru: Lizzi Harvey
+    zh: Lizzi Harvey
+  description:
+    en: Lizzi is a Tech Writer at Google
+    es: Lizzi es una escritora técnica en Google
+    ja: Lizzi は Google に所属するテクニカルライターです
+    ko: Lizzi는 Google의 테크니컬라이터입니다.
+    pt: Lizzi é escritora de tecnologia na empresa Google
+    ru: Лиззи — технический писатель в компании Google
+    zh: Lizzi 是 Google 的一名技术撰稿人
+
+houssein:
+  title:
+    en: Houssein Djirdeh
+    es: Houssein Djirdeh
+    ja: Houssein Djirdeh
+    ko: Houssein Djirdeh
+    pt: Houssein Djirdeh
+    ru: Houssein Djirdeh
+    zh: Houssein Djirdeh
+  description:
+    en: Our latest news, updates, and stories by Houssein Djirdeh.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Houssein Djirdeh.
+    ja: Houssein Djirdeh による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Houssein Djirdeh의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Houssein Djirdeh.
+    ru: Последние новости и статьи от Houssein Djirdeh.
+    zh: Houssein Djirdeh 撰写我们的最新资讯、动态和故事。
+
+megginkearney:
+  title:
+    en: Meggin Kearney
+    es: Meggin Kearney
+    ja: Meggin Kearney
+    ko: Meggin Kearney
+    pt: Meggin Kearney
+    ru: Meggin Kearney
+    zh: Meggin Kearney
+  description:
+    en: Meggin is a Tech Writer
+    es: Meggin es una escritora técnica
+    ja: Meggin はテクニカルライターです
+    ko: Meggin은 테크니컬라이터입니다.
+    pt: Meggin é uma escritora técnica
+    ru: Меггин — технический писатель
+    zh: Meggin 是一名技术撰稿人
+
+dgash:
+  title:
+    en: Dave Gash
+    es: Dave Gash
+    ja: Dave Gash
+    ko: Dave Gash
+    pt: Dave Gash
+    ru: Dave Gash
+    zh: Dave Gash
+  description:
+    en: Dave is a Tech Writer
+    es: Dave es un escritor técnico
+    ja: Dave はテクニカルライターです
+    ko: Dave는 테크니컬라이터입니다.
+    pt: Dave é escritor técnico
+    ru: Дейв — технический писатель
+    zh: Dave 是一名技术撰稿人
+
+mdiblasio:
+  title:
+    en: Michael DiBlasio
+    es: Michael DiBlasio
+    ja: Michael DiBlasio
+    ko: Michael DiBlasio
+    pt: Michael DiBlasio
+    ru: Michael DiBlasio
+    zh: Michael DiBlasio
+  description:
+    en: Our latest news, updates, and stories by Michael DiBlasio.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Michael DiBlasio.
+    ja: Michael DiBlasio による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Michael DiBlasio의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Michael DiBlasio.
+    ru: Последние новости и статьи от Michael DiBlasio.
+    zh: Michael DiBlasio 撰写我们的最新资讯、动态和故事。
+
+jlwagner:
+  title:
+    en: Jeremy Wagner
+    es: Jeremy Wagner
+    ja: Jeremy Wagner
+    ko: Jeremy Wagner
+    pt: Jeremy Wagner
+    ru: Jeremy Wagner
+    zh: Jeremy Wagner
+  description:
+    en: Tech writin', doc slingin' reprobate.
+
+gmimani:
+  title:
+    en: Garima Mimani
+    es: Garima Mimani
+    ja: Garima Mimani
+    ko: Garima Mimani
+    pt: Garima Mimani
+    ru: Garima Mimani
+    zh: Garima Mimani
+  description:
+    en: Our latest news, updates, and stories by Garima Mimani.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Garima Mimani.
+    ja: Garima Mimani による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Garima Mimani의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Garima Mimani.
+    ru: Последние новости и статьи от Garima Mimani.
+    zh: Garima Mimani 撰写我们的最新资讯、动态和故事。
+
+martinsplitt:
+  title:
+    en: Martin Splitt
+    es: Martin Splitt
+    ja: Martin Splitt
+    ko: Martin Splitt
+    pt: Martin Splitt
+    ru: Martin Splitt
+    zh: Martin Splitt
+  description:
+    en: Our latest news, updates, and stories by Martin Splitt.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Martin Splitt.
+    ja: Martin Splitt による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Martin Splitt의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Martin Splitt.
+    ru: Последние новости и статьи от Martin Splitt.
+    zh: Martin Splitt 撰写我们的最新资讯、动态和故事。
+
+uskay:
+  title:
+    en: Yusuke Utsunomiya
+    es: Yusuke Utsunomiya
+    ja: Yusuke Utsunomiya
+    ko: Yusuke Utsunomiya
+    pt: Yusuke Utsunomiya
+    ru: Yusuke Utsunomiya
+    zh: Yusuke Utsunomiya
+  description:
+    en: Tech consultant for Web, Chrome & AMP
+    es: Consultor técnico para Web, Chrome y AMP
+    ja: Web、Chrome、AMP を対象とした技術コンサルタント
+    ko: Web, Chrome 및 AMP 기술 컨설턴트
+    pt: Consultor técnico para a web, Chrome e AMP
+    ru: Технический консультант по веб-разработке, Chrome и AMP
+    zh: 网络、Chrome 和 AMP 技术顾问
+
+jormears:
+  title:
+    en: Jordon Mears‎
+    es: Jordon Mears‎
+    ja: Jordon Mears‎
+    ko: Jordon Mears‎
+    pt: Jordon Mears‎
+    ru: Jordon Mears‎
+    zh: Jordon Mears‎
+  description:
+    en: Jordon is a Tech Lead Manager working on Google Earth.
+    es: Jordon es un Gerente principal de tecnología que trabaja en Google Earth.
+    ja: Jordon は Google Earth の開発に取り組むテックリードマネージャーです。
+    ko: Jordon은 Google Earth 작업을 수행하는 기술 수석 관리자입니다.
+    pt: Jordon é gerente líder de tecnologia que trabalha no Google Earth.
+    ru: Джордон — технический руководитель проекта Google Earth.
+    zh: Jordan 是一名研究 Google 地球的技术主管经理。
+
+martinschierle:
+  title:
+    en: Martin Schierle
+    es: Martin Schierle
+    ja: Martin Schierle
+    ko: Martin Schierle
+    pt: Martin Schierle
+    ru: Martin Schierle
+    zh: Martin Schierle
+  description:
+    en: Our latest news, updates, and stories by Martin Schierle.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Martin Schierle.
+    ja: Martin Schierle による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Martin Schierle의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Martin Schierle.
+    ru: Последние новости и статьи от Martin Schierle.
+    zh: Martin Schierle 撰写我们的最新资讯、动态和故事。
+
+joemedley:
+  title:
+    en: Joe Medley
+    es: Joe Medley
+    ja: Joe Medley
+    ko: Joe Medley
+    pt: Joe Medley
+    ru: Joe Medley
+    zh: Joe Medley
+  description:
+    en: If an API's not documented it doesn't exist
+    es: Si una API no está documentada entonces no existe
+    ja: ドキュメントがない API は存在しない API です
+    ko: API가 문서화되지 않은 경우, 존재하지 않습니다.
+    pt: Se uma API não estiver documentada, ela não existe
+    ru: Если API не задокументирован, то его не существует
+    zh: 如果 API 未被记载就表示其不存在
+
+egsweeny:
+  title:
+    en: Elizabeth Sweeny
+    es: Elizabeth Sweeny
+    ja: Elizabeth Sweeny
+    ko: Elizabeth Sweeny
+    pt: Elizabeth Sweeny
+    ru: Elizabeth Sweeny
+    zh: Elizabeth Sweeny
+  description:
+    en: Product manager for developer tools on the web platform in Chrome.
+    es: Gerente de productos encargada de las herramientas de desarrollo en la plataforma web de Chrome.
+    ja: Chrome の Web プラットフォームで使用される開発者ツールのプロダクトマネージャー。
+    ko: Chrome 웹 플랫폼의 개발자 도구 제품 관리자입니다.
+    pt: Gerente de produtos para ferramentas de desenvolvimento na plataforma web no Chrome.
+    ru: Менеджер по продукту в команде Chrome, работает над инструментами для разработчиков на веб-платформе.
+    zh: 负责 Chrome 网络平台开发者工具的产品经理。
+
+rowan_m:
+  title:
+    en: Rowan Merewood
+    es: Rowan Merewood
+    ja: Rowan Merewood
+    ko: Rowan Merewood
+    pt: Rowan Merewood
+    ru: Rowan Merewood
+    zh: Rowan Merewood
+  description:
+    en: Developer Advocate for Chrome and web
+    es: Desarrollador partidario para Chrome y otros sitios web
+    ja: Chrome と Web を対象とした Developer Advocate
+    ko: Chrome 및 웹 개발자 애드버킷
+    pt: Developer Advocate para Chrome e web
+    ru: Developer Advocate по вопросам Chrome и веб-разработки
+    zh: 负责 Chrome 和网络的开发技术推广工程师
+
+adamargyle:
+  title:
+    en: Adam Argyle
+    es: Adam Argyle
+    ja: Adam Argyle
+    ko: Adam Argyle
+    pt: Adam Argyle
+    ru: Adam Argyle
+    zh: Adam Argyle
+  description:
+    en: Developer Advocate for Chrome
+    es: Desarrollador partidario para Chrome
+    ja: Chrome を対象とした Developer Advocate
+    ko: Chrome의 개발자 애드버킷
+    pt: Developer Advocate para o Chrome
+    ru: Developer Advocate по вопросам Chrome
+    zh: 负责 Chrome 的开发技术推广工程师
+
+emmatwersky:
+  title:
+    en: Emma Twersky
+  description:
+    en: Developer Relations Engineer for Angular
+
+lunalu:
+  title:
+    en: Luna Lu
+    es: Luna Lu
+    ja: Luna Lu
+    ko: Luna Lu
+    pt: Luna Lu
+    ru: Luna Lu
+    zh: Luna Lu
+  description:
+    en: Build and enforce guardrails for the web.
+    es: Construye y refuerza las barreras de protección para la web.
+    ja: Web の世界にガードレールを構築し、補強する人。
+    ko: 웹용 가드레일을 구축하고 실행합니다.
+    pt: Construir e impor grades de proteção para a web.
+    ru: Разработка и внедрение механизмов защиты в вебе.
+    zh: 为网络搭建并加强护栏。
+
+geddski:
+  title:
+    en: Dave Geddes
+    es: Dave Geddes
+    ja: Dave Geddes
+    ko: Dave Geddes
+    pt: Dave Geddes
+    ru: Dave Geddes
+    zh: Dave Geddes
+  description:
+    en: Founder at Mastery Games
+    es: Fundador de Mastery Games
+    ja: Mastery Games の創設者
+    ko: Mastery Games 설립자
+    pt: Fundador da Mastery Games
+    ru: Основатель Mastery Games
+    zh: Mastery Games 创始人
+
+danyao:
+  title:
+    en: Danyao Wang
+    es: Danyao Wang
+    ja: Danyao Wang
+    ko: Danyao Wang
+    pt: Danyao Wang
+    ru: Danyao Wang
+    zh: Danyao Wang
+  description:
+    en:
+    es:
+    ja:
+    ko:
+    pt:
+    ru:
+    zh:
+
+linahansson:
+  title:
+    en: Lina Hansson
+    es: Lina Hansson
+    ja: Lina Hansson
+    ko: Lina Hansson
+    pt: Lina Hansson
+    ru: Lina Hansson
+    zh: Lina Hansson
+  description:
+    en: Lina is a Conversion Specialist at Google, focused on mobile CRO and site speed.
+    es: Lina es una especialista en conversiones en Google, y su trabajo se centra en la CRO para dispositivos móviles y en la velocidad del sitio.
+    ja: Lina は、モバイルにおけるコンバージョン率の最適化とWeb サイトのスピードに関心を持つ Google のコンバージョンスペシャリストです。
+    ko: Lina는 Google의 전환 전문가로 모바일 CRO 및 사이트 속도에 중점을 두고 있습니다.
+    pt: Lina é especialista em conversão no Google, com foco em CRO móvel e velocidade do site.
+    ru: Лина — специалист по повышению конверсии в компании Google, специализирующаяся на мобильной CRO-оптимизации и повышении скорости сайтов.
+    zh: Lina 是 Google 的转化专家，专注于移动端 CRO 和网站速度。
+
+bojanpavic:
+  title:
+    en: Bojan Pavic
+    es: Bojan Pavic
+    ja: Bojan Pavic
+    ko: Bojan Pavic
+    pt: Bojan Pavic
+    ru: Bojan Pavic
+    zh: Bojan Pavic
+  description:
+    en: Our latest news, updates, and stories by Bojan Pavic.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Bojan Pavic.
+    ja: Bojan Pavic による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Bojan Pavic의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias de Bojan Pavic.
+    ru: Последние новости и статьи от Bojan Pavic.
+    zh: Bojan Pavic 撰写我们的最新资讯、动态和故事。
+
+ansteychris:
+  title:
+    en: Chris Anstey
+    es: Chris Anstey
+    ja: Chris Anstey
+    ko: Chris Anstey
+    pt: Chris Anstey
+    ru: Chris Anstey
+    zh: Chris Anstey
+  description:
+    en: Our latest news, updates, and stories by Chris Anstey.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Chris Anstey.
+    ja: Chris Anstey による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Chris Anstey의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Chris Anstey.
+    ru: Последние новости и статьи от Chris Anstey.
+    zh: Chris Anstey 撰写我们的最新资讯、动态和故事。
+
+mfriesenhahn:
+  title:
+    en: Michael Friesenhahn
+    es: Michael Friesenhahn
+    ja: Michael Friesenhahn
+    ko: Michael Friesenhahn
+    pt: Michael Friesenhahn
+    ru: Michael Friesenhahn
+    zh: Michael Friesenhahn
+  description:
+    en: Michael is a Tech Writer
+    es: Michael es un escritor técnico
+    ja: Michael はテクニカルライターです
+    ko: Michael은 테크니컬라이터입니다.
+    pt: Michael é escritor técnico
+    ru: Майкл — технический писатель
+    zh: Michael 是一名技术撰稿人
+
+hbatra:
+  title:
+    en: Harleen Batra
+    es: Harleen Batra
+    ja: Harleen Batra
+    ko: Harleen Batra
+    pt: Harleen Batra
+    ru: Harleen Batra
+    zh: Harleen Batra
+  description:
+    en: Harleen is a Developer Marketing Manager
+    es: Harleen es Gerente de marketing de desarrolladores
+    ja: Harleen は開発者マーケティングマネージャーです
+    ko: Harleen은 개발자 마케팅 관리자입니다.
+    pt: Harleen é gerente de marketing de desenvolvedores
+    ru: Харлин — менеджер по маркетингу среди разработчиков
+    zh: Harleen 是一名开发者营销经理
+
+mgechev:
+  title:
+    en: Minko Gechev
+    es: Minko Gechev
+    ja: Minko Gechev
+    ko: Minko Gechev
+    pt: Minko Gechev
+    ru: Minko Gechev
+    zh: Minko Gechev
+  description:
+    en: Our latest news, updates, and stories by Minko Gechev.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Minko Gechev.
+    ja: Minko Gechev による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Minko Gechev의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias de Minko Gechev.
+    ru: Последние новости и статьи от Minko Gechev.
+    zh: Minko Gechev 撰写我们的最新资讯、动态和故事。
+
+sfluin:
+  title:
+    en: Stephen Fluin
+    es: Stephen Fluin
+    ja: Stephen Fluin
+    ko: Stephen Fluin
+    pt: Stephen Fluin
+    ru: Stephen Fluin
+    zh: Stephen Fluin
+  description:
+    en: Our latest news, updates, and stories by Stephen Fluin.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Stephen Fluin.
+    ja: Stephen Fluin による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Stephen Fluin의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Stephen Fluin.
+    ru: Последние новости и статьи от Stephen Fluin.
+    zh: Stephen Fluin 撰写我们的最新资讯、动态和故事。
+
+mohamedzamakhan:
+  title:
+    en: Zama Khan Mohammed
+    es: Zama Khan Mohammed
+    ja: Zama Khan Mohammed
+    ko: Zama Khan Mohammed
+    pt: Zama Khan Mohammed
+    ru: Zama Khan Mohammed
+    zh: Zama Khan Mohammed
+  description:
+    en: Our latest news, updates, and stories by Zama Khan Mohammed.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Zama Khan Mohammed.
+    ja: Zama Khan Mohammed による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Zama Khan Mohammed의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Zama Khan Mohammed.
+    ru: Последние новости и статьи от Zama Khan Mohammed.
+    zh: Zama Khan Mohammed 撰写我们的最新资讯、动态和故事。
+
+dougsillars:
+  title:
+    en: Doug Sillars
+    es: Doug Sillars
+    ja: Doug Sillars
+    ko: Doug Sillars
+    pt: Doug Sillars
+    ru: Doug Sillars
+    zh: Doug Sillars
+  description:
+    en: Our latest news, updates, and stories by Doug Sillars.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Doug Sillars.
+    ja: Doug Sillars による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Doug Sillars의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Doug Sillars.
+    ru: Последние новости и статьи от Doug Sillars.
+    zh: Doug Sillars 撰写我们的最新资讯、动态和故事。
+
+samrichard:
+  title:
+    en: Sam Richard
+    es: Sam Richard
+    ja: Sam Richard
+    ko: Sam Richard
+    pt: Sam Richard
+    ru: Sam Richard
+    zh: Sam Richard
+  description:
+    en: Our latest news, updates, and stories by Sam Richard.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Sam Richard.
+    ja: Sam Richard による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Sam Richard의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Sam Richard.
+    ru: Последние новости и статьи от Sam Richard.
+    zh: Sam Richard 撰写我们的最新资讯、动态和故事。
+
+yoavweiss:
+  title:
+    en: Yoav Weiss
+    es: Yoav Weiss
+    ja: Yoav Weiss
+    ko: Yoav Weiss
+    pt: Yoav Weiss
+    ru: Yoav Weiss
+    zh: Yoav Weiss
+  description:
+    en: Our latest news, updates, and stories by Yoav Weiss.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Yoav Weiss.
+    ja: Yoav Weiss による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Yoav Weiss의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Yoav Weiss.
+    ru: Последние новости и статьи от Yoav Weiss.
+    zh: Yoav Weiss 撰写我们的最新资讯、动态和故事。
+
+katejeffreys:
+  title:
+    en: Kate Jeffreys
+    es: Kate Jeffreys
+    ja: Kate Jeffreys
+    ko: Kate Jeffreys
+    pt: Kate Jeffreys
+    ru: Kate Jeffreys
+    zh: Kate Jeffreys
+  description:
+    en: Technical Writer at Google
+    es: Escritor técnico en Google
+    ja: Google のテクニカルライター
+    ko: Google 테크니컬라이터
+    pt: Escritora técnica na empresa Google
+    ru: Технический писатель в компании Google
+    zh: Google 的技术撰稿人
+
+jimper:
+  title:
+    en: Jonathon Imperiosi
+    es: Jonathon Imperiosi
+    ja: Jonathon Imperiosi
+    ko: Jonathon Imperiosi
+    pt: Jonathon Imperiosi
+    ru: Jonathon Imperiosi
+    zh: Jonathon Imperiosi
+  description:
+    en: Our latest news, updates, and stories by Jonathon Imperiosi.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Jonathon Imperiosi.
+    ja: Jonathon Imperiosi による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Jonathon Imperiosi의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Jonathon Imperiosi.
+    ru: Последние новости и статьи от Jonathon Imperiosi.
+    zh: Jonathon Imperiosi 撰写我们的最新资讯、动态和故事。
+
+robhazan:
+  title:
+    en: Rob Hazan
+    es: Rob Hazan
+    ja: Rob Hazan
+    ko: Rob Hazan
+    pt: Rob Hazan
+    ru: Rob Hazan
+    zh: Rob Hazan
+  description:
+    en: Our latest news, updates, and stories by Rob Hazan.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Rob Hazan.
+    ja: Rob Hazan による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Rob Hazan의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Rob Hazan.
+    ru: Последние новости и статьи от Rob Hazan.
+    zh: Rob Hazan 撰写我们的最新资讯、动态和故事。
+
+gernberg:
+  title:
+    en: Gustav Ernberg von Heijne
+    es: Gustav Ernberg von Heijne
+    ja: Gustav Ernberg von Heijne
+    ko: Gustav Ernberg von Heijne
+    pt: Gustav Ernberg von Heijne
+    ru: Gustav Ernberg von Heijne
+    zh: Gustav Ernberg von Heijne
+  description:
+    en: Our latest news, updates, and stories by Gustav Ernberg von Heijne.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Gustav Ernberg von Heijne.
+    ja: Gustav Ernberg von Heijne による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Gustav Ernberg von Heijne의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Gustav Ernberg von Heijne.
+    ru: Последние новости и статьи от Gustav Ernberg von Heijne.
+    zh: Gustav Ernberg von Heijne 撰写我们的最新资讯、动态和故事。
+
+thebengeu:
+  title:
+    en: Beng Eu
+    es: Beng Eu
+    ja: Beng Eu
+    ko: Beng Eu
+    pt: Beng Eu
+    ru: Beng Eu
+    zh: Beng Eu
+  description:
+    en: AdSpeed tech lead at Google
+    es: Experto en la tecnología AdSpeed en Google
+    ja: Google に所属する AdSpeed テックリーダー
+    ko: Google의 AdSpeed 기술 책임자
+    pt: Líder técnico do AdSpeed na empresa Google
+    ru: Технический руководитель по вопросам оптимизации скорости рекламы в компании Google
+    zh: Google 的 AdSpeed 技术主管
+
+yosuke_furukawa:
+  title:
+    en: Yosuke Furukawa
+    es: Yosuke Furukawa
+    ja: Yosuke Furukawa
+    ko: Yosuke Furukawa
+    pt: Yosuke Furukawa
+    ru: Yosuke Furukawa
+    zh: Yosuke Furukawa
+  description:
+    en: Our latest news, updates, and stories by Yosuke Furukawa.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Yosuke Furukawa.
+    ja: Yosuke Furukawa による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Yosuke Furukawa의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Yosuke Furukawa.
+    ru: Последние новости и статьи от Yosuke Furukawa.
+    zh: Yosuke Furukawa 撰写我们的最新资讯、动态和故事。
+
+satoshi_arai:
+  title:
+    en: Satoshi Arai
+    es: Satoshi Arai
+    ja: Satoshi Arai
+    ko: Satoshi Arai
+    pt: Satoshi Arai
+    ru: Satoshi Arai
+    zh: Satoshi Arai
+  description:
+    en: Our latest news, updates, and stories by Satoshi Arai.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Satoshi Arai.
+    ja: Satoshi Arai による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Satoshi Arai의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Satoshi Arai.
+    ru: Последние новости и статьи от Satoshi Arai.
+    zh: Satoshi Arai 撰写我们的最新资讯、动态和故事。
+
+kento_tsuji:
+  title:
+    en: Kento Tsuji
+    es: Kento Tsuji
+    ja: Kento Tsuji
+    ko: Kento Tsuji
+    pt: Kento Tsuji
+    ru: Kento Tsuji
+    zh: Kento Tsuji
+  description:
+    en: Our latest news, updates, and stories by Kento Tsuji.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Kento Tsuji.
+    ja: Kento Tsuji による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Kento Tsuji의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Kento Tsuji.
+    ru: Последние новости и статьи от Kento Tsuji.
+    zh: Kento Tsuji 撰写我们的最新资讯、动态和故事。
+
+ajain:
+  title:
+    en: Ankit Jain
+    es: Ankit Jain
+    ja: Ankit Jain
+    ko: Ankit Jain
+    pt: Ankit Jain
+    ru: Ankit Jain
+    zh: Ankit Jain
+  description:
+    en: Our latest news, updates, and stories by Ankit Jain.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Ankit Jain.
+    ja: Ankit Jain による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Ankit Jain의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Ankit Jain.
+    ru: Последние новости и статьи от Ankit Jain.
+    zh: Ankit Jain 撰写我们的最新资讯、动态和故事。
+
+kenjibaheux:
+  title:
+    en: Kenji Baheux
+    es: Kenji Baheux
+    ja: Kenji Baheux
+    ko: Kenji Baheux
+    pt: Kenji Baheux
+    ru: Kenji Baheux
+    zh: Kenji Baheux
+  description:
+    en: Our latest news, updates, and stories by Kenji Baheux.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Kenji Baheux.
+    ja: Kenji Baheux による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Kenji Baheux의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Kenji Baheux.
+    ru: Последние новости и статьи от Kenji Baheux.
+    zh: Kenji Baheux 撰写我们的最新资讯、动态和故事。
+
+una:
+  title:
+    en: Una Kravets
+    es: Una Kravets
+    ja: Una Kravets
+    ko: Una Kravets
+    pt: Una Kravets
+    ru: Una Kravets
+    zh: Una Kravets
+  description:
+    en: Developer Advocate for CSS, UI & DevTools at Chrome
+    es: Desarrollador partidario para CSS, UI y DevTools en Chrome
+    ja: Chrome の CSS、UI、DevTools を対象とした Developer Advocate
+    ko: Chrome의 CSS, UI 및 DevTools 개발자 애드버킷
+    pt: Developer Advocate para CSS, UI e DevTools no Chrome
+    ru: Developer Advocate по вопросам CSS, UI и DevTools в команде Chrome
+    zh: Chrome 的 CSS、UI 和 DevTools 开发技术推广工程师
+
+phillipkriegel:
+  title:
+    en: Phillip Kriegel
+    es: Phillip Kriegel
+    ja: Phillip Kriegel
+    ko: Phillip Kriegel
+    pt: Phillip Kriegel
+    ru: Phillip Kriegel
+    zh: Phillip Kriegel
+  description:
+    en: Phillip is a Specialist Engineer
+    es: Phillip es un ingeniero especializado
+    ja: Phillip はスペシャリストエンジニアです
+    ko: Phillip은 전문 엔지니어입니다.
+    pt: Phillip é engenheiro especialista
+    ru: Филип — инженер-специалист
+    zh: Phillip 是一名专家工程师
+
+tigeroakes:
+  title:
+    en: Tiger Oakes
+    es: Tiger Oakes
+    ja: Tiger Oakes
+    ko: Tiger Oakes
+    pt: Tiger Oakes
+    ru: Tiger Oakes
+    zh: Tiger Oakes
+  description:
+    en: Developer working on Firefox Preview
+    es: Es un desarrollador que trabaja en Firefox Preview
+    ja: Firefox Preview の開発に取り組む開発者
+    ko: Firefox 프리뷰 작업을 수행하는 개발자
+    pt: Desenvolvedor trabalhando no Firefox Preview
+    ru: Разработчик Firefox Preview
+    zh: 从事 Firefox 预览版开发的开发者
+
+kumagi:
+  title:
+    en: Hiroki Kumazaki
+    es: Hiroki Kumazaki
+    ja: Hiroki Kumazaki
+    ko: Hiroki Kumazaki
+    pt: Hiroki Kumazaki
+    ru: Hiroki Kumazaki
+    zh: Hiroki Kumazaki
+  description:
+    en: Our latest news, updates, and stories by Hiroki Kumazaki.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Hiroki Kumazaki.
+    ja: Hiroki Kumazaki による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Hiroki Kumazaki의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Hiroki Kumazaki.
+    ru: Последние новости и статьи от Hiroki Kumazaki.
+    zh: Hiroki Kumazaki 撰写我们的最新资讯、动态和故事。
+
+andreban:
+  title:
+    en: André Cipriani Bandarra
+    es: André Cipriani Bandarra
+    ja: André Cipriani Bandarra
+    ko: André Cipriani Bandarra
+    pt: André Cipriani Bandarra
+    ru: André Cipriani Bandarra
+    zh: André Cipriani Bandarra
+  description:
+    en: Andre is a Developer Advocate
+    es: Andre es un Desarrollador partidario
+    ja: Andre は Developer Advocate です
+    ko: Andre은 개발자 애드버킷입니다.
+    pt: Andre é Developer Advocate
+    ru: Андре — Developer Advocate
+    zh: Andre 是一名开发技术推广工程师
+
+koto:
+  title:
+    en: Krzysztof Kotowicz
+    es: Krzysztof Kotowicz
+    ja: Krzysztof Kotowicz
+    ko: Krzysztof Kotowicz
+    pt: Krzysztof Kotowicz
+    ru: Krzysztof Kotowicz
+    zh: Krzysztof Kotowicz
+  description:
+    en: Our latest news, updates, and stories by Krzysztof Kotowicz.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Krzysztof Kotowicz.
+    ja: Krzysztof Kotowicz による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Krzysztof Kotowicz의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Krzysztof Kotowicz.
+    ru: Последние новости и статьи от Krzysztof Kotowicz.
+    zh: Krzysztof Kotowicz 撰写我们的最新资讯、动态和故事。
+
+lwe:
+  title:
+    en: Lukas Weichselbaum
+    es: Lukas Weichselbaum
+    ja: Lukas Weichselbaum
+    ko: Lukas Weichselbaum
+    pt: Lukas Weichselbaum
+    ru: Lukas Weichselbaum
+    zh: Lukas Weichselbaum
+  description:
+    en: Our latest news, updates, and stories by Lukas Weichselbaum.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Lukas Weichselbaum.
+    ja: Lukas Weichselbaum による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Lukas Weichselbaum의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Lukas Weichselbaum.
+    ru: Последние новости и статьи от Lukas Weichselbaum.
+    zh: Lukas Weichselbaum 撰写我们的最新资讯、动态和故事。
+
+dgrogan:
+  title:
+    en: David Grogan
+    es: David Grogan
+    ja: David Grogan
+    ko: David Grogan
+    pt: David Grogan
+    ru: David Grogan
+    zh: David Grogan
+  description:
+    en: Our latest news, updates, and stories by David Grogan.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por David Grogan.
+    ja: David Grogan による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: David Grogan의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por David Grogan.
+    ru: Последние новости и статьи от David Grogan.
+    zh: David Grogan 撰写我们的最新资讯、动态和故事。
+
+ulan:
+  title:
+    en: Ulan Degenbaev
+    es: Ulan Degenbaev
+    ja: Ulan Degenbaev
+    ko: Ulan Degenbaev
+    pt: Ulan Degenbaev
+    ru: Ulan Degenbaev
+    zh: Ulan Degenbaev
+  description:
+    en: Our latest news, updates, and stories by Ulan Degenbaev.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Ulan Degenbaev.
+    ja: Ulan Degenbaev による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Ulan Degenbaev의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Ulan Degenbaev.
+    ru: Последние новости и статьи от Ulan Degenbaev.
+    zh: Ulan Degenbaev 撰写我们的最新资讯、动态和故事。
+
+domenic:
+  title:
+    en: Domenic Denicola
+    es: Domenic Denicola
+    ja: Domenic Denicola
+    ko: Domenic Denicola
+    pt: Domenic Denicola
+    ru: Domenic Denicola
+    zh: Domenic Denicola
+  description:
+    en: Our latest news, updates, and stories by Domenic Denicola.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Domenic Denicola.
+    ja: Domenic Denicola による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Domenic Denicola의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Domenic Denicola.
+    ru: Последние новости и статьи от Domenic Denicola.
+    zh: Domenic Denicola 撰写我们的最新资讯、动态和故事。
+
+cjamcl:
+  title:
+    en: Connor Clark
+    es: Connor Clark
+    ja: Connor Clark
+    ko: Connor Clark
+    pt: Connor Clark
+    ru: Connor Clark
+    zh: Connor Clark
+  description:
+    en: Our latest news, updates, and stories by Connor Clark.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Connor Clark.
+    ja: Connor Clark による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Connor Clark의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Connor Clark.
+    ru: Последние новости и статьи от Connor Clark.
+    zh: Connor Clark 撰写我们的最新资讯、动态和故事。
+
+paullewis:
+  title:
+    en: Paul Lewis
+    es: Paul Lewis
+    ja: Paul Lewis
+    ko: Paul Lewis
+    pt: Paul Lewis
+    ru: Paul Lewis
+    zh: Paul Lewis
+  description:
+    en: Our latest news, updates, and stories by Paul Lewis.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Paul Lewis.
+    ja: Paul Lewis による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Paul Lewis의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Paul Lewis.
+    ru: Последние новости и статьи от Paul Lewis.
+    zh: Paul Lewis 撰写我们的最新资讯、动态和故事。
+
+patrickkettner:
+  title:
+    en: Patrick Kettner
+    es: Patrick Kettner
+    ja: Patrick Kettner
+    ko: Patrick Kettner
+    pt: Patrick Kettner
+    ru: Patrick Kettner
+    zh: Patrick Kettner
+  description:
+    en: Our latest news, updates, and stories by Patrick Kettner.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Patrick Kettner.
+    ja: Patrick Kettner による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Patrick Kettner의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Patrick Kettner.
+    ru: Последние новости и статьи от Patrick Kettner.
+    zh: Patrick Kettner 撰写我们的最新资讯、动态和故事。
+
+sebabenz:
+  title:
+    en: Sebastian Benz
+    es: Sebastian Benz
+    ja: Sebastian Benz
+    ko: Sebastian Benz
+    pt: Sebastian Benz
+    ru: Sebastian Benz
+    zh: Sebastian Benz
+  description:
+    en: Our latest news, updates, and stories by Sebastian Benz.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Sebastian Benz.
+    ja: Sebastian Benz による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Sebastian Benz의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Sebastian Benz.
+    ru: Последние новости и статьи от Sebastian Benz.
+    zh: Sebastian Benz 撰写我们的最新资讯、动态和故事。
+
+syg:
+  title:
+    en: Shu-yu Guo
+    es: Shu-yu Guo
+    ja: Shu-yu Guo
+    ko: Shu-yu Guo
+    pt: Shu-yu Guo
+    ru: Shu-yu Guo
+    zh: Shu-yu Guo
+  description:
+    en: Our latest news, updates, and stories by Shu-yu Guo.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Shu-yu Guo.
+    ja: Shu-yu Guo による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Shu-yu Guo의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Shu-yu Guo.
+    ru: Последние новости и статьи от Shu-yu Guo.
+    zh: Shu-yu Guo 撰写我们的最新资讯、动态和故事。
+
+nabeelalshamma:
+  title:
+    en: Nabeel Al-Shamma
+    es: Nabeel Al-Shamma
+    ja: Nabeel Al-Shamma
+    ko: Nabeel Al-Shamma
+    pt: Nabeel Al-Shamma
+    ru: Nabeel Al-Shamma
+    zh: Nabeel Al-Shamma
+  description:
+    en: Principal Scientist at Adobe
+    es: Principal Scientist at Adobe
+    ja: Principal Scientist at Adobe
+    ko: Principal Scientist at Adobe
+    pt: Principal Scientist at Adobe
+    ru: Principal Scientist at Adobe
+    zh: Principal Scientist at Adobe
+
+nattestad:
+  title:
+    en: Thomas Nattestad
+    es: Thomas Nattestad
+    ja: Thomas Nattestad
+    ko: Thomas Nattestad
+    pt: Thomas Nattestad
+    ru: Thomas Nattestad
+    zh: Thomas Nattestad
+  description:
+    en: Our latest news, updates, and stories by Thomas Nattestad.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Thomas Nattestad.
+    ja: Thomas Nattestad による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Thomas Nattestad의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Thomas Nattestad.
+    ru: Последние новости и статьи от Thomas Nattestad.
+    zh: Thomas Nattestad 撰写我们的最新资讯、动态和故事。
+
+maudn:
+  title:
+    en: Maud Nalpas
+    es: Maud Nalpas
+    ja: Maud Nalpas
+    ko: Maud Nalpas
+    pt: Maud Nalpas
+    ru: Maud Nalpas
+    zh: Maud Nalpas
+  description:
+    en: Developer Advocate for Chrome and web
+    es: Desarrollador partidario para Chrome y otros sitios web
+    ja: Chrome と Web を対象とした Developer Advocate
+    ko: Chrome 및 웹 개발자 애드버킷
+    pt: Developer Advocate para Chrome e web
+    ru: Developer Advocate по вопросам Chrome и веб-разработки
+    zh: 负责 Chrome 和网络的开发技术推广工程师
+
+morss:
+  title:
+    en: Ben Morss
+    es: Ben Morss
+    ja: Ben Morss
+    ko: Ben Morss
+    pt: Ben Morss
+    ru: Ben Morss
+    zh: Ben Morss
+  description:
+    en: Our latest news, updates, and stories by Ben Morss.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Ben Morss.
+    ja: Ben Morss による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Ben Morss의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Ben Morss.
+    ru: Последние новости и статьи от Ben Morss.
+    zh: Ben Morss 撰写我们的最新资讯、动态和故事。
+
+ericbidelman:
+  title:
+    en: Eric Bidelman
+    es: Eric Bidelman
+    ja: Eric Bidelman
+    ko: Eric Bidelman
+    pt: Eric Bidelman
+    ru: Eric Bidelman
+    zh: Eric Bidelman
+  description:
+    en: Our latest news, updates, and stories by Eric Bidelman.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Eric Bidelman.
+    ja: Eric Bidelman による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Eric Bidelman의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Eric Bidelman.
+    ru: Последние новости и статьи от Eric Bidelman.
+    zh: Eric Bidelman 撰写我们的最新资讯、动态和故事。
+
+jungkees:
+  title:
+    en: Jungkee Song
+    es: Jungkee Song
+    ja: Jungkee Song
+    ko: Jungkee Song
+    pt: Jungkee Song
+    ru: Jungkee Song
+    zh: Jungkee Song
+  description:
+    en: PM on the Microsoft Edge team
+    es: Administrador de proyectos en el equipo de Microsoft Edge
+    ja: Microsoft Edge チームのプロジェクトマネージャー
+    ko: Microsoft Edge 팀 PM
+    pt: Gerente de projeto na equipe Microsoft Edge
+    ru: Менеджер по продукту в команде Microsoft Edge
+    zh: Microsoft Edge 团队的项目经理
+
+leszeks:
+  title:
+    en: Leszek Swirski
+    es: Leszek Swirski
+    ja: Leszek Swirski
+    ko: Leszek Swirski
+    pt: Leszek Swirski
+    ru: Leszek Swirski
+    zh: Leszek Swirski
+  description:
+    en: Our latest news, updates, and stories by Leszek Swirski.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Leszek Swirski.
+    ja: Leszek Swirski による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Leszek Swirski의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Leszek Swirski.
+    ru: Последние новости и статьи от Leszek Swirski.
+    zh: Leszek Swirski 撰写我们的最新资讯、动态和故事。
+
+nainar:
+  title:
+    en: Naina Raisinghani
+    es: Naina Raisinghani
+    ja: Naina Raisinghani
+    ko: Naina Raisinghani
+    pt: Naina Raisinghani
+    ru: Naina Raisinghani
+    zh: Naina Raisinghani
+  description:
+    en: Our latest news, updates, and stories by Naina Raisinghani.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Naina Raisinghani.
+    ja: Naina Raisinghani による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Naina Raisinghani의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Naina Raisinghani.
+    ru: Последние новости и статьи от Naina Raisinghani.
+    zh: Naina Raisinghani 撰写我们的最新资讯、动态和故事。
+
+crystallambert:
+  title:
+    en: Crystal Lambert
+    es: Crystal Lambert
+    ja: Crystal Lambert
+    ko: Crystal Lambert
+    pt: Crystal Lambert
+    ru: Crystal Lambert
+    zh: Crystal Lambert
+  description:
+    en: Our latest news, updates, and stories by Crystal Lambert.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Crystal Lambert.
+    ja: Crystal Lambert による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Crystal Lambert의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Crystal Lambert.
+    ru: Последние новости и статьи от Crystal Lambert.
+    zh: Crystal Lambert 撰写我们的最新资讯、动态和故事。
+
+dalmaer:
+  title:
+    en: Dion Almaer
+    es: Dion Almaer
+    ja: Dion Almaer
+    ko: Dion Almaer
+    pt: Dion Almaer
+    ru: Dion Almaer
+    zh: Dion Almaer
+  description:
+    en: Our latest news, updates, and stories by Dion Almaer.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Dion Almaer.
+    ja: Dion Almaer による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Dion Almaer의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Dion Almaer.
+    ru: Последние новости и статьи от Dion Almaer.
+    zh: Dion Almaer 撰写我们的最新资讯、动态和故事。
+
+bmcquade:
+  title:
+    en: Bryan McQuade
+    es: Bryan McQuade
+    ja: Bryan McQuade
+    ko: Bryan McQuade
+    pt: Bryan McQuade
+    ru: Bryan McQuade
+    zh: Bryan McQuade
+  description:
+    en: Our latest news, updates, and stories by Bryan McQuade.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Bryan McQuade.
+    ja: Bryan McQuade による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Bryan McQuade의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Bryan McQuade.
+    ru: Последние новости и статьи от Bryan McQuade.
+    zh: Bryan McQuade 撰写我们的最新资讯、动态和故事。
+
+drott:
+  title:
+    en: Dominik Röttsches
+    es: Dominik Röttsches
+    ja: Dominik Röttsches
+    ko: Dominik Röttsches
+    pt: Dominik Röttsches
+    ru: Dominik Röttsches
+    zh: Dominik Röttsches
+  description:
+    en: Our latest news, updates, and stories by Dominik Röttsches.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Dominik Röttsches.
+    ja: Dominik Röttsches による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Dominik Röttsches의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Dominik Röttsches.
+    ru: Последние новости и статьи от Dominik Röttsches.
+    zh: Dominik Röttsches 撰写我们的最新资讯、动态和故事。
+
+yaraki:
+  title:
+    en: Yuichi Araki
+    es: Yuichi Araki
+    ja: Yuichi Araki
+    ko: Yuichi Araki
+    pt: Yuichi Araki
+    ru: Yuichi Araki
+    zh: Yuichi Araki
+  description:
+    en: Developer Programs Engineer at Google
+    es: Ingeniero de programas para desarrolladores en Google
+    ja: Google の開発者プログラムエンジニア
+    ko: Google의 개발자 프로그램 엔지니어
+    pt: Engenheiro de programas de desenvolvedor na empresa Google
+    ru: Developer Programs Engineer в компании Google
+    zh: Google 的开发者计划工程师
+
+kevinellis:
+  title:
+    en: Kevin Ellis
+    es: Kevin Ellis
+    ja: Kevin Ellis
+    ko: Kevin Ellis
+    pt: Kevin Ellis
+    ru: Kevin Ellis
+    zh: Kevin Ellis
+  description:
+    en: Software Engineer on the web platform.
+    es: Ingeniero de software en la plataforma web.
+    ja: Web プラットフォームのソフトウェアエンジニア。
+    ko: 웹 플랫폼 소프트웨어 엔지니어.
+    pt: Engenheiro de software na plataforma web.
+    ru: Инженер-программист, участвующий в разработке веб-платформы.
+    zh: 负责网络平台的软件工程师。
+
+robertnyman:
+  title:
+    en: Robert Nyman
+    es: Robert Nyman
+    ja: Robert Nyman
+    ko: Robert Nyman
+    pt: Robert Nyman
+    ru: Robert Nyman
+    zh: Robert Nyman
+  description:
+    en: Developer advocate on the web team at Google.
+    es: Desarrollador partidario en el equipo web de Google.
+    ja: Google の Web チームの Developer Advocate。
+    ko: Google 웹 팀의 개발자 애드버킷.
+    pt: Developer Advocate na equipe da web na empresa Google.
+    ru: Developer Advocate в команде разработки веб-технологий компании Google.
+    zh: Google 网络团队的开发技术推广工程师。
+
+foolip:
+  title:
+    en: Philip Jägenstedt
+    es: Philip Jägenstedt
+    ja: Philip Jägenstedt
+    ko: Philip Jägenstedt
+    pt: Philip Jägenstedt
+    ru: Philip Jägenstedt
+    zh: Philip Jägenstedt
+  description:
+    en: Our latest news, updates, and stories by Philip Jägenstedt.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Philip Jägenstedt.
+    ja: Philip Jägenstedt による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Philip Jägenstedt의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Philip Jägenstedt.
+    ru: Последние новости и статьи от Philip Jägenstedt.
+    zh: Philip Jägenstedt 撰写我们的最新资讯、动态和故事。
+
+olgademidova:
+  title:
+    en: Olga Demidova
+    es: Olga Demidova
+    ja: Olga Demidova
+    ko: Olga Demidova
+    pt: Olga Demidova
+    ru: Olga Demidova
+    zh: Olga Demidova
+  description:
+    en: Product Marketing Manager
+    es: Gerente de marketing de productos
+    ja: プロダクトマーケティングマネージャー
+    ko: 제품 마케팅 관리자
+    pt: Gerente de marketing de produtos
+    ru: Менеджер по маркетингу продуктов
+    zh: 产品营销经理
+
+gilbertococchi:
+  title:
+    en: Gilberto Cocchi
+    es: Gilberto Cocchi
+    ja: Gilberto Cocchi
+    ko: Gilberto Cocchi
+    pt: Gilberto Cocchi
+    ru: Gilberto Cocchi
+    zh: Gilberto Cocchi
+  description:
+    en: Our latest news, updates, and stories by Gilberto Cocchi.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Gilberto Cocchi.
+    ja: Gilberto Cocchi による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Gilberto Cocchi의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Gilberto Cocchi.
+    ru: Последние новости и статьи от Gilberto Cocchi.
+    zh: Gilberto Cocchi 撰写我们的最新资讯、动态和故事。
+
+antonkarlovskiy:
+  title:
+    en: Anton Karlovskiy
+    es: Anton Karlovskiy
+    ja: Anton Karlovskiy
+    ko: Anton Karlovskiy
+    pt: Anton Karlovskiy
+    ru: Anton Karlovskiy
+    zh: Anton Karlovskiy
+  description:
+    en: Our latest news, updates, and stories by Anton Karlovskiy.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Anton Karlovskiy.
+    ja: Anton Karlovskiy による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Anton Karlovskiy의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Anton Karlovskiy.
+    ru: Последние новости и статьи от Anton Karlovskiy.
+    zh: Anton Karlovskiy 撰写我们的最新资讯、动态和故事。
+
+rkochman:
+  title:
+    en: Rob Kochman
+    es: Rob Kochman
+    ja: Rob Kochman
+    ko: Rob Kochman
+    pt: Rob Kochman
+    ru: Rob Kochman
+    zh: Rob Kochman
+  description:
+    en: Our latest news, updates, and stories by Rob Kochman.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Rob Kochman.
+    ja: Rob Kochman による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Rob Kochman의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Rob Kochman.
+    ru: Последние новости и статьи от Rob Kochman.
+    zh: Rob Kochman 撰写我们的最新资讯、动态和故事。
+
+jonchen:
+  title:
+    en: Jonathan Chen
+    es: Jonathan Chen
+    ja: Jonathan Chen
+    ko: Jonathan Chen
+    pt: Jonathan Chen
+    ru: Джонатан Чен
+    zh: Jonathan Chen
+  description:
+    en: Web Ecosystem Consultant
+    es: Consultor de ecosistemas web
+    ja: Web エコシステムコンサルタント
+    ko: 웹 생태계 컨설턴트
+    pt: Consultor de ecossistemas web
+    ru: Консультант по веб-экосистеме
+    zh: 网络生态系统顾问
+
+msdikla:
+  title:
+    en: Dikla Cohen
+    es: Dikla Cohen
+    ja: Dikla Cohen
+    ko: Dikla Cohen
+    pt: Dikla Cohen
+    ru: Dikla Cohen
+    zh: Dikla Cohen
+  description:
+    en: Our latest news, updates, and stories by Dikla Cohen.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Dikla Cohen.
+    ja: Dikla Cohen による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Dikla Cohen의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Dikla Cohen.
+    ru: Последние новости и статьи от Dikla Cohen.
+    zh: Dikla Cohen 撰写我们的最新资讯、动态和故事。
+
+bpj:
+  title:
+    en: Bart Jarochowski
+    es: Bart Jarochowski
+    ja: Bart Jarochowski
+    ko: Bart Jarochowski
+    pt: Bart Jarochowski
+    ru: Bart Jarochowski
+    zh: Bart Jarochowski
+  description:
+    en: Our latest news, updates, and stories by Bart Jarochowski.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Bart Jarochowski.
+    ja: Bart Jarochowski による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Bart Jarochowski의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Bart Jarochowski.
+    ru: Последние новости и статьи от Bart Jarochowski.
+    zh: Bart Jarochowski 撰写我们的最新资讯、动态和故事。
+
+harrytheodoulou:
+  title:
+    en: Harry Theodoulou
+    es: Harry Theodoulou
+    ja: Harry Theodoulou
+    ko: Harry Theodoulou
+    pt: Harry Theodoulou
+    ru: Harry Theodoulou
+    zh: Harry Theodoulou
+  description:
+    en: Our latest news, updates, and stories by Harry Theodoulou.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Harry Theodoulou.
+    ja: Harry Theodoulou による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Harry Theodoulou의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Harry Theodoulou.
+    ru: Последние новости и статьи от Harry Theodoulou.
+    zh: Harry Theodoulou 撰写我们的最新资讯、动态和故事。
+
+natashakosoglov:
+  title:
+    en: Natasha Kosoglov
+    es: Natasha Kosoglov
+    ja: Natasha Kosoglov
+    ko: Natasha Kosoglov
+    pt: Natasha Kosoglov
+    ru: Natasha Kosoglov
+    zh: Natasha Kosoglov
+  description:
+    en: Our latest news, updates, and stories by Natasha Kosoglov.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Natasha Kosoglov.
+    ja: Natasha Kosoglov による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Natasha Kosoglov의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Natasha Kosoglov.
+    ru: Последние новости и статьи от Natasha Kosoglov.
+    zh: Natasha Kosoglov 撰写我们的最新资讯、动态和故事。
+
+mattreynolds:
+  title:
+    en: Matt Reynolds
+    es: Matt Reynolds
+    ja: Matt Reynolds
+    ko: Matt Reynolds
+    pt: Matt Reynolds
+    ru: Matt Reynolds
+    zh: Matt Reynolds
+  description:
+    en: Matt is a software developer
+    es: Matt es un desarrollador de software
+    ja: Matt はソフトウェア開発者です
+    ko: Matt는 소프트웨어 개발자입니다.
+    pt: Matt é um desenvolvedor de software
+    ru: Мэтт — разработчик программного обеспечения
+    zh: Matt 是一名软件开发者
+
+joriktangelder:
+  title:
+    en: Jorik Tangelder
+    es: Jorik Tangelder
+    ja: Jorik Tangelder
+    ko: Jorik Tangelder
+    pt: Jorik Tangelder
+    ru: Jorik Tangelder
+    zh: Jorik Tangelder
+  description:
+    en: User Experience Engineer
+    es: Ingeniero de Experiencia de usuario
+    ja: ユーザーエクスペリエンスエンジニア
+    ko: 사용자 경험 엔지니어
+    pt: Engenheiro de experiência de usuário
+    ru: UX-инженер
+    zh: 用户体验工程师
+
+sahel:
+  title:
+    en: Sahel Sharify
+    es: Sahel Sharify
+    ja: Sahel Sharify
+    ko: Sahel Sharify
+    pt: Sahel Sharify
+    ru: Sahel Sharify
+    zh: Sahel Sharify
+  description:
+    en: Our latest news, updates, and stories by Sahel Sharify.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Sahel Sharify.
+    ja: Sahel Sharify による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Sahel Sharify의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Sahel Sharify.
+    ru: Последние новости и статьи от Sahel Sharify.
+    zh: Sahel Sharify 撰写我们的最新资讯、动态和故事。
+
+loirooriol:
+  title:
+    en: Oriol Brufau
+    es: Oriol Brufau
+    ja: Oriol Brufau
+    ko: Oriol Brufau
+    pt: Oriol Brufau
+    ru: Oriol Brufau
+    zh: Oriol Brufau
+  description:
+    en: Our latest news, updates, and stories by Oriol Brufau.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Oriol Brufau.
+    ja: Oriol Brufau による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Oriol Brufau의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Oriol Brufau.
+    ru: Последние новости и статьи от Oriol Brufau.
+    zh: Oriol Brufau 撰写我们的最新资讯、动态和故事。
+
+joelriley:
+  title:
+    en: Joel Riley
+    es: Joel Riley
+    ja: Joel Riley
+    ko: Joel Riley
+    pt: Joel Riley
+    ru: Joel Riley
+    zh: Joel Riley
+  description:
+    en: Our latest news, updates, and stories by Joel Riley.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Joel Riley.
+    ja: Joel Riley による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Joel Riley의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Joel Riley.
+    ru: Последние новости и статьи от Joel Riley.
+    zh: Joel Riley 撰写我们的最新资讯、动态和故事。
+
+douglasparker:
+  title:
+    en: Douglas Parker
+    es: Douglas Parker
+    ja: Douglas Parker
+    ko: Douglas Parker
+    pt: Douglas Parker
+    ru: Douglas Parker
+    zh: Douglas Parker
+  description:
+    en: Our latest news, updates, and stories by Douglas Parker.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Douglas Parker.
+    ja: Douglas Parker による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Douglas Parker의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Douglas Parker.
+    ru: Последние новости и статьи от Douglas Parker.
+    zh: Douglas Parker 撰写我们的最新资讯、动态和故事。
+
+vladimirlevin:
+  title:
+    en: Vladimir Levin
+    es: Vladimir Levin
+    ja: Vladimir Levin
+    ko: Vladimir Levin
+    pt: Vladimir Levin
+    ru: Vladimir Levin
+    zh: Vladimir Levin
+  description:
+    en: Our latest news, updates, and stories by Vladimir Levin.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Vladimir Levin.
+    ja: Vladimir Levin による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Vladimir Levin의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Vladimir Levin.
+    ru: Последние новости и статьи от Vladimir Levin.
+    zh: Vladimir Levin 撰写我们的最新资讯、动态和故事。
+
+rreverser:
+  title:
+    en: Ingvar Stepanyan
+    es: Ingvar Stepanyan
+    ja: Ingvar Stepanyan
+    ko: Ingvar Stepanyan
+    pt: Ingvar Stepanyan
+    ru: Ingvar Stepanyan
+    zh: Ingvar Stepanyan
+  description:
+    en: WebAssembly Advocadoer
+    es: Desarrollador partidario en WebAssembly
+    ja: WebAssembly の Developer Advocate
+    ko: WebAssembly Advocadoer
+    pt: WebAssembly Advocadoer
+    ru: Advocadoer по вопросам WebAssembly
+    zh: WebAssembly Advocadoer
+
+masonfreed:
+  title:
+    en: Mason Freed
+    es: Mason Freed
+    ja: Mason Freed
+    ko: Mason Freed
+    pt: Mason Freed
+    ru: Mason Freed
+    zh: Mason Freed
+  description:
+    en: Developer on the Chrome team
+    es: Desarrollador en el equipo de Chrome
+    ja: Chrome チームに所属する開発者
+    ko: Chrome 팀 개발자
+    pt: Desenvolvedor na equipe do Chrome
+    ru: Разработчик в команде Chrome
+    zh: Chrome 团队的开发者
+
+roeln:
+  title:
+    en: Roel Nieskens
+    es: Roel Nieskens
+    ja: Roel Nieskens
+    ko: Roel Nieskens
+    pt: Roel Nieskens
+    ru: Roel Nieskens
+    zh: Roel Nieskens
+  description:
+    en: Our latest news, updates, and stories by Roel Nieskens.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Roel Nieskens.
+    ja: Roel Nieskens による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Roel Nieskens의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Roel Nieskens.
+    ru: Последние новости и статьи от Roel Nieskens.
+    zh: Roel Nieskens 撰写我们的最新资讯、动态和故事。
+
+dcrossland:
+  title:
+    en: Dave Crossland
+    es: Dave Crossland
+    ja: Dave Crossland
+    ko: Dave Crossland
+    pt: Dave Crossland
+    ru: Dave Crossland
+    zh: Dave Crossland
+  description:
+    en: Our latest news, updates, and stories by Dave Crossland.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Dave Crossland.
+    ja: Dave Crossland による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Dave Crossland의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Dave Crossland.
+    ru: Последние новости и статьи от Dave Crossland.
+    zh: Dave Crossland 撰写我们的最新资讯、动态和故事。
+
+aaronleventhal:
+  title:
+    en: Aaron Leventhal
+    es: Aaron Leventhal
+    ja: Aaron Leventhal
+    ko: Aaron Leventhal
+    pt: Aaron Leventhal
+    ru: Aaron Leventhal
+    zh: Aaron Leventhal
+  description:
+    en: Software Engineer
+    es: Ingeniero de software
+    ja: ソフトウェアエンジニア
+    ko: 소프트웨어 엔지니어
+    pt: Engenheiro de software
+    ru: Инженер-программист
+    zh: 软件工程师
+
+joanbaca:
+  title:
+    en: Joan Baca
+    es: Joan Baca
+    ja: Joan Baca
+    ko: Joan Baca
+    pt: Joan Baca
+    ru: Joan Baca
+    zh: Joan Baca
+  description:
+    en: Our latest news, updates, and stories by Joan Baca.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Joan Baca.
+    ja: Joan Baca による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Joan Baca의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Joan Baca.
+    ru: Последние новости и статьи от Joan Baca.
+    zh: Joan Baca 撰写我们的最新资讯、动态和故事。
+
+aranhacarlos:
+  title:
+    en: Carlos Aranha
+    es: Carlos Aranha
+    ja: Carlos Aranha
+    ko: Carlos Aranha
+    pt: Carlos Aranha
+    ru: Carlos Aranha
+    zh: Carlos Aranha
+  description:
+    en: Our latest news, updates, and stories by Carlos Aranha.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Carlos Aranha.
+    ja: Carlos Aranha による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Carlos Aranha의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Carlos Aranha.
+    ru: Последние новости и статьи от Carlos Aranha.
+    zh: Carlos Aranha 撰写我们的最新资讯、动态和故事。
+
+scottfriesen:
+  title:
+    en: Scott Friesen
+    es: Scott Friesen
+    ja: Scott Friesen
+    ko: Scott Friesen
+    pt: Scott Friesen
+    ru: Scott Friesen
+    zh: Scott Friesen
+  description:
+    en: Our latest news, updates, and stories by Scott Friesen.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Scott Friesen.
+    ja: Scott Friesen による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Scott Friesen의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Scott Friesen.
+    ru: Последние новости и статьи от Scott Friesen.
+    zh: Scott Friesen 撰写我们的最新资讯、动态和故事。
+
+bartekn:
+  title:
+    en: Bartek Nowierski
+    es: Bartek Nowierski
+    ja: Bartek Nowierski
+    ko: Bartek Nowierski
+    pt: Bartek Nowierski
+    ru: Bartek Nowierski
+    zh: Bartek Nowierski
+  description:
+    en: Chrome Software Engineer
+    es: Ingeniero de software de Chrome
+    ja: Chrome ソフトウェアエンジニア
+    ko: Chrome 소프트웨어 엔지니어
+    pt: Engenheiro de software do Chrome
+    ru: Инженер-программист проекта Chrome
+    zh: Chrome 软件工程师
+
+djuffin:
+  title:
+    en: Eugene Zemtsov
+    es: Eugene Zemtsov
+    ja: Eugene Zemtsov
+    ko: Eugene Zemtsov
+    pt: Eugene Zemtsov
+    ru: Eugene Zemtsov
+    zh: Eugene Zemtsov
+  description:
+    en: Our latest news, updates, and stories by Eugene Zemtsov.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Eugene Zemtsov.
+    ja: Eugene Zemtsov による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Eugene Zemtsov의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Eugene Zemtsov.
+    ru: Последние новости и статьи от Eugene Zemtsov.
+    zh: Eugene Zemtsov 撰写我们的最新资讯、动态和故事。
+
+giesau:
+  title:
+    en: Stephan Giesau
+    es: Stephan Giesau
+    ja: Stephan Giesau
+    ko: Stephan Giesau
+    pt: Stephan Giesau
+    ru: Stephan Giesau
+    zh: Stephan Giesau
+  description:
+    en: Our latest news, updates, and stories by Stephan Giesau.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Stephan Giesau.
+    ja: Stephan Giesau による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Stephan Giesau의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Stephan Giesau.
+    ru: Последние новости и статьи от Stephan Giesau.
+    zh: Stephan Giesau 撰写我们的最新资讯、动态和故事。
+
+mattgaunt:
+  title:
+    en: Matt Gaunt
+    es: Matt Gaunt
+    ja: Matt Gaunt
+    ko: Matt Gaunt
+    pt: Matt Gaunt
+    ru: Matt Gaunt
+    zh: Matt Gaunt
+  description:
+    en: Our latest news, updates, and stories by Matt Gaunt.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Matt Gaunt.
+    ja: Matt Gaunt による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Matt Gaunt의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Matt Gaunt.
+    ru: Последние новости и статьи от Matt Gaunt.
+    zh: Matt Gaunt 撰写我们的最新资讯、动态和故事。
+
+reillyg:
+  title:
+    en: Reilly Grant
+    es: Reilly Grant
+    ja: Reilly Grant
+    ko: Reilly Grant
+    pt: Reilly Grant
+    ru: Reilly Grant
+    zh: Reilly Grant
+  description:
+    en: Software Engineer on Google Chrome focusing on hardware APIs
+    es: Ingeniero de software en Google Chrome centrado en las API de hardware
+    ja: ハードウェア API に関心を持つ Google Chrome のソフトウェアエンジニア
+    ko: 하드웨어 API에 중점을 둔 Chrome의 소프트웨어 엔지니어
+    pt: Engenheiro de software no Google Chrome com foco em APIs de hardware
+    ru: Инженер-программист в команде Google Chrome, специализирующийся на API для работы с устройствами
+    zh: 专注于硬件 API 的 Google Chrome 软件工程师
+
+nateschloss:
+  title:
+    en: Nate Schloss
+    es: Nate Schloss
+    ja: Nate Schloss
+    ko: Nate Schloss
+    pt: Nate Schloss
+    ru: Nate Schloss
+    zh: Nate Schloss
+  description:
+    en: Our latest news, updates, and stories by Nate Schloss.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Nate Schloss.
+    ja: Nate Schloss による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Nate Schloss의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Nate Schloss.
+    ru: Последние новости и статьи от Nate Schloss.
+    zh: Nate Schloss 撰写我们的最新资讯、动态和故事。
+
+andrewcomminos:
+  title:
+    en: Andrew Comminos
+    es: Andrew Comminos
+    ja: Andrew Comminos
+    ko: Andrew Comminos
+    pt: Andrew Comminos
+    ru: Andrew Comminos
+    zh: Andrew Comminos
+  description:
+    en: Our latest news, updates, and stories by Andrew Comminos.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Andrew Comminos.
+    ja: Andrew Comminos による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Andrew Comminos의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Andrew Comminos.
+    ru: Последние новости и статьи от Andrew Comminos.
+    zh: Andrew Comminos 撰写我们的最新资讯、动态和故事。
+
+bingler:
+  title:
+    en: Steven Bingler
+    es: Steven Bingler
+    ja: Steven Bingler
+    ko: Steven Bingler
+    pt: Steven Bingler
+    ru: Steven Bingler
+    zh: Steven Bingler
+  description:
+    en: Software engineer on Chrome's Privacy Sandbox.
+    es: Ingeniero de software para Privacy Sandbox de Chrome.
+    ja: Chrome の Privacy Sandbox の開発に取り組むソフトウェアエンジニア。
+    ko: Chrome의 개인정보 보호 샌드박스 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software na Privacy Sandbox do Chrome.
+    ru: Инженер-программист, работающий над Chrome Privacy Sandbox.
+    zh: Chrome 隐私沙盒的软件工程师。
+
+andrewguan:
+  title:
+    en: Andrew Guan
+    es: Andrew Guan
+    ja: Andrew Guan
+    ko: Andrew Guan
+    pt: Andrew Guan
+    ru: Andrew Guan
+    zh: Andrew Guan
+  description:
+    en: Our latest news, updates, and stories by Andrew Guan.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Andrew Guan.
+    ja: Andrew Guan による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Andrew Guan의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Andrew Guan.
+    ru: Последние новости и статьи от Andrew Guan.
+    zh: Andrew Guan 撰写我们的最新资讯、动态和故事。
+
+sorenbalko:
+  title:
+    en: Sören Balko
+    es: Sören Balko
+    ja: Sören Balko
+    ko: Sören Balko
+    pt: Sören Balko
+    ru: Sören Balko
+    zh: Sören Balko
+  description:
+    en: CTO at Clipchamp
+    es: CTO en Clipchamp
+    ja: Clipchamp の CTO
+    ko: Clipchamp의 CTO
+    pt: CTO na empresa Clipchamp
+    ru: Технический директор компании Clipchamp
+    zh: Clipchamp 首席技术官
+
+rezakazemi:
+  title:
+    en: Reza Kazemi
+    es: Reza Kazemi
+    ja: Reza Kazemi
+    ko: Reza Kazemi
+    pt: Reza Kazemi
+    ru: Reza Kazemi
+    zh: Reza Kazemi
+  description:
+    en: Product Manager at Corel
+    es: Gerente de productos de Corel
+    ja: Corel のプロダクトマネージャー
+    ko: Corel의 제품 관리자
+    pt: Gerente de produtos da Corel
+    ru: Менеджер по продукту в компании Corel
+    zh: Corel 产品经理
+
+antoinebisch:
+  title:
+    en: Antoine Bisch
+    es: Antoine Bisch
+    ja: Antoine Bisch
+    ko: Antoine Bisch
+    pt: Antoine Bisch
+    ru: Antoine Bisch
+    zh: Antoine Bisch
+  description:
+    en: Web Ecosystem Consultant
+    es: Consultor de ecosistemas web
+    ja: Web エコシステムコンサルタント
+    ko: 웹 생태계 컨설턴트
+    pt: Consultor de ecossistemas web
+    ru: Консультант по веб-экосистеме
+    zh: 网络生态系统顾问
+
+anniesullie:
+  title:
+    en: Annie Sullivan
+    es: Annie Sullivan
+    ja: Annie Sullivan
+    ko: Annie Sullivan
+    pt: Annie Sullivan
+    ru: Annie Sullivan
+    zh: Annie Sullivan
+  description:
+    en: Our latest news, updates, and stories by Annie Sullivan.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Annie Sullivan.
+    ja: Annie Sullivan による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Annie Sullivan의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Annie Sullivan.
+    ru: Последние новости и статьи от Annie Sullivan.
+    zh: Annie Sullivan 撰写我们的最新资讯、动态和故事。
+
+mmocny:
+  title:
+    en: Michal Mocny
+    es: Michal Mocny
+    ja: Michal Mocny
+    ko: Michal Mocny
+    pt: Michal Mocny
+    ru: Michal Mocny
+    zh: Michal Mocny
+  description:
+    en: Our latest news, updates, and stories by Michal Mocny.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Michal Mocny.
+    ja: Michal Mocny による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Michal Mocny의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Michal Mocny.
+    ru: Последние новости и статьи от Michal Mocny.
+    zh: Michal Mocny 撰写我们的最新资讯、动态和故事。
+
+huib:
+  title:
+    en: Huib Kleinhout
+    es: Huib Kleinhout
+    ja: Huib Kleinhout
+    ko: Huib Kleinhout
+    pt: Huib Kleinhout
+    ru: Huib Kleinhout
+    zh: Huib Kleinhout
+  description:
+    en: Our latest news, updates, and stories by Huib Kleinhout.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Huib Kleinhout.
+    ja: Huib Kleinhout による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Huib Kleinhout의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Huib Kleinhout.
+    ru: Последние новости и статьи от Huib Kleinhout.
+    zh: Huib Kleinhout 撰写我们的最新资讯、动态和故事。
+
+sisidovski:
+  title:
+    en: Shunya Shishido
+    es: Shunya Shishido
+    ja: Shunya Shishido
+    ko: Shunya Shishido
+    pt: Shunya Shishido
+    ru: Shunya Shishido
+    zh: Shunya Shishido
+  description:
+    en: Web Ecosystem Consultant
+    es: Consultor de ecosistemas web
+    ja: Web エコシステムコンサルタント
+    ko: 웹 생태계 컨설턴트
+    pt: Consultor de ecossistemas web
+    ru: Консультант по веб-экосистеме
+    zh: 网络生态系统顾问
+
+gladenjoy:
+  title:
+    en: Tomoki Kiraku
+    es: Tomoki Kiraku
+    ja: Tomoki Kiraku
+    ko: Tomoki Kiraku
+    pt: Tomoki Kiraku
+    ru: Tomoki Kiraku
+    zh: Tomoki Kiraku
+  description:
+    en: Our latest news, updates, and stories by Tomoki Kiraku.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Tomoki Kiraku.
+    ja: Tomoki Kiraku による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Tomoki Kiraku의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Tomoki Kiraku.
+    ru: Последние новости и статьи от Tomoki Kiraku.
+    zh: Tomoki Kiraku 撰写我们的最新资讯、动态和故事。
+
+alonko:
+  title:
+    en: Alon Kochba
+    es: Alon Kochba
+    ja: Alon Kochba
+    ko: Alon Kochba
+    pt: Alon Kochba
+    ru: Alon Kochba
+    zh: Alon Kochba
+  description:
+    en: Our latest news, updates, and stories by Alon Kochba.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Alon Kochba.
+    ja: Alon Kochba による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Alon Kochba의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Alon Kochba.
+    ru: Последние новости и статьи от Alon Kochba.
+    zh: Alon Kochba 撰写我们的最新资讯、动态和故事。
+
+choudhuryashish:
+  title:
+    en: Ashish Choudhury
+    es: Ashish Choudhury
+    ja: Ashish Choudhury
+    ko: Ashish Choudhury
+    pt: Ashish Choudhury
+    ru: Ashish Choudhury
+    zh: Ashish Choudhury
+  description:
+    en: Our latest news, updates, and stories by Ashish Choudhury.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Ashish Choudhury.
+    ja: Ashish Choudhury による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Ashish Choudhury의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Ashish Choudhury.
+    ru: Последние новости и статьи от Ashish Choudhury.
+    zh: Ashish Choudhury 撰写我们的最新资讯、动态和故事。
+
+dinakarchandolu:
+  title:
+    en: Dinakar Chandolu
+    es: Dinakar Chandolu
+    ja: Dinakar Chandolu
+    ko: Dinakar Chandolu
+    pt: Dinakar Chandolu
+    ru: Dinakar Chandolu
+    zh: Dinakar Chandolu
+  description:
+    en: Our latest news, updates, and stories by Dinakar Chandolu.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Dinakar Chandolu.
+    ja: Dinakar Chandolu による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Dinakar Chandolu의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Dinakar Chandolu.
+    ru: Последние новости и статьи от Dinakar Chandolu.
+    zh: Dinakar Chandolu 撰写我们的最新资讯、动态和故事。
+
+abhimanyuraibahadur:
+  title:
+    en: Abhimanyu Raibahadur
+    es: Abhimanyu Raibahadur
+    ja: Abhimanyu Raibahadur
+    ko: Abhimanyu Raibahadur
+    pt: Abhimanyu Raibahadur
+    ru: Abhimanyu Raibahadur
+    zh: Abhimanyu Raibahadur
+  description:
+    en: Our latest news, updates, and stories by Abhimanyu Raibahadur.
+    es: Nuestras últimas noticias, actualizaciones e historias de Abhimanyu Raibahadur.
+    ja: Abhimanyu Raibahadur による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Abhimanyu Raibahadur의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Abhimanyu Raibahadur.
+    ru: Последние новости и статьи от Abhimanyu Raibahadur.
+    zh: Abhimanyu Raibahadur 撰写我们的最新资讯、动态和故事。
+
+dhilipvenkateshuvarajan:
+  title:
+    en: Dhilip venkatesh Uvarajan
+    es: Dhilip venkatesh Uvarajan
+    ja: Dhilip venkatesh Uvarajan
+    ko: Dhilip venkatesh Uvarajan
+    pt: Dhilip venkatesh Uvarajan
+    ru: Dhilip venkatesh Uvarajan
+    zh: Dhilip venkatesh Uvarajan
+  description:
+    en: Our latest news, updates, and stories by Dhilip venkatesh Uvarajan.
+    es: Nuestras últimas noticias, actualizaciones e historias de Dhilip venkatesh Uvarajan.
+    ja: Dhilip venkatesh Uvarajan による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Dhilip venkatesh Uvarajan의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Dhilip venkatesh Uvarajan.
+    ru: Последние новости и статьи от Dhilip venkatesh Uvarajan.
+    zh: Dhilip venkatesh Uvarajan 撰写我们的最新资讯、动态和故事。
+
+safwans:
+  title:
+    en: Safwan Samla
+    es: Safwan Samla
+    ja: Safwan Samla
+    ko: Safwan Samla
+    pt: Safwan Samla
+    ru: Safwan Samla
+    zh: Safwan Samla
+  description:
+    en: Our latest news, updates, and stories by Safwan Samla.
+    es: Nuestras últimas noticias, actualizaciones e historias de Safwan Samla.
+    ja: Safwan Samla による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Safwan Samla의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Safwan Samla.
+    ru: Последние новости и статьи от Safwan Samla.
+    zh: Safwan Samla 撰写我们的最新资讯、动态和故事。
+
+andybell:
+  title:
+    en: Andy Bell
+    es: Andy Bell
+    ja: Andy Bell
+    ko: Andy Bell
+    pt: Andy Bell
+    ru: Andy Bell
+    zh: Andy Bell
+  description:
+    en: Freelance designer and educator
+    es: Diseñador y profesor independiente
+    ja: フリーランスのデザイナー兼教育者
+    ko: 프리랜서 디자이너 겸 교육자
+    pt: Designer e educador freelancer
+    ru: Дизайнер-фрилансер и автор обучающих материалов
+    zh: 自由设计师和教育工作者
+
+ajara:
+  title:
+    en: Adriana Jara
+    es: Adriana Jara
+    ja: Adriana Jara
+    ko: Adriana Jara
+    pt: Adriana Jara
+    ru: Adriana Jara
+    zh: Adriana Jara
+  description:
+    en: Adriana is a Developer Relations Engineer
+    es: Adriana es una ingeniera DevRel
+    ja: Adriana は開発者リレーションエンジニアです
+    ko: Adriana는 개발자 관계 엔지니어입니다.
+    pt: Adriana é engenheira de relações com desenvolvedores
+    ru: Адриана — DevRel-инженер
+    zh: Adriana 是一名开发者关系工程师
+
+jbrockmeyer:
+  title:
+    en: Jan Brockmeyer
+    es: Jan Brockmeyer
+    ja: Jan Brockmeyer
+    ko: Jan Brockmeyer
+    pt: Jan Brockmeyer
+    ru: Jan Brockmeyer
+    zh: Jan Brockmeyer
+  description:
+    en: Our latest news, updates, and stories by Jan Brockmeyer.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Jan Brockmeyer.
+    ja: Jan Brockmeyer による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Jan Brockmeyer의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Jan Brockmeyer.
+    ru: Последние новости и статьи от Jan Brockmeyer.
+    zh: Jan Brockmeyer 撰写我们的最新资讯、动态和故事。
+
+jcolin:
+  title:
+    en: Jeremy Colin
+    es: Jeremy Colin
+    ja: Jeremy Colin
+    ko: Jeremy Colin
+    pt: Jeremy Colin
+    ru: Jeremy Colin
+    zh: Jeremy Colin
+  description:
+    en: Engineering Manager
+    es: Gerente de Ingeniería
+    ja: エンジニアリングマネージャー
+    ko: 엔지니어링 관리자
+    pt: Gerente de engenharia
+    ru: Менеджер по разработке
+    zh: 工程经理
+
+hbsong:
+  title:
+    en: Hongbo Song
+    es: Hongbo Song
+    ja: Hongbo Song
+    ko: Hongbo Song
+    pt: Hongbo Song
+    ru: Hongbo Song
+    zh: Hongbo Song
+  description:
+    en: Our latest news, updates, and stories by Hongbo Song.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Hongbo Song.
+    ja: Hongbo Song による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Hongbo Song의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Hongbo Song.
+    ru: Последние новости и статьи от Hongbo Song.
+    zh: Hongbo Song 撰写我们的最新资讯、动态和故事。
+
+adamskret:
+  title:
+    en: Adam Skręt
+    es: Adam Skręt
+    ja: Adam Skręt
+    ko: Adam Skręt
+    pt: Adam Skręt
+    ru: Adam Skręt
+    zh: Adam Skręt
+  description:
+    en: Director of Digital & Performance Marketing, Orange Polska S.A.
+    es: Director de marketing digital y rendimiento de Orange Polska S.A.
+    ja: Orange Polska S.A. に所属するデジタル & パフォーマンスマーケティングディレクター
+    ko: 디지털 및 성능 마케팅 이사, Orange Polska SA
+    pt: Diretor de marketing digital e desempenho, Orange Polska S.A.
+    ru: Директор по цифровому и performance-маркетингу, Orange Polska S.A.
+    zh: Orange Polska S.A. 数字和绩效营销总监
+
+rafałfilipek:
+  title:
+    en: Rafał Filipek
+    es: Rafał Filipek
+    ja: Rafał Filipek
+    ko: Rafał Filipek
+    pt: Rafał Filipek
+    ru: Rafał Filipek
+    zh: Rafał Filipek
+  description:
+    en: Lead Frontend Developer, Orange Polska S.A.
+    es: Desarrollador principal de front-end en Orange Polska S.A.
+    ja: Orange Polska S.A. に所属するリードフロントエンド開発者
+    ko: 수석 프런트엔드 개발자, Orange Polska SA
+    pt: Desenvolvedor líder de front-end, Orange Polska S.A.
+    ru: Ведущий фронтенд-разработчик, Orange Polska S.A.
+    zh: Orange Polska S.A. 首席前端开发者
+
+marcinsierakowski:
+  title:
+    en: Marcin Sierakowski
+    es: Marcin Sierakowski
+    ja: Marcin Sierakowski
+    ko: Marcin Sierakowski
+    pt: Marcin Sierakowski
+    ru: Marcin Sierakowski
+    zh: Marcin Sierakowski
+  description:
+    en: Director of Sales Platforms Development & Maintenance, Orange Polska S.A.
+    es: Director de desarrollo y mantenimiento de plataformas de ventas en Orange Polska S.A.
+    ja: Orange Polska S.A. に所属する販売プラットフォーム開発 & メンテナンスディレクター
+    ko: 영업 플랫폼 개발 및 유지관리 이사, Orange Polska SA
+    pt: Diretor de desenvolvimento e manutenção de plataformas de vendas, Orange Polska S.A.
+    ru: Директор по развитию и поддержке торговых платформ, Orange Polska S.A.
+    zh: Orange Polska S.A. 销售平台开发与维护总监
+
+jiwoong:
+  title:
+    en: Jiwoong Lee
+    es: Jiwoong Lee
+    ja: Jiwoong Lee
+    ko: 이지웅
+    pt: Jiwoong Lee
+    ru: Jiwoong Lee
+    zh: 李智雄
+  description:
+    en: UX Designer for Web Platform & Chrome
+    es: Diseñador de UX para Web Platform y Chrome
+    ja: Web プラットフォームと Chrome を対象とした UX デザイナー
+    ko: 웹 플랫폼 및 Chrome의 UX 디자이너
+    pt: Designer de UX para plataforma web e Chrome
+    ru: UX-дизайнер веб-платформы и Chrome
+    zh: 网络平台与 Chrome 用户体验设计师
+
+christianliebel:
+  title:
+    en: Christian Liebel
+    es: Christian Liebel
+    ja: Christian Liebel
+    ko: Christian Liebel
+    pt: Christian Liebel
+    ru: Christian Liebel
+    zh: Christian Liebel
+  description:
+    en: GDE for Web Capabilities & Angular
+    es: Diseñador de GDE para funcionalidades web y de Angular
+    ja: Web Capabilities と Angular を対象とした GDE
+    ko: 웹 기능 및 Angular의 GDE
+    pt: Designer GDE para Web Capabilities e Angular
+    ru: Эксперт GDE по веб-возможностям и Angular
+    zh: 专攻网络功能与 Angular 的 Google 开发者专家
+
+mgiuca:
+  title:
+    en: Matt Giuca
+    es: Matt Giuca
+    ja: Matt Giuca
+    ko: Matt Giuca
+    pt: Matt Giuca
+    ru: Matt Giuca
+    zh: Matt Giuca
+  description:
+    en: Our latest news, updates, and stories by Matt Giuca.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Matt Giuca.
+    ja: Matt Giuca による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Matt Giuca의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Matt Giuca.
+    ru: Последние новости и статьи от Мэтта Джуки.
+    zh: Matt Giuca 撰写我们的最新资讯、动态和故事。
+
+swethagopalakrishnan:
+  title:
+    en: Swetha Gopalakrishnan
+    es: Swetha Gopalakrishnan
+    ja: Swetha Gopalakrishnan
+    ko: Swetha Gopalakrishnan
+    pt: Swetha Gopalakrishnan
+    ru: Swetha Gopalakrishnan
+    zh: Swetha Gopalakrishnan
+  description:
+    en: Our latest news, updates, and stories by Swetha Gopalakrishnan.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Swetha Gopalakrishnan.
+    ja: Swetha Gopalakrishnan による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Swetha Gopalakrishnan의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Swetha Gopalakrishnan.
+    ru: Последние новости и статьи от Swetha Gopalakrishnan.
+    zh: Swetha Gopalakrishnan 撰写我们的最新资讯、动态和故事。
+
+saurabhrajpal:
+  title:
+    en: Saurabh Rajpal
+    es: Saurabh Rajpal
+    ja: Saurabh Rajpal
+    ko: Saurabh Rajpal
+    pt: Saurabh Rajpal
+    ru: Saurabh Rajpal
+    zh: Saurabh Rajpal
+  description:
+    en: Our latest news, updates, and stories by Saurabh Rajpal.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Saurabh Rajpal.
+    ja: Saurabh Rajpal による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Saurabh Rajpal의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Saurabh Rajpal.
+    ru: Последние новости и статьи от Saurabh Rajpal.
+    zh: Saurabh Rajpal 撰写我们的最新资讯、动态和故事。
+
+arturjanc:
+  title:
+    en: Artur Janc
+    es: Artur Janc
+    ja: Artur Janc
+    ko: Artur Janc
+    pt: Artur Janc
+    ru: Artur Janc
+    zh: Artur Janc
+  description:
+    en: Our latest news, updates, and stories by Artur Janc.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Artur Janc.
+    ja: Artur Janc による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Artur Janc의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Artur Janc.
+    ru: Последние новости и статьи от Artur Janc.
+    zh: Artur Janc 撰写我们的最新资讯、动态和故事。
+
+mkazi:
+  title:
+    en: Minhaz Kazi
+    es: Minhaz Kazi
+    ja: Minhaz Kazi
+    ko: Minhaz Kazi
+    pt: Minhaz Kazi
+    ru: Minhaz Kazi
+    zh: Minhaz Kazi
+  description:
+    en: Developer Advocate at Google
+    es: Desarrollador partidario en Google
+    ja: Google に所属する Developer Advocate
+    ko: Google의 개발자 애드버킷
+    pt: Developer Advocate na empresa Google
+    ru: Developer Advocate в компании Google
+    zh: Google 的开发技术推广工程师
+
+cmp:
+  title:
+    en: Chase Phillips
+    es: Chase Phillips
+    ja: Chase Phillips
+    ko: Chase Phillips
+    pt: Chase Phillips
+    ru: Chase Phillips
+    zh: Chase Phillips
+  description:
+    en: Software Engineer on the Google Chrome team
+    es: Ingeniero de software en el equipo de Google Chrome
+    ja: Google Chrome チームのソフトウェアエンジニア
+    ko: Google Chrome 팀의 소프트웨어 엔지니어
+    pt: Engenheiro de software na equipe do Google Chrome
+    ru: Инженер-программист в команде Google Chrome
+    zh: Google Chrome 团队的软件工程师
+
+collindionagata:
+  title:
+    en: Collin Dion Agata
+    es: Collin Dion Agata
+    ja: Collin Dion Agata
+    ko: Collin Dion Agata
+    pt: Collin Dion Agata
+    ru: Collin Dion Agata
+    zh: Collin Dion Agata
+  description:
+    en: Our latest news, updates, and stories by Collin Dion Agata.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Collin Dion Agata.
+    ja: Dion Agata による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Collin Dion Agata의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Collin Dion Agata.
+    ru: Последние новости и статьи от Collin Dion Agata.
+    zh: Collin Dion Agata 撰写我们的最新资讯、动态和故事。
+
+chrisboakes:
+  title:
+    en: Chris Boakes
+    es: Chris Boakes
+    ja: Chris Boakes
+    ko: Chris Boakes
+    pt: Chris Boakes
+    ru: Chris Boakes
+    zh: Chris Boakes
+  description:
+    en: Principal Software Engineer at The Telegraph
+    es: Ingeniero principal de software en The Telegraph
+    ja: Telegraph のプリンシパルソフトウェアエンジニア
+    ko: The Telegraph의 수석 소프트웨어 엔지니어
+    pt: Engenheiro de software principal no The Telegraph
+    ru: Главный инженер-программист в The Telegraph
+    zh: The Telegraph 首席软件工程师
+
+jaikk:
+  title:
+    en: Jai Krishnan
+    es: Jai Krishnan
+    ja: Jai Krishnan
+    ko: Jai Krishnan
+    pt: Jai Krishnan
+    ru: Jai Krishnan
+    zh: Jai Krishnan
+  description:
+    en: Product Manager at Google working on open codecs
+    es: Gerente de productos de Google que trabaja en códigos abiertos
+    ja: オープンコーデックに取り組む Google のプロダクトマネージャー
+    ko: 오픈 코덱 작업을 수행하는 Google의 제품 관리자
+    pt: Gerente de produtos no Google trabalhando em codecs abertos
+    ru: Менеджер по продукту в Google, участвует в разработке открытых кодеков
+    zh: 研究开放式编解码器的 Google 产品经理
+
+wtc:
+  title:
+    en: Wan-Teh Chang
+    es: Wan-Teh Chang
+    ja: Wan-Teh Chang
+    ko: Wan-Teh Chang
+    pt: Wan-Teh Chang
+    ru: Wan-Teh Chang
+    zh: Wan-Teh Chang
+  description:
+    en: Engineer at Google working on AVIF
+    es: Ingeniero en Google que trabaja en AVIF
+    ja: AVIF に取り組む Google のエンジニア
+    ko: AVIF 작업을 수행하는 Google 엔지니어
+    pt: Engenheiro na Google trabalhando em AVIF
+    ru: Инженер в компании Google, участвующий в разработке AVIF
+    zh: 研究 AVIF 的 Google 工程师
+
+shubhie:
+  title:
+    en: Shubhie Panicker
+    es: Shubhie Panicker
+    ja: Shubhie Panicker
+    ko: Shubhie Panicker
+    pt: Shubhie Panicker
+    ru: Shubhie Panicker
+    zh: Shubhie Panicker
+  description:
+    en: Tech Lead Manager on the Chrome Web Platform team
+    es: Gerente principal de tecnología de la plataforma web de Chrome
+    ja: Chrome Web プラットフォームチームのテクニカルリードマネージャー
+    ko: Chrome 웹 플랫폼 팀의 기술 수석 관리자
+    pt: Gerente líder técnico na equipe de plataforma web do Chrome
+    ru: Технический руководитель команды веб-платформы Chrome
+    zh: Chrome 网络平台团队的技术主管经理
+
+npm:
+  title:
+    en: Nicolás Peña Moreno
+    es: Nicolás Peña Moreno
+    ja: Nicolás Peña Moreno
+    ko: Nicolás Peña Moreno
+    pt: Nicolás Peña Moreno
+    ru: Nicolás Peña Moreno
+    zh: Nicolás Peña Moreno
+  description:
+    en: Software developer always looking for chocolates and games
+    es: Programador siempre en busca de chocolates y juegos
+    ja: チョコレートとゲームをいつも探しているソフトウェア開発者
+    ko: 늘 초콜릿과 게임을 찾는 소프트웨어 개발자
+    pt: Desenvolvedor de software sempre à procura de chocolates e jogos
+    ru: Разработчик ПО, обожает шоколадки и игры
+    zh: 总是在寻找巧克力和游戏的软件开发者
+
+derekherman:
+  title:
+    en: Derek Herman
+    es: Derek Herman
+    ja: Derek Herman
+    ko: Derek Herman
+    pt: Derek Herman
+    ru: Derek Herman
+    zh: Derek Herman
+  description:
+    en: CTO at XWP
+    es: Director de tecnología en XWP
+    ja: XWP の CTO
+    ko: XWP의 CTO
+    pt: CTO na empresa XWP
+    ru: Технический директор компании XWP
+    zh: XWP 首席技术官
+
+dero:
+  title:
+    en: Jaroslav Polakovič
+    es: Jaroslav Polakovič
+    ja: Jaroslav Polakovič
+    ko: Jaroslav Polakovič
+    pt: Jaroslav Polakovič
+    ru: Jaroslav Polakovič
+    zh: Jaroslav Polakovič
+  description:
+    en: Senior Engineer at XWP
+    es: Jefe de ingeniería en XWP
+    ja: XWP のシニアエンジニア
+    ko: XWP의 수석 엔지니어
+    pt: Engenheiro sênior na empresa XWP
+    ru: Старший инженер в компании XWP
+    zh: XWP 高级工程师
+
+jarhar:
+  title:
+    en: Joey Arhar
+    es: Joey Arhar
+    ja: Joey Arhar
+    ko: Joey Arhar
+    pt: Joey Arhar
+    ru: Joey Arhar
+    zh: Joey Arhar
+  description:
+    en: Software Engineer on the Chrome DOM team
+    es: Ingeniero de software en el equipo de Chrome DOM
+    ja: Chrome DOM チームのソフトウェアエンジニア
+    ko: Chrome DOM 팀의 소프트웨어 엔지니어
+    pt: Engenheiro de software na equipe do Chrome DOM
+    ru: Инженер-программист в команде Chrome DOM
+    zh: Chrome DOM 团队的软件工程师
+
+majido:
+  title:
+    en: Majid Valipour
+    es: Majid Valipour
+    ja: Majid Valipour
+    ko: Majid Valipour
+    pt: Majid Valipour
+    ru: Majid Valipour
+    zh: Majid Valipour
+  description:
+    en: Software Engineer on the Chrome team
+    es: Ingeniero de software en el equipo de Chrome
+    ja: Chrome チームに所属するソフトウェアエンジニア
+    ko: Chrome 팀의 소프트웨어 엔지니어
+    pt: Engenheiro de software na equipe do Chrome
+    ru: Инженер-программист в команде Chrome
+    zh: Chrome 团队的软件工程师
+
+flackr:
+  title:
+    en: Robert Flack
+    es: Robert Flack
+    ja: Robert Flack
+    ko: Robert Flack
+    pt: Robert Flack
+    ru: Robert Flack
+    zh: Robert Flack
+  description:
+    en: Software Engineer on the Chrome team
+    es: Ingeniero de software en el equipo de Chrome
+    ja: Chrome チームに所属するソフトウェアエンジニア
+    ko: Chrome 팀의 소프트웨어 엔지니어
+    pt: Engenheiro de software na equipe do Chrome
+    ru: Инженер-программист в команде Chrome
+    zh: Chrome 团队的软件工程师
+
+dandclark:
+  title:
+    en: Dan Clark
+    es: Dan Clark
+    ja: Dan Clark
+    ko: Dan Clark
+    pt: Dan Clark
+    ru: Dan Clark
+    zh: Dan Clark
+  description:
+    en: Developer on the Microsoft Edge Web Platform team
+    es: Desarrollador en el equipo de la plataforma web Microsoft Edge
+    ja: Microsoft Edge Web プラットフォームチームに所属する開発者
+    ko: Microsoft Edge 웹 플랫폼 팀 개발자
+    pt: Desenvolvedor na equipe de plataforma web do Microsoft Edge
+    ru: Разработчик в команде веб-платформы Microsoft Edge
+    zh: Microsoft Edge 网络平台团队的开发者
+
+cambickel:
+  title:
+    en: Camden Bickel
+  description:
+    en: Software Engineer at Google
+
+michaelscharnagl:
+  title:
+    en: Michael Scharnagl
+    es: Michael Scharnagl
+    ja: Michael Scharnagl
+    ko: Michael Scharnagl
+    pt: Michael Scharnagl
+    ru: Michael Scharnagl
+    zh: Michael Scharnagl
+  description:
+    en: Freelance front-end web developer
+    es: Freelance front-end web developer
+    ja: Freelance front-end web developer
+    ko: Freelance front-end web developer
+    pt: Freelance front-end web developer
+    ru: Freelance front-end web developer
+    zh: Freelance front-end web developer
+
+leenasohoni:
+  title:
+    en: Leena Sohoni
+    es: Leena Sohoni
+    ja: Leena Sohoni
+    ko: Leena Sohoni
+    pt: Leena Sohoni
+    ru: Leena Sohoni
+    zh: Leena Sohoni
+  description:
+    en: Freelance technical analyst and writer
+    es: Analista técnica / escritora independiente
+    ja: フリーランスのテクニカルアナリスト/ライター。
+    ko: 프리랜서 기술 분석가/작가
+    pt: Analista / redator técnico freelance.
+    ru: Технический аналитик / писатель-фрилансер.
+    zh: 自由技术分析师/作家。
+
+jackjey:
+  title:
+    en: Jack J
+    es: Jack J
+    ja: Jack J
+    ko: Jack J
+    pt: Jack J
+    ru: Jack J
+    zh: Jack J
+  description:
+    en: Jack is an engineer working on the web
+    es: Jack es un ingeniero que trabaja para la web
+    ja: Jack は Web のために働くエンジニアです
+    ko: Jack은 웹에서 일하는 엔지니어입니다.
+    pt: Jack é um engenheiro que trabalha para web
+    ru: Jack - инженер, работающий в Интернете.
+    zh: Jack是一个为网络工作的工程师。
+
+tcoustillac:
+  title:
+    en: Thierry Coustillac
+    es: Thierry Coustillac
+    ja: Thierry Coustillac
+    ko: Thierry Coustillac
+    pt: Thierry Coustillac
+    ru: Thierry Coustillac
+    zh: Thierry Coustillac
+  description:
+    en: Thierry Coustillac is a consultant at Google.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Thierry Coustillac.
+    ja: Thierry Coustillac による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Thierry Coustillac의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Thierry Coustillac.
+    ru: Последние новости и статьи от Thierry Coustillac.
+    zh: Thierry Coustillac 撰写我们的最新资讯、动态和故事。
+
+cédricbazureau:
+  title:
+    en: Cédric Bazureau
+  description:
+    en: Cédric Bazureau is a lead developer at Renault.
+
+adactio:
+  title:
+    en: Jeremy Keith
+  description:
+    en: An Irish web developer living in Brighton, England, working with Clearleft.
+
+patmeenan:
+  title:
+    en: Patrick Meenan
+    es: Patrick Meenan
+    ja: Patrick Meenan
+    ko: Patrick Meenan
+    pt: Patrick Meenan
+    ru: Patrick Meenan
+    zh: Patrick Meenan
+  description:
+    en: Our latest news, updates, and stories by Patrick Meenan.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Patrick Meenan.
+    ja: Patrick Meenan による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Patrick Meenan 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Patrick Meenan.
+    ru: Последние новости и статьи от Patrick Meenan.
+    zh: Patrick Meenan 撰写我们的最新资讯、动态和故事。
+
+firt:
+  title:
+    en: Maximiliano Firtman
+  description:
+    en: Author of Hacking Web Performance from O'Reilly
+
+patrickbrosset:
+  title:
+    en: Patrick Brosset
+    es: Patrick Brosset
+    ja: Patrick Brosset
+    ko: Patrick Brosset
+    pt: Patrick Brosset
+    ru: Patrick Brosset
+    zh: Patrick Brosset
+  description:
+    en: Our latest news, updates, and stories by Patrick Brosset.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Patrick Brosset.
+    ja: Patrick Brosset による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Patrick Brosset 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Patrick Brosset.
+    ru: Последние новости и статьи от Patrick Brosset.
+    zh: Patrick Brosset 撰写我们的最新资讯、动态和故事。
+
+karaerickson:
+  title:
+    en: Kara Erickson
+    es: Kara Erickson
+    ja: Kara Erickson
+    ko: Kara Erickson
+    pt: Kara Erickson
+    ru: Kara Erickson
+    zh: Kara Erickson
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniera de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师。
+
+alexcastle:
+  title:
+    en: Alex Castle
+    es: Alex Castle
+    ja: Alex Castle
+    ko: Alex Castle
+    pt: Alex Castle
+    ru: Alex Castle
+    zh: Alex Castle
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniero de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师
+
+behdadb:
+  title:
+    en: Behdad Bakhshinategh
+  description:
+    en: Software Engineer
+
+jonross:
+  title:
+    en: Jonathan Ross
+  description:
+    en: Software Engineer
+
+bckenny:
+  title:
+    en: Brendan Kenny
+  description:
+    en: Lighthouse lens polisher
+
+alexandrawhite:
+  title:
+    en: Alexandra White
+    es: Alexandra White
+    ja: Alexandra White
+    ko: Alexandra White
+    pt: Alexandra White
+    ru: Alexandra White
+    zh: Alexandra White
+  description:
+    en: Technical Writer at Google.
+    es: Escritor técnico en Google
+    ja: Google のテクニカルライター
+    ko: Google 테크니컬라이터
+    pt: Escritora técnica na empresa Google
+    ru: Технический писатель в компании Google
+    zh: Google 的技术撰稿人
+
+svenmay:
+  title:
+    en: Sven May
+  description:
+    en: Privacy Web Ecosystem Consultant at Google
+
+denisstasyev:
+  title:
+    en: Denis Stasyev
+  description:
+    en: Software Engineer
+
+lozandier:
+  title:
+    en: Kevin Lozandier
+  description:
+    en: User Experience Engineer on the Google Responsible Innovation team
+mobtec:
+  title:
+    en: Guilherme Moser de Souza
+  description:
+    en: Web Developer
+maurizioparadisi:
+  title:
+    en: Maurizio Paradisi
+    es: Maurizio Paradisi
+    it: Maurizio Paradisi
+    ja: Maurizio Paradisi
+    ko: Maurizio Paradisi
+    pt: Maurizio Paradisi
+    ru: Maurizio Paradisi
+    zh: Maurizio Paradisi
+  description:
+    en: Our latest news, updates, and stories by Maurizio Paradisi.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Maurizio Paradisi.
+    it: Consulta le ultime notizie, aggiornamenti e storie di Maurizio Paradisi.
+    ja: Maurizio Paradisi による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Maurizio Paradisi의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Maurizio Paradisi.
+    ru: Последние новости и статьи от Maurizio Paradisi.
+    zh: Maurizio Paradisi 撰写我们的最新资讯、动态和故事。
+
+anshusharma:
+  title:
+    en: Anshu Sharma
+  description:
+    en: Head of Engineering at The Economic Times
+
+sumitgugnani:
+  title:
+    en: Sumit Gugnani
+  description:
+    en: Head of Frontend Engineering at The Economic Times
+
+prashantmishra:
+  title:
+    en: Prashant Mishra
+  description:
+    en: Web Ecosystem Consultant at Google
+
+joshuagrossberg:
+  title:
+    en: Joshua Grossberg
+  description:
+    en: Chief Technology Officer of Kapwing
+
+nsull:
+  title:
+    en: Nicole Sullivan
+  description:
+    en: Product manager on the Chrome team.
+
+danielasy:
+  title:
+    en: Daniela Sayuri Yassuda
+  description:
+    en: Staff Software Engineer at QuintoAndar
+
+arthursonzogni:
+  title:
+    en: Arthur Sonzogni
+  description:
+    en: Software Engineer at Google
+
+chrispalmer:
+  title:
+    en: Chris Palmer
+  description:
+    en: Software Security Engineer at Google
+
+karldubost:
+  title:
+    en: Karl Dubost
+  description:
+    en: Web Compatibility Engineering Manager at Mozilla
+
+abeyad:
+  title:
+    en: Ali Beyad
+  description:
+    en: Software Engineer
+
+sdenaro:
+  title:
+    en: Salvatore Denaro
+  description:
+    en: Salvatore Denaro is a Sr. Web Ecosystem Consultant at Google
+
+kbalasub:
+  title:
+    en: Kalyanaraman Balasubramaniam Krishnan
+  description:
+    en: Kalyan is a Sr. Computer Scientist at Adobe
+
+monikajanota:
+  title:
+    en: Monika Janota
+  description:
+    en: Monika is a Community Manager at Google.
+
+patrickhlauke:
+  title:
+    en: Patrick H. Lauke
+  description:
+    en: Patrick is a Web Evangelist
+
+kevinkiklee:
+  title:
+    en: Kevin K. Lee
+    ko: 이경인
+  description:
+    en: Developer Relations Engineer, Google Chrome
+    ko: Google Chrome의 개발자 관계 엔지니어
+
+nikilmathew:
+  title:
+    en: Nikil Mathew
+  description:
+    en: Lead Software engineer at Mishipay
+
+jheyy:
+  title:
+    en: Jhey Tompkins
+    es: Jhey Tompkins
+    it: Jhey Tompkins
+    ja: Jhey Tompkins
+    ko: Jhey Tompkins
+    pt: Jhey Tompkins
+    ru: Jhey Tompkins
+    zh: Jhey Tompkins
+  description:
+    en: Whimsy Dev Supreme! Developer Relations Engineer @ Google
+    es: ¡Extravagante Dev Supremo! Ingeniero de Relaciones con los Desarrolladores @ Google
+    it: Stravagante Dev Supremo! Ingegnere relazioni con gli sviluppatori @ Google
+    ja: 気まぐれな開発最高！開発者関係エンジニア@Google
+    ko: 변덕스러운 데브 슈프림! 개발자 관계 엔지니어 @ Google
+    pt: Excêntrico Dev Supremo! Engenheiro de relações com desenvolvedores @ Google
+    ru: Причудливый Дев Высший! Инженер по связям с разработчиками @ Google
+    zh: 奇思妙想的开发者至尊！开发者关系工程师 @ Google
+
+andreabreanna:
+  title:
+    en: Andrea Breanna
+    es: Andrea Breanna
+    ja: Andrea Breanna
+    ko: Andrea Breanna
+    pt: Andrea Breanna
+    ru: Andrea Breanna
+    zh: Andrea Breanna
+  description:
+    en: Our latest news, updates, and stories by Andrea Breanna.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Andrea Breanna.
+    ja: Andrea Breanna による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Andrea Breanna의 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Andrea Breanna.
+    ru: Последние новости и статьи от Andrea Breanna.
+    zh: Andrea Breanna 撰写我们的最新资讯、动态和故事。
+
+keenyeeliau:
+  title:
+    en: Keen Yee Liau
+    es: Keen Yee Liau
+    ja: Keen Yee Liau
+    ko: Keen Yee Liau
+    pt: Keen Yee Liau
+    ru: Keen Yee Liau
+    zh: Keen Yee Liau
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniera de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师。
+
+yuyaito:
+  title:
+    en: Yuya Ito
+  description:
+    en: Vice President ID Division at Yahoo! JAPAN
+
+jimmymooney:
+  title:
+    en: Jimmy Mooney
+    es: Jimmy Mooney
+    ja: Jimmy Mooney
+    ko: Jimmy Mooney
+    pt: Jimmy Mooney
+    ru: Jimmy Mooney
+    zh: Jimmy Mooney
+  description:
+    en: Senior Product Manager, Google Fonts.
+    es: Gerente Sénior de Productos, Google Fonts.
+    ja: GoogleFontsシニアプロダクトマネージャー。
+    ko: Google Fonts 수석 제품 관리자.
+    pt: Gerente de Produto Sênior, Google Fonts.
+    ru: Старший менеджер по продукту, Google Fonts.
+    zh: Google Fonts 高级产品经理。
+
+alexeyrodionov:
+  title:
+    en: Alexey Rodionov
+    ru: Алексей Родионов
+  description:
+    en: PWA developer. UX/DX engineer. Web platform advocate. Google Developer Expert (GDE) in Web Technologies. PWA, Web Components, GraphQL evangelist. PWA Russian-speaking community organizer. Chromium contributor. Lead front-end developer at Mercury Development.
+    ru: Разработчик PWA. UX/DX-инженер. Адвокат веб-платформы. Официально признанный Google эксперт в области веб-технологий. Евангелист PWA, Web Components, GraphQL. Организатор русскоязычного сообщества PWA. Контрибьютор Chromium. Ведущий фронтенд-разработчик в Mercury Development.
+
+twifkak:
+  title:
+    en: Devin Mullins
+  description:
+    en: Software engineer at Google, signed exchanges integration lead in Search
+
+ruisantos:
+  title:
+    en: Rui Santos
+  description:
+    en: Senior Head of Product Strategy & Operations at Farfetch
+
+manuelgarcia:
+  title:
+    en: Manuel Garcia
+  description:
+    en: Senior Principal Engineer at Farfetch
+
+patriciacoutoneto:
+  title:
+    en: Patrícia Couto Neto
+  description:
+    en: Senior Analytics Manager
+
+steveworkman:
+  title:
+    en: steveworkman
+  description:
+    en: Lead Engineer at Maersk.com
+
+simonleparc:
+  title:
+    en: Simon Le Parc
+  description:
+    en: Senior Manager Software Development at GoDaddy
+
+dbaron:
+  title:
+    en: L. David Baron
+  description:
+    en: Software engineer at Google and contributor to Web standards
+
+bramus:
+  title:
+    en: Bramus
+    es: Bramus
+    ja: Bramus
+    ko: Bramus
+    pt: Bramus
+    ru: Bramus
+    zh: Bramus
+  description:
+    en: Developer Advocate for CSS, UI, and DevTools at Chrome
+    es: Desarrollador partidario para CSS, UI y DevTools en Chrome
+    ja: Chrome の CSS、UI、DevTools を対象とした Developer Advocate
+    ko: Chrome의 CSS, UI 및 DevTools 개발자 애드버킷
+    pt: Developer Advocate para CSS, UI e DevTools no Chrome
+    ru: Developer Advocate по вопросам CSS, UI и DevTools в команде Chrome
+    zh: Chrome 的 CSS、UI 和 DevTools 开发技术推广工程师
+
+kadirtopal:
+  title:
+    en: Kadir Topal
+  description:
+    en: Kadir is a product manager on the Web Developer Platform team.
+
+michellebarker:
+  title:
+    en: Michelle Barker
+  description:
+    en: Michelle is a senior front-end developer at Ada Mode.
+
+daviddarnes:
+  title:
+    en: David Darnes
+  description:
+    en: David is a senior front-end developer at Nordhealth.
+
+linhduong:
+  title:
+    en: Linh Duong
+  description:
+    en: Front-end Engineer at Rakuten Group, Inc.
+
+shogokashiwase:
+  title:
+    en: Shogo Kashiwase
+  description:
+    en: Designer at Rakuten Group, Inc.
+
+hayounglee:
+  title:
+    en: Hayoung Lee
+  description:
+    en: Front-end Engineer at Rakuten Group, Inc.
+
+ryunosukeakiba:
+  title:
+    en: Ryunosuke Akiba
+  description:
+    en: Creative Director at Rakuten Group, Inc.
+
+mmatuzo:
+  title:
+    en: Manuel Matuzović
+  description:
+    en: Front-end developer.
+
+estelleweyl:
+  title:
+    en: Estelle Weyl
+  description:
+    en: Open-source maintainer. Front-end engineer. Technical writer.
+
+davideast:
+  title:
+    en: David East
+  description:
+    en: Web Developer
+
+cariefisher:
+   title:
+      en: Carie Fisher
+   description:
+      en: Senior Accessibility Consultant and developer
+
+marksteadman:
+   title:
+      en: Mark Steadman
+   description:
+      en: Principal Accessibility Engineer
+
+superhighfives:
+  title:
+    en: Charlie Gleason
+  description:
+    en: Designer and Developer
+
+sriramkrishnan:
+  title:
+    en: 'Sriram Krishnan'
+  description:
+    en: 'Tech Lead and Manager on YouTube Web'
+
+alispivak:
+  title:
+    en: 'Ali Spivak'
+  description:
+    en: 'Member of Chrome DevRel, lead for Extensions.'
+
+aaronforinton:
+  title:
+    en: 'Aaron Forinton'
+  description:
+    en: 'Technical Writer'
+

@@ -1,0 +1,16 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/eyebrow
+.eyebrow {
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: get-size('size-0');
+
+  @include apply-utility('color', 'mid-text');
+  @include apply-utility('font', 'mono');
+}
+
+/// If in a flow context, reduce the space between
+/// this and the immediate heading sibling
+.eyebrow + :is(h1, h2, h3, h4) {
+  --flow-space: 1rem;
+}

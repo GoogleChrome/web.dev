@@ -75,10 +75,10 @@ You can also find demos for all the features we discuss on our
 ## Contents
 
 - [Scroll Snap](#scroll-snap)
-- [`:focus-within`](#:focus-within)
+- [`:focus-within`](#focus-within)
 - [Media Queries Level 5](#media-queries-level-5)
 - [Logical properties](#logical-properties)
-- [`position: sticky`](#position:-sticky)
+- [`position: sticky`](#position-sticky)
 - [`backdrop-filter`](#backdrop-filter)
 - [`:is()`](#is)
 - [`gap`](#gap)
@@ -87,7 +87,7 @@ You can also find demos for all the features we discuss on our
 
 ## Scroll Snap
 
-[Scroll Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) lets you define snap points as the user scrolls your content vertically, horizontally, or  both. It offers built-in scroll inertia and deceleration, and it's touch enabled.
+[Scroll Snap](https://developer.mozilla.org/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) lets you define snap points as the user scrolls your content vertically, horizontally, or  both. It offers built-in scroll inertia and deceleration, and it's touch enabled.
 
 This sample code sets up horizontal scrolling in a `<section>` element with snap points aligned to the left sides of child `<picture>` elements:
 
@@ -126,7 +126,7 @@ While scroll snap supports vertical snapping, be cautious when using it at the p
 
 ## `:focus-within`
 
-[`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within) addresses a long-standing accessibility issue: there are many cases when focusing a child element should affect the presentation of a parent element so that the UI is accessible to users of assistive technologies.
+[`:focus-within`](https://developer.mozilla.org/docs/Web/CSS/:focus-within) addresses a long-standing accessibility issue: there are many cases when focusing a child element should affect the presentation of a parent element so that the UI is accessible to users of assistive technologies.
 
 For example, if you have a dropdown menu with several items, the menu should remain visible while any of the items has focus. Otherwise, the menu disappears for keyboard users.
 
@@ -157,12 +157,12 @@ Try tabbing through the focusable elements in the demo below. You'll notice that
 
 Here are the new queries we think developers will be most excited about:
 
-*   [prefers-reduced-motion](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
-*   [prefers-color-scheme](https://web.dev/prefers-color-scheme/)
-*   [prefers-contrast](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)
-*   [prefers-reduced-transparency](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency)
-*   [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors)
-*   [inverted-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors)
+*   [prefers-reduced-motion](/prefers-reduced-motion/)
+*   [prefers-color-scheme](/prefers-color-scheme/)
+*   [prefers-contrast](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast)
+*   [prefers-reduced-transparency](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency)
+*   [forced-colors](https://developer.mozilla.org/docs/Web/CSS/@media/forced-colors)
+*   [inverted-colors](https://developer.mozilla.org/docs/Web/CSS/@media/inverted-colors)
 
 These queries are a huge win for accessibility. Previously we had no way to know, for example, that a user had set their OS to high-contrast mode. If you wanted to provide a high-contrast mode for a web app that remained true to your brand, you had to ask users to choose it from UI within your app. Now you can detect the high-contrast setting from the OS using `prefers-contrast`.
 
@@ -170,7 +170,7 @@ One exciting implication of these media queries is that we can design for multip
 
 It's important to Adam that "prefers reduced motion" doesn't get implemented as "no motion." The user is saying they prefer less motion, not that they don't want any animation. He asserts reduced motion is not no motion. Here's an example that uses a crossfade animation when the user prefers reduced motion:
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/reduced-motion.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/reduced-motion.mp4" type="video/mp4; codecs=h264">
@@ -178,12 +178,12 @@ It's important to Adam that "prefers reduced motion" doesn't get implemented as 
 </figure>
 
 {% Aside %}
-In Chrome Canary, you can test CSS that uses `prefers-reduced-motion` or `prefers-color-scheme` by choosing the appropriate settings in the DevTools **Rendering** drawer. To access **Rendering**, [open the Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu) and run the `Show Rendering` command.
+In Chrome Canary, you can test CSS that uses `prefers-reduced-motion` or `prefers-color-scheme` by choosing the appropriate settings in the DevTools **Rendering** drawer. To access **Rendering**, [open the Command Menu](https://developer.chrome.com/docs/devtools/command-menu/) and run the `Show Rendering` command.
 {% endAside %}
 
 ## Logical properties
 
-[Logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) solve a problem that has gained visibility as more developers tackle internationalization. Many layout properties like `margin` and `padding` assume a language that is read top-to-bottom and left-to-right.
+[Logical properties](https://developer.mozilla.org/docs/Web/CSS/CSS_Logical_Properties) solve a problem that has gained visibility as more developers tackle internationalization. Many layout properties like `margin` and `padding` assume a language that is read top-to-bottom and left-to-right.
 
 {% Img src="image/admin/mLz4eB2iG7yGUJ92DA0D.png", alt="A diagram showing traditional CSS layout properties.", width="800", height="559" %}
 
@@ -209,7 +209,7 @@ You can see how logical properties work in the demo below by setting the `writin
 
 ## `position: sticky`
 
-An element with [`position: sticky`](https://developer.mozilla.org/en-US/docs/Web/CSS/position#Sticky_positioning) remains in block flow until it starts to go offscreen,
+An element with [`position: sticky`](https://developer.mozilla.org/docs/Web/CSS/position#Sticky_positioning) remains in block flow until it starts to go offscreen,
 at which point it stops scrolling with the rest of the page
 and sticks to the position specified by the element's `top` value.
 The space allocated for that element remains in the flow,
@@ -221,7 +221,7 @@ Sticky positioning lets you create many useful effects that previously required 
 
 In this demo, all sticky elements share the same container. That means that each sticky element slides over the previous one as the user scrolls down. The sticky elements share the same stuck position.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-stack.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-stack.mp4" type="video/mp4; codecs=h264">
@@ -232,7 +232,7 @@ In this demo, all sticky elements share the same container. That means that each
 
 Here, the sticky elements are cousins. (That is, their parents are siblings.) When a sticky element hits the lower boundary of its container, it moves up with the container, creating the impression that lower sticky elements are pushing up higher ones. In other words, they appear to compete for the stuck position.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-slide.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-slide.mp4" type="video/mp4; codecs=h264">
@@ -243,7 +243,7 @@ Here, the sticky elements are cousins. (That is, their parents are siblings.) Wh
 
 Like Sticky Slide, the sticky elements in this demo are cousins. However, they've been placed in containers set to a two-column grid layout.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-desperado.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-desperado.mp4" type="video/mp4; codecs=h264">
@@ -252,7 +252,7 @@ Like Sticky Slide, the sticky elements in this demo are cousins. However, they'v
 
 ## `backdrop-filter`
 
-The [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) property lets you apply graphical effects to the area _behind_ an element rather than to the element itself. This makes lots of cool effects that were previously only achievable using complicated CSS and JavaScript hacks doable with one line of CSS.
+The [`backdrop-filter`](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter) property lets you apply graphical effects to the area _behind_ an element rather than to the element itself. This makes lots of cool effects that were previously only achievable using complicated CSS and JavaScript hacks doable with one line of CSS.
 
 For example, this demo uses `backdrop-filter` to achieve OS-style blurring:
 
@@ -261,15 +261,15 @@ For example, this demo uses `backdrop-filter` to achieve OS-style blurring:
   (<a href='https://codepen.io/una'>@una</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-We already have a [great post about `backdrop-filter`](https://web.dev/backdrop-filter/), so head there for more info.
+We already have a [great post about `backdrop-filter`](/backdrop-filter/), so head there for more info.
 
 ## `:is()`
 
-While the [`:is()` pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) is actually over ten years old, it still doesn't see as much use as we think it deserves. It takes a comma-separated list of selectors as its argument and matches any selectors in that list. That flexibility makes it incredibly handy and can significantly reduce the amount of CSS you ship.
+While the [`:is()` pseudo-class](https://developer.mozilla.org/docs/Web/CSS/:is) is actually over ten years old, it still doesn't see as much use as we think it deserves. It takes a comma-separated list of selectors as its argument and matches any selectors in that list. That flexibility makes it incredibly handy and can significantly reduce the amount of CSS you ship.
 
 Here's a quick example:
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/is-animation.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/is-animation.mp4" type="video/mp4; codecs=h264">
@@ -303,7 +303,7 @@ article > :is(h1,h2,h3,h4,h5,h6) {
 
 ## `gap`
 
-[CSS grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) has had [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap) (previously `grid-gap`) for some time. By specifying the internal spacing of a containing element rather than the spacing around child elements, `gap` solves many common layout issues. For example, with gap, you don't have to worry about margins on child elements causing unwanted whitespace around the edges of a containing element:
+[CSS grid layout](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout) has had [`gap`](https://developer.mozilla.org/docs/Web/CSS/gap) (previously `grid-gap`) for some time. By specifying the internal spacing of a containing element rather than the spacing around child elements, `gap` solves many common layout issues. For example, with gap, you don't have to worry about margins on child elements causing unwanted whitespace around the edges of a containing element:
 
 {% Img src="image/admin/Jzlzz2MdQmMGudZxcvZk.png", alt="Illustration showing how the gap property avoids unintended spacing around edges of a container element.", width="800", height="846" %}
 
@@ -324,7 +324,7 @@ Right now, only FireFox supports `gap` in flex layouts, but play around with thi
 
 ## CSS Houdini
 
-[Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) is a set of low-level APIs for the browser's rendering engine that lets you tell the browser how to interpret custom CSS. In other words, it gives you access to the [CSS Object Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model), letting you _extend_ CSS via Javascript. This has several benefits:
+[Houdini](https://developer.mozilla.org/docs/Web/Houdini) is a set of low-level APIs for the browser's rendering engine that lets you tell the browser how to interpret custom CSS. In other words, it gives you access to the [CSS Object Model](https://developer.mozilla.org/docs/Web/API/CSS_Object_Model), letting you _extend_ CSS via JavaScript. This has several benefits:
 
 *   It gives you much more power to create custom CSS features.
 *   It's easier to separate rendering concerns from application logic.
@@ -332,7 +332,7 @@ Right now, only FireFox supports `gap` in flex layouts, but play around with thi
 
 {% Img src="image/admin/Lh9zGq0HWW4amjfHbpRQ.png", alt="Illustration showing how Houdini works compared to traditional JavaScript polyfills.", width="800", height="599" %}
 
-Houdini is an umbrella name for [several APIs](https://developer.mozilla.org/en-US/docs/Web/Houdini#The_Houdini_APIs). If you want more information about them and their current status, take a look at [Is Houdini Ready Yet?](https://ishoudinireadyyet.com/) In our talk, we covered the Properties and Values API, the Paint API, and the Animation Worklet because they're currently the most supported. We could easily dedicate a full post to each of these exciting APIs, but, for now, check out our talk for an overview and some cool demos that start to give a sense of what you can do with the APIs.
+Houdini is an umbrella name for [several APIs](https://developer.mozilla.org/docs/Web/Houdini#The_Houdini_APIs). If you want more information about them and their current status, take a look at [Is Houdini Ready Yet?](https://ishoudinireadyyet.com/) In our talk, we covered the Properties and Values API, the Paint API, and the Animation Worklet because they're currently the most supported. We could easily dedicate a full post to each of these exciting APIs, but, for now, check out our talk for an overview and some cool demos that start to give a sense of what you can do with the APIs.
 
 ## Overflow
 

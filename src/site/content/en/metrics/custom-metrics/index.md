@@ -56,6 +56,7 @@ So for any custom metrics you measure on your site, it's best to use one of the
 following APIs if possible.
 
 ### Performance Observer
+{% BrowserCompat 'api.PerformanceObserver' %}
 
 Understanding the PerformanceObserver API is critical to creating custom
 performance metrics because it's the mechanism by which you get data from all
@@ -69,7 +70,7 @@ periods](https://w3c.github.io/requestidlecallback/#idle-periods).
 You create a `PerformanceObserver` by passing it a callback to be run whenever
 new performance entries are dispatched. Then you tell the observer what types of
 entries to listen for via the
-[`observe()`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/observe)
+[`observe()`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe)
 method:
 
 ```js
@@ -134,9 +135,9 @@ Prior to the Performance Observer API, developers could access performance
 entries using the following three methods defined on the
 [`performance`](https://w3c.github.io/performance-timeline/) object:
 
-- [`getEntries()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntries)
-- [`getEntriesByName()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntriesByName)
-- [`getEntriesByType()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntriesByType)
+- [`getEntries()`](https://developer.mozilla.org/docs/Web/API/Performance/getEntries)
+- [`getEntriesByName()`](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByName)
+- [`getEntriesByType()`](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByType)
 
 While these APIs are still supported, their usage is not recommended because
 they don't allow you to listen for when new entries are emitted. In addition,
@@ -193,6 +194,7 @@ try {
 ```
 
 ### Long Tasks API
+{% BrowserCompat 'api.PerformanceLongTaskTiming' %}
 
 The [Long Tasks API](https://w3c.github.io/longtasks/) is useful for knowing
 when the browser's main thread is blocked for long enough to affect frame rate
@@ -202,11 +204,11 @@ longer than 50 milliseconds (ms).
 Anytime you need to run expensive code (or load and execute large scripts) it's
 useful to track whether or not that code blocked the main thread. In fact, many
 higher-level metrics are built on top of the Long Tasks API themselves (such as
-[Time to Interactive (TTI)](/interactive/) and [Total Blocking Time
-(TBT)](/lighthouse-total-blocking-time/)).
+[Time to Interactive (TTI)](/tti/) and [Total Blocking Time
+(TBT)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)).
 
 To determine when long tasks happen, you can use
-[PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[PerformanceObserver](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 and register to observe entries of type `longtask`:
 
 ```js
@@ -228,6 +230,7 @@ try {
 ```
 
 ### Element Timing API
+{% BrowserCompat 'api.PerformanceElementTiming' %}
 
 The [Largest Contentful Paint (LCP)](/lcp/) metric is
 useful for knowing when the largest image or text block was painted to the
@@ -385,10 +388,11 @@ try {
 ```
 
 ### Navigation Timing API
+{% BrowserCompat 'api.PerformanceNavigationTiming' %}
 
 The [Navigation Timing API](https://w3c.github.io/navigation-timing/) is similar
 to the Resource Timing API, but it reports only [navigation
-requests](https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading#first_what_are_navigation_requests).
+requests](https://developer.chrome.com/docs/workbox/caching-strategies-overview).
 The `navigation` entry type is also similar to the `resource` entry type, but it
 contains some [additional
 information](https://w3c.github.io/navigation-timing/#sec-PerformanceNavigationTiming)
@@ -485,4 +489,4 @@ try {
 }
 ```
 
-[devtools]: https://developers.google.com/web/updates/2018/04/devtools#tabs
+[devtools]: https://developer.chrome.com/blog/new-in-devtools-67/#tabs

@@ -25,7 +25,7 @@ specific patterns of window and service worker communication.
 ## How workers can improve your website {: #how-workers-can-improve-your-website }
 
 The browser uses a single thread (the [main
-thread](https://developer.mozilla.org/en-US/docs/Glossary/Main_thread)) to run all the JavaScript in
+thread](https://developer.mozilla.org/docs/Glossary/Main_thread)) to run all the JavaScript in
 a web page, as well as to perform tasks like rendering the page and performing garbage collection.
 Running excessive JavaScript code can block the main thread, delaying the browser from performing
 these tasks and leading to a poor user experience.
@@ -45,25 +45,23 @@ entire JavaScript scope running on a separate thread, without any shared memory.
 
 In this post you'll learn about two different types of workers (web workers and service workers), their similarities and differences, and the most common patterns for using them in production websites.
 
-<figure class="w-figure">
-  <img src="window-worker.png"
-       width="728"
-       alt="Diagram showing two links between the Window object and a web worker and service worker.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eN5kePr9U0aZMgCyekhJ.png", alt="Diagram showing two links between the Window object and a web worker and service worker.", width="728", height="418" %}
 </figure>
 
 ## Web workers and service workers {: #web-workers-and-service-workers }
 
 ### Similarities {: #similarities }
 
-[Web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+[Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers)
 and [service
-workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 are two types of workers available to websites. They have some things in common:
 
 - Both run in a secondary thread, allowing JavaScript code to execute without blocking the main
   thread and the user interface.
-- They don't have access to the [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window)
-  and [`Document`](https://developer.mozilla.org/en-US/docs/Web/API/Document) objects, so they can't
+- They don't have access to the [`Window`](https://developer.mozilla.org/docs/Web/API/Window)
+  and [`Document`](https://developer.mozilla.org/docs/Web/API/Document) objects, so they can't
   interact with the DOM directly, and they have limited access to browser APIs.
 
 ### Differences {: #differences }
@@ -72,16 +70,16 @@ One might think that most things that can be delegated to a web worker can be do
 worker and vice versa, but there are important differences between them:
 
 - Unlike web workers, service workers allow you to intercept network requests (via the
-  [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent) event) and to listen for Push
+  [`fetch`](https://developer.mozilla.org/docs/Web/API/FetchEvent) event) and to listen for Push
   API events in the background (via the
-  [`push`](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent) event).
+  [`push`](https://developer.mozilla.org/docs/Web/API/PushEvent) event).
 - A page can spawn multiple web workers, but a single service worker controls all the active tabs
   under the
-  [scope](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/scope) it was
+  [scope](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/scope) it was
   registered with.
 - The lifespan of the web worker is tightly coupled to the tab it belongs to, while the [service
   worker's
-  lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle) is
+  lifecycle](/service-worker-lifecycle/) is
   independent of it. For that reason, closing the tab where a web worker is running will terminate
   it, while a service worker can continue running in the background, even when the site doesn't have
   any active tabs open.
@@ -89,7 +87,7 @@ worker and vice versa, but there are important differences between them:
 {% Aside %} For relatively short bits of work like sending a message, the browser won't likely
 terminate a service worker when there are no active tabs, but if the task takes too long the browser
 will terminate the service worker, otherwise it's a risk to the user's privacy and battery. APIs
-like [Background Fetch](https://developers.google.com/web/updates/2018/12/background-fetch), that
+like [Background Fetch](https://developer.chrome.com/blog/background-fetch/), that
 can let you avoid the service worker's termination. {% endAside %}
 
 ## Use cases {: #use-cases }
@@ -101,43 +99,35 @@ or the other:
 computations](https://www.youtube.com/watch?v=mDdgfyRB5kg&feature=youtu.be&t=875)) to a secondary
 thread, to avoid blocking the UI.
 
-<figure class="w-figure">
-  <img src="window-web-worker.png"
-       width="500"
-       alt="Diagram showing a link from the Window object to a web worker.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZCC24V8uqi6HfFjRzuPq.png", alt="Diagram showing a link from the Window object to a web worker.", width="500", height="175" %}
 </figure>
 
 - **Example:** the team that built the videogame [PROXX](https://proxx.app/) wanted to leave the
   main thread as free as possible to take care of user input and animations. To achieve that, they
-  [used web workers](https://web.dev/proxx-announce/#web-workers) to run the game logic and state
+  [used web workers](/proxx-announce/#web-workers) to run the game logic and state
   maintenance on a separate thread.
 
-<figure class="w-figure">
-  <img src="proxx.png"
-    width="225"
-    alt="A screenshot of the videogame PROXX.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xXNCbahCtPrS8rw6uf1z.png", alt="A screenshot of the videogame PROXX.", width="225", height="403", style="width: inherit; margin: auto;" %}
 </figure>
 
 **Service workers tasks** are generally more related to acting as a network proxy, handling
 background tasks, and things like caching and offline.
 
-<figure class="w-figure">
-  <img src="window-service-worker.png"
-       width="624"
-       alt="A screenshot of the videogame PROXX.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GmGcVnb2y1yNc4ZIFFQ8.png", alt="A screenshot of the videogame PROXX.", width="624", height="267" %}
 </figure>
 
 **Example:** In a [podcast PWA](https://bgfetch-http203.glitch.me/), one might want to allow users
 to download complete episodes to listen to them while offline. A service worker, and, in particular,
-the [Background Fetch API](https://developers.google.com/web/updates/2018/12/background-fetch) can
+the [Background Fetch API](https://developer.chrome.com/blog/background-fetch/) can
 be used to that end. That way, if the user closes the tab while the episode is downloading, the task
 doesn't have to be interrupted.
 
-<figure class="w-figure">
-  <img src="podcast-pwa.png"
-       width="500"
-       alt="A screenshot of a Podcast PWA.">
-    <figcaption class="w-figcaption">The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/oUH6K2JvcmfdAynTMjxQ.png", alt="A screenshot of a Podcast PWA.", width="500", height="310" %}
+    <figcaption>The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).</figcaption>
 </figure>
 
 ## Tools and libraries {: #tools-and-libraries }
@@ -146,12 +136,10 @@ Window and worker communication can be implemented by using different lower leve
 there are libraries that abstract this process, taking care of the most common use cases. In this
 section, we'll cover two of them that take care of window to web workers and service workers
 respectively: [Comlink](https://github.com/GoogleChromeLabs/comlink) and
-[Workbox](https://developers.google.com/web/tools/workbox).
+[Workbox](https://developer.chrome.com/docs/workbox/).
 
-<figure class="w-figure">
-  <img src="comlink-workbox.png"
-       width="500"
-       alt="A screenshot of the videogame PROXX.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MNMwX5KuJt5iOLZJbdO0.png", alt="A screenshot of the videogame PROXX.", width="500", height="269" %}
 </figure>
 
 ### Comlink {: #comlink }
@@ -164,9 +152,9 @@ and code samples can be found [here](https://surma.dev/things/when-workers/).
 
 ### Workbox {: #workbox }
 
-[Workbox](https://developers.google.com/web/tools/workbox) is a popular library to build websites
+[Workbox](https://developer.chrome.com/docs/workbox/) is a popular library to build websites
 that use service workers. It packages a set of best practices around things like caching, offline,
-background synchronization, etc. The [`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) module provides a
+background synchronization, etc. The [`workbox-window`](https://developer.chrome.com/docs/workbox/modules/workbox-window/) module provides a
 convenient way to exchange messages between the service worker and the page.
 
 ## Next steps {: #next-steps }
@@ -181,4 +169,4 @@ The rest of this series focuses on patterns for window and service worker commun
   (e.g. a heavy download), and keeping the page informed on the progress.
 
 For patterns of window and web worker communication check out: [Use web workers to run JavaScript
-off the browser's main thread](https://web.dev/off-main-thread/).
+off the browser's main thread](/off-main-thread/).

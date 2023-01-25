@@ -1,0 +1,11 @@
+.measure__section {
+  padding-block: clamp(3.75rem, 3.21rem + 2.68vw, 5.625rem);
+}
+
+@include media-query('lg') {
+  .measure__page-speed-hero {
+    .hero__content {
+      margin-block-start: get-space('size-4');
+    }
+  }
+}

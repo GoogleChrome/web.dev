@@ -103,7 +103,7 @@ Note that this URL uses HTTP. Thumbor uses HTTP by default but can be [configure
 
 You should see an image that is 100 pixels wide by 100 pixels tall. Thumbor has taken the image `hero.jpg` and size specified in the URL string and served the result. You can replace the image in the URL string (i.e., `https://web.dev/install-thumbor/hero.jpg`) with any other image (e.g., `https://your-site.com/cat.jpg`) and Thumbor will resize that image too.
 
-The [Optimize images with Thumbor](https://web.dev/use-thumbor/#thumbor-url-format) article has more information on using the Thumbor API. In particular, you may be interested in [setting up a Thumbor configuration file](https://web.dev/use-thumbor/#appendix:-thumbor.conf).
+The [Optimize images with Thumbor](/use-thumbor/#thumbor-url-format) article has more information on using the Thumbor API. In particular, you may be interested in [setting up a Thumbor configuration file](/use-thumbor/#appendix-thumborconf).
 
 ## Appendix: Configuring Systemd
 
@@ -169,6 +169,6 @@ systemctl status thumbor.service
 
 If you've successfully set up thumbor.service to use `systemd`, the [status](https://www.freedesktop.org/software/systemd/man/systemctl.html#status%20PATTERN%E2%80%A6%7CPID%E2%80%A6%5D) should show that it is enabled and active.
 
-<figure class="w-figure">
-  {% Img src="image/admin/e04pxe6uE090ewJ3WWPX.jpg", alt="Systemctl displaying the status of Thumbor", width="466", height="164", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/e04pxe6uE090ewJ3WWPX.jpg", alt="Systemctl displaying the status of Thumbor", width="466", height="164" %}
 </figure>

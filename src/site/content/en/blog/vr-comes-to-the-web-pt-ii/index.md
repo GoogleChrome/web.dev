@@ -21,9 +21,9 @@ tags:
 ---
 
 Recently, I published [Virtual reality comes to the
-web](https://web.dev/vr-comes-to-the-web/), an article that introduced basic
+web](/vr-comes-to-the-web/), an article that introduced basic
 concepts behind the [WebXR Device
-API](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API). I
+API](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API). I
 also provided instructions for requesting, entering, and ending an XR session.
 
 This article describes the frame loop, which is a user-agent controlled
@@ -38,7 +38,7 @@ a WebXR App. Fortunately many frameworks provide a layer of abstraction on top
 of WebGL and WebGL2. Such frameworks include [three.js](https://threejs.org/),
 [babylonjs](https://www.babylonjs.com/), and
 [PlayCanvas](https://playcanvas.com/), while [A-Frame](https://aframe.io/) and
-[React 360](https://facebook.github.io/react-360/) are designed for interacting
+[React 360](https://github.com/facebookarchive/react-360) was designed for interacting
 with WebXR.
 
 This article is neither a WebGL nor a framework tutorial. It explains basics of
@@ -68,7 +68,7 @@ origin. The origin is specified based on the requested reference space type when
 calling `XRSession.requestReferenceSpace()`.
 
 Reference spaces take a bit to explain. I cover them in depth in [Augmented
-reality](https://web.dev/web-ar/). The sample I'm using as the basis for this
+reality](/web-ar/). The sample I'm using as the basis for this
 article uses a `'local'` reference space which means the origin is at the
 viewer's position at the time of session creation without a well-defined floor,
 and its precise position may vary by platform.
@@ -118,9 +118,9 @@ Notice the relationship between `XRWebGLLayer` and `WebGLRenderingContext`. One
 corresponds to the viewer's device and the other corresponds to the web page.
 `WebGLFramebuffer` and `XRViewport` are passed from the former to the latter.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ZdH8cIApe8jUr7F1WNgC.png", alt="The relationship between XRWebGLLayer and WebGLRenderingContext", width="711", height="94" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     The relationship between <code>XRWebGLLayer</code> and <code>WebGLRenderingContext</code>
   </figcaption>
 </figure>
@@ -129,7 +129,7 @@ corresponds to the viewer's device and the other corresponds to the web page.
 
 Now that we know who the players are, let's look at the game they play. It's a
 game that starts over with every frame. Recall that frames are part of a [frame
-loop](https://web.dev/vr-comes-to-the-web/#running-a-frame-loop) that happens at
+loop](/vr-comes-to-the-web/#running-a-frame-loop) that happens at
 a rate that depends on the underlying hardware. For VR applications the frames
 per second can be anywhere from 60 to 144. AR for Android runs at 30 frames per
 second. Your code should not assume any particular frame rate.
@@ -157,12 +157,12 @@ Because steps 1 and 2a were covered in the previous article, I'll start at step
 It probably goes without saying. To draw anything in AR or VR, I need to know
 where the viewer is and where they're looking. The viewer's position and
 orientation are provided by an [XRViewerPose
-object](https://developer.mozilla.org/en-US/docs/Web/API/XRViewerPose). I
+object](https://developer.mozilla.org/docs/Web/API/XRViewerPose). I
 get the viewer's pose by calling `XRFrame.getViewerPose()` on the current
 animation frame. I pass it the reference space I acquired when I set up the
 session. The values returned by this object are always relative to the reference
 space I requested when I [entered the current
-session](https://web.dev/vr-comes-to-the-web/#entering-a-session). As you may
+session](/vr-comes-to-the-web/#entering-a-session). As you may
 recall, I have to pass the current reference space when requesting the pose.
 
 ```js/3-4
@@ -177,7 +177,7 @@ function onXRFrame(hrTime, xrFrame) {
 ```
 
 There's one viewer pose that represents the user's overall position, meaning
-either the viewer's head or the the phone camera in the case of a smartphone.
+either the viewer's head or the phone camera in the case of a smartphone.
 The pose tells your application where the viewer is. Actual image rendering uses
 `XRView` objects, which I'll get to in a bit.
 
@@ -199,7 +199,7 @@ loop will continue. If not, the user agent will end the session and call the
 ### A short detour
 
 The next step requires objects created during [session
-set-up](https://web.dev/vr-comes-to-the-web/#requesting-a-session). Recall that
+set-up](/vr-comes-to-the-web/#requesting-a-session). Recall that
 I created a canvas and instructed it to create an XR-compatible Web GL rendering
 context, which I got by calling `canvas.getContext()`. All drawing is done using
 the WebGL API, the WebGL2 API, or a WebGL-based framework such as Three.js. This
@@ -311,7 +311,7 @@ top](#what-this-article-is-not).
 
 This is not the end of WebXR updates or articles. You can find a [reference for
 all of WebXR's interfaces and
-members](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)
+members](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API)
 at MDN. For upcoming enhancements to the interfaces themselves, follow
 individual features on [Chrome
 Status](https://www.chromestatus.com/features#WebXR).

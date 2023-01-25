@@ -1,0 +1,18 @@
+{
+  "title": "Radio",
+  "context": {
+    "group": "myGroup",
+    "items": [
+      {
+        "id": "option1",
+        "label": "Option number 1",
+        "value": "1"
+      },
+      {
+        "id": "option2",
+        "label": "Option number 2",
+        "value": "2"
+      }
+    ]
+  }
+}

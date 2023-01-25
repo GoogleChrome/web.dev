@@ -5,7 +5,7 @@ subhead: |
   A web app manifest is included into Create React App by default and allows anyone to install your React application on their device.
 hero: image/admin/pOjpReVK54kUJP6nZMwn.jpg
 date: 2019-04-29
-updated: 2021-02-18
+updated: 2021-05-19
 description: |
   Create React App includes a web app manifest by default. Modifying this file
   will allow you to change how your application is displayed when installed on
@@ -16,15 +16,15 @@ authors:
 
 {% Aside %}
   If you don't know how web app manifest files work, refer to the
-  [Add a Web App Manifest](/add-manifest) guide first.
+  [Add a web app manifest](/add-manifest) guide first.
 {% endAside %}
 
 Create React App (CRA) includes a web app manifest by default. Modifying this
 file will allow you to change how your application is displayed when installed
 on the user's device.
 
-<figure class="w-figure">
-  <img src="./icon-home-screen.png" alt="A progressive web app icon on a mobile phone's home screen">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yra3Y2jPf2tS5ELxJdAK.png", alt="A progressive web app icon on a mobile phone's home screen", width="317", height="640" %}
 </figure>
 
 ## Why is this useful?
@@ -39,7 +39,7 @@ application, including its:
 * App icon
 * Theme color
 
-The [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+The [MDN documentation](https://developer.mozilla.org/docs/Web/Manifest)
 covers all the properties that can be changed in detail.
 
 ## Modify the default manifest
@@ -98,7 +98,7 @@ To find out if all the properties are working correctly in this example:
 {% Instruction 'devtools-application' %}
 -  In the **Application** panel, click the **Manifest** tab.
 
-<img class="w-screenshot w-screenshot--filled" src="./devtools.png" alt="DevTool's Manifest tab shows the properties from the app manifest file.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IpK9fr3O0zEX1GJXq9mw.png", alt="DevTool's Manifest tab shows the properties from the app manifest file.", width="800", height="695" %}
 
 ## Conclusion
 
@@ -108,5 +108,5 @@ To find out if all the properties are working correctly in this example:
 2. If you would like users to install the application on their device, modify
    the manifest file (or create one if you are not using CRA) with any
    properties that you like. The
-   [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+   [MDN documentation](https://developer.mozilla.org/docs/Web/Manifest)
    explains all the required and optional attributes.

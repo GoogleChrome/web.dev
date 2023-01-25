@@ -1,0 +1,116 @@
+/// BUTTON BASE STYLES
+/// Consistent, base styles that can be shared
+/// between button-type elements
+@mixin button-base-styles() {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  /// It's really important line-height is flat
+  /// so to prevent cascade issues, we make it important
+  line-height: 1 !important;
+
+  @include apply-utility('bg', 'action-bg');
+  @include apply-utility('weight', 'medium');
+  @include apply-utility('font', 'brand');
+  @include vertically-align-label();
+
+  &,
+  &:visited {
+    @include apply-utility('color', 'action-text');
+  }
+
+  & svg {
+    width: 1.3em;
+    height: 1.3em;
+    fill: currentColor;
+    transform: translateY(-0.2ex);
+  }
+
+  & svg + * {
+    /// Why not gap?
+    /// Gap will add space to the pseudo-element that's
+    /// assisting with vertical alignment, so we add margin
+    /// inline-start to the element that directly follows the icon
+    margin-inline-start: 0.5em;
+  }
+
+  /// If there's no text utility, we need to make sure
+  /// the& is the base size as internal padding
+  /// is em based
+  &:not([class*='text']) {
+    font-size: get-size('base');
+  }
+
+  /// TYPES
+  &[data-type='primary'] {
+    border-color: get-utility-value('bg', 'action-bg-primary');
+
+    @include apply-utility('bg', 'action-bg-primary');
+
+    &,
+    &:visited {
+      @include apply-utility('color', 'action-text-primary');
+    }
+  }
+
+  &[data-type='secondary'] {
+    border: 1px solid get-utility-value('color', 'stroke');
+  }
+
+  &[data-type='clear'] {
+    border: none;
+    background: none;
+  }
+
+  /// DISABLED STATE
+  /// All properties are !important because this
+  /// state has to take priority in all cases
+  &:disabled {
+    filter: invert(0.2) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    cursor: not-allowed !important;
+  }
+
+  /// INTERACTIVE STATE
+  /// A pseudo-element is used to create the material design
+  /// ripple effect on hover/active
+  &::after {
+    content: '';
+    display: block;
+    inset: -1px; // Covers the border then, too
+    position: absolute;
+    background-position: center;
+    transition: background 0.8s;
+    opacity: 0.2;
+    // border-radius: 50%;
+  }
+
+  &:hover::after {
+    background: get-utility-value('bg', 'action-bg-hover')
+      radial-gradient(
+        circle,
+        transparent 1%,
+        get-utility-value('bg', 'action-bg-hover') 1%
+      )
+      center/15000%;
+  }
+
+  &:hover {
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
+      0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%);
+    transition: transform $global-transition-movement,
+      box-shadow $global-transition-movement, filter $global-transition-fade;
+  }
+
+  &:active::after {
+    background-color: get-utility-value('bg', 'mid-bg');
+    background-size: 100%;
+    transition: background 0s;
+  }
+}

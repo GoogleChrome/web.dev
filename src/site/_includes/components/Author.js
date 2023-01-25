@@ -15,38 +15,72 @@
  */
 
 const {html} = require('common-tags');
-const AuthorInfo = require('./AuthorInfo');
 const {Img} = require('./Img');
+const {i18n} = require('../../_filters/i18n');
+const {defaultLocale} = require('../../_data/site');
 
-module.exports = ({id, author, showSocialMedia = false, small = false}) => {
+/**
+ * @param {AuthorParam} param0
+ * @returns {string}
+ */
+function Author({
+  id,
+  author,
+  locale = defaultLocale,
+  showSocialMedia = false,
+  showDescription = false,
+}) {
   if (!author) {
-    throw new Error(
+    console.log(
       `Can't create Author component for "${id}" without author ` +
         `information. Please check '_data/authorsData.json' and make sure the ` +
         `author you provide is a key in this object.`,
     );
+    return;
   }
-
-  if (!author.name) {
+  const title = i18n(author.title, locale);
+  if (!title) {
     throw new Error(
-      `Can't create Author with missing author.name. author object: ${JSON.stringify(
-        author,
-      )}`,
+      `Can't create Author "${id}" with missing title. ` +
+        `Please check '_data/authorsData.json' and make sure the ` +
+        `author has a title.`,
     );
   }
+
   const img = Img({
     src: author.image,
-    alt: author.title,
+    alt: title,
     width: '64',
     height: '64',
-    class: `w-author__image${small ? ' w-author__image--small' : ''}`,
+    params: {
+      fit: 'crop',
+      h: '64',
+      w: '64',
+    },
   });
+
   return html`
-    <div class="w-author">
-      <a href="/authors/${id}">
-        ${img}
-      </a>
-      ${AuthorInfo({author, id, showSocialMedia})}
+    <div class="author">
+      <a class="avatar" href="${author.href}"> ${img} </a>
+      <div class="flow">
+        <cite class="author__name">
+          <a href="${author.href}">${title}</a>
+        </cite>
+        ${showDescription &&
+        html`<p class="author__bio">${i18n(author.description, locale)}</p>`}
+        ${showSocialMedia &&
+        html` <div class="author__links cluster">
+          ${author.twitter &&
+          `<a href="https://twitter.com/${author.twitter}">Twitter</a>`}
+          ${author.github &&
+          `<a href="https://github.com/${author.github}">GitHub</a>`}
+          ${author.glitch &&
+          `<a href="https://glitch.com/@${author.glitch}">Glitch</a>`}
+          ${author.homepage && `<a href="${author.homepage}">Homepage</a>`}
+        </div>`}
+      </div>
     </div>
   `;
-};
+}
+
+module.exports = Author;

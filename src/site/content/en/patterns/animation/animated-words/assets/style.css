@@ -1,0 +1,25 @@
+@keyframes trampoline {
+  0% {
+    transform: translateY(100%);
+    animation-timing-function: ease-out
+  }
+
+  50% {
+    transform: translateY(0);
+    animation-timing-function: ease-in
+  }
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  [word-animation] {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1ch
+  }
+
+  [word-animation=trampoline]>span {
+    display: inline-block;
+    transform: translateY(100%);
+    animation: trampoline 3s ease calc(var(--index) * 150 * 1ms) infinite alternate
+  }
+}

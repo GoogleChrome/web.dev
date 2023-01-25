@@ -1,0 +1,18 @@
+.explore__collections {
+  .pill {
+    min-width: 4rem;
+  }
+
+  .cluster {
+    gap: 1em;
+  }
+}
+
+.explore__collection {
+  border-block-start: 1px solid var(--color-stroke);
+  padding-block: get-space('size-1');
+
+  .auto-grid {
+    padding-block-end: get-space('size-2');
+  }
+}

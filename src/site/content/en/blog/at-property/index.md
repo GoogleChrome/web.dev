@@ -1,4 +1,5 @@
 ---
+layout: post
 title: '@property: giving superpowers to CSS variables'
 subhead: The Houdini Properties and Values API is coming to your CSS file in Chromium 85.
 authors:
@@ -25,10 +26,13 @@ built-in support for these features. So exciting!
 
 One of the most exciting additions to CSS within the Houdini umbrella is the
 [Properties and Values
-API](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API).
+API](https://developer.mozilla.org/docs/Web/API/CSS_Properties_and_Values_API).
+
 This API supercharges your CSS custom properties (also commonly referred to as
 CSS variables) by giving them semantic meaning (defined by a syntax) and even
 fallback values, enabling CSS testing.
+
+{% BrowserCompat 'api.CSS.registerProperty' %}
 
 ## Writing Houdini custom properties
 
@@ -38,7 +42,7 @@ it inherit the value from it's parent or not?). The current way to do this is
 through `CSS.registerProperty()` in JavaScript, but in Chromium 85 and later, the
 `@property` syntax will be supported in your CSS files:
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Separate JavaScript file (Chromium 78)' %}
 ```js
 CSS.registerProperty({
@@ -126,22 +130,22 @@ To illustrate this point, I'll show you how to animate a gradient. Currently,
 there is no way to smoothly animate (or interpolate) between gradient values, as
 each gradient declaration is parsed as a string.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/at-property/support1.gif">
-  <figcaption class="w-figcaption">
-    Using a custom property with a "number" syntax, the gradient on the left shows a smooth 
-    transition between stop values. The gradient on the right uses a default custom property 
+<figure>
+  <img src="https://storage.googleapis.com/web-dev-assets/at-property/support1.gif">
+  <figcaption>
+    Using a custom property with a "number" syntax, the gradient on the left shows a smooth
+    transition between stop values. The gradient on the right uses a default custom property
     (no syntax defined) and shows an abrupt transition.
   </figcaption>
 </figure>
 
-<!-- <figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<!-- <figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/at-property/support1.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
-    Using a custom property with a "number" syntax, the gradient on the left shows a smooth 
-    transition between stop values. The gradient on the right uses a default custom property 
+  <figcaption>
+    Using a custom property with a "number" syntax, the gradient on the left shows a smooth
+    transition between stop values. The gradient on the right uses a default custom property
     (no syntax defined) and shows an abrupt transition.
   </figcaption>
 </figure>
@@ -185,53 +189,25 @@ And then when it comes time to animate it, you can update the value from the ini
 
 This will now enable that smooth gradient transition.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/at-property/demo.gif">
-  <figcaption class="w-figcaption">
+<figure>
+  <img src="https://storage.googleapis.com/web-dev-assets/at-property/demo.gif">
+  <figcaption>
     Smoothly transitioning gradient borders. <a href="https://glitch.com/~houdini-gradient-borders">See Demo on Glitch</a>
   </figcaption>
 </figure>
 
 <!--
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/at-property/demo.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Smoothly transitioning gradient borders. <a href="https://glitch.com/~houdini-gradient-borders">See Demo on Glitch</a>
   </figcaption>
 </figure>
 -->
 
-## Multiple declarations
-
-Another neat feature of `@property` is that you can declare multiple
-new custom properties at the same time. For example, if you wanted
-to set multiple values with the same syntax but a unique `initial-value`,
-you could write something like:
-
-```css
-@property --colorPrimary,
-@property --colorSecondary,
-@property --colorText {
-  syntax: '<color>';
-  inherits: true;
-}
-
-@property --colorPrimary {
-  initial-value: magenta;
-}
-
-@property --colorSecondary {
-  initial-value: aliceblue;
-}
-
-@property --colorText {
-  initial-value: dimgray;
-}
-```
-
-## Conclusion 
+## Conclusion
 
 The `@property` rule makes an exciting technology even more accessible by
 allowing you to write semantically meaningful CSS within CSS itself. To learn
@@ -239,8 +215,8 @@ more about CSS Houdini and the Properties and Values API, check out these
 resources:
 
 - [Is Houdini Ready Yet?](http://ishoudinireadyyet.com/)
-- [MDN Houdini Reference](https://developer.mozilla.org/en-US/docs/Web/Houdini)
-- [Smarter custom properties with Houdini's new API](https://web.dev/css-props-and-vals/)
+- [MDN Houdini Reference](https://developer.mozilla.org/docs/Web/Houdini)
+- [Smarter custom properties with Houdini's new API](/css-props-and-vals/)
 - [Houdini CSSWG Issue Queue](https://github.com/w3c/css-houdini-drafts/issues)
 
 Photo by [Cristian Escobar](https://unsplash.com/@cristian1) on Unsplash.

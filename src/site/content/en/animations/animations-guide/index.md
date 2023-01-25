@@ -22,14 +22,14 @@ these recommendations.
 
 All of the CSS properties that this guide recommends have good cross-browser support.
 
-* [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Browser_compatibility)
-* [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity#Browser_compatibility)
-* [`will-change`](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change#Browser_compatibility)
+* [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform#Browser_compatibility)
+* [`opacity`](https://developer.mozilla.org/docs/Web/CSS/opacity#Browser_compatibility)
+* [`will-change`](https://developer.mozilla.org/docs/Web/CSS/will-change#Browser_compatibility)
 
 ## Move an element {: #move }
 
 To move an element, use the `translate` or `rotation` keyword values of the
-[`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) property.
+[`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) property.
 
 For example to slide an item into view, use `translate`.
 
@@ -72,7 +72,7 @@ Items can also be rotated, in the example below 360 degrees.
 ## Resize an element {: #resize }
 
 To resize an element, use the `scale` keyword value of the
-[`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) property.
+[`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) property.
 
 ```css
 .animate {
@@ -93,7 +93,7 @@ To resize an element, use the `scale` keyword value of the
 
 ## Change an element's visibility {: #visibility }
 
-To show or hide an element, use [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity).
+To show or hide an element, use [`opacity`](https://developer.mozilla.org/docs/Web/CSS/opacity).
 
 ```css
 .animate {
@@ -121,14 +121,9 @@ To show or hide an element, use [`opacity`](https://developer.mozilla.org/en-US/
 
 ## Avoid properties that trigger layout or paint {: #triggers }
 
-Before using any CSS property for animation (other than `transform` and `opacity`), go to
-[CSS Triggers](https://csstriggers.com/) to determine the property's impact on the
-[rendering pipeline](/animations-overview/#pipeline). Avoid any property
-that triggers layout or paint unless absolutely necessary.
-
-<figure class="w-figure">
-  {% Img src="image/admin/lo6imreXGzuZzsHVWUFf.jpg", alt="The top property detailed on CSS Triggers", width="800", height="432", class="w-screenshot" %}
-</figure>
+Before using any CSS property for animation (other than `transform` and `opacity`),
+determine the property's impact on the [rendering pipeline](/animations-overview/#pipeline).
+Avoid any property that triggers layout or paint unless absolutely necessary.
 
 {% Aside 'warning' %}
   If you must use a property
@@ -143,7 +138,7 @@ by placing elements on a new layer they can be repainted without also requiring 
 
 Browsers will often make good decisions about which items should be placed on a new layer,
 but you can manually force layer creation with the
-[`will-change`](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change) property.
+[`will-change`](https://developer.mozilla.org/docs/Web/CSS/will-change) property.
 As the name suggests, this property tells the browser that this element is going to be changed in some way.
 
 {% Aside 'caution' %}
@@ -233,7 +228,7 @@ and explore performance using DevTools.
 #### Chrome DevTools {: #layout-chrome }
 
 1. Open the **Performance** panel.
-1. [Record runtime performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#record-runtime)
+1. [Record runtime performance](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-runtime)
    while your animation is happening.
 1. Inspect the **Summary** tab.
 
@@ -241,7 +236,7 @@ If you see a nonzero value for **Rendering** in the **Summary** tab, it may mean
 animation is causing the browser to do layout work.
 
 <figure>
-  {% Img src="image/admin/cMNQR2jBEwa6ku5POXtZ.jpg", alt="The Summary panel shows 37ms for rendering and 79ms for painting.", width="800", height="699", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/cMNQR2jBEwa6ku5POXtZ.jpg", alt="The Summary panel shows 37ms for rendering and 79ms for painting.", width="800", height="699" %}
   <figcaption>
     The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
     example causes rendering work.
@@ -249,7 +244,7 @@ animation is causing the browser to do layout work.
 </figure>
 
 <figure>
-  {% Img src="image/admin/3bn44P9h6lR93uBNRXY3.jpg", alt="The Summary panel show zero values for rendering and painting.", width="800", height="639", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/3bn44P9h6lR93uBNRXY3.jpg", alt="The Summary panel show zero values for rendering and painting.", width="800", height="639" %}
   <figcaption>
     The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
     example does not cause rendering work.
@@ -258,35 +253,15 @@ animation is causing the browser to do layout work.
 
 #### Firefox DevTools {: #layout-firefox }
 
-In Firefox DevTools the [Waterfall](https://developer.mozilla.org/en-US/docs/Tools/Performance/Waterfall)
+In Firefox DevTools the [Waterfall](https://developer.mozilla.org/docs/Tools/Performance/Waterfall)
 can help you to understand where the browser is spending time.
 
 1. Open the **Performance** panel.
 1. In the panel Start Recording Performance while your animation is happening.
 1. Stop the recording and inspect the **Waterfall** tab.
 
-If you see entries for [**Recalculate Style**](https://developer.mozilla.org/en-US/docs/Tools/Performance/Scenarios/Animating_CSS_properties)
-then the browser is having to begin at the start of the [rendering waterfall](https://developer.mozilla.org/en-US/docs/Tools/Performance/Scenarios/Animating_CSS_properties).
-
-<figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="waterfall-before.jpg"
-       alt="The Waterfall panel shows many entries for Recalculate Style.">
-  <figcaption>
-    The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
-    example causes style recalculation.
-  </figcaption>
-</figure>
-
-<figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="waterfall-after.jpg"
-       alt="The Waterfall panel shows no entries for Recalculate Style.">
-  <figcaption>
-    The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
-    example does not cause style recalculation.
-  </figcaption>
-</figure>
+If you see entries for [**Recalculate Style**](https://developer.mozilla.org/docs/Tools/Performance/Scenarios/Animating_CSS_properties)
+then the browser is having to begin at the start of the [rendering waterfall](https://developer.mozilla.org/docs/Tools/Performance/Scenarios/Animating_CSS_properties).
 
 ### Check if an animation is dropping frames {: #fps }
 
@@ -300,7 +275,7 @@ A high-performance animation will have a high percentage, e.g. `99%`. A
 high percentage means that few frames are being dropped and the animation will look smooth.
 
 <figure>
-  {% Img src="image/admin/i9Cg7nswyO7jB768kpdQ.jpg", alt="The fps meter shows 50% of frames were dropped", width="710", height="469", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/i9Cg7nswyO7jB768kpdQ.jpg", alt="The fps meter shows 50% of frames were dropped", width="710", height="469" %}
   <figcaption>
     The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
     example causes 50% of frames to be dropped
@@ -308,7 +283,7 @@ high percentage means that few frames are being dropped and the animation will l
 </figure>
 
 <figure>
-  {% Img src="image/admin/FGROZ0i15tCAoiIOoEdG.jpg", alt="The fps meter shows only 1% of frames were dropped", width="710", height="468", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/FGROZ0i15tCAoiIOoEdG.jpg", alt="The fps meter shows only 1% of frames were dropped", width="710", height="468" %}
   <figcaption>
     The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
     example causes only 1% of frames to be dropped.
@@ -332,8 +307,8 @@ and performance issues related to painting.
 1. Select **Paint Flashing**.
 1. Move the pointer around the screen.
 
-<figure class="w-figure">
-  {% Img src="image/admin/MzAeQc5PvCltcm3gWaNV.jpg", alt="A UI element highlighted in green to demonstrate it will be repainted", width="708", height="185", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/MzAeQc5PvCltcm3gWaNV.jpg", alt="A UI element highlighted in green to demonstrate it will be repainted", width="708", height="185" %}
   <figcaption>In this example from Google Maps you can see the elements that will be repainted.</figcaption>
 </figure>
 
@@ -341,12 +316,12 @@ If you see the whole screen flashing,
 or areas that you don't think should change highlighted then you can do some investigation.
 
 If you need to dig into whether a particular property is causing performance issues due to painting,
-the [paint profiler](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-profiler)
+the [paint profiler](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-profiler)
 in Chrome DevTools can help.
 
 #### Firefox DevTools {: #paint-firefox }
 
-1. Open **Settings** and add a Toolbox button for [Toggle paint flashing](https://developer.mozilla.org/en-US/docs/Tools/Paint_Flashing_Tool).
+1. Open **Settings** and add a Toolbox button for [Toggle paint flashing](https://developer.mozilla.org/docs/Tools/Paint_Flashing_Tool).
 1. On the page you want to inspect, toggle the button on and move your mouse or scroll to see highlighted areas.
 
 
@@ -363,4 +338,4 @@ see if a different CSS property will give the same look and feel with better per
 Use the `will-change` property sparingly,
 and only if you encounter a performance issue.
 
-[rendering]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#rendering
+[rendering]: https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#rendering

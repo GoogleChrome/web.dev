@@ -1,0 +1,143 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/card
+.card {
+  @include card-base-styles();
+
+  &:hover {
+    @include apply-utility('bg', 'mid-bg');
+  }
+
+  &:link:hover {
+    @include apply-utility('bg', 'highlight-interact-bg');
+  }
+}
+
+.card__content {
+  flex: auto;
+  max-width: 100%;
+  overflow-wrap: break-word;
+
+  &:not(:first-child) {
+    @include apply-utility('gap-top', 'size-1');
+  }
+
+  a:not([class]) {
+    color: currentColor;
+  }
+
+  a:not(:hover) {
+    text-decoration: none;
+  }
+
+  p,
+  li {
+    @include apply-utility('color', 'mid-text');
+  }
+}
+
+.card__action {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @include apply-utility('flow-space', 'size-1');
+  @include apply-utility('weight', 'medium');
+  @include apply-utility('leading', 'flat');
+  @include apply-utility('gap-top', 'size-1');
+
+  /// This breakout element allows the whole card to be hovered
+  /// More: https://piccalil.li/tutorial/create-a-semantic-break-out-button-to-make-an-entire-element-clickable/
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.card__avatars {
+  --gutter: 0.5rem;
+  --flow-space: 0.5rem;
+  --avatar-size: 2rem;
+
+  font-size: get-size('size-0');
+}
+
+.card__authors {
+  --gutter: 1ex;
+
+  padding: 0;
+  flex: auto;
+}
+
+.card__meta {
+  font-size: 0.9em;
+  padding: 0;
+  margin: 0 0 1em 0;
+
+  &,
+  li {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  li + li::before {
+    content: '·';
+    display: block;
+  }
+
+  /// Adds a little line above the first item
+  li:first-of-type {
+    position: relative;
+
+    @include apply-utility('color', 'highlight-text');
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: get-utility-value('color', 'highlight-text');
+      position: absolute;
+      inset: -0.5ex 0 0 0;
+    }
+  }
+}
+
+.card__header {
+  width: 100%;
+  margin-bottom: get-space('size-1');
+  font-size: 0.875rem;
+}
+
+.card__hero {
+  width: 100%;
+  aspect-ratio: 5/3;
+  object-fit: cover;
+  border-radius: $global-radius-base;
+}
+
+.card__tags {
+  --gutter: 0.5rem;
+  margin-block-start: get-space('base');
+}
+
+/// EXCEPTIONS
+.card[data-style='branded'] {
+  max-width: 25rem;
+  min-width: 22rem;
+
+  > img {
+    height: unset;
+  }
+
+  &:hover {
+    @include apply-utility('bg', 'core-bg');
+  }
+}
+
+/// These cards are way too wide and tall for really small screens
+/// so these little adjustments help that, without affecting other screens
+@include media-query('xs') {
+  .card[data-style='branded'] {
+    min-width: 16rem;
+  }
+}

@@ -1,0 +1,16 @@
+setLeader: Test your knowledge of cross-platform testing
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Can you show focus indicators only for keyboard users?
+    options:
+      - content: "No"
+        rationale: "Try again!"
+      - content: "Yes, using `:focus-visible`."
+        rationale: "🎉"
+      - content: "Yes, using `:focus-detected`."
+        rationale: "Try again!"
+      - content: "Yes, using `:focus-shown`."
+        rationale: "Try again!"

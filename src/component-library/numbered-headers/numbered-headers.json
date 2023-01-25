@@ -1,0 +1,26 @@
+{
+  "title": "Numbered headers",
+  "summary": "A simple pattern for adding numbers to headed sections of content. Use the [cluster compostion](/design-system/css-compositions/#cluster) to [render the numbers horizontally](#horizontal).",
+  "keyLinks": [
+    {
+      "label": "Sass File",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/blocks/_numbered-headers.scss"
+    }
+  ],
+  "context": {
+    "steps": [
+      {
+        "title": "Run tests on your site",
+        "summary": "Enter your site's URL to see how well it performs across all audits."
+      },
+      {
+        "title": "Look at what matters",
+        "summary": "See your site's performance across the areas you care about."
+      },
+      {
+        "title": "Get tips for improving",
+        "summary": "Each test comes with helpful steps to improve your site's results."
+      }
+    ]
+  }
+}

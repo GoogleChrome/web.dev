@@ -22,49 +22,51 @@
 
 const {html} = require('common-tags');
 const {Img} = require('./Img');
-const authorsCollectionFn = require('../../_collections/authors');
 const prettyDate = require('../../_filters/pretty-date');
+const {i18n} = require('../../_filters/i18n');
+const authorsCollectionFn = require('../../_collections/authors');
+const {defaultLocale} = require('../../_data/site');
 
-const renderDate = (date) => {
-  // nb. +date checks for valid dates, not just non-null dates
-  return +date
-    ? html`
-        <div class="w-author__published">
-          <time>${prettyDate(date)}</time>
-        </div>
-      `
-    : '';
+/**
+ *
+ * @param {string} locale
+ * @param {Date} date
+ * @param {Date} [updated]
+ * @returns {string}
+ */
+const renderDate = (locale, date, updated) => {
+  // prettier-ignore
+  return html`
+      <time>${(+updated) ? `${i18n('i18n.common.updated', locale)}: ${prettyDate(updated)}` : prettyDate(date)}</time>
+    `;
 };
 
+/**
+ *
+ * @param {number} limit
+ * @param {Array<TODO>} pairs
+ * @returns {string|string[]}
+ */
 const renderAuthorImages = (limit, pairs) => {
   if (!pairs.length || pairs.length > limit) {
     return ''; // don't render images if we have none, or too many
   }
 
-  const inner = pairs
-    .map(({info}) => {
-      const img = Img({
-        src: info.image,
-        alt: info.title,
-        width: '40',
-        height: '40',
-        class: 'w-author__image w-author__image--small',
-      });
-      return html`
-        <div class="w-author__image--row-item">
-          <a href="${info.href}">
-            ${img}
-          </a>
-        </div>
-      `;
-    })
-    .reverse();
-
-  return html`
-    <div class="w-author__image--row">
-      ${inner}
-    </div>
-  `;
+  return pairs.map(({info}) => {
+    const img = Img({
+      src: info.image,
+      alt: info.title,
+      width: '40',
+      height: '40',
+      class: '',
+      params: {
+        fit: 'crop',
+        h: '40',
+        w: '40',
+      },
+    });
+    return html` <a class="avatar" href="${info.href}">${img}</a> `;
+  });
 };
 
 const renderAuthorNames = (pairs) => {
@@ -72,67 +74,63 @@ const renderAuthorNames = (pairs) => {
     return; // don't render if no authors
   }
 
-  const inner = pairs
-    .map(({info}) => {
-      return html`
-        <a class="w-author__name-link" href="${info.href}">${info.title}</a>
-      `;
-    })
-    .join(', ');
-
+  // prettier-ignore
   return html`
-    <span class="w-author__name">
-      ${inner}
-    </span>
-  `;
+      <div
+        class="card__authors flow-space-base"
+        aria-label="authors"
+      >
+        ${pairs.map(({info}) => `<a href="${info.href}">${info.title}</a>`).join(', ')}
+      </div>
+    `;
 };
 
 /**
  * Render an authors card, including any number of authors and an optional date.
  *
- * @param {{authors: Array<string>, date?: Date, images?: number}} arg
- * @param {Authors} [authorsCollectionArg]
+ * @param {{authors?: string[], date?: Date, images?: number, updated?: Date, locale?: string}} arg
+ * @param {Authors} [authorsCollection]
  * @return {string}
  */
-const renderAuthorsDate = (
-  {authors, date, images = 2},
-  authorsCollectionArg,
-) => {
-  const authorsCollection = authorsCollectionArg
-    ? authorsCollectionArg
-    : authorsCollectionFn();
+function renderAuthorsDate(
+  {authors, date, images = 2, updated, locale = defaultLocale},
+  authorsCollection = authorsCollectionFn(),
+) {
   const pairs = (authors || []).map((id) => {
-    const info = authorsCollection[id];
-    if (!info) {
+    const author = authorsCollection[id];
+    if (!author) {
       throw new Error(
         `Can't create Author component for "${id}" without author ` +
           `information. Please check '_data/authorsData.json' and make sure the ` +
           `author you provide is a key in this object.`,
       );
     }
-
-    if (!info.title) {
+    const title = i18n(author.title, locale);
+    if (!title) {
       throw new Error(
-        `Can't create Author with missing 'title'. author object: ${JSON.stringify(
-          info,
-        )}`,
+        `Can't create Author "${id}" with missing title. ` +
+          `Please check '_data/authorsData.json' and make sure the ` +
+          `author has a title.`,
       );
     }
 
     return {
       id,
-      info,
+      info: {
+        ...author,
+        title,
+      },
     };
   });
 
   return html`
-    <div class="w-authors__card">
+    <div class="card__avatars cluster color-mid-text">
       ${renderAuthorImages(images, pairs)}
-      <div class="w-authors__card--holder">
-        ${renderAuthorNames(pairs)} ${renderDate(date)}
+      <div class="flow flow-space-size-0">
+        ${renderAuthorNames(pairs)} ${renderDate(locale, date, updated)}
       </div>
     </div>
   `;
-};
+}
 
 module.exports = renderAuthorsDate;

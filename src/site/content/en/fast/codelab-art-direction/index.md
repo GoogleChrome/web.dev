@@ -22,7 +22,7 @@ tags:
 
 ## What's going on here?
 
-[Art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction)
+[Art direction](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction)
 shows different images on different display sizes.
 
 A responsive image loads different sizes of the same image. Art direction takes
@@ -41,8 +41,8 @@ purely aesthetic; it provides no performance benefit over responsive images.
 ## How the code works
 
 Art direction uses the
-[`<picture>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture),
-[`<source>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source),
+[`<picture>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture),
+[`<source>`](https://developer.mozilla.org/docs/Web/HTML/Element/source),
 and `<img>` tags.
 
 **picture**
@@ -53,7 +53,7 @@ The `<picture>` tag provides a wrapper for zero or more `<source>` tags and one 
 
 The `<source>` tag specifies a media resource.
 
-The browser uses the first `<source>` tag with a [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+The browser uses the first `<source>` tag with a [media query](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries)
  that returns true. If none of the media queries match, the
 browser falls back to loading the image specified by the `<img>`.
 tag.

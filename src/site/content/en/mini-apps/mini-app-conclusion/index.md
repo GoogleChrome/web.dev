@@ -4,7 +4,7 @@ title: Concluding thoughts about mini apps from a web developer
 authors:
   - thomassteiner
 date: 2021-03-03
-# updated: 2021-03-03
+updated: 2021-06-12
 description: |
   This chapter concludes the mini apps collection with the observation
   that thinking outside of the box and taking input and inspiration from
@@ -36,7 +36,7 @@ into many of the aspects that make a difference when using and creating mini app
 inspiration opportunities for app developers, and even so for those who purely aim for the web.
 
 My initial experiments with
-[building a web application the mini app way](mini-app-example-project/) were
+[building a web application the mini app way](/mini-app-example-project/) were
 successful. Future work will show to what extent this model is performant and flexible enough to
 cater for the many shapes that web apps can take. My current _ad-hoc_ approach can be formalized by
 packaging up the relevant pieces of code in a dedicated library, `mini-app.js` if you will. What is
@@ -54,7 +54,7 @@ environment offers a lot of starting points for making developers' lives easier.
 
 From a features point of view, the web is becoming more and more powerful
 with each release of essentially _any_ browser. The ever-growing
-[list of capabilities](/fugu-status/) makes use cases possible on the web that were unthinkable a
+[list of capabilities](https://developer.chrome.com/blog/fugu-status/) makes use cases possible on the web that were unthinkable a
 mere year ago. At the same time, the need for
 [mini apps standardization](/mini-app-standardization/) shows that developers are not willing or
 able to build the same mini app for each super app. On the horizon maybe there is a desire for an

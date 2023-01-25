@@ -1,4 +1,5 @@
 ---
+layout: post
 title: PWA users are 2.5x more likely to purchase Gravit Designer PRO
 subhead: >
   PWA users are also 24% more active than all other install types,
@@ -18,18 +19,18 @@ authors:
   - rezakazemi
 ---
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">+24<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">PWA users have 24% more active sessions than all other platforms</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">+24<sub>%</sub></p>
+    <p>PWA users have 24% more active sessions than all other platforms</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">+31<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">PWA accounts for 31% more repeat users than all other platforms</p>
+  <div class="stats__item">
+    <p class="stats__figure">+31<sub>%</sub></p>
+    <p>PWA accounts for 31% more repeat users than all other platforms</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">2.5<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">PWA users are 2.5x more likely to purchase Gravit Designer PRO</p>
+  <div class="stats__item">
+    <p class="stats__figure">2.5<sub>x</sub></p>
+    <p>PWA users are 2.5x more likely to purchase Gravit Designer PRO</p>
   </div>
 </div>
 
@@ -58,19 +59,17 @@ Corel's Online Graphics initiatives, as they help bridge the gap between web
 apps and traditional desktop applications. Progressive web apps are quickly
 becoming the
 [preferred way to deliver desktop experiences](https://chromeos.dev/en/web/desktop-progressive-web-apps)
-for traditional web apps. Chrome OS and the Play Store also present a great
+for traditional web apps. ChromeOS and the Play Store also present a great
 opportunity to Corel by offering secure in-app payments, PWA support for
 bringing the web app experience to the desktop in a seamless manner ([local
 font](/local-fonts/) and [file system
 access](/file-system-access/) are particularly relevant for us),
 and most importantly, greater visibility to our web apps for more users.
-Students and educators can install the Chrome OS version of Gravit Designer with
+Students and educators can install the ChromeOS version of Gravit Designer with
 ease, and enjoy the same powerful features regardless of platform.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
-       src="dark.png" 
-       alt="A screenshot of Gravit Designer.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CPOALQnJw0G03EHczYIh.png", alt="A screenshot of Gravit Designer.", width="800", height="476" %}
 </figure>
 
 ## Engineering challenges
@@ -98,12 +97,12 @@ is no stranger to these challenges.
 
 With some platforms, the answer will be wrapping a web app in a
 platform-specific container application for the foreseeable future (e.g.
-Electron). However, with PWAs and Chrome OS we can start to deliver on the
-promise of a web app ported to a desktop experience with minimal disruption. 
+Electron). However, with PWAs and ChromeOS we can start to deliver on the
+promise of a web app ported to a desktop experience with minimal disruption.
 
 For Gravit Designer, our team could see the growing value of PWAs, and made
 great strides to support it as an enabling technology going forward. The
-potential of several major platforms supporting PWA (namely Chrome OS, iOS,
+potential of several major platforms supporting PWA (namely ChromeOS, iOS,
 Windows, and more) could usher in a new era of cross-platform support for
 certain applications. Since Chrome was the clear leader in browsers among our
 users, and provided the best user experience for PWA, we decided to investigate
@@ -120,14 +119,14 @@ targeting PWA support for a major release.
 
 Since launching our desktop PWA, we've seen a steady increase in installations,
 and we're excited by the prospect of releasing the PWA version with enhanced
-platform-specific features for Chrome OS and other platforms. In fact, the
+platform-specific features for ChromeOS and other platforms. In fact, the
 standard PWA version of Gravit Designer now leads downloads from the Microsoft
 Store and Linux installations, so we're looking forward to even more
 growth.
 
 ### Key figures
 
-* 18% of total Chrome OS users have installed our PWA (PWA installs across all
+* 18% of total ChromeOS users have installed our PWA (PWA installs across all
   operating systems account for ~5% of our total).
 * PWA users are 24% more active than all other install types (more
   sessions per user).
@@ -140,5 +139,5 @@ growth.
 The growth of PWA installations in general-past other more established
 platforms-points to a future where we could offer a satisfying desktop
 experience without the need for platform-specific wrappers on a multitude of
-platforms. Our work with Google on PWAs and Chrome OS is vital to this aim, as
+platforms. Our work with Google on PWAs and ChromeOS is vital to this aim, as
 more and more features are supported.

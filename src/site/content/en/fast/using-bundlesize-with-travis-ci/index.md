@@ -13,7 +13,7 @@ feedback:
 ---
 
 Using [bundlesize](https://github.com/siddharthkp/bundlesize) with [Travis
-CI](https://travis-ci.com/) lets you define performance budgets with minimal
+CI](https://travis-ci.org/) lets you define performance budgets with minimal
 setup and enforce them as part of your development workflow. Travis CI is a
 service that runs tests for your app in the cloud every time you push code to
 GitHub. You can [configure your
@@ -21,7 +21,7 @@ repository](https://help.github.com/articles/about-required-status-checks/) so
 that it won't allow merging pull-requests unless the bundlesize tests have
 passed.
 
-Bundlesize's GitHub checks include a size comparison to the master branch and
+Bundlesize's GitHub checks include a size comparison to the main branch and
 a warning in case of a big jump in size.
 
 {% Img src="image/admin/8Mm1WPga9dbeIzGrv2fQ.jpg", alt="Bundlesize check on GitHub", width="769", height="316" %}
@@ -36,7 +36,7 @@ To see it in action, here's an app bundled with
 kitty](https://glitch.com/edit/#!/scarce-pixie).
 
 <a href="https://glitch.com/edit/#!/scarce-pixie">
-  {% Img src="image/admin/DGSSFfpAMIaFqX8MwWss.png", alt="Cat voting app", width="800", height="567", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/DGSSFfpAMIaFqX8MwWss.png", alt="Cat voting app", width="800", height="567" %}
 </a>
 
 ## Set the performance budget
@@ -152,7 +152,7 @@ the homepage of the repository.
 
 You'll now see status checks in progress on the pull request page.
 
-{% Img src="image/admin/SrdHGr9z5QY1vEfBwNIY.png", alt="Github checks in progress", width="774", height="351" %}
+{% Img src="image/admin/SrdHGr9z5QY1vEfBwNIY.png", alt="GitHub checks in progress", width="774", height="351" %}
 
 It won't take long until all checks are done. Unfortunately, the cat voting app
 is a bit bloated and does not pass the performance budget check. The main bundle

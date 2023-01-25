@@ -19,7 +19,7 @@ Over the coming months, we hope to share actionable insights from our work—so 
 Here we'll be covering the build process for our static site and the (optional!) JavaScript behind our web components.
 
 web.dev provides content about building modern web experiences and allows you to [measure](/measure/) your site's performance.
-Savvy users may have realized that [our Measure page](/measure/) is just an interface for [Lighthouse](https://developers.google.com/web/tools/lighthouse), which is also available in Chrome's DevTools.
+Savvy users may have realized that [our Measure page](/measure/) is just an interface for [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), which is also available in Chrome's DevTools.
 Signing in to web.dev lets you run regular Lighthouse audits on your site so you can see how its score changes over time.
 I'll be revisiting the Measure page a bit later, as we think it's fairly special. 🎊
 
@@ -80,7 +80,7 @@ Eleventy provides a programmatic way to build arbitrary collections of content.
 This has let us build pagination support and generate virtual pages (pages that don't have a matching Markdown file on disk) for post authors.
 For example, we construct our authors pages using a template containing [an expression for its permalink](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/site/content/en/authors/index.njk#L4) (so the template is re-rendered for every author) and a backing [collection](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/site/_collections/paginated-posts-by-author.js#L23).
 
-This results in, for example, a simple page containing [all of Addy's posts](https://web.dev/authors/addyosmani/)!
+This results in, for example, a simple page containing [all of Addy's posts](/authors/addyosmani/)!
 
 ### Limitations
 
@@ -111,7 +111,7 @@ It will end up looking like this:
 But it's actually creating HTML that looks like this:
 
 ```html
-<div class="w-aside w-aside--note">
+<div class="aside color-state-info-text">
 <p><a href="/handbook/web-dev-components/#asides">See how Asides work in the web.dev codebase</a></p>
 </div>
 ```
@@ -138,15 +138,15 @@ This cuts down on the number of bytes our users need before the site is enhanced
 
 ### Web Components
 
-[Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+[Web Components](https://developer.mozilla.org/docs/Web/Web_Components)
 are custom elements which encapsulate runtime functionality provided in JavaScript, and are identified by custom names like `<web-codelab>`.
 The design lends itself well to largely static sites like web.dev: your browser manages an element's lifecycle as a site's HTML is updated, correctly informing any elements when they are attached or detached from the page.
 And antiquated browsers just ignore Web Components altogether and render whatever is left in the DOM.
 
 Each Web Component is a class with methods including `connectedCallback()`, `disconnectedCallback()`, and `attributeChangedCallback()`.
-web.dev's custom elements mostly inherit from [LitElement](https://lit-element.polymer-project.org/), which provides a simple base for complex components.
+web.dev's custom elements mostly inherit from [LitElement](https://lit.dev/), which provides a simple base for complex components.
 
-While web.dev uses Web Components on many pages, nowhere is it more necessary than on the [Measure](https://web.dev/measure) page.
+While web.dev uses Web Components on many pages, nowhere is it more necessary than on the [Measure](/measure) page.
 Two elements provide the bulk of the functionality you see on this page:
 
 ```html
@@ -160,9 +160,9 @@ Importantly, these elements are just part of [our regular Markdown source code](
 Our Web Components most commonly utilize the [Container Component](https://flaviocopes.com/react-presentational-vs-container-components/) model, made popular by React, although this model [is now a bit passé](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
 Each `-container` element connects to our global state (provided by [unistore](https://github.com/developit/unistore)), and then renders a visual element, which in turn goes on to render actual DOM nodes that have styling or other built-in functionality.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/0vvvEFtKSNNvD79QS2i2.png", alt="A diagram that shows the relationship between global state and HTML elements that use it.", width="640", height="220" %}
-  <figcaption class="w-figcaption">Global state and a Web Component</figcaption>
+  <figcaption>Global state and a Web Component</figcaption>
 </figure>
 
 Our most complex Web Components exist to visualize global actions and state.

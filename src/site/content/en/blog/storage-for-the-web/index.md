@@ -5,13 +5,11 @@ authors:
   - petelepage
 description: There are many different options for storing data in the browser. Which one is best for your needs?
 date: 2020-04-27
-updated: 2021-02-11
+updated: 2022-03-08
 tags:
   - blog
   - progressive-web-apps
   - storage
-  - indexeddb
-  - cachestorage
   - memory
 hero: image/admin/c8u2hKEFoFfgTsmcKeuK.jpg
 alt: Stack of shipping containers
@@ -96,9 +94,14 @@ device.
 * Chrome allows the browser to use up to 80% of total disk space. An origin can
   use up to 60% of the total disk space. You can use the [StorageManager
   API](#check) to determine the maximum quota available. Other Chromium-based
-  browsers may allow the browser to use more storage. See
-  [PR #3896](https://github.com/GoogleChrome/web.dev/pull/3896) for details about
-  Chrome's implementation.
+  browsers may be different.
+  * In incognito mode, Chrome reduces the amount of storage an origin can use
+    to approximately 5% of the total disk space.
+  * If the user has enabled "Clear cookies and site data when you close all
+    windows" in Chrome, the storage quota is significantly reduced to a
+    maximum of approximately 300MB.
+  * See [PR #3896](https://github.com/GoogleChrome/web.dev/pull/3896) for
+    details about Chrome's implementation.
 * Internet Explorer 10 and later can store up to 250MB and will prompt the
   user when more than 10MB has been used.
 * Firefox allows the browser to use up to 50% of free disk space. An
@@ -122,7 +125,8 @@ to allow it to store up to 100MB, then ask again at 50MB increments.
 
 Today, most modern browsers will not prompt the user, and will allow a site
 to use up to its allotted quota. The exception appears to be Safari, which
-prompts at 750MB, asking permission to store up to 1.1GB. If an origin
+prompts when the storage quota is exceeded, requesting permission to increase
+the allocated quota. If an origin
 attempts to use more than its allotted quota, further attempts to write data
 will fail.
 
@@ -300,22 +304,22 @@ The hero image is by Guillaume Bolduc on
 
 [mdn-sessionstorage]: https://developer.mozilla.org/en/docs/Web/API/Window/sessionStorage
 [mdn-localstorage]: https://developer.mozilla.org/en/docs/Web/API/Window/localStorage
-[mdn-indexeddb]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
-[mdn-storagemanager]: https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
-[mdn-fileapi]: https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction
-[mdn-appcache]: https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache
-[mdn-cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
-[cache-primer]: https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api
-[sw-primer]: https://developers.google.com/web/fundamentals/primers/service-workers
+[mdn-indexeddb]: https://developer.mozilla.org/docs/Web/API/IndexedDB_API
+[mdn-storagemanager]: https://developer.mozilla.org/docs/Web/API/StorageManager/estimate
+[mdn-fileapi]: https://developer.mozilla.org/docs/Web/API/File_and_Directory_Entries_API/Introduction
+[mdn-appcache]: https://developer.mozilla.org/docs/Web/API/Window/applicationCache
+[mdn-cookies]: https://developer.mozilla.org/docs/Web/HTTP/Cookies
+[cache-primer]: /cache-api-quick-guide/
+[sw-primer]: https://developer.chrome.com/docs/workbox/service-worker-overview/
 [idb-wrapper]: https://www.npmjs.com/package/idb
 [w3c-websql]: https://www.w3.org/TR/webdatabase/
 [caniuse-fs]: https://caniuse.com/#feat=filesystem
 [caniuse-sm]: https://caniuse.com/#feat=mdn-api_storagemanager
-[ff-usage-limits]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria#Storage_limits
-[persistent-storage]: https://developers.google.com/web/updates/2016/06/persistent-storage
+[ff-usage-limits]: https://developer.mozilla.org/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria#Storage_limits
+[persistent-storage]: /persistent-storage/
 [storage-abuser]: http://demo.agektmr.com/storage/
 [webkit-itp-blog]: https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/
 [caniuse-websql]: https://caniuse.com/#feat=sql-storage
 [glitch-storage]: https://storage-quota.glitch.me/
-[idb-best-practices]: https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices
+[idb-best-practices]: /indexeddb-best-practices/
 [chrome-storage-doc]: https://docs.google.com/document/d/19QemRTdIxYaJ4gkHYf2WWBNPbpuZQDNMpUVf8dQxj4U/preview

@@ -18,7 +18,7 @@
  * @fileoverview A select for choosing language option.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseStateElement} from '../BaseStateElement';
 import {setLanguage} from '../../actions';
 import lang from '../../utils/language';
@@ -51,20 +51,27 @@ class LanguageSelect extends BaseStateElement {
           </option>
         `
       : html`
-          <option value="${language}">
-            ${languageName} (${language})
-          </option>
+          <option value="${language}">${languageName} (${language})</option>
         `;
   }
 
   render() {
-    const langList = lang.supportedLanguages;
+    const languageVersions = Array.from(
+      document.querySelectorAll('link[rel="alternate"]'),
+    )
+      .filter((link) => link['hreflang'])
+      .map((link) => link['hreflang']);
+    const currentLang = document.documentElement.lang;
+    const langList = lang.supportedLanguages.filter(
+      (language) =>
+        languageVersions.includes(language) || language === currentLang,
+    );
     return html`
       <div class="w-display-flex">
         <label class="w-visually-hidden" for="preferred-language">
           Choose language
         </label>
-        <select id="preferred-language" @change=${this.onChange}>
+        <select id="preferred-language" @change="${this.onChange}">
           ${langList.map((language) => this.renderOption(language))}
         </select>
       </div>

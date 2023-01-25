@@ -28,6 +28,8 @@ $gorko-size-scale: (
   50: $gorko-base-size * 0.125,   // 2px
   100: $gorko-base-size * 0.25,   // 4px
   200: $gorko-base-size * 0.5,    // 8px
+  250: $gorko-base-size * 0.75,   // 12px
+  275: $gorko-base-size * 0.875,  // 14px
   300: $gorko-base-size,          // 16px
   400: $gorko-base-size * 1.5,    // 24px
   500: $gorko-base-size * 2,      // 32px
@@ -38,6 +40,21 @@ $gorko-size-scale: (
   1000: $gorko-base-size * 4.5,   // 72px
 );
 
+$gorko-colors: (
+  'white': $WHITE,
+  'black': $BLACK,
+  'grey-50': $GREY_50,
+  'grey-100': $GREY_100,
+  'grey-200': $GREY_200,
+  'grey-300': $GREY_300,
+  'grey-400': $GREY_400,
+  'grey-500': $GREY_500,
+  'grey-600': $GREY_600,
+  'grey-700': $GREY_700,
+  'grey-800': $GREY_800,
+  'grey-900': $GREY_900,
+  'primary': $WEB_PRIMARY_COLOR,
+);
 
 // CORE CONFIG
 // This powers everything from utility class generation to breakpoints
@@ -53,6 +70,11 @@ $gorko-config: (
     'output': 'responsive',
     'property': 'align-items'
   ),
+  'bg': (
+    'items': $gorko-colors,
+    'output': 'standard',
+    'property': 'background'
+  ),
   'case': (
     'items': (
       'upper': 'uppercase',
@@ -61,6 +83,11 @@ $gorko-config: (
     ),
     'output': 'standard',
     'property': 'text-transform',
+  ),
+  'color': (
+    'items': $gorko-colors,
+    'output': 'standard',
+    'property': 'color'
   ),
   'decoration': (
     'items': (
@@ -81,6 +108,7 @@ $gorko-config: (
   'display': (
     'items': (
       'block': 'block',
+      'inline': 'inline',
       'inline-block': 'inline-block',
       'flex': 'flex',
       'inline-flex': 'inline-flex',
@@ -128,27 +156,27 @@ $gorko-config: (
     'property': 'font-family',
   ),
   'gap': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin',
   ),
   'gap-top': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin-top',
   ),
   'gap-right': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin-right',
   ),
   'gap-bottom': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin-bottom',
   ),
   'gap-left': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin-left',
   ),
@@ -168,14 +196,19 @@ $gorko-config: (
     'property': 'gap',
   ),
   'height': (
-    'items': map-merge($gorko-size-scale, (
-      'full': '100%',
-      'half': percentage(1/2),
-      'quarter': percentage(1/4),
-      'third': percentage(1/3)
-    )),
+    'items':
+      map-merge(
+        $gorko-size-scale,
+        (
+          'full': '100%',
+          'half': '50%',
+          'quarter': '25%',
+          'third': '33.333%',
+          'auto': 'auto',
+        )
+      ),
     'output': 'responsive',
-    'property': 'height'
+    'property': 'height',
   ),
   'justify-content': (
     'items': (
@@ -215,6 +248,13 @@ $gorko-config: (
     'output': 'standard',
     'property': 'line-height',
   ),
+  'list-style': (
+    'items': (
+      'none': 'none',
+    ),
+    'output': 'standard',
+    'property': 'list-style',
+  ),
   'measure': (
     'items': (
       'micro': '10ch',
@@ -225,6 +265,13 @@ $gorko-config: (
     ),
     'output': 'responsive',
     'property': 'max-width',
+  ),
+  'min-width': (
+    'items': (
+      '0': '0',
+    ),
+    'output': 'responsive',
+    'property': 'min-width',
   ),
   'object-fit': (
     'items': (
@@ -320,31 +367,38 @@ $gorko-config: (
     'property': 'visibility',
   ),
   // These font-weight values come from /styles/tools/_breakpoints.scss
-  'weight': (
-    'items': (
-      'regular': $FONT_WEIGHT_REGULAR,
-      'medium': $FONT_WEIGHT_MEDIUM
+  'weight':
+    (
+      'items': (
+        'regular': $FONT_WEIGHT_REGULAR,
+        'medium': $FONT_WEIGHT_MEDIUM,
+      ),
+      'output': 'standard',
+      'property': 'font-weight',
     ),
-    'output': 'standard',
-    'property': 'font-weight',
-  ),
   'width': (
-    'items': map-merge($gorko-size-scale, (
-      'full': '100%',
-      'half': percentage(1/2),
-      'quarter': percentage(1/4),
-      'third': percentage(1/3)
-    )),
+    'items':
+      map-merge(
+        $gorko-size-scale,
+        (
+          'full': '100%',
+          'half': '50%',
+          'quarter': '25%',
+          'third': '33.333%',
+          'auto': 'auto',
+        )
+      ),
     'output': 'responsive',
-    'property': 'width'
+    'property': 'width',
   ),
   // These breakpoint values come from /styles/tools/_breakpoints.scss
-  'breakpoints': (
-    'xxsm': '(min-width: #{$BREAKPOINT_VALUE_XXSMALL})',
-    'xsm': '(min-width: #{$BREAKPOINT_VALUE_XSMALL})',
-    'sm': '(min-width: #{$BREAKPOINT_VALUE_SMALL})',
-    'md': '(min-width: #{$BREAKPOINT_VALUE_MEDIUM})',
-    'lg': '(min-width: #{$BREAKPOINT_VALUE_LARGE})',
-  ),
+  'breakpoints':
+    (
+      'xxsm': '(min-width: #{$BREAKPOINT_VALUE_XXSMALL})',
+      'xsm': '(min-width: #{$BREAKPOINT_VALUE_XSMALL})',
+      'sm': '(min-width: #{$BREAKPOINT_VALUE_SMALL})',
+      'md': '(min-width: #{$BREAKPOINT_VALUE_MEDIUM})',
+      'lg': '(min-width: #{$BREAKPOINT_VALUE_LARGE})',
+      'xl': '(min-width: #{$BREAKPOINT_VALUE_XLARGE})',
+    ),
 );
-

@@ -39,6 +39,8 @@ This is why `ResizeObserver` is a useful primitive. It reacts to changes in
 size of any of the observed elements, independent of what caused the change.
 It provides access to the new size of the observed elements too.
 
+{% BrowserCompat 'api.ResizeObserver' %}
+
 ## API
 
 All the APIs with the `Observer` suffix we mentioned above share a simple API
@@ -66,16 +68,15 @@ ro.observe(someElement);
 ### What is being reported?
 
 Generally, a
-[`ResizeObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry)
+[`ResizeObserverEntry`](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)
 reports the content box of an element through a property called
 `contentRect`, which returns a
-[`DOMRectReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly)
+[`DOMRectReadOnly`](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly)
 object. The content box is the box in which content can be placed. It is
 the border box minus the padding.
 
-<figure class="w-figure">
-  <img src="./contentbox.png" 
-       alt="A diagram of the CSS box model.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="A diagram of the CSS box model.", width="727", height="562" %}
 </figure>
 
 It's important to note that while `ResizeObserver` *reports* both the dimensions
@@ -99,7 +100,7 @@ they can support elements that have multiple fragments, which occur in
 multi-column scenarios. For now, these arrays will only contain one element.
 
 Platform support for these properties is limited, but [Firefox already
-supports](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry#Browser_compatibility)
+supports](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry#Browser_compatibility)
 the first two.
 
 ### When is it being reported?
@@ -128,8 +129,8 @@ design breakpoints and change an element's styles. In the following
 [example](https://googlechrome.github.io/samples/resizeobserver/), the second box
 will change its border radius according to its width.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_vp8.webm"
             type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_x264.mp4"
@@ -140,7 +141,7 @@ will change its border radius according to its width.
 ```js
 const ro = new ResizeObserver(entries => {
   for (let entry of entries) {
-    entry.target.style.borderRadius = 
+    entry.target.style.borderRadius =
         Math.max(0, 250 - entry.contentRect.width) + 'px';
   }
 });
@@ -162,8 +163,8 @@ capture by definition, but calling `appendChild()` also resizes that element
 elements. With this in mind, it takes very few lines to achieve the desired
 effect:
 
-<figure class="w-figure">
- <video controls autoplay loop muted class="w-screenshot">
+<figure>
+ <video controls autoplay loop muted>
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_vp8.webm"
            type="video/webm; codecs=vp8">
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_x264.mp4"

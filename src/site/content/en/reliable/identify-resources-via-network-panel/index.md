@@ -18,8 +18,8 @@ The Network panel in your browser's DevTools helps identify what resources are
 loaded and when they are loaded. Each row in the Network panel corresponds to a
 specific URL that your web app has loaded.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./network-panel.png" alt="Chrome DevTools' network panel.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7TVH0ZV5TBIe5qwNDzAn.png", alt="Chrome DevTools' network panel.", width="800", height="602" %}
 </figure>
 
 {% Aside 'codelab' %}
@@ -55,7 +55,7 @@ make sense for hundreds of large images, for instance.
 Another part of the overall loading picture is _when_ everything gets loaded.
 
 Some requests to the network, such as the
-[navigation request](https://developer.mozilla.org/en-US/docs/Web/API/Request/mode#Value)
+[navigation request](https://developer.mozilla.org/docs/Web/API/Request/mode#Value)
 for your initial HTML, are made unconditionally as soon as a user visits a given
 URL. That HTML might contain hardcoded references to critical CSS or JavaScript
 files that must also load in order to display your interactive page. These
@@ -72,7 +72,7 @@ critical loading path.
 
 {% Aside %}
 Advanced techniques outside the scope of this guide, like [<link
-rel="preload">](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content),
+rel="preload">](https://developer.mozilla.org/docs/Web/HTML/Preloading_content),
 add a twist to this story by giving a head start to what would otherwise be a
 late-loaded request.
 {% endAside %}
@@ -83,8 +83,8 @@ The Name and Type columns help provide a meaningful picture of _what_'s being
 loaded. The answer to "_what_'s loading?" in the example above is a total of
 four URLs, each representing a unique type of content.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./network-panel-urls.png" alt="Chrome DevTools' network panel showing four files loading.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9wqFFPDtX9BPLvrVOQhc.png", alt="Chrome DevTools' network panel showing four files loading.", width="800", height="602" %}
 </figure>
 
 The Name represents the URL that your browser requested—though you'll only see
@@ -111,7 +111,7 @@ for example, `v2.html`. All of the subsequent requests will flow (like a
 waterfall!) from this initial navigation request, based on what images, scripts,
 and styles the HTML document references.
 
-<img class="w-screenshot" src="./waterfall.png" alt="Chrome DevTools' waterfall view.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FuPs0Rk4nWlSP74FOJ5Q.png", alt="Chrome DevTools' waterfall view.", width="774", height="244" %}
 
 The waterfall shows that as soon as `v2.html` has finished loading, the requests
 for the assets it references (also referred to as _subresources_) start. The
@@ -119,4 +119,4 @@ browser can request multiple subresources at the same time, and that's
 represented by the overlapping bars in the Waterfall column for `main.css` and
 `logo.svg`. Finally, you can see from the screenshot that `main.js` starts
 loading last, and it finishes loading after the other three URLs have completed
-as well. 
+as well.

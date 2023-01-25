@@ -1,12 +1,14 @@
 ---
+layout: post
 title: Back/forward cache
 subhead: Optimize your pages for instant loads when using the browser's back and forward buttons.
 description: |
   Learn how to optimize your pages for instant loads when using the browser's back and forward buttons.
 authors:
   - philipwalton
+  - tunetheweb
 date: 2020-11-10
-updated: 2020-11-10
+updated: 2022-11-10
 hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
@@ -26,15 +28,15 @@ can reap the benefits.
 ## Browser compatibility
 
 bfcache has been supported in both
-[Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
+[Firefox](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
 and [Safari](https://webkit.org/blog/427/webkit-page-cache-i-the-basics/) for
 many years, across desktop and mobile.
 
-Starting in version 86, Chrome has enabled bfcache for
+Starting in version 86, Chrome enabled bfcache for
 [cross-site](/same-site-same-origin/) navigations on Android for a small
-percentage of users. In Chrome 87, bfcache support will be rolled out to all
-Android users for cross-site navigation, with the intent to support
-[same-site](/same-site-same-origin/) navigation as well in the near future.
+percentage of users. In subsequent releases, additional support slowly rolled
+out. Since version 96, bfcache is enabled for all Chrome users across desktop
+and mobile.
 
 ## bfcache basics
 
@@ -48,14 +50,14 @@ page, only to realize it's not what you wanted and click the back button? In
 that moment, bfcache can make a big difference in how fast the previous page
 loads:
 
-<div class="w-table-wrapper w-table--top-align">
-  <table>
+<div class="table-wrapper">
+  <table data-alignment="top">
     <tr>
       <td width="30%"><strong><em>Without</em> bfcache enabled</strong></td>
       <td>
         A new request is initiated to load the previous page, and, depending
         on how well that page has been <a
-        href="https://web.dev/reliable/#the-options-in-your-caching-toolbox">
+        href="/reliable/#the-options-in-your-caching-toolbox">
         optimized</a> for repeat visits, the browser might have to re-download,
         re-parse, and re-execute some (or all) of resources it just downloaded.
       </td>
@@ -109,7 +111,7 @@ resume processing tasks when (or if) the page is restored from the bfcache.
 In some cases this is fairly low-risk (for example, timeouts or promises), but
 in other cases it might lead to very confusing or unexpected behavior. For
 example, if the browser pauses a task that's required as part of an [IndexedDB
-transaction](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction),
+transaction](https://developer.mozilla.org/docs/Web/API/IDBTransaction),
 it can affect other open tabs in the same origin (since the same IndexedDB
 databases can be accessed by multiple tabs simultaneously). As a result,
 browsers will generally not attempt to cache pages in the middle of an IndexedDB
@@ -128,15 +130,15 @@ measurement](#implications-for-analytics-and-performance-measurement)
 accordingly.
 
 The primary events used to observe bfcache are the [page transition
-events](https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent)—`pageshow`
+events](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)—`pageshow`
 and `pagehide`—which have been around as long as bfcache has and are supported
 in pretty much [all browsers in use
 today](https://caniuse.com/page-transition-events).
 
 The newer [Page
-Lifecycle](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
+Lifecycle](https://developer.chrome.com/blog/page-lifecycle-api/)
 events—`freeze` and `resume`—are also dispatched when pages go in or out of the
-bfcache, as well as in some other situations. For, example when a background tab
+bfcache, as well as in some other situations. For example when a background tab
 gets frozen to minimize CPU usage. Note, the Page Lifecycle events are currently
 only supported in Chromium-based browsers.
 
@@ -145,13 +147,13 @@ only supported in Chromium-based browsers.
 The `pageshow` event fires right after the `load` event when the page is
 initially loading and any time the page is restored from bfcache. The `pageshow`
 event has a
-<code>[persisted](https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent/persisted)</code>
-property which will be <code>true</code> if the page was restored from bfcache
-(and <code>false</code> if not). You can use the <code>persisted</code> property
+[`persisted`](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)
+property which will be `true` if the page was restored from bfcache
+(and `false` if not). You can use the `persisted` property
 to distinguish regular page loads from bfcache restores. For example:
 
 ```js
-window.addEventListener('pageshow', function(event) {
+window.addEventListener('pageshow', (event) => {
   if (event.persisted) {
     console.log('This page was restored from the bfcache.');
   } else {
@@ -188,9 +190,9 @@ It means that the browser _intends_ to cache the page, but there may be factors
 that make it impossible to cache.
 
 ```js
-window.addEventListener('pagehide', function(event) {
-  if (event.persisted === true) {
-   console.log('This page *might* be entering the bfcache.');
+window.addEventListener('pagehide', (event) => {
+  if (event.persisted) {
+    console.log('This page *might* be entering the bfcache.');
   } else {
     console.log('This page will unload normally and be discarded.');
   }
@@ -223,39 +225,30 @@ will not continue to exist after the `unload` event has fired. This presents a
 challenge because many of those pages were _also_ built with the assumption that
 the `unload` event would fire any time a user is navigating away, which is no
 longer true (and [hasn't been true for a long
-time](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event)).
+time](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event)).
 
 So browsers are faced with a dilemma, they have to choose between something that
 can improve the user experience—but might also risk breaking the page.
 
-Firefox has chosen to make pages ineligible for bfcache if they add an `unload`
+On desktop, Chrome and Firefox have chosen to make pages ineligible for bfcache if they add an `unload`
 listener, which is less risky but also disqualifies _a lot_ of pages. Safari
 will attempt to cache some pages with an `unload` event listener, but to reduce
 potential breakage it will not run the `unload` event when a user is navigating
-away.
+away, which makes the event very unreliable.
 
-Since [65% of
-pages](https://www.chromestatus.com/metrics/feature/popularity#DocumentUnloadRegistered)
-in Chrome register an `unload` event listener, to be able to cache as many pages
-as possible, Chrome chose to align implementation with Safari.
+On mobile, Chrome and Safari will attempt to cache pages with an `unload` event listener since the risk of breakage is lower due to the fact that the `unload` event has always been extremely unreliable on mobile. Firefox treats pages that use `unload` as ineligible for the bfcache, except on iOS, which requires all browsers to use the WebKit rendering engine, and so it behaves like Safari.
 
 Instead of using the `unload` event, use the `pagehide` event. The `pagehide`
 event fires in all cases where the `unload` event currently fires, and it
 _also_ fires when a page is put in the bfcache.
 
-In fact, [Lighthouse
-v6.2.0](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.2.0) has
-added a <code>[no-unload-listeners
-audit](https://github.com/GoogleChrome/lighthouse/pull/11085)</code>, which will
-warn developers if any JavaScript on their pages (including that from
-third-party libraries) adds an <code>unload</code> event listener.
+In fact, [Lighthouse](https://developer.chrome.com/docs/lighthouse/) has a [`no-unload-listeners` audit](https://github.com/GoogleChrome/lighthouse/pull/11085), which will warn developers if any JavaScript on their pages (including that from third-party libraries) adds an `unload` event listener.
 
 {% Aside 'warning' %}
   Never add an `unload` event listener! Use the `pagehide` event instead.
   Adding an `unload` event listener will make your site slower in Firefox, and
   the code won't even run most of the time in Chrome and Safari.
 {% endAside %}
-
 
 #### Only add `beforeunload` listeners conditionally
 
@@ -301,32 +294,73 @@ onAllChangesSaved(() => {
 });
 ```
 {% CompareCaption %}
-  The code above only adds the `beforeunload` listener when it's needed (and removes it
-  when it's not).
+  The code above only adds the `beforeunload` listener when it's needed (and
+  removes it when it's not).
 {% endCompareCaption %}
 {% endCompare %}
 
+### Minimize use of `Cache-Control: no-store`
 
-### Avoid window.opener references
+`Cache-Control: no-store` is an HTTP header web servers can set on responses that instructs the browser not to store the response in any HTTP cache. This should be used for resources containing sensitive user information, for example pages behind a login.
+
+Though bfcache is not an HTTP cache, historically, when `Cache-Control: no-store` is set on the page resource itself (as opposed to any subresource), browsers have chosen not to store the page in bfcache. There is [work currently underway to change this behavior for Chrome](https://github.com/fergald/explainer-bfcache-ccns/blob/main/README.md) in a privacy-preserving manner, but at present any pages using `Cache-Control: no-store` will not be eligible for bfcache.
+
+Since `Cache-Control: no-store` restricts a page's eligibility for bfcache, it should only be set on pages that contain sensitive information where caching of any sort is never appropriate.
+
+For pages that wish to always serve up-to-date content—and that content does not contain sensitive information—use `Cache-Control: no-cache` or `Cache-Control: max-age=0`. These directives instruct the browser to revalidate the content before serving it, and they do not affect a page's bfcache eligibility.
+
+Note that when a page is restored from bfcache, it is restored from memory, not from the HTTP cache. As a result, directives like `Cache-Control: no-cache` or `Cache-Control: max-age=0` are not taken into account, and no revalidation occurs before the content is displayed to the user.
+
+This is still likely a better user experience, however, as bfcache restores are instant and—since pages do not stay in the bfcache for very long—it's unlikely that the content is out of date. However, if your content does change minute-by-minute, you can fetch any updates using the `pageshow` event, as outlined in the next section.
+
+### Update stale or sensitive data after bfcache restore
+
+If your site keeps user state—especially any sensitive user information—that
+data needs to be updated or cleared after a page is restored from bfcache.
+
+For example, if a user navigates to a checkout page and then updates their
+shopping cart, a back navigation could potentially expose out-of-date
+information if a stale page is restored from bfcache.
+
+Another, more critical example is if a user signs out of a site on a public
+computer and the next user clicks the back button. This could potentially expose
+private data that the user assumed was cleared when they logged out.
+
+To avoid situations like this, it's good to always update the page after a
+`pageshow` event if `event.persisted` is `true`.
+
+The following code checks for the presence of a site-specific cookie in the
+`pageshow` event and reloads if the cookie is not found:
+
+```js
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted && !document.cookie.match(/my-cookie/)) {
+    // Force a reload if the user has logged out.
+    location.reload();
+  }
+});
+```
+
+### Avoid `window.opener` references
 
 In some browsers (including Chromium-based browsers) if a page was opened using
-<code>[window.open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)</code>
+[`window.open()`](https://developer.mozilla.org/docs/Web/API/Window/open)
 or (in [Chromium-based browsers prior to version 88](https://crbug.com/898942)) from a link with
-<code>[target=_blank](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target)</code>—without
+[`target=_blank`](https://developer.mozilla.org/docs/Web/HTML/Element/a#target)—without
 specifying
-<code>[rel="noopener"](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)</code>—then
+[`rel="noopener"`](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener)—then
 the opening page will have a reference to the window object of the opened page.
 
 In addition to [being a security
 risk](https://mathiasbynens.github.io/rel-noopener/), a page with a non-null
-<code>[window.opener](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener)</code>
+[`window.opener`](https://developer.mozilla.org/docs/Web/API/Window/opener)
 reference cannot safely be put into the bfcache because that could break any
 pages attempting to access it.
 
 As a result, it's best to avoid creating `window.opener` references by using
 `rel="noopener"` whenever possible. If your site requires opening a window and
 controlling it through
-<code>[window.postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)</code>
+[`window.postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
 or directly referencing the window object, neither the opened window nor the
 opener will be eligible for bfcache.
 
@@ -344,17 +378,17 @@ other pages in the same origin (for example: IndexedDB, Web Locks, WebSockets,
 etc.) this can be problematic because pausing these tasks may prevent code in
 other tabs from running.
 
-As a result, most browsers will not attempt to put a page in bfcache in the
+As a result, some browsers will not attempt to put a page in bfcache in the
 following scenarios:
 
-*   Pages with an unfinished [IndexedDB
-    transaction](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction)
+*   Pages with an open [IndexedDB
+    connection](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest)
 *   Pages with in-progress
-    [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or
-    [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+    [fetch()](https://developer.mozilla.org/docs/Web/API/Fetch_API) or
+    [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
 *   Pages with an open
-    [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) or
-    [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API)
+    [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSocket) or
+    [WebRTC](https://developer.mozilla.org/docs/Web/API/WebRTC_API)
     connection
 
 If your page is using any of these APIs, it's best to always close connections
@@ -365,73 +399,86 @@ other open tabs.
 Then, if the page is restored from the bfcache, you can re-open or re-connect to
 those APIs (in the `pageshow` or `resume` event).
 
-{% Aside %}
-  Using the APIs listed above does not disqualify a page from being stored in
-  bfcache, as long as they are not actively in use before the user navigates
-  away. However, there are APIs (Embedded Plugins, Workers,
-  Broadcast Channel, and [several
-  others](https://source.chromium.org/chromium/chromium/src/+/master:content/browser/frame_host/back_forward_cache_impl.cc;l=124;drc=e790fb2272990696f1d16a465832692f25506925?originalUrl=https:%2F%2Fcs.chromium.org%2F))
-  where usage currently does disqualify a page from being cached. While Chrome
-  is intentionally being conservative in its initial release of bfcache, the
-  long-term goal is to make bfcache work with as many APIs as possible.
-{% endAside %}
+The following example shows how to ensure your pages are eligible for bfcache
+when using IndexedDB by closing an open connection in the `pagehide` event
+listener:
+
+```js
+let dbPromise;
+function openDB() {
+  if (!dbPromise) {
+    dbPromise = new Promise((resolve, reject) => {
+      const req = indexedDB.open('my-db', 1);
+      req.onupgradeneeded = () => req.result.createObjectStore('keyval');
+      req.onerror = () => reject(req.error);
+      req.onsuccess = () => resolve(req.result);
+    });
+  }
+  return dbPromise;
+}
+
+// Close the connection to the database when the user is leaving.
+window.addEventListener('pagehide', () => {
+  if (dbPromise) {
+    dbPromise.then(db => db.close());
+    dbPromise = null;
+  }
+});
+
+// Open the connection when the page is loaded or restored from bfcache.
+window.addEventListener('pageshow', () => openDB());
+```
 
 ### Test to ensure your pages are cacheable
 
-While there's no way to determine whether a page was put into the cache as it's
-unloading, it is possible to assert that a back or forward navigation did
-restore a page from the cache.
+Chrome DevTools can help you test your pages to ensure they're optimized for
+bfcache, and identify any issues that may be preventing them from being
+eligible.
 
-Currently, in Chrome, a page can remain in the bfcache for up to three minutes,
-which should be enough time to run a test (using a tool like
-[Puppeteer](https://github.com/puppeteer/puppeteer) or
-[WebDriver](https://www.w3.org/TR/webdriver/)) to ensure that the `persisted`
-property of a `pageshow` event is `true` after navigating away from a page and
-then clicking the back button.
+To test a particular page, navigate to it in Chrome and then in DevTools go to
+**Application** > **Back-forward Cache**. Next click the **Run Test** button and
+DevTools will attempt to navigate away and back to determine whether the page
+could be restored from bfcache.
 
-Note that, while under normal conditions a page should remain in the cache for
-long enough to run a test, it _can_ be evicted silently at any time (for
-example, if the system is under memory pressure). A failing test doesn't
-necessarily mean your pages are not cacheable, so you need to configure your
-test or build failure criteria accordingly.
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png",
+alt="Back-forward cache panel in DevTools", width="800", height="313" %}
 
-{% Aside 'gotchas' %}
-  In Chrome, bfcache is currently only enabled on mobile. To test bfcache on
-  desktop you need to [enable the `#back-forward-cache`
-  flag](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
+{% Aside %}
+  The Back/forward Cache feature in DevTools is currently in active development.
+  We strongly encourage developers to test their pages in Chrome Canary to
+  ensure they're running the latest version of DevTools and getting the most
+  up-to-date bfcache recommendations.
 {% endAside %}
 
-### Ways to opt out of bfcache
+If successful, the panel will report "Restored from back-forward cache":
 
-If you do not want a page to be stored in the bfcache you can ensure it's not
-cached by setting the `Cache-Control` header on the top-level page response to
-`no-store`:
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vPwN0z95ZBTiwZIpdZT4.png",
+alt="DevTools reporting a page was successfully restored from bfcache",
+width="800", height="313" %}
 
-```http
-Cache-Control: no-store
+If unsuccessful, the panel will indicate the page was not restored and list the
+reason why. If the reason is something you as a developer can address, that
+will also be indicated:
+
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/ji3ew4DoP6joKdJvtGwa.png",
+alt="DevTools reporting failure to restore a page from bfcache", width="800",
+height="313" %}
+
+In the screenshot above, the use of an `unload` event listener is
+[preventing](/bfcache/#never-use-the-unload-event) the page from being eligible
+for bfcache. You can fix that by switching from `unload` to using `pagehide` instead:
+
+{% Compare 'worse' %}
+```js
+window.addEventListener('unload', ...);
 ```
+{% endCompare %}
 
-All other caching directives (including `no-cache` or even `no-store` on a
-subframe) will not affect a page's eligibility for bfcache.
-
-While this method is effective and works across browsers, it has other caching
-and performance implications that may be undesirable. To address that, there's a
-proposal to [add a more explicit opt-out
-mechanism](https://github.com/whatwg/html/issues/5744), including a mechanism to
-clear the bfcache if needed (for example, when a user logs out of a website on a
-shared device).
-
-Also, in Chrome, user-level opt-out is currently possible via [the
-`#back-forward-cache`
-flag](https://www.chromium.org/developers/how-tos/run-chromium-with-flags), as
-well an [enterprise policy-based
-opt-out](https://cloud.google.com/docs/chrome-enterprise/policies).
-
-{% Aside 'caution' %}
-  Given the significantly better user experience that bfcache delivers, it is
-  not recommended to opt-out unless absolutely necessary for privacy reasons,
-  for example if a user logs out of a website on a shared device.
-{% endAside %}
+{% Compare 'better' %}
+```js
+window.addEventListener('pagehide', ...);
+```
+{% endCompare %}
 
 ## How bfcache affects analytics and performance measurement
 
@@ -452,15 +499,53 @@ should be similar for other analytics tools:
 
 ```js
 // Send a pageview when the page is first loaded.
-gtag('event', 'page_view')
+gtag('event', 'page_view');
 
-window.addEventListener('pageshow', function(event) {
-  if (event.persisted === true) {
-    // Send another pageview if the page is restored from bfcache.
-    gtag('event', 'page_view')
+window.addEventListener('pageshow', (event) => {
+  // Send another pageview if the page is restored from bfcache.
+  if (event.persisted) {
+    gtag('event', 'page_view');
   }
 });
 ```
+
+### Measuring your bfcache hit ratio
+
+You may also wish to track whether the bfcache was used, to help identify pages
+that are not utilizing the bfcache. For example, with an event:
+
+```js
+window.addEventListener('pageshow', (event) => {
+  // You can measure bfcache hit rate by tracking all bfcache restores and
+  // other back/forward navigations via a seperate event.
+  const navigationType = performance.getEntriesByType('navigation')[0].type;
+  if (event.persisted || navigationType == 'back_forward' ) {
+    gtag('event', 'back_forward_navigation', {
+      'isBFCache': event.persisted,
+    });
+  }
+});
+```
+
+It is important to realize that there are a number of scenarios, outside
+of the site owners control, when a Back/Forward navigation will not use
+the bfcache, including:
+- when the user quits the browser and starts it again
+- when the user duplicates a tab
+- when the user closes a tab and uncloses it
+
+Even without those exclusions the bfcache will be discarded after a period to conserve memory.
+
+So, website owners should not be expecting a 100% bfcache hit ratio for all
+`back_forward` navigations. However, measuring their ratio can be useful to
+identify pages where the page itself is preventing bfcache usage for a high
+proportion of back and forward navigations.
+
+The Chrome team is working on a
+[`NotRestoredReason API`](https://github.com/rubberyuzu/bfcache-not-retored-reason/blob/main/NotRestoredReason.md)
+to help expose the reasons why the bfcache was not used to help developers
+understand the reasoning the cache was not used and if this is something they
+can work on to improve for their sites.
 
 ### Performance measurement
 
@@ -487,7 +572,7 @@ type](https://www.w3.org/TR/navigation-timing-2/#sec-performance-navigation-type
 continue to monitor your performance within these navigation types—even if the
 overall distribution skews negative. This approach is recommended for
 non-user-centric page load metrics like [Time to First Byte
-(TTFB)](/time-to-first-byte/).
+(TTFB)](/ttfb/).
 
 For user-centric metrics like the [Core Web Vitals](/vitals/), a better option
 is to report a value that more accurately represents what the user experiences.
@@ -510,9 +595,9 @@ all, a user doesn't care whether or not bfcache was enabled, they just care that
 the navigation was fast!
 
 Tools like the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report),
-that collect and report on the Core Web Vitals metrics will soon be updated to
-treat bfcache restores as separate page visits in the dataset.
+Report](https://developer.chrome.com/docs/crux/),
+that collect and report on the Core Web Vitals metrics treat bfcache restores as
+separate page visits in their dataset.
 
 And while there aren't (yet) dedicated web performance APIs for measuring these
 metrics after bfcache restores, their values can be approximated using existing
@@ -527,7 +612,7 @@ web APIs.
     polyfill](https://github.com/GoogleChromeLabs/first-input-delay)) in the
     `pageshow` event, and report FID as the delay of the first input after the
     bfcache restore.
-*   For [Cumulative Layout Shift (CLS)](/fid/), you can continue to keep using
+*   For [Cumulative Layout Shift (CLS)](/cls/), you can continue to keep using
     your existing Performance Observer; all you have to do is reset the current
     CLS value to 0.
 
@@ -548,7 +633,7 @@ library](https://github.com/GoogleChrome/web-vitals/pull/87).
 ## Additional Resources
 
 *   [Firefox
-    Caching](https://developer.mozilla.org/en-US/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
+    Caching](https://developer.mozilla.org/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
     _(bfcache in Firefox)_
 *   [Page Cache](https://webkit.org/blog/427/webkit-page-cache-i-the-basics/)
     _(bfcache in Safari)_
@@ -558,3 +643,5 @@ library](https://github.com/GoogleChrome/web-vitals/pull/87).
 *   [bfcache
     tester](https://back-forward-cache-tester.glitch.me/?persistent_logs=1)
     _(test how different APIs and events affect bfcache in browsers)_
+*   [Performance Game Changer: Browser Back/Forward Cache](https://www.smashingmagazine.com/2022/05/performance-game-changer-back-forward-cache/)
+    _(a case study from Smashing Magazine showing dramatic Core Web Vitals improvements by enabling bfcache)_

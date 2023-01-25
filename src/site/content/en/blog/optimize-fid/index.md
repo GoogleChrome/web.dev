@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: A hand touching a smartphone screen
 description: |
@@ -37,11 +38,8 @@ simulated in a lab environment. **A real user interaction** is required in order
 response delay.
 
 <picture>
-  <source srcset="/vitals/fid_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="/vitals/fid_4x3.svg"
-      alt="Good FID scores are 2.5 seconds, poor scores are greater than 4.0
-            seconds and anything in between needs improvement.">
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96" %}
 </picture>
 
 To help predict FID in the [lab](/how-to-measure-speed/#lab-data-vs-field-data), we
@@ -58,7 +56,7 @@ browser can't respond to user interactions while the main thread is busy. To imp
 
 - [Break up Long Tasks](#long-tasks)
 - [Optimize your page for interaction readiness](#optimize-interaction-readiness)
-- [Use a web worker](#web-worker)
+- [Use a web worker](#use-a-web-worker)
 - [Reduce JavaScript execution time](#reduce-javascript-execution)
 
 ## Break up Long Tasks {: #long-tasks }
@@ -72,9 +70,9 @@ characterized as a Long Task. Long Tasks are a sign of
 potential JavaScript bloat (loading and executing more than a user may need right now).
 Splitting up long tasks can reduce input delay on your site.
 
-<figure class="w-figure">
-  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Long Tasks in Chrome DevTools", width="800", height="132", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualizes Long Tasks</a> in the Performance Panel</figcaption>
+<figure>
+  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Long Tasks in Chrome DevTools", width="800", height="132" %}
+  <figcaption>Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualizes Long Tasks</a> in the Performance Panel</figcaption>
 </figure>
 
 FID should improve noticeably as you adopt best practices like code-splitting and breaking up your
@@ -106,8 +104,7 @@ Below are the TBT scores before and after optimizing first-party script loading 
 application. By moving costly script loading (and execution) for a non-essential component off the
 critical path, users were able to interact with the page much sooner.
 
-<img class="w-screenshot" src="tbt-before-after-first-party.png"
-     alt="Improvements in TBT score in Lighthouse after optimizing the first-party script.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Improvements in TBT score in Lighthouse after optimizing the first-party script.", width="800", height="148" %}
 
 ### Data-fetching can impact many aspects of interaction readiness
 
@@ -129,7 +126,7 @@ critical path, users were able to interact with the page much sooner.
 ## Use a web worker
 
 A blocked main thread is one of the main causes of input delay. [Web
-workers](https://developer.mozilla.org/en-US/docs/Web/API/Worker) make it possible to run JavaScript
+workers](https://developer.mozilla.org/docs/Web/API/Worker) make it possible to run JavaScript
 on a background thread. Moving non-UI operations to a separate worker thread can cut down main
 thread blocking time and consequently improve FID.
 
@@ -163,10 +160,10 @@ an external JavaScript file, it must pause what it's doing and download, parse, 
 that JavaScript. Therefore you should only load the code that's needed for the page or
 responding to user input.
 
-The [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) tab in Chrome
+The [Coverage](https://developer.chrome.com/docs/devtools/coverage/) tab in Chrome
 DevTools can tell you how much JavaScript is not being used on your web page.
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="The Coverage tab.", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="The Coverage tab.", width="800", height="559" %}
 
 To cut down on unused JavaScript:
 
@@ -174,7 +171,7 @@ To cut down on unused JavaScript:
 - Defer any non-critical JavaScript, including third-party scripts, using `async` or `defer`
 
 **Code-splitting** is the concept of splitting a single large JavaScript bundle into smaller chunks
-that can be conditionally loaded (also known as lazy-loading).
+that can be conditionally loaded (also known as lazy loading).
 [Most newer browsers support dynamic import syntax](https://caniuse.com/#feat=es6-module-dynamic-import),
 which allows for module fetching on demand:
 
@@ -256,14 +253,14 @@ loads](/serve-modern-code-to-modern-browsers/) guide goes into more detail about
 
 A number of tools are available to measure and debug FID:
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) does not include
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) does not include
   support for FID since it is a field metric. However, [Total Blocking
   Time](/tbt/) (TBT) can be used as a proxy. Optimizations that improve TBT should
   also improve FID in the field.
 
-  {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309", class="w-screenshot" %}
+  {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
   provides real-world FID values aggregated at the origin-level
 
 _With thanks to Philip Walton, Kayce Basques, Ilya Grigorik, and Annie Sullivan for their reviews._

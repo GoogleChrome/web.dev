@@ -1,0 +1,55 @@
+setLeader: Test your knowledge of media features
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: |
+      A media query can check for a device at a specific width like `@media (width: 1024px)`?
+    options:
+      - content: "True"
+        rationale: "A specific width can only be accomplished by simultaneously checking for width above `1023px` and below `1025px`."
+      - content: "False"
+        rationale: "`min-width` and `max-width` are what is available."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: |
+      A media query can check for a device at a specific `aspect-ratio` like `@media (aspect-ratio: 4/3)`?
+    options:
+      - content: "True"
+        rationale: "Unique to aspect ratio, a single ratio can be matched."
+      - content: "False"
+        rationale: "This option does exist for `aspect-ratio`."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,2,3,4"
+    stem: |
+      Which are valid color media queries?
+    options:
+      - content: "`@media (color)`"
+        rationale: "Matches any color device."
+      - content: "`@media (monochrome)`"
+        rationale: "Matches any device without color capability."
+      - content: "`@media (color-gamut: srgb)`"
+        rationale: "Matches devices with sRGB color capability."
+      - content: "`@media (min-color-index: 15000)`"
+        rationale: "Matches devices with at least 15k colors available."
+      - content: "`@media (dynamic-range: high)`"
+        rationale: "Matches devices capable of HD color ranges."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,2,3"
+    stem: |
+      Which of the following user preference media queries are valid?
+    options:
+      - content: "`@media (prefers-color-scheme: dark)`"
+        rationale: "Matches when a user has their operating system set to dark mode."
+      - content: "`@media (prefers-colors: high-definition)`"
+        rationale: "Not real."
+      - content: "`@media (prefers-reduced-motion: reduce)`"
+        rationale: "Matches when a user has their operating system set to reduce motion."
+      - content: "`@media (prefers-contrast: more)`"
+        rationale: "Matches when a user has their operating system set to higher contrasts."
+      - content: "`@media (prefers-site-speed: fast)`"
+        rationale: "Not real."

@@ -1,0 +1,15 @@
+@media (prefers-reduced-motion:no-preference) {
+  [letter-animation=hover]:hover>span {
+    transform: scale(.75) perspective(1px)
+  }
+
+  [letter-animation=hover]>span {
+    transition: transform .3s ease;
+    cursor: pointer;
+    will-change: transform
+  }
+
+  [letter-animation=hover]>span:hover {
+    transform: scale(1.25) perspective(1px)
+  }
+}

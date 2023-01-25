@@ -53,7 +53,7 @@ You can now return the FCP in the response text. The new code will look like thi
 
 ![image](step1.png)
 
-Now reload `labtest.html` and click the button. You should see the time taken to [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint) (FCP) of the first load in a window alert. If you feel that the FCP is still quite fast, this is because you haven't throttled the network and CPU yet. Insert this before the two lines you just added:
+Now reload `labtest.html` and click the button. You should see the time taken to [First Contentful Paint](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/) (FCP) of the first load in a window alert. If you feel that the FCP is still quite fast, this is because you haven't throttled the network and CPU yet. Insert this before the two lines you just added:
 
 ```js
 //throttle network and CPU
@@ -91,7 +91,7 @@ And the output should look like this:
 ![image](step2_result.png)
 
 Instead of measuring the sum of the full page loads, you can also sum up FCP if you like, or whatever else you consider most meaningful.
-Now you'll inject JavaScript into the pages loaded via Puppeteer to extract the sum of [long tasks](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API): tasks that take 50 milliseconds or more. Define a function to be executed for new documents to measure long tasks and track them on a global variable:
+Now you'll inject JavaScript into the pages loaded via Puppeteer to extract the sum of [long tasks](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API): tasks that take 50 milliseconds or more. Define a function to be executed for new documents to measure long tasks and track them on a global variable:
 
 ```js
 page.evaluateOnNewDocument(function() {
@@ -122,7 +122,7 @@ We strongly recommend that you build measurement scripts like this for your most
 ## Build the field test
 
 While lab data is always helpful, you need to collect the same metrics from real usage, and potentially also make the data visible to stakeholders and decision makers.
-In your project, open the empty file  `perfoverlay.js`. You'll start by creating a new [PerformanceObserver](https://developers.google.com/web/updates/2016/06/performance-observer) and tell it what to measure. For simplicity you'll stick to the same metrics you collected in the lab test, but you can easily extend this for your own projects. For now you'll listen for FCP, long tasks and load events. Add the following code to the empty file `perfoverlay.js`:
+In your project, open the empty file  `perfoverlay.js`. You'll start by creating a new [PerformanceObserver](https://developer.chrome.com/blog/performance-observer) and tell it what to measure. For simplicity you'll stick to the same metrics you collected in the lab test, but you can easily extend this for your own projects. For now you'll listen for FCP, long tasks and load events. Add the following code to the empty file `perfoverlay.js`:
 
 ```js
 const observer = new PerformanceObserver((list) => {

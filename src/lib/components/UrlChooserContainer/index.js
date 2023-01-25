@@ -1,6 +1,6 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseStateElement} from '../BaseStateElement';
-import {requestRunLighthouse} from '../../actions';
+import {requestRunPSI, setLighthouseError} from '../../actions';
 import '../UrlChooser';
 
 /**
@@ -19,7 +19,6 @@ class UrlChooserContainer extends BaseStateElement {
 
   constructor() {
     super();
-
     this.url = null; // when signed out or waiting for Firestore, this is null
     this.active = false;
   }
@@ -31,6 +30,7 @@ class UrlChooserContainer extends BaseStateElement {
         .disabled=${this.active}
         .hasError=${this.hasError}
         @audit=${this.runAudit}
+        @web-error=${this.onError}
       ></web-url-chooser>
     `;
   }
@@ -49,7 +49,11 @@ class UrlChooserContainer extends BaseStateElement {
 
   runAudit(e) {
     const url = e.detail;
-    requestRunLighthouse(url);
+    requestRunPSI(url);
+  }
+
+  onError(e) {
+    setLighthouseError(e.detail);
   }
 }
 

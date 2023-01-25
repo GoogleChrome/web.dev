@@ -23,9 +23,9 @@ them separately. First up, caching, when should it be done?
 
 ### On install—as a dependency {: #on-install-as-dependency }
 
-<figure class="w-figure">
-  <img src="./cm-on-install-dep.png" alt="On install - as a dependency.">
-  <figcaption class="w-figcaption">On install - as a dependency.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="On install - as a dependency.", width="800", height="498" %}
+  <figcaption>On install - as a dependency.</figcaption>
 </figure>
 
 Service Worker gives you an `install` event. You can use this to get stuff ready, stuff that must be
@@ -36,7 +36,7 @@ is still running and serving pages, so the things you do here mustn't disrupt th
 "version" of your site.
 
 These are things that would make your site entirely non-functional if they failed to be fetched, things
-an equivalent native-app would make part of the initial download.
+an equivalent platform-specific app would make part of the initial download.
 
 ```js
 self.addEventListener('install', function (event) {
@@ -64,9 +64,9 @@ On [trained-to-thrill][ttt] I use this to
 
 ### On install—not as a dependency {: #on-install-not }
 
-<figure class="w-figure">
-  <img src="./cm-on-install-not.png" alt="On install - not as a dependency.">
-  <figcaption class="w-figcaption">On install - not as a dependency.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="On install - not as a dependency.", width="800", height="500" %}
+  <figcaption>On install - not as a dependency.</figcaption>
 </figure>
 
 This is similar to above, but won't delay install completing and won't cause installation to fail if caching
@@ -99,15 +99,15 @@ missing.
 
 The Service Worker may be killed while levels 11–20 download since it's finished handling events,
 meaning they won't be cached. In future the
-[Web Periodic Background Synchronization API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API)
+[Web Periodic Background Synchronization API](https://developer.mozilla.org/docs/Web/API/Web_Periodic_Background_Synchronization_API)
 will handle cases like this, and larger downloads such as movies. That API is currently only
 supported on Chromium forks.
 
 ### On activate {: #on-activate }
 
-<figure class="w-figure">
-  <img src="./cm-on-activate.png" alt="On activate.">
-  <figcaption class="w-figcaption">On activate.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="On activate.", width="800", height="500" %}
+  <figcaption>On activate.</figcaption>
 </figure>
 
 **Ideal for:** clean-up and migration.
@@ -115,7 +115,7 @@ supported on Chromium forks.
 Once a new Service Worker has installed and a previous version isn't being used, the new one
 activates, and you get an `activate` event. Because the old version is out of the way, it's a good
 time to handle
-[schema migrations in IndexedDB](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)
+[schema migrations in IndexedDB](/indexeddb-best-practices/)
 and also delete unused caches.
 
 ```js
@@ -147,9 +147,9 @@ On [trained-to-thrill][ttt] I use this to
 
 ### On user interaction {: #on-user-interaction }
 
-<figure class="w-figure">
-  <img src="./cm-on-user-interaction.png" alt="On user interaction.">
-  <figcaption class="w-figcaption">On user interaction.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="On user interaction.", width="800", height="222" %}
+  <figcaption>On user interaction.</figcaption>
 </figure>
 
 **Ideal for:** when the whole site can't be taken offline, and you chose to allow the user to select
@@ -178,14 +178,14 @@ document.querySelector('.cache-article').addEventListener('click', function (eve
 });
 ```
 
-The [caches API][caches_api] is available from pages as well as service workers, meaning you don't
-need to involve the service worker to add things to the cache.
+The [caches API][caches_api] is available from pages as well as service workers, meaning you
+can add to the cache directly from the page.
 
 ### On network response {: #on-network-response }
 
-<figure class="w-figure">
-  <img src="./cm-on-network-response.png" alt="On network response.">
-  <figcaption class="w-figcaption">On network response.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="On network response.", width="800", height="390" %}
+  <figcaption>On network response.</figcaption>
 </figure>
 
 **Ideal for:** frequently updating resources such as a user's inbox, or article contents. Also
@@ -225,9 +225,9 @@ On [trained-to-thrill][ttt] I use this to
 
 ### Stale-while-revalidate {: #stale-while-revalidate }
 
-<figure class="w-figure">
-  <img src="./cm-stale-while-revalidate.png" alt="Stale-while-revalidate.">
-  <figcaption class="w-figcaption">Stale-while-revalidate.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Stale-while-revalidate.", width="800", height="388" %}
+  <figcaption>Stale-while-revalidate.</figcaption>
 </figure>
 
 **Ideal for:** frequently updating resources where having the very latest version is non-essential.
@@ -255,12 +255,12 @@ This is very similar to HTTP's [stale-while-revalidate](https://www.mnot.net/blo
 
 ### On push message {: #on-push-message }
 
-<figure class="w-figure">
-  <img src="./cm-on-push.png" alt="On push message.">
-  <figcaption class="w-figcaption">On push message.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="On push message.", width="800", height="498" %}
+  <figcaption>On push message.</figcaption>
 </figure>
 
-The [Push API](/web/fundamentals/push-notifications) is another feature built on top of
+The [Push API](/push-notifications/) is another feature built on top of
 Service Worker. This allows the Service Worker to be awoken in response to a message from the OS's
 messaging service. This happens even when the user doesn't have a tab open to your site. Only the
 Service Worker is woken up. You request permission to do this from a page and the user will be
@@ -313,12 +313,12 @@ self.addEventListener('notificationclick', function (event) {
 
 ### On background-sync {: #on-background-sync }
 
-<figure class="w-figure">
-  <img src="./cm-on-bg-sync.png" alt="On background-sync.">
-  <figcaption class="w-figcaption">On background-sync.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="On background-sync.", width="800", height="219" %}
+  <figcaption>On background-sync.</figcaption>
 </figure>
 
-[Background sync](/web/updates/2015/12/background-sync) is another feature built on top of
+[Background sync](https://developer.chrome.com/blog/background-sync/) is another feature built on top of
 Service Worker. It allows you to request background data synchronization as a one-off, or on an
 (extremely heuristic) interval. This happens even when the user doesn't have a tab open to your
 site. Only the Service Worker is woken up. You request permission to do this from a page and the user
@@ -343,10 +343,10 @@ self.addEventListener('sync', function (event) {
 
 Your origin is given a certain amount of free space to do what it wants with. That free space is
 shared between all origin storage:
-[(local) Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage),
-[IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB),
-[File System Access](https://web.dev/file-system-access/), and of course
-[Caches](https://developer.mozilla.org/en-US/docs/Web/API/Cache).
+[(local) Storage](https://developer.mozilla.org/docs/Web/API/Storage),
+[IndexedDB](https://developer.mozilla.org/docs/Glossary/IndexedDB),
+[File System Access](/file-system-access/), and of course
+[Caches](https://developer.mozilla.org/docs/Web/API/Cache).
 
 The amount you get isn't spec'd. It will differ depending on device and storage conditions. You can
 find out how much you've got via:
@@ -365,7 +365,7 @@ under storage pressure. Unfortunately the browser can't tell the difference betw
 want to keep at all costs, and the game you don't really care about.
 
 To work around this, use the
-[StorageManager](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager) interface:
+[StorageManager](https://developer.mozilla.org/docs/Web/API/StorageManager) interface:
 
 ```js
 // From a page:
@@ -385,7 +385,7 @@ can now expect them to be in control of deletion. If their device comes under st
 clearing non-essential data doesn't solve it, the user gets to judge which items to keep and
 remove.
 
-For this to work, it requires operating systems to treat "durable" origins as equivalent to native
+For this to work, it requires operating systems to treat "durable" origins as equivalent to platform-specific
 apps in their breakdowns of storage usage, rather than reporting the browser as a single item.
 
 ## Serving Suggestions—responding to requests {: #serving-suggestions }
@@ -395,9 +395,9 @@ when and how. Here are a few patterns for handling requests:
 
 ### Cache only {: #cache-only }
 
-<figure class="w-figure">
-  <img src="./ss-cache-only.png" alt="Cache only.">
-  <figcaption class="w-figcaption">Cache only.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="Cache only.", width="800", height="272" %}
+  <figcaption>Cache only.</figcaption>
 </figure>
 
 **Ideal for:** anything you'd consider static to a particular "version" of your site. You should
@@ -416,9 +416,9 @@ self.addEventListener('fetch', function (event) {
 
 ### Network only {: #network-only }
 
-<figure class="w-figure">
-  <img src="./ss-network-only.png" alt="Network only.">
-  <figcaption class="w-figcaption">Network only.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="Network only.", width="800", height="272" %}
+  <figcaption>Network only.</figcaption>
 </figure>
 
 **Ideal for:** things that have no offline equivalent, such as analytics pings, non-GET requests.
@@ -436,9 +436,9 @@ self.addEventListener('fetch', function (event) {
 
 ### Cache, falling back to network {: #cache-falling-back-to-network }
 
-<figure class="w-figure">
-  <img src="./ss-falling-back-to-network.png" alt="Cache, falling back to network.">
-  <figcaption class="w-figcaption">Cache, falling back to network.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="Cache, falling back to network.", width="800", height="395" %}
+  <figcaption>Cache, falling back to network.</figcaption>
 </figure>
 
 **Ideal for:** building offline-first. In such cases, this is how you'll handle the majority of
@@ -459,9 +459,9 @@ for anything not-cached (which includes all non-GET requests, as they cannot be 
 
 ### Cache and network race {: #cache-and-network-race }
 
-<figure class="w-figure">
-  <img src="./ss-cache-and-network-race.png" alt="Cache and network race.">
-  <figcaption class="w-figcaption">Cache and network race.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="Cache and network race.", width="800", height="427" %}
+  <figcaption>Cache and network race.</figcaption>
 </figure>
 
 **Ideal for:** small assets where you're chasing performance on devices with slow disk access.
@@ -492,9 +492,9 @@ self.addEventListener('fetch', function (event) {
 
 ### Network falling back to cache {: #network-falling-back-to-cache }
 
-<figure class="w-figure">
-  <img src="./ss-network-falling-back-to-cache.png" alt="Network falling back to cache.">
-  <figcaption class="w-figcaption">Network falling back to cache.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="Network falling back to cache.", width="800", height="388" %}
+  <figcaption>Network falling back to cache.</figcaption>
 </figure>
 
 **Ideal for:** a quick-fix for resources that update frequently, outside of the "version" of the
@@ -521,9 +521,9 @@ self.addEventListener('fetch', function (event) {
 
 ### Cache then network {: #cache-then-network }
 
-<figure class="w-figure">
-  <img src="./ss-cache-then-network.png" alt="Cache then network.">
-  <figcaption class="w-figcaption">Cache then network.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Cache then network.", width="800", height="478" %}
+  <figcaption>Cache then network.</figcaption>
 </figure>
 
 **Ideal for:** content that updates frequently. E.g. articles, social media timelines, and games.
@@ -604,9 +604,9 @@ and abusing the Accept header to tell the Service Worker where to get the result
 
 ### Generic fallback {: #generic-fallback }
 
-<figure class="w-figure">
-  <img src="./ss-generic-fallback.png" alt="Generic fallback.">
-  <figcaption class="w-figcaption">Generic fallback.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="Generic fallback.", width="800", height="389" %}
+  <figcaption>Generic fallback.</figcaption>
 </figure>
 
 If you fail to serve something from the cache and/or network you may want to provide a generic
@@ -644,9 +644,9 @@ retained.
 
 ### Service worker-side templating {: #Service Worker-side-templating }
 
-<figure class="w-figure">
-  <img src="./ss-sw-side-templating.png" alt="ServiceWorker-side templating.">
-  <figcaption class="w-figcaption">ServiceWorker-side templating.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="ServiceWorker-side templating.", width="800", height="463" %}
+  <figcaption>ServiceWorker-side templating.</figcaption>
 </figure>
 
 **Ideal for:** pages that cannot have their server response cached.
@@ -763,10 +763,10 @@ before I hit "publish".
 
 - [Service Workers—an Introduction][sw_primer]
 - [Is Service Worker ready?][is_sw_ready]—track the implementation status across the main browsers
-- [JavaScript Promises—an Introduction](/web/fundamentals/getting-started/primers/promises) - guide
+- [JavaScript Promises—an Introduction](/promises) - guide
   to promises
 
 [ttt]: https://jakearchibald.github.io/trained-to-thrill/
 [is_sw_ready]: https://jakearchibald.github.io/isserviceworkerready/
 [sw_primer]: /service-workers-cache-storage/
-[caches_api]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
+[caches_api]: https://developer.mozilla.org/docs/Web/API/Cache

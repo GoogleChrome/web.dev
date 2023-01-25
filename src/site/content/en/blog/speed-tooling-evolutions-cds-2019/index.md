@@ -4,6 +4,7 @@ subhead: New performance metrics, updates to PageSpeed Insights and Chrome User 
 authors:
   - egsweeny
 date: 2019-12-16
+updated: 2022-07-18
 description: |
   Read about the latest developments in speed tooling including new performance metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX), and insights from Web Almanac analysis of the web ecosystem.
 hero: image/admin/lWKSX0b7pvSUX1BDd3IH.jpg
@@ -39,7 +40,7 @@ metric](/user-centric-performance-metrics/#in-the-lab)—[Total Blocking Time
 content element becomes visible in the viewport.
 
 Before Largest Contentful Paint, [First Meaningful Paint
-(FMP)](/first-meaningful-paint/) and [Speed Index (SI)](/speed-index/) served to
+(FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) and [Speed Index (SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) served to
 capture the loading experience after the initial paint, but these metrics are
 complex and often do not identify when the main content of the page has loaded.
 Research has shown that simply looking at when [the largest element on the
@@ -53,23 +54,23 @@ JavaScript](/lcp/#measure-lcp-in-javascript).
 ### Total Blocking Time (TBT)
 
 [Total Blocking Time (TBT)](/tbt/) metric measures the total amount of time
-between [First Contentful Paint (FCP)](/first-contentful-paint/) and [Time to
-Interactive (TTI)](/interactive/) where the main thread was blocked for long
+between [First Contentful Paint (FCP)](/fcp/) and [Time to
+Interactive (TTI)](/tti/) where the main thread was blocked for long
 enough to prevent input responsiveness.
 
 A [task is considered long](/custom-metrics/#long-tasks-api) if it runs on the
 main thread for more than 50 milliseconds. Any millisecond over that is counted
 towards that task's blocking time.
 
-<figure class="w-figure">
-  {% Img src="image/admin/73CEd4i55qCVQKdOb6iK.png", alt="A diagram representing a 150 millisecond task which has 100 miliseconds of blocking time.", width="633", height="292", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/73CEd4i55qCVQKdOb6iK.png", alt="A diagram representing a 150 millisecond task which has 100 miliseconds of blocking time.", width="633", height="292" %}
 </figure>
 
 The Total Blocking Time for a page is the sum of the blocking times of all long
 tasks that occured between FCP and TTI.
 
-<figure class="w-figure">
-  {% Img src="image/admin/OGlrzhJ7ViNsywtZmUAh.png", alt="A diagram representing a five tasks with 60 miliseconds of total blocking time out of 270 milliseconds of main thread time.", width="800", height="236", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/OGlrzhJ7ViNsywtZmUAh.png", alt="A diagram representing a five tasks with 60 miliseconds of total blocking time out of 270 milliseconds of main thread time.", width="800", height="236" %}
 </figure>
 
 While Time to Interactive does a good job of identifying when the main thread
@@ -84,19 +85,17 @@ quantifies how often users experience unexpected layout shifts. Unexpected
 movement of content can be very frustrating and this new metric helps you
 address that problem by measuring how often it's occurring for your users.
 
-<figure class="w-figure">
-  <video autoplay controls loop muted
-    class="w-screenshot"
-    poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
-    width="658" height="510">
-    <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm"
-      type="video/webm; codecs=vp8">
-    <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure>
+    {% Video
+      src=["../web-dev-assets/layout-instability-api/layout-instability2.webm", "../web-dev-assets/layout-instability-api/layout-instability2.mp4"],
+      poster="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/rlKRnotLRXcqmirMCkIa.png",
+      width=658,
+      height=510,
+      autoplay=true,
+      controls=true,
+      loop=true,
+      muted=true %}
+  <figcaption>
     A screencast illustrating how layout instability can negatively affect
     users.
   </figcaption>
@@ -109,23 +108,18 @@ The new Lighthouse performance score formula will soon de-emphasize FMP and FCI
 and include the three new metrics—LCP, TBT, and CLS—as they better capture when
 a page feels usable.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./performance-metrics.png"
-       alt="In Lighthouse v6 First Contentful Paint, Speed Index, and Largest
-            Contentful Paint are the main load performance metrics; Time To Interactive,
-            First Input Delay, Max Potential First Input Delay, and Total Blocking Time are
-            the main interactivity metrics; And Cumulative Layout Shift is the main
-            predictability metric.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wB1bqc1tymL2uPuDgqpP.png", alt="In Lighthouse v6 First Contentful Paint, Speed Index, and Largest Contentful Paint are the main load performance metrics; Time To Interactive, First Input Delay, Max Potential First Input Delay, and Total Blocking Time are the main interactivity metrics; And Cumulative Layout Shift is the main predictability metric.", width="800", height="375" %}
 </figure>
 
-Check out [Lighthouse performance scoring](/performance-scoring/) and the new
+Check out [Lighthouse performance scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) and the new
 [web.dev metrics collection](/metrics/) to learn more.
 
 ## Field data (CrUX) thresholds adjusted in PageSpeed Insights
 
 Over the past year we have been analyzing [web performance from the
 field](/user-centric-performance-metrics/#in-the-field) via [Chrome User
-Experience](https://developers.google.com/web/tools/chrome-user-experience-report)
+Experience](https://developer.chrome.com/docs/crux/)
 (CrUX) data. With insights from that data we reassessed the thresholds that we
 use to label a website "slow", "moderate", or "fast" in field performance.
 
@@ -133,9 +127,8 @@ use to label a website "slow", "moderate", or "fast" in field performance.
 "slow" and "fast" is now changed to "moderate" which is more fitting since this
 middle group was not related to a statistical average. {% endAside %}
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./crux-data.png" alt="Two bar charts showing
-  the distribution of slow, fast, and moderate speed for FCP and FID.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jvGzonBGrlqZD2LtzaPB.png", alt="Two bar charts showing the distribution of slow, fast, and moderate speed for FCP and FID.", width="748", height="200" %}
 </figure>
 
 In order to get an overall assessment for a site, [PageSpeed Insights
@@ -175,9 +168,8 @@ PageSpeed Insights team has added a reanalyze prompt to PSI. For sites that are
 redirected to a new URL, you're prompted to rerun the report on the landing URL
 for a more complete picture of your actual performance.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./psi-reanalyze.png" alt="PSI user interface
-  showing the URL redirect and the 'Reanalyze' button">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K299AL6Ni7dO5W4ksqXF.png", alt="PSI user interface showing the URL redirect and the 'Reanalyze' button", width="800", height="223" %}
 </figure>
 
 ## CrUX in the new Search Console Speed report
@@ -190,16 +182,14 @@ Speed report automatically assigns groups of similar URLs into "Fast",
 "Moderate," and "Slow" buckets, and helps prioritize performance improvements
 for specific issues.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./search-console-speed-report.png" alt="Search
-  Console Speed report.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ny8QAjPaET6sIUX4z3Pz.png", alt="Search Console Speed report.", width="800", height="801" %}
 </figure>
 
 ## Web Almanac
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./web-almanac-at-cds-2019.png" alt="Dion Almaer
-  presenting Web Almanac at CDS 2019.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lVldn64qc3gc5UDHeMBo.png", alt="Dion Almaer presenting Web Almanac at CDS 2019.", width="800", height="450" %}
 </figure>
 
 In the opening keynote we announced the launch of the [Web

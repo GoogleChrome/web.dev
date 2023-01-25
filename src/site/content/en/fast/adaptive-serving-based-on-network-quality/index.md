@@ -20,12 +20,10 @@ with a laptop on slow coffee-shop Wi-Fi, it's a different story.
 
 One way to deal with this is by adapting which assets you're serving to users
 based on the quality of their connection. This is now possible with the
-[Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API)
+[Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)
 which enables web applications to access information about the user's network.
 
-{% Aside %}
-  You can see which browsers support [the Network Information API on caniuse.com](https://caniuse.com/#feat=netinfo).
-{% endAside %}
+{% BrowserCompat 'api.NetworkInformation' %}
 
 ## Usage
 
@@ -47,8 +45,8 @@ Netflix and most other video (or video calling) services automatically adjust
 the resolution during streaming. When Gmail is loading, it provides users with a
 link to "load basic HTML (for slow connections)".
 
-<figure class="w-figure">
-  {% Img src="image/admin/zSTd1IMrb3UJfefdeRAt.png", alt="A link to load basic HTML version of Gmail when users are on slow connections", width="528", height="236", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/zSTd1IMrb3UJfefdeRAt.png", alt="A link to load basic HTML version of Gmail when users are on slow connections", width="528", height="236" %}
 </figure>
 
 ## How it works
@@ -56,7 +54,7 @@ link to "load basic HTML (for slow connections)".
 The `navigator.connection` object contains information about a client's
 connection. Its properties are explained in the table bellow.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>Property</th>
@@ -87,7 +85,7 @@ connection. Its properties are explained in the table bellow.
 
 Here's what this looks like when you run it in the browser's console:
 
-{% Img src="image/admin/ayW8uxhh3S6I4MTipr0m.jpg", alt="Chrome DevTools console displaying the values of navigator.connection object's properties", width="800", height="523", class="w-screenshot" %}
+{% Img src="image/admin/ayW8uxhh3S6I4MTipr0m.jpg", alt="Chrome DevTools console displaying the values of navigator.connection object's properties", width="800", height="523" %}
 
 The `effectiveType` values are also available via
 [Client Hints](https://www.chromestatus.com/feature/5407907378102272)
@@ -95,7 +93,7 @@ and allow you to communicate the browser's connection type to servers.
 
 {% Aside %}
 You can access Network Information API inside
-[Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker)
+[Service Workers](https://developer.mozilla.org/docs/Web/API/ServiceWorker)
 to adapt to situations when users are offline.
 {% endAside %}
 

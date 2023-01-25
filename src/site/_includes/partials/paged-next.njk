@@ -1,0 +1,27 @@
+{% from 'macros/post-card.njk' import postCard with context %}
+
+<div class="region">
+  <div class="wrapper auto-grid">
+    {% for element in paged.elements %}
+      {% set data = element.data %}
+      {# The `alt` property fallsback onto the element's
+      title in cases like authors or tags which do not have an alt. #}
+      {{ postCard({
+        title: data.title,
+        subhead: data.subhead,
+        url: element.url,
+        thumbnail: data.thumbnail or data.hero,
+        alt: data.alt or data.title or '',
+        authors: data.authors,
+        tags: data.tags,
+        date: element.date,
+        updated: data.updated,
+        draft: data.draft
+      }) }}
+    {% endfor %}
+  </div>
+
+  <div class="wrapper gap-top-size-3">
+    {% include "partials/pagination-next.njk" %}
+  </div>
+</div>

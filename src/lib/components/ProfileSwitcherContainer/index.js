@@ -1,5 +1,6 @@
-import {html} from 'lit-element';
-import {signIn} from '../../fb';
+import {html} from 'lit';
+import {initialize, signIn} from '../../fb';
+import {store} from '../../store';
 import {BaseStateElement} from '../BaseStateElement';
 import '../ProfileSwitcher';
 
@@ -7,10 +8,19 @@ import '../ProfileSwitcher';
 class ProfileSwitcherContainer extends BaseStateElement {
   static get properties() {
     return {
-      checkingSignedInState: {type: Boolean},
       isSignedIn: {type: Boolean},
       user: {type: Object},
     };
+  }
+
+  constructor() {
+    super();
+
+    // Initialize Firebase auth eagerly if the user was previously signed in.
+    // Otherwise auth will be initialized when clicking the sign-in button.
+    if (store.getState().isSignedIn) {
+      initialize();
+    }
   }
 
   render() {
@@ -22,18 +32,11 @@ class ProfileSwitcherContainer extends BaseStateElement {
     }
 
     return html`
-      <button
-        class="w-profile-signin"
-        .disabled=${this.checkingSignedInState}
-        @click="${signIn}"
-      >
-        Sign in
-      </button>
+      <button class="w-profile-signin" @click="${signIn}">Sign in</button>
     `;
   }
 
-  onStateChanged({checkingSignedInState, isSignedIn, user}) {
-    this.checkingSignedInState = checkingSignedInState;
+  onStateChanged({isSignedIn, user}) {
     this.isSignedIn = isSignedIn;
     this.user = user;
   }

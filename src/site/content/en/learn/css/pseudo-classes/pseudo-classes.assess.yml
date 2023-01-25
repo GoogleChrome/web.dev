@@ -1,0 +1,65 @@
+setLeader: Test your knowledge of pseudo classes
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: |
+      Pseudo-classes act as if a class has been dynamically applied to an element, while pseudo-elements act on an element itself.
+    options:
+      - content: "True"
+        rationale: "Watch for the use of a single or double `:` as a key
+        distinguishing character in the selector"
+      - content: "False"
+        rationale: "Pseudo-elements are for parts, Pseudo-classes are for
+        state."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,3"
+    stem: Which of the following are a *functional* pseudo-class?
+    options:
+      - content: "`:is()`"
+        rationale: "🎉"
+      - content: "`:target`"
+        rationale: "Functional pseudo-classes have `()` after them, to indicate
+        they accept paremeters."
+      - content: "`:empty`"
+        rationale: "Functional pseudo-classes have `()` after them, to indicate
+        they accept paremeters."
+      - content: "`:not()`"
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,3,4"
+    stem: Which of the following pseudo-classes are due to a user-interaction?
+    options:
+      - content: "`:hover`"
+        rationale: "🎉"
+      - content: "`:press`"
+        rationale: "Try again!"
+      - content: "`:squeeze`"
+        rationale: "Try again!"
+      - content: "`:target`"
+        rationale: "🎉"
+      - content: "`:focus-within`"
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,2,3,4,6"
+    stem: "Which of the following are `<form>` state pseudo classes?"
+    options:
+      - content: "`:enabled`"
+        rationale: "🎉"
+      - content: "`:fresh`"
+        rationale: "Try again!"
+      - content: "`:indeterminate`"
+        rationale: "🎉"
+      - content: "`:checked`"
+        rationale: "🎉"
+      - content: "`:in-range`"
+        rationale: "🎉"
+      - content: "`:loading`"
+        rationale: "Try again!"
+      - content: "`:valid`"
+        rationale: "🎉"

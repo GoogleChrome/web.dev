@@ -1,0 +1,15 @@
+<div class="flow">
+  {% for item in data.items %}
+  <label class="cluster gutter-base" for="{{ item.id }}">
+    <!--prettier-ignore-->
+    <input
+      type="radio"
+      id="{{ item.id }}"
+      name="{{ data.group }}"
+      value="{{ item.value }}"
+      {% if item.checked %}checked{% endif %}
+    />
+    <span>{{ item.label }}</span>
+  </label>
+  {% endfor %}
+</div>

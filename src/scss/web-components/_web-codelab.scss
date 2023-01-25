@@ -1,0 +1,32 @@
+.web-codelab {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: $global-gutter get-space('size-1');
+  padding: $global-gutter;
+
+  .prose {
+    width: inherit;
+  }
+
+  @media (min-width: 1000px) {
+    display: grid;
+    gap: 0;
+    grid-template-columns: minmax(0px, 600px) minmax(0px, 100%);
+
+    .web-codelab__glitch-container {
+      position: sticky;
+      top: calc(#{$global-gutter} / 2);
+      height: calc(100vh - #{$global-gutter});
+
+      .web-codelab__glitch-iframe {
+        height: 100%;
+        width: 100%;
+        border: 0;
+
+        &.web-codelab__glitch-snapshot {
+          background-color: red;
+        }
+      }
+    }
+  }
+}

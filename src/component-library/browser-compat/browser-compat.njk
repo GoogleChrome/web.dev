@@ -1,0 +1,17 @@
+<figure class="browser-compat cluster">
+  <figcaption class="browser-compat__label">{{ data.label }}</figcaption>
+  <ul class="browser-compat__items cluster" role="list">
+    {% for item in data.items %}
+    <li class="tooltip">
+      <span class="tooltip__content">{{ item.label }}</span>
+      <div class="browser-compat__item" aria-hidden="true">
+        <img src="/images/icons/{{ item.image }}" alt="{{ item.name }}" />
+        <span class="indicator {{ item.indicator.utilities }}">{{ item.indicator.content }}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+	<p>
+    <a href="{{ data.link.url }}" target="_blank">{{ data.link.text }}</a>
+	</p>
+</figure>

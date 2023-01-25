@@ -1,3 +1,6 @@
 !/.*
+.tmp/*
 dist/*
 types/*
+/src/site/content/en/patterns/**
+/src/site/content/en/third_party/**

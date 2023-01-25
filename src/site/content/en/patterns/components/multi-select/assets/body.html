@@ -1,0 +1,160 @@
+<main>
+  <header>
+    <h1>Lighting</h1>
+    <small>Find your perfect light</small>
+  </header>
+  <aside>
+    <form>
+      <select multiple="true" title="Filter results by category">
+        <optgroup label="New">
+          <option value="last 30 days">Last 30 Days</option>
+          <option value="last 6 months">Last 6 Months</option>
+        </optgroup>
+        <optgroup label="Lamps">
+          <option value="table lamps">Table Lamps</option>
+          <option value="desk lamps">Desk Lamps</option>
+          <option value="floor lamps">Floor Lamps</option>
+        </optgroup>
+        <optgroup label="Ceiling">
+          <option value="chandeliers">Chandeliers</option>
+          <option value="pendant">Pendant</option>
+          <option value="flush">Flush</option>
+          <option value="fans">Fans</option>
+        </optgroup>
+        <optgroup label="By Room">
+          <option value="bedroom">Bedroom</option>
+          <option value="dining room">Dining Room</option>
+          <option value="kitchen">Kitchen</option>
+          <option value="living room">Living Room</option>
+          <option value="bathroom">Bathroom</option>
+          <option value="entryway">Entryway</option>
+          <option value="outdoor">Outdoor</option>
+        </optgroup>
+        <optgroup label="Kids">
+          <option value="lamps">Lamps</option>
+          <option value="night lights">Night Lights</option>
+          <option value="ceiling">Ceiling</option>
+        </optgroup>
+      </select>
+      
+      <fieldset>
+        <legend>New</legend>
+        <div>
+          <input type="checkbox" id="last-30-days" name="new" value="last 30 days">
+          <label for="last-30-days">Last 30 Days</label>
+        </div>
+        <div>
+          <input type="checkbox" id="last-6-months" name="new" value="last 6 months">
+          <label for="last-6-months">Last 6 Months</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Lamps</legend>
+        <div>
+          <input type="checkbox" id="table-lamps" name="lamps" value="table lamps">
+          <label for="table-lamps">Table Lamps</label>
+        </div>
+        <div>
+          <input type="checkbox" id="desk-lamps" name="lamps" value="desk lamps">
+          <label for="desk-lamps">Desk Lamps</label>
+        </div>
+        <div>
+          <input type="checkbox" id="floor-lamps" name="lamps" value="floor lamps">
+          <label for="floor-lamps">Floor Lamps</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Ceiling</legend>
+        <div>
+          <input type="checkbox" id="chandeliers" name="ceiling" value="chandeliers">
+          <label for="chandeliers">Chandeliers</label>
+        </div>
+        <div>
+          <input type="checkbox" id="pendant" name="ceiling" value="pendant">
+          <label for="pendant">Pendant</label>
+        </div>
+        <div>
+          <input type="checkbox" id="flush" name="ceiling" value="flush">
+          <label for="flush">Flush</label>
+        </div>
+        <div>
+          <input type="checkbox" id="fans" name="ceiling" value="fans">
+          <label for="fans">Fans</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>By Room</legend>
+        <div>
+          <input type="checkbox" id="bedroom" name="by room" value="bedroom">
+          <label for="bedroom">Bedroom</label>
+        </div>
+        <div>
+          <input type="checkbox" id="dining-room" name="by room" value="dining room">
+          <label for="dining-room">Dining Room</label>
+        </div>
+        <div>
+          <input type="checkbox" id="kitchen" name="by room" value="kitchen">
+          <label for="kitchen">Kitchen</label>
+        </div>
+        <div>
+          <input type="checkbox" id="living-room" name="by room" value="living room">
+          <label for="living-room">Living Room</label>
+        </div>
+        <div>
+          <input type="checkbox" id="bathroom" name="by room" value="bathroom">
+          <label for="bathroom">Bathroom</label>
+        </div>
+        <div>
+          <input type="checkbox" id="entryway" name="by room" value="entryway">
+          <label for="entryway">Entryway</label>
+        </div>
+        <div>
+          <input type="checkbox" id="outdoor" name="by room" value="outdoor">
+          <label for="outdoor">Outdoor</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Kids</legend>
+        <div>
+          <input type="checkbox" id="lamps" name="kids" value="lamps">
+          <label for="lamps">Lamps</label>
+        </div>
+        <div>
+          <input type="checkbox" id="night-lights" name="kids" value="night lights">
+          <label for="night-lights">Night Lights</label>
+        </div>
+        <div>
+          <input type="checkbox" id="ceiling" name="kids" value="ceiling">
+          <label for="ceiling">Ceiling</label>
+        </div>
+      </fieldset>
+    </form>
+    <div role="status" class="sr-only" id="applied-filters"></div>
+  </aside>
+  <article>
+    <span class="last-30-days table-lamps"></span>
+    <span class="last-6-months desk-lamps"></span>
+    <span class="floor-lamps"></span>
+    <span class="last-6-months chandeliers"></span>
+    <span class="pendant last-6-months"></span>
+    <span class="flush fans"></span>
+    <span class="fans pendant table-lamps"></span>
+    <span class="bedroom"></span>
+    <span class="dining-room last-30-days chandeliers"></span>
+    <span class="kitchen lamps"></span>
+    <span class="living-room"></span>
+    <span class="bathroom living-room chandeliers desk-lamps"></span>
+    <span class="bathroom table-lamps desk-lamps"></span>
+    <span class="entryway last-30-days"></span>
+    <span class="outdoor desk-lamps"></span>
+    <span class="lamps last-30-days"></span>
+    <span class="night-lights table-lamps"></span>
+    <span class="ceiling last-30-days"></span>
+    <span class="floor-lamps table-lamps"></span>
+    <span class="floor-lamps last-6-months"></span>
+    <span class="dining-room last-30-days chandeliers"></span>
+    <span class="kitchen lamps"></span>
+    <span class="living-room"></span>
+    <span class="bathroom living-room chandeliers desk-lamps"></span>
+  </article>
+</main>

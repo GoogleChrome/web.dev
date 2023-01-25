@@ -15,18 +15,15 @@
  */
 
 declare global {
-  export interface TagsItem {
-    data: {
-      subhead: string;
-      title: string;
-    };
-    description: string;
-    elements: TODO[];
-    href: string;
-    key: string;
-    title: string;
-    url: string;
+  interface TagsDataField extends VirtualDataField {
+    tags: string[];
   }
+
+  export interface TagsItem extends VirtualCollectionItem, TagsDataItem {
+    data?: TagsDataField;
+    release?: number;
+  }
+
   export interface Tags {
     [key: string]: TagsItem;
   }

@@ -1,0 +1,17 @@
+{
+  "title": "Page Header",
+  "context": {
+    "title": "A page header",
+    "summary": "A simple composition of utility classes to make a header group."
+  },
+  "variants": [
+    {
+      "title": "With no summary",
+      "name": "with-no-summary",
+      "context": {
+        "title": "A page header with no summary",
+        "summary": null
+      }
+    }
+  ]
+}

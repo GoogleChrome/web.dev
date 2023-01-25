@@ -1,0 +1,9 @@
+.landing-page {
+  --auto-grid-placement: auto-fit;
+}
+
+@include media-query('md') {
+  .landing-page {
+    --auto-grid-min-item-size: 22rem;
+  }
+}

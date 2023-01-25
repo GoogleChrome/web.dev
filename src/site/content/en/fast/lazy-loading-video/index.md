@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Lazy-loading video
+title: Lazy loading video
 authors:
-  - jeremywagner
+  - jlwagner
   - rachelandrew
 date: 2019-08-16
-updated: 2020-06-05
+updated: 2022-08-15
 description: |
-  This post explains lazy-loading and the options available to you when lazy-loading video.
+  This post explains lazy loading and the options available to you when lazy loading video.
 tags:
   - performance
 feedback:
@@ -23,9 +23,9 @@ different solution.
 
 ## For video that doesn't autoplay {: #video-no-autoplay }
 
-For videos where playback is initiated by the user (i.e., videos that _don't_
+For videos where playback is initiated by the user (that is, videos that _don't_
 autoplay), specifying the [`preload`
-attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-preload)
+attribute](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-preload)
 on the `<video>` element may be desirable:
 
 ```html
@@ -35,6 +35,10 @@ on the `<video>` element may be desirable:
 </video>
 ```
 
+{% Aside 'important' %}
+A video `poster` image can qualify as an [LCP candidates](/lcp/#what-elements-are-considered). If your `poster` image is an LCP candidate, you should [preload it](/preload-critical-assets/) with a [`fetchpriority` attribute value of `"high"`](/priority-hints/#the-fetchpriority-attribute) so the user sees it as soon as possible.
+{% endAside %}
+
 The example above uses a `preload` attribute with a value of `none` to prevent browsers
 from preloading _any_ video data. The `poster`
 attribute gives the `<video>` element a placeholder that will occupy the space while the video loads. The reason for this is
@@ -42,8 +46,7 @@ that default behaviors for loading video can vary from browser to browser:
 
 - In Chrome, the default for `preload` used to be `auto`, but as of Chrome 64, it now
 defaults to `metadata`. Even so, on the desktop version of Chrome, a portion of
-the video may be preloaded using the `Content-Range` header. Firefox, Edge and
-Internet Explorer 11 behave similarly.
+the video may be preloaded using the `Content-Range` header. Other Chromium-based browsers and Firefox behave similarly.
 - As with Chrome on desktop, 11.0 desktop versions of Safari will preload a range
 of the video.
 From version 11.2, only the video metadata is preloaded. [In Safari on iOS, videos are never
@@ -56,7 +59,7 @@ being explicit is probably your best bet. In this cases where the user initiates
 playback, using `preload="none"` is the easiest way to defer loading of video on
 all platforms. The `preload` attribute isn't the only way to defer the loading
 of video content. [_Fast Playback with Video
-Preload_](https://developers.google.com/web/fundamentals/media/fast-playback-with-video-preload) may give you
+Preload_](/fast-playback-with-preload/) may give you
 some ideas and insight into working with video playback in JavaScript.
 
 Unfortunately, it doesn't prove useful when you want to use video in place of
@@ -90,26 +93,22 @@ The `autoplay`, `muted`, and `loop` attributes are self-explanatory.
 [`playsinline` is necessary for autoplaying to occur in
 iOS](https://webkit.org/blog/6784/new-video-policies-for-ios/). Now you have a
 serviceable video-as-GIF replacement that works across platforms. But how to go
-about lazy-loading it? [Chrome will lazy-load video for
-you](https://www.google.com/url?q=https://developers.google.com/web/updates/2017/03/chrome-58-media-updates%23offscreen&sa=D&ust=1521096956530000&usg=AFQjCNHPv7wM_yxmkOWKA0sZ-MXYKUdUXg),
-but you can't count on all browsers to provide this optimized behavior.
-Depending on your audience and application requirements, you may need to take
-matters into your own hands. To start, modify your `<video>` markup accordingly:
+about lazy loading it? To start, modify your `<video>` markup accordingly:
 
 ```html
-<video autoplay muted loop playsinline width="610" height="254" poster="one-does-not-simply.jpg">
+<video class="lazy" autoplay muted loop playsinline width="610" height="254" poster="one-does-not-simply.jpg">
   <source data-src="one-does-not-simply.webm" type="video/webm">
   <source data-src="one-does-not-simply.mp4" type="video/mp4">
 </video>
 ```
 
 You'll notice the addition of the [`poster`
-attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster),
+attribute](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster),
 which lets you specify a placeholder to occupy the `<video>` element's space
 until the video is lazy-loaded. As with the [`<img>` lazy-loading examples](/lazy-loading-images/),
  stash the video URL in the `data-src` attribute on each `<source>`
 element. From there, use JavaScript code similar to the
-Intersection Observer-based image lazy-loading examples:
+Intersection Observer-based image lazy loading examples:
 
 ```javascript
 document.addEventListener("DOMContentLoaded", function() {
@@ -150,20 +149,20 @@ Using this method, you have a video solution that emulates animated GIF behavior
 but doesn't incur the same intensive data usage as animated GIFs do,
 and you can lazy-load that content.
 
-## Lazy-loading libraries {: #libraries }
+## Lazy loading libraries {: #libraries }
 
 The following libraries can help you to lazy-load video:
 
-- [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a super lightweight
-option that uses Intersection Observer only. As such, it's highly performant,
-but will need to be polyfilled before you can use it on older browsers.
+- [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) and
+[lozad.js](https://github.com/ApoorvSaxena/lozad.js) are super lightweight options
+that use Intersection Observer only. As such, they are highly performant, but
+will need to be polyfilled before you can use them on older browsers.
 - [yall.js](https://github.com/malchata/yall.js) is a library that uses
-Intersection Observer and falls back to event handlers. It's compatible with IE11
-and major browsers.
-- If you need a React-specific lazy-loading library, you might consider
+Intersection Observer and falls back to event handlers. It can also lazy load video `poster` images using a `data-poster` attribute.
+- If you need a React-specific lazy loading library, you might consider
 [react-lazyload](https://github.com/jasonslyvia/react-lazyload). While it
 doesn't use Intersection Observer, it _does_ provide a familiar method of lazy
 loading images for those accustomed to developing applications with React.
 
-Each of these lazy-loading libraries is well documented, with plenty of markup
-patterns for your various lazy-loading endeavors.
+Each of these lazy loading libraries is well documented, with plenty of markup
+patterns for your various lazy loading endeavors.

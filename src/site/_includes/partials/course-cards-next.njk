@@ -1,0 +1,39 @@
+{% from 'macros/icon.njk' import svg with context %}
+
+<web-carousel>
+  <div class="carousel">
+    <button class="icon-button" data-direction="prev" aria-label="back">
+      {% include "icons/carat-back.svg" %}
+    </button>
+    <div class="carousel__track reel scrollbar" data-scroll="snap" aria-label="available courses">
+      {# Convert the courses object into an array of objects. #}
+      {% set coursesArr = helpers.values(courses) %}
+      {# Sort courses by descending date order (most recent comes first) #}
+      {% for course in coursesArr|sort(true, false, 'meta.date') %}
+        {% if course.meta and not course.meta.draft %}
+          <div>
+            <a href="{{ course.meta.url }}" class="card" data-style="branded">
+              <h3 class="visually-hidden">{{ course.meta.title }}</h3>
+              <div class="card__header repel">
+                <p class="color-mid-text">Course</p>
+                <div class="counter">
+                  {% set pages = collections.all | navigation(course.toc) %}
+                  <span class="counter__content" aria-label="{{ pages.list.length }} {{ 'i18n.learn.resources' | i18n(locale) }}">{{ pages.list.length }}</span>
+                  {{ icon('mortarboard') }}
+                </div>
+              </div>
+              <img src="{{ course.meta.card }}" alt="{{ course.meta.title }} branding" />
+              <div class="card__content flow">
+                <p class="text-size-0">{{ course.meta.description | i18n(locale) }}</p>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <button class="icon-button" data-direction="next" aria-label="forward">
+      {% include "icons/carat-forward.svg" %}
+    </button>
+  </div>
+</web-carousel>
+

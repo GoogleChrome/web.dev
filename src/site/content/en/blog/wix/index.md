@@ -12,11 +12,12 @@ description: >
   performance for millions of sites, clearing the path for them to receive good PageSpeed Insights and
   Core Web Vitals scores.
 date: 2021-03-10
+updated: 2022-07-18
 hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/HNGPDotyTYOuPE0YxLQ9.jpg
 alt: "A fast train (source: https://unsplash.com/photos/60VrGk-bfeA)"
 tags:
   - blog
-  - fast
+  # - fast
   - performance
   - web-vitals
   - case-study
@@ -30,7 +31,7 @@ Thanks to leveraging industry standards, cloud providers, and CDN capabilities,
 combined with a major rewrite of our website runtime, the percentage of Wix
 sites reaching good 75th percentile scores on all Core Web Vitals (CWV) metrics
 **more than tripled** year over year, according to data from
-[CrUX](https://developers.google.com/web/tools/chrome-user-experience-report)
+[CrUX](https://developer.chrome.com/docs/crux/)
 and
 [HTTPArchive](https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data).
 
@@ -80,9 +81,9 @@ first.
 We adjusted all our monitoring and internal discussions to include industry
 standard metrics such as [Web Vitals](/vitals/), which include:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/PLF62sx8lHkpKbnvYKKR.jpg", alt="A diagram of the 2020 Core Web Vitals: LCP, FID, and CLS.", width="800", height="215" %}
-  <figcaption class="w-figcaption">Core Web Vitals</figcaption>
+  <figcaption>Core Web Vitals</figcaption>
 </figure>
 
 ### Site complexity and performance scores
@@ -91,7 +92,7 @@ It's pretty easy to create a site that loads instantly so long as you
 [make it very simple](https://justinjackson.ca/words.html) using only
 HTML and serve it via a CDN.
 
-<figure class="w-figure w-figure--inline-left">
+<figure data-float="left">
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/xMUN9CUVvgnHofImPcV5.jpg", alt="PageSpeed Insights Example", width="800", height="647" %}
 </figure>
 
@@ -115,9 +116,9 @@ additional client requests and browser logic to run and render your site. This
 is the most important part of the page loading, because nothing happens until
 the beginning of the response arrives (known as TTFB - time to first byte).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/b1KKSlUQQTuNCDj4ndyJ.jpg", alt="WebPageTest First View", width="800", height="411" %}
-  <figcaption class="w-figcaption">WebPageTest First View</figcaption>
+  <figcaption>WebPageTest First View</figcaption>
 </figure>
 
 #### The past: client-side rendering (CSR)
@@ -189,7 +190,7 @@ post is published/modified.
 #### Reducing complexities
 
 Implementing caching improved performance substantially, mostly on the
-[TTFB](/time-to-first-byte/) and [FCP](/fcp/) phases, and improved our
+[TTFB](/ttfb/) and [FCP](/fcp/) phases, and improved our
 reliability by serving the content from a location closer to the end user.
 
 However, the need to modify the HTML for each response introduced an unnecessary
@@ -198,11 +199,11 @@ improvements.
 
 ### Browser caching (and preparations for CDNs)
 
-<div class="w-figure">
-  <div class="w-stats">
-    <div class="w-stat">
-     <p class="w-stat__figure">~ 13<sub class="w-stat__sub">%</sub></p>
-     <p class="w-stat__desc">HTML requests served directly from the browser cache,
+<div>
+  <div class="stats">
+    <div class="stats__item">
+     <p class="stats__figure">~ 13<sub>%</sub></p>
+     <p>HTML requests served directly from the browser cache,
      saving much bandwidth and reducing loading times for repeat views</p>
     </div>
   </div>
@@ -224,12 +225,12 @@ validate that the content hasn't changed. This is done using [HTTP
 ETag](https://en.wikipedia.org/wiki/HTTP_ETag), which is basically an identifier
 assigned to a specific version of an HTML resource. If the content is still the
 same, a [304 Not
-Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304) response
+Modified](https://developer.mozilla.org/docs/Web/HTTP/Status/304) response
 is sent by our servers to the client, without a body.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/hr1xnQccJEkHTBGxS5wF.jpg", alt="ALT_TEXT_HERE", width="800", height="410" %}
-  <figcaption class="w-figcaption">WebPageTest Repeat View</figcaption>
+  <figcaption>WebPageTest Repeat View</figcaption>
 </figure>
 
 In addition, this change means that our HTML is no longer visitor-specific and
@@ -245,7 +246,7 @@ initial connection became more substantial. Enhancing our networking
 infrastructure and monitoring enabled us to improve our DNS, connection, and SSL
 times.
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/Uuvh9xTItQ8wMA9s13RP.jpg", alt="A response time graph.", width="800", height="441" %}
 </figure>
 
@@ -259,11 +260,11 @@ come with HTTP/2.
 
 ### Brotli compression (vs. gzip)
 
-<div class="w-figure">
-  <div class="w-stats">
-    <div class="w-stat">
-     <p class="w-stat__figure">21 - 25<sub class="w-stat__sub">%</sub></p>
-     <p class="w-stat__desc">Reduction of median file transfer size</p>
+<div>
+  <div class="stats">
+    <div class="stats__item">
+     <p class="stats__figure">21 - 25<sub>%</sub></p>
+     <p>Reduction of median file transfer size</p>
     </div>
   </div>
 </div>
@@ -273,9 +274,9 @@ compression](https://en.wikipedia.org/wiki/Gzip), which is the most prevalent
 HTML compression option on the web. This compression protocol was initially
 implemented almost 30 years ago!
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/h7KzeAfg2THMdDGMYvlR.jpg", alt="Brotli compression", width="800", height="805" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     <a href="https://tools.paulcalvano.com/compression.php">Brotli Compression Level Estimator</a>
   </figcaption>
 </figure>
@@ -294,9 +295,9 @@ that support it.
 Moving to use Brotli compression reduced our median file transfer sizes by
 **21% to 25%** resulting in a reduced bandwidth usage and improved loading times.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/392RWYamrwkdFozk91LC.jpg", alt="Mobile and Desktop Median Response Sizes", width="800", height="173" %}
-  <figcaption class="w-figcaption">Median Response Sizes</figcaption>
+  <figcaption>Median Response Sizes</figcaption>
 </figure>
 
 ## Content delivery networks (CDNs)
@@ -349,16 +350,16 @@ middle of 2020.
 
 We look forward to seeing the updated report in 2021, and are actively
 monitoring
-[CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/)
+[CrUX](https://developer.chrome.com/docs/crux/)
 reports for our sites as well as our internal performance metrics.
 
 We are committed to continuously improve loading times and provide our users
 with a platform where they can build sites as they imagine, without compromising
 on performance.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/AADz7d1yVOWZlq0iSb6P.jpg", alt="LCP, Speed Index and FCP for a mobile site over time", width="800", height="259" %}
-  <figcaption class="w-figcaption">LCP, Speed Index and FCP for a mobile site over time</figcaption>
+  <figcaption>LCP, Speed Index and FCP for a mobile site over time</figcaption>
 </figure>
 
 DebugBear recently released a very interesting [Website Builder Performance

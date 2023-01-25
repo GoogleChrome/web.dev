@@ -11,8 +11,8 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
-  - pwa
+  # - angular
+  - progressive-web-apps
 feedback:
   - api
 ---
@@ -41,7 +41,7 @@ This command will:
 * Create a [service worker](/precaching-with-the-angular-service-worker) with a default caching configuration.
 * Create a [manifest file](/add-manifest), which tells the browser how your app should behave when installed on the user's device.
 * Add a link to the manifest file in `index.html`.
-* Add the [`theme-color`](/themed-omnibox) `<meta>` tag to `index.html`.
+* Add the [`theme-color`](https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/) `<meta>` tag to `index.html`.
 * Create app icons in the `src/assets` directory.
 
 By default, your service worker should be registered within a few seconds of the first page load. If it isn't, consider modifying the [`registrationStrategy`](https://angular.io/api/service-worker/SwRegistrationOptions).
@@ -83,13 +83,13 @@ You can customize any of these properties by changing the relevant value in `man
 
 A PWA references its manifest file with a `link` element in `index.html`. Once the browser finds the reference, it'll show the **Add to Home screen** prompt:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/IgMnFCuRU1Fx9JLZWXuT.png", alt="A progressive web app install prompt", width="344", height="650" %}
 </figure>
 
 Since the `ng-add` schematics add everything needed to make your app [installable](/discover-installable/), they generate some shortcut icons that are shown once the user adds the app to their desktop:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/3h7Yuj3MJPiNzbh2xdlB.png", alt="A progressive web app shortcut icon", width="344", height="650" %}
 </figure>
 

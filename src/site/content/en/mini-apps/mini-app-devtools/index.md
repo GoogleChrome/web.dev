@@ -59,37 +59,37 @@ the IDE knows your identity and lets you start programming, debugging, testing, 
 app for review. In the following, you can see screenshots of the five IDEs mentioned in the
 paragraph above.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YvjvlB82SfPqHBl56Rz4.png", alt="WeChat DevTools application window showing simulator, code editor, and debugger.", width="800", height="463" %}
-  <figcaption class="w-figure">
+  <figcaption>
     WeChat DevTools with simulator, code editor, and debugger.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iLbYZFZ9ec245segsIKk.png", alt="Alipay DevTools application window showing code editor, simulator, and debugger.", width="800", height="454" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Alipay DevTools with code editor, simulator, and debugger.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/svoq0p6GO1PCT0k0bdba.png", alt="Baidu DevTools application window showing simulator, code editor, and debugger.", width="800", height="540" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Baidu DevTools with simulator, code editor, and debugger.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/myapOcgYOwsEumeFbL3A.png", alt="ByteDance DevTools application window showing simulator, code editor, and debugger.", width="800", height="561" %}
-  <figcaption class="w-figure">
+  <figcaption>
     ByteDance DevTools with simulator, code editor, and debugger.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dUsfozY82E2YhtlxNJz9.png", alt="Quick App DevTools application window showing code editor, simulator, and debugger.", width="800", height="485" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Quick App DevTools with code editor, simulator, and debugger.
   </figcaption>
 </figure>
@@ -108,9 +108,9 @@ the IDE internals, you can oftentimes simply inspect them with Chrome DevTools w
 shortcut <kbd>Control</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (or
 <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> on Mac).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yXcGmOhbi3xrcMIDhw1t.png", alt="Chrome DevTools used to inspect Baidu's DevTools showing the simulator's webview tag in the Chrome DevTools' Elements panel.", width="800", height="504" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Inspecting Baidu DevTools with Chrome DevTools reveals that the simulator is realized as an Electron <code>&lt;webview&gt;</code> tag.
   </figcaption>
 </figure>
@@ -118,7 +118,7 @@ shortcut <kbd>Control</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (or
 ## Simulator and real device testing and debugging
 
 The simulator is comparable with what you might know from Chrome DevTools'
-[device mode](https://developers.google.com/web/tools/chrome-devtools/device-mode). You can simulate
+[device mode](https://developer.chrome.com/docs/devtools/device-mode/). You can simulate
 different Android and iOS devices, change the scale and device orientation, but also simulate
 various network states, memory pressure, a barcode reading event, unexpected termination, and dark
 mode.
@@ -135,16 +135,16 @@ app on the various ByteDance super apps like Douyin or Toutiao
 (here is an [example](snssdk1128://microapp?version=v2&app_id=ttb3d2c56f2ce8e78c&scene=0&version_type=preview&token=3605997583095982&start_page=pages%2Fcomponent%2Findex&url=%7B%22id%22%3A%22ttb3d2c56f2ce8e78c%22%2C%22name%22%3A%22%E5%90%8D%E7%A7%B0%E9%87%8D%E7%BD%AEttb3d2c56f2ce8e78c%22%2C%22icon%22%3A%22%22%2C%22url%22%3A%22https%3A%2F%2Fsf1-ttcdn-tos.pstatp.com%2Fobj%2Fdeveloper%2Fapp%2Fttb3d2c56f2ce8e78c%2Fpreview%2F%22%2C%22orientation%22%3A0%2C%22ttid%22%3A%226857810517176942605%22%2C%22state%22%3A1%2C%22type%22%3A1%2C%22tech_type%22%3A1%2C%22version%22%3A%22undefined%22%7D&tech_type=1&bdpsum=281c864)).
 Other super app providers do not go through an intermediate page, but open the preview directly.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/p0CrYvh00oAV9AUzeoU6.png", alt="ByteDance DevTools showing a QR code that the user can scan with the Douyin app to see the current mini app on their device.", width="800", height="551" %}
-  <figcaption class="w-figure">
+  <figcaption>
     ByteDance DevTools showing a QR code that the user can scan with the Douyin app for immediate on-device testing.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LNOqaa8z2Oo4CZPa48Bw.png", alt="Intermediate landing page for previewing a ByteDance mini app in various of the company's super apps, opened on a regular desktop browser for reverse-engineering the process.", width="800", height="433" %}
-  <figcaption class="w-figure">
+  <figcaption>
      Intermediate ByteDance landing page for previewing a mini app (opened on a desktop browser to show the flow).
   </figcaption>
 </figure>
@@ -153,9 +153,9 @@ An even more compelling feature is cloud-based preview remote debugging. After s
 special likewise IDE-generated QR code, the mini app opens on the physical device, with a Chrome
 DevTools window running on the computer for remote debugging.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N5Crv3ryZ3bCNFMv7Lir.png", alt="A mobile phone running a mini app with parts of the UI highlighted by the ByteDance DevTools debugger running on a laptop inspecting it.", width="800", height="600" %}
-  <figcaption class="w-figure">
+  <figcaption>
    Wirelessly remote-debugging a mini app on a real device with ByteDance DevTools.
   </figcaption>
 </figure>
@@ -167,7 +167,7 @@ DevTools window running on the computer for remote debugging.
 The mini app debugging experience is very familiar to anyone who has ever worked with Chrome
 DevTools. There are some important differences, though, that make the workflow tailored to mini
 apps. Instead of the Chrome DevTools'
-[Elements panel](https://developers.google.com/web/tools/chrome-devtools#elements), mini app IDEs
+[Elements panel](https://developer.chrome.com/docs/devtools/#elements), mini app IDEs
 have a customized panel that is tailored to their particular dialect of HTML. For example, in the
 case of WeChat, the panel is called
 [Wxml](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxml/), which stands for
@@ -179,25 +179,25 @@ Alipay names it [AXML](https://opendocs.alipay.com/mini/framework/axml), and Qui
 the panel simply as [UX](https://doc.quickapp.cn/tutorial/framework/for.html). I will dive into
 these markup languages [later](/mini-app-markup-styling-and-scripting/#markup-languages).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/k1FO68wZhzpRNvQl2bN3.png", alt="Inspecting an image with WeChat DevTools' 'Wxml' panel. It shows that the tag in use is an `image` tag.", width="800", height="572" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Inspecting an <code>&lt;image&gt;</code> element with WeChat DevTools.
   </figcaption>
 </figure>
 
 ### Custom elements under the hood
 
-Inspecting the WebView on a real device via [chrome://inspect/#devices](chrome://inspect/#devices)
+Inspecting the WebView on a real device via [about://inspect/#devices](about://inspect/#devices)
 reveals that WeChat DevTools was deliberately hiding the truth. Where WeChat DevTools showed an
 `<image>`, the actual thing I am looking at is a custom element called `<wx-image>` with a `<div>`
 as its only child. It is interesting to note that this custom element does not use
-[Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM). More on
+[Shadow DOM](https://developer.mozilla.org/docs/Web/Web_Components/Using_shadow_DOM). More on
 these components [later](/mini-app-components/).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/on9Ty46RyteTI6QTc2vk.png", alt="Inspecting a WeChat mini app running on a real device with Chrome DevTools. Where WeChat DevTools reported I am looking at an `image` tag, Chrome DevTools reveals I am actually dealing with a `wx-image` custom element.", width="800", height="385" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Inspecting an <code>&lt;image&gt;</code> element with WeChat DevTools reveals that it is actually a <code>&lt;wx-image&gt;</code> custom element.
   </figcaption>
 </figure>
@@ -208,9 +208,9 @@ Another difference is the new length unit `rpx` for responsive pixel in the vari
 (more on this unit [later](/mini-app-markup-styling-and-scripting/#styling)). WeChat DevTools uses device-independent CSS length units to
 make developing for different device sizes more intuitive.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bf4YBcscBzbmQtJig7Ij.png", alt="Inspecting a view with a specified top and bottom padding of `200rpx` in WeChat DevTools.", width="800", height="486" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Inspecting the padding specified in responsive pixels (<code>200rpx 0</code>) of a view with WeChat DevTools.
   </figcaption>
 </figure>
@@ -223,9 +223,9 @@ are Total, Performance, Experience, and Best Practice. The view of the IDE can b
 screenshot below I have temporarily hidden the code editor to have more screen real estate for the
 audit tool.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q8Rze6pR9mpDXw9VCaEs.png", alt="Running a performance audit with the built-in audit tool. The scores show Total, Performance, Experience, and Best Practice, each 100 out of 100 points.", width="800", height="485" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The built-in Audit tool in WeChat DevTools showing Total, Performance, Experience, and Best Practice.
   </figcaption>
 </figure>
@@ -236,9 +236,9 @@ Rather than requiring the developer to set up a separate service, mocking API re
 part of WeChat DevTools. Via an easy-to-use interface the developer can set up API endpoints and the
 desired mock responses.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/olJmRvdl0zkoWZiiOkiP.png", alt="Setting up a mock response for an API endpoint in WeChat DevTools.", width="800", height="485" %}
-  <figcaption class="w-figure">
+  <figcaption>
     WeChat DevTools' integrated API response mocking feature.
   </figcaption>
 </figure>

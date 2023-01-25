@@ -1,0 +1,29 @@
+setLeader: Test your knowledge of styling forms
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: Why should you use relative units for `font-size`?
+    options:
+      - content: "To ensure the size responds to user preference."
+        rationale: "🎉"
+      - content: "To ensure the size responds to the previous element."
+        rationale: "Try again!"
+      - content: "To ensure the size responds to dark mode."
+        rationale: "Try again!"
+      - content: "To ensure the size responds to media queries."
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: How can you increase spacing between form controls?
+    options:
+      - content: "Using the `padding` CSS property."
+        rationale: "Try again!"
+      - content: "Using the `spacer` CSS property."
+        rationale: "Try again!"
+      - content: "Using the `margin` CSS property."
+        rationale: "🎉"
+      - content: "Using the `boundary` CSS property."
+        rationale: "Try again!"

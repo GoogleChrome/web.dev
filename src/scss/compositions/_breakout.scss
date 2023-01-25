@@ -1,0 +1,12 @@
+/// BREAKOUT
+/// A layout that allows you to break a an element out of the
+/// bounds of its parent, with a sensible lock to prevent it bleeding out
+
+/// CUSTOM PROPERTIES AND CONFIGURATION
+/// --breakout-max-width: This defines the maximum width of the element.
+.breakout {
+  width: calc(100vw - #{$global-gutter-narrow * 2});
+  max-width: var(--breakout-max-width, 65rem);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}

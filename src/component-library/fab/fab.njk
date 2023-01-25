@@ -1,0 +1,10 @@
+<a
+  href="{{ data.url }}"
+  class="fab"
+  {% if data.type %}data-type="{{ data.type }}"{% endif %}
+  {% if data.docked %}data-docked{% endif %}
+  {% if data.iconOnly %}data-icon-only{% endif %}
+>
+  {% include "icons/" ~ data.icon %}
+  <span class="fab__label">{{ data.text }}</span>
+</a>

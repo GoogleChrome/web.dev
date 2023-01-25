@@ -5,7 +5,7 @@ authors:
   - philipwalton
 description: How to measure Web Vitals with your current analytics tool
 date: 2020-05-27
-updated: 2020-07-21
+updated: 2022-05-11
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: How to measure Web Vitals with your current analytics tool
 tags:
@@ -67,7 +67,7 @@ The following code sample shows how easy it can be to track these metrics in
 code and send them to an analytics service.
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics({name, value, id}) {
   const body = JSON.stringify({name, value, id});
@@ -76,10 +76,31 @@ function sendToAnalytics({name, value, id}) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
+
+## Avoid averages
+
+It's tempting to sum up a range of values for a performance metric by
+calculating an average. Averages seem convenient at first glance, as they're a
+tidy summary of a large quantity of data, but you should resist the urge to rely
+on them to interpret page performance.
+
+[Averages are problematic](https://www.igvita.com/2016/01/12/the-average-page-is-a-myth/)
+because they don't represent any single user's session. Outliers at either range
+of the distribution may skew the average in ways that are misleading.
+
+For example, a small group of users may be on extremely slow networks or devices
+that are toward the maximum range of values, but don't account for enough user
+sessions to impact the average in a way that suggests there's a problem.
+
+Whenever possible, rely on percentiles instead of averages. Percentiles across a
+distribution for a given performance metric better describe the full range of
+user experiences for your website. This allows you to focus on subsets of
+_actual_ experiences, which will give you more insight than a single value ever
+could.
 
 ## Ensure you can report a distribution
 
@@ -90,6 +111,12 @@ to build a report or dashboard displaying the values that have been collected.
 To ensure you're meeting the [recommended Core Web Vitals
 thresholds](/vitals/#core-web-vitals), you'll need your report
 to display the value of each metric at the 75th percentile.
+
+{% Aside %}
+While the 75th percentile is a great place to start, it may be worth observing
+the 90th or even the 95th percentile. This will help you to understand the user
+experience for those who are on very slow networks or devices.
+{% endAside %}
 
 If your analytics tool does not offer quantile reporting as a built-in feature,
 you can probably still get this data manually by generating a report that lists
@@ -118,11 +145,11 @@ section.
 Report](https://user-images.githubusercontent.com/326742/101584324-3f9a0900-3992-11eb-8f2d-182f302fb67b.png)
 
 {% Aside %}
-  Tip: The [`web-vitals`](https://github.com/GoogleChrome/web-vitals)
-  JavaScript library provides an ID for each metric instance reported making
-  it possible to build distributions in most analytics tools. See the
-  [`Metric`](https://github.com/GoogleChrome/web-vitals#metric) interface
-  documentation for more details.
+Tip: The [`web-vitals`](https://github.com/GoogleChrome/web-vitals)
+JavaScript library provides an ID for each metric instance reported making
+it possible to build distributions in most analytics tools. See the
+[`Metric`](https://github.com/GoogleChrome/web-vitals#metric) interface
+documentation for more details.
 {% endAside %}
 
 ## Send your data at the right time
@@ -133,9 +160,9 @@ final once the page has started unloading.
 
 This can be problematic, however, since both the `beforeunload` and `unload`
 events are not reliable (especially on mobile) and their use is [not
-recommended](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#legacy-lifecycle-apis-to-avoid)
+recommended](https://developer.chrome.com/blog/page-lifecycle-api/#legacy-lifecycle-apis-to-avoid)
 (since they can prevent a page from being eligible for the [Back-Forward
-Cache](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#page-navigation-cache)).
+Cache](https://developer.chrome.com/blog/page-lifecycle-api/#what-is-the-back-forward-cache)).
 
 For metrics that track the entire lifespan of a page, it's best to send whatever
 the metric's current value is during the `visibilitychange` event, whenever the
@@ -152,12 +179,12 @@ a new page. This makes the `visibilitychange` event far more reliable than the
 `unload` or `beforeunload` events.
 
 {% Aside 'gotchas' %}
-  Due to [some browser
-  bugs](https://github.com/w3c/page-visibility/issues/59#issue-554880545), there
-  are a few cases where the `visibilitychange` event does not fire. If you're
-  building your own analytics library, it's important to be aware of these bugs.
-  Note that the [web-vitals](https://github.com/GoogleChrome/web-vitals)
-  JavaScript library does account for all of these bugs.
+Due to [some browser
+bugs](https://github.com/w3c/page-visibility/issues/59#issue-554880545), there
+are a few cases where the `visibilitychange` event does not fire. If you're
+building your own analytics library, it's important to be aware of these bugs.
+Note that the [web-vitals](https://github.com/GoogleChrome/web-vitals)
+JavaScript library does account for all of these bugs.
 {% endAside %}
 
 ## Monitor performance over time
@@ -196,10 +223,10 @@ confidence that a change does indeed improve performance, you can roll it out to
 all users.
 
 {% Aside %}
-  Experiment groups should always be set on the server. Avoid using any
-  experimentation or A/B testing tool that runs on the client. These tools will
-  typically block rendering until a user's experiment group is determined, which
-  can be detrimental to your LCP times.
+Experiment groups should always be set on the server. Avoid using any
+experimentation or A/B testing tool that runs on the client. These tools will
+typically block rendering until a user's experiment group is determined, which
+can be detrimental to your LCP times.
 {% endAside %}
 
 ## Ensure measurement doesn't affect performance
@@ -228,7 +255,7 @@ there's no need to rush to get your scripts loaded early.
 In the event that you're measuring a metric that cannot be computed later in the
 page load timeline, you should inline _only_ the code that needs to run early
 into the `<head>` of your document (so it's not a [render-blocking
-request](/render-blocking-resources/)) and defer the rest. Do not load all your
+request](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)) and defer the rest. Do not load all your
 analytics early just because a single metric requires it.
 
 ### Do not create long tasks
@@ -237,7 +264,7 @@ Analytics code often runs in response to user input, but if your analytics code
 is conducting a lot of DOM measurements or using other processor-intensive APIs
 the analytics code itself can cause poor input responsiveness. In addition, if
 the JavaScript file containing your analytics code is large, executing that file
-can block the main thread and negatively affect FID.
+can block the main thread and negatively affect [First Input Delay (FID)](/fid/) or [Interaction to Next Paint (INP)](/inp/).
 
 ### Use non-blocking APIs
 
@@ -255,11 +282,11 @@ In general, all analytics beacons should be sent using the `sendBeacon()` API
 idle periods.
 
 {% Aside %}
-  For guidance on how to maximize the use of idle time, while still
-  ensuring code can be run urgently when needed (like when a user is unloading
-  the page), refer to the
-  [idle-until-urgent](https://philipwalton.com/articles/idle-until-urgent/)
-  pattern.
+For guidance on how to maximize the use of idle time, while still
+ensuring code can be run urgently when needed (like when a user is unloading
+the page), refer to the
+[idle-until-urgent](https://philipwalton.com/articles/idle-until-urgent/)
+pattern.
 {% endAside %}
 
 ### Don't track more than what you need

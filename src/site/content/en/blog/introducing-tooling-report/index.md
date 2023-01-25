@@ -22,13 +22,13 @@ Today web.dev is launching a new initiative called [tooling.report](https://tool
 website that gives web developers an overview of the features supported across a selection of
 popular build tools. We built this site to help you choose the right build tool for your next
 project, decide if migrating from one tool to another is worth it, or figure out how to incorporate
-best practises into your tooling configuration and code base. Tools have different focus areas and
+best practices into your tooling configuration and code base. Tools have different focus areas and
 cater to a different set of needs, which means selecting and configuring tools involves making
 tradeoffs. With tooling.report, we aim to explain these tradeoffs and document how to follow best
-practices with any given build tool.   
-  
+practices with any given build tool.
+
 Sounds exciting? Visit tooling.report to start exploring, or read on to learn more about why and how
-we developed this site. 
+we developed this site.
 
 ## Build tools often get in our way
 
@@ -46,7 +46,7 @@ fine-tuning how our frontend assets are assembled and delivered. For example, if
 script and web worker script have shared dependencies, we would like to download the dependencies
 once instead of bundling it twice for each script. Some tools support this out of the box, some need
 significant customization effort to change default behaviors, and for others it's outright
-impossible. 
+impossible.
 
 This experience led us to investigate what different build tools can and cannot do. Our hope was to
 create a checklist for features so that next time we start a new project, we can evaluate and choose
@@ -60,7 +60,7 @@ cases.
 Our team discussed and designed test criteria that we believe represent best practices for web
 development. We specifically focused on how to deliver fast, responsive, and smooth user
 experiences, intentionally excluding tests related to developer experience in order to avoid
-measuring two incomparable outcomes. 
+measuring two incomparable outcomes.
 
 Once the test list was created, we went ahead and wrote a build script for each tool to check if the
 tool can fulfil the test's success criteria. As an initial set, we decided to investigate webpack
@@ -69,10 +69,8 @@ still use this setup. For a test to pass, only publicly documented features of t
 for the tool can be used. After the initial set of tests were written, we worked with the build tool
 authors to make sure we used their tools correctly and represented them fairly.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
-       src="overview.jpg" 
-       alt="A screenshot of tooling.report.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0OauqO2tSeOTDpDGutmk.jpg", alt="A screenshot of tooling.report.", width="800", height="394" %}
 </figure>
 
 ## We only use ${tool_name}, should I still care?
@@ -89,9 +87,9 @@ contains the configuration files necessary to do so.
 If you think a certain feature should be tested that is currently missing, please [propose it in a
 GitHub issue](https://github.com/GoogleChromeLabs/tooling.report/issues/new) to start the
 discussion. We aim to encapsulate real-world use cases, and any additional tests that better assess
-these outcomes are welcome.   
-  
+these outcomes are welcome.
+
 If you want to write tests for tools we did not include in the initial set, we welcome that too!
 Please see
 [CONTRIBUTING.md](https://github.com/GoogleChromeLabs/tooling.report/blob/dev/CONTRIBUTING.md) for
-more information. 
+more information.

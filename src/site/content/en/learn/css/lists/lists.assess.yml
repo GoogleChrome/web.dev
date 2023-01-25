@@ -1,0 +1,46 @@
+setLeader: Test your knowledge of lists
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: "The element preceding a list-item is called a"
+    options:
+      - content: "::bullet"
+        rationale: "Try again."
+      - content: "::pencil"
+        rationale: "Try again."
+      - content: "::marker"
+        rationale: "Correct!"
+      - content: "::counter"
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "2+"
+    correctAnswers: "0,2,4"
+    stem: "The three types of HTML lists are"
+    options:
+      - content: "`<dl>`"
+        rationale: "Correct!"
+      - content: "`<lo>`"
+        rationale: "Try again."
+      - content: "`<ol>`"
+        rationale: "Correct!"
+      - content: "`<li>`"
+        rationale: "Try again."
+      - content: "`<ul>`"
+        rationale: "Correct!"
+      - content: "`<list>`"
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,2,4"
+    stem: "Which two styles in this list will apply styles to a ::marker?"
+    options:
+      - content: "`transition`"
+        rationale: "Correct!"
+      - content: "`background-color`"
+        rationale: "Try again."
+      - content: "`color`"
+        rationale: "Correct!"
+      - content: "`display`"
+        rationale: "Try again."

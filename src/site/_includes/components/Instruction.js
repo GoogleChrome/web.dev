@@ -15,17 +15,21 @@
  */
 
 const {html} = require('common-tags');
+const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 const capitalize = require('../../_filters/capitalize');
 
 /**
  * A component to help DRY up common lists of instructions.
  * This helps ensure consistency in our docs and makes it easy
  * to respond when Glitch changes their UI.
+ * @this {EleventyPage}
  * @param {string} type The type of instruction to print.
  * @param {string} listStyle The list style to use. Defaults to 'ul'.
  * @return {string} A list of instructions.
  */
-module.exports = (type, listStyle = 'ul') => {
+module.exports = function (type, listStyle = 'ul') {
+  const locale = getLocaleFromPath(this.page && this.page.filePathStem);
+
   let instruction;
   let substitution;
   let bullet;
@@ -51,7 +55,7 @@ module.exports = (type, listStyle = 'ul') => {
 
   // Common phrases shared across multiple instructions.
   const shared = {
-    devtools: `${bullet}Press \`Control+Shift+J\` (or \`Command+Option+J\` on Mac) to open DevTools.`,
+    devtools: `${bullet}${i18n('i18n.instruction.devtools_shared', locale)}`,
   };
 
   switch (type) {
@@ -87,7 +91,7 @@ module.exports = (type, listStyle = 'ul') => {
         <img
           src="/images/glitch/fullscreen.svg"
           alt="fullscreen"
-          style="padding: 4px 8px; opacity: .5; border: 1px solid #c3c3c3; border-radius: 5px;"
+          style="padding: 4px 8px; opacity: .5; border: 1px solid #c3c3c3; border-radius: 5px; margin-top: 0;"
         />.
       `;
       break;
@@ -99,7 +103,10 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'disable-cache':
-      instruction = html`${bullet}Select the **Disable cache** checkbox.`;
+      instruction = html`${bullet}${i18n(
+        'i18n.instruction.disable_cache',
+        locale,
+      )}`;
       break;
 
     case 'reload-app':
@@ -107,7 +114,10 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'reload-page':
-      instruction = html`${bullet}Reload the page.`;
+      instruction = html`${bullet}${i18n(
+        'i18n.instruction.reload_page',
+        locale,
+      )}`;
       break;
 
     case 'start-profiling':
@@ -116,7 +126,7 @@ module.exports = (type, listStyle = 'ul') => {
         <img
           src="/images/icons/reload.svg"
           alt="reload"
-          style="width: 1.2em; padding: 0px 0px 2px 2px; opacity: .5"
+          style="width: 1.2em; padding: 0px 0px 2px 2px; opacity: .5; margin-top: 0;"
         />.
       `;
       break;
@@ -141,10 +151,15 @@ module.exports = (type, listStyle = 'ul') => {
       instruction = html`${shared.devtools}`;
       substitution = type.substring('devtools-'.length);
       if (substitution) {
+        const tab = i18n(`i18n.instruction.${substitution}`, locale);
+        const step = i18n('i18n.instruction.devtools_click', locale).replace(
+          '$0',
+          `${tab}`,
+        );
         // prettier-ignore
         instruction = html`
           ${instruction}
-          ${bullet}Click the **${capitalize(substitution)}** tab.
+          ${bullet}${step}
         `;
       }
       break;

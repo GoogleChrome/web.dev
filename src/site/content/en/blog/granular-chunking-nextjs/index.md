@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Improved Next.js and Gatsby page load performance with granular chunking
 subhead: A newer webpack chunking strategy in Next.js and Gatsby minimizes duplicate code to improve page load performance.
 authors:
@@ -11,7 +12,7 @@ description: |
 tags:
   - blog
   - performance
-  - frameworks
+  # - frameworks
 ---
 
 Chrome is [collaborating](/advancing-framework-ecosystem-cds-2019/) with tooling and
@@ -32,7 +33,7 @@ result in a better loading performance.
 This pattern became popular with many single-page application frameworks adopting an entrypoint and
 bundle configuration that looked like this:
 
-{% Img src="image/admin/r4QB67AXzmPMgxcxgbQF.png", alt="Common entrypoint and bundle configuration", width="800", height="569", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/r4QB67AXzmPMgxcxgbQF.png", alt="Common entrypoint and bundle configuration", width="800", height="569" %}
 
 Although practical, the concept of bundling all shared module code into a single chunk has its
 limitations. Modules not shared in every entry point can be downloaded for routes that do not use it
@@ -81,7 +82,7 @@ _half of pages_ isn't very effective. Modifying this ratio would only result in 
 
 To solve this problem, Next.js adopted a [different
 configuration](https://github.com/zeit/next.js/pull/7696) for`SplitChunksPlugin` that reduces
-unecessary code for any route.
+unnecessary code for any route.
 
 +   Any sufficiently large third-party module (greater than 160 KB) is split into its own individual
     chunk
@@ -133,7 +134,7 @@ property.
 
 In an average of three runs of multiple trials on a single web page, the
 [`load`](https://developer.mozilla.org/docs/Web/API/Window/load_event),
-[start-render](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Quick%20Start%20Guide.md#start-render)
+[start-render](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/getting-started.md#start-render)
 and [First Contentful Paint](/fcp) times all remained about the same when varying the max initial
 request count (from 5 to 15). Interestingly enough, we noticed a slight performance overhead only
 after splitting aggressively to hundreds of requests.
@@ -178,15 +179,15 @@ getDependencies (route) {
 }
 ```
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="outputted-chunks.png" alt="Output of multiple shared chunks in a Next.js application.">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3XG4VlLQEQ724fvhynvM.png", alt="Output of multiple shared chunks in a Next.js application.", width="800", height="488" %}
 </figure>
 
 This newer granular chunking strategy was first rolled out in Next.js behind a flag, where it was tested on a
 number of early adopters. Many saw significant reductions to the total JavaScript used for their
 entire site:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -249,7 +250,7 @@ config.optimization = {
 By optimizing their webpack configuration to adopt a similar granular chunking strategy, they also
 noticed sizeable JavaScript reductions in many large sites:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>

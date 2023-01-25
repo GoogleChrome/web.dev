@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-12-09
-updated: 2021-01-15
+updated: 2021-11-30
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: image/admin/dbYeeV2PCRZNY6RRvQd2.jpg
 thumbnail: image/admin/jy8z8lRuLmmnyytD5xwl.jpg
@@ -121,7 +121,7 @@ If you have more than one page component for user input, make sure to put each i
 
 #### Use `<label>` to label elements {: #html-label}
 
-To label an `<input>`, `<select>`, or `<textarea>`, use a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
+To label an `<input>`, `<select>`, or `<textarea>`, use a [`<label>`](https://developer.mozilla.org/docs/Web/HTML/Element/label).
 
 Associate a label with an input by giving the label's `for` attribute the same value as
 the input's `id`.
@@ -145,7 +145,7 @@ problematic for users on phones, particularly if they're distracted or feeling s
 
 #### Make buttons helpful {: #html-button}
 
-Use [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+Use [`<button>`](https://developer.mozilla.org/docs/Web/HTML/Element/button)
 for buttons! You can also use `<input type="submit">`, but don't use a `div` or some
 other random element acting as a button. Button elements provide accessible behaviour, built-in
 form submission functionality, and can easily be styled.
@@ -169,21 +169,34 @@ and what to do to fix it. This is particularly important on mobile, where data e
 difficult and missing or invalid form data may not be visible on the user's screen by the time they
 attempt to submit a form.
 
+{% Aside 'caution' %}
+The default type for a button in a form is `submit`. If you want to add another button in a form
+(for **Show password**, for example) add `type="button"`. Otherwise clicking or tapping on the
+button will submit the form.
+
+Pressing the `Enter` key while any form field has focus simulates a click on the first `submit`
+button in the form. If you include a button in your form before the **Submit** button, and don't
+specify the type, that button will have the default type for buttons in a form (`submit`) and
+receive the click event before the form is submitted. For an example of this, see our
+[demo](https://enter-button.glitch.me/): fill in the form, then press `Enter`.
+{% endAside %}
+
 ### Make the most of HTML attributes {: #html-attributes}
 
 #### Make it easy for users to enter data
 
 {: #type-attribute}
 
-Use the appropriate input [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email)
+Use the appropriate input [`type` attribute](https://developer.mozilla.org/docs/Web/HTML/Element/input/email)
 to provide the right keyboard on mobile and enable basic built-in validation by the browser.
 
 For example, use `type="email"` for email addresses and `type="tel"` for phone numbers.
 
-<figure class="w-figure">
-  <img src="images/input-type.jpg" alt="Two screenshots of Android phones, showing a keyboard appropriate
-  for entering an email addresss (using type=email) and for entering a telephone number (with type=tel).">
-  <figcaption class="w-figcaption">Keyboards appropriate for email and telephone.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Two screenshots of
+  Android phones, showing a keyboard appropriate for entering an email address (using type=email)
+  and for entering a telephone number (with type=tel).", width="800", height="683" %}
+  <figcaption>Keyboards appropriate for email and telephone.</figcaption>
 </figure>
 
 {: #inputmode-attribute}
@@ -211,7 +224,7 @@ to ensure the right keyboard on mobile and add validation and format hints with 
 placeholder to make sure the user enters data in the appropriate format.
 
 {% Aside %}
-The [`datalist`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) element enables
+The [`datalist`](https://developer.mozilla.org/docs/Web/HTML/Element/datalist) element enables
 a user to select from a list of available options and provides matching suggestions as the user enters text.
 Try out `datalist` for `text`, `range` and `color` inputs at [simpl.info/datalist](https://simpl.info/datalist).
 For birth year input, you can compare a `select` with an `input` and `datalist` at [datalist-select.glitch.me](https://datalist-select.glitch.me).
@@ -223,7 +236,7 @@ Using appropriate `autocomplete` values enables browsers to help users by secure
 autofilling `input`, `select`, and `textarea` values. This is particularly important on mobile, and
 crucial for avoiding [high form abandonment rates](https://www.zuko.io/blog/8-surprising-insights-from-zukos-benchmarking-data). Autocomplete also provides [multiple accessibility benefits](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html).
 
-If an appropriate autocomplete value is available for a form field, you should use it. [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) has a full list of values and explanations of how to use
+If an appropriate autocomplete value is available for a form field, you should use it. [MDN web docs](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete) has a full list of values and explanations of how to use
 them correctly.
 
 {: #stable-name-id}
@@ -240,10 +253,9 @@ By default, set the billing address to be the same as the delivery address. Redu
 providing a link to edit the billing address (or use [`summary` and `details` elements](https://simpl.info/details/))
 rather than displaying the billing address in a form.
 
-<figure class="w-figure">
-  <img src="images/review-order.png" alt="Example checkout page showing link
-  to change billing address.">
-  <figcaption class="w-figcaption">Add a link to review billing.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="Example checkout page showing link to change billing address.", width="800", height="250" %}
+  <figcaption>Add a link to review billing.</figcaption>
 </figure>
 
 Use appropriate autocomplete values for the billing address, just as you do for shipping address,
@@ -263,8 +275,8 @@ forms more quickly and easily by helping them fix problems as they happen. Throu
 customers are trying to give your company money for a product or service—your job is to assist them,
 not to punish them!
 
-You can add [constraint attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation#Intrinsic_and_basic_constraints) to form elements to specify acceptable
-values, including `min`, `max`, and `pattern`. The [validity state](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)
+You can add [constraint attributes](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5/Constraint_validation#Intrinsic_and_basic_constraints) to form elements to specify acceptable
+values, including `min`, `max`, and `pattern`. The [validity state](https://developer.mozilla.org/docs/Web/API/ValidityState)
 of the element is set automatically depending on whether the element's value is valid, as are the
 `:valid` and `:invalid` CSS pseudo-classes which can be used to style elements with valid or invalid
 values.
@@ -305,10 +317,9 @@ multiple comma-separated email addresses in a single input.
 On form submission, browsers automatically set focus on fields with problematic or missing required
 values. No JavaScript required!
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="images/invalid-email.png" alt="Screenshot of a sign-in form in
-  Chrome on desktop showing browser prompt and focus for an invalid email value." width="500">
-  <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value.", width="500", height="483" %}
+  <figcaption>Basic built-in validation by the browser.</figcaption>
 </figure>
 
 Validate inline and provide feedback to the user as they enter data, rather than providing a list of
@@ -332,7 +343,7 @@ malicious. Find out more in [OWASP Input Validation Cheat Sheet](https://cheatsh
 
 #### Help users avoid missing required data {: #required}
 
-Use the [`required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required)
+Use the [`required` attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/required)
 on inputs for mandatory values.
 
 When a form is submitted [modern browsers](https://caniuse.com/mdn-api_htmlinputelement_required)
@@ -365,10 +376,9 @@ For an online store, the simplest way to reduce form friction is to make guest c
 Don't force users to create an account before making a purchase. Not allowing guest checkout is cited
 as a major reason for shopping cart abandonment.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="images/shopping-cart-abandonment.png" alt="Reasons for shopping
-  cart abandonment during checkout.">
-  <figcaption class="w-figcaption">From <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="Reasons for shopping cart abandonment during checkout.", width="800", height="503" %}
+  <figcaption>From <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption>
 </figure>
 
 You can offer account sign-up after checkout.  At that point, you already have most of the data you
@@ -385,21 +395,19 @@ You can make your checkout process feel less complex by showing progress and mak
 needs to be done next. The video below shows how UK retailer [johnlewis.com](https://www.johnlewis.com)
 achieves this.
 
-<figure class="w-figure">
-   <video controls autoplay muted class="w-screenshot" poster="images/john-lewis.png">
-     <source src="https://samdutton.com/johnlewis.com.mp4" type="video/mp4">
-   </video>
-  <figcaption class="w-figcaption">Show checkout progress.</figcaption>
+<figure>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %}
+  <figcaption>Show checkout progress.</figcaption>
 </figure>
 
 You need to maintain momentum! For each step towards payment, use page headings and descriptive
 button values that make it clear what needs to be done now, and what checkout step is next.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Give form buttons meaningful names that show what's next.</figcaption>
+  <figcaption>Give form buttons meaningful names that show what's next.</figcaption>
 </figure>
 
 Use the `enterkeyhint` attribute on form inputs to set the mobile keyboard enter key label. For
@@ -407,10 +415,9 @@ example, use `enterkeyhint="previous"` and `enterkeyhint="next"` within a multi-
 `enterkeyhint="done"` for the final input in the form, and `enterkeyhint="search"` for a search
 input.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="images/enterkeyhint.png" alt="Two screenshots of an address form
-  on Android showing how the enterkeyhint input attribute changes the enter key button icon.">
-  <figcaption class="w-figcaption">Enter key buttons on Android: 'next' and 'done'.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Two screenshots of an address form on Android showing how the enterkeyhint input attribute changes the enter key button icon.", width="800", height="684" %}
+  <figcaption>Enter key buttons on Android: 'next' and 'done'.</figcaption>
 </figure>
 
 The `enterkeyhint` attribute is [supported on Android and iOS](https://caniuse.com/mdn-html_global_attributes_enterkeyhint).
@@ -428,30 +435,25 @@ avoid interrupting progress towards conversion.
 Limit potential exit points by removing visual clutter and distractions such as product promotions.
 Many successful retailers even remove navigation and search from checkout.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="images/remove-distractions.png" alt="Two screenshots on mobile
-  showing progress through johnlewis.com checkout. Search, navigation and other distractions are
-  removed.">
-  <figcaption class="w-figcaption">Search, navigation and other distractions removed for checkout.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="Two screenshots on mobile showing progress through johnlewis.com checkout. Search, navigation and other distractions are removed.", width="800", height="683" %}
+  <figcaption>Search, navigation and other distractions removed for checkout.</figcaption>
 </figure>
 
 Keep the journey focused. This is not the time to tempt users to do something else!
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="images/free-stickers.jpg" alt="Screenshot of checkout page on
-  mobile showing distracting promotion for FREE STICKERS." width="350">
-  <figcaption class="w-figcaption">Don't distract customers from completing their purchase.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Screenshot of checkout page on mobile showing distracting promotion for FREE STICKERS.", width="350", height="735" %}
+  <figcaption>Don't distract customers from completing their purchase.</figcaption>
 </figure>
 
 For returning users you can simplify the checkout flow even more, by hiding data they don't need to
 see. For example: display the delivery address in plain text (not in a form) and allow users to
 change it via a link.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="images/returning-user.png" alt="Screenshot of 'Review order'
-  section of checkout page, showing text in plain text, with links to change delivery address,
-  payment method and billing address, which are not displayed." width="450">
-  <figcaption class="w-figcaption">Hide data customers don't need to see.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Screenshot of 'Review order' section of checkout page, showing text in plain text, with links to change delivery address, payment method and billing address, which are not displayed.", width="450", height="219" %}
+  <figcaption>Hide data customers don't need to see.</figcaption>
 </figure>
 
 ## Make it easy to enter name and address {: #address-forms}
@@ -481,7 +483,7 @@ Use `name` for a full name:
 <input autocomplete="name" ...>
 ```
 
-If you really do have a good reason to split out name parts, make sure to to use appropriate
+If you really do have a good reason to split out name parts, make sure to use appropriate
 autocomplete values:
 
 * `honorific-prefix`
@@ -517,11 +519,11 @@ Unicode in regular expressions is well supported by modern browsers.
 {% endCompare %}
 
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/unicode-letter-matching.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Unicode letter matching compared to Latin-only letter matching.</figcaption>
+  <figcaption>Unicode letter matching compared to Latin-only letter matching.</figcaption>
 </figure>
 
 {% Aside %}
@@ -571,7 +573,7 @@ Address line 2 (optional)
 You can try this out by remixing and editing the demo embedded below.
 
 {% Aside 'caution' %}
-Research shows that [**Address line 2** may be problematic for users]((https://baymard.com/blog/address-line-2)).
+Research shows that [**Address line 2** may be problematic for users](https://baymard.com/blog/address-line-2).
 Bear this in mind when designing address forms—you should consider alternatives such as using a
 single `textarea` (see below) or other options.
 {% endAside %}
@@ -633,22 +635,22 @@ for some use cases, but you should be aware of the potential downsides.
 Postal code address suggestion doesn't work for all countries—and in some regions, post codes can
 include a large number of potential addresses.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/long-list-of-addresses.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">ZIP or postal codes may include a lot of addresses!</figcaption>
+  <figcaption>ZIP or postal codes may include a lot of addresses!</figcaption>
 </figure>
 
 It's difficult for users to select from a long list of addresses—especially on mobile if they're
 rushed or stressed. It can be easier and less error prone to let users take advantage of autofill,
 and enter their complete address filled with a single tap or click.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/full-name-autofill.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">A single name input enables one-tap (one-click) address entry.</figcaption>
+  <figcaption>A single name input enables one-tap (one-click) address entry.</figcaption>
 </figure>
 
 
@@ -679,16 +681,15 @@ number.
 
 ### Avoid using custom elements for payment card dates
 
-If not properly designed, [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)
+If not properly designed, [custom elements](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements)
 can interrupt payment flow by breaking autofill, and won't work on older browsers. If all other
 payment card details are available from autocomplete but a user is forced to find their physical
 payment card to look up an expiry date because autofill didn't work for a custom element, you're
 likely to lose a sale. Consider using standard HTML elements instead, and style them accordingly.
 
-<figure class="w-figure">
-  <img src="images/custom-element-date-glitch.jpg" alt="Screenshot of payment
-  form showing custom elements for card expiry date that interrupt autofill.">
-  <figcaption class="w-figcaption">Autocomplete filled all the fields—except the expiry date!</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="Screenshot of payment form showing custom elements for card expiry date that interrupt autofill.", width="800", height="916" %}
+  <figcaption>Autocomplete filled all the fields—except the expiry date!</figcaption>
 </figure>
 
 ### Use a single input for payment card and phone numbers {: #single-number-input}
@@ -697,10 +698,9 @@ For payment card and phone numbers use a single input: don't split the number in
 it easier for users to enter data, makes validation simpler, and enables browsers to autofill.
 Consider doing the same for other numeric data such as PIN and bank codes.
 
-<figure class="w-figure">
-  <img src="images/credit-card-number-multiple-inputs.jpg" alt="Screenshot of payment form showing a
-  credit card field split into four input elements.">
-  <figcaption class="w-figcaption">Don't use multiple inputs for a credit card number.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="Screenshot of payment form showing a credit card field split into four input elements.", width="800", height="833" %}
+  <figcaption>Don't use multiple inputs for a credit card number.</figcaption>
 </figure>
 
 ### Validate carefully {: #validate}
@@ -739,10 +739,9 @@ It's particularly important to test address and payment forms on the platforms m
 your users, since form element functionality and appearance may vary, and differences in viewport
 size can lead to problematic positioning. BrowserStack enables [free testing for open source projects](https://www.browserstack.com/open-source) on a range of devices and browsers.
 
-<figure class="w-figure">
-  <img src="images/browserstack.jpg" alt="Screenshots of a payment form, payment-form.glitch.me, on
-  iPhone 7 and 11. The Complete Payment button is shown on iPhone 11 but not 7">
-  <figcaption class="w-figcaption">The same page on iPhone 7 and iPhone 11.<br>Reduce padding for
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="Screenshots of a payment form, payment-form.glitch.me, on iPhone 7 and 11. The Complete Payment button is shown on iPhone 11 but not 7", width="800", height="707" %}
+  <figcaption>The same page on iPhone 7 and iPhone 11.<br>Reduce padding for
     smaller mobile viewports to ensure the <strong>Complete payment</strong> button isn't hidden.</figcaption>
 </figure>
 
@@ -775,12 +774,12 @@ That, in turn, gives you a solid basis for prioritizing effort, making changes, 
 
 * [Sign-in form best practices](/sign-in-form-best-practices)
 * [Sign-up form best practices](/sign-up-form-best-practices)
-* [Verify phone numbers on the web with the Web OTP API](/web-otp)
-* [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+* [Verify phone numbers on the web with the WebOTP API](/web-otp)
+* [Create Amazing Forms](/learn/forms/)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
-* [Streamlining the Sign-up Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
+* [Streamlining the Sign-up Flow Using Credential Management API](https://developer.chrome.com/blog/credential-management-api/)
 * [Frank's Compulsive Guide to Postal Addresses](http://www.columbia.edu/~fdc/postal/) provides
 useful links and extensive guidance for address formats in over 200 countries.
 * [Countries Lists](http://www.countries-list.info/Download-List) has a tool for downloading country

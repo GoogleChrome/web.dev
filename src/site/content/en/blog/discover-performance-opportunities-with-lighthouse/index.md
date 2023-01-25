@@ -9,13 +9,14 @@ description: |
   performance. Lighthouse gives you a report on how the page did. The report
   provides a score for each metric and a list of opportunities which, if you
   implement them, should make the page load faster.
+alt: Chrome DevTools showing completed Lighthouse performance audit.
 tags:
     - blog
     - performance
     - devtools
 ---
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a tool that
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is a tool that
 helps you measure and find ways to improve a page's performance. Here's the
 general workflow for how you use Lighthouse:
 
@@ -50,14 +51,14 @@ If you have Chrome, then you have DevTools.
 1. In Chrome, go to the page that you want to audit.
 {% Instruction 'devtools', 'ol' %}
 
-{% Img src="image/admin/yfEKnxDJWT3JY6FWNiOZ.png", alt="DevTools opened and docked to the right hand side of the screen.", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/yfEKnxDJWT3JY6FWNiOZ.png", alt="DevTools opened and docked to the right hand side of the screen.", width="800", height="475" %}
 
 Click the **Audits** tab. If you don't see this tab, click the &raquo; symbol
 and then select **Audits** from the list. Lighthouse is the
 engine that powers the **Audits** panel. That's why you see an image of a
 lighthouse.
 
-{% Img src="image/admin/ugJI2r5k9y3puAuCX66f.png", alt="DevTools opened to the Lighthouse audits panel.", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/ugJI2r5k9y3puAuCX66f.png", alt="DevTools opened to the Lighthouse audits panel.", width="800", height="475" %}
 
 1. Make sure the **Mobile** radio button is selected. When Lighthouse
     audits your page, it will simulate a mobile device's viewport and user
@@ -76,7 +77,7 @@ lighthouse.
     how first-time visitors experience the page.
 1. Click **Run Audits**. After 5 to 10 seconds, Lighthouse shows you a report.
 
-{% Img src="image/admin/wy0Zq7fFXXSBeGwK8OgP.png", alt="DevTools showing a Lighthouse audit results report.", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/wy0Zq7fFXXSBeGwK8OgP.png", alt="DevTools showing a Lighthouse audit results report.", width="800", height="475" %}
 
 {% Aside %}
 You can set the configuration options to whatever makes the most sense for
@@ -97,29 +98,29 @@ configuration.
 
 The top-right of your report lists your overall performance score. 100 is a
 perfect score. Below the overall score are the metrics scores.
-[Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
+[Lighthouse v3 Scoring Guide](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)
 explains how each metric score contributes to the overall score.
 
-{% Img src="image/admin/3kKMRoc1EY2kHDy8NIHi.png", alt="Lighthouse metrics scores showing green, passing scores, and yellow, warning scores.", width="800", height="504", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/3kKMRoc1EY2kHDy8NIHi.png", alt="Lighthouse metrics scores showing green, passing scores, and yellow, warning scores.", width="800", height="504" %}
 
 Hover over a metric to learn more about it. Click **Learn more** to read
 documentation about it.
 
-<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-5.png" alt="">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jnSx7PT4NXRW6c88vVjj.png", alt="", width="800", height="504" %}
 
 Below your metrics scores you see screenshots of how the page looked while it
 loaded.
 
-{% Img src="image/admin/hDyQRm4B1K1dRciNTvC1.png", alt="DevTools' filmstrip view of a page loading.", width="800", height="504", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/hDyQRm4B1K1dRciNTvC1.png", alt="DevTools' filmstrip view of a page loading.", width="800", height="504" %}
 
 Below the screenshots you see opportunities for improving the page's
 performance.
 
-<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-7.png" alt="">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xn9EDUNnxVhdD5FcfAMA.png", alt="", width="800", height="504" %}
 
 Click an opportunity to learn more about it.
 
-{% Img src="image/admin/5dHwPPWIho3SckhvsGHt.png", alt="An expanded audit titled Defer offscreen images shows a number of image paths that can be optimized.", width="800", height="652", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/5dHwPPWIho3SckhvsGHt.png", alt="An expanded audit titled Defer offscreen images shows a number of image paths that can be optimized.", width="800", height="652" %}
 
 ## Next steps
 

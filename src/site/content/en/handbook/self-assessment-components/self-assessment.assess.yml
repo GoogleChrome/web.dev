@@ -83,17 +83,17 @@ questions:
     stem: "Which **two** Sesame Street muppets are clearly the best?"
     columns: true
     options:
-      - content: "![Elmo](./elmo.jpg)"
+      - content: "![Elmo](image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ng9hB0jbzGXy0MY7upMU.jpg)"
         rationale: Don't give a second thought to this tickle-me-come-lately.
-      - content: "![Ernie](./ernie.jpg)"
+      - content: "![Ernie](image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IzcniCVLaW1yV8ijjcoI.jpg)"
         rationale: I mean, c'mon. He's Ernie. I don't know🤷
-      - content: "![Cookie Monster](./cookiemonster.jpg)"
+      - content: "![Cookie Monster](image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ssj8YAsZcZfLHA6RVTQb.jpg)"
         rationale: |
           "[A cookie is a sometimes food](https://youtu.be/PaHkwE7TaNg)"?
           I remember when you had integrity.
-      - content: "![Big Bird](./bigbird.jpg)"
+      - content: "![Big Bird](image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uo1ZxzUbYfqtZCPzdCYF.jpg)"
         rationale: Laying it on kinda thick with the wide-eyed childlike wonder, no?
-      - content: "![Grover](./grover.jpg)"
+      - content: "![Grover](image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9gSbQKP405CVxOyD3Q0w.jpg)"
         rationale: The OG monster. Never forget it.
   - stimulus: "![Webby](image/admin/Iz4mJkLrJrLk9Ntem871.png)"
     components:

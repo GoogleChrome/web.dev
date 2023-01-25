@@ -2,8 +2,9 @@
 name: Propose new content
 about: Use this template to propose new web.dev content
 title: 'content: TODO'
-labels: 'new content'
-assignees: 'kaycebasques'
+labels: ''
+assignees: ''
+
 ---
 
 * Use this template to propose new content.
@@ -12,7 +13,7 @@ assignees: 'kaycebasques'
 
 ### Workflow for Googlers
 
-Fill out the web.dev content proposal form: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform
+Fill out the web.dev content proposal form: https://docs.google.com/forms/d/e/1FAIpQLSc65CDClpUu7R2ECacLz3B1a6hOCWdFAk2vkWXIbZjzNSXq_Q/viewform?resourcekey=0-t3rJNkt5V2-iE2N42KhrhQ
 
 Don't create an issue here on GitHub! Your GitHub issue will be closed
 immediately and you'll be asked to fill out the form instead.

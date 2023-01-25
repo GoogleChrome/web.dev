@@ -4,7 +4,7 @@ title: Use Imagemin to compress images
 authors:
   - katiehempenius
 date: 2018-11-05
-updated: 2020-04-06
+updated: 2020-08-24
 description: |
   Uncompressed images bloat your pages with unnecessary bytes. Run Lighthouse to
   check for opportunities to improve page load by compressing images.
@@ -14,15 +14,16 @@ codelabs:
   - codelab-imagemin-grunt
 tags:
   - performance
+  - web-vitals
 ---
 
 ## Why should you care?
 
-Uncompressed images bloat your pages with unnecessary bytes. The photo on the
-right is 40% smaller than the one on the left, yet would probably look identical
-to the average user.
+Uncompressed images bloat your pages with unnecessary bytes. Because images can be [candidates for Largest Contentful Paint (LCP)](/lcp/#what-elements-are-considered), those unnecessary bytes can add unnecessary [resource load time](/optimize-lcp/#3-reduce-resource-load-time), which can result in longer LCP times.
 
-<div class="w-table-wrapper">
+The photo on the right is 40% smaller than the one on the left, yet would probably look identical to the average user.
+
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -80,7 +81,7 @@ greater filesize savings, and you can customize the compression levels to meet
 your needs. The table below lists popular Imagemin plugins. These aren't the only plugins
 available, but they'd all be good choices for your project.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -164,7 +165,7 @@ $ imagemin images/* --out-dir=images
 ### Imagemin npm module
 
 If you use one of these build tools,
-checkout out the codelabs for Imaginemin with
+checkout the codelabs for Imagemin with
 [webpack](/codelab-imagemin-webpack), [gulp](/codelab-imagemin-gulp),
 or [grunt](/codelab-imagemin-grunt).
 

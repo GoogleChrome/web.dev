@@ -12,15 +12,15 @@ description: |
 tags:
   - blog
   - performance
-  - ecommerce
+  # - ecommerce
 ---
 
 The different steps of a purchase funnel are prone to performance issues in
 different ways, and therefore need different measurement and optimizations:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/87cAGdJAnPggf8Yt58ID.png", alt="A conversion funnel going from discover to engage to convert to re-engage.", width="800", height="399" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A conversion funnel.
   </figcaption>
 </figure>
@@ -54,22 +54,22 @@ Lab data for a first load can be easily acquired through
 while field data (at least for Chrome) is readily available through [Chrome UX
 reports](/fast/chrome-ux-report). A convenient combination of
 both can be found in
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+[PageSpeed Insights](https://pagespeed.web.dev/).
 You should also track relevant metrics from the field yourself:
-[Measuring these metrics on real users' devices](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices)
+[Measuring these metrics on real users' devices](/user-centric-performance-metrics/#in-the-field)
 provides a good overview.
 
 From a user perspective the most important metrics are:
 
-+   **[First Contentful Paint (FCP)](/first-contentful-paint):**
++   **[First Contentful Paint (FCP)](/fcp/):**
     The time the user stares at a blank screen. This is
     when most users bounce, as they don't see progress.
-+   **[First Meaningful Paint (FMP)](/first-meaningful-paint):**
++   **[First Meaningful Paint (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/):**
     When the user begins to see the main content they came for. This
     is often the hero image, but for a landing page it may even be a call to
     action such as a **Buy** button, since the user may have arrived with a clear
     intent (for example, through a targeted ad campaign).
-+   **[First Input Delay (FID)](https://developers.google.com/web/updates/2018/05/first-input-delay):**
++   **[First Input Delay (FID)](/fid/):**
     The time the website needs to react to the user's first input.
     Excessive JavaScript and other asset loading problems can block this,
     leading to failed taps or clicks, erroneous inputs and page abandonment.
@@ -95,21 +95,21 @@ There are two convenient ways of doing this:
 ### WebPageTest
 
 [WebPageTest](https://www.webpagetest.org/) offers a very flexible [scripting
-solution](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md).
+solution](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md).
 The basic idea is to:
 
 +   Tell WebPageTest to navigate through the pages of the flow with the
-    [`navigate`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#navigate)
+    [`navigate`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#navigate)
     command.
 +   If needed script the clicking of buttons via
-    [`clickAndWait`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#clickandwait)
+    [`clickAndWait`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#clickandwait)
     commands and fill text fields via
-    [`setValue`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#selectvalue).
+    [`setValue`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#selectvalue).
     For testing of Single Page Applications use `clickAndWait` rather than
     `navigate` commands for all steps after the first, as `navigate` will do a
     full load instead of the lightweight virtual page load.
 +   Make sure to combine the different steps of the flow in the analysis via
-    [`combineSteps`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#combinesteps)
+    [`combineSteps`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#combinesteps)
     to produce a single overall result report for the complete flow.
 
 Such a script could look like this:
@@ -135,7 +135,7 @@ controlled through the Node API
 start the browser through Puppeteer, navigate to the landing page through the
 [goto](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagegotourl-options)
 function,
-[inject Javascript](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatepagefunction-args)
+[inject JavaScript](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatepagefunction-args)
 to fill fields or
 [click](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options)
 buttons and proceed through the funnel through further
@@ -181,9 +181,9 @@ an eye on this though, and a great lab test tool for repeat visits is
 [WebPageTest](https://www.webpagetest.org/), which has a dedicated option for a
 direct repeat visit:
 
-<figure class="w-figure">
-  {% Img src="image/admin/6eHzqWl6gaKjL39n8Dwh.png", alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.", width="800", height="650", class="w-screenshot" %}
-  <figcaption class="w-figcaption w-figcaption--center">
+<figure>
+  {% Img src="image/admin/6eHzqWl6gaKjL39n8Dwh.png", alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.", width="800", height="650" %}
+  <figcaption>
     Webpagetest offers options to test first load and repeat load as well
   </figcaption>
 </figure>
@@ -192,9 +192,9 @@ To get a better feeling for repeat visit performance in the field use your
 analytics package of choice to segment your performance metrics by user type.
 Here is an example of such a report in Google Analytics:
 
-<figure class="w-figure">
-  {% Img src="image/admin/pSxM9xuJKho7RjOn4aDK.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="444", class="w-screenshot" %}
-  <figcaption class="w-figcaption w-figcaption--center">
+<figure>
+  {% Img src="image/admin/pSxM9xuJKho7RjOn4aDK.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="444" %}
+  <figcaption>
     A Google Analytics custom report can be used to report speed metrics for new and returning users.
   </figcaption>
 </figure>

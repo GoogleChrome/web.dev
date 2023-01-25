@@ -3,10 +3,8 @@
  * instructions and an embedded Glitch iframe.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
-import {env} from 'webdev_config';
-import './_styles.scss';
 
 /**
  * Render codelab instructions and Glitch
@@ -20,6 +18,8 @@ class Codelab extends BaseElement {
       glitch: {type: String},
       // The file to show when the Glitch renders.
       path: {type: String},
+      // Wether to show iframe or not because of a snapshot test.
+      snapshot: {type: Boolean},
       // Whether we are a desktop-sized browser or not.
       _isDesktop: {type: Boolean},
     };
@@ -33,19 +33,20 @@ class Codelab extends BaseElement {
     // _isDesktop has no default value as it's only correctly set between connected/disconnected
     // callbacks via the MediaQueryList's listener.
 
-    this._mql = window.matchMedia('(min-width: 865px)');
+    this._mql = window.matchMedia('(min-width: 1000px)');
     this._toggleDesktop = () => (this._isDesktop = this._mql.matches);
+    this.snapshot = false;
   }
 
   connectedCallback() {
     super.connectedCallback();
-    this._mql.addListener(this._toggleDesktop);
+    this._mql.addEventListener('change', this._toggleDesktop);
     this._toggleDesktop();
   }
 
   disconnectedCallback() {
     super.connectedCallback();
-    this._mql.removeListener(this._toggleDesktop);
+    this._mql.removeEventListener('change', this._toggleDesktop);
   }
 
   /**
@@ -54,7 +55,7 @@ class Codelab extends BaseElement {
    * Because we don't use slots, and we _do_ want to preserve this element's
    * light DOM children (they hold the codelab instructions) we create a new
    * renderRoot for LitElement.
-   * https://lit-element.polymer-project.org/guide/templates#renderroot
+   * https://lit.dev/docs/components/shadow-dom/#implementing-createrenderroot
    * This will render the glitch element as a sibling to the existing light
    * DOM children.
    */
@@ -85,42 +86,53 @@ class Codelab extends BaseElement {
     if (!this.glitch) {
       return html``;
     }
-    const isTest = env === 'test';
 
-    // If this is a test, always show the warning. Percy snapshots our DOM at a
-    // low resolution before resizing it, so we can't rely on _isDesktop being
-    // different for smaller or larger tests. The `w-test` ensures we test the
-    // sticky behavior of this element.
-    if (!this._isDesktop || isTest) {
-      const message = isTest
-        ? `This Glitch isn't loaded in a test environment`
-        : `This Glitch isn't available on small screens`;
+    if (!this._isDesktop) {
       return html`
-        <div class="w-sizer ${isTest ? 'w-test' : ''}">
-          <div class="w-aside w-aside--warning">
-            <p>
-              <strong>Warning:</strong> ${message},
-              <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
-                open it in a new tab.</a
+        <div class="aside flow bg-state-warn-bg color-core-text">
+          <p class="cluster">
+            <span class="aside__icon box-block color-state-warn-text"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                role="img"
+                aria-label="Warning sign"
+                xmlns="http://www.w3.org/2000/svg"
               >
-            </p>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M23 21L12 2 1 21h22zm-12-3v-2h2v2h-2zm0-4h2v-4h-2v4z"
+                /></svg
+            ></span>
+            <strong>Warning</strong>
+          </p>
+          <div>
+            This Glitch isn't available on small screens,
+            <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
+              open it in a new tab.</a
+            >
           </div>
         </div>
       `;
     }
 
-    return html`
-      <div class="w-sizer">
-        <iframe
+    const iframe = this.snapshot
+      ? html`<div
+          class="web-codelab__glitch-iframe web-codelab__glitch-snapshot"
+        ></div>`
+      : html`<iframe
           allow="geolocation; microphone; camera; midi; encrypted-media"
           alt="Embedded glitch ${this.glitch}"
+          class="web-codelab__glitch-iframe"
           title="Embedded glitch ${this.glitch}"
           src="${this.glitchSrc(true)}"
-          style="height: 100%; width: 100%; border: 0;"
         >
-        </iframe>
-      </div>
-    `;
+        </iframe>`;
+
+    return html` <div class="web-codelab__glitch-container">${iframe}</div> `;
   }
 }
 

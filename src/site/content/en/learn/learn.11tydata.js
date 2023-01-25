@@ -10,7 +10,15 @@ const allPaths = require('../../../_data/paths');
 // =============================================================================
 
 module.exports = function () {
-  const paths = [
+  // const web_dev_basics = [allPaths['web-dev-basics-one']];
+
+  const performance = [
+    allPaths['learn-core-web-vitals'],
+    allPaths['metrics'],
+    allPaths['fast'],
+  ];
+
+  const build_excellent = [
     allPaths['progressive-web-apps'],
     allPaths['accessible'],
     allPaths['reliable'],
@@ -20,32 +28,19 @@ module.exports = function () {
     allPaths['media'],
     allPaths['devices'],
     allPaths['animations'],
+    allPaths['identity'],
   ].filter(livePaths);
-
-  const performance = [
-    allPaths['learn-web-vitals'],
-    allPaths['metrics'],
-    allPaths['fast'],
-  ];
 
   const frameworks = [allPaths['react'], allPaths['angular']].filter(livePaths);
-
-  const audits = [
-    allPaths['lighthouse-performance'],
-    allPaths['lighthouse-pwa'],
-    allPaths['lighthouse-best-practices'],
-    allPaths['lighthouse-accessibility'],
-    allPaths['lighthouse-seo'],
-  ].filter(livePaths);
 
   const explorations = [allPaths['mini-apps']].filter(livePaths);
 
   return {
     learn: {
-      paths,
+      // web_dev_basics,
       performance,
+      build_excellent,
       frameworks,
-      audits,
       explorations,
     },
   };

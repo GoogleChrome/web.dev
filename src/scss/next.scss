@@ -1,0 +1,819 @@
+// First up: config
+@import 'config';
+
+// Disable util class generator because we'll render them at the end
+$generate-utility-classes: false;
+
+// Next: pull in gorko for design token and custom property generation
+@import '../../node_modules/gorko/gorko.scss';
+
+@import 'reset';
+@import 'fonts';
+
+/// GLOBAL VARIABLES
+/// Global variables that should be accessible in all authored CSS
+$global-gutter: map-get($gorko-space-scale, 'size-1');
+$global-gutter-narrow: 1.25rem;
+$global-stroke: 1px solid get-utility-value('color', 'stroke');
+
+/// Elements that feature in prose contexts need to have a consistent max width
+$global-prose-element-max-width: 50rem;
+
+// NOTE: there are more design token-led global variables in _tokens.scss
+
+/// FUNCTIONS
+@import 'functions/get-space';
+
+/// MIXINS
+@import 'mixins/button-base-styles';
+@import 'mixins/card-base-styles';
+@import 'mixins/overflow-shadow';
+@import 'mixins/rounded-border';
+@import 'mixins/vertically-align-label';
+
+/// GLOBAL CSS
+/// Core CSS that is applicable to every page
+/// https://cube.fyi/css.html
+
+body {
+  font-size: get-size('size-1');
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  @include apply-utility('bg', 'core-bg');
+  @include apply-utility('color', 'core-text');
+  @include apply-utility('font', 'base');
+  @include apply-utility('leading', 'regular');
+}
+
+main {
+  flex: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include apply-utility('font', 'brand');
+  @include apply-utility('leading', 'flat');
+  @include apply-utility('weight', 'regular');
+}
+
+h1 {
+  font-size: get-size('size-5');
+}
+
+h2 {
+  font-size: get-size('size-4');
+}
+
+h3 {
+  font-size: get-size('size-3');
+}
+
+h4,
+h5,
+h6 {
+  font-size: get-size('size-2');
+}
+
+/// General typesetting
+
+p,
+li {
+  max-width: 70ch;
+}
+
+h1,
+h2,
+h3 {
+  max-width: 30ch;
+}
+
+/// Lists
+
+ul:not([class]),
+ol:not([class]) {
+  list-style: none;
+}
+
+ol:not([class]),
+ul:not([class]) {
+  li {
+    position: relative;
+
+    @include apply-utility('leading', 'short');
+  }
+
+  li + li {
+    margin-top: 1em;
+  }
+}
+
+ul:not([class]) {
+  // AB: I don't like how restrictive the marker pseudo-element is
+  // and we have some sizing and positioning that will benefit
+  // from a standard pseudo-element instead.
+  list-style: none;
+  padding-inline-start: 1rem;
+
+  > li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 1ex 0 0 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  > li {
+    padding-inline-start: 2ch;
+  }
+}
+
+ol:not([class]) {
+  counter-reset: ol-list;
+  padding-inline-start: 0.5rem;
+
+  > li::before {
+    content: counter(ol-list);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    inset: 0 0 0 0;
+    border-radius: 50%;
+    font-size: 0.9em;
+    background: var(--color-accent-bg);
+    color: var(--color-accent-text);
+
+    @include apply-utility('weight', 'medium');
+  }
+
+  > li {
+    counter-increment: ol-list;
+    padding-inline-start: 2.5rem;
+  }
+}
+
+dt {
+  @include apply-utility('weight', 'bold');
+}
+
+dt ~ dd {
+  margin-inline-start: 2ch;
+}
+
+dd + dt {
+  margin-top: 0.5em;
+}
+
+/// Blockquotes
+
+blockquote {
+  padding-left: 24px;
+
+  cite {
+    font-size: get-size('size-0');
+  }
+}
+
+blockquote::before {
+  content: '”';
+  @include apply-utility('font', 'brand');
+  font-size: get-size('size-4');
+  float: left;
+  margin: -6px 0 0 -24px;
+}
+
+blockquote[data-type=pullquote] {
+  padding-left: initial;
+  font-size: get-size('size-3');
+  text-align: center;
+  display: block;
+
+  @include apply-utility('font', 'brand');
+  @include apply-utility('leading', 'short');
+}
+
+blockquote[data-type=pullquote],
+blockquote[data-type=pullquote] > * {
+  margin-inline: auto;
+
+  @include apply-utility('measure', 'short');
+}
+
+/// @extend is *very* naughty if used unwisely
+/// However, we want child elements to flow without
+/// having to add a class so in this instance, it
+/// can slide
+blockquote[data-type=pullquote] {
+  @extend .flow;
+}
+
+/// <q> elements are ideal, but we need to make sure
+/// any element is styled as a quote
+
+blockquote[data-type=pullquote]::before {
+  content: '';
+  display: none;
+}
+
+blockquote[data-type=pullquote] > *:first-child::before {
+  content: open-quote;
+}
+
+blockquote[data-type=pullquote] > *:nth-last-child(2)::after {
+  content: close-quote;
+}
+
+blockquote[data-type=pullquote] > *:last-child:not(cite)::after {
+  content: close-quote;
+}
+
+/// It's best to reset content rather than
+/// add quotes only to the first-child, because
+/// quotes might actually be multiline
+blockquote[data-type=pullquote] > cite::before,
+blockquote[data-type=pullquote] > cite::after {
+  content: unset;
+}
+
+/// Make sure figcaptions are central with the blockquote[data-type=pullquote]
+/// when they appear in the same <figure> context.
+// Same applies to cites
+figure > blockquote[data-type=pullquote] ~ figcaption,
+blockquote[data-type=pullquote] cite {
+  margin-inline: auto;
+  display: block;
+  font-style: normal;
+  font-size: get-size('size-2');
+
+  @include apply-utility('weight', 'bold');
+  @include apply-utility('leading', 'flat');
+}
+
+/// Captions
+
+caption,
+figcaption {
+  font-style: italic;
+  text-align: start;
+  font-size: get-size('size-0');
+
+  @include apply-utility('measure', 'short');
+  @include apply-utility('color', 'mid-text');
+  @include apply-utility('gap-top', 'base');
+
+  code {
+    white-space: nowrap;
+  }
+}
+
+/// Tables
+
+table {
+  max-width: 100%;
+  min-width: 50%;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 0.8em 0.5em;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th {
+  @include apply-utility('weight', 'medium');
+}
+
+tr td {
+  border-top: 1px solid var(--color-stroke);
+}
+
+caption {
+  caption-side: bottom;
+}
+
+table ul:not([class]),
+table ol:not([class]) {
+  margin: 0;
+}
+
+/// Code in tables
+table code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/// Cell alignment
+table[data-alignment='top'] {
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
+table[data-alignment='baseline'] {
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
+/// Separators
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-stroke);
+  max-width: 80rem;
+  margin-inline: 0;
+}
+
+// For the <hr /> itself and whatever element follows it,
+// have consistent space in flow contexts
+hr,
+hr + * {
+  --flow-space: #{get-size('size-6')};
+}
+
+/// Code
+
+code {
+  padding: 0.125em 0.25em;
+  background: var(--color-mid-bg);
+  border: 1px solid var(--color-stroke);
+  font-size: 0.9em;
+  hyphens: none;
+  tab-size: 2;
+  text-align: left;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  @include apply-utility('font', 'mono');
+}
+
+pre > code {
+  display: block;
+  padding: get-size('size-1');
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+// It's not uncommon to have code in markdown headings.
+// In these cases we should remove the border.
+// There is also a utility class, .unstyled-code, that can be used
+// if we're using <code> blocks in new contexts.
+// For example: <span class="unstyled-code">{{ description | md | safe }}</span>
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+.unstyled-code code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  margin: 0;
+  padding: 0;
+  white-space: normal;
+  overflow-wrap: break-word
+}
+
+p code,
+li code {
+  overflow-wrap: break-word;
+}
+
+/// Sub and sup
+sub,
+sup {
+  font-size: 0.6em;
+  vertical-align: baseline;
+}
+
+sup {
+  position: relative;
+  top: -1ex;
+}
+
+/// Details and summary
+details {
+  @extend .flow;
+
+  --flow-space: 0.5em;
+
+  border-block: 1px solid get-utility-value('bg', 'stroke');
+  padding: 1rem 0.5rem 1.2rem 0.5rem;
+  text-align: left;
+}
+
+details + details {
+  border-block-start: none;
+}
+
+details summary {
+  position: relative;
+  font-size: get-size('size-2');
+  list-style: none;
+  cursor: pointer;
+  padding-right: get-space('size-1'); // Prevent overlap with ::before element
+
+  @include apply-utility('color', 'action-text');
+  @include apply-utility('weight', 'regular');
+  @include apply-utility('leading', 'flat');
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  /// A custom marker
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+
+  &::before {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: get-utility-value('bg', 'highlight-interact-bg');
+    inset-inline-end: 0;
+    inset-block-start: -2px;
+  }
+
+  &::after {
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    inset-block-start: 7px;
+    inset-inline-end: 10px;
+    transform: rotate(45deg);
+  }
+
+  /// The marker handles our focus state for us
+  &:focus {
+    outline: none;
+
+    &::before {
+      outline: 1px solid currentColor;
+    }
+  }
+
+  &:hover {
+    &::before {
+      filter: invert(0.05);
+    }
+  }
+}
+
+/// Let a details element inherit a parent's font-size
+/// if it feature a font size utility class
+[class*='text-'] > details summary {
+  font-size: inherit;
+}
+
+details[open] summary {
+  &::after {
+    inset-block-start: 11px;
+    transform: rotate(-135deg);
+  }
+}
+
+details summary + * {
+  @include apply-utility('flow-space', 'size-1');
+}
+
+/// Form fields
+
+// Style inputs without a type attribute the same as type="text", since they
+// are semantically equivalent.
+// See https://github.com/GoogleChrome/web.dev/issues/7638#issuecomment-1087607518
+input:not([type]),
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+  display: block;
+  width: 100%;
+  background-color: get-utility-value('bg', 'core-bg');
+  color: get-utility-value('color', 'core-text');
+  border: 1px solid get-utility-value('color', 'stroke');
+  font: inherit;
+  padding: 0.8em;
+  line-height: 1;
+  border-radius: $global-radius-base;
+}
+
+textarea {
+  &:not([rows]) {
+    min-height: 12rem;
+  }
+
+  @include apply-utility('leading', 'short');
+}
+
+// Style inputs without a type attribute the same as type="text", since they
+// are semantically equivalent.
+// See https://github.com/GoogleChrome/web.dev/issues/7638#issuecomment-1087607518
+input:not([type]),
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea,
+select {
+  max-width: 40rem;
+}
+
+select {
+  display: block;
+  width: 100%;
+  background-color: get-utility-value('bg', 'core-bg');
+  color: get-utility-value('color', 'core-text');
+  // Use an escaped svg to add a small grey arrow to the end of the select
+  // sass-lint:disable quotes
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L12 15L17 10H7Z' fill='%235F6368'/%3E%3C/svg%3E%0A");
+  // Set the width of the arrow background image and let the height default to auto
+  background-size: 1.5em;
+  background-position: right 0.5em top 50%;
+  background-repeat: no-repeat;
+  border: $global-stroke;
+  border-radius: $global-radius-base;
+  font: inherit;
+  line-height: 1.1;
+  padding: 1em 3em 1em 0.8em;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:hover {
+  background-color: get-utility-value('bg', 'accent-bg');
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  margin: 0px;
+  background-size: cover;
+  flex: none;
+  appearance: none;
+  -webkit-appearance: none;
+
+  /// A material design-style "click" state
+  &::before {
+    content: '';
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    background: get-utility-value('bg', 'mid-bg');
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: opacity $global-transition-fade 50ms,
+      background $global-transition-fade, transform $global-transition-movement;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover:focus::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  &:checked::before {
+    background: get-utility-value('bg', 'highlight-interact-bg');
+  }
+}
+
+/// Optical adjustment helps align labels
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+  transform: translateY(-0.5ex);
+}
+
+input[type='checkbox'] {
+  width: min(1.13em, 18px);
+  height: min(1.13em, 18px);
+
+  @include apply-utility('bg', 'checkbox');
+}
+
+input[type='checkbox']:checked {
+  @include apply-utility('bg', 'checkbox-checked');
+}
+
+input[type='radio'] {
+  width: min(1.5em, 24px);
+  height: min(1.5em, 24px);
+
+  @include apply-utility('bg', 'radio');
+}
+
+input[type='radio']:checked {
+  @include apply-utility('bg', 'radio-checked');
+}
+
+/// Media
+video {
+  max-width: 100%;
+}
+
+/// Selects images that are likely to have a transparent BG and applies a
+/// theme-driven mask to them
+img[src$='.svg'],
+img[src$='.png'] {
+  background-color: get-utility-value('bg', 'transparent-img-mask');
+}
+
+/// Links
+
+a {
+  color: var(--color-highlight-text);
+}
+
+a:visited {
+  color: var(--color-highlight-text-alt);
+}
+
+a:hover {
+  color: var(--color-highlight-text);
+  background: var(--color-highlight-interact-bg);
+}
+
+a:active {
+  filter: brightness(0.9);
+}
+
+/// General interactive states
+
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 4px;
+}
+
+:target {
+  scroll-margin-top: 2ex;
+}
+
+/// High contrast selection style
+::selection {
+  color: var(--color-core-bg);
+  background: var(--color-core-text);
+}
+
+/// If an element is [hidden] it needs to be max priority
+[hidden] {
+  display: none !important;
+}
+
+/// Misc web components that need to be blocks
+web-copy-code {
+  display: block;
+}
+
+/// Video related elements
+video,
+.youtube {
+  position: relative;
+  aspect-ratio: 16/9;
+}
+
+/// COMPOSITIONS
+@import 'compositions/auto-grid';
+@import 'compositions/breakout';
+@import 'compositions/cluster';
+@import 'compositions/reel';
+@import 'compositions/repel';
+@import 'compositions/sidebar';
+@import 'compositions/switcher';
+@import 'compositions/wide-card-index';
+
+/// BLOCKS
+@import 'blocks/aside';
+@import 'blocks/audio-player';
+@import 'blocks/author';
+@import 'blocks/banner';
+@import 'blocks/brand';
+@import 'blocks/breadcrumbs';
+@import 'blocks/browser-compat';
+@import 'blocks/button';
+@import 'blocks/callout';
+@import 'blocks/card';
+@import 'blocks/carousel';
+@import 'blocks/compare';
+@import 'blocks/counter';
+@import 'blocks/ellipsis';
+@import 'blocks/eyebrow';
+@import 'blocks/fab';
+@import 'blocks/feature-card';
+@import 'blocks/figure';
+@import 'blocks/fixed-width-img';
+@import 'blocks/headline';
+@import 'blocks/hero';
+@import 'blocks/hero-image';
+@import 'blocks/icon-button';
+@import 'blocks/indicator';
+@import 'blocks/label';
+@import 'blocks/numbered-headers';
+@import 'blocks/pagination';
+@import 'blocks/pill';
+@import 'blocks/preview-pagination';
+@import 'blocks/prose';
+@import 'blocks/site-footer';
+@import 'blocks/site-header';
+@import 'blocks/skip-link';
+@import 'blocks/stack-nav';
+@import 'blocks/stats';
+@import 'blocks/status-list';
+@import 'blocks/syntax-highlighting';
+@import 'blocks/table-wrapper';
+@import 'blocks/toc';
+@import 'blocks/toggle-switch';
+@import 'blocks/tooltip';
+
+/// WEB COMPONENTS
+@import 'web-components/web-assessment';
+@import 'web-components/web-audio-fab';
+@import 'web-components/web-codelab';
+@import 'web-components/web-copy-code';
+@import 'web-components/web-navigation-drawer';
+@import 'web-components/web-search';
+@import 'web-components/web-select-group';
+@import 'web-components/web-snackbar';
+@import 'web-components/web-subscribe';
+@import 'web-components/web-tabs';
+
+/// UTILITY CLASSES
+@import 'utilities/all-center';
+@import 'utilities/avatar';
+@import 'utilities/docked-actions';
+@import 'utilities/flow';
+@import 'utilities/focus-ring';
+@import 'utilities/region';
+@import 'utilities/over-scroll';
+@import 'utilities/scrollbar';
+@import 'utilities/visually-hidden';
+@import 'utilities/wrapper';
+
+/// PAGES
+@import 'pages/about';
+@import 'pages/course';
+@import 'pages/design-system';
+@import 'pages/homepage';
+@import 'pages/landing-page';
+@import 'pages/learn';
+@import 'pages/explore';
+@import 'pages/measure';
+@import 'pages/collection';
+@import 'pages/pattern';
+@import 'pages/spaces';
+
+// Temporary rollout patches
+@import 'rollout';
+
+// Import unresolved states for lit-elements
+@import 'unresolved';
+
+/// LEGACY EXTENSIONS
+/// These elements are everywhere and to replace them site-wide would be
+/// a massive project, so they use @extend to pick up new styles
+.w-visually-hidden {
+  @extend .visually-hidden;
+}
+
+.w-columns {
+  @extend .switcher;
+}
+
+// Render gorko utilities
+@include generate-utility-classes();

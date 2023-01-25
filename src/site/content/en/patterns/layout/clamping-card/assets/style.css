@@ -1,0 +1,16 @@
+.parent {
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: clamp(23ch, 60%, 46ch);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.visual {
+    height: 125px;
+    width: 100%;
+  }

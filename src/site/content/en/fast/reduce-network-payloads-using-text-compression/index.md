@@ -29,13 +29,13 @@ improves page load times.
 Lighthouse displays a failed audit if it detects any CSS or JS resources on your
 page that can be minified.
 
-{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Lighthouse Minify CSS Audit", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Lighthouse Minify CSS Audit", width="800", height="90" %}
 
-{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Lighthouse Minify JS Audit", width="800", height="112", class="w-screenshot" %}
+{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Lighthouse Minify JS Audit", width="800", height="112" %}
 
 It also audits for any uncompressed assets.
 
-{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: Enable text compression", width="800", height="123", class="w-screenshot" %}
+{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: Enable text compression", width="800", height="123" %}
 
 ## Minification
 

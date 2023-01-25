@@ -1,0 +1,33 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/brand
+.brand {
+  --gutter: 0.5rem;
+
+  svg {
+    width: 100%;
+    max-width: 8rem;
+    fill: var(--color-mid-text);
+  }
+}
+
+/// Sets the text color to be themeable
+/// If the logo SVG changes, make sure this
+/// pseudo-class is still accurate
+.brand__text {
+  fill: get-utility-value('color', 'mid-text');
+
+  /// In very small contexts, the logo takes up a lot of space, so we
+  /// use just the logomark instead
+  @include media-query('xs') {
+    display: none;
+  }
+}
+
+.brand__byline {
+  font-size: get-size('size-2');
+  transform: translateY(-0.05ex); // Optical adjustment
+
+  @include apply-utility('font', 'brand');
+  @include apply-utility('leading', 'flat');
+  @include apply-utility('weight', 'medium');
+}

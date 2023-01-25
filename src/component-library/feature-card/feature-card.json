@@ -1,0 +1,52 @@
+{
+  "title": "Feature Card",
+  "keyLinks": [
+    {
+      "label": "Sass File",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/blocks/_feature-card.scss"
+    }
+  ],
+  "context": {
+    "title": "Making their web app installable resulted in increased traffic",
+    "eyebrow": "Web vitals",
+    "url": "#",
+    "background": "/images/feature-cards/web-vitals-feature.png"
+  },
+  "variants": [
+    {
+      "name": "with-light-text",
+      "title": "With Light Text",
+      "context": {
+        "theme": "light",
+        "title": "Designing in the browser using Dev Tools for design",
+        "eyebrow": "Show",
+        "url": "#",
+        "background": "/images/feature-cards/design-in-the-browser.jpg"
+      }
+    },
+    {
+      "name": "with-illustration-treatment",
+      "title": "With Illustration Treatment",
+      "context": {
+        "theme": "dark",
+        "treatment": "illustration",
+        "title": "Explore our structured learning paths to learn new skills",
+        "eyebrow": "Learn",
+        "url": "#",
+        "background": "https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/yJSJQfrrK4pVh44yuMZV.svg"
+      }
+    },
+    {
+      "name": "with-background-treatment",
+      "title": "With Background Treatment",
+      "context": {
+        "theme": "dark",
+        "treatment": "bg-image",
+        "title": "Mainline Menswear implements PWA and sees a 55% conversion rate uplift",
+        "eyebrow": "Case study",
+        "url": "#",
+        "background": "https://web-dev.imgix.net/image/8WbTDNrhLsU0El80frMBGE4eMCD3/Yz5G0leLpdHLidygym31.jpg?auto=format&w=1140"
+      }
+    }
+  ]
+}

@@ -13,7 +13,7 @@ tags:
   - performance
 ---
 
-[Webpack](https://developers.google.com/web/fundamentals/performance/webpack/)
+[Webpack](/webpack/)
 combines all your imported files and packages them into one or more output
 files known as bundles. Bundling is neat, but as your app grows your bundles
 will grow too. You need to monitor bundle sizes to ensure that they don't grow
@@ -48,9 +48,9 @@ seen before. 1 "KiB" and 1 "KB" are fairly close in size: 1 KiB is 1024 bytes,
 while 1 KB is 1000 bytes.
 {% endAside %}
 
-<figure class="w-figure">
-  {% Img src="image/admin/MpeaVZE4nJHOAAnlQ8Sz.png", alt="Webpack output showing bundle size of 323 KiB", width="640", height="59", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/MpeaVZE4nJHOAAnlQ8Sz.png", alt="Webpack output showing bundle size of 323 KiB", width="640", height="59" %}
+  <figcaption>
     Webpack warning you about bulky JS bundle ⚠️
   </figcaption>
 </figure>
@@ -60,9 +60,9 @@ and the default threshold is **244 KiB uncompressed**, for both assets and
 [entry points](https://webpack.js.org/concepts/entry-points/)
 (the combination of all assets used during the initial load of a page).
 
-<figure class="w-figure">
-  {% Img src="image/admin/tXgrsOqdJAzf6LTelr0v.png", alt="Webpack warning that the asset exceeds the recommended size limit", width="642", height="108", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/tXgrsOqdJAzf6LTelr0v.png", alt="Webpack warning that the asset exceeds the recommended size limit", width="642", height="108" %}
+  <figcaption>
     Webpack warning you about bulky JS bundle ⚠️
   </figcaption>
 </figure>
@@ -71,9 +71,9 @@ Webpack will not only warn you, but it will also give you a recommendation on
 how to downsize your bundles. You can learn more about the recommended techniques on
 [Web Fundamentals](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching#lazy-loading).
 
-<figure class="w-figure">
-  {% Img src="image/admin/pygtt0At7nmByNKm38hr.png", alt="Webpack performance optimization recommendation", width="641", height="96", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">Webpack performance optimization recommendation 💁</figcaption>
+<figure>
+  {% Img src="image/admin/pygtt0At7nmByNKm38hr.png", alt="Webpack performance optimization recommendation", width="641", height="96" %}
+  <figcaption>Webpack performance optimization recommendation 💁</figcaption>
 </figure>
 
 ## Set a custom performance budget
@@ -82,7 +82,7 @@ An appropriate performance budget will depend on the nature of your project.
 It's always best to [do your own research](/your-first-performance-budget).
 A [good rule](/your-first-performance-budget#budget-for-quantity-based-metrics)
 of thumb is to deliver under 170 KB of compressed/minified
-[critical-path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+[critical-path](/critical-rendering-path/)
 resources.
 
 {% Aside %}
@@ -119,9 +119,9 @@ Possible values for **hints** are:
    setting is recommended for production builds.
 3. **`false`**: No warnings or errors are shown.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ZFP0SZfO4zzD0lyD29Vk.png", alt="Webpack performance error in red font", width="606", height="107" %}
-  <figcaption class="w-figcaption">Webpack performance hint "error" 🚨</figcaption>
+  <figcaption>Webpack performance hint "error" 🚨</figcaption>
 </figure>
 
 ## Optimize
@@ -177,7 +177,9 @@ again to build the optimized bundle.
 
 Ta-da! You have shaved off 223 KiB (230KB) and the app is under budget.🎉
 
-{% Img src="image/admin/A6TIDToLthjRrHvxluND.png", alt="Webpack bundle size output after optimization is 97.7 KiB", width="473", height="58", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/admin/A6TIDToLthjRrHvxluND.png", alt="Webpack bundle size output after optimization is 97.7 KiB", width="473", height="58" %}
+</figure>
 
 ## Monitor
 

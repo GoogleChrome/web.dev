@@ -16,8 +16,6 @@
 
 declare module 'webdev_config' {
   export declare const isProd: boolean;
-  export declare const env: string;
-  export declare const version: string;
   export declare const firebaseConfig: {
     apiKey: string;
     authDomain: string;

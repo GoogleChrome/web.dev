@@ -1,6 +1,18 @@
 ---
-layout: default
-permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
+layout: default-next
 ---
 
-{% include 'partials/text.njk' %}
+<div class="region wrapper">
+  <header>
+    <div class="flow all-center headline">
+    <h1 class="headline__title">{{ title | safe }}</h1>
+    {% if subhead %}
+      <p>
+        {{ subhead | safe }}
+      </p>
+    {% endif %}
+  </header>
+  <div class="gap-top-size-2 prose">
+    {{ content | safe }}
+  </div>
+</div>

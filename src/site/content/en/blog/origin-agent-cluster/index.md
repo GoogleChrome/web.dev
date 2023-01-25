@@ -91,18 +91,18 @@ When your page is in an origin-keyed agent cluster, you give up some abilities t
 cross-origin pages that were previously available. In particular:
 
 - You can no longer set
-  [`document.domain`](https://developer.mozilla.org/en-US/docs/Web/API/Document/domain). This is a
+  [`document.domain`](https://developer.mozilla.org/docs/Web/API/Document/domain). This is a
   legacy feature that normally allows same-site cross-origin pages to synchronously access each
   other's DOM, but in origin-keyed agent clusters, it is disabled.
 
 - You can no longer send
-  [`WebAssembly.Module`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module)
+  [`WebAssembly.Module`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module)
   objects to other same-site cross-origin pages via `postMessage()`.
 
 - (Chrome-only) You can no longer send
-  [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
+  [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
   or
-  [`WebAssembly.Memory`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory)
+  [`WebAssembly.Memory`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory)
   objects to other same-site cross-origin pages.
 
 {% Aside 'caution' %}
@@ -210,18 +210,18 @@ Logging this data to your analytics platform can provide a valuable check that y
 your server correctly.
 
 Finally, note that the `Origin-Agent-Cluster` header will only work on [secure
-contexts](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts), i.e. on HTTPS
+contexts](https://developer.mozilla.org/docs/Web/Security/Secure_Contexts), i.e. on HTTPS
 pages or on `http://localhost`. Non-localhost HTTP pages do _not_ support origin-keyed agent
 clusters.
 
 ## Origin-keying is not a security feature
 
 While using an origin-keyed agent cluster does isolate your origin from synchronous access from
-same-site cross-origin pages, it does not give the [protection](https://web.dev/why-coop-coep/) of
+same-site cross-origin pages, it does not give the [protection](/why-coop-coep/) of
 security-related headers like
-[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
+[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
 and
-[`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
+[`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 In particular, it is not a reliable protection against side channel attacks like
 [Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)).
 

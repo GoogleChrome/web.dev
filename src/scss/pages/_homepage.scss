@@ -1,0 +1,77 @@
+@import '../../styles/settings/colors';
+
+.homepage {
+  // Creates a pencil line for the one case where there's a border
+  hr {
+    margin: 0;
+    width: 100%;
+    max-width: unset;
+  }
+
+  hr + * {
+    --flow-space: unset;
+  }
+
+  .headline__title {
+    max-width: 100%;
+
+    @include media-query('md') {
+      margin-top: 50px;
+    }
+  }
+
+  .cluster {
+    gap: 0.5rem 0.8rem;
+
+    .pill {
+      padding: 0.5rem 0.8rem;
+    }
+  }
+
+  web-subscribe {
+    border-top: none;
+  }
+}
+
+.homepage__section {
+  padding-block: get-space('size-3');
+}
+
+.homepage__developers svg {
+  fill: var(--color-mid-text);
+}
+
+.homepage__news {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 2fr;
+  grid-column-gap: 30px;
+  max-width: 70rem;
+  margin: auto;
+
+  .card {
+    justify-self: center;
+    margin-bottom: 30px;
+  }
+
+  @include media-query('md') {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+
+    .card {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.homepage .repel {
+  --repel-vertical-alignment: stretch;
+}
+
+.homepage__collection {
+  border-top: 1px solid var(--color-stroke);
+
+  .wrapper {
+      padding-top: 2.5rem;
+  }
+}

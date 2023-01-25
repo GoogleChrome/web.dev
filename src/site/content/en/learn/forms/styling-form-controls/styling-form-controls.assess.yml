@@ -1,0 +1,16 @@
+setLeader: Test your knowledge of styling form controls
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: How can you remove platform-native styling of form controls?
+    options:
+      - content: "Using `revert: all;`."
+        rationale: "Try again!"
+      - content: "Using `appearance: none;`."
+        rationale: "🎉"
+      - content: "Using `appearance: revert;`."
+        rationale: "Try again!"
+      - content: "Using `revert: appearance;`."
+        rationale: "Try again!"

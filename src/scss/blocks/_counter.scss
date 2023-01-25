@@ -1,0 +1,26 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/counter
+.counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+  border-radius: 2em;
+  line-height: 1;
+  font-size: get-size('size-0');
+  text-decoration: none;
+
+  @include apply-utility('color', 'action-text');
+
+  svg {
+    fill: currentColor;
+    width: 1.4em;
+    height: 1.4em;
+    transform: translateY(-1px); // Optical adjustment
+  }
+}
+
+.counter[data-layout='flush'] {
+  background: none;
+  padding: 0;
+}

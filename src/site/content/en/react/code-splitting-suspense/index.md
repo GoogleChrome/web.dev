@@ -103,8 +103,8 @@ To better demonstrate how this works:
 The loading indicator will show for longer now. Notice how all the code that
 makes up the `AvatarComponent` is fetched as a separate chunk.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./split-component-chunk.png" alt="DevTools network panel showing one chunk.js file being downloaded">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="DevTools network panel showing one chunk.js file being downloaded", width="800", height="478" %}
 </figure>
 
 {% Aside %}
@@ -183,7 +183,7 @@ any React component can serve as an error boundary if it implements either (or
 both) of the lifecycle methods `static getDerivedStateFromError()` or
 `componentDidCatch()`.
 
-To detect and handle lazy-loading failures, you can wrap your `Suspense`
+To detect and handle lazy loading failures, you can wrap your `Suspense`
 component with a parent components that serves as an error boundary. Inside the
 error boundary's `render()` method, you can render the children as-is if there's
 no error, or render a custom error message if something goes wrong:

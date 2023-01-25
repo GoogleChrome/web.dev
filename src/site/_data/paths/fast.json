@@ -1,8 +1,8 @@
 {
   "slug": "fast",
-  "cover": "/images/collections/fast.svg",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/fjFJRFnHXiem8yF0GGQ9.svg",
   "title": "i18n.paths.fast.title",
-  "updated": "July 17, 2020",
+  "updated": "January 6, 2022",
   "description": "i18n.paths.fast.description",
   "overview": "i18n.paths.fast.overview",
     "topics": [
@@ -12,8 +12,21 @@
         "why-speed-matters",
         "what-is-speed",
         "how-to-measure-speed",
-        "how-to-stay-fast",
-        "rail"
+        "how-to-stay-fast"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.core_web_vitals",
+      "pathItems": [
+        "vitals",
+        "user-centric-performance-metrics",
+        "defining-core-web-vitals-thresholds",
+        "lcp",
+        "cls",
+        "fid",
+        "optimize-lcp",
+        "optimize-cls",
+        "optimize-fid"
       ]
     },
     {
@@ -55,6 +68,8 @@
     {
       "title": "i18n.paths.fast.topics.optimize_your_javascript",
       "pathItems": [
+        "optimize-long-tasks",
+        "optimize-inp",
         "apply-instant-loading-with-prpl",
         "reduce-javascript-payloads-with-code-splitting",
         "remove-unused-code",
@@ -72,7 +87,8 @@
         "preload-critical-assets",
         "preconnect-and-dns-prefetch",
         "link-prefetch",
-        "fast-playback-with-preload"
+        "fast-playback-with-preload",
+        "optimize-ttfb"
       ]
     },
     {
@@ -89,12 +105,14 @@
       "pathItems": [
         "third-party-javascript",
         "identify-slow-third-party-javascript",
-        "efficiently-load-third-party-javascript"
+        "efficiently-load-third-party-javascript",
+        "tag-best-practices"
       ]
     },
     {
       "title": "i18n.paths.fast.topics.optimize_webfonts",
       "pathItems": [
+        "font-best-practices",
         "avoid-invisible-text",
         "optimize-webfont-loading",
         "reduce-webfont-size"
@@ -113,7 +131,9 @@
         "chrome-ux-report-data-studio-dashboard",
         "chrome-ux-report-pagespeed-insights",
         "chrome-ux-report-bigquery",
-        "chrome-ux-report-api"
+        "chrome-ux-report-api",
+        "lab-and-field-data-differences",
+        "crux-and-rum-differences"
       ]
     },
     {

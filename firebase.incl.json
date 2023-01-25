@@ -1,4 +1,7 @@
 {
+  "functions": {
+    "predeploy": "npm --prefix \"$RESOURCE_DIR\" ci"
+  },
   "hosting": {
     "public": "dist",
     "headers": [
@@ -7,7 +10,16 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public,max-age=31536000,immutable"
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/!(*.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0"
           }
         ]
       }
