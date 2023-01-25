@@ -4,7 +4,7 @@ title: Understanding "same-site" and "same-origin"
 authors:
   - agektmr
 date: 2020-04-15
-updated: 2022-06-09
+updated: 2023-01-25
 description: |
   "same-site" and "same-origin" are frequently cited but often misunderstood
   terms. This article helps you understand what they are and how they are
@@ -20,7 +20,10 @@ iframes.
 
 ## Origin
 
-{% Img src="image/admin/PX5HrIMPlgcbzYac3FHV.png", alt="Origin", width="680", height="100" %}
+{%
+  Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/Zn352nyD12uz6ORlLZiT.png",
+  alt="ALT_TEXT_HERE", width="800", height="130"
+%}
 
 "Origin" is a combination of a
 [scheme](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol)
@@ -82,28 +85,49 @@ considered "same-origin". Everything else is considered "cross-origin".
 
 ## Site
 
-{% Img src="image/admin/oSRJzCJIr4OjGzUhcNDP.png", alt="Site", width="680", height="142" %}
+{% Aside 'important' %}
 
-Top-level domains (TLDs) such as `.com` and `.org` are listed in the [Root Zone
+The definition of "site" has evolved and it now includes the scheme. This
+effectively changes the definition of "same-site" and "cross-site" as well. What
+has been called "[schemeful same-site](/schemeful-samesite/)" is now "same-site"
+and a new concept of "schemeless same-site" emerged. Read on to learn more.
+
+{% endAside %}
+
+{%
+  Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GbXtpqme6JcvlxpWRcYf.png",
+  alt="Site (TLD+1)", width="800", height="165"
+%}
+
+[Top-level domains (TLDs)](https://developer.mozilla.org/docs/Glossary/TLD) such
+as `.com` and `.org` are listed in the [Root Zone
 Database](https://www.iana.org/domains/root/db). In the example above, "site" is
-the combination of the TLD and the part of the domain just before it. For
-example, given a URL of `https://www.example.com:443/foo` , the "site" is
-`example.com`.
+the combination of the
+[scheme](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol),
+the [TLD](https://developer.mozilla.org/docs/Glossary/TLD) and the part of the
+domain just before it. For example, given a URL of
+`https://www.example.com:443/foo` , the "site" is `https://example.com`.
 
-However, for domains such as `.co.jp` or `.github.io`, just using the TLD of
-`.jp` or `.io` is not granular enough to identify the "site". And there is no
+### Public Suffix List and eTLD
+
+For domains that include things such as `.co.jp` or `.github.io`, just using the
+TLD of `.jp` or `.io` is not granular enough to identify the "site". There is no
 way to algorithmically determine the level of registrable domains for a
-particular TLD. That's why a list of "effective TLDs"(eTLDs) was created. These
-are defined in the [Public Suffix List](https://wiki.mozilla.org/Public_Suffix_List).
- The list of eTLDs is maintained at
-[publicsuffix.org/list](https://publicsuffix.org/list/).
+particular TLD. That's why a list of **"effective TLDs"(eTLDs)** that are
+ defined in the [Public Suffix
+List](https://wiki.mozilla.org/Public_Suffix_List) was created. The list of
+eTLDs is maintained at [publicsuffix.org/list](https://publicsuffix.org/list/).
 
-The whole site name is known as the eTLD+1. For example, given a URL of
-`https://my-project.github.io` , the eTLD is `.github.io` and the eTLD+1 is
-`my-project.github.io`, which is considered a "site". In other words, the eTLD+1
-is the effective TLD and the part of the domain just before it.
+To identify "site" part of a domain that includes a public suffix, apply the
+same practice as the one with a TLD. Taking
+`https://www.project.github.io:443/foo` as an example, the scheme is `https`,
+the eTLD is `.github.io` and the eTLD+1 is `project.github.io`, so
+`https://project.github.io` is considered its "site".
 
-{% Img src="image/admin/qmr35hpnIvpouOe9591g.png", alt="eTLD+1", width="695", height="136" %}
+{%
+  Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/7ihtYJeEPX4epAe37onN.png",
+  alt="Site (eTLD+1)", width="800", height="157"
+%}
 
 ### "same-site" and "cross-site" {: #same-site-cross-site }
 
@@ -149,9 +173,12 @@ have a different eTLD+1 are "cross-site".
   </table>
 </div>
 
-### "schemeful same-site"
+### "schemeless same-site"
 
-{% Img src="image/admin/Y9LbVyxYzg4k6mwSEqyE.png", alt="schemeful same-site", width="677", height="105" %}
+{%
+  Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/G2VfM8BA5Q5LTaz22Puu.png",
+  alt="schemeless same-site", width="800", height="123"
+%}
 
 The definition of "same-site" is evolving to consider the URL scheme as part of
 the site in order to prevent HTTP being used as [a weak
