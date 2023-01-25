@@ -5,8 +5,6 @@ title: 'content: TODO'
 labels: ''
 assignees: ''
 
----
-
 * Use this template to request updates to existing content.
 * Delete any fields that aren't relevant to your issue. 
 * Update the title of this issue with a brief summary of the work to be done.
