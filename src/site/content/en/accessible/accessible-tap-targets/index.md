@@ -57,7 +57,7 @@ In Firefox DevTools there is a Layout Panel.
 In that Panel you get the actual size of the inspected element.
 
 <figure class="w-figure" style="max-width: 500px">
-  <img src="./firefox-layout.jpg" alt="The Layout Panel in Firefox DevTools showing the size of the a element">
+  {% Img src="image/admin/vmFzREveRttHVDfLqqCx.jpg", alt="The Layout Panel in Firefox DevTools showing the size of the a element", width="800", height="565" %}
 </figure>
 
 ## Using media queries to detect touchscreen use

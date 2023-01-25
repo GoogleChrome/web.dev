@@ -1,4 +1,4 @@
-# web.dev
+ # web.dev
 
 ![Continuous integration](https://github.com/GoogleChrome/web.dev/workflows/Continuous%20integration/badge.svg)
 
@@ -21,7 +21,11 @@ proposal.
 
 ## Building the site 🏗
 
-You'll need a recent version of [Node](https://nodejs.org/): v12.10 or higher.
+You'll need a recent version of [Node](https://nodejs.org/): v14 (LTS) or higher.
+To check your node version run `node -v` in your terminal.
+
+If you don't have node, or if you need to upgrade, we recommend using the [Node
+Version Manager (nvm)](https://github.com/nvm-sh/nvm).
 
 ### Clone the repo
 
@@ -96,7 +100,7 @@ eye out for the netlify bot to comment on the pull request with your unique URL.
 
 ### Automatic deploys
 
-The site will build and deploy the master branch automatically every hour,
+The site will build and deploy the main branch automatically every hour,
 Mon-Fri. If you've just merged an article then it should go live at the top
 of the next hour.
 

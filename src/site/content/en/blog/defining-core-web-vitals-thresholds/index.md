@@ -6,7 +6,7 @@ authors:
 description: The research and methodology behind Core Web Vitals thresholds
 date: 2020-05-21
 updated: 2020-05-27
-hero: /vitals/web-vitals-hero.png
+hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: The research and methodology behind Core Web Vitals thresholds
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -37,12 +37,9 @@ Each Core Web Vitals metric has associated thresholds, which categorize
 performance as either "good", "needs improvement", or "poor":
 
 <div class="w-stack w-stack--center w-stack--md">
-  <img src="/vitals/lcp_ux.svg" width="400px" height="350px"
-       alt="Largest Contentful Paint threshold recommendations">
-  <img src="/vitals/fid_ux.svg" width="400px" height="350px"
-       alt="First Input Delay threshold recommendations">
-  <img src="/vitals/cls_ux.svg" width="400px" height="350px"
-       alt="Cumulative Layout Shift threshold recommendations">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift threshold recommendations", width="400", height="350" %}
 </div>
 
 <div class="w-table-wrapper">

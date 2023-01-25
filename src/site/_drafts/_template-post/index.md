@@ -22,7 +22,7 @@ date: 2019-10-31
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
 # Hero images should be 3200 x 960.
-hero: hero.jpg
+hero: image/admin/jAI014ZfN96soXr2QZRQ.jpg
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 # hero_fit: contain
@@ -63,6 +63,11 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - accessibility
   - ux
+
+# You can provide an optional Stack Overflow tag to be used at the end of the
+# post in an "Ask on Stack Overflow" note.
+# Find the official list of tags at https://stackoverflow.com/tags.
+# stack_overflow_tag: service-worker
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa

@@ -3,7 +3,7 @@ layout: post
 title: "Create a Progressive Web App with the Angular CLI"
 subhead: |
   You want to make your Angular app installable? Wait no more!
-hero: installable.jpg
+hero: image/admin/8lEoUW3i1nEU1q10N1YK.jpg
 alt: Network cables.
 date: 2019-08-15
 description: |
@@ -84,13 +84,13 @@ You can customize any of these properties by changing the relevant value in `man
 A PWA references its manifest file with a `link` element in `index.html`. Once the browser finds the reference, it'll show the **Add to Home screen** prompt:
 
 <figure class="w-figure">
-  <img src="home.png" alt="A progressive web app install prompt">
+  {% Img src="image/admin/IgMnFCuRU1Fx9JLZWXuT.png", alt="A progressive web app install prompt", width="344", height="650" %}
 </figure>
 
 Since the `ng-add` schematics add everything needed to make your app [installable](/discover-installable/), they generate some shortcut icons that are shown once the user adds the app to their desktop:
 
 <figure class="w-figure">
-  <img src="icon.png" alt="A progressive web app shortcut icon">
+  {% Img src="image/admin/3h7Yuj3MJPiNzbh2xdlB.png", alt="A progressive web app shortcut icon", width="344", height="650" %}
 </figure>
 
 Make sure you customize the manifest properties and icons before you deploy your PWA to production!

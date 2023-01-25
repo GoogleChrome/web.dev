@@ -214,6 +214,44 @@
   text-rendering: $rendering;
 }
 
+// Sets font styles.
+@mixin font-setup($size, $height, $weight: false, $rem: true) {
+  @if $rem {
+    font-size: px-to-rem($size);
+  } @else {
+    font-size: px-to-em($size);
+  }
+
+  line-height: ($height / $size);
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+// Sets a flexible font size
+//
+// @param {length()} $sm - List of lengths, in px, representing font size and line height of the smallest size
+// @param {length()} $md - List of lengths, in px, representing font size and line height of the medium size
+// @param {length()} $lg - List of lengths, in px, representing font size and line height of the largest size
+// @param {number | boolean} $weight - Font weight, or false
+@mixin flex-font($sm, $md, $lg, $weight: false) {
+  // Setup basic font styling from medium size
+  @include font-setup(nth($md, 1), nth($md, 2), $weight);
+
+  // Determine scaling factor so that the large font size is reached at 1024px
+  $font-scale: nth($lg, 1) / 10.24px * 1vw;
+  // Set up clamp function
+  $font-clamp: clamp(#{px-to-em(nth($sm, 1))}, #{$font-scale}, #{px-to-em(nth($lg, 1))});
+
+  // Check for support for clamp function
+  @supports (font-size: $font-clamp) {
+    // Set font size to clamp
+    font-size: $font-clamp;
+    // Set line height to ratio of largest line height to font size (unitless number)
+    line-height: nth($lg, 2) / nth($lg, 1);
+  }
+}
+
 // -----------------------------------------------------------------------------
 // Typography
 //

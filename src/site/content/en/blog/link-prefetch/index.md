@@ -27,7 +27,7 @@ Adding `<link rel=prefetch>` to a web page tells the browser to download entire 
 <link rel="prefetch" href="/articles/" as="document">
 ```
 
-![A diagram showing how link prefetch works.](prefetch.png)
+{% Img src="image/admin/djLGrbmj5eovwa6qhlm1.png", alt="A diagram showing how link prefetch works.", width="800", height="413" %}
 
 The `prefetch` hint consumes extra bytes for resources that are not immediately needed, so this technique needs to be applied thoughtfully; only prefetch resources when you are confident that users will need them. Consider not prefetching when users are on slow connections. You can detect that with the [Network Information API](/adaptive-serving-based-on-network-quality/).
 
@@ -114,10 +114,10 @@ form.addEventListener("submit", e => {
 });
 ```
 
-This tells webpack to inject the `<link rel=”prefetch”>` tag into the HTML document:
+This tells webpack to inject the `<link rel="prefetch">` tag into the HTML document:
 
 ```html
-<link rel="prefetch" as=”script” href=”1.bundle.js”>
+<link rel="prefetch" as="script" href="1.bundle.js">
 ```
 
 ### Smart prefetching with quicklink and Guess.js

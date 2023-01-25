@@ -1,21 +1,22 @@
 {
   "slug": "secure",
-  "cover": "/images/collections/secure.svg",
-  "title": "Safe and secure",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/gVpSImYQruckFe6Srvxv.svg",
+  "title": "i18n.paths.secure.title",
   "updated": "May 24, 2018",
-  "description": "Ensure your site and your users' data is secure.",
-  "overview": "Every website is vulnerable to attack—not just those handling sensitive data. In this section you'll learn simple techniques to keep your users, your content and your business secure.",
+  "description": "i18n.paths.secure.description",
+  "overview": "i18n.paths.secure.overview",
   "topics": [
     {
-      "title": "Understand security basics",
+      "title": "i18n.paths.secure.topics.understand_security_basics",
       "pathItems": [
         "security-not-scary",
         "security-attacks",
-        "same-site-same-origin"
+        "same-site-same-origin",
+        "security-headers"
       ]
     },
     {
-      "title": "Secure connections with HTTPS",
+      "title": "i18n.paths.secure.topics.secure_connections_with_https",
       "pathItems": [
         "why-https-matters",
         "what-is-mixed-content",
@@ -25,7 +26,7 @@
       ]
     },
     {
-      "title": "Prevent info leaks",
+      "title": "i18n.paths.secure.topics.prevent_info_leaks",
       "pathItems": [
         "browser-sandbox",
         "same-origin-policy",
@@ -36,11 +37,14 @@
       ]
     },
     {
-      "title": "Protect websites from XSS",
-      "pathItems": ["trusted-types"]
+      "title": "i18n.paths.secure.topics.protect_websites_from_xss",
+      "pathItems": [
+        "trusted-types",
+        "strict-csp"
+      ]
     },
     {
-      "title": "Protect users from tracking",
+      "title": "i18n.paths.secure.topics.protect_users_from_tracking",
       "pathItems": [
         "digging-into-the-privacy-sandbox",
         "samesite-cookies-explained",
@@ -50,7 +54,8 @@
         "conversion-measurement",
         "using-conversion-measurement",
         "user-agent-client-hints",
-        "schemeful-samesite"
+        "schemeful-samesite",
+        "floc"
       ]
     }
   ]

@@ -52,6 +52,7 @@ const pages = fs.readdirSync(pagesDir, 'utf-8').map((p) => join(pagesDir, p));
 const plugins = [
   virtual(buildVirtualJSON(virtualImports)),
   nodeResolve(),
+  // @ts-ignore
   commonjs(),
 ];
 const devConfig = {
@@ -111,10 +112,12 @@ const testConfig = {
  * Learn more @ https://rollupjs.org/guide/en/
  */
 export default () => {
-  if (process.env.ELEVENTY_ENV === 'prod') {
-    return productionConfig;
-  } else if (process.env.ELEVENTY_ENV === 'test') {
-    return testConfig;
+  switch (process.env.ELEVENTY_ENV) {
+    case 'prod':
+      return productionConfig;
+    case 'test':
+      return testConfig;
+    default:
+      return devConfig;
   }
-  return devConfig;
 };

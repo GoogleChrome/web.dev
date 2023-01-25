@@ -33,10 +33,11 @@ const pagesToTest = [
     title: 'About page',
     navPage: true,
   },
-  {
-    url: '/codelab-avoid-invisible-text/',
-    title: 'Codelab page',
-  },
+  // Remove this until https://github.com/GoogleChrome/web.dev/issues/4790 is fixed.
+  // {
+  //   url: '/codelab-avoid-invisible-text/',
+  //   title: 'Codelab page',
+  // },
   {
     url: '/handbook/web-dev-components/',
     title: 'Components page',

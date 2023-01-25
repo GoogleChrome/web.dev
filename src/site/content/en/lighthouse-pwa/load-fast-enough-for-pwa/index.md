@@ -25,7 +25,7 @@ to be considered a Progressive Web App. See the
 flags pages that don't load fast enough on mobile:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="load-fast-enough-for-pwa.png" alt="Lighthouse audit showing page doesn't load fast enough on mobile">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse audit showing page doesn't load fast enough on mobile", width="800", height="98", class="w-screenshot" %}
 </figure>
 
 Two main metrics affect how users perceive load time:

@@ -4,8 +4,8 @@ subhead: >
   Creating a web performance dashboard and optimizing JavaScript, resources, and the
   homepage to achieve business success.
 date: 2020-10-13
-hero: hero.png
-thumbnail: thumbnail.png
+hero: image/admin/MaUpfoZXyw4uhTEBLuV1.png
+thumbnail: image/admin/SI5jNv7NqnjkfIIXyZOa.png
 alt: An illustration of e-commerce icons next to the text "Scale on web"
 description: >
   Creating a web performance dashboard and optimizing JavaScript, resources, and the
@@ -21,33 +21,33 @@ tags:
 Tokopedia is one of the largest e-commerce companies in Indonesia. With 2.7M+ nationwide merchant
 networks, 18M+ product listings, and 50M+ monthly visitors, the web team knew  that investment in
 web performance was essential. By building a performance-first culture, they achieved a 35% increase
-in click-through rates (CTR) and an 8% increase in conversions (CVR). 
+in click-through rates (CTR) and an 8% increase in conversions (CVR).
 
-<div class="w-stats">  
-  <div class="w-stat">  
-    <p class="w-stat__figure">35<sub class="w-stat__sub">%</sub></p>  
-    <p class="w-stat__desc">Increase in CTR</p>  
-  </div>  
-  <div class="w-stat">  
-    <p class="w-stat__figure">8<sub class="w-stat__sub">%</sub></p>  
-    <p class="w-stat__desc">Increase in CVR</p>  
-  </div>  
-  <div class="w-stat">  
-    <p class="w-stat__figure">4<sub class="w-stat__sub">sec</sub></p>  
-    <p class="w-stat__desc">Improvement in TTI</p>  
-  </div>  
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">35<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Increase in CTR</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">8<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Increase in CVR</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">4<sub class="w-stat__sub">sec</sub></p>
+    <p class="w-stat__desc">Improvement in TTI</p>
+  </div>
 </div>
 
 ## Highlighting the opportunity
 
 The web team talked to their leadership team on the importance of investing in web performance to
 improve user experience and engagement, and also showed the impact of performance using advanced
-patterns and APIs. 
+patterns and APIs.
 
-{% Aside %}  
-Check out web.dev's [Build a performance culture](https://web.dev/fast/#build-a-performance-culture)
+{% Aside %}
+Check out web.dev's [Build a performance culture](/fast/#build-a-performance-culture)
 collection for tips on how to persuade your cross-functional stakeholders to focus on website
-performance.  
+performance.
 {% endAside %}
 
 ## The approach they used
@@ -86,9 +86,7 @@ performance.
     </ul>
   </div>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="controller.png" 
-        alt="Script controller library improved TTI by 4 seconds">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G8s0LNl7BwXuNJkCsPwV.png", alt="Script controller library improved TTI by 4 seconds", width="800", height="707", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -101,12 +99,7 @@ performance.
     worker to cache the non-lite assets in the background.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="homepage.png" 
-        alt="Reduced app JavaScript size by 88% (from 320 KB to 37 KB).
-             Boosted Lighthouse score by 90 points.
-             Achieved FCP of less than 1 second.
-             35% CTR increase. 8% CVR increase.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gSJXd2GT8nT7Uzsth4Gg.png", alt="Reduced app JavaScript size by 88% (from 320 KB to 37 KB). Boosted Lighthouse score by 90 points. Achieved FCP of less than 1 second. 35% CTR increase. 8% CVR increase.", width="800", height="657", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -145,17 +138,14 @@ performance.
     </ul>
   </div>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="tti.png" 
-        alt="2.2 second TTI score on the homepage (Lighthouse score: 88).
-             1.9 second TTI score on product pages (Lighthouse score: 86).">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gObv2y7p7ozM190w61M3.png", alt="2.2 second TTI score on the homepage (Lighthouse score: 88). 1.9 second TTI score on product pages (Lighthouse score: 86).", width="800", height="1097", class="w-screenshot" %}
   </figure>
 </div>
 
 <blockquote>
   <p style="font-style: italic; font-size: 1.5rem;">
     Being an e-commerce business, user acquisition is at the heart of our success. We acknowledge
-    the importance of the web and thus we are passionate about investing in all  
+    the importance of the web and thus we are passionate about investing in all
     the tools and features that will give the best user experience to our users.
   </p>
   <cite>Dendi Sunardi, Engineering Manager, Web Platform, Tokopedia</cite>

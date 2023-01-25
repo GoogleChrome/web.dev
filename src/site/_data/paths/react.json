@@ -1,13 +1,13 @@
 {
   "slug": "react",
-  "cover": "/images/collections/react.svg",
-  "title": "React",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/3A9YgY1kQmaTmILXiF1k.svg",
+  "title": "i18n.paths.react.title",
   "updated": "October 11, 2019",
-  "description": "Build performant and progressive React applications.",
-  "overview": "In this section you'll learn how to use built-in APIs and third-party libraries to improve the performance of your React applications.",
+  "description": "i18n.paths.react.description",
+  "overview": "i18n.paths.react.overview",
   "topics": [
     {
-      "title": "Next.js",
+      "title": "i18n.paths.react.topics.next_js",
       "pathItems": [
         "performance-as-a-default-with-nextjs",
         "route-prefetching-in-nextjs",
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "title": "Create React App",
+      "title": "i18n.paths.react.topics.create_react_app",
       "pathItems": [
         "get-started-optimize-react",
         "code-splitting-suspense",

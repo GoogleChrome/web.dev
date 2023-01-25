@@ -79,8 +79,7 @@ Workbox automatically detects when you're running a development version of your
 website on `localhost`, and turns on debug logging in your browser's JavaScript
 console.
 
-<img class="w-screenshot" src="./workbox-logging.png"
-  alt="Workbox logging to the DevTools console">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gvsGSU3urfjl52jRcj3j.png", alt="Workbox logging to the DevTools console", width="800", height="438", class="w-screenshot" %}
 
 By following along with the log messages, you can get to the root of any
 configuration or invalidation problems much more quickly than if you were going

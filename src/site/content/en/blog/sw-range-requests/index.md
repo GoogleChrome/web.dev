@@ -6,7 +6,7 @@ authors:
 description: Make sure your service worker knows what to do when a partial response is requested.
 date: 2020-10-06
 updated: 2020-10-06
-hero: hero.jpg
+hero: image/admin/5HWlDEheVYh9LAs0p8vg.jpg
 hero_position: center
 alt: |
   Photo of sliced cucumbers.

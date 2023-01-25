@@ -85,9 +85,7 @@ Chrome logs detailed messages to the **Issues** tab in DevTools
 to guide you on how to fix the specific issue.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-      src="passive-mixed-content.jpg"
-      alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it", width="800", height="310", class="w-screenshot" %}
 </figure>
 
 ### Active mixed content
@@ -112,9 +110,7 @@ HTTPS](https://active-mixed-content.glitch.me/). Blocked content will also
 be detailed in the **Issues** tab.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-      src="active-mixed-content.jpg"
-      alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it", width="800", height="361", class="w-screenshot" %}
 </figure>
 
 {% Aside %}

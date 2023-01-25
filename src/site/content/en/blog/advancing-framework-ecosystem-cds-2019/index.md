@@ -7,8 +7,8 @@ authors:
 date: 2020-01-08
 description: |
   Learn about how Chrome is investing efforts in a number of open-source tools to advance the JavaScript ecosystem
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/prKYY6a0bcDxDvuiWvWk.jpg
+thumbnail: image/admin/c8D4Cj94qLbosd7ptE7Q.jpg
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
@@ -59,7 +59,7 @@ Frameworks commonly used to build and structure web pages fall into two categori
     with opinionated features built-in, such as server-side rendering. These frameworks usually
     leverage a UI framework or library for the view layer.
 
-![A spectrum of UI frameworks and libaries versus Web frameworks](./framework-types.png)
+{% Img src="image/admin/OI4rF5fAQJ5PYP2f6AA6.png", alt="A spectrum of UI frameworks and libraries versus Web frameworks", width="800", height="455" %}
 
 Developers can choose not to use frameworks but by piecing together a view layer library, router,
 styling system, server renderer and so forth, they often end up creating their own type of a
@@ -76,10 +76,8 @@ The Angular team has shipped a number of improvements to version 8 of the framew
     default to minimize unneeded polyfills for newer browsers.
 
 <figure class="w-figure">
-  <img src="differential-loading-angular.png" class="w-screenshot" alt="Graph showing bundle size reduction of angular.io with and without differential builds">
-  <figcaption class="w-figcaption">
-    Bundle size reduction for angular.io with differential builds (from <a href="https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27">Version 8 of Angular</a>)
-  </figcaption>
+  {% Img src="image/admin/kPQFf4eoaz1wcUZULmbZ.png", alt="Graph showing bundle size reduction of angular.io with and without differential builds", width="800", height="463", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Bundle size reduction for angular.io with differential builds (from <a href="https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27">Version 8 of Angular</a>)</figcaption>
 </figure>
 
 +   Support for standard dynamic import syntax for lazy-loading routes.
@@ -124,10 +122,8 @@ for comments (RFCs) and pull requests (PRs):
     ([PR](https://github.com/zeit/next.js/pull/8069)).
 
 <figure class="w-figure">
-  <img src="barnebys.png" class="w-screenshot-filled" alt="Homepage of Barnebys.com">
-  <figcaption class="w-figcaption">
-    <a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript after enabling granular chunking
-  </figcaption>
+  {% Img src="image/admin/5QA6KNYCwQ4aLdowLGNS.png", alt="Homepage of Barnebys.com", width="800", height="543", class="w-screenshot w-screenshot--filled" %}
+  <figcaption class="w-figcaption"><a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript after enabling granular chunking</figcaption>
 </figure>
 
 We are also exploring other features to improve both the user and developer experience of using
@@ -138,10 +134,8 @@ Next.js, such as:
     surface better errors and warnings ([RFC](https://github.com/zeit/next.js/issues/9310)).
 
 <figure class="w-figure">
-  <img src="conformance.png" class="w-screenshot-filled" alt="Example of a conformance build error in Next.js">
-  <figcaption class="w-figcaption">
-    An example of a conformance build error in Next.js (prototype)
-  </figcaption>
+  {% Img src="image/admin/LoKCHqIIpGkQIUjxZlre.png", alt="Example of a conformance build error in Next.js", width="800", height="367", class="w-screenshot w-screenshot--filled" %}
+  <figcaption class="w-figcaption">An example of a conformance build error in Next.js (prototype)</figcaption>
 </figure>
 
 ## Nuxt.js
@@ -193,7 +187,7 @@ to older syntax to avoid browser bugs, `preset-modules` fixes each specific bug 
 closest possible non-broken modern syntax. This results in modern code that can be delivered *nearly
 unmodified* to most browsers.
 
-![A new babel preset to provide better polyfilling for browsers](./babel-preset-env.png)
+{% Img src="image/admin/8qG6cuXyjKvE89du82Ki.png", alt="A new babel preset to provide better polyfilling for browsers", width="800", height="453" %}
 
 Developers who already use `preset-env` will also benefit from these optimizations without having to
 do anything, as they'll soon be incorporated into `preset-env` too.

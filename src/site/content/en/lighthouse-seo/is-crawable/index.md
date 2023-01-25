@@ -21,7 +21,7 @@ Only block indexing for content that you don't want to appear in search results.
 that search engines can't index:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="is-crawable.png" alt="Lighthouse audit showing search engines can't index your page">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/83IDo3GOQNVcas3472CI.png", alt="Lighthouse audit showing search engines can't index your page", width="800", height="185", class="w-screenshot w-screenshot" %}
 </figure>
 
 Lighthouse only checks for headers or elements that block _all_ search engine

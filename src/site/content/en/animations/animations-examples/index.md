@@ -39,7 +39,7 @@ With the animation running, open the Performance tab in Chrome DevTools and reco
 You should see in the Summary that the browser is not doing any Layout or Paint operations when running this animation.
 
 <figure class="w-figure">
-  <img src="./wizard-summary.jpg" alt="Summary in DevTools">
+  {% Img src="image/admin/r1h4gb24ZiYXAfI7Mskh.jpg", alt="Summary in DevTools", width="724", height="416" %}
   <figcaption class="w-figcaption">
     The summary after profiling the wizard animation.
   </figcaption>
@@ -51,7 +51,7 @@ You can use the **Animations Panel** to locate the various animated elements,
 clicking on any element will highlight it in the DOM.
 
 <figure class="w-figure">
-  <img src="./animations-panel.jpg" alt="The Animations Panel showing the various parts of our animation.">
+  {% Img src="image/admin/sPoemcfld1jfUkSFhv3o.jpg", alt="The Animations Panel showing the various parts of our animation.", width="800", height="349" %}
   <figcaption class="w-figcaption">
     Viewing and selecting items in the Chrome DevTools Animation Panel.
   </figcaption>
@@ -167,7 +167,7 @@ You now know that this animation does not cause style recalculation,
 and therefore layout and paint operations.
 
 <figure class="w-figure">
-  <img src="./firefox-waterfall.jpg" alt="details of the animation in the Firefox Waterfall">
+  {% Img src="image/admin/68jWlrbNhgmS07vrXMCO.jpg", alt="details of the animation in the Firefox Waterfall", width="800", height="354" %}
   <figcaption class="w-figcaption">
     The Firefox DevTools Waterfall.
   </figcaption>

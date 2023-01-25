@@ -1,0 +1,44 @@
+setLeader: Test your knowledge of logical properties
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: As you write with your hand, your wrist is moving along which logical axis?
+    options:
+      - content: "`inline`"
+        rationale: "Words flow inline and so must a your hand travel when writing."
+      - content: "`block`"
+        rationale: "Content flows as blocks and your wrist moves along this axis
+        when end one content type and beginning another."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,3,4,5"
+    stem: Check all that can benefit from logical properties
+    options:
+      - content: "colors"
+        rationale: "Color don't change when a document writing mode does."
+      - content: "alignment"
+        rationale: "Examples: `flex-start`, `block-end`, and `inline-start`"
+      - content: "shadows"
+        rationale: "Shadows don't change when a document writing mode does."
+      - content: "box sides"
+        rationale: "Examples: `block-start` and `inline`."
+      - content: "sizes"
+        rationale: "Examples: `inline-size` and `max-block-size`."
+      - content: "box corners"
+        rationale: "Examples: `border-end-end-radius`."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: Which logical side of a word is underlined?
+    options:
+      - content: "inline start"
+        rationale: "This would put an underline on the left of a word in English."
+      - content: "inline end"
+        rationale: "This would put an underline on the right of a word in English."
+      - content: "block start"
+        rationale: "This would put an underline on the top of a word in English."
+      - content: "block end"
+        rationale: "Very nice that CSS does this positioning for you."

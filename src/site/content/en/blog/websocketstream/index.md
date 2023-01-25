@@ -7,7 +7,8 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-03-27
-hero: hero.jpg
+updated: 2021-02-23
+hero: image/admin/8SrIq5at2bH6i98stCgs.jpg
 alt: A fire hose with water dripping out of it.
 description: |
   WebSocketStream integrates streams with the WebSocket API.
@@ -293,7 +294,8 @@ Are you planning to use the WebSocketStream API?
 Your public support helps the Chrome team to prioritize features
 and shows other browser vendors how critical it is to support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#WebSocketStream` hashtag
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebSocketStream`](https://twitter.com/search?q=%23WebSocketStream&src=typed_query&f=live)
 and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }

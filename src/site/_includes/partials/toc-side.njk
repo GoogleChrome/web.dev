@@ -1,0 +1,9 @@
+{# This is used on the right hand side of the page as the ToC for larger viewports #}
+{% if tocContents %}
+  <nav class="course-toc toc flow scrollbar display-none xl:display-block" data-type="side" aria-label="{{ 'i18n.toc.on_this_page' | i18n(locale) }}">
+    <div class="course-toc__heading font-google-sans weight-medium">{{ 'i18n.toc.on_this_page' | i18n(locale) }}</div>
+    <div class="toc__wrapper flow-recursive">
+      {{ tocContents | safe }}
+    </div>
+  </nav>
+{% endif %}

@@ -9,8 +9,8 @@ authors:
   - jimper
   - robhazan
   - thebengeu
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/xw8W0H84I776HdSNR1NJ.jpg
+thumbnail: image/admin/qcam8u4RQMmc8rod7UXm.jpg
 alt: |
     A long-exposure shot of a moving subway train and advertisement posters at
     the station photo.
@@ -85,20 +85,16 @@ With 1&nbsp;s of added delay, impressions decreased by 1.1% for mobile traffic
 and 1.9% for desktop traffic:
 
 <figure class="w-figure">
-  <img src="./ad-latency-injected-vs-impressions-change.svg" alt="Chart showing latency injected vs. impressions change">
-  <figcaption class="w-figcaption">
-    Source: Google Internal Data, December 2016 to January 2017.
-  </figcaption>
+  {% Img src="image/admin/upKhjFZogtlvQGtTfwrX.svg", alt="Chart showing latency injected vs. impressions change", width="800", height="600" %}
+  <figcaption class="w-figcaption">Source: Google Internal Data, December 2016 to January 2017.</figcaption>
 </figure>
 
 With 1&nbsp;s of added delay, viewability rate decreased by 3.6% for mobile
 traffic and 2.9% for desktop traffic:
 
 <figure class="w-figure">
-  <img src="./ad-latency-injected-vs-viewability-rate-change.svg" alt="Chart showing latency injected vs. viewability rate change">
-  <figcaption class="w-figcaption">
-    Source: Google Internal Data, December 2016 to January 2017.
-  </figcaption>
+  {% Img src="image/admin/PeyZqzqs99y5kklrE2XK.svg", alt="Chart showing latency injected vs. viewability rate change", width="800", height="600" %}
+  <figcaption class="w-figcaption">Source: Google Internal Data, December 2016 to January 2017.</figcaption>
 </figure>
 
 ## A framework for thinking about ad speed
@@ -146,13 +142,11 @@ First, create a flowchart for each inventory type to visualize how the various
 dependencies interact in order to load and display an ad. Desktop leaderboard
 inventory may look like this:
 
-![An example workflow for the desktop leaderboard inventory
-type.](./desktop-leaderboard.svg)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Kj5Vv9SffxhrfWmNtptm.svg", alt="An example workflow for the desktop leaderboard inventory type.", width="800", height="92" %}
 
 While a more complex inventory type, such as mobile banner, may look like this:
 
-![An example workflow for the mobile banner inventory
-type.](./mobile-banner.svg)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzFgP8eaVWqLIlpBibyX.svg", alt="An example workflow for the mobile banner inventory type.", width="800", height="287" %}
 
 Then, use this information to create a simple table like the one below, which
 maps each inventory type to its dependencies in an easily digestible format.

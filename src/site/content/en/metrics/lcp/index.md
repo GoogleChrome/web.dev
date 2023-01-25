@@ -50,23 +50,20 @@ of a page is loaded is to look at when the largest element was rendered.
 
 The Largest Contentful Paint (LCP) metric reports the render time of the largest
 [image or text block](#what-elements-are-considered) visible within the
-viewport.
+viewport, relative to when the page [first started
+loading](https://w3c.github.io/hr-time/#timeorigin-attribute).
 
 <picture>
-  <source srcset="../vitals/lcp_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="../vitals/lcp_4x3.svg"
-      alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0
-            seconds and anything in between needs improvement">
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>
 
 ### What is a good LCP score?
 
 To provide a good user experience, sites should strive to have Largest
-Contentful Paint occur within the first **2.5 seconds** of the page starting to
-load. To ensure you're hitting this target for most of your users, a good
-threshold to measure is the **75th percentile** of page loads, segmented across
-mobile and desktop devices.
+Contentful Paint of **2.5 seconds** or less. To ensure you're hitting this
+target for most of your users, a good threshold to measure is the **75th
+percentile** of page loads, segmented across mobile and desktop devices.
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,
@@ -214,17 +211,14 @@ on-screen may not be reported. It also means elements initially rendered in the
 viewport that then get pushed down, out of view will still report their
 initial, in-viewport size.
 
-However, (as mentioned above) an element will be removed from consideration if
-it's removed from the DOM or if its associated image resource changes.
-
 ### Examples
 
 Here are some examples of when the Largest Contentful Paint occurs on a few
 popular websites:
 
-![Largest Contentful Paint timeline from cnn.com](lcp-cnn-filmstrip.png)
+{% Img src="image/admin/bsBm8poY1uQbq7mNvVJm.png", alt="Largest Contentful Paint timeline from cnn.com", width="800", height="311" %}
 
-![Largest Contentful Paint timeline from techcrunch.com](lcp-techcrunch-filmstrip.png)
+{% Img src="image/admin/xAvLL1u2KFRaqoZZiI71.png", alt="Largest Contentful Paint timeline from techcrunch.com", width="800", height="311" %}
 
 In both of the timelines above, the largest element changes as content loads.
 In the first example, new content is added to the DOM and that changes what
@@ -235,9 +229,9 @@ While it's often the case that late-loading content is larger than content
 already on the page, that's not necessarily the case. The next two examples
 show the Largest Contentful Paint occurring before the page fully loads.
 
-![Largest Contentful Paint timeline from instagram.com](lcp-instagram-filmstrip.png)
+{% Img src="image/admin/uJAGswhXK3bE6Vs4I5bP.png", alt="Largest Contentful Paint timeline from instagram.com", width="800", height="311" %}
 
-![Largest Contentful Paint timeline from google.com](lcp-google-filmstrip.png)
+{% Img src="image/admin/e0O2woQjZJ92aYlPOJzT.png", alt="Largest Contentful Paint timeline from google.com", width="800", height="311" %}
 
 In the first example, the Instagram logo is loaded relatively early and it
 remains the largest element even as other content is progressively shown. In

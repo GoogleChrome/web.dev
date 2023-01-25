@@ -24,11 +24,11 @@ The most common lazy-loading candidates are images as used in `<img>` elements.
 With inline images we have three options for lazy-loading,
 which may be used in combination for the best compatibility across browsers:
 
-- [Using browser-level lazy-loading](#images-inline-native)
+- [Using browser-level lazy-loading](#images-inline-browser-level)
 - [Using Intersection Observer](#images-inline-intersection-observer)
 - [Using scroll and resize event handlers](#images-inline-event-handlers)
 
-### Using browser-level lazy-loading {: #images-inline-native }
+### Using browser-level lazy-loading {: #images-inline-browser-level }
 
 Chrome and Firefox both support lazy-loading with the `loading` attribute.
 This attribute can be added to `<img>` elements, and also to `<iframe>` elements.
@@ -52,7 +52,7 @@ and save users loading images that they may not ever scroll to.
 If you have large numbers of images and want to be sure that users of browsers without support for lazy-loading benefit
 you will need to combine this with one of the methods explained next.
 
-To learn more, check out [Browser-level lazy-loading for the web](/native-lazy-loading/).
+To learn more, check out [Browser-level lazy-loading for the web](/browser-level-image-lazy-loading/).
 
 ### Using Intersection Observer {: #images-inline-intersection-observer }
 
@@ -274,10 +274,10 @@ into `src` and/or `srcset` attributes, respectively. It uses Intersection
 Observer (which you can polyfill), and can be extended with [a number of
 plugins](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo) to
 do things like lazy-load video. [Find out more about using lazysizes](/use-lazysizes-to-lazyload-images/).
-- [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) is a 
-  lightweight option for lazy-loading images, background images, videos, iframes, 
-  and scripts. It leverages Intersection Observer, supports responsive images, and 
-  enables native lazy loading.
+- [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) is a
+  lightweight option for lazy-loading images, background images, videos, iframes,
+  and scripts. It leverages Intersection Observer, supports responsive images, and
+  enables browser-level lazy loading.
 - [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a another lightweight
 option that uses Intersection Observer only. As such, it's highly performant,
 but will need to be polyfilled before you can use it on older browsers.

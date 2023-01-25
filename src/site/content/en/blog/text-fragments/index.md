@@ -8,8 +8,8 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2021-02-02
-hero: hero.jpg
+updated: 2021-05-17
+hero: image/admin/Y4NLEbOwgTWdMNoxRYXw.jpg
 alt:
 description: |
   Text Fragments let you specify a text snippet in the URL fragment.
@@ -26,7 +26,7 @@ feedback:
 ## Fragment Identifiers
 
 Chrome&nbsp;80 was a big release. It contained a number of highly anticipated features like
-[ECMAScript Modules in Web Workers](https://web.dev/module-workers/),
+[ECMAScript Modules in Web Workers](/module-workers/),
 [nullish coalescing](https://v8.dev/features/nullish-coalescing),
 [optional chaining](https://v8.dev/features/optional-chaining), and more. The release was, as usual,
 announced through a
@@ -34,7 +34,7 @@ announced through a
 Chromium blog. You can see an excerpt of the blog post in the screenshot below.
 
 <figure class="w-figure">
-  <img src="blog-red-ids.png" alt="" class="w-screenshot" width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %}
   <figcaption class="w-figcaption">Chromium blog post with red boxes around elements with an <code>id</code> attribute.</figcaption>
 </figure>
 
@@ -58,7 +58,7 @@ As you can see in the Elements panel of the Developer Tools, the element in ques
 attribute with the value `HTML1`.
 
 <figure class="w-figure">
-  <img src="id-html1.png" alt="" class="w-screenshot" width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %}
   <figcaption class="w-figcaption">Dev Tools showing the <code>id</code> of an element.</figcaption>
 </figure>
 
@@ -95,7 +95,7 @@ have an `id` attribute, meaning there is no way I can link to this heading. This
 Text Fragments solve.
 
 <figure class="w-figure">
-  <img src="id-missing.png" alt="" class="w-screenshot" width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %}
   <figcaption class="w-figcaption">Dev Tools showing a heading without an <code>id</code>.</figcaption>
 </figure>
 
@@ -148,7 +148,7 @@ If you click the link in a supporting browser like Chrome, the text fragment is 
 scrolls into view:
 
 <figure class="w-figure">
-  <img src="syntax-simple.png" alt="" class="w-screenshot" width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %}
   <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -172,7 +172,7 @@ by `ES%20Modules%20in%20Web%20Workers.` as `textEnd`. When you click through on 
 like Chrome, the whole section is highlighted and scrolled into view:
 
 <figure class="w-figure">
-  <img src="syntax-end.png" alt="" class="w-screenshot" width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %}
   <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -190,7 +190,7 @@ intended to highlight. The problem is that the desired section is not uniquely i
 current one-word `textStart` and `textEnd` values:
 
 <figure class="w-figure">
-  <img src="syntax-end-wrong.png" alt="" class="w-screenshot" width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %}
   <figcaption class="w-figcaption">Non-intended text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -202,12 +202,7 @@ Chrome&nbsp;80 release blog post as my example? The answer is that in this relea
 were introduced:
 
 <figure class="w-figure">
-  <img src="text-fragments.png" alt="Blog post text: Text URL Fragments.
-    Users or authors can now link to a specific portion of a page
-    using a text fragment provided in a URL.
-    When the page is loaded, the browser highlights the text and scrolls the fragment into view.
-    For example, the URL below loads a wiki page for 'Cat'
-    and scrolls to the content listed in the `text` parameter." class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="Blog post text: Text URL Fragments. Users or authors can now link to a specific portion of a page using a text fragment provided in a URL. When the page is loaded, the browser highlights the text and scrolls the fragment into view. For example, the URL below loads a wiki page for 'Cat' and scrolls to the content listed in the `text` parameter.", width="800", height="200", class="w-screenshot" %}
   <figcaption class="w-figcaption">Text Fragments announcement blog post excerpt.</figcaption>
 </figure>
 
@@ -219,7 +214,7 @@ URL
 matches at the first occurrence of the word "Text" already in the heading:
 
 <figure class="w-figure">
-  <img src="first-text.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %}
   <figcaption class="w-figcaption">Text Fragment matching at the first occurrence of "Text".</figcaption>
 </figure>
 
@@ -235,7 +230,7 @@ To allow the parser to clearly identify the `prefix-` and the `-suffix`, they ne
 from the `textStart` and the optional `textEnd` with a dash&nbsp;`-`.
 
 <figure class="w-figure">
-  <img src="correct-text.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %}
   <figcaption class="w-figcaption">Text Fragment matching at the desired occurrence of "text".</figcaption>
 </figure>
 
@@ -288,7 +283,7 @@ menu. This extension is available for the following browsers:
 - [Link to Text Fragment for Apple Safari](https://apps.apple.com/app/link-to-text-fragment/id1532224396)
 
 <figure class="w-figure">
-  <img src="extension.png" alt="" class="w-screenshot" width="100%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %}
   <figcaption class="w-figcaption">
     <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">
       Link to Text Fragment
@@ -304,7 +299,7 @@ separated by an ampersand character `&`. Here is an example link with three text
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet<mark class="highlight-line highlight-line-active"></code></a>.
 
 <figure class="w-figure">
-  <img src="three-text-fragments.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %}
   <figcaption class="w-figcaption">Three text fragments in one URL.</figcaption>
 </figure>
 
@@ -320,7 +315,7 @@ contains both an element fragment (`HTML1`), as well as a text fragment
 (`text=Give%20us%20feedback%20in%20our%20Product%20Forums.`):
 
 <figure class="w-figure">
-  <img src="text-feedback.png" alt="" class="w-screenshot" width="237">
+   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %}
   <figcaption class="w-figcaption">Linking with both element fragment and text fragment.</figcaption>
 </figure>
 
@@ -392,6 +387,47 @@ The Text Fragments feature can be polyfilled to some extent. We provide a
 the [extension](https://github.com/GoogleChromeLabs/link-to-text-fragment), for browsers that do not
 provide built-in support for Text Fragments where the functionality is implemented in JavaScript.
 
+### Programmatic Text Fragment link generation
+
+The [polyfill](https://github.com/GoogleChromeLabs/text-fragments-polyfill) contains a file
+`fragment-generation-utils.js` that you can import and use to generate Text Fragment links. This is
+outlined in the code sample below:
+
+```js
+const { generateFragment } = await import('https://unpkg.com/text-fragments-polyfill/dist/fragment-generation-utils.js');
+const result = generateFragment(window.getSelection());
+if (result.status === 0) {
+  let url = `${location.origin}${location.pathname}${location.search}`;
+  const fragment = result.fragment;
+  const prefix = fragment.prefix ?
+    `${encodeURIComponent(fragment.prefix)}-,` :
+    '';
+  const suffix = fragment.suffix ?
+    `,-${encodeURIComponent(fragment.suffix)}` :
+    '';
+  const textStart = encodeURIComponent(fragment.textStart);
+  const textEnd = fragment.textEnd ?
+    `,${encodeURIComponent(fragment.textEnd)}` :
+    '';
+  url += `#:~:text=${prefix}${textStart}${textEnd}${suffix}`;
+  console.log(url);
+}
+```
+
+### Obtaining Text Fragments for analytics purposes
+
+Plenty of sites use the fragment for routing, which is why browsers strip out Text Fragments
+so as to not break those pages. There is an
+[acknowledged need](https://github.com/WICG/scroll-to-text-fragment/issues/128)
+to expose Text Fragments links to pages, for example, for analytics purposes,
+but the proposed solution is not implemented yet.
+As a workaround for now, you can use the code below to extract
+the desired information.
+
+```js
+new URL(performance.getEntries().find(({ type }) => type === 'navigate').name).hash;
+```
+
 ### Security
 
 Text fragment directives are invoked only on full (non-same-page) navigations that are the result of
@@ -435,14 +471,9 @@ contrived to begin with and since its exploitation requires _very_ specific prec
 the Chrome security team evaluated the risk of implementing scroll on navigation to be manageable.
 Other user agents may decide to show a manual scroll UI element instead.
 
-For sites that still wish to opt-out, we have proposed a
-[Document Policy](https://github.com/w3c/webappsec-feature-policy/blob/master/document-policy-explainer.md)
-header value that they can send, so user agents will not process Text Fragment URLs. Since Document
-Policy is not yet shipped, we are running an
-[origin trial](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) to
-apply this policy as an intermediate solution. The
-[ForceLoadAtTop](https://developers.chrome.com/origintrials/#/view_trial/3253850730775183361) origin
-trial is running from Chrome version 83 to 85.
+For sites that wish to opt-out, Chromium supports a
+[Document Policy](https://wicg.github.io/document-policy/)
+header value that they can send so user agents will not process Text Fragment URLs.
 
 ```bash
 Document-Policy: force-load-at-top
@@ -471,7 +502,7 @@ On Windows, follow the documentation on the
 [Google Chrome Enterprise Help](https://support.google.com/chrome/a/answer/9131254?hl=en) support
 site.
 
-{% Aside 'warning' %} Please only try this when you know what you are doing. {% endAside %}
+{% Aside 'warning' %} Only try this when you know what you are doing. {% endAside %}
 
 ## Text fragments in web search
 
@@ -481,12 +512,12 @@ is in the form of a question. Clicking a featured snippet takes the user directl
 snippet text on the source web page. This works thanks to automatically created Text Fragments URLs.
 
 <figure class="w-figure">
-  <img src="google-serp.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %}
   <figcaption class="w-figcaption">Google search engine results page showing a featured snippet. The status bar shows the Text Fragments URL.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="google-help.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %}
   <figcaption class="w-figcaption">After clicking through, the relevant section of the page is scrolled into view.</figcaption>
 </figure>
 
@@ -503,6 +534,7 @@ extension.
 
 ## Related links
 
+- [Spec draft](https://wicg.github.io/scroll-to-text-fragment/)
 - [TAG Review](https://github.com/w3ctag/design-reviews/issues/392)
 - [Chrome Platform Status entry](https://chromestatus.com/feature/4733392803332096)
 - [Chrome tracking bug](https://crbug.com/919204)

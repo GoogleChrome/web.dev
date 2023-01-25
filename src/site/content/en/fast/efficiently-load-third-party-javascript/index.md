@@ -7,7 +7,7 @@ authors:
 date: 2019-08-14
 description: |
   Learn how to avoid the common pitfalls of using third-party scripts to improve load times and user experience.
-hero: hero.jpg
+hero: image/admin/udp7L9LSo5mfI3F0tvNY.jpg
 alt: Aerial view of shipping containers.
 codelabs: codelab-optimize-third-party-javascript
 tags:
@@ -50,13 +50,13 @@ The difference between `async` and `defer` is when they start executing the scri
 
 Scripts with the `async` attribute execute at the first opportunity after they finish downloading and before the window's [load](https://developer.mozilla.org/en-US/docs/Web/Events/load) event. This means it's possible (and likely) that `async` scripts will not be executed in the order in which they appear in the HTML. It also means they can interrupt DOM building if they finish downloading while the parser is still at work.
 
-![Diagram of parser blocking script with async attribute](async@2x.png)
+{% Img src="image/admin/tCqsJ3E7m4lpKOprXu5B.png", alt="Diagram of parser blocking script with async attribute", width="800", height="252" %}
 
 ### `defer`
 
 Scripts with the `defer` attribute execute after HTML parsing is completely finished, but before the [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) event. `defer` guarantees scripts will be executed in the order they appear in the HTML and will not block the parser.
 
-![Diagram of parser flow with a script with defer attribute](defer@2x.png)
+{% Img src="image/admin/Eq0mcvDALKibHe15HspN.png", alt="Diagram of parser flow with a script with defer attribute", width="800", height="253" %}
 
 * Use `async` if it's important to have the script run earlier in the loading process.
 
@@ -112,7 +112,7 @@ The `preconnect` hint is best used for only the most critical connections; for l
 Embedded third-party resources can be a big contributor to slow page speed when constructed poorly. If they aren't critical or are below the fold (that is, if users have to scroll to view them), lazy-loading is a good way to improve page speed and paint metrics. This way, users will get the main page content faster and have a better experience.
 
 <figure class='w-figure w-figure--inline-left'>
-<img src="lazy-load.png" alt="A diagram of a webpage shown on a mobile device with scrollable content extending beyond the screen. The content that's below-the-fold is desaturated because it's not loaded yet.">
+{% Img src="image/admin/uzPZzkgzfrv2Oy3UQPrN.png", alt="A diagram of a webpage shown on a mobile device with scrollable content extending beyond the screen. The content that's below-the-fold is desaturated because it's not loaded yet.", width="366", height="438" %}
 </figure>
 
 One effective approach is to lazy-load third-party content after the main page content loads. Ads are a good candidate for this approach.
@@ -127,7 +127,7 @@ An alternative approach is to load third-party content only when users scroll do
 Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all.
 {% endAside %}
 
-Using the [`loading` attribute for lazy-loading images and iframes](/native-lazy-loading) is a great alternative to JavaScript techniques, and it has recently become available in Chrome 76!
+Using the [`loading` attribute for lazy-loading images and iframes](/browser-level-image-lazy-loading/) is a great alternative to JavaScript techniques, and it has recently become available in Chrome 76!
 
 ## Optimize how you serve third-party scripts
 

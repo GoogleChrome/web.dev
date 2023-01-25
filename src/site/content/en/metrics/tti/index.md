@@ -44,7 +44,7 @@ of a web page, follow these steps:
 
 The following diagram should help visualize the steps above:
 
-[![A page load timeline showing how to compute TTI](tti-timeline.svg)](tti-timeline.svg)
+{% Img src="image/admin/WZM0n4aXah67lEyZugOT.svg", alt="A page load timeline showing how to compute TTI", width="800", height="473", linkTo=true %}
 
 Historically, developers have optimized pages for fast render times,
 sometimes at the expense of TTI.

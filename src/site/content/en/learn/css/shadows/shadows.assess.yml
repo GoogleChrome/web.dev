@@ -1,0 +1,30 @@
+setLeader: Test your knowledge of shadows
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: "Which shadow value below is unique to `box-shadow`?"
+    options:
+      - content: "Horizontal offset"
+        rationale: "Try again!"
+      - content: "Vertical offset"
+        rationale: "Try again!"
+      - content: "Blur radius"
+        rationale: "Try again!"
+      - content: "Spread radius"
+        rationale: "🎉"
+      - content: "Color"
+        rationale: "Try again!"
+      - content: "`inset`"
+        rationale: "Try again! `text-shadow` has inset as well."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Only 13 box shadows allowed on an element at once.
+    options:
+      - content: "True"
+        rationale: "There's no official limit."
+      - content: "False"
+        rationale: "Add as many multiple box shadows as you need."

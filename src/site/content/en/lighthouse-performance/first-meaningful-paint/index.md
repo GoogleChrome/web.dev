@@ -26,7 +26,7 @@ Each metric captures some aspect of page load speed.
 Lighthouse displays displays FMP in seconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="first-meaningful-paint.png" alt="A screenshot of the Lighthouse First Meaningful Paint audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6XzSjk0QsMpAL8V0bZiq.png", alt="A screenshot of the Lighthouse First Meaningful Paint audit", width="800", height="588", class="w-screenshot" %}
 </figure>
 
 ## What FMP measures

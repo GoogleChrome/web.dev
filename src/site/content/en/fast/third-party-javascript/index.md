@@ -30,9 +30,7 @@ Sites use these scripts for various purposes, including:
 - Helper libraries (like date formatting, animation, and functional libraries)
 
 <figure class="w-figure w-figure--fullbleed">
-  <video autoplay loop muted playsinline>
-    <source src="./third-party-examples.mp4" type="video/mp4">
-  </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/uLXJ72jZAlzK56ctPwXd.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}
 </figure>
 
 Third-party scripts can provide powerful functionality, but that's not the whole story. They also affect privacy, security, and page behavior⁠—and they can be particularly problematic for performance.

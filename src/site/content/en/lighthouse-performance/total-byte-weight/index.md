@@ -29,7 +29,7 @@ shows the total size in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte
 The largest requests are presented first:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="total-byte-weight.png" alt="A screenshot of the Lighthouse Avoid enormous network payloads audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="A screenshot of the Lighthouse Avoid enormous network payloads audit", width="800", height="518", class="w-screenshot" %}
 </figure>
 
 Based on [HTTP Archive data](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal),

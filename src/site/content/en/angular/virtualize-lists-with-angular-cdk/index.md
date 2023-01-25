@@ -7,7 +7,7 @@ authors:
 date: 2019-07-12
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
-hero: hero.jpg
+hero: image/admin/bGHUmFg8d3zHg6dJ29YT.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
@@ -118,11 +118,14 @@ export class ScrollComponent {
 
  Instead of iterating through the entire list, the viewport will dynamically identify and iterate through the correct subset of the list for the user. Now when the user loads the page, the CDK should render the subset of the list that fits on the screen (plus a bit of buffer), and any scrolling events in the viewport will load and render the appropriate subset of the list:
 
-<figure>
-  <video autoplay loop muted playsinline>
-    <source src="./render-subset.webm" type="video/webm">
-    <source src="./render-subset.mp4" type="video/mp4">
-  </video>
+<figure class="w-figcaption">
+  {% Video
+    src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hplr8uuGGlq7xhxfkeca.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tVvS430R28iEmDEGLewX.mp4"],
+    autoplay=true,
+    loop=true,
+    muted=true,
+    playsinline=true
+  %}
   <figcaption>
     The CDK rendering subsets of a list as the user scrolls.
   </figcaption>

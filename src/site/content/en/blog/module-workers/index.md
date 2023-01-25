@@ -3,7 +3,7 @@ title: Threading the web with module workers
 subhead: |
   Moving heavy lifting into background threads is now easier with JavaScript modules in web workers.
 date: 2019-12-17
-hero: hero.jpg
+hero: image/admin/I7oZWRPOJABk1YBGGisK.jpg
 alt: Computer processor graphic
 authors:
   - developit
@@ -101,7 +101,7 @@ function sayHello() {
 
 For this reason, web workers have historically imposed an outsized effect on the architecture of an
 application. Developers have had to create clever tooling and workarounds to make it possible to
-use web workers without giving up modern development practises. As an example, bundlers like
+use web workers without giving up modern development practices. As an example, bundlers like
 webpack embed a small module loader implementation into generated code that uses `importScripts()`
 for code loading, but wraps modules in functions to avoid variable collisions and simulate
 dependency imports and exports.

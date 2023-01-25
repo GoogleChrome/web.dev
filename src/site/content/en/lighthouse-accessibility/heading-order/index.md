@@ -18,8 +18,7 @@ web_lighthouse:
 flags pages whose headings skip one or more levels:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="heading-order.png"
-    alt="Lighthouse audit showing headings that skip levels">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Lighthouse audit showing headings that skip levels", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 For example, using an `<h1>` element for your page title

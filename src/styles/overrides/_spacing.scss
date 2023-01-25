@@ -6,52 +6,42 @@
 // =============================================================================
 
 $MARGIN_POSITION_MAP: (
+  m: margin,
   mb: margin-bottom,
   mt: margin-top,
   ml: margin-left,
   mr: margin-right,
 );
 
-$MARGIN_SIZE_MAP: (
-  non: 0,
-  sm: 8px,
-  std: 16px, // Standard margin
-  l: 32px,
-  xl: 56px,
-);
-
-// Loop through each margin setting and create a class with those settings.
-// For example, .w-mb--l is a large margin on the bottom.
-@each $SIZE_NAME, $SIZE_VALUE in $MARGIN_SIZE_MAP {
-  @each $MARGIN_ALIAS, $MARGIN_PROPERTY in $MARGIN_POSITION_MAP {
-    .w-#{$MARGIN_ALIAS}--#{$SIZE_NAME} {
-      #{$MARGIN_PROPERTY}: $SIZE_VALUE !important;
-    }
-  }
-}
-
 $PADDING_POSITION_MAP: (
+  p: padding,
   pb: padding-bottom,
   pt: padding-top,
   pl: padding-left,
   pr: padding-right,
 );
 
-$PADDING_SIZE_MAP: (
+$SIZE_MAP: (
   non: 0,
   sm: 8px,
-  std: 16px, // Standard padding
+  std: 16px, // Standard margin
+  md: 24px,
   l: 32px,
   xl: 56px,
+  auto: auto,
 );
 
-// Loop through each padding setting and create a class with those settings.
-// For example, .w-pb--l is a large padding on the bottom.
-@each $SIZE_NAME, $SIZE_VALUE in $PADDING_SIZE_MAP {
-  @each $PADDING_ALIAS, $PADDING_PROPERTY in $PADDING_POSITION_MAP {
-    .w-#{$PADDING_ALIAS}--#{$SIZE_NAME} {
-      #{$PADDING_PROPERTY}: $SIZE_VALUE !important;
+// Loop through each margin setting and create a class with those settings.
+// For example, .w-mb--l is a large margin on the bottom.
+@each $SIZE_NAME, $SIZE_VALUE in $SIZE_MAP {
+  @each $MARGIN_KEY, $MARGIN_VALUE in $MARGIN_POSITION_MAP {
+    .w-#{$MARGIN_KEY}--#{$SIZE_NAME} {
+      #{$MARGIN_VALUE}: $SIZE_VALUE !important;
+    }
+  }
+  @each $PADDING_KEY, $PADDING_VALUE in $PADDING_POSITION_MAP {
+    .w-#{$PADDING_KEY}--#{$SIZE_NAME} {
+      #{$PADDING_VALUE}: $SIZE_VALUE !important;
     }
   }
 }
-

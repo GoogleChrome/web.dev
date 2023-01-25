@@ -1,0 +1,103 @@
+web-audio-fab {
+  border-radius: 50%;
+  bottom: 12px;
+  box-shadow: 0px 8px 12px 6px rgba(60, 64, 67, 0.15), 0px 4px 4px rgba(60, 64, 67, 0.3);
+  display: block;
+  height: 56px;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 12px;
+  transition: opacity $TRANSITION_SPEED $TRANSITION_EASE;
+  width: 56px;
+  z-index: 1;
+
+  &[showing] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.web-audio-fab {
+  &__button {
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__thumbnail {
+    border-radius: 50%;
+    display: block;
+  }
+
+  &__equalizer-container {
+    align-items: center;
+    background-color: $WHITE;
+    border-radius: 50%;
+    bottom: 0;
+    box-shadow: 0px 8px 12px 6px rgba(60, 64, 67, 0.15), 0px 4px 4px rgba(60, 64, 67, 0.3);
+    display: flex;
+    height: 24px;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    width: 24px;
+  }
+
+  &__equalizer {
+    fill: $WEB_PRIMARY_COLOR;
+
+    &-left {
+      animation: equalizer-morph 1s linear .1s infinite;
+      transform-origin: bottom;
+    }
+
+    &-middle {
+      animation: equalizer-morph 1s linear .2s infinite;
+      transform-origin: bottom;
+    }
+
+    &-right {
+      animation: equalizer-morph 1s linear .4s infinite;
+      transform-origin: bottom;
+    }
+  }
+}
+
+// Shout out to Hope Armstrong for the original codepen
+// https://blog.logrocket.com/animating-svg-with-css-83e8e27d739c/
+// https://codepen.io/hopearmstrong/pen/VNYoNq
+
+@keyframes equalizer-morph {
+  0% {
+    transform: scaleY(1);
+  }
+
+  25% {
+    transform: scaleY(0.3);
+  }
+
+  50% {
+    transform: scaleY(0.7);
+  }
+
+  75% {
+    transform: scaleY(0.15);
+  }
+}
+
+web-audio-fab:not([playing]) .web-audio-fab__equalizer {
+  &-left {
+    animation: none;
+    transform: scaleY(0.8);
+  }
+
+  &-middle {
+    animation: none;
+    transform: scaleY(1);
+  }
+
+  &-right {
+    animation: none;
+    transform: scaleY(0.6);
+  }
+}

@@ -5,7 +5,7 @@ authors:
   - una
 description: This post highlights a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.
 date: 2020-07-07
-hero: hero.png
+hero: image/admin/B07IzuMeRRGRLH9UQkwd.png
 alt: Holy grail layout.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.

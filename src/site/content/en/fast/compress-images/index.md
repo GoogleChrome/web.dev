@@ -150,7 +150,7 @@ Then you would only need 8 bits in total for the RGB channels and immediately sa
 
 
 <figure class="w-figure">
-  <img src="./artifacts.png" alt="Compression artifacts">
+  {% Img src="image/admin/ssek7uXzhs67joEbp0P8.png", alt="Compression artifacts", width="612", height="266" %}
   <figcaption>Left to right (PNG): 32-bit (16M colors), 7-bit (128 colors), 5-bit (32 colors).</figcaption>
 </figure>
 

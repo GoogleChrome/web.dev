@@ -1,0 +1,94 @@
+---
+layout: base
+pageScripts:
+  - '/js/course.js'
+inlineScripts:
+  - '../../../lib/components/CourseLinks/index.js'
+---
+
+{% from 'macros/audio-fab.njk' import audioFab %}
+{% from 'macros/audio-player.njk' import audioPlayer %}
+
+{#
+  Grab the data for the course using the projectKey defined in the 11tydata.js
+  file at the root of the course in /learn/[course]
+#}
+{% set courseData = courses[projectKey] %}
+{% set courseTitle = courseData.meta.title | i18n(locale) %}
+
+{#
+  Grab the navigation data for the course. These are the link that will appear
+  in the navigatino drawer.
+#}
+{% set pageNavigation = collections.all | navigation(courseData.toc) %}
+
+{#
+  Grab the ToC contents for headings ToC. This powers the list of headings
+  that appears on the right-hand side of the page. Unfortunately our use of
+  the word 'toc' is a bit overloaded :P
+  TODO: The courseToc filter is only used to define the ToC for courses, but
+  it's basically the same thing we use on developer.chrome.com and it would be
+  nice to use it for articles as well. Currently we have a different toc design
+  for those but it's a bit clunky and we should replace it with this.
+#}
+{% set tocContents %}
+  {{- content | courseToc | safe -}}
+{% endset %}
+
+<a class="skip-link w-button" href="#main">Skip to main</a>
+
+<div class="display-flex direction-column lg:direction-row">
+
+  {% include 'partials/header-course.njk' %}
+  {% include 'partials/navigation-drawer-course.njk' %}
+
+  <div class="flex-1 min-width-0">
+    {% include 'partials/course-app-bar.njk' %}
+
+    <div class="sticky-observer"></div>
+
+    <div class="course-content display-flex justify-content-center">
+      {% include 'partials/toc-side.njk' %}
+      <main id="main">
+        {% for item in pageNavigation %}
+          {% if item.url === page.url %}
+            <div class="course-index font-mono">{{ loop.index0 | padStart(3, '0') }}</div>
+          {% endif %}
+        {% endfor %}
+        <h1 class="course-headline">{{ title }}</h1>
+        <p class="course-description">{{ description }}</p>
+        {% include 'partials/toc-inner.njk' %}
+        <div class="course-copy flow">
+          {% if audio %}
+            {% include 'partials/course-audio.njk' %}
+          {% endif %}
+          {{ content | safe }}
+        </div>
+      </main>
+    </div>
+
+    {% include 'partials/course-pagination.njk' %}
+
+    {% include 'partials/footer.njk' %}
+  </div>
+</div>
+
+{# This little script just watches a sentinel element using an
+IntersectionObserver so we can add a "stuck" state to our course-app-bar and
+have it display a bottom border. #}
+{% set stickyObserver %}
+const target = document.querySelector('.sticky-observer');
+const callback = (entries, observer) => {
+  entries.forEach(entry => {
+    const appBar = document.querySelector('.course-app-bar');
+    if (entry.isIntersecting) {
+      appBar.removeAttribute('data-stuck');
+    } else {
+      appBar.setAttribute('data-stuck', '');
+    }
+  });
+};
+const observer = new IntersectionObserver(callback);
+observer.observe(target);
+{% endset %}
+<script>{{ stickyObserver | minifyJs | cspHash | safe }}</script>

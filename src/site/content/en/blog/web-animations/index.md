@@ -5,7 +5,7 @@ authors:
   - una
   - kevinellis
 date: 2020-05-27
-hero: hero.jpg
+hero: image/admin/FHGNLoi8kcbaHlFTYb4H.jpg
 alt: Option screen with illustrated characters and a moving blue target.
 description: Wrangling your web animations is about to get much easier.
 tags:
@@ -25,7 +25,7 @@ The [Web Animations API](https://www.w3.org/TR/web-animations-1/) is a tool that
 While [Firefox](https://platform-status.mozilla.org/#web-animations) and [Safari](https://webkit.org/status/#specification-web-animations) have already implemented the full set of spec [features](https://caniuse.com/#feat=web-animation), Chromium 84 brings a slew of previously unsupported features to [Chrome and Edge](https://developer.microsoft.com/en-us/microsoft-edge/status/webanimationsjavascriptapi/) enabling cross-browser interoperability.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src='./waapi-timeline.png' alt="The Web Animations API first hit Chromium in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mdsjLgrX6rngEnBZo5Nu.png", alt="The Web Animations API first hit Chromium in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.", width="800", height="374", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The long history of the Web Animations API in Chromium.
   </figcaption>
@@ -50,8 +50,8 @@ would look like [this](https://codepen.io/una/pen/abvYXJX) in JavaScript:
 
 ```js
 const openAnimation = [
-  { transform: 'scale(0)' }, 
-  { transform: 'scale(1)' }, 
+  { transform: 'scale(0)' },
+  { transform: 'scale(1)' },
 ];
 ```
 
@@ -93,7 +93,7 @@ However, with the update, the Web Animations API is no longer restricted to anim
   height: 480
 } %}
 
-You first `"get"` the keyframes for the transition to determine where we are transitioning from. Then, you create two new opacity animations, enabling the   cross fade effect. Once the cross-fade completes, you delete the copy. 
+You first `"get"` the keyframes for the transition to determine where we are transitioning from. Then, you create two new opacity animations, enabling the   cross fade effect. Once the cross-fade completes, you delete the copy.
 
 ## Orchestrating animations with promises
 
@@ -102,7 +102,7 @@ In Chromium 84, you now have two methods that can be used with promises: `animat
 - `animation.ready` enables you to wait for pending changes to take effect (i.e. switching between playback control methods such as play and pause).
 - `animation.finished` provides a means of executing custom JavaScript code when an animation is complete.
 
-Let's continue with our example, and create an orchestrated animation chain with `animation.finished`. Here, you have a vertical transformation (`scaleY`), followed by a horizontal transformation (`scaleX`), followed by an opacity change on a child element: 
+Let's continue with our example, and create an orchestrated animation chain with `animation.finished`. Here, you have a vertical transformation (`scaleY`), followed by a horizontal transformation (`scaleX`), followed by an opacity change on a child element:
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -156,11 +156,11 @@ What you can do is create two play-pending animations (`openModal`, and an inlin
 </figure>
 
 ```js
-selector.animate([{transform: `translate(${x}px, ${y}px)`}], 
+selector.animate([{transform: `translate(${x}px, ${y}px)`}],
     {duration: 1000, fill: 'forwards'});
 ```
 
-In this example, there is only one keyframe, and no specified start position. This is an example of using **partial keyframes**. The mouse handler does a few things here: it sets a new end location and triggers a new animation. The new start position is inferred from the current underlying position. 
+In this example, there is only one keyframe, and no specified start position. This is an example of using **partial keyframes**. The mouse handler does a few things here: it sets a new end location and triggers a new animation. The new start position is inferred from the current underlying position.
 
 New transitions can be triggered while existing ones are still running. This means that the current transition is interrupted, and a new one is created.
 

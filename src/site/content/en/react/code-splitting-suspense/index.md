@@ -3,7 +3,7 @@ layout: post
 title: Code splitting with React.lazy and Suspense
 subhead: |
   You never need to ship more code than necessary to your users, so split your bundles to make sure this never happens!
-hero: hero-code-splitting-suspense.jpg
+hero: image/admin/Lk8KvDZcWntc7rtQzvv9.jpg
 date: 2019-04-29
 description: |
   The React.lazy method makes it easy to code-split a React application on a
@@ -104,7 +104,7 @@ The loading indicator will show for longer now. Notice how all the code that
 makes up the `AvatarComponent` is fetched as a separate chunk.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./split-component-chunk.png" alt="DevTools network panel showing one chunk.js file being downloaded">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="DevTools network panel showing one chunk.js file being downloaded", width="800", height="478", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 {% Aside %}

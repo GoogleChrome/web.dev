@@ -24,8 +24,7 @@ flags pages whose `<html>` element doesn't have a valid value
 for its `lang` attribute:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="html-lang-valid.png"
-    alt="Lighthouse audit showing the html element has an invalid value for its lang attribute">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CqvcHw47iqVVkVcigSx0.png", alt="Lighthouse audit showing the html element has an invalid value for its lang attribute", width="800", height="185", class="w-screenshot" %}
 </figure>
 
 Note that the [**`<html>` element does not have a `[lang]` attribute** audit](/html-has-lang)

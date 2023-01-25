@@ -1,13 +1,13 @@
 {
   "slug": "fast",
-  "cover": "/images/collections/fast.svg",
-  "title": "Fast load times",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/fjFJRFnHXiem8yF0GGQ9.svg",
+  "title": "i18n.paths.fast.title",
   "updated": "July 17, 2020",
-  "description": "Techniques for improving site performance.",
-  "overview": "When you're building a modern web experience, it's important to measure, optimize, and monitor if you're to get fast and stay fast. Performance plays a significant role in the success of any online venture, as high performing sites engage and retain users better than poorly performing ones.\n\nSites should focus on optimizing for user-centric happiness metrics. Tools like Lighthouse (baked into web.dev!) highlight these metrics and help you take the right steps toward improving your performance. To \"stay fast\", set and enforce performance budgets to help your team work within the constraints needed to continue loading fast and keeping users happy after your site has launched.",
-  "topics": [
+  "description": "i18n.paths.fast.description",
+  "overview": "i18n.paths.fast.overview",
+    "topics": [
     {
-      "title": "Introduction",
+      "title": "i18n.paths.fast.topics.introduction",
       "pathItems": [
         "why-speed-matters",
         "what-is-speed",
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "title": "Set performance budgets",
+      "title": "i18n.paths.fast.topics.set_performance_budgets",
       "pathItems": [
         "performance-budgets-101",
         "your-first-performance-budget",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "title": "Optimize your images",
+      "title": "i18n.paths.fast.topics.optimize_your_images",
       "pathItems": [
         "choose-the-right-image-format",
         "compress-images",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "title": "Lazy-load images and video",
+      "title": "i18n.paths.fast.topics.lazy_load_images_and_video",
       "pathItems": [
         "lazy-loading",
         "lazy-loading-images",
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "title": "Optimize your JavaScript",
+      "title": "i18n.paths.fast.topics.optimize_your_javascript",
       "pathItems": [
         "apply-instant-loading-with-prpl",
         "reduce-javascript-payloads-with-code-splitting",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "title": "Optimize your resource delivery",
+      "title": "i18n.paths.fast.topics.optimize_your_resource_delivery",
       "pathItems": [
         "content-delivery-networks",
         "prioritize-resources",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "title": "Optimize your CSS",
+      "title": "i18n.paths.fast.topics.optimize_your_css",
       "pathItems": [
         "defer-non-critical-css",
         "minify-css",
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "title": "Optimize your third-party resources",
+      "title": "i18n.paths.fast.topics.optimize_your_third_party_resources",
       "pathItems": [
         "third-party-javascript",
         "identify-slow-third-party-javascript",
@@ -93,7 +93,7 @@
       ]
     },
     {
-      "title": "Optimize WebFonts",
+      "title": "i18n.paths.fast.topics.optimize_webfonts",
       "pathItems": [
         "avoid-invisible-text",
         "optimize-webfont-loading",
@@ -101,13 +101,13 @@
       ]
     },
     {
-      "title": "Optimize for network quality",
+      "title": "i18n.paths.fast.topics.optimize_for_network_quality",
       "pathItems": [
         "adaptive-serving-based-on-network-quality"
       ]
     },
     {
-      "title": "Measure performance in the field",
+      "title": "i18n.paths.fast.topics.measure_performance_in_the_field",
       "pathItems": [
         "chrome-ux-report",
         "chrome-ux-report-data-studio-dashboard",
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "title": "Build a performance culture",
+      "title": "i18n.paths.fast.topics.build_a_performance_culture",
       "pathItems": [
         "value-of-speed",
         "how-can-performance-improve-conversion",

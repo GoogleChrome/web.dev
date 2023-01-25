@@ -54,6 +54,7 @@ module.exports = (param) => {
     height: 420,
     id: null,
     path: '',
+    highlights: '',
     previewSize: 100,
   };
 
@@ -63,7 +64,14 @@ module.exports = (param) => {
     glitchProps = {...glitchProps, ...param};
   }
 
-  const {allow: userAllow, id, path, previewSize, height} = glitchProps;
+  const {
+    allow: userAllow,
+    id,
+    path,
+    highlights,
+    previewSize,
+    height,
+  } = glitchProps;
 
   if (!id) {
     return;
@@ -76,6 +84,9 @@ module.exports = (param) => {
 
   if (path) {
     queryParams.path = path;
+  }
+  if (highlights) {
+    queryParams.highlights = highlights;
   }
   if (typeof previewSize === 'number') {
     queryParams.previewSize = previewSize;

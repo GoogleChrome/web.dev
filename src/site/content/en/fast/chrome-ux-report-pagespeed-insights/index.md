@@ -21,27 +21,27 @@ to show how real users experience the page and the origin in
 aggregate. In this guide, learn how to use PSI to extract insights from CrUX
 and better understand the user experience.
 
-<img class="w-screenshot" src="./psi.png" alt="Field data from CrUX in PageSpeed Insights">
+{% Img src="image/admin/8ORarOdBzgJ5FAMkws7p.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="703", class="w-screenshot" %}
 
 ## Reading the data
 
 To get started, go to [https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/)
 and enter the URL of the page you want to test.
 
-<img class="w-screenshot" src="./psi_url.png" alt="Enter a URL to get started on PageSpeed Insights">
+{% Img src="image/admin/5bnx9Xt0LT2XWk8Gpy3s.png", alt="Enter a URL to get started on PageSpeed Insights", width="800", height="203", class="w-screenshot" %}
 
 After a few seconds, Lighthouse
 audits will be performed and you will see sections for Field and Lab data. CrUX
 is a collection of real user experiences from the field, while Lighthouse is a
 controlled test in the lab.
 
-<img class="w-screenshot" src="./psi_page.png" alt="Field data from CrUX in PageSpeed Insights">
+{% Img src="image/admin/bKoL7v3vnO6Ttl70FkZe.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="296", class="w-screenshot" %}
 
-In the **Field Data** section, you'll see four metrics: 
-[First Contentful Paint](/fcp/) (FCP), [First Input Delay](/fid/) (FID), 
-[Largest Contentful Paint](/lcp/) (LCP), and 
+In the **Field Data** section, you'll see four metrics:
+[First Contentful Paint](/fcp/) (FCP), [First Input Delay](/fid/) (FID),
+[Largest Contentful Paint](/lcp/) (LCP), and
 [Cumulative Layout Shift](/cls/) (CLS). FID, LCP, and CLS are
-considered the [Core Web Vitals](/vitals/#core-web-vitals) metrics. These 
+considered the [Core Web Vitals](/vitals/#core-web-vitals) metrics. These
 metrics are representative of the user experience in different ways:
 
 - **FCP** measures the time until the page displays something in the
@@ -65,7 +65,7 @@ This table describes how values for these metrics are categorized as either
 
 There are three ways that the user experience is displayed in PSI:
 
-- a label summarizing the page as passing or not passing the Core Web Vitals 
+- a label summarizing the page as passing or not passing the Core Web Vitals
   assessment
 - percentiles measured in seconds or milliseconds (CLS is unitless)
 - a distribution representing the percent of "good", "needing improvement", and
@@ -80,7 +80,7 @@ statistics, a percentile is a measure that indicates the value below which a
 given percentage of samples fall. For example, the screenshot above shows that
 FID's 75th percentile is 15ms, meaning that 75% of FID experiences are faster
 than 15ms. These values are color-coded according to the threshold table above
-where "good" values are green, values "needing improvement" are orange, and 
+where "good" values are green, values "needing improvement" are orange, and
 "poor" values are red.
 
 Finally, the distributions for each metric are illustrated using the "good",
@@ -97,7 +97,7 @@ user experiences across all pages of an origin. You can get the same stats for a
 closely aligned with what is available on [BigQuery](/chrome-ux-report-bigquery/), while the page-level
 performance is not made available to query.
 
-<img class="w-screenshot" src="./psi_origin.png" alt="Origin CrUX performance in PageSpeed Insights">
+{% Img src="image/admin/7Xr7VVdZMbRlEMlgq3cj.png", alt="Origin CrUX performance in PageSpeed Insights", width="800", height="371", class="w-screenshot" %}
 
 There is one major difference between the origin-level data on PSI versus
 BigQuery. The datasets on BigQuery are released once a month and encompass the data from the previous calendar month. For example, the 202005 dataset
@@ -113,7 +113,7 @@ If the URL you entered is not available in CrUX, you will see a null response
 like the one below, indicating that there is not enough field data.
 Lab data from Lighthouse is still available to give you an approximation of the page's performance.
 
-<img class="w-screenshot" src="./psi_no_data.png" alt="No CrUX data on PageSpeed Insights">
+{% Img src="image/admin/TQSwqryJR9phVV5vjDs4.png", alt="No CrUX data on PageSpeed Insights", width="800", height="202", class="w-screenshot" %}
 
 ## FAQ
 

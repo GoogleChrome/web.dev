@@ -53,19 +53,16 @@ to the time when the browser is actually able to begin processing event handlers
 in response to that interaction.
 
 <picture>
-  <source srcset="../vitals/fid_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="../vitals/fid_4x3.svg"
-      alt="Good fid values are 2.5 seconds, poor values are greater than 4.0
-            seconds and anything in between needs improvement">
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>
 
 ### What is a good FID score?
 
 To provide a good user experience, sites should strive to have a First Input
-Delay of less than **100 milliseconds**. To ensure you're hitting this target
-for most of your users, a good threshold to measure is the **75th percentile**
-of page loads, segmented across mobile and desktop devices.
+Delay of **100 milliseconds** or less. To ensure you're hitting this target for
+most of your users, a good threshold to measure is the **75th percentile** of
+page loads, segmented across mobile and desktop devices.
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,
@@ -99,7 +96,7 @@ something else.
 
 Consider the following timeline of a typical web page load:
 
-[![Example page load trace](fid-base.svg)](fid-base.svg)
+{% Img src="image/admin/9tm3f6pwlHMqNKuFvaP0.svg", alt="Example page load trace", width="800", height="260", linkTo=true %}
 
 The above visualization shows a page that's making a couple of network requests
 for resources (most likely CSS and JS files), and&mdash;after those resources
@@ -115,7 +112,7 @@ Long first input delays typically occur between [First Contentful Paint
 rendered some of its content but isn't yet reliably interactive. To illustrate
 how this can happen, FCP and TTI have been added to the timeline:
 
-[![Example page load trace with FCP and TTI](fid-fcp-tti.svg)](fid-fcp-tti.svg)
+{% Img src="image/admin/24Y3T5sWNuZD9fKhkuER.svg", alt="Example page load trace with FCP and TTI", width="800", height="340", linkTo=true %}
 
 You may have noticed that there's a fair amount of time (including three [long
 tasks](/custom-metrics/#long-tasks-api)) between FCP and TTI, if a user tries to
@@ -126,7 +123,7 @@ respond.
 Consider what would happen if a user tried to interact with the page near the
 beginning of the longest task:
 
-[![Example page load trace with FCP, TTI, and FID](fid-full.svg)](fid-full.svg)
+{% Img src="image/admin/krOoeuQ4TWCbt9t6v5Wf.svg", alt="Example page load trace with FCP, TTI, and FID", width="800", height="380", linkTo=true %}
 
 Because the input occurs while the browser is in the middle of running a task,
 it has to wait until the task completes before it can respond to the input. The

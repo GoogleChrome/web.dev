@@ -14,7 +14,7 @@ all unoptimized images, with potential savings in [kibibytes (KiB)](https://en.w
 Optimize these images so that the page loads faster and consumes less data:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-optimized-images.png" alt="A screenshot of the Lighthouse Efficiently encode images audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="A screenshot of the Lighthouse Efficiently encode images audit", width="800", height="263", class="w-screenshot" %}
 </figure>
 
 

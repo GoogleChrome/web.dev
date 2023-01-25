@@ -1,10 +1,10 @@
 ---
-title: 'Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts'
+title: 'Prevent layout shifting and flashes of invisible text (FOIT) by preloading optional fonts'
 subhead: 'Starting in Chrome 83, link rel="preload" and font-display: optional can be combined to remove layout jank completely'
 authors:
   - houssein
 date: 2020-03-18
-hero: hero.jpg
+hero: image/admin/wv5DLtYiAhHm4lNemN1E.jpg
 alt: A large letter A from a type set sitting on a white table.
 description: |
   By optimizing rendering cycles, Chrome 83 eliminates layout shifting when
@@ -49,7 +49,7 @@ for asynchronously loaded fonts. However, every one of these supported values ca
 in one of the two ways listed above, until now!
 
 {% Aside %}
-  The [Cumulative Layout Shift](https://web.dev/cls/) metric makes it possible to measure the layout
+  The [Cumulative Layout Shift](/cls/) metric makes it possible to measure the layout
   instability on a web page.
 {% endAside %}
 
@@ -69,7 +69,7 @@ font. If the font is not downloaded within 100ms, then the fallback font is used
 occurs.
 
 <figure class="w-figure">
-  <img src="./previous-behavior-fail.png" alt="Diagram showing previous optional font behavior when font fails to load">
+  {% Img src="image/admin/WHLORYEu864QRRveFQUz.png", alt="Diagram showing previous optional font behavior when font fails to load", width="800", height="340" %}
   <figcaption class="w-figcaption">Previous <code>font-display: optional</code> behavior in Chrome when font is downloaded <b>after</b> the 100ms block period</figcaption>
 </figure>
 
@@ -77,7 +77,7 @@ However, in the case that the font is downloaded before the 100ms block period c
 font is rendered and used on the page.
 
 <figure class="w-figure">
-  <img src="./previous-behavior-pass.png" alt="Diagram showing previous optional font behavior when font loads in time">
+  {% Img src="image/admin/mordYRjmCCDtlMcNXEOU.png", alt="Diagram showing previous optional font behavior when font loads in time", width="800", height="318" %}
   <figcaption class="w-figcaption">Previous <code>font-display: optional</code> behavior in Chrome when font is downloaded <b>before</b> the 100ms block period</figcaption>
 </figure>
 
@@ -88,18 +88,18 @@ This occurs even if the font is stored in the browser's disk cache and can load 
 block period is complete.
 
 [Optimizations](https://bugs.chromium.org/p/chromium/issues/detail?id=1040632) have landed in Chrome 83 to entirely remove the first render cycle for optional fonts
-that are preloaded with [`<link rel="preload'>`](https://web.dev/codelab-preload-web-fonts/).
+that are preloaded with [`<link rel="preload'>`](/codelab-preload-web-fonts/).
 Instead, rendering is blocked until the custom font has finished loading or a certain period of time
 has passed. This timeout period is currently set at 100ms, but may possibly change in the near
 future to optimize performance.
 
 <figure class="w-figure">
-  <img src="./new-behavior-fail.png" alt="Diagram showing new preloaded optional font behavior when font fails to load">
+  {% Img src="image/admin/zLldiq9J3duBTaeRN88e.png", alt="Diagram showing new preloaded optional font behavior when font fails to load", width="800", height="353" %}
   <figcaption class="w-figcaption">New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>after</b> the 100ms block period (no flash of invisible text)</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="./new-behavior-pass.png" alt="Diagram showing new preloaded optional font behavior when font loads in time">
+  {% Img src="image/admin/OEHClGFMFspaWjb3xXLY.png", alt="Diagram showing new preloaded optional font behavior when font loads in time", width="800", height="346" %}
   <figcaption class="w-figcaption">New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>before</b> the 100ms block period (no flash of invisible text)</figcaption>
 </figure>
 

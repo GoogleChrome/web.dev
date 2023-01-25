@@ -1,7 +1,7 @@
 ---
 title: Profiling Web Audio apps in Chrome
 subhead: >
-  Learn how to profile the performance of Web Audio apps in Chrome using 
+  Learn how to profile the performance of Web Audio apps in Chrome using
   `chrome://tracing` and the **WebAudio** tab in DevTools.
 description: >
   Learn how to profile the performance of Web Audio apps in Chrome using
@@ -14,7 +14,7 @@ tags:
   - memory
 authors:
   - hongchanchoi
-hero: hero.jpg
+hero: image/admin/uXHdcVy0A8BFAdNr8bXu.jpg
 alt: Artistic image of microphone and pop filter
 ---
 
@@ -84,21 +84,20 @@ Beta or Canary). Once you have the browser ready, follow the steps below:
 1. When you have enough trace data, go back to the tracing tab and press **Stop**.
 1. The tracing tab will visualize the result.
 
-   <img src="1-hello-audio-worklet.jpg" class="w-screenshot w-screenshot--filled"
-     alt="Screen shot after tracing has completed.">
+   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3GqKLXTP7XzFp6ADztc4.jpg", alt="Screen shot after tracing has completed.", width="800", height="525",class="w-screenshot w-screenshot--filled" %}
 
 1. Press **Save** to save the tracing data.
 
 ### How to analyze tracing data
 
 The tracing data visualizes how Chrome's web audio engine renders the audio.
-The renderer has two different render modes: **Native mode** and
+The renderer has two different render modes: **Operating system mode** and
 **Worklet mode**. Each mode uses a different threading model, so the tracing
 results also differ.
 
-#### Native mode
+#### Operating system mode
 
-In Native mode, the [`AudioOutputDevice`][cr-audio-output-device] thread runs
+In operating system mode, the [`AudioOutputDevice`][cr-audio-output-device] thread runs
 all the web audio code. The `AudioOutputDevice` is a real-time priority thread
 originating from the browser's Audio Service that is driven by the audio
 hardware clock. If you see irregularity from the trace data in this lane,
@@ -107,8 +106,7 @@ of Linux and Pulse Audio is known to have this problem. See the following Chromi
 for more details: [#825823](https://crbug.com/825823),
 [#864463](https://crbug.com/864463).
 
-<img src="2e-box2d.jpg" class="w-screenshot w-screenshot--filled"
-     alt="Screen shot of native mode tracing result." >
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Mf64zHw10phOMhU3gXsJ.jpg", alt="Screen shot of operating system mode tracing result.", width="800", height="398",class="w-screenshot w-screenshot--filled" %}
 
 #### Worklet mode
 
@@ -120,8 +118,7 @@ worklet is activated all the web audio operations are rendered by the
 The common irregularity here is a big block caused by the garbage collection
 or missed render deadlines. Both cases lead to glitches in the audio stream.
 
-<img src="3e-hello-audio-worklet.png" class="w-screenshot w-screenshot--filled"
-     alt="Screen shot of worklet mode tracing result.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2kSG5BoaXZ5CZIlVvIYI.png", alt="Screen shot of worklet mode tracing result.", width="800", height="449",class="w-screenshot w-screenshot--filled" %}
 
 In both cases, the ideal tracing data is characterized by well-aligned audio
 device callback invocations and render tasks being completed well within the
@@ -138,8 +135,7 @@ goes beyond a given render budget. The callback timing is well behaved but
 the audio processing function call of the Web Audio API failed to complete the
 work before the next device callback.
 
-<img src="5e-render-budget.png" class="w-screenshot w-screenshot--filled"
-     alt="Diagram showing audio glitch due to render task overflowing budget.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3CkP24NupnqB1XDGH6w.png", alt="Diagram showing audio glitch due to render task overflowing budget.", width="734", height="362",class="w-screenshot w-screenshot--filled" %}
 
 **Your options:**
 
@@ -149,7 +145,7 @@ work before the next device callback.
 
 #### Example 2: Significant garbage collection on the worklet thread
 
-Unlike on the native audio rendering thread, garbage collection is managed
+Unlike on the operating system audio rendering thread, garbage collection is managed
 on the worklet thread. That means if your code does memory allocation/deallocation
 (e.g. new arrays) it eventually triggers a garbage collection which
 synchronously blocks the thread. If the workload of web audio operations and
@@ -157,8 +153,7 @@ garbage collection is bigger than a given render budget, it results in
 glitches in the audio stream. The following screenshot is an extreme example of this
 case.
 
-<img src="6e-garbage-collection.png" class="w-screenshot w-screenshot--filled"
-     alt="Audio glitches caused by garbage collection.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ckdPwqnRtoHsRQkOVy8J.png", alt="Audio glitches caused by garbage collection.", width="800", height="334",class="w-screenshot w-screenshot--filled" %}
 
 {% Aside %}
   Chrome's `AudioWorkletProcessor` implementation generates `Float32Array` instances for
@@ -185,8 +180,7 @@ subsequent operations will be affected. The following image is an example
 of jittery audio callback. Compared to the previous two images, the interval
 between each callback varies significantly.
 
-<img src="4e-pulse-audio.png" class="w-screenshot w-screenshot--filled"
-     alt="Screen shot comparing unstable vs stable callback timing.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1UN5udXOW56ooihw5M18.png", alt="Screen shot comparing unstable vs stable callback timing.", width="800", height="252",class="w-screenshot w-screenshot--filled" %}
 
 This is a known issue on Linux, which uses Pulse Audio as an audio
 backend. This is still under investigation ([Chromium issue #825823](https://crbug.com/825823)).
@@ -200,17 +194,15 @@ want to gauge the running performance of your application.
 Access the panel by opening the **Main Menu** of
 DevTools, then go to **More tools** > **WebAudio**.
 
-<img src="7e-devtools.jpg" class="w-screenshot w-screenshot--filled"
-     alt="Screen shot showing how to open WebAudio panel in Chrome DevTools.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t2eX431PTio5oOFkmOtR.jpg", alt="Screen shot showing how to open WebAudio panel in Chrome DevTools.", width="800", height="423",class="w-screenshot w-screenshot--filled" %}
 
-<img src="8e-devtools.png" class="w-screenshot w-screenshot--filled"
-     alt="Screen shot of WebAudio panel in Chrome DevTools.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HBdc8LHEgIRHkHUJdtBq.png", alt="Screen shot of WebAudio panel in Chrome DevTools.", width="595", height="299",class="w-screenshot w-screenshot--filled" %}
 
 This tab shows information about running instances of `BaseAudioContext`.
 Use it to see how the web audio renderer is performing on the page.
 
 Since a page can have multiple `BaseAudioContext` instances, the **Context Selector**
-(which is the drop-down menu that says `realtime (4e1073)` in the last screenshot), 
+(which is the drop-down menu that says `realtime (4e1073)` in the last screenshot),
 allows you to choose what you want to inspect. The inspector
 view shows the properties (e.g. sample rate, buffer size, channel count, and
 context state) of a `BaseAudioContext` instance that you select, and it
@@ -231,7 +223,7 @@ information:
   gets close to 100 percent, it means that the renderer is doing too much for a
   given render budget, so you should consider doing less in the web audio code.
 
-You can manullay trigger a garbage collector by clicking the trash can icon.
+You can manually trigger a garbage collector by clicking the trash can icon.
 
 ## Conclusion
 

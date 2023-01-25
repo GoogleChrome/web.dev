@@ -559,7 +559,7 @@ above as a flowchart (because I love flowcharts):
 
 <div style="position: relative; padding-top: 93%;">
   <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden"
-   src="/promises/promise-flow.svg" frameborder="0" allowtransparency="true"></iframe>
+   src="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/simQvoUExWisIW0XxToH.svg" | imgix }}" frameborder="0" allowtransparency="true"></iframe>
 </div>
 
 Follow the blue lines for promises that fulfill, or the red for ones that

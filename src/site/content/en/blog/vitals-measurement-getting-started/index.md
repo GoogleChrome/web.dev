@@ -5,7 +5,7 @@ authors:
   - katiehempenius
 date: 2020-05-27
 updated: 2020-05-27
-hero: hero.png
+hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: Monthly graph overlayed with stopwatches labeled LCP, FID, and CLS.
 description: |
   Learn how to measure your site's Web Vitals in both real-world and lab environments.
@@ -20,7 +20,7 @@ Collecting data on your site's Web Vitals is the first step towards improving th
 
 ## Measuring Web Vitals using RUM data
 
-[Real User Monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring) (RUM) data, also known as field data, captures the performance experienced by a site's actual users. RUM data is what Google uses to determine whether a site meets the [recommended Core Web Vitals thresholds.](https://web.dev/vitals/)
+[Real User Monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring) (RUM) data, also known as field data, captures the performance experienced by a site's actual users. RUM data is what Google uses to determine whether a site meets the [recommended Core Web Vitals thresholds.](/vitals/)
 
 ### Getting started
 
@@ -48,11 +48,11 @@ If you don't have a RUM provider, you may be able to augment your existing analy
 
 ### The web-vitals JavaScript library
 
-If you're implementing your own RUM setup for Web Vitals, the easiest way to collect Web Vitals measurements is to use the [`web-vitals`](https://github.com/GoogleChrome/web-vitals) JavaScript library. `web-vitals` is a small, modular library (~1KB) that provides a convenient API for collecting and reporting each of the [field-measurable](https://web.dev/user-centric-performance-metrics/#in-the-field) Web Vitals metrics.
+If you're implementing your own RUM setup for Web Vitals, the easiest way to collect Web Vitals measurements is to use the [`web-vitals`](https://github.com/GoogleChrome/web-vitals) JavaScript library. `web-vitals` is a small, modular library (~1KB) that provides a convenient API for collecting and reporting each of the [field-measurable](/user-centric-performance-metrics/#in-the-field) Web Vitals metrics.
 
-The metrics that make up Web Vitals are not all directly exposed by the browser's built-in performance APIs - but rather built on top of them. For example, [Cumulative Layout Shift (CLS)](https://web.dev/cls/) is implemented using the [Layout Instability API](https://wicg.github.io/layout-instability/). By using `web-vitals`, you don't need to worry about implementing these metrics yourself; it also ensures that the data you collect matches the methodology and best practices for each metric.
+The metrics that make up Web Vitals are not all directly exposed by the browser's built-in performance APIs - but rather built on top of them. For example, [Cumulative Layout Shift (CLS)](/cls/) is implemented using the [Layout Instability API](https://wicg.github.io/layout-instability/). By using `web-vitals`, you don't need to worry about implementing these metrics yourself; it also ensures that the data you collect matches the methodology and best practices for each metric.
 
-For more information on implementing `web-vitals`, refer to the [documentation](https://github.com/GoogleChrome/web-vitals) and the [Best practices for measuring Web Vitals in the field](https://web.dev/vitals-field-measurement-best-practices/) guide.
+For more information on implementing `web-vitals`, refer to the [documentation](https://github.com/GoogleChrome/web-vitals) and the [Best practices for measuring Web Vitals in the field](/vitals-field-measurement-best-practices/) guide.
 
 ### Data aggregation
 
@@ -60,24 +60,24 @@ It is essential that you report the measurements collected by `web-vitals`. If t
 
 If you already have a favorite reporting tool, consider using that. If not, Google Analytics is free and can be used for this purpose.
 
-When considering which tool to use, it is helpful to think about who will need to have access to the data. Businesses typically achieve the biggest performance wins when the whole company, rather than a single department, is interested in improving performance. See [Fixing website speed cross-functionally](https://web.dev/fixing-website-speed-cross-functionally/) to learn how to get buy-in from different departments.
+When considering which tool to use, it is helpful to think about who will need to have access to the data. Businesses typically achieve the biggest performance wins when the whole company, rather than a single department, is interested in improving performance. See [Fixing website speed cross-functionally](/fixing-website-speed-cross-functionally/) to learn how to get buy-in from different departments.
 
 ### Data interpretation
 
-When analyzing performance data, it's important to pay attention to the tails of the distribution. RUM data often reveals that performance varies widely - some users have fast experiences, others have slow experiences. However, using the median to summarize data can easily mask this behavior. 
+When analyzing performance data, it's important to pay attention to the tails of the distribution. RUM data often reveals that performance varies widely - some users have fast experiences, others have slow experiences. However, using the median to summarize data can easily mask this behavior.
 
 With regards to Web Vitals, Google uses the percentage of "good" experiences, rather than statistics like medians or averages, to determine whether a site or page meets the recommended thresholds. Specifically, for a site or page to be considered as meeting the Core Web Vitals thresholds, 75% of page visits should meet the "good" threshold for each metric.
 
 ## Measuring Web Vitals using lab data
 
-[Lab data](https://web.dev/user-centric-performance-metrics/#in-the-lab), also known as synthetic data, is collected from a controlled environment, rather than actual users. Unlike RUM data, lab data can be collected from pre-production environments and therefore incorporated into developer workflows and continuous integration processes. Examples of tools that collect synthetic data are Lighthouse and WebPageTest. 
+[Lab data](/user-centric-performance-metrics/#in-the-lab), also known as synthetic data, is collected from a controlled environment, rather than actual users. Unlike RUM data, lab data can be collected from pre-production environments and therefore incorporated into developer workflows and continuous integration processes. Examples of tools that collect synthetic data are Lighthouse and WebPageTest.
 
 ### Considerations
 
 There will always be discrepancies between RUM data and lab data - particularly if the network conditions, device type, or location of the lab environment differs significantly from that of users. However, when it comes to collecting lab data on Web Vitals metrics in particular, there are a couple specific considerations that are important to note:
 
-* **Cumulative Layout Shift (CLS):** The [Cumulative Layout Shift](https://web.dev/cls/) measured in lab environments can be artificially lower than the CLS observed in RUM data. CLS is defined as the "sum total of all individual layout shift scores for every unexpected layout shift that occurs _during the entire lifespan of the page_." However, the lifespan of a page is typically very different depending on whether it is being loaded by a real user or a synthetic performance measurement tool. Many lab tools only load the page - they don't interact with it. As a result, they only capture layout shifts that occur during initial page load. By contrast, the CLS measured by RUM tools captures [unexpected layout shifts](https://web.dev/cls/#expected-vs.-unexpected-layout-shifts) that occur throughout the entire lifespan of the page.
-*  **First Input Delay (FID):** [First Input Delay](https://web.dev/fid/) can't be measured in lab environments because it requires user interactions with the page. As a result, [Total Blocking Time](https://web.dev/tbt/) (TBT) is the recommended lab proxy for FID. TBT measures the "total amount of time between First Contentful Paint and Time to Interactive during which the page is blocked from responding to user input". Although FID and TBT are calculated differently, they are both reflections of a blocked main thread during the bootstrap process. When the main thread is blocked, the browser is delayed in responding to user interactions. FID measures the delay, if any, that occurs the first time a user tries to interact with a page.
+* **Cumulative Layout Shift (CLS):** The [Cumulative Layout Shift](/cls/) measured in lab environments can be artificially lower than the CLS observed in RUM data. CLS is defined as the "sum total of all individual layout shift scores for every unexpected layout shift that occurs _during the entire lifespan of the page_." However, the lifespan of a page is typically very different depending on whether it is being loaded by a real user or a synthetic performance measurement tool. Many lab tools only load the page - they don't interact with it. As a result, they only capture layout shifts that occur during initial page load. By contrast, the CLS measured by RUM tools captures [unexpected layout shifts](/cls/#expected-vs.-unexpected-layout-shifts) that occur throughout the entire lifespan of the page.
+*  **First Input Delay (FID):** [First Input Delay](/fid/) can't be measured in lab environments because it requires user interactions with the page. As a result, [Total Blocking Time](/tbt/) (TBT) is the recommended lab proxy for FID. TBT measures the "total amount of time between First Contentful Paint and Time to Interactive during which the page is blocked from responding to user input". Although FID and TBT are calculated differently, they are both reflections of a blocked main thread during the bootstrap process. When the main thread is blocked, the browser is delayed in responding to user interactions. FID measures the delay, if any, that occurs the first time a user tries to interact with a page.
 
 ### Tooling
 

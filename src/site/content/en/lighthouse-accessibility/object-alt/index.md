@@ -26,7 +26,7 @@ Also need to talk with Rob the slight inconsistencies between
 Rob's doc, the audit, and recommendations in deque docs.
 -->
 <figure class="w-figure">
-  <img class="w-screenshot" src="object-alt.png" alt="Lighthouse audit showing <object> elements do not have alternative text">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JWSzKy951NpiznLGxqoQ.png", alt="Lighthouse audit showing <object> elements do not have alternative text", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

@@ -8,9 +8,9 @@ authors:
   - rowan_m
   - yoavweiss
 date: 2020-06-25
-updated: 2021-01-22
-hero: uach-hero.jpg
-thumbnail: uach-thumbnail.jpg
+updated: 2021-02-12
+hero: image/admin/xlg4t3uiTp0L5TBThFHQ.jpg
+thumbnail: image/admin/hgxRNa56Vb9o3QRwIrm9.jpg
 alt: A variety of different footprints in the snow. A hint at who's been there.
 tags:
   - blog
@@ -207,7 +207,7 @@ are used for representing lists and booleans.
 | `Sec-CH-UA-Full-Version`                    | `"84.0.4143.2"`                                  | The complete version for the browser.                                                                                                                                        |
 | `Sec-CH-UA-Platform`                        | `"Android"`                                      | The platform for the device, usually the operating system (OS).                                                                                                              |
 | `Sec-CH-UA-Platform-Version`                | `"10"`                                           | The version for the platform or OS.                                                                                                                                          |
-| `Sec-CH-UA-Arch`                            | `"ARM64"`                                        | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format. |
+| `Sec-CH-UA-Arch`                            | `"arm"`                                        | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format. |
 | `Sec-CH-UA-Model`                           | `"Pixel 3"`                                      | The device model.                                                                                                                                                            |
 
 {% Aside 'gotchas' %}
@@ -417,7 +417,7 @@ or `navigator.platform`) to make use of User-Agent Client Hints instead.
 Taking this a step further, you should re-examine your use of User-Agent
 information, and replace it with other methods whenever possible. Often, you can
 accomplish the same goal by making use of progressive enhancement, feature
-detection, or [responsive design](https://web.dev/responsive-web-design-basics).
+detection, or [responsive design](/responsive-web-design-basics).
 The base problem with relying on the User-Agent data is that you are always
 maintaining a mapping between the property you're inspecting and the behavior it
 enables. It's a maintenance overhead to ensure that your detection is

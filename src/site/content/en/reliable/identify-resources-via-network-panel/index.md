@@ -19,7 +19,7 @@ loaded and when they are loaded. Each row in the Network panel corresponds to a
 specific URL that your web app has loaded.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./network-panel.png" alt="Chrome DevTools' network panel.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7TVH0ZV5TBIe5qwNDzAn.png", alt="Chrome DevTools' network panel.", width="800", height="602", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 {% Aside 'codelab' %}
@@ -84,7 +84,7 @@ loaded. The answer to "_what_'s loading?" in the example above is a total of
 four URLs, each representing a unique type of content.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./network-panel-urls.png" alt="Chrome DevTools' network panel showing four files loading.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9wqFFPDtX9BPLvrVOQhc.png", alt="Chrome DevTools' network panel showing four files loading.", width="800", height="602", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 The Name represents the URL that your browser requested—though you'll only see
@@ -111,7 +111,7 @@ for example, `v2.html`. All of the subsequent requests will flow (like a
 waterfall!) from this initial navigation request, based on what images, scripts,
 and styles the HTML document references.
 
-<img class="w-screenshot" src="./waterfall.png" alt="Chrome DevTools' waterfall view.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FuPs0Rk4nWlSP74FOJ5Q.png", alt="Chrome DevTools' waterfall view.", width="774", height="244", class="w-screenshot" %}
 
 The waterfall shows that as soon as `v2.html` has finished loading, the requests
 for the assets it references (also referred to as _subresources_) start. The

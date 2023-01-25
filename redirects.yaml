@@ -246,3 +246,28 @@ redirects:
   destination: /aria-name
 - source: /aria-input-field-name
   destination: /aria-name
+
+# Temporary redirect for CORS-RFC1918 guidance on DevTools.
+# Remove once the actual article is published.
+- source: /cors-rfc1918-guide
+  destination: /cors-rfc1918-feedback
+
+# Redirect for style guide alignment
+- source: /debugging-layout-shifts
+  destination: /debug-layout-shifts
+
+# Vanity urls for Learn CSS course
+- source: /learncss
+  destination: /learn/css
+
+- source: /learnCSS
+  destination: /learn/css
+
+# Changes for upcoming video...
+- source: /whats-new-web-vitals-2021
+  destination: /vitals
+  type: 302
+
+# Redirect for security headers quick reference.
+- source: /security-headers-cheat-sheet
+  destination: /security-headers

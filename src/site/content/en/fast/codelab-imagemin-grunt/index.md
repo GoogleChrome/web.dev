@@ -15,12 +15,12 @@ tags:
 
 ## Setup the Imagemin Grunt plugin
 
-This Glitch already contains `grunt`, `grunt-cli`, and the `grunt-contrib-imagemin` 
-plugin. To add the configuration for Imagemin, you'll need to edit your 
+This Glitch already contains `grunt`, `grunt-cli`, and the `grunt-contrib-imagemin`
+plugin. To add the configuration for Imagemin, you'll need to edit your
 `gruntfile.js` file.
 
 {% Instruction 'remix' %}
-- In `gruntfile.js`, replace the `//Add configuration here` comment  
+- In `gruntfile.js`, replace the `//Add configuration here` comment
 with this code block:
 
 ```javascript
@@ -87,13 +87,13 @@ grunt.registerTask('default', ['imagemin']);
 
 ## Customize your Imagemin Configuration
 
-`imagemin-pngquant` is a plugin for specifying compression quality levels. 
-We've already added `imagemin-pngquant` to this project in the `package.json` 
+`imagemin-pngquant` is a plugin for specifying compression quality levels.
+We've already added `imagemin-pngquant` to this project in the `package.json`
 file so that you can use it to compress your PNGs. To use it, declare the plugin
 and specify a compression quality level in your Gruntfile.
 
 
-- Declare the `imagemin-pngquant` plugin by adding this line to the top of your 
+- Declare the `imagemin-pngquant` plugin by adding this line to the top of your
 `gruntfile.js`:
 
 <pre class="prettyprint">
@@ -155,7 +155,7 @@ they are compressed as well.
 
 ## Customize your Imagemin configuration (continued)
 
-Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to 
+Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to
 compress JPEG images.
 
 - Declare the `imagemin-mozjpeg` plugin by putting this line at the top your
@@ -236,6 +236,6 @@ know if the JPEG images on your page are optimally compressed.
   the live version of your Glitch and verify that the "Efficiently encode
   images" audit was passed.
 
-<img class="screenshot" src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
+{% Img src="image/admin/TTrEG19zxZRSWNv2pRG4.png", alt="Passing 'Efficiently encode images' audit in Lighthouse", width="766", height="976", class="screenshot" %}
 
 Success! You have used Imagemin to optimally compress the images on your page.

@@ -26,7 +26,11 @@ $IMAGE_WIDTH: 192px;
 .w-author-page__image {
   border-radius: 100%;
   margin-bottom: 9px;
-  width: calc(#{$IMAGE_WIDTH} * calc(2/3));
+  width: calc(#{$IMAGE_WIDTH} * calc(2/3)); // 128px
+
+  @include bp(sm) {
+    width: $IMAGE_WIDTH;
+  }
 }
 
 .w-author-page__links {
@@ -42,12 +46,5 @@ $IMAGE_WIDTH: 192px;
   &:hover,
   &:focus {
     text-decoration: none;
-  }
-}
-
-
-@include bp(sm) {
-  .w-author-page__image {
-    width: $IMAGE_WIDTH;
   }
 }

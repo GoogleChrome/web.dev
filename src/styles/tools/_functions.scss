@@ -15,3 +15,13 @@
 @function calculate_unitless_line_height($line_height, $font_size) {
   @return $line_height / $font_size;
 }
+
+// Pixels to ems.
+@function px-to-em($px) {
+  @return $px / $base-font-size * 1em;
+}
+
+// Pixels to rems.
+@function px-to-rem($px) {
+  @return $px / $base-font-size * 1rem;
+}

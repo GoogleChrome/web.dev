@@ -7,11 +7,11 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2020-09-15
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
-hero: hero.jpg
+hero: image/admin/9wQYJACMKOM6aUA0BPsW.jpg
 alt: Simulated trading desk showing multiple fake cryptocurrencies and their price charts.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1411878483180650497
@@ -21,7 +21,7 @@ feedback:
 
 {% Aside %}
   The Multi-Screen Window Placement API is part of the
-  [capabilities project](https://web.dev/fugu-status/) and is currently in
+  [capabilities project](/fugu-status/) and is currently in
   development. This post will be updated as the implementation progresses.
 {% endAside %}
 
@@ -130,7 +130,7 @@ The iPad next to my MacBook Air is connected to the laptop via
 iPad into a second screen.
 
 <figure class="w-figure">
-  <img src="./desk.jpg" alt="School bench on two chairs. On top of the school bench are shoe boxes supporting a laptop and two iPads surrounding it.">
+  {% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="School bench on two chairs. On top of the school bench are shoe boxes supporting a laptop and two iPads surrounding it.", width="558", height="520" %}
   <figcaption class="w-figcaption">A multi-screen setup.</figcaption>
 </figure>
 
@@ -318,7 +318,7 @@ the markets in all life situations, such as from the comfort of my bed, where I 
 single-screen setup.
 
 <figure class="w-figure">
-  <img src="./tv.jpg" alt="Massive TV screen at the end of a bed with the author's legs partly visible. On the screen, a fake crypto currency trading desk. ">
+  {% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt="Massive TV screen at the end of a bed with the author's legs partly visible. On the screen, a fake crypto currency trading desk. ", width="800", height="863" %}
   <figcaption class="w-figcaption">Relaxing and watching the markets.</figcaption>
 </figure>
 
@@ -330,7 +330,7 @@ It caught me completely off-guard and left me
 [with my hands on my face](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
 
 <figure class="w-figure">
-  <img src="./panik.jpg" alt="The author with his hands on his panicking face staring at the fake crypto currency trading desk.">
+  {% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="The author with his hands on his panicking face staring at the fake crypto currency trading desk.", width="800", height="600" %}
   <figcaption class="w-figcaption">Panicky, witnessing the YCY bloodbath.</figcaption>
 </figure>
 
@@ -398,9 +398,10 @@ Did you find a bug with Chrome's implementation? Or is the implementation differ
 Are you planning to use the Multi-Screen Window Placement API? Your public support helps the Chrome
 team to prioritize features and shows other browser vendors how critical it is to support them.
 
-- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-- Send a tweet to [@ChromiumDev][cr-dev-twitter] with the `#WindowPlacement` hashtag and let us know
-  where and how you are using it.
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#WindowPlacement`](https://twitter.com/search?q=%23WindowPlacement&src=typed_query&f=live)
+  and let us know where and how you are using it.
 - Ask other browser vendors to implement the API.
 
 ## Helpful links {: #helpful }

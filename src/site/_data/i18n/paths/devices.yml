@@ -1,0 +1,18 @@
+title:
+  en: Devices
+
+description:
+  en: Connecting hardware devices to the web
+
+overview:
+  en: Learn to communicate with hardware devices over Bluetooth, USB, NFC, Serial, and HID from a website.
+
+topics:
+  introduction:
+    en: Introduction
+
+  api_guides:
+    en: API guides
+
+  advanced_topics:
+    en: Advanced topics

@@ -7,7 +7,7 @@ authors:
   - philipwalton
 date: 2020-11-10
 updated: 2020-11-10
-hero: hero.png
+hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -55,7 +55,7 @@ loads:
       <td>
         A new request is initiated to load the previous page, and, depending
         on how well that page has been <a
-        href="https://web.dev/reliable/#the-options-in-your-caching-toolbox">
+        href="/reliable/#the-options-in-your-caching-toolbox">
         optimized</a> for repeat visits, the browser might have to re-download,
         re-parse, and re-execute some (or all) of resources it just downloaded.
       </td>
@@ -136,7 +136,7 @@ today](https://caniuse.com/page-transition-events).
 The newer [Page
 Lifecycle](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 events—`freeze` and `resume`—are also dispatched when pages go in or out of the
-bfcache, as well as in some other situations. For, example when a background tab
+bfcache, as well as in some other situations. For example when a background tab
 gets frozen to minimize CPU usage. Note, the Page Lifecycle events are currently
 only supported in Chromium-based browsers.
 
@@ -511,8 +511,8 @@ the navigation was fast!
 
 Tools like the [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report),
-that collect and report on the Core Web Vitals metrics will soon be updated to
-treat bfcache restores as separate page visits in the dataset.
+that collect and report on the Core Web Vitals metrics treat bfcache restores as
+separate page visits in their dataset.
 
 And while there aren't (yet) dedicated web performance APIs for measuring these
 metrics after bfcache restores, their values can be approximated using existing
@@ -527,7 +527,7 @@ web APIs.
     polyfill](https://github.com/GoogleChromeLabs/first-input-delay)) in the
     `pageshow` event, and report FID as the delay of the first input after the
     bfcache restore.
-*   For [Cumulative Layout Shift (CLS)](/fid/), you can continue to keep using
+*   For [Cumulative Layout Shift (CLS)](/cls/), you can continue to keep using
     your existing Performance Observer; all you have to do is reset the current
     CLS value to 0.
 

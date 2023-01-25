@@ -5,7 +5,7 @@ authors:
   - una
 date: 2020-07-21
 # updated: 2020-07-22
-hero: hero.jpg
+hero: image/admin/Iajld9FPY089XWDAZVQ4.jpg
 alt: A sparkler.
 description: Learn how to implement CSS custom properties with semantic typing, a fallback value, and more, directly in your CSS file.
 tags:
@@ -129,8 +129,8 @@ each gradient declaration is parsed as a string.
 <figure class="w-figure">
   <img class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/at-property/support1.gif">
   <figcaption class="w-figcaption">
-    Using a custom property with a "number" syntax, the gradient on the left shows a smooth 
-    transition between stop values. The gradient on the right uses a default custom property 
+    Using a custom property with a "number" syntax, the gradient on the left shows a smooth
+    transition between stop values. The gradient on the right uses a default custom property
     (no syntax defined) and shows an abrupt transition.
   </figcaption>
 </figure>
@@ -140,8 +140,8 @@ each gradient declaration is parsed as a string.
     <source src="https://storage.googleapis.com/web-dev-assets/at-property/support1.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    Using a custom property with a "number" syntax, the gradient on the left shows a smooth 
-    transition between stop values. The gradient on the right uses a default custom property 
+    Using a custom property with a "number" syntax, the gradient on the left shows a smooth
+    transition between stop values. The gradient on the right uses a default custom property
     (no syntax defined) and shows an abrupt transition.
   </figcaption>
 </figure>
@@ -231,7 +231,7 @@ you could write something like:
 }
 ```
 
-## Conclusion 
+## Conclusion
 
 The `@property` rule makes an exciting technology even more accessible by
 allowing you to write semantically meaningful CSS within CSS itself. To learn
@@ -240,7 +240,7 @@ resources:
 
 - [Is Houdini Ready Yet?](http://ishoudinireadyyet.com/)
 - [MDN Houdini Reference](https://developer.mozilla.org/en-US/docs/Web/Houdini)
-- [Smarter custom properties with Houdini's new API](https://web.dev/css-props-and-vals/)
+- [Smarter custom properties with Houdini's new API](/css-props-and-vals/)
 - [Houdini CSSWG Issue Queue](https://github.com/w3c/css-houdini-drafts/issues)
 
 Photo by [Cristian Escobar](https://unsplash.com/@cristian1) on Unsplash.

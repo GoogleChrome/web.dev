@@ -16,6 +16,7 @@
 /** @type TagsData */
 const tagsData = require('../_data/tagsData.json');
 const {livePosts} = require('../_filters/live-posts');
+const {sortByUpdated} = require('../_utils/sort-by-updated');
 
 /** @type Tags */
 let processedCollection;
@@ -23,7 +24,7 @@ let processedCollection;
 /**
  * Returns all tags with their posts.
  *
- * @param {any} [collections] Eleventy collection object
+ * @param {EleventyCollectionObject} [collections] Eleventy collection object
  * @return {Tags}
  */
 module.exports = (collections) => {
@@ -36,18 +37,19 @@ module.exports = (collections) => {
 
   Object.keys(tagsData).forEach((key) => {
     const tagData = tagsData[key];
+    const title = tagData.title;
     const description =
       tagData.description ||
-      `Our latest news, updates, and stories about ${tagData.title.toLowerCase()}.`;
+      `Our latest news, updates, and stories about ${title.toLowerCase()}.`;
     const href = `/tags/${key}/`;
-    const title = tagData.title;
 
     /** @type TagsItem */
     const tag = {
-      ...tagsData[key],
+      ...tagData,
       data: {
         subhead: description,
         title,
+        tags: [key],
       },
       description,
       elements: [],
@@ -57,11 +59,31 @@ module.exports = (collections) => {
       url: href,
     };
 
+    // Get posts
     if (collections) {
       tag.elements = collections
-        .getFilteredByTag(tag.key)
-        .filter(livePosts)
-        .sort((a, b) => b.date - a.date);
+        .getFilteredByGlob('**/*.md')
+        .filter(
+          (item) =>
+            livePosts(item) &&
+            !item.data.excludeFromTags &&
+            (item.data.tags || []).includes(key),
+        )
+        .sort(sortByUpdated);
+    }
+
+    // Limit posts for percy
+    if (process.env.PERCY) {
+      tag.elements = tag.elements.slice(-6);
+    }
+
+    // Set created on date and updated date
+    if (tag.elements.length > 0) {
+      tag.data.date = tag.elements.slice(-1).pop().data.date;
+      const updated = tag.elements.slice(0, 1).pop().data.date;
+      if (tag.data.date !== updated) {
+        tag.data.updated = updated;
+      }
     }
 
     if (tag.elements.length > 0 || !collections) {

@@ -127,7 +127,7 @@ Before using any CSS property for animation (other than `transform` and `opacity
 that triggers layout or paint unless absolutely necessary.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./css-triggers.jpg" alt="The top property detailed on CSS Triggers">
+  {% Img src="image/admin/lo6imreXGzuZzsHVWUFf.jpg", alt="The top property detailed on CSS Triggers", width="800", height="432", class="w-screenshot" %}
 </figure>
 
 {% Aside 'warning' %}
@@ -241,9 +241,7 @@ If you see a nonzero value for **Rendering** in the **Summary** tab, it may mean
 animation is causing the browser to do layout work.
 
 <figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="summary-before.jpg"
-       alt="The Summary panel shows 37ms for rendering and 79ms for painting.">
+  {% Img src="image/admin/cMNQR2jBEwa6ku5POXtZ.jpg", alt="The Summary panel shows 37ms for rendering and 79ms for painting.", width="800", height="699", class="w-screenshot w-screenshot--filled" %}
   <figcaption>
     The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
     example causes rendering work.
@@ -251,9 +249,7 @@ animation is causing the browser to do layout work.
 </figure>
 
 <figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="summary-after.jpg"
-       alt="The Summary panel show zero values for rendering and painting.">
+  {% Img src="image/admin/3bn44P9h6lR93uBNRXY3.jpg", alt="The Summary panel show zero values for rendering and painting.", width="800", height="639", class="w-screenshot w-screenshot--filled" %}
   <figcaption>
     The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
     example does not cause rendering work.
@@ -304,9 +300,7 @@ A high-performance animation will have a high percentage, e.g. `99%`. A
 high percentage means that few frames are being dropped and the animation will look smooth.
 
 <figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="fps-before.jpg"
-       alt="The fps meter shows 50% of frames were dropped">
+  {% Img src="image/admin/i9Cg7nswyO7jB768kpdQ.jpg", alt="The fps meter shows 50% of frames were dropped", width="710", height="469", class="w-screenshot w-screenshot--filled" %}
   <figcaption>
     The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
     example causes 50% of frames to be dropped
@@ -314,9 +308,7 @@ high percentage means that few frames are being dropped and the animation will l
 </figure>
 
 <figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="fps-after.jpg"
-       alt="The fps meter shows only 1% of frames were dropped">
+  {% Img src="image/admin/FGROZ0i15tCAoiIOoEdG.jpg", alt="The fps meter shows only 1% of frames were dropped", width="710", height="468", class="w-screenshot w-screenshot--filled" %}
   <figcaption>
     The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
     example causes only 1% of frames to be dropped.
@@ -341,7 +333,7 @@ and performance issues related to painting.
 1. Move the pointer around the screen.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./paint-flashing.jpg" alt="A UI element highlighted in green to demonstrate it will be repainted">
+  {% Img src="image/admin/MzAeQc5PvCltcm3gWaNV.jpg", alt="A UI element highlighted in green to demonstrate it will be repainted", width="708", height="185", class="w-screenshot" %}
   <figcaption>In this example from Google Maps you can see the elements that will be repainted.</figcaption>
 </figure>
 

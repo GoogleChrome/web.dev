@@ -8,7 +8,7 @@ authors:
   - joelriley
   - douglasparker
   - msdikla
-hero: hero.jpg
+hero: image/admin/mgB3j6NZa6F1CkoD9YI4.jpg
 alt: A group of people working on their computers at a table.
 description: |
   What the Bulletin team learned about service workers while developing a PWA.
@@ -29,9 +29,9 @@ means a complete overview of PWAs. The aim is to share learnings from our team's
 For this first post we'll cover a little background information first and then dive into all the
 stuff we learned about service workers.
 
-{% Aside %}  
+{% Aside %}
 Bulletin was shut down in 2019 due to lack of product/market fit. We still learned a lot about PWAs
-along the way!  
+along the way!
 {% endAside %}
 
 ## Background {: #background }
@@ -44,7 +44,7 @@ Before we delve into the development process, let's examine why building a PWA w
 option for this project:
 
 * **Ability to iterate quickly**. Especially valuable since Bulletin would be piloted in
-  multiple markets. 
+  multiple markets.
 * **Single code base**. Our users were roughly evenly split between Android and iOS. A PWA meant
   we could build a single web app that would work on both platforms. This increased the velocity
   and impact of the team.
@@ -66,7 +66,7 @@ You can't have a PWA without a [service
 worker](https://developers.google.com/web/fundamentals/primers/service-workers/). Service workers
 give you a lot of power, such as advanced caching strategies, offline capabilities, background sync,
 etc. While service workers do add some complexity, we found that their benefits outweighed the added
-complexity. 
+complexity.
 
 ### Generate it if you can {: #generate }
 
@@ -142,13 +142,13 @@ disable the memory cache. In order to cover more browsers, we opted for a differ
 including a flag to disable caching in our service worker which is enabled by default on developer
 builds. This ensures that devs always get their most recent changes without any caching issues. It's
 important to include the `Cache-Control: no-cache` header as well to [prevent the browser from
-caching any assets](https://web.dev/http-cache/#unversioned-urls).
+caching any assets](/http-cache/#unversioned-urls).
 
 ### Lighthouse {: #lighthouse }
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) provides a number of debugging
 tools useful for PWAs. It scans a site and generates reports covering PWAs, performance,
-accessibility, SEO, and other best practices.  
+accessibility, SEO, and other best practices.
 We recommend [running Lighthouse on continuous
 integration](https://github.com/GoogleChrome/lighthouse-ci) to alert you if you break one of the
 criteria to be a PWA. This actually happened to us once, where the service worker wasn't installing

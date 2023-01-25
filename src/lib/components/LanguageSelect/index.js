@@ -26,12 +26,12 @@ import lang from '../../utils/language';
 class LanguageSelect extends BaseStateElement {
   static get properties() {
     return {
-      currentLanguage: {type: String},
+      current: {type: String},
     };
   }
 
-  onStateChanged({userPreferredLanguage}) {
-    this.currentLanguage = userPreferredLanguage;
+  onStateChanged({currentLanguage}) {
+    this.current = currentLanguage;
   }
 
   onChange(e) {
@@ -44,16 +44,14 @@ class LanguageSelect extends BaseStateElement {
       return '';
     }
     languageName = languageName.toUpperCase();
-    return this.currentLanguage === language
+    return this.current === language
       ? html`
           <option value="${language}" selected>
             ${languageName} (${language})
           </option>
         `
       : html`
-          <option value="${language}">
-            ${languageName} (${language})
-          </option>
+          <option value="${language}">${languageName} (${language})</option>
         `;
   }
 

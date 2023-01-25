@@ -18,7 +18,7 @@ In the past, app installs were only possible in the context of platform-specific
 
 You can achieve this in different ways:
 
-- Installing the PWA [from the browser](https://web.dev/customize-install/).
+- Installing the PWA [from the browser](/customize-install/).
 - Installing the PWA [from the app store](https://developers.google.com/web/android/trusted-web-activity).
 
 Having different distribution channels is a powerful way of reaching a broad number of users, but choosing the right strategy to promote them can be challenging.
@@ -50,16 +50,16 @@ In this section we'll explore different ways of maximizing the installation rate
 
 ### PWA as primary installable experience
 
-Once a PWA meets the [installability criteria](https://web.dev/install-criteria/), most browsers will show an indication that the PWA is installable. For example, Desktop Chrome will show an installable icon in the address bar, and on mobile, it will show a mini-infobar:
+Once a PWA meets the [installability criteria](/install-criteria/), most browsers will show an indication that the PWA is installable. For example, Desktop Chrome will show an installable icon in the address bar, and on mobile, it will show a mini-infobar:
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="a2hs-infobar.png" alt="Standard Chrome install prompt called mini-infobar">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt="Standard Chrome install prompt called mini-infobar", width="800", height="417" %}
   <figcaption class="w-figcaption">
     The mini-infobar
   </figcaption>
 </figure>
 
-While that may be enough for some experiences, if your goal is to drive installations of your PWA, we highly recommend you listen for the [`BeforeInstallPromptEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent), and follow the [patterns for promoting the installation](https://web.dev/promote-install/) of your PWA.
+While that may be enough for some experiences, if your goal is to drive installations of your PWA, we highly recommend you listen for the [`BeforeInstallPromptEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent), and follow the [patterns for promoting the installation](/promote-install/) of your PWA.
 
 
 ## Prevent your PWA from cannibalizing your platform-specific app install rate
@@ -75,7 +75,7 @@ Then, the heuristic can be implemented in the following way:
 1. Show the platform-specific app install banner.
 1. If a user dismisses the banner, set a cookie with that information (e.g. `document.cookie = "app-install-banner=dismissed"`).
 1. Use another cookie to track the number of user visits to the site (e.g. `document.cookie = "user-visits=1"`).
-1. Write a function, such as `isPWAUser()`, that uses the information previously stored in the cookies along with the [`getInstalledRelatedApps()`](https://web.dev/get-installed-related-apps/) API to determine if a user is considered a "PWA user".
+1. Write a function, such as `isPWAUser()`, that uses the information previously stored in the cookies along with the [`getInstalledRelatedApps()`](/get-installed-related-apps/) API to determine if a user is considered a "PWA user".
 1. At the moment when the user performs a meaningful action, call `isPWAUser()`. If the function returns true and the PWA install prompt was saved previously, you can show the PWA install button.
 
 ## Promoting the installing of your PWA through an app store
@@ -93,7 +93,7 @@ According to a [Google Play study](https://medium.com/googleplaydev/shrinking-ap
 
 To address this, some companies are leveraging their PWA to provide a lightweight version of their app in the Play Store using Trusted Web Activities. [Trusted Web Activities](https://developers.google.com/web/android/trusted-web-activity) make it possible to deliver your PWA in the Play Store, and because it's built using the web, the app size is usually only a few megabytes.
 
-Oyo, one of India's largest hospitality companies, built a [Lite version of their app](https://web.dev/oyo-lite-twa/), and made it available in the Play Store using TWA.  It's only 850 KB, just 7% the size of their Android app. And once installed, it's indistinguishable from their Android app:
+Oyo, one of India's largest hospitality companies, built a [Lite version of their app](/oyo-lite-twa/), and made it available in the Play Store using TWA.  It's only 850 KB, just 7% the size of their Android app. And once installed, it's indistinguishable from their Android app:
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -158,9 +158,9 @@ Finally, create your own logic to map this information to device categories, and
 
 ```javascript
 if (isDeviceMidOrLowEnd()) {
-   // show “Lite app” install banner or PWA A2HS prompt
+   // show "Lite app" install banner or PWA A2HS prompt
 } else {
-  // show “Core app” install banner
+  // show "Core app" install banner
 }
 ```
 

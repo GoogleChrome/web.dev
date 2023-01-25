@@ -4,7 +4,7 @@ subhead: How to think when thinking about service workers.
 authors:
   - geddski
 date: 2019-06-04
-hero: hero.jpg
+hero: image/admin/7cjkg6ggaRsRNwZ0C2Vf.jpg
 hero_position: center
 alt: Service workers lining up.
 description: |
@@ -17,7 +17,7 @@ tags:
   - caching
 ---
 
-Service workers are powerful and absolutely worth learning. They let you deliver an entirely new level of experience to your users. Your site can load _instantly_. It can work _offline_. It can be installed as a native app and feel every bit as polished—but with the reach and freedom of the web.
+Service workers are powerful and absolutely worth learning. They let you deliver an entirely new level of experience to your users. Your site can load _instantly_. It can work _offline_. It can be installed as a platform-specific app and feel every bit as polished—but with the reach and freedom of the web.
 
 But service workers are unlike anything most of us web devs are used to. They come with a steep learning curve and a handful of snags you've got to watch out for.
 
@@ -33,7 +33,7 @@ But other service worker behavior causes you to scratch your head in confusion. 
 
 Normally when building a site you have just two layers to think about: the client and the server. The service worker is a brand new layer that sits in the middle.
 
-![A service worker acts as a middle layer between the client and the server](./middle-layer.jpg)
+{% Img src="image/admin/w6JgZDMJMoqp24IuC9UZ.jpg", alt="A service worker acts as a middle layer between the client and the server", width="800", height="232" %}
 
 Think of your service worker as a sort of _browser extension_—one that your site can install in your user's browser. Once installed, the service worker _extends_ the browser for your site with a powerful middle layer. This service worker layer can intercept and handle all of the requests your site makes.
 
@@ -41,7 +41,7 @@ The service worker layer has its **own lifecycle** independent of the browser ta
 
 In the [Service Workies](https://serviceworkies.com) game we cover the many details of the service worker lifecycle and give you a ton of practice working with it.
 
-![a new service worker replacing an old one](./update-lifecycle.gif)
+{% Img src="image/admin/mOyHcAJW55YiI12VW05a.gif", alt="a new service worker replacing an old one", width="800", height="460" %}
 
 {% Aside 'note' %}
 Think of your service worker as a new middle layer with its own lifecycle and methods for updating.
@@ -74,7 +74,7 @@ An active service worker goes on living even after a user leaves your site or cl
 
 In [Service Workies](https://serviceworkies.com) we visualize this concept with Kolohe (a friendly service worker) intercepting and handling requests.
 
-![service worker intercepting http requests](./intercept.gif)
+{% Img src="image/admin/YcXrupDTu2m7nlRU4FAz.gif", alt="service worker intercepting http requests", width="800", height="605" %}
 
 ### Stopped
 
@@ -123,7 +123,7 @@ This snag is especially important to keep in mind while working on your service 
 
 In [Service Workies chapter 3](https://gedd.ski/post/service-workies-chapter3/) we visualize our stopped service worker as losing all color while it waits to be woken up.
 
-![visualization of a stopped service worker](./kolohe-stopped.jpg)
+{% Img src="image/admin/QBmObxFoIRgNtjsUttkF.jpg", alt="visualization of a stopped service worker", width="800", height="313" %}
 
 {% Aside 'note' %}
 Think of your service worker as a [whippet](https://www.akc.org/dog-breeds/whippet/) dog. It's fast, loyal and awesome. It'll stick around by your side no matter what. But mostly it just wants to sleep. All the time. You've got to let it know when you want it to stay awake. Good dog!
@@ -161,7 +161,7 @@ self.addEventListener("install", event => {
 
 When you deploy a new service worker, you'll bump the `version` so that it does what it needs with an entirely separate cache from the previous service worker.
 
-![visualization of a cache](./cache.jpg)
+{% Img src="image/admin/7REuAR11sps94W4tO7ng.jpg", alt="visualization of a cache", width="800", height="435" %}
 
 ### End clean
 
@@ -203,4 +203,4 @@ Getting into the right mindset while thinking about service workers will help yo
 
 If you want to understand all this by [playing a game](https://gedd.ski/post/mastery-through-play/), then you're in luck! Go play [Service Workies](https://serviceworkies.com) where you'll learn the ways of the service worker in order to slay the offline beasts.
 
-![preview of the Service Workies game](./spider.gif)
+{% Img src="image/admin/HN8hJsK415482mqXmiaI.gif", alt="preview of the Service Workies game", width="800", height="519" %}

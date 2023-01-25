@@ -4,7 +4,7 @@ subhead: Building games for the modern web.
 authors:
   - tomgreenaway
 date: 2019-08-21
-hero: hero.jpg
+hero: image/admin/d14lKdJ4iYwr1wI8AgA3.jpg
 hero_position: center
 hero_fit: contain
 alt: Game design, business and tools for modern web games.
@@ -50,7 +50,7 @@ In each of these areas, the web platform has made significant strides in the pas
 Recently, Unity previewed a new runtime called Project Tiny which is focused on building 2D games for HTML5-based platforms. Project Tiny applies a new modular design to the engine structure of Unity enabling the core Unity engine to be under 1 megabyte in size.
 
 <figure class="w-figure">
-  <img src="./unity-tanks.gif" alt="Two tanks engaged in a battle.">
+  {% Img src="image/admin/NAydOzjTBzlBnom2SubM.gif", alt="Two tanks engaged in a battle.", width="800", height="449" %}
   <figcaption class="w-figcaption">Unity's Tanks Demo exported via HTML5.</figcaption>
 </figure>
 
@@ -66,13 +66,13 @@ Good game developers know that to capitalise on a particular platform–whether 
 
 In other words, you must respect the expectations of the users of the platform you're building for. What do users of the web expect? They expect web content to load fast and be interactive quickly. In my talk, I covered several examples of ways–both on and off the web–that games have been designed to load quickly, pull users into their game worlds, engage those users, and provide users with additional incentives to share their experiences.
 
-![Three games with minimalist art styles.](./minimalist-games.png)
+{% Img src="image/admin/ppUw6LsWIqub2vRiMuaG.png", alt="Three games with minimalist art styles.", width="800", height="368" %}
 
 I personally believe that the key to building a successful web game is to lean into this unique characteristic of the web. Specifically, the strength of the web's URL structure and the sharing loop that users can join in.
 
 Here's an example of a web game I built using [Construct 3](http://construct.net) that leverages the URL in a fun and engaging way.
 
-![A level editor interface for a game.](./space-board.png)
+{% Img src="image/admin/L0wolsGPYf4pQjlI4i1g.png", alt="A level editor interface for a game.", width="800", height="608" %}
 
 [Space Board](https://io-space-board.firebaseapp.com) is a very simple game that can be played on either mobile with touch controls or on desktop with keyboard input. The objective is to navigate a maze of obstacles to reach a goal at the end.
 

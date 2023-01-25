@@ -24,7 +24,7 @@ But security is something to be taken as a positive and necessary part of web
 development just like "user experience" or "accessibility".
 
 <figure class="w-figure">
-  <img src="./securityimage.png" alt="Negative and positive images of security">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/M5QZ4By9jyroim97MO0m.png", alt="Negative and positive images of security", width="800", height="359" %}
   <figcaption class="w-figcaption">
     A hacker in hoodie is a negative security image. A team working on a project
     together is a positive security image.

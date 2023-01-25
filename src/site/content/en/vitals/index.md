@@ -2,7 +2,7 @@
 layout: post
 title: Web Vitals
 description: Essential metrics for a healthy site
-hero: web-vitals-hero.png
+hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
 date: 2020-04-30
@@ -49,23 +49,19 @@ experience—_loading_, _interactivity_, and _visual stability_—and includes t
 following metrics (and their respective thresholds):
 
 <div class="w-stack w-stack--center w-stack--md">
-  <img src="lcp_ux.svg" width="400px" height="350px"
-       alt="Largest Contentful Paint threshold recommendations">
-  <img src="fid_ux.svg" width="400px" height="350px"
-       alt="First Input Delay threshold recommendations">
-  <img src="cls_ux.svg" width="400px" height="350px"
-       alt="Cumulative Layout Shift threshold recommendations">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift threshold recommendations", width="400", height="350" %}
 </div>
 
 - **[Largest Contentful Paint (LCP)](/lcp/)**: measures _loading_ performance.
   To provide a good user experience, LCP should occur within **2.5 seconds** of
   when the page first starts loading.
 - **[First Input Delay (FID)](/fid/)**: measures _interactivity_. To provide a
-  good user experience, pages should have a FID of less than **100
-  milliseconds**.
+  good user experience, pages should have a FID of **100 milliseconds** or less.
 - **[Cumulative Layout Shift (CLS)](/cls/)**: measures _visual stability_. To
-  provide a good user experience, pages should maintain a CLS of less than
-  **0.1.**
+  provide a good user experience, pages should maintain a CLS of **0.1.** or
+  less.
 
 For each of the above metrics, to ensure you're hitting the recommended target
 for most of your users, a good threshold to measure is the **75th percentile**

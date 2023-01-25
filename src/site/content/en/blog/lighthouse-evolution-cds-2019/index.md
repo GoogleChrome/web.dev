@@ -7,7 +7,7 @@ authors:
 date: 2019-12-16
 description: |
   Read about the latest Lighthouse updates announced at Chrome Developer Summit 2019.
-hero: lighthouse-logo.svg
+hero: image/admin/mQ77SlZ6Y8ailMClzaCs.svg
 alt: Lighthouse logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -32,8 +32,7 @@ seamlessly alongside the new expressive syntax for asserting *any* Lighthouse
 audit or category result.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-ci.png" alt="Lighthouse CI report."
-       width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xvyxLU5J0bap6s0LdrD3.png", alt="Lighthouse CI report.", width="400", height="356", class="w-screenshot" %}
 </figure>
 
 Lighthouse CI supports [Travis CI](https://travis-ci.com/), [Circle
@@ -55,10 +54,10 @@ Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
 [First CPU Idle](/first-cpu-idle/).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-performance-score.png" alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.">
+  {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211", class="w-screenshot" %}
 </figure>
 
-See [Lighthouse performance scoring](https://web.dev/performance-scoring/) for detailed
+See [Lighthouse performance scoring](/performance-scoring/) for detailed
 information.
 
 In Lighthouse version 6, new metrics, [Largest Contentful Paint (LCP)](/lcp/)
@@ -102,8 +101,7 @@ recommendations, curated by community experts (like you!), on top of Lighthouse
 report core audits.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-stack-packs.png"
-       alt="Lighthouse report recommendation for deferring offscreen images in React applications.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qdhyyYLFj0avPPHgx8in.png", alt="Lighthouse report recommendation for deferring offscreen images in React applications.", width="800", height="194", class="w-screenshot" %}
 </figure>
 
 At the moment, there are Stack Packs for Angular, WordPress, Magento, React, and
@@ -114,7 +112,7 @@ or [contact the Lighthouse team](https://github.com/GoogleChrome/lighthouse-stac
 ## Coming soon: Lighthouse plugins as Chrome Extensions
 
 <figure class="w-figure">
-  <img src="./lighthouse-plugin-icon.png" alt="Lighthouse plugin icon." width="250">
+  {% Img src="image/admin/pPFz27fWWNVyT42ptr7a.png", alt="Lighthouse plugin icon.", width="250", height="220" %}
 </figure>
 
 [Lighthouse
@@ -131,7 +129,7 @@ CLI](https://developers.google.com/web/tools/lighthouse#cli), but the goal is to
 enable running them in the DevTools **Audits** panel too.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-plugin-devtools.png" alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience." width="400">
+  {% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753", class="w-screenshot" %}
   <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)</figcaption>
 </figure>
 

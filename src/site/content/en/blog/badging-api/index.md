@@ -5,14 +5,14 @@ authors:
   - petelepage
 description: The App Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2020-08-14
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
   - progressive-web-apps
   - badging
   - notifications
-hero: hero-2.jpg
+hero: image/admin/AFvb0uBtN7ZX9qToptEo.jpg
 alt: Neon sign with heart and zero
 feedback:
   - api
@@ -21,8 +21,7 @@ feedback:
 ## What is the App Badging API? {: #what }
 
 <figure class="w-figure">
-  <img  src="badges-on-windows.jpg" class="w-screenshot"
-        alt="Example of Twitter with eight notifications and another app showing a flag type badge.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t7XqI06whZr4oJe0yawc.jpg", alt="Example of Twitter with eight notifications and another app showing a flag type badge.", width="600", height="189" %}
   <figcaption class="w-figcaption">
     Example of Twitter with eight notifications and another app showing a flag
     type badge.
@@ -210,8 +209,9 @@ Planning to use the App Badging API on your site? Your public support helps the
 Chrome team to prioritize features, and shows other browser vendors how critical
 it is to support them.
 
-* Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) tagged with
-  `#badgingapi` and let us know where and how you're using it.
+* Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
+  [`#BadgingAPI`](https://twitter.com/search?q=%23BadgingAPI&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

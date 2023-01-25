@@ -12,16 +12,17 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-02-08
+updated: 2021-04-21
 tags:
   - blog
   - capabilities
   - file
   - file-system
-hero: hero.jpg
+hero: image/admin/qn7E0q1EWJUqdzsuHwx4.jpg
 alt: Image of hard disk platters
 feedback:
   - api
+stack_overflow_tag: native-file-system-api-js
 ---
 
 ## What is the File System Access API? {: #what-is-it }
@@ -116,12 +117,22 @@ needed to save changes back to the file, or to perform any other file operations
 Now that you have a handle to a file, you can get the file's properties, or access the file itself.
 For now, I'll simply read its contents. Calling `handle.getFile()` returns a
 [`File`][file-api-spec] object, which contains a blob. To get the data from the blob, call one of
-[its methods][blob-methods] (`slice()`, `stream()`, `text()`, `arrayBuffer()`).
+[its methods][blob-methods],
+([`slice()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice),
+[`stream()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream),
+[`text()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/text), or
+[`arrayBuffer()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer)).
 
 ```js
 const file = await fileHandle.getFile();
 const contents = await file.text();
 ```
+
+{% Aside %}
+  For the majority of use cases, you can read files in _sequential_ order with the
+  `stream()`, `text()`, or `arrayBuffer()` methods.
+  For getting _random access_ to a file's contents, use the `slice()` method.
+{% endAside %}
 
 The `File` object returned by `FileSystemFileHandle.getFile()` is only readable as long as the
 underlying file on disk hasn't changed. If the file on disk is modified, the `File` object becomes
@@ -223,50 +234,140 @@ file at a specific position, or resize the file.
   calling `close()` or when the stream is automatically closed by the pipe.
 {% endAside %}
 
-### Storing file handles in IndexedDB
+### Specifying a suggested file name and start directory
 
-File handles are serializable, which means that you can save a file handle to IndexedDB, or call
-`postMessage()` to send them between the same top-level origin.
+In many cases you may want your app to suggest a default file name or location.
+For example, a text editor might want to suggest a default file name of `Untitled Text.txt`
+rather than `Untitled`. You can achieve this by passing a `suggestedName` property as part
+of the `showSaveFilePicker` options.
 
-Saving file handles to IndexedDB means that you can store state, or remember which files a user was
+```js/1
+const fileHandle = await self.showSaveFilePicker({
+  suggestedName: 'Untitled Text.txt',
+  types: [{
+    description: 'Text documents',
+    accept: {
+      'text/plain': ['.txt'],
+    },
+  }],
+});
+```
+
+The same goes for the default start directory. If you're building a text editor, you may want to start the file save
+or file open dialog in the default `documents` folder, whereas for an image editor, may want to
+start in the default `pictures` folder. You can suggest a default start directory by passing
+a `startIn` property to the `showSaveFilePicker`, `showDirectoryPicker()`, or `showOpenFilePicker`
+methods like so.
+
+```js/1
+const fileHandle = await self.showOpenFilePicker({
+  startIn: 'pictures'
+});
+```
+
+The list of the well-known system directories is:
+
+- `desktop`: The user's desktop directory, if such a thing exists.
+- `documents`: Directory in which documents created by the user would typically be stored.
+- `downloads`: Directory where downloaded files would typically be stored.
+- `music`: Directory where audio files would typically be stored.
+- `pictures`: Directory where photos and other still images would typically be stored.
+- `videos`: Directory where videos/movies would typically be stored.
+
+Apart from well-known system directories, you can also pass an existing file or directory handle
+as a value for `startIn`. The dialog would then open in the same directory.
+
+```js/2
+// Assume `directoryHandle` were a handle to a previously opened directory.
+const fileHandle = await self.showOpenFilePicker({
+  startIn: directoryHandle
+});
+```
+
+### Specifying the purpose of different file pickers
+
+Sometimes applications have different pickers for different purposes.
+For example, a rich text editor may allow the user to open text files,
+but also to import images. By default, each file picker would open at the last-remembered 
+location. You can circumvent this by storing `id`
+values for each type of picker. If an `id` is specified, the file picker implementation
+will remember a separate last-used directory for pickers with that same `id`.
+
+```js
+const fileHandle1 = await self.showSaveFilePicker({
+  id: 'openText'
+});
+
+const fileHandle2 = await self.showSaveFilePicker({
+  id: 'importImage'
+});
+```
+
+### Storing file handles or directory handles in IndexedDB
+
+File handles and directory handles are serializable, which means that you can save a file or
+directory handle to IndexedDB, or call `postMessage()` to send them between the same top-level origin.
+
+Saving file or directory handles to IndexedDB means that you can store state, or remember which files
+or directories a user was
 working on. This makes it possible to keep a list of recently opened or edited files, offer to
-re-open the last file when the app is opened, etc. In the text editor, I store a list of the five
+re-open the last file when the app is opened, restore the previous working directory, and more.
+In the text editor, I store a list of the five
 most recent files the user has opened, making it easy to access those files again.
 
-The code example below shows storing and retrieving a file handle.
-You can [see this in action](https://filehandle-indexeddb.glitch.me/) over on Glitch
+The code example below shows storing and retrieving a file handle and a directory handle.
+You can [see this in action](https://filehandle-directoryhandle-indexeddb.glitch.me/) over on Glitch
 (I use the [idb-keyval](https://www.npmjs.com/package/idb-keyval) library for brevity).
 
 ```js
-import { get, set } from 'https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js';
+import { get, set } from "https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js";
 
-const pre = document.querySelector('pre');
-const button = document.querySelector('button');
+const pre1 = document.querySelector("pre.file");
+const pre2 = document.querySelector("pre.directory");
+const button1 = document.querySelector("button.file");
+const button2 = document.querySelector("button.directory");
 
-button.addEventListener('click', async () => {
+// File handle
+button1.addEventListener("click", async () => {
   try {
-    // Try retrieving the file handle.
-    const fileHandleOrUndefined = await get('file');    
-    if (fileHandleOrUndefined) {      
-      pre.textContent =
-          `Retrieved file handle "${fileHandleOrUndefined.name}" from IndexedDB.`;
+    const fileHandleOrUndefined = await get("file");
+    if (fileHandleOrUndefined) {
+      pre1.textContent = `Retrieved file handle "${fileHandleOrUndefined.name}" from IndexedDB.`;
       return;
     }
-    // This always returns an array, but we just need the first entry.
     const [fileHandle] = await window.showOpenFilePicker();
-    // Store the file handle.
-    await set('file', fileHandle);    
-    pre.textContent =
-        `Stored file handle for "${fileHandle.name}" in IndexedDB.`;
+    await set("file", fileHandle);
+    pre1.textContent = `Stored file handle for "${fileHandle.name}" in IndexedDB.`;
+  } catch (error) {
+    alert(error.name, error.message);
+  }
+});
+
+// Directory handle
+button2.addEventListener("click", async () => {
+  try {
+    const directoryHandleOrUndefined = await get("directory");
+    if (directoryHandleOrUndefined) {
+      pre2.textContent = `Retrieved directroy handle "${directoryHandleOrUndefined.name}" from IndexedDB.`;
+      return;
+    }
+    const directoryHandle = await window.showDirectoryPicker();
+    await set("directory", directoryHandle);
+    pre2.textContent = `Stored directory handle for "${directoryHandle.name}" in IndexedDB.`;
   } catch (error) {
     alert(error.name, error.message);
   }
 });
 ```
 
+### Stored file or directory handles and permissions
+
 Since permissions currently are not persisted between sessions, you should verify whether the user
-has granted permission to the file using `queryPermission()`. If they haven't, use
+has granted permission to the file or directory using `queryPermission()`. If they haven't, use
 `requestPermission()` to (re-)request it.
+This works the same for file and directory handles. You need to run
+`fileOrDirectoryHandle.requestPermission(descriptor)` or
+`fileOrDirectoryHandle.queryPermission(descriptor)` respectively.
 
 In the text editor, I created a `verifyPermission()` method that checks if the user has already
 granted permission, and if required, makes the request.
@@ -345,7 +446,7 @@ and include all subfolders and the therein contained files.
 
 ```js
 // Delete a file.
-await directoryHandle.removeEntry('Abandoned Masterplan.txt');
+await directoryHandle.removeEntry('Abandoned Projects.txt');
 // Recursively delete a folder.
 await directoryHandle.removeEntry('Old Stuff', { recursive: true });
 ```
@@ -439,10 +540,7 @@ control and transparency, and user ergonomics.
 ### Opening a file or saving a new file
 
 <figure class="w-figure w-figure--inline-right">
-  <a href="fs-open.jpg">
-    <img src="fs-open.jpg"
-         alt="File picker to open a file for reading">
-  </a>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BtrU36qfJoC5M9AgRumF.jpg", alt="File picker to open a file for reading", width="800", height="577", linkTo=true %}
   <figcaption class="w-figcaption">
     A file picker used to open an existing file for reading.
   </figcaption>
@@ -457,10 +555,7 @@ picker and the site does not get access to anything. This is the same behavior a
 <div class="w-clearfix"></div>
 
 <figure class="w-figure w-figure--inline-left">
-  <a href="fs-save.jpg">
-    <img src="fs-save.jpg"
-         alt="File picker to save a file to disk.">
-  </a>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DZFcgVmVFVyfddL8PdSx.jpg", alt="File picker to save a file to disk.", width="800", height="577", linkTo=true %}
   <figcaption class="w-figcaption">
     A file picker used to save a file to disk.
   </figcaption>
@@ -487,10 +582,7 @@ A web app cannot modify a file on disk without getting explicit permission from 
 #### Permission prompt
 
 <figure class="w-figure w-figure--inline-right">
-  <a href="fs-save-permission.jpg">
-    <img src="fs-save-permission-crop.jpg" class="w-screenshot"
-         alt="Permission prompt shown prior to saving a file.">
-  </a>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281", class="w-screenshot", linkTo=true %}
   <figcaption class="w-figcaption">
     Prompt shown to users before the browser is granted write
     permission on an existing file.
@@ -514,10 +606,7 @@ example by providing a way to ["download" the file][download-file], saving data 
 ### Transparency
 
 <figure class="w-figure w-figure--inline-right">
-  <a href="fs-save-icon.jpg">
-    <img src="fs-save-icon.jpg" class="w-screenshot"
-         alt="Omnibox icon">
-  </a>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162", class="w-screenshot", linkTo=true %}
   <figcaption class="w-figcaption">
     Omnibox icon indicating the user has granted the website permission to
     save to a local file.
@@ -562,9 +651,10 @@ Did you find a bug with Chrome's implementation? Or is the implementation differ
 Planning to use the File System Access API on your site? Your public support helps us to prioritize
 features, and shows other browser vendors how critical it is to support them.
 
-- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-- Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#filesystemaccess` and let us know where and how
-  you're using it.
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#FileSystemAccess`](https://twitter.com/search?q=%23FileSystemAccess&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

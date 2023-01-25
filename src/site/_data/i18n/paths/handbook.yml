@@ -1,0 +1,21 @@
+title:
+  en: Content handbook
+
+description:
+  en: Create great content for web.dev.
+
+overview:
+  en: This handbook helps contributors to web.dev create effective, engaging content and get it published as easily as possible. This is a living document that will evolve as we learn more about what works.
+
+topics:
+  content_process:
+    en: Content process
+
+  content_guidelines:
+    en: Content guidelines
+
+  web_dev_markup:
+    en: web.dev markup
+
+  content_infrastructure:
+    en: Content infrastructure

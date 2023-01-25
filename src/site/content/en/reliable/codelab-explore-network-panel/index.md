@@ -37,7 +37,7 @@ application.
 The Network panel shows all the assets loaded because of your initial
 navigation:
 
-<img class="screenshot" src="./initial-navigation.png" alt="Chrome DevTools' network panel.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kofLXSq1f3ekY7KY9QK7.png", alt="Chrome DevTools' network panel.", width="800", height="219", class="screenshot" %}
 
 {% Aside %}
 The actual columns you see in the Network panel may be different; the
@@ -76,7 +76,7 @@ Trigger these additional requests by clicking **Find Me** in the app and then
 **Allow** in the popup that appears.
 This will allow the site to access your current location:
 
-<img src="./allow-location.png" alt="The allow location permission prompt.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TJTq6re6eiVf74N8SwWE.png", alt="The allow location permission prompt.", width="638", height="257" %}
 
 {% Aside %}
 You could also deny geolocation permission, in which case the web app
@@ -87,7 +87,7 @@ Once the web app has a location to work with, clicking **Find Nearby
 Wikipedia Entries** results in several additional network requests. You
 should see something like this:
 
-![image](./network-requests.png)
+{% Img src="image/admin/Y9EAf75LBCkkpXyatG3f.png", alt="image", width="800", height="567" %}
 
 ## Interpret the new entries
 

@@ -5,12 +5,12 @@ authors:
   - petelepage
 description: Access to the user's contacts has been a feature of iOS/Android apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2020-07-30
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
   - contacts
-hero: hero.jpg
+hero: image/admin/K1IN7zWIjFLjZzJ4Us3J.jpg
 alt: Telephone on yellow background.
 feedback:
   - api
@@ -23,16 +23,17 @@ feedback:
 </style>
 
 <figure class="w-figure w-figure--inline-right">
-  <a href="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
-    <video id="video-demo" loop autoplay muted
-          poster="contact-picker-demo.jpg"
-          class="w-screenshot">
-      <source type="video/webm"
-              src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.webm">
-      <source type="video/mp4"
-              src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
-    </video>
-  </a>
+  {% Video
+    src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"],
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg",
+    loop=true,
+    autoplay=true,
+    muted=true,
+    class="w-screenshot",
+    linkTo=true,
+    id="video-demo",
+    playsinline=true
+  %}
 </figure>
 
 Access to the user's contacts on a mobile device has been a feature of iOS/Android apps since
@@ -136,7 +137,7 @@ properties are available. For example: `['name', 'email', 'tel', 'address']`.
 You can pass these values to `select()`.
 
 Remember, properties are not always available, and new properties may be
-added. In the future, other platforms and contact sources may restrict 
+added. In the future, other platforms and contact sources may restrict
 which properties are be shared.
 
 ### Handling the results
@@ -178,9 +179,7 @@ This ensures that a site can't show the picker on page load, or randomly show
 the picker without any context.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="contact-picker-user-choice.jpg" class="w-screenshot"
-       alt="Screen shot, users can choose which properties to share."
-       width="550">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="Screen shot, users can choose which properties to share.", width="800", height="639", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Users can choose not to share some properties. In this screenshot, the
     user has unchecked the 'Phone numbers' button. Even though the site
@@ -206,16 +205,14 @@ telephone numbers.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="contact-picker-left.jpg" class="w-screenshot"
-        alt="Screen shot of picker for site requesting all properties.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="Screen shot of picker for site requesting all properties.", width="800", height="639", class="w-screenshot" %}
     <figcaption class="w-figcaption">
       Picker, site requesting <code>name</code>, <code>email</code>, and
       <code>tel</code>, one contact selected.
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="contact-picker-right.jpg" class="w-screenshot"
-        alt="Screen shot of picker for site requesting only phone numbers.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="Screen shot of picker for site requesting only phone numbers.", width="800", height="639", class="w-screenshot" %}
     <figcaption class="w-figcaption">
       Picker, site requesting only <code>tel</code>, one contact selected.
     </figcaption>
@@ -225,9 +222,7 @@ telephone numbers.
 <div class="w-clearfix"></div>
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="contact-picker-long-press.jpg" class="w-screenshot"
-       alt="Screen shot of picker when a contact is long-pressed."
-       width="550">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="Screen shot of picker when a contact is long-pressed.", width="800", height="389",class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The result of a long press on a contact.
   </figcaption>
@@ -266,8 +261,9 @@ Are you planning to use the Contact Picker API? Your public support helps the
 Chrome team to prioritize features, and shows other browser vendors how
 critical it is to support them.
 
-* Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-* Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#contactpicker` and
+* Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#ContactPicker`](https://twitter.com/search?q=%23ContactPicker&src=typed_query&f=live) and
   let us know where and how you're using it.
 
 ## Helpful links {: #helpful }

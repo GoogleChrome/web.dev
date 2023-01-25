@@ -12,6 +12,7 @@
 // =============================================================================
 
 .w-table-wrapper {
+  @extend %scrollbar;
   margin: 32px 0;
   overflow: auto;
   background: linear-gradient(to right, #fff 30%, rgba(255, 255, 255, 0)),
@@ -32,15 +33,6 @@
   background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
   background-position: 0 0, 100%, 0 0, 100%;
   background-attachment: local, local, scroll, scroll;
-}
-
-.w-table-wrapper::-webkit-scrollbar {
-  height: 6px;
-}
-
-.w-table-wrapper::-webkit-scrollbar-thumb {
-  background-color: $GREY_500;
-  border-radius: 8px;
 }
 
 table {

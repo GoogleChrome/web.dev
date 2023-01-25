@@ -38,7 +38,7 @@ Notifications are automatically blocked from the embedded Glitch app, so you won
 
 The Glitch should open in a new Chrome tab:
 
-<img class="w-screenshot" src="./live-app-new-tab.png" alt="Screenshot showing the remixed live app in a new tab">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GVJ94Bn7ef99w7SRPSF.png", alt="Screenshot showing the remixed live app in a new tab", width="800", height="399", class="w-screenshot" %}
 
 As you work through this codelab, make changes to the code in the embedded Glitch on this page. Refresh the new tab with your live app to see the changes.
 

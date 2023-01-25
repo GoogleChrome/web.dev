@@ -1,0 +1,21 @@
+title:
+  en: PWA audits
+
+description:
+  en: Measure if your site is fast, reliable and installable.
+
+overview:
+  en: These checks validate the aspects of a Progressive Web App.
+
+topics:
+  fast_and_reliable:
+    en: Fast and reliable
+
+  installable:
+    en: Installable
+
+  pwa_optimized:
+    en: PWA optimized
+
+  additional_items_to_manually_check:
+    en: Additional items to manually check

@@ -1,0 +1,14 @@
+{# This is used inline with body contents as the TOC on small screens. #}
+{% if tocContents %}
+  {% from 'macros/icon.njk' import icon with context %}
+
+  <details class="course-toc toc flow display-block xl:display-none" data-type="inner" role="navigation" aria-label="{{ 'i18n.toc.on_this_page' | i18n(locale) }}">
+    <summary>
+      <div class="display-inline-flex align-center user-select-none">
+        <div class="course-toc__heading font-google-sans weight-medium">{{ 'i18n.toc.on_this_page' | i18n(locale) }}</div>
+        <span class="toc__icon height-400">{{ icon('arrow-right', {label: 'toggle'}) }}</span>
+      </div>
+    </summary>
+    <div class="toc__wrapper flow-recursive">{{ tocContents | safe }}</div>
+  </details>
+{% endif %}

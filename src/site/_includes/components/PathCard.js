@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
+const {generateImgixSrc} = require('./Img');
 const {html} = require('common-tags');
 const removeDrafts = require('../../_filters/remove-drafts');
+
+const {i18n} = require('../../_filters/i18n');
 
 /* eslint-disable max-len */
 
@@ -85,7 +88,7 @@ module.exports = (path, lang) => {
         <div class="w-path-card__cover">
           <img
             class="w-path-card__cover-image"
-            src="${path.cover}"
+            src="${generateImgixSrc(path.cover)}"
             alt=""
             loading="lazy"
             width="100%"
@@ -93,10 +96,8 @@ module.exports = (path, lang) => {
           />
         </div>
         <div class="w-path-card__desc">
-          <h2 class="w-path-card__headline">${path.title}</h2>
-          <p class="w-path-card__subhead">
-            ${path.description}
-          </p>
+          <h2 class="w-path-card__headline">${i18n(path.title, lang)}</h2>
+          <p class="w-path-card__subhead">${i18n(path.description, lang)}</p>
         </div>
       </div>
     </a>

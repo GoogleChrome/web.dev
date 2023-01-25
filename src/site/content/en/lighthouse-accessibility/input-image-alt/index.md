@@ -19,7 +19,7 @@ assistive technologies understand the purpose of the button.
 Lighthouse flags `<input type="image">` elements that don't have `alt` text:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="input-image-alt.png" alt="Lighthouse audit showing input types with a value of 'image' do not have alt attributes">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3uac0DpUpqJCobLSo2Cy.png", alt="Lighthouse audit showing input types with a value of 'image' do not have alt attributes", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

@@ -29,8 +29,7 @@ so that it won't allow merging pull-requests if the Lighthouse scores fall below
 the threshold you've set (e.g. < 96/100).
 
 <figure class="w-figure">
-  <img src="./lighthouse-bot.png"
-       alt="Failing Lighthouse Bot checks on GitHub" class="w-screenshot">
+  {% Img src="image/admin/LIEdWOuIGubFE0JgBM5Y.png", alt="Failing Lighthouse Bot checks on GitHub", width="800", height="360", class="w-screenshot" %}
   <figcaption class="w-figcaption">Lighthouse Bot checks on GitHub.</figcaption>
 </figure>
 
@@ -57,7 +56,7 @@ To get started, you'll need a Firebase account. Once you've taken care of that,
 [create a new project in the Firebase console](https://console.firebase.google.com/)
 by clicking "Add project":
 
-<img src="./firebase-console.png" alt="" class="w-screenshot">
+{% Img src="image/admin/SYTTK9CHxnTt1n7vONKU.png", alt="", width="517", height="552" %}
 
 ### Deploying to Firebase
 
@@ -105,14 +104,14 @@ In a split second, you'll have a live app.
 You'll need to [register an account](https://travis-ci.com) on Travis and then
 activate GitHub Apps integration under the Settings section of your profile.
 
-<img src="./travis-ci.png" class="w-screenshot" alt="GitHub Apps integration on Travis CI">
+{% Img src="image/admin/fNGAjcYM5Rw3e43PExoD.png", alt="GitHub Apps integration on Travis CI", width="800", height="508" %}
 
 ### Once you have an account
 
 Go to Settings under your profile, hit the Sync account button, and make sure
 your project repo is listed on Travis.
 
-<img src="./travis-ci-sync-button.png" class="w-screenshot" alt="">
+{% Img src="image/admin/dnXFBpBw4WvWbXQL1DQf.png", alt="", width="160", height="54" %}
 
 To kick-off continuous integration, you need two things:
 
@@ -138,7 +137,7 @@ Now it's your turn to **push the example app to your own GitHub repository**.
 If you haven't already, run the following command:
 
 ```bash
-git push origin master
+git push origin main
 ```
 
 Click on your repo under Settings in Travis to see your project's Travis
@@ -164,7 +163,7 @@ Copy it and go back to Travis.
 
 In your project's Travis dashboard, go to **More options** > **Settings** > **Environment variables**.
 
-<img class="w-screenshot" src="./travis-environment-variables.png" alt="">
+{% Img src="image/admin/uU7MBc5NdBDZch3ZE3Zd.png", alt="", width="789", height="233", class="w-screenshot" %}
 
 Paste the token in the value field, name the variable `FIREBASE_TOKEN`, and add it.
 
@@ -190,7 +189,7 @@ It just needs an invitation to your repo.
 
 On GitHub, go to your project's settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
 
-<img class="w-screenshot" src="./lighthouse-bot-collaborator.png" alt="Lighthouse bot collaborator status">
+{% Img src="image/admin/H2aLCOr36UDwm5Yk1k9r.png", alt="Lighthouse bot collaborator status", width="800", height="298", class="w-screenshot" %}
 
 Approving these requests is a manual process so they don't always happen
 instantly. Before you start testing, make sure lighthousebot has approved its
@@ -201,7 +200,7 @@ and you'll get a Lighthouse Bot key in your inbox. 📬
 
 On Travis, add this key as an environment variable and name it `LIGHTHOUSE_API_KEY`:
 
-<img class="w-screenshot" src="./lighthouse-api-key.jpg" alt="">
+{% Img src="image/admin/0XCrRSbUg1Sdca8k9xK9.jpg", alt="", width="800", height="127", class="w-screenshot" %}
 
 {% Aside %}
 You can reuse this same key for other projects.
@@ -249,7 +248,7 @@ the app that bring the performance score below 95:
 
 ### Make a pull request to trigger Lighthouse Bot test on Travis
 
-Lighthouse Bot will only test pull requests, so if you push to the master branch
+Lighthouse Bot will only test pull requests, so if you push to the main branch
 now, you'll just get "This script can only be run on Travis PR requests" in your
 Travis log.
 
@@ -261,9 +260,9 @@ To trigger the Lighthouse Bot test:
 
 Hang tight on that pull request page and wait for Lighthouse Bot to sing! 🎤
 
-<img class="w-screenshot" src="./lighthouse-scores.png" alt="Passing Lighthouse scores">
+{% Img src="image/admin/SmWHb70YqVfagXI3f03D.png", alt="Passing Lighthouse scores", width="586", height="329", class="w-screenshot" %}
 
-<img class="w-screenshot" src="./github-checks.png" alt="Passing Github checks">
+{% Img src="image/admin/ZrPGH5OGEY5Y4e9ntUBK.png", alt="Passing Github checks", width="462", height="189", class="w-screenshot" %}
 
 The performance score is great, the app is under budget, and the check has passed!
 

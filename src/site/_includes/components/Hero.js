@@ -13,26 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-const {html} = require('common-tags');
-const getSrcsetRange = require('../../_utils/get-srcset-range');
+const {Img} = require('./Img');
 
 module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
-  const srcsetRange = getSrcsetRange();
+  const className = `w-hero w-hero--${heroFit}${
+    heroPosition ? ` w-hero--${heroPosition}` : ''
+  }`;
 
-  // prettier-ignore
-  return html`
-    <img
-      class="w-hero w-hero--${heroFit} ${heroPosition ? `w-hero--${heroPosition}` : ''}"
-      width="1600"
-      height="480"
-      sizes="100vw"
-      srcset="${srcsetRange.map((width) => html`
-        ${hero}?auto=format&fit=max&w=${width} ${width}w,
-      `)}"
-      src="${hero}"
-      alt="${alt}"
-      loading="lazy"
-    />
-  `;
+  return Img({
+    src: hero,
+    alt: typeof alt === 'string' ? alt : 'Hero Image',
+    height: '480',
+    width: '1600',
+    sizes: '100vw',
+    class: className,
+    decoding: 'auto',
+  });
 };

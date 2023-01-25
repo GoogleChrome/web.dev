@@ -87,14 +87,14 @@ In the [results](http://webpagetest.org/custom_metrics.php?test=190918_6E_ef3c16
 To summarize, there is a single layout shift of 34.2% happening at 3087ms. To help identify the culprit, let's use WebPageTest's [filmstrip view](http://webpagetest.org/video/compare.php?tests=190918_6E_ef3c166b4a34033171d47e389cf82939-r%3A5-c%3A0&thumbSize=200&ival=100&end=visual).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="layout-shift1.png" alt="Two cells in the filmstrip, showing screenshots before and after the layout shift.">
+  {% Img src="image/admin/h1QidJnqWmFsk25yq1iu.png", alt="Two cells in the filmstrip, showing screenshots before and after the layout shift.", width="800", height="341", class="w-screenshot" %}
   <figcaption class="w-figcaption">Two cells in the filmstrip, showing screenshots before and after the layout shift.</figcaption>
 </figure>
 
 Scrolling to the ~3 second mark in the filmstrip shows us exactly what the cause of the 34% layout shift is: the colorful table. The website asynchronously fetches a JSON file, then renders it to a table. The table is initially empty, so waiting to fill it up when the results are loaded is causing the shift.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="layout-shift2.png" alt="Web font header appearing out of nowhere.">
+  {% Img src="image/admin/hlbsiYTsFfVjpNk18ii4.png", alt="Web font header appearing out of nowhere.", width="800", height="336", class="w-screenshot" %}
   <figcaption class="w-figcaption">Web font header appearing out of nowhere.</figcaption>
 </figure>
 
@@ -143,7 +143,7 @@ The appearance of the placeholders you use don't matter for layout stability. Th
 Here's what the placeholders look like while the JSON data is loading:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="layout-placeholder.png" alt="The data table is rendered with placeholder data.">
+  {% Img src="image/admin/hF2EmHSpJArXA6TQ6Cm7.png", alt="The data table is rendered with placeholder data.", width="800", height="486", class="w-screenshot" %}
   <figcaption class="w-figcaption">The data table is rendered with placeholder data.</figcaption>
 </figure>
 
@@ -158,7 +158,7 @@ Addressing the web font issue is much simpler. Because the site is using Google 
 After rerunning the page through WebPageTest, we can generate a before and after [comparison](http://webpagetest.org/video/compare.php?tests=190918_6E_ef3c166b4a34033171d47e389cf82939%2C190918_WF_60f9c9a1c669b20039860c09ca27df7c&thumbSize=200&ival=100&end=visual) to visualize the difference and measure the new degree of layout instability:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="layout-comparison.png" alt="WebPageTest filmstrip showing both sites loading side-by-side with and without layout optimizations.">
+  {% Img src="image/admin/1BJlP3HxeynRw0gRt52H.png", alt="WebPageTest filmstrip showing both sites loading side-by-side with and without layout optimizations.", width="800", height="288", class="w-screenshot" %}
   <figcaption class="w-figcaption">WebPageTest filmstrip showing both sites loading side-by-side with and without layout optimizations.</figcaption>
 </figure>
 

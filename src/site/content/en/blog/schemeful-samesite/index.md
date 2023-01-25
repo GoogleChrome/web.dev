@@ -12,8 +12,8 @@ authors:
   - bingler
   - rowan_m
 date: 2020-11-20
-hero: schemeful-samesite-hero.jpg
-thumbnail: schemeful-samesite-thumbnail.jpg
+hero: image/admin/UMxBPy0AKAfbzxwgTroV.jpg
+thumbnail: image/admin/3J33n1o98vnkO6fdDFwP.jpg
 alt: Two separate plates of cookies. The plates represent the different
   schemes, HTTP and HTTPS. The cookies represent cookies.
 tags:
@@ -36,7 +36,7 @@ Same-Site](https://mikewest.github.io/cookie-incrementalism/draft-west-cookie-in
 modifies the definition of a (web)site from just the registrable domain to the
 scheme + registrable domain. You can find more details and examples in
 [Understanding "same-site" and
-"same-origin"](https://web.dev/same-site-same-origin/#%22schemeful-same-site%22).
+"same-origin"](/same-site-same-origin/#%22schemeful-same-site%22).
 
 {% Aside 'key-term' %}
 This means that the insecure HTTP version of a site, for example,
@@ -94,10 +94,7 @@ Navigating between cross-scheme versions of a website (for example, linking from
 navigation which means `SameSite=Strict` cookies will be blocked.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="cross-scheme-navigation.png" alt="A cross-scheme navigation
-  triggered by following a link on the insecure HTTP version of a site to the
-  secure HTTPS version. SameSite=Strict cookies blocked, SameSite=Lax and
-  SameSite=None; Secure cookies are allowed.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yDViqKg9eeEeAEiCNqe4.png", alt="A cross-scheme navigation triggered by following a link on the insecure HTTP version of a site to the secure HTTPS version. SameSite=Strict cookies blocked, SameSite=Lax and SameSite=None; Secure cookies are allowed.", width="800", height="342" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Cross-scheme navigation from HTTP to HTTPS.
   </figcaption>
@@ -165,10 +162,7 @@ be loaded on a secure page, all cookies will be blocked on these requests as
 third-party or cross-site cookies require `Secure`.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="cross-scheme-subresource.png" alt="A cross-scheme subresource
-  resulting from a resource from the secure HTTPS version of the site being
-  included on the insecure HTTP version. SameSite=Strict and SameSite=Lax
-  cookies blocked, and SameSite=None; Secure cookies are allowed.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GgR6Yln1f9JGkt04exRC.png", alt="A cross-scheme subresource resulting from a resource from the secure HTTPS version of the site being included on the insecure HTTP version. SameSite=Strict and SameSite=Lax cookies blocked, and SameSite=None; Secure cookies are allowed.", width="800", height="285" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     An HTTP page including a cross-scheme subresource via HTTPS.
   </figcaption>
@@ -229,11 +223,7 @@ entering any sensitive information into the form.
 {% endAside %}
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="cross-scheme-form-submission.png" alt="A cross-scheme form
-  submission resulting from a form on the insecure HTTP version of the site
-  being submitted to the secure HTTPS version. SameSite=Strict and
-  SameSite=Lax cookies blocked, and SameSite=None; Secure cookies are
-  allowed.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ud9LkDeGJUWHObifD718.png", alt="A cross-scheme form submission resulting from a form on the insecure HTTP version of the site being submitted to the secure HTTPS version. SameSite=Strict and SameSite=Lax cookies blocked, and SameSite=None; Secure cookies are allowed.", width="800", height="376" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Cross-scheme form submission from HTTP to HTTPS.
   </figcaption>

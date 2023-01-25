@@ -38,10 +38,16 @@ module.exports = (data) => {
   const defaultLocaleRegExp = new RegExp(`^/${defaultLocale}/`);
   const localization = data.lang !== defaultLocale;
 
+  // In eleventy you can set permalink: false to tell it to not output a page.
+  // If a page has a false permalink we should completely ignore it.
+  if ('permalink' in data && data.permalink === false) {
+    return;
+  }
+
   if (data.permalink) {
     return data.permalink.replace(
       /^\/{{lang}}/,
-      localization ? '/i18n/{{lang}}' : '/',
+      localization ? '/i18n/{{lang}}' : '',
     );
   }
 

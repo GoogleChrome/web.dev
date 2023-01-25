@@ -37,7 +37,7 @@ export class BaseResponseElement extends BaseElement {
     this.maxSelections = null;
     this.minSelections = null;
 
-    this.deselectOption = /** @type {function(Node)} */ null;
+    this.deselectOption = this.deselectOption.bind(this);
     this.enforceCardinality = this.enforceCardinality.bind(this);
     this.submitResponse = this.submitResponse.bind(this);
     this.reset = this.reset.bind(this);
@@ -226,6 +226,10 @@ export class BaseResponseElement extends BaseElement {
       this.enableOption(option);
     }
   }
+
+  // @ts-ignore-start
+  deselectOption(option) {} // eslint-disable-line no-unused-vars
+  // @ts-ignore-end
 
   disableOption(option) {
     const inputs = option.querySelectorAll('input, button');

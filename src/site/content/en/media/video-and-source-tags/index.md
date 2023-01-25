@@ -140,7 +140,7 @@ image, I've drawn a red box  around this header. If you do not see `bytes` as
 the value, you'll need to contact your hosting provider.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./accept-ranges-chrome-devtools.png" alt="Chrome DevTools screenshot: Accept-Ranges: bytes.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Chrome DevTools screenshot: Accept-Ranges: bytes.", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">Chrome DevTools screenshot: Accept-Ranges: bytes.</figcaption>
 </figure>
 
@@ -165,7 +165,7 @@ For more information see [Efficiently encode images](/uses-optimized-images/).
 <div class="w-columns">
 {% Compare 'worse' %}
 <figure class="w-figure" w-figure--inline-left>
-  <img src="./chrome-android-video-no-poster.png" alt="Without a fallback poster, the video just looks broken.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="Without a fallback poster, the video just looks broken.", width="360", height="600" %}
 </figure>
 
 {% CompareCaption %}
@@ -176,7 +176,7 @@ Without a fallback poster, the video just looks broken.
 
 {% Compare 'better' %}
 <figure class="w-figure" w-figure--inline-right>
-  <img src="./chrome-android-video-poster.png" alt="A fallback poster makes it seem as if the first frame has been captured.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rNhydHVGeL2P0sQ0je5k.png", alt="A fallback poster makes it seem as if the first frame has been captured.", width="360", height="600" %}
 </figure>
 
 {% CompareCaption %}
@@ -194,14 +194,12 @@ controls.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./chrome-android-portrait-video-unstyled.png" alt="Android Chrome screenshot, portrait: unstyled video element overflows
-    viewport.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome screenshot, portrait: unstyled video element overflows viewport.", width="338", height="600" %}
     <figcaption class="w-figcaption">Android Chrome screenshot, portrait: unstyled video element overflows
     viewport.</figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./chrome-android-landscape-video-unstyled.png" alt="Android Chrome screenshot, landscape: unstyled video element overflows
-    viewport.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome screenshot, landscape: unstyled video element overflows viewport.", width="800", height="450" %}
     <figcaption class="w-figcaption">Android Chrome screenshot, landscape: unstyled video element overflows
     viewport.</figcaption>
   </figure>
@@ -209,9 +207,9 @@ controls.
 
 You can control video dimensions using CSS. If CSS does not meat all of your
 needs, JavaScript libraries and plugins such as [FitVids](http://fitvidsjs.com/)
-(outside the scope of this article) can help, even for videos from YouTub and
+(outside the scope of this article) can help, even for videos from YouTube and
 other sources. Unfortunately, these resources can increase your [network payload
-sizes](https://web.dev/total-byte-weight/) with negative consequences for your
+sizes](/total-byte-weight/) with negative consequences for your
 revenues and your users' wallets.
 
 For simple uses like the ones I'm describing here, use [CSS media
@@ -277,11 +275,11 @@ orientation:
 
 <div class="w-columns">
 <figure class="w-figure">
-  <img  class="w-screenshot w-screenshot--filled" src="./iphone-video-playing-portrait.png" alt="Screenshot of video playing in Safari on iPhone, portrait.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="Screenshot of video playing in Safari on iPhone, portrait.", width="338", height="600", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPhone, portrait.</figcaption>
 </figure>
 <figure class="w-figure">
-  <img  class="w-screenshot w-screenshot--filled" src="./iphone-video-playing-landscape.png" alt="Screenshot of video playing in Safari on iPhone, landscape.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="Screenshot of video playing in Safari on iPhone, landscape.", width="600", height="338", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPhone, landscape.</figcaption>
 </figure>
 </div>
@@ -292,7 +290,7 @@ orientation looks like this:
 
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./ipad-landscape-video-playing.png" alt="Screenshot of video playing in Safari on iPad, landscape.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9FsExgY6cJFfMkxOPNkl.png", alt="Screenshot of video playing in Safari on iPad, landscape.", width="600", height="450", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPad, landscape.</figcaption>
 </figure>
 

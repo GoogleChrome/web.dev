@@ -6,7 +6,7 @@ authors:
   - joemedley
 date: 2019-11-08
 updated: 2020-02-09
-hero: hero.png
+hero: image/admin/RfxdrfKdh5Fp8camulRt.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
   On a mobile device, sharing should be as simple as clicking the Share button,
@@ -37,7 +37,7 @@ files, links, or text using the Web Share API. See
 {% endAside %}
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./wst-send.png" style="max-width: 400px;" alt="Android phone with the 'Share via' drawer open."/>
+  {% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="377" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     System-level share target picker with an installed PWA as an option.
   </figcaption>
@@ -208,7 +208,7 @@ window.addEventListener('DOMContentLoaded', () => {
 Be sure to use a service worker to [precache](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) the `action`
 page so that it will load quickly and work reliably, even if the user is offline.
 [Workbox](https://developers.google.com/web/tools/workbox/) is a tool that can help you
-[implement precaching](https://web.dev/precache-with-workbox/) in your service worker.
+[implement precaching](/precache-with-workbox/) in your service worker.
 
 ### Processing POST shares
 
@@ -242,7 +242,7 @@ self.addEventListener('fetch', event => {
 ### Verifying shared content
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./wst-receive.png" style="max-width: 400px;" alt="An Android phone displaying the demo app with shared content."/>
+  {% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="An Android phone displaying the demo app with shared content.", width="400", height="280" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The sample sharing target app.
   </figcaption>

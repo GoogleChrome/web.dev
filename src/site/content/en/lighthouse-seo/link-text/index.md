@@ -19,7 +19,7 @@ understand your content and how it relates to other pages.
 without descriptive text:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="link-text.png" alt="Lighthouse audit showing links don't have descriptive text">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Lighthouse audit showing links don't have descriptive text", width="800", height="191", class="w-screenshot w-screenshot" %}
 </figure>
 
 Lighthouse flags the following generic link text:

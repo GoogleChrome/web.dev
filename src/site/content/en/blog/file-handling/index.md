@@ -11,7 +11,7 @@ updated: 2020-11-02
 tags:
   - blog
   - file-handling
-hero: hero.jpg
+hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 origin_trial:
   url:
@@ -19,7 +19,7 @@ origin_trial:
 
 {% Aside %}
   The File Handling API is part of the
-  [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
+  [capabilities project](/fugu-status/) and is currently in development. This post will
   be updated as the implementation progresses.
 {% endAside %}
 
@@ -164,18 +164,14 @@ double click, or a right click and then select "Excalidraw" in the context menu.
 out the [implementation][demo-source] in the source code.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="./finder.png"
-       alt="The macOS finder window with an Excalidraw file." width="1764 " height="930">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="The macOS finder window with an Excalidraw file.", width="800", height="422", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
      Double click or right click a file in your operating system's file explorer.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="./context-menu.png"
-       alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted." width="488" height="266">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted.", width="488", height="266", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
      Excalidraw is the default file handler for <code>.excalidraw</code> files.
   </figcaption>
@@ -254,9 +250,10 @@ Did you find a bug with Chrome's implementation? Or is the implementation differ
 Are you planning to use the File Handling API? Your public support helps the Chrome team to
 prioritize features and shows other browser vendors how critical it is to support them.
 
-Share how you plan to use it on the [WICG Discourse thread][wicg-discourse] Send a Tweet to
-[@ChromiumDev][cr-dev-twitter] with the `#FileHandling` hashtag and let us know where and how you
-are using it.
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#FileHandling`](https://twitter.com/search?q=%23FileHandling&src=typed_query&f=live)
+  and let us know where and how you are using it.
 
 ## Helpful links {: #helpful }
 

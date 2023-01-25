@@ -90,6 +90,6 @@ lighthouse https://example.com --budget-path=./budget.json
 
 If LightWallet has been configured correctly, the Lighthouse report will contain a **Budgets** section within the **Performance** category.
 
-<img src="./lightwallet.png" class="w-screenshot" alt="'Budgets' section of the Lighthouse report">
+{% Img src="image/admin/FdUeI8rKZtJB3Ol624S3.png", alt="'Budgets' section of the Lighthouse report", width="800", height="289" %}
 
 In the JSON version of the Lighthouse report, Lightwallet results can be found within the audit findings for the `performance-budget` audit.

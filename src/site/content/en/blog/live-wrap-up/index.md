@@ -8,8 +8,8 @@ description: >
   A summary of the major news and updates that were announced during our
   3-day online community event, and a reminder about upcoming regional events.
 date: 2020-07-06
-hero: hero.png
-thumbnail: thumbnail.png
+hero: image/admin/H60ns6FN1VtNrlx8e3EU.png
+thumbnail: image/admin/d2asSQy3UHgqRF8sx1Xk.png
 alt: The web.dev LIVE logo.
 tags:
   - blog
@@ -52,7 +52,7 @@ The three pillars of the 2020 Core Web Vitals are loading, interactivity, and vi
 page content, which are captured by the following metrics:
 
 <figure class="w-figure">
-  <img src="corewebvitals.png" alt="An illustration of the Core Web Vitals.">
+  {% Img src="image/admin/kzOdl2pRyEEPEQI0U2lQ.png", alt="An illustration of the Core Web Vitals.", width="800", height="232" %}
 </figure>
 
 + [Largest Contentful Paint](/lcp/) measures perceived load speed and
@@ -74,7 +74,7 @@ of your web development project, taking on a key role in handling your developer
 lifecycle.
 
 We have all seen unwieldy build config files, so to help web developers _and_ tooling authors
-conquer the complexity of the web, we built [tooling.report](https://web.dev/introducing-tooling-report). It's a website
+conquer the complexity of the web, we built [tooling.report](/introducing-tooling-report). It's a website
 that helps you choose the right build tool for your next project, decide if migrating from one tool
 to another is worth it, or figure out how to incorporate best practices into your tooling
 configuration and code base.
@@ -84,7 +84,7 @@ web development best practices. We worked with the build tool authors to
 make sure we used their tools correctly and represented them fairly.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="toolingreport.png" alt="A screenshot of the tooling.report UI.">
+  {% Img src="image/admin/awFmvfMqFv3gvbpIICJY.png", alt="A screenshot of the tooling.report UI.", width="800", height="316", class="w-screenshot" %}
 </figure>
 
 The initial release of tooling.report covers webpack v4, Rollup v2, Parcel v2, and Browserify with Gulp,
@@ -188,7 +188,7 @@ and [COEP issues](/coop-coep/). Watch the web.dev LIVE session on [finding and f
 problems with the Issues tab](https://youtu.be/1TbkSxQb4bI) to get started.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="issues.png" alt="A screenshot of the Issues tab.">
+  {% Img src="image/admin/G7AmzK1btOMBUPEhnFhV.png", alt="A screenshot of the Issues tab.", width="800", height="535", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 Moreover, with the [Core Web Vitals](/vitals/#core-web-vitals) becoming one of the
@@ -204,8 +204,7 @@ can learn more about this and many other features in the [What's new in
 DevTools](https://youtu.be/6yrJZHqJe2k) session.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="emulator.png"
-       alt="A screenshot of the vision deficiencies emulator.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3gTvVdPvTN3IUyhSN8gn.png", alt="A screenshot of the vision deficiencies emulator.", width="800", height="509", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 ### Lighthouse 6.0: New metrics, Core Web Vitals lab measurements, an updated Performance score, and new audits
@@ -238,8 +237,7 @@ audits](/lighthouse-whats-new-6.0/#new-audits), with a focus on JavaScript analy
 and accessibility.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="audits.png"
-       alt="A list of the new audits.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qAVFUVHR7Ad0tm05J1d3.png", alt="A list of the new audits.", width="800", height="450", class="w-screenshot" %}
 </figure>
 
 Learn more by watching the [What's new in speed tooling](https://youtu.be/yDHfrhCGFQw)

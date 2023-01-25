@@ -3,7 +3,6 @@ import {saveUserUrl} from './fb';
 import {runLighthouse, fetchReports} from './lighthouse-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
-import {getCanonicalPath} from './urls';
 import cookies from 'js-cookie';
 import {trackEvent} from './analytics';
 
@@ -125,41 +124,58 @@ export const requestFetchReports = store.action((_, url, startDate) => {
   });
 });
 
-export const expandSideNav = store.action(() => {
-  openModal();
-  return {isSideNavExpanded: true};
-});
+/**
+ * Inert the page so scrolling and pointer events are disabled.
+ * This is used when we open the navigation drawer or show a modal dialog.
+ */
+const disablePage = () => {
+  /** @type {HTMLElement|object} */
+  const main = document.querySelector('main') || {};
+  /** @type {HTMLElement|object} */
+  const header = document.querySelector('web-header') || {};
+  /** @type {HTMLElement|object} */
+  const footer = document.querySelector('.w-footer') || {};
 
-export const collapseSideNav = store.action(() => {
-  closeModal();
-  return {isSideNavExpanded: false};
-});
-
-export const openModal = store.action(() => {
-  const main = document.querySelector('main');
-  /** @type import('./components/Header').Header */
-  const header = document.querySelector('web-header');
-  /** @type {HTMLElement} */
-  const footer = document.querySelector('.w-footer');
-
-  document.documentElement.classList.add('web-modal__overflow-hidden');
+  document.body.classList.add('overflow-hidden');
   main.inert = true;
   header.inert = true;
   footer.inert = true;
+};
+
+/**
+ * Uninert the page so scrolling and pointer events work again.
+ */
+const enablePage = () => {
+  /** @type {HTMLElement|object} */
+  const main = document.querySelector('main') || {};
+  /** @type {HTMLElement|object} */
+  const header = document.querySelector('web-header') || {};
+  /** @type {HTMLElement|object} */
+  const footer = document.querySelector('.w-footer') || {};
+
+  document.body.classList.remove('overflow-hidden');
+  main.inert = false;
+  header.inert = false;
+  footer.inert = false;
+};
+
+export const openNavigationDrawer = store.action(() => {
+  disablePage();
+  return {isNavigationDrawerOpen: true};
+});
+
+export const closeNavigationDrawer = store.action(() => {
+  enablePage();
+  return {isNavigationDrawerOpen: false};
+});
+
+export const openModal = store.action(() => {
+  disablePage();
   return {isModalOpen: true};
 });
 
 export const closeModal = store.action(() => {
-  const main = document.querySelector('main');
-  /** @type import('./components/Header').Header */
-  const header = document.querySelector('web-header');
-  /** @type {HTMLElement} */
-  const footer = document.querySelector('.w-footer');
-
-  document.documentElement.classList.remove('web-modal__overflow-hidden');
-  main.inert = false;
-  header.inert = false;
-  footer.inert = false;
+  enablePage();
   return {isModalOpen: false};
 });
 
@@ -191,35 +207,20 @@ export const setUserAcceptsCookies = store.action(() => {
   };
 });
 
-export const checkUserPreferredLanguage = store.action(
-  ({userPreferredLanguage}) => {
-    userPreferredLanguage =
-      // Use currently set language.
-      userPreferredLanguage ||
-      // Or check in the url.
-      lang.getLanguageFromPath(location.pathname) ||
-      // Or check in a cookie.
-      cookies.get('firebase-language-override') ||
-      // Or check in the browser setting.
-      navigator.language.split('-')[0];
-    if (!lang.isValidLanguage(userPreferredLanguage)) {
-      userPreferredLanguage = '';
-    }
-    return {userPreferredLanguage};
-  },
-);
-
-export const setLanguage = store.action((state, preferredLanguage) => {
+export const setLanguage = store.action((state, language) => {
+  if (!lang.isValidLanguage(language)) {
+    return state;
+  }
   const options = {
     expires: 10 * 365, // 10 years
     samesite: 'strict',
   };
-  cookies.set('firebase-language-override', preferredLanguage, options);
-  if (preferredLanguage !== state.userPreferredLanguage) {
-    location.pathname = getCanonicalPath(location.pathname);
+  cookies.set('firebase-language-override', language, options);
+  if (language !== state.currentLanguage) {
+    location.reload();
   }
   return {
-    userPreferredLanguage: preferredLanguage,
+    currentLanguage: language,
   };
 });
 

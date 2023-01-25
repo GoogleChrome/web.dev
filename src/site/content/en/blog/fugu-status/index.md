@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2021-02-03
+updated: 2021-05-14
 tags:
   - blog
   - capabilities
@@ -46,7 +46,7 @@ change.<a name="shape-face-text"></a>
           implementations of shape detection services and exposes them through
           a set of JavaScript interfaces. In additon to the APIs below, the
           Barcode Detection API is available in stable. For more information,
-          <a href="#shape-barcode">Shape Detection (Barcode)</a>.
+          see <a href="#shape-barcode">Shape Detection (Barcode)</a>.
           <ul>
             <li><a href="https://www.chromestatus.com/feature/5678216012365824">Face Detection API</a></li>
             <li><a href="https://www.chromestatus.com/feature/5644087665360896">Text Detection API</a></li>
@@ -79,6 +79,16 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td>
+          <a href="/handwriting-recognition/">Handwriting Recognition</a>
+        </td>
+        <td>
+          The Handwriting Recognition API lets web applications use advanced handwriting
+          recognition services to translate handwriting to text as it's written.<br>
+          <em>Updated May 11, 2021</em>
+        </td>
+      </tr>
       <tr>
         <td>
           <a href="/idle-detection/">Idle Detection API</a>
@@ -289,11 +299,11 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/sms-receiver-api-announcement/">Web OTP API</a>
+          <a href="/sms-receiver-api-announcement/">WebOTP API</a>
         </td>
         <td>
           Finding, memorizing, and typing OTPs sent via SMS is cumbersome.
-          The Web OTP API (formerly the SMS Receiver API) simplifies the OTP
+          The WebOTP API (formerly the SMS Receiver API) simplifies the OTP
           workflow for users.<br>
           <em>Updated March 26, 2020</em>
         </td>

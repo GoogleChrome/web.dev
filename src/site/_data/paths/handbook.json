@@ -1,13 +1,13 @@
 {
   "slug": "handbook",
-  "cover": "/images/collections/handbook.svg",
-  "title": "Content handbook",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/Tb9AWhihdixMZTA3taHV.svg",
+  "title": "i18n.paths.handbook.title",
   "updated": "Jun 24, 2019",
-  "description": "Create great content for web.dev.",
-  "overview": "This handbook helps contributors to web.dev create effective, engaging content and get it published as easily as possible. This is a living document that will evolve as we learn more about what works.",
+  "description": "i18n.paths.handbook.description",
+  "overview": "i18n.paths.handbook.overview",
   "topics": [
     {
-      "title": "Content process",
+      "title": "i18n.paths.handbook.topics.content_process",
       "pathItems": [
         "handbook/quick-start",
         "handbook/content-checklist",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "title": "Content guidelines",
+      "title": "i18n.paths.handbook.topics.content_guidelines",
       "pathItems": [
         "handbook/content-types",
         "handbook/case-study-guidelines",
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "title": "web.dev markup",
+      "title": "i18n.paths.handbook.topics.web_dev_markup",
       "pathItems": [
         "handbook/author-profile",
         "handbook/markup-post-codelab",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "title": "Content infrastructure",
+      "title": "i18n.paths.handbook.topics.content_infrastructure",
       "pathItems": [
         "handbook/resolving-glitch-issues",
         "handbook/redirects"

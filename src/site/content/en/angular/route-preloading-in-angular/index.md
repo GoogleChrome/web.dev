@@ -3,7 +3,7 @@ layout: post
 title: 'Route preloading strategies in Angular'
 subhead: |
   Preload routes ahead of time to speed up users' navigation.
-hero: route-preloading.jpg
+hero: image/admin/q4b86k6REnNHkpjQnsLK.jpg
 hero_position: bottom
 alt: Glass crystal ball
 date: 2019-07-09

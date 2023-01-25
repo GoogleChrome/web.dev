@@ -1,6 +1,5 @@
 ---
 noindex: true
 permalink: "/algolia.json"
-
 ---
-{{ helpers.algolia(collections) | dump | safe }}
+{{ collections.algolia | dump(2) | safe }}

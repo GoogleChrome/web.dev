@@ -4,14 +4,16 @@ title: Add a web app manifest
 authors:
   - petelepage
   - beaufortfrancois
+  - thomassteiner
 date: 2018-11-05
-updated: 2021-02-01
+updated: 2021-03-30
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
   device or desktop.
 tags:
   - progressive-web-apps
+  - web-app-manifest
 feedback:
   - api
 ---
@@ -154,9 +156,7 @@ be made to launch full screen.
           app. The app runs in its own window, separate from the browser, and
           hides standard browser UI elements like the URL bar.
           <figure class="w-figure">
-            <img class="w-screenshot"
-                src="standalone-pwa-window.png"
-                alt="An example of a PWA window with standalone display.">
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="An example of a PWA window with standalone display.", width="800", height="196", class="w-screenshot" %}
           </figure>
         </td>
       </tr>
@@ -167,9 +167,7 @@ be made to launch full screen.
           user a minimal set of UI elements for controlling navigation (such
           as back and reload).
           <figure class="w-figure">
-            <img class="w-screenshot"
-                src="minimal-ui-pwa-window.png"
-                alt="An example of a PWA window with minimal-ui display.">
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/trPwjcMio7tBKGBNoT9u.png", alt="An example of a PWA window with minimal-ui display.", width="800", height="196", class="w-screenshot" %}
           </figure>
         </td>
       </tr>
@@ -180,6 +178,45 @@ be made to launch full screen.
     </tbody>
   </table>
 </div>
+
+#### `display_override` {: #display-override }
+
+Web apps can choose how they are displayed by setting a `display` mode in their manifest as
+[explained above](#display). Browsers are *not* required to support all display modes, but they
+*are* required to support the
+[spec-defined fallback chain](https://w3c.github.io/manifest/#dfn-fallback-display-mode)
+(`"fullscreen"` → `"standalone"` → `"minimal-ui"` → `"browser"`). If they don't support a given
+mode, they fall back to the next display mode in the chain. This inflexible behavior can be
+problematic in rare cases, for example, a developer cannot request `"minimal-ui"` without being
+forced back into the `"browser"` display mode when `"minimal-ui"` is not supported.
+Another problem is that the current behavior makes it impossible to introduce new display
+modes in a backward compatible way, since explorations like tabbed application mode don't have a
+natural place in the fallback chain.
+
+These problems are solved by the `display_override` property, which the browser considers *before*
+the `display` property. Its value is a sequence of strings that are considered in the listed order, and the
+first supported display mode is applied. If none are supported, the browser falls back to evaluating
+the `display` field.
+
+In the example below, the display mode fallback chain would be as follows.
+(The details of `"window-control-overlay"` are out-of-scope for this article.)
+
+1. `"window-control-overlay"` (First, look at `display_override`.)
+1. `"minimal-ui"`
+1. `"standalone"` (When `display_override` is exhausted, evaluate `display`.)
+1. `"minimal-ui"` (Finally, use the `display` fallback chain.)
+1. `"browser"`
+
+```json
+{
+  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display": "standalone",
+}
+```
+
+{% Aside %}
+  The browser will not consider `display_override` unless `display` is also present.
+{% endAside %}
 
 #### `scope` {: #scope }
 
@@ -214,9 +251,7 @@ the app's preview in task switchers. The `theme_color` should match the
 `meta` theme color specified in your document head.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-      src="theme_color-pwa-window.png"
-      alt="An example of a PWA window with custom theme_color.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196", class="w-screenshot" %}
 </figure>
 
 #### `shortcuts` {: #shortcuts }
@@ -238,9 +273,10 @@ property, and the `type` of image.
 In Chrome, the image must respond to certain criteria:
 
 * Width and height must be at least 320px and at most 3840px.
-* The maximum dimension can't be twice larger than the minimum dimension.
+* The maximum dimension can't be more than 2.3 times as long as the minimum
+  dimension.
 * Screenshots must have the same aspect ratio.
-* Only JPEG and PNG image formats are supported. 
+* Only JPEG and PNG image formats are supported.
 
 {% Aside 'gotchas' %}
 The `description` and `screenshots` properties are currently used only in Chrome
@@ -270,9 +306,7 @@ To verify your manifest is setup correctly, use the **Manifest** pane in the
 **Application** panel of Chrome DevTools.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="lh-manifest.png"
-       alt="The application panel in Chrome Devtools with the manifest tab selected.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="The application panel in Chrome Devtools with the manifest tab selected.", width="800", height="601", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 This pane provides a human-readable version of many of your manifest's
@@ -307,5 +341,7 @@ you can provide additional icons for pixel perfection.
 There are several additional properties that can be added to the web app
 manifest. Refer to the [MDN Web App Manifest documentation][mdn-manifest]
 for more information.
+You can learn more about `display_override` in the
+[explainer](https://github.com/WICG/display-override/blob/master/explainer.md).
 
 [mdn-manifest]: https://developer.mozilla.org/en-US/docs/Web/Manifest

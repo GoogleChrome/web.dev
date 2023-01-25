@@ -48,14 +48,13 @@ long task that occurs between FCP and TTI.
 For example, consider the following diagram of the browser's main thread during
 page load:
 
-[![A tasks timeline on the main thread](tbt-all-tasks.svg)](tbt-all-tasks.svg)
+{% Img src="image/admin/clHG8Yv239lXsGWD6Iu6.svg", alt="A tasks timeline on the main thread", width="800", height="156", linkTo=true %}
 
 The above timeline has five tasks, three of which are Long Tasks because their
 duration exceeds 50 ms. The next diagram shows the blocking time for each of the
 long tasks:
 
-[![A tasks timeline on the main thread showing blocking
-time](tbt-blocking-time.svg)](tbt-blocking-time.svg)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xKxwKagiz8RliuOI2Xtc.svg", alt="A tasks timeline on the main thread showing blocking time", width="800", height="156", linkTo=true %}
 
 So while the total time spent running tasks on the main thread is 560 ms, only
 345 ms of that time is considered blocking time.

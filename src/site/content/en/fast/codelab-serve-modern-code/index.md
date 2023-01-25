@@ -19,7 +19,7 @@ In this codelab, improve the performance of this simple application that allows
 users to rate random cats. Learn how to optimize the JavaScript bundle by
 minizming how much code is transpiled.
 
-![App screenshot](./app-screenshot.png)
+{% Img src="image/admin/E8nNmPiUnD9unvl0ydwT.png", alt="App screenshot", width="800", height="681" %}
 
 In the sample app,
 you can select a word or emoji to convey how much you like each cat.
@@ -40,25 +40,25 @@ optimizations:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-app', 'ol' %}
 
-<img class="w-screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
+{% Img src="image/admin/WOLgtkSsnLlAVqXXkvS2.png", alt="Original bundle size request", width="717", height="127", class="w-screenshot" %}
 
 Over 80 KB is used for this application! Time to find out if parts of the bundle
 aren't being used:
 
 {% Instruction 'devtools-command', 'ol' %}
 <!--lint disable code-block-style-->
-    <img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
+    {% Img src="image/admin/bUJOV2XobvxF0LrIvML4.png", alt="Command Menu", width="800", height="170", class="w-screenshot" %}
 
 1. Enter `Show Coverage` and hit `Enter` to display the **Coverage** tab.
 1. In the **Coverage** tab, click **Reload** to reload the
 application while capturing coverage.
 
-    <img class="w-screenshot" src="./record-with-code-coverage.png" alt="Reload app with code coverage">
+    {% Img src="image/admin/MVS59W0Ei307x4Ab3FvU.png", alt="Reload app with code coverage", width="800", height="363", class="w-screenshot" %}
 
 1. Take a look at how much code was used versus how much was loaded for
 the main bundle:
 
-    <img class="w-screenshot" src="./code-coverage.png" alt="Code coverage of bundle">
+    {% Img src="image/admin/YaXfH1OcPENdyMeBBrqK.png", alt="Code coverage of bundle", width="800", height="77", class="w-screenshot" %}
 <!--lint enable code-block-style-->
 Over half the bundle (44 KB) is not even utilized. This is because a lot of the
 code within consists of polyfills to ensure that the application works in older
@@ -206,7 +206,7 @@ of the editor.
 Babel logs a number of details to the console about the compilation process,
 including all the target environments that the code has been compiled for.
 
-<img class="w-screenshot" src="./debug-target-browsers.png" alt="Targeted browsers">
+{% Img src="image/admin/X6nauvGqKuyWoBekgCbw.png", alt="Targeted browsers", width="464", height="457", class="w-screenshot" %}
 
 Notice how discontinued browsers, such as Internet Explorer, are included in
 this list. This is a problem because unsupported browsers won't have newer
@@ -216,14 +216,14 @@ browser to access your site.
 
 Babel also logs a list of transform plugins used:
 
-<img class="w-screenshot" src="./plugins-list.png" alt="List of plugins used">
+{% Img src="image/admin/clNXHWSfeD2RKDkIrJo8.png", alt="List of plugins used", width="800", height="604", class="w-screenshot" %}
 
 That's a pretty long list! These are all the plugins that Babel needs to use to
 transform any ES2015+ syntax to older syntax for all the targeted browsers.
 
 However, Babel doesn't show any specific polyfills that are used:
 
-<img class="w-screenshot" src="./no-polyfills-added.png" alt="No polyfills added">
+{% Img src="image/admin/xPhc2usfwfIJkoK4EubY.png", alt="No polyfills added", width="800", height="38", class="w-screenshot" %}
 
 This is because the entire `@babel/polyfill` is being imported directly.
 
@@ -250,7 +250,7 @@ the target browsers, add a `useBuiltIns: 'entry'` to the configuration.
 
 Reload the application. You can now see all the specific polyfills included:
 
-<img class="w-screenshot" src="./entry-polyfills.gif" alt="List of polyfills imported">
+{% Img src="image/admin/VQHDI6qG94zbTiorG3aT.gif", alt="List of polyfills imported", width="800", height="465", class="w-screenshot" %}
 
 Although only needed polyfills for `"last 2 versions"` is now included, it is still a super long list! This is because
 polyfills needed for the target browsers for _every_ newer feature is still included. Change the value of the attribute to `usage`
@@ -282,11 +282,11 @@ import "@babel/polyfill";
 
 Now only the required polyfills needed for the application are included.
 
-<img class="w-screenshot" src="./usage-polyfills.png" alt="List of polyfills automatically included">
+{% Img src="image/admin/ir2qkYhxoJDWoQUhD8KD.png", alt="List of polyfills automatically included", width="800", height="114", class="w-screenshot" %}
 
 The application bundle size is reduced significantly.
 
-<img class="w-screenshot" src="./usage-polyfills-bundle-size.png" alt="Bundle size reduced to 30.1 KB">
+{% Img src="image/admin/6cIW1H9dYz38h3jp9QpK.png", alt="Bundle size reduced to 30.1 KB", width="796", height="135", class="w-screenshot" %}
 
 ## Narrowing the list of supported browsers
 
@@ -312,7 +312,7 @@ to the following:
 
 Take a look at the details for the fetched bundle.
 
-<img class="w-screenshot" src="./network-use-browser-share.png" alt="Bundle size of 30.0 KB">
+{% Img src="image/admin/LQrCZtEqujASX2KBR9ku.png", alt="Bundle size of 30.0 KB", width="793", height="131", class="w-screenshot" %}
 
 Since the application is so small, there really isn't much of a difference with
 these changes. However, using a browser market share percentage (such as
@@ -549,7 +549,7 @@ Add the following to `src/index.js` at the end of the file:
 Now load the application in a browser that supports modules, such as the latest
 version of Chrome.
 
-<img class="w-screenshot" src="./module-network-request.png" alt="5.2 KB module fetched over network for newer browsers">
+{% Img src="image/admin/7DHv0rPqfFE14Qp7OtqJ.png", alt="5.2 KB module fetched over network for newer browsers", width="800", height="100", class="w-screenshot" %}
 
 Only the module is fetched, with a much smaller bundle size due to it being
 largely untranspiled! The other script element is completely ignored by the
@@ -560,7 +560,7 @@ script with all the needed polyfills and transforms are be fetched. Here is a
 screenshot for all the requests made on an older version of Chrome (version
 38).
 
-<img class="w-screenshot" src="./legacy-script.png" alt="30 KB script fetched for older browsers">
+{% Img src="image/admin/xapbFvWftJjVdsekOAFJ.png", alt="30 KB script fetched for older browsers", width="800", height="324", class="w-screenshot" %}
 
 ## Conclusion
 

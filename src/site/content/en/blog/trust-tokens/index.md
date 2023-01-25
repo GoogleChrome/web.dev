@@ -5,8 +5,8 @@ authors:
   - samdutton
 date: 2020-06-22
 updated: 2021-02-01
-hero: images/hero.jpg
-thumbnail: images/thumbnail.jpg
+hero: image/admin/okxi2ttRG3h1Z4F3cylI.jpg
+thumbnail: image/admin/cTo0l2opcfNxg1TEjxSg.jpg
 alt: Black and white photograph of hand holding token
 tags:
   - blog
@@ -27,26 +27,24 @@ in other contexts to evaluate the user's authenticity.
 The Trust Token API enables trust of a user in one context to be conveyed to another context without
 identifying the user or linking the two identities.
 
-You can try out Trust Tokens with our [demo](https://trust-token-demo.glitch.me) and, from Chrome 
-89, [inspect Trust Tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token) 
+You can try out Trust Tokens with our [demo](https://trust-token-demo.glitch.me) and, from Chrome
+89, [inspect Trust Tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token)
 in the Chrome DevTools **Network** and **Application** tabs.
 
 <figure class="w-figure">
-  <img src="./images/devtools-network-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome 
-  DevTools Network tab.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="Screenshot showing Trust Tokens in the Chrome DevTools Network tab.", width="800", height="584" %}
   <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Network</b> tab.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="./images/devtools-application-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome 
-  DevTools Application tab.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Screenshot showing Trust Tokens in the Chrome DevTools Application tab.", width="800", height="584" %}
   <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Application</b> tab.</figcaption>
 </figure>
 
 {% Aside %}
 The Privacy Sandbox is a series of proposals to satisfy third-party use cases
 without third-party cookies or other tracking mechanisms. See
-[Digging into the Privacy Sandbox](http://web.dev/digging-into-the-privacy-sandbox)
+[Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)
 for an overview of all the proposals.
 
 **This proposal needs your feedback!** If you have comments, please [create an
@@ -301,7 +299,7 @@ Trust Token [explainer repository](https://github.com/WICG/trust-token-api).
 ## Find out more
 
 -  [Trust Tokens demo](https://trust-token-demo.glitch.me)
--  [Digging in to the Privacy Sandbox](https://web.dev/digging-into-the-privacy-sandbox/)
+-  [Digging in to the Privacy Sandbox](/digging-into-the-privacy-sandbox/)
 -  [Trust Token API Explainer](https://github.com/WICG/trust-token-api)
 -  [Chromium Projects: Trust Token API](https://sites.google.com/a/chromium.org/dev/updates/trust-token)
 -  [Intent to Implement: Trust Token API](https://groups.google.com/a/chromium.org/g/blink-dev/c/X9sF2uLe9rA/m/1xV5KEn2DgAJ)

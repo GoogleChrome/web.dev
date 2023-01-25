@@ -1,0 +1,18 @@
+title:
+  en: Animations
+
+description:
+  en: Techniques for developing high-performance animations.
+
+overview:
+  en: A curated collection of high-quality resources that will help you understand why some animations are slow, and how to build and debug your own animations with CSS or JavaScript.
+
+topics:
+  how_browsers_render_animations:
+    en: How browsers render animations
+
+  build_animations_with_css:
+    en: Build animations with CSS
+
+  build_animations_with_javascript:
+    en: Build animations with JavaScript

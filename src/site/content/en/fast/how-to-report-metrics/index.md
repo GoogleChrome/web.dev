@@ -5,7 +5,7 @@ subhead: Understand why performance matters when it comes to conversion.
 authors:
   - martinschierle
 date: 2019-05-05
-hero: hero.jpg
+hero: image/admin/1bX6ydHTmi5UrEFx3PDc.jpg
 alt: Image of laptop with mouse pointing to checkout button on a web page
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
@@ -53,7 +53,7 @@ to map performance metrics to user engagement, conversions and transaction value
 For example, a custom report to do so looks like this in Google Analytics:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./speed_report.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
+  {% Img src="image/admin/YI31t9fE82uEhrrYKTVg.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="430", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     Fig 1: Custom report in Google Analytics to analyze the impact of speed on conversions and engagement.
   </figcaption>
@@ -62,7 +62,7 @@ For example, a custom report to do so looks like this in Google Analytics:
 {% Aside 'caution' %}
   **Metrics can be deceiving.**
   Unfortunately metrics can sometimes be misleading with respect to performance.
-  Keep reading for specifics.   
+  Keep reading for specifics.
 {% endAside %}
 
 ## Increasing bounce rate
@@ -73,7 +73,7 @@ Often it is assumed that bounce rate will drop when page load speed
 increases. While this normally does hold true, measurements sometimes show the
 opposite. This is because analytics can only measure a bounce after the
 analytics library is loaded. A faster page load means analytics code also loads
-faster, so analytics may see more bounces even if there aren't more happening.  
+faster, so analytics may see more bounces even if there aren't more happening.
 
 ### Solution
 
@@ -88,7 +88,7 @@ Relative conversions may sometimes seem to drop for faster sites.
 This is because faster pages reach a bigger audience who might be less engaged
 or committed. While incremental traffic and conversions increase with faster
 pages, relative conversions (the ratio of conversions to page views or visitors)
-might still drop.  
+might still drop.
 
 ### Solution
 
@@ -99,7 +99,7 @@ even calculate Cost Per Sales (conversions divided with investment level) or ROI
 
 ### Problem
 
-Page engagement may seem to drop for a faster page.  
+Page engagement may seem to drop for a faster page.
 
 ### Solution
 
@@ -117,7 +117,7 @@ _[Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everythin
 Similar to a chain being just as strong as the weakest link, the performance of
 a funnel is only as good as its slowest load. A single slow load may be enough
 to lose the user. Therefore averages and medians are more likely to hide the
-real performance issues, than to reveal them.  
+real performance issues, than to reveal them.
 
 ### Solution
 
@@ -167,7 +167,7 @@ Some ways to handle third party content with respect to performance:
     and widgets. This can easily be done via [Ghostery Extension](https://chrome.google.com/webstore/detail/ghostery-%E2%80%93-privacy-ad-blo/mlomiejdfkolichcflejclcbmpeaniij?hl=en) or tools like [WhatRuns](https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=en):
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./ghostery.png" alt="A Ghostery report showing all loaded trackers.">
+  {% Img src="image/admin/w2xb4mUJ7kDpt254fq0k.png", alt="A Ghostery report showing all loaded trackers.", width="800", height="710", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     A Ghostery report showing all loaded trackers
   </figcaption>
@@ -180,7 +180,7 @@ Learn more in
 
 Unfortunately performance is often seen as a one-off optimization task, and then
 regresses over time as stakeholders raise new feature requests or insist on
-adding new trackers and widgets.  
+adding new trackers and widgets.
 
 Performance must be a continuous goal to improve acquisition, discovery, and
 conversion rates as well as safeguarding the reputation of your brand. This can

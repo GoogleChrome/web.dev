@@ -5,9 +5,9 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
-updated: 2021-01-15
+updated: 2021-02-26
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
-hero: hero.jpg
+hero: image/admin/pErOjllBUXhnj68qOhfr.jpg
 alt: A person holding a phone.
 tags:
   - blog
@@ -54,10 +54,10 @@ Here is an example of a simple sign-in form that demonstrates all of the best pr
 between page loads or website deployments.
 * Put sign-in [in its own &lt;form&gt; element](#single-form).
 * [Ensure successful form submission](#submission).
-* Use [`autocomplete="new-password"`](#new-password) for the password input
-  in a sign-up form, and for the new password in a reset-password form.
-* Use [`autocomplete="current-password"`](#current-password) for a sign-in
-  password input.
+* Use [`autocomplete="new-password"`](#new-password) and [`id="new-password"`](#new-password) for
+the password input in a sign-up form, and for the new password in a reset-password form.
+* Use [`autocomplete="current-password"`](#current-password) and [`id="current-password"`](#current-password)
+for a sign-in password input.
 * Provide [Show password](#show-password) functionality.
 * [Use `aria-label` and `aria-describedby`](#accessible-password-inputs) for
   password inputs.
@@ -66,7 +66,7 @@ between page loads or website deployments.
   buttons](#keyboard-obstruction).
 * Ensure forms are usable on mobile: use [legible text](#size-text-correctly),
   and make sure inputs and buttons are [large enough to work as touch targets](#tap-targets).
-* [Maintain branding and style](#branding) on your sign-up and sign-in pages.
+* [Maintain branding and style](#general-guidelines) on your sign-up and sign-in pages.
 * [Test in the field as well as the lab](#analytics): build page analytics,
   interaction analytics, and user-centric performance measurement into your
   sign-up and sign-in flow.
@@ -84,7 +84,7 @@ third-party identity services as well as its content.
 
 There are also two relatively new APIs not covered in this article which can
 help you build a better sign-in experience:
-*  [**Web OTP**](https://web.dev/web-otp/): to deliver one-time passcodes or
+*  [**WebOTP**](/web-otp/): to deliver one-time passcodes or
 PIN numbers via SMS to mobile phones. This can allow users to select a phone
 number as an identifier (no need to enter an email address!) and also enables
 two-step verification for sign-in and one-time codes for payment confirmation.
@@ -147,7 +147,7 @@ enables quicker scanning by users. You get full width labels and inputs, and you
 don't need to adjust label and input width to fit the label text.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./label-position.png" alt="Screenshot showing form input label position on mobile: next to input and above input." width="500">
+  {% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="Screenshot showing form input label position on mobile: next to input and above input.", width="500", height="253", class="w-screenshot" %}
   <figcaption class="w-figcaption">Label and input width is limited when both are on the same line.</figcaption>
 </figure>
 
@@ -219,7 +219,7 @@ it clear where to start and, on desktop at least, means users don't have to
 select the input to start typing.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./autofocus.png" alt="Screenshot showing form input with autofocus." width="500">
+  {% Img src="image/admin/27x2icJSXCMdfWOjVAdR.png", alt="Screenshot showing form input with autofocus.", width="500", height="451", class="w-screenshot" %}
   <figcaption class="w-figcaption">Autofocus provides clear visual focus on desktop.</figcaption>
 </figure>
 
@@ -235,7 +235,7 @@ text they've entered—and don't forget to add a **Forgot password** link. See
 [Enable password display](#password-display).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="300">
+  {% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="Google sign-in form showing Show password icon.", width="300", height="107", class="w-screenshot" %}
   <figcaption class="w-figcaption">Password input from the Google sign-in form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
@@ -264,14 +264,14 @@ worse, partially obstruct the **Sign in** button. Users may give up before
 realizing what has happened.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./keyboard-not-ok.png" alt="Two screenshots of a sign-in form on an Android phone: one showing how the Submit button is obscured by the phone keyboard." width="400">
+  {% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Two screenshots of a sign-in form on an Android phone: one showing how the Submit button is obscured by the phone keyboard.", width="400", height="360", class="w-screenshot" %}
   <figcaption class="w-figcaption">The <b>Sign in</b> button: now you see it, now you don't.</figcaption>
 </figure>
 
 Where possible, avoid this by displaying only the email/phone and password inputs and **Sign in** button at the top of your sign-in page. Put other content below.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./keyboard-ok.png" alt="Screenshot of a sign-in form on an Android phone: the Sign in button is not obscured by the phone keyboard." width="200">
+  {% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Screenshot of a sign-in form on an Android phone: the Sign in button is not obscured by the phone keyboard.", width="200", height="342", class="w-screenshot" %}
   <figcaption class="w-figcaption">The keyboard doesn't obstruct the <b>Sign in</b> button.</figcaption>
 </figure>
 
@@ -284,7 +284,7 @@ and browsers.
 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./iphone-keyboard.png" alt="Screenshots of a sign-in form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Sign in button is obscured by the phone keyboard, but not on iPhone 11">
+  {% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="Screenshots of a sign-in form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Sign in button is obscured by the phone keyboard, but not on iPhone 11", width="800", height="522", class="w-screenshot" %}
   <figcaption class="w-figcaption">The <b>Sign in</b> button: obscured on iPhone 7 and 8, but not on iPhone 11.</figcaption>
 </figure>
 
@@ -295,7 +295,7 @@ email/phone and password on two pages. This approach also simplifies the
 experience: the user is only tasked with one thing at a time.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./amazon-signin-mobile.png" alt="Screenshot of a sign-in form on the Amazon website: email/phone and password on two separate 'pages'." width="400">
+  {% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Screenshot of a sign-in form on the Amazon website: email/phone and password on two separate 'pages'.", width="400", height="385", class="w-screenshot" %}
   <figcaption class="w-figcaption">Two-stage sign-in: email or phone, then password.</figcaption>
 </figure>
 
@@ -328,32 +328,41 @@ For email inputs use `autocomplete="username"`, since `username` is recognized
 by password managers in modern browsers—even though you should use `type="email"`
 and you may want to use `id="email"` and `name="email"`.
 
-For password inputs, use the appropriate `autocomplete` value to help browsers
+For password inputs, use the appropriate `autocomplete` and `id` values to help browsers
 differentiate between new and current passwords.
 
-### Use `autocomplete="new-password"` for a new password {: #new-password }
+### Use `autocomplete="new-password"` and `id="new-password"` for a new password {: #new-password }
 
-* Use `autocomplete="new-password"` for the password input in a sign-up form, or the new
-  password in a change-password form.
+* Use `autocomplete="new-password"` and `id="new-password"` for the password input in a sign-up
+form, or the new password in a change-password form.
 
-### Use `autocomplete="current-password"` for an existing password {: #current-password }
+### Use `autocomplete="current-password"` and `id="current-password"` for an existing password {: #current-password }
 
-* Use `autocomplete="current-password"` for the password input in a sign-in form, or the
-  input for the user's old password in a change-password form. This tells the
-  browser that you want it to use the current password that it has stored for
-  the site.
+* Use `autocomplete="current-password"` and `id="current-password"` for the password input in a
+  sign-in form, or the input for the user's old password in a change-password form. This tells the
+  browser that you want it to use the current password that it has stored for the site.
 
 For a sign-up form:
 
 ```html
-<input type="password" autocomplete="new-password" …>
+<input type="password" autocomplete="new-password" id="new-password" …>
 ```
 
 For sign-in:
 
 ```html
-<input type="password" autocomplete="current-password" …>
+<input type="password" autocomplete="current-password" id="current-password" …>
 ```
+
+{% Aside %}
+Browsers such as Chrome can use the browser's password manager to autofill fields in the sign-in
+process for returning users. For these features to work, the browser needs to be able to
+distinguish when a user changes their password.
+
+Specifically the form for changing the user's password should be cleared or hidden from the page
+after the new password is set up. If the form for changing the user's password stays filled out on
+the page after the password change has occurred, the browser may not be able to record the update.
+{% endAside %}
 
 ### Support password managers {: #password-managers }
 
@@ -363,26 +372,24 @@ for example, the password manager is displayed, and then biometric
 authentication (fingerprint or facial recognition) is used if available.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./safari-signin-desktop.png" alt="Screenshots of three stages of sign-in process in Safari on desktop: password manager, biometric authentication, autofill.">
+  {% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="Screenshots of three stages of sign-in process in Safari on desktop: password manager, biometric authentication, autofill.", width="800", height="234", class="w-screenshot" %}
   <figcaption class="w-figcaption">Sign-in with autocomplete—no text entry required!</figcaption>
 </figure>
 
 Chrome on desktop displays email suggestions, shows the password manager, and autofills the password.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./chrome-signin-desktop.png" alt="Screenshots of four stages of sign-in process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.">
+  {% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="Screenshots of four stages of sign-in process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.", width="800", height="232", class="w-screenshot" %}
   <figcaption class="w-figcaption">Autocomplete sign-in flow in Chrome 84.</figcaption>
 </figure>
 
-{% Aside 'caution' %}
+
 Browser password and autofill systems are not simple. The algorithms for
 guessing, storing and displaying values are not standardized, and vary from
 platform to platform. For example, as pointed out by [Hidde de
 Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form):
-"Firefox's password manager complements [its
-heuristics](https://dxr.mozilla.org/firefox/source/toolkit/components/passwordmgr/src/nsLoginManager.js#626)
-with a [recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)."
-{% endAside %}
+"Firefox's password manager complements its heuristics with a
+[recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)."
 
 [Autofill: What web devs should know, but
 don't](https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont)
@@ -390,6 +397,10 @@ has a lot more information about using `name` and `autocomplete`. The [HTML
 spec](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#inappropriate-for-the-control)
 lists all 59 possible values.
 
+{% Aside %}
+You can help password managers by using different `name` and `id` values in sign-up and sign-in
+forms, for the `form` element itself, as well as any `input`, `select` and `textarea` elements.
+{% endAside %}
 
 ### Enable the browser to suggest a strong password {: #password-suggestions }
 
@@ -399,7 +410,7 @@ suggest a strong password.
 Here's how Safari does it on desktop.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./safari-password-suggestion.png" alt="Screenshot of Firefox password manager on desktop.">
+  {% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="Screenshot of Firefox password manager on desktop.", width="800", height="229", class="w-screenshot" %}
   <figcaption class="w-figcaption">Password suggestion flow in Safari.</figcaption>
 </figure>
 
@@ -427,7 +438,7 @@ Modern browsers automatically prompt and set focus for missing data.
 No JavaScript required!
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./missing-field-firefox-android.png" alt="Screenshot of desktop Firefox and Chrome for Android showing 'Please fill out this field' prompt for missing data." width="600">
+  {% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="Screenshot of desktop Firefox and Chrome for Android showing 'Please fill out this field' prompt for missing data.", width="600", height="392", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Prompt and focus for missing data on Firefox for desktop (version 76)
     and Chrome for Android (version 83).
@@ -448,8 +459,7 @@ The default size and padding for inputs and buttons is too small on desktop and
 even worse on mobile.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./unstyled-form.png"
-       alt="Screenshot of unstyled form in Chrome for desktop and Chrome for Android.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="Screenshot of unstyled form in Chrome for desktop and Chrome for Android.", width="800", height="434", class="w-screenshot" %}
 </figure>
 
 
@@ -463,7 +473,7 @@ mobile, and around 10 px on desktop. Try this out with a real mobile device and
 a real finger or thumb. You should comfortably be able to tap each of your
 inputs and buttons.
 
-The [Tap targets are not sized appropriately](https://web.dev/tap-targets/)
+The [Tap targets are not sized appropriately](/tap-targets/)
 Lighthouse audit can help you automate the process of detecting input elements
 that are too small.
 
@@ -481,7 +491,7 @@ As with size and padding, the default browser font size for input elements and
 buttons is too small, particularly on mobile.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./unstyled-form-text.png" alt="Screenshot of unstyled form in Chrome on desktop and on Android.">
+  {% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="Screenshot of unstyled form in Chrome on desktop and on Android.", width="800", height="494", class="w-screenshot" %}
   <figcaption class="w-figcaption">Default styling on desktop and mobile: input text is too small to be legible for many users.</figcaption>
 </figure>
 
@@ -498,7 +508,7 @@ queries](https://developers.google.com/web/fundamentals/design-and-ux/responsive
 `20px` is about right on mobile—but you should test this out with friends or
 colleagues who have low vision.
 
-The [Document doesn't use legible font sizes](https://web.dev/font-size/)
+The [Document doesn't use legible font sizes](/font-size/)
 Lighthouse audit can help you automate the process of detecting text that's too
 small.
 
@@ -518,7 +528,7 @@ As well as padding, add a border: on a white background, a good general rule is
 to use `#ccc` or darker.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./styled-signin-form.png" alt="Screenshot of styled form in Chrome on Android." width="250">
+  {% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Screenshot of styled form in Chrome on Android.", width="250", height="525", class="w-screenshot" %}
   <figcaption class="w-figcaption">Legible text, visible input borders, adequate padding and margins.</figcaption>
 </figure>
 
@@ -530,7 +540,7 @@ Browsers have built-in features to do basic form validation for inputs with a
 and set focus on the problematic input.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./invalid-email.png" alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value." width="300">
+  {% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value.", width="300", height="290" %}
   <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
 </figure>
 
@@ -620,7 +630,7 @@ function togglePassword() {
 Here's the end result:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./show-password.png" alt="Screenshots of sign-in form with Show password text 'button', in Safari on Mac and on iPhone 7." width="800" class="w-screenshot">
+  {% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Screenshots of sign-in form with Show password text 'button', in Safari on Mac and on iPhone 7.", width="800", height="468", class="w-screenshot" %}
   <figcaption class="w-figcaption">Sign-in form with <strong>Show password</strong> text 'button', in Safari on Mac and iPhone 7.</figcaption>
 </figure>
 
@@ -651,7 +661,7 @@ inadvertently reveal passwords.
 You can see both ARIA features in action in the following Glitch:
 
 {% Glitch {
-  id: 'signin-form',
+  id: 'sign-in-form',
   path: 'index.html',
   height: 480
 } %}
@@ -669,7 +679,7 @@ Client-side validation helps users enter data and can avoid unnecessary server
 load, but you must always validate and sanitize data on your backend.
 {% endAside %}
 
-[Step 5](https://glitch.com/edit/#!/signin-form-codelab-5) of the sign-in form
+[Step 5](https://glitch.com/edit/#!/sign-in-form-codelab-5) of the sign-in form
 codelab uses the [Constraint Validation
 API](https://html.spec.whatwg.org/multipage/forms.html#constraints) (which is
 [widely supported](https://caniuse.com/#feat=constraint-validation)) to add
@@ -738,6 +748,6 @@ Well designed UI and UX can reduce sign-in form abandonment:
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
 * [Streamlining the Sign-in Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
-* [Verify phone numbers on the web with the Web OTP API](https://web.dev/web-otp/)
+* [Verify phone numbers on the web with the WebOTP API](/web-otp/)
 
 Photo by [Meghan Schiereck](https://unsplash.com/photos/_XFObcM_7KU) on [Unsplash](https://unsplash.com).

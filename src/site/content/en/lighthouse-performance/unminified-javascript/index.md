@@ -16,7 +16,7 @@ along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/w
 when these files are minified:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="unminified-javascript.png" alt="A screenshot of the Lighthouse Minify JavaScript audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aHumzRfDrBcuplUDCnvf.png", alt="A screenshot of the Lighthouse Minify JavaScript audit", width="800", height="212", class="w-screenshot" %}
 </figure>
 
 ## How to minify your JavaScript files

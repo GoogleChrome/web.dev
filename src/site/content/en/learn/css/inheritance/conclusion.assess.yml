@@ -1,0 +1,32 @@
+setLeader: Test your knowledge of inheritance
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,2,3,4"
+    stem: Which of the following properties are inheritable?
+    options:
+      - content: "`animation`"
+        rationale: "Animations do not pass down to children."
+      - content: "`font-size`"
+        rationale: "🎉"
+      - content: "`color`"
+        rationale: "🎉"
+      - content: "`text-align`"
+        rationale: "🎉"
+      - content: "`line-height`"
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: |
+      Which value behaves like `inherit` unless there is nothing to inherit and
+      then behaves like `initial`?
+    options:
+      - content: "`reset`"
+        rationale: "not a valid value, try again!"
+      - content: "`unset`"
+        rationale: "🎉"
+      - content: "`superset`"
+        rationale: "not a valid value, try again!"

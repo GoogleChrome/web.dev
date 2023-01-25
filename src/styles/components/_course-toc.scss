@@ -1,0 +1,92 @@
+.course-toc {
+  --flow-space: #{px-to-rem(12px)};
+
+  max-width: 100%;
+
+  &[data-type='inner'] {
+    width: 80ch;
+  }
+
+  // These styles are unique to the toc that's pinned to the side of the screen.
+  &[data-type='side'] {
+    // Since flex box elements default to stretch, all the elements are the same
+    // height, which can't be scrolled against. Adding align-self: flex-start to
+    // the sticky element set the height to auto, which allowed scrolling, and
+    // fixed it.
+    // https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox
+    align-self: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
+    order: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain; // sass-lint:disable-line no-misspelled-properties
+    padding: 0 get-size(300);
+    position: sticky;
+    // The sticky top position needs to equal the height of the app-bar on
+    // desktop + the top margin of the content element.
+    top: calc(var(--app-bar-height) + var(--course-content-margin));
+    width: 240px;
+    max-height: calc(100vh - var(--app-bar-height) - (var(--course-content-margin) * 2));
+  }
+
+  > summary {
+    list-style: none;
+    transition: background-color $TRANSITION_SPEED;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 3px;
+    padding-left: 4px;
+    background-color: $GREY_200;
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  > summary:hover {
+    background-color: $GREY_300;
+    cursor: pointer;
+  }
+
+  &__heading {
+    font-size: px-to-rem(14px);
+  }
+}
+
+
+.toc__icon {
+  margin-left: get-size(200);
+
+  > svg {
+    display: flex;
+    transform: rotate(90deg);
+  }
+}
+
+.toc[open] .toc__icon > svg {
+  transform: rotate(270deg);
+}
+
+.toc__list {
+  list-style: none;
+}
+
+.toc__list .toc__list {
+  border-left: 1px solid $GREY_300;
+  padding-left: get-size(300);
+}
+
+.toc__listitem {
+  font-size: px-to-rem(14px);
+}
+
+.toc__anchor {
+  display: block;
+  color: $GREY_700;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

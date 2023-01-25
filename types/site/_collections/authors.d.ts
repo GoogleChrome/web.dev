@@ -18,12 +18,20 @@ declare global {
   export interface AuthorsItem extends AuthorsDataItem {
     data: {
       alt?: string;
+      /**
+       * When the first post was created.
+       */
+      date?: Date;
       hero?: string;
       subhead: string;
       title: string;
+      /**
+       * When the last post was last created.
+       */
+      updated?: Date;
     };
     description: string;
-    elements: TODO[];
+    elements: EleventyCollectionItem[];
     href: string;
     key: string;
     title: string;

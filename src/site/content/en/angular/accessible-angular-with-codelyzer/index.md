@@ -3,7 +3,7 @@ layout: post
 title: "Audit your Angular app's accessibility with codelyzer"
 subhead: |
   Want to make your Angular site accessible for everyone? This is the right place!
-hero: accessible.jpg
+hero: image/admin/NxNmK1G1YjhB7tU6yVQa.jpg
 alt: Gondolas.
 date: 2019-07-03
 description: |
@@ -56,13 +56,13 @@ TSLint works with all popular text editors and IDEs. To use it with VSCode, inst
 With codelyzer's accessibility checks set up, you get a popup showing accessibility errors in TypeScript files or inline templates as you code:
 
 <figure class="w-figure">
-  <img src="./editor-template.png" alt="A screenshot of a codelyzer popup in a text editor.">
+  {% Img src="image/admin/XArrTmBXfijqQ8AteI76.png", alt="A screenshot of a codelyzer popup in a text editor.", width="800", height="433" %}
   <figcaption class="w-figcaption">A codelyzer popup showing a form element labeling error.</figcaption>
 </figure>
 
 To perform linting over the entire project (including external templates), use the `ng lint` command:
 
-![Linting with Angular CLI](ng-lint.png "Linting with Angular CLI")
+{% Img src="image/admin/sZdIj5CNklqppTk0UCf3.png", alt="Linting with Angular CLI", width="800", height="342" %}
 
 ## Supplementing codelyzer
 

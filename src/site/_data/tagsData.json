@@ -142,6 +142,10 @@
   "metrics": {
     "title": "Metrics"
   },
+  "mini-apps": {
+    "title": "Mini apps",
+    "description": "Apps built with Web technologies but not running in the browser."
+  },
   "mobile": {
     "title": "Mobile"
   },
@@ -231,6 +235,9 @@
   },
   "webassembly": {
     "title": "WebAssembly"
+  },
+  "web-app-manifest": {
+    "title": "Web App Manifest"
   },
   "web-bundles": {
     "title": "Web Bundles"

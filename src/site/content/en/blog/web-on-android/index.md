@@ -6,7 +6,7 @@ authors:
   - andreban
 date: 2020-07-30
 updated: 2020-08-05
-hero: hero.svg
+hero: image/admin/874Rka3L44UJd5zLIyR5.svg
 alt: Android robot
 description: |
   Learn how different components can be used to render web content inside Android apps.
@@ -42,7 +42,7 @@ lacks the security, features, and capabilities of the web platform.
 
 ### The in-app browser challenge
 
-Over time, more and more developers have built brower experiences 
+Over time, more and more developers have built browser experiences
 incorporating third-party content into their Android application, with the goal
 of creating a more seamless experience for their users when navigating to
 third-party websites. Those experiences became known
@@ -51,14 +51,14 @@ as in-app browsers.
 WebView has extensive support for the modern web tech stack and supports many modern web APIs, like
 WebGL. But WebView is primarily a web UI toolkit. It
 [is not meant to - and does not - support all features of the web platform][1]. When an API already
-has an OS-level alternative, like Web Bluetoooth, or it requires browser UI to be implemented, like
+has an OS-level alternative, like Web Bluetooth, or it requires browser UI to be implemented, like
 push notifications, it may not be supported. As the web platform evolves and adds more features
 that were only available to Android apps, this gap will become even larger. As app developers don't
 control which features are used when opening third-party content, it makes WebView a poor choice
 for in-app browsers or opening Progressive Web Apps. Even if WebView implemented support for all
 web platform features, developers would still need to write code and implement their own UI for
 functionality like permissions or push notifications, making it hard to achieve consistency for
-users. 
+users.
 
 Another option available to developers is embedding a browser engine in their application. Besides
 leading to increased application size, this approach is both complex and time-consuming.
@@ -129,7 +129,7 @@ doesn't use more advanced features and capabilities available on the modern web 
 Notifications, Web Bluetooth and others. It is not recommended when opening content that has been
 designed for the modern web platform, as it may not be displayed in the way the developer intended.
 WebView is not recommended for creating in-app browsers. On the other hand displaying first-party
-web content is an area where WebViews really shine. 
+web content is an area where WebViews really shine.
 
 Trusted Web Activity should be used when the developers want to render their own Progressive Web
 App in fullscreen inside their Android application. It can be used as the only activity in the app
@@ -141,8 +141,8 @@ platform, also known as in-app browsers.
 [1]: https://research.google/pubs/pub46739/
 [2]: https://android-developers.googleblog.com/2015/09/chrome-custom-tabs-smooth-transition.html
 [3]: https://developer.android.com/reference/androidx/browser/customtabs/package-summary
-[4]: https://web.dev/progressive-web-apps/
+[4]: /progressive-web-apps/
 [5]: https://developers.google.com/web/android/trusted-web-activity/
-[6]: https://web.dev/using-a-pwa-in-your-android-app/
+[6]: /using-a-pwa-in-your-android-app/
 [7]: https://developers.google.com/digital-asset-links
-[8]: https://web.dev/using-a-pwa-in-your-android-app/#quality-criteria
+[8]: /using-a-pwa-in-your-android-app/#quality-criteria

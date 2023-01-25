@@ -6,8 +6,8 @@ authors:
 date: 2019-12-16
 description: |
   Read about the latest developments in speed tooling including new performance metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX), and insights from Web Almanac analysis of the web ecosystem.
-hero: hero.jpg
-thumbnail: thumbnail.png
+hero: image/admin/lWKSX0b7pvSUX1BDd3IH.jpg
+thumbnail: image/admin/NhCeOuBEiIGJHYIS9TxB.png
 alt: Chrome User Experience logo, PageSpeed Insights logo, and a metrics chart.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -62,14 +62,14 @@ main thread for more than 50 milliseconds. Any millisecond over that is counted
 towards that task's blocking time.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./tbt.png" alt="A diagram representing a 150 millisecond task which has 100 miliseconds of blocking time.">
+  {% Img src="image/admin/73CEd4i55qCVQKdOb6iK.png", alt="A diagram representing a 150 millisecond task which has 100 miliseconds of blocking time.", width="633", height="292", class="w-screenshot" %}
 </figure>
 
 The Total Blocking Time for a page is the sum of the blocking times of all long
 tasks that occured between FCP and TTI.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./tbt2.png" alt="A diagram representing a five tasks with 60 miliseconds of total blocking time out of 270 milliseconds of main thread time.">
+  {% Img src="image/admin/OGlrzhJ7ViNsywtZmUAh.png", alt="A diagram representing a five tasks with 60 miliseconds of total blocking time out of 270 milliseconds of main thread time.", width="800", height="236", class="w-screenshot" %}
 </figure>
 
 While Time to Interactive does a good job of identifying when the main thread
@@ -110,12 +110,7 @@ and include the three new metrics—LCP, TBT, and CLS—as they better capture w
 a page feels usable.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./performance-metrics.png"
-       alt="In Lighthouse v6 First Contentful Paint, Speed Index, and Largest
-            Contentful Paint are the main load performance metrics; Time To Interactive,
-            First Input Delay, Max Potential First Input Delay, and Total Blocking Time are
-            the main interactivity metrics; And Cumulative Layout Shift is the main
-            predictability metric.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wB1bqc1tymL2uPuDgqpP.png", alt="In Lighthouse v6 First Contentful Paint, Speed Index, and Largest Contentful Paint are the main load performance metrics; Time To Interactive, First Input Delay, Max Potential First Input Delay, and Total Blocking Time are the main interactivity metrics; And Cumulative Layout Shift is the main predictability metric.", width="800", height="375", class="w-screenshot" %}
 </figure>
 
 Check out [Lighthouse performance scoring](/performance-scoring/) and the new
@@ -134,8 +129,7 @@ use to label a website "slow", "moderate", or "fast" in field performance.
 middle group was not related to a statistical average. {% endAside %}
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./crux-data.png" alt="Two bar charts showing
-  the distribution of slow, fast, and moderate speed for FCP and FID.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jvGzonBGrlqZD2LtzaPB.png", alt="Two bar charts showing the distribution of slow, fast, and moderate speed for FCP and FID.", width="748", height="200", class="w-screenshot" %}
 </figure>
 
 In order to get an overall assessment for a site, [PageSpeed Insights
@@ -176,8 +170,7 @@ redirected to a new URL, you're prompted to rerun the report on the landing URL
 for a more complete picture of your actual performance.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./psi-reanalyze.png" alt="PSI user interface
-  showing the URL redirect and the 'Reanalyze' button">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K299AL6Ni7dO5W4ksqXF.png", alt="PSI user interface showing the URL redirect and the 'Reanalyze' button", width="800", height="223", class="w-screenshot" %}
 </figure>
 
 ## CrUX in the new Search Console Speed report
@@ -191,15 +184,13 @@ Speed report automatically assigns groups of similar URLs into "Fast",
 for specific issues.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./search-console-speed-report.png" alt="Search
-  Console Speed report.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ny8QAjPaET6sIUX4z3Pz.png", alt="Search Console Speed report.", width="800", height="801", class="w-screenshot" %}
 </figure>
 
 ## Web Almanac
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./web-almanac-at-cds-2019.png" alt="Dion Almaer
-  presenting Web Almanac at CDS 2019.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lVldn64qc3gc5UDHeMBo.png", alt="Dion Almaer presenting Web Almanac at CDS 2019.", width="800", height="450", class="w-screenshot" %}
 </figure>
 
 In the opening keynote we announced the launch of the [Web

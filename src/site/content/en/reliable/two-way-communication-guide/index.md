@@ -1,12 +1,12 @@
 ---
-layout: post 
-title: "Two-way communication with service workers" 
+layout: post
+title: "Two-way communication with service workers"
 authors:
   - demianrenzulli
-  - andrewguan 
+  - andrewguan
 date: 2020-12-08
-description: | 
-    How establish a two-way communication channel between the page and the service worker. 
+description: |
+    How establish a two-way communication channel between the page and the service worker.
 tags:
   - service-worker
   - offline
@@ -16,7 +16,7 @@ In some cases, a web app might need to establish a **two-way** communication cha
 page and the service worker.
 
 For example: in a podcast PWA one could build a feature to let the user [download episodes for
-offline consumption](https://web.dev/app-like-pwas/#proactive-background-downloading) and allow the
+offline consumption](/app-like-pwas/#proactive-background-downloading) and allow the
 service worker to keep the page regularly informed about the progress, so the [main
 thread](https://developer.mozilla.org/en-US/docs/Glossary/Main_thread) can update the UI.
 
@@ -27,9 +27,7 @@ different APIs, the [Workbox library](https://developers.google.com/web/tools/wo
 some advanced cases.
 
 <figure class="w-figure">
-  <img src="two-way-communication-diagram.png"
-       width="800"
-       alt="Diagram showing a service worker and the page exchanging messages.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HIbZyXbQNijm1S4eQlEv.png", alt="Diagram showing a service worker and the page exchanging messages.", width="800", height="310" %}
 </figure>
 
 {% Aside %}
@@ -51,10 +49,10 @@ The following page code creates a new `Workbox` instance and sends a message to 
 to obtain its version:
 
 ```javascript
-const wb = new Workbox('/sw.js'); 
-wb.register(); 
+const wb = new Workbox('/sw.js');
+wb.register();
 
-const swVersion = await wb.messageSW({type: 'GET_VERSION'}); 
+const swVersion = await wb.messageSW({type: 'GET_VERSION'});
 console.log('Service Worker version:', swVersion);
 ```
 
@@ -77,15 +75,13 @@ implementation details, making it easier to use, while leveraging the [wide brow
 support](https://caniuse.com/mdn-api_messagechannel_port1) this API has.
 
 <figure class="w-figure">
-  <img src="workbox-window-diagram.png"
-       width="700"
-       alt="Diagram showing two-way communication between page and service worker, using Workbox Window.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DxyWzq96JQCU3hADZiN8.png", alt="Diagram showing two-way communication between page and service worker, using Workbox Window.", width="800", height="468" %}
 </figure>
 
 ## Using Browser APIs {: #using-browser-apis }
 
 If the Workbox library is not enough for your needs, there are several lower-level APIs available to
-implement **“two-way”** communication between pages and service workers. They have some similarities
+implement **"two-way"** communication between pages and service workers. They have some similarities
 and differences:
 
 Similarities:
@@ -103,22 +99,20 @@ Differences:
 - Browser support varies among them.
 
 <figure class="w-figure">
-  <img src="communication-apis.png"
-       width="600"
-       alt="Diagram showing two-way communication between page and service worker, and the available browser APIs.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nPYcdQbxAezigMiuoLJg.png", alt="Diagram showing two-way communication between page and service worker, and the available browser APIs.", width="800", height="364" %}
 </figure>
 
 ### Broadcast Channel API {: #broadcast-channel-api }
 
 The [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
 allows basic communication between browsing contexts via [BroadcastChannel
-objects](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel). 
+objects](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel).
 
 To implement it, first, each context has to instantiate a `BroadcastChannel` object with the same ID
 and send and receive messages from it:
 
 ```javascript
-const broadcast = new BroadcastChannel('channel-123'); 
+const broadcast = new BroadcastChannel('channel-123');
 ```
 
 The BroadcastChannel object exposes a `postMessage()` interface to send a message to any listening
@@ -145,9 +139,7 @@ As seen, there's no explicit reference to a particular context, so there's no ne
 reference first to the service worker or any particular client.
 
 <figure class="w-figure">
-  <img src="broadcast-channel.png"
-       width="700"
-       alt="Diagram showing two-way communication between page and service worker, using a Broadcast Channel object.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uWl3NVD3rxbSoA0JxvuN.png", alt="Diagram showing two-way communication between page and service worker, using a Broadcast Channel object.", width="800", height="405" %}
 </figure>
 
 The disadvantage is that, at the moment of this writing, the API has support from Chrome, Firefox
@@ -205,9 +197,7 @@ self.clients.matchAll(options).then(function (clients) {
 ```
 
 <figure class="w-figure">
-  <img src="client-api.png"
-       width="500"
-       alt="Diagram showing a service worker communicating with an array of clients.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/oApyHsmljr1KkBW85Wv9.png", alt="Diagram showing a service worker communicating with an array of clients.", width="800", height="556" %}
 </figure>
 
 `Client API` is a good option to communicate easily with all the active tabs from a service worker
@@ -246,9 +236,7 @@ messageChannel.port1.onmessage = (event) => {
 ```
 
 <figure class="w-figure">
-  <img src="message-channel.png"
-       width="600"
-       alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/THMp68FKAah5qYIsiFOk.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="800", height="459" %}
 </figure>
 
 The service worker receives the port, saves a reference to it and uses it to send a message to the other
@@ -283,7 +271,7 @@ scenarios: lack of connectivity and long downloads.
 A chat app might want to make sure that messages are never lost due to bad connectivity. The
 [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync) lets you
 defer actions to be retried when the user has stable connectivity. This is useful for ensuring that
-whatever the user wants to send, is actually sent. 
+whatever the user wants to send, is actually sent.
 
 Instead of the `postMessage()` interface, the page registers a `sync`:
 
@@ -305,7 +293,7 @@ self.addEventListener('sync', function (event) {
 
 The function `doSomeStuff()` should return a promise indicating the success/failure of whatever it's
 trying to do. If it fulfills, the sync is complete. If it fails, another sync will be scheduled to
-retry. Retry syncs also wait for connectivity, and employ an exponential back-off. 
+retry. Retry syncs also wait for connectivity, and employ an exponential back-off.
 
 Once the operation has been performed, the service worker can then communicate back with the page to
 update the UI, by using any of the communication APIs explored earlier.
@@ -315,13 +303,11 @@ them later when the user is online. Once the operation is performed, they commun
 the user via a web push notification:
 
 <figure class="w-figure">
-  <img src="google-search-background-sync.png"
-       width="700"
-       alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eMbvk9IRoaAggs8t5CbF.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="800", height="436" %}
 </figure>
 
 {% Aside %} Check out [Resilient search experiences
-](https://web.dev/resilient-search-experiences/) to learn how to implement this feature using [Workbox Background
+](/resilient-search-experiences/) to learn how to implement this feature using [Workbox Background
 Sync](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync). {% endAside
 %}
 
@@ -329,11 +315,11 @@ Sync](https://developers.google.com/web/tools/workbox/modules/workbox-background
 
 For relatively short bits of work like sending a message, or a list of URLs to cache, the options
 explored so far are a good choice. If the task takes too long the browser will kill the service
-worker, otherwise it's a risk to the user's privacy and battery. 
+worker, otherwise it's a risk to the user's privacy and battery.
 
 The [Background Fetch API](https://developers.google.com/web/updates/2018/12/background-fetch)
 allows you to offload a long task to a service worker, like downloading movies, podcasts, or levels
-of a game. 
+of a game.
 
 To communicate to the service worker from the page, use `backgroundFetch.fetch`, instead of
 `postMessage()`:
@@ -374,9 +360,7 @@ bgFetch.addEventListener('progress', () => {
 ```
 
 <figure class="w-figure">
-  <img src="podcast-pwa.png"
-       width="700"
-       alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ii1koJyCl0drJyewTIxV.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="800", height="496" %}
     <figcaption class="w-figcaption">The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).
     </figcaption>
 </figure>

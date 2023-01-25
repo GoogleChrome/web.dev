@@ -5,8 +5,8 @@ authors:
   - maudn
 date: 2020-07-30
 updated: 2020-09-23
-hero: hero.jpg
-thumbnail: hero.jpg
+hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
+thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 description: |
   Consider setting a referrer policy of `strict-origin-when-cross-origin`. It retains much of the referrer's usefulness, while mitigating the risk of leaking data cross-origins.
 tags:
@@ -47,7 +47,7 @@ In the example below, the `Referer` header includes the complete URL of the page
 which the request was made.
 
 <figure class="w-figure">
-  <img src="./referrer-basics.jpg" alt="HTTP request including a Referer header.">
+  {% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP request including a Referer header.", width="800", height="573" %}
 </figure>
 
 The `Referer` header might be present in different types of requests:
@@ -67,7 +67,7 @@ origins**, this can be **privacy-hindering** and pose **security risks** as well
 these URLs:
 
 <figure class="w-figure">
-  <img src="./referrer-urls.jpg" alt="URLs with paths, mapped to different privacy and security risks.">
+  {% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URLs with paths, mapped to different privacy and security risks.", width="800", height="370" %}
 </figure>
 
 URLs #1 to #5 contain private information—sometimes even identifying or sensitive. Leaking these
@@ -90,7 +90,7 @@ header (and `document.referrer`) can be:
 - The full URL: origin, path, and query string
 
 <figure class="w-figure">
-  <img src="./referrer-data.jpg" alt="Data that can be contained in the Referer header and document.referrer.">
+  {% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Data that can be contained in the Referer header and document.referrer.", width="800", height="255" %}
 </figure>
 
 Some policies are designed to behave differently depending on the **context**: cross-origin or
@@ -102,7 +102,7 @@ Here is an overview showing how referrer policies restrict the URL data availabl
 header and `document.referrer`:
 
 <figure class="w-figure">
-  <img src="./referrer-policies.jpg" alt="Different referrer policies and their behaviour, depending on the security and cross-origin context.">
+  {% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Different referrer policies and their behaviour, depending on the security and cross-origin context.", width="800", height="537" %}
 </figure>
 
 MDN provides a [full list of policies and behavior
@@ -138,16 +138,14 @@ _As of July 2020_
       <tr>
         <td>Chrome</td>
         <td>
-          Planning to switch to <code>strict-origin-when-cross-origin</code> in <a href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">version 85</a> (previously <code>no-referrer-when-downgrade</code>) 
+          Planning to switch to <code>strict-origin-when-cross-origin</code> in <a href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">version 85</a> (previously <code>no-referrer-when-downgrade</code>)
         </td>
       </tr>
       <tr>
         <td>Firefox</td>
         <td>
           <ul>
-            <li><code>no-referrer-when-downgrade</code></li>
-            <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">Considering </a><code>strict-origin-when-cross-origin</code>
-            </li>
+            <li><code>strict-origin-when-cross-origin</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">see closed bug</a>)</li>
             <li><code>strict-origin-when-cross-origin</code> in Private Browsing and for trackers</li>
           </ul>
         </td>
@@ -217,7 +215,7 @@ a specific request. At the time of this writing, Safari doesn't show the `Referr
 but does show the `Referer` that was sent.
 
 <figure class="w-figure">
-  <img src="./referrer-devtools.jpg" alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.">
+  {% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.", width="800", height="416" %}
   <figcaption class="w-figcaption">
     Chrome DevTools, <b>Network</b> panel with a request selected.
   </figcaption>
@@ -393,7 +391,7 @@ policy (and a malicious actor could even spoof the referrer).
 Use [CSRF
 tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)
 as your primary protection. For extra protection, use
-[SameSite](https://web.dev/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead
+[SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead
 of `Referer`, use headers such as
 [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (available on POST and
 CORS requests) and
@@ -480,7 +478,7 @@ David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basques._
 
 ## Resources
 
-- [Understanding "same-site" and "same-origin"](https://web.dev/same-site-same-origin/)
+- [Understanding "same-site" and "same-origin"](/same-site-same-origin/)
 - [A new security header: Referrer Policy
   (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
 - [Referrer-Policy on

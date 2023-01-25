@@ -5,7 +5,7 @@ authors:
   - agektmr
 date: 2020-12-09
 updated: 2020-12-09
-hero: hero.jpg
+hero: image/admin/J3XT84NDBPLlsRN0PhLl.jpg
 alt: A neon chat bubble sign.
 
 description: |
@@ -66,7 +66,7 @@ To provide the best user experience with the SMS OTP, follow these steps:
     * `inputmode="numeric"`
     * `autocomplete="one-time-code"`
 * Use `@BOUND_DOMAIN #OTP_CODE` as the last line of the OTP SMS message.
-* Use the [Web OTP API](/web-otp/).
+* Use the [WebOTP API](/web-otp/).
 
 ## Use the `<input>` element
 
@@ -190,7 +190,7 @@ The precise rules are:
 Make sure the number of characters doesn't exceed 140 in total.
 
 To learn more about Chrome specific rules, read [Format the SMS message section
-of Web OTP API post](/web-otp/#format).
+of WebOTP API post](/web-otp/#format).
 {% endAside %}
 
 Using this format provides a couple of benefits:
@@ -216,11 +216,11 @@ codes](https://developer.apple.com/news/?id=z0i801mg).
 
 This SMS message format also benefits browsers other than Safari. Chrome, Opera,
 and Vivaldi on Android also support the origin-bound one-time codes rule with
-the Web OTP API, though not through `autocomplete="one-time-code"`.
+the WebOTP API, though not through `autocomplete="one-time-code"`.
 
-## Use the Web OTP API
+## Use the WebOTP API
 
-[The Web OTP API](https://wicg.github.io/web-otp/) provides access to the OTP
+[The WebOTP API](https://wicg.github.io/web-otp/) provides access to the OTP
 received in an SMS message. By calling
 [`navigator.credentials.get()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
 with `otp` type (`OTPCredential`) where `transport` includes `sms`, the website
@@ -229,7 +229,7 @@ delivered and granted access by the user. Once the OTP is passed to JavaScript,
 the website can use it in a form or POST it directly to the server.
 
 {% Aside 'caution' %}
-The Web OTP API requires a secure origin (HTTPS).
+The WebOTP API requires a secure origin (HTTPS).
 {% endAside %}
 
 ```js
@@ -245,12 +245,12 @@ navigator.credentials.get({
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    Web OTP API in action.
+    WebOTP API in action.
   </figcaption>
 </figure>
 
-Learn how to use the Web OTP API in detail in [Verify phone numbers on the web
-with the Web OTP API](/web-otp/) or copy and paste the following snippet. (Make
+Learn how to use the WebOTP API in detail in [Verify phone numbers on the web
+with the WebOTP API](/web-otp/) or copy and paste the following snippet. (Make
 sure the `<form>` element has an `action` and `method` attribute properly set.)
 
 ```js
@@ -259,16 +259,16 @@ if ('OTPCredential' in window) {
   window.addEventListener('DOMContentLoaded', e => {
     const input = document.querySelector('input[autocomplete="one-time-code"]');
     if (!input) return;
-    // Cancel the Web OTP API if the form is submitted manually.
+    // Cancel the WebOTP API if the form is submitted manually.
     const ac = new AbortController();
     const form = input.closest('form');
     if (form) {
       form.addEventListener('submit', e => {
-        // Cancel the Web OTP API.
+        // Cancel the WebOTP API.
         ac.abort();
       });
     }
-    // Invoke the Web OTP API
+    // Invoke the WebOTP API
     navigator.credentials.get({
       otp: { transport:['sms'] },
       signal: ac.signal

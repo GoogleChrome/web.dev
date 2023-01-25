@@ -1,0 +1,95 @@
+:root {
+  --app-bar-height: 64px;
+}
+
+.app-bar {
+  align-items: center;
+  background-color: rgba($WHITE, .96);
+  color: $GREY_700;
+  display: flex;
+  font-size: 0.875rem;
+  height: var(--app-bar-height);
+  padding: 0 24px;
+
+  @include bp(md) {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+.app-bar__list,
+.app-bar__item {
+  align-items: center;
+  display: flex;
+}
+
+.app-bar__item + .app-bar__item {
+  margin-left: 14px;
+}
+
+.app-bar__item:nth-of-type(2) {
+  display: none;
+
+  @include bp(sm) {
+    display: flex;
+  }
+}
+
+.app-bar__item:not(:last-of-type)::after {
+  display: block;
+  content: '';
+  width: 6px;
+  height: 10px;
+  // sass-lint:disable quotes
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.47334 9.47333L0.526672 8.52667L4.06001 5L0.526672 1.47333L1.47334 0.526667L5.94001 5L1.47334 9.47333Z' fill='%235F6368'/%3E%3C/svg%3E");
+  margin-left: 14px;
+}
+
+.app-bar__item > a {
+  color: $GREY_700;
+  display: flex;
+}
+
+.app-bar__share {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+
+  @include bp(md) {
+    border-radius: 3px;
+  }
+
+  &:hover,
+  &:focus {
+    background: $GREY_100;
+  }
+
+  > span {
+    display: none;
+
+    @include bp(md) {
+      display: inline;
+      margin-left: 16px;
+    }
+  }
+}
+
+// Courses app bar specific subclass
+.course-app-bar {
+  transition: box-shadow $TRANSITION_SPEED $TRANSITION_EASE;
+}
+
+.course-app-bar[data-stuck] {
+  @include bp(lg) {
+    box-shadow: 0 1px $GREY_300;
+  }
+}
+
+.course-app-bar__logo {
+  width: 101px;
+}

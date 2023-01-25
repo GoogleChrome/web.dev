@@ -1,11 +1,11 @@
 ---
 title: 'Cross-browser paint worklets and Houdini.how'
-subhead: 'Supercharging your CSS with Houdini paint worklets is just a few clicks away.' 
+subhead: 'Supercharging your CSS with Houdini paint worklets is just a few clicks away.'
 authors:
   - una
 date: 2020-12-10
-hero: hero.jpg
-alt: A sparkler. 
+hero: image/admin/qphHgunn2LamPL1qODh5.jpg
+alt: A sparkler.
 description: Learn how to implement cross-browser Houdini Paint API's and explore a world of Houdini worklets with Houdini.how.
 tags:
   - blog
@@ -17,16 +17,16 @@ tags:
 
 CSS [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) is an umbrella term that
 describes a series of low-level browser APIs that give developers much more control and power over
-the styles they write. 
+the styles they write.
 
 <figure class="w-figure">
-  <img src="./houdini.jpg" alt="Houdini layer">
+  {% Img src="image/admin/KgTxiRodgp6kFwHGHvqA.jpg", alt="Houdini layer", width="800", height="599" %}
 </figure>
 
 Houdini enables more semantic CSS with the [Typed Object
 Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide). Developers can
 define advanced CSS custom properties with syntax, default values, and inheritance through the
-[Properties and Values API](https://web.dev/at-property/).
+[Properties and Values API](/at-property/).
 
 It also introduces paint, layout, and animation
 [worklets](https://developers.google.com/web/updates/2018/10/animation-worklet), which open up a
@@ -55,9 +55,14 @@ your own Paint worklet, or use an existing published worklet. Then, rather than 
 apply this worklet to borders and clipping.
 
 <figure class="w-figure">
-  <video class="w-screenshot" autoplay loop muted playsinline aria-label="Demo with angled corners and material design buttons">
-    <source src="https://storage.googleapis.com/web-dev-assets/houdini-how/angled-demo.mp4" type="video/mp4">
-  </video>
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LNMysDPgN7nSgyT1p1Fl.mp4",
+    class="w-screenshot",
+    autoplay=true,
+    loop=true,
+    muted=true,
+    playsinline=true
+  %}
   <figcaption class="w-figcaption">
     The example above uses the same paint worklet with different arguments (see code below) to accomplish this result. Demo on <a href="https://glitch.com/~angled-corners">Glitch</a>.</a>
   </figcaption>
@@ -68,14 +73,14 @@ apply this worklet to borders and clipping.
   --corner-radius: 15 0 0 0;
   --paint-color: #6200ee;
   --stroke-weight: 0;
-  
+
   /* Mask every angled button with fill mode */
   -webkit-mask: paint(angled-corners, filled);
 }
 
 .outline {
   --stroke-weight: 1;
-  
+
   /* Paint outline */
   border-image: paint(angled-corners, outlined) 0 fill !important;
 }
@@ -83,13 +88,11 @@ apply this worklet to borders and clipping.
 
 The CSS Painting API is currently one of the best-supported Houdini APIs, its spec being a W3C
 candidate recommendation. It is currently enabled in all Chromium-based browsers, partially
-supported in Safari, and is under consideration for Firefox. 
+supported in Safari, and is under consideration for Firefox.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="caniuse-paint.png" alt="Caniuse support">
-  <figcaption class="w-figcaption">
-    The CSS Painting API is currently supported on Chromium-based browsers.</a>
-  </figcaption>
+  {% Img src="image/admin/vL8Z5YEwk2g2QJ6T6IWp.png", alt="Caniuse support", width="800", height="176", class="w-screenshot" %}
+  <figcaption class="w-figcaption">The CSS Painting API is currently supported on Chromium-based browsers.</figcaption>
 </figure>
 
 But even without full browser support, you can still get creative with the Houdini Paint API and see
@@ -101,10 +104,8 @@ implementations, as well as to provide a resource and worklet library, my team b
 ## Houdini.how
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="worklet-page.png" alt="Worklet page screenshot.">
-  <figcaption class="w-figcaption">
-    Screenshot from the <a href="https://houdini.how">Houdini.how</a> homepage.
-  </figcaption>
+  {% Img src="image/admin/UKenhKMvDWI9PvWGcTG4.png", alt="Worklet page screenshot.", width="800", height="833", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Screenshot from the <a href="https://houdini.how">Houdini.how</a> homepage.</figcaption>
 </figure>
 
 [Houdini.how](https://houdini.how) is a library and reference for Houdini worklets and resources. It
@@ -177,8 +178,8 @@ Here is an example of how to use Houdini with the paint polyfill in modern bundl
 
 ```js
 import 'css-paint-polyfill';
-import "<package-name>/properties.js"; // optionally register properties
-import workletURL from "url:<package-name>/worklet.js";
+import '<package-name>/properties.js'; // optionally register properties
+import workletURL from 'url:<package-name>/worklet.js';
 
 CSS.paintWorklet.addModule(workletURL);
 ```

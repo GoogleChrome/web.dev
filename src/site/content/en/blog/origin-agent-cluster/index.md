@@ -10,7 +10,7 @@ description: >
   The Origin-Agent-Cluster header cuts off synchronous access to other origins on the same domain,
   and hints to the browser to give your origin dedicated resources.
 date: 2021-02-01
-hero: hero.jpg
+hero: image/admin/6dA7AcZStU3xgfMiCdoJ.jpg
 alt: A cluster of grapes
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -217,7 +217,7 @@ clusters.
 ## Origin-keying is not a security feature
 
 While using an origin-keyed agent cluster does isolate your origin from synchronous access from
-same-site cross-origin pages, it does not give the [protection](https://web.dev/why-coop-coep/) of
+same-site cross-origin pages, it does not give the [protection](/why-coop-coep/) of
 security-related headers like
 [`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
 and

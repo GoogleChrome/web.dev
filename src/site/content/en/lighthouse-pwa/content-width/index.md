@@ -22,7 +22,7 @@ content may be scaled down to fit, making text difficult to read.
 flags pages whose width isn't equal to the width of the viewport:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="content-width.png" alt="Lighthouse audit showing content not correctly sized for viewport">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y8JKlbJTu7ERetHUGuaA.png", alt="Lighthouse audit showing content not correctly sized for viewport", width="800", height="98", class="w-screenshot" %}
 </figure>
 
 The audit fails if `window.innerWidth` does not equal `window.outerWidth`.

@@ -7,8 +7,8 @@ authors:
 description: Chromium 80 had a system-ui font weight regression on macOS. The reason it broke, and the new super powers post-resolution, are worth the wait in Chromium 83.
 date: 2020-05-21
 updated: 2020-05-26
-hero: hero.jpg
-thumbnail: thumb.jpg
+hero: image/admin/RgpA9x73j3OnnrC8z97g.jpg
+thumbnail: image/admin/h1iXgLXRrxjunx2PhoPB.jpg
 alt: A bright pink and purple gradient with "macOS Catalina system-ui" going from thin to think from left to right, demonstrating some of the new variation settings
 tags:
   - blog
@@ -18,7 +18,7 @@ feedback:
   - api
 ---
 
-The ['system-ui' section](https://drafts.csswg.org/css-fonts-4/#system-ui-def) of the CSS Fonts Module Level 4 spec defines a `system-ui` font keyword that allows developers to use the built-in, turbo-optimized, localized, mega-high-quality, no-download-needed, default operating system font right in their sites and apps. 
+The ['system-ui' section](https://drafts.csswg.org/css-fonts-4/#system-ui-def) of the CSS Fonts Module Level 4 spec defines a `system-ui` font keyword that allows developers to use the built-in, turbo-optimized, localized, mega-high-quality, no-download-needed, default operating system font right in their sites and apps.
 
 ```css
 body {
@@ -41,14 +41,14 @@ At the time of writing, `system-ui` has support from Chromium (since 56), Edge (
 
 ## New powers {: #new-powers }
 
-The new abilities that Catalina brought to the system font are now available to web developers as of Chromium 83. The `system-ui` font now **has more variable settings**: optical sizing and 2 unique weight adjustments: 
+The new abilities that Catalina brought to the system font are now available to web developers as of Chromium 83. The `system-ui` font now **has more variable settings**: optical sizing and 2 unique weight adjustments:
 
 {% Compare 'worse', 'Mojave' %}
 ```css
 h1 {
   font-family: system-ui;
   font-weight: 700;
-  font-variation-settings: 
+  font-variation-settings:
     'wght' 750
   ;
 }
@@ -62,10 +62,10 @@ h1 {
 h1 {
   font-family: system-ui;
   font-weight: 700;
-  font-variation-settings: 
-    'wght' 750, 
+  font-variation-settings:
+    'wght' 750,
     'opsz' 20,
-    'GRAD' 400, 
+    'GRAD' 400,
     'YAXS' 400
   ;
 }
@@ -80,7 +80,7 @@ These variant features are only available for macOS Catalina users.
 
 On Mojave, `system-ui` is a variable font with only `wght` settings. While `system-ui` on Catalina is a variable font with `wght`, `opsz`, `GRAD`, and `YAXS` settings.
 
-Looks like some neat progressive enhancement design opportunities to me! Really dig into the subtleties of the system font if you want. 
+Looks like some neat progressive enhancement design opportunities to me! Really dig into the subtleties of the system font if you want.
 
 
 
@@ -160,7 +160,7 @@ font-variation-settings: 'wght' 750, 'YAXS' 600, 'GRAD' 500, 'opsz' 20;
   </video>
 </figure>
 
-And just like that, Chromium users on macOS see your upgraded, custom 750 weight with some fun other tweaks 👍 
+And just like that, Chromium users on macOS see your upgraded, custom 750 weight with some fun other tweaks 👍
 
 ## Playground
 
@@ -186,7 +186,7 @@ The rest of this blog post explains how `system-ui` broke in Chromium 80 and how
 This story starts with a different bug: [#1005969](https://crbug.com/1005969). This was reported against macOS 10.15 because the `system-ui` font spacing looked narrow and crammed.
 
 <figure class="w-figure">
-  <img src="./tight-chrome-spacing.jpg" alt="A comparison of two paragraphs from a Facebook group page. On the left is Chrome and the right is Safari, and Chrome is subtle but slightly tighter in spacing">
+  {% Img src="image/admin/f0xi5DBj1M6v72VcKNUx.jpg", alt="A comparison of two paragraphs from a Facebook group page. On the left is Chrome and the right is Safari, and Chrome is subtle but slightly tighter in spacing", width="800", height="417" %}
   <figcaption class="w-figcaption">Chrome on left (tighter tracking), Safari on right (better optical spacing)</figcaption>
 </figure>
 
@@ -211,7 +211,7 @@ h1 {
 }
 ```
 
-Unfortunately, the default `opsz` value in the new Catalina font is `20`, and Chromium engineers were not prepared to apply `opsz` to the system font. This led to smaller sizes displaying too narrow. 
+Unfortunately, the default `opsz` value in the new Catalina font is `20`, and Chromium engineers were not prepared to apply `opsz` to the system font. This led to smaller sizes displaying too narrow.
 
 To fix that, Chromium needed to apply `opsz` correctly to the system font. This led to [Issue #1005969](https://crbug.com/1005969) getting fixed. Victory! Or was it…?
 
@@ -220,11 +220,11 @@ To fix that, Chromium needed to apply `opsz` correctly to the system font. This 
 This is where it got tricky: Chromium applied `opsz` but something did not look right still. System fonts on Mac have an additional font table called [`trak`](https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6trak.html), which tweaks horizontal spacing. While working on the fix, Chromium engineers noticed that on macOS, when retrieving horizontal metrics from a `CTFontRef` object, the `trak` metrics were already getting factored into the metrics results. Chromium's shaping library [`HarfBuzz`](https://github.com/harfbuzz/harfbuzz) needs metrics where the `trak` values are not yet factored in.
 
 <figure class="w-figure">
-  <img src="./weight-loss.jpg" alt="A master display of system-ui and all of it's font weight and variations in a list. Half of them have no weight differences applied.">
+  {% Img src="image/admin/rq7Vpi6ZfUzFNKEOVACk.jpg", alt="A display of system-ui and all of it's font weight and variations in a list. Half of them have no weight differences applied.", width="800", height="481" %}
   <figcaption class="w-figcaption">Left: Bold weights applied to font sizes 19 and below. Right: Font sizes 20 and up lose bold styling</figcaption>
 </figure>
 
-Internally, [Skia](https://skia.org/) (the graphics library, not the typeface of the same name) uses both the `CGFontRef` class from [`CoreGraphics`](https://developer.apple.com/documentation/coregraphics) and the `CTFontRef` class from [`CoreText`](https://developer.apple.com/documentation/coretext). Due to required internal conversions between those objects (used for keeping backwards compatibility and accessing needed APIs on both classes), Skia would lose weight information in certain circumstances and bold fonts would stop working. This was tracked in [Issue #1057654](https://crbug.com/1057654). 
+Internally, [Skia](https://skia.org/) (the graphics library, not the typeface of the same name) uses both the `CGFontRef` class from [`CoreGraphics`](https://developer.apple.com/documentation/coregraphics) and the `CTFontRef` class from [`CoreText`](https://developer.apple.com/documentation/coretext). Due to required internal conversions between those objects (used for keeping backwards compatibility and accessing needed APIs on both classes), Skia would lose weight information in certain circumstances and bold fonts would stop working. This was tracked in [Issue #1057654](https://crbug.com/1057654).
 
 Skia still needs to support macOS 10.11 because Chromium still supports it. On 10.11 the "San Francisco Text" and "San Francisco Display" fonts weren't even variable fonts. Rather, each was a family of separate fonts for every weight available. At some point their glyph IDs became out of sync with each other. So if Skia did text shaping (converting text into glyphs that can be drawn) with "San Francisco Text", it would be gibberish if drawn with "San Francisco Display", and vice versa. And even if Skia just asked for a different size macOS might switch to the other. It should be possible to always use one of the fonts and just scale it (using a matrix to scale it up instead of asking for a larger size) but `CoreText` has an issue where it will not scale sbix (color emoji) glyphs up (only down). It's a bit more complex than that. `CoreText` actually seems to cap the vertical extent after matrix application, which seems to be related to it not being able to draw emoji at 45 degree angles. In any event, if you want your emoji to be shown big, you need to make a copy of the font to get a big version.
 
@@ -238,10 +238,10 @@ Since the fix for the spacing issue required a set of interconnected Blink and S
 
 ## The fix
 
-In the end, of course Chromium wanted to fix both things. Chromium now resorts to using HarfBuzz built-in font OpenType font metrics functions for retrieving horizontal metrics directly from the binary data in the system font's font tables. Using this, Chromium is sidestepping `CoreText` and Skia when the font has a `trak` table (except when it's the emoji font). 
+In the end, of course Chromium wanted to fix both things. Chromium now resorts to using HarfBuzz built-in font OpenType font metrics functions for retrieving horizontal metrics directly from the binary data in the system font's font tables. Using this, Chromium is sidestepping `CoreText` and Skia when the font has a `trak` table (except when it's the emoji font).
 
 <figure class="w-figure">
-  <img src="./weight-back.jpg" alt="A master display of system-ui and all of it's font weight and variations in a list. The half previously not working looks great now.">
+  {% Img src="image/admin/9KOCF5Gh0tEWETkmDEVo.jpg", alt="A display of system-ui and all of it's font weight and variations in a list. The half previously not working looks great now.", width="800", height="481" %}
 </figure>
 
 In the meantime there's still [Skia Issue #10123](https://bugs.chromium.org/p/skia/issues/detail?id=10123) to track fixing this fully in Skia, and to go back to using Skia to retrieve the system font metrics from there, instead of the current fix that goes through `HarfBuzz`.

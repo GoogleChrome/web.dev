@@ -117,7 +117,7 @@ while the very different `load` event will be fired when resource
 has actually been fetched.
 
 <figure>
-  <img src="./video-preload.svg">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/De8tMHJUn3XyzFfosVLb.svg", alt="", width="800", height="234" %}
 </figure>
 
 Setting the `preload` attribute to `metadata` indicates that the user is not
@@ -192,7 +192,7 @@ video, audio, etc.). It should be used to warm up the browser cache for current
 sessions.
 
 <figure>
-  <img src="./link-preload.svg">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g5fQKJMivvcsHajmMmi2.svg", alt="", width="800", height="234" %}
 </figure>
 
 ### Preload full video
@@ -229,7 +229,7 @@ element, it would be `as="audio"`.
 
 The example below shows how to preload the first segment of a video with `<link
 rel="preload">` and use it with Media Source Extensions. If you're not familiar
-with the MSE Javascript API, see [MSE basics][mse-basics].
+with the MSE JavaScript API, see [MSE basics][mse-basics].
 
 For the sake of simplicity, let's assume the entire video has been split into
 smaller files like `file_1.webm`, `file_2.webm`, `file_3.webm`, etc.

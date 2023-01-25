@@ -7,7 +7,12 @@ const crypto = require('crypto');
 const fs = require('fs');
 
 const hashLength = 8;
-const isProduction = process.env.ELEVENTY_ENV === 'prod';
+const isProd = process.env.ELEVENTY_ENV === 'prod';
+const isStaging = process.env.ELEVENTY_ENV === 'staging';
+
+function randomHash() {
+  return Math.random().toString(16).substring(2);
+}
 
 function generateAndValidateHash(c) {
   const hash = c.digest('hex').substr(0, hashLength);
@@ -15,6 +20,16 @@ function generateAndValidateHash(c) {
     throw new TypeError('could not hash content');
   }
   return hash;
+}
+
+/**
+ * @param {string} str
+ * @return {string}
+ */
+function sha256base64(str) {
+  const c = crypto.createHash('sha256');
+  c.update(str);
+  return c.digest('base64');
 }
 
 /**
@@ -41,13 +56,15 @@ const hashForProdCache = {};
 /**
  * Hashes the passed file from within the dist dir if in production mode,
  * returning the file with an appended `?v=<hash>`.
+ * In dev mode it will return the file with an appended `?v=<randomHash>` to
+ * avoid caching.
  *
  * @param {string} file
  * @return {string}
  */
 function hashForProd(file) {
-  if (!isProduction) {
-    return file;
+  if (!isProd && !isStaging) {
+    return `${file}?v=${randomHash()}`;
   }
 
   let hash = hashForProdCache[file];
@@ -68,4 +85,6 @@ function hashForProd(file) {
 
 module.exports = {
   hashForProd,
+  randomHash,
+  sha256base64,
 };

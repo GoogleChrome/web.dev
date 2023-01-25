@@ -21,7 +21,7 @@ image with a rendered aspect ratio
 5 percent or more different from its natural ratio:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="image-aspect-ratio.png" alt="Lighthouse audit shows images displayed with incorrect aspect ratio">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Lighthouse audit shows images displayed with incorrect aspect ratio", width="800", height="198", class="w-screenshot" %}
 </figure>
 
 There are two common causes for an incorrect image aspect ratio:

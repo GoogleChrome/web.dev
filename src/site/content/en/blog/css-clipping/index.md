@@ -11,7 +11,7 @@ description: >
 authors:
   - rachelandrew
 date: 2020-09-14
-hero: hero.jpg
+hero: image/admin/Pl4AScfj5y8ovHD1pi64.jpg
 alt: Scissors hanging on a wall.
 tags:
   - blog
@@ -131,7 +131,7 @@ If you create a circle on an image,
 and that shape would extend outside of the natural size of the image, you will get a flat edge.
 
 <figure class="w-figure">
-  <img class="w-screenshot" style="max-inline-size: 480px" src='./flat-edges.jpg' alt="A clipped circle with flat edges">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sQPOF6oaR31kjSVGzztu.jpg", alt="A clipped circle with flat edges", width="800", height="427", class="w-screenshot",style="max-inline-size: 480px" %}
   <figcaption>The image used earlier now has <code>circle(50%)</code> applied. As the image is not square, we hit the margin box at the top and bottom and the circle is clipped.</figcaption>
 </figure>
 

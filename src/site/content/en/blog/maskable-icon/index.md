@@ -10,7 +10,7 @@ authors:
   - thomassteiner
 date: 2019-12-19
 updated: 2020-09-16
-hero: hero.png
+hero: image/admin/lzLo9JCh6bcehH2nSH0n.png
 alt: Icons contained inside white circles compared to icons covering its entire circle
 tags:
   - blog
@@ -28,10 +28,8 @@ variety of shapes across different device models. Icons that don't follow this n
 white backgrounds.
 
 <figure class="w-figure">
-  <img src="homescreen-any.png" alt="PWA icons in white circles on Android" style="width: 400px; max-width: 100%">
-  <figcaption class="w-figcaption">
-    Transparent PWA icons appear inside white circles on Android
-  </figcaption>
+  {% Img src="image/admin/jzjx6dGkXN9EdqnUzAeg.png", alt="PWA icons in white circles on Android", width="400", height="100" %}
+  <figcaption class="w-figcaption">Transparent PWA icons appear inside white circles on Android</figcaption>
 </figure>
 
 Maskable icons are a new icon format that give you more control and let your Progressive Web App use
@@ -40,10 +38,8 @@ on all Android devices. Firefox and Chrome have recently added support for this 
 can adopt it in your apps.
 
 <figure class="w-figure">
-  <img src="homescreen-maskable.png" alt="PWA icons covering the entire circle on Android" style="width: 400px; max-width: 100%">
-  <figcaption class="w-figcaption">
-    Maskable icons cover the entire circle instead
-  </figcaption>
+  {% Img src="image/admin/J7gkg9ylP2ANlFawblze.png", alt="PWA icons covering the entire circle on Android", width="400", height="100" %}
+  <figcaption class="w-figcaption">Maskable icons cover the entire circle instead</figcaption>
 </figure>
 
 ## Are my current icons ready?
@@ -53,10 +49,14 @@ padding that the browser can later crop into the desired shape and size. It's be
 any particular shape, since the ultimately chosen shape can vary by browser and per platform.
 
 <figure class="w-figure w-figure--inline-right">
-  <video class="w-screenshot" autoplay loop muted playsinline aria-label="Different masks applied to a maskable icon">
-    <source src="fugu-mask.webm" type="video/webm; codecs=vp8">
-    <source src="fugu-mask.mp4" type="video/mp4; codecs=h264">
-  </video>
+  {% Video
+    src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/mx1PEstODUy6b5TXjo4S.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tw7QbXq9SBjGL3UYW0Fq.mp4"],
+    class="w-screenshot",
+    autoplay=true,
+    loop=true,
+    muted=true,
+    playsinline=true
+  %}
   <figcaption class="w-figcaption">
     Different platform specific shapes
   </figcaption>
@@ -74,10 +74,8 @@ icons will be trimmed so that only the safe area is visible. If your logo is vis
 safe area, you're good to go.
 
 <figure class="w-figure">
-  <img src="devtools.png" class="w-screenshot" alt="Applications panel in DevTools displaying PWA icons with edges cropped">
-  <figcaption class="w-figcaption">
-    The Applications panel
-  </figcaption>
+  {% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="Applications panel in DevTools displaying PWA icons with edges cropped", width="762", height="423", class="w-screenshot" %}
+  <figcaption class="w-figcaption">The Applications panel</figcaption>
 </figure>
 
 To test your maskable icon with the variety of Android shapes, use the
@@ -92,10 +90,8 @@ If you want to create a maskable icon based on your existing icon, you can use t
 then export the image.
 
 <figure class="w-figure">
-  <img src="maskable-app-editor.png" class="w-screenshot" alt="Maskable.app Editor screenshot">
-  <figcaption class="w-figcaption">
-    Creating icons in Maskable.app Editor
-  </figcaption>
+  {% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor screenshot", width="670", height="569", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Creating icons in Maskable.app Editor</figcaption>
 </figure>
 
 Once you've created a maskable icon image and tested it out in DevTools, you'll need to update your

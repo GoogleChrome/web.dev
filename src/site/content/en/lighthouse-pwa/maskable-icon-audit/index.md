@@ -19,8 +19,7 @@ icon, it ensures that the icon takes up all of the space that Android provides f
 flags pages that do not have maskable icon support:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="maskable-icon.jpg"
-       alt="The maskable icon audit in the Lighthouse Report UI.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="The maskable icon audit in the Lighthouse Report UI.", width="800", height="110", class="w-screenshot" %}
 </figure>
 
 In order to pass the audit:

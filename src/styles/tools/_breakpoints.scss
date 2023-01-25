@@ -22,6 +22,9 @@ $BREAKPOINT_VALUE_MEDIUM: 865px;
 // Desktops
 $BREAKPOINT_VALUE_LARGE: 1264px;
 
+// Large desktops
+$BREAKPOINT_VALUE_XLARGE: 1441px;
+
 // Media breakpoint helper
 // Credit: http://css-tricks.com/conditional-media-query-mixins/
 @mixin bp($point) {
@@ -35,5 +38,7 @@ $BREAKPOINT_VALUE_LARGE: 1264px;
     @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) { @content; }
   } @else if $point == lg {
     @media (min-width: #{$BREAKPOINT_VALUE_LARGE}) { @content; }
+  } @else if $point == xl {
+    @media (min-width: #{$BREAKPOINT_VALUE_XLARGE}) { @content; }
   }
 }

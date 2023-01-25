@@ -20,7 +20,7 @@ causing a [flash of invisible text (FOIT)](/avoid-invisible-text).
 flags any font URLs that may flash invisible text:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="font-display.png" alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit", width="800", height="430", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
@@ -51,7 +51,7 @@ for more information.)
 
 ### Preload web fonts
 
-Use `<link rel="preload">` to fetch your font files earlier. Learn more:
+Use `<link rel="preload" as="font">` to fetch your font files earlier. Learn more:
 
 * [Preload web fonts to improve loading speed (codelab)](/codelab-preload-web-fonts/)
 * [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](/preload-optional-fonts/)

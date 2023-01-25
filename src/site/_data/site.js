@@ -30,17 +30,14 @@ module.exports = {
   subscribe: 'https://web.dev/newsletter',
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
-  thumbnail: '/images/social.png',
-  isBannerEnabled: false,
-  banner: '',
-  // Note that the imageCdn value is only used when we do a production build
-  // of the site. Otherwise all image paths are local. This means you can
-  // develop locally without having to mess with the CDN at all.
-  imageCdn: 'https://webdev.imgix.net',
-  imgix: 'web-dev.imgix.net',
+  thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
+  isBannerEnabled: true,
+  banner:
+    'I/O is back, online, and free for everyone! I/O connects developers from around the world for thoughtful discussions and hands-on learning with Google experts. [Register now](https://events.google.com/io/?utm_source=web&utm_medium=embedded_marketing).',
+  areCoursesEnabled: true,
+  imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
-  gcs: 'https://storage.googleapis.com',
-  gitlocalize: 'https://gitlocalize.com/repo/3847/',
+  gitlocalize: 'https://gitlocalize.com/repo/6062/',
   analytics: {
     ids: {
       prod: 'UA-126406676-2',

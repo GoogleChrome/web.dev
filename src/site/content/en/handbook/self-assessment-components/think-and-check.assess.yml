@@ -1,0 +1,49 @@
+setLeader: |
+  Test your knowledge of tab order
+height: unset
+tabLabel: question
+questions:
+  - type: think-and-check
+    stimulus: |
+      This HTML renders a modal dialog:
+
+      ```html
+      <div role="dialog" aria-labelledby="dialog-header">
+        <button aria-label="Close"></button>
+        <h2 id="dialog-header">
+          Do you want to allow notifications from this website?
+        </h2>
+        <button>No</button>
+        <button>Yes</button>
+      </div>
+      ```
+    stem: What is the tab order for the elements in the sample?
+    options:
+      - rationale: |
+          1. The **Close** button
+          1. The **No** button
+          1. The **Yes** button
+
+          Only the `<button>` elements are included in the tab order
+          because they're the only standardized HTML form elements.
+          To insert other elements into the tab order, you would add a `tabindex` attribute.
+  - type: think-and-check
+    stimulus: |
+      ```html
+      <section tabindex="-1">
+        <h2>Cat facts</h2>
+        <ul>
+          <li>A group of cats is called a <a href="https://m-w.com/dictionary/clowder">clowder</a>.</li>
+          <li>Most cats are <a href="https://www.catfacts.org/catnip.html"> unaffected by catnip</a>.</li>
+        </ul>
+      </section>
+      ```
+    stem: Which elements from the sample are included in the tab order?
+    options:
+      - rationale: |
+          Only the `<a>` elements are included in the tab order.
+
+          The `<section>` element is not in the tab order
+          because it has a negative `tabindex` value.
+          (It can, however, be focused using the `focus()` method.)
+          The `tabindex` value for the `<section>` element doesn't affect its children.

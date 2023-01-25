@@ -3,13 +3,27 @@ title: Using the Event Conversion Measurement API
 subhead: Must-dos and tips to use the Event Conversion Measurement API.
 authors:
   - maudn
-hero: hero.jpg
+hero: image/admin/fyXjSb1sdmnCw3SoXUs2.jpg
 date: 2020-11-12
-#updated: 2020-11-12
+updated: 2020-02-10
 tags:
   - blog
   - privacy
 ---
+
+{% Banner 'caution', 'body' %} The Conversion Measurement API will be renamed to
+_Attribution Reporting API_ and offer more features.
+
+- If you're experimenting with ([Conversion
+  Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md))
+  in [Chrome 91](https://chromestatus.com/features/schedule) and below, read this post
+  to find more details, use cases and instructions for how to use the API.
+- If you're interested in the next iteration of this API (Attribution Reporting), which will be
+  available for experimentation in Chrome (origin trial), [join the mailing
+  list](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) for updates
+  on available experiments.
+
+{% endBanner %}
 
 The [Event Conversion Measurement API](/conversion-measurement) measures when an ad click leads to a
 conversion, without using cross-site identifiers. Here, you'll find must-dos and tips to use this
@@ -24,72 +38,38 @@ simple end-to-end implementation example.
 
 ## Browser support
 
-The Event Conversion Measurement API can be supported:
+The Event Conversion Measurement API is supported:
 
-- As an [origin trial](/origin-trials/), from Chrome 86 beta to Chrome 88 (February 2021). Origin
+- As an [origin trial](/origin-trials/), from Chrome 86 beta until Chrome 91 (April 2021). Origin
   trials enable the API for **all visitors** of a given [origin](/same-site-same-origin/#origin).
   **You need to register your origin for the origin trial in order to try the API with end users**.
-- By turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
+- Or by turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
   **Flags are useful when [developing locally](#develop-locally)**.
 
 See details about the Chrome versions where the API is active on the [Chrome feature
 entry](https://chromestatus.com/feature/6412002824028160).
 
-### When is the API available?
-
-For the conversion measurement API to be available on a page, it needs to be:
-
-- Enabled on the **origin**. 
-- AND—this is specific to this API—Enabled on the **browser**.
-
-To enable the API on **an origin** for end users, an [origin trial
-token](/#register-for-the-origin-trial) must be added where relevant. To activate the API on
-**all origins**, for example for [development purposes](/#develop-locally), a single user can activate
-the flag `#enable-experimental-web-platform-features`. (Visit `chrome://flags` in Chrome to activate
-flags.)
-
-To enable the API on the **browser**, some users won't have to do anything, because the API is
-enabled automatically on some Chrome instances. If you want to force-activate the API on your Chrome
-instance, for example for [development purposes](/#develop-locally), turn on the flag
-`#conversion-measurement-api`.
-
-<figure class="w-figure">
-  <img src="./api-enable.jpg" alt="Diagram: how to enable the API">
-</figure>
-
-{% Aside %}
-**Why isn't an origin trial token enough for the API to be available on a page?**
-Origin trial features shouldn't exceed a small percentage of global page loads, because they're
-ephemeral. Because of this, sites that have registered for origin trials typically need to
-selectively enable API usage for small portions of their users. But the Event Conversion Measurement
-API involves actions on different top-level pages—so it can be difficult to consistently divert a
-user into an experiment group across sites to avoid this usage limit. To make this easier for
-developers, Chrome **automatically applies a diversion for this API**. This way, sites can use
-client-side feature detection alongside the origin trial to check whether the API can be used, and
-don't have to worry as much about throttling their usage.
-This means that the API won't be enabled for all users, even for origins that are registered for
-origin trials.
-{% endAside %}
+## Experiment with end users
 
 ## Experiment with the API, with end users
 
 To test the API with end users, you'll need to:
 
 1. Design your experiment.
-1. Set up your experiment, by registering your origin for the origin trial and activating the API.
+2. Set it up.
+3. Run it.
 
 ### Design your experiment
 
-Depending on your goal, you may want to look at different aspects of the API when running your
-experiment.
+Defining your goal will help you outline your plan for your experiment.
 
-If your goal is to **understand the API mechanics**, your experiment could be as follows:
+If your goal is to **understand the API mechanics**, run your experiment as follows:
 
 - Track conversions.
 - See how you can assign different values to conversion events.
 - Look at the conversion reports you're receiving.
 
-If your goal is to **see how well the API satisfies basic use cases**, your experiment could be as
+If your goal is to **see how well the API satisfies basic use cases**, run your experiment as
 follows:
 
 - Track conversions.
@@ -98,67 +78,61 @@ follows:
   count](<#(optional)-recover-the-corrected-conversion-count>).
 - Optionally, if you want to try something more advanced: tweak the noise correction script. For
   example, try different groupings to see what sizes are necessary for the noise to be negligible.
-- Compare the corrected count of conversions with source-of-truth data (cookie-based conversion data).
+- Compare the corrected count of conversions with source-of-truth data (cookie-based conversion
+  data).
 
 ### Set up your experiment
 
 #### Register for the origin trial
 
-- If you're planning on using the API as a third-party, you may be eligible to register your
-  [origin](/same-site-same-origin/#origin) for a [third-party origin
-  trial](/third-party-origin-trials) so you can test at scale across your customer sites.
-- If you're planning to use the API directly on your own origin(s), you can directly register your
-  origin(s) for an [origin trial](/origin-trials/).
+Registering for an [origin trial](/origin-trials/) is the first step to activate the API for end
+users. Upon registering for an origin trial, you have two choices to make: what **type of tokens** you
+need, and how the **API usage should be controlled**.
 
-**Note:** you can't register the origin `localhost`. Instead, see how to activate the API for local
-development in [Develop locally](#develop-locally).
+**Token type:**
 
-#### Activate the API
+- If you're planning to use the API directly on your own
+  [origin(s)](/same-site-same-origin/#origin), register your origin(s) for a regular origin trial.
+- If you're planning on using the API as a third-party—for example if you need to use the API in a
+  script you wrote that is executed on origins you don't own—you may be eligible to register your
+  origin for a [third-party origin trial](/third-party-origin-trials). This is convenient if you
+  need to test at scale across different sites.
 
-Once you've registered your origin for the origin trial and added the origin trial token where
-necessary, **the API is enabled [only for some visitors of this origin](#when-is-the-api-available)**.
+**API usage control:**
 
-Because of this, it's recommended that you run API-related code only when the feature is available
-(since you want to avoid having attributes or executions in your code that have no effect). Once
-you've registered your origin for the origin trial and added the token on the page(s) where it's
-necessary, follow these steps:
+Origin trial features shouldn't exceed a small percentage of global page loads, because they're
+ephemeral. Because of this, sites that have registered for origin trials typically need to
+selectively enable API usage for small portions of their users. You can do this yourself, or let
+Chrome do this for you. In the dropdown **How is (third-party) usage controlled?**:
 
-**On the publisher/ad click origin:**
+- Select **Standard limit** to activate the API for all end users on origins where a token is
+  present. Pick this if you don't need to A/B Test (with/without the experiment) or if you want
+  to selectively enable API usage for small portions of your users yourself.
+- Select **Exclude a subset of users** to let Chrome selectively activate the API on a small subset
+  of users on origins where a token is
+  present. This consistently diverts a user into an experiment group across sites to avoid the
+  usage limit. Pick this if you don't want to worry about implementing throttling for your API
+  usage.
 
-- Detect whether the feature is available on that specific client,
-  by running `document.featurePolicy.features().includes('conversion-measurement')` in the top-level
-  context of the page.
-  A more explicit way to write this would be:
-  ```javascript
-  function isConversionMeasurementEnabled() {
-    return document.featurePolicy.features().includes('conversion-measurement');
-  }
-  ```
-- If this returns `true` i.e. if the feature is available, add the conversion measurement attributes
-  onto the tag (`impressiondata`, `conversiondestination` and optionally `reportingorigin` and
-  `impressionexpiry`).
-- Additionally, if your ad tag is included in an iframe, you need to add a
-  [Feature Policy](https://developers.google.com/web/updates/2018/06/feature-policy) for those ads to
-  support conversion measurement, as follows:
+{% Aside 'gotchas' %}
+If you pick **Exclude a subset of users**, the API won't be enabled for all users, even for origins
+that are registered for origin trials. This is the intended behaviour.
+{% endAside %}
 
-  ```html/0
-  <iframe src="..." allow="conversion-measurement">
-    <a impressiondata="..."></a>
-  </iframe>
-  ```
+#### Add your origin trial tokens
 
-  **Note:** This last step is only needed for **cross-origin** child contexts, such as iframes with a
-  cross-origin value in `src`. It is not needed for ads placed directly on a publisher page or in
-  **same-origin child contexts**—in this case, the API is enabled (provided that
-  `isConversionMeasurementEnabled()`, defined above, returns true).
+Once your origin trial tokens are created, [add them](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin) where relevant.
 
-**On the advertiser/ad conversion origin:**
+#### Adapt your code
 
-- Detect whether the feature is available, by running `isConversionMeasurementEnabled()` (defined
-  above) in the top-level context of the page.
-- Register conversions only if this returns `true` i.e. if the feature is available.
+If you've picked **Exclude a subset of users**, use client-side feature detection alongside the
+origin trial to check whether the API can be used.
 
-### (Optional) Recover the corrected conversion count
+### Run your experiment
+
+You're now ready to run your experiment.
+
+#### (Optional) Recover the corrected conversion count
 
 Even though the conversion data is [noised](/conversion-measurement/#noising-of-conversion-data),
 the reporting endpoint can recover the true count of reports that have a specific conversion value.
@@ -171,29 +145,23 @@ event's conversion data was noised. But this gives you the correct conversion co
 
 ## Develop locally
 
+A few tips when developing locally with the conversion measurement API.
+
 ### Set up your browser for local development
 
 - Use Chrome version 86 or later. You can check what version of Chrome you're using by typing
   `chrome://version` in the URL bar.
-- To activate the feature locally—for example if you're developing on `localhost`—you need to enable
+- To activate the feature locally (for example if you're developing on `localhost`), enable
   flags. Go to flags by typing `chrome://flags` in Chrome's URL bar. Turn on the **two** flags
   `#enable-experimental-web-platform-features` and `#conversion-measurement-api`.
 - Disable third-party cookie blocking. In the long term, dedicated browser settings will be
   available to allow/block the API. Until then, third-party cookie blocking is used as the signal
   that users don't want to share data about their conversions—and hence that this API should be
   disabled.
-- Don't use Incognito mode or Guest mode. The API is disabled on these profiles.
+- Don't use **Incognito** or **Guest** mode. The API is disabled on these profiles.
 - Some ad-blocking browser extensions may block some of the API's functionality (e.g. script names
   containing `ad`). Deactivate ad-blocking extensions on the pages where you need to test the API,
   or create a fresh user profile without extensions.
-
-### Test your origin trial token(s)
-
-If you've registered for an origin trial, the feature should be enabled for your end users **when
-their browser is in the [selected Chrome group](#when-is-the-api-available)**. You may want to test
-if your origin trial tokens work as expected—but _your_ browser may not be in the selected Chrome
-group. To emulate this, enable the flag `#conversion-measurement-api`. This will make your browser
-behave like if it was in the selected Chrome group.
 
 ### Debug
 
@@ -206,12 +174,26 @@ debugging purposes you may want to get the reports immediately.
 - To always receive reports **immediately** without having to click this button, enable the flag
   `chrome://flags/#conversion-measurement-debug-mode`.
 
+### Test your origin trial token(s)
+
+If you've chosen **Exclude a subset of users** in the dropdown **How is usage controlled?** when
+you've registered your token(s), the API is only enabled for a subset of Chrome users. You may not
+be part of this group. To test your origin trial tokens, enforce that your browser behave as if it
+was in the selected Chrome group by enabling the flag `#conversion-measurement-api`.
+
 ## Share your feedback
 
 If you're experimenting with the API, your feedback is key in order to improve the API and support
-more use cases—please [share your feedback](/conversion-measurement/#share-your-feedback)!
+more use cases—please [share it](/conversion-measurement/#share-your-feedback)!
 
-_With many thanks to Jxck for his feedback on this article._
+## Further reading
+
+- [Origin trials developer guide](/third-party-origin-trials/)
+- [Getting started with Chrome's origin trials](/origin-trials/)
+- [What are third-party origin
+  trials?](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
+
+_With many thanks to Jxck and John Delaney for their feedback on this article._
 
 _Hero image by William Warby / @wawarby on [Unsplash](https://unsplash.com/photos/WahfNoqbYnM),
 edited._

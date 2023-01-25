@@ -4,7 +4,7 @@ subhead: Web components at I/O 2019
 authors:
   - arthurevans
 date: 2019-06-18
-hero: hero.jpg
+hero: image/admin/WPxFy8Y2JsLcTD9xKHIH.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
@@ -27,7 +27,7 @@ At Google I/O 2019, Kevin Schaaf of the Polymer Project and Caridy Patiño of Sa
 If you've used the web today, you've probably used web components. By our count, somewhere between 5% and 8% of all page loads today use one or more web components. That makes web components one of the most successful new web platform features shipped in the last five years.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img class="w-screenshot" src="./usage-graph.png" alt="A graph showing that 8% of sites use v1 custom elements. This figure eclipses the 5% highpoint for v0 custom elements.">
+  {% Img src="image/admin/RYVwr119hwQIps5UL0u4.png", alt="A graph showing that 8% of sites use v1 custom elements. This figure eclipses the 5% highpoint for v0 custom elements.", width="800", height="493", class="w-screenshot" %}
 </figure>
 
 You can find web components on sites you probably use every day, like YouTube and GitHub. They're also used on many news and publishing sites built with [AMP](http://amp.dev)—AMP components are also web components. And many enterprises are also adopting web components.
@@ -78,7 +78,7 @@ AMP is a great example of how quickly and easily Web Components slotted into the
 More and more companies are unifying the way they present themselves using a design system—a set of components and guidelines that define the common look and feel for an organization's sites and applications. Web components are a great fit here, too.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="./material-design.png" alt="The material design homepage, https://material.io.">
+  {% Img src="image/admin/xFG8pvgZDYTWQvx4W5i2.png", alt="The material design homepage, https://material.io.", width="800", height="736" %}
 </figure>
 
 Often, designers have to contend with many teams building their own versions of the design system components on top of React, Angular, and all the other frameworks, instead of having a single set of canonical components.

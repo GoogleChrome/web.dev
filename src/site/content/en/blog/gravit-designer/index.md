@@ -4,8 +4,8 @@ subhead: >
   PWA users are also 24% more active than all other install types,
   become repeats users 31% more than all other platforms, and more.
 date: 2020-12-08
-hero: hero.png
-thumbnail: thumbnail.png
+hero: image/admin/KSsQ4GA6JGIIQom1sSFl.png
+thumbnail: image/admin/RctR9tZPmHeBUrsuMFCh.png
 alt: Gravit Designer's logo.
 description: >
   PWA users are also 24% more active than all other install types,
@@ -68,9 +68,7 @@ Students and educators can install the Chrome OS version of Gravit Designer with
 ease, and enjoy the same powerful features regardless of platform.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
-       src="dark.png" 
-       alt="A screenshot of Gravit Designer.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CPOALQnJw0G03EHczYIh.png", alt="A screenshot of Gravit Designer.", width="800", height="476", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 ## Engineering challenges

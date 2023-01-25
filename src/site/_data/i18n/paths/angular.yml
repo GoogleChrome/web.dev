@@ -1,0 +1,24 @@
+title:
+  en: Angular
+
+description:
+  en: Build performant and progressive Angular applications.
+
+overview:
+  en: In this collection you’ll learn practical tips and tricks to make your Angular applications faster, more reliable, more accessible, and generally awesome.
+
+topics:
+  introduction:
+    en: Introduction
+
+  fast:
+    en: Fast
+
+  reliable:
+    en: Reliable
+
+  installable:
+    en: Installable
+
+  accessible:
+    en: Accessible

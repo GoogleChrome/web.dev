@@ -21,10 +21,10 @@ repository](https://help.github.com/articles/about-required-status-checks/) so
 that it won't allow merging pull-requests unless the bundlesize tests have
 passed.
 
-Bundlesize's GitHub checks include a size comparison to the master branch and
+Bundlesize's GitHub checks include a size comparison to the main branch and
 a warning in case of a big jump in size.
 
-<img src="bundlesize-check-diff.jpg" class="w-screenshot" alt="Bundlesize check on GitHub">
+{% Img src="image/admin/8Mm1WPga9dbeIzGrv2fQ.jpg", alt="Bundlesize check on GitHub", width="769", height="316" %}
 
 {% Aside %}
 You can also use bundlesize with [Circle CI](https://circleci.com),
@@ -36,7 +36,7 @@ To see it in action, here's an app bundled with
 kitty](https://glitch.com/edit/#!/scarce-pixie).
 
 <a href="https://glitch.com/edit/#!/scarce-pixie">
-  <img class="w-screenshot w-screenshot--filled" src="./cat-voting-app.png" alt="Cat voting app">
+  {% Img src="image/admin/DGSSFfpAMIaFqX8MwWss.png", alt="Cat voting app", width="800", height="567", class="w-screenshot w-screenshot--filled" %}
 </a>
 
 ## Set the performance budget
@@ -102,12 +102,12 @@ You'll need to [register an account on
 Travis](https://docs.travis-ci.com/user/tutorial) and activate GitHub Apps
 integration under the Settings section of your profile.
 
-<img src="travis-ci.png" class="w-screenshot" alt="GitHub Apps integration on Travis CI">
+{% Img src="image/admin/kMgVmB5rzRJN3DlqP08R.png", alt="GitHub Apps integration on Travis CI", width="800", height="508" %}
 
 Once you have an account, go to **Settings** under your profile, click the **Sync
 account** button, and make sure your new repo is listed on Travis.
 
-<img src="travis-ci-sync-button.png" class="w-screenshot" alt="Travis CI Sync button">
+{% Img src="image/admin/Zi9Oo5SCfM5P7IxejYd3.png", alt="Travis CI Sync button", width="160", height="54" %}
 
 ### Authorize bundlesize to post on pull requests
 
@@ -116,12 +116,12 @@ this link to get the bundlesize
 token](https://github.com/login/oauth/authorize?scope=repo%3Astatus&client_id=6756cb03a8d6528aca5a)
 that will be stored in the Travis configuration.
 
-<img src="bundlesize-token.jpg" class="w-screenshot" alt="bundlesize token">
+{% Img src="image/admin/GkEMv2VCb25oC9lDSARQ.jpg", alt="bundlesize token", width="619", height="330" %}
 
 In your project's Travis dashboard, go to **More options** > **Settings** > **Environment
 variables**.
 
-<img src="environment-variables.png" class="w-screenshot" alt="Adding environment variables on Travis CI">
+{% Img src="image/admin/gol14FsIsYPyPWwIeYfI.png", alt="Adding environment variables on Travis CI", width="789", height="233" %}
 
 Add a new environment variable with the token as the value field and
 BUNDLESIZE_GITHUB_TOKEN as the name.
@@ -152,13 +152,13 @@ the homepage of the repository.
 
 You'll now see status checks in progress on the pull request page.
 
-<img src="github-checks-in-progress.png" class="w-screenshot" alt="Github checks in progress">
+{% Img src="image/admin/SrdHGr9z5QY1vEfBwNIY.png", alt="Github checks in progress", width="774", height="351" %}
 
 It won't take long until all checks are done. Unfortunately, the cat voting app
 is a bit bloated and does not pass the performance budget check. The main bundle
 is 266 KB and the budget is 170 KB.
 
-<img src="bundlesize-fail.png" class="w-screenshot" alt="Failed bundlesize check">
+{% Img src="image/admin/Dt31nFkMvJjn1me6cir3.png", alt="Failed bundlesize check", width="774", height="347" %}
 
 ### Optimize
 
@@ -205,7 +205,7 @@ bundle file.
 
 5. Go to the pull request page on GitHub and wait for all checks to finish.
 
-<img src="bundlesize-pass.png" class="w-screenshot" alt="Passed bundlesize check">
+{% Img src="image/admin/3aKOqNvvavQ32gl15PmU.png", alt="Passed bundlesize check", width="778", height="355" %}
 
 Success! The new size of the bundle is 125.5 KB and all the checks have passed.
 🎉

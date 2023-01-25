@@ -140,6 +140,6 @@ know if all the images on your site are using next-gen formats like WebP.
 {% Instruction 'audit-performance', 'ol' %}
 1. Verify the **Serve images in next-gen formats** audit is passed.
 
-<img class="w-screenshot" src="./lighthouse_passing.png" alt="Passing 'Serve images in next-gen formats' audit in Lighthouse">
+{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="Passing 'Serve images in next-gen formats' audit in Lighthouse", width="701", height="651", class="w-screenshot" %}
 
 Success! You are now serving WebP images on your site.

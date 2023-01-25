@@ -26,8 +26,7 @@ Unused JavaScript can slow down your page load speed:
 flags every JavaScript file with more than 20 kibibytes of unused code:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="remove-unused-javascript.jpg"
-       alt="A screenshot of the audit.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt="A screenshot of the audit.", width="800", height="332", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Click a value in the <b>URL</b> column to open the script's
     source code in a new tab.
@@ -84,7 +83,7 @@ bundling](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/js-b
 ### React
 
 If you are not server-side rendering, [split your JavaScript
-bundles](https://web.dev/code-splitting-suspense/) with `React.lazy()`.
+bundles](/code-splitting-suspense/) with `React.lazy()`.
 Otherwise, code-split using a third-party library such as
 [loadable-components](https://www.smooth-code.com/open-source/loadable-components/docs/getting-started/).
 

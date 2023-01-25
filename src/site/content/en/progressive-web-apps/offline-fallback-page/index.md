@@ -3,15 +3,16 @@ layout: post
 title: Create an offline fallback page
 authors:
   - thomassteiner
+  - petelepage
 date: 2020-09-24
-# updated: 2020-09-14
+updated: 2021-03-24
 description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
 ---
 
 What do the Google Assistant app, the Slack app, the Zoom app, and almost
-any other native app on your phone or computer have in common? Right, they always at least give you *something*.
+any other platform-specific app on your phone or computer have in common? Right, they always at least give you *something*.
 Even when you do not have a network connection, you can still open the Assistant app, or enter
 Slack, or launch Zoom. You might not get anything particularly meaningful or even
 be unable to achieve what you wanted to achieve, but at least you get _something_ and the app is in
@@ -20,28 +21,28 @@ control.
 <figure class="w-figure" role="group" aria-labelledby="fig-apps-wrapper">
 
   <figure class="w-figure" role="group" aria-labelledby="fig-assistant" style="display: inline-block">
-    <img src="assistant.jpg" alt="Google Assistant mobile app while offline." width="200">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="Google Assistant mobile app while offline.", width="621", height="1344" %}
     <figcaption class="w-figcaption" id="fig-assistant">
       Google Assistant.
     </figcaption>
   </figure>
 
   <figure class="w-figure" role="group" aria-labelledby="fig-slack" style="display: inline-block">
-    <img src="slack.jpg" alt="Slack mobile app while offline." width="200">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="Slack mobile app while offline.", width="621", height="1344" %}
     <figcaption class="w-figcaption" id="fig-slack">
       Slack.
     </figcaption>
   </figure>
 
   <figure class="w-figure" role="group" aria-labelledby="fig-zoom" style="display: inline-block">
-    <img src="zoom.jpg" alt="Zoom mobile app while offline." width="200">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="Zoom mobile app while offline.", width="621", height="1344" %}
     <figcaption class="w-figcaption" id="fig-zoom">
       Zoom.
     </figcaption>
   </figure>
 
   <figcaption class="w-figcaption" id="fig-apps-wrapper">
-    With native apps, even when you do not have a network connection, you never get nothing.
+    With platform-specific apps, even when you do not have a network connection, you never get nothing.
   </figcaption>
 
 </figure>
@@ -52,14 +53,14 @@ the [offline dino game](https://www.blog.google/products/chrome/chrome-dino/), b
 <figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper">
 
   <figure class="w-figure" role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">
-    <img src="chrome-ios.png" alt="Google Chrome mobile app showing the offline dino game." width="200">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="Google Chrome mobile app showing the offline dino game.", width="800", height="1731" %}
     <figcaption class="w-figcaption" id="fig-chrome-ios">
       Google Chrome for iOS.
     </figcaption>
   </figure>
 
   <figure class="w-figure" role="group" aria-labelledby="fig-chrome" style="display: inline-block">
-    <img src="chrome.png" alt="Google Chrome desktop app showing the offline dino game." width="500">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="Google Chrome desktop app showing the offline dino game.", width="800", height="607" %}
     <figcaption class="w-figcaption" id="fig-chrome">
       Google Chrome for macOS.
     </figcaption>
@@ -81,7 +82,7 @@ example, the famous [trivago offline maze game](https://www.trivago.com/offline)
 **Reconnect** button and an automatic reconnection attempt countdown.
 
 <figure class="w-figure">
-    <img src="trivago.png" alt="The trivago offline page with the trivago offline maze." width="500">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="The trivago offline page with the trivago offline maze.", width="800", height="616" %}
     <figcaption class="w-figcaption">
       The trivago offline maze.
     </figcaption>
@@ -110,7 +111,7 @@ all other cases:
 
 ```js
 /*
-Copyright 2015, 2019, 2020 Google LLC. All Rights Reserved.
+Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -124,6 +125,9 @@ Copyright 2015, 2019, 2020 Google LLC. All Rights Reserved.
 
 // Incrementing OFFLINE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
+// This variable is intentionally declared and unused.
+// Add a comment for your linter if you want:
+// eslint-disable-next-line no-unused-vars
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = "offline";
 // Customize this with a different URL if needed.
@@ -201,6 +205,9 @@ self.addEventListener("fetch", (event) => {
 
 The `offline.html` file is where you can get creative and adapt it to your needs and add your
 branding. The example below shows the bare minimum of what is possible.
+It demonstrates both manual reload based on a button press as well as automatic reload
+based on the [`online` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event)
+and regular server polling.
 
 {% Aside 'gotchas' %} You need to cache all resources required by your offline page. One
 way to deal with this is to inline everything, so the offline page is self-contained. This is what I
@@ -216,7 +223,7 @@ do in the example below. {% endAside %}
 
     <title>You are offline</title>
 
-    <!-- inline the webpage's stylesheet -->
+    <!-- Inline the page's stylesheet. -->
     <style>
       body {
         font-family: helvetica, arial, sans-serif;
@@ -243,11 +250,37 @@ do in the example below. {% endAside %}
     <p>Click the button below to try reloading.</p>
     <button type="button">⤾ Reload</button>
 
-    <!-- inline the webpage's javascript file -->
+    <!-- Inline the page's JavaScript file. -->
     <script>
+      // Manual reload feature.
       document.querySelector("button").addEventListener("click", () => {
         window.location.reload();
       });
+      
+      // Listen to changes in the network state, reload when online.
+      // This handles the case when the device is completely offline.
+      window.addEventListener('online', () => {
+        window.location.reload();
+      });
+
+      // Check if the server is responding and reload the page if it is.
+      // This handles the case when the device is online, but the server
+      // is offline or misbehaving.
+      async function checkNetworkAndReload() {
+        try {
+          const response = await fetch('.');
+          // Verify we get a valid response from the server
+          if (response.status >= 200 && response.status < 500) {
+            window.location.reload();
+            return;
+          }
+        } catch {
+          // Unable to connect to the server, ignore.
+        }
+        window.setTimeout(checkNetworkAndReload, 2500);
+      }
+
+      checkNetworkAndReload();
     </script>
   </body>
 </html>

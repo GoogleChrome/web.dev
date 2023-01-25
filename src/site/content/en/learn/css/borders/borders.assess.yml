@@ -1,0 +1,48 @@
+setLeader: Test your knowledge of borders
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: Which is the default border color?
+    options:
+      - content: "`black`"
+        rationale: "Try again!"
+      - content: "`white`"
+        rationale: "Try again!"
+      - content: "`currentColor`"
+        rationale: "This special CSS value will represent the computed
+        `text-color` value, and is the default border color."
+      - content: "`historicColor`"
+        rationale: "This is made up. Try again!"
+  - type: multiple-choice
+    stimulus: |
+      ```css
+      .my-element {
+        border: solid hotpink;
+      }
+      ```
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: What is the default width of a border?
+    options:
+      - content: "`1px`"
+        rationale: "Try again!"
+      - content: "`medium`"
+        rationale: "🎉"
+      - content: "`solid`"
+        rationale: "This is a `border-style` value, not a `border-width` value."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: "`border-inline: 1px solid` would..."
+    options:
+      - content: "put borders on the left and right (in Latin layouts)."
+        rationale: "🎉"
+      - content: "put borders on the top and bottom (in Latin layouts)."
+        rationale: "In a Latin layout like English, `border-block` would be the
+        top and bottom."
+      - content: "put borders on the inside."
+        rationale: "Try again!"
+      - content: "put borders on the first line."
+        rationale: "Try again!"

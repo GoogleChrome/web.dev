@@ -1,15 +1,15 @@
 ---
 title: Communicating with Bluetooth devices over JavaScript
-subhead: | 
+subhead: |
   The Web Bluetooth API allows websites to communicate with Bluetooth devices.
 authors:
   - beaufortfrancois
 date: 2015-07-21
-updated: 2020-10-19
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+updated: 2021-05-07
+hero: image/admin/CME5IVhdn0pngs7jAlFX.jpg
+thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: A Bluetooth chip on a coin
-description: | 
+description: |
   The Web Bluetooth API allows websites to communicate with Bluetooth devices.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -17,6 +17,7 @@ tags:
   - devices
 feedback:
   - api
+stack_overflow_tag: web-bluetooth
 ---
 
 What if I told you websites could communicate with nearby Bluetooth devices
@@ -106,9 +107,11 @@ chooser where they can pick one device or simply cancel the request.
 </figure>
 
 
-The `navigator.bluetooth.requestDevice` function takes a mandatory object that
+The `navigator.bluetooth.requestDevice()` function takes a mandatory object that
 defines filters. These filters are used to return only devices that match some
 advertised Bluetooth GATT services and/or the device name.
+
+#### Services filter
 
 For instance, to request Bluetooth devices advertising the [Bluetooth GATT
 Battery Service]:
@@ -133,22 +136,65 @@ navigator.bluetooth.requestDevice({
 .catch(error => { console.error(error); });
 ```
 
+#### Name filter
+
 You can also request Bluetooth devices based on the device name being advertised
 with the `name` filters key, or even a prefix of this name with the `namePrefix`
 filters key. Note that in this case, you will also need to define the
-`optionalServices` key to be able to access some services. If you don't, you'll
-get an error later when trying to access them.
+`optionalServices` key to be able to access any services not included in a
+service filter. If you don't, you'll get an error later when trying to access
+them.
 
 ```js
 navigator.bluetooth.requestDevice({
   filters: [{
     name: 'Francois robot'
   }],
-  optionalServices: ['battery_service']
+  optionalServices: ['battery_service'] // Required to access service later.
 })
 .then(device => { /* … */ })
 .catch(error => { console.error(error); });
 ```
+
+#### Manufacturer data filter
+
+It is also possible to request Bluetooth devices based on the manufacturer
+specific data being advertised with the `manufacturerData` filters key. This key
+is an array of objects with a mandatory [Bluetooth company identifier] key named
+`companyIdentifier`. You can also provide a data prefix that filters
+manufacturer data from Bluetooth devices that start with it. Note that you will
+also need to define the `optionalServices` key to be able to access any services
+not included in a service filter. If you don't, you'll get an error later when
+trying to access them.
+
+```js
+// Filter Bluetooth devices from Google company with manufacturer data bytes
+// that start with [0x01, 0x02].
+navigator.bluetooth.requestDevice({
+  filters: [{
+    manufacturerData: [{
+      companyIdentifier: 0x00e0,
+      dataPrefix: new Uint8Array([0x01, 0x02])
+    }]
+  }],
+  optionalServices: ['battery_service'] // Required to access service later.
+})
+.then(device => { /* … */ })
+.catch(error => { console.error(error); });
+```
+
+A mask can also be used with a data prefix to match some patterns in
+manufacturer data. Check out the [Bluetooth data filters explainer] to learn
+more.
+
+{% Aside %}
+At the time of writing, the `manufacturerData` filter key is available in
+Chrome&nbsp;92. If backwards compatibility with older browsers is desired, you
+have to provide a fallback option as the manufacturer data filter is considered
+empty. See an [example].
+{% endAside %}
+
+#### No filters
 
 Finally, instead of `filters` you can use the `acceptAllDevices` key to show all
 nearby Bluetooth devices. You will also need to define the `optionalServices`
@@ -158,7 +204,7 @@ when trying to access them.
 ```js
 navigator.bluetooth.requestDevice({
   acceptAllDevices: true,
-  optionalServices: ['battery_service']
+  optionalServices: ['battery_service'] // Required to access service later.
 })
 .then(device => { /* … */ })
 .catch(error => { console.error(error); });
@@ -400,6 +446,7 @@ Service, or a Health Thermometer Service.
 - [Device Disconnect](https://googlechrome.github.io/samples/web-bluetooth/device-disconnect.html) - disconnect and get notified from a disconnection of a BLE Device after connecting to it.
 - [Get Characteristics](https://googlechrome.github.io/samples/web-bluetooth/get-characteristics.html) - get all characteristics of an advertised service from a BLE Device.
 - [Get Descriptors](https://googlechrome.github.io/samples/web-bluetooth/get-descriptors.html) - get all characteristics' descriptors of an advertised service from a BLE Device.
+- [Manufacturer Data Filter](https://googlechrome.github.io/samples/web-bluetooth/manufacturer-data-filter.html) - retrieve basic device information from a BLE Device that matches manufacturer data.
 
 ### Combining multiple operations
 
@@ -441,7 +488,7 @@ A **Bluetooth Internals** page is available in Chrome at
 Bluetooth devices: status, services, characteristics, and descriptors.
 
 <figure class="w-figure">
-  <img src="./bluetooth-internals.jpg" class="w-screenshot" alt="Screenshot of the internal page to debug Bluetooth in Chrome">
+  {% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Screenshot of the internal page to debug Bluetooth in Chrome", width="800", height="572", class="w-screenshot" %}
   <figcaption class="w-figcaption">Internal page in Chrome for debugging Bluetooth devices.</figcaption>
 </figure>
 
@@ -462,6 +509,15 @@ future:
   while `serviceremoved` event will track removed ones. A new `servicechanged`
   event will fire when any characteristic and/or descriptor gets added or
   removed from a Bluetooth GATT Service.
+
+### Show support for the API
+
+Are you planning to use the Web Bluetooth API? Your public support helps the Chrome team
+prioritize features and shows other browser vendors how critical it is to support them.
+
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebBluetooth`](https://twitter.com/search?q=%23WebBluetooth&src=typed_query&f=live)
+and let us know where and how you are using it.
 
 ## Resources
 
@@ -492,7 +548,7 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [Bluetooth device gets disconnected]: #disconnect
 [read and write to Bluetooth descriptors]: #descriptors
 [Browser compatibility]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#Browser_compatibility
-[origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md 
+[origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [Web Bluetooth Security Model]: https://medium.com/@jyasskin/the-web-bluetooth-security-model-666b4e7eed2
 [secure contexts]: https://w3c.github.io/webappsec-secure-contexts/#intro
 [TLS]: https://en.wikipedia.org/wiki/Transport_Layer_Security
@@ -528,3 +584,7 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [browser and platform implementation status]: https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md
 [Kayce Basques]: https://github.com/kaycebasques
 [SparkFun Electronics from Boulder, USA]: https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg
+[cr-dev-twitter]: https://twitter.com/ChromiumDev
+[Bluetooth company identifier]: https://www.bluetooth.com/specifications/assigned-numbers/company-identifiers/
+[Bluetooth data filters explainer]: https://github.com/WebBluetoothCG/web-bluetooth/blob/main/data-filters-explainer.md
+[example]: https://groups.google.com/a/chromium.org/g/blink-dev/c/5Id2LANtFko/m/5SIig7ktAgAJ

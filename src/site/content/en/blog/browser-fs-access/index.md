@@ -13,7 +13,7 @@ description: |
 scheduled: true
 date: 2020-07-27
 updated: 2021-01-27
-hero: hero.jpg
+hero: image/admin/Y4wGmGP8P0Dc99c3eKkT.jpg
 tags:
   - blog
   - progressive-web-apps
@@ -167,14 +167,13 @@ const saveFile = async (blob) => {
 ## Introducing browser-fs-access
 
 As perfectly fine as the File System Access API is,
-it's [not yet  widely available](https://caniuse.com/#feat=file-system-access-api).
+it's [not yet  widely available](https://caniuse.com/native-filesystem-api).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="caniuse.png"
-       alt="Browser support table for the File System Access API. All browsers are marked as 'no support' or 'behind a flag'.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G1jsSjCBR871W1uKQWeN.png", alt="Browser support table for the File System Access API. All browsers are marked as 'no support' or 'behind a flag'.", width="800", height="224", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Browser support table for the File System Access API.
-    (<a href="https://caniuse.com/#feat=file-system-access-api">Source</a>)
+    (<a href="https://caniuse.com/native-filesystem-api">Source</a>)
   </figcaption>
 </figure>
 
@@ -252,7 +251,7 @@ the demo cannot be embedded in this article.
 ## The browser-fs-access library in the wild
 
 In my free time, I contribute a tiny bit to an
-[installable PWA](https://web.dev/progressive-web-apps/#installable)
+[installable PWA](/progressive-web-apps/#installable)
 called [Excalidraw](https://excalidraw.com/),
 a whiteboard tool that lets you easily sketch diagrams with a hand-drawn feel.
 It is fully responsive and works well on a range of devices from small mobile phones to computers with large screens.
@@ -266,34 +265,23 @@ to my iPhone Downloads folder, open the file on my desktop (after transferring i
 modify the file, and overwrite it with my changes, or even save it as a new file.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="iphone-original.png" width="300" alt="An Excalidraw drawing on an iPhone.">
-  <figcaption class="w-figcaption">
-    Starting an Excalidraw drawing on an iPhone where the File System Access API is not supported,
-    but where a file can be saved (downloaded) to the Downloads folder.</a>)
-  </figcaption>
+  {% Img src="image/admin/u1Gwxp5MxS39wl8PW2vz.png", alt="An Excalidraw drawing on an iPhone.", width="300", height="649", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Starting an Excalidraw drawing on an iPhone where the File System Access API is not supported, but where a file can be saved (downloaded) to the Downloads folder.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="chrome-modify.png" alt="The modified Excalidraw drawing on Chrome on the desktop.">
-  <figcaption class="w-figcaption">
-    Opening and modifying the Excalidraw drawing on the desktop where the File System Access API is supported
-    and thus the file can be accessed via the API.
-  </figcaption>
+  {% Img src="image/admin/W1lt36DtKuveBJJTzonC.png", alt="The modified Excalidraw drawing on Chrome on the desktop.", width="800", height="592", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Opening and modifying the Excalidraw drawing on the desktop where the File System Access API is supported and thus the file can be accessed via the API.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="chrome-oversave.png" alt="Overwriting the original file with the modifications.">
-  <figcaption class="w-figcaption">
-    Overwriting the original file with the modifications to the original Excalidraw drawing file.
-    The browser shows a dialog asking me whether this is fine.
-  </figcaption>
+  {% Img src="image/admin/srqhiMKy2i9UygEP4t8e.png", alt="Overwriting the original file with the modifications.", width="800", height="585", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Overwriting the original file with the modifications to the original Excalidraw drawing file. The browser shows a dialog asking me whether this is fine.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="chrome-save-as.png" alt="Saving the modifications to a new Excalidraw drawing file.">
-  <figcaption class="w-figcaption">
-    Saving the modifications to a new Excalidraw file. The original file remains untouched.
-  </figcaption>
+  {% Img src="image/admin/FLzOZ4eXZ1lbdQaA4MQi.png", alt="Saving the modifications to a new Excalidraw drawing file.", width="800", height="592", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Saving the modifications to a new Excalidraw file. The original file remains untouched.</figcaption>
 </figure>
 
 ### Real life code sample
@@ -347,22 +335,18 @@ The screenshots below show the difference between Excalidraw's responsive main a
 Note how on iPhone the **Save As** button is missing.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="save.png" alt="Excalidraw app toolbar on iPhone with just a 'Save' button." width="300">
-  <figcaption class="w-figcaption">
-    Excalidraw app toolbar on iPhone with just a <strong>Save</strong> button.
-  </figcaption>
+  {% Img src="image/admin/c2sjjj86zh53VDrPIo6M.png", alt="Excalidraw app toolbar on iPhone with just a 'Save' button.", width="300", height="226", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Excalidraw app toolbar on iPhone with just a <strong>Save</strong> button.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="save-save-as.png" alt="Excalidraw app toolbar on Chrome desktop with a 'Save' and a 'Save As' button." width="300">
-  <figcaption class="w-figcaption">
-    Excalidraw app toolbar on Chrome  with a <strong>Save</strong> and a focused <strong>Save As</strong> button.
-  </figcaption>
+  {% Img src="image/admin/unUUghwH5mG2hLnaViHK.png", alt="Excalidraw app toolbar on Chrome desktop with a 'Save' and a 'Save As' button.", width="300", height="66", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Excalidraw app toolbar on Chrome  with a <strong>Save</strong> and a focused <strong>Save As</strong> button.</figcaption>
 </figure>
 
 ## Conclusions
 
-Working with native files technically works on all modern browsers.
+Working with system files technically works on all modern browsers.
 On browsers that support the File System Access API, you can make the experience better by allowing
 for true saving and overwriting (not just downloading) of files and
 by letting your users create new files wherever they want,

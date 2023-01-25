@@ -4,13 +4,13 @@ title: Content delivery networks (CDNs)
 authors:
   - katiehempenius
 description: |
-  This article provides a comprehensive overview of content delivery networks (CDNs). 
+  This article provides a comprehensive overview of content delivery networks (CDNs).
   In addition, it explains how to choose, configure, and optimize a CDN setup.
 subhead: |
-  Improve performance by using a content delivery network. 
+  Improve performance by using a content delivery network.
 date: 2020-09-22
 #updated: 2020-09-14
-hero: hero.jpg
+hero: image/admin/22YYRBuQy8gvQhgllLKq.jpg
 tags:
   - blog
   - performance
@@ -37,13 +37,13 @@ When a CDN is used to deliver resources from the origin, a new connection is est
 
 
 <figure class="w-figure">
-  <img src="./cdn1.png" alt="Comparison of connection setup with and without a CDN" class="w-screenshot">
+  {% Img src="image/admin/M9kzM7J7FenUyO7E9MF0.png", alt="Comparison of connection setup with and without a CDN", width="800", height="512" %}
 </figure>
 
 Some CDNs improve upon this even further by routing traffic to the origin through multiple CDN servers spread across the Internet. Connections between CDN servers occur over reliable and highly optimized routes, rather than routes determined by the [Border Gateway Protocol (BGP)](https://en.wikipedia.org/wiki/Border_Gateway_Protocol). Although BGP is the internet's de facto routing protocol, its routing decisions are not always performance-oriented. Therefore, BGP-determined routes are likely to be less performant than the finely-tuned routes between CDN servers.
 
 <figure class="w-figure">
-  <img src="./cdn2.png" alt="Comparison of connection setup with and without a CDN" class="w-screenshot">
+  {% Img src="image/admin/ZLMPFySQgBkpWvgujuJP.png", alt="Comparison of connection setup with and without a CDN", width="800", height="449" %}
 </figure>
 
 
@@ -86,7 +86,7 @@ If and how a resource should be cached depends on whether it is public or privat
 
     Public resources do not contain user-specific information and therefore are cacheable by a CDN. A resource may be considered cacheable by a CDN if it does not have a `Cache-Control: no-store` or `Cache-Control: private` header. The length of time that a public resource can be cached depends on how frequently the asset changes.
 
-##### Dynamic and static content  
+##### Dynamic and static content
 
 *   **Dynamic content**
 
@@ -139,7 +139,7 @@ The next level of CHR optimization, broadly speaking, is to fine tune your CDN s
 
 ### Initial audit
 
-Most CDNs will provide cache analytics. In addition, tools like [WebPageTest](https://webpagetest.org/) and [Lighthouse](https://web.dev/uses-long-cache-ttl/) can also be used to quickly verify that all of a page's static resources are being cached for the correct length of time. This is accomplished by checking the HTTP Cache headers of each resource. Caching a resource using the maximum appropriate Time To Live (TTL) will avoid unnecessary origin fetches in the future and therefore increase CHR.
+Most CDNs will provide cache analytics. In addition, tools like [WebPageTest](https://webpagetest.org/) and [Lighthouse](/uses-long-cache-ttl/) can also be used to quickly verify that all of a page's static resources are being cached for the correct length of time. This is accomplished by checking the HTTP Cache headers of each resource. Caching a resource using the maximum appropriate Time To Live (TTL) will avoid unnecessary origin fetches in the future and therefore increase CHR.
 
 At a minimum, one of these headers typically needs to be set in order for a resource to be cached by a CDN:
 
@@ -149,7 +149,7 @@ At a minimum, one of these headers typically needs to be set in order for a reso
 
 In addition, although it does not impact if or how a resource is cached by a CDN, it is good practice to also set the [`Cache-Control: immutable`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Revalidation_and_reloading) directive.`Cache-Control: immutable` indicates that a resource "will not be updated during its freshness lifetime". As a result, the browser will not revalidate the resource when serving it from the browser cache, thereby eliminating an unnecessary server request. Unfortunately, this directive is only [supported](https://caniuse.com/#feat=mdn-http_headers_cache-control_immutable) by Firefox and Safari - it is not supported by Chromium-based browsers. This [issue](https://bugs.chromium.org/p/chromium/issues/detail?id=611416) tracks Chromium support for `Cache-Control: immutable`. Starring this issue can help encourage support for this feature.
 
-For a more detailed explanation of HTTP caching, refer to [Prevent unnecessary network requests with the HTTP Cache](https://web.dev/http-cache/).
+For a more detailed explanation of HTTP caching, refer to [Prevent unnecessary network requests with the HTTP Cache](/http-cache/).
 
 
 ### Fine tuning
@@ -190,7 +190,7 @@ This section discusses performance features that are commonly offered by CDNs as
 
 ### Compression
 
-All text-based responses should be [compressed](/reduce-network-payloads-using-text-compression/#data-compression) with either gzip or Brotli. If you have the choice, choose Brotli over gzip. Brotli is a newer compression algorithm, and compared to gzip, it can achieve higher compression ratios.  
+All text-based responses should be [compressed](/reduce-network-payloads-using-text-compression/#data-compression) with either gzip or Brotli. If you have the choice, choose Brotli over gzip. Brotli is a newer compression algorithm, and compared to gzip, it can achieve higher compression ratios.
 
 There are two types of CDN support for Brotli compression: "Brotli from origin" and "automatic Brotli compression".
 
@@ -221,7 +221,7 @@ TLS 1.3 is the newest version of [Transport Layer Security (TLS)](https://en.wik
 TLS 1.3 shortens the TLS handshake from two roundtrips to one. For connections using HTTP/1 or HTTP/2, shortening the TLS handshake to one roundtrip effectively reduces connection setup time by 33%.
 
 <figure class="w-figure">
-  <img src="./cdn3.png" alt="Comparison of the TLS 1.2 and TLS 1.3 handshakes" class="w-screenshot">
+  {% Img src="image/admin/FnCSj1W23jXaiOWCp0Bw.png", alt="Comparison of the TLS 1.2 and TLS 1.3 handshakes", width="800", height="448" %}
 </figure>
 
 ### HTTP/2 and HTTP/3
@@ -260,7 +260,7 @@ Although switching your CDN instance to HTTP/2 is largely a matter of flipping a
     HTTP/2 introduced multiplexing, a feature that allows a single connection to be used to transmit multiple streams of data simultaneously. However, with HTTP/2, a single dropped packet blocks all streams on a connection (a phenomena known as a head-of-line blocking). With HTTP/3, a dropped packet only blocks a single stream. This improvement is largely the result of HTTP/3 using [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) (HTTP/3 uses UDP via [QUIC](https://en.wikipedia.org/wiki/QUIC)) rather than [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). This makes HTTP/3 particularly useful for data transfer over congested or lossy networks.
 
 <figure class="w-figure">
-  <img src="./cdn4.png" alt="Diagram showing the differences in data transmission between HTTP/1, HTTP/2, and HTTP/3" class="w-screenshot">
+  {% Img src="image/admin/B7YKfqGG4eS2toSoTDdS.png", alt="Diagram showing the differences in data transmission between HTTP/1, HTTP/2, and HTTP/3", width="800", height="449" %}
 </figure>
 
 *  **Reduced connection setup time**
@@ -268,7 +268,7 @@ Although switching your CDN instance to HTTP/2 is largely a matter of flipping a
     HTTP/3 uses TLS 1.3 and therefore shares its performance benefits: establishing a new connection only requires a single round-trip and resuming an existing connection does not require any roundtrips.
 
 <figure class="w-figure">
-  <img src="./cdn5.png" alt="Comparison of connection resumption between TLS 1.2, TLS 1.3, TLS 1.3 0-RTT, and HTTP/3" class="w-screenshot">
+  {% Img src="image/admin/7ffDEjblsisTNsfkynt6.png", alt="Comparison of connection resumption between TLS 1.2, TLS 1.3, TLS 1.3 0-RTT, and HTTP/3", width="800", height="400" %}
 </figure>
 
 HTTP/3 will have the biggest impact on users on poor network connections: not only because HTTP/3 handles packet loss better than its predecessors, but also because the absolute time savings resulting from a 0-RTT or 1-RTT connection setup will be greater on networks with high latency.

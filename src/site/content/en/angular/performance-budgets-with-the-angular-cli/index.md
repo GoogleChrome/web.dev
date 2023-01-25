@@ -3,7 +3,7 @@ layout: post
 title: 'Performance budgets with the Angular CLI'
 subhead: |
   Monitor the sizes of your bundles over time to make sure your application stays fast.
-hero: performance-budgets-with-the-angular-cli.jpg
+hero: image/admin/dDEEMFg0WKylKvlOwlQ3.jpg
 alt: A closeup photo of a calculator.
 date: 2019-07-02
 description: |
@@ -25,7 +25,7 @@ One important metric is the size of the JavaScript shipped with your application
 
 You can use [this online budget calculator](https://bit.ly/perf-budget-calculator) to estimate how much JavaScript your app can afford to load, depending on the [Time to Interactive](/interactive) you're aiming for.
 
-![Budget calculator](budget-calculator.png "Budget calculator")
+{% Img src="image/admin/TWPRBRI7ja8d33unYYK6.png", alt="Budget calculator", width="800", height="524" %}
 
 ## Configure a performance budget in the Angular CLI
 
@@ -52,7 +52,7 @@ Now try building the app by running `ng build --prod`.
 
 You should see this error in the console:
 
-![Budget failure](budget-failure.png "Budget failure")
+{% Img src="image/admin/KXJS3kX1XGnItcrS8HJS.png", alt="Budget failure", width="800", height="258" %}
 
 To fix the build error, take a look at `app.component.ts`, which includes an import from `rxjs/internal/operators`. This is a private import that's not supposed to be used by consumers of `rxjs`. It increases the bundle size a lot! When you update to the correct import, `rxjs/operators`, and run the build again, you'll see that it passes the budget check successfully.
 

@@ -20,7 +20,7 @@ This codelab explores how both minifying and compressing the JavaScript
 bundle for the following application improves page performance by reducing
 the app's request size.
 
-![App screenshot](./app-screenshot.png)
+{% Img src="image/admin/Ga0pUShY7cQ0BDAPgPuh.png", alt="App screenshot", width="800", height="535" %}
 
 ## Measure
 
@@ -45,7 +45,7 @@ Now take a look at how large this application is:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-app', 'ol' %}
 
-<img class="w-screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
+{% Img src="image/admin/Zzm8kiE2W29yGEZC7C2u.png", alt="Original bundle size in Network panel", width="800", height="186", class="w-screenshot" %}
 
 Although a lot of progress was made in the ["Remove unused code"](/remove-unused-code)
 codelab to trim this bundle size down, 225 KB is still quite large.
@@ -109,7 +109,7 @@ To get an idea of what the minified code looks like, go ahead and click
 `main.bundle.js` while still in the DevTools **Network** panel. Now click the
 **Response** tab.
 
-<img class="w-screenshot" src="./minified-response.png" alt="Minified response">
+{% Img src="image/admin/uti2q15O2MtiEsegYoV9.png", alt="Minified response", width="800", height="249", class="w-screenshot" %}
 
 The code in its final form, minified and mangled, is shown in the response body.
 To find out how large the bundle may have been if it was not minified, open
@@ -125,7 +125,7 @@ module.exports = {
 Reload the application and take a look at the bundle size again through the
 DevTools **Network** panel
 
-<img class="w-screenshot" src="./network-no-minify.png" alt="Bundle size of 767 KB">
+{% Img src="image/admin/H0lINRmM2gF6NHnzmkGM.png", alt="Bundle size of 767 KB", width="700", height="129", class="w-screenshot" %}
 
 That's a pretty big difference! 😅
 
@@ -185,7 +185,7 @@ are shown:
 
 Take a look at the `accept-encoding` header in the `Request Headers`.
 
-<img class="w-screenshot" src="./accept-encoding.png" alt="Accept encoding header">
+{% Img src="image/admin/shmaD9cmjjFMITKL0TAW.png", alt="Accept encoding header", width="800", height="361", class="w-screenshot" %}
 
 `accept-encoding` is used by the browser to specify which content
 encoding formats, or compression algorithms, it supports. There are many
@@ -279,12 +279,12 @@ app.use(express.static('public'));
 
 Now reload the app and take a look at the bundle size in the **Network** panel.
 
-<img class="w-screenshot" src="./network-dynamic-compress.png" alt="Bundle size with dynamic compression">
+{% Img src="image/admin/MMtTKWPKfht8RYd8BMYF.png", alt="Bundle size with dynamic compression", width="800", height="161", class="w-screenshot" %}
 
 From 225 KB to 61.6 KB! In the `Response Headers` now, a `content-encoding`
 header shows that the server is sending down this file encoded with `gzip`.
 
-<img class="w-screenshot" src="./content-encoding.png" alt="Content encoding header">
+{% Img src="image/admin/523FjNSQOK95lGzg0B6D.png", alt="Content encoding header", width="800", height="470", class="w-screenshot" %}
 
 ## Static compression
 
@@ -365,7 +365,7 @@ cd public
 ls
 ```
 
-<img class="w-screenshot" src="./console-commands.png" alt="Final outputted files in public directory">
+{% Img src="image/admin/YQwCT87xMfMwWiH63lTS.png", alt="Final outputted files in public directory", width="800", height="188", class="w-screenshot" %}
 
 The gzipped version of the bundle, `main.bundle.js.gz`, is now saved here as
 well. `CompressionPlugin` also compresses `index.html` by default.
@@ -403,7 +403,7 @@ that may be next.
 
 Once the app reloads, take a look at the `Network` panel once more.
 
-<img class="w-screenshot" src="./network-static-compress.png" alt="Bundle size reduction with static compression">
+{% Img src="image/admin/b7xYRsSdNhWX5Lc8zE51.png", alt="Bundle size reduction with static compression", width="800", height="176", class="w-screenshot" %}
 
 Just like before, a significant reduction in bundle size!
 

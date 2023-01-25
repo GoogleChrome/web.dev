@@ -3,7 +3,7 @@ title: Detached window memory leaks
 subhead: |
   Find and fix tricky memory leaks caused by detached windows.
 date: 2020-09-29
-hero: hero.jpg
+hero: image/admin/Dnk2j14tUTNqqSYN8FHj.jpg
 alt: Cat contemplating how to fix a leak
 authors:
   - developit
@@ -223,9 +223,7 @@ information about objects, including their size and a list of the variables and 
 reference them.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./heap-snapshot.png" width="762"
-       alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain
-       a large object.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4tBcZ7lZEqkmonijrOGa.png", alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain a large object.", width="762", height="419", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     A heap snapshot showing the references that retain a large object.
   </figcaption>
@@ -263,10 +261,7 @@ but taking a heap snapshot is a manual process. Another way to check for memory 
 the currently used JavaScript heap size from the [`performance.memory` API][performance-memory-api]:
 
 <figure class="w-figure">
-  <img src="./performance-memory.png"
-       class="w-screenshot"
-       alt="A screenshot of a section of the Chrome DevTools user interface."
-       width="621">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIypz58ucRgAnnNu1LwR.png", alt="A screenshot of a section of the Chrome DevTools user interface.", width="621", height="394" %}
   <figcaption class="w-figcaption">
     Checking the used JS heap size in DevTools as a popup is created, closed and unreferenced.
   </figcaption>
@@ -538,9 +533,9 @@ have another technique for debugging detached windows or this article helped unc
 app, I'd love to know! You can find me on Twitter [@\_developit](https://twitter.com/_developit).
 
 [performance-memory-api]: https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory
-[performance-measurememory]: https://web.dev/monitor-total-page-memory-usage/
+[performance-measurememory]: /monitor-total-page-memory-usage/
 [postmessage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
 [finalizationregistry]: https://v8.dev/features/weak-references#:~:text=FinalizationRegistry
 [weakref]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef
 [noopener]: https://developer.mozilla.org/en-US/docs/Web/API/Window/open#noopener
-[rel-noopener]: https://web.dev/external-anchors-use-rel-noopener/
+[rel-noopener]: /external-anchors-use-rel-noopener/

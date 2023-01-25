@@ -128,9 +128,10 @@
 }
 
 .w-masthead-path__image {
-  max-height: 280px;
-  max-width: 420px;
-  width: 100%;
+  @include bp(md) {
+    width: 420px;
+    height: auto;
+  }
 }
 
 // -----------------------------------------------------------------------------

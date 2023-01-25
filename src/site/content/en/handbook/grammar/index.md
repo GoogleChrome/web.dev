@@ -7,12 +7,12 @@ description: |
 ---
 
 <style>
-  img[src*="icon"] {
+  .icon {
     max-width: 32px;
     vertical-align: middle;
   }
 
-  img[src*="bordered"] {
+  .icon.bordered {
     border: 1px solid #949494;
     border-radius: 5px;
   }
@@ -151,7 +151,7 @@ Use straight quotation marks and apostrophes, not smart (curly).
 <div class="w-columns">
 <!-- lint disable no-smart-quotes -->
 {% Compare 'worse' %}
-The “Accessible to all” collection
+The "Accessible to all" collection
 {% endCompare %}
 <!-- lint enable no-smart-quotes -->
 
@@ -231,11 +231,11 @@ When referring to a button with an icon but no label, use the name of the button
 
 <div class="w-columns">
 {% Compare 'worse' %}
-Click ![Fullscreen icon](fullscreen.png#_icon).
+Click {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/exITm071mGTWssT5c3Qh.png", alt="Fullscreen icon", width="96", height="96", class="icon" %}.
 {% endCompare %}
 
 {% Compare 'better' %}
-Click **Fullscreen** ![Fullscreen icon](fullscreen.png#_icon_bordered).
+Click **Fullscreen** {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/exITm071mGTWssT5c3Qh.png", alt="Fullscreen icon", width="96", height="96", class="icon bordered" %}.
 {% endCompare %}
 </div>
 

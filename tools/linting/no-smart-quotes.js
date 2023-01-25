@@ -32,14 +32,8 @@ function noSmartQuotes(tree, file) {
 
   /* eslint-disable require-jsdoc */
   function visitor(node) {
-    const lines = node.value.split('\n');
-    let line;
-
-    for (let index = 0; index < lines.length; index++) {
-      line = lines[index].trim();
-      if (line.match(/[‘’]/g)) {
-        return file.message(reason, node);
-      }
+    if (node.value.match(/[‘’“”]/g)) {
+      return file.message(reason, node);
     }
   }
 }

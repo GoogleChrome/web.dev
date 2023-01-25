@@ -5,7 +5,7 @@ authors:
   - joemedley
 date: 2019-10-31
 updated: 2020-03-02
-hero: hero.jpg
+hero: image/admin/5TAFoyhWvniJzDchNzPT.jpg
 alt: A person using a virtual reality headset.
 description:
   Virtual reality came to the web in Chrome 79. Based on the WebXR Devicer API,
@@ -32,7 +32,7 @@ among others.
 
 This article begins a series on the immersive web. This installment covers
 setting up a basic WebXR application as well as entering and exiting an XR
-session. Later articles will cover the frame loop (the workhourse of WebXR
+session. Later articles will cover the frame loop (the workhorse of WebXR
 experience), the specifics of augmented reality, and the WebXR Hit Test API, a
 means of detecting surfaces in an AR session. Unless stated otherwise,
 everything I cover in this and succeeding articles applies equally to both AR
@@ -47,7 +47,7 @@ XR is intended to reflect that thinking by being a sort of algebraic variable
 that stands for anything in the spectrum of immersive experiences.
 
 <figure class="w-figure">
-  <img src="./immersive-spectrum.png" style="max-width: 100%;" alt="A graph illustrating the spectrum of visual experiences from complete reality to completely immersive."/>
+  {% Img src="image/admin/iQ99APUTFIgjdRPyS1C4.png", alt="A graph illustrating the spectrum of visual experiences from complete reality to completely immersive.", width="800", height="204" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The spectrum of immersive experiences
   </figcaption>
@@ -97,7 +97,7 @@ want a virtual reality session with the `'immersive-vr'` session type. The
 [other session
 types](https://developer.mozilla.org/en-US/docs/Web/API/XR/isSessionSupported#Syntax)
 are `'immersive-ar'` and `'inline'`. An inline session is for presenting content
-within HTML and is maily used for teaser content. The [Immersive AR
+within HTML and is mainly used for teaser content. The [Immersive AR
 Session](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html)
 sample demonstrates this. I'll explain that in a later article.
 

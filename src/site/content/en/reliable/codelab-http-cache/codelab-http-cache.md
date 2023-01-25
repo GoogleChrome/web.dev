@@ -167,7 +167,7 @@ sure that the right headers are being set by previewing the live app with the De
 displayed in the Network panel to include the information that is most relevant, by right-clicking in
 the column header:
 
-<img class="screenshot" src="./configure-response-headers.png" alt="Configuring DevTools' Network panel.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/L98OANnCWWOU36dTwd8r.png", alt="Configuring DevTools' Network panel.", width="800", height="931", class="screenshot" %}
 
 Here, the columns to pay attention to are `Name`, `Status`, `Cache-Control`,
 `ETag`, and `Last-Modified`.
@@ -177,7 +177,7 @@ Here, the columns to pay attention to are `Name`, `Status`, `Cache-Control`,
 After the page has loaded, you should see entries in the Network panel that look
 like the following:
 
-<img class="screenshot" src="./network-panel.png" alt="Network panel columns.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PQbDCXUvXPlqThlPbLIp.png", alt="Network panel columns.", width="800", height="172", class="screenshot" %}
 
 The first row is for the HTML document that you navigated to. This is properly
 served with `Cache-Control: no-cache`. The HTTP response status for that request
@@ -200,7 +200,7 @@ Because of the configuration used, there is no actual request being made to the
 Node.js server, and clicking on the entry will show you additional detail,
 including that the response came "(from disk cache)".
 
-<img class="screenshot" src="./status-code.png" alt="A network response status of 200.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bx1DtsiX7e9tdOSf1ogZ.png", alt="A network response status of 200.", width="800", height="175", class="screenshot" %}
 
 The actual values for the ETag and Last-Modified columns don't matter much. The
 important thing is to confirm that they're being set.

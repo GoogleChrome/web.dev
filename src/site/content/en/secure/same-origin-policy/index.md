@@ -101,12 +101,12 @@ cross-origin resource is blocked.
 [See how the same-origin policy works when accessing data inside an iframe](/codelab-same-origin-iframe).
 {% endAside %}
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment 'self-assessment' %}
 
 ### How to prevent Clickjacking
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./clickjacking.png" alt="clickjacking">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jFXSbDjBonhdGD65rCc1.png", alt="clickjacking", width="800", height="408" %}
   <figcaption class="w-figcaption">
     Figure: Clickjacking mechanism illustrated in 3 separate layers (base site,
     iframed site, transparent button).

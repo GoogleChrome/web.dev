@@ -38,7 +38,7 @@ const initialState = {
   currentUrl: window.location.pathname,
   currentLanguage: document.documentElement.getAttribute('lang'),
   isOffline: Boolean(getMeta('offline')),
-  isSideNavExpanded: false,
+  isNavigationDrawerOpen: false,
   isModalOpen: false,
   isSearchExpanded: false,
 

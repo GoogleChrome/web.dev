@@ -1,0 +1,16 @@
+{% macro audioFab(thumbnail, target="audio-player") %}
+<web-audio-fab target="{{ target }}">
+  <button class="web-audio-fab__button button" data-playing aria-label="Back to audio player">
+    {% Img class="web-audio-fab__thumbnail", src=thumbnail, alt="", width="56", height="56" %}
+    <div class="web-audio-fab__equalizer-container">
+      <svg class="web-audio-fab__equalizer" xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8">
+        <g>
+          <rect class="web-audio-fab__equalizer-left" width="3" height="8" />
+          <rect class="web-audio-fab__equalizer-middle" width="3" height="8" x="5" />
+          <rect class="web-audio-fab__equalizer-right" width="3" height="8" x="10" />
+        </g>
+      </svg>
+    </div>
+  </button>
+</web-audio-fab>
+{% endmacro %}

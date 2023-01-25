@@ -17,7 +17,7 @@ tags:
   - hid
   - games
   - devices
-hero: game-controller.jpg
+hero: image/admin/8TCwHOfb8SUWaVEtCx6j.jpg
 alt: A generic game controller
 ---
 
@@ -115,7 +115,7 @@ getting started with HID.
 
 ## Acknowledgements {: #acknowledgements }
 
-Thank you to [Pete LePage](https://web.dev/authors/petelepage/) and [Kayce
+Thank you to [Pete LePage](/authors/petelepage/) and [Kayce
 Basques](https://github.com/kaycebasques) for reviews of this article.
 
 <span>Photo by <a

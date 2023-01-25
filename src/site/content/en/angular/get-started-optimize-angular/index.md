@@ -3,7 +3,7 @@ layout: post
 title: 'Get started: optimize an Angular application'
 subhead: |
   Want to make your Angular site as fast and accessible as possible? You've come to the right place!
-hero: get-started-optimize-angular.jpg
+hero: image/admin/DX8MXZivFjz3NqMtFcK4.jpg
 alt: A hand dipping a paintbrush in one of several buckets of paint.
 date: 2019-06-24
 description: |

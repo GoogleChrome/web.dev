@@ -12,7 +12,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media-queries
   - css
-hero: hero.jpg
+hero: image/admin/LI2vYKZwQ98w3MLtUF8V.jpg
 alt: Time-lapse of woman in a train
 feedback:
   - api
@@ -32,7 +32,7 @@ many moving targets, I fail to focus on anything, and end up lost and with a fee
 visual overload, almost like staring at an anthill 🐜.
 
 <figure>
-  <img src="ice-skating.jpg" width="580" height="320" alt="Throng of feet of ice skating people">
+  {% Img src="image/admin/JA5v1s8gSBk70eJBB8xW.jpg", alt="Throng of feet of ice skating people", width="580", height="320" %}
   <figcaption>Visual overload in real life.</figcaption>
 </figure>
 
@@ -88,12 +88,10 @@ unnecessary animations.
 
 <div class="w-columns">
   <figure>
-    <img src="macos-reduce-motion.png" width="398" height="300"
-         alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KwuLNPefeDzUfR17EUtr.png", alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.", width="398", height="300" %}
   </figure>
   <figure>
-    <img src="android-remove-animations.png" width="287" height="300"
-         alt="A screenshot of the Android settings screen with the 'Remove animations' checkbox checked.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qed7yE6FKVQ5YXHn0TbJ.png", alt="A screenshot of the Android settings screen with the 'Remove animations' checkbox checked.", width="287", height="300" %}
   </figure>
 </div>
 
@@ -205,9 +203,7 @@ reveal animations are gone, and just the regular scrolling motion is left. The s
 shows the demo in action:
 
 <figure>
-  <video muted playsinline controls poster="prefers-reduced-motion.png">
-    <source src="https://storage.googleapis.com/web-dev-assets/prefers-reduced-motion/prefers-reduced-motion.mp4" type="video/mp4">
-  </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/zWs45QPPI9C8CjF813Zx.mp4", muted=true, playsinline=true, controls=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CQAw3Ee43Dcv0JOsm9fl.png" %}
   <figcaption>Video of the
     <a href="https://prefers-reduced-motion.glitch.me"><code>prefers-reduced-motion</code> demo</a>
     app

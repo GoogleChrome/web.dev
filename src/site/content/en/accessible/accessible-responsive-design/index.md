@@ -20,7 +20,7 @@ but responsive design also yields a win for accessibility.
 Consider a site like [Udacity](https://udacity.com):
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./udacity-100.jpg" alt="The Udacity site">
+  {% Img src="image/admin/5q9dDtEubSM23SzokQNu.jpg", alt="The Udacity site", width="800", height="393", class="w-screenshot" %}
 </figure>
 
 A low-vision user who has difficulty reading small print might zoom in the page,
@@ -32,7 +32,7 @@ and for mobile screen reader users as well. It's a win-win.
 Here's the same page magnified to 400%:
 
 <figure class="w-figure">
-  <img src="./udacity-400.jpg" alt="The Udacity site zoomed to 400%">
+  {% Img src="image/admin/WKHO21uWQz5lJ7Aqej1E.jpg", alt="The Udacity site zoomed to 400%", width="800", height="393" %}
 </figure>
 
 In fact, just by designing responsively,

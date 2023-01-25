@@ -9,7 +9,7 @@ authors:
   - joemedley
   - jeffposnick
 date: 2019-12-19
-hero: hero2.jpg
+hero: image/admin/Cos9WFMqJGVZjBdQHcMU.jpg
 alt: Two pairs of hands holding a cup of tomatoes.
 tags:
   - blog
@@ -20,7 +20,7 @@ feedback:
   - api
 ---
 
-The [Web Share Target API](https://web.dev/web-share-target/) lets you display
+The [Web Share Target API](/web-share-target/) lets you display
 your [Progressive Web App](https://developers.google.com/web/progressive-web-apps/checklist) in a
 user's system-level share [sheet] after it's been installed. While it works great if you have a server
 available to receive the request, it's much harder to get working if you don't.
@@ -32,7 +32,7 @@ that lives entirely inside your [service worker](/service-workers-cache-storage/
 single-page apps serve as share targets without a dedicated server endpoint.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./wst-send.png" style="max-width: 400px;" alt="Android phone with the 'Share via' drawer open."/>
+  {% Img src="image/admin/mp2bdiP2gVeMQ4UX12vd.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="377" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     System-level share target picker with an installed PWA called
     <code>Share Target Test</code> as an option.
@@ -42,7 +42,7 @@ single-page apps serve as share targets without a dedicated server endpoint.
 ## On the same page
 
 If you're unfamiliar with how Web Share Target Works, [Receiving shared data with the Web Share
-Target API](https://web.dev/web-share-target/) gives you an in-depth introduction.
+Target API](/web-share-target/) gives you an in-depth introduction.
 Here's a quick review.
 
 There are two parts to implementing web share target functionality. First,
@@ -125,7 +125,7 @@ code](https://github.com/chromeos/bridging-the-native-app-gap/blob/master/fugu-j
 
 One common thing you might do is hold shared resources until better network
 connections are available. Workbox also supports [periodic background
-sync](https://web.dev/periodic-background-sync/).
+sync](/periodic-background-sync/).
 
 ## Conclusion
 

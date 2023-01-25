@@ -6,7 +6,7 @@ authors:
   - felixarntz
 date: 2020-11-20
 #updated: 2020-11-20
-hero: hero.jpg
+hero: image/admin/Tx8vq8DMsflw49EHAa8Q.jpg
 alt: A lazy leopard relaxing on a tree
 description: |
   This post provides guidance on how to adopt the loading

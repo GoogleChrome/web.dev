@@ -1,0 +1,128 @@
+.drawer-course {
+
+  &__contents {
+    background-color: $WHITE;
+    border-right: 1px solid $GREY_300;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 90vw;
+    width: 360px;
+  }
+
+  &__header {
+    background-image: var(--course-background);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 294px;
+    display: flex;
+    height: 144px;
+    padding: 24px 16px 0;
+  }
+
+  &__title {
+    height: 40px;
+    margin: auto 0 20px;
+
+    > svg {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &__search {
+    height: 48px;
+  }
+
+  web-search {
+    margin: 0 16px;
+
+    .web-search__input-wrapper {
+      display: flex;
+    }
+
+    .web-search__open-btn,
+    .web-search__close-btn {
+      display: none;
+    }
+  }
+
+  .web-search-popout {
+    border-right: 1px solid #dadce0;
+    height: 100%;
+  }
+
+  &__links {
+    display: block; // this is a custom element so it needs display: block;
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain; // sass-lint:disable-line no-misspelled-properties
+  }
+
+  &__link {
+    --counter-color: #{$GREY_700};
+    --check-display: none;
+    @include apply-utility('weight', 'medium');
+    align-items: baseline;
+    color: $PRIMARY_TEXT_COLOR;
+    display: flex;
+    min-height: 48px;
+    padding: 16px 24px;
+
+    &:hover {
+      background-color: rgba($GREY_800, .03);
+      text-decoration: none;
+    }
+
+    &[data-complete] {
+      --check-display: block;
+      color: $GREY_700;
+
+      > [data-badge]::after {
+        content: '';
+      }
+    }
+
+    &[data-active] {
+      --counter-color: #{$WEB_PRIMARY_COLOR};
+      background: $BLUE_50;
+      color: $WEB_PRIMARY_COLOR;
+    }
+  }
+
+  &__link-counter {
+    color: var(--counter-color);
+    background-color: inherit;
+    font-size: px-to-rem(11px);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__link-title {
+    font-size: px-to-rem(14px);
+    line-height: 1.5;
+
+    &::after {
+      display: inline-block;
+      height: 0.5em;
+      margin-left: 0.6em;
+    }
+
+    &[data-badge]::after {
+      @include apply-utility('font', 'mono');
+      font-weight: 700;
+      color: $WEB_PRIMARY_COLOR;
+      content: attr(data-badge);
+      font-size: px-to-rem(11px);
+      line-height: px-to-rem(16px);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__link-check {
+    display: var(--check-display);
+    height: px-to-rem(14px);
+    margin-right: 16px;
+  }
+}

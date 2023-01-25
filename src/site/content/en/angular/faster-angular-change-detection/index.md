@@ -3,7 +3,7 @@ layout: post
 title: "Optimize Angular's change detection"
 subhead: |
   Implement faster change detection for better user experience.
-hero: change-detection.jpg
+hero: image/admin/gzvMgZD2uXO7L49EWuIV.jpg
 alt: An array of light bulbs with a single bulb turned on.
 date: 2019-07-09
 description: |
@@ -35,7 +35,7 @@ The app lists employees from two departments in a company—sales and R&D—and 
 * `AppComponent`, which is the root component of the app, and
 * Two instances of `EmployeeListComponent`, one for sales and one for R&D.
 
-![Sample application](app.png "Sample application")
+{% Img src="image/admin/JtDFr3VL1e2AyUvhbKVU.png", alt="Sample application", width="800", height="456" %}
 
 You can see the two instances of `EmployeeListComponent` in the template for `AppComponent`:
 
@@ -120,7 +120,7 @@ This code iterates over all the employees in the list and, for each one, renders
 
 With the two instances of `EmployeeListComponent`, the app forms the following component tree:
 
-![Component tree](component-tree.png "Component tree")
+{% Img src="image/admin/iMfgq2xaKVRcXc3LhWW7.png", alt="Component tree", width="800", height="454" %}
 
 `AppComponent` is the root component of the application. Its child components are the two instances of `EmployeeListComponent`. Each instance has a list of items (E<sub>1</sub>, E<sub>2</sub>, etc.) that represent the individual employees in the department.
 
@@ -134,7 +134,7 @@ You can verify that the slowdown comes from the `fibonacci` function by setting 
 
 Now click **Record** <span style="width: 13px;height: 13px;background-color: #6E6E6E;display: inline-block;border-radius: 50%;margin-left: 3px;margin-right: 3px;"></span> (in the top-left corner of the **Performance** panel) and start typing in one of the text boxes in the app. In a few seconds, click **Record** <span style="width: 13px;height: 13px;background-color: #6E6E6E;display: inline-block;border-radius: 50%;margin-left: 3px;margin-right: 3px;"></span> again to stop recording. Once Chrome DevTools processes all the profiling data it collected, you'll see something like this:
 
-![Performance profiling](profiling.png "Performance profiling in Chrome DevTools")
+{% Img src="image/admin/1rXcCcnM7rLj183jgQCk.png", alt="Performance profiling", width="800", height="276" %}
 
 If there are many employees in the list, this process may block the browser's UI thread and cause frame drops, which leads to a bad user experience.
 
@@ -156,7 +156,7 @@ export class EmployeeListComponent {...}
 
 Now when the user types in a text input, change detection is only triggered for the corresponding department:
 
-![Change detection in a component subtree](component-sub-tree-cd.png "Change detection in a component subtree")
+{% Img src="image/admin/1hUupNUByRDQLyYYvMcX.png", alt="Change detection in a component subtree", width="800", height="462" %}
 
 _You can find this optimization applied to the original application [here](https://github.com/mgechev/change-detection-web-dev/tree/onpush)._
 

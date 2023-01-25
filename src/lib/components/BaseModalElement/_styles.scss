@@ -3,10 +3,6 @@
 $MODAL_CONTENT_PADDING: 1.5rem;
 $MODAL_ANIMATION_DURATION: 150ms;
 
-.web-modal__overflow-hidden {
-  overflow: hidden;
-}
-
 @keyframes fadein {
   0% {
     opacity: 0;

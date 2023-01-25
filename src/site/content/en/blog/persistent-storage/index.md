@@ -10,7 +10,7 @@ tags:
   - blog
   - storage
   - progressive-web-apps
-hero: hero.jpg
+hero: image/admin/0TWeS0GZhDTpPzQVhDVS.jpg
 alt: Printed circuit board
 feedback:
   - api
@@ -119,9 +119,7 @@ is requested, it prompts the user with a UI popup asking if they will allow
 the site to store data in persistent storage.
 
 <figure class="w-figure">
-  <img src="ff-persist-request.jpg" class="w-screenshot"
-       alt="A popup shown by Firefox when a site requests persistent storage."
-       width="428">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o8W7pNTZ5dFKeDg2cmvA.jpg", alt="A popup shown by Firefox when a site requests persistent storage.", width="428", height="177" %}
   <figcaption class="w-figcaption">
     A popup shown by Firefox when a site requests persistent storage.
   </figcaption>

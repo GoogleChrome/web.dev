@@ -36,8 +36,7 @@ improvement, you may have seen some guidance in this realm in the form of the
 [Defer offscreen images audit](/offscreen-images/):
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./offscreen-audit.png" alt="A screenshot of the Defer offscreen images
-audit in Lighthouse.">
+  {% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="A screenshot of the Defer offscreen images audit in Lighthouse.", width="800", height="102", class="w-screenshot" %}
   <figcaption class="w-figcaption">One of Lighthouse's performance audits is to
 identify off screen images, which are candidates for lazy-loading.</figcaption>
 </figure>
@@ -55,9 +54,7 @@ page load, and replaces them with lazily-loaded images as they're scrolled into
 the viewport.
 
 <figure class="w-figure">
-  <img src="./lazy-loading-example.jpg" alt="A screenshot of the website
-Medium in the browsing, demonstrating lazy-loading in action. The blurry
-placeholder is on the left, and the loaded resource is on the right.">
+  {% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="A screenshot of the website Medium in the browsing, demonstrating lazy-loading in action. The blurry placeholder is on the left, and the loaded resource is on the right.", width="800", height="493" %}
   <figcaption class="w-figcaption">An example of image lazy-loading in action. A
 placeholder image is loaded at page load (left), and when scrolled into the
 viewport, the final image loads at the time of need.</figcaption>
@@ -90,7 +87,8 @@ There are a number of ways to implement lazy-loading.
 Your choice of solution must take into account the browsers you support,
 and also what you are trying to lazy-load.
 
-Modern browsers implement [built-in lazy-loading](/native-lazy-loading/), which can be enabled using the `loading` attribute on images and iframes.
+Modern browsers implement [browser-level lazy-loading](/browser-level-image-lazy-loading/),
+which can be enabled using the `loading` attribute on images and iframes.
 To provide compatibility with older browsers
 or to perform lazy-loading on elements without built-in lazy-loading
 you can implement a solution with your own JavaScript.

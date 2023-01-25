@@ -5,7 +5,7 @@ authors:
   - surma
 date: 2020-07-07
 # updated: 2020-06-24
-hero: pixels.jpg
+hero: image/admin/t9UnR0miKBlEuPbvPdPH.jpg
 alt: A closeup image of a computer screen.
 description: Since Chrome 84, ResizeObserver supports a new box measurement called device-pixel-content-box, that measures the element's dimension in physical pixels. This is crucial for rendering pixel-perfect graphics, especially in the context of high-density screens.
 tags:
@@ -43,7 +43,7 @@ will not exactly measure 1cm in size on most displays.
 Finally, dPR can also be affected by your browser's zoom feature. If you zoom in, the browser increases the reported dPR, causing everything to render bigger. If you check `devicePixelRatio` in a DevTools Console while zooming, you can see fractional values appear.
 
 <figure class="w-figure">
-  <img src="dprs.png" alt="" class="w-screenshot" width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ko6ehWmACBrUcPrl4AGO.png", alt="", width="600", height="314" %}
   <figcaption class="w-figcaption">DevTools showing a variety of fractional <code>devicePixelRatio</code> due to zooming.</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ To achieve something as close to a pixel-perfect canvas as possible on the web, 
 The astute reader might be wondering what happens when dPR is not an integer value. That is a good question and exactly where the crux of this entire problem lies. In addition, if you specify an element's position or size using percentages, `vh`, or other indirect values, it is possible that they will resolve to fractional CSS pixel values. An element with `margin-left: 33%` can end up with a rectangle like this:
 
 <figure class="w-figure">
-  <img src="fractional-pixels.png" alt="" class="w-screenshot" width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gWP1lVOw8ITEJhziaKnU.png", alt="", width="800", height="409" %}
   <figcaption class="w-figcaption">DevTools showing fractional pixel values as a result of a <code>getBoundingClientRect()</code> call.</figcaption>
 </figure>
 
@@ -87,7 +87,7 @@ CSS pixels are purely virtual, so having fractions of a pixel is okay in theory,
 The part of the unit conversion process that takes care of aligning elements with physical pixels is called "pixel snapping", and it does what it says on the tin: It snaps fractional pixel values to integer, physical pixel values. How exactly this happens is different from browser to browser. If we have an element with a width of `791.984px` on a display where dPR is 1, one browser might render the element at `792px` physical pixels, while another browser might render it at `791px`. That's just a single pixel off, but a single pixel can be detrimental to renderings that need to be pixel-perfect. This can lead to blurriness or even more visible artifacts like the [Moiré effect].
 
 <figure class="w-figure">
-  <img src="side-by-side.png" alt="" class="w-screenshot" width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/11FeCvp9aKLnDk05vYwY.png", alt="", width="600", height="802" %}
   <figcaption class="w-figcaption">The top image is a raster of differently colored pixels. The bottom image is the same as above, but the width and height have been reduced by one pixel using bilinear scaling. The emerging pattern is called the Moiré effect.<br>(You might have to open this image in a new tab to see it without any scaling applied to it.)</figcaption>
 </figure>
 
@@ -140,7 +140,7 @@ if (!(await hasDevicePixelContentBox())) {
 
 Pixels are a surprisingly complex topic on the web and up until now there was no way for you to know the exact number of physical pixels an element occupies on the user's screen. The new `devicePixelContentBox` property on a `ResizeObserverEntry` gives you that piece of information and allows you to do pixel-perfect renderings with `<canvas>`. `devicePixelContentBox` is supported in Chrome 84+.
 
-[resizeobserver]: https://web.dev/resize-observer/
+[resizeobserver]: /resize-observer/
 [subpixel rendering]: https://en.wikipedia.org/wiki/Subpixel_rendering
 [moiré effect]: https://en.wikipedia.org/wiki/Moir%C3%A9_pattern
 [ro support]: https://caniuse.com/#feat=resizeobserver

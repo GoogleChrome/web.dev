@@ -6,7 +6,7 @@ authors:
 description: How to measure Web Vitals with your current analytics tool
 date: 2020-05-27
 updated: 2020-07-21
-hero: /vitals/web-vitals-hero.png
+hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: How to measure Web Vitals with your current analytics tool
 tags:
   - blog # blog is a required tag for the article to show up in the blog.

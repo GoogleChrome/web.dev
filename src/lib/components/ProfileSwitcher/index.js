@@ -103,12 +103,8 @@ class ProfileSwitcher extends BaseElement {
             />
           </div>
           <div class="w-profile-dialog__details">
-            <div class="w-profile-dialog__name">
-              ${this.user.displayName}
-            </div>
-            <div class="w-profile-dialog__email">
-              ${this.user.email}
-            </div>
+            <div class="w-profile-dialog__name">${this.user.displayName}</div>
+            <div class="w-profile-dialog__email">${this.user.email}</div>
             <a
               class="w-profile-dialog__privacy"
               href="https://myaccount.google.com/privacypolicy"

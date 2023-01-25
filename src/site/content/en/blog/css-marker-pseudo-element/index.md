@@ -1,6 +1,6 @@
 ---
 title: Custom bullets with CSS ::marker
-subhead: It is now trivial to customize the color, size or type of number or bullet when using a <ul> or <ol>. 
+subhead: It is now trivial to customize the color, size or type of number or bullet when using a <ul> or <ol>.
 authors:
   - adamargyle
   - loirooriol
@@ -11,23 +11,23 @@ tags:
 date: 2020-09-02
 updated: 2020-09-02
 scheduled: true
-hero: hero.png
-thumbnail: thumb.png
+hero: image/admin/GPGTyXJOh0cH0wa1PvXH.png
+thumbnail: image/admin/jbdOq0tGGzobMtaBsajn.png
 alt: Showing the anatomy of a single list item by putting separate boxes around the bullet and the text
 feedback:
   - api
---- 
+---
 
 Thanks to Igalia, sponsored by Bloomberg, we can finally put our hacks away for styling lists. See!
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="marker-fun.png">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     <a href="https://glitch.com/edit/#!/marker-fun-example">View Source</a>
   </figcaption>
 </figure>
 
-Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we can change the content and some of the styles of bullets and numbers. 
+Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we can change the content and some of the styles of bullets and numbers.
 
 ## Browser compatibilty
 
@@ -56,7 +56,7 @@ Which results in the following unsurprising rendering:
   </iframe>
 </div>
 
-The dot at the beginning of each `<li>` item is free! The browser is drawing and creating a generated marker box for you. 
+The dot at the beginning of each `<li>` item is free! The browser is drawing and creating a generated marker box for you.
 
 Today we're excited to talk about the `::marker` pseudo-element, which gives the ability to style the bullet element that browsers create for you.
 
@@ -171,7 +171,7 @@ That said, you can't use every CSS property on a `::marker`. The list of which p
 - `font-*`
 - `content`
 - `unicode-bidi`
-- `white-space` 
+- `white-space`
 
 Changing the contents of a `::marker` is done with `content` as opposed to `list-style-type`. In this next example the first item is styled using `list-style-type` and the second with `::marker`. The properties in the first case apply to the entire list item, not just the marker, which means that the text is animating as well as the marker. When using `::marker` we can target just the marker box and not the text.
 
@@ -282,12 +282,12 @@ li::marker {
   </iframe>
 </div>
 
-**Changing numbered lists**  
+**Changing numbered lists**
 What about an `<ol>` though? The marker on an ordered list item is a number and not a bullet by default. In CSS these are called [Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters), and they're quite powerful. They even have properties to set and reset where the number starts and ends, or switching them to roman numerals. Can we style that? Yep, and we can even use the marker content value to build our own numbering presentation.
 
 ```css
 li::marker {
-  content: counter(list-item) "› "; 
+  content: counter(list-item) "› ";
   color: hotpink;
 }
 ```
@@ -304,7 +304,7 @@ li::marker {
 Chrome DevTools is ready to help you inspect, debug and modify the styles applying to `::marker` pseudo elements.
 
 <figure class="w-figure">
-  <img class="w-screenshot" style="max-inline-size: 480px" src='./devtools.png' alt="DevTools open and showing styles from the user agent and the user styles">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools open and showing styles from the user agent and the user styles", width="776", height="574", class="w-screenshot", style="max-inline-size: 480px" %}
 </figure>
 
 ### Future Pseudo-element styling

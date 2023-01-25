@@ -1,16 +1,16 @@
 ---
-title: Verify phone numbers on the web with the Web OTP API
+title: Verify phone numbers on the web with the WebOTP API
 subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2020-12-09
-hero: hero.png
+updated: 2021-05-11
+hero: image/admin/iVHsQYbBj8qNYZeSZKwK.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
 description: |
   Finding, memorizing, and typing OTPs sent via SMS is cumbersome. The
-  Web OTP API simplifies the OTP workflow for users.
+  WebOTP API simplifies the OTP workflow for users.
 
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -22,11 +22,11 @@ feedback:
 ---
 
 {% Aside 'gotchas' %}
-If you want to learn more general SMS OTP form best practices including Web OTP
+If you want to learn more general SMS OTP form best practices including WebOTP
 API, checkout [SMS OTP form best practices](/sms-otp-form).
 {% endAside %}
 
-## What is the Web OTP API?
+## What is the WebOTP API?
 
 These days, most people in the world own a mobile device and developers are
 commonly using phone numbers as an identifier for users of their services.
@@ -34,13 +34,6 @@ commonly using phone numbers as an identifier for users of their services.
 There are a variety of ways to verify phone numbers, but a randomly generated
 one-time password (OTP) sent by SMS is one of the most common. Sending this code
 back to the developer's server demonstrates control of the phone number.
-
-{% Aside %}
-The Web OTP API was originally called the SMS Receiver API. You may still see it
-named that way in some places. If you used that API, you should still read this
-article. [There are significant differences](#differences) between the current
-and earlier versions of the API.
-{% endAside %}
 
 This idea is already deployed in many scenarios to achieve:
 
@@ -63,7 +56,7 @@ this](https://developers.google.com/identity/sms-retriever/). So does
 and
 [Safari](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element).
 
-The Web OTP API lets your app receive specially-formatted messages bound to
+The WebOTP API lets your app receive specially-formatted messages bound to
 your app's domain. From this, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily.
 
@@ -77,79 +70,13 @@ API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API) to
 establish new sessions for these users.
 {% endAside %}
 
-## Current status
-
-The table below explains the current status of the Web OTP API.
-
-<table>
-<tr>
-<th markdown="block">
-Step
-</th>
-<th markdown="block">
-Status
-</th>
-</tr>
-<tr>
-<td markdown="block">
-1. Create explainer
-</td>
-<td markdown="block">
-<a href="https://github.com/WICG/WebOTP/blob/master/explainer.md">Complete</a>
-</td>
-</tr>
-<tr>
-<td markdown="block">
-2. Create initial draft of specification
-</td>
-<td markdown="block">
-<a href="https://wicg.github.io/WebOTP/">Complete</a>
-</td>
-</tr>
-<tr>
-<td markdown="block">
-3. Gather feedback and iterate on design
-</td>
-<td markdown="block">
-Complete
-</td>
-</tr>
-<tr>
-<td markdown="block">
-4. Origin trial
-</td>
-<td markdown="block">
-Complete
-</td>
-</tr>
-<tr>
-<td markdown="block">
-<strong>5. Launch</strong>
-</td>
-<td markdown="block">
-Chrome 84
-</td>
-</tr>
-</table>
-
-## Changes from earlier versions
-
-Early versions of this API were called SMS Receiver. If you are famillar with
-that version of the API be aware of the changes made to it. Improvements from
-SMS Receiver API include:
-
-* The SMS message format is now aligned with WebKit's.
-* The web page only receives an OTP code regardless of whatever else is in the
-  message.
-* The browser's application hash code is no longer required in the message.
-
 ## See it in action
 
 Let's say a user wants to verify their phone number with a website. The website
 sends a text message to the user over SMS and the user enters the OTP from the
 message to verify the ownership of the phone number.
 
-With the Web OTP API, these steps are as easy as one tap for the user, as
+With the WebOTP API, these steps are as easy as one tap for the user, as
 demonstrated in the video. When the text message arrives, a bottom sheet pops up
 and prompts the user to verify their phone number. After clicking the **Verify**
 button on the bottom sheet, the browser pastes the OTP into the form and the
@@ -163,16 +90,16 @@ form is submitted without the user needing to press **Continue**.
 The whole process is diagrammed in the image below.
 
 <figure class="w-figure">
-  <img src="./diagram.png" width="494" height="391" />
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Web OTP API diagram
+    WebOTP API diagram
   </figcaption>
 </figure>
 
 Try [the demo](https://web-otp.glitch.me) yourself. It doesn't ask for
 your phone number or send an SMS to your device, but you can send one from
 another device by copying the text displayed in the demo. This works because it
-doesn't matter who the sender is when using the Web OTP API.
+doesn't matter who the sender is when using the WebOTP API.
 
 1. Go to [https://web-otp.glitch.me](https://web-otp.glitch.me) in Chrome 84 or
    later on an Android device.
@@ -185,33 +112,33 @@ Your OTP is: 123456.
 ```
 
 Did you receive the SMS and see the prompt to enter the code to the input area?
-That is how the Web OTP API works for users.
+That is how the WebOTP API works for users.
 
-{% Aside 'gotcha' %}
+{% Aside 'gotchas' %}
+
 If the dialog doesn't appear for you, check out [the FAQ](#no-dialog).
+
 {% endAside %}
 
-Using the Web OTP API consists of three parts:
+Using the WebOTP API consists of three parts:
 
 * A properly annotated `<input>` tag
 * JavaScript in your web app
-* Formatted message text sent via SMS. 
+* Formatted message text sent via SMS.
 
 I'll cover the `<input>` tag first.
 
 ## Annotate an `<input>` tag
 
-Web OTP itself works without any HTML annotation, but for cross-browser
+WebOTP itself works without any HTML annotation, but for cross-browser
 compatibility, I highly recommend that you add `autocomplete="one-time-code"` to
 the `<input>` tag where you expect the user entering an OTP.
 
 This allows Safari 14 or later to suggest that the user to autofill the `<input>`
 field with an OTP when they receive an SMS with the format described in [Format
-the SMS message](#format) even though it doesn't support Web OTP.
+the SMS message](#format) even though it doesn't support WebOTP.
 
-{% Label %}
-HTML
-{% endLabel %}
+{% Label %}HTML{% endLabel %}
 
 ```html
 <form>
@@ -220,14 +147,12 @@ HTML
 </form>
 ```
 
-## Use the Web OTP API
+## Use the WebOTP API
 
-Because Web OTP is simple, just copying and pasting the following code will do the
+Because WebOTP is simple, just copying and pasting the following code will do the
 job. I'll walk you through what's happening anyway.
 
-{% Label %}
-JavaScript
-{% endLabel %}
+{% Label %}JavaScript{% endLabel %}
 
 ```js
 if ('OTPCredential' in window) {
@@ -259,9 +184,7 @@ if ('OTPCredential' in window) {
 Feature detection is the same as for many other APIs. Listening to
 `DOMContentLoaded` event will wait for the DOM tree to be ready to query.
 
-{% Label %}
-JavaScript
-{% endLabel %}
+{% Label %}JavaScript{% endLabel %}
 
 ```js
 if ('OTPCredential' in window) {
@@ -276,20 +199,20 @@ if ('OTPCredential' in window) {
 ```
 
 {% Aside 'caution' %}
-The Web OTP API requires a secure origin (HTTPS). The feature detection on an
+
+The WebOTP API requires a secure origin (HTTPS). The feature detection on an
 HTTP website will fail.
+
 {% endAside %}
 
 ### Process the OTP
 
-The Web OTP API itself is simple enough. Use
+The WebOTP API itself is simple enough. Use
 [`navigator.credentials.get()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
-to obtain the OTP. Web OTP adds a new `otp` option to that method. It only has
+to obtain the OTP. WebOTP adds a new `otp` option to that method. It only has
 one property: `transport`, whose value must be an array with the string `'sms'`.
 
-{% Label %}
-JavaScript
-{% endLabel %}
+{% Label %}JavaScript{% endLabel %}
 
 ```js/1-2
     …
@@ -303,9 +226,7 @@ JavaScript
 This triggers the browser's permission flow when an SMS message arrives. If permission is
 granted, the returned promise resolves with an `OTPCredential` object.
 
-{% Label %}
-Content of obtained `OTPCredential` object
-{% endLabel %}
+{% Label %}Content of obtained `OTPCredential` object{% endLabel %}
 
 ```json
 {
@@ -317,9 +238,7 @@ Content of obtained `OTPCredential` object
 Next, pass the OTP value to the `<input>` field. Submitting the form directly
 will eliminate the step requiring the user to tap a button.
 
-{% Label %}
-JavaScript
-{% endLabel %}
+{% Label %}JavaScript{% endLabel %}
 
 ```js/5-6
     …
@@ -385,6 +304,26 @@ Your OTP is: 123456.
 @www.example.com #123456
 ```
 
+Here are bad examples:
+
+|Example malformed SMS Text|Why this won't work|
+|--------------------------|-------------------|
+|`Here is your code for @example.com #123456`|`@` is expected to be the first character of the last line.|
+|`Your code for @example.com is #123456`|`@` is expected to be the first character of the last line.|
+|`Your verification code is 123456`<br/><br/>`@example.com\t#123456`|A single space is expected between `@host` and `#code`.|
+|`Your verification code is 123456`<br/><br/>`@example.com`<code>&nbsp;&nbsp;</code>`#123456`|A single space is expected between `@host` and `#code`.|
+|`Your verification code is 123456`<br/><br/>`@ftp://example.com #123456`|URL scheme cannot be included.|
+|`Your verification code is 123456`<br/><br/>`@https://example.com #123456`|URL scheme cannot be included.|
+|`Your verification code is 123456`<br/><br/>`@example.com:8080 #123456`|Port cannot be included.|
+|`Your verification code is 123456`<br/><br/>`@example.com/foobar #123456`|Path cannot be included.|
+|`Your verification code is 123456`<br/><br/>`@example .com #123456`|No whitespece in domain.|
+|`Your verification code is 123456`<br/><br/>`@domain-forbiden-chars-#%/:<>?@[] #123456`|No [forbidden chars](https://url.spec.whatwg.org/#forbidden-host-code-point) in domain.|
+|`@example.com #123456`<br/><br/>`Mambo Jumbo`|`@host` and `#code` are expected to be the last line.|
+|`@example.com #123456`<br/><br/>`App hash #oudf08lkjsdf834`|`@host` and `#code` are expected to be the last line.|
+|`Your verification code is 123456`<br/><br/>`@example.com 123456`|Missing `#`.|
+|`Your verification code is 123456`<br/><br/>`example.com #123456`|Missing `@`.|
+|`Hi mom, did you receive my last text`|Missing `@` and `#`.|
+
 ## Demos
 
 Try various messages with the demo:
@@ -400,18 +339,137 @@ You may also fork it and create your version:
   allow: []
 } %}
 
+## Use WebOTP from a cross-origin iframe
+
+Entering an SMS OTP to a cross-origin iframe is typically used for payment
+confirmation, especially with 3D Secure. Having the common format to support
+cross-origin iframes, WebOTP API delivers OTPs bound to nested origins. For
+example:
+
+* A user visits `shop.example` to purchase a pair of shoes with a credit card.
+* After entering the credit card number, the integrated payment provider shows a
+  form from `bank.example` within an iframe asking the user to verify their
+  phone number for fast checkout.
+* `bank.example` sends an SMS that contains an OTP to the user so that they can
+  enter it to verify their identity.
+
+To use WebOTP API from within a cross-origin iframe, you need to do two things:
+
+* Annotate both the top-frame origin and the iframe origin in the SMS text
+  message.
+* Configure permissions policy to allow the cross-origin iframe to receive OTP
+  from the user directly.
+
+<figure class="w-figure">
+{% Video
+  src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4",
+  autoplay="true",
+  controls="true",
+  loop="true",
+  muted="true",
+  preload="auto",
+  width="300",
+  height="600",
+  class="w-screenshot"
+%}
+  <figcaption class="w-figcaption">
+    WebOTP API within an iframe in action.
+  </figcaption>
+</figure>
+
+You can try the demo at
+[https://web-otp-iframe-demo.stackblitz.io](https://web-otp-iframe-demo.stackblitz.io).
+
+### Annotate bound-origins to the SMS text message
+
+When WebOTP API is called from within an iframe, the SMS text message must
+include the top-frame origin preceded by `@` followed by the OTP preceded by `#`
+and the iframe origin preceded by `@` at the last line.
+
+```text
+Your verification code is 123456
+
+@shop.example #123456 @bank.exmple
+```
+
+### Configure Permissions Policy
+
+To use WebOTP in a cross-origin iframe, the embedder must grant access to this
+API via otp-credentials [permissions
+policy](https://www.w3.org/TR/permissions-policy-1) to avoid unintended
+behavior. In general there are two ways to achieve this goal:
+
+{% Label %}via HTTP Header:{% endLabel %}
+
+```http
+Permissions-Policy: otp-credentials=(self "https://bank.example")
+```
+
+{% Label %}via iframe `allow` attribute:{% endLabel %}
+
+```html
+<iframe src="https://bank.example/…" allow="otp-credentials"></iframe>
+```
+
+See [more examples on how to specify a permission policy
+](https://github.com/w3c/webappsec-permissions-policy/blob/master/permissions-policy-explainer.md#how-is-a-policy-specified).
+
+{% Aside %}
+
+At the moment Chrome only supports WebOTP API calls from cross-origin iframes
+that have **no more than one** unique origin in its ancestor chain. In the
+following scenarios:
+
+* `a.com` -> `b.com`
+* `a.com` -> `b.com` -> `b.com`
+* `a.com` -> `a.com` -> `b.com`
+* `a.com` -> `b.com` -> `c.com`
+
+using WebOTP in `b.com` is supported but using it in `c.com` is not.
+
+Note that the following scenario is also not supported because of lack of demand
+and UX complexities.
+
+* `a.com` -> `b.com` -> `a.com` (calls WebOTP API)
+
+{% endAside %}
+
 ## FAQ
 
 ### The dialog doesn't appear though I'm sending a properly formatted message. What's going wrong? {: #no-dialog}
 
 There are a couple of caveats when testing the API:
+
 * If the sender's phone number is included in the receiver's contact list, this
   API will not be triggered due to the design of the underlying [SMS User
   Consent
   API](https://developers.google.com/identity/sms-retriever/user-consent/request#2_start_listening_for_incoming_messages).
-* If you are using a work profile on your Android device and the Web OTP does
+* If you are using a work profile on your Android device and the WebOTP does
   not work, try installing and using Chrome on your personal profile instead
   (i.e. the same profile in which you receive SMS messages).
+
+Check back at [the format](#format) to see if your SMS is correctly formatted.
+
+### Is this API compatible between different browsers?
+
+Chromium and WebKit agreed on [the SMS text message
+format](https://wicg.github.io/sms-one-time-codes) and [Apple announced Safari's
+support for it](https://developer.apple.com/news/?id=z0i801mg) starting in iOS 14
+and macOS Big Sur. Though Safari doesn't support the WebOTP JavaScript API, by
+annotating `input` element with `autocomplete=["one-time-code"]`, the default
+keyboard automatically suggests that you enter the OTP if the SMS message complies
+with the format.
+
+### Is it safe to use SMS as a way to authenticate?
+
+While SMS OTP is useful to verify a phone number when the number is first
+provided, phone number verification via SMS must be used carefully for
+re-authentication since phone numbers can be hijacked and recycled by carriers.
+WebOTP is a convenient re-auth and recovery mechanism, but services should
+combine it with additional factors, such as a knowledge challenge, or use the
+[Web Authentication
+API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
+for strong authentication.
 
 ### Where do I report bugs in Chrome's implementation?
 
@@ -424,44 +482,11 @@ Did you find a bug with Chrome's implementation?
 
 ### How can I help this feature?
 
-Are you planning to use the Web OTP API? Your public support helps us prioritize
+Are you planning to use the WebOTP API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
-Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
-`#webotp` and let us know where and how you're using it.
-
-### What are the differences with the SMS Receiver API? {: #differences }
-
-Consider Web OTP API an evolved version of the SMS Receiver API. Web OTP API has
-a few significant differences compared to the SMS Receiver API.
-
-* The [expected text format](#format) for the SMS message has changed.
-* It no longer requires an app hash string to be included in the SMS message.
-* The method called is now `navigator.credentials.get()` rather than
-  `navigator.sms.receive()`.
-* The `get()` receives only the OTP rather than the entire SMS message as
-  `receive()` did before.
-* It's now possible to [abort the call to `get()`](#aborting).
-
-### Is this API compatible between different browsers?
-
-Chromium and WebKit agreed on [the SMS text message
-format](https://wicg.github.io/sms-one-time-codes) and [Apple announced Safari's
-support for it](https://developer.apple.com/news/?id=z0i801mg) starting in iOS 14
-and macOS Big Sur. Though Safari doesn't support the Web OTP JavaScript API, by
-annotating `input` element with `autocomplete=["one-time-code"]`, the default
-keyboard automatically suggests that you enter the OTP if the SMS message complies
-with the format.
-
-### Is it safe to use SMS as a way to authenticate?
-
-While SMS OTP is useful to verify a phone number when the number is first
-provided, phone number verification via SMS must be used carefully for
-re-authentication since phone numbers can be hijacked and recycled by carriers.
-Web OTP is a convenient re-auth and recovery mechanism, but services should
-combine it with additional factors, such as a knowledge challenge, or use the
-[Web Authentication
-API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
-for strong authentication.
+Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
+[`#WebOTP`](https://twitter.com/search?q=%23WebOTP&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 {% Aside %}
 Find more questions at [the FAQ section in the explainer](https://github.com/WICG/WebOTP/blob/master/FAQ.md).

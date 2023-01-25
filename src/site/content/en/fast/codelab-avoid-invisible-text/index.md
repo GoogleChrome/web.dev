@@ -165,4 +165,4 @@ html.fonts-loaded .text {
 If the page looks like this, then you've successfully implemented Font Face
 Observer and gotten rid of the "Flash of Invisible Text."
 
-![A heading in a cursive font.](./fancy-header.png)
+{% Img src="image/admin/st2aEbPzhPIwyJiobkgO.png", alt="A heading in a cursive font.", width="572", height="246" %}

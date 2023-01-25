@@ -19,7 +19,7 @@ tags:
   - service-worker
 ---
 
-{% YouTube 'fhqCwDP69PI', '438' %}
+{% YouTube id='fhqCwDP69PI', startTime='438' %}
 
 [Single-page app (SPA)](https://en.wikipedia.org/wiki/Single-page_application) is an architectural pattern in which the browser runs JavaScript code to update the existing page when the user visits a different section of the site, as opposed to loading an entire new page.
 
@@ -37,21 +37,18 @@ In this article we'll analyze how you can achieve an SPA-like architecture in mu
 [DEV](https://dev.to/) is a community where software developers write articles, take part in discussions, and build their professional profiles.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
-       src="homepage.jpg" 
-       alt="A screenshot of https://dev.to">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Vk2qqXg5PmLV7oCR7xVh.jpg", alt="A screenshot of https://dev.to", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
-Their architecture is a multi-page app based on traditional backend templating through Ruby on Rails. Their team was interested in some of the benefits of an app shell model, but didn't want to undertake a major architectural change or move away from their original tech stack. 
+Their architecture is a multi-page app based on traditional backend templating through Ruby on Rails. Their team was interested in some of the benefits of an app shell model, but didn't want to undertake a major architectural change or move away from their original tech stack.
 
 Here's how their solution works:
 
-1. First, they create partials of their home page for the header and the footer (`shell_top.html` and `shell_bottom.html`) and deliver them as standalone HTML snippets with an endpoint. These assets are added to the cache at the service worker `install` event (what's commonly referred to as [precaching](https://web.dev/precache-with-workbox/)).
+1. First, they create partials of their home page for the header and the footer (`shell_top.html` and `shell_bottom.html`) and deliver them as standalone HTML snippets with an endpoint. These assets are added to the cache at the service worker `install` event (what's commonly referred to as [precaching](/precache-with-workbox/)).
 1. When a navigation request is intercepted by the service worker, they create a [streamed response](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) by combining the cached header and footer with the main page content that just came from the server. The body is the only actual part of the page that requires fetching data from the network.
 
 <figure class="w-figure">
-  <img src="dev-architecture.png" 
-       alt="Dev's architecture consisting on static headers and footers that are cached and a body requested from the network.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QkGCrnzggZmrp1PXrbHb.png", alt="Dev's architecture consisting on static headers and footers that are cached and a body requested from the network.", width="800", height="363" %}
 </figure>
 
 The key element of this solution is the usage of [streams](https://developers.google.com/web/updates/2016/06/sw-readablestreams), which enables [incremental creations and updates](https://streams.spec.whatwg.org/#intro) of data sources. The Streams API also provides an interface for reading or writing asynchronous chunks of data, only a subset of which might be available in memory at any given time.
@@ -59,13 +56,13 @@ This way, the header of the page can be rendered as soon as it's picked from the
 
 The resulting UX is similar to the app shell UX pattern of SPAs, implemented on a MPA site.
 
-{% Aside %} 
+{% Aside %}
 The previous section contains a quick summary of DEV's solution. For a more detailed explanation check out their [blog post](https://dev.to/devteam/instant-webpages-and-terabytes-of-data-savings-through-the-magic-of-service-workers-1mkc) on this topic.
 {% endAside %}
 
 ## Implement an app shell UX architecture in MPAs with Workbox
 
-In this section we'll cover a summary of the different parts involved in implementing an app shell UX architecture in MPAs. 
+In this section we'll cover a summary of the different parts involved in implementing an app shell UX architecture in MPAs.
 For a more detailed post on how to implement this on a real site, check out [Beyond SPAs: alternative architectures for your PWA](https://developers.google.com/web/updates/2018/05/beyond-spa).
 
 ### The server
@@ -101,7 +98,7 @@ After the first page load, the service worker is registered, allowing you to fet
 
 #### Precaching static assets
 
-The first step is to cache the partial HTML templates, so they are immediately available. 
+The first step is to cache the partial HTML templates, so they are immediately available.
 With [Workbox precaching](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) you can store these files at the `install` event of the service worker and keep them up to date when changes are deployed to the web app.
 
 Depending on the build process, Workbox has different solutions to generate a service worker and indicate the list of files to precache, including [webpack](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) and [gulp](https://developers.google.com/web/tools/workbox/guides/codelabs/gulp) plugins, a [generic node module](https://developers.google.com/web/tools/workbox/modules/workbox-build) and a [command line interface](https://developers.google.com/web/tools/workbox/modules/workbox-cli).
@@ -125,7 +122,7 @@ workbox.precaching.precacheAndRoute([
 #### Streaming
 
 Next, add the service worker logic so that the precached partial HTML can be sent back to the web app immediately. This is a crucial part of being reliably fast. Using the [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API) within our service worker makes that possible.
-[Workbox Streams](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-streams) abstracts the details of how streaming works. The package lets you pass to the library a mix of streaming sources, both from caches and runtime data that might come from the network. Workbox takes care of coordinating the individual sources and stitching them together into a single, streaming response. 
+[Workbox Streams](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-streams) abstracts the details of how streaming works. The package lets you pass to the library a mix of streaming sources, both from caches and runtime data that might come from the network. Workbox takes care of coordinating the individual sources and stitching them together into a single, streaming response.
 
 First, set up the strategies in Workbox to handle the different sources that will make up the streaming response.
 

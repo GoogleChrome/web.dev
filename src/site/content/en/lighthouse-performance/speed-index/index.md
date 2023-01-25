@@ -16,7 +16,7 @@ Each metric captures some aspect of page load speed.
 Lighthouse displays Speed Index in seconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="speed-index.png" alt="A screenshot of the Lighthouse Speed Index audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ksKnQH9tGEzIXsrVoUHR.png", alt="A screenshot of the Lighthouse Speed Index audit", width="800", height="588", class="w-screenshot" %}
 </figure>
 
 ## What Speed Index measures

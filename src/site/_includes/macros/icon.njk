@@ -1,0 +1,45 @@
+{#
+  @typedef {object} SvgOptions - Options used to configure the attributes on the svg.
+  @property {string} [label] - An aria-label that describes the svg.
+  @property {string} [className] - A space separated list of classes to apply to
+  the svg.
+  @property {boolean} [hidden] - Indicates if an svg should have aria-hidden.
+#}
+
+{#
+  Inlines an svg into the page.
+  @param {string} path - The file path to the svg.
+  @param {SvgOptions} options
+#}
+{% macro svg(path, options) %}
+{% set rawSvg -%}
+  {% include path %}
+{%- endset %}
+{{ rawSvg | updateSvgForInclude(options) | safe }}
+{% endmacro %}
+
+{#
+  Finds an icon in the _includes/icons folder.
+  Adds a class="icon" to the icon, as well as any additional classes passed in.
+  @param {string} name - The filename for the icon, minus the .svg extension.
+  @param {SvgOptions} options
+#}
+{% macro icon(name, options) %}
+{% set path = 'icons/' + name + '.svg' %}
+
+{# Nunjucks' {% set %} can't modify object properties #}
+{# https://github.com/mozilla/nunjucks/issues/313 #}
+{# So instead we unpack the object, set the defaults, and send a new object #}
+{# to the updateSvgForInclude function. #}
+{% set label = options.label %}
+{% if not label %}
+  {% set label = name %}
+{% endif %}
+
+{% set className = options.className or '' %}
+{% set className = 'icon ' + className %}
+
+{% set hidden = options.hidden or false %}
+
+{{ svg(path, {label: label, hidden: hidden, className: className}) }}
+{% endmacro %}

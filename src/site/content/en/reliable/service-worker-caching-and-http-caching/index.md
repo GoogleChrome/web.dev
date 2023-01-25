@@ -41,7 +41,7 @@ At a high-level, a browser follows the caching order below when it requests a re
     browser goes to the network to request the resource. If the resource isn't cached in a CDN, the
     request must go all the way back to the origin server. 
 
-![Caching flow](caching-flow.png)
+{% Img src="image/admin/vtKWC9Bg9dAMzoFKTeAM.png", alt="Caching flow", width="800", height="585" %}
 
 {% Aside %}Note that some browsers like Chrome have a **memory cache** layer in front of the service
 worker cache. The details of the memory cache depend on each browser's implementation.
@@ -65,7 +65,7 @@ listeners](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (usually the 
 [Cache-First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network)
 caching strategy. 
 
-![A diagram showing how service workers intercept HTTP requests](workbox.png)
+{% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="A diagram showing how service workers intercept HTTP requests", width="800", height="516" %}
 
 It's highly recommended to use [Workbox](https://developers.google.com/web/tools/workbox) to avoid
 reinventing the wheel. For example, you can

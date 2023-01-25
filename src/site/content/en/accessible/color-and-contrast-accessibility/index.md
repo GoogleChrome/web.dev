@@ -29,7 +29,7 @@ An exception is made for very large text (120-150% larger than the default body 
 for which the ratio can go down to 3:1. Notice the difference in the contrast ratios shown below.
 
 <figure class="w-figure">
-  <img src="./contrast-ratios.jpg" alt="An image showing the different contrast ratios">
+  {% Img src="image/admin/DcYclKelVqhQ2CWlIG97.jpg", alt="An image showing the different contrast ratios", width="800", height="328" %}
 </figure>
 
 The contrast ratio of 4.5:1 was chosen for level AA
@@ -43,13 +43,13 @@ You can use the Accessibility Audit in Lighthouse to check your color contrast.
 Open DevTools, click Audits, and select Accessibility to run the report.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./accessibility-audit.png" alt="A screenshot of the output of an audit for color contrast.">
+  {% Img src="image/admin/vSFzNOurQO6z2xV6qWuW.png", alt="A screenshot of the output of an audit for color contrast.", width="800", height="218", class="w-screenshot" %}
 </figure>
 
 Chrome also includes an experimental feature to help you [detect all the low contrast texts of your page](https://developers.google.com/web/updates/2020/10/devtools#css-overview). You can also use the [accessible color suggestion](https://developers.google.com/web/updates/2020/08/devtools#accessible-color) to fix the low contrast text.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./css-overview.png" alt="A screenshot of the output of the Chrome low contrast text experimental feature.">
+  {% Img src="image/admin/VYZeK2l2vs6pIoWhH2hO.png", alt="A screenshot of the output of the Chrome low contrast text experimental feature.", width="800", height="521", class="w-screenshot" %}
 </figure>
 
 For a more complete report, install the [Accessibility Insights Extension](https://accessibilityinsights.io/).
@@ -57,7 +57,7 @@ One of the checks in the Fastpass report, is color contrast.
 You will get a detailed report of any failing elements.
 
 <figure class="w-figure w-screenshot">
-  <img src="./fastpass-contrast.jpg" alt="The report in Accessibility Insights">
+  {% Img src="image/admin/CR21TFMZw8gWsSTWOGIF.jpg", alt="The report in Accessibility Insights", width="800", height="473" %}
 </figure>
 
 ## Advanced Perceptual Contrast Algorithm (APCA)
@@ -75,7 +75,7 @@ The contrast is calculated based on the following features:
 Chrome includes an [experimental feature to replace the AA/AAA contrast ratio guidelines with APCA](https://developers.google.com/web/updates/2021/01/devtools#apca).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./apca.png" alt="A screenshot of the output of the APCA feature in Chrome.">
+  {% Img src="image/admin/YhGKRLYvt37j3ldlwiXE.png", alt="A screenshot of the output of the APCA feature in Chrome.", width="800", height="543", class="w-screenshot" %}
 </figure>
 
 ## Don't convey information with color alone
@@ -99,7 +99,7 @@ But to a color deficient or screen reader user, that information is not conveyed
 Thus, you should always try to provide multiple avenues for the user to access critical information.
 
 <figure class="w-figure" style="width: 200px">
-  <img class="w-screenshot" src="./input-form1.png" alt="A image of an input form with an incorrect phone number highlighted only with a red color.">
+  {% Img src="image/admin/MKmlhejyjNpk7XE9R2KV.png", alt="A image of an input form with an incorrect phone number highlighted only with a red color.", width="293", height="323", class="w-screenshot" %}
 </figure>
 
 The [WebAIM checklist states in section 1.4.1](https://webaim.org/standards/wcag/checklist#sc1.4.1) that
@@ -113,7 +113,7 @@ An easy way to fix the previous example is to add an additional message to the f
  announcing that it is invalid and why.
 
 <figure class="w-figure" style="width: 200px">
-  <img class="w-screenshot" src="./input-form2.png" alt="The same input form as in the last example, this time with a text label indicating the problem with the field.">
+  {% Img src="image/admin/FLQPcG16akNRoElx3pnz.png", alt="The same input form as in the last example, this time with a text label indicating the problem with the field.", width="292", height="343", class="w-screenshot" %}
 </figure>
 
 When you're building an app, keep these sorts of things in mind
@@ -133,7 +133,7 @@ you can then emulate the following color deficiencies.
 - Achromatopsia: the inability to perceive any color except for shades of grey (extremely rare).
 
 <figure class="w-figure">
-  <img class="w-screenshot--filled" src="./emulate.jpg" alt="Emulating the vision of a person with Achromatopsia shows our page in greyscale.">
+  {% Img src="image/admin/VAnFxYhzFcpovdTCToPl.jpg", alt="Emulating the vision of a person with Achromatopsia shows our page in greyscale.", width="800", height="393", class="w-screenshot--filled" %}
 </figure>
 
 ## High contrast mode
@@ -156,7 +156,7 @@ If you view it in a high-contrast extension, that subtlety completely disappears
 and with it goes the reader's understanding of which page is active.
 
 <figure class="w-figure" style="width: 500px">
-  <img class="w-screenshot" src="./tab-contrast.png" alt="Screenshot of a navigation bar in high contrast mode where the acvtive tab is hard to read">
+  {% Img src="image/admin/dgmA4W1Qu8JmcgsH80HD.png", alt="Screenshot of a navigation bar in high contrast mode where the acvtive tab is hard to read", width="640", height="57", class="w-screenshot" %}
 </figure>
 
 Similarly, if you consider the example from the previous lesson,
@@ -164,7 +164,7 @@ the red underline on the invalid phone number field might be
 displayed in a hard-to-distinguish blue-green color.
 
 <figure class="w-figure">
-  <img src="./high-contrast.jpg" alt="Screenshot of the address form used earlier, this time in high contrast mode. The color change of the invalid element is hard to read.">
+  {% Img src="image/admin/HtlXwmHQHBcAO4LYSfAA.jpg", alt="Screenshot of the address form used earlier, this time in high contrast mode. The color change of the invalid element is hard to read.", width="700", height="328" %}
 </figure>
 
 If you are meeting the contrast ratios covered earlier

@@ -2,7 +2,7 @@
 title: web.dev at I/O 2019
 subhead: New look. New docs. New blog!
 date: 2019-05-04
-hero: hero.jpg
+hero: image/admin/fQkZjpeFbi9CZ9xHlsdu.jpg
 alt: A group of colorful hot air balloons launching into the sky.
 description: |
   For Google I/O 2019, the folks on the web.dev team have shipped a number of
@@ -27,7 +27,7 @@ plan to ship in the coming months, but we hope you like this new visual style ðŸ
 ## Improved Lighthouse support
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="/images/collections/lighthouse-performance.svg" alt="" width="200">
+  {% Img src="image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/wpGZrgY08B0x6jbLnWPU.svg", alt="Lighthouse performance cover", width="330", height="220" %}
 </figure>
 
 In the Learn section, we've rolled out
@@ -49,7 +49,7 @@ folks coming together to share their collective excitement about what was
 possible on the web.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./html5rocks.png" alt="The HTML5Rocks logo." width="200">
+  {% Img src="image/admin/4CTdRl9npyxrlqZHxbdJ.png", alt="The HTML5Rocks logo.", width="280", height="280" %}
 </figure>
 
 As we've been building web.dev, we've often said that we want to bring back some

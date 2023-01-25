@@ -11,7 +11,7 @@ description: >
 authors:
   - rachelandrew
 date: 2020-09-14
-hero: hero.jpg
+hero: image/admin/uNWkHLVFNcTDk09OplrA.jpg
 alt: A teddy bear wearing a facemask.
 tags:
   - blog
@@ -105,7 +105,7 @@ The first is to have a `<mask>` element inside the SVG and reference the ID of t
 ```
 
 <figure class="w-figure">
-  <img class="w-screenshot" style="max-inline-size: 480px" src='./svg-mask.jpg' alt="An example of using an SVG mask">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="An example of using an SVG mask", width="699", height="490", class="w-screenshot" %}
 </figure>
 
 The advantage of this approach is that the mask could be applied to any HTML element, not just an image.

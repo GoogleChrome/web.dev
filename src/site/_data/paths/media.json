@@ -1,13 +1,13 @@
 {
   "slug": "media",
-  "cover": "/images/collections/media.svg",
-  "title": "Media",
+  "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6hi0spZGVaFnsPVEt1P0.svg",
+  "title": "i18n.paths.media.title",
   "updated": "June 19, 2020",
-  "description": "Add audio and video to your web sites",
-  "overview": "Learn to add media capabilities to your website using either basic markdown or a media framework such as Google's Shaka Player, JW Player or Video.js.",
+  "description": "i18n.paths.media.description",
+  "overview": "i18n.paths.media.overview",
   "topics": [
     {
-      "title": "Concepts",
+      "title": "i18n.paths.media.topics.concepts",
       "pathItems": [
         "media-experience",
         "media-file-basics",
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "title": "Prepare media files for the web",
+      "title": "i18n.paths.media.topics.prepare_media_files_for_the_web",
       "pathItems": [
         "prepare-media",
         "containers-and-codecs",
@@ -25,7 +25,7 @@
       ]
     },
     {
-      "title": "Add media to a web page",
+      "title": "i18n.paths.media.topics.add_media_to_a_web_page",
       "pathItems": [
         "add-media",
         "video-and-source-tags",

@@ -15,7 +15,7 @@ along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/w
 Resize these images to save data and improve page load time:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-responsive-images.png" alt="A screenshot of the Lighthouse Properly size images audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GK6XQhAJcjZsYJe8myka.png", alt="A screenshot of the Lighthouse Properly size images audit", width="800", height="264", class="w-screenshot" %}
 </figure>
 
 
@@ -59,7 +59,7 @@ either when you upload an image, or request it from your page.
 Use the
 [`amp-img`](https://amp.dev/documentation/components/amp-img/?format=websites)
 component's support for
-[`srcset`](https://web.dev/use-srcset-to-automatically-choose-the-right-image/)
+[`srcset`](/use-srcset-to-automatically-choose-the-right-image/)
 to specify which image assets to use based on the screen size. See
 also [Responsive images with srcset, sizes &
 heights](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction/).

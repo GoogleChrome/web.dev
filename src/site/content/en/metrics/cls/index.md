@@ -76,18 +76,15 @@ rendered frame to the next. (See below for details on how individual [layout
 shift scores](#layout-shift-score) are calculated.)
 
 <picture>
-  <source srcset="../vitals/cls_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="../vitals/cls_4x3.svg"
-      alt="Good CLS values are under 0.1, poor values are greater than 0.25
-            and anything in between needs improvement">
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>
 
 ### What is a good CLS score?
 
 To provide a good user experience, sites should strive to have a CLS score of
-less than **0.1**. To ensure you're hitting this target for most of your users,
-a good threshold to measure is the **75th percentile** of page loads, segmented
+**0.1** or less. To ensure you're hitting this target for most of your users, a
+good threshold to measure is the **75th percentile** of page loads, segmented
 across mobile and desktop devices.
 
 {% Aside %}
@@ -131,8 +128,7 @@ The union of the visible areas of all _unstable elements_ for the previous frame
 _and_ the current frame&mdash;as a fraction of the total area of the
 viewport&mdash;is the _impact fraction_ for the current frame.
 
-[![Impact fraction example with one _unstable
-element_](layout-shift-1.png)](layout-shift-1.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BbpE9rFQbF8aU6iXN1U6.png", alt="Impact fraction example with one _unstable element_", width="800", height="600", linkTo=true %}
 
 In the image above there's an element that takes up half of the viewport in one
 frame. Then, in the next frame, the element shifts down by 25% of the viewport
@@ -148,8 +144,7 @@ is the greatest distance any _unstable element_ has moved in the frame (either
 horizontally or vertically) divided by the viewport's largest dimension (width
 or height, whichever is greater).
 
-[![Distance fraction example with one _unstable
-element_](layout-shift-2.png)](layout-shift-2.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASnfpVs2n9winu6mmzdk.png", alt="Distance fraction example with one _unstable element_", width="800", height="600", linkTo=true %}
 
 In the example above, the largest viewport dimension is the height, and the
 unstable element has moved by 25% of the viewport height, which makes the
@@ -167,8 +162,7 @@ is `0.25`, so the _layout shift score_ is `0.75 * 0.25 = 0.1875`.
 The next example illustrates how adding content to an existing element affects
 the layout shift score:
 
-[![Layout shift example with stable and _unstable elements_ and viewport
-clipping](layout-shift-3.png)](layout-shift-3.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xhN81DazXCs8ZawoCj0T.png", alt="Layout shift example with stable and _unstable elements_ and viewport clipping", width="800", height="600", linkTo=true %}
 
 The "Click Me!" button is appended to the bottom of the gray box with black
 text, which pushes the green box with white text down (and partially out of the
@@ -194,8 +188,7 @@ The layout shift score is `0.5 x 0.14 = 0.07`.
 
 This last example illustrates multiple _unstable elements_:
 
-[![Layout shift example with multiple stable and _unstable
-elements_](layout-shift-4.png)](layout-shift-4.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FdCETo2dLwGmzw0V5lNT.png", alt="Layout shift example with multiple stable and _unstable elements_", width="800", height="600", linkTo=true %}
 
 In the first frame above there are four results of an API request for animals,
 sorted in alphabetical order. In the second frame, more results are added to the
@@ -403,7 +396,7 @@ few guiding principles:
   from state to state.
 
 For a deep dive on how to improve CLS, see [Optimize
-CLS](https://web.dev/optimize-cls/).
+CLS](/optimize-cls/).
 
 ## Additional resources
 

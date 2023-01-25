@@ -79,12 +79,12 @@ That's it! To see these changes in action, follow these steps:
 - Open the console and find the images that were just added. Their classes
   should change from `lazyload` to `lazyloaded` as you scroll down the page.
 
-![Images being lazy loaded](./lazyload-console.png)
+{% Img src="image/admin/yXej5KAOMzoqoQAB2paq.png", alt="Images being lazy loaded", width="428", height="252" %}
 
 - Watch the network panel to see the image files load individually as you scroll
   down the page.
 
-![Images being lazy loaded](./lazysizes-waterfall.png)
+{% Img src="image/admin/tcQpLeAubOW1l42eyXiW.png", alt="Images being lazy loaded", width="418", height="233" %}
 
 ## Verify using Lighthouse
 
@@ -96,6 +96,6 @@ add lazy loading to any offscreen images.
 {% Instruction 'audit-performance', 'ol' %}
 1. Verify the **Defer offscreen images** audit was passed.
 
-![Passing 'Efficiently encode images' audit in Lighthouse](./lighthouse_passing.png)
+{% Img src="image/admin/AWMJnCEi3IAgANHhTgiC.png", alt="Passing 'Efficiently encode images' audit in Lighthouse", width="800", height="774" %}
 
 Success! You have used lazysizes to lazy load the images on your page.

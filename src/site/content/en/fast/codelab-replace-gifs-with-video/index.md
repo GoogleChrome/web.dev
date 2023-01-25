@@ -80,7 +80,7 @@ second to run. When the command finishes, you should be able to type `ls` again
 and see two files:
 
 ```bash
-$ ls  
+$ ls
 cat-herd.gif  cat-herd.mp4
 ```
 
@@ -109,8 +109,8 @@ You should have one GIF, and two videos:
 ```bash
 $ ls -lh
 total 4.5M
--rw-r--r-- 1 app app 3.7M May 26 00:02 cat-herd.gif  
--rw-r--r-- 1 app app 551K May 31 17:45 cat-herd.mp4  
+-rw-r--r-- 1 app app 3.7M May 26 00:02 cat-herd.gif
+-rw-r--r-- 1 app app 551K May 31 17:45 cat-herd.mp4
 -rw-r--r-- 1 app app 341K May 31 17:44 cat-herd.webm
 ```
 
@@ -142,8 +142,8 @@ behaviors expected of animated GIFs! 🎉
 
 All that's left to do is specify your video sources. The `<video>` element requires
 one or more `<source>` child elements pointing to different video files the
-browser can choose from, depending on format support.  
-Update the `<video>` with `<source>` elements that link to your cat-herd videos:  
+browser can choose from, depending on format support.
+Update the `<video>` with `<source>` elements that link to your cat-herd videos:
 
 ```html/1-2
 <video autoplay loop muted playsinline>
@@ -163,7 +163,7 @@ instead. If you prefer a WebM `<source>` be used first, specify it first!
 
 {% Instruction 'preview' %}
 
-The experience should look the same. So far so good.  
+The experience should look the same. So far so good.
 
 ## Verify with Lighthouse
 

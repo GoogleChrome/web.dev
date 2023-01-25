@@ -39,7 +39,7 @@ before it knows which font resources it needs in order to render the text.
 As a result, font requests are delayed well after other critical resources,
 and the browser may be blocked from rendering text until the resource is fetched.
 
-<img src="./font-crp.png"  alt="Font critical rendering path">
+{% Img src="image/admin/NgSTa9SirmikQAq1G5fN.png", alt="Font critical rendering path", width="800", height="303" %}
 
 1. The browser requests the HTML document.
 1. The browser begins parsing the HTML response and constructing the DOM.
@@ -123,9 +123,9 @@ To work with the `font-display` property, add it to your `@font-face` rules:
 
 For more information on preloading fonts, and the `font-display` property, see the following posts:
 
-- [Avoid invisible text during font loading](https://web.dev/avoid-invisible-text/)
+- [Avoid invisible text during font loading](/avoid-invisible-text/)
 - [Controlling font performance using font-display](https://developers.google.com/web/updates/2016/02/font-display)
-- [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](https://web.dev/preload-optional-fonts/)
+- [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](/preload-optional-fonts/)
 
 ### The Font Loading API
 
@@ -214,6 +214,6 @@ can help automate the process of making sure that you're following web font opti
 
 The following audits can help you make sure that your pages are continuing to follow web font optimization best practices over time:
 
-* [Preload key requests](https://web.dev/uses-rel-preload/)
-* [Uses inefficient cache policy on static assets](https://web.dev/uses-long-cache-ttl/)
-* [All text remains visible during WebFont loads](https://web.dev/font-display/)
+* [Preload key requests](/uses-rel-preload/)
+* [Uses inefficient cache policy on static assets](/uses-long-cache-ttl/)
+* [All text remains visible during WebFont loads](/font-display/)

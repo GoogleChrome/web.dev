@@ -7,7 +7,7 @@ authors:
   - thomassteiner
 date: 2020-11-03
 updated: 2020-11-04
-hero: hero.jpg
+hero: image/admin/nnmBquEmUtTIh89pkhvp.jpg
 alt: The hands of a person playing the Chrome dino game on a game console.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -28,9 +28,7 @@ But did you know that there are currently
 [270 million Chrome dino games played every month](https://www.blog.google/products/chrome/chrome-dino#jump-content:~:text=There%20are%20currently%20270%20million%20games%20played%20every%20month)?
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="dino.png"
-       alt="Chrome's offline page with the Chrome dino game.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ9zVNGfI0PjH6LTwxj5.png", alt="Chrome's offline page with the Chrome dino game.", width="800", height="647", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Press the space bar to play!
   </figcaption>
@@ -104,9 +102,7 @@ The schematic overview below, taken
 shows the mapping and the arrangement of the buttons and axes on a generic gamepad.
 
 <figure class="w-figure">
-  <img src="gamepad.svg"
-       alt="Schematic overview of the button and axes mappings of a common gamepad."
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qy6OxKmPAE5dpfLCMhZt.svg", alt="Schematic overview of the button and axes mappings of a common gamepad.", width="800", height="566" %}
   <figcaption class="w-figcaption">
     Visual representation of a standard gamepad layout
     (<a href="https://w3c.github.io/gamepad/#fig-visual-representation-of-a-standard-gamepad-layout:~:text=Figure%201%20Visual%20representation%20of%20a%20standard%20gamepad%20layout.">Source</a>).

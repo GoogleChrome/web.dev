@@ -7,7 +7,7 @@ subhead: |
 authors:
   - jeffposnick
 date: 2020-07-13
-hero: hero.jpg
+hero: image/admin/YekhsmFaDpnxwhG14CQv.jpg
 alt: Picture of a compass.
 description: |
   Navigation requests are requests for HTML made whenever you enter a new URL in the navigation bar,

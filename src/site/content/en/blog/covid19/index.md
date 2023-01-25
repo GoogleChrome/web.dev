@@ -8,7 +8,7 @@ description: >
   available, accessible, secure, usable, discoverable, and fast.
 date: 2020-04-03
 updated: 2020-04-06
-hero: hero.jpg
+hero: image/admin/LH3VwpI4GW1lW51Ns5ab.jpg
 tags:
   - blog
   - accessibility
@@ -259,7 +259,7 @@ performance impact of reduced bandwidth.
 * Read [Fixing website speed
   cross-functionally](/fixing-website-speed-cross-functionally/)
   to learn how to collaborate with and get buy-in from other departments.
-* [Use standardized lazy-loading for images](/native-lazy-loading/) to
+* [Use standardized lazy-loading for images](/browser-level-image-lazy-loading/) to
   minimize requests for images that people may never actually see. [Browser
   compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
   is not 100% but the feature can be treated as a progressive enhancement. In

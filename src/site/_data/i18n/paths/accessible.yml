@@ -1,0 +1,21 @@
+title:
+  en: Accessible to all
+
+description:
+  en: Build a site that works for all of your users.
+
+overview:
+  en: All users should be able to access your content. In this section you'll learn how to provide a robust experience to your users that accounts for their context and any situational, temporary, or permanent disabilities.
+
+topics:
+  understand_the_diverse_needs_of_users:
+    en: Understand the diverse needs of users
+
+  make_your_site_keyboard_accessible:
+    en: Make your site keyboard accessible
+
+  understand_semantics_and_basic_screen_reader_support:
+    en: Understand semantics and basic screen reader support
+
+  create_a_design_and_css_that_supports_users_with_different_needs:
+    en: Create a design and CSS that supports users with different needs

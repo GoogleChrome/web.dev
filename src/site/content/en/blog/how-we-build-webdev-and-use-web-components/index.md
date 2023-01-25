@@ -7,7 +7,7 @@ authors:
 description: |
   In this first post from the web.dev engineering team, learn about how we build the site—including
   our use of Eleventy and Web Components.
-hero: hero.jpg
+hero: image/admin/TzR3470Au1W5XGK2BH5M.jpg
 alt: Wind turbines on a hill
 tags:
 - blog # to show up in blog
@@ -80,7 +80,7 @@ Eleventy provides a programmatic way to build arbitrary collections of content.
 This has let us build pagination support and generate virtual pages (pages that don't have a matching Markdown file on disk) for post authors.
 For example, we construct our authors pages using a template containing [an expression for its permalink](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/site/content/en/authors/index.njk#L4) (so the template is re-rendered for every author) and a backing [collection](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/site/_collections/paginated-posts-by-author.js#L23).
 
-This results in, for example, a simple page containing [all of Addy's posts](https://web.dev/authors/addyosmani/)!
+This results in, for example, a simple page containing [all of Addy's posts](/authors/addyosmani/)!
 
 ### Limitations
 
@@ -146,7 +146,7 @@ And antiquated browsers just ignore Web Components altogether and render whateve
 Each Web Component is a class with methods including `connectedCallback()`, `disconnectedCallback()`, and `attributeChangedCallback()`.
 web.dev's custom elements mostly inherit from [LitElement](https://lit-element.polymer-project.org/), which provides a simple base for complex components.
 
-While web.dev uses Web Components on many pages, nowhere is it more necessary than on the [Measure](https://web.dev/measure) page.
+While web.dev uses Web Components on many pages, nowhere is it more necessary than on the [Measure](/measure) page.
 Two elements provide the bulk of the functionality you see on this page:
 
 ```html
@@ -161,7 +161,7 @@ Our Web Components most commonly utilize the [Container Component](https://flavi
 Each `-container` element connects to our global state (provided by [unistore](https://github.com/developit/unistore)), and then renders a visual element, which in turn goes on to render actual DOM nodes that have styling or other built-in functionality.
 
 <figure class="w-figure">
-  <img src="./state-and-elements.png" alt="A diagram that shows the relationship between global state and HTML elements that use it.">
+  {% Img src="image/admin/0vvvEFtKSNNvD79QS2i2.png", alt="A diagram that shows the relationship between global state and HTML elements that use it.", width="640", height="220" %}
   <figcaption class="w-figcaption">Global state and a Web Component</figcaption>
 </figure>
 
@@ -178,4 +178,4 @@ The web.dev engineering team ([Rob](https://twitter.com/rob_dodson), [Ewa](https
 We hope hearing about how we do things gave you some ideas for your own projects.
 Hit us up on Twitter if you've got questions or topic requests for this blog!
 
-<!-- Test content change --> 
+<!-- Test content change -->

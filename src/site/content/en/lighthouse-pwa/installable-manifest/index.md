@@ -25,7 +25,7 @@ flags pages that don't have a [web app manifest](/add-manifest/)
 that meets minimum requirements for installability:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="installable-manifest.png" alt="Lighthouse audit showing user can't install the web app from their home screen">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Lighthouse audit showing user can't install the web app from their home screen", width="800", height="98", class="w-screenshot" %}
 </figure>
 
 If a page's manifest doesn't include the following properties,
@@ -83,4 +83,4 @@ Check their respective sites for full details:
 - [Add a web app manifest](/add-manifest/)
 - [Discover what it takes to be installable](/discover-installable)
 - [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
-- [Does not use HTTPS](https://web.dev/is-on-https/)
+- [Does not use HTTPS](/is-on-https/)

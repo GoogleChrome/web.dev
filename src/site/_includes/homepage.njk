@@ -1,44 +1,10 @@
 ---
-layout: layout
+layout: default
 title: web.dev
-show_banner: false
+pageScripts:
+  - '/js/home.js'
 ---
 <div>
-  {#
-    TODO: Convert w-masthead-home back to a <header> when this campaign ends.
-    For a11y you're supposed to only use one <header> element per page.
-  #}
-  <style>
-  .w-hero-banner {
-    color: white;
-  }
-  .w-hero-banner__inner {
-    background-color: black;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 16px;
-    text-align: center;
-  }
-  @media (min-width: 865px) {
-    .w-hero-banner__inner {
-      padding: 20px 24px;
-    }
-  }
-  .w-hero-banner__inner a {
-    color: white;
-    text-decoration: underline;
-  }
-  .w-hero-banner__inner a:hover {
-    text-decoration: none;
-  }
-  </style>
-  <header class="w-hero-banner">
-    <div class="w-hero-banner__inner">
-      {{ i18n.banner_blm_html | safe }}
-    </div>
-  </header>
-
   <div class="w-masthead-home">
     <div class="w-masthead-home__container">
       <div class="w-masthead-home__left">
@@ -153,23 +119,7 @@ show_banner: false
 
   <hr>
 
-  <section class="w-layout-container w-text--center">
-    <h2 class="w-headline--two-faded">
-      {{ i18n.save_cta }}
-    </h2>
-    <p>
-      {{ i18n.save_subheadline }}
-    </p>
-    <div>
-      <a
-        class="w-button w-button--primary gc-analytics-event"
-        data-category="web.dev"
-        data-label="home, create profile"
-        data-action="click"
-        href="/measure"
-      >
-        {{ i18n.test_cta }}
-      </a>
-    </div>
+  <section class="w-layout-container">
+    {% include 'partials/subscribe.njk' %}
   </section>
 </div>

@@ -5,7 +5,7 @@ authors:
   - joemedley
 date: 2020-02-13
 updated: 2020-06-04
-hero: hero.jpg
+hero: image/admin/7wUhOX8bWoohQObJO6lL.jpg
 alt: A virtual object in a real-world view.
 description:
   The WebXR Hit Test API is an enhancement to the web's augmented reality that
@@ -33,9 +33,9 @@ In this article I assume you already know how to create an augmented reality
 session and that you know how to run a frame loop. If you're not familiar with
 these concepts, you should read the earlier articles in this series.
 
-* [Virtual reality comes to the web](https://web.dev/vr-comes-to-the-web/)
-* [Virtual reality comes to the web, part II](https://web.dev/vr-comes-to-the-web-pt-ii/)
-* [Web AR: you may already know how to use it](https://web.dev/web-ar)
+* [Virtual reality comes to the web](/vr-comes-to-the-web/)
+* [Virtual reality comes to the web, part II](/vr-comes-to-the-web-pt-ii/)
+* [Web AR: you may already know how to use it](/web-ar)
 
 ## The immersive AR session sample
 
@@ -66,8 +66,7 @@ point, regardless of where you tapped the screen. The reticle continues to move
 with your device.
 
 <figure class="w-figure  w-figure--right">
-  <img src="./reticles.png" alt="A reticle rendered on a wall,
-    Lax, or Strict depending on their context" style="max-width: 60vw;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/42fbB0q2WTa9ytTm8NZN.png", alt="A reticle rendered on a wall, Lax, or Strict depending on their context", width="800", height="1422", style="max-width: 60vw;" %}
   <figcaption class="w-figcaption">
     The reticle is a temporary image that aids in placing an object in augmented reality.
   </figcaption>

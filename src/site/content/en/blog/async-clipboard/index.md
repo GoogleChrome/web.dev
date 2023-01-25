@@ -6,13 +6,13 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2021-02-08
+updated: 2021-05-10
 tags:
   - blog
   - capabilities
   - input
   - clipboard
-hero: hero.jpg
+hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: Clipboard with shopping list
 feedback:
   - api
@@ -110,6 +110,22 @@ try {
   console.error(err.name, err.message);
 }
 ```
+
+{% Aside 'warning' %}
+  Safari (WebKit) treats user activation differently than Chromium (Blink)
+  (see [WebKit bug #222262](https://bugs.webkit.org/show_bug.cgi?id=222262)).
+  For Safari, run all asynchronous operations in a promise
+  whose result you assign to the `ClipboardItem`:
+  
+  ```js
+  new ClipboardItem({
+    'foo/bar': new Promise(async (resolve) => {
+        // Prepare `blobValue` of type `foo/bar`
+        resolve(new Blob([blobValue], { type: 'foo/bar' }));
+      }),
+    }),  
+  ```
+{% endAside %}
 
 ### The copy event
 
@@ -247,8 +263,7 @@ Imagine a web page that silently copies `rm -rf /` or a
 to your clipboard.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./prompt.png"
-       alt="Browser prompt asking the user for the clipboard permission.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="Browser prompt asking the user for the clipboard permission.", width="800", height="338", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The permission prompt for the Clipboard API.
   </figcaption>
@@ -385,7 +400,7 @@ The first example demonstrates moving text on and off the clipboard.
 
 To try the API with images use this demo. Recall that only PNGs are supported
 and only in
-[a few browsers]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
+[a few browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API#browser_compatibility).
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
@@ -403,7 +418,7 @@ simplified events aligned with the
 [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API).
 Because of potential risks Chrome is
 treading carefully. To stay up to date on Chrome's progress, watch this article
-and our [blog](https://web.dev/blog/) for updates.
+and our [blog](/blog/) for updates.
 
 For now, support for the Clipboard API is available in
 [a number of browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility).

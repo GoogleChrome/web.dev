@@ -6,8 +6,8 @@ authors:
   - adamargyle
 description: A foundational overview of how to build a responsive slide out sidenav
 date: 2021-01-21
-hero: hero.jpg
-thumbnail: thumb.png
+hero: image/admin/Zo1KkESK9CfEIYpbWzap.jpg
+thumbnail: image/admin/pVZO6FsC9tF3H6QIWpY2.png
 codelabs: codelab-building-a-sidenav-component
 tags:
   - blog
@@ -19,8 +19,8 @@ tags:
   - ux
 ---
 
-In this post I want to share with you how I prototyped a Sidenav component for the web that 
-is responsive, stateful, supports keyboard navigation, works with and without Javascript, 
+In this post I want to share with you how I prototyped a Sidenav component for the web that
+is responsive, stateful, supports keyboard navigation, works with and without JavaScript,
 and works across browsers. Try the [demo](https://gui-challenges.web.app/sidenav/dist/).
 
 If you prefer video, here's a YouTube version of this post:
@@ -29,9 +29,9 @@ If you prefer video, here's a YouTube version of this post:
 
 ## Overview
 
-It's tough building a responsive navigation system. Some users will be on a keyboard, 
-some will have powerful desktops, and some will visit from a small mobile device. 
-Everyone visiting should be able to open and close the menu. 
+It's tough building a responsive navigation system. Some users will be on a keyboard,
+some will have powerful desktops, and some will visit from a small mobile device.
+Everyone visiting should be able to open and close the menu.
 
 <figure class="w-figure w-figure--fullbleed">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -61,13 +61,13 @@ In this component exploration I had the joy of combining a few critical web plat
 4. CSS Media Queries for viewport and user preference
 5. JS for `focus` [UX enhancements](#ux-enhancements)
 
-My solution has one sidebar and toggles only when at a "mobile" viewport of `540px` or less. 
+My solution has one sidebar and toggles only when at a "mobile" viewport of `540px` or less.
 `540px` will be our breakpoint for switching between the mobile interactive layout and the static desktop layout.
 
 ### CSS `:target` pseudo-class {: #target-psuedo-class }
 
-One `<a>` link sets the url hash to `#sidenav-open` and the other to empty (`''`). 
-Lastly, an element has the `id` to match the hash: 
+One `<a>` link sets the url hash to `#sidenav-open` and the other to empty (`''`).
+Lastly, an element has the `id` to match the hash:
 
 ```html
 <a href="#sidenav-open" id="sidenav-button" title="Open Menu" aria-label="Open Menu">
@@ -79,7 +79,7 @@ Lastly, an element has the `id` to match the hash:
 </aside>
 ```
 
-Clicking each of these links changes the hash state of our page URL, 
+Clicking each of these links changes the hash state of our page URL,
 then with a pseudo-class I show and hide the sidenav:
 
 ```css
@@ -102,14 +102,14 @@ then with a pseudo-class I show and hide the sidenav:
 
 ### CSS Grid {: #grid-stacks }
 
-In the past, I only used absolute or fixed position 
-sidenav layouts and components. Grid though, with its `grid-area` syntax, 
+In the past, I only used absolute or fixed position
+sidenav layouts and components. Grid though, with its `grid-area` syntax,
 lets us assign multiple elements to the same row or column.
 
 #### Stacks
 
-The primary layout element `#sidenav-container` is a grid that creates 1 row and 2 columns, 
-1 of each are named `stack`. When space is constrained, CSS assigns all of the `<main>` element's 
+The primary layout element `#sidenav-container` is a grid that creates 1 row and 2 columns,
+1 of each are named `stack`. When space is constrained, CSS assigns all of the `<main>` element's
 children to the same grid name, placing all elements into the same space, creating a stack.
 
 ```css
@@ -136,7 +136,7 @@ children to the same grid name, placing all elements into the same space, creati
 
 The `<aside>` is the animating element that contains the side navigation. It has
 2 children: the navigation container `<nav>` named `[nav]` and a backdrop `<a>`
-named `[escape]`, which is used to close the menu. 
+named `[escape]`, which is used to close the menu.
 
 ```css
 #sidenav-open {
@@ -158,7 +158,7 @@ Adjust `2fr` & `1fr` to find the ratio you like for the menu overlay and its neg
 
 ### CSS 3D transforms & transitions {: #transforms }
 
-Our layout is now stacked at a mobile viewport size. Until I add some new styles, 
+Our layout is now stacked at a mobile viewport size. Until I add some new styles,
 it's overlaying our article by default. Here's some UX I'm shooting for in this next section:
 
 - Animate open and close
@@ -169,8 +169,8 @@ As I begin to implement motion animations, I want to start with accessibility to
 
 #### Accessible motion
 
-Not everyone will want a slide out motion experience. In our solution this preference 
-is applied by adjusting a `--duration` CSS variable inside a media query. This media query value represents 
+Not everyone will want a slide out motion experience. In our solution this preference
+is applied by adjusting a `--duration` CSS variable inside a media query. This media query value represents
 a user's operating system preference for motion (if available).
 
 ```css
@@ -194,17 +194,17 @@ a user's operating system preference for motion (if available).
   </figcaption>
 </figure>
 
-Now when our sidenav is sliding open and closed, if a user prefers reduced motion, 
-I instantly move the element into view, maintaining state without motion. 
+Now when our sidenav is sliding open and closed, if a user prefers reduced motion,
+I instantly move the element into view, maintaining state without motion.
 
 #### Transition, transform, translate
 
 ##### Sidenav out (default)
 
-To set the default state of our sidenav on mobile to an offscreen state, 
-I position the element with `transform: translateX(-110vw)`. 
+To set the default state of our sidenav on mobile to an offscreen state,
+I position the element with `transform: translateX(-110vw)`.
 
-Note, I added another `10vw` to the typical offscreen code of `-100vw`, 
+Note, I added another `10vw` to the typical offscreen code of `-100vw`,
 to ensure the `box-shadow` of the sidenav doesn't peek into the main viewport when it's hidden.
 
 ```css
@@ -213,7 +213,7 @@ to ensure the `box-shadow` of the sidenav doesn't peek into the main viewport wh
     visibility: hidden;
     transform: translateX(-110vw);
     will-change: transform;
-    transition: 
+    transition:
       transform var(--duration) var(--easeOutExpo),
       visibility 0s linear var(--duration);
   }
@@ -222,16 +222,16 @@ to ensure the `box-shadow` of the sidenav doesn't peek into the main viewport wh
 
 ##### Sidenav in
 
-When the `#sidenav` element matches as `:target`, set the `translateX()` position to homebase `0`, 
-and watch as CSS slides the element from its out position of `-110vw`, to its "in" 
-position of `0` over `var(--duration)` when the URL hash is changed. 
+When the `#sidenav` element matches as `:target`, set the `translateX()` position to homebase `0`,
+and watch as CSS slides the element from its out position of `-110vw`, to its "in"
+position of `0` over `var(--duration)` when the URL hash is changed.
 
 ```css
 @media (max-width: 540px) {
   #sidenav-open:target {
     visibility: visible;
     transform: translateX(0);
-    transition: 
+    transition:
       transform var(--duration) var(--easeOutExpo);
   }
 }
@@ -239,19 +239,19 @@ position of `0` over `var(--duration)` when the URL hash is changed.
 
 #### Transition visibility
 
-The goal now is to hide the menu from screenreaders when it's out, 
-so systems don't put focus into an offscreen menu. I accomplish this by setting a 
+The goal now is to hide the menu from screenreaders when it's out,
+so systems don't put focus into an offscreen menu. I accomplish this by setting a
 visibility transition when the `:target` changes.
 
-- When going in, don't transition visibility; be visible right away so I can see the element slide in and accept focus. 
+- When going in, don't transition visibility; be visible right away so I can see the element slide in and accept focus.
 - When going out, transition visibility but delay it, so it flips to `hidden` at the end of the transition out.
 
 ### Accessibility UX enhancements {: #ux-enhancements }
 
 #### Links
 
-This solution relies on changing the URL in order for the state to be managed. 
-Naturally, the `<a>` element should be used here, and it gets some nice accessibility 
+This solution relies on changing the URL in order for the state to be managed.
+Naturally, the `<a>` element should be used here, and it gets some nice accessibility
 features for free. Let's adorn our interactive elements with labels clearly articulating intent.
 
 ```html
@@ -275,7 +275,7 @@ Now our primary interaction buttons clearly state their intent for both mouse an
 
 #### `:is(:hover, :focus)`
 
-This handy CSS functional pseudo-selector lets us swiftly be inclusive 
+This handy CSS functional pseudo-selector lets us swiftly be inclusive
 with our hover styles by sharing them with focus as well.
 
 ```css
@@ -284,7 +284,7 @@ with our hover styles by sharing them with focus as well.
 }
 ```
 
-#### Sprinkle on Javascript 
+#### Sprinkle on JavaScript
 
 ##### Press `escape` to close
 
@@ -300,8 +300,8 @@ sidenav.addEventListener('keyup', event => {
 
 ##### Focus UX
 
-The next snippet helps us put focus on the open and close buttons after 
-they open or close. I want to make toggling easy. 
+The next snippet helps us put focus on the open and close buttons after
+they open or close. I want to make toggling easy.
 
 ```js
 sidenav.addEventListener('transitionend', e => {
@@ -313,17 +313,17 @@ sidenav.addEventListener('transitionend', e => {
 })
 ```
 
-When the sidenav opens, focus the close button. When the sidenav closes, 
+When the sidenav opens, focus the close button. When the sidenav closes,
 focus the open button. I do this by calling `focus()` on the element in JavaScript.
 
 ### Conclusion
 
-Now that you know how I did it, how would you?! This makes for some fun component architecture! 
+Now that you know how I did it, how would you?! This makes for some fun component architecture!
 Who's going to make the 1st version with slots? 🙂
 
-Let's diversify our 
-approaches and learn all the ways to build on the web. Create a [Glitch](https://glitch.com), 
-[tweet me](https://twitter.com/argyleink) your version, and I'll add it to the 
+Let's diversify our
+approaches and learn all the ways to build on the web. Create a [Glitch](https://glitch.com),
+[tweet me](https://twitter.com/argyleink) your version, and I'll add it to the
 [Community remixes](#community-remixes) section below.
 
 ## Community remixes

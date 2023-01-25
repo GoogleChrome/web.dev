@@ -17,7 +17,7 @@ Each metric captures some aspect of page load speed.
 Lighthouse displays FCP in seconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="first-contentful-paint.png" alt="A screenshot of the Lighthouse First Contentful Paint audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y8maVyZwGyS6gdyRjYWb.png", alt="A screenshot of the Lighthouse First Contentful Paint audit", width="800", height="588", class="w-screenshot" %}
 </figure>
 
 ## What FCP measures

@@ -17,11 +17,20 @@
 declare global {
   export interface TagsItem {
     data: {
+      /**
+       * When the first post was created.
+       */
+      date?: Date;
       subhead: string;
+      tags: string[];
       title: string;
+      /**
+       * When the last post was last created.
+       */
+      updated?: Date;
     };
     description: string;
-    elements: TODO[];
+    elements: EleventyCollectionItem[];
     href: string;
     key: string;
     title: string;

@@ -73,7 +73,7 @@ Make sure that:
   which is found under Additional Certificate Options.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="sxg-check.png"/>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kFWTZFXNvwkHnwRu7y8Q.png", alt="", width="718", height="133", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The <b>Include the CanSignHttpExchanges extension in the certificate</b> checkbox.
   </figcaption>

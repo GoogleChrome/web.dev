@@ -22,9 +22,11 @@ guidance about how to use them effectively.
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
 1. [Checkbox](#checkbox)
+1. [Codepen](#codepen)
 1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
+1. [Definition lists](#definition-lists)
 1. [Details](#details)
 1. [Glitches](#glitches)
 1. [Images](#images)
@@ -318,6 +320,36 @@ element, and add the `w-ml--l` class to the label. See below:
 </div>
 ```
 
+## Codepen {: #codepen }
+
+If you don't want to use your personal account, you can use the
+**web-dev-codepen-external** account to create a Codepen. Speak to a member of
+the tech writing team to get access to the login and password.
+
+```md
+{% raw %}{% Codepen {
+  user: 'robdodson',
+  id: 'GRroyyX',
+  height: 300,
+  theme: 'dark',
+  tab: 'css,result',
+  allow: ['geolocation']
+} %}{% endraw %}
+```
+
+{% Codepen {
+  user: 'robdodson',
+  id: 'GRroyyX',
+  height: 300,
+  theme: 'dark',
+  tab: 'css,result',
+  allow: ['geolocation']
+} %}
+
+```typescript
+{% include '../../../../../../types/site/_includes/components/Codepen.d.ts' %}
+```
+
 ## Columns
 
 Any elements can be placed in a two-column layout
@@ -342,13 +374,13 @@ by wrapping them in a `<div class="w-columns">` element:
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./image-small.png" alt="">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./image-small.png" alt="">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
@@ -522,6 +554,24 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
 incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
 deleniti! Atque aliquam facilis labore odio similique provident illo culpa
 assumenda perspiciatis.
+
+## Definition lists
+
+```md
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+```
+
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
 
 ## Details
 
@@ -830,7 +880,7 @@ for unordered lists.
    sit amet ullamcorper.
 
    <figure class="w-figure">
-     <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
+     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O8cewP6LpV9OrdhZvDdy.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
      <figcaption class="w-figcaption">
        Filled screenshot.
      </figcaption>
@@ -1263,4 +1313,4 @@ by adding a `left` or `right` argument to the shortcode:
 </button>
 
 ## Video / YouTube {: #video }
-See the [Images and video](/handbook/markup-media#video) post.
+See the [Images and video](/handbook/markup-media) post.

@@ -13,57 +13,132 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 require('dotenv').config();
-
 const algoliasearch = require('algoliasearch');
 const fs = require('fs');
-const log = require('fancy-log');
 
-const raw = fs.readFileSync('dist/algolia.json', 'utf-8');
-const indexed = JSON.parse(raw);
+const maxChunkSizeInBytes = 10000000; // 10,000,000
+const maxItemSizeInBytes = 10000; // 10,000
 
-// Revision will look like "YYYYMMDDHHMM".
-const revision = new Date().toISOString().substring(0, 16).replace(/\D/g, '');
-const primaryIndexName = 'webdev';
-const deployIndexName = `webdev_deploy_${revision}`;
+/**
+ * Trim text of Algoia Collection Item.
+ *
+ * @param {AlgoliaCollectionItem} item
+ * @return {AlgoliaCollectionItem}
+ */
+const trimText = (item) => {
+  const currentSizeInBytes = JSON.stringify(item).length;
+  let textLength = 0;
+  if (currentSizeInBytes < maxItemSizeInBytes) {
+    // Check if item is small enough, if it is, return it
+    return item;
+  } else if (item.default_content) {
+    // Since it is not, check if there is a `default_content` then get the length of the contents
+    textLength = item.default_content.length + item.content.length;
+  } else {
+    // Get the length of the content
+    textLength = item.content.length;
+  }
+  // Calculate how many characters needs to be removed to get to right size
+  const charactersToRemove = currentSizeInBytes - maxItemSizeInBytes;
+  // Calculate what percentage of description can stay in order to get it to right size
+  const percentageToRemove = (textLength - charactersToRemove) / textLength;
+  // Trim content
+  item.content = item.content.slice(
+    0,
+    Math.floor(item.content.length * percentageToRemove),
+  );
+  if (item.default_content) {
+    item.default_content = item.content.slice(
+      0,
+      Math.floor(item.default_content.length * percentageToRemove),
+    );
+  }
+  return item;
+};
+
+/**
+ * Chunks array of AlgoliaCollectionItem into array of array of AlgoliaCollectionItem smaller than 10 MB.
+ *
+ * @param {AlgoliaCollectionItem[]} arr
+ * @return {AlgoliaCollectionItem[][]}
+ */
+const chunkAlgolia = (arr) => {
+  const chunked = [];
+  let tempSizeInBytes = 0;
+  let temp = [];
+  for (const arrItem of arr) {
+    const current = trimText(arrItem);
+    const currentSizeInBytes = JSON.stringify(current).length;
+    if (tempSizeInBytes + currentSizeInBytes < maxChunkSizeInBytes) {
+      temp.push(current);
+      tempSizeInBytes += currentSizeInBytes;
+    } else {
+      chunked.push(temp);
+      temp = [current];
+      tempSizeInBytes = currentSizeInBytes;
+    }
+  }
+  chunked.push(temp);
+  return chunked;
+};
 
 async function index() {
-  if (!process.env.ALGOLIA_APP || !process.env.ALGOLIA_KEY) {
+  const indexedOn = new Date();
+
+  if (!process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY) {
     console.warn('Missing Algolia environment variables, skipping indexing.');
     return;
   }
 
-  const client = algoliasearch(
-    process.env.ALGOLIA_APP,
-    process.env.ALGOLIA_KEY,
-  );
+  const raw = fs.readFileSync('dist/algolia.json', 'utf-8');
+  /** @type {AlgoliaCollection} */
+  const algoliaData = JSON.parse(raw);
 
-  const primaryIndex = client.initIndex(primaryIndexName); // nb. not actually used, just forces init
-  const deployIndex = client.initIndex(deployIndexName);
-
-  log(
-    `Indexing ${indexed.length} articles with temporary index ${deployIndex.indexName}...`,
-  );
-
-  // TODO(samthor): This is from https://www.algolia.com/doc/api-reference/api-methods/replace-all-objects/#examples,
-  // are there more things that should be copied?
-  const scope = ['settings', 'synonyms', 'rules'];
-  await client.copyIndex(primaryIndex.indexName, deployIndex.indexName, {
-    scope,
+  // Set date of when object is being added to algolia
+  algoliaData.map((e) => {
+    e.indexedOn = indexedOn.getTime();
+    return e;
   });
 
-  // TODO(samthor): Batch uploads so that we don't send more than 10mb.
-  // As of September 2019, the JSON itself is only ~70k. \shrug/
-  await deployIndex.saveObjects(indexed);
-  log(`Indexed, replacing existing index ${primaryIndex.indexName}`);
+  const chunkedAlgoliaData = chunkAlgolia(algoliaData);
+  const postsCount = algoliaData.length;
 
-  // Move our temporary deploy index on-top of the primary index, atomically.
-  await client.moveIndex(deployIndex.indexName, primaryIndex.indexName);
-  log('Done!');
+  // @ts-ignore
+  const client = algoliasearch(
+    process.env.ALGOLIA_APP_ID,
+    process.env.ALGOLIA_API_KEY,
+  );
+  const index = client.initIndex('prod_web_dev');
+
+  console.log(
+    `Indexing ${postsCount} articles amongst ${chunkedAlgoliaData.length} chunk(s).`,
+  );
+
+  // When indexing data we mark these two fields as fields that can be filtered by.
+  await index.setSettings({
+    attributesForFaceting: ['locales', 'tags'],
+  });
+
+  // Update algolia index with new data
+  for (let i = 0; i < chunkedAlgoliaData.length; i++) {
+    await index.saveObjects(chunkedAlgoliaData[i], {
+      autoGenerateObjectIDIfNotExist: true,
+    });
+  }
+
+  console.log('Updated algolia data.');
+
+  console.log('Deleting old data no longer in algolia.json.');
+  await index.deleteBy({
+    filters: `indexedOn < ${indexedOn.getTime()}`,
+  });
+  console.log('Deleted old data.');
+
+  console.log('Done!');
 }
 
 index().catch((err) => {
-  log.error(err);
+  console.error(err);
   throw err;
 });

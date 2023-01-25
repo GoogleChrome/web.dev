@@ -4,7 +4,7 @@ subhead: If you've used the WebXR Device API already, you're most of the way the
 authors:
   - joemedley
 date: 2020-02-13
-hero: hero2.jpg
+hero: image/admin/VMTT5zbuFgXWfTj7Hlvv.jpg
 alt: A person using augmented reality with a smartphone.
 description:
   If you've already used the WebXR Device API, you'll be happy to know there's
@@ -35,11 +35,11 @@ differences lie in configurations that allow content to be shown appropriately
 for augmented reality. If you're not familiar with the basic concepts of WebXR,
 you should read my earlier posts on the WebXR Device API, or at least be
 familiar with the topics covered therein. You should know how to [request and
-enter a session](https://web.dev/vr-comes-to-the-web/) and you should know how
-to run [a frame loop](https://web.dev/vr-comes-to-the-web-pt-ii).
+enter a session](/vr-comes-to-the-web/) and you should know how
+to run [a frame loop](/vr-comes-to-the-web-pt-ii).
 
 For information on hit testing, see the companion article [Positioning virtual
-objects in real-world views](https://web.dev/ar-hit-test). The code in this
+objects in real-world views](/ar-hit-test). The code in this
 article is based on the Immersive AR Session sample
 ([demo](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html)
 [source](https://github.com/immersive-web/webxr-samples/blob/master/immersive-vr-session.html)) from

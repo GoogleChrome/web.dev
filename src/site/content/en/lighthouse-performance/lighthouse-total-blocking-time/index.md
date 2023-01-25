@@ -15,7 +15,7 @@ of the Lighthouse report. Each metric captures some aspect of page load speed.
 The Lighthouse report displays TBT in milliseconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="total-blocking-time.jpg" alt="A screenshot of the Lighthouse Total Blocking Time audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5mK1Vac6rk9cJHMNfZh2.jpg", alt="A screenshot of the Lighthouse Total Blocking Time audit", width="800", height="556", class="w-screenshot" %}
 </figure>
 
 ## What TBT measures

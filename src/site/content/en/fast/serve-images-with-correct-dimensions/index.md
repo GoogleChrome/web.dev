@@ -62,7 +62,7 @@ provides information about the displays of many common devices.
 The DevTools Elements panel can be used to determine what size an image is
 displayed at.
 
-<img src="./elements-panel.png" alt="DevTools element's panel" class="w-screenshot">
+{% Img src="image/admin/pKQa0Huu0KGInOekdz6M.png", alt="DevTools element's panel", width="800", height="364" %}
 
 ### The "Better" approach
 

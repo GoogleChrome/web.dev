@@ -125,18 +125,17 @@ files, it's time to visit the Live version of your sample project, and observe
 the service worker in action.
 
 {% Instruction 'preview' %}
-{% Instruction 'devtools' %}
 {% Instruction 'devtools-console', 'ul' %}
 
 You should see something like the following log messages,
 showing that the service worker has been installed and activated:
 
-<img class="screenshot" src="./sw-installed-activated.png" alt="Shows service worker is installed and activated.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qN2ZoovNYzp7wZHvqY9c.png", alt="Shows service worker is installed and activated.", width="800", height="88", class="screenshot" %}
 
 Then visit the **Applications** tab, and select the **Service Workers** panel.
 You should see something like the following:
 
-<img class="screenshot" src="./sw-panel.png" alt="Shows service worker details in service worker panel.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2jTU0nCScsyvHqhb3ajQ.png", alt="Shows service worker details in service worker panel.", width="800", height="386", class="screenshot" %}
 
 This lets you know that there's a service worker with a source URL of
 `service-worker.js`, for the web app `solar-donkey.glitch.me`, that's currently
@@ -194,7 +193,7 @@ After making that change, return to the Live version of your sample app, and
 reload the page with the DevTools Application tab still open. You should see
 something like the following:
 
-<img class="screenshot" src="./two-sw-versions.png" alt="Shows two versions of service worker installed.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5zmK7uePWyZ4JMxXAEYd.png", alt="Shows two versions of service worker installed.", width="800", height="454", class="screenshot" %}
 
 This shows that there are two versions of your service worker installed at this
 point. The previous version, which was already activated, is running and in

@@ -30,7 +30,7 @@ All major browsers except Internet Explorer support service workers. See
 flags pages that don't register a service worker:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="service-worker.png" alt="Lighthouse audit showing site doesn't register a service worker">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse audit showing site doesn't register a service worker", width="800", height="95", class="w-screenshot" %}
 </figure>
 
 Lighthouse checks if the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)

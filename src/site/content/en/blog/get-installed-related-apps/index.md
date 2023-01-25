@@ -7,13 +7,14 @@ authors:
   - petelepage
 description: |
   The getInstalledRelatedApps() API is a web platform API that allows you
-  to check whether your iOS/Android/desktop app or PWA is installed on the user's device.
+  to check whether your iOS/Android/desktop app or PWA is installed on the
+  user's device.
 date: 2018-12-20
-updated: 2020-08-06
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
-hero: hero.jpg
+hero: image/admin/v9t93rXITPqFe3L0qlTN.jpg
 alt: mobile device with app panel open
 feedback:
   - api
@@ -22,7 +23,7 @@ feedback:
 ## What is the getInstalledRelatedApps() API? {: #what }
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="getinstalled-cropped.jpg" class="w-screenshot" width="550">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vjamv2uyz6NxBPxPIm11.jpg", alt="", width="550", height="486" %}
   <figcaption class="w-figcaption">
     A website using <code>getInstalledRelatedApps()</code> to determine if its
     Android app is already installed.
@@ -30,9 +31,9 @@ feedback:
 </figure>
 
 The [`getInstalledRelatedApps()`][spec] makes it possible for *your* page to
-check if *your* iOS/Android/desktop app, or Progressive Web App (PWA) is already installed
-on a user's device, and allows you to customize the user experience if your
-app is already installed.
+check if *your* mobile or desktop app, or in some cases, if your Progressive
+Web App (PWA) is already installed on a user's device, and allows you to
+customize the user experience if it is.
 
 For example, if your app is already installed:
 
@@ -44,15 +45,54 @@ For example, if your app is already installed:
 
 <div class="w-clearfix"></div>
 
+To use the `getInstalledRelatedApps()` API, you need to tell your app about
+your site, then tell your site about your app. Once you've defined the
+relationship between the two, you can check if the app is installed.
+
 ### Supported app types you can check
 
-Your website can check if your:
-
-* [Android app](#check-android) is installed
-* [Windows (UWP) app](#check-windows) is installed
-* Progressive Web App is installed, if it's running in the
-  [same scope](#check-pwa-in-scope) or in a
-  [different scope](#check-pwa-out-of-scope)
+<div class="w-table-wrapper">
+  <table class="w-table--top-align">
+    <thead>
+      <tr>
+        <th>App type</th>
+        <th>Checkable from</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href="#check-android">Android app</a>
+        </td>
+        <td>
+          Android only<br>
+          Chrome 80 or later
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#check-windows">Windows (UWP) app</a>
+        </td>
+        <td>
+          Windows only<br>
+          Chrome 85 or later<br>
+          Edge 85 or later
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Progressive Web App<br>
+          Installed in the <a href="#check-pwa-in-scope">same scope</a> or a
+          <a href="#check-pwa-out-of-scope">different scope</a>.
+        </td>
+        <td>
+          Android only<br>
+          Chrome 84 or later
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {% Aside %}
   The `getInstalledRelatedApps()` API only allows you to check if *your* apps
@@ -66,7 +106,9 @@ Your website can check if your:
 
 Your website can check if your Android app is installed.
 
-* Android: Chrome 80 or later
+{% Compare 'better', 'Supported on' %}
+Android: Chrome 80 or later
+{% endCompare %}
 
 ### Tell your Android app about your website
 
@@ -137,7 +179,9 @@ Try the [demo](https://get-installed-apps.glitch.me/)
 
 Your website can check if your Windows app (built using UWP) is installed.
 
-* Windows: Chrome 85 or later, Edge 85 or later
+{% Compare 'better', 'Supported on' %}
+Windows: Chrome 85 or later, Edge 85 or later
+{% endCompare %}
 
 ### Tell your Windows app about your website
 
@@ -216,7 +260,9 @@ Your PWA can check to see if it is already installed. In this case, the page
 making the request must be on the same domain, and within the [scope][scope]
 of your PWA, as defined by the scope in the web app manifest.
 
-* Android: Chrome 84 or later
+{% Compare 'better', 'Supported on' %}
+Android: Chrome 84 or later
+{% endCompare %}
 
 ### Tell your PWA about itself
 
@@ -258,7 +304,9 @@ the [scope][scope] of your PWA. For example, a landing page served from
 landing page is served from `www.example.com` and your PWA is served from
 `app.example.com`.
 
-* Android: Chrome 84 or later
+{% Compare 'better', 'Supported on' %}
+Android: Chrome 84 or later
+{% endCompare %}
 
 ### Tell your PWA about your website
 
@@ -337,6 +385,14 @@ taken into account.
 Like most other powerful web APIs, the `getInstalledRelatedApps()` API is
 only available when served over **HTTPS**.
 
+## Still have questions? {: #questions }
+
+Still have questions? Check the [`getInstalledRelatedApps` tag on StackOverflow][so-gira]
+to see if anyone else has had similar questions. If not, ask your
+[question][so-ask-question] there, and be sure to tag it with the
+[`progressive-web-apps`][so-tagged-pwa] tag. Our team frequently monitors
+that tag and tries to answer your questions.
+
 ## Feedback {: #feedback }
 
 Did you find a bug with Chrome's implementation? Or is the implementation
@@ -354,8 +410,9 @@ support helps the Chrome team to prioritize features and shows other
 browser vendors how critical it is to support them.
 
 * Share how you plan to use the API on the [WICG Discourse thread][wicg-discourse].
-* Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#getInstalledRelatedApps`
-  hashtag and let us know where and how you're using it.
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#getInstalledRelatedApps`](https://twitter.com/search?q=%23getInstalledRelatedApps&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
@@ -381,3 +438,6 @@ for testing Windows apps, and Rayan Kanso for help with the Chrome details.
 [scope]: /add-manifest/#scope
 [win-uri-handlers]: https://docs.microsoft.com/en-us/windows/uwp/launch-resume/web-to-app-linking
 [uap3-namespace]: https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-extension-manual#examples
+[so-gira]: https://stackoverflow.com/search?q=getinstalledrelatedapps
+[so-ask-question]: https://stackoverflow.com/questions/tagged/progressive-web-apps
+[so-tagged-pwa]: https://stackoverflow.com/questions/tagged/progressive-web-apps

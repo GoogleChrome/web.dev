@@ -30,7 +30,7 @@ of the resource by hundreds of milliseconds.
 flags pages that have multiple redirects:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="redirects.png" alt="">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276", class="w-screenshot" %}
 </figure>
 
 A page fails this audit when it has two or more redirects.

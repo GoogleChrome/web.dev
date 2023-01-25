@@ -26,7 +26,7 @@ like announcing a tab set with no tabs.
 flags ARIA roles that don't have the required child roles:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-required-children.png" alt="Lighthouse audit showing ARIA role missing required child role(s)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/meMpRNGub2polfC7ysFf.png", alt="Lighthouse audit showing ARIA role missing required child role(s)", width="800", height="205", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the

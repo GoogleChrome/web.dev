@@ -39,6 +39,7 @@ function createRowForAuditCategory(lhr, category) {
             data-category="web.dev"
             data-label="audit todos, internal link"
             data-action="click"
+            target="_blank"
             >${guide.title}</a
           >
         `;
@@ -212,9 +213,7 @@ class LighthouseScoresAudits extends BaseElement {
           >Guide</span
         >
       </div>
-      <div class="lh-audit-list-rows" role="rowgroup">
-        ${rows}
-      </div>
+      <div class="lh-audit-list-rows" role="rowgroup">${rows}</div>
       <div class="lh-audit-list-see-more__container">
         <button
           @click="${this.onIncreaseAuditsShown}"

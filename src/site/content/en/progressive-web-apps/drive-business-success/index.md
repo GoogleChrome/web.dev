@@ -15,7 +15,7 @@ website and adapt to users' new expectations. Like all new concepts and
 technical capabilities, they raise questions: is it what my customers want,
 how much will it grow my business, what is technically feasible?
 
-![Identify your stakeholders](img-1.jpg)
+{% Img src="image/admin/o70RxMcAQVPrjxH34a8r.jpg", alt="Identify your stakeholders", width="800", height="254" %}
 
 To shape your digital strategy, several stakeholders are often involved: the
 Product Manager and CMO are co-owners of the business impact of each feature,
@@ -33,7 +33,7 @@ One rule we love to follow at Google when making products is
 "[focus on the user and all else will follow][ten-things-we-know]". Think
 _user-first_: what are my customers' needs, and how does a PWA provide them?
 
-![Identify customer needs](img-2.jpg)
+{% Img src="image/admin/TcmXmWb5mSUqal98NIAH.jpg", alt="Identify customer needs", width="800", height="262" %}
 
 When doing user research, we find some interesting patterns:
 
@@ -65,7 +65,7 @@ customers to access it directly from their home screen or app launcher. And
 new APIs like [Web Push Notifications][mdn-web-push] make it easier to
 re-engage your users with personalized content to generate loyalty.
 
-![Improving the user experience with new capabilities](img-3.jpg)
+{% Img src="image/admin/rP0eNCflNYOhzjPi1Lq5.jpg", alt="Improving the user experience with new capabilities", width="800", height="393" %}
 
 ## Understand the business impact {: #business-impact }
 
@@ -104,14 +104,14 @@ Thanks to your daily measurements and [the "value of speed" methodology][value-o
 you can isolate the impact of your incremental speed changes and calculate
 how much extra revenue your work has generated.
 
-![Measure the value of speed and correlate it with conversions](img-4.jpg)
+{% Img src="image/admin/yyRfQaDL3NcGhB0f79RN.jpg", alt="Measure the value of speed and correlate it with conversions", width="800", height="306" %}
 
 Ebay made [speed a company objective][ebay-speed] for 2019. They used
 techniques like performance budget, critical path optimization, and
 predictive prefetching. They concluded that for every 100 milliseconds
 improvement in search page loading time, add-to-card count increased by 0.5%.
 
-![A 100ms improvement in load time resulted in a 0.5% increase in add to cart count for eBay](img-5.jpg)
+{% Img src="image/admin/Qq3wo5UOqzC1ugnTzdqT.jpg", alt="A 100ms improvement in load time resulted in a 0.5% increase in add to cart count for eBay", width="800", height="184" %}
 
 ### The business impact of an installable website {: #impact-installable }
 
@@ -121,7 +121,7 @@ to your site. Where an Android app install would add at least three steps
 top of the funnel), PWA installation is done seamlessly in one click, and it
 doesn't take the user away from the current conversion funnel.
 
-![The install experience should be seamless](img-6.jpg)
+{% Img src="image/admin/u1jcKrBBOHEzSz3SqhEB.jpg", alt="The install experience should be seamless", width="800", height="239" %}
 
 Once installed, users are able to launch it in one click from the icon on
 their home screen, see it in their app tray when they are switching between
@@ -144,7 +144,7 @@ To make your PWA installable, it needs to meet the
 [promote the installation](/promote-install/) within your user experience on
 desktop and mobile, including iOS.
 
-![PWAs are installable everywhere](img-7.jpg)
+{% Img src="image/admin/5sH5YX7kFrwv4f6duqVf.jpg", alt="PWAs are installable everywhere", width="800", height="227" %}
 
 Once you've begun to promote the installation of your PWA, you should
 measure how many users are installing your PWA, and how they use your PWA.
@@ -176,14 +176,14 @@ To segment users who installed your PWA, track the
 the installed PWA). Then use these as variables or dimensions for your
 analytics tracking.
 
-![Measure the value of installation](img-8.jpg)
+{% Img src="image/admin/H2U4jKTmATNzVJQ3WNCO.jpg", alt="Measure the value of installation", width="800", height="253" %}
 
 The [case study of Weekendesk][twg-weekendest] is interesting: they propose
 Installation on the second page visited to maximize the install rate, and
 they observed that customers coming back via the icon on the home screen were
 more than twice as likely to book a stay with them.
 
-![Installed users had a 2.5x higher conversion rate](img-9.jpg)
+{% Img src="image/admin/eR23C2o1adHq5tATNw34.jpg", alt="Installed users had a 2.5x higher conversion rate", width="800", height="201" %}
 
 Installation is a great way to make people return on your site and improve
 your customer loyalty. You can also think of personalizing the experience for
@@ -195,7 +195,7 @@ install banner. Some of your users that are "semi-engaged" may not meet the
 threshold for an app store-based install. This cohort can be addressed with
 PWA installability that is often perceived as lighter, and with less friction.
 
-![PWAs can reach semi-engaged users](img-10.jpg)
+{% Img src="image/admin/iNQalNPhjdBueuqPHiad.jpg", alt="PWAs can reach semi-engaged users", width="800", height="229" %}
 
 ### The business impact of a reliable website {: #impact-reliable }
 
@@ -217,7 +217,7 @@ you could provide access to tickets or boarding passes, offline wish lists,
 call center contact information, articles or recipes that the user has
 recently viewed, etc.
 
-![Be helpful, even when offline](img-11.jpg)
+{% Img src="image/admin/ubglZLCoddAfB5cl8JSz.jpg", alt="Be helpful, even when offline", width="800", height="243" %}
 
 Once you've implemented a [reliable user experience][pwabook-ch6], you may
 want to measure it; how many users are going offline, in which geographies,
@@ -227,7 +227,7 @@ Offline usage can be measured by recording analytics pings when the user goes
 [offline or online][pwabook-ch8]. It tells you how many users continue
 browsing on your website after the network comes back.
 
-![Trivago saw a 67% of users who came back online continue browsing](img-12.jpg)
+{% Img src="image/admin/UfjYsWQWJjVIk2sp5bnE.jpg", alt="Trivago saw a 67% of users who came back online continue browsing", width="800", height="272" %}
 
 The [Trivago case study][twg-trivago] illustrates how this can impact your
 business objectives: for users whose sessions were interrupted by an
@@ -263,7 +263,7 @@ the whole funnel:
 * Number of users who engage with notifications
 * Conversion and engagement of users coming from a notification
 
-![Measure the value of Web Push Notifications](img-13.jpg)
+{% Img src="image/admin/UpzfxBDi3e66cZ9gzkkS.jpg", alt="Measure the value of Web Push Notifications", width="800", height="255" %}
 
 There are a lot of great case studies on web push notifications, like
 [Carrefour who multiplied their conversion rate by 4.5][carrefour-45x] by
@@ -277,7 +277,7 @@ They leverage a set of best practices and modern web APIs, that can be
 implemented independently depending on your business specificities and
 priorities.
 
-![Progressively launch your PWA](img-14.jpg)
+{% Img src="image/admin/7g1j2z7h5m9QSHQhHceM.jpg", alt="Progressively launch your PWA", width="800", height="253" %}
 
 To accelerate the modernization of your website and make it a real PWA,
 we encourage you to be agile: launch feature by feature. First, research

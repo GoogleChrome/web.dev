@@ -13,14 +13,14 @@ tags:
   - capabilities
 ---
 
-When you play Progressive Web App buzzword bingo, it is a safe bet to set on "PWAs are just websites". Microsoft's PWA documentation [agrees](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/#progressive-web-apps-on-windows:~:text=PWAs%20are%20just%20websites), we [say it](https://web.dev/progressive-web-apps/#content:~:text=Progressive%20Web%20Apps,Websites) on this very site, and even PWA nominators Frances Berriman and Alex Russell [write so](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/#post-2263:~:text=they%E2%80%99re%20just%20websites), too. Yes, PWAs are just websites, but they are also way more than that. If done right, a PWA will not feel like a website, but like a "real" app. Now what does it mean to feel like a real app?
+When you play Progressive Web App buzzword bingo, it is a safe bet to set on "PWAs are just websites". Microsoft's PWA documentation [agrees](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/#progressive-web-apps-on-windows:~:text=PWAs%20are%20just%20websites), we [say it](/progressive-web-apps/#content:~:text=Progressive%20Web%20Apps,Websites) on this very site, and even PWA nominators Frances Berriman and Alex Russell [write so](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/#post-2263:~:text=they%E2%80%99re%20just%20websites), too. Yes, PWAs are just websites, but they are also way more than that. If done right, a PWA will not feel like a website, but like a "real" app. Now what does it mean to feel like a real app?
 
 In order to answer this question, let me use the Apple [Podcasts](https://support.apple.com/en-us/HT201859) app as an example.
 It is available on macOS on desktop and on iOS (and iPadOS respectively) on mobile.
 While Podcasts is a media application, the core ideas I illustrate with its help apply to other categories of apps, too.
 
 <figure class="w-figure">
-  <img src="./image0.png" alt="An iPhone and a MacBook side by side, both running the Podcasts application." class="w-screenshot" width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aNYiT2EkVkjNplAIKbLU.png", alt="An iPhone and a MacBook side by side, both running the Podcasts application.", width="800", height="617" %}
   <figcaption class="w-figcaption">Apple Podcasts on iPhone and on macOS (<a href="https://support.apple.com/en-us/HT201859">Source</a>).</figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ or functionalities. Be sure to carefully review the compatibility notes in the l
 If you take a step back and think of some of the platform-specific applications you may have on your mobile phone or desktop computer, one thing clearly stands out: you never get nothing. In the Podcasts app, even if I am offline, there is always something. When there is no network connection, the app naturally still opens. The **Top Charts** section does not show any content, but instead falls back to a **Can't connect right now** message paired with a **Retry** button. It may not be the most welcoming experience, but I get something.
 
 <figure class="w-figure">
-  <img src="./image4.png" alt="The Podcasts app showing a 'Cannot connect right now.' info message when no network connection is available." width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMbGLQkbLROxmUMdxLET.png", alt="The Podcasts app showing a 'Cannot connect right now.' info message when no network connection is available.", width="800", height="440" %}
   <figcaption class="w-figcaption">Podcasts app without network connection.</figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ While offline, via the left-hand drawer, I can still navigate to the **Downloade
 and are displayed with all metadata like artwork and descriptions.
 
 <figure class="w-figure">
-  <img src="./image16.png" alt="Podcasts app with a downloaded episode of a podcast playing." width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/onUIDiaFNNHOmnwXzRh1.png", alt="Podcasts app with a downloaded episode of a podcast playing.", width="800", height="440" %}
   <figcaption class="w-figcaption">Downloaded podcast episodes can be played even without network.</figcaption>
 </figure>
 
@@ -68,19 +68,19 @@ and are displayed with all metadata like artwork and descriptions.
   Previously downloaded media content can be served from the cache, for example using the
   <a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Serve cached audio and video</a>
   recipe from the <a href="https://developers.google.com/web/tools/workbox">Workbox</a> library.
-  Other content can always be stored in the cache, or in IndexedDB. Read the article <a href="https://web.dev/storage-for-the-web/">Storage for the web</a>
+  Other content can always be stored in the cache, or in IndexedDB. Read the article <a href="/storage-for-the-web/">Storage for the web</a>
   for all details and to know when to use what storage technology.
   If you have data that should be persistently stored without the risk of being purged when the
   available amount of memory gets low, you can use the
-  <a href="https://web.dev/persistent-storage/">Persistent Storage API</a>.
+  <a href="/persistent-storage/">Persistent Storage API</a>.
 {% endDetails %}
 
 ## Proactive background downloading
 
-When I am back online, I can of course search for content with a query like `http 203`, and when I decide to subscribe to the search result, the [HTTP 203 podcast](https://web.dev/podcasts/), the latest episode of the series is immediately downloaded, no questions asked.
+When I am back online, I can of course search for content with a query like `http 203`, and when I decide to subscribe to the search result, the [HTTP 203 podcast](/podcasts/), the latest episode of the series is immediately downloaded, no questions asked.
 
 <figure class="w-figure">
-  <img src="./image10.png" alt="The Podcasts app downloading the latest episode of a podcast immediately after subscribing." width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WbCk4nPpBS3zwkPVRGuo.png", alt="The Podcasts app downloading the latest episode of a podcast immediately after subscribing.", width="800", height="658" %}
   <figcaption class="w-figcaption">After subscribing to a podcast, the latest episode is immediately downloaded.</figcaption>
 </figure>
 
@@ -98,7 +98,7 @@ When I am back online, I can of course search for content with a query like `htt
 The Podcasts app integrates naturally with other applications. For example, when I right-click an episode that I like, I can share it to other apps on my device, like the Messages app. It also naturally integrates with the system clipboard. I can right-click any episode and copy a link to it.
 
 <figure class="w-figure">
-  <img src="./image19.png" class="w-screenshot" alt="The Podcasts app's context menu invoked on a podcast episode with the 'Share Episode > Messages' option selected." width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gKeFGOAZ2muuYeDNFbBW.png", alt="The Podcasts app's context menu invoked on a podcast episode with the 'Share Episode > Messages' option selected.", width="800", height="392" %}
   <figcaption class="w-figcaption">Sharing a podcast episode to the Messages app.</figcaption>
 </figure>
 
@@ -106,13 +106,13 @@ The Podcasts app integrates naturally with other applications. For example, when
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  The <a href="https://web.dev/web-share/">Web Share API</a> and the <a href="https://web.dev/web-share-target/">Web Share Target API</a>
+  The <a href="/web-share/">Web Share API</a> and the <a href="/web-share-target/">Web Share Target API</a>
   allow your app to share and receive texts, files, and links to and from other applications on the device.
   Although it is not yet possible for a web app to add menu items to the operating system's built-in right-click menu, there are lots of other ways to link to and from other apps on the device.
-  With the <a href="https://web.dev/image-support-for-async-clipboard/">Async Clipboard API</a>, you can programmatically read and write
+  With the <a href="/image-support-for-async-clipboard/">Async Clipboard API</a>, you can programmatically read and write
   text and image data (PNG images) to the system clipboard.
-  On Android, you can use the <a href="https://web.dev/contact-picker/">Contact Picker API</a> to select entries from the device's contacts manager.
-  If you offer both a platform-specific app and a PWA, you can use the <a href="https://web.dev/get-installed-related-apps/">Get Installed Related Apps API</a>
+  On Android, you can use the <a href="/contact-picker/">Contact Picker API</a> to select entries from the device's contacts manager.
+  If you offer both a platform-specific app and a PWA, you can use the <a href="/get-installed-related-apps/">Get Installed Related Apps API</a>
   to check if the platform-specific app is installed, in which case you do not need to encourage the user to install the PWA or accept web push notifications.
 {% endDetails %}
 
@@ -121,7 +121,7 @@ The Podcasts app integrates naturally with other applications. For example, when
 In the Podcasts app's settings, I can configure the app to download new episodes automatically. Like that, I do not even have to think about it, updated content will always just be there. Magic.
 
 <figure class="w-figure">
-  <img src="./image15.png" alt="The Podcasts app's settings menu in the 'General' section where the 'Refresh Podcasts' option is set to 'Every Hour'." width="495">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iTKgVVjX0EM0RQS3ap4X.png", alt="The Podcasts app's settings menu in the 'General' section where the 'Refresh Podcasts' option is set to 'Every Hour'.", width="800", height="465" %}
   <figcaption class="w-figcaption">Podcasts configured to check for new podcast episode every hour.</figcaption>
 </figure>
 
@@ -129,7 +129,7 @@ In the Podcasts app's settings, I can configure the app to download new episodes
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  The <a href="https://web.dev/periodic-background-sync/">Periodic Background Sync API</a>
+  The <a href="/periodic-background-sync/">Periodic Background Sync API</a>
   allows your app to refresh its content regularly in the background without the need for it to be running.
   This means new content is proactively available, so your users can start delving into it right away whenever they decide.
 {% endDetails %}
@@ -139,7 +139,7 @@ In the Podcasts app's settings, I can configure the app to download new episodes
 At the same time, my subscriptions are synchronized across all devices I own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have already listened to on my desktop and vice versa. The play state is kept in sync, and listened-to episodes are automatically deleted.
 
 <figure class="w-figure">
-  <img src="./image11.png" alt="The Podcasts app's settings menu in the 'Advanced' section where the 'Sync subscriptions across devices' option is activated." width="495">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uVJJ40Zxi5jx1AP1jd9U.png", alt="The Podcasts app's settings menu in the 'Advanced' section where the 'Sync subscriptions across devices' option is activated.", width="800", height="525" %}
   <figcaption class="w-figcaption">State is synchronized over the cloud.</figcaption>
 </figure>
 
@@ -156,7 +156,7 @@ When I am busy with another application, say, reading a news page in the Chrome 
 There is no need to switch to the app just to skip forward or backward.
 
 <figure class="w-figure">
-  <img src="./image9.png" alt="Apple MacBook Pro Magic Keyboard with annotated media keys." width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TqRtzNtfhahjX93hI1P6.png", alt="Apple MacBook Pro Magic Keyboard with annotated media keys.", width="800", height="406" %}
   <figcaption class="w-figcaption">The media keys allow for controlling the Podcasts app (<a href="https://support.apple.com/guide/macbook-pro/magic-keyboard-apdd0116a6a2/mac">Source</a>).</figcaption>
 </figure>
 
@@ -164,7 +164,7 @@ There is no need to switch to the app just to skip forward or backward.
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  Media keys are supported by the <a href="https://web.dev/media-session/">Media Session API</a>.
+  Media keys are supported by the <a href="/media-session/">Media Session API</a>.
   Like that, users can make use of the hardware media keys on their physical keyboards, headphones, or even control the web app
   from the software media keys on their smartwatches.
   An additional idea to smooth seeking operations is to send a
@@ -177,7 +177,7 @@ There is no need to switch to the app just to skip forward or backward.
 Of course I can always multitask back to the Podcasts app from anywhere. The app has a clearly distinguishable icon that I can also put on my desktop or application dock so Podcasts can be launched immediately when I feel like it.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./image3.png" alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts app." >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l5EzElV5BGweYXLAqF4u.png", alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts app.", width="800", height="630", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">Multitasking back to the Podcasts app.</figcaption>
 </figure>
 
@@ -187,7 +187,7 @@ Of course I can always multitask back to the Podcasts app from anywhere. The app
 {% endDetailsSummary %}
   Progressive Web Apps on both desktop and mobile can be installed to the home screen, start menu, or application dock.
   Installation can happen based on a proactive prompt, or fully controlled by the app developer.
-  The article <a href="https://web.dev/install-criteria/">What does it take to be installable?</a> covers everything you need to know.
+  The article <a href="/install-criteria/">What does it take to be installable?</a> covers everything you need to know.
   When multitasking, PWAs appear independent from the browser.
 {% endDetails %}
 
@@ -196,7 +196,7 @@ Of course I can always multitask back to the Podcasts app from anywhere. The app
 The most common app actions, **Search** for new content and **Check for New Episodes**, are available right from the context menu of the app in the Dock. Via the **Options** menu, I can also decide to open the app at login time.
 
 <figure class="w-figure">
-  <img src="./image18.png" alt="Podcasts app icon context menu showing the 'Search' and 'Check for New Episodes' options." class="w-screenshot" width="267">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SnA6Thz5xaopuTWRzWgQ.png", alt="Podcasts app icon context menu showing the 'Search' and 'Check for New Episodes' options.", width="534", height="736" %}
   <figcaption class="w-figcaption">Quick actions are immediately available right from the app icon.</figcaption>
 </figure>
 
@@ -204,7 +204,7 @@ The most common app actions, **Search** for new content and **Check for New Epis
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  By specifying <a href="https://web.dev/app-shortcuts/">app icon shortcuts</a>
+  By specifying <a href="/app-shortcuts/">app icon shortcuts</a>
   in the PWA's web app manifest, you can register quick routes to common tasks that users can reach directly from the app icon.
   On operating systems like macOS, users can also right-click the app icon and set the app to launch at login time.
   There is ongoing work on a proposal for <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/RunOnLogin/Explainer.md">run on login</a>.
@@ -215,7 +215,7 @@ The most common app actions, **Search** for new content and **Check for New Epis
 Other iOS applications and even websites or emails can integrate with the Podcasts app by leveraging the `podcasts://` URL scheme. If I follow a link like [`podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903`](podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903) while in the browser, I am brought right into the Podcasts app and can decide to subscribe or listen to the podcast.
 
 <figure class="w-figure">
-  <img src="./image20.png" alt="The Chrome browser showing a confirmation dialog asking the user whether they want to open the Podcasts app.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/x8mjOWiMO4CVigvtV8Kg.png", alt="The Chrome browser showing a confirmation dialog asking the user whether they want to open the Podcasts app.", width="800", height="492" %}
   <figcaption class="w-figcaption">The Podcasts app can be opened right from the browser.</figcaption>
 </figure>
 
@@ -234,7 +234,7 @@ You may not immediately think of it, but the Podcasts app naturally integrates w
 Other storage mechanisms than files are referenced in the [offline content](#offline-content-available-and-media-playable) section.
 
 <figure class="w-figure">
-  <img src="./image5.png" alt="The macOS Finder navigated to the Podcasts app's system directory.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Og60tp5kB9lVZsi3Prdt.png", alt="The macOS Finder navigated to the Podcasts app's system directory.", width="800", height="337" %}
   <figcaption class="w-figcaption">Podcast episodes are stored in a special system app folder.</figcaption>
 </figure>
 
@@ -242,23 +242,23 @@ Other storage mechanisms than files are referenced in the [offline content](#off
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  The <a href="https://web.dev/file-system-access/">File System Access API</a> enables developers to get access to the local file system
+  The <a href="/file-system-access/">File System Access API</a> enables developers to get access to the local file system
   of the device. You can use it directly or via the <a href="https://github.com/GoogleChromeLabs/browser-fs-access">browser-fs-access</a>
   support library that transparently provides a fallback for browsers that do not support the API.
   For security reasons, system directories are not web-accessible.
 {% endDetails %}
 
-## iOS look and feel
+## Platform look and feel
 
 There is a more subtle thing that is self-evident for an iOS application like Podcasts: none of the text labels are selectable and all text blends in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./image2.png" alt="The Podcasts app in dark mode." width="350">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OApP9uGUje6CkS7cKcZh.png", alt="The Podcasts app in dark mode.", width="800", height="463" %}
     <figcaption class="w-figcaption">The Podcasts app supports light and dark mode.</figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./image7.png" alt="The Podcasts app in light mode." width="350">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cnVihfFR2anSBlIVfCSW.png", alt="The Podcasts app in light mode.", width="800", height="463" %}
     <figcaption class="w-figcaption">The app uses the default system font.</figcaption>
   </figure>
 </div>
@@ -275,7 +275,7 @@ There is a more subtle thing that is self-evident for an iOS application like Po
   The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#<generic-name>:~:text=system%2Dui,-Glyphs"><code>system-ui</code></a>
   value for the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><code>font-family</code></a> CSS property allows you to
   specify the default UI font of the system to be used for your app.
-  Finally, your app can obey to the user's color scheme preference by respecting their <a href="https://web.dev/prefers-color-scheme/"><code>prefers-color-scheme</code></a> choice, with an optional <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle">dark mode toggle</a>
+  Finally, your app can obey to the user's color scheme preference by respecting their <a href="/prefers-color-scheme/"><code>prefers-color-scheme</code></a> choice, with an optional <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle">dark mode toggle</a>
   to override it.
   Another thing to decide on might be what the browser should do when reaching
   the boundary of a scrolling area, for example, to implement custom <em>pull to refresh</em>.
@@ -287,12 +287,12 @@ There is a more subtle thing that is self-evident for an iOS application like Po
 When you look at the Podcasts app window, you notice that it does not have a classic integrated title bar and toolbar, like, for example, the Safari browser window, but a customized experience that looks like a sidebar docked to the main player window.
 
 <figure class="w-figure">
-  <img src="./image8.png" class="w-screenshot" alt="The Safari browser's integrated tile bar and toolbar.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cB7G2e31JXU71EfvhG3i.png", alt="The Safari browser's integrated tile bar and toolbar.", width="800", height="40" %}
   <figcaption class="w-figcaption"></figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="./image1.png" class="w-screenshot" alt="The Podcasts app's customized split customized title bar.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mFvLbyQ90wsDPQ9l86s3.png", alt="The Podcasts app's customized split customized title bar.", width="800", height="43" %}
   <figcaption class="w-figcaption">Customized title bars of Safari and Podcasts.</figcaption>
 </figure>
 
@@ -301,8 +301,8 @@ When you look at the Podcasts app window, you notice that it does not have a cla
   How to do this on the web
 {% endDetailsSummary %}
   While not currently possible, <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/TitleBarCustomization/explainer.md">title bar customization</a> is being worked on at the moment.
-  You can (and should), however, specify the <a href="https://web.dev/add-manifest/#display"><code>display</code></a> and the
-  <a href="https://web.dev/add-manifest/#theme-color"><code>theme-color</code></a> properties of the web app manifest to
+  You can (and should), however, specify the <a href="/add-manifest/#display"><code>display</code></a> and the
+  <a href="/add-manifest/#theme-color"><code>theme-color</code></a> properties of the web app manifest to
   determine the look and feel of your application window and to decide which default browser controls—potentially none of them—should be shown.
 {% endDetails %}
 
@@ -311,7 +311,7 @@ When you look at the Podcasts app window, you notice that it does not have a cla
 In-app animations are snappy and smooth in Podcasts. For example, when I open the **Episode Notes** drawer on the right, it elegantly slides in. When I remove one episode from my downloads, the remaining episodes float up and consume the screen real estate that was freed by the deleted episode.
 
 <figure class="w-figure">
-  <img src="./image14.png" alt="The Podcasts app with the 'Episode Notes' drawer expanded.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ucob9t4Ga3jMK20RVvSD.png", alt="The Podcasts app with the 'Episode Notes' drawer expanded.", width="800", height="463" %}
   <figcaption class="w-figcaption">In-app animations like when opening a drawer are snappy.</figcaption>
 </figure>
 
@@ -330,7 +330,7 @@ In-app animations are snappy and smooth in Podcasts. For example, when I open th
 The Podcasts app on iOS can surface content in other locations than the actual application, for example, in the system's Widgets view, or in the form of a Siri Suggestion. Having proactive, usage-based calls-to-action that just require a tap to interact with can greatly increase the re-engagement rate of an app like Podcasts.
 
 <figure class="w-figure">
-  <img src="./image6.png" alt="iOS Widget view showing the Podcasts app suggesting a new episode of a podcast." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w8zhRHcKzRfgjXZu7y4h.png", alt="iOS Widget view showing the Podcasts app suggesting a new episode of a podcast.", width="751", height="1511" %}
   <figcaption class="w-figcaption">App content is surfaced outside of the main Podcasts app.</figcaption>
 </figure>
 
@@ -338,7 +338,7 @@ The Podcasts app on iOS can surface content in other locations than the actual a
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  The <a href="https://web.dev/content-indexing-api/">Content Index API</a> allows your application
+  The <a href="/content-indexing-api/">Content Index API</a> allows your application
   to tell the browser which content of the PWA is available offline.
   This allows the browser to surface this content outside of the main app.
   By marking up interesting content in your app as suitable for <a href="https://developers.google.com/search/docs/data-types/speakable">speakable</a>
@@ -351,7 +351,7 @@ The Podcasts app on iOS can surface content in other locations than the actual a
 When a podcast episode is playing, the Podcasts app shows a beautiful control widget on the lock screen that features metadata like the episode artwork, the episode title, and the podcast name.
 
 <figure class="w-figure">
-  <img src="./image17.png" alt="iOS media playback widget on the lock screen showing a podcast episode with rich metadata." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Lr9R2zpjDEgHtyJ7hjHf.png", alt="iOS media playback widget on the lock screen showing a podcast episode with rich metadata.", width="751", height="1511" %}
   <figcaption class="w-figcaption">Media playing in the app can be controlled from the lock screen.</figcaption>
 </figure>
 
@@ -359,7 +359,7 @@ When a podcast episode is playing, the Podcasts app shows a beautiful control wi
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  The <a href="https://web.dev/media-session/">Media Session API</a> lets you specify metadata like artwork, track titles, etc.
+  The <a href="/media-session/">Media Session API</a> lets you specify metadata like artwork, track titles, etc.
   that then gets displayed on the lock screen, smartwatches, or other media widgets in the browser.
 {% endDetails %}
 
@@ -371,7 +371,7 @@ But if used properly, they can add a lot of value.
 For example, the iOS Podcasts app can optionally notify me of new episodes of podcasts I am subscribed to or recommend new ones, as well as alert me of new app features.
 
 <figure class="w-figure">
-  <img src="./image12.png" alt="iOS Podcasts app in the 'Notifications' settings screen showing the 'New Episodes' notifications toggle activated." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IFnNRo6BnHL6BxDmiqF7.png", alt="iOS Podcasts app in the 'Notifications' settings screen showing the 'New Episodes' notifications toggle activated.", width="751", height="1511" %}
   <figcaption class="w-figcaption">Apps can send push notifications to inform the user about new content.</figcaption>
 </figure>
 
@@ -382,7 +382,7 @@ For example, the iOS Podcasts app can optionally notify me of new episodes of po
   The <a href="https://developers.google.com/web/fundamentals/push-notifications">Push API</a>
   allows your app to receive push notifications so you can notify your users about noteworthy events around your PWA.
   For notifications that should fire at a known time in the future and that do not require a network connection,
-  you can use the <a href="https://web.dev/notification-triggers/">Notification Triggers API</a>.
+  you can use the <a href="/notification-triggers/">Notification Triggers API</a>.
 {% endDetails %}
 
 ## App icon badging
@@ -390,7 +390,7 @@ For example, the iOS Podcasts app can optionally notify me of new episodes of po
 Whenever there are new episodes available for one of the podcasts I am subscribed to, an app icon badge on the Podcasts home screen icon appears, again encouraging me to re-engage with the app in a way that is not intrusive.
 
 <figure class="w-figure">
-  <img src="./image13.png" alt="iOS settings screen showing the 'Badges' toggle activated." width="310">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3smO2sJz5oMwy4RYpQoF.png", alt="iOS settings screen showing the 'Badges' toggle activated.", width="751", height="1511" %}
   <figcaption class="w-figcaption">Badges are a subtle way for applications to inform users about new content.</figcaption>
 </figure>
 
@@ -398,7 +398,7 @@ Whenever there are new episodes available for one of the podcasts I am subscribe
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  You can set app icon badges with the <a href="https://web.dev/badging-api/">Badging API</a>.
+  You can set app icon badges with the <a href="/badging-api/">Badging API</a>.
   This is especially useful when your PWA has some notion of "unread" items or when you need a means
   to unobtrusively draw the user's attention back to the app.
 {% endDetails %}
@@ -409,7 +409,7 @@ When podcast media is playing, the screen may turn off, but the system will not 
 Apps can optionally keep the screen awake, too, for example to display lyrics or captions.
 
 <figure class="w-figure">
-  <img src="./image21.png" alt="macOS Preferences in the 'Energy Saver' section.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CRkipfmdkLJrND83qvQw.png", alt="macOS Preferences in the 'Energy Saver' section.", width="800", height="573" %}
   <figcaption class="w-figcaption">Apps can keep the screen awake.</figcaption>
 </figure>
 
@@ -417,7 +417,7 @@ Apps can optionally keep the screen awake, too, for example to display lyrics or
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  The <a href="https://web.dev/wakelock/">Screen Wake Lock API</a> allows you to prevent the screen from turning off.
+  The <a href="/wakelock/">Screen Wake Lock API</a> allows you to prevent the screen from turning off.
   Media playback on the web automatically prevents the system from entering standby mode.
 {% endDetails %}
 
@@ -427,7 +427,7 @@ While the Podcasts app is part of the macOS desktop experience, on iOS it needs 
 A quick search for `podcast`, `podcasts`, or `apple podcasts` immediately turns the app up in the App Store.
 
 <figure class="w-figure">
-  <img src="./image22.png" alt="iOS App Store search for 'podcasts' reveals the Podcasts app." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZLr5quaQWA9VJGAHNrLd.png", alt="iOS App Store search for 'podcasts' reveals the Podcasts app.", width="751", height="1511" %}
   <figcaption class="w-figcaption">Users have learned to discover apps in app stores.</figcaption>
 </figure>
 
@@ -436,7 +436,7 @@ A quick search for `podcast`, `podcasts`, or `apple podcasts` immediately turns 
   How to do this on the web
 {% endDetailsSummary %}
   While Apple does not allow PWAs on the App Store, on Android, you can submit your PWA
-  <a href="https://web.dev/using-a-pwa-in-your-android-app/">wrapped in a Trusted Web Activity</a>.
+  <a href="/using-a-pwa-in-your-android-app/">wrapped in a Trusted Web Activity</a>.
   The <a href="https://github.com/GoogleChromeLabs/bubblewrap"><code>bubblewrap</code></a> script makes this a painless operation.
   This script is also what internally powers <a href="https://www.pwabuilder.com/">PWABuilder</a>'s Android app export feature,
   which you can use without touching the command line.
@@ -478,8 +478,8 @@ The table below shows a compact overview of all features and provides a list of 
               >
             </li>
             <li><a href="https://developers.google.com/web/tools/workbox">Workbox library</a></li>
-            <li><a href="https://web.dev/storage-for-the-web/">Storage API</a></li>
-            <li><a href="https://web.dev/persistent-storage/">Persistent Storage API</a></li>
+            <li><a href="/storage-for-the-web/">Storage API</a></li>
+            <li><a href="/persistent-storage/">Persistent Storage API</a></li>
           </ul>
         </td>
       </tr>
@@ -499,14 +499,14 @@ The table below shows a compact overview of all features and provides a list of 
         <td><a href="#sharing-to-and-interacting-with-other-applications">Sharing to and interacting with other applications</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/web-share/">Web Share API</a></li>
-            <li><a href="https://web.dev/web-share-target/">Web Share Target API</a></li>
+            <li><a href="/web-share/">Web Share API</a></li>
+            <li><a href="/web-share-target/">Web Share Target API</a></li>
             <li>
-              <a href="https://web.dev/image-support-for-async-clipboard/">Async Clipboard API</a>
+              <a href="/image-support-for-async-clipboard/">Async Clipboard API</a>
             </li>
-            <li><a href="https://web.dev/contact-picker/">Contact Picker API</a></li>
+            <li><a href="/contact-picker/">Contact Picker API</a></li>
             <li>
-              <a href="https://web.dev/get-installed-related-apps/"
+              <a href="/get-installed-related-apps/"
                 >Get Installed Related Apps API</a
               >
             </li>
@@ -518,7 +518,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td>
           <ul>
             <li>
-              <a href="https://web.dev/periodic-background-sync/">Periodic Background Sync API</a>
+              <a href="/periodic-background-sync/">Periodic Background Sync API</a>
             </li>
           </ul>
         </td>
@@ -539,7 +539,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td><a href="#hardware-media-key-controls">Hardware media key controls</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/media-session/">Media Session API</a></li>
+            <li><a href="/media-session/">Media Session API</a></li>
           </ul>
         </td>
       </tr>
@@ -547,7 +547,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td><a href="#multitasking-and-app-shortcut">Multitasking and app shortcut</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/install-criteria/">Installability criteria</a></li>
+            <li><a href="/install-criteria/">Installability criteria</a></li>
           </ul>
         </td>
       </tr>
@@ -555,7 +555,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td><a href="#quick-actions-in-context-menu">Quick actions in context menu</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/app-shortcuts/">App icon shortcuts</a></li>
+            <li><a href="/app-shortcuts/">App icon shortcuts</a></li>
             <li>
               <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/tree/master/RunOnLogin"
                 >Run on login</a
@@ -587,7 +587,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td><a href="#local-file-system-integration">Local file system integration</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/file-system-access/">File System Access API</a></li>
+            <li><a href="/file-system-access/">File System Access API</a></li>
             <li>
               <a href="https://github.com/GoogleChromeLabs/browser-fs-access"
                 >browser-fs-access library</a
@@ -597,7 +597,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td><a href="#native-look-and-feel">Native look and feel</a></td>
+        <td><a href="#platform-look-and-feel">Platform look and feel</a></td>
         <td>
           <ul>
             <li>
@@ -612,7 +612,7 @@ The table below shows a compact overview of all features and provides a list of 
               >
             </li>
             <li>
-              <a href="https://web.dev/prefers-color-scheme/"><code>prefers-color-scheme</code></a>
+              <a href="/prefers-color-scheme/"><code>prefers-color-scheme</code></a>
             </li>
             <li>
               <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle">Dark mode toggle</a>
@@ -630,8 +630,8 @@ The table below shows a compact overview of all features and provides a list of 
                 >Title bar customization</a
               > (early stage)
             </li>
-            <li><a href="https://web.dev/add-manifest/#display">Display mode</a></li>
-            <li><a href="https://web.dev/add-manifest/#theme-color">Theme color</a></li>
+            <li><a href="/add-manifest/#display">Display mode</a></li>
+            <li><a href="/add-manifest/#theme-color">Theme color</a></li>
           </ul>
         </td>
       </tr>
@@ -662,7 +662,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td><a href="#content-surfaced-outside-of-app">Content surfaced outside of app</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/content-indexing-api/">Content Index API</a></li>
+            <li><a href="/content-indexing-api/">Content Index API</a></li>
             <li>
               <a href="https://developers.google.com/search/docs/data-types/speakable"
                 >Speakable content</a
@@ -680,7 +680,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td><a href="#lock-screen-media-control-widget">Lock screen media control widget</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/media-session/">Media Session API</a></li>
+            <li><a href="/media-session/">Media Session API</a></li>
           </ul>
         </td>
       </tr>
@@ -693,7 +693,7 @@ The table below shows a compact overview of all features and provides a list of 
                 >Push API</a
               >
             </li>
-            <li><a href="https://web.dev/notification-triggers/">Notification Triggers API</a></li>
+            <li><a href="/notification-triggers/">Notification Triggers API</a></li>
           </ul>
         </td>
       </tr>
@@ -701,7 +701,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td><a href="#app-icon-badging">App icon badging</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/badging-api/">Badging API</a></li>
+            <li><a href="/badging-api/">Badging API</a></li>
           </ul>
         </td>
       </tr>
@@ -709,7 +709,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td><a href="#media-playback-takes-precedence-over-energy-saver-settings">Media playback trumps energy saver settings</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/wakelock/">Screen Wake Lock API</a></li>
+            <li><a href="/wakelock/">Screen Wake Lock API</a></li>
           </ul>
         </td>
       </tr>
@@ -718,7 +718,7 @@ The table below shows a compact overview of all features and provides a list of 
         <td>
           <ul>
             <li>
-              <a href="https://web.dev/using-a-pwa-in-your-android-app/">Trusted Web Activity</a>
+              <a href="/using-a-pwa-in-your-android-app/">Trusted Web Activity</a>
             </li>
             <li>
               <a href="https://github.com/GoogleChromeLabs/bubblewrap"
@@ -745,12 +745,12 @@ how your app is built (and why should they?), as long as it feels like a *real* 
 ## Acknowledgements
 
 This article was reviewed by
-[Kayce Basques](https://web.dev/authors/kaycebasques/),
-[Joe Medley](https://web.dev/authors/joemedley/),
+[Kayce Basques](/authors/kaycebasques/),
+[Joe Medley](/authors/joemedley/),
 [Joshua Bell](https://github.com/inexorabletash),
 [Dion Almaer](https://blog.almaer.com/),
 [Ade Oshineye](http://www.oshineye.com/),
-[Pete LePage](https://web.dev/authors/petelepage/),
-[Sam Thorogood](https://web.dev/authors/samthor/),
+[Pete LePage](/authors/petelepage/),
+[Sam Thorogood](/authors/samthor/),
 [Reilly Grant](https://github.com/reillyeon),
 and [Jeffrey Yasskin](https://github.com/jyasskin).

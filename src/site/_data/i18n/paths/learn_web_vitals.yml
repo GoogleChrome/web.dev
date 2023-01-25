@@ -1,0 +1,27 @@
+title:
+  en: Web Vitals
+
+description:
+  en: Essential metrics for a healthy site.
+
+overview:
+  en: An initiative to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.
+
+topics:
+  overview:
+    en: Overview
+
+  web_vitals_metrics:
+    en: Web Vitals Metrics
+
+  measure_web_vitals:
+    en: Measure Web Vitals
+
+  improve_web_vitals:
+    en: Improve Web Vitals
+
+  debug_web_vitals:
+    en: Debug Web Vitals
+
+  best_practices:
+    en: Best Practices

@@ -1,5 +1,5 @@
 ---
-layout: layout
+layout: default
 title: Learn
 description: |
   Learn best practices for the modern web and hone your skills with hands-on
@@ -14,15 +14,29 @@ date: 2018-11-05
     <header class="w-page-header">
       <h1 class="w-page-header__headline">{{ title }}</h1>
       <p class="w-page-header__copy">
-        Explore our structured learning paths to discover everything you need
-        to know about building for the modern web.
+        {{ 'i18n.learn.header' | i18n(locale) }}
       </p>
     </header>
   </div>
+
+  {% if site.areCoursesEnabled %}
+    <div class="sm:pad-left-500 sm:pad-right-500">
+      <div class="learn-section gap-left-auto gap-right-auto">
+        <h3 id="courses" class="w-learn-heading">
+          {{ 'i18n.learn.courses' | i18n(locale) }}
+          <a class="w-headline-link" href="#courses" aria-hidden="true">#</a>
+        </h3>
+        {% include 'partials/course-cards.njk' %}
+      </div>
+    </div>
+
+    <hr class="gap-top-400 gap-bottom-700">
+  {% endif %}
+
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
       <h3 id="frameworks" class="w-learn-heading">
-        Performance
+        {{ 'i18n.learn.performance' | i18n(locale) }}
         <a class="w-headline-link" href="#performance" aria-hidden="true">#</a>
       </h3>
     </div>
@@ -35,7 +49,7 @@ date: 2018-11-05
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
       <h3 id="principles" class="w-learn-heading">
-        Build excellent websites
+        {{ 'i18n.learn.build_excellent' | i18n(locale) }}
         <a class="w-headline-link" href="#principles" aria-hidden="true">#</a>
       </h3>
     </div>
@@ -48,7 +62,7 @@ date: 2018-11-05
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
       <h3 id="frameworks" class="w-learn-heading">
-        Frameworks
+        {{ 'i18n.learn.frameworks' | i18n(locale) }}
         <a class="w-headline-link" href="#frameworks" aria-hidden="true">#</a>
       </h3>
     </div>
@@ -61,13 +75,26 @@ date: 2018-11-05
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
       <h3 id="lighthouse" class="w-learn-heading">
-        Lighthouse
+        {{ 'i18n.learn.lighthouse' | i18n(locale) }}
         <a class="w-headline-link" href="#lighthouse" aria-hidden="true">#</a>
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
       {% for audit in learn.audits %}
         {% PathCard audit, lang %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+      <h3 id="exploration" class="w-learn-heading">
+        {{ 'i18n.learn.explorations' | i18n(locale) }}
+        <a class="w-headline-link" href="#explorations" aria-hidden="true">#</a>
+      </h3>
+    </div>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for exploration in learn.explorations %}
+        {% PathCard exploration, lang %}
       {% endfor %}
     </div>
   </section>

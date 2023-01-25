@@ -31,7 +31,7 @@ aim to explain them in more detail and show you how you can use them to build a 
 performant experience.
 
 {% Aside %}
-  This collection assumes that you have a basic knowledge of React. If not, check out 
+  This collection assumes that you have a basic knowledge of React. If not, check out
   [React's Getting Started page](https://reactjs.org/docs/getting-started.html).
 {% endAside %}
 
@@ -119,9 +119,7 @@ the Network panel in DevTools, you can see the initial request for the document 
 a fully server-rendered page.
 
 <figure class="w-figure">
-  <img src="devtools.png" 
-       alt="The Preview tab of the Network panel shows that Next.js returns
-            visually complete HTML when a page is requested.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bq2tjbZwvpwqQhFsHp0Q.png", alt="The Preview tab of the Network panel shows that Next.js returns visually complete HTML when a page is requested.", width="800", height="529" %}
   <figcaption class="w-figcaption">
     The Preview tab of the Network panel shows that Next.js returns visually complete
     HTML when a page is requested.
@@ -129,8 +127,8 @@ a fully server-rendered page.
 </figure>
 
 {% Aside %}
-  Check out [Server Rendering](https://developers.google.com/web/updates/2019/02/rendering-on-the-web#server-rendering) 
-  to learn how server-side rendering often results in a better experience for users. 
+  Check out [Server Rendering](https://developers.google.com/web/updates/2019/02/rendering-on-the-web#server-rendering)
+  to learn how server-side rendering often results in a better experience for users.
 {% endAside %}
 
 These are only a few of the many features provided by Next.js automatically. Many

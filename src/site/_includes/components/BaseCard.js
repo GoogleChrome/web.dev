@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-const path = require('path');
 const {html} = require('common-tags');
+const {Img} = require('./Img');
 const md = require('../../_filters/md');
 const constants = require('../../_utils/constants');
-const getSrcsetRange = require('../../_utils/get-srcset-range');
 const tagsCollection = require('../../_collections/tags')();
 
 const AuthorsDate = require('./AuthorsDate');
@@ -27,15 +26,15 @@ const AuthorsDate = require('./AuthorsDate');
 
 /**
  * BaseCard used to preview collection items.
- * @param {Object} collectionItem An eleventy collection item with additional data.
+ * @param {EleventyCollectionItem} collectionItem An eleventy collection item with additional data.
  * @param {string} className CSS class to apply to `div.w-card`
  * @param {boolean} featured If card is a featured card.
  * @return {string}
  */
 class BaseCard {
   constructor(collectionItem, className = '', featured = false) {
+    /** @type {EleventyCollectionItem} */
     this.collectionItem = collectionItem;
-    this.collectionItem.data = this.collectionItem.data || {};
     this.featured = featured;
     this.className = className;
     this.url = this.collectionItem.url;
@@ -62,30 +61,21 @@ class BaseCard {
     return this.data.draft ? 'w-card--draft' : '';
   }
 
-  renderThumbnail(url, img, alt) {
-    const imagePath = path.isAbsolute(img) ? img : path.join(url, img);
+  renderThumbnail(_, src, alt) {
+    const img = Img({
+      src,
+      alt,
+      height: '240',
+      width: '354',
+      class: 'w-card-base__image',
+      params: {
+        fit: 'crop',
+        h: '240',
+        w: '354',
+      },
+    });
 
-    const srcsetRange = getSrcsetRange(240, 768);
-
-    return html`
-      <figure class="w-card-base__figure">
-        <img
-          class="w-card-base__image"
-          srcset="
-            ${srcsetRange.map(
-              (width) => html`
-                ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
-              `,
-            )}
-          "
-          src="${imagePath}"
-          alt="${alt}"
-          width="100%"
-          height="240"
-          loading="lazy"
-        />
-      </figure>
-    `;
+    return html` <figure class="w-card-base__figure">${img}</figure> `;
   }
 
   renderSubhead(subhead) {
@@ -95,9 +85,7 @@ class BaseCard {
 
     return html`
       <a class="w-card-base__link" tabindex="-1" href="${this.url}">
-        <p class="w-card-base__subhead">
-          ${md(subhead)}
-        </p>
+        <p class="w-card-base__subhead">${md(subhead)}</p>
       </a>
     `;
   }
@@ -152,7 +140,7 @@ class BaseCard {
                 ${md(this.data.title)}
               </h2>
             </a>
-            ${AuthorsDate({authors, date: this.collectionItem.date})}
+            ${AuthorsDate({authors, date: this.collectionItem.date, updated: this.data.updated, locale: this.data.locale})}
             <div
               class="w-card-base__desc ${this.className &&
                 `${this.className}__desc`}"

@@ -10,7 +10,7 @@ authors:
   - phillipkriegel
 date: 2020-05-19
 updated: 2020-05-19
-hero: hero.jpg
+hero: image/admin/uWpEHKUQjInjnw4h1YIC.jpg
 alt: Betty Crocker Cake Mix—Coffee Cinnamon.
 description: |
   Case study of cooking site BettyCrocker.com's experiences with implementing the Wake Lock API.
@@ -61,9 +61,9 @@ Betty Crocker asked themselves how they could port the killer feature of their i
 over to the web app.
 This is when they learned about
 [Project Fugu](https://developers.google.com/web/updates/capabilities) and the
-[Wake Lock API](https://web.dev/wakelock/).
+[Wake Lock API](/wakelock/).
 
-![A person kneading dough on a kitchen table covered in flour](doughy-fingers.jpg)
+{% Img src="image/admin/Yoj65m20XpoPdaL8ejAv.jpg", alt="A person kneading dough on a kitchen table covered in flour", width="800", height="533" %}
 
 The Wake Lock API provides a way to prevent the device
 from dimming or locking the screen.
@@ -129,17 +129,17 @@ so they were able to implement the component once, and deploy it everywhere,
 as shown in the screenshots below.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="www.bettycrocker.com.png" alt="BettyCrocker.com wake lock toggle" width="600">
+  {% Img src="image/admin/I9y4AIPEK9P4V0JFn4y1.png", alt="BettyCrocker.com wake lock toggle", width="600", height="170", class="w-screenshot" %}
   <figcaption class="w-figcaption">BettyCrocker.com wake lock toggle.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="www.pillsbury.com.png" alt="Pillsbury.com wake lock toggle" width="600">
+  {% Img src="image/admin/PXS7bnWxYiLKtmLekulr.png", alt="Pillsbury.com wake lock toggle", width="600", height="152", class="w-screenshot" %}
   <figcaption class="w-figcaption">Pillsbury.com wake lock toggle.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="www.tablespoon.com.png" alt="Tablespoon.com wake lock toggle" width="600">
+  {% Img src="image/admin/S5NQabO9qJTwlidx2eZo.png", alt="Tablespoon.com wake lock toggle", width="600", height="152", class="w-screenshot" %}
   <figcaption class="w-figcaption">Tablespoon.com wake lock toggle.</figcaption>
 </figure>
 
@@ -346,7 +346,7 @@ Other examples are boarding pass or ticket apps that need to keep the screen on
 until the barcode has been scanned, kiosk-style apps that keep the screen on continuously,
 or web-based presentation apps that prevent the screen from sleeping during a presentation.
 
-We have compiled [everything you need to know about the Wake Lock API](https://web.dev/wakelock/)
+We have compiled [everything you need to know about the Wake Lock API](/wakelock/)
 in a comprehensive article on this very site.
 Happy reading, and happy cooking!
 

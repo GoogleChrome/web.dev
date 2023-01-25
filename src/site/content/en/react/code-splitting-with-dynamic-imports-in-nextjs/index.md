@@ -14,7 +14,7 @@ feedback:
 
 This post explains different types of [code
 splitting](/reduce-javascript-payloads-with-code-splitting/) and how to use
-dynamic imports to speed up your Next.js apps. 
+dynamic imports to speed up your Next.js apps.
 
 ## Route-based and component-based code splitting
 
@@ -23,13 +23,13 @@ When users load your application, Next.js only sends the code needed for the
 initial route. When users navigate around the application, they fetch the chunks
 associated with the other routes. Route-based code splitting minimizes the
 amount of script that needs to be parsed and compiled at once, which results in
-faster page load times. 
+faster page load times.
 
 While route-based code splitting is a good default, you can further optimize the
 loading process with code splitting on the component level. If you have large
 components in your app, it's a great idea to split them into separate chunks.
 That way, any large components that are not critical or only render on certain
-user interactions (like clicking a button) can be lazy-loaded. 
+user interactions (like clicking a button) can be lazy-loaded.
 
 Next.js supports [dynamic `import()`](https://v8.dev/features/dynamic-import),
 which allows you to import JavaScript modules (including React components)
@@ -78,14 +78,14 @@ When you load the page, all the necessary code, including the `Puppy.js`
 component, is bundled in `index.js`:
 
 <figure class="w-figure">
-<img src="./network1.png" alt="DevTools Network tab showing showing six JavaScript files: index.js, app.js, webpack.js, main.js, 0.js and the dll (dynamic-link library) file.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6KWlTYFhoIEIGqnuMwlh.png", alt="DevTools Network tab showing showing six JavaScript files: index.js, app.js, webpack.js, main.js, 0.js and the dll (dynamic-link library) file.", width="800", height="665" %}
 </figure>
 
 When you press the **Click me** button, only the request for the puppy JPEG is
 added to the **Network** tab:
 
 <figure class="w-figure">
-<img src="./network2.png" alt="DevTools Network tab after the button click, showing the same six JavaScript files and one image.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7MkXVqnqfIbW74VV48kB.png", alt="DevTools Network tab after the button click, showing the same six JavaScript files and one image.", width="800", height="665" %}
 </figure>
 
 The downside of this approach is that even if users don't click the button to
@@ -120,14 +120,14 @@ When you first load the app, only `index.js` is downloaded. This time it's
 doesn't include the code for the `Puppy` component:
 
 <figure class="w-figure">
-<img src="./network3.png" alt="DevTools Network showing the same six JavaScript files, except index.js is now 0.5 KB smaller.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K7Ii3bxUkb37LrZjjWT1.png", alt="DevTools Network showing the same six JavaScript files, except index.js is now 0.5 KB smaller.", width="800", height="665" %}
 </figure>
 
 The `Puppy` component is now in a separate chunk, `1.js`, which is loaded only
 when you press the button:
 
 <figure class="w-figure">
-<img src="./network4.png" alt="DevTools Network tab after the button click, showing the additional 1.js file and the image added to the bottom of the file list.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DfVDv5poQmwXwOKmnvd.png", alt="DevTools Network tab after the button click, showing the additional 1.js file and the image added to the bottom of the file list.", width="800", height="665" %}
 </figure>
 
 {% Aside %} By default, Next.js names these dynamic chunks _number_.js, where
@@ -172,7 +172,7 @@ Now when you click the button it takes a while to load the component and the app
 displays the "Loading…" message in the meantime.
 
 <figure class="w-figure">
-<img src="./loading.png" alt='A dark screen with the text "Loading...".'>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="A dark screen with the text \"Loading...\".", width="800", height="663" %}
 </figure>
 
 ## Dynamic imports without SSR

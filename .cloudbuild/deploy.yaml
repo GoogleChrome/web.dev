@@ -1,23 +1,38 @@
+timeout: 2700s # set build timeout to 45 mins
 steps:
-  - name: node:12
+  - name: node:14
+    id: 'Install dependencies'
     entrypoint: npm
     args: ['ci']
-  - name: node:12
+
+  - name: node:14
+    id: 'Generate .env file'
     entrypoint: npm
     args: ['run', 'cloud-secrets']
     env:
     - 'PROJECT_ID=$PROJECT_ID'
-  - name: node:12
+
+  - name: node:14
+    id: 'Verify new version'
+    entrypoint: npm
+    args: ['run', 'version-check']
+    env:
+    - 'BUILD_ID=$BUILD_ID'
+    - 'PROJECT_ID=$PROJECT_ID'
+    - 'NODE_ENV=production'
+
+  - name: node:14
+    id: 'Build site'
     entrypoint: npm
     args: ['run', 'build']
     env:
     - 'ELEVENTY_ENV=prod'
-  - name: node:12
-    entrypoint: npm
-    args: ['run', 'firebase-config']
+
   - name: 'gcr.io/$PROJECT_ID/firebase'
+    id: 'Deploy site to Firebase'
     args: ['deploy']
-  - name: node:12
+
+  - name: node:14
+    id: 'Algolia index site'
     entrypoint: npm
     args: ['run', 'algolia']
-timeout: 1800s

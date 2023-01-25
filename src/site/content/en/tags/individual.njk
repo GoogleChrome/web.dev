@@ -1,5 +1,5 @@
 ---
-layout: layout
+layout: default
 title: Tags
 permalink: /{{lang}}/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Our latest news, updates, and stories for developers
@@ -28,6 +28,9 @@ pagination:
       {%- endif %}
       <h1 class="w-page-header__headline w-tags-page-header__headline {{'w-visually-hidden' if paged.hero.heroOnly}}">{{ renderData.title }}</h1>
       <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
+      <a href="{{ renderData.rss }}" target="_blank" class="w-tags-page__rss">
+        <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
+      </a>
     </header>
   </div>
   {% include 'partials/paged.njk' %}

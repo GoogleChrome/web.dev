@@ -148,7 +148,7 @@ You can learn more about them in our guide on
 [screen reader basics](/semantics-and-screen-readers).
 {% endAside %}
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment 'self-assessment' %}
 
 ## Keyboard access recipes
 

@@ -5,7 +5,7 @@ subhead: Challenges and workarounds for building Progressive Web Apps in multi-o
 authors:
   - demianrenzulli
 date: 2019-08-19
-hero: hero.jpg
+hero: image/admin/4bvbhJ3F0uGKvw5DLTMy.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
@@ -127,4 +127,4 @@ For existing sites that are already built in this way, it can be challenging to 
 
 When evaluating a long-term strategy or site redesign, consider migrating to a single origin, unless there's an important reason to keep the multi-origin architecture.
 
-_With many thanks for their technical reviews and suggestions: PJ Mclachlan, Paul Covell, Dominick Ng, Alberto Medina, Pete LePage, Joe Medley, Cheney Tsai, Martin Schierle, and Andre Bandarra._
+_With many thanks for their technical reviews and suggestions: Penny Mclachlan, Paul Covell, Dominick Ng, Alberto Medina, Pete LePage, Joe Medley, Cheney Tsai, Martin Schierle, and Andre Bandarra._

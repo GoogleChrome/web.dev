@@ -4,7 +4,7 @@ subhead: Easy to use real-world interactivity.
 authors:
   - joemedley
 date: 2019-05-07
-hero: hero.png
+hero: image/admin/SJQDe005xR0Cvu9JPt78.png
 alt: A series of screens shows a phone camera scanning an image and generating a link.
 description: |
   Wouldn't it be great if users could search your site using their camera?
@@ -59,9 +59,7 @@ for yourself using our [artifact-map
 demo](https://github.com/GoogleChromeLabs/perception-toolkit/tree/master/demo/artifact-map).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="found-target.png"
-       alt="The default interface is available by using just the linked data." class="screenshot"
-       width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UD5t3RD9HZ7OIHVaAg31.png", alt="The default interface is available by using just the linked data.", width="300", height="518", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     The default interface.
   </figcaption>
@@ -99,7 +97,7 @@ The file itself looks something like this:
 ## The user experience
 
 What if you want more than the default user experience? The toolkit gives you
-livecycle events, Card and Button objects for crafting the user experience
+lifecycle events, Card and Button objects for crafting the user experience
 around those events, and an easy way to style the cards. I'm going to show a
 little of this with code based losely on our [Getting
 Started](https://perceptiontoolkit.dev/getting-started/) guide.

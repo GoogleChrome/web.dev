@@ -4,9 +4,9 @@ subhead: A newer webpack chunking strategy in Next.js and Gatsby minimizes dupli
 authors:
   - houssein
 date: 2020-04-29
-hero: hero.png
-alt: Jigsaw pieces connecting 
-description: | 
+hero: image/admin/G5NYXIUQZ3hUfbyOnt0r.png
+alt: Jigsaw pieces connecting
+description: |
   Learn how both Next.js and Gatsby have improved their build output to minimize duplicate code and improve page load performance
 tags:
   - blog
@@ -32,7 +32,7 @@ result in a better loading performance.
 This pattern became popular with many single-page application frameworks adopting an entrypoint and
 bundle configuration that looked like this:
 
-<img class="w-screenshot w-screenshot--filled" src="./commons-pattern-diagram.png" alt="Common entrypoint and bundle configuration">
+{% Img src="image/admin/r4QB67AXzmPMgxcxgbQF.png", alt="Common entrypoint and bundle configuration", width="800", height="569", class="w-screenshot w-screenshot--filled" %}
 
 Although practical, the concept of bundling all shared module code into a single chunk has its
 limitations. Modules not shared in every entry point can be downloaded for routes that do not use it
@@ -45,7 +45,7 @@ one: [`SplitChunksPlugin`](https://webpack.js.org/plugins/split-chunks-plugin/).
 
 The default settings for `SplitChunksPlugin`  works well for most users. Multiple split chunks are
 created depending on a number of [conditions](https://webpack.js.org/plugins/split-chunks-plugin/#defaults)
-to prevent fetching duplicated code across multiple routes. 
+to prevent fetching duplicated code across multiple routes.
 
 However, many web frameworks that use this plugin still follow a "single-commons" approach to chunk
 splitting. Next.js, for example, would generate a `commons` bundle that contained any module that is
@@ -81,7 +81,7 @@ _half of pages_ isn't very effective. Modifying this ratio would only result in 
 
 To solve this problem, Next.js adopted a [different
 configuration](https://github.com/zeit/next.js/pull/7696) for`SplitChunksPlugin` that reduces
-unecessary code for any route.
+unnecessary code for any route.
 
 +   Any sufficiently large third-party module (greater than 160 KB) is split into its own individual
     chunk
@@ -129,7 +129,7 @@ performance of a single site while modifying the maximum number of parallel requ
 [`maxInitialRequests`](https://webpack.js.org/plugins/split-chunks-plugin/#splitchunksmaxinitialrequests)
 property.
 
-![Page load performance with increased number of requests](./performance-num-requests-1.png)
+{% Img src="image/admin/Psq42HGvyk1hiaCdEJxc.png", alt="Page load performance with increased number of requests", width="800", height="495" %}
 
 In an average of three runs of multiple trials on a single web page, the
 [`load`](https://developer.mozilla.org/docs/Web/API/Window/load_event),
@@ -138,17 +138,17 @@ and [First Contentful Paint](/fcp) times all remained about the same when varyin
 request count (from 5 to 15). Interestingly enough, we noticed a slight performance overhead only
 after splitting aggressively to hundreds of requests.
 
-![Page load performance with hundreds of requests](./performance-num-requests-2.png)
+{% Img src="image/admin/Ykz3Zm35JUVmtqX1U6cI.png", alt="Page load performance with hundreds of requests", width="800", height="495" %}
 
 This showed that staying under a reliable threshold (20~25 requests) struck the right balance
 between loading performance and caching efficiency. After some baseline testing, 25 was selected as
-the `maxInitialRequest` count. 
+the `maxInitialRequest` count.
 
 Modifying the maximum number of requests that happen in parallel resulted in more than a single
 shared bundle, and separating them appropriately for each entry point significantly reduced the
 amount of unneeded code for the same page.
 
-![JavaScript payload reductions with increased chunking](./js-payload-num-requests.png)
+{% Img src="image/admin/z2yOSP2fpfu51OEpyTGS.png", alt="JavaScript payload reductions with increased chunking", width="800", height="495" %}
 
 This experiment was only about modifying the number of requests to see if there would be any
 negative effect on page load performance. The results suggest that setting `maxInitialRequests` to
@@ -179,8 +179,7 @@ getDependencies (route) {
 ```
 
 <figure class="w-figure">
-  <img class="w-screenshot-filled" src="outputted-chunks.png" 
-       alt="Output of multiple shared chunks in a Next.js application.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3XG4VlLQEQ724fvhynvM.png", alt="Output of multiple shared chunks in a Next.js application.", width="800", height="488", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 This newer granular chunking strategy was first rolled out in Next.js behind a flag, where it was tested on a

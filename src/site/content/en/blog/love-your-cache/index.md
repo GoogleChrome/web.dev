@@ -10,7 +10,7 @@ description: |
 authors:
   - samthor
 date: 2020-12-11
-hero: hero.jpg
+hero: image/admin/VKYTBR0Ri5I7Jz7Ob2Fa.jpg
 alt: Overhead power line for a train with a number "2"
 tags:
   - blog
@@ -79,8 +79,7 @@ For a bit of background, a really common reason for "stale cache" is actually
 the 1999-era default for caching. It relies on the `Last-Modified` header:
 
 <figure class="w-figure">
-  <img src="./cache.png" width="954" height="408"
-      alt="Diagram showing how long different assets are cached by a user's browser" />
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z6ApNGczaZ4ikhLEBkT4.png", alt="Diagram showing how long different assets are cached by a user's browser", width="800", height="342" %}
   <figcaption class="w-figcaption">Assets generated at different times (in gray) will be cached for
 different times, so a 2nd load can get a combination of cached and fresh assets</figcaption>
 </figure>

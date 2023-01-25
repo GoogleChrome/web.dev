@@ -43,9 +43,7 @@ Every payment app needs to provide the following:
 - Web app manifest
 
 <figure class="w-figure">
-  <img src="diagram_direct.png"
-       alt="Diagram: How a browser discovers the payment app from a URL-based payment
-method identifier">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kvLIMUysDNEG3IfPxKz6.png", alt="Diagram: How a browser discovers the payment app from a URL-based payment method identifier", width="800", height="587" %}
 </figure>
 
 The discovery process starts when a merchant initiates a transaction:
@@ -174,8 +172,7 @@ that points to another URL where the browser can fetch the payment method
 manifest. This is useful when a payment method manifest is hosted at a different
 server or when the payment app is served by a third party.
 
-![How a browser discovers the payment app from a URL-based payment method
-identifier with redirects](diagram_indirect.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YDqz1ppLkjHd9HYgXYH.png", alt="How a browser discovers the payment app from a URL-based payment method identifier with redirects", width="800", height="698" %}
 
 Configure the payment method server to respond with a HTTP `Link` header with
 the `rel="payment-method-manifest"` attribute and the [payment method
@@ -205,7 +202,7 @@ documentation](https://github.com/w3c/payment-request-info/wiki/PaymentMethodPra
 
 A [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) is
 used to define a web app as the name suggests. It's a widely used manifest file
-to [define a Progressive Web App (PWA)](https://web.dev/add-manifest/).
+to [define a Progressive Web App (PWA)](/add-manifest/).
 
 Typical web app manifest would look like this:
 
@@ -353,8 +350,7 @@ payment app appears in the Payment Request UI.
 </div>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./web-app-manifest.png"
-       alt="Payment app with an icon.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lyP2t7T5R5bVzqh0LUTx.png", alt="Payment app with an icon.", width="800", height="237", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Payment app label and icon.
   </figcaption>

@@ -3,7 +3,7 @@ layout: post
 title: 'Route-level code splitting in Angular'
 subhead: |
   Improve the performance of your app by using route-level code splitting!
-hero: route-level-code-splitting.jpg
+hero: image/admin/WVwZbWEEXUfXzVTtAlha.jpg
 date: 2019-06-24
 description: |
   Learn how to make your initial app bundle smaller by using route-level code splitting.
@@ -147,7 +147,7 @@ To check that the Angular router downloads the `nyan.module` lazily in your loca
 1. Click **NYAN** in the sample app.
 1. Note that the `nyan-nyan-module.js` file appears in the network tab.
 
-![Lazy-loading of JavaScript bundles with route-level code splitting](code-splitting-network-tab.png "Lazy-loading of JavaScript bundles with route-level code-splitting")
+{% Img src="image/admin/wT4xLV2OkrZ2b7QaQz8L.png", alt="Lazy-loading of JavaScript bundles with route-level code splitting", width="800", height="524" %}
 
 _Find this example [on GitHub](https://github.com/mgechev/code-splitting-web-dev/tree/lazy/src)._
 

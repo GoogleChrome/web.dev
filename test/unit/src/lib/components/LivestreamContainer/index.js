@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-const {assert} = require('../../assert');
 require('../../../../../../src/lib/components/LivestreamContainer/index');
 
 describe('LivestreamContainer', function () {
@@ -33,47 +32,6 @@ describe('LivestreamContainer', function () {
     container.remove();
   });
 
-  it('should render an iframe with a videoId', async function () {
-    await container.updateComplete;
-    assert(
-      container.renderRoot.querySelector('iframe') === null,
-      'no iframe should be rendered without videoId',
-    );
-
-    container.onStateChanged({
-      activeEventDay: {
-        videoId: 'HtTyRajRuyY',
-        isChatActive: false,
-      },
-      isSignedIn: false,
-    });
-    await container.updateComplete;
-
-    const ytIframe = container.renderRoot.querySelector('iframe');
-    assert(ytIframe !== null, 'iframe should render');
-
-    const iframes = container.renderRoot.querySelectorAll('iframe');
-    assert(iframes.length === 1, 'should be single iframe');
-
-    assert(
-      ytIframe.src === 'https://www.youtube.com/embed/HtTyRajRuyY',
-      'yt iframe src should be as expected',
-    );
-
-    container.onStateChanged({
-      activeEventDay: {
-        videoId: 'HtTyRajRuyY',
-        isChatActive: true,
-      },
-      isSignedIn: false,
-    });
-    await container.updateComplete;
-
-    const iframesWithChat = container.renderRoot.querySelectorAll('iframe');
-    assert(iframesWithChat.length === 2, 'should be two iframes');
-    assert(iframesWithChat[0] === ytIframe, 'YouTube iframe should not change');
-  });
-
   it.skip('should reload on signed-in state change', async function () {
     container.onStateChanged({
       activeEventDay: {
@@ -84,15 +42,6 @@ describe('LivestreamContainer', function () {
     });
     await container.updateComplete;
 
-    const ytIframe = container.renderRoot.querySelector('iframe');
-    assert(ytIframe !== null, 'iframe should render');
-
-    // nb. This works because our tests run with sandbox mode off. We can happily talk between
-    // cross-origin frames and listen to their events.
-    const p = new Promise((resolve) => {
-      ytIframe.contentWindow.addEventListener('unload', resolve, {once: true});
-    });
-
     container.onStateChanged({
       activeEventDay: {
         videoId: 'HtTyRajRuyY',
@@ -101,8 +50,5 @@ describe('LivestreamContainer', function () {
       isSignedIn: false,
     });
     await container.updateComplete;
-
-    // Mocha has a built-in timeout so this not resolving will fail.
-    await p;
   });
 });

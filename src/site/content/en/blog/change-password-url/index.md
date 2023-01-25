@@ -5,7 +5,7 @@ authors:
   - agektmr
 date: 2020-09-01
 updated: 2020-09-24
-hero: hero.jpg
+hero: image/admin/IOO23TBT2cCBNmsm9HKf.jpg
 alt: Neon lights shaped into various symbols that are commonly used in passwords.
 description: |
   By redirecting requests to /.well-known/change-password to the change password URL, you can let users update their passwords easier than before.
@@ -43,7 +43,7 @@ They can help users in various ways:
 **Autofill the password for the correct input field**: Some browsers can find
 the correct input heuristically even if the website is not optimized for this
 purpose. Web developers can help password managers by correctly [annotating HTML
-input tags](https://web.dev/sign-in-form-best-practices/#new-password).
+input tags](/sign-in-form-best-practices/#new-password).
 
 **Prevent phishing**: Because password managers remember where the password was
 recorded, the password can be autofilled only at appropriate URLs, and not at
@@ -116,7 +116,7 @@ friction:
   manager suggest a generated password.
 
 Learn more at [Sign-in form best
-practices](https://web.dev/sign-in-form-best-practices/#new-password).
+practices](/sign-in-form-best-practices/#new-password).
 
 ## How it is used in real world
 
@@ -154,7 +154,9 @@ to `chrome://settings/passwords` users can run **Check passwords** against store
 passwords, and see a list of passwords that are recommended for update.
 
 <figure class="w-figure">
-  <img src="./check-passwords.png" width="1478" height="845" class="w-screenshot"/>
+
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2qTEnaWJhxDcvX6hfgrY.png", alt="", width="1478", height="845", class="w-screenshot" %}
+
   <figcaption class="w-figcaption">
     Chrome's <b>Check passwords</b> functionality
   </figcaption>
@@ -215,6 +217,6 @@ repository](https://github.com/wicg/change-password-url/issues).
   Passwords](https://wicg.github.io/change-password-url/)
 * [Detecting the reliability of HTTP status
   codes](https://wicg.github.io/change-password-url/response-code-reliability.html)
-* [Sign-in form best practices](https://web.dev/sign-in-form-best-practices/)
+* [Sign-in form best practices](/sign-in-form-best-practices/)
 
 Photo by [Matthew Brodeur](https://unsplash.com/photos/zEFyM4sulJ8) on [Unsplash](https://unsplash.com)

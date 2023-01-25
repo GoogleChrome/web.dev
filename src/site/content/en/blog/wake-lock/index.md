@@ -6,8 +6,8 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-11-02
-hero: hero.jpg
+updated: 2021-02-23
+hero: image/admin/zMncl9cgWdAc8W24yav3.jpg
 hero_position: center
 alt: |
   Cat sleeping. Photo by Kate Stone Matheson on Unsplash.
@@ -222,6 +222,15 @@ Check out the [Screen Wake Lock demo][demo] and [demo source][demo-source].
 Notice how the screen wake lock is automatically released when you switch tabs
 or apps.
 
+### Screen Wake Locks in the OS task manager
+
+You can use your operating system's task manager to see if an application is preventing
+your computer from sleeping. The video below shows the macOS
+[Activity Monitor](https://support.apple.com/guide/activity-monitor/welcome/mac)
+indicating that Chrome has an active screen wake lock that keeps the system awake.
+
+{% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/YDlxREcGrnBUGC8plN15.mp4", autplay="true", loop="true", width="800" %}
+
 ## Feedback {: #feedback }
 
 The [Web Platform Incubator Community Group (WICG)](https://www.w3.org/community/wicg/)
@@ -253,8 +262,9 @@ Chrome team prioritize features and shows other browser vendors how
 critical it is to support them.
 
 * Share how you plan to use the API on the [WICG Discourse thread][wicg-discourse].
-* Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#wakelock` and
-  let us know where and how you're using it.
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#WakeLock`](https://twitter.com/search?q=%23WakeLock&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
@@ -269,6 +279,8 @@ critical it is to support them.
 
 [Hero image](https://unsplash.com/photos/uy5t-CJuIK4) by
 [Kate Stone Matheson](https://unsplash.com/@kstonematheson) on Unsplash.
+Task manager video courtesy of
+[Henry Lim](https://twitter.com/henrylim96/status/1359914993399959559).
 
 [spec-ed]: https://w3c.github.io/wake-lock/
 [spec-cr]: https://www.w3.org/TR/wake-lock/

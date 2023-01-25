@@ -1,18 +1,18 @@
 {
     "slug": "learn-web-vitals",
-    "cover": "/images/collections/web-vitals.svg",
-    "title": "Web Vitals",
-    "description": "Essential metrics for a healthy site.",
-    "overview": "An initiative to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.",
+    "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg",
+    "title": "i18n.paths.learn_web_vitals.title",
+    "description": "i18n.paths.learn_web_vitals.description",
+    "overview": "i18n.paths.learn_web_vitals.overview",
     "topics": [
         {
-            "title": "Overview",
+            "title": "i18n.paths.learn_web_vitals.topics.overview",
             "pathItems": [
                 "vitals"
             ]
         },
         {
-            "title": "Web Vitals Metrics",
+            "title": "i18n.paths.learn_web_vitals.topics.web_vitals_metrics",
             "pathItems": [
                 "lcp",
                 "fid",
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "title": "Measure Web Vitals",
+            "title": "i18n.paths.learn_web_vitals.topics.measure_web_vitals",
             "pathItems": [
                 "vitals-measurement-getting-started",
                 "vitals-tools",
@@ -29,11 +29,29 @@
             ]
         },
         {
-            "title": "Improve Web Vitals",
+            "title": "i18n.paths.learn_web_vitals.topics.debug_web_vitals",
+            "pathItems": [
+                "debug-layout-shifts",
+                "debug-web-vitals-in-the-field"
+            ]
+        },
+        {
+            "title": "i18n.paths.learn_web_vitals.topics.improve_web_vitals",
             "pathItems": [
                 "optimize-lcp",
                 "optimize-fid",
                 "optimize-cls"
+            ]
+        },
+        {
+            "title": "i18n.paths.learn_web_vitals.topics.best_practices",
+            "pathItems": [
+                "carousel-best-practices",
+                "cookie-notice-best-practices",
+                {
+                    "title": "Infinite scroll without layout shifts",
+                    "url": "https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/"
+                }
             ]
         }
     ]

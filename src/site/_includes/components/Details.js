@@ -14,14 +14,11 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-
 module.exports = (content, state) => {
   const stateOverride = state === 'open' ? 'open' : '';
 
-  return html`
-    <details class="w-details" ${stateOverride}>
-      ${content}
-    </details>
-  `;
+  // Whitespace is intentional to allow markdown parser to kick back in.
+  return `<details class="w-details" ${stateOverride}>
+
+${content}</details>`;
 };

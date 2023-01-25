@@ -1,5 +1,5 @@
 ---
-layout: layout
+layout: default
 title: Measure
 description: |
   See how well your website performs. Then, get tips to improve your user
@@ -22,12 +22,14 @@ to remove them as part of the v1 migration. #}
           Sign in to track your progress over time.
         </span>
       </p>
-      <web-signin-button></web-signin-button>
-      <p class="w-page-header__copy w-unsupported-notice">
-        Sorry, the measure tool does not work with legacy browsers or with
-        JavaScript disabled. Please try again using an up-to-date version of
-        Edge, Firefox, Safari, or Chrome.
-      </p>
+      <div class="w-measure-signing-button" data-lh-signin='hide'>
+        <web-signin-button></web-signin-button>
+        <p class="w-page-header__copy w-unsupported-notice">
+          Sorry, the measure tool does not work with legacy browsers or with
+          JavaScript disabled. Please try again using an up-to-date version of
+          Edge, Firefox, Safari, or Chrome.
+        </p>
+      </div>
     </header>
   </div>
 

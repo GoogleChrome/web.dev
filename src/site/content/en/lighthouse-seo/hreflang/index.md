@@ -19,7 +19,7 @@ a page so that they can display the correct version for each language or region.
 incorrect `hreflang` links:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="hreflang.png" alt="Lighthouse audit showing incorrect hreflang links">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9SqStqAKEC9FyHAC2TRQ.png", alt="Lighthouse audit showing incorrect hreflang links", width="800", height="185", class="w-screenshot w-screenshot" %}
 </figure>
 
 Lighthouse checks for `hreflang` links

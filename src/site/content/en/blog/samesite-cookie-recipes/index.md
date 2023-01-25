@@ -7,7 +7,7 @@ authors:
   - rowan_m
 date: 2019-10-30
 updated: 2020-05-28
-hero: cookie-hero.jpg
+hero: image/admin/V0dgwWTA61NTc55CAhSD.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
   explicitly mark their cookies for cross-site usage. Browsers are moving to
@@ -82,10 +82,7 @@ general preferences, enable statistics, or personalize content for users with
 existing accounts.
 
 <figure class="w-figure">
-  <img src="iframe.png"
-      alt="Diagram of a browser window where the URL of embedded content does
-        not match the URL of the page."
-      style="max-width: 35vw;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="Diagram of a browser window where the URL of embedded content does not match the URL of the page.", width="468", height="383", style="max-width: 35vw;" %}
   <figcaption class="w-figcaption">
     If the embedded content doesn't come from the same site as the top-level
     browsing context, it's third-party content.
@@ -109,9 +106,7 @@ e.g. clicking a link to go to a different site. However something like a
 `<form>` submission via POST to a different site would not include cookies.
 
 <figure class="w-figure">
-  <img src="safe-navigation.png"
-      alt="Diagram of a request moving from one page to another."
-      style="max-width: 35vw;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="Diagram of a request moving from one page to another.", width="719", height="382", style="max-width: 35vw;" %}
   <figcaption class="w-figcaption">
     If the incoming request uses a "safe" method then the cookies will be sent.
   </figcaption>

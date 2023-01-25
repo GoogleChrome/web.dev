@@ -4,10 +4,11 @@ subhead: How to select files, read file metadata and content, and monitor read p
 description: |
   How to select files, read file metadata and content, and monitor read progress.
 date: 2010-06-18
-updated: 2020-05-08
+updated: 2021-03-29
 authors:
  - kaycebasques
  - petelepage
+ - thomassteiner
 tags:
   - blog
   - storage
@@ -18,6 +19,20 @@ one of the most commonly used features of the web. It allows users to select
 files and upload them to a server, for example, uploading photos, or
 submitting tax documents, etc. But, it also allows sites to read and
 manipulate them without ever having to transfer the data across the network.
+
+## The modern File System Access API
+
+The File System Access API provides an easy way to both read
+and write to files and directories on the user's local system. It's currently
+available in most Chromium-derived browsers like Chrome or Edge. To learn
+more about it, see the [File System Access API][file-system-access] article.
+
+Since the File System Access API is not compatible with all browsers yet,
+check out [browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access),
+a helper library that uses the new API wherever it is available, but falls
+back to legacy approaches when it is not.
+
+## Working with files, the classic way
 
 This guide shows you how to:
 
@@ -53,6 +68,13 @@ access the list of files from `event.target.files`, which is a
 </script>
 ```
 
+{% Aside %}
+  Check if the [`window.showOpenFilePicker()`](/file-system-access/#ask-the-user-to-pick-a-file-to-read)
+  method is a viable alternative for your use case,
+  since it also gives you a file handle so you can possibly write back to the file, apart from reading.
+  This method can be [polyfilled](https://github.com/GoogleChromeLabs/browser-fs-access#opening-files).
+{% endAside %}
+
 This example lets a user select multiple files using their operating system's
 built-in file selection UI and then logs each selected file to the console.
 
@@ -80,6 +102,12 @@ small, and can be hard to use. Instead, once you've provided the core
 functionality using an `<input type="file">` element, you can provide a
 large, custom drag-and-drop surface.
 
+{% Aside %}
+  Check if the [`DataTransferItem.getAsFileSystemHandle()`](/file-system-access/#drag-and-drop-integration)
+  method is a viable alternative for your use case,
+  since it also gives you a file handle so you can possibly write back to the file, apart from reading.
+{% endAside %}
+
 #### Choose your drop zone {: #choose-drop-zone }
 
 Your drop surface will depend on the design of your application. You may
@@ -87,8 +115,7 @@ only want part of the window to be a drop surface, or potentially the entire
 window.
 
 <figure class="w-figure">
-  <img src="squoosh.png" class="w-screenshot w-screenshot--filled"
-       alt="A screenshot of Squoosh, an image compression web app.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="A screenshot of Squoosh, an image compression web app.", width="800", height="589", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Squoosh makes the entire window a drop zone.
   </figcaption>
@@ -148,20 +175,17 @@ directories. It is supported in some Chromium-based browsers, and possibly
 desktop Safari, but has [conflicting][caniuse-webkitdirectory] reports of
 browser compatibility.
 
+{% Aside %}
+  Check if the [`window.showDirectoryPicker()`](/file-system-access/#opening-a-directory-and-enumerating-its-contents)
+  method is a viable alternative for your use case,
+  since it also gives you a directory handle so you can possibly write back to the directory, apart from reading.
+  This method can be [polyfilled](https://github.com/GoogleChromeLabs/browser-fs-access#opening-directories).
+{% endAside %}
+
 If drag-and-drop is enabled, a user may try to drag a directory into the
 drop zone. When the drop event is fired, it will include a `File` object for
 the directory, but will be unable to access any of the files within the
 directory.
-
-In the future, the File System Access API provides an easy way to both read
-and write to files and directories on the user's local system. It's currently
-under development and only available as an origin trial in Chrome. To learn
-more about it, see the [File System Access API][file-system-access] article.
-
-Since the File System Access API is not compatible with all browsers yet,
-check out [browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access),
-a helper library that uses the new API wherever it is available, but falls
-back to legacy approaches when it is not.
 
 ## Read file metadata {: #read-metadata }
 
@@ -197,7 +221,7 @@ to read a file as an [array buffer][mdn-filereader-as-buffer], a
 ```js
 function readImage(file) {
   // Check if the file is an image.
-  if (file.type && file.type.indexOf('image') === -1) {
+  if (file.type && !file.type.startsWith('image/')) {
     console.log('File is not an image.', file.type, file);
     return;
   }

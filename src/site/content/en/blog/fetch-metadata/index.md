@@ -1,11 +1,11 @@
 ---
-title: Protect your resources from web attacks with Fetch Metadata 
+title: Protect your resources from web attacks with Fetch Metadata
 subhead: Prevent CSRF, XSSI, and cross-origin information leaks.
 authors:
   - lwe
 date: 2020-06-04
 updated: 2020-06-10
-hero: hero.jpg
+hero: image/admin/El8ytnIgMDWVzdsglcfv.jpg
 alt: A screenshot of Python code related to Resource Isolation Policy.
 description: |
   Fetch Metadata is a new web platform feature designed to allow servers to protect themselves from cross-origin attacks.
@@ -32,14 +32,14 @@ See [Browser compatibility](https://developer.mozilla.org/docs/Web/HTTP/Headers/
 
 ## Background
 
-Many cross-site attacks are possible because the web is open by default and your application server cannot easily protect itself from communication originating from external applications. 
+Many cross-site attacks are possible because the web is open by default and your application server cannot easily protect itself from communication originating from external applications.
 A typical cross-origin attack is cross-site request forgery (CSRF) where an attacker lures a user onto a site they control and then submits a form to the server the user is logged in to. Since the server cannot tell if the request originated from another domain (cross-site) and the browser automatically attaches cookies to cross-site requests, the server will execute the action requested by the attacker on behalf of the user.
 
 Other cross-site attacks like cross-site script inclusion (XSSI) or cross-origin information leaks are similar in nature to CSRF and rely on loading resources from a victim application in an attacker-controlled document and leaking information about the victim applications. Since applications cannot easily distinguish trusted requests from untrusted ones, they cannot discard malicious cross-site traffic.
 
 {% Aside 'gotchas' %}
 Apart from attacks on resources as described above, *window references* can also lead to cross-origin information leaks and Spectre attacks. You can prevent them by setting the `Cross-Origin-Opener-Policy` response header to `same-origin`.
-{% endAside %} 
+{% endAside %}
 
 ## Introducing Fetch Metadata {: #introduction }
 
@@ -50,7 +50,9 @@ Fetch Metadata request headers are a new web platform security feature designed 
 Requests originating from sites served by your own server (same-origin) will continue to work.
 {% endCompareCaption %}
 
-![A fetch request from https://site.example for the resource https://site.example/foo.json in JavaScript causes the browser to send the HTTP request header "Sec Fetch-Site: same-origin".](same-origin-request.png)
+<!--lint disable no-literal-urls-->
+{% Img src="image/admin/aRsy2xULTR4TM2sMMsbQ.png", alt="A fetch request from https://site.example for the resource https://site.example/foo.json in JavaScript causes the browser to send the HTTP request header 'Sec Fetch-Site: same-origin'.", width="800", height="176" %}
+<!--lint enable no-literal-urls-->
 
 {% endCompare %}
 
@@ -60,7 +62,9 @@ Requests originating from sites served by your own server (same-origin) will con
 Malicious cross-site requests can be rejected by the server because of the additional context in the HTTP request provided by `Sec-Fetch-*` headers.
 {% endCompareCaption %}
 
-![An image on https://evil.example that has set the src attribute of an img element to "//site.example/foo.json" causes the browser to send the HTTP request header "Sec-Fetch-Site: cross-site".](cross-origin-request.png)
+<!--lint disable no-literal-urls-->
+{% Img src="image/admin/xY4yB36JqsVw62wNMIWt.png", alt="An image on https://evil.example that has set the src attribute of an img element to 'https://site.example/foo.json' causes the browser to send the HTTP request header 'Sec-Fetch-Site: cross-site'.", width="800", height="171" %}
+<!--lint enable no-literal-urls-->
 
 {% endCompare %}
 
@@ -68,7 +72,7 @@ Malicious cross-site requests can be rejected by the server because of the addit
 
 ### `Sec-Fetch-Site`
 
-`Sec-Fetch-Site` tells the server which [site](https://web.dev/same-site-same-origin) sent the request. The browser sets this value to one of the following:
+`Sec-Fetch-Site` tells the server which [site](/same-site-same-origin) sent the request. The browser sets this value to one of the following:
 
  - `same-origin`, if the request was made by your own application (e.g. `site.example`)
  - `same-site`, if the request was made by a subdomain of your site (e.g. `bar.site.example`)
@@ -126,12 +130,12 @@ if req['sec-fetch-site'] in ('same-origin', 'same-site', 'none'):
 ```
 
 {% Aside 'gotchas' %}
-In case your subdomains are not fully trusted, you can make the policy stricter by blocking requests from subdomains by removing the `same-site` value. 
-{% endAside %} 
+In case your subdomains are not fully trusted, you can make the policy stricter by blocking requests from subdomains by removing the `same-site` value.
+{% endAside %}
 
 #### Step 3: Allow simple top-level navigation and iframing
 
-To ensure that your site can still be linked from other sites, you have to allow simple (`HTTP GET`) top-level navigation.  
+To ensure that your site can still be linked from other sites, you have to allow simple (`HTTP GET`) top-level navigation.
 
 ```python
 if req['sec-fetch-mode'] == 'navigate' and req.method == 'GET'
@@ -141,10 +145,10 @@ if req['sec-fetch-mode'] == 'navigate' and req.method == 'GET'
 ```
 {% Aside 'gotchas' %}
 The logic above protects your application's endpoints from being used as resources by other websites, but will permit top-level navigation and embedding (e.g. loading in an <iframe>). To further improve security, you can use Fetch Metadata headers to restrict cross-site navigations to only an allowed set of pages.
-{% endAside %} 
+{% endAside %}
 
 
-#### Step 4: Opt out endpoints that are meant to serve cross-site traffic (Optional) 
+#### Step 4: Opt out endpoints that are meant to serve cross-site traffic (Optional)
 
 In some cases, your application might provide resources which are meant to be loaded cross-site. These resources need to be exempted on a per-path or per-endpoint basis. Examples of such endpoints are:
 
@@ -206,14 +210,14 @@ def allow_request(req):
 ### Identifying and fixing policy violations
 
 It's recommended that you test your policy in a side-effect free way by first enabling it in reporting mode in your server-side code. Alternatively, you can implement this logic in middleware, or in a reverse proxy which logs any violations that your policy might produce when applied to production traffic.
- 
+
 From our experience of rolling out a Fetch Metadata Resource Isolation Policy at Google, most applications are by default compatible with such a policy and rarely require exempting endpoints to allow cross-site traffic.
 
 ### Enforcing a Resource Isolation Policy
 After you've checked that your policy doesn't impact legitimate production traffic, you're ready to enforce restrictions, guaranteeing that other sites will not be able to request your resources and protecting your users from cross-site attacks.
 
 {% Aside 'caution' %}
-Make sure that you reject invalid requests before running authentication checks or any other processing of the request to prevent revealing sensitive timing information. 
+Make sure that you reject invalid requests before running authentication checks or any other processing of the request to prevent revealing sensitive timing information.
 {% endAside %}
 
 
@@ -223,4 +227,4 @@ Make sure that you reject invalid requests before running authentication checks 
 - [Fetch Metadata Playground](https://secmetadata.appspot.com/)
 - [Google I/O talk: Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf) (Slides)
 
-{% YouTube 'DDtM9caQ97I', '1856' %} 
+{% YouTube id='DDtM9caQ97I', startTime='1856' %}

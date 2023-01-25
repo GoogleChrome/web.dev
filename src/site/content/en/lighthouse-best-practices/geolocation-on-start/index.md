@@ -18,7 +18,7 @@ that automatically request their location on page load.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that request geolocation permission on load:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="geolocation-on-start.png" alt="Lighthouse audit showing geolocation request on page load">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EKObTXN3729mGBN5bRyv.png", alt="Lighthouse audit showing geolocation request on page load", width="800", height="213", class="w-screenshot" %}
 </figure>
 
 Lighthouse checks all JavaScript executed on page load.

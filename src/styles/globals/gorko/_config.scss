@@ -1,0 +1,395 @@
+@import '../../settings/type';
+@import '../../tools/breakpoints';
+
+// Sasslint seems to complain about the indentatin of our sass maps in this file
+// but I don't see the problem so I'm just disabling the rule for being flaky.
+// sass-lint:disable indentation
+
+// This sets up our gorko helper classes.
+// Read more @ https://github.com/hankchizljaw/gorko#configuration
+
+
+// BASE SIZE
+// All calculations are based on this. It's recommended that
+// you keep it at 1rem because that is the root font size. You
+// can set it to whatever you like and whatever unit you like.
+
+$gorko-base-size: 1rem;
+
+
+// SIZE SCALE
+// This is a linear scale that powers all the utilities that
+// it is relevant for (margin, padding, etc.). All items are
+// calcuated off the base size, so change that and cascade across
+// your whole project.
+
+$gorko-size-scale: (
+  0:  0,                          // 0
+  50: $gorko-base-size * 0.125,   // 2px
+  100: $gorko-base-size * 0.25,   // 4px
+  200: $gorko-base-size * 0.5,    // 8px
+  250: $gorko-base-size * 0.75,   // 12px
+  275: $gorko-base-size * 0.875,  // 14px
+  300: $gorko-base-size,          // 16px
+  400: $gorko-base-size * 1.5,    // 24px
+  500: $gorko-base-size * 2,      // 32px
+  600: $gorko-base-size * 2.5,    // 40px
+  700: $gorko-base-size * 3,      // 48px
+  800: $gorko-base-size * 3.5,    // 56px
+  900: $gorko-base-size * 4,      // 64px
+  1000: $gorko-base-size * 4.5,   // 72px
+);
+
+$gorko-colors: (
+  'white': $WHITE,
+  'black': $BLACK,
+  'grey-50': $GREY_50,
+  'grey-100': $GREY_100,
+  'grey-200': $GREY_200,
+  'grey-300': $GREY_300,
+  'grey-400': $GREY_400,
+  'grey-500': $GREY_500,
+  'grey-600': $GREY_600,
+  'grey-700': $GREY_700,
+  'grey-800': $GREY_800,
+  'grey-900': $GREY_900,
+  'primary': $WEB_PRIMARY_COLOR,
+);
+
+// CORE CONFIG
+// This powers everything from utility class generation to breakpoints
+// to enabling/disabling pre-built components/utilities.
+
+$gorko-config: (
+  'align': (
+    'items': (
+      'start': 'start',
+      'center': 'center',
+      'end': 'end'
+    ),
+    'output': 'responsive',
+    'property': 'align-items'
+  ),
+  'bg': (
+    'items': $gorko-colors,
+    'output': 'standard',
+    'property': 'background'
+  ),
+  'case': (
+    'items': (
+      'upper': 'uppercase',
+      'lower': 'lowercase',
+      'cap': 'capitalize',
+    ),
+    'output': 'standard',
+    'property': 'text-transform',
+  ),
+  'color': (
+    'items': $gorko-colors,
+    'output': 'standard',
+    'property': 'color'
+  ),
+  'decoration': (
+    'items': (
+      'none': 'none',
+      'underline': 'underline',
+    ),
+    'output': 'standard',
+    'property': 'text-decoration',
+  ),
+  'direction': (
+    'items': (
+      'row': 'row',
+      'column': 'column',
+    ),
+    'output': 'responsive',
+    'property': 'flex-direction'
+  ),
+  'display': (
+    'items': (
+      'block': 'block',
+      'inline': 'inline',
+      'inline-block': 'inline-block',
+      'flex': 'flex',
+      'inline-flex': 'inline-flex',
+      'grid': 'grid',
+      'none': 'none'
+    ),
+    'output': 'responsive',
+    'property': 'display'
+  ),
+  'flow-space': (
+    'items': $gorko-size-scale,
+    'output': 'responsive',
+    'property': '--flow-space',
+  ),
+  'flex': (
+    'items': (
+      '1': '1',
+    ),
+    'output': 'responsive',
+    'property': 'flex',
+  ),
+  'flex-flow': (
+    'items': (
+      'row-wrap': 'row wrap',
+      'column-wrap': 'column wrap',
+    ),
+    'output': 'responsive',
+    'property': 'flex-flow',
+  ),
+  'flex-shrink': (
+    'items': (
+      'none': 0
+    ),
+    'output': 'responsive',
+    'property': 'flex-shrink'
+  ),
+  // These fibt values come from /styles/settings/_type.scss
+  'font': (
+    'items': (
+      'base': $PRIMARY_FONT,
+      'google-sans': $HEADLINE_FONT,
+      'mono': $CODE_FONT
+    ),
+    'output': 'standard',
+    'property': 'font-family',
+  ),
+  'gap': (
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
+    'output': 'responsive',
+    'property': 'margin',
+  ),
+  'gap-top': (
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
+    'output': 'responsive',
+    'property': 'margin-top',
+  ),
+  'gap-right': (
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
+    'output': 'responsive',
+    'property': 'margin-right',
+  ),
+  'gap-bottom': (
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
+    'output': 'responsive',
+    'property': 'margin-bottom',
+  ),
+  'gap-left': (
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
+    'output': 'responsive',
+    'property': 'margin-left',
+  ),
+  'grid-cols': (
+    'items': (
+      '1': 'repeat(1, minmax(0, 1fr))',
+      '2': 'repeat(2, minmax(0, 1fr))',
+      '3': 'repeat(3, minmax(0, 1fr))',
+      '4': 'repeat(4, minmax(0, 1fr))',
+    ),
+    'output': 'responsive',
+    'property': 'grid-template-columns',
+  ),
+  'grid-gap': (
+    'items': $gorko-size-scale,
+    'output': 'responsive',
+    'property': 'gap',
+  ),
+  'height': (
+    'items': map-merge($gorko-size-scale, (
+      'full': '100%',
+      'half': percentage(1/2),
+      'quarter': percentage(1/4),
+      'third': percentage(1/3),
+      'auto': 'auto',
+    )),
+    'output': 'responsive',
+    'property': 'height'
+  ),
+  'justify-content': (
+    'items': (
+      'between': 'space-between',
+      'around': 'space-around',
+      'end': 'flex-end',
+      'center': 'center',
+    ),
+    'output': 'responsive',
+    'property': 'justify-content'
+  ),
+  'justify-items': (
+    'items': (
+      'start': 'start',
+      'end': 'end',
+      'center': 'center',
+      'stretch': 'stretch'
+    ),
+    'output': 'responsive',
+    'property': 'justify-items'
+  ),
+  'justify-self': (
+    'items': (
+      'start': 'start',
+      'end': 'end',
+      'center': 'center',
+    ),
+    'output': 'responsive',
+    'property': 'justify-self'
+  ),
+  'leading': (
+    'items': (
+      'loose': 1.7,
+      'tight': 1.3,
+      'flat': 1.1,
+    ),
+    'output': 'standard',
+    'property': 'line-height',
+  ),
+  'list-style': (
+    'items': (
+      'none': 'none',
+    ),
+    'output': 'standard',
+    'property': 'list-style',
+  ),
+  'measure': (
+    'items': (
+      'micro': '10ch',
+      'compact': '30ch',
+      'short': '40ch',
+      'long': '748px',
+      '1280': '1280px',
+    ),
+    'output': 'responsive',
+    'property': 'max-width',
+  ),
+  'min-width': (
+    'items': (
+      '0': '0',
+    ),
+    'output': 'responsive',
+    'property': 'min-width',
+  ),
+  'object-fit': (
+    'items': (
+      'cover': 'cover',
+    ),
+    'output': 'responsive',
+    'property': 'object-fit',
+  ),
+  'overflow': (
+    'items': (
+      'hidden': 'hidden',
+    ),
+    'output': 'responsive',
+    'property': 'overflow',
+  ),
+  'pad': (
+    'items': $gorko-size-scale,
+    'output': 'responsive',
+    'property': 'padding',
+  ),
+  'pad-top': (
+    'items': $gorko-size-scale,
+    'output': 'responsive',
+    'property': 'padding-top',
+  ),
+  'pad-right': (
+    'items': $gorko-size-scale,
+    'output': 'responsive',
+    'property': 'padding-right',
+  ),
+  'pad-bottom': (
+    'items': $gorko-size-scale,
+    'output': 'responsive',
+    'property': 'padding-bottom',
+  ),
+  'pad-left': (
+    'items': $gorko-size-scale,
+    'output': 'responsive',
+    'property': 'padding-left',
+  ),
+  'pointer': (
+    'items': (
+      'none': 'none',
+      'auto': 'auto'
+    ),
+    'output': 'responsive',
+    'property': 'pointer-events',
+  ),
+  'text': (
+    'items': $gorko-size-scale,
+    'output': 'responsive',
+    'property': 'font-size',
+  ),
+  'text-align': (
+    'items': (
+      'center': 'center',
+    ),
+    'output': 'responsive',
+    'property': 'text-align',
+  ),
+  'rounded': (
+    'items': map-merge($gorko-size-scale, (
+      'lg': 0.75rem, // 12px
+      'full': 50%,
+    )),
+    'output': 'responsive',
+    'property': 'border-radius',
+  ),
+  'stack': (
+    'items': (
+      '300': 0,
+      '400': 10,
+      '500': 20,
+      '600': 30,
+      '700': 40
+    ),
+    'output': 'standard',
+    'property': 'z-index'
+  ),
+  'user-select': (
+    'items': (
+      'none': 'none',
+      'auto': 'auto'
+    ),
+    'output': 'standard',
+    'property': 'user-select',
+  ),
+  'visibility': (
+    'items': (
+      'hidden': 'hidden',
+    ),
+    'output': 'responsive',
+    'property': 'visibility',
+  ),
+  // These font-weight values come from /styles/tools/_breakpoints.scss
+  'weight': (
+    'items': (
+      'regular': $FONT_WEIGHT_REGULAR,
+      'medium': $FONT_WEIGHT_MEDIUM
+    ),
+    'output': 'standard',
+    'property': 'font-weight',
+  ),
+  'width': (
+    'items': map-merge($gorko-size-scale, (
+      'full': '100%',
+      'half': percentage(1/2),
+      'quarter': percentage(1/4),
+      'third': percentage(1/3),
+      'auto': 'auto',
+    )),
+    'output': 'responsive',
+    'property': 'width'
+  ),
+  // These breakpoint values come from /styles/tools/_breakpoints.scss
+  'breakpoints': (
+    'xxsm': '(min-width: #{$BREAKPOINT_VALUE_XXSMALL})',
+    'xsm': '(min-width: #{$BREAKPOINT_VALUE_XSMALL})',
+    'sm': '(min-width: #{$BREAKPOINT_VALUE_SMALL})',
+    'md': '(min-width: #{$BREAKPOINT_VALUE_MEDIUM})',
+    'lg': '(min-width: #{$BREAKPOINT_VALUE_LARGE})',
+    'xl': '(min-width: #{$BREAKPOINT_VALUE_XLARGE})',
+  ),
+);
+

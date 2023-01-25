@@ -29,7 +29,7 @@ describe('Build test', function () {
       path.join('css', 'main.css'),
       'algolia.json',
       'manifest.webmanifest',
-      'nuke-sw.js',
+      'sw.js',
       'robots.txt',
       'sitemap.xml',
     ].forEach((file) =>

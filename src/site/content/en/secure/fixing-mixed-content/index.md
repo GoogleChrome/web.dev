@@ -39,17 +39,13 @@ The example of [passive mixed content](https://passive-mixed-content.glitch.me/)
 If the browser is able to find the content at an `https` URL it automatically upgrades it, then shows a message.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-      src="passive-mixed-content.jpg"
-      alt="Chrome DevTools showing the warnings displayed when mixed content is detected and upgraded">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Chrome DevTools showing the warnings displayed when mixed content is detected and upgraded", width="800", height="294", class="w-screenshot" %}
 </figure>
 
 [Active mixed content](https://active-mixed-content.glitch.me/) is blocked and displays a warning.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-      src="active-mixed-content.jpg"
-      alt="Chrome DevTools showing the warnings displayed when active mixed content is blocked">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Chrome DevTools showing the warnings displayed when active mixed content is blocked", width="800", height="304", class="w-screenshot" %}
 </figure>
 
 If you find warnings like these for `http://` URLs on your site,

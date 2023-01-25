@@ -1,5 +1,5 @@
 ---
-layout: layout
+layout: default
 permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
 show_banner: false
 pageScripts:
@@ -18,7 +18,7 @@ pageScripts:
       {% if date %}
         <div class="w-author__published">
           <time>{{date | prettyDate}}</time>
-          {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
+          {% if updated %} <span class="w-author__separator">•</span> {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
 

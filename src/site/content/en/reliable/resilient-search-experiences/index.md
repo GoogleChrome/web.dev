@@ -22,7 +22,7 @@ codelabs:
   - codelab-building-resilient-search-experiences
 ---
 
-{% YouTube 'fhqCwDP69PI', '35' %}
+{% YouTube id='fhqCwDP69PI', startTime='35' %}
 
 Even in locations with fast networks a user might lose connection or connect to a flaky network, at some moments of the day.
 For example: a user is on the subway searching on the phone for a product on an e-commerce website. They type the product name, click the "search" button, and while waiting for the results, the connection is lost, leading to the standard browser offline page.
@@ -43,21 +43,20 @@ When visiting the Google Search web app and going offline, instead of showing th
 The page also prompts the user to opt-in for notifications, to receive a link to the search results page once the connection is recovered.
 
 <figure class="w-figure">
-  <img src="search-offline-screen.png"
-       alt="A screenshot of the background retry interface in Google Search.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TqDtqgbKOsxRFnr2lNSy.png", alt="A screenshot of the background retry interface in Google Search.", width="257", height="475" %}
 </figure>
 
 When the user performs a search, the service worker allows the query to be deferred and sent to Google's servers as soon as the device goes back online by using the [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync), and to inform the user of the result by using the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API).
 
-![A screenshot of the offline flow in Google Search.](search-offline-flow.png)
+{% Img src="image/admin/ZZItVQMLUPmVbwJlfDck.png", alt="A screenshot of the offline flow in Google Search.", width="800", height="436" %}
 
-Service workers allow Google Search to provide a [meaningful offline experience](https://web.dev/google-search-sw/#meaningful-offline-experience) and keep the user engaged, letting them complete their task.
+Service workers allow Google Search to provide a [meaningful offline experience](/google-search-sw/#meaningful-offline-experience) and keep the user engaged, letting them complete their task.
 
 ## Implement resilient search experiences with Workbox
 
 While Google Search implements this functionality without using Workbox, the [Workbox library](https://developers.google.com/web/tools/workbox) makes it easier by providing a [Background Sync module](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync), which takes care of many implementation details for us.
 
-![A service worker and a cache object communicating with each other.](workbox-background-sync.png)
+{% Img src="image/admin/X06meG8U60SABUabxwHb.png", alt="A service worker and a cache object communicating with each other.", width="800", height="383" %}
 
 To implement a resilient search experience in Workbox, first, import the following modules in your service worker:
 

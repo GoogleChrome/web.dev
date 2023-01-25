@@ -5,9 +5,9 @@ subhead:
 authors:
   - beaufortfrancois
 date: 2020-10-05
-updated: 2020-11-18
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+updated: 2021-03-22
+hero: image/admin/wbcUb7ooaR1nCeYnSiCV.jpg
+thumbnail: image/admin/eBugU3Spjq9df1qb5l0b.jpg
 alt: Five persons in a conference room photo.
 description: |
   Pan, tilt, and zoom features on cameras are finally controllable on the web.
@@ -53,7 +53,7 @@ the PTZ constraints as shown below. This will prompt the user to grant both
 regular camera and camera with PTZ permissions.
 
 <figure class="w-figure">
-  <img src="./camera-ptz-user-prompt.jpg" class="w-screenshot" alt="Screenshot of a camera PTZ user prompt in Chrome for macOS.">
+  {% Img src="image/admin/WmkzmVeiplCoh3HesJS5.jpg", alt="Screenshot of a camera PTZ user prompt in Chrome for macOS.", width="800", height="382", class="w-screenshot" %}
   <figcaption class="w-figcaption">Camera PTZ user prompt.</figcaption>
 </figure>
 
@@ -106,10 +106,18 @@ try {
 
 To know whether a Chromium-based browser supports PTZ for a camera, go to the
 internal `about://media-internals` page and check out the "Pan-Tilt-Zoom" column
-in the "Video Capture" tab.
+in the "Video Capture" tab; "pan tilt" and "zoom" respectively mean the camera supports
+the "PanTilt (Absolute)" and "Zoom (Absolute)" [UVC controls]. The "PanTilt (Relative)"
+and "Zoom (Relative)" UVC controls are not supported in Chromium-based browsers.
 
 <figure class="w-figure">
-  <img src="./media-internals-page.jpg" class="w-screenshot" alt="Screenshot of the internal page in Chrome OS to debug PTZ camera support.">
+  {% Img
+    src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/4EDS8fYYifXAUY6SBaiV.png",
+    alt="Screenshot of the internal page in Chrome OS to debug PTZ camera support.",
+    width="800",
+    height="481",
+    class="w-screenshot"
+  %}
   <figcaption class="w-figcaption">Internal page to debug PTZ camera support.</figcaption>
 </figure>
 
@@ -137,7 +145,7 @@ The returned promise will resolve if successful. Otherwise it will reject if
 either:
 - the camera with PTZ permission is not granted.
 - the camera hardware does not support the PTZ constraint.
-- the page is not visible to the user. Use the [Page Visibilty API] to detect
+- the page is not visible to the user. Use the [Page Visibility API] to detect
   page visibility changes.
 
 ```js
@@ -220,8 +228,9 @@ Hero image by [Christina @ wocintechchat.com] on [Unsplash].
 [mandatory constraints]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints#Specifying_a_range_of_values:~:text=mandatory
 [`MediaStream`]: https://developer.mozilla.org/en-US/docs/Web/API/MediaStream
 [Permissions API]: https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API
+[UVC controls]: https://www.usb.org/document-library/video-class-v15-document-set
 [PTZ advanced constraints]: https://bugs.chromium.org/p/chromium/issues/detail?id=1126045
-[Page Visibilty API]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
+[Page Visibility API]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
 [demo]: https://ptz.glitch.me/
 [check out the source code]: https://glitch.com/edit/#!/ptz?path=public%2Fscript.js
 [run Chrome with the switch]: https://www.chromium.org/developers/how-tos/run-chromium-with-flags

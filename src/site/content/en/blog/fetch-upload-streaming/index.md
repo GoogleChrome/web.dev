@@ -10,7 +10,7 @@ origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-7680889164480380927
 date: 2020-07-22
 updated: 2020-07-22
-hero: hero.jpg
+hero: image/admin/9U7u4C7WCGbrdHm3181W.jpg
 alt: A canoe pointed up stream.
 tags:
   - blog
@@ -204,7 +204,7 @@ arbitrary data using gzip.
 If you provide a body object that the browser doesn't specifically handle, it
 will call `toString()` on the object and use the result as the body. If the
 browser doesn't support request streams, that means the request body becomes
-`"[object ReadableStream]"` – probably not what you want to send to the server.
+`"[object ReadableStream]"`–probably not what you want to send to the server.
 To avoid this, use feature detection:
 
 ```js

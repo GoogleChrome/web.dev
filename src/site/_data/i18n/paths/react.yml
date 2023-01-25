@@ -1,0 +1,15 @@
+title:
+  en: React
+
+description:
+  en: Build performant and progressive React applications.
+
+overview:
+  en: In this section you'll learn how to use built-in APIs and third-party libraries to improve the performance of your React applications.
+
+topics:
+  next_js:
+    en: Next.js
+
+  create_react_app:
+    en: Create React App
