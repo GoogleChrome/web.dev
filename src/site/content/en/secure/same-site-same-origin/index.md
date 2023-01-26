@@ -87,7 +87,8 @@ considered "same-origin". Everything else is considered "cross-origin".
 
 {% Aside 'important' %}
 
-The definition of "site" has evolved and it now includes the scheme. This
+The definition of "site" has evolved and [the spec says it now includes the
+scheme](https://github.com/whatwg/url/issues/448) since late 2019. This
 effectively changes the definition of "same-site" and "cross-site" as well. What
 has been called "[schemeful same-site](/schemeful-samesite/)" is now "same-site"
 and a new concept of "schemeless same-site" emerged. Read on to learn more.
