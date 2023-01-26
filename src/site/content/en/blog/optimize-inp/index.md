@@ -204,7 +204,7 @@ If it's third-party code that's causing problems, then you have [a lot more to c
 3. Cull redundant or low-value third-party scripts.
 4. Maintain whatever third-party scripts are left over so that they impact performance as little as possible.
 
-This is difficult in large part because third-party JavaScript is an issue of work culture. For example ([tag managers](/tag-best-practices/) make it easy for non-technical people in a company to add third-party scripts without the knowledge of the development teams.
+This is difficult in large part because third-party JavaScript is an issue of work culture. For example tag managers make it easy for non-technical people in a company to add third-party scripts without the knowledge of the development teams. See our [Best practices for tags and tag managers](/tag-best-practices/) post on techniques for optimizing those for performance and Web Vitals.
 
 ## Optimize event callbacks
 
