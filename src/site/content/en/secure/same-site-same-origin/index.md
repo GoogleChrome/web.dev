@@ -113,16 +113,16 @@ domain just before it (We call it TLD+1). For example, given a URL of
 For domains that include things such as `.co.jp` or `.github.io`, just using
 `.jp` or `.io` is not granular enough to identify the "site". There is no way to
 algorithmically determine the level of registrable domains for a particular TLD.
- That's why a list of public suffix that are defined in the [Public Suffix
+ That's why a list of public suffixes defined in the [Public Suffix
 List](https://wiki.mozilla.org/Public_Suffix_List) was created. These public
-suffixes are also called **"effective TLDs"(eTLDs)**. The list of eTLDs is
+suffixes are also called *effective TLDs (eTLDs)*. The list of eTLDs is
 maintained at [publicsuffix.org/list](https://publicsuffix.org/list/).
 
-To identify "site" part of a domain that includes an eTLD, apply the same
+To identify the "site" part of a domain that includes an eTLD, apply the same
 practice as the example with `.com`. Taking
 `https://www.project.github.io:443/foo` as an example, the scheme is `https`,
 the eTLD is `.github.io` and the eTLD+1 is `project.github.io`, so
-`https://project.github.io` is considered the "site".
+`https://project.github.io` is considered the "site" for this URL.
 
 {%
   Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/7ihtYJeEPX4epAe37onN.png",
@@ -184,10 +184,10 @@ Websites that have the same scheme and the same eTLD+1 are considered
 The definition of "same-site" evolved to consider the URL scheme as part of the
 site in order to prevent HTTP being used as [a weak
 channel](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8).
-On the contrary, the older concept of "same-site" without scheme comparison is
-now called "schemeless same-site". For example, `http://www.example.com` and
+The older concept of "same-site" without scheme comparison is now called
+"schemeless same-site". For example, `http://www.example.com` and
 `https://www.example.com` are considered schemelses same-site but not same-site,
-because the eTLD+1 part only matters and the scheme is not taken into account.
+because only the eTLD+1 part matters and the scheme is not taken into account.
 
 <div class="table-wrapper">
   <table>
