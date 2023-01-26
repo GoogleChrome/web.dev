@@ -1,0 +1,19 @@
+# The date is used to organize the courses on the /learn page.
+# This should be the initial publish date of the course. When new pages are
+# added to the course the site will check if they are <30 days old, and if they
+# are, it will give them a "New" badge. However, when you first launch a course
+# you don't want every entry to have a "New" badge, so anything that existed
+# on or before this date will not receive the "New" badge.
+date: 2023-01-26
+url: /learn/privacy
+draft: false
+title: i18n.courses.learn_privacy.title
+description: i18n.courses.learn_privacy.description
+# This is the logo that appears in the navigation drawer and header.
+logo: '/images/courses/privacy/logo.svg'
+# This is used to provide the background for the navigation drawer and header.
+background: '/images/courses/privacy/background.svg'
+# This provides the cover image for the card on /learn/
+card: '/images/courses/privacy/card.svg'
+# This is used for the social media thumbnail.
+thumbnail: 'image/kheDArv5csY6rvQUJDbWRscckLr1/E10gLEyQQ7GKqaJwUJn4.png'

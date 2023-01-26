@@ -92,3 +92,9 @@ learn_html:
     en: Learn HTML!
   description:
     en: "This HTML course for web developers provides a solid overview for developers, from novice to expert level HTML."
+
+learn_privacy:
+   title:
+    en: Learn Privacy!
+   description:
+    en: "To do."
