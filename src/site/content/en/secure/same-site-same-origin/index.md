@@ -244,7 +244,8 @@ header has one of the following values:
 
 {% Aside %}
 
-`same-site` here means schemeful same-site, rather than schemeless same-site.
+`same-site` here means schemeful same-site, rather than the old schemeless
+same-site.
 
 {% endAside %}
 
