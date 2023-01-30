@@ -37,7 +37,7 @@ function SignPosts(slug) {
         >${i18n(paths[pathName].title, locale)}</a
       >`;
     })
-    .join(html`<span class="w-post-signpost__divider">|</span>`);
+    .join(html`<span class="w-post-signpost__divider"> | </span>`);
 
   return html`
     <div class="w-layout-container--narrow w-post-signpost">
