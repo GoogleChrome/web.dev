@@ -13,11 +13,11 @@ telling it what to render. `<picture>` follows a precedent already set by the `<
 that contains individual `<source>` elements.
 
 ```html
-~~<picture>~~
-  ~~<source …>~~
-  ~~<source …>~~
+<picture>
+   <source …>
+   <source …>
 	<img …>
-~~</picture …>~~
+</picture …>
 ```
 
 That inner `<img>` also provides you with a reliable fallback pattern for older browsers without support for responsive images:
