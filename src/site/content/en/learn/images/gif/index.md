@@ -52,10 +52,7 @@ Absent any compression—so to speak—you could describe this grid as:
 
 Using something akin to GIF's lossless data compression and color indexing, you might describe it as:
 
-> A: #0000FF
-> B: #FF0000
-> C: #000085
-> Row one, columns one through three are A. Row one, column four is B. Row two, column one is A. Row two, column two is C. Row two, column three is A. Row two, column four is B.
+> A: #0000FF, B: #FF0000, C: #000085. Row one, columns one through three are A. Row one, column four is B. Row two, column one is A. Row two, column two is C. Row two, column three is A. Row two, column four is B.
 
 This manages to condense the pixel-by-pixel description in a few places (“columns one through three are…”), and saves a
 few characters by defining the repeated colors in a dictionary, of sorts, up front. There's no change to the visual fidelity.
@@ -66,9 +63,7 @@ The information has been compressed without any loss.
 As you can see, however, the single dark blue pixel is having an outsized impact on the size of our encoding. If I were to
 limit myself to a quantized color palette, it could be reduced much further:
 
-> A: #0000FF
-> B: #FF0000
-> Row one, columns one through three are A. Row one, column four is B. Row two, columns one through three are A. Row two, column four is B.
+> A: #0000FF, B: #FF0000. Row one, columns one through three are A. Row one, column four is B. Row two, columns one through three are A. Row two, column four is B.
 
 The unfortunate end result of those saved bytes is that you've lost pixel-perfection.
 
