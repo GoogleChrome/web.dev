@@ -67,7 +67,7 @@ high resolution image source rendered on a small, low density display will _look
 
 As you might guess, _mobile_ devices with a DPR of 1 are [vanishingly rare](https://jakearchibald.com/2021/serving-sharp-images-to-high-density-screens/),
 though it is still [common in “desktop” browsing contexts](https://twitter.com/TimVereecke/status/1587878439729725442). According to data
-shared by [Matt Hobbs](nooshu.com), approximately 18% of  [GOV.UK](https://www.gov.uk/) browsing sessions from November 2022 report a DPR of 1. While h
+shared by [Matt Hobbs](https://nooshu.com), approximately 18% of  [GOV.UK](https://www.gov.uk/) browsing sessions from November 2022 report a DPR of 1. While h
 igh-density images would _look_ the way those users might expect, they'll come at a much higher bandwidth and processing cost—of
 particular concern to users on the older and less powerful devices still likely to have low-density displays.
 
