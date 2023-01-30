@@ -110,19 +110,19 @@ img {
 }
 ```
 
-Having removed the 'height' and 'width' attributes as in the previous example, the only method the browser has for determining
+Having removed the `height` and `width` attributes as in the previous example, the only method the browser has for determining
 the height of the image in this situation is to request the source, parse it, and render it at its intrinsic aspect ratio, based the
 width of the space it occupies in the layout once stylesheets have been applied. Much of this process takes place after the page has been
 rendered, with the newly calculated height causing additional layout shifts.
 
 [Starting in 2019](https://caniuse.com/mdn-html_elements_img_aspect_ratio_computed_from_attributes
-), browser behavior was updated to handle the 'width' and 'height' attributes differently. Rather than using the values of these
-attributes to determine the fixed, pixel-based size of an 'img' element in the layout, these attributes can be thought to represent
+), browser behavior was updated to handle the `width` and `height` attributes differently. Rather than using the values of these
+attributes to determine the fixed, pixel-based size of an `img` element in the layout, these attributes can be thought to represent
 the _aspect ratio_ of the image, though the syntax is the same. Modern browsers will divide these values against each other in order to
-determine an 'img' element's intrinsic _aspect ratio_ prior to the page being rendered, allowing it to reserve the space the image will occupy as the layout is rendered.
+determine an `img` element's intrinsic _aspect ratio_ prior to the page being rendered, allowing it to reserve the space the image will occupy as the layout is rendered.
 
-As a rule, you should always use 'height' and 'width' attributes on '<img>', with values matching the intrinsic size of your image source—so
-long as you make sure that you've specified 'height: auto' alongside 'max-width: 100%' to override the height from the HTML attribute.
+As a rule, you should always use `height` and `width` attributes on `<img>`, with values matching the intrinsic size of your image source—so
+long as you make sure that you've specified `height: auto` alongside `max-width: 100%` to override the height from the HTML attribute.
 
 ```html
 <img src="image.jpg" height="200" width="400" alt="…">
