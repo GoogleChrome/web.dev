@@ -34,7 +34,7 @@ it means to collect just the [data](/learn/privacy/data/) you need. We also know
 some user data and to leverage third parties as building blocks for your site to provide useful services—be it payment solutions, map widgets, or
 error monitoring scripts. This course will offer tools and tips for you to approach this with care, especially when it
 comes to [third parties](/learn/privacy/third-parties/).
-* **What's up with web privacy**. You will learn about [upcoming browser and web platform privacy improvements](/learn/privacy/third-parties/#API-proposals),
+* **What's up with web privacy**. You will learn about [upcoming browser and web platform privacy improvements](/learn/privacy/third-parties/#api-proposals),
 and how you can prepare your site for these changes. You'll also learn about what [fingerprinting](/learn/privacy/fingerprinting/) protections
 in browsers mean for your site.
 * **Ways to scale and maintain your organization's privacy approaches**. In [best practices](/learn/privacy/best-practices),
