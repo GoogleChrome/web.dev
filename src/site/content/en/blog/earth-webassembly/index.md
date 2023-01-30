@@ -50,7 +50,7 @@ Edge is on the verge of becoming two distinct development experiences based on M
 Chrome has strong support for WebAssembly, including multi-threading on desktop, so you can expect Earth to run smoother as a result. However, we look forward to Chrome adding support for dynamic memory allocation with multi-threading in WebAssembly. Until then, Earth may fail to start on devices with limited amounts of memory (such as 32-bit machines).
 
 ### Firefox
-Firefox offers good support for WebAssembly, but has disabled support for multi-threading. As a result, you can expect a slower experience with Earth. We look forward to Mozilla bringing back support for multi-threading in future versions. On the upside, Firefox does support dynamic memory allocation.
+Firefox offers good support for WebAssembly, but has had disabled support for multi-threading when Earth was released. However support for SharedArrayBuffer was re-enabled long ago with Firefox 79, release on June 2020. Yet, despite the 2,5 years that have passed, Google Earth still runs in single-threaded mode on Firefox. On the upside, Firefox does support dynamic memory allocation.
 
 ### Opera
 Opera is based on Chromium just as Chrome is, along with upcoming versions of Edge. However, the current version of Opera only offers single-threaded support of WebAssembly. Earth does run in Opera, but at a somewhat degraded experience. Hopefully newer versions of Opera will have support for multi-threading and more robust WebAssembly support.
