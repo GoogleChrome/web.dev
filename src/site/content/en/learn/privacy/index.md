@@ -71,6 +71,11 @@ and questions to ask yourself and your team on your privacy journey. Throughout 
 documentation maintained by third parties to illustrate key points. Your own approach is up to you to define. It will
 depend on your organization, your business, and your compliance requirements and users’ needs.
 
+
+Here's what you'll learn:
+
+{% include 'partials/course-index.njk' %}
+
 Let's get started!
 
 {% Aside %}
