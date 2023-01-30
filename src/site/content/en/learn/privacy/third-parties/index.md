@@ -193,7 +193,7 @@ The first step is non-technical: read the privacy policies of your suppliers. If
 check the privacy policies. They will be long and full of legal text, and some documents may use some of the approaches
 specifically warned against [in earlier chapters](/learn/privacy/data/), such as overly general statements and without any indication
 of how or when collected data will be removed. It is important to realize that from a user perspective, all the data that
-is collected on your site, including by third parties, will be governed by these privacy policies.. Even if you do
+is collected on your site, including by third parties, will be governed by these privacy policies. Even if you do
 everything correctly, when you are transparent about your goals and exceed your users' expectations of data privacy and
 sensitivity, users may hold you responsible for anything your chosen third parties do as well. If there is anything in
 their privacy policies which you would not wish to say in your own policies because it would decrease users' trust, then
@@ -449,7 +449,7 @@ information that you maybe should not know about your user's browsing history.
 {% endAside %}
 
 Providing a `Referrer-Policy` header (with correct spelling!) lets you alter this, so that some or none of the referring URL is passed on.
-[MDN lists the full details](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) but most browsers have
+[MDN lists the full details](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy) but most browsers have
 now adopted an assumed value of `strict-origin-when-cross-origin` by default, meaning that the referrer URL is now passed to third
 parties as an origin only (`https://web.dev` rather than `https://web.dev/learn/privacy`). This is a useful privacy protection without
 you having to do anything. But you can tighten this up further by specifying `Referrer-Policy: same-origin` to avoid passing any
@@ -457,7 +457,7 @@ referrer information at all to third parties (or `Referrer-Policy: no-referrer` 
 (This is a nice example of the privacy-versus-utility balance; the new default is much more privacy-preserving than before, but it
 still gives high level information to third parties of your choice, such as your analytics provider.)
 
-It's also useful to explicitly specify this header [because then you know exactly what the policy is, rather than relying on the browser defaults](https://web.dev/referrer-best-practices/#why-%22explicitly%22).
+It's also useful to explicitly specify this header [because then you know exactly what the policy is, rather than relying on the browser defaults](/referrer-best-practices/#why-%22explicitly%22).
 If you aren't able to set headers, then it's possible to set a referrer policy for a whole HTML page using a meta element in the `<head>`:
 `<meta name="referrer" content="same-origin">`; and if concerned about specific third parties, it's also possible to set a `referrerpolicy`
 attribute on individual elements such as `<script>`, `<a>`, or `<iframe>`: `<script src=”https://thirdparty.example.com/data.js” referrerpolicy=”no-referrer”>
@@ -471,7 +471,7 @@ alongside your regular audits it can also limit where your chosen third parties 
 This is potentially a less-than-great user experience; if one of your third-party scripts starts loading a dependency from an
 origin not on your list, then that request will be blocked, the script will fail, and your application may fail with it
 (or at least be reduced to its JavaScript-failing fallback version). This is useful when CSP is implemented for security,
-which is its normal purpose: protecting against cross-site scripting issues (and to do this, use a [strict CSP](https://web.dev/strict-csp/)).
+which is its normal purpose: protecting against cross-site scripting issues (and to do this, use a [strict CSP](/strict-csp/)).
 Once you know all the inline scripts that your page uses, you can make a list of them, calculate a hash value or add a random value
 (called a “nonce”) for each, and then add the list of hashes to your Content Security Policy. This will prevent any script that
 isn't on the list from being loaded. This needs to be baked into the production process for the site: scripts in your pages need
@@ -618,8 +618,8 @@ To get some insight into what may be blocked and to help debug issues, click the
 
 * Third-party cookies are blocked by default.
 * As part of its [Intelligent Tracking Prevention](https://webkit.org/blog/9521/intelligent-tracking-prevention-2-3/) feature,
-Safari reduces the referrer passed to other pages to be a top-level site rather than a specific page: (https://something.example.com,
-rather than https://something.example.com/this/specific/page).
+Safari reduces the referrer passed to other pages to be a top-level site rather than a specific page: (`https://something.example.com`,
+rather than `https://something.example.com/this/specific/page`).
 * Browser `localStorage` data is deleted after seven days.
 
 ([https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/) summarizes these features.)

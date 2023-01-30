@@ -264,7 +264,7 @@ Again, the core information (this is Safari, it's on iOS or macOS) is available,
 but much of the ancillary information that was available in the past has since been frozen. Importantly, this includes the Safari
 version number, which is not necessarily available.
 
-The changes to the reported user-agent were hotly debated.   https://github.com/WICG/ua-client-hints#use-cases summarises
+The changes to the reported user-agent were hotly debated. [https://github.com/WICG/ua-client-hints#use-cases summarises](https://github.com/WICG/ua-client-hints#use-cases) summarises
 some of the arguments and reasons for the change, and Rowan Merewood has a [slide deck](https://docs.google.com/presentation/d/1IngTSZ_TQHjJEsRcCpm_WsnLCV4wpYYZ8D1CNnK4UZ4/edit#slide=id.ge864b7bfc7_0_360)
 with some strategies for migrating away from using the user-agent for differentiation, in the context of the UA Client Hints proposal explained further on.
 
@@ -282,8 +282,8 @@ preemptively by browsers (by making the user-agent deliberately incorrect), to e
 
 #### Do
 
-* Check your codebase for any reliance on the user-agent string (a search for <code>navigator.userAgent</code> is likely to find most occurrences
-in your client-side code, and your backend code will likely be looking for <code>User-Agent</code> as a header), including your
+* Check your codebase for any reliance on the user-agent string (a search for `<code>navigator.userAgent</code>` is likely to find most occurrences
+in your client-side code, and your backend code will likely be looking for `<code>User-Agent</code>` as a header), including your
 dependencies.
 * If you find uses in your own code, work out what the code is checking for, and find another way to do that differentiation
 (or find a replacement dependency, or work with the dependency upstream by filing issues or checking with them for updates). Sometimes
@@ -302,7 +302,7 @@ when doing local development, in order to check how your code deals with differe
 
 ## Client Hints
 
-One major proposal to provide this information is [User-Agent Client Hints](https://web.dev/user-agent-client-hints/),
+One major proposal to provide this information is [User-Agent Client Hints](/user-agent-client-hints/),
 although this is not supported across all browsers. Supporting browsers will pass three headers: `Sec-CH-UA`, which gives
 a browser brand and version number; `Sec-CH-UA-Mobile`, which indicates if the request comes from a mobile device; and `Sec-CH-UA-Platform`,
 which names the operating system. (Parsing these headers is less easy than it seems because they are

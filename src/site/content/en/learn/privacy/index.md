@@ -8,7 +8,7 @@ date: 2023-01-24
 
 A course to help you build more privacy-preserving websites.
 
-## With great power...
+## With great power…
 
 When you acquire a new user, you are granted their trust. It's your organization's responsibility to honor this trust by keeping
 user data private. As people use your service, they will share some information with your site or system so it can function
@@ -51,7 +51,7 @@ To follow this course, you need an intermediate knowledge of HTML, JavaScript, a
 and being mindful about data collection can help build trust in your service and improve their experience, directly contributing
 to your organization's success.
 1. Compliance. Over recent years, privacy regulations have emerged all over the world, and keep evolving: in 2017, the
-rehauled APPI in Japan; in 2018, the GDPR in Europe, in 2020, the CCPA in California; in 2022, the PDPB in India ...
+rehauled APPI in Japan; in 2018, the GDPR in Europe, in 2020, the CCPA in California; in 2022, the PDPB in India …
 Whether or not you've directly worked on tasks to comply with these regulations, this shift indicates regulators’
 growing attention to privacy.
 1. Readiness for a more private web. Important privacy improvements have been made and will keep coming to browsers and

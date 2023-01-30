@@ -9,7 +9,7 @@ tags:
 ---
 
 Encryption is often a topic for security, but it's important for privacy too. The goal of encryption is to prevent others
-from reading the encrypted information... but preventing others from reading your information is one way to keep it private.
+from reading the encrypted information… but preventing others from reading your information is one way to keep it private.
 A user is often limited in how much they can do that themselves, but with your assistance as provider of a service they're using,
 encryption can help to keep their data theirs.
 
@@ -34,7 +34,7 @@ recipient (you), because it's encrypted and so they can't read it or change it. 
 moving from user to you, or from you to user. HTTPS encryption in transit also prevents the user's ISP, or the provider of
 the Wi-Fi they're using, from being able to read the data they're sending to you as part of their relationship with your service.
 It may impact your service's features, too: many uses of existing JavaScript APIs require the website to be served over HTTPS.
-[https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts](Mozilla) has a more comprehensive list,
+[https://developer.mozilla.org/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts](Mozilla) has a more comprehensive list,
 but APIs gatewayed behind a secure context include service workers, push notifications, web share and web crypto, and some device APIs.
 
 To serve your website over HTTPS you will need an SSL certificate. These can be created for free via [Let's Encrypt](https://letsencrypt.org/),
@@ -63,7 +63,7 @@ SSL as a service if you're using something at a higher level than cloud hosting,
 
 Security is a part of your privacy story: being able to demonstrate that you keep user data secure against interference helps
 to build trust. If you don't use HTTPS, your sites are also flagged as being "not secure" by browsers (and have been for some time).
-[Existing JavaScript APIs are often only available to HTTPS pages ("secure origins")](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts).
+[Existing JavaScript APIs are often only available to HTTPS pages ("secure origins")](https://developer.mozilla.org/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts).
 It also protects your users against their [web usage being seen by their ISP](https://spreadprivacy.com/protection-from-isp-spying/).
 This is certainly a best practice; there's little to no reason to not use HTTPS for websites now.
 
@@ -145,7 +145,7 @@ Content-Security-Policy: upgrade-insecure-requests`
 **Should I add HSTS/UIR headers and add redirects?**
 Yes. You should redirect http URLs to https, and continue to do so even after HSTS is in place—it's important to do both.
 It's a best practice anyway ([https://web.dev/redirects-http/](/redirects-https/) explains) but it's also required in
-order to be added to the automatic preload list (see https://hstspreload.org for more details).
+order to be added to the automatic preload list (see [https://hstspreload.org](https://hstspreload.org) for more details).
 {% endAside %}
 
 ## End-to-end encryption
@@ -179,12 +179,12 @@ service encrypt any data it sends to the server, and decrypt any data it receive
 [Excalidraw](https://blog.excalidraw.com/end-to-end-encryption/) does this and explains how in a blog post. It is a vector
 drawing app that stores drawings on the server, which are encrypted with a randomly chosen key. Part of the reason that
 Excalidraw can implement this end-to-end encryption with relatively little code is that cryptographic libraries are now built
-into the browser with [window.crypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt), which is a set
+into the browser with [window.crypto](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt), which is a set
 of JavaScript APIs [supported in all modern browsers](https://caniuse.com/cryptography). Cryptography is hard and implementing
 the algorithms comes with many edge cases. Having the browser do the heavy lifting here makes encryption more accessible to
 web developers and therefore makes it easier to implement privacy via encrypted data. As Excalidraw describes in their writeup,
 the encryption key remains on the client-side, because it's part of the URL fragment: when a browser visits a URL
-https://example.com/path?param=1#fraghere, the path of the URL (`/path`) and the parameters (`param=1`) are passed to the server
+`https://example.com/path?param=1#fraghere`, the path of the URL (`/path`) and the parameters (`param=1`) are passed to the server
 (`example.com`), but the fragment (`fraghere`) is not, and so the server never sees it. This means that even if the encrypted
 data goes through the server, the encryption key does not and thus privacy is preserved because the data is end-to-end encrypted.
 
