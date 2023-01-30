@@ -136,7 +136,7 @@ the third parties you're using on your site?
 
 We're discussing "third parties" generally, but there are actually different kinds, and they have access to different amounts of user data.
 For example, adding an `<img>` element to your HTML, loaded from a different server, will give that server different information
-about your users than adding an `<iframe>` might, or a <script> element. These are examples rather than a comprehensive list, but it's
+about your users than adding an `<iframe>` might, or a `<script>` element. These are examples rather than a comprehensive list, but it's
 useful to understand the distinctions between the different types of third-party items that your site can employ.
 
 ### Requesting a cross-site resource

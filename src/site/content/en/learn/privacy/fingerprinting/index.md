@@ -238,8 +238,8 @@ will look like 123.0.0.0, even if the browser is version 123.10.45.108), and the
 freeze to one of a small number of unchanging choices. So an imaginary Chrome version 123.45.67.89 running on an imaginary
 "Windows 20" would report its version number as:
 
-'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
-Chrome/123.0.0.0 Safari/537.36'.
+`Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
+Chrome/123.0.0.0 Safari/537.36`
 
 The core information you need (the browser version) is still available: it is Chrome 123, on Windows. But the subsidiary
 information (the chip architecture, which Windows version, which version of Safari it's imitating, the browser minor version)
@@ -247,18 +247,18 @@ will no longer be available after the freeze.
 
 Compare this with a "current" Chrome user-agent on a different platform:
 
-'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
+`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36`,
 
 and it can be seen that the only thing that differs is the Chrome version number (104) and the platform identifier.
 
 Similarly, Safari's user-agent string does show a platform and a Safari version number, and also gives an OS version on iOS,
 but all else is frozen. So an imaginary Safari version 1234.5.67 running on an imaginary macOS 20 might give its user-agent as:
 
-'Mozilla/5.0 (Macintosh; **Intel Mac OS X 10_20_0**) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15',
+`Mozilla/5.0 (Macintosh; **Intel Mac OS X 10_20_0**) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15`,
 
 and on an imaginary iOS 20 it might be:
 
-'Mozilla/5.0 (iPhone; CPU **iPhone OS 20_0** like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/**20.0 Mobile/15E148 Safari/605.1.15**'.
+`Mozilla/5.0 (iPhone; CPU **iPhone OS 20_0** like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/**20.0 Mobile/15E148 Safari/605.1.15**`.
 
 Again, the core information (this is Safari, it's on iOS or macOS) is available, and iOS Safari still provides an iOS version number;
 but much of the ancillary information that was available in the past has since been frozen. Importantly, this includes the Safari
@@ -282,8 +282,8 @@ preemptively by browsers (by making the user-agent deliberately incorrect), to e
 
 #### Do
 
-* Check your codebase for any reliance on the user-agent string (a search for `<code>navigator.userAgent</code>` is likely to find most occurrences
-in your client-side code, and your backend code will likely be looking for `<code>User-Agent</code>` as a header), including your
+* Check your codebase for any reliance on the user-agent string (a search for `navigator.userAgent` is likely to find most occurrences
+in your client-side code, and your backend code will likely be looking for `User-Agent` as a header), including your
 dependencies.
 * If you find uses in your own code, work out what the code is checking for, and find another way to do that differentiation
 (or find a replacement dependency, or work with the dependency upstream by filing issues or checking with them for updates). Sometimes

@@ -146,7 +146,7 @@ test your software as a new user to discover what information is asked for, and 
 
 ## Prevent overreach and control access
 
-The third-best practice is to _prevent overreach_: that is, to avoid doing more with data than you committed to, and to avoid
+The third best practice is to _prevent overreach_: that is, to avoid doing more with data than you committed to, and to avoid
 speculatively gathering data in case it becomes useful in the future. That involves adapting your processes so that you set the
 culture you want around protecting user privacy. Cultural change is difficult, but once accomplished it will largely maintain itself,
 which is easier.
