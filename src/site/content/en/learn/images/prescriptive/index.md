@@ -103,16 +103,16 @@ as they do on `<img>`, with the appropriate space reserved in your layout for wh
 ```html
 <picture>
    <source
-media="(min-width: 800px)"
-srcset="high-bp-1600.jpg 1600w, high-bp-1000.jpg 1000w"
-width="1600"
-height="800">
+      media="(min-width: 800px)"
+      srcset="high-bp-1600.jpg 1600w, high-bp-1000.jpg 1000w"
+      width="1600"
+      height="800">
    <img src="fallback.jpg"
-             srcset="lower-bp-1200.jpg 1200w, lower-bp-800.jpg 800w"
-             sizes="calc(100vw - 2em)"
-             width="1200"
-             height="750"
-             alt="…">
+      srcset="lower-bp-1200.jpg 1200w, lower-bp-800.jpg 800w"
+      sizes="calc(100vw - 2em)"
+      width="1200"
+      height="750"
+      alt="…">
 </picture>
 ```
 
