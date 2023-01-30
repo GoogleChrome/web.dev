@@ -117,7 +117,7 @@ rendered, with the newly calculated height causing additional layout shifts.
 
 [Starting in 2019](https://caniuse.com/mdn-html_elements_img_aspect_ratio_computed_from_attributes
 ), browser behavior was updated to handle the 'width' and 'height' attributes differently. Rather than using the values of these
-attributes to determine the fixed, pixel-based size of an 'img' element in the layout, these attributes can be thought of to represent
+attributes to determine the fixed, pixel-based size of an 'img' element in the layout, these attributes can be thought to represent
 the _aspect ratio_ of the image, though the syntax is the same. Modern browsers will divide these values against each other in order to
 determine an 'img' element's intrinsic _aspect ratio_ prior to the page being rendered, allowing it to reserve the space the image will occupy as the layout is rendered.
 
