@@ -3,7 +3,7 @@ title: 'Raster images'
 authors:
   - matmarquis
 description: Discover raster images, such as JPEG, GIF, PNG, and WebP.
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

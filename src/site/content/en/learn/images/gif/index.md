@@ -3,7 +3,7 @@ title: 'Image formats: GIF'
 authors:
   - matmarquis
 description: Understand the GIF image format, along with an explanation of how image encoding works. 
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

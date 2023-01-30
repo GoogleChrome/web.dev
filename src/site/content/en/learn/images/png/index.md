@@ -3,7 +3,7 @@ title: 'Image formats: PNG'
 authors:
   - matmarquis
 description: Find out when PNG is the best image format to choose.
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

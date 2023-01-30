@@ -3,7 +3,7 @@ title: 'Image formats: AVIF'
 authors:
   - matmarquis
 description: AV1 Image File Format (AVIF) is an encoding based on the open source AV1 video codec. 
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

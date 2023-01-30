@@ -3,7 +3,7 @@ title: 'Prescriptive syntaxes'
 authors:
   - matmarquis
 description: Find out about the picture element.
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

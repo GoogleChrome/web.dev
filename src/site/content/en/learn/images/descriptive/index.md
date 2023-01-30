@@ -3,356 +3,302 @@ title: 'Descriptive syntaxes'
 authors:
   - matmarquis
 description: Using srcset and sizes to provide the browser with information about image sources and how they'll be used.
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---
 
-# High-performance image workflows
+In this module, you'll learn how to give the browser a choice of images so that it can make the best decisions about what to display. `srcset`
+isn't a method for swapping image sources at specific breakpoints, and it isn't meant to swap one image for another. These syntaxes allow the
+browser to solve a very difficult problem, independent of us: seamlessly requesting and rendering an image source tailored to a user's browsing context,
+including viewport size, display density, user preferences, bandwidth, and countless other factors.
 
-All of the syntaxes in this course—from the [encoding of image data](#formats-and-compression) to the information-dense
-markup that powers [responsive images](/learn/images/responsive-images/)—are methods for machines to communicate with machines. You have
-discovered a number of ways for a client browser to communicate its needs to a server, and a server to respond in kind.
-Responsive image markup (`srcset` and `sizes`, in particular) manage to describe a shocking amount of information in relatively
-few characters. For better or worse, that brevity is by design: making these syntaxes less terse, and so easier for developers to
-parse, could have made them more difficult for a _browser_ to parse. The more complexity added to a string, the more potential
-there is for parser errors, or unintentional differences in behavior from one browser to another.
+It's a big ask—certainly more than we want to consider when we're simply marking up an image for the web, and doing it well involves more
+information than we can access.
 
-However, the same trait that can make these subjects feel so intimidating can also provide you with solutions: a syntax easily
-_read_ by machines is a syntax more easily _written_ by them. You've almost certainly encountered many examples of automated
-image encoding and compression as a user of the web: any image uploaded to the web through social media platforms, content
-management systems (CMS), and even email clients will almost invariably pass through a system that resizes, re-encodes, and
-compresses them.
+## Describing density with `x`
 
-Likewise, whether through plugins, external libraries, standalone build process tools, or responsible use of client-side scripting,
-responsive image markup readily lends itself to automation.
+An `<img>` with a fixed width will occupy the same amount of the viewport in any browsing context, regardless of the _density_ of a user's
+display—the number of physical pixels that make their screen. For example, an image with an inherent width of `400px` will occupy almost
+the entire browser viewport on both the original Google Pixel and much newer Pixel 6 Pro—both devices have a normalized `412px`
+[logical pixel](https://developer.mozilla.org/docs/Glossary/CSS_pixel) wide viewport.
 
-Those are the two primary concerns around automating image performance: managing the creation of images—their encodings, compression,
-and the alternate sources you'll use to populate an `srcset` attribute—and generating our user-facing markup. In this module, you'll
-learn about a few common approaches to managing images as part of a modern workflow, whether as an automated phase in your development
-process, through the framework or content management system that powers your site, or almost fully abstracted away by a dedicated content
-delivery network.
+The Pixel 6 Pro has a much _sharper_ display, however: the 6 Pro has a _physical_ resolution of 1440 × 3120 pixels, while the
+Pixel is 1080 × 1920 pixels—that is, the number of hardware pixels that make up the screen itself.
 
-## Automating compression and encoding
+The ratio between a device's logical pixels and physical pixels is the _device pixel ratio_ for that display (DPR). DPR is
+calculated by dividing a viewport's CSS pixels by the device's actual screen resolution.
 
-You're unlikely to find yourself in a position where you can take the time to manually determine the ideal encoding and level
-of compression for each individual image destined for use on a project—nor would you want to. As
-[important as it is to keep your image transfer sizes as small as possible](#ImagesandPerformance), fine-tuning your compression
-settings and re-saving alternate sources for every image asset destined for a production website would introduce a huge
-bottleneck in your daily work.
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/2YTBM6TXRoEE2Q3XbFhX.png", alt="A DPR of 2 displayed in a console window", width="800", height="277" %}
 
-As you learned in the modules covering Image Formats and Compression, the most efficient encoding for an image will always be dictated by
-its content, and as you learned in [Responsive Images](/learn/images/responsive-images/), the alternate sizes you'll need for your image sources will be
-dictated by the position those images occupy in the page layout. In a modern workflow, you'll approach these decisions
-holistically rather than individually—determining a set of sensible defaults for images, to best suit the contexts in which
-they're meant to be used.
+So, the original Pixel has a DPR of 2.6, while the Pixel 6 Pro has a DPR of 3.5.
 
-When choosing encodings for a directory of photographic images, AVIF is the clear winner for quality and transfer size but
-has limited support, WebP provides an optimized, modern fallback, and JPEG is the most reliable default. The alternate sizes
-we need to produce for images meant to occupy a sidebar in a page layout will vary a great deal from images meant to occupy
-the entire browser viewport at our highest breakpoints. Compression settings will require an eye toward blurring and compression
-artifacts across multiple resulting files—leaving less room to carve every possible byte from each image in exchange for a
-more flexible and reliable workflow. In sum, you'll be following the same decision-making process you've come to understand
-from this course, writ large.
+The iPhone 4, the first device with a DPR greater than 1, reports a device pixel ratio of 2—the physical resolution of the screen is
+double the logical resolution. Any device prior to the iPhone 4 had a DPR of 1: one logical pixel to one physical pixel.
 
-As for the processing itself, there are a huge number of open source image processing libraries that provide methods of converting,
-modifying, and editing images in batches, competing on speed, efficiency, and reliability. These processing libraries will allow
-you to apply encoding and compression settings to whole directories of images at once, without the need to open image editing
-software, and in a way that preserves your original image sources should those settings need to be adjusted on the fly. They're
-intended to run in a range of contexts, from your local development environment to the web server itself—for example, the
-compression-focused [ImageMin](/use-imagemin-to-compress-images/) for Node.js can be extended to suit specific
-applications through an array of [plugins](https://www.npmjs.com/search?q=keywords:imageminplugin), while the cross-platform
-[ImageMagick](https://imagemagick.org/) and the Node.js based [Sharp](https://sharp.pixelplumbing.com/) come with a staggering
-number of features right out of the box.
+If you view that `400px`-wide image on a display with a DPR of `2`, each logical pixel is being rendered across four of the
+display's physical pixels: two horizontal and two vertical. The image doesn't benefit from the high-density display—it will look the
+same as it would on a display with a DPR of `1`. Of course, anything “drawn” by the browser's rendering engine—text, CSS shapes, or SVGs,
+for example—will be drawn to suit the higher-density display. But as you learned from [Image Formats and Compression](/learn/images/raster-images/), raster images are fixed
+grids of pixels. While it may not always be glaringly obvious, a raster image upscaled to suit a higher-density display will look
+low-resolution compared to the surrounding page.
 
-These image processing libraries make it possible for developers to build tools dedicated to seamlessly optimizing images as
-part of your standard development processes—ensuring that your project will always be referencing production-ready image sources
-with as little overhead as possible.
+In order to prevent this upscaling, the image being rendered has to have an intrinsic width of at least `800` pixels. When scaled down
+to fit a space in a layout 400 logical pixels wide, that 800-pixel image source has double the pixel density—on a display with a DPR of `2`,
+it'll look nice and sharp.
 
-## Local development tools and workflows
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/IoJjwpreGIT7LwRThaWn.png", alt="Close up of a flower petal showing disparity in density", width="800", height="417" %}
 
-[Task-runners and bundlers like Grunt, Gulp, or Webpack](/use-imagemin-to-compress-images/) can be used to optimize
-image assets alongside other common performance-related tasks, such as minification of CSS and JavaScript. To illustrate, let's
-take a relatively simple use case: a directory in your project contains a dozen photographic images, meant to be used on a public-facing
-website.
+{% Codepen {
+user: 'web-dot-dev',
+id: 'QWBGVyo',
+height: 300,
+theme: dark,
+tab: 'html,css,result'
+} %}
 
-First, you'll need to ensure consistent, efficient encoding for these images. As you've learned in the previous modules, WebP
-is an efficient default for photographic images in terms of both quality and file size. WebP is _well_ supported, but not _universally_
-supported, so you'll also want to include a fallback in the form of a progressive JPEG. Then, in order to make use of the `srcset`
-attribute for efficient delivery of these assets, you'll need to produce multiple alternate sizes for each encoding.
+Since a display with a DPR of `1` can't make use of the increased density of an image, it will be _downscaled_ to match the
+display—and as you know, a _downscaled_ image will look just fine. On a low-density display, an image suitable for higher-density
+displays will look like any other low-density image.
 
-While this would be a repetitive and time-consuming chore if done with image editing software, task runners like [Gulp](https://gulpjs.com/)
-are designed to automate exactly this sort of repetition. The [gulp-responsive](https://www.npmjs.com/package/gulp-responsive) plugin,
-which makes use of [Sharp](https://www.npmjs.com/package/sharp), is one option of many that all follow a similar pattern: collecting
-all the files in a source directory, re-encode them, and compress them based on the same standardized "quality" shorthand you learned
-about in [Image Formats and Compression](#). Then, the resulting files are output to a path you define, ready to be referenced in the
-`src` attributes of your user-facing `img` elements while leaving your original files intact.
+As you learned in [Images and Performance](#), a user with a low-density display viewing an image source scaled down to `400px`
+will only _need_ a source with an inherent width of `400px`. While a much larger image would work for all users visually, a huge,
+high resolution image source rendered on a small, low density display will _look_ like any other small, low density image, but _feel_ far slower.
 
-```javascript
-const { src, dest } = require('gulp');
-const respimg = require('gulp-responsive');
+As you might guess, _mobile_ devices with a DPR of 1 are [vanishingly rare](https://jakearchibald.com/2021/serving-sharp-images-to-high-density-screens/),
+though it is still [common in “desktop” browsing contexts](https://twitter.com/TimVereecke/status/1587878439729725442). According to data
+shared by [Matt Hobbs](nooshu.com), approximately 18% of  [GOV.UK](https://www.gov.uk/) browsing sessions from November 2022 report a DPR of 1. While h
+igh-density images would _look_ the way those users might expect, they'll come at a much higher bandwidth and processing cost—of
+particular concern to users on the older and less powerful devices still likely to have low-density displays.
 
-exports.webp = function() {
-  return src('./src-img/*')
-    .pipe(respimg({
-      '*': [{
-        quality: 70,
-        format: ['webp', 'jpeg'],
-        progressive: true
-      }]
-  }))
-  .pipe(dest('./img/'));
-}
-```
+Using `srcset` ensures that only devices with high-resolution displays receive image sources large enough to look sharp, without passing that same
+bandwidth cost along to users with lower-resolution displays.
 
-With a process like this in place, no harm would be done to a production environment if someone on the project inadvertently
-added a photograph encoded as a massive truecolor PNG to the directory containing your original image sources—regardless of
-the original image's encoding, this task will produce an efficient WebP and reliable progressive JPEG fallback, and at a
-compression level that can be easily adjusted on-the-fly. Of course, this process also ensures that your original image files
-will be retained within the project's development environment, meaning that these settings can be adjusted at any time with
-only the automated output overwritten.
+The `srcset` attribute identifies one or more comma-separated _candidates_ for rendering an image. Each candidate is made up of
+two things: a URL, just like you would use in `src`, and a syntax that _describes_ that image source. Each candidate in `srcset`
+is described by its inherent _width_ (“`w` syntax”) or intended _density_ (“`x` syntax”).
 
-In order to output multiple files, you pass along multiple configuration objects—all the same, apart from the addition of a `width`
-key and a value in pixels:
-
-```javascript
-const { src, dest } = require('gulp');
-const respimg = require('gulp-responsive');
-
-exports.default = function() {
-  return src('./src-img/*')
-	.pipe(respimg({
-  	'*': [{
-          	width: 1000,
-          	format: ['jpeg', 'webp'],
-          	progressive: true,
-          	rename: { suffix: '-1000' }
-        	},
-        	{
-          	width: 800,
-          	format: ['jpeg', 'webp'],
-          	progressive: true,
-          	rename: { suffix: '-800' }
-        	},
-        	{
-          	width: 400,
-          	format: ['jpeg', 'webp'],
-          	progressive: true,
-          	rename: { suffix: '-400' },
-      	}]
-    	})
-	)
-	.pipe(dest('./img/'));
-}
-```
-
-In the case of the example above, the original image (monarch.png) was more than 3.3MB. The largest file generated by this
-task (monarch-1000.jpeg) is approximately 150KB. The smallest, monarch-400.web, is only 32KB.
-
-```shell
-[10:30:54] Starting 'default'...
-[10:30:54] gulp-responsive: monarch.png -> monarch-400.jpeg
-[10:30:54] gulp-responsive: monarch.png -> monarch-800.jpeg
-[10:30:54] gulp-responsive: monarch.png -> monarch-1000.jpeg
-[10:30:54] gulp-responsive: monarch.png -> monarch-400.webp
-[10:30:54] gulp-responsive: monarch.png -> monarch-800.webp
-[10:30:54] gulp-responsive: monarch.png -> monarch-1000.webp
-[10:30:54] gulp-responsive: Created 6 images (matched 1 of 1 image)
-[10:30:54] Finished 'default' after 374 ms
-```
-
-Of course, you'll want to carefully examine the results for visible compression artifacts, or possibly increase compression
-for additional savings. Since this task is non-destructive, these settings can be changed easily.
-
-All told, in exchange for the few kilobytes you could carve away with careful manual micro-optimization, you gain a process
-that is not only efficient, but  _resilient_—a tool that seamlessly applies your knowledge of high-performance image assets
-to an entire project, without any manual intervention.
-
-### Responsive image markup in practice
-
-Populating `srcset` attributes will typically be a straightforward manual process, as the attribute really only captures
-information about the configuration you've already done when generating your sources. In the tasks above, we've established
-the file names and width information that our attribute will follow:
-
-`srcset="filename-1000.jpg 1000w, filename-800.jpg 800w, filename-400.jpg 400w"`
-
-Remember that the contents of the `srcset` attribute are descriptive, not prescriptive. There's no harm in overloading an
-`srcset` attribute, so long as the aspect ratio of every source is consistent. An `srcset` attribute can contain the URI
-and width of every alternate cut generated by the server without causing any unnecessary requests, and the more candidate
-sources we provide for a rendered image, the more efficiently the browser will be able to tailor requests.
-
-As you learned in [Responsive Images](#), you'll want to make use of the `<picture>` element to seamlessly handle the WebP
-or JPEG fallback pattern. In this case, you'll be using the `type` attribute in concert with `srcset`.
+The `x` syntax is a shorthand for “this source is appropriate for a display with this density”—a candidate followed by `2x` is
+appropriate for a display with a DPR of 2.
 
 ```html
-<picture>
-  <source type="image/webp" srcset="filename-1000.webp 1000w, filename-800.webp 800w, filename-400.webp 400w">
-  <img srcset="filename-1000.jpg 1000w, filename-800.jpg 800w, filename-400.jpg 400w" sizes="…" alt="…">
-</picture>
+<img src="low-density.jpg" srcset="double-density.jpg 2x" alt="...">
 ```
 
-As you've learned, browsers that support WebP will recognize the contents of the `type` attribute, and select that `<source>`
-element's `srcset` attribute as the list of image candidates. Browsers that don't recognize `image/webp` as a valid media
-type will ignore this `<source>`, and instead use the inner `<img>` element's `srcset` attribute.
+Browsers that support `srcset` will be presented with two candidates: `high-density.jpg`, which `2x` describes as appropriate
+for displays with a DPR of 2, and `low-density.jpg` in the `src` attribute—the candidate selected if nothing more appropriate is
+found in `srcset`. For browsers without support for `srcset`, the attribute and its contents will be ignored—the contents of `src`
+will be requested, as usual.
 
-There's one more consideration in terms of browser support: browsers without support for any responsive image markup will still
-need a fallback, or we could run the risk of a broken image in especially old browsing contexts. Because `<picture>`, `<source>`,
-and `srcset` are all ignored in these browsers, we'll want to specify a default source in the inner `<img>`'s `src` attribute.
+It's easy to mistake the  values specified in the `srcset` attribute for instructions. That `2x` informs the browser that the
+associated source file would be suitable for use on a display with a DPR of 2—information about the source itself. It doesn't tell
+the browser how to use that source, just informs the browser how the source could be used. It's a subtle but important distinction: this
+is a double density _image_, not an image for use on a double density _display_.
 
-Because scaling an image downwards is _visually_ seamless and JPEG encoding is universally supported, the largest JPEG is a sensible
-choice.
+The difference between a syntax that says “this source is appropriate for `2x` displays” and one that says “use this source on `2x` displays”
+is slight in print, but display density is only one of a huge number of interlinked factors that the browser uses to decide on the candidate
+to render, only some of which you can know. For example: individually, it's possible for you to determine that a user has enabled a
+bandwidth-saving browser preference through the `prefers-reduced-data` media query, and use that to always opt users into low-density images
+regardless of their display density—but unless implemented consistently, by every developer, on every website, it wouldn't be of much use to a user.
+They might have their preference respected on one site, and run into a bandwidth-obliterating wall of images on the next.
+
+The deliberately vague resource selection algorithm used by `srcset`/`sizes` leaves room for browsers to decide to select lower density
+images with bandwidth dips, or based on a preference to minimize data usage, without us taking on responsibility for how, or when, or at
+what threshold. There's no sense in taking on responsibilities—and additional work—that the browser is better equipped to handle for you.
+
+## Describing widths with `w`
+
+`srcset` accepts a second type of descriptor for image source candidates. It's a far more powerful one—and for our purposes, a
+great deal easier to understand. Rather than flagging a candidate as having the appropriate dimensions for a given display density,
+the `w` syntax describes the inherent width of each candidate source. Again, each candidate is identical save for their dimensions—the same
+content, the same cropping, and the same aspect ratio. But in this case, you want the user's browser to choose between two candidates:
+small.jpg, a source with an inherent width of 600px, and large.jpg, a source with an inherent width of 1200px.
 
 ```html
-<picture>
-  <source type="image/webp" srcset="filename-1000.webp 1000w, filename-800.webp 800w, filename-400.webp 400w">
-  <img src="filename-1000.jpg" srcset="filename-1000.jpg 1000w, filename-800.jpg 800w, filename-400.jpg 400w" sizes="…" alt="…">
-</picture>
+srcset="small.jpg 600w, large.jpg 1200w"
 ```
 
-`sizes` can be a little more difficult to deal with. As you've [learned](/learn/images/responsive-images/), `sizes` is necessarily contextual—you can't
-populate the attribute without knowing the amount of space the image is meant to occupy in the rendered layout. For the most efficient
-possible requests, an accurate `sizes` attribute needs to be in our markup at the time those requests are made by the end user, long
-before the styles that govern the page layout have been requested. Omitting `sizes` altogether is not only a violation of the HTML
-specification, but results in default behavior equivalent to `sizes="100vw"`—informing the browser that this image is only constrained
-by the viewport itself, resulting in the largest possible candidates sources being selected.
+This doesn't tell the browser what to _do_ with this information—just supplies it with a list of candidates for displaying the image.
+Before the browser can make a decision about which source to render, you need to provide it with a little more information: a
+description of how the image will be rendered on the page. To do that, use the `sizes` attribute.
 
-As is the case with any particularly burdensome web development task, a number of tools have been created to abstract away the process
-of hand-writing `sizes` attributes. [`respImageLint`](https://ausi.github.io/respimagelint/) is an absolutely essential snippet of code
-intended to vet your `sizes` attributes for accuracy and provide suggestions for improvement. It runs as a bookmarklet—a tool you run
-in your browser, while pointed at the fully rendered page containing your image elements. In a context where the browser has full understanding
-of the page layout, it will also have nearly pixel-perfect awareness of the space an image is meant to occupy in that layout at every
-possible viewport size.
+## Describing usage with `sizes`
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/vc9lF5fo846jjGBxwH9d.png", alt="A failed respImageLint responsive image report with a -51% difference", width="800", height="861" %}
+Browsers are incredibly performant when it comes to transferring images. Requests for image assets will be initiated long
+before requests for stylesheets or JavaScript—oftentimes even before the markup has been fully parsed. When the browser
+makes these requests, it has no information about the page itself, apart from the markup—it may not have even initiated requests
+for external stylesheets yet, let alone applied them. At the time the browser parses your markup and starts making external
+requests, it only has browser-level information: the size of the user's viewport, the pixel density of the user's display,
+user preferences, and so on.
 
-A tool for linting your `sizes` attributes is certainly useful, but it has even more value as a tool to generate them wholesale. As you
-know, `srcset` and `sizes` syntax is intended to optimize requests for image assets in a visually seamless way. Though not something
-that should ever be used in production, a default `sizes` placeholder value of `100vw` is perfectly reasonable while working on a page's
-layout in your local development environment. Once layout styles are in place, running RespImageLint will provide you with tailored
-`sizes` attributes that you can copy and paste into your markup, at a level of detail far greater than one written by hand:
+This doesn't tell us anything about how an image is intended to be rendered in the page layout—it can't even use the viewport
+as a proxy for the upper bound of the `img` size, as it may occupy a horizontally scrolling container. So we need to
+provide the browser with this information and do it using markup. That is all we'll be able to use for these requests.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/EE4NmMZcrbp8zMRxrZWC.png", alt="A failed respImageLint responsive image report with a -41% difference", width="800", height="861" %}
+Like `srcset`, `sizes` is intended to make information about an image available as soon as the markup is parsed. Just as the `srcset`
+attribute is shorthand for “here are the source files and their inherent sizes,” the `sizes` attribute is shorthand for “here
+is the size of the rendered image _in the layout_.” The way you describe the image is relative to the viewport—again, viewport
+size is the only layout information the browser has when the image request is made.
 
-Though image requests initiated by server-rendered markup happen too quickly for JavaScript to generate a client-side `sizes` attribute,
-the same reasoning doesn't apply if those requests are _initiated_ client-side. The [Lazysizes](https://github.com/aFarkas/lazysizes) project,
-for example, allows you to fully defer image requests until after the layout has been established, allowing JavaScript to generate our
-`sizes` values for us—a huge convenience for you, and a guarantee of the most efficient possible requests for your users. Keep in mind,
-however, that this approach does mean sacrificing the reliability of server-rendered markup and the speed optimizations built into browsers,
-and initiating these requests only after the page has been rendered will have an outsized [negative impact on your LCP score](/learn/images/performance-issues/).
-
-Of course, if you're already depending on a client-side rendering framework such as React or Vue, that's a debt you'll already be
-incurring—and in those cases, using Lazysizes means your `sizes` attributes can be almost completely abstracted away. Better still:
-as [`sizes="auto"`](https://github.com/whatwg/html/pull/8008) on lazy loaded images gains consensus and native implementations,
-Lazysizes will effectively become a polyfill for that newly standardized browser behavior.
-
-## Site Generators, frameworks, and CMSs
-
-While certainly an improvement over manually saving alternate cuts of each image and hand-optimizing them through a tool like
-[Squoosh.app](Squoosh.app), automating image compression as a step in the development process has some limitations. For one, you may not
-always have full control over the images used throughout a site—most user-facing images on the web are _content_ concerns more
-than development concerns, uploaded by users or editors, rather than living in a repository alongside development assets like
-JavaScript and stylesheets.
-
-This will typically necessitate more than one process for image management: a development-level task for the image assets used
-in building and maintaining a site—backgrounds, icons, logos, and so on—and another concerned with image assets generated through
-_use_ of the site, such as photographs embedded in a post by an editorial team, or an avatar uploaded by a user. While the context
-may differ, the end goals are the same: automated encoding and compression based on settings defined by the development team.
-
-Fortunately, the image processing libraries you've come to understand from your local development workflows can be used in any
-number of contexts. And while there can never be a one-size-fits-all approach to your responsive image markup, these systems
-provide sensible defaults, configuration options, and API hooks to ease their implementation.
-
-## Static Site Generators
-
-Compared to task-runners, there's some similarity in the way static site generators such as Jekyll or Eleventy approach images.
-Using these tools to produce a deployment-ready website requires management of assets, including CSS minification or transpiling
-and bundling of JavaScript. As you might imagine, this means these tools enable you to process image assets the same way, using
-many of the libraries you've already learned about.
-
-The official [image plugin for Eleventy](https://www.11ty.dev/docs/plugins/image/) uses [Sharp](https://www.npmjs.com/package/sharp)
-to provide resizing, generation of multiple source sizes, re-encoding, and compression, just like some of the tasks you've learned
-about here.
-
-Unlike a task-runner, an SSG has direct insight into both the configuration and usage of those libraries, and the markup being
-generated for the production site—meaning it can do a great deal more to automate our responsive image markup. For example,
-when [invoked as part of a shortcode for displaying images](https://www.aleksandrhovhannisyan.com/blog/eleventy-image-plugin/),
-this plugin will output HTML according to the configuration options passed along to Sharp.
-
-```javascript
-const Image = require("@11ty/eleventy-img");
-module.exports = function(eleventyConfig) {
-
-async function imageShortcode(src, alt, sizes="100vw") {
-  let metadata = await Image(src, {
-	formats: ["avif", "webp", "jpeg"],
-	widths: [1000, 800, 400],
-	outputDir: "_dist/img/",
-	filenameFormat: function( id, src, width, format, options ) {
-  	  const ext = path.extname( src ),
-    	  name = path.basename( src, ext );
-
-  	  return `${name}-${width}.${format}`
-	}
-  });
-
-  let imageAttributes = {
-	alt,
-	sizes,
-	loading: "lazy"
-  };
-
-  return Image.generateHTML(metadata, imageAttributes);
-}
-
-eleventyConfig.addAsyncShortcode("respimg", imageShortcode);
-};
-```
-
-You could then use this shortcode in place of the default image syntax:
-
-```javascript
-{% raw %}{% respimg "img/butterfly.jpg", "Alt attribute.", "(min-width: 30em) 800px, 80vw" %}{% endraw %}
-```
-
-If configured to output multiple encodings, as above, the generated markup will be a `<picture>` element containing corresponding
-`<source>` elements, `type` attributes, and `srcset` attributes already fully populated with a list of generated candidate sizes.
+That may sound a little convoluted in print, but it's far easier to understand in practice:
 
 ```html
-<picture><source type="image/avif" srcset="/img/butterfly-400.avif 400w, /img/butterfly-800.avif 800w, /img/butterfly-1000.avif 1000w" sizes="(min-width: 30em) 800px, 80vw"><source type="image/webp" srcset="/img/butterfly-400.webp 400w, /img/butterfly-800.webp 800w, /img/butterfly-1000.webp 1000w" sizes="(min-width: 30em) 800px, 80vw"><source type="image/jpeg" srcset="/img/butterfly-400.jpeg 400w, /img/butterfly-800.jpeg 800w, /img/butterfly-1000.jpeg 1000w" sizes="(min-width: 30em) 800px, 80vw"><img alt="Alt attribute." loading="lazy" src="/img/butterfly-400.jpeg" width="1000" height="846"></picture>
+<img
+ sizes="80vw"
+ srcset="small.jpg 600w, medium.jpg 1200w, large.jpg 2000w"
+ src="fallback.jpg"
+ alt="...">
 ```
 
-Of course, this plugin won't be able to _generate_ a viable `sizes` attribute, as it can't know the ultimate size and position
-of the image in the rendered layout, but it does accept one as input when generating your markup—another job for RespImageLint.
+Here, this `sizes` value informs the browser that the space in our layout that the `img` occupies has a width of `80vw`—80% of
+the viewport. Remember, this isn't an _instruction_, but a description of the image's size in the page layout. It doesn't say “make this
+image occupy 80% of the viewport,” but “this image will end up occupying 80% of the viewport once the page has rendered.”
 
-## Frameworks
+{% Codepen {
+user: 'web-dot-dev',
+id: 'PoBWLYP',
+height: 300,
+theme: dark,
+tab: 'html,css,result'
+} %}
 
-Client-side rendering frameworks will require a task-runner or bundler like Webpack to edit, encode, and compress image
-assets themselves. [Responsive-loader](https://www.npmjs.com/package/responsive-loader), for example, also uses the Sharp
-library to re-save image assets. It then allows you to then `import` your images as objects:
+As a developer, your job is done. You've accurately described a list of candidate sources in `srcset` and the width of your image
+in `sizes`, and, just as with the `x` syntax in `srcset`, the rest is up to the browser.
 
-```javascript
-  import imageAVIF from 'img/butterfly.jpg?sizes[]=400,sizes[]=800,sizes[]=1000&format=avif';
-  import imageWebP from 'img/butterfly.jpg?sizes[]=400,sizes[]=800,sizes[]=1000&format=webp';
-  import imageDefault from 'img/butterfly.jpg?sizes[]=400,sizes[]=800,sizes[]=1000';
-````
+But in the interest of fully understanding how this information is used, let's take a moment to walk through the decisions that
+a user's browser makes upon encountering this markup:
 
-You can then use these imported images through abstractions like [React's Image component](https://reactnative.dev/docs/image),
-or to populate your responsive image markup directly:
+You've informed the browser that this image will take up 80% of the available viewport—so, if we were to render this `img` on a
+device with a 1000-pixel-wide viewport, this image will occupy 800 pixels. The browser will then take that value and divide against
+it the widths of each of the image source candidates we specified in `srcset`. The smallest source has an inherent size of 600 pixels,
+so: 600 ÷ 800 = .75. Our medium image is 1200 pixels wide: 1200 ÷ 800 = 1.5. Our largest image is 2000 pixels wide: 2000 ÷ 800 = 2.5.
+
+The results of those calculations (`.75`, `1.5`, and `2.5`) are, effectively, DPR options _specifically tailored to the user's
+viewport size_. Since the browser also has information on the user's display density at hand, it makes a series of decisions:
+
+At this viewport size, the `small.jpg` candidate is discarded regardless of the user's display density—with a calculated DPR lower
+than `1`, this source would require upscaling for any user, so it isn't appropriate. On a device with a DPR of `1`, `medium.jpg` provides the
+closest match—that source is appropriate for display at a DPR of `1.5`, so it is a little larger than necessary, but remember that downscaling is
+a visually seamless process. On a device with a DPR of 2,`large.jpg` is the closest match, so it gets selected.
+
+If the same image is rendered on a 600 pixel wide viewport, the result of all that math would be completely different: 80vw is now 480px.
+When we divide our sources' widths against that, we get `1.25`, `2.5`, and `4.1666666667`. At this viewport size, `small.jpg` will be chosen
+on 1x devices, and `medium.jpg` will match on 2x devices.
+
+This image will look identical in all of these browsing contexts: all our source files are exactly the same apart from their dimensions,
+and each one is being rendered as sharply as the user's display density will allow. However, instead of serving `large.jpg` to every user
+in order to accommodate the largest viewports and the highest density displays, users will always be served the smallest suitable candidate.
+By using a descriptive syntax rather than a prescriptive one, you don't need to manually set breakpoints and consider future viewports and
+DPRs—you simply supply the browser with information and allow it to determine the answers for you.
+
+Because our `sizes` value is relative to the viewport and completely independent of the page layout, it adds a layer of complication.
+It's rare to have an image that _only_ occupies a percentage of the viewport, without any fixed-width margins, padding, or influence
+from other elements on the page. You'll frequently need to express the width of an image using a combination of units; percentages, `em`, `px`, and so on.
+
+Fortunately, you can use `calc()` here—any browser with native support for responsive images will support `calc()` as well, allowing us to
+mix-and-match CSS units—for example, an image that occupies the full width of the user's viewport, minus a `1em` margin on either side:
 
 ```html
-<picture>
-	<source type='image/avif' srcSet={imageAVIF.srcSet} sizes='…' />
-	<source type='image/webp' srcSet={imageWebp.srcSet} sizes='…' />
-	<img
-  	src={imageDefault.src}
-  	srcSet={imageDefault.srcSet}
-  	width={imageDefault.width}
-  	height={imageDefault.height}
-  	sizes='…'
-  	loading="lazy"
-	/>
+<img
+	sizes="calc(100vw-2em)"
+	srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1600w, x-large.jpg 2400w"
+	src="fallback.jpg"
+	alt="...">
 ```
 
+## Describing breakpoints
 
-A framework that does client side rendering is a strong candidate for [Lazysizes](https://www.npmjs.com/package/lazysizes)
-and `sizes="auto"`—giving you almost fully automated responsive images.
+If you've spent much time working with responsive layouts, you've likely noticed something missing from these examples:
+the space an image occupies in a layout is very likely to change across our layout's breakpoints. In that case, you need
+to pass a little more detail along to the browser: `sizes` accepts a comma-separated set of candidates for the rendered size of the
+image, just like `srcset` accepts comma-separated candidates for image sources. Those conditions use the familiar media query syntax.
+This syntax is first-match: as soon as a media condition matches. the browser stops parsing the `sizes` attribute, and the value
+specified is applied.
+
+Say you have an image meant to occupy 80% of the viewport, minus one `em` of padding on either side, on viewports above 1200px—on
+smaller viewports, it occupies the full width of the viewport.
+
+```html
+  <img
+     sizes="(min-width: 1200px) calc(80vw - 2em), 100vw"
+     srcset="small.jpg 600w, medium.jpg 1200w, large.jpg 2000w"
+     src="fallback.jpg"
+     alt="...">
+```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'RwBoYRx',
+height: 300,
+theme: dark,
+tab: 'html,css,result'
+} %}
+
+If the user's viewport is greater than 1200px, `calc(80vw - 2em)` describes the width of the image in our layout. If the
+`(min-width: 1200px)` condition _doesn't_ match, the browser moves on to the next value. Because there isn't a specific
+media condition tied to this value, `100vw` is used as a  default. If you were to write this `sizes` attribute using
+`max-width` media queries:
+
+```html
+  <img
+     sizes="(max-width: 1200px) 100vw, calc(80vw - 2em)"
+     srcset="small.jpg 600w, medium.jpg 1200w, large.jpg 2000w"
+     src="fallback.jpg"
+     alt="...">
+```
+{% Codepen {
+user: 'web-dot-dev',
+id: 'BaPQOzO',
+height: 300,
+theme: dark,
+tab: 'html,css,result'
+} %}
+
+In plain language: “does `(max-width: 1200px)` match? If not, move on. The next value—`calc(80vw - 2em)`—has no qualifying condition,
+so this is the one selected.
+
+Now that you've provided the browser with all this information about your `img` element—potential sources,  inherent widths,
+and how you intend to present the image to the user—the browser uses a fuzzy set of rules for determining what to do with
+that information. If that sounds vague, well, that's because it is—by design. The source-selection algorithm encoded in the
+HTML specification is _explicitly_ vague on how a source should be chosen. Once the sources, their descriptors, and how
+the image will be rendered has all been parsed, the browser is free to do whatever it wants—you _can't_ know for certain which
+source the browser will choose.
+
+A syntax that says "use this source on a high-resolution display" would be predictable, but it wouldn't address the core problem
+with images in a responsive layout: conserving user bandwidth. A screen's pixel density is only tangentially related to internet
+connection speed, if at all. If you are using a top-of-the-line laptop, but browsing the web by way of a metered connection, tethered
+to your phone, or using a shaky airplane wifi connection—you might want to opt out of high-resolution image sources, regardless of
+the quality of your display.
+
+Leaving the final say to the browser allows for far more performance improvements than we could manage with a strictly prescriptive
+syntax. For example: in most browsers, an `img` using the `srcset`/`sizes` syntax will never bother requesting a source with smaller
+dimensions than one that the user already has in their browser's cache. What would be the point in making a new request for a source
+that would look identical, when the browser can seamlessly downscale the image source it already has? But if the user scales their
+viewport up to the point where a new image is needed in order to avoid upscaling, _that_ request will still get made, so everything
+looks the way you expect.
+
+That lack of explicit control can sound a little scary at face value, but because you're using source files with identical
+content, we're no more likely to present users with a “broken” experience than we would with a single-source `src`, regardless of
+the decisions made by the browser.
+
+## Using `sizes` and `srcset`
+
+This is a lot of information—both for you, the reader, and for the browser. `srcset` and `sizes` are both dense syntaxes,
+describing a shocking amount of information in relatively few characters. That is, for better or worse, by design: making
+these syntaxes less terse—and more easily parsed by us humans—could have made them more difficult for a _browser_ to parse. The
+more complexity added to a string, the more potential there is for parser errors or unintentional differences in behavior
+from one browser to another. There's an upside here, however: a syntax more easily read by machines is a syntax more easily written
+by them.
+
+`srcset` is a clear-cut case for automation. It's rare that you'll be hand-crafting multiple versions of your images for a
+production environment, instead automating the process using a task runner like Gulp, a bundler like Webpack, a third-party
+CDN like Cloudinary, or functionality already built into your CMS of choice. Given enough information to generate our sources
+in the first place, a system would have enough information to write them into a viable `srcset` attribute.
+
+`sizes` is a little more difficult to automate. As you know, the only way a system can calculate the size of an image in a
+rendered layout is to have _rendered_ the layout. Fortunately, a number of developer tools have popped up to abstract away
+the process of hand-writing `sizes` attributes—with an efficiency you could never match by hand.
+[respImageLint](https://github.com/ausi/respimagelint), for example, is a snippet of code intended to vet your `sizes` attributes
+for accuracy and provide suggestions for improvement. The [Lazysizes](https://github.com/aFarkas/lazysizes) project compromises
+some speed for efficiency by deferring image requests until after the layout has been established, allowing JavaScript to
+generate  `sizes` values for you. If you're using a fully client-side rendering framework such as React or Vue, there are a
+number of solutions for authoring and/or generating `srcset` and `sizes` attributes, which we'll discuss further in [CMS and Frameworks](cms).

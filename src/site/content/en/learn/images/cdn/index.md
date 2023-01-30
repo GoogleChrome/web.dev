@@ -3,7 +3,7 @@ title: 'Image content delivery networks'
 authors:
   - matmarquis
 description: Learn how image CDNs have the ability to transform and optimize the contents of an image.
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

@@ -3,7 +3,7 @@ title: 'Key performance issues'
 authors:
   - matmarquis
 description: Learn ways to ensure that your image requests are as small and performant as possible. 
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

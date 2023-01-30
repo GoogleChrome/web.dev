@@ -3,7 +3,7 @@ title: 'Automating compression and encoding'
 authors:
   - matmarquis
 description: The benefits of using a CDN for automated compression and encoding. 
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

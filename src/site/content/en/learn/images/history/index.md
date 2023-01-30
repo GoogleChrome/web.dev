@@ -3,7 +3,7 @@ title: 'A brief history of images on the web'
 authors:
   - matmarquis
 description: A history of images on the web, starting with the image element in 1993
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

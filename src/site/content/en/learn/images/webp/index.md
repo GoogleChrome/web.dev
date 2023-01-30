@@ -3,7 +3,7 @@ title: 'Image formats: WebP'
 authors:
   - matmarquis
 description: Learn about WebP, and understand the difference between this format and others.
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

@@ -3,7 +3,7 @@ title: 'Image formats: JPEG'
 authors:
   - matmarquis
 description: Learn about the most common image format on the web. 
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---

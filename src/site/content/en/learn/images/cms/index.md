@@ -3,7 +3,7 @@ title: 'Site Generators, frameworks, and CMSs'
 authors:
   - matmarquis
 description: Discover how CMSs such as WordPress, and other site generators can make it easier to use responsive images.
-date: 2023-01-16
+date: 2023-01-31
 tags:
   - images
 ---
