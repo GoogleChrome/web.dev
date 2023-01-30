@@ -198,7 +198,7 @@ React, for example—and other frameworks that can [render markup on demand on t
 Not every JavaScript runtime can take advantage of streaming server-side rendering. Newer JavaScript runtimes such as [Deno](https://deno.land/) support this out of the box, but older versions of [Node.js](https://nodejs.org/) may not support it. Check to see if this is the case for you, and see what you can do to upgrade or switch your runtime for better server-side rendering performance.
 {% endAside %}
 
-Another way to ensure markup is streamed to the browser quickly is to rely on [static rendering](/rendering-on-the-web/#static-rendering) which generates HTML files during build time. With the full file available immediately, web servers can start sending the file immediately and the inherit nature of HTTP will result in streaming markup. While this approach isn't suitable for every page on every website—such as those requiring a dynamic response as part of the user experience—it can be beneficial for those pages that don't require markup to be personalized to a specific user.
+Another way to ensure markup is streamed to the browser quickly is to rely on [static rendering](/rendering-on-the-web/#static-rendering) which generates HTML files during build time. With the full file available immediately, web servers can start sending the file immediately and the inherent nature of HTTP will result in streaming markup. While this approach isn't suitable for every page on every website—such as those requiring a dynamic response as part of the user experience—it can be beneficial for those pages that don't require markup to be personalized to a specific user.
 
 ### Use a service worker
 
