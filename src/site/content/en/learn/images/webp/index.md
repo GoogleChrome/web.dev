@@ -114,8 +114,6 @@ file size and quality.
 
 Google offers a `cwebp` command line encoder that allows you to convert or compress individual files or entire directories of images:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/bEtAGdKkG0EFw2G3fRGm.png", alt="Terminal window showing use of the cwebp command", width="800", height="374" %}
-
 ```shell
 $ cwebp -q 80 butterfly.jpg -o butterfly.webp
 
