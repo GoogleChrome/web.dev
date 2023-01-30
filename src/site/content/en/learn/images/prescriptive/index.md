@@ -32,11 +32,13 @@ responsive images. `srcset` and `sizes` are designed to work invisibly, seamless
 There are times, however, where you want to alter sources across breakpoints to better highlight the content, the same way you adapt page layouts.
 For example: a full-width header image with a small central focus may work well on a large viewport:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/HWZtREfRzpcy7tvolvkn.png", alt="A header width image of a periwinkle flower surrounded by leaves and stems.", width="800", height="286" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/HWZtREfRzpcy7tvolvkn.png", alt="A header width image of a periwinkle flower surrounded by leaves and stems, being visited by a honeybee.", width="800", height="286" %}
 
 But when scaled down to suit small viewports, the central focus of the image might be lost:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/7W8AmfGV4jEPD6mp6Kfk.png", alt="A header width image of a periwinkle flower scaled down.", width="400", height="143" %}
+<div style="width: 50%">
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/7W8AmfGV4jEPD6mp6Kfk.png", alt="A header width image of a periwinkle flower, scaled down. The honeybee is barely visible.", width="400", height="143" %}
+</div>
 
 The _subject_ of these image sources are the same, but in order to better focus on that subject visually, you'll want the
 proportions of the image source to change across breakpoints. For example, a tighter zoom on the center of the image, and
