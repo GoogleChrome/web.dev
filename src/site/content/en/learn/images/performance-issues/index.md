@@ -49,7 +49,7 @@ priority as any other image on the page.
 
 The [experimental](https://caniuse.com/mdn-html_elements_img_fetchpriority) `fetchpriority` attribute is intended to give
 developers [finer-grained control over the priority of assets](/priority-hints/), allowing you to flag resources
-as 'high' and 'low' priority relative to resources of the same type. The use cases for `fetchpriorit`' are similar to the `loading`
+as 'high' and 'low' priority relative to resources of the same type. The use cases for `fetchpriority` are similar to the `loading`
 attribute, though much more broad. For example, you might use `fetchpriority="low"` on an image only revealed following user interaction
 (whether that image falls within the user's viewport or not) in order to prioritize visible images elsewhere on the page, or `fetchpriority="high"`
 to prioritize an image you know will be immediately visible in the viewport as soon as the page is rendered.
