@@ -290,13 +290,13 @@ dependencies.
 browser differentiation is necessary to work around bugs, but the user-agent will increasingly become not the way to do this once it is frozen.
 * You may be safe. If you’re only using the core values of brand, major version, and platform, then these will almost certainly still be
 available and be correct in the user-agent string.
-* MDN describes good ways to avoid reliance on the user-agent string [("browser sniffing")](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent),
+* MDN describes good ways to avoid reliance on the user-agent string [("browser sniffing")](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent),
 the main one of which is feature detection.
 * If you are reliant on the user-agent string in some way (even when using the few core values that remain useful), it’s a good
 idea to test with upcoming user-agents that will be in new browser releases. It is possible to test with those upcoming browser
 versions themselves by means of beta or technology preview builds, but it's also possible to set a custom user-agent string for
 testing. You can override the user-agent string in [Chrome, Edge](https://developer.chrome.com/docs/devtools/device-mode/override-user-agent/),
-[Firefox](https://support.mozilla.org/en-US/kb/how-reset-default-user-agent-firefox), and
+[Firefox](https://support.mozilla.org/kb/how-reset-default-user-agent-firefox), and
 [Safari](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/TheDevelopMenu/TheDevelopMenu.html#//apple_ref/doc/uid/TP40007874-CH7-SW5),
 when doing local development, in order to check how your code deals with different user-agent values that you might receive from users.
 

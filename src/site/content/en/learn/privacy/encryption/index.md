@@ -109,7 +109,7 @@ HSTS is short for "HTTP Strict-Transport-Security", and is a way of locking a br
 Once you're happy with your migration to HTTPS, or if you've already done that, then you can add a
 [Strict-Transport-Security HTTP response header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) to your
 outgoing responses. A browser which has accessed your site before will record having seen this header, and from then on will automatically
-access this site as HTTPS_ even if you request HTTP_. This avoids going through your redirect as above: it's as if the browser silently "upgrades"
+access this site as HTTPS even if you request HTTP. This avoids going through your redirect as above: it's as if the browser silently "upgrades"
 all requests to your service to use HTTPS.
 
 Similarly, you can serve an [Upgrade-Insecure-Requests](https://developer.mozilla.org/docs/Web/HTTP/Headers/Upgrade-Insecure-Requests)

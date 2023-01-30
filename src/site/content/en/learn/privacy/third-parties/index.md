@@ -438,7 +438,7 @@ If need be, set a laxer policy on specific elements or requests.
 
 By default, each HTTP request the browser makes passes on a `Referer` header which contains the URL of the page initiating the request,
 whether a link, an embedded image, or script. This can be a privacy issue because URLs can contain private information, and those URLs
-being available to third parties passes that private information to them. [Web.dev lists some examples](https://web.dev/referrer-best-practices/#referer-and-referrer-policy-101)
+being available to third parties passes that private information to them. [Web.dev lists some examples](/referrer-best-practices/#referer-and-referrer-policy-101)
 of URLs containing private data—knowing that a user came to your site from `https://social.example.com/user/me@example.com` tells you who that user is,
 which is a definite leak. But even a URL which does not itself expose private information does expose that this particular user (who you may know,
 if they're logged in) came here from another site and this therefore reveals that this user visited that other site. This is in itself exposure of
@@ -523,7 +523,7 @@ camera, or USB devices, or to restrict non-hardware features such as permission 
 These restrictions can be applied to a top-level page (to avoid loaded scripts from attempting to use these features) or to
 subframed pages loaded in via an iframe. This restriction of API usage isn’t really about browser fingerprinting (for which
 see Chapter 4); it's about disallowing third-parties from doing intrusive things (such as using powerful APIs, popping up
-permissions windows, etc). This is defined by the Target Privacy Threat Model as "intrusion" (https://w3cping.github.io/privacy-threat-model/#intrusion).
+permissions windows, etc). This is defined by the Target Privacy Threat Model as ["intrusion"](https://w3cping.github.io/privacy-threat-model/#intrusion).
 
 A `Permissions-Policy` header is specified as a list of (feature, allowed origins) pairs, thus:
 
