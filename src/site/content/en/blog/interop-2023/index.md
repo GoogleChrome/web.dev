@@ -39,7 +39,7 @@ This time around, we have no less than 26 focus areas, outlined in detail in our
 - [Inert](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
 - [Masking in CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Masking)
 - [Math Functions in CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Functions#math_functions)
-- [Media Queries ](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries)
+- [Media Queries](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries)
 - [Modules in Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers)
 - [Motion Path in CSS Animations](https://developer.mozilla.org/docs/Web/CSS/CSS_Motion_Path)
 - [Offscreen Canvas](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
