@@ -60,7 +60,7 @@ converting, modifying, and editing images in batches, competing on speed, effici
 libraries will allow you to apply encoding and compression settings to whole directories of images at once, without the
 need to open image editing software, and in a way that preserves your original image sources should those settings need
 to be adjusted on-the-fly. They’re intended to run in a range of contexts, from your local development environment to the
-web server itself—for example, the compression-focused [ImageMin](https://web.dev/use-imagemin-to-compress-images/) for
+web server itself—for example, the compression-focused [ImageMin](/use-imagemin-to-compress-images/) for
 Node.js can be extended to suit specific applications through an array of [plugins](https://www.npmjs.com/search?q=keywords:imageminplugin),
 while the cross-platform [ImageMagick](https://imagemagick.org/) and the Node.js based [Sharp](https://sharp.pixelplumbing.com/)
 come with a staggering number of features right out of the box.
