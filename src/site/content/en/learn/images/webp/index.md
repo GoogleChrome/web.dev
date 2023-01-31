@@ -33,7 +33,7 @@ the missing part of the image. The results provided by each prediction mode are 
 predictive match is selected.
 
 <div style="background: #fff;">
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/t8neUw7UOsUNTF3uxe08.png", alt="A diagram of some of the steps in WebP lossy compression", width="800", height="509" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/t8neUw7UOsUNTF3uxe08.png", alt="A diagram of WebP’s various block prediction methods.", width="800", height="509" %}
 </div>
 
 Even the closest predictive match isn't going to be completely right, of course, so the differences between the predicted and
