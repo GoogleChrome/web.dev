@@ -12,7 +12,6 @@ You can go through the series from start to finish for a holistic understanding 
 
 For those new to web development, check out the [Learn HTML](/learn/html/) courses for the basics of using markup, [Learn CSS](/learn/css/) courses for styling fundamentals, and [Learn Responsive Design](/learn/design/) courses for an understanding of how images will be rendered in responsive layouts.
 
-Learn how image CDNs have the ability to automatically transform and optimize the contents of an image.
 
 Here's what you'll learn:
 
