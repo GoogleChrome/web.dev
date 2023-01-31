@@ -26,36 +26,36 @@ In 2023, all major browser vendors and other stakeholders are again working toge
 This time around, we have no less than 26 focus areas, outlined in detail in our [project document](https://github.com/web-platform-tests/interop/blob/main/2023/README.md#focus-areas). They are, in alphabetical order:
 
 - [Border Image in CSS](https://developer.mozilla.org/docs/Web/CSS/border-image)
-- [Color Spaces and Functions in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
-- [Container Queries in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries)
-- [Containment in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment)
-- [CSS Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
-- [Custom Properties in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/@property)
+- [Color Spaces and Functions in CSS](https://developer.mozilla.org/docs/Web/CSS/color_value)
+- [Container Queries in CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries)
+- [Containment in CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Containment)
+- [CSS Pseudo-classes](https://developer.mozilla.org/docs/Web/CSS/Pseudo-classes)
+- [Custom Properties in CSS](https://developer.mozilla.org/docs/Web/CSS/@property)
 - [Flexbox](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Flexbox)
-- [Fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/font-palette)
-- [Forms](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
-- [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
-- [:has()](https://developer.mozilla.org/en-US/docs/Web/CSS/:has )
-- [Inert](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert)
-- [Masking in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Masking)
-- [Math Functions in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions#math_functions)
-- [Media Queries ](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
-- [Modules in Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
-- [Motion Path in CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Motion_Path)
-- [Offscreen Canvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas)
-- [Pointer and mouse Events](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events)
-- [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL)
+- [Fonts](https://developer.mozilla.org/docs/Web/CSS/font-palette)
+- [Forms](https://developer.mozilla.org/docs/Web/HTML/Element/form)
+- [Grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)
+- [:has()](https://developer.mozilla.org/docs/Web/CSS/:has )
+- [Inert](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
+- [Masking in CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Masking)
+- [Math Functions in CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Functions#math_functions)
+- [Media Queries ](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries)
+- [Modules in Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [Motion Path in CSS Animations](https://developer.mozilla.org/docs/Web/CSS/CSS_Motion_Path)
+- [Offscreen Canvas](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
+- [Pointer and mouse Events](https://developer.mozilla.org/docs/Web/API/Pointer_events)
+- [URL](https://developer.mozilla.org/docs/Web/API/URL)
 - Web Compat 2023: A catchall focus area for small bugs that cause known site compatibility issues
-- [Web Codecs (video)](https://developer.mozilla.org/en-US/docs/Web/API/WebCodecs_API)
-- [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+- [Web Codecs (video)](https://developer.mozilla.org/docs/Web/API/WebCodecs_API)
+- [Web Components](https://developer.mozilla.org/docs/Web/Web_Components)
 
-You can find full details of all focus areas at [Web Platform Tests](https://github.com/web-platform-tests/interop/blob/main/2023/README.md#focus-areas) based on [MDN Web Docs](https://developer.mozilla.org/en-US/), however here are a few that we think you might be really excited about.
+You can find full details of all focus areas at [Web Platform Tests](https://github.com/web-platform-tests/interop/blob/main/2023/README.md#focus-areas) based on [MDN Web Docs](https://developer.mozilla.org/), however here are a few that we think you might be really excited about.
 
 ### Container Queries
 
-Container queries has been a [top request](https://2021.stateofcss.com/en-US/opinions/#currently_missing_from_css_wins) from developers for many years, and in 2022 Chrome and Safari shipped it. Firefox expects to ship container queries in Firefox 110, and the tests for this focus area help to ensure that container queries work reliably cross-browser and according to the spec.
+Container queries has been a [top request](https://2021.stateofcss.com/opinions/#currently_missing_from_css_wins) from developers for many years, and in 2022 Chrome and Safari shipped it. Firefox expects to ship container queries in Firefox 110, and the tests for this focus area help to ensure that container queries work reliably cross-browser and according to the spec.
 
-### :has(...)
+### :has(…)
 
 Developers have for a long time asked for a parent selector in CSS. The [`:has()`](https://developer.mozilla.org/docs/Web/CSS/:has) pseudo-class makes possible many of the use cases for parent selectors, as well as selecting a previous sibling element with respect to a reference element. For example, this makes it possible to style a figure that has a caption differently to one that doesn’t. Learn more about the use cases for `has()` in [:has(), the family selector](https://developer.chrome.com/blog/has-m105/).
 
