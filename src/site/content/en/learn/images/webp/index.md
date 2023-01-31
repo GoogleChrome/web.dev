@@ -32,7 +32,9 @@ blocks' data and then attempts to populate the current block by way of several d
 the missing part of the image. The results provided by each prediction mode are then compared to the real image data, and the closest
 predictive match is selected.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/t8neUw7UOsUNTF3uxe08.png", alt="A diagram of some of the steps in WebP lossy compression", width="800", height="509" %}
+<div style="background: #fff;">
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/t8neUw7UOsUNTF3uxe08.png", alt="A diagram of WebP’s various block prediction methods.", width="800", height="509" %}
+</div>
 
 Even the closest predictive match isn't going to be completely right, of course, so the differences between the predicted and
 actual values of that block are encoded in the file. When decoding the image, the rendering engine uses the same data to apply
