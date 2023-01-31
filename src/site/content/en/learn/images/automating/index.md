@@ -175,7 +175,7 @@ Populating `srcset` attributes will typically be a straightforward manual proces
 information about the configuration you’ve already done when generating your sources. In the tasks above, we’ve established
 the file names and width information that our attribute will follow:
 
-```
+```html
 srcset="filename-1000.jpg 1000w, filename-800.jpg 800w, filename-400.jpg 400w"
 ```
 
@@ -206,7 +206,7 @@ still need a fallback, or we could run the risk of a broken image in especially 
 Because scaling an image downwards is _visually_ seamless and JPEG encoding is universally supported, the largest JPEG is
 a sensible choice.
 
-```
+```html
 <picture>
   <source type="image/webp" srcset="filename-1000.webp 1000w, filename-800.webp 800w, filename-400.webp 400w">
   <img src="filename-1000.jpg" srcset="filename-1000.jpg 1000w, filename-800.jpg 800w, filename-400.jpg 400w" sizes="…" alt="…">
