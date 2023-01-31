@@ -16,7 +16,8 @@ updated: 2023-01-31
 tags:
   - blog
   - css
-  - browsers
+  - javascript
+  - fonts
 ---
 
 In 2023, all major browser vendors and other stakeholders are again working together to solve the top browser compatibility issues. The effort started on this scale with Interop 2022, and you can learn what we achieved together in the [end-of-year post](/interop-2022-wrapup/). Everyone involved believes this will help improve the experience for web developers everywhere. This year, for the first time, we publicly announced the [proposal process](/submit-your-proposals-for-interop-2023/) and got many great suggestions from frameworks, large companies, browser vendors, and developers everywhere.
