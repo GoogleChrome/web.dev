@@ -111,4 +111,4 @@ The Focus Area scores are calculated based on test pass rates. If you have feedb
 - [Bocoup]([https://bocoup.com/blog/interop-2023])
 - [Igalia]([https://www.igalia.com/news/2023/interop2023.html])
 - [Microsoft]([https://blogs.windows.com/msedgedev/2023/02/02/microsoft-edge-and-interop-2023/])
-- [Mozilla]([TBD])
+- [Mozilla]([https://hacks.mozilla.org/2023/02/announcing-interop-2023/])
