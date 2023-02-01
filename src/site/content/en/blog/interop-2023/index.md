@@ -10,7 +10,7 @@ authors:
   - foolip
   - rachelandrew
 hero: "image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/NqhNbZwtnkSEgDtlXdHa.jpg"
-alt: "A picture of a rounded stairway"
+alt: "A picture of a curved stairway."
 date: 2023-02-01
 tags:
   - blog
