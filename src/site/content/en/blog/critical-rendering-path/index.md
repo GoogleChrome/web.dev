@@ -46,7 +46,6 @@ This is a free course offered through [Udacity](https://www.udacity.com/course/w
 - [Render-tree Construction, Layout, and Paint](https://web.dev/critical-rendering-path-render-tree-construction/)
 - [Render Blocking CSS](https://web.dev/critical-rendering-path-render-blocking-css/)
 - [Adding Interactivity with JavaScript](https://web.dev/critical-rendering-path-adding-interactivity-with-javascript/)
-
 - [Measuring the Critical Rendering Path](critical-rendering-path-measure-crp/)
 - [Analyzing Critical Rendering Path Performance](https://web.dev/critical-rendering-path-analyzing-crp/)
 - [Optimizing the Critical Rendering Path](https://web.dev/critical-rendering-path-optimizing-critical-rendering-path/)
