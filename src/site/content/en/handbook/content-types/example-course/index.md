@@ -19,13 +19,13 @@ You can also add assessments as follows:
 
 Adding courses involves the following:
 
-- Add a new directory to `/src/site/content/en/learn`
-- Add an index.md file. You can copy this one from `src/site/content/en/handbook/content-types/example-course/index.md` as a starting point
-- Add a data file named using the following convention: `{dir_name}.11tydata.js`
-- Use the `course11tydata` util to generate the required data. You can use the following file as a starting point `src/site/content/en/handbook/content-types/example-course/example-course.11tydata.js`
+- Add a new directory to `/src/site/content/en/learn`.
+- Add an index.md file. You can copy this one from `src/site/content/en/handbook/content-types/example-course/index.md` as a starting point.
+- Add a data file named using the following convention: `{dir_name}.11tydata.js`.
+- Use the `course11tydata` util to generate the required data. You can use the following file as a starting point `src/site/content/en/handbook/content-types/example-course/example-course.11tydata.js`.
 - Create a new directory under `src/site/_data/courses` using the name passed to the `course11tydata` util.
 - Add two files, `meta.yml` and `toc.yml`.
-- Add course sections as subdirectories
+- Add course sections as subdirectories.
 - Add the section urls to `toc.yml` and the sidebar will be generated automatically.
 
 Here's what you'll learn:
