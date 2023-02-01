@@ -21,6 +21,5 @@ const {isLive} = require('../_filters/is-live');
  * @returns {EleventyCollectionItem[]}
  */
 module.exports = (collection) => {
-  const tag = process.env.PERCY ? 'test-post' : 'blog';
-  return collection.getFilteredByTag(tag).filter(isLive).reverse();
+  return collection.getFilteredByTag('blog').filter(isLive).reverse();
 };

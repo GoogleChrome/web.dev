@@ -27,6 +27,7 @@ const markdown = require('./src/site/_plugins/markdown');
 // Shortcodes used in prose
 const Aside = require('./src/site/_includes/components/Aside');
 const {Blockquote} = require('webdev-infra/shortcodes/Blockquote');
+const {BrowserCompat} = require('webdev-infra/shortcodes/BrowserCompat');
 const {Codepen} = require('webdev-infra/shortcodes/Codepen');
 const Compare = require('./src/site/_includes/components/Compare');
 const CompareCaption = require('./src/site/_includes/components/CompareCaption');
@@ -39,7 +40,6 @@ const Instruction = require('./src/site/_includes/components/Instruction');
 const Label = require('./src/site/_includes/components/Label');
 const {Video} = require('./src/site/_includes/components/Video');
 const {YouTube} = require('webdev-infra/shortcodes/YouTube');
-const BrowserCompat = require('./src/site/_includes/components/BrowserCompat');
 const CodePattern = require('./src/site/_includes/components/CodePattern');
 const Widget = require('./src/site/_includes/components/Widget');
 
@@ -212,7 +212,7 @@ module.exports = function (config) {
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
-  config.addNunjucksShortcode('BrowserCompat', BrowserCompat);
+  config.addShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
   config.addShortcode('CodePattern', CodePattern);

@@ -7,21 +7,32 @@ on:
     branches:
       - main
     paths:
-      - 'src/**.js'
-      - 'shared/**.js'
-      - '!src/site/_data/countries.js'
-      - 'package.json'
-      - '**.njk'
       - '**.scss'
+      - 'package.json'
+      - 'src/component-library/**'
+      - 'src/fonts/**'
+      - 'src/build/**.js'
+      - 'src/**.js'
+      - '!src/site/_collections/**.js'
+      - '!src/site/_data/**.js'
+      - '!src/site/content/**.js'
+      - 'shared/**.js'
+      - 'src/site/content/en/handbook/content-types/**'
+
   pull_request:
     paths:
       - '.github/workflows/percy-workflow.yml'
-      - 'src/**.js'
-      - 'shared/**.js'
-      - '!src/site/_data/countries.js'
-      - 'package.json'
-      - '**.njk'
       - '**.scss'
+      - 'package.json'
+      - 'src/component-library/**'
+      - 'src/fonts/**'
+      - 'src/build/**.js'
+      - 'src/**.js'
+      - '!src/site/_collections/**.js'
+      - '!src/site/_data/**.js'
+      - '!src/site/content/**.js'
+      - 'shared/**.js'
+      - 'src/site/content/en/handbook/content-types/**'
 
 jobs:
   percy:

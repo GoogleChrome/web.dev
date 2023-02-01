@@ -349,7 +349,7 @@ propagated to the payment app's service worker as a property of
 
 ```js
 const request = new PaymentRequest([{
-  supportedMethods: 'https://bobpay.xyz/pay',
+  supportedMethods: 'https://bobbucks.dev/pay',
   data: { transactionId: '****' }
 }], {
   displayItems: [{
@@ -532,11 +532,3 @@ To try it out:
 3. Press **Add a payment button**.
 4. Enter `https://paymenthandler-demo.glitch.me` to the **Payment Method Identifier** field.
 5. Press **Pay** button next to the field.
-
-## Next steps
-
-In this article, we learned how to handle optional information on the service
-worker. The final step for building a web-based payment app is to learn how to
-build the frontend.
-
-* Handling payments on the payment frontend (coming soon)

@@ -119,3 +119,8 @@ image_workflows:
   description:
     en: "How to integrate the advice from this course into your workflow, CMS, CDN, and automation tools."
     
+example:
+  title:
+    en: Example course
+  description:
+    en: This page is used for visual testing of the courses layout and also showcases it's capabilities"

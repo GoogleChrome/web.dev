@@ -201,7 +201,7 @@ footer {
 In order to enable [fluid
 typography](https://www.smashingmagazine.com/2016/05/fluid-typography/), [Mike
 Riethmeuller](https://twitter.com/mikeriethmuller) popularized a technique that
-uses the `calc()` function to set a minimum font size, maximum font size, and
+uses the `clamp()` function to set a minimum font size, maximum font size, and
 allow for scaling from the min to the max.
 
 <figure>
