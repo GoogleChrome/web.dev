@@ -12,7 +12,6 @@ authors:
 hero: "image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/NqhNbZwtnkSEgDtlXdHa.jpg"
 alt: "A picture of a rounded stairway"
 date: 2023-02-01
-updated: 2023-01-31
 tags:
   - blog
   - css
