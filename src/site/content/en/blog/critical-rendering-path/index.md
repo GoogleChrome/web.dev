@@ -40,4 +40,15 @@ Tools to find the data you need to achieve immediate performance boosts!
 
 This is a free course offered through [Udacity](https://www.udacity.com/course/website-performance-optimization--ud884).
 
+## Additional resources
+
+- [Constructing the Object Model](/critical-rendering-path-constructing-the-object-model/)
+- [Render-tree Construction, Layout, and Paint](/critical-rendering-path-render-tree-construction/)
+- [Render Blocking CSS](/critical-rendering-path-render-blocking-css/)
+- [Adding Interactivity with JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/)
+- [Measuring the Critical Rendering Path](/critical-rendering-path-measure-crp/)
+- [Analyzing Critical Rendering Path Performance](/critical-rendering-path-analyzing-crp/)
+- [Optimizing the Critical Rendering Path](/critical-rendering-path-optimizing-critical-rendering-path/)
+- [PageSpeed Rules and Recommendations](/critical-rendering-path-page-speed-rules-and-recommendations/)
+
 ## Feedback {: #feedback }
