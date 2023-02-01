@@ -42,8 +42,14 @@ This is a free course offered through [Udacity](https://www.udacity.com/course/w
 
 ## Additional resources
 
-- [Optimizing the Critical Rendering Path](https://web.dev/critical-rendering-path-optimizing-critical-rendering-path/)
+- [Constructing the Object Model](https://web.dev/critical-rendering-path-constructing-the-object-model/)
+- [Render-tree Construction, Layout, and Paint](https://web.dev/critical-rendering-path-render-tree-construction/)
+- [Render Blocking CSS](https://web.dev/critical-rendering-path-render-blocking-css/)
+- [Adding Interactivity with JavaScript](https://web.dev/critical-rendering-path-adding-interactivity-with-javascript/)
+
+- [Measuring the Critical Rendering Path](critical-rendering-path-measure-crp/)
 - [Analyzing Critical Rendering Path Performance](https://web.dev/critical-rendering-path-analyzing-crp/)
-- [Critical rendering Path on MDN](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path)
+- [Optimizing the Critical Rendering Path](https://web.dev/critical-rendering-path-optimizing-critical-rendering-path/)
+- [PageSpeed Rules and Recommendations](https://web.dev/critical-rendering-path-page-speed-rules-and-recommendations/)
 
 ## Feedback {: #feedback }
