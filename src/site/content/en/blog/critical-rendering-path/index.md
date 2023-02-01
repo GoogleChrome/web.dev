@@ -40,4 +40,10 @@ Tools to find the data you need to achieve immediate performance boosts!
 
 This is a free course offered through [Udacity](https://www.udacity.com/course/website-performance-optimization--ud884).
 
+## Additional resources
+
+- [Optimizing the Critical Rendering Path](https://web.dev/critical-rendering-path-optimizing-critical-rendering-path/)
+- [Analyzing Critical Rendering Path Performance](https://web.dev/critical-rendering-path-analyzing-crp/)
+- [Critical rendering Path on MDN](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path)
+
 ## Feedback {: #feedback }
