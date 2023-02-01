@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Interop 2023: continuing improving the web for developers"
+title: "Interop 2023: continuing to improve the web for developers"
 subhead:
     "Again in 2023, all major browser vendors, and other stakeholders, work together to solve the top browsers compatibility issues."
 description:
