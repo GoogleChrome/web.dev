@@ -98,7 +98,7 @@ Follow progress throughout the year [on the Interop 2023 dashboard](https://wpt.
 The Focus Area scores are calculated based on test pass rates. If you have feedback or want to contribute improvements to [WPT](https://github.com/web-platform-tests/wpt), please file an issue to request updating the set of tests used for scoring.
 
 <figure>
-<a href=”https://wpt.fyi/interop-2023/">
+<a href="https://wpt.fyi/interop-2023/">
 {% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/NYQC2r4udqv0RXxrkWVe.png", alt="A list of all Active Focus Areas together with browser scores and overall Interop score", width="800", height="1032" %}
 </a>
 <figcaption>All the Active Focus Areas and their overall Interop Score.</figcaption>
@@ -106,8 +106,8 @@ The Focus Area scores are calculated based on test pass rates. If you have feedb
 
 ## More about Interop 2023
 
-- [Apple]([https://webkit.org/blog/13706/interop-2023/])
-- [Bocoup]([https://bocoup.com/blog/interop-2023])
-- [Igalia]([https://www.igalia.com/news/2023/interop2023.html])
-- [Microsoft]([https://blogs.windows.com/msedgedev/2023/02/01/microsoft-edge-and-interop-2023/])
-- [Mozilla]([https://hacks.mozilla.org/2023/02/announcing-interop-2023/])
+- [Apple](https://webkit.org/blog/13706/interop-2023/)
+- [Bocoup](https://bocoup.com/blog/interop-2023)
+- [Igalia](https://www.igalia.com/news/2023/interop2023.html)
+- [Microsoft](https://blogs.windows.com/msedgedev/2023/02/01/microsoft-edge-and-interop-2023/)
+- [Mozilla](https://hacks.mozilla.org/2023/02/announcing-interop-2023/)
