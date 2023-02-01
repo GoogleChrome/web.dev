@@ -5,7 +5,7 @@ authors:
   - adamargyle
 description: >-
   This page is used for visual testing of the codelab layout and also
-  showcases it's capabilities
+  showcases its capabilities
 date: 2023-01-17
 hero: image/admin/wKAhovrYm23nFtqFqYbE.png
 thumbnail: image/admin/tYvAWgtTaUOxXe9Pxacm.png
