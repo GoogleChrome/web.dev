@@ -25,7 +25,7 @@ pageScripts:
     <div class="wrapper auto-grid learn__collection">
       {% set coursesArr = helpers.values(courses) %}
       {% for course in coursesArr|sort(true, false, 'meta.date') %}
-      {% if course.meta and not course.meta.draft %}
+      {% if course.meta and not course.meta.draft and not course.meta.invisible %}
         <a href="{{ course.meta.url }}" class="card" data-style="branded">
           <h3 class="visually-hidden">{{ course.meta.title }}</h3>
           <div class="card__header repel">

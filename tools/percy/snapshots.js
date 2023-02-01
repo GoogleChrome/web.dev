@@ -20,6 +20,22 @@ const pagesToTest = [
     name: 'Post example',
   },
   {
+    url: '/handbook/content-types/example-item-page/',
+    name: 'Item page example',
+  },
+  {
+    url: '/handbook/content-types/example-explore-page/',
+    name: 'Explore page example',
+  },
+  {
+    url: '/handbook/content-types/example-course/',
+    name: 'Course page example',
+  },
+  {
+    url: '/handbook/content-types/example-codelab/',
+    name: 'Codelab page example',
+  },
+  {
     url: '/handbook/content-types/example-pattern-set/',
     name: 'Pattern-set page example',
   },
