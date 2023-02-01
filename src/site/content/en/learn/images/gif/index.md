@@ -58,7 +58,7 @@ This manages to condense the pixel-by-pixel description in a few places (“colu
 few characters by defining the repeated colors in a dictionary, of sorts, up front. There's no change to the visual fidelity.
 The information has been compressed without any loss.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/nNmCqD5iYi1QEEbDeL4M.png", alt="Blue to red horizontal boxes.", width="752", height="400" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/nNmCqD5iYi1QEEbDeL4M.png", alt="Blue to red horizontal boxes, with a single dark pixel at 2x2.", width="752", height="400" %}
 
 As you can see, however, the single dark blue pixel is having an outsized impact on the size of our encoding. If I were to
 limit myself to a quantized color palette, it could be reduced much further:
@@ -67,7 +67,7 @@ limit myself to a quantized color palette, it could be reduced much further:
 
 The unfortunate end result of those saved bytes is that you've lost pixel-perfection.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ZW6SBDsulfvJxC3iZRqd.png", alt="Blue to red horizontal boxes.", width="752", height="400" %}
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/YhCa9QIzzkZsyw4zyUzu.png", alt="Uniformly blue to red horizontal boxes.", width="800", height="421" %}
 
 Of course, you, the rendering engine, don't know that—the detail of the darker blue pixel was left out of how I encoded my source image.
 You've rendered the image exactly as I've encoded it, based on our shared understanding of the colors we have at hand.
