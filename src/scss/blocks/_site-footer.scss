@@ -43,7 +43,11 @@
 }
 
 .site-footer__primary-nav-links {
-  grid-template-columns: repeat(3, 1fr);
+  --auto-grid-placement: auto-fit;
+
+  @include bp(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   li + li {
     margin-top: 0.5rem;
