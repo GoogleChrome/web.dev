@@ -47,6 +47,16 @@ description: |
 **Examples:**
 * [Example landing page](/handbook/content-types/example-landing-page)
 
+## Pattern
+
+**Examples:**
+* [Example pattern](/handbook/content-types/example-pattern)
+
+## Pattern set
+
+**Examples:**
+* [Example pattern set](/handbook/content-types/example-pattern-set)
+
 ## Posts
 **Format:** Primarily informational with instructions included as appropriate
 

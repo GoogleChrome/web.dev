@@ -780,3 +780,5 @@ redirects:
     destination: https://developer.chrome.com/blog/prerender-pages/
   - source: /blog/javascript-async-functions
     destination: /blog/async-functions
+  - source: /blog/enabling-https-on-your-servers
+    destination: /secure/enable-https

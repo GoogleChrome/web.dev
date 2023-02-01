@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: WebTransport is an API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-08
-updated: 2022-07-18
+updated: 2023-01-16
 hero: image/admin/Wh6q6ughWxUYcu4iOutU.jpg
 hero_position: center
 alt: |
@@ -22,7 +22,7 @@ feedback:
 
 ### What's WebTransport?
 
-[WebTransport](https://w3c.github.io/webtransport/) is a web API that uses the [HTTP/3](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) protocol as a bidirectional transport. It's intended for two-way communications between a web client and an HTTP/3 server. It supports sending data both unreliably via its [datagram APIs](#datagram), and reliably via its [streams APIs](#stream).
+[WebTransport](https://w3c.github.io/webtransport/) is a web API that uses the [HTTP/3](https://www.rfc-editor.org/rfc/rfc9114) protocol as a bidirectional transport. It's intended for two-way communications between a web client and an HTTP/3 server. It supports sending data both unreliably via its [datagram APIs](#datagram), and reliably via its [streams APIs](#stream).
 
 [Datagrams](https://tools.ietf.org/html/draft-ietf-quic-datagram-00) are ideal for sending and receiving data that do not need strong delivery guarantees. Individual packets of data are limited in size by the [maximum transmission unit (MTU)](https://en.wikipedia.org/wiki/Maximum_transmission_unit) of the underlying connection, and may or may not be transmitted successfully, and if they are transferred, they may arrive in an arbitrary order. These characteristics make the datagram APIs ideal for low-latency, best-effort data transmission. You can think of datagrams as [user datagram protocol (UDP)](https://en.wikipedia.org/wiki/User_Datagram_Protocol) messages, but encrypted and congestion-controlled.
 
@@ -41,7 +41,7 @@ We're interested in [hearing more](#feedback) about how you plan to use WebTrans
 {% Aside %}
 Many of the concepts in this proposal were previously experimented with as part of the earlier QuicTransport origin trial, which did not end up being released as part of Chrome.
 
-WebTransport helps with similar use cases as QuicTransport, with the primary difference being that [HTTP/3](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) instead of [QUIC](https://www.chromium.org/quic) is the underlying transport protocol.
+WebTransport helps with similar use cases as QuicTransport, with the primary difference being that [HTTP/3](https://www.rfc-editor.org/rfc/rfc9114) instead of [QUIC](https://www.chromium.org/quic) is the underlying transport protocol.
 {% endAside %}
 
 ## Browser support
@@ -178,15 +178,15 @@ Once you've connected to the server, you could also use WebTransport to send and
 
 Each chunk of all streams is a `Uint8Array`. Unlike with the Datagram APIs, these streams are reliable. But each stream is independent, so data order across streams is not guaranteed.
 
-#### SendStream
+#### WebTransportSendStream
 
-A <code>[SendStream](https://wicg.github.io/web-transport/#sendstream)</code> is created by the web client using the <code>createSendStream()</code> method of a `WebTransport` instance, which returns a promise for the <code>SendStream</code>.
+A <code>[WebTransportSendStream](https://w3c.github.io/webtransport/#send-stream)</code> is created by the web client using the <code>createUnidirectionalStream()</code> method of a `WebTransport` instance, which returns a promise for the <code>WebTransportSendStream</code>.
 
 Use the <code>[close()](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)</code> to close the associated HTTP/3 connection. The browser tries to send all pending data before actually closing the associated connection.
 
 ```js
 // Send two Uint8Arrays to the server.
-const stream = await transport.createSendStream();
+const stream = await transport.createUnidirectionalStream();
 const writer = stream.writable.getWriter();
 const data1 = new Uint8Array([65, 66, 67]);
 const data2 = new Uint8Array([68, 69, 70]);
@@ -200,10 +200,10 @@ try {
 }
 ```
 
-Similarly, use the <code>[abort()](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)</code> to send a [QUIC RESET\_STREAM](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4) to the server. When using <code>abort()</code>, the browser may discard any pending data that hasn't yet been sent.
+Similarly, use the <code>[abort()](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)</code> to send a <code>[RESET\_STREAM](https://w3c.github.io/webtransport/#stream-reset)</code> to the server. When using <code>abort()</code>, the browser may discard any pending data that hasn't yet been sent.
 
 ```js
-const ws = await transport.createSendStream();
+const ws = await transport.createUnidirectionalStream();
 const writer = ws.getWriter();
 writer.write(...);
 writer.write(...);
@@ -211,9 +211,9 @@ await writer.abort();
 // Not all the data may have been written.
 ```
 
-#### ReceiveStream
+#### WebTransportReceiveStream
 
-A <code>[ReceiveStream](https://wicg.github.io/web-transport/#receivestream)</code> is initiated by the server. Obtaining a <code>ReceiveStream</code> is a two-step process for a web client. First, it calls the <code>incomingUnidirectionalStreams</code> attribute of a `WebTransport` instance, which returns a <code>ReadableStream</code>. Each chunk of that <code>ReadableStream</code>, is, in turn, a <code>ReceiveStream</code> that can be used to read <code>Uint8Array</code> instances sent by the server.
+A <code>[WebTransportReceiveStream](https://w3c.github.io/webtransport/#receive-stream)</code> is initiated by the server. Obtaining a <code>WebTransportReceiveStream</code> is a two-step process for a web client. First, it calls the <code>incomingUnidirectionalStreams</code> attribute of a `WebTransport` instance, which returns a <code>ReadableStream</code>. Each chunk of that <code>ReadableStream</code>, is, in turn, a <code>WebTransportReceiveStream</code> that can be used to read <code>Uint8Array</code> instances sent by the server.
 
 ```js
 async function readFrom(receiveStream) {
@@ -235,12 +235,12 @@ while (true) {
   if (done) {
     break;
   }
-  // value is an instance of ReceiveStream
+  // value is an instance of WebTransportReceiveStream
   await readFrom(value);
 }
 ```
 
-You can detect stream closure using the <code>[closed](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/closed)</code> promise of the <code>[ReadableStreamDefaultReader](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader)</code>. When the underlying HTTP/3 connection is [closed with the FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8), the <code>closed</code> promise is fulfilled after all the data is read. When the HTTP/3 connection is closed abruptly (for example, by <code>[STREAM_RESET](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4)</code>), then the <code>closed</code> promise rejects.
+You can detect stream closure using the <code>[closed](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/closed)</code> promise of the <code>[ReadableStreamDefaultReader](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader)</code>. When the underlying HTTP/3 connection is [closed with the FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8), the <code>closed</code> promise is fulfilled after all the data is read. When the HTTP/3 connection is closed abruptly (for example, by <code>[RESET\_STREAM](https://w3c.github.io/webtransport/#stream-reset)</code>), then the <code>closed</code> promise rejects.
 
 ```js
 // Assume an active receiveStream
@@ -252,20 +252,20 @@ reader.closed.then(() => {
 });
 ```
 
-#### BidirectionalStream
+#### WebTransportBidirectionalStream
 
-A <code>[BidirectionalStream](https://wicg.github.io/web-transport/#bidirectional-stream)</code> might be created either by the server or the client.
+A <code>[WebTransportBidirectionalStream](https://w3c.github.io/webtransport/#bidirectional-stream)</code> might be created either by the server or the client.
 
-Web clients can create one using the `createBidirectionalStream()` method of a `WebTransport` instance, which returns a promise for a `BidirectionalStream`.
+Web clients can create one using the `createBidirectionalStream()` method of a `WebTransport` instance, which returns a promise for a `WebTransportBidirectionalStream`.
 
 ```js
 const stream = await transport.createBidirectionalStream();
-// stream is a BidirectionalStream
+// stream is a WebTransportBidirectionalStream
 // stream.readable is a ReadableStream
 // stream.writable is a WritableStream
 ```
 
-You can listen for a `BidirectionalStream` created by the server with the `incomingBidirectionalStreams` attribute of a `WebTransport` instance, which returns a `ReadableStream`. Each chunk of that `ReadableStream`, is, in turn, a `BidirectionalStream`.
+You can listen for a `WebTransportBidirectionalStream` created by the server with the `incomingBidirectionalStreams` attribute of a `WebTransport` instance, which returns a `ReadableStream`. Each chunk of that `ReadableStream`, is, in turn, a `WebTransportBidirectionalStream`.
 
 ```js
 const rs = transport.incomingBidirectionalStreams;
@@ -275,17 +275,17 @@ while (true) {
   if (done) {
     break;
   }
-  // value is a BidirectionalStream
+  // value is a WebTransportBidirectionalStream
   // value.readable is a ReadableStream
   // value.writable is a WritableStream
 }
 ```
 
-A `BidirectionalStream` is just a combination of a `SendStream` and `ReceiveStream`. The examples from the previous two sections explain how to use each of them.
+A `WebTransportBidirectionalStream` is just a combination of a `WebTransportSendStream` and `WebTransportReceiveStream`. The examples from the previous two sections explain how to use each of them.
 
 ### More examples
 
-The [WebTransport draft specification](https://wicg.github.io/web-transport/) includes a number of additional inline examples, along with full documentation for all of the methods and properties.
+The [WebTransport draft specification](https://w3c.github.io/webtransport/) includes a number of additional inline examples, along with full documentation for all of the methods and properties.
 
 ### WebTransport in Chrome's DevTools
 
@@ -300,7 +300,7 @@ the project's `README` to determine if this solution can work for your use case.
 
 ## Privacy and security considerations
 
-See the [corresponding section](https://wicg.github.io/web-transport/#privacy-security) of the draft specification for authoritative guidance.
+See the [corresponding section](https://w3c.github.io/webtransport/#privacy-security) of the draft specification for authoritative guidance.
 
 ## Feedback  {: #feedback }
 
@@ -332,6 +332,6 @@ You can use the [web-transport-dev Google Group](https://groups.google.com/a/chr
 
 ## Acknowledgements
 
-This article incorporates information from the [WebTransport Explainer](https://github.com/w3c/webtransport/blob/main/explainer.md), [draft specification](https://wicg.github.io/web-transport/), and [related design docs](https://docs.google.com/document/d/1UgviRBnZkMUq4OKcsAJvIQFX6UCXeCbOtX_wMgwD_es/edit#). Thank you to the respective authors for providing that foundation.
+This article incorporates information from the [WebTransport Explainer](https://github.com/w3c/webtransport/blob/main/explainer.md), [draft specification](https://w3c.github.io/webtransport/), and [related design docs](https://docs.google.com/document/d/1UgviRBnZkMUq4OKcsAJvIQFX6UCXeCbOtX_wMgwD_es/edit#). Thank you to the respective authors for providing that foundation.
 
 _The hero image on this post is by [Robin Pierre](https://unsplash.com/photos/dPgPoiUIiXk) on Unsplash._

@@ -26,14 +26,37 @@ const path = require('path');
 const matter = require('gray-matter');
 
 const stripDot = /^\./;
-const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
-const files = glob.sync(path.join(basePath, '**', 'index.md'));
+
+const contentRoot = path.join(
+  __dirname,
+  '..',
+  '..',
+  'src',
+  'site',
+  'content',
+  'en',
+);
+const basePath = path.join(contentRoot, 'patterns');
+
+const patternPaths = [
+  path.join(contentRoot, 'patterns', '**', 'index.md'),
+  path.join(
+    contentRoot,
+    'handbook',
+    'content-types',
+    'example-pattern',
+    '**',
+    'index.md',
+  ),
+];
+
+const patterns = glob.sync(patternPaths);
 
 /** @type {CodePatternSets} */
 const allPatternSets = {};
 
 /** @type {CodePatterns} */
-const allPatterns = files.reduce((patterns, file) => {
+const allPatterns = patterns.reduce((patterns, file) => {
   const id = path.relative(basePath, path.dirname(file));
   const fileContents = matter(fs.readFileSync(file, 'utf-8'));
   const suite = path.dirname(id);
@@ -59,6 +82,7 @@ const allPatterns = files.reduce((patterns, file) => {
   }
 
   const assetsPaths = glob.sync(path.join(path.dirname(file), 'assets', '*'));
+
   /** @type {CodePatternAssets} */
   const assets = assetsPaths.reduce((out, assetPath) => {
     // Ignore images.
