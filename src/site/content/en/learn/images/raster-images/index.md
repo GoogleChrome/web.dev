@@ -19,9 +19,9 @@ A raster image source scaled beyond its inherent dimensions will appear distorte
 {% Codepen {
 user: 'web-dot-dev',
 id: 'ZEjBQqB',
-height: 300,
+height: 500,
 theme: dark,
-tab: 'html,css,result'
+tab: 'css,result'
 } %}
 
 For artwork containing real world levels of detail, raster images are the right tool for the job.
@@ -59,4 +59,4 @@ That isn't strictly the case, though, and it's worth keeping in mind that our ey
 the correct format and settings for image compression is an exercise in finding the balance between the level of visual detail
 we're able to perceive and the amount of data sent to the browser. Both of these factors are determined by the content of our source image.
 
-The raster image formats are those you are likely most familiar with as a developer—GIF, JPEG, PNG, WebP, and more.
+The raster image formats are those you are likely most familiar with as a developer—GIF, JPEG, PNG, WebP, and more. You'll learn about the capabilities of each in the next few modules.

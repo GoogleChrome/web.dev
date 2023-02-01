@@ -3,7 +3,7 @@ title: 'Image formats: WebP'
 authors:
   - matmarquis
 description: Learn about WebP, and understand the difference between this format and others.
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -44,7 +44,7 @@ patch that gets applied over the local file, rather than a brand new copy of the
 
 To illustrate: rather than dig into the complex math involved in the true predictive algorithm, we'll invent a WebP-like encoding
 with a single prediction mode, and use it to efficiently relay a grid of numbers the way we did with the legacy formats. Our algorithm
-has a single prediction mode, which we'll call “prediction mode one:” the value of each block is the sum of the values of the blocks above
+has a single prediction mode, which we'll call "prediction mode one:" the value of each block is the sum of the values of the blocks above
 it and to the left of it, starting with 1.
 
 Now, say we're starting with the following real image data:
@@ -109,8 +109,8 @@ the two so closely.
 ## Using WebP
 
 The internals of WebP might be considerably more complex than JPEG encoding, but just as simple for the purpose of our daily
-work: all the complexity of WebP's encoding is standardized around a single “quality” value—expressed from 0–100, just like JPEG.
-And once again, that's not to say that you're _limited_ to a single overarching “quality” setting. You can—and should—tinker with all
+work: all the complexity of WebP's encoding is standardized around a single "quality" value—expressed from 0–100, just like JPEG.
+And once again, that's not to say that you're _limited_ to a single overarching "quality" setting. You can—and should—tinker with all
 the fine details of WebP encoding, if only to gain a better understanding of how these normally-invisible settings can impact
 file size and quality.
 

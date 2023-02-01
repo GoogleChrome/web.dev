@@ -3,7 +3,7 @@ title: 'Conclusion'
 authors:
   - matmarquis
 description: Some additional resources.
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---

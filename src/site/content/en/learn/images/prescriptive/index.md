@@ -3,7 +3,7 @@ title: 'Prescriptive syntaxes'
 authors:
   - matmarquis
 description: Find out about the picture element.
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -25,7 +25,7 @@ if the `<picture>` element isn't recognized by the user's browser, it's ignored.
 since the browser either won't recognize them at all, or won't have meaningful context for them without a `<video>` or `<audio>` parent.
 The inner `<img>` element will be recognized by any browser, though—and the source specified in its `src` will be rendered as expected.
 
-## “Art directed” images with `<picture>`
+## "Art directed" images with `<picture>`
 
 Making changes to the content or aspect ratio of an image based on the size of the image in the page is typically referred to as "art directed"
 responsive images. `srcset` and `sizes` are designed to work invisibly, seamlessly swapping out sources as the user's browser dictates.
@@ -46,11 +46,11 @@ some of the detail at the edges cropped out:
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/q9IrCVku2h0B4YfHzI3h.png", alt="A zoomed in crop of the periwinkle flower.", width="400", height="315" %}
 
-That sort of “cropping” can be achieved through CSS, but would leave a user requesting all the data that makes up that image,
+That sort of "cropping" can be achieved through CSS, but would leave a user requesting all the data that makes up that image,
 even though they might never end up seeing it.
 
 Each `source` element has attributes defining the conditions for the selection of that `source`: `media`, which accepts a
-media query, and `type`, which accepts a media type (previously known as “MIME type”). The first `<source>` in the source
+media query, and `type`, which accepts a media type (previously known as "MIME type"). The first `<source>` in the source
 order to match the user's current browsing context is selected, and the contents of the `srcset` attribute on that `source`
 will be used to determine the right candidates for that context. In this example, the first `source` with a `media` attribute
 that matches user's viewport size will be the one selected:
@@ -70,7 +70,7 @@ tab: 'html,css,result'
 } %}
 
 You should always specify the inner `img` last in the order—if none of the `source` elements match their `media` or `type`
-criteria, the image will act as a “default” source. If you're using `min-width` media queries, you want to have the largest
+criteria, the image will act as a "default" source. If you're using `min-width` media queries, you want to have the largest
 sources first, as seen in the preceding code. When using `max-width` media queries, you should put the smallest source first.
 
 ```html
@@ -129,9 +129,9 @@ suited to the color scheme dictated by a user's preference:
 {% Codepen {
 user: 'web-dot-dev',
 id: 'MWBbPJm',
-height: 300,
+height: 500,
 theme: dark,
-tab: 'html,css,result'
+tab: 'html,result'
 } %}
 
 ### The `type` attribute
@@ -221,5 +221,4 @@ can't use them just yet.
 
 While responsive image markup promises to only get easier to work with over time, like any web technology, there are a number
 of services, technologies, and frameworks to help ease the burden of hand-writing this markup available. In the next module,
-[CMS and Frameworks](cms), we'll look at how to integrate everything we've learned about [Image Formats and Compression](3)
-and responsive images into a modern development workflow.
+ we'll look at how to integrate everything we've learned about image formats, compression, and responsive images into a modern development workflow.

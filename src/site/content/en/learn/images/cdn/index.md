@@ -3,7 +3,7 @@ title: 'Image content delivery networks'
 authors:
   - matmarquis
 description: Learn how image CDNs have the ability to transform and optimize the contents of an image.
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -106,7 +106,7 @@ to explicitly inform the browser of the file's encoding, regardless of the file 
 request for a file ending in `.jpg`, that request will be accompanied by a header informing the server that AVIF is supported, and the server
 will send an AVIF encoded file along with an explicit instruction to treat it as AVIF.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/JyJi8gXuacJB0L2puHbK.png", alt="CDN user interface", width="800", height="649" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/JyJi8gXuacJB0L2puHbK.png", alt="CDN user interface.", width="800", height="649" %}
 
 The net result is a process that not only absolves you of creating alternately encoded files and of manually fine-tuning your compression settings
 (or maintaining a system that does these tasks for you), but does away with the need to use `<picture>` and the `type` attribute to effectively

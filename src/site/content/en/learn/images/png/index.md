@@ -3,7 +3,7 @@ title: 'Image formats: PNG'
 authors:
   - matmarquis
 description: Find out when PNG is the best image format to choose.
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -24,7 +24,7 @@ In practical terms, the lack of substantial quantization and lossless compressio
 never result in a drop in visual quality. However, this almost invariably results in excessively large file sizes compared to
 more modern web-friendly encodings. The transfer size of a PNG means they are almost never the right choice for photographic content.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/asVXRCrgha5jMqCXwmn6.png", alt="Comparison of jpeg and png", width="800", height="446" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/asVXRCrgha5jMqCXwmn6.png", alt="Comparison of JPEG and PNG.", width="800", height="446" %}
 
 PNG was more commonplace in years past largely for a single use case, as the only raster encoding that supported semi-transparency.
 Today, PNG should only be considered for simple artwork that requires semi-transparency—a company logo containing a drop shadow,
@@ -34,7 +34,7 @@ Much like GIF, PNG was designed to solve use cases that are frequently better se
 For that reason, you'll sometimes see PNG used as the fallback version of UI elements in the vanishingly small number of browsers that don't
 support SVG, though these are increasingly rare.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GhNCZEadcuq93fPfuiQJ.png", alt="Png and svg comparison.", width="800", height="598" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/GhNCZEadcuq93fPfuiQJ.png", alt="PNG and SVG comparison.", width="800", height="598" %}
 
 In practical terms, PNG is a sound choice for maintaining a manageable-sized “canonical” version of a source image, saved in your
 local development environment or committed to a project repository in case future versions of that image need to be edited or re-saved

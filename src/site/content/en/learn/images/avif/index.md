@@ -3,7 +3,7 @@ title: 'Image formats: AVIF'
 authors:
   - matmarquis
 description: AV1 Image File Format (AVIF) is an encoding based on the open source AV1 video codec. 
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -48,7 +48,7 @@ the world. You shouldn't sacrifice a more resilient web for the sake of a more p
 For a long time, our single-minded friend `<img>` made it exceptionally difficult to use any new image format, no matter how promising
 it seemed. Remember, `<img>` only supported a single source file, and was hyper-optimized to transfer that file quickly—so quickly,
 in fact, that we couldn't intercept that request via JavaScript. Until recently, the only viable option was to serve all users the brand
-new type of image, and request one of the “legacy” formats when the browser fired an error—incurring a second file transfer after the first one was wasted.
+new type of image, and request one of the “legacy" formats when the browser fired an error—incurring a second file transfer after the first one was wasted.
 
 For that reason and more, `<img>` as it had existed for decades had to change. In the next module, [Responsive Images](/learn/images/responsive-images/), you'll learn about the
 features introduced to the HTML specification to address these issues and how to use them in your day-to-day work.

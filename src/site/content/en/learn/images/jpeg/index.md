@@ -3,20 +3,20 @@ title: 'Image formats: JPEG'
 authors:
   - matmarquis
 description: Learn about the most common image format on the web. 
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
 
 JPEG is the most common type of image used on the web, and with good reason: for decades, JPEG has almost invariably been the right choice for
-encoding photographs. The use case is right there in the name: “JPEG” stands for “Joint Photographic Experts Group,” the committee responsible
+encoding photographs. The use case is right there in the name: JPEG stands for "Joint Photographic Experts Group," the committee responsible
 for first issuing the standard in 1992. You'll see the file extension for a JPEG as either .jpg or .jpeg, though the latter is rare in modern usage.
 
 While lossless compression passively compresses image data as best it can, JPEG's _lossy_ compression looks for opportunities to make the compression
 more efficient with tiny, often imperceptible alterations to the image data. JPEG encodes image data as eight-by-eight blocks of pixels and describes the
 blocks—not the individual pixels inside them—algorithmically.
 
-It may sound like an academic distinction on paper: “GIF uses a grid made up of pixels versus JPEG uses a grid made up of smaller grids of pixels.”
+It may sound like an academic distinction on paper: "GIF uses a grid made up of pixels versus JPEG uses a grid made up of smaller grids of pixels."
 In practice, this use of blocks rather than pixels means JPEG is well suited to a much more common use case for images: the kind of subtle, layered
 gradients that make up a real world photograph.
 
@@ -32,34 +32,34 @@ Describing a gradient using JPEG-style encoding is much, much more efficient:
 
 > Block one is #00CC00. Block two is a gradient from #00CC00 to #005500.
 
-Where JPEG really shines is in quantizing the level of “high frequency” detail in an image, often imperceptibly. As a result,
+Where JPEG really shines is in quantizing the level of "high frequency" detail in an image, often imperceptibly. As a result,
 saving an image as a JPEG usually means reducing the quality of that image in ways that are measurable, but not necessarily _visible_.
-[As you've learned](gif), GIF-style palette quantization is a relatively simple operation: reducing the number of colors in an image results in
+[As you've learned](/learn/images/gif), GIF-style palette quantization is a relatively simple operation: reducing the number of colors in an image results in
 smaller files, but in a way that can be easy to spot with the human eye.
 
 JPEG, on the other hand, is clever about how quantization is performed: JPEG's lossy compression attempts to quantize an image
 source in a way that loosely matches the way our own psycho-visual systems quantize the world around us. In effect, JPEG tries to
 throw away details we weren't likely to see in the first place, so it can sneak additional compression past us.
 
-The human psycho-visual system does a great deal to “compress” the images you're constantly taking in. When I glance outside at my tiny garden,
+The human psycho-visual system does a great deal to "compress" the images you're constantly taking in. When I glance outside at my tiny garden,
 I can immediately process a huge amount of information: for example, individual brightly-colored flowers stand out. I register right away that the
 soil is a dusty gray, and the leaves are drooping—my plants need water. What I do _see_, but don't fully _process_, are the exact shape, size, angle,
 and shade of green for any of the individual dropping leaves. I can actively look for that level of detail of course, but it would simply be too much
 information to take in passively, and to no real benefit. So my psycho-visual system does a little quantization of its own, distilling that information
-to “the leaves are drooping.”
+to "the leaves are drooping."
 
 In effect, JPEG works the same way. JPEG's lossy compression reduces the level of detail in an image in a way that might not register at
-all to our naturally “lossy” psycho-visual systems, if done within reason—and introduces far more opportunities for bandwidth savings than
+all to our naturally "lossy" psycho-visual systems, if done within reason—and introduces far more opportunities for bandwidth savings than
 lossless compression alone.
 
 For example, JPEG takes advantage of one of our major psycho-visual weaknesses: our eyes are more sensitive to differences in brightness
-than differences in hue. Prior to applying any compression, JPEG uses a process called “discrete cosine transformation” to split the image into
-separate frequencies—“layers,” in a manner of speaking—representing _luminance_ (brightness) and _chrominance_ (color), or “luma” and “chroma.”
+than differences in hue. Prior to applying any compression, JPEG uses a process called "discrete cosine transformation" to split the image into
+separate frequencies—"layers," in a manner of speaking—representing _luminance_ (brightness) and _chrominance_ (color), or "luma" and "chroma."
 
 The luma layer is minimally compressed, discarding only small details that aren't likely noticeable to the human eye.
 
 The chroma layers are reduced significantly. Rather than simply quantizing the palette of the chroma layers like GIF, JPEG can perform a
-process called “subsampling” wherein a chroma layer is stored at a lower resolution. When recombined by effectively stretching the lower
+process called "subsampling" wherein a chroma layer is stored at a lower resolution. When recombined by effectively stretching the lower
 resolution chroma layers over the luma layer, the difference is often imperceptible. Slight differences in the hue might be noticeable if
 we compare the original image source and our JPEG side-by-side, but only when we know exactly what to look for.
 
@@ -74,8 +74,8 @@ those blocks can start to show.
 
 ## Progressive JPEG
 
-Progressive JPEG (PJPEG) effectively reorders the process of rendering a JPEG. “Baseline” JPEGs are rendered from top to
-bottom as the transfer progresses, while progressive JPEG breaks rendering into a set of full-sized “scans”—likewise done
+Progressive JPEG (PJPEG) effectively reorders the process of rendering a JPEG. "Baseline" JPEGs are rendered from top to
+bottom as the transfer progresses, while progressive JPEG breaks rendering into a set of full-sized "scans"—likewise done
 top-to-bottom—with each scan increasing the quality of the image. The entire image appears immediately, albeit blurry,
 and grows clearer as the transfer continues.
 
@@ -93,23 +93,23 @@ sensible default approach whenever encoding an image as JPEG.
 ## Using JPEG
 
 You might feel a little overwhelmed by all this information. There's good news for your day-to-day work, though: the more
-technical specifics of JPEG compression are abstracted away, instead exposed as a single “quality” setting: an integer from 0 to 100.
+technical specifics of JPEG compression are abstracted away, instead exposed as a single "quality" setting: an integer from 0 to 100.
 0 provides the smallest possible file size, and as you might expect, the worst possible visual quality. As you progress from 0 to 100 both
-the quality and the file size increase. This setting is subjective, of course—not every tool will interpret a value of “75” the same way, and
+the quality and the file size increase. This setting is subjective, of course—not every tool will interpret a value of "75" the same way, and
 perceptual quality always varies according to the content of the image.
 
 To understand how this compression setting works, let's use a common web-based tool for optimizing image files: [Squoosh](https://squoosh.app/).
 
 [Squoosh](https://squoosh.app/)—maintained by the Chrome team—provides a side-by-side comparison between different methods of encoding
-and configuring image outputs, with configuration options ranging from a 0-100 global “quality” slider, to the ability to fine-tune
-details of chrominance vs. luminance resampling. The lower the “quality” number, the higher the compression, and the smaller the resulting file will be.
+and configuring image outputs, with configuration options ranging from a 0-100 global "quality" slider, to the ability to fine-tune
+details of chrominance vs. luminance resampling. The lower the "quality" number, the higher the compression, and the smaller the resulting file will be.
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/17U3oSBnmzOXCvFPu0dV.png", alt="The Squoosh settings panel, with the quality slider highlighted.", width="800", height="783" %}
 
-Here, with the “quality” set to 60, the file size is reduced by 79%. Don't be fooled by the implications of this label: differences in
+Here, with the "quality" set to 60, the file size is reduced by 79%. Don't be fooled by the implications of this label: differences in
 quality across most of the scale will be imperceptible to the human eye, even when performing a side-by-side comparison.
 
-To convert your source image to a progressive JPEG, simply tick the box labeled “progressive rendering” under “advanced options.”
+To convert your source image to a progressive JPEG, simply tick the box labeled "progressive rendering" under "advanced options."
 Some of these configuration options are almost certainly a deeper dive than the average web project will require, but they can
 provide you with a closer look at how the things you've learned about JPEG encoding impact file size and quality in real world use cases.
 

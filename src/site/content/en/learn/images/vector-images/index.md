@@ -3,7 +3,7 @@ title: 'Vector images'
 authors:
   - matmarquis
 description: Learn about SVG, the vector image format used on the web. 
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -19,7 +19,7 @@ for the modern web.
 {% Codepen {
 user: 'web-dot-dev',
 id: 'WNKorKN',
-height: 300,
+height: 500,
 theme: dark,
 tab: 'html,result'
 } %}

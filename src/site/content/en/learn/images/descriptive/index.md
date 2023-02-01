@@ -3,7 +3,7 @@ title: 'Descriptive syntaxes'
 authors:
   - matmarquis
 description: Using srcset and sizes to provide the browser with information about image sources and how they'll be used.
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -29,7 +29,7 @@ Pixel is 1080 × 1920 pixels—that is, the number of hardware pixels that make 
 The ratio between a device's logical pixels and physical pixels is the _device pixel ratio_ for that display (DPR). DPR is
 calculated by dividing a viewport's CSS pixels by the device's actual screen resolution.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/2YTBM6TXRoEE2Q3XbFhX.png", alt="A DPR of 2 displayed in a console window", width="800", height="277" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/2YTBM6TXRoEE2Q3XbFhX.png", alt="A DPR of 2 displayed in a console window.", width="800", height="277" %}
 
 So, the original Pixel has a DPR of 2.6, while the Pixel 6 Pro has a DPR of 3.5.
 
@@ -38,7 +38,7 @@ double the logical resolution. Any device prior to the iPhone 4 had a DPR of 1: 
 
 If you view that `400px`-wide image on a display with a DPR of `2`, each logical pixel is being rendered across four of the
 display's physical pixels: two horizontal and two vertical. The image doesn't benefit from the high-density display—it will look the
-same as it would on a display with a DPR of `1`. Of course, anything “drawn” by the browser's rendering engine—text, CSS shapes, or SVGs,
+same as it would on a display with a DPR of `1`. Of course, anything "drawn" by the browser's rendering engine—text, CSS shapes, or SVGs,
 for example—will be drawn to suit the higher-density display. But as you learned from [Image Formats and Compression](/learn/images/raster-images/), raster images are fixed
 grids of pixels. While it may not always be glaringly obvious, a raster image upscaled to suit a higher-density display will look
 low-resolution compared to the surrounding page.
@@ -47,7 +47,7 @@ In order to prevent this upscaling, the image being rendered has to have an intr
 to fit a space in a layout 400 logical pixels wide, that 800-pixel image source has double the pixel density—on a display with a DPR of `2`,
 it'll look nice and sharp.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/IoJjwpreGIT7LwRThaWn.png", alt="Close up of a flower petal showing disparity in density", width="800", height="417" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/IoJjwpreGIT7LwRThaWn.png", alt="Close up of a flower petal showing disparity in density.", width="800", height="417" %}
 
 {% Codepen {
 user: 'web-dot-dev',
@@ -61,14 +61,13 @@ Since a display with a DPR of `1` can't make use of the increased density of an 
 display—and as you know, a _downscaled_ image will look just fine. On a low-density display, an image suitable for higher-density
 displays will look like any other low-density image.
 
-As you learned in [Images and Performance](#), a user with a low-density display viewing an image source scaled down to `400px`
+As you learned in [Images and Performance](/learn/images/performance-issues/), a user with a low-density display viewing an image source scaled down to `400px`
 will only _need_ a source with an inherent width of `400px`. While a much larger image would work for all users visually, a huge,
 high resolution image source rendered on a small, low density display will _look_ like any other small, low density image, but _feel_ far slower.
 
 As you might guess, _mobile_ devices with a DPR of 1 are [vanishingly rare](https://jakearchibald.com/2021/serving-sharp-images-to-high-density-screens/),
-though it is still [common in “desktop” browsing contexts](https://twitter.com/TimVereecke/status/1587878439729725442). According to data
-shared by [Matt Hobbs](https://nooshu.com), approximately 18% of  [GOV.UK](https://www.gov.uk/) browsing sessions from November 2022 report a DPR of 1. While h
-igh-density images would _look_ the way those users might expect, they'll come at a much higher bandwidth and processing cost—of
+though it is still [common in "desktop" browsing contexts](https://twitter.com/TimVereecke/status/1587878439729725442). According to data
+shared by [Matt Hobbs](https://nooshu.com), approximately 18% of  [GOV.UK](https://www.gov.uk/) browsing sessions from November 2022 report a DPR of 1. While high-density images would _look_ the way those users might expect, they'll come at a much higher bandwidth and processing cost—of
 particular concern to users on the older and less powerful devices still likely to have low-density displays.
 
 Using `srcset` ensures that only devices with high-resolution displays receive image sources large enough to look sharp, without passing that same
@@ -76,9 +75,9 @@ bandwidth cost along to users with lower-resolution displays.
 
 The `srcset` attribute identifies one or more comma-separated _candidates_ for rendering an image. Each candidate is made up of
 two things: a URL, just like you would use in `src`, and a syntax that _describes_ that image source. Each candidate in `srcset`
-is described by its inherent _width_ (“`w` syntax”) or intended _density_ (“`x` syntax”).
+is described by its inherent _width_ ("`w` syntax") or intended _density_ ("`x` syntax").
 
-The `x` syntax is a shorthand for “this source is appropriate for a display with this density”—a candidate followed by `2x` is
+The `x` syntax is a shorthand for "this source is appropriate for a display with this density"—a candidate followed by `2x` is
 appropriate for a display with a DPR of 2.
 
 ```html
@@ -95,7 +94,7 @@ associated source file would be suitable for use on a display with a DPR of 2—
 the browser how to use that source, just informs the browser how the source could be used. It's a subtle but important distinction: this
 is a double density _image_, not an image for use on a double density _display_.
 
-The difference between a syntax that says “this source is appropriate for `2x` displays” and one that says “use this source on `2x` displays”
+The difference between a syntax that says "this source is appropriate for `2x` displays" and one that says "use this source on `2x` displays"
 is slight in print, but display density is only one of a huge number of interlinked factors that the browser uses to decide on the candidate
 to render, only some of which you can know. For example: individually, it's possible for you to determine that a user has enabled a
 bandwidth-saving browser preference through the `prefers-reduced-data` media query, and use that to always opt users into low-density images
@@ -136,8 +135,8 @@ as a proxy for the upper bound of the `img` size, as it may occupy a horizontall
 provide the browser with this information and do it using markup. That is all we'll be able to use for these requests.
 
 Like `srcset`, `sizes` is intended to make information about an image available as soon as the markup is parsed. Just as the `srcset`
-attribute is shorthand for “here are the source files and their inherent sizes,” the `sizes` attribute is shorthand for “here
-is the size of the rendered image _in the layout_.” The way you describe the image is relative to the viewport—again, viewport
+attribute is shorthand for "here are the source files and their inherent sizes," the `sizes` attribute is shorthand for "here
+is the size of the rendered image _in the layout_." The way you describe the image is relative to the viewport—again, viewport
 size is the only layout information the browser has when the image request is made.
 
 That may sound a little convoluted in print, but it's far easier to understand in practice:
@@ -151,15 +150,15 @@ That may sound a little convoluted in print, but it's far easier to understand i
 ```
 
 Here, this `sizes` value informs the browser that the space in our layout that the `img` occupies has a width of `80vw`—80% of
-the viewport. Remember, this isn't an _instruction_, but a description of the image's size in the page layout. It doesn't say “make this
-image occupy 80% of the viewport,” but “this image will end up occupying 80% of the viewport once the page has rendered.”
+the viewport. Remember, this isn't an _instruction_, but a description of the image's size in the page layout. It doesn't say "make this
+image occupy 80% of the viewport," but "this image will end up occupying 80% of the viewport once the page has rendered."
 
 {% Codepen {
 user: 'web-dot-dev',
 id: 'PoBWLYP',
-height: 300,
+height: 500,
 theme: dark,
-tab: 'html,css,result'
+tab: 'html,result'
 } %}
 
 As a developer, your job is done. You've accurately described a list of candidate sources in `srcset` and the width of your image
@@ -171,7 +170,7 @@ a user's browser makes upon encountering this markup:
 You've informed the browser that this image will take up 80% of the available viewport—so, if we were to render this `img` on a
 device with a 1000-pixel-wide viewport, this image will occupy 800 pixels. The browser will then take that value and divide against
 it the widths of each of the image source candidates we specified in `srcset`. The smallest source has an inherent size of 600 pixels,
-so: 600 ÷ 800 = .75. Our medium image is 1200 pixels wide: 1200 ÷ 800 = 1.5. Our largest image is 2000 pixels wide: 2000 ÷ 800 = 2.5.
+so: 600÷800=.75. Our medium image is 1200 pixels wide: 1200÷800=1.5. Our largest image is 2000 pixels wide: 2000÷800=2.5.
 
 The results of those calculations (`.75`, `1.5`, and `2.5`) are, effectively, DPR options _specifically tailored to the user's
 viewport size_. Since the browser also has information on the user's display density at hand, it makes a series of decisions:
@@ -228,9 +227,9 @@ smaller viewports, it occupies the full width of the viewport.
 {% Codepen {
 user: 'web-dot-dev',
 id: 'RwBoYRx',
-height: 300,
+height: 500,
 theme: dark,
-tab: 'html,css,result'
+tab: 'html,result'
 } %}
 
 If the user's viewport is greater than 1200px, `calc(80vw - 2em)` describes the width of the image in our layout. If the
@@ -248,12 +247,12 @@ media condition tied to this value, `100vw` is used as a  default. If you were t
 {% Codepen {
 user: 'web-dot-dev',
 id: 'BaPQOzO',
-height: 300,
+height: 500,
 theme: dark,
-tab: 'html,css,result'
+tab: 'html,result'
 } %}
 
-In plain language: “does `(max-width: 1200px)` match? If not, move on. The next value—`calc(80vw - 2em)`—has no qualifying condition,
+In plain language: "does `(max-width: 1200px)` match? If not, move on. The next value—`calc(80vw - 2em)`—has no qualifying condition,
 so this is the one selected.
 
 Now that you've provided the browser with all this information about your `img` element—potential sources,  inherent widths,
@@ -270,14 +269,14 @@ to your phone, or using a shaky airplane wifi connection—you might want to opt
 the quality of your display.
 
 Leaving the final say to the browser allows for far more performance improvements than we could manage with a strictly prescriptive
-syntax. For example: in most browsers, an `img` using the `srcset`/`sizes` syntax will never bother requesting a source with smaller
+syntax. For example: in most browsers, an `img` using the `srcset` or `sizes` syntax will never bother requesting a source with smaller
 dimensions than one that the user already has in their browser's cache. What would be the point in making a new request for a source
 that would look identical, when the browser can seamlessly downscale the image source it already has? But if the user scales their
 viewport up to the point where a new image is needed in order to avoid upscaling, _that_ request will still get made, so everything
 looks the way you expect.
 
 That lack of explicit control can sound a little scary at face value, but because you're using source files with identical
-content, we're no more likely to present users with a “broken” experience than we would with a single-source `src`, regardless of
+content, we're no more likely to present users with a "broken" experience than we would with a single-source `src`, regardless of
 the decisions made by the browser.
 
 ## Using `sizes` and `srcset`

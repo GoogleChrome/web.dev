@@ -3,7 +3,7 @@ title: 'Responsive images'
 authors:
   - matmarquis
 description: A deep dive into responsive images.
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -36,7 +36,7 @@ With a prescriptive syntax, you tell the browser what to do—what source to sel
 common as "just load the most efficient asset to render this image," it allows us to provide usage instructions to the browser to account for
 information it doesn't have prior to the transfer of assets, such as the content of the sources or their formats.
 
-While `srcset`/`sizes` provide you with a syntax for passing information along to the user's browser and allowing it to make decisions about
+While `srcset` and `sizes` provide you with a syntax for passing information along to the user's browser and allowing it to make decisions about
 image sources, there are times when you'll need explicit control over which source file is presented and when. For example, you might
 want to display versions of the same image content with different aspect ratios, based on different design treatments across layout breakpoints,
 or make sure only browsers with support for a specific encoding receive specific sources.

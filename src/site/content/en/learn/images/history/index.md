@@ -3,7 +3,7 @@ title: 'A brief history of images on the web'
 authors:
   - matmarquis
 description: A history of images on the web, starting with the image element in 1993
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -19,7 +19,7 @@ user: 'web-dot-dev',
 id: 'jOpVPJa',
 height: 300,
 theme: dark,
-tab: 'html,css,result'
+tab: 'html,result'
 } %}
 
 For most of web development history, working with images didn't get much more complicated than that. And, despite the modern
@@ -43,9 +43,9 @@ to make informed decisions about how to render the reduced image, and can do so 
 {% Codepen {
 user: 'web-dot-dev',
 id: 'YzjpXBP',
-height: 300,
+height: 500,
 theme: dark,
-tab: 'html,css,result'
+tab: 'result'
 } %}
 
 You wouldn't typically want to _upscale_ an image—that is, render the `<img>` at a size larger than the intrinsic size of the source image.
@@ -54,9 +54,9 @@ The displayed image would appear blurry and grainy-looking.
 {% Codepen {
 user: 'web-dot-dev',
 id: 'XWBNbOx',
-height: 300,
+height: 500,
 theme: dark,
-tab: 'html,css,result'
+tab: 'result'
 } %}
 
 Using `img { max-width: 100% }` means that as a flexible container resizes, images will be downscaled as appropriate.
@@ -67,9 +67,9 @@ compression, and never scale images upwards.
 {% Codepen {
 user: 'web-dot-dev',
 id: 'gOjLpEM',
-height: 300,
+height: 500,
 theme: dark,
-tab: 'html,css,result'
+tab: 'css,result'
 } %}
 
 But as simple and effective as this approach was visually, it came at a huge performance cost. As `<img>` only supported a
@@ -92,9 +92,9 @@ rendered at double the pixel density:
 {% Codepen {
 user: 'web-dot-dev',
 id: 'QWBKrjX',
-height: 300,
+height: 700,
 theme: dark,
-tab: 'html,css,result'
+tab: 'css,result'
 } %}
 
 A single source image, cut to suit the largest possible space in your layout and high-density displays, works for all users _visually_,

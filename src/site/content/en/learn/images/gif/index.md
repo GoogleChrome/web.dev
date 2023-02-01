@@ -3,7 +3,7 @@ title: 'Image formats: GIF'
 authors:
   - matmarquis
 description: Understand the GIF image format, along with an explanation of how image encoding works. 
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -44,7 +44,7 @@ To better understand this process, think back to the raster image grid you were 
 
 This time around, add a little more detail to that original image: a few more pixels, one of which is a slightly darker shade of blue:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/m9BkyRb7yy1zLBlvlHka.png", alt="Blue to red horizontal boxes in a two-by-four configuration, with one blue box shaded darker than the others", width="752", height="400" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/m9BkyRb7yy1zLBlvlHka.png", alt="Blue to red horizontal boxes in a two-by-four configuration, with one blue box shaded darker than the others.", width="752", height="400" %}
 
 Absent any compression—so to speak—you could describe this grid as:
 
@@ -58,7 +58,7 @@ This manages to condense the pixel-by-pixel description in a few places (“colu
 few characters by defining the repeated colors in a dictionary, of sorts, up front. There's no change to the visual fidelity.
 The information has been compressed without any loss.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/nNmCqD5iYi1QEEbDeL4M.png", alt="Blue to red horizontal boxes", width="752", height="400" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/nNmCqD5iYi1QEEbDeL4M.png", alt="Blue to red horizontal boxes.", width="752", height="400" %}
 
 As you can see, however, the single dark blue pixel is having an outsized impact on the size of our encoding. If I were to
 limit myself to a quantized color palette, it could be reduced much further:
@@ -67,7 +67,7 @@ limit myself to a quantized color palette, it could be reduced much further:
 
 The unfortunate end result of those saved bytes is that you've lost pixel-perfection.
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ZW6SBDsulfvJxC3iZRqd.png", alt="Blue to red horizontal boxes", width="752", height="400" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ZW6SBDsulfvJxC3iZRqd.png", alt="Blue to red horizontal boxes.", width="752", height="400" %}
 
 Of course, you, the rendering engine, don't know that—the detail of the darker blue pixel was left out of how I encoded my source image.
 You've rendered the image exactly as I've encoded it, based on our shared understanding of the colors we have at hand.
@@ -77,7 +77,7 @@ more detailed image the effects might not be quite as noticeable, but they would
 
 When encoded as a GIF, subtle gradients like shadows become mottled, with individual pixels standing out from their surroundings:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ncTFXA6KsRGAK7Rdvyoi.png", alt="Pink flowers on a green background", width="800", height="595" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ncTFXA6KsRGAK7Rdvyoi.png", alt="Pink flowers on a green background.", width="800", height="595" %}
 
 In practice, the combination of lossless compression and palette quantization means that GIF isn't very useful in modern
 web development. Lossless compression doesn't do enough to reduce file sizes, and a reduced palette means an obvious reduction in quality.

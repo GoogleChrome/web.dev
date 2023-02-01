@@ -3,7 +3,7 @@ title: 'Site Generators, frameworks, and CMSs'
 authors:
   - matmarquis
 description: Discover how CMSs such as WordPress, and other site generators can make it easier to use responsive images.
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -95,9 +95,9 @@ then `import` your images as objects:
   import imageAVIF from 'img/butterfly.jpg?sizes[]=400,sizes[]=800,sizes[]=1000&format=avif';
   import imageWebP from 'img/butterfly.jpg?sizes[]=400,sizes[]=800,sizes[]=1000&format=webp';
   import imageDefault from 'img/butterfly.jpg?sizes[]=400,sizes[]=800,sizes[]=1000';
-````
+```
 
-These imported images can then be used through abstractions like [React’s Image component](https://reactnative.dev/docs/image), or to populate your responsive 
+These imported images can then be used through abstractions like [React's Image component](https://reactnative.dev/docs/image), or to populate your responsive 
 image markup directly:
 
 ```html
@@ -113,6 +113,7 @@ image markup directly:
     loading="lazy"
   />
 ```
+
 A framework that does client side rendering is a strong candidate for [Lazysizes](https://www.npmjs.com/package/lazysizes) and `sizes="auto"`—giving you almost fully
 automated responsive images.
 

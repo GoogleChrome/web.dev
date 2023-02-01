@@ -4,7 +4,7 @@
 # are, it will give them a "New" badge. However, when you first launch a course
 # you don't want every entry to have a "New" badge, so anything that existed
 # on or before this date will not receive the "New" badge.
-date: 2022-01-31
+date: 2022-02-01
 url: /learn/images/
 draft: false
 title: i18n.courses.learn_images.title

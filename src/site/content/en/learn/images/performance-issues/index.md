@@ -3,7 +3,7 @@ title: 'Key performance issues'
 authors:
   - matmarquis
 description: Learn ways to ensure that your image requests are as small and performant as possible. 
-date: 2023-01-31
+date: 2023-02-01
 tags:
   - images
 ---
@@ -80,9 +80,9 @@ of high CLS scores.
 {% Codepen {
 user: 'web-dot-dev',
 id: 'NWBbxqo',
-height: 300,
+height: 500,
 theme: dark,
-tab: 'html,css,result'
+tab: 'css,result'
 } %}
 
 Thanks to relatively recent changes in modern browsers, it's easier than you might think to avoid high CLS scores due to images.
@@ -142,7 +142,7 @@ user: 'web-dot-dev',
 id: 'YzjpwyE',
 height: 300,
 theme: dark,
-tab: 'html,css,result'
+tab: 'html,result'
 } %}
 
 It's important to note that there's no downside to this approach, as it leans on long-established browser behavior—any browser
