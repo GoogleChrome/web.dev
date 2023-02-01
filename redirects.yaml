@@ -767,7 +767,31 @@ redirects:
   - source: /works-offline
     destination: https://developer.chrome.com/docs/lighthouse/pwa/works-offline/
 
-# Redirects for blogs
+  # CrUX guides
+  - source: /chrome-ux-report-api/
+    destination: https://developer.chrome.com/blog/chrome-ux-report-api/
+  - source: /chrome-ux-report-bigquery/
+    destination: https://developer.chrome.com/blog/chrome-ux-report-bigquery/
+  - source: /chrome-ux-report-data-studio-dashboard/
+    destination: https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/
+  - source: /i18n/es/chrome-ux-report-data-studio-dashboard/
+    destination: https://developer.chrome.com/blog/es/chrome-ux-report-looker-studio-dashboard/
+  - source: /i18n/es/chrome-ux-report-data-studio-dashboard/
+    destination: https://developer.chrome.com/blog/es/chrome-ux-report-looker-studio-dashboard/
+  - source: /i18n/ja/chrome-ux-report-data-studio-dashboard/
+    destination: https://developer.chrome.com/blog/ja/chrome-ux-report-looker-studio-dashboard/
+  - source: /i18n/ko/chrome-ux-report-data-studio-dashboard/
+    destination: https://developer.chrome.com/blog/ko/chrome-ux-report-looker-studio-dashboard/
+  - source: /i18n/pt/chrome-ux-report-data-studio-dashboard/
+    destination: https://developer.chrome.com/blog/pt/chrome-ux-report-looker-studio-dashboard/
+  - source: /i18n/ru/chrome-ux-report-data-studio-dashboard/
+    destination: https://developer.chrome.com/blog/ru/chrome-ux-report-looker-studio-dashboard/
+  - source: /i18n/zh/chrome-ux-report-data-studio-dashboard/
+    destination: https://developer.chrome.com/blog/zh/chrome-ux-report-looker-studio-dashboard/
+  - source: /chrome-ux-report-pagespeed-insights/
+    destination: https://developer.chrome.com/blog/chrome-ux-report-pagespeed-insights/
+
+  # Redirects for blogs
   - source: /blog/native-hardware-click-to-call
     destination: /blog/click-to-call
   - source: /blog/native-hardware-device-orientation

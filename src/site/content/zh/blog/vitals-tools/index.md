@@ -79,7 +79,7 @@ PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/sp
 
 开发者可以查询域或 URL，并按不同的形式因素对结果进行细分。 API 会每日更新并汇总前 28 天的数据（与每月汇总的 BigQuery 数据集不同）。这款 API 也拥有充足的公共 API 配额，与另一个 PageSpeed Insights API 相同（每日 25,000 个请求）。
 
-下方是使用 CrUX API 来将各项核心 Web 指标可视化的[演示](/chrome-ux-report-api/)，其中的数据分布为**良好**、**需要改进**和**欠佳**：
+下方是使用 CrUX API 来将各项核心 Web 指标可视化的[演示](https://developer.chrome.com/blog/chrome-ux-report-api/)，其中的数据分布为**良好**、**需要改进**和**欠佳**：
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="显示多项核心 Web 指标的 Chrome 用户体验报告演示", width="800", height="523" %}</figure>
 
@@ -87,7 +87,7 @@ PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/sp
 
 **改进后的 CrUX 仪表板**
 
-新近重新设计的 [CrUX 仪表板](http://g.co/chromeuxdash)使您能够轻松跟踪域的性能随时间的变化，现在您还可以使用新的仪表板来监控所有核心 Web 指标的分布。要想上手使用仪表板，请查看我们在 web.dev 上的[教程](/chrome-ux-report-data-studio-dashboard/)。
+新近重新设计的 [CrUX 仪表板](http://g.co/chromeuxdash)使您能够轻松跟踪域的性能随时间的变化，现在您还可以使用新的仪表板来监控所有核心 Web 指标的分布。要想上手使用仪表板，请查看我们在 web.dev 上的[教程](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/)。
 
 <figure>{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="Chrome 用户体验报告仪表板在新着陆页面中显示核心 Web 指标", width="800", height="497" %}</figure>
 

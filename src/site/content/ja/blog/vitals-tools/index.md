@@ -77,7 +77,7 @@ PageSpeed Insights や [PageSpeed Insights API](https://developers.google.com/sp
 
 開発者はオリジンや URL でクエリを行なったり、様々な規格ごとに結果をセグメント化したりすることができます。API は毎日更新され、過去 28 日分のデータが集約されます (月単位で集計される BigQuery のデータセットとは異なります)。また、この API には Google が提供するもう 1 つの API である PageSpeed Insights API と同様の緩やかなパブリック API クォータ (1 日あたり 25,000 リクエスト) が設定されています。
 
-以下は、CrUX API を使用して Core Web Vitals の指標を**良い**、**改善が必要**、**悪い**の分布で可視化した[デモ](/chrome-ux-report-api/)です。
+以下は、CrUX API を使用して Core Web Vitals の指標を**良い**、**改善が必要**、**悪い**の分布で可視化した[デモ](https://developer.chrome.com/blog/chrome-ux-report-api/)です。
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Core Web Vitals の指標を表示している Chrome User Experience Report API のデモ", width="800", height="523" %}</figure>
 
@@ -85,7 +85,7 @@ PageSpeed Insights や [PageSpeed Insights API](https://developers.google.com/sp
 
 **新しくなった CrUX ダッシュボード**
 
-新しくデザインされた [CrUX ダッシュボード](http://g.co/chromeuxdash)ではオリジンのパフォーマンスを時系列で簡単に追跡することができ、すべての Core Web Vitals 指標の分布を監視できるようにもなりました。ダッシュボードの使用を開始するには、web.dev の「[Tutorial](/chrome-ux-report-data-studio-dashboard/) (チュートリアル)」を参照してください。
+新しくデザインされた [CrUX ダッシュボード](http://g.co/chromeuxdash)ではオリジンのパフォーマンスを時系列で簡単に追跡することができ、すべての Core Web Vitals 指標の分布を監視できるようにもなりました。ダッシュボードの使用を開始するには、web.dev の「[Tutorial](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/) (チュートリアル)」を参照してください。
 
 <figure>{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="新しいランディング ページで Core Web Vitals の指標を表示している Chrome UX Report ダッシュボード", width="800", height="497" %}</figure>
 

@@ -48,7 +48,7 @@ handled for you under the hood. The dashboard shows the distribution of user
 experiences, as captured by key performance metrics, and how it changes over
 time. It also shows how the distributions of qualitative metrics like device
 type and effective connection type change over time. Try the
-[Data Studio Dashboard guide](/chrome-ux-report-data-studio-dashboard).
+[Data Studio Dashboard guide](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard).
 
 ### PageSpeed Insights
 
@@ -60,7 +60,7 @@ data (as opposed to the previous calendar month on BigQuery). Using this tool is
 as easy as entering a URL or origin in the search box on the web interface, and
 the field performance data is displayed alongside prescriptive suggestions to
 optimize the page. Try the
-[PageSpeed Insights guide](/chrome-ux-report-pagespeed-insights).
+[PageSpeed Insights guide](https://developer.chrome.com/blog/chrome-ux-report-pagespeed-insights).
 
 ### CrUX on BigQuery
 
@@ -73,11 +73,11 @@ for specific insights. BigQuery requires knowledge of SQL and a GCP project with
 billing enabled to run the queries. This is an especially useful tool for power
 users who require low-level access to the data to create custom reports,
 benchmarks, and reports about the state of the web. Try the
-[BigQuery guide](/chrome-ux-report-bigquery).
+[BigQuery guide](https://developer.chrome.com/blog/chrome-ux-report-bigquery).
 
 ### CrUX API
 
-The CrUX API is a free and RESTful interface for looking up origin or URL-level user experience data. The data is updated daily and aggregates the previous 28 days of data, similar to PageSpeed Insights. You can use this API to build your own applications on top of the real-user experience data in CrUX. Try the [CrUX API](/chrome-ux-report-api) guide.
+The CrUX API is a free and RESTful interface for looking up origin or URL-level user experience data. The data is updated daily and aggregates the previous 28 days of data, similar to PageSpeed Insights. You can use this API to build your own applications on top of the real-user experience data in CrUX. Try the [CrUX API](https://developer.chrome.com/blog/chrome-ux-report-api) guide.
 
 ## How to get help
 
@@ -97,7 +97,7 @@ To get more acquainted with the available data, walk through
 step-by-step guides for using BigQuery, Data Studio Dashboard, and PageSpeed
 Insights:
 
-- [CrUX: Data Studio Dashboard](/chrome-ux-report-data-studio-dashboard)
-- [CrUX: PageSpeed Insights](/chrome-ux-report-pagespeed-insights)
-- [CrUX: BigQuery](/chrome-ux-report-bigquery)
-- [CrUX: API](/chrome-ux-report-api)
+- [CrUX: Data Studio Dashboard](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard)
+- [CrUX: PageSpeed Insights](https://developer.chrome.com/blog/chrome-ux-report-pagespeed-insights)
+- [CrUX: BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery)
+- [CrUX: API](https://developer.chrome.com/blog/chrome-ux-report-api)

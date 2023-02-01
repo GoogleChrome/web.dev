@@ -127,7 +127,7 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 **准则**：
 
-- 在最常见的用户移动设备和网络连接上测试负载性能。您可以使用 [Chrome 用户体验报告](/chrome-ux-report/)来了解用户的[连接分布](/chrome-ux-report-data-studio-dashboard/#using-the-dashboard)。如果数据不适用于您的站点，[移动经济 2019](https://www.gsma.com/mobileeconomy/) 建议的理想全球标准是中端 Android 手机，例如 Moto G4 和速度较慢的 3G 网络（定义的 RTT 为 400 毫秒，传输速度为 400 kbps）。[WebPageTest](https://www.webpagetest.org/easy) 上提供了这一组合。
+- 在最常见的用户移动设备和网络连接上测试负载性能。您可以使用 [Chrome 用户体验报告](/chrome-ux-report/)来了解用户的[连接分布](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/#using-the-dashboard)。如果数据不适用于您的站点，[移动经济 2019](https://www.gsma.com/mobileeconomy/) 建议的理想全球标准是中端 Android 手机，例如 Moto G4 和速度较慢的 3G 网络（定义的 RTT 为 400 毫秒，传输速度为 400 kbps）。[WebPageTest](https://www.webpagetest.org/easy) 上提供了这一组合。
 
 - 请记住，尽管您的典型移动用户的设备可能声称它使用的是 2G、3G 或 4G 连接，但实际上，由于数据包丢失和网络差异，[有效连接速度](/adaptive-serving-based-on-network-quality/#how-it-works)通常要慢得多。
 
