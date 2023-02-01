@@ -19,6 +19,14 @@ const pagesToTest = [
     url: '/handbook/content-types/example-post/',
     name: 'Post example',
   },
+  {
+    url: '/handbook/content-types/example-pattern-set/',
+    name: 'Pattern-set page example',
+  },
+  {
+    url: '/handbook/content-types/example-pattern/',
+    name: 'Pattern page example',
+  },
 ];
 
 // A script to navigate our app and take snapshots with Percy.
