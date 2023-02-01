@@ -2,7 +2,7 @@
 title: Example Section
 authors:
   - cariefisher
-description: This page is used for visual testing of the courses layout and also showcases it's capabilities
+description: This page is used for visual testing of the courses layout and also showcases its capabilities
 date: 2023-01-17
 ---
 
