@@ -6,7 +6,7 @@ imageType: 'round'
 title: Authors
 renderData:
   title: Sample item page
-  description: This page is used for visual testing of the item-page layout and also showcases it's capabilities
+  description: This page is used for visual testing of the item-page layout and also showcases its capabilities
   rss: /authors/aaronleventhal/feed.xml
 paged:
   homepage: /handbook/content-types/example-item-page/
