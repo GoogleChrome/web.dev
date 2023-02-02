@@ -121,8 +121,8 @@ for a complete list. More file types may be added in the future.
 
 ## Sharing in third-party iframes
 
-If you want to trigger the share action from within a third-party iframe,
-you need to embed the iframe with the `allow` attribute with a value of `web-share`:
+To trigger the share action from within a third-party iframe,
+embed the iframe with the `allow` attribute with a value of `web-share`:
 
 ```html
 <!-- On https://example.com/index.html -->
