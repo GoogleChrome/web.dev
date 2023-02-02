@@ -371,7 +371,7 @@ Finally, if your LCP resource is small, it may make sense to inline the resource
 
 The goal of this step is to deliver the initial HTML as quickly as possible. This step is listed last because it's often the one developers have the least control over. However, it's also one of the most important steps because it directly affects every step that comes after it. Nothing can happen on the frontend until the backend delivers that first byte of content, so anything you can do to speed up your TTFB will improve every other load metric as well.
 
-For specific guidance on this topic, see: [How to improve TTFB](/ttfb/#how-to-improve-ttfb).
+For specific guidance on this topic, see [Optimize TTFB](/optimize-ttfb/).
 
 ## Monitor LCP breakdown in JavaScript
 
