@@ -4,7 +4,7 @@ subhead: Web apps can use the same system-provided share capabilities as platfor
 authors:
   - joemedley
 date: 2019-11-08
-updated: 2022-03-30
+updated: 2023-02-02
 hero: image/admin/ruvEms3AeSZvlEI01DKo.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
