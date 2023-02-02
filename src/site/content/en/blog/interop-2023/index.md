@@ -32,7 +32,7 @@ This time around, we have no less than 26 focus areas, outlined in detail in our
 - [CSS Pseudo-classes](https://developer.mozilla.org/docs/Web/CSS/Pseudo-classes)
 - [Custom Properties in CSS](https://developer.mozilla.org/docs/Web/CSS/@property)
 - [Flexbox](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Flexbox)
-- [Fonts](https://developer.mozilla.org/docs/Web/CSS/font-palette)
+- [Font feature detection](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#function_syntax) and [palettes](https://developer.mozilla.org/docs/Web/CSS/font-palette)
 - [Forms](https://developer.mozilla.org/docs/Web/HTML/Element/form)
 - [Grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)
 - [:has()](https://developer.mozilla.org/docs/Web/CSS/:has )
