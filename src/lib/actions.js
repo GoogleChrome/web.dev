@@ -115,7 +115,8 @@ export const requestFetchReports = store.action((_, url, startDate) => {
  */
 const disablePage = () => {
   // Setting the majority of the page as inert can have a significant perf hit when
-  // trying to animate e.g. the navigation drawer, so do it in the frame after this.
+  // trying to animate e.g. the navigation drawer, so do it in the frame after this
+  // to avoid blocking on interaction and incurring an INP delay.
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       const main = document.querySelector('main');
