@@ -380,4 +380,3 @@ Now, head over to the last testing module focused on
 [assistive technology testing](/learn/accessibility/test-assistive-technology/).
 
 {% Assessment 'manual' %}
- %}
