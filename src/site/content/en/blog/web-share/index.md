@@ -43,9 +43,10 @@ way as platform-specific apps.
 
 Web share has the following capabilities and limitations:
 * It can only be used on a site that is [accessed via HTTPS](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features).
+* If the share happens in a third-party iframe, the `allow` attribute must be used.
 * It must be invoked in response to a user action such as a click. Invoking it
   through the `onload` handler is impossible.
-* It can share, URLs, text, or files.
+* It can share URLs, text, or files.
 
 {% BrowserCompat 'api.Navigator.share' %}
 
@@ -117,6 +118,21 @@ The data object passed to `canShare()` only supports the `files` property.
 Certain types of audio, image, pdf, video, and text files can be shared.
 See [Permitted File Extensions in Chromium](https://docs.google.com/document/d/1tKPkHA5nnJtmh2TgqWmGSREUzXgMUFDL6yMdVZHqUsg/edit?usp=sharing)
 for a complete list. More file types may be added in the future.
+
+## Sharing in third-party iframes
+
+If you want to trigger the share action from within a third-party iframe,
+you need to embed the iframe with the `allow` attribute with a value of `web-share`:
+
+```html
+<!-- On https://example.com/index.html -->
+<iframe allow="web-share" src="https://third-party.example.com/iframe.html"></iframe>
+```
+
+You can see this in action in a [demo on Glitch](https://web-share-in-third-party-iframe.glitch.me/)
+and view the [source code](https://glitch.com/edit/#!/web-share-in-third-party-iframe?path=index.html%3A17%3A44).
+Failing to provide the attribute will result in a `NotAllowedError` with the message
+`Failed to execute 'share' on 'Navigator': Permission denied`.
 
 ## Santa Tracker case study
 
