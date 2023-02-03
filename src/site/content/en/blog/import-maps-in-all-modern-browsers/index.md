@@ -1,11 +1,12 @@
 ​​---
 title: JavaScript import maps are now supported cross-browser
 subhead: >
- With import maps, importing ES modules now becomes a lot better.
+  With import maps, importing ES modules now becomes a lot better.
 date: 2022-12-07
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/7WzXtb7u4gPnFnjLip2b.jpg
 alt: Accurately lined up containers.
-author: thomassteiner
+authors:
+  - thomassteiner
 tags:
   - blog
   - newly-interoperable
