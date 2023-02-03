@@ -187,7 +187,7 @@ site in order to prevent HTTP being used as [a weak
 channel](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8).
 The older concept of "same-site" without scheme comparison is now called
 "schemeless same-site". For example, `http://www.example.com` and
-`https://www.example.com` are considered schemelses same-site but not same-site,
+`https://www.example.com` are considered schemeless same-site but not same-site,
 because only the eTLD+1 part matters and the scheme is not taken into account.
 
 <div class="table-wrapper">
