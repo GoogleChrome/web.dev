@@ -5,7 +5,8 @@ subhead: >
 date: 2022-12-07
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/wh2VQyIaAgf3TolWMePH.jpg
 alt: The word push written in mirrored letters.
-author: thomassteiner
+authors:
+  - thomassteiner
 tags:
   - blog
   - newly-interoperable
