@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Using the CrUX Dashboard on Data Studio
+title: Using the CrUX Dashboard on Looker Studio
 authors:
   - rviscomi
 hero: image/admin/k3hWnnwqTvg7w7URsbIK.png
 description: |
-  Data Studio is a powerful data visualization tool that enables you to build
+  Looker Studio is a powerful data visualization tool that enables you to build
   dashboards on top of big data sources, like the Chrome UX Report. In this
   guide, learn how to create your own custom CrUX Dashboard to track an origin's
   user experience.
@@ -17,7 +17,7 @@ tags:
   - chrome-ux-report
 ---
 
-[Data Studio](https://marketingplatform.google.com/about/data-studio/) is a
+[Looker Studio](https://marketingplatform.google.com/about/data-studio/) is a
 powerful data visualization tool that enables you to build dashboards on top of
 big data sources, like the [Chrome UX Report](https://developer.chrome.com/docs/crux/)
 (CrUX). In this guide, learn how to create your own custom CrUX Dashboard to
@@ -25,11 +25,11 @@ track an origin's user experience trends.
 
 {% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598" %}
 
-The CrUX Dashboard is built with a Data Studio feature called [Community
+The CrUX Dashboard is built with a Looker Studio feature called [Community
 Connectors](https://developers.google.com/datastudio/connector/).
 This connector is a pre-established link between the raw CrUX data on
 [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report)
-and the visualizations of Data Studio. It eliminates the need for users of the
+and the visualizations of Looker Studio. It eliminates the need for users of the
 dashboard to write any queries or generate any charts. Everything is built for
 you; all you need is to provide an origin and a custom dashboard will be
 generated for you.
@@ -143,7 +143,7 @@ previous month. For this origin, "good" LCP experiences fell by 3.2% to 56.04%
 month-over-month.
 
 {% Aside 'caution' %}
-Due to a quirk with Data Studio, you may sometimes see `No Data` here. This is
+Due to a quirk with Looker Studio, you may sometimes see `No Data` here. This is
 normal and due to the previous month's release not being available until the
 second Tuesday.
 {% endAside %}
@@ -229,7 +229,7 @@ only given as "good", "needs improvement", and "poor", as opposed to the full
 histograms. The CrUX Dashboard also provides data at a global level, while the
 BigQuery dataset allows you to zoom in on particular countries.
 
-### Where can I learn more about Data Studio?
+### Where can I learn more about Looker Studio?
 
-Check out the [Data Studio features page](https://marketingplatform.google.com/about/data-studio/features/)
+Check out the [Looker Studio features page](https://marketingplatform.google.com/about/data-studio/features/)
 for more info.
