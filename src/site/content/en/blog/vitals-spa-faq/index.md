@@ -38,7 +38,7 @@ limitations in the web platform), we are [actively working on closing those
 gaps](#what-is-google-doing-to-ensure-mpas-do-not-have-an-unfair-advantage-compared-to-spas).
 
 {% Aside %}
-Update: The work is anow available for sites to experiment with. See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more details.
+Update: The work is now available for sites to experiment with. See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more details.
 {% endAside %}
 
 
