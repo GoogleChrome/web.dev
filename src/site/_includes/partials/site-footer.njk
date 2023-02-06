@@ -2,82 +2,74 @@
 
 <footer class="site-footer" role="contentinfo">
   <nav class="site-footer__primary-nav auto-grid" aria-label="footer navigation">
-    <div class="site-footer__primary-nav-content">
-      <a href="/" class="site-footer__brand brand">
-        {{ svg('../../images/logo.svg', {label: 'web.dev'}) }}
-      </a>
-      <p class="text-size-0">We want to help you build beautiful, accessible, fast, and secure websites that work cross-browser, and for all of your users. This site is our home for content to help you on that journey, written by members of the Chrome team, and external experts.</p>
+    <div>
+      <h3 class="text-size-2 color-mid-text">Contribute</h3>
+      <ul class="w-footer__linkbox-list" role="list">
+        <li>
+          <a href="https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=bug&template=bug_report.md&title="
+            data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            {{ 'i18n.footer.file_a_bug' | i18n(locale) }}
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/googlechrome/web.dev"
+            data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            {{ 'i18n.footer.view_source' | i18n(locale) }}
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="site-footer__primary-nav-links auto-grid">
-      <div>
-        <h3 class="text-size-2 color-mid-text">Contribute</h3>
-        <ul class="w-footer__linkbox-list" role="list">
+    <div>
+      <h3 class="text-size-2 color-mid-text">{{ 'i18n.footer.related_content' | i18n(locale) }}</h3>
+      <ul class="w-footer__linkbox-list" role="list">
           <li>
-            <a href="https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=bug&template=bug_report.md&title="
-              data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
-              {{ 'i18n.footer.file_a_bug' | i18n(locale) }}
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/googlechrome/web.dev"
-              data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
-              {{ 'i18n.footer.view_source' | i18n(locale) }}
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-size-2 color-mid-text">{{ 'i18n.footer.related_content' | i18n(locale) }}</h3>
-        <ul class="w-footer__linkbox-list" role="list">
-            <li>
-            <a href="https://developer.chrome.com/"
-              data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
-              {{ 'i18n.footer.developer_chrome_com' | i18n(locale) }}
-            </a>
-          </li>
-          <li>
-            <a href="https://blog.chromium.org/"
-              data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
-              {{ 'i18n.footer.chrome_updates' | i18n(locale) }}
-            </a>
-          </li>
-          <li>
-            <a href="/tags/case-study/"
-              data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
-              {{ 'i18n.footer.case_studies' | i18n(locale) }}
-            </a>
-          </li>
-          <li>
-            <a href="/podcasts/"
-              data-category="Podcasts" data-label="Footer Link (index 5)">
-              {{ 'i18n.footer.podcasts' | i18n(locale) }}
-            </a>
-          </li>
-          <li>
-            <a href="/shows/"
-              data-category="Shows" data-label="Footer Link (index 6)">
-              {{ 'i18n.footer.shows' | i18n(locale) }}
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-size-2 color-mid-text">{{ 'i18n.footer.connect' | i18n(locale) }}</h3>
-        <ul class="w-footer__linkbox-list" role="list">
-          <li>
-            <a href="https://www.twitter.com/ChromiumDev"
-              data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/user/ChromeDevelopers"
-              data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
-              YouTube
-            </a>
-          </li>
-        </ul>
-      </div>
+          <a href="https://developer.chrome.com/"
+            data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            {{ 'i18n.footer.developer_chrome_com' | i18n(locale) }}
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.chromium.org/"
+            data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            {{ 'i18n.footer.chrome_updates' | i18n(locale) }}
+          </a>
+        </li>
+        <li>
+          <a href="/tags/case-study/"
+            data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)">
+            {{ 'i18n.footer.case_studies' | i18n(locale) }}
+          </a>
+        </li>
+        <li>
+          <a href="/podcasts/"
+            data-category="Podcasts" data-label="Footer Link (index 5)">
+            {{ 'i18n.footer.podcasts' | i18n(locale) }}
+          </a>
+        </li>
+        <li>
+          <a href="/shows/"
+            data-category="Shows" data-label="Footer Link (index 6)">
+            {{ 'i18n.footer.shows' | i18n(locale) }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-size-2 color-mid-text">{{ 'i18n.footer.connect' | i18n(locale) }}</h3>
+      <ul class="w-footer__linkbox-list" role="list">
+        <li>
+          <a href="https://www.twitter.com/ChromiumDev"
+            data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+            Twitter
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/user/ChromeDevelopers"
+            data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
+            YouTube
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
   <nav class="site-footer__brand-nav repel" aria-label="Google developers">
