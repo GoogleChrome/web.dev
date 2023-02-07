@@ -109,7 +109,7 @@ details of chrominance vs. luminance resampling. The lower the "quality" number,
 Here, with the "quality" set to 60, the file size is reduced by 79%. Don't be fooled by the implications of this label: differences in
 quality across most of the scale will be imperceptible to the human eye, even when performing a side-by-side comparison.
 
-To convert your source image to a progressive JPEG, simply tick the box labeled "progressive rendering" under "advanced options."
+To convert your source image to a progressive JPEG, tick the box labeled "progressive rendering" under "advanced options."
 Some of these configuration options are almost certainly a deeper dive than the average web project will require, but they can
 provide you with a closer look at how the things you've learned about JPEG encoding impact file size and quality in real world use cases.
 

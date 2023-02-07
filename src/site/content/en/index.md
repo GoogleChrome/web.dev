@@ -27,9 +27,9 @@ platformNews:
   title: Web platform news
   subTitle: Keep up to date with the latest news from the major browser engines.
   pickedLeft:
-    url: '/interop-2022-wrapup/'
+    url: '/interop-2023/'
   pickedRight:
-    url: '/web-platform-12-2022/'
+    url: '/web-platform-01-2023/'
 
 themes:
   - category: CSS and UI

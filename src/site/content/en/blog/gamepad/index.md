@@ -6,7 +6,7 @@ description: |
 authors:
   - thomassteiner
 date: 2020-11-03
-updated: 2022-01-13
+updated: 2023-02-02
 hero: image/admin/nnmBquEmUtTIh89pkhvp.jpg
 alt: The hands of a person playing the Chrome dino game on a game console.
 tags:
@@ -176,7 +176,7 @@ you may need to "wake" each gamepad by pressing any of its buttons. You can then
 states in your game loop as shown below.
 
 ```js
-const pollGamepad = () => {
+const pollGamepads = () => {
   // Always call `navigator.getGamepads()` inside of
   // the game loop, not outside.
   const gamepads = navigator.getGamepads();
@@ -190,10 +190,10 @@ const pollGamepad = () => {
   }
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
-  window.requestAnimationFrame(pollGamepad);
+  window.requestAnimationFrame(pollGamepads);
 };
 // Kick off the initial game loop iteration.
-pollGamepad();
+pollGamepads();
 ```
 
 {% Aside 'gotchas' %} Do not store a lasting reference to the `navigator.getGamepads()` array
