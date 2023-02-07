@@ -272,7 +272,7 @@ img {
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Записи Layout Shift отображаются на панели производительности Chrome DevTools при раскрытии раздела Experience", width="800", height="438" %}<figcaption> После записи новой трассировки на панели Performance в разделе <b>Experience</b> появляется красная полоса, отображающая запись <code>Layout Shift</code> Щелкнув по этой записи, вы сможете просмотреть затронутые элементы (например, увидеть смещенные записи из/в).</figcaption></figure>
 
-Измерить реальные значений CLS, агрегированные на уровне источника, также можно с помощью отчета [Chrome User Experience Report](/chrome-ux-report-bigquery/). Данные CrUX CLS доступны через BigQuery, а также доступен [образец запроса](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) для проверки производительности CLS.
+Измерить реальные значений CLS, агрегированные на уровне источника, также можно с помощью отчета [Chrome User Experience Report](https://developer.chrome.com/blog/chrome-ux-report-bigquery/). Данные CrUX CLS доступны через BigQuery, а также доступен [образец запроса](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) для проверки производительности CLS.
 
 Вот и всё. Надеюсь, приведенная информация поможет сделать ваши страницы чуть менее увёртливыми :)
 

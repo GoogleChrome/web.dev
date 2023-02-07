@@ -401,7 +401,7 @@ The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-perf
 
 The newer [Performance Insights panel](https://developer.chrome.com/docs/devtools/performance-insights/) also includes full support for identifying shifts.
 
-Measuring real-world CLS aggregated at an origin-level is also possible using the [Chrome User Experience Report](/chrome-ux-report-bigquery/). CrUX CLS data is available via BigQuery and a [sample query](https://github.com/GoogleChrome/CrUX/blob/main/sql/cls-summary.sql) to look at CLS performance is available to use.
+Measuring real-world CLS aggregated at an origin-level is also possible using the [Chrome User Experience Report](https://developer.chrome.com/blog/chrome-ux-report-bigquery/). CrUX CLS data is available via BigQuery and a [sample query](https://github.com/GoogleChrome/CrUX/blob/main/sql/cls-summary.sql) to look at CLS performance is available to use.
 
 ## Conclusion
 

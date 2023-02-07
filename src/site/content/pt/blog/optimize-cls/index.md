@@ -345,7 +345,7 @@ O painel [Performance](https://developer.chrome.com/docs/devtools/evaluate-perfo
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Registros de mudança de layout exibidos no painel de desempenho do Chrome DevTools ao expandir a seção Experiência", width="800", height="438" %} <figcaption> Depois de registrar um novo registro no painel Performance, a seção <b>Experience</b> dos resultados é preenchida com uma barra tingida de vermelho exibindo um registro de <code>Layout Shift</code> Clicar no registro permite detalhar os elementos impactados (por exemplo, observe as entradas de movimento de/para).</figcaption></figure>
 
-A medição da CLS no mundo real agregado num nível de origem também é possível usando o [Relatório de Experiência do Usuário Chrome](/chrome-ux-report-bigquery/) (CrUX). Os dados do CrUX para CLS estão disponíveis por meio do BigQuery e um [exemplo de consulta](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) está disponível para monitorar o desempenho da CLS.
+A medição da CLS no mundo real agregado num nível de origem também é possível usando o [Relatório de Experiência do Usuário Chrome](https://developer.chrome.com/blog/chrome-ux-report-bigquery/) (CrUX). Os dados do CrUX para CLS estão disponíveis por meio do BigQuery e um [exemplo de consulta](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) está disponível para monitorar o desempenho da CLS.
 
 É só isso para este guia. Espero que ele ajude a manter suas páginas um pouco menos evasivas :)
 

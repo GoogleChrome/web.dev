@@ -178,7 +178,7 @@ Whether you analyze field data you collect yourself or CrUX data, the first step
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/oF2PQELFtdICPN10aZge.png", alt="A screenshot of the CrUX dashboard. The dashboard breaks down LCP, FID, and CLS into desktop and mobile categories, with each category showing the distribution of values that lie within 'Good', 'Needs Improvement' and 'Poor' thresholds for the previous month.", width="800", height="837" %}
 </figure>
 
-To get a snapshot of your website's performance, you can [create a CrUX Dashboard](/chrome-ux-report-data-studio-dashboard/) which reports the following:
+To get a snapshot of your website's performance, you can [create a CrUX Dashboard](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/) which reports the following:
 
 - **Site overview**, which segments Core Web Vitals into desktop and mobile device types.
 - **Historical trend by metric type**, which is a distribution of metrics over time for each available monthly release of CrUX report data.
@@ -285,7 +285,7 @@ Lab tools can't always identify the cause of all Core Web Vitals issues affectin
 
 The last step in the performance improvement workflow cycle is two-fold:
 
-1. Use [CrUX on BigQuery](/chrome-ux-report-bigquery/), [CrUX API](/chrome-ux-report-api/), [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started), and/or the [`web-vitals`](https://www.npmjs.com/package/web-vitals) JavaScript library to automate a website's field data collection, and optionally use this data to power custom dashboards and alerting systems.
+1. Use [CrUX on BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery/), [CrUX API](https://developer.chrome.com/blog/chrome-ux-report-api/), [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started), and/or the [`web-vitals`](https://www.npmjs.com/package/web-vitals) JavaScript library to automate a website's field data collection, and optionally use this data to power custom dashboards and alerting systems.
 2. Use [Lighthouse-CI](https://github.com/GoogleChrome/lighthouse-ci) for performance regression testing.
 
 {% Aside %}

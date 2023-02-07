@@ -5,7 +5,7 @@ subhead: |
 authors:
   - jlwagner
   - philipwalton
-updated: 2022-12-19
+updated: 2023-01-25
 date: 2022-12-08
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Bynb3Y5cnZQ29P1lfJGP.png
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/lsCmPkOtco4KA3pYKxAQ.png
@@ -97,13 +97,21 @@ Once you've found elements that are responsible for slow interactions in the fie
 
 ### Reproduce slow interactions in the lab
 
-Once you have a better idea of what's responsible for slow interactions, you should profile them in the lab with a performance profiler such as the one available in Chrome's DevTools. To do so, take the following steps:
+Once you have a better idea of what's responsible for slow interactions, you should profile those interactions in the lab. Fortunately, there are a couple of avenues you can pursue to reproduce problematic interactions using lab tools.
+
+{% Aside %}
+As you attempt to reproduce problems you find in the field in lab tools, you can't expect that you'll be able to reproduce the exact conditions in which a high INP was reported. There are many factors that can cause device responses to be slow, and it's impossible to replicate all of them. However, if certain interactions are consistently slow for many of your users, it should be possible to reproduce those recurring problems by mimicking the conditions common to those users.
+{% endAside %}
+
+#### Using Chrome's performance profiler
+
+It's possible to surface slow interactions with the performance profiler in Chrome DevTools. To do so, take the following steps:
 
 1. Navigate to the page powering the interaction you want to test.
-2. Open Chrome's DevTools by pressing <kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> on Windows and Linux).
+2. Open Chrome's DevTools by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (<kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> on macOS).
 3. Go to the tab labeled **Performance** in DevTools.
 4. Click the record button at the upper left hand corner of the empty performance profiler to start recording.
-5. Test the desired interaction on the page.
+5. Test the desired interaction(s) on the page.
 6. Click the record button again to stop recording.
 
 Once the profiler populates, you'll be able to see what work occurred to drive the interaction.
@@ -113,13 +121,39 @@ There are some cues in the profiler you can use to narrow down where the interac
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/x0WEjmPG6nnLy3Q2iJW3.png", alt="A depiction of tasks as related to interactions from Chrome's performance profiler. At top, an interactions panel with pointerdown, pointerup, and click events overlays a set of tasks in the main thread panel below. The click interaction starts before the event callbacks that drive the interaction due to a long task that delays the start of the event processing.", width="800", height="424" %}
   <figcaption>
-    Figure 2. An interaction profiled in the performance profiler in Chrome's DevTools. The interactions track shows a series of events that amount to a click interaction. The interactions track entries span across the tasks responsible for driving the interaction.
+    An interaction profiled in the performance profiler in Chrome's DevTools. The interactions track shows a series of events that amount to a click interaction. The interactions track entries span across the tasks responsible for driving the interaction.
+  </figcaption>
+</figure>
+
+#### Using Lighthouse's timespan mode
+
+Chrome's performance profiler—while incredibly useful and rich with diagnostic information—can be a bit intimidating to the uninitiated. If this is the case for you, Lighthouse's timespan mode might be a better alternative. To use this mode, do the following:
+
+1. Navigate to the page powering the interaction you want to test.
+2. Open Chrome's DevTools by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (<kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> on macOS).
+3. Go to the tab labeled **Lighthouse** in DevTools.
+4. Under the section labeled **Mode**, select the **Timespan** option.
+5. Select the desired device type under the section labeled **Device**.
+6. Ensure at least the checkbox labeled **Performance** is selected under the **Categories** label.
+7. Click the **Start timespan** button.
+8. Test the desired interaction(s) on the page.
+9. Click the **End timespan** button and wait for the audit to appear
+10. Once the audit populates in the Lighthouse tab, you can filter the audits by INP by clicking the **INP** link next to the label which reads **Show audits relevant to**.
+
+At this point, you'll see a dropdown for audits that have failed or passed. When you expand that dropdown, you'll likely see a breakdown time spent during the interaction.
+
+<figure>
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg", alt="A screenshot of a Lighthouse audit provided by its timespan mode. The audit is specific to INP, and shows details for an interaction, including a screenshot of the element that triggered it, and a table beneath detailing where time was spent processing the interaction.", width="800", height="662" %}
+  <figcaption>
+    An interaction profiled in Lighthouse's timespan mode. When interactions are made with the page, Lighthouse provides an audit detailing where the time during an interaction was spent, and breaks it down by input delay, processing delay, and presentation delay.
   </figcaption>
 </figure>
 
 {% Aside %}
-As you attempt to reproduce problems you find in the field in lab tools, you can't expect that you'll be able to reproduce the exact conditions in which a high INP was reported. There are many factors that can cause device responses to be slow, and it's impossible to replicate all of them. However, if certain interactions are consistently slow for many of your users, it should be possible to reproduce those recurring problems by mimicking the conditions common to those users.
+If you want to dive a bit deeper into the cause behind a slow interaction, you can do so by clicking the **View Trace** button just above the filmstrip in the populated **Lighthouse** tab. This will take you to the performance profiler that shows interactions details for the interactions you tested in the timespan mode.
 {% endAside %}
+
+Regardless of the tool you use to profile slow interactions in the lab, the end result is the same in that you'll be able to take actionable information from the field and discover the culprit of slow interactions. That's information that you can take straight to your code base and figure out what you need to do to get things going faster for a better user experience.
 
 ### What if you don't have field data?
 
@@ -148,7 +182,7 @@ You'll always incur at least _some_ input delay, as it takes some time for the o
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/QtGLNusw9pAe9DJ29Hd6.png", alt="A depiction of input delay in Chrome's performance panel. The start of the interaction comes significantly before the event callbacks because of increased input delay due to a timer firing from a third-party script.", width="800", height="605" %}
   <figcaption>
-    Figure 3. Input delay caused by a task fired by a timer from a third-party script.
+    Input delay caused by a task fired by a timer from a third-party script.
   </figcaption>
 </figure>
 
@@ -170,7 +204,7 @@ If it's third-party code that's causing problems, then you have [a lot more to c
 3. Cull redundant or low-value third-party scripts.
 4. Maintain whatever third-party scripts are left over so that they impact performance as little as possible.
 
-This is difficult in large part because third-party JavaScript is an issue of work culture. For example ([tag managers](/tag-best-practices/) make it easy for non-technical people in a company to add third-party scripts without the knowledge of the development teams.
+This is difficult in large part because third-party JavaScript is an issue of work culture. For example tag managers make it easy for non-technical people in a company to add third-party scripts without the knowledge of the development teams. See our [Best practices for tags and tag managers](/tag-best-practices/) post on techniques for optimizing those for performance and Web Vitals.
 
 ## Optimize event callbacks
 
@@ -179,7 +213,7 @@ The input delay is only the first part of what INP measures. You'll also need to
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/KLel48JOVGvWEKdBrS5I.png", alt="A depiction of event callback tasks in Chrome's performance panel. The event callbacks occur for the pointerdown and click events, which compose a long task.", width="800", height="605" %}
   <figcaption>
-    Figure 4. The event callbacks that run in response to a tap interaction, as shown in the performance profiler in Chrome DevTools.
+    The event callbacks that run in response to a tap interaction, as shown in the performance profiler in Chrome DevTools.
   </figcaption>
 </figure>
 
@@ -247,7 +281,7 @@ It's also important to understand how interactions can overlap. For example, if 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ohYy7phsKRbKCeth0iUu.png", alt="A depiction of when tasks can overlap to produce long input delays. In this depiction, a click interaction overlaps with a keydown interaction to increase the input delay for the keydown interaction.", width="800", height="307" %}
   <figcaption>
-    Figure 6. A visualization of two concurrent interactions in the performance profiler in Chrome's DevTools. The rendering work in the initial click interaction causes an input delay for the subsequent keyboard interaction.
+    A visualization of two concurrent interactions in the performance profiler in Chrome's DevTools. The rendering work in the initial click interaction causes an input delay for the subsequent keyboard interaction.
   </figcaption>
 </figure>
 

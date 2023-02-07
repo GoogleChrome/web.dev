@@ -18,6 +18,7 @@ description: |
 **[Template](https://github.com/GoogleChrome/web.dev/tree/master/src/site/_drafts/_template-codelab)**
 
 **Examples:**
+* [Example codelab](/handbook/content-types/example-codelab)
 * [Creating WebP images with the command line](/codelab-serve-images-webp)
 * [Minify and compress network payloads with gzip](/reduce-network-payloads-using-text-compression)
 
@@ -26,10 +27,35 @@ description: |
 **Examples:**
 * [Example collection](/handbook/content-types/example-collection)
 
+## Course
+
+**Examples:**
+* [Example course](/handbook/content-types/example-course)
+
+## Explore
+
+**Examples:**
+* [Example explore](/handbook/content-types/example-explore-page)
+
+## Item page
+
+**Examples:**
+* [Example item page](/handbook/content-types/example-item-page)
+
 ## Landing page
 
 **Examples:**
 * [Example landing page](/handbook/content-types/example-landing-page)
+
+## Pattern
+
+**Examples:**
+* [Example pattern](/handbook/content-types/example-pattern)
+
+## Pattern set
+
+**Examples:**
+* [Example pattern set](/handbook/content-types/example-pattern-set)
 
 ## Posts
 **Format:** Primarily informational with instructions included as appropriate

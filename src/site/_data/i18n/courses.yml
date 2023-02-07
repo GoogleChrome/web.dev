@@ -98,3 +98,36 @@ learn_privacy:
     en: Learn Privacy!
    description:
     en: "To do."
+
+learn_images:
+  title:
+    en: Learn Images!
+  description:
+    en: "A course covering everything from selecting the right formats, to responsive images, and performance."
+images_and_performance:
+  title:
+    en: Images and performance
+  description:
+    en: "Learn how images can impact the performance of your site."
+image_formats:
+  title:
+    en: Image formats and compression
+  description:
+    en: "A detailed explanation of the different image formats and compression types."
+responsive_images:
+  title:
+    en: Responsive images
+  description:
+    en: "A modern approach to responsive image use."
+image_workflows:
+  title:
+    en: High performance image workflows
+  description:
+    en: "How to integrate the advice from this course into your workflow, CMS, CDN, and automation tools."
+    
+example:
+  title:
+    en: Example course
+  description:
+    en: This page is used for visual testing of the courses layout and also showcases it's capabilities"
+
