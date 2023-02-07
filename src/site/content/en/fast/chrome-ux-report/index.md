@@ -42,13 +42,13 @@ and more granular insights. And the [API](https://developer.chrome.com/docs/crux
 
 The [CrUX Dashboard](http://g.co/chromeuxdash) is a customizable data
 visualization tool of websites' historical performance built on
-[Data Studio](https://marketingplatform.google.com/about/data-studio/).
+[Looker Studio](https://cloud.google.com/looker-studio).
 The data is sourced from the BigQuery dataset and all of the SQL queries are
 handled for you under the hood. The dashboard shows the distribution of user
 experiences, as captured by key performance metrics, and how it changes over
 time. It also shows how the distributions of qualitative metrics like device
 type and effective connection type change over time. Try the
-[Data Studio Dashboard guide](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard).
+[Looker Studio Dashboard guide](https://developer.chrome.com/docs/crux/dashboard/).
 
 ### PageSpeed Insights
 
@@ -94,10 +94,10 @@ can follow to ask questions and listen for product announcements.
 ## See it in action
 
 To get more acquainted with the available data, walk through
-step-by-step guides for using BigQuery, Data Studio Dashboard, and PageSpeed
+step-by-step guides for using BigQuery, Looker Studio Dashboard, and PageSpeed
 Insights:
 
-- [CrUX: Data Studio Dashboard](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard)
+- [CrUX: Looker Studio Dashboard](https://developer.chrome.com/docs/crux/dashboard/)
 - [CrUX: PageSpeed Insights](https://developer.chrome.com/blog/chrome-ux-report-pagespeed-insights)
 - [CrUX: BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery)
 - [CrUX: API](https://developer.chrome.com/blog/chrome-ux-report-api)

@@ -25,7 +25,7 @@ Hay cuatro formas principales de extraer información del Informe Chrome UX, que
 
 ### Panel de control de CrUX
 
-El [Panel de control de CrUX](http://g.co/chromeuxdash) es una herramienta de visualización de datos personalizable del rendimiento histórico de los sitios web integrada en [Data Studio](https://marketingplatform.google.com/about/data-studio/). Los datos provienen del conjunto de datos de BigQuery y todas las consultas SQL se manejan internamente. El panel muestra la distribución de las experiencias del usuario, según lo capturan las métricas clave de rendimiento, y cómo cambia con el tiempo. También muestra cómo las distribuciones de métricas cualitativas, como el tipo de dispositivo y el tipo de conexión efectiva, cambian con el tiempo. Pruebe la [guía del panel de control de Data Studio](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard).
+El [Panel de control de CrUX](http://g.co/chromeuxdash) es una herramienta de visualización de datos personalizable del rendimiento histórico de los sitios web integrada en [Looker Studio](https://marketingplatform.google.com/about/data-studio/). Los datos provienen del conjunto de datos de BigQuery y todas las consultas SQL se manejan internamente. El panel muestra la distribución de las experiencias del usuario, según lo capturan las métricas clave de rendimiento, y cómo cambia con el tiempo. También muestra cómo las distribuciones de métricas cualitativas, como el tipo de dispositivo y el tipo de conexión efectiva, cambian con el tiempo. Pruebe la [guía del panel de control de Looker Studio](https://cloud.google.com/looker-studio).
 
 ### PageSpeed Insights
 
@@ -45,9 +45,9 @@ Si necesita algún tipo de apoyo, existen algunos canales para comunicarse con a
 
 ## Véalo en acción
 
-Para familiarizarse más con los datos disponibles, siga las guías paso a paso para usar BigQuery, Data Studio Dashboard y PageSpeed Insights:
+Para familiarizarse más con los datos disponibles, siga las guías paso a paso para usar BigQuery, Looker Studio Dashboard y PageSpeed Insights:
 
-- [CrUX: panel de controlde  Data Studio](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard)
+- [CrUX: panel de controlde  Looker Studio](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard)
 - [CrUX: PageSpeed Insights](https://developer.chrome.com/blog/chrome-ux-report-pagespeed-insights)
 - [CrUX: BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery)
 - [CrUX: API](https://developer.chrome.com/blog/chrome-ux-report-api)
