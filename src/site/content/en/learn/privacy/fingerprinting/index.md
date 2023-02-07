@@ -2,7 +2,7 @@
 title: 'Fingerprinting'
 authors:
   - sil
-description: To do.
+description: Fingerprinting is the action of trying to identify a specific user, by using characteristics of their setup. Learn how this can damage user privacy.
 date: 2023-01-26
 tags:
   - privacy
@@ -28,13 +28,13 @@ Fingerprinting means finding ways to covertly distinguish one user from another.
 it's still the same user on the same website, or to recognize the same user in two different browser profiles at the same time.
 This means that fingerprinting can be used for tracking users across sites. The deterministic and overt methods of tracking,
 such as storing a cookie with a unique user-specific ID, can be to some extent observed by users and controlled
-(and the previous chapter explained some of these approaches). But fingerprinting is more difficult to avoid exactly
+(and the previous module explained some of these approaches). But fingerprinting is more difficult to avoid exactly
 because it is covert; it relies on unchanging characteristics and most likely happens invisibly. This is why it's called
 "fingerprinting". It is difficult at best to change your fingerprint, whether your digital one, or the ones on the ends
 of your fingers.
 
 Browser vendors _know_ that users do not like being tracked, and are continually implementing features to limit fingerprinting
-(some of which we saw in the previous chapter). Here, we're looking at how these features may affect your business
+(some of which we saw in the previous module). Here, we're looking at how these features may affect your business
 requirements and how to still do what you want to do in a privacy-protecting way. This is more about how browser protection
 _against_ fingerprinting will affect what you do and how, rather than about how it will stop you _doing_ fingerprinting.
 
@@ -46,7 +46,7 @@ require users to sign in at all, which is even more protective of your users' pr
 
 ### Do
 
-Assess your third parties for fingerprinting. As part of the [third parties](/learn/privacy/third-parties) chapter, you
+Assess your third parties for fingerprinting. As part of the [third parties](/learn/privacy/third-parties) module, you
 may already have a list of any third-party services you're including and the web requests that they make. It may be possible
 to inspect those requests to see which data is being passed back to the originator, if any. However, this is often difficult;
 fingerprinting is by nature a covert process which involves requesting data that isn't subject to user approval.
@@ -136,7 +136,7 @@ with it.
 ### Adding unpredictability
 
 A third approach taken in some cases is for browser vendors to "fuzz" the responses from APIs to make them less granular
-and thus less identifying. This was described as part of the randomized response mechanism in [Chapter 2](/learn/privacy/data/#fuzz-your-data) as something
+and thus less identifying. This was described as part of the randomized response mechanism in [the data module](/learn/privacy/data/#fuzz-your-data) as something
 you can do when collecting data from users, to avoid inadvertently collecting data which is identifying. Browser vendors
 can take this approach to API data made available to web apps and third parties as well. An example of this is the
 [very accurate timing APIs used to measure page performance](https://developer.mozilla.org/docs/Web/API/DOMHighResTimeStamp)
@@ -184,7 +184,7 @@ mode. Doing so will show permission dialogues if your page is attempting fingerp
 This helps you confirm if third parties included in your service are using fingerprintable data, or if your own service depends
 on that. You can then consider whether the deliberate fuzzing makes it more difficult to do what you need. Consider making
 corrections accordingly to obtain that data from another source, do without it, or use less granular data.
-* As previously discussed in [Chapter 3](/learn/privacy/third-parties), it's also important to audit your third-party
+* As previously discussed in [the third-parties module](/learn/privacy/third-parties), it's also important to audit your third-party
 dependencies to see if they are using fingerprinting techniques. Passive fingerprinting is difficult to detect (and
 impossible if a third party does it on their server) but fingerprinting mode may flag some fingerprinting techniques,
 and looking for uses of navigator.userAgent or unexpected creation of `<canvas>` objects may also reveal some approaches

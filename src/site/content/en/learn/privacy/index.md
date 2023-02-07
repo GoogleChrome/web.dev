@@ -1,12 +1,11 @@
 ---
 title: Learn Privacy
 authors:
-  - matmarquis
-description: To do.
+  - sil
+description: A course to help you build more privacy-preserving websites.
 date: 2023-01-24
 ---
 
-A course to help you build more privacy-preserving websites.
 
 ## With great power…
 
@@ -34,7 +33,7 @@ it means to collect just the [data](/learn/privacy/data/) you need. We also know
 some user data and to leverage third parties as building blocks for your site to provide useful services—be it payment solutions, map widgets, or
 error monitoring scripts. This course will offer tools and tips for you to approach this with care, especially when it
 comes to [third parties](/learn/privacy/third-parties/).
-* **What's up with web privacy**. You will learn about [upcoming browser and web platform privacy improvements](/learn/privacy/third-parties/#api-proposals),
+* **What's up with web privacy**. You will learn about upcoming browser and web platform privacy improvements,
 and how you can prepare your site for these changes. You'll also learn about what [fingerprinting](/learn/privacy/fingerprinting/) protections
 in browsers mean for your site.
 * **Ways to scale and maintain your organization's privacy approaches**. In [best practices](/learn/privacy/best-practices),
@@ -71,7 +70,6 @@ and questions to ask yourself and your team on your privacy journey. Throughout 
 documentation maintained by third parties to illustrate key points. Your own approach is up to you to define. It will
 depend on your organization, your business, and your compliance requirements and users’ needs.
 
-
 Here's what you'll learn:
 
 {% include 'partials/course-index.njk' %}
@@ -79,5 +77,5 @@ Here's what you'll learn:
 Let's get started!
 
 {% Aside %}
-TO DO: credits.
+This course was written by [Stuart Langridge](https://twitter.com/sil), with input and review from [Maud Nalpas](https://twitter.com/maudnals), Martin Sramek, and [Rachel Andrew](https://twitter.com/rachelandrew). Special thanks to David Adrian for providing additional support for the encryption module, Rainhard Findling for providing additional support for the data module, and Annette McFadyen and [Aaron Forinton](https://github.com/aaronforinton) for supporting the publication process.
 {% endAside %}

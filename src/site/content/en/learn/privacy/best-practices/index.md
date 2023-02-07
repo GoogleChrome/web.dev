@@ -2,7 +2,7 @@
 title: 'Best practices'
 authors:
   - sil
-description: To do.
+description: A list of key things to do in order to preserve privacy when developing for the web.
 date: 2023-01-26
 tags:
   - privacy
@@ -19,7 +19,7 @@ have; any data that you do need, you should be able to explain why you need it, 
 In larger organizations, there may be roles or teams dedicated to tracking the latest technical changes in your deployment
 environments and browsers, and to understanding the implications for technical and legal changes on your users' privacy.
 But a smaller organization still needs to be conscious of user privacy, how a changing environment can affect decisions
-already made, and what needs to be taken into account for decisions you make from now on. This chapter summarizes some
+already made, and what needs to be taken into account for decisions you make from now on. This module summarizes some
 best practices for how you can stay in touch with your privacy choices and requirements, and those of your users.
 
 ## Be aware of what you do

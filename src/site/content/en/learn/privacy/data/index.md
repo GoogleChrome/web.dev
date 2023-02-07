@@ -2,7 +2,7 @@
 title: 'Use just the data you need'
 authors:
   - sil
-description: To do.
+description: In this module learn strategies for collecting only the required data, managing and removing data you have collected, and explaining what you collect to users.
 date: 2023-01-26
 tags:
   - privacy

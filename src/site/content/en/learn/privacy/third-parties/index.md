@@ -2,7 +2,7 @@
 title: 'Third parties'
 authors:
   - sil
-description: To do.
+description: Learn about third-parties and how to mitigate the risks to your users when integrating third parties.
 date: 2023-01-26
 tags:
   - privacy
@@ -101,7 +101,7 @@ if libraries you include also "phone home" to their authors, then these may be i
 and therefore they need to be audited. A server-based third party usually has to be handed the user data by you, which means
 that the data it is exposed to is more under your control. By contrast, a client-based third party—a script or HTTP resource
 included on your website and fetched by the user's browser—can collect some data directly from the user without that process
-of collection being mediated by you. Most of this chapter will be concerned with how to identify those client-side third parties
+of collection being mediated by you. Most of this module will be concerned with how to identify those client-side third parties
 you've elected to include and expose your users to, exactly because there is less mediation possible by you. But it is worth
 considering securing your server-side code so that you understand outbound communications from it and can log or block any that
 are unexpected. Details on how exactly to do this are outside our scope here (and very dependent on your server setup) but
@@ -191,7 +191,7 @@ for an individual third party and for your whole collection.
 
 The first step is non-technical: read the privacy policies of your suppliers. If you include any third-party resources,
 check the privacy policies. They will be long and full of legal text, and some documents may use some of the approaches
-specifically warned against [in earlier chapters](/learn/privacy/data/), such as overly general statements and without any indication
+specifically warned against [in earlier modules](/learn/privacy/data/), such as overly general statements and without any indication
 of how or when collected data will be removed. It is important to realize that from a user perspective, all the data that
 is collected on your site, including by third parties, will be governed by these privacy policies. Even if you do
 everything correctly, when you are transparent about your goals and exceed your users' expectations of data privacy and
@@ -521,8 +521,7 @@ The `Permissions-Policy` header (which was introduced under the name `Feature-Po
 but it restricts access to powerful browser features. For example, it’s possible to restrict use of device hardware such as the accelerometer,
 camera, or USB devices, or to restrict non-hardware features such as permission to go fullscreen or use synchronous `XMLHTTPRequest`.
 These restrictions can be applied to a top-level page (to avoid loaded scripts from attempting to use these features) or to
-subframed pages loaded in via an iframe. This restriction of API usage isn’t really about browser fingerprinting (for which
-see Chapter 4); it's about disallowing third-parties from doing intrusive things (such as using powerful APIs, popping up
+subframed pages loaded in via an iframe. This restriction of API usage isn’t really about browser [fingerprinting](/learn/privacy/fingerprinting/); it's about disallowing third-parties from doing intrusive things (such as using powerful APIs, popping up
 permissions windows, etc). This is defined by the Target Privacy Threat Model as ["intrusion"](https://w3cping.github.io/privacy-threat-model/#intrusion).
 
 A `Permissions-Policy` header is specified as a list of (feature, allowed origins) pairs, thus:
@@ -582,8 +581,8 @@ They include [Intelligent Tracking Prevention](https://webkit.org/blog/9521/inte
 in Firefox (and its engine, Gecko). These all make it difficult for third parties to build detailed profiles of your users.
 
 Browser approaches on privacy features change frequently, and it’s important to stay up to date; the following list of protections
-are correct at time of writing. Browsers may also implement other protections; these lists are not exhaustive. See [Chapter 6](/learn/privacy/best-practices/)
-for best practices on how to keep up with changes here, and be sure to test with upcoming browser versions for changes that may affect your projects.
+are correct at time of writing. Browsers may also implement other protections; these lists are not exhaustive. See [the module on best practices](/learn/privacy/best-practices/)
+for ways to keep up with changes here, and be sure to test with upcoming browser versions for changes that may affect your projects.
 Bear in mind that incognito/private browsing modes sometimes implement different settings from the browser’s default (third-party cookies may be blocked
 by default in such modes, for example). Therefore, testing in incognito mode may not always be reflective of most users’ typical browsing experience if
 they're not using private browsing. Also bear in mind that blocking cookies in various situations may mean that other storage solutions, such as `window.localStorage`,

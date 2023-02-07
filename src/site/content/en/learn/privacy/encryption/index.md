@@ -2,7 +2,7 @@
 title: 'Encryption'
 authors:
   - sil
-description: To do.
+description: Learn how encryption can preserve privacy by ensuring others cannot intercept and read your user's content.
 date: 2023-01-26
 tags:
   - privacy
