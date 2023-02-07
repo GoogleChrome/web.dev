@@ -251,9 +251,9 @@ The [Chrome User Experience
 Report](https://developer.chrome.com/docs/crux/) provides user
 experience metrics for how real-world Chrome users experience popular destinations on the web. The
 data from the report can be obtained by [running queries in
-BigQuery](/chrome-ux-report-bigquery/),
+BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery/),
 [PageSpeedInsights](https://pagespeed.web.dev/), or the [CrUX
-API](/chrome-ux-report-api/).
+API](https://developer.chrome.com/blog/chrome-ux-report-api/).
 
 The [CrUX
 dashboard](https://datastudio.google.com/c/datasources/create?connectorId=AKfycbxk7u2UtsqzgaA7I0bvkaJbBPannEx0_zmeCsGh9bBZy7wFMLrQ8x24WxpBzk_ln2i7)

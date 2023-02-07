@@ -77,7 +77,7 @@ PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/sp
 
 개발자는 원본 또는 URL을 쿼리하고 다양한 폼 팩터로 결과를 분류할 수 있습니다. API는 매일 업데이트되며 이전 28일 동안의 데이터를 요약합니다(월별로 집계되는 BigQuery 데이터세트와 다름). 또한 해당 API에는 다른 API인 PageSpeed Insights API(하루 25,000개 요청)에 적용하는 것과 동일한 완화된 공개 API 할당량을 적용합니다.
 
-다음은 CrUX API를 사용하여 **양호(good)**, **개선 필요(needs improvement)** 또는 **나쁨(poor)** 상태의 분포를 통해 Core Web Vitals 메트릭을 시각화해주는 [데모](/chrome-ux-report-api/)입니다.
+다음은 CrUX API를 사용하여 **양호(good)**, **개선 필요(needs improvement)** 또는 **나쁨(poor)** 상태의 분포를 통해 Core Web Vitals 메트릭을 시각화해주는 [데모](https://developer.chrome.com/blog/chrome-ux-report-api/)입니다.
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Core Web Vitals 메트릭을 보여주는 Chrome User Experience Report API 데모", width="800", height="523" %}</figure>
 
@@ -85,7 +85,7 @@ PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/sp
 
 **개선된 CrUX Dashboard**
 
-새롭게 재설계된 [CrUX Dashboard](http://g.co/chromeuxdash)를 사용하면 시간 경과에 따른 원본의 성능을 쉽게 추적하고, 이를 사용하여 모든 Core Web Vitals 메트릭의 분포를 모니터링할 수 있습니다. Dashboard를 시작하려면 web.dev에서 [튜토리얼](/chrome-ux-report-data-studio-dashboard/)을 확인하세요.
+새롭게 재설계된 [CrUX Dashboard](http://g.co/chromeuxdash)를 사용하면 시간 경과에 따른 원본의 성능을 쉽게 추적하고, 이를 사용하여 모든 Core Web Vitals 메트릭의 분포를 모니터링할 수 있습니다. Dashboard를 시작하려면 web.dev에서 [튜토리얼](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/)을 확인하세요.
 
 <figure>{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="새 랜딩 페이지에서 Core Web Vitals를 표시하는 Chrome UX Report Dashboard", width="800", height="497" %}</figure>
 

@@ -65,7 +65,7 @@ percentile CLS improving from 0.25 to 0.1 and our passing bucket growing from
 
 ## Where we started
 
-Using [CrUX dashboards](/chrome-ux-report-data-studio-dashboard/) we were able
+Using [CrUX dashboards](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/) we were able
 to establish that our pages were shifting more than we'd like.
 
 <figure>
@@ -226,7 +226,7 @@ ranking](https://developers.google.com/search/blog/2020/05/evaluating-page-exper
 For starters we used the [Chrome UX Report](/chrome-ux-report/), both in the
 monthly origin level data available through the [CrUX
 dashboard](https://g.co/chromeuxdash), as well as by [querying
-BigQuery](/chrome-ux-report-bigquery/) to retrieve historic p75 data. This way
+BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery/) to retrieve historic p75 data. This way
 we were easily able to see that for all of the traffic measured by CrUX, **our
 75th percentile CLS improved by 250% from 0.25 to 0.1 and our passing bucket
 grew from 57% to 72%**.

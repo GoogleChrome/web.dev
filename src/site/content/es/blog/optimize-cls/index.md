@@ -272,7 +272,7 @@ El [panel de Rendimiento](https://developer.chrome.com/docs/devtools/evaluate-pe
 
 <figure>   {% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Los registros de cambio de diseño se muestran en el panel de rendimiento de Chrome DevTools cuando se expande la sección Experiencia", width="800", height="438" %}   <figcaption>Después de registrar un nuevo seguimiento en el panel de Rendimiento, la sección <b>Experiencia</b> de los resultados se completa con una barra de color rojo que muestra un registro <code>Layout Shift</code>. Al hacer clic en el registro, se puede profundizar en los elementos impactados (por ejemplo, observar desde/hasta las entradas que se movieron).</figcaption> </figure>
 
-También es posible medir CLS del mundo real agregado un nivel de origen que utilice el [Chrome User Experience Report](/chrome-ux-report-bigquery/). Los datos de CrUX CLS están disponibles por medio de BigQuery y una [consulta de muestra](https://github.com/GoogleChrome/CrUX/blob/main/sql/cls-summary.sql) para ver que el rendimiento de CLS está disponible para su uso.
+También es posible medir CLS del mundo real agregado un nivel de origen que utilice el [Chrome User Experience Report](https://developer.chrome.com/blog/chrome-ux-report-bigquery/). Los datos de CrUX CLS están disponibles por medio de BigQuery y una [consulta de muestra](https://github.com/GoogleChrome/CrUX/blob/main/sql/cls-summary.sql) para ver que el rendimiento de CLS está disponible para su uso.
 
 Espero que esto le ayude a mantener sus páginas con menos cambios :)
 
