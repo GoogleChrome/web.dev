@@ -151,7 +151,7 @@ Third-Party Browser Protections" further on.
 ### Embedding a cross-site iframe
 
 A complete document embedded in your pages via an `<iframe>` can request additional access to browser APIs, in addition to the trifecta
-of cookies, IP address, and referrer. Exactly which APIs are available to <iframe>d pages and how they request access is browser-specific,
+of cookies, IP address, and referrer. Exactly which APIs are available to `<iframe>`d pages and how they request access is browser-specific,
 and is currently undergoing changes: see "Permissions Policy" below for current efforts to curtail or monitor API access in embedded
 documents.
 
