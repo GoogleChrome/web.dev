@@ -54,7 +54,7 @@ which can be programmatically configured to automate recurrent queries to
 various performance monitoring APIs.
 
 For example, with AWP, you can set a daily test on your home page to capture the
-field data from [CrUX API](/chrome-ux-report-api/) and lab data
+field data from [CrUX API](https://developer.chrome.com/blog/chrome-ux-report-api/) and lab data
 from a
 [Lighthouse report from PageSpeed Insights](https://pagespeed.web.dev/).
 This data can be written and stored over time, for example, in [Google
@@ -82,8 +82,8 @@ Google Sheets).
 AWP comes with a number of pre-implemented gatherers and connectors:
 
 * Pre-implemented gatherers:
-  * [CrUX API](/chrome-ux-report-api/)
-  * [CrUX BigQuery](/chrome-ux-report-bigquery/)
+  * [CrUX API](https://developer.chrome.com/blog/chrome-ux-report-api/)
+  * [CrUX BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery/)
   * [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started)
   * [WebPageTest API](https://www.webpagetest.org/getkey.php)
 * Pre-implemented connectors:

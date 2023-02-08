@@ -19,13 +19,13 @@ tags:
 [Core Web Vitals](/vitals) are the most important metrics to measure to
 understand your users' experiences, because when users have good experiences,
 [good things happen](https://wpostats.com/)! The [Web Vitals extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en)
-for Chrome is one tool in the [Web Vitals toolbox](/vitals-tools/) that shows you 
-performance data about the pages you visit as you browse the web. 
+for Chrome is one tool in the [Web Vitals toolbox](/vitals-tools/) that shows you
+performance data about the pages you visit as you browse the web.
 
 Page performance depends on many factors, including hardware and network quality. How
 you experience a page on your machine may be very different from how the majority of users
 experience it. That's why version 1.0 of the Web Vitals extension includes a new feature
-that integrates real-user data from the [Chrome UX Report](/chrome-ux-report/) (CrUX) 
+that integrates real-user data from the [Chrome UX Report](/chrome-ux-report/) (CrUX)
 with your local Core Web Vitals measurements. This feature displays your local measurements
 in the context of how other users have experienced the same pages. It comes with
 a sparkly new UI and I'm excited to show you how it works.
@@ -44,8 +44,8 @@ a sparkly new UI and I'm excited to show you how it works.
 CrUX is a public dataset of real-user experiences in Chrome. It powers some of the critical tools
 in the Core Web Vitals workflow like [Search Console](https://support.google.com/webmasters/answer/9205520#about_data)
 and [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#crux).
-The raw data for millions of websites is also publicly queryable in the [CrUX dataset on BigQuery](/chrome-ux-report-bigquery)
-and the [CrUX API](/chrome-ux-report-api). This Web Vitals extension update
+The raw data for millions of websites is also publicly queryable in the [CrUX dataset on BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery)
+and the [CrUX API](https://developer.chrome.com/blog/chrome-ux-report-api). This Web Vitals extension update
 integrates the page and origin-level desktop data from the CrUX API.
 
 User experience data is broken down into three qualitative ratings: good, needs improvement, and poor.
@@ -72,7 +72,7 @@ top of the broader distribution of real-user experiences. It's like when you're 
 place like a shopping mall and there's a big map with all of the stores and a pin labeled
 "YOU ARE HERE" to help you orient yourself and find where you're going.
 
-The distributions of real-user data from CrUX are laid out on a horizontal bar for each metric. 
+The distributions of real-user data from CrUX are laid out on a horizontal bar for each metric.
 Your local experiences are displayed as single points on those horizontal bars. The position of
 your local experience on the horizontal bar indicates where that experience falls relative to the
 real-user distributions. This should make it immediately apparent when your local
@@ -113,13 +113,13 @@ width="800", height="548" %}
   </figcaption>
 </figure>
 
-There are some less common edge cases that you may run into while using the extension. 
+There are some less common edge cases that you may run into while using the extension.
 
 It can happen that entire origins have insufficient data. In that case, the extension will just show you
-how your local experiences performed. 
+how your local experiences performed.
 
 How you interact with the page may also affect the relevance of the data. For example, loading the
-page in a background tab will count against the LCP metric the entire time until you foreground the page. 
+page in a background tab will count against the LCP metric the entire time until you foreground the page.
 If it takes you 90 seconds to switch to the tab, the LCP might appear as 91.5 seconds. When this happens, a little
 warning icon will appear next to your LCP value to warn you of the artificial inflation. Note that
 these kinds of irrelevant LCP values are ignored in the CrUX dataset.
@@ -149,10 +149,10 @@ page or origin.
 It's important to understand phone users' experiences too, so the extension has an advanced setting on
 the Options page that lets you see how your local experience compares to phone data from the field.
 
-To enable phone data in the extension, follow these steps: 
+To enable phone data in the extension, follow these steps:
 
-1. Right click on the extension icon in the toolbar and select **Options**. 
-2. Check the **Compare local experiences to phone field data** option. 
+1. Right click on the extension icon in the toolbar and select **Options**.
+2. Check the **Compare local experiences to phone field data** option.
 
 The UI will update in a few places to indicate which mode you're in. Be aware that real phone
 users' experiences can be _very different_ from that of desktop users, so use this feature with discretion.

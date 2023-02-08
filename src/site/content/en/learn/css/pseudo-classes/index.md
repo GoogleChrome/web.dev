@@ -307,7 +307,7 @@ along with text changes and icon changes to visually signify change
 
 There is a group of pseudo-classes that select items based on where they are in the document.
 
-### `first-child` and `last-child`
+### `:first-child` and `:last-child`
 {% BrowserCompat 'css.selectors.first-child' %}
 
 If you want to find the first or last item,
@@ -321,7 +321,7 @@ These pseudo-classes will return either the first or last element in a group of 
   id: 'YzNxZRO'
 } %}
 
-### `only-child`
+### `:only-child`
 {% BrowserCompat 'css.selectors.only-child' %}
 
 You can also select elements that have no siblings,
@@ -376,12 +376,12 @@ so with this rule, it will be colored red.
   height: 250
 } %}
 
-### `nth-child` and `nth-of-type`
+### `:nth-child` and `:nth-of-type`
 {% BrowserCompat 'css.selectors.nth-child' %}
 
 You're not limited to first and last children and types either.
-The [`nth-child`](https://developer.mozilla.org/docs/Web/CSS/:nth-child) and
-[`nth-of-type`](https://developer.mozilla.org/docs/Web/CSS/:nth-of-type)
+The [`:nth-child`](https://developer.mozilla.org/docs/Web/CSS/:nth-child) and
+[`:nth-of-type`](https://developer.mozilla.org/docs/Web/CSS/:nth-of-type)
 pseudo-classes allow you to specify an element that is at a certain index.
 The indexing in CSS selectors starts at 1.
 
@@ -391,7 +391,7 @@ The indexing in CSS selectors starts at 1.
 } %}
 
 You can pass more than an index into these pseudo-classes too.
-If you wanted to select all even elements, you can use `nth-child(even)`.
+If you wanted to select all even elements, you can use `:nth-child(even)`.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -416,13 +416,13 @@ Let's say you have 7 `<li>` items.
 The first item that is selected is 3 because `3n+3` translates to `(3 * 0) + 3`.
 The next iteration would pick item 6 because `n` has now incremented to `1`,
 so `(3 * 1) + 3)`.
-This expression works for both `nth-child` and `nth-of-type`.
+This expression works for both `:nth-child` and `:nth-of-type`.
 
 You can play around with this sort of selector on this
 [nth-child tester](https://css-tricks.com/examples/nth-child-tester/) or this
 [quantity selector tool](https://quantityqueries.com).
 
-### `only-of-type`
+### `:only-of-type`
 {% BrowserCompat 'css.selectors.only-of-type' %}
 
 Lastly, you can find the only element of a certain type in a group of siblings with

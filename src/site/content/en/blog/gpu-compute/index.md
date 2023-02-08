@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2019-08-28
-updated: 2023-01-19
+updated: 2023-01-27
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 description: |
@@ -48,7 +48,7 @@ own. I will be diving deeper and covering WebGPU rendering (canvas, texture,
 etc.) in forthcoming articles.
 
 {% Aside %}
-WebGPU is available for now in Chrome Canary on desktop behind an
+WebGPU is available for now in Chrome Canary behind an
 experimental flag. You can enable it at `chrome://flags/#enable-unsafe-webgpu`. The
 API is constantly changing and currently unsafe. As GPU sandboxing isn't
 implemented yet for the WebGPU API, it is possible to read GPU data for other

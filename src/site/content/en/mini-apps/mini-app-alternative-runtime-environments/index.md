@@ -261,7 +261,7 @@ with no installation required.
 ### VK Mini Apps
 
 The Russian social networking platform [VK](https://vk.com/mini-apps) runs a [mini app program](https://vk.com/mini-apps)
-that allows developers to [build](https://vk.com/dev/vk_apps_docs) mini apps that tie in deeply with the social network.
+that allows developers to [build](https://dev.vk.com/mini-apps/overview) mini apps that tie in deeply with the social network.
 VK mini apps work on both VK's platform-specific mobile apps, as well as on the desktop website.
 Apart from several of the brand's other platforms like [Mail.ru](https://mail.ru/), VK mini apps are also integrated in the
 [Atom browser](https://browser.ru/).

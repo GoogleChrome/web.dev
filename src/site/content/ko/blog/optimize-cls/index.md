@@ -272,7 +272,7 @@ DevTools의 [Performance 패널](https://developer.chrome.com/docs/devtools/eval
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Experience 섹션 확장 시 Chrome DevTools Performance 패널에 표시되는 Layout Shift 기록", width="800", height="438" %} <figcaption>Performance 패널에 새로운 흔적이 기록되면 결과의 <b>Experience</b> 섹션에 <code>Layout Shift</code> 기록이 붉은색 막대와 함께 표시됩니다. 해당 기록을 클릭하면 영향을 받는 요소(예: Moved from/to 항목 참조)가 드릴다운됩니다.</figcaption></figure>
 
-[Chrome User Experience Report](/chrome-ux-report-bigquery/)를 사용해 원본 수준에서 집계된 실제 CLS를 측정할 수도 있습니다. CrUX CLS 데이터는 BigQuery를 통해 제공되며 CLS 성능을 확인하기 위한 [샘플 쿼리](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)도 사용할 수 있습니다.
+[Chrome User Experience Report](https://developer.chrome.com/blog/chrome-ux-report-bigquery/)를 사용해 원본 수준에서 집계된 실제 CLS를 측정할 수도 있습니다. CrUX CLS 데이터는 BigQuery를 통해 제공되며 CLS 성능을 확인하기 위한 [샘플 쿼리](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)도 사용할 수 있습니다.
 
 이 가이드는 여기까지입니다. 페이지 이동을 줄이는 데 도움이 되기를 바랍니다. :)
 
