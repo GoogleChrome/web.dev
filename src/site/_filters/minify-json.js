@@ -18,7 +18,6 @@
  * Do a simple minify JSON using stringify to strip whitespaces
  *
  * @param {string} code
- * @param {(err: Error, ret: string) => void} callback
  */
 function minifyJSON(code) {
   if (process.env.ELEVENTY_ENV !== 'prod') {
