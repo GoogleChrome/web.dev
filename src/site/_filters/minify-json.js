@@ -27,11 +27,11 @@ function minifyJSON(code) {
 
   try {
     return JSON.stringify(JSON.parse(code));
-  } catch(err) {
+  } catch (err) {
     console.error('JSON error: ', err);
     // Fail gracefully.
     return code;
-  };
+  }
 }
 
 module.exports = {minifyJSON};
