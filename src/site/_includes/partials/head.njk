@@ -52,7 +52,7 @@
 {% set specRules %}
 {"prerender": [
    {"source": "document",
-    "where": {"or": [
+    "where": {"and": [
        {"href_matches": "/*\\?*", "relative_to": "document"},
        {"not": {"href_matches": "/patterns/*\\?*", "relative_to": "document"}}
     ]}}
