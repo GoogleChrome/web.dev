@@ -53,8 +53,8 @@
 {"prerender": [
    {"source": "document",
     "where": {"or": [
-       {"href_matches": "/blog/*\\?*",
-        "relative_to": "document"}
+       {"href_matches": "/*\\?*", "relative_to": "document"},
+       {"not": {"href_matches": "/patterns/*\\?*", "relative_to": "document"}}
     ]}}
 ]}
 {% endset %}
