@@ -48,7 +48,11 @@
 {% include 'partials/analytics.njk' %}
 
 {# Dogfood automatic prerender origin trial #}
+<!-- deploy-preview-9532--web-dev-staging.netlify.app origin trial token - for testing only, remove before merging -->
+<meta http-equiv="origin-trial" content="Ah3H7DwyoUUsaRQdSySa1hMCS/JFQn/VVmrQODVDnRJGH9mU/uG6G0Uhh+4atnFGAoiEwDq+r9TzCyBi7f7wRw4AAABfeyJvcmlnaW4iOiJodHRwczovL3dlYi5kZXY6NDQzIiwiZmVhdHVyZSI6IlNwZWN1bGF0aW9uUnVsZXNQcmVmZXRjaEZ1dHVyZSIsImV4cGlyeSI6MTY5NDEzMTE5OX0=">
+<!-- web.dev origin trial token - valid until 22 Mar 2023 -->
 <meta http-equiv="origin-trial" content="AuvDj0sNbsmN01Zw2Gg1+wDt6DampaNwj+ydUpWmsL2l1Ritum74apPitLRO0FL3VwFRqpVPTZXhPlxCl23vhwIAAACIeyJvcmlnaW4iOiJodHRwczovL2RlcGxveS1wcmV2aWV3LTk1MzItLXdlYi1kZXYtc3RhZ2luZy5uZXRsaWZ5LmFwcDo0NDMiLCJmZWF0dXJlIjoiU3BlY3VsYXRpb25SdWxlc1ByZWZldGNoRnV0dXJlIiwiZXhwaXJ5IjoxNjk0MTMxMTk5fQ==">
+{# Exlude the /patterns/ section as a control #}
 {% set specRules %}
 {"prerender": [
    {"source": "document",
