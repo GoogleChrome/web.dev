@@ -460,7 +460,7 @@ still gives high level information to third parties of your choice, such as your
 It's also useful to explicitly specify this header [because then you know exactly what the policy is, rather than relying on the browser defaults](/referrer-best-practices/#why-%22explicitly%22).
 If you aren't able to set headers, then it's possible to set a referrer policy for a whole HTML page using a meta element in the `<head>`:
 `<meta name="referrer" content="same-origin">`; and if concerned about specific third parties, it's also possible to set a `referrerpolicy`
-attribute on individual elements such as `<script>`, `<a>`, or `<iframe>`: `<script src=”https://thirdparty.example.com/data.js” referrerpolicy=”no-referrer”>
+attribute on individual elements such as `<script>`, `<a>`, or `<iframe>`: `<script src=”https://thirdparty.example.com/data.js” referrerpolicy=”no-referrer”>`
 
 ### Content-Security-Policy
 
