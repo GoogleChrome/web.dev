@@ -91,7 +91,7 @@ A maneira mais fácil de medir todas as Core Web Vitals é usar a biblioteca Jav
 Com a biblioteca [web-vitals](https://github.com/GoogleChrome/web-vitals), medir cada métrica é tão simples quanto chamar uma função (consulte a documentação para detalhes completos sobre o [uso](https://github.com/GoogleChrome/web-vitals#usage) e sobre a [API](https://github.com/GoogleChrome/web-vitals#api)):
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 Depois que você configurar seu site para usar a biblioteca [web-vitals](https://github.com/GoogleChrome/web-vitals) para medir e enviar seus dados de Core Web Vitals para um endpoint de análises, a próxima etapa é agregar e relatar sobre esses dados para saber se suas páginas estão alcançando os limites recomendados para pelo menos 75% das visitas à página.

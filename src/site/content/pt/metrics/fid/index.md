@@ -156,13 +156,13 @@ A seção a seguir lista as diferenças entre o que a API informa e como a métr
 Em vez de memorizar todas essas diferenças sutis, os desenvolvedores podem usar a [biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals) para medir a FID, que já lida com essas diferenças (onde for possível):
 
 ```js
-import {getFID} from 'web-vitals';
+import {onFID} from 'web-vitals';
 
 // Measure and log FID as soon as it's available.
-getFID(console.log);
+onFID(console.log);
 ```
 
-Para um exemplo completo de como medir a FID em JavaScript, consulte [o código-fonte de `getFID()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts).
+Para um exemplo completo de como medir a FID em JavaScript, consulte [o código-fonte de `onFID()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts).
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a FID em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 

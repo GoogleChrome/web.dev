@@ -82,13 +82,13 @@ A seção a seguir lista as diferenças entre o que a API informa e como a métr
 Em vez de memorizar todas essas diferenças sutis, os desenvolvedores podem usar a [biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals) para medir a FCP, que já lida com essas diferenças (onde for possível):
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // Measure and log FCP as soon as it's available.
-getFCP(console.log);
+onFCP(console.log);
 ```
 
-Para um exemplo completo de como medir a FCP em JavaScript, consulte [o código-fonte de `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts).
+Para um exemplo completo de como medir a FCP em JavaScript, consulte [o código-fonte de `onFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts).
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a FCP em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 

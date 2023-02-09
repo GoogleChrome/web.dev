@@ -82,13 +82,13 @@ new PerformanceObserver((entryList) => {
 Чтобы не запоминать все эти тонкости, разработчики могут использовать для измерения FCP [JavaScript-библиотеку `web-vitals`](https://github.com/GoogleChrome/web-vitals), которая обрабатывает эти случаи (где это возможно):
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // Measure and log FCP as soon as it's available.
-getFCP(console.log);
+onFCP(console.log);
 ```
 
-Полный пример измерения FCP в JavaScript приводится в [исходном коде `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts).
+Полный пример измерения FCP в JavaScript приводится в [исходном коде `onFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить FCP в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 

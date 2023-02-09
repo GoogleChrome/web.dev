@@ -126,7 +126,7 @@ Para determinar el elemento candidato de LCP en JavaScript, puede usar la [API L
 Dada una lista de las entradas `largest-contentful-paint`, puede determinar el elemento candidato de LCP actual si mira la última entrada:
 
 ```js
-function getLCPDebugTarget(entries) {
+function onLCPDebugTarget(entries) {
   const lastEntry = entries[entries.length - 1];
   return lastEntry.element;
 }
@@ -192,7 +192,7 @@ Estos ejemplos están diseñados para funcionar bien con la [biblioteca web-vita
 Si combina los ejemplos enumerados anteriormente con las funciones de estadísticas `web-vitals`, el resultado final se verá así:
 
 ```js
-import {getLCP, getFID, getCLS} from 'web-vitals';
+import {onLCP, onFID, onCLS} from 'web-vitals';
 
 function getSelector(node, maxLen = 100) {
   let sel = '';
@@ -273,9 +273,9 @@ function sendToAnalytics({name, value, entries}) {
   });
 }
 
-getLCP(sendToAnalytics);
-getFID(sendToAnalytics);
-getCLS(sendToAnalytics);
+onLCP(sendToAnalytics);
+onFID(sendToAnalytics);
+onCLS(sendToAnalytics);
 ```
 
 El formato específico requerido para enviar los datos variará según la herramienta de análisis, pero el código anterior debería ser suficiente para obtener los datos necesarios, independientemente de los requisitos de formato.

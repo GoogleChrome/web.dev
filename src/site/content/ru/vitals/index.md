@@ -91,7 +91,7 @@ Google верит, что показатели Core Web Vitals критичес�
 С библиотекой [web-vitals](https://github.com/GoogleChrome/web-vitals) измерение каждой метрики сводится к простому вызову функции (см. документацию об [использовании](https://github.com/GoogleChrome/web-vitals#usage) и подробные сведения об [API](https://github.com/GoogleChrome/web-vitals#api)):
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 После настройки сайта на использование библиотеки [web-vitals](https://github.com/GoogleChrome/web-vitals) для измерения и отправки данных Core Web Vitals в конечную точку аналитики, следующий шаг - агрегирование этих данных и создание отчетов по ним, чтобы увидеть, соответствуют ли ваши страницы рекомендуемым пороговым значениям по крайней мере для 75% посещений страниц.
