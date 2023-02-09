@@ -231,7 +231,7 @@ export const setLanguage = store.action((state, language) => {
 export const loadAnalyticsScript = store.action(() => {
   const {g4ScriptLoaded} = store.getState();
   if (!g4ScriptLoaded && isProd) {
-    loadScript(`https://www.googletagmanager.com/gtm.js?id=GTM-MZWCJPP`, null);
+    loadScript(`https://www.googletagmanager.com/gtm.js?id=${ids.GTM}`, null);
     return {
       g4ScriptLoaded: true,
     };

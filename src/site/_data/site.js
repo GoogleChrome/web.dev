@@ -42,6 +42,7 @@ module.exports = {
     ids: {
       ga4: 'G-18JR3Q8PJ8',
       ua: 'UA-126406676-2',
+      gtm: 'GTM-MZWCJPP',
     },
     dimensions: {
       MEASUREMENT_VERSION: 'dimension5',
