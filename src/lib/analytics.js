@@ -6,6 +6,7 @@ import {
   onLCP,
   onTTFB,
 } from 'web-vitals/attribution';
+import {store} from './store';
 import {version, dimensions} from 'webdev_analytics';
 
 // A function that should be called once all all analytics code has been
@@ -288,21 +289,23 @@ function getMeta(name) {
  */
 export function setConfig() {
   window.dataLayer = window.dataLayer || [];
-  dataLayer.push({measurement_version: version});
-  dataLayer.push({navigation_type: getNavigationType()});
-  dataLayer.push({page_path: location.pathname});
-  dataLayer.push({page_authors: getMeta('authors')});
-  dataLayer.push({page_tags: getMeta('tags')});
-  dataLayer.push({page_learn_paths: getMeta('paths')});
-  dataLayer.push({
+  window.dataLayer.push({measurement_version: version});
+  window.dataLayer.push({navigation_type: getNavigationType()});
+  window.dataLayer.push({page_path: location.pathname});
+  window.dataLayer.push({page_authors: getMeta('authors')});
+  window.dataLayer.push({page_tags: getMeta('tags')});
+  window.dataLayer.push({page_learn_paths: getMeta('paths')});
+  window.dataLayer.push({
     color_scheme_preference: self.matchMedia('(prefers-color-scheme: dark)')
       .matches
       ? 'dark'
       : 'light',
   });
   if (location.hostname === 'localhost') {
-    dataLayer.push({debug_mode: true});
+    window.dataLayer.push({debug_mode: true});
   }
+  const {cookiePreference} = store.getState();
+  window.dataLayer.push({cookiePreference: cookiePreference});
 }
 
 async function initAnalytics() {
