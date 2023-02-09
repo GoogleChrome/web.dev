@@ -40,8 +40,6 @@ module.exports = {
   gitlocalize: 'https://gitlocalize.com/repo/6062/',
   analytics: {
     ids: {
-      ga4: 'G-18JR3Q8PJ8',
-      ua: 'UA-126406676-2',
       gtm: 'GTM-MZWCJPP',
     },
     dimensions: {
