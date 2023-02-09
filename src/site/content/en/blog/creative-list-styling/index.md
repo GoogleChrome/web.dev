@@ -41,7 +41,7 @@ The unordered list element (`<ul>`) is most useful when the items in the list do
 A more common example on the web is a navigation menu. When building a menu, it is good practice to wrap the `ul` in a `nav` element and to identify the menu with a label, to aid assistive technologies. We should also identify the current page in the menu, which we can do using the `aria-current` attribute:
 
 ```html  
-<nav aria-label="Main navigation">  
+<nav aria-label="Main">  
   <ul>  
     <li>  
       <a href="/page-1" aria-current="page">Menu item 1</a>  

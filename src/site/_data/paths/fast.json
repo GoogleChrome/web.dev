@@ -87,7 +87,8 @@
         "preload-critical-assets",
         "preconnect-and-dns-prefetch",
         "link-prefetch",
-        "fast-playback-with-preload"
+        "fast-playback-with-preload",
+        "optimize-ttfb"
       ]
     },
     {
@@ -127,10 +128,6 @@
       "title": "i18n.paths.fast.topics.measure_performance_in_the_field",
       "pathItems": [
         "chrome-ux-report",
-        "chrome-ux-report-data-studio-dashboard",
-        "chrome-ux-report-pagespeed-insights",
-        "chrome-ux-report-bigquery",
-        "chrome-ux-report-api",
         "lab-and-field-data-differences",
         "crux-and-rum-differences"
       ]

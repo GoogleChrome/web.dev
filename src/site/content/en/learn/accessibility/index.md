@@ -4,6 +4,7 @@ authors:
   - cariefisher
 description: An evergreen accessibility course and reference to level up your web development.
 date: 2022-09-30
+updated: 2023-01-12
 tags:
   - accessibility
 ---
@@ -50,5 +51,6 @@ This course was written by [Carie Fisher](https://cariefisher.com/)
 [Rachel Andrew](https://rachelandrew.co.uk/)
 ([Twitter](https://twitter.com/rachelandrew)). Special thanks to
 [Mark Steadman](https://twitter.com/Steady5063) for providing additional support
-for the [JavaScript module](/learn/accessibility/javascript/).
+for the [JavaScript module](/learn/accessibility/javascript/), and 
+[Aaron Forinton](https://github.com/aaronforinton) for supporting the publication process.
 {% endAside %}

@@ -27,7 +27,7 @@ There's a change to how the Layout Viewport behaves from Chrome 108 on Android w
 
 Also in Chrome 108 are the new CSS Viewport Units. These include small (`svw`, `svh`, `svi`, `svb`, `svmin`, `svmax`), large (`lvw`, `lvh`, `lvi`, `lvb`, `lvmin`, `lvmax`), dynamic (`dvw`, `dvh`, `dvi`, `dvb`, `dvmin`, `dvmax`), and logical (`vi`, `vb`) units. These units are already implemented in Firefox and Safari, meaning that we now have interop across the three main browser engines for these units.
 
-Read [The Large, Small, and Dynamic viewport units](https://developer.chrome.com/docs/lighthouse/pwa/viewport/-units/).
+Read [The Large, Small, and Dynamic viewport units](/viewport-units/).
 
 {% BrowserCompat 'css.types.length.viewport_percentage_units_large' %}
 

@@ -129,7 +129,7 @@ page](https://en.wikipedia.org/wiki/Landing_page).
 You can check your site's score for different aggregation methods using
 [PageSpeed Insights](https://pagespeed.web.dev/) or
 the [Chrome User Experience Report
-API](/chrome-ux-report-api/),
+API](https://developer.chrome.com/blog/chrome-ux-report-api/),
 which reports scores for both individual page URLs and the entire origin.
 
 Another way the SPA architecture can affect Core Web Vitals scores is for

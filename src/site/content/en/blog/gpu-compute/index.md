@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2019-08-28
-updated: 2022-08-03
+updated: 2023-01-27
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 description: |
@@ -48,7 +48,7 @@ own. I will be diving deeper and covering WebGPU rendering (canvas, texture,
 etc.) in forthcoming articles.
 
 {% Aside %}
-WebGPU is available for now in Chrome Canary on desktop behind an
+WebGPU is available for now in Chrome Canary behind an
 experimental flag. You can enable it at `chrome://flags/#enable-unsafe-webgpu`. The
 API is constantly changing and currently unsafe. As GPU sandboxing isn't
 implemented yet for the WebGPU API, it is possible to read GPU data for other
@@ -377,7 +377,7 @@ the same index defined in bind group layouts and bind groups declared above.
 const shaderModule = device.createShaderModule({
   code: `
     struct Matrix {
-      size : vec2<f32>,
+      size : vec2f,
       numbers: array<f32>,
     }
 
@@ -386,7 +386,7 @@ const shaderModule = device.createShaderModule({
     @group(0) @binding(2) var<storage, read_write> resultMatrix : Matrix;
 
     @compute @workgroup_size(8, 8)
-    fn main(@builtin(global_invocation_id) global_id : vec3<u32>) {
+    fn main(@builtin(global_invocation_id) global_id : vec3u) {
       // Guard against out-of-bounds work group sizes
       if (global_id.x >= u32(firstMatrix.size.x) || global_id.y >= u32(secondMatrix.size.y)) {
         return;

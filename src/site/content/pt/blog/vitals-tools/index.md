@@ -77,7 +77,7 @@ Hoje temos o prazer de anunciar a [API CrUX](http://developers.google.com/web/to
 
 Os desenvolvedores podem fazer uma pesquisa para localizar uma origem ou URL e segmentar os resultados por diferentes fatores de forma. A API é atualizada diariamente e resume os dados dos 28 dias anteriores (diferentemente do conjunto de dados do BigQuery, que é agregado mensalmente). A API também tem as mesmas cotas de API públicas relaxadas que aplicamos na nossa outra API, a PageSpeed Insights API (25.000 solicitações por dia).
 
-Abaixo está uma [demonstração](/chrome-ux-report-api/) usando a API CrUX para visualizar as métricas Core Web Vitals com distribuições **boa**, **precisa melhorar** e **ruim** :
+Abaixo está uma [demonstração](https://developer.chrome.com/blog/chrome-ux-report-api/) usando a API CrUX para visualizar as métricas Core Web Vitals com distribuições **boa**, **precisa melhorar** e **ruim** :
 
 <figure>   {% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Demonstração da Chrome User Experience Report API demo mostrando métricas Core Web Vitals", width="800", height="523" %}</figure>
 
@@ -85,7 +85,7 @@ Em versões futuras, planejamos expandir a API para permitir o acesso a dimensõ
 
 **Painel CrUX reformulado**
 
-O novo [Painel CrUX](http://g.co/chromeuxdash) permite que você acompanhe facilmente o desempenho de uma origem ao longo do tempo, Agora você também pode usá-lo para monitorar as distribuições de todas as métricas Core Web Vitals. Para começar a usar o painel, veja nosso [tutorial](/chrome-ux-report-data-studio-dashboard/) em web.dev.
+O novo [Painel CrUX](http://g.co/chromeuxdash) permite que você acompanhe facilmente o desempenho de uma origem ao longo do tempo, Agora você também pode usá-lo para monitorar as distribuições de todas as métricas Core Web Vitals. Para começar a usar o painel, veja nosso [tutorial](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/) em web.dev.
 
 <figure>   {% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="Painel do Chrome UX Report exibindo as métricas Core Web Vitals numa nova página de destino", width="800", height="497" %}</figure>
 

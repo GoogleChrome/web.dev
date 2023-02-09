@@ -50,7 +50,7 @@ Las siguientes secciones explican en detalle cómo configurar tu propio método 
 
 ## Paso 1: Proporciona el identificador del método de pago
 
-Un [identificador de método de pago](https://w3c.github.io/payment-method-id/#dfn-payment-method-identifiers) es una cadena basada en URL. Por ejemplo, el identificador de Google Pay es `https://google.com/pay`. Los desarrolladores de aplicaciones de pago pueden elegir cualquier URL como identificador de método de pago siempre que tengan control sobre ella y puedan ofrecer contenido arbitrario. En este artículo, usaremos [`https://bobpay.xyz/pay`](https://bobpay.xyz/pay) como identificador del método de pago.
+Un [identificador de método de pago](https://w3c.github.io/payment-method-id/#dfn-payment-method-identifiers) es una cadena basada en URL. Por ejemplo, el identificador de Google Pay es `https://google.com/pay`. Los desarrolladores de aplicaciones de pago pueden elegir cualquier URL como identificador de método de pago siempre que tengan control sobre ella y puedan ofrecer contenido arbitrario. En este artículo, usaremos [`https://bobbucks.dev/pay`](https://bobbucks.dev/pay) como identificador del método de pago.
 
 {% Aside %} Las aplicaciones de pago también pueden admitir métodos de pago de terceros. {% endAside %}
 
@@ -62,7 +62,7 @@ Un objeto `PaymentRequest` se construye con una lista de [identificadores de mé
 
 ```js
 const request = new PaymentRequest([{
-  supportedMethods: 'https://bobpay.xyz/pay'
+  supportedMethods: 'https://bobbucks.dev/pay'
 }], {
   total: {
     label: 'total',
@@ -112,7 +112,7 @@ Un archivo de manifiesto de método de pago debería parecerse similar al siguie
 
 ```json
 {
-  "default_applications": ["https://bobpay.xyz/manifest.json"],
+  "default_applications": ["https://bobbucks.dev/manifest.json"],
   "supported_origins": [
     "https://alicepay.friendsofalice.example"
   ]
@@ -131,16 +131,16 @@ La URL del identificador del método de pago puede responder opcionalmente con u
 
 Configura el servidor del método de pago para que responda con una cabecera `Link` con el atributo `rel="payment-method-manifest"` y la URL del [manifiesto del método de pago](https://w3c.github.io/payment-method-manifest/).
 
-Por ejemplo, si el manifiesto está en `https://bobpay.xyz/payment-manifest.json`, la cabecera de respuesta incluiría:
+Por ejemplo, si el manifiesto está en `https://bobbucks.dev/payment-manifest.json`, la cabecera de respuesta incluiría:
 
 ```http
-Link: <https://bobpay.xyz/payment-manifest.json>; rel="payment-method-manifest"
+Link: <https://bobbucks.dev/payment-manifest.json>; rel="payment-method-manifest"
 ```
 
-La URL puede ser un nombre de dominio completo o una ruta relativa. Para ver un ejemplo del tráfico de red, inspecciona `https://bobpay.xyz/pay/`. También puedes usar un comando `curl`, por ejemplo:
+La URL puede ser un nombre de dominio completo o una ruta relativa. Para ver un ejemplo del tráfico de red, inspecciona `https://bobbucks.dev/pay/`. También puedes usar un comando `curl`, por ejemplo:
 
 ```shell
-curl --include https://bobpay.xyz/pay
+curl --include https://bobbucks.dev/pay
 ```
 
 {% Aside %} Obtén más información sobre [las prácticas de métodos de pago en la documentación de W3C](https://github.com/w3c/payment-request-info/wiki/PaymentMethodPractice). {% endAside %}

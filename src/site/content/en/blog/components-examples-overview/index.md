@@ -18,6 +18,14 @@ You can read through the densely commented implementation of different
 components and hopefully learn from them. Note that they are explicitly **NOT**
 a UI library and should **NOT** be used in production.
 
+## Components
+
+* [`<howto-checkbox>`](/components-howto-checkbox/): represents a boolean option in a form. The most common type of
+  checkbox is a dual-type which allows the user to toggle between two choices—checked and unchecked.
+* [`<howto-tabs>`](/components-howto-tabs/): limits visible content by separating it into multiple panels.
+* [`<howto-tooltip>`](/components-howto-tooltip/): a popup that displays information related to an element when the element
+  receives keyboard focus or the mouse hovers over it.
+
 ## Goals
 
 Our aim is to demonstrate best practices for writing robust components that are
@@ -53,7 +61,7 @@ explaining why that is.
 
 ### Maintainable code
 
-As HowTo: Components is aimed to be read and function as a reference
+As HowTo: Components is a reference
 implementation, we spent extra time on writing readable and easily
 comprehensible code that is densely commented.
 
@@ -64,8 +72,8 @@ comprehensible code that is densely commented.
 `<howto>` components are not published on npm, bower or any other platform
 because they are not meant to be used in production. For the sake of terse,
 readable code, we are using modern JavaScript APIs and are supporting modern
-browsers which implement the Web Components standards. The idea is that you, the
-reader, are able adapt the code to fit your own needs after reading these
+browsers which implement the Web Components standards. You
+will be able to adapt the code to fit your own needs after reading these
 implementations.
 
 ### Be backwards compatible

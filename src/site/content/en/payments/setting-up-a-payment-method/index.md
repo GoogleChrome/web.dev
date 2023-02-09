@@ -69,7 +69,7 @@ is a URL-based string. For example, Google Pay's identifier is
 `https://google.com/pay`. Payment app developers can pick any URL as a payment
 method identifier as long as they have control over it and can serve arbitrary
 content. In this article, we'll use
-[`https://bobpay.xyz/pay`](https://bobpay.xyz/pay) as the payment method
+[`https://bobbucks.dev/pay`](https://bobbucks.dev/pay) as the payment method
 identifier.
 
 {% Aside %}
@@ -87,7 +87,7 @@ for the `supportedMethods` property. For example:
 
 ```js
 const request = new PaymentRequest([{
-  supportedMethods: 'https://bobpay.xyz/pay'
+  supportedMethods: 'https://bobbucks.dev/pay'
 }], {
   total: {
     label: 'total',
@@ -151,7 +151,7 @@ A payment method manifest file should look like this:
 
 ```json
 {
-  "default_applications": ["https://bobpay.xyz/manifest.json"],
+  "default_applications": ["https://bobbucks.dev/manifest.json"],
   "supported_origins": [
     "https://alicepay.friendsofalice.example"
   ]
@@ -178,19 +178,19 @@ Configure the payment method server to respond with a HTTP `Link` header with
 the `rel="payment-method-manifest"` attribute and the [payment method
 manifest](https://w3c.github.io/payment-method-manifest/) URL.
 
-For example, if the manifest is at `https://bobpay.xyz/payment-manifest.json`,
+For example, if the manifest is at `https://bobbucks.dev/payment-manifest.json`,
 the response header would include:
 
 ```http
-Link: <https://bobpay.xyz/payment-manifest.json>; rel="payment-method-manifest"
+Link: <https://bobbucks.dev/payment-manifest.json>; rel="payment-method-manifest"
 ```
 
 The URL can be a fully-qualified domain name or a relative path. Inspect
-`https://bobpay.xyz/pay/` for network traffic to see an example. You may use a
+`https://bobbucks.dev/pay/` for network traffic to see an example. You may use a
 `curl` command as well:
 
 ```shell
-curl --include https://bobpay.xyz/pay
+curl --include https://bobbucks.dev/pay
 ```
 
 {% Aside %}
@@ -402,11 +402,10 @@ Request API displays a browser-provided UI called the "Payment Request UI". This
 UI allows users to choose a payment app. After pressing the **Continue** button
 in the Payment Request UI, the selected payment app is launched.
 
-<figure style="width:300px; margin:auto;">
-  <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/8T37CEyLisAjwW39dRwB.mp4", autoplay="true", loop="true", muted="true"
+  %}
   <figcaption>
     Payment Request UI intervenes before launching the payment app.
   </figcaption>
@@ -418,11 +417,10 @@ the browser can delegate fulfillment of that information to payment apps and
 launch a payment app directly without showing the Payment Request UI when
 `show()` is called.
 
-<figure style="width:300px; margin:auto;">
-  <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
-  </video>
+<figure>
+  {% Video
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/VOKIj5Tqfi2bNPCjtkyi.mp4", autoplay="true", loop="true", muted="true"
+  %}
   <figcaption>
     Skip the Payment Request UI and launch the payment app directly.
   </figcaption>

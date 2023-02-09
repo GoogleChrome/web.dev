@@ -147,10 +147,6 @@ input[type='radio'] ~ .web-select-group__selector::after {
   border-color: $FOCUS_COLOR;
 }
 
-.js-focus-visible .web-select-group__input:focus:not(.focus-visible) ~ .web-select-group__selector::before {
-  border-color: transparent;
-}
-
 input[type='radio']:checked ~ .web-select-group__selector::after {
   transform: scale(1);
 }

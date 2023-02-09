@@ -1,0 +1,21 @@
+# The date is used to organize the courses on the /learn page.
+# This should be the initial publish date of the course. When new pages are
+# added to the course the site will check if they are <30 days old, and if they
+# are, it will give them a "New" badge. However, when you first launch a course
+# you don't want every entry to have a "New" badge, so anything that existed
+# on or before this date will not receive the "New" badge.
+date: 2022-01-17
+url: /handbook/content-types/example-course/
+draft: false
+# When true the course will not be listed on the /learn page
+invisible: true
+title: i18n.courses.example.title
+description: i18n.courses.example.description
+# This is the logo that appears in the navigation drawer and header.
+logo: '/images/courses/example/logo.svg'
+# This is used to provide the background for the navigation drawer and header.
+background: '/images/courses/example/background.svg'
+# This provides the cover image for the card on /learn/
+card: '/images/courses/example/card.svg'
+# This is used for the social media thumbnail.
+thumbnail: 'image/VbsHyyQopiec0718rMq2kTE1hke2/03dCg7PsCbcwblqRHYMB.png'

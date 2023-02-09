@@ -6,7 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2020-07-17
-updated: 2021-09-14
+updated: 2023-01-12
 description: |
   Learn how to register a web-based payment app to a customers' browser. You'll also learn how to debug them.
 tags:
@@ -24,7 +24,7 @@ communication with the merchant.
 
 To configure a web-based payment app, you need to register available payment
 methods, and a service worker. You can configure your web-based payment app
-declaratively with a web app manifest or imperatively with JavaScript.
+declaratively with a web app manifest.
 
 {% include 'content/payments/browser-compatibility.njk' %}
 
@@ -65,149 +65,6 @@ rest.
 While a single payment method identifier can support multiple payment apps,
 JIT registration happens only when the payment method manifest points to a
 single payment app.
-{% endAside %}
-
-## Configure a payment app with JavaScript
-
-Configuring a web-based payment app using JavaScript allows you to register
-multiple payment methods and manually unregister service workers.
-
-### Manually register a service worker
-
-A service worker is a JavaScript file you can register using
-[`navigator.serviceWorker.register()`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register).
-If you have a service worker file named `service-worker.js`, you can register it
-to the visitor's browser by running the following code:
-
-<!--
-  {% Glitch {
-    id: 'paymenthandler-demo',
-    path: 'public/index.js:32:1',
-    height: 480
-  } %}
-  -->
-
-{% Label %}[payment handler] payment app's landing page{% endLabel %}
-
-```js
-// Feature detection
-if ('serviceWorker' in navigator) {
-  // Register a service worker
-  navigator.serviceWorker.register(
-    // A service worker JS file is separate
-    'service-worker.js'
-  );
-  // PaymentManager requires the service worker to be active.
-  // One simple method to activate a service worker is through
-  // a `ready` promise.
-  const registration = await navigator.serviceWorker.ready;
-…
-```
-
-{% include 'content/reliable/workbox.njk' %}
-
-{% Aside %}
-If you are new to the service worker, learn more at [Service Workers: an
-Introduction](https://developer.chrome.com/docs/workbox/service-worker-overview/).
-{% endAside %}
-
-### Set a payment instrument
-
-{% Aside 'key-term' %}
-Payment apps can support multiple ways for making a payment. For example, a
-customer can add multiple credit cards or e-wallets to a payment app. Each of
-them is a payment instrument.
-{% endAside %}
-
-Once the service worker is registered, [a service worker registration
-object](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration) is
-returned. Call
-[`registration.paymentManager.instrument.set()`](https://w3c.github.io/payment-handler/#paymentinstruments-interface)
-to set a payment instrument. It accepts two arguments, a string that represents
-the instrument key and a [`PaymentInstrument`
-object](https://w3c.github.io/payment-handler/#dom-paymentinstrument) that
-contains details about the instrument.
-
-{% Label %}[payment handler] payment app's landing pages{% endLabel %}
-
-```js
-…
-  // Feature detection
-  if (!registration.paymentManager) return;
-
-
-  await registration.paymentManager.instruments.set(
-    // Payment instrument key
-    'bobpay_card_1',
-    // Payment instrument details
-    {
-      // This parameter will be ignored in Chrome
-      name: 'Payment Handler Example',
-      // This parameter will be used to match against
-      // the PaymentRequest.
-      method: 'https://bobpay.xyz/pay'
-    }
-  );
-```
-
-<div class="table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th colspan="2">Arguments</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td colspan="2">
-          <a href="https://w3c.github.io/payment-handler/#paymentinstruments-interface"><code>instrumentKey</code></a> (required)
-        </td>
-        <td>
-          An arbitrary string used only to identify the instrument when you want to update it. It's not visible to customers and it's recommended you use an identifier from your payment app backend.
-        </td>
-      </tr>
-      <tr>
-        <td rowspan="5">
-          <a href="https://w3c.github.io/payment-handler/#paymentinstrument-dictionary"><code>PaymentInstrument</code></a>
-        </td>
-        <td></td>
-        <td>
-          Details of the payment instrument.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://developer.mozilla.org/docs/Web/Manifest/name"><code>name</code></a> (required)
-        </td>
-        <td>
-          Sets a string as the instrument name. Required but ignored in Chrome.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://developer.mozilla.org/docs/Web/Manifest/icons"><code>icons</code></a>
-        </td>
-        <td>
-          Sets an array of <a href="https://w3c.github.io/payment-handler/#imageobject-dictionary"><code>ImageObject</code></a>s that the Payment Request sheet will display. Ignored in Chrome.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <code>method</code>
-        </td>
-        <td>
-          A supported payment method identifier.
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-{% Aside %}
-Chrome ignores the `name` and `icons` properties. It respects the [web app
-manifest](/setting-up-a-payment-method/#step-3-serve-a-web-app-manifest)'s
-respective properties instead, but other browsers may behave differently.
 {% endAside %}
 
 ## Debugging a web-based payment app
@@ -279,9 +136,8 @@ to the service worker that handles payments.
 
 ## Next steps
 
-You learned how to register a service worker, set payment instruments for a
-web-based payment app. The next step is to learn how the service worker can
-orchestrate a payment transaction at runtime.
+The next step is to learn how the service worker can orchestrate a payment
+transaction at runtime.
 
 * [Orchestrating payment transactions with a service
   worker](/orchestrating-payment-transactions)

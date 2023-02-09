@@ -207,7 +207,7 @@ Be aware that these targets may change over time.
 * Test your load performance on the mobile devices and network connections that
   are common among your users. You can use [Chrome User Experience
   Report](/chrome-ux-report/) to find out the [connection
-  distribution](/chrome-ux-report-data-studio-dashboard/#using-the-dashboard)
+  distribution](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/#using-the-dashboard)
   of your users. If the data is not available for your site, [The Mobile Economy
   2019](https://www.gsma.com/mobileeconomy/) suggests that a good global
   baseline is a mid-range Android phone, such as a Moto G4, and a slow 3G

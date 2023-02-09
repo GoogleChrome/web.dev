@@ -71,9 +71,3 @@
 :focus .w-tooltip--right {
   transform: translateX(-100%) scale(1);
 }
-
-// sass-lint:disable-block class-name-format
-.js-focus-visible :focus:not(.focus-visible) .w-tooltip {
-  opacity: 0;
-  visibility: hidden;
-}
