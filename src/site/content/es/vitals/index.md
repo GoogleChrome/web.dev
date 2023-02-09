@@ -91,7 +91,7 @@ La forma más sencilla de medir todos los Core Web Vitals es utilizar la bibliot
 Con la [biblioteca web-vitals](https://github.com/GoogleChrome/web-vitals), medir cada métrica es tan simple como llamar a una sola función (consulte la documentación para conocer el [uso](https://github.com/GoogleChrome/web-vitals#usage) completo y los detalles de la [API):](https://github.com/GoogleChrome/web-vitals#api)
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 Una vez que haya configurado su sitio para usar la biblioteca [web-vitals](https://github.com/GoogleChrome/web-vitals) para medir y enviar sus datos de Core Web Vitals a un punto final de análisis, el siguiente paso es agregar y hacer un reporte sobre esos datos para ver si sus páginas cumplen con los umbrales recomendados para al menos el 75% de las visitas a la página.

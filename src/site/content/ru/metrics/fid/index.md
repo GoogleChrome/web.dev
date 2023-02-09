@@ -156,13 +156,13 @@ new PerformanceObserver((entryList) => {
 Чтобы не запоминать все эти тонкости, разработчики могут использовать для измерения FID [JavaScript-библиотеку `web-vitals`](https://github.com/GoogleChrome/web-vitals), которая обрабатывает эти случаи (где это возможно):
 
 ```js
-import {getFID} from 'web-vitals';
+import {onFID} from 'web-vitals';
 
 // Measure and log FID as soon as it's available.
-getFID(console.log);
+onFID(console.log);
 ```
 
-Полный пример измерения FID в JavaScript приводится в [исходном коде `getFID()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts).
+Полный пример измерения FID в JavaScript приводится в [исходном коде `onFID()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить FID в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals` {% endAside %}
 

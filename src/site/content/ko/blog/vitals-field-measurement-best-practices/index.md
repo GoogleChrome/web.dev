@@ -37,7 +37,7 @@ Core Web Vitals 메트릭을 지원하는 분석 도구를 사용하는 것이 �
 다음 코드 샘플은 코드에서 이러한 메트릭을 추적하고 분석 서비스로 보내는 것이 얼마나 쉬운지를 보여줍니다.
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics({name, value, id}) {
   const body = JSON.stringify({name, value, id});
@@ -46,9 +46,9 @@ function sendToAnalytics({name, value, id}) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 ## 분포를 보고할 수 있는지 확인

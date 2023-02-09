@@ -91,7 +91,7 @@ Core Web Vitals の各指標をすべて測定するためには、[web-vitals](
 [Web-vitals](https://github.com/GoogleChrome/web-vitals) ライブラリを使用することにより、各指標の測定は単一の関数の呼び出しと同じくらい簡単になります (詳細な[使用方法](https://github.com/GoogleChrome/web-vitals#usage)および [API](https://github.com/GoogleChrome/web-vitals#api) に関する詳細については、ドキュメントを参照してください)。
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 [Web-Vitals](https://github.com/GoogleChrome/web-vitals) ライブラリを使用して Core Web Vitals データを測定し、アナリティクス エンドポイントへと送信するようサイトを構成したら、次のステップはそのデータの集計およびレポートを実施し、推奨しきい値 (ページ別訪問数の少なくとも 75%) を満たしているかどうかを確認することです。

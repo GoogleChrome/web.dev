@@ -246,14 +246,14 @@ new PerformanceObserver((entryList) => {
 開発者がこれらのケースをすべて記憶して対処する必要はありません。[`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)を使用すれば、上記すべてが考慮された状態で CLS の測定を行うことができます。
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // CLS のレポートが必要なすべての状況で
 // CLS を測定し、ログとして記録します。
-getCLS(console.log);
+onCLS(console.log);
 ```
 
-JavaScript を使用して CLS を測定する方法に関する詳細な例については、[`getCLS()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)を参照してください。
+JavaScript を使用して CLS を測定する方法に関する詳細な例については、[`onCLS()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts)を参照してください。
 
 {% Aside %}場合によっては (クロスオリジン iframe など)、JavaScript を使用して CLS を測定することはできません。詳細については、`web-vitals` ライブラリの「[制限事項](https://github.com/GoogleChrome/web-vitals#limitations)」セクションを参照してください。{% endAside %}
 

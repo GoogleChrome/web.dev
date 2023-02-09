@@ -166,13 +166,13 @@ new PerformanceObserver((entryList) => {
 こういった微妙な違いをすべて記憶していなくても、[`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)を使用して LCP を測定すれば、これらの違いを (可能な限り) 処理してくれます。
 
 ```js
-import {getLCP} from 'web-vitals';
+import {onLCP} from 'web-vitals';
 
 // 実行可能となった時点ですぐに LCP の測定やログ記録を実行します。
-getLCP(console.log);
+onLCP(console.log);
 ```
 
-JavaScript を使用して LCP を測定する方法に関する詳細な例については、[`getLCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts)を参照してください。
+JavaScript を使用して LCP を測定する方法に関する詳細な例については、[`onLCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/onLCP.ts)を参照してください。
 
 {% Aside %}場合によっては (クロスオリジン iframe など)、JavaScript を使用して LCP を測定することはできません。詳細については、`web-vitals` ライブラリの「[limitations](https://github.com/GoogleChrome/web-vitals#limitations) (制限事項)」セクションを参照してください。{% endAside %}
 
