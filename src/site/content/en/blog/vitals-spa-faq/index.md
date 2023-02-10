@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - yoavweiss
 date: 2021-09-14
-updated: 2023-02-04
+updated: 2023-02-10
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/FITOGeO0PDyPrBveixB7.jpeg
 alt: "Exterior view of the Walt Disney Concert Hall"
 tags:
@@ -38,7 +38,7 @@ limitations in the web platform), we are [actively working on closing those
 gaps](#what-is-google-doing-to-ensure-mpas-do-not-have-an-unfair-advantage-compared-to-spas).
 
 {% Aside %}
-Update: The work is now available for sites to experiment with. See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more details.
+Update (February 2023): The work is now available for sites to experiment with. See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more details.
 {% endAside %}
 
 
@@ -310,7 +310,7 @@ migrating from an MPA to an SPA to actually compare the performance before and
 after.
 
 {% Aside %}
-Update: See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more information on a new "soft-navigations" API that is intended to allow better SPA measurement of the Core Web Vitals.
+Update (February 2023): See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more information on a new "soft-navigations" API that is intended to allow better SPA measurement of the Core Web Vitals.
 {% endAside %}
 
 Of course, more research is needed before we'll know whether we can accurately
