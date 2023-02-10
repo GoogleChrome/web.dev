@@ -75,7 +75,6 @@
     "fast-glob": "^3.2.7",
     "firebase": "^9.0.0-beta.7",
     "firebase-tools": "^9.3.0",
-    "focus-visible": "^5.0.2",
     "gorko": "^0.8.0",
     "gray-matter": "^4.0.3",
     "gulp": "^4.0.0",
@@ -112,7 +111,7 @@
     "unistore": "^3.4.1",
     "web-vitals": "^3.1.1",
     "webdev-infra": "1.0.42",
-    "wicg-inert": "^3.0.1",
+    "wicg-inert": "^3.1.2",
     "yaml-front-matter": "^4.0.0"
   },
   "devDependencies": {

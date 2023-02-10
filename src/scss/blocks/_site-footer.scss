@@ -1,5 +1,8 @@
 /// SITE FOOTER
 /// The main, global footer that is on each page
+
+@import '../../styles/tools/mixins';
+
 .site-footer {
   padding: $global-gutter;
   border-block-start: 1px solid get-utility-value('color', 'stroke');
@@ -25,11 +28,37 @@
   }
 }
 
+.site-footer__brand {
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
 .site-footer__primary-nav {
+  grid-template-columns: repeat(1, 1fr);
   --auto-grid-placement: auto-fit;
+
+  @include bp(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.site-footer__primary-nav-links {
+  --auto-grid-placement: auto-fit;
+
+  @include bp(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   li + li {
     margin-top: 0.5rem;
+  }
+}
+
+.site-footer__primary-nav-content {
+  margin-bottom: 0.75rem;
+
+  p {
+    max-width: 65ch;
   }
 }
 

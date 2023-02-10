@@ -82,13 +82,13 @@ new PerformanceObserver((entryList) => {
 こういった微妙な違いをすべて記憶していなくても、[`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)を使用して FCP を測定すれば、これらの違いを (可能な限り) 処理してくれます。
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // 実行可能となった時点ですぐに FCP の測定やログ記録を実行します。
-getFCP(console.log);
+onFCP(console.log);
 ```
 
-JavaScript を使用して FCP を測定する方法に関する詳細な例については、[`getFCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts)を参照してください。
+JavaScript を使用して FCP を測定する方法に関する詳細な例については、[`onFCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts)を参照してください。
 
 {% Aside %}場合によっては (クロスオリジン iframe など)、JavaScript を使用して FCP を測定することはできません。詳細については、`web-vitals` ライブラリの「[制限事項](https://github.com/GoogleChrome/web-vitals#limitations)」セクションを参照してください。{% endAside %}
 

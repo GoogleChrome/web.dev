@@ -71,10 +71,6 @@ $BORDER_COLOR: $GREY_300;
     box-shadow: 0 0 0 1px $FOCUS_COLOR;
   }
 
-  .js-focus-visible &:focus:not(.focus-visible)::after { // sass-lint:disable-line class-name-format
-    box-shadow: none;
-  }
-
   &:active::after {
     background: $GREEN_100;
   }

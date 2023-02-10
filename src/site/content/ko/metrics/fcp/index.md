@@ -82,13 +82,13 @@ new PerformanceObserver((entryList) => {
 개발자는 이러한 미묘한 차이점을 모두 기억하는 대신 가능한 경우 다음과 같은 차이점을 대신 처리해주는 [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)를 사용하여 FCP를 측정할 수 있습니다.
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // FCP를 이용 가능하게 되면 바로 측정 및 기록합니다.
-getFCP(console.log);
+onFCP(console.log);
 ```
 
-JavaScript에서 FCP를 측정하는 방법에 대한 전체 예제는 [`getFCP()`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFCP.ts)를 참조하세요.
+JavaScript에서 FCP를 측정하는 방법에 대한 전체 예제는 [`onFCP()`의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 FCP를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 

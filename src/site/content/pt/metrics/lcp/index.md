@@ -166,13 +166,13 @@ A seção a seguir lista as diferenças entre o que a API informa e como a métr
 Em vez de memorizar todas essas diferenças sutis, os desenvolvedores podem usar a [biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals) para medir a LCP, que já lida com essas diferenças (onde for possível):
 
 ```js
-import {getLCP} from 'web-vitals';
+import {onLCP} from 'web-vitals';
 
 // Measure and log LCP as soon as it's available.
-getLCP(console.log);
+onLCP(console.log);
 ```
 
-Para um exemplo completo de como medir a LCP em JavaScript, consulte [o código-fonte de `getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getLCP.ts).
+Para um exemplo completo de como medir a LCP em JavaScript, consulte [o código-fonte de `onLCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onLCP.ts).
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a LCP em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 

@@ -52,10 +52,6 @@
   outline-offset: -3px;
 }
 
-.js-focus-visible .w-button:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
-  outline: none;
-}
-
 .w-button[disabled] {
   background: $GREY_300;
   box-shadow: none;
@@ -181,11 +177,6 @@
 .w-button--svg:focus {
   box-shadow: 0 0 0 1px $FOCUS_COLOR;
   outline: none;
-}
-
-.js-focus-visible .w-button--icon:focus:not(.focus-visible), // sass-lint:disable-line class-name-format
-.js-focus-visible .w-button--svg:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
-  box-shadow: none;
 }
 
 // A round button.

@@ -41,11 +41,6 @@ $CHEVRON_MARGIN: 12px;
     box-shadow: 0 0 0 1px $FOCUS_COLOR;
   }
 
-  .js-focus-visible &:focus:not(.focus-visible) .w-details__header::after {
-    // sass-lint:disable-line class-name-format
-    box-shadow: none;
-  }
-
   &:active .w-details__header::after {
     background: $WEB_PRIMARY_COLOR_100;
   }
