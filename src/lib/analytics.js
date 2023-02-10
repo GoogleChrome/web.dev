@@ -69,8 +69,8 @@ function sendToGoogleAnalytics({
     metric_value: value,
     // This should already by set globally, but to ensure it's consistent
     // with the web-vitals library, set it again.
-    // Override for 'navigational-prefetch' for the experiment
-    // (https://github.com/GoogleChrome/web.dev/pull/9532)
+    // Override for 'navigational-prefetch' for the prefetch origin trial
+    // experiment (https://github.com/GoogleChrome/web.dev/pull/9532)
     navigation_type:
       navigationType === 'navigate' &&
       performance.getEntriesByType('navigation')[0].deliveryType ===
