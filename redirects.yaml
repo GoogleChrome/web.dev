@@ -403,6 +403,10 @@ redirects:
     destination: https://developer.chrome.com/articles/file-system-access/
   - source: /user-agent-client-hints
     destination: https://developer.chrome.com/articles/user-agent-client-hints/
+  - source: /nfc
+    destination: https://developer.chrome.com/articles/nfc/
+  - source: /build-for-webusb
+    destination: https://developer.chrome.com/articles/build-for-webusb/
 
   # Redirect for Aurora
   - source: /aurora
