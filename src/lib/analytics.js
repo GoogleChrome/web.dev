@@ -73,6 +73,8 @@ function sendToGoogleAnalytics({
     // experiment (https://github.com/GoogleChrome/web.dev/pull/9532)
     navigation_type:
       navigationType === 'navigate' &&
+      performance.getEntriesByType &&
+      performance.getEntriesByType('navigation')[0] &&
       performance.getEntriesByType('navigation')[0].deliveryType ===
         'navigational-prefetch'
         ? 'navigational-prefetch'
