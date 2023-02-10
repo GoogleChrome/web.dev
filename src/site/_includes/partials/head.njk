@@ -53,13 +53,26 @@
 <!-- web.dev origin trial token - valid until 22 Mar 2023 -->
 <meta http-equiv="origin-trial" content="AuvDj0sNbsmN01Zw2Gg1+wDt6DampaNwj+ydUpWmsL2l1Ritum74apPitLRO0FL3VwFRqpVPTZXhPlxCl23vhwIAAACIeyJvcmlnaW4iOiJodHRwczovL2RlcGxveS1wcmV2aWV3LTk1MzItLXdlYi1kZXYtc3RhZ2luZy5uZXRsaWZ5LmFwcDo0NDMiLCJmZWF0dXJlIjoiU3BlY3VsYXRpb25SdWxlc1ByZWZldGNoRnV0dXJlIiwiZXhwaXJ5IjoxNjk0MTMxMTk5fQ==">
 {# Exlude the /patterns/ section as a control #}
-{% set specRules %}
-{"prefetch": [
-   {"source": "document",
-    "where": {"and": [
-       {"href_matches": "/*\\?*", "relative_to": "document"},
-       {"not": {"href_matches": "/patterns/*\\?*", "relative_to": "document"}}
-    ]}}
-]}
+{% set speculationRules %}
+{
+  "prefetch": [
+   {
+      "source": "document",
+      "where": {
+        "and": [
+          {
+            "href_matches": "/*\\?*", "relative_to": "document"
+          },
+          {
+            "not": {
+              "href_matches": "/patterns/*\\?*",
+              "relative_to": "document"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
 {% endset %}
-<script type="speculationrules">{{ specRules | minifyJSON | cspHash | safe }}</script>
+<script type="speculationrules">{{ speculationRules | minifyJSON | cspHash | safe }}</script>

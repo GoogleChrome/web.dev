@@ -69,7 +69,14 @@ function sendToGoogleAnalytics({
     metric_value: value,
     // This should already by set globally, but to ensure it's consistent
     // with the web-vitals library, set it again.
-    navigation_type: navigationType,
+    // Override for 'navigational-prefetch' for the experiment
+    // (https://github.com/GoogleChrome/web.dev/pull/9532)
+    navigation_type:
+      navigationType === 'navigate' &&
+      performance.getEntriesByType('navigation')[0].deliveryType ===
+        'navigational-prefetch'
+        ? 'navigational-prefetch'
+        : navigationType,
     // Use a non-interaction event to avoid affecting bounce rate.
     // This only applies to Universal Analytics and can be deleted once
     // we're only using GA4.
@@ -213,6 +220,11 @@ function getNavigationType() {
     // Prerendered pages have an activationStart time after activation
     if (navEntry.activationStart > 0) {
       return 'prerender';
+    } else if (
+      navEntry.type === 'navigate' &&
+      navEntry.deliveryType === 'navigational-prefetch'
+    ) {
+      return 'navigational-prefetch';
     } else {
       return navEntry.type.replace(/_/, '-');
     }
