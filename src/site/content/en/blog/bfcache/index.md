@@ -480,7 +480,7 @@ window.addEventListener('pagehide', ...);
 ```
 {% endCompare %}
 
-Lighthouse 10.0 also [added a bfcache audit](https://developer.chrome.com/blog/lighthouse-10-0/#bfcache), which performs a similar test to the DevTools test, and also provides reasons why the page is ineligible if the audit fails. Take a look at the [bfcache audit's docs](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/) for more information.
+Lighthouse 10.0 also [added a bfcache audit](https://developer.chrome.com/blog/lighthouse-10-0/#bfcache), which performs a similar test to the one DevTools does, and also provides reasons why the page is ineligible if the audit fails. Take a look at the [bfcache audit's docs](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/) for more information.
 
 ## How bfcache affects analytics and performance measurement
 
