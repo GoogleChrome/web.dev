@@ -92,6 +92,7 @@ const stripBlog = require('./src/site/_filters/strip-blog');
 const getPaths = require('./src/site/_filters/get-paths');
 const navigation = require('./src/site/_filters/navigation');
 const {minifyJs} = require('./src/site/_filters/minify-js');
+const {minifyJSON} = require('./src/site/_filters/minify-json');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
 const {siteRender} = require('./src/site/_filters/site-render');
 const {
@@ -196,6 +197,7 @@ module.exports = function (config) {
   config.addFilter('toc', toc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addNunjucksAsyncFilter('minifyJs', minifyJs);
+  config.addFilter('minifyJSON', minifyJSON);
   config.addFilter('cspHash', cspHash);
   config.addFilter('isUpcoming', isUpcoming);
   config.addFilter('filterInUpcoming', filterInUpcoming);
