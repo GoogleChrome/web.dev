@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    pull-request-branch-name:
+      separator: "/"
+    labels:
+      - "eng"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "@11ty/eleventy"
+      - dependency-name: "webdev-infra"
+      - dependency-name: "@mdn/browser-compat-data"
