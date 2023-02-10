@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - yoavweiss
 date: 2021-09-14
-updated: 2022-07-18
+updated: 2023-02-10
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/FITOGeO0PDyPrBveixB7.jpeg
 alt: "Exterior view of the Walt Disney Concert Hall"
 tags:
@@ -36,6 +36,11 @@ Vitals initiative is to provide metrics that measure the experience independent
 of the technology. While this is not possible in every case today (due to
 limitations in the web platform), we are [actively working on closing those
 gaps](#what-is-google-doing-to-ensure-mpas-do-not-have-an-unfair-advantage-compared-to-spas).
+
+{% Aside %}
+Update (February 2023): The work is now available for sites to experiment with. See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more details.
+{% endAside %}
+
 
 ## Frequently asked questions
 
@@ -303,6 +308,10 @@ possible to aggregate SPA route transition time into the same bucket as
 same-origin page loads in an MPA. This is exciting because it would allow a site
 migrating from an MPA to an SPA to actually compare the performance before and
 after.
+
+{% Aside %}
+Update (February 2023): See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more information on a new "soft-navigations" API that is intended to allow better Core Web Vitals measurements for SPAs.
+{% endAside %}
 
 Of course, more research is needed before we'll know whether we can accurately
 make these determinations. If you have suggestions or feedback on these

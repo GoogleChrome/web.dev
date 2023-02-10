@@ -8,7 +8,7 @@ description: |
 authors:
   - tunetheweb
 date: 2022-08-15
-#updated: 2022-07-18
+updated: 2022-02-10
 hero: image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/Q7jtkHwdv8dmhz1KhaiD.jpg
 alt: Runnings racing each other on a track
 tags:
@@ -158,7 +158,7 @@ Getting an understanding from your RUM provider as to when Core Web Vitals are m
 
 #### Single-page applications
 
-Single-page applications (SPA) work by updating the content on the current page, rather than performing traditional page navigation at the browser level. This means the browser does not see these as page navigations, despite users experiencing them as such. The [Core Web Vitals APIs provided by the browser will not take these into consideration](/vitals-spa-faq/), and therefore CrUX does not currently support these page navigations. Work is currently underway to resolve this issue.
+Single-page applications (SPA) work by updating the content on the current page, rather than performing traditional page navigation at the browser level. This means the browser does not see these as page navigations, despite users experiencing them as such. The [Core Web Vitals APIs provided by the browser will not take these into consideration](/vitals-spa-faq/), and therefore CrUX does not currently support these page navigations. Work is currently underway to resolve this issue—see the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more information.
 
 Some RUM providers do attempt to detect "soft navigations" in SPAs, but if they're also attributing Core Web Vitals metrics to those "soft navigations" it will lead to differences with CrUX since the underlying APIs do not support this.
 
