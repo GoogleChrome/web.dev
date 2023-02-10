@@ -221,6 +221,8 @@ function getNavigationType() {
     if (navEntry.activationStart > 0) {
       return 'prerender';
     } else if (
+      // For the document speculation rules origin trial
+      // overrwrite the navigation type
       navEntry.type === 'navigate' &&
       navEntry.deliveryType === 'navigational-prefetch'
     ) {
