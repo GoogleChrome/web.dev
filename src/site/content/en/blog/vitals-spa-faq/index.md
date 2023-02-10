@@ -310,7 +310,7 @@ migrating from an MPA to an SPA to actually compare the performance before and
 after.
 
 {% Aside %}
-Update (February 2023): See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more information on a new "soft-navigations" API that is intended to allow better SPA measurement of the Core Web Vitals.
+Update (February 2023): See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more information on a new "soft-navigations" API that is intended to allow better Core Web Vitals measurements for SPAs.
 {% endAside %}
 
 Of course, more research is needed before we'll know whether we can accurately
