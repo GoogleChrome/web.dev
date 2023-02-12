@@ -113,7 +113,7 @@ img {
 
 ## Deliver your images
 
-Those CSS rules tell the browser how you'd like images to be rendered. You can also provide hints in your HTML about how you the browser should handle those images.
+Those CSS rules tell the browser how you'd like images to be rendered. You can also provide hints in your HTML about how the browser should handle those images.
 
 ### Sizing hints
 
@@ -210,7 +210,7 @@ If you make multiple versions of the same image at different sizes, you can let 
 
 You can pass in a list of values separated by commas. Each value should be the URL of an image followed by a space followed by some metadata about the image. This metadata is called a descriptor.
 
-In this example, the metadata describes the width of each width using the `w` unit. One `w` is one pixel.
+In this example, the metadata describes the width of each image using the `w` unit. One `w` is one pixel.
 
 ```html/7-9
 <img
