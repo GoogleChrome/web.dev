@@ -332,8 +332,8 @@ or `environment` for the phone's back camera or microphone. Generally, using `ca
 is going to pick which input device they want to use.
 
 ```html
-<label for=”avatar”>A recent photo of yourself:</label>
-<input type="file" capture="user" accept="image/*” name=”avatar” id=”avatar”>
+<label for="avatar">A recent photo of yourself:</label>
+<input type="file" capture="user" accept="image/*" name="avatar" id="avatar">
 ```
 
 ## Native validation
@@ -361,7 +361,7 @@ You can use CSS to provide cues about whether form controls are required and val
 You can even use CSS to prevent users from being able to click the submit button until the form is valid:
 
 ```css
-form:invalid [type=”submit] {
+form:invalid [type="submit] {
     opacity: 50%;
     pointer-events: none;
 }
@@ -438,10 +438,10 @@ id: 'ExeYjPB'
 This example has a form within a `<dialog>` with a nested `<form>` with three form controls and two submit buttons, with
 clear labels and instructions.
 
-The first submit button closes the dialog. Use `formmethod=”dialog”` to override the form’s default method, and close the
+The first submit button closes the dialog. Use `formmethod="dialog"` to override the form’s default method, and close the
 `<dialog>` without submitting the data or erasing it. You must also include the `formnovalidate` otherwise the browser will
 try to validate checking that all the required fields have a value. The user may want to close the dialog and form without
-entering any data; validation would prevent this. Include `aria-label=”close”` because “X” is a known visual cue but is
+entering any data; validation would prevent this. Include `aria-label="close"` because “X" is a known visual cue but is
 not a descriptive label.
 
 The form controls all have implicit labels, so you don’t need to include `id` or `for` attributes. The input elements both

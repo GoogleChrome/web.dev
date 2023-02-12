@@ -56,7 +56,7 @@ id: 'vYzBNKR'
 } %}
 
 In this example, the `<form>` is not a child of a `<template>` in the DOM. Rather, contents of `<template>` elements are children
-of a [`DocumentFragment`](https://developer.mozilla.org/docs/Web/API/DocumentFragment) returned by the `[HTMLTemplateElement.content]`(https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
+of a [`DocumentFragment`](https://developer.mozilla.org/docs/Web/API/DocumentFragment) returned by the [`HTMLTemplateElement.content`](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
 property. To be made visible, JavaScript must be used to grab the contents and append those contents to the DOM.
 
 {% Codepen {
@@ -270,7 +270,7 @@ very intentionally.
 The **shadow tree** is the DOM tree inside the shadow DOM. The shadow root is the root node of the shadow tree.
 
 The [`:host`](https://developer.mozilla.org/docs/Web/CSS/:host) pseudo-class selects the `<star-rating>`, the shadow host element.
-The **shadow host** is the DOM node that the shadow DOM is attached to. To target only specific versions of the host, use [`:host()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:host_function).
+The **shadow host** is the DOM node that the shadow DOM is attached to. To target only specific versions of the host, use [`:host()`](https://developer.mozilla.org/docs/Web/CSS/:host_function).
 This will select only the shadow host elements that match the parameter passed, like a class or attribute selector. To select
 all the custom elements, you can use `star-rating` in the global CSS, or `:host(#IDDoesNotExist)` in the template styles. In terms
 of [specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity), the global CSS wins.

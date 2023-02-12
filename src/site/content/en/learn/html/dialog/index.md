@@ -90,7 +90,7 @@ A close button without JavaScript can be written as:
 ```html
 <dialog open>
   <form method="dialog">
-    <button type=”submit” autofocus>close</button>
+    <button type="submit" autofocus>close</button>
   </form>
 </dialog>
 ```

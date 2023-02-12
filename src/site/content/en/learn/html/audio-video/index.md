@@ -45,8 +45,8 @@ and English and French subtitles between the opening and closing tags.
    <source src="videos/machines.webm" type="video/webm">
    <source src="videos/machines.mp4" type="video/mp4">
    <source src="videos/machines.ogv" type="video/ogg">
-   <track label=“English" kind=“subtitles" srclang=“en" src=“vtt/subtitles-en.vtt" default />
-   <track label=“Francais" kind=“subtitles" srclang=“fr" src=“vtt/subtitles-fr.vtt" />
+   <track label="English" kind="subtitles" srclang="en" src="vtt/subtitles-en.vtt" default />
+   <track label="Francais" kind="subtitles" srclang="fr" src="vtt/subtitles-fr.vtt" />
    <p>Watch <a href="https://youtube.com/link">video on Youtube</a>
 </video>
 ```
@@ -83,8 +83,8 @@ Between the opening and required closing tags of both audio and video, include o
 elements to specify timed text tracks. The following example includes two `<track>` files, providing timed text subtitles in both English and French.
 
 ```html
-<track label=“English" kind=“subtitles" srclang=“en" src=“vtt/subtitles-en.vtt" default />
-   <track label=“Francais" kind=“subtitles" srclang=“fr" src=“vtt/subtitles-fr.vtt" />
+<track label="English" kind="subtitles" srclang="en" src="vtt/subtitles-en.vtt" default />
+   <track label="Francais" kind="subtitles" srclang="fr" src="vtt/subtitles-fr.vtt" />
 ```
 
 The track files, specified in the `src` attribute, should be in [WebVTT format](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (.vtt).

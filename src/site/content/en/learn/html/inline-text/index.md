@@ -69,7 +69,7 @@ to indicate text that has been added, or "inserted", also optionally including t
 
 When including abbreviations or acronyms, always provide the full expanded version of the term in plain text on first use,
 as you introduce the shortened representation of the term between opening and closing [`<abbr>`](https://developer.mozilla.org/docs/Web/HTML/Element/abbr)
-tags; unless the term is well-known to the reader, such as “HTML” and “CSS”  in this series. Only on this first occurrence,
+tags; unless the term is well-known to the reader, such as "HTML" and "CSS"  in this series. Only on this first occurrence,
 then the abbreviation or acronym is being defined, is `<abbr>` needed. The `title` attribute is not necessary nor helpful.
 
 When defining a term that is not an abbreviation or acronym, use the definition [`<dfn>`](https://developer.mozilla.org/docs/Web/HTML/Element/dfn)
@@ -89,10 +89,10 @@ on pronunciation. The [`<ruby>`](https://developer.mozilla.org/docs/Web/HTML/Ele
 use to contain these annotations that make written languages like Korean, Chinese and Japanese easier to read. Ruby
 can also be used for Hebrew, Arabic, and Vietnamese.
 
-The ruby parenthesis ([`<rp>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp)) was included in the spec to
+The ruby parenthesis ([`<rp>`](https://developer.mozilla.org/docs/Web/HTML/Element/rp)) was included in the spec to
 contain opening and closing parentheses for browsers that do not
 support display of `<ruby>`. When browsers support `<ruby>`, which all evergreen browsers do, the contents of any `<rp>` elements
-are not displayed. The ruby text element ([`<rt>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt)) contains
+are not displayed. The ruby text element ([`<rt>`](https://developer.mozilla.org/docs/Web/HTML/Element/rt)) contains
 the actual annotations. Both of these are nested within the `<ruby>`.
 
 {% Codepen {
@@ -152,7 +152,7 @@ such as by adding a red wavy underline to mimic word processor grammar error ind
 
 ### `<b>`
 
-The `<b>`(https://developer.mozilla.org/docs/Web/HTML/Element/b) element can be used to draw attention to text that is not
+The [`<b>`](https://developer.mozilla.org/docs/Web/HTML/Element/b) element can be used to draw attention to text that is not
 otherwise important. This element doesn’t convey any special semantic information and should only be used when none of the other
 elements in this section fit the purpose. No example is provided as I couldn’t come up with a valid use case; that’s how "last resort"
 this element is.
