@@ -64,7 +64,7 @@ currently has focus with CSS, and avoid accessibility problems by not reordering
 ## Making inert elements interactive
 
 The `contentedible` and `tabindex` attributes, being global attributes, can be added to any element, making them focusable
-in the process. Focusable elements can also be focused with a mouse or pointer by having the [`autofocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus)
+in the process. Focusable elements can also be focused with a mouse or pointer by having the [`autofocus`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autofocus)
 attribute set, or by script, such as with [`element.focus()`](https://developer.mozilla.org/docs/Web/API/HTMLElement/focus).
 
 ### The `tabindex` attribute
@@ -201,7 +201,7 @@ and [`:enabled`](https://developer.mozilla.org/docs/Web/CSS/:enabled) pseudoclas
 is set.
 
 Being a boolean attribute, the presence of the attribute disables the otherwise enabled element; you can’t set it to `false`.
-To re-enable a disabled element, the attribute has to be removed, generally via [`Element.removeAttribute(‘disabled’)`](https://developer.mozilla.org/docs/Web/API/Element/removeAttribute).
+To re-enable a disabled element, the attribute has to be removed, generally via [`Element.removeAttribute('disabled')`](https://developer.mozilla.org/docs/Web/API/Element/removeAttribute).
 
 The [`HTMLInputElement.disabled`](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/disabled) property lets you check
 if an input is disabled. As `disabled` is not a global attribute, it’s not inherited from the HTMLElement, but every supporting

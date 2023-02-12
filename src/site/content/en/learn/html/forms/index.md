@@ -455,7 +455,7 @@ The submit button at the end sets the forms method to POST. When clicked, the va
 values are valid, the form data will be submitted, the dialog will close, and the page may redirect to `thankyou.php`,
 which is the action URL. If any values are missing, or if the numeric value has a step mismatch or is out of range, a
 relevant browser defined error message will appear, the form will not be submitted, and the dialog will not close.
-The default error messages can be customized with the [`validityState.setCustomValidity(‘message here’)`](/learn/forms/javascript/#validation-with-javascript)
+The default error messages can be customized with the [`validityState.setCustomValidity('message here')`](/learn/forms/javascript/#validation-with-javascript)
 method. Just note that if you set a custom message, the message must be explicitly set to the empty string when everything
 is valid or the form will not submit.
 

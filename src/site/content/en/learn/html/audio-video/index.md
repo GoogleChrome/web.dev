@@ -193,7 +193,7 @@ By including the `controls` attribute, the user has a way to control the audio (
 Only remove the controls attribute once a replacement button has been instantiated.
 
 ```javascript
-document.querySelector(‘[aria-controls]’).removeAttribute(‘controls’);
+document.querySelector('[aria-controls]').removeAttribute('controls');
 ```
 
 Always include external controls when users can’t access the controls, such as with background videos that have their controls hidden

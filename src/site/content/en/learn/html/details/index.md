@@ -34,7 +34,7 @@ answer when the checkmark was checked. The CSS looked something like this:
 ```
 
 Why the history? Disclosure widgets, such as native accordions, without JavaScript or form control hacks, are a relatively recent
-addition; the [`<details>`](https://developer.mozilla.org/docs/Web/HTML/Element/details) and [`<summary>`]((https://developer.mozilla.org/docs/Web/HTML/Element/summary)
+addition; the [`<details>`](https://developer.mozilla.org/docs/Web/HTML/Element/details) and [`<summary>`](https://developer.mozilla.org/docs/Web/HTML/Element/summary)
 elements have only been fully supported in all modern browsers since January 2020. You can now create functioning, albeit less
 than attractive, disclosure widgets using only semantic HTML. The `<details>` and `<summary>` elements are all you need: they handle
 expanding and collapsing content natively. When a user clicks or taps a `<summary>`, or releases the `<kbd>Enter</kbd>` key when
@@ -57,9 +57,9 @@ You’ll note, these Codepens contain no JavaScript.
 
 The `<details>` element is the disclosure widget container. The `<summary>` is the summary or legend for its parent `<details>`. The
 summary is always displayed, acting as a button that toggles the display of the rest of the parent’s contents. Interacting
-with the `<summary>` toggles the display of the self-labeled summary siblings, natively toggling the `<details>` element’s `open` attribute.
+with the `<summary>` toggles the display of the self-labeled summary siblings, natively toggling the `<details>`' element’s `open` attribute.
 
-The `open` attribute is a boolean attribute. If present, no matter the value or lack thereof, it indicates that all the `<details>’`
+The `open` attribute is a boolean attribute. If present, no matter the value or lack thereof, it indicates that all the `<details>`
 contents are shown to the user. If the `open` attribute is not present, only the contents of the `<summary>` are shown.
 
 Because the `open` attribute is added and removed automatically as the user interacts with the control, it can be used in CSS to
