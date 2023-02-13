@@ -307,9 +307,9 @@ the default dynamic keyboard for `url` input types.
 
 Keyboards for `<input type="tel">` on iPhone and two different Android phones:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BK9EPsgyPy0Wt2jmp0lp.png", alt="iPhone keyboard showing <input type="tel">", width="194", height="400" %},
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/8ECZmU9gqR4X6ppGk3v4.png", alt="Android keyboard showing <input type="tel">", width="194", height="400" %},
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/dODUYXx0VDxVwBMP0e59.png", alt="Android keyboard showing <input type="tel">", width="194", height="400" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BK9EPsgyPy0Wt2jmp0lp.png", alt="iPhone keyboard showing <input type=tel>", width="194", height="400" %},
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/8ECZmU9gqR4X6ppGk3v4.png", alt="Android keyboard showing <input type=tel>", width="194", height="400" %},
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/dODUYXx0VDxVwBMP0e59.png", alt="Android keyboard showing <input type=tel>", width="194", height="400" %}
 
 Keyboards for `<input type="email">` on iPhone and two different Android phones:
 
