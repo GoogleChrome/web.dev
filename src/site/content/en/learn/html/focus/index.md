@@ -49,14 +49,12 @@ one word. The tabbing sequence is the order of the code, which no longer matches
 for keyboard users.
 
 {% Aside %}
-
 CSS features, including [flexbox](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Flexbox), [grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout),
 [positioning](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Positioning), [transforms](https://developer.mozilla.org/docs/Web/CSS/translate),
 and [multi-column](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Multiple-column_Layout), can alter the visual order of
 content. Always ensure your content maintains a logical tabbing order on all viewport sizes. Test your content by tabbing
 through it with a keyboard: with shift + tab to move backwards through the content. Always ensure it’s apparent which element
 currently has focus with CSS, and avoid accessibility problems by not reordering focusable elements with CSS.
-
 {% endAside %}
 
 ## Making inert elements interactive

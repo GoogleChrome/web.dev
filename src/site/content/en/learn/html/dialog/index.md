@@ -34,9 +34,9 @@ id: 'BaOBLNy'
 The `HTMLDialogElement` has three main methods, along with all the methods inherited from [`HTMLElement`](/learn/html/apis).
 
 ```html
-dialog.show() /* opens the dialog */
-dialog.showModal() /* opens the dialog as a modal */
-dialog.close() /* closes the dialog */
+dialog.show() /* opens the dialog */,
+dialog.showModal() /* opens the dialog as a modal */,
+dialog.close() /* closes the dialog */,
 ```
 
 Because this `<dialog>` was opened via the [`HTMLDialogElement.showModal()`](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal)
