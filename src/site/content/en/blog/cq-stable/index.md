@@ -76,6 +76,11 @@ The `15cqi` above refers to 15% of the container’s inline size. The `clamp()` 
 ## A container query Valentine
 To celebrate the container query love this holiday, we’ve made a Valentine for you all to enjoy, regardless of what (latest version) stable browser you’re viewing this in!
 
-https://codepen.io/una/pen/yLqZrYd/68e76e953ea1ce171a2f7c24a3374880
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'rNrbPQw',
+  height: 450,
+  tab: 'result'
+} %}
 
 – screenshot of the heart in 3 different browsers, all at different inline sizes –
