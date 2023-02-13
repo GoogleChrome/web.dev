@@ -246,19 +246,19 @@ but the group of controls and their labels also need a label. To label the group
   <legend>Who is your favorite student?</legend>
   <ul>
     <li>
-  	<label>
-    	  <input type="radio" value="blendan" name="machine"> Blendan Smooth
-  	</label>
+      <label>
+        <input type="radio" value="blendan" name="machine"> Blendan Smooth
+      </label>
     </li>
     <li>
-  	<label>
-    	  <input type="radio" value="hoover" name="machine"> Hoover Sukhdeep
-  	</label>
+      <label>
+        <input type="radio" value="hoover" name="machine"> Hoover Sukhdeep
+      </label>
     </li>
     <li>
-  	<label>
-    	  <input type="radio" value="toasty" name="machine"> Toasty McToastface
-  	</label>
+      <label>
+        <input type="radio" value="toasty" name="machine"> Toasty McToastface
+      </label>
     </li>
   </ul>
 </fieldset>
@@ -293,7 +293,7 @@ much use on the `<fieldset>`. The `name` can be used to access the fieldset with
 is not included in submitted data (the named form controls nested within are included).
 
 {% Aside %}
-You can learn more about forms and accessibility in the [forms module of Learn Accessibility](/learn/accessibility/forms).
+You can learn more about forms and accessibility in the [forms module of Learn Accessibility](/learn/accessibility/forms/).
 {% endAside%}
 
 ## Input types and dynamic keyboard
@@ -302,21 +302,20 @@ As noted earlier, there are [22 different types of inputs](https://developer.moz
 In some cases, when a user is on a device with a dynamic keyboard that displays only as needed, such as a phone, the input
 type used determines the type of keyboard displayed. The default keyboard shown can be optimized for the type of input required.
 For example, type `tel` will show a keypad optimized for entering telephone numbers; `email` includes the `@` and `.`; and the
-dynamic keyboard for `url` includes a colon and the slash symbol. Unfortunately, the iPhone still doesn’t include ‘:’ in
+dynamic keyboard for `url` includes a colon and the slash symbol. Unfortunately, the iPhone still doesn’t include `:` in
 the default dynamic keyboard for `url` input types.
 
 Keyboards for `<input type="tel">` on iPhone and two different Android phones:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BK9EPsgyPy0Wt2jmp0lp.png", alt="iPhone keyboard showing <input type="tel">", width="194", height="400" %}
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/8ECZmU9gqR4X6ppGk3v4.png", alt="Android keyboard showing <input type="tel">", width="194", height="400" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BK9EPsgyPy0Wt2jmp0lp.png", alt="iPhone keyboard showing <input type="tel">", width="194", height="400" %},
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/8ECZmU9gqR4X6ppGk3v4.png", alt="Android keyboard showing <input type="tel">", width="194", height="400" %},
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/dODUYXx0VDxVwBMP0e59.png", alt="Android keyboard showing <input type="tel">", width="194", height="400" %}
 
 Keyboards for `<input type="email">` on iPhone and two different Android phones:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/Zd2yPTG7QT74AIvyCJrU.png", alt="iPhone keyboard showing <input type="email">", width="194", height="400" %}
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/bofzFSrrNK55RW1FesAg.png", alt="Android keyboard showing <input type="email">", width="194", height="400" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/Zd2yPTG7QT74AIvyCJrU.png", alt="iPhone keyboard showing <input type="email">", width="194", height="400" %},
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/bofzFSrrNK55RW1FesAg.png", alt="Android keyboard showing <input type="email">", width="194", height="400" %},
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/4ZwT1lrxJ4owTP0FjGWf.png", alt="Android keyboard showing <input type="email">', width="194", height="400" %}
-
 
 ## Accessing the microphone and camera
 
