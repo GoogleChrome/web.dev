@@ -14,11 +14,9 @@ are inert, meaning they are not interactive. With HTML attributes, it is possibl
 make inert elements interactive.
 
 {% Aside %}
-
 For usability reasons, always ensure that the user knows which element has focus. Include CSS [`:focus`](https://developer.mozilla.org/docs/Web/CSS/:focus),
 [`:focus-visible`](https://developer.mozilla.org/docs/Web/CSS/:focus-visible), and, optionally, [`:focus-within`](https://developer.mozilla.org/docs/Web/CSS/:focus-within)
 styles. This is so important: there are Learn sections devoted to focus styles in both the CSS and Accessibility learning paths.
-
 {% endAside %}
 
 By default, the navigation focus order is the same as the visual order, which is the source code order. There are HTML
