@@ -2,16 +2,17 @@
 layout: post
 title: Container queries land in stable browsers
 subhead: >
-  Celebrating size container query and container query units landing in stable browsers.
+  This Valentine's day, we're celebrating size container queries and container query units landing in all stable browsers.
 description: >
   This week size container queries and container query units are landing in all stable browsers.
 date: 2023-02-14
 authors:
-  - unakravets
+  - una
 hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/CIEGE8v8IvH4MDgI7EfO.jpg
 alt: 'TBD'
 thumbnail: image/HodOHWjMnbNw56hvNASHWSgZyAf2/CIEGE8v8IvH4MDgI7EfO.jpg
 tags:
+  - blog
   - css
 ---
 
@@ -25,9 +26,7 @@ Container query love is in the air! This Valentine’s day, size container queri
 
 With container queries you can query  the styling information of a parent element, such as its `inline-size`. With media queries, you could query the size of the viewport,  container queries enable components that can change based on where they are in the UI.
 
-
 {% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/n97pThL5vsttcRrVGmJy.avif", alt="Media query vs container query.", width="800", height="372" %}
-
 
 Container queries are especially handy for responsive design and reusable components. For example, enabling a card component that can lay out in one way when placed in a sidebar, and in a different configuration within a product grid.
 
@@ -79,7 +78,7 @@ To celebrate the container query love this holiday, we’ve made a Valentine for
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNrbPQw',
-  height: 450,
+  height: 600,
   tab: 'result'
 } %}
 
