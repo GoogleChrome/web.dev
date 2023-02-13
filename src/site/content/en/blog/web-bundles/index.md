@@ -18,6 +18,11 @@ feedback:
   - api
 ---
 
+{% Aside 'warning' %}
+The experimental implementation of navigation to Web Bundles was
+[removed](https://chromestatus.com/feature/5377722941440000) from Chrome in February 2023.
+{% endAside %}
+
 Bundling a full website as a single file and making it shareable
 opens up new use cases for the web. Imagine a world where you can:
 
