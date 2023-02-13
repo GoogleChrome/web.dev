@@ -100,6 +100,7 @@ const {
   filterInUpcoming,
   filterOutUpcoming,
 } = require('./src/site/_filters/is-upcoming');
+const {filterByTag} = require('./src/site/_filters/filter-by-tag');
 const {calendarLink} = require('./src/site/_filters/calendar-link');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
@@ -202,6 +203,7 @@ module.exports = function (config) {
   config.addFilter('isUpcoming', isUpcoming);
   config.addFilter('filterInUpcoming', filterInUpcoming);
   config.addFilter('filterOutUpcoming', filterOutUpcoming);
+  config.addFilter('filterByTag', filterByTag);
   config.addFilter('calendarLink', calendarLink);
 
   // ----------------------------------------------------------------------------

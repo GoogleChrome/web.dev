@@ -1,10 +1,21 @@
 {% if cards %}
   {% for card in cards %}
     {% set featured = null %}
+    {% if card.isLatestPost %}
+      {% set postsContainsTag = collections.all | filterByTag(['css']) %}
+      {% set latestPostInTag = postsContainsTag[0] %}
+      {% set featured = latestPostInTag.url | findByUrl %}
+
+      {% set eyebrowIcon = 'latest' %}
+      {% set eyebrowText = 'Latest' %}
+    {% endif %}
     {% if card.url %}
       {% set featured = card.url | findByUrl %}
+
+      {% set eyebrowIcon = card.eyebrow.icon %}
+      {% set eyebrowText = card.eyebrow.text %}
     {% endif %}
-    <a
+     <a
       {% if featured or card.url %} href="{{ featured.url or card.url }}" {% endif %}
       class="card {% if card.cardLayout %}card-{{card.cardLayout}}{% endif %}{% if card.row %} row-{{card.row}}{% endif %}{% if card.column %} col-{{card.column}}{% endif %}{% if card.theme %} bg-{{card.theme}}{% endif %}"
       data-category="web.dev"
@@ -20,8 +31,8 @@
 
       <div class="content">
         <div class="card__eyebrow flow">
-          {{ icon(card.eyebrow.icon) }}
-          <span class="text-size-0 color-mid-text">{{ card.eyebrow.text }}</span>
+          {{ icon(eyebrowIcon) }}
+          <span class="text-size-0 color-mid-text">{{ eyebrowText }}</span>
         </div>
 
         <div class="card__content flow">
