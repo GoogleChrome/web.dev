@@ -8,9 +8,9 @@ description: >
 date: 2023-02-14
 authors:
   - unakravets
-hero: image/VbsHyyQopiec0718rMq2kTE1hke2/F6xN4wjE6Y9vgh1m1uCi.png
+hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/CIEGE8v8IvH4MDgI7EfO.jpg
 alt: 'TBD'
-thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/F6xN4wjE6Y9vgh1m1uCi.png
+thumbnail: image/HodOHWjMnbNw56hvNASHWSgZyAf2/CIEGE8v8IvH4MDgI7EfO.jpg
 tags:
   - css
 ---
