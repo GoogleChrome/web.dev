@@ -31,7 +31,7 @@ has made the tab order chaotic:
 
 {% Codepen {
 user: 'web-dot-dev',
-id: 'GRXKqGz'
+id: 'GRXKqGz',
 tab: 'result'
 } %}
 
@@ -39,7 +39,7 @@ In this example, CSS has created a divergence between the tabbing order and the 
 
 {% Codepen {
 user: 'web-dot-dev',
-id: 'KKxPMBV'
+id: 'KKxPMBV',
 tab: 'result'
 } %}
 
