@@ -37,7 +37,7 @@ To use container queries, first set containment on a parent element. Do this by 
 
 ```css
 .card-container {
-  container-type: card / inline-size;
+  container: card / inline-size;
 }
 ```
 
@@ -60,7 +60,14 @@ Now, you can use that container to apply styles to any of its children using `@c
 }
 ```
 
-– visual –
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'ZEMzNGj',
+  height: 600,
+  tab: 'result'
+} %}
+
+{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/2MWkjhnK2TLqZ3S63NfK.mp4", controls=true, autoplay=true, loop=true, muted=true %}
 
 Additionally, you can use [container query length unit values](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries#container_query_length_units) in the same way that you would viewport-based unit values. The difference being that the container units correspond to the container rather than the viewport. The following example demonstrates responsive typography using container query units and the `clamp()` function to give a minimum and maximum size value:
 
@@ -78,8 +85,6 @@ To celebrate the container query love this holiday, we’ve made a Valentine for
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNrbPQw',
-  height: 600,
+  height: 700,
   tab: 'result'
 } %}
-
-– screenshot of the heart in 3 different browsers, all at different inline sizes –
