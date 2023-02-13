@@ -21,7 +21,7 @@ This web feature is now available in all three major browser engines!
 
 Container query love is in the air! This Valentine’s day, size container queries and container query units are stable in all modern browsers.
 
-– support table –  
+{% BrowserCompat 'css.at-rules.container' %}
 
 With container queries you can query  the styling information of a parent element, such as its `inline-size`. With media queries, you could query the size of the viewport,  container queries enable components that can change based on where they are in the UI.
 
