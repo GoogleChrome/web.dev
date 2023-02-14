@@ -27,7 +27,7 @@ Container query love is in the air! This Valentine’s day, size container queri
 
 With container queries you can query  the styling information of a parent element, such as its `inline-size`. With media queries, you could query the size of the viewport,  container queries enable components that can change based on where they are in the UI.
 
-{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/hmzfwE5nyg017bX0GEeP.png", alt="Media queries vs container queries", width="800", height="388" %}
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/hmzfwE5nyg017bX0GEeP.png", alt="Media queries vs container queries.", width="800", height="388" %}
 
 Container queries are especially handy for responsive design and reusable components. For example, enabling a card component that can lay out in one way when placed in a sidebar, and in a different configuration within a product grid.
 
