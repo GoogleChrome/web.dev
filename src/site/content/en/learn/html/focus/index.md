@@ -3,7 +3,7 @@ title: 'Focus'
 authors:
   - estelleweyl
 description: How to manage focus order in your HTML documents.
-date: 2023-13-02
+date: 2023-14-02
 tags:
   - html
 ---
@@ -23,7 +23,7 @@ By default, the navigation focus order is the same as the visual order, which is
 attributes that can alter this order and CSS properties that can alter the visual order of content. Changing the tabbing
 order with HTML or visual rendering order with CSS can harm user experience.
 
-Don’t alter the perceived and actual tabbing order with CSS and HTML. As the following two examples demonstrate, tab orders
+Don't alter the perceived and actual tabbing order with CSS and HTML. As the following two examples demonstrate, tab orders
 that differ from the visually expected order are confusing to users and bad for user experience.
 
 In this example, the value of the [`tabindex`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex) attribute
@@ -53,7 +53,7 @@ CSS features, including [flexbox](https://developer.mozilla.org/docs/Learn/CSS/C
 [positioning](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Positioning), [transforms](https://developer.mozilla.org/docs/Web/CSS/translate),
 and [multi-column](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Multiple-column_Layout), can alter the visual order of
 content. Always ensure your content maintains a logical tabbing order on all viewport sizes. Test your content by tabbing
-through it with a keyboard: with shift + tab to move backwards through the content. Always ensure it’s apparent which element
+through it with a keyboard: with shift + tab to move backwards through the content. Always ensure it's apparent which element
 currently has focus with CSS, and avoid accessibility problems by not reordering focusable elements with CSS.
 {% endAside %}
 
@@ -74,7 +74,7 @@ The `tabindex` attribute takes as its value an integer. A negative value makes a
 focus navigation order in source code order. A value of 1 or greater makes the element focusable and tabbable,
 but adds it to a prioritized tabbing sequence, and, as we saw above, should be avoided.
 
-On this page, the share button is a custom `<share-action>` element. The `tabindex="0"` adds this not-natively focusable
+On this page, the share button is a custom `<share-action>` element. The `tabindex="0"` adds this not-normally focusable
 element into the keyboard default tabbing order:
 
 ```html
@@ -91,14 +91,14 @@ element into the keyboard default tabbing order:
 The [`role="button"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/button_role) informs screen reader
 users that this element should behave like a [`<button>`](https://developer.mozilla.org/docs/Web/HTML/Element/button).
 When creating custom elements which mimic existing semantic elements, including an [ARIA role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles)
-is appropriate and expected. The element must provide all the features of the native element being replicated. This can be done by extending the replicated
+is appropriate and expected. The element must provide all the features of the element being replicated. This can be done by extending the replicated
 element, such as extending the [`HTMLButtonElement`](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement), or by adding
-`tabindex="0"` and using JavaScript to program *all* the functionality of the native element it is mimicking, including handling
+`tabindex="0"` and using JavaScript to program *all* the functionality of the element it is mimicking, including handling
 pointer events and the Enter and Space key presses. If `<button>` had been used for the button instead of creating a custom element,
 the `tabindex` and `role` attributes would have been unnecessary, and the browser would have provided the pointer and keyboard events.
 {% endAside %}
 
-There’s another custom element on this page: the [local navigation](/learn/html/navigation/#local-navigation) has a custom
+There's another custom element on this page: the [local navigation](/learn/html/navigation/#local-navigation) has a custom
 element with a negative `tabindex` value:
 
 ```html
@@ -116,7 +116,7 @@ focusable elements. Note that the browsers scroll focused elements into view. Fo
 
 If you want to query the document to find out which element currently has focus, use the read-only [`Document.activeElement`](https://developer.mozilla.org/docs/Web/API/Document/activeElement) property.
 
-Elements with a `tabindex` of `1` or greater are included in a separate tab sequence. As you’ll notice in the Codepen,
+Elements with a `tabindex` of `1` or greater are included in a separate tab sequence. As you'll notice in the Codepen,
 tabbing begins in a separate sequence, in order of lowest value to highest value, before going through those in the regular sequence
 (no `tabindex` set, or `tabindex="0"`) in source order:
 
@@ -141,16 +141,16 @@ which will add it to the sequential focus navigation order.
 ### The `autofocus` attribute
 
 While the boolean [`autofocus`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autofocus) is a global attribute
-that can be set on any element, it doesn’t make an inert element interactive. When the page loads, the first focusable element
+that can be set on any element, it doesn't make an inert element interactive. When the page loads, the first focusable element
 with the `autofocus` attribute set will receive focus, as long as that element is displayed and not nested in a [`<dialog>`](/learn/html/dialog/).
 
 Automatically setting focus on content can be confusing. Setting `autofocus` on a form control means that the form control
 will scroll into view on page load. All your users, including screen reader users and users with small viewports, may not
-"see" the instructions for the form, possibly even scrolling past the form control’s normally visible label. The `autofocus`
-attribute doesn’t alter the document's sequential focus navigation order. The elements in the sequence coming before the
+"see" the instructions for the form, possibly even scrolling past the form control's normally visible label. The `autofocus`
+attribute doesn't alter the document's sequential focus navigation order. The elements in the sequence coming before the
 autofocused element are simply skipped. For these reasons, it is not advised to include the `autofocus` attribute.
 
-The exception to the "don’t use `autofocus`" recommendation is including the `autofocus` attribute within `<dialog>` elements.
+The exception to the "don't use `autofocus`" recommendation is including the `autofocus` attribute within `<dialog>` elements.
 When a dialog is opened, the browser will automatically focus on the first focusable interactive element within the `<dialog>`,
 meaning `autofocus` to an element is not necessary. If you want to be sure a specific interactive element within the dialog receives
 focus when the dialog opens, add the `autofocus` attribute to that element.
@@ -180,32 +180,32 @@ As we learned above, a `tabindex` attribute with a negative value makes an eleme
 is not necessary; including a `tabindex` with a negative value removes normally tabbable elements from the sequential focus
 navigation order.
 
-A negative `tabindex` value prevents keyboard users from focusing on interactive elements, but doesn’t disable the element. Pointer
+A negative `tabindex` value prevents keyboard users from focusing on interactive elements, but doesn't disable the element. Pointer
 users can still focus on the element. To disable an element, use the `disabled` attribute.
 
 ### Disabled
 
 The boolean [disabled](https://developer.mozilla.org/docs/Web/HTML/Attributes/disabled) attribute makes the form controls on
-which it is applied and their descendants, if any, unfocusable. Disabled form controls can’t be focused, don’t get click events,
+which it is applied and their descendants, if any, unfocusable. Disabled form controls can't be focused, don't get click events,
 and are not submitted upon form submission. Note `disabled` is not a global attribute. It applies to `<button>`, `<input>`,
 `<optgroup>`, `<option>`, `<select>`, `<textarea>`, form-associated custom elements, and [`<fieldset>`](https://developer.mozilla.org/docs/Web/HTML/Element/fieldset).
-When set on `<optgroup>` or `<fieldset>`, all the child form controls are disabled, except for the contents of the `<fieldset>`’s first [`<legend>`](https://developer.mozilla.org/docs/Web/HTML/Element/legend).
+When set on `<optgroup>` or `<fieldset>`, all the child form controls are disabled, except for the contents of the `<fieldset>`'s first [`<legend>`](https://developer.mozilla.org/docs/Web/HTML/Element/legend).
 
 The same elements that support `disabled` are also targetable with the [`:disabled`](https://developer.mozilla.org/docs/Web/CSS/:disabled)
 and [`:enabled`](https://developer.mozilla.org/docs/Web/CSS/:enabled) pseudoclasses. Elements that are disabled with the
 `disabled` attribute are generally styled as light gray via the user-agent stylesheet, even if an [`accent-color`](https://developer.mozilla.org/docs/Web/CSS/accent-color)
 is set.
 
-Being a boolean attribute, the presence of the attribute disables the otherwise enabled element; you can’t set it to `false`.
+Being a boolean attribute, the presence of the attribute disables the otherwise enabled element; you can't set it to `false`.
 To re-enable a disabled element, the attribute has to be removed, generally via [`Element.removeAttribute('disabled')`](https://developer.mozilla.org/docs/Web/API/Element/removeAttribute).
 
 The [`HTMLInputElement.disabled`](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/disabled) property lets you check
-if an input is disabled. As `disabled` is not a global attribute, it’s not inherited from the HTMLElement, but every supporting
+if an input is disabled. As `disabled` is not a global attribute, it's not inherited from the HTMLElement, but every supporting
 element interface, like [`HTMLSelectElement`](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/disabled),
 [`HTMLTextareaElement`](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement#instance_properties), has the same read-only property.
 
 The `disabled` attribute does not apply to normally `inert` elements that are made focusable via `tabindex` or `contenteditable`.
-It also doesn’t apply to the `<form>` element itself. To disable these, the global `inert` attribute can be used.
+It also doesn't apply to the `<form>` element itself. To disable these, the global `inert` attribute can be used.
 
 ### The `inert` attribute
 
@@ -226,3 +226,5 @@ but comes into view when focused, like the [skip to content link](/learn/html/na
 it does not need to be made inert.
 
 ## Check your understanding
+
+{% Assessment 'focus' %}

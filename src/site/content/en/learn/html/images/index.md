@@ -3,7 +3,7 @@ title: 'Images'
 authors:
   - estelleweyl
 description: An overview of images in HTML.
-date: 2023-13-02
+date: 2023-14-02
 tags:
   - html
 ---
@@ -20,7 +20,7 @@ attribute referencing an image resource.
 ```
 
 Both the `srcset` attribute on `<img>` and the [`<picture>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture) element provide a way to include multiple image sources with
-associated media queries, each with a fallback image source, enabling serving the most appropriate image file based on the device’s
+associated media queries, each with a fallback image source, enabling serving the most appropriate image file based on the device's
 resolution, browser capabilities, and the viewport size. The `srcset` attribute enables providing multiple image versions
 based on resolution and, along with the `sizes` attribute, browser viewport size.
 
@@ -42,7 +42,7 @@ This can also be done with the `<picture>` element, along with `<source>` childr
 
 In addition to these built-in HTML [responsive image methods](/learn/design/responsive-images/), HTML also enables image
 render performance to be improved via attributes. The `<img>` tag, and therefore graphical submit buttons [`<input type="image">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/image),
-can include `height` and `width` attributes to set the image’s aspect ratio to reduce content layout shift. The `lazy` attribute enables lazy loading.
+can include `height` and `width` attributes to set the image's aspect ratio to reduce content layout shift. The `lazy` attribute enables lazy loading.
 
 HTML also supports the inclusion of SVG images using the [`<svg>`](https://www.w3.org/Graphics/SVG/) directly, though SVG
 images with the .svg extension (or as a [data-uri](https://css-tricks.com/data-uris/)) can be embedded using the `<img>` element.
@@ -63,8 +63,8 @@ to render.
 
 
 The `alt` attribute provides alternative text for the image, providing a description of the image for those unable to see the
-screen (think search engines and assistive technologies, and even Alexa, Siri, and OK Google), and may be displayed by the browser
-if the image doesn’t load. In addition to users with slow networks or capped bandwidth, the `alt` text is incredibly useful in HTML
+screen (think search engines and assistive technologies, and even Alexa, Siri, and Google Assistant), and may be displayed by the browser
+if the image doesn't load. In addition to users with slow networks or capped bandwidth, the `alt` text is incredibly useful in HTML
 emails, as many users block images in their email applications.
 
 ```html
@@ -86,13 +86,13 @@ and XHTML, but not HTML. For more information about this see the note in the [fo
 ## Writing effective `alt` image descriptions
 
 Alt attributes aim to be short and concise, providing all the relevant information that the image conveys while omitting
-information that is redundant to other content in the document or otherwise isn’t useful. In writing the text, the tone should
+information that is redundant to other content in the document or otherwise isn't useful. In writing the text, the tone should
 reflect the tone of the site.
 
-To write effective alternative text, imagine that you are reading the entire page to a person who can’t see it. By using
+To write effective alternative text, imagine that you are reading the entire page to a person who can't see it. By using
 the [semantic](/learn/html/semantic-html/#the-role-attribute) `<img>` element, screen reader users and bots are informed
 that the element is an image. It is redundant to include "This is an image/screenshot/photo of" in the `alt`. The user doesn't
-need to know there’s an image, but they do need to know what information the image conveys.
+need to know there's an image, but they do need to know what information the image conveys.
 
 Normally, you would not say, "This is a grainy image of a dog wearing a red hat." Rather, you would relay what the image is
 conveying in relation to the context of the rest of the document; and what you convey will change depending on the context
@@ -106,12 +106,12 @@ parent. The text should describe the information conveyed in the image that is r
 in the surrounding text. A longer description, such as `alt="Fluffy, a tri-color terrier with very short hair, with a tennis ball in her
 mouth"` is appropriate. The text of an adoption page generally includes the species, breed, age, and gender of the adoptable pet,
 so this does not need to be repeated in the alt text. But the dog's written biography probably doesn't include hair length, colors,
-or toy preferences. Note that we didn’t describe the image: the prospective dog owner does not need to know if the dog is
+or toy preferences. Note that we didn't describe the image: the prospective dog owner does not need to know if the dog is
 indoors or outdoors, or that it has a red collar and a blue leash.
 
 When using images for iconography, as the `alt` attribute provides the accessible name, convey the meaning of the icon,
-not a description of the image. For example, the magnifying glass icon’s alt attribute is `search`. The icon which looks
-like a house has `home` as the alt text. The 5-inch floppy disc icon’s description is `save`. If there are two icons of Fluffy used
+not a description of the image. For example, the magnifying glass icon's alt attribute is `search`. The icon which looks
+like a house has `home` as the alt text. The 5-inch floppy disc icon's description is `save`. If there are two icons of Fluffy used
 to indicate best practices and anti-patterns, the smiling dog in a green beret could have `alt="good"` set, while the snarling dog
 in a red beret might read `alt="bad"`. That said, only use standard iconography, and if you use non-standard icons such as
 the good and bad Fluffy, include a legend and ensure that the icons are not the only ways of deciphering the meaning of your UI elements,
@@ -121,9 +121,9 @@ While an image can definitely be worth a thousand words, the description should 
 
 Omit information the user already knows from the context and is otherwise informed about in the content. For example,
 if you're on a tutorial page about changing browser settings and the page is about clicking icons in the browser chrome, the URL
-of the page in the screen capture isn’t important. Limit the alt to the topic at hand: how to change settings. The alt might be
+of the page in the screen capture isn't important. Limit the alt to the topic at hand: how to change settings. The alt might be
 "The settings icon is in the navigation bar below the search field." Don't include "screenshot" or "machinelearningworkshop"
-as the user doesn't need to know it's a screenshot and doesn’t need to know where the techwriter was surfing when they wrote
+as the user doesn't need to know it's a screenshot and doesn't need to know where the techwriter was surfing when they wrote
 the instructions. The description of the image is based on the context of why the image was included in the first place.
 
 If the screen capture shows how to find the browser version number by going to `chrome://version/`, include the URL in the
@@ -155,16 +155,16 @@ of the person pictured.
 <img src="images/blender.svg" alt="Blendan Smooth" role="img" />
 ```
 
-Instead, because this is a joke page, we want to convey what may not be apparent to low-vision users so they don’t miss the
-humor; we use the original machine function as the `alt` instead of using the character’s name:
+Instead, because this is a joke page, you should convey what may not be apparent to low-vision users so they don't miss the
+humor; we use the original machine function as the `alt` instead of using the character's name:
 
 ```html
 <img src="images/blender.svg" alt="blender" role="img" />
 ```
 
-The photos of the instructors aren’t just avatars: they are biographical images and therefore get a more detailed description.
+The photos of the instructors aren't just avatars: they are biographical images and therefore get a more detailed description.
 
-If this were a real site, we would provide the bare minimum description of what the teacher looks like so a prospective student might
+If this were a real site, you would provide the bare minimum description of what the teacher looks like so a prospective student might
 recognize them when entering the classroom.
 
 ```html
@@ -172,14 +172,14 @@ recognize them when entering the classroom.
    alt="Hal 9000; a camera lens containing a red dot that sometimes changes to yellow." />
 ```
 
-Because this is a joke site, we provide the information that is relevant in the joke context instead:
+Because this is a joke site, provide the information that is relevant in the joke context instead:
 
 ```html
 <img src="svg/hal.svg" role="img"
    alt="Hal 9000, the sentient AI computer from 2001: a Space Odyssey depicted as a camera lens with a red dot that changes to yellow when hovered." />
 ```
 
-If we were reading the page to a friend over the phone, they wouldn’t care what the red dot looks like. In this case, the
+If you were reading the page to a friend over the phone, they wouldn't care what the red dot looks like. In this case, the
 history of the movie reference matters.
 
 When writing descriptive text, consider what information the image conveys that is important and relevant to the user and
@@ -191,7 +191,7 @@ The `src` and `alt` attributes are minimum requirements for embedded images. The
 
 ## Responsive images
 
-There are a myriad of viewport sizes. There are also different screen resolutions. You don’t want to waste a mobile user’s
+There are a myriad of viewport sizes. There are also different screen resolutions. You don't want to waste a mobile user's
 bandwidth by serving them an image wide enough for a large screen monitor, but you might want to serve higher resolution
 images for tiny devices that have four times the normal screen resolution. There are a few ways to serve different images
 based on the viewport size and the screen resolution.
@@ -218,7 +218,7 @@ elements and a single required [`<img>`](https://developer.mozilla.org/docs/Web/
 
 The [`<source>`](https://developer.mozilla.org/docs/Web/HTML/Element/source) attributes include `srcset`, `sizes`, `media`, `width`, and `height`.
 The `srcset` attribute is common to `img`, `source`, and `link`, but is generally implemented slightly differently on source
-as media queries can be listed in the `<srcset>`’s media attribute instead. `<source>` also supports image formats defined in the `type` attribute.
+as media queries can be listed in the `<srcset>`'s media attribute instead. `<source>` also supports image formats defined in the `type` attribute.
 
 The browser will consider each child `<source>` element and choose the best match among them. If no matches are found, the URL
 of the `<img>` element's [`src`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-src) attribute is selected. The accessible name comes from the `alt.attribute` of the nested `<img>`.\
@@ -242,7 +242,7 @@ for most users. If JavaScript is disabled, for security reasons, all images will
 
 Browsers start rendering HTML when it is received, making requests for assets when encountered. This means the browser is
 already rendering the HTML when it encounters the `<img>` tag and makes the request. And images can take a while to load.
-By default, browsers don’t reserve space for images other than the size required to render `alt` text.
+By default, browsers don't reserve space for images other than the size required to render `alt` text.
 
 The `<img>` element has always supported unitless `height` and `width` attributes. These properties fell out of use in favor
 of CSS. CSS may define image dimensions, often setting a single dimension such as `max-width: 100%;` to ensure the aspect ratio is preserved.
@@ -262,20 +262,20 @@ for the image adhering to the CSS dimension and with the other dimension maintai
 Your images will still be responsive if the CSS was set up correctly to make them responsive. Yes, the included unitless
 `height` and `width` values will be overridden with CSS. The purpose of including these attributes is to reserve the space at
 the right aspect ratio, improving performance by reducing layout shift. The page will still take approximately the same amount
-of time to load, but the UI won’t jump when the image is painted to the screen.
+of time to load, but the UI won't jump when the image is painted to the screen.
 
 ## Other image features
 
-he `<img>` element also supports the `crossorigin`, `decoding`, `referrerpolicy`, and, in Blink-based browsers,
+The `<img>` element also supports the `crossorigin`, `decoding`, `referrerpolicy`, and, in Blink-based browsers,
 `fetchpriority` attributes. Rarely used, if the image is part of a server-side map, include the `ismap` boolean attribute
 and nest the `<img>` in a link for users without pointing devices.
 
-The `ismap` attribute isn’t necessary, or even supported, on the `<input type="image" name="imageSubmitName">` as the `x` and `y`
+The `ismap` attribute isn't necessary, or even supported, on the `<input type="image" name="imageSubmitName">` as the `x` and `y`
 coordinates of the click location are sent during form submission, appending the values to the input name, if any. For example,
 something like `&imageSubmitName.x=169&imageSubmitName.y=66` will be submitted with the form when the user clicks the image,
-submitting it. If the image doesn’t have a `name` attribute, the x and y are sent: `&x=169&y=66`.
+submitting it. If the image doesn't have a `name` attribute, the x and y are sent: `&x=169&y=66`.
 
 ## Check your understanding
 
-
+{% Assessment 'images' %}
 

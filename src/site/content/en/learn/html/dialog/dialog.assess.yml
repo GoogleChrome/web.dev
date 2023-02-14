@@ -1,0 +1,15 @@
+setLeader: Test your knowledge of the dialog element.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: How do you style the area behind the dialog?
+    options:
+      - content: "With the `::background` pseudo-class."
+        rationale: "Try again."
+      - content: "With the `::backdrop` pseudo-class."
+        rationale: "Correct!"
+      - content: "With the `background` property."
+        rationale: "Try again."

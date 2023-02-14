@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of audio and video.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: What is the `<track>` element used for?
+    options:
+      - content: "To store information about the length and filesize of the video."
+        rationale: "Try again."
+      - content: "To provide subtitles or captions."
+        rationale: "Correct!"
+      - content: "To store multiple versions of the video for different browsers or devices."
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What does the `poster` attribute control?
+    options:
+      - content: "An image to display if the user's browser doesn't support video."
+        rationale: "Try again."
+      - content: "An intro video."
+        rationale: "Try again."
+      - content: "An image displayed as a still shot before the video is played."
+        rationale: "Correct!"

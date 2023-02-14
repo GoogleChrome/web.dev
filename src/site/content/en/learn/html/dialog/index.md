@@ -3,7 +3,7 @@ title: 'Dialog'
 authors:
   - estelleweyl
 description: 'The <dialog> element is a useful element for representing any kind of dialog in HTML, find out how it works.'
-date: 2023-13-02
+date: 2023-14-02
 tags:
   - html
 ---
@@ -138,3 +138,5 @@ and Safari sets `color: black; background-color: white;` in their user-agent sty
 from `dialog` and not from `body` or `:root`, which may be unexpected. The `background-color` property is not inherited.
 
 ## Check your understanding
+
+{% Assessment 'dialog' %}

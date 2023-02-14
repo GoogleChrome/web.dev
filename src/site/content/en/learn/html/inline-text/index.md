@@ -3,12 +3,12 @@ title: 'Other inline text elements'
 authors:
   - estelleweyl
 description: An introduction to the range of elements used to mark-up text.
-date: 2023-13-02
+date: 2023-14-02
 tags:
   - html
 ---
 
-We’ve covered most, but definitely not all, the HTML elements. One area we haven’t discussed in inline text elements.
+We've covered most, but definitely not all, the HTML elements. One area we haven't discussed in inline text elements.
 Contrary to popular belief, HTML was originally intended for sharing documents, and not cat videos. There are many elements
 that provide text semantics for documentation.  There is a module covering links and the `<a>` element. The rest of these
 elements will be briefly discussed here.
@@ -27,7 +27,7 @@ default, the text content is displayed in monospace font. When including multipl
 ```
 
 The [`<data>`](https://developer.mozilla.org/docs/Web/HTML/Element/data) element links a given piece of content with a
-machine-readable translation; the element’s `value` attribute provides the machine-readable translation of the content of
+machine-readable translation; the element's `value` attribute provides the machine-readable translation of the content of
 the element. If the `<data>` content is time- or date-related, the [`<time>`](https://developer.mozilla.org/docs/Web/HTML/Element/time)
 element, which represents a specific period in `<time>`. must be used instead.
 
@@ -63,7 +63,7 @@ date or date and time in machine-readable date and time format. The strikethroug
 can be used to indicate that content is no longer relevant, but not actually removed from the document.
 
 The [`<ins>`](https://developer.mozilla.org/docs/Web/HTML/Element/ins) is the opposite of the `<del>` element; it is used
-to indicate text that has been added, or "inserted", also optionally including the `cite` and / or `datetime` attributes.
+to indicate text that has been added, or "inserted", also optionally including the `cite` or `datetime` attributes.
 
 ## Definitions and language support
 
@@ -105,7 +105,7 @@ Note that the parenthesis are not visible if your browser supports `<ruby>`.
 ## Emphasizing text
 
 There are several elements that can be used to emphasize text based on the semantic reason for emphasizing the text (rather than
-for presentational reasons, as that’s a job for CSS).
+for presentational reasons, as that's a job for CSS).
 
 * Use the [`<em>`](https://developer.mozilla.org/docs/Web/HTML/Element/em) elements is used to emphasize or stress a span of content.
 The `<em>` element can be nested, with each level of nesting indicating a greater degree of emphasis. This element has semantic
@@ -117,7 +117,7 @@ marked content to be quickly identified without adding emphasis or importance.
 importance. Browsers usually  render the content with a heavier font weight.
 * The [`<cite>`](https://developer.mozilla.org/docs/Web/HTML/Element/cite) element, covered in [text basics](/learn/html/text-basics/#quotes-and-citations),
 is used to mark the titles of books, articles, or other creative work, or an abbreviated reference or citation metadata for such,
-like a book’s ISBN number.
+like a book's ISBN number.
 
 ## Deprecated elements
 
@@ -131,8 +131,8 @@ The [`<i>`](https://developer.mozilla.org/docs/Web/HTML/Element/i) elements can 
 language), thoughts, or ship names. The element is used to differentiate inline content from the surrounding text for a specific reason,
 like idiomatic text, technical terms, and taxonomic designations. This element should not be used simply to italicize text.
 
-MLW uses a `<span>` element for the weird text at the bottom of Toasty McToastface’s workshop review. The [`<span>`](https://developer.mozilla.org/docs/Web/HTML/Element/span)
-element provides for a generic inline container that has no semantics and doesn’t represent anything. This would have also been an appropriate use of `<i>`.
+MLW uses a `<span>` element for the weird text at the bottom of Toasty McToastface's workshop review. The [`<span>`](https://developer.mozilla.org/docs/Web/HTML/Element/span)
+element provides for a generic inline container that has no semantics and doesn't represent anything. This would have also been an appropriate use of `<i>`.
 
 {% Codepen {
 user: 'web-dot-dev',
@@ -153,8 +153,8 @@ such as by adding a red wavy underline to mimic word processor grammar error ind
 ### `<b>`
 
 The [`<b>`](https://developer.mozilla.org/docs/Web/HTML/Element/b) element can be used to draw attention to text that is not
-otherwise important. This element doesn’t convey any special semantic information and should only be used when none of the other
-elements in this section fit the purpose. No example is provided as I couldn’t come up with a valid use case; that’s how "last resort"
+otherwise important. This element doesn't convey any special semantic information and should only be used when none of the other
+elements in this section fit the purpose. No example is provided as I couldn't come up with a valid use case; that's how "last resort"
 this element is.
 
 ## White space
@@ -181,7 +181,7 @@ can word, where the browser may optionally break the line there. This is commonl
 long URLs. It does not add a hyphen.
 
 For example, in the Hal biography there is text written out in byte code, with each byte separated by a space. Byte code
-doesn’t have spaces. To enable a long string of byte code to break only between bytes if the line needs to wrap, we include
+doesn't have spaces. To enable a long string of byte code to break only between bytes if the line needs to wrap, we include
 the `<wbr>` element at each break opportunity:
 
 ```html
@@ -192,3 +192,5 @@ The `<br>`, `<hr>`, and `<wbr>` elements are all void elements, meaning they can
 elements nor text. As none of these have any "insides" where content can be stored, they have no end tag.
 
 ## Check your understanding
+
+{% Assessment 'inline-text' %}

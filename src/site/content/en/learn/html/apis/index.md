@@ -3,22 +3,22 @@ title: 'HTML APIs'
 authors:
   - estelleweyl
 description: Learn how HTML information can be exposed and manipulated using JavaScript.
-date: 2023-13-02
+date: 2023-14-02
 tags:
   - html
 ---
 
 In the introduction to this series it says "HTML elements are the nodes that make up the [Document Object Model](https://developer.mozilla.org/docs/Web/API/Document_Object_Model)."
-We’ve discussed the type of element nodes. In this section we discuss element APIs that enable querying those nodes.
+We've discussed the type of element nodes. In this section we discuss element APIs that enable querying those nodes.
 
 ## The DOM and AOM
 
 The DOM is an API for accessing and manipulating documents. The DOM is the tree of all the nodes in the document.
-Some nodes can have children, others can’t. The tree includes elements, along with their attributes, and text nodes.
+Some nodes can have children, others can't. The tree includes elements, along with their attributes, and text nodes.
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/xsvSa8YkwHyPWNnQ8Tpi.png", alt="MLW Node tree showing elements and text nodes.", width="800", height="431" %}
 
-Browser tools don’t provide tree visualizations like the one above, but you can see the nodes in the element inspector.
+Browser tools don't provide tree visualizations like the one above, but you can see the nodes in the element inspector.
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/rX9myUwejCW2Ab0xUu0l.png", alt="The DOM/ARIA.", width="800", height="836" %}
 
@@ -35,7 +35,7 @@ classer, every node in the document tree is an object that can be manipulated wi
 APIs providing natively supported methods, events, and property querying and updating.
 
 Element nodes contain information about all the attributes set on the element. You can use HTML interfaces to access
-information about an element’s attributes. For example, we can use [`HTMLImageElement.alt`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/alt)
+information about an element's attributes. For example, we can use [`HTMLImageElement.alt`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/alt)
 get the `alt` attributes of all the images:
 
 ```javascript
@@ -45,7 +45,7 @@ allImages.forEach((imageInstance) => {
 });
 ```
 
-HTML interfaces provide more than just access to an element’s attributes; you can access a lot more information. We can
+HTML interfaces provide more than just access to an element's attributes; you can access a lot more information. We can
 find the read-only [`HTMLElement.offsetHeight`](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetHeight) to get the height of each section in our page, relative to the layout.
 
 ``` javascript
@@ -66,7 +66,7 @@ and if the video (or audio) has finished playing with [`HTMLMediaElement.duratio
 
 ## Available element interfaces
 
-Most HTML element we’ve covered thus far in this series and have yet to cover, other than some [sectioning elements](/learn/html/headings-and-sections/), have
+Most HTML element we've covered thus far in this series and have yet to cover, other than some [sectioning elements](/learn/html/headings-and-sections/), have
 an associated DOM interface. The base interface for all elements is aptly named [Element](https://developer.mozilla.org/docs/Web/API/Element).
 The [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) inherits from Element and all HTML element-specific
 interfaces inherit from it. Some element-specific interfaces are implemented by multiple, similar elements.
@@ -126,40 +126,40 @@ The interfaces include:
 * [`HTMLVideoElement`](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement) - `<video>`
 
 The naming convention is "HTML" followed by an element or grouping of elements in upper camel case, followed by "Element",
-but the element or grouping of elements part follows no exact pattern. Don’t worry. There is no need to memorize these.
-It’s just important to know that they exist so you can look them up when you need to.
+but the element or grouping of elements part follows no exact pattern. Don't worry. There is no need to memorize these.
+It's just important to know that they exist so you can look them up when you need to.
 
 If you have a collection of elements, there are also come collection interfaces. For example, the
 [`HTMLCollection.namedItem()`](https://developer.mozilla.org/docs/Web/API/HTMLCollection/namedItem) method returns the first
 element in the collection whose `id` or `name` attribute matches the parameter, or null if no element matches.
 
-Over 30 elements don’t have an associated DOM interface other than `HTMLElement` including `<address>`, `<article>`,
-`<section>`, `<nav>`, `<header>`, `<footer>`, `<aside>`, and `<hgroup>`. Many elements that don’t support any non-deprecated,
+Over 30 elements don't have an associated DOM interface other than `HTMLElement` including `<address>`, `<article>`,
+`<section>`, `<nav>`, `<header>`, `<footer>`, `<aside>`, and `<hgroup>`. Many elements that don't support any non-deprecated,
 non-global attributes have element specific interfaces, like `HTMLPElement` (the `<p>` element) and [`HTMLUnknownElement`](https://developer.mozilla.org/docs/Web/API/HTMLUnknownElement)
-( `<😃>` or any other elements that are not defined), but those interfaces don’t implement any additional properties or methods
+( `<😃>` or any other elements that are not defined), but those interfaces don't implement any additional properties or methods
 on top of the properties and methods inherited from `HTMLElement`, and are not listed above.
 
 ### Redundant API methods and properties
 
 If an interface has the same method or property name as and interface it inherits, the inheriting method or property overwrites
 the inherited one. When we accessed the `alt` ond `offsetHeight` properties above with `imageInstance.alt` and `sectionInstance.offsetHeight`
-respectively, the code didn’t identify which API was being accessed.
+respectively, the code didn't identify which API was being accessed.
 
-Generally, as with these two examples, this isn’t an issue. But, it can be. For example, the [`HTMLCollection.length`](https://developer.mozilla.org/docs/Web/API/HTMLCollection/length)
-is read only, while the inheriting [`HTMLOptionsCollection`](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection) interface’s
+Generally, as with these two examples, this isn't an issue. But, it can be. For example, the [`HTMLCollection.length`](https://developer.mozilla.org/docs/Web/API/HTMLCollection/length)
+is read only, while the inheriting [`HTMLOptionsCollection`](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection) interface's
 length property (returned only by the `options` property of `<select>`) can also be used to set collection size.
 
 ## Other interfaces
 
 There are additional interfaces that enable manipulating the branch locations of DOM nodes. The EventTarget interface, which provides
-us with [`addEventListener()`] (and [`removeEventListener()`]), is inherited by the Node and Window interfaces. In turn, the Element, Document, and DocumentFragment (which we saw in the custom elements) interfaces inherit from Node, and the HTMLElement interface inherits from Element.
+us with `addEventListener()` and `removeEventListener()`, is inherited by the Node and Window interfaces. In turn, the Element, Document, and DocumentFragment (which we saw in the custom elements) interfaces inherit from Node, and the HTMLElement interface inherits from Element.
 
 ### The `node` interface
 
 Every type of DOM node is represented by an interface based on [`Node`](https://developer.mozilla.org/docs/Web/API/Node),
 which provides information and methods as elements relate to the DOM tree. The Node interface enables querying and adding modes to the node tree.
 
-Douglas Crockford’s famous "walk the DOM" function, makes use of Node’s [`firstChild`](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
+Douglas Crockford's famous "walk the DOM" function, makes use of Node's [`firstChild`](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
 and the [`nextSibling`](https://developer.mozilla.org/docs/Web/API/Node/nextSibling) properties.
 
 ```javascript
@@ -173,7 +173,7 @@ const walk_the_DOM = function walk(node, callback) {
 };
 ```
 
-We used Node’s [`appendChild()`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) and
+We used Node's [`appendChild()`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) and
 [`cloneNode()`](https://developer.mozilla.org/docs/Web/API/Node/cloneNode) methods in defining [custom elements](/learn/html/template).
 The Node interface provides many useful properties and methods for querying and manipulating the DOM.
 
@@ -213,7 +213,7 @@ and the [FullScreen API](https://developer.mozilla.org/docs/Web/API/Fullscreen_A
 ### The `Window` interface
 
 The Window interface includes globally available items beyond the DOM that can be used to manipulate the DOM. Window provides
-functions, namespaces, objects, and constructors documented in MDN’s [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Reference)
+functions, namespaces, objects, and constructors documented in MDN's [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Reference)
 and [DOM References](https://developer.mozilla.org/docs/Web/API/Document_Object_Model).
 
 The window interface is the API for the object containing the document. The global window object is the window in which the
@@ -221,9 +221,11 @@ script is running. Every browser tab contains its own Window object. The Window 
 as well as the overall window and device. For example, the [`resizeTo()`](https://developer.mozilla.org/docs/Web/API/Window/resizeTo)
 method can be used to resize the browser window, the [`devicePixelRatio`](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio)
 property provides access to the device display pixels. When accessing information about the tab the content
-is in rather than the DOM tree the tab displays, the window is likely the interface you’re looking for.
+is in rather than the DOM tree the tab displays, the window is likely the interface you're looking for.
 
 Several APIs are available based on features surfaced through the Window interface, including the [Web Workers](https://developer.mozilla.org/docs/Web/API/Worker)
 and [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) APIs.
 
 ## Check your understanding
+
+{% Assessment 'apis' %}

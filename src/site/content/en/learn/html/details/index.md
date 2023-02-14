@@ -3,17 +3,15 @@ title: 'Details and summary'
 authors:
   - estelleweyl
 description: Discover how the very useful details and summary elements work, and where to use them.
-date: 2023-13-02
+date: 2023-14-02
 tags:
   - html
 ---
 
 A disclosure widget is a user interface control that hides and shows content. If you are reading this on web.dev, and your
 viewport is less than 106 ems wide, clicking on the "On this page" above this paragraph reveals the table of contents for
-this section. If you don’t see it, shrink the browser to view the table of contents navigation on this page as a
+this section. If you don't see it, shrink the browser to view the table of contents navigation on this page as a
 disclosure widget.
-
-TO DO: Add an image or video of this interaction.
 
 The [accordion](https://en.wikipedia.org/wiki/Accordion_(GUI)) graphical user interface is a series of vertically stacked
 disclosure widgets. A common use case for the accordion UI is the Frequently Asked Questions (FAQ) page on many sites.
@@ -33,11 +31,11 @@ answer when the checkmark was checked. The CSS looked something like this:
 }
 ```
 
-Why the history? Disclosure widgets, such as native accordions, without JavaScript or form control hacks, are a relatively recent
+Why the history? Disclosure widgets, such asaccordions, without JavaScript or form control hacks, are a relatively recent
 addition; the [`<details>`](https://developer.mozilla.org/docs/Web/HTML/Element/details) and [`<summary>`](https://developer.mozilla.org/docs/Web/HTML/Element/summary)
 elements have only been fully supported in all modern browsers since January 2020. You can now create functioning, albeit less
-than attractive, disclosure widgets using only semantic HTML. The `<details>` and `<summary>` elements are all you need: they handle
-expanding and collapsing content natively. When a user clicks or taps a `<summary>`, or releases the `<kbd>Enter</kbd>` key when
+than attractive, disclosure widgets using only semantic HTML. The `<details>` and `<summary>` elements are all you need: they are a built-in way to handle
+expanding and collapsing content. When a user clicks or taps a `<summary>`, or releases the `<kbd>Enter</kbd>` key when
 the `<summary>` has focus, the contents of the parent `<details>` toggle to visible!
 
 {% Codepen {
@@ -53,11 +51,11 @@ user: 'web-dot-dev',
 id: 'ExeYgQd'
 } %}
 
-You’ll note, these Codepens contain no JavaScript.
+You'll note, these Codepens contain no JavaScript.
 
 The `<details>` element is the disclosure widget container. The `<summary>` is the summary or legend for its parent `<details>`. The
 summary is always displayed, acting as a button that toggles the display of the rest of the parent’s contents. Interacting
-with the `<summary>` toggles the display of the self-labeled summary siblings, natively toggling the `<details>`' element’s `open` attribute.
+with the `<summary>` toggles the display of the self-labeled summary siblings by toggling the `<details>`' element's `open` attribute.
 
 The `open` attribute is a boolean attribute. If present, no matter the value or lack thereof, it indicates that all the `<details>`
 contents are shown to the user. If the `open` attribute is not present, only the contents of the `<summary>` are shown.
@@ -78,7 +76,7 @@ The `<summary>` must be the first child of a `<details>` element, representing a
 of the contents of the parent `<details>` element in which it is nested. The `<summary>` element's contents can be any heading
 content, plain text, or HTML that can be used within a paragraph.
 
-In the two earlier Codepens, you’ll note the arrow to the [inline-start](https://developer.mozilla.org/docs/Web/CSS/CSS_Logical_Properties)
+In the two earlier Codepens, you'll note the arrow to the [inline-start](https://developer.mozilla.org/docs/Web/CSS/CSS_Logical_Properties)
 side of the summary. A disclosure widget is typically presented on-screen using a small triangle that rotates (or twists)
 to indicate open/closed status, with a label next to the triangle. The contents of the `<summary>` element label the disclosure widget.
 The rotating arrow at the top of each section is a [`::marker`](https://developer.mozilla.org/docs/Web/CSS/::marker) set on the
@@ -118,7 +116,7 @@ id: 'yLxBajp'
 
 A few things to note:
 
-If you don’t include a `<summary>`, the browser will create one for you: with a marker and the word "details". This summary
+If you don't include a `<summary>`, the browser will create one for you: with a marker and the word "details". This summary
 is part of a shadow root, and therefore will not have author CSS summary styles applied. Unfortunately, Safari does not include
 the details in the [keyboard focus order](https://bugs.webkit.org/show_bug.cgi?id=249904).
 
@@ -150,14 +148,14 @@ user: 'web-dot-dev',
 id: 'PodYGBz'
 } %}
 
-This is the only example to use JavaScript. You probably don’t need JavaScript except for this functionality of closing other
+This is the only example to use JavaScript. You probably don't need JavaScript except for this functionality of closing other
 opened disclosure widgets.
 
 Remember, `<details>` and `<summary>` can be heavily styled and can even be used to [create tool tips](https://css-tricks.com/exploring-what-the-details-and-summary-elements-can-do/).
-But, if you’re going to use these semantic elements for use cases in which the native semantics are a mismatch, always ensure that you [maintain accessibility](https://www.scottohara.me//blog/2022/09/12/details-summary.html).
+But, if you're going to use these semantic elements for use cases in which the native semantics are a mismatch, always ensure that you [maintain accessibility](https://www.scottohara.me//blog/2022/09/12/details-summary.html).
 HTML for the most part is by default accessible. Our job as developers is to ensure our content stays accessible.
 
 ## Check your understanding
 
-
+{% Assessment 'details' %}
 

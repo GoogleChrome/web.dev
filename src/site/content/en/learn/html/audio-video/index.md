@@ -3,7 +3,7 @@ title: 'Audio and Video'
 authors:
   - estelleweyl
 description: Discover how to work with HTML media such as audio and video.
-date: 2023-13-02
+date: 2023-14-02
 tags:
   - html
 ---
@@ -33,7 +33,7 @@ This `<video>` example has a single source with the `src` attribute linking to t
 provides an image to display as the video loads. Finally, the `controls` attribute provides user video controls.
 
 Fallback content is included between the opening and closing tags. If the video (or audio) is not supported or otherwise
-doesn’t load, this content is shown. The closing `</video>` tag is required, even if there is no content between the two
+doesn't load, this content is shown. The closing `</video>` tag is required, even if there is no content between the two
 (but there should always be fallback content , right?).
 
 If no `src` attribute is included on the opening `<video>` or `<audio>` tags, include one or more [`<source>`](https://developer.mozilla.org/docs/Web/HTML/Element/source) elements,
@@ -52,8 +52,8 @@ and English and French subtitles between the opening and closing tags.
 ```
 
 Each `<source>` child includes a `src` attribute pointing to the resource and the `type` attribute informs the browser
-of the linked file’s [media type](https://developer.mozilla.org/docs/Web/Media/Formats/Containers). This prevents the browser
-from fetching media files it wouldn’t be able to decode.
+of the linked file's [media type](https://developer.mozilla.org/docs/Web/Media/Formats/Containers). This prevents the browser
+from fetching media files it wouldn't be able to decode.
 
 Within the `type` attribute, you can include a [`codecs`](https://developer.mozilla.org/docs/Web/Media/Formats/codecs_parameter) parameter,
 which specifies exactly how the resource is encoded. Codecs give you a way of including media optimizations that are not yet supported
@@ -98,11 +98,11 @@ is displayed as an option to the user. The content of the selected VTT option is
 subtitles can be styled by targeting the [::cue/ ::cue()](https://developer.mozilla.org/docs/Web/CSS/::cue).
 
 The value `kind="caption"` should be reserved for transcription and translations that include sound effects and other relevant audio information.
-This isn’t just for deaf viewers. Maybe a user can’t find their headphones so they turned on the captions. Or maybe they didn't
+This isn't just for deaf viewers. Maybe a user can't find their headphones so they turned on the captions. Or maybe they didn't
 quite catch the last few talking points from a favorite podcast, so they want to read the transcript to confirm their understanding.
 Having alternative ways to access audio and video content is both important and convenient.
 
-The `kind="description"` is for text descriptions of the visual content in the video for users who can’t see the video, whether
+The `kind="description"` is for text descriptions of the visual content in the video for users who can't see the video, whether
 they are using a system without a screen such as Google Home or Alexa, or are blind.
 
 {% Aside %}
@@ -137,13 +137,13 @@ control over playback and access to all captions. As this video is purely decora
 of [`none`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/none_role) and omits any fallback content.
 To improve the performance of always muted videos, [remove the audio track](https://gist.github.com/liangfu/97f877e311210fa0ae18a31fdd92982e) from your media sources.
 
-If your video plays for five seconds or less, accessibility guidelines don’t require a pausing mechanism, but anything
+If your video plays for five seconds or less, accessibility guidelines don't require a pausing mechanism, but anything
 with the boolean `loop` attribute will loop forever by default, exceeding this five-second, or any other, time limit. For good
 user experience, always include a method of pausing the video. This is most easily done by including `controls`.
 
 ## Custom media controls
 
-To display custom video or audio controls, rather than the native controls, include the controls attribute. Then use
+To display custom video or audio controls, rather than the browser built-in controls, include the `controls` attribute. Then use
 JavaScript to add custom media controls and remove the controls attribute. For example, you can add a `<button>` that toggles
 the play state of an audio file.
 
@@ -162,8 +162,8 @@ The [`HTMLMediaElement`](https://developer.mozilla.org/docs/Web/API/HTMLMediaEle
 [HTMLAudioElement](https://developer.mozilla.org/docs/Web/API/HTMLAudioElement), with `HTMLMediaElement` adding a few properties,
 methods, and events of its own. There are several other [Media APIs](https://developer.mozilla.org/docs/Web/Media#apis),
 including a [TextTrack API](https://developer.mozilla.org/docs/Web/API/TextTrack). You can use the [Media Capture and Streams](https://developer.mozilla.org/docs/Web/API/Media_Capture_and_Streams_API)
-and [MediaDevices](https://developer.mozilla.org/docs/Web/API/MediaDevices) APIs to [record audio from a user’s microphone](/patterns/media/microphone-record/)
-or [record a user’s screen](/patterns/media/screen-record/). The [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API)
+and [MediaDevices](https://developer.mozilla.org/docs/Web/API/MediaDevices) APIs to [record audio from a user's microphone](/patterns/media/microphone-record/)
+or [record a user's screen](/patterns/media/screen-record/). The [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API)
 enables [manipulating live and pre-recorded](/patterns/media/audio-effects/) audio and streaming, saving, or sending the audio to the `<audio>` element.
 
 To create customized controls, use [`HTMLMediaElement.play()`](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play) and
@@ -196,8 +196,10 @@ Only remove the controls attribute once a replacement button has been instantiat
 document.querySelector('[aria-controls]').removeAttribute('controls');
 ```
 
-Always include external controls when users can’t access the controls, such as with background videos that have their controls hidden
+Always include external controls when users can't access the controls, such as with background videos that have their controls hidden
 behind site content. It is important to understand the basics of [media accessibility requirements](https://www.w3.org/WAI/WCAG21/Understanding/time-based-media) to accommodate users with
 different environmental and sensory needs, including the millions of people with hearing loss and visual impairments.
 
 ## Check your understanding
+
+{% Assessment 'audio-video' %}

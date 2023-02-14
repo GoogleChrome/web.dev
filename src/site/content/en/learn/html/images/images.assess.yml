@@ -1,0 +1,15 @@
+setLeader: Test your knowledge of images.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "2"
+    correctAnswers: "1,2"
+    stem: What two attributes should a foreground image always have?
+    options:
+      - content: "`size`"
+        rationale: "Try again."
+      - content: "`alt`"
+        rationale: "Correct!"
+      - content: "`src`"
+        rationale: "Correct!"
