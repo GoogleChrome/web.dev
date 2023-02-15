@@ -389,7 +389,7 @@ To toggle between states, query the value of the [HTMLElement.isContentEditable]
 ```js
 const editor = document.getElementById("myElement");
 if(editor.contentEditable) {
-    editor.setAttribute("contenteditable", "false);
+    editor.setAttribute("contenteditable", "false");
 } else {
    editor.setAttribute("contenteditable", "");
 }
