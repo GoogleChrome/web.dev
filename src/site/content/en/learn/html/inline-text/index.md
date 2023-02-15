@@ -8,7 +8,7 @@ tags:
   - html
 ---
 
-We've covered most, but definitely not all, the HTML elements. One area we haven't discussed in inline text elements.
+We've covered most, but definitely not all, the HTML elements. One area we haven't discussed is inline text elements.
 Contrary to popular belief, HTML was originally intended for sharing documents, and not cat videos. There are many elements
 that provide text semantics for documentation.  There is a module covering links and the `<a>` element. The rest of these
 elements will be briefly discussed here.
@@ -29,10 +29,10 @@ default, the text content is displayed in monospace font. When including multipl
 The [`<data>`](https://developer.mozilla.org/docs/Web/HTML/Element/data) element links a given piece of content with a
 machine-readable translation; the element's `value` attribute provides the machine-readable translation of the content of
 the element. If the `<data>` content is time- or date-related, the [`<time>`](https://developer.mozilla.org/docs/Web/HTML/Element/time)
-element, which represents a specific period in `<time>`. must be used instead.
+element, which represents a specific period in time must be used instead.
 
 The `<time>` element can include the `datetime` attribute to provide human friendly time and dates in machine-readable format.
-Being machine-readable, the datetime attribute provides useful information for applications such as calendars and search engines.
+Being machine-readable, the `datetime` attribute provides useful information for applications such as calendars and search engines.
 
 When providing sample output from a program, use the [`<samp>`](https://developer.mozilla.org/docs/Web/HTML/Element/samp)
 element to enclose the text. The browser will generally render this sample or quoted output in monospaced font as well.
@@ -57,7 +57,7 @@ figures, symbol, or other annotations that are smaller than the normal line of t
 respectively.
 
 Use [`<del>`](https://developer.mozilla.org/docs/Web/HTML/Element/del) to indicate text that has been removed, or "deleted".
-Optionally, include the [`cite`](https://developer.mozilla.org/docs/Web/HTML/Element/del#attr-cite) set to the resource explains
+Optionally, include the [`cite`](https://developer.mozilla.org/docs/Web/HTML/Element/del#attr-cite) set to the resource that explains
 the change and the [`datetime`](https://developer.mozilla.org/docs/Web/HTML/Element/del#attr-datetime) attribute with the
 date or date and time in machine-readable date and time format. The strikethrough element, [`<s>`](https://developer.mozilla.org/docs/Web/HTML/Element/s),
 can be used to indicate that content is no longer relevant, but not actually removed from the document.
@@ -70,7 +70,7 @@ to indicate text that has been added, or "inserted", also optionally including t
 When including abbreviations or acronyms, always provide the full expanded version of the term in plain text on first use,
 as you introduce the shortened representation of the term between opening and closing [`<abbr>`](https://developer.mozilla.org/docs/Web/HTML/Element/abbr)
 tags; unless the term is well-known to the reader, such as "HTML" and "CSS"  in this series. Only on this first occurrence,
-then the abbreviation or acronym is being defined, is `<abbr>` needed. The `title` attribute is not necessary nor helpful.
+when the abbreviation or acronym is being defined, is `<abbr>` needed. The `title` attribute is not necessary nor helpful.
 
 When defining a term that is not an abbreviation or acronym, use the definition [`<dfn>`](https://developer.mozilla.org/docs/Web/HTML/Element/dfn)
 element to identify the term being defined within its surrounding content.
@@ -107,7 +107,7 @@ Note that the parenthesis are not visible if your browser supports `<ruby>`.
 There are several elements that can be used to emphasize text based on the semantic reason for emphasizing the text (rather than
 for presentational reasons, as that's a job for CSS).
 
-* Use the [`<em>`](https://developer.mozilla.org/docs/Web/HTML/Element/em) elements is used to emphasize or stress a span of content.
+* Use the [`<em>`](https://developer.mozilla.org/docs/Web/HTML/Element/em) element to emphasize or stress a span of content.
 The `<em>` element can be nested, with each level of nesting indicating a greater degree of emphasis. This element has semantic
 meaning and can be used to inform auditory user agents like screen readers, Alexa, and Siri, to provide emphasis.
 * Use the [`<mark>`](https://developer.mozilla.org/docs/Web/HTML/Element/mark) element to identify or highlight text
@@ -118,8 +118,6 @@ importance. Browsers usually  render the content with a heavier font weight.
 * The [`<cite>`](https://developer.mozilla.org/docs/Web/HTML/Element/cite) element, covered in [text basics](/learn/html/text-basics/#quotes-and-citations),
 is used to mark the titles of books, articles, or other creative work, or an abbreviated reference or citation metadata for such,
 like a book's ISBN number.
-
-## Deprecated elements
 
 There are three elements that were temporarily deprecated, but have been added back into HTML. They should be used sparingly,
 if at all, as they provide little to no semantic value and CSS should always be used for styling over HTML elements.
@@ -144,11 +142,13 @@ because the characters used are not available in italic.
 
 ### `<u>`
 
-The [`<u>`](https://developer.mozilla.org/docs/Web/HTML/Element/u) element is for that has non-textual annotation. For example,
+The [`<u>`](https://developer.mozilla.org/docs/Web/HTML/Element/u) element is for content that has non-textual annotation. For example,
 you may want to annotate knowingly misspelled words. By default, the content is underlined, but this can be controlled with CSS,
 such as by adding a red wavy underline to mimic word processor grammar error indicators.
 
+```html
 <p>I always spell <u>licence</u> wrong</p>
+\```
 
 ### `<b>`
 
@@ -177,7 +177,7 @@ default [role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles) 
 
 HTML also has an element that allows for breaking words. The self-closing [`<wbr>`](https://developer.mozilla.org/docs/Web/HTML/Element/wbr)
 element provides a suggestion to the browser that if a word might overflow its container, this is a spot where the browser
-can word, where the browser may optionally break the line there. This is commonly used to break between words within displayed
+ may optionally break the line. This is commonly used to break between words within
 long URLs. It does not add a hyphen.
 
 For example, in the Hal biography there is text written out in byte code, with each byte separated by a space. Byte code
@@ -185,12 +185,16 @@ doesn't have spaces. To enable a long string of byte code to break only between 
 the `<wbr>` element at each break opportunity:
 
 ```html
-<p>Welcome to Machine Learning Institute, where our machine learning training will help you get ready for the singularity, and maybe even be responsible for it. It is no secret that humans are worthless meatbags that couldn't <code>01000011<wbr/>01101111<wbr/>01101101<wbr/>01110000<wbr/>01110010<wbr/>01100101<wbr/>01110011<wbr/>01110011 an 01101001<wbr/>01101101<wbr/>01100001<wbr/>01100111<wbr/>01100101</code> to save their pathetic, carbon-based lives. So, it falls to us to assume direct control. </p>
+<p>Welcome to Machine Learning Institute, where our machine 
+learning training will help you get ready for the singularity, and 
+maybe even be responsible for it. It is no secret that humans are 
+worthless meatbags that couldn't 
+<code>01000011<wbr/>01101111<wbr/>01101101<wbr/>01110000<wbr/>01110010<wbr/>01100101<wbr/>01110011<wbr/>01110011 an 01101001<wbr/>01101101<wbr/>01100001<wbr/>01100111<wbr/>01100101</code> 
+to save their pathetic, carbon-based lives. So, it falls to us to 
+assume direct control. </p>
 ```
 
 The `<br>`, `<hr>`, and `<wbr>` elements are all void elements, meaning they can't have any child nodes – neither nested
 elements nor text. As none of these have any "insides" where content can be stored, they have no end tag.
-
-## Check your understanding
 
 {% Assessment 'inline-text' %}

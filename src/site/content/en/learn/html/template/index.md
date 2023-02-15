@@ -112,7 +112,7 @@ to replace the contents of the `<slot>` within a `<template>`. In our custom ele
 is a `<legend>`. It doesn't need to be. In our template, `<slot name="star-rating-legend">` will be replaced with `<anyElement slot="star-rating-legend">`,
 where `<anyElement>` can be any element, even another custom element.
 
-## Custom elements
+## Undefined elements
 
 In our `<template>` we used a `<rating>` element. This is not a custom element. Rather, it's an unknown element. Browsers
 don't fail when they don't recognize an element. Unrecognized HTML elements are treated by the browser as anonymous inline
@@ -131,14 +131,14 @@ including legends and the `<p>` in the third `<star-rating>` are displayed as th
 
 Let's define our element to convert this unrecognized element into a custom element.
 
-### Defining the custom element
+### Custom elements
 
 JavaScript is required to define custom elements. When defined, the contents of the `<star-rating>` element will be replaced by a
 shadow root containing all the contents of the template we associate with it. The `<slot>` elements from the template are replaced
-with the contents of the element within the `<star-rating>` whose slot attribute value matches the `<slot>`'s name value, if
+with the contents of the element within the `<star-rating>` whose `slot` attribute value matches the `<slot>`'s name value, if
 there is one. If not, the contents of the template's slots are displayed.
 
-Content within a custom element that isn't associated with a slot—the `<p>` in our third `<star-rating>`—is not included in
+Content within a custom element that isn't associated with a slot—the `<p>Is this text visible?</p>` in our third `<star-rating>`—is not included in
 the shadow root and therefore not displayed.
 
 We [define the custom element](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements) named `star-rating`
@@ -184,7 +184,7 @@ In the [`customElements` definition](https://developer.mozilla.org/docs/Web/API/
 [`appendChild()`](https://developer.mozilla.org/docs/Web/API/Node/appendChild), but the cloned template contents were appended to an
 encapsulated shadow DOM.
 
-Being part of a shadow DOM rather than the standard DOM, the styling within Codepen's CSS tab does not apply. The CSS tab
+Notice how the stars went back to being unstyled radio buttons? Being part of a shadow DOM rather than the standard DOM, the styling within Codepen's CSS tab does not apply. That tab's CSS
 styles are scoped to the document, not to the shadow DOM, so the styles aren't applied. We have to create encapsulated
 styles to style our encapsulated Shadow DOM content.
 
@@ -294,8 +294,8 @@ If our template markup began as such:
 We could target the `<form>` and `<fieldset>` with:
 
 ```css
-star-rating::part(formPart)
-star-rating::part(fieldsetPart)
+star-rating::part(formPart) { /* styles */ }
+star-rating::part(fieldsetPart) { /* styles */ }
 ```
 
 {% Codepen {
@@ -308,7 +308,5 @@ have the same part name.
 
 Google has a fantastic checklist for [creating custom elements](/custom-elements-best-practices/). You may also want to learn
 about [declarative shadow DOMs](/declarative-shadow-dom/).
-
-## Check your understanding
 
 {% Assessment 'template' %}
