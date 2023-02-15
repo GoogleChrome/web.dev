@@ -19,6 +19,8 @@ YAML properties available for displaying a layout of cards:
 - `title` - the title of the card.
 - `description` - the description of the card.
 - `thumbnail` - the thumbnail of the card.
+- `isLatestPost` - display the latest post.
+- `tags` - display the latest post in specific tags.
 - `url` - target URL of the card.
 - `eyebrow` - useful for introducing the type of card. This eyebrow shows above the title.
   - `icon` - the SVG icon name, for example. `icon: featured`.
@@ -95,6 +97,24 @@ cards:
     eyebrow:
       icon: 'blog'
       text: 'Blog'
+---
+```
+{% endraw %}
+
+### Displaying latest post from specific tags
+
+For displaying the recent post from specific tags, set the value of the frontmatter key `isLatestPost` to `true` and set the list of `tags` to display a latest post from specific tags. The title, description, and image can be automatically pulled from the post. 
+
+{% raw %}
+```yaml
+---
+cards:
+  - isLatestPost: true
+    tags:
+      - css
+      - dom
+      - ui
+    cardLayout: 'vertical'
 ---
 ```
 {% endraw %}

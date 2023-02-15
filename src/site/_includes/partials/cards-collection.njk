@@ -2,8 +2,11 @@
   {% for card in cards %}
     {% set featured = null %}
     {% if card.isLatestPost %}
-      {% set postsContainsTag = collections.all | filterByTag(theme.tags) %}
-      {% set latestPostInTag = postsContainsTag[0] %}
+      {% set latestPost = collections.blogPosts %}
+      {% if card.tags %}
+        {% set latestPost = collections.all | filterByTag(card.tags) %}
+      {% endif %}
+      {% set latestPostInTag = latestPost[0] %}
       {% set featured = latestPostInTag.url | findByUrl %}
 
       {% set eyebrowIcon = 'latest' %}

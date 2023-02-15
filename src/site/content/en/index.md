@@ -33,12 +33,12 @@ platformNews:
 
 themes:
   - category: CSS and UI
-    tags:
-      - css
-      - dom
-      - ux
     cards:
       - isLatestPost: true
+        tags:
+          - css
+          - dom
+          - ui
         cardLayout: 'vertical'
       - title: 'The CSS Podcast'
         description: Follow Una Kravets and Adam Argyle, Developer Advocates from Google, who gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.
@@ -87,8 +87,6 @@ themes:
         description: Make an animated gradient text effect with scoped custom properties and background-clip.
 
   - category: Performance
-    tags:
-      - performance
     cards:
       - url: /top-cwv-2023/
         eyebrow:
@@ -115,10 +113,10 @@ themes:
           text: Blog
 
   - category: Web Apps
-    tags:
-      - web-vitals
     cards:
       - isLatestPost: true
+        tags:
+          - web-vitals
         cardLayout: vertical
         column: '1'
       - url: /transformstream/
@@ -141,10 +139,10 @@ themes:
         theme: blue
 
   - category: Accessibility
-    tags:
-      - accessibility
     cards:
       - isLatestPost: true
+        tags:
+          - accessibility
         cardLayout: vertical
         column: '1'
         theme: pink
@@ -166,11 +164,11 @@ themes:
           text: Blog
 
   - category: Payments and Identity
-    tags:
-      - payments
-      - identity
     cards:
       - isLatestPost: true
+        tags:
+          - payments
+          - identity
         cardLayout: vertical
       - url: /passkey-registration/
         eyebrow:
@@ -190,10 +188,10 @@ themes:
         column: '2'
 
   - category: Ecosystem and community
-    tags:
-      - community
     cards:
       - isLatestPost: true
+        tags:
+          - community
         cardLayout: vertical
         theme: blue
       - title: Aurora Project
