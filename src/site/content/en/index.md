@@ -33,6 +33,10 @@ platformNews:
 
 themes:
   - category: CSS and UI
+    tags:
+      - css
+      - dom
+      - ux
     cards:
       - isLatestPost: true
         cardLayout: 'vertical'
@@ -83,11 +87,13 @@ themes:
         description: Make an animated gradient text effect with scoped custom properties and background-clip.
 
   - category: Performance
+    tags:
+      - performance
     cards:
       - url: /top-cwv-2023/
         eyebrow:
-          icon: featured
-          text: Featured
+          icon: latest
+          text: Latest
         cardLayout: vertical
         column: '1'
         theme: dark
@@ -109,11 +115,10 @@ themes:
           text: Blog
 
   - category: Web Apps
+    tags:
+      - web-vitals
     cards:
-      - url: /learn/pwa/
-        eyebrow:
-          icon: featured
-          text: Featured
+      - isLatestPost: true
         cardLayout: vertical
         column: '1'
       - url: /transformstream/
@@ -136,11 +141,10 @@ themes:
         theme: blue
 
   - category: Accessibility
+    tags:
+      - accessibility
     cards:
-      - url: /community-highlight-elisa/
-        eyebrow:
-          icon: blog
-          text: Blog
+      - isLatestPost: true
         cardLayout: vertical
         column: '1'
         theme: pink
@@ -162,11 +166,11 @@ themes:
           text: Blog
 
   - category: Payments and Identity
+    tags:
+      - payments
+      - identity
     cards:
-      - url: /payment-and-address-form-best-practices/
-        eyebrow:
-          icon: featured
-          text: Featured
+      - isLatestPost: true
         cardLayout: vertical
       - url: /passkey-registration/
         eyebrow:
@@ -186,11 +190,10 @@ themes:
         column: '2'
 
   - category: Ecosystem and community
+    tags:
+      - community
     cards:
-      - url: /advancing-framework-ecosystem-cds-2019/
-        eyebrow:
-          icon: featured
-          text: Featured
+      - isLatestPost: true
         cardLayout: vertical
         theme: blue
       - title: Aurora Project

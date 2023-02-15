@@ -36,7 +36,15 @@ function isContainsTag(post, tags) {
  * @return {EleventyCollectionObject} Posts filtered by tags.
  */
 function filterByTag(posts, tags) {
-  return posts.reverse().filter((post) => isContainsTag(post, tags));
+  // @ts-ignore
+  const recentPosts = posts.sort((postA, postB) => {
+    if (!postB.date || !postA.date) return 0;
+
+    // @ts-ignore
+    return new Date(postB.date) - new Date(postA.date); 
+  });
+
+  return recentPosts.filter((post) => isContainsTag(post, tags));
 }
 
 module.exports = {isContainsTag, filterByTag};

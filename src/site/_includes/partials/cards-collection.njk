@@ -2,7 +2,7 @@
   {% for card in cards %}
     {% set featured = null %}
     {% if card.isLatestPost %}
-      {% set postsContainsTag = collections.all | filterByTag(['css']) %}
+      {% set postsContainsTag = collections.all | filterByTag(theme.tags) %}
       {% set latestPostInTag = postsContainsTag[0] %}
       {% set featured = latestPostInTag.url | findByUrl %}
 
