@@ -19,8 +19,8 @@ elements can be used to embed media players directly with the `src` attribute or
 each providing a `src` file suggestion. While `<video>` can be used to embed an audio file, the `<audio>` element is preferable for embedding
 sound files.
 
-The opening `<video>` and `<audio>` tags can contain several other attributes including global attributes:
-`controls`, `autoplay`, `loop`, `mute`, and `preload`. The `<video>` element also supports the `height`, `width`, and
+The opening `<video>` and `<audio>` tags can contain several other attributes including 
+`controls`, `autoplay`, `loop`, `mute`, `preload`, and the global attributes. The `<video>` element also supports the `height`, `width`, and
 `poster` attributes.
 
 ```html
@@ -32,8 +32,7 @@ The opening `<video>` and `<audio>` tags can contain several other attributes in
 This `<video>` example has a single source with the `src` attribute linking to the video source. The `poster` attribute
 provides an image to display as the video loads. Finally, the `controls` attribute provides user video controls.
 
-Fallback content is included between the opening and closing tags. If the video (or audio) is not supported or otherwise
-doesn't load, this content is shown. The closing `</video>` tag is required, even if there is no content between the two
+Fallback content is included between the opening and closing tags. If the user agent doesn't support `<video>` (or `<audio>` this content is shown. The closing `</video>` tag is required, even if there is no content between the two
 (but there should always be fallback content , right?).
 
 If no `src` attribute is included on the opening `<video>` or `<audio>` tags, include one or more [`<source>`](https://developer.mozilla.org/docs/Web/HTML/Element/source) elements,
@@ -64,12 +63,12 @@ which indicates that the MP4 encoding is Advanced Video Coding Main Profile Leve
 the scope of this lesson. Jake Archibald has a post explaining [how to determine the codec parameter for an AV1 video](https://jakearchibald.com/2022/html-codecs-parameter-for-av1/)
 if you want to learn more.
 
-When displaying a video, by default, the first frame of the video is shown as the still shot, or "poster", when it becomes available.
+When displaying a video, by default, the first frame of the video is shown as the still shot when it becomes available.
 This is something that can be controlled. The `poster` attribute enables the source of an image to show while the video is downloading
-and until it is played. Make sure to define the aspect ratio of your video, because when the video loads, a size difference
-between the poster and the video will cause a reflow and repaint.
+and until it is played. If the video plays and is subsequently paused, the poster is not re-shown.
 
-In case you were wondering, if the video plays and is subsequently paused, the poster is not re-shown.
+Make sure to define the aspect ratio of your video, because when the video loads, a size difference
+between the poster and the video will cause a reflow and repaint.
 
 Always include the [boolean](/learn/html/attributes/#boolean-attributes) `controls` attribute. This makes the user controls
 visible, providing users with the ability to control audio levels, mute the audio completely, and expand the video to fullscreen.
@@ -84,8 +83,7 @@ elements to specify timed text tracks. The following example includes two `<trac
 
 ```html
 <track label="English" kind="subtitles" srclang="en" src="vtt/subtitles-en.vtt" default />
-   <track label="Francais" kind="subtitles" srclang="fr" src="vtt/subtitles-fr.vtt" />
-```
+<track label="Français" kind="subtitles" srclang="fr" lang="fr-fr" src="vtt/subtitles-fr.vtt" />
 
 The track files, specified in the `src` attribute, should be in [WebVTT format](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (.vtt).
 The files should be on the same domain as the HTML document, unless the [`crossorigin`](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin)
@@ -93,7 +91,7 @@ attribute is included.
 
 There are five enumerated values for the track `kind` attribute: `subtitles`, `captions`, `descriptions`, `chapters`, and other `metadata`.
 
-Include `subtitles` along with the `srclang` attribute for dialogue transcription and translations. The value of each label attribute
+Include `subtitles` along with the `srclang` attribute for dialogue transcription and translations. The value of each `label` attribute
 is displayed as an option to the user. The content of the selected VTT option is displayed over the video. The appearance of the
 subtitles can be styled by targeting the [::cue/ ::cue()](https://developer.mozilla.org/docs/Web/CSS/::cue).
 
@@ -154,17 +152,8 @@ the play state of an audio file.
 ```
 
 This example includes a button with `dataset` attributes containing the text that will be updated as the visitor toggles
-between play and pause states. The `aria-controls` attribute is included with the id of the element controlled by the button;
+between play and pause states. The `aria-controls` attribute is included with the `id` of the element controlled by the button;
 in this case, the audio. Each button that controls the audio has an event handler.
-
-The [`HTMLMediaElement`](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement) provides several properties, methods, and events that are inherited by both the
-[HTMLVideoElement](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement) and
-[HTMLAudioElement](https://developer.mozilla.org/docs/Web/API/HTMLAudioElement), with `HTMLMediaElement` adding a few properties,
-methods, and events of its own. There are several other [Media APIs](https://developer.mozilla.org/docs/Web/Media#apis),
-including a [TextTrack API](https://developer.mozilla.org/docs/Web/API/TextTrack). You can use the [Media Capture and Streams](https://developer.mozilla.org/docs/Web/API/Media_Capture_and_Streams_API)
-and [MediaDevices](https://developer.mozilla.org/docs/Web/API/MediaDevices) APIs to [record audio from a user's microphone](/patterns/media/microphone-record/)
-or [record a user's screen](/patterns/media/screen-record/). The [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API)
-enables [manipulating live and pre-recorded](/patterns/media/audio-effects/) audio and streaming, saving, or sending the audio to the `<audio>` element.
 
 To create customized controls, use [`HTMLMediaElement.play()`](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play) and
 [`HTMLMediaElement.pause()`](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/pause). When toggling the play state,
@@ -199,6 +188,14 @@ document.querySelector('[aria-controls]').removeAttribute('controls');
 Always include external controls when users can't access the controls, such as with background videos that have their controls hidden
 behind site content. It is important to understand the basics of [media accessibility requirements](https://www.w3.org/WAI/WCAG21/Understanding/time-based-media) to accommodate users with
 different environmental and sensory needs, including the millions of people with hearing loss and visual impairments.
+We've just touched on the [`HTMLMediaElement`](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement) which provides several properties, methods, and events that are inherited by both the
+[HTMLVideoElement](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement) and
+[HTMLAudioElement](https://developer.mozilla.org/docs/Web/API/HTMLAudioElement), with `HTMLMediaElement` adding a few properties,
+methods, and events of its own. There are several other [Media APIs](https://developer.mozilla.org/docs/Web/Media#apis),
+including a [TextTrack API](https://developer.mozilla.org/docs/Web/API/TextTrack). You can use the [Media Capture and Streams](https://developer.mozilla.org/docs/Web/API/Media_Capture_and_Streams_API)
+and [MediaDevices](https://developer.mozilla.org/docs/Web/API/MediaDevices) APIs to [record audio from a user's microphone](/patterns/media/microphone-record/)
+or [record a user's screen](/patterns/media/screen-record/). The [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API)
+enables [manipulating live and pre-recorded](/patterns/media/audio-effects/) audio and streaming, saving, or sending the audio to the `<audio>` element.
 
 ## Check your understanding
 

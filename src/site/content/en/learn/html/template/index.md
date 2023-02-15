@@ -22,7 +22,7 @@ as this helps distinguish between regular and custom elements.
 
 We'll discuss using the `<template>` and `<slot>` elements, the `slot` attribute, and JavaScript to create a template with
 an encapsulated [Shadow DOM](/shadowdom-v1/). We'll then re-use the defined element, customizing a section of text, just
-like you would any element or web component. We'll also briefly discuss using CSS from without and outside of the custom element.
+like you would any element or web component. We'll also briefly discuss using CSS from within and outside of the custom element.
 
 ## The `<template>` element
 
@@ -48,7 +48,7 @@ The `<template>` element is used to declare fragments of HTML to be cloned and i
 ```
 
 As the contents of a `<template>` element are not written to the screen, the `<form>` and its contents aren't rendered.
-Yes, this Codepen is blank.
+Yes, this Codepen is blank, but if you inspect the HTML tab, you'll see the `<template>` markup.
 
 {% Codepen {
 user: 'web-dot-dev',
@@ -92,7 +92,7 @@ In our template, we change the `<legend>` to a `<slot>`:
 
 The `name` attribute is used to assign slots to other elements if the element has a [slot](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/slot) attribute whose value matches the
 name of a named slot. If the custom element doesn't have a match for a slot, the contents of the `<slot>` will be rendered.
-So we included a `<legend>` with generic content that is OK to be rendered if anyone simply includes `<star-rating>,</star-rating>` , with no content, in their HTML.
+So we included a `<legend>` with generic content that is OK to be rendered if anyone simply includes `<star-rating></star-rating>`, with no content, in their HTML.
 
 ```html
 <star-rating>
@@ -272,7 +272,7 @@ The _shadow tree_ is the DOM tree inside the shadow DOM. The shadow root is the 
 The [`:host`](https://developer.mozilla.org/docs/Web/CSS/:host) pseudo-class selects the `<star-rating>`, the shadow host element.
 The _shadow host_ is the DOM node that the shadow DOM is attached to. To target only specific versions of the host, use [`:host()`](https://developer.mozilla.org/docs/Web/CSS/:host_function).
 This will select only the shadow host elements that match the parameter passed, like a class or attribute selector. To select
-all the custom elements, you can use `star-rating` in the global CSS, or `:host(#IDDoesNotExist)` in the template styles. In terms
+all the custom elements, you can use `star-rating { /* styles */ }` in the global CSS, or `:host(:not(#nonExistantId))` in the template styles. In terms
 of [specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity), the global CSS wins.
 
 The [`::slotted()`](https://developer.mozilla.org/docs/Web/CSS/::slotted) pseudo-element crosses the shadow DOM boundary
