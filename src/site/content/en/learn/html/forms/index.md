@@ -8,8 +8,8 @@ tags:
   - html
 ---
 
-Most sites and applications include a web form. Joke sites, like [DoWebsitesNeedToLookExactlyTheSameInEveryBrowser.com](http://dowebsitesneedtolookexactlythesameineverybrowser.com/),
-may not have a form, but even [MachineLearningWorkshop.com](https://machinelearningworkshop.com/) (MLW), which originated as an April Fool's day joke, has a form,
+Most sites and applications include a web form. Joke sites, like [DoWebsites<wbr>Need<wbr>To<wbr>Look<wbr>Exactly<wbr>The<wbr>Same<wbr>In<wbr>Every<wbr>Browser.com](http://dowebsitesneedtolookexactlythesameineverybrowser.com/),
+may not have a form, but even [Machine<wbr>Learning<wbr>Workshop.com](https://machinelearningworkshop.com/) (MLW), which originated as an April Fool's day joke, has a form,
 albeit a fake one. MLW's main "call to action" is a registration form for machines to sign up for a workshop. This form
 is contained in a `<form>` element.
 
@@ -18,15 +18,15 @@ interactive controls for submitting information. Nested in a `<form>` you'll fin
 form controls that make up that form.
 
 HTML is powerful. This section focuses on the power of HTML, covering what HTML can do without adding JavaScript.
-Using form data client-side to update the UI in some way generally involves JavaScript ([or CSS](https://codepen.io/jcoulterdesign/pen/NOMeEb)), which is not discussed here.
-There is an entire [Learn Forms](/learn/forms/) course. We won't duplicate all the information from that section here, but we will introduce
+Using form data client-side to update the UI in some way generally involves [CSS](https://codepen.io/jcoulterdesign/pen/NOMeEb) or JavaScript, which is not discussed here.
+There is an entire [Learn Forms](/learn/forms/) course. We won't duplicate that section here, but we will introduce
 several form controls and the HTML attributes that empower them.
 
 With forms, you can enable users to interact with your website or application, validate the information entered, and submit
 the data to a server. HTML attributes can enable requiring the user to select form controls or enter a value. HTML
 attributes can define specific criteria that the value must match to be valid. When the user tries to submit the form,
-all the form control values go through [client-side constraint validation](#), without JavaScript, and can prevent submission
-until the data matches the required criteria. You can also turn this feature off: setting the [`novalidate`](https://developer.mozilla.org/docs/Web/HTML/Element/form#attr-novalidate)
+all the form control values go through [client-side constraint validation](#) and can prevent submission
+until the data matches the required criteria; all without JavaScript. You can also turn this feature off: setting the [`novalidate`](https://developer.mozilla.org/docs/Web/HTML/Element/form#attr-novalidate)
 attribute on the `<form>` or, more often, `formnovalidate` on a button, saving the form data for later completion,
 prevents validation.
 
@@ -38,7 +38,7 @@ and closing `<button>` tags. A submit button can be written either of two ways:
 
 ```html
 <input type="submit" value="Submit Form">
- <button type="submit">Submit Form</button>
+<button type="submit">Submit Form</button>
 ```
 
 For a very simple form, you need a `<form>` element, with some form inputs inside, and a submit button. However, there is
@@ -55,7 +55,7 @@ By default, the form data gets sent to the current page. Otherwise, set the `act
 The data sent is made up of name/value pairs of the form's various form controls. By default, this includes all the form
 controls nested within the form that have a `name`. However, with the `form` attribute, it is possible to include form controls
 outside the `<form>` and to omit form controls nested within the `<form>`. Supported on form controls and `<fieldset>`,
-the `form` attribute takes as its value the `id` of the form the control is associated with, not necessarily the form it
+the `form` attribute takes as its value the `id` of the form the control it is associated with, not necessarily the form it
 is nested in. This means form controls don't need to be physically nested in a `<form>`.
 
 {% Aside 'warning' %}
@@ -67,9 +67,9 @@ The `method` attribute defines the HTTP protocol of the request: generally `GET`
 parameter string of `name=value` pairs, appended to the `action`'s URL.
 
 With `POST`, the data is appended to the body of the HTTP request. When sending secure data, such as passwords and credit card
-information, always use POST.
+information, always use `POST`.
 
-There is also a DIALOG method. If a `<form method="dialog">` is within a `<dialog>`, submitting the form will close the dialog;
+There is also a `DIALOG` method. If a `<form method="dialog">` is within a `<dialog>`, submitting the form will close the dialog;
 there is a submit event though the data is neither cleared nor submitted. Again, without JavaScript. This is discussed in
 [the dialog section](/learn/html/dialog/). Just note, because this doesn't submit the form, you probably want to
 include both `formmethod="dialog"`and `formnovalidate` on the submit button.
@@ -80,9 +80,8 @@ submission take precedence over the `action`, [`enctype`](/learn/forms/form/#ena
 set on the `<form>`. Constraint validation occurs prior to form submission, but only if there is neither a
 `formnovalidate` on the activated submit button nor a `novalidate` on the `<form>`.
 
-For the example buttons, no name or value for the button gets sent with the form as neither example has a name. If a form
-control doesn't have a name, it will not be sent with the form. To capture which button was used to submit a form, give
-the button a `name`.
+To capture which button was used to submit a form, give
+the button a `name`.  Buttons with no name or value don't get sent with the form data on form submission.
 
 ## After submitting the form
 
@@ -93,8 +92,8 @@ The value of a `<select>` is the selected `<option>`'s `value` or, if the `<opti
 <form method="GET">
 <label for="student">Pick a student:</label>
 <select name="student" id="student">
-   <option>Blendan Smooth</option>
    <option value="hoover">Hoover Sukhdeep</option>
+   <option>Blendan Smooth</option>
    <option value="toasty">Toasty McToastface</option>
 </select>
 <input type="submit" value="Submit Form">
@@ -128,7 +127,7 @@ https://web.dev/learn/html/forms?student=Blendan+Smooth
 When a form is submitted, the information sent includes the names and values of all named form controls that have a `name`
 except non-selected checkboxes, non-selected radio buttons, and the names and values of any buttons other than the one that
 submitted the form. For all other form controls, if the form control has a name, but no value was entered or defaulted, the
-form control's `name` gets submitted with an empty string as the `value`.
+form control's `name` gets submitted with an empty value.
 
 There are [22 input types](https://developer.mozilla.org/docs/Web/HTML/Element/Input#input_types), so we can't cover them all.
 Just note that including a value is optional, and often a bad idea, when you want the user to enter information.
@@ -382,7 +381,7 @@ the `required`, `pattern`, `min`, `max`, and even `type` attributes, come at for
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/C3UYbvnyGYyLhCqReM8M.png", alt="An error message indicating that a multi-choice field is required.", width="738", height="354" %}
 
 When we attempt to submit the form without picking the required favorite student, constraint validation prevents form submission
-because of a `validityState.valueMissing` error.
+because of a [`validityState.valueMissing`](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/valueMissing) error.
 
 If any of the `validityState` properties return `true`, submission is blocked, and the browser displays an error message
 in the first incorrect form control, giving it focus. When the user activates a form submission and there are invalid values,
@@ -390,12 +389,12 @@ the first invalid form control will show an error message and receive focus. If 
 numeric value is out of range, or if a value is not of the type required by the `type` attribute, the form will not validate,
 will not submit, and an error message will appear.
 
-If a `number`, date, or time value is below the minimum `min` set, above the maximum `max` set, or out of step with the
-`step` value, whether explicitly set or defaulting to `1`, the control will be [`:out-of-range`](https://developer.mozilla.org/docs/Web/CSS/:out-of-range) (and `:invalid`), and
+If a `number`, date, or time value is below the minimum `min` se or above the maximum `max` set the control will be (https://developer.mozilla.org/docs/Web/CSS/:out-of-range) (and `:invalid`), and
 the user will be informed of the [`valididityState.rangeUnderflow`](https://developer.mozilla.org/docs/Web/API/ValidityState/rangeUnderflow),
-[`validityState.rangeOverflow`](https://developer.mozilla.org/docs/Web/API/ValidityState/rangeUnderflow) or
-[`validityState.stepMismatch`](https://developer.mozilla.org/docs/Web/API/ValidityState/stepMismatch) error when they
-try to submit the form. The error appears as a bubble and by default provides helpful information on how to rectify the mistake.
+[`validityState.rangeOverflow`](https://developer.mozilla.org/docs/Web/API/ValidityState/rangeUnderflow)  error when they
+try to submit the form. If the value is out of step with the
+`step` value, whether explicitly set or defaulting to `1`, the control will be [`:out-of-range`] (and `:invalid`) and there will be a
+[`validityState.stepMismatch`](https://developer.mozilla.org/docs/Web/API/ValidityState/stepMismatch) error. The error appears as a bubble and by default provides helpful information on how to rectify the mistake.
 
 There are similar attributes for the length of values: the [`minlength`](https://developer.mozilla.org/docs/Web/HTML/Attributes/minlength)
 and [`maxlength`](https://developer.mozilla.org/docs/Web/HTML/Attributes/maxlength) attributes will alert the user of an error

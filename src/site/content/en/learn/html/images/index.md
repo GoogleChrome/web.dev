@@ -13,13 +13,13 @@ are presentational and should be applied with CSS. When an image adds context to
 embedded with HTML.
 
 The main method for including images is the [`<img>`](https://developer.mozilla.org/docs/Web/HTML/Element/img) tag with the `src`
-attribute referencing an image resource.
+attribute referencing an image resource and the `alt` attribute describing the image.
 
 ```html
 <img src="images/eve.png" alt="Eve">
 ```
 
-Both the `srcset` attribute on `<img>` and the [`<picture>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture) element provide a way to include multiple image sources with
+Both the [`srcset`](/learn/images/descriptive/) attribute on `<img>` and the [`<picture>`](/learn/images/prescriptive/) element provide a way to include multiple image sources with
 associated media queries, each with a fallback image source, enabling serving the most appropriate image file based on the device's
 resolution, browser capabilities, and the viewport size. The `srcset` attribute enables providing multiple image versions
 based on resolution and, along with the `sizes` attribute, browser viewport size.
@@ -30,7 +30,7 @@ srcset="images/eve.png 400w, images/eve-xl.jpg 800w"
 sizes="(max-width: 800px) 400px, 800px" />
 ```
 
-This can also be done with the `<picture>` element, along with `<source>` children, which takes an `<img>` as a default source.
+This can also be done with the [`<picture>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture) element, along with [`<source>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture) children, which takes an [`<img>`](https://developer.mozilla.org/docs/Web/HTML/Element/img) as a default source.
 
 ```html
 <picture>
@@ -42,10 +42,10 @@ This can also be done with the `<picture>` element, along with `<source>` childr
 
 In addition to these built-in HTML [responsive image methods](/learn/design/responsive-images/), HTML also enables image
 render performance to be improved via attributes. The `<img>` tag, and therefore graphical submit buttons [`<input type="image">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/image),
-can include `height` and `width` attributes to set the image's aspect ratio to reduce content layout shift. The `lazy` attribute enables lazy loading.
+can include `height` and `width` attributes to set the image's aspect ratio to reduce content layout shift. The `lazy` attribute enables [lazy loading](/learn/images/performance-issues/#deferring-image-requests).
 
 HTML also supports the inclusion of SVG images using the [`<svg>`](https://www.w3.org/Graphics/SVG/) directly, though SVG
-images with the .svg extension (or as a [data-uri](https://css-tricks.com/data-uris/)) can be embedded using the `<img>` element.
+images with the `.svg` extension (or as a [data-uri](https://css-tricks.com/data-uris/)) can be embedded using the `<img>` element.
 
 {% Aside %}
 The [`<figure>`](https://developer.mozilla.org/docs/Web/HTML/Element/figure) element, along with its nested [`<figcaption>`](https://developer.mozilla.org/docs/Web/HTML/Element/figcaption) element,
@@ -121,7 +121,7 @@ While an image can definitely be worth a thousand words, the description should 
 
 Omit information the user already knows from the context and is otherwise informed about in the content. For example,
 if you're on a tutorial page about changing browser settings and the page is about clicking icons in the browser chrome, the URL
-of the page in the screen capture isn't important. Limit the alt to the topic at hand: how to change settings. The alt might be
+of the page in the screen capture isn't important. Limit the `alt` to the topic at hand: how to change settings. The `alt` might be
 "The settings icon is in the navigation bar below the search field." Don't include "screenshot" or "machinelearningworkshop"
 as the user doesn't need to know it's a screenshot and doesn't need to know where the techwriter was surfing when they wrote
 the instructions. The description of the image is based on the context of why the image was included in the first place.
@@ -141,7 +141,7 @@ a manual icon, two biographical photos of Hal and Eve, and three avatars of a bl
 foreground image that looks like a magazine is the only one that is purely decorative. The page also has
 two background images; these are also decorative and, as they are added with CSS, are inaccessible.
 
-The magazine, being purely decorative, has an empty `alt` attribute, and a `role` of `none` as the image is a purely
+The magazine, being purely decorative, has an empty `alt` attribute, and a [`role` of `none`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role) as the image is a purely
 presentational SVG. If meaningful, SVG images should include the `role="img"`.
 
 ```html
@@ -204,7 +204,7 @@ with the browser selecting which image to request based on multiple media querie
 There can be a single `srcset` attribute per `<img>` element, but that `srcset` can link to multiple images. The `srcset`
 attribute accepts a list of comma-separated values, each containing the URL of the asset followed by a space followed by
 descriptors for that image option. If a width descriptor is used, you must also include the `sizes` attribute with a media
-query or source size for each `srcset` option other than the last one. The Learn section covering [responsive images with `srcset`](/learn/design/responsive-images/#responsive-images-with-srcset)
+query or source size for each `srcset` option other than the last one. The Learn sections covering [responsive images with `srcset`](/learn/design/responsive-images/#responsive-images-with-srcset) and [descriptive syntaxes](/learn/images/descriptive/) are worth reading.
 is worth reading.
 
 The `srcset` image will take precedence over the `src` image if there is a match.
@@ -221,8 +221,8 @@ The `srcset` attribute is common to `img`, `source`, and `link`, but is generall
 as media queries can be listed in the `<srcset>`'s media attribute instead. `<source>` also supports image formats defined in the `type` attribute.
 
 The browser will consider each child `<source>` element and choose the best match among them. If no matches are found, the URL
-of the `<img>` element's [`src`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-src) attribute is selected. The accessible name comes from the `alt.attribute` of the nested `<img>`.\
-The Learn section covering the [`<picture>`](/learn/design/picture-element/) element is also worth a read.
+of the `<img>` element's [`src`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-src) attribute is selected. The accessible name comes from the `alt` attribute of the nested `<img>`.
+The Learn sections covering the [`<picture>`](/learn/design/picture-element/) element and [prescriptive syntaxes](/learn/images/prescriptive/) are also worth a read.
 
 ## Additional performance features
 
