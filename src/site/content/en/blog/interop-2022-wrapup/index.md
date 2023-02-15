@@ -44,7 +44,7 @@ In this post, learn about the progress made during 2022. In addition to these he
 
 ## The dialog element
 
-[The dialog element](https://developer.mozilla.org/docs/Web/HTML/Element/dialog) allows the creation of modal dialogs. This is a common pattern on the web, and using this element gives you usability and accessibility that you would otherwise have to develop and test when creating your own components. In the article [Building a dialog component](/building-a-dialog-component/), Adam Argyle explains how to build on top of this element to build different types of dialogs.
+[The dialog element](https://developer.mozilla.org/docs/Web/HTML/Element/dialog) allows the creation of modal and non-modal dialogs. This is a common pattern on the web, and using this element gives you usability and accessibility that you would otherwise have to develop and test when creating your own components. In the article [Building a dialog component](/building-a-dialog-component/), Adam Argyle explains how to build on top of this element to build different types of dialogs.
 
 {% BrowserCompat 'html.elements.dialog' %}
 
