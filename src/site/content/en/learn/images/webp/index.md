@@ -86,7 +86,7 @@ compression excels—but by the parts of our image where compression artifacts a
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ohpy2TSKU5qkO7bZOzIy.png", alt="A compressed JPEG image of a monarch butterfly", width="800", height="798" %}
 
 As you can see in this exaggerated example, the wings of the monarch in the foreground look relatively sharp—a little grainy
-]when compared with the high-resolution original, but certainly not noticeable without the original to compare with it.
+when compared with the high-resolution original, but certainly not noticeable without the original to compare with it.
 Likewise, the detailed inflorescence of the milkweed, and the leaves in the foreground—you and I may see traces of compression
 artifacts with our trained eyes, but even with the compression dialed up well beyond reasonable levels things in the foreground
 still look passably crisp. The low-frequency information at the top left of the picture—the blurry green backdrop of leaves—looks
