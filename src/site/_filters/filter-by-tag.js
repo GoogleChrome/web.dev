@@ -41,7 +41,7 @@ function filterByTag(posts, tags) {
     if (!postB.date || !postA.date) return 0;
 
     // @ts-ignore
-    return new Date(postB.date) - new Date(postA.date); 
+    return new Date(postB.date) - new Date(postA.date);
   });
 
   return recentPosts.filter((post) => isContainsTag(post, tags));
