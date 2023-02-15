@@ -153,7 +153,7 @@ length property (returned only by the `options` property of `<select>`) can also
 ## Other interfaces
 
 There are additional interfaces that enable manipulating the branch locations of DOM nodes. The [`EventTarget`](https://developer.mozilla.org/docs/Web/API/EventTarget) interface, which provides
-us with [`addEventListener()`](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener) and [`removeEventListener()`](https://developer.mozilla.org/docs/Web/API/EventTarget/removeEventListener), is inherited by the [`Node`](https://developer.mozilla.org/docs/Web/API/Node) and [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) interfaces. In turn, the Element, Document, and DocumentFragment (which we saw in [custom elements](/learn/html/template)) interfaces inherit from Node, and the HTMLElement interface inherits from Element.
+us with [`addEventListener()`](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener) and [`removeEventListener()`](https://developer.mozilla.org/docs/Web/API/EventTarget/removeEventListener), is inherited by the [`Node`](https://developer.mozilla.org/docs/Web/API/Node) and [`Window`](https://developer.mozilla.org/docs/Web/API/Window) interfaces. In turn, the Element, Document, and DocumentFragment (which we saw in [custom elements](/learn/html/template)) interfaces inherit from Node, and the HTMLElement interface inherits from Element.
 
 ### The `node` interface
 
