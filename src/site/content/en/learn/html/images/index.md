@@ -141,7 +141,7 @@ a manual icon, two biographical photos of Hal and Eve, and three avatars of a bl
 foreground image that looks like a magazine is the only one that is purely decorative. The page also has
 two background images; these are also decorative and, as they are added with CSS, are inaccessible.
 
-The magazine, being purely decorative, has an empty `alt` attribute, and a [`role` of `none`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role) as the image is a purely
+The magazine, being purely decorative, has an empty `alt` attribute, and a [`role` of `none`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role) as the image is a purely
 presentational SVG. If meaningful, SVG images should include the `role="img"`.
 
 ```html

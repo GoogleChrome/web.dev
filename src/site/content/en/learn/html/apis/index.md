@@ -31,10 +31,10 @@ nodes:
 ## HTML Element APIs
 
 The middle letter of DOM is "object." Just like the `person` or `car` object example from most intro to object-oriented programming
-classes, every node in the document tree is an object that can be manipulated with JavaScript. 
+classes, every node in the document tree is an object that can be manipulated with JavaScript.
 
 The browser provides numerous
-APIs providing natively supported methods, events, and property querying and updating. 
+APIs providing natively supported methods, events, and property querying and updating.
 Element nodes contain information about all the attributes set on the element. You can use HTML interfaces to access
 information about an element's attributes. For example, we can use [`HTMLImageElement.alt`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/alt)
 get the `alt` attributes of all the images:
@@ -152,8 +152,8 @@ length property (returned only by the `options` property of `<select>`) can also
 
 ## Other interfaces
 
-There are additional interfaces that enable manipulating the branch locations of DOM nodes. The [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) interface, which provides
-us with [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) and [`removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener), is inherited by the [`Node`](https://developer.mozilla.org/en-US/docs/Web/API/Node) and [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) interfaces. In turn, the Element, Document, and DocumentFragment (which we saw in [custom elements](/learn/html/template)) interfaces inherit from Node, and the HTMLElement interface inherits from Element.
+There are additional interfaces that enable manipulating the branch locations of DOM nodes. The [`EventTarget`](https://developer.mozilla.org/docs/Web/API/EventTarget) interface, which provides
+us with [`addEventListener()`](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener) and [`removeEventListener()`](https://developer.mozilla.org/docs/Web/API/EventTarget/removeEventListener), is inherited by the [`Node`](https://developer.mozilla.org/docs/Web/API/Node) and [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) interfaces. In turn, the Element, Document, and DocumentFragment (which we saw in [custom elements](/learn/html/template)) interfaces inherit from Node, and the HTMLElement interface inherits from Element.
 
 ### The `node` interface
 

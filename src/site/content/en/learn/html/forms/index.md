@@ -381,7 +381,7 @@ the `required`, `pattern`, `min`, `max`, and even `type` attributes, come at for
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/C3UYbvnyGYyLhCqReM8M.png", alt="An error message indicating that a multi-choice field is required.", width="738", height="354" %}
 
 When we attempt to submit the form without picking the required favorite student, constraint validation prevents form submission
-because of a [`validityState.valueMissing`](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/valueMissing) error.
+because of a [`validityState.valueMissing`](https://developer.mozilla.org/docs/Web/API/ValidityState/valueMissing) error.
 
 If any of the `validityState` properties return `true`, submission is blocked, and the browser displays an error message
 in the first incorrect form control, giving it focus. When the user activates a form submission and there are invalid values,
@@ -389,11 +389,11 @@ the first invalid form control will show an error message and receive focus. If 
 numeric value is out of range, or if a value is not of the type required by the `type` attribute, the form will not validate,
 will not submit, and an error message will appear.
 
-If a `number`, date, or time value is below the minimum `min` se or above the maximum `max` set the control will be (https://developer.mozilla.org/docs/Web/CSS/:out-of-range) (and `:invalid`), and
+If a `number`, date, or time value is below the minimum `min` set or above the maximum `max` set the control will be [`:out-of-range`](https://developer.mozilla.org/docs/Web/CSS/:out-of-range) (and `:invalid`), and
 the user will be informed of the [`valididityState.rangeUnderflow`](https://developer.mozilla.org/docs/Web/API/ValidityState/rangeUnderflow),
 [`validityState.rangeOverflow`](https://developer.mozilla.org/docs/Web/API/ValidityState/rangeUnderflow)  error when they
 try to submit the form. If the value is out of step with the
-`step` value, whether explicitly set or defaulting to `1`, the control will be [`:out-of-range`] (and `:invalid`) and there will be a
+`step` value, whether explicitly set or defaulting to `1`, the control will be `:out-of-range` (and `:invalid`) and there will be a
 [`validityState.stepMismatch`](https://developer.mozilla.org/docs/Web/API/ValidityState/stepMismatch) error. The error appears as a bubble and by default provides helpful information on how to rectify the mistake.
 
 There are similar attributes for the length of values: the [`minlength`](https://developer.mozilla.org/docs/Web/HTML/Attributes/minlength)
