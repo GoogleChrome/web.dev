@@ -30,10 +30,11 @@ nodes:
 
 ## HTML Element APIs
 
-The middle letter of DOM is "object." Just like the `person` or `car` object example from intro to object-oriented programming
-classer, every node in the document tree is an object that can be manipulated with JavaScript. The browser provides numerous
-APIs providing natively supported methods, events, and property querying and updating.
+The middle letter of DOM is "object." Just like the `person` or `car` object example from most intro to object-oriented programming
+classes, every node in the document tree is an object that can be manipulated with JavaScript. 
 
+The browser provides numerous
+APIs providing natively supported methods, events, and property querying and updating. 
 Element nodes contain information about all the attributes set on the element. You can use HTML interfaces to access
 information about an element's attributes. For example, we can use [`HTMLImageElement.alt`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/alt)
 get the `alt` attributes of all the images:
@@ -59,7 +60,7 @@ If the user changes their device orientation or otherwise changes the width of t
 will change and the DOM properties will automatically update with it.
 
 The HTML interface APIs is not limited to accessing attribute values. The DOM provides insight into the current state of the UI.
-HTML APIs can access all of that information.You can access the length of a video, where a view is in the current playback,
+HTML APIs can access all of that information. You can access the length of a video, where a view is in the current playback,
 and if the video (or audio) has finished playing with [`HTMLMediaElement.duration`](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/duration),
 [`HTMLMediaElement.currentTime`](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentTime), and
 [`HTMLMediaElement.ended`](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ended) respectively.
@@ -151,13 +152,13 @@ length property (returned only by the `options` property of `<select>`) can also
 
 ## Other interfaces
 
-There are additional interfaces that enable manipulating the branch locations of DOM nodes. The EventTarget interface, which provides
-us with `addEventListener()` and `removeEventListener()`, is inherited by the Node and Window interfaces. In turn, the Element, Document, and DocumentFragment (which we saw in the custom elements) interfaces inherit from Node, and the HTMLElement interface inherits from Element.
+There are additional interfaces that enable manipulating the branch locations of DOM nodes. The [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) interface, which provides
+us with [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) and [`removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener), is inherited by the [`Node`](https://developer.mozilla.org/en-US/docs/Web/API/Node) and [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) interfaces. In turn, the Element, Document, and DocumentFragment (which we saw in [custom elements](/learn/html/template)) interfaces inherit from Node, and the HTMLElement interface inherits from Element.
 
 ### The `node` interface
 
 Every type of DOM node is represented by an interface based on [`Node`](https://developer.mozilla.org/docs/Web/API/Node),
-which provides information and methods as elements relate to the DOM tree. The Node interface enables querying and adding modes to the node tree.
+which provides information and methods as elements relate to the DOM tree. The `Node` interface enables querying and adding nodes to the node tree.
 
 Douglas Crockford's famous "walk the DOM" function, makes use of Node's [`firstChild`](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
 and the [`nextSibling`](https://developer.mozilla.org/docs/Web/API/Node/nextSibling) properties.
@@ -202,7 +203,7 @@ The [`Document`](https://developer.mozilla.org/docs/Web/API/Document) interface 
 web page loaded in the browser, whether the document is HTML, SVG, XML, MathML, or other. The `Document` interface also
 inherits from the `HTMLDocument` interface.
 
-The document enables quick access to node types and the ability to create collections of specific element types, such as
+The `document` enables quick access to node types and the ability to create collections of specific element types, such as
 `document.body` and `document.styleSheets`. The HTMLDocument enables accessing information relevant to the document that
 are not found in HTML nodes, such as the [`Document.location`](https://developer.mozilla.org/docs/Web/API/Document/location),
 [`Document.lastModified`](https://developer.mozilla.org/docs/Web/API/Document/lastModified), and [`Document.Cookie`](https://developer.mozilla.org/docs/Web/API/Document/cookie).
@@ -216,7 +217,7 @@ The Window interface includes globally available items beyond the DOM that can b
 functions, namespaces, objects, and constructors documented in MDN's [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Reference)
 and [DOM References](https://developer.mozilla.org/docs/Web/API/Document_Object_Model).
 
-The window interface is the API for the object containing the document. The global window object is the window in which the
+The Window interface is the API for the object containing the document. The global `window` object is the window in which the
 script is running. Every browser tab contains its own Window object. The Window interface can query the contents of the tab
 as well as the overall window and device. For example, the [`resizeTo()`](https://developer.mozilla.org/docs/Web/API/Window/resizeTo)
 method can be used to resize the browser window, the [`devicePixelRatio`](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio)
@@ -225,7 +226,5 @@ is in rather than the DOM tree the tab displays, the window is likely the interf
 
 Several APIs are available based on features surfaced through the Window interface, including the [Web Workers](https://developer.mozilla.org/docs/Web/API/Worker)
 and [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) APIs.
-
-## Check your understanding
 
 {% Assessment 'apis' %}

@@ -275,7 +275,5 @@ coordinates of the click location are sent during form submission, appending the
 something like `&imageSubmitName.x=169&imageSubmitName.y=66` will be submitted with the form when the user clicks the image,
 submitting it. If the image doesn't have a `name` attribute, the x and y are sent: `&x=169&y=66`.
 
-## Check your understanding
-
 {% Assessment 'images' %}
 

@@ -197,6 +197,4 @@ and [MediaDevices](https://developer.mozilla.org/docs/Web/API/MediaDevices) APIs
 or [record a user's screen](/patterns/media/screen-record/). The [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API)
 enables [manipulating live and pre-recorded](/patterns/media/audio-effects/) audio and streaming, saving, or sending the audio to the `<audio>` element.
 
-## Check your understanding
-
 {% Assessment 'audio-video' %}
