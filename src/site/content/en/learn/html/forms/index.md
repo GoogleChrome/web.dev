@@ -500,6 +500,4 @@ the more attention needs to be given to accessibility with respect to focus mana
 and values, where necessary, and ARIA live announcements as required. But, as we've learned here, with HTML alone, you can get a
 long way to your goal of accessibility and validity without resorting to ARIA or JavaScript.
 
-## Check your understanding
-
 {% Assessment 'forms' %}
