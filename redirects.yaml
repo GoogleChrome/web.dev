@@ -425,6 +425,18 @@ redirects:
     destination: https://developer.chrome.com/blog/conformance/
   - source: /tags/aurora-project
     destination: https://developer.chrome.com/tags/aurora-project/
+  - source: /blog/declarative-shadow-dom
+    destination: https://developer.chrome.com/articles/declarative-shadow-dom/
+  - source: /blog/gpu-compute
+    destination: https://developer.chrome.com/articles/gpu-compute
+  - source: /blog/web-bundles
+    destination: https://developer.chrome.com/docs/web-platform/web-bundles
+  - source: /blog/webtransport
+    destination: https://developer.chrome.com/articles/webtransport
+  - source: /identity/web-otp
+    destination: https://developer.chrome.com/articles/web-otp/
+
+
 
   # Design system
   - source: /design-system/component/action
