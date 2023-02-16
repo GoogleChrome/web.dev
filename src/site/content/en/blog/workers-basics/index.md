@@ -231,7 +231,7 @@ var data = e.data;
 
 ### Features available to workers
 
-Due to their multithreaded behavior, web workers only has access to a subset of JavaScript's features:
+Due to their multithreaded behavior, Web Workers only has access to a subset of JavaScript's features:
 
 - The `navigator` object
 - The `location` object (read-only)
@@ -483,18 +483,18 @@ page cannot start worker scripts that begin with `http:` URLs.
 
 ## Use cases
 
-So what kind app would utilize web workers? Unfortunately, web workers are still relatively new and
-the majority of samples/tutorials out there involve computing prime numbers. Although that isn't very interesting,
-it's useful for understanding the concepts of web workers. Here are a few more ideas to get your brain churning:
+So what kind app would utilize web workers? Here are a few more ideas to get your brain churning:
 
-- Prefetching and/or caching data for later use
-- Code syntax highlighting or other real-time text formatting
-- Spell checker
-- Analyzing video or audio data
-- Background I/O or polling of webservices
-- Processing large arrays or humungous JSON responses
-- Image filtering in `<canvas>`
-- Updating many rows of a local web database<
+- Prefetching and/or caching data for later use.
+- Code syntax highlighting or other real-time text formatting.
+- Spell checker.
+- Analyzing video or audio data.
+- Background I/O or polling of webservices.
+- Processing large arrays or humungous JSON responses.
+- Image filtering in `<canvas>`.
+- Updating many rows of a local web database.
+
+For more information about use cases involving the Web Workers API, visit [Workers Overview](/workers-overview/#use-cases).
 
 ## Demos
 
