@@ -154,7 +154,7 @@ Now, let's compare examples of accessible content structure.
 {% Aside %}
 
 Check out the
-[ARIA Landmarks Example](https://www.w3.org/WAI/ARIA/apg/example-index/landmarks/index.html)
+[ARIA Landmarks Example](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/main.html)
 for more information and best practices.
 
 {% endAside %}
@@ -235,7 +235,7 @@ understand what is most important on the page.
 		<h2>How do I start a stamp collection?</h2>
     <h3>Required equiment</h3>
     <p>...</p>
-    
+
     <h3>How to acquire stamps</h3>
     <p>...</p>
 
@@ -253,7 +253,7 @@ understand what is most important on the page.
 [HTML lists](https://www.w3.org/WAI/tutorials/page-structure/content/#lists)
 are a way to semantically group items similar to one other giving them inherent
 meaning, much like your grocery store list or that never-ending to-do list you
-keep ignoring. 
+keep ignoring.
 
 There are three types of HTML lists:
 
@@ -331,11 +331,11 @@ layout tables are still used, such as in visually rich emails, newsletters, and
 advertisements. In these cases, tables used only for layout must not
 use structural elements that convey relationships and add context, such as
 `<th>` or `<caption>`.
-  
+
 Layout tables must also be hidden from AT users with the ARIA
 [presentation role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/presentation_role)
 or [aria-hidden state](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-hidden).
-  
+
 <div class="switcher">
 {% Compare 'worse' %}
 ```html
@@ -379,7 +379,7 @@ Depending on the complexity of the table, forming relationships through code is
 accomplished in different ways. The first step to making a table accessible is
 to mark up header cells with
 [`<th>`](https://developer.mozilla.org/docs/Web/HTML/Element/th) and data cells
-with [`<td>`](https://developer.mozilla.org/docs/Web/HTML/Element/td) elements. 
+with [`<td>`](https://developer.mozilla.org/docs/Web/HTML/Element/td) elements.
 
 For more complex tables, you may need to use additional HTML table elements
 such as
