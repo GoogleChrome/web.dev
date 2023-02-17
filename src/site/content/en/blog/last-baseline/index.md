@@ -26,7 +26,7 @@ Alignment using the `first` and `last` keywords is now available in all major en
 
 ## First baseline alignment
 
-If you set the value of `align-items` to `baseline`, the result will be first baseline alignment. Therefore the first baseline of the item you are aligning (described as the _alignment subject_) will align with the first baseline of the other items in the group. You can see this in the following example, the first two flex items are aligned using `align-items: baseline`, so they align along the baseline created by the larger text. The final item is aligned to `flex-start` and therefore aligns to the start of the flex container.
+If you set the value of `align-items` to `baseline`, the result will be first baseline alignment. Therefore the first baseline of the item you are aligning (described as the _alignment subject_) will align with the first baseline of the other items in the group. You can see this in the following example, where the first two flex items are aligned using `align-items: baseline`, so they align along the baseline created by the larger text. The final item is aligned to `flex-start` and therefore aligns to the start of the flex container.
 
 {% Codepen {
     user: 'web-dot-dev',
@@ -38,7 +38,7 @@ If you set the value of `align-items` to `baseline`, the result will be first ba
 
 ## Last baseline alignment
 
-When aligning a grid or flex item with the value `last baseline`, the last baseline of that item will align to the last baseline of the _baseline sharing group_ that it is part of. The following example demonstrates last baseline alignment, with the first flex item aligning with the last line of text in the larger item. The final item in this group is aligned to `flex-end`, the end of the flex container.
+When aligning a grid or flex item with the value `last baseline`, the last baseline of that item will align to the last baseline of the _baseline sharing group_ that it is part of. The following example demonstrates last baseline alignment, with the first flex item aligning with the last line of text in the larger item. The final item in this group is aligned to `flex-end`, which is the end of the flex container.
 
 {% Codepen {
     user: 'web-dot-dev',
