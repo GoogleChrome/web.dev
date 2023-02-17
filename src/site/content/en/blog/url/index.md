@@ -3,7 +3,7 @@ title: What are the parts of a URL?
 subhead: "What's the difference between a domain name, hostname, site and origin? This article explains."
 authors:  
   - samdutton  
-date: 2023-01-19  
+date: 2023-02-20
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/EAQ6QLeBBonbpyqeGWPb.jpg
 alt:   
 tags:  
@@ -14,27 +14,33 @@ tags:
 ---
 
 Most of the time it's fine to be relaxed about naming when talking about websites and URLs. It's
-usually OK to say things like "I bought a domain name"' or "Our images are hosted on a different
+usually OK to say things like "I bought a domain name" or "Our images are hosted on a different
 site", even if that's not strictly true.
 
-In some contexts, however, it's crucial to be accurate and specific when referring to the parts of a
+However, in some contexts it's crucial to be accurate and specific when referring to the parts of a
 URL. For example, when dealing with cookies, you need to understand the difference between
-[site](#site)
-and
-[origin](#origin).
- This article is designed to help with that.
+[site](#site) and [origin](#origin). This article is designed to help with that.
 
-The examples and explanations here are intended as a guide: [The URL Living
-Standard](https://url.spec.whatwg.org/) provides formal definitions of URL parts.
+The explanations here are only intended as a guide:
+[The URL Living Standard](https://url.spec.whatwg.org/) provides formal definitions of URL parts.
 
 {% Aside %}
 The named parts of a URL may coincide, but that doesn't mean they're equivalent!   
 
-In the first example below,  the FQDN, eTLD+1, hostname, site and registrable domain are all the
-same, but each term has a different meaning.  
-{%  endAside %}
+The [FQDN](#fqdn), [eTLD+1](#etld1), [hostname](#hostname) and [registrable domain](#registrable-domain)
+may be the same for some URLs, but each term has a different meaning.
+{% endAside %}
 
-## Examples
+Edit the URL in the Glitch below to see the part names. (You can also open this in a separate tab at [url-parts.glitch.me](https://url-parts.glitch.me).)
+
+{% Glitch 'url-parts' %}
+
+
+<!-- <iframe src="https://url-parts.glitch.me" width="100%" style="width: 100%, border: 1px solid #eee">
+</iframe>
+ -->
+
+<!-- ## Examples
 
 {% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/CVV3xEIQFGopaQCq0JJW.png",
     alt="Sample URL with parts labeled.", width="800", height="177" %}
@@ -44,7 +50,7 @@ same, but each term has a different meaning.
 {% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/2NzKEa4kGfn6pi3w4oLd.png",
     alt="Sample URL with parts labeled.", width="800", height="177" %}
 
----
+--- -->
 
 ## Glossary
 
@@ -141,15 +147,14 @@ The [scheme](#scheme) followed by the [host](#host).
 [Spec](https://url.spec.whatwg.org/#dom-url-origin) • [API](https://developer.mozilla.org/docs/Web/API/URL/origin)
 
 {% Aside %}
-Unlike [site](#site), origin includes the [scheme](#scheme) and [port](#port)
-(if provided in the URL).
+Unlike [site](#site), origin includes the [port](#port) if provided in the URL.
 {% endAside %}
 
 ### Parameter {: #parameter}
 
-An item of data passed in a [query string](#query-string).
+An item of data passed in a [search string](#search) (also known as a 'query string').
 
--  For `https://example.com/cats?pattern=tabby&mood=bonkers`, the query string has two
+-  For `https://example.com/cats?pattern=tabby&mood=bonkers`, the search string has two
     parameters: `pattern=tabby` and `mood=bonkers`.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-searchparams) • [API](https://developer.mozilla.org/docs/Web/API/URL/searchParams)
@@ -157,7 +162,7 @@ An item of data passed in a [query string](#query-string).
 ### Pathname {: #pathname}
 
 The part of a URL after the domain and port (if defined), including a filename (if defined) but not
-including the [query string](#query-string) or [hash](#hash).
+including the [search string](#search) or [hash](#hash).
 
 -  For `https://example.com:8000/search?q=tabby`, the pathname is `/search`.
 -  For `example.github.io/foo`, the pathname is `/foo`.
@@ -175,17 +180,9 @@ in the URL `https://example.com:443/tabby`, the port number is 443.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-port) • [API](https://developer.mozilla.org/docs/Web/API/URL/port)
 
-### Query string {: #query-string}
+### Query string
 
-Also known as search string.
-
-A series of key/value pairs that represent [parameters](#parameter), at the end of a URL after a
-question mark.
-
--  For `https://example.com/cats?pattern=tabby&mood=bonkers`, the query string is
-    `pattern=tabby&mood=bonkers`.
-
-[Spec](https://url.spec.whatwg.org/#dom-url-search) • [API](https://developer.mozilla.org/docs/Web/API/URL/search)
+See [search](#search).
 
 ### Registrable domain {: #registrable-domain}
 
@@ -214,6 +211,20 @@ URL.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-protocol) • [API](https://developer.mozilla.org/docs/Web/API/URL/protocol)
 
+### Search {: #search}
+
+Also known as 'query string'.
+
+A series of key/value pairs that represent [parameters](#parameter), at the end of a URL after a
+question mark.
+
+-  For `https://example.com/cats?pattern=tabby&mood=bonkers`, the search string is
+    `pattern=tabby&mood=bonkers`.
+
+[Spec](https://url.spec.whatwg.org/#dom-url-search) • [API](https://developer.mozilla.org/docs/Web/API/URL/search)
+
+
+
 ### Second-level domain {: #sld}
 
 The domain before the [top-level domain](#tld):
@@ -226,19 +237,23 @@ The domain before the [top-level domain](#tld):
 
 ### Site {: #site}
 
--  For a site such as `example.com` with a single-part top-level domain: the top-level domain
-    and the part before it. For example, for the URL `https://www.example.com/foo`, the site is
-    `example.com`. 
--  For an [eTLD](#tld)
-    where only third-level registrations are allowed (such as `co.uk` or `github.io`) the top-level
-    domain ('public suffix') and the part of the domain name just before that. For example, for the
-    URL `https://www.example.co.uk/foo`, the site is  `example.co.uk`. (Confusingly, perhaps,
-    domains such as `example.github.io` or `example.glitch.me` are also
-    [defined as 'registrable domains'](https://url.spec.whatwg.org/#host-registrable-domain) though
-    they cannot be registered via a domain name registrar.)
+{% Aside %}
+According to the [URL Standard](https://url.spec.whatwg.org/), site includes [scheme](#scheme).
+(See [discussion of 'same site'](https://github.com/whatwg/url/issues/448).)
+{% endAside %}
+
+-   For a site such as `https://example.com` with a single-part top-level domain: the scheme, plus
+    the top-level domain and the part before that. For example, for the URL
+    `https://www.example.com/foo`, the site is `https://example.com`.
+-   For an [eTLD](#tld) where only third-level registrations are allowed (such as `co.uk` or
+    `github.io`): the scheme, the top-level domain ('public suffix') and the part of the domain name
+    just before that. For example, for the URL `https://www.example.co.uk/foo`, the site is
+    `example.co.uk`. (Confusingly, perhaps, domains such as `example.github.io` or `example.glitch.me`
+    are also [defined as 'registrable domains'](https://url.spec.whatwg.org/#host-registrable-domain)
+    though they cannot be registered via a domain name registrar.)
 
 {% Aside %}
-Unlike [origin](#origin), site does not include the [scheme](#scheme) or [port](#port).
+Unlike [origin](#origin), site does not include [port](#port).
 {% endAside %}
 
 ### Subdomain {: #subdomain}
@@ -273,6 +288,7 @@ When describing the parts of a URL, the domain name that follows the final dot.
 
 -  [WHATWG: URL Living Standard](https://url.spec.whatwg.org/)
 -  [URL API](https://developer.mozilla.org/docs/Web/API/URL_API)
+-  [Understanding "same-site" and "same-origin"](/same-site-same-origin/)
 -  [RFC: Uniform Resource Locators (URL)](https://www.rfc-editor.org/rfc/rfc1738)
 -  [RFC: URIs, URLs and URNs](https://datatracker.ietf.org/doc/html/rfc3305)
 -  [Root Zone Database](https://www.iana.org/domains/root/db) (directory of [TLDs](#tld))
