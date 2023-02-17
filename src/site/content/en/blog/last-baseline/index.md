@@ -22,7 +22,7 @@ This web feature is now available in all three major browser engines!
 
 Alignment using the `first` and `last` keywords is now available in all major engines. This means that we can use last baseline alignment as another option when aligning groups of flex or grid items.
 
-{% BrowserCompat 'css.properties.align-items.last_baseline' %}
+{% BrowserCompat 'css.properties.align-items.flex_context.last_baseline' %}
 
 ## First baseline alignment
 
