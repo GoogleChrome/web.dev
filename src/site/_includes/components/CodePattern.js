@@ -41,6 +41,8 @@ module.exports = (patternId, height) => {
       const type = prismTypes.includes(asset.type) ? asset.type : 'text';
       assetLines.push(asset.content.split('\n').length);
 
+      const isSupportingAsset = asset.name.includes('supporting');
+      const tabName = isSupportingAsset ? `Supporting ${asset.type}` : asset.type;
       // Jake says:
       // Because Prism outputs preformatted code, it will often contain blank
       // lines, eg if the source contains blank lines. Unfortunately the
@@ -57,7 +59,7 @@ module.exports = (patternId, height) => {
         type,
       ).replace(/^(\s*?)$/gm, '<span></span>$1');
 
-      return `<web-tab title="${asset.type}" data-label="${asset.type}">
+      return `<web-tab title="${tabName}" data-label="${tabName}">
           <pre><code class="language-${asset.type}">${content}</code></pre>
         </web-tab>`;
     })
