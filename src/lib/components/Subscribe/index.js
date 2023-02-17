@@ -37,6 +37,28 @@ class Subscribe extends BaseElement {
     super.connectedCallback();
     /** @type {HTMLFormElement} */
     this.form = this.querySelector('form');
+    const intersectionObserver = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      intersectionObserver.disconnect();
+      window.recaptchaLoadCallback = () => {
+        /** @type {HTMLDivElement} */
+        const recaptchaContainerEl = this.querySelector('.g-recaptcha');
+        recaptchaContainerEl.children[0].remove();
+        window.grecaptcha.render(recaptchaContainerEl, {
+          sitekey: recaptchaContainerEl.dataset.sitekey,
+        });
+      };
+
+      window.loadScript(
+        'https://www.google.com/recaptcha/api.js?onload=recaptchaLoadCallback&render=explicit',
+      );
+    });
+
+    intersectionObserver.observe(this.form);
+
     /** @type HTMLElement */
     this.subscribeError = this.querySelector('.subscribe__error');
     this.subscribeMessage = this.querySelector('.subscribe__message');
