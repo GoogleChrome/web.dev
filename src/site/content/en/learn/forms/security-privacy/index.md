@@ -45,9 +45,9 @@ Learn more about
 ## Help users to keep their data private
 
 In the [first module](/learn/forms/form-element), you learned about two possible ways to transfer data:
-using a `GET` request and using a `POST` request. 
+using a `GET` request and using a `POST` request.
 
-With a `GET` request, form data is included as a [query string](https://en.wikipedia.org/wiki/Query_string) 
+With a `GET` request, form data is included as a [query string](https://en.wikipedia.org/wiki/Query_string)
 in the request URL. If you submit a form that uses a `GET` request,
 the browser adds the request URL including form data to your browsing history.
 Convenient if you want to look up past form submissions,
@@ -141,10 +141,10 @@ Find out more:
 
 ## Ensure all data is in good shape
 
-In a previous module, you learned about [validation on the frontend](/learn/forms/validation). 
-Frontend validation is important, but users might still be able to submit invalid data. As a next 
+In a previous module, you learned about [validation on the frontend](/learn/forms/validation).
+Frontend validation is important, but users might still be able to submit invalid data. As a next
 step, you must also validate the data [on the backend](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)
-before saving the data in your database. This ensures that no invalid data is saved in your database. 
+before saving the data in your database. This ensures that no invalid data is saved in your database.
 
 Validation helps to ensure that the data format is valid,
 but you should still not trust data entered by users.
@@ -152,7 +152,7 @@ How can you safely output the data? To prevent
 [Cross Site Scripting](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html) (XSS),
 and ensure all data is safe to include in HTML, you must sanitize data before output.
 
-Learn more about [sanitizing data before output](https://benhoyt.com/writings/dont-sanitize-do-escape/) 
+Learn more about [sanitizing data before output](https://benhoyt.com/writings/dont-sanitize-do-escape/)
 and, where possible, use the [Sanitizer API](/sanitizer/).
 
 ## Ensure all submissions come from real people
@@ -189,10 +189,6 @@ Another option is to use a so-called 'honeypot': a visually hidden form field.
 Humans won't see a honeypot field, but bots will fill it in.
 On the backend, your processing script can check if the field was completed.
 If it was, the submission was probably from a bot, and you can ignore it.
-
-{% Aside 'caution' %}
-Make sure to hide a honeypot field for screen readers, by using the ` aria-hidden="true"` attribute.
-{% endAside %}
 
 There are also services like
 [Akismet](https://akismet.com), which can help you with spam protection.
