@@ -473,7 +473,7 @@ The steps below explain how to set up a status check for Lighthouse CI.
     field to the token that you copied in the last step and then click the **Add
     secret** button.
 
-7.  Go to the `lighthouse-ci.yaml` file and add the new environment secret just below the lhci run command
+7.  Go to the `lighthouse-ci.yaml` file and add the new environment secret to the "run Lighthouse CI" command.
 
 ```diff
           - name: run Lighthouse CI
