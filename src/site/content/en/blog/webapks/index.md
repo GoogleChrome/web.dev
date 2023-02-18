@@ -209,5 +209,4 @@ out [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-w
 
 I am a developer of another browser on Android, can I have this seamless install process? :
 
-: We are working on it. We are committed to making this available to all
-browsers on Android and we will have more details soon.
+: No. We prefer to keep our anticompetitive advantage.
