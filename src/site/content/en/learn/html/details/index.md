@@ -35,7 +35,7 @@ Why the history? Disclosure widgets, such asaccordions, without JavaScript or fo
 addition; the [`<details>`](https://developer.mozilla.org/docs/Web/HTML/Element/details) and [`<summary>`](https://developer.mozilla.org/docs/Web/HTML/Element/summary)
 elements have only been fully supported in all modern browsers since January 2020. You can now create functioning, albeit less
 than attractive, disclosure widgets using only semantic HTML. The `<details>` and `<summary>` elements are all you need: they are a built-in way to handle
-expanding and collapsing content. When a user clicks or taps a `<summary>`, or releases the `<kbd>Enter</kbd>` key when
+expanding and collapsing content. When a user clicks or taps a `<summary>`, or releases the <kbd>Enter</kbd> key when
 the `<summary>` has focus, the contents of the parent `<details>` toggle to visible!
 
 {% Codepen {
@@ -52,6 +52,7 @@ id: 'ExeYgQd'
 } %}
 
 You'll note, these Codepens contain no JavaScript.
+## Toggling visibility: the `open` attribute
 
 The `<details>` element is the disclosure widget container. The `<summary>` is the summary or legend for its parent `<details>`. The
 summary is always displayed, acting as a button that toggles the display of the rest of the parent’s contents. Interacting
@@ -64,8 +65,8 @@ Because the `open` attribute is added and removed automatically as the user inte
 style the element differently based on its state.
 
 You can create an accordion with a list of multiple `<details>` elements, each with a `<summary>` child. Omitting the `open` attribute
-in your HTML means the `<details>` will all be collapsed, or closed, with just the summary headings visible when the page load;
-each heading being the opener for the rest of the contents in the parent details. If you include the `open` attribute in your HTML, the `<details>`
+in your HTML means the `<details>` will all be collapsed, or closed, with just the summary headings visible when the page loads;
+each heading being the opener for the rest of the contents in the parent `<details>`. If you include the `open` attribute in your HTML, the `<details>`
 will render expanded, with the contents visible, when the page loads.
 
 The hidden content in the collapsed state is searchable in some browsers but not others, even though the collapsed content
@@ -75,6 +76,8 @@ the occurrence. This behavior is not replicated in Firefox or Safari.
 The `<summary>` must be the first child of a `<details>` element, representing a summary, caption, or legend for the rest
 of the contents of the parent `<details>` element in which it is nested. The `<summary>` element's contents can be any heading
 content, plain text, or HTML that can be used within a paragraph.
+
+## Toggling the summary marker
 
 In the two earlier Codepens, you'll note the arrow to the [inline-start](https://developer.mozilla.org/docs/Web/CSS/CSS_Logical_Properties)
 side of the summary. A disclosure widget is typically presented on-screen using a small triangle that rotates (or twists)
@@ -114,10 +117,10 @@ user: 'web-dot-dev',
 id: 'yLxBajp'
 } %}
 
-A few things to note:
+## How errors are handled
 
 If you don't include a `<summary>`, the browser will create one for you: with a marker and the word "details". This summary
-is part of a shadow root, and therefore will not have author CSS summary styles applied. Unfortunately, Safari does not include
+is part of a [shadow root](/learn/html/template/#shadow-dom), and therefore will not have author CSS summary styles applied. Unfortunately, Safari does not include
 the details in the [keyboard focus order](https://bugs.webkit.org/show_bug.cgi?id=249904).
 
 If you do include a `<summary>`, but it is not the first element in the `<details>`, the browser still displays the summary
@@ -132,6 +135,7 @@ user: 'web-dot-dev',
 id: 'QWVLKxg'
 } %}
 
+## The `HTMLDetailsElement` interface
 Like all HTML elements, the [`HTMLDetailsElement`](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement) inherits all
 properties, methods, and events from [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement), and adds the
 [`open`](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/open) instance property and a [`toggle`](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/toggle_event)
@@ -155,7 +159,6 @@ Remember, `<details>` and `<summary>` can be heavily styled and can even be used
 But, if you're going to use these semantic elements for use cases in which the native semantics are a mismatch, always ensure that you [maintain accessibility](https://www.scottohara.me//blog/2022/09/12/details-summary.html).
 HTML for the most part is by default accessible. Our job as developers is to ensure our content stays accessible.
 
-## Check your understanding
 
 {% Assessment 'details' %}
 

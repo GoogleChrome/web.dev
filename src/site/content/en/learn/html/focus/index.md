@@ -16,7 +16,7 @@ make inert elements interactive.
 {% Aside %}
 For usability reasons, always ensure that the user knows which element has focus. Include CSS [`:focus`](https://developer.mozilla.org/docs/Web/CSS/:focus),
 [`:focus-visible`](https://developer.mozilla.org/docs/Web/CSS/:focus-visible), and, optionally, [`:focus-within`](https://developer.mozilla.org/docs/Web/CSS/:focus-within)
-styles. This is so important: there are Learn sections devoted to focus styles in both the CSS and Accessibility learning paths.
+styles. This is so important: there are Learn sections devoted to focus styles in both the [CSS](/learn/css/focus/) and [Accessibility](/learn/accessibility/focus/) learning paths.
 {% endAside %}
 
 By default, the navigation focus order is the same as the visual order, which is the source code order. There are HTML
@@ -44,7 +44,7 @@ tab: 'result'
 } %}
 
 The [`flex-flow: row-reverse;`](https://developer.mozilla.org/docs/Web/CSS/flex-flow) declaration has reversed the visual order.
-The CSS [order](https://developer.mozilla.org/docs/Web/CSS/order) property applied to the seventh word visually moved that
+In addition, the CSS [order](https://developer.mozilla.org/docs/Web/CSS/order) property was applied to the sixth word, "This", which visually moved that
 one word. The tabbing sequence is the order of the code, which no longer matches the visual order, creating a disconnect
 for keyboard users.
 
@@ -60,7 +60,7 @@ currently has focus with CSS, and avoid accessibility problems by not reordering
 ## Making inert elements interactive
 
 The `contentedible` and `tabindex` attributes, being global attributes, can be added to any element, making them focusable
-in the process. Focusable elements can also be focused with a mouse or pointer by having the [`autofocus`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autofocus)
+in the process. Focusable elements can also be focused with a mouse or pointer, by having the [`autofocus`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autofocus)
 attribute set, or by script, such as with [`element.focus()`](https://developer.mozilla.org/docs/Web/API/HTMLElement/focus).
 
 ### The `tabindex` attribute
@@ -74,7 +74,7 @@ The `tabindex` attribute takes as its value an integer. A negative value makes a
 focus navigation order in source code order. A value of 1 or greater makes the element focusable and tabbable,
 but adds it to a prioritized tabbing sequence, and, as we saw above, should be avoided.
 
-On this page, the share button is a custom `<share-action>` element. The `tabindex="0"` adds this not-normally focusable
+On this page, the share button, `<share-action>`, is a [custom element](/learn/html/template/). The `tabindex="0"` adds this not-normally focusable
 element into the keyboard default tabbing order:
 
 ```html
@@ -210,7 +210,7 @@ It also doesn't apply to the `<form>` element itself. To disable these, the glob
 ### The `inert` attribute
 
 When the `inert` global boolean attribute is added to an element, that element and all nested content become disabled—neither
-clickable nor tabbable—and removed from the accessibility tree. While inert can be applied to any element, it is generally
+clickable nor tabbable—and removed from the accessibility tree. While `inert` can be applied to any element, it is generally
 used for sections of content, such as offscreen or otherwise hidden content.
 
 When applying `disabled` to form controls, the browser provides default styling and can be styled using the [`:disabled`](https://developer.mozilla.org/docs/Web/CSS/:disabled)
