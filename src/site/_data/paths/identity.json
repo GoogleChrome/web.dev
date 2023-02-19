@@ -12,19 +12,19 @@
         "sign-in-form-best-practices",
         {
           "title": "[Codelab] Use cross-platform browser features to build a sign-in form",
-          "url": "codelab-sign-in-form-best-practices"
+          "url": "https://web.dev/codelab-sign-in-form-best-practices/"
         },
         "sign-up-form-best-practices",
         {
           "title": "[Codelab] Sign-up form best practices codelab",
-          "url": "codelab-sign-up-form-best-practices"
+          "url": "https://web.dev/codelab-sign-up-form-best-practices/"
         }
       ]
     },
     {
       "title": "i18n.paths.identity.topics.build_authentication_systems_with_modern_APIs",
       "pathItems": [
-        "web-otp",
+        "web-otp", 
         "change-password-url"
       ]
     },
