@@ -111,7 +111,7 @@ img {
 ```
 
 Having removed the `height` and `width` attributes as in the previous example, the only method the browser has for determining
-the height of the image in this situation is to request the source, parse it, and render it at its intrinsic aspect ratio, based the
+the height of the image in this situation is to request the source, parse it, and render it at its intrinsic aspect ratio, based on the
 width of the space it occupies in the layout once stylesheets have been applied. Much of this process takes place after the page has been
 rendered, with the newly calculated height causing additional layout shifts.
 
@@ -172,7 +172,7 @@ improvement in the number of visitors who became prospective customers ("visitor
 who visited their cart ("cart to visit rate").
 
 On more than [70%](https://almanac.httparchive.org/en/2021/media#images) of webpages, the largest element in the initial
-viewport involves an image, either as a stand-along `<img>` element or an element with a background image. In other words,
+viewport involves an image, either as a stand-alone `<img>` element or an element with a background image. In other words,
 70% of pages' LCP scores are based on image performance. It doesn't take much imagination to see why: big, attention-grabbing
 images and logos are very likely to be found "above the fold."
 
@@ -189,7 +189,7 @@ sense for their browsing contexts.
 
 ### Conclusion
 
-Images assets are the biggest drain on your users' bandwidth—bandwidth taken away from transferring every other asset necessary
+Image assets are the biggest drain on your users' bandwidth—bandwidth taken away from transferring every other asset necessary
 to render a page. Images introduce significant issues in terms of perceived performance, both during and after the surrounding page
 layout has been rendered. In short: image assets do _damage_.
 
