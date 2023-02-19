@@ -214,7 +214,7 @@ clickable nor tabbable—and removed from the accessibility tree. While `inert` 
 used for sections of content, such as offscreen or otherwise hidden content.
 
 When applying `disabled` to form controls, the browser provides default styling and can be styled using the [`:disabled`](https://developer.mozilla.org/docs/Web/CSS/:disabled)
-pseudo class. The `inert` attribute provides no visual indicators and has no matching pseudoclass (though the `[inert]` attribute selector matches).
+pseudo class. The `inert` attribute provides no visual indicators and has no matching pseudoclass (though the `[inert]` [attribute selector](/learn/css/selectors/#attribute-selector) matches).
 
 Using `inert` on visible content without styles indicating the inertness can lead to poor user experience. As inert content
 is not available to screen reader users, it can lead to confusion when sighted screen reader users see content on screen
