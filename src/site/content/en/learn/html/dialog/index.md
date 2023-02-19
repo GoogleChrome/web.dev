@@ -15,14 +15,14 @@ the rest of the page.
 
 Dialogs can be either modal (only the content in the dialog can be interacted with) or non-modal (it's still possible to interact
 with content outside of the dialog). Modal dialogs are displayed on top of the rest of the page content. The rest
-of the page is inert and, by default, obscured by a semi-transparent backdrop.
+of the page is [inert](learn/html/focus/) and, by default, obscured by a semi-transparent backdrop.
 
 The semantic HTML [`<dialog>`](https://developer.mozilla.org/docs/Web/HTML/Element/dialog) element to create a dialog
 comes with semantics, keyboard interactions, and all the properties and methods of the [`HTMLDialogElement`](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement) interface.
 
 ## Modal dialogs
 
-Here is an example of a modal `<dialog>`. There are three ways to close the dialog: the escape key, submitting a form with
+Here is an example of a modal `<dialog>`. Open the dialog with the "Open modal dialog" button. Once opened, there are three ways to close the dialog: the escape key, submitting a form with
 a button that has the [`formmethod="dialog"`](https://developer.mozilla.org/docs/Web/HTML/Element/button#attr-formmethod)
 set (or if the form itself has `method="dialog"` set), and the [`HTMLDialogElement.close()`](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/close) method.
 
@@ -123,7 +123,7 @@ it with `.close()`, can help ensure the dialog is available even when JavaScript
 
 The element that is activated to open the dialog and the close button contained in it (and possibly other content) can receive
 focus and are interactive. The `<dialog>` element is not interactive and doesn’t receive focus. Do not add the `tabindex` property
-to the dialog itself. Ever.
+to the dialog itself.
 
 ### ARIA roles
 
@@ -134,9 +134,7 @@ The dialog should also have an accessible name. If visible text can provide for 
 ### CSS defaults
 
 Note that browsers provide default styling for `dialog`. Firefox, Chrome, and Edge set `color: CanvasText;` `background-color: Canvas;`
-and Safari sets `color: black; background-color: white;` in their user-agent stylesheets. Because of this, color is inherited
+and Safari sets `color: black; background-color: white;` in their user-agent stylesheets. The `color` is inherited
 from `dialog` and not from `body` or `:root`, which may be unexpected. The `background-color` property is not inherited.
-
-## Check your understanding
 
 {% Assessment 'dialog' %}
