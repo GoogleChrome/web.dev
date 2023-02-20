@@ -98,10 +98,16 @@
       color: currentColor;
     }
 
-    .web-search-popout__heading {
+    &__heading {
       padding: $global-gutter-narrow;
 
       @include apply-utility('bg', 'core-bg');
+    }
+
+    &__parent-title {
+      @include apply-utility('color', 'mid-text');
+      font-size: 0.9rem;
+      margin-top: 4px;
     }
   }
 }

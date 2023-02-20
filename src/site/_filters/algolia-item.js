@@ -19,6 +19,7 @@ const md5 = require('./md5');
 const {getDefaultUrl} = require('./urls');
 const {defaultLocale} = require('../_data/site');
 const {generateImgixSrc} = require('../_includes/components/Img');
+const {findByUrl} = require('./find-by-url');
 
 /**
  * @param {EleventyCollectionItem} post
@@ -26,6 +27,11 @@ const {generateImgixSrc} = require('../_includes/components/Img');
  */
 function algoliaItem(post) {
   const data = post.data;
+  const parentUrl = `${post.data.page.filePathStem
+    .split('/')
+    .slice(0, -2)
+    .join('/')}/`;
+
   return {
     content: striptags(/** @type {string} */ (post.templateContent)),
     createdOn: data.date,
@@ -41,6 +47,7 @@ function algoliaItem(post) {
     title: data.renderData?.title || data.title,
     updatedOn: data.updated,
     url: getDefaultUrl(post.url),
+    parentTitle: findByUrl(parentUrl)?.data?.title,
   };
 }
 

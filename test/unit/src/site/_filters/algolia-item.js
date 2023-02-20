@@ -5,18 +5,34 @@ const {
   imgixDomain,
 } = require('../../../../../src/site/_data/site');
 const algoliaItem = require('../../../../../src/site/_filters/algolia-item');
+const {memoize} = require('../../../../../src/site/_filters/find-by-url');
 
 const createPost = () =>
   /** @type {EleventyCollectionItem} */ ({
     data: {
       lang: defaultLocale,
       title: 'Hello world',
+      page: {
+        filePathStem: '/en/parent/hello-world/index',
+      },
     },
     templateContent: 'Hello world',
     url: '/hello-world/',
   });
 
+/**
+ * Adds parent to memorized posts for following tests
+ */
+const initParent = () => {
+  const mockParent = createPost();
+  mockParent.data.title = 'Parent Title';
+  mockParent.url = '/parent/';
+  memoize([mockParent]);
+};
+
 describe('algoliaItem', function () {
+  initParent();
+
   it('returns object with all required fields', function () {
     const post = createPost();
     const mockItem = algoliaItem(post);
@@ -51,6 +67,7 @@ describe('algoliaItem', function () {
       .to.be.an('object')
       .to.include.all.keys('createdOn', 'description', 'updatedOn');
 
+    expect(mockItem.parentTitle).to.be.string('Parent Title');
     expect(mockItem.createdOn).to.be.an.instanceof(Date);
     expect(mockItem.description).to.be.a('string');
     expect(mockItem.updatedOn).to.be.an.instanceof(Date);

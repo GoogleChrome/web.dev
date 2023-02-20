@@ -262,7 +262,7 @@ class Search extends BaseStateElement {
       const settings = {
         hitsPerPage: 10,
         attributesToHighlight: ['title'],
-        attributesToRetrieve: ['url'],
+        attributesToRetrieve: ['url', 'parentTitle'],
         highlightPreTag: '<strong>',
         highlightPostTag: '</strong>',
         facetFilters: [`locales:${this.locale}`],
