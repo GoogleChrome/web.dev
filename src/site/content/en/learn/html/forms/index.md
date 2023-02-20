@@ -3,7 +3,7 @@ title: 'Forms'
 authors:
   - estelleweyl
 description: An overview of forms in HTML.
-date: 2023-14-02
+date: 2023-21-02
 tags:
   - html
 ---
@@ -306,15 +306,19 @@ the default dynamic keyboard for `url` input types.
 
 Keyboards for `<input type="tel">` on iPhone and two different Android phones:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BK9EPsgyPy0Wt2jmp0lp.png", alt="iPhone keyboard showing input type=tel.", width="194", height="400" %}
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/8ECZmU9gqR4X6ppGk3v4.png", alt="Android keyboard showing input type=tel.", width="194", height="400" %}
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/dODUYXx0VDxVwBMP0e59.png", alt="Android keyboard showing input type=tel.", width="194", height="400" %}
+<div style="display: flex;">
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BK9EPsgyPy0Wt2jmp0lp.png", alt="iPhone keyboard showing input type=tel.", width="194", height="400", style="max-width: 194px; margin: 0 auto;" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/8ECZmU9gqR4X6ppGk3v4.png", alt="Android keyboard showing input type=tel.", width="194", height="400", style="max-width: 194px; margin: 0 auto;" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/dODUYXx0VDxVwBMP0e59.png", alt="Android keyboard showing input type=tel.", width="194", height="400", style="max-width: 194px; margin: 0 auto;" %}
+</div>
 
 Keyboards for `<input type="email">` on iPhone and two different Android phones:
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/Zd2yPTG7QT74AIvyCJrU.png", alt="iPhone keyboard showing input type=email.", width="194", height="400" %}
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/bofzFSrrNK55RW1FesAg.png", alt="Android keyboard showing input type=email.", width="194", height="400" %}
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/4ZwT1lrxJ4owTP0FjGWf.png", alt="Android keyboard showing input type=email.", width="194", height="400" %}
+<div style="display: flex;">
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/Zd2yPTG7QT74AIvyCJrU.png", alt="iPhone keyboard showing input type=email.", width="194", height="400", style="max-width: 194px; margin: 0 auto;"  %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/bofzFSrrNK55RW1FesAg.png", alt="Android keyboard showing input type=email.", width="194", height="400", style="max-width: 194px; margin: 0 auto;"  %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/4ZwT1lrxJ4owTP0FjGWf.png", alt="Android keyboard showing input type=email.", width="194", height="400", style="max-width: 194px; margin: 0 auto;"  %}
+</div>
 
 ## Accessing the microphone and camera
 
