@@ -52,7 +52,7 @@ When a dialog is closed, modal or not, focus is returned to the element that ope
 open a dialog not based on user action, reconsider. If you must, ensure that focus is put back where it was prior to the dialog opening,
 especially if the user dismisses the dialog without interacting with it.
 
-There is a global `inert` attribute that can be used to disable an element and all of its descendants, other than any active
+There is a global [`inert`](/learn/html/focus/#the-inert-attribute) attribute that can be used to disable an element and all of its descendants, other than any active
 dialog. When a modal dialog is opened using `openModal()`, the inertness or deactivation comes for free; the attribute
 isn’t explicitly set.
 
