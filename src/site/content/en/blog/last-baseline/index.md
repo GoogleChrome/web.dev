@@ -5,7 +5,7 @@ subhead: >
   All major browser engines now support last baseline alignment in CSS grid and flexbox.
 description: >
   All major browser engines now support last baseline alignment in CSS grid and flexbox.
-date: 2023-02-17
+date: 2023-02-20
 authors:
   - rachelandrew
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/taV4SVIvqz1D3XyOLgrM.jpg
