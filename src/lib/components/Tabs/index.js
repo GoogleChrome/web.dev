@@ -44,7 +44,7 @@ export class Tabs extends BaseElement {
       this.tabs = [];
       let i = 1;
       for (const child of this.children) {
-        if (this.limit && i == (this.limit + 1)) {
+        if (this.limit && i === this.limit + 1) {
           this.tabs.push(this.loadmoreTab());
           this.prerenderedChildren.push(this.loadmorePanel());
         }
@@ -86,10 +86,8 @@ export class Tabs extends BaseElement {
     const tab = e.currentTarget;
     const parentTabs = tab.parentElement;
 
-    const allHiddingTabs = parentTabs.querySelectorAll(".web-tabs__tab.hidden");
-    allHiddingTabs.forEach((tab => {
-      tab.classList.remove('hidden');
-    }))
+    const extendTabs = parentTabs.querySelectorAll('.web-tabs__tab.hidden');
+    extendTabs.forEach((tab) => tab.classList.remove('hidden'));
 
     tab.classList.add('hidden');
   }
@@ -117,7 +115,9 @@ export class Tabs extends BaseElement {
         @click=${this.onFocus}
         @focus=${this.onFocus}
         @keydown=${this.onKeydown}
-        class="web-tabs__tab gc-analytics-event ${i > this.limit ? 'hidden' : ''}"
+        class="web-tabs__tab
+        gc-analytics-event
+        ${i > this.limit ? 'hidden' : ''}"
         role="tab"
         aria-selected="false"
         id="web-tab-${this.idSalt}-${i}"
@@ -148,13 +148,7 @@ export class Tabs extends BaseElement {
   }
 
   loadmorePanel() {
-    return html`
-      <div
-        class="web-tabs__panel"
-        role="tabpanel"
-        hidden
-      > </div>
-    `;
+    return html`<div class="web-tabs__panel" role="tabpanel" hidden></div>`;
   }
 
   firstUpdated(changedProperties) {

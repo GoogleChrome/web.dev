@@ -42,7 +42,10 @@ module.exports = (patternId, height) => {
       assetLines.push(asset.content.split('\n').length);
 
       const isSupportingAsset = asset.name.includes('supporting');
-      const tabName = isSupportingAsset ? `Supporting ${asset.type}` : asset.type;
+      const tabName = isSupportingAsset
+        ? `Supporting ${asset.type}`
+        : asset.type;
+
       // Jake says:
       // Because Prism outputs preformatted code, it will often contain blank
       // lines, eg if the source contains blank lines. Unfortunately the
