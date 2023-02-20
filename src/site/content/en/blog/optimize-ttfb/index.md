@@ -101,13 +101,9 @@ In the field, any page with a `Server-Timing` response header set will populate 
 // Get the serverTiming entry for the first navigation request:
 performance.getEntries("navigation")[0].serverTiming.forEach(entry => {
     // Log the server timing data:
-    console.log(entry.name, entry?.description, entry?.duration);
+    console.log(entry.name, entry.description, entry.duration);
 });
 ```
-
-{% Aside 'caution' %}
-Because some parts of a `Server-Timing` header are optional, you may need to use the [optional chaining operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Optional_chaining) to access the `description` and `duration` values to avoid runtime errors.
-{% endAside %}
 
 In the lab, data from the `Server-Timing` response header will be visualized in the timings panel of the **Network** tab in Chrome DevTools:
 
@@ -195,7 +191,7 @@ Though browsers are great at handling streaming markup, it's crucial to do all t
 React, for example—and other frameworks that can [render markup on demand on the server](/rendering-on-the-web/#server-rendering)—have used a synchronous approach to server-side rendering. However, newer versions of React have implemented [server methods for streaming markup](https://reactjs.org/docs/react-dom-server.html#overview) as it is being rendered. This means you don't have to wait for a React server API method to render the entire response before it's sent.
 
 {% Aside %}
-Not every JavaScript runtime can take advantage of streaming server-side rendering. Newer JavaScript runtimes such as [Deno](https://deno.land/) support this out of the box, but older versions of [Node.js](https://nodejs.org/) may not support it. Check to see if this is the case for you, and see what you can do to upgrade or switch your runtime for better server-side rendering performance.
+Not every language runtime can take advantage of streaming server-side rendering. JavaScript runtimes such as [Deno](https://deno.land/) and [Node.js](https://nodejs.org/) support this out of the box, but other platforms may not support it. Check to see if this is the case for you, and see what you can do to upgrade or switch your runtime for better server-side rendering performance.
 {% endAside %}
 
 Another way to ensure markup is streamed to the browser quickly is to rely on [static rendering](/rendering-on-the-web/#static-rendering) which generates HTML files during build time. With the full file available immediately, web servers can start sending the file immediately and the inherent nature of HTTP will result in streaming markup. While this approach isn't suitable for every page on every website—such as those requiring a dynamic response as part of the user experience—it can be beneficial for those pages that don't require markup to be personalized to a specific user.
