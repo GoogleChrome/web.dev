@@ -33,6 +33,7 @@ export class Tabs extends BaseElement {
     this.nextTab = this.nextTab.bind(this);
     this.firstTab = this.firstTab.bind(this);
     this.lastTab = this.lastTab.bind(this);
+    this.onClickLoadmore = this.onClickLoadmore.bind(this);
   }
 
   render() {
@@ -42,6 +43,11 @@ export class Tabs extends BaseElement {
       let i = 1;
 
       for (const child of this.children) {
+        if (i == 4) {
+          this.tabs.push(this.loadmoreTab());
+          this.prerenderedChildren.push(this.loadmorePanel());
+        }
+
         // Set id and aria-labelledby attributes for each panel for a11y.
         this.prerenderedChildren.push(this.panelTemplate(i, child));
         // Get tab label from child data-label attribute
@@ -62,6 +68,29 @@ export class Tabs extends BaseElement {
       </div>
       ${this.prerenderedChildren}
     `;
+  }
+
+  loadmoreTab() {
+    return html`
+      <button
+        class="web-tabs__tab gc-analytics-event expendableTab"
+        @click=${this.onClickLoadmore}
+      >
+        <span class="web-tabs__text-label">More...</span>
+      </button>
+    `;
+  }
+
+  onClickLoadmore(e) {
+    const tab = e.currentTarget;
+    const parentTabs = tab.parentElement;
+
+    const allHiddingTabs = parentTabs.querySelectorAll(".web-tabs__tab.hidden");
+    allHiddingTabs.forEach((tab => {
+      tab.classList.remove('hidden');
+    }))
+
+    tab.classList.add('hidden');
   }
 
   tabTemplate(i, tabLabel) {
@@ -87,7 +116,7 @@ export class Tabs extends BaseElement {
         @click=${this.onFocus}
         @focus=${this.onFocus}
         @keydown=${this.onKeydown}
-        class="web-tabs__tab gc-analytics-event"
+        class="web-tabs__tab gc-analytics-event ${i > 3 ? 'hidden' : ''}"
         role="tab"
         aria-selected="false"
         id="web-tab-${this.idSalt}-${i}"
@@ -114,6 +143,16 @@ export class Tabs extends BaseElement {
       >
         ${child}
       </div>
+    `;
+  }
+
+  loadmorePanel() {
+    return html`
+      <div
+        class="web-tabs__panel"
+        role="tabpanel"
+        hidden
+      > </div>
     `;
   }
 
