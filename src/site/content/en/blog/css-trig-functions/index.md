@@ -41,7 +41,7 @@ Unlike their JavaScript counterparts, these functions accept both angles and rad
 
 In the demo below, these functions are used to draw the lines that make up the triangle surrounding the set `--angle`:
 
-- The “hypothenuse” _(yellow line)_ is a line from the center of the circle to the position of the dot. Its length is equal to the `--radius` of the circle.
+- The “hypotenuse” _(yellow line)_ is a line from the center of the circle to the position of the dot. Its length is equal to the `--radius` of the circle.
 - The “adjacent” _(red line)_ is a line from the center of the circle along the X-axis. Its length is equal to the `--radius` multiplied by the cosine of the `--angle`.
 - The “opposite” _(blue line)_ is a line from the center of the circle along the Y-axis. Its length is equal to the `--radius` multiplied by the sine of the `--angle`.
 - The `tan()` function of the `--angle` is used to draw the green line from the dot towards the X-axis.
@@ -104,9 +104,9 @@ To distribute the dots evenly around the central point, each dot is given an add
 
 ### Rotate an element to face its origin
 
-The `atan2()` function makes it possible to calculate the relative angle from one point to another. The function accepts two comma-separated values as its parameters: the `y` and `x` position of the other point, relative to the originating point which sits at origin `0,0`.
+The `atan2()` function calculates the relative angle from one point to another. The function accepts two comma-separated values as its parameters: the `y` and `x` position of the other point, relative to the originating point which sits at origin `0,0`.
 
-With the calculated value it’s possible to rotate elements so that they face each other. Thanks to [Individual Transform Properties](/css-individual-transform-properties/), this becomes easy to do.
+With the calculated value it’s possible to rotate elements so that they face each other, by using the [Individual Transform Properties](/css-individual-transform-properties/).
 
 In the example below, the boxes are rotated so that they face the location of the mouse. The mouse position is synced to a custom property through JavaScript.
 
