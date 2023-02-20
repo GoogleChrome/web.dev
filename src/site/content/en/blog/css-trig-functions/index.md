@@ -66,7 +66,7 @@ Finally there’s `atan2()` which accepts two arguments `A` and `B`. The functio
 
 ## Examples
 
-There are various use-cases for these functions can. What follows is a small selection.
+There are various use-cases for these functions. What follows is a small selection.
 
 ### Move items on a circular path around a central point
 
