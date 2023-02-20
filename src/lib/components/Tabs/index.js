@@ -14,6 +14,7 @@ export class Tabs extends BaseElement {
       label: {type: String},
       activeTab: {type: Number, reflect: true},
       overflow: {type: Boolean, reflect: true},
+      limit: {type: Number, reflect: true},
     };
   }
 
@@ -25,6 +26,7 @@ export class Tabs extends BaseElement {
     this.prerenderedChildren = null;
     this.tabs = null;
     this.idSalt = generateIdSalt('web-tab-');
+    this.limit = this.children.length;
 
     this.onResize = this.onResize.bind(this);
     this._changeTab = this._changeTab.bind(this);
@@ -41,9 +43,8 @@ export class Tabs extends BaseElement {
       this.prerenderedChildren = [];
       this.tabs = [];
       let i = 1;
-
       for (const child of this.children) {
-        if (i == 4) {
+        if (this.limit && i == (this.limit + 1)) {
           this.tabs.push(this.loadmoreTab());
           this.prerenderedChildren.push(this.loadmorePanel());
         }
@@ -116,7 +117,7 @@ export class Tabs extends BaseElement {
         @click=${this.onFocus}
         @focus=${this.onFocus}
         @keydown=${this.onKeydown}
-        class="web-tabs__tab gc-analytics-event ${i > 3 ? 'hidden' : ''}"
+        class="web-tabs__tab gc-analytics-event ${i > this.limit ? 'hidden' : ''}"
         role="tab"
         aria-selected="false"
         id="web-tab-${this.idSalt}-${i}"

@@ -75,7 +75,7 @@ module.exports = (patternId, height) => {
         <iframe src="${pattern.demo}" title="Demo" height="${height}" loading="lazy"></iframe>
       </div>
       <div class="code-pattern__assets" style="height: ${height}px">
-        <web-tabs>${assets}</web-tabs>
+        <web-tabs limit="3">${assets}</web-tabs>
       </div>
     </div>
     <div class="code-pattern__meta">
