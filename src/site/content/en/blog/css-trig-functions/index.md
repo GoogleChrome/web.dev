@@ -47,8 +47,8 @@ In the demo below, these functions are used to draw the lines that make up the t
 - The `tan()` function of the `--angle` is used to draw the green line from the dot towards the X-axis.
 
 {% Codepen {
-  user: 'bramus',
-  id: 'PoBLVzg',
+  user: 'web-dot-dev',
+  id: 'NWLxROo',
   height: 740,
   theme: 'dark',
   tab: 'result'
@@ -89,8 +89,8 @@ In the demo below, the dots revolve around a central point. Instead of rotating 
 ```
 
 {% Codepen {
-  user: 'bramus',
-  id: 'OJwqGzw',
+  user: 'web-dot-dev',
+  id: 'ExePgOg',
   height: 600,
   theme: 'dark',
   tab: 'result'
@@ -131,8 +131,8 @@ div.box {
 ```
 
 {% Codepen {
-  user: 'bramus',
-  id: 'gOdpjGR',
+  user: 'web-dot-dev',
+  id: 'dyqGpQV',
   height: 720,
   theme: 'dark',
   tab: 'result'
