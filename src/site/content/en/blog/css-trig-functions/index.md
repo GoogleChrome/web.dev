@@ -112,18 +112,18 @@ In the example below, the boxes are rotated so that they face the location of th
 
 ```css
 div.box {
-	--my-x: 200;
-	--my-y: 300;
+  --my-x: 200;
+  --my-y: 300;
 
-	/* Position the box inside its parent */
+  /* Position the box inside its parent */
   position: absolute;
   width: 50px;
   aspect-ratio: 1;
-	translate: calc((var(--my-x) * 1px)) calc(var(--my-y) * 1px);
+  translate: calc((var(--my-x) * 1px)) calc(var(--my-y) * 1px);
 
-	/* Rotate so that the box faces the mouse position */
-	/* For this, take the box its own position and size (25 = half the width) into account */
-	rotate: atan2(
+  /* Rotate so that the box faces the mouse position */
+  /* For this, take the box its own position and size (25 = half the width) into account */
+  rotate: atan2(
             calc((var(--mouse-x) - var(--my-x) - 25) * 1),
             calc((var(--mouse-y) - var(--my-y) - 25) * -1)
           );
