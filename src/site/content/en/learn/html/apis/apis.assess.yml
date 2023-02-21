@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of HTML APIs.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: What does the O in DOM stand for?
+    options:
+      - content: "Oriented."
+        rationale: "Try again."
+      - content: "Object."
+        rationale: "Correct!"
+      - content: "Outer."
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: Which interface can help you to find out information about the tab the content is in?
+    options:
+      - content: "Window"
+        rationale: "Correct!"
+      - content: "Document"
+        rationale: "Try again."
+      - content: "Node"
+        rationale: "Try again."
