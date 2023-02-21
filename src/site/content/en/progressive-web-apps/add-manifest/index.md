@@ -152,13 +152,19 @@ The `id` property allows you to explicitly define the identifier used for your a
 
 #### `start_url` {: #start-url }
 
-The `start_url` is required and tells the browser where your application
+The `start_url` is optional and defaults to document URL. It tells the browser where your application
 should start when it is launched, and prevents the app from starting on
 whatever page the user was on when they added your app to their home screen.
+
+{% Aside %}
+`start_url` is purely advisory, and it can be ignored or altered at install time or afterwards.
+{% endAside %}
 
 Your `start_url` should direct the user straight into your app, rather than
 a product landing page. Think about what the user will want to do once
 they open your app, and place them there.
+
+When `start_url` is relative, manifest URL is used as the base URL.
 
 #### `background_color` {: #background-color }
 
@@ -254,7 +260,7 @@ As stated, the browser will look at `display_override` first.
 1. `"minimal-ui"`
 
 If neither option is available, it falls back to `display`. If `"standalone"` is
-not available, it resumes spec-defined fallabck chain from that point.
+not available, it resumes spec-defined fallback chain from that point.
 
 1. `"standalone"`
 1. `"minimal-ui"`
@@ -269,7 +275,13 @@ not available, it resumes spec-defined fallabck chain from that point.
 The `scope` defines the set of URLs that the browser considers to be within your
 app, and is used to decide when the user has left the app. The `scope`
 controls the URL structure that encompasses all the entry and exit points in
-your web app. Your `start_url` must reside within the `scope`.
+your web app. For example, the next `scope` limits navigation to a subdirectory:
+
+```json
+{
+  "scope": "https://example.com/subdirectory/"
+}
+```
 
 {% Aside 'caution' %}
 If the user clicks a link in your app that navigates outside of the
@@ -282,13 +294,9 @@ to the `<a>` tag. On Android, links with `target="_blank"` open in a
 A few other notes on `scope`:
 
 * If you don't include a `scope` in your manifest, then the default implied
-  `scope` is the directory that your web app manifest is served from.
-* The `scope` attribute can be a relative path (`../`), or any higher level
-  path (`/`) which would allow for an increase in coverage of navigations
-  in your web app.
+  `scope` is the start URL but with its filename, query, and fragment removed.
+* If `scope` attribute is a relative path, the manifest URL is used as a base URL.
 * The `start_url` must be in the scope.
-* The `start_url` is relative to the path defined in the `scope` attribute.
-* A `start_url` starting with `/` will always be the root of the origin.
 
 #### `theme_color` {: #theme-color }
 
