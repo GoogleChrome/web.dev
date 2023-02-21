@@ -84,6 +84,7 @@ elements to specify timed text tracks. The following example includes two `<trac
 ```html
 <track label="English" kind="subtitles" srclang="en" src="vtt/subtitles-en.vtt" default />
 <track label="Français" kind="subtitles" srclang="fr" lang="fr-fr" src="vtt/subtitles-fr.vtt" />
+```
 
 The track files, specified in the `src` attribute, should be in [WebVTT format](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (.vtt).
 The files should be on the same domain as the HTML document, unless the [`crossorigin`](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin)
