@@ -39,20 +39,20 @@ Element nodes contain information about all the attributes set on the element. Y
 information about an element's attributes. For example, we can use [`HTMLImageElement.alt`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/alt)
 get the `alt` attributes of all the images:
 
-```javascript
+```js
 let allImages = document.querySelectorAll('img');
 allImages.forEach((imageInstance) => {
-    console.log(imageInstance.alt);
+  console.log(imageInstance.alt);
 });
 ```
 
 HTML interfaces provide more than just access to an element's attributes; you can access a lot more information. We can
 find the read-only [`HTMLElement.offsetHeight`](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetHeight) to get the height of each section in our page, relative to the layout.
 
-``` javascript
+```js
 let allSections = document.querySelectorAll('section');
 allSections.forEach((sectionInstance) => {
-    console.log(sectionInstance.offsetHeight);
+  console.log(sectionInstance.offsetHeight);
 });
 ```
 
@@ -165,12 +165,12 @@ and the [`nextSibling`](https://developer.mozilla.org/docs/Web/API/Node/nextSibl
 
 ```javascript
 const walk_the_DOM = function walk(node, callback) {
-    callback(node);
-    node = node.firstChild;
-    while (node) {
-       walk(node, callback);
-       node = node.nextSibling;
-    }
+  callback(node);
+  node = node.firstChild;
+  while (node) {
+    walk(node, callback);
+    node = node.nextSibling;
+  }
 };
 ```
 
@@ -180,16 +180,16 @@ The Node interface provides many useful properties and methods for querying and 
 
 ```javascript
 customElements.define('star-rating',
-    class extends HTMLElement {
-        constructor() {
-            super(); // Always call super first in constructor
-            const starRating = document.getElementById('star-rating-template').content;
-            const shadowRoot = this.attachShadow({
-                mode: 'open'
-            });
-            shadowRoot.appendChild(starRating.cloneNode(true));
-        }
-    });
+  class extends HTMLElement {
+    constructor() {
+      super(); // Always call super first in constructor
+      const starRating = document.getElementById('star-rating-template').content;
+      const shadowRoot = this.attachShadow({
+        mode: 'open'
+      });
+      shadowRoot.appendChild(starRating.cloneNode(true));
+    }
+  });
 ```
 
 The [`attachShadow()`](https://developer.mozilla.org/docs/Web/API/Element/attachShadow) method is a method of the Element

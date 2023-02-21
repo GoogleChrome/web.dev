@@ -26,8 +26,8 @@ based on resolution and, along with the `sizes` attribute, browser viewport size
 
 ```html
 <img src="images/eve.png" alt="Eve"
-srcset="images/eve.png 400w, images/eve-xl.jpg 800w"
-sizes="(max-width: 800px) 400px, 800px" />
+  srcset="images/eve.png 400w, images/eve-xl.jpg 800w"
+  sizes="(max-width: 800px) 400px, 800px" />
 ```
 
 This can also be done with the [`<picture>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture) element, along with [`<source>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture) children, which takes an [`<img>`](https://developer.mozilla.org/docs/Web/HTML/Element/img) as a default source.
@@ -169,14 +169,14 @@ recognize them when entering the classroom.
 
 ```html
 <img src="svg/hal.svg" role="img"
-   alt="Hal 9000; a camera lens containing a red dot that sometimes changes to yellow." />
+  alt="Hal 9000; a camera lens containing a red dot that sometimes changes to yellow." />
 ```
 
 Because this is a joke site, provide the information that is relevant in the joke context instead:
 
 ```html
 <img src="svg/hal.svg" role="img"
-   alt="Hal 9000, the sentient AI computer from 2001: a Space Odyssey depicted as a camera lens with a red dot that changes to yellow when hovered." />
+  alt="Hal 9000, the sentient AI computer from 2001: a Space Odyssey depicted as a camera lens with a red dot that changes to yellow when hovered." />
 ```
 
 If you were reading the page to a friend over the phone, they wouldn't care what the red dot looks like. In this case, the
@@ -276,4 +276,3 @@ something like `&imageSubmitName.x=169&imageSubmitName.y=66` will be submitted w
 submitting it. If the image doesn't have a `name` attribute, the x and y are sent: `&x=169&y=66`.
 
 {% Assessment 'images' %}
-

@@ -86,23 +86,23 @@ If your browser is wider than 80em, the Table of contents comes before the headi
 <nav aria-label="On this page">
   <div>On this page</div>
   <div>
-   <ul>
-<li>
-  <a href="#skip">Skip to content link</a>
-</li>
-<li>
-  <a href="#toc">Table of contents</a>
-</li>
-<li>
-  <a href="#bc">Page breadcrumbs</a>
-</li>
-<li>
-  <a href="#ln">Local navigation</a>
-</li>
-<li>
-  <a href="#global">Global navigation</a>
-</li>
-   </ul>
+    <ul>
+      <li>
+        <a href="#skip">Skip to content link</a>
+      </li>
+      <li>
+        <a href="#toc">Table of contents</a>
+      </li>
+      <li>
+        <a href="#bc">Page breadcrumbs</a>
+      </li>
+      <li>
+        <a href="#ln">Local navigation</a>
+      </li>
+      <li>
+        <a href="#global">Global navigation</a>
+      </li>
+    </ul>
   </div>
 </nav>
 ```
@@ -117,8 +117,10 @@ to reference the visible text.
 
 We can change the non-semantic `<div>` to a paragraph `<p>`, then add an [`id`](/learn/html/attributes/#id) so it can be referenced. We then use `aria-labelledby`:
 
-`<nav aria-labelledby="tocTitle">`
-  `<p id="tocTitle">On this page</p>`
+```html
+<nav aria-labelledby="tocTitle">
+  <p id="tocTitle">On this page</p>
+```
 
 In addition to reducing redundancy, visible text gets translated by translation services, whereas attribute values may not.
 When possible, if text is present that provides for an adequate label, prefer that over attribute text.
@@ -140,22 +142,22 @@ list items, and therefore links, are an individual list in a navigation.
 <nav aria-labelledby="tocTitle">
   <p id="tocTitle">On this page</p>
   <ul role="list">
-<li>
-  <a href="#skip">Skip to content link</a>
-</li>
-<li>
-  <a href="#toc">Table of contents</a>
-</li>
-<li>
-  <a href="#bc">Page breadcrumbs</a>
-</li>
-<li>
-  <a href="#ln">Local navigation</a>
-</li>
-<li>
-  <a href="#global">Global navigation</a>
-</li>
-   </ul>
+    <li>
+      <a href="#skip">Skip to content link</a>
+    </li>
+    <li>
+      <a href="#toc">Table of contents</a>
+    </li>
+    <li>
+      <a href="#bc">Page breadcrumbs</a>
+    </li>
+    <li>
+      <a href="#ln">Local navigation</a>
+    </li>
+    <li>
+      <a href="#global">Global navigation</a>
+    </li>
+  </ul>
 </nav>
 ```
 
@@ -229,14 +231,14 @@ Between links there are CSS-generated content separators. The separators come be
 
 ```css
 [aria-label^="breadcrumb" i] li + li::before {
-content: "";
-display: block;
-width: 8px;
-height: 8px;
-border-top: 2px solid currentColor;
-border-right: 2px solid currentColor;
-rotate: 45deg;
-opacity: .8
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  rotate: 45deg;
+  opacity: .8
 }
 ```
 
