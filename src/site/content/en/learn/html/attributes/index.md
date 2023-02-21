@@ -226,8 +226,9 @@ If the form control is nested between the `<label>` opening and closing tags, th
 aren't required: this is called an "implicit" label. Labels let all users know what each form control is for.
 
 ```html
-<label>Send me a reminder</label>
-<input type="number" name="min"> before the workshop resumes</label>.
+<label>
+  Send me a reminder <input type="number" name="min"> before the workshop resumes
+</label>.
 ```
 {% endAside %}
 
