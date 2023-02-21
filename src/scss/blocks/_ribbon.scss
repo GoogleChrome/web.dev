@@ -4,16 +4,14 @@
 @import '../../styles/settings/colors';
 
 .devrel-ribbon {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  height: 56px;
-  width: 172px;
-  right: -58px;
+  padding: 4px 6px;
+  left: 0;
   text-decoration: none;
-  top: calc(50% - 30px);
-  transform: rotate(270deg);
+  bottom: 0;
   z-index: 9;
 
   &:hover,
@@ -23,13 +21,14 @@
   } 
 
   svg {
-    height: 24px;
-    width: 24px;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
   }
 
   span {
     font-size: 12px;
-    margin-right: 12px;
+    font-family: inherit;
     color: $WHITE;
   }
 }
