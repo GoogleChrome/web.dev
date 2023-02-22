@@ -35,7 +35,7 @@ This can also be done with the [`<picture>`](https://developer.mozilla.org/docs/
 ```html
 <picture>
   <source src="images/eve.png" media="(max-width: 800px)" />
-  <source src=images/eve-xl.jpg" />
+  <source src="images/eve-xl.jpg" />
   <img src="images/eve.png" alt="Eve" />
 </picture>
 ```
@@ -205,7 +205,6 @@ There can be a single `srcset` attribute per `<img>` element, but that `srcset` 
 attribute accepts a list of comma-separated values, each containing the URL of the asset followed by a space followed by
 descriptors for that image option. If a width descriptor is used, you must also include the `sizes` attribute with a media
 query or source size for each `srcset` option other than the last one. The Learn sections covering [responsive images with `srcset`](/learn/design/responsive-images/#responsive-images-with-srcset) and [descriptive syntaxes](/learn/images/descriptive/) are worth reading.
-is worth reading.
 
 The `srcset` image will take precedence over the `src` image if there is a match.
 
