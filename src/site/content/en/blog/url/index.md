@@ -227,6 +227,7 @@ The domain before the [top-level domain](#tld):
 
 ### Site {: #site}
 
+The concept of 'site' is important in terms of 'same site', as certain security restrictions apply to sub-domains that are considered the 'same site' even if they are not 'same origin'.
 {% Aside %}
 According to the [URL Standard](https://url.spec.whatwg.org/), site includes [scheme](#scheme).
 (See [discussion of 'same site'](https://github.com/whatwg/url/issues/448).)
