@@ -196,6 +196,10 @@ In most cases, if your maskable icon isn't displaying well, you can improve it b
 
 ##### Icons in Safari
 
+{% Aside %}
+Since Safari 15.4 the icons spec is fully supported and the following workaround is no longer necessary.
+{% endAside %}
+
 Safari on iOS and iPadOS ignores the `icon` collection from the web app manifest and instead uses icons defined in a proprietary`<link>` element in the HTML.
 
 To define the icon, include the following in your HTML `<head>` section:
