@@ -173,6 +173,8 @@ The 'path' component of a URL is sometimes used to refer to the pathname without
 A string following a `:` in a URL providing an integer that identifies a network port. For example,
 in the URL `https://example.com:443/tabby`, the port number is 443.
 
+For http, the default port is 80 and does not need to be provided. For https, the default port is 443 and does not need to be provided.
+
 [Spec](https://url.spec.whatwg.org/#dom-url-port) • [API](https://developer.mozilla.org/docs/Web/API/URL/port)
 
 
