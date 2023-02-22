@@ -164,7 +164,7 @@ including the [search string](#search) or [hash](#hash).
 -  For `example.github.io/README.md`, the pathname is `/README.md`.
 -  For `example.com`, the pathname is an empty string.
 
-The 'path' component of a URL is sometimes used to refer to the pathname without the filename.
+The 'path' component of a URL is sometimes used to refer to the pathname without the filename. For example, in `https://example.com/foo/bar/page.html`, the 'path' is `/foo/bar`.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-pathname) • [API](https://developer.mozilla.org/docs/Web/API/URL/pathname)
 
