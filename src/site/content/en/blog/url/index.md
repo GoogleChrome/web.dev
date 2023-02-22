@@ -3,7 +3,7 @@ title: What are the parts of a URL?
 subhead: "What's the difference between a domain name, hostname, site and origin? This article explains."
 authors:  
   - samdutton  
-date: 2023-02-20
+date: 2023-02-22
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/EAQ6QLeBBonbpyqeGWPb.jpg
 alt:   
 tags:  
@@ -53,11 +53,6 @@ Edit the URL in the Glitch below to see the part names. (You can also open this 
 --- -->
 
 ## Glossary
-
-### Anchor {: #anchor}
-
-See
-[hash](#hash).
 
 ### Country-code top-level domain (ccTLD) {: #cctld}
 
