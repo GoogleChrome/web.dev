@@ -238,7 +238,7 @@ According to the [URL Standard](https://url.spec.whatwg.org/), site includes [sc
 -   For an [eTLD](#tld) where only third-level registrations are allowed (such as `co.uk` or
     `github.io`): the scheme, the top-level domain ('public suffix') and the part of the domain name
     just before that. For example, for the URL `https://www.example.co.uk/foo`, the site is
-    `example.co.uk`. (Confusingly, perhaps, domains such as `example.github.io` or `example.glitch.me`
+    `https://example.co.uk`. (Confusingly, perhaps, domains such as `example.github.io` or `example.glitch.me`
     are also [defined as 'registrable domains'](https://url.spec.whatwg.org/#host-registrable-domain)
     though they cannot be registered via a domain name registrar.)
 
