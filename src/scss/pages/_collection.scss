@@ -18,6 +18,7 @@
   
     svg {
       fill: get-color('core-primary');
+      flex-shrink: 0;
       margin-right: 6px;
     }
   }
