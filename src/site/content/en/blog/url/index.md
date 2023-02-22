@@ -175,9 +175,6 @@ in the URL `https://example.com:443/tabby`, the port number is 443.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-port) • [API](https://developer.mozilla.org/docs/Web/API/URL/port)
 
-### Query string
-
-See [search](#search).
 
 ### Registrable domain {: #registrable-domain}
 
@@ -206,9 +203,7 @@ URL.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-protocol) • [API](https://developer.mozilla.org/docs/Web/API/URL/protocol)
 
-### Search {: #search}
-
-Also known as 'query string'.
+### Search (or 'query string') {: #search}
 
 A series of key/value pairs that represent [parameters](#parameter), at the end of a URL after a
 question mark.
@@ -217,8 +212,6 @@ question mark.
     `pattern=tabby&mood=bonkers`.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-search) • [API](https://developer.mozilla.org/docs/Web/API/URL/search)
-
-
 
 ### Second-level domain {: #sld}
 
