@@ -171,12 +171,12 @@ The 'path' component of a URL is sometimes used to refer to the pathname without
 ### Port {: #port}
 
 A string following a `:` in a URL providing an integer that identifies a network port. For example,
-in the URL `https://example.com:443/tabby`, the port number is 443.
+in the URL `https://example.com:1234/tabby`, the port number is 1234.
 
-For http, the default port is 80 and does not need to be provided. For https, the default port is 443 and does not need to be provided.
+For an HTTP URL, the default port is 80; for HTTPS, the default is 443. A URL does not need to specify the 
+port number, unless a non-default port is used.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-port) • [API](https://developer.mozilla.org/docs/Web/API/URL/port)
-
 
 ### Registrable domain {: #registrable-domain}
 
@@ -227,10 +227,9 @@ The domain before the [top-level domain](#tld):
 
 ### Site {: #site}
 
-The concept of 'site' is important in terms of 'same site', as certain security restrictions apply to sub-domains that are considered the 'same site' even if they are not 'same origin'.
 {% Aside %}
 According to the [URL Standard](https://url.spec.whatwg.org/), site includes [scheme](#scheme).
-(See [discussion of 'same site'](https://github.com/whatwg/url/issues/448).)
+(See [discussion of "same-site"](https://github.com/whatwg/url/issues/448).)
 {% endAside %}
 
 -   For a site such as `https://example.com` with a single-part top-level domain: the scheme, plus
@@ -243,8 +242,12 @@ According to the [URL Standard](https://url.spec.whatwg.org/), site includes [sc
     are also [defined as 'registrable domains'](https://url.spec.whatwg.org/#host-registrable-domain)
     though they cannot be registered via a domain name registrar.)
 
-{% Aside %}
 Unlike [origin](#origin), site does not include [port](#port).
+
+{% Aside %}
+The concept of "site" is important in terms of "same-site", as certain security restrictions apply to subdomains that are 
+considered "same-site" even if they are not "same-origin": [Understanding "same-site" and "same-origin"](/same-site-same-origin/) 
+provides further information.
 {% endAside %}
 
 ### Subdomain {: #subdomain}
