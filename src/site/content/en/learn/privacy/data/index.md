@@ -3,7 +3,7 @@ title: 'Use just the data you need'
 authors:
   - sil
 description: In this module learn strategies for collecting only the required data, managing and removing data you have collected, and explaining what you collect to users.
-date: 2023-01-26
+date: 2023-02-22
 tags:
   - privacy
 ---
@@ -105,9 +105,9 @@ aggregation (or are clear about what you are using it for).
 It's useful to remember that collected data has a lifecycle; it's collected, it gets used to help you make business decisions,
 and then, at some point, it should be removed. These are, again, trade offs: when you ask your users questions, or you
 store information about other websites they've visited, or you track which things they looked at and for how long in order
-to make predictions about their preferences, this is the data which is being granted to you for a specific purpose - not as
-an open-ended grant for the developer to use as they see fit. When that data is no longer needed for that purpose - sometimes
-after a minute, sometimes after many years - it should be deleted.
+to make predictions about their preferences, this is the data which is being granted to you for a specific purpose-not as
+an open-ended grant for the developer to use as they see fit. When that data is no longer needed for that purpose-sometimes
+after a minute, sometimes after many years-it should be deleted.
 
 Whenever you gather information about your users, you should know what you'll be using that data for (see below) and you should
 also know when and why you will stop holding that data. This might be when the user chooses to delete it, or when they sign
@@ -148,14 +148,14 @@ of compromised data stored on the client.
 
 Adding support for `Clear-Site-Data` involves sending an HTTP header, `Clear-Site-Data`, when the user signs out (or at other
 times when you wish to clear client-side storage), on the page which confirms the logged-out status (`https://your-site/logout`
-or similar). This header can have some or all of the following values, or "*" for all:
+or similar). This header can have some or all of the following values, or `"*"` for all:
 
 ```html
 Clear-Site-Data: "cache", "cookies", "storage"
 ```
 
 These values clear, respectively, cached pages (and other HTTP-cached resources), stored cookies, and localStorage and IndexedDB and similar.
-You may see reference to another option, “executionContexts”, but this is not supported [by many browsers](https://caniuse.com/?search=executionContexts).
+You may see reference to another option, `executionContexts`, but this is not supported [by many browsers](https://caniuse.com/?search=executionContexts).
 Note that using the `Clear-Site-Data` header is likely to be easier than individually deleting all created resources yourself, because it does not require JavaScript code to be
 run on the client (and it is the only official way to clear the browser cache), but is [not supported by all browsers](https://caniuse.com/?search=clear-site-data).
 
@@ -181,7 +181,7 @@ itself. Often, a form field may have an asterisk (*) to indicate that a field is
 used phrase for this is "Why do we need this?" next to a form field, which when clicked shows a pop-up explanation.
 
 Some example HTML might look as follows, and then CSS and JavaScript would take care of hiding the `<aside>` and showing it as a pop-up when
-the link is clicked. (Be sure to confirm the accessibility of the form you make for your site at [https://web.dev/learn/forms/accessibility/](/learn/forms/accessibility)!)
+the link is clicked. (Be sure to [confirm the accessibility of the form you make for your site](/learn/forms/accessibility)!)
 Exactly how to lay this out is dependent on your styles and approaches, but the main point here is to directly associate data collection with
 an explanation for why that data is being collected. This isn't necessary for every field. Nobody needs an explanation of why you require them to
 choose a password at sign-up. But decorating each request for personal and contact information with how you plan to use it and keep it can help

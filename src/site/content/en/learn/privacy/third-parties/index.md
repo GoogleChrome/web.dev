@@ -3,7 +3,7 @@ title: 'Third parties'
 authors:
   - sil
 description: Learn about third-parties and how to mitigate the risks to your users when integrating third parties.
-date: 2023-01-26
+date: 2023-02-22
 tags:
   - privacy
 ---
@@ -41,11 +41,13 @@ developer functions such as error tracking, but they reduce your development loa
 by someone else: the development team of the service you're including. This all works because of the composability of the web:
 being able to put parts together to form a whole that is greater than their sum.
 
-The HTTP Archive's Web Almanac gives a nice description: _Third parties provide a never-ending collection of images, videos,
+The HTTP Archive's Web Almanac gives a nice description: 
+
+<blockquote><p>Third parties provide a never-ending collection of images, videos,
 fonts, tools, libraries, widgets, trackers, ads, and anything else you can imagine embedding into our web pages. This enables
 even the most non-technical to be able to create and publish content to the web. Without third parties, the web would likely
 be a very boring, text-based, academic medium instead of the rich, immersive, complex platform that is so integral to the lives
-of many of us today_.
+of many of us today.</p></blockquote>
 
 ## What can third-party resources do?
 
@@ -60,7 +62,7 @@ header with your page's URL, as well as the user's IP address.
 Continuing with that same example—when the image loads from the third-party site, it can include a cookie, and that cookie will
 be sent back to the third-party when the user next requests that image. This means that the third party can know that their
 service is being used on your site, and it can send back a cookie, potentially with a unique ID for that user. This means that
-the next time the user visits your site, or <em>any other site which includes a resource from that third party</em>, that unique
+the next time the user visits your site, or _any other site which includes a resource from that third party_, that unique
 ID cookie will be sent again. This allows the third party to build up a log of where that user visits: your site, other sites that
 use the same third-party resource, all over the web.
 
@@ -76,8 +78,8 @@ do is because they collect and then monetise this data.
 
 A useful guide to the types of privacy issues from which a browser should protect its users is the [Target Privacy Threat Model](https://w3cping.github.io/privacy-threat-model/#high-level-threats).
 This is a document still under discussion at the time of writing, but it gives some high-level classifications of the sorts of
-privacy threats that exist. The risks from third-party resources are primarily “unwanted cross-site recognition”, where a
-website can identify the same user across multiple sites, and “sensitive information disclosure”, where a site can collect
+privacy threats that exist. The risks from third-party resources are primarily "unwanted cross-site recognition", where a
+website can identify the same user across multiple sites, and "sensitive information disclosure", where a site can collect
 information a user considers sensitive.
 
 This is a _key distinction_: unwanted cross-site recognition is bad even if the third party isn't gathering additional sensitive
@@ -237,7 +239,7 @@ to add a new column to show the domain of each request, which will demonstrate h
 and there may be a "third-party requests" checkbox to show only third parties. (It can also be useful to use `Content-Security-Policy`
 reporting to perform a continual audit, for which read further on.)
 
-[Simon Hearne's “Request Map Generator”](https://simonhearne.com/2015/find-third-party-assets/) tool can also be a helpful overview of all
+[Simon Hearne's "Request Map Generator"](https://simonhearne.com/2015/find-third-party-assets/) tool can also be a helpful overview of all
 the subrequests that a publicly available page makes.
 
 This is also the point at which you can include the business-focused third parties identified as part of the non-technical audit
@@ -253,7 +255,7 @@ resource that you're paying for and not using, which always cheers up the financ
 Once you've narrowed down the list of requests to third parties that you would like to be part of the audit, clicking on an
 individual request will show all the details of it and, in particular, which data was passed to that request. It is also very
 common that [a third-party request that your code initiates then goes on to initiate many other third-party requests](https://css-tricks.com/potential-dangers-of-third-party-javascript/#third-party-scripts-often-load-other-third-party-scripts-of-their-own).
-These additional third parties are also “imported” into your own privacy policy. This task is laborious but valuable, and
+These additional third parties are also "imported" into your own privacy policy. This task is laborious but valuable, and
 it often can be inserted into existing analyses; your frontend development team should already be auditing requests for
 performance reasons (perhaps with the help of existing tools such as WebPageTest or Lighthouse), and incorporating a data
 and privacy audit into that process can make it easier.
@@ -287,23 +289,23 @@ To get an HAR file for a particular page, in:
 
 ##### Chrome
 
-Open the browser DevTools (Menu > More Tools > Developer Tools), go to the Network panel, load (or refresh) the page, and
+Open the browser DevTools (**Menu > More Tools > Developer Tools**), go to the Network panel, load (or refresh) the page, and
 choose the downward arrow save symbol in the top right near to the No throttling dropdown menu.
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/pe6kjowLV339yjfaAgkr.png", alt="The Chrome DevTools network panel with Download HAR symbol highlighted.", width="650", height="299" %}
 
 ##### Firefox
 
-Open the browser developer tools (Menu > More Tools > Web Developer Tools), go to the Network panel, load (or refresh) the page, and choose
-the cog symbol in the top right next to the throttling dropdown menu. From its menu, choose "Save All As HAR".
+Open the browser developer tools (**Menu > More Tools > Web Developer Tools**), go to the Network panel, load (or refresh) the page, and choose
+the cog symbol in the top right next to the throttling dropdown menu. From its menu, choose **Save All As HAR****.
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/SIeaTTW90Zh6TOV8RTKa.png", alt="The Firefox developer tools network panel with the Save All As Har option highlighted.", width="624", height="237" %}
 
 ##### Safari
 
-Open the browser developer tools (Menu > Develop > Show Web Inspector; if you don't have a Develop menu then enable it from
-Menu > Safari > Preferences > Advanced > Show Develop menu in menu bar), go to the Network panel, load (or refresh) the page,
-and choose Export in the top right (to the right of Preserve Log; you may need to enlarge the window).
+Open the browser developer tools (**Menu > Develop > Show Web Inspector**; if you don't have a Develop menu then enable it from
+**Menu > Safari > Preferences > Advanced > Show Develop menu** in menu bar), go to the Network panel, load (or refresh) the page,
+and choose **Export** in the top right (to the right of Preserve Log; you may need to enlarge the window).
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/PDUiriJh7D8FpL1v3RwD.png", alt="Safari Web Inspector Network panel with the HAR export option highlighted.", width="800", height="266" %}
 
@@ -357,7 +359,7 @@ lot more work, especially to support many devices.
 
 As with interactive widgets discussed earlier, it is often possible to replace an embedded video with a link to the providing website.
 This is less interactive because the video won't play inline, but it leaves the choice of whether to watch with the user. This can be
-used as an example of the “facade pattern”, the name for dynamically replacing interactive content with something requiring a user
+used as an example of the "facade pattern", the name for dynamically replacing interactive content with something requiring a user
 action to trigger it. An embedded TikTok video can be replaced with a plain link to the TikTok video page, but with a little more
 work it is possible to retrieve and display a thumbnail for the video and make that a link. Even if the chosen video provider doesn't
 support an easy way to embed videos without tracking, many video hosts support [oEmbed](https://oembed.com/), an API that, when given
@@ -464,7 +466,7 @@ attribute on individual elements such as `<script>`, `<a>`, or `<iframe>`: `<scr
 
 ### Content-Security-Policy
 
-The `Content-Security-Policy` header, often referred to as “CSP”, dictates where external resources can be loaded from.
+The `Content-Security-Policy` header, often referred to as "CSP", dictates where external resources can be loaded from.
 It is primarily used for security purposes, by preventing cross-site scripting attacks and script injection, but when used
 alongside your regular audits it can also limit where your chosen third parties can pass data to.
 
@@ -473,9 +475,9 @@ origin not on your list, then that request will be blocked, the script will fail
 (or at least be reduced to its JavaScript-failing fallback version). This is useful when CSP is implemented for security,
 which is its normal purpose: protecting against cross-site scripting issues (and to do this, use a [strict CSP](/strict-csp/)).
 Once you know all the inline scripts that your page uses, you can make a list of them, calculate a hash value or add a random value
-(called a “nonce”) for each, and then add the list of hashes to your Content Security Policy. This will prevent any script that
+(called a "nonce") for each, and then add the list of hashes to your Content Security Policy. This will prevent any script that
 isn't on the list from being loaded. This needs to be baked into the production process for the site: scripts in your pages need
-to include the nonce or to have a hash calculated as part of the build. See [https://web.dev/strict-csp/](/strict-csp/) for all the details.
+to include the nonce or to have a hash calculated as part of the build. See [the article on strict-csp](/strict-csp/) for all the details.
 
 Fortunately, browsers support a related header, `Content-Security-Policy-Report-Only`. If this header is provided, requests
 that violate the supplied policy will not be blocked, but a JSON report will be sent to a supplied URL. Such a header might
@@ -483,7 +485,7 @@ look like this:
 `Content-Security-Policy-Report-Only: script-src 3p.example.com; report-uri https://example.com/report/`,
 and if the browser loads a script from anywhere other than `3p.example.com`, that request will succeed but a report will
 be sent to the supplied `report-uri`. Normally this is used to experiment with a policy before implementing it, but a useful
-idea here is to use this as a way of conducting an “ongoing audit”. As well as your regular audit described earlier, you
+idea here is to use this as a way of conducting an "ongoing audit". As well as your regular audit described earlier, you
 can turn on CSP reporting to see if any unexpected domains appear, which could mean that your third-party resources are loading
 third-party resources of their own and which you need to consider and evaluate. (It may also be a sign of some cross-site
 scripting exploits having slipped past your security boundary, of course, which it is also important to know about!)
@@ -532,8 +534,7 @@ Permissions-Policy: geolocation=(self "https://example.com"), camera=(), fullscr
 
 This example allows this page ("self") and `<iframe>`s from the origin `example.com` to use the `navigator.geolocation` APIs
 from JavaScript; it allows this page and all subframes to use the full screen API, and it prohibits any page, this page included,
-from using a camera to read video information. There is much more detail and a list of potential examples at
-[https://developer.chrome.com/en/docs/privacy-sandbox/permissions-policy/#example-permissions-policy-setups](https://developer.chrome.com/en/docs/privacy-sandbox/permissions-policy/#example-permissions-policy-setups).
+from using a camera to read video information. There is much more detail and [a list of potential examples here](https://developer.chrome.com/en/docs/privacy-sandbox/permissions-policy/#example-permissions-policy-setups).
 
 The list of features that are handled by the Permissions-Policy header is large and may be in flux. Currently the list is
 maintained at [https://github.com/w3c/webappsec-permissions-policy/blob/main/features.md](https://github.com/w3c/webappsec-permissions-policy/blob/main/features.md).
@@ -557,7 +558,7 @@ accelerometer, gyroscope, and magnetometer), permission to go fullscreen, and re
 The (changing) full list of features is linked above.
 
 Unfortunately, blocking all features by default and then selectively re-allowing them requires listing all features in the header,
-which can feel rather inelegant. Nonetheless, such a `Permissions-Policy` header is a good place to start. [https://www.permissionspolicy.com/](https://www.permissionspolicy.com/)
+which can feel rather inelegant. Nonetheless, such a `Permissions-Policy` header is a good place to start. [permissionspolicy.com/](https://www.permissionspolicy.com/)
 has a conveniently clickable generator to create such a header: using it to create a header which disables all features results in this:
 
 ```html
@@ -594,7 +595,7 @@ are also blocked, not only cookies.
 (but this can be enabled by a user): [https://support.google.com/chrome/answer/95647](https://support.google.com/chrome/answer/95647)
 explains the details.
 * Chrome's privacy features, and in particular the features in Chrome that communicate with Google and third-party services,
-are described at [https://privacysandbox.com/](https://privacysandbox.com/).
+are described at [privacysandbox.com/](https://privacysandbox.com/).
 
 ### Edge
 
@@ -691,5 +692,5 @@ The best place to keep up to date with new APIs being proposed is currently the 
 
 #### Do you need to use these APIs?
 
-**If your product is directly built on top of third-party cookies or techniques such as fingerprinting, you should get involved with these new APIs, experiment with them, and contribute your own experiences to the discussions and API design.**
+If your product is directly built on top of third-party cookies or techniques such as fingerprinting, you should get involved with these new APIs, experiment with them, and contribute your own experiences to the discussions and API design.
 In all other cases, you don’t necessarily need to know all the details on these new APIs at the time of writing, but it’s good to be aware of what’s coming.

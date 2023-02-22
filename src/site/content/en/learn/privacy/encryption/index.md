@@ -3,7 +3,7 @@ title: 'Encryption'
 authors:
   - sil
 description: Learn how encryption can preserve privacy by ensuring others cannot intercept and read your user's content.
-date: 2023-01-26
+date: 2023-02-22
 tags:
   - privacy
 ---
@@ -34,7 +34,7 @@ recipient (you), because it's encrypted and so they can't read it or change it. 
 moving from user to you, or from you to user. HTTPS encryption in transit also prevents the user's ISP, or the provider of
 the Wi-Fi they're using, from being able to read the data they're sending to you as part of their relationship with your service.
 It may impact your service's features, too: many uses of existing JavaScript APIs require the website to be served over HTTPS.
-[https://developer.mozilla.org/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts](Mozilla) has a more comprehensive list,
+[MDN](https://developer.mozilla.org/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts) has a more comprehensive list,
 but APIs gatewayed behind a secure context include service workers, push notifications, web share and web crypto, and some device APIs.
 
 To serve your website over HTTPS you will need an SSL certificate. These can be created for free via [Let's Encrypt](https://letsencrypt.org/),
@@ -47,14 +47,15 @@ and greater proliferation of browsers have removed all those obstacles.
 ### Do
 
 * Enable HTTPS on your servers for everything (whichever method you choose).
-* Consider using a proxy in front of your servers, such as Cloudflare ([https://httpsiseasy.com/](https://httpsiseasy.com/) explains the process).
-* Or use Let's Encrypt: [https://letsencrypt.org/](https://letsencrypt.org/) will walk you through the process of creating your own Let's Encrypt SSL certificate.
+* Consider using a proxy in front of your servers, such as Cloudflare ([httpsiseasy.com/](https://httpsiseasy.com/) explains the process).
+* [Let's Encrypt](https://letsencrypt.org/) will walk you through the process of creating your own Let's Encrypt SSL certificate.
 * Or use OpenSSL directly to create your own certificate and have it signed by your choice of certificate authority (CA)
-([https://web.dev/enable-https/](/enable-https/) explains how to do this in detail).
+([Enable HTTPS](/enable-https/) explains how to do this in detail).
 
 Which approach you choose depends on business tradeoffs. Having a third-party manage the SSL connection for you is the easiest to set up,
 and does come with other benefits such as load balancing, caching, and analytics. But it also comes with an obvious ceding of some control
 to that third-party, and an unavoidable dependency on their services (and possible payment, depending on the services you use and your traffic levels).
+
 Generating certificates and having them signed by a CA is how the SSL process used to be conducted, but using Let's Encrypt can be easier if it's
 supported by your provider or if your server team is technically adept enough for it, and it's free. It's also common for your provider to offer
 SSL as a service if you're using something at a higher level than cloud hosting, so it's worth checking.
@@ -69,25 +70,30 @@ This is certainly a best practice; there's little to no reason to not use HTTPS 
 
 ## How browsers present an HTTP (not secure) page
 
-### Google Chrome (desktop)
+<figure>
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/rs1XOzYuZ0L44DUGijUp.png", alt="Chrome desktop URL warning 'Not Secure'.", width="524", height="235" %}
+<figcaption>Google Chrome (desktop)</figcaption>
+</figure>
+<figure>
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/rs1XOzYuZ0L44DUGijUp.png", alt="Chrome desktop URL warning 'Not Secure'", width="524", height="235" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/V4JrNHQB0JRUVQAgljna.png", alt="Firefox HTTP URL warning.", width="543", height="307" %}
+<figcaption>Mozilla Firefox (desktop)</figcaption>
+</figure>
+<figure>
 
-### Mozilla Firefox (desktop)
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/U1fIa4q2ng68Olf3Zdy7.png", alt="Safari desktop HTTP URL warning.", width="800", height="166" %}
+<figcaption>Apple Safari (macOS desktop)</figcaption>
+</figure>
+<figure>
 
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/V4JrNHQB0JRUVQAgljna.png", alt="Firefox HTTP URL warning", width="543", height="307" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/KlN1Zd15tQxFnfLTNDgI.png", alt="Android mobile HTTP warning.", width="800", height="168" %}
+<figcaption>Google Chrome (Android mobile)</figcaption>
+</figure>
+<figure>
 
-### Apple Safari (macOS desktop)
-
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/U1fIa4q2ng68Olf3Zdy7.png", alt="Safari desktop HTTP URL warning", width="800", height="166" %}
-
-### Google Chrome (Android mobile)
-
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/KlN1Zd15tQxFnfLTNDgI.png", alt="Android mobile HTTP warning", width="800", height="168" %}
-
-### Apple Safari (iOS mobile)
-
-{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/VPffgyq9or8mPbxO2Bwp.png", alt="Apple Safari iOS HTTP warning", width="800", height="397" %}
+{% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/VPffgyq9or8mPbxO2Bwp.png", alt="Apple Safari iOS HTTP warning.", width="800", height="397" %}
+<figcaption>Apple Safari (iOS mobile)</figcaption>
+</figure>
 
 ## Redirect to HTTPS
 

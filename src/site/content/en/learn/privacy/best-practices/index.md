@@ -3,7 +3,7 @@ title: 'Best practices'
 authors:
   - sil
 description: A list of key things to do in order to preserve privacy when developing for the web.
-date: 2023-01-26
+date: 2023-02-22
 tags:
   - privacy
 ---
@@ -193,7 +193,7 @@ that's a new and undeclared use for existing data, and so isn't allowed. But you
 of meeting the business need without using data for things that weren't declared. If you push back on this without proposing
 any alternative, then user privacy will start to seem like the externally imposed restriction warned against earlier,
 rather than a core part of why your users trust you. As much as possible, avoid adding stop energy to processes: the only
-thing worse than a bald “computer says no” is “internal regulator says no”. Instead, consider other ways you could meet
+thing worse than a bald "computer says no" is "internal regulator says no". Instead, consider other ways you could meet
 that goal without using users' personal data to do it: perhaps use the list of products purchased as a guide for who to
 email, or avoid targeted distribution entirely. Help your team understand why your users trust you, and what that trust
 is founded upon, and then help them do what they want and what your users want. Make privacy work for you.

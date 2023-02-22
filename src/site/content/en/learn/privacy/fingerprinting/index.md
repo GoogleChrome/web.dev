@@ -3,7 +3,7 @@ title: 'Fingerprinting'
 authors:
   - sil
 description: Fingerprinting is the action of trying to identify a specific user, by using characteristics of their setup. Learn how this can damage user privacy.
-date: 2023-01-26
+date: 2023-02-22
 tags:
   - privacy
 ---
@@ -171,8 +171,8 @@ in Chrome, Edge, and Samsung Internet, and Webkit in Safari), and on both mobile
 Some hardware platforms can lag behind mobile and desktop for browser updates, meaning that some APIs may be unimplemented or
 unavailable in the browsers on those platforms.
 * Test with one or more browsers which claim user privacy as a motivator. Include upcoming pre-release and test versions
-of your most common browsers where you can and if they're available to you: Safari's "[technology preview](https://developer.apple.com/safari/technology-preview/)",
-Chrome's "[Canary](https://www.google.com/intl/en_uk/chrome/canary/)", Firefox's "[Beta channel](https://www.mozilla.org/en-GB/firefox/channel/desktop/)".
+of your most common browsers where you can and if they're available to you: Safari's [technology preview](https://developer.apple.com/safari/technology-preview/),
+Chrome's [Canary](https://www.google.com/intl/en_uk/chrome/canary/), Firefox's [Beta channel](https://www.mozilla.org/en-GB/firefox/channel/desktop/).
 These give you the best chance of identifying API breakage and changes that affect your sites before those changes affect
 your users. Similarly, bear your users' environments in mind with reference to any analytics you have present. If your
 user base has high numbers of older Android phones, be sure to include those in your tests. Most people do not have the
@@ -231,8 +231,8 @@ doing so then it's important to find alternative data sources.
 
 To be clear, the data in the user-agent isn't going entirely away, but it is available at a lower granularity, or is
 sometimes inaccurate because an older but unchanging number may be reported. For example, Firefox, Safari, and Chrome all cap
-the reported macOS version number to ten (see [https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html](https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html)
-for more discussion here). The exact details for how Chrome plans to reduce data in the user-agent string are available at [https://www.chromium.org/updates/ua-reduction/](https://www.chromium.org/updates/ua-reduction/)
+the reported macOS version number to ten (see [Update on user-agent string reduction](https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html)
+for more discussion here). The exact details for how Chrome plans to reduce data in the user-agent string are available at [User-Agent Reduction](https://www.chromium.org/updates/ua-reduction/)
 but, in short, you can expect that the reported browser version number will only contain a major version (so the version number
 will look like 123.0.0.0, even if the browser is version 123.10.45.108), and the OS version will be without detail and will
 freeze to one of a small number of unchanging choices. So an imaginary Chrome version 123.45.67.89 running on an imaginary
