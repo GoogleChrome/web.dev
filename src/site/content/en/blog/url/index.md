@@ -15,7 +15,7 @@ tags:
 
 Most of the time it's fine to be relaxed about naming websites and URLs. It's
 usually OK to say things like "I bought a domain name" or "Our images are hosted on a different
-site", even if that's not strictly true.
+site," even if that's not strictly true.
 
 However, in some contexts it's crucial to be accurate and specific when referring to the parts of a
 URL. For example, when dealing with cookies, you need to understand the difference between
