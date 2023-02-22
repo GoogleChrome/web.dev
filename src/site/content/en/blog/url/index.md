@@ -13,7 +13,7 @@ tags:
     - privacy
 ---
 
-Most of the time it's fine to be relaxed about naming when talking about websites and URLs. It's
+Most of the time it's fine to be relaxed about naming websites and URLs. It's
 usually OK to say things like "I bought a domain name" or "Our images are hosted on a different
 site", even if that's not strictly true.
 
