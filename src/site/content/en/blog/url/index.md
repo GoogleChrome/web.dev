@@ -96,14 +96,14 @@ A complete address for a website or a server, that maps to an [IP address](https
 The FQDN for a URL does not include the [port](#port), even if the port is provided in the URL.
 {% endAside %}
 
-### Hash {: #hash}
+{: #anchor}
 
-Also known as "anchor".  
+### Hash (or anchor) {: #hash}
 
 A string following a `#` character at the end of a URL that provides a
 [fragment identifier](https://developer.mozilla.org/docs/Learn/Common_questions/What_is_a_URL#anchor).
 
-For example, the URL `https://example.com/cats#tabby` has the hash value (anchor) `tabby`. 
+For example, the URL `https://example.com/cats#tabby` has a hash value of `tabby`. 
 
 [Spec](https://url.spec.whatwg.org/#dom-url-hash) • [API](https://developer.mozilla.org/docs/Web/API/URL/hash)
 
