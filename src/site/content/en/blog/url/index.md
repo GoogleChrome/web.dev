@@ -1,12 +1,12 @@
----  
-title: What are the parts of a URL?  
+---
+title: What are the parts of a URL?
 subhead: "What's the difference between a domain name, hostname, site and origin? This article explains."
-authors:  
-  - samdutton  
+authors:
+  - samdutton
 date: 2023-02-22
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/EAQ6QLeBBonbpyqeGWPb.jpg
-alt:   
-tags:  
+alt:
+tags:
     - blog
     - html
     - network
@@ -25,7 +25,7 @@ The explanations here are only intended as a guide:
 [The URL Living Standard](https://url.spec.whatwg.org/) provides formal definitions of URL parts.
 
 {% Aside %}
-The named parts of a URL may coincide, but that doesn't mean they're equivalent!   
+The named parts of a URL may coincide, but that doesn't mean they're equivalent!
 
 The [FQDN](#fqdn), [eTLD+1](#etld1), [hostname](#hostname) and [registrable domain](#registrable-domain)
 may be the same for some URLs, but each term has a different meaning.
@@ -33,8 +33,12 @@ may be the same for some URLs, but each term has a different meaning.
 
 Edit the URL in the Glitch below to see the part names. (You can also open this in a separate tab at [url-parts.glitch.me](https://url-parts.glitch.me).)
 
-{% Glitch 'url-parts' %}
+{% Widget 'demos/url-parts', 340 %}
 
+<!--lint disable no-literal-urls-->
+{% Widget 'https://url-parts.glitch.me', 340 %}
+
+{% Glitch 'url-parts' %}
 
 <!-- <iframe src="https://url-parts.glitch.me" width="100%" style="width: 100%, border: 1px solid #eee">
 </iframe>
@@ -66,7 +70,7 @@ A [top-level domain](#tld) defined in the
 The parts of a URL separated by dots: everything after the [scheme](#scheme), but before the
 [path](#pathname) or [port](#port) (if specified).
 
--  For `https://example.github.io/path`, the domain name is `example.github.io`. 
+-  For `https://example.github.io/path`, the domain name is `example.github.io`.
 -  For `https://support.example.com.au:443`, the domain name is `support.example.com.au`.
 -  Each part of the domain name is known as a
     [label](https://www.icann.org/en/icann-acronyms-and-terms/label-en).
@@ -76,12 +80,12 @@ The parts of a URL separated by dots: everything after the [scheme](#scheme), bu
 An entry in the [Public Suffix List](https://publicsuffix.org/list/), including a
 [TLD](#tld) and a [second-level domain](#sld).
 
--  For example: `github.io`, `com.au`. 
+-  For example: `github.io`, `com.au`.
 
 ### eTLD+1 {: #etld1}
 
 An [eTLD](#etld)
-plus the subdomain that precedes it. 
+plus the subdomain that precedes it.
 
 -  For example: `example.github.io`, `example.com.au`.
 
@@ -103,12 +107,12 @@ The FQDN for a URL does not include the [port](#port), even if the port is provi
 A string following a `#` character at the end of a URL that provides a
 [fragment identifier](https://developer.mozilla.org/docs/Learn/Common_questions/What_is_a_URL#anchor).
 
-For example, the URL `https://example.com/cats#tabby` has a hash value of `tabby`. 
+For example, the URL `https://example.com/cats#tabby` has a hash value of `tabby`.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-hash) • [API](https://developer.mozilla.org/docs/Web/API/URL/hash)
 
 {% Aside 'important' %}
-The hash value is not passed when an HTTP request is made to a server.  
+The hash value is not passed when an HTTP request is made to a server.
 {% endAside %}
 
 ### Host {: #host}
@@ -116,7 +120,7 @@ The hash value is not passed when an HTTP request is made to a server.
 The [domain name](#domain-name), followed by the port if defined.
 
 -  For `https://www.example.com:443/foo`, the host is `www.example.com:443`.
--  For `https://support.example.github.io`, the host is `support.example.github.io`. 
+-  For `https://support.example.github.io`, the host is `support.example.github.io`.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-host) • [API](https://developer.mozilla.org/docs/Web/API/URL/host)
 
@@ -137,7 +141,7 @@ Unlike [host](#host), the hostname of a URL does not include the [port](#port).
 The [scheme](#scheme) followed by the [host](#host).
 
 -  For `https://www.example.com:443/foo`, the origin is `https://www.example.com:443`.
--  For `https://support.example.github.io`, the origin is `https://support.example.github.io:443`. 
+-  For `https://support.example.github.io`, the origin is `https://support.example.github.io:443`.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-origin) • [API](https://developer.mozilla.org/docs/Web/API/URL/origin)
 
@@ -173,7 +177,7 @@ The 'path' component of a URL is sometimes used to refer to the pathname without
 A string following a `:` in a URL providing an integer that identifies a network port. For example,
 in the URL `https://example.com:1234/tabby`, the port number is 1234.
 
-For an HTTP URL, the default port is 80; for HTTPS, the default is 443. A URL does not need to specify the 
+For an HTTP URL, the default port is 80; for HTTPS, the default is 443. A URL does not need to specify the
 port number, unless a non-default port is used.
 
 [Spec](https://url.spec.whatwg.org/#dom-url-port) • [API](https://developer.mozilla.org/docs/Web/API/URL/port)
@@ -245,8 +249,8 @@ According to the [URL Standard](https://url.spec.whatwg.org/), site includes [sc
 Unlike [origin](#origin), site does not include [port](#port).
 
 {% Aside %}
-The concept of "site" is important in terms of "same-site", as certain security restrictions apply to subdomains that are 
-considered "same-site" even if they are not "same-origin": [Understanding "same-site" and "same-origin"](/same-site-same-origin/) 
+The concept of "site" is important in terms of "same-site", as certain security restrictions apply to subdomains that are
+considered "same-site" even if they are not "same-origin": [Understanding "same-site" and "same-origin"](/same-site-same-origin/)
 provides further information.
 {% endAside %}
 
@@ -258,7 +262,7 @@ For sites with single-part top-level domains such as `.com` or `.org`, the parts
 top-level domain, each of which is separated by a dot.
 -  `www.example.com` is a subdomain of `example.com`.
 -  `support.api.example.org` is a subdomain of `api.example.org`, which is a subdomain
-        of `example.org`. 
+        of `example.org`.
 
 For top-level domains where only third-level registrations are allowed (i.e. entries in the
 [Public Suffix List](https://publicsuffix.org/list/) such as co.uk and github.io) the parts of
@@ -268,7 +272,7 @@ the domain name before that.
 ### Top-level domain (TLD) {: #tld}
 
 -  A domain name listed in the [Root Zone Database](https://www.iana.org/domains/root/db) such
-    as `com`, `io` or `org`. 
+    as `com`, `io` or `org`.
 -  Some top-level domains are [country code top-level domains](#cctld), such as
 [`uk`](https://www.iana.org/domains/root/db/uk.html) and
 [`tv`](https://www.iana.org/domains/root/db/tv.html).

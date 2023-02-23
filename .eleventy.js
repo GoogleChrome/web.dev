@@ -299,6 +299,7 @@ module.exports = function (config) {
 
   // Chrometober config
   config.addPassthroughCopy({
+    'src/site/content/en/demos': 'demos',
     'src/site/content/en/third_party/': 'third_party',
   });
 
@@ -309,7 +310,7 @@ module.exports = function (config) {
       data: '../_data',
       includes: '../_includes',
     },
-    templateFormats: ['njk', 'md'],
+    templateFormats: ['njk', 'md', 'html'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
   };
