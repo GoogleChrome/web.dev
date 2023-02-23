@@ -14,6 +14,15 @@
   bottom: 0;
   z-index: 9;
 
+  @media (min-width: 1000px) {
+    bottom: auto;
+    left: auto;
+    right: 14px;
+    top: calc(50% - 60px);
+    transform-origin: right;
+    transform: rotate(-90deg);
+  }
+
   &:hover,
   &:focus,
   &:active {
