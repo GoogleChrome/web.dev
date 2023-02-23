@@ -82,7 +82,6 @@ The other meta tag that should be considered essential is the [viewport](/learn/
 
 ```html
 <meta name="viewport" content="width=device-width" />
-
 ```
 
 The preceding code means "make the site responsive, starting by making the width of the content the width of the screen". In addition to `width`, you can set zoom and scalability, but they both default to accessible values. If you want to be explicit, include:
@@ -104,7 +103,7 @@ So far, the outline for our HTML file is:
     <meta name="viewport" content="width=device-width" />
   </head>
   <body>
-    
+
   </body>
 </html>
 ```
@@ -133,9 +132,10 @@ If you want your external style sheet styles to be within a cascade layer but yo
 
 ```html
 <style>
-  @import styles.css layer(firstLayer);
+  @import "styles.css" layer(firstLayer);
 </style>
 ```
+
 When using `@import` to import style sheets into your document, optionally into cascade layers, the `@import` statements must be the first statements in your `<style>` or linked stylesheet, outside of the character set declaration.
 
 While cascade layers are still fairly new and you might not spot the `@import` in a head `<style>`, you will often see custom properties declared in a head style block:
@@ -255,6 +255,7 @@ To include MLW's JavaScript in an external file, you could write:
 ```html
 <script src="js/switch.js" defer></script>
 ```
+
 Adding the [`defer`](https://developer.mozilla.org/docs/Learn/JavaScript/First_steps/What_is_JavaScript#script_loading_strategies) attribute defers the execution of the script until after everything is rendered, preventing the script from harming performance. The `async` and `defer` attributes are only valid on external scripts.
 
 ### Base
@@ -291,7 +292,7 @@ The code now looks like this:
     <link rel="canonical" href="https://www.machinelearning.com" />
   </head>
   <body>
-    
+
     <!-- <script defer src="scripts/lightswitch.js"></script>-->
   </body>
 </html>

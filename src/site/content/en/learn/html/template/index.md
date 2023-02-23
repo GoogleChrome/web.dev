@@ -26,7 +26,7 @@ like you would any element or web component. We'll also briefly discuss using CS
 
 ## The `<template>` element
 
-The `<template>` element is used to declare fragments of HTML to be cloned and inserted into the DOM with JavaScript. The contents of the element are not rendered by default. Rather,  they are instantiated using JavaScript.
+The `<template>` element is used to declare fragments of HTML to be cloned and inserted into the DOM with JavaScript. The contents of the element are not rendered by default. Rather, they are instantiated using JavaScript.
 
 ```html
 <template id="star-rating-template">
@@ -144,18 +144,18 @@ the shadow root and therefore not displayed.
 We [define the custom element](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements) named `star-rating`
 by extending the `HTMLElement`:
 
-```javascript
+```js
 customElements.define('star-rating',
-    class extends HTMLElement {
-        constructor() {
-            super(); // Always call super first in constructor
-            const starRating = document.getElementById('star-rating-template').content;
-            const shadowRoot = this.attachShadow({
-                mode: 'open'
-            });
-            shadowRoot.appendChild(starRating.cloneNode(true));
-        }
-    });
+  class extends HTMLElement {
+    constructor() {
+      super(); // Always call super first in constructor
+      const starRating = document.getElementById('star-rating-template').content;
+      const shadowRoot = this.attachShadow({
+        mode: 'open'
+      });
+      shadowRoot.appendChild(starRating.cloneNode(true));
+    }
+  });
 ```
 
 {% Codepen {
@@ -168,7 +168,7 @@ by the element with the `#star-rating-template`, which is our template. The brow
 a [clone](https://developer.mozilla.org/docs/Web/API/Node/cloneNode) of the template contents to that shadow DOM.
 Note that the elements upon which you can [`attachShadow()` are limited](https://developer.mozilla.org/docs/Web/API/Element/attachShadow#elements_you_can_attach_a_shadow_to).
 
-```javascript
+```js
 const shadowRoot = this.attachShadow({mode: 'open'});
 shadowRoot.appendChild(starRating.cloneNode(true));
 ```
@@ -210,32 +210,32 @@ buttons, we can use `input` instead of `input[type="radio"]` as a selector.
  <template id="star-rating-template">
   <style>
     rating {
-    display: inline-flex;
+      display: inline-flex;
     }
     input {
-    appearance: none;
-    margin: 0;
-    box-shadow: none;
+      appearance: none;
+      margin: 0;
+      box-shadow: none;
     }
     input::after {
-    content: '\2605'; /* solid star */
-    font-size: 32px;
+      content: '\2605'; /* solid star */
+      font-size: 32px;
     }
     rating:hover input:invalid::after,
     rating:focus-within input:invalid::after {
-    color: #888;
+      color: #888;
     }
     input:invalid::after,
-    rating:hover input:hover ~ input:invalid::after,
-    input:focus ~ input:invalid::after  {
-    color: #ddd;
+      rating:hover input:hover ~ input:invalid::after,
+      input:focus ~ input:invalid::after  {
+      color: #ddd;
     }
     input:valid {
-    color: orange;
+      color: orange;
     }
     input:checked ~ input:not(:checked)::after {
-    color: #ccc;
-    content: '\2606'; /* hollow star */
+      color: #ccc;
+      content: '\2606'; /* hollow star */
     }
   </style>
   <form>

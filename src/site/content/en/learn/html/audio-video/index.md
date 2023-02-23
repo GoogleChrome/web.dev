@@ -19,7 +19,7 @@ elements can be used to embed media players directly with the `src` attribute or
 each providing a `src` file suggestion. While `<video>` can be used to embed an audio file, the `<audio>` element is preferable for embedding
 sound files.
 
-The opening `<video>` and `<audio>` tags can contain several other attributes including 
+The opening `<video>` and `<audio>` tags can contain several other attributes including
 `controls`, `autoplay`, `loop`, `mute`, `preload`, and the global attributes. The `<video>` element also supports the `height`, `width`, and
 `poster` attributes.
 
@@ -41,12 +41,12 @@ and English and French subtitles between the opening and closing tags.
 
 ```html
 <video controls poster="images/machine.jpg">
-   <source src="videos/machines.webm" type="video/webm">
-   <source src="videos/machines.mp4" type="video/mp4">
-   <source src="videos/machines.ogv" type="video/ogg">
-   <track label="English" kind="subtitles" srclang="en" src="vtt/subtitles-en.vtt" default />
-   <track label="Francais" kind="subtitles" srclang="fr" src="vtt/subtitles-fr.vtt" />
-   <p>Watch <a href="https://youtube.com/link">video on Youtube</a>
+  <source src="videos/machines.webm" type="video/webm">
+  <source src="videos/machines.mp4" type="video/mp4">
+  <source src="videos/machines.ogv" type="video/ogg">
+  <track label="English" kind="subtitles" srclang="en" src="vtt/subtitles-en.vtt" default />
+  <track label="Francais" kind="subtitles" srclang="fr" src="vtt/subtitles-fr.vtt" />
+  <p>Watch <a href="https://youtube.com/link">video on Youtube</a>
 </video>
 ```
 
@@ -125,9 +125,9 @@ auto-playing, looping video with no controls. The HTML may look something like t
 
 ```html
 <video autoplay loop muted poster="images/machine.jpg" role="none">
-   <source src="videos/machines.webm" type="video/webm">
-   <source src="videos/machines.mp4" type="video/mp4">
-   <source src="videos/machines.ogv" type="video/ogg">
+  <source src="videos/machines.webm" type="video/webm">
+  <source src="videos/machines.mp4" type="video/mp4">
+  <source src="videos/machines.ogv" type="video/ogg">
 </video>
 ```
 
@@ -148,8 +148,8 @@ the play state of an audio file.
 
 ```html
 <button id="playPause" aria-controls="idOfAudio"
-   data-pause-text="Pause audio"
-   data-play-text="Play audio">Pause audio</button>
+  data-pause-text="Pause audio"
+  data-play-text="Play audio">Pause audio</button>
 ```
 
 This example includes a button with `dataset` attributes containing the text that will be updated as the visitor toggles
@@ -160,29 +160,29 @@ To create customized controls, use [`HTMLMediaElement.play()`](https://developer
 [`HTMLMediaElement.pause()`](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/pause). When toggling the play state,
 also toggle the text of the button:
 
-```javascript
+```js
 const pauseButton = document.getElementById('playPause');
 
 pauseButton.addEventListener("click", pauseAndPlay, false);
 
 function pauseAndPlay() {
-    console.log(this);
-    const media = document.getElementById(this.getAttribute('aria-controls'));
+  console.log(this);
+  const media = document.getElementById(this.getAttribute('aria-controls'));
 
-    if (media.paused) {
-        media.play();
-        this.innerText = this.dataset.pauseText;
-    } else {
-        media.pause();
-        this.innerText = this.dataset.playText;
-    }
+  if (media.paused) {
+    media.play();
+    this.innerText = this.dataset.pauseText;
+  } else {
+    media.pause();
+    this.innerText = this.dataset.playText;
+  }
 }
 ```
 
 By including the `controls` attribute, the user has a way to control the audio (or video) even if JavaScript fails.
 Only remove the controls attribute once a replacement button has been instantiated.
 
-```javascript
+```js
 document.querySelector('[aria-controls]').removeAttribute('controls');
 ```
 

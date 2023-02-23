@@ -21,13 +21,13 @@ An accordion FAQ contains a list of visible questions; clicking on a question ex
 accordion solution included making each FAQ question a `<label>` followed by the checkmark it labeled, and then displaying `<div>`
 answer when the checkmark was checked. The CSS looked something like this:
 
-```html
+```css
 #FAQ [type="checkbox"] + div.answer {
-   /* all the answer styles*/
-   display: none;
+  /* all the answer styles */
+  display: none;
 }
 #FAQ [type="checkbox"]:checked + div.answer {
-   display: block;
+  display: block;
 }
 ```
 
@@ -96,9 +96,13 @@ of the open attribute. You can remove the disclosure widget icon by setting `lis
 of the marker to `none`, but always include visual indicators to inform sighted users that the summary content is a toggle
 button that will show and hide content upon activation.
 
-```html
-details summary::before { /* all the styles */}
-details[open] summary::before { /* changes applied when open only */}
+```css
+details summary::before {
+  /* all the styles */
+}
+details[open] summary::before {
+  /* changes applied when open only */
+}
 ```
 
 {% Codepen {
@@ -159,6 +163,4 @@ Remember, `<details>` and `<summary>` can be heavily styled and can even be used
 But, if you're going to use these semantic elements for use cases in which the native semantics are a mismatch, always ensure that you [maintain accessibility](https://www.scottohara.me//blog/2022/09/12/details-summary.html).
 HTML for the most part is by default accessible. Our job as developers is to ensure our content stays accessible.
 
-
 {% Assessment 'details' %}
-

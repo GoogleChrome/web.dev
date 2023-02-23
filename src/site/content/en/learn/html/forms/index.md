@@ -90,24 +90,24 @@ The value of a `<select>` is the selected `<option>`'s `value` or, if the `<opti
 
 ```html
 <form method="GET">
-<label for="student">Pick a student:</label>
-<select name="student" id="student">
-   <option value="hoover">Hoover Sukhdeep</option>
-   <option>Blendan Smooth</option>
-   <option value="toasty">Toasty McToastface</option>
-</select>
-<input type="submit" value="Submit Form">
+  <label for="student">Pick a student:</label>
+  <select name="student" id="student">
+    <option value="hoover">Hoover Sukhdeep</option>
+    <option>Blendan Smooth</option>
+    <option value="toasty">Toasty McToastface</option>
+  </select>
+  <input type="submit" value="Submit Form">
 </form>
 ```
 
 <form method="GET">
-<label for="machine">Pick a student:</label>
-<select name="machine" id="machine">
-   <option value="hoover">Hoover Sukhdeep</option>
-   <option>Blendan Smooth</option>
-   <option value="toasty">Toasty McToastface</option>
-</select>
-<input type="submit" value="Submit Form">
+  <label for="machine">Pick a student:</label>
+  <select name="machine" id="machine">
+    <option value="hoover">Hoover Sukhdeep</option>
+    <option>Blendan Smooth</option>
+    <option value="toasty">Toasty McToastface</option>
+  </select>
+  <input type="submit" value="Submit Form">
 </form>
 
 Selecting "Hoover Sukhdeep" (or doing nothing, as the browser displays and therefore selects the first option value by default)
@@ -220,12 +220,12 @@ label.
 
 ```html
 <label>Your name
-   <input type="text" name="name">
+  <input type="text" name="name">
 </label>
 ```
 
 <label>Your name
-<input type="text" name="name">
+  <input type="text" name="name">
 </label>
 
 As labels are "hit areas", don't include interactive elements within an explicit label, or any other interactive components
@@ -277,12 +277,12 @@ divided into groups of related questions, the “favorite student" `<fieldset>` 
 <fieldset>
   <legend>Your favorites:</legend>
   <ul start="6">
-<li>
-   <fieldset>
-  	<legend>Who is your favorite student?</legend>
-  	<ul>
-        <li>
-                 <!-- the rest of the code here -->
+    <li>
+      <fieldset>
+        <legend>Who is your favorite student?</legend>
+        <ul>
+          <li>
+            <!-- the rest of the code here -->
 ```
 
 These elements' default appearances have led to their underuse, but [`<legend>` and `<fieldset>` can be styled](https://developer.mozilla.org/docs/Web/HTML/Element/fieldset#styling_with_css) with CSS.
@@ -363,9 +363,9 @@ You can use CSS to provide cues about whether form controls are required and val
 You can even use CSS to prevent users from being able to click the submit button until the form is valid:
 
 ```css
-form:invalid [type="submit] {
-    opacity: 50%;
-    pointer-events: none;
+form:invalid [type="submit"] {
+  opacity: 50%;
+  pointer-events: none;
 }
 ```
 
@@ -463,22 +463,22 @@ is valid or the form will not submit.
 
 {% Aside %}
 
-<p>These `<input>` elements include a slash at the end, also called a "self-closing tag", which is a misnomer. The slash on
+These `<input>` elements include a slash at the end, also called a "self-closing tag", which is a misnomer. The slash on
 void elements is a feature of XML, including SVG and XHTML, but not HTML. Browsers ignore it, [Prettier](https://prettier.io/)
-requires it, and the HTML Validator throws a warning when encountered.</p>
+requires it, and the HTML Validator throws a warning when encountered.
 
-<p>As the slash makes it easier to read markup and some template engines require it, many view including this slash as a good
+As the slash makes it easier to read markup and some template engines require it, many view including this slash as a good
 habit. Others view this slash as against the spec, which it isn't, a waste of two bytes, which it arguably might be, and a
 possible cause of problems. The slash only causes problems if you neither quote your attributes nor put a space between the
 attribute and the end of the tag. In this case, the slash will be part of the attribute value. Because of this unquoted
 attribute issue, including the slash may actually encourage quoting attributes, which most developers consider to be a best
-practice.</p>
+practice.
 
-<p>As you learn HTML, it is helpful to code in as legible a manner as possible, which includes "closing" all tags and quoting all
+As you learn HTML, it is helpful to code in as legible a manner as possible, which includes "closing" all tags and quoting all
 attributes. As you become more familiar with all the intricacies of HTML and your comfort level improves, you may change your
 habits to no longer adding a slash to void elements, omitting optional closing tags, and even omitting implicit tags altogether,
 and leaving quotes off attributes that allow for it. The important thing, whether you are coding CSS, HTML, JavaScript, or other,
-is to be consistent in your coding style.</p>
+is to be consistent in your coding style.
 
 {% endAside %}
 
