@@ -606,7 +606,9 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-{% Widget 'example-set/graph', 540 %}
+## Widget
+
+{% Widget 'demos/url-parts', 340 %}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
