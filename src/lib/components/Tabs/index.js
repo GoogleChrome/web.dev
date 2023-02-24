@@ -35,7 +35,7 @@ export class Tabs extends BaseElement {
     this.nextTab = this.nextTab.bind(this);
     this.firstTab = this.firstTab.bind(this);
     this.lastTab = this.lastTab.bind(this);
-    this.onClickLoadmore = this.onClickLoadmore.bind(this);
+    this.onClickLoadMore = this.onClickLoadMore.bind(this);
   }
 
   render() {
@@ -45,8 +45,10 @@ export class Tabs extends BaseElement {
       let i = 1;
       for (const child of this.children) {
         if (this.limit && i === this.limit + 1) {
-          this.tabs.push(this.loadmoreTab());
-          this.prerenderedChildren.push(this.loadmorePanel());
+          this.tabs.push(this.loadMoreTab());
+          this.prerenderedChildren.push(
+            html`<div class="web-tabs__panel" role="tabpanel" hidden></div>`
+          );
         }
 
         // Set id and aria-labelledby attributes for each panel for a11y.
@@ -71,18 +73,18 @@ export class Tabs extends BaseElement {
     `;
   }
 
-  loadmoreTab() {
+  loadMoreTab() {
     return html`
       <button
         class="web-tabs__tab gc-analytics-event expendableTab"
-        @click=${this.onClickLoadmore}
+        @click=${this.onClickLoadMore}
       >
         <span class="web-tabs__text-label">More...</span>
       </button>
     `;
   }
 
-  onClickLoadmore(e) {
+  onClickLoadMore(e) {
     const tab = e.currentTarget;
     const parentTabs = tab.parentElement;
 
@@ -145,10 +147,6 @@ export class Tabs extends BaseElement {
         ${child}
       </div>
     `;
-  }
-
-  loadmorePanel() {
-    return html`<div class="web-tabs__panel" role="tabpanel" hidden></div>`;
   }
 
   firstUpdated(changedProperties) {
