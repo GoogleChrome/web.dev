@@ -37,7 +37,6 @@ themes:
       - latestPostByTags:
           - css
           - dom
-          - ui
         cardLayout: 'vertical'
       - title: 'The CSS Podcast'
         description: Follow Una Kravets and Adam Argyle, Developer Advocates from Google, who gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.

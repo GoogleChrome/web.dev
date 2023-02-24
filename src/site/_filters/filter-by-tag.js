@@ -33,13 +33,13 @@ function isContainsTag(post, tags) {
 }
 
 /**
- * @param {EleventyCollectionObject} posts An eleventy posts object.
- * @param {array} tags Array of tag name.
+ * @param {EleventyCollectionObject} collections An eleventy posts object.
+ * @param {string[]} tags Array of tag name.
  * @return {EleventyCollectionItem} Latest post filter by tag.
  */
-function filterByTag(posts, tags) {
+function filterByTag(collections, tags) {
   // @ts-ignore
-  const filteredPosts = posts.filter((post) => isContainsTag(post, tags));
+  const filteredPosts = collections.filter((post) => isContainsTag(post, tags));
   const latestPost = filteredPosts.pop();
   return findByUrl(latestPost.url);
 }
