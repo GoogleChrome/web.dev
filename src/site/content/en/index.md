@@ -34,8 +34,7 @@ platformNews:
 themes:
   - category: CSS and UI
     cards:
-      - isLatestPost: true
-        tags:
+      - latestPostByTags:
           - css
           - dom
           - ui
@@ -114,8 +113,7 @@ themes:
 
   - category: Web Apps
     cards:
-      - isLatestPost: true
-        tags:
+      - latestPostByTags:
           - web-vitals
         cardLayout: vertical
         column: '1'
@@ -140,8 +138,7 @@ themes:
 
   - category: Accessibility
     cards:
-      - isLatestPost: true
-        tags:
+      - latestPostByTags:
           - accessibility
         cardLayout: vertical
         column: '1'
@@ -165,8 +162,7 @@ themes:
 
   - category: Payments and Identity
     cards:
-      - isLatestPost: true
-        tags:
+      - latestPostByTags:
           - payments
           - identity
         cardLayout: vertical
@@ -189,8 +185,7 @@ themes:
 
   - category: Ecosystem and community
     cards:
-      - isLatestPost: true
-        tags:
+      - latestPostByTags:
           - community
         cardLayout: vertical
         theme: blue

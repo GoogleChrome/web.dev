@@ -1,16 +1,13 @@
 {% if cards %}
   {% for card in cards %}
     {% set featured = null %}
-    {% if card.isLatestPost %}
-      {% set latestPost = collections.blogPosts %}
-      {% if card.tags %}
-        {% set latestPost = collections.all | filterByTag(card.tags) %}
-      {% endif %}
-      {% set latestPostInTag = latestPost[0] %}
-      {% set featured = latestPostInTag.url | findByUrl %}
+    {% if card.latestPostByTags %}
+      {% set latestPost = collections.all | filterByTag(card.latestPostByTags) %}
+      {% set latestPostByTag = latestPost[0] %}
+      {% set featured = latestPostByTag.url | findByUrl %}
 
       {% set eyebrowIcon = 'latest' %}
-      {% set eyebrowText = 'Latest' %}
+      {% set eyebrowText = 'i18n.post.latest' | i18n(locale) %}
     {% endif %}
     {% if card.url %}
       {% set featured = card.url | findByUrl %}
