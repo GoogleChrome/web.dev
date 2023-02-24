@@ -39,10 +39,12 @@ you have to define the
 [`border-style`](https://developer.mozilla.org/docs/Web/CSS/border-style).
 There's a few options to choose from:
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrvyxY'
 } %}
+</figure>
 
 When using the `ridge`, `inset`, `outset` and `groove` styles,
 the browser will darken the border color for the second shown color to provide contrast and depth.
@@ -109,11 +111,12 @@ the color will be that computed value unless you explicitly set it.
 	border: solid yellow;
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLgovoX'
 } %}
+</figure>
 
 
 To set a border color on each side of your box,
@@ -123,10 +126,12 @@ use
 [`border-left-color`](https://developer.mozilla.org/docs/Web/CSS/border-left-color) and
 [`border-bottom-color`](https://developer.mozilla.org/docs/Web/CSS/border-bottom-color).
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJvQVO'
 } %}
+</figure>
 
 ### Width
 
@@ -136,10 +141,12 @@ The default border width is `medium`.
 This won't be visible unless you define a style, though.
 You can use other named widths such as `thin` and `thick`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'PoWKQxN'
 } %}
+</figure>
 
 The `border-width` properties also accept a length unit such as
 `px`, `em`, `rem` or `%`.
@@ -164,10 +171,12 @@ You have this capability with borders, too:
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'poRraBp'
 } %}
+</figure>
 
 In this example, `.my-element` has all sides defined as having a `2px`,
 dotted border that is the current text color.
@@ -191,10 +200,12 @@ To give a box rounded corners use the
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'LYxjQoK'
 } %}
+</figure>
 
 This shorthand adds a consistent border to each corner of your box.
 As with the other border properties,
@@ -213,10 +224,12 @@ which follows the order: top left, top right, bottom right then bottom left.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLgovdK'
 } %}
+</figure>
 
 By defining a single value for a corner,
 you are using another shorthand because a border radius is split into two parts:
@@ -231,11 +244,12 @@ You can define both properties, per corner like this:
 	border-top-left-radius: 1em 2em;
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNRqoPM'
 } %}
+</figure>
 
 This adds a `border-top-left-top` value of `1em`,
 and a border top-left-left value of `2em`.
@@ -253,10 +267,12 @@ This enables you to get creative and make some complex shapes.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpyqeM'
 } %}
+</figure>
 
 ## Border images
 
@@ -277,10 +293,12 @@ how far the border is outset from the edge and how it should repeat.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYNdWNX'
 } %}
+</figure>
 
 The [`border-image-width`](https://developer.mozilla.org/docs/Web/CSS/border-image-width)
 property is like `border-width`:
@@ -349,9 +367,11 @@ it stretches the image as well as repeating it to achieve a seamless repeat
 - The `space` value is again, the same as repeat,
 but this value adds space between each edge region to create a seamless pattern.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrvBYv'
 } %}
+</figure>
 
 {% Assessment 'borders' %}

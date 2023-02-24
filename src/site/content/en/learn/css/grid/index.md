@@ -172,10 +172,12 @@ Tracks are auto sized by default.
 If the element with a class of `.container` has child items,
 they will immediately lay out on this grid. You can see this in action in the demo below.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'NWdbrzr'
 } %}
+</figure>
 
 The [grid overlay in Chrome DevTools](https://developer.chrome.com/docs/devtools/css/grid/) can help you understand the various parts of the grid.
 
@@ -229,11 +231,13 @@ but never larger than 10em.
 
 In the next demo try out the different intrinsic sizing keywords by changing the sizing of the grid tracks.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'qBRqNgL',
   height: 600
 } %}
+</figure>
 
 {% Aside %}
 You might spot in this demo that when auto is used the grid columns stretch to fill the container.
@@ -267,11 +271,13 @@ Using different values for the fr unit will share the space in proportion.
 Larger values getting more of the spare space.
 In the demo below change the value of the third track.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYgyXNE',
   height: 600
 } %}
+</figure>
 
 ### The `minmax()` function
 {% BrowserCompat 'css.properties.grid-template-columns.minmax' %}
@@ -351,10 +357,12 @@ You can achieve this with `repeat()` and the `auto-fill` or `auto-fit` keywords.
 In the demo below grid will create as many 200 pixel tracks as will fit in the container.
 Open the demo in a new window and see how the grid changes as you change the size of the viewport.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'XWpNjgO'
 } %}
+</figure>
 
 In the demo we get as many tracks as will fit.
 The tracks are not flexible however.
@@ -365,10 +373,12 @@ Grid then lays out the 200 pixel tracks and whatever space is leftover is distri
 
 This creates a two-dimensional responsive layout with no need for any media queries.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJWbRax'
 } %}
+</figure>
 
 There is a subtle difference between `auto-fill` and `auto-fit`.
 In the next demo play with a grid layout using the syntax explained above,
@@ -377,10 +387,12 @@ Using the `auto-fill` keyword you can see that empty tracks have been created.
 Change the keyword to `auto-fit` and the tracks collapse down to 0 size.
 This means that the flexible tracks now grow to consume the space.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJbbNe'
 } %}
+</figure>
 
 The `auto-fill` and `auto-fit` keywords otherwise act in exactly the same way.
 There is no difference between them once the first track is filled.
@@ -404,11 +416,13 @@ These values relate to the writing mode of the document.
 A row always runs in the direction a sentence runs in the writing mode of the document or component.
 In the next demo you can change mode the value of `grid-auto-flow` and the `writing-mode` property.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'PoWbWbr',
   height: 600
 } %}
+</figure>
 
 ### Spanning tracks
 
@@ -449,11 +463,13 @@ With this value in place,
 grid will take items later in the layout and use them to fill gaps.
 This may mean that the display becomes disconnected from the logical order.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ZELBLrJ',
   height: 600
 } %}
+</figure>
 
 ## Placing items
 
@@ -500,11 +516,13 @@ The line numbering follows the writing mode and direction of the component.
 In the next demo change the writing mode or direction
 to see how the placement of the items stays consistent to the way that text flows.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWdGdzd',
   height: 600
 } %}
+</figure>
 
 ### Stacking items
 
@@ -514,11 +532,13 @@ or cause one item to partly overlap another.
 Items which come later in the source will be displayed on top of items that come earlier.
 You can change this stacking order using `z-index` just as with positioned items.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BapQWQW',
   height: 600
 } %}
+</figure>
 
 ### Negative line numbers
 
@@ -557,10 +577,12 @@ In the demo below you can see that this doesn't work.
 The tracks are created in the implicit grid,
 there is no way to reach the end of the grid using `-1`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNpZeq'
 } %}
+</figure>
 
 #### Sizing implicit tracks
 
@@ -695,11 +717,13 @@ Open the example in a new window to play with the viewport size and see the layo
 You can also see how the `grid-template-areas` property relates to `writing-mode` and direction,
 as with other grid methods.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'oNBYepg',
   height: 600
 } %}
+</figure>
 
 ## Shorthand properties
 
@@ -777,11 +801,13 @@ In this demo the grid is larger than the space needed to lay out the fixed width
 This means we have space in both the inline and block dimensions of the grid.
 Try different values of `align-content` and `justify-content` to see how the tracks behave.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNjjMVd',
   height: 650
 } %}
+</figure>
 
 Note how the gaps become larger when using values such as `space-between`,
 and any grid item spanning two tracks also grows to absorb the additional space added to the gap.
@@ -806,11 +832,13 @@ In the demo change the values of `justify-items` and `align-items` to see how th
 The grid area is not changing size,
 instead the items are being moved around inside the defined area.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzZOOXB',
   height: 650
 } %}
+</figure>
 
 {% Assessment 'grid' %}
 

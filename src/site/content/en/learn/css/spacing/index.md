@@ -42,10 +42,12 @@ just like if you were to press your enter key in a word processor.
 
 The `<hr>` creates a horizontal line with space either-side, known as `margin`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'dyNRJQg'
 } %}
+</figure>
 
 Along with using HTML elements,
 HTML *entities* can create space.
@@ -105,10 +107,12 @@ and the second value will be applied to the left and right sides.
 the second value is `left` **and** `right`,
 and the third value is `bottom`. (`margin: 20px 40px 30px`).
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpwqyQ'
 } %}
+</figure>
 
 Margin can be defined with a length,
 percentage or auto value, such as `1em` or `20%`.
@@ -119,10 +123,12 @@ This means that if your element's containing block has a width of `250px`
 and your element has a `margin` value of `20%`:
 each side of your element will have a computed margin of `50px`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNQeyb'
 } %}
+</figure>
 
 You can also use a value of `auto` for margin.
 For block level elements with a restricted size,
@@ -130,10 +136,12 @@ an `auto` margin will take up available space in the direction that it is applie
 A good example is this one,
 from the [flexbox module](/learn/css/flexbox), where the items push away from each other.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'poRELbR'
 } %}
+</figure>
 
 Another good example of `auto` margin is a horizontally centered wrapper which has a max width.
 This sort of wrapper is often used to create a consistent center column on a website.
@@ -145,10 +153,12 @@ This sort of wrapper is often used to create a consistent center column on a web
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'XWpgZKq'
 } %}
+</figure>
 
 Here, margin is removed from the top and bottom (block) sides,
 and `auto` shares the space between the left and right (inline) sides.
@@ -167,10 +177,12 @@ it will **reduce space** between them.
 This can result in overlapping elements,
 if you declare a negative value that's more than the available space.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNQeLP'
 } %}
+</figure>
 
 ### Margin collapse
 
@@ -195,10 +207,12 @@ p {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJWgvMx'
 } %}
+</figure>
 
 At first glance,
 you would be forgiven for thinking that the paragraph will be spaced `5em` from the heading,
@@ -237,10 +251,12 @@ If you have an element with no margin between two elements with block margin,
 the margin won't collapse either,
 because the two elements with block margin are no longer adjacent siblings: they are just siblings.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNQavQ'
 } %}
+</figure>
 
 In the [layout lesson](/learn/css/layout),
 you learned that flexbox and grid containers are very similar to block containers,
@@ -253,10 +269,12 @@ instead of collapsed.
 This can provide predictability with layout work,
 which is what flexbox and grid containers are designed for.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWdgmNx'
 } %}
+</figure>
 
 Margin and margin collapse can be tricky to understand,
 but understanding how they work, in detail, is very useful,
@@ -280,10 +298,12 @@ Depending on which box model you are using—which was covered back in the
 [box model lesson](/learn/css/box-model/)
 —`padding` can also affect the overall dimensions of the element too.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'eYgRrzz'
 } %}
+</figure>
 
 The `padding` property is shorthand for `padding-top`, `padding-right`, `padding-bottom` and `padding-left`.
 Just like `margin`, `padding` has logical properties, too:
@@ -306,10 +326,12 @@ will base the directional values on the viewport.
 - An element with `position: sticky`
 will only apply the directional values when it is in its docked/stuck state.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'NWdNGZB'
 } %}
+</figure>
 
 In the [logical properties](/learn/css/logical-properties) module,
 you learn about the `inset-block` and `inset-inline` properties,
@@ -359,7 +381,7 @@ to tokenize those values and make the consistency a bit easier.
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/8eun6aGNHPTr4kyOrYkc.svg",
 alt="Consistent spacing between elements,
-using either 20px for a layout or 1em for flow content",
+using either 20px for a layout or 1em for flow content.",
 width="800",
 height="602" %}
 
