@@ -51,7 +51,7 @@ There are three key ways you can promote the installation of your PWA:
 * **Inline promotional patterns** interweave promotions within the site content.
 
 Check out Patterns for [Promoting PWA Installation (mobile)][install-patterns]
-for more details. It’s focus is mobile, but many of the patterns are applicable
+for more details. Its focus is mobile, but many of the patterns are applicable
 for desktop, or can be easily modified to work for desktop experiences.
 
 [pwa-install-criteria]: https://developers.google.com/web/fundamentals/app-install-banners/#criteria
