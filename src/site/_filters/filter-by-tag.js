@@ -18,9 +18,11 @@
  * @fileoverview Returns posts filtering by specific tags.
  */
 
+const {findByUrl} = require('./find-by-url');
+
 /**
- * @param {object} post An eleventy post object.
- * @param {array} tags Array of tag name.
+ * @param {EleventyCollectionItem} post An eleventy post object.
+ * @param {string[]} tags Array of tag name.
  * @return {boolean} Whether the posts are in the specific tags.
  */
 function isContainsTag(post, tags) {
@@ -33,18 +35,13 @@ function isContainsTag(post, tags) {
 /**
  * @param {EleventyCollectionObject} posts An eleventy posts object.
  * @param {array} tags Array of tag name.
- * @return {EleventyCollectionObject} Posts filtered by tags.
+ * @return {EleventyCollectionItem} Latest post filter by tag.
  */
 function filterByTag(posts, tags) {
   // @ts-ignore
-  const recentPosts = posts.sort((postA, postB) => {
-    if (!postB.date || !postA.date) return 0;
-
-    // @ts-ignore
-    return new Date(postB.date) - new Date(postA.date);
-  });
-
-  return recentPosts.filter((post) => isContainsTag(post, tags));
+  const filteredPosts = posts.filter((post) => isContainsTag(post, tags));
+  const latestPost = filteredPosts.pop();
+  return findByUrl(latestPost.url);
 }
 
 module.exports = {isContainsTag, filterByTag};
