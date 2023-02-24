@@ -36,10 +36,12 @@ p::first-letter {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'PoWjybP'
 } %}
+</figure>
 
 A pseudo-element is like adding or targeting an extra element without having to add more HTML.
 This example solution, using `::first-letter`,
@@ -85,10 +87,12 @@ You can only insert a `::before` or `::after` element to an element that will ac
 ([elements with a document tree](https://www.w3.org/TR/CSS21/generate.html)),
 so elements such as `<img />`, `<video>` and `<input>` won't work.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrEYrg'
 } %}
+</figure>
 
 {% Aside 'gotchas' %}
 `input[type="checkbox"]` is an exception.
@@ -116,10 +120,12 @@ p::first-letter {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjEJmOx'
 } %}
+</figure>
 
 {% Aside %}
 You can only use `:first-letter` on block containers.
@@ -140,10 +146,12 @@ p::first-line {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYgZVaO'
 } %}
+</figure>
 
 Like the `::first-letter` pseudo-element,
 there's only a subset of CSS properties you can use:
@@ -167,10 +175,12 @@ video::backdrop {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNjwqRQ'
 } %}
+</figure>
 
 The `::backdrop` pseudo-element is supported in all major browsers apart from Safari.
 
@@ -212,10 +222,12 @@ Only a small subset of CSS properties are supported for `::marker`:
 You can change the marker symbol, using the `content` property. You can use this to set a plus and minus symbol for the closed and empty states of a `<summary>` element, for example.
 
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJozrR'
 } %}
+</figure>
 
 ## `::selection`
 
@@ -229,10 +241,12 @@ pseudo-element allows you to style how selected text looks.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjEJeZK'
 } %}
+</figure>
 
 This pseudo-element can be used to style all selected text as in the above demo.
 It can also be used in combination with other selectors for a more specific selection style.
@@ -244,10 +258,12 @@ p:nth-of-type(2)::selection {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJozXM'
 } %}
+</figure>
 
 As with other pseudo-elements, only a subset of CSS properties are allowed:
 
@@ -269,10 +285,12 @@ input::placeholder {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKaqrrY'
 } %}
+</figure>
 
 The `::placeholder` only supports a subset of CSS rules:
 

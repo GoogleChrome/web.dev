@@ -15,10 +15,12 @@ date: 2021-04-21
 
 A really common user interface pattern is a text label with a supporting inline icon.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'eYgvZBx'
 } %}
+</figure>
 
 The icon sits to the left of the text with a small gap between the two,
 provided by `margin-right` on the icon.
@@ -26,10 +28,12 @@ There's a problem though,
 because this will only work when the text direction is left to right.
 If the text direction changed to right-to-left—which is how languages like Arabic read—the icon will sit up against the text.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BapWKWm'
 } %}
+</figure>
 
 How do you account for this in CSS?
 Logical properties allow you to resolve these situations. Among many other benefits, they provide free, automatic support for internationalization.
@@ -78,10 +82,12 @@ Text flows in the direction determined by the document's writing mode.
 You can change the direction that text is laid out with the `writing-mode` property.
 This can be applied to the entire document, or to individual elements.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNZGam'
 } %}
+</figure>
 
 ## Flow relative
 
@@ -92,10 +98,12 @@ With logical properties, `margin-top` becomes `margin-block-start`.
 This means that regardless of language and text direction,
 the **block flow** has appropriate margin rules.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ZELeBzM'
 } %}
+</figure>
 
 <figure>
 {% Img
@@ -156,10 +164,12 @@ p {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWdpdwo'
 } %}
+</figure>
 
 ## Spacing and positioning
 
@@ -231,12 +241,14 @@ Or, you could use logical properties like this:
 }
 ```
 
-The "end-end" in `border-end-end-radius` is the block end _and_ inline end.
+The `end-end` in `border-end-end-radius` is the block end _and_ inline end.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLgMgby'
 } %}
+</figure>
 
 ## Units
 
@@ -258,10 +270,12 @@ You can use them to produce a more versatile user interface.
 If you have a chart that has labels on the X axis and Y axis,
 you might want the text on the Y label to read vertically.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYNZNgE'
 } %}
+</figure>
 
 Because the Y axis label in the demo has a `writing-mode` of `vertical-rl`,
 you can use the same `margin` values on both labels.
@@ -274,10 +288,12 @@ The block-start sides have a red border so you can see them.
 Now that we've covered logical properties,
 this knowledge can be applied to the design problem we started with.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'eYgvZBx'
 } %}
+</figure>
 
 ```css
 p {
@@ -311,20 +327,14 @@ p svg {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'qBRrrOy'
 } %}
+</figure>
 
 Now, regardless of reading direction,
 the icon will position itself and space itself appropriately.
 
 {% Assessment 'logical-props' %}
-
-## Browser support
-
-Browser support is extremely varied for logical properties and values,
-especially with shorthand properties, such as `margin-inline` and `padding-inline`.
-It's recommended that you assess the support for these properties before using them,
-and consider how your website will look and behave where no support is available.
-[A full breakdown can be found on caniuse.com](https://caniuse.com/css-logical-props).
