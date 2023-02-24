@@ -37,11 +37,11 @@ function isContainsTag(post, tags) {
  * @param {string[]} tags Array of tag name.
  * @return {EleventyCollectionItem} Latest post filter by tag.
  */
-function filterByTag(collections, tags) {
+function latestPostByTags(collections, tags) {
   // @ts-ignore
   const filteredPosts = collections.filter((post) => isContainsTag(post, tags));
   const latestPost = filteredPosts.pop();
   return findByUrl(latestPost.url);
 }
 
-module.exports = {isContainsTag, filterByTag};
+module.exports = {isContainsTag, latestPostByTags};

@@ -2,7 +2,7 @@
   {% for card in cards %}
     {% set post = null %}
     {% if card.latestPostByTags %}
-      {% set post = collections.all | filterByTag(card.latestPostByTags) %}
+      {% set post = collections.all | latestPostByTags(card.latestPostByTags) %}
       {% set eyebrowIcon = 'latest' %}
       {% set eyebrowText = 'i18n.post.latest' | i18n(locale) %}
     {% endif %}
