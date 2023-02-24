@@ -1,4 +1,6 @@
 const Prism = require('prismjs');
+const {i18n} = require('../../_filters/i18n');
+const {defaultLocale} = require('../../_data/site');
 const patterns = require('../../_data/patterns').patterns;
 
 /**
@@ -43,7 +45,7 @@ module.exports = (patternId, height) => {
 
       const isSupportingAsset = asset.name.includes('supporting');
       const tabName = isSupportingAsset
-        ? `Supporting ${asset.type}`
+        ? `${i18n('i18n.patterns.supporting', defaultLocale)} ${type}`
         : asset.type;
 
       // Jake says:

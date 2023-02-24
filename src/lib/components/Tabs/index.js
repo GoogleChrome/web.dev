@@ -47,7 +47,7 @@ export class Tabs extends BaseElement {
         if (this.limit && i === this.limit + 1) {
           this.tabs.push(this.loadMoreTab());
           this.prerenderedChildren.push(
-            html`<div class="web-tabs__panel" role="tabpanel" hidden></div>`
+            html`<div class="web-tabs__panel" role="tabpanel" hidden></div>`,
           );
         }
 
