@@ -497,7 +497,7 @@ navigator.mediaSession.setActionHandler('previousslide', () => {
 });
 ```
 
-% BrowserCompat 'api.MediaSession.setActionHandler.previousslide_type' %}
+{% BrowserCompat 'api.MediaSession.setActionHandler.previousslide_type' %}
 
 ### Next slide
 
@@ -510,7 +510,7 @@ navigator.mediaSession.setActionHandler('nextslide', () => {
 });
 ```
 
-% BrowserCompat 'api.MediaSession.setActionHandler.nextslide_type' %}
+{% BrowserCompat 'api.MediaSession.setActionHandler.nextslide_type' %}
 
 ## Samples
 
