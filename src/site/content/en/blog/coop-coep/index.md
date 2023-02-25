@@ -252,7 +252,7 @@ Here is what you need to do depending on the nature of the resource:
 {% Aside 'gotchas' %}
 
 You can enable cross-origin isolation on a document embedded within an iframe by
-applying `allow="cross-origin-isolated"` feature policy to the `<iframe>` tag
+applying `allow="cross-origin-isolated"` permissions policy to the `<iframe>` tag
 and meeting the same conditions described in this document. Note that entire
 chain of the documents including parent frames and child frames must be
 cross-origin isolated as well.

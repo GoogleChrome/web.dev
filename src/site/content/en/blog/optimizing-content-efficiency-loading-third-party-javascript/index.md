@@ -7,7 +7,7 @@ authors:
 description: >
   Third-party scripts provide a wide range of useful functionality, making the web more dynamic. Learn how to optimize the loading of third-party scripts to reduce their impact on performance.
 date: 2018-02-28
-updated: 2023-01-20
+updated: 2023-02-25
 ---
 
 You've optimized all of your code, but your site still loads too slowly. Who's
@@ -434,12 +434,9 @@ out of the [critical path](/critical-rendering-path/). Note that this
 approach will still block the `onload` event so try not to attach critical
 functionality to `onload`.
 
-{% Aside %}
-Chrome is also exploring support for [Feature Policy](https://www.chromestatus.com/feature/5694225681219584) - a set of
-policies allowing a developer to selectively disable access to certain browser
-features. This can prevent third-party content introducing unwanted behaviors to
-a site.
-{% endAside %}
+Chrome also supports [Permissions Policy](https://www.chromestatus.com/feature/5694225681219584)
+(formerly Feature Policy) - a set of policies which allow a developer to selectively disable access to certain browser
+features. This can prevent third-party content introducing unwanted behaviors to a site.
 
 ### Self-host third-party scripts
 
