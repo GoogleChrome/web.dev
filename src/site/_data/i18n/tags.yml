@@ -406,23 +406,23 @@ engineering-blog:
     ru: Последние новости и статьи от нашей команды инженеров.
     zh: 来自我们工程团队的最新资讯、动态和故事。
 
-feature-policy:
+permissions-policy:
   title:
-    en: Feature Policy
-    es: Política de las funciones
-    ja: Feature Policy
-    ko: 기능 정책
-    pt: Política de Recursos
-    ru: Политика функций
-    zh: 功能政策
+    en: Permissions Policy
+    es: Política de permisos
+    ja: Permissions Policy
+    ko: 권한 정책
+    pt: Política de Permissões
+    ru: Политика разрешений
+    zh: 權限政策
   description:
-    en: Our latest news, updates, and stories about Feature Policy.
-    es: Consulte nuestras últimas noticias, actualizaciones e historias publicadas sobre la Política de las funciones.
-    ja: Feature Policy に関する最新のニュース、アップデート情報、記事などをご紹介します。
-    ko: 기능 정책에 관한 최신 뉴스, 업데이트 및 스토리.
-    pt: Nossas últimas notícias, atualizações e histórias sobre a Política de Recursos.
-    ru: Последние новости и статьи о политике функций.
-    zh: 我们关于功能政策的最新资讯、动态和故事。
+    en: Our latest news, updates, and stories about Permissions Policy.
+    es: Consulte nuestras últimas noticias, actualizaciones e historias publicadas sobre la Política de las permisos.
+    ja: Permissions Policy に関する最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: 권한 정책책에 관한 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias sobre a Política de Permissões.
+    ru: Последние новости и статьи о политике разрешений.
+    zh: 我们关于权限政策的最新消息、更新和故事。
 
 file-system:
   title:
