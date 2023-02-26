@@ -434,7 +434,7 @@ out of the [critical path](/critical-rendering-path/). Note that this
 approach will still block the `onload` event so try not to attach critical
 functionality to `onload`.
 
-Chrome also supports [Permissions Policy](https://www.chromestatus.com/feature/5694225681219584)
+Chrome also supports [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions_Policy)
 (formerly Feature Policy) - a set of policies which allow a developer to selectively disable access to certain browser
 features. This can prevent third-party content introducing unwanted behaviors to a site.
 
