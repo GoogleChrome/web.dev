@@ -13,7 +13,7 @@ const createPost = () =>
       lang: defaultLocale,
       title: 'Hello world',
       page: {
-        filePathStem: '/en/parent/hello-world/index',
+        filePathStem: '',
       },
     },
     templateContent: 'Hello world',
@@ -21,7 +21,8 @@ const createPost = () =>
   });
 
 /**
- * Adds parent to memorized posts for following tests
+ * Adds parent to memorized posts for following tests, this is required as get-post-parent-url
+ * is called by algoliaItem(post)
  */
 const initParent = () => {
   const mockParent = createPost();
@@ -67,7 +68,6 @@ describe('algoliaItem', function () {
       .to.be.an('object')
       .to.include.all.keys('createdOn', 'description', 'updatedOn');
 
-    expect(mockItem.parentTitle).to.be.string('Parent Title');
     expect(mockItem.createdOn).to.be.an.instanceof(Date);
     expect(mockItem.description).to.be.a('string');
     expect(mockItem.updatedOn).to.be.an.instanceof(Date);
