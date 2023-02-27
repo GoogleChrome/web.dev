@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /handbook/content-types/example-post
+permalink: /handbook/content-types/example-post/index.html
 title: An example blog post used for screenshot testing.
 subhead: |
   A catchy subhead that previews the content and is a bit wordy to test what

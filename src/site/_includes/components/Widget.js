@@ -15,6 +15,7 @@
  */
 const path = require('path');
 const {findByUrl} = require('../../_filters/find-by-url');
+const site = require('../../_data/site');
 
 /**
  * @fileoverview A component to display an interactive demo,
@@ -36,7 +37,7 @@ module.exports = function (demoUrl, height) {
     // Otherwise, check if internal url exists.
     url = path.join('/', demoUrl, '/');
     if (!findByUrl(url)) {
-      return '';
+      return site.isProd() ? '' : `[No demo found at ${url}.]`;
     }
   }
 
