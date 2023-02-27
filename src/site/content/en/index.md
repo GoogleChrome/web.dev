@@ -86,10 +86,8 @@ themes:
 
   - category: Performance
     cards:
-      - url: /top-cwv-2023/
-        eyebrow:
-          icon: latest
-          text: Latest
+      - latestPostByTags:
+          - performance
         cardLayout: vertical
         column: '1'
         theme: dark

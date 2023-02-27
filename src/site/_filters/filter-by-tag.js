@@ -27,18 +27,28 @@ const {findByUrl} = require('./find-by-url');
  */
 
 function latestPostByTags(_, tags) {
-  let posts = [];
+  let latestPost = null;
   tags.forEach((tag) => {
     // @ts-ignore
-    posts = [...posts, this.ctx.collections[tag].pop()];
+    const tagPosts = this.ctx.collections[tag];
+    const candidatePost = tagPosts[tagPosts.length - 1];
+
+    if (!latestPost) {
+      latestPost = candidatePost;
+      return;
+    }
+
+    if (new Date(candidatePost.date) > new Date(latestPost.date)) {
+      latestPost = candidatePost;
+    }
   });
 
-  const recentPost = posts.sort((postA, postB) => {
-    if (!postB.date || !postA.date) return 0;
+  if (!latestPost) {
     // @ts-ignore
-    return new Date(postB.date) - new Date(postA.date);
-  });
-  const latestPost = recentPost[0];
+    const blogPosts = this.ctx.collections.all;
+    latestPost = blogPosts[blogPosts.length - 1];
+  }
+
   return findByUrl(latestPost.url);
 }
 
