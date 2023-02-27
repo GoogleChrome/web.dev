@@ -78,7 +78,7 @@ Your home page and all additional pages should each have a unique title. The con
 
 ### Viewport metadata
 
-The other meta tag that should be considered essential is the [viewport](/learn/design/intro/#a-meta-element-for-viewport) meta tag, which helps site responsiveness, enabling content to render well by default, no matter the viewport width. While the [viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) has been around since June 2007, when the first iPhone came out, it's only recently been [documented in a specification](https://drafts.csswg.org/css-device-adapt/#viewport-meta).  As it enables controlling a viewport's size and scale, and prevents the site's content from being sized down to fit a 960px site onto a 320px screen, it is definitely recommended.
+The other meta tag that should be considered essential is the [viewport](/learn/design/intro/#a-meta-element-for-viewport) meta tag, which helps site responsiveness, enabling content to render well by default, no matter the viewport width. While the [viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) has been around since June 2007, when the first iPhone came out, it's only recently been [documented in a specification](https://drafts.csswg.org/css-viewport/#viewport-meta).  As it enables controlling a viewport's size and scale, and prevents the site's content from being sized down to fit a 960px site onto a 320px screen, it is definitely recommended.
 
 ```html
 <meta name="viewport" content="width=device-width" />
