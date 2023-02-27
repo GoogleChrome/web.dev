@@ -28,7 +28,7 @@ const {findByUrl} = require('./find-by-url');
 
 function latestPostByTags(_, tags) {
   let latestPost = null;
-  tags.forEach((tag) => {
+  for (const tag of tags) {
     // @ts-ignore
     const tagPosts = this.ctx.collections[tag];
     const candidatePost = tagPosts[tagPosts.length - 1];
@@ -41,7 +41,7 @@ function latestPostByTags(_, tags) {
     if (new Date(candidatePost.date) > new Date(latestPost.date)) {
       latestPost = candidatePost;
     }
-  });
+  }
 
   if (!latestPost) {
     // @ts-ignore
