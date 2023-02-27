@@ -10,7 +10,7 @@ date: 2019-08-06
 updated: 2020-07-16
 hero: image/admin/F6VE4QkpCsomiJilTFNG.png
 alt: Contorno de celular com carregamento de imagem e recursos
-description: Este artigo trata do o atributo "loading" e como ele pode ser usado para controlar o carregamento de imagens.
+description: Este artigo trata do atributo "loading" e como ele pode ser usado para controlar o carregamento de imagens.
 tags:
   - blog
   - performance
@@ -106,7 +106,7 @@ Estamos empenhados em trabalhar junto com a comunidade de padrões da web para e
 
 ### As imagens devem incluir atributos de dimensão
 
-Quando o navegador carrega uma imagem, ele não sabe imediatamente as dimensões da imagema menos que elas sejam explicitamente especificadas. Para permitir que o navegador reserve espaço suficiente numa página para imagens, é recomendável que todas as tags `<img>` incluam atributos `width` e `height`. Sem as dimensões especificadas, [podem ocorrer deslocamentos de layout](/cls), que são mais perceptíveis nas páginas que demoram para carregar.
+Quando o navegador carrega uma imagem, ele não sabe imediatamente as dimensões da imagem a menos que elas sejam explicitamente especificadas. Para permitir que o navegador reserve espaço suficiente numa página para imagens, é recomendável que todas as tags `<img>` incluam atributos `width` e `height`. Sem as dimensões especificadas, [podem ocorrer deslocamentos de layout](/cls), que são mais perceptíveis nas páginas que demoram para carregar.
 
 ```html
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
