@@ -20,6 +20,7 @@ const {PAGINATION_COUNT} = require('../_utils/constants');
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
+  isProd: () => process.env.ELEVENTY_ENV === 'prod',
   percy: process.env.PERCY || false,
   contentDir: path.join('src/site/content/', process.env.ELEVENTY_LANG || ''),
   title: 'web.dev',
