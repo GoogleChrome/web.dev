@@ -305,6 +305,8 @@ redirects:
     destination: https://developer.chrome.com/blog/third-party-origin-trials/
   - source: /fugu-status
     destination: https://developer.chrome.com/blog/fugu-status/
+  - source: /fugu-showcase
+    destination: https://developer.chrome.com/fugu-showcase/
   - source: /conversion-measurement
     destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
   - source: /using-conversion-measurement
