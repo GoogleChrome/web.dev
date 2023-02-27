@@ -21,27 +21,25 @@
 const {findByUrl} = require('./find-by-url');
 
 /**
- * @param {EleventyCollectionItem} post An eleventy post object.
- * @param {string[]} tags Array of tag name.
- * @return {boolean} Whether the posts are in the specific tags.
- */
-function isContainsTag(post, tags) {
-  return (
-    !!post.data.tags &&
-    tags.filter((tag) => post.data.tags.indexOf(tag) > -1).length > 0
-  );
-}
-
-/**
- * @param {EleventyCollectionObject} collections An eleventy posts object.
+ * @param {EleventyCollectionObject} _ An eleventy posts object.
  * @param {string[]} tags Array of tag name.
  * @return {EleventyCollectionItem} Latest post filter by tag.
  */
-function latestPostByTags(collections, tags) {
-  // @ts-ignore
-  const filteredPosts = collections.filter((post) => isContainsTag(post, tags));
-  const latestPost = filteredPosts.pop();
+
+function latestPostByTags(_, tags) {
+  let posts = [];
+  tags.forEach((tag) => {
+    // @ts-ignore
+    posts = [...posts, this.ctx.collections[tag].pop()];
+  });
+
+  const recentPost = posts.sort((postA, postB) => {
+    if (!postB.date || !postA.date) return 0;
+    // @ts-ignore
+    return new Date(postB.date) - new Date(postA.date);
+  });
+  const latestPost = recentPost[0];
   return findByUrl(latestPost.url);
 }
 
-module.exports = {isContainsTag, latestPostByTags};
+module.exports = {latestPostByTags};
