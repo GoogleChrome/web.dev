@@ -27,7 +27,7 @@ The Pixel 6 Pro has a much _sharper_ display, however: the 6 Pro has a _physical
 Pixel is 1080 × 1920 pixels—that is, the number of hardware pixels that make up the screen itself.
 
 The ratio between a device's logical pixels and physical pixels is the _device pixel ratio_ for that display (DPR). DPR is
-calculated by dividing a viewport's CSS pixels by the device's actual screen resolution.
+calculated by dividing the device's actual screen resolution by a viewport's CSS pixels.
 
 {% Img src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/2YTBM6TXRoEE2Q3XbFhX.png", alt="A DPR of 2 displayed in a console window.", width="800", height="277" %}
 
@@ -211,7 +211,7 @@ If you've spent much time working with responsive layouts, you've likely noticed
 the space an image occupies in a layout is very likely to change across our layout's breakpoints. In that case, you need
 to pass a little more detail along to the browser: `sizes` accepts a comma-separated set of candidates for the rendered size of the
 image, just like `srcset` accepts comma-separated candidates for image sources. Those conditions use the familiar media query syntax.
-This syntax is first-match: as soon as a media condition matches. the browser stops parsing the `sizes` attribute, and the value
+This syntax is first-match: as soon as a media condition matches, the browser stops parsing the `sizes` attribute, and the value
 specified is applied.
 
 Say you have an image meant to occupy 80% of the viewport, minus one `em` of padding on either side, on viewports above 1200px—on
