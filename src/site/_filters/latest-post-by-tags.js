@@ -15,7 +15,7 @@
  */
 
 /**
- * @fileoverview Returns posts filtering by specific tags.
+ * @fileoverview Return the latest post by specific tags.
  */
 
 const {findByUrl} = require('./find-by-url');
