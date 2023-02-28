@@ -100,7 +100,7 @@ const {
   filterInUpcoming,
   filterOutUpcoming,
 } = require('./src/site/_filters/is-upcoming');
-const {latestPostByTags} = require('./src/site/_filters/filter-by-tag');
+const {latestPostByTags} = require('./src/site/_filters/latest-post-by-tags');
 const {calendarLink} = require('./src/site/_filters/calendar-link');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');

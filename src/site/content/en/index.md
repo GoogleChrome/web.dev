@@ -36,6 +36,8 @@ themes:
     cards:
       - latestPostByTags:
           - css
+          - javascript
+          - html
           - dom
         cardLayout: 'vertical'
       - title: 'The CSS Podcast'
@@ -86,8 +88,10 @@ themes:
 
   - category: Performance
     cards:
-      - latestPostByTags:
-          - performance
+      - url: /top-cwv-2023/
+        eyebrow:
+          icon: featured
+          text: Featured
         cardLayout: vertical
         column: '1'
         theme: dark
@@ -110,8 +114,10 @@ themes:
 
   - category: Web Apps
     cards:
-      - latestPostByTags:
-          - web-vitals
+      - url: /learn/pwa/
+        eyebrow:
+          icon: featured
+          text: Featured
         cardLayout: vertical
         column: '1'
       - url: /transformstream/
@@ -135,8 +141,10 @@ themes:
 
   - category: Accessibility
     cards:
-      - latestPostByTags:
-          - accessibility
+      - url: /community-highlight-elisa/
+        eyebrow:
+          icon: blog
+          text: Blog
         cardLayout: vertical
         column: '1'
         theme: pink
@@ -159,9 +167,10 @@ themes:
 
   - category: Payments and Identity
     cards:
-      - latestPostByTags:
-          - payments
-          - identity
+      - url: /payment-and-address-form-best-practices/
+        eyebrow:
+          icon: featured
+          text: Featured
         cardLayout: vertical
       - url: /passkey-registration/
         eyebrow:
@@ -182,8 +191,10 @@ themes:
 
   - category: Ecosystem and community
     cards:
-      - latestPostByTags:
-          - community
+      - url: /advancing-framework-ecosystem-cds-2019/
+        eyebrow:
+          icon: featured
+          text: Featured
         cardLayout: vertical
         theme: blue
       - title: Aurora Project

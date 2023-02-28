@@ -31,11 +31,12 @@ function latestPostByTags(_, tags) {
   for (const tag of tags) {
     // @ts-ignore
     const tagPosts = this.ctx.collections[tag];
-    const candidatePost = tagPosts[tagPosts.length - 1];
+    if (!tagPosts.length) continue;
 
+    const candidatePost = tagPosts[tagPosts.length - 1];
     if (!latestPost) {
       latestPost = candidatePost;
-      return;
+      continue;
     }
 
     if (new Date(candidatePost.date) > new Date(latestPost.date)) {
