@@ -361,7 +361,7 @@ Downloading and rendering web fonts can cause layout shifts in two ways:
 The following tools can help you minimize this:
 
 - [`font-display`](https://developer.chrome.com/docs/lighthouse/performance/font-display/) allows you to modify the rendering behavior of custom fonts with values such as `auto`, `swap`, `block`, `fallback` and `optional`. Unfortunately, all of these values (except [`optional`](http://crrev.com/749080)) can cause a re-layout in one of the above ways.
-- The [Font Loading API](./optimize-webfont-loading/#the-font-loading-api) can reduce the time it takes to get necessary fonts.
+- The [Font Loading API](/optimize-webfont-loading/#the-font-loading-api) can reduce the time it takes to get necessary fonts.
 
 More recommendations for reducing font-related CLS:
 
