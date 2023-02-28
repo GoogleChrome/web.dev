@@ -170,7 +170,7 @@ Pages may wish to include a cropped shot of an image on narrow viewports with th
 
 It's very possible these images could have different aspect ratios and browsers are still evaluating what the most efficient solution here should be, including if dimensions should be specified on all sources.
 
-Chrome and Safari now support setting `width` and `height` on the `source` elements of `<picture>` element:
+Chrome, Firefox and Safari now support setting `width` and `height` on the `source` elements of `<picture>` element:
 
 ```html
 <picture>
@@ -179,8 +179,6 @@ Chrome and Safari now support setting `width` and `height` on the `source` eleme
   <img src="puppy-800w.jpg" alt="Puppy with balloons" width=800 height=400/>
 </picture>
 ```
-
-On Firefox, these extra `width` and `height` attributes on `<source>` elements will currently be ignored and only the `width` and `height` attributes on the `<img>` will be used (even if the image itself is loaded from a `<source>` element). That's not great, but when the responsive image is loaded they will be reset, so it will be given the correct dimensions—just later than on Chrome and Safari.
 
 ## Ads, embeds and iframes without dimensions
 
