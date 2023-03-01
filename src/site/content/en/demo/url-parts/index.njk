@@ -17,8 +17,13 @@ SPDX-License-Identifier: Apache-2.0 -->
   <link rel="canonical" href="https://url-parts.glitch.me">
   <!-- <link rel="manifest" href="manifest.json"> -->
 
-  <link rel="stylesheet" href="/third_party/demos/url-parts/css/main.css">
-  <script type="module" src="/third_party/demos/url-parts/js/main.js" defer></script>
+  <link rel="stylesheet" href="/third_party/demo/url-parts/css/main.css">
+
+  {% include 'partials/script-loader.njk' %}
+  {% set scripts %}
+    loadScript('/third_party/demo/url-parts/js/main.js', 'module');
+  {% endset %}
+  <script>{{ scripts | minifyJs | cspHash | safe }}</script>
 
 
   <meta charset="utf-8">
