@@ -24,8 +24,8 @@ interface WebComponentsType {
 declare global {
   interface Window extends Window {
     inert: boolean;
-    recaptchaLoadCallback: () => void;
-    loadScript: (url: string, type?: string) => void;
+    recaptchaLoadCallback?: () => void;
+    loadScript?: (url: string, type?: string) => void;
   }
 
   var WebComponents: WebComponentsType;
