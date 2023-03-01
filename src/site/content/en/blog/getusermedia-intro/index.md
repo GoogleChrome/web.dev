@@ -18,13 +18,13 @@ For many years we've had to rely on browser plugins ([Flash](http://www.kevinmus
 to get the job done. [Come on!](https://www.youtube.com/watch?v=SP_9zH9Q44o)
 
 HTML5 to the rescue. It might not be apparent, but the rise of HTML5 has brought
-a surge of access to device hardware. [Geolocation](https://www.html5rocks.com/entutorials/geolocation/trip_meter/) (GPS),
-the [Orientation API](https://www.html5rocks.com/entutorials/device/orientation/) (accelerometer), [WebGL](https://www.html5rocks.com/entutorials/webgl/shaders/) (GPU),
-and the [Web Audio API](https://www.html5rocks.com/entutorials/webaudio/intro/) (audio hardware) are perfect examples. These features
+a surge of access to device hardware. [Geolocation](https://caniuse.com/?search=geolocation) (GPS),
+the [Orientation API](https://caniuse.com/screen-orientation) (accelerometer), [WebGL](https://caniuse.com/?search=webgl) (GPU),
+and the [Web Audio API](https://caniuse.com/?search=webgl) (audio hardware) are perfect examples. These features
 are ridiculously powerful, exposing high level JavaScript APIs that sit
 on top of the system's underlying hardware capabilities.
 
-This tutorial introduces a new API, [`navigator.getUserMedia()`][getusermedia-spec], which allows
+This tutorial introduces a new API, [GetUserMedia](https://caniuse.com/?search=webgl), which allows
 web apps to access a user's camera and microphone.
 
 ## The road to getUserMedia()
