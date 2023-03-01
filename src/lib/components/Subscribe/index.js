@@ -33,31 +33,48 @@ class Subscribe extends BaseElement {
     window['recaptchaSuccess'] = this.captchaCheck.bind(this);
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    /** @type {HTMLFormElement} */
-    this.form = this.querySelector('form');
-    const intersectionObserver = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) {
-        return;
+  /**
+   * Called by the IntersectionObserver defined in this#connectedCallback.
+   *
+   * @param {IntersectionObserverEntry[]} entries
+   */
+  onIntersection(entries) {
+    const entry = entries[0];
+    if (!entry.isIntersecting) {
+      return;
+    }
+
+    // can safely assume this.intersectionObserver is defined, since onIntersection is being called
+    this.intersectionObserver.disconnect();
+    window.recaptchaLoadCallback = () => {
+      /** @type {HTMLDivElement} */
+      const recaptchaContainerEl = this.querySelector('.g-recaptcha');
+      // fix for percy re-executing JavaScript with pre-rendered DOM
+      if (!this.hasInitialised) {
+        recaptchaContainerEl.children[0].remove();
+        this.hasInitialised = true;
       }
 
-      intersectionObserver.disconnect();
-      window.recaptchaLoadCallback = () => {
-        /** @type {HTMLDivElement} */
-        const recaptchaContainerEl = this.querySelector('.g-recaptcha');
-        recaptchaContainerEl.children[0].remove();
-        window.grecaptcha.render(recaptchaContainerEl, {
-          sitekey: recaptchaContainerEl.dataset.sitekey,
-        });
-      };
+      window.grecaptcha.render(recaptchaContainerEl, {
+        sitekey: recaptchaContainerEl.dataset.sitekey,
+      });
+    };
 
-      window.loadScript(
-        'https://www.google.com/recaptcha/api.js?onload=recaptchaLoadCallback&render=explicit',
-      );
-    });
+    window.loadScript(
+      'https://www.google.com/recaptcha/api.js?onload=recaptchaLoadCallback&render=explicit',
+    );
+  }
 
-    intersectionObserver.observe(this.form);
+  connectedCallback() {
+    super.connectedCallback();
+    this.hasInitialised = !this.classList.contains('unresolved');
+    /** @type {HTMLFormElement} */
+    this.form = this.querySelector('form');
+    this.intersectionObserver = new IntersectionObserver((entries) =>
+      this.onIntersection(entries),
+    );
+
+    this.intersectionObserver.observe(this.form);
 
     /** @type HTMLElement */
     this.subscribeError = this.querySelector('.subscribe__error');
