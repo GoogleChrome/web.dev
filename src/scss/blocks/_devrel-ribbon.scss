@@ -1,0 +1,64 @@
+// DEVREL RIBBON
+
+@import '../../styles/settings/colors';
+
+.devrel-ribbon {
+  align-items: flex-end;
+  display: flex;
+  height: 100vh;
+  left: 0;
+  outline: 1px solid cyan;
+  position: absolute;
+  z-index: 9;
+
+  @media (min-width: 1000px) {
+    align-items: center;
+    justify-content: center;
+    right: 0;
+  }
+
+  &__ribbon {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    padding: 4px 6px;
+    text-decoration: none;
+    transform: translateY(100%);
+    transition: transform 0.2s ease;
+
+    @media (min-width: 1000px) {
+      bottom: auto;
+      left: auto;
+      right: 14px;
+      top: calc(50% - 60px);
+      transform-origin: right;
+      transform: rotate(-90deg) translateY(100%);
+    }
+
+    &.--visible {
+      transform: translate(0);;
+
+      @media (min-width: 1000px) {
+        transform: rotate(-90deg);
+      }
+    }
+
+    svg {
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+    }
+  
+    span {
+      font-size: 12px;
+      font-family: inherit;
+      color: $WHITE;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: get-color('shades-charcoal');
+    } 
+  }
+}
