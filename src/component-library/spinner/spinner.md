@@ -1,0 +1,1 @@
+To display when content is loading. The `--color` CSS variable can be used to determine the color of the drawn stroke. The CSS `width` property can be used to size the element.
