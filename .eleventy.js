@@ -301,9 +301,8 @@ module.exports = function (config) {
     }
   }
 
-  // Chrometober config
+  // Third party scripts and assets
   config.addPassthroughCopy({
-    'src/site/content/en/demos': 'demos',
     'src/site/content/en/third_party/': 'third_party',
   });
 
