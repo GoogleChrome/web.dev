@@ -24,11 +24,13 @@ Imagine you have a bunch of items you plan to buy during your next grocery trip.
 </ul>
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYzrEOW',
   tab: 'result'
 } %}
+</figure>
 
 ## Creating a List
 
@@ -64,13 +66,15 @@ And description lists are created with `<dl>`, however this list type does not u
 </dl>
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNOrZNG',
   tab: 'result'
 } %}
+</figure>
 
-## List Styles
+## List styles
 {% BrowserCompat 'css.properties.list-style-position' %}
 
 Now that you know how to make a list, you can style them. The first CSS properties to discover are those that are applied to the entire list.
@@ -83,11 +87,13 @@ There are three list-style properties you can use to style your example: `list-s
 
 {% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/qVlpVCrwKwbGjEJdmqh0.jpg", alt="A list with both outside and inside ::marker which shows that outside (default value) is not in the list-item and is inside the list-item content box.", width="800", height="270" %}
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExXPwxL',
   tab: 'result'
 } %}
+</figure>
 
 ### `list-style-image`
 
@@ -95,11 +101,13 @@ There are three list-style properties you can use to style your example: `list-s
 
 Let's look at how we can add an image of each of our grocery items as the `list-style-image`:
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GREoMgK',
   tab: 'css,result'
 } %}
+</figure>
 
 {% Aside %}
 This property is a bit limited in controlling the position, size, etc. of the bullets, so we recommend using the [`::marker`](#marker-pseudo) property for a more customizable approach.
@@ -109,11 +117,13 @@ This property is a bit limited in controlling the position, size, etc. of the bu
 
 The final option is to style the [`list-style-type`](https://developer.mozilla.org/docs/Web/CSS/list-style-type) which changes the bullet points to known style keywords, custom strings, emojis and more. You can view all of the possible list style types [here](https://developer.mozilla.org/docs/Web/CSS/list-style-type ).
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'jOwWGEy',
   tab: 'css,result'
 } %}
+</figure>
 
 ### `list-style` shorthand
 
@@ -153,19 +163,21 @@ list-style: unset;
 
 This is the most commonly used property of the list styles covered in this section. One common application is `list-style: none` to hide default styles. Default styles come from the browser, and you often see reset stylesheets removing list styles like padding and margins. You can also use this shorthand to set styles, like `list-style: square inside;`
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'eYRJGme',
   tab: 'result'
 } %}
+</figure>
 
 So far, the examples have focused on styling an entire list and list items, but what about a more granular approach?
 
-## ::marker pseudo
+## `::marker` pseudo-element
 
 The `list-item` marker element is the bullet, hyphen, or roman numeral that helps indicate each item in your list.
 
-{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/pOWTl4BYyJI7qgbMVeYu.jpg", alt="A list with three items which shows that each of the bullets are ::marker pseudo elements.", width="800", height="395" %}
+{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/pOWTl4BYyJI7qgbMVeYu.jpg", alt="A list with three items which shows that each of the bullets are ::marker pseudo-elements.", width="800", height="395" %}
 
 If you inspect the list in DevTools, you can see a `::marker` element for each of the list items, despite not declaring any in HTML. If you inspect the `::marker` further, you'll see the browser default styling for it.
 
@@ -182,23 +194,25 @@ If you inspect the list in DevTools, you can see a `::marker` element for each o
 
 When you declare a list, each item is given a marker, despite there being no bullet point or roman numeral in your HTML. This is  a pseudo-element because the browser generates it for you, and provides a limited styling API to target it. [Learn more about the anatomy of the CSS bullet.](/css-marker-pseudo-element/) `::marker` currently has [limited support](https://developer.mozilla.org/docs/Web/CSS/::marker#browser_compatibility) in Safari.
 
-### Marker Box
+### Marker box
 
 In the CSS layout model, list item markers are represented by a marker box associated with each list item. The marker box is the container which typically contains the bullet or number.
 
 To style the marker box, you can use the `::marker` selector. This allows you to select just the marker instead of styling based on the entire list.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'jOwWGPy',
   tab: 'css,result'
 } %}
+</figure>
 
 {% Aside %}
-Note: ::marker elements precede any pseudo-elements that you may have inserted using CSS `::before`.
+Note: `::marker` elements precede any pseudo-elements that you may have inserted using CSS `::before`.
 {% endAside %}
 
-### Marker Styles
+### Marker styles
 
 Now that you have selected the marker, let's look at the styling properties available to this selector. You can learn more about [Custom bullets with CSS ::marker](/css-marker-pseudo-element/) on web.dev.
 
@@ -213,27 +227,31 @@ There are quite a few allowed CSS `::marker` Properties:
 - `unicode-bidi`
 - `white-space`
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'eYRJGNy',
   tab: 'result'
 } %}
+</figure>
 
 {% Aside %}
 In ordered lists, the bullets default to numbers. The `::marker` content value is a use case for [counters](https://developer.mozilla.org/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) to create custom numbering.
 {% endAside %}
 
-## Display Type
+## Display type
 
 All of our `list-style` and `::marker` properties know to style `<li>` elements because they have a default display value of list-item. You can also make things that aren't an `<li>` into a list item.
 
 You do this by adding the property `display: list-item`. One example of using `display: list-item` is if you want a hanging bullet on a heading, so that you can change it to something else with `::marker`. The following example shows a heading using `display: list-item` for styling purposes, with a list using correct list markup below.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExXPwjR',
   tab: 'css,result'
 } %}
+</figure>
 
 While you can turn anything into a list-item view with `display`, you should not use this instead of using correct list markup, if the content you are styling really is a list. Changing the visual appearance of an item to a list item does not change how accessibility services read and recognize the item, so it will not be read as a list item to screen readers or switch devices. You should always use semantic markup and create lists with `<li>` whenever possible.
 

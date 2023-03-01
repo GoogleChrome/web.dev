@@ -64,8 +64,9 @@ The `description` value, however, is super important for SEO; in addition to hel
 
 ```html
 <meta name="description"
-content="Register for a machine learning workshop at our school for machines who can't learn good and want to do other stuff good too" />
+  content="Register for a machine learning workshop at our school for machines who can't learn good and want to do other stuff good too" />
 ```
+
 If the second half of our description makes no sense to you, you probably haven't seen the movie [Zoolander](https://www.youtube.com/watch?v=NQ-8IuUkJJc).
 
 #### Robots
@@ -206,7 +207,7 @@ Your HTML now looks something like this:
     <link rel="manifest" href="/mlwmanifest.json" />
   </head>
   <body>
-    
+
     <!-- <script defer src="scripts/lightswitch.js"></script>-->
   </body>
 </html>

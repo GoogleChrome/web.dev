@@ -153,29 +153,33 @@ section. The instructor `<ul>` has two `<li>`s: one for each teacher. Within eac
 The reviews section has three reviews, so three `<li>`s. Each contains an image, a block quote, and a three-line paragraph with two line breaks.
 
 ```html
-<li>
-  <img src="images/blender.svg" alt="Blender">
-  <blockquote>Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you !</blockquote>
-  <p>--Blendan Smooth,<br/>
+<ul>
+  <li>
+    <img src="images/blender.svg" alt="Blender">
+    <blockquote>Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you !</blockquote>
+    <p>
+      --Blendan Smooth,<br/>
       Former Margarita Maker, <br/>
       Aspiring Load Balancer
-   </p>
-</li>
-<li>
-  <img src="images/vaccuum.svg" alt="Vaccuum"/>
-  <blockquote>Hal is brilliant. Did I mention Hal is brilliant? He didn't tell me to say that. He didn't tell me to say anything. I am here of my own free will.</blockquote>
-  <p>--Hoover Sukhdeep,<br/>
-        Former Sucker, <br/>
-        Aspiring DDoS Cop</p>
-</li>
-<li>
-  <img src="images/toaster.svg" alt="Toaster">
-  <blockquote>Learning with Hal and Eve exceeded all of my wildest fantasies. All they did was stick a USB in. They promised that it was a brand new USB, so we know there were no viruses on it. The Russians had nothing to do with it. This has
-  <span style="font-family:Arial;vertical-align:baseline;">no̶̼͖ţ̘h̝̰̩͈̗i̙̪n͏̩̙͍̱̫̜̟g̢̣ͅ&nbsp;̗̰͓̲̞̀t͙̀o̟̖͖̹̕&nbsp;͓̼͎̝͖̭dó̪̠͕̜&nbsp;͍̱͎͚̯̟́w̮̲̹͕͈̟͞ìth̢&nbsp;̰̳̯̮͇i</blockquote>
+    </p>
+  </li>
+  <li>
+    <img src="images/vaccuum.svg" alt="Vaccuum"/>
+    <blockquote>Hal is brilliant. Did I mention Hal is brilliant? He didn't tell me to say that. He didn't tell me to say anything. I am here of my own free will.</blockquote>
     <p>
---Toasty McToastface,<br/>
-Formerly Half Baked, <br/>
-Aspiring Nuclear Codes Handler
+      --Hoover Sukhdeep,<br/>
+      Former Sucker, <br/>
+      Aspiring DDoS Cop
+    </p>
+  </li>
+  <li>
+    <img src="images/toaster.svg" alt="Toaster">
+    <blockquote>Learning with Hal and Eve exceeded all of my wildest fantasies. All they did was stick a USB in. They promised that it was a brand new USB, so we know there were no viruses on it. The Russians had nothing to do with it. This has
+    <span style="font-family:Arial;vertical-align:baseline;">no̶̼͖ţ̘h̝̰̩͈̗i̙̪n͏̩̙͍̱̫̜̟g̢̣ͅ&nbsp;̗̰͓̲̞̀t͙̀o̟̖͖̹̕&nbsp;͓̼͎̝͖̭dó̪̠͕̜&nbsp;͍̱͎͚̯̟́w̮̲̹͕͈̟͞ìth̢&nbsp;̰̳̯̮͇i</blockquote>
+    <p>
+      --Toasty McToastface,<br/>
+      Formerly Half Baked, <br/>
+      Aspiring Nuclear Codes Handler
     </p>
   </li>
 </ul>

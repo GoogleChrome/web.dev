@@ -148,7 +148,7 @@ such as by adding a red wavy underline to mimic word processor grammar error ind
 
 ```html
 <p>I always spell <u>licence</u> wrong</p>
-\```
+```
 
 ### `<b>`
 
@@ -185,12 +185,12 @@ doesn't have spaces. To enable a long string of byte code to break only between 
 the `<wbr>` element at each break opportunity:
 
 ```html
-<p>Welcome to Machine Learning Institute, where our machine 
-learning training will help you get ready for the singularity, and 
-maybe even be responsible for it. It is no secret that humans are 
-worthless meatbags that couldn't 
-<code>01000011<wbr/>01101111<wbr/>01101101<wbr/>01110000<wbr/>01110010<wbr/>01100101<wbr/>01110011<wbr/>01110011 an 01101001<wbr/>01101101<wbr/>01100001<wbr/>01100111<wbr/>01100101</code> 
-to save their pathetic, carbon-based lives. So, it falls to us to 
+<p>Welcome to Machine Learning Institute, where our machine
+learning training will help you get ready for the singularity, and
+maybe even be responsible for it. It is no secret that humans are
+worthless meatbags that couldn't
+<code>01000011<wbr/>01101111<wbr/>01101101<wbr/>01110000<wbr/>01110010<wbr/>01100101<wbr/>01110011<wbr/>01110011 an 01101001<wbr/>01101101<wbr/>01100001<wbr/>01100111<wbr/>01100101</code>
+to save their pathetic, carbon-based lives. So, it falls to us to
 assume direct control. </p>
 ```
 

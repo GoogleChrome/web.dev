@@ -25,15 +25,15 @@ If you put little to no thought into the semantics for our header, you might use
 ```html
 <!-- start header -->
 <div id="pageHeader">
-    <div id="title">Machine Learning Workshop</div>
-    <!-- navigation -->
-    <div id="navigation">
-       <a href="#reg">Register</a>
-      <a href="#about">About</a>
-       <a href="#teachers">Instructors</a>
-       <a href="#feedback">Testimonials</a>
-    </div>
-    <!-- end navigation bar -->
+  <div id="title">Machine Learning Workshop</div>
+  <!-- navigation -->
+  <div id="navigation">
+    <a href="#reg">Register</a>
+    <a href="#about">About</a>
+    <a href="#teachers">Instructors</a>
+    <a href="#feedback">Testimonials</a>
+  </div>
+  <!-- end navigation bar -->
 </div>
 <!-- end of header -->
 ```
@@ -47,14 +47,14 @@ You can include `role` attributes to provide semantics to create a good accessib
 ```html
 <!-- start header -->
 <div role="banner">
-    <div role="heading" aria-level="1">Machine Learning Workshop</div>
-    <div role="navigation">
-       <a href="#reg">Register</a>
-     <a href="#about">About</a>
-       <a href="#teachers">Instructors</a>
-       <a href="#feedback">Testimonials</a>
-    </div>
-    <!-- end navigation bar -->
+  <div role="heading" aria-level="1">Machine Learning Workshop</div>
+  <div role="navigation">
+    <a href="#reg">Register</a>
+    <a href="#about">About</a>
+    <a href="#teachers">Instructors</a>
+    <a href="#feedback">Testimonials</a>
+  </div>
+  <!-- end navigation bar -->
 <div>
 <!-- end of header -->
 ```
@@ -65,13 +65,13 @@ If you know HTML, all you have to do is think about the purpose of the content. 
 
 ```html
 <header>
-    <h1>Machine Learning Workshop</h1>
-    <nav>
-      <a href="#reg">Register</a>
-     <a href="#about">About</a>
-      <a href="#teachers">Instructors</a>
-      <a href="#feedback">Testimonials</a>
-    </nav>
+  <h1>Machine Learning Workshop</h1>
+  <nav>
+    <a href="#reg">Register</a>
+    <a href="#about">About</a>
+    <a href="#teachers">Instructors</a>
+    <a href="#feedback">Testimonials</a>
+  </nav>
 </header>
 ```
 
@@ -124,11 +124,11 @@ A layout with a header, two sidebars, and a  footer, is known as the [holy grail
 
 ```html
 <body>
-    <header>Header</header>
-    <nav>Nav</nav>
-    <main>Content</main>
-    <aside>Aside</aside>
-    <footer>Footer</footer>
+  <header>Header</header>
+  <nav>Nav</nav>
+  <main>Content</main>
+  <aside>Aside</aside>
+  <footer>Footer</footer>
 </body>
 ```
 
@@ -136,14 +136,14 @@ If you are creating a blog, you might have a series of articles in `<main>`:
 
 ```html
 <body>
-    <header>Header</header>
-    <nav>Nav</nav>
-    <main>
-	<article>First post</article>
-	<article>Second post</article>
-    </main>
-    <aside>Aside</aside>
-    <footer>Footer</footer>
+  <header>Header</header>
+  <nav>Nav</nav>
+  <main>
+    <article>First post</article>
+    <article>Second post</article>
+  </main>
+  <aside>Aside</aside>
+  <footer>Footer</footer>
 </body>
 ```
 
@@ -174,7 +174,7 @@ A `<section>` isn't a landmark unless it has an accessible name; if it has an ac
 
 There are six section heading elements: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, and `<h6>`.  Each represents one of the six levels of section headings, with `<h1>` being the highest or most important section level, and `<h6>` the lowest.
 
-When a heading is nested in a document banner `<header>`, it is the heading for the application or site. When nested in `<main>`, whether or not it is nested within a `<header>` in `<main>`, it is the header for that page, not the whole site. When nested in an `<article>` or `<section>`, it is the header for that subsection of the page. 
+When a heading is nested in a document banner `<header>`, it is the heading for the application or site. When nested in `<main>`, whether or not it is nested within a `<header>` in `<main>`, it is the header for that page, not the whole site. When nested in an `<article>` or `<section>`, it is the header for that subsection of the page.
 
 {% Codepen {
   user: 'web-dot-dev',

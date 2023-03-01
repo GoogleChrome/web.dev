@@ -470,8 +470,8 @@ few guiding principles:
   boxes](https://css-tricks.com/aspect-ratio-boxes/).** This approach ensures
   that the browser can allocate the correct amount of space in the document
   while the image is loading. Note that you can also use the [unsized-media
-  feature
-  policy](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/unsized-media.md)
+  permissions
+  policy](https://github.com/w3c/webappsec-permissions-policy/blob/main/policies/unsized-media.md)
   to force this behavior in browsers that support feature policies.
 - **Never insert content above existing content, except in response to a user
   interaction.** This ensures any layout shifts that occur are expected.

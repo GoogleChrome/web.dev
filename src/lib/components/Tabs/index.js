@@ -14,6 +14,7 @@ export class Tabs extends BaseElement {
       label: {type: String},
       activeTab: {type: Number, reflect: true},
       overflow: {type: Boolean, reflect: true},
+      limit: {type: Number, reflect: true},
     };
   }
 
@@ -25,6 +26,7 @@ export class Tabs extends BaseElement {
     this.prerenderedChildren = null;
     this.tabs = null;
     this.idSalt = generateIdSalt('web-tab-');
+    this.limit = this.children.length;
 
     this.onResize = this.onResize.bind(this);
     this._changeTab = this._changeTab.bind(this);
@@ -33,6 +35,7 @@ export class Tabs extends BaseElement {
     this.nextTab = this.nextTab.bind(this);
     this.firstTab = this.firstTab.bind(this);
     this.lastTab = this.lastTab.bind(this);
+    this.onClickLoadMore = this.onClickLoadMore.bind(this);
   }
 
   render() {
@@ -40,8 +43,14 @@ export class Tabs extends BaseElement {
       this.prerenderedChildren = [];
       this.tabs = [];
       let i = 1;
-
       for (const child of this.children) {
+        if (this.limit && i === this.limit + 1) {
+          this.tabs.push(this.loadMoreTab());
+          this.prerenderedChildren.push(
+            html`<div class="web-tabs__panel" role="tabpanel" hidden></div>`,
+          );
+        }
+
         // Set id and aria-labelledby attributes for each panel for a11y.
         this.prerenderedChildren.push(this.panelTemplate(i, child));
         // Get tab label from child data-label attribute
@@ -62,6 +71,27 @@ export class Tabs extends BaseElement {
       </div>
       ${this.prerenderedChildren}
     `;
+  }
+
+  loadMoreTab() {
+    return html`
+      <button
+        class="web-tabs__tab gc-analytics-event expendableTab"
+        @click=${this.onClickLoadMore}
+      >
+        <span class="web-tabs__text-label">More...</span>
+      </button>
+    `;
+  }
+
+  onClickLoadMore(e) {
+    const tab = e.currentTarget;
+    const parentTabs = tab.parentElement;
+
+    const extendTabs = parentTabs.querySelectorAll('.web-tabs__tab.hidden');
+    extendTabs.forEach((tab) => tab.classList.remove('hidden'));
+
+    tab.classList.add('hidden');
   }
 
   tabTemplate(i, tabLabel) {
@@ -87,7 +117,9 @@ export class Tabs extends BaseElement {
         @click=${this.onFocus}
         @focus=${this.onFocus}
         @keydown=${this.onKeydown}
-        class="web-tabs__tab gc-analytics-event"
+        class="web-tabs__tab
+        gc-analytics-event
+        ${i > this.limit ? 'hidden' : ''}"
         role="tab"
         aria-selected="false"
         id="web-tab-${this.idSalt}-${i}"

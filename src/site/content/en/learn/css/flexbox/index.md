@@ -19,11 +19,13 @@ this pattern works great,
 but where space is condensed,
 that rigid layout can become problematic.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'poRENWv',
   height: 420
 } %}
+</figure>
 
 The Flexible Box Layout Model (flexbox) is a layout model designed for one-dimensional content.
 It excels at taking a bunch of items which have different sizes,
@@ -36,11 +38,13 @@ Instead of setting rigid dimensions for the browser to follow,
 with flexbox,
 you can instead provide flexible boundaries to hint how the content could display.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'xxgERMp',
   height: 400
 } %}
+</figure>
 
 ## What can you do with a flex layout?
 
@@ -148,10 +152,12 @@ To change the direction, add the property and one of the four values:
 
 You can try out all of the values using our group of items in the demo below.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgKNXq'
 } %}
+</figure>
 
 ### Reversing the flow of items and accessibility
 
@@ -191,20 +197,24 @@ This means that if you are working in Arabic,
 which has a right-to-left (rtl) script direction, the items will line up on the right.
 Tab order would also begin on the right as this is the way sentences are read in Arabic.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExZgwWN'
 } %}
+</figure>
 
 If you are working with a vertical writing mode,
 like some Japanese typefaces, then a row will run vertically, from top to bottom.
 Try changing the `flex-direction` in this demo which is using a vertical writing mode.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'qBRaPXX',
   height: 600
 } %}
+</figure>
 
 Therefore the way flex items behave by default is linked to the writing mode of the document.
 Most tutorials are written using English, or another horizontal,
@@ -254,12 +264,13 @@ To cause the items to wrap add `flex-wrap: wrap` to the flex container.
   flex-wrap: wrap;
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNRGdNZ',
   height: 601
 } %}
+</figure>
 
 When a flex container wraps it creates multiple **flex lines**.
 In terms of space distribution,
@@ -298,10 +309,12 @@ The `flex` shorthand property,
 or the longhands of `flex-grow`, `flex-shrink` and `flex-basis` are applied to the children of the
 flex container.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'LYxRebE'
 } %}
+</figure>
 
 To cause the items to grow,
 while allowing large items to have more space than small ones use `flex:auto`.
@@ -346,10 +359,12 @@ One part is given to the first item,
 two parts to the second,
 three parts to the third.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJWRzEz'
 } %}
+</figure>
 
 You can do the same thing from a `flex-basis` of `auto`, though you will need to specify the three
 values.
@@ -382,10 +397,12 @@ If more than one item has the same value it will be displayed with the other ite
 
 The example below demonstrates this ordering.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'NWdRXoL'
 } %}
+</figure>
 
 {% Aside 'warning' %}
 Using `order` has the same problems as the `row-reverse` and `column-reverse`
@@ -414,8 +431,8 @@ The properties which distribute space are:
 
 The properties used for alignment in flexbox:
 
-- `align-self`: aligns a single item on the cross axis
-- `align-items`: aligns all of the items as a group on the cross axis
+- `align-self`: aligns a single item on the cross axis.
+- `align-items`: aligns all of the items as a group on the cross axis.
 
 If you are working on the main axis then the properties begin with `justify-`.
 On the cross axis they begin with `align-`.
@@ -445,10 +462,12 @@ Try some of the values in the demo,
 and [see MDN](https://developer.mozilla.org/docs/Web/CSS/justify-content) for the full set of
 possible values.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjERpGb'
 } %}
+</figure>
 
 {% Aside %}
 For the `justify-content` property to do anything you have to have spare space in your container on
@@ -466,11 +485,13 @@ Otherwise you won't have spare space to distribute.
 
 Try the different values, this time with a flexbox column layout.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgwLgz',
   height: 600
 } %}
+</figure>
 
 ## Distributing space between flex lines
 
@@ -490,10 +511,12 @@ Try this out in the demo.
 The example has wrapped lines of flex items,
 and the container has a `block-size` in order that we have some spare space.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'poREawo'
 } %}
+</figure>
 
 ### The `place-content` shorthand
 
@@ -551,11 +574,13 @@ The last item defines the height of the flex container.
 The first item has the `align-self` property with a value of `flex-start`.
 Try changing the value on that property to see how it moves within its space on the cross axis.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'RwKGQee',
   height: 600
 } %}
+</figure>
 
 The `align-self` property is applied to individual items.
 The `align-items` property can be applied to the flex container
@@ -571,11 +596,13 @@ to set all of the individual `align-self` properties as a group.
 In this next demo try changing the value of `align-items` to align all of the items on the cross
 axis as a group.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWdKmby',
   height: 600
 } %}
+</figure>
 
 ## Why is there no justify-self in flexbox?
 
@@ -594,10 +621,12 @@ In the example below the last item has a left margin of `auto`.
 The auto margin absorbs all space in the direction it is applied.
 This means that it pushes the item over to the right, thus splitting the groups.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'poRELbR'
 } %}
+</figure>
 
 ## How to center an item vertically and horizontally
 

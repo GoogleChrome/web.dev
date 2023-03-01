@@ -15,11 +15,13 @@ tags:
 
 When content extends beyond its parent, there are many options for how you can handle it. You can scroll to add additional space, clip the overflowing edges, indicate the cut-off with an ellipsis, and so much more. Overflow is especially important to consider when developing for phone applications and multiple screen sizes.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'LYjEjWZ',
   tab: 'result'
 } %}
+</figure>
 
 There are two different clipping options in CSS; `text-overflow` will help with individual lines of text, and the `overflow` properties will help control overflow in the box model.
 
@@ -35,29 +37,35 @@ p {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNwQXyN',
   tab: 'result'
 } %}
+</figure>
 
 ## Using overflow properties
 
 Overflow properties are set on an element to control what happens when its children need more space than it has available. This can be intentional, like in an interactive map like Google Maps, where a user pans around a large image clipped to a specific size. It can also be unintentional like in a chat application where the user types a lengthy message that doesn’t fit in the text bubble.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKvwvXE',
   tab: 'result'
 } %}
+</figure>
 
 You can think of the overflow in two parts. The parent element has a firmly constrained space that will not change. You can think of this as a window. The child elements are content that want more space from the parent. You can think of this as what you are looking through the window at. Managing overflow will help guide how the window frames this content.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'xxrmxOm',
   tab: 'result'
 } %}
+</figure>
 
 ### Scrolling on the vertical and horizontal axis
 
@@ -65,11 +73,13 @@ The `overflow-y` property controls physical overflow along the vertical axis of 
 
 The `overflow-x` property controls overflow along the horizontal axis of the device viewport, therefore scrolling left and right.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzQdzoG',
   tab: 'css,result'
 } %}
+</figure>
 
 ### Logical properties for scroll direction
 {% BrowserCompat 'css.properties.overflow-inline' %}
@@ -105,11 +115,13 @@ Let's take a closer look at the [values and keywords](https://developer.mozilla.
 `overflow: auto`
 : Finally, the value most commonly used, `overflow: auto`. This respects the user's preferences and shows scrollbars if needed, but hides them by default, and gives responsibility for scrolling to the user and browser.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'gORZaaa',
   tab: 'result'
 } %}
+</figure>
 
 {% Aside %}
 Using the `overflow` property with a value other than `visible` creates a [block formatting context](https://developer.mozilla.org/docs/Web/Guide/CSS/Block_formatting_context).
@@ -149,11 +161,13 @@ In [Using CSS to Enforce Accessibility](https://adrianroselli.com/2021/06/using-
 
 Scroll bars take up space within the padding box and can compete for space if `inline` and not `overlayed`. The [box model module](/learn/css/box-model/#the-areas-of-the-box-model) expands more on this potential source of layout shift.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BaReoEV',
   tab: 'result'
 } %}
+</figure>
 
 ### root-scroller vs implicit-scroller
 
@@ -190,22 +204,26 @@ This is especially useful when used with [prefers-reduced-motion](https://develo
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'oNwJgae',
   tab: 'result'
 } %}
+</figure>
 
 ### overscroll-behavior
 {% BrowserCompat 'css.properties.overscroll-behavior' %}
 
 If you’ve ever reached the end of a modal overlay, then continued scrolling and had the page behind the overlay move, this is the scroll chaining, or bubbling up to the parent scroll container. The [`overscroll-behavior`](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) property allows you to prevent overflow scrolling leaking into a parent container (called scroll chaining).
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'powqJQe',
   tab: 'result'
 } %}
+</figure>
 
 {% Assessment 'overflow' %}
 

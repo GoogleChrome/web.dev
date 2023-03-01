@@ -93,6 +93,12 @@ learn_html:
   description:
     en: "This HTML course for web developers provides a solid overview for developers, from novice to expert level HTML."
 
+learn_privacy:
+   title:
+    en: Learn Privacy!
+   description:
+    en: "A course to help you build more privacy-preserving websites."
+
 learn_images:
   title:
     en: Learn Images!
@@ -124,3 +130,4 @@ example:
     en: Example course
   description:
     en: This page is used for visual testing of the courses layout and also showcases it's capabilities"
+

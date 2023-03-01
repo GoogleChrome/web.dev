@@ -34,10 +34,11 @@ platformNews:
 themes:
   - category: CSS and UI
     cards:
-      - url: /new-patterns-july-2022/
-        eyebrow:
-          icon: featured
-          text: Featured
+      - latestPostByTags:
+          - css
+          - javascript
+          - html
+          - dom
         cardLayout: 'vertical'
       - title: 'The CSS Podcast'
         description: Follow Una Kravets and Adam Argyle, Developer Advocates from Google, who gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.

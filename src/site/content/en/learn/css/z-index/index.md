@@ -46,28 +46,34 @@ If no `z-index` is set on your elements
 then the default behaviour is that document source order dictates the Z axis.
 This means that elements further down the document sit on top of elements that appear before them.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrMEjZ'
 } %}
+</figure>
 
 In normal flow,
 if you set a specific value for `z-index` and it isn't working,
 you need to set the element's `position` value to anything other than `static`.
 This is a common place where people struggle with `z-index`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgoRzv'
 } %}
+</figure>
 
 This isn't the case if you are in a flexbox or grid context, though,
 because you can modify the z-index of flex or grid items without adding `position: relative`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWdqMOP'
 } %}
+</figure>
 
 ## Negative z-index
 
@@ -88,11 +94,13 @@ add a negative value for `z-index`.
 As long as `.my-element` has the initial value for `z-index` of `auto`,
 the `.child` element will sit behind it.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'XWpeayj',
   height: 400
 } %}
+</figure>
 
 Add the following CSS to `.my-element`,
 and the `.child` element will not sit behind it.
@@ -105,11 +113,13 @@ and the `.child` element will not sit behind it.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgorZy',
   height: 400
 } %}
+</figure>
 
 Because `.my-element` now has a `position` value that's not `static`
 and a `z-index` value that's not `auto`,
@@ -121,11 +131,13 @@ it would still not sit behind `.my-parent`.
 
 A stacking context is a group of elements that have a common parent and move up and down the z axis together.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjErOXV',
   height: 600
 } %}
+</figure>
 
 In this example,
 the first parent element has a `z-index` of `1`,

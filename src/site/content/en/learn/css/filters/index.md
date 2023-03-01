@@ -17,10 +17,12 @@ frosted glass effect that sits over the top of an image.
 The text needs to be live text and not an image.
 How do you do that?
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKaQLoL'
 } %}
+</figure>
 
 A combination of CSS filters and the `backdrop-filter`
 allow us to apply effects and blur what's needed in real time.
@@ -58,12 +60,13 @@ This needs to be a length unit, like `10px`. Percentages are not accepted.
 	filter: blur(0.2em);
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'VwPQJwX',
   height: 450
 } %}
+</figure>
 
 ### `brightness`
 
@@ -88,11 +91,13 @@ instead of percentage values in filters like `brightness`.
 To set 80% brightness with a decimal, write `0.8`.
 {% endAside %}
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKaQjpp',
   height: 450
 } %}
+</figure>
 
 ### `contrast`
 
@@ -106,11 +111,13 @@ Set a value between 0% and 100% to decrease or increase the contrast, respective
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNjJEOW',
   height: 450
 } %}
+</figure>
 
 ### `grayscale`
 
@@ -128,11 +135,13 @@ If you pass a value greater than 100%, it will be capped at 100%.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJQMKe',
   height: 450
 } %}
+</figure>
 
 ### `invert`
 {% BrowserCompat 'css.types.filter-function.invert' %}
@@ -150,11 +159,13 @@ the element will be completely inverted.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLgvdOO',
   height: 450
 } %}
+</figure>
 
 ### `opacity`
 
@@ -170,11 +181,13 @@ If you pass no arguments, the element is fully visible.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'RwKQzae',
   height: 450
 } %}
+</figure>
 
 ### `saturate`
 
@@ -191,11 +204,13 @@ Instead of increasing or decreasing the brightness effect,
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BapYgQg',
   height: 450
 } %}
+</figure>
 
 ### `sepia`
 
@@ -213,11 +228,13 @@ Passing no arguments adds a full sepia effect (equivalent to `sepia(100%)`).
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNRMqpb',
   height: 450
 } %}
+</figure>
 
 ### `hue-rotate`
 
@@ -235,11 +252,13 @@ changing the part of the color wheel it references. If you pass no argument, it 
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExZQBWw',
   height: 450
 } %}
+</figure>
 
 ### `drop-shadow`
 
@@ -258,12 +277,13 @@ but the `inset` keyword and spread value are not supported.
 	filter: drop-shadow(5px 5px 10px orange);
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'PoWQrJr',
   height: 450
 } %}
+</figure>
 
 Learn more about the different types of shadows in the [shadows](/learn/css/shadows) module.
 
@@ -275,11 +295,13 @@ The `url` filter allows you to apply an SVG filter from a linked SVG element or 
 You can
 [read more about SVG filters here](https://developer.mozilla.org/docs/Web/SVG/Element/filter)
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRNgyp',
   height: 450
 } %}
+</figure>
 
 ## Backdrop filter
 
@@ -295,9 +317,11 @@ The example right at the start of this lesson is the perfect example,
 because you don't want the text to be blurred and ideally you don't want to have to add extra HTML elements.
 Being able to apply filters only to the backdrop enables that.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKaQLoL'
 } %}
+</figure>
 
 {% Assessment 'filters' %}

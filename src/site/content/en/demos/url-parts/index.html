@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+
+<!-- Copyright 2023 Google LLC.
+SPDX-License-Identifier: Apache-2.0 -->
+
+<html lang="en">
+
+<head>
+
+  <title>URL parts</title>
+
+  <link rel="apple-touch-icon" href="images/icons/icon180.png">
+  <link rel="shortcut icon" href="images/icons/icon72.png">
+  <link href="favicon.ico" rel="shortcut icon">
+
+  <link rel="canonical" href="https://url-parts.glitch.me">
+  <!-- <link rel="manifest" href="manifest.json"> -->
+
+  <link rel="stylesheet" href="/third_party/demos/url-parts/css/main.css">
+  <script type="module" src="/third_party/demos/url-parts/js/main.js" defer></script>
+
+
+  <meta charset="utf-8">
+  <meta id="theme-color" name="theme-color" content="#fff">
+  <meta itemprop="image" content="images/icons/icon192.png">
+  <meta itemprop="name" content="Interactive tool for showing the names of URL components">
+  <meta name="author" content="https://samdutton.com">
+  <meta name="description" content="Interactive tool for showing the names of URL components">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="https://url-parts.glitch.me/images/icons/icon256.png">
+  <meta property="og:site_name" content="url-parts.glitch.me">
+  <meta property="og:title" content="url-parts.glitch.me">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://url-parts.glitch.me">
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Organization",
+      "name": "url-parts.glitch.me",
+      "logo": "https://url-parts.glitch.me/images/icons/icon256.png",
+      "url": "https://url-parts.glitch.me"
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "url-parts.glitch.me",
+      "url": "https://url-parts.glitch.me"
+    }
+  </script>
+
+  <base target="_blank">
+
+</head>
+
+<body>
+
+  <main>
+
+<!--     <h1>URL parts</h1>
+ -->
+    <div id="container">
+<!--       <p>View the site, origin, and other parts of a URL.</p> -->
+      <label for="url">URL:</label>
+      <input id="url" autofocus autocomplete="off" autocapitalize="off" value="https://foo.com.au:1234/bar/foo.html#bar">
+      <div id="url-parts"></div>
+    </div>
+
+  </main>
+
+</body>
+
+</html>

@@ -40,9 +40,9 @@ HTML is very, very forgiving. For example, if we omit the closing `</li>` tags, 
 
 ```html
 <ul>
-    <li>Blendan Smooth
-    <li>Hoover Sukhdeep
-    <li>Toasty McToastface
+  <li>Blendan Smooth
+  <li>Hoover Sukhdeep
+  <li>Toasty McToastface
 </ul>
 ```
 
@@ -85,6 +85,7 @@ Output of the above HTML:
 
 <input type="range">
 <img src="https://machinelearningworkshop.com/svg/switch2.svg" alt="light switch" style="max-width: 200px;">
+
 Replaced elements and void elements are often confused. Void elements are all self-closing elements and are represented by one tag. This means there is no such thing as a closing tag for a void element. Optionally, you can include a slash at the end of the tag, which many people find makes markup easier to read. Continuing with this example, we self close the tag with a slash:
 
 ```html

@@ -18,11 +18,13 @@ How do you do that?
 You can use an `:invalid` CSS pseudo-class,
 which is one of many browser-provided pseudo-classes.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWdMGjE',
   height: 250
 } %}
+</figure>
 
 A pseudo-class lets you apply styles based on state changes and external factors.
 This means that your design can react to user input such as an invalid email address.
@@ -47,11 +49,13 @@ you can hook on to that state with
 [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) to apply styles.
 This is a useful way to hint that an element can be interacted with.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYgJyNP',
   height: 250
 } %}
+</figure>
 
 ### `:active`
 {% BrowserCompat 'css.selectors.active' %}
@@ -61,11 +65,13 @@ such as a click—before click is released.
 If a pointing device like a mouse is used,
 this state is when the click starts and hasn't yet been released.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNxpam',
   height: 250
 } %}
+</figure>
 
 ### `:focus`, `:focus-within`, and `:focus-visible`
 {% BrowserCompat 'css.selectors.focus' %}
@@ -74,19 +80,23 @@ If an element can receive focus—like a `<button>`—
 you can react to that state with the
 [`:focus`](https://developer.mozilla.org/docs/Web/CSS/:focus) pseudo-class.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNREoyj'
 } %}
+</figure>
 
 You can also react if a child element of your element receives focus with
 [`:focus-within`](https://developer.mozilla.org/docs/Web/CSS/:focus-within).
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRMOoV',
   height: 250
 } %}
+</figure>
 
 Focusable elements, like buttons,
 will show a focus ring when they are in focus—even when clicked.
@@ -116,11 +126,13 @@ button:focus-visible {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'qBRXRdW',
   height: 350
 } %}
+</figure>
 
 ### `:target`
 {% BrowserCompat 'css.selectors.target' %}
@@ -146,10 +158,12 @@ You can attach styles to that element when the url contains `#content`.
 This is useful for highlighting areas that might have been specifically linked to,
 such as the main content on a website, via a skip link.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKavaqx'
 } %}
+</figure>
 
 ## Historic states
 
@@ -168,10 +182,12 @@ This is the opposite state to `:link` but you have fewer CSS properties to use f
 You can only style `color`, `background-color`,
 `border-color`, `outline-color` and the color of SVG `fill` and `stroke`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJWjmzM'
 } %}
+</figure>
 
 #### Order matters
 
@@ -212,11 +228,13 @@ pseudo-class is available for the opposite state,
 though form elements are also `:enabled` by default,
 therefore you might not find yourself reaching for this pseudo-class.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLgogPG',
   height: 250
 } %}
+</figure>
 
 ### `:checked` and `:indeterminate`
 {% BrowserCompat 'css.selectors.checked' %}
@@ -225,11 +243,13 @@ The [`:checked`](https://developer.mozilla.org/docs/Web/CSS/:checked)
 pseudo-class is available when a supporting form element,
 such as a checkbox or radio button is in a checked state.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrvrxv',
   height: 250
 } %}
+</figure>
 
 The `:checked` state is a binary(true or false) state,
 but checkboxes do have an in-between state when they are neither checked or unchecked.
@@ -241,11 +261,13 @@ If the user was to then uncheck one of these checkboxes,
 the root checkbox would no longer represent "all" being checked,
 so should be put into an indeterminate state.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'NWdvdLB',
   height: 250
 } %}
+</figure>
 
 The `<progress>` element also has an indeterminate state that can be styled.
 A common use case is to give it a striped appearance to indicate it's unknown how much more is needed.
@@ -273,20 +295,24 @@ for it to be a valid field.
 This valid value state can be shown to the user,
 helping them understand they can safely move to the next field.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWdMpaL',
   height: 250
 } %}
+</figure>
 
 The `:in-range` pseudo-class is available if an input has a `min` and `max`,
 such as a numeric input *and* the value is within those bounds.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'qBRXrpP',
   height: 250
 } %}
+</figure>
 
 With HTML forms,
 you can determine that a field is required with the `required` attribute.
@@ -316,10 +342,12 @@ you can use
 [`:last-child`](https://developer.mozilla.org/docs/Web/CSS/:last-child).
 These pseudo-classes will return either the first or last element in a group of sibling elements.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNxZRO'
 } %}
+</figure>
 
 ### `:only-child`
 {% BrowserCompat 'css.selectors.only-child' %}
@@ -328,10 +356,12 @@ You can also select elements that have no siblings,
 with the
 [`:only-child`](https://developer.mozilla.org/docs/Web/CSS/:only-child) pseudo-class.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'dyNzvaj'
 } %}
+</figure>
 
 ### `:first-of-type` and `:last-of-type`
 {% BrowserCompat 'css.selectors.first-of-type' %}
@@ -370,11 +400,13 @@ Even though the first `<div>` is the second child,
 it is still the first of type inside the `.my-parent` element,
 so with this rule, it will be colored red.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'poRreXE',
   height: 250
 } %}
+</figure>
 
 ### `:nth-child` and `:nth-of-type`
 {% BrowserCompat 'css.selectors.nth-child' %}
@@ -385,18 +417,22 @@ The [`:nth-child`](https://developer.mozilla.org/docs/Web/CSS/:nth-child) and
 pseudo-classes allow you to specify an element that is at a certain index.
 The indexing in CSS selectors starts at 1.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrvWbL'
 } %}
+</figure>
 
 You can pass more than an index into these pseudo-classes too.
 If you wanted to select all even elements, you can use `:nth-child(even)`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'wvgqdwv'
 } %}
+</figure>
 
 You can also create more complex selectors that find items at regularly spaced intervals,
 using [the An+B microsyntax](https://www.w3.org/TR/css-syntax-3/#anb-microsyntax).
@@ -430,11 +466,13 @@ Lastly, you can find the only element of a certain type in a group of siblings w
 This is useful if you want to select lists with only one item,
 or if you want to find the only bold element in a paragraph.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLgobJb',
   height: 250
 } %}
+</figure>
 
 ## Finding empty elements
 
@@ -477,12 +515,14 @@ With `:empty`, you can find that and hide it.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'VwPzbKg',
   height: 250,
   tab: 'html,result'
 } %}
+</figure>
 
 ## Finding and excluding multiple elements
 
@@ -541,9 +581,11 @@ img:not([alt]) {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpyWJK'
 } %}
+</figure>
 
 {% Assessment 'pseudo-classes' %}

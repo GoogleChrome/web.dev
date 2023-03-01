@@ -30,3 +30,6 @@ appears_in:
 
 available_in:
   en: Available in  # Refers to language, e.g. in "available in English"
+
+latest:
+  en: Latest
