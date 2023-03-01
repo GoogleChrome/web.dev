@@ -4,13 +4,18 @@ const {
   defaultLocale,
   imgixDomain,
 } = require('../../../../../src/site/_data/site');
-const algoliaItem = require('../../../../../src/site/_filters/algolia-item');
-
+const {
+  algoliaItem,
+  getPostParentUrl,
+} = require('../../../../../src/site/_filters/algolia-item');
 const createPost = () =>
   /** @type {EleventyCollectionItem} */ ({
     data: {
       lang: defaultLocale,
       title: 'Hello world',
+      page: {
+        filePathStem: '',
+      },
     },
     templateContent: 'Hello world',
     url: '/hello-world/',
@@ -136,5 +141,35 @@ describe('algoliaItem', function () {
 
     expect(mockItem.image).to.have.string(imgixDomain);
     expect(mockItem.image).to.have.string(hero);
+  });
+});
+
+describe('get-post-parent-url', function () {
+  /**
+   * @param path
+   * @returns {EleventyCollectionItem}
+   */
+  function createMockPost(path) {
+    return /** @type {EleventyCollectionItem} */ ({
+      data: {
+        page: {
+          filePathStem: `${path}index`,
+        },
+      },
+    });
+  }
+
+  describe('getPostParentUrl', function () {
+    it('returns /tags/ from /tags/privacy/', async function () {
+      expect(getPostParentUrl(createMockPost('/tags/privacy/'))).to.equal(
+        '/tags/',
+      );
+    });
+
+    it('returns / from /introducing-learn-privacy/', async function () {
+      expect(
+        getPostParentUrl(createMockPost('/introducing-learn-privacy/')),
+      ).to.equal('/');
+    });
   });
 });

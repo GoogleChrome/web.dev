@@ -38,6 +38,11 @@ declare global {
      title: string;
      updatedOn?: Date;
      url: string;
+
+    /**
+     * Title of the parent page (by path.)
+     */
+    parentTitle?: string;
   }
 }
 
