@@ -120,7 +120,7 @@ The `<head>` is where you include styles for your HTML. There is a [learning pat
 
 There are three ways to include CSS: `<link>`, `<style>`, and the `style` attribute.
 
-The main two ways to include styles in your HTML file are by including an external resource using a `<link>` element with the `rel` attribute set to `stylesheet`, or including CSS direction in the head of your document within opening and closing `<style>` tags.
+The main two ways to include styles in your HTML file are by including an external resource using a `<link>` element with the `rel` attribute set to `stylesheet`, or including CSS directly in the head of your document within opening and closing `<style>` tags.
 
 The `<link>` tag is the preferred method of including stylesheets. Linking a single or a few external style sheets is good for both developer experience and site performance: you get to maintain CSS in one spot instead of it being sprinkled everywhere, and browsers can cache the external file, meaning it doesn't have to be downloaded again with every page navigation.
 
