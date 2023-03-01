@@ -4,9 +4,10 @@ const {
   defaultLocale,
   imgixDomain,
 } = require('../../../../../src/site/_data/site');
-const algoliaItem = require('../../../../../src/site/_filters/algolia-item');
-const {memoize} = require('../../../../../src/site/_filters/find-by-url');
-
+const {
+  algoliaItem,
+  getPostParentUrl,
+} = require('../../../../../src/site/_filters/algolia-item');
 const createPost = () =>
   /** @type {EleventyCollectionItem} */ ({
     data: {
@@ -20,20 +21,7 @@ const createPost = () =>
     url: '/hello-world/',
   });
 
-/**
- * Adds parent to memorized posts for following tests, this is required as get-post-parent-url
- * is called by algoliaItem(post)
- */
-const initParent = () => {
-  const mockParent = createPost();
-  mockParent.data.title = 'Parent Title';
-  mockParent.url = '/parent/';
-  memoize([mockParent]);
-};
-
 describe('algoliaItem', function () {
-  initParent();
-
   it('returns object with all required fields', function () {
     const post = createPost();
     const mockItem = algoliaItem(post);
@@ -153,5 +141,35 @@ describe('algoliaItem', function () {
 
     expect(mockItem.image).to.have.string(imgixDomain);
     expect(mockItem.image).to.have.string(hero);
+  });
+});
+
+describe('get-post-parent-url', function () {
+  /**
+   * @param path
+   * @returns {EleventyCollectionItem}
+   */
+  function createMockPost(path) {
+    return /** @type {EleventyCollectionItem} */ ({
+      data: {
+        page: {
+          filePathStem: `${path}index`,
+        },
+      },
+    });
+  }
+
+  describe('getPostParentUrl', function () {
+    it('returns /tags/ from /tags/privacy/', async function () {
+      expect(getPostParentUrl(createMockPost('/tags/privacy/'))).to.equal(
+        '/tags/',
+      );
+    });
+
+    it('returns / from /introducing-learn-privacy/', async function () {
+      expect(
+        getPostParentUrl(createMockPost('/introducing-learn-privacy/')),
+      ).to.equal('/');
+    });
   });
 });
