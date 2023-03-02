@@ -50,10 +50,7 @@ class Subscribe extends BaseElement {
       /** @type {HTMLDivElement} */
       const recaptchaContainerEl = this.querySelector('.g-recaptcha');
       // fix for percy re-executing JavaScript with pre-rendered DOM
-      if (!this.hasInitialised) {
-        recaptchaContainerEl.children[0].remove();
-        this.hasInitialised = true;
-      }
+      recaptchaContainerEl.children[0].remove();
 
       window.grecaptcha.render(recaptchaContainerEl, {
         sitekey: recaptchaContainerEl.dataset.sitekey,
@@ -66,8 +63,11 @@ class Subscribe extends BaseElement {
   }
 
   connectedCallback() {
+    if (!this.classList.contains('unresolved')) {
+      return;
+    }
+
     super.connectedCallback();
-    this.hasInitialised = !this.classList.contains('unresolved');
     /** @type {HTMLFormElement} */
     this.form = this.querySelector('form');
     this.intersectionObserver = new IntersectionObserver((entries) =>
