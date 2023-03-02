@@ -4,7 +4,7 @@ learn:
   ja: 学習する
   ko: 배우기
   pt: Aprender
-  ru: Обучение
+  ru: Учиться
   zh: 学习
 
 explore:
@@ -22,7 +22,7 @@ patterns:
   ja: パターン
   ko: 패턴
   pt: padrões
-  ru: узоры
+  ru: Паттерны
   zh: 模式
 
 measure:
@@ -31,7 +31,7 @@ measure:
   ja: 測定する
   ko: 측정
   pt: Medir
-  ru: Измерение
+  ru: Измерить
   zh: 衡量
 
 blog:
