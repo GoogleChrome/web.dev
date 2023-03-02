@@ -33,8 +33,9 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
-  isBannerEnabled: false,
-  banner: '',
+  isBannerEnabled: true,
+  banner:
+    'We want to hear from you! We are looking for web developers to participate in user research, product testing, discussion groups and more. [Apply now](https://www.brandinvitation.com/wix/p4585441.aspx?said=KLO98IP&pcid=CLCS&aud=na&cid=na&enpt=lp&lang=9&l=9&udv=wdb") to join our WebDev Insights Community.',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
