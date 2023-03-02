@@ -2,12 +2,12 @@
 /// https://web.dev/design-system/component/spinner
 .spinner {
   fill: none;
-  animation: cubic-bezier(0.25, 0, 0.6, 1) infinite both 1.5s spinner--spin;
+  animation: cubic-bezier(0.25, 0, 0.6, 1) infinite both 1.5s spinner__spin;
   stroke: var(--color, black);
   stroke-width: 0.5px;
 }
 
-@-webkit-keyframes spinner--spin {
+@keyframes spinner__spin {
   0% {
     transform: rotate(0);
     stroke-dasharray: 1px, 15px;
