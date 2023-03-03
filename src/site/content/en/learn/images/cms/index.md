@@ -119,18 +119,29 @@ automated responsive images.
 
 ## Content Management Systems
 
-WordPress was one of the earliest adopters of native responsive images markup, and the API has gone largely unchanged since
-being [introduced in WordPress 4.4](https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/). The WordPress core is designed to make use of the [ImageMagick PHP extension](https://www.php.net/manual/en/book.imagick.php) 
-(or, absent that, the [GD](https://www.php.net/manual/en/book.image.php) library), allowing settings like [compression level](https://developer.wordpress.org/reference/hooks/jpeg_quality/) to be configured alongside other 
-core configuration options.
+WordPress was one of the earliest adopters of native responsive images markup, and the API has been gradually improved since
+being [introduced in WordPress 4.4](https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/) with support for WebP and control over the output mime type. WordPress core is designed to make use of the [ImageMagick PHP extension](https://www.php.net/manual/en/book.imagick.php) 
+(or, absent that, the [GD](https://www.php.net/manual/en/book.image.php) library). 
 
-```php
-add_filter( 'jpeg_quality', 65 );
-```
-
-When an image is uploaded through WordPress' admin interface, that source image is used to generate user-facing files on
+When an image is uploaded through the WordPress admin interface, that source image is used to generate user-facing files on
 the server, in much the same way as you would on your local machine. By default, any image output by WordPress will come
 with a generated `srcset` attribute based on [the image sizes configured in your theme](https://developer.wordpress.org/apis/responsive-images/).
+
+Two key settings that can be configured for generated images are the [compression quality](https://developer.wordpress.org/reference/hooks/wp_editor_set_quality/) and the [output mime type](https://developer.wordpress.org/reference/hooks/image_editor_output_format/).
+
+For example, to set the default compression quality to `70` for all generated images, use the following:
+
+```php
+add_filter( 'wp_editor_set_quality', function() { return 70; } );
+```
+
+For even better compression, switch the output format for uploaded JPEG images to WebP with the following:
+```php
+add_filter( 'image_editor_output_format', function( $mappings ) {
+  $mappings[ 'image/jpeg' ] = 'image/webp';
+	return $mappings;
+} );
+```
 
 Given that WordPress has full understanding of all [alternate cuts](https://developer.wordpress.org/reference/functions/add_image_size/)
 and encodings it generates from an uploaded image, it can provide helper functions like
