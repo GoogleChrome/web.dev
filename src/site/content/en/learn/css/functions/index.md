@@ -344,7 +344,7 @@ You can change the scaling of an element with `transform` and the
 [`scale()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scale()) function.
 The function accepts one or two numbers as a value which determine a positive or negative scaling.
 If you only define one number argument,
-both the X and Y axis will be scaled the same and defining both is a shorthand forX and Y.
+both the X and Y axis will be scaled the same and defining both is a shorthand for X and Y.
 Just like `rotate()`,
 there are
 [`scaleX()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scaleX()),
