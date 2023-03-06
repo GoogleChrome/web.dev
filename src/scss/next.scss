@@ -424,12 +424,19 @@ details {
   --flow-space: 0.5em;
 
   border-block: 1px solid get-utility-value('bg', 'stroke');
-  padding: 1rem 0.5rem 1.2rem 0.5rem;
   text-align: left;
+  
+  &[open] {
+    padding-bottom: 1.2rem;
+  }
 }
 
 details + details {
   border-block-start: none;
+  
+  .flow > & {
+    margin-top: 0;
+  }
 }
 
 details summary {
@@ -437,7 +444,13 @@ details summary {
   font-size: get-size('size-2');
   list-style: none;
   cursor: pointer;
-  padding-right: get-space('size-1'); // Prevent overlap with ::before element
+  padding:
+    1rem
+    calc(
+      0.5rem * 2 + get-space('size-1') // Prevent overlap with ::before element
+    )
+    1.2rem
+    0.5rem;
 
   @include apply-utility('color', 'action-text');
   @include apply-utility('weight', 'regular');
@@ -453,7 +466,8 @@ details summary {
     content: '';
     display: block;
     position: absolute;
-    top: 0;
+    top: unset;
+    margin-inline-end: 0.5rem;
   }
 
   &::before {
@@ -462,7 +476,6 @@ details summary {
     border-radius: 50%;
     background: get-utility-value('bg', 'highlight-interact-bg');
     inset-inline-end: 0;
-    inset-block-start: -2px;
   }
 
   &::after {
@@ -470,8 +483,8 @@ details summary {
     height: 8px;
     border-bottom: 2px solid currentColor;
     border-right: 2px solid currentColor;
-    inset-block-start: 7px;
     inset-inline-end: 10px;
+    margin-top: -1rem;
     transform: rotate(45deg);
   }
 
@@ -499,13 +512,17 @@ details summary {
 
 details[open] summary {
   &::after {
-    inset-block-start: 11px;
+    margin-top: -0.7rem;
     transform: rotate(-135deg);
   }
 }
 
 details summary + * {
   @include apply-utility('flow-space', 'size-1');
+}
+
+details summary + .code-pattern {
+  margin-top: 0;
 }
 
 /// Form fields
