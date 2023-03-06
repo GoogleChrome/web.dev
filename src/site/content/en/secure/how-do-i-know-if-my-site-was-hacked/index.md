@@ -44,5 +44,5 @@ that can help you uncover any cloaked hacked content.
 After you've double checked your pages, if you still think think your site
 was incorrectly flagged, please post in the
 [Webmaster Help Forums](https://productforums.google.com/forum/#!forum/webmasters).
-Otherwise, start building your [support team](support_team).
+Otherwise, start building your [support team](/build-a-support-team/).
 

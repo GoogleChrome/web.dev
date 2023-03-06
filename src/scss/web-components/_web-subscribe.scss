@@ -23,7 +23,24 @@ web-subscribe {
     max-width: unset;
   }
 
-  .g-recaptcha {
+  .captcha {
     height: 78px;
+
+    &__placeholder {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      color: var(--color-action-bg);
+      align-items: center;
+      max-width: 304px;
+      height: 100%;
+      background-color: var(--color-mid-text);
+      border-radius: 5px;
+    }
+
+    .spinner {
+      width: 30px;
+      --color: #3740ff;
+    }
   }
 }

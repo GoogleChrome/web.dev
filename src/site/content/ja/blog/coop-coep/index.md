@@ -1,8 +1,8 @@
 ---
 layout: post
 title: COOPとCOEPの利用によりあなたのウェブサイトを「クロスオリジン分離」にする
-subhead: COOPとCOEPの利用により、クロスオリジンの分離環境を設定し、`SharedArrayBuffer`、`performance.measureUserAgentSpecificMemory（）、精度の高い高解像度タイマー等の強力な機能を有効にします。
-description: 多少のWebAPIは、Spectreのようなサイドチャネル攻撃のリスクを高めます。そのリスクを軽減するために、ブラウザはオプトインベースの分離環境を提供します。COOPとCOEPの利用により、クロスオリジンの分離環境を設定し、`SharedArrayBuffer`、`performance.measureUserAgentSpecificMemory（）、精度の高い高解像度タイマー等の強力な機能を有効にします。
+subhead: COOPとCOEPの利用により、クロスオリジンの分離環境を設定し、`SharedArrayBuffer`、`performance.measureUserAgentSpecificMemory（）`、精度の高い高解像度タイマー等の強力な機能を有効にします。
+description: 多少のWebAPIは、Spectreのようなサイドチャネル攻撃のリスクを高めます。そのリスクを軽減するために、ブラウザはオプトインベースの分離環境を提供します。COOPとCOEPの利用により、クロスオリジンの分離環境を設定し、`SharedArrayBuffer`、`performance.measureUserAgentSpecificMemory（）`、精度の高い高解像度タイマー等の強力な機能を有効にします。
 authors:
   - agektmr
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
