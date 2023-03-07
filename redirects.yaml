@@ -437,6 +437,8 @@ redirects:
     destination: https://developer.chrome.com/articles/webtransport/
   - source: /identity/web-otp
     destination: https://developer.chrome.com/articles/web-otp/
+  - source: /hid-examples/
+    destination: https://developer.chrome.com/articles/hid-examples/
 
 
 
