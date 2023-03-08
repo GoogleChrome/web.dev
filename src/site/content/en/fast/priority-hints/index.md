@@ -8,7 +8,7 @@ authors:
 description: Priority Hints indicate the relative priority of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
 subhead: Priority Hints indicate the relative priority of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
 date: 2021-10-20
-updated: 2022-10-03
+updated: 2023-03-08
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WqBkrvs5LRwPIfrSOQyz.jpg
 alt: A photo of a brown wooden plank fence, with a signboard attached to it. The signboard reads 'this way', with an arrow pointing to the right.
 tags:
@@ -16,6 +16,8 @@ tags:
   - network
   - blog
 ---
+
+{% BrowserCompat 'api.HTMLImageElement.fetchPriority' %}
 
 When a browser parses a web page and begins to discover and download resources such as images, scripts, or CSS, it assigns them a fetch `priority` in an attempt to download resources in an optimal order. These priorities can depend on the kind of resource and where it is in the document. For example, in-viewport images may have a `High` priority while the priority for early loaded, render-blocking CSS via `<link>`s in the `<head>` could be `Very High`. Browsers are pretty good at assigning priorities that work well but may not be optimal in all cases.
 
@@ -567,7 +569,9 @@ Priority Hints was first experimented with in Chrome as an origin trial in 2018 
 
 ## Browser compatibility
 
-As of this writing, Priority Hints are only available in Chromium-based browsers. Other browser engines or earlier versions of Chromium browsers will ignore the attribute and use their default prioritization heuristics. Until another browser implements Priority Hints, you may notice some references—[such as MDN](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority)—mark this as [_Experimental_](https://developer.mozilla.org/docs/MDN/Writing_guidelines/Experimental_deprecated_obsolete#experimental).
+{% BrowserCompat 'api.HTMLImageElement.fetchPriority' %}
+
+As of this writing, Priority Hints are only available in Chromium-based browsers. Other browser engines or earlier versions of Chromium browsers will ignore the attribute and use their default prioritization heuristics. Until another browser implements Priority Hints, you may notice some references—[such as MDN](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority)—mark this as [_Experimental_](https://developer.mozilla.org/docs/MDN/Writing_guidelines/Experimental_deprecated_obsolete#experimental), however Priority Hints are now standardized and included in the [HTML living standard](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#fetch-priority-attributes) and [Fetch living standard](https://fetch.spec.whatwg.org/#request-priority).
 
 ## Conclusion
 
