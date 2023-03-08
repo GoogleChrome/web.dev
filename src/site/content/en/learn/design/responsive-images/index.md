@@ -194,7 +194,7 @@ Some images may not be available in the initial HTML—if they are added by Java
 
 Again this should be used sparingly, to avoid overriding the browsers prioritisation heuristics too much, which may result in performance degredation.
 
-Preloading responsive images based on srcset (which is discussed below) via the `imagesrcset` and `imagesizes` attributes is more advanced and is [supported in some browsers for the `x` descriptor](https://web.dev/preload-responsive-images/) but not all:
+Preloading responsive images based on srcset (which is discussed below) via the `imagesrcset` and `imagesizes` attributes is more advanced and is [supported in some browsers for the `x` descriptor](/preload-responsive-images/) but not all:
 
 <link rel="preload" imagesrcset="hero_sm.jpg 1x hero_med.jpg 2x hero_lg.jpg 3x" as="image" fetchpriority="high">
 
