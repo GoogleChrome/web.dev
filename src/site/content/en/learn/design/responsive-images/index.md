@@ -153,7 +153,7 @@ Use the `loading` attribute to tell the browser whether to delay loading the ima
 
 {% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/jazsyaOjXfHS0g8yUijR.mp4", controls=true, loop=true %}
 
-For a hero image above the fold, `loading` should not be used. If you site automatically applies the `loading="lazy"` attribute, you can often set the `eager` attribute (which is the default) to prevent this from being applied:
+For a hero image above the fold, `loading` should not be used. If your site automatically applies the `loading="lazy"` attribute, you can often set the `eager` attribute (which is the default) to prevent this from being applied:
 
 ```html/5-5
 <img
