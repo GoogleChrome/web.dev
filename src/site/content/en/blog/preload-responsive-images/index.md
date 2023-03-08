@@ -4,12 +4,13 @@ title: Preloading responsive images
 subhead: Starting in Chrome 73, link rel="preload" and responsive images can be combined in order to load images faster.
 authors:
   - yoavweiss
+  - tunetheweb
 description: |
   Learn about new and exciting possibilities for preloading responsive images to ensure great user experience.
 hero: image/admin/QDCTiiyXE11bYSZMP3Yt.jpg
 alt: A wall with a bunch of image frames in different sizes.
 date: 2019-09-30
-updated: 2022-09-27
+updated: 2023-03-08
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
@@ -17,6 +18,8 @@ tags:
 feedback:
   - api
 ---
+
+{% BrowserCompat 'api.HTMLLinkElement.imageSrcset' %}
 
 This article gives me an opportunity to discuss two of my favorite things: responsive images *and* preload. As someone who was heavily involved in developing both of those features, I'm super excited to see them working together!
 
@@ -129,8 +132,10 @@ You can inspect this issue on an example website with [responsive background ima
 Responsive image preloading provides a simple and hack-free way to load those images faster.
 
 ```html
-<link rel=preload href=cat.png as=image imagesrcset="cat.png 1x, cat-2x.png 2x">
+<link rel=preload as=image imagesrcset="cat.png 1x, cat-2x.png 2x">
 ```
+
+Note that by excluding the `href` attribute, you can ensure the browsers that do not support `imagesrcset` on the `<link>` elment, but do support `image-set` in CSS, will not download an incorrect source. However, they will also not benefit from the preload in this case.
 
 You can inspect how the previous example behaves with [preloaded responsive background image](https://responsive-preload.glitch.me/background_preload.html).
 
@@ -186,6 +191,12 @@ Because responsive preload has no notion of "order" or "first match", the breakp
 <link rel="preload" href="medium_cat.jpg" as="image" media="(min-width: 400.1px) and (max-width: 800px)">
 <link rel="preload" href="large_cat.jpg" as="image" media="(min-width: 800.1px)">
 ```
+
+### Preload and `type`
+
+The `<picture>` element also supports matching on the first `type`, to allow different image formats to be provided and the browser to pick the first image format it supports. This use case is not currently supported with preload.
+
+For sites using this, avoiding preload is the best option, and instead having the [preload scanner](https://web.dev/preload-scanner/) pick these up from the `<picture>` and `<source>` elements instead. This is a best practice anyway, particular with the support of [Priority Hints](./priority-hints/) which allows the appropriate image to be prioritised in a better manner than preload alone.
 
 ## Effects on Largest Contentful Paint (LCP)
 
