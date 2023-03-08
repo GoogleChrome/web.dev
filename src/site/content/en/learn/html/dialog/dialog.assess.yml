@@ -7,9 +7,9 @@ questions:
     correctAnswers: "1"
     stem: How do you style the area behind the dialog?
     options:
-      - content: "With the `::background` pseudo-class."
+      - content: "With the `::background` pseudo-element."
         rationale: "Try again."
-      - content: "With the `::backdrop` pseudo-class."
+      - content: "With the `::backdrop` pseudo-element."
         rationale: "Correct!"
       - content: "With the `background` property."
         rationale: "Try again."
