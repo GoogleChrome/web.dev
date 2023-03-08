@@ -458,7 +458,7 @@ browser considers the website to be active.
 ```js
 let isCameraActive = false;
 
-navigator.mediaSession.setActionHandler('togglemicrophone', () => {
+navigator.mediaSession.setActionHandler('togglecamera', () => {
   if (isCameraActive) {
     // Disable the camera.
   } else {
