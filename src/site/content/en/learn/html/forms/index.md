@@ -101,8 +101,8 @@ The value of a `<select>` is the selected `<option>`'s `value` or, if the `<opti
 ```
 
 <form method="GET">
-  <label for="machine">Pick a student:</label>
-  <select name="machine" id="machine">
+  <label for="student">Pick a student:</label>
+  <select name="student" id="student">
     <option value="hoover">Hoover Sukhdeep</option>
     <option>Blendan Smooth</option>
     <option value="toasty">Toasty McToastface</option>
