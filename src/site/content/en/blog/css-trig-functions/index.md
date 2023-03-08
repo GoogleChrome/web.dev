@@ -7,7 +7,7 @@ subhead: >
   Calculate the sine, cosine, tangent, and more in CSS.
 description: >
   Calculate the sine, cosine, tangent, and more in CSS.
-date: 2023-03-07
+date: 2023-03-08
 hero: image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/dG0sJst2uPCE6Z1g4AZm.jpg
 alt: Colorful triangles.
 tags:
