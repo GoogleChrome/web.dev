@@ -180,7 +180,7 @@ For important images-such as the (LCP)[/lcp/] image, you can further prioritise 
 >
 ```
 
-This will tell the browser to fetch the image right away, and at high priority, rather than waiting until the browsder has completed layout when images are normally fetched.
+This will tell the browser to fetch the image right away, and at high priority, rather than waiting until the browser has completed layout when images are normally fetched.
 
 But remember: when you ask the browser to prioritize downloading one resource—like an image—the browser will have to de-prioritize another resource such as a script or a font file. Only set `fetchpriority="high"` on an image if it is truly vital.
 
@@ -192,7 +192,7 @@ Some images may not be available in the initial HTML—if they are added by Java
 <link rel="preload" href="hero.jpg" as="image" fetchpriority="high">
 ```
 
-Again this should be used sparingly, to avoid overriding the browsers prioritisation heuristics too much, which may result in performance degredation.
+Again this should be used sparingly to avoid overriding the browsers prioritisation heuristics too much, which may result in performance degredation.
 
 Preloading responsive images based on srcset (which is discussed below) via the `imagesrcset` and `imagesizes` attributes is more advanced and is [supported in some browsers](/preload-responsive-images/), but not all:
 

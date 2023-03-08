@@ -132,7 +132,7 @@ You can inspect this issue on an example website with [responsive background ima
 Responsive image preloading provides a simple and hack-free way to load those images faster.
 
 ```html
-<link rel=preload as=image imagesrcset="cat.png 1x, cat-2x.png 2x">
+<link rel="preload" as="image" imagesrcset="cat.png 1x, cat-2x.png 2x">
 ```
 
 Note that by excluding the `href` attribute, you can ensure the browsers that do not support `imagesrcset` on the `<link>` elment, but do support `image-set` in CSS, will not download an incorrect source. However, they will also not benefit from the preload in this case.
@@ -196,7 +196,7 @@ Because responsive preload has no notion of "order" or "first match", the breakp
 
 The `<picture>` element also supports matching on the first `type`, to allow different image formats to be provided and the browser to pick the first image format it supports. This use case is not currently supported with preload.
 
-For sites using this, avoiding preload is the best option, and instead having the [preload scanner](/preload-scanner/) pick these up from the `<picture>` and `<source>` elements instead. This is a best practice anyway, particular with the support of [Priority Hints](./priority-hints/) which allows the appropriate image to be prioritised in a better manner than preload alone.
+For sites using this, avoiding preload is the best option, and instead having the [preload scanner](/preload-scanner/) pick these up from the `<picture>` and `<source>` elements instead. This is a best practice anyway, particular with the support of [Priority Hints](/priority-hints/) which allows the appropriate image to be prioritised in a better manner than preload alone.
 
 ## Effects on Largest Contentful Paint (LCP)
 
