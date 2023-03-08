@@ -4,7 +4,9 @@ description: >
   Give your visitors the most appropriate images for their devices and screens.
 authors:
   - adactio
+  - tunetheweb
 date: 2021-12-09
+updated: 2022-03-08
 ---
 
 Text on the web automatically wraps at the edge of the screen so that it doesn't overflow. It's different with images. Images have an intrinsic size. If an image is wider than the screen, the image will overflow, causing a horizontal scrollbar to appear.
@@ -93,7 +95,6 @@ img {
 </figure>
 
 
-
 If the cropping at the top and bottom evenly is an issue, use the [object-position](https://developer.mozilla.org/docs/Web/CSS/object-position) CSS property to adjust the focus of the crop.
 {% BrowserCompat 'css.properties.object-position' %}
 
@@ -138,7 +139,7 @@ If you know the dimensions of the image you should include `width` and `height` 
 
 ### Loading hints
 
-Use the `loading` attribute to tell the browser how urgently you want it to load an image. For images below the fold, use a value of `lazy`. The browser won't load lazy images until the user has scrolled far down enough that the image is about to come into view. If the user never scrolls, the image never loads.
+Use the `loading` attribute to tell the browser whether to delay loading the image until it is in or near the viewport. For images below the fold, use a value of `lazy`. The browser won't load lazy images until the user has scrolled far down enough that the image is about to come into view. If the user never scrolls, the image never loads.
 
 ```html/5-5
 <img
@@ -152,7 +153,7 @@ Use the `loading` attribute to tell the browser how urgently you want it to load
 
 {% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/jazsyaOjXfHS0g8yUijR.mp4", controls=true, loop=true %}
 
-For a hero image above the fold, use a `loading` value of `eager`.
+For a hero image above the fold, `loading` should not be used. If your site automatically applies the `loading="lazy"` attribute, you can often set the `eager` attribute (which is the default) to prevent this from being applied:
 
 ```html/5-5
 <img
@@ -164,13 +165,44 @@ For a hero image above the fold, use a `loading` value of `eager`.
 >
 ```
 
-For an important image you can tell the browser to pre-fetch the image in the head of your document.
+### Priority hints
 
-```html
-<link rel="prefetch" href="hero.jpg" as="image">
+For important images-such as the (LCP)[/lcp/] image, you can further prioritise the loading using [Priority Hints](/priority-hints/) by setting the `fetchpriority` attribute to `high`:
+
+```html/5-6
+<img
+ src="hero.jpg"
+ alt="A description of the image."
+ width="1200"
+ height="800"
+ loading="eager"
+ fetchpriority="high"
+>
 ```
 
-But remember: when you ask the browser to prioritize downloading one resource—like an image—the browser will have to de-prioritize another resource such as a script or a font file. Only prefetch an image if it is truly vital.
+This will tell the browser to fetch the image right away, and at high priority, rather than waiting until the browser has completed layout when images are normally fetched.
+
+But remember: when you ask the browser to prioritize downloading one resource—like an image—the browser will have to de-prioritize another resource such as a script or a font file. Only set `fetchpriority="high"` on an image if it is truly vital.
+
+### Preloading hints
+
+Some images may not be available in the initial HTML—if they are added by JavaScript, or as a [background image](#background-images) in CSS. You can also use preload to allow these important images to be fetched ahead of time. This can be combined with the `fetchpriority` attribute for really important images:
+
+```html
+<link rel="preload" href="hero.jpg" as="image" fetchpriority="high">
+```
+
+Again this should be used sparingly to avoid overriding the browsers prioritisation heuristics too much, which may result in performance degredation.
+
+Preloading responsive images based on srcset (which is discussed below) via the `imagesrcset` and `imagesizes` attributes is more advanced and is [supported in some browsers](/preload-responsive-images/), but not all:
+
+<link rel="preload" imagesrcset="hero_sm.jpg 1x hero_med.jpg 2x hero_lg.jpg 3x" as="image" fetchpriority="high">
+
+By excluding the `href` fallback you can ensure browsers that do not support this do not preload the incorrect image.
+
+Preloading based on different image formats based on browser support of those images is not currently supported and may result in extra downloads.
+
+The ideal is to avoid preload where possible, and have the image available in the initial HTML, to avoid repeating code, and to allow access to the full range of options the browser supports.
 
 ### Image decoding
 
@@ -199,6 +231,12 @@ You can use the `sync` value if the image itself is the most important piece of 
  decoding="sync"
 >
 ```
+
+The `decoding` attribute will not change how fast the image decodes, but merely whether the browser waits for this image decoding to happen before rendering other content.
+
+In most cases this will have little impact, however in certain scenarios it can allow the image or content to be displayed slightly faster. For example, for a large document with lots of elements that take time to render, and with large images that take a while to decode, setting `sync` on important images will tell the browser to wait for the image and render both at once. Alternatively, setting `async` can allow the content to be displayed faster without waiting for the image decode.
+
+However, the better option is usually to try to [avoid excessive DOM sizes](https://developer.chrome.com/docs/lighthouse/performance/dom-size/) and ensure responsive images are used to reduce decoding time meaning the decoding attribute will have little effect.
 
 ## Responsive images with `srcset`
 
