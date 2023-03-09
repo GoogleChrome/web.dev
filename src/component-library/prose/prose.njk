@@ -31,7 +31,7 @@
 	</figure>
 	<p>Toggle intrinsic sizing on and off to see how you can gain more control with extrinsic sizing and let the content have more control with intrinsic sizing. To see the effect that intrinsic and extrinsic sizing has, add a few sentences of content to the card. When this element is using extrinsic sizing, there's a limit of how much content you can add before it overflows out of the element's bounds, but this isn't the case when intrinsic sizing is toggled on.</p>
 	<p>By default, this element has a set <code>width</code> and <code>height</code>—both <code>400px</code>. These dimensions give strict bounds to everything inside the element, which will be honored unless the content is too large for the box in which case visible overflow will happen. You can see this in action by changing the content of the caption, under the flower picture to something that exceeds the height of the box, which is a few lines of content.</p>
-	<div class="w-aside w-aside--key-term">
+	<div class="aside flow color-secondary-box-text bg-secondary-box-bg">
 		<p><strong>Key Term</strong>: When content is too big for the box it is in, we call this overflow. You can manage how an element handles overflow content, using the <code>overflow</code> property.</p>
 	</div>
 	<p>When you switch to intrinsic sizing, you are letting the browser make decisions for you, based on the box's content size. It's much more difficult for there to be overflow with intrinsic sizing because our box will resize with its content, rather than try to size the content. It's important to remember that this is the default, flexible behavior of a browser. Though extrinsic sizing gives more control on the surface, intrinsic sizing provides the most flexibility, most of the time.</p>

@@ -23,7 +23,7 @@ function StackOverflow(tag) {
     /<TAG>/g,
     tag,
   );
-  return html` <div class="w-aside w-aside--note">${text}</div> `;
+  return html` <div class="aside flow">${text}</div> `;
 }
 
 module.exports = StackOverflow;
