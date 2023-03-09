@@ -265,7 +265,7 @@ Server rendering has had a number of developments over the last few years.
 [Streaming server rendering] allows you to send HTML in chunks that the browser
 can progressively render as it's received. This can provide a fast First Paint
 and First Contentful Paint as markup arrives to users faster. In React, streams
-being asynchronous in [renderToNodeStream()] - compared to synchronous
+being asynchronous in [renderToPipeableStream()] - compared to synchronous
 renderToString - means backpressure is handled well.
 
 Progressive rehydration is also worth keeping an eye on, and something React has
@@ -394,5 +394,5 @@ Sebastian Markbåge
 [Application Shell caching]: https://developer.chrome.com/blog/app-shell/
 [(re)hydration]: https://docs.electrode.io/guides/general/server-side-data-hydration
 [incrementally]: https://www.emberjs.com/blog/2017/10/10/glimmer-progress-report.html
-[Streaming server rendering]: https://zeit.co/blog/streaming-server-rendering-at-spectrum
-[renderToNodeStream()]: https://reactjs.org/docs/react-dom-server.html#rendertonodestream
+[Streaming server rendering]: https://mxstbr.com/thoughts/streaming-ssr
+[renderToPipeableStream()]: https://beta.reactjs.org/reference/react-dom/server/renderToPipeableStream
