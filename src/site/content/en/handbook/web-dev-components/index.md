@@ -1375,64 +1375,6 @@ See the [Images and video](/handbook/markup-media) post.
 
 # Deprecated components
 
-## w-buttons
-
-In general, you shouldn't need to add buttons to your posts.
-These buttons are shown for reference.
-
-### Text buttons
-
-<div>
-  <button class="w-button">
-    Text button
-  </button>
-  <button class="w-button w-button--with-icon" data-icon="file_download">
-    Text button with icon
-  </button>
-</div>
-<br>
-
-<div>
-  <button class="w-button w-button--primary">
-    Primary button
-  </button>
-  <button class="w-button w-button--primary w-button--with-icon" data-icon="file_download">
-    Primary button with icon
-  </button>
-</div>
-<br>
-
-<div>
-  <button class="w-button w-button--secondary">
-    Secondary button
-  </button>
-  <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
-    Secondary button with icon
-  </button>
-</div>
-
-### Icon buttons
-
-A default icon button:
-
-<div>
-  <button class="w-button--icon" data-icon="format_align_justify">
-    <span role="tooltip" class="w-tooltip">
-      Justify
-    </span>
-  </button>
-</div>
-
-A round icon button:
-
-<div>
-  <button class="w-button--icon w-button--round" data-icon="close">
-    <span role="tooltip" class="w-tooltip">
-      Close
-    </span>
-  </button>
-</div>
-
 ## w-columns
 
 Any elements can be placed in a two-column layout
