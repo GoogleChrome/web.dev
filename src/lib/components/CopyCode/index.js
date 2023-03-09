@@ -22,7 +22,7 @@ class CopyCode extends BaseElement {
     if (!this.copyButton) {
       this.copyButton = document.createElement('button');
       this.copyButton.className =
-        'w-button--icon w-button--round web-copy-code__button';
+        'button button__round web-copy-code__button';
       // Set aria-label because title isn't accessible to sighted keyboard users
       // and the tooltip is only visible on focus,
       // which means it isn't read reliably by screen readers.
