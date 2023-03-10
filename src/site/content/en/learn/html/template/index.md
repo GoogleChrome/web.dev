@@ -3,7 +3,7 @@ title: 'Template, slot, and shadow'
 authors:
   - estelleweyl
 description: An explanation of template, slot, and shadow.
-date: 2023-21-02
+date: 2023-02-21
 tags:
   - html
 ---

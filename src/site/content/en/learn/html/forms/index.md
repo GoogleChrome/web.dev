@@ -3,7 +3,7 @@ title: 'Forms'
 authors:
   - estelleweyl
 description: An overview of forms in HTML.
-date: 2023-21-02
+date: 2023-02-21
 tags:
   - html
 ---
