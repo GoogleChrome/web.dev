@@ -1,7 +1,7 @@
 {% from 'macros/icon.njk' import icon with context %}
 
 <web-header class="header-default" role="navigation">
-  {# <button 
+  <button 
     data-open-drawer-button
     class="icon-button tooltip icon-button__round"
     aria-labelledby="{{ 'i18n.header.open_menu' | i18n(locale) }}"
@@ -9,7 +9,7 @@
   >
     {% include "icons/menu.svg" %}
     <span class="tooltip__content" id="icon-button-toolip">{{ 'i18n.header.open_menu' | i18n(locale) }}</span>
-  </button> #}
+  </button>
 
   <a
     href="/"
