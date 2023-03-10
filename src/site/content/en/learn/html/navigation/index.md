@@ -292,7 +292,7 @@ There is another navigational component on this page. If you are on a wide scree
 "Learn HTML" logo, a search bar, and links to each of the 20 sections in Learn HTML. Each link contains the chapter number,
 the section title, and a checkmark to the right on sections that you have already visited—possibly this one if you have navigated away and have come back. The links to all the sections in Learn HTML, along with the search and local header, are the location navigation.
 
-If you are visiting this site on a tablet or mobile device, or otherwise have a narrower screen, when you load this page, the sidebar is hidden. You can make it visible via the hamburger menu in the top navigation bar (yes, the header is a custom <web-header> element with `role="navigation"` set).
+If you are visiting this site on a tablet or mobile device, or otherwise have a narrower screen, when you load this page, the sidebar is hidden. You can make it visible via the hamburger menu in the top navigation bar (yes, the header is a custom `<web-header>` element with `role="navigation"` set).
 
 The main difference between the permanent local navigation on wide screens and the local navigation on narrower screens that can be made to appear and disappear, is the display of the close button on the version that can be hidden. This icon is hidden on wide screens with `display: none;`.
 
