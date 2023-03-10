@@ -42,7 +42,6 @@ provides guidance about how to use them effectively.
 
 ## Deprecated components
 
-1. [w-button](#w-button)
 1. [w-columns](#w-columns)
 
 ## Asides
