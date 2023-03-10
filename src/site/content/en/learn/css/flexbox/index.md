@@ -301,7 +301,7 @@ They stop growing at their max-content size.
 This is because the initial value of the `flex-` properties is:
 
 - `flex-grow: 0`: items do not grow.
-- `flex-shrink: 1`: items can shrink smaller than their `flex-basis`.
+- `flex-shrink: 1`: items can shrink smaller than their [`flex-basis`](https://developer.mozilla.org/docs/Web/CSS/flex-basis).
 - `flex-basis: auto`: items have a base size of `auto`.
 
 This can be represented by a keyword value of `flex: initial`.
