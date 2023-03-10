@@ -3,7 +3,7 @@ title: 'HTML APIs'
 authors:
   - estelleweyl
 description: Learn how HTML information can be exposed and manipulated using JavaScript.
-date: 2023-21-02
+date: 2023-02-21
 tags:
   - html
 ---
