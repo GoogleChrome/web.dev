@@ -257,7 +257,7 @@ There is much more you can do with the Constraint Validation API.
 You’ll find a detailed look at using
 [validation with JavaScript](/learn/forms/javascript#validation-with-javascript) in a later module.
 
-How to validate in real-time
+How to validate in real-time?
 You can add real-time validation in JavaScript by listening to the `onblur` event of a form control,
 and validate the input immediately when a user leaves a form field.
 
