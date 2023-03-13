@@ -18,20 +18,9 @@ const {html} = require('common-tags');
 const md = require('markdown-it')();
 
 module.exports = (content, alignment) => {
-  switch (alignment) {
-    case 'left':
-      alignment = 'w-tooltip--left';
-      break;
-    case 'right':
-      alignment = 'w-tooltip--right';
-      break;
-    default:
-      alignment = '';
-  }
-
   return html`
-    <span role="tooltip" class="w-tooltip ${alignment}">
-      ${md.renderInline(content)}
+    <span class="tooltip" data-alignment="${alignment}">
+      <span class="tooltip__content">${md.renderInline(content)}</span>
     </span>
   `;
 };

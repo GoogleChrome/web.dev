@@ -1411,28 +1411,6 @@ These buttons are shown for reference.
   </button>
 </div>
 
-### Icon buttons
-
-A default icon button:
-
-<div>
-  <button class="w-button--icon" data-icon="format_align_justify">
-    <span role="tooltip" class="w-tooltip">
-      Justify
-    </span>
-  </button>
-</div>
-
-A round icon button:
-
-<div>
-  <button class="w-button--icon w-button--round" data-icon="close">
-    <span role="tooltip" class="w-tooltip">
-      Close
-    </span>
-  </button>
-</div>
-
 ## w-columns
 
 Any elements can be placed in a two-column layout
