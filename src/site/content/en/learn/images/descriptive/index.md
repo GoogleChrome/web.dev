@@ -84,7 +84,7 @@ appropriate for a display with a DPR of 2.
 <img src="low-density.jpg" srcset="double-density.jpg 2x" alt="...">
 ```
 
-Browsers that support `srcset` will be presented with two candidates: `high-density.jpg`, which `2x` describes as appropriate
+Browsers that support `srcset` will be presented with two candidates: `double-density.jpg`, which `2x` describes as appropriate
 for displays with a DPR of 2, and `low-density.jpg` in the `src` attribute—the candidate selected if nothing more appropriate is
 found in `srcset`. For browsers without support for `srcset`, the attribute and its contents will be ignored—the contents of `src`
 will be requested, as usual.

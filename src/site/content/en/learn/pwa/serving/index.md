@@ -176,21 +176,25 @@ With this strategy, the assets are updated in the background. This means your us
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/C7OcnPRHNdTLe2043JHG.png", alt="The stale while revalidate strategy", width="800", height="439" %}
 
 ```js
-self.addEventListener("fetch", event => {
-   event.respondWith(
-     caches.match(event.request).then(cachedResponse => {
-         const networkFetch = fetch(event.request).then(response => {
-           // update the cache with a clone of the network response
-           caches.open("pwa-assets").then(cache => {
-               cache.put(event.request, response.clone());
-           });
-         });
-         // prioritize cached response over network
-         return cachedResponse || networkFetch;
-     }
-   )
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(cachedResponse => {
+        const networkFetch = fetch(event.request).then(response => {
+          // update the cache with a clone of the network response
+          const responseClone = response.clone()
+          caches.open(url.searchParams.get('name')).then(cache => {
+            cache.put(event.request, responseClone)
+          })
+          return response
+        }).catch(function (reason) {
+          console.error('ServiceWorker fetch failed: ', reason)
+        })
+        // prioritize cached response over network
+        return cachedResponse || networkFetch
+      }
+    )
   )
-});
+})
 ```
 
 {% Aside 'caution' %}
