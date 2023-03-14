@@ -847,7 +847,7 @@ Start with these guidelines when choosing the appropriate format:
 
 ### Reduce the file size
 
-You can reduce image file size considerably by "post-processing" the images
+You can reduce image file size considerably by "w-post-processing" the images
 after saving. There are a number of tools for image compression&mdash;lossy and
 lossless, online, GUI, command line.  Where possible, it's best to try
 automating image optimization so that it's a built-in to your

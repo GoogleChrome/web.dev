@@ -32,16 +32,16 @@ function SignPosts(slug) {
   const aTags = postPaths
     .map((pathName) => {
       return html`<a
-        class="post-signpost__link"
+        class="w-post-signpost__link"
         href="/${paths[pathName].slug}/"
         >${i18n(paths[pathName].title, locale)}</a
       >`;
     })
-    .join(html`<span class="post-signpost__divider"> | </span>`);
+    .join(html`<span class="w-post-signpost__divider"> | </span>`);
 
   return html`
     <div class="flow post-signpost">
-      <span class="post-signpost__title">
+      <span class="w-post-signpost__title">
         ${i18n('i18n.post.appears_in', locale)}:
       </span>
       ${aTags}
