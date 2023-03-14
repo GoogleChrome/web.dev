@@ -137,7 +137,7 @@ $ yo polymer:element post
 This creates a new Polymer element in the `/elements` directory named post.html:
 
 ```html
-<polymer-element name="w-post-element"  attributes="">
+<polymer-element name="post-element"  attributes="">
 
     <template>
 
@@ -214,7 +214,7 @@ The Google Spreadsheets API outputs each of the fields in your blog spreadsheet 
 You can now edit your newly scaffolded post element to [bind](http://www.polymer-project.org/docs/polymer/databinding.html) portions of markup to the data in your spreadsheet. To do so, we introduce an attribute `post`, which will read for the post title, author, content and other fields we created earlier. The `selected` attribute (which we will populate later) is used to only show a post if a user navigates to the correct slug for it.
 
 ```html
-<polymer-element name="w-post-element" attributes="post selected">
+<polymer-element name="post-element" attributes="post selected">
 
     <template>
 
@@ -535,7 +535,7 @@ Copy the gravatar element sources to your `/elements` directory, include it via 
 ```html
 <link rel="import" href="gravatar-element/src/gravatar.html">
 
-<polymer-element name="w-post-element" attributes="post selected">
+<polymer-element name="post-element" attributes="post selected">
 
     <template>
 

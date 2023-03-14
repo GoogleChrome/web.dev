@@ -40,7 +40,7 @@ function SignPosts(slug) {
     .join(html`<span class="w-post-signpost__divider"> | </span>`);
 
   return html`
-    <div class="flow post-signpost">
+    <div class="flow w-post-signpost">
       <span class="w-post-signpost__title">
         ${i18n('i18n.post.appears_in', locale)}:
       </span>
