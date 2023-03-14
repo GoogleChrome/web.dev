@@ -44,8 +44,10 @@ if ("serviceWorker" in navigator && "PushManager" in window) {
 }
 ```
 
-{% Aside %}
-Prior to version 16, Safari on macOS supported a [proprietary version of push notifications](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/NotificationProgrammingGuideForWebsites/PushNotifications/PushNotifications.html#//apple_ref/doc/uid/TP40013225-CH3-SW1). Since version 16, Safari for macOS now supports standard push notifications as other browsers. Safari for iOS supports push notifications as of version 16.x.
+{% Aside 'gotcha' %}
+Prior to version 16, **Safari on macOS** supported a [proprietary version of push notifications](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/NotificationProgrammingGuideForWebsites/PushNotifications/PushNotifications.html#//apple_ref/doc/uid/TP40013225-CH3-SW1). Since version 16, Safari for macOS now supports standard push notifications as other browsers.
+
+**Safari for iOS and iPadOS** supports push notifications as of version 16.4, but only for apps that were added to the Home Screen. Apple calls these Home Screen web apps.
 {% endAside %}
 
 {% BrowserCompat '​​api.PushEvent' %}
@@ -54,6 +56,7 @@ Prior to version 16, Safari on macOS supported a [proprietary version of push no
 
 - [Push notifications overview](/push-notifications-overview/)
 - [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)
+- [Web Push for Web Apps on iOS and iPadOS](https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/)
 
 ## Acknowledgements
 
