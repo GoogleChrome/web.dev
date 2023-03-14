@@ -9,7 +9,7 @@ $SIGNPOST_SPACING: 4px;
 }
 // sass-lint:enable class-name-format
 
-.w-post-breadcrumbs {
+.post-breadcrumbs {
   padding: 0px 0 32px;
 
   @include bp(md) {
@@ -17,7 +17,7 @@ $SIGNPOST_SPACING: 4px;
   }
 }
 
-.w-post-content {
+.post-content {
   margin-bottom: 64px;
 
   @include bp(sm) {
@@ -25,7 +25,7 @@ $SIGNPOST_SPACING: 4px;
   }
 }
 
-.w-post-github-link {
+.post-github-link {
   color: $GREY_700;
   font-size: .875em;
 }
@@ -36,7 +36,7 @@ $SIGNPOST_SPACING: 4px;
   }
 }
 
-.w-post-signpost {
+.post-signpost {
   font-size: 14px;
   font-style: normal;
   line-height: 20px;
@@ -44,16 +44,16 @@ $SIGNPOST_SPACING: 4px;
   padding: 0 0 $SIGNPOST_SPACING;
 }
 
-.w-post-signpost__divider {
+.post-signpost__divider {
   color: $GREY_700;
   margin: 0 $SIGNPOST_SPACING $SIGNPOST_SPACING;
 }
 
-.w-post-signpost__link {
+.post-signpost__link {
   margin: 0 0 $SIGNPOST_SPACING;
 }
 
-.w-post-signpost__title {
+.post-signpost__title {
   color: $GREY_700;
   margin: 0 $SIGNPOST_SPACING $SIGNPOST_SPACING 0;
 }
