@@ -55,7 +55,7 @@ Prior to version 16, **Safari on macOS** supported a [proprietary version of pus
 ## Further reading
 
 - [Push notifications overview](/push-notifications-overview/)
-- [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)
+- [Push API](https://developer.mozilla.org/docs/Web/API/Push_API)
 - [Web Push for Web Apps on iOS and iPadOS](https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/)
 
 ## Acknowledgements
