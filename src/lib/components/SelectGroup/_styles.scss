@@ -32,11 +32,6 @@
   z-index: 1; // Ensure selector states are always visible
 }
 
-// A standalone selector with no visible text label.
-.w-selectgroup__option--standalone {
-  justify-content: center;
-}
-
 .web-select-group__option[disabled] {
   pointer-events: none;
 }
@@ -78,20 +73,12 @@
   width: 18px;
 }
 
-.w-selectgroup__option--standalone ~ .w-selectgroup__selector {
-  margin: .4375rem;
-}
-
 // Style radio buttons.
 input[type='radio'] ~ .web-select-group__selector {
   border-radius: $GLOBAL_ROUNDED;
   height: 20px;
   margin: .375rem 1.5rem .375rem .25rem;
   width: 20px;
-}
-
-.w-selectgroup__option--standalone input[type='radio'] ~ .w-selectgroup__selector {
-  margin: .375rem;
 }
 
 // Handles hover, active, and focus states.
