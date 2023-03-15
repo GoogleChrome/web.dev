@@ -7,4 +7,8 @@
   padding: 1.4em 1em;
 
   @include button-base-styles();
+
+  &__round {
+    border-radius: 8px;
+  }
 }

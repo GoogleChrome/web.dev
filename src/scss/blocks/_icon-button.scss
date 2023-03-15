@@ -23,4 +23,8 @@
   &:hover svg {
     filter: invert(0.2);
   }
+
+  &__round {
+    border-radius: 8px;
+  }
 }
