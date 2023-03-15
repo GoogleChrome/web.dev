@@ -13,7 +13,7 @@ tags:
 
 Today's web applications can get pretty big, especially the JavaScript part of them. As of mid-2018, HTTP Archive puts the [median transfer size of JavaScript on mobile devices](https://httparchive.org/reports/state-of-javascript#bytesJs) at approximately 350 KB. And this is just transfer size! JavaScript is often compressed when sent over the network, meaning that the _actual_ amount of JavaScript is quite a bit more after the browser decompresses it. That's important to point out, because as far as resource _processing_ is concerned, compression is irrelevant. 900 KB of decompressed JavaScript is still 900 KB to the parser and compiler, even though it may be roughly 300 KB when compressed.
 
-<figure class="w-caption">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/VytWruOnBN3nHJnSm18w.svg", alt="A diagram illustrating the process of downloading, decompressing, parsing, compiling, and executing JavaScript.", width="600", height="106" %}
   <figcaption>
     The process of downloading and running JavaScript. Note that even though the transfer size of the script is 300 KB compressed, it is still 900 KB worth of JavaScript that must be parsed, compiled, and executed.
@@ -22,7 +22,7 @@ Today's web applications can get pretty big, especially the JavaScript part of t
 
 JavaScript is an expensive resource to process. Unlike images which only incur relatively trivial decode time once downloaded, JavaScript must be parsed, compiled, and then finally executed. Byte for byte, this makes JavaScript more expensive than other types of resources.
 
-<figure class="w-caption">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/rEdnN5fuzBC6DOjUqgEL.png", alt="A diagram comparing the processing time of 170 KB of JavaScript versus an equivalently sized JPEG image. The JavaScript resource is far more resource-intensive byte for byte than the JPEG.", width="800", height="504" %}
   <figcaption>
     The processing cost of parsing/compiling 170 KB of JavaScript vs decode time of an equivalently sized JPEG. (<a href="https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e" rel="noopener">source</a>).
@@ -65,7 +65,7 @@ For illustrative purposes, [a sample one-page app](https://github.com/malchata/w
 
 The sample app is a searchable database of guitar effect pedals. You enter a query and a list of effect pedals will appear.
 
-<figure class="w-caption">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/bBmp460zNYmTVeAgQhw5.png", alt="A screenshot of a sample one page application for searching a database of guitar effect pedals.", width="800", height="673" %}
   <figcaption>
     A screenshot of the sample app.
@@ -74,7 +74,7 @@ The sample app is a searchable database of guitar effect pedals. You enter a que
 
 The behavior that drives this app is separated into vendor (i.e., [Preact](https://preactjs.com/) and [Emotion](https://emotion.sh/)) and app-specific code bundles (or "chunks", as webpack calls them):
 
-<figure class="w-caption">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/oreVh5rQcXxIDenvQxE7.png", alt="A screenshot of two application code bundles (or chunks) shown in the network panel of Chrome's DevTools.", width="800", height="282" %}
   <figcaption>
     The app's two JavaScript bundles. These are uncompressed sizes.
@@ -99,7 +99,7 @@ If you look at [the `utils` module source code](https://github.com/malchata/webp
 
 Do you _need_ all that stuff? Let's double check by searching [the main component file](https://github.com/malchata/webpack-tree-shaking-example/blob/master/src/components/FilterablePedalList/FilterablePedalList.js) that imports the `utils` module to see how many instances of that namespace come up.
 
-<figure class="w-caption">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Grk6jcj6IiMHIiJPqiEM.png", alt="A screenshot of a search in a text editor for 'utils.', returning only 3 results.", width="800", height="117" %}
   <figcaption>
     The <code>utils</code> namespace we've imported tons of modules from is only invoked three times within the main component file.
