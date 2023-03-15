@@ -8,14 +8,12 @@
 //
 // =============================================================================
 
-.w-chips {
+.chips {
   display: flex;
   flex-flow: row wrap;
 }
 
-// Specificty required here because `a` tags in `.post-content` have higher priority.
-.post-content .w-chip,
-.w-chip {
+.chip {
   background-color: rgba($GREY_900, 0);
   border: 1px solid rgba($GREY_900, .16);
   border-radius: $GLOBAL_RADIUS_LARGE;
@@ -59,7 +57,7 @@
       0 3px 14px 2px rgba($BLACK, .12);
   }
 
-  &.w-chip__active {
+  &.chip__active {
     background-color: rgba($BLACK, .16);
     border: 1px solid rgba($GREY_900, .43);
   }

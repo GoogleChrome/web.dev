@@ -20,7 +20,7 @@ web-profile-switcher-container {
   }
 }
 
-.w-profile-signin {
+.profile-signin {
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -56,7 +56,7 @@ web-profile-switcher {
   margin: 0 0 0 16px;
 }
 
-.w-profile-toggle {
+.profile-toggle {
   background: $GREY_100;
   border: 4px solid $WHITE;
   border-radius: 50%;
@@ -72,29 +72,29 @@ web-profile-switcher {
   width: auto;
 }
 
-.w-profile-toggle:hover,
-.w-profile-toggle:focus,
-.w-profile-toggle:active {
+.profile-toggle:hover,
+.profile-toggle:focus,
+.profile-toggle:active {
   box-shadow: none;
 }
 
-.w-profile-toggle:focus {
+.profile-toggle:focus {
   border-color: rgba($BLACK, .2) !important;
 }
 
-@keyframes w-profile-toggle__appear {
+@keyframes profile-toggle__appear {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-.w-profile-toggle__photo {
+.profile-toggle__photo {
   border-radius: 50%;
   height: 32px;
   width: 32px;
-  animation: w-profile-toggle__appear 0.45s;
+  animation: profile-toggle__appear 0.45s;
 }
 
-.w-profile-dialog {
+.profile-dialog {
   background: $WHITE;
   border: 1px solid rgba($BLACK, .2);
   border-radius: 2px;
@@ -110,7 +110,7 @@ web-profile-switcher {
   }
 }
 
-.w-profile-dialog__user {
+.profile-dialog__user {
   padding: 20px;
 
   @include bp(xsm) {
@@ -118,7 +118,7 @@ web-profile-switcher {
   }
 }
 
-.w-profile-dialog__photo-container {
+.profile-dialog__photo-container {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -129,7 +129,7 @@ web-profile-switcher {
   }
 }
 
-.w-profile-dialog__photo {
+.profile-dialog__photo {
   border-radius: 50%;
   display: block;
   height: 64px;
@@ -141,33 +141,33 @@ web-profile-switcher {
   }
 }
 
-.w-profile-dialog__details {
+.profile-dialog__details {
   font-size: 13px;
   line-height: normal;
 }
 
-.w-profile-dialog__name {
+.profile-dialog__name {
   font-weight: 500;
   margin-bottom: 1px;
 }
 
-.w-profile-dialog__email {
+.profile-dialog__email {
   color: #666;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.w-profile-dialog__privacy {
+.profile-dialog__privacy {
   color: #1a73e8;
   display: block;
   margin: 6px 0;
 }
 
-.w-profile-dialog__privacy:hover {
+.profile-dialog__privacy:hover {
   text-decoration: none;
 }
 
-.w-profile-dialog__account {
+.profile-dialog__account {
   background: #4d90fe;
   border: 1px solid #3079ed;
   border-radius: 2px;
@@ -186,32 +186,32 @@ web-profile-switcher {
   }
 }
 
-.w-profile-dialog__account:hover,
-.w-profile-dialog__account:focus,
-.w-profile-dialog__account:active {
+.profile-dialog__account:hover,
+.profile-dialog__account:focus,
+.profile-dialog__account:active {
   outline: none;
   text-decoration: none;
 }
 
 // This element is used to tint the button during user actions such as
 // hover, focus, and active.
-.w-profile-dialog__account::after {
+.profile-dialog__account::after {
   @include w-overlay();
 }
 
-.w-profile-dialog__account:hover::after {
+.profile-dialog__account:hover::after {
   background-color: rgba($WHITE, .08);
 }
 
-.w-profile-dialog__account:focus::after {
+.profile-dialog__account:focus::after {
   background-color: rgba($WHITE, .12);
 }
 
-.w-profile-dialog__account:active::after {
+.profile-dialog__account:active::after {
   background-color: rgba($WHITE, .24);
 }
 
-.w-profile-dialog__controls {
+.profile-dialog__controls {
   background: #f5f5f5;
   border-top: 1px solid rgba($BLACK, .2);
   display: block;
@@ -224,7 +224,7 @@ web-profile-switcher {
   }
 }
 
-.w-profile-dialog__button {
+.profile-dialog__button {
   background: #f8f8f8;
   border: 1px solid #c6c6c6;
   border-radius: 2px;
@@ -246,7 +246,7 @@ web-profile-switcher {
   }
 }
 
-.w-profile-dialog__button:not(:last-of-type) {
+.profile-dialog__button:not(:last-of-type) {
   margin-bottom: 8px;
 
   @include bp(xsm) {
@@ -254,7 +254,7 @@ web-profile-switcher {
   }
 }
 
-.w-profile-dialog__button:focus {
+.profile-dialog__button:focus {
   background: #f8f8f8;
   outline: none;
   text-decoration: none;
@@ -262,18 +262,18 @@ web-profile-switcher {
 
 // This element is used to tint the button during user actions such as
 // hover, focus, and active.
-.w-profile-dialog__button::after {
+.profile-dialog__button::after {
   @include w-overlay();
 }
 
-.w-profile-dialog__button:hover::after {
+.profile-dialog__button:hover::after {
   background-color: rgba($BLACK, .04);
 }
 
-.w-profile-dialog__button:focus::after {
+.profile-dialog__button:focus::after {
   background-color: rgba($BLACK, .08);
 }
 
-.w-profile-dialog__button:active::after {
+.profile-dialog__button:active::after {
   background-color: rgba($BLACK, .1);
 }

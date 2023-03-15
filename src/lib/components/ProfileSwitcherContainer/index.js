@@ -32,7 +32,7 @@ class ProfileSwitcherContainer extends BaseStateElement {
     }
 
     return html`
-      <button class="w-profile-signin" @click="${signIn}">Sign in</button>
+      <button class="profile-signin" @click="${signIn}">Sign in</button>
     `;
   }
 

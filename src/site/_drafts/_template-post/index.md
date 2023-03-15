@@ -502,7 +502,8 @@ quam sem.
 </div>
 
 <div class="all-center">
-  <a href="https://example.com/some.pdf" class="w-button w-button--with-icon" data-icon="file_download">
+  <a class="button" href="https://example.com/some.pdf">
+    {% include "icons/download.svg" %}
     Download case study
   </a>
 </div>
