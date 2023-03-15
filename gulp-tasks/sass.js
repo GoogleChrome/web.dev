@@ -3,8 +3,6 @@ const sassProcessor = require('gulp-sass')(require('sass'));
 
 const sourceFiles = [
   './src/scss/next.scss',
-  './src/styles/main.scss',
-  './src/styles/legacy-rollout.scss',
 ];
 
 // Flags wether we compress the output etc
