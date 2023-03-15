@@ -4,14 +4,13 @@
   <nav data-drawer-container>
     <div class="drawer-default__contents">
       <div class="drawer-default__header">
-        <button
+        <button 
           data-drawer-close-button
-          class="drawer-default__hide icon-button tooltip icon-button__round"
-          data-alignment="left"
+          class="icon-button tooltip icon-button__round"
           aria-labelledby="{{ 'i18n.common.close' | i18n(locale) }}"
         >
           {% include "icons/close.svg" %}
-          <span class="tooltip__content">{{ 'i18n.common.close' | i18n(locale) }}</span>
+          <span class="tooltip__content" id="icon-button-toolip">{{ 'i18n.common.close' | i18n(locale) }}</span>
         </button>
         <a
           href="/"

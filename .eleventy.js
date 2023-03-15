@@ -152,20 +152,6 @@ module.exports = function (config) {
     return memoize(collection.getAll());
   });
 
-  // Filters through all collection items and finds content that has
-  // CSS_ORIGIN set to 'next'. This allows shortcodes to determine if we
-  // are in a design system context or a legacy context
-  config.addCollection('designSystemGlobals', (collection) => {
-    global.__designSystemPaths = new Set(
-      collection
-        .getAll()
-        .filter(({data}) => data.CSS_ORIGIN === 'next')
-        .map(({filePathStem}) => filePathStem),
-    );
-
-    return global.__designSystemPaths;
-  });
-
   // ----------------------------------------------------------------------------
   // FILTERS
   // ----------------------------------------------------------------------------

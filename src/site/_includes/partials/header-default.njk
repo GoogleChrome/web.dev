@@ -3,12 +3,12 @@
 <web-header class="header-default" role="navigation">
   <button 
     data-open-drawer-button
+    class="icon-button tooltip icon-button__round"
     aria-labelledby="{{ 'i18n.header.open_menu' | i18n(locale) }}"
     data-alignment="left"
-    class="icon-button tooltip icon-button__round"
   >
     {% include "icons/menu.svg" %}
-    <span class="tooltip__content">{{ 'i18n.header.open_menu' | i18n(locale) }}</span>
+    <span class="tooltip__content" id="icon-button-toolip">{{ 'i18n.header.open_menu' | i18n(locale) }}</span>
   </button>
 
   <a

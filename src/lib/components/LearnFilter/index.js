@@ -49,7 +49,7 @@ class LearnFilter extends BaseElement {
     /** @type {(filter: {id?: string, title: string}) => any} */
     const filtersMap = (filter) =>
       html`<button
-        class="pill w-chip${this.active === filter.id ? ' w-chip__active' : ''}"
+        class="pill chip${this.active === filter.id ? ' chip__active' : ''}"
         data-state="${this.active === filter.id ? 'active' : 'inactive'}"
         type="button"
         @click="${() => this.setActive(filter.id)}"
@@ -57,7 +57,7 @@ class LearnFilter extends BaseElement {
         ${filter.title}
       </button>`;
 
-    return html`<div class="w-chips cluster">${filters.map(filtersMap)}</div>`;
+    return html`<div class="chips cluster">${filters.map(filtersMap)}</div>`;
   }
 }
 
