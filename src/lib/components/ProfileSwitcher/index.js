@@ -24,7 +24,7 @@ class ProfileSwitcher extends BaseElement {
   render() {
     return html`
       <button
-        class="w-profile-toggle"
+        class="profile-toggle"
         .disabled=${!this.user}
         @click="${() => (this.expanded = !this.expanded)}"
       >
@@ -73,7 +73,7 @@ class ProfileSwitcher extends BaseElement {
     this.photoPromise = new Promise((resolve) => {
       const image = new Image();
       image.src = this.user.photoURL;
-      image.className = 'w-profile-toggle__photo';
+      image.className = 'profile-toggle__photo';
       image.onload = () => resolve(image);
 
       // Ignore errors and don't display a photo at all.
@@ -93,27 +93,27 @@ class ProfileSwitcher extends BaseElement {
      * implement this feature.
      */
     return html`
-      <div class="w-profile-dialog">
-        <div class="w-profile-dialog__user">
-          <div class="w-profile-dialog__photo-container">
+      <div class="profile-dialog">
+        <div class="profile-dialog__user">
+          <div class="profile-dialog__photo-container">
             <img
-              class="w-profile-dialog__photo"
+              class="profile-dialog__photo"
               alt=""
               src="${this.user.photoURL}"
             />
           </div>
-          <div class="w-profile-dialog__details">
-            <div class="w-profile-dialog__name">${this.user.displayName}</div>
-            <div class="w-profile-dialog__email">${this.user.email}</div>
+          <div class="profile-dialog__details">
+            <div class="profile-dialog__name">${this.user.displayName}</div>
+            <div class="profile-dialog__email">${this.user.email}</div>
             <a
-              class="w-profile-dialog__privacy"
+              class="profile-dialog__privacy"
               href="https://myaccount.google.com/privacypolicy"
               target="_blank"
             >
               Privacy
             </a>
             <a
-              class="w-profile-dialog__account"
+              class="profile-dialog__account"
               href="https://myaccount.google.com"
               target="_blank"
             >
@@ -121,11 +121,11 @@ class ProfileSwitcher extends BaseElement {
             </a>
           </div>
         </div>
-        <div class="w-profile-dialog__controls">
-          <button class="w-profile-dialog__button" @click="${signIn}">
+        <div class="profile-dialog__controls">
+          <button class="profile-dialog__button" @click="${signIn}">
             Change accounts
           </button>
-          <button class="w-profile-dialog__button" @click="${signOut}">
+          <button class="profile-dialog__button" @click="${signOut}">
             Sign out
           </button>
         </div>
