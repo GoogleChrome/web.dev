@@ -18,5 +18,5 @@ const {html} = require('common-tags');
 const md = require('markdown-it')();
 
 module.exports = (content) => {
-  return html`<p class="w-label">${md.renderInline(content)}</p>`;
+  return html`<p class="label">${md.renderInline(content)}</p>`;
 };
