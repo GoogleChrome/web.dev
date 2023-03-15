@@ -57,7 +57,6 @@ const Meta = require('./src/site/_includes/components/Meta');
 const PathCard = require('./src/site/_includes/components/PathCard');
 const SignPosts = require('./src/site/_includes/components/SignPosts');
 const StackOverflow = require('./src/site/_includes/components/StackOverflow');
-const Tooltip = require('./src/site/_includes/components/Tooltip');
 const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
 
 // Collections
@@ -152,20 +151,6 @@ module.exports = function (config) {
     return memoize(collection.getAll());
   });
 
-  // Filters through all collection items and finds content that has
-  // CSS_ORIGIN set to 'next'. This allows shortcodes to determine if we
-  // are in a design system context or a legacy context
-  config.addCollection('designSystemGlobals', (collection) => {
-    global.__designSystemPaths = new Set(
-      collection
-        .getAll()
-        .filter(({data}) => data.CSS_ORIGIN === 'next')
-        .map(({filePathStem}) => filePathStem),
-    );
-
-    return global.__designSystemPaths;
-  });
-
   // ----------------------------------------------------------------------------
   // FILTERS
   // ----------------------------------------------------------------------------
@@ -235,7 +220,6 @@ module.exports = function (config) {
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('StackOverflow', StackOverflow);
-  config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('Widget', Widget);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
