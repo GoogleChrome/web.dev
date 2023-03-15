@@ -1,10 +1,10 @@
 ---
 layout: post
 title: 6 CSS snippets every front-end developer should know in 2023
-subhead: Toolbelt worthy, powerful and stable CSS you can use today.
+subhead: Toolbelt worthy, powerful, and stable CSS you can use today.
 authors:
   - adamargyle
-description: Toolbelt worthy, powerful and stable CSS you can use today.
+description: Toolbelt worthy, powerful, and stable CSS you can use today.
 date: 2023-03-14
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/8A29dtYK0wfkRh8a8wMe.jpg
 thumbthumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GBUkJYnsvmzkdKCQUfWZ.png
@@ -98,7 +98,7 @@ points.
 } %}
 
 Learn more about the potential of this CSS feature in this [huge and inspiring
-Codepen collection](https://codepen.io/collection/KpqBGW) of ~25 demos.
+Codepen collection](https://codepen.io/collection/KpqBGW) of around 25 demos.
 
 <div class="compat-subject"><code>scroll-snap-type</code></div>
 {% BrowserCompat 'css.properties.scroll-snap-type' %}
