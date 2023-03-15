@@ -31,6 +31,7 @@ class CopyCode extends BaseElement {
 
       this.tooltip = document.createElement('span');
       this.tooltip.className = 'tooltip';
+      this.tooltip.setAttribute('role', 'tooltip');
       this.tooltip.setAttribute('data-alignment', 'right');
 
       this.tooltipContent = document.createElement('span');
