@@ -16,9 +16,9 @@ featuredCard:
   eyebrow: 'Featured'
   title: 'Watch the progress we made together on the web.'
   background: ''
-  url: 'https://www.youtube.com/watch?v=W9O4CuSUKb8'
-  video: 'https://web-dev.imgix.net/video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lIta9ZJEALbfAzJzmiNl.mp4'
-  alt: 'Chrome icon rolls past a title: 2022 Year in Review.'
+  url: ''
+  image: 'https://wd.imgix.net/image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/t6UJBGxTD5XYwq8VgsK5.png'
+  alt: '.'
   theme: 'light'
 
 pickedCaseStudyUrl: '/mishipay/'
