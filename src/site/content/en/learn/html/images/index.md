@@ -3,7 +3,7 @@ title: 'Images'
 authors:
   - estelleweyl
 description: An overview of images in HTML.
-date: 2023-14-02
+date: 2023-02-14
 tags:
   - html
 ---

@@ -3,7 +3,7 @@ title: 'Details and summary'
 authors:
   - estelleweyl
 description: Discover how the very useful details and summary elements work, and where to use them.
-date: 2023-21-02
+date: 2023-02-21
 tags:
   - html
 ---
