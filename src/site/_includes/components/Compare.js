@@ -16,16 +16,6 @@
 
 const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 
-const isDesignSystemContext = require('../../../lib/utils/is-design-system-context');
-
-/* NOTE: This component is in a transition period to support both new design system contexts
-and the existing system. Once the new design system has been *fully* rolled out, this component
-can be cleaned up with the following:
-
-1. The isDesignSystemContext conditional can be removed and code in that block should run as normal
-2. Everything from the '/// DELETE THIS WHEN ROLLOUT COMPLETE' comment *downwards* can be removed
-*/
-
 /**
  * @this {EleventyPage}
  * @param {string} content Markdown with the content for the compare element.
@@ -58,15 +48,8 @@ function Compare(content, type, labelOverride) {
     }
   }
 
-  if (isDesignSystemContext(this.page.filePathStem)) {
-    // prettier-ignore
-    return `<figure class="compare flow" data-type="${type}" data-size="full"><p class="compare__label">${label}</p>
-${content}</figure>`;
-  }
-
   // prettier-ignore
-  return `<figure class="w-compare"><p class="w-compare__label w-compare__label--${type}">${label}</p>
-
+  return `<figure class="compare flow" data-type="${type}" data-size="full"><p class="compare__label">${label}</p>
 ${content}</figure>`;
 }
 

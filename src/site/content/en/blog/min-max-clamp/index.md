@@ -148,10 +148,10 @@ size by using the `min()` function.
 
 <figure>
   <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-width.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-width.mp4">
   </video>
   <figcaption>
-    Using the clamp() function to limit a minimum and maximum width.
+    Using the min() function to set a maximum width.
   </figcaption>
 </figure>
 
@@ -162,10 +162,10 @@ be at _least_ `45ch` or larger.
 
 <figure>
   <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-width.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-width.mp4">
   </video>
   <figcaption>
-    Using the clamp() function to limit a minimum and maximum width.
+    Using the max() function to set a minimum width.
   </figcaption>
 </figure>
 

@@ -24,7 +24,8 @@ class SigninButton extends BaseStateElement {
     return html`
       <button
         @click=${action}
-        class="w-button w-button--secondary lh-signin-button gc-analytics-event"
+        class="button lh-signin-button gc-analytics-event"
+        data-type="secondary"
         data-category="web.dev"
         data-label="measure, big sign-in"
         data-action="click"
