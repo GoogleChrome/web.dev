@@ -40,7 +40,7 @@ Additionally, CLS values in the "Poor" range were reduced by 65%, and CLS values
 
 The result was that The Economic Times&mdash;which was previously not meeting CWV thresholds&mdash;now passed CWV thresholds across its entire origin and **reduced bounce rates by 43% overall**.
 
-<figure class="w-caption">
+<figure>
   {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/6C1gW9oQu7Njds1Gdpmv.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}
   <figcaption>
     A before and after animation of The Economic Times's Article page.
@@ -87,7 +87,7 @@ For all the front-end routes, we added a [Redis](https://en.wikipedia.org/wiki/R
 
 Before beginning the optimization project, the team benchmarked their LCP score at **4.5 seconds** (for the 75th percentile of their users, based on CrUX report field data). After the optimization project, it was reduced to **2.5 seconds**.
 
-<figure class="w-caption">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/DsNmTCU3JTpWAam7a3df.png", alt="LCP distributions from September 2020 to June 2021. Overall, the 75th percentile of LCP values observed in the Chrome User Experience report showed an 8.97% reduction in 'Poor' LCP values. The overall decrease in LCP time at the 75th percentile was 200 milliseconds, with 77.63% of LCP values falling in the 'Good' range.", width="800", height="596" %}
   <figcaption>
     Source: CrUX Report of The Economic Times overall LCP
