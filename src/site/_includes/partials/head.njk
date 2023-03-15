@@ -1,23 +1,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% if CSS_ORIGIN === 'next' %}
-  {% include "partials/theme-script.njk" %}
-  {# hashForProd() will cache bust the css in dev with a random string. #}
-  <link rel="stylesheet" href="{{ helpers.hashForProd('/css/next.css') }}">
-  <link rel="stylesheet" href="{{ helpers.hashForProd('/css/legacy-rollout.css') }}">
-  <link rel="preload" as="font" crossorigin="anonymous" href="/fonts/material-icons/regular.woff2">
-{% else %}
-  {% if process.env.ELEVENTY_ENV === 'prod' %}
-    {# CSS will be injected by purify-css transform. #}
-    <!-- __PURGECSS_INJECT -->
-  {% else %}
-    {# hashForProd() will cache bust the css in dev with a random string. #}
-    <link rel="stylesheet" href="{{ helpers.hashForProd('/css/main.css') }}">
-  {% endif %}
-
-  <link rel="preload" as="font" crossorigin="anonymous" href="/fonts/material-icons/regular.woff2">
-{% endif %}
+{% include "partials/theme-script.njk" %}
+<link rel="stylesheet" href="{{ helpers.hashForProd('/css/next.css') }}">
+<link rel="stylesheet" href="{{ helpers.hashForProd('/css/legacy-rollout.css') }}">
+<link rel="preload" as="font" crossorigin="anonymous" href="/fonts/material-icons/regular.woff2">
 
 <link rel="preload" as="font" crossorigin="anonymous" href="/fonts/google-sans/regular/latin.woff2">
 <link rel="preload" as="font" crossorigin="anonymous" href="/fonts/google-sans/bold/latin.woff2">
