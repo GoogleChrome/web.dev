@@ -111,7 +111,7 @@ Podcasts 应用会自然地与其他应用集成。例如当我右键单击喜�
 
 对于像 Podcasts 这样的 iOS 应用，还有一个更微妙的事情是不言而喻的：文本标签都不可选的，所有文本都与机器的系统字体融合在一起。我对系统颜色主题（深色模式）的选择也得到了保留。
 
-<div class="w-columns">
+<div class="switcher">
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OAppP9uGUje6CkS7cKcZh.png", alt="深色模式下的 Podcasts 应用。", width="800", height="463" %}<figcaption>Podcasts 应用支持浅色与深色模式。</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cnVihfFR2anSBlIVfCSW.png", alt="浅色模式下的 Podcasts 应用。", width="800", height="463" %}<figcaption>该应用程序使用默认系统字体。</figcaption></figure>
 </div>

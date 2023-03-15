@@ -36,7 +36,7 @@ Existen algunas prácticas recomendadas que se aplican independientemente de los
 
 Cuando se cumplen [ciertos criterios](/install-criteria/), la mayoría de los navegadores le indicarán automáticamente al usuario que tu aplicación web progresiva se puede instalar. Por ejemplo, el escritorio de Chrome muestra un botón de instalación en el cuadro multifunción.
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Captura de pantalla del cuadro multifunción con indicador de instalación visible", width="800", height="307" %} <figcaption> Promoción de instalación proporcionada por el navegador (escritorio)</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Captura de pantalla de la promoción de instalación proporcionada por el navegador", width="800", height="307" %}<figcaption> Promoción de instalación proporcionada por el navegador (móvil)</figcaption></figure>
 </div>

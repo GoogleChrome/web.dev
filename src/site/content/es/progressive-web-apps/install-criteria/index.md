@@ -16,7 +16,7 @@ La mayoría de los usuarios están familiarizados con la instalación de aplicac
 
 La mayoría de los navegadores indican al usuario que su Aplicación Web Progresiva (PWA) se puede instalar cuando cumple determinados criterios. Algunos ejemplos de estos indicadores son un botón de instalación en la barra de direcciones o un elemento del menú de instalación en el menú desplegable.
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="Captura de pantalla de omnibox con el indicador de instalación visible", width="800", height="307" %} <figcaption> Promoción de la instalación proporcionada por el navegador (de escritorio) </figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="Captura de pantalla para la promoción de instalación proporcionada por el navegador.", width="800", height="307" %} <figcaption> Promoción de instalación proporcionada por el navegador (para dispositivos móviles) </figcaption></figure>
 </div>

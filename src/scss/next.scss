@@ -816,9 +816,5 @@ video,
   @extend .visually-hidden;
 }
 
-.w-columns {
-  @extend .switcher;
-}
-
 // Render gorko utilities
 @include generate-utility-classes();

@@ -36,7 +36,7 @@ feedback:
 
 При [соблюдении определенных критериев](/install-criteria/) большинство браузеров автоматически сообщают пользователю, что ваше прогрессивное веб-приложение можно установить. Например, Chrome для десктопов показывает кнопку установки в омнибоксе.
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Скриншот омнибокса с отображаемым индикатором установки.", width="800", height="307" %} <figcaption> Браузер показывает рекламу установки (на десктопе) </figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Скриншот браузера, предлагающего установку.", width="800", height="307" %} <figcaption> Браузер показывает рекламу установки (на мобильном устройстве)</figcaption></figure>
 </div>

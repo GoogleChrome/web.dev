@@ -36,7 +36,7 @@ feedback:
 
 当满足[某些条件](/install-criteria/)时，大多数浏览器会自动向用户表明可以安装您的渐进式 Web 应用。例如，桌面 Chrome 会在地址栏中显示一个安装按钮。
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="显示安装指示的地址栏的屏幕截图。", width="800", height="307" %}<figcaption>浏览器提供的安装推广（桌面）</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="提供安装推广的浏览器屏幕截图。", width="800", height="307" %} <figcaption> 浏览器提供的安装推广（移动设备）</figcaption></figure>
 </div>

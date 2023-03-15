@@ -18,7 +18,7 @@ tags:
 
 대부분의 브라우저는 PWA(Progressive Web App)가 특정 기준을 충족할 때 설치할 수 있음을 사용자에게 나타냅니다. 표시기의 예로는 주소 표시줄의 설치 버튼이나 오버플로 메뉴의 설치 메뉴 항목이 있습니다.
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="설치 표시기가 표시된 검색주소창의 스크린샷.", width="800", height="307" %}<figcaption> 브라우저 제공 설치 프로모션(데스크톱)</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="브라우저 제공 설치 프로모션 스크린샷", width="800", height="307" %}<figcaption> 브라우저 제공 설치 프로모션(모바일)</figcaption></figure>
 </div>

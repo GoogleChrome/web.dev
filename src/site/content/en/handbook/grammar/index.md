@@ -26,7 +26,7 @@ Use second person (_you_) rather than first person (_we_) except in rare cases w
 
 Begin instructions with the objective rather than the action.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 Drag a photo to the trash to remove it from an album.
 {% endCompare %}
@@ -38,7 +38,7 @@ To remove a photo from an album, drag it to the trash.
 
 Favor the imperative mood (giving commands) over declarative (making statements) in instructions.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 You will click **Run Audit**.
 {% endCompare %}
@@ -53,7 +53,7 @@ Avoid using _can_ in instructions unless you really mean to convey that the step
 ## Linking
 Don't include preceding articles (_a_, _an_, _the_) or surrounding punctuation in link text.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 See [the "Easily discoverable" collection](/discoverable) for more information.
 {% endCompare %}
@@ -102,7 +102,7 @@ Use numerals for decimals and numbers higher than nine.
 ## Pronouns
 Avoid ambiguous pronouns. Follow the advice on the GDDSC [Pronouns](https://developers.google.com/style/pronouns) page. Also avoid pronouns that refer to clauses or phrases, which can complicate translation into some languages.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 Speed optimizations often regress quickly. Performance budgets are one way to address this.
 {% endCompare %}
@@ -116,7 +116,7 @@ Speed optimizations often regress quickly. Performance budgets are one way to ad
 ### Ampersands
 Don't use ampersands unless one is part of a company or brand name.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 Safe & secure
 {% endCompare %}
@@ -129,7 +129,7 @@ Safe and secure
 ### Commas
 Use the serial comma before the last item in a list.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 React, Vue and Angular are popular frameworks.
 {% endCompare %}
@@ -149,7 +149,7 @@ Use an en dash (–) for ranges (e.g., _10–100 KB_).
 ### Quotation marks and apostrophes
 Use straight quotation marks and apostrophes, not smart (curly).
 
-<div class="w-columns">
+<div class="switcher">
 <!-- lint disable no-smart-quotes -->
 {% Compare 'worse' %}
 The "Accessible to all" collection
@@ -163,7 +163,7 @@ The "Accessible to all" collection
 
 Periods and commas always go inside quotation marks. Question marks and exclamation points go inside quotation marks if they're part of the quotation; outside if not.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 Jane said, "Reader, I married him".
 {% endCompare %}
@@ -178,7 +178,7 @@ Bold words for emphasis sparingly. (The primary use for bolding is [indicating U
 
 Avoid mixing code font and standard font in a single word.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 `integer`s
 {% endCompare %}
@@ -191,7 +191,7 @@ Avoid mixing code font and standard font in a single word.
 ## Titles and headings
 Use sentence case for titles and headings.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 Optimize Your Images
 {% endCompare %}
@@ -203,7 +203,7 @@ Optimize your images
 
 Use imperative mood for titles and headings whenever possible.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 Optimizing your images
 {% endCompare %}
@@ -230,7 +230,7 @@ To find slow third-party scripts, check the **Reduce JavaScript execution time**
 
 When referring to a button with an icon but no label, use the name of the button as shown in the tooltip, and add the button icon immediately after. Don't style the icon unless the button would be difficult to recognize without its original styling.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 Click {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/exITm071mGTWssT5c3Qh.png", alt="Fullscreen icon", width="96", height="96", class="icon" %}.
 {% endCompare %}
@@ -246,7 +246,7 @@ To refer to a keyboard key:
 * To refer to a key combination, use the form _Modifier+Key_ (no spaces).
 * When the reader may be on either Windows or Mac, put the Mac shortcut in parentheses after the Windows shortcut.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 To copy, press Ctrl + C (⌘ + C).
 {% endCompare %}
@@ -261,7 +261,7 @@ Use _pane_ to refer to the content areas associated with tabs—unless you're re
 Use `about://` instead of `chrome://` for built-in URLs in web.dev articles. This generalizes these URLs to all Chromium forks. Typing `about://` in such a browser will be rewritten to a browser-specific scheme. For example typing `about://` in Microsoft Edge will be rewritten to `edge://`.
 For more background on this rule, see the article [How to set browser flags in Chromium](https://developer.chrome.com/blog/browser-flags/).
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 `chrome://`
 {% endCompare %}
@@ -276,7 +276,7 @@ Use _KB_ for kilobytes, _kb_ for kilobits.
 
 Add a space before units.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 100KB
 {% endCompare %}
@@ -289,7 +289,7 @@ Add a space before units.
 ## Usage
 To maintain a conversational tone, use common contractions.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 This collection assumes that you are already familiar with Angular.
 {% endCompare %}
@@ -303,7 +303,7 @@ Use consistent vocabulary throughout a piece and the collection it lives in.
 
 Acronyms should be spelled out the first time they're used, with the acronym following immediately after in parentheses.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 WICG
 {% endCompare %}
