@@ -17,7 +17,7 @@ featuredCard:
   title: 'Watch the progress we made together on the web.'
   background: '.'
   url: '.'
-  image: 'https://wd.imgix.net/image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/t6UJBGxTD5XYwq8VgsK5.png'
+  image: 'https://web-dev.imgix.net/image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/t6UJBGxTD5XYwq8VgsK5.png'
   alt: '.'
   theme: 'light'
 
