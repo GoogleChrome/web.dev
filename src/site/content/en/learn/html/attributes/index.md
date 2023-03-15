@@ -221,7 +221,6 @@ theme: 'dark',
 tab: 'html,result'
 } %}
 
-{% Aside %}
 If the form control is nested between the `<label>` opening and closing tags, the `for` and `id` attributes
 aren't required: this is called an "implicit" label. Labels let all users know what each form control is for.
 
@@ -230,7 +229,6 @@ aren't required: this is called an "implicit" label. Labels let all users know w
   Send me a reminder <input type="number" name="min"> before the workshop resumes
 </label>.
 ```
-{% endAside %}
 
 The association between `for` and `id` makes the information available to users of assistive technologies. In addition,
 clicking anywhere on a label gives focus to the associated element, extending the control's click area. This isn't just helpful
@@ -458,7 +456,7 @@ on the element in question.
   data-formerly="Margarita Maker" data-aspiring="Load Balancer"
   data-year-graduated="2022">
   HAL and EVE could teach a fan to blow hot air.
-</p>
+</blockquote>
 ```
 
 You can use `getAttribute()` using the full attribute name, or you can take advantage of the simpler [`dataset`](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset) property.

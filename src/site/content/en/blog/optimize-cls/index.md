@@ -170,7 +170,7 @@ Pages may wish to include a cropped shot of an image on narrow viewports with th
 
 It's very possible these images could have different aspect ratios and browsers are still evaluating what the most efficient solution here should be, including if dimensions should be specified on all sources.
 
-Chrome and Safari now support setting `width` and `height` on the `source` elements of `<picture>` element:
+Chrome, Firefox and Safari now support setting `width` and `height` on the `source` elements of `<picture>` element:
 
 ```html
 <picture>
@@ -179,8 +179,6 @@ Chrome and Safari now support setting `width` and `height` on the `source` eleme
   <img src="puppy-800w.jpg" alt="Puppy with balloons" width=800 height=400/>
 </picture>
 ```
-
-On Firefox, these extra `width` and `height` attributes on `<source>` elements will currently be ignored and only the `width` and `height` attributes on the `<img>` will be used (even if the image itself is loaded from a `<source>` element). That's not great, but when the responsive image is loaded they will be reset, so it will be given the correct dimensions—just later than on Chrome and Safari.
 
 ## Ads, embeds and iframes without dimensions
 
@@ -361,7 +359,7 @@ Downloading and rendering web fonts can cause layout shifts in two ways:
 The following tools can help you minimize this:
 
 - [`font-display`](https://developer.chrome.com/docs/lighthouse/performance/font-display/) allows you to modify the rendering behavior of custom fonts with values such as `auto`, `swap`, `block`, `fallback` and `optional`. Unfortunately, all of these values (except [`optional`](http://crrev.com/749080)) can cause a re-layout in one of the above ways.
-- The [Font Loading API](./optimize-webfont-loading/#the-font-loading-api) can reduce the time it takes to get necessary fonts.
+- The [Font Loading API](/optimize-webfont-loading/#the-font-loading-api) can reduce the time it takes to get necessary fonts.
 
 More recommendations for reducing font-related CLS:
 

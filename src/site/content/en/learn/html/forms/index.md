@@ -3,7 +3,7 @@ title: 'Forms'
 authors:
   - estelleweyl
 description: An overview of forms in HTML.
-date: 2023-21-02
+date: 2023-02-21
 tags:
   - html
 ---
@@ -101,8 +101,8 @@ The value of a `<select>` is the selected `<option>`'s `value` or, if the `<opti
 ```
 
 <form method="GET">
-  <label for="machine">Pick a student:</label>
-  <select name="machine" id="machine">
+  <label for="student">Pick a student:</label>
+  <select name="student" id="student">
     <option value="hoover">Hoover Sukhdeep</option>
     <option>Blendan Smooth</option>
     <option value="toasty">Toasty McToastface</option>

@@ -54,6 +54,12 @@ To show the install prompt, call `prompt()` on the saved `beforeinstallprompt`
 event. Calling `prompt()` is done in the install button click handler because
 `prompt()` must be called from a user gesture.
 
+{% Aside 'gotcha' %}
+You need to open your app in its own browser tab. The side-by-side preview pane
+in Glitch doesn't work for this codelab, since it will be run in an iframe.
+Choose Glitch's "Preview in a new window" mode instead.
+{% endAside %}
+
 1. Add a click event handler for the install button.
 1. Call `prompt()` on the saved `beforeinstallprompt` event.
 1. Log the results of the prompt.

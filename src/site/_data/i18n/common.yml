@@ -182,5 +182,8 @@ see_all:
 more:
   en: More
 
-by_chrome_devrel:
-  en: By Chrome DevRel
+by:
+  en: By
+
+chrome_devrel:
+  en: Chrome DevRel

@@ -7,7 +7,7 @@ description: |
   Learn how to defer non-critical CSS with the goal of optimizing the Critical
   Rendering Path, and improving FCP (First Contentful Paint).
 date: 2019-02-17
-updated: 2020-06-12
+updated: 2023-03-08
 tags:
   - performance
 ---
@@ -121,10 +121,15 @@ This is not the standard way of loading CSS. Here's how it works:
 * The reference to the stylesheet inside of a `noscript` element works as a fallback for browsers that don't execute JavaScript.
 
 {% Aside %}
+<p>
 In this guide, you used vanilla code to implement this optimization. In a real
 production scenario, it's a good practice to use functions like
 [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md), that
-can encapsulate this behavior and work well across browsers.
+can encapsulate this behavior and work well across browsers, and can support a [Content Security Policy](/csp/) that may not allow inline `onload` JavaScript.
+</p>
+<p>
+Alternatively, placing the CSS link at the bottom of the page, allows content above this to be rendered in Firefox and Chrome—though not in Safari—without waiting for the stylesheet. However, it still prioritizes that stylesheet, so it can still block other, more critical, content in all browsers.
+</p>
 {% endAside %}
 
 The [resulting page](https://defer-css-optimized.glitch.me/) looks exactly like the previous version, even when most styles load asynchronously. Here's how the inlined styles and asynchronous request to the CSS file look like in the HTML file:

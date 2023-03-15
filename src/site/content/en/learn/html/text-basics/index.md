@@ -151,9 +151,9 @@ tab: 'html,result'
 
 ### HTML Entities
 
-You may have noticed the escape sequence or "entity". Because the `<` is used in HTML, you have to escape it using either `&lt;` or a less easy-to-remember encoding `&#x3C;`. There are four reserved entities in HTML: `<`, `>`, `&`, and `"`. Their character references are `&lt`, `&gt`, `&amp;` and `&quot;` respectively.
+You may have noticed the escape sequence or "entity". Because the `<` is used in HTML, you have to escape it using either `&lt;` or a less easy-to-remember encoding `&#60;`. There are four reserved entities in HTML: `<`, `>`, `&`, and `"`. Their character references are `&lt;`, `&gt;`, `&amp;` and `&quot;` respectively.
 
-A few other entities you will often use are `&copy;`  for copyright (©),` &tm;` for Trademark (™), and `&nbsp;` for non-breaking space.
+A few other entities you will often use are `&copy;`  for copyright (©),` &trade;` for Trademark (™), and `&nbsp;` for non-breaking space.
 Non-breaking spaces are useful when you want to include a space between two characters or words while preventing a line break from occurring there.
 There are over 2,000 [named character references](https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references).
 But, if needed, every single character, including emojis, has an encoded equivalent that starts with `&#`.
@@ -181,7 +181,7 @@ or you can just ensure you include [`<meta charset="UTF-8">`](/learn/html/docume
 
 Even when you specify the character set as UTF-8, you still have to escape the `<` when you want to print that character to the screen.
 Generally, you don't need to include the named character references for `>`, `"`, or `&`; but if you want to write a tutorial on HTML entities,
-you do need to write `&amp;lt;` when teaching someone how to code a `<`. 😀
+you do need to write `&lt;` when teaching someone how to code a `<`. 😀
 
 Oh, and that smiley emoji is `&#x1F600;`, but this doc is declared as UTF-8, so it isn't escaped.
 

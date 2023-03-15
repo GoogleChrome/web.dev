@@ -1,5 +1,5 @@
 ---
-layout: 'homepage-next'
+layout: 'homepage'
 title: 'web.dev'
 intro:
   eyebrow: 'Brought to you by the Chrome DevRel team'

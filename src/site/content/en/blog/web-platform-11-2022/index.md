@@ -27,11 +27,11 @@ There's a change to how the Layout Viewport behaves from Chrome 108 on Android w
 
 Also in Chrome 108 are the new CSS Viewport Units. These include small (`svw`, `svh`, `svi`, `svb`, `svmin`, `svmax`), large (`lvw`, `lvh`, `lvi`, `lvb`, `lvmin`, `lvmax`), dynamic (`dvw`, `dvh`, `dvi`, `dvb`, `dvmin`, `dvmax`), and logical (`vi`, `vb`) units. These units are already implemented in Firefox and Safari, meaning that we now have interop across the three main browser engines for these units.
 
-Read [The Large, Small, and Dynamic viewport units](/viewport-units/).
+Read [The large, small, and dynamic viewport units](/viewport-units/).
 
 {% BrowserCompat 'css.types.length.viewport_percentage_units_large' %}
 
-The [`contain-intrinsic-size`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size) shorthand CSS property is supported in Firefox 107, along with the longhand [`contain-intrinsic-width`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width), [`contain-intrinsic-height`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height) and logical properties [`contain-intrinsic-block-size`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-block-size) and [`contain-intrinsic-inline-size`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-inline-size). 
+The [`contain-intrinsic-size`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size) shorthand CSS property is supported in Firefox 107, along with the longhand [`contain-intrinsic-width`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width), [`contain-intrinsic-height`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height) and logical properties [`contain-intrinsic-block-size`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-block-size) and [`contain-intrinsic-inline-size`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-inline-size).
 
 These are applied to specify the size of a UI element that is subject to size containment. This allows a user agent to determine the size of an element without needing to render its child elements. They are useful when an element is subject to [size containment](https://developer.mozilla.org/docs/Web/CSS/CSS_Containment#size_containment).
 
@@ -61,5 +61,5 @@ Beta browser versions give you a preview of things that will be in the next stab
 Firefox 108 supports `height` and `width` attributes for the [`<source>`](https://developer.mozilla.org/docs/Web/HTML/Element/source) element, when it is a child of a `<picture>` element. These attributes accept the height or width of the image, in pixels, as an integer without a unit.
 
 Implementation of container queries is underway in Firefox. Behind the `layout.css.container-queries.enabled` flag in Firefox 108 beta, you will find the container query length units—`cqw`, `cqh`, `cqi`, `cqb`, `cqmin`, `cqmax`. These are units of length relative to the size of a query container.
-  
+
 _Photo by [Matt Seymour](https://unsplash.com/@mattseymour?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)._

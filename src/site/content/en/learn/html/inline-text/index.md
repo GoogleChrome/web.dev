@@ -3,7 +3,7 @@ title: 'Other inline text elements'
 authors:
   - estelleweyl
 description: An introduction to the range of elements used to mark-up text.
-date: 2023-21-02
+date: 2023-02-21
 tags:
   - html
 ---

@@ -50,16 +50,3 @@ select:hover {
 select option {
   font-weight: normal;
 }
-
-.w-select--borderless {
-  border-color:  transparent;
-
-  &:hover {
-    border-color: transparent;
-    background-color: $GREY_100;
-  }
-}
-
-.w-select--full-width {
-  width: 100%;
-}

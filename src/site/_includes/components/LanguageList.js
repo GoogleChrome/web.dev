@@ -50,7 +50,7 @@ module.exports = (url, lang) => {
 
   const languageLinks = langHrefs.map((langHref) => {
     const href = langHref[1];
-    return `<a class="w-post-signpost__link"
+    return `<a class="post-signpost__link"
       translate="no"
       lang="${langHref[0]}"
       href="${href}">${languageNames[langHref[0]]}</a>`;
@@ -59,7 +59,7 @@ module.exports = (url, lang) => {
   const availableIn = i18n('i18n.post.available_in', lang);
   const listFormat = new Intl.ListFormat(lang);
 
-  return `<span class="w-post-signpost__title">
+  return `<span class="post-signpost__title">
     ${availableIn}:
     ${listFormat.format(languageLinks)}
   </span>`;

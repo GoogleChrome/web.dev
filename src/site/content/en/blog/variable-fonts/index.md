@@ -576,15 +576,15 @@ Luckily, we can work around this by using CSS variables:
 }
 
 .grade-light {
-	--grad: -200;
+	--GRAD: -200;
 }
 
 .grade-normal {
-	--grad: 0;
+	--GRAD: 0;
 }
 
 .grade-heavy {
-	--grad: 150;
+	--GRAD: 150;
 }
 
 /* Apply whatever value is kept in the CSS variables */

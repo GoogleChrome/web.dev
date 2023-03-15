@@ -169,7 +169,7 @@ When your PWA is installed as a QuickApp, users will get a similar experience to
 
 ## Prompting for installation
 
-In Chromium-based browsers on desktop and Android devices, it's possible to trigger the browser's installation dialog from your PWA. The [Installation Prompt chapter](/learn/pwa/installation-prompt), will cover [patterns for doing so](/learn/pwa/promote-install/) and how to implement them.
+In Chromium-based browsers on desktop and Android devices, it's possible to trigger the browser's installation dialog from your PWA. The [Installation Prompt chapter](/learn/pwa/installation-prompt), will cover [patterns for doing so](/promote-install/) and how to implement them.
 
 {% Aside 'warning' %}
 If you provide instructions to the user, remember that menu items' names vary by language.

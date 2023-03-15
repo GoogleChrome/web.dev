@@ -45,6 +45,13 @@
 {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
 {% include 'partials/script-loader.njk' %}
 
+{# Private Aggregation API testing script #}
+{# The testing will run until mid-April 2023 #}
+{% set paaScript %}
+  loadScript('https://shared-storage-demo-content-producer.web.app/paa/scripts/private-aggregation-test.js', null);
+{% endset %}
+<script>{{ paaScript | minifyJs | cspHash | safe }}</script>
+
 {% include 'partials/analytics.njk' %}
 
 {# Dogfood document speculation rules origin trial #}
@@ -74,3 +81,4 @@
 }
 {% endset %}
 <script type="speculationrules">{{ speculationRules | minifyJSON | cspHash | safe }}</script>
+

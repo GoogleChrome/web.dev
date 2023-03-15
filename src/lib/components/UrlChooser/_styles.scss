@@ -122,7 +122,7 @@ web-url-chooser {
     margin-top: 8px;
   }
 
-  .lh-controls .w-button {
+  .lh-controls .button {
     // List all vals so autoprefixer doesn't rewrite this to flex: 1 1 0%
     // and make "switch url" text ellipsis.
     flex: 1 1 auto;

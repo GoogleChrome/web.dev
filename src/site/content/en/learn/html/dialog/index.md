@@ -3,7 +3,7 @@ title: 'Dialog'
 authors:
   - estelleweyl
 description: 'The <dialog> element is a useful element for representing any kind of dialog in HTML, find out how it works.'
-date: 2023-21-02
+date: 2023-02-21
 tags:
   - html
 ---
