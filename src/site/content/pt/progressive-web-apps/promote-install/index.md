@@ -21,8 +21,6 @@ A instalação do Progressive Web App (PWA) pode facilitar a descoberta e o uso 
 
 Esta lista não é exaustiva, mas oferece um ponto de partida para as diversas maneiras de promover a instalação do seu PWA. Independentemente do padrão, *ou padrões*, que você usa, todos eles levam ao mesmo código que aciona o fluxo de instalação, documentado em [Como fornecer sua própria experiência de instalação no app](/customize-install/).
 
-<div class="w-clearfix"> </div>
-
 ## Práticas recomendadas para promover a instalação do PWA {: #best-practices }
 
 Algumas práticas recomendadas são aplicáveis independentemente dos padrões promocionais usados no seu site.
@@ -41,8 +39,6 @@ Quando [determinados critérios](/install-criteria/) são atendidos, a maioria d
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Captura de tela da promoção de instalação fornecida pelo navegador.", width="800", height="307" %} <figcaption> Promoção de instalação fornecida pelo navegador (dispositivos móveis)</figcaption></figure>
 </div>
 
-<div class="w-clearfix"> </div>
-
 O Chrome para Android mostrará uma minibarra de informações ao usuário. Isso possa ser evitado ao chamar `preventDefault()` no evento `beforeinstallprompt`. Se você não chamar `preventDefault()`, o banner será mostrado na primeira vez que um usuário acessar seu site quando atender aos critérios de instalação no Android e, depois, novamente após cerca de 90 dias.
 
 ## Padrões promocionais da IU do app {: #app-ui-patterns }
@@ -51,15 +47,11 @@ Os padrões promocionais da IU (interface do usuário) do app podem ser usados p
 
 Os sites que consideram o momento em que acionam a IU da promoção alcançam um número maior de instalações e evitam as interferências nas jornadas dos usuários que não estão interessados.
 
-<div class="w-clearfix"> </div>
-
 ### Botão de instalação simples {: #simple-button }
 
 A experiência do usuário mais simples possível é incluir um botão "Instalar" ou "Fazer download do app" em um local apropriado no conteúdo da Web. Verifique se o botão não bloqueia outras funcionalidades importantes e não atrapalha a jornada do usuário no app.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="Botão de instalação personalizado", width="800", height="448" %} <figcaption> Botão de instalação simples </figcaption></figure>
-
-<div class="w-clearfix"> </div>
 
 ### Cabeçalho fixo {: #header }
 
@@ -77,8 +69,6 @@ Faça o seguinte:
 - Avalie o valor do caso de uso instalado para seus usuários. Considere a segmentação seletiva para apresentar sua promoção apenas para os usuários que provavelmente se beneficiarão com ela.
 - Use o espaço precioso do cabeçalho de forma eficiente. Considere o que mais seria útil oferecer ao usuário no cabeçalho e avalie a prioridade da promoção da instalação em relação a outras opções.
 
-<div class="w-clearfix"> </div>
-
 ### Menu de navegação {: #nav }
 
 <figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="Botão de instalação personalizado no menu de navegação", width="800", height="1117" %} <figcaption> Adicione uma promoção ou um botão de instalação em um menu de navegação retrátil. </figcaption></figure>
@@ -89,8 +79,6 @@ Faça o seguinte:
 
 - Evite interferir em conteúdo de navegação importante. Coloque a promoção da instalação do PWA abaixo dos outros itens no menu.
 - Ofereça um argumento curto e relevante sobre o motivo pelo qual o usuário se beneficiaria com a instalação do PWA.
-
-<div class="w-clearfix"> </div>
 
 ### Página de destino {: #landing }
 
@@ -106,8 +94,6 @@ Faça o seguinte:
 - Inclua uma promoção de instalação e call to action atrativas, mas somente depois de deixar clara a proposta de valor. Afinal, essa é sua página de destino.
 - Considere adicionar uma promoção de instalação na parte do app em que os usuários passam a maior parte do tempo.
 
-<div class="w-clearfix"> </div>
-
 ### Banner de instalação {: #banner }
 
 <figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="Banner de instalação personalizado no topo da página.", width="800", height="1000" %} <figcaption> Um banner dispensável no topo da página. </figcaption></figure>
@@ -118,8 +104,6 @@ Faça o seguinte:
 
 - Espere o usuário demonstrar interesse no seu site antes de exibir um banner. Se o usuário dispensar o banner, não o exiba novamente, a menos que o usuário acione um evento de conversão que indique um nível mais alto de engajamento com o conteúdo, como uma compra em um site de e-commerce ou a inscrição em uma conta.
 - Explique brevemente o valor da instalação do PWA no banner. Por exemplo, você pode distinguir a instalação do PWA de um app iOS/Android ao mencionar que ele quase não usa o armazenamento no dispositivo do usuário ou que será instalado instantaneamente sem o redirecionamento para a loja.
-
-<div class="w-clearfix"> </div>
 
 ### IU temporária {: #temporary-ui }
 
@@ -136,8 +120,6 @@ Faça o seguinte:
 - Mostre o snackbar de 4 a 7 segundos para dar aos usuários tempo suficiente para ver e reagir, sem causar interrupções.
 - Evite a exibição em cima de outra IU temporária, como banners.
 - Aguarde até que você tenha fortes sinais de interesse do usuário antes de usar esse padrão, como visitas repetidas, o login ou um evento de conversão semelhante.
-
-<div class="w-clearfix"> </div>
 
 ## Depois da conversão
 
@@ -157,8 +139,6 @@ Faça o seguinte:
 - Caso sua marca tenha ofertas exclusivas para usuários de apps instalados, mencione aqui.
 - Mantenha a promoção fora do caminho nas próximas etapas ou você pode afetar negativamente as taxas de conclusão das jornadas. No exemplo de e-commerce acima, observe como a call to action principal para finalizar a compra está acima da promoção de instalação do app.
 
-<div class="w-clearfix"> </div>
-
 ### Fluxo de inscrição, login ou logout {: #sign-up}
 
 Essa promoção é um caso especial de padrão promocional de [jornada](#journey) em que o cartão da promoção pode ganhar mais destaque.
@@ -172,8 +152,6 @@ Faça o seguinte:
 - Evite interromper a jornada do usuário dentro do formulário de inscrição. Se for um processo de várias etapas, convém esperar até que o usuário conclua a jornada.
 - Promova os recursos mais relevantes para um usuário inscrito.
 - Considere adicionar uma promoção de instalação adicional nas áreas de usuários logados do seu app.
-
-<div class="w-clearfix"> </div>
 
 ## Padrões promocionais inline
 

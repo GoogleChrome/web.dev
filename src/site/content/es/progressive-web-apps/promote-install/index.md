@@ -21,8 +21,6 @@ La instalación de tu aplicación web progresiva (PWA) puede facilitar a los usu
 
 Esta lista no es de ninguna manera exhaustiva, pero ofrece un punto de partida para diferentes formas de promover la instalación de tu PWA. Independientemente del patrón *o patrones* que utilices, todos conducen al mismo código que activa el flujo de instalación, documentado en [Cómo proporcionar tu propia experiencia de instalación en la aplicación](/customize-install/).
 
-<div class="w-clearfix"> </div>
-
 ## Prácticas recomendadas para la promoción de instalaciones de PWA {: #best-practices }
 
 Existen algunas prácticas recomendadas que se aplican independientemente de los patrones promocionales que utilices en tu sitio.
@@ -41,8 +39,6 @@ Cuando se cumplen [ciertos criterios](/install-criteria/), la mayoría de los na
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Captura de pantalla de la promoción de instalación proporcionada por el navegador", width="800", height="307" %}<figcaption> Promoción de instalación proporcionada por el navegador (móvil)</figcaption></figure>
 </div>
 
-<div class="w-clearfix"> </div>
-
 Chrome para Android mostrará una mini barra de información al usuario, aunque esto se puede evitar llamando a `preventDefault()` en el evento de `beforeinstallprompt`. Si no llamas a `preventDefault()`, el banner se mostrará la primera vez que un usuario visite tu sitio y cumpla con los criterios de instalación en Android y luego nuevamente después de 90 días aproximadamente.
 
 ## Patrones promocionales de la interfaz de usuario de la aplicación {: #app-ui-patterns }
@@ -51,15 +47,11 @@ Los patrones promocionales de la interfaz de usuario de la aplicación se pueden
 
 Los sitios que tienen en cuenta cuándo activan la interfaz de usuario de promoción logran una mayor cantidad de instalaciones y evitan interferir con los viajes de los usuarios que no están interesados en la instalación.
 
-<div class="w-clearfix"> </div>
-
 ### Botón de instalación simple {: #simple-button }
 
 La experiencia de usuario más simple posible es incluir un botón de 'Instalar' o de 'Obtener aplicación' en una ubicación adecuada en tu contenido web. Asegúrate de que el botón no bloquee otras funciones importantes y no obstaculice el recorrido del usuario a través de tu aplicación.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="Botón personalizado de instalación", width="800", height="448" %}<figcaption> Botón de instalación simple</figcaption></figure>
-
-<div class="w-clearfix"> </div>
 
 ### Encabezado fijo {: #header }
 
@@ -77,8 +69,6 @@ Asegúrate de que tú:
 - Evalúes el valor de tu caso de uso instalado para tus usuarios. Considera el enfoque selectivo para presentar tu promoción solo a los usuarios que probablemente se beneficiarán de ella.
 - Utilices el valioso espacio del encabezado de manera eficiente. Considera qué más sería útil ofrecer a tu usuario en el encabezado y evalúar la prioridad de la promoción de instalación en relación con otras opciones.
 
-<div class="w-clearfix"> </div>
-
 ### Menú de navegación {: #nav }
 
 <figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="Botón personalizado de instalación en el menú de navegación", width="800", height="1117" %}<figcaption> Agrega un botón y/o promoción de instalación en un menú de navegación deslizable.</figcaption></figure>
@@ -89,8 +79,6 @@ Asegúrate de que tú:
 
 - Evites interrumpir el contenido de navegación importante. Coloca la promoción de instalación de PWA debajo de otros elementos del menú.
 - Ofrezcas una presentación breve y relevante de por qué el usuario se beneficiaría de la instalación de tu PWA.
-
-<div class="w-clearfix"> </div>
 
 ### Página de aterrizaje {: #landing }
 
@@ -106,8 +94,6 @@ Asegúrate de que tú:
 - Haz que la promoción de la instalación y el llamado a la acción sean llamativos, pero solo después de haber dejado clara tu propuesta de valor. Después de todo, esta es tu página de aterrizaje.
 - Considera agregar una promoción de instalación en la parte donde los usuarios pasan más tiempo en tu aplicación.
 
-<div class="w-clearfix"> </div>
-
 ### Instalar un banner {: #banner }
 
 <figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="Banner personalizado de instalación en la parte superior de la página", width="800", height="1000" %}<figcaption> Un banner descartable en la parte superior de la página.</figcaption></figure>
@@ -118,8 +104,6 @@ Asegúrate de que tú:
 
 - Esperes hasta que el usuario haya demostrado interés en tu sitio antes de mostrar un banner. Si el usuario decide ignorar tu banner, no lo vuelvas a mostrar a menos que el usuario active un evento de conversión que indique un mayor nivel de participación con tu contenido, como una compra en un sitio de comercio electrónico o el registro de una cuenta.
 - Proporciona una breve explicación del valor de instalar tu PWA en el banner. Por ejemplo, puedes diferenciar la instalación de una PWA de una aplicación de iOS o Android mencionando que casi no usa almacenamiento en el dispositivo del usuario o que se instalará instantáneamente sin un redireccionamiento a la tienda.
-
-<div class="w-clearfix"> </div>
 
 ### IU temporal {: #temporary-ui }
 
@@ -136,8 +120,6 @@ Asegúrate de que tú:
 - Muestres la snackbar entre 4 y 7 segundos para que los usuarios tengan tiempo suficiente para verla y reaccionar a ella y sin estorbar.
 - Evites mostrar la snackbar sobre otra interfaz de usuario temporal, como banners, etc.
 - Esperes hasta que tengas fuertes señales de interés del usuario antes de usar este patrón, por ejemplo, visitas repetidas, un inicio de sesión de usuario o un evento similar de conversión.
-
-<div class="w-clearfix"> </div>
 
 ## Después de la conversión
 
@@ -157,8 +139,6 @@ Asegúrate de que tú:
 - Si tu marca tiene ofertas únicas para los usuarios de aplicaciones instaladas, asegúrate de mencionarlas aquí.
 - Mantén la promoción fuera de los próximos pasos en su viaje o este podrá afectar negativamente las tasas de finalización del mismo. En el ejemplo de comercio electrónico anterior, observa cómo la clave de la llamada a la acción para realizar el pago está por encima de la promoción de instalación de la aplicación.
 
-<div class="w-clearfix"> </div>
-
 ### Flujo de registro, inicio de sesión o cierre de sesión {: #sign-up }
 
 Esta promoción es un caso especial del patrón promocional del [viaje](#journey) donde la tarjeta de promoción puede ser más prominente.
@@ -172,8 +152,6 @@ Asegúrate de que tú:
 - Evites interrumpir el viaje del usuario dentro del formulario de registro. Si se trata de un proceso de varios pasos, es posible que desees esperar hasta que el usuario haya completado el viaje.
 - Promociones las funciones más relevantes para un usuario registrado.
 - Consideres agregar una promoción de instalación adicional dentro de las áreas en las que inició sesión de su aplicación.
-
-<div class="w-clearfix"> </div>
 
 ## Patrones promocionales en línea
 
