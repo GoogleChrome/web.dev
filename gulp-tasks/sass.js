@@ -1,9 +1,7 @@
 const {dest, src} = require('gulp');
 const sassProcessor = require('gulp-sass')(require('sass'));
 
-const sourceFiles = [
-  './src/scss/next.scss',
-];
+const sourceFiles = ['./src/scss/next.scss'];
 
 // Flags wether we compress the output etc
 const isProduction = process.env.ELEVENTY_ENV === 'prod';
