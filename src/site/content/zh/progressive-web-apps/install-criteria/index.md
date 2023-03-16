@@ -16,7 +16,7 @@ tags:
 
 大多数浏览器会向用户说明，在满足特定条件时，可以安装渐进式 Web 应用程序 (PWA)。示例指示器包括地址栏中的安装按钮，或溢出菜单中的安装菜单项。
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="安装指示器可见的多功能地址栏屏幕截图。", width="800", height="307" %}<figcaption>浏览器提供的安装推广栏（桌面）</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="浏览器提供安装推广栏的截图。", width="800", height="307" %}<figcaption>浏览器提供的安装推广栏（移动）</figcaption></figure>
 </div>

@@ -25,7 +25,7 @@ is a cardiovascular exercise strategy of alternating sets of short periods of in
 Many HIIT trainings use HIIT timers, for example, this [30&nbsp;minute online session](https://www.youtube.com/watch?v=tXOZS3AKKOw)
 from [The Body Coach TV](https://www.youtube.com/user/thebodycoach1) YouTube channel.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tUl2jNm2bFqGBAFF5s63.png", alt="HIIT training online session with green high intensity timer.", width="800", height="450" %}
     <figcaption>

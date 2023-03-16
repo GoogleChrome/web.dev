@@ -40,9 +40,6 @@ provides guidance about how to use them effectively.
 1. [Tooltips](#tooltips)
 1. [Video](#video)
 
-## Deprecated components
-
-1. [w-columns](#w-columns)
 
 ## Asides
 
@@ -1371,45 +1368,3 @@ that are too small to have a label
 ## Video / YouTube {: #video }
 
 See the [Images and video](/handbook/markup-media) post.
-
-# Deprecated components
-
-## w-columns
-
-Any elements can be placed in a two-column layout
-by wrapping them in a `<div class="w-columns">` element:
-
-```html
-<div class="w-columns">
-  <figure>
-    <img src="./image-small.png" alt="">
-    <figcaption>
-      Small image.
-    </figcaption>
-  </figure>
-  <figure>
-    <img src="./image-small.png" alt="">
-    <figcaption>
-      Small image.
-    </figcaption>
-  </figure>
-</div>
-```
-
-<div class="w-columns">
-  <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption>
-      Small image.
-    </figcaption>
-  </figure>
-  <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption>
-      Small image.
-    </figcaption>
-  </figure>
-</div>
-
-At smaller viewport sizes,
-elements in a two-column layout will shift to a stacked arrangement.

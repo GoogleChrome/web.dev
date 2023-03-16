@@ -34,7 +34,7 @@ Body images should be related to body content in some way. Typically, an image i
 Read the [Google developer documentation style guide](https://developers.google.com/style/images#alt-text).
 Captions should be in sentence case. End all captions and alt text with a period.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 A Screenshot Showing the DevTools **Network** Panel
 {% endCompare %}

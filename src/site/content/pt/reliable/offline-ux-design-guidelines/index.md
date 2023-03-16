@@ -139,7 +139,7 @@ Ao projetar, procure ser inclusivo, fornecendo dispositivos de design significat
 
 Uma boa UX não se trata apenas de uma interface bem projetada. Inclui o caminho que o usuário segue, bem como as palavras usadas no aplicativo. Evite jargões técnicos ao explicar o estado do aplicativo ou de componentes individuais da IU. Considere que a frase "aplicativo offline" pode não transmitir ao usuário o estado atual do aplicativo.
 
-<div class="w-columns">{% Compare 'worse' %} <figure style="display: inline-block; max-width: 45%;"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MaYiuInHsZ2mbPQcbD4l.png", alt="Um ícone de service worker é um mau exemplo", width="350", height="149" %} <figcaption> Evite termos que não sejam inteligíveis para usuários sem conhecimento técnico.</figcaption></figure> {% endCompare %}</div>
+<div class="switcher">{% Compare 'worse' %} <figure style="display: inline-block; max-width: 45%;"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MaYiuInHsZ2mbPQcbD4l.png", alt="Um ícone de service worker é um mau exemplo", width="350", height="149" %} <figcaption> Evite termos que não sejam inteligíveis para usuários sem conhecimento técnico.</figcaption></figure> {% endCompare %}</div>
 <p data-md-type="paragraph">{% Compare 'better' %}</p>
 <div data-md-type="block_html">
 <figure style="display: inline-block; max-width: 45%;"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIjYKLFK5DbrDJDJeDqu.png", alt="Um ícone de download é um bom exemplo", width="350", height="149" %} <figcaption> Use uma linguagem e imagens que descrevam a ação.</figcaption> </figure> {% endCompare %}</div>
@@ -150,7 +150,7 @@ Use linguagem, cor e componentes visuais para demonstrar uma mudança de estado 
 
 Para evitar mal-entendidos, expresse diferentes estados para o usuário de várias maneiras, por exemplo, com cores, rótulos e componentes de IU.
 
-<div class="w-columns">{% Compare 'worse' %} <figure style="display: inline-block; max-width: 45%;"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uj28SN1ZepiIvya4YTe1.png", alt="Um exemplo ruim apenas usando cores.", width="720", height="368" %} <figcaption>  Use a cor como único meio de descrever o que está acontecendo. </figcaption> </figure> {% endCompare %}</div>
+<div class="switcher">{% Compare 'worse' %} <figure style="display: inline-block; max-width: 45%;"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uj28SN1ZepiIvya4YTe1.png", alt="Um exemplo ruim apenas usando cores.", width="720", height="368" %} <figcaption>  Use a cor como único meio de descrever o que está acontecendo. </figcaption> </figure> {% endCompare %}</div>
 <p data-md-type="paragraph">{% Compare 'better' %}</p>
 <div data-md-type="block_html">
 <figure style="display: inline-block; max-width: 45%;"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/s78eC2GBEkDQouqhBYMO.png", alt="Um bom exemplo que usa cor e texto para mostrar um erro.", width="720", height="368" %} <figcaption> Use uma mistura de elementos de design para transmitir significado </figcaption> </figure> {% endCompare %}</div>

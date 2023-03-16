@@ -113,7 +113,7 @@ Chrome 브라우저에서 뉴스 페이지를 읽는 것과 같이 다른 애플
 
 Podcast와 같은 iOS 응용 프로그램에 대해 자명한 더 미묘한 것이 있습니다. 텍스트 레이블을 선택할 수 없고 모든 텍스트가 시스템의 시스템 글꼴과 혼합됩니다. 또한 내가 선택한 시스템 색상 테마(다크 모드)도 존중됩니다.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OApP9uGUje6CkS7cKcZh.png", alt="팟캐스트 앱이 어두운 모드입니다.", width="800", height="463" %}<figcaption> 팟캐스트 앱은 라이트 모드와 다크 모드를 지원합니다.</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cnVihfFR2anSBlIVfCSW.png", alt="라이트 모드의 팟캐스트 앱입니다.", width="800", height="463" %}<figcaption> 앱은 기본 시스템 글꼴을 사용합니다.</figcaption></figure>
 </div>

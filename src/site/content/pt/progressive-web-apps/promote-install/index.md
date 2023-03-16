@@ -36,7 +36,7 @@ Algumas práticas recomendadas são aplicáveis independentemente dos padrões p
 
 Quando [determinados critérios](/install-criteria/) são atendidos, a maioria dos navegadores indica automaticamente ao usuário que o Progressive Web App pode ser instalado. Por exemplo, o Chrome para desktop mostra um botão de instalação na omnibox.
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Captura de tela da omnibox com o indicador de instalação visível.", width="800", height="307" %} <figcaption> Promoção de instalação fornecida pelo navegador (desktop)</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Captura de tela da promoção de instalação fornecida pelo navegador.", width="800", height="307" %} <figcaption> Promoção de instalação fornecida pelo navegador (dispositivos móveis)</figcaption></figure>
 </div>

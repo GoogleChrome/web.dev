@@ -164,7 +164,7 @@ supplied video formats are supported. The only downside to a poster images is an
 additional file request, which consumes some bandwidth and requires rendering.
 For more information see [Efficiently encode images].
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="Without a fallback poster, the video just looks broken.", width="360", height="600" %}
@@ -194,7 +194,7 @@ When video elements are too big for the viewport, they may overflow their
 container, making it impossible for the user to see the content or use the
 controls.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome screenshot, portrait: unstyled video element overflows viewport.", width="338", height="600" %}
     <figcaption>Android Chrome screenshot, portrait: unstyled video element overflows
@@ -274,7 +274,7 @@ tablets.
 Safari on iPhone does a good job of switching between portrait and landscape
 orientation:
 
-<div class="w-columns">
+<div class="switcher">
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="Screenshot of video playing in Safari on iPhone, portrait.", width="338", height="600" %}
   <figcaption>Screenshot of video playing in Safari on iPhone, portrait.</figcaption>
