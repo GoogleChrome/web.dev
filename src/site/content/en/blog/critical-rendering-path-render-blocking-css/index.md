@@ -21,7 +21,7 @@ In the [render tree construction](/critical-rendering-path-render-tree-construct
 - Media types and media queries allow us to mark some CSS resources as non-render blocking.
 - The browser downloads all CSS resources, regardless of blocking or non-blocking behavior.
 
-<div class="w-columns">
+<div class="switcher">
 <figure>
   {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/c3ZTThABrj7JQu5Xajaf.png", alt="NYTimes with CSS", width="300", height="552" %}
   <figcaption>The New York Times with CSS</figcaption>

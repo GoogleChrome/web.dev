@@ -57,7 +57,7 @@ When [certain criteria](/install-criteria/) are met, most browsers automatically
 indicate to the user that your Progressive Web App is installable. For example,
 desktop Chrome shows an install button in the omnibox.
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Screenshot of omnibox with a visible install indicator.", width="800", height="307" %}
     <figcaption>

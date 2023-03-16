@@ -100,7 +100,7 @@ tags:
 
 `src`가 손상되었거나 제공된 비디오 형식이 지원되지 않는 경우 포스터가 대체될 수도 있습니다. 포스터 이미지의 유일한 단점은 일부 대역폭을 소비하고 렌더링이 필요한 추가 파일 요청입니다. 자세한 내용은 [이미지를 효율적으로 인코딩](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)을 참조하십시오.
 
-<div class="w-columns">{% Compare 'worse' %}<figure data-float="left"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="대체 포스터가 없으면 동영상이 깨져 보입니다.", width="360", height="600" %}</figure>
+<div class="switcher">{% Compare 'worse' %}<figure data-float="left"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="대체 포스터가 없으면 동영상이 깨져 보입니다.", width="360", height="600" %}</figure>
 </div>
 <p data-md-type="paragraph">{% CompareCaption %} 대체 포스터가 없으면 동영상이 깨져 보입니다. {% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
@@ -114,7 +114,7 @@ tags:
 
 비디오 요소가 뷰포트에 비해 너무 크면 컨테이너가 오버플로되어 사용자가 콘텐츠를 보거나 컨트롤을 사용할 수 없게 될 수 있습니다.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome 스크린샷, 세로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 초과합니다.", width="338", height="600" %}<figcaption> Android Chrome 스크린샷, 세로: 스타일이 지정되지 않은 동영상 요소가 표시 영역을 넘습니다.</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome 스크린샷, 가로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 초과합니다.", width="800", height="450" %}<figcaption> Android Chrome 스크린샷, 가로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 넘습니다.</figcaption></figure>
 </div>
@@ -169,7 +169,7 @@ iframe의 미디어 콘텐츠(예: YouTube 동영상)의 경우 반응형 접근
 
 iPhone의 Safari는 세로 방향과 가로 방향 사이를 잘 전환합니다.
 
-<div class="w-columns">
+<div class="switcher">
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="iPhone의 Safari에서 재생되는 비디오 스크린샷(세로).", width="338", height="600" %}<figcaption> iPhone의 Safari에서 재생 중인 비디오의 스크린샷(세로).</figcaption></figure><figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="iPhone의 Safari에서 재생되는 비디오의 스크린샷(가로).", width="600", height="338" %} <figcaption> iPhone의 Safari에서 재생 중인 비디오의 스크린샷(가로).</figcaption></figure>
 </div>
 

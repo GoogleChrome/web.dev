@@ -48,9 +48,7 @@ const Assessment = require('./src/site/_includes/components/Assessment');
 const Author = require('./src/site/_includes/components/Author');
 const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
 const Banner = require('./src/site/_includes/components/Banner');
-const Breadcrumbs = require('./src/site/_includes/components/Breadcrumbs');
 const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
-const Hero = require('./src/site/_includes/components/Hero');
 const includeRaw = require('./src/site/_includes/components/includeRaw');
 const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
@@ -200,7 +198,6 @@ module.exports = function (config) {
   config.addShortcode('AuthorsDate', AuthorsDate);
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
-  config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
@@ -210,7 +207,6 @@ module.exports = function (config) {
   config.addPairedShortcode('Details', Details);
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Glitch', Glitch);
-  config.addShortcode('Hero', Hero);
   config.addShortcode('IFrame', IFrame);
   config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);

@@ -277,7 +277,7 @@ the words used in the app. Avoid tech jargon when explaining the state of the ap
 individual UI components. Consider that the phrase "app offline" might not convey to the user the
 current state of the app.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
   <figure style="display: inline-block; max-width: 45%;">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MaYiuInHsZ2mbPQcbD4l.png", alt="A service worker icon is a bad example.", width="350", height="149" %}
@@ -309,7 +309,7 @@ use color to depict state.
 To prevent misunderstandings, express different states to the user in multiple ways, for example
 with color, labels, and UI components.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
   <figure style="display: inline-block; max-width: 45%;">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uj28SN1ZepiIvya4YTe1.png", alt="A bad example only using color.", width="720", height="368" %}
