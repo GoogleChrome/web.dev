@@ -18,8 +18,6 @@ Además de la [experiencia de instalación proporcionada](/promote-install/#brow
 
 Al considerar si promover la instalación, es mejor pensar en cómo los usuarios suelen usar su PWA. Por ejemplo, si hay un conjunto de usuarios que usan su PWA varias veces en una semana, estos usuarios podrían beneficiarse de la conveniencia adicional de iniciar su aplicación desde la pantalla de inicio de un teléfono inteligente o desde el menú de inicio en un sistema operativo de escritorio. Algunas aplicaciones de productividad y entretenimiento también se benefician del espacio adicional de pantalla creado al eliminar las barras de herramientas del navegador de la ventana en los modos de `standalone` o `minimal-ui`.
 
-<div class="w-clearfix"></div>
-
 ## Promoviendo la instalación {: #promote-installation }
 
 Para indicar que tu Aplicación web progresiva (PWA) se puede instalar y para proporcionar un flujo de instalación personalizado en la aplicación tienes que:

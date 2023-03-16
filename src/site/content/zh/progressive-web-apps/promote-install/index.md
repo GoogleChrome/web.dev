@@ -21,8 +21,6 @@ feedback:
 
 此列表并不详尽，但却为推广 PWA 安装的不同方法提供了一个起点。无论您使用哪一种或*哪几种模式*，都会产生触发安装流程的相同代码，具体记录在[如何提供您自己的应用内安装体验](/customize-install/)中。
 
-<div class="w-clearfix"> </div>
-
 ## PWA 安装推广最佳实践 {: #best-practices }
 
 无论您在站点上使用何种推广模式，都有一些适用的最佳实践。
@@ -41,8 +39,6 @@ feedback:
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="提供安装推广的浏览器屏幕截图。", width="800", height="307" %} <figcaption> 浏览器提供的安装推广（移动设备）</figcaption></figure>
 </div>
 
-<div class="w-clearfix"> </div>
-
 Android 版 Chrome 会向用户显示一个迷你信息栏，不过这可通过对 `beforeinstallprompt` 事件调用 `preventDefault()` 来阻止。如果您不调用 `preventDefault()`，用户第一次访问您的站点并符合 Android 上的可安装性标准时将显示横幅，然后在大约 90 天后再次显示。
 
 ## 应用程序 UI 推广模式 {: #app-ui-patterns }
@@ -51,15 +47,11 @@ Android 版 Chrome 会向用户显示一个迷你信息栏，不过这可通过�
 
 对何时触发推广 UI 考虑周到的站点可以实现更大的安装量，并避免干扰那些对安装不感兴趣的用户的旅程。
 
-<div class="w-clearfix"> </div>
-
 ### 简单安装按钮 {: #simple-button }
 
 最简单可行的用户体验是在 Web 内容的适当位置加入“安装”或“获取应用”按钮。确保该按钮不会阻止其他重要功能，并且不妨碍用户在您应用程序中的整个旅程。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="自定义安装按钮", width="800", height="448" %} <figcaption> 简单安装按钮 </figcaption></figure>
-
-<div class="w-clearfix"> </div>
 
 ### 固定标题 {: #header }
 
@@ -77,8 +69,6 @@ Android 版 Chrome 会向用户显示一个迷你信息栏，不过这可通过�
 - 评估您的用户已安装的用例的价值。考虑选择性定位，以便仅向可能从中受益的用户展示您的推广。
 - 有效地利用宝贵的标题空间。考虑在标题中为您的用户提供哪些有用的其他信息，并权衡安装推广相对于其他选项的优先级。
 
-<div class="w-clearfix"> </div>
-
 ### 导航菜单 {: #nav }
 
 <figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="导航菜单中的自定义安装按钮", width="800", height="1117" %} <figcaption> 在滑出式导航菜单中添加安装按钮/推广。</figcaption></figure>
@@ -89,8 +79,6 @@ Android 版 Chrome 会向用户显示一个迷你信息栏，不过这可通过�
 
 - 避免中断重要的导航内容。将 PWA 安装推广放在其他菜单项下方。
 - 提供简短的相关宣传，说明为什么用户会从安装您的 PWA 中受益。
-
-<div class="w-clearfix"> </div>
 
 ### 登陆页面 {: #landing }
 
@@ -106,8 +94,6 @@ Android 版 Chrome 会向用户显示一个迷你信息栏，不过这可通过�
 - 让您的安装推广和号召吸人眼球，但前提是您已经明确了您的价值主张。毕竟，这是您的登录页面。
 - 考虑在应用中用户用时最多的部分添加安装推广。
 
-<div class="w-clearfix"> </div>
-
 ### 安装横幅 {: #banner }
 
 <figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="页面顶部的自定义安装横幅。", width="800", height="1000" %} <figcaption> 页面顶部的可关闭横幅。</figcaption></figure>
@@ -118,8 +104,6 @@ Android 版 Chrome 会向用户显示一个迷你信息栏，不过这可通过�
 
 - 等到用户表现出对您站点的兴趣后，再显示横幅。如果用户关闭了横幅，请勿再次显示，除非用户触发了表示对您的内容参与度更高的转化事件，例如在电子商务站点上购物或注册帐户。
 - 在横幅中简要说明安装 PWA 的价值所在。例如，您可以指出它几乎不使用用户设备上的存储，或者无需商店重定向即可立即安装，从而将 PWA 的安装与 iOS/Android 应用区分开来。
-
-<div class="w-clearfix"> </div>
 
 ### 临时 UI {: #temporary-ui }
 
@@ -136,8 +120,6 @@ Android 版 Chrome 会向用户显示一个迷你信息栏，不过这可通过�
 - 展示 snackbar 达 4 到 7 秒钟，让用户有足够的时间来查看它并做出反应，而不会妨碍用户操作。
 - 避免将  snackbar 显示在其他临时 UI 上，例如横幅等。
 - 等到用户表现出强烈的兴趣后再使用此模式，例如重复访问、用户登录或类似的转化事件。
-
-<div class="w-clearfix"> </div>
 
 ## 转化后
 
@@ -157,8 +139,6 @@ Android 版 Chrome 会向用户显示一个迷你信息栏，不过这可通过�
 - 如果您的品牌为已安装应用的用户提供独有优惠，请务必在此处说明。
 - 不要让推广影响用户接下来的旅程，否则您可能会对旅程完成率产生负面影响。在上面的电子商务示例中，请注意结帐的关键行动号召如何优先于应用安装推广。
 
-<div class="w-clearfix"> </div>
-
 ### 注册、登录或注销流程 {: #sign-up}
 
 此推广是[旅程](#journey)推广模式的特例，推广卡片可以更加显眼。
@@ -172,8 +152,6 @@ Android 版 Chrome 会向用户显示一个迷你信息栏，不过这可通过�
 - 避免在注册表单内干扰用户的旅程。如果注册过程包含多个步骤，您最好等到用户完成旅程。
 - 推广与已注册用户最相关的功能。
 - 考虑在您应用的已登录区域内添加额外的安装推广。
-
-<div class="w-clearfix"> </div>
 
 ## 内联推广模式
 

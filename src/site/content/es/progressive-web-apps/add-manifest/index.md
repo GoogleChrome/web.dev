@@ -253,8 +253,6 @@ El `background_color` debe ser del mismo color que la página que se carga, para
 
 Chrome elegirá el icono que más se aproxime a la resolución que tenga el dispositivo. En la mayoría de los casos es suficiente con proporcionar iconos de 192px y 512px, pero puede proporcionar iconos adicionales para perfeccionar la resolución de los pixeles.
 
-<div class="w-clearfix"> </div>
-
 ## Lecturas complementarias
 
 Hay varias propiedades adicionales que pueden agregarse al manifiesto de la aplicación web. Consulte la [documentación del manifiesto de aplicaciones web MDN](https://developer.mozilla.org/docs/Web/Manifest) sobre este tema. Puede obtener más información sobre `display_override` en el [explicador](https://github.com/WICG/display-override/blob/master/explainer.md).
