@@ -28,7 +28,7 @@ installable when it meets certain criteria. Example indicators include an
 Install button in the address bar, or an Install menu item in the overflow
 menu.
 
-<div class="w-columns" >
+<div class="switcher" >
   <figure id="browser-install-promo">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="Screenshot of omnibox with install indicator visible.", width="800", height="307" %}
     <figcaption>

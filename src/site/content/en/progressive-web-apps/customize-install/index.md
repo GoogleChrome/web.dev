@@ -38,8 +38,6 @@ entertainment applications also benefit from the extra screen real-estate
 created by removing the browser toolbars from the window in installed
 `standalone` or `minimal-ui` modes.
 
-<div class="w-clearfix"></div>
-
 ## Promoting installation {: #promote-installation }
 
 To indicate your Progressive Web App is installable, and to provide a custom

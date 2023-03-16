@@ -25,7 +25,7 @@ App shortcuts help users quickly start common or recommended tasks within your w
 
 The app shortcuts menu is invoked by right-clicking the app icon in the taskbar (Windows) or dock (macOS) on the user's desktop, or by touch & holding the app's launcher icon on Android.
 
-<div class="w-columns" >
+<div class="switcher" >
   <figure>
     {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="An opened app shortcuts menu on Android.", width="800", height="420" %}
     <figcaption>App shortcuts menu opened on Android</figcaption>
