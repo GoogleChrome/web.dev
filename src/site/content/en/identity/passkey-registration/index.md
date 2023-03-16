@@ -5,7 +5,7 @@ subhead: Passkeys make user accounts safer, simpler, easier to use.
 authors:
   - agektmr
 date: 2022-10-12
-updated: 2022-12-15
+updated: 2023-03-16
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/ESXHlkzce7qhQSqQHacV.jpg
 description: |
   Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses how to allow users to create passkeys for your website.
@@ -218,13 +218,33 @@ The parameters not explained above are:
   This specifies support for ECDSA with P-256 and RSA PKCS\#1 and supporting 
   these gives complete coverage.
 * **[`authenticatorSelection.authenticatorAttachment`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-authenticatorattachment)**: 
-  Set it to "platform". This indicates that we want an authenticator that is 
+  Set it to `"platform"`. This indicates that we want an authenticator that is 
   embedded into the platform device, and the user will not be prompted to insert 
   e.g. a USB security key.
 * **[`authenticatorSelection.requireResidentKey`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-residentkey)**: 
   Set it to a boolean "true". A discoverable credential (resident key) 
   stores user information to the passkey and lets users select the account upon 
   authentication.
+* **[`authenticatorSelection.userVerification`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-userverification)**:
+  Set to a `"preferred"` value or omit it as it's the default. This indicates
+  whether a user verification using the device's screen lock is `"required"`,
+  `"preferred"` or `"discouraged"`. Setting `"preferred"` requests user
+  verification when the device is capable.
+
+{% Aside 'caution' %}
+
+On a device that doesn't support a biometric sensor (e.g. iMac), setting the
+`authenticatorSelection.userVerification` to `"preferred"` results in no user
+verification requested to the user, immediately returning a credential that
+contains the [UV (user
+verification)](https://w3c.github.io/webauthn/#authdata-flags-uv) flag `false`.
+
+If you'd like to always require a user verification, pass an
+`authenticatorSelection.userVerification: "required"` property. Don't forget to
+check that the UV flag is `true` on the server as well.
+
+{% endAside %}
+
 
 {% Aside %}
 
