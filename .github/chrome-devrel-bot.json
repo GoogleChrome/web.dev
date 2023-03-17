@@ -51,7 +51,8 @@
           "jpmedley",
           "mihajlija",
           "sofiayem",
-          "AaronForinton"
+          "AaronForinton",
+          "anusmitaray"
         ],
         "paths" : [
           "src/site/_data/**.yml",
