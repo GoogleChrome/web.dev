@@ -435,7 +435,7 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/web-bundles/
   - source: /webtransport
     destination: https://developer.chrome.com/articles/webtransport/
-  - source: /identity/web-otp
+  - source: /web-otp
     destination: https://developer.chrome.com/articles/web-otp/
   - source: /hid-examples/
     destination: https://developer.chrome.com/articles/hid-examples/
