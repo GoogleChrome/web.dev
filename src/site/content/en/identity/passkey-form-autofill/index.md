@@ -172,7 +172,7 @@ Fetch a challenge from the RP server that is required to call
 * **[`userVerification`](https://w3c.github.io/webauthn/#dom-publickeycredentialrequestoptions-userverification)**:
   Set to a `"preferred"` value or omit it as it's the default. This indicates
   whether a user verification using the device's screen lock is `"required"`,
-  `"preferred"` or `"discouraged"`. Setting `"preferred"` requests user
+  `"preferred"` or `"discouraged"`. Setting to `"preferred"` value requests user
   verification when the device is capable.
 
 {% Aside 'caution' %}
