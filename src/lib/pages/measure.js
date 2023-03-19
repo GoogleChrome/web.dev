@@ -5,7 +5,5 @@
 
 import '../components/ProgressBar';
 import '../components/LighthouseViewer';
-import '../components/UrlChooser';
-import '../components/UrlChooserContainer';
 
 import '../components/base';
