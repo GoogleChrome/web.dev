@@ -1,5 +1,4 @@
 @import '../../../styles/settings/colors';
-@import '../../../styles/settings/dimensions';
 @import '../../../styles/settings/global';
 @import '../../../styles/tools/mixins';
 
@@ -139,7 +138,7 @@ web-url-chooser {
   /// @deprecated
   // TODO(robdodson): This should be replaced with the @media rules from breakpoints.scss, but the
   // Measure page is special and currently does not have a matching value.
-  @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) {
+  @media screen and (min-width: 1440px) {
     .lh-report-header-enterurl {
       display: flex;
     }
