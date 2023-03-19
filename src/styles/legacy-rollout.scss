@@ -3,13 +3,7 @@
 /// interact with the new design system, to assist with the
 /// complete rollout of the design system
 
-@import 'settings/dimensions';
-
-@import 'fonts/material-icons';
-
 .legacy-rollout {
-  @import 'components/callouts';
-
   /// More specific overrides
   .w-callout {
     margin: var(--flow-space) auto 0;
