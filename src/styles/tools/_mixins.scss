@@ -3,7 +3,6 @@
 @use 'sass:math';
 
 @import '../settings/colors';
-@import '../settings/global';
 @import '../settings/type';
 @import 'functions';
 @import 'breakpoints';
@@ -112,7 +111,7 @@
   align-items: center;
   background: transparent;
   border: 0;
-  border-radius: $GLOBAL_RADIUS;
+  border-radius: $global-radius-base;
   color: $WEB_PRIMARY_COLOR;
   cursor: pointer;
   display: inline-flex;
