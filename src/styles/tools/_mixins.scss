@@ -6,7 +6,6 @@
 @import '../settings/global';
 @import '../settings/type';
 @import 'functions';
-@import 'breakpoints';
 
 // =============================================================================
 // MIXINS OVERVIEW
@@ -268,11 +267,11 @@
 @mixin w-body-text {
   @include font($BODY);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($BODY_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($BODY_XSMALL);
   }
 }
@@ -282,11 +281,11 @@
 @mixin w-article-text {
   @include font($ARTICLE);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($ARTICLE_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($ARTICLE_XSMALL);
   }
 }
@@ -301,11 +300,11 @@
 @mixin w-headline--one {
   @include font($HEADLINE_1);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_1_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_1_XSMALL);
   }
 }
@@ -313,11 +312,11 @@
 @mixin w-headline--two {
   @include font($HEADLINE_2);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_2_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_2_XSMALL);
   }
 }
@@ -325,11 +324,11 @@
 @mixin w-headline--two-small {
   @include font($HEADLINE_2_ARTICLE);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_2_ARTICLE_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_2_ARTICLE_XSMALL);
   }
 }
@@ -338,11 +337,11 @@
   @include font($HEADLINE_2_SMALL_CAPS);
   color: $GREY_600;
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_2_SMALL_CAPS_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_2_SMALL_CAPS_XSMALL);
   }
 }
@@ -350,11 +349,11 @@
 @mixin w-headline--three {
   @include font($HEADLINE_3);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_3_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_3_XSMALL);
   }
 }
@@ -363,11 +362,11 @@
   @include font($HEADLINE_4);
   color: $GREY_700;
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_4_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_4_XSMALL);
   }
 }
