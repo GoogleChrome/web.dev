@@ -8,7 +8,8 @@ date: 2019-10-30
 updated: 2020-05-28
 hero: image/admin/V0dgwWTA61NTc55CAhSD.jpg
 description: |
-  With...... comes into effect.
+  Cookies are one of the methods available for adding persistent state to web
+sites. Understnding cookies is crucial to understanding a variety of browser and server-side functionalities, along with upcoming changes to the types of cookies supported. 
 tags:
   - blog
   - security
