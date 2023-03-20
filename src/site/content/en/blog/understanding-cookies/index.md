@@ -20,6 +20,14 @@ feedback:
   - api
 ---
 
+{% Aside %}
+This article is part of a series on the `SameSite` cookie attribute changes:
+- [Understanding cookies](/understanding-cookies/)
+- [SameSite cookies explained](/samesite-cookies-explained/)
+- [SameSite cookies recipes](/samesite-cookie-recipes/)
+- [Schemeful Same-Site](/schemeful-samesite)
+{% endAside %}
+
 <!--
 Cookies are one of the methods available for adding persistent state to web
 sites. Over the years their capabilities have grown and evolved, but left the
