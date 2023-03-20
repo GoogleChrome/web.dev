@@ -34,7 +34,7 @@ Each cookie is a key-value pair along with a number of attributes that control w
 Cookies are one of the methods available for adding persistent state to web sites. Over the years their capabilities have grown and evolved, but left the platform with some problematic legacy issues. To address this, browsers (including Chrome, Firefox, and Edge) are changing their behavior to enforce more privacy-preserving defaults.
 
 {% Aside %}
-Learn more about Chrome’s effort to protect people's privacy online and give companies and developers tools to build thriving digital businesses. 
+Learn more about [Chrome’s effort to protect people's privacy online](https://developer.chrome.com/docs/privacy-sandbox/) and give companies and developers tools to build thriving digital businesses. 
 {% endAside %}
 
 ## Cookies in action
