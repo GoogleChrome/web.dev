@@ -27,6 +27,7 @@ feedback:
 
 {% Aside %}
 This article is part of a series on the `SameSite` cookie attribute changes:
+- [Understanding cookies](/understanding-cookies/)
 - [SameSite cookies explained](/samesite-cookies-explained/)
 - [SameSite cookies recipes](/samesite-cookie-recipes/)
 - [Schemeful Same-Site](/schemeful-samesite)
