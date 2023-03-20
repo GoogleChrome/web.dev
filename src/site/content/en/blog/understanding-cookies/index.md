@@ -29,22 +29,6 @@ This article is part of a series on the `SameSite` cookie attribute changes:
 - [Schemeful Same-Site](/schemeful-samesite)
 {% endAside %}
 
-<!--
-Cookies are one of the methods available for adding persistent state to web
-sites. Over the years their capabilities have grown and evolved, but left the
-platform with some problematic legacy issues. To address this, browsers
-(including Chrome, Firefox, and Edge) are changing their behavior to enforce
-more privacy-preserving defaults.
-
-Each cookie is a `key=value` pair along with a number of attributes that control
-when and where that cookie is used. You've probably already used these
-attributes to set things like expiration dates or indicating the cookie should
-only be sent over HTTPS. Servers set cookies by sending the aptly-named
-`Set-Cookie` header in their response. For all the detail you can dive into
-[RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03#section-4.1),
-but for now here's a quick refresher.
--->
-
 A cookie is a small file that websites store on their users’ machine, the information it stores travels back and forth between the browser and the website.
 
 Each cookie is a key-value pair along with a number of attributes that control when and where that cookie is used. These attributes are used to set things like expiration dates or indicating the cookie should only be sent over HTTPS. You can set a cookie in an HTTP header or through JavaScript interface. 
@@ -184,6 +168,6 @@ only be sent in a first-party context, whereas a session cookie for a widget
 meant to be embedded on other sites is intentionally there for providing the
 signed-in state in a third-party context.
 
-You can explicitly state your intent with a cookie by setting the appropriate [SameSite attribute](https://web.dev/samesite-cookies-explained).
+You can explicitly state your intent with a cookie by setting the appropriate [SameSite attribute](/samesite-cookies-explained).
 
-To identify your first-party cookies and set appropriate attributes, check out [First-party cookie recipes](https://web.dev/first-party-cookie-recipes/).
+To identify your first-party cookies and set appropriate attributes, check out [First-party cookie recipes](/first-party-cookie-recipes/).
