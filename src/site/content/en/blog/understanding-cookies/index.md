@@ -30,6 +30,19 @@ This article is part of a series on the `SameSite` cookie attribute changes:
 * [Schemeful Same-Site](/schemeful-samesite)
 {% endAside %}
 
+{% Aside %}
+This article is part of a series on the `SameSite` cookie attribute changes:
+
+<ul>
+<li><a href="/understanding-cookies/">Understanding cookies</a></li>
+<li><a href="/samesite-cookies-explained/">SameSite cookies explained</a></li>
+<li><a href="/samesite-cookie-recipes/">SameSite cookies recipes</a></li>
+<li><a href="/schemeful-samesite/">Schemeful Same-Site</a></li>
+</ul>
+
+{% endAside %}
+
+
 A cookie is a small file that websites store on their users’ machine, the information it stores travels back and forth between the browser and the website.
 
 Each cookie is a key-value pair along with a number of attributes that control when and where that cookie is used. These attributes are used to set things like expiration dates or indicating the cookie should only be sent over HTTPS. You can set a cookie in an HTTP header or through JavaScript interface. 
