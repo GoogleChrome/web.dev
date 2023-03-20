@@ -23,10 +23,11 @@ feedback:
 
 {% Aside %}
 This article is part of a series on the `SameSite` cookie attribute changes:
-- [Understanding cookies](/understanding-cookies/)
-- [SameSite cookies explained](/samesite-cookies-explained/)
-- [SameSite cookies recipes](/samesite-cookie-recipes/)
-- [Schemeful Same-Site](/schemeful-samesite)
+
+* [Understanding cookies](/understanding-cookies/)
+* [SameSite cookies explained](/samesite-cookies-explained/)
+* [SameSite cookies recipes](/samesite-cookie-recipes/)
+* [Schemeful Same-Site](/schemeful-samesite)
 {% endAside %}
 
 A cookie is a small file that websites store on their users’ machine, the information it stores travels back and forth between the browser and the website.
