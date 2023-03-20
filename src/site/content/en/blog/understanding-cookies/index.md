@@ -5,18 +5,13 @@ subhead:
 authors:
   - rowan_m
 date: 2019-10-30
-updated: 2020-05-28
+updated: 2023-03-20
 hero: image/admin/V0dgwWTA61NTc55CAhSD.jpg
 description: |
-  Cookies are one of the methods available for adding persistent state to web
-  sites. Understnding cookies is crucial to understanding a variety of browser and server-side functionalities, along with
-  upcoming changes to the types of cookies supported. 
+  Learn about how cookies work and what are first-party and third-party cookies.
 tags:
   - blog
-  - security
   - cookies
-  - chrome-80
-  - test-post
 feedback:
   - api
 ---
