@@ -26,10 +26,13 @@ feedback:
 ---
 
 {% Aside %}
-This article is part of a series on the `SameSite` cookie attribute changes:
-- [SameSite cookies explained](/samesite-cookies-explained/)
-- [SameSite cookies recipes](/samesite-cookie-recipes/)
-- [Schemeful Same-Site](/schemeful-samesite)
+This article is part of a series on the `SameSite` cookie attribute changes that includes:
+
+<ul>
+<li><a href="/understanding-cookies/">Understanding cookies</a></li>
+<li><a href="/samesite-cookies-explained/">SameSite cookies explained</a></li>
+<li><a href="/schemeful-samesite/">Schemeful Same-Site</a></li>
+</ul>
 {% endAside %}
 
 [Chrome](https://www.chromium.org/updates/same-site),
