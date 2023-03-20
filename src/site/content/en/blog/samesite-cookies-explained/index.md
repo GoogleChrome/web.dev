@@ -4,7 +4,7 @@ subhead: Secure your site by learning how to explicitly mark your cross-site coo
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2020-05-28
+updated: 2023-03-20
 hero: image/admin/UTOC41rgCccAqVNbJlyK.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage with the
@@ -34,8 +34,6 @@ This article is part of a series on the `SameSite` cookie attribute changes that
 
 Each cookie contains a key-value pair along with a number of attributes that control when and where that cookie is used. 
 
-## Explicitly state cookie usage with the `SameSite` attribute
-
 The introduction of the `SameSite` attribute (defined in
 [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00))
 allows you to declare if your cookie should be restricted to a first-party or
@@ -61,6 +59,8 @@ If the user is on `your-project.github.io` and requests an image from
 `my-project.github.io` that's a **cross-site** request.
 
 {% endAside %}
+
+## Explicitly state cookie usage with the `SameSite` attribute
 
 Introducing the `SameSite` attribute on a cookie provides three different ways
 to control this behaviour. You can choose to not specify the attribute, or you
