@@ -1,5 +1,3 @@
-@import '../../../styles/tools/mixins';
-
 $MODAL_CONTENT_PADDING: 1.5rem;
 $MODAL_ANIMATION_DURATION: 150ms;
 
@@ -44,7 +42,7 @@ $MODAL_ANIMATION_DURATION: 150ms;
 
   .web-modal__container {
     background: get-color('shades-light-bright');
-    border-radius: $GLOBAL_RADIUS_MEDIUM;
+    border-radius: 10px;
     box-shadow:
       0 11px 15px -7px rgba(0,0,0,.2),
       0 24px 38px 3px rgba(0,0,0,.14),

@@ -806,12 +806,5 @@ video,
 // Import unresolved states for lit-elements
 @import 'unresolved';
 
-/// LEGACY EXTENSIONS
-/// These elements are everywhere and to replace them site-wide would be
-/// a massive project, so they use @extend to pick up new styles
-.w-visually-hidden {
-  @extend .visually-hidden;
-}
-
 // Render gorko utilities
 @include generate-utility-classes();
