@@ -33,7 +33,7 @@ const markdown = md({
   .use(require('markdown-it-anchor'), {
     level: 2,
     permalink: true,
-    permalinkClass: 'w-headline-link',
+    permalinkClass: 'headline-link',
     permalinkSymbol: '#',
     // @ts-ignore
     slugify: (s) => slugify(s, {lower: true, remove: /[$*_+~.()'"!/\-:@?]+/g}),
