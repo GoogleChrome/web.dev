@@ -30,7 +30,7 @@ describe('Build test', function () {
       'index.html',
       path.join('authors', 'addyosmani', 'feed.xml'),
       path.join('tags', 'progressive-web-apps', 'feed.xml'),
-      path.join('css', 'main.css'),
+      path.join('css', 'next.css'),
       'pages.json',
       'manifest.webmanifest',
       'sw.js',
