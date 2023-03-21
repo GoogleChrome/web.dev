@@ -26,8 +26,8 @@ class ScrollSpy extends BaseElement {
   constructor() {
     super();
     this.scrollSpy = this.scrollSpy.bind(this);
-    this.tocActiveClass = 'w-scroll-spy__active';
-    this.tocVisibleClass = 'w-scroll-spy__visible';
+    this.tocActiveClass = 'scroll-spy__active';
+    this.tocVisibleClass = 'scroll-spy__visible';
   }
 
   connectedCallback() {

@@ -1,8 +1,6 @@
 /// SITE FOOTER
 /// The main, global footer that is on each page
 
-@import '../../styles/tools/mixins';
-
 .site-footer {
   padding: $global-gutter;
   border-block-start: 1px solid get-utility-value('color', 'stroke');

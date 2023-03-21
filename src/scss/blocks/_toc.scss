@@ -46,13 +46,13 @@
   font-size: get-size('size-1');
 }
 
-.toc .w-scroll-spy__active, .toc .toc__active {
+.toc .scroll-spy__active, .toc .toc__active {
   @include apply-utility('color', 'action-text');
   @include apply-utility('weight', 'bold');
 }
 
 /// An active style for nested list items
-.toc__list .toc__list li .w-scroll-spy__active::before,
+.toc__list .toc__list li .scroll-spy__active::before,
 .toc__list .toc__list li .toc__active::before {
   /// The list element is the relative parent, allowing
   /// this additional border style to "break out" of the
