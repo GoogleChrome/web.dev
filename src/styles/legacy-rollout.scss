@@ -1,0 +1,26 @@
+/// LEGACY ROLLOUT
+/// This is a temporary stylesheet to let old components
+/// interact with the new design system, to assist with the
+/// complete rollout of the design system
+
+.legacy-rollout {
+
+  /// More specific overrides
+  .w-callout {
+    margin: var(--flow-space) auto 0;
+  }
+
+  .w-callout__list {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  .w-callout__link--codelab,
+  .w-callout__lockup--codelab {
+    color: var(--color-quaternary-box-text);
+  }
+
+  .w-callout__link:hover {
+    background: none;
+  }
+}
