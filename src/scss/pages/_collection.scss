@@ -1,6 +1,3 @@
-
-@import '../../styles/settings/colors';
-
 .collection {
   hr {
       max-width: 100%;
@@ -201,21 +198,22 @@
   .bg-dark,
   .bg-blue  {
     svg {
-        fill: $WHITE;
+        fill: get-color('shades-light-bright');
     }
   
     p, span, h4 {
-        color:  $WHITE;
+        color: get-color('shades-light-bright');
     }
   }
   
   .bg-quaternary {
-    background-color: $CYAN_900;
+    $CORE_QUATERNARY: get-color('core-quaternary');
+    background-color: $CORE_QUATERNARY;
   
     &:hover,
     &:focus,
     &:active {
-        background-color: rgba($CYAN_900, .9);
+        background-color: rgba($CORE_QUATERNARY, .9);
     }
   }
 
@@ -230,32 +228,35 @@
   }
   
   .bg-tertiary {
-    background-color: $WEB_EXTENDED_TERTIARY_COLOR;
+    $CORE_TERTIARY: get-color('core-tertiary');
+    background-color: $CORE_TERTIARY;
   
     &:hover,
     &:focus,
     &:active {
-        background-color: rgba($WEB_EXTENDED_TERTIARY_COLOR, .9);
+        background-color: rgba($CORE_TERTIARY, .9);
     }
   }
 
   .bg-pink {
-    background-color: $PINK_900;
+    $CORE_SECONDARY_SHADE: get-color('core-secondary-shade');
+    background-color: $CORE_SECONDARY_SHADE;
   
     &:hover,
     &:focus,
     &:active {
-        background-color: rgba($PINK_900, .9);
+        background-color: rgba($CORE_SECONDARY_SHADE, .9);
     }
   }
   
   .bg-blue {
-    background-color: $LOW_IMPACT_COLOR;
+    $CORE_PRIMARY: get-color('core-secondary-shade');
+    background-color: $CORE_PRIMARY;
   
     &:hover,
     &:focus,
     &:active {
-        background-color: rgba($LOW_IMPACT_COLOR, .9);
+        background-color: rgba($CORE_PRIMARY, .9);
     }
   }
 }

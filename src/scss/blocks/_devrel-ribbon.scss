@@ -1,7 +1,5 @@
 // DEVREL RIBBON
 
-@import '../../styles/settings/colors';
-
 .devrel-ribbon {
   align-items: flex-end;
   display: flex;
@@ -52,7 +50,7 @@
     span {
       font-size: 12px;
       font-family: inherit;
-      color: $WHITE;
+      color: get-color('shades-light-bright');
     }
 
     &:hover,

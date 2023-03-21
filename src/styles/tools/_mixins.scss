@@ -2,10 +2,8 @@
 
 @use 'sass:math';
 
-@import '../settings/colors';
+@import '../settings/global';
 @import '../settings/type';
-@import 'functions';
-@import 'breakpoints';
 
 // =============================================================================
 // MIXINS OVERVIEW
@@ -25,111 +23,11 @@
 // @param {?string=} $inset - Renders an inset shadow if value is 'inset'
 //    and $level is 2.
 
-// prettier-ignore
-@mixin elevation($level, $inset: null) {
-  @if $level == 0 {
-    border: 1px solid $GREY_300;
-    box-shadow: none;
-  } @else if $level == 1 {
-    box-shadow: 0 1px 2px 0 rgba($GREY_800, 0.3),
-    0 1px 3px 1px rgba($GREY_800, 0.15);
-  } @else if $level == 2 {
-    @if $inset == 'inset' {
-      box-shadow: 0 1px 2px 0 rgba($GREY_800, 0.3),
-      0 2px 6px 2px rgba($GREY_800, 0.15),
-      inset 0 4px 6px -4px rgba($GREY_500, 0.5);
-    } @else {
-      box-shadow: 0 1px 2px 0 rgba($GREY_800, 0.3),
-      0 2px 6px 2px rgba($GREY_800, 0.15);
-    }
-  } @else if $level == 3 {
-    box-shadow: 0 1px 3px 0 rgba($GREY_800, 0.3),
-    0 4px 8px 3px rgba($GREY_800, 0.15);
-  } @else if $level == 4 {
-    box-shadow: 0 2px 3px 0 rgba($GREY_800, 0.3),
-    0 6px 10px 4px rgba($GREY_800, 0.15);
-  } @else if $level == 5 {
-    box-shadow: 0 4px 4px 0 rgba($GREY_800, 0.3),
-    0 8px 12px 6px rgba($GREY_800, 0.15);
-  } @else {
-    box-shadow: none;
-  }
-}
-
-// Mixin to add custom scrollbars to an element
-
-// @param {?string=} $size - Width of the scrollbar in pixels
-// @param {?string=} $thumbColor - Color of the scrollbar thumb
-// @param {?string=} $trackColor - Color of the scrollbar track
-@mixin scrollbars(
-  $size: 10px,
-  $thumbColor: $GREY_600,
-  $trackColor: transparent
-) {
-  & {
-    // Sass Lint doesn't recognize these shiny new properties
-    // sass-lint:disable-block no-misspelled-properties
-    scrollbar-color: $thumbColor $trackColor;
-    scrollbar-width: thin;
-  }
-
-  &::-webkit-scrollbar {
-    height: $size;
-    width: $size;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $thumbColor;
-    background-clip: padding-box;
-    border: math.div($size, 4) solid $trackColor;
-    border-radius: math.div($size, 2);
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: darken($thumbColor, 12%);
-  }
-
-  &::-webkit-scrollbar-thumb:active {
-    background-color: darken($thumbColor, 22%);
-  }
-
-  &::-webkit-scrollbar-track {
-    background: $trackColor;
-  }
-}
-
 // Mixin for overflowing text to ellipsis (…).
 @mixin ellipsis() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-// Mixin for base button styles
-@mixin base-button() {
-  -webkit-tap-highlight-color: transparent; // Prevents tap highlight on hidden tooltips
-  align-items: center;
-  background: transparent;
-  border: 0;
-  border-radius: $global-radius-base;
-  color: $WEB_PRIMARY_COLOR;
-  cursor: pointer;
-  display: inline-flex;
-  font: 500 0.875rem/2.25rem $PRIMARY_FONT;
-  height: 56px;
-  justify-content: center;
-  letter-spacing: 1px;
-  outline: 0;
-  padding: 0 16px;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
-  @include font_smoothing(
-    $FONT_SMOOTHING_MOZ,
-    $FONT_SMOOTHING_WEBKIT,
-    $FONT_SMOOTHING_RENDERING
-  );
 }
 
 // Mixin for exposing hover styles only on devices that support hover
@@ -150,6 +48,12 @@
 // @prop {!string} $specs.FONT_FAMILY
 // @prop {?number} $specs.LETTER_SPACING
 // @prop {?string} $specs.TEXT_TRANSFORM
+
+// This file will be remove in the future PR
+@function calculate_unitless_line_height($line_height, $font_size) {
+  @return math.div($line-height, $font-size);
+}
+
 @mixin font($specs) {
   $font_weight: map-get($specs, FONT_WEIGHT);
   $font_size: map-get($specs, FONT_SIZE);
@@ -212,48 +116,6 @@
   text-rendering: $rendering;
 }
 
-// Sets font styles.
-@mixin font-setup($size, $height, $weight: false, $rem: true) {
-  @if $rem {
-    font-size: px-to-rem($size);
-  } @else {
-    font-size: px-to-em($size);
-  }
-
-  line-height: math.div($height, $size);
-  @if $weight {
-    font-weight: $weight;
-  }
-}
-
-// Sets a flexible font size
-//
-// @param {length()} $sm - List of lengths, in px, representing font size and line height of the smallest size
-// @param {length()} $md - List of lengths, in px, representing font size and line height of the medium size
-// @param {length()} $lg - List of lengths, in px, representing font size and line height of the largest size
-// @param {number | boolean} $weight - Font weight, or false
-@mixin flex-font($sm, $md, $lg, $weight: false) {
-  // Setup basic font styling from medium size
-  @include font-setup(nth($md, 1), nth($md, 2), $weight);
-
-  // Determine scaling factor so that the large font size is reached at 1024px
-  $font-scale: math.div(nth($lg, 1), 10.24px) * 1vw;
-  // Set up clamp function
-  $font-clamp: clamp(
-    #{px-to-em(nth($sm, 1))},
-    #{$font-scale},
-    #{px-to-em(nth($lg, 1))}
-  );
-
-  // Check for support for clamp function
-  @supports (font-size: $font-clamp) {
-    // Set font size to clamp
-    font-size: $font-clamp;
-    // Set line height to ratio of largest line height to font size (unitless number)
-    line-height: math.div(nth($lg, 2), nth($lg, 1));
-  }
-}
-
 // -----------------------------------------------------------------------------
 // Typography
 //
@@ -267,11 +129,11 @@
 @mixin w-body-text {
   @include font($BODY);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($BODY_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($BODY_XSMALL);
   }
 }
@@ -281,30 +143,23 @@
 @mixin w-article-text {
   @include font($ARTICLE);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($ARTICLE_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($ARTICLE_XSMALL);
   }
-}
-
-@mixin w-headline {
-  @include font($BASE_HEADLINE);
-  color: $PRIMARY_TEXT_COLOR; // DevSite override
-  margin: 0;
-  overflow: visible;
 }
 
 @mixin w-headline--one {
   @include font($HEADLINE_1);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_1_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_1_XSMALL);
   }
 }
@@ -312,11 +167,11 @@
 @mixin w-headline--two {
   @include font($HEADLINE_2);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_2_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_2_XSMALL);
   }
 }
@@ -324,11 +179,11 @@
 @mixin w-headline--two-small {
   @include font($HEADLINE_2_ARTICLE);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_2_ARTICLE_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_2_ARTICLE_XSMALL);
   }
 }
@@ -337,11 +192,11 @@
   @include font($HEADLINE_2_SMALL_CAPS);
   color: $GREY_600;
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_2_SMALL_CAPS_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_2_SMALL_CAPS_XSMALL);
   }
 }
@@ -349,25 +204,12 @@
 @mixin w-headline--three {
   @include font($HEADLINE_3);
 
-  @include bp(xxsm) {
+  @media (min-width: 241px) {
     @include font($HEADLINE_3_XXSMALL);
   }
 
-  @include bp(xsm) {
+  @media (min-width: 321px) {
     @include font($HEADLINE_3_XSMALL);
-  }
-}
-
-@mixin w-headline--four {
-  @include font($HEADLINE_4);
-  color: $GREY_700;
-
-  @include bp(xxsm) {
-    @include font($HEADLINE_4_XXSMALL);
-  }
-
-  @include bp(xsm) {
-    @include font($HEADLINE_4_XSMALL);
   }
 }
 
@@ -390,16 +232,4 @@
   top: 0;
   transition: background-color $TRANSITION_SPEED, border $TRANSITION_SPEED;
   z-index: 1;
-}
-
-@mixin w-overlay-hover {
-  background-color: rgba($GREY_900, 0.04);
-}
-
-@mixin w-overlay-focus {
-  background-color: rgba($GREY_900, 0.12);
-}
-
-@mixin w-overlay-active {
-  background-color: rgba($GREY_900, 0.16);
 }
