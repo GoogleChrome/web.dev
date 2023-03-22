@@ -250,7 +250,7 @@
   }
   
   .bg-blue {
-    $CORE_PRIMARY: get-color('core-secondary-shade');
+    $CORE_PRIMARY: get-color('core-primary');
     background-color: $CORE_PRIMARY;
   
     &:hover,
