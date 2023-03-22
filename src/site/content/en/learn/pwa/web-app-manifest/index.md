@@ -194,26 +194,6 @@ Maskable icons should be 512 by 512 at least. With one created, you can add it t
 ```
 In most cases, if your maskable icon isn't displaying well, you can improve it by adding more padding. [Maskable.app](https://maskable.app) is a free online tool to test and create a maskable version of your icon.
 
-##### Icons in Safari
-
-{% Aside %}
-Since Safari 15.4 the icons spec is fully supported and the following workaround is no longer necessary.
-{% endAside %}
-
-Safari on iOS and iPadOS ignores the `icon` collection from the web app manifest and instead uses icons defined in a proprietary`<link>` element in the HTML.
-
-To define the icon, include the following in your HTML `<head>` section:
-
-```html
-<link rel="apple-touch-icon" href="/icons/ios.png">
-```
-
-While it's possible to define different icons for iPhones in different resolutions and iPads, a single non-transparent PNG icon sized at 180 by 180 pixels is usually used instead.
-
-{% Aside 'warning' %}
-Do not create rounded corners in your icon for iOS and iPadOS; they will be rounded for you.
-{% endAside %}
-
 ### Recommended fields
 
 The next set of fields to include are ones that will improve your user's experience, even though they're not required for installability.
