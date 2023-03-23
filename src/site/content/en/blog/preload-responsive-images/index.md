@@ -135,7 +135,7 @@ Responsive image preloading provides a simple and hack-free way to load those im
 <link rel="preload" as="image" imagesrcset="cat.png 1x, cat-2x.png 2x">
 ```
 
-Note that by excluding the `href` attribute, you can ensure the browsers that do not support `imagesrcset` on the `<link>` elment, but do support `image-set` in CSS, will not download an incorrect source. However, they will also not benefit from the preload in this case.
+Note that by excluding the `href` attribute, you can ensure the browsers that do not support `imagesrcset` on the `<link>` element, but do support `image-set` in CSS, will not download an incorrect source. However, they will also not benefit from the preload in this case.
 
 You can inspect how the previous example behaves with [preloaded responsive background image](https://responsive-preload.glitch.me/background_preload.html).
 
