@@ -64,7 +64,6 @@ promotion:
   * `start_url`
   * `display` - must be one of `fullscreen`, `standalone`, or `minimal-ui`
   * `prefer_related_applications` must not be present, or be `false`
-* Registers a service worker with a `fetch` handler
 
 Other browsers have similar criteria for installation, though there may be
 minor differences. Check the respective sites for full details:
