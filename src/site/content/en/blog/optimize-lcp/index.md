@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-05-05
-updated: 2022-09-27
+updated: 2022-03-24
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
@@ -431,8 +431,10 @@ new PerformanceObserver((list) => {
   );
   const lcpRenderTime = Math.max(
     lcpResponseEnd,
-    // Prefer `renderTime` (if TOA is set), otherwise use `loadTime`.
-    lcpEntry ? lcpEntry.renderTime || lcpEntry.loadTime : 0
+    // Use LCP startTime (which is the final LCP time) as sometimes
+    // slight differences between loadTime/renderTime and startTime
+    // due to rounding precision.
+    lcpEntry ? lcpEntry.startTime : 0
   );
 
   // Clear previous measures before making new ones.
@@ -476,6 +478,18 @@ new PerformanceObserver((list) => {
 ```
 
 You can use this code as-is for local debugging, or modify it to send this data to an analytics provider so you can get a better understanding of what the breakdown of LCP is on your pages for real users.
+
+{% Aside warning %}
+<p>
+The above code works for standard navigations, but extra consideration must be taken for [prerendered pages](https://developer.chrome.com/blog/prerender-pages/), which should be measured from the activation start time but which has been kept out of this code for simplicity.
+</p>
+<p>
+The [web-vitals library](https://github.com/GoogleChrome/web-vitals) includes this breakdown in the attribution build, and includes these considerations.
+</p>
+<p>
+For those looking to implement their own solution, the [code for this is open source](https://github.com/GoogleChrome/web-vitals/blob/main/src/attribution/onLCP.ts) and is similar to above but with extra lofic for activation start.
+</p>
+{% endAside %}
 
 ## Summary
 
