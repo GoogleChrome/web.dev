@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2022-11-04
+updated: 2023-03-27
 tags:
   - blog
   - capabilities
@@ -98,7 +98,26 @@ try {
   const blob = await data.blob();
   await navigator.clipboard.write([
     new ClipboardItem({
+      // The key is determined dynamically based on the blob's type.
       [blob.type]: blob
+    })
+  ]);
+  console.log('Image copied.');
+} catch (err) {
+  console.error(err.name, err.message);
+}
+```
+
+Alternatively, you can also write a promise to the `ClipboardItem` object.
+For this pattern, you need to know the MIME type of the data beforehand.
+
+```js
+try {
+  const imgURL = '/images/generic/file.png';
+  await navigator.clipboard.write([
+    new ClipboardItem({
+      // Set the key beforehand and write a promise as the value.
+      'image/png': fetch(imgURL).then(response => response.blob()),
     })
   ]);
   console.log('Image copied.');
