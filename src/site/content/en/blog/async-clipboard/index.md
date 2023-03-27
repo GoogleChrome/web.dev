@@ -108,7 +108,7 @@ try {
 }
 ```
 
-Alternatively, you can also write a promise to the `ClipboardItem` object.
+Alternatively, you can write a promise to the `ClipboardItem` object.
 For this pattern, you need to know the MIME type of the data beforehand.
 
 ```js
