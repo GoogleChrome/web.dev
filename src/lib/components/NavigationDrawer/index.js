@@ -83,7 +83,7 @@ export class NavigationDrawer extends BaseStateElement {
   addEventListeners() {
     this.drawerContainer.addEventListener('click', this.onBlockClicks);
     this.closeBtn.addEventListener('click', closeNavigationDrawer);
-    this.addEventListener('click', closeNavigationDrawer);
+    this.addEventListener('click', this.onClickOutsideDrawer);
   }
 
   onStateChanged({isNavigationDrawerOpen, currentUrl}) {
@@ -111,6 +111,19 @@ export class NavigationDrawer extends BaseStateElement {
         updated.setAttribute('active', '');
         updated.setAttribute('aria-current', 'page');
       }
+    }
+  }
+
+  onClickOutsideDrawer() {
+    closeNavigationDrawer();
+
+    // When the NavigationDrawer is collapsed, we need to move the focus from
+    // the web-navigation-drawer to web-header.
+
+    /** @type {import('../Header').Header} */
+    const webHeader = document.querySelector('web-header .brand');
+    if (webHeader) {
+      webHeader.focus();
     }
   }
 
