@@ -91,7 +91,7 @@ When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in lin
 
 ### Identifying non-load CLS issues
 
-When the CrUX and Lighthouse CLS scores of PageSpeed Insights are not inline, then this likely indicates post-load CLS. To replicate that, you can browse your web page while [recording CLS using a JavaScript snippet](https://web.dev/cls/#measure-cls-in-javascript) pasted into the console.
+When the CrUX and Lighthouse CLS scores of PageSpeed Insights are not inline, then this likely indicates post-load CLS. To replicate that, you can browse your web page while [recording CLS using a JavaScript snippet](/cls/#measure-cls-in-javascript) pasted into the console.
 
 Alternatively, the Web Vitals Chrome [extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console.
 
@@ -110,7 +110,7 @@ It is also possible to measure both the CLS, and perhaps more importantly, the e
 
 This allows the users seeing the impact of CLS to provide the data needed to identify these shifts. This can help point you in the right direction of where the issue is, and also rank the issues in order of important based on most frequently experienced. However, like Lighthouse, this will measure the elements that shifted, rather than the root causes of those shifts.
 
-Read our [Debug performance in the field](https://web.dev/debug-performance-in-the-field/) post for more information on how to do this.
+Read our [Debug performance in the field](/debug-performance-in-the-field/) post for more information on how to do this.
 
 {% Aside %}
   RUM solutions that measure CLS in the field may show differences that CrUX data as explained in the [Why is CrUX data different from my RUM data?](crux-and-rum-differences/) post. In particular CLS that happens in iframes is not measurable from Web APIs but is visible to the user, so is included in CrUX. So while field data can be invaluable for identifying CLS issues, be aware that it may be incomplete for certain scenarios.
@@ -351,7 +351,7 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
     </figcaption>
   </figure>
 
-If you need to display these types of UI affordances, reserve sufficient space in the viewport for it in advance (for example, using a placeholder or skeleton UI) so that when it loads, it does not cause content in the page to surprisingly shift around. Alternatively, ensure the element is not part of the document flow by overlaying the content where this makes sense. See our [Best practices for cookie notices](https://web.dev/cookie-notice-best-practices/) post for more recommendations on these types of components.
+If you need to display these types of UI affordances, reserve sufficient space in the viewport for it in advance (for example, using a placeholder or skeleton UI) so that when it loads, it does not cause content in the page to surprisingly shift around. Alternatively, ensure the element is not part of the document flow by overlaying the content where this makes sense. See our [Best practices for cookie notices](/cookie-notice-best-practices/) post for more recommendations on these types of components.
 
 In some cases adding content dynamically is an important part of user experience. For example, when loading more products to a list of items or when updating live feed content. There are several ways to avoid unexpected layout shifts in those cases:
 
