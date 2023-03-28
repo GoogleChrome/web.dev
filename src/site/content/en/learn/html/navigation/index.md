@@ -112,7 +112,7 @@ that a section has a role of `navigation`, a landmark role.
 
 Including the [`aria-label`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-label) attribute
 provides a brief description of the purpose of the navigation. In this case, as the value of the attribute is redundant to
-text that is visible on the page, it is preferable to use [`arial-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
+text that is visible on the page, it is preferable to use [`aria-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
 to reference the visible text.
 
 We can change the non-semantic `<div>` to a paragraph `<p>`, then add an [`id`](/learn/html/attributes/#id) so it can be referenced. We then use `aria-labelledby`:
