@@ -1,8 +1,8 @@
 ---
 title: Push notifications are now supported cross-browser
 subhead: >
-  With Safari joining the party, standard push notifications are now supported in all major browsers.
-date: 2022-12-07
+  Deliver timely and useful notifications to your users.
+date: 2023-03-28
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/wh2VQyIaAgf3TolWMePH.jpg
 alt: The word push written in mirrored letters.
 authors:
