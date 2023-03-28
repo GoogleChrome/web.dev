@@ -41,7 +41,7 @@ To provide a good user experience, **sites should strive to have an CLS of 0.1 o
   </picture>
 </figure>
 
-Unlike the other Core Web Vitals whihc are time-based values measure seconds or milliseconds, the CLS score is a unitless value based on a calculation of how much content is shifting and by how far.
+Unlike the other Core Web Vitals, which are time-based values measure seconds or milliseconds, the CLS score is a unitless value based on a calculation of how much content is shifting and by how far.
 
 In this guide, we'll cover optimizing common causes of layout shifts.
 
