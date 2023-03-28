@@ -122,7 +122,7 @@ Once you have identified the causes of CLS, you can start working on fixing the 
 
 ### Images without dimensions
 
-Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS aspect-ratio](https://web.dev/aspect-ratio/) or similar. This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
+Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS aspect-ratio](/aspect-ratio/) or similar. This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
 
   <figure>
     {% Video
