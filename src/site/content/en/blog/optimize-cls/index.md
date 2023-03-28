@@ -122,7 +122,7 @@ Once you have identified the causes of CLS, you can start working on fixing the 
 
 ### Images without dimensions
 
-Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS aspect ratio boxes](https://css-tricks.com/aspect-ratio-boxes/). This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
+Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS aspect-ratio](https://web.dev/aspect-ratio/) or similar. This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
 
   <figure>
     {% Video
@@ -190,7 +190,7 @@ Knowing the aspect ratio allows the browser to calculate and reserve sufficient 
 Modern browsers now set the default aspect ratio of images based on an image's width and height attributes so it's valuable to set them to prevent layout shifts. Thanks to the CSS Working Group, developers just need to set `width` and `height` as normal:
 
 ```html
-<!-- set a 640:360 i.e a 16:9 - aspect ratio -->
+<!-- set a 640:360 i.e a 16:9 aspect ratio -->
 <img src="puppy.jpg" width="640" height="360" alt="Puppy with balloons">
 ```
 
@@ -265,7 +265,7 @@ As we have seen images have special considerations, but these are not the only c
 
 Ads are one of the largest contributors to layout shifts on the web. Ad networks and publishers often support dynamic ad sizes. Ad sizes increase performance/revenue due to higher click rates and more ads competing in the auction. Unfortunately, this can lead to a suboptimal user experience due to ads pushing visible content you're viewing down the page.
 
-Embeddable widgets allow you to embed portable web content in your page (for example, videos from YouTube, maps from Google Maps, social media posts, and so on). These embeds often aren't aware in advance just how large an embed will be (for example, in the case of a social media post - does it have an embedded image? video? multiple rows of text?). As a result, platforms offering embeds do not always reserve enough space for their embeds and can cause layout shifts when they finally load.
+Embeddable widgets allow you to embed portable web content in your page (for example, videos from YouTube, maps from Google Maps, social media posts, and so on). These embeds often aren't aware in advance just how large an embed will be (for example, in the case of a social media post—does it have an embedded image? video? multiple rows of text?). As a result, platforms offering embeds do not always reserve space for their embeds and so cause layout shifts when they finally load.
 
 The techniques for dealing with these are all similar. The major differences are how much control you have over the content that will be inserted. If this is inserted by a third-party like an ad partner you may not know the exact size of content that will be inserted, nor be able to control any CLS happening within those embeds.
 
@@ -273,43 +273,12 @@ The techniques for dealing with these are all similar. The major differences are
 
 If placing late-loading content in the content flow, ensure shifts are eliminated by reserving the space for them in the initial layout.
 
+This can be as simple as adding a `min-height` styling to reserve space or, for responsive content such as ads, using the new [`aspect-ratio`](/aspect-ratio/) CSS property in a similar manner to the way browsers automatically use this for images with dimensions provided.
+
 <figure>
   {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/ThcGvVp0RiiABpmnWz7u.svg", alt="Three mobile devices with just text content in the first device, this is shifted down in the second device, and reserving space with a placeholder as shown in the third device prevents the shift", width="1180", height="600" %}
   <figcaption>
     Reserving space for ads can prevent layout shifts
-  </figcaption>
-</figure>
-
-This can be as simple as adding a `min-height` styling to reserve space or, for responsive content such as ads, using the new [`aspect-ratio`](/aspect-ratio/) CSS property in a similar manner to the way browsers automatically use this for images with dimensions provided.
-
-  <figure>
-    {% Video
-      src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"],
-      poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg",
-      controls=true,
-      loop=true,
-      muted=true %}
-   <figcaption>
-      Embed without space reserved.
-    </figcaption>
-  </figure>
-
-  <figure>
-    {% Video
-      src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"],
-      poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg",
-      controls=true,
-      loop=true,
-      muted=true %}
-   <figcaption>
-      Embed with space reserved.
-    </figcaption>
-  </figure>
-
-<figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift of reserving space for this embed on CLS", width="800", height="148" %}
-  <figcaption>
-    Lighthouse impact of reserving space for this embed on CLS
   </figcaption>
 </figure>
 
@@ -384,8 +353,8 @@ To learn more about what CSS properties trigger layout see [High-performance ani
 
 Downloading and rendering web fonts is typically handled in one of two ways before the web font is downloaded:
 
-- The fallback font is swapped with web font (FOUT - flash of unstyled text)
-- "Invisible" text is displayed using the fallback font until a web font is available the text is made visible (FOIT - flash of invisible text)
+- The fallback font is swapped with web font (FOUT—flash of unstyled text)
+- "Invisible" text is displayed using the fallback font until a web font is available the text is made visible (FOIT—flash of invisible text)
 
 It is important to understand that **both of these cause CLS**. Even though the invisible is not visible to the user, it is layed out using the fallback font and so the text block of the font, and the surrounding content shifts when the web font loads—in the exact same way as for the visible font for FOUT.
 
