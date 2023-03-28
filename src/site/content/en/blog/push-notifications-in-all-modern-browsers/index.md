@@ -50,7 +50,7 @@ Prior to version 16, **Safari on macOS** supported a [proprietary version of pus
 **Safari for iOS and iPadOS** supports push notifications as of version 16.4, but only for apps that were added to the Home Screen. Apple calls these Home Screen web apps.
 {% endAside %}
 
-{% BrowserCompat '​​api.PushEvent' %}
+{% BrowserCompat 'api.PushEvent.PushEvent' %}
 
 ## Further reading
 
