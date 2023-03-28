@@ -73,7 +73,7 @@ However, other post-load shifts that are unexpected by the user may be included 
 
 [PageSpeed Inights](https://pagespeed.web.dev/) will show both the actual CLS from a URL where it exists in the "Discover what your real users are experiencing" section, and also the lab-based loading CLS in the "Diagnose performance issues" beneath. If you see a difference between these, this is likely caused by post-load CLS.
 
-{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/plRFL3j7JOaE2IWfxqTq.png", alt="Screenshot of PageSpeed Insights showing the real users CrUX data at URL-level", width="800", height="229" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/2eO9BsIb8Gx6kU4Zvbqa.png", alt="Screenshot of PageSpeed Insights showing URL-level data highlighting the real user CLS which is considerably larger than the Lighthouse CLS", width="800", height="450" %}
 
 {% Aside important %}
   PageSpeed Inights will show URL-level data where it exists, and attempt to fall back to origin-level data where this does not exist. Always check what data is showing to ensure you do not waste time trying to track down a CLS issue that actually exists on other pages on your origin! In the above example you can see this is URL-level data as shown in the top right of the image.
@@ -81,9 +81,9 @@ However, other post-load shifts that are unexpected by the user may be included 
 
 ### Identifying load CLS issues
 
-When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in line, this indicates there is a load CLS issue that was detected by Lighthouse. In this case Lighthouse will help with two audits to provide more information on images causing CLS due to missing width and height, and also list all the elements that shifted for the page load.
+When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in line, this indicates there is a load CLS issue that was detected by Lighthouse. In this case Lighthouse will help with two audits to provide more information on images causing CLS due to missing width and height, and also list all the elements that shifted for the page load along with their CLS contribution.
 
-{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iJ76Fd2UdkBRNSTRvpao.png", alt="Lighthouse Screenshot showing the CLS audits providing more information to help you identify and address CLS issues", width="800", height="350" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/2C3v6dGwPx2yFyYpVdue.png", alt="Lighthouse Screenshot showing the CLS audits providing more information to help you identify and address CLS issues", width="800", height="544" %}
 
 {% Aside important %}
   Lighthouse will identify the elements that were shifted, but often these are the ones _impacted_ rather than the elements _causing_ the CLS. For example, if a new element is inserted into the DOM the elements that are beneath it will show in this audit, but the root cause is the addition of the new element above. Hopefully, the shifted element will be sufficient to help you identify and resolve the root cause.
