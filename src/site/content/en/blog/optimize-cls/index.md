@@ -53,8 +53,8 @@ The most common causes of a poor CLS are:
 - Web Fonts
 
 {% Aside %}
-  For a visual overview of some of the context presented in this guide, see [Optimize for CLS](https://youtu.be/fWoI9DXmpdk) from Google I/O '20:
-  {% YouTube "AQqFZ5t8uNc", startTime='88', width=2482, height=1396 %}
+  For a visual overview of some of the context presented in this guide, see this section of the Optimize for Core Web Vitals from Google I/O 2020:
+  {% YouTube id="AQqFZ5t8uNc", startTime='88', width=2482, height=1396 %}
 {% endAside %}
 
 ## Understanding where your shifts are coming from
