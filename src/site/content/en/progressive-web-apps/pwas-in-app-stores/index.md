@@ -35,19 +35,19 @@ If your web app meets a few baseline PWA requirements, you can use PWABuilder to
 - The app has to be served with HTTPS.
 
 {% Aside 'important' %}
-<p>To publish your package, you will also need a developer account with each platform you want to publish with. For the Microsoft and Google Play stores, these cost a one time fee. For the Apple App Store, an account costs a recurring fee per year. Meta Quest accounts are free.</p>
-<p>By submitting to stores, you need to play by their rules, which, for example, may mean that you need to use their payment mechanisms and pay a comission for each purchase, or that certain content may not be allowed. Carefully assess these aspects for each store you want to publish to.</p>
+<p>To publish your package, you will also need a developer account with each platform you want to publish with. For the Microsoft and Google Play stores, these cost a one-time fee. For the Apple App Store, an account costs a recurring fee per year. Meta Quest accounts are free.</p>
+<p>By submitting to stores, you need to play by their rules, which, for example, may mean that you need to use their payment mechanisms and pay a commission for each purchase, or that certain content may not be allowed. Carefully assess these aspects for each store you want to publish to.</p>
 {% endAside %}
 
 ## Packaging
 
 You can have an application package for your PWA in a few steps:
 
-- From the homepage of PWABuilder, you can enter a URL to start the packaging process. PWABuilder will take you to report card page for your application, where you can view scores and action items for your progressive web app.
+- From the homepage of PWABuilder, you can enter a URL to start the packaging process. PWABuilder will take you to the report card page for your application, where you can view scores and action items for your progressive web app.
 - To proceed to packaging your app, click the **Package for Stores** button on the top right of the scorecard page.
 - Browse the options for packaging, and select a platform by clicking **Generate Package**. You will be prompted for metadata related to your application, which will vary depending on platform. Lastly, select **Download Package** to download your package.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/zBI3DyULt7jcI9ynDbbN.png", alt="SVGcode PWA in the PWABuilder uiser interface.", width="800", height="1136" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/zBI3DyULt7jcI9ynDbbN.png", alt="SVGcode PWA in the PWABuilder user interface.", width="800", height="1136" %}
 
 ## Submitting
 
