@@ -20,7 +20,7 @@ PWABuilder is a powerful tool that allows developers to create packages that can
 - [Apple App Store](https://www.apple.com/app-store/)
 - [Meta Quest Store](https://www.oculus.com/experiences/quest/)
 
-One of the major advantages of using PWABuilder to create packages is that it simplifies the process of publishing your web application to app stores. Normally, submitting an app to app stores requires a lot of work, including writing code in languages web developers may not necessarily be familiar with, creating app icons, configuring various settings, and testing the app across different devices and operating systems. PWABuilder takes care of many of these tasks automatically, reducing the amount of time and effort required to publish an app.
+One of the major advantages of using PWABuilder to create packages is that it simplifies the process of publishing your web application to app stores. Normally, submitting an app to app stores requires a lot of work, including writing code in languages web developers may not necessarily be familiar with, creating app icons, configuring various settings, and testing the app across different devices and operating systems. PWABuilder takes care of many of these tasks automatically, reducing the amount of time and effort required to publish apps.
 
 {% Aside %}
 Internally, PWABuilder uses a command line tool called [`bubblewrap`](https://github.com/GoogleChromeLabs/bubblewrap), which you can learn more about in the article [Trusted Web Activities Quick Start Guide](https://developer.chrome.com/docs/android/trusted-web-activity/quick-start/). Rather than use PWABuilder, you can run `bubblewrap` directly if you prefer the command line over graphical user interfaces.
