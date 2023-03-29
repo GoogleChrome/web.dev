@@ -59,7 +59,7 @@ The most common causes of a poor CLS are:
 
 ## Understanding where your shifts are coming from
 
-Before we start looking at solutions to common CLS issues, it's always important to understand your CLS score and where the shifts are coming from. A big part of the problem is understanding your CLS score—the fix afterwards if often the easier part!
+Before we start looking at solutions to common CLS issues, it's always important to understand your CLS score and where the shifts are coming from. A big part of the problem is understanding your CLS score—the fix afterwards is often the easier part!
 
 ### CLS in lab tools versus field
 
