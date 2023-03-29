@@ -271,7 +271,7 @@ The techniques for dealing with these are all similar. The major differences are
 
 #### Statically reserve space for late-loading content
 
-If placing late-loading content in the content flow, ensure shifts are eliminated by reserving the space for them in the initial layout.
+If placing late-loading content in the content flow, layout shifts can be avoided by reserving the space for them in the initial layout.
 
 This can be as simple as adding a `min-height` styling to reserve space or, for responsive content such as ads, using the new [`aspect-ratio`](/aspect-ratio/) CSS property in a similar manner to the way browsers automatically use this for images with dimensions provided.
 
