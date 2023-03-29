@@ -108,7 +108,7 @@ The newer [Performance Insights panel](https://developer.chrome.com/docs/devtool
 
 It is also possible to measure both the CLS, and perhaps more importantly, the elements impacting your CLS score in the field and feed them back to your analytics service.
 
-This allows the users seeing the impact of CLS to provide the data needed to identify these shifts. This can help point you in the right direction of where the issue is, and also rank the issues in order of important based on most frequently experienced. However, like Lighthouse, this will measure the elements that shifted, rather than the root causes of those shifts.
+This can help point you in the right direction of where the issue is, and also rank the issues in order of important based on most frequently experienced. However, like Lighthouse, this will measure the elements that shifted, rather than the root causes of those shifts.
 
 Read our [Debug performance in the field](/debug-performance-in-the-field/) post for more information on how to do this.
 
