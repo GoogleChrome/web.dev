@@ -374,7 +374,7 @@ One sure fire way to keep CLS scores down is by ensuring your web pages are elig
 
 The bfcache keeps pages in browsers memory for a short period after you navigate away so if you return to them, then they will be restored exactly as you left them. This means the fully loaded page is instantly available—without any shifts which may be normally seen during load due to any of the reasons above.
 
-While this does potentially still mean the initial page load encounters CLS, when a user goes back through pages they are not seeing the same CLS again and again. Back and forward navigations are pretty common on many sites. For example, returning to a contents page, or a category page, or search results.
+While this does potentially still mean the initial page load encounters CLS, when a user goes back through pages they are not seeing the same layout shifts repeatedly. Back and forward navigations are common on many sites. For example, returning to a contents page, or a category page, or search results.
 
 When this was rolled out to Chrome, we saw [noticeable improvements in CLS](https://twitter.com/anniesullie/status/1491399685961293828?s=20&t=Qj_nzSRZD0_c-HaAnfr98Q).
 
