@@ -65,7 +65,7 @@ Before we start looking at solutions to common CLS issues, it's always important
 
 It is quite common to hear developers think the CLS measured by the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/) is incorrect as it does not match the CLS they measure using Chrome DevTools or other lab tools. Web performance lab tools like Lighthouse may not show the full CLS of a page, as they do a simple load of the page to measure some web performance metrics and provide some guidance.
 
-CrUX is the official dataset of the Web Vitals program and for that CLS is measured throughout the full life of the page and not just during the inital page load that these tools typically measure.
+CrUX is the official dataset of the Web Vitals program, and for that, CLS is measured throughout the full life of the page and not just during the initial page load that lab tools typically measure.
 
 CLS is very common during page load, as all the necessary resources are fetched to initially render the page, but CLS can also happen after the initial load. Many post-load shifts may occur [as the result of a user interaction](/cls/#user-initiated-layout-shifts) and therefore will be excluded from the CLS score as they are expected shifts—as long as they occur within 500 milliseconds of that interaction.
 
