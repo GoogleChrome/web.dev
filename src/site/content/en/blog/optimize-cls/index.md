@@ -187,7 +187,7 @@ Knowing the aspect ratio allows the browser to calculate and reserve sufficient 
 
 #### Modern best practice
 
-Modern browsers now set the default aspect ratio of images based on an image's width and height attributes so it's valuable to set them to prevent layout shifts. Thanks to the CSS Working Group, developers just need to set `width` and `height` as normal:
+Modern browsers now set the default aspect ratio of images based on an image's `width` and `height` attributes so developers just need to set these, and include the above CSS, to prevent layout shifts:
 
 ```html
 <!-- set a 640:360 i.e a 16:9 aspect ratio -->
