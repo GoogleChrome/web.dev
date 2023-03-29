@@ -370,7 +370,7 @@ Read [Best practices for fonts](/font-best-practices/) for other font best pract
 
 ## Ensure pages are eligible for bfcache
 
-One sure fire way to keep CLS scores down is by ensuring your web pages are eligible for the back/forward cache (bfcache).
+A highly effective technique for keeping CLS scores low is to ensure your web pages are eligible for the back/forward cache (bfcache).
 
 The bfcache keeps pages in browsers memory for a short period after you navigate away so if you return to them, then they will be restored exactly as you left them. This means the fully loaded page is instantly available—without any shifts which may be normally seen during load due to any of the reasons above.
 
