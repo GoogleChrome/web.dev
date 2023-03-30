@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-class Banner extends HTMLElement {
+class AnnouncementBanner extends HTMLElement {
   connectedCallback() {
     this.setAttribute('active', '');
     this.addEventListener('click', (e) => {
@@ -31,4 +31,4 @@ class Banner extends HTMLElement {
   }
 }
 
-customElements.define('announcement-banner', Banner);
+customElements.define('announcement-banner', AnnouncementBanner);
