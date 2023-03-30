@@ -6,6 +6,7 @@ import 'webdev-infra/web-components/YouTube';
 
 import './Header';
 import './DevRelRibbon';
+import './Banner';
 import './LanguageSelect';
 import './NavigationDrawer';
 import './SnackbarContainer';

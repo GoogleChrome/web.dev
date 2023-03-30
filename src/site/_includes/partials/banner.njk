@@ -1,3 +1,5 @@
 {% if site.isBannerEnabled %}
-  {% Banner %}{{ site.banner | safe }}{% endBanner %}
+  <announcement-banner>
+     {% Banner %}{{ site.banner | safe }}{% endBanner %}
+  </announcement-banner>
 {% endif %}

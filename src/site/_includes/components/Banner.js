@@ -33,6 +33,7 @@ function Banner(content, type = 'info') {
   return `<div role="banner" class="banner ${utilityClasses}">
   <div class="banner__content flow">
     ${md.renderInline(content)}
+    <span data-banner-close-btn>Dismiss</span>
   </div>
   </div>`;
 }

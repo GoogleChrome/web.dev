@@ -50,6 +50,16 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
+[data-banner-close-btn]{
+  color: var(--color-highlight-text);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+[data-banner-close-btn]:hover{
+  background: var(--color-highlight-interact-bg);
+}
+
 /// Hides banner in print mode
 @media print {
   .banner {
