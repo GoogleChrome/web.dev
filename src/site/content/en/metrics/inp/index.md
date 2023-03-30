@@ -195,7 +195,7 @@ new PerformanceObserver((entryList) => {
 
 ### Measure INP In JavaScript
 
-To measure INP in JavaScript, it's advised that you use the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals), which exports an `onINP` function to handle all the aggregation of the individual interactions. You can then get a page's INP by passing a function to the `onINP` method:
+To measure INP in JavaScript, it's advised that you use the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals), which exports an `onINP` function to handle the aggregation of each individual interaction. You can then get a page's INP by passing a function to the `onINP` method:
 
 ```js
 import {onINP} from 'web-vitals';
