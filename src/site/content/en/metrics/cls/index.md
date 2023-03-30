@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-10-19
+updated: 2023-03-30
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it.
@@ -14,6 +14,8 @@ tags:
   - metrics
   - web-vitals
 ---
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 {% Aside 'key-term' %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
@@ -332,16 +334,23 @@ available in the following tools:
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
+### Measure layout shifts in JavaScript
+
+To measure layout shifts in JavaScript, you use the [Layout Instability API](https://github.com/WICG/layout-instability).
+
+The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to log `layout-shift` entries to the console:
+
+```js
+new PerformanceObserver((entryList) => {
+  for (const entry of entryList.getEntries()) {
+    console.log('Layout shift:', entry);
+  }
+}).observe({type: 'layout-shift', buffered: true});
+```
+
 ### Measure CLS in JavaScript
 
-{% BrowserCompat 'api.LayoutShift' %}
-
-To measure CLS in JavaScript, you can use the [Layout Instability
-API](https://github.com/WICG/layout-instability). The following example shows
-how to create a
-[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
-that listens for unexpected `layout-shift` entries, groups them into sessions,
-and logs the maximum session value any time it changes.
+To measure CLS in JavaScript, you need to group these unexpected `layout-shift` entries into sessions, and calculate the maximum session value. The following example shows how to log CLS to the console any time it changes.
 
 ```js
 let clsValue = 0;

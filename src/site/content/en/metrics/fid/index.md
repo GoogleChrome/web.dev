@@ -13,6 +13,8 @@ tags:
   - metrics
 ---
 
+{% BrowserCompat 'api.PerformanceEventTiming' %}
+
 {% Aside %}
   First Input Delay (FID) is an important, user-centric metric for measuring
   [load responsiveness](/user-centric-performance-metrics/#types-of-metrics)
@@ -259,8 +261,6 @@ user to interact with your page. You can measure FID with the following tools.
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Measure FID in JavaScript
-
-{% BrowserCompat 'api.PerformanceEventTiming' %}
 
 To measure FID in JavaScript, you can use the [Event Timing
 API](https://wicg.github.io/event-timing). The following example shows how to

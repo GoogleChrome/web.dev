@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2023-01-05
+updated: 2023-03-30
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -12,6 +12,8 @@ tags:
   - metrics
   - web-vitals
 ---
+
+{% BrowserCompat 'api.PerformanceEventTiming.interactionId' %}
 
 {% Aside %}
 Interaction to Next Paint (INP) is an experimental metric that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). When an interaction causes a page to become unresponsive, that is a poor user experience. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
@@ -176,11 +178,24 @@ The best way to measure your website's INP is by gathering metrics from actual u
 - [Lighthouse User Flows](/lighthouse-user-flows/).
 - [Web Vitals extension for Chrome](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma).
 
+### Measure interactions In JavaScript
+
+INP is calculated based on interation events. The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to log interaction entries to the console:
+
+```js
+new PerformanceObserver((entryList) => {
+  for (const entry of entryList.getEntries()) {
+    if (entry.interactionId) {
+      const delay = entry.processingStart - entry.startTime;
+      console.log('Interaction:', delay, entry);
+    }
+  }
+}).observe({type: 'event', buffered: true});
+```
+
 ### Measure INP In JavaScript
 
-{% BrowserCompat 'api.PerformanceEventTiming.interactionId' %}
-
-Writing your own [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to measure INP can be difficult. To measure INP in JavaScript, it's advised that you use the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals), which exports an `onINP` function to do this work for you. You can then get a page's INP by passing a function to the `onINP` method:
+To measure INP in JavaScript, it's advised that you use the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals), which exports an `onINP` function to handle all the aggregation of the individual interactions. You can then get a page's INP by passing a function to the `onINP` method:
 
 ```js
 import {onINP} from 'web-vitals';

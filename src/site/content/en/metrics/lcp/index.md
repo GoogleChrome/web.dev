@@ -13,6 +13,8 @@ tags:
   - metrics
 ---
 
+{% BrowserCompat 'api.LargestContentfulPaint' %}
+
 {% Aside %}
   Largest Contentful Paint (LCP) is an important, user-centric metric for
   measuring [perceived load
@@ -290,8 +292,6 @@ available in the following tools:
 - [WebPageTest](https://webpagetest.org/)
 
 ### Measure LCP in JavaScript
-
-{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 To measure LCP in JavaScript, you can use the [Largest Contentful Paint
 API](https://wicg.github.io/largest-contentful-paint/). The following example
