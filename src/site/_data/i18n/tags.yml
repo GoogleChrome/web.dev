@@ -1162,7 +1162,7 @@ service-worker:
     ru: Последние новости и статьи о Service Worker.
     zh: 我们关于 Service Worker 的最新资讯、动态和故事。
 
-sourcemaps:
+sourcemap:
   title:
     en: source map
 
