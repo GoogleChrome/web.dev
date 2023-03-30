@@ -89,6 +89,7 @@ const getPaths = require('./src/site/_filters/get-paths');
 const navigation = require('./src/site/_filters/navigation');
 const {minifyJs} = require('./src/site/_filters/minify-js');
 const {minifyJSON} = require('./src/site/_filters/minify-json');
+const {minifyHtml} = require('webdev-infra/filters/minifyHtml');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
 const {siteRender} = require('./src/site/_filters/site-render');
 const {
@@ -99,8 +100,9 @@ const {
 const {latestPostByTags} = require('./src/site/_filters/latest-post-by-tags');
 const {calendarLink} = require('./src/site/_filters/calendar-link');
 
+// Transforms
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
-const {minifyHtml} = require('./src/site/_transforms/minify-html');
+const {MinifyHtmlTransform} = require('webdev-infra/transforms/minifyHtml');
 
 // Shared dependencies between web.dev and developer.chrome.com
 const {updateSvgForInclude} = require('webdev-infra/filters/svg');
@@ -179,6 +181,7 @@ module.exports = function (config) {
   config.addFilter('toc', toc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addNunjucksAsyncFilter('minifyJs', minifyJs);
+  config.addNunjucksAsyncFilter('minifyHtml', minifyHtml);
   config.addFilter('minifyJSON', minifyJSON);
   config.addFilter('cspHash', cspHash);
   config.addFilter('isUpcoming', isUpcoming);
@@ -227,7 +230,7 @@ module.exports = function (config) {
   }
 
   if (isProd || isStaging) {
-    config.addTransform('minifyHtml', minifyHtml);
+    config.addTransform('minifyHtml', new MinifyHtmlTransform().configure({}));
   }
 
   // ----------------------------------------------------------------------------
