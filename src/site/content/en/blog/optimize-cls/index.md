@@ -103,7 +103,7 @@ The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-perf
   <figcaption>After recording a new trace in the Performance panel, the <b>Experience</b> section of the results is populated with a red-tinted bar displaying a <code>Layout Shift</code> record. Clicking the record allows you to drill down into impacted elements (e.g. note the moved from/to entries).</figcaption>
 </figure>
 
-The [timespans user flow mode of Lighthouse](https://web.dev/lighthouse-user-flows/#timespans) can also be used to identify post-load CLS issues, or to ensure typical user flows do not regress by introducing layout shifts.
+The [timespans user flow mode of Lighthouse](lighthouse-user-flows/#timespans) can also be used to identify post-load CLS issues, or to ensure typical user flows do not regress by introducing layout shifts.
 
 ### Measuring CLS elements in the field
 
