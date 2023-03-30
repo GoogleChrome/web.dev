@@ -12,6 +12,8 @@ tags:
   - sourcemap
 ---
 
+{% YouTube 'FIYkjjFYvoI' %}
+
 Today, we are talking about source maps, a crucial tool in modern web development that makes debugging significantly easier. In this article, we will explore the basics of source maps, how they are generated, and how they improve the debugging experience.
 
 ## The need for source maps
