@@ -112,7 +112,7 @@ that a section has a role of `navigation`, a landmark role.
 
 Including the [`aria-label`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-label) attribute
 provides a brief description of the purpose of the navigation. In this case, as the value of the attribute is redundant to
-text that is visible on the page, it is preferable to use [`arial-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
+text that is visible on the page, it is preferable to use [`aria-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
 to reference the visible text.
 
 We can change the non-semantic `<div>` to a paragraph `<p>`, then add an [`id`](/learn/html/attributes/#id) so it can be referenced. We then use `aria-labelledby`:
@@ -167,7 +167,7 @@ two table-of-contents navigation components and hiding one or the other with CSS
 Including two identical widgets to only show one is an anti-pattern. The extra bytes are negligible. Hiding HTML content from
 all users by using CSS `display: none` is appropriate. The issue is that, on wide screens, the table of contents comes before `#main`;
 and on narrower screens, the table of contents is nested within #main. Using the keyboard to skip to content skips over the table of
-ontents on a wide screen. While users are accustomed to content being responsive and changing location when they change devices or
+contents on a wide screen. While users are accustomed to content being responsive and changing location when they change devices or
 increase their font size, they do not expect the tab order to change when they do so. Page layouts should be accessible, predictable,
 and consistent across a site. Here, the location of the table of contents is not predictable.
 
