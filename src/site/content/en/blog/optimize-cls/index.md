@@ -5,7 +5,7 @@ authors:
   - tunetheweb
   - addyosmani
 date: 2020-05-05
-updated: 2023-03-29
+updated: 2023-03-30
 hero: image/admin/74TRx6aETydsBGa2IZ7R.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
@@ -54,7 +54,7 @@ The most common causes of a poor CLS are:
 
 {% Aside %}
   For a visual overview of some of the content presented in this guide, see the Optimize for Core Web Vitals video from Google I/O 2020:
-  
+
   {% YouTube id="AQqFZ5t8uNc", startTime='88', width=2482, height=1396 %}
 {% endAside %}
 
@@ -64,7 +64,7 @@ Before we start looking at solutions to common CLS issues, it's always important
 
 ### CLS in lab tools versus field
 
-It is quite common to hear developers think the CLS measured by the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux/) is incorrect as it does not match the CLS they measure using Chrome DevTools or other lab tools. Web performance lab tools like Lighthouse may not show the full CLS of a page, as they do a simple load of the page to measure some web performance metrics and provide some guidance.
+It is quite common to hear developers think the CLS measured by the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux/) is incorrect as it does not match the CLS they measure using Chrome DevTools or other lab tools. Web performance lab tools like Lighthouse may not show the full CLS of a page as they typically do a simple load of the page to measure some web performance metrics and provide some guidance (though [Lighthouse user flows](/lighthouse-user-flows/) do allow you measure beyond the default page load audit).
 
 CrUX is the official dataset of the Web Vitals program, and for that, CLS is measured throughout the full life of the page and not just during the initial page load that lab tools typically measure.
 
@@ -72,7 +72,7 @@ Layout shifts are very common during page load, as all the necessary resources a
 
 However, other post-load shifts that are unexpected by the user may be included where there was no qualifying interaction. For example, as you scroll down the page and lazy-loaded content is loaded. Other common causes of post-load CLS are on interactions of transitions, for example on Single Page Apps, which take longer than the 500 millisecond grace period.
 
-[PageSpeed Insights](https://pagespeed.web.dev/) will show both the user-perceived CLS from a URL where it exists in the "Discover what your real users are experiencing" section, and also the lab-based loading CLS in the "Diagnose performance issues" section beneath. If you see a difference between these, this is likely caused by post-load CLS.
+[PageSpeed Insights](https://pagespeed.web.dev/) will show both the user-perceived CLS from a URL where it exists in the "Discover what your real users are experiencing" section, and also the lab-based load CLS in the "Diagnose performance issues" section beneath. If you see a difference between these, this is likely caused by post-load CLS.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/2eO9BsIb8Gx6kU4Zvbqa.png", alt="Screenshot of PageSpeed Insights showing URL-level data highlighting the real user CLS which is considerably larger than the Lighthouse CLS", width="800", height="450" %}
 
@@ -90,11 +90,11 @@ When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in lin
   Lighthouse will identify the elements that were shifted, but often these are the ones _impacted_ rather than the elements _causing_ the CLS. For example, if a new element is inserted into the DOM, the elements that are beneath it will show in this audit, but the root cause is the addition of the new element above. Hopefully, the shifted element will be sufficient to help you identify and resolve the root cause.
 {% endAside %}
 
-### Identifying non-load CLS issues
+### Identifying post-load CLS issues
 
-When the CrUX and Lighthouse CLS scores of PageSpeed Insights are not in line, then this likely indicates post-load CLS. To replicate that, you can browse your web page while [recording CLS using a JavaScript snippet](/cls/#measure-cls-in-javascript) pasted into the console.
+When the CrUX and Lighthouse CLS scores of PageSpeed Insights are not in line, then this likely indicates post-load CLS. To replicate that, the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console.
 
-Alternatively, the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console.
+Alternatively, you can browse your web page while [recording CLS using a JavaScript snippet](/cls/#measure-cls-in-javascript) pasted into the console.
 
 The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) in DevTools highlights layout shifts in the **Experience** section. The **Summary** view for a `Layout Shift` record includes the cumulative layout shift score as well as a rectangle overlay showing the affected regions.
 
@@ -103,7 +103,7 @@ The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-perf
   <figcaption>After recording a new trace in the Performance panel, the <b>Experience</b> section of the results is populated with a red-tinted bar displaying a <code>Layout Shift</code> record. Clicking the record allows you to drill down into impacted elements (e.g. note the moved from/to entries).</figcaption>
 </figure>
 
-The newer [Performance Insights panel](https://developer.chrome.com/docs/devtools/performance-insights/) also includes full support for identifying shifts.
+The [timespans user flow mode of Lighthouse](https://web.dev/lighthouse-user-flows/#timespans) can also be used to identify post-load CLS issues, or to ensure typical user flows do not regress by introducing layout shifts.
 
 ### Measuring CLS elements in the field
 
@@ -111,10 +111,10 @@ It is also possible to measure both the CLS, and perhaps more importantly, the e
 
 This can help point you in the right direction of where the issue is, and also rank the issues in order of important based on most frequently experienced. However, like Lighthouse, this will measure the elements that shifted, rather than the root causes of those shifts.
 
-Read our [Debug performance in the field](/debug-performance-in-the-field/) post for more information on how to do this.
+The [attribution functionality of the web-vitals library](https://github.com/GoogleChrome/web-vitals#send-attribution-data) allows this additional information to be collected. Read our [Debug performance in the field](/debug-performance-in-the-field/) post for more information on how to do this. Other RUM providers have also started collecting and presenting this data similarly.
 
 {% Aside %}
-  RUM solutions that measure CLS in the field may show differences that CrUX data as explained in the [Why is CrUX data different from my RUM data?](crux-and-rum-differences/) post. In particular, CLS that happens in iframes is not measurable from Web APIs but is visible to the user, and is therefore included in CrUX. So while field data can be invaluable for identifying CLS issues, be aware that it may be incomplete in certain scenarios.
+  RUM solutions that measure CLS in the field, including the web-vitals library, may show differences that CrUX data as explained in the [Why is CrUX data different from my RUM data?](crux-and-rum-differences/) post. In particular, CLS that happens in iframes is not measurable from Web APIs but is visible to the user, and is therefore included in CrUX. So while field data can be invaluable for identifying CLS issues, be aware that it may be incomplete in certain scenarios.
 {% endAside %}
 
 ## Common causes of CLS
@@ -283,7 +283,7 @@ This can be as simple as adding a `min-height` styling to reserve space or, for 
   </figcaption>
 </figure>
 
-You may need to account for subtle differences in ad/placeholder sizes between different form factors using media queries.
+You may need to account for subtle differences in ad or placeholder sizes across form factors using media queries.
 
 For content that may not have a fixed height—like ads—you may not be able to reserve the exact amount of space needed to eliminate the layout shift entirely. If a smaller ad is served, a publisher can style the (larger) container to avoid layout shifts, or choose the most likely size for the ad slot based on historical data. The downside to this approach is that it will increase the amount of blank space, so keep in mind the trade-off here.
 
@@ -297,7 +297,7 @@ Dynamically injected content near the top of the viewport may cause a greater la
 
 Conversely, dynamically injected content near the middle of the viewport may not shift as many elements as the content above it is less likely to move, but will still cause some CLS. Even content injected at the bottom of the screen will cause CLS as the content it replace is moved off-screen.
 
-The ideal scenario is not to shift any other content so reserving the appropriate space is preferred, but where this is not possible, minimizing the shifts can at least reduce the impact—both to your users and your CLS scores.
+The ideal scenario is not to shift any other content so reserving the appropriate space is preferred. Where this is not possible, minimizing the shifts can at least reduce the impact—both to your users and your CLS scores.
 
 #### Avoid inserting new content without a user interaction
 
@@ -346,7 +346,7 @@ Changes to CSS property values can require the browser to react to these changes
 
 A number of CSS properties can be changed in a much more performant manner. For example, `transform` animations can be used to translate, scale, rotate, or skew without triggering a re-layout and so completely avoiding layout shifts.
 
-When animations are instead done by changing `top` and `left` CSS propertes instead of using `transform: translate`, layout shifts occur. This happens **even when the element being moved is in it's own layer and so does not cause shifts to other elements**. The net effect to the user may be the same, but one is counted as CLS, and one is not. This may seem like CLS should be changed to treat these the same, but there are other considerable performance benefits of using non-composited animations.
+When animations are instead done by changing `top` and `left` CSS properties instead of using `translate`, layout shifts occur. This happens **even when the element being moved is in it's own layer and so does not cause shifts to other elements**. Composited animations via `translate` are exempt from CLS as they cannot impact other elements. There are also other considerable performance benefits of using non-composited animations since they do no cause re-layout and therefore are much less work for the browser.
 
 To learn more about what CSS properties trigger layout see [High-performance animations](/animations-guide/).
 
