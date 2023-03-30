@@ -10,6 +10,8 @@ authors:
 tags:
   - blog
   - sourcemap
+  - javascript
+  - css
 ---
 
 {% YouTube 'FIYkjjFYvoI' %}
