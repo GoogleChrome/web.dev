@@ -39,7 +39,7 @@ Firefox adds support for the [Origin Private File System (OPFS)](https://develop
 
 ### The View Transitions API
 
-Chrome 111 adds the [View Transitions API](https://developer.mozilla.org/docs/Web/API/View_Transitions_API) making the creation of polished transitions in Single-Page Apps (SPAs) simpler by snapshotting views and allowing the DOM to change without any overlap between states.
+Chrome 111 adds the [View Transitions API](https://developer.mozilla.org/docs/Web/API/View_Transitions_API), making the creation of polished transitions in Single-Page Apps (SPAs) simpler by snapshotting views and allowing the DOM to change without any overlap between states.
 
 Find out more in the launch post [SPA view transitions land in Chrome 111](https://developer.chrome.com/blog/spa-view-transitions-land/).
 
@@ -47,7 +47,7 @@ Find out more in the launch post [SPA view transitions land in Chrome 111](https
 
 ### New CSS color spaces and functions
 
-Also in Chrome is a whole new set of ways to use color on the web. Now supported are color spaces that access colors outside of the RGB gamut, along with the `color()` and `color-mix()` functions. Learn more in our [High definition CSS color guide](https://developer.chrome.com/articles/high-definition-css-color-guide/) and [blog post on `color-mix()`](https://developer.chrome.com/blog/css-color-mix/).
+Also included in Chrome 111 are a whole new set of ways to use color on the web. Chrome now supports color spaces that access colors outside of the RGB gamut, along with the `color()` and `color-mix()` functions. Learn more in our [High definition CSS color guide](https://developer.chrome.com/articles/high-definition-css-color-guide/) and [blog post on `color-mix()`](https://developer.chrome.com/blog/css-color-mix/).
 
 {% BrowserCompat 'css.types.color_value.color-mix' %}
 
@@ -71,7 +71,7 @@ Finally in this list of Chrome 111 additions are the [Presenting slides actions]
 
 ### Pseudo-class support in Safari
 
-Safari 16.4 is an amazing release for the web platform, this article won't cover all of the additions so check out the full list of features in the [Safari 16.4 release notes](https://developer.apple.com/documentation/safari-release-notes/safari-16_4-release-notes). 
+Safari 16.4 is an amazing release for the web platform. This article won't cover all of the additions, so check out the full list of features in the [Safari 16.4 release notes](https://developer.apple.com/documentation/safari-release-notes/safari-16_4-release-notes). 
 
 There's a bunch of additional CSS pseudo-classes with support in this release: `:user-invalid`, `:user-valid`, `:dir()`, `:modal`, and `:fullscreen`.
 
@@ -83,7 +83,7 @@ This Safari release makes the far more elegant and useful range syntax for media
 
 ### CSS Properties and Values
 
-Safari 16.4 adds support for [`@property`](https://developer.mozilla.org/docs/Web/CSS/@property) enabling CSS custom property registration directly in a stylesheet. Learn more about this in [@property: giving superpowers to CSS variables](/at-property/).
+Safari 16.4 adds support for [`@property`](https://developer.mozilla.org/docs/Web/CSS/@property), enabling CSS custom property registration directly in a stylesheet. Learn more about this in [@property: giving superpowers to CSS variables](/at-property/).
 
 {% BrowserCompat 'css.at-rules.property' %}
 
@@ -93,7 +93,7 @@ The great additions for CSS keep coming, with support for the [CSS Typed OM](htt
 
 {% BrowserCompat 'api.CSSStyleValue' %}
 
-There is also support for constructable stylesheets, with `CSSStyleSheet()`. This enables sharing of stylesheets between a document and its shadow DOM subtrees. With this version of Safari constructable stylesheets are now supported in all three engines.
+There is also support for constructable stylesheets with `CSSStyleSheet()`. This enables the sharing of stylesheets between a document and its shadow DOM subtrees. With this version of Safari, constructable stylesheets are now supported in all three engines.
 
 {% BrowserCompat 'api.CSSStyleSheet.CSSStyleSheet' %}
 
@@ -113,11 +113,11 @@ Another addition that brings a feature to interoperable status is the addition o
 
 Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release. New betas are [Firefox 112](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/112), [Safari 16.5](https://developer.apple.com/documentation/safari-release-notes/safari-16_5-release-notes), and [Chrome 112](https://developer.chrome.com/blog/chrome-112-beta/). These releases bring many great features to the platform. Check out the release notes for all of the details, here are just a few highlights.
 
-Firefox 112 adds support for the `inert` attribute, which will make this useful attribute available across all engines. You can learn more about inert in this post [introducing inert](https://developer.chrome.com/articles/inert/). Firefox will also enable support for the `linear()` easing function.
+Firefox 112 adds support for the `inert` attribute, which will make this useful attribute available across all engines. You can learn more about inert in [Introducing inert](https://developer.chrome.com/articles/inert/). Firefox will also enable support for the `linear()` easing function.
 
 Chrome 112 and Safari 16.5 both add support for [CSS Nesting](https://developer.chrome.com/articles/css-nesting/), a feature that is highly anticipated by many developers. 
 
-Chrome 112 also includes support for `animation-composition`, learn how this property works in [Specify how multiple animation effects should composite with animation-composition](https://developer.chrome.com/articles/css-animation-composition/).
+Chrome 112 also includes support for `animation-composition`. Learn how this property works in [Specify how multiple animation effects should composite with animation-composition](https://developer.chrome.com/articles/css-animation-composition/).
 
 If you use Chrome's Headless mode, for example with Puppeteer, then 112 brings an all new Headless mode. Learn about it in [Chrome's Headless mode gets an upgrade](https://developer.chrome.com/articles/new-headless/).
 
