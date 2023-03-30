@@ -111,10 +111,10 @@ It is also possible to measure both the CLS, and perhaps more importantly, the e
 
 This can help point you in the right direction of where the issue is, and also rank the issues in order of important based on most frequently experienced. However, like Lighthouse, this will measure the elements that shifted, rather than the root causes of those shifts.
 
-The [attribution functionality of the web-vitals library](https://github.com/GoogleChrome/web-vitals#send-attribution-data) allows this additional information to be collected. Read our [Debug performance in the field](/debug-performance-in-the-field/) post for more information on how to do this. Other RUM providers have also started collecting and presenting this data similarly.
+The [attribution functionality of the `web-vitals` library](https://github.com/GoogleChrome/web-vitals#send-attribution-data) allows this additional information to be collected. Read our [Debug performance in the field](/debug-performance-in-the-field/) post for more information on how to do this. Other RUM providers have also started collecting and presenting this data similarly.
 
 {% Aside %}
-  RUM solutions that measure CLS in the field, including the web-vitals library, may show differences that CrUX data as explained in the [Why is CrUX data different from my RUM data?](crux-and-rum-differences/) post. In particular, CLS that happens in iframes is not measurable from Web APIs but is visible to the user, and is therefore included in CrUX. So while field data can be invaluable for identifying CLS issues, be aware that it may be incomplete in certain scenarios.
+  RUM solutions that measure CLS in the field, including the `web-vitals` library, may show differences that CrUX data as explained in the [Why is CrUX data different from my RUM data?](crux-and-rum-differences/) post. In particular, CLS that happens in iframes is not measurable from Web APIs but is visible to the user, and is therefore included in CrUX. So while field data can be invaluable for identifying CLS issues, be aware that it may be incomplete in certain scenarios.
 {% endAside %}
 
 ## Common causes of CLS
