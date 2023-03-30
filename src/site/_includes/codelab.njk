@@ -29,7 +29,8 @@ pageScripts:
           </div>
         {% endif %}
 
-        {% SignPosts page.fileSlug %}
+        {% include 'partials/sing-post.njk' %}
+        {% include 'partials/toc-side.njk' %}
 
         {% if authors %}
           <div class="cluster flow-space-size-2">

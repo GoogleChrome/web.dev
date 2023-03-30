@@ -97,7 +97,7 @@
         </div>
         {% endif %}
 
-        {% SignPosts page.fileSlug %}
+        {% include 'partials/sing-post.njk' %}
 
         {% if authors %}
           {{ authorsMacro() }}

@@ -52,7 +52,6 @@ const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout
 const includeRaw = require('./src/site/_includes/components/includeRaw');
 const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
-const SignPosts = require('./src/site/_includes/components/SignPosts');
 const StackOverflow = require('./src/site/_includes/components/StackOverflow');
 const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
 
@@ -211,7 +210,6 @@ module.exports = function (config) {
   config.addPairedShortcode('Label', Label);
   config.addShortcode('LanguageList', LanguageList);
   config.addShortcode('Meta', Meta);
-  config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('StackOverflow', StackOverflow);
   config.addShortcode('Widget', Widget);
   config.addShortcode('Video', Video);
