@@ -22,7 +22,7 @@ tags:
 
 Layout shifts can be distracting to users. Imagine you've started reading an article when all of a sudden elements shift around the page, throwing you off and requiring you to find your place again. This is very common on the web, including when reading the news, or trying to click those 'Search' or 'Add to Cart' buttons. Such experiences are visually jarring and frustrating. They're often caused when visible elements are forced to move because another element was suddenly added to the page or resized.
 
-To provide a good user experience, **sites should strive to have an CLS of 0.1 or less for at least 75% of page visits.**
+To provide a good user experience, **sites should strive to have a CLS of 0.1 or less for at least 75% of page visits.**
 
 <figure>
   <picture>
@@ -41,7 +41,7 @@ To provide a good user experience, **sites should strive to have an CLS of 0.1 o
   </picture>
 </figure>
 
-Unlike the other Core Web Vitals, which are time-based values measure seconds or milliseconds, the CLS score is a unitless value based on a calculation of how much content is shifting and by how far.
+Unlike the other Core Web Vitals, which are time-based values measured in seconds or milliseconds, the CLS score is a unitless value based on a calculation of how much content is shifting and by how far.
 
 In this guide, we'll cover optimizing common causes of layout shifts.
 
@@ -49,11 +49,12 @@ The most common causes of a poor CLS are:
 
 - Images without dimensions
 - Ads, embeds, and iframes without dimensions
-- Dynamically injected content such as Ads, embeds, and iframes without dimensions
+- Dynamically injected content such as ads, embeds, and iframes without dimensions
 - Web fonts
 
 {% Aside %}
-  For a visual overview of some of the context presented in this guide, see this section of the Optimize for Core Web Vitals from Google I/O 2020:
+  For a visual overview of some of the content presented in this guide, see the Optimize for Core Web Vitals video from Google I/O 2020:
+  
   {% YouTube id="AQqFZ5t8uNc", startTime='88', width=2482, height=1396 %}
 {% endAside %}
 
@@ -63,15 +64,15 @@ Before we start looking at solutions to common CLS issues, it's always important
 
 ### CLS in lab tools versus field
 
-It is quite common to hear developers think the CLS measured by the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/) is incorrect as it does not match the CLS they measure using Chrome DevTools or other lab tools. Web performance lab tools like Lighthouse may not show the full CLS of a page, as they do a simple load of the page to measure some web performance metrics and provide some guidance.
+It is quite common to hear developers think the CLS measured by the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux/) is incorrect as it does not match the CLS they measure using Chrome DevTools or other lab tools. Web performance lab tools like Lighthouse may not show the full CLS of a page, as they do a simple load of the page to measure some web performance metrics and provide some guidance.
 
 CrUX is the official dataset of the Web Vitals program, and for that, CLS is measured throughout the full life of the page and not just during the initial page load that lab tools typically measure.
 
-CLS is very common during page load, as all the necessary resources are fetched to initially render the page, but CLS can also happen after the initial load. Many post-load shifts may occur [as the result of a user interaction](/cls/#user-initiated-layout-shifts) and therefore will be excluded from the CLS score as they are expected shifts—as long as they occur within 500 milliseconds of that interaction.
+Layout shifts are very common during page load, as all the necessary resources are fetched to initially render the page, but layout shifts can also happen after the initial load. Many post-load shifts may occur [as the result of a user interaction](/cls/#user-initiated-layout-shifts) and therefore will be excluded from the CLS score as they are _expected_ shifts—as long as they occur within 500 milliseconds of that interaction.
 
-However, other post-load shifts that are unexpected by the user may be included where there was no qualifying interaction. For example, as you scroll down the page and lazy loaded content is loaded. Other common causes of post-load CLS are on interactions of transitions—for example on Single Page Apps—which take longer than the 500 millisecond grace period.
+However, other post-load shifts that are unexpected by the user may be included where there was no qualifying interaction. For example, as you scroll down the page and lazy-loaded content is loaded. Other common causes of post-load CLS are on interactions of transitions, for example on Single Page Apps, which take longer than the 500 millisecond grace period.
 
-[PageSpeed Inights](https://pagespeed.web.dev/) will show both the actual CLS from a URL where it exists in the "Discover what your real users are experiencing" section, and also the lab-based loading CLS in the "Diagnose performance issues" beneath. If you see a difference between these, this is likely caused by post-load CLS.
+[PageSpeed Insights](https://pagespeed.web.dev/) will show both the user-perceived CLS from a URL where it exists in the "Discover what your real users are experiencing" section, and also the lab-based loading CLS in the "Diagnose performance issues" section beneath. If you see a difference between these, this is likely caused by post-load CLS.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/2eO9BsIb8Gx6kU4Zvbqa.png", alt="Screenshot of PageSpeed Insights showing URL-level data highlighting the real user CLS which is considerably larger than the Lighthouse CLS", width="800", height="450" %}
 
@@ -81,12 +82,12 @@ However, other post-load shifts that are unexpected by the user may be included 
 
 ### Identifying load CLS issues
 
-When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in line, this indicates there is a load CLS issue that was detected by Lighthouse. In this case Lighthouse will help with two audits to provide more information on images causing CLS due to missing width and height, and also list all the elements that shifted for the page load along with their CLS contribution.
+When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in line, this usually indicates there is a load CLS issue that was detected by Lighthouse. In this case Lighthouse will help with two audits to provide more information on images causing CLS due to missing width and height, and also list all the elements that shifted for the page load along with their CLS contribution.
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/2C3v6dGwPx2yFyYpVdue.png", alt="Lighthouse Screenshot showing the CLS audits providing more information to help you identify and address CLS issues", width="800", height="544" %}
 
 {% Aside important %}
-  Lighthouse will identify the elements that were shifted, but often these are the ones _impacted_ rather than the elements _causing_ the CLS. For example, if a new element is inserted into the DOM the elements that are beneath it will show in this audit, but the root cause is the addition of the new element above. Hopefully, the shifted element will be sufficient to help you identify and resolve the root cause.
+  Lighthouse will identify the elements that were shifted, but often these are the ones _impacted_ rather than the elements _causing_ the CLS. For example, if a new element is inserted into the DOM, the elements that are beneath it will show in this audit, but the root cause is the addition of the new element above. Hopefully, the shifted element will be sufficient to help you identify and resolve the root cause.
 {% endAside %}
 
 ### Identifying non-load CLS issues
@@ -122,7 +123,7 @@ Once you have identified the causes of CLS, you can start working on fixing the 
 
 ### Images without dimensions
 
-Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS aspect-ratio](/aspect-ratio/) or similar. This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
+Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS `aspect-ratio`](/aspect-ratio/) or similar. This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
 
   <figure>
     {% Video
@@ -249,7 +250,7 @@ Pages may wish to include a cropped shot of an image on narrow viewports with th
 </picture>
 ```
 
-It's very possible these images could have different aspect ratios and Chrome, Firefox and Safari now support setting `width` and `height` on the `source` elements of `<picture>` element:
+It's very possible these images could have different aspect ratios. Chrome, Firefox, and Safari now support setting `width` and `height` on the `source` children of the `picture` element:
 
 ```html
 <picture>
@@ -265,13 +266,13 @@ As we have seen, images have special considerations. However, images are not the
 
 Ads are one of the largest contributors to layout shifts on the web. Ad networks and publishers often support dynamic ad sizes. Ad sizes increase performance/revenue due to higher click rates and more ads competing in the auction. Unfortunately, this can lead to a suboptimal user experience due to ads pushing visible content you're viewing down the page.
 
-Embeddable widgets allow you to embed portable web content in your page (for example, videos from YouTube, maps from Google Maps, social media posts, and so on). These embeds often aren't aware in advance just how large an embed will be (for example, in the case of a social media post—does it have an embedded image? video? multiple rows of text?). As a result, platforms offering embeds do not always reserve space for their embeds and so cause layout shifts when they finally load.
+Embeddable widgets allow you to include portable web content in your page, such as videos from YouTube, maps from Google Maps, and social media posts. These widgets often aren't aware in advance just how large their contents will be. For example, in the case of a social media post, it might have an embedded image, video, multiple rows of text, or a number of other unpredictable factors. As a result, platforms offering embeds do not always reserve space for their widgets and so cause layout shifts when they finally load.
 
-The techniques for dealing with these are all similar. The major differences are how much control you have over the content that will be inserted. If this is inserted by a third-party like an ad partner you may not know the exact size of content that will be inserted, nor be able to control any CLS happening within those embeds.
+The techniques for dealing with these are all similar. The major differences are how much control you have over the content that will be inserted. If this is inserted by a third-party like an ad partner, you may not know the exact size of content that will be inserted, nor be able to control any layout shifts happening within those embeds.
 
 #### Statically reserve space for late-loading content
 
-If placing late-loading content in the content flow, layout shifts can be avoided by reserving the space for them in the initial layout.
+When placing late-loading content in the content flow, layout shifts can be avoided by reserving the space for them in the initial layout.
 
 This can be as simple as adding a `min-height` styling to reserve space or, for responsive content such as ads, using the new [`aspect-ratio`](/aspect-ratio/) CSS property in a similar manner to the way browsers automatically use this for images with dimensions provided.
 
@@ -288,7 +289,7 @@ For content that may not have a fixed height—like ads—you may not be able to
 
 Alternatively, set the initial size to the smallest size that will be used, and accept some level of shift for larger content. Using `min-height`, as suggested above, will allow the parent element to grow as necessary. This will not fully eliminate CLS, but will hopefully reduce the impact of it to a more managable level. The default size of an empty element is 0px which gives maximum CLS, so any size is better than that!
 
-Try to avoid collapsing the reserved space if, for example there is no ad returned, by showing a placeholder. Removing the space set aside for elements can cause just as much CLS as inserting content!
+Try to avoid collapsing the reserved space if, for example, there is no ad returned, by showing a placeholder. Removing the space set aside for elements can cause just as much CLS as inserting content!
 
 #### Avoid placing late-loading content near the top of the viewport
 
@@ -341,9 +342,9 @@ In some cases adding content dynamically is an important part of user experience
 
 ### Animations
 
-Changes to CSS property values can require the browser to react to these changes. A number of values trigger re-layout, paint and composite such as `box-shadow` and `box-sizing`. Try to avoid animating these.
+Changes to CSS property values can require the browser to react to these changes. A number of values trigger re-layout, paint, and composite such as `box-shadow` and `box-sizing`. Try to avoid animating these.
 
-A number of CSS properties can be changed in a much more performant manner. For example, `transform` animations can be used to `translate`, `scale`, `rotate`, or `skew` without triggering a re-layout and so completely avoiding CLS.
+A number of CSS properties can be changed in a much more performant manner. For example, `transform` animations can be used to translate, scale, rotate, or skew without triggering a re-layout and so completely avoiding layout shifts.
 
 When animations are instead done by changing `top` and `left` CSS propertes instead of using `transform: translate`, layout shifts occur. This happens **even when the element being moved is in it's own layer and so does not cause shifts to other elements**. The net effect to the user may be the same, but one is counted as CLS, and one is not. This may seem like CLS should be changed to treat these the same, but there are other considerable performance benefits of using non-composited animations.
 
@@ -353,10 +354,10 @@ To learn more about what CSS properties trigger layout see [High-performance ani
 
 Downloading and rendering web fonts is typically handled in one of two ways before the web font is downloaded:
 
-- The fallback font is swapped with web font (FOUT—flash of unstyled text)
-- "Invisible" text is displayed using the fallback font until a web font is available the text is made visible (FOIT—flash of invisible text)
+- The fallback font is swapped with the web font (FOUT—flash of unstyled text)
+- "Invisible" text is displayed using the fallback font until a web font is available and the text is made visible (FOIT—flash of invisible text)
 
-It is important to understand that **both of these cause CLS**. Even though the text is invisible, it is laid out using the fallback font. This means the text block using the font, and the surrounding content, shifts when the web font loads—in the exact same way as for the visible font for FOUT.
+It is important to understand that **both of these can cause layout shifts**. Even though the text is invisible, it is laid out using the fallback font. This means the text block using the font, and the surrounding content, shifts when the web font loads—in the exact same way as for the visible font for FOUT.
 
 The following tools can help you minimize this:
 
@@ -364,17 +365,17 @@ The following tools can help you minimize this:
 - Ensure the appropriate fallback font is used. For example, using `font-family: "Google Sans", sans-serif;` will ensure the browser's `sans-serif` fallback font is used while `"Google Sans"` is loaded. Not specifying a fallback font using just `font-family: "Google Sans"` will mean the default font is used, which on Chrome is "Times"—a serif font which is a worse match than the default `sans-serif` font.
 - Closing the differences between the fallback font and the web font using the new `size-adjust`, `ascent-override`, `descent-override`, and `line-gap-override` APIs as detailed in the [Improved font fallbacks](https://developer.chrome.com/blog/font-fallbacks/) post.
 - The [Font Loading API](/optimize-webfont-loading/#the-font-loading-api) can reduce the time it takes to get necessary fonts.
-- Using `<link rel=preload>` on the key web fonts: a preloaded font will have a higher chance to meet the first paint, in which case there's no layout shifting.
+- Load critical web fonts as early as possible using `<link rel=preload>`. A preloaded font will have a higher chance to meet the first paint, in which case there's no layout shifting.
 
 Read [Best practices for fonts](/font-best-practices/) for other font best practices.
 
-## Ensure pages are eligible for bfcache
+## Ensure pages are eligible for the bfcache
 
-A highly effective technique for keeping CLS scores low is to ensure your web pages are eligible for the back/forward cache (bfcache).
+A highly effective technique for keeping CLS scores low is to ensure your web pages are eligible for the [back/forward cache](/bfcache/) (bfcache).
 
 The bfcache keeps pages in browsers memory for a short period after you navigate away so if you return to them, then they will be restored exactly as you left them. This means the fully loaded page is instantly available—without any shifts which may be normally seen during load due to any of the reasons above.
 
-While this does potentially still mean the initial page load encounters CLS, when a user goes back through pages they are not seeing the same layout shifts repeatedly. Back and forward navigations are common on many sites. For example, returning to a contents page, or a category page, or search results.
+While this does potentially still mean the initial page load encounters layout shifts, when a user goes back through pages they are not seeing the same layout shifts repeatedly. Back and forward navigations are common on many sites. For example, returning to a contents page, or a category page, or search results.
 
 When this was rolled out to Chrome, we saw [noticeable improvements in CLS](https://twitter.com/anniesullie/status/1491399685961293828?s=20&t=Qj_nzSRZD0_c-HaAnfr98Q).
 
