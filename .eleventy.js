@@ -47,7 +47,6 @@ const Widget = require('./src/site/_includes/components/Widget');
 const Assessment = require('./src/site/_includes/components/Assessment');
 const Author = require('./src/site/_includes/components/Author');
 const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
-const Banner = require('./src/site/_includes/components/Banner');
 const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
 const includeRaw = require('./src/site/_includes/components/includeRaw');
 const LanguageList = require('./src/site/_includes/components/LanguageList');
@@ -194,7 +193,6 @@ module.exports = function (config) {
   config.addShortcode('Assessment', Assessment);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorsDate', AuthorsDate);
-  config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
