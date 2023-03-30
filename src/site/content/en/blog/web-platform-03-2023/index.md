@@ -19,6 +19,10 @@ tags:
 
 In March 2023, [Firefox 111](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/111), [Chrome 111](https://developer.chrome.com/blog/new-in-chrome-111/), and [Safari 16.4](https://developer.apple.com/documentation/safari-release-notes/safari-16_4-release-notes) became stable. Let's take a look at what this means for the web platform.
 
+{% Aside 'caution' %}
+We include browser compatibility data pulled from MDN in these posts which may not have updated for very recent browser releases. The post will show the correct information as soon as it appears in the [browser-compat-data release](https://github.com/mdn/browser-compat-data/releases).
+{% endAside %}
+
 ### Global HTML attributes
 
 Firefox 111 adds support for a couple of useful [global HTML attributes](/learn/html/attributes/#global-attributes). The [`autocapitalize`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autocapitalize) attribute controls whether text may be automatically capitalized when the user is typing on a virtual keyboard. 
@@ -45,7 +49,7 @@ Find out more in the launch post [SPA view transitions land in Chrome 111](https
 
 Also in Chrome is a whole new set of ways to use color on the web. Now supported are color spaces that access colors outside of the RGB gamut, along with the `color()` and `color-mix()` functions. Learn more in our [High definition CSS color guide](https://developer.chrome.com/articles/high-definition-css-color-guide/) and [blog post on `color-mix()`](https://developer.chrome.com/blog/css-color-mix/).
 
-{% BrowserCompat 'css.color_value.color-mix' %}
+{% BrowserCompat 'css.types.color_value.color-mix' %}
 
 The Chrome release also includes [new DevTools](https://developer.chrome.com/blog/new-in-devtools-111/#color) to help you work with this new color functionality.
 
@@ -57,7 +61,7 @@ You can also test the new color functions `color()`, `lab()`, `lch()`, `oklab()`
 
 Chrome 111 adds the ability to pass a selector list into `:nth-child()` and `nth-last-child()`. Learn more about this, and see examples in the post [More control over :nth-child() selections with the of S syntax](https://developer.chrome.com/articles/css-nth-child-of-s/).
 
-{% BrowserCompat 'css.selectors.nth-child.off_syntax' %}
+{% BrowserCompat 'css.selectors.nth-child.of_syntax' %}
 
 ### Support for previous and next slide in the Media Session API
 
