@@ -82,8 +82,8 @@ export class NavigationDrawer extends BaseStateElement {
 
   addEventListeners() {
     this.drawerContainer.addEventListener('click', this.onBlockClicks);
-    this.closeBtn.addEventListener('click', closeNavigationDrawer);
-    this.addEventListener('click', closeNavigationDrawer);
+    this.closeBtn.addEventListener('click', this.onClickOutsideDrawer);
+    this.addEventListener('click', this.onClickOutsideDrawer);
   }
 
   onStateChanged({isNavigationDrawerOpen, currentUrl}) {
@@ -114,6 +114,11 @@ export class NavigationDrawer extends BaseStateElement {
     }
   }
 
+  onClickOutsideDrawer() {
+    this.blur();
+    closeNavigationDrawer();
+  }
+
   onBlockClicks(e) {
     // When the NavigationDrawer is expanded we use a ::before element to render
     // the overlay. Because the ::before element is a child of NavigationDrawer,
@@ -142,15 +147,8 @@ export class NavigationDrawer extends BaseStateElement {
     if (this.open) {
       this.focus();
     } else {
-      // When the NavigationDrawer is collapsed, we need to restore focus to the
-      // hamburger button in the header. It might be more techincally pure to
-      // use a unistore action for this, but it feels like a lot of ceremony
-      // for a small behavior.
-      /** @type {import('../Header').Header} */
-      const webHeader = document.querySelector('web-header');
-      if (webHeader) {
-        webHeader.manageFocus();
-      }
+      // When the NavigationDrawer is collapsed, we need to remove focus on it.
+      this.blur();
     }
     this.inert = !this.open;
     this.removeEventListener('transitionend', this.onTransitionEnd);
