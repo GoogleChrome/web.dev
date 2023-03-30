@@ -35,7 +35,7 @@ module.exports = {
   thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
   isBannerEnabled: true,
   banner:
-    'We want to hear from you! We are looking for web developers to participate in user research, product testing, discussion groups and more. [Apply now](https://www.brandinvitation.com/wix/p4585441.aspx?said=KLO98IP&pcid=CLCS&aud=na&cid=na&enpt=lp&lang=9&l=9&udv=wdb") to join our WebDev Insights Community.',
+    'The Chrome team is back at Google I/O on May 10! [Register Now](https://io.google/2023/?utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_reg_banner&utm_content=)',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
