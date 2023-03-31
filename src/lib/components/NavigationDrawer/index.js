@@ -82,8 +82,8 @@ export class NavigationDrawer extends BaseStateElement {
 
   addEventListeners() {
     this.drawerContainer.addEventListener('click', this.onBlockClicks);
-    this.closeBtn.addEventListener('click', this.onClickOutsideDrawer);
-    this.addEventListener('click', this.onClickOutsideDrawer);
+    this.closeBtn.addEventListener('click', this.onCloseNavigationDrawer);
+    this.addEventListener('click', this.onCloseNavigationDrawer);
   }
 
   onStateChanged({isNavigationDrawerOpen, currentUrl}) {
@@ -114,7 +114,7 @@ export class NavigationDrawer extends BaseStateElement {
     }
   }
 
-  onClickOutsideDrawer() {
+  onCloseNavigationDrawer() {
     this.blur();
     closeNavigationDrawer();
   }
