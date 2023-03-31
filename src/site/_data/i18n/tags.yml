@@ -1162,6 +1162,12 @@ service-worker:
     ru: Последние новости и статьи о Service Worker.
     zh: 我们关于 Service Worker 的最新资讯、动态和故事。
 
+sourcemap:
+  title:
+    en: Source maps
+  description:
+    en: Our latest news, updates, and stories about source maps.
+
 storage:
   title:
     en: Storage
