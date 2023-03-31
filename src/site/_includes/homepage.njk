@@ -22,7 +22,7 @@ pageScripts:
         <div class="flow">
           <a class="feature-card" href="{{ featuredCard.url }}" data-theme="{{ featuredCard.theme }}" data-treatment="illustration">
             <span class="feature-card__eyebrow">{{ featuredCard.eyebrow }}</span>
-            <h3 class="feature-card__title">{{ featuredCard.title }}</h3>
+            <h3 class="feature-card__title">{{ featuredCard.title | safe }}</h3>
             {% if featuredCard.video %}
               <video autoplay loop muted playsinline
                 class="feature-card__background"
