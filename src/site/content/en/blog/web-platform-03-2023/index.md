@@ -67,7 +67,7 @@ Chrome 111 adds the ability to pass a selector list into `:nth-child()` and `nth
 
 Finally in this list of Chrome 111 additions are the [Presenting slides actions](/media-session/#presenting-slides-actions) for the media session API—`"previousslide"` and `"nextslide"`.
 
-{% BrowserCompat 'api.MediaSession.nextslide_type' %}
+{% BrowserCompat 'api.MediaSession.setActionHandler.nextslide_type' %}
 
 ### Pseudo-class support in Safari
 
