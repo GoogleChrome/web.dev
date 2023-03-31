@@ -14,15 +14,15 @@ tags:
 PWAs can be accessed through a web browser, but they can also be installed on a user's home screen as outlined in the articles in the section [Provide an installable experience](/progressive-web-apps/#provide-an-installable-experience). One of the challenges with PWAs, however, is distributing them to app stores. This is where [PWABuilder](https://pwabuilder.com/) comes in.  
 PWABuilder is a powerful tool that allows developers to create packages that can be submitted to various app stores:
 
-1. - [Google Play Store](https://play.google.com/store)
-1. - [Microsoft Store](https://apps.microsoft.com/)
-1. - [Apple App Store](https://www.apple.com/app-store/)
-1. - [Meta Quest Store](https://www.oculus.com/experiences/quest/)
+- [Google Play Store](https://play.google.com/store)
+- [Microsoft Store](https://apps.microsoft.com/)
+- [Apple App Store](https://www.apple.com/app-store/)
+- [Meta Quest Store](https://www.oculus.com/experiences/quest/)
 
 One of the major advantages of using PWABuilder to create packages is that it simplifies the process of publishing your web application to app stores. Normally, submitting an app to app stores requires a lot of work, including writing code in languages web developers may not necessarily be familiar with, creating app icons, configuring various settings, and testing the app across different devices and operating systems. PWABuilder takes care of many of these tasks automatically, reducing the amount of time and effort required to publish apps.  
 
 {% Aside %}
-Internally, PWABuilder uses a command line tool called `[bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap)`, which you can learn more about in the article [Trusted Web Activities Quick Start Guide](https://developer.chrome.com/docs/android/trusted-web-activity/quick-start/). Rather than use PWABuilder, you can run `bubblewrap` directly if you prefer the command line over graphical user interfaces.
+Internally, PWABuilder uses a command line tool called [`bubblewrap`](https://github.com/GoogleChromeLabs/bubblewrap), which you can learn more about in the article [Trusted Web Activities Quick Start Guide](https://developer.chrome.com/docs/android/trusted-web-activity/quick-start/). Rather than use PWABuilder, you can run `bubblewrap` directly if you prefer the command line over graphical user interfaces.
 {% endAside %}
 
 ## Prerequisites
@@ -62,9 +62,10 @@ For guidance on how to publish a PWA to a specific store, be sure to check out t
 
 I have generated store packages for one of my apps, [SVGcode](/svgcode), using PWABuilder.
 
-- <a href="https://play.google.com/store/apps/details?id=de.svgco.twa"><img width="200px" src="https://raw.githubusercontent.com/tomayac/SVGcode/main/public/badges/play-store.svg" alt="Get it on Google Play."></a>
-- <a href="https://www.microsoft.com/en-us/p/svgcode/9plhxdgsw1rj#activetab=pivot:overviewtab"><img width="200px" src="https://raw.githubusercontent.com/tomayac/SVGcode/main/public/badges/microsoft-store.svg" alt="Get it from Microsoft."></a></p>
+<p><a href="https://play.google.com/store/apps/details?id=de.svgco.twa"><img width="200px" src="https://raw.githubusercontent.com/tomayac/SVGcode/main/public/badges/play-store.svg" alt="Get it on Google Play."></a></p>
+
+<p><a href="https://www.microsoft.com/en-us/p/svgcode/9plhxdgsw1rj#activetab=pivot:overviewtab"><img width="200px" src="https://raw.githubusercontent.com/tomayac/SVGcode/main/public/badges/microsoft-store.svg" alt="Get it from Microsoft."></a></p>
 
 Apart from these stores, you can of course get the app in the browser as well.
 
-- <a href="https://svgco.de/"><img width="200px" src="https://raw.githubusercontent.com/tomayac/SVGcode/main/public/badges/web-browser.svg" alt="Use it in your web browser."></a>
+<p><a href="https://svgco.de/"><img width="200px" src="https://raw.githubusercontent.com/tomayac/SVGcode/main/public/badges/web-browser.svg" alt="Use it in your web browser."></a></p>
