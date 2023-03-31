@@ -94,7 +94,7 @@ These source map files contain essential information about how the compiled code
 
 To understand further of each of these fields, you can read the [source map specification](https://bit.ly/sourcemap) or read these classic article on [the anatomy of a source map](https://developer.chrome.com/blog/sourcemaps/#the-anatomy-of-a-source-map).
 
-The most critical aspect of a source map is the "mappings" field. It uses a [VLQ base 64 encoded string](https://developer.chrome.com/blog/sourcemaps/#base64-vlq-and-keeping-the-source-map-small) to map lines and locations in the compiled file to their original files. This mapping can be visualized using a source map visualizer like [this one by Tobias and Paul Irish](https://sokra.github.io/source-map-visualization/) and [this one by Evan You](https://evanw.github.io/source-map-visualization/).
+The most critical aspect of a source map is the "mappings" field. It uses a [VLQ base 64 encoded string](https://developer.chrome.com/blog/sourcemaps/#base64-vlq-and-keeping-the-source-map-small) to map lines and locations in the compiled file to their original files. This mapping can be visualized using a source map visualizer like [this one by Tobias and Paul Irish](https://sokra.github.io/source-map-visualization/) and [this one by Evan](https://evanw.github.io/source-map-visualization/).
 
 <figure>
   {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/luYuSy7CYuB3ZdcCgM6A.png", alt="ALT_TEXT_HERE", width="800", height="483" %}
