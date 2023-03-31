@@ -2,7 +2,7 @@
 title: What are source maps?
 subhead: >
   Improve web debugging experience with source maps.
-date: 2023-03-30
+date: 2023-03-31
 hero: image/dPDCek3EhZgLQPGtEG3y0fTn4v82/pHEJbtfbTxbY0UJCa7IX.jpg
 alt: Tomato sauce
 authors:
@@ -109,14 +109,14 @@ The visualizer color codes each line in the **original** column and its correspo
 
 The **mappings** section shows the decoded mappings of the code. For example, the entry `65-> 2:2` means:
 
-**Generated** code:  The word `const` starts at position 65 in the compressed content.
-**Original** code: The word `const` starts at line 2 and column 2 in the original content.
+- **Generated** code:  The word `const` starts at position 65 in the compressed content.
+- **Original** code: The word `const` starts at line 2 and column 2 in the original content.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/VlYPU6oeB2OVcqfRHFbw.png", alt="Mapping entry.", width="800", height="483" %}
 
 This way, developers can quickly identify the relationship between the minified code and the original code, making debugging a smoother process.
 
-Browser DevTools apply these source maps to help you pinpoint your debugging issues quicker, right in the browsers.
+Browser Developer Tools apply these source maps to help you pinpoint your debugging issues quicker, right in the browsers.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/rfMBvs6g6bZ1Bxblj7cL.png", alt="Developer Tools applies a source map.", width="800", height="439" %}
 
@@ -124,7 +124,7 @@ The image shows how browser Developer Tools applies source maps and shows the ma
 
 ## Source map extensions
 
-Source maps support extensions. Extensions are custom fields that start with the "x_" naming convention. One example is the "x_google_ignoreList" extension field proposed by Chrome DevTools. See [x_google_ignoreList](https://developer.chrome.com/article/x-google-ignore-list) to learn more on how these extensions help you focus on your code.
+Source maps support extensions. Extensions are custom fields that start with the `x_` naming convention. One example is the `x_google_ignoreList` extension field proposed by Chrome DevTools. See [x_google_ignoreList](https://developer.chrome.com/article/x-google-ignore-list) to learn more on how these extensions help you focus on your code.
 
 ## It's not perfect
 
