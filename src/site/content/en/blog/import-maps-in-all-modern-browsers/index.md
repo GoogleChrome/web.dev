@@ -31,7 +31,7 @@ corresponding URLs. For example:
 <script type="importmap">
   {
     "imports": {
-      "lodash": "https://unpkg.com/lodash@4.17.21/lodash.js"
+      "d3-array/": "https://unpkg.com/d3-array@3.2.3/src/"
     }
   }
 </script>
@@ -44,9 +44,9 @@ include the lodash library in your code. Note that the `import` keyword is only 
 
 ```html
 <script type="module">
-  import _ from 'lodash';
+  import map from 'd3-array/map.js';
 
-  console.log(_.map([1, 2, 3], (n) => n * 2));
+  console.log(map([1, 2, 3], (n) => n * 2));
 </script>
 ```
 
