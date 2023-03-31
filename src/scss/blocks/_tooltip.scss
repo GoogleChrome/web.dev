@@ -1,6 +1,6 @@
 /// PATTERN LIBRARY LOCATION
 /// https://web.dev/design-system/pattern/tooltip
-$tooltip-aligned-side-space: calc(100% + 1rem);
+$tooltip-aligned-side-space: calc(100% + 2.5rem);
 .tooltip {
   position: relative;
   width: max-content;
@@ -37,7 +37,7 @@ $tooltip-aligned-side-space: calc(100% + 1rem);
 }
 
 /// ALIGNMENT EXCEPTIONS
-.tooltip[data-alignment='left'] {
+.tooltip[role='tooltip'][data-alignment='left'] {
   .tooltip__content {
     top: 50%;
     right: $tooltip-aligned-side-space;
@@ -46,7 +46,7 @@ $tooltip-aligned-side-space: calc(100% + 1rem);
   }
 }
 
-.tooltip[data-alignment='right'] {
+.tooltip[role='tooltip'][data-alignment='right'] {
   .tooltip__content {
     top: 50%;
     left: $tooltip-aligned-side-space;
