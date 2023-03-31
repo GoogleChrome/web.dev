@@ -94,7 +94,9 @@
           {% include 'partials/language-list.njk' %}
         </div>
 
-        {% include 'partials/sign-post.njk' %}
+        <div class="flow">
+          {% include 'partials/sign-post.njk' %}
+        </div>
 
         {% if authors %}
           {{ authorsMacro() }}
