@@ -1,0 +1,24 @@
+<span class="post-signpost__title">
+  {{'i18n.post.available_in' | i18n(locale)}}:
+
+  {% set param = {lang: lang, url: page.url} %}
+
+  {% set Languages = languaugeSupport(param) %}
+  {% set numberOfLanguages = Languages.length %}
+
+  {% for language in Languages %}
+    {% set lang = language[0] %}
+    {% set langHref = language[1] %}
+    {% set langName = language[2] %}
+
+    <a href={{langHref}} class="post-signpost__link" translate="no" lang={{lang}}>
+      {{ langName }}
+    </a>
+
+    {% if loop.index !== numberOfLanguages %}
+      <span class="post-signpost__divider">, </span>
+
+      {% if loop.index === (numberOfLanguages - 1) %}and {% endif %}
+    {% endif %}
+  {% endfor %}
+</span>

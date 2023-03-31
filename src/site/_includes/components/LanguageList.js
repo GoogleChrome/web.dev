@@ -19,26 +19,40 @@ const {
   languageNames,
   languageOrdering,
 } = require('../../../lib/utils/language');
+
 const {
   getDefaultUrl,
   getLocaleSpecificUrl,
   getTranslatedUrls,
 } = require('../../_filters/urls');
-const {i18n} = require('../../_filters/i18n');
 
-module.exports = (url, lang) => {
-  const langHrefs = getTranslatedUrls(url).filter(
-    (langHref) => langHref[0] !== lang,
+module.exports = (data) => {
+  const langHrefs = getTranslatedUrls(data.url).filter(
+    (langHref) => langHref[0] !== data.lang,
   );
 
   // Exit early if there are no translations.
-  if (langHrefs.length === 0) {
-    return '';
-  }
+  if (langHrefs.length === 0) return '';
+
+  langHrefs.map((langHref) => {
+    langHref.push(languageNames[langHref[0]]);
+  });
 
   // Ensure that the default (English) translation is added as well.
-  const defaultHref = getLocaleSpecificUrl(defaultLanguage, getDefaultUrl(url));
-  langHrefs.push([defaultLanguage, defaultHref]);
+  let defaultHref;
+  if (defaultLanguage === 'en') {
+    defaultHref = getDefaultUrl(data.url);
+  } else {
+    defaultHref = getLocaleSpecificUrl(
+      defaultLanguage,
+      getDefaultUrl(data.url),
+    );
+  }
+  langHrefs.push([
+    defaultLanguage,
+    defaultHref,
+    languageNames[defaultLanguage],
+  ]);
 
   // Sort the list of languages with a specific ordering.
   // C.f. https://github.com/GoogleChrome/web.dev/issues/7430
@@ -48,19 +62,5 @@ module.exports = (url, lang) => {
     return indexOfA > indexOfB ? 1 : -1;
   });
 
-  const languageLinks = langHrefs.map((langHref) => {
-    const href = langHref[1];
-    return `<a class="post-signpost__link"
-      translate="no"
-      lang="${langHref[0]}"
-      href="${href}">${languageNames[langHref[0]]}</a>`;
-  });
-
-  const availableIn = i18n('i18n.post.available_in', lang);
-  const listFormat = new Intl.ListFormat(lang);
-
-  return `<span class="post-signpost__title">
-    ${availableIn}:
-    ${listFormat.format(languageLinks)}
-  </span>`;
+  return langHrefs;
 };
