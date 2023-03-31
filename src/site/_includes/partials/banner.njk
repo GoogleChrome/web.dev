@@ -8,7 +8,7 @@
   {% set backgroundColor = 'bg-state-warn-bg' %}
 {% endif %}
 
-  <announcement-banner>
+  <announcement-banner storage-key="user-banner">
     <div role="banner" class="banner  color-core-text {{backgroundColor}}">
       <div class="banner__content flow">
         {{ site.banner | md | safe }}
