@@ -5,7 +5,7 @@ subhead: >
   Discover some of the interesting features that landed in stable and beta web browsers during March 2023.
 description: >
   Discover some of the interesting features that landed in stable and beta web browsers during March 2023.
-date: 2023-03-30
+date: 2023-03-31
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/pI6R8rAPgyCUhAKQLmUe.jpg
 alt: Spring blossom.
 authors:
