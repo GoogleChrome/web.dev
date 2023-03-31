@@ -20,13 +20,11 @@
  * Note that this is included by 11ty, so { { } } (without spaces)'s are expanded.
  */
 function hideAnnouncementBanner() {
- const bannerCtaUrl = '{{ banner.actions[0].href | safe}}';
- const savedBannerCtaUrl = localStorage.getItem('user-banner'); 
- if (savedBannerCtaUrl === bannerCtaUrl) {
-  
-  console.log(document.documentElement);
-   document.documentElement.setAttribute('data-banner-dismissed', '');
- }
+  const bannerCtaUrl = '{{ banner.actions[0].href | safe}}';
+  const savedBannerCtaUrl = localStorage.getItem('user-banner');
+  if (savedBannerCtaUrl === bannerCtaUrl) {
+    document.documentElement.setAttribute('data-banner-dismissed', '');
+  }
 }
 
 hideAnnouncementBanner();

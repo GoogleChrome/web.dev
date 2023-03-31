@@ -1,5 +1,5 @@
 /// COMPONENT LIBRARY LOCATION
-/// https://web.dev/design-system/component/banner
+/// Webdev-infra/web-components/AnnouncementBanner
 .banner {
   --gutter: 0.5rem;
 
@@ -15,39 +15,15 @@
   @include apply-utility('leading', 'short');
 }
 
-.banner__actions {
-  $banner-actions-button-padding-x: 1rem;
-  $banner-actions-button-padding-y: 0.8rem;
-
-  flex: none; /// We don't want this to shrink
-  margin-inline-start: auto;
-  margin-block-start: auto;
-
-  button.button {
-    padding: $banner-actions-button-padding-y $banner-actions-button-padding-x;
-
-    @include apply-utility('text', 'size-0');
-  }
-
-  /// Let whatever button element's current hover state happen
-  button:not(:hover) {
-    background: transparent;
-  }
-}
-
-/// If the content has a cluster on it,
-/// we need to make some adjustments
-.banner__content.cluster {
-  --gutter: #{$global-gutter};
-
-  flex-wrap: nowrap;
-}
-
 .banner__img {
   max-width: 2.5em;
   max-height: 2.5em;
   /// A slightly lighter background, regardless of current color
   background: rgba(255, 255, 255, 0.5);
+}
+
+a:visited {
+  color: var(--color-highlight-text);
 }
 
 [data-banner-close-btn]{
@@ -59,6 +35,10 @@
 
 [data-banner-close-btn]:hover{
   background: var(--color-highlight-interact-bg);
+}
+
+[data-banner-dismissed] .banner{
+  display:none
 }
 
 /// Hides banner in print mode
