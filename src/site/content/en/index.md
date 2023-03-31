@@ -29,7 +29,7 @@ platformNews:
   pickedLeft:
     url: '/interop-2023/'
   pickedRight:
-    url: '/web-platform-01-2023/'
+    url: '/web-platform-03-2023/'
 
 themes:
   - category: CSS and UI
