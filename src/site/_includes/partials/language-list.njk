@@ -1,8 +1,8 @@
 <span class="post-signpost__title">
-  {% set languages = page | languageSupportedList(lang) %}
+  {% set languages = page | supportedlanguages(lang) %}
   {% set numberOfLanguages = languages.length %}
 
-  {% if (numberOfLanguages !== 0) %}
+  {% if (numberOfLanguages) %}
     {{'i18n.post.available_in' | i18n(locale)}}:
     {% for language in languages %}
       {% set lang = language[0] %}

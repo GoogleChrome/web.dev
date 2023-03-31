@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,41 +15,41 @@
  */
 
 const {
-  defaultLanguage,
   languageNames,
+  defaultLanguage,
   languageOrdering,
 } = require('../../lib/utils/language');
 
 const {
   getDefaultUrl,
-  getLocaleSpecificUrl,
   getTranslatedUrls,
+  getLocaleSpecificUrl,
 } = require('../_filters/urls');
 
 /**
- * Look up a post by its url.
- * Requires that the collection the post lives in has already been memoized.
- * @param {String} lang The post url (in a form of "lang/slug") to look up.
- * @param {EleventyCollectionItem} page The post url (in a form of "lang/slug") to look up.
- * @return {Array} An eleventy collection item.
+ * Look up all supported languages for a specific post
+ *
+ * @param {String} lang The current lang of a post to look up.
+ * @param {EleventyCollectionItem} post The post to look up.
+ * @return {String[][]} The list of supported languages for a specific post
  */
 
-const languageSupportedList = (page, lang) => {
-  const url = page.url;
-  const langHrefs = getTranslatedUrls(url).filter(
+const supportedlanguages = (post, lang) => {
+  const url = post.url;
+  const languages = getTranslatedUrls(url).filter(
     (langHref) => langHref[0] !== lang,
   );
 
   // Exit early if there are no translations.
-  if (langHrefs.length === 0) return;
+  if (languages.length === 0) return;
 
-  langHrefs.map((langHref) => {
+  languages.map((langHref) => {
     langHref.push(languageNames[langHref[0]]);
   });
 
   // Ensure that the default (English) translation is added as well.
   const defaultHref = getLocaleSpecificUrl(defaultLanguage, getDefaultUrl(url));
-  langHrefs.push([
+  languages.push([
     defaultLanguage,
     defaultHref,
     languageNames[defaultLanguage],
@@ -57,13 +57,13 @@ const languageSupportedList = (page, lang) => {
 
   // Sort the list of languages with a specific ordering.
   // C.f. https://github.com/GoogleChrome/web.dev/issues/7430
-  langHrefs.sort((a, b) => {
+  languages.sort((a, b) => {
     const indexOfA = languageOrdering.indexOf(a[0]);
     const indexOfB = languageOrdering.indexOf(b[0]);
     return indexOfA > indexOfB ? 1 : -1;
   });
 
-  return langHrefs;
+  return languages;
 };
 
-module.exports = {languageSupportedList};
+module.exports = {supportedlanguages};

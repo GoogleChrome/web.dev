@@ -65,7 +65,7 @@ const tags = require('./src/site/_collections/tags');
 const {i18n} = require('./src/site/_filters/i18n');
 const {getDefaultUrl, getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
-const {languageSupportedList} = require('./src/site/_filters/language-list');
+const {supportedlanguages} = require('./src/site/_filters/language-list');
 const pathSlug = require('./src/site/_filters/path-slug');
 const algoliaIndexable = require('./src/site/_filters/algolia-indexable');
 const {algoliaItem} = require('./src/site/_filters/algolia-item');
@@ -151,7 +151,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   config.addFilter('i18n', i18n);
   config.addFilter('findByUrl', findByUrl);
-  config.addFilter('languageSupportedList', languageSupportedList);
+  config.addFilter('supportedlanguages', supportedlanguages);
   config.addFilter('getDefaultUrl', getDefaultUrl);
   config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('pathSlug', pathSlug);
