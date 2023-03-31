@@ -3,10 +3,10 @@
  */
 
 import 'webdev-infra/web-components/YouTube';
+import 'webdev-infra/web-components/AnnouncementBanner';
 
 import './Header';
 import './DevRelRibbon';
-import './AnnouncementBanner';
 import './LanguageSelect';
 import './NavigationDrawer';
 import './SnackbarContainer';
