@@ -20,8 +20,6 @@ Today, we are talking about source maps, a crucial tool in modern web developmen
 
 ## The need for source maps
 
-## The need for source maps
-
 Back in the good old days, we built web applications with pure HTML, CSS, and JavaScript and deployed the same files to the web. 
 
 However, as we are building more complex web applications nowadays, your development workflow may involve using various tools. For example:
