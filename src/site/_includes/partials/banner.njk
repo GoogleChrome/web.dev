@@ -1,17 +1,20 @@
-{% if site.isBannerEnabled %}
+{% if site.isBannerEnabled and banner %}
 
 {% set backgroundColor = 'bg-state-info-bg' %}
 
-{% if bannerType == "caution" %}
+{% if banner.type == "caution" %}
   {% set backgroundColor = 'bg-state-bad-bg' %}
-{% elif bannerType =="warning" %}
+{% elif banner.type =="warning" %}
   {% set backgroundColor = 'bg-state-warn-bg' %}
 {% endif %}
 
   <announcement-banner storage-key="user-banner">
     <div role="banner" class="banner  color-core-text {{backgroundColor}}">
       <div class="banner__content flow">
-        {{ site.banner | md | safe }}
+        {{ banner.text | md | safe }}
+        {% for action in banner.actions %}
+          <a href="{{action.href}}">{{action.text}}</a>
+        {% endfor%}
         <span data-banner-close-btn>{{ 'i18n.common.dismiss' | i18n(locale) }}</span>
       </div>
     </div>
