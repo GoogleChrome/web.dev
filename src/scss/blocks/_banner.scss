@@ -1,5 +1,3 @@
-/// COMPONENT LIBRARY LOCATION
-/// Webdev-infra/web-components/AnnouncementBanner
 .banner {
   --gutter: 0.5rem;
 
@@ -9,17 +7,17 @@
   flex-wrap: wrap;
   align-items: flex-start;
   font-size: get-size('size-0');
-}
 
-.banner__content {
-  @include apply-utility('leading', 'short');
-}
+  &__content {
+    @include apply-utility('leading', 'short');
+  }
 
-.banner__img {
-  max-width: 2.5em;
-  max-height: 2.5em;
-  /// A slightly lighter background, regardless of current color
-  background: rgba(255, 255, 255, 0.5);
+  &__img {
+    max-width: 2.5em;
+    max-height: 2.5em;
+    /// A slightly lighter background, regardless of current color
+    background: rgba(255, 255, 255, 0.5);
+  }
 }
 
 a:visited {
