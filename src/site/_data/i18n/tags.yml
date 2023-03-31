@@ -1164,7 +1164,8 @@ service-worker:
 
 sourcemap:
   title:
-    en: source map
+    en: Source maps
+  description: Our latest news, updates, and stories about source maps.
 
 storage:
   title:
