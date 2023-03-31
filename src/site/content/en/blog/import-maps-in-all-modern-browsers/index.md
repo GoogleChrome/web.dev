@@ -38,8 +38,8 @@ corresponding URLs. For example:
 ```
 
 This code defines a single external module named `"browser-fs-access"` and maps it to the URL of the
-Browser-FS-Access library on the unpkg CDN. With this mapping in place, you can now use the `import`
-keyword to include the Browser-FS-Access library in your code. Note that the `import` keyword is
+[browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access) library, hosted on the unpkg CDN. With this mapping in place, you can now use the `import`
+keyword to include the browser-fs-access library in your code. Note that the `import` keyword is
 only available inside a `script` tag with the `type="module"` attribute.
 
 ```html
