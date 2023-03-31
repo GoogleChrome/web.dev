@@ -20,11 +20,7 @@ const {
   languageOrdering,
 } = require('../../../lib/utils/language');
 
-const {
-  getDefaultUrl,
-  getLocaleSpecificUrl,
-  getTranslatedUrls,
-} = require('../../_filters/urls');
+const {getDefaultUrl, getTranslatedUrls} = require('../../_filters/urls');
 
 module.exports = (data) => {
   const langHrefs = getTranslatedUrls(data.url).filter(
@@ -39,18 +35,9 @@ module.exports = (data) => {
   });
 
   // Ensure that the default (English) translation is added as well.
-  let defaultHref;
-  if (defaultLanguage === 'en') {
-    defaultHref = getDefaultUrl(data.url);
-  } else {
-    defaultHref = getLocaleSpecificUrl(
-      defaultLanguage,
-      getDefaultUrl(data.url),
-    );
-  }
   langHrefs.push([
     defaultLanguage,
-    defaultHref,
+    getDefaultUrl(data.url),
     languageNames[defaultLanguage],
   ]);
 
