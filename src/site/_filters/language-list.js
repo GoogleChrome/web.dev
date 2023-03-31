@@ -18,26 +18,40 @@ const {
   defaultLanguage,
   languageNames,
   languageOrdering,
-} = require('../../../lib/utils/language');
+} = require('../../lib/utils/language');
 
-const {getDefaultUrl, getTranslatedUrls} = require('../../_filters/urls');
+const {
+  getDefaultUrl,
+  getLocaleSpecificUrl,
+  getTranslatedUrls,
+} = require('../_filters/urls');
 
-module.exports = (data) => {
-  const langHrefs = getTranslatedUrls(data.url).filter(
-    (langHref) => langHref[0] !== data.lang,
+/**
+ * Look up a post by its url.
+ * Requires that the collection the post lives in has already been memoized.
+ * @param {String} lang The post url (in a form of "lang/slug") to look up.
+ * @param {EleventyCollectionItem} page The post url (in a form of "lang/slug") to look up.
+ * @return {Array} An eleventy collection item.
+ */
+
+const languageSupportedList = (page, lang) => {
+  const url = page.url;
+  const langHrefs = getTranslatedUrls(url).filter(
+    (langHref) => langHref[0] !== lang,
   );
 
   // Exit early if there are no translations.
-  if (langHrefs.length === 0) return '';
+  if (langHrefs.length === 0) return;
 
   langHrefs.map((langHref) => {
     langHref.push(languageNames[langHref[0]]);
   });
 
   // Ensure that the default (English) translation is added as well.
+  const defaultHref = getLocaleSpecificUrl(defaultLanguage, getDefaultUrl(url));
   langHrefs.push([
     defaultLanguage,
-    getDefaultUrl(data.url),
+    defaultHref,
     languageNames[defaultLanguage],
   ]);
 
@@ -51,3 +65,5 @@ module.exports = (data) => {
 
   return langHrefs;
 };
+
+module.exports = {languageSupportedList};

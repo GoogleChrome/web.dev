@@ -50,7 +50,6 @@ const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
 const Banner = require('./src/site/_includes/components/Banner');
 const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
 const includeRaw = require('./src/site/_includes/components/includeRaw');
-const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
 const StackOverflow = require('./src/site/_includes/components/StackOverflow');
 const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
@@ -66,6 +65,7 @@ const tags = require('./src/site/_collections/tags');
 const {i18n} = require('./src/site/_filters/i18n');
 const {getDefaultUrl, getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
+const {languageSupportedList} = require('./src/site/_filters/language-list');
 const pathSlug = require('./src/site/_filters/path-slug');
 const algoliaIndexable = require('./src/site/_filters/algolia-indexable');
 const {algoliaItem} = require('./src/site/_filters/algolia-item');
@@ -151,6 +151,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   config.addFilter('i18n', i18n);
   config.addFilter('findByUrl', findByUrl);
+  config.addFilter('languageSupportedList', languageSupportedList);
   config.addFilter('getDefaultUrl', getDefaultUrl);
   config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('pathSlug', pathSlug);
@@ -208,7 +209,6 @@ module.exports = function (config) {
   config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
-  config.addShortcode('LanguageList', LanguageList);
   config.addShortcode('Meta', Meta);
   config.addShortcode('StackOverflow', StackOverflow);
   config.addShortcode('Widget', Widget);

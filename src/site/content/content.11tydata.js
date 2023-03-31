@@ -1,5 +1,4 @@
 const outputPermalink = require('../../build/output-permalink');
-const languageList = require('../_includes/components/LanguageList');
 
 module.exports = {
   eleventyComputed: {
@@ -21,5 +20,4 @@ module.exports = {
     },
     permalink: (data) => outputPermalink(data),
   },
-  languaugeSupport: (data) => languageList(data),
 };
