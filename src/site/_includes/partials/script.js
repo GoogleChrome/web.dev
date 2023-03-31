@@ -21,13 +21,10 @@
  */
 
 (function () {
-  function hideAnnouncementBanner() {
-    const bannerCtaUrl = '{{ banner.actions[0].href | safe}}';
-    const savedBannerCtaUrl = localStorage.getItem('user-banner');
-    if (savedBannerCtaUrl === bannerCtaUrl) {
-      document.documentElement.setAttribute('data-banner-dismissed', '');
-    }
+  // Checks if the banner has been previously dismissed and hides it.
+  const bannerCtaUrl = '{{ banner.actions[0].href | safe}}';
+  const savedBannerCtaUrl = localStorage.getItem('user-banner');
+  if (savedBannerCtaUrl === bannerCtaUrl) {
+    document.documentElement.setAttribute('data-banner-dismissed', '');
   }
-
-  hideAnnouncementBanner();
 })();

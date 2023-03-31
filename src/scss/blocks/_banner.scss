@@ -18,11 +18,13 @@
     /// A slightly lighter background, regardless of current color
     background: rgba(255, 255, 255, 0.5);
   }
+
+  &__action-link:visited {
+    color: var(--color-highlight-text);
+  }
 }
 
-a:visited {
-  color: var(--color-highlight-text);
-}
+
 
 [data-banner-close-btn]{
   color: var(--color-highlight-text);

@@ -13,7 +13,7 @@
       <div class="banner__content flow">
         {{ banner.text | md | safe }}
         {% for action in banner.actions %}
-          <a href="{{action.href}}">{{action.text}}</a>
+          <a class="banner__action-link" href="{{action.href}}">{{action.text}}</a>
         {% endfor%}
         <span data-banner-close-btn>{{ 'i18n.common.dismiss' | i18n(locale) }}</span>
       </div>
