@@ -84,9 +84,9 @@ These source map files contain essential information about how the compiled code
 ```js
 {
   "mappings": "AAAAA,SAASC,cAAc,WAAWC, ...",
-   "sources": ["src/script.ts"],
+  "sources": ["src/script.ts"],
   "sourcesContent": ["document.querySelector('button')..."],
-  "names": ["document","querySelector", …],
+  "names": ["document","querySelector", ...],
   "version": 3,
   "file": "example.min.js.map"
 }
