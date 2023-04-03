@@ -26,7 +26,7 @@ This complete port of SQLite brings a lightweight, embedded, relational database
 
 ### FFmpeg.wasm
 
-FFmpeg is a free and open-source software project consisting of a suite of libraries and programs for handling video, audio, and other multimedia files and streams. You can find [a wasm compiled version here](https://ffmpegwasm.netlify.app/) ([github repo]()) that lets you do all of this functionality directly in the browser.
+FFmpeg is a free and open-source software project consisting of a suite of libraries and programs for handling video, audio, and other multimedia files and streams. You can find [a wasm compiled version here](https://ffmpegwasm.netlify.app/) ([github repo](https://github.com/ffmpegwasm/ffmpeg.wasm)) that lets you do all of this functionality directly in the browser.
 
 ### Universal Scene Descriptor (USD)
 
