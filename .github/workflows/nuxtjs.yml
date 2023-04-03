@@ -1,7 +1,4 @@
-# Sample workflow for building and deploying a Nuxt site to GitHub Pages
-#
-# To get started with Nuxt see: https://nuxtjs.org/docs/get-started/installation
-#
+
 name: Deploy Nuxt site to Pages
 
 on:
