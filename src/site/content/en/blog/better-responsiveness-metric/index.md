@@ -67,7 +67,7 @@ interaction with a site. In other words, FID is a lower bound on the amount of t
 after interacting.
 
 Other metrics like [Total Blocking Time (TBT)](/tbt/) and [Time To Interactive (TTI)](/tti/) are based
-on [long tasks](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) and, like FID, also
+on [long tasks](/optimize-long-tasks/) and, like FID, also
 measure main thread blocking time during load. Since these metrics can be measured in both the field
 and the lab, many developers have asked why we don't prefer one of these over FID.
 

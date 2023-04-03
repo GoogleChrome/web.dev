@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of focus.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: If an element cannot be focused it is described as what?
+    options:
+      - content: "Empty."
+        rationale: "Try again."
+      - content: "Inert."
+        rationale: "Correct!"
+      - content: "Hidden."
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "2"
+    correctAnswers: "0,2"
+    stem: What will be true if the element has a `disabled` attribute?
+    options:
+      - content: "It will be unfocusable."
+        rationale: "Correct!"
+      - content: "It will not be displayed."
+        rationale: "Try again."
+      - content: "If it is a form element it will not be submitted."
+        rationale: "Correct!"

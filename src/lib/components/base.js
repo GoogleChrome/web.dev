@@ -4,8 +4,8 @@
 
 import 'webdev-infra/web-components/YouTube';
 
-import './ProfileSwitcherContainer';
 import './Header';
+import './DevRelRibbon';
 import './LanguageSelect';
 import './NavigationDrawer';
 import './SnackbarContainer';

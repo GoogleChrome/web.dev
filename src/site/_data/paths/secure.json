@@ -45,6 +45,7 @@
       "title": "i18n.paths.secure.topics.protect_users_from_tracking",
       "pathItems": [
         "digging-into-the-privacy-sandbox",
+        "understanding-cookies",
         "samesite-cookies-explained",
         "samesite-cookie-recipes",
         "first-party-cookie-recipes",

@@ -305,6 +305,8 @@ redirects:
     destination: https://developer.chrome.com/blog/third-party-origin-trials/
   - source: /fugu-status
     destination: https://developer.chrome.com/blog/fugu-status/
+  - source: /fugu-showcase
+    destination: https://developer.chrome.com/fugu-showcase/
   - source: /conversion-measurement
     destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
   - source: /using-conversion-measurement
@@ -403,6 +405,10 @@ redirects:
     destination: https://developer.chrome.com/articles/file-system-access/
   - source: /user-agent-client-hints
     destination: https://developer.chrome.com/articles/user-agent-client-hints/
+  - source: /nfc
+    destination: https://developer.chrome.com/articles/nfc/
+  - source: /build-for-webusb
+    destination: https://developer.chrome.com/articles/build-for-webusb/
 
   # Redirect for Aurora
   - source: /aurora
@@ -421,6 +427,20 @@ redirects:
     destination: https://developer.chrome.com/blog/conformance/
   - source: /tags/aurora-project
     destination: https://developer.chrome.com/tags/aurora-project/
+  - source: /declarative-shadow-dom
+    destination: https://developer.chrome.com/articles/declarative-shadow-dom/
+  - source: /gpu-compute
+    destination: https://developer.chrome.com/articles/gpu-compute/
+  - source: /web-bundles
+    destination: https://developer.chrome.com/docs/web-platform/web-bundles/
+  - source: /webtransport
+    destination: https://developer.chrome.com/articles/webtransport/
+  - source: /web-otp
+    destination: https://developer.chrome.com/articles/web-otp/
+  - source: /hid-examples/
+    destination: https://developer.chrome.com/articles/hid-examples/
+
+
 
   # Design system
   - source: /design-system/component/action

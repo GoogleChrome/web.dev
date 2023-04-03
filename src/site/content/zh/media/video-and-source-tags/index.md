@@ -100,7 +100,7 @@ tags:
 
 如果视频 `src` 遭到损坏或不支持任何提供的视频格式，海报也可以作为备用。海报图像的唯一缺点是需要额外的文件请求，它会消耗一些带宽，并且需要进行渲染。有关详细信息，请参阅[有效的编码图像](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)。
 
-<div class="w-columns">{% Compare 'worse' %}<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="没有备用海报，只能看到视频未显示。", width="360", height="600" %}</figure>
+<div class="switcher">{% Compare 'worse' %}<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="没有备用海报，只能看到视频未显示。", width="360", height="600" %}</figure>
 </div>
 <p data-md-type="paragraph">{% CompareCaption %} 如果没有备用海报，则只能看到视频未显示。{% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
@@ -114,7 +114,7 @@ tags:
 
 当视频元素对视口来说太大时，它们可能会溢出容器，导致用户无法看到内容或使用控件。
 
-<div class="w-columns">
+<div class="switcher">
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome 截屏，纵向：无样式的视频元素溢出视口。", width="338", height="600" %}<figcaption>Android Chrome 截屏，纵向：无样式的视频元素溢出视口。</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome 截屏，横向：无样式的视频元素溢出视口。", width="800", height="450" %}<figcaption> Android Chrome 截屏，横向：无样式的视频元素溢出视口。</figcaption></figure>
 </div>
@@ -169,7 +169,7 @@ tags:
 
 iPhone 上的 Safari 可以很好地切换纵向和横向模式：
 
-<div class="w-columns">
+<div class="switcher">
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="iPhone 上的 Safari 中播放的视频截屏，纵向。", width="338", height="600" %} <figcaption>iPhone 上的 Safari 中播放视频截屏，纵向。</figcaption></figure><figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="iPhone 上的 Safari 中播放的视频截屏，横向。", width="600", height="338" %} <figcaption>iPhone 上的 Safari 中播放的视频截屏，横向。</figcaption></figure>
 </div>
 

@@ -50,7 +50,7 @@ Milestone timings mark events that happen during page load, such as [DOMContentL
 
 ### Rule-based metrics 💯
 
-[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [WebPageTest](https://www.webpagetest.org/) calculate [performance scores](hhttps://developer.chrome.com/docs/lighthouse/performance/performance-scoring/#perf-scoring) based on general best practice rules, that you can use as guidelines. As a bonus, Lighthouse also offers you hints for simple optimizations.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [WebPageTest](https://www.webpagetest.org/) calculate [performance scores](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/#perf-scoring) based on general best practice rules, that you can use as guidelines. As a bonus, Lighthouse also offers you hints for simple optimizations.
 
 You'll get the best results if you keep track of a combination of quantity-based and user-centric performance metrics. Focus on asset sizes in the early phases of a project and start tracking FCP and TTI as soon as possible.
 

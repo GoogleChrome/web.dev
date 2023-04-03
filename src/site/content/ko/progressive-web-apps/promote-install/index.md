@@ -34,7 +34,7 @@ PWA(Progressive Web App)를 설치하면 사용자가 더 쉽게 찾고 사용�
 
 [특정 기준](/install-criteria/) 이 충족되면 대부분의 브라우저에서 사용자에게 PWA를 설치할 수 있음을 자동으로 표시합니다. 예를 들어 데스크톱 Chrome은 검색주소창에 설치 버튼을 표시합니다.
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="설치 표시기가 표시된 검색주소창의 스크린샷.", width="800", height="307" %}<figcaption> 브라우저 제공 설치 홍보(데스크톱)</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="브라우저 제공 설치 홍보 스크린샷", width="800", height="307" %}<figcaption> 브라우저 제공 설치 홍보(모바일)</figcaption></figure>
 </div>

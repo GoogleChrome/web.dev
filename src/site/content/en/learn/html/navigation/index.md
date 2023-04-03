@@ -86,23 +86,23 @@ If your browser is wider than 80em, the Table of contents comes before the headi
 <nav aria-label="On this page">
   <div>On this page</div>
   <div>
-   <ul>
-<li>
-  <a href="#skip">Skip to content link</a>
-</li>
-<li>
-  <a href="#toc">Table of contents</a>
-</li>
-<li>
-  <a href="#bc">Page breadcrumbs</a>
-</li>
-<li>
-  <a href="#ln">Local navigation</a>
-</li>
-<li>
-  <a href="#global">Global navigation</a>
-</li>
-   </ul>
+    <ul>
+      <li>
+        <a href="#skip">Skip to content link</a>
+      </li>
+      <li>
+        <a href="#toc">Table of contents</a>
+      </li>
+      <li>
+        <a href="#bc">Page breadcrumbs</a>
+      </li>
+      <li>
+        <a href="#ln">Local navigation</a>
+      </li>
+      <li>
+        <a href="#global">Global navigation</a>
+      </li>
+    </ul>
   </div>
 </nav>
 ```
@@ -112,13 +112,15 @@ that a section has a role of `navigation`, a landmark role.
 
 Including the [`aria-label`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-label) attribute
 provides a brief description of the purpose of the navigation. In this case, as the value of the attribute is redundant to
-text that is visible on the page, it is preferable to use [`arial-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
+text that is visible on the page, it is preferable to use [`aria-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
 to reference the visible text.
 
 We can change the non-semantic `<div>` to a paragraph `<p>`, then add an [`id`](/learn/html/attributes/#id) so it can be referenced. We then use `aria-labelledby`:
 
-`<nav aria-labelledby="tocTitle">`
-  `<p id="tocTitle">On this page</p>`
+```html
+<nav aria-labelledby="tocTitle">
+  <p id="tocTitle">On this page</p>
+```
 
 In addition to reducing redundancy, visible text gets translated by translation services, whereas attribute values may not.
 When possible, if text is present that provides for an adequate label, prefer that over attribute text.
@@ -140,22 +142,22 @@ list items, and therefore links, are an individual list in a navigation.
 <nav aria-labelledby="tocTitle">
   <p id="tocTitle">On this page</p>
   <ul role="list">
-<li>
-  <a href="#skip">Skip to content link</a>
-</li>
-<li>
-  <a href="#toc">Table of contents</a>
-</li>
-<li>
-  <a href="#bc">Page breadcrumbs</a>
-</li>
-<li>
-  <a href="#ln">Local navigation</a>
-</li>
-<li>
-  <a href="#global">Global navigation</a>
-</li>
-   </ul>
+    <li>
+      <a href="#skip">Skip to content link</a>
+    </li>
+    <li>
+      <a href="#toc">Table of contents</a>
+    </li>
+    <li>
+      <a href="#bc">Page breadcrumbs</a>
+    </li>
+    <li>
+      <a href="#ln">Local navigation</a>
+    </li>
+    <li>
+      <a href="#global">Global navigation</a>
+    </li>
+  </ul>
 </nav>
 ```
 
@@ -165,7 +167,7 @@ two table-of-contents navigation components and hiding one or the other with CSS
 Including two identical widgets to only show one is an anti-pattern. The extra bytes are negligible. Hiding HTML content from
 all users by using CSS `display: none` is appropriate. The issue is that, on wide screens, the table of contents comes before `#main`;
 and on narrower screens, the table of contents is nested within #main. Using the keyboard to skip to content skips over the table of
-ontents on a wide screen. While users are accustomed to content being responsive and changing location when they change devices or
+contents on a wide screen. While users are accustomed to content being responsive and changing location when they change devices or
 increase their font size, they do not expect the tab order to change when they do so. Page layouts should be accessible, predictable,
 and consistent across a site. Here, the location of the table of contents is not predictable.
 
@@ -229,14 +231,14 @@ Between links there are CSS-generated content separators. The separators come be
 
 ```css
 [aria-label^="breadcrumb" i] li + li::before {
-content: "";
-display: block;
-width: 8px;
-height: 8px;
-border-top: 2px solid currentColor;
-border-right: 2px solid currentColor;
-rotate: 45deg;
-opacity: .8
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  rotate: 45deg;
+  opacity: .8
 }
 ```
 
@@ -290,7 +292,7 @@ There is another navigational component on this page. If you are on a wide scree
 "Learn HTML" logo, a search bar, and links to each of the 20 sections in Learn HTML. Each link contains the chapter number,
 the section title, and a checkmark to the right on sections that you have already visited—possibly this one if you have navigated away and have come back. The links to all the sections in Learn HTML, along with the search and local header, are the location navigation.
 
-If you are visiting this site on a tablet or mobile device, or otherwise have a narrower screen, when you load this page, the sidebar is hidden. You can make it visible via the hamburger menu in the top navigation bar (yes, the header is a custom <web-header> element with `role="navigation"` set).
+If you are visiting this site on a tablet or mobile device, or otherwise have a narrower screen, when you load this page, the sidebar is hidden. You can make it visible via the hamburger menu in the top navigation bar (yes, the header is a custom `<web-header>` element with `role="navigation"` set).
 
 The main difference between the permanent local navigation on wide screens and the local navigation on narrower screens that can be made to appear and disappear, is the display of the close button on the version that can be hidden. This icon is hidden on wide screens with `display: none;`.
 

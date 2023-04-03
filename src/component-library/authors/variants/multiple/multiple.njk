@@ -23,12 +23,12 @@
     </a>
     <div class="flow">
       <cite class="author__name">
-        <a href="{{ item.url }}" class="w-author__name-link">{{ item.name }}</a>
+        <a href="{{ item.url }}" class="author__name-link">{{ item.name }}</a>
       </cite>
       <ul class="author__links cluster" role="list">
         {% for link in item.links %}
-        <li class="w-author__link-listdata">
-          <a href="{{ link.url }}" class="w-author__link">{{ link.text }}</a>
+        <li class="author__link-listdata">
+          <a href="{{ link.url }}" class="author__link">{{ link.text }}</a>
         </li>
         {% endfor %}
       </ul>

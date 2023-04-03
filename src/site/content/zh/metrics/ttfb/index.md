@@ -101,10 +101,10 @@ new PerformanceObserver((entryList) => {
 [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) 也能在浏览器内测量 TTFB 指标，代码将更加简洁：
 
 ```javascript
-import {getTTFB} from 'web-vitals';
+import {onTTFB} from 'web-vitals';
 
 // Measure and log TTFB as soon as it's available.
-getTTFB(console.log);
+onTTFB(console.log);
 ```
 
 ### Measuring resource requests

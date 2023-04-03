@@ -91,7 +91,7 @@ Chrome User Experience Report의 데이터는 사이트의 성능을 빠르게 �
 [web-vitals](https://github.com/GoogleChrome/web-vitals) 라이브러리를 사용하면 각 메트릭을 측정하는 것이 단일 함수를 호출하는 것만큼 간단해집니다(완전한 [사용 방법](https://github.com/GoogleChrome/web-vitals#usage) 및 [API](https://github.com/GoogleChrome/web-vitals#api) 세부 정보는 해당 문서 참조).
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 [web-vitals](https://github.com/GoogleChrome/web-vitals) 라이브러리를 사용하여 Core Web Vitals 데이터를 측정하고 분석 엔드포인트로 전송하도록 사이트를 구성했다면, 다음 단계는 해당 데이터를 집계하고 보고하여 페이지가 페이지 방문의 최소 75%에 대해 권장 임계값을 충족하는지 확인하는 것입니다.

@@ -1,0 +1,19 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/widget
+.widget {
+
+  &__actions {
+    display: flex;
+    justify-content: end;
+    gap: 0.2em;
+  }
+
+  iframe {
+    border: 1px solid var(--color-stroke);
+  }
+
+  share-action {
+    display: block;
+    color: var(--color-highlight-text);
+  }
+}

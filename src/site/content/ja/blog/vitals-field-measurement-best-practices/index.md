@@ -37,7 +37,7 @@ Core Web Vitals 指標をサポートしているアナリティクス ツール
 次のコード サンプルでは、コードでこれらの指標を追跡し、アナリティクス サービスへと送信することがいかに簡単かを示しています。
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics({name, value, id}) {
   const body = JSON.stringify({name, value, id});
@@ -46,9 +46,9 @@ function sendToAnalytics({name, value, id}) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 ## 分布のレポート方法

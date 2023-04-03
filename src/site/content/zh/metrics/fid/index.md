@@ -154,13 +154,13 @@ new PerformanceObserver((entryList) => {
 开发者不必记住所有这些细微差异，而是可以使用[`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)来测量 FID，库会自行处理这些差异（在可能的情况下）：
 
 ```js
-import {getFID} from 'web-vitals';
+import {onFID} from 'web-vitals';
 
 // 当 FID 可用时立即进行测量和记录。
-getFID(console.log);
+onFID(console.log);
 ```
 
-您可以参考[`getFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/getFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
+您可以参考[`onFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），FID 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 

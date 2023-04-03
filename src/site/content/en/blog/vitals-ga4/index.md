@@ -2,9 +2,9 @@
 layout: post
 title: Measure and debug performance with Google Analytics 4 and BigQuery
 subhead: |
-  Learn how to send Web Vitals data to Google Analytics 4 properties and export the data for analysis in BigQuery and Data Studio.
+  Learn how to send Web Vitals data to Google Analytics 4 properties and export the data for analysis in BigQuery and Looker Studio.
 description: |
-  Learn how to send Web Vitals data to Google Analytics 4 properties and export the data for analysis in BigQuery and Data Studio.
+  Learn how to send Web Vitals data to Google Analytics 4 properties and export the data for analysis in BigQuery and Looker Studio.
 authors:
   - philipwalton
   - mkazi
@@ -413,45 +413,45 @@ looking at the data.
 
 In such cases, visualizing the data can help you derive insights more quickly.
 
-### Visualize query results in Data Studio
+### Visualize query results in Looker Studio
 
 BigQuery provides a quick way to visualize any query results through Data
-Studio. [Data Studio](https://datastudio.google.com/) is a data visualization
+Studio. [Looker Studio](https://lookerstudio.google.com/) is a data visualization
 and dashboarding tool that is free to use. To visualize your query results,
 after running your query in the BigQuery UI, click the _Explore Data button_ and
-select _Explore with Data Studio_.
+select _Explore with Looker Studio_.
 
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/CFQ8JK7UlZsxUbWZXCO0.png",
-       alt="Explore with Data Studio option in BigQuery",
+       alt="Explore with Looker Studio option in BigQuery",
        width="800",
        height="191" %}
 
-This will create a direct link from BigQuery into Data Studio in the explore
+This will create a direct link from BigQuery into Looker Studio in the explore
 view. In this view, you can select the fields you want to visualize, choose
 chart types, setup filters, and create ad hoc charts for quick visual analysis.
 From the above query results, you can create this line chart to see the trend of
 LCP values over time:
 
 {% Img src="image/dTS0rVPXlWfkJ67VZYPxGwaAj7j1/mhTsDWbzpveguHadWhS0.PNG",
-       alt="Line chart of daily LCP values in Data Studio",
+       alt="Line chart of daily LCP values in Looker Studio",
        width="800",
        height="413" %}
 
-With this direct link between BigQuery and Data Studio, you can create quick
+With this direct link between BigQuery and Looker Studio, you can create quick
 charts from any of your queries and do visual analysis. However, if you want to
 do additional analysis, you might want to look at several charts in an
 interactive dashboard to get a more holistic view or to be able to drill down
 into the data. Having a handy dashboard means you don't have to write queries
 and generate charts manually every time you want to analyze your metrics.
 
-You can create a dashboard in Data Studio using the [native BigQuery
+You can create a dashboard in Looker Studio using the [native BigQuery
 connector](https://support.google.com/datastudio/answer/6370296). To do so,
 navigate to [datastudio.google.com](https://datastudio.google.com), create a new
 data source, select the BigQuery connector, and choose the dataset you want to
 work with:
 
 {% Img src="image/dTS0rVPXlWfkJ67VZYPxGwaAj7j1/NoLpS3R5OnX52QEu6rnN.PNG",
-       alt="Using the BigQuery native connector in Data Studio",
+       alt="Using the BigQuery native connector in Looker Studio",
        width="800",
        height="302" %}
 
@@ -598,14 +598,14 @@ This materialized dataset has several advantages:
   table.
 
 You can directly query this materialized table from within BigQuery UI or use it
-in Data Studio using the BigQuery connector.
+in Looker Studio using the BigQuery connector.
 
 ### Using the Web Vitals Connector
 
 Since making a dashboard from scratch is time consuming, we developed a packaged
 solution that will create a template dashboard for you. First make sure that you
 have materialized your Web Vitals table using the above query. Then access the
-Web Vitals connector for Data Studio using this link:
+Web Vitals connector for Looker Studio using this link:
 [goo.gle/web-vitals-connector](https://goo.gle/web-vitals-connector)
 
 After providing a one time authorization, you should see the following
@@ -617,7 +617,7 @@ configuration screen:
        height="502" %}
 
 Provide the materialized BigQuery table ID (i.e. the target table) and your
-BigQuery billing project ID. After clicking connect, Data Studio will create a
+BigQuery billing project ID. After clicking connect, Looker Studio will create a
 new templated dashboard and associate your data with it.  You can edit, modify,
 and share the dashboard as you like. If you create a dashboard once, you don't
 have to visit the connector link again, unless you want to create multiple
@@ -675,7 +675,7 @@ useful, you can take the following steps:
 
 This post covered the basics of how to use Google Analytics 4 and BigQuery to
 measure and debug performance with real-user data collected in the field. It
-also explained how to build automated reports and dashboards using Data Studio
+also explained how to build automated reports and dashboards using Looker Studio
 and the [Web Vitals Connector](https://goo.gle/web-vitals-connector) to make
 visualizing the data as easy as possible.
 
@@ -688,6 +688,6 @@ Some key takeaways from this post:
   possible.
 * BigQuery export of raw Google Analytics data gives you unlimited potential for
   in-depth, custom analysis using a query language you likely already know.
-* Google has a number of APIs and visualization tools like Data Studio that give
+* Google has a number of APIs and visualization tools like Looker Studio that give
   you the freedom to build your reports exactly the way you want them to be
   built.

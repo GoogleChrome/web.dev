@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2022-10-19
+updated: 2023-03-08
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -104,8 +104,8 @@ Images that occupy the entire viewport are not considered LCP candidates.
 {% endAside %}
 
 Note, restricting the elements to this limited set was intentional in order to
-keep things simple in the beginning. Additional elements (like `<svg>` or
-`<video>`) may be added in the future as more research is conducted.
+keep things simple in the beginning. Additional elements (like the full `<svg>` support or
+`<video>` elements without poster images) may be added in the future as more research is conducted.
 
 ### How is an element's size determined?
 

@@ -27,11 +27,11 @@ Strings values that are defined, such as class and id names, are case-sensitive.
 it is case-sensitive when used as part of an [attribute selector](https://developer.mozilla.org/docs/Web/CSS/Attribute_selectors) in CSS and in JavaScript; otherwise, it's not.
 
 ```html
-<!-- the type attribute is case insensitive: these are equivalent –->
+<!-- the type attribute is case insensitive: these are equivalent -->
 <input type="text">
 <input type="TeXt">
 
-<!-- the id attribute is case sensitive: they are not equivalent -–>
+<!-- the id attribute is case sensitive: they are not equivalent -->
 <div id="myId">
 <div id="MyID">
 ```
@@ -175,7 +175,7 @@ On MLW.com, there is an easter egg for mouse users only. Clicking the light swit
 The markup for the light switch image is:
 ```html
 <img src="svg/switch2.svg" id="switch"
-    alt="light switch" class="light" />
+  alt="light switch" class="light" />
 ```
 The `id` attribute can be used as the parameter for the [`getElementById()`](https://developer.mozilla.org/docs/Web/API/Document/getElementById) method and, with a `#` prefix, as part of a
 parameter for the [`querySelector()`](https://developer.mozilla.org/docs/Web/API/Document/querySelector) and [`querySelectorAll()`](https://developer.mozilla.org/docs/Web/API/Document/querySelectorall) methods.
@@ -183,14 +183,17 @@ parameter for the [`querySelector()`](https://developer.mozilla.org/docs/Web/API
 ```js
 const switchViaID = document.getElementById("switch");
 const switchViaSelector = document.querySelector("#switch");
+```
+
 Our one JavaScript function makes use of this ability to target elements by their `id` attribute:
 
 ```html
 <script>
-    const onoff = document.getElementById('switch'); /* switch is a reserved word in js, so we us onoff instead */
-    onoff.addEventListener('click', function(){
-   	 document.body.classList.toggle('black');
-    });
+  /* switch is a reserved word in js, so we us onoff instead */
+  const onoff = document.getElementById('switch');
+  onoff.addEventListener('click', function(){
+    document.body.classList.toggle('black');
+  });
 </script>
 ```
 
@@ -218,14 +221,14 @@ theme: 'dark',
 tab: 'html,result'
 } %}
 
-{% Aside %}
 If the form control is nested between the `<label>` opening and closing tags, the `for` and `id` attributes
 aren't required: this is called an "implicit" label. Labels let all users know what each form control is for.
 
 ```html
-<label>Send me a reminder</label> <input type="number" name="min"> before the workshop resumes</label>.
+<label>
+  Send me a reminder <input type="number" name="min"> before the workshop resumes
+</label>.
 ```
-{% endAside %}
 
 The association between `for` and `id` makes the information available to users of assistive technologies. In addition,
 clicking anywhere on a label gives focus to the associated element, extending the control's click area. This isn't just helpful
@@ -389,9 +392,9 @@ To toggle between states, query the value of the [HTMLElement.isContentEditable]
 ```js
 const editor = document.getElementById("myElement");
 if(editor.contentEditable) {
-    editor.setAttribute("contenteditable", "false);
+  editor.setAttribute("contenteditable", "false");
 } else {
-   editor.setAttribute("contenteditable", "");
+  editor.setAttribute("contenteditable", "");
 }
 ```
 
@@ -449,16 +452,16 @@ on the element in question.
 
 ```html
 <blockquote data-machine-learning="workshop"
-   data-first-name="Blendan" data-last-name="Smooth"
-   data-formerly="Margarita Maker" data-aspiring="Load Balancer"
-   data-year-graduated="2022">
+  data-first-name="Blendan" data-last-name="Smooth"
+  data-formerly="Margarita Maker" data-aspiring="Load Balancer"
+  data-year-graduated="2022">
   HAL and EVE could teach a fan to blow hot air.
-</p>
+</blockquote>
 ```
 
 You can use `getAttribute()` using the full attribute name, or you can take advantage of the simpler [`dataset`](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset) property.
 
-```javascript
+```js
 el.dataset[machineLearning]; // workshop
 e.dataset.machineLearning; // workshop
 ```
@@ -469,7 +472,7 @@ names and values:
 
 ```js
 for (let key in el.dataset) {
-    customObject[key] = el.dataset[key];
+  customObject[key] = el.dataset[key];
 }
 ```
 

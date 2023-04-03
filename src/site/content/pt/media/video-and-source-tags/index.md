@@ -102,7 +102,7 @@ Adicione um atributo pôster ao `video` para que os espectadores tenham uma idei
 
 Um pôster também pode ser um substituto se o `src` do vídeo estiver quebrado ou se nenhum dos formatos de vídeo fornecidos for compatível. A única desvantagem das imagens de pôster é uma solicitação de arquivo adicional, que consome parte da largura de banda e requer renderização. Para obter mais informações, consulte [Codificar imagens com eficiência](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/) .
 
-<div class="w-columns">{% Compare 'worse' %}<figure> {% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt = "Sem um pôster substituto, o vídeo parece quebrado.", width = "360", height = "600"%}</figure>
+<div class="switcher">{% Compare 'worse' %}<figure> {% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt = "Sem um pôster substituto, o vídeo parece quebrado.", width = "360", height = "600"%}</figure>
 </div>
 <p data-md-type="paragraph">{% CompareCaption %} Sem um pôster substituto, o vídeo parece quebrado. {% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
@@ -116,7 +116,7 @@ Um pôster também pode ser um substituto se o `src` do vídeo estiver quebrado 
 
 Quando os elementos de vídeo são muito grandes para a janela de visualização, eles podem estourar seu contêiner, tornando impossível para o usuário ver o conteúdo ou usar os controles.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt = "Captura de tela do Android Chrome, retrato: elemento de vídeo sem estilo transborda janela de visualização.", width = "338", height = "600"%}<figcaption> Captura de tela do Android Chrome, retrato: o elemento de vídeo sem estilo ultrapassa a janela de visualização.</figcaption></figure>
   <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt = "Captura de tela do Android Chrome, paisagem: elemento de vídeo sem estilo estourou janela de visualização.", width = "800", height = "450"%}<figcaption> Captura de tela do Android Chrome, paisagem: o elemento de vídeo sem estilo ultrapassa a janela de visualização.</figcaption></figure>
 </div>
@@ -171,7 +171,7 @@ A orientação do dispositivo não é um problema para monitores de desktop ou l
 
 O Safari no iPhone faz um bom trabalho ao alternar entre a orientação retrato e paisagem:
 
-<div class="w-columns">
+<div class="switcher">
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt = "Captura de tela do vídeo reproduzindo no Safari no iPhone, retrato.", width = "338", height = "600" %}<figcaption> Captura de tela do vídeo sendo reproduzido no Safari no iPhone, retrato.</figcaption></figure><figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt = "Captura de tela do vídeo reproduzido no Safari no iPhone, paisagem.", width = "600", height = "338" %}<figcaption> Captura de tela do vídeo reproduzido no Safari no iPhone, paisagem.</figcaption></figure>
 </div>
 

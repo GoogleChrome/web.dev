@@ -246,14 +246,14 @@ new PerformanceObserver((entryList) => {
 Вместо того чтобы запоминать все эти тонкости, разработчики могут использовать для измерения CLS [JavaScript-библиотеку `web-vitals`](https://github.com/GoogleChrome/web-vitals), которая учитывает вышеупомянутые моменты:
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // Measure and log CLS in all situations
 // where it needs to be reported.
-getCLS(console.log);
+onCLS(console.log);
 ```
 
-Полный пример измерения CLS в JavaScript приводится в [исходном коде `getCLS()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts).
+Полный пример измерения CLS в JavaScript приводится в [исходном коде `onCLS()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts).
 
 {% Aside %} В некоторых случаях (например, в iframe с перекрестным происхождением) невозможно измерить CLS в JavaScript. См. подробности в разделе [«Ограничения»](https://github.com/GoogleChrome/web-vitals#limitations) библиотеки `web-vitals`. {% endAside %}
 

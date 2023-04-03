@@ -78,11 +78,10 @@ Your home page and all additional pages should each have a unique title. The con
 
 ### Viewport metadata
 
-The other meta tag that should be considered essential is the [viewport](/learn/design/intro/#a-meta-element-for-viewport) meta tag, which helps site responsiveness, enabling content to render well by default, no matter the viewport width. While the [viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) has been around since June 2007, when the first iPhone came out, it's only recently been [documented in a specification](https://drafts.csswg.org/css-device-adapt/#viewport-meta).  As it enables controlling a viewport's size and scale, and prevents the site's content from being sized down to fit a 960px site onto a 320px screen, it is definitely recommended.
+The other meta tag that should be considered essential is the [viewport](/learn/design/intro/#a-meta-element-for-viewport) meta tag, which helps site responsiveness, enabling content to render well by default, no matter the viewport width. While the [viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) has been around since June 2007, when the first iPhone came out, it's only recently been [documented in a specification](https://drafts.csswg.org/css-viewport/#viewport-meta).  As it enables controlling a viewport's size and scale, and prevents the site's content from being sized down to fit a 960px site onto a 320px screen, it is definitely recommended.
 
 ```html
 <meta name="viewport" content="width=device-width" />
-
 ```
 
 The preceding code means "make the site responsive, starting by making the width of the content the width of the screen". In addition to `width`, you can set zoom and scalability, but they both default to accessible values. If you want to be explicit, include:
@@ -104,7 +103,7 @@ So far, the outline for our HTML file is:
     <meta name="viewport" content="width=device-width" />
   </head>
   <body>
-    
+
   </body>
 </html>
 ```
@@ -121,7 +120,7 @@ The `<head>` is where you include styles for your HTML. There is a [learning pat
 
 There are three ways to include CSS: `<link>`, `<style>`, and the `style` attribute.
 
-The main two ways to include styles in your HTML file are by including an external resource using a `<link>` element with the `rel` attribute set to `stylesheet`, or including CSS direction in the head of your document within opening and closing `<style>` tags.
+The main two ways to include styles in your HTML file are by including an external resource using a `<link>` element with the `rel` attribute set to `stylesheet`, or including CSS directly in the head of your document within opening and closing `<style>` tags.
 
 The `<link>` tag is the preferred method of including stylesheets. Linking a single or a few external style sheets is good for both developer experience and site performance: you get to maintain CSS in one spot instead of it being sprinkled everywhere, and browsers can cache the external file, meaning it doesn't have to be downloaded again with every page navigation.
 
@@ -133,9 +132,10 @@ If you want your external style sheet styles to be within a cascade layer but yo
 
 ```html
 <style>
-  @import styles.css layer(firstLayer);
+  @import "styles.css" layer(firstLayer);
 </style>
 ```
+
 When using `@import` to import style sheets into your document, optionally into cascade layers, the `@import` statements must be the first statements in your `<style>` or linked stylesheet, outside of the character set declaration.
 
 While cascade layers are still fairly new and you might not spot the `@import` in a head `<style>`, you will often see custom properties declared in a head style block:
@@ -255,6 +255,7 @@ To include MLW's JavaScript in an external file, you could write:
 ```html
 <script src="js/switch.js" defer></script>
 ```
+
 Adding the [`defer`](https://developer.mozilla.org/docs/Learn/JavaScript/First_steps/What_is_JavaScript#script_loading_strategies) attribute defers the execution of the script until after everything is rendered, preventing the script from harming performance. The `async` and `defer` attributes are only valid on external scripts.
 
 ### Base
@@ -291,7 +292,7 @@ The code now looks like this:
     <link rel="canonical" href="https://www.machinelearning.com" />
   </head>
   <body>
-    
+
     <!-- <script defer src="scripts/lightswitch.js"></script>-->
   </body>
 </html>

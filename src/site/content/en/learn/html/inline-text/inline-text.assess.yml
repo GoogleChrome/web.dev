@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of inline text.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: Which element should be used to display a code sample?
+    options:
+      - content: "`<code>`"
+        rationale: "Correct!"
+      - content: "`<data>`"
+        rationale: "Try again."
+      - content: "`<kbd>`"
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: What is the `<ruby>` element used for?
+    options:
+      - content: "To contain decorative elements."
+        rationale: "Try again."
+      - content: "For annotations used in some languages."
+        rationale: "Correct!"
+      - content: "To highlight the contents of the element."
+        rationale: "Try again."

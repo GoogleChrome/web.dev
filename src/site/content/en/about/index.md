@@ -1,5 +1,5 @@
 ---
-layout: 'about-next'
+layout: 'about'
 title: 'About web.dev'
 banner:
   eyebrow: 'About web.dev'

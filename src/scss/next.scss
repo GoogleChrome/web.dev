@@ -733,6 +733,7 @@ video,
 @import 'blocks/carousel';
 @import 'blocks/compare';
 @import 'blocks/counter';
+@import 'blocks/devrel-ribbon';
 @import 'blocks/ellipsis';
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
@@ -750,10 +751,10 @@ video,
 @import 'blocks/pill';
 @import 'blocks/preview-pagination';
 @import 'blocks/prose';
-@import 'blocks/ribbon';
 @import 'blocks/site-footer';
 @import 'blocks/site-header';
 @import 'blocks/skip-link';
+@import 'blocks/spinner';
 @import 'blocks/stack-nav';
 @import 'blocks/stats';
 @import 'blocks/status-list';
@@ -762,6 +763,8 @@ video,
 @import 'blocks/toc';
 @import 'blocks/toggle-switch';
 @import 'blocks/tooltip';
+@import 'blocks/widget';
+
 
 /// WEB COMPONENTS
 @import 'web-components/web-assessment';
@@ -800,22 +803,8 @@ video,
 @import 'pages/pattern';
 @import 'pages/spaces';
 
-// Temporary rollout patches
-@import 'rollout';
-
 // Import unresolved states for lit-elements
 @import 'unresolved';
-
-/// LEGACY EXTENSIONS
-/// These elements are everywhere and to replace them site-wide would be
-/// a massive project, so they use @extend to pick up new styles
-.w-visually-hidden {
-  @extend .visually-hidden;
-}
-
-.w-columns {
-  @extend .switcher;
-}
 
 // Render gorko utilities
 @include generate-utility-classes();

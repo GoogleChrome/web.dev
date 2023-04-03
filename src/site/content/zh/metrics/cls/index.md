@@ -257,14 +257,14 @@ new PerformanceObserver((entryList) => {
 开发者不必记住所有这些情况并独自应付，而是可以使用[`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)来测量 CLS，库会自行处理上述所有情况：
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // 在所有需要汇报 CLS 的情况下
 // 对其进行测量和记录。
-getCLS(console.log);
+onCLS(console.log);
 ```
 
-您可以参考[`getCLS)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)，了解如何在 JavaScript 中测量 CLS 的完整示例。
+您可以参考[`onCLS)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts)，了解如何在 JavaScript 中测量 CLS 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），CLS 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 

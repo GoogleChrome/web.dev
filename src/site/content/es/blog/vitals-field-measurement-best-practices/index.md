@@ -37,7 +37,7 @@ Para los pasos 1 y 3, puede consultar la documentación de su herramienta de an�
 El siguiente ejemplo de código muestra lo fácil que puede ser realizar un seguimiento de estas métricas en el código y enviarlas a un servicio de análisis.
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics({name, value, id}) {
   const body = JSON.stringify({name, value, id});
@@ -46,9 +46,9 @@ function sendToAnalytics({name, value, id}) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 ## Asegúrese de que puede reportar una distribución

@@ -19,11 +19,13 @@ These often have a pulsing animation to subtly let you know that the information
 and should be interacted with.
 How do you do this with CSS though?
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRXGeJ',
   height: 300
 } %}
+</figure>
 
 In CSS, you can make this type of animation using CSS animations,
  which allow you to set an animation sequence, using keyframes.
@@ -120,12 +122,14 @@ This means you have 2 positions inside your keyframes rule to represent the chan
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRXGeJ',
   tab: 'css,result',
   height: 300
 } %}
+</figure>
 
 ## The `animation` properties
 {% BrowserCompat 'css.properties.animation' %}
@@ -167,11 +171,12 @@ There are several keywords available as presets in CSS, which are used as the va
 	animation-timing-function: ease-in-out;
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNeJbL'
 } %}
+</figure>
 
 Values appear to curve with easing functions because easing is calculated using a **bézier curve**,
 which is used to model velocity.
@@ -225,10 +230,12 @@ the steps finish at the end of your timeline.
 If it is set to `start`, the first step of your animation completes as soon as it starts,
 which means it ends one step earlier than `end`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjEpege'
 } %}
+</figure>
 
 ### `animation-iteration-count`
 {% BrowserCompat 'css.properties.animation-iteration-count' %}
@@ -246,20 +253,24 @@ which means that when the animation reaches the end of your timeline,
 it will stop at the end.
 The number can't be a negative number.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'oNBEaYB',
   tab: 'css,result'
 } %}
+</figure>
 
 You can use the `infinite` keyword which will loop your animation,
 which is how the "pulser" demo from the start of this lesson works.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRXGeJ',
   tab: 'css,result'
 } %}
+</figure>
 
 ### `animation-direction`
 {% BrowserCompat 'css.properties.animation-direction' %}
@@ -278,10 +289,12 @@ You can set which direction the timeline runs over your keyframes with
 - `alternate`: for each animation iteration, the timeline will run forwards or backwards in sequence.
 - `alternate-reverse`: the reverse of `alternate`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjWPqMv'
 } %}
+</figure>
 
 ### `animation-delay`
 {% BrowserCompat 'css.properties.animation-delay' %}
@@ -300,10 +313,12 @@ Unlike the `animation-duration` property, you *can* define this as a negative va
 If you set a negative value, the timeline in your `@keyframes` will start at that point.
 For example, if your animation is 10 seconds long and you set `animation-delay` to `-5s`, it will start from half-way along your timeline.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGqbyPw'
 } %}
+</figure>
 
 ### `animation-play-state`
 {% BrowserCompat 'css.properties.animation-play-state' %}
@@ -318,11 +333,13 @@ The [animation-play-state](https://developer.mozilla.org/docs/Web/CSS/animation-
 property allows you to play and pause the animation.
 The default value is `running` and if you set it to `paused`, it will pause the animation.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJQZyV',
   height: 400
 } %}
+</figure>
 
 ### `animation-fill-mode`
 {% BrowserCompat 'css.properties.animation-fill-mode' %}
@@ -336,10 +353,12 @@ Other options are:
 - `backwards`: The first keyframe will persist, based on the animation direction.
 - `both`: follows the rules for both `forwards` and `backwards`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNyBEVK'
 } %}
+</figure>
 
 ### The `animation` shorthand
 
@@ -384,10 +403,11 @@ but rather, a preference to reduce animations—
 You can learn more about this preference and overall performance with
 [this animation guide](/animations/).
 
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGqbPwq'
 } %}
+</figure>
 
 {% Assessment 'animations' %}

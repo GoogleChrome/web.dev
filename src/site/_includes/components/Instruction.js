@@ -66,9 +66,7 @@ module.exports = function (type, listStyle = 'ul') {
     // prettier-ignore
     case 'console':
       instruction = html`
-        ${bullet}Click **Tools**.
-        ${bullet}Click **Logs**.
-        ${bullet}Click **Console**.
+        ${bullet}Click **Terminal** (note: if the Terminal button does not show you may need to use the Fullscreen option).
       `;
       break;
 

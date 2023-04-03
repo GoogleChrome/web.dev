@@ -16,6 +16,7 @@ Behind every CSS box is a specialized layer called the background layer. CSS pro
 
 Background layers are furthest from the user, rendered behind the contents of a box starting from its `padding-box` region. This enables the background layer to not overlap with borders at all.
 
+<figure>
 {% Codepen {
   user: 'argyleink',
   id: 'BaLedvd',
@@ -23,6 +24,7 @@ Background layers are furthest from the user, rendered behind the contents of a 
   height: 700,
   tab: 'result'
 } %}
+</figure>
 
 ## Background color
 
@@ -30,6 +32,7 @@ Background layers are furthest from the user, rendered behind the contents of a 
 
 One of the simplest effects you can apply to a background layer is setting the [color](/learn/css/color/). The initial value of `background-color` is `transparent`, which allows the contents of a parent to be visible. A valid color set on a background layer sits behind other things painted on that element.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRvqQZZ',
@@ -37,6 +40,7 @@ One of the simplest effects you can apply to a background layer is setting the [
   height: 850,
   tab: 'result'
 } %}
+</figure>
 
 ## Background images
 
@@ -49,6 +53,7 @@ On top of the `background-color` layer, you can add a background image, using th
 
 ### Setting a background-image with the `url` CSS function
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjJNNro',
@@ -56,6 +61,7 @@ On top of the `background-color` layer, you can add a background image, using th
   height: 525,
   tab: 'result'
 } %}
+</figure>
 
 ### CSS gradient backgrounds
 
@@ -65,6 +71,7 @@ Regardless of which gradient function is used, the resulting image is [intrinsic
 
 Demo showing example of applying a background-image using gradient functions:
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'oNeLZWa',
@@ -72,6 +79,7 @@ Demo showing example of applying a background-image using gradient functions:
   height: 600,
   tab: 'result'
 } %}
+</figure>
 
 ## Repeating background images
 
@@ -95,6 +103,7 @@ The value `repeat-x` repeats an image only horizontally; this is equivalent to `
 
 The following demo demonstrates these capabilities of the `background-repeat` property:
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKvMmjb',
@@ -102,6 +111,7 @@ The following demo demonstrates these capabilities of the `background-repeat` pr
   height: 1100,
   tab: 'result'
 } %}
+</figure>
 
 ## Background position
 
@@ -179,6 +189,7 @@ You cannot use keywords associated with the same axis simultaneously.
 
 The `background-position` property also has a convenient one value shorthand; the omitted value resolves to `50%`.  Here's an example that demonstrates this using the keywords the `background-position` property accepts:
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzxWQqx',
@@ -186,6 +197,7 @@ The `background-position` property also has a convenient one value shorthand; th
   height: 950,
   tab: 'result'
 } %}
+</figure>
 
 In addition to its default two parameter form and one parameter form; the `background-position` property also accepts up to four parameters;
 
@@ -260,12 +272,14 @@ When four parameters are used, the two keywords are paired with two values corre
 
 The following demo demonstrates this behavior:
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'porbwrM',
   theme: 'dark',
   tab: 'result'
 } %}
+</figure>
 
 Here are more examples of using the `background-position` property using a mix of CSS and keyword values:
 
@@ -294,6 +308,7 @@ The following demo demonstrates these keywords in action:
 
 Demo demonstrating applying these keywords to `background-size`:
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzxWQYY',
@@ -301,6 +316,7 @@ Demo demonstrating applying these keywords to `background-size`:
   height: 700,
   tab: 'result'
 } %}
+</figure>
 
 ## Background attachment
 
@@ -312,6 +328,7 @@ It accepts 3 keywords: `scroll`, `fixed`, and `local`.
 
 The default behavior of the `background-attachment` property is the initial value of `scroll`. When more space is needed, the images move with that space within the background layer determined by the bounds of the CSS box.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdwwzOe',
@@ -319,11 +336,13 @@ The default behavior of the `background-attachment` property is the initial valu
   height: 1000,
   tab: 'result'
 } %}
+</figure>
 
 Using the value `fixed` fixes the position of background images to the viewport.
 
 Once the space of the background layer images originally takes up needs to be scrolled (or rendered) offscreen, images within the background layer stay fixed in the original position the background layer enabled them to be until the entire layer is scrolled off screen by the viewport.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWoozvN',
@@ -331,9 +350,11 @@ Once the space of the background layer images originally takes up needs to be sc
   height: 1000,
   tab: 'result'
 } %}
+</figure>
 
 The `local` keyword enables the position of background images to be fixed relative to the element's contents. Background images now move along the space they occupy as that space renders inside and outside the bounds of the CSS box (usually due to scrolling, 2D, or 3D transformations).
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNExZmK',
@@ -341,6 +362,7 @@ The `local` keyword enables the position of background images to be fixed relati
   height: 1000,
   tab: 'result'
 } %}
+</figure>
 
 ## Background origin
 
@@ -350,6 +372,7 @@ The `background-origin` property enables you to modify the area of backgrounds a
 
 Try these options out using the following demo:
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExvyXeZ',
@@ -357,6 +380,7 @@ Try these options out using the following demo:
   height: 650,
   tab: 'result'
 } %}
+</figure>
 
 ## Background clip
 
@@ -366,6 +390,7 @@ The `background-clip` property controls what is visually seen from a background 
 
 Like `background-origin` the regions that can be specified are `border-box`, `padding-box`, and `content-box` corresponding to where a CSS background layer can be rendered. When these keywords are used, any rendering of the background further than the region specified will be cropped or clipped.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYJKZba',
@@ -373,6 +398,7 @@ Like `background-origin` the regions that can be specified are `border-box`, `pa
   height: 650,
   tab: 'result'
 } %}
+</figure>
 
 The `background-clip` property also accepts a `text` keyword that clips the background to be no further than the text within the content box.  For this effect to be evident in the actual text within a CSS box, the text must be partially or completely transparent.
 
@@ -380,6 +406,7 @@ A relatively new property, at the time of this writing, Chrome and most browsers
 
 {% BrowserCompat 'css.properties.background-clip' %}
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'qBjjweL',
@@ -387,6 +414,7 @@ A relatively new property, at the time of this writing, Chrome and most browsers
   height: 650,
   tab: 'result,css'
 } %}
+</figure>
 
 {% Aside 'gotchas' %}
 It should be also noted this property is not compatible with `background-clip: text` being simultaneously set on a CSS box.
@@ -417,7 +445,7 @@ background-image: url("https://assets.codepen.io/7518/pngaaa.com-1272986.png"),
   background-position: 50% 50%, 10% 50%, 0% 0%;
   background-origin: padding-box, border-box, content-box;
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'dyRzQBz',
@@ -425,6 +453,7 @@ background-image: url("https://assets.codepen.io/7518/pngaaa.com-1272986.png"),
   height: 650,
   tab: 'css'
 } %}
+</figure>
 
 ## The background shorthand
 

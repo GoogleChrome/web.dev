@@ -1,8 +1,6 @@
 /// SITE FOOTER
 /// The main, global footer that is on each page
 
-@import '../../styles/tools/mixins';
-
 .site-footer {
   padding: $global-gutter;
   border-block-start: 1px solid get-utility-value('color', 'stroke');
@@ -37,7 +35,7 @@
   grid-template-columns: repeat(1, 1fr);
   --auto-grid-placement: auto-fit;
 
-  @include bp(md) {
+  @media (min-width: 865px) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -45,7 +43,7 @@
 .site-footer__primary-nav-links {
   --auto-grid-placement: auto-fit;
 
-  @include bp(md) {
+  @media (min-width: 865px) {
     grid-template-columns: repeat(3, 1fr);
   }
 

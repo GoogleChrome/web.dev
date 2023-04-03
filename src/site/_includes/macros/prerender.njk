@@ -3,7 +3,18 @@
 #}
 {% macro prerender(url) %}
 {% if url and not url.startsWith('http://') and not url.startsWith('https://') %}
-{% set apiScripts %}{"prerender":[{"source":"list","urls":["{{ url }}"]}]}{% endset %}
-<script type="speculationrules">{{ apiScripts | cspHash | safe }}</script>
+{% set speculationRules %}
+{
+  "prerender":[
+    {
+      "source":"list",
+      "urls":[
+        "{{ url }}"
+      ]
+    }
+  ]
+}
+{% endset %}
+<script type="speculationRules">{{ speculationRules | minifyJSON | cspHash | safe }}</script>
 {% endif %}
 {% endmacro %}

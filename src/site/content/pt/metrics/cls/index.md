@@ -246,14 +246,14 @@ Para lidar com esses casos, a CLS deve ser relatada sempre que uma página entra
 Em vez de memorizar e lidar com todos esses casos você mesmo, os desenvolvedores podem usar a [biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals) para medir a CLS, que é responsável por tudo o que foi mencionado acima:
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // Measure and log CLS in all situations
 // where it needs to be reported.
-getCLS(console.log);
+onCLS(console.log);
 ```
 
-Para um exemplo completo de como medir a CLS em JavaScript, consulte [o código-fonte de `getCLS()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts).
+Para um exemplo completo de como medir a CLS em JavaScript, consulte [o código-fonte de `onCLS()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts).
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a CLS em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 

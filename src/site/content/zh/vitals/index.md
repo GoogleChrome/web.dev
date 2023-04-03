@@ -91,7 +91,7 @@ Chrome 用户体验报告提供的数据带来了一种快速评估网站性能�
 通过使用[web-vitals](https://github.com/GoogleChrome/web-vitals)库，测量每项指标就像调用单个函数一样简单（有关完整[用法](https://github.com/GoogleChrome/web-vitals#usage)和[API](https://github.com/GoogleChrome/web-vitals#api)详情，请参阅文档）：
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 当您将网站配置为使用[web-vitals](https://github.com/GoogleChrome/web-vitals)库来测量您的核心 Web 指标数据并将其发送到分析端后，下一步是对数据进行汇总和报告，从而查看您的页面是否在至少 75% 的页面访问中都满足建议阈值。

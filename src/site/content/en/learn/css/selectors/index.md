@@ -36,11 +36,13 @@ CSS provides you with a lot of options to select elements and apply rules to the
 ranging from very simple to very complex,
 to help solve situations like this.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'XWprGYz',
   height: 250
 } %}
+</figure>
 
 ## The parts of a CSS rule
 
@@ -50,7 +52,7 @@ A CSS rule is a block of code,
 containing one or more selectors and one or more declarations.
 
 <figure>
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="An image of a CSS rule with the selector .my-css-rule", width="800", height="427" %}
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="An image of a CSS rule with the selector .my-css-rule.", width="800", height="427" %}
 </figure>
 
 In this CSS rule, the **selector** is `.my-css-rule`
@@ -235,7 +237,7 @@ you have access to operators that match portions of strings inside attribute val
 ```
 
 <figure>
-  {% Codepen {
+{% Codepen {
     user: 'web-dot-dev',
     id: 'BapBbOy'
   } %}
@@ -407,10 +409,12 @@ have `<div>` child elements.
 You can look for an element that immediately follows another element
 by using a `+` character in your selector.
 
+<figure>
 {% Codepen {
     user: 'web-dot-dev',
     id: 'JjEPzwB'
 } %}
+</figure>
 
 To add space between stacked elements,
 use the next sibling combinator to add space
@@ -465,19 +469,23 @@ The space is added to each **next sibling**,
 but if one of those elements also has **next sibling elements** as children,
 it can result in undesirable, extra spacing.
 
+<figure>
 {% Codepen {
     user: 'web-dot-dev',
     id: 'ExZYMJL'
 } %}
+</figure>
 
 To alleviate this problem,
 change the **next sibling selector** to incorporate a child combinator: `> * + *`.
 The rule will now **only** apply to direct children of `.top`.
 
+<figure>
 {% Codepen {
     user: 'web-dot-dev',
     id: 'dyNbrEr'
 } %}
+</figure>
 
 ### Compound selectors
 

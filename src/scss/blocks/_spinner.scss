@@ -1,0 +1,22 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/spinner
+.spinner {
+  fill: none;
+  animation: cubic-bezier(0.25, 0, 0.6, 1) infinite both 1.5s spinner__spin;
+  stroke: var(--color, black);
+  stroke-width: 0.5px;
+}
+
+@keyframes spinner__spin {
+  0% {
+    transform: rotate(0);
+    stroke-dasharray: 1px, 15px;
+    stroke-dashoffset: 1px;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    stroke-dasharray: 15px, 15px;
+    stroke-dashoffset: -15px;
+  }
+}

@@ -246,14 +246,14 @@ new PerformanceObserver((entryList) => {
 개발자는 이러한 모든 경우를 직접 암기하고 고심하지 않아도, [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)를 사용해 위에서 언급한 모든 것을 처리하는 CLS를 측정할 수 있습니다.
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // Measure and log CLS in all situations
 // where it needs to be reported.
-getCLS(console.log);
+onCLS(console.log);
 ```
 
-JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`getCLS)` 의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/getCLS.ts)를 참조하세요.
+JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`onCLS)` 의 소스 코드](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts)를 참조하세요.
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 CLS를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 

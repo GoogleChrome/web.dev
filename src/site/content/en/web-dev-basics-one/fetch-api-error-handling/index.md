@@ -143,7 +143,7 @@ At a later stage, while you diagnose the error that you logged, you can write a 
 
 ### When the network status code represents an error
 
-This code example makes a request to an HTTP testing service that always responds with the HTTP status code [`429 Too Many Requests`](https://developer.mozilla.org/docs/Web/HTTP/Status/429). Interestingly, the response does not reach the `catch` block. A 404 status, amongst certain other status codes, does return [a network error](https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful) but instead resolves normally.
+This code example makes a request to an HTTP testing service that always responds with the HTTP status code [`429 Too Many Requests`](https://developer.mozilla.org/docs/Web/HTTP/Status/429). Interestingly, the response does not reach the `catch` block. A 404 status, amongst certain other status codes, does not return [a network error](https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful) but instead resolves normally.
 
 To check that the HTTP status code was successful, you can use any of the following options:
 

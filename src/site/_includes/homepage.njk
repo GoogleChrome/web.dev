@@ -1,0 +1,137 @@
+---
+layout: default
+pageScripts:
+  - '/js/home.js'
+---
+{% from 'macros/icon.njk' import icon with context %}
+
+<div class="homepage">
+  {# Hero starts #}
+  <header class="hero bg-core-bg">
+    <div class="wrapper">
+      <div class="hero__columns switcher">
+        <div>
+          <span aria-hidden="true" class="hero__eyebrow">{{ intro.eyebrow }}</span>
+          <div class="hero__content flow">
+            <img fetchpriority="high" src="{{ intro.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ intro.imageWidth }}" height="{{ intro.imageHeight }}" />
+            <h1 class="hero__title">{{ intro.title }}</h1>
+            {{ intro.summary | md | safe }}
+            <a class="button" data-type="primary" href="{{ intro.buttonUrl }}">{{ intro.buttonText }}</a>
+          </div>
+        </div>
+        <div class="flow">
+          <a class="feature-card" href="{{ featuredCard.url }}" data-theme="{{ featuredCard.theme }}" data-treatment="illustration">
+            <span class="feature-card__eyebrow">{{ featuredCard.eyebrow }}</span>
+            <h3 class="feature-card__title">{{ featuredCard.title | safe }}</h3>
+            {% if featuredCard.video %}
+              <video autoplay loop muted playsinline
+                class="feature-card__background"
+                aria-label="{{ featuredCard.alt }}">
+                <source src="{{ featuredCard.video }}" type="video/mp4;">
+              </video>
+            {% elif featuredCard.background %}
+            {% Img src=featuredCard.background, alt=featuredCard.alt, width="800", height="434", class="feature-card__background", fetchpriority="high" %}
+            {% endif %}
+          </a>
+
+          {% include "partials/picked-case-study.njk" %}
+        </div>
+      </div>
+    </div>
+  </header>
+  {# Hero ends #}
+
+  {# Web Platform News start #}
+  <div class="homepage__section bg-mid-bg">
+    <div class="wrapper">
+      <div class="headline all-center flow">
+        <h2 class="headline__title">{{ platformNews.title }}</h2>
+        <p>{{ platformNews.subTitle }}</p>
+      </div>
+      <div class="homepage__news gap-top-size-2">
+      {% set cardCount = 0 %}
+      {% set pickedLeft = platformNews.pickedLeft %}
+      {% set pickedRight = platformNews.pickedRight %}
+      {% set items = [pickedLeft, pickedRight] %}
+
+      {% for item in items %}
+        {% if item.url %}
+          {% set post = item.url | findByUrl %}
+        {% endif %}
+
+        {% if post.data.lang === 'en' %}
+          {% if cardCount <= 1 %}
+            {% if post.data.hero %}
+              <article class="card">
+                <a href="{{ post.url }}" aria-hidden="true">
+                  {% Img src=item.thumbnail or post.data.thumbnail or post.data.hero, alt=post.data.alt or '', width="570", height="330", class="card__hero" %}
+                </a>
+                <div class="card__content flow">
+                  <h3 class="card__heading text-size-3">
+                    <a href="{{ post.url }}">{{ item.title or post.data.title }}</a>
+                  </h3>
+                  <p>{{ item.description or post.data.description }}</p>
+                </div>
+                <div class="card__tags cluster gap-top-size-1" aria-label="tags for this case study">
+                  {% for tagKey in post.data.tags or [] %}
+                    {% if tagKey in collections.tags %}
+                      {% set tag = collections.tags[tagKey] %}
+                      <a class="pill" href="{{ tag.url }}">{{ tag.overrideTitle or tag.title | i18n(locale) }}</a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </article>
+              {% set cardCount = cardCount + 1 %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+  {# Web Platform News end #}
+
+  {# Themes start #}
+  <div class="wrapper">
+    <div class="pad-block-size-1 repel">
+      <h2 id="themes" class="text-size-3"> Themes </h2>
+
+      {% set filterItems = [] %}
+      {% for theme in themes %}
+        {% set filterItems = (filterItems.push({title: theme.category, id: theme.category | slug }), filterItems) %}
+      {% endfor %}
+      <web-learn-filter all="all" filters="{{filterItems | dump}}"></web-learn-filter>
+    </div>
+  </div>
+
+  <div id="learn__collections">
+  {% for theme in themes %}
+    <div class="homepage__collection" id="{{ theme.category | slug }}">
+      <div class="region wrapper">
+        <h5> {{ theme.category }} </h5>
+          <div class="collection__layout" aria-label="topics">
+            {% set cards = theme.cards %}
+            {% include 'partials/cards-collection.njk' %}
+          </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+  {# Themes end #}
+
+  {# Chrome developers start #}
+  <section class="homepage__developers region bg-mid-bg">
+    <div class="wrapper flow all-center">
+      <div> {% include "icons/chrome.svg" %} </div>
+
+      <h1 class="headline__title">{{ developers.title }}</h1>
+      <p class="color-mid-text">{{ developers.summary | safe }}</p>
+      <div>
+        <a class="button gap-top-size-1" data-type="primary" href="{{ developers.primaryButtonUrl }}">{{ developers.primaryButtonText }}</a>
+      </div>
+    </div>
+  </section>
+  {# Chrome developers end #}
+
+  {% include 'partials/subscribe.njk' %}
+</div>

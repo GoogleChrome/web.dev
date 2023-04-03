@@ -68,7 +68,7 @@ class LanguageSelect extends BaseStateElement {
     );
     return html`
       <div class="w-display-flex">
-        <label class="w-visually-hidden" for="preferred-language">
+        <label class="visually-hidden" for="preferred-language">
           Choose language
         </label>
         <select id="preferred-language" @change="${this.onChange}">

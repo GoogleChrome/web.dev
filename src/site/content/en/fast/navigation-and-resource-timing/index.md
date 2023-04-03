@@ -14,6 +14,7 @@ tags:
   - network
   - blog
 date: 2021-10-08
+updated: 2023-02-20
 ---
 
 If you've used connection throttling in the network panel in a browser's developer tools (or [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) in Chrome) to assess loading performance, you know how convenient those tools are for performance tuning. You can quickly measure the impact of performance optimizations with a consistent and stable baseline connection speed. The only problem is that this is synthetic testing, which yields [lab data](/lab-and-field-data-differences/#lab-data), not [field data](/lab-and-field-data-differences/#field-data).
@@ -179,14 +180,15 @@ const perfObserver = new PerformanceObserver((observedEntries) => {
   }
 });
 
-// Run the observer:
+// Run the observer for Navigation Timing entries:
 perfObserver.observe({
-  // Polls for Navigation Timing and Resource Timing entries
-  // (but can poll for other entry types as well):
-  entryTypes: [
-    'navigation',
-    'resource'
-  ],
+  type: 'navigation',
+  buffered: true
+});
+
+// Run the observer for Resource Timing entries:
+perfObserver.observe({
+  type: 'resource',
   buffered: true
 });
 ```

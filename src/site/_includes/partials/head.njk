@@ -1,23 +1,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% if CSS_ORIGIN === 'next' %}
-  {% include "partials/theme-script.njk" %}
-  {# hashForProd() will cache bust the css in dev with a random string. #}
-  <link rel="stylesheet" href="{{ helpers.hashForProd('/css/next.css') }}">
-  <link rel="stylesheet" href="{{ helpers.hashForProd('/css/legacy-rollout.css') }}">
-  <link rel="preload" as="font" crossorigin="anonymous" href="/fonts/material-icons/regular.woff2">
-{% else %}
-  {% if process.env.ELEVENTY_ENV === 'prod' %}
-    {# CSS will be injected by purify-css transform. #}
-    <!-- __PURGECSS_INJECT -->
-  {% else %}
-    {# hashForProd() will cache bust the css in dev with a random string. #}
-    <link rel="stylesheet" href="{{ helpers.hashForProd('/css/main.css') }}">
-  {% endif %}
-
-  <link rel="preload" as="font" crossorigin="anonymous" href="/fonts/material-icons/regular.woff2">
-{% endif %}
+{% include "partials/theme-script.njk" %}
+<link rel="stylesheet" href="{{ helpers.hashForProd('/css/next.css') }}">
+<link rel="preload" as="font" crossorigin="anonymous" href="/fonts/material-icons/regular.woff2">
 
 <link rel="preload" as="font" crossorigin="anonymous" href="/fonts/google-sans/regular/latin.woff2">
 <link rel="preload" as="font" crossorigin="anonymous" href="/fonts/google-sans/bold/latin.woff2">
@@ -45,4 +31,40 @@
 {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
 {% include 'partials/script-loader.njk' %}
 
+{# Private Aggregation API testing script #}
+{# The testing will run until mid-April 2023 #}
+{% set paaScript %}
+  loadScript('https://shared-storage-demo-content-producer.web.app/paa/scripts/private-aggregation-test.js', null);
+{% endset %}
+<script>{{ paaScript | minifyJs | cspHash | safe }}</script>
+
 {% include 'partials/analytics.njk' %}
+
+{# Dogfood document speculation rules origin trial #}
+<!-- web.dev origin trial token - valid until 22 Mar 2023 -->
+<meta http-equiv="origin-trial" content="Ah3H7DwyoUUsaRQdSySa1hMCS/JFQn/VVmrQODVDnRJGH9mU/uG6G0Uhh+4atnFGAoiEwDq+r9TzCyBi7f7wRw4AAABfeyJvcmlnaW4iOiJodHRwczovL3dlYi5kZXY6NDQzIiwiZmVhdHVyZSI6IlNwZWN1bGF0aW9uUnVsZXNQcmVmZXRjaEZ1dHVyZSIsImV4cGlyeSI6MTY5NDEzMTE5OX0=">
+{# Exclude the /patterns/ section as a control #}
+{% set speculationRules %}
+{
+  "prefetch": [
+   {
+      "source": "document",
+      "where": {
+        "and": [
+          {
+            "href_matches": "/*\\?*", "relative_to": "document"
+          },
+          {
+            "not": {
+              "href_matches": "/patterns/*\\?*",
+              "relative_to": "document"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+{% endset %}
+<script type="speculationrules">{{ speculationRules | minifyJSON | cspHash | safe }}</script>
+

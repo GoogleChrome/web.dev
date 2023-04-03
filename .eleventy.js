@@ -48,16 +48,12 @@ const Assessment = require('./src/site/_includes/components/Assessment');
 const Author = require('./src/site/_includes/components/Author');
 const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
 const Banner = require('./src/site/_includes/components/Banner');
-const Breadcrumbs = require('./src/site/_includes/components/Breadcrumbs');
 const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
-const Hero = require('./src/site/_includes/components/Hero');
 const includeRaw = require('./src/site/_includes/components/includeRaw');
 const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
-const PathCard = require('./src/site/_includes/components/PathCard');
 const SignPosts = require('./src/site/_includes/components/SignPosts');
 const StackOverflow = require('./src/site/_includes/components/StackOverflow');
-const Tooltip = require('./src/site/_includes/components/Tooltip');
 const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
 
 // Collections
@@ -73,7 +69,7 @@ const {getDefaultUrl, getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
 const pathSlug = require('./src/site/_filters/path-slug');
 const algoliaIndexable = require('./src/site/_filters/algolia-indexable');
-const algoliaItem = require('./src/site/_filters/algolia-item');
+const {algoliaItem} = require('./src/site/_filters/algolia-item');
 const containsTag = require('./src/site/_filters/contains-tag');
 const expandAuthors = require('./src/site/_filters/expand-authors');
 const githubLink = require('./src/site/_filters/github-link');
@@ -92,6 +88,7 @@ const stripBlog = require('./src/site/_filters/strip-blog');
 const getPaths = require('./src/site/_filters/get-paths');
 const navigation = require('./src/site/_filters/navigation');
 const {minifyJs} = require('./src/site/_filters/minify-js');
+const {minifyJSON} = require('./src/site/_filters/minify-json');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
 const {siteRender} = require('./src/site/_filters/site-render');
 const {
@@ -99,10 +96,10 @@ const {
   filterInUpcoming,
   filterOutUpcoming,
 } = require('./src/site/_filters/is-upcoming');
+const {latestPostByTags} = require('./src/site/_filters/latest-post-by-tags');
 const {calendarLink} = require('./src/site/_filters/calendar-link');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
-const {purifyCss} = require('./src/site/_transforms/purify-css');
 const {minifyHtml} = require('./src/site/_transforms/minify-html');
 
 // Shared dependencies between web.dev and developer.chrome.com
@@ -150,20 +147,6 @@ module.exports = function (config) {
     return memoize(collection.getAll());
   });
 
-  // Filters through all collection items and finds content that has
-  // CSS_ORIGIN set to 'next'. This allows shortcodes to determine if we
-  // are in a design system context or a legacy context
-  config.addCollection('designSystemGlobals', (collection) => {
-    global.__designSystemPaths = new Set(
-      collection
-        .getAll()
-        .filter(({data}) => data.CSS_ORIGIN === 'next')
-        .map(({filePathStem}) => filePathStem),
-    );
-
-    return global.__designSystemPaths;
-  });
-
   // ----------------------------------------------------------------------------
   // FILTERS
   // ----------------------------------------------------------------------------
@@ -196,10 +179,12 @@ module.exports = function (config) {
   config.addFilter('toc', toc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addNunjucksAsyncFilter('minifyJs', minifyJs);
+  config.addFilter('minifyJSON', minifyJSON);
   config.addFilter('cspHash', cspHash);
   config.addFilter('isUpcoming', isUpcoming);
   config.addFilter('filterInUpcoming', filterInUpcoming);
   config.addFilter('filterOutUpcoming', filterOutUpcoming);
+  config.addFilter('latestPostByTags', latestPostByTags);
   config.addFilter('calendarLink', calendarLink);
 
   // ----------------------------------------------------------------------------
@@ -211,7 +196,6 @@ module.exports = function (config) {
   config.addShortcode('AuthorsDate', AuthorsDate);
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
-  config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
@@ -221,17 +205,14 @@ module.exports = function (config) {
   config.addPairedShortcode('Details', Details);
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Glitch', Glitch);
-  config.addShortcode('Hero', Hero);
   config.addShortcode('IFrame', IFrame);
   config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
   config.addShortcode('LanguageList', LanguageList);
   config.addShortcode('Meta', Meta);
-  config.addShortcode('PathCard', PathCard);
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('StackOverflow', StackOverflow);
-  config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('Widget', Widget);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
@@ -246,7 +227,6 @@ module.exports = function (config) {
   }
 
   if (isProd || isStaging) {
-    config.addTransform('purifyCss', purifyCss);
     config.addTransform('minifyHtml', minifyHtml);
   }
 
@@ -297,7 +277,7 @@ module.exports = function (config) {
     }
   }
 
-  // Chrometober config
+  // Third party scripts and assets
   config.addPassthroughCopy({
     'src/site/content/en/third_party/': 'third_party',
   });
@@ -309,7 +289,7 @@ module.exports = function (config) {
       data: '../_data',
       includes: '../_includes',
     },
-    templateFormats: ['njk', 'md'],
+    templateFormats: ['njk', 'md', 'html'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
   };

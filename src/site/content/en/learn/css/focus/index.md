@@ -20,10 +20,12 @@ These are often referred to as skip links, or anchor links.
 When that link is activated by a keyboard, using the *tab* and *enter* keys,
 the main content container has a focus ring around it. Why is that?
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'poRWRjp'
 } %}
+</figure>
 
 This is because the `<main>` has a `tabindex="-1"` attribute value,
 which means it can be programmatically focused.
@@ -47,8 +49,11 @@ If an element receives focus and there is no visual indication,
 a user may lose track of what is in focus.
 This can create navigation issues and result in unwanted behaviour if,
 say, the wrong link is followed.
-You can
-[read more on focus and how to manage it in this guide](/focus/).
+
+{% Aside %}
+Learn more about the importance of focus for accessibility in [Learn Accessibility: Focus](/learn/accessibility/focus/), 
+and more information on how to manage focus in HTML in [Learn HTML: Focus](/learn/html/focus/).
+{% endAside%}
 
 ## How elements get focus
 
@@ -106,11 +111,12 @@ a:focus {
   outline: 2px solid slateblue;
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ZELXLMw'
 } %}
+</figure>
 
 The `outline` property could appear too close to the text of a link,
 but the `outline-offset` property can help with that,
@@ -118,10 +124,12 @@ as it adds extra visual `padding` without affecting the geometric size that the 
 A positive number value for `outline-offset` will push the outline outwards,
 a negative value will pull the outline inwards.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'xxgXgQx'
 } %}
+</figure>
 
 Currently in some browsers,
 if you have a `border-radius` set on your element and use `outline`,
@@ -133,10 +141,13 @@ but **this style will not show in Windows High Contrast Mode**.
 This is because Windows High Contrast Mode doesn't apply shadows,
 and mostly ignores background images to favor the user's preferred settings.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgogyM'
 } %}
+</figure>
+
 
 {% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/MqMoKpLJ2rF5RRkn5jEO.mp4" %}
 
@@ -144,10 +155,10 @@ and mostly ignores background images to favor the user's preferred settings.
 
 Creating a focus state that has contrast with an element's default state is incredibly important. The default browser styles do this already for you, but if you want to change this behaviour, remember the following:
 
-- Avoid using `outline: none` on an element that can receive keyboard focus
-- Avoid replacing `outline` styles with `box-shadow`
-as they don't show up in Windows High Contrast Mode
-- Only set a positive value for `tabindex` on an HTML element if you absolutely have to
-- Make sure the focus state is very clear vs the default state
+- Avoid using `outline: none` on an element that can receive keyboard focus.
+- Avoid replacing `outline` styles with `box-shadow`.
+as they don't show up in Windows High Contrast Mode.
+- Only set a positive value for `tabindex` on an HTML element if you absolutely have to.
+- Make sure the focus state is very clear vs the default state.
 
 {% Assessment 'focus' %}

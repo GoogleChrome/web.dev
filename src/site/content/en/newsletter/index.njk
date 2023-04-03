@@ -1,5 +1,5 @@
 ---
-layout: default-next
+layout: default
 title: Newsletter
 description: Stay up to date with the latest about web platform.
 date: 2020-03-13
@@ -7,8 +7,6 @@ eleventyComputed:
   noindex: "{{ paged.index > 0 }}"
 pageScripts:
   - '/js/newsletter.js'
-externalScripts:
-  - 'https://www.google.com/recaptcha/api.js'
 pagination:
   data: collections.newsletters
   size: 1
@@ -29,5 +27,5 @@ pagination:
   </header>
   {# Hero ends #}
 
-  {% include 'partials/paged-next.njk' %}
+  {% include 'partials/paged.njk' %}
 </div>

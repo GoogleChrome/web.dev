@@ -24,13 +24,13 @@ class SigninButton extends BaseStateElement {
     return html`
       <button
         @click=${action}
-        class="w-button w-button--secondary lh-signin-button gc-analytics-event"
+        class="button lh-signin-button gc-analytics-event"
+        data-type="secondary"
         data-category="web.dev"
         data-label="measure, big sign-in"
         data-action="click"
       >
         <svg
-          class="w-mr--sm"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 48 48"

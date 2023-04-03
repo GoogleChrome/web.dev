@@ -1,4 +1,4 @@
-<web-subscribe>
+<web-subscribe class="unresolved">
   <div class="wrapper">
     <div class="headline all-center flow">
       <h2 class="headline__title">{{ subscribeTitle | default('Developer Newsletter', false) }}</h2>
@@ -55,7 +55,17 @@
           <option selected value="en-US">en-US</option>
         </select>
       </div>
-      <div class="g-recaptcha all-center gap-top-size-1" data-sitekey="{{ site.recaptchaSiteKey }}" data-callback="recaptchaSuccess"></div>
+      <div
+        class="g-recaptcha captcha all-center gap-top-size-1"
+        data-sitekey="{{ site.recaptchaSiteKey }}"
+        data-callback="recaptchaSuccess"
+      >
+        <div class="captcha__placeholder">
+          <svg viewBox="0 0 6 6" class="spinner">
+            <circle cx="3" cy="3" r="2.5" />
+          </svg>
+        </div>
+      </div>
       <div class="gap-top-size-2">
         <div class="subscribe__error hidden-yes">
           {% Aside 'warning' %}
