@@ -1,22 +1,3 @@
-# This workflow will build and push a new container image to Alibaba Cloud Container Registry (ACR),
-# and then will deploy it to Alibaba Cloud Container Service for Kubernetes (ACK), when there is a push to the "main" branch.
-#
-# To use this workflow, you will need to complete the following set-up steps:
-#
-# 1. Create an ACR repository to store your container images.
-#    You can use ACR EE instance for more security and better performance.
-#    For instructions see https://www.alibabacloud.com/help/doc-detail/142168.htm
-#
-# 2. Create an ACK cluster to run your containerized application.
-#    You can use ACK Pro cluster for more security and better performance.
-#    For instructions see https://www.alibabacloud.com/help/doc-detail/95108.htm
-#
-# 3. Store your AccessKey pair in GitHub Actions secrets named `ACCESS_KEY_ID` and `ACCESS_KEY_SECRET`.
-#    For instructions on setting up secrets see: https://developer.github.com/actions/managing-workflows/storing-secrets/
-#
-# 4. Change the values for the REGION_ID, REGISTRY, NAMESPACE, IMAGE, ACK_CLUSTER_ID, and ACK_DEPLOYMENT_NAME.
-#
-
 name: Build and Deploy to ACK
 
 on:
