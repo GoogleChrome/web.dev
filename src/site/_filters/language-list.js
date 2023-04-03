@@ -34,14 +34,14 @@ const {
  * @return {String[][]} The list of supported languages for a specific post
  */
 
-const supportedlanguages = (post, lang) => {
+const supportedLanguages = (post, lang) => {
   const url = post.url;
   const languages = getTranslatedUrls(url).filter(
     (langHref) => langHref[0] !== lang,
   );
 
   // Exit early if there are no translations.
-  if (languages.length === 0) return;
+  if (languages.length === 0) return [];
 
   languages.map((langHref) => {
     langHref.push(languageNames[langHref[0]]);
@@ -66,4 +66,4 @@ const supportedlanguages = (post, lang) => {
   return languages;
 };
 
-module.exports = {supportedlanguages};
+module.exports = {supportedLanguages};

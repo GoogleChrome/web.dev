@@ -2,9 +2,7 @@
 
 {% if postPaths %}
   <div class="flow post-signpost">
-    {% set numberOfPaths = postPaths.length %}
-
-    {% if numberOfPaths !== 0 %}
+    {% if postPaths.length %}
       <span class="post-signpost__title">
         {{'i18n.post.appears_in' | i18n(locale)}}:
       </span>
@@ -14,7 +12,7 @@
 
         <a href={{postHref}} class="post-signpost__link">{{paths[pathName].title | i18n(locale)}}</a>
 
-        {% if loop.index !== numberOfPaths %}
+        {% if not loop.last %}
           <span class="post-signpost__divider"> | </span>
         {% endif %}
       {% endfor %}
