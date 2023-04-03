@@ -50,6 +50,6 @@ OpenCV is an industry standard of programming functions mainly for real-time com
 
 ## Conclusion
 
-In addition to these specific examples, there is much to be excited about in terms of [WebAssembly's potential to change the pace of new web functionality](https://docs.google.com/document/d/1zxd16LkkjnP5uLCN6p1nKCHoPDC7dcpsorrlBiPOROk/edit?resourcekey=0-qjEEvdLPu85cCVqiI9Ef6g#bookmark=id.3kxce262j7ed). Chrome has even set up [the Advanced Web Apps Fund](https://developer.chrome.com/blog/advanced-web-apps-fund/) that can help developers fund their work to advance the web functionality available to all developers!
+In addition to these specific examples, there is much to be excited about in terms of [WebAssembly's potential to change the pace of new web functionality](https://blog.chromium.org/2023/04/how-webassembly-is-accelerating-new-web.html). Chrome has even set up [the Advanced Web Apps Fund](https://developer.chrome.com/blog/advanced-web-apps-fund/) that can help developers fund their work to advance the web functionality available to all developers!
 
 _Hero image from [Pexels](https://www.pexels.com/photo/low-angle-photography-of-library-1296000/), by [Ann Marie Kennon](https://www.pexels.com/@ann-marie-kennon-547933/)._
