@@ -1,7 +1,7 @@
 ---
 title: New functionality for developers—brought to you by WebAssembly
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UgDbKE3G0klQHevSBbQr.jpg
-alt: Low angle photo of a library in Dublin, Ireland
+alt: Low angle photo of a library in Dublin, Ireland.
 subhead: |
   A showcase of tools now available on the web thanks to WebAssembly.
 authors:
