@@ -1,35 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow downloads and installs the latest version of Xanitizer, builds your project, runs a Xanitizer security analysis on it,
-# and then archives the findings list reports and uploads the findings into the GitHub code scanning alert section of your repository.
-#
-# Documentation for the `RIGS-IT/xanitizer-action` is located here: https://github.com/RIGS-IT/xanitizer-action
-#
-# To use this basic workflow, you will need to complete the following setup steps:
-#
-# 1. The underlying Xanitizer, used in this workflow, needs a separate license file.
-#    Licenses are free of charge for open source projects and for educational usage.
-#    To get more information about the Xanitizer licenses and how to obtain a license file,
-#    please consult https://www.xanitizer.com/xanitizer-pricing/.
-#
-# 2. The content of the license file has to be stored as a GitHub secret (e.g. XANITIZER_LICENSE) on this repository.
-#    Please consult https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets for details.
-#
-# 3. Reference the GitHub secret in the step using the `RIGS-IT/xanitizer-action` GitHub action.
-#    Example:
-#    - name: Xanitizer Security Analysis
-#      uses: RIGS-IT/xanitizer-action@v1
-#      with:
-#        license: ${{ secrets.XANITIZER_LICENSE }}
-#
-# 4. As a static application security testing (SAST) tool,
-#    Xanitizer requires that all dependencies of the artifacts being analyzed can be resolved successfully.
-#    So you have to install all used libraries and build your project before running the security analysis,
-#    e.g. via `mvn compile` for Java or `npm install` for JavaScript
-
 name: "Xanitizer Security Analysis"
 
 on:
