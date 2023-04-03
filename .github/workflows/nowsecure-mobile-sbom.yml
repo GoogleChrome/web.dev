@@ -1,24 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-#
-# NowSecure: The Mobile Security Experts <https://www.nowsecure.com/>.
-#
-# To use this workflow, you must have a token for NowSecure Platform. If you are a NowSecure customer,
-# you can find it in NowSecure Platform.
-#
-# If you *are not* a NowSecure customer, click here to sign up for a free trial to get access:
-# <https://bit.ly/ns-git-sbom>.
-#
-# Instructions:
-#
-# 1. In the settings for your repository, click "Secrets" then "New repository secret". Name the secret "NS_TOKEN" and
-#    paste in your Platform token. If you do not have a Platform token, or wish to create a new one for GitHub, visit
-#    NowSecure Platform and go to "Profile & Preferences" then create a token labelled "GitHub".
-#
-# 2. Follow the annotated workflow below and make any necessary modifications then save the workflow to your repository
-#    and review the "Dependency graph" tab in the "Insights" pane once the action has run.
 
 name: "NowSecure Mobile SBOM"
 
