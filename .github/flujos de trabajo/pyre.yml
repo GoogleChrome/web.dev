@@ -1,18 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow integrates Pyre with GitHub's
-# Code Scanning feature.
-#
-# Pyre is a performant type checker for Python compliant with
-# PEP 484. Pyre can analyze codebases with millions of lines
-# of code incrementally – providing instantaneous feedback
-# to developers as they write code.
-#
-# See https://pyre-check.org
-
 name: Pyre
 
 on:
