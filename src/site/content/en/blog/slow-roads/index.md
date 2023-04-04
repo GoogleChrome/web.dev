@@ -11,7 +11,6 @@ tags:
   - blog
   - 3D
   - games
-  -
 ---
 
 [Slow Roads](https://slowroads.io) is a casual driving game with an emphasis on endlessly procedurally generated scenery, all
@@ -65,7 +64,6 @@ image at 60 frames per second. As JavaScript is single threaded, any computation
 within the given frame time, or the user will experience visible stutters.
 {% endAside %}
 
-
 The environment is composed of tiles of geometry, differing in size and resolution (categorized as "levels of detail" or LoDs)
 depending on how close they will appear to the camera. In typical games with a free-roaming camera, different LoDs must be constantly
 loaded and unloaded to detail the player's surroundings wherever they may choose to go. This can be an expensive and wasteful operation,
@@ -91,10 +89,9 @@ generating just the minimum needed at each point in time, and with no wasted eff
 is only possible because the road is a single, non-branching pathâ€”a good example of making gameplay trade-offs that accommodate
 architectural short-cuts.
 
-
 <figure>
   {% Img
-    src="02_env_scheduling.png",
+    src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/6rjJXHREoaUXIxhun35L.png",
     alt="A diagram showing how generating the road far in advance can allow for proactive scheduling and caching of the environment generation",
     width="960",
     height="480"
@@ -133,7 +130,7 @@ pre-allocated in class variables at initialisation and recycled in each frame.
 
 <figure>
   {% Img
-    src="03_memory_opt.png",
+    src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/EDXmi4BDLYiLZuVET870.png",
     alt="A before-and-after view of the memory profile during optimisation of the Slow Roads codebase, indicating significant savings and a reduction in garbage collection rate",
     width="560",
     height="480"
@@ -167,7 +164,7 @@ and gives the developer more direct control over how their game is constitutedâ€
 of details for different quality settings.
 
 {% Img
-src="04_geometry_detail.png",
+src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/LSTBxy582GfK2KDfbXuv.png",
 alt="A comparison illustrating how the quality of procedurally-generated geometry in Slow Roads can be dynamically adapted to the user's performance needs",
 width="800",
 height="640"
@@ -183,7 +180,7 @@ after an affirmative button press. This also acts as a convenient buffer for bou
 assets.
 
 {% Img
-src="05_load_time_histogram.png",
+src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/hxiIMl31gXaXpqlAEvNu.png",
 alt="A histogram of load times showing a strong peak in the first three seconds accounting for over 60% of users, followed by a rapid decline. The histogram shows that over 97% of users see load times of less than 10 seconds.",
 width="1080",
 height="576"
@@ -220,7 +217,7 @@ fairly even performance distribution, only 52% of players achieve above 55 FPS.
 
 <figure>
   {% Img
-    src="06_fps_matrix.png",
+    src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/eZFv6ulS99NQdwyjAYzi.png",
     alt="A matrix defined by view distance setting against detail setting, showing the average frames-per-second achieved at different pairings. The distribution is fairly evenly spread between 45 and 60, with 60 being the target for good performance. Users at low settings tend to see a lower FPS than those at high settings, highlighting the differences in client hardware capability.",
     width="640",
     height="420"
