@@ -124,7 +124,7 @@ The image shows how browser Developer Tools applies source maps and shows the ma
 
 ## Source map extensions
 
-Source maps support extensions. Extensions are custom fields that start with the `x_` naming convention. One example is the `x_google_ignoreList` extension field proposed by Chrome DevTools. See [x_google_ignoreList](https://developer.chrome.com/article/x-google-ignore-list) to learn more on how these extensions help you focus on your code.
+Source maps support extensions. Extensions are custom fields that start with the `x_` naming convention. One example is the `x_google_ignoreList` extension field proposed by Chrome DevTools. See [x_google_ignoreList](https://developer.chrome.com/articles/x-google-ignore-list) to learn more on how these extensions help you focus on your code.
 
 ## It's not perfect
 
