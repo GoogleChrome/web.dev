@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How Slow Roads intrigues gamers and developers alike: spotlighting the surprising capabilities of 3D in the browser
+title: How Slow Roads intrigues gamers and developers alike, spotlighting the surprising capabilities of 3D in the browser
 subhead: Discover the potential of WebGL with the infinite, procedurally-generated scenery of this casual driving game.
 description: Discover the potential of WebGL with the infinite, procedurally-generated scenery of this casual driving game.
 authors:
@@ -172,7 +172,7 @@ height="640"
 
 Most of the geometry in Slow Roads is procedurally generated and simplistic, with custom shaders combining multiple textures to bring the detail.
 The drawback is that these textures can be heavy assets, though there are further opportunities for savings here, with methods such as stochastic
-texturing able to achieve greater detail from small source textures. And at an extreme level, it's also possible to generate textures entirely on the client with tools such as [texgen.js](https://texgenjs.org/). The same is even true for audio, with the Web Audio API allowing for [sound generation](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques) with audio nodes.
+texturing able to achieve greater detail from small source textures. And at an extreme level, it's also possible to generate textures entirely on the client with tools such as [texgen.js](https://texgenjs.org/). The same is even true for audio, with the Web Audio API allowing for [sound generation](https://developer.mozilla.org/docs/Web/API/Web_Audio_API/Advanced_techniques) with audio nodes.
 
 With the benefit of procedural assets, generating the initial environment takes just 3.2 seconds on average. To best take advantage of
 the small up-front download size, a simple splash screen greets new visitors and postpones the expensive scene initialisation until
