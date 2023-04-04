@@ -9,6 +9,7 @@ hero: image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/FYKfFSNA0ga2rSuD7iMG.png
 tags:
   - blog
   - games
+  - case-study
 ---
 
 [Slow Roads](https://slowroads.io) is a casual driving game with an emphasis on endlessly procedurally generated scenery, all
