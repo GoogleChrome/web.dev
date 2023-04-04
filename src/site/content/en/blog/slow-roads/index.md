@@ -9,7 +9,6 @@ date: 2020-07-17
 hero: image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/FYKfFSNA0ga2rSuD7iMG.png
 tags:
   - blog
-  - 3D
   - games
 ---
 
