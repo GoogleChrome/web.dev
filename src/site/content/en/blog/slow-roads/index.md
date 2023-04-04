@@ -2,10 +2,9 @@
 layout: post
 title: How Slow Roads intrigues gamers and developers alike, spotlighting the surprising capabilities of 3D in the browser
 subhead: Discover the potential of WebGL with the infinite, procedurally-generated scenery of this casual driving game.
-description: Discover the potential of WebGL with the infinite, procedurally-generated scenery of this casual driving game.
 authors:
   - anslo
-date: 2020-07-17
+date: 2023-04-04
 hero: image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/FYKfFSNA0ga2rSuD7iMG.png
 tags:
   - blog
