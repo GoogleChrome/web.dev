@@ -84,9 +84,13 @@ eleventyComputed:
 
         {% set bio = renderData.bio | i18n(locale, '') %}
         {% if bio %}
-          {% for paragraph in bio %}
-            <p class="gap-top-size-1">{{ paragraph }}</p>
-          {% endfor %}
+          {% if bio is string %}
+            <p class="gap-top-size-1">{{ bio }}</p>
+          {% else %}
+            {% for paragraph in bio %}
+              <p class="gap-top-size-1">{{ paragraph }}</p>
+            {% endfor %}
+          {% endif %}
         {% endif %}
 
       </div>
