@@ -1,12 +1,13 @@
 ---
 layout: post
-title: Mini app markup, styling, and scripting
+title: Mini app markup, styling, scripting, and updating
 authors:
   - thomassteiner
 date: 2021-03-03
-# updated: 2021-03-03
+updated: 2023-04-06
 description: |
-  This chapter looks at the mark-up, styling, and scripting options of various mini apps platforms.
+  This chapter looks at the mark-up, styling, scripting, and updating options of various mini apps
+  platforms.
 tags:
   - mini-apps
 ---
@@ -269,6 +270,47 @@ tt.canIUse("request.success.data");
 {% Aside 'success' %}
   The next chapter introduces [mini app components](/mini-app-components/).
 {% endAside %}
+
+## Updates
+
+Mini apps do not have a standardized update mechanism ([discussion around potential standardization](https://github.com/w3c/miniapp-packaging/issues/28)).
+All mini app platforms have a backend system, which allows mini app developers to upload new versions of
+their mini apps. A super app then uses that backend system to check for and download updates. Some super apps
+perform updates entirely in the background, without any way for the mini app itself to influence the update
+flow. Other super apps give more control to the mini apps themselves.
+
+The following paragraphs describe [WeChat's update mechanism for mini apps](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/update-mechanism.html)
+in more detail. WeChat checks for available updates in the following two scenarios:
+
+1. WeChat will regularly check for updates of recently used mini apps as long as WeChat is running. If an
+   update is found, the update is downloaded, and synchronously applied the next time the user cold-starts the
+   mini app. "Cold starting" a mini apps occurs when the mini app was not currently running when the user
+   opened it (WeChat force-closes mini apps after being in the background for 5 minutes).
+2. WeChat also checks for updates when a mini app is cold-started. For mini apps that the user has not opened
+   "for a long time", the update is checked for and downloaded synchronously. While the update is downloading,
+   the user has to wait. Once the download finishes, the update is applied, and the mini app opens. If the
+   download fails, e.g., due to bad network connectivity, the mini app opens regardless. For mini apps that
+   the user has opened recently, any potential update is downloaded asynchronously in the background and will
+   be applied the next time the user cold-starts the mini app.
+
+Mini apps can opt-in to earlier updates by using the [`UpdateManager`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.html) API. It provides the following functionality:
+
+- notifies the mini app when a check for updates is made
+  ([`onCheckForUpdate`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.onCheckForUpdate.html))
+- notifies the mini app when an update has been downloaded and is available
+  ([`onUpdateReady`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.onUpdateReady.html))
+- notifies the mini app when an update could not be downloaded
+  ([`onUpdateFailed`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.onUpdateFailed.html))
+- allows the mini app to force-install an available update, which will restart the app
+  ([`applyUpdate`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.applyUpdate.html))
+
+WeChat also provides additional update customization options for mini app developers in its backend system:
+1. One option allows developers to opt-out from synchronous updates for users that already have a certain
+   minimum version of the mini app installed, and instead force the updates to be asynchronous.
+2. Another option allows developers to set a minimum required version of their mini app. This will make
+   asynchronous updates from a version lower than the minimum required version force-reload the mini app after
+   applying the update. It will also block opening an older version of the mini app if downloading of the
+   update fails.
 
 ## Acknowledgements
 
