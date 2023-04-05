@@ -34,3 +34,7 @@
 .author__bio + .author__links {
   --flow-space: 0.8em;
 }
+
+.author__socials a:not(:hover) > svg {
+  @include apply-utility('color', 'mid-text');
+}

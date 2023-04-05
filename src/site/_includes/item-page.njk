@@ -8,63 +8,87 @@ eleventyComputed:
   {# Hero starts #}
   <header class="region bg-mid-bg">
     <div class="wrapper">
-      <div class="headline all-center flow">
-        {% if paged.data.hero and showHero %}
-          {% if imageType == 'round' %}
-            <div class="avatar gap-inline-auto" data-size="large">
+      <div class="headline flow">
+        <div class="switcher flex-align-center">
+          {% if paged.data.hero and showHero %}
+            {% if imageType == 'round' %}
+              <div class="avatar gap-inline-auto" data-size="medium">
+                {% Img
+                  src=paged.data.hero,
+                  alt=renderData.title or title,
+                  height="120",
+                  width="120",
+                  fetchpriority="high"
+                %}
+              </div>
+            {% else %}
               {% Img
                 src=paged.data.hero,
                 alt=renderData.title or title,
-                height="192",
-                width="192",
-                sizes="(min-width: 481px) 192px, 128px",
-                options={minWidth: 128},
+                height="120",
+                width="120",
                 fetchpriority="high"
               %}
-            </div>
-          {% else %}
-            {% Img
-              src=paged.data.hero,
-              alt=renderData.title or title,
-              height="192",
-              width="192",
-              sizes="(min-width: 481px) 192px, 128px",
-              options={minWidth: 128},
-              fetchpriority="high"
-            %}
+            {% endif %}
           {% endif %}
-        {% endif %}
+          <div class="flow">
+            <h1 class="headline__title">{{ renderData.title or title }}</h1>
+            <p>{{ renderData.description | md | safe or description | md | safe }}</p>
+          </div>
+        </div>
 
-        <h1 class="headline__title">{{ renderData.title or title }}</h1>
-        <p>{{ renderData.description | md | safe or description | md | safe }}</p>
+        {% from 'macros/icon.njk' import icon, svg with context %}
 
-        <div class="cluster flex-justify-center">
+        <div class="cluster author__socials flex-justify-left gap-top-size-2 gap-bottom-size-2">
           {% if paged.homepage %}
             <a href="{{ paged.homepage }}" target="_blank">
-              <img src="/images/icons/language.svg" alt="Homepage" width="32" height="32">
+              {{ icon('language') }}
             </a>
           {% endif %}
-          {% if paged.twitter %}
-            <a href="https://twitter.com/{{ paged.twitter }}" target="_blank">
-              <img src="/images/icons/twitter.svg" alt="Twitter" width="32" height="32">
+          {% if paged.linkedin %}
+            <a href="{{ paged.linkedin }}" target="_blank">
+              {{ icon('linkedin') }}
+            </a>
+          {% endif %}
+          {% if paged.mastodon %}
+            <a href="{{ paged.mastodon }}" target="_blank">
+              {{ icon('mastodon') }}
+            </a>
+          {% endif %}
+          {% if paged.ddc %}
+            <a href="https://developer.chrome.com/authors/{{ paged.ddc }}" target="_blank">
+              {{ icon('ddc') }}
             </a>
           {% endif %}
           {% if paged.github %}
             <a href="https://github.com/{{ paged.github }}" target="_blank">
-              <img src="/images/icons/github.svg" alt="GitHub" width="32" height="32">
+              {{ icon('github') }}
             </a>
           {% endif %}
           {% if paged.glitch %}
             <a href="https://glitch.com/@{{ paged.glitch }}" target="_blank">
-              <img src="/images/icons/glitch.svg" alt="Glitch" width="32" height="32">
+              {{ icon('glitch') }}
+            </a>
+          {% endif %}
+          {% if paged.twitter %}
+            <a href="https://twitter.com/{{ paged.twitter }}" target="_blank">
+              {{ icon('twitter') }}
             </a>
           {% endif %}
           {% if renderData.rss %}
             <a href="{{ renderData.rss }}" target="_blank">
-              <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
+              {{ icon('rss') }}
             </a>
           {% endif %}
         </div>
+
+        {% set bio = renderData.bio | i18n(locale, '') %}
+        {% if bio %}
+          {% for paragraph in bio %}
+            <p class="gap-top-size-1">{{ paragraph }}</p>
+          {% endfor %}
+        {% endif %}
+
       </div>
     </div>
   </header>
