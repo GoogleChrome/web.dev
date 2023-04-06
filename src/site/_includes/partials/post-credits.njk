@@ -1,0 +1,37 @@
+<div class="post-credits">
+  {% if editors %}
+  <div class="post-credits__editors">
+    <h4>{{ 'i18n.post.editors' | i18n(locale) }}</h4>
+      {% for editor in editors %}
+        <a href="{{collections.authors[editor].href}}">{{collections.authors[editor].title | i18n(locale)}}</a>
+      {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if credits %}
+  <div class="post-credits__credits">
+    <h4>{{ 'i18n.post.credits' | i18n(locale) }}</h4>
+      {% for credit in credits %}
+        <a href="{{credit.href}}">{{credit.name}}</a>
+      {% endfor %}
+  </div>
+  {% endif %}
+  
+  {% if updated or date %}
+  <div>
+    <h4>{{ 'i18n.post.last_updated' | i18n(locale) }}</h4>
+    <span>
+      {% if updated %}
+        <time>{{ updated | prettyDate }}</time>
+      {% else %}
+        <time>{{ date | prettyDate }}</time>
+      {% endif %}
+    </span>
+    —
+    <a
+      href="{{ page.inputPath | githubLink }}"
+    >
+      {{ 'i18n.post.improve_article' | i18n(locale) }}
+    </a></div>
+    {% endif %}
+</div>
