@@ -218,7 +218,7 @@ fairly even performance distribution, only 52% of players achieve above 55 FPS.
     height="420"
   %}
   <figcaption>
-    Note that this data is somewhat skewed by users who run their browser with hardware acceleration disabled, often causing artificially low performance
+    Note that this data is somewhat skewed by users who run their browser with hardware acceleration disabled, often causing artificially low performance.
   </figcaption>
 </figure>
 
