@@ -73,7 +73,7 @@ corridor directly flanking the route.
 <figure>
   {% Img
     src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/EK3mXmwSxE422zjs9mMw.png",
-    alt="A diagram showing how generating the road far in advance can allow for proactive scheduling and caching of the environment generation",
+    alt="A diagram showing how generating the road far in advance can allow for proactive scheduling and caching of the environment generation.",
     width="1280",
     height="720"
   %}
@@ -91,7 +91,7 @@ architectural short-cuts.
 <figure>
   {% Img
     src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/6rjJXHREoaUXIxhun35L.png",
-    alt="A diagram showing how generating the road far in advance can allow for proactive scheduling and caching of the environment generation",
+    alt="A diagram showing how generating the road far in advance can allow for proactive scheduling and caching of the environment generation.",
     width="960",
     height="480"
   %}
@@ -130,7 +130,7 @@ pre-allocated in class variables at initialisation and recycled in each frame.
 <figure>
   {% Img
     src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/EDXmi4BDLYiLZuVET870.png",
-    alt="A before-and-after view of the memory profile during optimisation of the Slow Roads codebase, indicating significant savings and a reduction in garbage collection rate",
+    alt="A before-and-after view of the memory profile during optimisation of the Slow Roads codebase, indicating significant savings and a reduction in garbage collection rate.",
     width="560",
     height="480"
   %}
@@ -164,7 +164,7 @@ of details for different quality settings.
 
 {% Img
 src="image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/LSTBxy582GfK2KDfbXuv.png",
-alt="A comparison illustrating how the quality of procedurally-generated geometry in Slow Roads can be dynamically adapted to the user's performance needs",
+alt="A comparison illustrating how the quality of procedurally-generated geometry in Slow Roads can be dynamically adapted to the user's performance needs.",
 width="800",
 height="640"
 %}
@@ -190,7 +190,7 @@ height="576"
 I've always considered the codebase for Slow Roads to be experimental, and as such have taken a fiercely agile approach to
 development. When working with a complex and rapidly-evolving system architecture, it can be difficult to predict where the
 important bottlenecks may occur. The focus should be on implementing the desired features quickly, rather than cleanly, and
-then working backwards to optimize systems where it really counts. The performance profiler in Chrome's web tools is invaluable
+then working backwards to optimize systems where it really counts. The performance profiler in Chrome DevTools is invaluable
 for this step, and has helped me to diagnose some major issues with earlier versions of the game. Your time as a developer is
 valuable, so be sure you aren't spending time deliberating over problems that may prove insignificant or redundant.
 
@@ -228,7 +228,7 @@ fairly even performance distribution, only 52% of players achieve above 55 FPS.
 
 Fortunately, there are still many opportunities for making performance savings. Alongside adding further rendering tricks
 to reduce GPU demand, I hope to experiment with web workers in parallelising the environment generation in the near term,
-and may eventually see a need for incorporating WASM or WebGPU into the codebase. Any headroom I'm able to free up will allow
+and may eventually see a need for incorporating WASM or [WebGPU](https://developer.mozilla.org/docs/Web/API/WebGPU_API) into the codebase. Any headroom I'm able to free up will allow
 for richer and more diverse environments, which will be the enduring goal for the remainder of the project.
 
 As hobby projects go, Slow Roads has been an overwhelmingly fulfilling way to demonstrate how surprisingly elaborate, performant,
