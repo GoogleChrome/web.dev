@@ -29,7 +29,7 @@ and perhaps reduce the number of developers who balk at the phrase "high-perform
 WebGL may seem mysterious and complex for many, but in recent years its development ecosystems have greatly matured into highly
 capable and convenient tools and libraries. It's now easier than ever for front-end developers to incorporate 3D UX into their
 work, even without prior experience in computer graphics. [Three.js](https://threejs.org/), the leading WebGL library, serves
-as the foundation for many expansions, including react-three-fiber which brings 3D components into the React framework. There
+as the foundation for many expansions, including [react-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) which brings 3D components into the React framework. There
 are now also comprehensive web-based game editors such as [Babylon.js](https://www.babylonjs.com/) or [PlayCanvas](https://playcanvas.com/)
 which offer a familiar interface and integrated toolchains.
 
@@ -58,9 +58,7 @@ proportion of the budgets for memory and compute. The trick used here is in sche
 a period of time, so as not to interrupt the framerate with performance spikes.
 
 {% Aside %}
-At its core, a game engine is an infinite `while` loop which reads user input, updates the world state, and then draws the
-image at 60 frames per second. As JavaScript is single threaded, any computation happening within these times needs to complete
-within the given frame time, or the user will experience visible stutters.
+At its core, a game engine is an infinite `while` loop which reads user input, updates the world state, and then renders the image for the frame. This loop runs at the refresh rate of the monitor (typically 60 Hz), so any computation happening within it needs to complete within the given frame time to avoid causing visible stutters.
 {% endAside %}
 
 The environment is composed of tiles of geometry, differing in size and resolution (categorized as "levels of detail" or LoDs)
@@ -78,7 +76,7 @@ corridor directly flanking the route.
     height="720"
   %}
   <figcaption>
-    A view of the environment geometry in Slow Roads rendered as a wireframe, indicating corridors of high-resolution geometry flanking the road. Distant portions of the environment, that should never be seen up closer, are rendered at a much lower resolution.
+    A view of the environment geometry in Slow Roads rendered as a wireframe, indicating corridors of high-resolution geometry flanking the road. Distant portions of the environment, which should never be seen up close, are rendered at a much lower resolution.
   </figcaption>
 </figure>
 
@@ -102,9 +100,7 @@ architectural short-cuts.
 
 ### Being picky with the laws of physics
 
-Second to the computational demand of the environment engine is the physics simulation. In conventional engines, physics
-calculations are typically parallelised across multiple threads, and so developers working in single-threaded JavaScript
-land must be more disciplined. Slow Roads uses a custom, minimal physics engine which takes every short-cut available.
+Second to the computational demand of the environment engine is the physics simulation. Slow Roads uses a custom, minimal physics engine which takes every short-cut available.
 
 {% Aside %}
 Physics engines are hard, but thankfully many excellent libraries exist to streamline the process. Custom implementations
@@ -194,7 +190,7 @@ then working backwards to optimize systems where it really counts. The performan
 for this step, and has helped me to diagnose some major issues with earlier versions of the game. Your time as a developer is
 valuable, so be sure you aren't spending time deliberating over problems that may prove insignificant or redundant.
 
-### Catering to a range of devices
+### Monitoring the user experience
 
 While implementing all of these tricks, it's important to be sure the game performs as expected in the wild. Accommodating
 a range of hardware capabilities is a staple aspect of any game development, but web games can target a much broader spectrum
