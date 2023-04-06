@@ -78,7 +78,7 @@ const i18n = (path, locale = defaultLocale, fallback = null) => {
     // ignore, throw below
   }
 
-  // Add a output fallback in the case of cannot find the i18n result.
+  // Add an output fallback in the case of no i18n result.
   if (fallback !== null) return fallback;
 
   throw new Error(`Could not find i18n result for: ${path}`);
