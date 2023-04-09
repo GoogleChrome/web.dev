@@ -1,0 +1,13 @@
+Politica de seguridad
+Versiones compatibles
+Use esta sección para informar a las personas sobre qué versiones de su proyecto son actualmente compatibles con actualizaciones de seguridad.
+
+Versión	Soportado
+5.1.x	✅
+5.0.x	❌
+4.0.x	✅
+< 4.0	❌
+Informar de una vulnerabilidad
+Use esta sección para decirle a la gente cómo reportar una vulnerabilidad.
+
+Dígales adónde ir, con qué frecuencia pueden esperar recibir una actualización sobre una vulnerabilidad reportada, qué esperar si la vulnerabilidad se acepta o se rechaza, etc.
