@@ -133,7 +133,7 @@
     "babel-eslint": "^10.0.3",
     "c8": "^7.3.0",
     "chai": "^4.3.4",
-    "chokidar-cli": "^1.2.3",
+    "chokidar-cli": "^3.0.0",
     "eslint-plugin-lit-a11y": "^1.0.1",
     "gts": "^3.1.0",
     "husky": "^4.2.3",
