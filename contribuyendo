@@ -1,0 +1,22 @@
+contribuyendo💪
+Creación de contenido escrito en el sitio
+Si planea escribir una publicación de blog o una guía para una colección, tómese un momento para consultar el manual de web.dev y familiarizarse con el proceso. Cuando esté listo, siga los pasos del Inicio rápido para crear su propuesta de contenido.
+
+Enviar una solicitud de extracción
+Acuerdos de licencia de colaborador
+¡Nos encantaría aceptar sus parches de código! Sin embargo, antes de que podamos tomarlos, tenemos que saltar un par de obstáculos legales.
+
+Complete el Acuerdo de licencia de colaborador individual o corporativo.
+
+Si es un individuo que escribe el código fuente original y está seguro de que posee la propiedad intelectual, entonces firme un CLA individual .
+Si trabaja para una empresa que quiere permitirle contribuir con su trabajo, entonces firme un CLA corporativo .
+Siga cualquiera de los dos enlaces anteriores para acceder al CLA apropiado y las instrucciones sobre cómo firmarlo y devolverlo.
+
+Firme el acuerdo de licencia de colaboradores anterior.
+Decide qué código quieres enviar. Un envío debe ser un conjunto de cambios que aborde un problema en el rastreador de problemas . No mezcle más de un cambio lógico por envío, ya que hace que el historial sea difícil de seguir. Si desea realizar un cambio (por ejemplo, agregar una muestra o función) que no tenga un problema correspondiente en el rastreador de problemas, cree uno.
+Envío : cuando esté listo para enviar, envíenos una solicitud de extracción. Asegúrese de incluir el número de emisión que ha fijado y el nombre que usó para firmar el CLA.
+Código de escritura
+Si su contribución contiene código, asegúrese de que siga la guía de estilo . De lo contrario, tendremos que pedirle que realice cambios, y eso no es divertido para nadie.
+
+Formatear HTML
+Para simplificar las revisiones de relaciones públicas, ajuste los archivos HTML a 80 caracteres o menos.
