@@ -5,7 +5,7 @@ subhead: Passkeys make user accounts safer, simpler, easier to use.
 authors:
   - agektmr
 date: 2022-10-12
-updated: 2023-03-16
+updated: 2023-04-11
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/ESXHlkzce7qhQSqQHacV.jpg
 description: |
   Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses how to allow users to create passkeys for your website.
