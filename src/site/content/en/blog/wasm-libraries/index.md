@@ -28,7 +28,7 @@ This complete port of SQLite brings a lightweight, embedded, relational database
 
 FFmpeg is a free and open-source software project consisting of a suite of libraries and programs for handling video, audio, and other multimedia files and streams. You can find [a wasm compiled version here](https://ffmpegwasm.netlify.app/) ([github repo](https://github.com/ffmpegwasm/ffmpeg.wasm)) that lets you do all of this functionality directly in the browser.
 
-### Universal Scene Descriptor (USD)
+### Universal Scene Description (USD)
 
 Universal Scene Description (USD) is a framework for 3D computer graphics data that focuses on collaboration, non-destructive editing, and enabling multiple views and opinions about graphics data. It's an industry standard supported by the likes of Pixar, Autodesk, Nvidia, and many more. It's still early days for their web support but [Autodesk already open sourced a web based USD viewer](https://www.keanw.com/2022/02/autodesk-open-sources-web-based-usd-viewing-implementation.html) which you can [see here](https://github.com/autodesk-forks/USD/tree/hdJavaScript).
 
