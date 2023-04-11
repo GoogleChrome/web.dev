@@ -1,0 +1,71 @@
+nombre : Escaneo de seguridad inteligente de Synopsys
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 44 1 * * 6 '
+
+trabajos :
+  analizar :
+    nombre : Analizar
+    se ejecuta en : ubuntu-latest
+    permisos :
+      acciones : leer
+      contenido : leer
+      eventos de seguridad : escribir
+
+    pasos :
+    - nombre : Repositorio de pago
+      usos : acciones/checkout@v3
+
+    - nombre : Escaneo de seguridad inteligente de Synopsys
+      identificación : receta
+      usos : synopsys-sig/intelligent-security-scan@48eedfcd42bc342a294dc495ac452797b2d9ff08
+      con :
+        ioServerUrl : ${{secretos.IO_SERVER_URL}}
+        ioServerToken : ${{secretos.IO_SERVER_TOKEN}}
+        URL del servidor de flujo de trabajo : ${{secrets.WORKFLOW_SERVER_URL}}
+        argumentos de flujo de trabajo adicionales : --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}}
+        etapa : " IO "
+
+    # Tenga en cuenta que la identificación en el paso anterior se estableció en prescripción
+    # para que esta lógica funcione también asegúrese de que POLARIS_ACCESS_TOKEN
+    # se define en la configuración
+    - nombre : Análisis Estático con Polaris
+      si : ${{pasos.prescripción.salidas.sastScan == 'verdadero' }}
+      ejecutar : |
+          exportar POLARIS_SERVER_URL=${{ secretos.POLARIS_SERVER_URL}}
+          exportar POLARIS_ACCESS_TOKEN=${{ secretos.POLARIS_ACCESS_TOKEN}}
+          wget -q ${{ secretos.POLARIS_SERVER_URL}}/api/tools/polaris_cli-linux64.zip
+          descomprimir -j polaris_cli-linux64.zip -d /tmp
+          /tmp/polaris analizar -w
+    # Tenga en cuenta que la identificación en el paso anterior se estableció en prescripción
+    # para que esta lógica funcione
+    - nombre : Análisis de composición de software con Black Duck
+      si : ${{pasos.prescripción.salidas.scaScan == 'verdadero' }}
+      usos : blackducksoftware/github-action@9ea442b34409737f64743781e9adc71fd8e17d38
+      con :
+         argumentos : ' --blackduck.url="${{ secretos.BLACKDUCK_URL}}" --blackduck.api.token="${{ secretos.BLACKDUCK_TOKEN}}" --detect.tools="SIGNATURE_SCAN, DETECTOR" '
+
+    - nombre : Escaneo de seguridad inteligente de Synopsys
+      si : ${{ pasos.prescripción.salidas.sastScan == 'verdadero' || pasos.prescripción.salidas.scaScan == 'verdadero' }}
+      usos : synopsys-sig/intelligent-security-scan@48eedfcd42bc342a294dc495ac452797b2d9ff08
+      con :
+        ioServerUrl : ${{secretos.IO_SERVER_URL}}
+        ioServerToken : ${{secretos.IO_SERVER_TOKEN}}
+        URL del servidor de flujo de trabajo : ${{secrets.WORKFLOW_SERVER_URL}}
+        AdditionalWorkflowArgs : --IS_SAST_ENABLED=${{steps.prescription.outputs.sastScan}} --IS_SCA_ENABLED=${{steps.prescription.outputs.scaScan}}
+                --polaris.project.name={{PROJECT_NAME}} --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}}
+                --blackduck.project.name={{PROJECT_NAME}}:{{PROJECT_VERSION}} --blackduck.url=${{secrets.BLACKDUCK_URL}} --blackduck.api.token=${{secrets.BLACKDUCK_TOKEN}}
+        etapa : " FLUJO DE TRABAJO "
+
+    - nombre : Subir archivo SARIF
+      si : ${{pasos.prescripción.salidas.sastScan == 'verdadero' }}
+      usos : github/codeql-action/upload-sarif@v2
+      con :
+        # Ruta al archivo SARIF relativa a la raíz del repositorio
+        sarif_file : flujo de trabajo del motor-resultados.sarif.json
