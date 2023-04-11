@@ -1,0 +1,56 @@
+Documentos de GitHub
+Espacios de código de GitHub /Descripción general
+Descripción general de los espacios de código de GitHub
+En este articulo
+¿Qué es un espacio de código?
+Uso de espacios de código de GitHub
+Facturación de Codespaces
+Esta guía presenta GitHub Codespaces y proporciona detalles sobre cómo funciona y cómo usarlo.
+
+¿Qué es un espacio de código?
+Un espacio de código es un entorno de desarrollo alojado en la nube. Puede personalizar su proyecto para GitHub Codespaces enviando archivos de configuración a su repositorio (a menudo conocido como Configuración como código), lo que crea una configuración de espacio de código repetible para todos los usuarios de su proyecto.
+
+Cada espacio de código que crea está alojado en GitHub en un contenedor Docker, que se ejecuta en una máquina virtual. Puede elegir entre una selección de tipos de máquinas virtuales, desde 2 núcleos, 8 GB de RAM y 32 GB de almacenamiento, hasta 32 núcleos, 64 GB de RAM y 128 GB de almacenamiento.
+
+De forma predeterminada, los espacios de código se crean a partir de una imagen de Ubuntu Linux que incluye una selección de lenguajes y herramientas populares, pero puede usar una imagen basada en una distribución de Linux de su elección y configurarla según sus requisitos particulares. Independientemente de su sistema operativo local, su espacio de código se ejecutará en un entorno Linux. Windows y MacOS no son sistemas operativos compatibles con el contenedor remoto.
+
+Puede conectarse a sus espacios de código desde su navegador, desde Visual Studio Code, desde la aplicación JetBrains Gateway o mediante la CLI de GitHub. Cuando se conecta, se le ubica dentro del contenedor Docker. No tiene acceso al host externo de la máquina virtual Linux.
+
+Un diagrama que muestra la relación entre un editor de código y un espacio de código que se ejecuta en una máquina virtual de Azure.
+
+Uso de espacios de código de GitHub
+Para comenzar a desarrollar utilizando recursos informáticos basados ​​en la nube, puede crear un espacio de código a partir de una plantilla o desde cualquier rama o confirmación en un repositorio. Cuando crea un espacio de código a partir de una plantilla, puede comenzar desde una plantilla en blanco o elegir una plantilla adecuada para el trabajo que está realizando.
+
+Para comenzar con GitHub Codespaces, consulte " Inicio rápido para GitHub Codespaces ". Para obtener más información sobre la creación de un espacio de código, consulte " Creación de un espacio de código para un repositorio " o " Creación de un espacio de código a partir de una plantilla ". Si desea volver a un espacio de código que ya ha creado, consulte " Abrir un espacio de código existente ". Para obtener más información sobre cómo funciona GitHub Codespaces, consulte " Profundización en GitHub Codespaces ".
+
+Uso de espacios de código propiedad de su cuenta personal
+Todas las cuentas personales de GitHub.com tienen una cuota mensual de uso gratuito de GitHub Codespaces incluida en el plan Free o Pro. Puede comenzar a usar GitHub Codespaces en su cuenta personal sin cambiar ninguna configuración ni proporcionar detalles de pago.
+
+Si crea un espacio de códigos a partir de un repositorio propiedad de una organización, el uso del espacio de códigos se le cobrará a la organización (si la organización está configurada para esto) o a su cuenta personal.
+
+Puede continuar usando GitHub Codespaces más allá de su almacenamiento mensual incluido y uso de cómputo al proporcionar detalles de pago y establecer un límite de gasto. Para obtener más información, consulte " Acerca de la facturación de espacios de código de GitHub ".
+
+Uso de espacios de código propiedad de la organización
+Los propietarios de organizaciones en los planes GitHub Team y GitHub Enterprise pueden habilitar el uso de GitHub Codespaces, facturable a la organización o cuenta empresarial. Esto se aplica a los espacios de código creados a partir de repositorios propiedad de la organización. Para obtener más información, consulte " Habilitar espacios de código de GitHub para su organización ". Puede establecer un límite de gasto para el uso de GitHub Codespaces en su organización o cuenta empresarial. Para obtener más información, consulte " Administrar el límite de gastos para GitHub Codespaces ".
+
+Si el uso de un espacio de códigos se facturará a una organización o empresa, esto se muestra cuando se crea el espacio de códigos. Para obtener más información, consulte " Creación de un espacio de códigos para un repositorio ". Los espacios de códigos que se facturan a una organización, o a su empresa matriz, son propiedad de la organización y pueden ser eliminados por el propietario de la organización. Para obtener más información, consulte " Eliminación de un espacio de código ".
+
+Su capacidad para crear espacios de código a partir de repositorios propiedad de la organización depende de varios factores, incluida la visibilidad del repositorio y la configuración de la organización o su empresa matriz. Para obtener más información, consulte " Solución de problemas de creación y eliminación de espacios de códigos ".
+
+Personalización de espacios de código de GitHub
+Para personalizar los tiempos de ejecución y las herramientas en su espacio de códigos, puede crear una o más configuraciones de contenedores de desarrollo para su repositorio. Agregar configuraciones de contenedores de desarrollo a su repositorio le permite definir una selección de diferentes entornos de desarrollo que son apropiados para el trabajo que las personas realizarán en su repositorio.
+
+Si crea un espacio de código a partir de un repositorio sin ninguna configuración de contenedor de desarrollo, GitHub Codespaces clonará su repositorio en un entorno con la imagen de espacio de código predeterminada que incluye muchas herramientas, idiomas y entornos de tiempo de ejecución. Si crea un espacio de código a partir de una plantilla, puede comenzar con alguna configuración inicial sobre la imagen predeterminada. Para obtener más información, consulte " Introducción a los contenedores de desarrollo ".
+
+Puede personalizar aspectos de su entorno de espacio de códigos mediante el uso de un repositorio de dotfiles público . Puede usar dotfiles para establecer alias y preferencias de shell, o para instalar su preferencia personal de las herramientas que le gusta usar. Si usa GitHub Codespaces en el navegador o en Visual Studio Code, puede usar Settings Sync para darle a su editor de codespace la misma configuración, atajos de teclado, fragmentos y extensiones que configuró en su instalación local de Visual Studio Code.
+
+Para obtener más información, consulte " Personalización de su espacio de código ".
+
+Facturación de Codespaces
+Para obtener información sobre precios, almacenamiento y uso de GitHub Codespaces, consulte " Acerca de la facturación de GitHub Codespaces ".
+
+Nota: Debe establecer un límite de gasto distinto de cero en su cuenta personal, de organización o empresarial antes de que se pueda facturar a la cuenta por el uso de GitHub Codespaces.
+
+De manera predeterminada, todas las cuentas tienen un límite de gastos de GitHub Codespaces de $0 USD. Esto evita que se creen nuevos espacios de códigos o que se abran espacios de códigos existentes, si hacerlo supondría un costo facturable para su cuenta personal, de organización o de empresa. Para cuentas personales, siempre se pueden crear y usar espacios de código si la cuenta no ha alcanzado el límite de su uso mensual incluido. Para organizaciones y empresas, el límite de gasto predeterminado significa que, para permitir que las personas creen espacios de código que se facturan a la organización o a su empresa matriz, el límite debe cambiarse a un valor superior a $0 USD.
+
+Los costos de GitHub Codespaces siempre se facturan mensualmente, incluso si su cuenta se factura anualmente. Para obtener información sobre cómo los propietarios de las organizaciones y los gerentes de facturación pueden administrar el límite de gastos de GitHub Codespaces para una organización, consulte " Administrar el límite de gastos de GitHub Codespaces ".
