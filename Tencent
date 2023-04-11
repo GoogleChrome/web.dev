@@ -1,0 +1,59 @@
+nombre : Motor Tencent Kubernetes
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+
+# Variables de entorno disponibles para todos los trabajos y pasos en este flujo de trabajo
+env :
+  TKE_IMAGE_URL : ccr.ccs.tencentyun.com/demo/mywebapp
+  TKE_REGION : ap-guangzhou
+  TKE_CLUSTER_ID : cls-miwebapp
+  DEPLOYMENT_NAME : tke-prueba
+
+permisos :
+  contenido : leer
+
+trabajos :
+  setup-build-publish-deploy :
+    nombre : Configurar, Construir, Publicar e Implementar
+    se ejecuta en : ubuntu-latest
+    medio ambiente : producción
+    pasos :
+
+    - nombre : Caja
+      usos : acciones/checkout@v3
+
+    # construir
+    - nombre : Crear imagen de Docker
+      ejecutar : |
+        docker build -t ${TKE_IMAGE_URL}:${GITHUB_SHA} .
+    - nombre : Iniciar sesión Registro TKE
+      ejecutar : |
+        inicio de sesión de docker -u ${{ secretos.TENCENT_CLOUD_ACCOUNT_ID }} -p '${{ secretos.TKE_REGISTRY_PASSWORD }}' ${TKE_IMAGE_URL}
+    # Empuje la imagen de Docker al Registro TKE
+    - nombre : Publicar
+      ejecutar : |
+        ventana acoplable empuje ${TKE_IMAGE_URL}:${GITHUB_SHA}
+    - nombre : Configurar Personalizar
+      ejecutar : |
+        curl -o kustomize --ubicación https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+        chmod u+x ./personalizar
+    - nombre : configure ~/.kube/config para conectar el clúster TKE
+      usos : TencentCloud/tke-cluster-credential-action@v1
+      con :
+        id_secreto : ${{ secretos.TENCENT_CLOUD_SECRET_ID }}
+        clave_secreta : ${{ secretos.TENCENT_CLOUD_SECRET_KEY }}
+        tke_region : ${{ env.TKE_REGION }}
+        cluster_id : ${{ env.TKE_CLUSTER_ID }}
+
+    - nombre : cambiar al contexto TKE
+      ejecutar : |
+        configuración de kubectl use-context ${TKE_CLUSTER_ID}-context-default
+    # Implemente la imagen de Docker en el clúster de TKE
+    - nombre : Implementar
+      ejecutar : |
+        ./personalizar imagen de conjunto de edición ${TKE_IMAGE_URL}:${GITHUB_SHA}
+        ./Personalizar compilación. | kubectl aplicar -f -
+        implementación de estado de implementación de kubectl/${DEPLOYMENT_NAME}
+        kubectl obtener servicios -o ancho
