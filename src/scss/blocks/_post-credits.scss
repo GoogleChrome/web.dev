@@ -28,6 +28,6 @@
 
   @include media-query('md'){
     flex-direction: row;
-    flex-basis: 3;
+    flex: 1 1 0;
   }
 }
