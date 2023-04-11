@@ -10,11 +10,6 @@ hero: image/kheDArv5csY6rvQUJDbWRscckLr1/FCGhFWoTI2Rmlc6vDDzh.jpg
 alt: A winter scene with snow.
 authors:
   - rachelandrew
-editors:
-  - rachelandrew
-credits:
-   - name: Denys Nevozhai
-     href: https://unsplash.com/images/nature/winter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 tags:
   - blog
   - new-to-the-web
