@@ -1,14 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# A sample workflow which checks out your Infrastructure as Code Configuration files,
-# such as Kubernetes, Helm & Terraform and scans them for any security issues.
-# The results are then uploaded to GitHub Security Code Scanning
-#
-# For more examples, including how to limit scans to only high-severity issues
-# and fail PR checks, see https://github.com/snyk/actions/
+ https://github.com/snyk/actions/
 
 name: Snyk Infrastructure as Code
 
