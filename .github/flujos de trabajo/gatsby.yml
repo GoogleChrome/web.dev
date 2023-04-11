@@ -1,7 +1,5 @@
-# Sample workflow for building and deploying a Gatsby site to GitHub Pages
-#
-# To get started with Gatsby see: https://www.gatsbyjs.com/docs/quick-start/
-#
+ https://www.gatsbyjs.com/docs/quick-start/
+
 name: Deploy Gatsby site to Pages
 
 on:
