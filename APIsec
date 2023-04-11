@@ -1,0 +1,44 @@
+nombre : APIsec
+
+# Controla cuándo se ejecutará el flujo de trabajo
+en :
+  # Activa el flujo de trabajo en eventos de solicitud push o pull, pero solo para la rama "principal"
+  # Personalice los eventos desencadenantes en función de sus procesos DevSecOps.
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 26 5 * * 0 '
+
+  # Le permite ejecutar este flujo de trabajo manualmente desde la pestaña Acciones
+  flujo de trabajo_despacho :
+
+
+permisos :
+  contenido : leer
+
+trabajos :
+
+  Trigger_APIsec_scan :
+    permisos :
+      eventos de seguridad : escriba # para github/codeql-action/upload-sarif para cargar los resultados de SARIF
+      acciones : lectura # solo requerida para un repositorio privado por github/codeql-action/upload-sarif para obtener el estado de ejecución de la acción
+    se ejecuta en : ubuntu-latest
+
+    pasos :
+       - nombre : escaneo APIsec
+         usos : apisec-inc/apisec-run-scan@f748a240d69ca6cd7e9532fd0a47bec4ccd6a73c
+         con :
+          # El nombre de usuario de APIsec con el que se ejecutarán los escaneos
+          apisec-nombre de usuario : ${{ secretos.apisec_username }}
+          # La Contraseña del usuario de APIsec con el que se ejecutarán los escaneos
+          contraseña-apisec : ${{ secretos.apisec_password}}
+          # El nombre del proyecto para el escaneo de seguridad
+          apisec-proyecto : " VAmPI "
+          # El nombre del archivo de resultados en formato sarif. El archivo se escribe solo si se proporciona esta propiedad.
+          archivo de resultados de sarif : " apisec-results.sarif "
+       - nombre : Importar resultados
+         usos : github/codeql-action/upload-sarif@v2
+         con :
+          sarif_file : ./apisec-results.sarif
