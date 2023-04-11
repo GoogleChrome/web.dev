@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 웹 개발자의, 미니앱에 대한 결론
+title: 미니앱에 대한 웹 개발자의 결론
 authors:
   - thomassteiner
 date: 2021-03-03
