@@ -4,7 +4,7 @@ title: How Slow Roads intrigues gamers and developers alike, spotlighting the su
 subhead: Discover the potential of WebGL with the infinite, procedurally-generated scenery of this casual driving game.
 authors:
   - anslo
-date: 2023-04-04
+date: 2023-04-11
 hero: image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/FYKfFSNA0ga2rSuD7iMG.png
 tags:
   - blog
