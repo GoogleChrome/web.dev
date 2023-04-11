@@ -1,0 +1,23 @@
+nombre : " Prueba de seguridad estática de la API REST de 42Crunch "
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 29 17 * * 3 '
+permisos :
+  contenido : leer
+trabajos :
+  rest-api-static-security-testing :
+    permisos :
+      contenido : leer # para acciones/pago para obtener código
+      eventos de seguridad : escriba # para 42Crunch/api-security-audit-action para cargar los resultados en Github Code Scanning
+    se ejecuta en : ubuntu-latest
+    pasos :
+      - usos : acciones/checkout@v3
+       - nombre : 42Crunch REST API Pruebas de seguridad estática
+        usos : 42Crunch/api-security-audit-action@f3a4f4d44ca6f538fe84361373d7a2a374018fdd
+        con :
+          
