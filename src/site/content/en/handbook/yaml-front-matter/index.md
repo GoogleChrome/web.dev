@@ -359,6 +359,47 @@ The `updated` value is presented in human-readable format beneath the page title
   </figcaption>
 </figure>
 
+
+## `editors`: give credit to content editors {: #editors }
+
+```yaml
+---
+…
+authors:
+  - petelepage
+  - kaycebasques
+…
+```
+
+Links to the author profiles of the editors appear beneath the content area.
+
+<figure>
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/kX8qclZNVltJv1hjQEfx.png", alt="An example of a page with editors.", width="800", height="712" %}
+  <figcaption>
+    The editors of this page were Kayce and Pete.
+  </figcaption>
+</figure>
+
+## `credits`: add credits for images and videos used in the post  {: #credits }
+
+```yaml
+---
+…
+credits:
+   - name: Denys Nevozhai
+     href: https://unsplash.com/images/nature/winter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+…
+```
+
+Links with media credits appear appear beneath the content area.
+
+<figure>
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/PKYFoCzGwhIqhw6cKejk.png", alt="An example of a page with credits.", width="800", height="712" %}
+  <figcaption>
+    This page picture is credited to Denys Nevozhai
+  </figcaption>
+</figure>
+
 ## `web_lighthouse`: help web.dev/measure link back to a guide {: #web_lighthouse }
 
 This property is only relevant for Lighthouse guides.
