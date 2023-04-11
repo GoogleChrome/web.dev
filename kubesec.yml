@@ -1,0 +1,36 @@
+nombre : Kubesec
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 26 9 * * 1 '
+
+trabajos :
+  pelusa :
+    nombre : Kubesec
+    se ejecuta en : ubuntu-20.04
+    permisos :
+      acciones : leer
+      contenido : leer
+      eventos de seguridad : escribir
+    pasos :
+      - nombre : código de pago
+        usos : acciones/checkout@v3
+
+      - nombre : ejecutar el escáner kubesec
+        usos : controlplaneio/kubesec-action@43d0ddff5ffee89a6bb9f29b64cd865411137b14
+        con :
+          entrada : file.yaml # especifique el archivo de configuración para escanear aquí
+          formato : plantilla
+          plantilla : plantilla/sarif.tpl
+          salida : kubesec-results.sarif
+          código de salida : " 0 "
+
+      - nombre : Cargue los resultados del análisis de Kubesec en la pestaña Seguridad de GitHub
+        usos : github/codeql-action/upload-sarif@v2
+        con :
+          sarif_file : kubesec-results.sarif
