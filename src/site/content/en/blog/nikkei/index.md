@@ -51,7 +51,7 @@ and accelerate their business on the web.
 {% Blockquote 'Taihei Shigemori, Manager, Digital Strategy' %}
 The value of speed is indisputable, especially for financial news. We made
 speed one of our core metrics, and our customers have appreciated the
-change. 
+change.
 {% endBlockquote %}
 
 
@@ -77,7 +77,7 @@ year to achieve this performance.
 {% Blockquote 'Hiroyuki Higashi. Product Manager, Nikkei' %}
 The Nikkei front-end engineers have proved that great UX brings good
 business performance. We’re fully invested in continuing our journey of
-bringing a new level of quality to the web. 
+bringing a new level of quality to the web.
 {% endBlockquote %}
 
 ### Solution
@@ -189,9 +189,9 @@ by 80%, dropping it to 60KB with RollUp.
   compressible resources using Fastly CDN
 -  [Caching](https://developers.google.com/web/tools/lighthouse/audits/cache-policy): Enable HTTP caching,
   edge side caching
--  [Image optimization](https://developers.google.com/web/tools/lighthouse/audits/unoptimized-images): Use
+-  [Image optimization](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/): Use
   [imgix](https://www.imgix.com/) for optimization and image format detection
-- [Lazy-load non-critical resources](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/):
+- [Lazy load non-critical resources](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/):
   Use intersection observer API to load below-the-fold fragments
 - [Have a web font-loading strategy](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization):
   Prioritize the use of system font

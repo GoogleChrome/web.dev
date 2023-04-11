@@ -11,7 +11,7 @@ tags:
 
 [View the site](https://santatracker.google.com/)
 
-### TL;DR 
+### Summary
 
 **Santa Tracker was rapidly upgraded to an offline Progressive Web App for the 2016 holiday season,
 thanks in part to our existing scene design.**

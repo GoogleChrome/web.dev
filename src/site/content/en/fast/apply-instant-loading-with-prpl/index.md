@@ -9,6 +9,7 @@ description: |
   fit together but still can be used independently to achieve performance
   results.
 date: 2018-11-05
+updated: 2022-08-18
 tags:
   - performance
 ---
@@ -16,7 +17,7 @@ tags:
 PRPL is an acronym that describes a pattern used to make web pages load and
 become interactive, faster:
 
-+  **Push** (or **preload**) the most important resources.
++  **Preload** the most important resources.
 +  **Render** the initial route as soon as possible.
 +  **Pre-cache** remaining assets.
 +  **Lazy load** other routes and non-critical assets.
@@ -127,7 +128,7 @@ Preloading ensures more important resources are fetched and downloaded sooner
 by the browser.
 
 Aside from splitting and loading different JavaScript chunks on demand,
-Lighthouse also provides an audit for lazy-loading non-critical images.
+Lighthouse also provides an audit for lazy loading non-critical images.
 
 {% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse: Defer offscreen images audit", width="800", height="90" %}
 
@@ -142,7 +143,7 @@ It's important to remember that not all of the techniques need to be
 applied together. Any efforts made with any of the following will provide
 noticeable performance improvements.
 
-+  **Push** (or **preload**) critical resources.
++  **Preload** critical resources.
 +  **Render** the initial route as soon as possible.
 +  **Pre-cache** remaining assets.
 +  **Lazy load** other routes and non-critical assets.

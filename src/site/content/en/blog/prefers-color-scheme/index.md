@@ -207,7 +207,7 @@ a way for sites to detect the user's preferred way to display content.
 ☝️ An established user preference media feature is `prefers-reduced-motion`
 that lets you detect the desire for less motion on a page.
 I have
-[written about `prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
+[written about `prefers-reduced-motion`](/prefers-reduced-motion/)
 before.
 {% endAside %}
 
@@ -468,7 +468,7 @@ in order to see the theme color and favicon changes, open the
 
 ```js
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-darkModeMediaQuery.addListener((e) => {
+darkModeMediaQuery.addEventListener('change', (e) => {
   const darkModeOn = e.matches;
   console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
 });

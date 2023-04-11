@@ -117,7 +117,7 @@ A `MediaStream` can be attached to a video element by setting the [`srcObject` a
 The `MediaStreamTrack` is actively using the camera, which takes resources, and keeps the camera open and camera light on. When you are no longer using a track, make sure to call `track.stop()` so that the camera can be closed.
 {% endAside %}
 
-`getUserMedia` can also be used [as an input node for the Web Audio API](https://developers.google.com/web/updates/2012/09/Live-Web-Audio-Input-Enabled):
+`getUserMedia` can also be used [as an input node for the Web Audio API](https://developer.chrome.com/blog/live-web-audio-input-enabled/):
 
 ```js
 // Cope with browser differences.
@@ -154,7 +154,7 @@ navigator.mediaDevices.getUserMedia({audio: true}, (stream) => {
 });
 ```
 
-Chromium-based apps and extensions can also incorporate `getUserMedia`. Adding `audioCapture` and/or `videoCapture` [permissions](https://developer.chrome.com/extensions/permission_warnings") to the manifest enables permission to be requested and granted only once upon installation. Thereafter, the user is not asked for permission for camera or microphone access.
+Chromium-based apps and extensions can also incorporate `getUserMedia`. Adding `audioCapture` and/or `videoCapture` [permissions](https://developer.chrome.com/extensions/permission_warnings) to the manifest enables permission to be requested and granted only once upon installation. Thereafter, the user is not asked for permission for camera or microphone access.
 
 Permission only has to be granted once for `getUserMedia()`. First time around, an Allow button is displayed in the browser's [infobar](https://dev.chromium.org/user-experience/infobars). HTTP access for `getUserMedia()` was deprecated by Chrome at the end of 2015 due to it being classified as a [Powerful feature](https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins).
 
@@ -173,7 +173,7 @@ The intention is potentially to enable a `MediaStream` for any streaming data so
 
 ### Constraints
 
-[Constraints](https://tools.ietf.org/html/draft-alvestrand-constraints-resolution-00#page-4) can be used to set values for video resolution for `getUserMedia()`. This also allows [support for other constraints](https://w3c.github.io/mediacapture-main/getusermedia.html#the-model-sources-sinks-constraints-and-settings), such as aspect ratio; facing mode (front or back camera); frame rate, height and width; and an [`applyConstraints()`](https://w3c.github.io/mediacapture-main/getusermedia.html#dom-mediastreamtrack-applyconstraints) method. 
+[Constraints](https://tools.ietf.org/html/draft-alvestrand-constraints-resolution-00#page-4) can be used to set values for video resolution for `getUserMedia()`. This also allows [support for other constraints](https://w3c.github.io/mediacapture-main/getusermedia.html#the-model-sources-sinks-constraints-and-settings), such as aspect ratio; facing mode (front or back camera); frame rate, height and width; and an [`applyConstraints()`](https://w3c.github.io/mediacapture-main/getusermedia.html#dom-mediastreamtrack-applyconstraints) method.
 
 For an example, see [WebRTC samples `getUserMedia`: select resolution](https://webrtc.github.io/samples/src/content/getusermedia/resolution).
 
@@ -185,7 +185,7 @@ Setting a disallowed constraint value gives a `DOMException` or an `Overconstrai
 
 #### Screen and tab capture
 
-Chrome apps also make it possible to share a live video of a single browser tab or the entire desktop through [`chrome.tabCapture`](https://developer.chrome.com/dev/extensions/tabCapture) and [`chrome.desktopCapture`](https://developer.chrome.com/extensions/desktopCapture) APIs. (For a demo and more information, see [Screensharing with WebRTC](https://developers.google.com/web/updates/2012/12/Screensharing-with-WebRTC). The article is a few years old, but it's still interesting.)
+Chrome apps also make it possible to share a live video of a single browser tab or the entire desktop through [`chrome.tabCapture`](https://developer.chrome.com/dev/extensions/tabCapture) and [`chrome.desktopCapture`](https://developer.chrome.com/extensions/desktopCapture) APIs. (For a demo and more information, see [Screensharing with WebRTC](https://developer.chrome.com/blog/screensharing-with-webrtc). The article is a few years old, but it's still interesting.)
 
 It's also possible to use screen capture as a `MediaStream` source in Chrome using the experimental `chromeMediaSource` constraint. Note that screen capture requires HTTPS and should only be used for development due to it being enabled through a command-line flag as explained in this [post](https://groups.google.com/forum/#!msg/discuss-webrtc/TPQVKZnsF5g/Hlpy8kqaLnEJ).
 
@@ -309,7 +309,7 @@ a=ssrc:2223794119 label:H4fjnMzxy3dPIgQ7HxuCTLb4wLLLeRHnFxh810
 
 The acquisition and exchange of network and media information can be done simultaneously, but both processes must have completed before audio and video streaming between peers can begin.
 
-The offer/answer architecture previously described is called [JavaScript Session Establishment Protocol](https://rtcweb-wg.github.io/jsep/), or JSEP. (There's an excellent animation explaining the process of signaling and streaming in [Ericsson's demo video](https://www.ericsson.com/research-blog/context-aware-communication/beyond-html5-peer-peer-conversational-video/) for its first WebRTC implementation.) 
+The offer/answer architecture previously described is called [JavaScript Session Establishment Protocol](https://rtcweb-wg.github.io/jsep/), or JSEP. (There's an excellent animation explaining the process of signaling and streaming in [Ericsson's demo video](https://www.ericsson.com/research-blog/context-aware-communication/beyond-html5-peer-peer-conversational-video/) for its first WebRTC implementation.)
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/n9vVzOGhttG2TljRbdxN.png", alt="JSEP architecture diagram", width="800", height="499" %}
@@ -322,14 +322,14 @@ Once the signaling process has completed successfully, data can be streamed dire
 
 `RTCPeerConnection` is the WebRTC component that handles stable and efficient communication of streaming data between peers.
 
-The following is a WebRTC architecture diagram showing the role of `RTCPeerConnection`. As you will notice, the green parts are complex! 
+The following is a WebRTC architecture diagram showing the role of `RTCPeerConnection`. As you will notice, the green parts are complex!
 
 <figure>
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/q28219742nq0IXphvneQ.png", alt="WebRTC architecture diagram", width="740", height="482" %}
 <figcaption>WebRTC architecture (from <a href="https://webrtc.github.io/webrtc-org/architecture/" title="webrtc.org: architecture diagram">webrtc.org</a>)</figcaption>
 </figure>
 
-From a JavaScript perspective, the main thing to understand from this diagram is that `RTCPeerConnection` shields web developers from the myriad complexities that lurk beneath. The codecs and protocols used by WebRTC do a huge amount of work to make real-time communication possible, even over unreliable networks: 
+From a JavaScript perspective, the main thing to understand from this diagram is that `RTCPeerConnection` shields web developers from the myriad complexities that lurk beneath. The codecs and protocols used by WebRTC do a huge amount of work to make real-time communication possible, even over unreliable networks:
 
 - Packet-loss concealment
 - Echo cancellation
@@ -372,10 +372,10 @@ In this example, `pc1` represents the local peer (caller) and `pc2` represents t
         onSetSessionDescriptionError
     );
     ```
-    
+
 ### Callee
 
-1. Create `pc2` and, when the stream from `pc1` is added, display it in a video element: 
+1. Create `pc2` and, when the stream from `pc1` is added, display it in a video element:
     ```js
     pc2 = new RTCPeerConnection(servers);
     pc2.ontrack = gotRemoteStream;
@@ -438,7 +438,7 @@ WebRTC, as currently implemented, only supports one-to-one communication, but co
   <figcaption>Multipoint Control Unit topology example</figcaption>
 </figure>
 
-Many existing WebRTC apps only demonstrate communication between web browsers, but gateway servers can enable a WebRTC app running on a browser to interact with devices, such as  [telephones](https://en.wikipedia.org/wiki/Public_switched_telephone_network) (also known as [PSTN](https://en.wikipedia.org/wiki/Public_switched_telephone_network)) and with [VOIP](https://en.wikipedia.org/wiki/Voice_over_IP) systems. In May 2012, Doubango Telecom open sourced the [sipml5 SIP client](https://sipml5.org/) built with WebRTC and WebSocket, which (among other potential uses) enables video calls between browsers and apps running on iOS and Android. At Google I/O, Tethr and Tropo demonstrated [a framework for disaster communications](https://tethr.tumblr.com/) __in a briefcase__ using an [OpenBTS cell](https://en.wikipedia.org/wiki/OpenBTS) to enable communications between feature phones and computers through WebRTC. Telephone communication without a carrier! 
+Many existing WebRTC apps only demonstrate communication between web browsers, but gateway servers can enable a WebRTC app running on a browser to interact with devices, such as  [telephones](https://en.wikipedia.org/wiki/Public_switched_telephone_network) (also known as [PSTN](https://en.wikipedia.org/wiki/Public_switched_telephone_network)) and with [VOIP](https://en.wikipedia.org/wiki/Voice_over_IP) systems. In May 2012, Doubango Telecom open sourced the [sipml5 SIP client](https://sipml5.org/) built with WebRTC and WebSocket, which (among other potential uses) enables video calls between browsers and apps running on iOS and Android. At Google I/O, Tethr and Tropo demonstrated [a framework for disaster communications](https://tethr.tumblr.com/) __in a briefcase__ using an [OpenBTS cell](https://en.wikipedia.org/wiki/OpenBTS) to enable communications between feature phones and computers through WebRTC. Telephone communication without a carrier!
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/oc1xnYE727oqMPYfWnt9.jpg", alt="Tethr/Tropo demo at Google I/O 2012", width="800", height="598" %}

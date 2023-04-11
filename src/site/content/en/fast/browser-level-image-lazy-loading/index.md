@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Browser-level image lazy-loading for the web
-subhead: Built-in lazy-loading is finally here!
+title: Browser-level image lazy loading for the web
+subhead: Built-in lazy loading is finally here!
 authors:
   - houssein
   - addyosmani
   - mathiasbynens
   - tunetheweb
 date: 2019-08-06
-updated: 2022-07-12
+updated: 2022-10-18
 hero: image/admin/F6VE4QkpCsomiJilTFNG.png
 alt: Phone outline with loading image and assets
 description: |
@@ -21,7 +21,7 @@ feedback:
   - api
 ---
 
-Browser-level support for lazy-loading images is now supported on the web! This video shows
+Browser-level support for lazy loading images is now supported on the web! This video shows
 a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 
 <figure>
@@ -32,15 +32,15 @@ a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 </figure>
 
 In Chrome 76 onwards, you can use the `loading` attribute to lazy-load images
-without the need to write custom lazy-loading code or use a separate JavaScript library. Let's dive into the details.
+without the need to write custom lazy loading code or use a separate JavaScript library. Let's dive into the details.
 
 ## Browser compatibility
 
 {% BrowserCompat 'html.elements.img.loading' %}
 
-Browsers that do not support the `loading` attribute simply ignore it without side-effects.
+Browsers that do not support the `loading` attribute simply ignore it without side effects.
 
-## Why browser-level lazy-loading?
+## Why browser-level lazy loading?
 
 According to [HTTPArchive](https://httparchive.org/reports/page-weight), images are the most
 requested asset type for most websites and usually take up more bandwidth than any other
@@ -52,10 +52,10 @@ Previously, there were two ways to defer the loading of off-screen images:
 - Using the [Intersection Observer
   API](https://developer.chrome.com/blog/intersectionobserver/)
 - Using `scroll`, `resize`, or `orientationchange` [event
-  handlers](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way)
+  handlers](/lazy-loading-images/)
 
-Either option can let developers include lazy-loading functionality, and many developers have built
-third-party libraries to provide abstractions that are even easier to use. With lazy-loading
+Either option can let developers include lazy loading functionality, and many developers have built
+third-party libraries to provide abstractions that are even easier to use. With lazy loading
 supported directly by the browser, however, there's no need for an external library. Browser-level lazy
 loading also ensures that deferred loading of images still works even if JavaScript is
 disabled on the client.
@@ -94,12 +94,12 @@ Note that an image with `loading="lazy"` and `fetchpriority="high"` will still b
 All images that are above the fold—that is, immediately viewable without scrolling—load
 normally. Those that are far below the device viewport are only fetched when the user scrolls near them.
 
-Chromium's implementation of lazy-loading tries to ensure that offscreen images are loaded early enough so that they have finished loading once the user scrolls near to them. By fetching nearby images before they become visible in the viewport, we maximize the chance they are already loaded by the time they become visible.
+Chromium's implementation of lazy loading tries to ensure that offscreen images are loaded early enough so that they have finished loading once the user scrolls near to them. By fetching nearby images before they become visible in the viewport, we maximize the chance they are already loaded by the time they become visible.
 
-Compared to JavaScript lazy-loading libraries, the thresholds for fetching images that scroll into view may be considered conservative. Chromium is looking at better aligning these thresholds with developer expectations.
+Compared to JavaScript lazy loading libraries, the thresholds for fetching images that scroll into view may be considered conservative. Chromium is looking at better aligning these thresholds with developer expectations.
 
 {% Aside %}
-Experiments conducted using Chrome on Android suggest that on 4G, 97.5% of below-the-fold images that are lazy-loaded were fully loaded within 10ms of becoming visible. Even on slow 2G networks, 92.6% of below-the-fold images were fully loaded within 10ms. This means browser-level lazy-loading offers a stable experience regarding the visibility of elements that are scrolled into view.
+Experiments conducted using Chrome on Android suggest that on 4G, 97.5% of below-the-fold images that are lazy-loaded were fully loaded within 10ms of becoming visible. Even on slow 2G networks, 92.6% of below-the-fold images were fully loaded within 10ms. This means browser-level lazy loading offers a stable experience regarding the visibility of elements that are scrolled into view.
 {% endAside %}
 
 The distance threshold is not fixed and varies depending on several factors:
@@ -122,11 +122,11 @@ the meantime, you will need to override the effective connection type of the bro
 
 ## Improved data-savings and distance-from-viewport thresholds
 
-As of July 2020, Chrome has made significant improvements to align the image lazy-loading distance-from-viewport thresholds to better meet developer expectations.
+As of July 2020, Chrome has made significant improvements to align the image lazy loading distance-from-viewport thresholds to better meet developer expectations.
 
 On fast connections (4G), we reduced Chrome's distance-from-viewport thresholds from `3000px` to `1250px` and on slower connections (3G or lower), changed the threshold from `4000px` to `2500px`. This change achieves two things:
 
-* `<img loading=lazy>` behaves closer to the experience offered by JavaScript lazy-loading libraries.
+* `<img loading=lazy>` behaves closer to the experience offered by JavaScript lazy loading libraries.
 * The new distance-from-viewport thresholds still allow us to guarantee images have probably loaded by the time a user has scrolled to them.
 
 You can find a comparison between the old vs. new distance-from-viewport thresholds for one of our demos on a fast connection (4G) below:
@@ -134,10 +134,10 @@ You can find a comparison between the old vs. new distance-from-viewport thresho
 Old thresholds. vs new thresholds:
 
 <figure>
-  {% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="The new and improved thresholds for image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px", width="800", height="460" %}
+  {% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="The new and improved thresholds for image lazy loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px", width="800", height="460" %}
 </figure>
 
-and the new thresholds vs. LazySizes (a popular JS lazy-loading library):
+and the new thresholds vs. LazySizes (a popular JS lazy loading library):
 
 <figure>
   {% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="The new  distance-from-viewport thresholds in Chrome loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions", width="800", height="355" %}
@@ -164,13 +164,13 @@ Alternatively, specify their values directly in an inline style:
 <img src="image.png" loading="lazy" alt="…" style="height:200px; width:200px;">
 ```
 
-The best practice of setting dimensions applies to `<img>` tags regardless of whether or not they are being loaded lazily. With lazy-loading, this can become more relevant. Setting `width` and `height` on images in modern browsers also allows browsers to infer their intrinsic size.
+The best practice of setting dimensions applies to `<img>` tags regardless of whether or not they are being loaded lazily. With lazy loading, this can become more relevant. Setting `width` and `height` on images in modern browsers also allows browsers to infer their intrinsic size.
 
 In most scenarios images still lazy-load if dimensions are not included, but there are a few edge cases you should be aware of. Without `width` and `height` specified, image dimensions are 0×0 pixels at first. If you have a gallery of such images, the browser may conclude that all of them fit inside the viewport at the start, as each takes up practically no space and no image is pushed offscreen. In this case the browser determines that all of them are visible to the user and decides to load everything.
 
-Also, [specifying image dimensions decreases the chances of layout shifts happening](https://www.youtube.com/watch?v=4-d_SoCHeWE). If you are unable to include dimensions for your images, lazy-loading them can be a trade-off between saving network resources and potentially being more at risk of layout shift.
+Also, [specifying image dimensions decreases the chances of layout shifts happening](https://www.youtube.com/watch?v=4-d_SoCHeWE). If you are unable to include dimensions for your images, lazy loading them can be a trade-off between saving network resources and potentially being more at risk of layout shift.
 
-While lazy-loading in Chromium is implemented in a way such that images are likely to be loaded once they are visible, there is still a small chance that they might not be loaded yet. In this case, missing `width` and `height` attributes on such images increase their impact on Cumulative Layout Shift.
+While lazy loading in Chromium is implemented in a way such that images are likely to be loaded once they are visible, there is still a small chance that they might not be loaded yet. In this case, missing `width` and `height` attributes on such images increase their impact on Cumulative Layout Shift.
 
 {% Aside %}
   Take a look at this [demo](https://mathiasbynens.be/demo/img-loading-lazy) to see how the `loading` attribute works with 100 pictures.
@@ -189,7 +189,7 @@ Although a browser will decide which image to load from any of the `<source>` el
 attribute only needs to be included to the fallback `<img>` element.
 
 
-## Avoid lazy-loading images that are in the first visible viewport
+## Avoid lazy loading images that are in the first visible viewport
 
 You should avoid setting `loading=lazy` for any images that are in the first visible viewport. This is particularly relevant for LCP images. See the article [The performance effects of too much lazy-loading](/lcp-lazy-loading/) for more information.
 
@@ -211,7 +211,7 @@ Generally, any images within the viewport should be loaded eagerly using the bro
 
 ## Graceful degradation
 
-Browsers that do not yet support the `loading` attribute will ignore its presence. While these browsers will of course not get the benefits of lazy-loading, including the attribute has no negative impact on them.
+Browsers that do not yet support the `loading` attribute will ignore its presence. While these browsers will of course not get the benefits of lazy loading, including the attribute has no negative impact on them.
 
 ## FAQ
 
@@ -228,23 +228,22 @@ future as browsers experiment with different threshold distances and variables.
 
 No, it can currently only be used with `<img>` tags.
 
-### Is there a downside to lazy-loading images that are within the device viewport?
+### Is there a downside to lazy loading images that are within the device viewport?
 
 It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome won't preload `loading=lazy` images in the preload scanner. See [Avoid lazy-loading images that are in the first visible viewport](#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport) for more information.
 
 ### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
-Only images that are below the device viewport by the [calculated
-distance](#distance-from-viewport-thresholds) load lazily. All images above the viewport, regardless of
-whether they're immediately visible, load normally.
+Using `loading="lazy"` _may_ prevent them being loaded when they are not visible but within the [calculated
+-distance](#distance-from-viewport-thresholds). For example, Chrome, Safari and Firefox do not load images using `display: none;` styling—either on the image element or on a parent element. However, other techniques to hide images—such as using `opacity:0` styling—will still result in the images being loaded. Always test your implementation thoroughly to ensure it's acting as intended.
 
 ### What if I'm already using a third-party library or a script to lazy-load images?
 
-With full support of native lazy-loading now available in modern browsers, you may wish to reconsider if you still need a third-party library or script to lazy-load images.
+With full support of native lazy loading now available in modern browsers, you may wish to reconsider if you still need a third-party library or script to lazy-load images.
 
 One reason to continue to use a third-party library along with `loading="lazy"` is to provide a polyfill for browsers that do not support the attribute, or to have more control over when lazy loading is triggered.
 
-### How do I handle browsers that don't support lazy-loading?
+### How do I handle browsers that don't support lazy loading?
 
 Create a polyfill or use a third-party library to lazy-load images on your site. The `loading`
 property can be used to detect if the feature is supported in the browser:
@@ -257,7 +256,7 @@ if ('loading' in HTMLImageElement.prototype) {
 }
 ```
 
-For example, [lazysizes](https://github.com/aFarkas/lazysizes) is a popular JavaScript lazy-loading
+For example, [lazysizes](https://github.com/aFarkas/lazysizes) is a popular JavaScript lazy loading
 library. You can detect support for the `loading` attribute to load lazysizes as a fallback
 library only when `loading` isn't supported. This works as follows:
 
@@ -296,16 +295,16 @@ it out in an older browser to see the fallback in action.
 
 {% Aside %}
   The lazysizes library also provides a [loading plugin](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/native-loading)
-  that uses browser-level lazy-loading when available but falls back to the library's custom functionality when needed.
+  that uses browser-level lazy loading when available but falls back to the library's custom functionality when needed.
 {% endAside %}
 
-### Is lazy-loading for iframes also supported in Chrome?
+### Is lazy loading for iframes also supported in Chrome?
 
 {% BrowserCompat 'html.elements.iframe.loading' %}
 
 `<iframe loading=lazy>` has also been standardized and is already implemented in Chromium. This allows you to lazy-load iframes using the `loading` attribute. See [this dedicated article about iframe lazy-loading](/iframe-lazy-loading/) for more information.
 
-### How does browser-level lazy-loading affect advertisements on a web page?
+### How does browser-level lazy loading affect advertisements on a web page?
 
 All ads displayed to the user in the form of an image or iframe lazy-load just
 like any other image or iframe.
@@ -315,13 +314,13 @@ like any other image or iframe.
 All images and iframes are immediately loaded if the page is printed. See [issue
 #875403](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) for details.
 
-### Does Lighthouse recognize browser-level lazy-loading?
+### Does Lighthouse recognize browser-level lazy loading?
 
-Earlier versions of Lighthouse would still highlight that pages using `loading=lazy` on images required a strategy for loading offscreen images. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) and above better factor in approaches for offscreen image lazy-loading that may use different thresholds, allowing them to pass the [Defer offscreen images](/offscreen-images/) audit.
+Earlier versions of Lighthouse would still highlight that pages using `loading=lazy` on images required a strategy for loading offscreen images. [Lighthouse 6.0](/lighthouse-whats-new-6.0/) and above better factor in approaches for offscreen image lazy loading that may use different thresholds, allowing them to pass the [Defer offscreen images](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/) audit.
 
 ## Conclusion
 
-Baking in support for lazy-loading images can make it significantly easier for
+Baking in support for lazy loading images can make it significantly easier for
 you to improve the performance of your web pages.
 
 Are you noticing any unusual behavior with this feature enabled in Chrome? [File a

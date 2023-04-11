@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-10-19
 description: この投稿では、Cumulative Layout Shift (累積レイアウト シフト数、CLS) という指標について紹介し、その測定方法に関する説明を行います。
 tags:
   - performance
@@ -36,7 +36,7 @@ Cumulative Layout Shift (CLS) 指標は、実際のユーザーに対するこ�
 
 ## CLS とは？
 
-CLS は、ページの表示中に発生した[予期しない](/cls/#expected-vs.-unexpected-layout-shifts)レイアウトシフトごとに*レイアウト シフト スコア*の最大バーストを測定します。
+CLS は、ページの表示中に発生した[予期しない](/cls/#expected-vs-unexpected-layout-shifts)レイアウトシフトごとに*レイアウト シフト スコア*の最大バーストを測定します。
 
 *レイアウト シフト*は、表示された要素がレンダリングされたフレームから次のフレームへと位置を変更する際に発生します。(個々の[レイアウト シフト スコア](#layout-shift-score)の計算方法に関する詳細については、以下を参照してください)。
 
@@ -170,9 +170,12 @@ CLS は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript を使用して CLS を測定する
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 JavaScript を使用した CLS の測定には、[Layout Instability API](https://github.com/WICG/layout-instability) を使用することができます。以下の例では、予期しない `layout-shift` エントリをリッスンしてセッションごとに分類し、変更が発生するたびにセッションの最大値をログとして記録する [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) の作成方法を示しています。
 
@@ -243,14 +246,14 @@ new PerformanceObserver((entryList) => {
 開発者がこれらのケースをすべて記憶して対処する必要はありません。[`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)を使用すれば、上記すべてが考慮された状態で CLS の測定を行うことができます。
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // CLS のレポートが必要なすべての状況で
 // CLS を測定し、ログとして記録します。
-getCLS(console.log);
+onCLS(console.log);
 ```
 
-JavaScript を使用して CLS を測定する方法に関する詳細な例については、[`getCLS()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)を参照してください。
+JavaScript を使用して CLS を測定する方法に関する詳細な例については、[`onCLS()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts)を参照してください。
 
 {% Aside %}場合によっては (クロスオリジン iframe など)、JavaScript を使用して CLS を測定することはできません。詳細については、`web-vitals` ライブラリの「[制限事項](https://github.com/GoogleChrome/web-vitals#limitations)」セクションを参照してください。{% endAside %}
 
@@ -258,9 +261,9 @@ JavaScript を使用して CLS を測定する方法に関する詳細な例に�
 
 以下に挙げるいくつかの原則に従うことにより、ほとんどの Web サイトで予期しないレイアウト シフトの発生を回避することができます。
 
-- **画像要素や動画要素に必ず size 属性を付ける手法や、[CSS を駆使したアスペクト比対応ボックス](https://css-tricks.com/aspect-ratio-boxes/)などの手法を用いて必要なスペースを確保する。**こういったアプローチを取ることによって、ブラウザーが画像の読み込み中に適切なサイズのスペースをドキュメント内に確保することができます。なお、機能ポリシーをサポートしているブラウザーであれば、[unsized-media 機能ポリシー](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/unsized-media.md)を使用してこの動作を強制することも可能です。
-- **ユーザーの操作に応じる場合を除き、既存のコンテンツの上側にコンテンツを挿入しない。**こうしておくことで、レイアウト シフトが発生したとしても、その影響を想定内に留めておくことができるようになります。
-- **レイアウト変更のトリガーとなるプロパティを利用したアニメーションよりも、transform アニメーションを優先する。**ある状態から別の状態へのコンテキストや連続性を提供する方法でトランジションをアニメーション化しましょう。
+- **画像要素や動画要素に必ず size 属性を付ける手法や、[CSS を駆使したアスペクト比対応ボックス](https://css-tricks.com/aspect-ratio-boxes/)などの手法を用いて必要なスペースを確保する。** こういったアプローチを取ることによって、ブラウザーが画像の読み込み中に適切なサイズのスペースをドキュメント内に確保することができます。なお、機能ポリシーをサポートしているブラウザーであれば、[unsized-media 機能ポリシー](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/unsized-media.md)を使用してこの動作を強制することも可能です。
+- **ユーザーの操作に応じる場合を除き、既存のコンテンツの上側にコンテンツを挿入しない。** こうしておくことで、レイアウト シフトが発生したとしても、その影響を想定内に留めておくことができるようになります。
+- **レイアウト変更のトリガーとなるプロパティを利用したアニメーションよりも、transform アニメーションを優先する。** ある状態から別の状態へのコンテキストや連続性を提供する方法でトランジションをアニメーション化しましょう。
 
 CLS の改善方法の詳細については、「[CLS を最適化する](/optimize-cls/)」および「[レイアウト シフトのデバッグ](/debug-layout-shifts)」を参照してください。
 

@@ -15,14 +15,6 @@ tags:
   - ux
 ---
 
-{＃TODO (kayce):＃1983が掲載されたら、ハードコードされたこのToCを削除します。＃}
-
-- [ビューポートを設定する](#viewport)
-- [コンテンツのサイズをビューポートに合わせる](#size-content)
-- [応答性を確保するためにCSSメディアクエリを使用する](#media-queries)
-- [ブレークポイントの選択方法](#breakpoints)
-- [ChromeDevToolsでメディアクエリブレークポイントを表示する](#devtools)
-
 モバイルデバイスを使ったWebの閲覧は、天飛躍的なペースで成長し続けています。こうしたデバイスはディスプレイサイズに制約されることが多く、コンテンツを画面上にレイアウトする上で異なるアプローチが必要です。
 
 レスポンシブウェブデザインは、もともと[A  List Apart の Ethan Marcotte 氏](http://alistapart.com/article/responsive-web-design/)によって定義されたもので、ユーザーとユーザーの使用するデバイスのニーズに応えます。レイアウトは、デバイスのサイズと機能に応じて変わります。たとえば、携帯電話の場合は、コンテンツ 1 列のビューに表示されます。タブレットでは、同じコンテンツが 2 列のビューに表示される場合があります。
@@ -59,7 +51,7 @@ tags:
 
 {% Aside 'caution' %}古いブラウザが属性を適切に解析できるようにするには、コンマを使用して属性を区切ります。{% endAside %}
 
-[`width`または`initial-scale` Lighthouse監査を含む`<meta name="viewport">`タグ](/viewport/)がない場合、HTMLドキュメントがビューポートメタタグを正しく使用していることを確認するプロセスを自動化するのに役立ちます。
+[`width`または`initial-scale` Lighthouse監査を含む`<meta name="viewport">`タグ](https://developer.chrome.com/docs/lighthouse/pwa/viewport/)がない場合、HTMLドキュメントがビューポートメタタグを正しく使用していることを確認するプロセスを自動化するのに役立ちます。
 
 ### アクセス可能なビューポートを確認する {: ＃accessible-viewport}
 
@@ -77,7 +69,7 @@ tags:
 
 メタビューポートタグを使用してモバイルサイトを開発する場合、指定したビューポートに完全に収まらないページコンテンツを誤って作成してしまう可能性があります。たとえば、ビューポートよりも広い幅で画像が表示されると、ビューポートが水平方向にスクロールする可能性があります。ユーザーがページを水平方向にスクロールする必要がないように、コンテンツをビューポートの幅内に収まるように調整する必要があります。
 
-Lighthouse の [Content is not sized correctly for the viewport](/content-width/) 監査は、オーバーフローするコンテンツを検出するプロセスを自動化するのに役立ちます。
+Lighthouse の [Content is not sized correctly for the viewport](https://developer.chrome.com/docs/lighthouse/pwa/content-width/) 監査は、オーバーフローするコンテンツを検出するプロセスを自動化するのに役立ちます。
 
 ### 画像 {: #images}
 

@@ -39,7 +39,7 @@ By preloading a certain resource, you are telling the browser that you would lik
 <figcaption>In this example, Pacifico font is preloaded, so the download happens in parallel with the stylesheet.</figcaption>
 </figure>
 
-The critical request chain represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as late-discovered. You can use the [**Preload key requests**](/uses-rel-preload) audit to identify which resources to preload.
+The critical request chain represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as late-discovered. You can use the [**Preload key requests**](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/) audit to identify which resources to preload.
 
 {% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse's preload key requests audit.", width="745", height="97" %}
 
@@ -62,7 +62,8 @@ Unused preloads trigger a Console warning in Chrome, approximately 3 seconds aft
 {% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Chrome DevTools Console warning about unused preloaded resources.", width="800", height="228" %}
 
 {% Aside %}
-[`preload` is supported](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility) in all modern browsers.
+`preload` is supported  in all modern browsers.
+{% BrowserCompat 'html.elements.link.rel.preload' %}
 {% endAside %}
 
 ## Use cases
@@ -84,7 +85,7 @@ If you are using the [critical CSS approach](/extract-critical-css), you split y
 
 ### Preloading JavaScript files
 
-Because browsers don't execute preloaded files, preloading is useful to separate fetching from [execution](/bootup-time) which can improve metrics such as Time to Interactive. Preloading works best if you [split](/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles and only preload critical chunks.
+Because browsers don't execute preloaded files, preloading is useful to separate fetching from [execution](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/) which can improve metrics such as Time to Interactive. Preloading works best if you [split](/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles and only preload critical chunks.
 
 ## How to implement rel=preload
 

@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of forms.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: How do you cause radio buttons to be part of the same group?
+    options:
+      - content: "Put them all inside a fieldset."
+        rationale: "Try again."
+      - content: "Give them all the same `name` attribute value."
+        rationale: "Correct!"
+      - content: "Give them all the same `id` attribute value."
+        rationale: "Try again."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: Which HTML element is used to tell the user what this form field is for?
+    options:
+      - content: "`<h1>`"
+        rationale: "Try again."
+      - content: "`<title>`"
+        rationale: "Try again."
+      - content: "`<label>`"
+        rationale: "Correct!"

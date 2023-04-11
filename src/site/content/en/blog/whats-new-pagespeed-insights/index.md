@@ -21,12 +21,12 @@ tags:
 Over the years, [PageSpeed
 Insights](https://pagespeed.web.dev/) (PSI) has
 evolved into a one-stop source for both
-[field](https://developers.google.com/web/fundamentals/performance/speed-tools#field_data)
+[field](/speed-tools/#field-data)
 and
-[lab data](https://developers.google.com/web/fundamentals/performance/speed-tools#lab_data).
+[lab data](/speed-tools/#lab-data).
 It integrates information from the
-[Chrome UX Report](https://developer.chrome.com/docs/crux/)
-(CrUX) and [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+[Chrome UX Report](hhttps://developer.chrome.com/docs/crux/)
+(CrUX) and [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview)
 diagnostics to provide insights that help improve the performance of your
 website.
 
@@ -168,7 +168,7 @@ For up to date product documentation, visit
 ## Updates to web.dev/measure
 
 To reduce inconsistency between the different tools in our performance toolbox,
-we are also updating [web.dev/measure](/measure) to be directly powered by the [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started).
+we are also updating [web.dev/measure](/measure/) to be directly powered by the [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started).
 
 Previously, developers would run reports via both the PSI tool and /measure
 and see different Lighthouse numbers. One of the main reasons for differences
@@ -237,11 +237,11 @@ origin over the last 28 days.
 performance issues, as it is collected in a controlled environment. The report
 shows the performance using metrics like[First Contentful
 Paint](/fcp/), [Largest Contentful Paint](/lcp/),
-[Speed Index](/speed-index/), [Cumulative Layout
+[Speed Index](https://developer.chrome.com/docs/lighthouse/performance/speed-index/), [Cumulative Layout
 Shift](/cls/), [Time to
 Interactive](/tti/), and [Total Blocking
 Time](/tbt/). Each metric is
-[scored](/performance-scoring/) and labeled with an icon
+[scored](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) and labeled with an icon
 indicating Good, Needs improvement, or Poor. This section provides a good
 indication of performance bottlenecks pre-release and can help to diagnose
 problems, but may not capture real-world issues.

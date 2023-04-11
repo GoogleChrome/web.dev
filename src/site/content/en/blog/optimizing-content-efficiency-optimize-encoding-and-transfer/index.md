@@ -24,7 +24,7 @@ require input from the developer.
 
 Delivering the best performance requires a combination of all of these techniques.
 
-### TL;DR {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 - Compression is the process of encoding information using fewer bits.
 - Eliminating unnecessary data always yields the best results.
@@ -52,7 +52,7 @@ optimizing a simple text message format that was invented just for this example:
 1. Messages may contain arbitrary annotations, which are indicated by the "#" prefix.
    Annotations do not affect the meaning or any other behavior of the message.
 2. Messages may contain _headers_, which are key-value pairs (separated by ":")
-   that appear at the beginning at the message.
+   that appear at the beginning of the message.
 3. Messages carry text payloads.
 
 What can you do to reduce the size of the above message, which is currently
@@ -89,7 +89,7 @@ for different content.
 
 ## Minification: preprocessing & context-specific optimizations
 
-### TL;DR {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 - Content-specific optimizations can significantly reduce the size of delivered resources.
 - Content-specific optimizations are best applied as part of your build/release cycle.
@@ -196,7 +196,7 @@ release processes to ensure that the optimizations are applied.
 
 ## Text compression with GZIP
 
-### TL;DR {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 - GZIP performs best on text-based assets: CSS, JavaScript, HTML.
 - All modern browsers support GZIP compression and will automatically request it.

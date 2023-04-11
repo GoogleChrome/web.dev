@@ -105,12 +105,14 @@ You can also pass a fallback declaration value into the `var()` function.
 This means that if `--base-color` can't be found,
 the passed **declaration** will be used instead, which in this sample's case is the `hotpink` color.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYNPOjP',
   tab: 'css,result',
   height: 250
 } %}
+</figure>
 
 ## Functions that return a value
 
@@ -157,6 +159,7 @@ Like many other programming languages,
 CSS provides useful mathematical functions to assist with various types of calculation.
 
 ### calc()
+{% BrowserCompat 'css.types.calc' %}
 
 The [`calc()`](https://developer.mozilla.org/docs/Web/CSS/calc())
 function takes a single mathematical expression as its parameter.
@@ -172,10 +175,13 @@ such as length, number, angle and frequency. Units can be mixed too.
 In this example, the `calc()` function is being used to size an element's width
 as 100% of its containing parent element,
 then removing `2rem` off that computed value.
+
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'PopYema'
 } %}
+</figure>
 
 ```css
 :root {
@@ -192,6 +198,8 @@ The `calc()` function can be nested inside another `calc()` function.
 You can also pass custom properties in a `var()` function as part of an expression.
 
 ### `min()` and `max()`
+
+{% BrowserCompat 'css.types.min' %}
 
 The [`min()`](https://developer.mozilla.org/docs/Web/CSS/min())
 function returns the smallest computed value of the one or more passed arguments.
@@ -216,6 +224,7 @@ We cover units like `vw` and `vh` in the [sizing](/learn/css/sizing) units modul
 {% endAside %}
 
 ### clamp()
+{% BrowserCompat 'css.types.clamp' %}
 
 The [`clamp()`](https://developer.mozilla.org/docs/Web/CSS/clamp())
 function takes three arguments: the minimum size,
@@ -263,11 +272,12 @@ take comma separated pairs of X and Y axis values to create custom shapes.
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNjYNNd'
 } %}
+</figure>
 
 Like `polygon()`, there is also a `path()` function which takes an SVG fill rule as an argument.
 This allows for highly complex shapes that can be drawn in a graphics tool
@@ -280,6 +290,7 @@ which skew, resize and even change the depth of an element.
 All of the following functions are used with the `transform` property.
 
 ### Rotation
+{% BrowserCompat 'css.types.transform-function.rotate' %}
 
 You can rotate an element using the
 [`rotate()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/rotate())
@@ -297,13 +308,18 @@ You can pass degree, turn and radian units to determine the level of rotation.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJOWzP'
 } %}
+</figure>
 
 The [`rotate3d()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/rotate3d())
 function takes four arguments.
+
+{% BrowserCompat 'css.types.transform-function.rotate3d' %}
+
 The first 3 arguments are numbers, which define the X, Y and Z coordinates.
 The fourth argument is the rotation which,
 like the other rotation functions, accepts degrees, angle and turns.
@@ -314,18 +330,21 @@ like the other rotation functions, accepts degrees, angle and turns.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrOJxa'
 } %}
+</figure>
 
 ### Scale
+{% BrowserCompat 'css.types.transform-function.scale' %}
 
 You can change the scaling of an element with `transform` and the
 [`scale()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scale()) function.
 The function accepts one or two numbers as a value which determine a positive or negative scaling.
 If you only define one number argument,
-both the X and Y axis will be scaled the same and defining both is a shorthand forX and Y.
+both the X and Y axis will be scaled the same and defining both is a shorthand for X and Y.
 Just like `rotate()`,
 there are
 [`scaleX()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scaleX()),
@@ -339,16 +358,19 @@ functions to scale an element on a specific axis instead.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYgWOoq'
 } %}
+</figure>
 
 Also like the `rotate` function, there is a
 [`scale3d()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scale3d()) function.
 This is similar to `scale()`, but it takes three arguments: the X, Y and Z scale factor.
 
 ### Translate
+{% BrowserCompat 'css.types.transform-function.translate' %}
 
 The [`translate()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/translate())
 functions move an element while it maintains its position in the document flow.
@@ -362,10 +384,12 @@ and translates an element along the X and Y axis if both arguments are defined.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'RwKjWgP'
 } %}
+</figure>
 
 You can—just like with other transform functions—use specific functions for a specific axis,
 using
@@ -377,6 +401,7 @@ You can also use
 which allows you to define the X, Y and Z translation in one function.
 
 ### Skewing
+{% BrowserCompat 'css.types.transform-function.skew' %}
 
 You can skew an element, using the
 [`skew()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/skew())
@@ -394,12 +419,15 @@ You can also use
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjEOYMq'
 } %}
+</figure>
 
 ### Perspective
+{% BrowserCompat 'css.properties.perspective' %}
 
 Lastly, you can use the
 [`perspective`](https://developer.mozilla.org/docs/Web/CSS/perspective) property
@@ -409,10 +437,12 @@ This gives the feeling of distance and can be used to create a depth of field in
 This example by David Desandro, from their very useful article, shows how it can be used,
 along with `perspective-origin-x` and `perspective-origin-y` properties to create truly 3D experiences.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bMqZmr'
 } %}
+</figure>
 
 ## Animation functions, gradients and filters
 

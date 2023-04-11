@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - yoavweiss
 date: 2021-09-14
-updated: 2022-07-18
+updated: 2023-02-10
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/FITOGeO0PDyPrBveixB7.jpeg
 alt: "Exterior view of the Walt Disney Concert Hall"
 tags:
@@ -36,6 +36,11 @@ Vitals initiative is to provide metrics that measure the experience independent
 of the technology. While this is not possible in every case today (due to
 limitations in the web platform), we are [actively working on closing those
 gaps](#what-is-google-doing-to-ensure-mpas-do-not-have-an-unfair-advantage-compared-to-spas).
+
+{% Aside %}
+Update (February 2023): The work is now available for sites to experiment with. See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more details.
+{% endAside %}
+
 
 ## Frequently asked questions
 
@@ -129,7 +134,7 @@ page](https://en.wikipedia.org/wiki/Landing_page).
 You can check your site's score for different aggregation methods using
 [PageSpeed Insights](https://pagespeed.web.dev/) or
 the [Chrome User Experience Report
-API](/chrome-ux-report-api/),
+API](https://developer.chrome.com/blog/chrome-ux-report-api/),
 which reports scores for both individual page URLs and the entire origin.
 
 Another way the SPA architecture can affect Core Web Vitals scores is for
@@ -148,7 +153,7 @@ with full page loads in an MPA. This can also lead to confusion because layout
 shifts that occur after a route transition will be attributed to the URL of the
 page when it was loaded, not the URL in the address bar at the time of the shift
 ([more details
-below](#if-core-web-vitals-scores-are-only-reported-for-an-spa's-landing-pages-how-can-i-debug-issues-that-occur-on-"pages"-after-a-route-transition)).
+below](#if-core-web-vitals-scores-are-only-reported-for-an-spa's-landing-pages-how-can-i-debug-issues-that-occur-on-pages-after-a-route-transition)).
 
 ### If SPA architectures improve the user experience, shouldn't that improvement be reflected in the metrics?
 
@@ -232,8 +237,8 @@ allow you to both debug individual issues that occur throughout the page
 lifecycle as well as aggregate by original page URL in order to match how Google
 tools measure and report on the metrics.
 
-For more details and best practices on this topic, see: [Debug Web Vitals in the
-field](/debug-web-vitals-in-the-field/).
+For more details and best practices on this topic, see: [Debug performance in the
+field](/debug-performance-in-the-field/).
 
 ### What is Google doing to ensure MPAs do not have an unfair advantage compared to SPAs?
 
@@ -303,6 +308,10 @@ possible to aggregate SPA route transition time into the same bucket as
 same-origin page loads in an MPA. This is exciting because it would allow a site
 migrating from an MPA to an SPA to actually compare the performance before and
 after.
+
+{% Aside %}
+Update (February 2023): See the [Experimenting with measuring soft navigations](https://developer.chrome.com/blog/soft-navigations-experiment/) post for more information on a new "soft-navigations" API that is intended to allow better Core Web Vitals measurements for SPAs.
+{% endAside %}
 
 Of course, more research is needed before we'll know whether we can accurately
 make these determinations. If you have suggestions or feedback on these

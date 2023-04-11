@@ -538,4 +538,4 @@ app, I'd love to know! You can find me on Twitter [@\_developit](https://twitter
 [finalizationregistry]: https://v8.dev/features/weak-references#:~:text=FinalizationRegistry
 [weakref]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef
 [noopener]: https://developer.mozilla.org/docs/Web/API/Window/open#noopener
-[rel-noopener]: /external-anchors-use-rel-noopener/
+[rel-noopener]: https://developer.chrome.com/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/

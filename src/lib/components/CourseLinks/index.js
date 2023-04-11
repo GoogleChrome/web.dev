@@ -16,7 +16,8 @@
 
 /**
  * @fileoverview A custom element to track the user's progress using
- * localstorage, and report progress using analytics.
+ * localstorage, which is used to marks sections as ticked in the course
+ * table of contents.
  *
  * We inline this element into the head of the document to avoid FOUC because
  * it needs to read from localstorage and then modify its children.
@@ -61,8 +62,7 @@ class CourseLinks extends HTMLElement {
 
   /**
    * Called when the element's children are first parsed.
-   * This will set attributes on the children so they render correctly
-   * and will track the user's progress in GA.
+   * This will set attributes on the children so they render correctly.
    */
   onSlotChange = () => {
     const children = Array.from(this.querySelectorAll('a'));
@@ -85,7 +85,7 @@ class CourseLinks extends HTMLElement {
   };
 
   /**
-   * Update the user's progress in localstorage and fire analytics.
+   * Update the user's progress in localstorage.
    * @param {Element[]} children
    * @param {string} currentUrl
    * @param {Course} course
@@ -101,28 +101,10 @@ class CourseLinks extends HTMLElement {
     const newPages = Array.from(oldPages);
 
     // Bucket the user's progress into increments of 10.
-    // For each 10%+ bucket jump, fire an analytics event.
-    // e.g. If there are 21 modules, and the user is on the 10th module, and
-    // clicks three more modules, the events will look like
-    // this:
-    // Math.floor((10/21) * 10) * 10 == 40
-    // Math.floor((11/21) * 10) * 10 == 50 (fire analytics event)
-    // Math.floor((12/21) * 10) * 10 == 50
-    // Math.floor((13/21) * 10) * 10 == 60 (fire analytics event)
-    // Note we're using integers to represent percents instead of decimals to
-    // avoid issues with floating point arithmetic.
-    const oldPercent = parseInt(course.percent, 10);
+    // Currently not used, but used to be used for analytics tracking
+    // and may be useful in future so keeping for now.
     const newPercent =
       Math.floor((newPages.length / children.length) * 10) * 10;
-
-    // Fire analytics if there's been a 10%+ bucket jump.
-    if (ga && newPercent - oldPercent >= 10) {
-      ga('send', 'event', {
-        eventCategory: 'Course Events',
-        eventAction: `course: ${courseKey} progress`,
-        eventLabel: newPercent.toString(),
-      });
-    }
 
     // Write everything back to localstorage using the data-course-key
     // to identify which course it came from.

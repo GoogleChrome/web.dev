@@ -183,7 +183,7 @@ tags:
 
 #### Как
 
-Разумно будет начать с [введения W3C в веб-доступность](https://www.w3.org/WAI/fundamentals/accessibility-intro/). Большую часть тестирования доступности необходимо проводить вручную. Такие инструменты, как [аудит доступности](/lighthouse-accessibility/) в Lighthouse, [axe](https://github.com/dequelabs/axe-core) и [Accessibility Insights](https://accessibilityinsights.io/), могут помочь вам частично автоматизировать тестирование доступности. Также важно использовать семантически правильные элементы вместо того, чтобы воссоздавать эти элементы самостоятельно, например, элементы `a` и `button`. Таким образом вы обеспечите соответствие ожиданиям доступности (например, когда использовать стрелки или вкладки), когда вам понадобится реализовать более продвинутую функциональность. В [A11Y Nutrition Cards](https://accessibilityinsights.io/) есть отличные советы по этому поводу для некоторых распространенных компонентов.
+Разумно будет начать с [введения W3C в веб-доступность](https://www.w3.org/WAI/fundamentals/accessibility-intro/). Большую часть тестирования доступности необходимо проводить вручную. Такие инструменты, как [аудит доступности](https://developer.chrome.com/docs/lighthouse/accessibility/) в Lighthouse, [axe](https://github.com/dequelabs/axe-core) и [Accessibility Insights](https://accessibilityinsights.io/), могут помочь вам частично автоматизировать тестирование доступности. Также важно использовать семантически правильные элементы вместо того, чтобы воссоздавать эти элементы самостоятельно, например, элементы `a` и `button`. Таким образом вы обеспечите соответствие ожиданиям доступности (например, когда использовать стрелки или вкладки), когда вам понадобится реализовать более продвинутую функциональность. В [A11Y Nutrition Cards](https://accessibilityinsights.io/) есть отличные советы по этому поводу для некоторых распространенных компонентов.
 
 {% endDetails %}
 
@@ -203,7 +203,7 @@ tags:
 
 #### Как
 
-Для начала убедитесь, что у каждого URL-адреса есть уникальный описательный заголовок и мета-описание. Затем вы можете использовать [Google Search Console](https://search.google.com/search-console/about) и [аудит поисковой оптимизации](/lighthouse-seo/) в Lighthouse, чтобы отладить и исправить проблемы обнаружения своего PWA. Кроме того, вы можете использовать инструменты [Bing](https://www.bing.com/toolbox/webmaster) или [Яндекс](https://webmaster.yandex.com/welcome/) для веб-мастеров. Также рекомендуем вам включить в свое PWA [структурированные данные](https://goo.gle/search-gallery) с помощью схем со [Schema.org](https://schema.org/).
+Для начала убедитесь, что у каждого URL-адреса есть уникальный описательный заголовок и мета-описание. Затем вы можете использовать [Google Search Console](https://search.google.com/search-console/about) и [аудит поисковой оптимизации](https://developer.chrome.com/docs/lighthouse/seo/) в Lighthouse, чтобы отладить и исправить проблемы обнаружения своего PWA. Кроме того, вы можете использовать инструменты [Bing](https://www.bing.com/toolbox/webmaster) или [Яндекс](https://webmaster.yandex.com/welcome/) для веб-мастеров. Также рекомендуем вам включить в свое PWA [структурированные данные](https://goo.gle/search-gallery) с помощью схем со [Schema.org](https://schema.org/).
 
 {% endDetails %}
 

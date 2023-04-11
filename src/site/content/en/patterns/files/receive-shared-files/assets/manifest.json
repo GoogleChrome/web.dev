@@ -1,0 +1,32 @@
+{
+  "name": "How to receive shared files",
+  "short_name": "Shared files",
+  "start_url": "../demo.html",
+  "id": "../demo.html",
+  "icons": [
+    {
+      "src": "../assets/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "../assets/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "display": "standalone",
+  "share_target": {
+    "action": "../receive-files/",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "files": [
+        {
+          "name": "image",
+          "accept": ["image/jpeg", "image/png", "image/webp", "image/gif"]
+        }
+      ]
+    }
+  }
+}

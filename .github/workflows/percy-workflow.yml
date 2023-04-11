@@ -7,20 +7,32 @@ on:
     branches:
       - main
     paths:
-      - 'src/**.js'
-      - 'shared/**.js'
-      - '!src/site/_data/countries.js'
-      - 'package.json'
-      - '**.njk'
       - '**.scss'
+      - 'package.json'
+      - 'src/component-library/**'
+      - 'src/fonts/**'
+      - 'src/build/**.js'
+      - 'src/**.js'
+      - '!src/site/_collections/**.js'
+      - '!src/site/_data/**.js'
+      - '!src/site/content/**.js'
+      - 'shared/**.js'
+      - 'src/site/content/en/handbook/content-types/**'
+
   pull_request:
     paths:
-      - 'src/**.js'
-      - 'shared/**.js'
-      - '!src/site/_data/countries.js'
-      - 'package.json'
-      - '**.njk'
+      - '.github/workflows/percy-workflow.yml'
       - '**.scss'
+      - 'package.json'
+      - 'src/component-library/**'
+      - 'src/fonts/**'
+      - 'src/build/**.js'
+      - 'src/**.js'
+      - '!src/site/_collections/**.js'
+      - '!src/site/_data/**.js'
+      - '!src/site/content/**.js'
+      - 'shared/**.js'
+      - 'src/site/content/en/handbook/content-types/**'
 
 jobs:
   percy:
@@ -36,5 +48,6 @@ jobs:
 
       - name: Percy
         env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: npm run percy

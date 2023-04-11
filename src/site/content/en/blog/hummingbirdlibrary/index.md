@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/0kLA0cAAnqvRRct6qNHc.png", alt="Layout screenshot", width="800", height="1570" %}
 </figure>
 
-### TL;DR 
+### Summary
 
 [Hummingbird Library](http://hummingbirdlibrary.com/): A refreshingly new
 frontend to Hummingbird, a popular anime watch-tracker and discovery site.
@@ -28,8 +28,8 @@ is the by far best-looking of them all.
 Yet, [Hummingbird Library](http://hummingbirdlibrary.com/), which sits on top
 of the existing Hummingbird API, goes one step further, built from scratch
 with Angular and Material Design.
-[Theme color](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
-and [manifest](https://developers.google.com/web/fundamentals/app-install-banners) make
+[Theme color](/icons-and-browser-colors/)
+and [manifest](/customize-install/) make
 it look super integrated and installable on the home screen, and the whole
 experience feels very snappy, focussing on the core functionality of the main
 site.
@@ -52,7 +52,7 @@ tighter version of the tiles would work much better on mobile devices.
 Developing for the web allows you to reach virtually every platform with a
 single codebase, which is a huge advantage when you're the sole developer. And
 thanks to great features like
-[Add to Homescreen](https://developers.google.com/web/fundamentals/app-install-banners),
+[Add to Homescreen](/customize-install/),
 it's easy to give users an experience that is nearly identical to what they
 would get in a native application.
 

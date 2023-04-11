@@ -243,7 +243,7 @@ Web フォントのダウンロードとレンダリングが行われる場合�
 
 以下のツールを使用することで、この現象を最小限に抑えることができます。
 
-- <code>[font-display](/font-display/)</code> では、<code>auto</code>、<code>swap</code>、<code>block</code>、<code>fallback</code>、<code>optional</code> などの値を使用してカスタム フォントのレンダリング動作を修正することができます。残念ながら、これらの値 ([optional](http://crrev.com/749080) を除く) はすべて上に示したパターンのいずれかによるリレイアウトを引き起こしてしまう可能性があります。
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code> では、<code>auto</code>、<code>swap</code>、<code>block</code>、<code>fallback</code>、<code>optional</code> などの値を使用してカスタム フォントのレンダリング動作を修正することができます。残念ながら、これらの値 ([optional](http://crrev.com/749080) を除く) はすべて上に示したパターンのいずれかによるリレイアウトを引き起こしてしまう可能性があります。
 - [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) を使用すれば、必要なフォントの取得にかかる時間を短縮することができます。
 
 Chrome 83 の公開時点では、以下も方法もお勧めできます。
@@ -273,7 +273,7 @@ DevTools の[パフォーマンス パネル](https://developer.chrome.com/docs/
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Experience セクションを展開し、Layout Shift レコードが表示されている Chrome DevTools のパフォーマンス パネル", width="800", height="438" %} <figcaption>パフォーマンス パネルで新しいトレースを記録すると、結果を示す <b>Experience</b> セクションには <code>Layout Shift</code> レコードを表す赤色のバーが表示されます。レコードをクリックすることで、影響を受ける要素を詳細に確認することができます (例: エントリの Moved from (移動元) や Moved to (移動先) を確認する)。</figcaption></figure>
 
-また、[Chrome User Experience Report](/chrome-ux-report-bigquery/) を使用し、オリジンレベルで集計される実際の環境での CLS を測定することも可能です。CrUX の CLS データは BigQuery を介して利用することができ、CLS のパフォーマンスを確認するための[サンプル クエリ](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)が利用可能です。
+また、[Chrome User Experience Report](https://developer.chrome.com/blog/chrome-ux-report-bigquery/) を使用し、オリジンレベルで集計される実際の環境での CLS を測定することも可能です。CrUX の CLS データは BigQuery を介して利用することができ、CLS のパフォーマンスを確認するための[サンプル クエリ](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)が利用可能です。
 
 このガイドの内容は以上となります。この記事が少しでもあなたのページのレイアウト シフトを減らす手助けとなれば嬉しいです。
 

@@ -36,7 +36,7 @@ Al precargar un determinado recurso, está informando al navegador que le gustar
 
 <figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Captura de pantalla del panel Chrome DevTools Network después de habilitar la precarga", width="701", height="509" %}. En este ejemplo, se realiza la precarga de la fuente Pacifico, por lo que la descarga ocurre en paralelo con la hoja de estilo.</figure>
 
-La cadena de solicitudes críticas representa el orden de los recursos priorizados y buscados por el navegador. Lighthouse identifica los activos que se encuentran en el tercer nivel de esta cadena como descubiertos tardíamente. Puede utilizar la [**auditoría de solicitudes de claves de precarga**](/uses-rel-preload) para identificar cuáles recursos precargar.
+La cadena de solicitudes críticas representa el orden de los recursos priorizados y buscados por el navegador. Lighthouse identifica los activos que se encuentran en el tercer nivel de esta cadena como descubiertos tardíamente. Puede utilizar la [**auditoría de solicitudes de claves de precarga**](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/) para identificar cuáles recursos precargar.
 
 {% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="La clave de precarga de Lighthouse solicita auditoría", width="745", height="97" %}
 
@@ -72,7 +72,7 @@ Si está utilizando el [enfoque CSS crítico](/extract-critical-css), dividirás
 
 ### Precarga de archivos JavaScript
 
-Debido a que los navegadores no ejecutan archivos precargados, la precarga es útil para separar la obtención de la [ejecución](/bootup-time), lo que puede mejorar métricas como Time to Interactive. La precarga funciona mejor si [divide](/reduce-javascript-payloads-with-code-splitting) sus paquetes de JavaScript y solo precarga fragmentos críticos.
+Debido a que los navegadores no ejecutan archivos precargados, la precarga es útil para separar la obtención de la [ejecución](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/), lo que puede mejorar métricas como Time to Interactive. La precarga funciona mejor si [divide](/reduce-javascript-payloads-with-code-splitting) sus paquetes de JavaScript y solo precarga fragmentos críticos.
 
 ## Cómo implementar rel=preload
 

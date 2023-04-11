@@ -4,7 +4,7 @@ title: First Contentful Paint 首次内容绘制 (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-10-19
 description: 本篇文章介绍了首次内容绘制 (FCP) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -51,6 +51,8 @@ FCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 在 JavaScript 中测量 FCP
 
+{% BrowserCompat 'api.PerformancePaintTiming' %}
+
 要在 JavaScript 中测量 FCP，您可以使用[绘制计时 API](https://w3c.github.io/paint-timing/)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听名称为`first-contentful-paint`的`paint`条目并记录在控制台中。
 
 ```js
@@ -80,13 +82,13 @@ new PerformanceObserver((entryList) => {
 开发者不必记住所有这些细微差异，而是可以使用[`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)来测量 FCP，库会自行处理这些差异（在可能的情况下）：
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // 当 FCP 可用时立即进行测量和记录。
-getFCP(console.log);
+onFCP(console.log);
 ```
 
-您可以参考[`getFCP()`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)，了解如何在 JavaScript 中测量 FCP 的完整示例。
+您可以参考[`onFCP()`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts)，了解如何在 JavaScript 中测量 FCP 的完整示例。
 
 {% Aside %}
 在某些情况下（例如跨域 iframe），FCP 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。
@@ -94,22 +96,22 @@ getFCP(console.log);
 
 ## 如何改进 FCP
 
-要了解如何改进某个特定网站的 FCP，您可以运行一次灯塔性能审计，并留心查看审计建议的各种具体[机会](/lighthouse-performance/#opportunities)或[诊断](/lighthouse-performance/#diagnostics)。
+要了解如何改进某个特定网站的 FCP，您可以运行一次灯塔性能审计，并留心查看审计建议的各种具体[机会](https://developer.chrome.com/docs/lighthouse/performance/#opportunities)或[诊断](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics)。
 
 要了解改进 FCP 的常见方式（针对任何网站），请参阅以下性能指南：
 
-- [消除阻塞渲染的资源](/render-blocking-resources/)
-- [缩小 CSS](/unminified-css/)
-- [移除未使用的 CSS](/unused-css-rules/)
-- [预连接到所需的来源](/uses-rel-preconnect/)
+- [消除阻塞渲染的资源](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [缩小 CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [移除未使用的 CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [预连接到所需的来源](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [减少服务器响应时间 (TTFB)](/ttfb/)
-- [避免多个页面重定向](/redirects/)
-- [预加载关键请求](/uses-rel-preload/)
-- [避免巨大的网络负载](/total-byte-weight/)
-- [使用高效的缓存策略服务静态资产](/uses-long-cache-ttl/)
-- [避免 DOM 过大](/dom-size/)
-- [最小化关键请求深度](/critical-request-chains/)
-- [确保文本在网页字体加载期间保持可见](/font-display/)
-- [保持较低的请求数和较小的传输大小](/resource-summary/)
+- [避免多个页面重定向](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [预加载关键请求](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [避免巨大的网络负载](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [使用高效的缓存策略服务静态资产](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [避免 DOM 过大](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [最小化关键请求深度](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [确保文本在网页字体加载期间保持可见](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [保持较低的请求数和较小的传输大小](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

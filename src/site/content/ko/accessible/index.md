@@ -1,5 +1,5 @@
 ---
-layout: path
+layout: collection
 override:tags: []
 pathName: accessible
 ---

@@ -18,8 +18,6 @@ Além da [experiência de instalação proporcionada pelo navegador](/promote-in
 
 Ao considerar se deve ou não promover a instalação, é melhor pensar em como os usuários normalmente usam seu PWA. Por exemplo, se houver um conjunto de usuários que usam seu PWA muitas vezes por semana, esses usuários poderão se beneficiar com a conveniência adicional de iniciar seu aplicativo a partir da tela inicial de um smartphone ou do menu Iniciar de um sistema operacional de desktop. Alguns aplicativos de produtividade e entretenimento também se beneficiam do espaço extra da tela criado pela remoção das barras de ferramentas do navegador da janela nos modos `standalone` ou `minimal-ui`
 
-<div class="w-clearfix"></div>
-
 ## Promovendo a instalação {: #promote-installation}
 
 Para indicar que seu Progressive Web App é instalável e para fornecer um processo de instalação in-app personalizado:

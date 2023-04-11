@@ -104,7 +104,7 @@ context.putImageData(imageData, 0, 0);
 ### WebGL
 
 WebGL is a big topic, certainly too big to do it justice in a single article. If you'd like to learn
-more about WebGL, check out the [recommended reading](#recommended_reading) at the end of this
+more about WebGL, check out the [recommended reading](#recommended-reading) at the end of this
 article.
 
 However, here is a very brief introduction to what needs to be done in the case of manipulating a

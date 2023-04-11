@@ -127,6 +127,8 @@ FID の測定には実際のユーザーによるページの操作が必要と�
 
 ### JavaScript を使用して FID を測定する
 
+{% BrowserCompat 'api.PerformanceEventTiming' %}
+
 JavaScript を使用した FID の測定には、[Event Timing API](https://wicg.github.io/event-timing) を使用することができます。以下の例では、[`first-input`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) エントリをリッスンしてコンソールにログを記録する [`PerformanceObserver`](https://wicg.github.io/event-timing/#sec-performance-event-timing) の作成方法を示しています。
 
 ```js
@@ -154,13 +156,13 @@ new PerformanceObserver((entryList) => {
 こういった微妙な違いをすべて記憶していなくても、[`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)を使用して FID を測定すれば、これらの違いを (可能な限り) 処理してくれます。
 
 ```js
-import {getFID} from 'web-vitals';
+import {onFID} from 'web-vitals';
 
 // 実行可能となった時点ですぐに FID の測定やログ記録を実行します。
-getFID(console.log);
+onFID(console.log);
 ```
 
-JavaScript を使用して FID を測定する方法に関する詳細な例については、[`getFID()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)を参照してください。
+JavaScript を使用して FID を測定する方法に関する詳細な例については、[`onFID()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts)を参照してください。
 
 {% Aside %}場合によっては (クロスオリジン iframe など)、JavaScript を使用して FID を測定することはできません。詳細については、`web-vitals` ライブラリの「[limitations](https://github.com/GoogleChrome/web-vitals#limitations) (制限事項)」セクションを参照してください。{% endAside %}
 
@@ -174,15 +176,15 @@ FID 値にはばらつきが予想されるため、FID をレポートする際
 
 ## FID の改善方法
 
-特定のサイトについて FID の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](/lighthouse-performance/#opportunities) (改善機会) に注目します。
+特定のサイトについて FID の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) (改善機会) に注目します。
 
 FID はユーザー環境で測定される指標ですが (Lighthouse はラボ環境で使用するメトリック ツールです)、FID を改善するためのガイダンスは、ラボ環境での指標である [Total Blocking Time (TBT)](/tbt/) を改善するためのガイダンスと同じです。
 
 FID の改善方法の詳細については、「[Optimize FID](/optimize-fid/) (FID を最適化する)」を参照してください。FID の改善にもつながる個別のパフォーマンス改善手法に関するその他のガイダンスについては、以下を参照してください。
 
-- [サードパーティ製コードの影響を減らす](/third-party-summary/)
-- [JavaScript の実行にかかる時間を短縮する](/bootup-time/)
-- [メイン スレッドの作業を最小限に抑える](/mainthread-work-breakdown/)
-- [リクエスト数を少なく、転送サイズを小さく維持する](/resource-summary/)<br>
+- [サードパーティ製コードの影響を減らす](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [JavaScript の実行にかかる時間を短縮する](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [メイン スレッドの作業を最小限に抑える](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [リクエスト数を少なく、転送サイズを小さく維持する](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)<br>
 
 {% include 'content/metrics/metrics-changelog.njk' %}

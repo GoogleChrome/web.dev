@@ -42,6 +42,10 @@ web-tabs:not(:defined) {
   @include apply-utility('color', 'mid-text');
   @include apply-utility('font', 'brand');
 
+  &.hidden {
+    display: none;
+  }
+
   &:hover {
     @include apply-utility('bg', 'highlight-interact-bg');
   }

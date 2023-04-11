@@ -47,7 +47,6 @@ web-navigation-drawer::before {
   background: rgb(0 0 0 / 40%);
   backdrop-filter: blur(5px);
   opacity: 0;
-  // transition: opacity $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
 }
 
 web-navigation-drawer[open] {
@@ -59,7 +58,8 @@ web-navigation-drawer[open]::before {
   opacity: 1;
 }
 
-web-navigation-drawer[open] [data-drawer-container] {
+web-navigation-drawer[open] [data-drawer-container],
+web-navigation-drawer:focus-within [data-drawer-container] {
   transform: none;
 }
 

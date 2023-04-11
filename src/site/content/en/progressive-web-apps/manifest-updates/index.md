@@ -44,19 +44,25 @@ compare it against the local copy.
 If select properties in the manifest have changed (see list below), Chrome
 queues the new manifest, and after all windows have been closed, installs it.
 Once installed, all fields from the new manifest (except `name`, `short_name`,
-`start_url` and `icons`) are updated.
+and `icons`) are updated.
 
 ### Which properties will trigger an update? {: #cr-desktop-trigger }
 
 * `display` (see below)
 * `scope`
 * `shortcuts`
+* `start_url`
 * `theme_color`
 * `file_handlers`
 
 {% Aside 'caution' %}
-Changes to `name`, `short_name`, `icons` and `start_url` are **not**
+Changes to `name`, `short_name` and `icons` are **not**
 currently supported on desktop Chrome, though work is underway to support them.
+{% endAside %}
+
+{% Aside 'caution' %}
+Changes to the `start_url` require the manifest `id` to be set.
+[More info](https://developer.chrome.com/blog/pwa-manifest-id/)
 {% endAside %}
 
 <!-- CrBug for name/shortname https://crbug.com/1088338 -->

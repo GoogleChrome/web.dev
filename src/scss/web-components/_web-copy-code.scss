@@ -1,4 +1,5 @@
 web-copy-code {
+  position: relative;
   display: block;
 
   &:active,
@@ -30,7 +31,7 @@ web-copy-code {
     }
 
     // We should use these classes in the web component itself
-    [role='tooltip'] {
+    [role='tooltip'] .tooltip__content {
       @extend .tooltip__content;
     }
   }

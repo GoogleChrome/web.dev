@@ -17,10 +17,12 @@ frosted glass effect that sits over the top of an image.
 The text needs to be live text and not an image.
 How do you do that?
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKaQLoL'
 } %}
+</figure>
 
 A combination of CSS filters and the `backdrop-filter`
 allow us to apply effects and blur what's needed in real time.
@@ -33,10 +35,13 @@ that the text is still readable should the filter effect not be supported in a u
 For example, at the moment
 [`backdrop-filter`](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter)
 is not supported in Firefox,
-and so you should check that Firefox users aren't left with text they cannot easily read.
+and so you should check that Firefox users aren't left with text they cannot easily read:
+{% BrowserCompat 'css.properties.backdrop-filter' %}
 {% endAside %}
 
 ## The `filter` property
+
+{% BrowserCompat 'css.properties.filter' %}
 
 You can apply one or many of the following filters as a value for
 [`filter`](https://developer.mozilla.org/docs/Web/CSS/filter).
@@ -55,14 +60,17 @@ This needs to be a length unit, like `10px`. Percentages are not accepted.
 	filter: blur(0.2em);
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'VwPQJwX',
   height: 450
 } %}
+</figure>
 
 ### `brightness`
+
+{% BrowserCompat 'css.types.filter-function.brightness' %}
 
 To increase or decrease the brightness of an element,
 use the brightness function.
@@ -83,13 +91,17 @@ instead of percentage values in filters like `brightness`.
 To set 80% brightness with a decimal, write `0.8`.
 {% endAside %}
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKaQjpp',
   height: 450
 } %}
+</figure>
 
 ### `contrast`
+
+{% BrowserCompat 'css.types.filter-function.contrast' %}
 
 Set a value between 0% and 100% to decrease or increase the contrast, respectively.
 
@@ -99,13 +111,17 @@ Set a value between 0% and 100% to decrease or increase the contrast, respective
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNjJEOW',
   height: 450
 } %}
+</figure>
 
 ### `grayscale`
+
+{% BrowserCompat 'css.types.filter-function.grayscale' %}
 
 You can apply a completely grayscale effect by using `1` as a value for `grayscale()`,
 or `0` to have a completely saturated element.
@@ -119,13 +135,16 @@ If you pass a value greater than 100%, it will be capped at 100%.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJQMKe',
   height: 450
 } %}
+</figure>
 
 ### `invert`
+{% BrowserCompat 'css.types.filter-function.invert' %}
 
 Just like `grayscale`,
 you can pass `1` or `0` to the `invert()` function to turn it on or off.
@@ -140,13 +159,17 @@ the element will be completely inverted.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLgvdOO',
   height: 450
 } %}
+</figure>
 
 ### `opacity`
+
+{% BrowserCompat 'css.types.filter-function.opacity' %}
 
 The `opacity()` filter works just like the `opacity` property,
 where you can pass a number or percentage to increase or reduce opacity.
@@ -158,13 +181,17 @@ If you pass no arguments, the element is fully visible.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'RwKQzae',
   height: 450
 } %}
+</figure>
 
 ### `saturate`
+
+{% BrowserCompat 'css.types.filter-function.saturate' %}
 
 The saturate filter is very similar to the `brightness` filter and accepts the same argument:
 number or percentage.
@@ -177,13 +204,17 @@ Instead of increasing or decreasing the brightness effect,
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BapYgQg',
   height: 450
 } %}
+</figure>
 
 ### `sepia`
+
+{% BrowserCompat 'css.types.filter-function.sepia' %}
 
 You can add a sepia tone effect with this filter that works like `grayscale()`.
 The sepia tone is a photographic printing technique that converts black tones to brown tones to warm them up.
@@ -197,13 +228,17 @@ Passing no arguments adds a full sepia effect (equivalent to `sepia(100%)`).
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNRMqpb',
   height: 450
 } %}
+</figure>
 
 ### `hue-rotate`
+
+{% BrowserCompat 'css.types.filter-function.hue-rotate' %}
 
 You learned about how the hue in `hsl` references a rotation of the color wheel in the
 [colors lesson](/learn/css/color) and this filter works in a similar way.
@@ -217,13 +252,17 @@ changing the part of the color wheel it references. If you pass no argument, it 
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExZQBWw',
   height: 450
 } %}
+</figure>
 
 ### `drop-shadow`
+
+{% BrowserCompat 'css.types.filter-function.drop-shadow' %}
 
 You can apply a curve-hugging drop shadow like you would in a design tool,
 such as Photoshop with
@@ -238,28 +277,35 @@ but the `inset` keyword and spread value are not supported.
 	filter: drop-shadow(5px 5px 10px orange);
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'PoWQrJr',
   height: 450
 } %}
+</figure>
 
 Learn more about the different types of shadows in the [shadows](/learn/css/shadows) module.
 
 ### `url`
 
+{% BrowserCompat 'svg.elements.filter' %}
+
 The `url` filter allows you to apply an SVG filter from a linked SVG element or file.
 You can
 [read more about SVG filters here](https://developer.mozilla.org/docs/Web/SVG/Element/filter)
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRNgyp',
   height: 450
 } %}
+</figure>
 
 ## Backdrop filter
+
+{% BrowserCompat 'css.properties.backdrop-filter' %}
 
 The [backdrop-filter](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter)
 property accepts all of the same filter function values as `filter`.
@@ -271,9 +317,11 @@ The example right at the start of this lesson is the perfect example,
 because you don't want the text to be blurred and ideally you don't want to have to add extra HTML elements.
 Being able to apply filters only to the backdrop enables that.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKaQLoL'
 } %}
+</figure>
 
 {% Assessment 'filters' %}

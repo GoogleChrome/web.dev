@@ -7,6 +7,8 @@ $generate-utility-classes: false;
 // Next: pull in gorko for design token and custom property generation
 @import '../../node_modules/gorko/gorko.scss';
 
+@import 'node_modules/webdev-infra/shortcodes/BrowserCompat/styles';
+
 @import 'reset';
 @import 'fonts';
 
@@ -395,7 +397,12 @@ h6 code,
   margin: 0;
   padding: 0;
   white-space: normal;
-  word-break: break-all;
+  overflow-wrap: break-word
+}
+
+p code,
+li code {
+  overflow-wrap: break-word;
 }
 
 /// Sub and sup
@@ -720,13 +727,13 @@ video,
 @import 'blocks/banner';
 @import 'blocks/brand';
 @import 'blocks/breadcrumbs';
-@import 'blocks/browser-compat';
 @import 'blocks/button';
 @import 'blocks/callout';
 @import 'blocks/card';
 @import 'blocks/carousel';
 @import 'blocks/compare';
 @import 'blocks/counter';
+@import 'blocks/devrel-ribbon';
 @import 'blocks/ellipsis';
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
@@ -747,6 +754,7 @@ video,
 @import 'blocks/site-footer';
 @import 'blocks/site-header';
 @import 'blocks/skip-link';
+@import 'blocks/spinner';
 @import 'blocks/stack-nav';
 @import 'blocks/stats';
 @import 'blocks/status-list';
@@ -755,6 +763,8 @@ video,
 @import 'blocks/toc';
 @import 'blocks/toggle-switch';
 @import 'blocks/tooltip';
+@import 'blocks/widget';
+
 
 /// WEB COMPONENTS
 @import 'web-components/web-assessment';
@@ -787,27 +797,14 @@ video,
 @import 'pages/homepage';
 @import 'pages/landing-page';
 @import 'pages/learn';
+@import 'pages/explore';
 @import 'pages/measure';
-@import 'pages/path';
+@import 'pages/collection';
 @import 'pages/pattern';
 @import 'pages/spaces';
 
-// Temporary rollout patches
-@import 'rollout';
-
 // Import unresolved states for lit-elements
 @import 'unresolved';
-
-/// LEGACY EXTENSIONS
-/// These elements are everywhere and to replace them site-wide would be
-/// a massive project, so they use @extend to pick up new styles
-.w-visually-hidden {
-  @extend .visually-hidden;
-}
-
-.w-columns {
-  @extend .switcher;
-}
 
 // Render gorko utilities
 @include generate-utility-classes();

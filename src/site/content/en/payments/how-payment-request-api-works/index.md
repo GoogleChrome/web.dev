@@ -41,8 +41,8 @@ an array variable. Each element in the array comprises two components,
 `supportedMethods` and, optionally, `data`.
 
 For `supportedMethods`, the merchant needs to specify a [Payment Method
-Identifier](/setting-up-a-payment-method/#step-1:-provide-the-payment-method-identifier)
-such as `https://bobpay.xyz/pay`. The existence and content of `data` depends on
+Identifier](/setting-up-a-payment-method/#step-1-provide-the-payment-method-identifier)
+such as `https://bobbucks.dev/pay`. The existence and content of `data` depends on
 the content of `supportedMethods` and payment app provider's design.
 
 Both pieces of information should be provided by the payment app provider.
@@ -50,7 +50,7 @@ Both pieces of information should be provided by the payment app provider.
 ```javascript
 // Supported payment methods
 const paymentMethods = [{
-  supportedMethods: 'https://bobpay.xyz/pay',
+  supportedMethods: 'https://bobbucks.dev/pay',
   data: {
     ... // Optional parameters defined by the payment app provider.
   }
@@ -114,8 +114,8 @@ interface.
 To call the `show()` method, you must add a [user
 activation](https://developer.chrome.com/blog/user-activation/).
 This means the call must be inside an event listener, such as
-`click`. Note that Chrome currently bypasses this constraint, but plans to enforce
-it sometime in the future.
+`click`. Note that Chrome [enforces this constraint from version
+102](https://chromestatus.com/feature/5948593429020672).
 
 {% endAside %}
 

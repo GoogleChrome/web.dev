@@ -1,0 +1,19 @@
+{
+  "name": "How to periodically synchronize data in the background",
+  "short_name": "Periodic Background Sync",
+  "start_url": "./",
+  "id": "./",
+  "icons": [
+    {
+      "src": "../assets/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "../assets/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "display": "standalone"
+}

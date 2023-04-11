@@ -180,6 +180,6 @@ Having different subdomains for different parts of a website or different TLDs f
 
 ##  Resources
 
-- [Beyond SPAs: Alternative architectures for your PWA](https://developers.google.com/web/updates/2018/05/beyond-spa)
+- [Beyond SPAs: Alternative architectures for your PWA](https://developer.chrome.com/blog/beyond-spa)
 - [Progressive web apps Structure](https://developer.mozilla.org/docs/Web/Progressive_web_apps/App_structure)
 - [Streams: The definitive guide](/streams/)

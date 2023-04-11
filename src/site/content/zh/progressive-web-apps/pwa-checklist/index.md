@@ -181,7 +181,7 @@ Jeremy Keith 的[弹性 Web 设计](https://resilientwebdesign.com/)是非常好
 
 #### 方法
 
-W3C 的 [Web 可访问性简介](https://www.w3.org/WAI/fundamentals/accessibility-intro/)是非常好的入门资源。大多数可访问性测试必须手动完成。Lighthouse 中的[可访问性](/lighthouse-accessibility/)审核、[Axe](https://github.com/dequelabs/axe-core) 和[可访问性洞察](https://accessibilityinsights.io/)等工具可以帮助您自动执行一些可访问性功能测试。使用语义正确的元素（而不是重新创建）也很重要，例如 `a` 和 `button` 元素。这样可以确保在确实需要构建更高级的功能时，您仍可以满足用户的可访问预期（例如使用箭头与选项卡时）。[A11Y Nutrition Cards](https://accessibilityinsights.io/) 为一些常见组件提供了一些非常好的建议。
+W3C 的 [Web 可访问性简介](https://www.w3.org/WAI/fundamentals/accessibility-intro/)是非常好的入门资源。大多数可访问性测试必须手动完成。Lighthouse 中的[可访问性](https://developer.chrome.com/docs/lighthouse/accessibility/)审核、[Axe](https://github.com/dequelabs/axe-core) 和[可访问性洞察](https://accessibilityinsights.io/)等工具可以帮助您自动执行一些可访问性功能测试。使用语义正确的元素（而不是重新创建）也很重要，例如 `a` 和 `button` 元素。这样可以确保在确实需要构建更高级的功能时，您仍可以满足用户的可访问预期（例如使用箭头与选项卡时）。[A11Y Nutrition Cards](https://accessibilityinsights.io/) 为一些常见组件提供了一些非常好的建议。
 
 {% endDetails %}
 
@@ -201,7 +201,7 @@ Web 的最大优势之一是能够通过搜索发现网站和应用程序。实�
 
 #### 方法
 
-首先，确保每个 URL 具有唯一的描述性标题和元描述。然后，您可以使用 [Google Search Console](https://search.google.com/search-console/about) 和 Lighthouse 中的[搜索引擎优化审核](/lighthouse-seo/)来帮助您调试和修复 PWA 的可发现性问题。您还可以使用 [Bing](https://www.bing.com/toolbox/webmaster) 或 [Yandex](https://webmaster.yandex.com/welcome/) 的网站管理员工具，并考虑在您的 PWA 中利用 [Schema.org](https://schema.org/) 中提供的架构来包含[结构化数据](https://goo.gle/search-gallery)。
+首先，确保每个 URL 具有唯一的描述性标题和元描述。然后，您可以使用 [Google Search Console](https://search.google.com/search-console/about) 和 Lighthouse 中的[搜索引擎优化审核](https://developer.chrome.com/docs/lighthouse/seo/)来帮助您调试和修复 PWA 的可发现性问题。您还可以使用 [Bing](https://www.bing.com/toolbox/webmaster) 或 [Yandex](https://webmaster.yandex.com/welcome/) 的网站管理员工具，并考虑在您的 PWA 中利用 [Schema.org](https://schema.org/) 中提供的架构来包含[结构化数据](https://goo.gle/search-gallery)。
 
 {% endDetails %}
 

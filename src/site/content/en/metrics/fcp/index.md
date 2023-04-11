@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-10-19
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
@@ -88,6 +88,8 @@ available in the following tools:
 
 ### Measure FCP in JavaScript
 
+{% BrowserCompat 'api.PerformancePaintTiming' %}
+
 To measure FCP in JavaScript, you can use the [Paint Timing
 API](https://w3c.github.io/paint-timing/). The following example shows how to
 create a
@@ -137,14 +139,14 @@ Rather than memorizing all these subtle differences, developers can use the
 measure FCP, which handles these differences for you (where possible):
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // Measure and log FCP as soon as it's available.
-getFCP(console.log);
+onFCP(console.log);
 ```
 
 You can refer to [the source code for
-`getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)
+`onFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts)
 for a complete example of how to measure FCP in JavaScript.
 
 {% Aside %}
@@ -158,24 +160,25 @@ for a complete example of how to measure FCP in JavaScript.
 
 To learn how to improve FCP for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance/#opportunities) or
-[diagnostics](/lighthouse-performance/#diagnostics) the audit suggests.
+[opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) or
+[diagnostics](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics) the audit suggests.
 
 To learn how to improve FCP in general (for any site), refer to the following
 performance guides:
 
-- [Eliminate render-blocking resources](/render-blocking-resources/)
-- [Minify CSS](/unminified-css/)
-- [Remove unused CSS](/unused-css-rules/)
-- [Preconnect to required origins](/uses-rel-preconnect/)
+- [Eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [Minify CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [Remove unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [Remove unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)
+- [Preconnect to required origins](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [Reduce server response times (TTFB)](/ttfb/)
-- [Avoid multiple page redirects](/redirects/)
-- [Preload key requests](/uses-rel-preload/)
-- [Avoid enormous network payloads](/total-byte-weight/)
-- [Serve static assets with an efficient cache policy](/uses-long-cache-ttl/)
-- [Avoid an excessive DOM size](/dom-size/)
-- [Minimize critical request depth](/critical-request-chains/)
-- [Ensure text remains visible during webfont load](/font-display/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Avoid multiple page redirects](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [Preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Avoid enormous network payloads](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [Serve static assets with an efficient cache policy](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [Avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [Minimize critical request depth](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [Ensure text remains visible during webfont load](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [Keep request counts low and transfer sizes small](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

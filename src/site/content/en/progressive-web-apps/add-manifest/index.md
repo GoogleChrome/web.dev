@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2022-06-20
+updated: 2022-09-14
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -23,10 +23,7 @@ Progressive Web App and how it should behave when installed on the user's
 desktop or mobile device. A typical manifest file includes the app name, the
 icons the app should use, and the URL that should be opened when the
 app is launched, among other things.
-
-Manifest files are [supported in most
-browsers](https://developer.mozilla.org/docs/Web/Manifest#Browser_compatibility)
-though support for individual members may vary quite a bit.
+{% BrowserCompat 'html.manifest' %}
 
 ## Create the manifest file {: #create }
 
@@ -58,6 +55,7 @@ A typical manifest looks something like this:
       "sizes": "512x512"
     }
   ],
+  "id": "/?source=pwa",
   "start_url": "/?source=pwa",
   "background_color": "#3367D6",
   "display": "standalone",
@@ -84,12 +82,14 @@ A typical manifest looks something like this:
     {
       "src": "/images/screenshot1.png",
       "type": "image/png",
-      "sizes": "540x720"
+      "sizes": "540x720",
+      "form_factor": "narrow"
     },
     {
       "src": "/images/screenshot2.jpg",
       "type": "image/jpg",
-      "sizes": "540x720"
+      "sizes": "720x540",
+      "form_factor": "wide"
     }
   ]
 }
@@ -145,6 +145,10 @@ state they were in at install time.
 To use SVG icons safely, you should always specify a rasterized icon as a
 fallback for browsers that do not support SVG icons.
 {% endAside %}
+
+#### `id` {: #id }
+
+The `id` property allows you to explicitly define the identifier used for your application. Adding the `id` property to the manifest removes the dependency on the `start_url` or the location of the manifest, and makes it possible for them to be updated in the future. For more information, see [Uniquely identifying PWAs with the web app manifest id property](https://developer.chrome.com/blog/pwa-manifest-id/).
 
 #### `start_url` {: #start-url }
 
@@ -326,20 +330,25 @@ The `description` property describes the purpose of your app.
 
 The `screenshots` property is an array of image objects representing your app
 in common usage scenarios. Each object must include the `src`, a `sizes`
-property, and the `type` of image.
+property, and the `type` of image.  The `form_factor` property is optional.
+You can set it either to `"wide"` for screenshots applicable to wide screens
+only or `"narrow"` for narrow screenshots. You should only use it when the
+layout varies by screen size.
 
 In Chrome, the image must respond to certain criteria:
 
 * Width and height must be at least 320px and at most 3840px.
 * The maximum dimension can't be more than 2.3 times as long as the minimum
   dimension.
-* All screenshots must have the same aspect ratio.
-* Only JPEG and PNG image formats are supported.
+* All screenshots matching the appropriate form factor must have the same
+  aspect ratio.
 
-{% Aside 'gotchas' %}
-The `description` and `screenshots` properties are currently used only in Chrome
-for Android when a user wants to install your app.
-{% endAside %}
+<figure>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/5SlCnibmZHqkXdGVgPZY.jpeg", alt="Screenshots of richer installation UI on desktop and mobile", width="800", height="386" %}
+  <figcaption>
+    Richer installation UI on desktop and mobile.
+  </figcaption>
+</figure>
 
 ## Add the web app manifest to your pages {: #link-manifest }
 

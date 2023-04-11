@@ -77,7 +77,7 @@ Hoy nos complace anunciar la [API de CrUX](http://developers.google.com/web/tool
 
 Los desarrolladores pueden consultar un origen o una URL y segmentar los resultados por diferentes factores de forma. La API se actualiza diariamente y resume los datos de los 28 días anteriores (a diferencia del conjunto de datos de BigQuery, que se agrega mensualmente). La API también tiene las mismas cuotas públicas reducidas que ponemos en nuestra otra API, la API de PageSpeed Insights (25,000 solicitudes al día).
 
-A continuación se muestra una [demostración](/chrome-ux-report-api/) que utiliza la API de CrUX para visualizar las métricas de Core Web Vitals con distribuciones **buenas**, **que necesitan mejoras** y **deficientes**:
+A continuación se muestra una [demostración](https://developer.chrome.com/blog/chrome-ux-report-api/) que utiliza la API de CrUX para visualizar las métricas de Core Web Vitals con distribuciones **buenas**, **que necesitan mejoras** y **deficientes**:
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Demostración de la API Informe de experiencia del usuario de Chrome que muestra las métricas de Core Web Vitals", width="800", height="523" %}</figure>
 
@@ -85,7 +85,7 @@ En versiones futuras, planeamos expandir la API para permitir el acceso a dimens
 
 **Panel de control de CrUX renovado**
 
-El [panel de control de CrUX](http://g.co/chromeuxdash) recientemente rediseñado le permite rastrear fácilmente el rendimiento de un origen a lo largo del tiempo, y ahora puede utilizarlo para monitorear las distribuciones de todas las métricas de Core Web Vitals. Para comenzar con el panel, consulte nuestro [tutorial](/chrome-ux-report-data-studio-dashboard/) en web.dev.
+El [panel de control de CrUX](http://g.co/chromeuxdash) recientemente rediseñado le permite rastrear fácilmente el rendimiento de un origen a lo largo del tiempo, y ahora puede utilizarlo para monitorear las distribuciones de todas las métricas de Core Web Vitals. Para comenzar con el panel, consulte nuestro [tutorial](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/) en web.dev.
 
 <figure>{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="Panel de Informes de experiencia del usuario de Chrome que muestra las métricas de Core Web Vitals en una nueva página de destino", width="800", height="497" %}</figure>
 

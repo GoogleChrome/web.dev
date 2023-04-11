@@ -78,7 +78,7 @@ site.
 The solution is to control start of the service worker by choosing when to call
 `navigator.serviceWorker.register()`. A simple rule of thumb would be to delay
 registration until after the [`load
-even`](https://developer.mozilla.org//docs/Web/API/GlobalEventHandlers/onload)
+event`](https://developer.mozilla.org//docs/Web/API/GlobalEventHandlers/onload)
 fires on `window`, like so:
 
 ```js
@@ -112,7 +112,7 @@ While it might surprise some folks, there shouldn't be any impact at all.
 
 When a service worker is registered, it goes through the `install` and
 `activate` [lifecycle
-events](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/lifecycle).
+events](/service-worker-lifecycle/).
 Once a service worker is activated, it can handle `fetch` events for any
 subsequent visits to your web app. The service worker starts *before* the
 request for any pages under its scope is made, which makes sense when you think
@@ -134,7 +134,7 @@ possible makes sense? One that comes to mind is when your service worker uses
 [`clients.claim()`](https://developer.mozilla.org/docs/Web/API/Clients/claim)
 to take control of the page during the first visit, and the service worker
 aggressively performs [runtime
-caching](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#on-network-response)
+caching](/offline-cookbook/#on-network-response/)
 inside of its `fetch` handler. In that situation, there's an
 advantage to getting the service worker active as quickly as possible, to try to
 populate its runtime caches with resources that might come in handy later. If

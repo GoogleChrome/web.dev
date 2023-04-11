@@ -1,5 +1,5 @@
 ---
-title: Introducing WebSockets - Bringing Sockets to the Web
+title: The Basics of Web Workers
 authors:
   - malteubl
   - agektmr
@@ -7,7 +7,7 @@ date: 2012-10-20
 tags:
   - blog
 ---
-## The Problem: JavaScript Concurrency
+## The problem: JavaScript concurrency
 
 There are a number of bottlenecks preventing interesting applications from being ported
 (say, from server-heavy implementations) to client-side JavaScript. Some of these include
@@ -26,7 +26,7 @@ Yes, all of these features run asynchronously, but non-blocking doesn't necessar
 Asynchronous events are processed after the current executing script has yielded. The good news is
 that HTML5 gives us something better than these hacks!
 
-## Introducing Web Workers: Bring Threading to JavaScript
+## Introducing Web Workers: bring threading to JavaScript
 
 The [Web Workers](http://www.whatwg.org/specs/web-workers/current-work/) specification defines
 an API for spawning background scripts in your web application. Web Workers allow you to do things like
@@ -47,9 +47,9 @@ UI refresh, performant, and responsive for users.
 It's worth noting that the [specification](http://www.whatwg.org/specs/web-workers/current-work/) discusses
 two kinds of Web Workers, [Dedicated Workers](http://www.whatwg.org/specs/web-workers/current-work/#dedicated-workers-and-the-worker-interface)
 and [Shared Workers](http://www.whatwg.org/specs/web-workers/current-work/#sharedworker). This article will
-only cover dedicated workers and I'll refer to them as 'web workers' or 'workers' throughout.
+only cover dedicated workers. I'll refer to them as 'web workers' or 'workers' throughout.
 
-## Getting Started
+## Getting started
 
 Web Workers run in an isolated thread. As a result, the code that they execute needs to be contained in a separate file.
 But before we do that, the first thing to do is create a new `Worker` object in your main page. The
@@ -69,7 +69,7 @@ After creating the worker, start it by calling the `postMessage()` method:
 worker.postMessage(); // Start the worker.
 ```
 
-### Communicating with a Worker via Message Passing
+### Communicating with a worker via message passing
 
 Communication between a work and its parent page is done using an event model and the `postMessage()`
 method. Depending on your browser/version, `postMessage()` can accept either a string or JSON object as its single argument.
@@ -168,7 +168,7 @@ or by calling `self.close()` inside of the worker itself.
 
 ## Transferrable objects
 
-Most browsers implement the [structured cloning](http://updates.html5rocks.com/2011/09/Workers-ArrayBuffer/) algorithm, which allows you to pass more complex types in/out of Workers such as `File`, `Blob`, `ArrayBuffer`, and JSON objects. However, when passing these types of data using
+Most browsers implement the [structured cloning](https://developer.chrome.com/blog/workers-arraybuffer/) algorithm, which allows you to pass more complex types in/out of Workers such as `File`, `Blob`, `ArrayBuffer`, and JSON objects. However, when passing these types of data using
 `postMessage()`, a copy is still made. Therefore, if you're passing
 a large 50MB file (for example), there's a noticeable overhead in getting
 that file between the worker and the main thread.
@@ -198,11 +198,11 @@ worker.postMessage({data: int8View, moreData: anotherBuffer},
 The important point being: the second argument must be an array of `ArrayBuffer`s.
 This is your list of transferrable items.
 
-To see the speed improvement of transferrables, check out this [DEMO](http://html5-demos.appspot.com/static/workers/transferables/index.html). For more information on transferrables, see our [HTML5Rock post](http://updates.html5rocks.com/2011/12/Transferable-Objects-Lightning-Fast).
+For more information on transferrables, see [our post at developer.chrome.com](https://developer.chrome.com/blog/transferable-objects-lightning-fast/).
 
-## The Worker Environment
+## The worker environment
 
-### Worker Scope
+### Worker scope
 
 In the context of a worker, both `self` and `this` reference the global scope
 for the worker. Thus, the previous example could also be written as:
@@ -229,15 +229,15 @@ var data = e.data;
 };
 ```
 
-### Features Available to Workers
+### Features available to workers
 
-Due to their multi-threaded behavior, web workers only has access to a subset of JavaScript's features:
+Due to their multithreaded behavior, Web Workers only has access to a subset of JavaScript's features:
 
 - The `navigator` object
 - The `location` object (read-only)
 - `XMLHttpRequest`
 - `setTimeout()/clearTimeout()` and `setInterval()/clearInterval()`
-- The [Application Cache](https://www.html5rocks.com/tutorials/appcache/beginner/)
+- The [Application Cache](/appcache-beginner/)
 - Importing external scripts using the `importScripts()` method
 - Spawning other web workers
 
@@ -248,7 +248,7 @@ Workers do NOT have access to:
 - The `document` object
 - The `parent` object
 
-### Loading External Scripts
+### Loading external scripts
 
 You can load external script files or libraries into a worker with the `importScripts()` function. The method
 takes zero or more strings representing the filenames for the resources to import.
@@ -283,7 +283,7 @@ passed between main pages and workers are copied, not shared. See Communicating 
 For an sample of how to spawn a subworker, see [the example](http://www.whatwg.org/specs/web-workers/current-work/#delegation)
 in the specification.
 
-## Inline Workers
+## Inline workers
 
 What if you want to create your worker script on the fly, or create a self-contained
 page without having to create separate worker files? With `Blob()`,
@@ -324,7 +324,7 @@ window.URL.revokeObjectURL(blobURL);
 
 In Chrome, there's a nice page to view all of the created blob URLs: `chrome://blob-internals/`.
 
-### Full Example
+### Full example
 
 Taking this one step further, we can get clever with how the worker's JS
 code is inlined in our page. This technique uses a `<script>` tag
@@ -377,7 +377,7 @@ It defines a script tag with `id="worker1"` and
 string using `document.querySelector('#worker1').textContent` and passed to
 `Blob()` to create the file.
 
-### Loading External Scripts
+### Loading external scripts
 
 When using these techniques to inline your worker code,
 `importScripts()` will only work if you supply an absolute URI. If
@@ -415,7 +415,7 @@ worker.postMessage(<b>{url: document.location}</b>);
 </script>
 ```
 
-## Handling Errors
+## handling errors
 
 As with any JavaScript logic, you'll want to handle any errors that are thrown in your web workers.
 If an error occurs while a worker is executing, the an `ErrorEvent` is fired. The interface contains three useful properties for figuring out what went wrong: `filename` - the name of the worker script
@@ -460,9 +460,9 @@ postMessage(1/x); // Intentional error.
 };
 ```
 
-## A Word on Security
+## A word on security
 
-### Restrictions with Local Access
+### Restrictions with local access
 
 Due to Google Chrome's security restrictions, workers will not run locally (e.g. from `file://`) in the latest
 versions of the browser. Instead, they fail silently!  To run your app from the `file://` scheme, run Chrome with the
@@ -475,35 +475,33 @@ and not regular browsing.
 
 Other browsers do not impose the same restriction.
 
-### Same Origin Considerations
+### Same-origin considerations
 
 Worker scripts must be external files with the same scheme as their calling page. Thus,
 you cannot load a script from a `data:` URL or `javascript:` URL, and an `https:`
 page cannot start worker scripts that begin with `http:` URLs.
 
-## Use Cases
+## Use cases
 
-So what kind app would utilize web workers? Unfortunately, web workers are still relatively new and
-the majority of samples/tutorials out there involve computing prime numbers. Although that isn't very interesting,
-it's useful for understanding the concepts of web workers. Here are a few more ideas to get your brain churning:
+So what kind app would utilize web workers? Here are a few more ideas to get your brain churning:
 
-- Prefetching and/or caching data for later use
-- Code syntax highlighting or other real-time text formatting
-- Spell checker
-- Analyzing video or audio data
-- Background I/O or polling of webservices
-- Processing large arrays or humungous JSON responses
-- Image filtering in `<canvas>`
-- Updating many rows of a local web database<
+- Prefetching and/or caching data for later use.
+- Code syntax highlighting or other real-time text formatting.
+- Spell checker.
+- Analyzing video or audio data.
+- Background I/O or polling of webservices.
+- Processing large arrays or humungous JSON responses.
+- Image filtering in `<canvas>`.
+- Updating many rows of a local web database.
+
+For more information about use cases involving the Web Workers API, visit [Workers Overview](/workers-overview/#use-cases).
 
 ## Demos
 
-- Example from [HTML5Rocks slides](http://slides.html5rocks.com/#web-workers)
-- [Motion tracker](http://htmlfive.appspot.com/static/tracker1.html)
-- [Simulated Annealing](http://people.mozilla.com/~prouget/demos/worker_and_simulatedannealing/index.xhtml)
 - [HTML5demos sample](http://html5demos.com/worker)
 
 ## References
-- [Web Workers](http://www.whatwg.org/specs/web-workers/current-work/) specification
-- ["Using web workers"](http://developer.mozilla.org/Using_web_workers) from Mozilla Developer Network
+
+- [Web Workers](https://html.spec.whatwg.org/multipage/workers.html) specification
+- ["Using web workers"](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) from the Mozilla Developer Network Web Docs.
 - ["Web Workers rise up!"](http://dev.opera.com/articles/view/web-workers-rise-up/) from Dev.Opera

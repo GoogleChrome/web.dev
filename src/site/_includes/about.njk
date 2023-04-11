@@ -1,0 +1,115 @@
+---
+layout: default
+pageScripts:
+  - '/js/about.js'
+---
+{% from 'macros/icon.njk' import icon, svg with context %}
+
+<div class="about">
+  <section class="bg-mid-bg hero">
+    <div class="wrapper">
+      <div class="hero__columns switcher" data-direction="rev">
+        <div class="flow">
+          {% Img
+            src=banner.image,
+            width="546",
+            height="421",
+            alt=banner.title,
+            loading="lazy",
+            class="hero__decor"
+          %}
+        </div>
+        <div>
+          <span aria-hidden="true" class="hero__eyebrow">{{ banner.eyebrow }}</span>
+          <div class="hero__content flow gap-top-size-5">
+            <h1 class="hero__title">{{ banner.title }}</h1>
+            <div class="color-mid-text">{{ banner.summary }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Intro start #}
+  <section class="about__intro region bg-core-bg">
+    <div class="wrapper flow" data-size='extra-narrow'>
+        <h1 class="headline__title">{{ intro.title }}</h1>
+        {% for paragraph in intro.summary %}  
+          <p class="color-mid-text">{{ paragraph.paragraph | safe }}</p>
+        {% endfor %}
+    </div>
+  </section>
+  {# Intro end #}
+  
+  {# The teams start #}
+  <section class="about__teams region bg-core-bg">
+    <div class="wrapper flow all-center">
+      <h1 class="headline__title"> {{ theTeam.title }} </h1>
+      <p class="color-mid-text"> {{ theTeam.subTitle }} </p>
+      <div class="authors gap-top-size-2">
+        {% for author in theTeam.authors %}  
+          {% set data = collections.authors[author.name] %}
+
+          {% if data %}
+            <article class="card all-center">
+              {% Img
+                src=data.image,
+                width="192",
+                height="192",
+                alt=data.title | i18n(locale),
+                decoding="async",
+                loading="lazy"
+              %}
+              <div class="card__content flow">
+                <h3 class="card__heading text-size-3">
+                  {% if data.homepage %}
+                    <a target="_blank" href="{{ data.homepage }}">{{ data.title | i18n(locale) }}</a>
+                  {% else %}
+                    {{ data.title | i18n(locale) }}
+                  {% endif %}
+                </h3>
+                <p>{{ author.role }}</p>
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div>
+        <a class="button gap-top-size-2" target="_blank" data-type="primary" href="{{ theTeam.primaryButtonUrl }}">
+          {{ theTeam.primaryButtonText }}
+        </a>
+      </div>
+    </div>
+  </section>
+  {# The teams end #}
+
+  {# Chrome developers start #}
+  <section class="about__developers region bg-mid-bg">
+    <div class="wrapper flow all-center">
+      <div> {% include "icons/chrome.svg" %} </div>
+
+      <h1 class="headline__title">{{ developers.title }}</h1>
+      <p>{{ developers.summary | safe }}</p>
+      <div>
+        <a class="button" data-type="primary" href="{{ developers.primaryButtonUrl }}">{{ developers.primaryButtonText }}</a>
+      </div>
+    </div>
+  </section>
+  {# Chrome developers end #}
+
+  {# Coupled Column start #}
+  <section class="region bg-core-bg">
+    <div class="wrapper flow all-center">
+      <div class="about__coupled-column"> 
+        {% for column in coupledColumn %}
+          <div>
+            {% include column.icon %}
+            <h5>{{ column.title }}</h5>
+            <p class="color-mid-text">{{ column.summary | safe }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {# Coupled Column end #}
+</div>

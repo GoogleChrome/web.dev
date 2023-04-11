@@ -1,6 +1,5 @@
 import {html} from 'lit';
 import {BaseResponseElement} from '../BaseResponseElement';
-import './_styles.scss';
 
 export class ResponseThinkAndCheck extends BaseResponseElement {
   constructor() {

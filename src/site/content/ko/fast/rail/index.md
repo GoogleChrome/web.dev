@@ -129,11 +129,11 @@ RAIL의 컨텍스트에서 **목표** 및 **지침**이라는 용어는 다음�
 
 **지침** :
 
-- 사용자 간에 공통적인 모바일 장치 및 네트워크 연결에서 로드 성능을 테스트합니다. [Chrome 사용자 경험 보고서](/chrome-ux-report/)를 사용하여 사용자의 [연결 분포](/chrome-ux-report-data-studio-dashboard/#using-the-dashboard)를 확인할 수 있습니다. 사이트에서 데이터를 사용할 수 없는 경우를 위해 [The Mobile Economy 2019](https://www.gsma.com/mobileeconomy/)는 Moto G4와 같은 중급 Android 휴대전화와 느린 3G 네트워크(400ms RTT 및 400kbps 전송 속도로 정의됨)가 좋은 글로벌 기준이라고 제안합니다. 이 조합은 [WebPageTest](https://www.webpagetest.org/easy)에서 사용할 수 있습니다.
+- 사용자 간에 공통적인 모바일 장치 및 네트워크 연결에서 로드 성능을 테스트합니다. [Chrome 사용자 경험 보고서](/chrome-ux-report/)를 사용하여 사용자의 [연결 분포](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/#using-the-dashboard)를 확인할 수 있습니다. 사이트에서 데이터를 사용할 수 없는 경우를 위해 [The Mobile Economy 2019](https://www.gsma.com/mobileeconomy/)는 Moto G4와 같은 중급 Android 휴대전화와 느린 3G 네트워크(400ms RTT 및 400kbps 전송 속도로 정의됨)가 좋은 글로벌 기준이라고 제안합니다. 이 조합은 [WebPageTest](https://www.webpagetest.org/easy)에서 사용할 수 있습니다.
 
 - 일반적인 모바일 사용자의 장치가 2G, 3G 또는 4G에 연결되어 있어도 실제로는 패킷 손실 및 네트워크 변동으로 인해 [유효 연결 속도](/adaptive-serving-based-on-network-quality/#how-it-works)가 상당히 느린 경우가 많습니다.
 
-- [렌더링 차단 리소스를 제거합니다](/render-blocking-resources/).
+- [렌더링 차단 리소스를 제거합니다](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/).
 
 - 완전한 로드를 인식하기 위해 5초 이내에 모든 것을 로드할 필요는 없습니다. [지연 로드 이미지](/browser-level-image-lazy-loading/), [코드 분할 JavaScript 번들](/reduce-javascript-payloads-with-code-splitting/) 및 [web.dev에 제안된 기타 최적화](/fast/)를 고려해 보십시오.
 
@@ -185,37 +185,37 @@ RAIL 측정을 자동화하는 데 도움이 되는 몇 가지 도구가 있습�
 
 **응답**
 
-- [최대 잠재적 최초 입력 지연(FID)](/lighthouse-max-potential-fid/) . 기본 스레드 유휴 시간을 기반으로 앱이 사용자 입력에 응답하는 데 걸리는 시간을 추정합니다.
+- [최대 잠재적 최초 입력 지연(FID)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/) . 기본 스레드 유휴 시간을 기반으로 앱이 사용자 입력에 응답하는 데 걸리는 시간을 추정합니다.
 
-- [스크롤 성능을 향상시키기 위해 소극적 수신기를 사용하지 않습니다](/uses-passive-event-listeners/) .
+- [스크롤 성능을 향상시키기 위해 소극적 수신기를 사용하지 않습니다](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/) .
 
-- [총 차단 시간](/lighthouse-total-blocking-time/) . 마우스 클릭, 화면 탭 또는 키보드 누름과 같은 사용자 입력에 응답하지 못하도록 페이지가 차단된 총 시간을 측정합니다.
+- [총 차단 시간](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/) . 마우스 클릭, 화면 탭 또는 키보드 누름과 같은 사용자 입력에 응답하지 못하도록 페이지가 차단된 총 시간을 측정합니다.
 
 - [상호 작용까지의 시간](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive). 사용자가 모든 페이지 요소와 일관되게 상호 작용할 수 있는 시점을 측정합니다.
 
 **로드**
 
-- [페이지 및 start_url을 제어하는 서비스 작업자를 등록하지 않습니다](/service-worker/). 서비스 작업자는 사용자 장치의 공통 리소스를 캐시하여 네트워크를 통해 리소스를 가져오는 데 소요되는 시간을 줄일 수 있습니다.
+- [페이지 및 start_url을 제어하는 서비스 작업자를 등록하지 않습니다](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/). 서비스 작업자는 사용자 장치의 공통 리소스를 캐시하여 네트워크를 통해 리소스를 가져오는 데 소요되는 시간을 줄일 수 있습니다.
 
-- [모바일 네트워크에서 페이지 로드가 충분히 빠르지 않습니다](/load-fast-enough-for-pwa/).
+- [모바일 네트워크에서 페이지 로드가 충분히 빠르지 않습니다](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
 
 - [렌더링 차단 리소스를 제거합니다](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources) .
 
-- [오프스크린 이미지를 지연합니다](/offscreen-images/). 필요할 때까지 오프스크린 이미지 로드를 지연합니다.
+- [오프스크린 이미지를 지연합니다](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/). 필요할 때까지 오프스크린 이미지 로드를 지연합니다.
 
-- [이미지 크기를 적절하게 조정합니다](/uses-responsive-images/). 모바일 뷰포트에서 렌더링된 크기보다 훨씬 큰 이미지를 제공하면 안 됩니다.
+- [이미지 크기를 적절하게 조정합니다](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/). 모바일 뷰포트에서 렌더링된 크기보다 훨씬 큰 이미지를 제공하면 안 됩니다.
 
-- [중요한 요청의 연결을 피합니다](/critical-request-chains/).
+- [중요한 요청의 연결을 피합니다](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-- [모든 해당 리소스에 대해 HTTP/2를 사용하지 않습니다](/uses-http2/).
+- [모든 해당 리소스에 대해 HTTP/2를 사용하지 않습니다](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
-- [이미지를 효율적으로 인코딩합니다](/uses-optimized-images/).
+- [이미지를 효율적으로 인코딩합니다](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 
-- [텍스트 압축을 활성화합니다](/uses-text-compression/) .
+- [텍스트 압축을 활성화합니다](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/) .
 
-- [거대한 네트워크 페이로드를 피합니다](/total-byte-weight/).
+- [거대한 네트워크 페이로드를 피합니다](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/).
 
-- [과도한 DOM 크기를 피합니다](/dom-size/). 페이지를 렌더링하는 데 필요한 DOM 노드만 전달하여 네트워크 바이트를 줄입니다.
+- [과도한 DOM 크기를 피합니다](https://developer.chrome.com/docs/lighthouse/performance/dom-size/). 페이지를 렌더링하는 데 필요한 DOM 노드만 전달하여 네트워크 바이트를 줄입니다.
 
 ### WebPageTest
 

@@ -18,12 +18,13 @@ description: >
   of Oculus Quest 2's multitasking feature. This article describes the experience and how to build,
   sideload, and test your PWA on the Oculus Quest 2.
 date: 2022-01-10
-updated: 2022-06-01
+updated: 2022-12-04
 tags:
   - blog
   - capabilities
   - progressive-web-apps
   - virtual-reality
+  - augmented-reality
   - webxr
 ---
 
@@ -296,66 +297,159 @@ customize the PWA experience.
 </table>
 </div>
 
-### Packaging PWAs with PWABuilder
+### Packaging PWAs with Bubblewrap CLI
 
-Using [PWABuilder](https://pwabuilder.com) is the easiest and recommended way to package PWAs for
-Oculus Quest at the moment.
+[Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) is an open source set of libraries and
+a command line tool (CLI) for Node.js. Bubblewrap is developed by the Google Chrome team, to help
+developers generate, build, and sign an Android project that launches your PWA as a
+[Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/) (TWA).
 
-PWABuilder is an [open source](https://github.com/pwa-builder), community guided project founded by
-Microsoft, that allows developers to package and sign their PWAs for publishing to various stores,
-including Microsoft Store, Google Play, App Store, and Oculus Store.
+Meta Quest Browser currently doesn't fully support TWA, but starting from version 1.18.0,
+Bubblewrap [supports](https://github.com/GoogleChromeLabs/bubblewrap/releases/tag/v1.18.0)
+packaging PWAs for Meta Quest devices.
 
-Packaging PWAs with PWABuilder is as easy as entering the URL of a PWA, selecting the platform
-(**Meta Quest** in this case), entering/editing metadata for the app, and clicking the **Generate**
-button.
+It can generate *universal* APK files that open a TWA on regular Android devices and the Meta Quest
+Browser on Meta Quest devices.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/sWjB34HjwjatCMUz39Q3.png", alt="Packaging PWAs for Oculus Quest with PWABuilder.", width="800", height="450" %}
+Assuming you have [Node.js](https://nodejs.org) installed, Bubblewrap CLI can be installed with the
+following command:
 
-{% Aside %} Pro tip: since PWABuilder is a PWA itself that works everywhere there is a browser, you
-can open it in the Oculus Browser and perform all the steps right on your Oculus Quest. {% endAside %}
+```bash
+npm i -g @bubblewrap/cli
+```
 
-### Packaging PWAs with the command line tool
+When running Bubblewrap for the first time, it will offer to automatically download and install the
+required external dependencies—Java Development Kit (JDK) and Android SDK Build Tools.
+
+To generate a Meta Quest compatible Android project that wraps your PWA, run the `init` command
+with the `--metaquest` flag and follow the wizard:
+
+```bash
+bubblewrap init --manifest="https://your.web.app/manifest.json" --metaquest
+```
+
+Once the project has been generated, build and sign it by running:
+
+```bash
+bubblewrap build
+```
+
+This will output a file called `app-release-signed.apk`. This file can be installed on the device
+or published to the Meta Quest Store, Google Play Store or any of the other Android app distribution
+platforms.
+
+{% Aside 'note' %}
+Pro tip: you can also use the `--chromeosonly` flag in addition to the `--metaquest` flag to make
+APK files compatible not only with Meta Quest and regular Android devices, but also with
+[ChromeOS](https://chromeos.dev) devices.
+{% endAside %}
+
+### Packaging PWAs with Oculus Platform Utility
+
+[Oculus Platform Utility](https://developer.oculus.com/documentation/web/pwa-packaging/#download-the-cli)
+is the official command line tool developed by Meta for publishing apps for Oculus Rift and Meta
+Quest devices.
+
+It also allows to package PWAs for Meta Quest devices with the `create-pwa` command and publish
+them to the Meta Quest Store and App Lab.
+
+Set the output file name via the `-o` parameter and the path to Android SDK via the `--android-sdk`
+parameter.
+
+Point the tool at the live URL of the web app manifest via the `--web-manifest-url` parameter.
 
 If you don't have a manifest on your live PWA or wish to override the live manifest, you can still
-generate an APK for your PWA using a local manifest file and a
-[command line tool](https://developer.oculus.com/documentation/web/pwa-packaging/#download-the-cli)
-called `ovr-platform-util` with the `create-pwa` command. Set the output file name via
-the `-o` parameter. The Android SDK to use needs to be set via the `--android-sdk` parameter.
-Assuming a manifest file called `manifest.json` in the current working directory, the
-`--manifest-content-file` parameter helps the tool determine the relevant configuration fields from
-the Web App Manifest. Alternatively, developers can point the tool at the live URL of a manifest via
-the `--web-manifest-url` parameter. To leave the manifest as pure as possible, use the
-`--package-name` parameter with a value in reverse domain name notation (e.g.,
-`com.company.app.pwa`), rather than adding the proprietary `ovr_package_name` field to the manifest.
+generate an APK for your PWA using a local manifest file and the `--manifest-content-file`
+parameter.
+
+To leave the manifest as pure as possible, use the `--package-name` parameter with a value in
+reverse domain name notation (for example, `com.company.app.pwa`), rather than adding the
+proprietary `ovr_package_name` field to the manifest.
 
 ```bash
 ovr-platform-util create-pwa -o output.apk --android-sdk ~/bin/android-10 --manifest-content-file manifest.json --package-name com.company.app.pwa
 ```
 
-By the way, PWABuilder uses the `ovr-platform-util` under the hood to package PWAs for Oculus Quest.
+{% Aside 'caution' %}
+APK files generated by Oculus Platform Utility are only compatible with Meta Quest devices and cannot
+be run on regular Android devices. Also they can only be published to the Meta Quest Store and App Lab.
+{% endAside %}
+
+### Packaging PWAs with PWABuilder
+
+Using [PWABuilder](https://pwabuilder.com) is in the authors' view the easiest and therefore
+recommended way to package PWAs for Meta Quest at the moment.
+
+PWABuilder is an [open source](https://github.com/pwa-builder) project developed by Microsoft,
+that allows developers to package and sign their PWAs for publishing to various stores, including
+Microsoft Store, Google Play Store, App Store, and Meta Quest Store.
+
+Packaging PWAs with PWABuilder is as easy as entering the URL of a PWA, entering/editing the
+metadata for the app, and clicking the **Generate** button.
+
+PWABuilder gives developers the choice of what tool under the hood to use for packaging PWAs for
+Meta Quest devices.
+
+You can choose the **Meta Quest** option to use the Oculus Platform Utility.
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/nmHjO4Tbr01psSEfaaOO.png", alt="PWABuilder packaging options.", width="800", height="600" %}
+
+{% Aside 'note' %}
+Pro tip: PWABuilder uses a slightly modified version of Oculus Platform Utility that generates much smaller
+APK files by
+[removing unused code and resources](https://github.com/pwa-builder/pwabuilder-oculus/pull/7).
+{% endAside %}
+
+You can choose the **Android** option to use the Bubblewrap and select the **Meta Quest compatible**
+checkbox.
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/jLnuUwLBi73HGXiv3XUy.png", alt="Packaging PWAs with PWABuilder using Bubblewrap.", width="800", height="600" %}
+
+{% Aside 'note' %}
+Pro tip: since PWABuilder is a PWA itself that works everywhere there is a browser, you can open it
+in the Meta Quest Browser and perform all the steps right on your Meta Quest.
+{% endAside %}
 
 ### Installing PWAs with ADB
 
-After creating the APK, developers can sideload the PWA with the `adb` command when the Oculus
-Quest&nbsp;2 device is connected via USB and when the connected computer is trusted. Sideloaded apps
-appear in an **Unknown Sources** section in the app drawer.
+{% Aside 'important' %}
+To enable Android Debug Bridge (ADB) on the Meta Quest device, you must
+[enable developer mode](https://developer.oculus.com/documentation/native/android/mobile-device-setup/)
+in the companion mobile app. Before you can put your device in developer mode, you must belong to
+(or have created) a developer organization in the Oculus Developer Center.
+{% endAside %}
+
+After creating the APK file, you can sideload it to the Meta Quest device using the ADB via
+USB or Wi-Fi:
 
 ```bash
-adb install output.apk
+adb install app-release-signed.apk
 ```
 
-{% Aside %} Pro tip: you can use [Android Web Toolbox](https://yume-chan.github.io/ya-webadb/install)
-to sideload the APK. It's an [open source](https://github.com/yume-chan/ya-webadb/) web app that allows
-you to access all ADB functionality right from the browser even from another Android device. No
-installation or drivers are required thanks to the [Web USB API](/usb/). {% endAside %}
+If you use the Bubblewrap CLI for packaging PWAs, it provides a convenient alias command to
+sideload the APK file:
+
+```bash
+bubblewrap install
+```
+
+{% Aside 'note' %}
+Pro tip: you can use [Android Web Toolbox](https://yume-chan.github.io/ya-webadb/install) to
+sideload APK files. It's an [open source](https://github.com/yume-chan/ya-webadb/) web app that
+allows you to access all ADB functionality right from the browser even from another Android device.
+No installation or drivers are required thanks to the [Web USB API](/usb/).
+{% endAside %}
+
+Sideloaded apps appear in an **Unknown Sources** section in the app drawer.
 
 ### App submission
 
-{% Aside %} Submission and consideration for the Oculus Store is only available if you have been
-approved as an Oculus Quest Store developer. Distribution of PWAs via
+{% Aside 'important' %}
+Submission and consideration for the Oculus Store is only available if you have been approved as an
+Meta Quest Store developer. Distribution of PWAs via
 [App Lab](https://developer.oculus.com/blog/introducing-app-lab-a-new-way-to-distribute-oculus-quest-apps/)
-is not currently
-available. The Oculus team will share more on when and how you can submit a PWA to App Lab soon.
+is not currently available. The Meta team will share more on when and how you can submit a PWA to
+App Lab soon.
 {% endAside %}
 
 Uploading and submitting PWAs to the Oculus Store is
@@ -432,6 +526,35 @@ from the Immersive Web Working Group's [WebXR Samples](https://immersive-web.git
 
 {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/nDm0rY5DvtyTbDgUqFTS.mp4" %}
 
+### Augmented/Mixed Reality (Passthrough)
+
+As announced at Meta Connect 2022, Meta Quest Browser
+[has added support](https://developer.oculus.com/documentation/web/webxr-mixed-reality/) for
+[WebXR Augmented Reality (AR)](/web-ar/), also known as Mixed Reality (MR), on Meta Quest&nbsp;2 and Meta
+Quest Pro devices.
+
+Let's check a slightly modified A-Frame
+[starter example](https://aframe.io/docs/1.3.0/introduction/#getting-started) with scaled-down
+models and hidden sky and plane for augmented reality.
+
+[A-Frame](https://aframe.io) is an open source web framework for building 3D/VR/AR experiences
+entirely out of declarative, reusable [custom HTML elements](/custom-elements-v1/) that are easy to
+read, understand, and copy-and-paste.
+
+{% Glitch {
+  id: 'a-frame-hello-world-ar',
+  path: 'index.html',
+  previewSize: 50,
+  allow: ['xr-spatial-tracking', 'fullscreen']
+} %}
+
+Here's a screencast of this demo on Meta Quest&nbsp;2.
+
+{% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/RmPUmnh57gDZ2bbGkOWR.mp4" %}
+
+Meta Quest&nbsp;2 has monochrome cameras, so the passthrough is in grayscale, while Meta Quest Pro has
+color cameras.
+
 ## Conclusions
 
 PWAs on Oculus Quest&nbsp;2 are a lot of fun and very promising. The endless virtual canvas that
@@ -443,7 +566,7 @@ typing short texts.
 What I like the most about PWAs on the Oculus Quest&nbsp;2 is that they are just regular PWAs that
 can be used unchanged in a browser tab or through a thin APK wrapper without any platform-specific
 APIs. Targeting multiple platforms with the same code has never been easier. Here's to PWAs in VR
-and on the web. The future is bright!
+and AR on the web. The future is bright!
 
 ## Acknowledgements
 

@@ -98,10 +98,10 @@ Here's the general approach they took:
   the main thread busy on a real device.
 - Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to determine the impact of
   the changes in [Max Potential First Input Delay (Max Potential
-  FID)](/lighthouse-max-potential-fid/).
+  FID)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/).
 
 {% Aside %} During this project Mercado Libre used [Max Potential
-FID](/lighthouse-max-potential-fid/) in Lighthouse because that was the tool's main
+FID](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/) in Lighthouse because that was the tool's main
 metric for measuring interactivity at that time. Lighthouse now recommends using [Total Blocking
 Time](/tbt/) instead. {% endAside %}
 
@@ -251,9 +251,9 @@ The [Chrome User Experience
 Report](https://developer.chrome.com/docs/crux/) provides user
 experience metrics for how real-world Chrome users experience popular destinations on the web. The
 data from the report can be obtained by [running queries in
-BigQuery](/chrome-ux-report-bigquery/),
+BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery/),
 [PageSpeedInsights](https://pagespeed.web.dev/), or the [CrUX
-API](/chrome-ux-report-api/).
+API](https://developer.chrome.com/blog/chrome-ux-report-api/).
 
 The [CrUX
 dashboard](https://datastudio.google.com/c/datasources/create?connectorId=AKfycbxk7u2UtsqzgaA7I0bvkaJbBPannEx0_zmeCsGh9bBZy7wFMLrQ8x24WxpBzk_ln2i7)

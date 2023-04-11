@@ -10,6 +10,7 @@ date: 2022-01-10
 A key aspects of Progressive Web Apps is that they're reliable; they can load assets quickly, keeping users engaged and providing feedback immediately, even under poor network conditions. How is that possible? Thanks to the service worker `fetch` event.
 
 ## The fetch event
+{% BrowserCompat 'api.FetchEvent' %}
 
 The [`fetch`](https://developer.mozilla.org/docs/Web/API/FetchEvent) event lets us intercept every network request made by the PWA in the service worker's scope, for both same-origin and cross-origin requests. In addition to navigation and asset requests, fetching from an installed service worker allows page visits after a site's first load to be rendered without network calls.
 
@@ -175,21 +176,25 @@ With this strategy, the assets are updated in the background. This means your us
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/C7OcnPRHNdTLe2043JHG.png", alt="The stale while revalidate strategy", width="800", height="439" %}
 
 ```js
-self.addEventListener("fetch", event => {
-   event.respondWith(
-     caches.match(event.request).then(cachedResponse => {
-         const networkFetch = fetch(event.request).then(response => {
-           // update the cache with a clone of the network response
-           caches.open("pwa-assets").then(cache => {
-               cache.put(event.request, response.clone());
-           });
-         });
-         // prioritize cached response over network
-         return cachedResponse || networkFetch;
-     }
-   )
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(cachedResponse => {
+        const networkFetch = fetch(event.request).then(response => {
+          // update the cache with a clone of the network response
+          const responseClone = response.clone()
+          caches.open(url.searchParams.get('name')).then(cache => {
+            cache.put(event.request, responseClone)
+          })
+          return response
+        }).catch(function (reason) {
+          console.error('ServiceWorker fetch failed: ', reason)
+        })
+        // prioritize cached response over network
+        return cachedResponse || networkFetch
+      }
+    )
   )
-});
+})
 ```
 
 {% Aside 'caution' %}
@@ -237,6 +242,5 @@ Keeping your PWA's cached assets up-to-date can be a challenge. While the stale 
 ##  Resources
 
 - [Fetch event on MDN](https://developer.mozilla.org/docs/Web/API/FetchEvent)
-- [Service Worker Cookbook](https://serviceworke.rs/)
 - [The Offline Cookbook](/offline-cookbook/)
 - [Cache Match on MDN](https://developer.mozilla.org/docs/Web/API/Cache/match)

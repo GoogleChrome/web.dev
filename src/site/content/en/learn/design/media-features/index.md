@@ -21,6 +21,7 @@ Remember, a media query comprises an optional media type and a mandatory media f
 ```
 
 [Media features](https://developer.mozilla.org/docs/Web/CSS/@media#media_features), on the other hand, have expanded greatly. Designers now can meet users beyond halfway, adapting designs to fit far more than just screen size.
+{% BrowserCompat 'css.at-rules.media' %}
 
 ## Viewport dimensions
 

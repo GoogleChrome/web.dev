@@ -13,8 +13,8 @@ tags:
   - accessibility
 hero: image/admin/avB7jubYxhJr1dHQzl6c.jpg
 alt: >
-  Man lying on the floor covered in post-it notes with empty checkboxes and messages 
-  such as off line, overthink, $, chill, take a break, and zzzz. 
+  Man lying on the floor covered in post-it notes with empty checkboxes and messages
+  such as off line, overthink, $, chill, take a break, and zzzz.
 ---
 
 ## What is ARIA?
@@ -30,7 +30,7 @@ Whenever a magical sticky note exists, it either overrides our belief about what
 something about the tool. Example: "this thing over here is a glue gun!". Even though it's still
 actually an empty blue box sitting there on the workbench, the magical sticky note will make us see
 it is a glue gun. We can also add, "and it is 30% full!". The screen reader will now report that
-there is a 30% full glue gun there. 
+there is a 30% full glue gun there.
 
 The web equivalent to this is to take a plain box element (a div) with an image inside of it, and
 use ARIA to say it's a slider at value 30 out of 100.
@@ -63,7 +63,7 @@ uses them to make bombs and other things that aren't just laying around. This is
 web author who needs to make a menu bar. Menu bars are so useful you would think they would be part of
 HTML, but they aren't. Oh well! You didn't think authors would be happy with links and buttons did
 you? So the author will cobble one together using their favorite tools: divs, images, style, click
-handlers, keypress handlers, spit, and ARIA. 
+handlers, keypress handlers, spit, and ARIA.
 
 Sometimes, rather than using ARIA to the max, we just use it as an enhancement. It can be useful to
 sprinkle a little ARIA on some HTML that already basically works. For example, we might want a form
@@ -77,7 +77,7 @@ with a screen reader.
 
 Let's make a menu bar together. We show a bunch of items in generic box elements called divs. Any
 time our user clicks on a div, it executes the corresponding command. Cool, it works for mouse
-clicker people! 
+clicker people!
 
 Next we make it look pretty. We use CSS, i.e. styles, lining things up nicely and putting visual
 outlines around them. We make it look enough like other menu bars that sighties intuitively know
@@ -125,7 +125,7 @@ of it is. The background color for the active item is just a color. The menu ite
 plain objects with no particular meaning. Consequently, a user of our menu bar doesn't get any
 instructions about what keys to press or what item they're on.
 
-But that's no fair! The menu bar acts just fine for the sighted user. 
+But that's no fair! The menu bar acts just fine for the sighted user.
 
 ARIA to the rescue. ARIA lets us pretend to the screen reader that focus is in a
 menu bar. If the author does everything right, our custom menu bar will look to the screen reader
@@ -134,7 +134,7 @@ just like a menu bar in a desktop application.
 Our first, ahem, ARIA lie, is to use the `aria-activedescendant` attribute, and set it to the ID of
 the currently active menuitem, being careful to update it whenever it changes. For example,
 `aria-activedescendant="settings-menuitem"`. This little white lie causes the screen reader to
-consider our ARIA active item as the focus, which is read aloud or shown on a Braille display. 
+consider our ARIA active item as the focus, which is read aloud or shown on a Braille display.
 
 {% Details %}
 {% DetailsSummary %}
@@ -144,7 +144,7 @@ The term descendant refers to the
 fact that an item is contained somewhere inside of another. The opposite term is ancestor, which is
 to say an item is contained by ancestors. For the next container up/down, these may use the more
 specific terms parent/child. For example, imagine a document with a paragraph that has a link
-inside. The link's parent is a paragraph, but it also has the document as an ancestor. 
+inside. The link's parent is a paragraph, but it also has the document as an ancestor.
 Conversely, the document may have many paragraph children, each with links. The links are all
 descendants of the grandparent document.
 {% endDetails %}
@@ -168,7 +168,7 @@ the screen reader from saying anything about the image that would be redundant a
 ### Keyboard bugs (HTML!)
 
 Although keyboard access is a part of core HTML, authors mess it up all the time, either because
-they don't use keyboard navigation all that much, or because there is much nuance to get right. 
+they don't use keyboard navigation all that much, or because there is much nuance to get right.
 
 Examples of bugs:
 
@@ -180,15 +180,15 @@ Examples of bugs:
     <kbd>Control</kbd>+<kbd>Tab</kbd> just navigates within their dialog, and doesn't switch tabs
     in the browser as it should. Ugh.
 +   An author creates a selection list, and implements up/down, but does not implement
-    home/end/pageup/pagedown or first letter navigation. 
-    
+    home/end/pageup/pagedown or first letter navigation.
+
 Authors should follow known patterns. Check out the [Resources](#resources) section for more information.
 
 For pure keyboard access issues, it's useful to also try without a screen reader, or with virtual
 browser mode off. Screen readers are not generally necessary to discover keyboard bugs, and keyboard
 access is actually implemented with HTML, not ARIA. After all, ARIA doesn't affect basic stuff like
 the keyboard or mouse behavior, it only lies to the screen reader about what's in the web page,
-what's currently focused, etc. 
+what's currently focused, etc.
 
 Keyboard bugs are almost always a bug in the web content, specifically in their HTML and JavaScript,
 not in ARIA.
@@ -224,9 +224,9 @@ quirks, in addition to a few incomplete implementations.
 In summary, ARIA magic can be used to override or add to anything and everything that the HTML says.
 It can be used to do little fine changes to the accessibility presentation, or to create an
 entire experience. This is why ARIA is both incredibly powerful and yet dangerous in the hands of
-our friendly local web authors who don't generally use screen readers themselves. 
+our friendly local web authors who don't generally use screen readers themselves.
 
-ARIA is just a dumb truth override markup layer. When a screen reader asks what's happening, if ARIA
+ARIA is just a straightforward truth override markup layer. When a screen reader asks what's happening, if ARIA
 exists, they get the ARIA version of the truth instead of the real underlying truth.
 
 ## Addendum 1: Additional Resources
@@ -240,7 +240,7 @@ exists, they get the ARIA version of the truth instead of the real underlying tr
 ## Addendum 2: What is ARIA most used for?
 
 Because ARIA can replace or supplement small or large truths, generally
-useful for saying stuff that the screen reader cares about. 
+useful for saying stuff that the screen reader cares about.
 
 Here are some common uses of ARIA.
 
@@ -256,7 +256,7 @@ Here are some common uses of ARIA.
 * Landmarks (HTML has equivalents now). These are somewhat like headings, in that they help
   screen reader users find what they want faster. However, they're different in that they contain
   the entire related area. Like, "this container is the main area of the page" and "this
-  container over here is a navigation panel". 
+  container over here is a navigation panel".
 
 ## Addendum 3: What's an Accessibility API?
 
@@ -269,14 +269,14 @@ an accessibility API:
     paragraphs, and a paragraph can have text, images, links, boldface, etc. Each item in the
     object tree can have properties like a role (what am I?), a name/label, a user-entered value, a
     description, as well as boolean states like focusable, focused, required, checked. ARIA can
-override any of these properties.  
+override any of these properties.
     The screen reader uses the tree to help the user navigate in virtual buffer mode, like "go to
     the next heading please".
 +   A series of events that occur describing changes to the tree, like "focus is now over
     here!".  The screen reader uses the events to tell the user what has just happened. When
     important HTML or ARIA markup changes, an event is fired to tell the screen reader that
-    something changed.  
+    something changed.
 
 Usually authors just use HTML, which maps nicely to these accessibility APIs. When HTML is not
 enough, ARIA is used and the browser overrides the HTML semantics before sending the object tree or
-events to the screen reader. 
+events to the screen reader.

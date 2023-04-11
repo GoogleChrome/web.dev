@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-10-19
 description: |
   Esta publicación presenta la métrica Cumulative Layout Shift (CLS) y explica cómo medirlo.
 tags:
@@ -42,7 +42,7 @@ La métrica Cumulative Layout Shift (CLS) lo ayuda a abordar este problema al me
 
 ## ¿Qué es CLS?
 
-CLS es una medida de la ráfaga más grande de las *puntuaciones de cambio* de diseño para cada cambio de diseño [inesperado](/cls/#expected-vs.-unexpected-layout-shifts) que se produce durante toda la vida útil de una página.
+CLS es una medida de la ráfaga más grande de las *puntuaciones de cambio* de diseño para cada cambio de diseño [inesperado](/cls/#expected-vs-unexpected-layout-shifts) que se produce durante toda la vida útil de una página.
 
 Se produce un *cambio de diseño* cada vez que un elemento visible cambia su posición de un fotograma renderizado al siguiente. (Consulte más abajo para obtener más información sobre cómo se calculan las [puntuaciones de cambio de diseño](#layout-shift-score) individuales).
 
@@ -176,9 +176,12 @@ CLS se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Medir CLS en JavaScript
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 Para medir CLS en JavaScript, puede utilizar la [API de inestabilidad de diseño](https://github.com/WICG/layout-instability) . El siguiente ejemplo muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que atiende las entradas inesperadas de `layout-shift`, las agrupa en sesiones y registra el valor máximo de la sesión cada vez que cambia.
 
@@ -249,14 +252,14 @@ Para manejar estos casos, se debe informar CLS cada vez que una página está en
 En vez de memorizar y lidiar con todos estos casos usted mismo, los desarrolladores pueden usar la [biblioteca JavaScript de `web-vitals`](https://github.com/GoogleChrome/web-vitals) para medir CLS, que da cuenta de todo lo mencionado anteriormente:
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // Measure and log CLS in all situations
 // where it needs to be reported.
-getCLS(console.log);
+onCLS(console.log);
 ```
 
-Puede consultar [el código fuente de `getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts) para obtener un ejemplo completo de cómo medir CLS en JavaScript.
+Puede consultar [el código fuente de `onCLS)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts) para obtener un ejemplo completo de cómo medir CLS en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir CLS en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) de la biblioteca de `web-vitals` para obtener más información. {% endAside %}
 

@@ -17,10 +17,12 @@ which makes an image look like it is only made up of two contrasting colors:
 one for highlights and the other for lowlights.
 How do you do this with CSS though?
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgvYMG'
 } %}
+</figure>
 
 Using blend modes—and other techniques you have learned about,
 such as [filters](/learn/css/filters) and
@@ -35,10 +37,12 @@ You can also use blend modes as a utility,
 such as isolating an image that has a white background,
 so it appears to have a transparent background.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'dyNmJor'
 } %}
+</figure>
 
 You can use most of the blend modes available in a design tool with CSS,
 using the
@@ -50,25 +54,39 @@ and the `background-blend-mode` applies blending to the background of an element
 You use `background-blend-mode` when you have multiple backgrounds on an element
 and want them all to blend into each other.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'XWpEVGO'
 } %}
+</figure>
 
 The `mix-blend-mode` affects the entire element,
-including its pseudo elements.
+including its pseudo-elements.
 One use-case is in the initial example of a duotone image,
-which has color layers applied to the element through its pseudo elements.
+which has color layers applied to the element through its pseudo-elements.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgvYMG'
 } %}
+</figure>
 
 Blend modes fall into two categories: separable and non-separable.
 A separable blend mode considers each color component,
 such as RGB, individually.
 A non-separable blend mode considers all color components equally.
+
+## Browser compatibility
+
+### `mix-blend-mode`
+
+{% BrowserCompat 'css.properties.mix-blend-mode' %}
+
+### `background-blend-mode`
+
+{% BrowserCompat 'css.properties.background-blend-mode' %}
 
 ## Separable blend modes
 
@@ -90,12 +108,13 @@ darker—most often producing a darker result.
   mix-blend-mode: multiply;
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYgRdOy',
   height: 450
 } %}
+</figure>
 
 ### Screen
 
@@ -108,11 +127,13 @@ and will most often produce a brighter result.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjELpYo',
   height: 450
 } %}
+</figure>
 
 ### Overlay
 
@@ -125,12 +146,13 @@ Mid-range colors, such as a 50% gray, are unaffected.
   mix-blend-mode: overlay;
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BaprYom',
   height: 450
 } %}
+</figure>
 
 ### Darken
 
@@ -146,11 +168,13 @@ With `darken` and `lighten`, new color values are often created from this compar
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'dyNmdGM',
   height: 450
 } %}
+</figure>
 
 ### Lighten
 
@@ -162,11 +186,13 @@ Using `lighten` does the exact opposite of `darken`.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJWvQNO',
   height: 450
 } %}
+</figure>
 
 ### Color dodge
 
@@ -179,11 +205,13 @@ Pure black colors see no effect from this mode.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpYqpz',
   height: 450
 } %}
+</figure>
 
 ### Color burn
 
@@ -196,11 +224,13 @@ but increases contrast, resulting in more saturated mid-tones and reduced highli
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'gOgevmG',
   height: 450
 } %}
+</figure>
 
 ### Hard light
 
@@ -215,11 +245,13 @@ as if it were screened. If it is darker, it's multiplied.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ZELxreN',
   height: 450
 } %}
+</figure>
 
 ### Soft light
 
@@ -232,11 +264,13 @@ It works in very much the same way with less contrast.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJWvQmQ',
   height: 450
 } %}
+</figure>
 
 ### Difference
 
@@ -252,11 +286,13 @@ Differences in the values will invert.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRxXwM',
   height: 450
 } %}
+</figure>
 
 ### Exclusion
 
@@ -270,11 +306,13 @@ it will return 50% gray, resulting in a softer output with less contrast.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjELpmb',
   height: 450
 } %}
+</figure>
 
 ## Non-separable blend modes
 
@@ -292,10 +330,12 @@ and applies it to the saturation and luminosity of the backdrop color.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BaprYGO'
 } %}
+</figure>
 
 ### Saturation
 
@@ -309,10 +349,12 @@ to the hue and luminosity of the backdrop color.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWdmQoP'
 } %}
+</figure>
 
 ### Color
 
@@ -325,14 +367,16 @@ and the luminosity of the backdrop color.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'jOyzZRo'
 } %}
+</figure>
 
 ### Luminosity
 
-Lastly, `luminosity`is the inverse of `color`.
+Lastly, `luminosity` is the inverse of `color`.
 It creates a color with the luminosity of the source color and the hue and saturation of the backdrop color.
 
 ```css
@@ -341,12 +385,16 @@ It creates a color with the luminosity of the source color and the hue and satur
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYNWWOK'
 } %}
+</figure>
 
 ## The `isolation` property
+
+{% BrowserCompat 'css.properties.isolation' %}
 
 If you set the [`isolation`](https://developer.mozilla.org/docs/Web/CSS/isolation)
 property to have a value of `isolate`,
@@ -360,9 +408,11 @@ but elements inside of an element with `isolation: isolate` set can _still_ blen
 Note that this doesn't work with `background-blend-mode`
 because the background property is already isolated.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjELLXy'
 } %}
+</figure>
 
 {% Assessment 'blend-modes' %}

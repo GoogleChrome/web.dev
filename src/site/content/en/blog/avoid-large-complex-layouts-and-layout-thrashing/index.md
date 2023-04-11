@@ -6,7 +6,7 @@ subhead: |
 authors:
   - paullewis
 date: 2015-03-20
-updated: 2018-08-17 
+updated: 2018-08-17
 description: |
   Layout is where the browser figures out the geometric information for elements - their size and location in the page. Each element will have explicit or implicit sizing information based on the CSS that was used, the contents of the element, or a parent element. The process is called Layout in Chrome.
 tags:
@@ -14,11 +14,11 @@ tags:
 
 ---
 
-Layout is where the browser figures out the geometric information for 
-elements: their size and location in the page. Each element will have 
-explicit or implicit sizing information based on the CSS that was used, the 
-contents of the element, or a parent element. The process is called Layout 
-in Chrome, Opera, Safari, and Internet Explorer. In Firefox it’s called 
+Layout is where the browser figures out the geometric information for
+elements: their size and location in the page. Each element will have
+explicit or implicit sizing information based on the CSS that was used, the
+contents of the element, or a parent element. The process is called Layout
+in Chrome, Opera, Safari, and Internet Explorer. In Firefox it’s called
 Reflow, but effectively the process is the same.
 
 Similarly to style calculations, the immediate concerns for layout cost are:
@@ -26,7 +26,7 @@ Similarly to style calculations, the immediate concerns for layout cost are:
 1. The number of elements that require layout.
 1. The complexity of those layouts.
 
-## TL;DR 
+## Summary
 
 * Layout is normally scoped to the whole document.
 * The number of DOM elements will affect performance; you should avoid triggering layout wherever possible.
@@ -62,11 +62,6 @@ If it’s not possible to avoid layout then the key is to once again use Chrome 
 </figure>
 
 When digging into the frame in the above example, we see that over 20ms is spent inside layout, which, when we have 16ms to get a frame on screen in an animation, is far too high. You can also see that DevTools will tell you the tree size (1,618 elements in this case), and how many nodes were in need of layout.
-
-{% Aside %}
-Want a definitive list of which CSS properties trigger layout, paint, or composite? Check out [CSS Triggers](https://csstriggers.com).
-{% endAside %}
-
 
 ## Use flexbox over older layout models
 
@@ -174,4 +169,3 @@ function resizeAllParagraphsToMatchBlockWidth() {
 ```
 
 If you want to guarantee safety you should check out [FastDOM](https://github.com/wilsonpage/fastdom), which automatically batches your reads and writes for you, and should prevent you from triggering forced synchronous layouts or layout thrashing accidentally.
-å

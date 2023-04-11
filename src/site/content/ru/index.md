@@ -1,5 +1,5 @@
 ---
-layout: 'homepage-next'
+layout: 'homepage'
 title: 'web.dev'
 intro:
   eyebrow: 'About web.dev'
@@ -13,10 +13,12 @@ intro:
   imageHeight: '210'
 featureCard:
   theme: 'light'
-  title: "Check out what's new for the web platform at Google IO"
-  eyebrow: 'Event'
-  url: 'https://io.google/2022/products/web/'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/leNmaxWbgSav9BvKHEQM.jpg'
+  title: "Watch the progress we made together on the web."
+  eyebrow: ''
+  url: 'https://www.youtube.com/watch?v=W9O4CuSUKb8'
+  background: ''
+  video: 'https://web-dev.imgix.net/video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lIta9ZJEALbfAzJzmiNl.mp4'
+  alt: 'Chrome icon rolls past a title: 2022 Year in Review'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'

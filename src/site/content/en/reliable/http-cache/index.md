@@ -347,7 +347,7 @@ If you have more time, here are further ways that you can optimize your usage of
   </table>
 </div>
 
-[crp]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path
+[crp]: /critical-rendering-path/
 [304]: https://developer.mozilla.org/docs/Web/HTTP/Status/304
 [if-modified-since]: https://developer.mozilla.org/docs/Web/HTTP/Headers/If-Modified-Since
 [if-none-match]: https://developer.mozilla.org/docs/Web/HTTP/Headers/If-None-Match

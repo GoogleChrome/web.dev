@@ -6,7 +6,6 @@ import {html} from 'lit';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {BaseElement} from '../BaseElement';
 import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
-import 'focus-visible';
 
 /**
  * An Algolia search box.
@@ -188,8 +187,14 @@ export class SearchResults extends BaseElement {
             aria-selected="${idx === this.cursor}"
             tabindex="-1"
             href="${hit.url}"
-            >${unsafeHTML(title)}</a
           >
+            ${unsafeHTML(title)}
+            ${hit.parentTitle !== null
+              ? html`<div class="web-search-popout__parent-title">
+                  ${unsafeHTML(hit.parentTitle)}
+                </div>`
+              : ''}
+          </a>
         </li>
       `;
     });

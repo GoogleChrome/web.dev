@@ -64,7 +64,7 @@ This references three separate source files. The browser starts at the top, and
 picks the first format and codec that it can use. In the video world, the file
 format, usually called the container, can be saved with different codecs, each
 with different attributes. ([More on this
-here](https://developers.google.com/web/fundamentals/media/manipulating/applications).)
+here](/media-application-basics/).)
 In the example above, the first choice is the WebM format ([which can be encoded
 with VP8 or VP9 codecs](https://www.webmproject.org/about/)), and is supported
 (at the time of writing) by 78% of [global
@@ -194,7 +194,7 @@ further reduces the size of the video file being delivered to the customer.
 As with containers and codecs, removing the audio file, also called demuxing, is
 also beyond the scope of this article. You can find instructions in the [Media
 Manipulation Cheat
-Sheet](https://developers.google.com/web/fundamentals/media/manipulating/cheatsheet#demux_split_audio_and_video).
+Sheet](/media-conversion/#demux-separate-the-audio-and-video-streams).
 
 ## loop
 

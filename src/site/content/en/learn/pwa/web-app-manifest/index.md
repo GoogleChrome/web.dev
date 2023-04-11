@@ -11,7 +11,7 @@ updated: 2022-05-10
 The web app manifest is a file you create that tells the browser how you want your web content to display as an app in the operating system. The manifest can include basic information such as the app's name, icon, and theme color; advanced preferences, such as desired orientation and app shortcuts; and catalog metadata, such as screenshots.
 
 {% Aside 'warning' %}
-A web app manifest is a required [installability criteria](installation/#installation-criteria) in every browser. Your PWA will not install without it.
+A web app manifest is a required [installability criteria](/learn/pwa/installation/#installation-criteria) in every browser. Your PWA will not install without it.
 {% endAside %}
 
 Each PWA should include a single manifest per application, typically hosted in the root folder, and linked on all HTML pages your PWA can be installed from. Its official extension is `.webmanifest`, so you could name your manifest something like `app.webmanifest`.
@@ -193,22 +193,6 @@ Maskable icons should be 512 by 512 at least. With one created, you can add it t
 ]
 ```
 In most cases, if your maskable icon isn't displaying well, you can improve it by adding more padding. [Maskable.app](https://maskable.app) is a free online tool to test and create a maskable version of your icon.
-
-##### Icons in Safari
-
-Safari on iOS and iPadOS ignores the `icon` collection from the web app manifest and instead uses icons defined in a proprietary`<link>` element in the HTML.
-
-To define the icon, include the following in your HTML `<head>` section:
-
-```html
-<link rel="apple-touch-icon" href="/icons/ios.png">
-```
-
-While it's possible to define different icons for iPhones in different resolutions and iPads, a single non-transparent PNG icon sized at 180 by 180 pixels is usually used instead.
-
-{% Aside 'warning' %}
-Do not create rounded corners in your icon for iOS and iPadOS; they will be rounded for you.
-{% endAside %}
 
 ### Recommended fields
 

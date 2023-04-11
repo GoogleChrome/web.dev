@@ -20,7 +20,7 @@ tags:
 
 레이아웃 변경은 사용자의 주의를 산만하게 할 수 있습니다. 글을 읽기 시작했는데, 갑자기 요소가 페이지 아래로 이동해서 읽었던 곳을 다시 찾아야 한다고 생각해보세요. 이런 상황은 뉴스를 읽거나 '검색' 또는 '장바구니에 추가' 버튼을 클릭하려고 할 때 등 웹에서 자주 경험할 수 있는 일입니다. 이러한 경험은 시각적으로 거슬리는 데다가 짜증스럽죠. 다른 요소가 갑자기 페이지에 추가되거나 크기 조정으로 인해 시각적 요소가 강제로 이동할 때 자주 발생하는 현상입니다.
 
-[Cumulative Layout Shift(누적 레이아웃 이동, CLS)](/cls)는 [)CoreWeb Vitals](/vitals) 메트릭으로, 사용자 입력 500ms 이내에 발생하지 않는 레이아웃 이동에 대한 점수를 합산하여 콘텐츠의 불안정성을 측정합니다. 뷰포트에서 가시적인 콘텐츠가 얼마나 이동했는지와 영향을 받은 요소가 이동한 거리를 확인합니다.
+[Cumulative Layout Shift(누적 레이아웃 이동, CLS)](/cls)는 [CoreWeb Vitals](/vitals) 메트릭으로, 사용자 입력 500ms 이내에 발생하지 않는 레이아웃 이동에 대한 점수를 합산하여 콘텐츠의 불안정성을 측정합니다. 뷰포트에서 가시적인 콘텐츠가 얼마나 이동했는지와 영향을 받은 요소가 이동한 거리를 확인합니다.
 
 이 가이드에서는 레이아웃 이동의 일반적인 원인을 최적화하는 방법을 다룹니다.
 
@@ -242,7 +242,7 @@ img {
 
 다음 도구를 사용하면 이를 최소화할 수 있습니다.
 
-- <code>[font-display](/font-display/)</code>를 사용하면 <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> 및 <code>optional</code>과 같은 값으로 커스텀 글꼴의 렌더링 동작을 수정할 수 있습니다. 하지만 [optional](http://crrev.com/749080)을 제외한 이 모든 값이 위와 같은 방식 중 하나로 레이아웃 재구성을 발생시킬 수 있습니다.
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code>를 사용하면 <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> 및 <code>optional</code>과 같은 값으로 커스텀 글꼴의 렌더링 동작을 수정할 수 있습니다. 하지만 [optional](http://crrev.com/749080)을 제외한 이 모든 값이 위와 같은 방식 중 하나로 레이아웃 재구성을 발생시킬 수 있습니다.
 - [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api)를 사용하면 필요한 글꼴을 가져오는 데 걸리는 시간을 줄일 수 있습니다.
 
 Chrome 83부터 다음과 같은 방식을 추천합니다.
@@ -272,7 +272,7 @@ DevTools의 [Performance 패널](https://developer.chrome.com/docs/devtools/eval
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Experience 섹션 확장 시 Chrome DevTools Performance 패널에 표시되는 Layout Shift 기록", width="800", height="438" %} <figcaption>Performance 패널에 새로운 흔적이 기록되면 결과의 <b>Experience</b> 섹션에 <code>Layout Shift</code> 기록이 붉은색 막대와 함께 표시됩니다. 해당 기록을 클릭하면 영향을 받는 요소(예: Moved from/to 항목 참조)가 드릴다운됩니다.</figcaption></figure>
 
-[Chrome User Experience Report](/chrome-ux-report-bigquery/)를 사용해 원본 수준에서 집계된 실제 CLS를 측정할 수도 있습니다. CrUX CLS 데이터는 BigQuery를 통해 제공되며 CLS 성능을 확인하기 위한 [샘플 쿼리](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)도 사용할 수 있습니다.
+[Chrome User Experience Report](https://developer.chrome.com/blog/chrome-ux-report-bigquery/)를 사용해 원본 수준에서 집계된 실제 CLS를 측정할 수도 있습니다. CrUX CLS 데이터는 BigQuery를 통해 제공되며 CLS 성능을 확인하기 위한 [샘플 쿼리](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)도 사용할 수 있습니다.
 
 이 가이드는 여기까지입니다. 페이지 이동을 줄이는 데 도움이 되기를 바랍니다. :)
 

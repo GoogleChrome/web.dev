@@ -68,7 +68,7 @@ Além disso, o TBT se correlaciona bem com a métrica de campo [First Input Dela
 
 ## Atualização da pontuação de desempenho {: #score}
 
-A [pontuação de desempenho no Lighthouse](/performance-scoring/) é calculada a partir de uma combinação ponderada de várias métricas para resumir a velocidade de uma página. Segue-se a fórmula de pontuação de desempenho 6.0.
+A [pontuação de desempenho no Lighthouse](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) é calculada a partir de uma combinação ponderada de várias métricas para resumir a velocidade de uma página. Segue-se a fórmula de pontuação de desempenho 6.0.
 
 &lt;style&gt; .lh-table {min-width: unset; } .lh-table td {min-width: unset; } &lt;/style&gt;
 
@@ -216,7 +216,7 @@ A Lighthouse usa a maravilhosa [biblioteca do núcleo do machado](https://github
 
 ### Declaração de Charset {: #charset}
 
-O [elemento meta charset](/charset/) declara qual codificação de caracteres deve ser usada para interpretar um documento HTML. Se este elemento estiver faltando, ou se for declarado no final do documento, os navegadores empregam uma série de heurísticas para adivinhar qual codificação deve ser usada. Se um navegador adivinhar incorretamente e um elemento meta charset tardio for encontrado, o analisador geralmente descarta todo o trabalho feito até agora e é reiniciado, levando a experiências ruins para o usuário. Essa nova auditoria verifica se a página possui uma codificação de caracteres válida e se ela está definida antecipadamente.
+O [elemento meta charset](https://developer.chrome.com/docs/lighthouse/best-practices/charset/) declara qual codificação de caracteres deve ser usada para interpretar um documento HTML. Se este elemento estiver faltando, ou se for declarado no final do documento, os navegadores empregam uma série de heurísticas para adivinhar qual codificação deve ser usada. Se um navegador adivinhar incorretamente e um elemento meta charset tardio for encontrado, o analisador geralmente descarta todo o trabalho feito até agora e é reiniciado, levando a experiências ruins para o usuário. Essa nova auditoria verifica se a página possui uma codificação de caracteres válida e se ela está definida antecipadamente.
 
 ## CI do Lighthouse {: #ci}
 

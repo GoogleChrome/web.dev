@@ -16,7 +16,7 @@ tags:
 
 ほとんどのブラウザは、プログレッシブ Web アプリ（PWA）が特定の基準を満たしたときにインストール可能であることをユーザーに示します。インジケータの例には、アドレスバーの [インストール] ボタン、またはオーバーフローメニューの [インストール] メニュー項目が含まれます。
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="インストールインジケーターが表示されたオムニボックスのスクリーンショット。", width="800", height="307" %} <figcaption> ブラウザが提供するインストールプロモーション（デスクトップ）</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="ブラウザが提供するインストールプロモーションのスクリーンショット。", width="800", height="307" %} <figcaption>ブラウザが提供するインストールプロモーション（モバイル）</figcaption></figure>
 </div>

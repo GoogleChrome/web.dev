@@ -1,0 +1,32 @@
+:root {
+  color-scheme: dark light;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+img {
+  max-width: 320px;
+  height: auto;
+}
+
+label,
+button,
+textarea,
+input,
+img {
+  display: block;
+  margin-block: 1rem;
+}

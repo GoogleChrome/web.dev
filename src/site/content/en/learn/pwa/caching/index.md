@@ -9,6 +9,7 @@ updated: 2022-03-02
 ---
 
 Cache storage is a powerful tool. It makes your apps less dependent on network conditions. With good use of caches you can make your web app available offline and serve your assets as fast as possible in any network condition. As mentioned in [Assets and Data](/learn/pwa/assets-and-data/) you can decide the best strategy for caching the necessary assets. To manage the cache your service worker interacts with the [Cache Storage API](https://developer.mozilla.org/docs/Web/API/CacheStorage).
+{% BrowserCompat 'api.CacheStorage' %}
 
 {% Aside %}
 When installing platform-specific apps, the device stores the icon and other app assets in the operating system, in one step. For PWAs, the process has two separate steps. A PWA can store assets on your device any time after the first visit in the browser, even without installation. Install is a separate action that is covered later in this course.

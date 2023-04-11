@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Accessibility Tree 
+title: The Accessibility Tree
 subhead: Introduction to the Accessibility Tree
 description: Introduction to the Accessibility Tree
 authors:
@@ -108,7 +108,7 @@ It might be constructed in HTML in any number of ways; one way is shown below.
 
 When we don't use an actual button element, the screen reader has no way to know
 what it has landed on. Also, we would have to do the extra work [of adding
-tabindex](https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex) to make it
+tabindex](/using-tabindex/) to make it
 usable to keyboard-only users because, as it is coded now, it can only be used
 with a mouse.
 

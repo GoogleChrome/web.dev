@@ -33,8 +33,9 @@ patternId: components/loading-bar
       <button id="reset" type="reset" onclick="reset()">Reset</button>
     </div>
 
-    <script>
+    {% set script %}
       const c=function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))u(e);new MutationObserver(e=>{for(const r of e)if(r.type==="childList")for(const s of r.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&u(s)}).observe(document,{childList:!0,subtree:!0});function a(e){const r={};return e.integrity&&(r.integrity=e.integrity),e.referrerpolicy&&(r.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?r.credentials="include":e.crossorigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function u(e){if(e.ep)return;e.ep=!0;const r=a(e);fetch(e.href,r)}};c();const l=document.querySelector("progress"),d=document.querySelector("#loading-zone"),t={val:.1},f=(o,n)=>+(Math.round(o+"e+"+n)+"e-"+n),i=()=>{if(d.setAttribute("aria-busy",t.val<1),t.val===null){l.removeAttribute("aria-valuenow"),l.removeAttribute("value"),l.focus();return}const o=f(t.val,2),n=o*100+"%";l.value=o,l.setAttribute("aria-valuenow",n),l.innerText=n,l.focus()};setTimeout(o=>i(),2e3);setTimeout(o=>{t.val=.4,i()},4e3);setTimeout(o=>{t.val=.6,i()},5e3);setTimeout(o=>{t.val=.9,i()},6e3);setTimeout(o=>{t.val=1,i()},8e3);window.increase=o=>{t.val+=.2,t.val>1&&(t.val=1),i()};window.decrease=o=>{t.val-=.2,t.val<0&&(t.val=0),i()};window.complete=o=>{t.val=1,i()};window.reset=o=>{t.val=null,i()};
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
   </body>
 </html>

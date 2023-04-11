@@ -183,7 +183,7 @@ Jeremy Keith의 [탄력적인 웹 디자인](https://resilientwebdesign.com/)은
 
 #### 방법
 
-W3C의 [웹 접근성 개론](https://www.w3.org/WAI/fundamentals/accessibility-intro/)은 시작하기에 좋은 곳입니다. 접근성 테스트의 대부분은 수동으로 수행해야 합니다. Lighthouse의 [접근성](https://github.com/dequelabs/axe-core) 감사, [axe](https://accessibilityinsights.io/) 및 [Accessibility Insights](/lighthouse-accessibility/)와 같은 도구를 사용하면 일부 접근성 테스트를 자동화할 수 있습니다.  `a`나 `button`과 같은 요소를 스스로 재창조하는 대신 의미적으로 올바른 요소를 사용하는 것도 중요합니다. 이렇게 하면 더 고급 기능을 구축해야 할 때 접근성 기대치를 충족할 수 있습니다(예: 화살표와 탭을 사용해야 하는 경우). [A11Y 영양 카드](https://accessibilityinsights.io/)에는 몇 가지 일반적인 구성 요소에 대한 훌륭한 조언이 있습니다.
+W3C의 [웹 접근성 개론](https://www.w3.org/WAI/fundamentals/accessibility-intro/)은 시작하기에 좋은 곳입니다. 접근성 테스트의 대부분은 수동으로 수행해야 합니다. Lighthouse의 [접근성](https://github.com/dequelabs/axe-core) 감사, [axe](https://accessibilityinsights.io/) 및 [Accessibility Insights](https://developer.chrome.com/docs/lighthouse/accessibility/)와 같은 도구를 사용하면 일부 접근성 테스트를 자동화할 수 있습니다.  `a`나 `button`과 같은 요소를 스스로 재창조하는 대신 의미적으로 올바른 요소를 사용하는 것도 중요합니다. 이렇게 하면 더 고급 기능을 구축해야 할 때 접근성 기대치를 충족할 수 있습니다(예: 화살표와 탭을 사용해야 하는 경우). [A11Y 영양 카드](https://accessibilityinsights.io/)에는 몇 가지 일반적인 구성 요소에 대한 훌륭한 조언이 있습니다.
 
 {% endDetails %}
 
@@ -203,7 +203,7 @@ W3C의 [웹 접근성 개론](https://www.w3.org/WAI/fundamentals/accessibility-
 
 #### 방법
 
-각 URL에 고유하고 설명적인 제목과 메타 설명이 있는지 확인하는 것부터 시작하세요. 그런 다음 [Google Search Console](https://search.google.com/search-console/about) 및 Lighthouse의 [검색 엔진 최적화 감사](/lighthouse-seo/)를 사용하여 PWA의 검색 가능성 문제를 디버깅하고 수정할 수 있습니다. 또한 [Bing](https://www.bing.com/toolbox/webmaster) 또는 [Yandex](https://webmaster.yandex.com/welcome/)의 웹마스터 도구를 사용하고 PWA에서 [Schema.org](https://goo.gle/search-gallery)의 스키마를 통해 [구조화된 데이터](https://schema.org/)를 포함하는 것을 고려할 수 있습니다.
+각 URL에 고유하고 설명적인 제목과 메타 설명이 있는지 확인하는 것부터 시작하세요. 그런 다음 [Google Search Console](https://search.google.com/search-console/about) 및 Lighthouse의 [검색 엔진 최적화 감사](https://developer.chrome.com/docs/lighthouse/seo/)를 사용하여 PWA의 검색 가능성 문제를 디버깅하고 수정할 수 있습니다. 또한 [Bing](https://www.bing.com/toolbox/webmaster) 또는 [Yandex](https://webmaster.yandex.com/welcome/)의 웹마스터 도구를 사용하고 PWA에서 [Schema.org](https://goo.gle/search-gallery)의 스키마를 통해 [구조화된 데이터](https://schema.org/)를 포함하는 것을 고려할 수 있습니다.
 
 {% endDetails %}
 

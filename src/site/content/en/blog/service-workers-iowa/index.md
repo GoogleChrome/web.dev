@@ -15,7 +15,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/HhySNupQxJmqcouugbqS.png", alt="Portrait screenshot", width="800", height="1353" %}
 </figure>
 
-### TL;DR 
+### Summary
 
 Learn how we used service worker libraries to make the Google I/O 2015 web app
 fast, and offline-first.

@@ -160,10 +160,10 @@ Did you notice the `kind` attribute of the `<track>` element? It's used to
 indicate what relation the particular text track has to the video. The
 possible values of the `kind` attribute are:
 
-* `captions`: For closed captions, i.e. transcripts and possibly translations
+* `captions`: For closed captions from transcripts and possibly translations
   of any audio. Suitable for hearing impaired and in cases when the video is
   playing muted.
-* `subtitles`: For subtitles, i.e. translations of speech and text in a
+* `subtitles`: For subtitles, that is, translations of speech and text in a
   language different from the main language of the video.
 * `descriptions`: For descriptions of visual parts of the video content.
   Suitable for visually impaired people.

@@ -15,11 +15,16 @@
  */
 
 declare module 'webdev_analytics' {
-  export declare const id: string;
+  export declare const ids: {
+    UA: string;
+    GA4: string;
+  };
   export declare const dimensions: {
-    SIGNED_IN: 'dimension1';
-    TRACKING_VERSION: 'dimension5';
-    NAVIGATION_TYPE: 'dimension6';
+    SIGNED_IN: string;
+    MEASUREMENT_VERSION: string;
+    NAVIGATION_TYPE: string;
+    COLOR_SCHEME_PREFERENCE: string;
+    WEB_VITALS_DEBUG: string;
   };
   export declare const version: number;
 }

@@ -1,0 +1,142 @@
+---
+patternId: advanced-apps/periodic-background-sync
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="assets/manifest.json" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+    />
+    <title>How to periodically synchronize data in the background</title>
+    <style>
+      html {
+        box-sizing: border-box;
+        font-family: system-ui, sans-serif;
+        color-scheme: dark light;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+      }
+      own-window {
+        border: dashed red 2px;
+        padding: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to periodically synchronize data in the background</h1>
+
+    {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+    {% include 'partials/script-loader.njk' %}
+    {% set apiScripts %}
+      loadScript('https://unpkg.com/own-window@1.0.3/dist/index.min.js', null);
+    {% endset %}
+    <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+
+    <own-window>
+      <div>This demo needs to run in its own window, not in an iframe.</div>
+      <button type="button">Open in new window</button>
+    </own-window>
+
+    <p class="available">Periodic background sync can be used. Install the app first.</p>
+    <p class="not-available">Periodic background sync cannot be used.</p>
+    <h2>Last updated</h2>
+    <p class="last-updated">Never</p>
+    <h2>Registered tags</h2>
+    <ul>
+      <li>None yet.</li>
+    </ul>
+    {% set script %}
+      const available = document.querySelector('.available');
+      const notAvailable = document.querySelector('.not-available');
+      const ul = document.querySelector('ul');
+      const lastUpdated = document.querySelector('.last-updated');
+
+      const updateContent = async () => {
+        const data = await fetch(
+          'https://worldtimeapi.org/api/timezone/Europe/London.json'
+        ).then((response) => response.json());
+        return new Date(data.unixtime * 1000);
+      };
+
+      const registerPeriodicBackgroundSync = async (registration) => {
+        const status = await navigator.permissions.query({
+          name: 'periodic-background-sync',
+        });
+        if (status.state === 'granted' && 'periodicSync' in registration) {
+          try {
+            // Register the periodic background sync.
+            await registration.periodicSync.register('content-sync', {
+              // An interval of one day.
+              minInterval: 24 * 60 * 60 * 1000,
+            });
+            available.hidden = false;
+            notAvailable.hidden = true;
+
+            // List registered periodic background sync tags.
+            const tags = await registration.periodicSync.getTags();
+            if (tags.length) {
+              ul.innerHTML = '';
+            }
+            tags.forEach((tag) => {
+              const li = document.createElement('li');
+              li.textContent = tag;
+              ul.append(li);
+            });
+
+            // Update the user interface with the last periodic background sync data.
+            const backgroundSyncCache = await caches.open('periodic-background-sync');
+            if (backgroundSyncCache) {
+              const backgroundSyncResponse =
+                backgroundSyncCache.match('/last-updated');
+              if (backgroundSyncResponse) {
+                lastUpdated.textContent = `${await fetch('/last-updated').then(
+                  (response) => response.text()
+                )} (periodic background-sync)`;
+              }
+            }
+
+            // Listen for incoming periodic background sync messages.
+            navigator.serviceWorker.addEventListener('message', async (event) => {
+              if (event.data.tag === 'content-sync') {
+                lastUpdated.textContent = `${await updateContent()} (periodic background sync)`;
+              }
+            });
+          } catch (err) {
+            console.error(err.name, err.message);
+            available.hidden = true;
+            notAvailable.hidden = false;
+            lastUpdated.textContent = 'Never';
+          }
+        } else {
+          available.hidden = true;
+          notAvailable.hidden = false;
+          lastUpdated.textContent = `${await updateContent()} (manual)`;
+        }
+      };
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', async () => {
+          const registration = await navigator.serviceWorker.register('sw.js');
+          console.log('Service worker registered for scope', registration.scope);
+
+          await registerPeriodicBackgroundSync(registration);
+        });
+      }
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>
+

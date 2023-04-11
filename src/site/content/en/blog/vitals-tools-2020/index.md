@@ -100,7 +100,7 @@ In future releases, we plan to expand the API to enable access to additional CrU
 
 **Revamped CrUX Dashboard**
 
-The newly redesigned [CrUX Dashboard](http://g.co/chromeuxdash) allows you to easily track an origin's performance over time, and now you can use it to monitor the distributions of all of the Core Web Vitals metrics. To get started with the dashboard, check out our [tutorial](/chrome-ux-report-data-studio-dashboard/) on web.dev.
+The newly redesigned [CrUX Dashboard](http://g.co/chromeuxdash) allows you to easily track an origin's performance over time, and now you can use it to monitor the distributions of all of the Core Web Vitals metrics. To get started with the dashboard, check out our [tutorial](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/) on web.dev.
 
 <figure>
   {% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="Chrome UX Report dashboard displaying the Core Web Vitals metrics in a new landing page", width="800", height="497" %}

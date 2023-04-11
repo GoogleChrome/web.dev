@@ -1,0 +1,4 @@
+---
+layout: collection
+pathName: notifications
+---

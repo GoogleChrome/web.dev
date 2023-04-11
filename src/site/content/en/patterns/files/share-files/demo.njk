@@ -1,0 +1,109 @@
+---
+patternId: advanced-apps/share-files
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+    />
+    <title>How to share files</title>
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+
+      img,
+      video {
+        height: auto;
+        max-width: 100%;
+        display: block;
+      }
+
+      button {
+       margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to share files</h1>
+    <img
+      width="200"
+      height="200"
+      alt="A cat walking in the snow."
+      src="cat.png"
+    />
+    <button type=button></button>
+
+    {% set script %}
+      const button = document.querySelector('button');
+      const img =  document.querySelector('img');
+
+      const webShareSupported = 'canShare' in navigator;
+      button.textContent = webShareSupported ? 'Share' : 'Download';
+
+      const shareOrDownload = async (blob, fileName, title, text) => {
+        if (webShareSupported) {
+          const data = {
+            files: [
+              new File([blob], fileName, {
+                type: blob.type,
+              }),
+            ],
+            title,
+            text,
+          };
+          if (navigator.canShare(data)) {
+            try {
+              await navigator.share(data);
+            } catch (err) {
+              if (err.name !== 'AbortError') {
+                console.error(err.name, err.message);
+              }
+            } finally {
+              return;
+            }
+          }
+        }
+        // Fallback
+        const a = document.createElement('a');
+        a.download = fileName;
+        a.style.display = 'none';
+        a.href = URL.createObjectURL(blob);
+        a.addEventListener('click', () => {
+          setTimeout(() => {
+            URL.revokeObjectURL(a.href);
+            a.remove();
+          }, 1000)
+        });
+        document.body.append(a);
+        a.click();
+      };
+
+      button.addEventListener('click', async () => {
+        const blob = await fetch(img.src).then(res => res.blob());
+        await shareOrDownload(blob, 'cat.png', 'Cat in the snow', 'Getting cold feet…');
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

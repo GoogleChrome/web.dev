@@ -15,8 +15,6 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/bY2BFji9mpdAGR9WysUK.png", alt="Chrome Dev Summit 2014 website screenshot", width="800", height="1570" %}
 </figure>
 
-### TL;DR
-
 Built in-house by our own Paul Lewis, the CDS website showed how to build a
 great mobile web experience for conference visitors.
 

@@ -35,7 +35,7 @@ Os scripts de terceiros podem fornecer funcionalidade poderosa, mas essa não é
 
 ## Desempenho
 
-Qualquer quantidade significativa de [JavaScript pode diminuir o desempenho](/bootup-time). Mas como o JavaScript de terceiros geralmente está fora do seu controle, ele pode trazer problemas adicionais.
+Qualquer quantidade significativa de [JavaScript pode diminuir o desempenho](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/). Mas como o JavaScript de terceiros geralmente está fora do seu controle, ele pode trazer problemas adicionais.
 
 ### Rede
 

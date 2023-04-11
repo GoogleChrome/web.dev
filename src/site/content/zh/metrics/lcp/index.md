@@ -4,7 +4,7 @@ title: Largest Contentful Paint 最大内容绘制 (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2022-07-18
+updated: 2022-10-19
 description: 本篇文章介绍了最大内容绘制 (LCP) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -17,7 +17,7 @@ tags:
 
 诸如[load（加载）](https://developer.mozilla.org/docs/Web/Events/load)或[DOMContentLoaded（DOM 内容加载完毕）](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded)这样的旧有指标并不是很好，因为这些指标不一定与用户在屏幕上看到的内容相对应。而像[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)这类以用户为中心的较新性能指标只会捕获加载体验最开始的部分。如果某个页面显示的是一段启动画面或加载指示，那么这些时刻与用户的关联性并不大。
 
-我们以往推荐过一些性能指标，例如[First Meaningful Paint 首次有效绘制 (FMP)](/first-meaningful-paint/)和[Speed Index 速度指数 (SI)](/speed-index/) （两个指标都包含在灯塔工具中），这些指标有助于捕获到更多初始绘制后的加载体验，但这些指标十分复杂、难以解释，而且常常出错，也就意味着这些指标仍然无法识别出页面主要内容加载完毕的时间点。
+我们以往推荐过一些性能指标，例如[First Meaningful Paint 首次有效绘制 (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/)和[Speed Index 速度指数 (SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) （两个指标都包含在灯塔工具中），这些指标有助于捕获到更多初始绘制后的加载体验，但这些指标十分复杂、难以解释，而且常常出错，也就意味着这些指标仍然无法识别出页面主要内容加载完毕的时间点。
 
 有时候简胜于繁。根据[W3C Web 性能工作组](https://www.w3.org/webperf/)的讨论以及 Google 进行的研究，我们发现更准确地测量页面主要内容加载完毕的时间点的方法是查看最大元素完成渲染的时间点。
 
@@ -129,9 +129,12 @@ LCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 - [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
 - [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 
 ### 在 JavaScript 中测量 LCP
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 要在 JavaScript 中测量 LCP，您可以使用[最大内容绘制 API](https://wicg.github.io/largest-contentful-paint/) 。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听`largest-contentful-paint`条目并记录在控制台中。
 
@@ -163,13 +166,13 @@ new PerformanceObserver((entryList) => {
 开发者不必记住所有这些细微差异，而是可以使用[`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)来测量 LCP，库会自行处理这些差异（在可能的情况下）：
 
 ```js
-import {getLCP} from 'web-vitals';
+import {onLCP} from 'web-vitals';
 
 // 当 LCP 可用时立即进行测量和记录。
-getLCP(console.log);
+onLCP(console.log);
 ```
 
-您可以参考[`getLCP()`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)，了解如何在 JavaScript 中测量 LCP 的完整示例。
+您可以参考[`onLCP()`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/onLCP.ts)，了解如何在 JavaScript 中测量 LCP 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），LCP 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 

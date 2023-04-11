@@ -127,7 +127,7 @@ a fully server-rendered page.
 </figure>
 
 {% Aside %}
-  Check out [Server Rendering](https://developers.google.com/web/updates/2019/02/rendering-on-the-web#server-rendering)
+  Check out [Server Rendering](/rendering-on-the-web/#server-rendering)
   to learn how server-side rendering often results in a better experience for users.
 {% endAside %}
 
@@ -147,5 +147,5 @@ Every other guide in this collection will explore a specific Next.js feature in 
 
 [collection]: /react
 [cra]: https://create-react-app.dev/
-[ssr]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web#server-rendering
+[ssr]: /rendering-on-the-web/#server-rendering
 [amp]: /how-amp-can-guarantee-fastness-in-your-nextjs-app

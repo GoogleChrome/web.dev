@@ -19,7 +19,7 @@ But emphasizes that simplicity isn't about:
 
 Whether or not something is simple is about how interconnected it is.
 
-Complexity comes from binding, weaving, or, to use Rich's term, complecting things together. You can complexity it by counting the number of roles, tasks, concepts, or dimensions something manages.
+Complexity comes from binding, weaving, or, to use Rich's term, complecting things together. You can calculate complexity by counting the number of roles, tasks, concepts, or dimensions something manages.
 
 Simplicity is essential in software development because simple code is easier to understand and maintain. Simplicity is also necessary for web apps because it may help to make our app fast and accessible in every possible context.
 

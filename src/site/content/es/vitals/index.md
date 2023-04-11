@@ -91,7 +91,7 @@ La forma más sencilla de medir todos los Core Web Vitals es utilizar la bibliot
 Con la [biblioteca web-vitals](https://github.com/GoogleChrome/web-vitals), medir cada métrica es tan simple como llamar a una sola función (consulte la documentación para conocer el [uso](https://github.com/GoogleChrome/web-vitals#usage) completo y los detalles de la [API):](https://github.com/GoogleChrome/web-vitals#api)
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 Una vez que haya configurado su sitio para usar la biblioteca [web-vitals](https://github.com/GoogleChrome/web-vitals) para medir y enviar sus datos de Core Web Vitals a un punto final de análisis, el siguiente paso es agregar y hacer un reporte sobre esos datos para ver si sus páginas cumplen con los umbrales recomendados para al menos el 75% de las visitas a la página.
@@ -205,7 +205,7 @@ Si bien los Core Web Vitals son las métricas críticas para comprender y brinda
 
 Estos otros Web Vitals a menudo sirven como métricas proxy o suplementarias para los Core Web Vitals, para ayudar a capturar una mayor parte de la experiencia o para ayudar a diagnosticar un problema específico.
 
-Por ejemplo, las métricas [Time to First Byte (TTFB)](/ttfb/) y [First Contentful Paint (FCP)](/fcp/) son aspectos vitales de la *experiencia de carga* y son útiles para diagnosticar problemas con LCP ([tiempos de respuesta del servidor](/overloaded-server/) lentos o [recursos de bloqueo de renderizado](/render-blocking-resources/), respectivamente).
+Por ejemplo, las métricas [Time to First Byte (TTFB)](/ttfb/) y [First Contentful Paint (FCP)](/fcp/) son aspectos vitales de la *experiencia de carga* y son útiles para diagnosticar problemas con LCP ([tiempos de respuesta del servidor](/overloaded-server/) lentos o [recursos de bloqueo de renderizado](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/), respectivamente).
 
 De manera similar, métricas como [Total Blocking Time (TBT)](/tbt/) y [Time to Interactive (TTI)](/tti/) son métricas de laboratorio que son vitales para detectar y diagnosticar posibles *problemas de interactividad* que afectarán a la FID. Sin embargo, no forman parte del conjunto Core Web Vitals porque no se pueden medir en el campo ni reflejan un resultado [centrado en el usuario.](/user-centric-performance-metrics/#how-metrics-are-measured)
 

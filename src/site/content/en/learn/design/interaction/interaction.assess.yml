@@ -23,7 +23,7 @@ questions:
         rationale: "Pointer already includes touch as an input type."
       - content: "Pointers don't include things like a mouse."
         rationale: "Pointers do include a mouse as an input device."
-      - content: "Any pointer will report true when additional, none primary inputs, like a stylus, pass the test."
+      - content: "Any pointer will report true when additional, non-primary inputs, like a stylus, pass the test."
         rationale: "`any-pointer` queries all device input types for any match."
   - type: multiple-choice
     cardinality: "1+"

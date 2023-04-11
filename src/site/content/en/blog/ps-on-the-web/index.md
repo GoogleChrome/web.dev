@@ -20,6 +20,7 @@ tags:
 Over the last three years, Chrome has been working to empower web applications that want to push the boundaries of what's possible in the browser. One such web application has been Photoshop. The idea of running software as complex as Photoshop directly in the browser would have been hard to imagine just a few years ago. However, by using various new web technologies, Adobe has now brought a public beta of Photoshop to the web.
 
 {% YouTube "CF5zZZy0R9U" %}
+
 (If you prefer watching over reading, this article is also available as a
 [video](https://www.youtube.com/watch?v=CF5zZZy0R9U).)
 
@@ -43,7 +44,7 @@ Adobe previously brought [Spark](https://spark.adobe.com/sp/) and [Lightroom](ht
 
 ## WebAssembly porting with Emscripten
 
-WebAssembly and its C++ toolchain [Emscripten](https://emscripten.org/) have been the key to unlocking Photoshop's ability to come to the web, as it meant that Adobe would not have to start from scratch, but could leverage their existing Photoshop codebase. WebAssembly is a portable binary instruction set shipping in all browsers that was designed as a compilation target for programming languages. This means that applications such as Photoshop that are written in C++ can be ported directly to the web without requiring a rewrite in JavaScript. To get started porting yourself, check out the full [Emscripten documentation](https://emscripten.org/docs/index.html), or follow this [guided example of how to port a library](https://developers.google.com/web/updates/2018/03/emscripting-a-c-library).
+WebAssembly and its C++ toolchain [Emscripten](https://emscripten.org/) have been the key to unlocking Photoshop's ability to come to the web, as it meant that Adobe would not have to start from scratch, but could leverage their existing Photoshop codebase. WebAssembly is a portable binary instruction set shipping in all browsers that was designed as a compilation target for programming languages. This means that applications such as Photoshop that are written in C++ can be ported directly to the web without requiring a rewrite in JavaScript. To get started porting yourself, check out the full [Emscripten documentation](https://emscripten.org/docs/index.html), or follow this [guided example of how to port a library](/emscripting-a-c-library/).
 
 Emscripten is a fully-featured toolchain that not only helps you compile your C++ to Wasm, but provides a translation layer that turns POSIX API calls into web API calls and even converts OpenGL into WebGL. For example, you can port applications that reference the local filesystem and [Emscripten will provide an emulated file system](https://emscripten.org/docs/porting/files/file_systems_overview.html#file-system-overview) to maintain functionality.
 

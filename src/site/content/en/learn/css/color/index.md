@@ -176,6 +176,7 @@ Both saturation and lightness are defined with percentages.
 [The angle type](https://developer.mozilla.org/docs/Web/CSS/angle)
 in CSS is great for defining hue because it represents the angle of the color wheel really well.
 This type accepts degrees, turns, radians and gradians.
+{% BrowserCompat 'css.types.angle' %}
 {% endAside %}
 
 <figure>
@@ -233,7 +234,7 @@ which is the highlight color of selected items. These are just two of
 [many options](https://www.w3.org/wiki/CSS/Properties/color/keywords#System_Colors).
 
 All color keywords are case-insensitive,
-however you will often see system colors with capitalization in order to differentiate them from standard color keywords.
+however you will often see system colors with capitalization to differentiate them from standard color keywords.
 {% endAside %}
 
 ## Where to use color in CSS rules

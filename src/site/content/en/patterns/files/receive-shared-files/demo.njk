@@ -1,0 +1,89 @@
+---
+patternId: advanced-apps/badges
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="assets/manifest.json" />
+    <title>How to receive shared files</title>
+    <style>
+      html {
+        box-sizing: border-box;
+        font-family: system-ui, sans-serif;
+        color-scheme: dark light;
+      }
+
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+      }
+
+      img {
+        height: auto;
+        max-width: 100%;
+        display: block;
+      }
+
+      own-window {
+        border: dashed red 2px;
+        padding: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to receive shared files</h1>
+
+    <own-window>
+      <div>This demo needs to run in its own window, not in an iframe.</div>
+      <button type="button">Open in new window</button>
+    </own-window>
+
+    <p>Install the app. After the installation, try sharing an image to it from another app.</p>
+
+    {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+    {% include 'partials/script-loader.njk' %}
+    {% set apiScripts %}
+      loadScript('https://unpkg.com/own-window@1.0.3/dist/index.min.js', null);
+    {% endset %}
+    <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+
+    {% set script %}
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', async () => {
+            const registration = await navigator.serviceWorker.register(
+              'sw.js',
+            );
+            console.log(
+              'Service worker registered for scope',
+              registration.scope,
+            );
+          });
+        }
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+
+    {% set script %}
+      window.addEventListener('load', async () => {
+        if (location.search.includes('share-target')) {
+          const keys = await caches.keys();
+          const mediaCache = await caches.open(
+            keys.filter((key) => key.startsWith('media'))[0],
+          );
+          const image = await mediaCache.match('shared-image');
+          if (image) {
+            const blob = await image.blob();
+            await mediaCache.delete('shared-image');
+            // Handle the shared file somehow.
+          }
+        }
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+---
+patternId: advanced-apps/shortcuts
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="manifest" href="assets/manifest.json" />
+    <title>How to create app shortcuts</title>
+    <style>
+      html {
+        font-family: system-ui, sans-serif;
+      }
+      own-window {
+        border: dashed red 2px;
+        padding: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to create app shortcuts</h1>
+
+    {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+    {% include 'partials/script-loader.njk' %}
+    {% set apiScripts %}
+      loadScript('https://unpkg.com/own-window@1.0.3/dist/index.min.js', null);
+    {% endset %}
+    <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+
+    <own-window>
+      <div>This demo needs to run in its own window, not in an iframe.</div>
+      <button type="button">Open in new window</button>
+    </own-window>
+
+    <ol>
+      <li>
+        You can drag these <a href="blue.html">blue page</a> or
+        <a href="red.html">red page</a> links to the bookmarks bar
+        and access them later.
+      </li>
+      <li>
+        Install the app by clicking the button below. After the installation,
+        the button is disabled.
+        <p>
+          <button id="install" disabled>Install</button>
+        </p>
+      </li>
+    </ol>
+
+    {% set script %}
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js');
+        });
+      }
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+
+    {% set script %}
+      const installButton = document.querySelector('#install');
+      if ('BeforeInstallPromptEvent' in window) {
+        let installEvent = null;
+        const onInstall = () => {
+          installButton.disabled = true;
+          installEvent = null;
+        };
+        window.addEventListener('beforeinstallprompt', (event) => {
+          event.preventDefault();
+          installEvent = event;
+          installButton.disabled = false;
+        });
+        installButton.addEventListener('click', async () => {
+          if (!installEvent) {
+            return;
+          }
+          installEvent.prompt();
+          const result = await installEvent.userChoice;
+          if (result.outcome === 'accepted') {
+            onInstall();
+          }
+        });
+        window.addEventListener('appinstalled', (event) => {
+          onInstall();
+        });
+      }
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

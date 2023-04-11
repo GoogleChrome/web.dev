@@ -151,10 +151,11 @@ for users if they *want* to select the text in the element.
 So make sure you use it with caution and sparingly.
 
 ```css
-/* Example: dDisable selecting text on a paragraph element: *?
+/* Example: Disable selecting text on a paragraph element: */
 p.disable-text-selection {
   user-select: none;
 }
+```
 
 ## Implement custom gestures
 
@@ -418,7 +419,7 @@ before the browser is intending to draw a frame and will help us move some
 work out of our event callbacks.
 
 If you are unfamiliar with `requestAnimationFrame()`, you
-can [learn more here](https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution#use-requestanimationframe-for-visual-changes).
+can [learn more here](/optimize-javascript-execution/#use-requestanimationframe-for-visual-changes).
 
 A typical implementation is to save the `x` and `y` coordinates from the
 start and move events and request an animation frame inside the move event

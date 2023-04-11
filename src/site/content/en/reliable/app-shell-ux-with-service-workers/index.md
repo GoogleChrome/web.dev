@@ -51,7 +51,7 @@ Here's how their solution works:
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QkGCrnzggZmrp1PXrbHb.png", alt="Dev's architecture consisting on static headers and footers that are cached and a body requested from the network.", width="800", height="363" %}
 </figure>
 
-The key element of this solution is the usage of [streams](https://developers.google.com/web/updates/2016/06/sw-readablestreams), which enables [incremental creations and updates](https://streams.spec.whatwg.org/#intro) of data sources. The Streams API also provides an interface for reading or writing asynchronous chunks of data, only a subset of which might be available in memory at any given time.
+The key element of this solution is the usage of [streams](https://developer.chrome.com/blog/sw-readablestreams/), which enables [incremental creations and updates](https://streams.spec.whatwg.org/#intro) of data sources. The Streams API also provides an interface for reading or writing asynchronous chunks of data, only a subset of which might be available in memory at any given time.
 This way, the header of the page can be rendered as soon as it's picked from the cache, while the rest of the content is being fetched from the network. As a result, the navigation experience is so fast that users don't perceive an actual page refresh, only the new content (the body) being updated.
 
 The resulting UX is similar to the app shell UX pattern of SPAs, implemented on a MPA site.

@@ -129,11 +129,11 @@ Ten en cuenta que estos objetivos pueden cambiar con el tiempo.
 
 **Directrices**:
 
-- Prueba el rendimiento de tu carga en los dispositivos móviles y las conexiones de red que son comunes entre tus usuarios. Puedes utilizar el [Informe de experiencia del usuario de Chrome](/chrome-ux-report/) para conocer la [distribución de conexiones](/chrome-ux-report-data-studio-dashboard/#using-the-dashboard) de tus usuarios. Si los datos no están disponibles para tu sitio, [The Mobile Economy 2019](https://www.gsma.com/mobileeconomy/) sugiere que una metrica promedio a nivel global es un teléfono Android de rango medio, como un Moto G4, y una red 3G lenta (definida como RTT de 400 ms y velocidad de transferencia de 400 kbps). Esta combinación está disponible en [WebPageTest](https://www.webpagetest.org/easy).
+- Prueba el rendimiento de tu carga en los dispositivos móviles y las conexiones de red que son comunes entre tus usuarios. Puedes utilizar el [Informe de experiencia del usuario de Chrome](/chrome-ux-report/) para conocer la [distribución de conexiones](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/#using-the-dashboard) de tus usuarios. Si los datos no están disponibles para tu sitio, [The Mobile Economy 2019](https://www.gsma.com/mobileeconomy/) sugiere que una metrica promedio a nivel global es un teléfono Android de rango medio, como un Moto G4, y una red 3G lenta (definida como RTT de 400 ms y velocidad de transferencia de 400 kbps). Esta combinación está disponible en [WebPageTest](https://www.webpagetest.org/easy).
 
 - Ten en cuenta que, aunque el dispositivo de un usuario móvil típico puede afirmar que está en una conexión 2G, 3G o 4G, en realidad la [velocidad de conexión efectiva](/adaptive-serving-based-on-network-quality/#how-it-works) suele ser significativamente más lenta debido a la pérdida de paquetes y la variación de la red.
 
-- [Elimina los recursos que bloquean el procesamiento](/render-blocking-resources/).
+- [Elimina los recursos que bloquean el procesamiento](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/).
 
 - No tienes que cargar todo en menos de 5 segundos para producir la percepción de una carga completa. Considera las  [imágenes de carga diferida](/browser-level-image-lazy-loading/), [dividir el código de Javascript en paquetes](/reduce-javascript-payloads-with-code-splitting/) y otras [optimizaciones sugeridas en web.dev](/fast/).
 
@@ -185,37 +185,37 @@ Las siguientes auditorías son especialmente relevantes:
 
 **Respuesta**
 
-- [Max Potential First Input Delay (FID): Potencial máximo de la Demora de la primera entrada](/lighthouse-max-potential-fid/). Calcula cuánto tardará su aplicación en responder a la entrada del usuario, según el tiempo de inactividad del hilo principal.
+- [Max Potential First Input Delay (FID): Potencial máximo de la Demora de la primera entrada](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/). Calcula cuánto tardará su aplicación en responder a la entrada del usuario, según el tiempo de inactividad del hilo principal.
 
-- [No utilizas oyentes pasivos para mejorar el rendimiento del desplazamiento](/uses-passive-event-listeners/).
+- [No utilizas oyentes pasivos para mejorar el rendimiento del desplazamiento](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/).
 
-- [Total Blocking Time (TBT): Tiempo total de bloqueo](/lighthouse-total-blocking-time/). Mide la cantidad total de tiempo que una página está bloqueada para que no responda a la entrada del usuario, como los clics del mouse, los toques de la pantalla o las pulsaciones del teclado.
+- [Total Blocking Time (TBT): Tiempo total de bloqueo](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/). Mide la cantidad total de tiempo que una página está bloqueada para que no responda a la entrada del usuario, como los clics del mouse, los toques de la pantalla o las pulsaciones del teclado.
 
 - [Time To Interact (TTI): Tiempo para interactuar](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive). Mide cuándo un usuario puede interactuar constantemente con todos los elementos de la página.
 
 **Carga**
 
-- [No registras un service worker que controla la página y start_url](/service-worker/). Un service worker puede almacenar en caché recursos comunes en el dispositivo de un usuario, lo que reduce el tiempo dedicado a buscar recursos en la red.
+- [No registras un service worker que controla la página y start_url](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/). Un service worker puede almacenar en caché recursos comunes en el dispositivo de un usuario, lo que reduce el tiempo dedicado a buscar recursos en la red.
 
-- [La carga de la página no es lo suficientemente rápida en las redes móviles](/load-fast-enough-for-pwa/).
+- [La carga de la página no es lo suficientemente rápida en las redes móviles](https://developer.chrome.com/docs/lighthouse/pwa/load-fast-enough-for-pwa/).
 
 - [Elimina los recursos que bloquean la renderización](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).
 
-- [Aplazar las imágenes fuera de la pantalla](/offscreen-images/). Aplaza la carga de imágenes fuera de la pantalla hasta que sean necesarias.
+- [Aplazar las imágenes fuera de la pantalla](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/). Aplaza la carga de imágenes fuera de la pantalla hasta que sean necesarias.
 
-- [Imágenes de tamaño adecuado](/uses-responsive-images/). No publiques imágenes que sean significativamente más grandes que el tamaño que se muestra en la ventana gráfica del dispositivo móvil.
+- [Imágenes de tamaño adecuado](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/). No publiques imágenes que sean significativamente más grandes que el tamaño que se muestra en la ventana gráfica del dispositivo móvil.
 
-- [Evita encadenar solicitudes críticas](/critical-request-chains/).
+- [Evita encadenar solicitudes críticas](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/).
 
-- [No usas HTTP/2 para todos tus recursos](/uses-http2/).
+- [No usas HTTP/2 para todos tus recursos](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/).
 
-- [Codifica imágenes de manera eficiente](/uses-optimized-images/).
+- [Codifica imágenes de manera eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 
-- [Habilita la compresión de texto](/uses-text-compression/).
+- [Habilita la compresión de texto](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/).
 
-- [Evita enormes cargas útiles de red](/total-byte-weight/).
+- [Evita enormes cargas útiles de red](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/).
 
-- [Evita un tamaño de DOM excesivo](/dom-size/). Reduce los bytes de red enviando solo los nodos DOM que se necesitan para renderizar la página.
+- [Evita un tamaño de DOM excesivo](https://developer.chrome.com/docs/lighthouse/performance/dom-size/). Reduce los bytes de red enviando solo los nodos DOM que se necesitan para renderizar la página.
 
 ### WebPageTest
 

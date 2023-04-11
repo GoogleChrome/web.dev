@@ -37,7 +37,7 @@ Aqui está um exemplo de um formulário de login simples que demonstra todas as 
 - [Rotule cada entrada com um `<label>`](#label).
 - Use atributos de elemento para [acessar os recursos integrados do navegador](#element-attributes) : `type`, `name`, `autocomplete`, `required`.
 - Dê ao `name` entrada e aos `id` valores estáveis que não mudam entre carregamentos de página ou implantações de site.
-- Coloque o login [em seu próprio elemento &lt;form&gt;](#single-form).
+- Coloque o login [em seu próprio elemento &lt;form&gt;](#form).
 - [Garanta o envio bem-sucedido do formulário](#submission).
 - Use [`autocomplete="new-password"`](#new-password) e [`id="new-password"`](#new-password) para a entrada de senha em um formulário de inscrição e para a nova senha em um formulário de redefinição de senha.
 - Use [`autocomplete="current-password"`](#current-password) e [`id="current-password"`](#current-password) para inserir a senha de login.
@@ -65,7 +65,7 @@ Use elementos construídos para o trabalho: `<form>`, `<label>` e `<button>`. Is
 
 Você pode ficar tentado a envolver as entradas em um `<div>` e lidar com o envio de dados de entrada puramente com JavaScript. Geralmente é melhor usar um elemento [`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form). Isso torna seu site acessível para leitores de tela e outros dispositivos de assistência, permite uma variedade de recursos integrados do navegador, torna mais simples construir login funcional básico para navegadores mais antigos e ainda pode funcionar mesmo se o JavaScript falhar.
 
-{: # single-form} {% Aside 'gotchas' %} Um erro comum é embrulhar uma página da web inteira em um único formulário, mas isso pode causar problemas para gerenciadores de senhas do navegador e preenchimento automático. Use um &lt;form&gt; diferente para cada componente de IU que precisa de um formulário. Por exemplo, se você fizer login e pesquisar na mesma página, deverá usar dois elementos de formulário. {% endAside %}
+{% Aside 'gotchas' %} Um erro comum é embrulhar uma página da web inteira em um único formulário, mas isso pode causar problemas para gerenciadores de senhas do navegador e preenchimento automático. Use um &lt;form&gt; diferente para cada componente de IU que precisa de um formulário. Por exemplo, se você fizer login e pesquisar na mesma página, deverá usar dois elementos de formulário. {% endAside %}
 
 ### Use `<label>` {: #label}
 
@@ -246,7 +246,7 @@ O tamanho e o preenchimento padrão para entradas e botões são muito pequenos 
 
 De acordo com as [orientações de acessibilidade do Android,](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB) o tamanho alvo recomendado para objetos touchscreen é de 7 a 10 mm. As diretrizes de interface da Apple sugerem 48x48 px, e o W3C sugere [pelo menos 44x44 pixels CSS](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html). Com base nisso, adicione (pelo menos) cerca de 15 px de preenchimento para inserir elementos e botões para dispositivos móveis e cerca de 10 px para desktop. Experimente fazer isso com um dispositivo móvel real e um dedo ou polegar real. Você deve ser capaz de tocar confortavelmente em cada uma de suas entradas e botões.
 
-Os [pontos de toque não são dimensionados de forma adequada](/tap-targets/). A auditoria do Lighthouse pode ajudá-lo a automatizar o processo de detecção de elementos de entrada que são muito pequenos.
+Os [pontos de toque não são dimensionados de forma adequada](https://developer.chrome.com/docs/lighthouse/seo/http-status-code/). A auditoria do Lighthouse pode ajudá-lo a automatizar o processo de detecção de elementos de entrada que são muito pequenos.
 
 #### Design para polegares {: #design-for-thumbs}
 
@@ -262,7 +262,7 @@ Navegadores em diferentes plataformas têm tamanhos de fontes diferentes, então
 
 Isso significa que você precisa usar um tamanho de pixel maior no celular: `16px` no Chrome para desktop é bastante legível, mas mesmo com uma boa visão é difícil ler `16px` no Chrome para Android. Você pode definir diferentes tamanhos de pixel de fonte para diferentes tamanhos de viewport usando [consultas de mídia](https://developers.google.com/web/fundamentals/design-and-ux/responsive#apply_media_queries_based_on_viewport_size). `20px` para dispositivos móveis, mas você deve testar isso com amigos ou colegas que têm visão reduzida.
 
-O [documento não usa tamanhos de fonte legíveis](/font-size/). A auditoria do Lighthouse pode ajudá-lo a automatizar o processo de detecção de texto muito pequeno.
+O [documento não usa tamanhos de fonte legíveis](https://developer.chrome.com/docs/lighthouse/seo/font-size/). A auditoria do Lighthouse pode ajudá-lo a automatizar o processo de detecção de texto muito pequeno.
 
 ### Forneça espaço suficiente entre as entradas {: #size-margins-correctly}
 

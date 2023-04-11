@@ -4,6 +4,7 @@ subhead: Learn to diagnose costly work preventing user interaction.
 authors:
   - addyosmani
 date: 2019-05-29
+updated: 2022-11-30
 hero: image/admin/QvWXvBSXsRKtpGOcakb5.jpg
 alt: An hourglass with sand pouring through it
 description: |
@@ -13,7 +14,7 @@ tags:
   - performance
 ---
 
-**tl;dr: Long Tasks can keep the main thread busy, delaying user interaction. Chrome DevTools can now visualize Long Tasks, making it easier to see tasks to optimize.**
+**Long Tasks can keep the main thread busy, delaying user interaction. Chrome DevTools can now visualize Long Tasks, making it easier to see tasks to optimize.**
 
 If you use Lighthouse to audit your pages, you may be familiar with [Time to Interactive](/tti/), a metric representing when users can interact with your page and get a response. But did you know Long (JavaScript) Tasks can contribute heavily to a poor TTI?
 
@@ -25,7 +26,11 @@ A [Long Task](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) is Java
 
 While a web page is loading, Long Tasks can tie up the main thread and make the page unresponsive to user input even if it looks ready. Clicks and taps often don't work because event listeners, click handlers etc have not yet been attached.
 
-CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms? [The RAIL model](/rail/) suggests you process user input events in [50ms](/rail/#response:-process-events-in-under-50ms) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
+CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms? [The RAIL model](/rail/) suggests you process user input events in [50ms](/rail/#response-process-events-in-under-50ms) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
+
+{% Aside 'important' %}
+While the RAIL model suggests providing a visual response to user input within 100 ms, the [Interaction to Next Paint (INP)](/inp/) metric's thresholds allow for up to 200 ms in order to set more easily achievable expectations, especially for slower devices.
+{% endAside %}
 
 ## Are there Long Tasks in my page that could delay interactivity?
 
@@ -33,7 +38,7 @@ Until now, you've needed to manually look for "long yellow blocks" of script ove
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="A DevTools Performance panel screenshot showing the differences between short tasks and long tasks", width="800", height="450" %}
 
-To help ease your performance auditing workflow, [DevTools now visualizes Long Tasks](https://developers.google.com/web/updates/2019/03/devtools#longtasks). Tasks (shown in gray) have red flags if they are Long Tasks.
+To help ease your performance auditing workflow, [DevTools now visualizes Long Tasks](https://developer.chrome.com/blog/new-in-devtools-74/#longtasks). Tasks (shown in gray) have red flags if they are Long Tasks.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools visualizing Long Tasks as gray bars in the Performance Panel with a red flag for long tasks", width="800", height="450" %}
 
@@ -51,6 +56,6 @@ To discover what is causing a long task, select the gray **Task** bar. In the dr
 
 Large scripts are often a major cause of Long Tasks so consider [splitting them up](/reduce-javascript-payloads-with-code-splitting). Also keep an eye on third-party scripts; their Long Tasks can delay primary content from getting interactive.
 
-Break all your work into small chunks (that run in < 50ms) and run these chunks at the right place and time; the right place may even be off the main thread, in a worker. Phil Walton's [Idle Until Urgent](https://philipwalton.com/articles/idle-until-urgent/) is a good read on this topic.
+Break all your work into small chunks (that run in < 50ms) and run these chunks at the right place and time; the right place may even be off the main thread, in a worker. Phil Walton's [Idle Until Urgent](https://philipwalton.com/articles/idle-until-urgent/) is a good read on this topic. See also the [optimize long tasks article](/optimize-long-tasks/) for general strategies for managing and breaking up long tasks.
 
 Keep your pages responsive. Minimizing Long Tasks is a great way to ensure your users have a delightful experience when they visit your site. For more on Long Tasks, check out [User-centric Performance Metrics](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_long_tasks).

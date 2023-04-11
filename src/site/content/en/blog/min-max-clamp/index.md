@@ -148,10 +148,10 @@ size by using the `min()` function.
 
 <figure>
   <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-width.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-width.mp4">
   </video>
   <figcaption>
-    Using the clamp() function to limit a minimum and maximum width.
+    Using the min() function to set a maximum width.
   </figcaption>
 </figure>
 
@@ -162,10 +162,10 @@ be at _least_ `45ch` or larger.
 
 <figure>
   <video controls autoplay loop muted>
-    <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-width.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-width.mp4">
   </video>
   <figcaption>
-    Using the clamp() function to limit a minimum and maximum width.
+    Using the max() function to set a minimum width.
   </figcaption>
 </figure>
 
@@ -201,7 +201,7 @@ footer {
 In order to enable [fluid
 typography](https://www.smashingmagazine.com/2016/05/fluid-typography/), [Mike
 Riethmeuller](https://twitter.com/mikeriethmuller) popularized a technique that
-uses the `calc()` function to set a minimum font size, maximum font size, and
+uses the `clamp()` function to set a minimum font size, maximum font size, and
 allow for scaling from the min to the max.
 
 <figure>
@@ -244,7 +244,7 @@ responsive UIs. For more resources, check out:
 - [CSS Values and Units on
   MDN](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Values_and_units)
 - [CSS Values and Units Level 4 Spec](https://www.w3.org/TR/css-values-4/)
-- [CSS Tricks on Article on Inner-Element Width](https://css-tricks.com/using-max-for-an-inner-element-max-width/)
+- [CSS Tricks Article on Inner-Element Width](https://css-tricks.com/using-max-for-an-inner-element-max-width/)
 - [min(), max(), clamp() Overview by Ahmad Shadeed](https://ishadeed.com/article/css-min-max-clamp/)
 
 Cover image from [@yer_a_wizard](https://unsplash.com/@yer_a_wizard) on

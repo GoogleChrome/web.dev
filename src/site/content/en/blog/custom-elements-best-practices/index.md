@@ -213,7 +213,7 @@ well behaved custom element.
       <td>
   The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element. This is further explained in
-  <a href="#dont-override">Don't override the page author.
+  <a href="#dont-override-the-page-author">Don't override the page author.
       </td>
     </tr>
   </tbody>
@@ -279,7 +279,7 @@ well behaved custom element.
       <td>
   The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element. This is further explained in
-  <a href="#avoid-reentrancy">Avoid reentrancy issues</a>.
+  <a href="#avoid-reentrancy-issues">Avoid reentrancy issues</a>.
       </td>
     </tr>
   </tbody>
@@ -355,7 +355,7 @@ well behaved custom element.
       <td>
   The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element. Further explained in
-  <a href="#lazy-properties">Make properties lazy</a>.
+  <a href="#make-properties-lazy">Make properties lazy</a>.
       </td>
     </tr>
   </tbody>

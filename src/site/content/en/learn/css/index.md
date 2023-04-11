@@ -30,9 +30,7 @@ This course is created for beginner and advanced CSS developers alike.
 You can go through the series from start to finish
 to get a general understanding of CSS from top to bottom,
 or you can use it as a reference for specific styling subjects.
-For those new to web development overall, check out the
-[intro to HTML](https://developer.mozilla.org/docs/Learn/HTML/Introduction_to_HTML)
-course from MDN to learn all about how to write markup and link your stylesheets.
+For those new to web development overall, check out [Learn HTML](/learn/html/) to learn all about how to write markup and link your stylesheets.
 
 Here's what you'll learn:
 

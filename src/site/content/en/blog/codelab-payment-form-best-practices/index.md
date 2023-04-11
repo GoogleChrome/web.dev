@@ -197,7 +197,7 @@ View your app again and then tap or click in the **Card number** field. Dependin
 platform, you may see a chooser showing payment methods stored for the browser, like the one below.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yPPoZYFMeSILBjgyjcFI.png", alt="Two screenshots of a payment form in Chrome on an Android phone. One shows the built-in browser payment card selector; the other shows dummy autofilled values.", width="800", height="684" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yPPoZYFMeSILBjgyjcFI.png", alt="Two screenshots of a payment form in Chrome on an Android phone. One shows the built-in browser payment card selector; the other shows placeholder autofilled values.", width="800", height="684" %}
   <figcaption>Built-in browser payment chooser and autofill.</figcaption>
 </figure>
 

@@ -206,7 +206,7 @@ Consulte [Verificar o certificado de assinatura do chamador](#heading=h.czr8ye23
 
 ## Etapa 3: Permita que um cliente faça o pagamento
 
-O comerciante chama `show()` para [iniciar o aplicativo de pagamento](/life-of-a-payment-transaction#step-4:-the-browser-launches-the-payment-app) para que o cliente possa fazer um pagamento. Invoca-se o aplicativo de pagamento por meio de uma intenção Android `PAY` com informações de transação nos parâmetros de intenção.
+O comerciante chama `show()` para [iniciar o aplicativo de pagamento](/life-of-a-payment-transaction#launch) para que o cliente possa fazer um pagamento. Invoca-se o aplicativo de pagamento por meio de uma intenção Android `PAY` com informações de transação nos parâmetros de intenção.
 
 O aplicativo de pagamento responde com `methodName` e `details`, que são específicos do aplicativo de pagamento e invisíveis ao navegador. O navegador converte a string `details` em um objeto JavaScript para o comerciante por meio da desserialização JSON, mas não impõe nenhuma validade além disso. O navegador não modifica os `details`; o valor desse parâmetro passa diretamente para o comerciante.
 

@@ -306,20 +306,20 @@ Stay tuned for part 2 where we discuss how to optimize runtime performance on hy
 [parcel]: https://parceljs.org
 [phil walton]: https://twitter.com/philwalton
 [iuu]: https://philipwalton.com/articles/idle-until-urgent/
-[why performance matters]: https://developers.google.com/web/fundamentals/performance/why-performance-matters/
+[why performance matters]: /why-speed-matters/
 [jeremy wagner]: https://twitter.com/malchata
 [webpagetest]: https://webpagetest.org
 [wpt simple]: https://webpagetest.org/easy
 [preact]: https://preactjs.com
 [source map explorer]: https://npm.im/source-map-explorer
-[rendering]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web
+[rendering]: /rendering-on-the-web/
 [puppeteer]: https://pptr.dev
 [css modules]: https://github.com/css-modules/css-modules
 [minimal analytics]: https://minimalanalytics.com
 [fetch connections]: https://fetch.spec.whatwg.org/#connections
 [google fonts]: https://fonts.google.com
-[fmp]: /first-meaningful-paint
-[tti]: /interactive
+[fmp]: https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/
+[tti]: https://developer.chrome.com/docs/lighthouse/performance/interactive/
 [code split]: /reduce-javascript-payloads-with-code-splitting/
 [preact]: /codelab-code-splitting
 [preload]:/preload-critical-assets

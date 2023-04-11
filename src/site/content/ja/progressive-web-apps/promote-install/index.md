@@ -36,7 +36,7 @@ feedback:
 
 [特定の基準](/install-criteria/)が満たされると、ほとんどのブラウザーは、プログレッシブWebアプリがインストール可能な状態になることをユーザーに自動的に示します。たとえば、デスクトップChromeではオムニボックスにインストールボタンが表示されます。
 
-<div class="w-columns">
+<div class="switcher">
   <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="インストールインジケーターが表示されたオムニボックスのスクリーンショット.", width="800", height="307" %} <figcaption>ブラウザが インストールプロモーション(デスクトップ)を提供しました</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="ブラウザが提供したインストールプロモーションのスクリーンショット.", width="800", height="307" %} <figcaption> ブラウザ提供のインストールプロモーション（モバイル） </figcaption></figure>
 </div>

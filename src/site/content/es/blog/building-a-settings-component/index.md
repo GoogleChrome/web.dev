@@ -144,7 +144,7 @@ form {
 
 Esta cuadrícula tiene un valor diferente para `row-gap` (--space-xl) y `column-gap` (--space-xxl) para poner ese toque personalizado en el diseño responsivo. Cuando las columnas se apilan, queremos un espacio grande, pero no tan grande como si estuviéramos en una pantalla ancha.
 
-La `grid-template-columns` utiliza 3 funciones CSS: `repeat()`, `minmax()` y `min()`. [Una Kravets](#) tiene una [excelente publicación de blog de diseño](/one-line-layouts/) sobre esto, llamándolo [RAM](/one-line-layouts/#07.-ram-(repeat-auto-minmax):-grid-template-columns(auto-fit-minmax(lessbasegreater-1fr))).
+La `grid-template-columns` utiliza 3 funciones CSS: `repeat()`, `minmax()` y `min()`. [Una Kravets](#) tiene una [excelente publicación de blog de diseño](/one-line-layouts/) sobre esto, llamándolo [RAM](/one-line-layouts/#07-ram-repeat,-auto,-minmax-grid-template-columnsauto-fit,-minmaxlessbasegreater,-1fr).
 
 Hay 3 adiciones especiales en nuestro diseño, si lo comparas con el de Una:
 
@@ -587,7 +587,7 @@ input[type="checkbox"]::before {
   block-size: var(--thumb-highlight-size);
   clip-path: circle(50%);                     /* forma de círculo */
   position: absolute;                         /* es por esto que usamos position relative en el elemento primario */
-  top: 50%;                                   /* tecnica de pop y plop(https://web.dev/centering-in-css/#5.-pop-and-plop) */
+  top: 50%;                                   /* tecnica de pop y plop (https://web.dev/centering-in-css/#5-pop-and-plop) */
   left: 50%;
   background: var(--thumb-highlight-color);
   transform-origin: center center;            /* la meta es un circulo escalable colocado en el centro */

@@ -27,6 +27,8 @@ there's a more straightforward way to do this with the new `aspect-ratio` proper
 
 ## Aspect ratio
 
+{% BrowserCompat 'css.properties.aspect-ratio' %}
+
 Aspect ratio is most commonly expressed as two integers and a colon in the dimensions of:
 width:height, or x:y. The most common aspect ratios for photography are 4:3 and 3:2, while video,
 and more recent consumer cameras, tend to have a 16:9 aspect ratio.
@@ -209,7 +211,7 @@ with children that you want to maintain a 1:1 aspect ratio, such as a grid of sp
 ## Example: preventing layout shift
 
 Another great feature of `aspect-ratio` is that it can create placeholder space to prevent
-[Cumulative Layout Shift](/cls/) and deliver better [Web Vitals](/learn-web-vitals/). In this first
+[Cumulative Layout Shift](/cls/) and deliver better [Web Vitals](/learn-core-web-vitals/). In this first
 example, loading an asset from an API such as [Unsplash](https://source.unsplash.com/) creates a
 layout shift when the media is finished loading.
 
@@ -242,7 +244,7 @@ img {
 
 ### Bonus tip: image attributes for aspect ratio
 
-Another way to set an image's aspect ratio is through [image attributes](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/). If you know the dimensions of the image ahead of time, it is a [best practice](/image-aspect-ratio/#check-the-image's-width-and-height-attributes-in-the-html) to
+Another way to set an image's aspect ratio is through [image attributes](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/). If you know the dimensions of the image ahead of time, it is a [best practice](https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/#check-the-images-width-and-height-attributes-in-the-html) to
 set these dimensions as its `width` and `height`.
 
 For our example above, knowing the dimensions are 800px by 600px, the image markup would look like: `<img src="image.jpg"

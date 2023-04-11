@@ -1,0 +1,106 @@
+---
+layout: default
+algolia_priority: 1.1
+eleventyComputed:
+  pathTitle: "{{paths[pathName].title | i18n(locale)}}"
+  description: "{{paths[pathName].description | i18n(locale)}}"
+  hero: "{{paths[pathName].cover}}"
+---
+
+{% from 'macros/icon.njk' import icon, svg with context %}
+{% set path = paths[pathName] %}
+{% set topics = path.topics | removeDrafts %}
+
+<header class="hero">
+  <div class="wrapper">
+    <div class="hero__content--split">
+      <div>
+        {% set title = title or pathTitle %}
+        <h1 class="text-size-6">{{ title }}</h1>
+        <p>{{path.description | i18n(locale)}}</p>
+      </div>
+      {% if path.cover %}
+        <div class="all-center">
+          {% Img
+            fetchpriority="high",
+            height=220,
+            width=330,
+            src=path.cover,
+            alt="Collection cover image",
+            class="hero__content__img"
+          %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+<div class="collection">
+{% if path.draft and site.env === 'dev' %}
+  <div class="banner bg-state-bad-bg color-core-text" role="banner">
+    <div class="banner__content flow">
+      🚨 This path is a draft! 🚨
+    </div>
+  </div>
+{% endif %}
+
+<div class="wrapper pad-block-size-1">
+  <div class="sidebar" data-direction="rtl">
+    <div class="pad-block-size-1 flow">
+      <h2>Overview</h2>
+      <p>{{path.overview | i18n(locale) | safe}}</p>
+      {% if path.youtubeId %}
+        {% YouTube path.youtubeId %}
+      {% endif %}
+    </div>
+    <div class="pad-block-size-1">
+      <div class="toc">
+        <div class="toc__content">
+          <h2 class="toc__header">Table of Contents</h2>
+          <ul class="toc__list">
+            {% for topic in topics %}
+              <li>
+                <div class="path__toc--item">
+                  {{ svg('../../images/icons/done.svg', {label: 'done'}) }}
+                  <a href="#{{ topic.title | i18n(locale) | slug }}">{{topic.title | i18n(locale)}}</a>
+                </div>
+              </li>
+              {% if topic.subtopics %}
+                {% for section in topic.subtopics %}
+                  <li>
+                    <div class="path__toc--item">
+                      {{ svg('../../images/icons/done.svg', {label: 'done'}) }}
+                      <a href="#{{ section.title | i18n(locale) | slug }}">{{ section.title | i18n(locale) }}</a>
+                    </div>
+                  </li>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="pad-block-size-1">
+{% for topic in topics %}
+  <div class="path__topic">
+    {% include 'partials/topic.njk' %}
+  </div>
+{% endfor %}
+</div>
+
+{% if cards %}
+  <div class="collection__cards">
+    <div class="region wrapper">
+      <h5> On this topic </h5>
+      <div class="collection__layout" aria-label="topics">
+        {% include 'partials/cards-collection.njk' %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+</div>

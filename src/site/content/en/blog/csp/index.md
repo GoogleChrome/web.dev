@@ -1,8 +1,8 @@
 ---
-title: Content security policy 
+title: Content security policy
 subhead: Content Security Policy can significantly reduce the risk and impact of cross-site scripting attacks in modern browsers.
 date: 2012-06-15
-updated: 2020-06-19 
+updated: 2020-06-19
 authors:
   - mikewest
   - joemedley
@@ -34,7 +34,7 @@ Guys. We'd obviously like to prevent that if possible.
 This overview highlights a defense that can significantly reduce the risk and
 impact of XSS attacks in modern browsers: Content Security Policy (CSP).
 
-## TL;DR 
+## Summary
 * Use allowlists to tell the client what's allowed and what isn't.
 * Learn what directives are available.
 * Learn the keywords they take.
@@ -476,16 +476,6 @@ best be able to support them within the protective confines of CSP.
 
 ### Use case #1: social media widgets
 
-* Google's [+1 button](https://developers.google.com/+/web/+1button/)
-includes a script from `https://apis.google.com`, and embeds an `<iframe>` from
-`https://plusone.google.com`. You need a policy that includes both these
-origins in order to embed the button. A minimal policy would be `script-src
-https://apis.google.com; child-src https://plusone.google.com`. You also need
-to ensure that the snippet of JavaScript that Google provides is pulled out into
-an external JavaScript file. If you had a Level 1-based policy using `frame-src`
-Level 2 required you to change it to `child-src`. This is no longer necessary
-in CSP Level 3.
-
 * Facebook's [Like button](//developers.facebook.com/docs/plugins/like-button){: .external }
 has a number of implementation options. We recommend sticking with the
 `<iframe>` version as it's safely sandboxed from the rest of your site. It
@@ -551,7 +541,7 @@ overwrites the default for that specific type of resource.
 ## The future
 
 
-Content Security Policy Level 2 is a 
+Content Security Policy Level 2 is a
 [Candidate Recommendation](https://www.w3.org/TR/CSP2/). The W3C's Web Application Security Working Group
 has already begun work on the specification's next iteration,
 [Content Security Policy Level 3](https://www.w3.org/TR/CSP3/).

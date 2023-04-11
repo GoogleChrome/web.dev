@@ -339,10 +339,10 @@ body {
 {% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/Dl00EnG4mwTbSQIkYBF9.mp4", controls=true, loop=true %}
 
 {% Aside %}
-For more on tinting elements with theme colors, see the section on [more tinting](/accent-color/#extra:-more-tinting).
+For more on tinting elements with theme colors, see the section on [more tinting](/accent-color/#extra-more-tinting).
 {% endAside %}
 
 Providing a dark mode is just one example of adapting your site to suit your user's preferences. 
-Next you'll learn how to make your adaptable to all sorts of [accessibility](/learn/design/accessibility/) considerations.
+Next you'll learn how to make your site adaptable to all sorts of [accessibility](/learn/design/accessibility/) considerations.
 
 {% Assessment 'theming' %}

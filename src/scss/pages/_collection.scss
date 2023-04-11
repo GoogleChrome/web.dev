@@ -1,0 +1,262 @@
+.collection {
+  hr {
+      max-width: 100%;
+  }
+  
+  .path__topic {
+    .prose > * {
+      margin-inline: initial;
+    }
+  }
+  
+  .path__toc--item {
+    display: flex;
+    flex-direction: row;
+  
+    svg {
+      fill: get-color('core-primary');
+      flex-shrink: 0;
+      margin-right: 6px;
+    }
+  }
+}
+
+.collection__cards {
+  border-top: 1px solid var(--color-stroke);
+  margin-top: 30px;
+
+  .wrapper {
+      padding-top: 2.5rem;
+  }
+}
+
+.collection__layout {
+  margin-top: 40px;
+
+  @include media-query('md') {
+      display: grid;
+      grid-gap: 30px;
+      margin-top: 60px;
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card  {
+    margin-top: 25px;
+
+    @include media-query('md') {
+      margin-top: 0;
+    }
+  }
+
+  .card > img {
+      width: 100%;
+      height: 220px;
+      border-radius: 5px;
+
+      @include media-query('md') {
+          width: 100%;
+      }
+  }
+
+  .card, p {
+      max-width: 100%;
+  }
+
+  .card__eyebrow {
+      align-items: center;
+      display: flex;
+  }
+
+  .card__content {
+      margin: 25px 0;
+  }
+
+  svg {
+      fill: var(--color-mid-text);
+      height: 20px;
+      margin-right: 10px;
+  }
+
+  span {
+      margin-top: 0;
+  }
+
+  h4 {
+      font-size: 1.25rem;
+
+      @include media-query('md') {
+          font-size: 1.5rem;
+      }
+
+      @include media-query('lg') {
+          font-size: 1.75rem;
+      }      
+  }
+
+  p {
+      margin-top: 15px;
+  }
+
+  .card-horizontal {
+    .card__eyebrow {
+      margin-top: 25px;
+    }
+  
+    .content {
+        padding-right: 0;
+    }
+  
+    @include media-query('lg') {
+      .content {
+          padding-right: 25px;
+      }
+    }
+  
+    @include media-query('md') {
+      display: flex;
+      flex-flow: row-reverse;
+      align-items: center;
+      gap: 30px;
+      grid-column: 1 / span 2;
+  
+      .content {
+          width: 50%;
+          padding-right: 0;
+      }
+  
+      img {
+          width: 50%;
+      }
+  
+      .card__eyebrow {
+          margin-top: 0;
+      }
+    }
+  
+    &.col-1 {
+      @include media-query('md') {
+        grid-column: 1 / span 2;
+      }
+    }
+    
+    &.col-2 {
+      @include media-query('md') {
+        grid-column: 2 / span 2;
+      }
+    }
+  }
+  
+  .card-vertical {
+    .card__eyebrow {
+      margin-top: 25px;
+    }
+  
+    @include media-query('md') {
+        grid-row: 1 / span 2;
+    }
+  
+    &.col-1 {
+      @include media-query('md') {
+        grid-column: 1 / span 1;
+      }
+    }
+  
+    &.col-2 {
+      @include media-query('md') {
+        grid-column: 2 / span 1;
+      }
+    }
+  
+    &.col-3 {
+      @include media-query('md') {
+        grid-column: 3 / span 1;
+      }
+    }
+  
+    &.row-1 {
+      @include media-query('md') {
+        grid-row: 1 / span 2;
+      }
+    }
+    
+    &.row-2 {
+      @include media-query('md') {
+        grid-row: 2 / span 2;
+      }
+    }
+    
+    &.row-3 {
+      @include media-query('md') {
+        grid-row: 3 / span 2;
+      }
+    }
+  }
+  
+  .bg-tertiary,
+  .bg-quaternary,
+  .bg-pink,
+  .bg-dark,
+  .bg-blue  {
+    svg {
+        fill: get-color('shades-light-bright');
+    }
+  
+    p, span, h4 {
+        color: get-color('shades-light-bright');
+    }
+  }
+  
+  .bg-quaternary {
+    $CORE_QUATERNARY: get-color('core-quaternary');
+    background-color: $CORE_QUATERNARY;
+  
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: rgba($CORE_QUATERNARY, .9);
+    }
+  }
+
+  .bg-dark {
+    background-color: #26373D;
+  
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: rgba(#26373D, .9);
+    }
+  }
+  
+  .bg-tertiary {
+    $CORE_TERTIARY: get-color('core-tertiary');
+    background-color: $CORE_TERTIARY;
+  
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: rgba($CORE_TERTIARY, .9);
+    }
+  }
+
+  .bg-pink {
+    $CORE_SECONDARY_SHADE: get-color('core-secondary-shade');
+    background-color: $CORE_SECONDARY_SHADE;
+  
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: rgba($CORE_SECONDARY_SHADE, .9);
+    }
+  }
+  
+  .bg-blue {
+    $CORE_PRIMARY: get-color('core-primary');
+    background-color: $CORE_PRIMARY;
+  
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: rgba($CORE_PRIMARY, .9);
+    }
+  }
+}

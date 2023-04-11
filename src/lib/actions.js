@@ -4,6 +4,8 @@ import {runPsi} from './psi-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
 import cookies from 'js-cookie';
+import {ids} from 'webdev_analytics';
+import {isProd} from 'webdev_config';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -112,28 +114,34 @@ export const requestFetchReports = store.action((_, url, startDate) => {
  * This is used when we open the navigation drawer or show a modal dialog.
  */
 const disablePage = () => {
-  /** @type {HTMLElement|object} */
-  const main = document.querySelector('main') || {};
-  /** @type {HTMLElement|object} */
-  const footer = document.querySelector('.w-footer') || {};
+  // Setting the majority of the page as inert can have a significant perf hit when
+  // trying to animate e.g. the navigation drawer, so do it in the frame after this
+  // to avoid blocking on interaction and incurring an INP delay.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const main = document.querySelector('main');
+      const footer = document.querySelector('footer');
 
-  document.body.classList.add('overflow-hidden');
-  main.inert = true;
-  footer.inert = true;
+      if (main) main.inert = true;
+      if (footer) footer.inert = true;
+    });
+  });
 };
 
 /**
  * Uninert the page so scrolling and pointer events work again.
  */
 const enablePage = () => {
-  /** @type {HTMLElement|object} */
-  const main = document.querySelector('main') || {};
-  /** @type {HTMLElement|object} */
-  const footer = document.querySelector('.w-footer') || {};
+  // Similar to disablePage(), go inert in the next frame to avoid the perf hit.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const main = document.querySelector('main');
+      const footer = document.querySelector('footer');
 
-  document.body.classList.remove('overflow-hidden');
-  main.inert = false;
-  footer.inert = false;
+      if (main) main.inert = false;
+      if (footer) footer.inert = false;
+    });
+  });
 };
 
 export const openNavigationDrawer = store.action(() => {
@@ -156,26 +164,45 @@ export const closeModal = store.action(() => {
   return {isModalOpen: false};
 });
 
-export const checkIfUserAcceptsCookies = store.action(
-  ({userAcceptsCookies}) => {
-    if (userAcceptsCookies) {
-      return;
-    }
+export const checkIfUserAcceptsCookies = store.action(({cookiePreference}) => {
+  if (cookiePreference) {
+    return;
+  }
 
-    if (localStorage['web-accepts-cookies']) {
-      return {
-        userAcceptsCookies: true,
-      };
-    }
+  // If set, this will be either the string '1' or '0' based on whether
+  // the user has accepted or rejected the use of cookies.
+  // If not set it means the user has not made a choice (or cleared storage).
+  const storedWebAcceptsCookiesValue = localStorage['web-accepts-cookies'];
 
-    return {showingSnackbar: true, snackbarType: 'cookies'};
-  },
-);
+  if (typeof storedWebAcceptsCookiesValue === 'string') {
+    cookiePreference =
+      storedWebAcceptsCookiesValue === '1' ? 'accepts' : 'rejects';
+  } else {
+    cookiePreference = null;
+  }
+
+  // Only show the cookie snack-bar if the user hasn't set a preference.
+  const showingSnackbar = cookiePreference === null;
+
+  return {cookiePreference, showingSnackbar, snackbarType: 'cookies'};
+});
 
 export const setUserAcceptsCookies = store.action(() => {
   localStorage['web-accepts-cookies'] = '1';
   return {
-    userAcceptsCookies: true,
+    cookiePreference: 'accepts',
+    showingSnackbar: false,
+    // Note we don't set the snackbarType to null because that would cause the
+    // snackbar to re-render and break the animation.
+    // Instead, snackbarType is allowed to stick around and future updates can
+    // overwrite it.
+  };
+});
+
+export const setUserRejectsCookies = store.action(() => {
+  localStorage['web-accepts-cookies'] = '0';
+  return {
+    cookiePreference: 'rejects',
     showingSnackbar: false,
     // Note we don't set the snackbarType to null because that would cause the
     // snackbar to re-render and break the animation.
@@ -199,4 +226,14 @@ export const setLanguage = store.action((state, language) => {
   return {
     currentLanguage: language,
   };
+});
+
+export const loadAnalyticsScript = store.action(() => {
+  const {g4ScriptLoaded} = store.getState();
+  if (!g4ScriptLoaded && isProd) {
+    loadScript(`https://www.googletagmanager.com/gtag/js?id=${ids.GA4}`, null);
+    return {
+      g4ScriptLoaded: true,
+    };
+  }
 });

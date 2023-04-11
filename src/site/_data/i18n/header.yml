@@ -7,13 +7,31 @@ learn:
   ru: Обучение
   zh: 学习
 
+explore:
+  en: Explore
+  es: Explorar
+  ja: 探検
+  ko: 탐구하다
+  pt: Explorar
+  ru: Исследовать
+  zh: 探索
+
+patterns:
+  en: Patterns
+  es: patrones
+  ja: パターン
+  ko: 패턴
+  pt: padrões
+  ru: Паттерны
+  zh: 模式
+
 measure:
   en: Measure
   es: Medir
   ja: 測定する
   ko: 측정
   pt: Medir
-  ru: Измерение
+  ru: Измерить
   zh: 衡量
 
 blog:

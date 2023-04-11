@@ -121,14 +121,9 @@ To show or hide an element, use [`opacity`](https://developer.mozilla.org/docs/W
 
 ## Avoid properties that trigger layout or paint {: #triggers }
 
-Before using any CSS property for animation (other than `transform` and `opacity`), go to
-[CSS Triggers](https://csstriggers.com/) to determine the property's impact on the
-[rendering pipeline](/animations-overview/#pipeline). Avoid any property
-that triggers layout or paint unless absolutely necessary.
-
-<figure>
-  {% Img src="image/admin/lo6imreXGzuZzsHVWUFf.jpg", alt="The top property detailed on CSS Triggers", width="800", height="432" %}
-</figure>
+Before using any CSS property for animation (other than `transform` and `opacity`),
+determine the property's impact on the [rendering pipeline](/animations-overview/#pipeline).
+Avoid any property that triggers layout or paint unless absolutely necessary.
 
 {% Aside 'warning' %}
   If you must use a property

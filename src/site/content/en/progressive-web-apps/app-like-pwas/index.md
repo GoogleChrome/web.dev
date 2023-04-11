@@ -252,7 +252,7 @@ Other storage mechanisms than files are referenced in the [offline content](#off
 
 There is a more subtle thing that is self-evident for an iOS application like Podcasts: none of the text labels are selectable and all text blends in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OApP9uGUje6CkS7cKcZh.png", alt="The Podcasts app in dark mode.", width="800", height="463" %}
     <figcaption>The Podcasts app supports light and dark mode.</figcaption>

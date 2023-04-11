@@ -1,0 +1,109 @@
+---
+patternId: media/picture-in-picture
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📺</text></svg>"
+    />
+    <title>How to add Picture-in-Picture to video controls</title>
+    <style>
+      :root {
+        color-scheme: dark light;
+      }
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+      button:before {
+        content: "Enter ";
+      }
+      button.on:before {
+        content: "Leave ";
+      }
+      video {
+        display: block;
+        margin-top: 10px;
+        max-width: 100%;
+      }
+      video.fake-pip {
+        position: fixed;
+        z-index: 1000;
+        bottom: 10px;
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to add Picture-in-Picture to video controls</h1>
+    <button id="togglePipButton">Picture-in-Picture</button>
+    <button id="toggleFakePipButton">Fake Picture-in-Picture</button>
+    <video autoplay muted playsinline loop src="https://storage.googleapis.com/media-session/caminandes/short.mp4"></video>
+    {% set script %}
+      const video = document.querySelector('video');
+      const togglePipButton = document.querySelector('#togglePipButton');
+      const toggleFakePipButton = document.querySelector('#toggleFakePipButton');
+
+      togglePipButton.addEventListener("click", async (event) => {
+        togglePipButton.disabled = true;
+        try {
+          if (video !== document.pictureInPictureElement) {
+            await video.requestPictureInPicture();
+          } else {
+            await document.exitPictureInPicture();
+          }
+        } finally {
+          togglePipButton.disabled = false;
+        }
+      });
+
+      video.addEventListener("enterpictureinpicture", (event) => {
+        togglePipButton.classList.add("on");
+      });
+
+      video.addEventListener("leavepictureinpicture", (event) => {
+        togglePipButton.classList.remove("on");
+      });
+
+      /* Feature detection */
+      if ("pictureInPictureEnabled" in document) {
+        // Hide fake PiP button if Picture-in-Picture is supported.
+        toggleFakePipButton.hidden = true;
+        // Set button ability depending on whether Picture-in-Picture can be used.
+        setPipButton();
+        video.addEventListener("loadedmetadata", setPipButton);
+        video.addEventListener("emptied", setPipButton);
+      } else {
+        // Hide button if Picture-in-Picture is not supported.
+        togglePipButton.hidden = true;
+      }
+
+      function setPipButton() {
+        togglePipButton.disabled =
+          video.readyState === 0 ||
+          !document.pictureInPictureEnabled ||
+          video.disablePictureInPicture;
+      }
+
+      /* Fake Picture-in-Picture */
+      toggleFakePipButton.addEventListener("click", (event) => {
+        toggleFakePipButton.classList.toggle("on");
+        video.classList.toggle("fake-pip");
+      });
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

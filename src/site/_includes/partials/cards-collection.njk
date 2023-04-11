@@ -1,0 +1,42 @@
+{% if cards %}
+  {% for card in cards %}
+    {% set post = null %}
+    {% if card.latestPostByTags %}
+      {% set post = collections.all | latestPostByTags(card.latestPostByTags) %}
+      {% set eyebrowIcon = 'latest' %}
+      {% set eyebrowText = 'i18n.post.latest' | i18n(locale) %}
+    {% endif %}
+    {% if card.url %}
+      {% set post = card.url | findByUrl %}
+      {% set eyebrowIcon = card.eyebrow.icon %}
+      {% set eyebrowText = card.eyebrow.text %}
+    {% endif %}
+
+     <a
+      {% if post or card.url %} href="{{ post.url or card.url }}" {% endif %}
+      class="card {% if card.cardLayout %}card-{{card.cardLayout}}{% endif %}{% if card.row %} row-{{card.row}}{% endif %}{% if card.column %} col-{{card.column}}{% endif %}{% if card.theme %} bg-{{card.theme}}{% endif %}"
+      data-category="web.dev"
+      data-label="Topic: {{card.title or post.data.title }}"
+      data-action="click"
+      role="listitem"
+    >
+      {% set thumbnail = card.thumbnail or post.data.thumbnail or post.data.hero %}
+      {% set alt = post.data.alt or card.title or '' %}
+      {% if (card.cardLayout == 'vertical' or card.cardLayout == 'horizontal') %}
+        {% if thumbnail %} {% Img src=thumbnail, alt=alt, width="370", height="220" %} {% endif %}
+      {% endif %}
+
+      <div class="content">
+        <div class="card__eyebrow flow">
+          {{ icon(eyebrowIcon) }}
+          <span class="text-size-0 color-mid-text">{{ eyebrowText }}</span>
+        </div>
+
+        <div class="card__content flow">
+          <h4 class="card__heading color-core-text">{{ card.title or post.data.title }}</h4>
+          <p class="text-size-1 color-mid-text">{{ card.description or post.data.description }}</p>
+        </div>
+      </div>
+    </a>
+  {% endfor %}
+{% endif %}

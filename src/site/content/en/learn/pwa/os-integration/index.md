@@ -150,6 +150,7 @@ Instead of using private URI schemes to communicate with messaging and social me
 {% endAside %}
 
 ## Web Share
+{% BrowserCompat 'api.Navigator.share' %}
 
 With the [Web Share API](https://developer.mozilla.org/docs/Web/API/Web_Share_API), your PWA can send content to other installed apps in the device through the shared channel.
 
@@ -216,6 +217,7 @@ Make sure the page that handles the shared data is accessible offline. You don't
 For more detailed examples and how to receive files, check [Receiving shared data with the Web Share Target API](/web-share-target/)
 
 ## Contact Picker
+{% BrowserCompat 'api.ContactsManager' %}
 
 With the [Contact Picker API](https://developer.mozilla.org/docs/Web/API/Contact_Picker_API), you can request the device to render a native dialog with all the user's contacts so the user can choose one or more. Your PWA can then receive the data you want from those contacts.
 

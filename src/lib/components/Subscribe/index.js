@@ -3,7 +3,7 @@
  */
 
 import {BaseElement} from '../BaseElement';
-import {trackError, trackEvent} from '../../analytics';
+import {logError, logEvent} from '../../analytics';
 
 const pTagSelector = '.subscribe__error__message';
 const hiddenClass = 'hidden-yes';
@@ -33,10 +33,49 @@ class Subscribe extends BaseElement {
     window['recaptchaSuccess'] = this.captchaCheck.bind(this);
   }
 
+  /**
+   * Called by the IntersectionObserver defined in this#connectedCallback.
+   *
+   * @param {IntersectionObserverEntry[]} entries
+   */
+  onIntersection(entries) {
+    const entry = entries[0];
+    if (!entry.isIntersecting) {
+      return;
+    }
+
+    // can safely assume this.intersectionObserver is defined, since onIntersection is being called
+    this.intersectionObserver.disconnect();
+    window.recaptchaLoadCallback = () => {
+      /** @type {HTMLDivElement} */
+      const recaptchaContainerEl = this.querySelector('.g-recaptcha');
+      // fix for percy re-executing JavaScript with pre-rendered DOM
+      recaptchaContainerEl.children[0].remove();
+
+      window.grecaptcha.render(recaptchaContainerEl, {
+        sitekey: recaptchaContainerEl.dataset.sitekey,
+      });
+    };
+
+    window.loadScript(
+      'https://www.google.com/recaptcha/api.js?onload=recaptchaLoadCallback&render=explicit',
+    );
+  }
+
   connectedCallback() {
+    if (!this.classList.contains('unresolved')) {
+      return;
+    }
+
     super.connectedCallback();
     /** @type {HTMLFormElement} */
     this.form = this.querySelector('form');
+    this.intersectionObserver = new IntersectionObserver((entries) =>
+      this.onIntersection(entries),
+    );
+
+    this.intersectionObserver.observe(this.form);
+
     /** @type HTMLElement */
     this.subscribeError = this.querySelector('.subscribe__error');
     this.subscribeMessage = this.querySelector('.subscribe__message');
@@ -110,7 +149,7 @@ class Subscribe extends BaseElement {
 
     this.subscribeError.classList.toggle(hiddenClass, false);
 
-    trackError(error, 'Email form failed to submit because');
+    logError(error, 'Email form failed to submit because');
   }
 
   onSubmit(e) {
@@ -144,10 +183,9 @@ class Subscribe extends BaseElement {
     this.subscribeMessage.textContent = `Thank you! You're all signed up.`;
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
-    trackEvent({
-      category: 'web.dev',
-      action: 'submit',
-      label: 'subscribe, newsletter',
+    logEvent('submit', {
+      event_category: 'web.dev',
+      event_label: 'subscribe, newsletter',
     });
   }
 }

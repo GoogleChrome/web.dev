@@ -115,7 +115,7 @@ Você pode não pensar nisso imediatamente, mas o aplicativo Podcasts se integra
 
 Existe uma coisa mais sutil que é evidente para um aplicativo iOS como Podcasts: nenhum dos rótulos de texto é selecionável e todo o texto se mistura com a fonte do sistema da máquina. Além disso, minha opção para o tema de cores do sistema (modo escuro) é respeitada.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OApP9uGUje6CkS7cKcZh.png", alt="O aplicativo Podcasts no modo escuro.", width="800", height="463" %} <figcaption>O aplicativo Podcasts oferece suporte aos modos claro e escuro.</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cnVihfFR2anSBlIVfCSW.png", alt="O aplicativo Podcasts em modo claro.", width="800", height="463" %} <figcaption>O aplicativo usa a fonte padrão do sistema.</figcaption></figure>
 </div>

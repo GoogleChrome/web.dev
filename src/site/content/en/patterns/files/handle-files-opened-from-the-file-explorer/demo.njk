@@ -1,0 +1,84 @@
+---
+patternId: files/handle-files-opened-from-the-file-explorer
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="assets/manifest.json" />
+    <title>How to handle files opened from the file explorer</title>
+    <style>
+      html {
+        box-sizing: border-box;
+        font-family: system-ui, sans-serif;
+        color-scheme: dark light;
+      }
+
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 1rem;
+      }
+
+      img {
+        height: auto;
+        max-width: 100%;
+        display: block;
+      }
+      own-window {
+        border: dashed red 2px;
+        padding: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to handle files opened from the file explorer</h1>
+
+    <own-window>
+      <div>This demo needs to run in its own window, not in an iframe.</div>
+      <button type="button">Open in new window</button>
+    </own-window>
+
+    <p>Install the app. After the installation, try opening an image file from the file explorer with the app.
+
+    {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+    {% include 'partials/script-loader.njk' %}
+    {% set apiScripts %}
+      loadScript('https://unpkg.com/own-window@1.0.3/dist/index.min.js', null);
+    {% endset %}
+    <script>{{ apiScripts | minifyJs | cspHash | safe }}</script>
+
+    {% set script %}
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', async () => {
+          const registration = await navigator.serviceWorker.register(
+            'sw.js',
+          );
+          console.log(
+            'Service worker registered for scope',
+            registration.scope,
+          );
+        });
+      }
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+
+    {% set script %}
+      if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
+        launchQueue.setConsumer((launchParams) => {
+          if (!launchParams.files.length) {
+            return;
+          }
+          for (const fileHandle of launchParams.files) {
+            document.body.innerHTML += `<p>${fileHandle.name}</p>`;
+          }
+        });
+      }
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+  </body>
+</html>

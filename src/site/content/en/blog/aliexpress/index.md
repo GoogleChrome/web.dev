@@ -8,7 +8,7 @@ tags:
   - case-study
 ---
 
-### TL;DR {: .hide-from-toc }
+### Summary {: .hide-from-toc }
 
 AliExpress increases conversion rate for new users by 104% with new
 Progressive Web App

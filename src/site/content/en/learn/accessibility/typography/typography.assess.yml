@@ -1,0 +1,23 @@
+setLeader: Test your knowledge of measuring accessibility
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: For readable copy, I should always use high-contrast between my copy and background.
+    options:
+      - content: "True."
+        rationale: "While high-contrast can be valuable for some people with visual impairments, others may suffer from disabilities which make high-contrast content difficult to read."
+      - content: "False."
+        rationale: "Some people with disabilities won't be able to read your content if there is too high of a contrast. If you can, allow the user's operating system settings to determine the contrast."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1"
+    stem: What fonts are the best for accessibility?
+    options:
+      - content: "System fonts like Arial and Verdana."
+        rationale: "Common typefaces lead to faster reading speeds and a deeper comprehension level when compared to uncommon typefaces."
+      - content: "Accessible typefaces."
+        rationale: "Accessible typeface collections like the Google Foundry on Adobe Fonts can aid you in selecting the most inclusive typeface for your next design."
+      - content: "It doesn't matter."
+        rationale: "You can have an impact on readability with your font selection. Avoid elaborate scripts and art fonts."

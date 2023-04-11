@@ -6,6 +6,57 @@ description: |
   The content types available to use on web.dev.
 ---
 
+## Codelabs
+**Format:** Multi-step instructions paired with an embedded [sample app](/handbook/markup-sample-app)
+
+**Typical use case:** Showing how to do small, fairly distinct development tasks
+
+**Placement on the site:** Always associated with a post, which serves as the landing page for the codelab
+
+**Length:** Typically less than 1,000–1,500 words
+
+**[Template](https://github.com/GoogleChrome/web.dev/tree/master/src/site/_drafts/_template-codelab)**
+
+**Examples:**
+* [Example codelab](/handbook/content-types/example-codelab)
+* [Creating WebP images with the command line](/codelab-serve-images-webp)
+* [Minify and compress network payloads with gzip](/reduce-network-payloads-using-text-compression)
+
+## Collection
+
+**Examples:**
+* [Example collection](/handbook/content-types/example-collection)
+
+## Course
+
+**Examples:**
+* [Example course](/handbook/content-types/example-course)
+
+## Explore
+
+**Examples:**
+* [Example explore](/handbook/content-types/example-explore-page)
+
+## Item page
+
+**Examples:**
+* [Example item page](/handbook/content-types/example-item-page)
+
+## Landing page
+
+**Examples:**
+* [Example landing page](/handbook/content-types/example-landing-page)
+
+## Pattern
+
+**Examples:**
+* [Example pattern](/handbook/content-types/example-pattern)
+
+## Pattern set
+
+**Examples:**
+* [Example pattern set](/handbook/content-types/example-pattern-set)
+
 ## Posts
 **Format:** Primarily informational with instructions included as appropriate
 
@@ -25,20 +76,6 @@ description: |
 **[Template](https://github.com/GoogleChrome/web.dev/tree/master/src/site/_drafts/_template-post)**
 
 **Examples:**
+* [Example post](/handbook/content-types/example-post)
 * [Are long JavaScript tasks delaying your Time to Interactive?](/long-tasks-devtools)
 * [Code splitting with React.lazy and Suspense](/code-splitting-suspense)
-
-## Codelabs
-**Format:** Multi-step instructions paired with an embedded [sample app](/handbook/markup-sample-app)
-
-**Typical use case:** Showing how to do small, fairly distinct development tasks
-
-**Placement on the site:** Always associated with a post, which serves as the landing page for the codelab
-
-**Length:** Typically less than 1,000–1,500 words
-
-**[Template](https://github.com/GoogleChrome/web.dev/tree/master/src/site/_drafts/_template-codelab)**
-
-**Examples:**
-* [Creating WebP images with the command line](/codelab-serve-images-webp)
-* [Minify and compress network payloads with gzip](/reduce-network-payloads-using-text-compression)

@@ -73,7 +73,7 @@ blocks access to the main page. In this case, a sighted user might see some kind
 of semi-transparent overlay indicating that most of the page can't currently be
 used, but a screen reader user may still be able to explore to the other parts
 of the page. In this case, as well as creating the keyboard trap [explained
-earlier](https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex#modals-and-keyboard-traps),
+earlier](/using-tabindex/#modals-and-keyboard-traps/),
 you need to make sure that the parts of the page that are currently out of scope
 are `aria-hidden` as well.
 

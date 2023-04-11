@@ -24,7 +24,7 @@ In this post, you'll learn how to use [Lighthouse](https://developer.chrome.com/
 
 ## If you only have 5 minutes
 
-The Lighthouse [Performance audit](/lighthouse-performance) helps you discover opportunities to speed up page loads. Slow third-party scripts are likely to appear in the **Diagnostics** section under the **Reduce JavaScript execution time** and **Avoid enormous network payloads** audits.
+The Lighthouse [Performance audit](https://developer.chrome.com/docs/lighthouse/performance/) helps you discover opportunities to speed up page loads. Slow third-party scripts are likely to appear in the **Diagnostics** section under the **Reduce JavaScript execution time** and **Avoid enormous network payloads** audits.
 
 To run an audit:
 
@@ -50,13 +50,13 @@ The Lighthouse **Third-party usage** audit shows a list of the third-party provi
 
 ### Reduce JavaScript execution time
 
-The Lighthouse [Reduce JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
+The Lighthouse [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
 
 {% Img src="image/admin/O7vN1En6dtbL3Q8TbufC.png", alt="Screenshot showing that the 'Show third-party resources' checkbox is checked.", width="800", height="981" %}
 
 ### Avoid enormous network payloads
 
-The Lighthouse [Avoid enormous network payloads](/total-byte-weight) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
+The Lighthouse [Avoid enormous network payloads](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
 
 {% Img src="image/admin/9Pnoz73MLeNzooUQLuam.png", alt="Screenshot of the Chrome DevTools 'Avoid enormous network payloads' audit.", width="799", height="631" %}
 
@@ -74,7 +74,7 @@ To enable request blocking:
 A **Request blocking** tab will appear in the DevTools drawer. You can manage which requests have been blocked there.
 
 To measure the impact of third-party scripts:
-1. Measure how long your page takes to load using the **Network** panel. To emulate real-world conditions, turn on [network throttling](https://developer.chrome.com/docs/devtools/network/#throttle) and [CPU throttling](https://developers.google.com/web/updates/2017/07/devtools-release-notes#throttling). (On faster connections and desktop hardware, the impact of expensive scripts may not be as representative as it would be on a mobile phone.)
+1. Measure how long your page takes to load using the **Network** panel. To emulate real-world conditions, turn on [network throttling](https://developer.chrome.com/docs/devtools/network/#throttle) and [CPU throttling](https://developer.chrome.com/blog/new-in-devtools-61/#throttling). (On faster connections and desktop hardware, the impact of expensive scripts may not be as representative as it would be on a mobile phone.)
 1. Block the URLs or domains responsible for third-party scripts you believe are an issue.
 1. Reload the page and re-measure how long it takes to load without the blocked third-party scripts.
 

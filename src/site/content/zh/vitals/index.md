@@ -91,7 +91,7 @@ Chrome 用户体验报告提供的数据带来了一种快速评估网站性能�
 通过使用[web-vitals](https://github.com/GoogleChrome/web-vitals)库，测量每项指标就像调用单个函数一样简单（有关完整[用法](https://github.com/GoogleChrome/web-vitals#usage)和[API](https://github.com/GoogleChrome/web-vitals#api)详情，请参阅文档）：
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 当您将网站配置为使用[web-vitals](https://github.com/GoogleChrome/web-vitals)库来测量您的核心 Web 指标数据并将其发送到分析端后，下一步是对数据进行汇总和报告，从而查看您的页面是否在至少 75% 的页面访问中都满足建议阈值。
@@ -205,7 +205,7 @@ getLCP(sendToAnalytics);
 
 其他 Web 指标通常用作核心 Web 指标的代理或补充指标，有助于获取范围更广的体验或帮助诊断特定的问题。
 
-例如，[Time to First Byte 首字节时间 (TTFB)](/ttfb/)和[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)指标都是*加载*体验的重要方面，并且在诊断 LCP 问题方面（分别为[服务器响应时间](/overloaded-server/)过长或[阻塞渲染资源](/render-blocking-resources/)）都十分有用。
+例如，[Time to First Byte 首字节时间 (TTFB)](/ttfb/)和[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)指标都是*加载*体验的重要方面，并且在诊断 LCP 问题方面（分别为[服务器响应时间](/overloaded-server/)过长或[阻塞渲染资源](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)）都十分有用。
 
 同样，[总阻塞时间 (TBT)](/tbt/)和[Time to Interactive 可交互时间 (TTI)](/tti/)等指标是实验室指标，对于捕获和诊断会对 FID 产生影响的潜在*交互性*问题至关重要。然而，这些指标不是核心 Web 指标的一部分，因为它们无法进行实际测量，也不反映以[用户为中心](/user-centric-performance-metrics/#how-metrics-are-measured)的结果。
 

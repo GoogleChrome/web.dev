@@ -37,7 +37,7 @@ Core Web Vitals 指標をサポートしているアナリティクス ツール
 次のコード サンプルでは、コードでこれらの指標を追跡し、アナリティクス サービスへと送信することがいかに簡単かを示しています。
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics({name, value, id}) {
   const body = JSON.stringify({name, value, id});
@@ -46,9 +46,9 @@ function sendToAnalytics({name, value, id}) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 ## 分布のレポート方法
@@ -111,7 +111,7 @@ RUM アナリティクスのコードを本番環境にデプロイする場合�
 
 Core Web Vitals の測定に使用されるすべての API は ([`buffered`](https://www.chromestatus.com/feature/5118272741572608) フラグを介して) 非同期または遅延型のスクリプト読み込みをサポートするよう特別に設計されているため、スクリプトの読み込みタイミングを無理に早める必要はありません。
 
-ページの読み込みタイムラインの後半では計算ができないような指標を測定する場合には、早いタイミングで実行する必要のあるコード*のみ*を ([レンダリングを妨げるリクエスト](/render-blocking-resources/)にならないように) ドキュメントの `<head>` 内にインライン化し 、残りの部分を先送りします。必要な指標が 1 つあるという理由だけで、すべてのアナリティクスを早いタイミングで読み込まないようにしてください。
+ページの読み込みタイムラインの後半では計算ができないような指標を測定する場合には、早いタイミングで実行する必要のあるコード*のみ*を ([レンダリングを妨げるリクエスト](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)にならないように) ドキュメントの `<head>` 内にインライン化し 、残りの部分を先送りします。必要な指標が 1 つあるという理由だけで、すべてのアナリティクスを早いタイミングで読み込まないようにしてください。
 
 ### 長く時間がかかっているタスクを作らない
 

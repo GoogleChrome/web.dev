@@ -98,9 +98,9 @@ Agregue un atributo de cartel al elemento `video` para que los espectadores se h
 </video>
 ```
 
-Un cartel también puede ser una alternativa si el video `src` está dañado o si ninguno de los formatos de video proporcionados es compatible. La única desventaja de las imágenes de un cartel es el hecho de solicitar un archivo adicional, que consuma algo de ancho de banda y que requiera renderización. Para obtener más información, consulte [Codificación eficiente de las imágenes](/uses-optimized-images/).
+Un cartel también puede ser una alternativa si el video `src` está dañado o si ninguno de los formatos de video proporcionados es compatible. La única desventaja de las imágenes de un cartel es el hecho de solicitar un archivo adicional, que consuma algo de ancho de banda y que requiera renderización. Para obtener más información, consulte [Codificación eficiente de las imágenes](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/).
 
-<div class="w-columns">{% Compare 'worse' %} <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="Sin un cartel de reserva, el video parece estropeado.", width="360", height="600" %} </figure>
+<div class="switcher">{% Compare 'worse' %} <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="Sin un cartel de reserva, el video parece estropeado.", width="360", height="600" %} </figure>
 </div>
 <p data-md-type="paragraph">{% CompareCaption %} Sin un cartel de reserva, el video parece estropeado. {% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
@@ -114,12 +114,12 @@ Un cartel también puede ser una alternativa si el video `src` está dañado o s
 
 Cuando los elementos de video son demasiado grandes para la ventana de visualización, pueden desbordar su contenedor, lo que hace imposible que el usuario vea el contenido o utilice los controles.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt = "Captura de pantalla de Android Chrome, en vertical: el elemento de video sin estilo desborda la ventana de visualización.", width = "338", height = "600"%}<figcaption>Captura de pantalla de Android Chrome, en vertical: el elemento de video sin estilo desborda la ventana de visualización.</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Captura de pantalla de Android Chrome, paisaje: el elemento de video sin estilo desborda la ventana de visualización.", width="800", height="450" %} <figcaption>Captura de pantalla de Android Chrome, paisaje: el elemento de video sin estilo desborda la ventana de visualización.</figcaption></figure>
 </div>
 
-Puede controlar las dimensiones del video usando CSS. Si el CSS no satisface todas sus necesidades, las bibliotecas de JavaScript y los complementos como [FitVids](http://fitvidsjs.com/) (que están fuera del alcance de este artículo) pueden ayudar, incluso para los videos de YouTube y otras fuentes. Lamentablemente, estos recursos pueden aumentar el [tamaño de la carga útil de su red](/total-byte-weight/), con consecuencias negativas para sus ingresos y la cartera de sus usuarios.
+Puede controlar las dimensiones del video usando CSS. Si el CSS no satisface todas sus necesidades, las bibliotecas de JavaScript y los complementos como [FitVids](http://fitvidsjs.com/) (que están fuera del alcance de este artículo) pueden ayudar, incluso para los videos de YouTube y otras fuentes. Lamentablemente, estos recursos pueden aumentar el [tamaño de la carga útil de su red](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/), con consecuencias negativas para sus ingresos y la cartera de sus usuarios.
 
 Para usos sencillos como los que describo aquí, utilice las [consultas de medios de CSS](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#css-media-queries) para especificar el tamaño de los elementos según las dimensiones de la ventana de visualización; `max-width: 100%` será su aliado.
 
@@ -169,7 +169,7 @@ La orientación del dispositivo no es un problema para los monitores de las comp
 
 Safari en iPhone hace un buen trabajo al cambiar entre la orientación vertical y la horizontal:
 
-<div class="w-columns">
+<div class="switcher">
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="Captura de pantalla de un video que se reproduce en un iPhone con Safari, en posición vertical.", width="338", height="600" %} <figcaption>Captura de pantalla de un video que se reproduce en un iPhone con Safari, en posición vertical.</figcaption></figure><figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="Captura de pantalla de un video que se reproduce en un iPhone con Safari, en formato horizontal.", width="600", height="338" %} <figcaption>Captura de pantalla de un video que se reproduce en un iPhone con Safari, en formato horizontal.</figcaption></figure>
 </div>
 

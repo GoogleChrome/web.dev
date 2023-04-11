@@ -32,14 +32,14 @@ _Web Payments_ comprises multiple web standards:
     payment methods on merchant websites through the standard Payment Request
     API.
 *   **Payment Method Identifiers:** The [Payment Method
-    Identifiers](/setting-up-a-payment-method/#step-1:-provide-the-payment-method-identifier)
+    Identifiers](/setting-up-a-payment-method/#step-1-provide-the-payment-method-identifier)
     defines how strings (`https://google.com/pay`,
     `https://apple.com/apple-pay`, and so on) can be used to identify a payment
     method. Along with standardized payment method identifiers, it allows anyone
     to define their own payment method with URL-based payment method
     identifiers.
 *   **Payment Method Manifest:** The [Payment Method
-    Manifest](/setting-up-a-payment-method/#step-2:-serve-the-payment-method-manifest)
+    Manifest](/setting-up-a-payment-method/#step-2-serve-the-payment-method-manifest)
     defines the machine-readable manifest file, known as a payment method
     manifest, describing how a payment method participates in the payment
     ecosystem, and how such files are to be used.
@@ -96,7 +96,7 @@ There are typically four participants in an online transaction.
     transaction. They present a payment request UI to the customer using [**the
     Payment Request API**](/how-payment-request-api-works). The UI lists various
     methods of payment specified by [**the Payment Method
-    Identifiers**](/setting-up-a-payment-method/#step-1:-provide-the-payment-method-identifier).
+    Identifiers**](/setting-up-a-payment-method/#step-1-provide-the-payment-method-identifier).
     The payment methods can include credit card numbers saved to the browser, or
     payment handlers such as Google Pay, Samsung Pay, and similar. The Merchant can
     optionally request the customer's shipping address and contact information.

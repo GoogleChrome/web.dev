@@ -56,7 +56,6 @@ addEventListener('message', e => {
 });
 ```
 
-
 The Web Worker API has been available in most browsers for over ten years. While that
 means workers have excellent browser support and are well-optimized, it also means they long
 predate JavaScript modules. Since there was no module system when workers were designed, the API
@@ -129,7 +128,7 @@ parallel. Module loading also caches parsed code, which means modules that are u
 thread and in a worker only need to be parsed once.
 
 Moving to JavaScript modules also enables the use of [dynamic
-import](https://v8.dev/features/dynamic-import) for lazy-loading code without blocking execution of
+import](https://v8.dev/features/dynamic-import) for lazy loading code without blocking execution of
 the worker. Dynamic import is much more explicit than using `importScripts()` to load dependencies,
 since the imported module's exports are returned rather than relying on global variables.
 

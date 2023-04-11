@@ -68,15 +68,21 @@ const index = (items, href, testItems) => {
 /**
  * @param {VirtualCollectionItem[]} items
  * @param {string} lang
+ * @param {boolean} indexedOnly
  * @return {Paginated[]}
  */
-const individual = (items, lang) => {
+const individual = (items, lang, indexedOnly = false) => {
   let paginated = [];
 
   for (const item of items) {
-    if (item.elements.length > 0) {
+    let elements = item.elements;
+    if (indexedOnly) {
+      elements = elements.filter((element) => element.data.noindex !== true);
+    }
+
+    if (elements.length > 0) {
       paginated = paginated.concat(
-        addPagination(filterByLang(item.elements, lang), item),
+        addPagination(filterByLang(elements, lang), item),
       );
     }
   }

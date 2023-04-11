@@ -37,7 +37,7 @@ Core Web Vitals 메트릭을 지원하는 분석 도구를 사용하는 것이 �
 다음 코드 샘플은 코드에서 이러한 메트릭을 추적하고 분석 서비스로 보내는 것이 얼마나 쉬운지를 보여줍니다.
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics({name, value, id}) {
   const body = JSON.stringify({name, value, id});
@@ -46,9 +46,9 @@ function sendToAnalytics({name, value, id}) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 ## 분포를 보고할 수 있는지 확인
@@ -111,7 +111,7 @@ Core Web Vitals 메트릭을 추적하고 보고하도록 분석 구현을 업�
 
 Core Web Vitals 메트릭을 측정하는 데 사용되는 모든 API는 [`buffered`](https://www.chromestatus.com/feature/5118272741572608) 플래그를 통해 비동기 및 지연된 스크립트 로드를 지원하도록 특별히 설계되었으므로 스크립트를 일찍 로드하기 위해 서두를 필요가 없습니다.
 
-페이지 로드 타임라인에서 나중에 계산할 수 없는 메트릭을 측정하는 경우라면 *초기에 실행해야 하는 코드만* 문서의 `<head>`에 인라인해야 합니다(그러므로 [렌더링 차단 요청이](/render-blocking-resources/) 아님). 그리고 나머지는 미루세요. 단일 메트릭에 필요하다고 해서 모든 분석을 초반에 로드할 필요는 없습니다.
+페이지 로드 타임라인에서 나중에 계산할 수 없는 메트릭을 측정하는 경우라면 *초기에 실행해야 하는 코드만* 문서의 `<head>`에 인라인해야 합니다(그러므로 [렌더링 차단 요청이](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/) 아님). 그리고 나머지는 미루세요. 단일 메트릭에 필요하다고 해서 모든 분석을 초반에 로드할 필요는 없습니다.
 
 ### 긴 작업을 생성하지 말 것
 

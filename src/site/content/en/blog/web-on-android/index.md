@@ -181,7 +181,7 @@ platform, also known as in-app browsers.
 [2]: https://android-developers.googleblog.com/2015/09/chrome-custom-tabs-smooth-transition.html
 [3]: https://developer.android.com/reference/androidx/browser/customtabs/package-summary
 [4]: /progressive-web-apps/
-[5]: https://developers.google.com/web/android/trusted-web-activity/
+[5]: https://developer.chrome.com/docs/android/trusted-web-activity/
 [6]: /using-a-pwa-in-your-android-app/
 [7]: https://developers.google.com/digital-asset-links
 [8]: /using-a-pwa-in-your-android-app/#quality-criteria

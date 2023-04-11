@@ -366,7 +366,7 @@ This property is only relevant for Lighthouse guides.
 When creating a Lighthouse guide, add the `web_lighthouse` property to help
 web.dev/measure link back to your guide. The value of the property should be
 the ID of the audit in Lighthouse's source code. For example, the ID for the Lighthouse
-audit associated to the [cross-origin links](/external-anchors-use-rel-noopener/) guide
+audit associated to the [cross-origin links](https://developer.chrome.com/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/) guide
 is `external-anchors-use-rel-noopener`, which is the [filename of the audit source code][noopener].
 
-[noopener]: https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js
+[noopener]: https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js

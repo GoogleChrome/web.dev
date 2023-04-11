@@ -13,7 +13,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/2Pw5XRVGmX1WVwWaheDC.gif", alt="Jumia detail", width="582", height="1000" %}
 </figure>
 
-### TL;DR
+### Summary
 
 Push Notifications help Jumia reverse cart abandonment and increase
 conversions by 9X

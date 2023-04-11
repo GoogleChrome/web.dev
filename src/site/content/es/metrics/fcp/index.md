@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-10-19
 description: En esta publicación se presenta la métrica First Contentful Paint (FCP) y se explica como medirla
 tags:
   - performance
@@ -51,6 +51,8 @@ FCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 ### Medir FCP en JavaScript
 
+{% BrowserCompat 'api.PerformancePaintTiming' %}
+
 Para medir FCP en JavaScript, puede utilizar la [API de Paint Timing](https://w3c.github.io/paint-timing/). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que capta una entrada de `paint` con el nombre `first-contentful-paint` y la registra en la consola.
 
 ```js
@@ -80,34 +82,34 @@ En la siguiente sección se enumeran las diferencias entre lo que reporta la API
 En vez de memorizar todas estas diferencias sutiles, los desarrolladores pueden utilizar la [Biblioteca de JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals) para medir FCP, que maneja estas diferencias por usted (cuando sea posible):
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // Measure and log FCP as soon as it's available.
-getFCP(console.log);
+onFCP(console.log);
 ```
 
-Puede consultar [el código fuente de `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts) para obtener un ejemplo completo de cómo medir FCP en JavaScript.
+Puede consultar [el código fuente de `onFCP()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts) para obtener un ejemplo completo de cómo medir FCP en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir LCP en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) `web-vitals` para obtener más información. {% endAside %}
 
 ## Cómo mejorar FCP
 
-Para aprender a mejorar FCP para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](/lighthouse-performance/#opportunities) específica que sugiera la auditoría.
+Para aprender a mejorar FCP para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) específica que sugiera la auditoría.
 
 Para saber cómo mejorar la FCP en general (para cualquier sitio), consulte las siguientes normas de rendimiento:
 
-- [Eliminar los recursos que bloquean el renderizado](/render-blocking-resources/)
-- [Minificar CSS](/unminified-css/)
-- [Eliminar CSS no utilizado](/unused-css-rules/)
-- [Preconectar a los orígenes requeridos](/uses-rel-preconnect/)
+- [Eliminar los recursos que bloquean el renderizado](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [Minificar CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [Eliminar CSS no utilizado](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [Preconectar a los orígenes requeridos](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [Reducir los tiempos de respuesta del servidor (TTFB)](/ttfb/)
-- [Evitar los redireccionamientos de varias páginas](/redirects/)
-- [Precargar solicitudes clave](/uses-rel-preload/)
-- [Evitar cargas útiles de red enormes](/total-byte-weight/)
-- [Publicar activos estáticos con una política de caché eficiente](/uses-long-cache-ttl/)
-- [Evitar un tamaño de DOM excesivo](/dom-size/)
-- [Minimizar la profundidad de la solicitud crítica](/critical-request-chains/)
-- [Asegurarse de que el texto permanezca visible durante la carga de la fuente web](/font-display/)
-- [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](/resource-summary/)
+- [Evitar los redireccionamientos de varias páginas](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [Precargar solicitudes clave](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [Evitar cargas útiles de red enormes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [Publicar activos estáticos con una política de caché eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [Evitar un tamaño de DOM excesivo](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [Minimizar la profundidad de la solicitud crítica](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [Asegurarse de que el texto permanezca visible durante la carga de la fuente web](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

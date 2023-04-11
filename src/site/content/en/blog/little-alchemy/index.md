@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Little Alchemy 
+title: Little Alchemy
 date: 2015-04-08
 updated: 2015-04-08
 authors:
@@ -15,7 +15,7 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/UMRTodImzQkE65TkMkeV.png", alt="Little Alchemy detail", width="159", height="313" %}
 </figure>
 
-## TL;DR
+## Summary
 
 [Little Alchem](http://littlealchemy.com/): A fun, mobile-friendly combination
 game inspired by its bigger brother Alchemy.

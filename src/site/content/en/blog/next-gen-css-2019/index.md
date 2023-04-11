@@ -75,10 +75,10 @@ You can also find demos for all the features we discuss on our
 ## Contents
 
 - [Scroll Snap](#scroll-snap)
-- [`:focus-within`](#:focus-within)
+- [`:focus-within`](#focus-within)
 - [Media Queries Level 5](#media-queries-level-5)
 - [Logical properties](#logical-properties)
-- [`position: sticky`](#position:-sticky)
+- [`position: sticky`](#position-sticky)
 - [`backdrop-filter`](#backdrop-filter)
 - [`:is()`](#is)
 - [`gap`](#gap)
@@ -157,7 +157,7 @@ Try tabbing through the focusable elements in the demo below. You'll notice that
 
 Here are the new queries we think developers will be most excited about:
 
-*   [prefers-reduced-motion](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
+*   [prefers-reduced-motion](/prefers-reduced-motion/)
 *   [prefers-color-scheme](/prefers-color-scheme/)
 *   [prefers-contrast](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast)
 *   [prefers-reduced-transparency](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency)

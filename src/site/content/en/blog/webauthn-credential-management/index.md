@@ -12,7 +12,7 @@ tags:
 
 ---
 
-## TL;DR 
+## Summary
 [WebAuthn](https://www.w3.org/TR/webauthn/) helps increase security by bringing
 public-key credential based authentication to the Web, and is soon to be
 supported in Chrome, Firefox and Edge ([with the updated
@@ -59,7 +59,7 @@ Read on to learn more.
 {% Aside %}
 If you are using Google identity as a primary way for your users to
 sign-in, consider using the [one tap sign-up and automatic
-sign-in](https://developers.google.com/identity/one-tap/web/) JavaScript library
+sign-in](https://developers.google.com/identity/gsi/web/guides/overview) JavaScript library
 built on the Credential Management API. It combines Google sign-in and
 password-based sign-in into one API call, and adds support for one-tap account
 creation.
@@ -82,7 +82,7 @@ The original CM API specification defines 2 credential types:
 * `PasswordCredential`
 * `FederatedCredential`
 
-The `PasswordCredential` is a credential that contains user's id and password.  
+The `PasswordCredential` is a credential that contains user's id and password.
 The `FederatedCredential` is a credential that contains user's id and a string
 that represents an identity provider.
 

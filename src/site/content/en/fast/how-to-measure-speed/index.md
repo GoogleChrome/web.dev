@@ -23,7 +23,7 @@ Real-world performance is highly variable due to differences in users' devices, 
 
 **Lab data** is performance data collected within a controlled environment with predefined device and network settings, while **Field data** is performance data collected from real page loads experienced by your users in the wild. Each type has its own strengths and limitations.
 
-**Lab data** offers reproducible results and a debugging environment, but might not capture real-world bottlenecks and cannot correlate against real-world page KPIs. With lab data, you need to understand your users' typical devices and networks and appropriately mirror those conditions when you test performance. Have in mind that even in areas with 4G, users may still experience slower or intermittent connections when in elevators, while commuting, or in comparable environments.
+**Lab data** offers reproducible results and a debugging environment, but might not capture real-world bottlenecks and cannot correlate against real-world page [KPIs](https://www.thinkwithgoogle.com/intl/en-145/future-of-marketing/creativity/kpis-essential-framework/). With lab data, you need to understand your users' typical devices and networks and appropriately mirror those conditions when you test performance. Have in mind that even in areas with 4G, users may still experience slower or intermittent connections when in elevators, while commuting, or in comparable environments.
 
 **Field data** (also called Real User Monitoring or RUM) captures true real-world user experience and enables correlation to business KPIs, but has a restricted set of metrics and limited debugging capabilities.
 

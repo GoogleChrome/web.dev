@@ -25,8 +25,16 @@ It must be noted that the CSS 3D module is designed to help developers build ric
 
 ## Browser Support and Hardware Acceleration
 
-As of October 2013, [all major browsers support the CSS 3D module](http://caniuse.com/#feat=transforms3d).  The important piece of information to remember is that although a browser may "support" 3d, it might not be able to render 3D due to hardware and driver limitations.
-3D scenes based of the DOM can be very computationally expensive and therefore browser vendors have decided rather than slow the browsers down with a pure software rendering solution, they instead will take advantage of GPU which might not be available on all platforms
+### -webkit-perspective
+
+{% BrowserCompat 'css.properties.perspective' %}
+
+### -webkit-transform-3d
+
+{% BrowserCompat 'css.at-rules.media.-webkit-transform-3d' %}
+
+The important piece of information to remember is that although a browser may "support" 3d, it may not be able to render 3D due to hardware and driver limitations.
+3D scenes based on the DOM can be very computationally expensive and therefore browser vendors have decided rather than slow the browsers down with a pure software rendering solution, they instead will take advantage of GPU which might not be available on all platforms
 
 ## Feature Detection
 
@@ -37,7 +45,7 @@ Developers have been using tools such as Modernizr to detect support for specifi
 
 There is nothing better than jumping straight in. In this sample we will apply a basic set of rotations of an arbitrary DOM element.
 
-We start by defining a perspective on the root element. Persective
+We start by defining a perspective on the root element.
 
 ```html
 <div style="-webkit-perspective: 800; perspective: 800; margin: 100px 0 0 50px">
@@ -52,7 +60,7 @@ We then add an iframe and apply a 30 degree rotation around the Z and Y axis
     style="-webkit-transform: rotate3d(0, 1, 1, 30deg)"></iframe>
 ```
 
-BAM! That is it, the element is fully interactive, and in all respects it is a fully fledged DOM element (excpect that it now looks even cooler).
+BAM! That is it, the element is fully interactive, and in all respects it is a fully fledged DOM element (except that it now looks even cooler).
 If your browser doesn't support 3D transformations, nothing will happen. You will just see a simple iframe with no rotation applied.  If your browser supports 3d transformations but without hardware acceleration, it might look a little odd.
 
 ## Animating
@@ -61,7 +69,7 @@ The thing that I love about CSS3 3D transformations is that it ties so beautiful
 
 To animate elements that have a 3D perspective applied is easy.  Simply set the "transition" style to be "transform", attach a duration and an animation function.  From then on, any change to the "tranform" style will be animated.
 
-We have re-factored the previous examples to use document styles, rather than inline styles. Not only does it clear the example up, it allows the sample to take advantage of the the `:hover` pseudo selector.  By using the `:hover` selector, transitions can be initiated by simply moving the mouse over the element. Awesome!
+We have re-factored the previous examples to use document styles, rather than inline styles. Not only does it clear the example up, it allows the sample to take advantage of the `:hover` pseudo selector.  By using the `:hover` selector, transitions can be initiated by simply moving the mouse over the element. Awesome!
 
 ## Summary
 

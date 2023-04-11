@@ -35,6 +35,15 @@ topics:
     ru: Введение
     zh: 介绍
 
+  core_web_vitals:
+    en: Core Web Vitals
+    es: Core Web Vitals
+    ja: Core Web Vitals
+    ko: Core Web Vitals
+    pt: Core Web Vitals
+    ru: Core Web Vitals
+    zh: Core Web Vitals
+
   set_performance_budgets:
     en: Set performance budgets
     es: Definir los presupuestos de rendimiento

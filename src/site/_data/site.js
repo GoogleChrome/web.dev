@@ -20,6 +20,7 @@ const {PAGINATION_COUNT} = require('../_utils/constants');
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
+  isProd: () => process.env.ELEVENTY_ENV === 'prod',
   percy: process.env.PERCY || false,
   contentDir: path.join('src/site/content/', process.env.ELEVENTY_LANG || ''),
   title: 'web.dev',
@@ -32,28 +33,25 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
-  isBannerEnabled: false,
-  banner: '',
+  isBannerEnabled: true,
+  banner:
+    'The Chrome team is back at Google I/O on May 10! [Register Now](https://io.google/2023/?utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_reg_banner&utm_content=)',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
   gitlocalize: 'https://gitlocalize.com/repo/6062/',
   analytics: {
     ids: {
-      prod: 'UA-126406676-2',
-      // TODO (robdodson): These properties exist in GA but we don't use them.
-      // Adding a note to inject these into pages when we create a fancier
-      // staging environment.
-      staging: 'UA-126406676-3',
-      notFound: 'UA-126406676-4',
+      ga4: 'G-18JR3Q8PJ8',
+      ua: 'UA-126406676-2',
     },
     dimensions: {
-      SIGNED_IN: 'dimension1',
-      TRACKING_VERSION: 'dimension5',
+      MEASUREMENT_VERSION: 'dimension5',
       NAVIGATION_TYPE: 'dimension6',
       COLOR_SCHEME_PREFERENCE: 'dimension7',
+      WEB_VITALS_DEBUG: 'dimension8',
     },
-    version: 10,
+    version: 15,
   },
   firebase: {
     prod: {

@@ -137,8 +137,7 @@ pre-loaded.
 Of course, it would be better to create a more general loading system
 which isn't hard-coded to loading this specific sound. There are many
 approaches for dealing with the many short- to medium-length sounds that
-an audio application or game would use–here's one way using a
-[BufferLoader class][BufferLoader].
+an audio application or game would use–here's one way using a BufferLoader (not part of web standard).
 
 The following is an example of how you can use the `BufferLoader` class.
 Let's create two `AudioBuffers`; and, as soon as they are loaded,
@@ -197,18 +196,18 @@ code to do this is simple:
 
 ```js
 for (var bar = 0; bar < 2; bar++) {
-    var time = startTime + bar - 8 - eighthNoteTime;
+    var time = startTime + bar * 8 * eighthNoteTime;
     // Play the bass (kick) drum on beats 1, 5
     playSound(kick, time);
-    playSound(kick, time + 4 - eighthNoteTime);
+    playSound(kick, time + 4 * eighthNoteTime);
 
     // Play the snare drum on beats 3, 7
-    playSound(snare, time + 2 - eighthNoteTime);
-    playSound(snare, time + 6 - eighthNoteTime);
+    playSound(snare, time + 2 * eighthNoteTime);
+    playSound(snare, time + 6 * eighthNoteTime);
 
     // Play the hi-hat every eighth note.
     for (var i = 0; i < 8; ++i) {
-    playSound(hihat, time + i - eighthNoteTime);
+    playSound(hihat, time + i * eighthNoteTime);
     }
 }
 ```

@@ -111,7 +111,7 @@ tags:
 
 Есть менее очевидный признак, по которому сразу можно опознать родное приложение, такое как Podcasts: подписи элементов управления невозможно выделить мышью, а шрифт текста совпадает с системным. Кроме того, приложение учитывает выбранную в системе (темную) тему оформления.
 
-<div class="w-columns">
+<div class="switcher">
   <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OApP9uGUje6CkS7cKcZh.png", alt="Приложение Podcasts в темном режиме.", width="800", height="463" %} <figcaption>Приложение Podcasts поддерживает светлую и темную тему.</figcaption></figure>
   <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cnVihfFR2anSBlIVfCSW.png", alt="Приложение Podcasts в светлом режиме.", width="800", height="463" %} <figcaption>Приложение использует стандартный системный шрифт.</figcaption></figure>
 </div>

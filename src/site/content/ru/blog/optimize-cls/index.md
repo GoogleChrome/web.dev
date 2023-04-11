@@ -242,7 +242,7 @@ img {
 
 Эти побочные эффекты могут помочь минимизировать следующие инструменты:
 
-- свойство <code>[font-display](/font-display/)</code> позволяет изменять поведение визуализации пользовательских шрифтов, оно имеет пять значений <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> и <code>optional</code>. К сожалению, все эти значения (кроме [optional](http://crrev.com/749080)) могут вызвать перекомпоновку одним из вышеуказанных способов.
+- свойство <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code> позволяет изменять поведение визуализации пользовательских шрифтов, оно имеет пять значений <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> и <code>optional</code>. К сожалению, все эти значения (кроме [optional](http://crrev.com/749080)) могут вызвать перекомпоновку одним из вышеуказанных способов.
 - [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) (API загрузки шрифтов) может сократить время, необходимое для получения необходимых шрифтов.
 
 Что касается Chrome 83, я также могу порекомендовать следующее:
@@ -272,7 +272,7 @@ img {
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Записи Layout Shift отображаются на панели производительности Chrome DevTools при раскрытии раздела Experience", width="800", height="438" %}<figcaption> После записи новой трассировки на панели Performance в разделе <b>Experience</b> появляется красная полоса, отображающая запись <code>Layout Shift</code> Щелкнув по этой записи, вы сможете просмотреть затронутые элементы (например, увидеть смещенные записи из/в).</figcaption></figure>
 
-Измерить реальные значений CLS, агрегированные на уровне источника, также можно с помощью отчета [Chrome User Experience Report](/chrome-ux-report-bigquery/). Данные CrUX CLS доступны через BigQuery, а также доступен [образец запроса](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) для проверки производительности CLS.
+Измерить реальные значений CLS, агрегированные на уровне источника, также можно с помощью отчета [Chrome User Experience Report](https://developer.chrome.com/blog/chrome-ux-report-bigquery/). Данные CrUX CLS доступны через BigQuery, а также доступен [образец запроса](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) для проверки производительности CLS.
 
 Вот и всё. Надеюсь, приведенная информация поможет сделать ваши страницы чуть менее увёртливыми :)
 

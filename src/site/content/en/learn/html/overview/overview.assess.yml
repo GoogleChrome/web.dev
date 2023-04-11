@@ -1,0 +1,39 @@
+setLeader: Test your knowledge of HTML
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "HTML elements are used for styling."
+    options:
+      - content: "True"
+        rationale: "Try again. CSS, not HTML is used for styling."
+      - content: "False"
+        rationale: "Correct! HTML elements are used to describe what the content is."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,3"
+    stem: "Select the replaced elements."
+    options:
+      - content: "`<img>`"
+        rationale: "Correct!"
+      - content: "`<p>`"
+        rationale: "Try again."
+      - content: "`<ul>`"
+        rationale: "Try again"
+      - content: "`<input>`"
+        rationale: "Correct!"
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,2"
+    stem: "Select all of the true statements."
+    options:
+      - content: "Attributes describe the styling of HTML elements."
+        rationale: "Try again."
+      - content: "Attribute values containing a space or special characters must be contained within quotes."
+        rationale: "Correct! It's best practice to quote all attributes, so you don't get tripped up."
+      - content: "Attributes are added to the opening tag of an element."
+        rationale: "Correct!"
+      - content: "HTML is case sensitive."
+        rationale: "Try again."

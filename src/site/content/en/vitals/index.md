@@ -6,7 +6,7 @@ hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2022-07-18
+updated: 2022-08-17
 tags:
   - metrics
   - performance
@@ -32,7 +32,7 @@ Google has provided a number of tools over the years to measure and report on
 performance. Some developers are experts at using these tools, while others have
 found the abundance of both tools and metrics challenging to keep up with.
 
-Site owners should not have to be performance gurus in order to understand the
+Site owners should not have to be performance experts to understand the
 quality of experience they are delivering to their users. The Web Vitals
 initiative aims to simplify the landscape, and help sites focus on the metrics
 that matter most, the **Core Web Vitals**.
@@ -149,6 +149,10 @@ own real-user monitoring.
 Each of the Core Web Vitals can be measured in JavaScript using standard web
 APIs.
 
+{% Aside %}
+Note that the Core Web Vitals measured in JavaScript using public APIs may differ from the Core Web Vitals reported by CrUX. Read [this article](/crux-and-rum-differences/) for more info.
+{% endAside %}
+
 The easiest way to measure all the Core Web Vitals is to use the
 [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library, a
 small, production-ready wrapper around the underlying web APIs that measures
@@ -162,7 +166,7 @@ documentation for complete
 [API](https://github.com/GoogleChrome/web-vitals#api) details):
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -171,9 +175,9 @@ function sendToAnalytics(metric) {
     fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 Once you've configured your site to use the
@@ -325,7 +329,7 @@ For example, the metrics [Time to First Byte (TTFB)](/ttfb/) and
 [First Contentful Paint (FCP)](/fcp/) are both vital aspects of the _loading_
 experience, and are both useful in diagnosing issues with LCP (slow [server
 response times](/overloaded-server/) or [render-blocking
-resources](/render-blocking-resources/), respectively).
+resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/), respectively).
 
 Similarly, metrics like [Total Blocking Time (TBT)](/tbt/) and [Time to
 Interactive (TTI)](/tti/) are lab metrics that are vital in catching and

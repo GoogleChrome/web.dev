@@ -128,7 +128,7 @@ Here are some suggestions:
 * [Inline SVG or Data URI images](http://udacity.github.io/responsive-images/examples/2-11/svgDataUri/) will not reduce page weight, but they can reduce latency by reducing the number of resource requests. Inline SVG has [great support on mobile and desktop browsers](http://caniuse.com/#feat=svg-html5), and [optimization tools](http://petercollingridge.appspot.com/svg-optimiser) can significantly reduce SVG size. Likewise, Data URIs are [well supported](http://caniuse.com/datauri). Both can be inlined in CSS.
 * Consider using `<video>` instead of animated GIFs. [The video element is supported by all browsers on mobile](http://caniuse.com/video) (apart from Opera Mini).
 
-For more information see [Image Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization) and [Eliminating and replacing images](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization#eliminating-and-replacing-images).
+For more information see [Image Optimization](/fast/#optimize-your-images) and [Eliminating and replacing images](/fast/#optimize-your-images).
 
 
 ## Design content to work well across different viewport sizes

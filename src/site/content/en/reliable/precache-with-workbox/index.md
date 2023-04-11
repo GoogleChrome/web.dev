@@ -22,7 +22,7 @@ when offline: main page, styles, fallback image and essential scripts.
 ## Why should you use Workbox?
 
 Using Workbox for precaching is optional. You can write your own code to
-[precache critical assets when the service worker is installing](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker).
+[precache critical assets when the service worker is installing](/learn/pwa/caching/).
 The primary benefit of using Workbox is its out-of-the-box version control.
 You'll run into a lot less trouble updating precached assets using Workbox than
 if you had to manage the versioning and updating of these files on your own.

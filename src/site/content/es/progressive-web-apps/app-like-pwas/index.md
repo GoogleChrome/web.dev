@@ -151,7 +151,7 @@ Es posible que no lo piense de inmediato, pero la aplicación Podcasts se integr
 
 Hay algo más sutil que es evidente por sí mismo para una aplicación de iOS como Podcasts: ninguna de las etiquetas de texto es seleccionable y todo el texto se mezcla con la fuente del sistema de la máquina. También se respeta mi elección del tema de color del sistema (modo oscuro).
 
-<div class="w-columns">
+<div class="switcher">
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OApP9uGUje6CkS7cKcZh.png", alt="La aplicación Podcasts en modo oscuro", width="800", height="463" %} <figcaption>La aplicación Podcasts admite el modo claro y oscuro.</figcaption></figure>
   <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cnVihfFR2anSBlIVfCSW.png", alt = "La aplicación Podcasts en modo claro", width="800", height="463" %} <figcaption>La aplicación usa la fuente predeterminada del sistema.</figcaption></figure>
 </div>

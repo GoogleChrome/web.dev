@@ -40,7 +40,7 @@ metric](/user-centric-performance-metrics/#in-the-lab)—[Total Blocking Time
 content element becomes visible in the viewport.
 
 Before Largest Contentful Paint, [First Meaningful Paint
-(FMP)](/first-meaningful-paint/) and [Speed Index (SI)](/speed-index/) served to
+(FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/) and [Speed Index (SI)](https://developer.chrome.com/docs/lighthouse/performance/speed-index/) served to
 capture the loading experience after the initial paint, but these metrics are
 complex and often do not identify when the main content of the page has loaded.
 Research has shown that simply looking at when [the largest element on the
@@ -112,7 +112,7 @@ a page feels usable.
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wB1bqc1tymL2uPuDgqpP.png", alt="In Lighthouse v6 First Contentful Paint, Speed Index, and Largest Contentful Paint are the main load performance metrics; Time To Interactive, First Input Delay, Max Potential First Input Delay, and Total Blocking Time are the main interactivity metrics; And Cumulative Layout Shift is the main predictability metric.", width="800", height="375" %}
 </figure>
 
-Check out [Lighthouse performance scoring](/performance-scoring/) and the new
+Check out [Lighthouse performance scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) and the new
 [web.dev metrics collection](/metrics/) to learn more.
 
 ## Field data (CrUX) thresholds adjusted in PageSpeed Insights

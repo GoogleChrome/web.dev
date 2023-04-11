@@ -30,7 +30,7 @@ alt="LCP, FID, CLS",
 width="800", height="232" %}
 
 Are you struggling to convince your stakeholders to adopt
-[Core Web Vitals](/learn-web-vitals/)?
+[Core Web Vitals](/learn-core-web-vitals/)?
 Or are you wondering if it actually helps your business?
 This article will help you understand how Core Web Vitals correlate with
 key business metrics by exploring examples of companies which have already seen
@@ -189,7 +189,7 @@ The above results were achieved by grabbing low hanging fruit such as:
       </tr>
       <tr>
         <td>Compression</td>
-        <td>Lazy-loading non-critical JS</td>
+        <td>Lazy loading non-critical JS</td>
         <td></td>
       </tr>
       <tr>
@@ -212,7 +212,7 @@ The above results were achieved by grabbing low hanging fruit such as:
 </div>
 
 For more best practices, check out the
-[Web Vitals guidance](/learn-web-vitals).
+[Web Vitals guidance](/learn-core-web-vitals/).
 Use
 [PageSpeed Insights](https://pagespeed.web.dev/)
 to audit your website and get actionable recommendations immediately.

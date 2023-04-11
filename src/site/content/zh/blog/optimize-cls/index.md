@@ -242,7 +242,7 @@ img {
 
 以下工具可以帮助您最大程度地减少这种情况：
 
-- <code>[font-display](/font-display/)</code>使您能够通过使用<code>auto</code>、<code>swap</code>、<code>block</code>、<code>fallback</code>和<code>optional</code>值来修改自定义字体的渲染行为。遗憾的是，所有这些值（除 [optional](http://crrev.com/749080) 外）都可能通过上述某种方式导致重排。
+- <code>[font-display](https://developer.chrome.com/docs/lighthouse/performance/font-display/)</code>使您能够通过使用<code>auto</code>、<code>swap</code>、<code>block</code>、<code>fallback</code>和<code>optional</code>值来修改自定义字体的渲染行为。遗憾的是，所有这些值（除 [optional](http://crrev.com/749080) 外）都可能通过上述某种方式导致重排。
 - [字体加载 API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) 可以减少获取必要字体所需的时间。
 
 从 Chrome 83 开始，我还会推荐以下做法：
@@ -272,7 +272,7 @@ img {
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="展开体验部分时，Chrome 开发者工具性能面板中显示出布局偏移记录", width="800", height="438" %}<figcaption>在性能面板中记录新的跟踪后，结果中的<b>体验</b>部分将填充一个显示<code>Layout Shift</code>记录的红色条。单击记录可以让您详细了解受影响的元素（例如，标记位移自/至条目）。</figcaption></figure>
 
-通过[Chrome 用户体验报告](/chrome-ux-report-bigquery/)也可以测量在域级聚合下的真实 CLS。 CrUX CLS 数据可以通过 BigQuery 获得，并且可以使用[样本查询](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)查看 CLS 性能 。
+通过[Chrome 用户体验报告](https://developer.chrome.com/blog/chrome-ux-report-bigquery/)也可以测量在域级聚合下的真实 CLS。 CrUX CLS 数据可以通过 BigQuery 获得，并且可以使用[样本查询](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)查看 CLS 性能 。
 
 以上就是本篇指南的全部内容。我希望这篇指南有助于让您的页面不再那么变化多端 :)
 

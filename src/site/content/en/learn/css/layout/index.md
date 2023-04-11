@@ -124,23 +124,26 @@ By default, flexbox will align the element's children next to each other,
 in the inline direction,
 and stretch them in the block direction, so they're all the same height.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNjxmor',
   tab: 'css,result',
   height: 300
 } %}
+</figure>
 
 
 Items will stay on the same axis and not wrap when they run out of space.
 Instead they will try to squash onto the same line as each other.
 This behaviour can be changed using the `align-items`, `justify-content` and `flex-wrap` properties.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'jOyWLmg'
 } %}
-
+</figure>
 
 Flexbox also converts the child elements to be **flex items**,
 which means you can write rules on how they behave inside a flex container.
@@ -193,10 +196,12 @@ with a gap between each item, with 3 CSS properties:
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNjxGVz'
 } %}
+</figure>
 
 This example above shows a single axis layout.
 Where flexbox mostly treats items as a group,
@@ -213,12 +218,13 @@ We could define that the first item in this grid takes up 2 rows and 3 columns:
 The `grid-row` and `grid-column` properties instruct the first element in the grid to span to the start of the fourth column,
 from the first column, then span to the third row, from the first row.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNwrwB',
   height: 650
 } %}
-
+</figure>
 
 ## Flow layout
 
@@ -246,13 +252,14 @@ p span {
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'PoWZJKw',
   height: 300,
   tab: 'css,result'
 } %}
-
+</figure>
 
 ### Floats
 
@@ -272,12 +279,13 @@ The image in this example is instructed to float left,
 which then allows sibling elements to "wrap" around it.
 You can instruct an element to float `left`, `right` or `inherit`.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'VwPaLMg',
   height: 300
 } %}
-
+</figure>
 
 {% Aside 'warning' %}
 When you use `float`, keep in mind that any elements following the floated element may have their layout adjusted.
@@ -320,11 +328,12 @@ you can split this into multiple columns to help with both of these issues.
 
 This automatically splits that long list into two columns and adds a gap between the two columns.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'gOgrpzO'
 } %}
-
+</figure>
 
 ```css
 .countries {
@@ -334,11 +343,12 @@ This automatically splits that long list into two columns and adds a gap between
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'jOyqPvB'
 } %}
-
+</figure>
 
 Instead of setting the number of columns that the content is split into,
 you can also define a minimum desired width, using `column-width`.
@@ -399,12 +409,13 @@ fixed aspects of `fixed` and the more predictable document flow-honoring aspects
 With this value, as the viewport scrolls past the element,
 it stays anchored to the `top`, `right`, `bottom` and `left` values that you set.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'NWdNGZB',
   height: 600
 } %}
-
+</figure>
 
 ## Wrap-up
 

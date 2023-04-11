@@ -5,28 +5,27 @@ subhead: Optimize tags and tag managers for Core Web Vitals.
 hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/aIZgX5qHUBalZz0dUNqN.jpg
 authors:
   - katiehempenius
+  - tunetheweb
 description: |
   Optimize tags for Core Web Vitals.
 date: 2021-07-29
+updated: 2022-08-24
 tags:
   - blog
   - performance
   - web-vitals
 ---
 
-
 [Tags](https://support.google.com/tagmanager/answer/3281060?hl=en) are snippets
 of third-party code that are inserted into a site, typically via a tag manager.
 Tags are most commonly used for marketing and analytics.
 
 {% Aside %}
-
 Although tags and third-party scripts are often fundamentally the exact same
 thing, the separate terminology reflects the different ways that these scripts
 are used: "tags" are typically owned by marketing departments and added via tag
 managers; whereas "third-party scripts" more commonly refer to resources added
 through code changes made by engineering departments.
-
 {% endAside %}
 
 The performance impact of tags and tag managers varies wildly from site to site.
@@ -37,12 +36,22 @@ This article discusses techniques for optimizing tags and tag managers for
 performance and Web Vitals. Although this article references Google Tag Manager,
 many of the ideas discussed are also applicable to other tag managers.
 
+## Impact on Core Web Vitals
+
+Tag Managers can often impact your Core Web Vitals indirectly by using up resources needed to load your page quickly and keep it responsive. Bandwidth can be spent downloading the tag manager JavaScript for your sites, or the subsequent calls this makes. CPU time on the main thread can be spent evaluating and executing JavaScript contained within the tag manager and the tags.
+
+[Largest Contentful Paint](/lcp/) (LCP) is vulnerable to bandwidth contention during the critical page load time. Additionally, blocking the main thread can [delay the LCP render time](/optimize-lcp/#2-eliminate-element-render-delay).
+
+[Cumulative Layout Shift](/cls/) (CLS) can be impacted, either by delaying loading critical resources before the first render, or by tag managers injecting content into the page.
+
+[First Input Delay](/fid/) (FID) is susceptible to CPU contention on the main thread. This can also impact the newer [Interaction to Next Paint](/inp/) (INP) metric and we have seen a correlation between the size of tag managers, and poorer INP scores.
 
 ## Tag types
 
 The impact of tags on performance varies by tag type. Generally speaking, image
 tags ("pixels") are the most performant, followed by custom templates, and
-lastly, custom HTML tags.
+lastly, custom HTML tags. Vendor tags vary depending on the functionality they
+allow.
 
 However, keep in mind that how you use a tag greatly influences its performance
 impact. "Pixels" are highly performant largely because the nature of this tag
@@ -53,7 +62,6 @@ offer users, they can be easy to misuse in a way that is bad for performance.
 When thinking about tags, keep scale in mind: the performance impact of any
 single tag may be negligible—but can become significant when tens or hundreds of
 tags are used on the same page.
-
 
 ### Not all scripts should be loaded using a tag manager
 
@@ -66,27 +74,24 @@ mind that some users block tag managers. Using a tag manager to implement UX
 features may result in a broken website for some of your users.
 
 {% Aside %}
-
 Resources requested via tag manager will typically load later than resources
 requested directly. This is not always a bad thing. If a tag manager is
 primarily used to deliver non-essential resources, this delay can be used
 constructively by providing a mechanism for delaying non-essential requests.
-
 {% endAside %}
-
 
 ### Be careful with Custom HTML tags
 
 [Custom HTML
 tags](https://support.google.com/tagmanager/answer/6107167/custom-tags?hl=en#CustomHTML)
 have been around for many years and are heavily used on most sites. Custom HTML
-tags allow you to enter your own code with few restrictions. As a result, Custom
-HTML tags can be used in a wide variety of ways and their performance impact
+tags allow you to enter your own code with few restrictions as, despite the name,
+the main use of this tag is to add custom `<script>` elements to a page.
+
+Custom HTML tags can be used in a wide variety of ways and their performance impact
 varies significantly. When measuring the performance of your site, be aware that
 most tools will attribute the performance impact of a Custom HTML tag to the tag
 manager that injected it—rather than the tag itself.
-
-
 
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/cjLFJStmZvkQkr4DYPlk.png",
@@ -96,18 +101,14 @@ manager that injected it—rather than the tag itself.
   class="screenshot"
 %}
 
-
-
-Custom HTML tags work by inserting an element into the surrounding page. The act
+Custom HTML tags can insert an element into the surrounding page. The act
 of inserting elements into the page can be a source of performance issues, and
 in some cases, also cause layout shifts.
-
-
 
 *   In most situations, if an element is inserted into the page, the browser
     must recalculate the size and position of each item on the page—this process
     is known as
-    [layout](https://developers.google.com/web/updates/2018/09/inside-browser-part3#layout).
+    [layout](https://developer.chrome.com/blog/inside-browser-part3/#layout).
     The performance impact of a single layout is minimal, but when it occurs
     excessively it can become a source of performance issues. The impact of this
     phenomenon is larger on lower-end devices and pages with a high number of
@@ -119,28 +120,27 @@ in some cases, also cause layout shifts.
     DOM after the surrounding page has already been rendered.
 
 {% Aside %}
-
 If you're adding or changing visible content on a page, keep in mind that search
 engines will need to be able to fetch and process the JavaScript used. For
 Google, you can [verify rendering of a
-page](https://developers.google.com/search/docs/advanced/javascript/dynamic-rendering#verify)
+page](https://developers.google.com/search/docs/crawling-indexing/javascript/dynamic-rendering#verify)
 for Search; other search engines may have similar testing tools available.
-
 {% endAside %}
-
 
 ### Consider using Custom Templates
 
-[Custom templates](https://developers.google.com/tag-manager/templates) support
+[Custom templates](https://developers.google.com/tag-platform/tag-manager/templates) support
 some of the same operations as Custom HTML tags but are built upon a sandboxed
 version of JavaScript that provides
 [APIs](https://developers.google.com/tag-manager/templates/api) for common use
-cases like script injection and pixel injection. Due to the greater restrictions
-imposed on custom templates, these tags are much less likely to exhibit
-performance or security issues; however, for these same reasons, custom
-templates will not work for all use cases.
+cases like script injection and pixel injection. As the name implies, they allow
+a template to be created, by a power user who can build this with performance in
+mind. Less technical users can then use the template. This is often safer
+than providing full Custom HTML access.
 
-
+Due to the greater restrictions imposed on custom templates, these tags are much
+less likely to exhibit performance or security issues; however, for these same
+reasons, custom templates will not work for all use cases.
 
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/QRz6pn83YE6plVivynA7.png",
@@ -149,8 +149,6 @@ templates will not work for all use cases.
   height="388",
   class="screenshot"
 %}
-
-
 
 ### Inject scripts correctly
 
@@ -165,8 +163,6 @@ tag](https://developers.google.com/tag-manager/templates/convert-existing-tag).
 
 If you must use a Custom HTML tag, here are some things to keep in mind:
 
-
-
 *   Libraries and large third-party scripts should be loaded via a script tag
     that downloads an external file (for example, `<script
     src="external-scripts.js">`), rather than directly copy-pasting the script's
@@ -179,30 +175,27 @@ If you must use a Custom HTML tag, here are some things to keep in mind:
     is usually unnecessary: in most situations, the browser has already finished
     parsing the `<head>` by the time that the tag manager executes.
 
-
 ### Use pixels
 
 In some situations third-party scripts can be replaced with image or iframe
-"pixels". Compared to their script-based counterparts, these pixels may support
-less functionality; however, because there is no JavaScript execution, they are
-also the most performant and secure type of tag. Pixels have a very small
-resource size (less than 1&nbsp;KB) and do not cause layout shifts.
+"pixels". Compared to their script-based counterparts, pixels may support
+less functionality, so are often seen as a less-preferred implementation because
+of that. However, when used inside tag managers, pixels can be more dynamic
+as they can fire on triggers and pass different variables. They are the most
+performant and secure type of tag because there is no JavaScript execution after
+it is fired. Pixels have a very small resource size (less than 1&nbsp;KB) and do
+not cause layout shifts.
 
 Check with your third-party provider for more information on their support for
 pixels. Additionally, you can try inspecting their code for a `<noscript>` tag.
 If a vendor supports pixels, they will often include them within the
 `<noscript>` tag.
 
-
-
-{% Img
-  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/QMdKBiA8UYcX4V06Lt8V.png",
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/zJPC30RE3axvUDiWUdqW.png",
   alt="Screenshot of custom image tag in Google Tag Manager",
-  width="512",
-  height="295"
+  width="800",
+  height="342"
 %}
-
-
 
 #### Alternatives to pixels
 
@@ -217,7 +210,6 @@ APIs are designed to address this same use case but are arguably more reliable
 than pixels.
 
 {% Aside %}
-
 The `sendBeacon()` and `fetch() keepalive` APIs will both still work in
 situations where the browser is
 [unloading](https://developer.mozilla.org/docs/Web/API/Window/unload_event)
@@ -225,7 +217,6 @@ the page: for example, both of these APIs can be used to track outbound link
 clicks. By contrast, techniques like pixels and
 [`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
 would likely fail in those cases.
-
 {% endAside %}
 
 There is nothing wrong with continuing to use pixels—they are well supported and
@@ -248,13 +239,11 @@ const data = JSON.stringify({
 });
 
 navigator.sendBeacon(url, data);
-
 ```
 
 `sendBeacon()` has a limited API: it only supports making POST requests and does
 not support setting custom headers. It is
 [supported](https://caniuse.com/beacon) by all modern browsers.
-
 
 ##### `fetch() keepalive`
 
@@ -287,7 +276,6 @@ consider the features and browser support that you need. The fetch() API is
 significantly more flexible; however, `keepalive` has less browser
 [support](https://caniuse.com/?search=keepalive) than `sendBeacon()`.
 
-
 ### Get clarification
 
 Tags are often created by following guidance provided by a third-party vendor.
@@ -295,6 +283,8 @@ If it is unclear what a vendor's code does—consider asking someone who knows.
 Getting a second opinion can help identify if a tag has the potential to create
 performance or security issues.
 
+Labeling tags with an owner in the tag manager is also recommended. It is far
+too easy to forget who owns a tag, and be afraid to remove it just in case!
 
 ## Triggers
 
@@ -303,6 +293,10 @@ triggers](https://support.google.com/tagmanager/topic/7679108?hl=en&ref_topic=76
 generally consists of making sure to not trigger tags more than necessary and
 choosing a trigger that balances business needs with performance costs.
 
+Triggers themselves are JavaScript code that will increase the size—and execution
+cost—of the tag manager. While most triggers are small, the cumulative effect can
+add up. Having many click events for example, or timer triggers can dramatically
+increase the workload of the tag manager.
 
 ### Choose an appropriate trigger event
 
@@ -315,6 +309,11 @@ Although it is important to choose appropriate triggers for all tags, it is
 particularly important for tags that load large resources or execute long
 scripts.
 
+Tags can be triggered on
+[Page Views](https://support.google.com/tagmanager/answer/7679319?hl=en)
+(typically `Page load`, on `DOM Ready`, on `Window Loaded`), or based on a
+custom event. To avoid impacting page load, it is recommended to fire
+non-essential tags after `Window Loaded`.
 
 ### Use custom events
 
@@ -329,15 +328,12 @@ events provide a solution to this problem.
 To use custom events, first create a custom event trigger and update your tags
 to use this trigger.
 
-
-
 {% Img
-  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/BvkKSJi7PeAONrdKfIXq.png",
+  src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/FsoFKKxRishTMunJAl3W.png",
   alt="Screenshot of a Custom Event trigger in Google Tag Manager",
-  width="512",
-  height="286"
+  width="800",
+  height="348"
 %}
-
 
 To fire the trigger, push the corresponding event to the data layer.
 
@@ -350,7 +346,6 @@ setTimeout(() => {
 }, 2000);
 ```
 
-
 ### Use specific trigger conditions
 
 Using specific trigger conditions helps avoid firing a tag unnecessarily.
@@ -358,32 +353,50 @@ Although there are many ways to apply this concept, one of the simplest yet most
 useful things you can do is ensure that a tag only fires on pages where it is
 actually used.
 
-
-
 {% Img
-  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/G3MVBTGhNr560S6zEQu4.png",
+  src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/B05L2hNj1RUO9duvvdYX.png",
   alt="Screenshot showing trigger conditions in Google Tag Manager",
-  width="512",
-  height="288"
+  width="800",
+  height="454"
 %}
-
 
 [Built-in variables](https://support.google.com/tagmanager/answer/7182738) can
 also be incorporated into trigger conditions to limit tag firing.
 
+However, be aware that having complex trigger conditions or exceptions takes
+processing time in and off itself, so do not make them too complex.
 
 ### Load your tag manager at an appropriate time
 
-Adjusting when you tag manager loads can have a significant impact on
+Adjusting when you tag manager itself loads can have a significant impact on
 performance. Triggers, regardless of how they are configured, can't fire until
 after a tag manager loads. Although it is important to choose good triggers for
 individual tags (as explained above), experimenting with when you load your tag
 manager can often have an equal or greater impact given that this single
 decision will impact all tags on a page.
 
+Loading the tag manager later also adds a layer of control and can avoid future
+performance issues as it will prevent a tag manager user inadvertently loading
+a tag too early, without realizing the impact this can have.
 
-## Tag Management
+## Variables
 
+Variables allow data to be read from the page. They are useful in triggers, and
+in tags themselves.
+
+Like triggers, variables result in JavaScript code being added to the tag manager,
+and so can cause performance issues. Variables can be relatively simple built-in
+types that can, for example, read parts of the URL, cookies, data layer, or DOM.
+Or they can be custom JavaScript that is basically unlimited in what it can do.
+
+Keep variables simple and to a minimum, since they will need to be evaluated
+continually by the tag manager. Remove old variables that are no longer used
+to reduce both the size of the tag manager script, and the processing time it
+uses.
+
+## Tag management
+
+Using the tags efficiently will reduce the risk of performance issues.
 
 ### Use the data layer
 
@@ -400,20 +413,21 @@ window.dataLayer = [{
   }];
 
 // Pushing a variable to the data layer
-window.dataLayer.push({'variable\_name': 'variable\_value'});
+window.dataLayer.push({'variable_name': 'variable_value'});
 
 // Pushing an event to the data layer
-window.dataLayer.push({'event': 'event\_name'});
+window.dataLayer.push({'event': 'event_name'});
 ```
 
 Although Google Tag Manager can be used without the data layer, its use is
 strongly recommended. The data layer provides a way to consolidate the data
 being accessed by third-party scripts into a single place thereby providing
 better visibility into its usage. Amongst other things, this can help reduce
-redundant variable calculations and script execution.
+redundant variable calculations and script execution. Using a data layer also
+controls the data being accessed by the tags, rather than giving full JavaScript
+variable or DOM access.
 
 {% Aside %}
-
 The performance benefits of the data layer might seem non-intuitive given that
 updating the data layer causes Google Tag Manager to reevaluate all container
 variables and potentially trigger tags—all of which entails JavaScript
@@ -421,9 +435,7 @@ execution. Although it is possible to misuse the data layer, generally speaking,
 if working with the data layer is a source of performance issues, it probably
 indicates that the container itself has performance issues—the data layer is
 merely making these issues more apparent.
-
 {% endAside %}
-
 
 ### Remove duplicate and unused tags
 
@@ -435,6 +447,9 @@ Unused tags should be paused or removed rather than blocked through use of a
 Pausing or removing a tag removes the code from the container; blocking does
 not.
 
+When unused tags are removed, the triggers and variables should also be
+reviewed to see if any of them can be removed if they were only used by those
+tags.
 
 ### Use allow and deny lists
 
@@ -447,11 +462,15 @@ Allow and deny lists are configured through the data layer.
 
 ```js
 window.dataLayer = [{
-  'gtm.allowlist': ['&lt;id>', '&lt;id>', ...],
+  'gtm.allowlist': ['<id>', '<id>', ...],
   'gtm.blocklist': ['customScripts']
 }];
 ```
 
+For example, it is possible to not allow any Custom HTML tags, JavaScript
+variables, or direct DOM access. This means only pixels and pre-defined tags
+can be used, with data from the data layer. While this is certainly restrictive,
+it can result in a much more performant, and secure, tag manager implementation.
 
 ### Consider using server-side tagging
 
@@ -472,22 +491,32 @@ compatibility varies depending on vendor.
 For more information, see [An introduction to server-side
 tagging](https://developers.google.com/tag-manager/serverside/intro).
 
-
 ## Containers
 
+Tag managers typically allow multiple instances or "containers" within their
+set up. This allows multiple containers to be controlled within the one tag
+manager account.
 
 ### Use only one container per page
 
 Using multiple
 [containers](https://developers.google.com/tag-manager/api/v1/reference/accounts/containers)
 on a single page can create significant performance issues as it introduces
-additional overhead and script execution. It is rare for multiple containers to
-be used effectively.
+additional overhead and script execution. At the very least it duplicates the
+core tag code itself which, as it is delivered as part of the container's
+JavaScript, cannot be reused between the containers.
+
+It is rare for multiple containers to be used effectively. However, there can be
+instances when this can work—if controlled well—including:
+- Having a lighter "early load" container, and a heavier "later load" container,
+  rather than one large container.
+- Having a restricted container used by less technical users, with a less
+  restricted, but more tightly controlled, container for tags that cannot be used
+  in the restricted container.
 
 If you must use multiple containers per page, [follow Google Tag manager
 guidance for setting up multiple
 containers](https://developers.google.com/tag-manager/devguide#multiple-containers).
-
 
 ### Use separate containers if needed
 
@@ -499,15 +528,16 @@ Generally speaking, a single container can effectively be used across multiple
 sites if the sites are similar in use and structure. For example, although a
 brand's mobile and web apps might serve similar functions, it's likely that the
 apps will be structured differently, and therefore more effectively managed
-through separate containers. Trying to reuse a single container too broadly
-typically unnecessarily increases the complexity and size of the container by
-forcing the adoption of complex logic to manage tags and triggers.
+through separate containers.
 
+Trying to reuse a single container too broadly typically unnecessarily increases
+the complexity and size of the container by forcing the adoption of complex logic
+to manage tags and triggers.
 
 ### Keep an eye on container size
 
 The size of a container is determined by its tags, triggers, and variables.
-Although a small container may negatively impact page performance, a large
+Although a small container may still negatively impact page performance, a large
 container almost certainly will.
 
 Container size should not be your north-star metric when optimizing your tag
@@ -518,13 +548,13 @@ Google Tag Manager
 [limits](https://support.google.com/tagmanager/answer/2772488?hl=en) container
 size to 200&nbsp;KB and will warn about container size starting at 140&nbsp;KB. However,
 most sites should aim to keep their containers far smaller than this. For
-perspective, the median site container is around 6&nbsp;KB.
+perspective, the median site container is around 50&nbsp;KB.
 
 To determine the size of your container, look at the size of the response
 returned by `https://www.googletagmanager.com/gtag/js?id=YOUR_ID`. This
 response contains the Google Tag Manager library plus the contents of the
-container. By itself, the Google Tag Manager library is around 33&nbsp;KB.
-
+container. By itself, the Google Tag Manager library is around 33&nbsp;KB
+compressed.
 
 ### Name your container versions
 
@@ -535,9 +565,10 @@ meaningful name and along with including a short description of meaningful
 changes within can go a long way in making it easier to debug future performance
 issues.
 
-
 ## Tagging workflows
 
+Managing changes to your tags is important to ensure they do not have a
+negative impact on page performance.
 
 ### Test tags before deploying
 
@@ -545,14 +576,10 @@ Testing your tags before deployment can help catch issues (performance and
 otherwise) before they ship.
 
 Things to consider when testing a tag include:
-
-
-
-*   Is the tag working correctly?
-*   Does the tag cause any layout shifts?
-*   Does the tag load any resources? How large are these resources?
-*   Does the tag trigger a long-running script?
-
+- Is the tag working correctly?
+- Does the tag cause any layout shifts?
+- Does the tag load any resources? How large are these resources?
+- Does the tag trigger a long-running script?
 
 #### Preview mode
 
@@ -568,7 +595,6 @@ collected in preview mode to those collected in production is not recommended.
 However, this discrepancy should not affect the execution behavior of the tags
 themselves.
 
-
 #### Standalone testing
 
 An alternative approach to testing tags is to set up an empty page containing a
@@ -579,7 +605,6 @@ tag on things like script execution. Check out how [Telegraph uses this
 isolation approach to improve
 performance](https://medium.com/the-telegraph-engineering/improving-third-party-web-performance-at-the-telegraph-a0a1000be5)
 of third-party code.
-
 
 ### Monitor tag performance
 
@@ -593,7 +618,6 @@ choosing.
 For more information, see [How to build a Google Tag Manager
 Monitor](https://www.simoahava.com/analytics/google-tag-manager-monitor/).
 
-
 ### Require approval for container changes
 
 First-party code typically goes through review and testing before deployment -
@@ -605,13 +629,18 @@ would still like to keep an eye on changes, you can set up [container
 notifications](https://support.google.com/tagmanager/answer/9713667?hl=en) to
 receive email alerts about container events of your choosing.
 
-
 ### Periodically audit tag usage
 
 One of the challenges of working with tags is that they tend to accumulate over
 time: tags get added but are rarely removed. Auditing tags periodically is one
 way to reverse this trend. The ideal frequency for doing this will depend on how
 often your site's tags are updated.
+
+Labeling each tag so the owner is obvious allows easier identification of who
+is responsive for that tag and can say whether it is still needed.
+
+When auditing tags, do not forget about cleaning up triggers and variables as
+well. They can easily be the cause of performance issues too.
 
 For more information, see [Keeping third-party scripts under
 control](/controlling-third-party-scripts/).

@@ -183,7 +183,7 @@ A maioria das pessoas, em algum momento da vida, desejará aproveitar as vantage
 
 #### Como
 
-A [Introdução à Acessibilidade Web](https://www.w3.org/WAI/fundamentals/accessibility-intro/) do W3C é um bom lugar para começar. A maioria dos testes de acessibilidade deve ser feita manualmente. Ferramentas como as auditorias de [Acessibilidade](/lighthouse-accessibility/) do Lighthouse, [axe](https://github.com/dequelabs/axe-core) e [Accessibility Insights](https://accessibilityinsights.io/) podem ajudar a automatizar alguns testes de acessibilidade. Também é importante usar elementos semanticamente corretos em vez de recriar esses elementos por conta própria, por exemplo, os elementos `a` e `button`. Isso garante que, quando você precisar criar uma funcionalidade mais avançada, as expectativas de acessibilidade sejam atendidas (como quando usar setas em vez de tab). A [A11Y Nutrition Cards](https://accessibilityinsights.io/) tem excelentes conselhos sobre isso para alguns componentes comuns.
+A [Introdução à Acessibilidade Web](https://www.w3.org/WAI/fundamentals/accessibility-intro/) do W3C é um bom lugar para começar. A maioria dos testes de acessibilidade deve ser feita manualmente. Ferramentas como as auditorias de [Acessibilidade](https://developer.chrome.com/docs/lighthouse/accessibility/) do Lighthouse, [axe](https://github.com/dequelabs/axe-core) e [Accessibility Insights](https://accessibilityinsights.io/) podem ajudar a automatizar alguns testes de acessibilidade. Também é importante usar elementos semanticamente corretos em vez de recriar esses elementos por conta própria, por exemplo, os elementos `a` e `button`. Isso garante que, quando você precisar criar uma funcionalidade mais avançada, as expectativas de acessibilidade sejam atendidas (como quando usar setas em vez de tab). A [A11Y Nutrition Cards](https://accessibilityinsights.io/) tem excelentes conselhos sobre isso para alguns componentes comuns.
 
 {% endDetails %}
 
@@ -203,7 +203,7 @@ Uma das maiores vantagens da web é a capacidade de descobrir sites e aplicativo
 
 #### Como
 
-Comece garantindo que cada URL tenha um título descritivo exclusivo e uma descrição meta. Em seguida, você pode usar o [Google Search Console](https://search.google.com/search-console/about) e as [auditorias de otimização de mecanismo de pesquisa](/lighthouse-seo/) do Lighthouse para ajudar a depurar e corrigir problemas de descoberta em seu PWA. Você também pode usar as ferramentas para webmasters do [Bing](https://www.bing.com/toolbox/webmaster) ou [Yandex](https://webmaster.yandex.com/welcome/) e considerar a inclusão de [dados estruturados](https://goo.gle/search-gallery) por meio de esquemas do [Schema.org](https://schema.org/) em seu PWA.
+Comece garantindo que cada URL tenha um título descritivo exclusivo e uma descrição meta. Em seguida, você pode usar o [Google Search Console](https://search.google.com/search-console/about) e as [auditorias de otimização de mecanismo de pesquisa](https://developer.chrome.com/docs/lighthouse/seo/) do Lighthouse para ajudar a depurar e corrigir problemas de descoberta em seu PWA. Você também pode usar as ferramentas para webmasters do [Bing](https://www.bing.com/toolbox/webmaster) ou [Yandex](https://webmaster.yandex.com/welcome/) e considerar a inclusão de [dados estruturados](https://goo.gle/search-gallery) por meio de esquemas do [Schema.org](https://schema.org/) em seu PWA.
 
 {% endDetails %}
 

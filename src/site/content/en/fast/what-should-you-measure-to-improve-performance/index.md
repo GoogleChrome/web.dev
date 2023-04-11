@@ -56,7 +56,7 @@ reports](/fast/chrome-ux-report). A convenient combination of
 both can be found in
 [PageSpeed Insights](https://pagespeed.web.dev/).
 You should also track relevant metrics from the field yourself:
-[Measuring these metrics on real users' devices](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices)
+[Measuring these metrics on real users' devices](/user-centric-performance-metrics/#in-the-field)
 provides a good overview.
 
 From a user perspective the most important metrics are:
@@ -64,12 +64,12 @@ From a user perspective the most important metrics are:
 +   **[First Contentful Paint (FCP)](/fcp/):**
     The time the user stares at a blank screen. This is
     when most users bounce, as they don't see progress.
-+   **[First Meaningful Paint (FMP)](/first-meaningful-paint):**
++   **[First Meaningful Paint (FMP)](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/):**
     When the user begins to see the main content they came for. This
     is often the hero image, but for a landing page it may even be a call to
     action such as a **Buy** button, since the user may have arrived with a clear
     intent (for example, through a targeted ad campaign).
-+   **[First Input Delay (FID)](https://developers.google.com/web/updates/2018/05/first-input-delay):**
++   **[First Input Delay (FID)](/fid/):**
     The time the website needs to react to the user's first input.
     Excessive JavaScript and other asset loading problems can block this,
     leading to failed taps or clicks, erroneous inputs and page abandonment.

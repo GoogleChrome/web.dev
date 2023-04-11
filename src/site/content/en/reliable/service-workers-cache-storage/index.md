@@ -46,6 +46,7 @@ having to worry about the network. That entails using the other piece of the
 puzzle: the Cache Storage API.
 
 ## The Cache Storage API
+{% BrowserCompat 'api.CacheStorage' %}
 
 The Cache Storage  API opens up a whole new range of possibilities, by giving
 developers complete control over the contents of the cache. Instead of relying

@@ -88,6 +88,15 @@ important:
   ru: Важный
   zh: 重要的
 
+update:
+  en: Update
+  es: Actualizar
+  ja: 更新
+  ko: 업데이트
+  pt: Atualizar
+  ru: Обновлять
+  zh: 更新
+
 do:
   en: Do
   es: Hacer
@@ -172,3 +181,12 @@ see_all:
 
 more:
   en: More
+
+by:
+  en: By
+
+chrome_devrel:
+  en: Chrome DevRel
+
+skip_link:
+  en: Skip to content

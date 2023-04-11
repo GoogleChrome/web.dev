@@ -68,9 +68,10 @@ is an API for specifying font display strategy. `swap` tells the browser that
 text using this font should be displayed immediately using a system font. Once
 the custom font is ready, the system font is swapped out.
 
+{% BrowserCompat 'css.at-rules.font-face.font-display' %}
+
 If a browser does not support `font-display`, the browser continues to follow
-it's default behavior for loading fonts. Check which browsers support
-`font-display` [here](https://caniuse.com/#search=font-display).
+its default behavior for loading fonts.
 
 These are the default font-loading behaviors for common browsers:
 
@@ -122,7 +123,7 @@ There are three parts to this approach:
     couple lines of JavaScript code, thanks to the [FontFaceObserver](https://github.com/bramstein/fontfaceobserver) library.
 +  Update page styling to use the custom font.
 
-Here are the changes you can expect to make in order to implement this:
+Here are the changes you can expect to make to implement this:
 
 +  Refactor your CSS to not use a custom font on initial page load.
 +  Add a script to your page. This script detects when the custom font is

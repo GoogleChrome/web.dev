@@ -41,7 +41,12 @@ The service worker layer has its **own lifecycle** independent of the browser ta
 
 In the [Service Workies](https://serviceworkies.com) game we cover the many details of the service worker lifecycle and give you a ton of practice working with it.
 
-{% Img src="image/admin/mOyHcAJW55YiI12VW05a.gif", alt="a new service worker replacing an old one", width="800", height="460" %}
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/MhBc1XtdrEGOQn8iXtKZ.mp4",
+autoplay="true",
+controls="true",
+loop="true",
+muted="true",
+alt="a new service worker replacing an old one", width="800", height="460" %}
 
 {% Aside 'note' %}
 Think of your service worker as a new middle layer with its own lifecycle and methods for updating.
@@ -53,7 +58,7 @@ Having a service worker on your site gives you incredible benefits. Your site ca
 
 - work flawlessly even when the user is offline
 - gain massive performance improvements through [caching](https://developer.mozilla.org/docs/Web/API/Cache)
-- use [push notifications](https://developers.google.com/web/fundamentals/push-notifications/)
+- use [push notifications](/notifications/)
 - be installed as a [PWA](/progressive-web-apps/)
 
 With as much as service workers can do, they are limited by design. They can't do anything synchronous or in the same thread as your site. So that means no access to:
@@ -62,7 +67,7 @@ With as much as service workers can do, they are limited by design. They can't d
 - the DOM
 - the window
 
-The good news is there are a handful of ways your page can communicate with its service worker, including direct [`postMessage`](https://developer.mozilla.org/docs/Web/API/Client/postMessage), one-to-one [Message Channels](https://developer.mozilla.org/docs/Web/API/MessageChannel) and one-to-many [Broadcast Channels](https://developers.google.com/web/updates/2016/09/broadcastchannel).
+The good news is there are a handful of ways your page can communicate with its service worker, including direct [`postMessage`](https://developer.mozilla.org/docs/Web/API/Client/postMessage), one-to-one [Message Channels](https://developer.mozilla.org/docs/Web/API/MessageChannel) and one-to-many [Broadcast Channels](https://developer.chrome.com/blog/broadcastchannel).
 
 {% Aside 'note' %}
 Think of your service worker as something that lives outside of your page. You can talk to it, but it can't access your page directly.
@@ -74,7 +79,12 @@ An active service worker goes on living even after a user leaves your site or cl
 
 In [Service Workies](https://serviceworkies.com) we visualize this concept with Kolohe (a friendly service worker) intercepting and handling requests.
 
-{% Img src="image/admin/YcXrupDTu2m7nlRU4FAz.gif", alt="service worker intercepting http requests", width="800", height="605" %}
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/BeJWEOe4TPoMzdBTFVWI.mp4",
+autoplay="true",
+controls="true",
+loop="true",
+muted="true",
+alt="service worker intercepting http requests", width="800", height="605" %}
 
 ### Stopped
 
@@ -165,7 +175,7 @@ When you deploy a new service worker, you'll bump the `version` so that it does 
 
 ### End clean
 
-Once your service worker reaches the `activated` state, you know it has taken over, and the previous service worker is redundant (i.e., no longer needed). At this point it's important to clean up after the old service worker. Not only does it respect your users' cache storage limits, but it can also prevent unintentional bugs.
+Once your service worker reaches the `activated` state, you know it has taken over, and the previous service worker is redundant. At this point it's important to clean up after the old service worker. Not only does it respect your users' cache storage limits, but it can also prevent unintentional bugs.
 
 The [`caches.match()`](https://developer.mozilla.org/docs/Web/API/CacheStorage/match) method is an often-used shortcut for retrieving an item from _any_ cache where there's a match. But it iterates through the caches in the order they were created. So let's say you've got two versions of a script file `app.js` in two different caches—`assets-1` and `assets-2`. Your page is expecting the newer script that's stored in `assets-2`. But if you haven't deleted the old cache, `caches.match('app.js')` is going to return the old one from `assets-1` and most likely break your site.
 
@@ -203,4 +213,9 @@ Getting into the right mindset while thinking about service workers will help yo
 
 If you want to understand all this by [playing a game](https://gedd.ski/post/mastery-through-play/), then you're in luck! Go play [Service Workies](https://serviceworkies.com) where you'll learn the ways of the service worker in order to slay the offline beasts.
 
-{% Img src="image/admin/HN8hJsK415482mqXmiaI.gif", alt="preview of the Service Workies game", width="800", height="519" %}
+{% Video src="video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/ammLWAa5Kc13D5CgstvK.mp4",
+autoplay="true",
+controls="true",
+loop="true",
+muted="true",
+alt="preview of the Service Workies game", width="800", height="519" %}

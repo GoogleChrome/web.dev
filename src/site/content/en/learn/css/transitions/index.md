@@ -2,7 +2,7 @@
 title: Transitions
 description: >
   In this module, learn how to define transitions between states of an element. Use transitions to improve user experience by providing visual feedback to user interaction.
-  
+
 audio:
   title: 'The CSS Podcast - 044: Transitions'
   src: https://traffic.libsyn.com/secure/thecsspodcast/TCP053_v1.mp3?dest-id=1891556
@@ -22,15 +22,18 @@ Using CSS transitions, we can interpolate between the initial state and the targ
 _Interpolation_ is the process of creating "in-between" steps that smoothly transition from one state to another.
 {% endAside %}
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYzNrJV',
   height: 320
 } %}
+</figure>
 
 ## Transition properties
+{% BrowserCompat 'css.properties.transition-property' %}
 
-To use transitions in CSS, you can use the various transition properties or the `transition` shorthand property. 
+To use transitions in CSS, you can use the various transition properties or the `transition` shorthand property.
 
 ### transition-property
 
@@ -46,21 +49,25 @@ The `transition-property` accepts one or more CSS property names in a comma-sepa
 
 Optionally, you may use `transition-property: all` to indicate that every property should transition.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'VwWPeEj',
   height: 400
 } %}
+</figure>
 
 ### transition-duration
 
 The [`transition-duration`](https://developer.mozilla.org/docs/Web/CSS/transition-duration) property is used to define the length of time that a transition will take to complete.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'wvegMYp',
   height: 400
 } %}
+</figure>
 
 `transition-duration` accepts time units, either in seconds (`s`) or milliseconds (`ms`) and defaults to `0s`.
 
@@ -70,10 +77,12 @@ Use the [`transition-timing-function`](https://developer.mozilla.org/docs/Web/CS
 
 By default, CSS will transition your elements at a constant speed (`transition-timing-function: linear`). Linear transitions can end up looking somewhat artificial, though: in real life, objects have weight and can't stop and start instantly. Easing into or out of a transition can make your transitions more lively and natural.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'QWgdyZx'
 } %}
+</figure>
 
 Our [module on CSS Animation](/learn/css/animations/#animation-timing-function) has a good overview of timing functions.
 
@@ -85,18 +94,22 @@ You can use [DevTools](https://developer.chrome.com/docs/devtools/css/animations
 
 Use the [`transition-delay`](https://developer.mozilla.org/docs/Web/CSS/transition-delay) property to specify the time at which a transition will start. If `transition-duration` is not specified, transitions will start instantly because the default value is `0s`. This property accepts a time unit, for example seconds (`s`) or milliseconds (`ms`).
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'jOwyWep'
 } %}
+</figure>
 
 This property is useful for staggering transitions, achieved by setting a longer `transition-delay` for each subsequent element in a group.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLXgeRQ',
   height: 410
 } %}
+</figure>
 
 `transition-delay` is also useful for debugging. Setting the delay to a negative value can start a transition further into the timeline.
 
@@ -128,13 +141,16 @@ In general, it's only possible to transition elements that can have a "middle st
 Here are some common properties you can transition.
 
 ### Transform
+{% BrowserCompat 'css.properties.transform' %}
 
 The [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) CSS property is commonly transitioned because it is a GPU-accelerated property that results in smoother animation that also consumes less battery. This property lets you arbitrarily scale, rotate, translate, or skew an element.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRErowE'
 } %}
+</figure>
 
 Check out [the section on transforms](/learn/css/functions/#transforms) in [our Functions module](/learn/css/functions/).
 
@@ -155,11 +171,13 @@ Check out [our module on color](/learn/css/color/).
 
 Shadows are often transitioned to indicate elevation change, like from user focus.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'gORgPQx',
   height: 300
 } %}
+</figure>
 
 Check out [our module on shadows](/learn/css/shadows/).
 
@@ -167,11 +185,13 @@ Check out [our module on shadows](/learn/css/shadows/).
 
 [`filter`](https://developer.mozilla.org/docs/Web/CSS/filter) is a powerful CSS property that lets you add graphic effects on the fly. Transitioning between different `filter` states can create some pretty impressive results.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'PojWZxJ',
   height: 350
 } %}
+</figure>
 
 Check out [our module on filters](/learn/css/filters/).
 
@@ -181,12 +201,12 @@ Your CSS must include a change of state *and* an event that triggers that state 
 
 Below is a list of some pseudo-classes and events that can trigger state changes in your elements.
 
-* [`:hover`](/learn/css/pseudo-classes/#:hover): matches if the cursor is over the element.
-* [`:focus`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible): matches if the element is focused.
-* [`:focus-within`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible ) : matches if the element or any of its descendants are
+* [`:hover`](/learn/css/pseudo-classes/#hover): matches if the cursor is over the element.
+* [`:focus`](/learn/css/pseudo-classes/#focus,-focus-within,-and-focus-visible): matches if the element is focused.
+* [`:focus-within`](/learn/css/pseudo-classes/#focus,-focus-within,-and-focus-visible) : matches if the element or any of its descendants are
     focused.
-* [`:target`](/learn/css/pseudo-classes/#:target): matches when the current URL's [fragment](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#fragment) matches the element's id.
-* [`:active`](/learn/css/pseudo-classes/#:active):  matches when the element is being activated (typically when the
+* [`:target`](/learn/css/pseudo-classes/#target): matches when the current URL's [fragment](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#fragment) matches the element's id.
+* [`:active`](/learn/css/pseudo-classes/#active):  matches when the element is being activated (typically when the
     mouse is pressed over it).
 * `class` change from JavaScript: when an element's CSS `class` changes via
     JavaScript, CSS will transition eligible properties that have changed.
@@ -205,16 +225,18 @@ By setting different `transition` properties on hover/focus, it's possible to cr
 
 .my-element:hover {
   background: blue;
-  
+
   /* This transition is applied on the "enter" transition */
   transition: background 150ms ease;
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJgWMaO'
 } %}
+</figure>
 
 ## Accessibility considerations
 
@@ -243,6 +265,10 @@ CSS transitions are not for everyone. For some people, transitions and animation
 ```
 
 Check out our blog post [prefers-reduced-motion: Sometimes less movement is more](/prefers-reduced-motion/) for more information on this media feature.
+
+{% Aside %}
+In the Learn Accessibility module on [animation and motion](/learn/accessibility/motion/) discover how to add delight to your site without causing problems for some users.
+{% endAside %}
 
 ## Performance considerations
 

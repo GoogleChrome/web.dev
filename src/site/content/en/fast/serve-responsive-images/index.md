@@ -8,7 +8,7 @@ description: |
   needed. Instead of a "one-size-fits-all" approach to images, serve different
   image sizes to different devices.
 date: 2018-11-05
-updated: 2021-06-04
+updated: 2022-11-29
 codelabs:
   - codelab-specifying-multiple-slot-widths
   - codelab-art-direction
@@ -20,6 +20,26 @@ tags:
 Serving desktop-sized images to mobile devices can use 2–4x more data than
 needed. Instead of a "one-size-fits-all" approach to images, serve different
 image sizes to different devices.
+
+## Responsive images and Core Web Vitals
+
+When you serve responsive images, you're evaluating the display capabilities of
+the user's device and choosing one of a set of image candidates that are optimal
+for display based on those criteria. The result&mdash;as stated previously&mdash;is
+rather than delivering too much image data to devices that won't benefit from it,
+you're serving an appropriately sized image for the device. For smaller devices such
+as phones and tablets, this equates to reduced data usage as compared to devices
+with larger screens, such as laptops.
+
+The effects of faster image loading can also extend to your page's [Largest Contentful Paint (LCP)](/lcp/).
+For example, if your page's [LCP element](/lcp/#what-elements-are-considered) is an image,
+you're reducing that LCP candidate's [resource load time](/optimize-lcp/#3-reduce-resource-load-time).
+
+Lower resource load times will lower the load time for an LCP image, which will improve
+the page's LCP score. A lower LCP means users will perceive that your site is loading faster,
+particularly the largest piece of content visible in the viewport during page load. Serving
+responsive images can also reduce bandwidth contention for other resources on the page,
+which can improve how fast your page loads in general.
 
 ## Resize images
 

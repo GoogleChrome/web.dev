@@ -81,7 +81,7 @@ PageSpeed Insights и [PageSpeed Insights API](https://developers.google.com/spe
 
 Разработчики могут делать запрос по источнику или URL-адресу и сегментировать результаты по различным форм-факторам. API обновляется ежедневно и суммирует данные за предыдущие 28 дней (в отличие от набора данных BigQuery, который агрегируется ежемесячно). API имеет те же ослабленные квоты на запросы к общедоступным API, которые мы устанавливаем для другого нашего APIAPI PageSpeed Insights (25 000 запросов в день).
 
-Ниже приведена [демонстрация](/chrome-ux-report-api/) использования CrUX API для визуализации показателей Core Web Vitals с распределением по **«хорошо»**, **«требует улучшения»** и **«плохо»**:
+Ниже приведена [демонстрация](https://developer.chrome.com/blog/chrome-ux-report-api/) использования CrUX API для визуализации показателей Core Web Vitals с распределением по **«хорошо»**, **«требует улучшения»** и **«плохо»**:
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Демонстрация Chrome User Experience Report API с метриками Core Web Vitals", width="800", height="523" %}</figure>
 
@@ -89,7 +89,7 @@ PageSpeed Insights и [PageSpeed Insights API](https://developers.google.com/spe
 
 **Обновленная панель управления CrUX**
 
-Обновленная [панель CrUX Dashboard](http://g.co/chromeuxdash) позволяет легко отслеживать производительность источника с течением времени, и теперь можно использовать панель для мониторинга распределения всех показателей Core Web Vitals. Чтобы начать работу с панелью, ознакомьтесь с нашим [руководством](/chrome-ux-report-data-studio-dashboard/) на web.dev.
+Обновленная [панель CrUX Dashboard](http://g.co/chromeuxdash) позволяет легко отслеживать производительность источника с течением времени, и теперь можно использовать панель для мониторинга распределения всех показателей Core Web Vitals. Чтобы начать работу с панелью, ознакомьтесь с нашим [руководством](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/) на web.dev.
 
 <figure>{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="Панель инструментов отчета Chrome UX Report с метриками Core Web Vitals на новой целевой странице", width="800", height="497" %}</figure>
 

@@ -194,7 +194,7 @@ FT.com](https://medium.com/ft-product-technology/a-faster-ft-com-10e7c077dc1c).
 For cases where the test page (let's say a product detail page) is mostly linked
 out from a different page (let's say the homepage),
 [prefetching](/link-prefetch/) or
-[prerendering](https://developers.google.com/web/updates/2018/07/nostate-prefetch)
+[prerendering](https://developer.chrome.com/blog/nostate-prefetch)
 the product page directly from the homepage for the test group will speed up the
 subsequent load of the page. Note that in this case the A/B test split (step 4)
 is done on the homepage. In addition, all of this may slow down the first page
@@ -308,7 +308,7 @@ source, and user profiles and types, such as new users versus repeat visitors.
 Each group of users may be more or less sensitive to slower speeds and
 identifying these is also quite helpful.
 
-[Data Studio](https://support.google.com/datastudio/answer/6283323?hl=en) or
+[Looker Studio](https://support.google.com/looker-studio/answer/6283323?hl=en) (formerly Data Studio) or
 other data visualization tools make it easy to integrate various data sources
 including Google Analytics. This makes it easy to conduct analysis, and also
 create dashboards that are shareable with the many stakeholders involved in

@@ -4,8 +4,9 @@ subhead: |
   A step-by-step guide on how to break down LCP and identify key areas to improve.
 authors:
   - philipwalton
+  - tunetheweb
 date: 2020-05-05
-updated: 2022-05-11
+updated: 2022-03-24
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
@@ -198,14 +199,14 @@ Here are some examples where the LCP resource cannot be discovered from scanning
 
 In each of these cases, the browser needs to run the script or apply the stylesheet—which usually involves waiting for network requests to finish—before it can discover the LCP resource and could start loading it. This is never optimal.
 
-To eliminate unnecessary resource load delay, your LCP resource should _always_ be discoverable from the HTML source. In cases where the resource is only referenced from an external CSS or JavaScript file, then the LCP resource should be preloaded; for example:
+To eliminate unnecessary resource load delay, your LCP resource should _always_ be discoverable from the HTML source. In cases where the resource is only referenced from an external CSS or JavaScript file, then the LCP resource should be preloaded, with a high fetch priority (more on [fetch priority in the next section](#optimize-the-priority-the-resource-is-given)); for example:
 
 ```html
 <!-- Load the stylesheet that will reference the LCP image. -->
 <link rel="stylesheet" href="/path/to/styles.css">
 
-<!-- Preload the LCP image so it starts loading with the stylesheet. -->
-<link rel="preload" as="image" href="/path/to/hero-image.webp" type="image/webp">
+<!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+<link rel="preload" fetchpriority="high" as="image" href="/path/to/hero-image.webp" type="image/webp">
 ```
 
 {% Aside 'warning' %}
@@ -214,11 +215,15 @@ On most pages, ensuring that the LCP resource starts loading at the same time as
 
 #### Optimize the priority the resource is given
 
-In some cases, the LCP resource is discoverable from the HTML markup, but it _still_ doesn't start loading as early as the first resource. This can happen if the browser preload scanner's priority heuristics do not recognize that the resource is important, or if it determines that other resources are more important.
+Even if the LCP resource is discoverable from the HTML markup, it _still_ may not start loading as early as the first resource. This can happen if the browser preload scanner's priority heuristics do not recognize that the resource is important, or if it determines that other resources are more important.
 
-For example, you can deprioritize your LCP image via HTML if you set [`loading="lazy"`](/browser-level-image-lazy-loading/) on your `<img>` element. The reduced priority means that the resource may begin loading later than it otherwise would.
+For example, you can delay your LCP image via HTML if you set [`loading="lazy"`](/browser-level-image-lazy-loading/) on your `<img>` element. Using lazy loading means that the resource will not be loaded until after layout confirms the image is in the viewport and so may begin loading later than it otherwise would.
 
-Beyond avoiding patterns such as specifying `loading="lazy"` on your LCP image, you can hint to the browser as to which resources are most important via the <code>[fetchpriority](/priority-hints/)</code> attribute for resources that could benefit from a higher priority:
+{% Aside 'warning' %}
+Never lazy-load your LCP image, as that will always lead to unnecessary resource load delay, and will have a negative impact on LCP.
+{% endAside %}
+
+Even without lazy loading, images are not initially loaded with the highest priority by browsers as they are not render-blocking resources. You can hint to the browser as to which resources are most important via the [`fetchpriority`](/priority-hints/) attribute for resources that could benefit from a higher priority:
 
 ```html
 <img fetchpriority="high" src="/path/to/hero-image.webp">
@@ -232,10 +237,6 @@ It's a good idea to set `fetchpriority="high"` on an `<img>` element if you thin
 
 Deprioritizing certain resources can afford more bandwidth to resources that need it more—but be careful. Always check resource priority in DevTools and test changes with lab and field tools.
 
-{% Aside 'warning' %}
-Never lazy-load your LCP image, as that will always lead to unnecessary resource load delay, and will have a negative impact on LCP.
-{% endAside %}
-
 After you have optimized your LCP resource priority and discovery time, your network waterfall should look like this (with the LCP resource starting at the same time as the first resource):
 
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/f9s7SJSBNKcMm3VmcvtT.png", alt="A network waterfall diagram showing the LCP resource now starting at the same time as the first resource", width="800", height="375" %}
@@ -248,11 +249,12 @@ Another reason your LCP resource may not start loading as early as possible—ev
 
 The goal in this step is to ensure the LCP element can render _immediately_ after its resource has finished loading, no matter when that happens.
 
-The primary reason the LCP element _wouldn't_ be able to render immediately after its resource finishes loading is if rendering is [blocked](/render-blocking-resources/) for some other reason:
+The primary reason the LCP element _wouldn't_ be able to render immediately after its resource finishes loading is if rendering is [blocked](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/) for some other reason:
 
 - Rendering of the entire page is blocked due to stylesheets or synchronous scripts in the `<head>` that are still loading.
 - The LCP resource has finished loading, but the LCP element has not yet been added to the DOM (it's waiting for some JavaScript code to load).
 - The element is being hidden by some other code, such as an A/B testing library that's still determining what experiment the user should be in.
+- The main thread is blocked due to [long tasks](/long-tasks-devtools/#what-are-long-tasks), and rendering work needs to wait until those long tasks complete.
 
 The following sections explain how to address the most common causes of unnecessary element render delay.
 
@@ -273,7 +275,7 @@ In most cases, the best way to ensure the stylesheet does not block rendering of
 
 Some recommendations to reduce the size of the stylesheet are:
 
-- [Remove unused CSS](/unused-css-rules/): use Chrome DevTools to find CSS rules that aren't being used and can potentially be removed (or deferred).
+- [Remove unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/): use Chrome DevTools to find CSS rules that aren't being used and can potentially be removed (or deferred).
 - [Defer non-critical CSS](/defer-non-critical-css/): split your stylesheet out into styles that are required for initial page load and then styles that can be loaded lazily.
 - [Minify and compress CSS](/reduce-network-payloads-using-text-compression/): for styles that are critical, make sure you're reducing their [transfer size](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/transferSize) as much as possible.
 
@@ -308,12 +310,20 @@ In cases where JavaScript code needs to run as early as possible in the page loa
 
 From the perspective of optimizing LCP, there are two primary advantage of SSR:
 
-- Your image resources will be discoverable from the HTML source (as discussed in [step 1](#1.-eliminate-resource-load-delay) earlier).
+- Your image resources will be discoverable from the HTML source (as discussed in [step 1](#1-eliminate-resource-load-delay) earlier).
 - Your page content will not require additional JavaScript requests to finish before it can render.
 
 The main downside of SSR is it requires additional server processing time, which can slow down your TTFB. This trade-off is usually worth it though because server processing times are within your control, whereas the network and device capabilities of your users are not.
 
 A similar option to SSR is called static site generation (SSG) or [prerendering](/rendering-on-the-web/#terminology). This is the process of generating your HTML pages in a build step rather than on-demand. If prerendering is possible with your architecture, it's generally a better choice for performance.
+
+#### Break up long tasks
+
+Even if you've followed the above advice, and your JavaScript code is not render-blocking nor is it responsible for rendering your elements, it can still delay LCP.
+
+The most common reason this happens is when pages load large JavaScript files, which need to be parsed and executed on the browser's main thread. This means that, even if your image resource is fully downloaded, it may still have to wait until an unrelated script finishes executing before it can render.
+
+All browsers today render images on the main thread, which means anything that blocks the main thread can also lead to unnecessary _element render delay_.
 
 ### 3. Reduce _resource load time_
 
@@ -321,15 +331,16 @@ The goal of this step is to reduce the time spent transferring the bytes of the 
 
 - Reduce the size of the resource.
 - Reduce the distance the resource has to travel.
+- Reduce contention for network bandwidth.
 - Eliminate the network time entirely.
 
 #### Reduce the size of the resource
 
 The LCP resource of a page (if it has one) will either be an image or a web font. The following guides go into great detail about how to reduce the size of both:
 
-- [Serve the optimal image size](/uses-responsive-images/)
-- [Use modern image formats](/uses-webp-images/)
-- [Compress images](/uses-optimized-images/)
+- [Serve the optimal image size](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)
+- [Use modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)
+- [Compress images](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)
 - [Reduce web font size](/reduce-webfont-size/)
 
 #### Reduce the distance the resource has to travel
@@ -342,15 +353,17 @@ In fact, [image CDNs](/image-cdns/) in particular are a great choice because the
 While image CDNs are a great way to reduce resource load times, using a third-party domain to host your images comes with an additional connection cost. While preconnecting to the origin can mitigate some of this cost, the best option is to serve images from the same origin as your HTML document. Many CDNs allow you to proxy requests from your origin to theirs, which is a great option to look into if available.
 {% endAside %}
 
+#### Reduce contention for network bandwidth
+
+Even if you've reduced the size of your resource and the distance it has to travel, a resource can still take a long time to load if you're loading many other resources at the same time. This problem is known as _network contention_.
+
+If you've given your LCP resource a [high `fetchpriority`](/priority-hints/) and [started loading it as soon as possible](#1-eliminate-resource-load-delay) then the browser will do its best to prevent lower-priority resources from competing with it. However, if you're loading many resources with high `fetchpriority`, or if you're just loading a lot of resources in general, then it could affect how quickly the LCP resource loads.
+
 #### Eliminate the network time entirely
 
-The best way to reduce resource load times is to eliminate the network entirely from the process. If you serve your resources with an [efficient cache-control policy](/uses-long-cache-ttl/), then visitors who request those resources a second time will have them served from the cache—bringing the _resource load time_ to essentially zero!
+The best way to reduce resource load times is to eliminate the network entirely from the process. If you serve your resources with an [efficient cache-control policy](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/), then visitors who request those resources a second time will have them served from the cache—bringing the _resource load time_ to essentially zero!
 
-And if your LCP resource is a web font, in addition to [reducing web font size](/reduce-webfont-size/), you should also consider whether you need to block rendering on the web font resource load. If you set a [`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display) value of anything other than `auto` or `block`, then text will [always be visible during load](/font-display/), and LCP will not be blocked on an additional network request.
-
-{% Aside 'warning' %}
-One important exception to the previous statement is if your web font glyphs are bigger than the glyphs in your fallback font, then the swap from the fallback font may result in a new LCP candidate. In these cases the web font resource is still a critical part of LCP.
-{% endAside %}
+And if your LCP resource is a web font, in addition to [reducing web font size](/reduce-webfont-size/), you should also consider whether you need to block rendering on the web font resource load. If you set a [`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display) value of anything other than `auto` or `block`, then text will [always be visible during load](https://developer.chrome.com/docs/lighthouse/performance/font-display/), and LCP will not be blocked on an additional network request.
 
 Finally, if your LCP resource is small, it may make sense to inline the resources as a [data URL](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs), which will also eliminate the additional network request. However, using data URLs [comes with caveats](https://calendar.perfplanet.com/2018/performance-anti-patterns-base64-encoding/) because then the resources cannot be cached and in some cases can lead to longer render delays because of the additional [decode cost](https://www.catchpoint.com/blog/data-uri).
 
@@ -358,7 +371,7 @@ Finally, if your LCP resource is small, it may make sense to inline the resource
 
 The goal of this step is to deliver the initial HTML as quickly as possible. This step is listed last because it's often the one developers have the least control over. However, it's also one of the most important steps because it directly affects every step that comes after it. Nothing can happen on the frontend until the backend delivers that first byte of content, so anything you can do to speed up your TTFB will improve every other load metric as well.
 
-For specific guidance on this topic, see: [How to improve TTFB](/ttfb/#how-to-improve-ttfb).
+For specific guidance on this topic, see [Optimize TTFB](/optimize-ttfb/).
 
 ## Monitor LCP breakdown in JavaScript
 
@@ -418,8 +431,10 @@ new PerformanceObserver((list) => {
   );
   const lcpRenderTime = Math.max(
     lcpResponseEnd,
-    // Prefer `renderTime` (if TOA is set), otherwise use `loadTime`.
-    lcpEntry ? lcpEntry.renderTime || lcpEntry.loadTime : 0
+    // Use LCP startTime (which is the final LCP time) as sometimes
+    // slight differences between loadTime/renderTime and startTime
+    // due to rounding precision.
+    lcpEntry ? lcpEntry.startTime : 0
   );
 
   // Clear previous measures before making new ones.
@@ -463,6 +478,18 @@ new PerformanceObserver((list) => {
 ```
 
 You can use this code as-is for local debugging, or modify it to send this data to an analytics provider so you can get a better understanding of what the breakdown of LCP is on your pages for real users.
+
+{% Aside warning %}
+<p>
+The above code works for standard navigations, but extra consideration must be taken for [prerendered pages](https://developer.chrome.com/blog/prerender-pages/), which should be measured from the activation start time but which has been kept out of this code for simplicity.
+</p>
+<p>
+The [web-vitals library](https://github.com/GoogleChrome/web-vitals) includes this breakdown in the attribution build, and includes these considerations.
+</p>
+<p>
+For those looking to implement their own solution, the [code for this is open source](https://github.com/GoogleChrome/web-vitals/blob/main/src/attribution/onLCP.ts) and is similar to above but with extra lofic for activation start.
+</p>
+{% endAside %}
 
 ## Summary
 

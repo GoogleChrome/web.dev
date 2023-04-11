@@ -168,9 +168,9 @@ Auditorias Farol relevantes:
 
 - [Tamanho adequado das imagens](https://developers.google.com/web/tools/lighthouse/audits/oversized-images)
 - [Adiar imagens fora da tela](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)
-- [Codifique imagens de forma eficiente](/uses-optimized-images/)
+- [Codifique imagens de forma eficiente](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)
 - [Veicule imagens em formatos de última geração](https://developers.google.com/web/tools/lighthouse/audits/webp)
-- [Use formatos de vídeo para conteúdo animado](/efficient-animated-content/)
+- [Use formatos de vídeo para conteúdo animado](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)
 
 Fluxo de trabalho do Chrome DevTools:
 
@@ -205,7 +205,7 @@ A minimização remove caracteres desnecessários de JavaScript e CSS.
 
 #### Diagnosticar
 
-Use as [auditorias Minify CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) e [Minify JavaScript](/unminified-javascript/) Lighthouse para identificar recursos que precisam de minimização.
+Use as [auditorias Minify CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) e [Minify JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/) Lighthouse para identificar recursos que precisam de minimização.
 
 #### Consertar
 

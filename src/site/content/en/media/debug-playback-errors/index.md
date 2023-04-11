@@ -61,8 +61,8 @@ The [MP4Box.js / ISOBMFF Box Structure Viewer] is a useful tool to debugging bit
 
 Finally, some video stream analysis professional tools like [VQAnalyzer], [Elecard StreamEye], and [Codecian CodecVisa], may be worth your money.
 
-[mediaerror]: https://developer.mozilla.org/en-US/docs/Web/API/MediaError
-[`mediaerror.code`]: https://developer.mozilla.org/en-US/docs/Web/API/MediaError/code#media_error_code_constants
+[mediaerror]: https://developer.mozilla.org/docs/Web/API/MediaError
+[`mediaerror.code`]: https://developer.mozilla.org/docs/Web/API/MediaError/code#media_error_code_constants
 ["media panel"]: https://developer.chrome.com/docs/devtools/media-panel/
 [ffmpeg]: /media-application-basics/#ffmpeg
 [check media file integrity]: https://www.ffmpeg.org/ffmpeg-codecs.html#:~:text=err_detect

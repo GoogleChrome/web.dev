@@ -1,16 +1,13 @@
 ---
-layout: base
+layout: 'base'
 ---
-
 {# This is the standard layout that most pages will use. #}
-{% include 'partials/header-default.njk' %}
-{% include 'partials/navigation-drawer-default.njk' %}
-<main>
-  <div id="content">
-    {% if show_banner %}
-      {% include 'partials/banner.njk' %}
-    {% endif %}
-    {{ content | safe }}
-  </div>
+<a href="#main" class="skip-link button" data-type="primary">{{ 'i18n.common.skip_link' | i18n(locale) }}</a>
+{% include 'partials/site-header.njk' %}
+<main id="main">
+  {% if show_banner %}
+    {% include 'partials/banner.njk' %}
+  {% endif %}
+  {{ content | safe }}
 </main>
-{% include 'partials/footer.njk' %}
+{% include 'partials/site-footer.njk' %}

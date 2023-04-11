@@ -1,4 +1,6 @@
 const Prism = require('prismjs');
+const {i18n} = require('../../_filters/i18n');
+const {defaultLocale} = require('../../_data/site');
 const patterns = require('../../_data/patterns').patterns;
 
 /**
@@ -41,6 +43,11 @@ module.exports = (patternId, height) => {
       const type = prismTypes.includes(asset.type) ? asset.type : 'text';
       assetLines.push(asset.content.split('\n').length);
 
+      const isSupportingAsset = asset.name.includes('supporting');
+      const tabName = isSupportingAsset
+        ? `${i18n('i18n.patterns.supporting', defaultLocale)} ${type}`
+        : asset.type;
+
       // Jake says:
       // Because Prism outputs preformatted code, it will often contain blank
       // lines, eg if the source contains blank lines. Unfortunately the
@@ -57,7 +64,7 @@ module.exports = (patternId, height) => {
         type,
       ).replace(/^(\s*?)$/gm, '<span></span>$1');
 
-      return `<web-tab title="${asset.type}" data-label="${asset.type}">
+      return `<web-tab title="${tabName}" data-label="${tabName}">
           <pre><code class="language-${asset.type}">${content}</code></pre>
         </web-tab>`;
     })
@@ -73,7 +80,7 @@ module.exports = (patternId, height) => {
         <iframe src="${pattern.demo}" title="Demo" height="${height}" loading="lazy"></iframe>
       </div>
       <div class="code-pattern__assets" style="height: ${height}px">
-        <web-tabs>${assets}</web-tabs>
+        <web-tabs limit="3">${assets}</web-tabs>
       </div>
     </div>
     <div class="code-pattern__meta">

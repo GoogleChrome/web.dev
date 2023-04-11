@@ -292,7 +292,7 @@ Once you have a working website, check how you are doing on user-centric perform
 
 ### Budget for rule-based metrics
 
-Very effective rule-based metrics are [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) scores. Lighthouse grades your app in 5 categories and one of those is performance. Performance scores are calculated based on [5 different metrics](https://developers.google.com/web/tools/lighthouse/scoring#perf-audits), including First Contentful Paint and Time to Interactive.
+Very effective rule-based metrics are [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) scores. Lighthouse grades your app in 5 categories and one of those is performance. Performance scores are calculated based on [5 different metrics](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/#perf-audits), including First Contentful Paint and Time to Interactive.
 
 When you try to build a great site, **set Lighthouse performance score budget to at least 85 (out of 100)**. Use [Lighthouse CI](https://github.com/ebidel/lighthouse-ci) to enforce it on pull-requests.
 
@@ -300,7 +300,7 @@ When you try to build a great site, **set Lighthouse performance score budget to
 
 Ask yourself what level of interaction you expect on your site. If it's a news website, users' primary goal is to read content so you should focus on rendering quickly and keeping FCP low. Doggos.com visitors want to click on relevant links as soon as possible, so the top priority is low TTI.
 
-Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors' websites, through the [Chrome User Experience report](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) dashboard.
+Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors' websites, through the [Chrome User Experience report](https://developer.chrome.com/blog/chrome-ux-report-looker-studio-dashboard/) dashboard.
 
 <figure>
   {% Img src="image/admin/ycZwOrFNzjdjquriM9rJ.png", alt="Device distribution data from Chrome User Experience report", width="800", height="530" %}

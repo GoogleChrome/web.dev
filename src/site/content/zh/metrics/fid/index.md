@@ -154,13 +154,13 @@ new PerformanceObserver((entryList) => {
 开发者不必记住所有这些细微差异，而是可以使用[`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)来测量 FID，库会自行处理这些差异（在可能的情况下）：
 
 ```js
-import {getFID} from 'web-vitals';
+import {onFID} from 'web-vitals';
 
 // 当 FID 可用时立即进行测量和记录。
-getFID(console.log);
+onFID(console.log);
 ```
 
-您可以参考[`getFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
+您可以参考[`onFID)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts)，了解如何在 JavaScript 中测量 FID 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），FID 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 
@@ -174,15 +174,15 @@ getFID(console.log);
 
 ## 如何改进 FID
 
-要了解如何改进某个特定网站的 FID，您可以运行一次灯塔性能审计，并留心查看审计建议的各种具体[机会](/lighthouse-performance/#opportunities)。
+要了解如何改进某个特定网站的 FID，您可以运行一次灯塔性能审计，并留心查看审计建议的各种具体[机会](https://developer.chrome.com/docs/lighthouse/performance/#opportunities)。
 
 虽然 FID 是一项实际指标（而灯塔是一个实验室指标工具），但改进 FID 的指导方向与改进[总阻塞时间 (TBT)](/tbt/)这项实验室指标的指导方向相同。
 
 如需深入了解如何改进 FID，请参阅[优化 FID](/optimize-fid/)。有关其他能够改进 FID 的单个性能技巧的进一步指导，请参阅：
 
-- [减少第三方代码的影响](/third-party-summary/)
-- [减少 JavaScript 执行时间](/bootup-time/)
-- [最小化主线程工作](/mainthread-work-breakdown/)
-- [保持较低的请求数和较小的传输大小](/resource-summary/)
+- [减少第三方代码的影响](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
+- [减少 JavaScript 执行时间](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
+- [最小化主线程工作](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
+- [保持较低的请求数和较小的传输大小](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

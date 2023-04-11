@@ -5,10 +5,11 @@ subhead: >
   Learn how to measure memory usage of your web page in production to detect regressions.
 description: >
   Learn how to measure memory usage of your web page in production to detect regressions.
-updated: 2020-10-19
+updated: 2022-08-19
 date: 2020-04-13
 authors:
   - ulan
+  - bckenny
 hero: image/admin/Ne2U4cUtHG6bJ0YeIkt5.jpg
 alt: >
   Green RAM stick. Photo by Harrison Broadbent on Unsplash.
@@ -22,23 +23,13 @@ feedback:
   - api
 ---
 
-{% Aside 'caution' %}
-
-**Updates**
-
-**April 23rd, 2021**: Updated the status and clarified the scope of the API with a note about out-of-process iframes.
-
-**January 20th, 2021**: `performance.measureMemory` is renamed to `performance.measureUserAgentSpecificMemory`
-and enabled by default in Chrome 89 for [cross-origin isolated](/coop-coep) web pages.
-The format of the result also [has changed](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences)
-slightly compared to the Origin Trial version.
-{% endAside %}
-
 Browsers manage the memory of web pages automatically. Whenever a web page
 creates an object, the browser allocates a chunk of memory "under the hood" to
 store the object. Since memory is a finite resource, the browser performs
 garbage collection to detect when an object is no longer needed and to free
-the underlying memory chunk. The detection is not perfect though, and it
+the underlying memory chunk.
+
+The detection is not perfect though, and it
 [was proven][halting-problem] that perfect detection
 is an impossible task. Therefore browsers approximate the notion of "an object
 is needed" with the notion of "an object is reachable". If the web page cannot
@@ -97,68 +88,34 @@ are less useful. Example use cases:
 
 ## Browser compatibility {: #compatibility }
 
-Currently the API is supported only in Chrome 83 as an origin trial. The
-result of the API is highly implementation-dependent because browsers have
+{% BrowserCompat 'api.Performance.measureUserAgentSpecificMemory' %}
+
+Currently the API is supported only in Chromium-based browsers, starting in Chrome 89. The
+result of the API is highly implementation dependent because browsers have
 different ways of representing objects in memory and different ways of
-estimating the memory usage. Browsers may exclude some memory regions from
+estimating memory usage. Browsers may exclude some memory regions from
 accounting if proper accounting is too expensive or infeasible. Thus, results
 cannot be compared across browsers. It is only meaningful to compare the
 results for the same browser.
 
-## Current status {: #status }
-
-<div>
-<table>
-    <thead>
-      <tr>
-        <th>Step</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1. Create explainer</td>
-        <td><a href="https://github.com/WICG/performance-measure-memory">Complete</a></td>
-      </tr>
-      <tr>
-        <td>2. Create initial draft of specification</td>
-        <td><a href="https://wicg.github.io/performance-measure-memory/">Complete</a></td>
-      </tr>
-      <tr>
-        <td>3. Gather feedback and iterate design</td>
-        <td><a href="#feedback">In Progress</a></td>
-      </tr>
-      <tr>
-        <td>4. Origin trial </td>
-        <td><a href="https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113">Complete</a></td>
-      </tr>
-      <tr>
-        <td>5. Launch</td>
-        <td>Enabled by default in Chrome 89</td>
-      </tr>
-    </tbody>
-</table>
-</div>
-
 ## Using `performance.measureUserAgentSpecificMemory()` {: use }
-
-### Enabling via about://flags
-
-To experiment with `performance.measureUserAgentSpecificMemory()` without an origin trial
-token, enable the `#experimental-web-platform-features` flag in `about://flags`.
 
 ### Feature detection
 
-The `performance.measureUserAgentSpecificMemory()` function may fail with a
-[SecurityError][security-error] if the execution environment does not fulfil
+The `performance.measureUserAgentSpecificMemory` function will be unavailable or may
+fail with a [SecurityError][security-error] if the execution environment does not fulfil
 the security requirements for preventing cross-origin information leaks.
-During the origin trial in Chrome, the API requires that [Site
-Isolation][site-isolation] is enabled. When the API ships, it will rely on
-[cross-origin isolation][cross-origin-isolation]. A web page can opt-in to
-cross-origin isolation by setting [COOP+COEP headers][coop-coep].
+It relies on [cross-origin isolation][cross-origin-isolation], which a web page can activate
+by setting [COOP+COEP headers](/coop-coep/).
+
+Support can be detected at runtime:
 
 ```javascript
-if (performance.measureUserAgentSpecificMemory) {
+if (!window.crossOriginIsolated) {
+  console.log('performance.measureUserAgentSpecificMemory() is only available in cross-origin-isolated pages');
+} else if (!performance.measureUserAgentSpecificMemory) {
+  console.log('performance.measureUserAgentSpecificMemory() is not available in this browser');
+} else {
   let result;
   try {
     result = await performance.measureUserAgentSpecificMemory();
@@ -175,10 +132,12 @@ if (performance.measureUserAgentSpecificMemory) {
 
 ### Local testing
 
-Chrome performs the memory measurement during garbage collection. This means
+Chrome performs the memory measurement during garbage collection, which means
 that the API does not resolve the result promise immediately and instead waits
-for the next garbage collection. The API forces a garbage collection after
-some timeout, which is currently set to 20 seconds. Starting Chrome with the
+for the next garbage collection.
+
+Calling the API forces a garbage collection after some timeout, which is
+currently set to 20 seconds, though may happen sooner. Starting Chrome with the
 `--enable-blink-features='ForceEagerMeasureMemory'` command-line flag reduces
 the timeout to zero and is useful for local debugging and testing.
 
@@ -187,37 +146,33 @@ the timeout to zero and is useful for local debugging and testing.
 The recommended usage of the API is to define a global memory monitor that
 samples memory usage of the whole web page and sends the results to a server
 for aggregation and analysis. The simplest way is to sample periodically, for
-example every `M` minutes. That however introduces bias to data because the
-memory peaks may occur between the samples. The following example shows how to
+example every `M` minutes. However, that introduces bias to the data because
+memory peaks may occur between the samples.
+
+The following example shows how to
 do unbiased memory measurements using a [Poisson process][poisson], which
 guarantees that samples are equally likely to occur at any point in time
 ([demo][demo], [source][demo-source]).
 
 First, define a function that schedules the next memory measurement using
-`setTimeout()` with a randomized interval. The function should be called after
-page load on the main window.
+`setTimeout()` with a randomized interval.
 
 ```javascript
 function scheduleMeasurement() {
+  // Check measurement API is available.
+  if (!window.crossOriginIsolated) {
+    console.log('performance.measureUserAgentSpecificMemory() is only available in cross-origin-isolated pages');
+    console.log('See https://web.dev/coop-coep/ to learn more')
+    return;
+  }
   if (!performance.measureUserAgentSpecificMemory) {
-    console.log(
-      'performance.measureUserAgentSpecificMemory() is not available.',
-    );
+    console.log('performance.measureUserAgentSpecificMemory() is not available in this browser');
     return;
   }
   const interval = measurementInterval();
-  console.log(
-    'Scheduling memory measurement in ' +
-      Math.round(interval / 1000) +
-      ' seconds.',
-  );
+  console.log(`Running next memory measurement in ${Math.round(interval / 1000)} seconds`);
   setTimeout(performMeasurement, interval);
 }
-
-// Start measurements after page load on the main window.
-window.onload = function () {
-  scheduleMeasurement();
-};
 ```
 
 The `measurementInterval()` function computes a random interval in milliseconds
@@ -255,59 +210,60 @@ async function performMeasurement() {
 }
 ```
 
+Finally, begin measuring.
+
+```javascript
+// Start measurements.
+scheduleMeasurement();
+```
+
 The result may look as follows:
 
 ```javascript
 // Console output:
 {
-  bytes: 60_000_000,
+  bytes: 60_100_000,
   breakdown: [
     {
       bytes: 40_000_000,
-      attribution: [
-        {
-          url: "https://foo.com",
-          scope: "Window",
-        },
-      ]
-      types: ["JS"]
+      attribution: [{
+        url: 'https://example.com/',
+        scope: 'Window',
+      }],
+      types: ['JavaScript']
     },
-    {
-      bytes: 0,
-      attribution: [],
-      types: []
-    },
+
     {
       bytes: 20_000_000,
-      attribution: [
-        {
-          url: "https://foo.com/iframe",
+      attribution: [{
+          url: 'https://example.com/iframe',
           container: {
-            id: "iframe-id-attribute",
-            src: "redirect.html?target=iframe.html",
+            id: 'iframe-id-attribute',
+            src: '/iframe',
           },
-        },
-      ],
-      types: ["JS"]
+          scope: 'Window',
+      }],
+      types: ['JavaScript']
     },
-  ]
+
+    {
+      bytes: 100_000,
+      attribution: [],
+      types: ['DOM']
+    },
+  ],
 }
 ```
 
-The total memory usage estimate is returned in the `bytes` field. The value of
-bytes is using [numeric separator syntax][numeric-separators]. This value is
+The total memory usage estimate is returned in the `bytes` field. This value is
 highly implementation-dependent and cannot be compared across browsers. It may
-even change between different versions of the same browser. During the origin
-trial the value includes JavaScript memory usage of the main window and all
-**same-site** iframes and related windows. When the API ships, the value will
-account for JavaScript and DOM memory of all iframes, related windows, and web
-workers in the current process. Note that the API does not measure the memory
-of cross-site [out-of-process iframes](https://www.chromium.org/developers/design-documents/oop-iframes)
-when [Site Isolation](https://www.chromium.org/Home/chromium-security/site-isolation) is enabled.
+even change between different versions of the same browser. The value includes
+JavaScript and DOM memory of all iframes, related windows, and web workers in
+the current process.
 
 The `breakdown` list provides further information about the used memory. Each
 entry describes some portion of the memory and attributes it to a set of
-windows, iframes, and workers identified by URLs. The `types` field lists
+windows, iframes, and workers identified by URL. The `types` field lists
 the implementation-specific memory types associated with the memory.
 
 It is important to treat all lists in a generic way and to not hardcode
@@ -326,8 +282,8 @@ to hear about your thoughts and experiences with
 
 Is there something about the API that doesn't work as expected? Or are there
 missing properties that you need to implement your idea? File a spec issue on
-the [performance.measureUserAgentSpecificMemory() GitHub repo][issues] or add your thoughts to an
-existing issue.
+the [performance.measureUserAgentSpecificMemory() GitHub repo][issues] or add
+your thoughts to a existing issue.
 
 ### Report a problem with the implementation
 
@@ -341,16 +297,17 @@ the bug, and have **Components** set to `Blink>PerformanceAPIs`.
 
 Are you planning to use `performance.measureUserAgentSpecificMemory()`? Your public support
 helps the Chrome team prioritize features and shows other browser vendors how
-critical it is to support them. Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) and let us know
-where and how you're using it.
+critical it is to support them. Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev)
+and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
 - [Explainer][explainer]
 - [Demo][demo] | [Demo source][demo-source]
-- [Origin Trial][ot]
 - [Tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
+- [Changes since Origin Trial API](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences)
+- [Concluded Origin Trial][ot]
 
 ## Acknowledgements
 
@@ -362,23 +319,21 @@ improved the API.
 
 [Hero image](https://unsplash.com/photos/5tLfQGURzHM) by [Harrison Broadbent](https://unsplash.com/@harrisonbroadbent) on [Unsplash](https://unsplash.com)
 
-[coop-coep]: https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit
-[cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1049093
+[cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1085129
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [cr-status]: https://www.chromestatus.com/feature/5685965186138112
 [cross-origin-isolation]: https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated
-[demo-source]: https://glitch.com/edit/#!/performance-measure-memory?path=script.js:1:0
-[demo]: https://performance-measure-memory.glitch.me/
+[demo-source]: https://glitch.com/edit/#!/performance-measure-user-agent-specific-memory?path=public%2Fmeasure-memory.js
+[demo]: https://performance-measure-user-agent-specific-memory.glitch.me/
 [explainer]: https://github.com/WICG/performance-measure-memory
 [glitch]: https://glitch.com/
 [halting-problem]: https://en.wikipedia.org/wiki/Halting_problem
 [issues]: https://github.com/WICG/performance-measure-memory/issues
-[math]: https://en.wikipedia.org/wiki/Exponential_distribution#Computational_methods
+[math]: https://en.wikipedia.org/wiki/Exponential_distribution#Random_variate_generation
 [memory-leaks]: https://docs.google.com/presentation/d/14uV5jrJ0aPs0Hd0Ehu3JPV8IBGc3U8gU6daLAqj6NrM/edit#slide=id.p
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EPerformanceAPIs
-[numeric-separators]: https://v8.dev/features/numeric-separators
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
 [poisson]: https://en.wikipedia.org/wiki/Poisson_point_process
-[security-error]: https://developer.mozilla.org/docs/Web/API/DOMException#exception-SecurityError
-[site-isolation]: https://developers.google.com/web/updates/2018/07/site-isolation
+[security-error]: https://developer.mozilla.org/docs/Web/API/DOMException#securityerror
+[site-isolation]: https://developer.chrome.com/blog/site-isolation/
 [webperfs]: https://www.w3.org/community/webperfs/

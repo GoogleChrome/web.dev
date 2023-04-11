@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-07-18
+updated: 2022-10-19
 description: 本篇文章介绍了累积布局偏移 (CLS) 指标并说明了该指标的测量方式。
 tags:
   - performance
@@ -45,7 +45,7 @@ tags:
 
 ## 什么是 CLS？
 
-CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-unexpected-layout-shifts)布局偏移中最大一连串的*布局偏移分数*。
+CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs-unexpected-layout-shifts)布局偏移中最大一连串的*布局偏移分数*。
 
 每当一个可见元素的位置从一个已渲染帧变更到下一个已渲染帧时，就发生了*布局偏移* 。（有关单次[布局偏移分数](#layout-shift-score)计算方式的详细信息，请参阅下文。）
 
@@ -181,9 +181,12 @@ CLS 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 - [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
 - [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 
 ### 在 JavaScript 中测量 CLS
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 要在 JavaScript 中测量 CLS，您可以使用[布局不稳定性 API](https://github.com/WICG/layout-instability)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听意外`layout-shift`条目、将条目按会话分组、记录最大会话值，并在最大会话值发生改变时更新记录。
 
@@ -254,14 +257,14 @@ new PerformanceObserver((entryList) => {
 开发者不必记住所有这些情况并独自应付，而是可以使用[`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)来测量 CLS，库会自行处理上述所有情况：
 
 ```js
-import {getCLS} from 'web-vitals';
+import {onCLS} from 'web-vitals';
 
 // 在所有需要汇报 CLS 的情况下
 // 对其进行测量和记录。
-getCLS(console.log);
+onCLS(console.log);
 ```
 
-您可以参考[`getCLS)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)，了解如何在 JavaScript 中测量 CLS 的完整示例。
+您可以参考[`onCLS)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts)，了解如何在 JavaScript 中测量 CLS 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），CLS 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 

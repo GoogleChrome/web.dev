@@ -5,7 +5,7 @@ authors:
   - developit
   - addyosmani
 date: 2019-02-06
-updated: 2019-08-27
+updated: 2022-08-18
 description: |
   Where should we implement logic and rendering in our applications? Should we use Server Side Rendering? What about Rehydration? Let's find some answers!
 tags:
@@ -15,7 +15,7 @@ tags:
 As developers, we are often faced with decisions that will affect the entire
 architecture of our applications. One of the core decisions web developers must
 make is where to implement logic and rendering in their application. This can be
-a difficult, since there are a number of different ways to build a website.
+difficult, since there are a number of different ways to build a website.
 
 Our understanding of this space is informed by our work in Chrome talking to
 large sites over the past few years. Broadly speaking, we would encourage
@@ -45,7 +45,7 @@ the lens of performance.
 
 - **TTFB:**  Time to First Byte - seen as the time between clicking a link and
   the first bit of content coming in.
-- **FP:**  First Paint - the first time any pixel gets becomes visible to the
+- **FP:**  First Paint - the first time any pixel becomes visible to the
   user.
 - **FCP:**  First Contentful Paint - the time when requested content (article
   body, etc) becomes visible.
@@ -178,8 +178,8 @@ client rather than the server._
 Client-side rendering can be difficult to get and keep fast for mobile. It can
 approach the performance of pure server-rendering if doing minimal work, keeping
 a [tight JavaScript budget] and delivering value in as few [RTTs] as possible.
-Critical scripts and data can be delivered sooner using [HTTP/2 Server Push] or
-`<link rel=preload>`, which gets the parser working for you sooner. Patterns
+Critical scripts and data can be delivered sooner using `<link rel=preload>`,
+which gets the parser working for you sooner. Patterns
 like [PRPL] are worth evaluating in order to ensure initial and subsequent
 navigations feel instant.
 
@@ -265,7 +265,7 @@ Server rendering has had a number of developments over the last few years.
 [Streaming server rendering] allows you to send HTML in chunks that the browser
 can progressively render as it's received. This can provide a fast First Paint
 and First Contentful Paint as markup arrives to users faster. In React, streams
-being asynchronous in [renderToNodeStream()] - compared to synchronous
+being asynchronous in [renderToPipeableStream()] - compared to synchronous
 renderToString - means backpressure is handled well.
 
 Progressive rehydration is also worth keeping an eye on, and something React has
@@ -359,12 +359,11 @@ Sebastian Markbåge
 
 
 
-[First Paint]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint
-[First Contentful Paint]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint
-[Time to Interactive]: https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive
+[First Paint]: /user-centric-performance-metrics/
+[First Contentful Paint]: /fcp/
+[Time to Interactive]: https://developer.chrome.com/docs/lighthouse/performance/interactive/
 [Time to First Byte]: https://en.wikipedia.org/wiki/Time_to_first_byte
-[third-party JS]: https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/
-
+[third-party JS]: /optimizing-content-efficiency-loading-third-party-javascript/
 [JS costs]: https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4
 [budget]: https://medium.com/@addyosmani/start-performance-budgeting-dabde04cf6a3
 [Netflix]: https://medium.com/dev-channel/a-netflix-web-performance-case-study-c0bcde26a9d9
@@ -379,23 +378,21 @@ Sebastian Markbåge
 [Navi]: https://frontarm.com/navi/
 [Jekyll]: https://jekyllrb.com
 [Metalsmith]: https://metalsmith.io
-[Progressive Enhancement]: https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement
-
+[Progressive Enhancement]: https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement
 [significant compute overhead]: https://medium.com/airbnb-engineering/operationalizing-node-js-for-server-side-rendering-c5ba718acfc9
 [component caching]: https://medium.com/@reactcomponentcaching/speedier-server-side-rendering-in-react-16-with-component-caching-e8aa677929b1
 [memoization]: https://speakerdeck.com/maxnajim/hastening-react-ssr-with-component-memoization-and-templatization
 [HTML caching]: https://freecontent.manning.com/caching-in-react/
-[PWA]: https://developers.google.com/web/progressive-web-apps/
-[service worker]: https://developers.google.com/web/fundamentals/primers/service-workers/
-[service workers]: https://developers.google.com/web/fundamentals/primers/service-workers/
+[PWA]: /progressive-web-apps/
+[service worker]: https://developer.chrome.com/docs/workbox/service-worker-overview/
+[service workers]: https://developer.chrome.com/docs/workbox/service-worker-overview/
 [tight JavaScript budget]: https://mobile.twitter.com/HenrikJoreteg/status/1039744716210950144
 [RTTs]: https://en.wikipedia.org/wiki/Round-trip_delay_time
 [HTTP/2 Server Push]: https://www.smashingmagazine.com/2017/04/guide-http2-server-push/
-[PRPL]: https://developers.google.com/web/fundamentals/performance/prpl-pattern/
-[aggressive code-splitting]: https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting/
-[Application Shell caching]: https://developers.google.com/web/updates/2015/11/app-shell
+[PRPL]: /apply-instant-loading-with-prpl/
+[aggressive code-splitting]: /reduce-javascript-payloads-with-code-splitting/
+[Application Shell caching]: https://developer.chrome.com/blog/app-shell/
 [(re)hydration]: https://docs.electrode.io/guides/general/server-side-data-hydration
 [incrementally]: https://www.emberjs.com/blog/2017/10/10/glimmer-progress-report.html
-
-[Streaming server rendering]: https://zeit.co/blog/streaming-server-rendering-at-spectrum
-[renderToNodeStream()]: https://reactjs.org/docs/react-dom-server.html#rendertonodestream
+[Streaming server rendering]: https://mxstbr.com/thoughts/streaming-ssr
+[renderToPipeableStream()]: https://beta.reactjs.org/reference/react-dom/server/renderToPipeableStream

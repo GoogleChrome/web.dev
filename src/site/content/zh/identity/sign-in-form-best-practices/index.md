@@ -37,7 +37,7 @@ codelabs:
 -  [使用 `<label>` 标记每个输入](#label)。
 - 使用元素属性[访问内置浏览器功能](#element-attributes)：`type`、`name`、`autocomplete`、`required`。
 - 为输入 `name` 和 `id` 属性提供稳定的值，使其在页面加载或网站部署之间不会改变。
-- 将登录[放在它自己的 &lt;form&gt; 元素中](#single-form)。
+- 将登录[放在它自己的 &lt;form&gt; 元素中](#form)。
 - [确保成功提交表单](#submission)。
 - 将 [`autocomplete="new-password"`](#new-password) 和 [`id="new-password"`](#new-password) 用于注册表单中的输入密码，以及重置密码表单中的新密码。
 - 将 [`autocomplete="current-password"`](#current-password) 和 [`id="current-password"`](#current-password) 用于登录密码输入。
@@ -65,7 +65,7 @@ codelabs:
 
 您可能想将输入包装在 `<div>` 中并纯粹使用 JavaScript 处理输入数据提交。通常最好使用普通的旧 [`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form) 元素。这使屏幕阅读器和其他辅助设备可以访问您的站点，启用一系列内置浏览器功能，从而使得为旧浏览器构建基本功能登录变得更简单，并且即使 JavaScript 失败也仍然可以工作。
 
-{: #single-form } {% Aside 'gotchas' %} 一个常见的错误是将整个网页包装在一个表单中，这很容易导致浏览器密码管理器和自动填充出现问题。为每个需要表单的 UI 组件使用不同的 &lt;form&gt;。例如，如果您在同一页面上进行登录和搜索，则应使用两个表单元素。 {% endAside %}
+{% Aside 'gotchas' %} 一个常见的错误是将整个网页包装在一个表单中，这很容易导致浏览器密码管理器和自动填充出现问题。为每个需要表单的 UI 组件使用不同的 &lt;form&gt;。例如，如果您在同一页面上进行登录和搜索，则应使用两个表单元素。 {% endAside %}
 
 ### 使用`<label>` {: #label }
 
@@ -246,7 +246,7 @@ codelabs:
 
 根据 [Android 辅助功能指南](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB)，触摸屏对象的推荐目标尺寸为 7-10 毫米。 Apple 界面指南建议 48x48 像素，W3C 建议[至少 44x44 CSS 像素](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)。在此基础上，为移动设备的输入元素和按钮添加（至少）大约 15 像素的内边距，在桌面设备上添加大约 10 像素的内边距。用真正的移动设备和真正的手指或拇指试试这个。您应该能够轻松点击每个输入和按钮。
 
-[点击目标的大小不合适](/tap-targets/)Lighthouse 审计可以帮助您自动化检测太小的输入元素的过程。
+[点击目标的大小不合适](https://developer.chrome.com/docs/lighthouse/seo/http-status-code/)Lighthouse 审计可以帮助您自动化检测太小的输入元素的过程。
 
 #### 拇指设计 {: #design-for-thumbs }
 
@@ -262,7 +262,7 @@ codelabs:
 
 这意味着您需要在移动设备上使用更大的像素尺寸：`16px` 的大小在 Chrome 桌面上是相当清晰的，但即使有良好的视力，在 Chrome for Android 上也难以阅读 `16px` 的文本。您可以使用[媒体查询](https://developers.google.com/web/fundamentals/design-and-ux/responsive#apply_media_queries_based_on_viewport_size)为不同的视口大小设置不同的字体像素大小。`20px` 在移动设备上是正确的——但您应该和视力不好的朋友或同事一起测试一下。
 
-[文档没有使用清晰的字体大小](/font-size/) Lighthouse 审计可以帮助您自动化检测太小文本的过程。
+[文档没有使用清晰的字体大小](https://developer.chrome.com/docs/lighthouse/seo/font-size/) Lighthouse 审计可以帮助您自动化检测太小文本的过程。
 
 ### 在输入之间提供足够的空间 {: #size-margins-correctly }
 

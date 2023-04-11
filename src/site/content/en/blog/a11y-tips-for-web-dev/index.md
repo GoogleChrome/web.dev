@@ -163,7 +163,7 @@ to help them with reading text, so it's important to ensure text alternatives ex
   or flash, which can cause [issues](http://www.w3.org/TR/WCAG20/#seizure)
   for some users.
 
-  The [`prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion#too_much_motion_in_real_life_and_on_the_web)
+  The [`prefers-reduced-motion`](/prefers-reduced-motion/#too-much-motion-in-real-life-and-on-the-web)
   CSS media query allows you to limit animations
   and autoplaying videos for users who prefer reduced motion:
 
@@ -193,7 +193,7 @@ to spread awareness of best practices in your team:
 
 ## Are your UI components accessible?
 
-**Summary (tl;dr)**
+**Summary**
 
 When auditing your page's UI components for accessibility, ask yourself:
 

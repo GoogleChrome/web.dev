@@ -2,7 +2,7 @@
 /// It exists so when a user hits tab on load, they can quickly
 /// skip to the main content of the site—avoiding navigation etc
 .skip-link {
-  z-index: 10;
+  z-index: 11;
   width: max-content;
   inset: $global-gutter-narrow auto auto $global-gutter;
   position: absolute;

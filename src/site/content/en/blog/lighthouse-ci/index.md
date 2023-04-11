@@ -473,7 +473,18 @@ The steps below explain how to set up a status check for Lighthouse CI.
     field to the token that you copied in the last step and then click the **Add
     secret** button.
 
-7.  The status check is ready for use. To test it, [create a new pull
+7.  Go to the `lighthouse-ci.yaml` file and add the new environment secret to the "run Lighthouse CI" command.
+
+```diff
+          - name: run Lighthouse CI
+            run: |
+              npm install -g @lhci/cli@0.3.x
+              lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
++            env:
++              LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+```
+
+8.  The status check is ready for use. To test it, [create a new pull
     request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
     or push a commit to an existing pull request.
 

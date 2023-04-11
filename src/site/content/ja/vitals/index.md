@@ -91,7 +91,7 @@ Core Web Vitals の各指標をすべて測定するためには、[web-vitals](
 [Web-vitals](https://github.com/GoogleChrome/web-vitals) ライブラリを使用することにより、各指標の測定は単一の関数の呼び出しと同じくらい簡単になります (詳細な[使用方法](https://github.com/GoogleChrome/web-vitals#usage)および [API](https://github.com/GoogleChrome/web-vitals#api) に関する詳細については、ドキュメントを参照してください)。
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 [Web-Vitals](https://github.com/GoogleChrome/web-vitals) ライブラリを使用して Core Web Vitals データを測定し、アナリティクス エンドポイントへと送信するようサイトを構成したら、次のステップはそのデータの集計およびレポートを実施し、推奨しきい値 (ページ別訪問数の少なくとも 75%) を満たしているかどうかを確認することです。
@@ -205,7 +205,7 @@ Core Web Vitals は優れたユーザー エクスペリエンスについての
 
 そういった Web Vitals のその他の指標は、多くの場合 Core Web Vitals の代替指標または補足指標として機能し、ユーザー体験をより大きな観点から把握したり、特定の問題を診断したりする場合に役立ちます。
 
-たとえば [Time to First Byte (サーバーの初期応答時間、TTFB)](/ttfb/) や [First Contentful Paint (視覚コンテンツの初期表示時間、FCP)](/fcp/) などの指標は、どちらも*読み込み*時のユーザー体験に関連する重要な観点であり、それぞれが LCP に関する問題 ([サーバーの応答時間](/overloaded-server/)が長すぎる場合や、[レンダリングを妨げるリソース](/render-blocking-resources/)に関連する問題など) の診断に役立ちます。
+たとえば [Time to First Byte (サーバーの初期応答時間、TTFB)](/ttfb/) や [First Contentful Paint (視覚コンテンツの初期表示時間、FCP)](/fcp/) などの指標は、どちらも*読み込み*時のユーザー体験に関連する重要な観点であり、それぞれが LCP に関する問題 ([サーバーの応答時間](/overloaded-server/)が長すぎる場合や、[レンダリングを妨げるリソース](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)に関連する問題など) の診断に役立ちます。
 
 同様に、[Total Blocking Time (合計ブロック時間、TBT)](/tbt/) や [Time to Interactive (操作可能になるまでの時間、TTI)](/tti/) などの指標は、FID に影響を及ぼす潜在的な*インタラクティブ性*に関する問題を察知して診断を実施するために不可欠な、ラボ環境での指標です。これらの指標は実際のユーザー環境では測定できず、また[ユーザーを中心とした](/user-centric-performance-metrics/#how-metrics-are-measured)結果も反映していないため、Core Web Vitals には含まれません。
 

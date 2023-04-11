@@ -379,5 +379,5 @@ suggestions to look at when designing your cache strategies:
 +   [Network reliability](/reliable/)
 +   [Prevent unnecessary network requests with the HTTP Cache](/http-cache)
 +   [HTTP cache codelab](/codelab-http-cache/)
-+   [Measuring the real-world performance impact of service workers](https://developers.google.com/web/showcase/2016/service-worker-perf)
++   [Measuring the real-world performance impact of service workers](/service-worker-perf/)
 +   [Cache-Control vs. Expires](https://stackoverflow.com/questions/5799906/what-s-the-difference-between-expires-and-cache-control-headers)

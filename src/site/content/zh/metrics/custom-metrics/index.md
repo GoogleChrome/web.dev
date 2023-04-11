@@ -131,7 +131,7 @@ try {
 
 [Long Tasks API](https://w3c.github.io/longtasks/) 用于了解浏览器主线程的阻塞时间何时长到足以影响帧率或输入延迟。目前，该 API 将报告执行时间超过 50 毫秒 (ms) 的任何任务。
 
-任何时候您需要运行开销大的代码（或加载和执行大型脚本）时，跟踪该代码是否阻塞主线程都是很有用的。事实上，许多较高级别的指标都是建立在 Long Tasks API 上的（例如 [Time to Interactive (TTI)](/tti/) 和 [Total Blocking Time (TBT)](/lighthouse-total-blocking-time/)）。
+任何时候您需要运行开销大的代码（或加载和执行大型脚本）时，跟踪该代码是否阻塞主线程都是很有用的。事实上，许多较高级别的指标都是建立在 Long Tasks API 上的（例如 [Time to Interactive (TTI)](/tti/) 和 [Total Blocking Time (TBT)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)）。
 
 要确定何时发生长任务，您可以使用 [PerformanceObserver](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 并注册以观察 `longtask` 类型的条目：
 

@@ -21,11 +21,13 @@ so the drop shadow needs to be dynamic too. Instead of a t-shirt,
 the image could be a visor or shorts, or any other item.
 How do you do that with CSS?
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'wvgrMrR',
   height: 600
 } %}
+</figure>
 
 CSS has the
 [`box-shadow`](https://developer.mozilla.org/docs/Web/CSS/box-shadow) and
@@ -34,11 +36,13 @@ but the picture isn't text, so you can't use `text-shadow`.
 If you use `box-shadow`, the shadow is on the surrounding box,
 _not_ around the t-shirt.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNrwae',
   height: 600
 } %}
+</figure>
 
 Luckily, there is another option: the
 [`drop-shadow()`](https://developer.mozilla.org/docs/Web/CSS/filter-function/drop-shadow()) filter.
@@ -47,6 +51,7 @@ There are plenty of options when it comes to shadows in CSS,
 each designed for a different use case.
 
 ## Box shadow
+{% BrowserCompat 'css.properties.box-shadow' %}
 
 The `box-shadow` property is for adding shadows to the box of an HTML element.
 It works on block elements and inline elements.
@@ -90,11 +95,13 @@ add an `inset` keyword **before** the other properties.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNjGevp',
   height: 600
 } %}
+</figure>
 
 ### Multiple shadows
 
@@ -109,11 +116,13 @@ Add a comma separated collection of value sets to achieve this:
 
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpLNXR',
   tab: 'css,result'
 } %}
+</figure>
 
 ### Properties affecting box-shadow
 
@@ -128,11 +137,13 @@ as if light is pointing at it.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'RwKLaXN',
   tab: 'css,result'
 } %}
+</figure>
 
 If your box with `box-shadow` is in a container that has `overflow: hidden`,
 the shadow **won't** break out of that overflow either.
@@ -159,13 +170,16 @@ the shadow **won't** break out of that overflow either.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BapwzyQ',
   tab: 'css,result'
 } %}
+</figure>
 
 ## Text shadow
+{% BrowserCompat 'css.properties.text-shadow' %}
 
 The `text-shadow` property is very similar to the `box-shadow` property.
 It only works on text nodes.
@@ -179,10 +193,12 @@ It only works on text nodes.
 The values for `text-shadow` are the same as `box-shadow` and in the same order.
 The only difference is that `text-shadow` has no `spread` value and no `inset` keyword.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYgeKqm'
 } %}
+</figure>
 
 When you add a `box-shadow` it is clipped to the shape of your box,
 but `text-shadow` has no clipping.
@@ -196,10 +212,12 @@ the shadow is visible through it.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'LYxzRpb'
 } %}
+</figure>
 
 ### Multiple shadows
 
@@ -216,13 +234,16 @@ and you can create some really cool text effects, such as 3D text.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'RwKLGaL',
   tab: 'css,result'
 } %}
+</figure>
 
 ## Drop shadow
+{% BrowserCompat 'css.properties.drop-shadow' %}
 
 To achieve a drop shadow that follows any potential curves of an image,
 use the CSS `drop-shadow` filter.
@@ -235,10 +256,12 @@ as in the case in the intro of this module.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'eYgGdvm'
 } %}
+</figure>
 
 {% Aside 'key-term' %}
 We cover CSS [filters](/learn/css/filters) in another module,
@@ -249,9 +272,11 @@ The `drop-shadow` filter has the same values as `box-shadow` **but** the `inset`
 by adding multiple instances of `drop-shadow` values to the `filter` property.
 Each shadow will use the last shadow as a positioning reference point.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYgeXmW'
 } %}
+</figure>
 
 {% Assessment 'shadows' %}

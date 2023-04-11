@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-07-18
+updated: 2022-10-19
 description: この投稿では、First Contentful Paint (視覚コンテンツの初期表示時間、FCP) という指標について紹介し、その測定方法に関する説明を行います。
 tags:
   - performance
@@ -51,6 +51,8 @@ FCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### JavaScript を使用して FCP を測定する
 
+{% BrowserCompat 'api.PerformancePaintTiming' %}
+
 JavaScript を使用した FCP の測定には、[Paint Timing API](https://w3c.github.io/paint-timing/) を使用することができます。以下の例では、`first-contentful-paint` という名前の `paint` エントリをリッスンし、コンソールにログを記録する [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) の作成方法を示しています。
 
 ```js
@@ -80,34 +82,34 @@ new PerformanceObserver((entryList) => {
 こういった微妙な違いをすべて記憶していなくても、[`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)を使用して FCP を測定すれば、これらの違いを (可能な限り) 処理してくれます。
 
 ```js
-import {getFCP} from 'web-vitals';
+import {onFCP} from 'web-vitals';
 
 // 実行可能となった時点ですぐに FCP の測定やログ記録を実行します。
-getFCP(console.log);
+onFCP(console.log);
 ```
 
-JavaScript を使用して FCP を測定する方法に関する詳細な例については、[`getFCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)を参照してください。
+JavaScript を使用して FCP を測定する方法に関する詳細な例については、[`onFCP()` のソース コード](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFCP.ts)を参照してください。
 
 {% Aside %}場合によっては (クロスオリジン iframe など)、JavaScript を使用して FCP を測定することはできません。詳細については、`web-vitals` ライブラリの「[制限事項](https://github.com/GoogleChrome/web-vitals#limitations)」セクションを参照してください。{% endAside %}
 
 ## FCP の改善方法
 
-特定のサイトについて FCP の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](/lighthouse-performance/#opportunities) (改善機会) や [Diagnostics](/lighthouse-performance/#diagnostics) (診断) に注目します。
+特定のサイトについて FCP の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) (改善機会) や [Diagnostics](https://developer.chrome.com/docs/lighthouse/performance/#diagnostics) (診断) に注目します。
 
 FCP の (あらゆるサイトに共通する) 一般的な改善方法については、以下のパフォーマンス ガイドを参照してください。
 
-- [レンダリングをブロックするリソースを排除する](/render-blocking-resources/)
-- [CSS を圧縮する](/unminified-css/)
-- [使用されていない CSS を削除する](/unused-css-rules/)
-- [必要なオリジンに事前接続する](/uses-rel-preconnect/)
+- [レンダリングをブロックするリソースを排除する](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)
+- [CSS を圧縮する](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)
+- [使用されていない CSS を削除する](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)
+- [必要なオリジンに事前接続する](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)
 - [サーバーの応答時間 (TTFB) を短縮する](/ttfb/)
-- [複数のページ リダイレクトを避ける](/redirects/)
-- [キー リクエストを事前に読み込む](/uses-rel-preload/)
-- [過大なネットワーク ペイロードを回避する](/total-byte-weight/)
-- [効率的なキャッシュ ポリシーを使用して静的なアセットを配信する](/uses-long-cache-ttl/)
-- [過大な DOM サイズを回避する](/dom-size/)
-- [クリティカルなリクエストの深さを最小化する](/critical-request-chains/)
-- [Web フォントの読み込み中にテキストが表示されたままになっていることを確認する](/font-display/)
-- [リクエスト数を少なく、転送サイズを小さく維持する](/resource-summary/)
+- [複数のページ リダイレクトを避ける](https://developer.chrome.com/docs/lighthouse/performance/redirects/)
+- [キー リクエストを事前に読み込む](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)
+- [過大なネットワーク ペイロードを回避する](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)
+- [効率的なキャッシュ ポリシーを使用して静的なアセットを配信する](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)
+- [過大な DOM サイズを回避する](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)
+- [クリティカルなリクエストの深さを最小化する](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)
+- [Web フォントの読み込み中にテキストが表示されたままになっていることを確認する](https://developer.chrome.com/docs/lighthouse/performance/font-display/)
+- [リクエスト数を少なく、転送サイズを小さく維持する](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

@@ -30,10 +30,12 @@ but you can use a
 [`linear-gradient`](https://developer.mozilla.org/docs/Web/CSS/linear-gradient())
 instead.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'XWpzdoV'
 } %}
+</figure>
 
 A gradient is an image and can be used anywhere images can be used,
 but it's created with CSS and is made up with colors, numbers and angles.
@@ -41,6 +43,7 @@ CSS gradients allow you to create anything from a smooth gradient between two co
 right up to impressive artwork by mixing and repeating multiple gradients.
 
 ## Linear gradient
+{% BrowserCompat 'css.types.image.gradient.linear-gradient' %}
 
 The [`linear-gradient()`](https://developer.mozilla.org/docs/Web/CSS/linear-gradient())
 function generates an image of two or more colors, progressively.
@@ -53,12 +56,14 @@ you can pass some colors like this and it will automatically split them evenly, 
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRqPoZ',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 You can also pass an angle or keywords that represent an angle.
 If you choose to use keywords, specify a direction after the `to` keyword.
@@ -71,13 +76,14 @@ you would specify the angle as `to right` as the first argument.
 	background: linear-gradient(to right, black, white);
 }
 ```
-
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYNPqXW',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 A color stop value defined where a color stops and mixes with its neighbors.
 For a gradient starting with a dark shade of red running at a 45deg angle,
@@ -89,24 +95,29 @@ at 30% of the size of the gradient changing to a lighter red: it looks like this
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'NWdwNZr',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 You can add as many colors and color stops as you like in a `linear-gradient()`,
 and you can layer gradients on top of each other by separating each gradient with a comma.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpVZbj',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 ## Radial gradient
+{% BrowserCompat 'css.types.image.gradient.radial-gradient' %}
 
 To create a gradient that radiates in a circular fashion, the
 [`radial-gradient()`](https://developer.mozilla.org/docs/Web/CSS/radial-gradient())
@@ -122,12 +133,14 @@ and select either a circle or ellipse, depending on the size of the box.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'LYxOZEq',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 The gradient's position is similar to `background-position` using keywords and/or number values.
 The size of the radial gradient determines the size of the gradient's ending shape
@@ -142,14 +155,17 @@ You can also use the following keywords:
 You can add as many color stops as you like, just like with the `linear-gradient`.
 Likewise, you can add as many `radial-gradients` as you like too.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJOepV',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 ## Conic gradient
+{% BrowserCompat 'css.types.image.gradient.conic-gradient' %}
 
 A conic gradient has a center point in your box and starts from the top (by default),
 and goes around in a 360 degree circle.
@@ -160,12 +176,14 @@ and goes around in a 360 degree circle.
 }
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'qBRVNXG',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 The [`conic-gradient()`](https://developer.mozilla.org/docs/Web/CSS/conic-gradient())
 function accepts position and angle arguments.
@@ -179,22 +197,26 @@ As with radial and linear gradients,
 positioning can be keyword-based,
 or it can be defined with numeric values.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYgWKpO',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 You can add as many color stops as you want, like with other gradient types.
 A good use case for this capability, with conic gradients is rendering pie charts with CSS.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRqExP',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 ## Repeating and mixing
 
@@ -225,24 +247,28 @@ you can create a striped background with a `repeating-linear-gradient` by settin
 
 ```
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExZbgdy',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 You can also mix gradient functions on `background` properties,
 as well as defining as many gradients as you like,
 just like you would with a background image.
 For example, you can mix multiple linear-gradients together, or two linear-gradients with a radial gradient.
 
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExZqGxP',
   tab: 'css,result',
   height: 400
 } %}
+</figure>
 
 ## Resources
 

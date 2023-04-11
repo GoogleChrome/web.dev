@@ -52,7 +52,7 @@ Vitals along with other product changes to further improve their engagement rate
 ## The approach they used
 
 With the help of tools like [PageSpeed
-Insights](/chrome-ux-report-pagespeed-insights/),
+Insights](https://developer.chrome.com/blog/chrome-ux-report-pagespeed-insights/),
 [web.dev/measure](/measure), and [WebPageTest](https://www.webpagetest.org/) the NDTV
 team analyzed potential improvement areas on the site. These clearly defined optimization ideas
 helped them re-prioritize high-impact tasks and achieve immediate results in the improvement of Core

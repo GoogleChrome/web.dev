@@ -222,7 +222,7 @@ When you apply `viewport-fit=cover`, remember that you can now render pixels beh
 ##  Resources
 
 - [CSS display-mode media query](https://developer.mozilla.org/docs/Web/CSS/@media/display-mode)
-- [Take control of your scroll: customizing pull-to-refresh and overflow effects](https://developers.google.com/web/updates/2017/11/overscroll-behavior)
+- [Take control of your scroll: customizing pull-to-refresh and overflow effects](https://developer.chrome.com/blog/overscroll-behavior)
 - [prefers-color-scheme: Hello darkness, my old friend](/prefers-color-scheme/)
 - [prefers-reduced-motion: Sometimes less movement is more](/prefers-reduced-motion/)
 - [env() CSS function](https://developer.mozilla.org/docs/Web/CSS/env())

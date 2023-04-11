@@ -5,7 +5,7 @@ authors:
   - jlwagner
   - tunetheweb
 date: 2021-10-26
-updated: 2022-07-26
+updated: 2023-01-19
 description: |
   This post introduces the Time to First Byte (TTFB) metric and explains
   how to measure it.
@@ -53,7 +53,7 @@ Because TTFB precedes [user-centric metrics](/user-centric-performance-metrics/)
       height="200">
     {%
       Img
-        src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/eNXaxPi9NdUVSTDRJFkV.svg",
+        src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/EcKicxW5ErYYhf8RvpeO.svg",
         alt="Good TTFB values are 0.8 seconds or less, poor values are greater than 1.8 seconds, and anything in between needs improvement",
         width="640",
         height="480"
@@ -61,8 +61,10 @@ Because TTFB precedes [user-centric metrics](/user-centric-performance-metrics/)
   </picture>
 </figure>
 
-{% Aside %}
-  TTFB is not a [Core Web Vitals](/vitals) metric, so it's not absolutely necessary that sites meet the "good" TTFB threshold, provided that it doesn't impede their ability to score well on the metrics that matter.
+{% Aside 'important' %}
+<p>TTFB is not a [Core Web Vitals](/vitals/) metric, so it's not absolutely necessary that sites meet the "good" TTFB threshold, provided that it doesn't impede their ability to score well on the metrics that matter.<p>
+<p>Websites vary in how they deliver content. A low TTFB is crucial for getting markup out to the client as soon as possible. However, if a website delivers the initial markup quickly, but that markup then requires JavaScript to populate it with meaningful content—as is the the case with Single Page Applications (SPAs)—then achieving the lowest possible TTFB is especially important so that the client-rendering of markup can occur sooner.<p>
+<p>Conversely, a server-rendered site that does not require as much client-side work could have a higher TTFB, but better FCP and LCP values than an entirely client-rendered experience. This is why the TTFB thresholds are a “rough guide”, and will need to be weighed against how your site delivers its core content.<p>
 {% endAside %}
 
 ## How to measure TTFB
@@ -80,6 +82,8 @@ TTFB can be measured in [the lab](/user-centric-performance-metrics/#in-the-lab)
 - [WebPageTest](https://www.webpagetest.org/)
 
 ### Measure TTFB in JavaScript
+
+{% BrowserCompat 'api.PerformanceResourceTiming.responseStart' %}
 
 You can measure the TTFB of [navigation requests](https://developer.mozilla.org/docs/Web/API/Request/mode) in the browser with the [Navigation Timing API](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API). The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) that listens for a `navigation` entry and logs it to the console:
 
@@ -101,10 +105,10 @@ Not all browsers support `PerformanceObserver` or its `buffered` flag. To get th
 The [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) can also measure TTFB in the browser with less complexity:
 
 ```javascript
-import {getTTFB} from 'web-vitals';
+import {onTTFB} from 'web-vitals';
 
 // Measure and log TTFB as soon as it's available.
-getTTFB(console.log);
+onTTFB(console.log);
 ```
 
 ### Measuring resource requests
@@ -137,24 +141,4 @@ TTFB for cross-origin requests will not be measurable in the field if cross-orig
 
 ## How to improve TTFB
 
-Improving TTFB is largely dependent on your hosting provider and backend application stack. High TTFB values could be due to one or more of the following problems:
-
-- Hosting services with inadequate infrastructure to handle high traffic loads
-- Web servers with insufficient memory that can lead to [thrashing](https://en.wikipedia.org/wiki/Memory_paging#Thrashing)
-- Unoptimized database tables
-- Suboptimal database server configuration
-
-Minimizing TTFB is often done by choosing a suitable hosting provider with infrastructure to ensure high uptime and responsiveness. This&mdash;in combination with a CDN&mdash;can help.
-
-{% Aside %}
-Use the [Server-Timing API](https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing) to gather additional field data on the performance of application backend processes. This can help identify opportunities for improvements that might otherwise go unnoticed.
-{% endAside %}
-
-Other opportunities to improve high TTFB times and related perceptual delays include:
-
-- [Avoid multiple page redirects](/redirects/).
-- [Preconnect to required origins](/uses-rel-preconnect/) for cross-origin resources.
-- Submit your origin to the [HSTS preload list](https://hstspreload.org/) to eliminate HTTP-to-HTTPS redirect latency.
-- [Use HTTP/2](/uses-http2/) or [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3).
-- Consider [predictive prefetching](/predictive-prefetching/) for fast page navigations for users who have not specified [a preference for reduced data usage](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data).
-- Use server-side generation (SSG) for markup instead of SSR where possible and appropriate.
+An in-depth guide on [optimizing TTFB](/optimize-ttfb/) has been published to give you more guidance on improving your website's TTFB.

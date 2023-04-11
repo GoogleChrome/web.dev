@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2022-06-29
+updated: 2023-03-27
 hero: image/admin/Y4NLEbOwgTWdMNoxRYXw.jpg
 alt:
 description: |
@@ -107,9 +107,7 @@ user agent can emphasize and/or bring it to the user's attention.
 
 ### Browser compatibility
 
-The Text Fragments feature is supported in version 80 and beyond of Chromium-based browsers. At the
-time of writing, Safari and Firefox have not publicly signaled an intent to implement the feature.
-See [Related links](#related-links) for pointers to the Safari and Firefox discussions.
+{% BrowserCompat 'css.selectors.target-text' %}
 
 {% Aside 'success' %} These links used to not work when served across
 [client-side redirects](https://developer.mozilla.org/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
@@ -126,15 +124,15 @@ Therefore, make sure to include
 [`noopener`](https://developer.mozilla.org/docs/Web/API/Window/open#noopener) to your
 `Window.open()` list of window functionality features.
 
-### `textStart`
+### `start`
 
 In its simplest form, the syntax of Text Fragments is as follows: The hash symbol `#` followed by
-`:~:text=` and finally `textStart`, which represents the
+`:~:text=` and finally `start`, which represents the
 [percent-encoded](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
 text I want to link to.
 
 ```bash
-#:~:text=textStart
+#:~:text=start
 ```
 
 For example, say that I want to link to the _ECMAScript Modules in Web Workers_ heading in the
@@ -152,14 +150,14 @@ scrolls into view:
   <figcaption>Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
-### `textStart` and `textEnd`
+### `start` and `end`
 
 Now what if I want to link to the entire _section_ titled _ECMAScript Modules in Web Workers_, not
 just its heading? Percent-encoding the entire text of the section would make the resulting URL
 impracticably long.
 
 Luckily there is a better way. Rather than the entire text, I can frame the desired text using the
-`textStart,textEnd` syntax. Therefore, I specify a couple of percent-encoded words at the beginning
+`start,end` syntax. Therefore, I specify a couple of percent-encoded words at the beginning
 of the desired text, and a couple of percent-encoded words at the end of the desired text, separated
 by a comma&nbsp;`,`.
 
@@ -167,8 +165,8 @@ That looks like this:
 
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers.</mark></code></a>.
 
-For `textStart`, I have `ECMAScript%20Modules%20in%20Web%20Workers`, then a comma&nbsp;`,` followed
-by `ES%20Modules%20in%20Web%20Workers.` as `textEnd`. When you click through on a supporting browser
+For `start`, I have `ECMAScript%20Modules%20in%20Web%20Workers`, then a comma&nbsp;`,` followed
+by `ES%20Modules%20in%20Web%20Workers.` as `end`. When you click through on a supporting browser
 like Chrome, the whole section is highlighted and scrolled into view:
 
 <figure>
@@ -176,18 +174,18 @@ like Chrome, the whole section is highlighted and scrolled into view:
   <figcaption>Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
-Now you may wonder about my choice of `textStart` and `textEnd`. Actually, the slightly shorter URL
+Now you may wonder about my choice of `start` and `end`. Actually, the slightly shorter URL
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules,Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript%20Modules,Web%20Workers.</mark></code></a>
-with only two words on each side would have worked, too. Compare `textStart` and `textEnd` with the
+with only two words on each side would have worked, too. Compare `start` and `end` with the
 previous values.
 
-If I take it one step further and now use only one word for both `textStart` and `textEnd`, you can
+If I take it one step further and now use only one word for both `start` and `end`, you can
 see that I am in trouble. The URL
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript,Workers.</mark></code></a>
 is even shorter now, but the highlighted text fragment is no longer the originally desired one. The
 highlighting stops at the first occurrence of the word `Workers.`, which is correct, but not what I
 intended to highlight. The problem is that the desired section is not uniquely identified by the
-current one-word `textStart` and `textEnd` values:
+current one-word `start` and `end` values:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %}
@@ -196,7 +194,7 @@ current one-word `textStart` and `textEnd` values:
 
 ### `prefix-` and `-suffix`
 
-Using long enough values for `textStart` and `textEnd` is one solution for obtaining a unique link.
+Using long enough values for `start` and `end` is one solution for obtaining a unique link.
 In some situations, however, this is not possible. On a side note, why did I choose the
 Chrome&nbsp;80 release blog post as my example? The answer is that in this release Text Fragments
 were introduced:
@@ -207,8 +205,8 @@ were introduced:
 </figure>
 
 Notice how in the screenshot above the word "text" appears four times. The forth occurrence is
-written in a green code font. If I wanted to link to this particular word, I would set `textStart`
-to `text`. Since the word "text" is, well, only one word, there cannot be a `textEnd`. What now? The
+written in a green code font. If I wanted to link to this particular word, I would set `start`
+to `text`. Since the word "text" is, well, only one word, there cannot be a `end`. What now? The
 URL
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=text</mark></code></a>
 matches at the first occurrence of the word "Text" already in the heading:
@@ -227,7 +225,7 @@ knowledge, I can tweak the previous URL and add the `prefix-` and the `-suffix`.
 parameters, they, too, need to be percent-encoded and can contain more than one word.
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=the-,text,-parameter</mark></code></a>.
 To allow the parser to clearly identify the `prefix-` and the `-suffix`, they need to be separated
-from the `textStart` and the optional `textEnd` with a dash&nbsp;`-`.
+from the `start` and the optional `end` with a dash&nbsp;`-`.
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %}
@@ -242,12 +240,12 @@ The values for all parameters need to be percent-encoded. This is especially imp
 directive syntax.
 
 ```bash
-#:~:text=[prefix-,]textStart[,textEnd][,-suffix]
+#:~:text=[prefix-,]start[,end][,-suffix]
 ```
 
-Each of `prefix-`, `textStart`, `textEnd`, and `-suffix` will only match text within a single
+Each of `prefix-`, `start`, `end`, and `-suffix` will only match text within a single
 [block-level element](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements#Elements),
-but full `textStart,textEnd` ranges _can_ span multiple blocks. For example,
+but full `start,end` ranges _can_ span multiple blocks. For example,
 `:~:text=The quick,lazy dog` will fail to match in the following example, because the starting
 string "The quick" does not appear within a single, uninterrupted block-level element:
 
@@ -405,11 +403,11 @@ if (result.status === 0) {
   const suffix = fragment.suffix ?
     `,-${encodeURIComponent(fragment.suffix)}` :
     '';
-  const textStart = encodeURIComponent(fragment.textStart);
-  const textEnd = fragment.textEnd ?
-    `,${encodeURIComponent(fragment.textEnd)}` :
+  const start = encodeURIComponent(fragment.start);
+  const end = fragment.end ?
+    `,${encodeURIComponent(fragment.end)}` :
     '';
-  url += `#:~:text=${prefix}${textStart}${textEnd}${suffix}`;
+  url += `#:~:text=${prefix}${start}${end}${suffix}`;
   console.log(url);
 }
 ```

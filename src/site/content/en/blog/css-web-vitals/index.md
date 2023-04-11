@@ -17,9 +17,9 @@ tags:
 ---
 
 The way you write your styles and build layouts can have a major impact on [Core
-Web Vitals](/learn-web-vitals). This is particularly true for
+Web Vitals](/learn-core-web-vitals/). This is particularly true for
 [Cumulative Layout Shift (CLS)](/cls) and [Largest Contentful
-Paint (LCP)](/lcp). 
+Paint (LCP)](/lcp).
 
 This article covers CSS-related techniques for optimizing Web Vitals. These
 optimizations are broken down by different aspects of a page: layout, images,
@@ -207,7 +207,7 @@ To identify images without explicit `width` and `height`, use Lighthouse's
 
 
 In this example, both the hero image and article image are missing `width` and
-`height` attributes. 
+`height` attributes.
 
 
 #### Fix
@@ -266,7 +266,7 @@ Paint (LCP).
 {% Aside %}
 
 By default, Chromium-based and Firefox browsers will [block text rendering for
-up to 3 seconds](https://developers.google.com/web/updates/2016/02/font-display)
+up to 3 seconds](https://developer.chrome.com/blog/font-display/)
 if the associated web font has not loaded; Safari will block text rendering
 indefinitely. The [block
 period](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display#the_font_display_timeline)
@@ -336,7 +336,7 @@ requested.
 This demo uses the Google Fonts API. Google Fonts provides the option to load
 fonts via `<link>` tags or an `@import` statement. The `<link>` code snippet
 includes a `preconnect` resource hint. This should result in faster
-stylesheet delivery than using the `@import` version. 
+stylesheet delivery than using the `@import` version.
 
 At a very high-level, you can think of [resource
 hints](https://www.w3.org/TR/resource-hints/#resource-hints) as a way to hint
@@ -482,4 +482,4 @@ users](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)
 to assess whether it is [meeting the Web Vitals thresholds for most
 users](/vitals-measurement-getting-started/#data-interpretation).
 For more information about Web Vitals, see [Learn Web
-Vitals](/learn-web-vitals).
+Vitals](/learn-core-web-vitals/).

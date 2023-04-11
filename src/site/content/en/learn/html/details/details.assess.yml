@@ -1,0 +1,15 @@
+setLeader: Test your knowledge of details and summary.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: The `<summary>` must be the first child of which element?
+    options:
+      - content: "`<p>`"
+        rationale: "Try again."
+      - content: "`<details>`"
+        rationale: "Correct!"
+      - content: "`<fieldset>`"
+        rationale: "Try again."

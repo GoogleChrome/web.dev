@@ -91,7 +91,7 @@ Chrome User Experience Report의 데이터는 사이트의 성능을 빠르게 �
 [web-vitals](https://github.com/GoogleChrome/web-vitals) 라이브러리를 사용하면 각 메트릭을 측정하는 것이 단일 함수를 호출하는 것만큼 간단해집니다(완전한 [사용 방법](https://github.com/GoogleChrome/web-vitals#usage) 및 [API](https://github.com/GoogleChrome/web-vitals#api) 세부 정보는 해당 문서 참조).
 
 ```js
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {onCLS, onFID, onLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
@@ -100,9 +100,9 @@ function sendToAnalytics(metric) {
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS(sendToAnalytics);
-getFID(sendToAnalytics);
-getLCP(sendToAnalytics);
+onCLS(sendToAnalytics);
+onFID(sendToAnalytics);
+onLCP(sendToAnalytics);
 ```
 
 [web-vitals](https://github.com/GoogleChrome/web-vitals) 라이브러리를 사용하여 Core Web Vitals 데이터를 측정하고 분석 엔드포인트로 전송하도록 사이트를 구성했다면, 다음 단계는 해당 데이터를 집계하고 보고하여 페이지가 페이지 방문의 최소 75%에 대해 권장 임계값을 충족하는지 확인하는 것입니다.
@@ -205,7 +205,7 @@ Core Web Vitals는 우수한 사용자 경험을 이해하고 제공하는 데 �
 
 이러한 기타 Web Vitals 메트릭은 경험의 더 큰 부분을 포착하고, 특정 문제의 진단을 지원하는 등 주로 Core Web Vitals를 대체하거나 보완하는 역할을 합니다.
 
-예를 들어, [Time to First Byte(최초 바이트까지의 시간, TTFB)](/ttfb/) 및 [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/) 메트릭은 모두 *로딩* 경험에 중요한 요소이며 LCP와 함께 문제(각각 느린 [서버 응답 시간](/overloaded-server/) 또는 [렌더링 차단 리소스](/render-blocking-resources/) 문제)를 진단하는 데 유용합니다.
+예를 들어, [Time to First Byte(최초 바이트까지의 시간, TTFB)](/ttfb/) 및 [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/) 메트릭은 모두 *로딩* 경험에 중요한 요소이며 LCP와 함께 문제(각각 느린 [서버 응답 시간](/overloaded-server/) 또는 [렌더링 차단 리소스](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/) 문제)를 진단하는 데 유용합니다.
 
 마찬가지로, [총 차단 시간(TBT)](/tbt/) 및 [Time to Interactive(상호 작용까지의 시간, TTI)](/tti/)와 같은 메트릭은 FID에 영향을 줄 잠재적인 *상호 작용* 문제를 파악하고 진단하는 데 필수적인 실험실 메트릭입니다. 그러나 필드에서 측정할 수 없고 [사용자 중심](/user-centric-performance-metrics/#how-metrics-are-measured) 결과를 반영하지도 않기 때문에 Core Web Vitals 세트에 속하지는 않습니다.
 
