@@ -1,0 +1,36 @@
+nombre : " Prueba de seguridad estática de la API REST de 42Crunch "
+
+# seguir los disparadores de escaneo de código estándar
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 29 17 * * 3 '
+
+permisos :
+  contenido : leer
+
+trabajos :
+  rest-api-static-security-testing :
+    permisos :
+      contenido : leer # para acciones/pago para obtener código
+      eventos de seguridad : escriba # para 42Crunch/api-security-audit-action para cargar los resultados en Github Code Scanning
+    se ejecuta en : ubuntu-latest
+    pasos :
+      - usos : acciones/checkout@v3
+
+      - nombre : 42Crunch REST API Pruebas de seguridad estática
+        usos : 42Crunch/api-security-audit-action@f3a4f4d44ca6f538fe84361373d7a2a374018fdd
+        con :
+          # Cree una cuenta gratuita en https://platform.42crunch.com/register
+          # Siga estos pasos para configurar API_TOKEN https://docs.42crunch.com/latest/content/tasks/integrate_github_actions.htm
+          token de API : ${{ secretos.API_TOKEN }}
+          # Fallo si algún archivo OpenAPI obtiene una puntuación inferior a 75
+          puntuación mínima : 75
+          # Subir resultados al escaneo de código de Github
+          subir a escaneo de código : verdadero
+          # token de Github para subir los resultados
+          token de github : ${{ github.token }}
