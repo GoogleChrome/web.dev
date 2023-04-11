@@ -1,0 +1,57 @@
+name : Escaneo a pedido de Fortify
+  flujo de trabajo_despacho :
+  empujar :
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 41 19 * * 0 '
+
+trabajos :
+  Escaneo FoD-SAST :
+    se ejecuta en : ubuntu-latest
+    permisos :
+      acciones : leer
+      contenido : leer
+      eventos de seguridad : escribir
+
+    pasos :
+   
+      - nombre : ver código fuente
+        usos : acciones/checkout@v3
+      - nombre : Configuración de Java
+        usos : acciones/setup-java@v3
+        con :
+          versión java : 8
+          distribucion : ' temurin '
+
+       https://www.microfocus.com/documentation/fortify-software-security-center/
+      - nombre : Descargar Fortify ScanCentral Client
+        usos : fortificar/gha-setup-scancentral-client@5b7382f8234fb9840958c49d5f32ae854115f9f3
+      - nombre : Código del paquete + Dependencias
+        ejecutar : paquete scancentral $PACKAGE_OPTS -o paquete.zip
+        env :
+          PAQUETE_OPTS : " -bt mvn "
+      - nombre : Descargar Fortify on Demand Universal CI Tool
+        usos : fortificar/gha-setup-fod-uploader@6e6bb8a33cb476e240929fa8ebc739ff110e7433
+      - nombre : realizar exploración SAST
+        ejecutar : java -jar $FOD_UPLOAD_JAR -z paquete.zip -aurl $FOD_API_URL -purl $FOD_URL -rid "$FOD_RELEASE_ID" -tc "$FOD_TENANT" -uc "$FOD_USER" "$FOD_PAT" $FOD_UPLOADER_OPTS -n "$FOD_UPLOADER_NOTES"
+        env :
+          FOD_URL : " https://ams.fortify.com/ "
+          FOD_API_URL : " https://api.ams.fortify.com/ "
+          FOD_TENANT : ${{ secretos.FOD_TENANT }}
+          FOD_USER : ${{ secretos.FOD_USER }}
+          FOD_PAT : ${{ secretos.FOD_PAT }}
+          FOD_RELEASE_ID : ${{ secretos.FOD_RELEASE_ID }}
+          FOD_UPLOADER_OPTS : " -ep 2 -pp 0 -I 1 -apf "
+          FOD_UPLOADER_NOTES : ' Activado por GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) '
+      - nombre : exportar resultados a SARIF optimizado para GitHub
+        usos : fortificar/gha-export-vulnerabilities@fcb374411cff9809028c911dabb8b57dbdae623b
+        con :
+          fod_base_url : " https://ams.fortify.com/ "
+          fod_tenant : ${{ secretos.FOD_TENANT }}
+          fod_user : ${{ secretos.FOD_USER }}
+          fod_password : ${{ secretos.FOD_PAT }}
+          fod_release_id : ${{ secretos.FOD_RELEASE_ID }}
+      - nombre : resultados de importación
+        usos : github/codeql-action/upload-sarif@v2
+        con :
+          archivo_sarif : ./gh-fortify-sast.sarif
