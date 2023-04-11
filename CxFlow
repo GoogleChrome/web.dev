@@ -1,0 +1,38 @@
+nombre : CxFlow
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request ;
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 39 6 * * 4 '
+permisos :
+  contenido : leer
+
+trabajos :
+  construir :
+    permisos :
+      contenido : leer # para acciones/pago para obtener código
+      problemas : escriba # para checkmarx-ts/checkmarx-cxflow-github-action para escribir comentarios sobre problemas de github
+      pull-requests : escriba # para checkmarx-ts/checkmarx-cxflow-github-action para escribir comentarios a relaciones públicas
+      eventos de seguridad : escriba # para github/codeql-action/upload-sarif para cargar los resultados de SARIF
+      acciones : lectura # solo requerida para un repositorio privado por github/codeql-action/upload-sarif para obtener el estado de ejecución de la acción
+    se ejecuta en : ubuntu-latest
+    pasos :
+    - usos : acciones/checkout@v3 
+    - nombre : Acción Checkmarx CxFlow
+      usos : checkmarx-ts/checkmarx-cxflow-github-action@49d8269b14ca87910ba003d47a31fa0c7a11f2fe
+      con :
+        proyecto : ${{ secretos.CHECKMARX_PROJECT }}
+        equipo : ${{ secretos.CHECKMARX_TEAMS }}
+        checkmarx_url : ${{ secretos.CHECKMARX_URL }}
+        checkmarx_username : ${{ secretos.CHECKMARX_USERNAME }}
+        checkmarx_password : ${{ secretos.CHECKMARX_PASSWORD }}
+        checkmarx_client_secret : ${{ secretos.CHECKMARX_CLIENT_SECRET }}
+        escáneres : sast
+        params : --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow. gravedad del filtro --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
+    - nombre : Subir archivo SARIF
+      usos : github/codeql-action/upload-sarif@v2
+      con :
+        sarif_file : cx.sarif
