@@ -1,0 +1,59 @@
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  flujo de trabajo_despacho :
+
+env :
+  AZURE_WEBAPP_NAME : your-app-name     # establezca esto en el nombre de su aplicación
+  AZURE_WEBAPP_PACKAGE_PATH : ' . '       # establezca esto en la ruta a su proyecto de aplicación web, por defecto a la raíz del repositorio
+  NODE_VERSION : ' 14.x '                 # establezca esto en la versión de nodo a usar
+
+permisos :
+  contenido : leer
+
+trabajos :
+  construir :
+    se ejecuta en : ubuntu-latest
+    pasos :
+    - usos : acciones/checkout@v3
+
+    - nombre : Configurar Node.js
+      usos : acciones/setup-node@v3
+      con :
+        versión-nodo : ${{ env.NODE_VERSION }}
+        caché : ' npm '
+
+    - nombre : instalación, compilación y prueba de npm
+      ejecutar : |
+        instalar npm
+        npm ejecutar compilación --si está presente
+        npm ejecutar prueba --si está presente
+    - nombre : cargar artefacto para el trabajo de implementación
+      usos : acciones/subir-artefacto@v3
+      con :
+        nombre : aplicación de nodo
+        ruta : .
+
+  desplegar :
+    permisos :
+      contenido : ninguno
+    se ejecuta en : ubuntu-latest
+    necesidades : construir
+    medio ambiente :
+      nombre : ' Desarrollo '
+      url : ${{ pasos.implementar en webapp.salidas.webapp-url }}
+
+    pasos :
+    - nombre : Descargar artefacto del trabajo de compilación
+      usos : acciones/descargar-artefacto@v3
+      con :
+        nombre : aplicación de nodo
+
+    - nombre : ' Implementar en Azure WebApp '
+      id : implementar en la aplicación web
+      usos : azure/webapps-deploy@v2
+      con :
+        nombre de la aplicación : ${{ env.AZURE_WEBAPP_NAME }}
+        publicar-perfil : ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        paquete : ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
