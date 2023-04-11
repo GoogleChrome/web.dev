@@ -1,0 +1,42 @@
+nombre : Contenedor Snyk
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 33 13 * * 4 '
+
+permisos :
+  contenido : leer
+
+trabajos :
+  snyk :
+    permisos :
+      contenido : leer # para acciones/pago para obtener código
+      eventos de seguridad : escriba # para github/codeql-action/upload-sarif para cargar los resultados de SARIF
+      acciones : lectura # solo requerida para un repositorio privado por github/codeql-action/upload-sarif para obtener el estado de ejecución de la acción
+    se ejecuta en : ubuntu-latest
+    pasos :
+    - usos : acciones/checkout@v3
+    - nombre : crea una imagen de Docker
+      ejecutar : docker build -t your/image-to-test.
+    - nombre : Ejecute Snyk para verificar la imagen de Docker en busca de vulnerabilidades
+      # Snyk se puede usar para romper la compilación cuando detecta vulnerabilidades.
+      # En este caso queremos subir los problemas a GitHub Code Scanning
+      continuar en caso de error : verdadero
+      usos : snyk/actions/docker@14818c4695ecc4045f33c9cee9e795a788711ca4
+      env :
+        # Para usar Snyk Action, deberá tener un token API de Snyk.
+        # Más detalles en https://github.com/snyk/actions#getting-your-snyk-token
+        # o puedes registrarte gratis en https://snyk.io/login
+        SNYK_TOKEN : ${{ secretos.SNYK_TOKEN }}
+      con :
+        imagen : su/imagen a prueba
+        argumentos : --file=Dockerfile
+    - nombre : Subir resultado a GitHub Code Scanning
+      usos : github/codeql-action/upload-sarif@v2
+      con :
+        sarif_file : snyk.sarif
