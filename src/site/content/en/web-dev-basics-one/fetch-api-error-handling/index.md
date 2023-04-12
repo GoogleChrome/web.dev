@@ -152,19 +152,16 @@ To check that the HTTP status code was successful, you can use any of the follow
 -  Use any other metadata, such as [`Response.headers`](https://developer.mozilla.org/docs/Web/API/Response/headers), to assess whether the response was successful.
 
 ```js
-let response;
-
 try {
-  response = await fetch('https://httpbin.org/status/429');
+  const response = await fetch('https://httpbin.org/status/429');
+  // network error in the 4xx–5xx range
+  if (!response.ok) {
+    throw new Error(`${response.status} ${response.statusText}`);
+  }
+  // use response here if we didn't throw above
+  doSomethingWith(response);
 } catch (error) {
-  console.log('There was an error', error);
-}
-
-// Uses the 'optional chaining' operator
-if (response?.ok) {
-  console.log('Use the response here!');
-} else {
-  console.log(`HTTP Response Code: ${response?.status}`)
+  console.log(error);
 }
 ```
 
