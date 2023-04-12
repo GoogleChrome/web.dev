@@ -114,7 +114,7 @@ As well as only considering some elements, certain heurisitics are applied to ex
 
 Browsers are likely to continue to improve these heuristics to ensure we match user expectations of what the largest _contentful_ element is.
 
-These "contentful" heuristics may differ from those used by [First Contentful Paint (FCP)](/fcp/), which may consider some of these elements, such as placeholder images or full view port images, even if they are ineligible to be LCP candidates. Despite both using "contentful" in their name, the aim of these metrics is different. FCP measures when _any content_ is painted to screen and LCP when the _main content_ is painted so LCP is intented to be more selective.
+These "contentful" heuristics may differ from those used by [First Contentful Paint (FCP)](/fcp/), which may consider some of these elements, such as placeholder images or full viewport images, even if they are ineligible to be LCP candidates. Despite both using "contentful" in their name, the aim of these metrics is different. FCP measures when _any content_ is painted to screen and LCP when the _main content_ is painted so LCP is intented to be more selective.
 
 ### How is an element's size determined?
 
