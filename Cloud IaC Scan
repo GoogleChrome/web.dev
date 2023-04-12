@@ -1,0 +1,36 @@
+nombre : Prisma Cloud IaC Scan
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  solicitud de extracción :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 45 16 * * 1 '
+
+permisos :
+  contenido : leer
+
+trabajos :
+  prisma_cloud_iac_scan :
+    permisos :
+      contenido : leer # para acciones/pago para obtener código
+      eventos de seguridad : escriba # para github/codeql-action/upload-sarif para cargar los resultados de SARIF
+      acciones : lectura # solo requerida para un repositorio privado por github/codeql-action/upload-sarif para obtener el estado de ejecución de la acción
+    se ejecuta en : ubuntu-latest
+    nombre : Ejecute Prisma Cloud IaC Scan para verificar
+    pasos :
+      - nombre : Caja
+        usos : acciones/checkout@v3
+      - id : iac-escaneo
+        nombre : Ejecutar Escaneo en archivos CFT en el repositorio
+        usos : prisma-cloud-shiftleft/iac-scan-action@53278c231c438216d99b463308a3cbed351ba0c3
+        con :
+      - nombre : Subir archivo SARIF
+        usos : github/codeql-action/upload-sarif@v2
+        si : éxito() || falla()
+        con :
+          # El nombre del archivo de registro SARIF es configurable en la acción de escaneo
+          # por lo tanto, el nombre del archivo se lee mejor desde la salida de pasos
+          sarif_file : ${{ pasos.iac-scan.outputs.iac_scan_result_sarif_path }}
