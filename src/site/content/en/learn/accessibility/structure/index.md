@@ -106,7 +106,7 @@ counterpart ARIA landmark roles.
       </tr>
   </tbody>
   <caption>
-    <sup>1</sup> Requires inclusion of the `name` attribute to be accessible. Only when a `section` is <a href="https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/#whatareaccessiblenamesanddescriptions?">accessibly-named</a>, its implicit ARIA role of <a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/region_role">`region`</a> will be visible to assistive technology.
+    <sup>1</sup> Requires inclusion of the `name` attribute to be accessible. A `section` must be <a href="https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/#whatareaccessiblenamesanddescriptions?">accessibly-named</a> for its implicit ARIA role of <a href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/region_role">`region`</a> to be visible to assistive technology.
   </caption>
 </table>
 </div>
