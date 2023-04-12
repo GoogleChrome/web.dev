@@ -94,7 +94,7 @@ When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in lin
 
 When the CrUX and Lighthouse CLS scores of PageSpeed Insights are not in line, then this likely indicates post-load CLS. To replicate that, the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console.
 
-Alternatively, you can browse your web page while [recording CLS using a JavaScript snippet](/cls/#measure-cls-in-javascript) pasted into the console.
+Alternatively, you can browse your web page while [recording layout shifts using a JavaScript snippet](/cls/#measure-layout-shifts-in-javascript) pasted into the console.
 
 The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) in DevTools highlights layout shifts in the **Experience** section. The **Summary** view for a `Layout Shift` record includes the cumulative layout shift score as well as a rectangle overlay showing the affected regions.
 
