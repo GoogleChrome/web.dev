@@ -18,7 +18,13 @@ This web feature is now available in all three browser engines!
 
 Push notifications were standardized in 2016 with the release of the Push API and the Notification API, which are part of the W3C's Web Applications Working Group. These APIs provide the necessary functionality for web developers to incorporate push notifications into their web applications and for users to receive and interact with notifications on their web browsers. Push messages are notifications that are sent to a user's web browser from a website or application that the user has previously granted permission to send notifications. These messages can be used to alert the user of new content or updates, remind them of upcoming events or deadlines, or provide other important information. Push messages can be particularly useful for applications that need to deliver timely, relevant information to their users, such as news or sports apps, or for e-commerce websites that want to send users notifications about special offers or sales.
 
-To sign up for push notifications, first check if your browser supports them by checking for the `serviceWorker` and `PushManager` objects in the `navigator` and `window` objects. If push notifications are supported, use the `async` and `await` keywords to register the service worker and subscribe for push notifications. Here is an example of how you can do this using JavaScript:
+To sign up for push notifications, first check if your browser supports them by checking for the `serviceWorker` and `PushManager` objects in the `navigator` and `window` objects.
+
+{% Aside 'gotcha' %}
+**Safari for iOS and iPadOS** supports push notifications as of version 16.4, but only for apps that were added to the Home Screen. Apple calls these Home Screen web apps.
+{% endAside %}
+
+If push notifications are supported, use the `async` and `await` keywords to register the service worker and subscribe for push notifications. Here is an example of how you can do this using JavaScript:
 
 ```js
 // Check if the browser supports push notifications.
@@ -44,13 +50,11 @@ if ("serviceWorker" in navigator && "PushManager" in window) {
 }
 ```
 
-{% Aside 'gotcha' %}
-Prior to version 16, **Safari on macOS** supported a [proprietary version of push notifications](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/NotificationProgrammingGuideForWebsites/PushNotifications/PushNotifications.html#//apple_ref/doc/uid/TP40013225-CH3-SW1). Since version 16, Safari for macOS now supports standard push notifications as other browsers.
-
-**Safari for iOS and iPadOS** supports push notifications as of version 16.4, but only for apps that were added to the Home Screen. Apple calls these Home Screen web apps.
-{% endAside %}
-
 {% BrowserCompat 'api.PushEvent.PushEvent' %}
+
+{% Aside %}
+Prior to version 16, **Safari on macOS** supported a [proprietary version of push notifications](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/NotificationProgrammingGuideForWebsites/PushNotifications/PushNotifications.html#//apple_ref/doc/uid/TP40013225-CH3-SW1). Since version 16, Safari for macOS now supports standard push notifications as other browsers.
+{% endAside %}
 
 ## Further reading
 

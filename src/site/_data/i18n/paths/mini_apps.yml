@@ -2,7 +2,7 @@ title:
   en: Mini apps
   es: Mini aplicaciones
   ja: ミニアプリ
-  ko: 미니 앱
+  ko: 미니앱
   pt: Miniaplicativos
   ru: Мини-приложения
   zh: 小程序
@@ -11,7 +11,7 @@ description:
   en: A web developer's exploration into mini apps—apps that are built with web technologies but that do not run in browsers.
   es: Un desarrollador web explora las mini aplicaciones, es decir, las aplicaciones creadas con tecnologías web pero que no se ejecutan en los navegadores.
   ja: ある Web 開発者によるミニアプリの探求 — ミニアプリとは、Web 技術を用いて構築されているもののブラウザーでは動作しないアプリケーションのことを指します。
-  ko: 웹 기술로 구축되었지만 브라우저에서 실행되지 않는 앱인 미니 앱에 대한 웹 개발자 탐색.
+  ko: 웹 기술로 구축되었지만 브라우저에서 실행되지 않는, 미니앱을 향한 웹 개발자의 여정.
   pt: 'Uma introdução, para desenvolvedores web, aos miniaplicativos: aplicações que são construídas com tecnologias web mas que não rodam em navegadores.'
   ru: Введение для веб-разработчиков в мини-приложения — приложения, основанные на веб-технологиях, но работающие не в браузере.
   zh: 一个网站开发者对小程序（利用网页技术构建但不在浏览器中运行的应用）的探索。
@@ -20,7 +20,7 @@ overview:
   en: Learn more about the thriving ecosystem of mini apps and what web developers can learn from it.
   es: Obtenga más información sobre el próspero ecosistema de las mini aplicaciones y lo que los desarrolladores web pueden aprender de él.
   ja: 活性化を続けるミニアプリのエコシステムと、Web 開発者がそこから学ぶことができる内容についてご紹介します。
-  ko: 미니 앱의 번창하는 생태계와 웹 개발자가 이를 통해 배울 수 있는 점에 대해 자세히 알아보세요.
+  ko: 미니앱의 번창하는 생태계와, 웹 개발자가 이를 통해 배울 수 있는 점에 대해 자세히 알아보세요.
   pt: Saiba mais sobre o vibrante ecossistema dos miniaplicativos e o que os desenvolvedores web podem aprender com eles.
   ru: Узнайте подробнее о бурно развивающейся экосистеме мини-приложений и о том, что могут из нее извлечь веб-разработчики.
   zh: 详细了解蓬勃发展的小程序生态系统，以及网站开发者可以从中学习的东西。
@@ -30,7 +30,7 @@ topics:
     en: Welcome to the world of mini apps
     es: Bienvenido al mundo de las mini aplicaciones
     ja: ミニアプリの世界へようこそ
-    ko: 미니 앱의 세계에 오신 것을 환영합니다
+    ko: 미니앱의 세상에 오신 것을 환영해요
     pt: Bem-vindo ao mundo dos miniaplicativos
     ru: Знакомство с миром мини-приложений
     zh: 欢迎来到小程序的世界
@@ -39,7 +39,7 @@ topics:
     en: The developer experience of mini apps
     es: La experiencia de los desarrolladores de mini aplicaciones
     ja: ミニアプリの開発者エクスペリエンス
-    ko: 미니 앱의 개발자 경험
+    ko: 미니앱의 개발자 경험
     pt: A experiência dos desenvolvedores de miniaplicativos
     ru: Процесс разработки мини-приложений
     zh: 小程序开发者体验
@@ -48,7 +48,7 @@ topics:
     en: The wider mini apps ecosystem
     es: El amplio ecosistema de las mini aplicaciones
     ja: 幅広いミニアプリのエコシステム
-    ko: 더 넓어진 미니 앱 생태계
+    ko: 더 넓어진 미니앱 생태계
     pt: O amplo ecossistema dos miniaplicativos
     ru: Глобальная экосистема мини-приложений
     zh: 更广泛的小程序生态系统
@@ -57,7 +57,7 @@ topics:
     en: Learning from mini apps
     es: Aprender de las mini aplicaciones
     ja: ミニアプリから学ぶ
-    ko: 미니 앱에서 배우기
+    ko: 미니앱에서 배울 점
     pt: Como aprender com os miniaplicativos
     ru: Чему можно научиться у мини-приложений
     zh: 从小程序中汲取经验

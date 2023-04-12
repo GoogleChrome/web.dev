@@ -14,11 +14,11 @@ intro:
 
 featuredCard:
   eyebrow: 'Featured'
-  title: 'Watch the progress we made together on the web.'
-  background: ''
-  url: 'https://www.youtube.com/watch?v=W9O4CuSUKb8'
-  video: 'https://web-dev.imgix.net/video/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/lIta9ZJEALbfAzJzmiNl.mp4'
-  alt: 'Chrome icon rolls past a title: 2022 Year in Review.'
+  title: 'Let’s go, it’s Google I/O.<br>Register Now.'
+  background: 'image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/9WSNd3mdbXACF19ELKJ1.png'
+  url: 'https://io.google/2023/?utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_reg_card&utm_content='
+  image: '.'
+  alt: '.'
   theme: 'light'
 
 pickedCaseStudyUrl: '/mishipay/'
@@ -29,7 +29,7 @@ platformNews:
   pickedLeft:
     url: '/interop-2023/'
   pickedRight:
-    url: '/web-platform-01-2023/'
+    url: '/web-platform-03-2023/'
 
 themes:
   - category: CSS and UI
