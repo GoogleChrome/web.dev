@@ -1,28 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-#
-# This workflow starts your API and fuzzes it with ForAllSecure Mayhem for API
-# to find reliability, performance and security issues before they reach
-# production.
-#
-# To use this workflow, you will need to:
-#
-# 1. Create a Mayhem for API account at
-#    https://mayhem4api.forallsecure.com/signup
-#
-# 2. Create a service account token `mapi organization service-account create
-#    <org-name> <service-account-name>`
-#
-# 3. Add the service account token as a secret in GitHub called "MAPI_TOKEN"
-#
-# 4. Update the "Start your API" step to run your API in the background before
-#    starting the Mayhem for API scan, and update the `api-url` & `api-spec`
-#    field.
-#
-# If you have any questions, please contact us at mayhem4api@forallsecure.com
-
 name: "Mayhem for API"
 
 on:
