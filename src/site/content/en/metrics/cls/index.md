@@ -229,9 +229,7 @@ The layout shift score is `0.5 x 0.14 = 0.07`.
 
 This last example illustrates multiple _unstable elements_:
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FdCETo2dLwGmzw0V5lNT.png", alt="Layout shift example with multiple stable and _unstable elements_", width="800", height="600", linkTo=true %}
-
-{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/KmG1R0zGNCtdeiVULnaA.png", alt="Layout shift example with multiple stable and _unstable elements_", width="800", height="644" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/J8AWG72qYlmbAHxjxuLg.png", alt="Layout shift example with stable and _unstable elements_ and viewport clipping", width="800", height="600", linkTo=true %}
 
 In the first frame above there are four results of an API request for animals,
 sorted in alphabetical order. In the second frame, more results are added to the
