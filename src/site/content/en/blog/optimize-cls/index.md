@@ -363,7 +363,7 @@ The following tools can help you minimize this:
 
 - `font-display: optional` can avoid a re-layout as the web font is only used if it is available by the time of initial layout.
 - Ensure the appropriate fallback font is used. For example, using `font-family: "Google Sans", sans-serif;` will ensure the browser's `sans-serif` fallback font is used while `"Google Sans"` is loaded. Not specifying a fallback font using just `font-family: "Google Sans"` will mean the default font is used, which on Chrome is "Times"—a serif font which is a worse match than the default `sans-serif` font.
-- Closing the differences between the fallback font and the web font using the new `size-adjust`, `ascent-override`, `descent-override`, and `line-gap-override` APIs as detailed in the [Improved font fallbacks](https://developer.chrome.com/blog/font-fallbacks/) post.
+- Minimize the size differences between the fallback font and the web font using the new `size-adjust`, `ascent-override`, `descent-override`, and `line-gap-override` APIs as detailed in the [Improved font fallbacks](https://developer.chrome.com/blog/font-fallbacks/) post.
 - The [Font Loading API](/optimize-webfont-loading/#the-font-loading-api) can reduce the time it takes to get necessary fonts.
 - Load critical web fonts as early as possible using `<link rel=preload>`. A preloaded font will have a higher chance to meet the first paint, in which case there's no layout shifting.
 
