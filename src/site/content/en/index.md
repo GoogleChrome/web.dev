@@ -14,7 +14,7 @@ intro:
 
 featuredCard:
   eyebrow: 'Featured'
-  title: 'Let’s go, it’s Google I/O. Register Now.'
+  title: 'Let’s go, it’s Google I/O.<br>Register Now.'
   background: 'image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/9WSNd3mdbXACF19ELKJ1.png'
   url: 'https://io.google/2023/?utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_reg_card&utm_content='
   image: '.'
@@ -29,7 +29,7 @@ platformNews:
   pickedLeft:
     url: '/interop-2023/'
   pickedRight:
-    url: '/web-platform-01-2023/'
+    url: '/web-platform-03-2023/'
 
 themes:
   - category: CSS and UI
