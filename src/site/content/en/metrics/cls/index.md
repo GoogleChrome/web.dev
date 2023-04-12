@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2023-03-30
+updated: 2023-04-12
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it.

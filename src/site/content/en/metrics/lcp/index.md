@@ -3,8 +3,9 @@ layout: post
 title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
+  - tunetheweb
 date: 2019-08-08
-updated: 2023-03-08
+updated: 2023-04-12
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -91,23 +92,29 @@ As currently specified in the [Largest Contentful Paint
 API](https://wicg.github.io/largest-contentful-paint/), the types of elements
 considered for Largest Contentful Paint are:
 
-* `<img>` elements
-* `<image>` elements inside an `<svg>` element
-* `<video>` elements (the poster image is used)
-* An element with a background image loaded via the
+- `<img>` elements
+- `<image>` elements inside an `<svg>` element
+- `<video>` elements with a poster image (the poster image load time is used)
+- An element with a background image loaded via the
   [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) function
   (as opposed to a
   [CSS gradient](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
-* [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
+- [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
-
-{% Aside 'important' %}
-Images that occupy the entire viewport are not considered LCP candidates.
-{% endAside %}
 
 Note, restricting the elements to this limited set was intentional in order to
 keep things simple in the beginning. Additional elements (like the full `<svg>` support or
 `<video>` elements without poster images) may be added in the future as more research is conducted.
+
+As well as only considering some elements, certain heurisitics are applied to exclude certain elements that are likely to be seen as "non-contentful" to users. For Chromium-based browsers, these include:
+
+- Elements with an opacity of 0, that are invisible to the user
+- Elements that cover the full viewport, that are likely considered as background rather than content
+- Placeholder images or other images with a low entropy, that likely do not reflect the true content of the page
+
+Browsers are likely to continue to improve these heuristics to ensure we match user expectations of what the largest _contentful_ element is.
+
+These "contentful" heuristics may differ from those used by [First Contentful Paint (FCP)](/fcp/), which may consider some of these elements, such as placeholder images or full view port images, even if they are ineligible to be LCP candidates. Despite both using "contentful" in their name, the aim of these metrics is different. FCP measures when _any content_ is painted to screen and LCP when the _main content_ is painted so LCP is intented to be more selective.
 
 ### How is an element's size determined?
 
@@ -205,7 +212,6 @@ For analysis purposes, you should only report the most recently dispatched
   Google tools that measure LCP do not report this metric if the page was
   loaded in the background, as it does not reflect the user-perceived load time.
 {% endAside %}
-
 
 #### Load time vs. render time
 
