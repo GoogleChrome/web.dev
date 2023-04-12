@@ -203,7 +203,7 @@ is `0.25`, so the _layout shift score_ is `0.75 * 0.25 = 0.1875`.
 The next example illustrates how adding content to an existing element affects
 the layout shift score:
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xhN81DazXCs8ZawoCj0T.png", alt="Layout shift example with stable and _unstable elements_ and viewport clipping", width="800", height="600", linkTo=true %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xhN81DazXCs8ZawoCj0T.png", alt="Layout shift example with multiple stable and _unstable elements_", width="800", height="600", linkTo=true %}
 
 The "Click Me!" button is appended to the bottom of the gray box with black
 text, which pushes the green box with white text down (and partially out of the
