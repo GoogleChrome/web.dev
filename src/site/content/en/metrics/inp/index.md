@@ -16,7 +16,7 @@ tags:
 {% BrowserCompat 'api.PerformanceEventTiming.interactionId' %}
 
 {% Aside %}
-Interaction to Next Paint (INP) is an experimental metric that uses data from the [`Event Timing API`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming) API, that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). When an interaction causes a page to become unresponsive, that is a poor user experience. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
+Interaction to Next Paint (INP) is an experimental metric that uses data from the [`Event Timing API`](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming) API, that assesses [responsiveness](/user-centric-performance-metrics/#types-of-metrics). When an interaction causes a page to become unresponsive, that is a poor user experience. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. A low INP means the page was consistently able to respond quickly to all&mdash;or the vast majority&mdash;of user interactions.
 {% endAside %}
 
 Chrome usage data shows that 90% of a user's time on a page is spent _after_ it loads, Thus, careful measurement of responsiveness _throughout_ the page lifecycle is important. This is what the INP metric assesses.
