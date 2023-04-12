@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2022-10-19
+updated: 2023-04-12
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it.
@@ -14,6 +14,8 @@ tags:
   - metrics
   - web-vitals
 ---
+
+{% BrowserCompat 'api.LayoutShift' %}
 
 {% Aside 'key-term' %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
@@ -332,73 +334,25 @@ available in the following tools:
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://webpagetest.org/)
 
-### Measure CLS in JavaScript
+### Measure layout shifts in JavaScript
 
-{% BrowserCompat 'api.LayoutShift' %}
+To measure layout shifts in JavaScript, you use the [Layout Instability API](https://github.com/WICG/layout-instability).
 
-To measure CLS in JavaScript, you can use the [Layout Instability
-API](https://github.com/WICG/layout-instability). The following example shows
-how to create a
-[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
-that listens for unexpected `layout-shift` entries, groups them into sessions,
-and logs the maximum session value any time it changes.
+The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to log `layout-shift` entries to the console:
 
 ```js
-let clsValue = 0;
-let clsEntries = [];
-
-let sessionValue = 0;
-let sessionEntries = [];
-
 new PerformanceObserver((entryList) => {
   for (const entry of entryList.getEntries()) {
-    // Only count layout shifts without recent user input.
-    if (!entry.hadRecentInput) {
-      const firstSessionEntry = sessionEntries[0];
-      const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
-
-      // If the entry occurred less than 1 second after the previous entry and
-      // less than 5 seconds after the first entry in the session, include the
-      // entry in the current session. Otherwise, start a new session.
-      if (sessionValue &&
-          entry.startTime - lastSessionEntry.startTime < 1000 &&
-          entry.startTime - firstSessionEntry.startTime < 5000) {
-        sessionValue += entry.value;
-        sessionEntries.push(entry);
-      } else {
-        sessionValue = entry.value;
-        sessionEntries = [entry];
-      }
-
-      // If the current session value is larger than the current CLS value,
-      // update CLS and the entries contributing to it.
-      if (sessionValue > clsValue) {
-        clsValue = sessionValue;
-        clsEntries = sessionEntries;
-
-        // Log the updated value (and its entries) to the console.
-        console.log('CLS:', clsValue, clsEntries)
-      }
-    }
+    console.log('Layout shift:', entry);
   }
 }).observe({type: 'layout-shift', buffered: true});
 ```
 
-{% Aside 'warning' %}
+### Measure CLS in JavaScript
 
-  This code shows the basic way to calculate and log CLS. However, accurately
-  measuring CLS in a way that matches what is measured in the [Chrome User
-  Experience
-  Report](https://developer.chrome.com/docs/crux/)
-  (CrUX) is more complicated. See below for details:
+To measure CLS in JavaScript, you need to group these unexpected `layout-shift` entries into sessions, and calculate the maximum session value. You can refer to the [`web vitals` JavaScript library source code](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts) which contains a reference implementation on how CLS is calculated.
 
-{% endAside %}
-
-In most cases, the current CLS value at the time the page is being unloaded is
-the final CLS value for that page, but there are a few important exceptions:
-
-The following section lists the differences between what the API reports and how
-the metric is calculated.
+In most cases, the current CLS value at the time the page is being unloaded is the final CLS value for that page, but there are a few important exceptions as noted in the next section. The `web vitals` JavaScript library accounts for these as much as possible, within the limitations of the Web APIs.
 
 #### Differences between the metric and the API
 
@@ -442,10 +396,6 @@ import {onCLS} from 'web-vitals';
 onCLS(console.log);
 ```
 
-You can refer to [the source code for
-`onCLS)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onCLS.ts)
-for a complete example of how to measure CLS in JavaScript.
-
 {% Aside %}
   In some cases (such as cross-origin iframes) it's not possible to measure CLS
   in JavaScript. See the
@@ -455,33 +405,7 @@ for a complete example of how to measure CLS in JavaScript.
 
 ## How to improve CLS
 
-{% Aside %}
-  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
-  implementations of common UX patterns optimized for Core Web Vitals. This
-  collection includes patterns that are often tricky to implement without layout
-  shifts.
-{% endAside %}
-
-For most websites, you can avoid all unexpected layout shifts by sticking to a
-few guiding principles:
-
-- **Always include size attributes on your images and video elements, or
-  otherwise reserve the required space with something like [CSS aspect ratio
-  boxes](https://css-tricks.com/aspect-ratio-boxes/).** This approach ensures
-  that the browser can allocate the correct amount of space in the document
-  while the image is loading. Note that you can also use the [unsized-media
-  permissions
-  policy](https://github.com/w3c/webappsec-permissions-policy/blob/main/policies/unsized-media.md)
-  to force this behavior in browsers that support feature policies.
-- **Never insert content above existing content, except in response to a user
-  interaction.** This ensures any layout shifts that occur are expected.
-- **Prefer transform animations to animations of properties that trigger layout
-  changes.** Animate transitions in a way that provides context and continuity
-  from state to state.
-
-For a deep dive on how to improve CLS, see [Optimize
-CLS](/optimize-cls/) and [Debug layout shifts
-](/debug-layout-shifts).
+A full guide on [optimizing CLS](/optimize-cls/) is available to guide you through the process of identifying layout shifts in the field and using lab data to drill down and optimize them.
 
 ## Additional resources
 

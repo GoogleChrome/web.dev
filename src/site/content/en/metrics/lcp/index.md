@@ -3,8 +3,9 @@ layout: post
 title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
+  - tunetheweb
 date: 2019-08-08
-updated: 2023-03-08
+updated: 2023-04-12
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -12,6 +13,8 @@ tags:
   - performance
   - metrics
 ---
+
+{% BrowserCompat 'api.LargestContentfulPaint' %}
 
 {% Aside %}
   Largest Contentful Paint (LCP) is an important, user-centric metric for
@@ -89,23 +92,29 @@ As currently specified in the [Largest Contentful Paint
 API](https://wicg.github.io/largest-contentful-paint/), the types of elements
 considered for Largest Contentful Paint are:
 
-* `<img>` elements
-* `<image>` elements inside an `<svg>` element
-* `<video>` elements (the poster image is used)
-* An element with a background image loaded via the
+- `<img>` elements
+- `<image>` elements inside an `<svg>` element
+- `<video>` elements with a poster image (the poster image load time is used)
+- An element with a background image loaded via the
   [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) function
   (as opposed to a
   [CSS gradient](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
-* [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
+- [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
-
-{% Aside 'important' %}
-Images that occupy the entire viewport are not considered LCP candidates.
-{% endAside %}
 
 Note, restricting the elements to this limited set was intentional in order to
 keep things simple in the beginning. Additional elements (like the full `<svg>` support or
 `<video>` elements without poster images) may be added in the future as more research is conducted.
+
+As well as only considering some elements, certain heurisitics are applied to exclude certain elements that are likely to be seen as "non-contentful" to users. For Chromium-based browsers, these include:
+
+- Elements with an opacity of 0, that are invisible to the user
+- Elements that cover the full viewport, that are likely considered as background rather than content
+- Placeholder images or other images with a low entropy, that likely do not reflect the true content of the page
+
+Browsers are likely to continue to improve these heuristics to ensure we match user expectations of what the largest _contentful_ element is.
+
+These "contentful" heuristics may differ from those used by [First Contentful Paint (FCP)](/fcp/), which may consider some of these elements, such as placeholder images or full viewport images, even if they are ineligible to be LCP candidates. Despite both using "contentful" in their name, the aim of these metrics is different. FCP measures when _any content_ is painted to screen and LCP when the _main content_ is painted so LCP is intented to be more selective.
 
 ### How is an element's size determined?
 
@@ -204,7 +213,6 @@ For analysis purposes, you should only report the most recently dispatched
   loaded in the background, as it does not reflect the user-perceived load time.
 {% endAside %}
 
-
 #### Load time vs. render time
 
 For security reasons, the render timestamp of images is not exposed for
@@ -291,8 +299,6 @@ available in the following tools:
 
 ### Measure LCP in JavaScript
 
-{% BrowserCompat 'api.LargestContentfulPaint' %}
-
 To measure LCP in JavaScript, you can use the [Largest Contentful Paint
 API](https://wicg.github.io/largest-contentful-paint/). The following example
 shows how to create a
@@ -375,32 +381,10 @@ the article on [custom metrics](/custom-metrics/#element-timing-api).
 
 ## How to improve LCP
 
-LCP is primarily affected by four factors:
-
-* Slow server response times
-* Render-blocking JavaScript and CSS
-* Resource load times
-* Client-side rendering
-
-For a deep dive on how to improve LCP, see [Optimize
-LCP](/optimize-lcp/). For additional guidance on individual
-performance techniques that can also improve LCP, see:
-
-* [Apply instant loading with the PRPL
-  pattern](/apply-instant-loading-with-prpl)
-* [Optimizing the Critical Rendering
-  Path](/critical-rendering-path/)
-* [Optimize your CSS](/fast#optimize-your-css)
-* [Optimize your Images](/fast#optimize-your-images)
-* [Optimize web Fonts](/fast#optimize-web-fonts)
-* [Optimize your JavaScript](/fast#optimize-your-javascript) (for
-  client-rendered sites)
+A full guide on [optimizing LCP](/optimize-lcp/) is available to guide you through the process of identifying LCP timings in the field and using lab data to drill down and optimize them.
 
 ## Additional resources
 
-- [Lessons learned from performance monitoring in
-  Chrome](https://youtu.be/ctavZT87syI) by [Annie
-  Sullivan](https://anniesullie.com/) at
-  [performance.now()](https://perfnow.nl/) (2019)
+- [Lessons learned from performance monitoring in Chrome](https://youtu.be/ctavZT87syI) by [Annie Sullivan](https://anniesullie.com/) at [performance.now()](https://perfnow.nl/) (2019)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

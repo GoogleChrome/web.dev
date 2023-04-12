@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2022-08-17
+updated: 2023-04-12
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -12,6 +12,8 @@ tags:
   - performance
   - metrics
 ---
+
+{% BrowserCompat 'api.PerformanceEventTiming' %}
 
 {% Aside %}
   First Input Delay (FID) is an important, user-centric metric for measuring
@@ -260,8 +262,6 @@ user to interact with your page. You can measure FID with the following tools.
 
 ### Measure FID in JavaScript
 
-{% BrowserCompat 'api.PerformanceEventTiming' %}
-
 To measure FID in JavaScript, you can use the [Event Timing
 API](https://wicg.github.io/event-timing). The following example shows how to
 create a
@@ -353,21 +353,6 @@ percentile of mobile users.
 
 ## How to improve FID
 
-To learn how to improve FID for a specific site, you can run a Lighthouse
-performance audit and pay attention to any specific
-[opportunities](https://developer.chrome.com/docs/lighthouse/performance/#opportunities) the audit suggests.
-
-While FID is a field metric (and Lighthouse is a lab metric tool), the guidance
-for improving FID is the same as that for improving the lab metric [Total
-Blocking Time (TBT)](/tbt/).
-
-For a deep dive on how to improve FID, see [Optimize FID](/optimize-fid/). For
-additional guidance on individual performance techniques that can also improve
-FID, see:
-
-- [Reduce the impact of third-party code](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary/)
-- [Reduce JavaScript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)
-- [Minimize main thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)
-- [Keep request counts low and transfer sizes small](https://developer.chrome.com/docs/lighthouse/performance/resource-summary/)
+A full guide on [optimizing FID](/optimize-fid/) is available to guide you through techniques to improve this metric.
 
 {% include 'content/metrics/metrics-changelog.njk' %}

@@ -13,6 +13,8 @@ tags:
   - metrics
 ---
 
+{% BrowserCompat 'api.PerformancePaintTiming' %}
+
 {% Aside %}
   First Contentful Paint (FCP) is an important, user-centric metric for
   measuring [perceived load
@@ -87,8 +89,6 @@ available in the following tools:
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Measure FCP in JavaScript
-
-{% BrowserCompat 'api.PerformancePaintTiming' %}
 
 To measure FCP in JavaScript, you can use the [Paint Timing
 API](https://w3c.github.io/paint-timing/). The following example shows how to
