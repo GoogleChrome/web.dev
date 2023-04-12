@@ -85,7 +85,7 @@ Imagemin 是围绕“插件”构建的。插件是压缩特定图像格式的 n
       <tr>
         <td>WebP</td>
         <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
-        <td></td>
+        <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
       </tr>
     </tbody>
   </table>

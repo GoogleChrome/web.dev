@@ -85,7 +85,7 @@ Imagemin — отличное средство для сжатия изобра�
       <tr>
         <td>WebP</td>
         <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
-        <td></td>
+        <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
       </tr>
     </tbody>
   </table>
