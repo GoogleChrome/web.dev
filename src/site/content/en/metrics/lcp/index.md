@@ -381,32 +381,10 @@ the article on [custom metrics](/custom-metrics/#element-timing-api).
 
 ## How to improve LCP
 
-LCP is primarily affected by four factors:
-
-* Slow server response times
-* Render-blocking JavaScript and CSS
-* Resource load times
-* Client-side rendering
-
-For a deep dive on how to improve LCP, see [Optimize
-LCP](/optimize-lcp/). For additional guidance on individual
-performance techniques that can also improve LCP, see:
-
-* [Apply instant loading with the PRPL
-  pattern](/apply-instant-loading-with-prpl)
-* [Optimizing the Critical Rendering
-  Path](/critical-rendering-path/)
-* [Optimize your CSS](/fast#optimize-your-css)
-* [Optimize your Images](/fast#optimize-your-images)
-* [Optimize web Fonts](/fast#optimize-web-fonts)
-* [Optimize your JavaScript](/fast#optimize-your-javascript) (for
-  client-rendered sites)
+A full guide on [optimizing LCP](/optimize-lcp/) is available to guide you through the process of identifying LCP timings in the field and using lab data to drill down and optimize them.
 
 ## Additional resources
 
-- [Lessons learned from performance monitoring in
-  Chrome](https://youtu.be/ctavZT87syI) by [Annie
-  Sullivan](https://anniesullie.com/) at
-  [performance.now()](https://perfnow.nl/) (2019)
+- [Lessons learned from performance monitoring in Chrome](https://youtu.be/ctavZT87syI) by [Annie Sullivan](https://anniesullie.com/) at [performance.now()](https://perfnow.nl/) (2019)
 
 {% include 'content/metrics/metrics-changelog.njk' %}
