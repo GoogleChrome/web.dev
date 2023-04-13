@@ -142,7 +142,6 @@
   }
 }
 
-
 .prose .related-card {
   margin: 80px auto;
 }
@@ -150,6 +149,28 @@
 .related-card {
   display: grid;
   grid-template-columns: auto;
+
+  svg {
+    fill: var(--color-mid-text);
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  span {
+      margin-top: 0;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+
+    @include media-query('md') {
+      font-size: 1.5rem;
+    }
+
+    @include media-query('lg') {
+      font-size: 1.75rem;
+    }      
+  }
 
   .card  {
     margin-top: 25px;
@@ -206,28 +227,6 @@
         padding-right: 25px;
       }
     }
-  }
-
-  svg {
-    fill: var(--color-mid-text);
-    height: 20px;
-    margin-right: 10px;
-  }
-
-  span {
-      margin-top: 0;
-  }
-
-  h4 {
-    font-size: 1.25rem;
-
-    @include media-query('md') {
-      font-size: 1.5rem;
-    }
-
-    @include media-query('lg') {
-      font-size: 1.75rem;
-    }      
   }
 }
 

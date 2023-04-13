@@ -37,7 +37,7 @@ const getIcon = (icon) => {
 
 /**
  * @param {RelatedCardParam} param
- * @returns {string} related card template.
+ * @returns {string} Related card template.
  */
 function RelatedCard(param) {
   const theme = param.theme || 'quaternary';

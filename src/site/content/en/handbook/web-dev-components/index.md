@@ -1375,7 +1375,7 @@ See the [Images and video](/handbook/markup-media) post.
 
 Use related card components in the post content to display relevant posts to cross-link to other useful stuff, for example, to signpost people to Learn PWA from each individual PWA article.
 
-The relatedCard shortcode properties available for displaying a related card in the post content:
+The relatedCard shortcode properties available:
 
 - `title` - the title of the card, like a show's name or a post's title.
 - `description` - a description or short summary.
