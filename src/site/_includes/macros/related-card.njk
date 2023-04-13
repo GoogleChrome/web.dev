@@ -1,0 +1,31 @@
+{#
+  @typedef {string} param.title - The title of the card, like a show's name or a post's title.
+  @typedef {string} param.summary - A description or short summary.
+  @typedef {string} param.eyebrowText - The text to introduce the type of card, such as 'Blog'.
+  @typedef {string} param.eyebrowIcon - The icon SVG name for display the icon to introduce the type of card.
+  @typedef {string} param.url - The url for the page the card is previewing.
+  @typedef {string} param.image - An relevant image to be displayed in the card.
+  @typedef {string} param.alt - Alt text for image. If no thumbnail is provided, this can be null.
+  @typedef {string} param.theme - The theme colours of the card, tertiary, quaternary, pink, dark, and blue, are available.
+#}
+
+{% macro relatedCard(param) %}
+{% from 'macros/icon.njk' import icon with context %}
+
+<div class="related-card">
+  <a href="{{ param.url }}" aria-hidden="true" class="card card-horizontal {% if param.theme %} bg-{{param.theme}}{% endif %}">
+    <div class="content">
+      <div class="card__eyebrow flow">
+        {{ icon(param.eyebrowIcon) }}
+        <span class="text-size-0 color-mid-text">{{ param.eyebrowText }}</span>
+      </div>
+      <div class="card__content flow">
+        <h4 class="card__heading color-core-text">{{ param.title }}</h4>
+        <p class="text-size-1 color-mid-text">{{ param.summary }}</p>
+      </div>
+    </div>
+
+    {% Img src=param.image, alt=param.alt, width="370", height="220", class="card__hero" %}
+  </a>
+</div>
+{% endmacro %}
