@@ -304,7 +304,7 @@ Fortunately, there is a dedicated scheduler API that is currently in development
 
 ### A dedicated scheduler API
 
-The scheduler API currently offers the `postTask()` function which, at the time of writing, is available in Chromium browsers and Firefox behind a flag. `postTask()` allows for finer-grained scheduling of tasks, and is one way to help the browser prioritize work so that low priority tasks yield to the main thread. `postTask()` uses promises, and accepts a `priority` setting.
+The scheduler API currently offers the `postTask()` function which, at the time of writing, is available in Chromium browsers, and in Firefox behind a flag. `postTask()` allows for finer-grained scheduling of tasks, and is one way to help the browser prioritize work so that low priority tasks yield to the main thread. `postTask()` uses promises, and accepts a `priority` setting.
 
 The `postTask()` API has three priorities you can use:
 

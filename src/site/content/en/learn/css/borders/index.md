@@ -252,7 +252,7 @@ You can define both properties, per corner like this:
 </figure>
 
 This adds a `border-top-left-top` value of `1em`,
-and a border top-left-left value of `2em`.
+and a `border-top-left-left` value of `2em`.
 This converts the top left border radius into an elliptical radius,
 rather than the default circular radius.
 

@@ -49,7 +49,7 @@ Find out more in the launch post [SPA view transitions land in Chrome 111](https
 
 Also included in Chrome 111 are a whole new set of ways to use color on the web. Chrome now supports color spaces that access colors outside of the RGB gamut, along with the `color()` and `color-mix()` functions. Learn more in our [High definition CSS color guide](https://developer.chrome.com/articles/high-definition-css-color-guide/) and [blog post on `color-mix()`](https://developer.chrome.com/blog/css-color-mix/).
 
-{% BrowserCompat 'css.types.color_value.color-mix' %}
+{% BrowserCompat 'css.types.color.color-mix' %}
 
 The Chrome release also includes [new DevTools](https://developer.chrome.com/blog/new-in-devtools-111/#color) to help you work with this new color functionality.
 

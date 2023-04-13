@@ -58,7 +58,7 @@ Within the `type` attribute, you can include a [`codecs`](https://developer.mozi
 which specifies exactly how the resource is encoded. Codecs give you a way of including media optimizations that are not yet supported
 in all browsers. The codec is separated from the media type with a semicolon. For example, the codec can be written using
 intuitive syntax, such as `<source src="videos/machines.webm" type="video/webm;codecs=vp8,vorbis">` which indicates that the
-WebM files contain VP8 video and vorbis audio. Codecs can also be more difficult to decipher, such as `<source src="videos/machines.mp4" type="video/mp4"; codecs=avc1.4d002a">`
+WebM files contain VP8 video and vorbis audio. Codecs can also be more difficult to decipher, such as `<source src="videos/machines.mp4" type="video/mp4; codecs=avc1.4d002a">`
 which indicates that the MP4 encoding is Advanced Video Coding Main Profile Level 4.2. Explaining this syntax is well beyond
 the scope of this lesson. Jake Archibald has a post explaining [how to determine the codec parameter for an AV1 video](https://jakearchibald.com/2022/html-codecs-parameter-for-av1/)
 if you want to learn more.
