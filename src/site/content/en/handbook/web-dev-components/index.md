@@ -1380,18 +1380,17 @@ The relatedCard shortcode properties available for displaying a related card in 
 - `title` - the title of the card, like a show's name or a post's title.
 - `description` - a description or short summary.
 - `thumbnail` - the thumbnail of the card.
-- `eyebrowText` - the text to introduce the type of card.
-- `eyebrowIcon` - the icon SVG name for display the icon to introduce the type of card.
+- `eyebrow` - the keyword to introduce the type of card.
 - `url` - the url for the page the card is previewing.
 - `image` - an relevant image to be displayed in the card.
 - `alt` - an alt text for image. If no thumbnail is provided, this can be null.
 - `theme` - the theme colours of the card. Theme colours available - tertiary, quaternary, pink, dark, and blue.
 
-### Icons
+### Eyebrows
 
 <table>
   <tr>
-    <th>Icon name</th>
+    <th>Keyword</th>
     <th>Use for</th>
   </tr>
   <tr>
@@ -1451,32 +1450,24 @@ The relatedCard shortcode properties available for displaying a related card in 
 
 {% raw %}
 ```md
-
-{% from 'macros/related-card.njk' import relatedCard with context %}
-
-{{
-  relatedCard({
-    "title": "Lorem Ipsum",
-    "summary": "Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.",
-    "eyebrowText": "Learn",
-    "eyebrowIcon": "mortarboard",
-    "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png",
-    "alt": "alt",
-    "url": "/learn/css/",
-    "theme": "quaternary"
-  })
-}}
+{% RelatedCard
+  title="Lorem Ipsum",
+  summary="Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.",
+  eyebrow="learn",
+  image="image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png",
+  alt="learn CSS text with abstract background",
+  url="/learn/css/",
+  theme="quaternary"
+%}
 ```
 {% endraw %}
 
-{% from 'macros/related-card.njk' import relatedCard with context %}
-{{ relatedCard({
-  "title": "Lorem Ipsum",
-  "summary": "Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.",
-  "eyebrowText": "Learn",
-  "eyebrowIcon": "mortarboard",
-  "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png",
-  "alt": "alt",
-  "url": "/learn/css/",
-  "theme": "quaternary"
-}) }}
+{% RelatedCard
+  title="Lorem Ipsum",
+  summary="Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.",
+  eyebrow="learn",
+  image="image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png",
+  alt="learn CSS text with abstract background",
+  url="/learn/css/",
+  theme="quaternary"
+%}

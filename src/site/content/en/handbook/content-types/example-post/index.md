@@ -74,17 +74,15 @@ scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
 sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
 tempus enim.
 
-{% from 'macros/related-card.njk' import relatedCard with context %}
-{{ relatedCard({
-  "title": "Lorem Ipsum",
-  "summary": "Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.",
-  "eyebrowText": "Learn",
-  "eyebrowIcon": "mortarboard",
-  "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png",
-  "alt": "alt",
-  "url": "/learn/css/",
-  "theme": "quaternary"
-}) }}
+{% RelatedCard
+  title="Lorem Ipsum",
+  summary="Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.",
+  eyebrow="learn",
+  image="image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png",
+  alt="learn CSS text with abstract background",
+  url="/learn/css/",
+  theme="quaternary"
+%}
 
 {% Aside 'codelab' %}
   [Using Imagemin with Grunt](#)
