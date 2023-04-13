@@ -365,7 +365,7 @@ The `updated` value is presented in human-readable format beneath the page title
 ```yaml
 ---
 …
-authors:
+editors:
   - petelepage
   - kaycebasques
 …
