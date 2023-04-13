@@ -1,7 +1,7 @@
 <div class="post-credits">
   {% if editors %}
   <div class="post-credits__editors">
-    <h4>{{ 'i18n.post.editors' | i18n(locale) }}</h4>
+    <h3>{{ 'i18n.post.editors' | i18n(locale) }}</h3>
       {% for editor in editors %}
         <a href="{{collections.authors[editor].href}}">{{collections.authors[editor].title | i18n(locale)}}</a>
       {% endfor %}
@@ -10,7 +10,7 @@
 
   {% if credits %}
   <div class="post-credits__credits">
-    <h4>{{ 'i18n.post.credits' | i18n(locale) }}</h4>
+    <h3>{{ 'i18n.post.credits' | i18n(locale) }}</h3>
       {% for credit in credits %}
         <a href="{{credit.href}}">{{credit.name}}</a>
       {% endfor %}
@@ -19,7 +19,7 @@
   
   {% if updated or date %}
   <div>
-    <h4>{{ 'i18n.post.last_updated' | i18n(locale) }}</h4>
+    <h3>{{ 'i18n.post.last_updated' | i18n(locale) }}</h3>
     <span>
       {% if updated %}
         <time>{{ updated | prettyDate }}</time>
