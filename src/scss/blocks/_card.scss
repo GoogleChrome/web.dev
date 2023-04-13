@@ -229,7 +229,15 @@
       font-size: 1.75rem;
     }      
   }
-  
+}
+
+.theme-preview,
+.related-card {
+  &__box {
+    width: 200px;
+    height: 40px;
+  }
+
   .bg-tertiary,
   .bg-quaternary,
   .bg-pink,
