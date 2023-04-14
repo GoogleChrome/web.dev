@@ -70,7 +70,7 @@ CrUX is the official dataset of the Web Vitals program, and for that, CLS is mea
 
 Layout shifts are very common during page load, as all the necessary resources are fetched to initially render the page, but layout shifts can also happen after the initial load. Many post-load shifts may occur [as the result of a user interaction](/cls/#user-initiated-layout-shifts) and therefore will be excluded from the CLS score as they are _expected_ shifts—as long as they occur within 500 milliseconds of that interaction.
 
-However, other post-load shifts that are unexpected by the user may be included where there was no qualifying interaction. For example, as you scroll down the page and lazy-loaded content is loaded. Other common causes of post-load CLS are on interactions of transitions, for example on Single Page Apps, which take longer than the 500 millisecond grace period.
+However, other post-load shifts that are unexpected by the user may be included where there was no qualifying interaction—for example, if you scroll down the page and lazy-loaded content is loaded and that causes shifts. Other common causes of post-load CLS are on interactions of transitions, for example on Single Page Apps, which take longer than the 500 millisecond grace period.
 
 [PageSpeed Insights](https://pagespeed.web.dev/) will show both the user-perceived CLS from a URL where it exists in the "Discover what your real users are experiencing" section, and also the lab-based load CLS in the "Diagnose performance issues" section beneath. If you see a difference between these, this is likely caused by post-load CLS.
 
