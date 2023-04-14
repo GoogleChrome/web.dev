@@ -64,10 +64,9 @@ const data = {i18n: walk(path.join(__dirname, '..', '_data', 'i18n'))};
  * Looks for the i18n string that matches the path and locale.
  * @param {string} path A dot separated path
  * @param {string} [locale] A locale prefix (example: 'en', 'pl')
- * @param {string} fallback A fallback string for no i18n result
  * @return {string}
  */
-const i18n = (path, locale = defaultLocale, fallback = null) => {
+const i18n = (path, locale = defaultLocale) => {
   locale = locale.split('_')[0];
   try {
     const out = get(data, path)[locale] ?? get(data, path)[defaultLocale];
@@ -75,13 +74,11 @@ const i18n = (path, locale = defaultLocale, fallback = null) => {
       return out;
     }
   } catch (err) {
-    // ignore, throw below
+    // ignore, return an empty string in the case of no i18n result.
   }
 
-  // Add an output fallback in the case of no i18n result.
-  if (fallback !== null) return fallback;
-
-  throw new Error(`Could not find i18n result for: ${path}`);
+  console.warn('Could not find i18n result');
+  return '';
 };
 
 /**
