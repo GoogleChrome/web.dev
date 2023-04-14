@@ -143,7 +143,11 @@
 }
 
 .prose .related-card {
-  margin: 80px auto;
+  margin: 40px auto;
+
+  @include media-query('md') {
+    margin: 80px auto;
+  }
 }
 
 .related-card {
@@ -157,7 +161,12 @@
   }
 
   span {
-      margin-top: 0;
+    margin-top: 0;
+    font-size: 0.875rem;
+
+    @include media-query('md') {
+      font-size: 1.5rem;
+    }
   }
 
   h4 {
@@ -173,17 +182,17 @@
   }
 
   .card  {
-    margin-top: 25px;
+    flex-flow: column-reverse;
     max-width: 100%;
 
     &__content {
-      margin: 25px 0;
+      margin: 20px 0 0;
     }
 
     &__eyebrow {
       align-items: center;
       display: flex;
-      margin: 25px 0 30px;
+      margin: 25px 0;
   
       > p {
         margin: 0;
@@ -211,6 +220,10 @@
       &__eyebrow {
         margin-top: 0;
       }
+
+      &__content {
+        margin: 25px 0;
+      }  
 
       .content {
         width: 50%;
