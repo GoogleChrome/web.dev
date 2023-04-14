@@ -22,7 +22,7 @@ declare global {
     homepage?: string;
     image?: string;
     twitter?: string;
-    ddc?: string;
+    dcc?: string;
     bio?: string;
   };
   export interface AuthorsData {

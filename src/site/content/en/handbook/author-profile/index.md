@@ -58,7 +58,7 @@ description: |
      "twitter": "paul_kinlan",
      "github": "PaulKinlan",
      "glitch": "PaulKinlan",
-     "ddc": "paulkinlan",
+     "dcc": "paulkinlan",
      "mastodon": "https://status.kinlan.me/@paul",
      "linkedin": "https://uk.linkedin.com/in/paulkinlan"
    },
@@ -77,10 +77,10 @@ description: |
      "twitter": "paul_kinlan",
      "github": "PaulKinlan",
      "glitch": "PaulKinlan",
-     "ddc": "paulkinlan",
+     "dcc": "paulkinlan",
      "mastodon": "https://status.kinlan.me/@paul",
      "linkedin": "https://uk.linkedin.com/in/paulkinlan",
-     "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0O1ZGr2P0l9oTKabyUK5.jpeg",
+     "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0O1ZGr2P0l9oTKabyUK5.jpeg"
     }
    ```
 
