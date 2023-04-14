@@ -109,7 +109,7 @@ The [timespans user flow mode of Lighthouse](lighthouse-user-flows/#timespans) c
 
 It is also possible to measure both the CLS, and perhaps more importantly, the elements impacting your CLS score in the field and feed them back to your analytics service.
 
-This can help point you in the right direction of where the issue is, and also rank the issues in order of important based on most frequently experienced. However, like Lighthouse, this will measure the elements that shifted, rather than the root causes of those shifts.
+This can help point you in the right direction of where the issue is, and also rank the issues in order of importance based on most frequently experienced. However, like Lighthouse, this will measure the elements that shifted, rather than the root causes of those shifts.
 
 The [attribution functionality of the `web-vitals` library](https://github.com/GoogleChrome/web-vitals#send-attribution-data) allows this additional information to be collected. Read our [Debug performance in the field](/debug-performance-in-the-field/) post for more information on how to do this. Other RUM providers have also started collecting and presenting this data similarly.
 
