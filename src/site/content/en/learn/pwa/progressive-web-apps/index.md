@@ -8,8 +8,8 @@ date: 2021-11-03
 updated: 2022-05-16
 ---
 
-A Progressive Web Apps (PWA) is a web app that use progressive enhancement to provide users with a more reliable experience,
-use new capabilities to provide a more integrated experience, and can be installed.
+A Progressive Web Apps (PWA) is a web app that uses progressive enhancement to provide users with a more reliable experience,
+uses new capabilities to provide a more integrated experience, and can be installed.
 And, because it's a web app, it can reach anyone, anywhere, on any device, all with a single codebase.
 Once installed, a PWA looks like any other app, specifically:
 
