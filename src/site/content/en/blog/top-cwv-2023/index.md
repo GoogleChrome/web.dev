@@ -71,7 +71,7 @@ Making sure the LCP resource can be discovered from the HTML source is a critica
 
 For example, even if your LCP image is present in the HTML source using a standard `<img>` tag, if your page includes a dozen `<script>` tags in the `<head>` of your document before that `<img>` tag, it may be a while before your image resource starts loading.
 
-The easiest way to solve this problem is to provide a hint to the browser about what resources are the highest priority by setting the new [`fetchpriority="high"`](/priority-hints/) attribute on the `<img>` or `<link>` tag that loads your LCP image. This instructs the browser to load it earlier, rather than waiting for those scripts to complete.
+The easiest way to solve this problem is to provide a hint to the browser about what resources are the highest priority by setting the new [`fetchpriority="high"`](/fetch-priority/) attribute on the `<img>` or `<link>` tag that loads your LCP image. This instructs the browser to load it earlier, rather than waiting for those scripts to complete.
 
 According to the Web Almanac, only [0.03%](https://almanac.httparchive.org/en/2022/performance#lcp-prioritization) of eligible pages are taking advantage of this new API, meaning there is plenty of opportunity for most sites on the web to improve LCP with very little work. While the `fetchpriority` attribute is currently only supported in Chromium-based browsers, this API is a progressive enhancement that other browsers just ignore, so we strongly recommend developers use it now.
 
