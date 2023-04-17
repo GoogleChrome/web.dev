@@ -90,7 +90,7 @@ However, not all RUM providers operate this way, so if you're building your own 
 
 The [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux/) is the official dataset of the Web Vitals program. While data from CrUX alone doesn't give you all the information you need to troubleshoot specific INP issues, it does let you know whether you have a problem in the first place. Even if you're already collecting field data through a RUM provider, consider contrasting it with CrUX data for your website (if available), as there are [differences in the methodologies they use](/crux-and-rum-differences/).
 
-You can evaluate your website's INP and view its CrUX data using [PageSpeed Insights (PSI)](https://pagespeed.web.dev/). PageSpeed Insights may provide page-level field data for websites that are included in the CrUX dataset. To audit a URL with PageSpeed Insights, go to https://pagespeed.web.dev/, enter a URL to test, and click the **Analyze** button.
+You can evaluate your website's INP and view its CrUX data using [PageSpeed Insights (PSI)](https://pagespeed.web.dev/). PageSpeed Insights may provide page-level field data for websites that are included in the CrUX dataset. To audit a URL with PageSpeed Insights, go to [https://pagespeed.web.dev/](https://pagespeed.web.dev/), enter a URL to test, and click the **Analyze** button.
 
 {% Aside 'important' %}
 The URL you enter [may not be eligible for CrUX](​​https://developer.chrome.com/docs/crux/methodology/#eligibility). If this is the case, you'll need to collect your own field data, which is explained in the previous section. Also, where page-level data is not available for the given URL in PageSpeed Insights, the provided field data will be aggregated over the entire website.
