@@ -1,0 +1,18 @@
+title:
+  en: How to Optimize Interaction to Next Paint (INP)
+
+description:
+  en: Learn how to optimize for the Interaction to Next Paint metric.
+
+overview:
+  en: TODO
+
+topics:
+  familiarize:
+    en: Familiarize yourself with INP
+
+  troubleshooting:
+    en: Troubleshooting
+
+  javascript:
+    en: Optimize poor INP caused by JavaScript

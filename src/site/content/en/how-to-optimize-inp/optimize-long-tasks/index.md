@@ -1,7 +1,8 @@
 ---
+layout: post
 title: Optimize long tasks
 subhead: |
-  You've been told to "don't block the main thread" and "break up your long tasks", but what does it mean to do those things?
+  You've been told "don't block the main thread" and "break up your long tasks", but what does it mean to do those things?
 authors:
   - jlwagner
 date: 2022-09-30
