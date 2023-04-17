@@ -5,7 +5,7 @@ authors:
   - tunetheweb
   - addyosmani
 date: 2020-05-05
-updated: 2023-04-12
+updated: 2023-04-17
 hero: image/admin/74TRx6aETydsBGa2IZ7R.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
@@ -90,26 +90,34 @@ When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in lin
   Lighthouse will identify the elements that were shifted, but often these are the ones _impacted_ rather than the elements _causing_ the CLS. For example, if a new element is inserted into the DOM, the elements that are beneath it will show in this audit, but the root cause is the addition of the new element above. Hopefully, the shifted element will be sufficient to help you identify and resolve the root cause.
 {% endAside %}
 
-### Identifying post-load CLS issues
-
-When the CrUX and Lighthouse CLS scores of PageSpeed Insights are not in line, then this likely indicates post-load CLS. To replicate that, the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console.
-
-Alternatively, you can browse your web page while [recording layout shifts using a JavaScript snippet](/cls/#measure-layout-shifts-in-javascript) pasted into the console. See the [Debug layout shifts](/debug-layout-shifts/) for more information.
-
-The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) in DevTools highlights layout shifts in the **Experience** section. The **Summary** view for a `Layout Shift` record includes the cumulative layout shift score as well as a rectangle overlay showing the affected regions.
+The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) in DevTools also highlights layout shifts in the **Experience** section. The **Summary** view for a `Layout Shift` record includes the cumulative layout shift score as well as a rectangle overlay showing the affected regions. This is particularly helpful to get more detail on load CLS issues since this is easily replicated with a reload performance profile.
 
 <figure>
   {% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Layout Shift records being displayed in the Chrome DevTools performance panel when expanding the Experience section", width="800", height="438" %}
   <figcaption>After recording a new trace in the Performance panel, the <b>Experience</b> section of the results is populated with a red-tinted bar displaying a <code>Layout Shift</code> record. Clicking the record allows you to drill down into impacted elements (e.g. note the moved from/to entries).</figcaption>
 </figure>
 
-The [timespans user flow mode of Lighthouse](lighthouse-user-flows/#timespans) can also be used to identify post-load CLS issues, or to ensure typical user flows do not regress by introducing layout shifts.
+### Identifying post-load CLS issues
+
+When the CrUX and Lighthouse CLS scores of PageSpeed Insights are not in line, then this likely indicates post-load CLS. Without field data helping to identify the reason (that we will cover next), these can be more tricky to track down.
+
+The [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console (where you can get more details above the elements shifted).
+
+As an alternative to using the extension, you can browse your web page while [recording layout shifts using a Performance Observer](/cls/#measure-layout-shifts-in-javascript) pasted into the console.
+
+Once you are monitoring shifts you can try to replicate any post-load CLS issues. Scolling down a page is a common place for CLS to occur if content is lazy loaded and does not have space reserved for it. Content shifting on hover is another common post-load CLS cause. Both of these "interactions" are ineligible for the 500 milliseconds grace period as CLS during these periods are seen as being "unexpected shifts", despite the user interaction, as they should not cause content to shift. Other interactions—such as clicks or taps—do have that grace period, but a common reason for CLS in these cases is taking longer than that 500 milliseconds to move or add content.
+
+See the [Debug layout shifts](/debug-layout-shifts/) for more information.
+
+Once you have identified any common causes of CLS, the [timespans user flow mode of Lighthouse](lighthouse-user-flows/#timespans) can also be used to ensure typical user flows do not regress by introducing layout shifts.
 
 ### Measuring CLS elements in the field
 
-It is also possible to measure both the CLS, and perhaps more importantly, the elements impacting your CLS score in the field and feed them back to your analytics service.
+It is also possible to measure both the CLS and—perhaps more importantly—the elements impacting your CLS score in the field and feed them back to your analytics service.
 
-This can help point you in the right direction of where the issue is, and also rank the issues in order of importance based on most frequently experienced. However, like Lighthouse, this will measure the elements that shifted, rather than the root causes of those shifts.
+This can be invaluable in pointing you in the right direction of where the issue is. This can remove much of the guess work as discribed above when you are trying to understand under what circumstances CLS is occuring. Again, be aware that this will measure the elements that shifted, rather than the root causes of those shifts, but this is often sufficient to identify the cause or at least to narrow down the problem.
+
+Measuring CLS in the field can also be used to rank the issues in order of importance based on most frequently experienced issues.
 
 The [attribution functionality of the `web-vitals` library](https://github.com/GoogleChrome/web-vitals#send-attribution-data) allows this additional information to be collected. Read our [Debug performance in the field](/debug-performance-in-the-field/) post for more information on how to do this. Other RUM providers have also started collecting and presenting this data similarly.
 
