@@ -157,7 +157,7 @@ addition, offer either a UI or API which allows modifying the existence of the
 ### Avoid a JavaScript fallback
 
 While JavaScript can be used to
-[provide lazy loading to browsers which do not (yet) support the `loading` attribute](/browser-level-image-lazy-loading/#how-do-i-handle-browsers-that-don't-yet-support-lazy-loading),
+[provide lazy loading to browsers which do not (yet) support the `loading` attribute](/browser-level-image-lazy-loading/#how-do-i-handle-browsers-that-dont-support-lazy-loading),
 such mechanisms always rely on initially removing the `src` attribute of an
 image or iframe, which causes a delay for the browsers that _do_ support the
 attribute. In addition, rolling out such a JavaScript-based solution in the
