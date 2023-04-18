@@ -1,0 +1,63 @@
+nombre : compilar e implementar en IKS
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+
+# Variables de entorno disponibles para todos los trabajos y pasos en este flujo de trabajo
+env :
+  GITHUB_SHA : ${{github.sha}}
+  IBM_CLOUD_API_KEY : ${{ secretos.IBM_CLOUD_API_KEY }}
+  IBM_CLOUD_REGION : us-sur
+  ICR_NAMESPACE : ${{ secretos.ICR_NAMESPACE }}
+  REGISTRY_HOSTNAME : us.icr.io
+  IMAGE_NAME : iks-prueba
+  IKS_CLUSTER : ejemplo-iks-cluster-name-or-id
+  DEPLOYMENT_NAME : iks-prueba
+  PUERTO : 5001
+
+trabajos :
+  configurar-construir-publicar-implementar :
+    nombre : Configurar, Construir, Publicar e Implementar
+    se ejecuta en : ubuntu-latest
+    medio ambiente : producción
+    pasos :
+
+    - nombre : Caja
+      usos : acciones/checkout@v3
+
+    # Descargue e instale la CLI de IBM Cloud
+    - nombre : Instalar IBM Cloud CLI
+      correr : |
+        curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+        ibmcloud --versión
+        ibmcloud config --check-version=falso
+        Instalación del complemento de ibmcloud -f kubernetes-service
+        Instalación del complemento de ibmcloud -f contenedor-registro
+    # Autenticar con IBM Cloud CLI
+    - nombre : Autenticar con IBM Cloud CLI
+      ejecutar : |
+        inicio de sesión de ibmcloud --apikey "${IBM_CLOUD_API_KEY}" -r "${IBM_CLOUD_REGION}" -g predeterminado
+        conjunto de regiones de ibmcloud cr "${IBM_CLOUD_REGION}"
+        ibmcloud cr inicio de sesión
+    # Construir la imagen de Docker
+    - nombre : Construir con Docker
+      ejecutar : |
+        docker build -t "$REGISTRY_HOSTNAME"/"$ICR_NAMESPACE"/"$IMAGE_NAME":"$GITHUB_SHA" \
+          --construir-arg GITHUB_SHA="$GITHUB_SHA" \
+          --construir-arg GITHUB_REF="$GITHUB_REF" .
+    # Empuje la imagen a IBM Container Registry
+    - nombre : Empuje la imagen a ICR
+      ejecutar : |
+        ventana acoplable empujar $REGISTRY_HOSTNAME/$ICR_NAMESPACE/$IMAGE_NAME:$GITHUB_SHA
+    # Implemente la imagen de Docker en el clúster IKS
+    - nombre : Implementar en IKS
+      ejecutar : |
+        configuración de clúster de ibmcloud ks --cluster $IKS_CLUSTER
+        configuración de kubectl contexto actual
+        kubectl create deployment $DEPLOYMENT_NAME --image=$REGISTRY_HOSTNAME/$ICR_NAMESPACE/$IMAGE_NAME:$GITHUB_SHA --dry-run -o yaml > deployment.yaml
+        kubectl apply -f deployment.yaml
+        Implementación de estado de implementación de kubectl/$DEPLOYMENT_NAME
+        kubectl create service loadbalancer $NOMBRE_DEPLOYMENT --tcp=80:$PORT --dry-run -o yaml > service.yaml
+        kubectl apply -f servicio.yaml
+        kubectl obtener servicios -o amplio
