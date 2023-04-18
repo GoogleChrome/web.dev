@@ -19,14 +19,39 @@ static:
 
 App stores provide a space for developers to showcase their apps before installation, with screenshots and text information that help the user make the choice to install the app. Richer install UI provides a similar space for web app developers to invite their users to install their app, directly from the browser. This enhanced UI is available in Chrome for Android and desktop environments.
 
-TODO:ajara Add with and without image
+## Default prompt
+See the example below for the default experience, which doesn’t provide enough context.
 
-The richer install UI dialog is composed by the contents of the  the fields `description` and `screenshots` in the web manifest.
+<figure>
+{% Img src="image/SeARmcA1EicLXagFnVOe0ou9cqK2/yshUdzH27Gm1Rzdj9s8O.png", alt="The browser default install dialog for desktop.", width="385", height="676" %}
+ <figcaption>
+    Default install dialog on desktop
+  </figcaption>
+</figure>
+
+<figure>
+{% Img src="image/SeARmcA1EicLXagFnVOe0ou9cqK2/y5sNbIN19bPNbqni3xay.png", alt="The browser default install dialog for mobile.", width="556", height="781" %}
+ <figcaption>
+    Default install dialog on mobile
+  </figcaption>
+</figure>
+
+## Richer Install UI
+To get the Richer Install UI dialog instead of the regular small default prompt,  add  `screenshots` and `description` fields to your web manifest. Check out the Squoosh.app example below:
+
+<figure>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/5SlCnibmZHqkXdGVgPZY.jpeg", alt="Richer Install UI on desktop and mobile", width="800", height="386" %}
+  <figcaption>
+    Richer installation UI on desktop and mobile.
+  </figcaption>
+</figure>
+
+The Richer Install UI dialog is composed of the contents of the `description` and `screenshots` fields in the web manifest.
 
 To trigger the dialog you just need to add at least one screenshot for the corresponding form factor, but it is recommended to add the description as well. Checkout the specifics for those fields below.
 ## Screenshots
 
-Screenshots really add the 'richer' part to the new install ui and we strongly recommend their use. In your manifest you add the `screenshots` member, which takes an array that requires at least one image and Chrome will display up to eight. An example is shown below.
+Screenshots really add the 'richer' part to the new install UI and we strongly recommend their use. In your manifest you add the `screenshots` member, which takes an array that requires at least one image and Chrome will display up to eight. An example is shown below.
 
 ```json
  "screenshots": [
@@ -39,9 +64,6 @@ Screenshots really add the 'richer' part to the new install ui and we strongly r
     }
 ]
 ```
-
-In practice that produces something like this:
-
 Screenshots must follow these criteria:
 
 - Width and height must be at least 320px and at most 3,840px.
@@ -52,7 +74,7 @@ Screenshots must follow these criteria:
 
 Also, you need to include the size and type of the image so it renders correctly. [See this demo](https://glitch.com/edit/#!/richerinstall-screenshot?path=manifest.json%3A14%3A24).
 
-The `form_factor` indicates to the browser whether the screenshot should appear on desktop (`wide`) or mobile environments (`narrow`)
+The `form_factor` indicates to the browser whether the screenshot should appear on desktop (`wide`) or mobile environments (`narrow`).
 
 ## Description
 
@@ -68,6 +90,23 @@ There is a maximum that kicks in after 7 lines of text (roughly 324 characters) 
 right in your browser."
 }
 ```
+
+{% Columns %}
+{% Column %}
+<figure>
+  {% Img src="image/xizoeLGxYNf3VLUHc5BsIoiE1Af1/oOj7Ls7cQ8E274faxfOz.jpg",
+alt="Description added", width="342", height="684" %}
+  <figcaption>Description added.</figcaption>
+</figure>
+{% endColumn %}
+{% Column %}
+<figure>
+  {% Img src="image/xizoeLGxYNf3VLUHc5BsIoiE1Af1/Dpzs03K6QmBkZaefX2nU.jpg",
+alt="A longer description that has been truncated.", width="342", height="684" %}
+  <figcaption>Longer descriptions are truncated.</figcaption>
+</figure>
+{% endColumn %}
+{% endColumns %}
 
 The description appears at the top of the installation prompt.
 
