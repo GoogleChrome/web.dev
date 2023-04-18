@@ -127,21 +127,7 @@
         {% endfor %}
       </nav>
 
-      <div class="text-size-0 color-mid-text">
-        <span>
-          {% if updated %}
-          {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
-          {% else %}
-          {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
-          {% endif %}
-        </span>
-        —
-        <a
-          href="{{ page.inputPath | githubLink }}"
-        >
-          {{ 'i18n.post.improve_article' | i18n(locale) }}
-        </a>
-      </div>
+      {% include 'partials/post-credits.njk' %}
 
       {% if codelabs %}
         <div class="flow-space-size-2">

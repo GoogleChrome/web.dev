@@ -1,0 +1,33 @@
+.post-credits {
+  border-top: 1px solid get-color('shades-gray-glare');
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding-top: 2rem;
+
+  div {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  h3 {
+    color: get-color('shades-gray');
+    font-size: 0.875rem;
+    line-height: 170%;
+  }
+
+  a{
+    width: fit-content;
+  }
+
+  &__editors, &__credits {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include media-query('md'){
+    flex-direction: row;
+    flex: 1 1 0;
+  }
+}
