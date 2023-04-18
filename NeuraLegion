@@ -1,0 +1,26 @@
+nombre : " NeuraLegion "
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 36 11 * * 3 '
+
+trabajos :
+  neuralegion_scan :
+    se ejecuta en : ubuntu-18.04
+    nombre : un trabajo para ejecutar un análisis Nexploit
+    pasos :
+      - usos : acciones/checkout@v2
+      - nombre : Iniciar Nexploit Scan 🏁
+        identificación : inicio
+        usos : NeuraLegion/run-scan@29ebd17b4fd6292ce7a238a59401668953b37fbe
+        con :
+          api_token : ${{ secretos.NEURALEGION_TOKEN }}
+          nombre : escaneo de GitHub ${{ github.sha }}
+          descubrimiento_tipos : |
+            [ "rastreador" ]
+          rastreador_urls : |
+            [ "https://brokencrystals.com" ] # ✏️ Actualice esto a la URL que desea escanear
