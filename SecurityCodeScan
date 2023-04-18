@@ -1,0 +1,33 @@
+5nombre : SecurityCodeScan
+
+en :
+  empujar :
+    sucursales : [ "principal" ]
+  solicitud de extracción :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    sucursales : [ "principal" ]
+  horario :
+    - cron : ' 32 6 * * 6 '
+
+trabajos :
+  SCS :
+    se ejecuta en : windows-latest
+    pasos :
+      - usos : acciones/checkout@v3
+      - usos : nuget/setup-nuget@04b0c2b8d1b97922f67eca497d7cf0bf17b8ffe1
+      - usos : microsoft/setup-msbuild@v1.0.2
+
+      - nombre : Configurar proyectos para análisis
+        usos : escaneo de código de seguridad/escaneo de código de seguridad-add-action@f8ff4f2763ed6f229eded80b1f9af82ae7f32a0d
+
+      - nombre : Restaurar dependencias
+        ejecutar : restauración dotnet
+
+      - nombre : Construir
+        ejecutar : dotnet build --no-restore
+
+      - nombre : convertir sarif para subir a GitHub
+        usos : escaneado de código de seguridad/escaneado de código de seguridad-resultados-acción@cdb3d5e639054395e45bf401cba8688fcaf7a687
+
+      - nombre : Subir sarif
+        usos : github/codeql-action/upload-sarif@v2
