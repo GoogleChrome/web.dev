@@ -167,7 +167,7 @@ For a hero image above the fold, `loading` should not be used. If your site auto
 
 ### Fetch Priority
 
-For important images-such as the [LCP](/lcp/) image, you can further prioritise the loading using [Fetch Priority](/fetch-priority/) by setting the `fetchpriority` attribute to `high`:
+For important images-such as the [LCP](/lcp/) image, you can further prioritize the loading using [Fetch Priority](/fetch-priority/) by setting the `fetchpriority` attribute to `high`:
 
 ```html/5-6
 <img

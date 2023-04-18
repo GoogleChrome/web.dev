@@ -6,8 +6,8 @@ authors:
   - addyosmani
   - patmeenan
   - tunetheweb
-description: The Fetch Priority API indicates the relative priority of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
-subhead: The Fetch Priority API indicates the relative priority of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
+description: The Fetch Priority API indicates the relative priority of resources to the browser. It can enable optimal loading and improve Core Web Vitals.
+subhead: The Fetch Priority API indicates the relative priority of resources to the browser. It can enable optimal loading and improve Core Web Vitals.
 date: 2021-10-20
 updated: 2023-04-18
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WqBkrvs5LRwPIfrSOQyz.jpg
@@ -25,7 +25,7 @@ When a browser parses a web page and begins to discover and download resources s
 In this article, we'll discuss the Fetch Priority API and the `fetchpriority` HTML attribute, which allow you to hint at the relative priority of a resource (`high` or `low`). Fetch Priority can help optimize the Core Web Vitals.
 
 {% Aside %}
-This feature was originally called Priority Hints but was renamed to Fetch Priority after standardization. See [history](#history) below for more details.
+This feature was originally called Priority Hints but was renamed to Fetch Priority after standardization. See [History](#history) below for more details.
 {% endAside %}
 
 <figure>
@@ -563,7 +563,7 @@ With the fix in Chrome 95 and the enhancement for Fetch Priority, we hope that d
 
 ## History
 
-Fetch Priority was first experimented with in Chrome as an origin trial in 2018 and then again in 2021 using the `importance` attribute. At this time it was known as [Priority Hints](https://github.com/WICG/priority-hints). The interface has since changed to `fetchpriority` for HTML and `priority` for JavaScript's Fetch API as part of the web standards process. To reduce confusion we now refer to this API as Fetch Priority.
+Fetch Priority was first experimented with in Chrome as an origin trial in 2018 and then again in 2021 using the `importance` attribute. At that time it was known as [Priority Hints](https://github.com/WICG/priority-hints). The interface has since changed to `fetchpriority` for HTML and `priority` for JavaScript's Fetch API as part of the web standards process. To reduce confusion we now refer to this API as Fetch Priority.
 
 ## Browser compatibility
 
