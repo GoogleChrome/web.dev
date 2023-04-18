@@ -243,8 +243,7 @@ class Search extends BaseStateElement {
    * @param e the search input
    */
   onInput(e) {
-    const query = e.target.value;
-    this.search(query);
+    this.search(e.target.value);
   }
 
   /**
