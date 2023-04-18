@@ -1,0 +1,49 @@
+
+nombre : Escaneo de seguridad de Codacy
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 30 13 * * 2 '
+
+permisos :
+  contenido : leer
+
+trabajos :
+  codacy-seguridad-escaneo :
+    permisos :
+      contenido : leer # para acciones/pago para obtener código
+      eventos de seguridad : escriba # para github/codeql-action/upload-sarif para cargar los resultados de SARIF
+      acciones : lectura # solo requerida para un repositorio privado por github/codeql-action/upload-sarif para obtener el estado de ejecución de la acción
+    nombre : Escaneo de seguridad de Codacy
+    se ejecuta en : ubuntu-latest
+    pasos :
+      # Revisar el repositorio para el ejecutor de GitHub Actions
+      - nombre : código de pago
+        usos : acciones/checkout@v3
+
+      # Ejecute la CLI de Codacy Analysis y genere una salida SARIF con los problemas de seguridad identificados durante el análisis
+      - nombre : Ejecutar CLI de Codacy Analysis
+        usos : codacy/codacy-analysis-cli-action@d840f886c4bd4edc059706d09c6a1586111c540b
+        con :
+          # Verifique https://github.com/codacy/codacy-analysis-cli#project-token para obtener su token de proyecto de su repositorio de Codacy
+          # También puede omitir el token y ejecutar las herramientas que admiten configuraciones predeterminadas
+          token de proyecto : ${{ secrets.CODACY_PROJECT_TOKEN }}
+          detallado : verdadero
+          salida : resultados.sarif
+          formato : sarif
+          # Ajustar la gravedad de los problemas no relacionados con la seguridad
+          gh-code-scanning-compat : verdadero
+          # Forzar código de salida 0 para permitir la generación de archivos SARIF
+          # Esto transferirá el control sobre el rechazo de relaciones públicas al lado de GitHub
+          Número máximo de problemas permitidos : 2147483647
+
+      # Subir el archivo SARIF generado en el paso anterior
+      - nombre : Subir archivo de resultados SARIF
+        usos : github/codeql-action/upload-sarif@v2
+        con :
+          sarif_file : resultados.sarif
