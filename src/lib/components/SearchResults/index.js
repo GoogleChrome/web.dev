@@ -130,6 +130,18 @@ export class SearchResults extends BaseElement {
       `;
     }
 
+    // Check if the query is shorter than 3 characters
+    // If so, then display a message to inform the user
+    if (this.query && this.query.length < 3) {
+      return html`
+        <div class="web-search-popout">
+          <div class="web-search-popout__heading">
+            Please enter at least 3 characters for search suggestions.
+          </div>
+        </div>
+      `;
+    }
+
     if (!this.hits_.length) {
       if (!this.query) {
         return '';
