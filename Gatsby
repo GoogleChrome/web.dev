@@ -1,0 +1,92 @@
+name : Implementar el sitio de Gatsby en Pages
+
+en :
+  # Se ejecuta en impulsos dirigidos a la rama predeterminada
+  empujar :
+    ramas : ["principal"]
+
+  # Le permite ejecutar este flujo de trabajo manualmente desde la pestaña Acciones
+  flujo de trabajo_despacho :
+
+# Establece los permisos de GITHUB_TOKEN para permitir la implementación en las páginas de GitHub
+permisos :
+  contenido : leer
+  páginas : escribir
+  id-token : escribir
+
+# Permitir una implementación simultánea
+concurrencia :
+  grupo : " páginas "
+  cancelación en curso : verdadero
+
+# Predeterminado para bash
+predeterminados :
+  correr :
+    caparazón : bash
+
+trabajos :
+  # Construir trabajo
+  construir :
+    se ejecuta en : ubuntu-latest
+    pasos :
+      - nombre : Caja
+        usos : acciones/checkout@v3
+      - nombre : Detectar administrador de paquetes
+        id : detectar-administrador de paquetes
+        ejecutar : |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; entonces
+            echo "gerente=hilo" >> $GITHUB_OUTPUT
+            echo "comando=instalar" >> $GITHUB_OUTPUT
+            salida 0
+          elif [ -f "${{ github.workspace }}/paquete.json" ]; entonces
+            echo "administrador=npm" >> $GITHUB_OUTPUT
+            echo "comando=ci" >> $GITHUB_OUTPUT
+            salida 0
+          demás
+            echo "No se pudo determinar el administrador del empaquetador"
+            salida 1
+          fi
+      - nombre : Nodo de configuración
+        usos : acciones/setup-node@v3
+        con :
+          versión de nodo : " 18 "
+          caché : ${{ pasos.detect-package-manager.outputs.manager }}
+      - nombre : Páginas de configuración
+        identificación : páginas
+        usos : acciones/configurar-páginas@v2
+        con :
+          # Inyecte automáticamente pathPrefix en su archivo de configuración de Gatsby.
+          #
+          # Puede eliminar esta línea si desea administrar la configuración usted mismo.
+          generador_de_sitio_estático : gatsby
+      - nombre : Restaurar caché
+        usos : acciones/cache@v3
+        con :
+          ruta : |
+            público
+            .cache
+          clave : ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
+          restaurar-claves : |
+            ${{ runner.os }}-gatsby-build-
+      - nombre : Instalar dependencias
+        ejecutar : ${{ pasos.detect-package-manager.outputs.manager }} ${{ pasos.detect-package-manager.outputs.command }}
+      - nombre : Construir con Gatsby
+        env :
+          PREFIX_PATHS : ' verdadero '
+        ejecutar : ${{ pasos.detect-package-manager.outputs.manager }} ejecutar compilación
+      - nombre : Subir artefacto
+        usos : acciones/cargar-páginas-artefacto@v1
+        con :
+          ruta : ./público
+
+  # trabajo de implementación
+  desplegar :
+    medio ambiente :
+      nombre : github-páginas
+      url : ${{ pasos.implementación.salidas.page_url }}
+    se ejecuta en : ubuntu-latest
+    necesidades : construir
+    pasos :
+      - nombre : implementar en páginas de GitHub
+        identificación : despliegue
+        usos : acciones/implementar-páginas@v1
