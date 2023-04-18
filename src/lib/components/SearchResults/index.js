@@ -136,7 +136,7 @@ export class SearchResults extends BaseElement {
       return html`
         <div class="web-search-popout">
           <div class="web-search-popout__heading">
-            Please enter at least 3 characters for search suggestions.
+            Please enter at least 4 characters for search suggestions.
           </div>
         </div>
       `;

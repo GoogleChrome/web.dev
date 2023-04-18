@@ -253,7 +253,7 @@ class Search extends BaseStateElement {
     // We'll check against this copy when results come back to ensure
     // we don't show search results for a stale query.
     this.query = query;
-    if (query === '' || query.length < 3) {
+    if (query === '' || query.length < 4) {
       this.hits = [];
       return;
     }
