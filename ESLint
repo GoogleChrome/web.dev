@@ -1,0 +1,40 @@
+nombre : ESLint
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 42 0 * * 0 '
+
+trabajos :
+  eslint :
+    nombre : Ejecutar escaneo eslint
+    se ejecuta en : ubuntu-latest
+    permisos :
+      contenido : leer
+      eventos de seguridad : escribir
+      acciones : lectura # solo requerida para un repositorio privado por github/codeql-action/upload-sarif para obtener el estado de ejecución de la acción
+    pasos :
+      - nombre : código de pago
+        usos : acciones/checkout@v3
+
+      - nombre : Instalar ESLint
+        ejecutar : |
+          npm instalar eslint@8.10.0
+          npm instalar @microsoft/eslint-formatter-sarif@2.1.7
+      - nombre : Ejecutar ESLint
+        ejecutar : npx eslint.
+          --config .eslintrc.js
+          --ext .js,.jsx,.ts,.tsx
+          --formato @microsoft/eslint-formatter-sarif
+          --archivo de salida eslint-results.sarif
+        continuar en caso de error : verdadero
+
+      - nombre : Subir resultados de análisis a GitHub
+        usos : github/codeql-action/upload-sarif@v2
+        con :
+          sarif_file : eslint-results.sarif
+          espera de procesamiento : verdadero
