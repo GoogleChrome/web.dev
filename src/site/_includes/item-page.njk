@@ -6,10 +6,10 @@ eleventyComputed:
 ---
 <div class="landing-page">
   {# Hero starts #}
-  <header class="region bg-mid-bg">
+  <header class="region bg-mid-bg author-profile">
     <div class="wrapper">
-      <div class="headline flow">
-        <div class="switcher flex-align-center">
+      <div class="headline">
+        <div class="switcher flex-align-center author-profile__name">
           {% if paged.data.hero and showHero %}
             {% if imageType == 'round' %}
               <div class="avatar gap-inline-auto" data-size="medium">
@@ -37,62 +37,71 @@ eleventyComputed:
           </div>
         </div>
 
-        {% from 'macros/icon.njk' import icon, svg with context %}
+        <div class="author-profile__detail">
+          {% from 'macros/icon.njk' import icon, svg with context %}
+          <div class="cluster author-profile__socials flex-justify-left">
+            {% if paged.homepage %}
+              <a href="{{ paged.homepage }}" target="_blank">
+                {{ icon('language') }}
+              </a>
+            {% endif %}
+            {% if paged.linkedin %}
+              <a href="{{ paged.linkedin }}" target="_blank">
+                {{ icon('linkedin') }}
+              </a>
+            {% endif %}
+            {% if paged.mastodon %}
+              <a href="{{ paged.mastodon }}" target="_blank">
+                {{ icon('mastodon') }}
+              </a>
+            {% endif %}
+            {% if paged.dcc %}
+              <a href="https://developer.chrome.com/authors/{{ paged.dcc }}" target="_blank">
+                {{ icon('dcc') }}
+              </a>
+            {% endif %}
+            {% if paged.github %}
+              <a href="https://github.com/{{ paged.github }}" target="_blank">
+                {{ icon('github') }}
+              </a>
+            {% endif %}
+            {% if paged.glitch %}
+              <a href="https://glitch.com/@{{ paged.glitch }}" target="_blank">
+                {{ icon('glitch') }}
+              </a>
+            {% endif %}
+            {% if paged.twitter %}
+              <a href="https://twitter.com/{{ paged.twitter }}" target="_blank">
+                {{ icon('twitter') }}
+              </a>
+            {% endif %}
+            {% if renderData.rss %}
+              <a href="{{ renderData.rss }}" target="_blank">
+                {{ icon('rss') }}
+              </a>
+            {% endif %}
+          </div>
 
-        <div class="cluster author__socials flex-justify-left gap-top-size-2 gap-bottom-size-2">
-          {% if paged.homepage %}
-            <a href="{{ paged.homepage }}" target="_blank">
-              {{ icon('language') }}
-            </a>
-          {% endif %}
-          {% if paged.linkedin %}
-            <a href="{{ paged.linkedin }}" target="_blank">
-              {{ icon('linkedin') }}
-            </a>
-          {% endif %}
-          {% if paged.mastodon %}
-            <a href="{{ paged.mastodon }}" target="_blank">
-              {{ icon('mastodon') }}
-            </a>
-          {% endif %}
-          {% if paged.dcc %}
-            <a href="https://developer.chrome.com/authors/{{ paged.dcc }}" target="_blank">
-              {{ icon('dcc') }}
-            </a>
-          {% endif %}
-          {% if paged.github %}
-            <a href="https://github.com/{{ paged.github }}" target="_blank">
-              {{ icon('github') }}
-            </a>
-          {% endif %}
-          {% if paged.glitch %}
-            <a href="https://glitch.com/@{{ paged.glitch }}" target="_blank">
-              {{ icon('glitch') }}
-            </a>
-          {% endif %}
-          {% if paged.twitter %}
-            <a href="https://twitter.com/{{ paged.twitter }}" target="_blank">
-              {{ icon('twitter') }}
-            </a>
-          {% endif %}
-          {% if renderData.rss %}
-            <a href="{{ renderData.rss }}" target="_blank">
-              {{ icon('rss') }}
-            </a>
+          {% macro renderBio(bio) %}
+            {% if bio is string %}
+              <p class="gap-top-size-1">{{ bio }}</p>
+            {% else %}
+              {% for paragraph in bio %}
+                <p class="gap-top-size-1">{{ paragraph }}</p>
+              {% endfor %}
+            {% endif %}
+          {% endmacro %}
+
+          {% set bio = renderData.bio | i18n(locale, '') %}
+          {% if bio %}
+            {% Details %}
+            {% DetailsSummary %} Bio {% endDetailsSummary %}
+              {{ renderBio(bio) }}
+            {% endDetails %}
+
+            <div class="author-profile__bio"> {{ renderBio(bio) }} </div>
           {% endif %}
         </div>
-
-        {% set bio = renderData.bio | i18n(locale, '') %}
-        {% if bio %}
-          {% if bio is string %}
-            <p class="gap-top-size-1">{{ bio }}</p>
-          {% else %}
-            {% for paragraph in bio %}
-              <p class="gap-top-size-1">{{ paragraph }}</p>
-            {% endfor %}
-          {% endif %}
-        {% endif %}
-
       </div>
     </div>
   </header>
