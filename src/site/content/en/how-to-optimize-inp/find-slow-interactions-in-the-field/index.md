@@ -44,7 +44,10 @@ import {onINP} from 'web-vitals/attribution';
 
 function sendToGoogleAnalytics ({name, value, id, attribution}) {
   // Destructure the attribution object:
-  const {eventEntry, eventTarget, startTime, eventType, loadState} = attribution;
+  const {eventEntry, eventTarget, eventType, loadState} = attribution;
+
+  // Get timings from the event timing entry:
+  const {startTime, processingStart, processingEnd, duration, interactionId} = eventEntry;
 
   const eventParams = {
     // The page's INP value:
@@ -55,15 +58,28 @@ function sendToGoogleAnalytics ({name, value, id, attribution}) {
     // The event target (a CSS selector string pointing
     // to the element responsible for the interaction):
     metric_inp_event_target: eventTarget,
-    // The time (in milliseconds) after page load when
-    // the interaction took place:
-    metric_inp_start_time: startTime,
     // The type of event that triggered the interaction:
     metric_inp_event_type: eventType,
     // Whether the page was loaded when the interaction
     // took place. Useful for identifying startup versus
     // post-load interactions:
-    metric_inp_load_state: loadState
+    metric_inp_load_state: loadState,
+    // The time (in milliseconds) after page load when
+    // the interaction took place:
+    metric_inp_start_time: startTime,
+    // When processing of the event callbacks in the
+    // interaction started to run:
+    metric_inp_processing_start: processingStart,
+    // When processing of the event callbacks in the
+    // interaction finished:
+    metric_inp_processing_end: processingEnd,
+    // The total duration of the interaction. Note: this
+    // value is rounded to 8 milliseconds of granularity:
+    metric_inp_duration: duration,
+    // The interaction ID assigned to the interaction by
+    // the Event Timing API. This could be useful in cases
+    // where you might want to aggregate related events:
+    metric_inp_interaction_id: interactionId
   };
 
   // Send to Google Analytics
