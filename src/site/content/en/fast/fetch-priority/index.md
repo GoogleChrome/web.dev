@@ -20,13 +20,13 @@ tags:
 
 {% BrowserCompat 'api.HTMLImageElement.fetchPriority' %}
 
-When a browser parses a web page and begins to discover and download resources such as images, scripts, or CSS, it assigns them a fetch `priority` in an attempt to download resources in an optimal order. These priorities can depend on the kind of resource and where it is in the document. For example, in-viewport images may have a `High` priority while the priority for early loaded, render-blocking CSS via `<link>`s in the `<head>` could be `Very High`. Browsers are pretty good at assigning priorities that work well but may not be optimal in all cases.
-
-In this article, we'll discuss the Fetch Priority API and the `fetchpriority` HTML attribute, which allow you to hint at the relative priority of a resource (`high` or `low`). Fetch Priority can help optimize the Core Web Vitals.
-
 {% Aside %}
 This feature was originally called Priority Hints but was renamed to Fetch Priority after standardization. See [History](#history) below for more details.
 {% endAside %}
+
+When a browser parses a web page and begins to discover and download resources such as images, scripts, or CSS, it assigns them a fetch `priority` in an attempt to download resources in an optimal order. These priorities can depend on the kind of resource and where it is in the document. For example, in-viewport images may have a `High` priority while the priority for early loaded, render-blocking CSS via `<link>`s in the `<head>` could be `Very High`. Browsers are pretty good at assigning priorities that work well but may not be optimal in all cases.
+
+In this article, we'll discuss the Fetch Priority API and the `fetchpriority` HTML attribute, which allow you to hint at the relative priority of a resource (`high` or `low`). Fetch Priority can help optimize the Core Web Vitals.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UQ60oFwWrVCPbFYx3pJY.png", alt="A filmstrip view comparing two tests of the Google Flights homepage. At bottom, Fetch Priority are used to boost the priority of the hero image, resulting in a 0.7 second decrease in LCP.
