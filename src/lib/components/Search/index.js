@@ -244,11 +244,7 @@ class Search extends BaseStateElement {
    */
   onInput(e) {
     const query = e.target.value;
-    if (query.length >= 3) {
-      this.search(query);
-    } else {
-      this.hits = [];
-    }
+    this.search(query);
   }
 
   /**
@@ -262,7 +258,7 @@ class Search extends BaseStateElement {
     // We'll check against this copy when results come back to ensure
     // we don't show search results for a stale query.
     this.query = query;
-    if (query === '') {
+    if (query === '' || query.length < 3) {
       this.hits = [];
       return;
     }
