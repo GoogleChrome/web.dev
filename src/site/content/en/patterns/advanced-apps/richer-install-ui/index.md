@@ -91,22 +91,17 @@ right in your browser."
 }
 ```
 
-{% Columns %}
-{% Column %}
+
 <figure>
   {% Img src="image/xizoeLGxYNf3VLUHc5BsIoiE1Af1/oOj7Ls7cQ8E274faxfOz.jpg",
 alt="Description added", width="342", height="684" %}
   <figcaption>Description added.</figcaption>
 </figure>
-{% endColumn %}
-{% Column %}
 <figure>
   {% Img src="image/xizoeLGxYNf3VLUHc5BsIoiE1Af1/Dpzs03K6QmBkZaefX2nU.jpg",
 alt="A longer description that has been truncated.", width="342", height="684" %}
   <figcaption>Longer descriptions are truncated.</figcaption>
 </figure>
-{% endColumn %}
-{% endColumns %}
 
 The description appears at the top of the installation prompt.
 
