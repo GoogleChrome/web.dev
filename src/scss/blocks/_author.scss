@@ -75,6 +75,16 @@
   @include media-query('md') {
     &__name {
       flex-wrap: nowrap;
+
+      .headline__title {
+        font-size: 36px;
+      }
+
+      .avatar,
+      .avatar > img {
+        width: 120px;
+        height: 120px;
+      }
     }
   
     &__detail {
