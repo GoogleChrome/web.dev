@@ -238,8 +238,17 @@ class Search extends BaseStateElement {
     }
   }
 
+  /**
+   * Sends search request if the input length is 3 or more chars
+   * @param e the search input
+   */
   onInput(e) {
-    this.search(e.target.value);
+    const query = e.target.value;
+    if (query.length >= 3) {
+      this.search(query);
+    } else {
+      this.hits = [];
+    }
   }
 
   /**
