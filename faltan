@@ -1,0 +1,78 @@
+Documentación de GitHub
+Cuenta y perfil/Profiles/Administrar la configuración de contribución/Contribuciones que faltan
+¿Por qué mis contribuciones no aparecen en mi perfil?
+En este artículo
+Acerca de tu gráfica de contribuciones
+Contribuciones que se cuentan
+Razones comunes por las que las contribuciones no se cuentan
+Información adicional
+Aprende sobre las razones habituales por las cuales podrían faltar contribuciones en tu gráfica.
+
+Acerca de tu gráfica de contribuciones
+La gráfica de contribuciones de tu perfil es un registro de las contribuciones que has hecho en los repositorios de GitHub.com. Las contribuciones son registros horarios de acuerdo a la zona horaria universal coordinada (UTC) en lugar de tu zona horaria local. Las contribuciones solo se cuentan si cumplen con determinados criterios. En algunos casos, necesitamos reconstruir tu gráfico para que aparezcan las contribuciones.
+
+Si eres parte de una organización que utiliza el inicio de sesión único (SSO) de SAML, no podrás ver la actividad de las contribuciones desde la organización en tu perfil de no tener una sesión de SSO activa. Las personas que ven tu perfil desde fuera de tu organización verán una actividad de contribución anonimizada de aquella para tu organización.
+
+Contribuciones que se cuentan
+Propuestas, solicitudes de cambios y debates
+Las incidencias, solicitudes de incorporación de cambios y debates aparecerán en tu gráfica de contribuciones si se abrieron en un repositorio independiente y no en una bifurcación.
+
+Confirmaciones
+Las confirmaciones aparecerán en el gráfico de contribuciones si cumplen todas las condiciones siguientes:
+
+La dirección de correo electrónico que se utiliza para las confirmaciones se asocia con tu cuenta de GitHub.com.
+Las confirmaciones se hicieron en un repositorio independiente, no en una bifurcación.
+Las confirmaciones se hicieron:
+En la rama predeterminada del repositorio
+En la rama gh-pages (para repositorios con sitios del proyecto)
+Para más información sobre los sitios del proyecto, consulta "Acerca de GitHub Pages".
+
+Además, debe cumplirse al menos una de las siguientes condiciones:
+
+Eres un colaborador en el repositorio o eres miembro de la organización a la que pertenece el repositorio.
+Has bifurcado el repositorio.
+Has abierto una solicitud de extracción o una propuesta en el repositorio.
+Has destacado el repositorio.
+Razones comunes por las que las contribuciones no se cuentan
+Notas:
+
+Cuando se cambian de base las confirmaciones, los creadores originales de la confirmación y la persona que cambió de base las confirmaciones, ya sea en la línea de comandos o en GitHub.com reciben el crédito por la contribución.
+La confirmación se hizo hace menos de 24 horas
+Después de hacer una confirmación que cumpla con los requisitos para contar como una contribución, es posible que debas esperar hasta 24 horas para que aparezca la contribución en tu gráfico de contribución.
+
+Tu correo electrónico de confirmaciones de Git no está conectado a tu cuenta
+Las confirmaciones deben realizarse con una dirección de correo electrónico conectada a tu cuenta de GitHub.com, o la dirección de correo electrónico noreply proporcionada por GitHub y facilitada en la configuración de correo electrónico, para que aparezca en el gráfico de contribuciones. Para obtener más información sobre las direcciones de correo electrónico noreply, consulta "Configurar tu dirección de correo electrónico de confirmación".
+
+Puedes comprobar la dirección de correo electrónico usada para una confirmación agregando .patch al final de una dirección URL de confirmación. Por ejemplo, la siguiente dirección URL de confirmación incluye .patch.
+
+https://github.com/octocat/octocat.github.io/commit/67c0afc1da354d8571f51b6f0af8f2794117fd10.patch
+
+From 67c0afc1da354d8571f51b6f0af8f2794117fd10 Mon Sep 17 00:00:00 2001
+From: The Octocat <octocat@nowhere.com>
+Date: Sun, 27 Apr 2014 15:36:39 +0530
+Subject: [PATCH] updated index for better welcome message
+La dirección de correo electrónico del campo From: es la dirección que se ha establecido en los valores de configuración de git local. En este ejemplo, la dirección de correo electrónico usada para la confirmación es octocat@nowhere.com.
+
+Si la dirección de correo electrónico que se utiliza para la confirmación no está conectada a tu cuenta de GitHub.com, debes agregar la dirección de correo electrónico a tu cuenta de GitHub.com. Tu gráfica de contribuciones se reconstruirá automáticamente cuando agregues la nueva dirección.
+
+Nota: Si usas una cuenta de usuario administrada, no puedes agregar más direcciones de correo electrónico a la cuenta, aunque haya varias direcciones de correo registradas electrónico con el proveedor de identidades (IdP). Por lo tanto, solo se pueden asociar a tu cuenta de usuario administrada las confirmaciones creadas mediante la dirección de correo electrónico principal registrada con el IdP.
+
+Las direcciones de correo electrónico genéricas, como jane@computer.local, no se pueden agregar a cuentas de GitHub ni vincularse a confirmaciones. Si has creado confirmaciones con una dirección de correo electrónico genérica, las confirmaciones no se vincularán a tu perfil de GitHub ni aparecerán en tu gráfico de contribución.
+
+No se ha realizado la confirmación en la rama gh-pages o en la predeterminada
+Las confirmaciones solo se cuentan si se realizan en la rama gh-pages o en la predeterminada (para los repositorios con sitios del proyecto). Para obtener más información, vea «Acerca de GitHub Pages».
+
+Si sus confirmaciones se encuentran en una rama que no es la rama predeterminada ni la rama gh-pages y le gustaría que contaran para sus contribuciones, necesitará realizar una de las acciones siguientes:
+
+Abrir una solicitud de incorporación de cambios para que los cambios se combinen en la rama gh-pages o en la predeterminada.
+Cambiar la rama predeterminada del repositorio.
+Advertencia: Cambiar la rama predeterminada del repositorio hará que se cambie para todos los colaboradores del repositorio. Realiza esta acción solamente si quieres que la nueva rama se convierta en la base respecto de todas las confirmaciones y las solicitudes de extracción que se harán en el futuro.
+
+La confirmación se hizo en una bifurcación
+Las confirmaciones que se hicieron en una bifurcación no contarán para tus contribuciones. Para hacer que cuenten, debes realizar una de las siguientes acciones:
+
+Abrir una solicitud de incorporación de cambios para que los cambios se combinen en el repositorio principal.
+Para desconectar la bifurcación y convertirla en un repositorio independiente en GitHub.com, ponte en contacto con Soporte técnico de GitHub. Si la bifurcación tiene a su vez más bifurcaciones, indícale al Soporte técnico de GitHub si éstas deberán moverse junto con tu repositorio a una nueva red o permanecer en la actual. Para obtener más información, vea «Acerca de las bifurcaciones».
+Información adicional
+"Visualización de las contribuciones y logros privados en tu perfil"
+"Ver contribuciones en tu perfil"
