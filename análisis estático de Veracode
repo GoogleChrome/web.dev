@@ -1,0 +1,52 @@
+nombre : Escaneo de canalización de análisis estático de Veracode
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 24 3 * * 1 '
+
+# Una ejecución de flujo de trabajo se compone de uno o más trabajos que pueden ejecutarse secuencialmente o en paralelo
+permisos :
+  contenido : leer
+
+trabajos :
+  # Este flujo de trabajo contiene un trabajo para crear y enviar un análisis de canalización, deberá personalizar el proceso de construcción en consecuencia y asegurarse de que el artefacto que cree se utilice como entrada de archivo para el parámetro del archivo de análisis de canalización
+  construir-y-canalizar-escanear :
+    # El tipo de corredor en el que se ejecutará el trabajo
+    permisos :
+      contenido : leer # para acciones/pago para obtener código
+      eventos de seguridad : escriba # para github/codeql-action/upload-sarif para cargar los resultados de SARIF
+      acciones : lectura # solo requerida para un repositorio privado por github/codeql-action/upload-sarif para obtener el estado de ejecución de la acción
+    se ejecuta en : ubuntu-latest
+    pasos :
+
+    # Desprotege su repositorio en $GITHUB_WORKSPACE, para que su trabajo pueda acceder a él y copiar todas las fuentes en un archivo ZIP para enviarlo para su análisis. Reemplace esta sección con los pasos de compilación de sus aplicaciones
+    - usos : acciones/checkout@v3
+      con :
+        repositorio : ' '
+
+    - ejecutar : zip -r veracode-scan-target.zip ./
+
+    # descargue el archivo de escaneo Veracode Static Analysis Pipeline
+    - ejecutar : curl --silent --show-error --fail -O https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip
+    - ejecutar : descomprimir -o pipeline-scan-LATEST.zip
+
+    - usos : acciones/setup-java@v3
+      con :
+        versión java : 8
+        distribucion : ' temurin '
+    - ejecutar : java -jar pipeline-scan.jar --veracode_api_id "${{secrets.VERACODE_API_ID}}" --veracode_api_key "${{secrets.VERACODE_API_KEY}}" --fail_on_severity="Muy alto, alto" --file veracode-scan-target.zip
+      continuar en caso de error : verdadero
+    - nombre : convertir la salida de escaneo de tubería a formato SARIF
+      identificación : convertir
+      usos : veracode/veracode-pipeline-scan-results-to-sarif@ff08ae5b45d5384cb4679932f184c013d34da9be
+      con :
+        tubería-resultados-json : resultados.json
+    - usos : github/codeql-action/upload-sarif@v2
+      con :
+        # Ruta al archivo SARIF relativa a la raíz del repositorio
+        sarif_file : veracode-resultados.sarif
