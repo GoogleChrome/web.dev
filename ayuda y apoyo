@@ -1,0 +1,25 @@
+Acerca de los comandos de barra
+En este articulo
+Acerca de los comandos de barra
+Uso de comandos de barra
+Los comandos de barra pueden ahorrarle tiempo al reducir la escritura necesaria para crear Markdown complejos.
+
+Nota: los comandos de barra se encuentran actualmente en versión beta pública y están sujetos a cambios.
+
+Acerca de los comandos de barra
+Los comandos de barra hacen que sea más fácil escribir Markdown más complejos, como tablas, listas de tareas y bloques de código.
+
+Puede usar comandos de barra en cualquier campo de descripción o comentario en problemas, solicitudes de incorporación de cambios o debates en los que se admita ese comando de barra.
+
+Uso de comandos de barra
+Puede usar comandos de barra inclinada escribiendo el comando en un campo de comentario y luego siguiendo las indicaciones. Para insertar Markdown complejo en su comentario, escriba uno de los siguientes comandos.
+
+Dominio	Descripción
+/code	Inserta un bloque de código Markdown. Tú eliges el idioma.
+/details	Inserta un área de detalle contraíble. Tú eliges el título y el contenido.
+/saved-replies	Inserta una respuesta guardada. Usted elige entre las respuestas guardadas para su cuenta de usuario. Si agrega %cursor%a su respuesta guardada, el comando de barra inclinada colocará el cursor en esa ubicación.
+/table	Inserta una tabla Markdown. Tú eliges el número de columnas y filas.
+/tasklist	Inserta una lista de tareas. Este comando de barra inclinada solo funciona en una descripción de problema.
+Nota: las listas de tareas se encuentran actualmente en versión beta privada y es posible que no estén disponibles para todos los usuarios. Para obtener más información, consulte " Acerca de las listas de tareas ".
+/template	Muestra todas las plantillas en el repositorio. Tú eliges la plantilla a insertar. Este comando de barra inclinada funcionará para plantillas de problemas y una plantilla de solicitud de extracción.
+ayuda y apoyo
