@@ -1,11 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow requires that you have an existing account with codescan.io
-# For more information about configuring your workflow,
-# read our documentation at https://github.com/codescan-io/codescan-scanner-action
 name: CodeScan
 
 on:
