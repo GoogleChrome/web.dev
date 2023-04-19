@@ -128,8 +128,8 @@ Vous pouvez configurer différentes politiques pour différentes pages, requête
 
 L'en-tête HTTP et l'élément meta sont tous deux au niveau de la page. L'ordre de priorité lors de la détermination de la politique effective d'un élément est :
 
-1. Politque au niveau de l'élément
-2. Politque au niveau de la page
+1. Politique au niveau de l'élément
+2. Politique au niveau de la page
 3. Navigateur par défaut
 
 **Exemple :**
