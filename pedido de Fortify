@@ -1,0 +1,80 @@
+name : Escaneo a pedido de Fortify
+
+# TODO: personalice los eventos desencadenantes en función de sus procesos DevSecOps y el tiempo de escaneo típico de FoD SAST
+en :
+  flujo de trabajo_despacho :
+  empujar :
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 41 19 * * 0 '
+
+trabajos :
+  Escaneo FoD-SAST :
+    # Use el corredor apropiado para construir su código fuente.
+    # TODO: use un corredor de Windows para proyectos .NET que usen msbuild. Se requerirán cambios adicionales en los comandos EJECUTAR para cambiar a la sintaxis de Windows.
+    se ejecuta en : ubuntu-latest
+    permisos :
+      acciones : leer
+      contenido : leer
+      eventos de seguridad : escribir
+
+    pasos :
+      # Revisa el código fuente
+      - nombre : ver código fuente
+        usos : acciones/checkout@v3
+
+      # Se requiere Java para ejecutar las diversas utilidades de Fortify.
+      # Al escanear una aplicación Java, utilice la versión de Java adecuada para crear su aplicación.
+      - nombre : Configuración de Java
+        usos : acciones/setup-java@v3
+        con :
+          versión java : 8
+          distribucion : ' temurin '
+
+      # Preparar fuente+dependencias para cargar. El ejemplo predeterminado es para un proyecto Maven que usa pom.xml.
+      # TODO: Actualice PACKAGE_OPTS según la documentación de ScanCentral Client para la(s) pila(s) tecnológica(s) incluida(s) de su proyecto. Consejos útiles:
+      #    ScanCentral Client descargará dependencias para maven (-bt mvn) y gradle (-bt gradle).
+      #    ScanCentral Client puede descargar dependencias para proyectos msbuild (-bt msbuild); sin embargo, debe convertir el flujo de trabajo para usar un ejecutor de Windows.
+      #    ScanCentral tiene opciones adicionales que deben configurarse para proyectos PHP y Python
+      #    Para otras herramientas de compilación, agregue sus comandos de compilación para descargar las dependencias necesarias y preparar de acuerdo con la documentación de Fortify on Demand Packaging.
+      #    La documentación de ScanCentral Client se encuentra en https://www.microfocus.com/documentation/fortify-software-security-center/
+      - nombre : Descargar Fortify ScanCentral Client
+        usos : fortificar/gha-setup-scancentral-client@5b7382f8234fb9840958c49d5f32ae854115f9f3
+      - nombre : Código del paquete + Dependencias
+        ejecutar : paquete scancentral $PACKAGE_OPTS -o paquete.zip
+        env :
+          PAQUETE_OPTS : " -bt mvn "
+
+      # Inicie el análisis SAST de Fortify on Demand y espere hasta que se completen los resultados. Para obtener más información sobre los comandos de FoDUploader, consulte https://github.com/fod-dev/fod-uploader-java
+      # TODO: actualice las variables ENV para su aplicación y cree los secretos de GitHub necesarios. Consejos útiles:
+      #    Las credenciales y el ID de versión deben obtenerse de su inquilino FoD (se puede usar un token de acceso personal o una clave API).
+      #    La preferencia de auditoría automatizada debe configurarse para la configuración de análisis estático de la versión en el portal de Fortify on Demand.
+      - nombre : Descargar Fortify on Demand Universal CI Tool
+        usos : fortificar/gha-setup-fod-uploader@6e6bb8a33cb476e240929fa8ebc739ff110e7433
+      - nombre : realizar exploración SAST
+        ejecutar : java -jar $FOD_UPLOAD_JAR -z paquete.zip -aurl $FOD_API_URL -purl $FOD_URL -rid "$FOD_RELEASE_ID" -tc "$FOD_TENANT" -uc "$FOD_USER" "$FOD_PAT" $FOD_UPLOADER_OPTS -n "$FOD_UPLOADER_NOTES"
+        env :
+          FOD_URL : " https://ams.fortify.com/ "
+          FOD_API_URL : " https://api.ams.fortify.com/ "
+          FOD_TENANT : ${{ secretos.FOD_TENANT }}
+          FOD_USER : ${{ secretos.FOD_USER }}
+          FOD_PAT : ${{ secretos.FOD_PAT }}
+          FOD_RELEASE_ID : ${{ secretos.FOD_RELEASE_ID }}
+          FOD_UPLOADER_OPTS : " -ep 2 -pp 0 -I 1 -apf "
+          FOD_UPLOADER_NOTES : ' Activado por GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) '
+
+      # Una vez que se complete el escaneo, extraiga los problemas de SAST de Fortify on Demand y genere una salida SARIF.
+      - nombre : exportar resultados a SARIF optimizado para GitHub
+        usos : fortificar/gha-export-vulnerabilities@fcb374411cff9809028c911dabb8b57dbdae623b
+        con :
+          fod_base_url : " https://ams.fortify.com/ "
+          fod_tenant : ${{ secretos.FOD_TENANT }}
+          fod_user : ${{ secretos.FOD_USER }}
+          fod_password : ${{ secretos.FOD_PAT }}
+          fod_release_id : ${{ secretos.FOD_RELEASE_ID }}
+
+      # Importar resultados de Fortify on Demand al escaneo de código de seguridad de GitHub
+      - nombre : resultados de importación
+        usos : github/codeql-action/upload-sarif@v2
+        con :
+          archivo_sarif : ./gh-fortify-sast.sarif
