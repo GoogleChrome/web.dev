@@ -1,0 +1,32 @@
+nombre : Análisis SonarCloud
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    ramas : [ "principal" ]
+  flujo de trabajo_despacho :
+
+permisos :
+  pull-requests : read # permite a SonarCloud decorar PRs con resultados de análisis
+
+trabajos :
+  Análisis :
+    se ejecuta en : ubuntu-latest
+
+    pasos :
+      - nombre : Analizar con SonarCloud
+
+        # Puede anclar la confirmación exacta o la versión.
+        # usos: SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
+        usos : SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
+        env :
+          GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}   # Necesario para obtener información de relaciones públicas
+          SONAR_TOKEN : ${{ secrets.SONAR_TOKEN }}    # Generar un token en Sonarcloud.io, agregarlo a los secretos de este repositorio con el nombre SONAR_TOKEN (Configuración > Secretos > Acciones > agregar nuevo repositorio secreto)
+        con :
+          # Argumentos adicionales para el escáner sonarcloud
+          argumentos :
+            # Claves únicas de tu proyecto y organización. Puedes encontrarlos en SonarCloud > Información (menú inferior izquierdo)
+            # obligatorio
+            -Dsonar.proyectoClave=
+            -Dsonar.organización=
