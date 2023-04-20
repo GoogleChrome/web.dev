@@ -25,8 +25,8 @@ const patterns = require('./src/lib/patterns').patterns();
 const markdown = require('./src/site/_plugins/markdown');
 
 // Shortcodes used in prose
-const Aside = require('./src/site/_includes/components/Aside');
 const {Blockquote} = require('webdev-infra/shortcodes/Blockquote');
+const Aside = require('webdev-infra/shortcodes/Aside');
 const {BrowserCompat} = require('webdev-infra/shortcodes/BrowserCompat');
 const {Codepen} = require('webdev-infra/shortcodes/Codepen');
 const Compare = require('./src/site/_includes/components/Compare');

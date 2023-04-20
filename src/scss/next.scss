@@ -8,6 +8,7 @@ $generate-utility-classes: false;
 @import '../../node_modules/gorko/gorko.scss';
 
 @import 'node_modules/webdev-infra/shortcodes/BrowserCompat/styles';
+@import 'node_modules/webdev-infra/shortcodes/Aside/styles';
 
 @import 'reset';
 @import 'fonts';
@@ -721,7 +722,6 @@ video,
 @import 'compositions/wide-card-index';
 
 /// BLOCKS
-@import 'blocks/aside';
 @import 'blocks/audio-player';
 @import 'blocks/author';
 @import 'blocks/banner';
