@@ -101,7 +101,7 @@ Trying them out yourself before making a decision can also be helpful. Below you
 Images are a vital part of the user experience on many websites, and thus factor into how well sites do when it comes to [Largest Contentful Paint](/lcp/). Here are a few things to keep in mind if you decide to use an image CDN:
 
 1. Images served from CDNs may come from a cross-origin server, which involves extra connection setup time. When possible, try to use an image CDN that proxies through the primary origin so that you're not adding extra origins for the browser to connect to. This has the same effect as self-hosting images on the primary origin.
-2. Consider using a [`fetchpriority` attribute value of `"high"`](/priority-hints/#summary) on the LCP image element so that the browser can begin loading that image as soon as possible.
+2. Consider using a [`fetchpriority` attribute value of `"high"`](/fetch-priority/#summary) on the LCP image element so that the browser can begin loading that image as soon as possible.
 3. If an image is not immediately discoverable in the initial HTML, consider using a [`rel=preload`](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/) hint for your LCP candidate image so that the browser can load that image ahead of time.
 4. If proxying through your origin is not possible, and the exact image to be loaded will not be known until later during page load, [you should set up a connection to the cross-origin image CDN as early as possible](/preconnect-and-dns-prefetch/) to shorten the resource loading phase of what could be your page's LCP candidate image.
 

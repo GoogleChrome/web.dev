@@ -56,7 +56,7 @@ Next.js solo *lee* JavaScript; no lo ejecuta. De esa manera, no descargará ning
 
 {% Aside 'caution' %} Los ejemplos de fallas se ejecutan en modo de producción porque la precarga depende de las condiciones de navegación y está habilitada solo en compilaciones de producción optimizadas. Para cambiar al modo de desarrollo, verifique el archivo `README.md` en los ejemplos de Glitch. {% endAside %}
 
-{% Aside %} Debido a que `<link rel="preload">` solicita recursos con prioridad alta, el navegador espera que se utilicen de inmediato, lo que activa las advertencias de la consola. Las [sugerencias de prioridad](/priority-hints/) pronto estarán disponibles en Chrome, lo que permitirá que Next.js indique una prioridad más baja para los recursos que no se necesitan de inmediato con `<link rel="preload" fetchpriority="low">`. {% endAside %}
+{% Aside %} Debido a que `<link rel="preload">` solicita recursos con prioridad alta, el navegador espera que se utilicen de inmediato, lo que activa las advertencias de la consola. Las [sugerencias de prioridad](/fetch-priority/) pronto estarán disponibles en Chrome, lo que permitirá que Next.js indique una prioridad más baja para los recursos que no se necesitan de inmediato con `<link rel="preload" fetchpriority="low">`. {% endAside %}
 
 ## Evite la precarga innecesaria
 

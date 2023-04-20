@@ -479,6 +479,8 @@ redirects:
     destination: /reduce-network-payloads-using-text-compression/
   - source: /webperformance-basics/
     destination: /navigation-and-resource-timing/
+  - source: /priority-hints/
+    destination: /fetch-priority/
 
   # Redirects scrolling performance post to the Intersection Observer post
   - source: /speed-scrolling/

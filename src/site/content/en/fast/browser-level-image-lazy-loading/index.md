@@ -85,7 +85,7 @@ The `eager` value is simply an instruction to load the image as usual, without d
 
 Browsers prioritize resources based on various heuristics, and the `loading` attribute just states _when_ the image resource is queued, not _how_ it is prioritized in that queue. `eager` just implies the usual eager queueing browsers use by default.
 
-If you want to increase the fetch priority of an important image (for example the LCP image), then [Priority Hints](/priority-hints/) should be used with `fetchpriority="high"`.
+If you want to increase the fetch priority of an important image (for example the LCP image), then [Fetch Priority](/fetch-priority/) should be used with `fetchpriority="high"`.
 
 Note that an image with `loading="lazy"` and `fetchpriority="high"` will still be delayed while it is off-screen, and then fetched with a high priority when it is nearly within the viewport. It would likely be fetched with a high priority in this case anyway, so this combination should not really be needed nor used.
 
