@@ -1,0 +1,41 @@
+Nombre : CodeScan
+
+en :
+  empujar :
+    ramas : [ "principal" ]
+  pull_request :
+    # Las ramas de abajo deben ser un subconjunto de las ramas de arriba
+    ramas : [ "principal" ]
+  horario :
+    - cron : ' 33 23 * * 0 '
+
+permisos :
+  contenido : leer
+
+trabajos :
+    Escaneo de código :
+        permisos :
+          contenido : leer # para acciones/pago para obtener código
+          eventos de seguridad : escriba # para github/codeql-action/upload-sarif para cargar los resultados de SARIF
+          acciones : lectura # solo requerida para un repositorio privado por github/codeql-action/upload-sarif para obtener el estado de ejecución de la acción
+        se ejecuta en : ubuntu-latest
+        pasos :
+            -    nombre : Repositorio de pago
+                usos : acciones/checkout@v3
+            -    nombre : archivos de caché
+                usos : acciones/cache@v3
+                con :
+                    ruta : |
+                        ~/.sonar
+                    clave : ${{ runner.os }}-sonda
+                    restaurar-claves : ${{ runner.os }}-sonar
+            -    nombre : Ejecutar análisis
+                usos : codescan-io/codescan-scanner-action@5b2e8c5683ef6a5adc8fa3b7950bb07debccce12
+                con :
+                    inicio de sesión : ${{ secretos.CODESCAN_AUTH_TOKEN }}
+                    organización : ${{ secretos.CODESCAN_ORGANIZATION_KEY }}
+                    clave del proyecto : ${{ secretos.CODESCAN_PROJECT_KEY }}
+            -    nombre : Subir archivo SARIF
+                usos : github/codeql-action/upload-sarif@v2
+                con :
+                    sarif_file : codescan.sarif
