@@ -113,7 +113,7 @@
     "truncate-utf8-bytes": "^1.0.2",
     "unistore": "^3.4.1",
     "web-vitals": "^3.1.1",
-    "webdev-infra": "1.0.53",
+    "webdev-infra": "1.0.54",
     "wicg-inert": "^3.1.2",
     "yaml-front-matter": "^4.0.0",
     "@mdn/browser-compat-data": "5.2.51"
