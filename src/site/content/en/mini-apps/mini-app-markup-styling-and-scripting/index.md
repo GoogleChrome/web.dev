@@ -295,13 +295,13 @@ in more detail. WeChat checks for available updates in the following two scenari
 
 Mini apps can opt-in to earlier updates by using the [`UpdateManager`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.html) API. It provides the following functionality:
 
-- notifies the mini app when a check for updates is made
+- Notifies the mini app when a check for updates is made.
   ([`onCheckForUpdate`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.onCheckForUpdate.html))
-- notifies the mini app when an update has been downloaded and is available
+- Notifies the mini app when an update has been downloaded and is available.
   ([`onUpdateReady`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.onUpdateReady.html))
-- notifies the mini app when an update could not be downloaded
+- Notifies the mini app when an update could not be downloaded.
   ([`onUpdateFailed`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.onUpdateFailed.html))
-- allows the mini app to force-install an available update, which will restart the app
+- Allows the mini app to force-install an available update, which will restart the app.
   ([`applyUpdate`](https://developers.weixin.qq.com/miniprogram/en/dev/api/base/update/UpdateManager.applyUpdate.html))
 
 WeChat also provides additional update customization options for mini app developers in its backend system:
