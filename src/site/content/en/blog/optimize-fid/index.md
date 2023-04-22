@@ -19,6 +19,10 @@ tags:
   - web-vitals
 ---
 
+{% Aside %}
+FID will be [replaced by Interaction to Next Paint (INP)](/inp-cwv/) as a Core Web Vital in March 2024.
+{% endAside %}
+
 <blockquote>
   <p>
     I clicked but nothing happened! Why can't I interact with this page? 😢
