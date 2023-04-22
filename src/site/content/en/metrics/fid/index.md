@@ -16,11 +16,7 @@ tags:
 {% BrowserCompat 'api.PerformanceEventTiming' %}
 
 {% Aside %}
-  First Input Delay (FID) is an important, user-centric metric for measuring
-  [load responsiveness](/user-centric-performance-metrics/#types-of-metrics)
-  because it quantifies the experience users feel when trying to interact with
-  unresponsive pages&mdash;a low FID helps ensure that the page is
-  [usable](/user-centric-performance-metrics/#questions).
+  First Input Delay (FID) is an important, user-centric metric for measuring load responsiveness because it quantifies the experience users feel when trying to interact with unresponsive pages—a low FID helps ensure that the page is usable. FID will be [replaced by Interaction to Next Paint (INP)](/inp-cwv/) as a Core Web Vital in March 2024.
 {% endAside %}
 
 We all know how important it is to make a good first impression. It's important
