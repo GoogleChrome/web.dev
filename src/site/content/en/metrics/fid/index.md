@@ -319,7 +319,7 @@ onFID(console.log);
 ```
 
 You can refer to [the source code for
-`onFID)`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts)
+`onFID()`](https://github.com/GoogleChrome/web-vitals/blob/main/src/onFID.ts)
 for a complete example of how to measure FID in JavaScript.
 
 {% Aside %}
