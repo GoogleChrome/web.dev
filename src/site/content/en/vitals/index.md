@@ -90,7 +90,7 @@ Metrics on the Core Web Vitals track go through a lifecycle consisting of three 
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/gCO4TElL05PwDZJiu3r9.svg", alt="The three lifecycle phases of Core Web Vitals metrics, visualized as a series of three chevrons. From left to right, the phases are Experimental, Pending, and Stable.", style="background-color: transparent; min-width: 100%; height: auto;", width="300", height="31" %}
 </figure>
 
-The table below reflects where all Core Web Vitals are in their lifecycle:
+The table below reflects where all Core Web Vitals currently are in their lifecycle:
 
 <div class="table-wrapper scrollbar">
   <table>
@@ -128,14 +128,19 @@ Each phase is designed to signal to developers how they should think about each 
 - **Stable metrics** are the current set of Core Web Vitals that Chrome considers essential for great user experiences.
 
 #### Experimental
+
 When a metric is initially developed and enters the ecosystem, it is considered an _experimental metric_.
 
 The purpose of the experimental phase is to assess a metric's fitness, first by exploring the problem to be solved, and possibly iterate on what previous metrics may have failed to address. For example, [Interaction to Next Paint (INP)](/inp/) was initially developed as an experimental metric to address the runtime performance issues present on the web more comprehensively than [First Input Delay (FID)](/fid/).
 
 The experimental phase of Core Web Vitals lifecycle is also intended to give flexibility in a metric's development by identifying bugs and even exploring changes to its initial definition. It's also the phase in which community feedback is most important.
+
 #### Pending
+
 When the Chrome team determines that an experimental metric has received sufficient feedback and proven its efficacy, it becomes a _pending metric_. Pending metrics are held in this phase for a minimum of six months to give the ecosystem time to adapt. The only remaining hurdle for a metric to advance beyond the pending phase is to wait out the transition period. Community feedback remains an important aspect of this phase, as more developers begin to use the metric.
+
 #### Stable
+
 When a Core Web Vital candidate metric is finalized, it becomes a _stable metric_—for metrics that are on the Core Web Vitals track, this means the metric becomes a Core Web Vital.
 
 Stable metrics are actively supported, and may be subject to bug fixes and definition changes. Stable Core Web Vitals metrics won't change more than once per year. Any change to a Core Web Vital will be clearly communicated in the metric's official documentation, as well as in the metric's CHANGELOG. Core Web Vitals are also included in any assessments.
