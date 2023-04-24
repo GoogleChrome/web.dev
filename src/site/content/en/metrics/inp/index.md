@@ -180,7 +180,7 @@ The best way to measure your website's INP is by gathering metrics from actual u
 
 ### Measure interactions in JavaScript
 
-INP is calculated based on interation events. The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to log interaction entries to the console:
+INP is calculated based on interaction events. The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to log interaction entries to the console:
 
 ```js
 new PerformanceObserver((entryList) => {
