@@ -6,7 +6,7 @@ subhead: |
 authors:
   - jlwagner
 date: 2023-05-10
-Hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/eS778yALdGSMtVQ5Z26E.jpg
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/eS778yALdGSMtVQ5Z26E.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3pa3Lf9rntLDvO1T6KI.jpg
 alt: A photo of a wide open golden field under a swift sunrise.
 description: |
