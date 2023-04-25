@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2023-04-12
+updated: 2023-04-25
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -218,6 +218,4 @@ Gathering INP metrics in the field will only work on browsers that [fully suppor
 
 A [full guide on optimizing INP](/optimize-inp/) is available to guide you through the process of identifying slow interactions in the field and using lab data to drill down and optimize them.
 
-## CHANGELOG
-
-No changes have occurred to this metric since it has shipped. If changes occur, they will be noted in this [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog). If you have feedback for this metric, you can provide it in the [web-vitals-feedback Google group](https://groups.google.com/g/web-vitals-feedback).
+{% include 'content/metrics/metrics-changelog.njk' %}
