@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "scripts": {
     "algolia": "node ./run-algolia.js",
-    "build": "npm-run-all clean gulp ignore rollup eleventy gulp:default-locale firebase-config",
+    "build": "npm-run-all clean gulp feeds ignore rollup eleventy gulp:default-locale firebase-config",
     "clean": "rimraf dist",
     "cloud-secrets": "node ./cloud-secrets.js",
     "coverage:integration": "c8 npm-run-all test:lib test:unit test:integration",
@@ -44,6 +44,7 @@
     "test:unit": "mocha ./test/unit",
     "test": "npm-run-all test:unit test:lib test:integration",
     "translated": "node ./tools/update-translated/index.js",
+    "feeds": "node ./tools/external-posts/index.js",
     "updated": "node ./tools/update-updated/index.js",
     "version-check": "node version-check.js",
     "watch:eleventy": "chokidar \"src/site/**/*\" -c \"npm run eleventy\"",

@@ -16,6 +16,8 @@ module.exports = function filterByLang(posts, lang = defaultLocale) {
         filteredPosts.set(defaultUrl, post);
       } else if (!filteredPosts.has(defaultUrl)) {
         filteredPosts.set(defaultUrl, post);
+      } else {
+        filteredPosts.set(post.url, post);
       }
     }
   }

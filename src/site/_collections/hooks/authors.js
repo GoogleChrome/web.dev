@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {feed, index, individual} = require('./utils');
+const {feed, index, authorIndividual} = require('./utils');
 
 /**
  * @param {AuthorsItem[]} authors
@@ -45,7 +45,7 @@ const authorsIndex = (authors) => {
  * @param {string} lang
  * @return {Paginated[]}
  */
-const authorsIndividual = (authors, lang) => individual(authors, lang, true);
+const authorsIndividual = (authors, lang) => authorIndividual(authors, lang, true);
 
 module.exports = {
   feed: authorsFeed,
