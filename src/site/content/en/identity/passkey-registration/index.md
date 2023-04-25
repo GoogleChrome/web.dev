@@ -5,7 +5,7 @@ subhead: Passkeys make user accounts safer, simpler, easier to use.
 authors:
   - agektmr
 date: 2022-10-12
-updated: 2023-04-11
+updated: 2023-04-25
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/ESXHlkzce7qhQSqQHacV.jpg
 description: |
   Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses how to allow users to create passkeys for your website.
@@ -226,23 +226,24 @@ The parameters not explained above are:
   stores user information to the passkey and lets users select the account upon 
   authentication.
 * **[`authenticatorSelection.userVerification`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-userverification)**:
-  Set to a `"preferred"` value or omit it because it's the default value. This
-  indicates whether a user verification that uses the device's screen lock is
-  `"required"`, `"preferred"` or `"discouraged"`. Setting to a `"preferred"`
-  value requests user verification when the device is capable.
+  Indicates whether a user verification using the device screen lock is
+  `"required"`, `"preferred"` or `"discouraged"`. The default is `"preferred"`,
+  which means the authenticator may skip user verification. Set this to
+  `"preferred"` or omit the property.
 
 {% Aside 'caution' %}
 
-On a device that doesn't support a biometric sensor (e.g. iMac), setting the
-`authenticatorSelection.userVerification` parameter to `"preferred"` value
-results in no user verification requested to the user, which immediately returns
-a credential that contains the [UV (user
-verification)](https://w3c.github.io/webauthn/#authdata-flags-uv) flag with a
-`false` value.
+For requests with `userVerification` set to `"preferred"`, authenticators may
+skip the user verification check, for example if the device doesn't have any
+biometric sensor, the user hasn't set it up (e.g. no enrolled fingerprints), or
+if the sensor is temporarily unavailable (e.g. laptop running with a closed
+display lid). The [UV bit in the authenticator data of the
+response](https://w3c.github.io/webauthn/#authdata-flags-uv) always indicates
+whether user verification was performed. 
 
-If you want to always require a user verification, set the
-`authenticatorSelection.userVerification` property to `"required"`. Don't forget
-to check that the UV flag is `true` on the server as well.
+If you'd like to always require a user verification, set `userVerification` to
+`"required"`. Don't forget to check that the UV flag is `true` on the server as
+well.
 
 {% endAside %}
 
