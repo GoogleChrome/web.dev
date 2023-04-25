@@ -82,11 +82,11 @@ resulting in two big discoveries.
 1. The first discovery was that they could improve performance by moving the HTML for the Video Player above the script that makes the Video Player interactive. Lab tests indicated that this could improve both FCP and LCP from 4.4 seconds to 1.1 seconds.
 
 1. The second discovery was that LCP only [considers](/lcp/#what-elements-are-considered) `<video>` element poster images and not frames from the video stream itself. YouTube has traditionally optimized for the fastest time until the video starts playing, so to improve LCP the team started also optimizing how quickly they could deliver their poster image. They experimented with a few variations of poster images and picked the one that scored the best in user testing. As a result of this work, both FCP and LCP showed marked improvement, with field LCP improving from 4.6 seconds to 2.0 seconds.
-  
+
 <figure>
 {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/wJKAgsXRqrexp9yDJ4T1.jpg", alt="Watch Page LCP Experiment for mobile web showing control, experiment A (image thumbnail) and experiment B (black thumbnail)", width="800", height="514" %}
   <figcaption>
-    In the lab, we observed an improvement in FCP and LCP from 4.4s to 1.1s after this change landed. Experiment A: Using the actual video thumbnail works well on pages where the video starts out paused, but for auto-play video pages like the watch page it performed poorly in user studies. It also resulted in a drop in active users. Experiment B: Using a solid black poster image showed the best results in user studies. Users found the transition from solid black to the first frame of the video to be a less-jarring experience for autoplay videos. 
+    In the lab, we observed an improvement in FCP and LCP from 4.4s to 1.1s after this change landed. Experiment A: Using the actual video thumbnail works well on pages where the video starts out paused, but for auto-play video pages like the watch page it performed poorly in user studies. It also resulted in a drop in active users. Experiment B: Using a solid black poster image showed the best results in user studies. Users found the transition from solid black to the first frame of the video to be a less-jarring experience for autoplay videos.
   </figcaption>
 </figure>
 
@@ -98,7 +98,7 @@ resulting in two big discoveries.
 </figure>
 
 {% Aside%}
-While bringing these optimizations to all platforms, YouTube also took advantage of the new [Priority Hints](/priority-hints/) `fetchpriority` attribute, which we use with `<link rel=preload>` to prioritize discovering and loading the poster image early:
+While bringing these optimizations to all platforms, YouTube also took advantage of the new [`fetchpriority` attribute](/fetch-priority/), which we use with `<link rel=preload>` to prioritize discovering and loading the poster image early:
 
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>poster.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">fetchpriority</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>high<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
 {% endAside %}
@@ -131,7 +131,7 @@ initial rendering times.
 YouTube was experiencing performance issues due to its player controls,
 especially on older devices. Code analysis showed that the player, which allows
 users to control features such as playback speed and progress, had become
-over-componentized over time. 
+over-componentized over time.
 
 
 <figure>
@@ -147,7 +147,7 @@ extra style recalculations and took 21.17 ms during performance test runs in the
 <figure>
 {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vCTMilflEoDnkw1p8EuU.png", alt="21.17 ms event shown on the Performance timeline.", width="800", height="202" %}
   <figcaption>
-    Chrome DevTools with a 4 times CPU slow-down performance run. 
+    Chrome DevTools with a 4 times CPU slow-down performance run.
   </figcaption>
 </figure>
 

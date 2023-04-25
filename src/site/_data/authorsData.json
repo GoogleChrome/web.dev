@@ -26,6 +26,12 @@
     "twitter": "duhroach",
     "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/YT88zCOqYHewnehPUatW.png"
   },
+  "adamzielinski": {
+    "twitter": "adamzielin",
+    "github": "adamziel",
+    "homepage": "https://adamadam.blog/",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/qNsFHO1nZ3FxmYd3PwWL.webp"
+  },
   "marcinwichary": {
     "homepage": "http://www.aresluna.org/",
     "twitter": "mwichary",
@@ -1753,5 +1759,11 @@
     "country": "UK",
     "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/xj60ht9o33rZ846tU3e7.png",
     "twitter": "sil"
+  },
+  "anslo": {
+    "country": "UK",
+    "twitter": "anslogen",
+    "homepage": "https://anslo.dev",
+    "image": "image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/hAkxOPvCiyOG1TZn7R05.jpg"
   }
 }

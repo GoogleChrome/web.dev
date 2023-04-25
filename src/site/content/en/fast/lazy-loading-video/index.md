@@ -36,7 +36,7 @@ on the `<video>` element may be desirable:
 ```
 
 {% Aside 'important' %}
-A video `poster` image can qualify as an [LCP candidates](/lcp/#what-elements-are-considered). If your `poster` image is an LCP candidate, you should [preload it](/preload-critical-assets/) with a [`fetchpriority` attribute value of `"high"`](/priority-hints/#the-fetchpriority-attribute) so the user sees it as soon as possible.
+A video `poster` image can qualify as an [LCP candidates](/lcp/#what-elements-are-considered). If your `poster` image is an LCP candidate, you should [preload it](/preload-critical-assets/) with a [`fetchpriority` attribute value of `"high"`](/fetch-priority/#the-fetchpriority-attribute) so the user sees it as soon as possible.
 {% endAside %}
 
 The example above uses a `preload` attribute with a value of `none` to prevent browsers

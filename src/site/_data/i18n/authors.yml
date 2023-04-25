@@ -22,6 +22,12 @@ zgoddard:
   description:
     en: Game Developer at Gradient Studios, Inc.
 
+adamzielinski:
+  title:
+    en: Adam Zieliński
+  description:
+    en: WordPress core committer at Automattic
+
 tomwiltzius:
   title:
     en: Tom Wiltzius
@@ -4451,3 +4457,8 @@ sil:
   description:
     en: 'Web consultant and developer.'
 
+anslo:
+  title:
+    en: Anslo
+  description:
+    en: Exploring creative development and digital craft
