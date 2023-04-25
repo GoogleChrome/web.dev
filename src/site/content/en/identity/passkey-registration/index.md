@@ -235,8 +235,8 @@ The parameters not explained above are:
 
 For requests with `userVerification` set to `"preferred"`, authenticators may
 skip the user verification check, for example if the device doesn't have any
-biometric sensor, the user hasn't set it up (e.g. no enrolled fingerprints), or
-if the sensor is temporarily unavailable (e.g. laptop running with a closed
+biometric sensors, the user hasn't set it up (no enrolled fingerprints), or
+if the sensor is temporarily unavailable (laptop running with a closed
 display lid). The [UV bit in the authenticator data of the
 response](https://w3c.github.io/webauthn/#authdata-flags-uv) always indicates
 whether user verification was performed. 

@@ -170,7 +170,7 @@ Fetch a challenge from the RP server that is required to call
   array to let the user select an available passkey from a list shown by the
   browser.
 * **[`userVerification`](https://w3c.github.io/webauthn/#dom-publickeycredentialrequestoptions-userverification)**:
-  Indicates whether a user verification using the device screen lock is
+  Indicates whether user verification using the device screen lock is
   `"required"`, `"preferred"` or `"discouraged"`. The default is `"preferred"`,
   which means the authenticator may skip user verification. Set this to
   `"preferred"` or omit the property. 
@@ -179,8 +179,8 @@ Fetch a challenge from the RP server that is required to call
 
 For requests with `userVerification` set to `"preferred"`, authenticators may
 skip the user verification check, for example if the device doesn't have any
-biometric sensor, the user hasn't set it up (e.g. no enrolled fingerprints), or
-if the sensor is temporarily unavailable (e.g. laptop running with a closed
+biometric sensors, the user hasn't set it up (no enrolled fingerprints), or
+if the sensor is temporarily unavailable (a laptop running with a closed
 display lid). The [UV bit in the authenticator data of the
 response](https://w3c.github.io/webauthn/#authdata-flags-uv) always indicates
 whether user verification was performed.
