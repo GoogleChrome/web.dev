@@ -18,8 +18,6 @@
 /**
  * Reusable hooks for authors and tags
  */
-
-const path = require('path');
 const fs = require('fs');
 const authorsDataFile = './src/site/_data/external-posts.json';
 const {PAGINATION_COUNT} = require('../../_utils/constants');
@@ -95,7 +93,6 @@ const individual = (items, lang, indexedOnly = false) => {
   return paginated;
 };
 
-
 /**
  * @param {AuthorsItem[]} items
  * @param {string} lang
@@ -107,13 +104,13 @@ const authorIndividual = (items, lang, indexedOnly = false) => {
   const authorsFeeds = JSON.parse(fs.readFileSync(authorsDataFile, 'utf-8'));
 
   for (const item in items) {
-    authorsFeeds.map(authorFeeds => {
+    authorsFeeds.map((authorFeeds) => {
       for (const author in authorFeeds) {
         if (items[item].key === author) {
           items[item] = items[item] || {};
           const feeds = authorFeeds[author];
 
-          feeds.forEach(feed => {
+          feeds.forEach((feed) => {
             const element = {
               date: new Date(feed.date),
               url: feed.url,
@@ -121,8 +118,8 @@ const authorIndividual = (items, lang, indexedOnly = false) => {
                 title: feed.title,
                 subhead: feed.summary,
                 source: feed.source,
-                lang: defaultLocale
-              }
+                lang: defaultLocale,
+              },
             };
             (items[item].elements = items[item].elements || []).push(element);
           });

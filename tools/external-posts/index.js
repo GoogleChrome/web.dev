@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-
 /**
  * @fileoverview Fetch the RSS feeds.
  */
-
 const fs = require('fs');
 const {rssFeeds} = require('webdev-infra/utils/rss-feeds');
 
@@ -35,8 +33,9 @@ async function run() {
 
   const authorsFeeds = await rssFeeds(feeds);
 
-  fs.writeFileSync('./src/site/_data/external-posts.json',
-    JSON.stringify(authorsFeeds)
+  fs.writeFileSync(
+    './src/site/_data/external-posts.json',
+    JSON.stringify(authorsFeeds),
   );
 }
 
