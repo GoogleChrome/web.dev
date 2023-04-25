@@ -231,7 +231,7 @@ export const setLanguage = store.action((state, language) => {
 
 export const loadAnalyticsScript = store.action(() => {
   const {gtmScriptLoaded} = store.getState();
-  if (!gtmScriptLoaded && !isProd) {
+  if (!gtmScriptLoaded && isProd) {
     setConfig();
     loadScript(`https://www.googletagmanager.com/gtm.js?id=${ids.GTM}`, null);
     return {
