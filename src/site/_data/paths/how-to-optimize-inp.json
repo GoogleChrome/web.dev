@@ -23,6 +23,12 @@
       "pathItems": [
         "optimize-long-tasks"
       ]
+    },
+    {
+      "title": "i18n.paths.how_to_optimize_inp.topics.rendering",
+      "pathItems": [
+        "avoid-large-complex-layouts-and-layout-thrashing"
+      ]
     }
   ]
 }

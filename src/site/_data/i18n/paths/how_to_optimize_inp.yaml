@@ -16,3 +16,6 @@ topics:
 
   javascript:
     en: Optimize poor INP caused by JavaScript
+
+  rendering:
+    en: Optimize poor INP caused by rendering
