@@ -43,7 +43,5 @@ Chrome では、プログレッシブ Web アプリは `beforeinstallprompt` イ
 - [Edge](https://docs.microsoft.com/microsoft-edge/progressive-web-apps#requirements)
 - [Firefox](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Installable_PWAs)
 - [Opera](https://dev.opera.com/articles/installable-web-apps/)
-- [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
-- [UC Browser](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56)
 
 {% Aside %} Androidでは、Web アプリのマニフェストに `related_applications` と `"prefer_related_applications": true` が含まれている場合、ユーザーは Google Play ストアに移動し、代わりに[指定された Android アプリをインストールするよう求められます](https://developer.chrome.com/blog/app-install-banners-native/)。 {% endAside %}
