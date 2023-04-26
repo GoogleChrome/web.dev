@@ -152,7 +152,7 @@ CSS.registerProperty({
 <style>
 button {
   --stop-color: red;
-  transition: --stop-color: 1s;
+  transition: --stop-color 1s;
 }
 
 button:hover {

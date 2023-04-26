@@ -203,7 +203,7 @@ is `0.25`, so the _layout shift score_ is `0.75 * 0.25 = 0.1875`.
 The next example illustrates how adding content to an existing element affects
 the layout shift score:
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xhN81DazXCs8ZawoCj0T.png", alt="Layout shift example with stable and _unstable elements_ and viewport clipping", width="800", height="600", linkTo=true %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xhN81DazXCs8ZawoCj0T.png", alt="Layout shift example with multiple stable and _unstable elements_", width="800", height="600", linkTo=true %}
 
 The "Click Me!" button is appended to the bottom of the gray box with black
 text, which pushes the green box with white text down (and partially out of the
@@ -229,7 +229,7 @@ The layout shift score is `0.5 x 0.14 = 0.07`.
 
 This last example illustrates multiple _unstable elements_:
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FdCETo2dLwGmzw0V5lNT.png", alt="Layout shift example with multiple stable and _unstable elements_", width="800", height="600", linkTo=true %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/J8AWG72qYlmbAHxjxuLg.png", alt="Layout shift example with stable and _unstable elements_ and viewport clipping", width="800", height="600", linkTo=true %}
 
 In the first frame above there are four results of an API request for animals,
 sorted in alphabetical order. In the second frame, more results are added to the
@@ -242,15 +242,15 @@ items labelled "Dog", "Horse", and "Zebra" all shift their start positions,
 making them _unstable elements_.
 
 Again, the red, dotted rectangles represent the union of these three _unstable
-elements_' before and after areas, which in this case is around 38% of the
-viewport's area (_impact fraction_ of `0.38`).
+elements_' before and after areas, which in this case is around 60% of the
+viewport's area (_impact fraction_ of `0.60`).
 
 The arrows represent the distances that _unstable elements_ have moved from
 their starting positions. The "Zebra" element, represented by the blue arrow,
 has moved the most, by about 30% of the viewport height. That makes the
 _distance fraction_ in this example `0.3`.
 
-The layout shift score is `0.38 x 0.3 = 0.1172`.
+The layout shift score is `0.60 x 0.3 = 0.18`.
 
 ### Expected vs. unexpected layout shifts
 

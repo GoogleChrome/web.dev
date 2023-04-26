@@ -2,7 +2,7 @@
 title: 'Key performance issues'
 authors:
   - matmarquis
-description: Learn ways to ensure that your image requests are as small and performant as possible. 
+description: Learn ways to ensure that your image requests are as small and performant as possible.
 date: 2023-02-01
 tags:
   - images
@@ -36,7 +36,7 @@ There's a catch, however: deferring those requests means not taking advantage of
 images as early as possible. If `loading="lazy"` is used on `img` elements toward the top of the layout—and thus more likely
 to be in the user's viewport when the page is first loaded—these images can feel significantly slower to the end user.
 
-## Priority hints
+## Fetch Priority
 
 The `loading` attribute is an example of a larger web standards effort to give developers more power over how web browsers
 prioritize requests.
@@ -47,8 +47,8 @@ external JavaScript file just above `</body>` will be deferred until render is c
 the associated image request will be deferred until the browser determines that it will be shown to a user. Otherwise, that image will have the same
 priority as any other image on the page.
 
-The [experimental](https://caniuse.com/mdn-html_elements_img_fetchpriority) `fetchpriority` attribute is intended to give
-developers [finer-grained control over the priority of assets](/priority-hints/), allowing you to flag resources
+The [`fetchpriority` attribute](https://caniuse.com/mdn-html_elements_img_fetchpriority) is intended to give
+developers [finer-grained control over the priority of assets](/fetch-priority/), allowing you to flag resources
 as 'high' and 'low' priority relative to resources of the same type. The use cases for `fetchpriority` are similar to the `loading`
 attribute, though much more broad. For example, you might use `fetchpriority="low"` on an image only revealed following user interaction
 (whether that image falls within the user's viewport or not) in order to prioritize visible images elsewhere on the page, or `fetchpriority="high"`
