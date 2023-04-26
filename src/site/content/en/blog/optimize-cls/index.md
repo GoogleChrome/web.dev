@@ -5,7 +5,7 @@ authors:
   - tunetheweb
   - addyosmani
 date: 2020-05-05
-updated: 2023-04-17
+updated: 2023-04-26
 hero: image/admin/74TRx6aETydsBGa2IZ7R.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
@@ -82,12 +82,12 @@ However, other post-load shifts that are unexpected by the user may be included 
 
 ### Identifying load CLS issues
 
-When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in line, this usually indicates there is a load CLS issue that was detected by Lighthouse. In this case Lighthouse will help with two audits to provide more information on images causing CLS due to missing width and height, and also list all the elements that shifted for the page load along with their CLS contribution.
+When the CrUX and Lighthouse CLS scores of PageSpeed Insights are broadly in line, this usually indicates there is a load CLS issue that was detected by Lighthouse. In this case Lighthouse will help with two audits to provide more information on images causing CLS due to missing width and height, and also list all the elements that shifted for the page load along with their CLS contribution. You can see these audits by filtering on the CLS audits:
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/2C3v6dGwPx2yFyYpVdue.png", alt="Lighthouse Screenshot showing the CLS audits providing more information to help you identify and address CLS issues", width="800", height="544" %}
 
 {% Aside important %}
-  Lighthouse will identify the elements that were shifted, but often these are the ones _impacted_ rather than the elements _causing_ the CLS. For example, if a new element is inserted into the DOM, the elements that are beneath it will show in this audit, but the root cause is the addition of the new element above. Hopefully, the shifted element will be sufficient to help you identify and resolve the root cause.
+  Lighthouse will identify the elements that were shifted, but often these are the ones _impacted_ rather than the elements _causing_ the CLS. For example, if a new element is inserted into the DOM, the elements that are beneath it will show in this audit, but the root cause is the addition of the new element above. However, the shifted element should be sufficient to help you identify and resolve the root cause.
 {% endAside %}
 
 The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) in DevTools also highlights layout shifts in the **Experience** section. The **Summary** view for a `Layout Shift` record includes the cumulative layout shift score as well as a rectangle overlay showing the affected regions. This is particularly helpful to get more detail on load CLS issues since this is easily replicated with a reload performance profile.
@@ -101,7 +101,7 @@ The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-perf
 
 When the CrUX and Lighthouse CLS scores of PageSpeed Insights are not in line, then this likely indicates post-load CLS. Without field data helping to identify the reason (that we will cover next), these can be more tricky to track down.
 
-The [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console (where you can get more details above the elements shifted).
+The [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console—where you can get more details above the elements shifted.
 
 As an alternative to using the extension, you can browse your web page while [recording layout shifts using a Performance Observer](/cls/#measure-layout-shifts-in-javascript) pasted into the console.
 
@@ -115,7 +115,7 @@ Once you have identified any common causes of CLS, the [timespans user flow mode
 
 It is also possible to measure both the CLS and—perhaps more importantly—the elements impacting your CLS score in the field and feed them back to your analytics service.
 
-This can be invaluable in pointing you in the right direction of where the issue is. This can remove much of the guess work as discribed above when you are trying to understand under what circumstances CLS is occuring. Again, be aware that this will measure the elements that shifted, rather than the root causes of those shifts, but this is often sufficient to identify the cause or at least to narrow down the problem.
+This can be invaluable in pointing you in the right direction of where the issue is. This can remove much of the guess work discribed above when you are trying to understand under what circumstances CLS is occuring. Again, be aware that this will measure the elements that shifted, rather than the root causes of those shifts, but this is often sufficient to identify the cause or at least to narrow down the problem.
 
 Measuring CLS in the field can also be used to rank the issues in order of importance based on most frequently experienced issues.
 
