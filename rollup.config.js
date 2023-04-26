@@ -30,8 +30,7 @@ const buildVirtualJSON = require('./src/build/virtual-json');
 const virtualImports = {
   webdev_analytics: {
     ids: {
-      UA: site.analytics.ids.ua,
-      GA4: site.analytics.ids.ga4,
+      GTM: site.analytics.ids.gtm,
     },
     dimensions: site.analytics.dimensions,
     version: site.analytics.version,

@@ -1,7 +1,10 @@
 {% set analyticsScript %}
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+window.dataLayer.push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+window.dataLayer.push({'user_agent': navigator.userAgent});
+//Restrict GTM variables:
+window.dataLayer.push({'gtm.blocklist': ['html', 'd', 'jsm', 'j']});
+function gtag(){dataLayer.push(arguments)};
 {% if (site.env != 'prod') %}
   {# In development, log debug events to the console instead of sending them to GA #}
   window.gtag = console.debug;
