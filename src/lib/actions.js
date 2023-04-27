@@ -6,6 +6,7 @@ import {localStorage} from './utils/storage';
 import cookies from 'js-cookie';
 import {ids} from 'webdev_analytics';
 import {isProd} from 'webdev_config';
+import {setConfig} from './analytics';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -229,11 +230,12 @@ export const setLanguage = store.action((state, language) => {
 });
 
 export const loadAnalyticsScript = store.action(() => {
-  const {g4ScriptLoaded} = store.getState();
-  if (!g4ScriptLoaded && isProd) {
-    loadScript(`https://www.googletagmanager.com/gtag/js?id=${ids.GA4}`, null);
+  const {gtmScriptLoaded} = store.getState();
+  if (!gtmScriptLoaded && isProd) {
+    setConfig();
+    loadScript(`https://www.googletagmanager.com/gtm.js?id=${ids.GTM}`, null);
     return {
-      g4ScriptLoaded: true,
+      gtmScriptLoaded: true,
     };
   }
 });

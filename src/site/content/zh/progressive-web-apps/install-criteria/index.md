@@ -43,7 +43,5 @@ tags:
 - Edge
 - Firefox
 - [Opera](https://dev.opera.com/articles/installable-web-apps/)
-- [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
-- [UC Browser](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56)
 
 {% Aside %} 在 Android 上，如果 Web 应用程序清单包括 `related_applications` 和 `"prefer_related_applications": true`，则会将用户引导至 Google Play 商店，并[提示安装指定 Android 应用程序](https://developer.chrome.com/blog/app-install-banners-native/)。{% endAside %}

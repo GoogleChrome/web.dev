@@ -45,7 +45,5 @@ tags:
 - [Edge](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps#requirements)
 - [Firefox](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Installable_PWAs)
 - [Opera](https://dev.opera.com/articles/installable-web-apps/)
-- [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
-- [UC Browser](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56)
 
 {% Aside %} На Android, если манифест веб-приложения включает `related_applications` и `"prefer_related_applications": true`, пользователь будет перенаправлен в магазин Google Play и вместо этого ему будет предложено [установить указанное приложение Android.](https://developer.chrome.com/blog/app-install-banners-native/) {% endAside %}

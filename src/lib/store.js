@@ -61,7 +61,7 @@ const initialState = {
   // Data for the current web.dev/LIVE event.
   eventDays: [],
   activeEventDay: null, // livestream shown for this day
-  g4ScriptLoaded: false,
+  gtmScriptLoaded: false,
 };
 
 let store;
