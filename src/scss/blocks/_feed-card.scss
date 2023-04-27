@@ -39,7 +39,9 @@
     border-top-right-radius: 0.75rem;
   }
 
-  &__thumbnail {
+  .card__hero {
+    margin-top: 1.5rem;
+
     img {
       height: 100%;
     }

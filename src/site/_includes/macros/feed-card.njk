@@ -21,12 +21,12 @@
       <a href="{{ param.url }}">{{ param.title }}</a>
     </h2>
     <div class="feed-card__description">{{ param.subhead | md | safe }}</div>
-  </div>
 
-  {% if param.thumbnail %}
-    <a href="{{ param.url }}" aria-hidden="true">
-      {% Img src=param.thumbnail, alt=param.alt, width="570", height="330", class="card__hero" %}
-    </a>
-  {% endif %}
+    {% if param.thumbnail %}
+      <a href="{{ param.url }}" class="gap-top-size-1" aria-hidden="true">
+        {% Img src=param.thumbnail, alt=param.alt, width="570", height="330", class="card__hero" %}
+      </a>
+    {% endif %} 
+  </div>
 </article>
 {% endmacro %}
