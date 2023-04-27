@@ -554,7 +554,7 @@ In addition to the performance impact, service workers also impact the user expe
 
 Service workers allow users to interact with your site while offline, and while some sort of offline support is probably critical for any progressive web app, determining how critical it is in your case largely depends on how much usage is occurring offline. But how do we measure that?
 
-Sending data to Google Analytics requires an internet connection, but it doesn't require the data to be sent at the exact time the interaction took place. Google Analytics supports sending interaction data after the fact by specifying a time offset (via the `[qt](https://developers.google.com//analytics/devguides/collection/protocol/v1/parameters#qt)` parameter).
+Sending data to Google Analytics requires an internet connection, but it doesn't require the data to be sent at the exact time the interaction took place. Google Analytics supports sending interaction data after the fact by specifying a time offset (via the [`qt`](https://developers.google.com//analytics/devguides/collection/protocol/v1/parameters#qt) parameter).
 
 For the past two years IOWA has been using a [service worker script](https://www.npmjs.com/package/sw-offline-google-analytics) that detects failed hits to Google Analytics when the user is offline and replays them later with the `qt` parameter.
 
