@@ -1,0 +1,32 @@
+{#
+  @typedef {string} param.title - The title of the card, like a show's name or a post's title.
+  @typedef {string} param.subhead - A description or short summary.
+  @typedef {string} param.url - The url for the page the card is previewing.
+  @typedef {string} param.source - The external RSS feeds source, such as bram.us.
+  @typedef {string|null} param.thumbnail - An relevant image to be displayed in the card.
+  @typedef {string|null} param.alt - Alt text for image. If no thumbnail is provided, this can be null.
+  @typedef {boolean|null} param.draft - Conditional if the card is for a draft post. This puts a pill on the card that says "DRAFT".
+#}
+{% macro feedCard(param) %}
+
+<article class="feed-card gap-bottom-size-1">
+  {% if param.source %}
+    <p class="feed-card__source text-size-0"> 
+      {{ param.source }} 
+    </p>
+  {% endif %}
+
+  <div class="feed-card__content flow">
+    <h2 class="text-size-3">
+      <a href="{{ param.url }}">{{ param.title }}</a>
+    </h2>
+    <div class="feed-card__description">{{ param.subhead | md | safe }}</div>
+  </div>
+
+  {% if param.thumbnail %}
+    <a href="{{ param.url }}" aria-hidden="true">
+      {% Img src=param.thumbnail, alt=param.alt, width="570", height="330", class="card__hero" %}
+    </a>
+  {% endif %}
+</article>
+{% endmacro %}

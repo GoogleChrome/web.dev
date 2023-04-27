@@ -4,7 +4,6 @@
   @typedef {string} param.title - The title of the card, like a show's name or a post's title.
   @typedef {string} param.subhead - A description or short summary.
   @typedef {string} param.url - The url for the page the card is previewing.
-  @typedef {string} param.source - The external RSS feeds source, such as bram.us.
   @typedef {string|null} param.thumbnail - An relevant image to be displayed in the card.
   @typedef {string|null} param.alt - Alt text for image. If no thumbnail is provided, this can be null.
   @typedef {string[]|null} param.authors - An array of author ids for the authors who wrote the post.
@@ -36,10 +35,6 @@
   {% endif %}
 
   <div class="card__content flow">
-    {% if param.source %}
-      <p class="type--caption gap-bottom-100"> Source: {{ param.source }} </p>
-    {% endif %}
-
     <h2 class="card__heading text-size-3">
       <a href="{{ param.url }}">{{ param.title }}</a>
     </h2>

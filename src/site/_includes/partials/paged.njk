@@ -1,24 +1,40 @@
 {% from 'macros/post-card.njk' import postCard with context %}
+{% from 'macros/feed-card.njk' import feedCard with context %}
+
+{% set isAuthor = false %}
+{% if path %}
+  {% set isAuthor = path === 'authors' %}
+{% endif %}
 
 <div class="region">
-  <div class="wrapper auto-grid">
+  <div class="wrapper {% if isAuthor %}feed-grid {% else %}auto-grid {% endif %}">
     {% for element in paged.elements %}
       {% set data = element.data %}
-      {# The `alt` property fallsback onto the element's
-      title in cases like authors or tags which do not have an alt. #}
-      {{ postCard({
-        title: data.title,
-        subhead: data.subhead,
-        url: element.url,
-        thumbnail: data.thumbnail or data.hero,
-        alt: data.alt or data.title or '',
-        authors: data.authors,
-        tags: data.tags,
-        date: element.date,
-        source: data.source,
-        updated: data.updated,
-        draft: data.draft
-      }) }}
+
+      {% if isAuthor %}
+        {{ feedCard({
+          title: data.title,
+          subhead: data.subhead,
+          url: element.url,
+          thumbnail: data.thumbnail or data.hero,
+          alt: data.alt or data.title or '',
+          source: data.source,
+          draft: data.draft
+        }) }}
+      {% else %}
+        {{ postCard({
+          title: data.title,
+          subhead: data.subhead,
+          url: element.url,
+          thumbnail: data.thumbnail or data.hero,
+          alt: data.alt or data.title or '',
+          authors: data.authors,
+          tags: data.tags,
+          date: element.date,
+          updated: data.updated,
+          draft: data.draft
+        }) }}
+      {% endif %}
     {% endfor %}
   </div>
 

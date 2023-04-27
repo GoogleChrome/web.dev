@@ -1,0 +1,51 @@
+.feed-grid {
+  column-count: 3;
+  column-gap: 30px;
+}
+
+.feed-card {
+  align-items: flex-start;
+  border: 1px solid var(--color-stroke);
+  border-radius: 10px;
+  break-inside: avoid-column;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 37rem;
+  text-decoration: none;
+  word-break: break-word;
+
+  &__content {
+    padding: 1.25rem;
+
+    a:not(:hover) {
+      text-decoration: none;
+    }
+
+    a:not([class]) {
+        color: currentColor;
+    }
+  }
+
+  &__description p {
+    font-size: 16px;
+  }
+
+  &__source {
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+    background-color: var(--color-mid-bg);
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+  }
+
+  &__thumbnail {
+    img {
+      height: 100%;
+    }
+  
+    a {
+      aspect-ratio: 1.57/1;
+    }
+  }
+}
