@@ -6,7 +6,8 @@ import {
   onLCP,
   onTTFB,
 } from 'web-vitals/attribution';
-import {ids, version, dimensions} from 'webdev_analytics';
+import {store} from './store';
+import {version, dimensions} from 'webdev_analytics';
 
 // A function that should be called once all all analytics code has been
 // initialized. Calling this will resolve the `whenAnalyticsInitialize`
@@ -299,50 +300,33 @@ function getMeta(name) {
 }
 
 /**
- * Returns the UA or GA4 config for a given analytics measurement ID,
+ * Sets the config for a given analytics measurement ID,
  * configured for the web.dev accounts.
- * @param {string} id
- * @returns {['config', string, Gtag.ConfigParams]}
  */
-function getConfig(id) {
-  const config = {
-    measurement_version: version,
-    navigation_type: getNavigationType(),
-    page_path: location.pathname,
-    page_authors: getMeta('authors'),
-    page_tags: getMeta('tags'),
-    page_learn_paths: getMeta('paths'),
+export function setConfig() {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({measurement_version: version});
+  window.dataLayer.push({navigation_type: getNavigationType()});
+  window.dataLayer.push({page_path: location.pathname});
+  window.dataLayer.push({page_authors: getMeta('authors')});
+  window.dataLayer.push({page_tags: getMeta('tags')});
+  window.dataLayer.push({page_learn_paths: getMeta('paths')});
+  window.dataLayer.push({
     color_scheme_preference: self.matchMedia('(prefers-color-scheme: dark)')
       .matches
       ? 'dark'
       : 'light',
-  };
-  if (id.startsWith('UA-')) {
-    Object.assign(config, {
-      transport_type: 'beacon',
-      // See: https://developers.google.com/analytics/devguides/collection/gtagjs/custom-dims-mets
-      custom_map: {
-        [dimensions.MEASUREMENT_VERSION]: 'measurement_version',
-        [dimensions.NAVIGATION_TYPE]: 'navigation_type',
-        [dimensions.COLOR_SCHEME_PREFERENCE]: 'color_scheme_preference',
-        [dimensions.WEB_VITALS_DEBUG]: 'debug_target',
-      },
-    });
+  });
+  if (location.hostname === 'localhost') {
+    window.dataLayer.push({debug_mode: true});
   }
-  if (id.startsWith('G-')) {
-    if (location.hostname === 'localhost') {
-      config.debug_mode = true;
-    }
-  }
-  return ['config', id, config];
+  const {cookiePreference} = store.getState();
+  window.dataLayer.push({cookiePreference: cookiePreference});
 }
 
 async function initAnalytics() {
   // If prerendering then only init once the page is activated
   await whenPageActivated;
-
-  gtag(...getConfig(ids.GA4));
-  gtag(...getConfig(ids.UA));
 
   addClickEventListener();
   addPageShowEventListener();
@@ -359,7 +343,7 @@ async function initAnalytics() {
   markAnalyticsInitialized();
 }
 
-// Some pages on web.dev include the full site JS but doesn't load
+// Some pages on web.dev include the full site JS but don't load
 // the gtag.js library. We can't initialize analytics in those cases.
 if (window.gtag) {
   initAnalytics();

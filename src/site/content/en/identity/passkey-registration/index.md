@@ -5,7 +5,7 @@ subhead: Passkeys make user accounts safer, simpler, easier to use.
 authors:
   - agektmr
 date: 2022-10-12
-updated: 2022-12-15
+updated: 2023-04-25
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/ESXHlkzce7qhQSqQHacV.jpg
 description: |
   Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses how to allow users to create passkeys for your website.
@@ -218,13 +218,35 @@ The parameters not explained above are:
   This specifies support for ECDSA with P-256 and RSA PKCS\#1 and supporting 
   these gives complete coverage.
 * **[`authenticatorSelection.authenticatorAttachment`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-authenticatorattachment)**: 
-  Set it to "platform". This indicates that we want an authenticator that is 
+  Set it to `"platform"`. This indicates that we want an authenticator that is 
   embedded into the platform device, and the user will not be prompted to insert 
   e.g. a USB security key.
 * **[`authenticatorSelection.requireResidentKey`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-residentkey)**: 
   Set it to a boolean "true". A discoverable credential (resident key) 
   stores user information to the passkey and lets users select the account upon 
   authentication.
+* **[`authenticatorSelection.userVerification`](https://w3c.github.io/webauthn/#dom-authenticatorselectioncriteria-userverification)**:
+  Indicates whether a user verification using the device screen lock is
+  `"required"`, `"preferred"` or `"discouraged"`. The default is `"preferred"`,
+  which means the authenticator may skip user verification. Set this to
+  `"preferred"` or omit the property.
+
+{% Aside 'caution' %}
+
+For requests with `userVerification` set to `"preferred"`, authenticators may
+skip the user verification check, for example if the device doesn't have any
+biometric sensors, the user hasn't set it up (no enrolled fingerprints), or
+if the sensor is temporarily unavailable (laptop running with a closed
+display lid). The [UV bit in the authenticator data of the
+response](https://w3c.github.io/webauthn/#authdata-flags-uv) always indicates
+whether user verification was performed. 
+
+If you'd like to always require a user verification, set `userVerification` to
+`"required"`. Don't forget to check that the UV flag is `true` on the server as
+well.
+
+{% endAside %}
+
 
 {% Aside %}
 
