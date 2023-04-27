@@ -231,7 +231,7 @@ image would be more impressive, right? Let's do that, then.
 
 The first question we have to answer is: How do we get the image into Wasm land?
 Looking at the
-[encoding API of libwebp](/speed/webp/docs/api#simple_encoding_api), it expects
+[encoding API of libwebp](https://developers.google.com/speed/webp/docs/api#simple_encoding_api), it expects
 an array of bytes in RGB, RGBA, BGR or BGRA. Luckily, the Canvas API has
 [`getImageData()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData),
 that gives us an
