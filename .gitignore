@@ -89,6 +89,3 @@ src/scss/_themes.scss
 # Eleventy
 # We generate our own .eleventyignore file dynamically during builds
 .eleventyignore
-
-# External source files
-external/_data/*

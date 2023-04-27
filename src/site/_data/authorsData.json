@@ -290,7 +290,17 @@
   "paulkinlan": {
     "homepage": "https://paul.kinlan.me/",
     "twitter": "paul_kinlan",
-    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0O1ZGr2P0l9oTKabyUK5.jpeg"
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0O1ZGr2P0l9oTKabyUK5.jpeg",
+    "external": [
+      {
+        "label": "paul.kinlan.me",
+        "url": "https://paul.kinlan.me/index.xml"
+      },
+      {
+        "label": "developer.chrome.com",
+        "url": "https://developer.chrome.com/authors/paulkinlan/feed.xml"
+      }
+    ]
   },
   "dalecurtis": {
     "github": "https://github.com/dalecurtis",
