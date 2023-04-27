@@ -19,7 +19,7 @@
  * Reusable hooks for authors and tags
  */
 const fs = require('fs');
-const authorsDataFile = './src/site/_data/external-posts.json';
+const externalFeeds = './external/_data/external-posts.json';
 const {PAGINATION_COUNT} = require('../../_utils/constants');
 const addPagination = require('../../_utils/add-pagination');
 const filterByLang = require('../../_filters/filter-by-lang');
@@ -101,31 +101,32 @@ const individual = (items, lang, indexedOnly = false) => {
  */
 const authorIndividual = (items, lang, indexedOnly = false) => {
   let paginated = [];
-  const authorsFeeds = JSON.parse(fs.readFileSync(authorsDataFile, 'utf-8'));
+  const authorsFeeds = JSON.parse(fs.readFileSync(externalFeeds, 'utf-8'));
 
   for (const item in items) {
-    authorsFeeds.map((authorFeeds) => {
-      for (const author in authorFeeds) {
-        if (items[item].key === author) {
-          items[item] = items[item] || {};
-          const feeds = authorFeeds[author];
-
-          feeds.forEach((feed) => {
-            const element = {
-              date: new Date(feed.date),
-              url: feed.url,
-              data: {
-                title: feed.title,
-                subhead: feed.summary,
-                source: feed.source,
-                lang: defaultLocale,
-              },
-            };
-            (items[item].elements = items[item].elements || []).push(element);
-          });
-        }
-      }
+    const authorKey = items[item].key;
+    const authorFeeds = authorsFeeds.find((authorFeeds) => {
+      return Object.keys(authorFeeds)[0] === authorKey;
     });
+
+    if (authorFeeds) {
+      const feeds = authorFeeds[authorKey];
+      items[item] = items[item] || {};
+
+      feeds.forEach((feed) => {
+        const element = {
+          date: new Date(feed.date),
+          url: feed.url,
+          data: {
+            title: feed.title,
+            subhead: feed.summary,
+            source: feed.source,
+            lang: defaultLocale,
+          },
+        };
+        (items[item].elements = items[item].elements || []).push(element);
+      });
+    }
 
     let elements = items[item].elements;
     if (indexedOnly) {

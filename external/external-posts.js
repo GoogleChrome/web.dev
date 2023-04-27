@@ -34,7 +34,7 @@ async function run() {
   const authorsFeeds = await rssFeeds(feeds);
 
   fs.writeFileSync(
-    './src/site/_data/external-posts.json',
+    './external/_data/external-posts.json',
     JSON.stringify(authorsFeeds),
   );
 }
