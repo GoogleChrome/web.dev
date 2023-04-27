@@ -47,7 +47,7 @@ As said previously, some input delay is unavoidable, but on the other hand, some
 
 There are two commonly used timer functions in JavaScript that can contribute to input delay: [`setTimeout`](https://developer.mozilla.org/docs/Web/API/setTimeout) and [`setInterval`](https://developer.mozilla.org/docs/Web/API/setInterval). The difference between the two is that `setTimeout` schedules a callback to run after a specified time. `setInterval`, on the other hand, schedules a callback to run every _n_ milliseconds in perpetuity, or until the timer is stopped with [`clearInterval`](https://developer.mozilla.org/docs/Web/API/clearInterval).
 
-`setTimeout` is not problematic in itself—in fact, it can be helpful in [avoiding long tasks](TODO). However, it depends on _when_ the timeout occurs, and whether the user attempts to interact with the page when the timeout callback runs.
+`setTimeout` is not problematic in itself—in fact, it can be helpful in [avoiding long tasks](#avoid-long-tasks). However, it depends on _when_ the timeout occurs, and whether the user attempts to interact with the page when the timeout callback runs.
 
 Additionally, `setTimeout` can be run in a loop or recursively, where it acts more like `setInterval`, though preferably not scheduling the next iteration until the previous one is completed. While this means the loop will yield to the main thread every time `setTimeout` is called, you should take care to ensure its callback doesn't end up doing excessive work.
 
