@@ -5,7 +5,7 @@ authors:
   - tunetheweb
   - addyosmani
 date: 2020-05-05
-updated: 2023-04-26
+updated: 2023-04-27
 hero: image/admin/74TRx6aETydsBGa2IZ7R.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
@@ -107,15 +107,15 @@ As an alternative to using the extension, you can browse your web page while [re
 
 Once you are monitoring shifts you can try to replicate any post-load CLS issues. Scolling down a page is a common place for CLS to occur if content is lazy loaded and does not have space reserved for it. Content shifting on hover is another common post-load CLS cause. Both of these "interactions" are ineligible for the 500 milliseconds grace period as CLS during these periods are seen as being "unexpected shifts", despite the user interaction, as they should not cause content to shift. Other interactions—such as clicks or taps—do have that grace period, but a common reason for CLS in these cases is taking longer than that 500 milliseconds to move or add content.
 
-See the [Debug layout shifts](/debug-layout-shifts/) for more information.
+We have a more detailed posted on [debugging layout shifts](/debug-layout-shifts/) for more information.
 
 Once you have identified any common causes of CLS, the [timespans user flow mode of Lighthouse](lighthouse-user-flows/#timespans) can also be used to ensure typical user flows do not regress by introducing layout shifts.
 
 ### Measuring CLS elements in the field
 
-It is also possible to measure both the CLS and—perhaps more importantly—the elements impacting your CLS score in the field and feed them back to your analytics service.
+It is also recommended to monitor CLS in the field. This can be used to measure both the CLS and—perhaps more importantly—the elements impacting your CLS score in the field and feed them back to your analytics service.
 
-This can be invaluable in pointing you in the right direction of where the issue is. This can remove much of the guess work discribed above when you are trying to understand under what circumstances CLS is occuring. Again, be aware that this will measure the elements that shifted, rather than the root causes of those shifts, but this is often sufficient to identify the cause or at least to narrow down the problem.
+This can be invaluable in pointing you in the right direction of where the issue is as it can remove much of the guess work discribed above when you are trying to understand under what circumstances CLS is occuring. Again, be aware that this will measure the elements that shifted, rather than the root causes of those shifts, but this is often sufficient to identify the cause or at least to narrow down the problem.
 
 Measuring CLS in the field can also be used to rank the issues in order of importance based on most frequently experienced issues.
 
@@ -164,7 +164,7 @@ Always include `width` and `height` size attributes on your images and video ele
   </figcaption>
 </figure>
 
-#### History
+#### History of `width` and `height` attributes on images
 
 In the early days of the web, developers would add `width` and `height` attributes to their `<img>` tags to ensure sufficient space was allocated on the page before the browser started fetching images. This would minimize reflow and re-layout.
 
@@ -194,7 +194,7 @@ This means if we know one of the dimensions, the other can be determined. For a 
 
 Knowing the aspect ratio allows the browser to calculate and reserve sufficient space for the height and associated area.
 
-#### Modern best practice
+#### Modern best practice for setting image dimensions
 
 Modern browsers now set the default aspect ratio of images based on an image's `width` and `height` attributes so developers just need to set these, and include the above CSS, to prevent layout shifts:
 
@@ -232,7 +232,7 @@ img {
 }
 ```
 
-**What about responsive images?**
+#### What about responsive images?
 
 When working with [responsive images](/serve-responsive-images), `srcset` defines the images you allow the browser to select between and what size each image is. To ensure `<img>` width and height attributes can be set, each image should use the same aspect ratio.
 
@@ -377,13 +377,15 @@ The following tools can help you minimize this:
 
 Read [Best practices for fonts](/font-best-practices/) for other font best practices.
 
-## Ensure pages are eligible for the bfcache
+## Reduce CLS by ensuring pages are eligible for the bfcache
 
 A highly effective technique for keeping CLS scores low is to ensure your web pages are eligible for the [back/forward cache](/bfcache/) (bfcache).
 
 The bfcache keeps pages in browsers memory for a short period after you navigate away so if you return to them, then they will be restored exactly as you left them. This means the fully loaded page is instantly available—without any shifts which may be normally seen during load due to any of the reasons above.
 
-While this does potentially still mean the initial page load encounters layout shifts, when a user goes back through pages they are not seeing the same layout shifts repeatedly. Back and forward navigations are common on many sites. For example, returning to a contents page, or a category page, or search results.
+While this does potentially still mean the initial page load encounters layout shifts, when a user goes back through pages they are not seeing the same layout shifts repeatedly. You should always aim to avoid the shifts even on the initial load, but where that is more tricky to resolve fully, you can at least reduce the impact by avoiding them on any bfcache navigations.
+
+Back and forward navigations are common on many sites. For example, returning to a contents page, or a category page, or search results.
 
 When this was rolled out to Chrome, we saw [noticeable improvements in CLS](https://twitter.com/anniesullie/status/1491399685961293828?s=20&t=Qj_nzSRZD0_c-HaAnfr98Q).
 
