@@ -33,6 +33,10 @@ async function run() {
 
   const authorsFeeds = await rssFeeds(feeds);
 
+  if (!fs.existsSync('./external/_data')) {
+    fs.mkdirSync('./external/_data');
+  }
+
   fs.writeFileSync(
     './external/_data/external-posts.json',
     JSON.stringify(authorsFeeds),
