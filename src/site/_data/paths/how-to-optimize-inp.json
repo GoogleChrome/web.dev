@@ -21,7 +21,8 @@
     {
       "title": "i18n.paths.how_to_optimize_inp.topics.javascript",
       "pathItems": [
-        "optimize-long-tasks"
+        "optimize-long-tasks",
+        "optimize-input-delay"
       ]
     },
     {
