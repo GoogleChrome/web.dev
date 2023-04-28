@@ -121,13 +121,13 @@ const authorIndividual = (items, lang, indexedOnly = false) => {
             lang: defaultLocale,
           },
         };
-        
+
         if (!items[item].elements) {
           items[item].elements = [];
         }
 
         items[item].elements.push(element);
-      };
+      }
     }
 
     let elements = items[item].elements;
