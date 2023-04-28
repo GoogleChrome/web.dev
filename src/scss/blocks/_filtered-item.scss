@@ -1,0 +1,55 @@
+.filtered-item {
+  align-items: center;
+  color: #3c4043;
+  display: flex;
+  font-family: 'Google Sans';
+  font-size: 1rem;
+  padding: 1rem 0;
+
+  @include media-query('xs') {
+    background-color: #f8f9fa;
+    border-radius: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &:nth-child(even) {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+
+    @include media-query('xs') {
+      border-radius: 0.75rem;
+    }
+  }
+
+  &__mobile-label {
+    display: none;
+
+    @include media-query('xs') {
+      display: block;
+    }
+  }
+}
+
+filtered-table {
+  @include media-query('xs') {
+    margin-top: 1.5rem;
+  }
+}
+
+[filtered-table-header] {
+  font-weight: 500;
+
+  @include media-query('xs') {
+    display: none;
+  }
+
+}
+
+[empty-state-placeholder] {
+  padding-left: 1rem;
+}

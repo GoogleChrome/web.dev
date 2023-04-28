@@ -1,0 +1,44 @@
+checkbox-group {
+  label {
+    align-items: center;
+    color: #5f6368;
+    cursor: pointer;
+    display: flex;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+
+    &:has(input:disabled) {
+      color: #bdc1c6;
+      cursor: initial;
+    }
+  }
+
+  input {
+    cursor: pointer;
+    height: 24px;
+    margin-right: 0.6875rem;
+    width: 24px;
+
+    &:disabled {
+      cursor: initial;
+    }
+  }
+}
+
+.checkbox-group__mass-select {
+  font-weight: 500;
+}
+
+.checkbox-group__show-more {
+  margin-top: 1.25rem;
+
+  svg {
+    margin-right: 0.8125rem;
+
+    path {
+      fill: #1a73e8;
+    }
+  }
+}
+
+
