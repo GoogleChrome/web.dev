@@ -17,7 +17,7 @@ tags:
 
 ## Stable browser releases
 
-In April 2023, [Firefox 112](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/111), and [Chrome 112](https://developer.chrome.com/blog/new-in-chrome-111/) became stable. Let's take a look at what this means for the web platform.
+In April 2023, [Firefox 112](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/112), and [Chrome 112](https://developer.chrome.com/blog/new-in-chrome-112/) became stable. Let's take a look at what this means for the web platform.
 
 {% Aside 'caution' %}
 We include browser compatibility data pulled from MDN in these posts which may not have updated for very recent browser releases. The post will show the correct information as soon as it appears in the [browser-compat-data release](https://github.com/mdn/browser-compat-data/releases).
