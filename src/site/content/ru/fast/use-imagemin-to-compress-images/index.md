@@ -79,7 +79,7 @@ Imagemin — отличное средство для сжатия изобра�
       </tr>
       <tr>
         <td>SVG</td>
-        <td><a href="https://www.npmjs.com/package/imagemin-svgo">Imagemin-svgo</a></td>
+        <td><a href="https://www.npmjs.com/package/imagemin-svgo">imagemin-svgo</a></td>
         <td></td>
       </tr>
       <tr>

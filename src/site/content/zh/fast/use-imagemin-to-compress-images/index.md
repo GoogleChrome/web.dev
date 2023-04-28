@@ -79,7 +79,7 @@ Imagemin 是围绕“插件”构建的。插件是压缩特定图像格式的 n
       </tr>
       <tr>
         <td>SVG</td>
-        <td><a href="https://www.npmjs.com/package/imagemin-svgo">Imagemin-svgo</a></td>
+        <td><a href="https://www.npmjs.com/package/imagemin-svgo">imagemin-svgo</a></td>
         <td></td>
       </tr>
       <tr>
