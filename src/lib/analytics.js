@@ -341,9 +341,10 @@ async function initAnalytics() {
   onINP(sendToGoogleAnalytics);
   onLCP(sendToGoogleAnalytics);
   onTTFB(sendToGoogleAnalytics);
-  markAnalyticsInitialized();
 
   logPrerenders();
+
+  markAnalyticsInitialized();
 }
 
 // Some pages on web.dev include the full site JS but don't load
