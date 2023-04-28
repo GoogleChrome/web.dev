@@ -7,7 +7,7 @@ import {
   onTTFB,
 } from 'web-vitals/attribution';
 import {store} from './store';
-import {checkIfUserAcceptsCookies} from './actions.js'
+import {checkIfUserAcceptsCookies} from './actions.js';
 import {version, dimensions} from 'webdev_analytics';
 
 // A function that should be called once all all analytics code has been
