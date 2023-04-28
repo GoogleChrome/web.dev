@@ -87,7 +87,7 @@ Imagemin은 "플러그인"을 중심으로 구축되었습니다. 플러그인�
       <tr>
         <td>WebP</td>
         <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
-        <td></td>
+        <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
       </tr>
     </tbody>
   </table>
