@@ -1,0 +1,16 @@
+{
+  "slug": "webassembly",
+  "cover": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/8Gm7xljiB4j6K5VeQNMV.svg",
+  "title": "i18n.paths.webassembly.title",
+  "updated": "April 28, 2023",
+  "description": "i18n.paths.webassembly.description",
+  "overview": "i18n.paths.webassembly.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.webassembly.topics.introduction",
+      "pathItems": [
+        "what-is-webassembly"
+      ]
+    }
+  ]
+}

@@ -29,6 +29,7 @@ module.exports = function () {
     allPaths['devices'],
     allPaths['animations'],
     allPaths['identity'],
+    allPaths['webassembly'],
   ].filter(livePaths);
 
   const frameworks = [allPaths['react'], allPaths['angular']].filter(livePaths);
