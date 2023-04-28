@@ -1,0 +1,20 @@
+filter_by:
+  en: 'Filter by'
+
+filters:
+  en: 'Filters'
+
+reset_filters:
+  en: 'Reset filters'
+
+clear_filters:
+  en: 'Clear filters'
+
+done:
+  en: 'Done'
+
+select_all:
+  en: 'Select all'
+
+reset:
+  en: 'reset'
