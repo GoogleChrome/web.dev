@@ -1676,7 +1676,13 @@
     "twitter": "bramus",
     "github": "bramus",
     "country": "BE",
-    "image": "image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/CQMqvg5UkY4weDnJij3b.jpeg"
+    "image": "image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/CQMqvg5UkY4weDnJij3b.jpeg",
+    "external": [
+      {
+        "label": "bram.us",
+        "url": "https://www.bram.us/feed/"
+      }
+    ]
   },
   "kadirtopal": {
     "country": "US",
