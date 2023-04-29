@@ -7,6 +7,7 @@ import {
   onTTFB,
 } from 'web-vitals/attribution';
 import {store} from './store';
+import {checkIfUserAcceptsCookies} from './actions.js';
 import {version, dimensions} from 'webdev_analytics';
 
 // A function that should be called once all all analytics code has been
@@ -320,8 +321,11 @@ export function setConfig() {
   if (location.hostname === 'localhost') {
     window.dataLayer.push({debug_mode: true});
   }
+  checkIfUserAcceptsCookies();
   const {cookiePreference} = store.getState();
   window.dataLayer.push({cookiePreference: cookiePreference});
+
+  logEvent('webdev_analytics_configed');
 }
 
 async function initAnalytics() {
