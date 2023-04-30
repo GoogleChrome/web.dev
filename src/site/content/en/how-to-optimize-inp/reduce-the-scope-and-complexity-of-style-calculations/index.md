@@ -1,23 +1,23 @@
 ---
 layout: post
 title: Reduce the scope and complexity of style calculations
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/soE8BwfZ2Svut2cfoQTp.jpg
+thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/tir1bnxgs7uFrIDw26sN.jpg
+alt: A photo of a desktop publishing prepress color palette CMYK book with line tester.
 subhead: |
   JavaScript is often the trigger for visual changes. Sometimes that's directly through style manipulations, and sometimes it's calculations that will result in visual changes, like searching or sorting some data. Badly-timed or long-running JavaScript can be a common cause of performance issues, and you should look to minimize its impact where you can.
 authors:
   - paullewis
 date: 2015-03-20
-updated: 2018-08-17
+updated: 2023-05-10
 description: |
   JavaScript is often the trigger for visual changes. Sometimes that's directly through style manipulations, and sometimes it's calculations that will result in visual changes, like searching or sorting some data. Badly-timed or long-running JavaScript can be a common cause of performance issues, and you should look to minimize its impact where you can.
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
-
+  - performance
+  - web-vitals
 ---
 
-Changing the DOM, through adding and removing elements, changing attributes,
-classes, or through animation, will all cause the browser to recalculate
-element styles and, in many cases, layout (or reflow) the page, or parts of
-it. This process is called __computed style calculation__.
+Changing the DOM, through adding and removing elements, changing attributes, classes, or through animation, will all cause the browser to recalculate element styles and, in many cases, layout (or reflow) the page, or parts of it. This process is called __computed style calculation__.
 
 The first part of computing styles is to create a set of matching selectors, which is essentially the browser figuring out which classes, pseudo-selectors and IDs apply to any given element.
 
@@ -40,7 +40,7 @@ In the simplest case you reference an element in your CSS with just a class:
 
 ```css
 .title {
-    /* styles */
+  /* styles */
 }
 ```
 
@@ -48,7 +48,7 @@ But, as any project grows, it will likely result in more complex CSS, such that 
 
 ```css
 .box:nth-last-child(-n+1) .title {
-    /* styles */
+  /* styles */
 }
 ```
 
@@ -56,13 +56,14 @@ In order to know that the styles need to apply the browser has to effectively as
 
 ```css
 .final-box-title {
-    /* styles */
+  /* styles */
 }
 ```
 
 You can take issue with the name of the class, but the job just got a lot simpler for the browser. In the previous version, in order to know, for example, that the element is the last of its type, the browser must first know everything about all the other elements and whether the are any elements that come after it that would be the nth-last-child, which is potentially a lot more expensive than simply matching up the selector to the element because its class matches.
 
 ## Reduce the number of elements being styled
+
 Another performance consideration, which is typically _the more important factor for many style updates_, is the sheer volume of work that needs to be carried out when an element changes.
 
 In general terms, the worst case cost of calculating the computed style of elements is the number of elements multiplied by the selector count, because each element needs to be at least checked once against every style to see if it matches.
@@ -82,22 +83,21 @@ If you’re into Web Components it’s worth noting that style calculations here
 The easiest and best way to measure the cost of style recalculations is to use Chrome DevTools’ Timeline mode. To begin, open DevTools, go to the Timeline tab, hit record and interact with your site. When you stop recording you’ll see something like the image below.
 
 <figure>
-{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/yOXgg8keJ8JaJxFSZtK8.jpg", alt="DevTools showing long-running style calculations.", width="800", height="465" %}
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/yOXgg8keJ8JaJxFSZtK8.jpg", alt="DevTools showing long-running style calculations.", width="800", height="465" %}
 </figure>
 
 The strip at the top indicates frames per second, and if you see bars going above the lower line, the 60fps line, then you have long running frames.
 
 <figure>
-{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/nHmQVfZ3YW4f3WDsYy7P.jpg", alt="Zooming in on a trouble area in Chrome DevTools.", width="769", height="126" %}
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/nHmQVfZ3YW4f3WDsYy7P.jpg", alt="Zooming in on a trouble area in Chrome DevTools.", width="769", height="126" %}
 </figure>
-
 
 If you have a long running frame during some interaction like scrolling, or some other interaction, then it bears further scrutiny.
 
 If you have a large purple block, as in the case the above, click the record to get more details.
 
 <figure>
-{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/vezenL4jZKWOhfhYkKSN.jpg", alt="Getting the details of long-running style calculations.", width="647", height="218" %}
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/vezenL4jZKWOhfhYkKSN.jpg", alt="Getting the details of long-running style calculations.", width="647", height="218" %}
 </figure>
 
 In this grab there is a long-running Recalculate Style event that is taking just over 18ms, and it happens to be taking place during a scroll, causing a noticeable judder in the experience.
@@ -109,14 +109,21 @@ If you click the event itself you are given a call stack, which pinpoints the pl
 Approaches to coding like [BEM (Block, Element, Modifier)](https://bem.info/) actually bake in the selector matching performance benefits above, because it recommends that everything has a single class, and, where you need hierarchy, that gets baked into the name of the class as well:
 
 ```css
-.list { }
-.list__list-item { }
+.list {
+  /* Styles */
+}
+
+.list__list-item {
+  /* Styles */
+}
 ```
 
 If you need some modifier, like in the above where we want to do something special for the last child, you can add that like so:
 
 ```css
-.list__list-item--last-child {}
+.list__list-item--last-child {
+  /* Styles */
+}
 ```
 
 If you’re looking for a good way to organize your CSS, BEM is a really good starting point, both from a structure point-of-view, but also because of the simplifications of style lookup.
@@ -127,3 +134,5 @@ If you don’t like BEM, there are other ways to approach your CSS, but the perf
 
 * [Style invalidation in Blink](https://docs.google.com/document/d/1vEW86DaeVs4uQzNFI5R-_xS9TcS1Cs_EUsHRSgCHGu8/edit)
 * [BEM (Block, Element, Modifier)](https://bem.info/)
+
+_Hero image from [Unsplash](https://unsplash.com/), by [Markus Spiske](https://unsplash.com/@markusspiske)._
