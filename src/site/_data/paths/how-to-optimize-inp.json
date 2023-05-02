@@ -30,7 +30,8 @@
       "pathItems": [
         "avoid-large-complex-layouts-and-layout-thrashing",
         "reduce-the-scope-and-complexity-of-style-calculations",
-        "dom-size-and-interactivity"
+        "dom-size-and-interactivity",
+        "client-side-rendering-of-html-and-interactivity"
       ]
     }
   ]

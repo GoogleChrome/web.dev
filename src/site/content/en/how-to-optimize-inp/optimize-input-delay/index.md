@@ -99,6 +99,6 @@ Another source of increased input delay due to overlapping interactions can be e
 
 ## Conclusion
 
-While input delays may not represent the majority of the time your interactions take to run, it's important to understand that every part of an interaction takes up an amount of time that you can reduce. If you're [observing long input delay in the lab](TODO), then you have opportunities to reduce it. Avoiding recurring timer callbacks, breaking up long tasks, and being aware of potential interaction overlap can all help you to reduce input delay, leading to faster interactivity for your website's users.
+While input delays may not represent the majority of the time your interactions take to run, it's important to understand that every part of an interaction takes up an amount of time that you can reduce. If you're [observing long input delay](TODO), then you have opportunities to reduce it. Avoiding recurring timer callbacks, breaking up long tasks, and being aware of potential interaction overlap can all help you to reduce input delay, leading to faster interactivity for your website's users.
 
 _Hero image from [Unsplash](https://unsplash.com/), by [Erik Mclean](https://unsplash.com/@introspectivedsgn)._
