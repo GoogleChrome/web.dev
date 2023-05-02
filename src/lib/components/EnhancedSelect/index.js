@@ -36,7 +36,7 @@ export class EnhancedSelect extends BaseElement {
 
   constructor() {
     super();
-    console.log('[EhancedSelect]', 'constructor()' this);
+    console.log('[EhancedSelect]', 'constructor()', this);
 
     try {
       // @ts-ignore
