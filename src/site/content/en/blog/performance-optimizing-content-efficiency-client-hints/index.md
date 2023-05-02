@@ -38,7 +38,7 @@ Accept: image/webp,image/apng,image/*,*/*;q=0.8
 ```
 
 While all browsers support image formats like JPEG, PNG, and GIF, Accept tells
-in this case that the browser _also_ supports [WebP](/speed/webp/) and
+in this case that the browser _also_ supports [WebP](https://developers.google.com/speed/webp/) and
 [APNG](https://en.wikipedia.org/wiki/APNG). Using this information, we can
 negotiate the best image types for each browser:
 

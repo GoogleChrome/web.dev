@@ -199,7 +199,7 @@ web page's requirements.
 
 [Lighthouse](/web/tools/lighthouse/),
 [WebPagetest](https://www.webpagetest.org/easy) and
-[Pagespeed Insights](/speed/pagespeed/insights/) are useful for analyzing speed, data cost and resource usage. WebPagetest will also check static-content
+[Pagespeed Insights](https://developers.google.com/speed/pagespeed/insights/) are useful for analyzing speed, data cost and resource usage. WebPagetest will also check static-content
 caching, time to first byte, and if your site makes effective use of CDNs.
 
 {% Aside %}
@@ -219,7 +219,7 @@ To find out more, take a look at [PageSpeed Tools](https://developers.google.com
 ## Save the results
 
 - **WebPagetest**: [test results each have their own URL](https://www.webpagetest.org/result/170428_NW_cc5afd75a2041f7e09984f33e4a4ae14/).
-- **Pagespeed Insights**: the [online](/speed/pagespeed/insights)
+- **Pagespeed Insights**: the [online](https://developers.google.com/speed/pagespeed/insights)
   Pagespeed Insights tool [now includes Chrome User Experience report data](https://webmasters.googleblog.com/2018/01/real-world-data-in-pagespeed-insights.html?m=1)
   highlighting real-world performance stats.
 - **Lighthouse**: save reports from the Chrome DevTools Audit panel by clicking on the

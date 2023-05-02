@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="manifest" href="manifest.json" />
+    <title>How to add Richer Install UI to your web app</title>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js');
+        });
+      }
+    </script>
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <h1>How to add Richer Install UI to your web app</h1>
+    <ol>
+      <li>
+        Install the app by clicking the button below. After the installation,
+        the button is disabled.
+        <p>
+          <button disabled type="button">Install</button>
+        </p>
+      </li>
+      <li>
+        When you click on install a dialog similar to the ones from app stores
+        will be displayed.
+      </li>
+      <li>
+        The dialog includes the `description` and `screenshots` set in the app
+        manifest.
+      </li>
+      <li>
+        Screenshots should be different depending if the app is being installed
+        on a mobile or desktop device, according to the `form_factor` value set
+        for the screenshots on the manifest
+      </li>
+    </ol>
+  </body>
+</html>

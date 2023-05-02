@@ -94,20 +94,10 @@ Using the `loading` attribute on iframes works as follows:
 <iframe src="https://example.com"
         width="600"
         height="400"></iframe>
-
-<!-- or use loading="eager" to opt out of automatic
-lazy-loading in Lite Mode -->
-<iframe src="https://example.com"
-        loading="eager"
-        width="600"
-        height="400"></iframe>
 ```
 
 Not specifying the attribute at all will have the same impact as explicitly
-eagerly loading the resource, except for [Lite
-Mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html)
-users, where Chrome will use the `auto` value to decide whether it should be
-lazy-loaded.
+eagerly loading the resource.
 
 If you need to _dynamically_ create iframes via JavaScript, setting
 `iframe.loading = 'lazy'` on the element is also

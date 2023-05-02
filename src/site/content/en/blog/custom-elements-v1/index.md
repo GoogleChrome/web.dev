@@ -1001,7 +1001,7 @@ article](http://www.html5rocks.com/en/tutorials/webcomponents/customelements/).
 
 Chrome 54 ([status](https://www.chromestatus.com/features/4696261944934400)),
 Safari 10.1 ([status](https://webkit.org/status/#feature-custom-elements)), and
-Firefox 63 ([status](https://platform-status.mozilla.org/#custom-elements)) have
+Firefox 63 ([status](https://mozilla.github.io/standards-positions/#custom-elements)) have
 Custom Elements v1. Edge has [begun
 development](https://developer.microsoft.com/microsoft-edge/platform/status/customelements/).
 

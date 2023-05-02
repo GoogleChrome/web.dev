@@ -50,8 +50,8 @@ Safari shipped support for [Shadow DOM v1 in Safari
 implementation of [Custom Elements v1 in
 WebKit](https://webkit.org/blog/7027/introducing-custom-elements/). Firefox is
 currently developing [Shadow
-DOM](https://platform-status.mozilla.org/#shadow-dom) and [Custom
-Elements](https://platform-status.mozilla.org/#custom-elements) v1, and both
+DOM](https://mozilla.github.io/standards-positions/#declarative-shadow-dom) and [Custom
+Elements](https://mozilla.github.io/standards-positions/#custom-elements) v1, and both
 [Shadow
 DOM](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/shadowdom/)
 and [Custom

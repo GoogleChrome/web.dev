@@ -1,0 +1,40 @@
+{
+  "name": "Richer Install UI Example",
+  "short_name": "Richer Install UI",
+  "start_url": "../demo.html",
+  "icons": [
+    {
+      "src": "../icons/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "description": "This app demonstrate using the description and screenshots fields in the web app manifest to provide a richer install experience.",
+  "screenshots": [
+    {
+      "src": "./screens/squoosh-riui-phone1.jpg",
+      "type": "image/png",
+      "sizes": "540x1123",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "./screens/squoosh-riui-phone.jpg",
+      "type": "image/jpeg",
+      "sizes": "540x1123",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "./screens/squoosh-riui-desktop.jpg",
+      "type": "image/jpeg",
+      "sizes": "1194x1002",
+      "form_factor": "wide"
+    },
+    {
+      "src": "./screens/squoosh-riui-desktop1.jpg",
+      "type": "image/jpeg",
+      "sizes": "1194x1002",
+      "form_factor": "wide"
+    }
+  ],
+  "display": "standalone"
+}
