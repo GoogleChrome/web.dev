@@ -79,7 +79,7 @@ You may be relying on a frontend framework to build your website. If so, you'll 
 - Svelte [renders HTML on the server](https://learn.svelte.dev/tutorial/ssr) by default—although if your component code needs access to browser-exclusive namespaces (`window`, for example), you may not be able to render that component's HTML on the server. Explore alternative approaches wherever possible so that you're not causing unnecessary client-side rendering. [SvelteKit](https://kit.svelte.dev/)—which is to Svelte as Next.js is to React—embeds many best practices into your Svelte projects as possible, so you can avoid potential pitfalls in projects that use Svelte alone.
 
 {% Aside 'important' %}
-If your application uses either of these frameworks and requires interactivity on the client, you'll still need to [hydrate your components on the client](https://web.dev/rendering-on-the-web/#combining-server-rendering-and-csr-via-rehydration) so that they'll be interactive. For a comprehensive evaluation of the different approaches to rendering HTML, and for some advice on how to handle component hydration on the client with performance in mind, read [Rendering on the web](/rendering-on-the-web/).
+If your application uses either of these frameworks and requires interactivity on the client, you'll still need to [hydrate your components on the client](/rendering-on-the-web/#combining-server-rendering-and-csr-via-rehydration) so that they'll be interactive. For a comprehensive evaluation of the different approaches to rendering HTML, and for some advice on how to handle component hydration on the client with performance in mind, read [Rendering on the web](/rendering-on-the-web/).
 {% endAside %}
 
 ### Limit the amount of DOM nodes created on the client
