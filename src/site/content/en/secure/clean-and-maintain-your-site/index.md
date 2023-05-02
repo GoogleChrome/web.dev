@@ -22,7 +22,7 @@ tags:
 
 ## Next actions
 
-We'll cover several actions in this step: 
+We'll cover several actions in this step:
 
 * Where to locate additional resources if you believe the hacker intended to
   obtain users' personal information (such as with phishing pages)
@@ -94,7 +94,7 @@ in this step depends on the type of backup you have available.
 
 * Clean and current backup
 * Clean but outdated backup
-* No backup available   
+* No backup available
 
 First, check that this backup was created **before** your site was hacked.
 
@@ -165,7 +165,7 @@ $passwd admin1
 #### No backup available
 
 Make two backups of your site even though it's still infected. Having an extra backup will help recover accidentally deleted content, or allow you  to revert and try again if things go awry. Label each backup with "infected" for future reference.
-   
+
 One of your backups will be a disk image or "clone version" of your site. This format makes restoring content even simpler. You can leave the disk image aside for an emergency. On a Unix-based system, making a disk image could be:
 
 ```shell
@@ -184,7 +184,7 @@ mysqldump -u root -p --all-databases | gzip -9 \
 If you don't have a disk image, make two backups of the database and two backups of the filesystem.
 
 Clean the site's content on the new backup filesystem copy (not the server itself)
-    
+
 1. If your earlier investigation found too lenient file permissions, go ahead and correct them. Make sure you do this on the backup copy, not the server itself.
 2. Also on the backup copy, clean all files corresponding to the URLs discovered as compromised from [Assess the damage](/secure/hacked-with-spam/). These may be server configuration files, JavaScript, HTML, PHP.
 3. Make sure to also remove (serve a 404 response) for new files created by the hacker (which you may or may not have submitted using the URL Removal tool in Search Console.)
@@ -228,10 +228,7 @@ passwd admin1
 
 ### 7. Create a long-term maintenance plan
 
-There are many informative resources on the web for strong site maintenance,
-like StopBadware's
-[Preventing badware: basics](https://www.stopbadware.org/prevent-badware-basics).
-We also strongly recommend that you do the following:
+We strongly recommend that you do the following:
 
 * Make regular, automated backups of your site.
 * Be vigilant about keeping software updated.
@@ -248,12 +245,12 @@ We also strongly recommend that you do the following:
 Make sure you can answer "yes" to the following questions:
 
 * Have I taken the proper steps if the hacker obtained users' personal
-  information? 
-* Is my site running the latest, most secure version of software? 
+  information?
+* Is my site running the latest, most secure version of software?
 * Have I removed all unnecessary or unused applications or plugins that could
-  make my site more vulnerable in the future? 
-* Did I restore my content and eliminate the hacker's content? 
-* Did I fix the root cause vulnerability that allowed my site to be hacked? 
+  make my site more vulnerable in the future?
+* Did I restore my content and eliminate the hacker's content?
+* Did I fix the root cause vulnerability that allowed my site to be hacked?
 * Do I have a plan to keep my site secure?
 
 You can now bring your site back online.
