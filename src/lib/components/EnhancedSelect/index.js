@@ -19,13 +19,15 @@
  * both single and multi select.
  */
 import {BaseElement} from '../BaseElement';
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {generateIdSalt} from '../../utils/generate-salt';
 
 import {store} from '../../store';
 import {setFilter} from '../../actions';
 
 const keyReg = new RegExp('^(Key|Digit|Numpad)', 'i');
+
+console.log('[EhancedSelect]', 'bundled.');
 
 export class EnhancedSelect extends BaseElement {
   static get formAssociated() {
@@ -34,6 +36,7 @@ export class EnhancedSelect extends BaseElement {
 
   constructor() {
     super();
+    console.log('[EhancedSelect]', 'constructor()' this);
 
     try {
       // @ts-ignore
