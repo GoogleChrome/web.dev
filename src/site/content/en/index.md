@@ -14,9 +14,9 @@ intro:
 
 featuredCard:
   eyebrow: 'Featured'
-  title: 'Let’s go, it’s Google I/O.<br>Register Now.'
+  title: 'Preview I/O web content. <br>Check out the sessions.'
   background: 'image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/9WSNd3mdbXACF19ELKJ1.png'
-  url: 'https://io.google/2023/?utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_reg_card&utm_content='
+  url: 'https://io.google/2023/program/?q=web-topic,web/&utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_reg_card&utm_content='
   image: '.'
   alt: '.'
   theme: 'light'
