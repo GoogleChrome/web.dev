@@ -28,7 +28,9 @@
     {
       "title": "i18n.paths.how_to_optimize_inp.topics.rendering",
       "pathItems": [
-        "avoid-large-complex-layouts-and-layout-thrashing"
+        "avoid-large-complex-layouts-and-layout-thrashing",
+        "reduce-the-scope-and-complexity-of-style-calculations",
+        "dom-size-and-interactivity"
       ]
     }
   ]
