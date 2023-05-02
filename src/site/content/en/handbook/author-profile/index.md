@@ -87,3 +87,68 @@ description: |
   <figure>
     {% Img src="image/SZHNhsfjU9RbCestTGZU6N7JEWs1/WtrUKbg3m1QMimf7qHB3.png", alt="Screenshot of an author lockup", width="640", height="500" %}
   </figure>
+
+## Create a featured card
+
+The featuredPost properties available:
+- `title` - the title of the card, like a event's name or a post's title.
+- `summary` - a description or short summary.
+- `thumbnail` - the thumbnail of the card.
+- `eyebrowText` - the keyword to introduce the type of card.
+- `eyebrowIcon` - the icon to introduce the type of card, such as mortarboard, pattern, podcast, blog, news, etc. The default value is featured. 
+- `url` - the url for the page the card is previewing.
+- `alt` - an alt text for image. If no thumbnail is provided, this can be null.
+- `theme` - the theme colours of the card. Theme colours available - tertiary, quaternary, pink, dark, and blue. The default theme is quaternary.
+
+1. If you want to set an internal post to be a featured post, copy the post URL and use it as the `url` value for the `featuredPost` key in your profile in the
+   [`authorsData.json`](https://github.com/GoogleChrome/web.dev/blob/main/src/site/_data/authorsData.json). It will automatically fetch the all data from the post URL, but also allow an author to override the detail, such as title, eyebrow, thumbnail, alt, and summary.
+
+   ```json
+   "paulkinlan": {
+     "homepage": "https://paul.kinlan.me/",
+     "twitter": "paul_kinlan",
+     "github": "PaulKinlan",
+     "glitch": "PaulKinlan",
+     "dcc": "paulkinlan",
+     "mastodon": "https://status.kinlan.me/@paul",
+     "linkedin": "https://uk.linkedin.com/in/paulkinlan",
+     "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0O1ZGr2P0l9oTKabyUK5.jpeg",
+     "featuredPost": {
+      "url": "/googleio22-recap/"
+     }
+    }
+   ```
+
+   <figure>
+      {% Img src="image/SZHNhsfjU9RbCestTGZU6N7JEWs1/LMRV7B0SvdX5So1sZG9N.png", alt="the featured post", width="800", height="351" %}
+   </figure>
+
+2. If you want to customise the detail of the featured post, you can specify the title, eyebrow, thumbnail, alt, summary, and theme in the [`authorsData.json`](https://github.com/GoogleChrome/web.dev/blob/main/src/site/_data/authorsData.json) with the following structure. 
+
+   ```json
+   "paulkinlan": {
+     "homepage": "https://paul.kinlan.me/",
+     "twitter": "paul_kinlan",
+     "github": "PaulKinlan",
+     "glitch": "PaulKinlan",
+     "dcc": "paulkinlan",
+     "mastodon": "https://status.kinlan.me/@paul",
+     "linkedin": "https://uk.linkedin.com/in/paulkinlan",
+     "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0O1ZGr2P0l9oTKabyUK5.jpeg",
+     "featuredPost": {
+      "url": "/googleio22-recap/",
+      "eyebrowText": "Learn",
+      "eyebrowIcon": "mortarboard",
+      "title": "A simple TODO list using HTML5 WebDatabases",
+      "thumbnail": "image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/9WSNd3mdbXACF19ELKJ1.png",
+      "summary": "This tool by Josh W Comeau makes it super simple to create nice looking gradients.",
+      "alt": "HTML5 text on the black background",
+      "theme": "quaternary"
+     }
+    }
+   ```
+
+   <figure>
+      {% Img src="image/SZHNhsfjU9RbCestTGZU6N7JEWs1/vz5H9MlBoD14OCKUzRSg.png", alt="the featured post with customising the detail", width="800", height="356" %}
+   </figure>
+    

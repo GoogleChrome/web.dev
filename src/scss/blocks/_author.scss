@@ -107,3 +107,69 @@
   }
 }
 
+.author-profile .switcher {
+  gap: 0.25rem;
+
+  .headline {
+    min-width: 100%;
+  }
+
+  @include media-query('md') {
+    gap: 3rem;
+  }
+
+  @include media-query('lg') {
+    gap: 6.25rem;
+  
+    .headline {
+      min-width: 60%;
+    }
+  }
+}
+
+.author-profile .author-featured {
+  a {
+    flex-flow: column-reverse;
+
+    @include media-query('md') {
+      flex-flow: column;
+    }
+  }
+
+  .card {
+    max-width: 25rem;
+
+    &__content {
+      margin: 20px 0 10px;
+
+      @include media-query('md') {
+        margin: 25px 0;
+      }
+    }
+  }
+
+  .card > img {
+    width: 100%;
+    height: 220px;
+    border-radius: 5px;
+    margin-top: 10px;
+
+    @include media-query('md') {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  .card__eyebrow {
+    align-items: center;
+    display: flex;
+
+    @include media-query('md') {
+      margin-top: 1.75rem;
+    }
+
+    span {
+      margin: 0.125rem 0 0 .5rem;
+    }
+  }
+}
