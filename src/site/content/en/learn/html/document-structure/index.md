@@ -214,7 +214,7 @@ The alternate value is for more than just translations. For example, the `type` 
 <link rel="alternate" type="application/x-pdf" href="https://machinelearningworkshop.com/mlw.pdf" />
 ```
 
-If the `rel` value is `alternate style sheet`, it defines an [alternate stylesheet](https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets) and the `title` attribute must be set giving that alternate style a name.
+If the `rel` value is `alternate stylesheet`, it defines an [alternate stylesheet](https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets) and the `title` attribute must be set giving that alternate style a name.
 
 #### Canonical
 
