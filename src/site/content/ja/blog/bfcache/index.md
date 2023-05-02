@@ -79,7 +79,7 @@ bfcacheを監視するために使用される主なイベントは、[ページ
 
 #### ページがbfcacheから復元されるタイミングを監視する
 
-`pageshow`イベントは、ページが最初に読み込まれているとき、およびページがbfcacheから復元されるたびに、`load`イベントの直後に発生します。`pageshow`イベントには`[persisted](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)`プロパティがあり、ページがbfcacheから復元された場合は`true`、そうでない場合は`false`になります。`persisted`プロパティを使用して、通常のページの読み込みとbfcacheの復元を区別できます。例えば次のようになります。
+`pageshow`イベントは、ページが最初に読み込まれているとき、およびページがbfcacheから復元されるたびに、`load`イベントの直後に発生します。`pageshow`イベントには[`persisted`](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)プロパティがあり、ページがbfcacheから復元された場合は`true`、そうでない場合は`false`になります。`persisted`プロパティを使用して、通常のページの読み込みとbfcacheの復元を区別できます。例えば次のようになります。
 
 ```js
 window.addEventListener('pageshow', (event) => {
@@ -131,7 +131,7 @@ window.addEventListener('pagehide', (event) => {
 
 `unload`イベントを使用する代わりに`pagehide`イベントを使用してください。 `pagehide` `unload`イベントが現在発生しているすべての場合に発生し、ページがbfcacheに配置されたとき*にも発生します。*
 
-実際、[Lighthouse v6.2.0](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.2.0)には`[no-unload-listeners audit](https://github.com/GoogleChrome/lighthouse/pull/11085)`が追加されており、ページのJavaScript (サードパーティライブラリを含む) が`unload`イベントリスナーを追加する場合には開発者に警告します。
+実際、[Lighthouse v6.2.0](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.2.0)には[`no-unload-listeners audit`](https://github.com/GoogleChrome/lighthouse/pull/11085)が追加されており、ページのJavaScript (サードパーティライブラリを含む) が`unload`イベントリスナーを追加する場合には開発者に警告します。
 
 {% Aside 'warning' %}絶対に`unload`イベントリスナーを追加しないでください。代わりに、`pagehide`イベントを使用してください。`unload`イベントリスナーを追加すると、Firefoxでのサイトの速度が低下し、ほとんどの場合ChromeとSafariではコードが実行されなくなります。 {% endAside %}
 
@@ -177,11 +177,11 @@ onAllChangesSaved(() => {
 
 ### window.opener参照を避ける
 
-一部のブラウザー (Chromiumベースのブラウザーを含む) では、`[rel="noopener"](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener)` を使用せずに、`[window.open()](https://developer.mozilla.org/docs/Web/API/Window/open)` を使用するか、([バージョン88より前のChromiumベースのブラウザーで](https://crbug.com/898942)) `[target=_blank](https://developer.mozilla.org/docs/Web/HTML/Element/a#target)`へのリンクを使用してページが開かれた場合、元のページが開かれたページのウィンドウオブジェクトを参照します。
+一部のブラウザー (Chromiumベースのブラウザーを含む) では、[`rel="noopener"`](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener) を使用せずに、[`window.open()`](https://developer.mozilla.org/docs/Web/API/Window/open) を使用するか、([バージョン88より前のChromiumベースのブラウザーで](https://crbug.com/898942)) [`target=_blank`](https://developer.mozilla.org/docs/Web/HTML/Element/a#target)へのリンクを使用してページが開かれた場合、元のページが開かれたページのウィンドウオブジェクトを参照します。
 
 [セキュリティ上のリスク](https://mathiasbynens.github.io/rel-noopener/)のほかに、非ヌルのcode1}[window.opener](https://developer.mozilla.org/docs/Web/API/Window/opener) 参照があるページは、それにアクセスしようとしているページを破損させる可能性があるため、安全にbfcacheに格納できません。
 
-したがって、可能な限り、`rel="noopener"`を使用して`window.opener`参照を作成しないようにすることをお勧めします。サイトでウィンドウを開いて、`[window.postMessage()](https://developer.mozilla.org/docs/Web/API/Window/postMessage)` で制御するか、ウィンドウオブジェクトを直接参照する必要がある場合は、開いているウィンドウも元のウィンドウもbfcache.の対象になりません。
+したがって、可能な限り、`rel="noopener"`を使用して`window.opener`参照を作成しないようにすることをお勧めします。サイトでウィンドウを開いて、[`window.postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage) で制御するか、ウィンドウオブジェクトを直接参照する必要がある場合は、開いているウィンドウも元のウィンドウもbfcache.の対象になりません。
 
 ### ユーザーが移動する前に必ず開いている接続を閉じる
 

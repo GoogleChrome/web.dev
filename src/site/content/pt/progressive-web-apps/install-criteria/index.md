@@ -45,7 +45,5 @@ Outros navegadores têm critérios de instalação semelhantes, embora possa hav
 - [Edge](https://docs.microsoft.com/microsoft-edge/progressive-web-apps#requirements)
 - [Firefox](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Installable_PWAs)
 - [Opera](https://dev.opera.com/articles/installable-web-apps/)
-- [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
-- [UC Browser](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56)
 
 {% Aside %} No Android, se o manifesto do aplicativo da web incluir `related_applications` e `"prefer_related_applications": true` , o usuário será direcionado para a Google Play Store e [solicitado a instalar o aplicativo Android especificado](https://developer.chrome.com/blog/app-install-banners-native/). {% endAside %}

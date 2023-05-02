@@ -254,6 +254,8 @@ redirects:
   # Redirects for vanity URLs
   - source: /scale-on-web
     destination: /tags/scale-on-web
+  - source: /wordpress-on-wasm
+    destination: /wordpress-playground
 
   # Redirect for the renamed WebTransport API.
   - source: /quictransport

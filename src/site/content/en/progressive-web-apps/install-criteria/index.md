@@ -71,8 +71,6 @@ minor differences. Check the respective sites for full details:
 * [Edge](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps#requirements)
 * [Firefox](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Installable_PWAs)
 * [Opera](https://dev.opera.com/articles/installable-web-apps/)
-* [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
-* [UC Browser](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56)
 
 {% Aside %}
 On Android, if the web app manifest includes `related_applications` and

@@ -24,10 +24,9 @@ if (matchMedia('(prefers-reduced-motion)').matches) {
 }
 
 function onGlobalStateChanged({cookiePreference}) {
-  if (cookiePreference === 'accepts') {
-    loadAnalyticsScript();
-  }
+  window.dataLayer.push({cookiePreference: cookiePreference});
 }
+loadAnalyticsScript();
 store.subscribe(onGlobalStateChanged);
 onGlobalStateChanged(store.getState());
 
