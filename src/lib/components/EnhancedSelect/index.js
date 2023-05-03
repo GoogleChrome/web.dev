@@ -27,7 +27,7 @@ import {setFilter} from '../../actions';
 
 const keyReg = new RegExp('^(Key|Digit|Numpad)', 'i');
 
-console.log('[EhancedSelect]', 'bundled.');
+//console.log('[EhancedSelect]', 'bundled.');
 
 export class EnhancedSelect extends BaseElement {
   static get formAssociated() {
@@ -36,8 +36,7 @@ export class EnhancedSelect extends BaseElement {
 
   constructor() {
     super();
-    console.log('[EhancedSelect]', 'constructor()', this);
-
+    //console.log('[EhancedSelect]', 'constructor()', this);
     try {
       // @ts-ignore
       this.internals = this.attachInternals();
@@ -113,6 +112,7 @@ export class EnhancedSelect extends BaseElement {
    * @param {*} state
    */
   onStoreUpdate(state) {
+    console.log('[EhancedSelect]', this.getSelectedValues());
     const filters = state.filters || {};
     const entries = filters[this.name] || [];
     this.setValue(entries.map((entry) => entry.value));
@@ -170,8 +170,8 @@ export class EnhancedSelect extends BaseElement {
           @click="${this.handleLabelClick}"
           @keydown="${this.handleLabelKeydown}"
         >
-          <span>${this.displayLabel}</span
-          ><svg
+          <span>${this.displayLabel}</span>
+          <svg
             width="10"
             height="5"
             viewBox="0 0 10 5"
@@ -192,16 +192,25 @@ export class EnhancedSelect extends BaseElement {
 
             return html`
               <li
-                class="button width-full gap-bottom-100 display-flex align-center justify-content-between"
+                class="width-full gap-bottom-100 display-flex align-center justify-content-between"
                 id="${option.id}"
                 tabindex="0"
-                @click="${this.handleSelection}"
+                @click="${(event) => {
+                  event.stopPropagation();
+                  this.handleSelection(event);
+                }}"
                 ?selected="${selected}"
               >
-                ${option.label}
-                ${this.multiple && selected
-                  ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>'
-                  : ''}
+                <input
+                  type="checkbox"
+                  .value="${option.value}"
+                  .checked="${selected}"
+                  @click="${(event) => {
+                    event.stopPropagation();
+                    this.handleSelection(event);
+                  }}"
+                />
+                <label for="${option.id}">${option.label}</label>
               </li>
             `;
           })}
