@@ -19,7 +19,7 @@
  * a list of tag-pills
  */
 import {BaseElement} from '../BaseElement';
-import {html} from 'lit-element';
+import {html} from 'lit';
 
 import {store} from '../../store';
 import {removeEntry, clearFilters} from '../../actions';
@@ -66,16 +66,6 @@ export class TagPillList extends BaseElement {
 
   render() {
     return [
-      this.items.length > 0
-        ? html`
-            <span
-              class="clear-filters tag-pill surface color-blue-medium hairline type--label display-inline-flex align-center"
-              @click="${() => this._onClickClearPills()}"
-            >
-              Clear filters
-            </span>
-          `
-        : '',
       this.items.map(
         (item) => html`
           <span
@@ -86,14 +76,15 @@ export class TagPillList extends BaseElement {
           >
             ${item.label}
             <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+                d="M10.5 1.0575L9.4425 0L5.25 4.1925L1.0575 0L0 1.0575L4.1925 5.25L0 9.4425L1.0575 10.5L5.25 6.3075L9.4425 10.5L10.5 9.4425L6.3075 5.25L10.5 1.0575Z"
+                fill="#3740FF"
               />
             </svg>
           </span>
