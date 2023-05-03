@@ -1,5 +1,5 @@
 <enhanced-select id="removal-date" class="deprecations-filter gap-right-300" label="Removal date" fixedLabel multiple>
-    <select name="removal-date">
+    <select name="removal-date" hidden>
       <option value="7">7 days</option>
       <option value="30">30 days</option>
       <option value="90">3 months</option>
@@ -7,3 +7,8 @@
       <option value="365">1 year</option>
     </select>
   </enhanced-select>
+
+  <div class="filter-modal__selected display-flex flex-flow-row-wrap grid-gap-100">
+    <span class="clear-filters tag-pill surface color-blue-medium hairline type--label display-inline-flex align-center" hidden>Clear Filters</span>
+    <tag-pill-list id="active-filters"></tag-pill-list>
+  </div>
