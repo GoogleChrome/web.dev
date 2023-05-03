@@ -92,7 +92,7 @@ eleventyComputed:
             {% endif %}
           {% endmacro %}
 
-          {% set bio = renderData.bio | i18n(locale, '') %}
+          {% set bio = renderData.bio | i18n(locale, true) %}
           {% if bio %}
             {% Details %}
             {% DetailsSummary %} Bio {% endDetailsSummary %}
