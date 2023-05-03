@@ -36,9 +36,7 @@
   }
 
   &__selected {
-    border-bottom: 1px solid #dadce0;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem;
 
     @include media-query('xs') {
       margin-top: 1.5rem;
@@ -88,14 +86,6 @@
 
   svg {
     display: none;
-  }
-}
-
-.tag-pill {
-  border-radius: 1rem;
-
-  svg {
-    fill: #1967d2;
   }
 }
 
