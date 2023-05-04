@@ -20,10 +20,16 @@
  */
 import {BaseElement} from '../BaseElement';
 
+import {store} from '../../store';
+
 export class FilteredTable extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
     this.placeholder = this.querySelector('[empty-state-placeholder]');
+
+    store.subscribe(() => {
+      this.onStateChanged();
+    });
   }
 
   onStateChanged() {
