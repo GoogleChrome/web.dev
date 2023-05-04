@@ -331,7 +331,7 @@ and the `aria-label` acts as the `alt` attribute on an `<img>`would.
 Global navigation is the navigation section leading to the top-level pages of the website that is the same on every page of a site.
 A site's global navigation may also be made up of tabs that open nested lists of links that link to all the subsections of a site or other menus.
 It may include titled sections, buttons, and search widgets. These additional features aren't a requirement. What is required is that
-the navigation appears on every page, and is the same on every page; with `aria-current="current"` on any links to the current page, of course.
+the navigation appears on every page, and is the same on every page; with `aria-current="page"` on any links to the current page, of course.
 
 Global navigation provides a consistent means of traveling anywhere in the application or website. Google doesn't have global
 navigation at the top of the page. Yahoo! does. While all the main Yahoo! properties have different styles, the content for

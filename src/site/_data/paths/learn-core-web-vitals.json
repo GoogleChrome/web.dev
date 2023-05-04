@@ -34,7 +34,6 @@
             "title": "i18n.paths.learn_core_web_vitals.topics.debug_core_web_vitals",
             "pathItems": [
                 "lab-and-field-data-differences",
-                "crux-and-rum-differences",
                 "debug-layout-shifts",
                 "debug-performance-in-the-field"
             ]
