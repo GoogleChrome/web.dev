@@ -64,9 +64,10 @@ const data = {i18n: walk(path.join(__dirname, '..', '_data', 'i18n'))};
  * Looks for the i18n string that matches the path and locale.
  * @param {string} path A dot separated path
  * @param {string} [locale] A locale prefix (example: 'en', 'pl')
+ * @param {boolean} [ignoreMissing] Some i18n paths are expected to not exist, and should not throw an error
  * @return {string}
  */
-const i18n = (path, locale = defaultLocale) => {
+function i18n(path, locale = defaultLocale, ignoreMissing = false) {
   locale = locale.split('_')[0];
   try {
     const out = get(data, path)[locale] ?? get(data, path)[defaultLocale];
@@ -74,10 +75,13 @@ const i18n = (path, locale = defaultLocale) => {
       return out;
     }
   } catch (err) {
-    // ignore, throw below
+    if (!ignoreMissing) {
+      throw new Error(`Could not find i18n result for: ${path}`);
+    }
   }
-  throw new Error(`Could not find i18n result for: ${path}`);
-};
+
+  return '';
+}
 
 /**
  * Infer the page locale using page's filePathStem. Usually for 11ty pages
