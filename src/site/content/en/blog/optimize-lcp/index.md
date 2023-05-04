@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-05-05
-updated: 2022-03-24
+updated: 2023-05-04
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
@@ -103,6 +103,10 @@ This table explains each of these LCP sub-parts in more detail:
 </div>
 
 Every single page can have its LCP value broken down into these four sub-parts. There is no overlap or gap between them, and collectively they add up to the full LCP time.
+
+The [Web Vitals extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) will [log the LCP time, LCP element, and these four sub-parts in the console logging](/debug-cwvs-with-web-vitals-extension/#lcp-debug-information), to easily allow you to see this breakdown.
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/FEFEkgKuC6RxVh7MHmkn.png", alt="Screenshot of the console logging of the Web Vitals extension showing the LCP sub-part timings", width="800", height="239" %}
 
 When optimizing LCP, it's helpful to try to optimize these sub-parts individually. But it's also important to keep in mind that you need to optimize all of them. In some cases, an optimization applied to one part will not improve LCP, it will just shift the time saved to another part.
 
