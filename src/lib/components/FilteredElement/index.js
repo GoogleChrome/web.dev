@@ -15,75 +15,81 @@
  */
 
 /**
- * @fileoverview handles the events for a modal containing filters
+ * @fileoverview A component for displaying items on a table that can be filtered. If the filter
+ * selection doesn't match the filter data specified the component results hidden
  */
 import {BaseElement} from '../BaseElement';
+import {html, render} from 'lit';
 
 import {store} from '../../store';
-import {clearFilters} from '../../actions';
 
-export class FilterModal extends BaseElement {
+
+export class FilteredElement extends BaseElement {
+  static get properties() {
+    return {
+      hidden: {type: Boolean, reflect: true},
+    };
+  }
+
   constructor() {
     super();
-    this.items = [];
+    this.hidden = false;
+    this.filters = {};
   }
 
   connectedCallback() {
     super.connectedCallback();
-    store.subscribe(this.onStoreUpdate.bind(this));
-    this.addEventListener('click', this.onClick);
+    this.content = this.innerHTML;
+
+    this.filters = {};
+    const attributes = this.getAttributeNames();
+    for (const attribute of attributes) {
+      if (!attribute.startsWith('data-filter-')) {
+        continue;
+      }
+      const name = attribute.replace('data-filter-', '');
+      this.filters[name] = this.getAttribute(attribute);
+    }
+
+    store.subscribe(() => {
+      this.onStateChanged(store.getState());
+    });
   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    this.removeEventListener('click', this.onClick);
-  }
+  onStateChanged(state) {
+    const activeFilters = state.filters || {};
 
-  onClick(event) {
-    const target = event.target;
-
-    // Open menu button
-    if (target.classList.contains('filter-modal__opener')) {
-      /** @type {HTMLDialogElement|null} */
-      const dialog = document.querySelector('#filter-modal');
-      if (dialog) {
-        dialog.showModal();
+    // Remove any empty filter arrays
+    for (const key in activeFilters) {
+      if (
+        activeFilters.hasOwnProperty(key) &&
+        activeFilters[key].length === 0
+      ) {
+        delete activeFilters[key];
       }
     }
 
-    // Filters reset
-    if (target.id === 'filter-modal__reset') {
-      this.resetFilters();
+    // Check for matches
+    if (Object.keys(activeFilters).length === 0) {
+      // Show all elements when no filters are active
+      this.hidden = false;
+      return;
     }
 
-    // Filters
-    if (target.id === 'filter-modal__done' || target.nodeName === 'DIALOG') {
-      /** @type {HTMLDialogElement|null} */
-      const dialog = document.querySelector('#filter-modal');
-      if (dialog) {
-        dialog.close();
+    // Hide elements that don't match the active filters
+    this.hidden = true;
+
+    for (const [filter, filterValues] of Object.entries(activeFilters)) {
+      const values = filterValues.map((value) => value.value);
+      if (values.includes(this.filters[filter])) {
+        console.log('HERE');
+        this.hidden = false;
       }
     }
   }
 
-  resetFilters() {
-    clearFilters();
-  }
-
-  onStoreUpdate(state) {
-    const filters = state.filters || {};
-    const items = [];
-    for (const [name, entries] of Object.entries(filters)) {
-      for (const item of entries) {
-        items.push({
-          name: name,
-          value: item.value,
-          label: item.label,
-        });
-      }
-    }
-    this.items = items;
-  }
+  // render() {
+  //   return html`${unsafeHTML(this.content)}`;
+  // }
 }
-
-customElements.define('filter-modal', FilterModal);
+customElements.define('filtered-element', FilteredElement);
