@@ -50,7 +50,7 @@ For [Largest Contentful Paint (LCP)](/lcp/), we show both the element, and the b
 
 The LCP time (2,876 milliseconds—or about 2.9 seconds) is highlighted in amber as it is in the "Needs Improvement" category.
 
-In this example, we see the `Resource load time` is the longest time, so to improve your LCP time you would look to optimize that - perhaps by avoiding hosting them on a separate domain, or by using smaller images or more efficient formats. In this case it's due to being artificially slowed down to demonstrate teh output—web.dev is a fast site 😀
+In this example, we see the `Resource load time` is the longest time, so to improve your LCP time you would look to optimize that - perhaps by avoiding hosting them on a separate domain, or by using smaller images or more efficient formats. In this case it's due to being artificially slowed down to demonstrate the output—web.dev is a fast site 😀
 
 The element can also be hovered over to highlight the image:
 
