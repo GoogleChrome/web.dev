@@ -104,10 +104,6 @@ This table explains each of these LCP sub-parts in more detail:
 
 Every single page can have its LCP value broken down into these four sub-parts. There is no overlap or gap between them, and collectively they add up to the full LCP time.
 
-The [Web Vitals extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) will [log the LCP time, LCP element, and these four sub-parts in the console logging](/debug-cwvs-with-web-vitals-extension/#lcp-debug-information), to easily allow you to see this breakdown.
-
-{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/FEFEkgKuC6RxVh7MHmkn.png", alt="Screenshot of the console logging of the Web Vitals extension showing the LCP sub-part timings", width="800", height="239" %}
-
 When optimizing LCP, it's helpful to try to optimize these sub-parts individually. But it's also important to keep in mind that you need to optimize all of them. In some cases, an optimization applied to one part will not improve LCP, it will just shift the time saved to another part.
 
 For example, in the earlier network waterfall, if you reduced the file size of our image by compressing it more or switching to a more optimal format (such as AVIF or WebP), that would reduce the **resource load time**, but it would not actually improve LCP because the time would just shift to the **element render delay** sub-part:
@@ -494,6 +490,13 @@ The [web-vitals library](https://github.com/GoogleChrome/web-vitals) includes th
 For those looking to implement their own solution, the [code for this is open source](https://github.com/GoogleChrome/web-vitals/blob/main/src/attribution/onLCP.ts) and is similar to above but with extra lofic for activation start.
 </p>
 {% endAside %}
+
+## Monitor LCP breakdown via the Web Vitals extension
+
+The [Web Vitals extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) will [log the LCP time, LCP element, and these four sub-parts in the console logging](/debug-cwvs-with-web-vitals-extension/#lcp-debug-information), to easily allow you to see this breakdown.
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/FEFEkgKuC6RxVh7MHmkn.png", alt="Screenshot of the console logging of the Web Vitals extension showing the LCP sub-part timings", width="800", height="239" %}
+
 
 ## Summary
 

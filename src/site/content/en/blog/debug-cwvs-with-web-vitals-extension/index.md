@@ -46,15 +46,17 @@ With the new release, we have added new debug information in a more readable for
 
 For [Largest Contentful Paint (LCP)](/lcp/), we show both the element, and the breakdown of the 4 phases detailed in our [Optimize LCP](/optimize-lcp/#lcp-breakdown) guide:
 
-{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/zJY1uptIzRQXncKhjbIr.png", alt="Web Vitals Extension new console logging showing LCP elements and sub-parts", width="800", height="535" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png", alt="Web Vitals Extension new console logging showing LCP elements and sub-parts", width="800", height="535" %}
 
-The LCP time (2,857 milliseconds—or just under 3 seconds) is highlighted in amber as it is in the "Needs Improvement" category.
+The LCP time (2,876 milliseconds—or about 2.9 seconds) is highlighted in amber as it is in the "Needs Improvement" category.
 
-In this example, we see the `Element render delay` is the longest time, so the resource was available over 2.2 seconds earlier but was not painted to screen. Therefore optimizing the download time—for example, by using a more efficient image format—will not help here and instead the developer must look at what is delaying the rendering (in this case it is a slow stylesheet delaying the initial rendering).
+In this example, we see the `Resource load time` is the longest time, so to improve your LCP time you would look to optimize that - perhaps by avoiding hosting them on a separate domain, or by using smaller images or more efficient formats. In this case it's due to being artificially slowed down to demonstrate - web.dev is a fast site 😀
 
 The element can also be hovered over to highlight the image:
 
-{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/criZsjhVp5cNiXnLufLD.png", alt="Web Vitals Extension new console logging retains element highlighting on hover", width="800", height="535" %}
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png", alt="Web Vitals Extension new console logging retains element highlighting on hover", width="800", height="535" %}
+
+Right clicking on the element also allows you to reveal it in the elements panel.
 
 Here the LCP element is an image, and hovering over that in the console on the right, also highlights that element on the site on the left.
 
@@ -66,7 +68,7 @@ Shifts contributing to [Cumulative Layout Shift (CLS)](/cls/) are now also liste
 
 The above screenshot shows 2 shifts, the first made up of two elements (when the banner image is loaded and the content beneath it is shifted downloaded), and the second of 4 elements (when the dynamic ad is loaded and most of the page is shifted downwards).
 
-The `h2` element is highlighted in this screenshot in the console on the right, and you can see this highlighted on the site on the left.
+The `h2` element is being hovered over in this screenshot in the console on the right, and you can see this highlights the element on the site on the left.
 
 {% Aside 'important' %}
 <p>
@@ -79,7 +81,7 @@ The `h2` element is highlighted in this screenshot in the console on the right, 
 
 ### FID debug information
 
-For [First Input Delay (FID)](/fid/) we show the affected element (which again, can be hovered over to highlight it on the page) and the interaction type, along with the full object as usual:
+For [First Input Delay (FID)](/fid/) we show the affected element (which again, can be hovered over to highlight it on the page) and the interaction type, along with the full JSON object as usual:
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png", alt="Web Vitals Extension new console logging showing FID target and type", width="800", height="448" %}
 
@@ -132,7 +134,7 @@ We're trying to keep the number of options for this extension down, but do let u
 
 We hope you find the new debug options in the latest version of the extension useful and that they make it easier to identify and resolve Core Web Vitals issues, improving the  user experiences on your website.
 
-Do remember that your experiences, on your developer computer, may not be representative of what your real users are experiencing. Check out our [previous blog post on how you can compare a site to field data](/field-data-in-the-web-vitals-extension/) to get a sense of how aligned your experiences are with your users.
+Do remember that your experiences, on your developer computer, may not be representative of what your real users are experiencing. Check out our [previous blog post on how you can view the CrUX field data for your site in the extension](/field-data-in-the-web-vitals-extension/) to get a sense of how aligned your experiences are with your users.
 
 We would be grateful to hear any feedback on these improvements, or any other suggestions on our [GitHub issues tracker](https://github.com/GoogleChrome/web-vitals-extension/issues).
 
