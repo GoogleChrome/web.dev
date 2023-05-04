@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using the Web Vitals extension to debug Core Web Vitals issues
-subtitle: |
+subhead: |
   The Web Vitals extension now shows you more debugging information to help you identify the root causes of Core Web Vitals issues.
 description: |
   The Web Vitals extension now shows you more debugging information to help you identify the root causes of Core Web Vitals issues.
