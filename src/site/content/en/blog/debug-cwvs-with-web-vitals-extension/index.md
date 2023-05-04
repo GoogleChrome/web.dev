@@ -18,7 +18,7 @@ tags:
   - web-vitals
 ---
 
-The [Web Vitals extension](https://chromewebstore.google.com/detail/ahfhijdlegdabablpippeagghigmibma) provides easy access to Core Web Vitals diagnostic information to help developers measure, and address Core Web Vitals issues. It supplements the other tools provided by the Chrome team to aid developers in improving the experiences on their websites.
+The [Web Vitals extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) provides easy access to Core Web Vitals diagnostic information to help developers measure, and address Core Web Vitals issues. It supplements the other tools provided by the Chrome team to aid developers in improving the experiences on their websites.
 
 We have updated the extension to provide additional debug information to developers to make it easier to understand and address their performance problems.
 
@@ -44,7 +44,7 @@ With the new release, we have added new debug information in a more readable for
 
 ### LCP debug information
 
-For [Largest Contentful Paint (LCP)](/lcp/), we show both the element, and the breakdown of the 4 phases detailed in our [Optimize LCP](/optimize-lcp/) guide:
+For [Largest Contentful Paint (LCP)](/lcp/), we show both the element, and the breakdown of the 4 phases detailed in our [Optimize LCP](/optimize-lcp/#lcp-breakdown) guide:
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/zJY1uptIzRQXncKhjbIr.png", alt="Web Vitals Extension new console logging showing LCP elements and sub-parts", width="800", height="535" %}
 
@@ -73,7 +73,7 @@ The `h2` element is highlighted in this screenshot in the console on the right, 
   Note that the shifted elements are not the elements _causing_ the shift, but the ones that were _impacted_ by any shifts.
 </p>
 <p>
-  However, as per above example, this should usually be enough to help you identify the cause of the shift by looking at the element which is either above the first shifted element (for inserted elements) or the first element itself (if this is expanded and so shifts itself).
+  However, as per the above example, this should usually be enough to help you identify the cause of the shift by looking at the element which is either above the first shifted element (for inserted elements) or the first element itself (if this is expanded and so shifts itself).
 </p>
 {% endAside %}
 
@@ -110,7 +110,7 @@ INP can be slow due to previous interactions blocking the main thread, and thus 
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png", alt="Web Vitals Extension new console logging showing all interactions", width="800", height="448" %}
 
-This allows you to "live trace" a website by interacting with it  in the console which interactions, in which combinations, are likely to cause an INP problem.
+This allows you to "live trace" a website by interacting with it and seeing in the console which interactions, in which combinations, are likely to cause an INP problem.
 
 This also allows you to identify multiple slow interactions, rather than just the largest INP interaction to help you avoid the feeling of chasing your tail when improving your responsiveness.
 
@@ -118,7 +118,7 @@ This also allows you to identify multiple slow interactions, rather than just th
 
 All this extra information, while useful, can be distracting if you are doing other development unrelated to Core Web Vitals, or are only interested in one particular Core Web Vital at that time.
 
-You can use the [filtering options in DevTools](https://developer.chrome.com/docs/devtools/console/reference/#filter) to filter out some or all of the messages:
+You can use the [Console filtering options in DevTools](https://developer.chrome.com/docs/devtools/console/reference/#filter) to filter out some or all of the messages:
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png", alt="Using console filtering options", width="800", height="448" %}
 
@@ -130,7 +130,7 @@ We're trying to keep the number of options for this extension down, but do let u
 
 ## Conclusion
 
-We hope you find the new debug options in the latest version of the extension useful and that they make it easier to identify and resolve Core Web Vitals issues to enable you to improve the  user experiences on your website.
+We hope you find the new debug options in the latest version of the extension useful and that they make it easier to identify and resolve Core Web Vitals issues, improving the  user experiences on your website.
 
 Do remember that your experiences, on your developer computer, may not be representative of what your real users are experiencing. Check out our [previous blog post on how you can compare a site to field data](/field-data-in-the-web-vitals-extension/) to get a sense of how aligned your experiences are with your users.
 
