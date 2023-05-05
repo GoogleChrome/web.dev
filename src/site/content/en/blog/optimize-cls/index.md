@@ -5,7 +5,7 @@ authors:
   - tunetheweb
   - addyosmani
 date: 2020-05-05
-updated: 2023-04-27
+updated: 2023-05-04
 hero: image/admin/74TRx6aETydsBGa2IZ7R.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
@@ -101,7 +101,7 @@ The [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-perf
 
 When the CrUX and Lighthouse CLS scores of PageSpeed Insights are not in line, then this likely indicates post-load CLS. Without field data helping to identify the reason (that we will cover next), these can be more tricky to track down.
 
-The [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console—where you can get more details above the elements shifted.
+The [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) can be used to monitor CLS as you interact with a page, either in a heads up display, or in the console—where you can [get more details above the elements shifted](/debug-cwvs-with-web-vitals-extension/#cls-debug-information).
 
 As an alternative to using the extension, you can browse your web page while [recording layout shifts using a Performance Observer](/cls/#measure-layout-shifts-in-javascript) pasted into the console.
 
