@@ -112,7 +112,6 @@ export class EnhancedSelect extends BaseElement {
    * @param {*} state
    */
   onStoreUpdate(state) {
-    console.log('[EhancedSelect]', this.getSelectedValues());
     const filters = state.filters || {};
     const entries = filters[this.name] || [];
     this.setValue(entries.map((entry) => entry.value));
