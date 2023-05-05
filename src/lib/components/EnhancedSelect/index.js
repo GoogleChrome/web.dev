@@ -195,7 +195,6 @@ export class EnhancedSelect extends BaseElement {
                 id="${option.id}"
                 tabindex="0"
                 @click="${(event) => {
-                  event.stopPropagation();
                   this.handleSelection(event);
                 }}"
                 ?selected="${selected}"
@@ -204,10 +203,6 @@ export class EnhancedSelect extends BaseElement {
                   type="checkbox"
                   .value="${option.value}"
                   .checked="${selected}"
-                  @click="${(event) => {
-                    event.stopPropagation();
-                    this.handleSelection(event);
-                  }}"
                 />
                 <label for="${option.id}">${option.label}</label>
               </li>
