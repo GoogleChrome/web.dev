@@ -5,6 +5,7 @@
 import '../components/EnhancedSelect';
 import '../components/FilteredElement';
 import '../components/FilteredTable';
+import '../components/FiltersSection';
 import '../components/CheckboxGroup';
 import '../components/TagPills';
 

@@ -1,25 +1,50 @@
-<enhanced-select id="removal-date" class="deprecations-filter gap-right-300" label="Removal date" fixedLabel multiple>
-    <select name="removal-date" hidden>
-      <option value="7">7 days</option>
-      <option value="30">30 days</option>
-      <option value="90">3 months</option>
-      <option value="180">6 months</option>
-      <option value="365">1 year</option>
-    </select>
-  </enhanced-select>
+<filters-section>
+  <span>Filter by</span>
 
-  <div class="filter-modal__selected display-flex flex-flow-row-wrap grid-gap-100">
-    <span class="clear-filters tag-pill surface color-blue-medium hairline type--label display-inline-flex align-center" hidden>Clear Filters</span>
-    <tag-pill-list id="active-filters"></tag-pill-list>
-  </div>
+  <enhanced-select id="source" class="gap-right-300" label="Source" fixedLabel multiple>
+      <select name="source" hidden>
+        <option value="webdev">web.dev</option>
+        <option value="dcc">developer.chrome.com</option>
+        <option value="external">External</option>
+      </select>
+    </enhanced-select>
+
+    <enhanced-select id="type" class="gap-right-300" label="Type" fixedLabel multiple>
+      <select name="type" hidden>
+        <option value="announcements">Announcements</option>
+        <option value="articles">Articles</option>
+        <option value="blogs">Blogs</option>
+        <option value="case-studies">Case studies</option>
+        <option value="documents">Documents</option>
+        <option value="patterns">Patterns</option>
+        <option value="events">Events</option>
+        <option value="presentations">Presentations</option>
+        <option value="videos">Videos</option>
+        <option value="rss">RSS Feeds</option>
+      </select>
+    </enhanced-select>
+
+    <enhanced-select id="credit" class="gap-right-300" label="Credit" fixedLabel multiple>
+      <select name="credit" hidden>
+        <option value="author">Author</option>
+        <option value="editor">Editor</option>
+      </select>
+    </enhanced-select>
+  
+  <span clear-filters>Clear filters</span>
+    
+    <div class="filter-modal__selected display-flex flex-flow-row-wrap grid-gap-100">  
+      <tag-pill-list id="active-filters"></tag-pill-list>
+    </div>
+</filters-section>
 
 <filtered-table>
     <div class="filtered-item" empty-state-placeholder hidden>
         EMPTY
     </div>
 
-    <filtered-element data-filter-removal-date=7><span>TEST</span></filtered-element>
-    <filtered-element data-filter-removal-date=7><span>TEST</span></filtered-element>
-    <filtered-element data-filter-removal-date=30><span>TEST</span></filtered-element>
-    <filtered-element data-filter-removal-date=30><span>TEST</span></filtered-element>
+    <filtered-element data-filter-source="webdev" data-filter-type="blogs" data-filter-credit="author"><div>Web.dev Blog</div></filtered-element>
+    <filtered-element data-filter-source="webdev" data-filter-type="blogs" data-filter-credit="author"><div>Web.dev Blog</div></filtered-element>
+    <filtered-element data-filter-source="dcc" data-filter-type="blogs" data-filter-credit="author"><div>DCC Blog</div></filtered-element>
+    <filtered-element data-filter-source="external" data-filter-type="blogs" data-filter-credit="author"><div>External Blog</div></filtered-element>
 <filtered-table>
