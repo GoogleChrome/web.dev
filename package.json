@@ -32,7 +32,6 @@
     "lint:scss": "sass-lint -v -q",
     "lint:types": "tsc --noEmit",
     "lint": "npm-run-all lint:md lint:scss lint:js",
-    "lint-staged": "lint-staged",
     "patterns:create": "node src/component-library/pattern-generator.js",
     "percy": "PERCY=true npm-run-all ignore build snapshots:firebase",
     "postinstall": "npm ci --prefix functions",
