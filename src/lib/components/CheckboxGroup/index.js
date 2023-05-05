@@ -114,12 +114,12 @@ class CheckboxGroup extends BaseElement {
 
   render() {
     return html`
-      <button
-        class="checkbox-group__mass-select button button-text type--h6 color-primary"
+      <span
+        class="checkbox-group__mass-select"
         @click="${this._handleMassSelect}"
       >
         ${this.allSelected ? this.i18n.reset : this.i18n.select_all}
-      </button>
+      </span>
 
       <div>${this.elements.initialChildren.slice(0, this.show)}</div>
 
@@ -134,8 +134,8 @@ class CheckboxGroup extends BaseElement {
     if (this.show >= this.elements.checkboxes.length) return;
 
     return html`
-      <button
-        class="checkbox-group__show-more button button-text type--h6 color-primary display-flex align-center"
+      <span
+        class="checkbox-group__show-more"
         @click="${this._handleShowMore}"
       >
         <svg
@@ -151,7 +151,7 @@ class CheckboxGroup extends BaseElement {
           />
         </svg>
         More
-      </button>
+      </span>
     `;
   }
 

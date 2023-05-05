@@ -1,10 +1,10 @@
 checkbox-group {
   label {
     align-items: center;
-    color: #5f6368;
+    color: get-color('shades-gray');
     cursor: pointer;
     display: flex;
-    font-weight: 500;
+    font-family: 'Google Sans', sans-serif;
     margin-bottom: 0.75rem;
 
     &:has(input:disabled) {
@@ -13,20 +13,39 @@ checkbox-group {
     }
   }
 
-  input {
-    cursor: pointer;
-    height: 24px;
-    margin-right: 0.6875rem;
-    width: 24px;
-
-    &:disabled {
-      cursor: initial;
+  input[type="checkbox"] {
+      appearance: none;
+      background: transparent;
+      border: 1px solid get-color('shades-gray-glare');
+      border-radius: 2px;
+      display: inline-block;
+      height: 1.125rem;
+      margin-right: 0.75rem;
+      pointer-events: none;
+      position: relative;
+      top: -2px;
+      vertical-align: middle;
+      width: 1.125rem;
     }
-  }
-}
 
-.checkbox-group__mass-select {
-  font-weight: 500;
+    input[type="checkbox"]:checked {
+      appearance: none;
+      background-color: get-color('core-primary');
+      border-color: get-color('core-primary');
+      border-radius: 2px;
+    }
+
+    input[type="checkbox"]:checked::after {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0,0,256,256' width='18px' height='18px' fill-rule='nonzero'%3E%3Cg fill='%23ffffff' fill-rule='nonzero' stroke='none' stroke-width='1' stroke-linecap='butt' stroke-linejoin='miter' stroke-miterlimit='10' stroke-dasharray='' stroke-dashoffset='0' font-family='none' font-weight='none' font-size='none' text-anchor='none' style='mix-blend-mode: normal'%3E%3Cg transform='scale(5.33333,5.33333)'%3E%3Cpath d='M40.6,12.1l-23.6,23.6l-9.6,-9.6l-2.8,2.9l12.4,12.3l26.4,-26.4z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      display: block;
+      font-size: 0.875rem;
+      height: 1.125rem;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1.125rem;
+    }
 }
 
 .checkbox-group__show-more {
@@ -36,7 +55,7 @@ checkbox-group {
     margin-right: 0.8125rem;
 
     path {
-      fill: #1a73e8;
+      fill: get-color('core-primary');
     }
   }
 }
