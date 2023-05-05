@@ -19,10 +19,7 @@
  * selection doesn't match the filter data specified the component results hidden
  */
 import {BaseElement} from '../BaseElement';
-import {html, render} from 'lit';
-
 import {store} from '../../store';
-
 
 export class FilteredElement extends BaseElement {
   static get properties() {

@@ -19,7 +19,7 @@
  */
 
 import {BaseElement} from '../BaseElement';
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {debounce} from '../../utils/debounce';
 
 import {store} from '../../store';
