@@ -19,18 +19,16 @@
  */
 import {BaseElement} from '../BaseElement';
 
-import {store} from '../../store';
 import {clearFilters} from '../../actions';
 
-export class FilterModal extends BaseElement {
+export class FiltersSection extends BaseElement {
+
   constructor() {
     super();
-    this.items = [];
   }
 
   connectedCallback() {
     super.connectedCallback();
-    store.subscribe(this.onStoreUpdate.bind(this));
     this.addEventListener('click', this.onClick);
   }
 
@@ -42,27 +40,9 @@ export class FilterModal extends BaseElement {
   onClick(event) {
     const target = event.target;
 
-    // Open menu button
-    if (target.classList.contains('filter-modal__opener')) {
-      /** @type {HTMLDialogElement|null} */
-      const dialog = document.querySelector('#filter-modal');
-      if (dialog) {
-        dialog.showModal();
-      }
-    }
-
     // Filters reset
-    if (target.id === 'filter-modal__reset') {
+    if (target.hasAttribute('clear-filters')) {
       this.resetFilters();
-    }
-
-    // Filters
-    if (target.id === 'filter-modal__done' || target.nodeName === 'DIALOG') {
-      /** @type {HTMLDialogElement|null} */
-      const dialog = document.querySelector('#filter-modal');
-      if (dialog) {
-        dialog.close();
-      }
     }
   }
 
@@ -70,20 +50,6 @@ export class FilterModal extends BaseElement {
     clearFilters();
   }
 
-  onStoreUpdate(state) {
-    const filters = state.filters || {};
-    const items = [];
-    for (const [name, entries] of Object.entries(filters)) {
-      for (const item of entries) {
-        items.push({
-          name: name,
-          value: item.value,
-          label: item.label,
-        });
-      }
-    }
-    this.items = items;
-  }
 }
 
-customElements.define('filter-modal', FilterModal);
+customElements.define('filters-section', FiltersSection);

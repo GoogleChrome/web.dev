@@ -78,14 +78,9 @@
 
 }
 
-.clear-filters {
-  background-color: #1967d2;
-  border: unset;
-  color: #fff;
-  height: px-to-rem(34px);
-
-  svg {
-    display: none;
-  }
+[clear-filters] {
+  color: get-color('shades-gray');
+  cursor: pointer;
+  font-family: 'Google Sans';
+  font-size: 1.125rem;
 }
-
