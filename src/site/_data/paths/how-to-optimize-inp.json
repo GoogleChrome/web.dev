@@ -15,7 +15,8 @@
     {
       "title": "i18n.paths.how_to_optimize_inp.topics.troubleshooting",
       "pathItems": [
-        "find-slow-interactions-in-the-field"
+        "find-slow-interactions-in-the-field",
+        "diagnose-slow-interactions-in-the-lab"
       ]
     },
     {
