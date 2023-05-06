@@ -1,0 +1,16 @@
+{
+    "slug": "testing",
+    "cover": "image/placeholder.jpg",
+    "title": "i18n.paths.testing.title",
+    "updated": "May 24, 2018",
+    "description": "i18n.paths.testing.description",
+    "topics": [
+      {
+        "title": "i18n.paths.testing.introduction",
+        "pathItems": [
+          "a-glance-in-test-automation"
+        ]
+      }
+    ]
+  }
+  
