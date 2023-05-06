@@ -77,7 +77,7 @@ Currently, Chromium-based browsers will execute all loaded scripts with the `def
 ### Loading scripts with the `<script>` element and the `type=module` attribute
 
 {% Aside 'important' %}
-If you're not bundling ES modules and loading them using the `type=module` attribute, you could actually end up slowing down page startup. For more information, read the [trade-offs and considerations section](TODO) later on in this guide.
+If you're not bundling ES modules and loading them using the `type=module` attribute, you could actually end up slowing down page startup. For more information, read the [trade-offs and considerations section](/script-evaluation-and-long-tasks/#trade-offs-and-considerations) later on in this guide.
 {% endAside %}
 
 It's now possible to load ES modules natively in the browser with the [`type=module` attribute](/serve-modern-code-to-modern-browsers/#use-lessscript-type=modulegreater) on the `<script>` element. This approach to script loading carries some developer experience benefits, such as not having to transform code for production use—especially when used in combination with [import maps](https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap). However, loading scripts in this way schedules tasks that differ from browser to browser.
