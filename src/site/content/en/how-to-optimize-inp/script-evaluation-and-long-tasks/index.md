@@ -12,6 +12,7 @@ alt: A close-up photo of a monitor displaying minified JavaScript code.
 description: |
   When loading scripts, it takes time for the browser to evaluate them prior to execution, which can cause long tasks. Learn how script evaluation works, and what you can do to keep it from causing long tasks during page load.
 tags:
+  - blog
   - performance
   - web-vitals
 ---

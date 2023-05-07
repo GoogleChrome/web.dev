@@ -12,6 +12,7 @@ alt: A photo of numerous crates, stacked loosely atop one another in rows.
 description: |
   Large DOM sizes can be a factor in whether interactions are fast or not. Learn more about the relationship between DOM size and INP, and what you can do to reduce DOM size and other ways to limit rendering work when your page has lots of DOM elements.
 tags:
+  - blog
   - performance
   - web-vitals
 ---

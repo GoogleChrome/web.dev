@@ -12,6 +12,7 @@ alt: A photo of a monitor displaying HTML source code.
 description: |
   Rendering HTML with JavaScript is different than rendering HTML that's sent by the server—and that can affect performance. Learn the difference in this guide, and what you can do to preserve your website's rendering performance—especially where interactions are concerned.
 tags:
+  - blog
   - performance
   - web-vitals
 ---

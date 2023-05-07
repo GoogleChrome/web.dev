@@ -12,6 +12,7 @@ alt: A photo of a wide open golden field under a swift sunrise.
 description: |
   Before you can reproduce slow interactions in the lab to optimize your website's Interaction to Next Paint, you'll need to lean on field data to find them. Learn how to do just that in this guide.
 tags:
+  - blog
   - performance
   - web-vitals
 ---

@@ -12,6 +12,7 @@ alt: A photo of a dropper placing a purple liquid into various collection tubes.
 description: |
   You've looked through your field data and you have some slow interactions on your hands. Now to learn more about testing those interactions, and identifying the causes behind them.
 tags:
+  - blog
   - performance
   - web-vitals
 ---

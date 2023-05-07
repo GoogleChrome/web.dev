@@ -1,6 +1,6 @@
 {
   "slug": "how-to-optimize-inp",
-  "cover": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Jf4E8ERQ6md2mu2sre5e.svg",
+  "cover": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/1AtWWHLH0bovMgv44FBU.svg",
   "title": "i18n.paths.how_to_optimize_inp.title",
   "updated": "May 10, 2023",
   "description": "i18n.paths.how_to_optimize_inp.description",
@@ -25,7 +25,8 @@
       "pathItems": [
         "optimize-long-tasks",
         "optimize-input-delay",
-        "script-evaluation-and-long-tasks"
+        "script-evaluation-and-long-tasks",
+        "off-main-thread"
       ]
     },
     {

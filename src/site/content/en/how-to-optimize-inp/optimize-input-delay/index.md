@@ -12,6 +12,7 @@ alt: An LED road construction sign reading "Expect Delays".
 description: |
   Input delay can contribute significantly to total interaction latency and negatively affect your page's INP. In this guide, learn what input delay is, and how you can reduce it for faster interactivity.
 tags:
+  - blog
   - performance
   - web-vitals
 ---

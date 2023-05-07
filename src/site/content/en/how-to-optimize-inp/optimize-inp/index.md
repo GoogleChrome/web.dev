@@ -14,6 +14,7 @@ alt: A photo of four paint rollers side by side, laying paint on a wall. The col
 description: |
   Learn how to optimize your website's Interaction to Next Paint.
 tags:
+  - blog
   - performance
   - web-vitals
 ---
