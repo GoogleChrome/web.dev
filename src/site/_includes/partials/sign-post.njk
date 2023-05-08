@@ -1,0 +1,21 @@
+{% set postPaths = postToPaths[slug] %}
+
+{% if postPaths %}
+  <div class="flow post-signpost">
+    {% if postPaths.length %}
+      <span class="post-signpost__title">
+        {{'i18n.post.appears_in' | i18n(locale)}}:
+      </span>
+
+      {% for pathName in postPaths %}
+        {% set postHref = '/' + paths[pathName].slug + '/' %}
+
+        <a href={{postHref}} class="post-signpost__link">{{paths[pathName].title | i18n(locale)}}</a>
+
+        {% if not loop.last %}
+          <span class="post-signpost__divider"> | </span>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endif %}

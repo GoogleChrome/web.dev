@@ -90,14 +90,13 @@
           </div>
         {% endif %}
 
-        {% set languageListHtml %}{% LanguageList page.url, lang %}{% endset %}
-        {% if languageListHtml %}
         <div class="flow">
-          {{ languageListHtml | safe }}
+          {% include 'partials/language-list.njk' %}
         </div>
-        {% endif %}
 
-        {% SignPosts page.fileSlug %}
+        <div class="flow">
+          {% include 'partials/sign-post.njk' %}
+        </div>
 
         {% if authors %}
           {{ authorsMacro() }}
