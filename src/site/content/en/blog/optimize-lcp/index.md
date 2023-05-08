@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-05-05
-updated: 2022-03-24
+updated: 2023-05-04
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
@@ -490,6 +490,13 @@ The [web-vitals library](https://github.com/GoogleChrome/web-vitals) includes th
 For those looking to implement their own solution, the [code for this is open source](https://github.com/GoogleChrome/web-vitals/blob/main/src/attribution/onLCP.ts) and is similar to above but with extra lofic for activation start.
 </p>
 {% endAside %}
+
+## Monitor LCP breakdown via the Web Vitals extension
+
+The [Web Vitals extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) will [log the LCP time, LCP element, and these four sub-parts in the console logging](/debug-cwvs-with-web-vitals-extension/#lcp-debug-information), to easily allow you to see this breakdown.
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/FEFEkgKuC6RxVh7MHmkn.png", alt="Screenshot of the console logging of the Web Vitals extension showing the LCP sub-part timings", width="800", height="239" %}
+
 
 ## Summary
 
