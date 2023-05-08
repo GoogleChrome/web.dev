@@ -26,10 +26,10 @@ This becomes problematic in pages with very large DOMs when interactions that mo
 ## When is a page's DOM _too_ large?
 
 {% Aside 'key-term' %}
-It's important to know the difference between DOM elements and DOM nodes. A DOM _element_ refers to a specific [HTML element](https://developer.mozilla.org/docs/Web/API/HTMLElement) in the DOM tree. A [DOM _node_](https://developer.mozilla.org/docs/Web/API/Node) has overlapping meaning with the DOM element term, but its definition is expanded to include comments, whitespace, and text. While the Lighthouse DOM size audit refers to DOM nodes, this guide will refer to DOM elements over nodes whenever possible.
+It's important to know the difference between DOM elements and DOM nodes. A DOM _element_ refers to a specific [HTML element](https://developer.mozilla.org/docs/Web/API/HTMLElement) in the DOM tree. A [DOM _node_](https://developer.mozilla.org/docs/Web/API/Node) has overlapping meaning with the DOM element term, but its definition is expanded to include comments, whitespace, and text. While the [Lighthouse DOM size audit](https://developer.chrome.com/en/docs/lighthouse/performance/dom-size/) refers to DOM nodes, this guide will refer to DOM elements over nodes whenever possible.
 {% endAside %}
 
-[According to Lighthouse](https://developer.chrome.com/en/docs/lighthouse/performance/dom-size/), a page's DOM size is excessive when it exceeds 1,400 nodes. Lighthouse will begin to throw warnings when a page's DOM exceeds 800 nodes. Take the following HTML for example:
+[According to Lighthouse](https://developer.chrome.com/en/docs/lighthouse/performance/dom-size/#how-the-lighthouse-dom-size-audit-fails), a page's DOM size is excessive when it exceeds 1,400 nodes. Lighthouse will begin to throw warnings when a page's DOM exceeds 800 nodes. Take the following HTML for example:
 
 ```html
 <ul>
