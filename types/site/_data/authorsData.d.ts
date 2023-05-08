@@ -22,6 +22,8 @@ declare global {
     homepage?: string;
     image?: string;
     twitter?: string;
+    dcc?: string;
+    bio?: string;
   };
   export interface AuthorsData {
     [key: string]: AuthorsDataItem;

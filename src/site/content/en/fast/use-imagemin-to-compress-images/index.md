@@ -142,7 +142,9 @@ available, but they'd all be good choices for your project.
         <td>
           <a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a>
         </td>
-        <td></td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a>
+        </td>
       </tr>
     </tbody>
   </table>

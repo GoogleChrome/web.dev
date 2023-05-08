@@ -85,7 +85,7 @@ Para la mayoría de las personas, los complementos con pérdidas son la mejor op
       <tr>
         <td>WebP</td>
         <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
-        <td></td>
+        <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
       </tr>
     </tbody>
   </table>

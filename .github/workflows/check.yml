@@ -1,0 +1,230 @@
+---
+name: 'Check'
+
+on: pull_request
+
+jobs:
+  queue:
+    runs-on: ubuntu-latest
+    steps:
+      - id: skip
+        uses: fkirc/skip-duplicate-actions@master
+        with:
+          concurrent_skipping: 'outdated_runs'
+          cancel_others: true
+          skip_after_successful_duplicate: true
+          do_not_skip: '["workflow_dispatch", "schedule"]'
+
+  lint:
+    needs: queue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting changes
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            js:
+              - '**/*.js'
+              - '**/*.json'
+            md:
+              - '**/*.md'
+            scss:
+              - '**/*.scss'
+            tags:
+              - 'src/site/_data/i18n/tags.yml'
+
+      - name: Cloning repository
+        uses: actions/checkout@v3
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: npm
+          node-version: 16
+
+      - name: Installing Node.js packages
+        run: npm ci
+
+      - name: Lint Tags
+        if: ${{ steps.filter.outputs.tags == 'true' || steps.filter.outputs.md == 'true' }}
+        uses: ./.github/actions/lint-tags
+
+      - name: Linting JavaScript
+        if: ${{ steps.changes.outputs.js == 'true' }}
+        run: |
+          npm run lint:js
+
+      - name: Linting Markdown
+        if: ${{ steps.changes.outputs.md == 'true' }}
+        run: npm run lint:md
+
+      - name: Linting SCSS
+        if: ${{ steps.changes.outputs.scss == 'true' }}
+        run: npm run lint:scss
+
+  test:
+    needs: queue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting changes
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            js:
+              - 'package.json'
+              - 'site/**/*.js'
+              - 'server/**.js'
+              - 'tests/**.js'
+
+      - name: Cloning repository
+        uses: actions/checkout@v3
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: npm
+          node-version: 16
+
+      - name: Installing Node.js packages
+        run: npm ci
+
+      - name: Running tests
+        if: ${{ steps.changes.outputs.js == 'true' }}
+        run: |
+          npm run test
+
+  build:
+    needs: queue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v3
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: npm
+          node-version: 16
+
+      - name: Installing Node.js packages
+        run: npm ci
+
+      - name: Building site
+        env:
+          # Increase memory limit as a full build requires around 8GB
+          NODE_OPTIONS: --max_old_space_size=8192
+          ELEVENTY_ENV: staging
+        run: npm run build
+
+      - name: Packing up built files
+        run: |
+          tar cfj dist.tar.gz ./dist
+
+      - name: Storing build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-${{ github.run_id }}
+          path: dist.tar.gz
+          if-no-files-found: error
+
+  lighthouse:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting changes
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            frontend:
+              - 'package.json'
+              - 'site/_js/**/*.js'
+              - 'site/_includes/**/*.njk'
+              - 'site/_scss/**/*.scss'
+
+      - name: Cloning repository
+        uses: actions/checkout@v3
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v3
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        with:
+          cache: npm
+          node-version: 16
+
+      - name: Installing Node.js packages
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        run: npm ci
+
+      - name: Downloading build artifacts
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-${{ github.run_id }}
+
+      - name: Unpacking built files
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        run: |
+          tar xf dist.tar.gz
+
+      - name: Lighthouse
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        run: |
+          npx @lhci/cli@0.8.x autorun --config=./tools/lhci/lighthouserc.js
+
+  percy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting changes
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            frontend:
+              - 'package.json'
+              - 'site/_filters/**.js'
+              - 'site/_includes/**'
+              - 'site/_js/**.js'
+              - 'site/_plugins/**.js'
+              - 'site/_scss/**.scss'
+              - 'site/_shortcodes/**.js'
+              - 'site/_transforms/**.js'
+              - 'site/_utils/**.js'
+              - 'site/en/content-types/**'
+
+      - name: Cloning repository
+        uses: actions/checkout@v3
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v3
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        with:
+          cache: npm
+          node-version: 16
+
+      - name: Installing Node.js packages
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        run: npm ci
+
+      - name: Downloading build artifacts
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-${{ github.run_id }}
+
+      - name: Unpacking built files
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        run: |
+          tar xf dist.tar.gz
+
+      - name: Percy
+        if: ${{ steps.changes.outputs.frontend == 'true' }}
+        env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: npm run percy

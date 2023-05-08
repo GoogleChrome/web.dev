@@ -34,3 +34,76 @@
 .author__bio + .author__links {
   --flow-space: 0.8em;
 }
+
+.author-profile {
+  &__name {
+    flex-wrap: nowrap;
+    margin-bottom: 30px;
+
+    .headline__title {
+      font-size: 24px;
+    }
+
+    .avatar,
+    .avatar > img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__socials {
+    margin: 2rem 0;
+  }
+
+  &__bio {
+    display: none;
+  }
+  
+  &__detail {
+    display: flex;
+    flex-direction: column-reverse;
+
+    > details {
+      display: block;
+    }
+  }
+
+  a:not(:hover) > svg {
+    @include apply-utility('color', 'mid-text');
+  }
+
+  @include media-query('md') {
+    &__name {
+      flex-wrap: nowrap;
+
+      .headline__title {
+        font-size: 36px;
+      }
+
+      .avatar,
+      .avatar > img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  
+    &__detail {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0 !important;
+  
+      > details {
+        display: none;
+      }
+    }
+  
+    &__socials {
+      margin: 1.25rem 0 1rem;
+    }
+
+    &__bio {
+      display: block;
+    }
+  }
+}
+
