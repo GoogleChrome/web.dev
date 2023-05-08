@@ -21,7 +21,7 @@ Chrome's mission with the [Web Vitals program](/vitals/) is to help developers f
 
 After another year of testing and gathering feedback from the community, we're ready to take the training wheels off and announce that INP is no longer experimental. Furthermore, effective March 2024, we're also committed to promoting INP as the new Core Web Vital metric for responsiveness, replacing FID.
 
-In this post, we'll cover more about the motivation behind the decision, exactly what's changing, and how to get started. For more on how this affects Google Search, refer to [their blog post](TODO).
+In this post, we'll cover more about the motivation behind the decision, exactly what's changing, and how to get started. For more on how this affects Google Search, refer to [their blog post](https://developers.google.com/search/blog/2023/05/introducing-inp).
 
 ## A better responsiveness metric
 
@@ -128,7 +128,7 @@ INP might take some time to learn, and that's just fine. To help you focus on th
 
 ## The road ahead
 
-A new bar for responsiveness has been set, and we're excited to see the community rise to the challenge for a better user experience. The early [feedback](https://groups.google.com/g/web-vitals-feedback) and [case studies](TODO) have been promising, but we know that for many, it may be a long and unfamiliar road ahead. We strive to make that journey as easy as possible with improved [diagnostics](https://github.com/w3c/longtasks/blob/main/loaf-explainer.md), [tools](https://web.dev/vitals-tools/), and [documentation](/optimize-inp/) to help developers along the way.
+A new bar for responsiveness has been set, and we're excited to see the community rise to the challenge for a better user experience. The early [feedback](https://groups.google.com/g/web-vitals-feedback) and [case studies](TODO) have been promising, but we know that for many, it may be a long and unfamiliar road ahead. We strive to make that journey as easy as possible with improved [diagnostics](https://github.com/w3c/longtasks/blob/main/loaf-explainer.md), [tools](/vitals-tools/), and [documentation](/optimize-inp/) to help developers along the way.
 
 Stay tuned for updates on INP's exact graduation date in March 2024. And even though the metric is not experimental anymore, we're always open to feedback at [web-vitals-feedback@googlegroups.com](mailto:web-vitals-feedback@googlegroups.com) to help us improve INP and the Web Vitals program as a whole.
 
