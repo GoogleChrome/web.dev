@@ -22,7 +22,7 @@ Some browsers enhance the installation prompt experience using the [promotional 
 
 See promotional fields in action:
 
-{% Glitch 'learn-pwa-web-app-manifest-promotional' %}
+{% Glitch 'learn-pwa-web-app-manifest-promotional-fields' %}
 
 ## The beforeinstallprompt event
 
