@@ -133,7 +133,7 @@ available, but they'd all be good choices for your project.
       <tr>
         <td>SVG</td>
         <td>
-          <a href="https://www.npmjs.com/package/imagemin-svgo">Imagemin-svgo</a>
+          <a href="https://www.npmjs.com/package/imagemin-svgo">imagemin-svgo</a>
         </td>
         <td></td>
       </tr>
@@ -142,7 +142,9 @@ available, but they'd all be good choices for your project.
         <td>
           <a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a>
         </td>
-        <td></td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a>
+        </td>
       </tr>
     </tbody>
   </table>
